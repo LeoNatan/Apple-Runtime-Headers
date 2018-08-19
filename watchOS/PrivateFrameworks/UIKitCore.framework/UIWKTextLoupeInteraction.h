@@ -11,7 +11,7 @@ __attribute__((visibility("hidden")))
 {
 }
 
-- (void)loupeGestureWithState:(int)arg1 atGesturePoint:(CDUnknownBlockType)arg2 shouldCancel:(_Bool *)arg3;
+- (void)loupeGestureWithState:(int)arg1 atGesturePoint:(CDUnknownBlockType)arg2 modifierFlags:(int)arg3 shouldCancel:(_Bool *)arg4;
 
 @end
 

@@ -152,7 +152,8 @@ __attribute__((visibility("hidden")))
         unsigned int _pendingCandidateUpdate:1;
         unsigned int _pendingMarkForTextCheckingAfterChange:1;
         unsigned int _usesBlinkTimerForDrawing:1;
-        unsigned int _pad:4;
+        unsigned int _usesInvertedColor:1;
+        unsigned int _pad:3;
     } _sdFlags3;
     unsigned long long _otherEnabledTextCheckingTypes;
     long long _previousCheckingSequenceNumber;

@@ -16,6 +16,7 @@
 - (NSDictionary *)cacheKeysForRenderFlags:(NSArray *)arg1;
 
 @optional
+@property(readonly, nonatomic) int cacheDeferPriority;
 - (void)drawContentsOfRenderers:(NSArray *)arg1;
 @end
 

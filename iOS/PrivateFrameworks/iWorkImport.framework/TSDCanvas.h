@@ -72,13 +72,13 @@ __attribute__((visibility("hidden")))
 - (_Bool)p_updateRepsFromLayouts;
 - (void)p_layoutWithReadLock;
 - (struct CGRect)p_bounds;
-- (struct CGImage *)i_newImageInContext:(struct CGContext *)arg1 bounds:(struct CGRect)arg2 integralBounds:(struct CGRect)arg3 distortedToMatch:(_Bool)arg4;
+- (struct CGImage *)i_newImageInContext:(struct CGContext *)arg1 bounds:(struct CGRect)arg2 integralBounds:(struct CGRect)arg3 distortedToMatch:(_Bool)arg4 keepingChildrenPassingTest:(CDUnknownBlockType)arg5;
 - (struct CGContext *)i_createContextToDrawImageInScaledRect:(struct CGRect)arg1 withTargetIntegralSize:(struct CGSize)arg2 distortedToMatch:(_Bool)arg3 returningBounds:(struct CGRect *)arg4 integralBounds:(struct CGRect *)arg5;
-- (struct CGImage *)i_imageInScaledRect:(struct CGRect)arg1 withTargetIntegralSize:(struct CGSize)arg2 distortedToMatch:(_Bool)arg3;
-- (struct CGImage *)i_imageInScaledRect:(struct CGRect)arg1;
+- (struct CGImage *)i_imageInScaledRect:(struct CGRect)arg1 withTargetIntegralSize:(struct CGSize)arg2 distortedToMatch:(_Bool)arg3 keepingChildrenPassingTest:(CDUnknownBlockType)arg4;
+- (struct CGImage *)i_imageInScaledRect:(struct CGRect)arg1 keepingChildrenPassingTest:(CDUnknownBlockType)arg2;
 - (struct CGImage *)i_image;
-- (void)i_drawRepsInContext:(struct CGContext *)arg1;
-- (void)i_drawRepsInContext:(struct CGContext *)arg1 distort:(struct CGAffineTransform)arg2;
+- (void)i_drawRepsInContext:(struct CGContext *)arg1 passingTest:(CDUnknownBlockType)arg2;
+- (void)i_drawRepsInContext:(struct CGContext *)arg1 passingTest:(CDUnknownBlockType)arg2 distort:(struct CGAffineTransform)arg3;
 - (void)addBitmapsToRenderingQualityInfo:(id)arg1 inContext:(struct CGContext *)arg2;
 - (void)i_drawBackgroundInContext:(struct CGContext *)arg1 bounds:(struct CGRect)arg2;
 - (void)i_drawBackgroundInContext:(struct CGContext *)arg1;

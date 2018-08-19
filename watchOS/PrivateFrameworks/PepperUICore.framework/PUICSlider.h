@@ -76,6 +76,7 @@
 - (void)_fadeAccessoryImagesForValue:(float)arg1 animated:(_Bool)arg2;
 - (void)setCrownInputOffsetAdjustmentFactor:(double)arg1;
 - (double)crownInputOffsetAdjustmentFactor;
+- (void)_setValue:(float)arg1 animated:(_Bool)arg2 sendAction:(_Bool)arg3 crown:(_Bool)arg4;
 - (void)_setValue:(float)arg1 animated:(_Bool)arg2 sendAction:(_Bool)arg3;
 - (float)value;
 - (void)crownInputSequencerIdleDidChange:(id)arg1;

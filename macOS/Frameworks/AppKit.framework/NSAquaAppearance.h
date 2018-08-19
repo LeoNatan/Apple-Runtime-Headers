@@ -11,7 +11,6 @@ __attribute__((visibility("hidden")))
 {
 }
 
-- (id)_temporaryCatalogForStatefulTextColorStyles;
 - (id)_appearanceForNonVibrantContent;
 - (id)_appearanceForVibrantContent;
 

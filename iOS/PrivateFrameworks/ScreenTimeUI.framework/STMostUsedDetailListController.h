@@ -6,10 +6,11 @@
 
 #import <ScreenTimeUI/STPINListViewController.h>
 
-@class STAllowanceProgressGroupSpecifierProvider, STAppDetailsGroupSpecifierProvider, STCategoryDetailsGroupSpecifierProvider, STMostUsedScreenTimeGroupSpecifierProvider;
+@class STAllowanceProgressGroupSpecifierProvider, STAppDetailsGroupSpecifierProvider, STCategoryDetailsGroupSpecifierProvider, STMostUsedScreenTimeGroupSpecifierProvider, STUsageItem;
 
 @interface STMostUsedDetailListController : STPINListViewController
 {
+    STUsageItem *_usageItem;
     STMostUsedScreenTimeGroupSpecifierProvider *_screenTimeGroupSpecifierProvider;
     STAppDetailsGroupSpecifierProvider *_appDetailsGroupSpecifierProvider;
     STCategoryDetailsGroupSpecifierProvider *_categoryDetailsGroupSpecifierProvider;
@@ -20,8 +21,12 @@
 @property(readonly, nonatomic) STCategoryDetailsGroupSpecifierProvider *categoryDetailsGroupSpecifierProvider; // @synthesize categoryDetailsGroupSpecifierProvider=_categoryDetailsGroupSpecifierProvider;
 @property(readonly, nonatomic) STAppDetailsGroupSpecifierProvider *appDetailsGroupSpecifierProvider; // @synthesize appDetailsGroupSpecifierProvider=_appDetailsGroupSpecifierProvider;
 @property(readonly, nonatomic) STMostUsedScreenTimeGroupSpecifierProvider *screenTimeGroupSpecifierProvider; // @synthesize screenTimeGroupSpecifierProvider=_screenTimeGroupSpecifierProvider;
+@property(readonly, nonatomic) STUsageItem *usageItem; // @synthesize usageItem=_usageItem;
 - (void).cxx_destruct;
+- (void)_didFetchAppInfo:(id)arg1;
+- (void)_registerForAppInfoCacheNotifications;
 - (void)viewDidLoad;
+- (_Bool)canBeShownFromSuspendedState;
 - (id)initWithUsageItem:(id)arg1 coordinator:(id)arg2;
 
 @end

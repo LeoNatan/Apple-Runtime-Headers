@@ -22,6 +22,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) CNRepeatingGradientSeparatorView *vseparator; // @synthesize vseparator=_vseparator;
 @property(readonly, nonatomic) UIButton *labelButton; // @synthesize labelButton=_labelButton;
 - (void).cxx_destruct;
+- (void)regainFocus;
 - (void)picker:(id)arg1 didPickItem:(id)arg2;
 - (void)pickerDidCancel:(id)arg1;
 - (id)variableConstraints;

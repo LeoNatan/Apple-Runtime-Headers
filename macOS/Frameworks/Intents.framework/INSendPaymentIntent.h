@@ -14,7 +14,7 @@
 {
 }
 
-- (BOOL)configureAttributeSet:(id)arg1;
+- (BOOL)configureAttributeSet:(id)arg1 includingData:(BOOL)arg2;
 - (void)setParametersByName:(id)arg1;
 - (id)parametersByName;
 - (void)setVerb:(id)arg1;

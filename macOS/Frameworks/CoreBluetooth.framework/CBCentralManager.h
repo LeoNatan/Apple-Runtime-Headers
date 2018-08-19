@@ -59,6 +59,7 @@
 - (void)setDesiredConnectionLatency:(long long)arg1 forPeripheral:(id)arg2;
 - (void)cancelPeripheralConnection:(id)arg1 force:(BOOL)arg2;
 - (void)cancelPeripheralConnection:(id)arg1;
+- (void)randomizeAFHMapForPeripheral:(id)arg1;
 - (void)connectPeripheral:(id)arg1 options:(id)arg2;
 - (void)stopScan;
 - (void)scanForPeripheralsWithServices:(id)arg1 options:(id)arg2;

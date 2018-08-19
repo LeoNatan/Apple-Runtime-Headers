@@ -36,7 +36,8 @@
 - (id)_makeTempThumbnailFileForImageData:(id)arg1 identifier:(id)arg2;
 - (id)_makeTempThumbnailFileForNotification:(id)arg1;
 - (void)enumerateExistingNotificationsUsingBlock:(CDUnknownBlockType)arg1;
-- (void)findExistiingNotificationByIdentifier:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
+- (void)findExistingNotificationByIdentifier:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
+- (void)mergeExistingAndSendNotificationForNotification:(id)arg1 requestIdentifier:(id)arg2 thumbnailHandler:(CDUnknownBlockType)arg3;
 - (void)mergeExistingAndSendNotificationForNotification:(id)arg1 thumbnailHandler:(CDUnknownBlockType)arg2;
 - (void)removeNotificationWithRequestIdentifiers:(id)arg1;
 - (void)_findNotificationForRequestIdentifier:(id)arg1 withPendingHandler:(CDUnknownBlockType)arg2 deliveredHandler:(CDUnknownBlockType)arg3 completionHandler:(CDUnknownBlockType)arg4;

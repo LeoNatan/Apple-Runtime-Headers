@@ -14,6 +14,7 @@
     BOOL _isAcousticIDRecording;
     BOOL _isAudioPaused;
     BOOL _switchedBluetoothDeviceToSCO;
+    BOOL _isSiriUIVisible;
     unsigned int _bluetoothOutputDevice;
     float _savedBluetoothOutputVolume;
     unsigned int _savedBluetoothOutputVolumeDevice;
@@ -26,6 +27,7 @@
 + (BOOL)isFanDuckingEnabled;
 + (BOOL)isAudioDucked;
 + (id)sharedManager;
+@property BOOL isSiriUIVisible; // @synthesize isSiriUIVisible=_isSiriUIVisible;
 @property(nonatomic) unsigned int savedBluetoothOutputVolumeDevice; // @synthesize savedBluetoothOutputVolumeDevice=_savedBluetoothOutputVolumeDevice;
 @property(nonatomic) float savedBluetoothOutputVolume; // @synthesize savedBluetoothOutputVolume=_savedBluetoothOutputVolume;
 @property(nonatomic) unsigned int bluetoothOutputDevice; // @synthesize bluetoothOutputDevice=_bluetoothOutputDevice;
@@ -40,11 +42,12 @@
 - (BOOL)setBluetoothAudioFormat:(unsigned int)arg1 forDevice:(unsigned int)arg2;
 - (void)bluetoothAudioDidChangeNotification:(id)arg1;
 - (void)handleSiriStartedSpeakingEvent;
-- (void)handleSiriStartedThinkingEvent;
 - (void)handleSiriStoppedListeningEvent;
 - (void)handleSiriStartedListeningEvent;
 - (void)siriEventWillChangeToEvent:(long long)arg1;
 @property long long lastSiriEvent;
+- (void)siriUIDisappeared;
+- (void)siriUIAppeared;
 - (void)siriStoppedSpeakingNotificationFired;
 - (void)siriStartedSpeakingNotificationFired;
 - (void)siriSuccessNotificationFired;

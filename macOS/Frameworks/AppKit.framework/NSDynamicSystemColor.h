@@ -119,6 +119,7 @@ __attribute__((visibility("hidden")))
 - (id)colorWithAlphaComponent:(double)arg1;
 - (id)resolvedColor;
 - (void)recacheColor;
+- (BOOL)_getSemanticallyEquivalentVisualEffectMaterial:(long long *)arg1;
 - (id)initWithSelector:(SEL)arg1 tintedWithColor:(id)arg2;
 - (id)initWithSelector:(SEL)arg1;
 - (Class)classForCoder;

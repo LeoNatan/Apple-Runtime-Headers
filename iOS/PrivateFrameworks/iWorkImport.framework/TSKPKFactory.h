@@ -11,12 +11,11 @@ __attribute__((visibility("hidden")))
 {
 }
 
++ (id)recognizerWithType:(int)arg1 mode:(int)arg2;
 + (id)imageRendererWithSize:(struct CGSize)arg1 scale:(double)arg2;
 + (id)inkWithIdentifier:(id)arg1 color:(id)arg2 widthMultiplier:(double)arg3;
 + (id)inkWithIdentifier:(id)arg1 color:(id)arg2;
 + (id)strokePoint;
-+ (id)recognizer;
-+ (id)recongizerWithType:(int)arg1 mode:(int)arg2;
 + (id)drawing;
 + (id)drawingWithData:(id)arg1;
 + (id)drawingWithStrokes:(id)arg1 fromDrawing:(id)arg2;
@@ -25,7 +24,6 @@ __attribute__((visibility("hidden")))
 + (id)stroke;
 + (id)inkPicker;
 + (id)inlineInkPickerWithFrame:(struct CGRect)arg1;
-+ (id)canvasViewController;
 + (id)canvasViewWithFrame:(struct CGRect)arg1;
 + (_Bool)pencilKitAvailable;
 + (void)initialize;

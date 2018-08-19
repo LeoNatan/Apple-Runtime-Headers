@@ -8,36 +8,37 @@
 
 #import "TSCEFormulaOwning.h"
 
-@class NSString, TSCECalculationEngine, TSCECellCoordinateVector, TSTInfo;
+@class NSString, TSCECalculationEngine, TSCECellCoordinateVector, TSTTableModel;
 
 __attribute__((visibility("hidden")))
 @interface TSTConditionalStyleFormulaOwner : NSObject <TSCEFormulaOwning>
 {
-    TSTInfo *mTableInfo;
-    TSCECalculationEngine *mCalculationEngine;
-    UUIDData_5fbc143e mOwnerUID;
-    TSCECellCoordinateVector *mCellsToInvalidate;
-    TSCECellCoordinateVector *mCellsToRewrite;
+    TSTTableModel *_tableModel;
+    TSCECalculationEngine *_calculationEngine;
+    UUIDData_5fbc143e _ownerUID;
+    TSCECellCoordinateVector *_cellsToInvalidate;
 }
 
-@property(nonatomic) UUIDData_5fbc143e ownerUID; // @synthesize ownerUID=mOwnerUID;
++ (id)allCondStyleFormulasForTable:(id)arg1;
+@property(nonatomic) TSTTableModel *tableModel; // @synthesize tableModel=_tableModel;
+@property(nonatomic) UUIDData_5fbc143e ownerUID; // @synthesize ownerUID=_ownerUID;
 - (id).cxx_construct;
-- (void)beginRewriteForCalculationEngine:(id)arg1 spec:(id)arg2;
-- (void)rewriteForCalculationEngine:(id)arg1 formulaID:(CDStruct_ed6d627d)arg2 rewriteSpec:(id)arg3;
-- (void)invalidateForCalculationEngine:(id)arg1;
-- (void)writeResultsForCalculationEngine:(id)arg1;
-- (CDStruct_2a4d9400)recalculateForCalculationEngine:(id)arg1 formulaID:(CDStruct_ed6d627d)arg2 isInCycle:(_Bool)arg3 hasCalculatedPrecedents:(_Bool)arg4;
-- (int)registerWithCalculationEngine:(id)arg1;
+- (void).cxx_destruct;
+- (void)invalidateForCalcEngine:(id)arg1;
+- (void)writeResultsForCalcEngine:(id)arg1;
+- (CDStruct_2a4d9400)recalculateForCalcEngine:(id)arg1 atFormulaCoord:(struct TSUCellCoord)arg2 recalcOptions:(CDStruct_3d581f42)arg3;
+- (id)linkedResolver;
+- (int)ownerKind;
+- (void)unregisterFromCalcEngine;
+- (int)registerWithCalcEngine:(id)arg1;
 - (void)changedConditionForCellID:(struct TSUCellCoord)arg1;
 - (void)replaceFormulaForConditionalStyle:(id)arg1 atCellID:(struct TSUCellCoord)arg2;
 - (void)removeFormulasInRange:(struct TSUCellRect)arg1;
 - (void)removeFormulaAtCellID:(struct TSUCellCoord)arg1;
 - (void)addFormulaForConditionalStyle:(id)arg1 atCellID:(struct TSUCellCoord)arg2;
-@property(nonatomic) TSTInfo *tableInfo;
 - (_Bool)checkConditionForCellID:(struct TSUCellCoord)arg1 withConditionalStyle:(id)arg2 withIndex:(unsigned long long *)arg3;
-- (void)dealloc;
-- (id)initWithTableInfo:(id)arg1;
-- (id)initWithTableInfo:(id)arg1 ownerUID:(const UUIDData_5fbc143e *)arg2;
+- (id)initWithTableModel:(id)arg1;
+- (id)initWithTableModel:(id)arg1 ownerUID:(const UUIDData_5fbc143e *)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

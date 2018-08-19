@@ -10,6 +10,7 @@
 + (id)tsce_dateWithYear:(long long)arg1 month:(long long)arg2 day:(long long)arg3 hour:(long long)arg4 minute:(long long)arg5 second:(long long)arg6;
 + (id)tsce_dateWithSerialNumber:(double)arg1 dateMode:(int)arg2;
 - (double)tsce_mapToDouble;
+- (long long)tsce_weekNumberForType:(int)arg1;
 - (long long)tsce_weekday;
 - (long long)tsce_second;
 - (long long)tsce_minute;

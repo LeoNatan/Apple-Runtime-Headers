@@ -6,45 +6,49 @@
 
 #import "NSObject.h"
 
-@class NSArray, NSString;
+@class NSString;
 
 __attribute__((visibility("hidden")))
 @interface TSCEFunctionSpec : NSObject
 {
-    NSString *mFunctionName;
-    short mMinArguments;
-    short mMaxArguments;
-    short mRepeatingGroupSize;
-    NSArray *mArguments;
-    NSArray *mRepeatingArguments;
-    _Bool mIsOperator;
-    int mShipVersion;
-    int mFunctionIndex;
+    NSString *_functionName;
+    short _minArguments;
+    short _maxArguments;
+    short _repeatingGroupSize;
+    vector_2a3fe66d _arguments;
+    vector_2a3fe66d _repeatingArguments;
+    _Bool _isOperator;
+    int _shipVersion;
+    int _functionIndex;
 }
 
 + (id)unsupportedFunctionNameForLocale:(id)arg1;
 + (_Bool)isModeEnabled:(short)arg1 functionIndex:(short)arg2;
 + (id)functionSpecForFunctionName:(id)arg1;
 + (id)functionSpecForFunctionIndex:(int)arg1;
-+ (id)specWithFunctionName:(id)arg1 minArgs:(id)arg2 maxArgs:(id)arg3 repeatingGroupSize:(id)arg4 isOperator:(int)arg5 shipVersion:(int)arg6 arguments:(id)arg7 functionIndex:(int)arg8;
++ (id)specWithFunctionName:(id)arg1 minArgs:(int)arg2 maxArgs:(int)arg3 repeatingGroupSize:(int)arg4 isOperator:(int)arg5 shipVersion:(int)arg6 arguments:(const vector_2a3fe66d *)arg7 functionIndex:(int)arg8;
 + (_Bool)hasAnyDateArgumentsToFunction:(int)arg1;
 + (id)specDictionary;
-@property(readonly, nonatomic) short repeatingGroupSize; // @synthesize repeatingGroupSize=mRepeatingGroupSize;
-@property(readonly, nonatomic) int versionShippedIn; // @synthesize versionShippedIn=mShipVersion;
-@property(readonly, nonatomic) _Bool isOperator; // @synthesize isOperator=mIsOperator;
-@property(readonly, nonatomic) short maxArguments; // @synthesize maxArguments=mMaxArguments;
-@property(readonly, nonatomic) short minArguments; // @synthesize minArguments=mMinArguments;
-@property(readonly) int functionIndex; // @synthesize functionIndex=mFunctionIndex;
+@property(readonly, nonatomic) short repeatingGroupSize; // @synthesize repeatingGroupSize=_repeatingGroupSize;
+@property(readonly, nonatomic) int versionShippedIn; // @synthesize versionShippedIn=_shipVersion;
+@property(readonly, nonatomic) _Bool isOperator; // @synthesize isOperator=_isOperator;
+@property(readonly, nonatomic) short maxArguments; // @synthesize maxArguments=_maxArguments;
+@property(readonly, nonatomic) short minArguments; // @synthesize minArguments=_minArguments;
+@property(readonly) int functionIndex; // @synthesize functionIndex=_functionIndex;
+- (id).cxx_construct;
+- (void).cxx_destruct;
+- (long long)modeNumberForLocalizedString:(id)arg1 argumentSpecIndex:(unsigned long long)arg2 attributeMax:(long long)arg3 locale:(id)arg4;
 - (id)nativeSyntaxStringForArgument:(int)arg1;
-- (id)argumentSpecForIndex:(unsigned long long)arg1;
+- (int)preferredTypeForArgumentIndex:(unsigned long long)arg1;
+- (int)accessorModeForArgumentIndex:(unsigned long long)arg1;
+- (struct TSCEFunctionArgSpec *)argumentSpecForIndex:(unsigned long long)arg1;
 @property(readonly, nonatomic) unsigned long long numArguments;
-@property(readonly, nonatomic) NSArray *arguments;
+@property(readonly) const vector_2a3fe66d *arguments;
 - (id)displayStringForLocale:(id)arg1;
 - (id)localizedToolTipStringForLocale:(id)arg1;
 - (id)localizedFunctionNameForLocale:(id)arg1;
-@property(readonly, nonatomic) NSString *functionName;
-- (void)dealloc;
-- (id)initWithFunctionName:(id)arg1 minArgs:(int)arg2 maxArgs:(int)arg3 repeatingGroupSize:(int)arg4 isOperator:(_Bool)arg5 shipVersion:(int)arg6 arguments:(id)arg7 functionIndex:(int)arg8;
+@property(readonly) NSString *functionName;
+- (id)initWithFunctionName:(id)arg1 minArgs:(int)arg2 maxArgs:(int)arg3 repeatingGroupSize:(int)arg4 isOperator:(_Bool)arg5 shipVersion:(int)arg6 arguments:(const vector_2a3fe66d *)arg7 functionIndex:(int)arg8;
 - (id)description;
 - (void)p_ValidateArguments;
 

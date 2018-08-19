@@ -660,6 +660,7 @@
 @property(nonatomic, getter=_compassInsetEdges, setter=_setCompassInsetEdges:) unsigned long long compassInsetEdges;
 - (void)_setCompassViewSize:(long long)arg1 style:(long long)arg2;
 - (void)_layoutAttribution;
+@property(readonly, nonatomic) struct CGRect attributionBadgeBounds;
 @property(readonly, nonatomic, getter=_isShowingAttributionBadge) _Bool showingAttributionBadge;
 @property(nonatomic) _Bool canShowAttributionBadge;
 @property(nonatomic) _Bool showsAttribution;

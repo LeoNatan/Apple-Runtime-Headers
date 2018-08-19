@@ -27,7 +27,6 @@ __attribute__((visibility("hidden")))
 - (void)p_drawUnshadowedContentIntoContext:(struct CGContext *)arg1 size:(struct CGSize)arg2 contentsScale:(double)arg3 preset:(id)arg4 shouldCache:(_Bool *)arg5;
 - (void)p_drawShadowedContentIntoContext:(struct CGContext *)arg1 size:(struct CGSize)arg2 contentsScale:(double)arg3 preset:(id)arg4 shouldCache:(_Bool *)arg5;
 - (id)initWithChartType:(id)arg1;
-- (id)init;
 - (id)p_init;
 
 @end

@@ -17,7 +17,7 @@ __attribute__((visibility("hidden")))
 
 @property(copy, nonatomic) NSArray *referenceLineNonStyleItems; // @synthesize referenceLineNonStyleItems=mReferenceLineNonStyleItems;
 @property(copy, nonatomic) TSCHChartAxisID *axisIdentifier; // @synthesize axisIdentifier=mAxisIdentifier;
-- (void)dealloc;
+- (void).cxx_destruct;
 - (void)didInitFromSOS;
 
 @end

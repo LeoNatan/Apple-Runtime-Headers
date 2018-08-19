@@ -50,7 +50,7 @@ __attribute__((visibility("hidden")))
     struct RetainPtr<UIGestureRecognizer> _previewSecondaryGestureRecognizer;
     struct Vector<bool, 0, WTF::CrashOnOverflow, 16> _focusStateStack;
     struct unique_ptr<WebKit::SmartMagnificationController, std::__1::default_delete<WebKit::SmartMagnificationController>> _smartMagnificationController;
-    id <UITextInputDelegate> _inputDelegate;
+    struct WeakObjCPtr<id<UITextInputDelegate>> _inputDelegate;
     unsigned long long _latestTapID;
     struct TapHighlightInformation _tapHighlightInformation;
     struct WKAutoCorrectionData _autocorrectionData;

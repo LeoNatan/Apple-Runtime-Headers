@@ -254,6 +254,7 @@
 - (BOOL)isAccessibilitySelectorAllowed:(SEL)arg1;
 - (unsigned long long)textAlignmentPolicy;
 - (id)_stringDrawingContext;
+- (BOOL)_usesBezeledSelectionStyle;
 - (int)_effectiveBackgroundStyleInView:(id)arg1 forSpecifiedStyle:(long long)arg2 isTemplate:(BOOL)arg3;
 - (int)_effectiveBackgroundStyleInView:(id)arg1 isTemplate:(BOOL)arg2;
 - (void)setFieldEditorTextContainer:(id)arg1;

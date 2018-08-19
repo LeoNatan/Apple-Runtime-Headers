@@ -119,7 +119,7 @@
 - (void)accessory:(id)arg1 didActivateRelayWithError:(id)arg2;
 - (void)accessory:(id)arg1 didUpdateRelayState:(unsigned long long)arg2;
 - (void)accessory:(id)arg1 didUpdateRelayEnabled:(_Bool)arg2;
-- (void)__updateNotifyingCharactersiticStateNumber:(id)arg1;
+- (void)__updateNotifyingCharacteristicStateNumber:(id)arg1;
 - (void)notifyingCharacteristicStateNumberUpdated:(id)arg1;
 - (void)_handleMultipleCharacteristicsUpdated:(id)arg1 message:(id)arg2 completionQueue:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)handleMultipleCharacteristicsUpdated:(id)arg1 message:(id)arg2 completionQueue:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
@@ -219,6 +219,7 @@
 - (id)getPrimaryHAPAccessories;
 - (id)preferredHAPAccessoryForOperation:(long long)arg1 linkType:(long long *)arg2;
 - (long long)linkSpeed;
+- (_Bool)hasBLELinkConnected;
 - (_Bool)hasBTLELink;
 - (_Bool)hasIPLink;
 - (void)_addHAPAccessory:(id)arg1;
@@ -252,6 +253,7 @@
 - (void)_notifyClientsOfTargetControlSupportUpdate;
 - (unsigned long long)targetControllerTicksPerSecond;
 - (id)targetControllerButtonConfiguration;
+- (void)registerForActiveIdentifierNotifications;
 - (void)updateTarget:(id)arg1 name:(id)arg2 buttonConfiguration:(id)arg3;
 - (void)removeTarget:(id)arg1;
 - (void)addTarget:(id)arg1 buttonConfiguration:(id)arg2;

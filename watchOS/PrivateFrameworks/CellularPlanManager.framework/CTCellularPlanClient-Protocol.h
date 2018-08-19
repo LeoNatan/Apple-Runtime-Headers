@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class CTCellularPlanCarrierItem, CTCellularPlanItem, CTDanglingPlanItem, CTUserLabel, CTXPCServiceSubscriptionContext, NSData, NSDictionary, NSNumber, NSString;
+@class CTCellularPlanCarrierItem, CTCellularPlanItem, CTDanglingPlanItem, CTUserLabel, CTXPCServiceSubscriptionContext, NSArray, NSData, NSDictionary, NSNumber, NSString;
 
 @protocol CTCellularPlanClient <NSObject>
 - (void)getRemoteInfo:(void (^)(NSDictionary *, NSError *))arg1;
@@ -93,6 +93,7 @@
 - (void)startProvisioningWithCompletion:(void (^)(_Bool))arg1;
 - (void)getSupportedFlowTypes:(void (^)(unsigned int, NSError *))arg1;
 - (void)isNewDataPlanCapable:(void (^)(_Bool))arg1;
+- (void)getShortLabelsForLabels:(NSArray *)arg1 completion:(void (^)(NSArray *, NSError *))arg2;
 - (void)getSubscriptionContextUUIDforPlan:(NSString *)arg1 completion:(void (^)(NSString *, NSError *))arg2;
 - (void)getPredefinedLabels:(void (^)(NSArray *, NSError *))arg1;
 - (void)ping;

@@ -14,6 +14,11 @@
     ABPerson *_abPerson;
     ABAddressBook *_customBook;
     NSString *_uniqueID;
+    NSString *_cachedFirstName;
+    NSString *_cachedLastName;
+    NSString *_cachedFullName;
+    NSString *_cachedCompanyName;
+    NSString *_cachedNickName;
     CNContact *_cnContact;
 }
 
@@ -33,6 +38,11 @@
 + (id)allPeople;
 @property(retain, nonatomic) CNContact *cnContact; // @synthesize cnContact=_cnContact;
 @property(readonly, nonatomic) BOOL _registered; // @synthesize _registered;
+@property(retain, nonatomic) NSString *cachedNickName; // @synthesize cachedNickName=_cachedNickName;
+@property(retain, nonatomic) NSString *cachedCompanyName; // @synthesize cachedCompanyName=_cachedCompanyName;
+@property(retain, nonatomic) NSString *cachedFullName; // @synthesize cachedFullName=_cachedFullName;
+@property(retain, nonatomic) NSString *cachedLastName; // @synthesize cachedLastName=_cachedLastName;
+@property(retain, nonatomic) NSString *cachedFirstName; // @synthesize cachedFirstName=_cachedFirstName;
 @property(retain, nonatomic, setter=_setUniqueID:) NSString *uniqueID; // @synthesize uniqueID=_uniqueID;
 @property(retain, nonatomic, setter=_setCustomBook:) ABAddressBook *_customBook; // @synthesize _customBook;
 @property(readonly, nonatomic) ABPerson *_abPerson; // @synthesize _abPerson;

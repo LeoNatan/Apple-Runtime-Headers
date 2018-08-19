@@ -20,8 +20,10 @@
 + (id)fetchLocalUserInContext:(id)arg1 error:(id *)arg2;
 - (void)didChangeValueForKey:(id)arg1;
 - (void)updateWithDescription:(id)arg1;
+- (BOOL)unmodeled_participatesInSharedLedger;
 - (id)unmodeled_managingOrganizationSettings;
 - (id)unmodeled_managingOrganization;
+- (BOOL)unmodeled_shareWebUsage;
 - (void)unmodeled_setPasscode:(id)arg1;
 - (id)unmodeled_effectivePasscode;
 - (BOOL)unmodeled_isManaging;
@@ -46,6 +48,7 @@
 @property(retain, nonatomic) RMUserDeviceState *localUserDeviceState; // @dynamic localUserDeviceState;
 @property(readonly, copy, nonatomic) NSString *phoneticFamilyName; // @dynamic phoneticFamilyName;
 @property(readonly, copy, nonatomic) NSString *phoneticGivenName; // @dynamic phoneticGivenName;
+@property(nonatomic) BOOL supportsEncryption; // @dynamic supportsEncryption;
 @property(retain, nonatomic) NSSet *usages; // @dynamic usages;
 @property(retain, nonatomic) NSSet *userDeviceAddresses; // @dynamic userDeviceAddresses;
 @property(retain, nonatomic) NSSet *userDeviceStates; // @dynamic userDeviceStates;

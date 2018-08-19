@@ -14,7 +14,7 @@
 }
 
 + (id)providerWithCoordinator:(id)arg1 presenter:(id)arg2;
-@property(retain, nonatomic) UIViewController *presenter; // @synthesize presenter=_presenter;
+@property(nonatomic) __weak UIViewController *presenter; // @synthesize presenter=_presenter;
 - (void).cxx_destruct;
 - (void)presentAppleAccountSetupFamilyController:(id)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;

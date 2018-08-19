@@ -7,11 +7,12 @@
 #import "NSObject.h"
 
 #import "TSDCanvasDelegate.h"
+#import "TSDDynamicOverridingCanvasDelegate.h"
 
-@class NSArray, NSSet, NSString, TSDCanvas, TSKDocumentRoot, TSUColor;
+@class NSArray, NSMapTable, NSObject<TSDInfo>, NSSet, NSString, TSDCanvas, TSKDocumentRoot, TSUColor;
 
 __attribute__((visibility("hidden")))
-@interface TSDImager : NSObject <TSDCanvasDelegate>
+@interface TSDImager : NSObject <TSDDynamicOverridingCanvasDelegate, TSDCanvasDelegate>
 {
     NSArray *mInfos;
     TSUColor *mBackgroundColor;
@@ -38,6 +39,9 @@ __attribute__((visibility("hidden")))
     struct CGSize mReusableScaledImageSize;
     NSSet *mPreviousRenderDatasNeedingDownload;
     CDUnknownBlockType mPostRenderAction;
+    NSMapTable *mDynamicOverrides;
+    NSObject<TSDInfo> *mInfoToDrawBeneath;
+    CDUnknownBlockType mInfoToDrawBeneathFilter;
 }
 
 @property(nonatomic) _Bool mayBeReused; // @synthesize mayBeReused=mMayBeReused;
@@ -58,6 +62,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)p_configureCanvas;
 @property(readonly, nonatomic) struct CGRect actualScaledClipRect; // @synthesize actualScaledClipRect=mActualScaledClipRect;
 - (void)p_assertHasReadLock;
+- (id)dynamicOverrideForRep:(id)arg1;
 - (_Bool)isPrintingCanvas;
 - (_Bool)isCanvasDrawingIntoPDF:(id)arg1;
 - (struct CGRect)visibleScaledBoundsForClippingRepsOnCanvas:(id)arg1;
@@ -66,6 +71,8 @@ __attribute__((visibility("hidden")))
 - (id)pdfData;
 - (id)pngData;
 - (struct CGImage *)newImage;
+- (void)i_setDrawsOnlyBelowInfo:(id)arg1;
+- (void)setDynamicOverride:(id)arg1 forInfo:(id)arg2;
 @property(nonatomic) struct CGSize maximumScaledImageSize;
 @property(nonatomic) struct CGSize scaledImageSize;
 @property(nonatomic) double viewScale;

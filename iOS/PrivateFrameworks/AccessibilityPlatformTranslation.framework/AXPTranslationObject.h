@@ -17,11 +17,13 @@
     int _pid;
     unsigned long long _objectID;
     NSString *_remoteDebugDescription;
+    NSString *_bridgeDelegateToken;
 }
 
 + (_Bool)supportsSecureCoding;
 + (id)allowedDecodableClasses;
 + (void)initialize;
+@property(copy, nonatomic) NSString *bridgeDelegateToken; // @synthesize bridgeDelegateToken=_bridgeDelegateToken;
 @property(copy, nonatomic) NSString *remoteDebugDescription; // @synthesize remoteDebugDescription=_remoteDebugDescription;
 @property(nonatomic) _Bool isApplicationElement; // @synthesize isApplicationElement=_isApplicationElement;
 @property(nonatomic) int pid; // @synthesize pid=_pid;

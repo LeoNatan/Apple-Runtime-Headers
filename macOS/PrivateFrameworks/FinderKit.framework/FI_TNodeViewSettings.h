@@ -80,6 +80,7 @@ __attribute__((visibility("hidden")))
 + (id)keyPathsForValuesAffectingIsDesktop;
 + (id)keyPathsForValuesAffectingIsAirDrop;
 + (id)keyPathsForValuesAffectingIsSearch;
++ (id)keyPathsForValuesAffectingGroupBy;
 + (id)keyPathsForValuesAffectingFxShowArrangeByAndSortByPopups;
 + (void)setViewStyleInPrefs:(int)arg1 forName:(struct TString)arg2;
 + (int)viewStyleFromPrefsForName:(struct TString)arg1;

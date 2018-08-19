@@ -10,6 +10,7 @@
 @class INArchivedObject, NSDictionary, NSNumber, NSString;
 
 @protocol INRunVoiceCommandIntentResponseExport <NSObject, JSExport>
+@property(copy, nonatomic) NSString *underlyingIntentTitle;
 @property(copy, nonatomic) NSNumber *interstitialDisabled;
 @property(copy, nonatomic) NSNumber *continueRunning;
 @property(nonatomic) int toggleState;

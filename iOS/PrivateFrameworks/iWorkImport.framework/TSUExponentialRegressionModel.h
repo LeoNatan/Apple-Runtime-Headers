@@ -20,6 +20,7 @@ __attribute__((visibility("hidden")))
     NSMutableArray *mSuperscriptRangesArray;
 }
 
+- (void).cxx_destruct;
 - (struct _NSRange)superscriptRangeAtIndex:(int)arg1;
 - (int)numSuperscriptRanges;
 - (id)getEquationStringAndBuildSuperscriptRangesArray:(id)arg1;

@@ -6,41 +6,24 @@
 
 #import "NSObject.h"
 
-@class NSDictionary, NSMutableArray, NSObject<OS_dispatch_queue>;
+@class NSObject<OS_dispatch_queue>;
 
 @interface _MDIndexExtensionLoader : NSObject
 {
-    BOOL _extensionsCacheNeedsLoad;
     id _matchingContext;
     NSObject<OS_dispatch_queue> *_queue;
-    NSDictionary *_extensionsByBundleId;
-    NSDictionary *_fileProviderBundleMap;
-    NSMutableArray *_containerPaths;
-    NSMutableArray *_queueLabels;
-    NSMutableArray *_containerIDs;
-    NSMutableArray *_extensionIdentifiers;
+    long long _notificationCount;
 }
 
 + (id)_matchDictionary;
-@property BOOL extensionsCacheNeedsLoad; // @synthesize extensionsCacheNeedsLoad=_extensionsCacheNeedsLoad;
-@property(retain, nonatomic) NSMutableArray *extensionIdentifiers; // @synthesize extensionIdentifiers=_extensionIdentifiers;
-@property(retain, nonatomic) NSMutableArray *containerIDs; // @synthesize containerIDs=_containerIDs;
-@property(retain, nonatomic) NSMutableArray *queueLabels; // @synthesize queueLabels=_queueLabels;
-@property(retain, nonatomic) NSMutableArray *containerPaths; // @synthesize containerPaths=_containerPaths;
-@property(retain, nonatomic) NSDictionary *fileProviderBundleMap; // @synthesize fileProviderBundleMap=_fileProviderBundleMap;
-@property(retain, nonatomic) NSDictionary *extensionsByBundleId; // @synthesize extensionsByBundleId=_extensionsByBundleId;
+@property(nonatomic) long long notificationCount; // @synthesize notificationCount=_notificationCount;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(retain, nonatomic) id matchingContext; // @synthesize matchingContext=_matchingContext;
 - (void).cxx_destruct;
-- (id)fetchFileProviderBundleMap;
-- (id)_loadExtensionsSynchronously;
 - (void)stopLookingForExtensions;
-- (void)buildExtensionsCacheWithMatchUpdateHandler:(CDUnknownBlockType)arg1;
 - (void)startLookingForExtensionsWithMatchUpdateHandler:(CDUnknownBlockType)arg1;
 - (void)findExtensionsWithCompletionBlock:(CDUnknownBlockType)arg1;
-- (id)_filterIndexExtensions:(id)arg1;
-- (void)writeExtensionsCacheToDisk;
-- (void)buildExtensionsFromCache;
+- (id)_filterIndexExtensions:(id)arg1 outFileProviderBundleMap:(id *)arg2;
 - (id)init;
 
 @end

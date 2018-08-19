@@ -8,17 +8,19 @@
 
 #import "TSKChangeSourceObserver.h"
 
-@class NSString, TSDLayoutGeometry, TSDShadow, TSWPEquationInfo;
+@class NSString, TSDLayoutGeometry, TSDShadow, TSUColor, TSWPEquationInfo;
 
 __attribute__((visibility("hidden")))
 @interface TSWPEquationLayout : TSDMediaLayout <TSKChangeSourceObserver>
 {
+    TSUColor *_fontSmoothingBackgroundColor;
     _Bool _equationIsValid;
     TSDLayoutGeometry *_equationGeometry;
     id <EQKitLayout> _equationLayout;
     id <EQKitLayoutContext> _equationLayoutContext;
     TSDLayoutGeometry *_baseEquationLayoutGeometry;
     TSDLayoutGeometry *_baseInfoGeometry;
+    struct CGAffineTransform _layoutToStrokeTransform;
     struct CGAffineTransform _layoutToEquationTransform;
 }
 
@@ -28,15 +30,18 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) id <EQKitLayout> equationLayout; // @synthesize equationLayout=_equationLayout;
 @property(nonatomic) _Bool equationIsValid; // @synthesize equationIsValid=_equationIsValid;
 @property(nonatomic) struct CGAffineTransform layoutToEquationTransform; // @synthesize layoutToEquationTransform=_layoutToEquationTransform;
+@property(nonatomic) struct CGAffineTransform layoutToStrokeTransform; // @synthesize layoutToStrokeTransform=_layoutToStrokeTransform;
 @property(retain, nonatomic) TSDLayoutGeometry *equationGeometry; // @synthesize equationGeometry=_equationGeometry;
 - (void).cxx_destruct;
-- (id)p_adjustComputedLayoutGeometry;
+- (struct CGRect)adornmentBoundsWithEquationSize:(struct CGSize)arg1;
 - (struct CGRect)computeAlignmentFrameInRoot:(_Bool)arg1;
 - (void)preprocessChanges:(id)arg1 forChangeSource:(id)arg2;
 - (void)invalidateSize;
+- (void)offsetGeometryBy:(struct CGPoint)arg1;
 @property(readonly, nonatomic) TSDShadow *textShadow;
 @property(readonly, nonatomic) struct CGColor *textColor;
 - (_Bool)isDraggable;
+@property(nonatomic) TSUColor *fontSmoothingBackgroundColor;
 - (_Bool)canFlip;
 - (_Bool)supportsRotation;
 @property(readonly, nonatomic) TSWPEquationInfo *equationInfo;

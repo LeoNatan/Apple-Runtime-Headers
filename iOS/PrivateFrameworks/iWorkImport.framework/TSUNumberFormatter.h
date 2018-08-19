@@ -67,6 +67,8 @@ __attribute__((visibility("hidden")))
 + (int)positionOfCurrencySymbolInNumberFormatSubpattern:(id)arg1;
 + (int)positionOfSymbol:(id)arg1 inNumberFormatSubpattern:(id)arg2;
 + (id)stringBySubstitutingCharactersCFNumberFormatterDoesntUnderstand:(id)arg1;
++ (void)unlock;
++ (void)lock;
 + (void)initialize;
 - (void).cxx_destruct;
 - (id)p_scientificFormatters;

@@ -19,11 +19,15 @@
     _Bool _optOutOfNotificationTuning;
     _Bool _hasLegacyMapInUserInfo;
     _Bool _hasLegacyMapInContext;
+    _Bool _optOutOfSubtitleRemovalForOlderWatches;
     NSArray *_whitelistedSubtypes;
     NSArray *_blacklistedCategories;
     NSNumber *_watchVersionThatUsesUserInfoForContext;
+    NSArray *_additionalBridgeSectionIDs;
 }
 
+@property(nonatomic) _Bool optOutOfSubtitleRemovalForOlderWatches; // @synthesize optOutOfSubtitleRemovalForOlderWatches=_optOutOfSubtitleRemovalForOlderWatches;
+@property(retain, nonatomic) NSArray *additionalBridgeSectionIDs; // @synthesize additionalBridgeSectionIDs=_additionalBridgeSectionIDs;
 @property(retain, nonatomic) NSNumber *watchVersionThatUsesUserInfoForContext; // @synthesize watchVersionThatUsesUserInfoForContext=_watchVersionThatUsesUserInfoForContext;
 @property(nonatomic) _Bool hasLegacyMapInContext; // @synthesize hasLegacyMapInContext=_hasLegacyMapInContext;
 @property(nonatomic) _Bool hasLegacyMapInUserInfo; // @synthesize hasLegacyMapInUserInfo=_hasLegacyMapInUserInfo;

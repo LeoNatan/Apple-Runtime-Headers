@@ -85,7 +85,7 @@
 + (Class)supplementaryActionsType;
 + (void)_addAttachmentsFromBBBulletin:(id)arg1 toBLTPBBulletin:(id)arg2 observer:(id)arg3 completion:(CDUnknownBlockType)arg4;
 + (void)_attachmentFromBBAttachmentMetadata:(id)arg1 bulletin:(id)arg2 observer:(id)arg3 fileOption:(unsigned long long)arg4 completion:(CDUnknownBlockType)arg5;
-+ (void)bulletinWithBBBulletin:(id)arg1 sockPuppetAppBundleID:(id)arg2 observer:(id)arg3 feed:(unsigned long long)arg4 teamID:(id)arg5 universalSectionID:(id)arg6 isCriticalBulletin:(_Bool)arg7 replyToken:(id)arg8 gizmoLegacyCategoryID:(id)arg9 useUserInfoForContext:(_Bool)arg10 completion:(CDUnknownBlockType)arg11;
++ (void)bulletinWithBBBulletin:(id)arg1 sockPuppetAppBundleID:(id)arg2 observer:(id)arg3 feed:(unsigned long long)arg4 teamID:(id)arg5 universalSectionID:(id)arg6 isCriticalBulletin:(_Bool)arg7 replyToken:(id)arg8 gizmoLegacyCategoryID:(id)arg9 useUserInfoForContext:(_Bool)arg10 removeSubtitleForOlderWatches:(_Bool)arg11 completion:(CDUnknownBlockType)arg12;
 @property(nonatomic) double soundAudioVolume; // @synthesize soundAudioVolume=_soundAudioVolume;
 @property(nonatomic) _Bool hasCriticalIcon; // @synthesize hasCriticalIcon=_hasCriticalIcon;
 @property(nonatomic) _Bool soundShouldIgnoreRingerSwitch; // @synthesize soundShouldIgnoreRingerSwitch=_soundShouldIgnoreRingerSwitch;

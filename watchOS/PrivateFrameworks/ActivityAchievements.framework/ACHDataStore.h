@@ -39,6 +39,7 @@
 @property(retain, nonatomic) HDKeyValueDomain *defaultsDomain; // @synthesize defaultsDomain=_defaultsDomain;
 @property(retain, nonatomic) HDProfile *profile; // @synthesize profile=_profile;
 - (void).cxx_destruct;
+- (_Bool)_forceDatabasePopulate;
 - (void)_injectError:(id)arg1;
 - (void)removeObserver:(id)arg1;
 - (void)addObserver:(id)arg1;

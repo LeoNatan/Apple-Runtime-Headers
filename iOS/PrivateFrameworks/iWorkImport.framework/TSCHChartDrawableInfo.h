@@ -108,8 +108,8 @@ __attribute__((visibility("hidden")))
 - (id)componentRootObject;
 - (_Bool)registerLast;
 - (UUIDData_5fbc143e)formulaOwnerUID;
-- (void)unregisterFromCalculationEngine:(id)arg1;
-- (void)registerWithCalculationEngineForDocumentLoad:(id)arg1;
+- (void)unregisterFromCalcEngine:(id)arg1;
+- (void)registerWithCalcEngineForDocumentLoad:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

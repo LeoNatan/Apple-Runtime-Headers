@@ -16,6 +16,7 @@
     _Bool _reachable;
     _Bool _securitySessionOpen;
     _Bool _supportsTimedWrite;
+    _Bool _bleLinkConnected;
     _Bool _incompatibleUpdate;
     NSNumber *_category;
     unsigned long long _configNumber;
@@ -43,6 +44,7 @@
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *clientQueue; // @synthesize clientQueue=_clientQueue;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *internalDelegateQueue; // @synthesize internalDelegateQueue=_internalDelegateQueue;
 @property(readonly, nonatomic) NSHashTable *internalDelegates; // @synthesize internalDelegates=_internalDelegates;
+@property(readonly, nonatomic, getter=isBLELinkConnected) _Bool bleLinkConnected; // @synthesize bleLinkConnected=_bleLinkConnected;
 @property(copy) HMFVersion *version; // @synthesize version=_version;
 @property(nonatomic) _Bool supportsTimedWrite; // @synthesize supportsTimedWrite=_supportsTimedWrite;
 @property(readonly, nonatomic) long long linkType; // @synthesize linkType=_linkType;

@@ -48,7 +48,6 @@
 - (void)navigateToCollection:(id)arg1 animated:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 - (_Bool)canNavigateToCollection:(id)arg1;
 @property(readonly, nonatomic) PUAlbumListViewControllerSpec *albumListViewControllerSpec;
-- (void)viewDidAppear:(_Bool)arg1;
 - (void)viewDidLoad;
 - (id)initWithAlbumsGadgetProvider:(id)arg1;
 - (id)init;

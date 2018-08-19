@@ -6,11 +6,10 @@
 
 #import "NSObject.h"
 
-@class MPAVRoute, MPAVRoutingControllerSelectionQueue, MPAVRoutingDataSource, NSArray, NSMutableArray, NSObject<OS_dispatch_queue>, NSSet, NSString;
+@class MPAVRoute, MPAVRoutingControllerSelectionQueue, MPAVRoutingDataSource, NSArray, NSMutableArray, NSSet, NSString;
 
 @interface MPAVRoutingController : NSObject
 {
-    NSObject<OS_dispatch_queue> *_serialQueue;
     NSArray *_cachedRoutes;
     NSArray *_cachedPickedRoutes;
     NSMutableArray *_asyncFetchingCompletionHandlers;
@@ -42,6 +41,7 @@
 + (void)getActiveRouteWithCompletion:(CDUnknownBlockType)arg1;
 + (id)_currentDeviceRoutingIconImage;
 + (id)_iconImageForRoute:(id)arg1;
++ (id)_sharedSerialQueue;
 @property(nonatomic) __weak id <MPAVOutputDevicePlaybackDataSource> playbackDataSource; // @synthesize playbackDataSource=_playbackDataSource;
 @property(retain, nonatomic) MPAVRoute *legacyCachedRoute; // @synthesize legacyCachedRoute=_legacyCachedRoute;
 @property(nonatomic) long long routeTypes; // @synthesize routeTypes=_routeTypes;

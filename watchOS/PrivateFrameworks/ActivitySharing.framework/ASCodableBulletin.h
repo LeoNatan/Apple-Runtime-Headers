@@ -12,6 +12,7 @@
 
 @interface ASCodableBulletin : PBCodable <NSCopying>
 {
+    long long _competitionStage;
     double _timestamp;
     long long _type;
     NSData *_achievementData;
@@ -21,11 +22,13 @@
     NSString *_title;
     NSData *_workoutData;
     struct {
+        unsigned int competitionStage:1;
         unsigned int timestamp:1;
         unsigned int type:1;
     } _has;
 }
 
+@property(nonatomic) long long competitionStage; // @synthesize competitionStage=_competitionStage;
 @property(nonatomic) double timestamp; // @synthesize timestamp=_timestamp;
 @property(retain, nonatomic) NSData *snapshotData; // @synthesize snapshotData=_snapshotData;
 @property(retain, nonatomic) NSData *workoutData; // @synthesize workoutData=_workoutData;
@@ -44,6 +47,7 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(nonatomic) _Bool hasCompetitionStage;
 @property(nonatomic) _Bool hasTimestamp;
 @property(readonly, nonatomic) _Bool hasSnapshotData;
 @property(readonly, nonatomic) _Bool hasWorkoutData;

@@ -17,7 +17,6 @@
     NSString *_budgetItemIdentifier;
     NSString *_categoryIdentifier;
     unsigned long long _itemType;
-    NSString *_displayName;
     UIColor *_color;
     unsigned long long _timePeriod;
     NSDate *_startDate;
@@ -33,13 +32,13 @@
 @property(copy, nonatomic) NSDate *startDate; // @synthesize startDate=_startDate;
 @property(nonatomic) unsigned long long timePeriod; // @synthesize timePeriod=_timePeriod;
 @property(retain, nonatomic) UIColor *color; // @synthesize color=_color;
-@property(copy, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
 @property(nonatomic) unsigned long long itemType; // @synthesize itemType=_itemType;
 @property(copy, nonatomic) NSString *categoryIdentifier; // @synthesize categoryIdentifier=_categoryIdentifier;
 @property(copy, nonatomic) NSString *budgetItemIdentifier; // @synthesize budgetItemIdentifier=_budgetItemIdentifier;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
 @property(readonly, nonatomic) UIImage *image;
+@property(readonly, copy, nonatomic) NSString *displayName;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;

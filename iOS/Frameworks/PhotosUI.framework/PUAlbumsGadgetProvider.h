@@ -43,7 +43,7 @@
 - (void)loadDataForGadgets;
 - (id)gadgetForCollection:(id)arg1;
 - (id)gadgetForIndexPath:(id)arg1;
-- (void)initiateBackgroundFetchingIfNeeded;
+- (void)startLoadingRemainingData;
 @property(readonly, nonatomic) const struct __CFString *seeAllAccessoryButtonEventTrackerKey;
 @property(readonly, nonatomic) NSString *seeAllAccessoryButtonTitle;
 @property(readonly, nonatomic) _Bool shouldShowSeeAllAccessoryButton;

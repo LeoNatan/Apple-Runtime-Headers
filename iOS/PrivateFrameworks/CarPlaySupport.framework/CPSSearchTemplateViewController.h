@@ -17,11 +17,15 @@
 
 @interface CPSSearchTemplateViewController : UISearchContainerViewController <UISearchResultsUpdating, UISearchBarDelegate, UISearchControllerDelegate, CPListTemplateDelegate, CPSBaseTemplateViewController, CPSearchTemplateProviding>
 {
+    _Bool _didPop;
+    _Bool _didDisappear;
     id <CPSTemplateViewControllerDelegate> _viewControllerDelegate;
     CPTemplate *_associatedTemplate;
     id <CPTemplateDelegate> _templateDelegate;
 }
 
+@property(nonatomic) _Bool didDisappear; // @synthesize didDisappear=_didDisappear;
+@property(nonatomic) _Bool didPop; // @synthesize didPop=_didPop;
 @property(retain, nonatomic) id <CPTemplateDelegate> templateDelegate; // @synthesize templateDelegate=_templateDelegate;
 @property(retain, nonatomic) CPTemplate *associatedTemplate; // @synthesize associatedTemplate=_associatedTemplate;
 @property(nonatomic) __weak id <CPSTemplateViewControllerDelegate> viewControllerDelegate; // @synthesize viewControllerDelegate=_viewControllerDelegate;
@@ -33,9 +37,12 @@
 - (void)_cps_viewControllerWasPopped;
 @property(readonly, nonatomic) __weak id <CPSearchClientTemplateDelegate> searchTemplateDelegate;
 @property(readonly, nonatomic) CPSearchTemplate *searchTemplate;
-- (void)viewDidAppear:(_Bool)arg1;
 - (void)viewDidDisappear:(_Bool)arg1;
+- (void)viewWillDisappear:(_Bool)arg1;
+- (void)viewDidAppear:(_Bool)arg1;
+- (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLoad;
+- (void)_cleanup;
 - (id)initWithSearchController:(id)arg1 searchTemplate:(id)arg2 templateDelegate:(id)arg3;
 
 // Remaining properties

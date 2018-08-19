@@ -13,16 +13,22 @@
 @interface CLKTreatedImageKey : NSObject <NSCopying>
 {
     UIImage *_rawImage;
+    int _scaleMode;
     float _scale;
     int _maskMode;
     float _cornerRadius;
+    struct CGSize _maxSize;
 }
 
++ (id)keyWithRawImage:(id)arg1 maxSize:(struct CGSize)arg2 cornerRadius:(float)arg3;
++ (id)keyWithRawImage:(id)arg1 maxSize:(struct CGSize)arg2 maskMode:(int)arg3;
 + (id)keyWithRawImage:(id)arg1 scale:(float)arg2 cornerRadius:(float)arg3;
 + (id)keyWithRawImage:(id)arg1 scale:(float)arg2 maskMode:(int)arg3;
 @property(readonly, nonatomic) float cornerRadius; // @synthesize cornerRadius=_cornerRadius;
 @property(readonly, nonatomic) int maskMode; // @synthesize maskMode=_maskMode;
 @property(readonly, nonatomic) float scale; // @synthesize scale=_scale;
+@property(readonly, nonatomic) struct CGSize maxSize; // @synthesize maxSize=_maxSize;
+@property(readonly, nonatomic) int scaleMode; // @synthesize scaleMode=_scaleMode;
 @property(readonly, nonatomic) UIImage *rawImage; // @synthesize rawImage=_rawImage;
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;

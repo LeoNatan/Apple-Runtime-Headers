@@ -34,6 +34,8 @@ __attribute__((visibility("hidden")))
     TSUBezierPath *mTracedPath;
     struct CGSize mNaturalSize;
     _Bool mCurrentlyInDocument;
+    double mDescentForInlineLayout;
+    _Bool mDescentForInlineLayoutValid;
 }
 
 + (id)presetKinds;

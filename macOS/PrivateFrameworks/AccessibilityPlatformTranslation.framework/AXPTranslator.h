@@ -11,16 +11,20 @@
 @interface AXPTranslator : NSObject
 {
     BOOL _accessibilityEnabled;
+    BOOL _supportsDelegateTokens;
     id <AXPTranslationDelegateHelper> _bridgeDelegate;
+    id <AXPTranslationTokenDelegateHelper> _bridgeTokenDelegate;
     id <AXPTranslationRuntimeHelper> _runtimeDelegate;
     id <AXPTranslationSystemAppDelegate> _systemAppDelegate;
     NSMutableDictionary *_fakeElementCache;
 }
 
 + (id)sharedInstance;
+@property(nonatomic) BOOL supportsDelegateTokens; // @synthesize supportsDelegateTokens=_supportsDelegateTokens;
 @property(retain, nonatomic) NSMutableDictionary *fakeElementCache; // @synthesize fakeElementCache=_fakeElementCache;
 @property(nonatomic) __weak id <AXPTranslationSystemAppDelegate> systemAppDelegate; // @synthesize systemAppDelegate=_systemAppDelegate;
 @property(nonatomic) __weak id <AXPTranslationRuntimeHelper> runtimeDelegate; // @synthesize runtimeDelegate=_runtimeDelegate;
+@property(nonatomic) __weak id <AXPTranslationTokenDelegateHelper> bridgeTokenDelegate; // @synthesize bridgeTokenDelegate=_bridgeTokenDelegate;
 @property(nonatomic) __weak id <AXPTranslationDelegateHelper> bridgeDelegate; // @synthesize bridgeDelegate=_bridgeDelegate;
 @property(nonatomic) BOOL accessibilityEnabled; // @synthesize accessibilityEnabled=_accessibilityEnabled;
 - (void).cxx_destruct;
@@ -36,12 +40,13 @@
 - (id)processActionRequest:(id)arg1;
 - (id)processMultipleAttributeRequest:(id)arg1;
 - (id)macPlatformElementFromTranslation:(id)arg1;
-- (id)objectAtPoint:(struct CGPoint)arg1 displayId:(unsigned int)arg2;
+- (id)objectAtPoint:(struct CGPoint)arg1 displayId:(unsigned int)arg2 bridgeDelegateToken:(id)arg3;
 - (id)processTranslatorRequest:(id)arg1;
 - (id)platformTranslator;
 - (id)sendTranslatorRequest:(id)arg1;
+- (void)_resetBridgeTokensForResponse:(id)arg1 bridgeDelegateToken:(id)arg2;
 - (void)handleNotification:(unsigned long long)arg1 data:(id)arg2 associatedObject:(id)arg3;
-- (id)frontmostApplicationWithDisplayId:(unsigned int)arg1;
+- (id)frontmostApplicationWithDisplayId:(unsigned int)arg1 bridgeDelegateToken:(id)arg2;
 - (id)translationApplicationObjectForPid:(int)arg1;
 - (id)init;
 

@@ -6,7 +6,7 @@
 
 #import <FinderKit/FI_TTableViewItem.h>
 
-@class FI_TLabelView, NSColor, NSImage, NSString;
+@class FI_TLabelView, NSImage, NSString;
 
 __attribute__((visibility("hidden")))
 @interface FI_TTaggingSuggestionsTableViewItem : FI_TTableViewItem
@@ -40,14 +40,12 @@ __attribute__((visibility("hidden")))
 - (id).cxx_construct;
 - (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool isTag; // @dynamic isTag;
-@property(retain, nonatomic) NSColor *textColor; // @dynamic textColor;
 - (void)setColorNumber:(id)arg1;
 - (id)colorNumber;
 @property(retain, nonatomic) NSString *name; // @dynamic name;
 - (void)dealloc;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithTag:(id)arg1 needsCustomSelect:(_Bool)arg2;
-- (id)init;
 - (void)setLabelColor:(long long)arg1;
 
 // Remaining properties

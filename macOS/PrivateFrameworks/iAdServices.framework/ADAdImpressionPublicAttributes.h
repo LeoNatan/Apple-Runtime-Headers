@@ -23,6 +23,7 @@
     NSArray *_videoAssets;
     NSDictionary *_mediaAsset;
     NSString *_uniqueIdentifier;
+    NSArray *_adSpecCreativeSizes;
     NSURL *_audioURL;
     NSURL *_staticImageURL;
     NSURL *_logoImageURL;
@@ -69,6 +70,7 @@
 @property(retain, nonatomic) NSURL *staticImageURL; // @synthesize staticImageURL=_staticImageURL;
 @property(retain, nonatomic) NSURL *audioURL; // @synthesize audioURL=_audioURL;
 @property(nonatomic) BOOL hasAction; // @synthesize hasAction=_hasAction;
+@property(retain, nonatomic) NSArray *adSpecCreativeSizes; // @synthesize adSpecCreativeSizes=_adSpecCreativeSizes;
 @property(copy, nonatomic) NSString *uniqueIdentifier; // @synthesize uniqueIdentifier=_uniqueIdentifier;
 @property(retain, nonatomic) NSDictionary *mediaAsset; // @synthesize mediaAsset=_mediaAsset;
 @property(retain, nonatomic) NSArray *videoAssets; // @synthesize videoAssets=_videoAssets;

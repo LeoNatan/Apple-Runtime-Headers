@@ -38,6 +38,8 @@ __attribute__((visibility("hidden")))
 - (id)dataFormatterForAxis:(id)arg1 documentRoot:(id)arg2;
 - (id)commandToSetChartGridDirection:(int)arg1 documentRoot:(id)arg2;
 - (void)invalidateAndSynchronizeMediator;
+- (_Bool)hasTractReference;
+- (_Bool)hasCategoryReferences;
 - (void)resumeCalculationEngine;
 - (void)pauseCalculationEngine;
 - (_Bool)isEditing;

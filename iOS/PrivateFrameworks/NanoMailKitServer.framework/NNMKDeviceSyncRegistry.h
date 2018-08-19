@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class NNMKSQLiteConnection, NSDate, NSString;
+@class NNMKSQLiteConnection, NSDate, NSNumber, NSString;
 
 @interface NNMKDeviceSyncRegistry : NSObject
 {
@@ -16,6 +16,7 @@
     _Bool _recreatedFromScratch;
     NSString *_path;
     unsigned long long _fullSyncVersion;
+    NSNumber *_supportsWebKit;
     double _deviceScreenWidth;
     double _deviceScreenScale;
     NSDate *_disconnectedSince;
@@ -32,6 +33,7 @@
 @property(nonatomic) double deviceScreenWidth; // @synthesize deviceScreenWidth=_deviceScreenWidth;
 @property(nonatomic) _Bool organizeByThread; // @synthesize organizeByThread=_organizeByThread;
 @property(nonatomic) _Bool isMessagesSyncSuspendedByConnectivity; // @synthesize isMessagesSyncSuspendedByConnectivity=_isMessagesSyncSuspendedByConnectivity;
+@property(nonatomic) NSNumber *supportsWebKit; // @synthesize supportsWebKit=_supportsWebKit;
 @property(nonatomic) unsigned long long fullSyncVersion; // @synthesize fullSyncVersion=_fullSyncVersion;
 @property(readonly, nonatomic) NSString *path; // @synthesize path=_path;
 - (void).cxx_destruct;

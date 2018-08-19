@@ -11,6 +11,7 @@
 @protocol HDWorkoutDataSource <NSObject>
 @property(readonly, copy) NSUUID *workoutDataProcessorUUID;
 @property(readonly) HKDataFlowLink *workoutDataFlowLink;
+- (void)workoutDataDestination:(id <HDWorkoutDataDestination>)arg1 requestsFinalDataFrom:(NSDate *)arg2 to:(NSDate *)arg3 completion:(void (^)(_Bool, NSError *))arg4;
 - (void)workoutDataDestination:(id <HDWorkoutDataDestination>)arg1 didChangeFromState:(unsigned int)arg2 toState:(unsigned int)arg3;
 - (void)workoutDataDestination:(id <HDWorkoutDataDestination>)arg1 requestsDataFrom:(NSDate *)arg2 to:(NSDate *)arg3;
 

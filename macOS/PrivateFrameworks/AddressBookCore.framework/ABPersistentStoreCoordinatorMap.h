@@ -14,6 +14,7 @@
     ABPersistentStoreCoordinatorFactory *_coordinatorFactory;
 }
 
++ (BOOL)resultHasPersistentStoresAttached:(id)arg1;
 + (id)coordinatorKeyForStoreDescription:(id)arg1;
 + (id)cacheKeyForAllSources;
 + (id)cacheKeyForDatabasePath:(id)arg1;
@@ -25,6 +26,8 @@
 - (id)coordinatorWithDatabasePath:(id)arg1 storeDescription:(id)arg2;
 - (void)nts_logInitialStoresForCoordinator:(id)arg1;
 - (void)nts_updateCacheEntry:(id)arg1 withResults:(id)arg2;
+- (void)nts_attachPersistentStoresIfNecessary:(id)arg1;
+- (void)nts_processCachedResults:(id)arg1;
 - (id)nts_resultsFromCacheEntry:(id)arg1;
 - (id)nts_coordinatorForAllSourcesAndDidUpdateMap:(char *)arg1;
 - (id)coordinatorForAllSourcesAndDidUpdateMap:(char *)arg1;

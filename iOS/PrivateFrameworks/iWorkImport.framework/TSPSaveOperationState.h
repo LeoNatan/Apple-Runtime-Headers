@@ -20,6 +20,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) int sampleID; // @synthesize sampleID=_sampleID;
 @property(readonly, nonatomic) long long updateType; // @synthesize updateType=_updateType;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) _Bool inheritPermissions;
 @property(readonly, nonatomic) _Bool preserveDocumentUUID;
 @property(readonly, nonatomic) _Bool shouldUpdate;
 @property(readonly, nonatomic) _Bool hasRemoteData;

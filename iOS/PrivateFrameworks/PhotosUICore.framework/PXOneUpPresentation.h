@@ -22,6 +22,7 @@
         _Bool respondsToActionManagerForPreviewing;
         _Bool respondsToActionContext;
         _Bool respondsToGestureProvider;
+        _Bool respondsToImportStatusManager;
     } _delegateFlags;
     struct {
         _Bool respondsToPresentingViewControllerViewWillAppear;
@@ -54,6 +55,7 @@
 - (id)regionOfInterestForAssetReference:(id)arg1;
 - (id)currentImageForAssetReference:(id)arg1;
 @property(readonly, nonatomic) _Bool shouldAutoPlay;
+@property(readonly, nonatomic) id <PXImportStatusManager> importStatusManager;
 @property(readonly, nonatomic) long long actionContext;
 @property(readonly, nonatomic) PXAssetActionManager *actionManagerForPreviewing;
 @property(readonly, nonatomic) PXAssetActionManager *actionManager;

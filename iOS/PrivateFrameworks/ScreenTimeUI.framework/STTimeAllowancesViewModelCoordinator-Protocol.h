@@ -11,6 +11,7 @@
 @protocol STTimeAllowancesViewModelCoordinator <NSObject>
 @property(readonly) STTimeAllowancesViewModel *viewModel;
 - (void)respondToAskForTime:(STAskForTimeRequestResponse *)arg1 withApproval:(_Bool)arg2 timeApproved:(NSNumber *)arg3 completionHandler:(void (^)(NSError *))arg4;
+- (void)saveDefaultAlwaysAllowListWithCompletionHandler:(void (^)(NSError *))arg1;
 - (void)saveAlwaysAllowList:(STAlwaysAllowList *)arg1 completionHandler:(void (^)(NSError *))arg2;
 - (void)deleteAllowance:(STAllowance *)arg1 completionHandler:(void (^)(NSError *))arg2;
 - (void)saveAllowance:(STAllowance *)arg1 completionHandler:(void (^)(NSError *))arg2;

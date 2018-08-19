@@ -101,6 +101,7 @@
 - (id)occurrencesForStartDate:(id)arg1 endDate:(id)arg2 preSorted:(_Bool)arg3 waitForLoad:(_Bool)arg4;
 - (id)occurrencesForStartDay:(id)arg1 endDay:(id)arg2 preSorted:(_Bool)arg3 waitForLoad:(_Bool)arg4;
 - (void)addOccurrenceAwaitingRefresh:(id)arg1;
+- (void)updateSelectedDateTimeZone;
 @property(readonly, nonatomic) EKCalendarDate *selectedDay;
 - (id)refreshCalendarDataIfNeeded:(_Bool)arg1;
 - (id)refreshAccountListIfNeeded:(_Bool)arg1;

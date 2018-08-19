@@ -14,23 +14,25 @@
 {
     int _notifynanoweatherdForecastUpdatedToken;
     _Bool _waitingOnData;
-    WFLocation *_currentLocation;
-    WFLocation *_selectedLocation;
-    NWKLocationForecast *_selectedLocationForecast;
-    NSObject<OS_dispatch_queue> *_workQ;
+    WFLocation *_locked_currentLocation;
+    WFLocation *_locked_selectedLocation;
     id <NWKSelectedLocationWeatherMonitorObserver> _observer;
+    NSObject<OS_dispatch_queue> *_workQ;
     CLLocationManager *_noOpLocationManager;
     NWKForecastManager *_forecastManager;
+    NSObject<OS_dispatch_queue> *_lockQueue;
+    NWKLocationForecast *_locked_selectedLocationForecast;
 }
 
+@property(retain, nonatomic) NWKLocationForecast *locked_selectedLocationForecast; // @synthesize locked_selectedLocationForecast=_locked_selectedLocationForecast;
+@property(retain, nonatomic) NSObject<OS_dispatch_queue> *lockQueue; // @synthesize lockQueue=_lockQueue;
 @property(readonly, nonatomic) NWKForecastManager *forecastManager; // @synthesize forecastManager=_forecastManager;
 @property(readonly, nonatomic) CLLocationManager *noOpLocationManager; // @synthesize noOpLocationManager=_noOpLocationManager;
-@property(readonly, nonatomic) __weak id <NWKSelectedLocationWeatherMonitorObserver> observer; // @synthesize observer=_observer;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *workQ; // @synthesize workQ=_workQ;
-@property(readonly, nonatomic, getter=isWaitingOnData) _Bool waitingOnData; // @synthesize waitingOnData=_waitingOnData;
-@property(readonly, nonatomic) NWKLocationForecast *selectedLocationForecast; // @synthesize selectedLocationForecast=_selectedLocationForecast;
-@property(readonly, nonatomic) WFLocation *selectedLocation; // @synthesize selectedLocation=_selectedLocation;
-@property(readonly, nonatomic) WFLocation *currentLocation; // @synthesize currentLocation=_currentLocation;
+@property(readonly, nonatomic) __weak id <NWKSelectedLocationWeatherMonitorObserver> observer; // @synthesize observer=_observer;
+@property(getter=isWaitingOnData) _Bool waitingOnData; // @synthesize waitingOnData=_waitingOnData;
+@property(retain, nonatomic) WFLocation *locked_selectedLocation; // @synthesize locked_selectedLocation=_locked_selectedLocation;
+@property(retain, nonatomic) WFLocation *locked_currentLocation; // @synthesize locked_currentLocation=_locked_currentLocation;
 - (void).cxx_destruct;
 - (void)manager:(id)arg1 updatedStaticLocationsFrom:(id)arg2 to:(id)arg3;
 - (void)manager:(id)arg1 updatedSelectedLocationFrom:(id)arg2 to:(id)arg3;
@@ -39,11 +41,13 @@
 - (void)manager:(id)arg1 updatedDisplayName:(id)arg2 forLocation:(id)arg3;
 - (void)_temperaturePreferenceChanged:(id)arg1;
 - (void)_handleLocaleChange:(id)arg1;
-- (void)_resume;
-- (void)_populateSelectedLocationForecastConditionsWithSelectedLocation;
+- (void)_workQ_resume;
+- (void)_locked_populateSelectedLocationForecastConditionsWithSelectedLocation;
 - (void)_performBlockAsyncOnWorkQueue:(CDUnknownBlockType)arg1;
-- (void)_pause;
-- (void)_initialSetup;
+- (void)_workQ_pause;
+@property(readonly, nonatomic) NWKLocationForecast *selectedLocationForecast;
+@property(readonly, nonatomic) WFLocation *selectedLocation;
+@property(readonly, nonatomic) WFLocation *currentLocation;
 - (void)resume;
 - (void)pause;
 - (void)dealloc;

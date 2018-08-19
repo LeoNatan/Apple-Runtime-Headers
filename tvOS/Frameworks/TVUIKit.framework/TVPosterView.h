@@ -16,10 +16,12 @@
 + (Class)_concreteContentViewClass;
 @property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
 - (void).cxx_destruct;
+- (void)_updateFocusSizeIncrease;
 - (void)_createFooterView;
 @property(copy, nonatomic) NSString *subtitle;
 @property(copy, nonatomic) NSString *title;
 @property(readonly, nonatomic) UIImageView *imageView;
+- (void)didMoveToSuperview;
 - (void)layoutSubviews;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

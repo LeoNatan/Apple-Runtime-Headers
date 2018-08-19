@@ -20,6 +20,7 @@
 - (_Bool)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (id)description;
+- (void)_submitMetricsWithSuccess:(_Bool)arg1;
 - (void)_performWithContext:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithUserActivity:(id)arg1 applicationID:(id)arg2;

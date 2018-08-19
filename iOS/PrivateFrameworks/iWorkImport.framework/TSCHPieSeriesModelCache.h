@@ -71,7 +71,6 @@ __attribute__((visibility("hidden")))
 @property(readonly) _Bool shouldRenderLabel;
 - (id)labelStringWithValueLabelString:(id)arg1 seriesNameLabelString:(id)arg2;
 - (id)initWithPrior:(id)arg1 orChartModel:(id)arg2 forSeries:(unsigned long long)arg3;
-- (id)init;
 
 @end
 

@@ -18,6 +18,7 @@ __attribute__((visibility("hidden")))
     TSWPLayout *_galleryCaptionLayout;
     NSMapTable *_captionLayoutsForItems;
     NSArray *_captionLayouts;
+    _Bool _isInvalidatingSize;
     TSUBezierPath *_cachedPathForClippingConnectionLines;
     TSAGalleryItem *_currentItem;
     struct CGRect _imageContainerRect;

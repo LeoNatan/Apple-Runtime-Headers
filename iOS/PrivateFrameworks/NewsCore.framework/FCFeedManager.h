@@ -11,6 +11,7 @@
 @interface FCFeedManager : NSObject
 {
     id <FCFeedPersonalizing> _feedPersonalizer;
+    long long _trendingAndSavedStoriesCount;
     FCCloudContext *_context;
     NSMapTable *_feedDescriptorsByID;
     NFMutexLock *_feedDescriptorsLock;
@@ -25,6 +26,7 @@
 @property(retain, nonatomic) NFMutexLock *feedDescriptorsLock; // @synthesize feedDescriptorsLock=_feedDescriptorsLock;
 @property(retain, nonatomic) NSMapTable *feedDescriptorsByID; // @synthesize feedDescriptorsByID=_feedDescriptorsByID;
 @property(retain, nonatomic) FCCloudContext *context; // @synthesize context=_context;
+@property(nonatomic) long long trendingAndSavedStoriesCount; // @synthesize trendingAndSavedStoriesCount=_trendingAndSavedStoriesCount;
 @property(retain, nonatomic) id <FCFeedPersonalizing> feedPersonalizer; // @synthesize feedPersonalizer=_feedPersonalizer;
 - (void).cxx_destruct;
 - (void)prefetchForYouWithHighPriority:(_Bool)arg1 completionHandler:(CDUnknownBlockType)arg2;

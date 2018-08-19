@@ -41,7 +41,7 @@ __attribute__((visibility("hidden")))
 - (id)swapTuplesForParagraphStyleMutations:(id)arg1 forReferencingProperty:(int)arg2;
 - (id)swapTuplesForMutations:(id)arg1 forImport:(_Bool)arg2;
 @property(readonly, nonatomic) unsigned long long styleSwapIndex;
-@property(readonly, nonatomic) TSCHChartAxis *axis;
+@property(readonly, nonatomic) __weak TSCHChartAxis *axis;
 - (id)model;
 - (id)context;
 - (id)drawableInfo;

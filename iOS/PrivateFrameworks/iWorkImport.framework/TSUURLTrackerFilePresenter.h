@@ -8,42 +8,48 @@
 
 #import "NSFilePresenter.h"
 
-@class NSData, NSError, NSObject<OS_dispatch_queue>, NSOperationQueue, NSSet, NSString, NSURL;
+@class NSData, NSError, NSObject<OS_dispatch_queue>, NSOperationQueue, NSSet, NSString, NSURL, TSUURLTracker;
 
 __attribute__((visibility("hidden")))
 @interface TSUURLTrackerFilePresenter : NSObject <NSFilePresenter>
 {
+    TSUURLTracker *_urlTracker;
     NSObject<OS_dispatch_queue> *_accessQueue;
     _Bool _hasStarted;
     NSData *_bookmarkDataIfAvailable;
     _Bool _forceEncodingBookmarkData;
     NSError *_latestError;
     id <TSUURLTrackerDelegate> _delegate;
+    _Bool _deleted;
     NSOperationQueue *_presentedItemOperationQueue;
     NSURL *_URLIfAvailable;
 }
 
+@property _Bool deleted; // @synthesize deleted=_deleted;
 @property(copy) NSURL *URLIfAvailable; // @synthesize URLIfAvailable=_URLIfAvailable;
 @property(readonly, retain) NSOperationQueue *presentedItemOperationQueue; // @synthesize presentedItemOperationQueue=_presentedItemOperationQueue;
 - (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (id)_description;
 - (void)presentedItemDidChangeUbiquityAttributes:(id)arg1;
+- (void)_notifyURLTrackerPresentedItemDidMoveToURL:(id)arg1;
 - (void)presentedItemDidMoveToURL:(id)arg1;
+- (void)_notifyURLTrackerPresentedItemWasDeleted;
 - (void)accommodatePresentedItemDeletionWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)_notifyURLTrackerPresentedItemContentsDidChange;
 - (void)relinquishPresentedItemToWriter:(CDUnknownBlockType)arg1;
 @property(readonly, copy) NSURL *presentedItemURL;
 - (id)_bookmarkDataAndReturnError:(id *)arg1;
 - (id)bookmarkDataAndReturnError:(id *)arg1;
 - (void)stop;
-- (void)pause;
-- (void)startOrResume;
+- (void)pauseForEnteringBackground:(_Bool)arg1;
+- (void)startOrResumeForEnteringForeground:(_Bool)arg1;
 @property(readonly) NSData *bookmarkDataIfAvailable;
 - (id)_bookmarkData;
 @property(readonly) NSData *bookmarkData;
 - (id)_URLAndReturnError:(id *)arg1;
 - (id)URLAndReturnError:(id *)arg1;
-- (id)initWithURL:(id)arg1 bookmarkData:(id)arg2 delegate:(id)arg3;
+- (id)initWithURL:(id)arg1 bookmarkData:(id)arg2 urlTracker:(id)arg3 delegate:(id)arg4;
 - (id)init;
 
 // Remaining properties

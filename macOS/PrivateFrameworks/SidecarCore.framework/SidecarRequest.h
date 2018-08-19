@@ -25,9 +25,17 @@
     long long _requestID;
     unsigned int _cancelled:1;
     unsigned int _finished:1;
+    double _timeStart;
+    double _timeAccept;
+    double _timeTransfer;
+    double _timeFinish;
 }
 
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
+@property(nonatomic) double timeFinish; // @synthesize timeFinish=_timeFinish;
+@property(nonatomic) double timeTransfer; // @synthesize timeTransfer=_timeTransfer;
+@property(nonatomic) double timeAccept; // @synthesize timeAccept=_timeAccept;
+@property(nonatomic) double timeStart; // @synthesize timeStart=_timeStart;
 @property __weak id <SidecarRequestDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)sidecarSession:(id)arg1 invalidatedWithError:(id)arg2;
@@ -53,6 +61,7 @@
 @property(readonly) NSProgress *progress;
 - (void)dealloc;
 - (id)initWithService:(id)arg1 devices:(id)arg2 options:(id)arg3;
+- (void)_messageTrace;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

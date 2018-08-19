@@ -6,39 +6,42 @@
 
 #import <Preferences/PSTableCell.h>
 
-@class NSMutableArray, NSMutableDictionary, NSString, PSCapacityBarView, PSLegendColorView, UIFont, UILabel;
+@class NSMutableArray, NSMutableDictionary, NSString, PSCapacityBarView, PSLegendColorView, UIColor, UIFont, UILabel, UIView;
 
 @interface PSCapacityBarCell : PSTableCell
 {
+    double _tableWidth;
     NSMutableArray *_constraints;
     UILabel *_titleLabel;
     UILabel *_sizeLabel;
-    UILabel *_calcLabel;
+    UILabel *_loadingLabel;
+    UIView *_legendView;
     UILabel *_otherLabel;
     PSLegendColorView *_otherLegend;
     PSCapacityBarView *_barView;
     UIFont *_legendFont;
     UIFont *_bigFont;
-    NSMutableArray *_legendConstraints;
-    NSMutableArray *_legendViews;
-    NSMutableDictionary *_legendTextCache;
-    NSMutableDictionary *_legendColorCache;
+    UIColor *_legendTextColor;
     _Bool _hideLegend;
     _Bool _showOtherLegend;
     _Bool _sizesAreMem;
     NSString *_sizeFormat;
+    NSMutableArray *_legendConstraints;
+    NSMutableDictionary *_legendTextCache;
+    NSMutableDictionary *_legendColorCache;
+    NSMutableArray *_categoryOrder;
 }
 
 + (id)specifierWithTitle:(id)arg1 useStandardFontSizeForSizeLabel:(_Bool)arg2;
 + (id)specifierWithTitle:(id)arg1;
-+ (double)defaultCellHeight;
 - (void).cxx_destruct;
 - (void)refreshCellContentsWithSpecifier:(id)arg1;
 - (id)usageString:(id)arg1;
-- (void)updateLegends;
+- (void)updateLegends:(id)arg1;
 - (id)legendTextForCategory:(id)arg1;
 - (id)legendColorForCategory:(id)arg1;
 - (void)updateConstraints;
+- (double)defaultCellHeightForSubitemAtIndex:(unsigned long long)arg1 forWidth:(double)arg2;
 - (void)initializeViews;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2 specifier:(id)arg3;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;

@@ -10,6 +10,7 @@
 
 @interface DMFPolicyMonitor : NSObject
 {
+    int _keyBagFirstUnlockNotificationToken;
     NSXPCConnection *_xpcConnection;
     NSObject<OS_dispatch_queue> *_registrationCallbackQueue;
     NSMutableDictionary *_notificationTokensByPolicyMonitorIdentifier;

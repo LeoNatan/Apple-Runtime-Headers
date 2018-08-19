@@ -14,6 +14,7 @@
     NSManagedObjectContext *_context;
     NSManagedObjectContext *_suggestionsContext;
     NSObject<OS_dispatch_queue> *_callbackQueue;
+    NSObject<OS_dispatch_queue> *_indexingQueue;
 }
 
 + (void)resetSpotlightIndex;
@@ -21,6 +22,7 @@
 + (_Bool)destroyPersistentStoreInDirectory:(id)arg1 error:(id *)arg2;
 + (void)persistentStoreWillNeedRecreation;
 + (void)initialize;
+@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *indexingQueue; // @synthesize indexingQueue=_indexingQueue;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *callbackQueue; // @synthesize callbackQueue=_callbackQueue;
 @property(retain, nonatomic) NSManagedObjectContext *suggestionsContext; // @synthesize suggestionsContext=_suggestionsContext;
 @property(retain, nonatomic) NSManagedObjectContext *context; // @synthesize context=_context;
@@ -28,7 +30,9 @@
 - (void).cxx_destruct;
 - (void)removeSpotlightIndexedItemForVoiceShortcutIdentifier:(id)arg1;
 - (void)addSpotlightIndexedItemForVoiceShortcut:(id)arg1;
-- (void)deleteShortcutSuggestionsOnlyKeepingApps:(id)arg1;
+- (void)deleteSpotlightIndexedItemsKeepingApps:(id)arg1;
+- (void)addMissingSpotlightIndexedItemsForApps:(id)arg1;
+- (void)deleteShortcutSuggestionsKeepingApps:(id)arg1;
 - (void)getShortcutSuggestionsForAllAppsWithLimit:(unsigned int)arg1 accessSpecifier:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)getShortcutSuggestionsForAppWithBundleIdentifier:(id)arg1 accessSpecifier:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)setShortcutSuggestions:(id)arg1 forAppWithBundleIdentifier:(id)arg2 accessSpecifier:(id)arg3 completion:(CDUnknownBlockType)arg4;

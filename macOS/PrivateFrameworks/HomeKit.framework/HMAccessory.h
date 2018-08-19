@@ -133,7 +133,7 @@
 - (void)_handleAccessoryNotificationsUpdated:(id)arg1;
 - (void)_handleCharacteristicsUpdated:(id)arg1;
 - (void)_handleConnectivityChanged:(id)arg1;
-- (void)handleConnectivityChanged:(id)arg1;
+- (void)handleRuntimeStateUpdate:(id)arg1;
 - (void)__handleConnectivityChanged:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)_handleConfiguredNameChanged:(id)arg1;
 - (void)_handleRenamed:(id)arg1;

@@ -17,10 +17,12 @@ __attribute__((visibility("hidden")))
     NSNumber *inputLumaNoiseAmpl;
     NSNumber *inputLumaNoiseModelCoeff;
     NSNumber *inputScale;
-    CIVector *inputSize;
+    CIVector *inputRect;
+    CIVector *inputSensorSize;
 }
 
-@property(copy, nonatomic) CIVector *inputSize; // @synthesize inputSize;
+@property(copy, nonatomic) CIVector *inputSensorSize; // @synthesize inputSensorSize;
+@property(copy, nonatomic) CIVector *inputRect; // @synthesize inputRect;
 @property(copy, nonatomic) NSNumber *inputScale; // @synthesize inputScale;
 @property(copy, nonatomic) NSNumber *inputLumaNoiseModelCoeff; // @synthesize inputLumaNoiseModelCoeff;
 @property(copy, nonatomic) NSNumber *inputLumaNoiseAmpl; // @synthesize inputLumaNoiseAmpl;
@@ -29,7 +31,9 @@ __attribute__((visibility("hidden")))
 @property(retain) CIImage *inputImage; // @synthesize inputImage;
 - (id)outputImage;
 - (id)outputImage:(id)arg1 horizontal:(BOOL)arg2;
-- (id)_kernel:(BOOL)arg1;
+- (id)noiseColorKernel;
+- (id)_noiseGeneratorKernel;
+- (id)_kernel:(BOOL)arg1 withAddedNoise:(BOOL)arg2;
 
 @end
 

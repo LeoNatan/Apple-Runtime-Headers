@@ -108,8 +108,8 @@
 - (void)setLastSignedInItunesAccountDSIDWithDSID:(id)arg1;
 - (id)lastSignedInItunesAccountDSID;
 - (void)clearAllAppStorePurchases;
-- (void)shouldShowiTunesSignedOutAlertWithAccount:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)shouldShowSignedInWithDifferentiTunesAccountAlertWithAccount:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)shouldShowiTunesSignedOutAlertWithiTunesAccountName:(id)arg1 iTunesAccountDSID:(id)arg2 isUserSignedIntoiTunes:(_Bool)arg3 completion:(CDUnknownBlockType)arg4;
+- (void)shouldShowSignedInWithDifferentiTunesAccountAlertWithiTunesAccountName:(id)arg1 iTunesAccountDSID:(id)arg2 isUserSignedIntoiTunes:(_Bool)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)removeFromWebAccessOptedInListWithTagID:(id)arg1;
 - (void)addToWebAccessOptedInListWithTagID:(id)arg1;
 - (void)notifyWebAccessOptedInListChanged;

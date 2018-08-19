@@ -189,7 +189,7 @@
 - (BOOL)shouldWhitelistOrganizerPhoneNumberFromJunkChecks:(id)arg1;
 - (BOOL)shouldWhitelistOrganizerEmailFromJunkChecks:(id)arg1;
 - (id)lookupItemsWithIdentifiers:(id)arg1 type:(unsigned long long)arg2;
-- (void)_repopulateCacheWithIdentifier:(id)arg1;
+- (id)_fetchAndRepopulateCacheWithIdentifier:(id)arg1;
 - (id)remindersWithIsCompleted:(BOOL)arg1 maxResults:(unsigned long long)arg2 withCalendarIdentifiers:(id)arg3;
 - (id)remindersWithContactIdentifier:(id)arg1;
 - (id)remindersWithDueDatesInRange:(id)arg1 withCalendarIdentifiers:(id)arg2 withCompletion:(id)arg3;

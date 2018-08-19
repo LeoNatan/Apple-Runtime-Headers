@@ -33,12 +33,12 @@ __attribute__((visibility("hidden")))
 - (void)pageUp:(id)arg1;
 - (void)pageDown:(id)arg1;
 - (void)scrollWheel:(id)arg1;
-- (void)tile;
 - (void)drawRect:(struct CGRect)arg1;
 - (void)_windowChangedKeyState;
 - (void)reflectScrolledClipView:(id)arg1;
 - (void)updateWithFocusRingForWindowKeyChange;
 - (BOOL)isFirstAndKey;
+- (void)refreshScrollers;
 - (id)colorList;
 - (unsigned long long)pageCount;
 - (BOOL)isPaged;

@@ -182,7 +182,7 @@
 - (void)_handleInvalidatedXPCConnection:(id)arg1;
 - (void)_handleRequestSearchForNewAccessories:(id)arg1;
 - (void)_handleRequestFetchNewAccessories:(id)arg1;
-- (void)handleAppTermination:(id)arg1;
+- (void)handleHomeUIServiceTermination:(id)arg1;
 - (void)_cancelCurrentlyPairingAccessories:(id)arg1;
 - (void)_registerForMessages;
 - (void)removeDelegate:(id)arg1;

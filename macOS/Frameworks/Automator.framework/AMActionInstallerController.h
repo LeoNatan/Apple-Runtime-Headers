@@ -22,7 +22,6 @@
 - (id)_installationInfoString;
 - (id)_pluginTypeName;
 - (BOOL)_pluginIsInstallableReturningError:(id *)arg1;
-- (void)attemptRecoveryFromError:(id)arg1 optionIndex:(unsigned long long)arg2 delegate:(id)arg3 didRecoverSelector:(SEL)arg4 contextInfo:(void *)arg5;
 - (id)_unlocalizedPluginTypeNameComponent;
 - (id)_completedInstallationInfoString;
 - (BOOL)isConversionAction;

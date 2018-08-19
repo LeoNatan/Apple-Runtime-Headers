@@ -44,6 +44,7 @@
 - (void)performChanges:(CDUnknownBlockType)arg1;
 - (void)generateGadgets;
 - (unsigned long long)estimatedNumberOfGadgets;
+- (void)startLoadingRemainingData;
 - (void)loadDataForGadgets;
 - (void)loadDataForPriority;
 @property(readonly, nonatomic) _Bool supportsDynamicRanking;

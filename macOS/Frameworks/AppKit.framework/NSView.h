@@ -80,11 +80,8 @@
 + (id)new;
 + (void)_antialiasThresholdChanged:(id)arg1;
 + (void)initialize;
-+ (void)_initializeMetricsOverlayDebugging;
 + (void)_setShowsAlignmentRects:(BOOL)arg1;
 + (void)_setShowsAllViews:(BOOL)arg1;
-+ (BOOL)_showsAllDrawing;
-+ (void)_initializeShowAllDrawingDebugging;
 + (void)_setShowsAllDrawing:(BOOL)arg1;
 + (id)_hiddenViewsTint;
 + (void)_setHiddenViewsTint:(id)arg1;
@@ -434,7 +431,6 @@
 - (struct CGSize)convertSizeToBase:(struct CGSize)arg1;
 - (struct CGPoint)convertPointFromBase:(struct CGPoint)arg1;
 - (struct CGPoint)convertPointToBase:(struct CGPoint)arg1;
-- (BOOL)_shouldDoLayerGeometryConversions;
 - (double)_baseScaleFactor;
 - (struct CGRect)convertRectFromLayer:(struct CGRect)arg1;
 - (struct CGRect)convertRectToLayer:(struct CGRect)arg1;
@@ -732,10 +728,7 @@
 - (void)_debug_showKeyboardUILoop;
 - (void)_drawMetricsOverlays;
 - (void)_updateLayerMetricsOverlays;
-- (void)_debug_drawMetricsOverlays;
-- (void)_debug_updateLayerMetricsOverlays;
 - (void)_showAllDrawingDrawRect:(struct CGRect)arg1;
-- (void)_debug_showAllDrawingDrawRect:(struct CGRect)arg1;
 - (id)loggingDescription;
 - (id)_subtreeDescriptionForLogging:(BOOL)arg1;
 - (id)_subtreeDescription;
@@ -762,6 +755,7 @@
 @property(setter=_setWindowBackdrop:) NSCGSWindowBackdrop *_windowBackdrop;
 - (void)_removeVibrantBlendingMimicBackdropOrProxyLayerIfNeeded;
 - (void)_updateVibrantBlendingMimicBackdropOrProxyLayerWithBlendMode:(int)arg1;
+- (void)_setNeedsUpdateMimicBackdropLevel;
 - (BOOL)_isDiagonallyRotatedOrScaledFromBase;
 - (id)_buttonOfClass:(Class)arg1 action:(SEL)arg2;
 - (void)heartBeat:(CDStruct_fadd2e06 *)arg1;

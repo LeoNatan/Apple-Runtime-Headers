@@ -39,6 +39,7 @@ __attribute__((visibility("hidden")))
 
 + (unsigned int)maxVideoNetworkBitrateForVideoQuality:(unsigned char)arg1 isLocalOnWiFi:(BOOL)arg2 isRedundancyRequested:(BOOL)arg3;
 + (unsigned int)maxAudioNetworkBitrateForLocalInterfaceOnWiFi:(BOOL)arg1;
++ (BOOL)isDeviceLargeScreen;
 @property(nonatomic, getter=isRemoteVideoPaused) BOOL remoteVideoPaused; // @synthesize remoteVideoPaused=_remoteVideoPaused;
 @property(nonatomic) unsigned int prominenceIndex; // @synthesize prominenceIndex=_prominenceIndex;
 @property(nonatomic) unsigned int visibilityIndex; // @synthesize visibilityIndex=_visibilityIndex;
@@ -55,6 +56,9 @@ __attribute__((visibility("hidden")))
 - (void)vcMediaStream:(id)arg1 didSwitchToAudioStreamWithID:(unsigned short)arg2;
 - (void)vcMediaStream:(id)arg1 didReceiveFirstVideoFrameWithTime:(CDStruct_1b6d18a9)arg2;
 - (void)vcMediaStream:(id)arg1 priorityDidChange:(unsigned char)arg2;
+- (void)vcMediaStreamDidDecryptionTimeOut:(id)arg1;
+- (void)vcMediaStreamDidRTCPTimeOut:(id)arg1;
+- (void)vcMediaStreamDidRTPTimeOut:(id)arg1;
 - (void)updateVideoPriority:(unsigned char)arg1;
 - (void)updateAudioPriority:(unsigned char)arg1;
 - (void)debounceAudioPriority:(unsigned char)arg1;

@@ -8,18 +8,22 @@
 
 #import "NSCopying.h"
 
-@class NSMutableArray, NSString, TSCEAbortObject;
+@class NSArray, NSMutableArray, NSString, TSCEAbortObject, TSCEQuotedRefPathSplitter;
 
 __attribute__((visibility("hidden")))
 @interface TSCEReferenceParsingContext : NSObject <NSCopying>
 {
     _Bool _filterColons;
     _Bool _referenceIsComplete;
+    _Bool _parseAsBaseTableReference;
     _Bool _trimNames;
     _Bool _namesUsed;
-    unsigned char _stickyBits;
-    id <TSCEReferenceResolving> _contextResolver;
+    struct TSUPreserveFlags _preserveFlags;
+    struct TSCETableResolver *_contextTableResolver;
     NSString *_contextSheetName;
+    NSArray *_components;
+    NSString *_aggregateFunction;
+    TSCEQuotedRefPathSplitter *_refPathSplitter;
     TSCEAbortObject *_abortObject;
     NSString *_sheetName;
     NSString *_tableName;
@@ -35,18 +39,27 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSString *rest; // @synthesize rest=_rest;
 @property(retain, nonatomic) NSString *tableName; // @synthesize tableName=_tableName;
 @property(retain, nonatomic) NSString *sheetName; // @synthesize sheetName=_sheetName;
-@property(nonatomic) unsigned char stickyBits; // @synthesize stickyBits=_stickyBits;
+@property(nonatomic) struct TSUPreserveFlags preserveFlags; // @synthesize preserveFlags=_preserveFlags;
 @property(nonatomic) _Bool namesUsed; // @synthesize namesUsed=_namesUsed;
 @property(nonatomic) _Bool trimNames; // @synthesize trimNames=_trimNames;
+@property(nonatomic) _Bool parseAsBaseTableReference; // @synthesize parseAsBaseTableReference=_parseAsBaseTableReference;
 @property(retain, nonatomic) TSCEAbortObject *abortObject; // @synthesize abortObject=_abortObject;
 @property(nonatomic) _Bool referenceIsComplete; // @synthesize referenceIsComplete=_referenceIsComplete;
 @property(nonatomic) _Bool filterColons; // @synthesize filterColons=_filterColons;
+@property(retain, nonatomic) TSCEQuotedRefPathSplitter *refPathSplitter; // @synthesize refPathSplitter=_refPathSplitter;
+@property(retain, nonatomic) NSString *aggregateFunction; // @synthesize aggregateFunction=_aggregateFunction;
+@property(retain, nonatomic) NSArray *components; // @synthesize components=_components;
 @property(retain, nonatomic) NSString *contextSheetName; // @synthesize contextSheetName=_contextSheetName;
-@property(retain, nonatomic) id <TSCEReferenceResolving> contextResolver; // @synthesize contextResolver=_contextResolver;
+@property(nonatomic) struct TSCETableResolver *contextTableResolver; // @synthesize contextTableResolver=_contextTableResolver;
+- (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)reset;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+@property(readonly, nonatomic) id <TSCEReferenceResolving> contextResolver;
 - (id)initWithContextResolver:(id)arg1;
+- (id)initWithContextResolver:(id)arg1 components:(id)arg2;
+- (id)initWithContextTableResolver:(struct TSCETableResolver *)arg1;
+- (id)initWithContextTableResolver:(struct TSCETableResolver *)arg1 components:(id)arg2;
 
 @end
 

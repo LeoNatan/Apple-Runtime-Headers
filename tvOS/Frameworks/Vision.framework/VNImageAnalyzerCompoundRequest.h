@@ -17,6 +17,7 @@ __attribute__((visibility("hidden")))
 + (void)_addCompoundRequestsToArray:(id)arg1 forModel:(unsigned long long)arg2 withGroupingConfigurations:(id)arg3;
 - (_Bool)internalPerformRevision:(unsigned long long)arg1 inContext:(id)arg2 error:(id *)arg3;
 - (_Bool)willAcceptCachedResultsFromRequestWithConfiguration:(id)arg1;
+- (id)newDefaultDetectorOptionsForRequestRevision:(unsigned long long)arg1;
 - (_Bool)allowsCachingOfResults;
 - (id)_configuredDetectorForRequestRevision:(unsigned long long)arg1 appliedConfigurationOptions:(id *)arg2 error:(id *)arg3;
 - (id)initWithDetectorType:(id)arg1 groupingConfiguration:(id)arg2;

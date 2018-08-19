@@ -20,10 +20,12 @@
     double _EDRHeadroomRequestSustainDuration;
     double _lowEDRRequestedHeadroomStops;
     double _highEDRRequestedHeadroomStops;
+    double _deviceMaximumEDRHeadroomStops;
 }
 
 + (id)sharedInstance;
 + (id)settingsControllerModule;
+@property(nonatomic) double deviceMaximumEDRHeadroomStops; // @synthesize deviceMaximumEDRHeadroomStops=_deviceMaximumEDRHeadroomStops;
 @property(nonatomic) double highEDRRequestedHeadroomStops; // @synthesize highEDRRequestedHeadroomStops=_highEDRRequestedHeadroomStops;
 @property(nonatomic) double lowEDRRequestedHeadroomStops; // @synthesize lowEDRRequestedHeadroomStops=_lowEDRRequestedHeadroomStops;
 @property(nonatomic) double EDRHeadroomRequestSustainDuration; // @synthesize EDRHeadroomRequestSustainDuration=_EDRHeadroomRequestSustainDuration;

@@ -13,21 +13,31 @@
 @interface CKSOSMessage : NSObject <NSCopying>
 {
     _Bool _useStandalone;
-    NSString *_message;
+    _Bool _isMMSEnabled;
     CLLocation *_location;
+    NSString *_locationURL;
     NSArray *_recipients;
     CDUnknownBlockType _failureBlock;
     NSArray *_handles;
+    NSString *_message;
+    NSString *_smsMessage;
+    NSString *_mmsMessage;
 }
 
+@property(nonatomic) _Bool isMMSEnabled; // @synthesize isMMSEnabled=_isMMSEnabled;
+@property(copy, nonatomic) NSString *mmsMessage; // @synthesize mmsMessage=_mmsMessage;
+@property(copy, nonatomic) NSString *smsMessage; // @synthesize smsMessage=_smsMessage;
+@property(copy, nonatomic) NSString *message; // @synthesize message=_message;
 @property(copy, nonatomic, getter=handles) NSArray *handles; // @synthesize handles=_handles;
 @property(nonatomic) _Bool useStandalone; // @synthesize useStandalone=_useStandalone;
 @property(copy, nonatomic) CDUnknownBlockType failureBlock; // @synthesize failureBlock=_failureBlock;
 @property(copy, nonatomic) NSArray *recipients; // @synthesize recipients=_recipients;
+@property(copy, nonatomic) NSString *locationURL; // @synthesize locationURL=_locationURL;
 @property(copy, nonatomic) CLLocation *location; // @synthesize location=_location;
-@property(copy, nonatomic) NSString *message; // @synthesize message=_message;
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (id)description;
+- (id)initWithSMSMessage:(id)arg1 mmsMessage:(id)arg2 recipients:(id)arg3;
 - (id)initWithMessage:(id)arg1 recipients:(id)arg2;
 
 @end

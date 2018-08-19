@@ -27,6 +27,7 @@
 - (unsigned long long)shadowOptions;
 - (BOOL)hasKeyAppearance;
 - (BOOL)canBecomeVisibleWithoutLogin;
+- (BOOL)canBecomeKeyWindow;
 - (BOOL)isKeyWindow;
 - (BOOL)worksWhenModal;
 - (void)dealloc;

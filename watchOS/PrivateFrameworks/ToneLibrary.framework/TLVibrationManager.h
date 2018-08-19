@@ -66,6 +66,8 @@
 - (_Bool)_isUnitTestingModeEnabled;
 - (id)noneVibrationPattern;
 - (id)noneVibrationName;
+- (_Bool)hasSpecificDefaultVibrationIdentifierForAlertType:(int)arg1 topic:(id)arg2;
+- (id)_defaultPreferablyNonSilentVibrationIdentifierForAlertType:(int)arg1 topic:(id)arg2;
 - (id)defaultVibrationPatternForAlertType:(int)arg1;
 - (id)defaultVibrationNameForAlertType:(int)arg1;
 - (id)_defaultVibrationIdentifierForAlertType:(int)arg1 topic:(id)arg2 correspondingToneIdentifier:(id)arg3;

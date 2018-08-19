@@ -21,6 +21,11 @@
 @property(readonly, nonatomic) UIImageView *appIconView; // @synthesize appIconView=_appIconView;
 @property(copy, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
 - (void).cxx_destruct;
+- (void)_didFetchAppInfo:(id)arg1;
+- (void)_registerForAppInfoCacheNotifications;
+- (void)_didFetchIcon:(id)arg1;
+- (void)_registerForIconCacheNotifications;
+- (void)refreshCellContentsWithSpecifier:(id)arg1;
 - (void)viewAppInStore:(id)arg1;
 - (void)setValue:(id)arg1;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2 specifier:(id)arg3;

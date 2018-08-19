@@ -44,11 +44,11 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool crossesIntercept; // @synthesize crossesIntercept=mCrossesIntercept;
 @property(nonatomic) _Bool aboveIntercept; // @synthesize aboveIntercept=mAboveIntercept;
 @property(nonatomic) _Bool shouldAnimate; // @synthesize shouldAnimate=mShouldAnimate;
+- (void).cxx_destruct;
 - (void)addImageContentsAnimationForLayer:(id)arg1 fromImage:(id)arg2 toImage:(id)arg3 keyTimes:(id)arg4;
 - (void)addAnimationForLayer:(id)arg1 key:(id)arg2 values:(id)arg3 keyTimes:(id)arg4 needPresentationLayerValues:(_Bool)arg5;
 - (void)addAnimationForLayer:(id)arg1 key:(id)arg2 values:(id)arg3 keyTimes:(id)arg4;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (void)dealloc;
 - (id)init;
 
 @end

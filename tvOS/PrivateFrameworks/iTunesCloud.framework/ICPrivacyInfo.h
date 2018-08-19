@@ -11,7 +11,12 @@
 }
 
 + (id)sharedPrivacyInfo;
-@property(readonly, nonatomic) _Bool shouldDisplayPrivacyLink;
+- (_Bool)_privacyAcknowledgementRequiredForIdentifier:(id)arg1;
+@property(readonly, nonatomic) _Bool privacyAcknowledgementRequiredForApplications;
+@property(readonly, nonatomic) _Bool privacyAcknowledgementRequiredForBooks;
+@property(readonly, nonatomic) _Bool privacyAcknowledgementRequiredForVideos;
+@property(readonly, nonatomic) _Bool privacyAcknowledgementRequiredForMusic;
+@property(readonly, nonatomic) _Bool privacyAcknowledgementRequiredForMedia;
 
 @end
 

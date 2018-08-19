@@ -28,7 +28,7 @@
     float _primaryScoreBaselineOffset;
     float _achievementThumbnailTopMargin;
     int _achievementThumbnailAlignment;
-    CDUnknownBlockType _achievementThumbnailCreationBlock;
+    int _achievementThumbnailQuality;
     UIFont *_secondaryScoreFont;
     float _secondaryScoreBaselineOffset;
     int _alignment;
@@ -40,12 +40,12 @@
     struct CGSize _achievementThumbnailSize;
 }
 
-+ (id)companionTotalWinsStandaloneFriendDetailConfigurationWithThumbnailCreationBlock:(CDUnknownBlockType)arg1;
-+ (id)companionTotalWinsFriendDetailConfigurationWithThumbnailCreationBlock:(CDUnknownBlockType)arg1;
++ (id)companionTotalWinsStandaloneFriendDetailConfiguration;
++ (id)companionTotalWinsFriendDetailConfiguration;
 + (id)companionFriendListConfiguration;
 + (id)companionTotalScoreFriendDetailConfiguration;
-+ (id)gizmoTotalWinsStandaloneConfigurationWithThumbnailCreationBlock:(CDUnknownBlockType)arg1;
-+ (id)gizmoTotalWinsConfigurationWithThumbnailCreationBlock:(CDUnknownBlockType)arg1;
++ (id)gizmoTotalWinsStandaloneConfiguration;
++ (id)gizmoTotalWinsConfiguration;
 + (id)gizmoTodayScoreConfiguration;
 + (id)gizmoTotalScoreFriendDetailConfiguration;
 + (id)gizmoTotalScoreConfiguration;
@@ -59,7 +59,7 @@
 @property(nonatomic) _Bool showsTodaySecondaryScore; // @synthesize showsTodaySecondaryScore=_showsTodaySecondaryScore;
 @property(nonatomic) float secondaryScoreBaselineOffset; // @synthesize secondaryScoreBaselineOffset=_secondaryScoreBaselineOffset;
 @property(retain, nonatomic) UIFont *secondaryScoreFont; // @synthesize secondaryScoreFont=_secondaryScoreFont;
-@property(copy, nonatomic) CDUnknownBlockType achievementThumbnailCreationBlock; // @synthesize achievementThumbnailCreationBlock=_achievementThumbnailCreationBlock;
+@property(nonatomic) int achievementThumbnailQuality; // @synthesize achievementThumbnailQuality=_achievementThumbnailQuality;
 @property(nonatomic) int achievementThumbnailAlignment; // @synthesize achievementThumbnailAlignment=_achievementThumbnailAlignment;
 @property(nonatomic) _Bool showsAchievementThumbnail; // @synthesize showsAchievementThumbnail=_showsAchievementThumbnail;
 @property(nonatomic) struct CGSize achievementThumbnailSize; // @synthesize achievementThumbnailSize=_achievementThumbnailSize;

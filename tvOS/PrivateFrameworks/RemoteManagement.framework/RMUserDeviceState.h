@@ -20,12 +20,13 @@
 + (id)fetchRequestMatchingLocalUserDeviceState;
 - (void)delete;
 - (id)dictionaryRepresentation;
-- (void)updateWithDictionaryRepresentation:(id)arg1;
+- (_Bool)updateWithDictionaryRepresentation:(id)arg1;
 - (id)computeUniqueIdentifier;
 - (void)didChangeValueForKey:(id)arg1;
 
 // Remaining properties
 @property(copy, nonatomic) NSData *capabilitiesPlist; // @dynamic capabilitiesPlist;
+@property(nonatomic) _Bool cloudSyncEnabled; // @dynamic cloudSyncEnabled;
 @property(copy, nonatomic) NSString *coreDuetIdentifier; // @dynamic coreDuetIdentifier;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;

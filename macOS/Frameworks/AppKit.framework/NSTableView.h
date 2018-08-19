@@ -890,8 +890,8 @@
 - (void)resignKeyWindow;
 - (void)becomeKeyWindow;
 - (void)_invalidateForKeyChange;
-- (BOOL)_needsTableViewContentBackgroundView;
-- (BOOL)_hasContentBackgroundColor;
+- (BOOL)_needsTableViewDesktopTintedBackgroundWithMaterial:(long long *)arg1;
+- (BOOL)_hasDesktopTintedBackgroundColorWithMaterial:(long long *)arg1;
 - (BOOL)_hasSourceListBackground;
 - (BOOL)_hasSourceListBackgroundColor;
 - (BOOL)_needsRedrawOnKeyChange;

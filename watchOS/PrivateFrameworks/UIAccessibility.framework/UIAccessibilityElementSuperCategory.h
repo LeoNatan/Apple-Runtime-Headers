@@ -26,6 +26,7 @@
 - (unsigned long long)accessibilityTraits;
 - (id)accessibilityValue;
 - (struct CGRect)accessibilityFrame;
+- (_Bool)_accessibilityUsesFrameInContainerSpace;
 - (id)accessibilityPath;
 - (id)accessibilityLanguage;
 - (id)accessibilityHint;

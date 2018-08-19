@@ -35,7 +35,6 @@ __attribute__((visibility("hidden")))
 - (void)willChangeProperties:(id)arg1;
 - (void)willChangeProperty:(int)arg1;
 - (void)beginCollectingChanges;
-@property(readonly, nonatomic) _Bool isUserModifiable;
 - (void)replaceChildInfo:(id)arg1 with:(id)arg2;
 - (void)removeChildInfo:(id)arg1;
 - (void)moveChildren:(id)arg1 toIndexes:(id)arg2;

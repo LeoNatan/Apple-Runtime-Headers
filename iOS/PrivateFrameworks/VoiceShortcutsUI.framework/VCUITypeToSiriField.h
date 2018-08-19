@@ -26,6 +26,7 @@
 - (_Bool)textFieldShouldReturn:(id)arg1;
 - (void)textFieldDidChange:(id)arg1;
 - (void)detach;
+- (_Bool)isFirstResponder;
 - (_Bool)becomeFirstResponder;
 - (void)setSuggestedPhrase:(id)arg1;
 @property(retain, nonatomic, getter=getText, setter=setText:) NSString *text;

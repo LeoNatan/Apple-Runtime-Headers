@@ -9,12 +9,13 @@
 #import "NSCopying.h"
 #import "NSSecureCoding.h"
 
-@class NSArray, NSDictionary, NWKRoutineLocation;
+@class NSArray, NSDate, NSDictionary, NWKRoutineLocation;
 
 @interface NWKRoutineForecast : NSObject <NSSecureCoding, NSCopying>
 {
     struct NSDictionary *_forecastsForRoutineLocations;
     NWKRoutineLocation *_currentRoutineLocation;
+    NSDate *_createdDate;
     unsigned int _updateToken;
     NSArray *_interestingHourlyForecastedConditions;
 }
@@ -22,6 +23,7 @@
 + (_Bool)supportsSecureCoding;
 @property(retain, nonatomic) NSArray *interestingHourlyForecastedConditions; // @synthesize interestingHourlyForecastedConditions=_interestingHourlyForecastedConditions;
 @property(nonatomic) unsigned int updateToken; // @synthesize updateToken=_updateToken;
+@property(readonly, nonatomic) NSDate *createdDate; // @synthesize createdDate=_createdDate;
 @property(readonly, nonatomic) NWKRoutineLocation *currentRoutineLocation; // @synthesize currentRoutineLocation=_currentRoutineLocation;
 @property(retain, nonatomic) NSDictionary *forecastsForRoutineLocations; // @synthesize forecastsForRoutineLocations=_forecastsForRoutineLocations;
 - (void).cxx_destruct;

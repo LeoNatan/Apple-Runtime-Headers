@@ -120,7 +120,7 @@
 - (void)_setGroupBackgroundView:(id)arg1;
 - (void)_removeGroupBackgroundView;
 - (id)_makeGroupBackgroundView;
-- (BOOL)_needsGroupBackground;
+- (BOOL)_needsGroupBackgroundView;
 - (void)_updateGroupBackgroundView;
 - (BOOL)_drawsGroupRowBackground;
 - (unsigned long long)_dividerPosition;
@@ -193,7 +193,7 @@
 - (void)_windowChangedKeyState;
 - (long long)backgroundStyle;
 @property(readonly) long long interiorBackgroundStyle;
-- (BOOL)_hasSpecialBackgroundColorBehavior;
+- (BOOL)_hasDesktopTintedBackgroundBehavior;
 - (BOOL)_hasSourceListBackground;
 - (BOOL)_appearsSelected;
 - (BOOL)_shouldDrawSelection;

@@ -22,7 +22,7 @@
 @property __weak AKController *controller; // @synthesize controller=_controller;
 @property BOOL pencilInkEnabled; // @synthesize pencilInkEnabled=_pencilInkEnabled;
 @property BOOL allInkEnabled; // @synthesize allInkEnabled=_allInkEnabled;
-@property(nonatomic) unsigned long long toolMode; // @synthesize toolMode=_toolMode;
+@property unsigned long long toolMode; // @synthesize toolMode=_toolMode;
 - (void).cxx_destruct;
 - (BOOL)isOptionKeyPressed;
 - (unsigned long long)_arrowStyleForToolTag:(long long)arg1;

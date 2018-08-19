@@ -483,6 +483,7 @@
 - (_Bool)_isFocusedOrAncestorOfFocusedView;
 @property(readonly, nonatomic, getter=isFocused) _Bool focused;
 @property(readonly, nonatomic) _Bool canBecomeFocused;
+@property(readonly, nonatomic, getter=_isContainedInHostedFocusSystem) _Bool containedInHostedFocusSystem;
 @property(nonatomic, getter=_isFocusInteractionEnabled, setter=_setFocusInteractionEnabled:) _Bool focusInteractionEnabled;
 - (id)resizableSnapshotViewFromRect:(struct CGRect)arg1 withCapInsets:(struct UIEdgeInsets)arg2;
 - (id)snapshotView;
@@ -943,7 +944,7 @@
 - (_Bool)nsli_lowerAttribute:(int)arg1 intoExpression:(id)arg2 withCoefficient:(double)arg3 forConstraint:(id)arg4 onBehalfOfLayoutGuide:(id)arg5;
 - (_Bool)nsli_lowerAttribute:(int)arg1 intoExpression:(id)arg2 withCoefficient:(double)arg3 forConstraint:(id)arg4;
 - (_Bool)nsli_lowerAttribute:(int)arg1 intoExpression:(id)arg2 withCoefficient:(double)arg3 container:(id)arg4;
-- (void)_snipDangliesWithForce:(_Bool)arg1;
+- (void)_snipDangliesWithForce:(_Bool)arg1 repairIfPossibleForViewThatMoved:(id)arg2 newSuperview:(id)arg3 oldSuperview:(id)arg4;
 - (struct CGSize)_preferredLayoutEngineToUserScalingCoefficients;
 - (struct CGSize)nsli_engineToUserScalingCoefficients;
 - (struct CGSize)nsli_engineToUserScalingCoefficientsInEngine:(id)arg1;

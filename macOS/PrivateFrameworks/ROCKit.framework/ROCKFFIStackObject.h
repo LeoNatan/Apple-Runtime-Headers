@@ -6,12 +6,12 @@
 
 #import "NSObject.h"
 
-#import "NSInvocationInterface.h"
+#import "ROCKInvocationInterface.h"
 
 @class NSMethodSignature, NSObject<OS_dispatch_queue>, NSString;
 
 __attribute__((visibility("hidden")))
-@interface ROCKFFIStackObject : NSObject <NSInvocationInterface>
+@interface ROCKFFIStackObject : NSObject <ROCKInvocationInterface>
 {
     NSMethodSignature *_methodSignature;
     CDStruct_221febe4 *_cif;

@@ -33,6 +33,7 @@
 @property(nonatomic) _Bool hasBeenStarted; // @synthesize hasBeenStarted=_hasBeenStarted;
 @property(nonatomic) __weak id <VCCompanionSyncServiceDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (void)clearSyncStateForAllDataHandlers;
 - (void)startSyncSession;
 - (void)companionSyncSession:(id)arg1 didFinishWithError:(id)arg2;
 - (_Bool)service:(id)arg1 startSession:(id)arg2 error:(id *)arg3;

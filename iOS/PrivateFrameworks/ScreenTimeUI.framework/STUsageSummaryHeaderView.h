@@ -20,7 +20,7 @@
 
 @property(readonly, nonatomic) STSingleLineDetailTextHeaderView *singleLineHeaderView; // @synthesize singleLineHeaderView=_singleLineHeaderView;
 @property(readonly, nonatomic) UILabel *deviceNameLabel; // @synthesize deviceNameLabel=_deviceNameLabel;
-@property(retain, nonatomic) PSSpecifier *specifier; // @synthesize specifier=_specifier;
+@property(nonatomic) __weak PSSpecifier *specifier; // @synthesize specifier=_specifier;
 @property(readonly, nonatomic) UISegmentedControl *segmentedControl; // @synthesize segmentedControl=_segmentedControl;
 - (void).cxx_destruct;
 - (void)selectedSegmentIndexChanged:(id)arg1;

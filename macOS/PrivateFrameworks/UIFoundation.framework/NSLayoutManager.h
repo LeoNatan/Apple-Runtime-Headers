@@ -254,6 +254,7 @@
 - (id)init;
 - (void)_commonInit;
 - (void)coordinateAccess:(CDUnknownBlockType)arg1;
+- (id)renderingColorForDocumentColor:(id)arg1;
 - (void)setApplicationFrameworkContext:(long long)arg1;
 - (long long)applicationFrameworkContext;
 - (void)setUnderlineColorForSpelling:(id)arg1;

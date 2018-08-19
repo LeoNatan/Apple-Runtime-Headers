@@ -79,6 +79,7 @@
 - (BOOL)shouldEdit:(id)arg1 inRect:(struct CGRect)arg2 ofView:(id)arg3;
 - (long long)interiorBackgroundStyle;
 - (BOOL)_textDimsWhenDisabled;
+- (BOOL)_fillsWithBackgroundColor;
 - (void)drawWithFrame:(struct CGRect)arg1 inView:(id)arg2;
 - (double)_textVerticalAdjust;
 - (double)_textVerticalInset;

@@ -6,13 +6,16 @@
 
 #import "NSObject.h"
 
+#import "TSPCopying.h"
+
 __attribute__((visibility("hidden")))
-@interface TSTTableDataObject : NSObject
+@interface TSTTableDataObject : NSObject <TSPCopying>
 {
     unsigned int _refCount;
 }
 
 @property(readonly, nonatomic) unsigned int refCount; // @synthesize refCount=_refCount;
+- (id)copyWithContext:(id)arg1;
 - (void)addReferencesFromObject:(id)arg1;
 - (_Bool)dropReference;
 - (void)takeReference;

@@ -8,10 +8,11 @@
 
 #import "RMUniquelySerializableManagedObject.h"
 
-@class NSDate, NSSet, NSString, RMBlueprintSchedule, RMBlueprintUsageLimit, RMCoreOrganization;
+@class NSData, NSDate, NSSet, NSString, RMBlueprintSchedule, RMBlueprintUsageLimit, RMCoreOrganization, RMVersionVector;
 
 @interface RMBlueprint : RMUniquedManagedObject <RMUniquelySerializableManagedObject>
 {
+    RMVersionVector *_cachedVersionVector;
 }
 
 + (id)fetchOrCreateWithDictionaryRepresentation:(id)arg1 inContext:(id)arg2 error:(id *)arg3;
@@ -23,12 +24,16 @@
 + (id)fetchRequestMatchingBlueprintsForUserWithDSID:(id)arg1 ofType:(id)arg2;
 + (id)fetchRequestMatchingBlueprintsForUserWithDSID:(id)arg1;
 + (id)fetchRequestMatchingExpiredBlueprints;
+- (void).cxx_destruct;
 - (void)delete;
 - (id)dictionaryRepresentation;
-- (void)updateWithDictionaryRepresentation:(id)arg1;
+- (BOOL)updateWithDictionaryRepresentation:(id)arg1;
 - (id)computeUniqueIdentifier;
 - (void)didChangeValueForKey:(id)arg1;
 - (id)declarationsWithError:(id *)arg1;
+@property(readonly, copy, nonatomic) NSData *unmodeled_versionVector;
+@property(copy, nonatomic) RMVersionVector *versionVector; // @dynamic versionVector;
+- (void)awakeFromInsert;
 
 // Remaining properties
 @property(retain, nonatomic) NSSet *configurations; // @dynamic configurations;
@@ -39,6 +44,7 @@
 @property(readonly) unsigned long long hash;
 @property(copy, nonatomic) NSString *identifier; // @dynamic identifier;
 @property(nonatomic) BOOL invertUsageLimit; // @dynamic invertUsageLimit;
+@property(nonatomic) BOOL isDirty; // @dynamic isDirty;
 @property(retain, nonatomic) RMCoreOrganization *organization; // @dynamic organization;
 @property(retain, nonatomic) RMBlueprintSchedule *schedule; // @dynamic schedule;
 @property(readonly) Class superclass;

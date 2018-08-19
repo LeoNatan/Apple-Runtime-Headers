@@ -16,6 +16,7 @@ __attribute__((visibility("hidden")))
 
 + (struct CGImage *)newImageForDarkBackground:(struct CGImage *)arg1 atScale:(double)arg2 ofSize:(struct CGSize)arg3 inset:(struct CGSize)arg4;
 + (void)applyFakeShadowForPresetsIfNecessary:(id)arg1 documentRoot:(id)arg2;
++ (_Bool)applyFakeStrokeIfNeededForShape:(id)arg1 documentRoot:(id)arg2 backgroundAppearance:(unsigned long long)arg3;
 + (id)swatchCache;
 - (void).cxx_destruct;
 - (id)imageForMoviePreset:(id)arg1 imageSize:(struct CGSize)arg2 imageScale:(double)arg3 movieInfo:(id)arg4 shouldClipVertically:(_Bool)arg5 documentRoot:(id)arg6 renderForWideGamut:(_Bool)arg7;
@@ -25,7 +26,7 @@ __attribute__((visibility("hidden")))
 - (struct CGSize)imageSizeForPreset:(id)arg1 swatchSize:(struct CGSize)arg2;
 - (struct CGImage *)p_newImageWithConnectionLineKnobsForShape:(id)arg1 atScale:(double)arg2 ofSize:(struct CGSize)arg3 overImage:(struct CGImage *)arg4;
 - (id)imageForImagePreset:(id)arg1 imageSize:(struct CGSize)arg2 imageScale:(double)arg3 imageInfo:(id)arg4 shouldClipVertically:(_Bool)arg5 documentRoot:(id)arg6 renderForWideGamut:(_Bool)arg7;
-- (id)imageForShapePreset:(id)arg1 imageSize:(struct CGSize)arg2 imageScale:(double)arg3 shapeType:(int)arg4 shapePathSource:(id)arg5 angle:(double)arg6 documentRoot:(id)arg7 renderForWideGamut:(_Bool)arg8;
+- (id)imageForShapePreset:(id)arg1 imageSize:(struct CGSize)arg2 imageScale:(double)arg3 shapeType:(int)arg4 shapePathSource:(id)arg5 angle:(double)arg6 backgroundAppearance:(unsigned long long)arg7 documentRoot:(id)arg8 renderForWideGamut:(_Bool)arg9;
 - (struct CGSize)shapeSwatchInset;
 - (void)warmStyle:(id)arg1 withFillProperty:(int)arg2 documentRoot:(id)arg3;
 - (void)dealloc;

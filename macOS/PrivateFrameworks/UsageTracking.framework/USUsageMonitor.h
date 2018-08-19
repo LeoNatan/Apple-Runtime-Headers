@@ -17,11 +17,13 @@
 - (void).cxx_destruct;
 - (void)checkStatusOfBudgets:(id)arg1 clientIdentifiers:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)checkStatusOfAllBudgetsWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (id)checkStatusOfBudgets:(id)arg1 error:(id *)arg2;
 - (void)checkStatusOfBudgets:(id)arg1 clientIdentifier:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)checkStatusOfBudgets:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)stopMonitoringAllBudgetsWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)stopMonitoringBudgets:(id)arg1 clientIdentifier:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)stopMonitoringBudgets:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (BOOL)startMonitoringBudgets:(id)arg1 darwinNotificationName:(id)arg2 notificationTimes:(id)arg3 error:(id *)arg4;
 - (void)startMonitoringBudgets:(id)arg1 darwinNotificationName:(id)arg2 notificationTimes:(id)arg3 clientIdentifier:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
 - (void)startMonitoringBudgets:(id)arg1 darwinNotificationName:(id)arg2 notificationTimes:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)dealloc;

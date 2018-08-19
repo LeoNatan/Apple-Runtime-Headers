@@ -54,6 +54,7 @@
 - (BOOL)resignFirstResponder;
 - (BOOL)becomeFirstResponder;
 - (BOOL)acceptsFirstResponder;
+- (void)effectiveAppearanceDidChange;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)_setIsBusyToNO;
 - (void)_startBusyTimer;
@@ -71,6 +72,7 @@
 - (void)_seachForCityAtLongitude:(double)arg1 latitude:(double)arg2 longitudeSpan:(double)arg3 latitudeSpan:(double)arg4 timeZoneNamesScope:(id)arg5;
 - (void)_findCityAtLongLatOpererationFinished:(id)arg1;
 @property BOOL isSearchingByName;
+- (void)setSelectedMaskForTimeZone:(id)arg1;
 @property(retain, nonatomic) GEOCity *selectedCity;
 - (void)_setSelectedCityWithManagedObjectID:(id)arg1;
 @property(readonly) NSOperationQueue *operationQueue;

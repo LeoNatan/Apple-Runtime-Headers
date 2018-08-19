@@ -8,7 +8,7 @@
 
 #import "NSSecureCoding.h"
 
-@class NSIndexSet, NSString, PSIWordEmbeddingMatch;
+@class NSIndexSet, NSMutableSet, NSString, PSIWordEmbeddingMatch;
 
 @interface PSIQueryToken : NSObject <NSSecureCoding>
 {
@@ -17,7 +17,6 @@
     _Bool _isFullTextToken;
     _Bool _belongsToSearchText;
     NSString *_text;
-    unsigned int _assetCount;
     NSString *_identifier;
     NSIndexSet *_searchedCategories;
     unsigned int _userCategory;
@@ -25,12 +24,18 @@
     PSIQueryToken *_parentToken;
     NSString *_resolvedText;
     PSIWordEmbeddingMatch *_wordEmbeddingMatch;
+    NSMutableSet *_assetIds;
+    NSMutableSet *_collectionIds;
+    NSMutableSet *_tripIds;
     struct _NSRange _rangeInSearchText;
 }
 
 + (_Bool)supportsSecureCoding;
 + (id)stringForMatchType:(unsigned int)arg1;
 + (id)personQueryTokensFromSocialGroupQueryToken:(id)arg1;
+@property(retain, nonatomic) NSMutableSet *tripIds; // @synthesize tripIds=_tripIds;
+@property(retain, nonatomic) NSMutableSet *collectionIds; // @synthesize collectionIds=_collectionIds;
+@property(retain, nonatomic) NSMutableSet *assetIds; // @synthesize assetIds=_assetIds;
 @property(nonatomic) _Bool belongsToSearchText; // @synthesize belongsToSearchText=_belongsToSearchText;
 @property(nonatomic) _Bool isFullTextToken; // @synthesize isFullTextToken=_isFullTextToken;
 @property(retain, nonatomic) PSIWordEmbeddingMatch *wordEmbeddingMatch; // @synthesize wordEmbeddingMatch=_wordEmbeddingMatch;
@@ -43,7 +48,6 @@
 @property(nonatomic) unsigned int userCategory; // @synthesize userCategory=_userCategory;
 @property(copy, nonatomic) NSIndexSet *searchedCategories; // @synthesize searchedCategories=_searchedCategories;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-@property(nonatomic) unsigned int assetCount; // @synthesize assetCount=_assetCount;
 @property(readonly, copy, nonatomic) NSString *text; // @synthesize text=_text;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
@@ -54,6 +58,10 @@
 @property(readonly, copy, nonatomic) NSString *wildcardResolvedText;
 @property(readonly, copy, nonatomic) NSString *groupMatchingText;
 @property(readonly, nonatomic) _Bool isTextSearchable;
+@property(readonly, nonatomic) unsigned int resultCount;
+@property(readonly, nonatomic) unsigned int tripCount;
+@property(readonly, nonatomic) unsigned int collectionCount;
+@property(readonly, nonatomic) unsigned int assetCount;
 - (_Bool)isEqual:(id)arg1;
 - (void)dealloc;
 - (id)initWithText:(id)arg1 resolvedText:(id)arg2 userCategory:(unsigned int)arg3 searchedCategories:(id)arg4 matchType:(unsigned int)arg5;

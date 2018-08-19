@@ -8,7 +8,7 @@
 
 #import "CKAudioBalloonView.h"
 
-@class CKWaveformProgressView, NSString, UIImageView, UILabel;
+@class CKWaveformProgressView, NSString, UIImageView, UILabel, UIStackView;
 
 @interface CKNanoAudioBalloonView : CKColoredBalloonView <CKAudioBalloonView>
 {
@@ -17,6 +17,8 @@
     UILabel *_timeLabel;
     UIImageView *_playbackStateImage;
     CKWaveformProgressView *_waveformProgressView;
+    UIStackView *_outerStackView;
+    UIStackView *_innerStackView;
     double _time;
     double _duration;
 }
@@ -24,6 +26,8 @@
 + (id)playImage;
 + (id)pauseImage;
 + (id)sharedVolumeControlView;
+@property(nonatomic) __weak UIStackView *innerStackView; // @synthesize innerStackView=_innerStackView;
+@property(nonatomic) __weak UIStackView *outerStackView; // @synthesize outerStackView=_outerStackView;
 @property(retain, nonatomic) CKWaveformProgressView *waveformProgressView; // @synthesize waveformProgressView=_waveformProgressView;
 @property(retain, nonatomic) UIImageView *playbackStateImage; // @synthesize playbackStateImage=_playbackStateImage;
 @property(retain, nonatomic) UILabel *timeLabel; // @synthesize timeLabel=_timeLabel;
@@ -42,7 +46,7 @@
 - (void)prepareForDisplay;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1 textAlignmentInsets:(struct UIEdgeInsets *)arg2;
 - (struct UIEdgeInsets)alignmentRectInsets;
-- (void)layoutSubviews;
+- (void)configureSubviews;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (void)configureForMediaObject:(id)arg1 previewWidth:(float)arg2 orientation:(BOOL)arg3;
 - (void)configureForComposition:(id)arg1;

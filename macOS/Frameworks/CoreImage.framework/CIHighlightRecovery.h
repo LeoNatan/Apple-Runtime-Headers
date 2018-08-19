@@ -15,8 +15,10 @@ __attribute__((visibility("hidden")))
     NSNumber *inputScale;
     NSNumber *inputApertureScaling;
     NSDictionary *inputTuningParameters;
+    NSNumber *inputDraftMode;
 }
 
+@property(retain, nonatomic) NSNumber *inputDraftMode; // @synthesize inputDraftMode;
 @property(retain) NSDictionary *inputTuningParameters; // @synthesize inputTuningParameters;
 @property(retain) NSNumber *inputApertureScaling; // @synthesize inputApertureScaling;
 @property(retain) NSNumber *inputScale; // @synthesize inputScale;

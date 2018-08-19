@@ -26,6 +26,10 @@ __attribute__((visibility("hidden")))
 + (id)animationFilter;
 + (long long)animationCategory;
 + (id)animationName;
+- (struct CATransform3D)perspectiveMVPMatrixWithTexture:(id)arg1 andFrame:(struct CGRect)arg2;
+- (struct CATransform3D)perspectiveMVPMatrixWithContext:(id)arg1;
+- (struct CATransform3D)mvpMatrixWithTexture:(id)arg1 andFrame:(struct CGRect)arg2;
+- (struct CATransform3D)mvpMatrixWithContext:(id)arg1;
 - (id)initWithAnimationContext:(id)arg1;
 
 // Remaining properties

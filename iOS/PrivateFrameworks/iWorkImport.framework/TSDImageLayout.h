@@ -6,7 +6,7 @@
 
 #import <iWorkImport/TSDMediaLayout.h>
 
-@class TSDImageAdjustments, TSDInfoGeometry, TSDLayoutGeometry, TSDMaskLayout, TSUBezierPath;
+@class TSDImageAdjustments, TSDImageInfo, TSDInfoGeometry, TSDLayoutGeometry, TSDMaskLayout;
 
 __attribute__((visibility("hidden")))
 @interface TSDImageLayout : TSDMediaLayout
@@ -17,8 +17,7 @@ __attribute__((visibility("hidden")))
     struct CGAffineTransform mLayoutToImageTransform;
     struct CGAffineTransform mLayoutToMaskTransform;
     _Bool mMaskIntersectsImage;
-    TSUBezierPath *mTracedPath;
-    int mHasAlpha;
+    unsigned long long mHasAlpha;
     TSDLayoutGeometry *mBaseImageLayoutGeometry;
     TSDInfoGeometry *mDynamicInfoGeometry;
     TSDInfoGeometry *mBaseInfoGeometry;
@@ -41,17 +40,17 @@ __attribute__((visibility("hidden")))
 - (void)dynamicImageAdjustmentsChangeDidBegin;
 - (_Bool)isDynamicallyChangingImageAdjustments;
 - (id)imageAdjustments;
-- (id)maskLayout;
-- (struct CGAffineTransform)imageDataToVisualSizeTransform;
-- (struct CGAffineTransform)layoutToMaskTransform;
-- (struct CGAffineTransform)layoutToImageTransform;
+@property(readonly, nonatomic) TSDMaskLayout *maskLayout;
+@property(readonly, nonatomic) struct CGAffineTransform imageDataToVisualSizeTransform;
+@property(readonly, nonatomic) struct CGAffineTransform layoutToMaskTransform;
+@property(readonly, nonatomic) struct CGAffineTransform layoutToImageTransform;
 - (struct CGSize)sizeOfFrameRectIncludingCoverage;
-- (struct CGPath *)pathToStroke;
-- (_Bool)hasMaskingPath;
-- (id)imageGeometryInRoot;
-- (id)originalImageGeometry;
-- (id)imageGeometry;
-- (id)imageInfo;
+@property(readonly, nonatomic) const struct CGPath *pathToStroke;
+@property(readonly, nonatomic) _Bool hasMaskingPath;
+@property(readonly, nonatomic) TSDLayoutGeometry *imageGeometryInRoot;
+@property(readonly, nonatomic) TSDLayoutGeometry *originalImageGeometry;
+@property(readonly, nonatomic) TSDLayoutGeometry *imageGeometry;
+@property(readonly, nonatomic) TSDImageInfo *imageInfo;
 - (struct CGRect)pathBoundsWithoutStroke;
 - (id)smartPathSource;
 - (void)p_calculateClampModelValuesAndPerformBlock:(CDUnknownBlockType)arg1;
@@ -64,7 +63,7 @@ __attribute__((visibility("hidden")))
 - (void)updateChildrenFromInfo;
 - (id)computeLayoutGeometry;
 - (id)layoutGeometryFromInfo;
-- (id)currentInfoGeometry;
+@property(readonly, nonatomic) TSDInfoGeometry *currentInfoGeometry;
 - (void)dealloc;
 - (id)initWithInfo:(id)arg1;
 

@@ -58,9 +58,9 @@
 + (id)newParsingSelectorMap;
 + (BOOL)parseFirstResultInData:(id)arg1 resultBuilder:(id)arg2;
 + (unsigned long long)countOfCardsInData:(id)arg1;
-@property(readonly, nonatomic) CNVCardReadingOptions *options; // @synthesize options=_options;
 @property(copy, nonatomic) NSData *imageData; // @synthesize imageData=_imageData;
 @property(readonly, nonatomic) id <CNVCardParsedResultBuilder> resultBuilder; // @synthesize resultBuilder=_resultBuilder;
+@property(readonly, nonatomic) CNVCardReadingOptions *options; // @synthesize options=_options;
 - (void).cxx_destruct;
 - (long long)currentPosition;
 - (BOOL)atEOF;

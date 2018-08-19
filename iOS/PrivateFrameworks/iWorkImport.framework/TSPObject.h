@@ -25,6 +25,7 @@ __attribute__((visibility("hidden")))
 + (_Bool)tsp_isTransientObjectIdentifier:(long long)arg1;
 + (_Bool)needsObjectUUID;
 + (Class)classForUnarchiver:(id)arg1;
++ (_Bool)tsp_isPerformingUpgrade;
 + (void)performUpgradeUsingBlock:(CDUnknownBlockType)arg1;
 + (id)tsp_deserializeFromURL:(id)arg1 options:(id)arg2 context:(id)arg3 isCrossDocumentPaste:(_Bool)arg4 isCrossAppPaste:(_Bool)arg5 completion:(CDUnknownBlockType)arg6;
 + (id)tsp_deserializeFromData:(id)arg1 options:(id)arg2 context:(id)arg3 error:(id *)arg4;

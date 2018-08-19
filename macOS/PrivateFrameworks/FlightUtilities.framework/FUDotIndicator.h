@@ -29,6 +29,7 @@ __attribute__((visibility("hidden")))
 - (struct CGSize)intrinsicContentSize;
 - (void)drawRect:(struct CGRect)arg1;
 @property(readonly, nonatomic) long long integerValue;
+- (BOOL)allowsVibrancy;
 
 @end
 

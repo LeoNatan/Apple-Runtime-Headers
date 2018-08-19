@@ -10,12 +10,14 @@
 
 @interface FCMultiSourceHeadlinesOperation : FCOperation
 {
+    _Bool _shouldBypassRecordSourcePersistence;
     id <FCCoreConfiguration> _configuration;
     id <FCContentContext> _context;
     NSArray *_articleListIDs;
     NSSet *_articleIDs;
     FCCachePolicy *_cachePolicyForArticleLists;
     NSArray *_networkEvents;
+    NSDictionary *_heldRecordsByType;
     CDUnknownBlockType _headlinesCompletionHandler;
     NSDictionary *_resultArticleListHeadlinesByArticleListID;
     NSDictionary *_resultArticleListsByID;
@@ -26,6 +28,8 @@
 @property(retain, nonatomic) NSDictionary *resultArticleListsByID; // @synthesize resultArticleListsByID=_resultArticleListsByID;
 @property(retain, nonatomic) NSDictionary *resultArticleListHeadlinesByArticleListID; // @synthesize resultArticleListHeadlinesByArticleListID=_resultArticleListHeadlinesByArticleListID;
 @property(copy, nonatomic) CDUnknownBlockType headlinesCompletionHandler; // @synthesize headlinesCompletionHandler=_headlinesCompletionHandler;
+@property(retain, nonatomic) NSDictionary *heldRecordsByType; // @synthesize heldRecordsByType=_heldRecordsByType;
+@property(nonatomic) _Bool shouldBypassRecordSourcePersistence; // @synthesize shouldBypassRecordSourcePersistence=_shouldBypassRecordSourcePersistence;
 @property(copy, nonatomic) NSArray *networkEvents; // @synthesize networkEvents=_networkEvents;
 @property(retain, nonatomic) FCCachePolicy *cachePolicyForArticleLists; // @synthesize cachePolicyForArticleLists=_cachePolicyForArticleLists;
 @property(copy, nonatomic) NSSet *articleIDs; // @synthesize articleIDs=_articleIDs;

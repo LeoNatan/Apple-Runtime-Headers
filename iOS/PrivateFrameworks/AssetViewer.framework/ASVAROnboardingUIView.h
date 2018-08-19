@@ -16,7 +16,7 @@
     unsigned long long _previousTrackingState;
     unsigned long long _animationState;
     UIView *_backgroundView;
-    UIView *_resetButtonContainerView;
+    UIView *_moveDeviceTextContainer;
     UILabel *_moveDeviceText;
     UILabel *_relocalizeText;
     ASVRoundedButton *_resetButton;
@@ -43,6 +43,7 @@
     double _lastAccelOverThresholdTime;
     float _lastOrientationRotation;
     float _accelerationBaseline;
+    float _accelerationThreshold;
     float _currentCubeAngle;
     _Bool _initialTransformSet;
     _Bool _isAnimating;
@@ -53,6 +54,7 @@
     int _accelOverThresholdCount;
     int _currentAccelerationIndex;
     _Bool _allowRotateAutoDismiss;
+    _Bool _showResumeTextAfterFirstDisplay;
     _Bool _showAllAnimationStatesBeforeHiding;
     _Bool _showAnimatedUI;
     _Bool _interceptARKitSensorData;
@@ -72,6 +74,7 @@
 @property(nonatomic) float moveDistanceThreshold; // @synthesize moveDistanceThreshold=_moveDistanceThreshold;
 @property(nonatomic) double minimumAnimationTime; // @synthesize minimumAnimationTime=_minimumAnimationTime;
 @property(nonatomic) double inactiveTimeBeforeShowUI; // @synthesize inactiveTimeBeforeShowUI=_inactiveTimeBeforeShowUI;
+@property(nonatomic) _Bool showResumeTextAfterFirstDisplay; // @synthesize showResumeTextAfterFirstDisplay=_showResumeTextAfterFirstDisplay;
 @property(nonatomic) _Bool allowRotateAutoDismiss; // @synthesize allowRotateAutoDismiss=_allowRotateAutoDismiss;
 @property(nonatomic) float resetButtonPortraitVerticalOffset; // @synthesize resetButtonPortraitVerticalOffset=_resetButtonPortraitVerticalOffset;
 @property(nonatomic) float resetButtonLandscapeVerticalOffset; // @synthesize resetButtonLandscapeVerticalOffset=_resetButtonLandscapeVerticalOffset;
@@ -91,6 +94,7 @@
 - (_Bool)isShowingRelocalizeUI;
 - (_Bool)isShowingMoveDeviceUI;
 - (void)showRelocalizeUI:(double)arg1;
+- (void)updateMoveDeviceText:(id)arg1 fadeText:(_Bool)arg2;
 - (void)showMoveDeviceUI:(double)arg1;
 - (_Bool)isShowingBackground;
 - (void)hideBackground:(double)arg1;
@@ -102,6 +106,7 @@
 - (void)populateRecentPositions: /* Error: Ran out of types for this method. */;
 -     // Error parsing type: 16@0:8, name: calculateAveragePosition
 - (void)update:(double)arg1;
+- (void)clampToNearestQuarterRotation;
 -     // Error parsing type: {?=[4]}40@0:8f16f20f24f28f32f36, name: ortho2d:right:bottom:top:near:far:
 -     // Error parsing type: {?=[4]}64@0:8163248, name: lookAt:center:up:
 -     // Error parsing type: {?=[4]}32@0:8f16f20f24f28, name: perspective_fov:aspect:near:far:
@@ -123,7 +128,7 @@
 - (void)cleanupAnimatedUI;
 - (void)prepareAnimatedUI;
 - (void)prepareOnboardingUI;
-- (void)prepareMoveText;
+- (void)updateMoveText:(_Bool)arg1;
 - (void)updateResetButtonWithFadeIn:(_Bool)arg1;
 - (void)hideOnboardingUI;
 - (void)dealloc;

@@ -27,6 +27,7 @@
 + (id)personPredicateWithNameLike:(id)arg1 group:(void *)arg2 source:(void *)arg3 account:(id)arg4 includeSourceInResults:(_Bool)arg5 addressBook:(void *)arg6;
 + (id)personPredicateWithNameLike:(id)arg1 group:(void *)arg2 source:(void *)arg3 account:(id)arg4 addressBook:(void *)arg5;
 + (id)personPredicateWithNameLike:(id)arg1 addressBook:(void *)arg2;
+- (_Bool)shouldSerialize;
 - (void)bindDouble:(double)arg1 toStatement:(struct CPSqliteStatement *)arg2 withBindingOffset:(int *)arg3;
 - (void)bindString:(id)arg1 toStatement:(struct CPSqliteStatement *)arg2 withBindingOffset:(int *)arg3;
 - (void)ab_bindJoinClauseComponentOfStatement:(struct CPSqliteStatement *)arg1 withBindingOffset:(int *)arg2 predicateIdentifier:(int)arg3;

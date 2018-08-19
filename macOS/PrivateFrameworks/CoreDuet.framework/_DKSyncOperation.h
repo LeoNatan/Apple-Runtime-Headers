@@ -8,21 +8,17 @@
 
 @interface _DKSyncOperation : NSOperation
 {
-    BOOL _executing;
-    BOOL _finished;
+    // Error parsing type: AC, name: _state
 }
 
-- (void)cancelOperation;
++ (BOOL)_removesDependenciesAfterFinish;
 - (void)endOperation;
-- (void)removeAllDependencies;
 - (void)startOperation;
 - (void)start;
 - (void)dealloc;
-@property BOOL finished; // @dynamic finished;
+- (id)init;
 - (BOOL)isFinished;
-@property BOOL executing; // @dynamic executing;
 - (BOOL)isExecuting;
-- (void)cancel;
 
 @end
 

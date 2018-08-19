@@ -35,6 +35,7 @@
 - (_Bool)billingCycleSupported;
 - (void)fetchWorkspaceInfo;
 - (void)_clearCache;
+- (void)willEnterForeground;
 - (void)dealloc;
 - (id)init;
 - (id)initPrivate;

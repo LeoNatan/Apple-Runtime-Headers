@@ -6,12 +6,13 @@
 
 #import "NSObject.h"
 
-@class NSMutableDictionary, NSNumber, NSObject<OS_dispatch_queue>, NSString;
+@class ACAccount, NSDictionary, NSMutableDictionary, NSNumber, NSObject<OS_dispatch_queue>, NSString;
 
 @interface AMSMetricsEvent : NSObject
 {
     NSObject<OS_dispatch_queue> *_internalQueue;
     NSMutableDictionary *_underlyingDictionary;
+    ACAccount *_account;
     NSNumber *_databasePID;
 }
 
@@ -22,6 +23,7 @@
 + (id)metricsAuthenticationAttemptDictionaryForAuthKitError:(id)arg1;
 + (id)createEventFromAuthenticationContext:(id)arg1 error:(id)arg2;
 @property(retain) NSNumber *databasePID; // @synthesize databasePID=_databasePID;
+@property(retain, nonatomic) ACAccount *account; // @synthesize account=_account;
 @property(readonly, nonatomic) NSMutableDictionary *underlyingDictionary; // @synthesize underlyingDictionary=_underlyingDictionary;
 - (void).cxx_destruct;
 - (void)setProperty:(id)arg1 forBodyKey:(id)arg2;
@@ -38,8 +40,9 @@
 @property(retain, nonatomic) NSNumber *baseVersion;
 @property(retain, nonatomic) NSString *appVersion;
 - (id)reportingURLFromBaseURL:(id)arg1;
+@property(readonly) NSDictionary *databaseEventBody;
 - (id)initWithTopic:(id)arg1;
-- (id)initWithDictionary:(id)arg1;
+- (id)initWithDatabaseEventBody:(id)arg1;
 
 @end
 

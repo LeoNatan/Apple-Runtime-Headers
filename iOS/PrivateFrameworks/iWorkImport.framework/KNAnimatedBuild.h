@@ -81,6 +81,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) _Bool isImplicitlyVisibleAtBeginning;
 @property(readonly, nonatomic) _Bool isMagicChartBuild;
 @property(readonly, nonatomic) _Bool isDriftBuild;
+@property(readonly, nonatomic) _Bool isLineDrawBuild;
 @property(readonly, nonatomic) _Bool isContentBuild;
 @property(readonly, nonatomic) _Bool isEmphasisBuild;
 @property(readonly, nonatomic) _Bool isActionBuild;

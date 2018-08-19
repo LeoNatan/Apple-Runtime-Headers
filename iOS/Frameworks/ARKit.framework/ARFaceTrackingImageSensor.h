@@ -21,6 +21,7 @@
     _Bool _signpostFirstFaceDone;
     double _startTime;
     unsigned long long _droppedFramesPerSec;
+    _Bool _previousImageDataValid;
     _Bool _recordingMode;
     NSString *_requiredFaceMetaDataObjectType;
 }

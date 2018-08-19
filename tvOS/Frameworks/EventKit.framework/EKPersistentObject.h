@@ -83,6 +83,7 @@
 - (void)rollback;
 - (void)reset;
 - (void)saved;
+- (_Bool)setAttributes:(id)arg1 relations:(id)arg2 objectID:(id)arg3 eventStore:(id)arg4 error:(id *)arg5;
 - (_Bool)pushDirtyProperties:(id *)arg1;
 - (_Bool)isPropertyLoaded:(id)arg1;
 - (void)_addDirtyProperty:(id)arg1;

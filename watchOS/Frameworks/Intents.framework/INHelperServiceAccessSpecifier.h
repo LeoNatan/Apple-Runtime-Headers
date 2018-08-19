@@ -15,6 +15,7 @@
 }
 
 + (id)accessSpecifierAppropriateForXPCConnection:(id)arg1;
++ (id)accessSpecifierAppropriateForCurrentProcess;
 + (id)accessSpecifierWithNoAccess;
 + (id)accessSpecifierFilteredForAssociatedAppBundleIdentifier:(id)arg1;
 + (id)accessSpecifierUnrestricted;

@@ -19,6 +19,7 @@
 @property(readonly, nonatomic) NSUndoManager *recipientBarUndoManager; // @synthesize recipientBarUndoManager=_recipientBarUndoManager;
 @property(copy, nonatomic) NSDate *referenceDate; // @synthesize referenceDate=_referenceDate;
 - (void).cxx_destruct;
+- (long long)compareForConversationListSorting:(id)arg1;
 - (id)init;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

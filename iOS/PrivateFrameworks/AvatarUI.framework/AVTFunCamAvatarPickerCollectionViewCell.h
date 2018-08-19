@@ -40,6 +40,7 @@
 - (void)updateSelectionLayer;
 - (void)setSelected:(_Bool)arg1;
 - (void)setImageZoomFactor:(double)arg1;
+- (void)updateWithTintColor:(id)arg1;
 - (void)updateWithTitle:(id)arg1;
 - (void)updateWithImage:(id)arg1 animated:(_Bool)arg2;
 - (void)layoutSubviews;

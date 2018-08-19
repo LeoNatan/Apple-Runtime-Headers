@@ -14,6 +14,7 @@
 - (id)initWithMetadata:(id)arg1;
 
 // Remaining properties
+@property(nonatomic, getter=isAutoDownload) _Bool autoDownload;
 @property(nonatomic) int downloadFeeAgreementStatus; // @dynamic downloadFeeAgreementStatus;
 @property(nonatomic) _Bool enforceWifiOnlyOverride; // @dynamic enforceWifiOnlyOverride;
 @property(nonatomic) int termsAndConditionsAgreementStatus; // @dynamic termsAndConditionsAgreementStatus;

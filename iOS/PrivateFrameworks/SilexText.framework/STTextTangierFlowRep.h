@@ -26,6 +26,11 @@
 @property(retain, nonatomic) STAXCustomRotor *linkRotor; // @synthesize linkRotor=_linkRotor;
 @property(nonatomic) __weak id <STTextTangierRepAccessibilityDataSource> accessibilityDataSource; // @synthesize accessibilityDataSource;
 - (void).cxx_destruct;
+- (id)sxaxNameForEditRotorAction:(id)arg1;
+- (id)sxaxSupportedEditRotorActions;
+- (_Bool)accessibilitySupportsTextSelection;
+- (id)accessibilityPreviousTextNavigationElement;
+- (id)accessibilityNextTextNavigationElement;
 - (id)interactiveCanvasController;
 - (void)_accessibilitySetSelectedTextRange:(struct _NSRange)arg1;
 - (struct _NSRange)_accessibilitySelectedTextRange;
@@ -34,6 +39,7 @@
 - (id)supportedCustomRotors;
 - (void)dealloc;
 - (_Bool)updateFromVisualPosition;
+- (id)orderedSiblings;
 - (id)siblings;
 - (unsigned long long)charIndexForPointWithPinning:(struct CGPoint)arg1 isTail:(_Bool)arg2 selectionType:(int)arg3;
 - (id)repForCharIndex:(unsigned long long)arg1 isStart:(_Bool)arg2;

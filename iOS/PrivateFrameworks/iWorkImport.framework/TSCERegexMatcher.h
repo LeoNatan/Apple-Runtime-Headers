@@ -11,11 +11,11 @@
 __attribute__((visibility("hidden")))
 @interface TSCERegexMatcher : NSObject
 {
-    NSRegularExpression *mRegex;
+    NSRegularExpression *_regex;
 }
 
 + (id)regexMatcherWithStringMatch:(id)arg1;
-- (void)dealloc;
+- (void).cxx_destruct;
 - (_Bool)matches:(id)arg1;
 - (id)initWithStringToMatch:(id)arg1;
 

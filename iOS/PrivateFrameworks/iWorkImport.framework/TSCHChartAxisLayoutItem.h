@@ -33,6 +33,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) TSCHChartAxisTitleLayoutItem *axisTitleLayoutItem; // @synthesize axisTitleLayoutItem=mAxisTitle;
 @property(readonly, nonatomic) int axisPosition; // @synthesize axisPosition=mAxisPosition;
 @property(retain, nonatomic) TSCHChartAxisID *axisID; // @synthesize axisID=mAxisID;
+- (void).cxx_destruct;
 - (id)subselectionHaloPositionsForSelections:(id)arg1;
 - (id)p_subselectionHaloPositionsForLabelsSelections:(id)arg1;
 - (id)subselectionKnobPositionsForSelection:(id)arg1;
@@ -45,7 +46,6 @@ __attribute__((visibility("hidden")))
 - (id)renderersWithRep:(id)arg1;
 - (struct CGRect)calcOverhangRect;
 - (struct CGSize)calcMinSize;
-- (void)dealloc;
 - (id)initWithParent:(id)arg1 axisPosition:(int)arg2;
 
 @end

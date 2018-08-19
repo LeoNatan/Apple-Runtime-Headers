@@ -24,9 +24,9 @@
     AKAppleIDServerUIContextController *_serverUIContextController;
     NSHTTPURLResponse *_deferredResponse;
     AKNativeAccountRecoveryController *_nativeRecoveryController;
-    _Bool _isPresentingServerUI;
     AAUICDPStingrayRemoteUIController *_stingrayController;
     _Bool _forceInlinePresentation;
+    _Bool _presentingServerUI;
     UIViewController *_presentingViewController;
     id <AKAppleIDAuthenticationInAppContextDelegate> _delegate;
     id <AKAppleIDAuthenticationInAppContextAlertDelegate> _alertDelegate;
@@ -37,6 +37,7 @@
 @property(nonatomic, setter=_setPasswordDelegate:) __weak id <AKAppleIDAuthenticationInAppContextPasswordDelegate> _passwordDelegate; // @synthesize _passwordDelegate=__passwordDelegate;
 @property(retain, nonatomic, setter=_setCdpUiProvider:) id <CDPStateUIProvider> cdpUiProvider; // @synthesize cdpUiProvider=_cdpUiProvider;
 @property(nonatomic) __weak id <AKAppleIDAuthenticationInAppContextAlertDelegate> alertDelegate; // @synthesize alertDelegate=_alertDelegate;
+@property(nonatomic, getter=isPresentingServerUI) _Bool presentingServerUI; // @synthesize presentingServerUI=_presentingServerUI;
 @property(nonatomic) __weak id <AKAppleIDAuthenticationInAppContextDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak UIViewController *presentingViewController; // @synthesize presentingViewController=_presentingViewController;
 @property(nonatomic) _Bool forceInlinePresentation; // @synthesize forceInlinePresentation=_forceInlinePresentation;

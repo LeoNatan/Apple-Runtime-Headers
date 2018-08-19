@@ -12,7 +12,7 @@
 @property(nonatomic) __weak id <DNDSAssertionSyncManagerDelegate> delegate;
 @property(nonatomic) __weak id <DNDSAssertionSyncManagerDataSource> dataSource;
 - (void)invalidateAllModeAssertionsTakenBeforeDate:(NSDate *)arg1 forReason:(unsigned int)arg2;
-- (void)update;
+- (void)updateForReason:(unsigned int)arg1;
 - (void)resume;
 @end
 

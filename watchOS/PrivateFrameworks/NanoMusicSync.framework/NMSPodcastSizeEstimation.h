@@ -16,12 +16,16 @@
     NSMutableDictionary *_sizeInfoDict;
 }
 
++ (double)_defaultSizeDurationRatio;
++ (unsigned long long)_defaultEstimatedSize;
++ (unsigned long long)_minimumSizeThreshold;
 @property(retain) NSMutableDictionary *sizeInfoDict; // @synthesize sizeInfoDict=_sizeInfoDict;
 - (void).cxx_destruct;
 - (unsigned long long)_totalAverageSize;
 - (double)_totalSizeDurationRatio;
 - (id)_cachedPodcastSizeInfoDict;
 - (void)_setupFromCache;
+- (double)_adjustedSizeDurationRatio:(double)arg1;
 - (unsigned long long)sizeForFeedURL:(id)arg1 duration:(double)arg2 feedProvidedSize:(unsigned long long)arg3;
 - (void)synchronize;
 - (_Bool)incrementSize:(unsigned long long)arg1 duration:(double)arg2 forFeedURL:(id)arg3;

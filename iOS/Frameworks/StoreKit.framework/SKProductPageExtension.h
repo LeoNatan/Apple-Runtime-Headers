@@ -36,6 +36,7 @@
 - (void)cancelButtonPressed:(id)arg1;
 - (void)lookupItemDidLoad:(id)arg1 parameters:(id)arg2;
 - (void)setupWithClientBundleID:(id)arg1 bagType:(long long)arg2;
+- (void)setVisibleInClientWindow:(id)arg1;
 - (void)storeButtonPressed:(id)arg1;
 - (void)setupWithCustomNavigationItem:(id)arg1 promptString:(id)arg2 askToBuy:(_Bool)arg3;
 - (_Bool)productPageItemDidLoad:(id)arg1 parameters:(id)arg2;

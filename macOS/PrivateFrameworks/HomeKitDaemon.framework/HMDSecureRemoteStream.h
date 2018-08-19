@@ -57,8 +57,11 @@
 - (void)startAndInvokeOnQueue:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)notifyClientsUpdatedIdle:(BOOL)arg1;
 @property(readonly, copy) NSDate *lastActivity; // @synthesize lastActivity=_lastActivity;
-@property(getter=isIdle) BOOL idle; // @synthesize idle=_idle;
-@property(getter=isOpen) BOOL open; // @synthesize open=_open;
+- (void)setIdle:(BOOL)arg1;
+@property(readonly, getter=isIdle) BOOL idle; // @synthesize idle=_idle;
+@property(readonly, getter=isAuthenticated) BOOL authenticated;
+- (void)setOpen:(BOOL)arg1;
+@property(readonly, getter=isOpen) BOOL open; // @synthesize open=_open;
 - (void)setMaximumRemoteStreams:(id)arg1;
 @property(readonly, copy) NSNumber *maximumRemoteStreams; // @synthesize maximumRemoteStreams=_maximumRemoteStreams;
 @property long long qualityOfService; // @synthesize qualityOfService=_qualityOfService;

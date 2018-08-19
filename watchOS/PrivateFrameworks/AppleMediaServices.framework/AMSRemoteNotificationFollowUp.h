@@ -28,6 +28,8 @@ __attribute__((visibility("hidden")))
 + (_Bool)supportsInactiveAccounts;
 + (int)supportedActionType;
 + (void)handleNotificationPayload:(id)arg1;
++ (_Bool)isDeviceOfferNotification:(id)arg1;
++ (void)removeDeviceOfferWithPayload:(id)arg1 logKey:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

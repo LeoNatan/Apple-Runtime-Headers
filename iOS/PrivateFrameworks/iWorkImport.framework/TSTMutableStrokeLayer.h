@@ -23,7 +23,7 @@ __attribute__((visibility("hidden")))
 - (void)appendStroke:(id)arg1 inRange:(struct TSTSimpleRange)arg2 order:(int)arg3;
 
 // Remaining properties
-@property(nonatomic) unsigned short columnOrRowIndex; // @dynamic columnOrRowIndex;
+@property(nonatomic) unsigned int columnOrRowIndex; // @dynamic columnOrRowIndex;
 
 @end
 

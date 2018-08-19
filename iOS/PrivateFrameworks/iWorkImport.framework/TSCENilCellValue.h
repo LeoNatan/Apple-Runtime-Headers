@@ -14,6 +14,7 @@ __attribute__((visibility("hidden")))
 - (long long)compareToCellValue:(id)arg1;
 - (_Bool)isEqualToCellValue:(id)arg1;
 - (id)format;
+- (id)canonicalKeyString;
 - (id)displayString;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;

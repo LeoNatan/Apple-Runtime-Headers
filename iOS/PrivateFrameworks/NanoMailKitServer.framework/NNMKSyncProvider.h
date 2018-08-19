@@ -22,6 +22,7 @@
 {
     _Bool _pairedDeviceSupportsMultipleMailboxes;
     _Bool _fullSyncRecoveredInThisSession;
+    _Bool _triggeredInitialSyncToRecoverFromSyncVersionMismatch;
     id <NNMKSyncProviderDelegate> _delegate;
     NSObject<OS_dispatch_queue> *_providerQueue;
     id <NNMKSyncStateManager> _syncStateManager;
@@ -42,6 +43,7 @@
 }
 
 + (_Bool)prepareForSystemAppDeletion:(id *)arg1;
+@property(nonatomic) _Bool triggeredInitialSyncToRecoverFromSyncVersionMismatch; // @synthesize triggeredInitialSyncToRecoverFromSyncVersionMismatch=_triggeredInitialSyncToRecoverFromSyncVersionMismatch;
 @property(retain, nonatomic) NNMKBatchRequestHandler *batchRequestHandler; // @synthesize batchRequestHandler=_batchRequestHandler;
 @property(retain, nonatomic) NNMKInitialSyncProgressTracker *initialSyncProgressTracker; // @synthesize initialSyncProgressTracker=_initialSyncProgressTracker;
 @property(retain, nonatomic) NNMKResendScheduler *resendScheduler; // @synthesize resendScheduler=_resendScheduler;
@@ -121,6 +123,7 @@
 - (void)syncStateManagerDidBeginSyncSession:(id)arg1 syncSessionType:(id)arg2 syncSessionIdentifier:(id)arg3;
 - (void)syncStateManagerDidChangePairedDevice:(id)arg1;
 - (void)syncStateManagerDidUnpair:(id)arg1;
+- (void)fetchesSyncServiceServer:(id)arg1 didNotifyAboutWebKitStatus:(id)arg2;
 - (void)fetchesSyncServiceServer:(id)arg1 didNotifyInitialSyncFinished:(id)arg2;
 - (void)_handleHaltSyncForMailbox:(id)arg1;
 - (void)fetchesSyncServiceServer:(id)arg1 didRequestHaltSync:(id)arg2;
@@ -206,6 +209,7 @@
 - (void)replyWithAccounts:(id)arg1;
 - (void)_triggerInitialSyncTrackingProgress:(_Bool)arg1;
 - (void)_triggerInitialSync;
+- (void)_triggerInitialSyncToRecoverFromSyncVersionMismatch;
 - (void)dealloc;
 - (id)initWithDelegate:(id)arg1 syncStateManager:(id)arg2 directoryProvider:(id)arg3;
 - (id)initWithDelegate:(id)arg1;

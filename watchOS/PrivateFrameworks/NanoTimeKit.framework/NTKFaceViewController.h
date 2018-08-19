@@ -15,7 +15,7 @@
 
 @class NSCache, NSDate, NSMutableDictionary, NSObject<OS_dispatch_source>, NSString, NTKComplicationController, NTKComplicationDisplayWrapperView, NTKDelayedBlock, NTKFace, NTKFaceEditView, NTKFaceView, PUICClientSideAnimation, UIImageView, UIView, UIViewController<NTKClockStatusBarViewController>;
 
-@interface NTKFaceViewController : UIViewController <NTKFaceEditViewDelegate, NTKComplicationPickerViewDataSource, NTKFaceObserver, NTKClockIconZoomAnimator, NTKClockHardwareInput, NTKFaceViewDelegate>
+@interface NTKFaceViewController : UIViewController <NTKFaceEditViewDelegate, NTKComplicationPickerViewDataSource, NTKClockIconZoomAnimator, NTKClockHardwareInput, NTKFaceViewDelegate, NTKFaceObserver>
 {
     NTKFaceView *_faceView;
     NSMutableDictionary *_normalComplicationControllers;

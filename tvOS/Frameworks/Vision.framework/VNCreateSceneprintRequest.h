@@ -15,14 +15,14 @@
     VNCanceller *_canceller;
 }
 
++ (id)defaultProcessingDeviceForRevision:(unsigned long long)arg1;
 + (void)recordDefaultOptionsInDictionary:(id)arg1;
 + (Class)configurationClass;
-+ (id)_imageAnalyzerMultiDetectorForRevision:(unsigned long long)arg1 detectionLevel:(unsigned long long)arg2 processingDevice:(id)arg3 requestBackingStore:(unsigned long long)arg4 error:(id *)arg5;
-+ (id)_sceneClassifierForRevision:(unsigned long long)arg1 requestBackingStore:(unsigned long long)arg2 error:(id *)arg3;
 + (const CDStruct_7d93034e *)revisionAvailability;
 - (void).cxx_destruct;
 - (_Bool)internalCancelInContext:(id)arg1 error:(id *)arg2;
 - (_Bool)internalPerformRevision:(unsigned long long)arg1 inContext:(id)arg2 error:(id *)arg3;
+- (id)newDefaultDetectorOptionsForRequestRevision:(unsigned long long)arg1;
 - (void)applyConfigurationOfRequest:(id)arg1;
 - (_Bool)hasCancellationHook;
 - (_Bool)willAcceptCachedResultsFromRequestWithConfiguration:(id)arg1;
@@ -33,6 +33,8 @@
 - (id)initWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (_Bool)warmUpRequestPerformer:(id)arg1 error:(id *)arg2;
 - (id)_applicableDetectorAndReturnError:(id *)arg1;
+- (id)_applicableDetectorForRequestRevision:(unsigned long long)arg1 applicableDetectorOptions:(id *)arg2 error:(id *)arg3;
+- (id)_detectorTypeForRequestRevision:(unsigned long long)arg1 options:(id)arg2 error:(id *)arg3;
 @property(readonly) NSArray *supportedImageSizeSet;
 
 // Remaining properties

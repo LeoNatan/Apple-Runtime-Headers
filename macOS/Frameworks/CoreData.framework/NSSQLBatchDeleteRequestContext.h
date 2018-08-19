@@ -6,7 +6,7 @@
 
 #import <CoreData/NSSQLStoreRequestContext.h>
 
-@class NSArray, NSBatchDeleteRequest, NSFetchRequest, NSSQLFetchRequestContext;
+@class NSArray, NSBatchDeleteRequest, NSFetchRequest, NSSQLFetchRequestContext, NSString;
 
 __attribute__((visibility("hidden")))
 @interface NSSQLBatchDeleteRequestContext : NSSQLStoreRequestContext
@@ -15,8 +15,16 @@ __attribute__((visibility("hidden")))
     NSArray *_deleteStatements;
     NSArray *_deletedObjectIDs;
     NSSQLFetchRequestContext *_fetchContext;
+    NSArray *_externalDataReferenceTriggerStatements;
+    NSString *_tempTableName;
+    NSArray *_externalDataReferencesToDelete;
+    NSArray *_fileBackedFuturesToDelete;
 }
 
+@property(retain, nonatomic) NSArray *fileBackedFuturesToDelete; // @synthesize fileBackedFuturesToDelete=_fileBackedFuturesToDelete;
+@property(retain, nonatomic) NSArray *externalDataReferencesToDelete; // @synthesize externalDataReferencesToDelete=_externalDataReferencesToDelete;
+@property(retain, nonatomic) NSString *tempTableName; // @synthesize tempTableName=_tempTableName;
+@property(retain, nonatomic) NSArray *exernalDataReferenceStatements; // @synthesize exernalDataReferenceStatements=_externalDataReferenceTriggerStatements;
 @property(retain, nonatomic) NSArray *affectedObjectIDs; // @synthesize affectedObjectIDs=_deletedObjectIDs;
 - (void)executeRequestCore:(id *)arg1;
 @property(readonly, retain, nonatomic) NSArray *deleteStatements; // @synthesize deleteStatements=_deleteStatements;

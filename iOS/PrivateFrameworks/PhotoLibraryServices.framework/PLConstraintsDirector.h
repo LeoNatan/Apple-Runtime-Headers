@@ -6,11 +6,11 @@
 
 #import "NSObject.h"
 
-#import "PLForegroundObserver.h"
+#import "PLForegroundMonitorDelegate.h"
 
-@class NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, NSString, NSURL;
+@class NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, NSString, NSURL, PLForegroundMonitor;
 
-@interface PLConstraintsDirector : NSObject <PLForegroundObserver>
+@interface PLConstraintsDirector : NSObject <PLForegroundMonitorDelegate>
 {
     _Bool _didTransitionToOpportunisticDisallowed;
     _Bool _photosAppInForeground;
@@ -18,11 +18,13 @@
     NSObject<OS_dispatch_queue> *_isolationQueue;
     NSObject<OS_dispatch_source> *_bonusTimer;
     NSURL *_photoLibraryURL;
+    PLForegroundMonitor *_foregroundMonitor;
 }
 
 + (id)sharedConstraintsDirector;
 + (_Bool)_photoanalysisdIsRunning;
-- (void)foregroundMonitor:(id)arg1 changedStateToForeground:(_Bool)arg2 forBundleIdentifier:(id)arg3 context:(id)arg4;
++ (_Bool)constraintsAllowSchedulingUserInitiatedAnalysisForAssets;
+- (void)foregroundMonitor:(id)arg1 changedStateToForeground:(_Bool)arg2 forBundleIdentifier:(id)arg3;
 - (_Bool)shouldScheduleUserInitiatedAnalysisForAssets;
 - (void)informCameraAppForegroundState:(_Bool)arg1;
 - (void)informCameraAppCameraViewControllerVisibilityChanged:(_Bool)arg1;

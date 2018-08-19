@@ -13,20 +13,20 @@ __attribute__((visibility("hidden")))
 {
     TSTStrokeSidecar *_strokeSidecar;
     TSTCellRegion *_region;
-    NSIndexSet *_columnIndiciesInRow;
+    NSIndexSet *_columnIndexesInRow;
     TSTStrokeLayer *_topStrokeLayer;
     TSTStrokeLayer *_bottomStrokeLayer;
 }
 
 @property(retain, nonatomic) TSTStrokeLayer *bottomStrokeLayer; // @synthesize bottomStrokeLayer=_bottomStrokeLayer;
 @property(retain, nonatomic) TSTStrokeLayer *topStrokeLayer; // @synthesize topStrokeLayer=_topStrokeLayer;
-@property(retain, nonatomic) NSIndexSet *columnIndiciesInRow; // @synthesize columnIndiciesInRow=_columnIndiciesInRow;
+@property(retain, nonatomic) NSIndexSet *columnIndexesInRow; // @synthesize columnIndexesInRow=_columnIndexesInRow;
 @property(retain, nonatomic) TSTCellRegion *region; // @synthesize region=_region;
 @property(retain, nonatomic) TSTStrokeSidecar *strokeSidecar; // @synthesize strokeSidecar=_strokeSidecar;
 - (void).cxx_destruct;
-- (_Bool)cellBorderAtColumn:(unsigned char)arg1;
+- (_Bool)cellBorderAtColumn:(unsigned short)arg1;
 - (_Bool)anyCellBordersInThisRow;
-- (void)setIteratorToRow:(unsigned short)arg1;
+- (void)setIteratorToRow:(unsigned int)arg1;
 - (id)initWithStrokeSidecar:(id)arg1 region:(id)arg2;
 
 @end

@@ -19,6 +19,7 @@
     EKReadWriteLock *_locationPredictionLock;
     _Bool _occurrenceIsAllDay;
     _Bool _requiresDetachDueToSnoozedAlarm;
+    int _clearModifiedFlags;
     NSString *_birthdayPersonUniqueID;
     EKCalendarDate *_occurrenceStartDate;
     EKCalendarDate *_occurrenceEndDate;
@@ -36,6 +37,7 @@
 + (id)knownRelationshipSingleValueKeys;
 + (Class)frozenClass;
 + (id)_locationStringForLocations:(id)arg1;
+@property(nonatomic) int clearModifiedFlags; // @synthesize clearModifiedFlags=_clearModifiedFlags;
 @property(nonatomic) _Bool requiresDetachDueToSnoozedAlarm; // @synthesize requiresDetachDueToSnoozedAlarm=_requiresDetachDueToSnoozedAlarm;
 @property(copy, nonatomic) NSNumber *originalOccurrenceIsAllDay; // @synthesize originalOccurrenceIsAllDay=_originalOccurrenceIsAllDay;
 @property(copy, nonatomic) EKCalendarDate *originalOccurrenceEndDate; // @synthesize originalOccurrenceEndDate=_originalOccurrenceEndDate;
@@ -45,6 +47,8 @@
 @property(copy, nonatomic) EKCalendarDate *occurrenceStartDate; // @synthesize occurrenceStartDate=_occurrenceStartDate;
 @property(readonly, nonatomic) NSString *birthdayPersonUniqueID; // @synthesize birthdayPersonUniqueID=_birthdayPersonUniqueID;
 - (void).cxx_destruct;
+- (void)_clearAttendeeChangedFlags;
+- (void)dismissAcceptedProposeNewTimeNotification;
 @property(readonly, nonatomic) NSURL *launchURL;
 - (_Bool)updateWithGeocodedMapItemAndSaveWithCommit:(id)arg1 eventStore:(id)arg2 error:(id *)arg3;
 - (id)scanForConflicts;
@@ -86,6 +90,7 @@
 - (void)reset;
 - (void)_addNewAttendeesToRecentsIfNeeded;
 - (void)_addOrganizerToRecentsIfNeeded;
+- (void)markAsCommitted;
 - (void)markAsSaved;
 - (void)_adjustAfterRebaseForMovingFromOldSource:(id)arg1 toNewSource:(id)arg2 committingItem:(id)arg3;
 - (void)_adjustForNewCalendarBeforeCommit;
@@ -97,6 +102,8 @@
 @property(readonly, nonatomic) _Bool isSignificantlyDetachedIgnoringParticipation;
 @property(readonly, nonatomic) _Bool isSignificantlyDetached;
 - (void)_propagateChangesToDetachedEvents:(id)arg1 significantlyDetachedEvents:(id)arg2 startDateOffset:(id)arg3 duration:(id)arg4 calendar:(id)arg5;
+- (void)_updateModifiedProperties;
+- (void)_updateModifiedPropertiesForThisEventAndAllDetachments;
 - (_Bool)commitWithSpan:(long long)arg1 error:(id *)arg2;
 - (void)_willCommit;
 - (id)_generateNewUniqueID;
@@ -160,6 +167,8 @@
 - (_Bool)serverSupportedProposeNewTime;
 - (_Bool)canForward;
 @property(nonatomic) _Bool attendeeReplyChanged; // @dynamic attendeeReplyChanged;
+@property(nonatomic) _Bool attendeeDeclinedStartDate;
+@property(nonatomic) _Bool attendeeProposedStartDate;
 @property(nonatomic) _Bool attendeeStatus;
 @property(nonatomic) _Bool attendeeComment;
 @property(nonatomic) _Bool locationChanged;

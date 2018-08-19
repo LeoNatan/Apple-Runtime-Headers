@@ -7,6 +7,7 @@
 #import "NSURL.h"
 
 @interface NSURL (TSPersistence)
++ (id)tsp_iWorkAVAssetURLWithUUID:(id)arg1 filename:(id)arg2 contentTypeUTI:(id)arg3;
 - (_Bool)tsp_getIsUbiquitousValue:(_Bool *)arg1 promised:(_Bool)arg2 error:(id *)arg3;
 - (_Bool)tsp_isUbiquitous;
 - (id)tsp_URLExceptPrivate;

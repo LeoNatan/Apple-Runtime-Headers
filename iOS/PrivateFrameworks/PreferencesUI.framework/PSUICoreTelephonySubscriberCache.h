@@ -25,6 +25,7 @@
 - (void)simStatusDidChange:(id)arg1 status:(id)arg2;
 - (id)isoCountryCode:(id)arg1;
 - (void)fetchCountryCodes;
+- (unsigned long long)mobileEquipmentInfoLength;
 - (id)mobileEquipmentInfo:(id)arg1;
 - (void)fetchMobileEquipmentInfo;
 - (void)willEnterForeground;

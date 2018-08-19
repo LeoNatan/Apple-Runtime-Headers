@@ -69,6 +69,7 @@
 - (void)_updateBackgroundViewFrame;
 - (void)_addOrRemoveBlurViewAsNecessary;
 - (id)_makeBlurBackgroundViewWithFrame:(struct CGRect)arg1;
+- (BOOL)_viewOverridesDrawing;
 - (BOOL)_hasTranslucency;
 - (void)_setWantsTranslucency:(BOOL)arg1;
 - (BOOL)_wantsTranslucency;

@@ -19,20 +19,20 @@
     DNDSModeAssertion *_gizmoToggleAssertion;
     DNDSModeAssertion *_gizmoWorkoutAssertion;
     NSDate *_lastInvalidationDate;
-    id <DNDSAssertionSyncManagerDataSource> _dataSource;
+    id <DNDSLegacyAssertionSyncManagerDataSource> _dataSource;
     id <DNDSAssertionSyncManagerDelegate> _delegate;
 }
 
 + (void)cleanupState;
 @property(nonatomic) __weak id <DNDSAssertionSyncManagerDelegate> delegate; // @synthesize delegate=_delegate;
-@property(nonatomic) __weak id <DNDSAssertionSyncManagerDataSource> dataSource; // @synthesize dataSource=_dataSource;
+@property(nonatomic) __weak id <DNDSLegacyAssertionSyncManagerDataSource> dataSource; // @synthesize dataSource=_dataSource;
 - (void).cxx_destruct;
 - (void)_queue_updateGizmoAssertionSync;
 - (void)_queue_updateCompanionAssertionMirroringForLocalAssertions:(id)arg1;
 - (void)_queue_updateCompanionToggleSyncForLocalAssertions:(id)arg1 gizmoUpdateDate:(id)arg2;
-- (void)_queue_updateGizmoToggleSyncForLocalAssertions:(id)arg1 companionUpdateDate:(id)arg2;
+- (void)_queue_updateGizmoToggleSyncForLocalAssertions:(id)arg1 companionUpdateDate:(id)arg2 reason:(unsigned int)arg3;
 - (id)_queue_gizmoUpdateDate;
-- (void)_queue_updateToggleSyncForLocalAssertions:(id)arg1 lastUpdateDate:(id)arg2;
+- (void)_queue_updateToggleSyncForLocalAssertions:(id)arg1 lastUpdateDate:(id)arg2 reason:(unsigned int)arg3;
 - (void)_sendUpdateToAllObserversForAssertionInvalidations:(id)arg1;
 - (void)_sendUpdateToAllObserversForTakenAssertions:(id)arg1;
 - (id)_queue_allModeAssertionsWithError:(id *)arg1;
@@ -46,7 +46,7 @@
 - (id)assertionWithUUID:(id)arg1 error:(id *)arg2;
 - (void)invalidateAllModeAssertionsTakenBeforeDate:(id)arg1 forReason:(unsigned int)arg2;
 - (void)_updateGizmoAssertionSync;
-- (void)update;
+- (void)updateForReason:(unsigned int)arg1;
 - (void)resume;
 - (void)dealloc;
 - (id)init;

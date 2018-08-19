@@ -15,6 +15,7 @@
 - (id)builderWithStoreDescription:(id)arg1;
 - (id)makeCoordinatorWithStoreAtDatabasePath:(id)arg1 storeDescription:(id)arg2;
 - (id)addStoresForAccounts:(id)arg1 withStoreBuilder:(id)arg2;
+- (void)attachPersistantStoresToExistingPersistentStoreCoordinator:(id)arg1;
 - (id)pool_makeCoordinatorForAllAvailableSources;
 - (id)makeCoordinatorForAllAvailableSources;
 - (void)dealloc;

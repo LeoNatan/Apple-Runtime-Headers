@@ -6,12 +6,17 @@
 
 #import <HealthDaemon/HDSeriesSampleEntity.h>
 
-@interface HDLocationSeriesSampleEntity : HDSeriesSampleEntity
+#import "HDSeriesEntity.h"
+
+@class NSString;
+
+@interface HDLocationSeriesSampleEntity : HDSeriesSampleEntity <HDSeriesEntity>
 {
 }
 
 + (_Bool)_updateFrozenEntityToMatchReplacedUnfrozenEntity:(id)arg1 unfrozenSeriesUUID:(id)arg2 unfrozenSeriesHFDKey:(long long)arg3 database:(id)arg4 error:(id *)arg5;
 + (id)_routeSampleWithID:(id)arg1 canBeUnfrozen:(_Bool)arg2 profile:(id)arg3 error:(id *)arg4;
++ (id)hasSeriesDataForHFDKey:(id)arg1 transaction:(id)arg2 error:(id *)arg3;
 + (_Bool)addCodableObject:(id)arg1 toCollection:(id)arg2;
 + (id)codableObjectsFromObjectCollection:(id)arg1;
 + (_Bool)enumerateLocationDataInDatabase:(id)arg1 HFDKey:(id)arg2 error:(id *)arg3 handler:(CDUnknownBlockType)arg4;
@@ -36,6 +41,12 @@
 - (id)timePeriodForSeriesInDatabase:(id)arg1 error:(id *)arg2;
 - (id)sampleCountForSeriesInDatabase:(id)arg1 error:(id *)arg2;
 - (_Bool)insertLocationData:(id)arg1 database:(id)arg2 error:(id *)arg3;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned int hash;
+@property(readonly) Class superclass;
 
 @end
 

@@ -15,12 +15,14 @@ __attribute__((visibility("hidden")))
 {
     _Bool _showThousandsSeparator;
     _Bool _accountingStyle;
+    _Bool _usePlusSign;
     int _negativeStyle;
     unsigned long long _decimalPlaces;
     unsigned long long _currencyCodeIndex;
 }
 
 @property(nonatomic) unsigned long long currencyCodeIndex; // @synthesize currencyCodeIndex=_currencyCodeIndex;
+@property(readonly, nonatomic) _Bool usePlusSign; // @synthesize usePlusSign=_usePlusSign;
 @property(readonly, nonatomic) _Bool accountingStyle; // @synthesize accountingStyle=_accountingStyle;
 @property(readonly, nonatomic) _Bool showThousandsSeparator; // @synthesize showThousandsSeparator=_showThousandsSeparator;
 @property(readonly, nonatomic) int negativeStyle; // @synthesize negativeStyle=_negativeStyle;

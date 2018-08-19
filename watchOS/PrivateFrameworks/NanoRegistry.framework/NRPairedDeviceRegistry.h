@@ -34,6 +34,8 @@
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *legacyDevicesQueue; // @synthesize legacyDevicesQueue=_legacyDevicesQueue;
 @property(retain, nonatomic) NSMutableDictionary *legacyDevices; // @synthesize legacyDevices=_legacyDevices;
 - (void).cxx_destruct;
+- (unsigned int)migrationCountForPairingID:(id)arg1;
+- (unsigned int)lastSyncSwitchIndex;
 - (void)clearRecoveryFlagWithCompletion:(CDUnknownBlockType)arg1;
 - (void)checkIfFlaggedForRecoveryWithCompletion:(CDUnknownBlockType)arg1;
 - (void)keepPhoneUnlockedInternalTestSPI:(CDUnknownBlockType)arg1;

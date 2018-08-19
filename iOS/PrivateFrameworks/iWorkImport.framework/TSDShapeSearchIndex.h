@@ -20,13 +20,13 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) NSDictionary *p_searchIndex; // @synthesize p_searchIndex=_searchIndex;
 @property(retain, nonatomic) TSULocale *p_locale; // @synthesize p_locale=_locale;
 - (void).cxx_destruct;
-- (id)p_resultsForSearchTermBasedOnStringScore:(id)arg1 shouldPerformDiacriticInsensitiveSearch:(_Bool)arg2;
 - (id)p_resultsDictionaryForSearchTerm:(id)arg1 withFilteredKeywords:(id)arg2 shouldPerformDiacriticInsensitiveSearch:(_Bool)arg3;
 - (id)p_sortedFilteredKeywordsForSearchTerm:(id)arg1 usingPredicate:(id)arg2;
 - (id)p_predicateWithSearchTerm:(id)arg1 shouldPerformDiacriticInsensitiveSearch:(_Bool)arg2;
 - (struct _NSRange)p_rangeOfSearchTerm:(id)arg1 inString:(id)arg2 shouldPerformDiacriticInsensitiveSearch:(_Bool)arg3;
 - (id)p_resultsForSearchTermBasedOnAnchoredSearch:(id)arg1 shouldPerformDiacriticInsensitiveSearch:(_Bool)arg2;
 - (void)p_removeSearchResultWithIdentifier:(id)arg1 forTokenizedKeyword:(id)arg2;
+- (id)p_permuteStrings:(id)arg1;
 - (void)p_tokenizeKeywordIfNeeded:(id)arg1 yieldingKeyword:(CDUnknownBlockType)arg2;
 - (id)p_resultsForKeyword:(id)arg1;
 - (id)p_keywords;

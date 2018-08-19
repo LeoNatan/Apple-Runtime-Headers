@@ -25,7 +25,7 @@
 @property(nonatomic) __weak id <VCUIEditVoiceShortcutViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)manageVoiceShortcutViewControllerDidEnterStateSiriUnavailable:(id)arg1;
-- (void)manageVoiceShortcutViewController:(id)arg1 didDeleteVoiceShortcut:(id)arg2;
+- (void)manageVoiceShortcutViewController:(id)arg1 didDeleteVoiceShortcut:(id)arg2 fromButton:(id)arg3;
 - (void)manageVoiceShortcutViewController:(id)arg1 didSaveVoiceShortcut:(id)arg2;
 - (void)manageVoiceShortcutViewControllerDidCancel:(id)arg1;
 - (void)viewDidLoad;

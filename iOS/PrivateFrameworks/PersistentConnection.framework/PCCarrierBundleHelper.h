@@ -22,6 +22,7 @@
 
 + (id)helper;
 - (void).cxx_destruct;
+- (void)subscriptionInfoDidChange;
 - (void)preferredDataSimChanged:(id)arg1;
 - (void)operatorBundleChange:(id)arg1;
 - (void)_processCarrierBundleChange:(id)arg1;

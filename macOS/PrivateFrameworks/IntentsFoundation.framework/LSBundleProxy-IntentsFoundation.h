@@ -6,8 +6,11 @@
 
 #import "LSBundleProxy.h"
 
+@class LSApplicationProxy;
+
 @interface LSBundleProxy (IntentsFoundation)
-- (id)_inf_containingAppProxy;
-- (BOOL)_inf_isSystem;
+@property(readonly) BOOL _inf_isWatchKitAppExtension;
+@property(readonly) LSApplicationProxy *_inf_containingAppProxy;
+@property(readonly) BOOL _inf_isSystem;
 @end
 

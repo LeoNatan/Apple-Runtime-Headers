@@ -6,13 +6,13 @@
 
 #import <iWorkImport/TSWPEquationLayout.h>
 
-@class TSDInfoGeometry;
+@class TSDInfoGeometry, TSDLayoutGeometry;
 
 __attribute__((visibility("hidden")))
 @interface TSWPEquationFloatingLayout : TSWPEquationLayout
 {
     TSDInfoGeometry *_dynamicInfoGeometry;
-    TSDInfoGeometry *_baseEquationLayoutGeometry;
+    TSDLayoutGeometry *_baseEquationLayoutGeometry;
 }
 
 - (void).cxx_destruct;

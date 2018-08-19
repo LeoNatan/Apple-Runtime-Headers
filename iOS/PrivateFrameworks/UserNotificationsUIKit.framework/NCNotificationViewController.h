@@ -41,6 +41,9 @@
     CDUnknownBlockType _dismissalCompletion;
 }
 
++ (id)groupNameWithBase:(id)arg1 recipe:(long long)arg2 options:(unsigned long long)arg3;
++ (unsigned long long)overlayMaterialOptionsForRecipe:(long long)arg1;
++ (long long)backgroundMaterialRecipeForDarkAppearance:(_Bool)arg1 options:(unsigned long long *)arg2;
 @property(copy, nonatomic, getter=_dismissalCompletion, setter=_setDismissalCompletion:) CDUnknownBlockType dismissalCompletion; // @synthesize dismissalCompletion=_dismissalCompletion;
 @property(nonatomic, getter=_shouldRestorePresentingShortLookOnDismiss, setter=_setShouldRestorePresentingShortLookOnDismiss:) _Bool shouldRestorePresentingShortLookOnDismiss; // @synthesize shouldRestorePresentingShortLookOnDismiss=_shouldRestorePresentingShortLookOnDismiss;
 @property(retain, nonatomic, getter=_customContentProvidingViewController, setter=_setCustomContentProvidingViewController:) UIViewController<NCNotificationCustomContent> *customContentProvidingViewController; // @synthesize customContentProvidingViewController=_customContentProvidingViewController;

@@ -206,6 +206,7 @@
 @property(readonly, nonatomic) _Bool shouldSuppressInCallUI;
 @property(readonly, nonatomic, getter=isRemoteUplinkMuted) _Bool remoteUplinkMuted;
 @property(readonly, nonatomic) _Bool supportsTTYWithVoice;
+@property(readonly, nonatomic, getter=isVideoMirrored) _Bool videoMirrored;
 @property(readonly, nonatomic, getter=isVideoPaused) _Bool videoPaused;
 @property(readonly, nonatomic, getter=isVideoDegraded) _Bool videoDegraded;
 @property(readonly, nonatomic, getter=isMediaStalled) _Bool mediaStalled;

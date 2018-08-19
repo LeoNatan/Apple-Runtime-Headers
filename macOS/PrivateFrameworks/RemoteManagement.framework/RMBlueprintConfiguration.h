@@ -19,7 +19,7 @@
 - (void)delete;
 - (id)syncableRootObject;
 - (id)dictionaryRepresentation;
-- (void)updateWithDictionaryRepresentation:(id)arg1;
+- (BOOL)updateWithDictionaryRepresentation:(id)arg1;
 
 // Remaining properties
 @property(retain, nonatomic) RMBlueprint *blueprint; // @dynamic blueprint;

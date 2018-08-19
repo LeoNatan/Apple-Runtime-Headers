@@ -9,6 +9,7 @@
 @protocol AXSystemAppServer <NSObject>
 + (id <AXSystemAppServer>)server;
 - (void)wakeUpDeviceIfNecessary;
+- (_Bool)isSystemSleeping;
 - (void)rebootDevice;
 - (_Bool)isMediaPlaying;
 - (_Bool)isReceivingAirPlay;

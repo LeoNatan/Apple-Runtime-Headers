@@ -22,6 +22,7 @@
         _Bool respondsToAssetExplorerReviewScreenBadgeSizeForItemAtIndexPath;
         _Bool respondsToShouldShowPlayButtonForItemAtIndexPath;
         _Bool respondsToShouldShowProgressIndicatorForItemAtIndexPath;
+        _Bool respondsToShouldMoveProgressIndicatorForItemAtIndexPath;
         _Bool respondsToShouldShowBufferingIndicatorForItemAtIndexPath;
         _Bool respondsToLoadingIndicatorSizeForItemAtIndexPath;
         _Bool respondsToModelTileTransformForItemAtIndexPath;
@@ -39,6 +40,7 @@
     _Bool _useBadgeTiles;
     _Bool _useAssetExplorerReviewScreenBadgeTiles;
     _Bool _useSelectionIndicatorTiles;
+    _Bool _useImportStatusIndicatorTiles;
     _Bool _useReviewScreenBars;
     _Bool _useVerticalReviewScreenControlBarLayout;
     _Bool _canDisplayLoadingIndicators;
@@ -76,6 +78,7 @@
 @property(nonatomic) _Bool useVerticalReviewScreenControlBarLayout; // @synthesize useVerticalReviewScreenControlBarLayout=_useVerticalReviewScreenControlBarLayout;
 @property(nonatomic) long long windowInterfaceOrientation; // @synthesize windowInterfaceOrientation=_windowInterfaceOrientation;
 @property(nonatomic) _Bool useReviewScreenBars; // @synthesize useReviewScreenBars=_useReviewScreenBars;
+@property(nonatomic) _Bool useImportStatusIndicatorTiles; // @synthesize useImportStatusIndicatorTiles=_useImportStatusIndicatorTiles;
 @property(nonatomic) _Bool useSelectionIndicatorTiles; // @synthesize useSelectionIndicatorTiles=_useSelectionIndicatorTiles;
 @property(nonatomic) _Bool useAssetExplorerReviewScreenBadgeTiles; // @synthesize useAssetExplorerReviewScreenBadgeTiles=_useAssetExplorerReviewScreenBadgeTiles;
 @property(nonatomic) _Bool useBadgeTiles; // @synthesize useBadgeTiles=_useBadgeTiles;
@@ -100,6 +103,7 @@
 - (_Bool)_accessoryViewVisibilityForItemAtIndexPath:(id)arg1;
 - (struct CGPoint)_contentOffsetForItemAtIndexPath:(id)arg1;
 - (double)_minimumBottomContentInsetsForItemAtIndexPath:(id)arg1;
+- (void)invalidateProgressIndicatorForItemAtIndexPath:(id)arg1;
 - (void)invalidateLoadingIndicatorForItemAtIndexPath:(id)arg1;
 - (void)invalidateVideoPlaceholderForItemAtIndexPath:(id)arg1;
 - (void)_invalidateContentRelatedTilesWithIndexPath:(id)arg1 inContext:(id)arg2;

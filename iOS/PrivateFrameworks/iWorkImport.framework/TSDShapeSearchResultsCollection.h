@@ -40,8 +40,6 @@ __attribute__((visibility("hidden")))
 - (CDUnknownBlockType)p_comparatorForSortingMatches;
 - (id)p_shapesByMappingSearchResults:(id)arg1 withProvider:(id)arg2 shapeToDisplayNameDict:(id)arg3;
 - (id)p_separateExactAndPartialMatchesFromResults:(id)arg1 searchTerm:(id)arg2 withProvider:(id)arg3 shapeToDisplayNameDict:(id)arg4;
-- (_Bool)p_updateSearchResultsBasedOnStringScoreSearchForSearchTerm:(id)arg1;
-- (_Bool)p_updateSearchResultsBasedOnAnchoredSearchForSearchTerm:(id)arg1;
 - (_Bool)p_updateSearchResultsForSearchTerm:(id)arg1;
 - (id)shapeAtIndex:(unsigned long long)arg1;
 @property(readonly, nonatomic) unsigned long long numberOfShapes;

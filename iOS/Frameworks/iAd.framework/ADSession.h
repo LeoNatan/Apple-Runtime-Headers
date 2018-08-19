@@ -61,7 +61,6 @@
 - (void)_remote_proxyTypeDidChange:(long long)arg1;
 - (void)_remote_contentProxyURLConnectDidChange:(id)arg1;
 - (void)_remote_contentProxyURLDidChange:(id)arg1;
-- (void)updateDeviceInfo;
 - (id)_adSpaceForIdentifier:(id)arg1;
 - (void)unregisterAdSpace:(id)arg1;
 - (void)registerAdSpace:(id)arg1;
@@ -75,6 +74,8 @@
 - (void)performWhenConnected:(CDUnknownBlockType)arg1;
 - (id)additionalAdServingDaemonLaunchOptions;
 - (_Bool)shouldConnectToAdServingDaemon;
+- (void)updateDeviceInfo;
+- (void)orientationChanged:(id)arg1;
 - (id)_linkedOnVersion;
 - (void)establishRPCConnection;
 - (id)init;

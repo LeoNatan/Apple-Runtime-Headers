@@ -16,7 +16,6 @@
 + (id)sharedUserDefaultsController;
 + (BOOL)_canAccessUserDefaults;
 @property BOOL preferBluetoothMicrophones; // @synthesize preferBluetoothMicrophones=_preferBluetoothMicrophones;
-- (id)allSiriLanguageCodesForSystemLanguageCode:(id)arg1 isGoodFit:(char *)arg2;
 - (BOOL)forceSATEnrolled;
 - (BOOL)forceVoiceTriggerAvailable;
 @property(retain) NSDate *dyingWishForInvocationDate;

@@ -10,12 +10,13 @@ __attribute__((visibility("hidden")))
 @interface TSTCellDictionary : NSObject
 {
     struct os_unfair_lock_s _lock;
-    struct map<TSUCellCoord, SFUtility::ObjcSharedPtr<TSTCell>, std::__1::less<TSUCellCoord>, std::__1::allocator<std::__1::pair<const TSUCellCoord, SFUtility::ObjcSharedPtr<TSTCell>>>> _cellsByCoord;
+    struct map<TSUCellCoord, TSTCell *, std::__1::less<TSUCellCoord>, std::__1::allocator<std::__1::pair<const TSUCellCoord, TSTCell *>>> _cellsByCoord;
 }
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)applyBlockToAllCells:(CDUnknownBlockType)arg1;
+- (struct TSCECellCoordSet)allCellCoords;
 - (id)allCells;
 - (vector_38b190b0)removeAllCells;
 - (id)cellAtCellID:(struct TSUCellCoord)arg1;

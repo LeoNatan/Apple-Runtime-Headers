@@ -51,6 +51,8 @@
     map_de3dc98d _sequences;
     map_d8c995e2 _optionalInputTypes;
     vector_d53f6c94 _bufferAvailable;
+    set_b70af9b4 _configurationNames;
+    basic_string_8c74bb18 _currentConfigurationName;
 }
 
 + (id)neuralNetworkFromSpec:(id)arg1 classScoreVectorName:(id)arg2 classLabels:(id)arg3 error:(id *)arg4;
@@ -59,6 +61,8 @@
 + (id)loadModelFromCompiledArchive:(struct _MLModelInputArchiver *)arg1 modelVersionInfo:(id)arg2 compilerVersionInfo:(id)arg3 configuration:(id)arg4 error:(id *)arg5;
 + (id)compiledVersionForSpecification:(struct _MLModelSpecification *)arg1 options:(id)arg2 error:(id *)arg3;
 + (id)compileSpecification:(struct _MLModelSpecification *)arg1 toArchive:(struct _MLModelOutputArchiver *)arg2 options:(id)arg3 error:(id *)arg4;
+@property basic_string_8c74bb18 currentConfigurationName; // @synthesize currentConfigurationName=_currentConfigurationName;
+@property set_b70af9b4 configurationNames; // @synthesize configurationNames=_configurationNames;
 @property _Bool isEnergyEfficientPathForbidden; // @synthesize isEnergyEfficientPathForbidden=_isEnergyEfficientPathForbidden;
 @property _Bool isGPUPathForbidden; // @synthesize isGPUPathForbidden=_isGPUPathForbidden;
 @property(retain) NSObject<OS_dispatch_semaphore> *submitSemaphore; // @synthesize submitSemaphore=_submitSemaphore;
@@ -98,7 +102,9 @@
 - (id)predictionsFromBatch:(id)arg1 options:(id)arg2 error:(id *)arg3;
 - (id)predictionFromFeatures:(id)arg1 options:(id)arg2 error:(id *)arg3;
 - (id)evaluateBatch:(id)arg1 options:(id)arg2 error:(id *)arg3;
+- (_Bool)rebuildPlan:(id *)arg1;
 - (_Bool)resetSizesNoAutoRelease:(id)arg1 error:(id *)arg2;
+- (_Bool)resetSizesWithEspressoConfigurations:(id)arg1 error:(id *)arg2;
 - (_Bool)resetSizes:(id)arg1 error:(id *)arg2;
 - (id)sortBatchByShape:(id)arg1 withMap:(id *)arg2 error:(id *)arg3;
 - (void)dealloc;
@@ -112,6 +118,7 @@
 - (unsigned int)obtainBuffer;
 - (id)verifyInputs:(id)arg1 error:(id *)arg2;
 - (id)evaluate:(id)arg1 error:(id *)arg2;
+- (_Bool)_setupContextAndPlanWithConfiguration:(id)arg1 usingCPU:(_Bool)arg2 error:(id *)arg3;
 - (_Bool)_setupContextAndPlanWithConfiguration:(id)arg1 error:(id *)arg2;
 - (_Bool)_setupContextAndPlanWithForceCPU:(_Bool)arg1 error:(id *)arg2;
 - (_Bool)fillInInitialShapeFromEspressoNet:(id *)arg1;
@@ -123,6 +130,7 @@
 - (id)classify:(id)arg1 options:(id)arg2 error:(id *)arg3;
 - (id)addClassifierInformationToOutput:(id)arg1 options:(id)arg2 error:(id *)arg3;
 - (id)convertPredictionToClassifierResult:(id)arg1 withOptions:(id)arg2 error:(id *)arg3;
+- (_Bool)usingEspressoConfigurations;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

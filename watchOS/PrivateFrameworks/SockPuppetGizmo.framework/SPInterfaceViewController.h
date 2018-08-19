@@ -20,6 +20,7 @@
     _Bool _isGlanceInIB;
     _Bool _isVerticalPage;
     _Bool _fullScreenEnabled;
+    _Bool _hasNowPlaying;
     _Bool _customNotificationWantsHeaderBlur;
     _Bool _hasInterfaceActions;
     _Bool _hasLoaded;
@@ -29,7 +30,7 @@
     _Bool _alwaysBounceScrollView;
     _Bool _extensionControllerCreated;
     _Bool _isInInterfaceBuilder;
-    _Bool _hasNowPlaying;
+    _Bool _firstLayout;
     _Bool _reportDidAppearAfterModalDismissal;
     id <SPInterfaceViewControllerDelegate> _vcdelegate;
     id <SPInterfaceViewControllerPreloadDelegate> _vcPreloadDelegate;
@@ -83,7 +84,7 @@
 @property(retain, nonatomic) SPAutoPlayManager *autoplayManager; // @synthesize autoplayManager=_autoplayManager;
 @property(retain, nonatomic) SPCrownSequencer *crownSequencer; // @synthesize crownSequencer=_crownSequencer;
 @property(retain, nonatomic) NSMutableArray *gestureRecognizers; // @synthesize gestureRecognizers=_gestureRecognizers;
-@property(nonatomic) _Bool hasNowPlaying; // @synthesize hasNowPlaying=_hasNowPlaying;
+@property(nonatomic) _Bool firstLayout; // @synthesize firstLayout=_firstLayout;
 @property(nonatomic) _Bool isInInterfaceBuilder; // @synthesize isInInterfaceBuilder=_isInInterfaceBuilder;
 @property(nonatomic) __weak SPIBContainerView *ibContainerView; // @synthesize ibContainerView=_ibContainerView;
 @property(retain, nonatomic) UILabel *simulatorNotificationTimeLabel; // @synthesize simulatorNotificationTimeLabel=_simulatorNotificationTimeLabel;
@@ -124,6 +125,7 @@
 @property(retain, nonatomic) NSString *simulatorNotificationAppName; // @synthesize simulatorNotificationAppName=_simulatorNotificationAppName;
 @property(retain, nonatomic) UIImage *simulatorNotificationAppIcon; // @synthesize simulatorNotificationAppIcon=_simulatorNotificationAppIcon;
 @property(retain, nonatomic) NSArray *simulatorNotificationButtonsInfo; // @synthesize simulatorNotificationButtonsInfo=_simulatorNotificationButtonsInfo;
+@property(nonatomic) _Bool hasNowPlaying; // @synthesize hasNowPlaying=_hasNowPlaying;
 @property(nonatomic) _Bool fullScreenEnabled; // @synthesize fullScreenEnabled=_fullScreenEnabled;
 @property(nonatomic) _Bool isVerticalPage; // @synthesize isVerticalPage=_isVerticalPage;
 @property(nonatomic) _Bool isGlanceInIB; // @synthesize isGlanceInIB=_isGlanceInIB;

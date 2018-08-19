@@ -8,7 +8,7 @@
 
 #import "NTKActivityFaceViewFactoryDelegate.h"
 
-@class HKRingsView, NSMutableDictionary, NSString, NTKActivityDateComplicationLabel, NTKActivityDialView, NTKActivityFaceViewFactory, NTKDateComplicationController, NTKFaceViewTapControl, UILabel, UIView;
+@class HKRingsView, NSMutableDictionary, NSString, NTKActivityDateComplicationLabel, NTKActivityDialView, NTKActivityFaceViewFactory, NTKActivitySignificantRingChangeModel, NTKDateComplicationController, NTKFaceViewTapControl, UILabel, UIView;
 
 @interface NTKActivityAnalogFaceView : NTKAnalogFaceView <NTKActivityFaceViewFactoryDelegate>
 {
@@ -31,6 +31,7 @@
     float _lastEnergyPercentage;
     float _lastBriskPercentage;
     float _lastSedentaryPercentage;
+    NTKActivitySignificantRingChangeModel *_significantRingChangeModel;
 }
 
 + (void)_prewarmForDevice:(id)arg1;

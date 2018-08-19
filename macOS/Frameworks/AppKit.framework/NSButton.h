@@ -59,6 +59,7 @@
 - (id)sound;
 - (void)setSound:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (void)updateCell:(id)arg1;
 - (BOOL)isFlipped;
 - (id)_popupToSubstituteInInit;
 - (BOOL)acceptsFirstMouse:(id)arg1;

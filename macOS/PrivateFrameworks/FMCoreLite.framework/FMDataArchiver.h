@@ -24,7 +24,6 @@
 @property(nonatomic) BOOL backedUp; // @synthesize backedUp=_backedUp;
 @property(nonatomic) long long dataProtectionClass; // @synthesize dataProtectionClass=_dataProtectionClass;
 - (void).cxx_destruct;
-- (id)readData:(id *)arg1 class:(Class)arg2;
 - (id)saveObject:(id)arg1;
 - (BOOL)saveDictionary:(id)arg1 error:(id *)arg2;
 - (BOOL)saveArray:(id)arg1 error:(id *)arg2;

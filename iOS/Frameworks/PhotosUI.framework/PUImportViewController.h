@@ -93,6 +93,7 @@
     double _referenceWidth;
     UITapGestureRecognizer *_doubleTapGestureRecognizer;
     struct CGSize __cachedViewSizeTransitionContextSize;
+    struct UIEdgeInsets _collectionViewSafeAreaInsets;
 }
 
 + (id)totalSizeStringForItems:(id)arg1;
@@ -137,6 +138,7 @@
 @property(nonatomic, setter=_setCachedViewSizeTransitionContextSize:) struct CGSize _cachedViewSizeTransitionContextSize; // @synthesize _cachedViewSizeTransitionContextSize=__cachedViewSizeTransitionContextSize;
 @property(retain, nonatomic, setter=_setCachedViewSizeTransitionContext:) id _cachedViewSizeTransitionContext; // @synthesize _cachedViewSizeTransitionContext=__cachedViewSizeTransitionContext;
 @property(retain, nonatomic, setter=_setPendingViewSizeTransitionContext:) id _pendingViewSizeTransitionContext; // @synthesize _pendingViewSizeTransitionContext=__pendingViewSizeTransitionContext;
+@property(nonatomic, setter=_setCollectionViewSafeAreaInsets:) struct UIEdgeInsets collectionViewSafeAreaInsets; // @synthesize collectionViewSafeAreaInsets=_collectionViewSafeAreaInsets;
 @property(nonatomic, setter=_setCollectionViewLayoutReferenceWidth:) double _collectionViewLayoutReferenceWidth; // @synthesize _collectionViewLayoutReferenceWidth=__collectionViewLayoutReferenceWidth;
 @property(retain, nonatomic, setter=_setSpec:) PUPhotosGridViewControllerSpec *_spec; // @synthesize _spec=__spec;
 - (void).cxx_destruct;
@@ -279,6 +281,7 @@
 - (void)_updateContentOffsetForPendingViewSizeTransition;
 - (_Bool)updateSpec;
 - (void)_invalidateCachedViewSizeTransitionContext;
+- (void)viewSafeAreaInsetsDidChange;
 - (void)viewDidLayoutSubviews;
 - (void)viewWillTransitionToSize:(struct CGSize)arg1 withTransitionCoordinator:(id)arg2;
 - (void)viewWillDisappear:(_Bool)arg1;

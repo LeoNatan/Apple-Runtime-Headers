@@ -16,6 +16,7 @@
 @optional
 @property(readonly, nonatomic) UIColor *re_shortcut_confirmButtonColor;
 @property(readonly, nonatomic) NSString *re_shortcut_confirmButtonString;
+@property(readonly, nonatomic) UIImage *re_shortcut_contentImage;
 @property(readonly, nonatomic) NSString *re_shortcut_subtitleString;
 @property(readonly, nonatomic) UIImage *re_shortcut_topImage;
 @end

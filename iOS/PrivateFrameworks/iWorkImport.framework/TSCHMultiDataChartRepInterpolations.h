@@ -18,7 +18,7 @@ __attribute__((visibility("hidden")))
 + (id)interpolationsWithOverallTimingFunction:(id)arg1 individualTimingFunction:(id)arg2;
 @property(readonly, nonatomic) CAMediaTimingFunction *individual; // @synthesize individual=mIndividualTimingFunction;
 @property(readonly, nonatomic) CAMediaTimingFunction *overall; // @synthesize overall=mOverallTimingFunction;
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)initWithOverallTimingFunction:(id)arg1 individualTimingFunction:(id)arg2;
 
 @end

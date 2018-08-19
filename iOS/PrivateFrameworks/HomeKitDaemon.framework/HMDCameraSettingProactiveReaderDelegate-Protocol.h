@@ -9,6 +9,6 @@
 @class HMDCameraSettingProactiveReader;
 
 @protocol HMDCameraSettingProactiveReaderDelegate <NSObject>
-- (void)cameraSettingProactiveReaderDidCompleteRead:(HMDCameraSettingProactiveReader *)arg1;
+- (void)cameraSettingProactiveReaderDidCompleteRead:(HMDCameraSettingProactiveReader *)arg1 negotiateStreamMessageWasHandled:(_Bool)arg2;
 @end
 

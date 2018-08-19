@@ -6,25 +6,25 @@
 
 #import "NSObject.h"
 
-@class NSDate, NSURL;
+@class NSMutableDictionary, NSURL;
 
 @interface USWebpageUsage : NSObject
 {
-    NSObject *_stateLock;
-    long long _state;
+    NSMutableDictionary *_contextUsageRecord;
     NSURL *_URL;
-    NSDate *_inUseStartDate;
-    NSDate *_inFocusStartDate;
+    id <_CDUserContext> _context;
+    id <_DKKnowledgeSaving> _eventStorage;
 }
 
-+ (id)_xpcConnection;
-@property(retain) NSDate *inFocusStartDate; // @synthesize inFocusStartDate=_inFocusStartDate;
-@property(retain) NSDate *inUseStartDate; // @synthesize inUseStartDate=_inUseStartDate;
+@property(readonly) id <_DKKnowledgeSaving> eventStorage; // @synthesize eventStorage=_eventStorage;
+@property(readonly) id <_CDUserContext> context; // @synthesize context=_context;
 @property(readonly) NSURL *URL; // @synthesize URL=_URL;
 - (void).cxx_destruct;
 - (void)changeState:(long long)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (id)description;
 - (void)dealloc;
 - (id)initWithURL:(id)arg1;
+- (id)initWithURL:(id)arg1 context:(id)arg2 eventStorage:(id)arg3;
 
 @end
 

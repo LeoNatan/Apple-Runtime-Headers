@@ -24,6 +24,7 @@
 - (void).cxx_destruct;
 - (void)_fetchShareParticipantsForParticipants:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (void)_fetchExpiryDateInZone:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
+- (void)_saveShare:(id)arg1 rootRecord:(id)arg2 inZone:(id)arg3;
 - (void)_createNewShareInZone:(id)arg1 withShareParticipants:(id)arg2 mode:(short)arg3;
 - (void)runOperations;
 - (id)initWithController:(id)arg1 momentShare:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;

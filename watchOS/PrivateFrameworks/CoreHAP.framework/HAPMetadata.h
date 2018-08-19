@@ -65,7 +65,6 @@
 - (id)characteristicValueUnitOfType:(id)arg1;
 - (_Bool)isMandatoryCharacteristic:(id)arg1 forService:(id)arg2;
 - (id)descriptionFromCharacteristicType:(id)arg1;
-- (id)shouldFilterServiceOfType:(id)arg1;
 - (id)descriptionFromServiceType:(id)arg1;
 - (_Bool)validateMandatoryCharacteristics:(id)arg1 forService:(id)arg2;
 - (_Bool)allowAssociatedService:(id)arg1;

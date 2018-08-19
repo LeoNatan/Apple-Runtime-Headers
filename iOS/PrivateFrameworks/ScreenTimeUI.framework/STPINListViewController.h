@@ -31,6 +31,8 @@
 - (_Bool)validatePIN:(id)arg1;
 - (void)showPINSheet:(id)arg1;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
+- (_Bool)shouldDeferPushForSpecifierID:(id)arg1;
+- (void)viewDidAppear:(_Bool)arg1;
 - (id)init;
 - (id)initWithRootViewModelCoordinator:(id)arg1;
 

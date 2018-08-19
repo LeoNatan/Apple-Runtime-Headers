@@ -21,9 +21,10 @@ __attribute__((visibility("hidden")))
     NSMutableArray *_trackedReferences;
     unsigned long long _nextEmptyTrackedReferencesIndex;
     unsigned long long _numberOfTrackedReferences;
-    struct vector<TSCEFormulaID, std::__1::allocator<TSCEFormulaID>> _formulaIDsToRewrite;
 }
 
++ (struct TSUCellCoord)coordFromIndex:(unsigned long long)arg1;
++ (unsigned long long)indexFromCoord:(const struct TSUCellCoord *)arg1;
 @property(nonatomic) __weak id <TSCEReferenceTrackerDelegate> delegate; // @synthesize delegate=_delegate;
 - (id).cxx_construct;
 - (void).cxx_destruct;
@@ -32,7 +33,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)trackedReferencesExistForTable:(const UUIDData_5fbc143e *)arg1;
 - (void)trackedReferenceWasDeleted:(id)arg1 fromOwnerUID:(const UUIDData_5fbc143e *)arg2;
 - (id)cellRangeWasInserted:(const struct TSCERangeRef *)arg1;
-- (id)trackedReferenceAtID:(CDStruct_ed6d627d)arg1;
+- (id)trackedReferenceAtCoord:(struct TSUCellCoord)arg1;
 - (void)setFormulaOwnerUID:(const UUIDData_5fbc143e *)arg1;
 - (UUIDData_5fbc143e)formulaOwnerUID;
 - (unsigned long long)numberOfTrackedReferences;
@@ -44,15 +45,17 @@ __attribute__((visibility("hidden")))
 - (void)beginTrackingReference:(id)arg1;
 @property(readonly, nonatomic) __weak TSCECalculationEngine *calculationEngine;
 - (void)setCalculationEngine:(id)arg1;
-- (void)unregisterFromCalculationEngine;
-- (void)registerWithCalculationEngine:(_Bool)arg1;
+- (void)unregisterFromCalcEngine;
+- (void)registerWithCalcEngine:(_Bool)arg1;
+- (void)willClose;
 - (id)initWithContext:(id)arg1 calculationEngine:(id)arg2 delegate:(id)arg3;
 - (id)objectToArchiveInDependencyTracker;
-- (void)beginRewriteForCalculationEngine:(id)arg1 spec:(id)arg2;
-- (void)rewriteForCalculationEngine:(id)arg1 formulaID:(CDStruct_ed6d627d)arg2 rewriteSpec:(id)arg3;
-- (void)invalidateForCalculationEngine:(id)arg1;
-- (void)writeResultsForCalculationEngine:(id)arg1;
-- (CDStruct_2a4d9400)recalculateForCalculationEngine:(id)arg1 formulaID:(CDStruct_ed6d627d)arg2 isInCycle:(_Bool)arg3 hasCalculatedPrecedents:(_Bool)arg4;
+- (void)invalidateForCalcEngine:(id)arg1;
+- (void)writeResultsForCalcEngine:(id)arg1;
+- (CDStruct_2a4d9400)recalculateForCalcEngine:(id)arg1 atFormulaCoord:(struct TSUCellCoord)arg2 recalcOptions:(CDStruct_3d581f42)arg3;
+- (id)linkedResolver;
+- (UUIDData_5fbc143e)ownerUID;
+- (int)ownerKind;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

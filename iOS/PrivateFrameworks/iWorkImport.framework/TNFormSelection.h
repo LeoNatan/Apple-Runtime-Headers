@@ -9,18 +9,18 @@
 __attribute__((visibility("hidden")))
 @interface TNFormSelection : TSKSelection
 {
-    unsigned char _fieldIndex;
-    unsigned short _recordIndex;
+    struct TSUModelColumnIndex _fieldIndex;
+    struct TSUModelRowIndex _recordIndex;
 }
 
-+ (id)selectionForRecordIndex:(unsigned short)arg1 fieldIndex:(unsigned char)arg2;
++ (id)selectionForRecordIndex:(struct TSUModelRowIndex)arg1 fieldIndex:(struct TSUModelColumnIndex)arg2;
 + (id)selection;
 + (Class)archivedSelectionClass;
-@property(readonly, nonatomic) unsigned char fieldIndex; // @synthesize fieldIndex=_fieldIndex;
-@property(readonly, nonatomic) unsigned short recordIndex; // @synthesize recordIndex=_recordIndex;
+@property(readonly, nonatomic) struct TSUModelColumnIndex fieldIndex; // @synthesize fieldIndex=_fieldIndex;
+@property(readonly, nonatomic) struct TSUModelRowIndex recordIndex; // @synthesize recordIndex=_recordIndex;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (id)initWithRecordIndex:(unsigned short)arg1 fieldIndex:(unsigned char)arg2;
+- (id)initWithRecordIndex:(struct TSUModelRowIndex)arg1 fieldIndex:(struct TSUModelColumnIndex)arg2;
 
 @end
 

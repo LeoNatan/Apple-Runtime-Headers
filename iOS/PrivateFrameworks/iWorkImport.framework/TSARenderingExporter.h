@@ -8,7 +8,7 @@
 
 #import "TSKRenderingExporter.h"
 
-@class NSObject<OS_dispatch_queue>, NSObject<TSARenderingExporterDelegate>, NSString, TSADocumentRoot, TSDBitmapRenderingQualityInfo, TSDImager, TSUProgressContext;
+@class NSObject<OS_dispatch_queue>, NSObject<TSARenderingExporterDelegate>, NSString, TSADocumentRoot, TSDBitmapRenderingQualityInfo, TSDImager, TSUProgress, TSUProgressContext;
 
 __attribute__((visibility("hidden")))
 @interface TSARenderingExporter : NSObject <TSKRenderingExporter>
@@ -27,12 +27,11 @@ __attribute__((visibility("hidden")))
 
 @property(retain) TSUProgressContext *progressContext; // @synthesize progressContext=mProgressContext;
 - (void).cxx_destruct;
-- (_Bool)paginate;
-- (void)setPaginate:(_Bool)arg1;
-- (unsigned long long)pageCount;
-- (double)progressForCurrentPage;
-- (struct CGRect)unscaledClipRect;
-- (struct CGRect)boundsRect;
+@property(nonatomic) _Bool paginate;
+@property(readonly, nonatomic) unsigned long long pageCount;
+@property(readonly, nonatomic) double progressForCurrentPage;
+@property(readonly, nonatomic) struct CGRect unscaledClipRect;
+@property(readonly, nonatomic) struct CGRect boundsRect;
 - (id)bitmapRenderingQualityInfo;
 - (void)performBlockWithImager:(CDUnknownBlockType)arg1;
 - (_Bool)drawCurrentPageInContext:(struct CGContext *)arg1 viewScale:(double)arg2 unscaledClipRect:(struct CGRect)arg3 createPage:(_Bool)arg4;
@@ -43,7 +42,7 @@ __attribute__((visibility("hidden")))
 - (void)setup;
 - (_Bool)isQuit;
 - (void)quit;
-- (_Bool)isCancelled;
+@property(readonly, nonatomic) _Bool isCancelled;
 - (void)cancel;
 - (_Bool)exportToURL:(id)arg1 pageNumber:(unsigned long long)arg2 delegate:(id)arg3 error:(id *)arg4;
 - (_Bool)exportToURL:(id)arg1 delegate:(id)arg2 error:(id *)arg3;
@@ -61,10 +60,17 @@ __attribute__((visibility("hidden")))
 - (id)currentInfos;
 
 // Remaining properties
+@property(readonly, nonatomic) _Bool canExportInBackground;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
+@property(readonly, nonatomic) NSString *documentSpecificTypeUTI;
 @property(readonly) unsigned long long hash;
+@property(readonly, nonatomic) _Bool isExportSupported;
+@property(readonly, nonatomic) _Bool needsSupplementalFiles;
+@property(readonly, nonatomic) TSUProgress *progress;
+@property(readonly, nonatomic) NSString *savePanelMessage;
 @property(readonly) Class superclass;
+@property(copy, nonatomic) NSString *typeUTI;
 
 @end
 

@@ -11,7 +11,7 @@
 @interface HDDataCollectorMultiplexer : NSObject
 {
     HDProfile *_profile;
-    id *_collector;
+    id <HDDataCollector> _collector;
     NSDictionary *_aggregatorsByType;
     NSMapTable *_recordsByAggregator;
 }
@@ -24,7 +24,8 @@
 - (id)lastDatumForType:(id)arg1;
 - (id)identifierForAggregator:(id)arg1;
 - (id)aggregatorForType:(id)arg1;
-- (id)initForCollector:(id)arg1 identifier:(id)arg2 state:(id)arg3 profile:(id)arg4 types:(id)arg5;
+- (void)registerForCollectionWithState:(id)arg1;
+- (id)initForCollector:(id)arg1 identifier:(id)arg2 profile:(id)arg3 types:(id)arg4;
 
 @end
 

@@ -19,6 +19,7 @@
 @property(retain, nonatomic) VCUIHeadlineView *headlineView; // @synthesize headlineView=_headlineView;
 @property(retain, nonatomic) VCUIActionDonationDetailView *donationDetailView; // @synthesize donationDetailView=_donationDetailView;
 - (void).cxx_destruct;
+- (_Bool)_shouldShowPhraseSuggestion;
 - (void)showPhraseSuggestion;
 - (void)updateButtonTrayDelta:(double)arg1;
 - (_Bool)showRecordingButtonOverlayDescription;

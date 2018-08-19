@@ -7,6 +7,7 @@
 #import "NSMutableURLRequest.h"
 
 @interface NSMutableURLRequest (AppleMediaServices)
+- (void)_ams_addCookies:(id)arg1;
 - (void)ams_addUserAgentHeaderFromClient:(id)arg1 additionalComponents:(id)arg2;
 - (void)ams_addTimezoneOffsetHeader;
 - (void)ams_addStoreFrontHeaderFromAccount:(id)arg1 bagContract:(id)arg2;
@@ -25,7 +26,7 @@
 - (void)ams_addCachePolicyHeader;
 - (void)ams_addCacheBusterParameter;
 - (void)ams_addAuthKitHeaders;
-- (void)ams_addAccountCookiesForAccount:(id)arg1;
+- (void)ams_addCookiesForAccounts:(id)arg1;
 - (void)ams_addAcceptLanguageHeader;
 - (void)ams_addAnisetteHeadersForAccount:(id)arg1 type:(int)arg2;
 @end

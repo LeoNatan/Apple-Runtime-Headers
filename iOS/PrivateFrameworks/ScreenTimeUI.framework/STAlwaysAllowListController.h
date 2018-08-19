@@ -36,13 +36,12 @@
 - (long long)tableView:(id)arg1 editingStyleForRowAtIndexPath:(id)arg2;
 - (_Bool)tableView:(id)arg1 canEditRowAtIndexPath:(id)arg2;
 - (_Bool)shouldReloadSpecifiersOnResume;
-- (CDUnknownBlockType)localizedAppNameComparator;
-- (id)sortedAllowedBundleIDs;
 - (id)createChooseAppsSpecifiers;
 - (id)createAllowedAppsSpecifiers;
 - (id)specifiers;
 - (void)willResignActive;
 - (void)viewWillDisappear:(_Bool)arg1;
+- (_Bool)canBeShownFromSuspendedState;
 - (void)viewDidLoad;
 - (id)init;
 

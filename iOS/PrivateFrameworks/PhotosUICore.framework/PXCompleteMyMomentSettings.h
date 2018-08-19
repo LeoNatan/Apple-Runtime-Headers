@@ -31,6 +31,8 @@
     _Bool _showMergeCandidateSuggestionsAfterBootstrapNaming;
     _Bool _allowOneUpGesture;
     _Bool _allowSwipeSelection;
+    _Bool _simulateImport;
+    _Bool _simulateImportFailure;
     _Bool _allowLayoutTransitionGesture;
     _Bool _shouldShowInlineAddButton;
     _Bool _showAttachedHeaderView;
@@ -41,6 +43,7 @@
     _Bool _sectionHeadersShouldFloat;
     _Bool _showProgressInGrid;
     _Bool _showProgressBannerView;
+    _Bool _showProgressBannerViewPaused;
     _Bool _directSendMessages;
     _Bool _fakeMomentShareURL;
     _Bool _autoAcceptBubbles;
@@ -87,6 +90,7 @@
 @property(nonatomic) _Bool autoAcceptBubbles; // @synthesize autoAcceptBubbles=_autoAcceptBubbles;
 @property(nonatomic) _Bool fakeMomentShareURL; // @synthesize fakeMomentShareURL=_fakeMomentShareURL;
 @property(nonatomic) _Bool directSendMessages; // @synthesize directSendMessages=_directSendMessages;
+@property(nonatomic) _Bool showProgressBannerViewPaused; // @synthesize showProgressBannerViewPaused=_showProgressBannerViewPaused;
 @property(nonatomic) _Bool showProgressBannerView; // @synthesize showProgressBannerView=_showProgressBannerView;
 @property(nonatomic) _Bool showProgressInGrid; // @synthesize showProgressInGrid=_showProgressInGrid;
 @property(nonatomic) _Bool sectionHeadersShouldFloat; // @synthesize sectionHeadersShouldFloat=_sectionHeadersShouldFloat;
@@ -99,6 +103,8 @@
 @property(nonatomic) _Bool allowLayoutTransitionGesture; // @synthesize allowLayoutTransitionGesture=_allowLayoutTransitionGesture;
 @property(nonatomic) long long reviewFlowDataSourceType; // @synthesize reviewFlowDataSourceType=_reviewFlowDataSourceType;
 @property(nonatomic) long long reviewFlow; // @synthesize reviewFlow=_reviewFlow;
+@property(nonatomic) _Bool simulateImportFailure; // @synthesize simulateImportFailure=_simulateImportFailure;
+@property(nonatomic) _Bool simulateImport; // @synthesize simulateImport=_simulateImport;
 @property(nonatomic) _Bool allowSwipeSelection; // @synthesize allowSwipeSelection=_allowSwipeSelection;
 @property(nonatomic) _Bool allowOneUpGesture; // @synthesize allowOneUpGesture=_allowOneUpGesture;
 @property(nonatomic) long long initialLayoutType; // @synthesize initialLayoutType=_initialLayoutType;

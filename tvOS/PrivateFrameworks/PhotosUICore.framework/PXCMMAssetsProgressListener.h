@@ -6,13 +6,16 @@
 
 #import <PhotosUICore/PXObservable.h>
 
+#import "PXCPLServiceUIDelegate.h"
 #import "PXPhotoLibraryUIChangeObserver.h"
 
-@class NSString, PHFetchResult, PHMomentShare;
+@class NSString, PHFetchResult, PHMomentShare, PXCPLServiceUI;
 
-@interface PXCMMAssetsProgressListener : PXObservable <PXPhotoLibraryUIChangeObserver>
+@interface PXCMMAssetsProgressListener : PXObservable <PXPhotoLibraryUIChangeObserver, PXCPLServiceUIDelegate>
 {
     long long _presentationStyle;
+    PXCPLServiceUI *_cplServiceUI;
+    _Bool _isPaused;
     float _activityProgress;
     PHMomentShare *_momentShare;
     long long _type;
@@ -20,24 +23,29 @@
     NSString *_expirationTitle;
     NSString *_activityTitle;
     NSString *_idleTitle;
+    NSString *_pauseTitle;
     NSString *_byline;
     long long _state;
     long long _numberOfAssetsNotCopied;
     PHFetchResult *_downloadingAssetsFetchResult;
     PHFetchResult *_copiedAssetsFetchResult;
-    PHFetchResult *_allAssetsWithThumbnailFetchResult;
+    PHFetchResult *_allAssetsFetchResult;
     PHFetchResult *_participantsFetchResult;
+    NSString *_pauseStatusDescription;
 }
 
 + (id)new;
+@property(copy, nonatomic) NSString *pauseStatusDescription; // @synthesize pauseStatusDescription=_pauseStatusDescription;
+@property(nonatomic) _Bool isPaused; // @synthesize isPaused=_isPaused;
 @property(retain, nonatomic) PHFetchResult *participantsFetchResult; // @synthesize participantsFetchResult=_participantsFetchResult;
-@property(retain, nonatomic) PHFetchResult *allAssetsWithThumbnailFetchResult; // @synthesize allAssetsWithThumbnailFetchResult=_allAssetsWithThumbnailFetchResult;
+@property(retain, nonatomic) PHFetchResult *allAssetsFetchResult; // @synthesize allAssetsFetchResult=_allAssetsFetchResult;
 @property(retain, nonatomic) PHFetchResult *copiedAssetsFetchResult; // @synthesize copiedAssetsFetchResult=_copiedAssetsFetchResult;
 @property(retain, nonatomic) PHFetchResult *downloadingAssetsFetchResult; // @synthesize downloadingAssetsFetchResult=_downloadingAssetsFetchResult;
 @property(nonatomic) long long numberOfAssetsNotCopied; // @synthesize numberOfAssetsNotCopied=_numberOfAssetsNotCopied;
 @property(readonly, nonatomic) long long state; // @synthesize state=_state;
 @property(nonatomic) float activityProgress; // @synthesize activityProgress=_activityProgress;
 @property(copy, nonatomic) NSString *byline; // @synthesize byline=_byline;
+@property(copy, nonatomic) NSString *pauseTitle; // @synthesize pauseTitle=_pauseTitle;
 @property(copy, nonatomic) NSString *idleTitle; // @synthesize idleTitle=_idleTitle;
 @property(copy, nonatomic) NSString *activityTitle; // @synthesize activityTitle=_activityTitle;
 @property(copy, nonatomic) NSString *expirationTitle; // @synthesize expirationTitle=_expirationTitle;
@@ -45,6 +53,8 @@
 @property(readonly, nonatomic) long long type; // @synthesize type=_type;
 @property(retain, nonatomic) PHMomentShare *momentShare; // @synthesize momentShare=_momentShare;
 - (void).cxx_destruct;
+- (void)_updatePausedStatus;
+- (void)serviceUI:(id)arg1 statusDidChange:(id)arg2;
 - (void)photoLibraryDidChangeOnMainQueue:(id)arg1;
 - (void)_updateCountsAndStatus;
 - (_Bool)_showsUploadingStatus;

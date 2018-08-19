@@ -16,6 +16,7 @@ __attribute__((visibility("hidden")))
     unsigned int _GLFormat;
     unsigned int _GLType;
     unsigned int _attachment;
+    struct __IOSurface *_backingSurface;
     NSString *_name;
     NSArray *_textureParameters;
     struct CGSize _textureSize;
@@ -25,16 +26,18 @@ __attribute__((visibility("hidden")))
 + (id)textureConfigWithSize:(struct CGSize)arg1 textureParameters:(id)arg2 name:(id)arg3;
 + (id)textureConfigWithSize:(struct CGSize)arg1 attachment:(unsigned int)arg2 textureParameters:(id)arg3 name:(id)arg4;
 + (id)textureConfigWithSize:(struct CGSize)arg1 internalFormat:(int)arg2 format:(unsigned int)arg3 type:(unsigned int)arg4 attachment:(unsigned int)arg5 textureParameters:(id)arg6 name:(id)arg7;
++ (id)textureConfigWithSize:(struct CGSize)arg1 internalFormat:(int)arg2 format:(unsigned int)arg3 type:(unsigned int)arg4 attachment:(unsigned int)arg5 textureParameters:(id)arg6 name:(id)arg7 backingSurface:(struct __IOSurface *)arg8;
 @property(readonly, nonatomic) NSArray *textureParameters; // @synthesize textureParameters=_textureParameters;
 @property(readonly, nonatomic) unsigned int attachment; // @synthesize attachment=_attachment;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
 @property(readonly, nonatomic) unsigned int GLType; // @synthesize GLType=_GLType;
 @property(readonly, nonatomic) unsigned int GLFormat; // @synthesize GLFormat=_GLFormat;
 @property(readonly, nonatomic) int GLInternalFormat; // @synthesize GLInternalFormat=_GLInternalFormat;
+@property(readonly, nonatomic) struct __IOSurface *backingSurface; // @synthesize backingSurface=_backingSurface;
 @property(readonly, nonatomic) struct CGSize size; // @synthesize size=_textureSize;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)dealloc;
-- (id)initWithSize:(struct CGSize)arg1 internalFormat:(int)arg2 format:(unsigned int)arg3 type:(unsigned int)arg4 attachment:(unsigned int)arg5 textureParameters:(id)arg6 name:(id)arg7;
+- (id)initWithSize:(struct CGSize)arg1 internalFormat:(int)arg2 format:(unsigned int)arg3 type:(unsigned int)arg4 attachment:(unsigned int)arg5 textureParameters:(id)arg6 name:(id)arg7 backingSurface:(struct __IOSurface *)arg8;
 
 @end
 

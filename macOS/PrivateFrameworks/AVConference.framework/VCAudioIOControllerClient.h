@@ -6,8 +6,13 @@
 
 #import "NSObject.h"
 
+#import "VCAudioIOControllerSink.h"
+#import "VCAudioIOControllerSource.h"
+
+@class NSString;
+
 __attribute__((visibility("hidden")))
-@interface VCAudioIOControllerClient : NSObject
+@interface VCAudioIOControllerClient : NSObject <VCAudioIOControllerSource, VCAudioIOControllerSink>
 {
     id _delegate;
     struct AudioStreamBasicDescription _format;
@@ -38,13 +43,20 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) BOOL allowAudioRecording; // @synthesize allowAudioRecording=_allowAudioRecording;
 @property(nonatomic) int deviceRole; // @synthesize deviceRole=_deviceRole;
 @property(readonly, nonatomic) struct AudioStreamBasicDescription format; // @synthesize format=_format;
+- (void)pushAudioSamples:(struct opaqueVCAudioBufferList *)arg1 controllerTime:(const struct _VCAudioIOControllerTime *)arg2;
+- (void)pullAudioSamples:(struct opaqueVCAudioBufferList *)arg1 controllerTime:(const struct _VCAudioIOControllerTime *)arg2;
 @property(readonly, nonatomic) id <VCAudioIOControllerDelegate><VCAudioIOControllerSink><VCAudioIOControllerSource> delegate;
 - (void)setClientFormat:(struct AudioStreamBasicDescription)arg1;
 - (void)setRemoteCodecType:(unsigned int)arg1 sampleRate:(double)arg2;
 - (void)setFarEndVersionInfo:(struct VoiceIOFarEndVersionInfo)arg1;
-- (id)description;
+@property(readonly, copy) NSString *description;
 - (void)dealloc;
 - (id)initWithDelegate:(id)arg1 clientPid:(int)arg2;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

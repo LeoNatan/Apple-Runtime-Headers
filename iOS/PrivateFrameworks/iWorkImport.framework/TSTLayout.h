@@ -10,7 +10,7 @@
 #import "TSWPLayoutParent.h"
 #import "TSWPStorageObserver.h"
 
-@class NSMutableDictionary, NSString, TSTInfo, TSTLayoutHint, TSTLayoutSpaceBundle, TSTMasterLayout, TSTTableModel, TSWPLayout, TSWPPadding;
+@class NSMutableDictionary, NSString, TSTInfo, TSTLayoutHint, TSTLayoutSpaceBundle, TSTMasterLayout, TSWPLayout, TSWPPadding;
 
 __attribute__((visibility("hidden")))
 @interface TSTLayout : TSWPTextHostLayout <TSWPColumnMetrics, TSWPLayoutParent, TSWPStorageObserver>
@@ -131,8 +131,8 @@ __attribute__((visibility("hidden")))
 - (void)invalidatePosition;
 - (void)invalidateSize;
 - (void)invalidate;
-- (void)invalidateLayoutSpaceCoordinatesAfterRow:(unsigned short)arg1;
-- (void)invalidateLayoutSpaceCoordinatesAfterColumn:(unsigned char)arg1;
+- (void)invalidateLayoutSpaceCoordinatesAfterRow:(unsigned int)arg1;
+- (void)invalidateLayoutSpaceCoordinatesAfterColumn:(unsigned short)arg1;
 - (void)invalidateLayoutSpaceCoordinates;
 - (void)invalidateLayoutSpaceTableOffsets;
 - (void)setNeedsDisplayInRect:(struct CGRect)arg1;
@@ -150,7 +150,6 @@ __attribute__((visibility("hidden")))
 - (id)computeLayoutGeometry;
 - (id)layoutGeometryFromInfo;
 - (struct CGPoint)capturedInfoPositionForAttachment;
-- (struct CGPoint)infoGeometryPositionForCurrentAttachedLayoutGeometry;
 - (_Bool)isDraggable;
 - (_Bool)canAspectRatioLockBeChangedByUser;
 - (_Bool)resizeMayChangeAspectRatio;
@@ -160,7 +159,7 @@ __attribute__((visibility("hidden")))
 - (void)dealloc;
 - (id)initWithInfo:(id)arg1;
 - (id)initWithInfo:(id)arg1 layoutHint:(id)arg2;
-@property(readonly, nonatomic) TSTTableModel *tableModel;
+@property(readonly, nonatomic) TSTInfo *tableModel;
 @property(readonly, nonatomic) TSTInfo *tableInfo;
 @property(nonatomic) struct CGSize scaleToFit;
 - (void)iterateCellsInRange:(struct TSUCellRect)arg1 flags:(unsigned long long)arg2 searchFlags:(unsigned long long)arg3 usingBlock:(CDUnknownBlockType)arg4;

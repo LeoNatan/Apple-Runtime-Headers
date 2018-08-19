@@ -12,7 +12,7 @@
 - (void)issueClientCertificateWithReferenceKey:(NSData *)arg1 options:(NSDictionary *)arg2 completion:(void (^)(NSDictionary *, NSError *))arg3;
 - (void)getActivationStateWithCompletionBlock:(void (^)(NSDictionary *, NSError *))arg1;
 - (void)deactivateDeviceWithCompletionBlock:(void (^)(NSDictionary *, NSError *))arg1;
-- (void)handleActivationInfo:(NSData *)arg1 withCompletionBlock:(void (^)(NSDictionary *, NSError *))arg2;
+- (void)handleActivationInfo:(NSData *)arg1 options:(NSDictionary *)arg2 withCompletionBlock:(void (^)(NSDictionary *, NSError *))arg3;
 - (void)createActivationInfo:(NSDictionary *)arg1 withCompletionBlock:(void (^)(NSDictionary *, NSError *))arg2;
 @end
 

@@ -17,7 +17,7 @@
 }
 
 - (void).cxx_destruct;
-- (id)conversionResultForAsset:(id)arg1 isVideo:(_Bool)arg2 isRender:(_Bool)arg3;
+- (id)conversionResultForAsset:(id)arg1 isVideo:(_Bool)arg2 isRender:(_Bool)arg3 forceLegacyConversion:(_Bool)arg4;
 @property(readonly, nonatomic) _Bool supportsTranscodeChoice;
 - (id)init;
 

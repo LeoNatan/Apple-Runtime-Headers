@@ -6,13 +6,10 @@
 
 #import "ROCKImpersonateable.h"
 
-@class NSString;
-
 @protocol UHAHidManagerInterface <ROCKImpersonateable>
 @property(readonly) double doubleClickInterval;
 @property(readonly) BOOL forceClickPerformsQuickLook;
-- (void)endKeyFocusForScene:(NSString *)arg1 contextId:(unsigned int)arg2;
-- (void)beginKeyFocusForScene:(NSString *)arg1 contextId:(unsigned int)arg2;
+@property(readonly, nonatomic) id <UHAHidSettingsInterface> settings;
 - (struct __IOHIDEvent *)pullNextEventFromQueue;
 - (void)registerEventPingHandler:(void (^)(void))arg1;
 @end

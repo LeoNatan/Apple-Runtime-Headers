@@ -130,7 +130,6 @@ __attribute__((visibility("hidden")))
 - (id)computeLayoutGeometry;
 - (void)invalidate;
 - (id)reliedOnLayouts;
-@property(readonly, nonatomic) _Bool isTreatedAsFillForFreehandDrawing;
 @property(readonly, nonatomic) _Bool isFreehandDrawingSpacerShape;
 - (id)layoutGeometryFromInfo;
 - (void)dealloc;

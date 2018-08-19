@@ -42,6 +42,7 @@
 @property(copy) HDDataAggregatorConfiguration *configuration;
 - (void)requestAggregationThroughDate:(id)arg1 mode:(long long)arg2 completion:(CDUnknownBlockType)arg3;
 - (double)defaultDataCollectionInterval;
+- (void)resume;
 - (id)initWithDataCollectionManager:(id)arg1;
 
 // Remaining properties

@@ -60,7 +60,7 @@
 - (void)_queue_performUpdates;
 - (void)_queue_scheduleUpdate:(id)arg1;
 - (id)_groupElements:(id)arg1 bySections:(id)arg2;
-- (void)_queue_reloadWithQOS:(unsigned int)arg1 qosOffset:(int)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)_queue_reloadWithQOS:(unsigned int)arg1 qosOffset:(int)arg2 forceReload:(_Bool)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)_performOrEnqueueUpdateBlock:(CDUnknownBlockType)arg1;
 - (void)removeElementsWithIds:(id)arg1;
 - (void)removeElements:(id)arg1 fromSection:(unsigned int)arg2;
@@ -71,7 +71,7 @@
 - (void)dataBecameAvailable;
 - (void)invalidateElements;
 - (id)elementOperationQueue;
-- (void)invalidateAndReload;
+- (void)invalidateAndReloadWithCompletion:(CDUnknownBlockType)arg1;
 @property(readonly, nonatomic) _Bool hasLoadedData;
 - (void)prepareToUnload;
 - (void)_queue_updateDataSourceLocationUse;

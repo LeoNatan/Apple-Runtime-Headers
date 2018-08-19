@@ -18,6 +18,7 @@
     BOOL _shouldConvertToAPFS;
     BOOL _enableSUFLO;
     BOOL _didRequestEraseInstall;
+    BOOL _isAppleInternal;
     NSString *_alternateBlessVolumeUUID;
     NSString *_baseSystemMountPoint;
     NSString *_payloadImageMountPoint;
@@ -38,6 +39,7 @@
 @property(retain) NSURL *choiceChangesURL; // @synthesize choiceChangesURL=_choiceChangesURL;
 @property(retain) NSURL *distributionURL; // @synthesize distributionURL=_distributionURL;
 @property(retain) NSString *volumeUUIDToErase; // @synthesize volumeUUIDToErase=_volumeUUIDToErase;
+@property BOOL isAppleInternal; // @synthesize isAppleInternal=_isAppleInternal;
 @property BOOL didRequestEraseInstall; // @synthesize didRequestEraseInstall=_didRequestEraseInstall;
 @property BOOL enableSUFLO; // @synthesize enableSUFLO=_enableSUFLO;
 @property BOOL shouldConvertToAPFS; // @synthesize shouldConvertToAPFS=_shouldConvertToAPFS;

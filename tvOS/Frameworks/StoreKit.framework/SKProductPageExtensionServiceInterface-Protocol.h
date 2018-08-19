@@ -6,9 +6,10 @@
 
 #import "NSObject.h"
 
-@class NSDictionary, NSString, SSLookupItem;
+@class NSDictionary, NSNumber, NSString, SSLookupItem;
 
 @protocol SKProductPageExtensionServiceInterface <NSObject>
+- (void)setVisibleInClientWindow:(NSNumber *)arg1;
 - (void)setAskToBuy:(_Bool)arg1;
 - (void)setPromptString:(NSString *)arg1;
 - (void)setShowsRightBarButton:(_Bool)arg1;

@@ -14,10 +14,10 @@ __attribute__((visibility("hidden")))
     TSSMutablePropertySet *mChangedProperties;
 }
 
+- (void).cxx_destruct;
 - (id)changedProperties;
 - (void)addChangedProperties:(id)arg1;
 - (void)addChangedProperty:(int)arg1;
-- (void)dealloc;
 - (id)init;
 - (id)initWithChangedProperties:(id)arg1;
 

@@ -18,7 +18,7 @@
 + (id)limitKeyPaths;
 - (id)syncableRootObject;
 - (id)dictionaryRepresentation;
-- (void)updateWithDictionaryRepresentation:(id)arg1;
+- (BOOL)updateWithDictionaryRepresentation:(id)arg1;
 - (void)setBudgetLimit:(double)arg1 forDay:(unsigned long long)arg2;
 - (void)setBudgetLimit:(double)arg1;
 - (id)budgetLimitScheduleRepresentation;

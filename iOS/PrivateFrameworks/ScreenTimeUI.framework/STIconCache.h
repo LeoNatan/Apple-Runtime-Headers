@@ -35,7 +35,6 @@
 - (id)circleImageWithFillColor:(id)arg1 fillDiameter:(double)arg2 outlineColor:(id)arg3 outlineWidth:(double)arg4;
 - (id)blankSpaceImageWithSize:(struct CGSize)arg1;
 - (id)imageForCategoryIdentifier:(id)arg1;
-- (id)tableUIImageForBundleID:(id)arg1;
 - (void)_handleiTunesResponseForAppInfo:(id)arg1 response:(id)arg2 data:(id)arg3 error:(id)arg4;
 - (void)_fetchImageForAppInfoIfNeeded:(id)arg1;
 - (id)imageForBundleIdentifier:(id)arg1;

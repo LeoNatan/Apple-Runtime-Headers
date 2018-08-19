@@ -32,6 +32,7 @@ __attribute__((visibility("hidden")))
 + (id)presetKinds;
 + (void)tsdRegisterPresetSourceClasses;
 + (void)tstRegisterPresetSourceClasses;
+- (void).cxx_destruct;
 - (id)referencedStyles;
 - (void)checkThemeStylesheetConsistency;
 - (void)bootstrapThemeAlternate:(int)arg1;
@@ -70,7 +71,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSString *themeIdentifier;
 @property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;
-- (void)dealloc;
 - (id)initWithContext:(id)arg1 documentStylesheet:(id)arg2;
 - (id)initWithContext:(id)arg1;
 - (void)tschSaveToArchive:(struct ThemeArchive *)arg1 archiver:(id)arg2;

@@ -6,9 +6,11 @@
 
 #import "NSObject.h"
 
+#import "NSCopying.h"
+
 @class NSArray, NSDate, WFAirQualityConditions, WFLocation, WFWeatherConditions;
 
-@interface NWKLocationForecast : NSObject
+@interface NWKLocationForecast : NSObject <NSCopying>
 {
     WFLocation *_location;
     WFWeatherConditions *_currentConditions;
@@ -36,6 +38,7 @@
 - (void)enumerateConditionsFrom:(id)arg1 usingBlock:(CDUnknownBlockType)arg2;
 - (void)enumerateConditionsUsingBlock:(CDUnknownBlockType)arg1;
 - (id)conditionsForDate:(id)arg1;
+- (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithLocation:(id)arg1 token:(unsigned int)arg2 currentConditions:(id)arg3 airQualityConditions:(id)arg4 hourlyConditions:(id)arg5 dailyConditions:(id)arg6;
 
 @end

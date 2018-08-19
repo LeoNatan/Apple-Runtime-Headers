@@ -14,20 +14,25 @@
 __attribute__((visibility("hidden")))
 @interface MultiplePauseResumeDataDownloadDelegate : NSObject <NSURLSessionDownloadDelegate, NSURLSessionDelegate>
 {
+    _Bool _expectDirectory;
     long long _sizeOfEntity;
     NSObject<OS_dispatch_semaphore> *_wait;
+    _Bool _retryingWithResumeData;
     _Bool _result;
     long long _totalBytesWritten;
 }
 
+- (void)URLSession:(id)arg1 downloadTask:(id)arg2 didResumeAtOffset:(long long)arg3 expectedTotalBytes:(long long)arg4;
 - (void)URLSession:(id)arg1 downloadTask:(id)arg2 didWriteData:(long long)arg3 totalBytesWritten:(long long)arg4 totalBytesExpectedToWrite:(long long)arg5;
 - (void)URLSession:(id)arg1 task:(id)arg2 didCompleteWithError:(id)arg3;
 - (void)URLSession:(id)arg1 downloadTask:(id)arg2 didFinishDownloadingToURL:(id)arg3;
 - (_Bool)didTestPass;
+- (_Bool)isRetryingWithResumeData;
+- (_Bool)isExpectingDirectory;
 - (long long)getSizeOfEntity;
 - (id)getWaiter;
 - (void)dealloc;
-- (id)init;
+- (id)initExpectingDirectory:(_Bool)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

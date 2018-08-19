@@ -51,7 +51,7 @@ __attribute__((visibility("hidden")))
 - (void)addUserDefinedShapesWithPathSources:(id)arg1 documentRoot:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 @property(readonly) _Bool remoteWriteHappened;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
-- (void)p_notifyForIndexesChanged:(id)arg1 changeType:(unsigned long long)arg2 documentRoot:(id)arg3;
+- (void)p_notifyForIndexesChanged:(id)arg1 changeType:(unsigned long long)arg2 categoryChangeType:(unsigned long long)arg3 documentRoot:(id)arg4;
 @property(readonly) unsigned long long numberOfUserDefinedShapes;
 @property(readonly, nonatomic) NSString *name;
 - (void)dealloc;

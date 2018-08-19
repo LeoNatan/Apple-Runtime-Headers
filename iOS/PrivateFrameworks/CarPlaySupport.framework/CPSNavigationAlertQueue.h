@@ -32,6 +32,8 @@
 - (void)didSelectButton:(id)arg1;
 - (void)_visibleAlertTimerFired:(id)arg1;
 - (void)_startAlertAnimations;
+- (_Bool)_canBeginAnimatingAlert;
+- (void)beginAnimatingAlertIfPossible;
 - (void)dismissCurrentNavigationAlertAnimated:(_Bool)arg1 context:(unsigned long long)arg2;
 - (void)prepareNavigationAlert:(id)arg1 templateDelegate:(id)arg2 animated:(_Bool)arg3;
 @property(readonly, nonatomic) _Bool canDisplayAlert;

@@ -18,6 +18,8 @@
 }
 
 - (void).cxx_destruct;
+- (void)_aolSupportsAuthentication;
+- (void)_switchAolAccountsToOAuth;
 - (void)_removeBTMMType;
 - (void)_changeSocialAccountTypeObsoleteAttributes;
 - (void)_changeFacebookAndLinkedInAccountsToLegacyAccountTypes;

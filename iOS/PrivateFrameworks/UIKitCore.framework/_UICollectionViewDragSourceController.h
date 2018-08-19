@@ -62,7 +62,6 @@ __attribute__((visibility("hidden")))
 - (void)dragInteraction:(id)arg1 sessionDidMove:(id)arg2;
 - (_Bool)dragInteraction:(id)arg1 prefersFullSizePreviewsForSession:(id)arg2;
 - (void)dragInteraction:(id)arg1 sessionWillBegin:(id)arg2;
-- (void)_dragInteraction:(id)arg1 sessionWillBeginEarly:(id)arg2;
 - (void)dragInteraction:(id)arg1 willAnimateLiftWithAnimator:(id)arg2 session:(id)arg3;
 - (id)dragInteraction:(id)arg1 previewForLiftingItem:(id)arg2 session:(id)arg3;
 - (id)dragInteraction:(id)arg1 itemsForBeginningSession:(id)arg2;

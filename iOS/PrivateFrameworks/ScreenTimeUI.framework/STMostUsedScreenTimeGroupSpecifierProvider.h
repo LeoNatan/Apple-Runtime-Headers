@@ -21,7 +21,6 @@
 @property(readonly, nonatomic) STUsageItem *usageItem; // @synthesize usageItem=_usageItem;
 - (void).cxx_destruct;
 - (id)notifications:(id)arg1;
-- (id)afterBedtimeUse:(id)arg1;
 - (id)dailyAverage:(id)arg1;
 @property(readonly, nonatomic) STUsageReportGraphDataSet *graphDataSet; // @synthesize graphDataSet=_graphDataSet;
 - (id)initWithUsageItem:(id)arg1 coordinator:(id)arg2;

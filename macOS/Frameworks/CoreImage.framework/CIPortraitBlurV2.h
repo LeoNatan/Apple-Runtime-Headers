@@ -19,9 +19,11 @@ __attribute__((visibility("hidden")))
     NSNumber *inputAperture;
     NSDictionary *inputTuningParameters;
     NSString *inputShape;
+    NSNumber *inputDraftMode;
 }
 
 + (id)customAttributes;
+@property(retain, nonatomic) NSNumber *inputDraftMode; // @synthesize inputDraftMode;
 @property(retain, nonatomic) NSString *inputShape; // @synthesize inputShape;
 @property(retain, nonatomic) NSDictionary *inputTuningParameters; // @synthesize inputTuningParameters;
 @property(copy, nonatomic) NSNumber *inputAperture; // @synthesize inputAperture;
@@ -31,6 +33,8 @@ __attribute__((visibility("hidden")))
 @property(retain) CIImage *inputMatteImage; // @synthesize inputMatteImage;
 @property(retain) CIImage *inputImage; // @synthesize inputImage;
 - (id)outputImage;
+- (double)effectiveScale;
+- (id)sensorSize;
 
 @end
 

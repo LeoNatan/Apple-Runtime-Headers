@@ -356,7 +356,6 @@
 - (_Bool)canPerformAction:(SEL)arg1 withSender:(id)arg2;
 - (_Bool)canBecomeFirstResponder;
 - (_Bool)becomeFirstResponder;
-- (void)keyboardVisibilityWillChange:(id)arg1;
 - (void)loadView;
 - (void)dealloc;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;

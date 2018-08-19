@@ -22,13 +22,15 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) UUIDData_5fbc143e condStyleOwnerUID; // @synthesize condStyleOwnerUID=_condStyleOwnerUID;
 @property(readonly, nonatomic) UUIDData_5fbc143e tableUID; // @synthesize tableUID=_tableUID;
 - (id).cxx_construct;
+- (void).cxx_destruct;
 - (void)saveToMessage:(struct RegionInfoArchive *)arg1;
 - (id)initFromMessage:(const struct RegionInfoArchive *)arg1;
+- (struct TSCERangeCoordinate)mergingRange;
+- (struct TSUCellCoord)bottomRightCellCoord;
 - (struct TSUCellCoord)topLeftCellCoord;
 - (void)unloadIndexes;
-- (void)loadIndexesForTable:(id)arg1;
+- (void)loadIndexesForTable:(id)arg1 uidResolver:(id)arg2;
 - (id)description;
-- (void)dealloc;
 - (id)initWithTableUID:(const UUIDData_5fbc143e *)arg1 columnUids:(const vector_4dc5f307 *)arg2 rowUids:(const vector_4dc5f307 *)arg3;
 
 @end

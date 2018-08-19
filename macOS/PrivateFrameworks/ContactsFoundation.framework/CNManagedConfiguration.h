@@ -28,7 +28,8 @@
 - (BOOL)canReadFromAccountWithIdentifier:(id)arg1;
 - (BOOL)accountIsManagedForIdentifier:(id)arg1;
 - (BOOL)accountIsManaged:(id)arg1;
-- (BOOL)allowsLocalAccount;
+- (BOOL)canWriteToLocalAccount;
+- (BOOL)canReadFromLocalAccount;
 - (BOOL)deviceHasManagementRestrictions;
 - (id)initWithBundleIdentifier:(id)arg1 managedProfileConnection:(id)arg2;
 - (id)initWithAuditToken:(CDStruct_6ad76789)arg1 managedProfileConnection:(id)arg2;

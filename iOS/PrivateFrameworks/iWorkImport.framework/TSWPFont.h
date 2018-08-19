@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class NSString;
+@class NSObject<OS_dispatch_semaphore>, NSString;
 
 __attribute__((visibility("hidden")))
 @interface TSWPFont : NSObject
@@ -14,7 +14,9 @@ __attribute__((visibility("hidden")))
     NSString *_fontName;
     NSString *_compatibilityName;
     NSString *_displayName;
+    NSObject<OS_dispatch_semaphore> *_displayNameSem;
     NSString *_familyName;
+    NSObject<OS_dispatch_semaphore> *_familyNameSem;
     unsigned long long _hash;
     int _availability;
 }

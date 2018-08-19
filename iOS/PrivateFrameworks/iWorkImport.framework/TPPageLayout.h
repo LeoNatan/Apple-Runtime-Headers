@@ -20,6 +20,7 @@ __attribute__((visibility("hidden")))
     TPFootnoteContainerLayout *_footnoteContainerLayout;
     unsigned long long _pageNumber;
     unsigned long long _pageCount;
+    _Bool _shouldHeaderFooterBeVisible;
     _Bool _childLayoutsValid;
     TSURetainedPointerKeyDictionary *_oldChildLayouts;
     id <TPMasterDrawableProvider> _masterDrawableProvider;
@@ -134,7 +135,6 @@ __attribute__((visibility("hidden")))
 - (_Bool)headerFooterProviderValid;
 - (id)headerFooterProvider;
 - (Class)backgroundFillOwningInfoClass;
-- (_Bool)shouldHeaderFooterBeVisibleForPageIndex:(unsigned long long)arg1;
 - (_Bool)shouldHeaderFooterBeVisible:(long long)arg1;
 - (_Bool)shouldProvideGuidesDuringExclusiveAlignmentOperation;
 - (void)dealloc;

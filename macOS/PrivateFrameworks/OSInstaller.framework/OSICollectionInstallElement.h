@@ -10,17 +10,17 @@
 
 @interface OSICollectionInstallElement : OSIInstallQueueElement
 {
-    NSArray *_packagePaths;
+    NSArray *_relativePackagePaths;
     OSInstallOptions *_installOptions;
 }
 
 @property(retain) OSInstallOptions *installOptions; // @synthesize installOptions=_installOptions;
-@property(retain) NSArray *packagePaths; // @synthesize packagePaths=_packagePaths;
+@property(retain) NSArray *relativePackagePaths; // @synthesize relativePackagePaths=_relativePackagePaths;
 - (void).cxx_destruct;
 - (id)operationName;
 - (double)estimatedTimeToComplete;
 - (BOOL)runReturningError:(id *)arg1;
-- (id)initWithOptions:(id)arg1 packagePaths:(id)arg2;
+- (id)initWithOptions:(id)arg1 relativePackagePaths:(id)arg2;
 
 @end
 

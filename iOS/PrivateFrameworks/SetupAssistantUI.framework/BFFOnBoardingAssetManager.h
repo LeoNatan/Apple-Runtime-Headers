@@ -17,6 +17,7 @@
 + (id)appropriateAvailableLanguageForPreferredLanguages:(id)arg1 regionCode:(id)arg2;
 + (id)appropriateAvailableLanguageForCurrentLanguage;
 + (id)sharedManager;
+- (id)featureKey;
 - (id)placeholderImageNameForFeature:(long long)arg1 language:(id)arg2;
 - (id)placeholderImageNameForFeature:(long long)arg1;
 - (id)placeholderImageForFeature:(long long)arg1;

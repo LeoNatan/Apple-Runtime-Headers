@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)entry;
+- (void).cxx_destruct;
 - (id)animation;
 - (void)addAnimation:(id)arg1 animationInfo:(id)arg2;
-- (void)dealloc;
 - (id)init;
 
 @end

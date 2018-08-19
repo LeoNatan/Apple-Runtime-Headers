@@ -15,6 +15,7 @@ __attribute__((visibility("hidden")))
 {
 }
 
++ (long long)rendererTypeForAnimationContext:(id)arg1;
 + (id)thumbnailImageNameForType:(long long)arg1;
 + (id)defaultAttributes;
 + (void)fillLocalizedDirectionMenu:(id)arg1 forType:(long long)arg2;

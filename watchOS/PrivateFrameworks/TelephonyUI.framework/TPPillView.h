@@ -11,7 +11,7 @@
 @interface TPPillView : UIView
 {
     id <TPPillViewDelegate> _delegate;
-    NSString *_title;
+    unsigned int _theme;
     UIStackView *_stackView;
     TPBadgeView *_badgeView;
     UILabel *_label;
@@ -22,10 +22,14 @@
 @property(readonly, nonatomic) UILabel *label; // @synthesize label=_label;
 @property(readonly, nonatomic) TPBadgeView *badgeView; // @synthesize badgeView=_badgeView;
 @property(readonly, nonatomic) UIStackView *stackView; // @synthesize stackView=_stackView;
-@property(copy, nonatomic) NSString *title; // @synthesize title=_title;
+@property(nonatomic) unsigned int theme; // @synthesize theme=_theme;
 @property(nonatomic) __weak id <TPPillViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *title;
+@property(copy, nonatomic) NSString *badgeText;
 - (void)handleTap:(id)arg1;
+- (void)updateView;
+- (id)initWithTitle:(id)arg1 frame:(struct CGRect)arg2 theme:(unsigned int)arg3;
 - (id)initWithTitle:(id)arg1 frame:(struct CGRect)arg2;
 
 @end

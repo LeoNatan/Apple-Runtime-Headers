@@ -12,6 +12,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (void)registerUserDefaults:(_Bool)arg1;
++ (unsigned long long)maximumFontSize;
++ (unsigned long long)minimumFontSize;
 + (void)setAutomaticTextReplacement:(_Bool)arg1;
 + (void)setAutomaticQuoteSubstitution:(_Bool)arg1;
 + (void)setAutomaticDashSubstitution:(_Bool)arg1;

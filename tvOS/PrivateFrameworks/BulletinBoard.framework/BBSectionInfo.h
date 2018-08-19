@@ -73,7 +73,9 @@
 @property(nonatomic) unsigned long long bulletinCount;
 @property(nonatomic) _Bool enabled;
 - (void)deliverQuietly:(_Bool)arg1;
+- (void)_deliverQuietly:(_Bool)arg1;
 @property(readonly, nonatomic) _Bool isDeliveredQuietly;
+- (_Bool)_isDeliveredQuietly;
 @property(readonly, nonatomic) _Bool hasEnabledSettings;
 - (void)_dissociateDataProviderSectionInfo:(id)arg1;
 - (void)_associateDataProviderSectionInfo:(id)arg1;

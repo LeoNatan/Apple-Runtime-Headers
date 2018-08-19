@@ -25,6 +25,7 @@ __attribute__((visibility("hidden")))
 - (id)cellAtIndex:(unsigned long long)arg1;
 - (unsigned long long)count;
 - (void)popLastCell;
+- (id)shallowAddCell:(id)arg1;
 - (id)addCell:(id)arg1;
 - (void)dealloc;
 - (id)initWithContext:(id)arg1;

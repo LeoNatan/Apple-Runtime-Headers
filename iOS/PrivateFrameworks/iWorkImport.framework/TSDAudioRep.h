@@ -16,7 +16,7 @@ __attribute__((visibility("hidden")))
 - (void)willBeRemoved;
 - (void)drawInContext:(struct CGContext *)arg1;
 - (struct CGRect)clipRect;
-- (void)drawInContextWithoutEffects:(struct CGContext *)arg1 withContent:(_Bool)arg2 strokeDrawOptions:(unsigned long long)arg3 withOpacity:(_Bool)arg4 forAlphaOnly:(_Bool)arg5 drawChildren:(_Bool)arg6;
+- (void)drawInContextWithoutEffects:(struct CGContext *)arg1 withContent:(_Bool)arg2 strokeDrawOptions:(unsigned long long)arg3 withOpacity:(_Bool)arg4 forAlphaOnly:(_Bool)arg5 drawChildren:(_Bool)arg6 keepingChildrenPassingTest:(CDUnknownBlockType)arg7;
 @property(readonly, nonatomic) TSDMovieInfo *movieInfo;
 - (id)initWithLayout:(id)arg1 canvas:(id)arg2;
 

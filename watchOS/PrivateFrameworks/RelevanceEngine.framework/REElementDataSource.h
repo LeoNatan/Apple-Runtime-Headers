@@ -30,6 +30,7 @@
 + (id)overrideDataSourceImage;
 + (id)applicationBundleIdentifier;
 + (id)bundleIdentifier;
++ (_Bool)wantsPrivateQueue;
 + (id)contentAttributes;
 @property(readonly, nonatomic, getter=hasUnlockedSinceBoot) _Bool unlockedSinceBoot; // @synthesize unlockedSinceBoot=_unlockedSinceBoot;
 @property(readonly, nonatomic) NSString *logHeader; // @synthesize logHeader=_logHeader;

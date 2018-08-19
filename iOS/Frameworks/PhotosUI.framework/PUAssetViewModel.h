@@ -34,6 +34,7 @@
     PUOperationStatus *_loadingStatus;
     NSProgress *_saveProgress;
     long long _saveState;
+    long long _importState;
     NSObject<OS_dispatch_group> *_displayedContentUpdateGroup;
     PUBadgeInfoPromise *_badgeInfoPromise;
     long long _lastAccessoryViewVisibilityChangeReason;
@@ -67,6 +68,7 @@
 @property(copy, nonatomic) PUBadgeInfoPromise *badgeInfoPromise; // @synthesize badgeInfoPromise=_badgeInfoPromise;
 @property(retain, nonatomic) NSObject<OS_dispatch_group> *displayedContentUpdateGroup; // @synthesize displayedContentUpdateGroup=_displayedContentUpdateGroup;
 @property(nonatomic) _Bool isUpdatingDisplayedContent; // @synthesize isUpdatingDisplayedContent=_isUpdatingDisplayedContent;
+@property(nonatomic) long long importState; // @synthesize importState=_importState;
 @property(readonly, nonatomic) long long saveState; // @synthesize saveState=_saveState;
 @property(retain, nonatomic) NSProgress *saveProgress; // @synthesize saveProgress=_saveProgress;
 @property(copy, nonatomic) PUOperationStatus *loadingStatus; // @synthesize loadingStatus=_loadingStatus;

@@ -16,12 +16,14 @@
     long long _handle;
     NSError *_error;
     unsigned int _remote:1;
+    // Error parsing type: AB, name: _invalid
 }
 
 - (void).cxx_destruct;
 - (void)invalidateWithError:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)sendMessage:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)connect;
+- (_Bool)_invalidate;
 - (void)setError:(id)arg1;
 @property(nonatomic) __weak id <SidecarSessionDelegate> delegate;
 @property(readonly, nonatomic) SidecarService *service;

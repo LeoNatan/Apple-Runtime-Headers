@@ -22,6 +22,7 @@
     CNMonogrammer *_monogrammer;
     PSSpecifier *_createNewAccountButtonSpecifier;
     PSSpecifier *_createNewAccountGroupSpecifier;
+    PSSpecifier *_signInButtonSpecifier;
     PSSpecifier *_passwordSpecifier;
     PSSpecifier *_userSpecifier;
     NSString *_username;
@@ -83,6 +84,7 @@
 - (void)_presentAppleIDPrivacyInformationPane;
 - (id)_specifierForGroupWithiForgotLink;
 - (id)_specifiersForCreateNewAccount;
+- (id)_specifiersForSignInButton;
 - (void)_reloadPasswordSpecifier;
 - (id)_specifierForLoginPasswordForm;
 - (id)_specifierForLoginUserForm;

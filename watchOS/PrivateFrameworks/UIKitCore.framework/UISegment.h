@@ -81,6 +81,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)showDivider;
 @property int controlSize;
 @property(getter=isMomentary) _Bool momentary;
+- (_Bool)_isContainedInHostedFocusSystem;
 @property(readonly) UIView *badgeView;
 @property(copy, nonatomic) NSString *badgeValue;
 - (void)tintColorDidChange;

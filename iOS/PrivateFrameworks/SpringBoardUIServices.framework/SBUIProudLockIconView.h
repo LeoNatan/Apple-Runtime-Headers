@@ -13,6 +13,8 @@
     long long _state;
     SBUICAPackageView *_lockView;
     NSSet *_imageLayers;
+    NSSet *_shadowImageLayers;
+    NSSet *_shadowFilterLayers;
     LAUIPearlGlyphView *_lazy_pearlGlyphView;
     id _pearlGlyphViewSharedResources;
     SBUIFaceIDCameraGlyphView *_cameraCoveredView;
@@ -38,10 +40,12 @@
 - (id)_transformAnimationSettingsForTransitionFromViews:(id)arg1 andState:(long long)arg2 toViews:(id)arg3 andState:(long long)arg4 forIncomingViews:(_Bool)arg5;
 - (void)_transitionToState:(long long)arg1 animated:(_Bool)arg2 options:(long long)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)_forEachLayerInHierarchy:(id)arg1 perform:(CDUnknownBlockType)arg2;
+- (void)_configureShadowFromLegibilitySettings:(id)arg1;
 - (void)layoutSubviews;
 - (void)setState:(long long)arg1 animated:(_Bool)arg2 options:(long long)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)setState:(long long)arg1 animated:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)setState:(long long)arg1 animated:(_Bool)arg2;
+- (id)fileNameForCurrentDevice;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end

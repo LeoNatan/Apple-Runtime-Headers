@@ -32,10 +32,12 @@
     NSString *_responseTemplate;
     _INPBArchivedObject *_underlyingIntent;
     _INPBArchivedObject *_underlyingIntentResponse;
+    NSString *_underlyingIntentTitle;
     NSString *_verb;
 }
 
 @property(copy, nonatomic) NSString *verb; // @synthesize verb=_verb;
+@property(copy, nonatomic) NSString *underlyingIntentTitle; // @synthesize underlyingIntentTitle=_underlyingIntentTitle;
 @property(retain, nonatomic) _INPBArchivedObject *underlyingIntentResponse; // @synthesize underlyingIntentResponse=_underlyingIntentResponse;
 @property(retain, nonatomic) _INPBArchivedObject *underlyingIntent; // @synthesize underlyingIntent=_underlyingIntent;
 @property(nonatomic) int toggleState; // @synthesize toggleState=_toggleState;
@@ -55,6 +57,7 @@
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
 @property(readonly, nonatomic) BOOL hasVerb;
+@property(readonly, nonatomic) BOOL hasUnderlyingIntentTitle;
 @property(readonly, nonatomic) BOOL hasUnderlyingIntentResponse;
 @property(readonly, nonatomic) BOOL hasUnderlyingIntent;
 - (int)StringAsToggleState:(id)arg1;

@@ -25,7 +25,7 @@ __attribute__((visibility("hidden")))
 - (id)p_shapeAtIndex:(unsigned long long)arg1 categoryIndex:(unsigned long long)arg2;
 - (id)p_shapeCollectionAtIndex:(unsigned long long)arg1;
 - (unsigned long long)p_numberOfCategories;
-- (unsigned long long)p_indexOfUserDefinedCategory;
+- (unsigned long long)p_numberOfNonUserDefinedCategories;
 - (id)shapeAtIndex:(unsigned long long)arg1 categoryIndex:(unsigned long long)arg2;
 - (unsigned long long)numberOfShapesInCategoryAtIndex:(unsigned long long)arg1;
 @property(readonly, nonatomic) unsigned long long indexOfUserDefinedLibraryCategory;

@@ -35,6 +35,7 @@
 + (id)getNSUATypefromActivityType:(id)arg1;
 + (id)getDateFromUserActivityString:(id)arg1 forActionKey:(id)arg2;
 + (id)getActionKeyForBundleId:(id)arg1 actionType:(id)arg2;
++ (unsigned long long)_userActivityHashForUserInfoDict:(id)arg1 activityType:(id)arg2 webpageURL:(id)arg3;
 @property(readonly, nonatomic) CSSearchableItemAttributeSet *contentAttributeSet; // @synthesize contentAttributeSet=_contentAttributeSet;
 @property(readonly, nonatomic) NSString *userActivityString; // @synthesize userActivityString=_userActivityString;
 @property(readonly, nonatomic) INIntent *intent; // @synthesize intent=_intent;
@@ -67,7 +68,6 @@
 - (id)actionDescription;
 @property(readonly, nonatomic) _Bool isHeuristic;
 - (id)description;
-- (unsigned long long)_userActivityHashForUserInfoDict:(id)arg1 activityType:(id)arg2 webpageURL:(id)arg3;
 - (unsigned long long)userActivityHash;
 - (unsigned int)hash;
 - (_Bool)isEqualToAction:(id)arg1;

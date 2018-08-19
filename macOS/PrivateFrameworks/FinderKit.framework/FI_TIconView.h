@@ -114,6 +114,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)isIconTracking:(id)arg1;
 - (void)stopIconTracking:(id)arg1;
 - (void)startIconTracking:(id)arg1 options:(unsigned long long)arg2 userInfo:(id)arg3;
+- (_Bool)isIconOrTextInRect:(const struct CGRect *)arg1;
 - (id)hitTestInIconOrText:(const struct CGPoint *)arg1;
 - (id)_hitTestInIconOrTextWithLocalPoint:(const struct CGPoint *)arg1;
 - (id)hitTestInText:(const struct CGPoint *)arg1;

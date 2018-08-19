@@ -16,7 +16,7 @@ __attribute__((visibility("hidden")))
 {
     CALayer *_horizontalSeparatorLayer;
     CALayer *_verticalSeparatorLayer;
-    _Bool _layerNeedsUpdate;
+    _Bool _backgroundFillRequiresLayerUpdate;
     _Bool _fillCanApplyToCALayer;
     TPiOSMarginAdjustRep *_marginAdjustRep;
     TSDFill *_cachedBackgroundFill;

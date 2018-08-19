@@ -14,10 +14,10 @@
 __attribute__((visibility("hidden")))
 @interface TSTStrokeSidecarIterator : NSObject <TSTCellRegionIterating, TSTMutableCellIteratorDataUpdating>
 {
-    struct TSUCellCoord _curCellID;
     TSTStrokeSidecar *_strokeSidecar;
     TSTCellRegion *_region;
     struct NSObject *_regionIterator;
+    struct TSUCellCoord _curCellID;
 }
 
 + (id)p_filterRegion:(id)arg1 strokeSidecar:(id)arg2;

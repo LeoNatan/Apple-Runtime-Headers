@@ -6,20 +6,52 @@
 
 #import "UIButton.h"
 
-@class CAFilter, UIImageView;
+@class CAFilter, INShortcut, INVoiceShortcut, NSLayoutConstraint, UIImageView, UILabel;
 
 @interface INUIAddVoiceShortcutButton : UIButton
 {
+    unsigned long long _style;
+    id <INUIAddVoiceShortcutButtonDelegate> _delegate;
+    INShortcut *_shortcut;
+    INVoiceShortcut *_voiceShortcut;
     CAFilter *_highlightFilter;
     UIImageView *_sphiriImageView;
+    UIImageView *_checkmarkImageView;
+    UILabel *_addToSiriLabel;
+    UILabel *_phraseLabel;
+    NSLayoutConstraint *_checkmarkHeightConstraint;
+    NSLayoutConstraint *_addToSiriLeadingConstraint;
+    NSLayoutConstraint *_addedToSiriLeadingConstraint;
+    NSLayoutConstraint *_addToSiriBottomConstraint;
+    NSLayoutConstraint *_addedToSiriBottomConstraint;
 }
 
+@property(retain, nonatomic) NSLayoutConstraint *addedToSiriBottomConstraint; // @synthesize addedToSiriBottomConstraint=_addedToSiriBottomConstraint;
+@property(retain, nonatomic) NSLayoutConstraint *addToSiriBottomConstraint; // @synthesize addToSiriBottomConstraint=_addToSiriBottomConstraint;
+@property(retain, nonatomic) NSLayoutConstraint *addedToSiriLeadingConstraint; // @synthesize addedToSiriLeadingConstraint=_addedToSiriLeadingConstraint;
+@property(retain, nonatomic) NSLayoutConstraint *addToSiriLeadingConstraint; // @synthesize addToSiriLeadingConstraint=_addToSiriLeadingConstraint;
+@property(retain, nonatomic) NSLayoutConstraint *checkmarkHeightConstraint; // @synthesize checkmarkHeightConstraint=_checkmarkHeightConstraint;
+@property(nonatomic) __weak UILabel *phraseLabel; // @synthesize phraseLabel=_phraseLabel;
+@property(nonatomic) __weak UILabel *addToSiriLabel; // @synthesize addToSiriLabel=_addToSiriLabel;
+@property(nonatomic) __weak UIImageView *checkmarkImageView; // @synthesize checkmarkImageView=_checkmarkImageView;
 @property(nonatomic) __weak UIImageView *sphiriImageView; // @synthesize sphiriImageView=_sphiriImageView;
 @property(retain, nonatomic) CAFilter *highlightFilter; // @synthesize highlightFilter=_highlightFilter;
+@property(retain, nonatomic) INVoiceShortcut *voiceShortcut; // @synthesize voiceShortcut=_voiceShortcut;
+@property(retain, nonatomic) INShortcut *shortcut; // @synthesize shortcut=_shortcut;
+@property(nonatomic) __weak id <INUIAddVoiceShortcutButtonDelegate> delegate; // @synthesize delegate=_delegate;
+@property(readonly, nonatomic) unsigned long long style; // @synthesize style=_style;
 - (void).cxx_destruct;
+- (void)_handleVoiceShortcutUpdateNotification:(id)arg1;
+- (void)_checkAndUpdateForShortcut;
+- (void)_didTapButton;
+- (void)_updatePhraseVisibility;
+- (void)_updateContent;
 - (id)_sphiriImageNameForHeight:(double)arg1;
 - (id)_sphiriImageForHeight:(double)arg1;
+- (id)_phraseFont;
 - (id)_addToSiriFont;
+- (id)_phraseText;
+- (id)_addedToSiriText;
 - (id)_addToSiriText;
 - (void)_createHighlightFilterIfNecessary;
 - (double)_strokeWidthForStyle:(unsigned long long)arg1;
@@ -29,6 +61,7 @@
 - (struct CGSize)intrinsicContentSize;
 - (void)layoutSubviews;
 - (void)setHighlighted:(_Bool)arg1;
+- (void)dealloc;
 - (id)initWithStyle:(unsigned long long)arg1;
 
 @end

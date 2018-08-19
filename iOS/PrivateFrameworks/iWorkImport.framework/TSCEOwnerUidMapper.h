@@ -22,15 +22,31 @@ __attribute__((visibility("hidden")))
     UUIDData_5fbc143e _nextSortRuleReferenceTrackerOwnerUid;
     UUIDData_5fbc143e _mergeOwnerUid;
     UUIDData_5fbc143e _nextMergeOwnerUid;
+    UUIDData_5fbc143e _pencilAnnotationOwnerUid;
+    UUIDData_5fbc143e _nextPencilAnnotationOwnerUid;
+    UUIDData_5fbc143e _categoryOwnerUid;
+    UUIDData_5fbc143e _nextCategoryOwnerUid;
+    UUIDData_5fbc143e _categoryAggregatesOwnerUid;
+    UUIDData_5fbc143e _nextCategoryAggregatesOwnerUid;
+    UUIDData_5fbc143e _groupByUid;
+    UUIDData_5fbc143e _nextGroupByUid;
     UUIDData_5fbc143e _pbTableUid;
 }
 
+@property(nonatomic) UUIDData_5fbc143e nextGroupByUid; // @synthesize nextGroupByUid=_nextGroupByUid;
+@property(nonatomic) UUIDData_5fbc143e nextCategoryAggregatesOwnerUid; // @synthesize nextCategoryAggregatesOwnerUid=_nextCategoryAggregatesOwnerUid;
+@property(readonly, nonatomic) UUIDData_5fbc143e groupByUid; // @synthesize groupByUid=_groupByUid;
+@property(readonly, nonatomic) UUIDData_5fbc143e categoryAggregatesOwnerUid; // @synthesize categoryAggregatesOwnerUid=_categoryAggregatesOwnerUid;
+@property(nonatomic) UUIDData_5fbc143e nextCategoryOwnerUID; // @synthesize nextCategoryOwnerUID=_nextCategoryOwnerUid;
+@property(nonatomic) UUIDData_5fbc143e nextPencilAnnotationOwnerUID; // @synthesize nextPencilAnnotationOwnerUID=_nextPencilAnnotationOwnerUid;
 @property(nonatomic) UUIDData_5fbc143e nextMergeOwnerUID; // @synthesize nextMergeOwnerUID=_nextMergeOwnerUid;
 @property(nonatomic) UUIDData_5fbc143e nextSortRuleReferenceTrackerOwnerUID; // @synthesize nextSortRuleReferenceTrackerOwnerUID=_nextSortRuleReferenceTrackerOwnerUid;
 @property(nonatomic) UUIDData_5fbc143e nextConditionalStyleOwnerUID; // @synthesize nextConditionalStyleOwnerUID=_nextConditionalStyleOwnerUid;
 @property(nonatomic) UUIDData_5fbc143e nextHiddenStateForColumnsOwnerUid; // @synthesize nextHiddenStateForColumnsOwnerUid=_nextHiddenStateForColumnsOwnerUid;
 @property(nonatomic) UUIDData_5fbc143e nextHiddenStateForRowsOwnerUid; // @synthesize nextHiddenStateForRowsOwnerUid=_nextHiddenStateForRowsOwnerUid;
 @property(nonatomic) UUIDData_5fbc143e nextTableUID; // @synthesize nextTableUID=_nextTableUid;
+@property(readonly, nonatomic) UUIDData_5fbc143e categoryOwnerUID; // @synthesize categoryOwnerUID=_categoryOwnerUid;
+@property(readonly, nonatomic) UUIDData_5fbc143e pencilAnnotationOwnerUID; // @synthesize pencilAnnotationOwnerUID=_pencilAnnotationOwnerUid;
 @property(readonly, nonatomic) UUIDData_5fbc143e mergeOwnerUID; // @synthesize mergeOwnerUID=_mergeOwnerUid;
 @property(readonly, nonatomic) UUIDData_5fbc143e sortRuleReferenceTrackerOwnerUID; // @synthesize sortRuleReferenceTrackerOwnerUID=_sortRuleReferenceTrackerOwnerUid;
 @property(readonly, nonatomic) UUIDData_5fbc143e conditionalStyleOwnerUID; // @synthesize conditionalStyleOwnerUID=_conditionalStyleOwnerUid;
@@ -48,7 +64,7 @@ __attribute__((visibility("hidden")))
 - (void)setToIdentityMapping;
 - (id)initWithIdentityMapping;
 - (id)initWithFormulaOwnerUID:(const UUIDData_5fbc143e *)arg1;
-- (id)initWithTableUID:(const UUIDData_5fbc143e *)arg1 pasteBoardTableUID:(const UUIDData_5fbc143e *)arg2 hiddenStateOwnerForRowsUID:(const UUIDData_5fbc143e *)arg3 hiddenStateOwnerForColumnsUID:(const UUIDData_5fbc143e *)arg4 conditionalStyleOwnerUID:(const UUIDData_5fbc143e *)arg5 sortRuleReferenceTrackerOwnerUID:(const UUIDData_5fbc143e *)arg6 mergeOwnerUID:(const UUIDData_5fbc143e *)arg7;
+- (id)initWithTableUID:(const UUIDData_5fbc143e *)arg1 pasteBoardTableUID:(const UUIDData_5fbc143e *)arg2 hiddenStateOwnerForRowsUID:(const UUIDData_5fbc143e *)arg3 hiddenStateOwnerForColumnsUID:(const UUIDData_5fbc143e *)arg4 conditionalStyleOwnerUID:(const UUIDData_5fbc143e *)arg5 sortRuleReferenceTrackerOwnerUID:(const UUIDData_5fbc143e *)arg6 mergeOwnerUID:(const UUIDData_5fbc143e *)arg7 pencilAnnotationOwnerUID:(const UUIDData_5fbc143e *)arg8 categoryOwnerUID:(const UUIDData_5fbc143e *)arg9 categoryAggregatesOwnerUID:(const UUIDData_5fbc143e *)arg10 groupByUID:(const UUIDData_5fbc143e *)arg11;
 - (void)recreateUIDs;
 
 @end

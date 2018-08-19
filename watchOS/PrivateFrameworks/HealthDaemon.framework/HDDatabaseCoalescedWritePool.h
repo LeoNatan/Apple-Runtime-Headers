@@ -25,6 +25,7 @@
 - (_Bool)_performPendingWriteRecords:(id)arg1 transaction:(id)arg2 accessibilityError:(id)arg3 error:(id *)arg4;
 - (void)flushPendingWriteQueueWithCompletion:(CDUnknownBlockType)arg1;
 - (void)performWriteWithMaximumLatency:(double)arg1 block:(CDUnknownBlockType)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)_queue_performDelayedOperation;
 - (id)initWithProfile:(id)arg1 name:(id)arg2 loggingCategory:(id)arg3;
 - (id)init;
 

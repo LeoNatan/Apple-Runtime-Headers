@@ -23,7 +23,6 @@
     id <_UICanvasMetricsUpdating> _metricsCalculator;
     NSPointerArray *_inheritingCanvases;
     _Bool _active;
-    unsigned char _displayConfigurationRequestRefCount;
     _Bool suspendedEventsOnly;
     _Bool runningInTaskSwitcher;
     _Bool suspendedUnderLock;
@@ -56,7 +55,11 @@
 @property(readonly, nonatomic) int state; // @synthesize state;
 - (void).cxx_destruct;
 @property(retain, nonatomic, getter=_displayConfigurationRequest, setter=_setDisplayConfigurationRequest:) FBSDisplayConfigurationRequest *displayConfigurationRequest;
-@property(readonly, nonatomic) _Bool _activeDisplayConfigurationRequestTransaction; // @dynamic _activeDisplayConfigurationRequestTransaction;
+- (void)_setRequestedRefreshRate:(double)arg1 HDRMode:(int)arg2;
+@property(readonly, nonatomic, getter=_requestedHDRMode) int requestedHDRMode; // @dynamic requestedHDRMode;
+@property(readonly, nonatomic, getter=_requestedRefreshRate) double requestedRefreshRate; // @dynamic requestedRefreshRate;
+@property(nonatomic, getter=_requestedOverscanCompensation, setter=_setRequestedOverscanCompensation:) int requestedOverscanCompensation; // @dynamic requestedOverscanCompensation;
+@property(nonatomic, getter=_requestedDisplayPixelSize, setter=_setRequestedDisplayPixelSize:) struct CGSize requestedDisplayPixelSize; // @dynamic requestedDisplayPixelSize;
 @property(readonly, nonatomic) id <_UIAnimationFenceCoordinating> animationFencingCoordinator;
 - (void)_invalidate;
 - (void)_recycleAttachmentForWindow:(id)arg1;

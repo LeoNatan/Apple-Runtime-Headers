@@ -21,6 +21,7 @@
 @property(readonly) NSURL *URL; // @synthesize URL=_URL;
 - (void).cxx_destruct;
 - (void)changeState:(int)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (id)description;
 - (void)dealloc;
 - (id)initWithURL:(id)arg1;
 - (id)initWithURL:(id)arg1 context:(id)arg2 eventStorage:(id)arg3;

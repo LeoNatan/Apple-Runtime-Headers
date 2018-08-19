@@ -16,8 +16,11 @@ __attribute__((visibility("hidden")))
     CIImage *inputMainImage;
     CIImage *inputMatteImage;
     NSDictionary *inputTuningParameters;
+    NSNumber *inputDraftMode;
 }
 
++ (id)customAttributes;
+@property(retain, nonatomic) NSNumber *inputDraftMode; // @synthesize inputDraftMode;
 @property(retain) NSDictionary *inputTuningParameters; // @synthesize inputTuningParameters;
 @property(retain) CIImage *inputMatteImage; // @synthesize inputMatteImage;
 @property(retain) CIImage *inputMainImage; // @synthesize inputMainImage;

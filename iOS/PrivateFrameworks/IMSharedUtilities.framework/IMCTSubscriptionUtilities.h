@@ -18,9 +18,11 @@
     IMCTXPCServiceSubscriptionInfo *_ctSubscriptionInfo;
     IDSPhoneCertificateVendor *_phoneCertificateVendor;
     NSString *_registeredSIMID;
+    NSString *_registeredPhoneNumber;
 }
 
 + (id)sharedInstance;
+@property(copy, nonatomic) NSString *registeredPhoneNumber; // @synthesize registeredPhoneNumber=_registeredPhoneNumber;
 @property(copy, nonatomic) NSString *registeredSIMID; // @synthesize registeredSIMID=_registeredSIMID;
 @property(retain, nonatomic) IDSPhoneCertificateVendor *phoneCertificateVendor; // @synthesize phoneCertificateVendor=_phoneCertificateVendor;
 @property(retain, nonatomic) IMCTXPCServiceSubscriptionInfo *ctSubscriptionInfo; // @synthesize ctSubscriptionInfo=_ctSubscriptionInfo;
@@ -35,10 +37,14 @@
 @property(readonly, copy, nonatomic) NSString *ctPhoneNumber;
 - (id)ctSubscriptionInfoWithError:(id)arg1;
 @property(readonly, nonatomic) NSArray *ctServiceSubscriptions;
+- (id)copyBundleValueForSubscriptionContext:(id)arg1 keyHierarchy:(id)arg2 bundleType:(long long)arg3 defaultValue:(id)arg4 valueIfError:(id)arg5;
 - (id)copyCarrierBundleValueForSubscriptionContext:(id)arg1 keyHierarchy:(id)arg2 defaultValue:(id)arg3 valueIfError:(id)arg4;
-- (id)_getCachedCarrierSettingOrReadFromBundleForCarrierBundleKey:(id)arg1 forContext:(id)arg2 defaultValue:(id)arg3;
-- (void)_setCachedCarrierSettingValue:(id)arg1 forCarrierBundleKey:(id)arg2 forUniqueID:(id)arg3;
-- (id)_getCachedCarrierSettingValueForCarrierBundleKey:(id)arg1 forUniqueID:(id)arg2;
+- (id)copyOperatorBundleValueForSubscriptionContext:(id)arg1 keyHierarchy:(id)arg2 defaultValue:(id)arg3 valueIfError:(id)arg4;
+- (id)_getCachedSettingOrReadFromBundleForCarrierBundleKey:(id)arg1 bundleType:(long long)arg2 forContext:(id)arg3 defaultValue:(id)arg4;
+- (void)_setCachedCarrierSettingValue:(id)arg1 bundleKey:(id)arg2 uniqueID:(id)arg3;
+- (id)_getCachedCarrierSettingValueForBundleKey:(id)arg1 uniqueID:(id)arg2;
+- (id)_cachedCarrierKeyForKeyHierarchy:(id)arg1 bundleType:(long long)arg2;
+- (id)stringForBundleType:(long long)arg1;
 - (void)_setCarrierSettings:(id)arg1 uniqueID:(id)arg2;
 - (id)_getCarrierSettingsForUniqueID:(id)arg1;
 - (void)_resetCachedCarrierSettingsForUniqueID:(id)arg1;

@@ -6,33 +6,23 @@
 
 #import <RelevanceEngine/RETrainingScheduler.h>
 
-#import "CSLSBacklightObserver.h"
+@class NSMutableArray, NSObject<OS_dispatch_queue>, NSObject<OS_xpc_object>;
 
-@class NSMutableArray, NSObject<OS_dispatch_queue>, NSObject<OS_xpc_object>, NSString;
-
-@interface REOpportunisticTrainingScheduler : RETrainingScheduler <CSLSBacklightObserver>
+@interface REOpportunisticTrainingScheduler : RETrainingScheduler
 {
     NSObject<OS_xpc_object> *_criteria;
     NSObject<OS_dispatch_queue> *_queue;
     NSMutableArray *_blocks;
     _Bool _scheduled;
-    _Bool _backlightOn;
 }
 
 - (void).cxx_destruct;
-- (void)backlightDidChange:(id)arg1 from:(int)arg2 to:(int)arg3;
 - (void)cancelPendindTasks;
 - (void)_queue_unschedule;
 - (void)_performAllTasks;
 - (void)performTask:(CDUnknownBlockType)arg1;
 - (void)dealloc;
 - (id)init;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
 
 @end
 

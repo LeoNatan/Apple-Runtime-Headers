@@ -40,7 +40,6 @@
 - (void)_setAuthorizationStatuses:(id)arg1 modes:(id)arg2 shouldUpdateAnchor:(_Bool)arg3;
 - (id)_authorizationStatusesWithTypes:(id)arg1;
 - (id)_authorizationModesWithMode:(int)arg1 types:(id)arg2;
-- (id)_authorizationModesForAllClinicalTypesWithMode:(int)arg1;
 - (int)_authorizationStatusWithType:(id)arg1;
 @property(readonly, nonatomic) _Bool anyTypeRequested;
 - (_Bool)anyTypeEnabled;
@@ -55,6 +54,7 @@
 - (_Bool)isTypeEnabled:(id)arg1;
 - (id)_orderTypes:(id)arg1;
 - (void)reload;
+- (id)_fetchAllClinicalAuthorizationRecordsWithError:(id *)arg1;
 - (id)initWithHealthStore:(id)arg1 healthRecordsStore:(id)arg2 source:(id)arg3 typesRequestedForReading:(id)arg4;
 
 @end

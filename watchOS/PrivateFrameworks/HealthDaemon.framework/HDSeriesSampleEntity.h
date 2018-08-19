@@ -18,9 +18,9 @@
 + (id)insertDataObject:(id)arg1 withProvenance:(id)arg2 inDatabase:(id)arg3 persistentID:(id)arg4 error:(id *)arg5;
 + (id)additionalPredicateForEnumeration;
 + (CDUnknownBlockType)objectInsertionFilterForProfile:(id)arg1;
-+ (_Bool)replaceObjectID:(id)arg1 replacementObjectID:(id)arg2 insertDeletedObject:(_Bool)arg3 profile:(id)arg4 database:(id)arg5 error:(id *)arg6;
++ (_Bool)replaceObjectID:(id)arg1 replacementObjectID:(id)arg2 deleteOriginalHFDData:(_Bool)arg3 insertDeletedObject:(_Bool)arg4 profile:(id)arg5 database:(id)arg6 error:(id *)arg7;
 + (id)seriesSampleWithID:(id)arg1 profile:(id)arg2 error:(id *)arg3;
-+ (_Bool)_deleteSeriesWithID:(id)arg1 insertDeletedObject:(_Bool)arg2 profile:(id)arg3 database:(id)arg4 error:(id *)arg5;
++ (_Bool)deleteSeriesWithID:(id)arg1 deleteHFDData:(_Bool)arg2 insertDeletedObject:(_Bool)arg3 profile:(id)arg4 database:(id)arg5 error:(id *)arg6;
 + (id)freezeSeriesWithIdentifier:(id)arg1 metadata:(id)arg2 profile:(id)arg3 error:(id *)arg4;
 + (id)foreignKeys;
 + (const CDStruct_4c492439 *)columnDefinitionsWithCount:(unsigned int *)arg1;

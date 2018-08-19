@@ -15,15 +15,18 @@
     NSMutableSet *_restrictedSystemApps;
     NSMutableSet *_removedSystemApps;
     NSObject<OS_dispatch_queue> *_internalQueue;
+    NSString *_tinCanBundleID;
 }
 
 + (id)sharedInstance;
 - (void).cxx_destruct;
 - (id)_queue_restrictedSystemApps;
 - (id)_queue_removedSystemApps;
+- (void)_queue_tinCanSettingsChanged;
 - (void)_queue_applicationsDidChange:(id)arg1 state:(unsigned long long)arg2;
 - (void)_queue_initializeRemovedSystemApps;
 - (void)_queue_initializeRestrictedSystemApps;
+- (void)_tinCanSettingsChanged;
 - (void)applicationsDidUninstall:(id)arg1;
 - (void)applicationsDidInstall:(id)arg1;
 - (void)applicationStateDidChange:(id)arg1;

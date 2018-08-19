@@ -33,6 +33,7 @@
 - (id)contextHelpForObject:(id)arg1;
 - (void)removeContextHelpForObject:(id)arg1;
 - (void)setContextHelp:(id)arg1 forObject:(id)arg2;
+- (id)_auxiliaryHelpBookBundlesCreatingIfNeeded:(BOOL)arg1;
 - (id)_registeredHelpBookBundles;
 - (void)dealloc;
 - (BOOL)registerHelpBook;
@@ -48,6 +49,7 @@
 - (id)_helpBundleForObject:(id)arg1;
 - (void)_removeHelpKeyForObject:(id)arg1;
 - (void)_setHelpKey:(id)arg1 forObject:(id)arg2;
+- (void)_addAuxiliaryHelpBookBundle:(id)arg1;
 - (id)_helpWindow;
 - (BOOL)_orderOutHelpWindowAfterEventMask:(unsigned long long)arg1;
 - (BOOL)_orderOutHelpWindow;

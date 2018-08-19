@@ -20,6 +20,7 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (id)_imageViewForImage:(id)arg1;
 - (void)updateAppearanceForLockupViewState:(unsigned long long)arg1;
+- (void)_populateArchivedSubviews:(id)arg1;
 - (struct CGSize)intrinsicContentSize;
 - (struct NSDirectionalEdgeInsets)intrinsicFocusSizeIncrease;
 

@@ -20,6 +20,7 @@
 - (void)exitOrContinueIfNeeded;
 - (void)executeNextQueuedInput;
 - (void)presentError:(id)arg1 terminating:(BOOL)arg2;
+- (id)recoverableErrorForError:(id)arg1;
 - (BOOL)runWorkflowAtURL:(id)arg1 withInput:(id)arg2 error:(id *)arg3;
 - (BOOL)validateWorkflowAtURL:(id)arg1 error:(id *)arg2;
 @property(readonly, nonatomic) BOOL stayOpen;

@@ -38,7 +38,6 @@ __attribute__((visibility("hidden")))
     NSLayoutConstraint *_layoutConstraintWidth;
     NSLayoutConstraint *_layoutConstraintHeight;
     NSString *_remoteViewIdentifier;
-    NSString *_appearanceName;
     id <NSObject> _activity;
     struct CGSize _sizeHint;
     struct CGRect _remoteViewFrameInScreenCoords;
@@ -116,7 +115,6 @@ __attribute__((visibility("hidden")))
 @property(readonly) unsigned int hostWindow; // @synthesize hostWindow=_hostWindow;
 @property(retain) NSAccessibilityRemoteUIElement *hostAccessibilityParent; // @synthesize hostAccessibilityParent=_hostAccessibilityParent;
 @property unsigned char bridgePhase; // @synthesize bridgePhase=_bridgePhase;
-@property(readonly) NSString *appearanceName; // @synthesize appearanceName=_appearanceName;
 @property(readonly) struct NSEdgeInsets alignmentRectInsets; // @synthesize alignmentRectInsets=_alignmentRectInsets;
 @property(retain) NSDictionary *accessoryAccessibilityChildren; // @synthesize accessoryAccessibilityChildren=_accessoryAccessibilityChildren;
 - (void)hasTouchBars:(id)arg1;
@@ -147,7 +145,7 @@ __attribute__((visibility("hidden")))
 - (void)remoteViewIsContentView:(BOOL)arg1;
 - (void)snapshot:(CDUnknownBlockType)arg1;
 - (void)allowAppNap:(BOOL)arg1;
-- (void)setAppearance:(id)arg1;
+- (void)setRemoteViewEffectiveAppearance:(id)arg1;
 - (void)setViewVibrantBlendingStyle:(unsigned long long)arg1;
 - (void)remoteViewContainingWindowOcclusionStateDidChange:(unsigned long long)arg1;
 - (void)remoteViewDidMove:(struct CGPoint)arg1;
@@ -227,7 +225,7 @@ __attribute__((visibility("hidden")))
 - (BOOL)shouldDrawSubviewsIntoLayer;
 - (void)prepareWindow:(id)arg1;
 - (void)viewDidChangeAppearance:(id)arg1;
-- (BOOL)setAppearanceBasedOnCachedName:(id)arg1;
+- (BOOL)setAppearanceOfWindow:(id)arg1;
 - (void)remoteViewResignedFirstResponderInActiveApp:(BOOL)arg1 inFavorOf:(unsigned char)arg2;
 - (void)remoteViewChangedFirstResponder:(CDUnknownBlockType)arg1;
 - (void)remoteViewResignedFirstResponderInFavorOfAccessoryView:(BOOL)arg1;

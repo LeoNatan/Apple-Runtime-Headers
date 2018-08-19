@@ -21,6 +21,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) UIViewController *contentViewController; // @synthesize contentViewController=_contentViewController;
 @property(retain, nonatomic) UIDatePicker *datePicker; // @synthesize datePicker=_datePicker;
 - (void).cxx_destruct;
+- (void)regainFocus;
 - (void)picker:(id)arg1 didPickItem:(id)arg2;
 - (void)pickerDidCancel:(id)arg1;
 - (_Bool)textField:(id)arg1 shouldChangeCharactersInRange:(struct _NSRange)arg2 replacementString:(id)arg3;

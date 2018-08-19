@@ -6,11 +6,13 @@
 
 #import "NSObject.h"
 
+@class TSTCellRegion;
+
 __attribute__((visibility("hidden")))
 @interface TNChartRangeList : NSObject
 {
     UUIDData_5fbc143e _tableUID;
-    struct TNChartRangeNode *_nodeList;
+    vector_f772ab4d _ranges;
     struct TSCERangeCoordinate _unionRange;
     _Bool _unionRangeValid;
 }
@@ -20,7 +22,9 @@ __attribute__((visibility("hidden")))
 + (id)rangeListWithTableUID:(const UUIDData_5fbc143e *)arg1;
 @property(readonly, nonatomic) UUIDData_5fbc143e tableUID; // @synthesize tableUID=_tableUID;
 - (id).cxx_construct;
+- (void).cxx_destruct;
 - (id)description;
+@property(readonly, nonatomic) TSTCellRegion *cellRegion;
 - (void)enumerateRangesUsingBlock:(CDUnknownBlockType)arg1;
 - (struct TSCERangeCoordinate)unionRange;
 - (struct TSCERangeCoordinate)rangeStartingAfterCell:(struct TSUCellCoord)arg1 direction:(int)arg2;
@@ -31,7 +35,6 @@ __attribute__((visibility("hidden")))
 - (unsigned long long)numberOfRanges;
 - (void)removeAllRanges;
 - (void)addRange:(struct TSCERangeCoordinate)arg1 coalesceFlags:(int)arg2;
-- (void)dealloc;
 - (id)initWithTableUID:(const UUIDData_5fbc143e *)arg1 range:(struct TSCERangeCoordinate)arg2;
 - (id)initWithTableUID:(const UUIDData_5fbc143e *)arg1;
 

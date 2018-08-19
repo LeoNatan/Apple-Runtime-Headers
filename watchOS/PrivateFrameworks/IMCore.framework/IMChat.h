@@ -230,6 +230,7 @@
 @property(nonatomic) _Bool hasHadSuccessfulQuery;
 - (void)verifyChatShouldBeSMSSpam;
 - (void)updateWasDetectedAsSMSSpam:(_Bool)arg1;
+- (_Bool)shouldForceToSMS;
 - (_Bool)hasKnownParticipants;
 - (void)updateIsFiltered:(_Bool)arg1;
 @property(nonatomic) _Bool isFiltered; // @dynamic isFiltered;
@@ -263,6 +264,7 @@
 - (void)_insertHistoricalMessages:(id)arg1 queryID:(id)arg2 isRefresh:(_Bool)arg3 isHistoryQuery:(_Bool)arg4;
 - (_Bool)_shouldAnnouncePeopleJoin;
 - (void)_setDBFailedCount:(unsigned int)arg1;
+- (void)_setDBUnreadCount:(unsigned int)arg1 postNotification:(_Bool)arg2;
 - (void)_setDBUnreadCount:(unsigned int)arg1;
 - (void)_clearUnreadCount;
 @property(readonly, nonatomic) _Bool _shouldRegisterChat;

@@ -44,7 +44,9 @@
 @property(copy, nonatomic) CDUnknownBlockType historicalHandler; // @synthesize historicalHandler;
 @property(copy, nonatomic) CDUnknownBlockType instantHandler; // @synthesize instantHandler;
 - (void).cxx_destruct;
+- (void)systemClockDidChange:(id)arg1;
 - (void)update;
+- (void)invalidateInstantState;
 @property(retain, nonatomic) _DKEvent *currentEvent; // @synthesize currentEvent=_currentEvent;
 - (void)setCurrentEvent:(id)arg1 inferHistoricalState:(BOOL)arg2;
 - (BOOL)instantMonitorNeedsDeactivation;

@@ -15,6 +15,7 @@
 @interface AVTouchBarDescriptionBasedPlayerController : NSObject <AVTouchBarPlaybackControlsControllingInternal, AVTimeControlling, AVTouchBarTrackControlling>
 {
     BOOL _playing;
+    BOOL _requiresLinearPlayback;
     BOOL _completelySeekable;
     BOOL _hasSeekableLiveStreamingContent;
     BOOL _seeking;
@@ -60,6 +61,7 @@
 @property double contentDuration; // @synthesize contentDuration=_contentDuration;
 @property double maxTime; // @synthesize maxTime=_maxTime;
 @property double minTime; // @synthesize minTime=_minTime;
+@property(nonatomic) BOOL requiresLinearPlayback; // @synthesize requiresLinearPlayback=_requiresLinearPlayback;
 @property(copy) CDUnknownBlockType actionHandler; // @synthesize actionHandler=_actionHandler;
 - (void).cxx_destruct;
 - (void)endTouchBarScrubbing;

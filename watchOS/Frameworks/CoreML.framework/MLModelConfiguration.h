@@ -10,10 +10,12 @@
 
 @interface MLModelConfiguration : NSObject <NSCopying>
 {
+    _Bool _useWatchSPIForScribble;
     int _computeUnits;
 }
 
 + (id)defaultConfiguration;
+@property(nonatomic) _Bool useWatchSPIForScribble; // @synthesize useWatchSPIForScribble=_useWatchSPIForScribble;
 @property int computeUnits; // @synthesize computeUnits=_computeUnits;
 - (unsigned int)hash;
 - (_Bool)isEqualToModelConfiguration:(id)arg1;

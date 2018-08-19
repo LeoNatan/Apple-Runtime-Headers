@@ -49,8 +49,10 @@
 - (void)_sendAppFeedback:(id)arg1 searchResults:(id)arg2;
 - (void)_sendActionFeedback:(id)arg1 searchResults:(id)arg2;
 - (void)_sendFeedbackAndDoLogging;
+- (void)_resetState;
 - (void)_setCurrentZKWItems:(id)arg1 triggerEvent:(unsigned long long)arg2;
 - (void)_setQuery:(id)arg1;
+- (void)_setBackgroundActionExecuted:(_Bool)arg1;
 - (void)_setActionConsumerSubType:(unsigned char)arg1;
 - (void)_setAppConsumerSubType:(unsigned char)arg1;
 - (id)init;

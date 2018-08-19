@@ -11,12 +11,15 @@ __attribute__((visibility("hidden")))
 {
 }
 
+- (void)remapWithMap:(const UUIDMap_b66c2694 *)arg1;
 - (void)removeUuidsFromVector:(const vector_4dc5f307 *)arg1;
-- (void)removeUuidsFromSet:(id)arg1;
+- (id)removeUuidsFromSetReturningRemoved:(id)arg1;
+- (_Bool)removeUuidsFromSet:(id)arg1;
 - (void)addUuidsFromVector:(const vector_4dc5f307 *)arg1;
+- (id)addUuidsFromSetReturningAdded:(id)arg1;
 - (void)addUuidsFromSet:(id)arg1;
-- (void)removeUUIDs:(const unordered_set_c6a929bd *)arg1;
-- (void)addUUIDs:(const unordered_set_c6a929bd *)arg1;
+- (void)removeUUIDs:(const UUIDSet_bcc2db41 *)arg1;
+- (void)addUUIDs:(const UUIDSet_bcc2db41 *)arg1;
 - (_Bool)removeUUID:(const UUIDData_5fbc143e *)arg1;
 - (_Bool)addUUID:(const UUIDData_5fbc143e *)arg1;
 - (void)removeAllUuids;

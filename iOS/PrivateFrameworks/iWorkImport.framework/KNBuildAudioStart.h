@@ -17,6 +17,7 @@ __attribute__((visibility("hidden")))
 
 + (void)downgradeAttributes:(id *)arg1 animationName:(id *)arg2 warning:(id *)arg3 type:(long long)arg4 isToClassic:(_Bool)arg5 version:(unsigned long long)arg6;
 + (void)upgradeAttributes:(id *)arg1 animationName:(id)arg2 warning:(id *)arg3 type:(long long)arg4 isFromClassic:(_Bool)arg5 version:(unsigned long long)arg6;
++ (long long)rendererTypeForAnimationContext:(id)arg1;
 + (id)thumbnailImageNameForType:(long long)arg1;
 + (id)localizedMenuString:(long long)arg1;
 + (id)animationFilter;

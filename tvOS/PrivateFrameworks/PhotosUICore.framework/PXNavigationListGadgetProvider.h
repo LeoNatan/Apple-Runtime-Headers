@@ -29,6 +29,7 @@
 @property(readonly, nonatomic) _Bool shouldShowNavigationListForDeviceAndLayoutClass;
 - (void)_updateGadgets;
 - (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void *)arg3;
+- (void)startLoadingRemainingData;
 - (void)generateGadgets;
 - (void)loadDataForGadgets;
 - (unsigned long long)estimatedNumberOfGadgets;

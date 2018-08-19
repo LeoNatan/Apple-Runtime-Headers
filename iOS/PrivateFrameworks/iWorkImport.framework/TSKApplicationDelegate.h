@@ -6,12 +6,10 @@
 
 #import "NSObject.h"
 
-#import "TSKApplicationDelegate.h"
-
 @class NSArray, NSData, NSDate, NSString;
 
 __attribute__((visibility("hidden")))
-@interface TSKApplicationDelegate : NSObject <TSKApplicationDelegate>
+@interface TSKApplicationDelegate : NSObject
 {
     id <TSKCompatibilityDelegate> _compatibilityDelegate;
     NSArray *_availableLanguages;
@@ -60,6 +58,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)supportsShrinkTextToFit;
 - (_Bool)sidebarPositionRespectsUserInterfaceLayoutDirection;
 - (_Bool)supportsRTL;
+@property(readonly, nonatomic) _Bool supportsFreehandAnimationUI;
 @property(readonly, nonatomic) _Bool supportsPastingIntoGroups;
 - (_Bool)shouldRenderLargeImages;
 - (_Bool)shouldRenderCurvedShadow;

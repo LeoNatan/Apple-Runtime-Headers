@@ -6,7 +6,7 @@
 
 #import "FCOperation.h"
 
-@class FCCachePolicy, NSDate, NSDictionary, NSMutableArray, NTCatchUpOperationForYouFetchInfo, NTCatchUpOperationForYouRequest, NTCatchUpOperationResults;
+@class NSDate, NSDictionary, NSMutableArray, NTCatchUpOperationForYouFetchInfo, NTCatchUpOperationForYouRequest, NTCatchUpOperationResults;
 
 @interface NTCatchUpOperation : FCOperation
 {
@@ -14,7 +14,7 @@
     id <FCNewsAppConfiguration> _appConfiguration;
     id <FCContentContext> _contentContext;
     id <FCFeedPersonalizing> _feedPersonalizer;
-    FCCachePolicy *_cachePolicyForArticleLists;
+    NSDictionary *_todayConfigOperationHeldRecordsByType;
     unsigned long long _maximumCachedAgeForForYou;
     NTCatchUpOperationForYouRequest *_forYouRequest;
     CDUnknownBlockType _sessionProvider;
@@ -40,7 +40,7 @@
 @property(nonatomic, getter=isForYouEnabled) _Bool forYouEnabled; // @synthesize forYouEnabled=_forYouEnabled;
 @property(copy, nonatomic) NTCatchUpOperationForYouRequest *forYouRequest; // @synthesize forYouRequest=_forYouRequest;
 @property(nonatomic) unsigned long long maximumCachedAgeForForYou; // @synthesize maximumCachedAgeForForYou=_maximumCachedAgeForForYou;
-@property(retain, nonatomic) FCCachePolicy *cachePolicyForArticleLists; // @synthesize cachePolicyForArticleLists=_cachePolicyForArticleLists;
+@property(retain, nonatomic) NSDictionary *todayConfigOperationHeldRecordsByType; // @synthesize todayConfigOperationHeldRecordsByType=_todayConfigOperationHeldRecordsByType;
 @property(retain, nonatomic) id <FCFeedPersonalizing> feedPersonalizer; // @synthesize feedPersonalizer=_feedPersonalizer;
 @property(retain, nonatomic) id <FCContentContext> contentContext; // @synthesize contentContext=_contentContext;
 @property(copy, nonatomic) id <FCNewsAppConfiguration> appConfiguration; // @synthesize appConfiguration=_appConfiguration;

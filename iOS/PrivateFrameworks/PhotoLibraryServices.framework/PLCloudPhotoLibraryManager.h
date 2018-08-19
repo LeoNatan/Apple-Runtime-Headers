@@ -13,11 +13,11 @@
 #import "PLCloudChangeTrackerDelegate.h"
 #import "PLCloudPersistentHistoryMigratorContext.h"
 #import "PLCloudUserSessionHandling.h"
-#import "PLForegroundObserver.h"
+#import "PLForegroundMonitorDelegate.h"
 
-@class CPLLibraryManager, NSDate, NSMutableDictionary, NSNumber, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, NSString, PFCoalescer, PLBatterySaverWatcher, PLCloudBatchDownloader, PLCloudBatchUploader, PLCloudInMemoryTaskManager, PLCloudPhotoLibraryUploadTracker, PLCloudResourceManager, PLCloudTaskManager, PLPhotoLibrary;
+@class CPLLibraryManager, NSDate, NSMutableDictionary, NSNumber, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, NSString, PFCoalescer, PLBatterySaverWatcher, PLCloudBatchDownloader, PLCloudBatchUploader, PLCloudInMemoryTaskManager, PLCloudPhotoLibraryUploadTracker, PLCloudResourceManager, PLCloudTaskManager, PLForegroundMonitor, PLPhotoLibrary;
 
-@interface PLCloudPhotoLibraryManager : NSObject <PLCloudChangeTrackerDelegate, PLCloudPersistentHistoryMigratorContext, CPLResourceProgressDelegate, CPLLibraryManagerDelegate, PLForegroundObserver, PLBatterySaverWatcherDelegate, PLCloudUserSessionHandling, CPLStatusDelegate>
+@interface PLCloudPhotoLibraryManager : NSObject <PLCloudChangeTrackerDelegate, PLCloudPersistentHistoryMigratorContext, CPLResourceProgressDelegate, CPLLibraryManagerDelegate, PLForegroundMonitorDelegate, PLBatterySaverWatcherDelegate, PLCloudUserSessionHandling, CPLStatusDelegate>
 {
     PLCloudBatchUploader *_uploader;
     PLCloudBatchDownloader *_downloader;
@@ -26,6 +26,7 @@
     _Bool _hasAttemptedMigration;
     NSObject<OS_dispatch_queue> *_isolationQueue;
     PLBatterySaverWatcher *_batterySaverWatcher;
+    PLForegroundMonitor *_foregroundMonitor;
     _Bool _processingChange;
     unsigned long long _mode;
     _Bool _checkEnableStateOnIdle;
@@ -110,7 +111,7 @@
 - (id)cplStatus;
 - (id)getCPLState;
 - (_Bool)isPausedForDownloadRequestHighPriority:(_Bool)arg1;
-- (void)foregroundMonitor:(id)arg1 changedStateToForeground:(_Bool)arg2 forBundleIdentifier:(id)arg3 context:(id)arg4;
+- (void)foregroundMonitor:(id)arg1 changedStateToForeground:(_Bool)arg2 forBundleIdentifier:(id)arg3;
 - (_Bool)_isColorAwareResource:(unsigned long long)arg1 adjustedResource:(_Bool)arg2;
 - (void)_updateAsset:(id)arg1 withImageFileURL:(id)arg2;
 - (void)_updateThumbnailDataForAsset:(id)arg1 withImageFileURL:(id)arg2;

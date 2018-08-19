@@ -33,6 +33,7 @@
 + (id)localIPAddress;
 + (BOOL)isRunningInStoreDemoMode;
 + (id)hardwarePlatform;
++ (id)deviceName;
 + (id)deviceGUID;
 + (id)buildVersion;
 + (void)removeDeviceOfferWithIdentifier:(id)arg1 account:(id)arg2 logKey:(id)arg3;
@@ -60,6 +61,7 @@
 + (id)_appleLanguagesObservable;
 + (void)stopListeningForDeviceLanguageChange;
 + (void)startListeningForDeviceLanguageChangeWithBagContract:(id)arg1;
++ (id)language;
 
 @end
 

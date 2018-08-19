@@ -85,6 +85,7 @@
 - (void)_dismissModulePresentedContentAnimated:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)dismissPresentedContentAnimated:(_Bool)arg1;
 - (void)dismissExpandedModuleAnimated:(_Bool)arg1;
+- (void)updateFrameForExpandedModule;
 - (void)expandModule;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (id)initWithCoder:(id)arg1;

@@ -46,6 +46,7 @@
     double _dictationBlueColor;
     SUICAudioLevelSmoother *_levelSmoother;
     int _fidelity;
+    double _frameRateScalingFactor;
     _Bool _transitionFinished;
     _Bool _isInitialized;
     _Bool _hasCustomActiveFrame;
@@ -54,6 +55,7 @@
     _Bool _showAura;
     _Bool _freezesAura;
     _Bool _reduceFrameRate;
+    _Bool _reduceThinkingFramerate;
     _Bool _renderInBackground;
     _Bool _paused;
     _Bool _accelerateTransitions;
@@ -82,6 +84,7 @@
 @property(retain, nonatomic) UIColor *dictationColor; // @synthesize dictationColor=_dictationColor;
 @property(retain, nonatomic) UIImage *overlayImage; // @synthesize overlayImage=_overlayImage;
 @property(nonatomic) struct CGRect activeFrame; // @synthesize activeFrame=_activeFrame;
+@property(nonatomic) _Bool reduceThinkingFramerate; // @synthesize reduceThinkingFramerate=_reduceThinkingFramerate;
 @property(nonatomic) _Bool reduceFrameRate; // @synthesize reduceFrameRate=_reduceFrameRate;
 @property(nonatomic) _Bool freezesAura; // @synthesize freezesAura=_freezesAura;
 @property(nonatomic) _Bool showAura; // @synthesize showAura=_showAura;

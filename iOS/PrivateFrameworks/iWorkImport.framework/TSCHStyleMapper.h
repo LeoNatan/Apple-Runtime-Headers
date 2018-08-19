@@ -33,7 +33,6 @@ __attribute__((visibility("hidden")))
 - (void)replaceReferencedStylesInMap:(id)arg1;
 - (void)dealloc;
 - (id)initWithMapper:(id)arg1;
-- (id)init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

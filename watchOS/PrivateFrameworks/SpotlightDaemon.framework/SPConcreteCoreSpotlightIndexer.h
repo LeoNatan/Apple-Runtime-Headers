@@ -52,7 +52,6 @@
 - (void)attributesForBundleId:(id)arg1 identifier:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)fetchAttributes:(id)arg1 bundleID:(id)arg2 identifiers:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)fetchAttributes:(id)arg1 bundleID:(id)arg2 identifiers:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
-- (void)userPerformedAction:(id)arg1 withItem:(id)arg2 forBundleID:(id)arg3;
 - (void)changeStateOfSearchableItemsWithUIDs:(id)arg1 toState:(int)arg2 forBundleID:(id)arg3;
 - (void)fetchLastClientStateForBundleID:(id)arg1 clientStateName:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)deleteAllInteractionsWithBundleID:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;

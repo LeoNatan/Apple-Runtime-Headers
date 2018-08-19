@@ -33,6 +33,7 @@
 - (id)specifiersAtIndexes:(id)arg1;
 @property(readonly, copy, nonatomic) NSArray *specifiers;
 - (id)mutableSpecifiers;
+- (void)showStoreDemoAlert;
 - (void)showPINSheet:(id)arg1;
 - (void)lazyLoadBundle:(id)arg1;
 - (void)endUpdates;

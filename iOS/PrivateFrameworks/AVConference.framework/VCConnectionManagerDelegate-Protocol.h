@@ -13,6 +13,7 @@
 - (void)primaryConnectionChanged:(id <VCConnectionProtocol>)arg1 oldPrimaryConnection:(id <VCConnectionProtocol>)arg2;
 
 @optional
+- (void)optOutAllStreamsForConnection:(id <VCConnectionProtocol>)arg1;
 - (void)discardConnection:(id <VCConnectionProtocol>)arg1;
 @end
 

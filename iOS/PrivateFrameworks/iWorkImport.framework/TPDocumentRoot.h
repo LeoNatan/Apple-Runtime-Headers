@@ -15,7 +15,7 @@
 #import "TSWPDrawableOLC.h"
 #import "TSWPStorageParent.h"
 
-@class EQKitEnvironment, NSArray, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString, TPBackgroundLayoutController, TPBookmarkController, TPDocumentSettings, TPDocumentViewController, TPDrawablesZOrder, TPFloatingDrawables, TPPageController, TPPageLayoutNotifier, TPSection, TPTheme, TSDFreehandDrawingToolkitUIState, TSDThumbnailController, TSPData, TSSStylesheet, TSWPChangeSession, TSWPFlowInfoContainer, TSWPStorage;
+@class EQKitEnvironment, NSArray, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString, TPBackgroundLayoutController, TPBookmarkController, TPDocumentSettings, TPDocumentViewController, TPDrawablesZOrder, TPFloatingDrawables, TPPageController, TPPageLayoutNotifier, TPSection, TPTheme, TPUIState, TSDThumbnailController, TSPData, TSSStylesheet, TSWPChangeSession, TSWPFlowInfoContainer, TSWPStorage;
 
 __attribute__((visibility("hidden")))
 @interface TPDocumentRoot : TSADocumentRoot <TPPageControllerDelegate, TSDInfoUUIDPathPrefixComponentsProvider, TSWPDrawableOLC, TSWPStorageParent, TSWPChangeSessionManager, TSWPChangeVisibility, TSTResolverContainerNameProvider, TSCEResolverContainer>
@@ -54,16 +54,17 @@ __attribute__((visibility("hidden")))
     TPDocumentViewController *_viewController;
     unsigned int _tableNameCounter;
     NSMutableDictionary *_chartsUIState;
-    NSMutableDictionary *_tableInfosWithUniqueNames;
+    NSMutableDictionary *_tablesWithUniqueNames;
     NSMutableSet *_remappedTableNames;
     TSPData *_equationEnvironmentData;
     EQKitEnvironment *_equationEnvironment;
     NSMutableArray *_pageTemplates;
     _Bool _wasCreatedFromTemplate;
+    _Bool _suppressViewStateCapture;
     _Bool initiallyShowRuler;
     _Bool initiallyShowTwoUp;
     _Bool _needsAdditionalViewStateValidation;
-    TSDFreehandDrawingToolkitUIState *_freehandDrawingToolkitUIState;
+    TPUIState *_uiState;
     TSDThumbnailController *_thumbnailController;
     TPBookmarkController *_bookmarkController;
     TPBackgroundLayoutController *_backgroundLayoutController;
@@ -83,7 +84,8 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) TSDThumbnailController *thumbnailController; // @synthesize thumbnailController=_thumbnailController;
 @property(nonatomic) _Bool initiallyShowTwoUp; // @synthesize initiallyShowTwoUp;
 @property(nonatomic) _Bool initiallyShowRuler; // @synthesize initiallyShowRuler;
-@property(retain, nonatomic) TSDFreehandDrawingToolkitUIState *freehandDrawingToolkitUIState; // @synthesize freehandDrawingToolkitUIState=_freehandDrawingToolkitUIState;
+@property(copy, nonatomic) TPUIState *uiState; // @synthesize uiState=_uiState;
+@property(nonatomic) _Bool suppressViewStateCapture; // @synthesize suppressViewStateCapture=_suppressViewStateCapture;
 @property(retain, nonatomic) NSMutableDictionary *chartsUIState; // @synthesize chartsUIState=_chartsUIState;
 @property(retain, nonatomic) TSWPChangeSession *activeChangeSession; // @synthesize activeChangeSession=_activeChangeSession;
 @property(retain, nonatomic) TSWPChangeSession *mostRecentChangeSession; // @synthesize mostRecentChangeSession=_mostRecentChangeSession;
@@ -103,7 +105,7 @@ __attribute__((visibility("hidden")))
 - (id)pCreateBlankPageTemplate;
 @property(readonly, nonatomic) long long pageViewState;
 @property(readonly, nonatomic) __weak TPDocumentRoot *documentRoot;
-- (_Bool)isArchivedViewStateValid:(id)arg1;
+- (_Bool)prepareAndValidateSidecarViewStateObjectWithVersionUUIDMismatch:(id)arg1 originalDocumentViewStateObject:(id)arg2;
 - (void)setUIState:(id)arg1 forChart:(id)arg2;
 - (id)UIStateForChart:(id)arg1;
 - (void)clearRemappedTableNames;
@@ -139,6 +141,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)shouldHyphenate;
 - (_Bool)documentDisallowsHighlightsOnStorage:(id)arg1;
 - (_Bool)shouldAllowDrawableInGroups:(id)arg1 forImport:(_Bool)arg2;
+- (id)freehandDrawingToolkitUIState;
 - (_Bool)pageMastersAllowDrawable:(id)arg1;
 - (_Bool)p_drawableInfoIsOwnedByATPPageTemplate:(id)arg1;
 - (_Bool)cellCommentsAllowedOnInfo:(id)arg1;
@@ -163,6 +166,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)hasViewState;
 - (void)readViewState;
 - (void)readCanvasState;
+- (void)invalidateViewState;
 - (id)modelPathComponentForChild:(id)arg1;
 - (id)childEnumerator;
 - (id)modelEnumeratorWithFlags:(unsigned long long)arg1 forObjectsPassingTest:(CDUnknownBlockType)arg2;

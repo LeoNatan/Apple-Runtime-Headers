@@ -20,6 +20,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)supportsShrinkTextToFit;
 - (_Bool)sidebarPositionRespectsUserInterfaceLayoutDirection;
 - (_Bool)supportsRTL;
+- (_Bool)supportsFreehandAnimationUI;
 - (_Bool)supportsPastingIntoGroups;
 - (void)applicationDidFinishLaunching;
 - (id)defaultHyperlinkURL;
@@ -72,6 +73,7 @@ __attribute__((visibility("hidden")))
 - (id)stringForCollaboratorConflictDetails;
 - (id)stringForUpdatingDocumentWithoutServiceType;
 - (id)stringForCollaboratorConflict;
+- (id)stringForUserActivityTitleForFilename:(id)arg1;
 - (id)equationEditorAPDID;
 - (id)templateTypeDisplayName;
 - (id)documentTypeDisplayNameForSharingInvitation;

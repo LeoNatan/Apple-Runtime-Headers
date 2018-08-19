@@ -63,6 +63,7 @@
 - (_Bool)isAppCompact;
 - (void)positionSwitcherOffscreen:(_Bool)arg1;
 - (void)animateSwitcherOffscreen:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)updateSwitcherViewFrame;
 - (_Bool)addSwitcherForPlugin:(id)arg1;
 - (double)switcherHeight;
 - (id)appViewControllerPresenter;
@@ -77,6 +78,7 @@
 @property(readonly, nonatomic) UIViewController *currentAppViewController;
 @property(readonly, nonatomic) double minimizedDockHeight;
 - (void)notifyDelegateOfSelectedPlugin:(id)arg1;
+- (void)viewWillTransitionToSize:(struct CGSize)arg1 withTransitionCoordinator:(id)arg2;
 - (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;
 - (void)dealloc;

@@ -6,7 +6,7 @@
 
 #import <RemoteManagement/RMUniquedManagedObject.h>
 
-@class NSSet, NSString, RMDevice, RMManagementSettings, RMUsageSettings, RMUser;
+@class NSString, RMDevice, RMManagementSettings, RMUsageSettings, RMUser;
 
 @interface RMUserDevicePairRecord : RMUniquedManagedObject
 {
@@ -20,16 +20,11 @@
 @property(copy, nonatomic) NSString *uri; // @dynamic uri;
 
 // Remaining properties
-@property(retain, nonatomic) NSSet *allUsages; // @dynamic allUsages;
 @property(copy, nonatomic) NSString *altURI; // @dynamic altURI;
-@property(retain, nonatomic) NSSet *appUsages; // @dynamic appUsages;
-@property(retain, nonatomic) NSSet *categoryUsages; // @dynamic categoryUsages;
 @property(retain, nonatomic) RMManagementSettings *managementSettings; // @dynamic managementSettings;
-@property(retain, nonatomic) NSSet *screenUsages; // @dynamic screenUsages;
 @property(retain, nonatomic) RMDevice *sourceDevice; // @dynamic sourceDevice;
 @property(retain, nonatomic) RMUser *sourceUser; // @dynamic sourceUser;
 @property(retain, nonatomic) RMUsageSettings *usageSettings; // @dynamic usageSettings;
-@property(retain, nonatomic) NSSet *webUsages; // @dynamic webUsages;
 
 @end
 

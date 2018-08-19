@@ -28,9 +28,11 @@
     double _thickness;
     NSAttributedString *_titleAttributedStringValue;
     double _titleLeadingEdge;
+    long long _truncationType;
 }
 
 + (id)sharedTextStorage;
+@property(nonatomic) long long truncationType; // @synthesize truncationType=_truncationType;
 @property(nonatomic) double titleLeadingEdge; // @synthesize titleLeadingEdge=_titleLeadingEdge;
 @property(copy, nonatomic) NSAttributedString *titleAttributedStringValue; // @synthesize titleAttributedStringValue=_titleAttributedStringValue;
 @property(nonatomic) double thickness; // @synthesize thickness=_thickness;

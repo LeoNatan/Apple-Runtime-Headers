@@ -11,9 +11,11 @@
 __attribute__((visibility("hidden")))
 @interface TSTStringNode : TSTExpressionNode
 {
-    NSString *mValue;
+    NSString *_value;
 }
 
+@property(retain, nonatomic) NSString *value; // @synthesize value=_value;
+- (void).cxx_destruct;
 - (void)saveToArchive:(struct StringNodeArchive *)arg1 archiver:(id)arg2;
 - (void)loadFromArchive:(const struct StringNodeArchive *)arg1 unarchiver:(id)arg2;
 - (void)saveToArchiver:(id)arg1;
@@ -27,9 +29,7 @@ __attribute__((visibility("hidden")))
 - (int)tokenType;
 - (_Bool)isEqualToExpressionNode:(id)arg1;
 - (struct TSTCSENodeData)recordHashesForSubexpressions:(id)arg1;
-@property(retain, nonatomic) NSString *value;
 - (id)initAsCopyOf:(id)arg1 intoContext:(id)arg2 children:(id)arg3;
-- (void)dealloc;
 - (id)initWithContext:(id)arg1 children:(id)arg2 firstIndex:(unsigned long long)arg3 lastIndex:(unsigned long long)arg4;
 - (id)initWithContext:(id)arg1 stringValue:(id)arg2 firstIndex:(unsigned long long)arg3 lastIndex:(unsigned long long)arg4;
 

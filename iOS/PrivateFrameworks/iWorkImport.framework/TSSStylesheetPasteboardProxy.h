@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
     _Bool mSelfArchiving;
 }
 
+- (void).cxx_destruct;
 - (void)saveToArchiver:(id)arg1;
 - (void)addStyleReference:(id)arg1;
-- (void)dealloc;
 - (id)initWithContext:(id)arg1 stylesheet:(id)arg2;
 
 @end

@@ -33,7 +33,6 @@
     UIScrollView *_scrollView;
 }
 
-+ (unsigned long long)overlayMaterialOptionsForRecipe:(long long)arg1;
 + (long long)materialRecipeForLegibilitySettings:(id)arg1;
 @property(nonatomic, getter=_didScrollPresentLongLookViewController, setter=_setDidScrollPresentLongLookViewController:) _Bool didScrollPresentLongLookViewController; // @synthesize didScrollPresentLongLookViewController=_didScrollPresentLongLookViewController;
 @property(retain, nonatomic, getter=_scrollView) UIScrollView *scrollView; // @synthesize scrollView=_scrollView;

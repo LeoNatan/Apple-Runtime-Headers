@@ -11,12 +11,15 @@
 __attribute__((visibility("hidden")))
 @interface TSTDateNode : TSTExpressionNode
 {
-    NSDate *mValue;
-    _Bool mBlank;
-    NSString *mDateFormat;
+    _Bool _isBlank;
+    NSDate *_value;
+    NSString *_dateFormat;
 }
 
-@property(nonatomic, getter=isBlank) _Bool blank; // @synthesize blank=mBlank;
+@property(retain, nonatomic) NSString *dateFormat; // @synthesize dateFormat=_dateFormat;
+@property(nonatomic) _Bool isBlank; // @synthesize isBlank=_isBlank;
+@property(retain, nonatomic) NSDate *value; // @synthesize value=_value;
+- (void).cxx_destruct;
 - (id)description;
 - (void)saveToArchive:(struct DateNodeArchive *)arg1 archiver:(id)arg2;
 - (void)loadFromArchive:(const struct DateNodeArchive *)arg1 unarchiver:(id)arg2;
@@ -31,9 +34,6 @@ __attribute__((visibility("hidden")))
 - (int)tokenType;
 - (_Bool)isEqualToExpressionNode:(id)arg1;
 - (struct TSTCSENodeData)recordHashesForSubexpressions:(id)arg1;
-@property(retain, nonatomic) NSString *format;
-@property(retain, nonatomic) NSDate *value;
-- (void)dealloc;
 - (id)initAsCopyOf:(id)arg1 intoContext:(id)arg2 children:(id)arg3;
 - (id)initWithContext:(id)arg1 children:(id)arg2 firstIndex:(unsigned long long)arg3 lastIndex:(unsigned long long)arg4;
 - (id)initWithContext:(id)arg1 asBlank:(_Bool)arg2 firstIndex:(unsigned long long)arg3 lastIndex:(unsigned long long)arg4;

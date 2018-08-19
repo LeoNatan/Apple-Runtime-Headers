@@ -94,7 +94,7 @@ __attribute__((visibility("hidden")))
 - (void)p_postLayoutPropertyValueDidChangeNotification;
 @property(readonly, nonatomic) _Bool is3DChart;
 @property(readonly, retain, nonatomic) TSCHChartLayout *chartLayout;
-@property(readonly, nonatomic) TSCHChartInfo *chartInfo;
+@property(readonly, nonatomic) __weak TSCHChartInfo *chartInfo;
 - (id)chartDrawableInfo;
 @property(readonly, nonatomic) TSCHChartLayout *p_chartLayout;
 - (Class)repClassOverride;

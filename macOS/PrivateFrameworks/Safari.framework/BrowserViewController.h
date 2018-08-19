@@ -241,7 +241,7 @@ __attribute__((visibility("hidden")))
     PointerLockBanner *_pointerLockBanner;
     BrowserViewController *_originatingModalDialogContentViewController;
     BrowserViewController *_blockingModalDialogContentViewController;
-    struct PageLoadTestWithChrome *_pageLoadTestWithChrome;
+    struct PageLoadTestViewController *_pageLoadTestViewController;
     id <AuthenticationSessionNavigationHandling> _authenticationSessionNavigationHandler;
     Vector_81153489 _ancestorTabIdentifiers;
 }
@@ -256,7 +256,7 @@ __attribute__((visibility("hidden")))
 + (id)browserViewControllerForPage:(const struct Page *)arg1;
 @property(nonatomic) BOOL skipAnimationsWhenDismissingPendingTabDialogs; // @synthesize skipAnimationsWhenDismissingPendingTabDialogs=_skipAnimationsWhenDismissingPendingTabDialogs;
 @property(nonatomic) __weak id <AuthenticationSessionNavigationHandling> authenticationSessionNavigationHandler; // @synthesize authenticationSessionNavigationHandler=_authenticationSessionNavigationHandler;
-@property(nonatomic) struct PageLoadTestWithChrome *pageLoadTestWithChrome; // @synthesize pageLoadTestWithChrome=_pageLoadTestWithChrome;
+@property(nonatomic) struct PageLoadTestViewController *pageLoadTestViewController; // @synthesize pageLoadTestViewController=_pageLoadTestViewController;
 @property(nonatomic, getter=isWaitingForBytecodeProfile) BOOL waitingForBytecodeProfile; // @synthesize waitingForBytecodeProfile=_waitingForBytecodeProfile;
 @property(nonatomic) BOOL didShowManagePlugInPrompt; // @synthesize didShowManagePlugInPrompt=_didShowManagePlugInPrompt;
 @property(nonatomic, getter=isShowingPromptToUsePlugIn) BOOL showingPromptToUsePlugIn; // @synthesize showingPromptToUsePlugIn=_showingPromptToUsePlugIn;

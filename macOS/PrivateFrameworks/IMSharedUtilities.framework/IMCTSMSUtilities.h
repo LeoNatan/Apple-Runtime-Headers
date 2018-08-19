@@ -11,6 +11,8 @@
 }
 
 + (BOOL)IMMessagesFilteringSettingForPreferedSubscription;
++ (void)IMSynchronizePreferredSubscriptionMMSCapabilityToWatch;
++ (void)IMSynchronizeMMSCapabilityToWatch:(BOOL)arg1;
 + (BOOL)MMSRestrictedModeEnabledForPhoneNumber:(id)arg1 simID:(id)arg2 reset:(BOOL)arg3;
 + (BOOL)IMMMSRestrictedModeEnabledForPhoneNumber:(id)arg1 simID:(id)arg2;
 + (BOOL)IMMMSEagerUploadDisabledInCarrierBundleForPhoneNumber:(id)arg1 simID:(id)arg2;
@@ -30,6 +32,8 @@
 + (int)IMMMSMaximumMessageByteCountForPhoneNumber:(id)arg1 simID:(id)arg2;
 + (int)IMMMSMaximumSlideCountForPhoneNumber:(id)arg1 simID:(id)arg2;
 + (BOOL)IMMMSSupportedAndConfiguredForPhoneNumber:(id)arg1 simID:(id)arg2;
++ (unsigned long long)IMReadAttachmentPreviewTranscodingQualitySizeCarrierValueForPhoneNumber:(id)arg1 simID:(id)arg2;
++ (BOOL)IMReadEnablePreviewTranscodingQualityCarrierValueForPhoneNumber:(id)arg1 simID:(id)arg2;
 + (BOOL)IMMMSEnabledForPhoneNumber:(id)arg1 simID:(id)arg2;
 + (BOOL)IMReadMMSUserOverrideForPhoneNumber:(id)arg1 simID:(id)arg2;
 + (id)IMUniqueIdentifierForPhoneNumber:(id)arg1 simID:(id)arg2;

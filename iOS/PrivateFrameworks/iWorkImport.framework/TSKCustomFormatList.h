@@ -44,6 +44,7 @@ __attribute__((visibility("hidden")))
 - (void)addCustomFormatForUpgrade:(id)arg1 legacyKey:(unsigned int)arg2;
 - (id)addImportedCustomFormat:(id)arg1;
 - (void)updateCustomFormat:(id)arg1 oldKey:(id)arg2;
+- (void)removeAll;
 - (void)removeCustomFormatsForKeys:(id)arg1;
 - (void)removeCustomFormatForKey:(id)arg1;
 - (id)addCustomFormat:(id)arg1 oldKey:(id)arg2 fuzzyNameMatching:(_Bool)arg3;

@@ -9,7 +9,7 @@
 #import "NSCopying.h"
 #import "NSSecureCoding.h"
 
-@class NSDate, NSDictionary, NSString, REIdentifier;
+@class NSArray, NSDate, NSDictionary, NSString, REIdentifier;
 
 @interface REDonatedAction : NSObject <NSSecureCoding, NSCopying>
 {
@@ -22,6 +22,7 @@
     id <REDonatedActionIdentifierProviding> _actionTypeIdentifier;
     id <REDonatedActionIdentifierProviding> _simplifiedActionTypeIdentifier;
     unsigned long long _relevanceProvidersHash;
+    NSArray *_relevanceProviders;
     NSString *_intentTypeName;
     NSString *_activityType;
     NSDictionary *_metrics;
@@ -33,6 +34,7 @@
 @property(retain, nonatomic) NSDictionary *metrics; // @synthesize metrics=_metrics;
 @property(readonly, nonatomic) NSString *activityType; // @synthesize activityType=_activityType;
 @property(readonly, nonatomic) NSString *intentTypeName; // @synthesize intentTypeName=_intentTypeName;
+@property(readonly, nonatomic) NSArray *relevanceProviders; // @synthesize relevanceProviders=_relevanceProviders;
 @property(readonly, nonatomic) unsigned long long relevanceProvidersHash; // @synthesize relevanceProvidersHash=_relevanceProvidersHash;
 @property(readonly, nonatomic, getter=isLocalDonation) _Bool localDonation; // @synthesize localDonation=_localDonation;
 @property(readonly, nonatomic) id <REDonatedActionIdentifierProviding> simplifiedActionTypeIdentifier; // @synthesize simplifiedActionTypeIdentifier=_simplifiedActionTypeIdentifier;

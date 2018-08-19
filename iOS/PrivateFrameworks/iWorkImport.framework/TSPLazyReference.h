@@ -63,7 +63,6 @@ __attribute__((visibility("hidden")))
 - (id)initWeakReferenceWithObject:(id)arg1;
 - (id)initWithObject:(id)arg1;
 - (id)initWithDelegate:(id)arg1 identifier:(long long)arg2 ownershipMode:(long long)arg3 allowUnknownObject:(_Bool)arg4;
-@property(readonly, nonatomic) id object;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

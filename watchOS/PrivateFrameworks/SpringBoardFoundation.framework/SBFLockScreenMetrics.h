@@ -12,6 +12,7 @@
 
 + (float)proudLockCenterFromTopOfScreen;
 + (float)proudLockOffsetFromTopOfScreen;
++ (struct CGSize)proudLockAssetSize;
 + (struct UIEdgeInsets)deviceInformationInsets;
 + (float)deviceInformationParagraphSpacing;
 + (float)deviceInformationLabelFontLeading;

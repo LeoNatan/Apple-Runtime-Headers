@@ -6,9 +6,11 @@
 
 #import "NSObject.h"
 
-@class BKSApplicationStateMonitor, NSHashTable;
+#import "NNMKNanoMailProcessMonitor.h"
 
-@interface NNMKNanoMailProcessMonitor : NSObject
+@class BKSApplicationStateMonitor, NSHashTable, NSString;
+
+@interface NNMKNanoMailProcessMonitor : NSObject <NNMKNanoMailProcessMonitor>
 {
     unsigned int _nanoMailApplicationState;
     BKSApplicationStateMonitor *_stateMonitor;
@@ -30,6 +32,12 @@
 - (void)dealloc;
 - (void)_setUpDistnotedEventHandler;
 - (id)init;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned int hash;
+@property(readonly) Class superclass;
 
 @end
 

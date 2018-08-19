@@ -13,6 +13,7 @@
     _Bool _shouldIncludeKeyboardObscuredElements;
     _Bool _shouldUseAllSubviews;
     _Bool _includeHiddenViews;
+    _Bool _includeWindowlessViews;
     _Bool _sorted;
     _Bool _ignoreObscuresScreen;
     _Bool _includeDirectDescendantsOnly;
@@ -34,6 +35,7 @@
 @property(nonatomic) _Bool includeDirectDescendantsOnly; // @synthesize includeDirectDescendantsOnly=_includeDirectDescendantsOnly;
 @property(nonatomic) _Bool ignoreObscuresScreen; // @synthesize ignoreObscuresScreen=_ignoreObscuresScreen;
 @property(nonatomic) _Bool sorted; // @synthesize sorted=_sorted;
+@property(nonatomic) _Bool includeWindowlessViews; // @synthesize includeWindowlessViews=_includeWindowlessViews;
 @property(nonatomic) _Bool includeHiddenViews; // @synthesize includeHiddenViews=_includeHiddenViews;
 @property(nonatomic) _Bool shouldUseAllSubviews; // @synthesize shouldUseAllSubviews=_shouldUseAllSubviews;
 @property(nonatomic) _Bool shouldIncludeKeyboardObscuredElements; // @synthesize shouldIncludeKeyboardObscuredElements=_shouldIncludeKeyboardObscuredElements;

@@ -16,7 +16,7 @@
 
 + (id)actionWithPayload:(id)arg1;
 + (int)actionID;
-@property(retain) NSString *migrationRequestUUID; // @synthesize migrationRequestUUID=_migrationRequestUUID;
+@property(copy) NSString *migrationRequestUUID; // @synthesize migrationRequestUUID=_migrationRequestUUID;
 @property unsigned long long migrationRequestType; // @synthesize migrationRequestType=_migrationRequestType;
 - (void).cxx_destruct;
 - (id)requestPayload;

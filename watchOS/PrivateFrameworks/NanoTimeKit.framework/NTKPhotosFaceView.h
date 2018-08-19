@@ -60,6 +60,7 @@
 - (void)readerDidChange:(id)arg1;
 - (_Bool)gestureRecognizerShouldBegin:(id)arg1;
 - (_Bool)_preloadNextPhoto;
+- (void)_finalizeForSnapshotting:(CDUnknownBlockType)arg1;
 - (void)_endScrubbingAnimated:(_Bool)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)_startScrubbingAnimated:(_Bool)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (float)_backgroundImageAlphaForEditMode:(int)arg1;

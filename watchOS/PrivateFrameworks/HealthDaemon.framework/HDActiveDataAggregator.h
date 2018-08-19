@@ -17,14 +17,17 @@
 }
 
 - (void).cxx_destruct;
+- (void)recomputeCollectorConfiguration;
 - (void)requestAggregationThroughDate:(id)arg1 mode:(int)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_requestAggregationThroughDate:(id)arg1 mode:(int)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_aggregateForAllDevicesForCollector:(id)arg1 date:(id)arg2 mode:(int)arg3;
 - (double)aggregationInterval;
 - (id)aggregateSensorData:(id)arg1 collector:(id)arg2 device:(id)arg3 requestedAggregationDate:(id)arg4 mode:(int)arg5 error:(id *)arg6;
 - (Class)sensorDatumClass;
+- (_Bool)didPersistObjects:(id)arg1 lastDatum:(id)arg2 collector:(id)arg3 error:(id *)arg4;
 - (id)configurationForCollector:(id)arg1;
 - (void)dataCollector:(id)arg1 didCollectSensorData:(id)arg2 device:(id)arg3;
+- (void)_reconsiderDelayedAggregation;
 - (void)_aggregateForCollector:(id)arg1 device:(id)arg2 requestedAggregationDate:(id)arg3 mode:(int)arg4;
 - (id)initWithDataCollectionManager:(id)arg1;
 

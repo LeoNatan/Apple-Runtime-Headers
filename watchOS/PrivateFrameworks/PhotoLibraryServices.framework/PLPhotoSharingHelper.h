@@ -27,6 +27,7 @@
 + (unsigned long long)purgeableSpace;
 + (void)countOfAssetsInMstreamdSharingDownloadQueueWithCompletionBlock:(CDUnknownBlockType)arg1;
 + (void)isMstreamdBusyPerformingSharingActivityWithCompletionBlock:(CDUnknownBlockType)arg1;
++ (void)pruneNonRecentlyViewedCloudSharingAssetsInLibrary:(id)arg1;
 + (void)applicationIsInForeground:(_Bool)arg1;
 + (double)intervalBetweenAlbumPolls;
 + (double)intervalBetweenPolls;

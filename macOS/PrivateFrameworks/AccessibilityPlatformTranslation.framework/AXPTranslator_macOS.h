@@ -23,7 +23,7 @@
 - (id)processActionRequest:(id)arg1;
 - (id)processMultipleAttributeRequest:(id)arg1;
 - (void)_processAppAccessibilityNotification:(unsigned long long)arg1 data:(id)arg2 associatedObject:(id)arg3;
-- (void)_processZoomFocusNotificationWithData:(id)arg1;
+- (void)_processZoomFocusNotificationWithData:(id)arg1 associatedObject:(id)arg2;
 - (void)processPlatformNotification:(unsigned long long)arg1 data:(id)arg2 associatedObject:(id)arg3;
 - (void)enableAccessibility;
 - (id)platformElementFromTranslation:(id)arg1;

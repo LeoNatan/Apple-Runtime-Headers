@@ -31,7 +31,8 @@
 - (void)fetchPerformedTodayCountForActionWithBundleIdentifer:(id)arg1 actionIdentifier:(unsigned long long)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)fetchPerformedCountForAction:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)fetchAllUniqueDonationsWithBlock:(CDUnknownBlockType)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)fetchTopDonationsForApplications:(id)arg1 fromOnlyRecentPlatform:(_Bool)arg2 block:(CDUnknownBlockType)arg3;
+- (_Bool)_shouldFilterDonation:(id)arg1 date:(id)arg2 location:(id)arg3;
+- (void)fetchTopDonationsForApplications:(id)arg1 fromOnlyRecentPlatform:(_Bool)arg2 currentDate:(id)arg3 currentLocation:(id)arg4 block:(CDUnknownBlockType)arg5;
 - (void)fetchDonationWithIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)fetchApplicationsProvidingDonations:(CDUnknownBlockType)arg1;
 - (id)init;

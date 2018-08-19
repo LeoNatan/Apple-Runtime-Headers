@@ -20,7 +20,7 @@
 
 + (_Bool)_allowsRasterization;
 + (_Bool)_allowsParallax;
-+ (id)imageByApplyingLuminanceTreatmentToImage:(id)arg1;
++ (id)imageByScalingImage:(id)arg1 withScaleFactor:(double)arg2 needsLuminanceTreatment:(_Bool)arg3;
 + (id)luminanceTreatmentFilters;
 + (_Bool)_canDownscaleSampleImage;
 + (_Bool)_canCacheImages;

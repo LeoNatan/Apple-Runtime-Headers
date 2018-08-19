@@ -27,6 +27,7 @@
     _Bool _isRead;
     _Bool _isAudioMessage;
     _Bool _isGroupChat;
+    long long _itemType;
     NSString *_groupID;
     NSString *_chatIdentifier;
     NSString *_displayName;
@@ -53,6 +54,7 @@
 @property _Bool isGroupChat; // @synthesize isGroupChat=_isGroupChat;
 @property(retain) NSString *chatIdentifier; // @synthesize chatIdentifier=_chatIdentifier;
 @property(retain) NSString *groupID; // @synthesize groupID=_groupID;
+@property long long itemType; // @synthesize itemType=_itemType;
 @property(retain) NSArray *attachments; // @synthesize attachments=_attachments;
 @property(retain) NSArray *chatGuids; // @synthesize chatGuids=_chatGuids;
 @property _Bool isAudioMessage; // @synthesize isAudioMessage=_isAudioMessage;

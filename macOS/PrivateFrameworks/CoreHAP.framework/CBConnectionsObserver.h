@@ -12,8 +12,12 @@
 
 @interface CBConnectionsObserver : NSObject <CBCentralManagerDelegate>
 {
+    int _maxHAPConnections;
 }
 
+@property int maxHAPConnections; // @synthesize maxHAPConnections=_maxHAPConnections;
+- (void)requestStatusUpdate;
+- (void)bluetoothStatusNotification:(id)arg1;
 - (void)centralManagerDidUpdateState:(id)arg1;
 - (id)getStatus;
 - (int)getAvailableHAPConnections;

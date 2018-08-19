@@ -6,18 +6,16 @@
 
 #import "HMFObject.h"
 
-#import "HMDCameraSettingsControlManagerDelegate.h"
 #import "HMDCameraStreamControlManagerDelegate.h"
 #import "HMFLogging.h"
 #import "HMFTimerDelegate.h"
 
 @class HMDAccessory, HMDCameraResidentMessageHandler, HMDCameraSettingsControlManager, HMDCameraStreamManagerSession, HMDCameraStreamSnapshotHandler, HMDCameraSupportedConfigurationCache, HMDNotificationRegistration, HMDService, HMFNetMonitor, NSObject<OS_dispatch_queue>, NSString, NSUUID;
 
-@interface HMDCameraStreamControlMessageHandler : HMFObject <HMFTimerDelegate, HMDCameraSettingsControlManagerDelegate, HMDCameraStreamControlManagerDelegate, HMFLogging>
+@interface HMDCameraStreamControlMessageHandler : HMFObject <HMFTimerDelegate, HMDCameraStreamControlManagerDelegate, HMFLogging>
 {
     HMDCameraStreamManagerSession *_streamSession;
     HMDService *_streamManagementService;
-    HMDCameraSettingsControlManager *_streamStatusManager;
     HMDNotificationRegistration *_notificationRegistration;
     HMDCameraResidentMessageHandler *_residentMessageHandler;
     NSObject<OS_dispatch_queue> *_workQueue;
@@ -43,7 +41,6 @@
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
 @property(readonly, nonatomic) HMDCameraResidentMessageHandler *residentMessageHandler; // @synthesize residentMessageHandler=_residentMessageHandler;
 @property(readonly, nonatomic) HMDNotificationRegistration *notificationRegistration; // @synthesize notificationRegistration=_notificationRegistration;
-@property(readonly, nonatomic) HMDCameraSettingsControlManager *streamStatusManager; // @synthesize streamStatusManager=_streamStatusManager;
 @property(readonly, nonatomic) HMDService *streamManagementService; // @synthesize streamManagementService=_streamManagementService;
 - (void).cxx_destruct;
 @property(readonly) unsigned long long hash;
@@ -57,7 +54,7 @@
 - (void)streamControlManagerDidSetupRemoteConnection:(id)arg1;
 - (void)streamControlManagerDidNegotiateStream:(id)arg1 selectedParameters:(id)arg2;
 - (void)streamControlManager:(id)arg1 didFail:(id)arg2;
-@property(readonly, nonatomic) unsigned long long streamingStatus;
+@property(readonly, nonatomic, getter=isStreamingSessionInProgress) _Bool streamingSessionInProgress;
 @property(readonly, copy, nonatomic) NSString *streamSessionID;
 - (void)_handleSetAudioState:(id)arg1;
 - (void)setAudioVolume:(id)arg1 callback:(CDUnknownBlockType)arg2;
@@ -83,12 +80,12 @@
 - (void)handleAccessoryIsNotReachable:(id)arg1;
 - (void)dealloc;
 - (void)registerForMessages;
+@property(readonly, copy) NSString *description;
 - (id)logIdentifier;
 - (id)initWithWorkQueue:(id)arg1 streamSnapshotHandler:(id)arg2 messageSender:(CDUnknownBlockType)arg3 accessory:(id)arg4 streamManagementService:(id)arg5 msgDispatcher:(id)arg6 profileUniqueIdentifier:(id)arg7 networkMonitor:(id)arg8 residentMessageHandler:(id)arg9;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
 @property(readonly) Class superclass;
 
 @end

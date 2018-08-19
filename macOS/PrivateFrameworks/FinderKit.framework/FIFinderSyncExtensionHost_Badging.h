@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
     _Bool _toolbarImageIsTemplate;
     struct TFENodeVector _interestedRoots;
     struct vector<TNSRef<NSURL, void>, std::__1::allocator<TNSRef<NSURL, void>>> _unresolvedRoots;
+    _Bool _pendingAddPrimaryRootToSidebar;
     struct unordered_map<TFENode, TString, std::__1::hash<TFENode>, std::__1::equal_to<TFENode>, std::__1::allocator<std::__1::pair<const TFENode, TString>>> _nodeToBadgeIDMap;
     _Bool _fetchedContainingAppIcon;
     struct TIconRef _containingAppIcon;
@@ -58,6 +59,7 @@ __attribute__((visibility("hidden")))
 - (void)checkUnresolvedRootsAsync;
 - (void)registerFutureInterestInDirectoryURL:(id)arg1;
 - (_Bool)allowedToRegisterForContainer:(struct TFENode)arg1;
+- (void)finishedRegisteringInterestInContainers;
 - (void)registerInterestInContainer:(struct TFENode)arg1;
 - (id)imageForToolbarItem;
 - (struct TString)toolbarToolTip;
@@ -67,6 +69,7 @@ __attribute__((visibility("hidden")))
 - (void)setToolbarItemName:(id)arg1 imageData:(id)arg2 isTemplate:(_Bool)arg3 toolTip:(id)arg4;
 - (void)dealloc;
 - (void)tearDownWhileLocked;
+- (void)configureFromAttributes;
 - (void)setBadgeIdentifiersForURLs:(id)arg1;
 - (void)setBadgeImageDictionary:(id)arg1 label:(id)arg2 forIdentifier:(id)arg3;
 - (id)arrayOfInterestedURLStrings;

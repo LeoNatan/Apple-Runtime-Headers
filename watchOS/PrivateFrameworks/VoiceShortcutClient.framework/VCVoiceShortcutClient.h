@@ -20,6 +20,7 @@
 - (void)describeSyncStateIncludingDeleted:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)requestSyncForServiceClassName:(id)arg1 forceReset:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)remoteDataStoreWithErrorHandler:(CDUnknownBlockType)arg1;
+- (void)getCloudKitAccountStatusWithCompletion:(CDUnknownBlockType)arg1;
 - (void)setInteger:(int)arg1 forKey:(id)arg2 inDomain:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)unsubscribeFromVoiceShortcutDataUpdateNotifications;
 - (void)subscribeToVoiceShortcutDataUpdateNotifications;
@@ -29,6 +30,7 @@
 - (void)deleteVoiceShortcutWithIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)updateVoiceShortcutWithIdentifier:(id)arg1 phrase:(id)arg2 workflow:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)createVoiceShortcutWithWorkflow:(id)arg1 phrase:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)scheduleVocabularySyncToServer:(CDUnknownBlockType)arg1;
 - (void)validateVoiceShortcutPhrases:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)getVoiceShortcutsForAppWithBundleIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)getVoiceShortcutsWithCompletion:(CDUnknownBlockType)arg1;

@@ -6,12 +6,12 @@
 
 #import <ROCKit/ROCKFFICIFObject.h>
 
-#import "NSInvocationInterface.h"
+#import "ROCKInvocationInterface.h"
 
 @class NSMethodSignature, NSObject<OS_dispatch_queue>, NSString;
 
 __attribute__((visibility("hidden")))
-@interface ROCKFFIObject : ROCKFFICIFObject <NSInvocationInterface>
+@interface ROCKFFIObject : ROCKFFICIFObject <ROCKInvocationInterface>
 {
     unsigned char _invocationBuffer[128];
     _Bool _isBlockInvocation;

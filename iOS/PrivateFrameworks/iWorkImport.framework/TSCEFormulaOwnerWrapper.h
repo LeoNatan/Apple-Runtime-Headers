@@ -20,7 +20,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)isEqual:(id)arg1;
 - (_Bool)isEqualToTSCEFormulaOwnerWrapper:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-@property(readonly) UUIDData_5fbc143e ownerUID;
+@property(readonly, nonatomic) UUIDData_5fbc143e ownerUID;
 - (id)initWithFormulaOwnerUID:(const UUIDData_5fbc143e *)arg1;
 
 @end

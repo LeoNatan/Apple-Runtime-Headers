@@ -7,10 +7,6 @@
 #import "NSString.h"
 
 @interface NSString (TSCEAdditions)
-+ (id)tsce_stringWithCellRange:(struct TSCERangeCoordinate)arg1 stickyBits:(unsigned char)arg2;
-+ (id)tsce_stringWithCellID:(struct TSUCellCoord)arg1;
-+ (id)tsce_stringWithCellID:(struct TSUCellCoord)arg1 stickyBits:(unsigned char)arg2;
-+ (id)tsce_stringWithSignedCellID:(CDStruct_382da14b)arg1 stickyBits:(unsigned char)arg2;
 - (id)tsce_stringByFoldingForNamedReferenceMatchingWithLocale:(id)arg1;
 - (id)tsce_referenceComponentsSeparatedBySpace;
 - (id)tsce_referenceComponentsSeparatedByColon;
@@ -32,8 +28,5 @@
 - (id)tsce_newStringByForcingSingleQuoteEscapes:(_Bool)arg1;
 - (_Bool)tsce_needsReferenceSingleQuoteEscaping;
 - (void)tsce_p_initializeQuotes;
-- (struct TSUCellCoord)tsce_coordinateValueGettingStickyBits:(char *)arg1;
-- (struct TSUCellCoord)tsce_coordinateValue;
-- (id)tsce_initWithCellID:(CDStruct_382da14b)arg1 stickyBits:(unsigned char)arg2;
 @end
 

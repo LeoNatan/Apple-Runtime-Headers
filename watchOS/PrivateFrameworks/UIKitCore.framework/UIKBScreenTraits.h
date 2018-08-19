@@ -17,10 +17,12 @@
     UIScreen *_screen;
     int _orientation;
     float _keyboardWidth;
+    float _keyboardBarHeight;
     struct CGRect _bounds;
 }
 
 + (id)traitsWithScreen:(id)arg1 orientation:(int)arg2;
+@property(nonatomic) float keyboardBarHeight; // @synthesize keyboardBarHeight=_keyboardBarHeight;
 @property(readonly, nonatomic) _Bool isKeyboardMinorEdgeWidth; // @synthesize isKeyboardMinorEdgeWidth=_isKeyboardMinorEdgeWidth;
 @property(nonatomic) struct CGRect bounds; // @synthesize bounds=_bounds;
 @property(nonatomic) float keyboardWidth; // @synthesize keyboardWidth=_keyboardWidth;

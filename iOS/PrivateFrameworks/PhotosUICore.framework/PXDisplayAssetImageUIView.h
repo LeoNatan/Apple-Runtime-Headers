@@ -21,6 +21,8 @@
 - (_Bool)isDisplayingFullQualityContent;
 - (void)contentsRectDidChange;
 - (void)placeholderImageFiltersDidChange;
+- (double)loadingProgress;
+- (void)imageProgressDidChange;
 - (void)imageDidChange;
 - (id)contentView;
 - (long long)playbackStyle;

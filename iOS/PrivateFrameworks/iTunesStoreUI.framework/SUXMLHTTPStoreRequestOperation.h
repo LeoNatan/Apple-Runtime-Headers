@@ -6,14 +6,18 @@
 
 #import "ISOperation.h"
 
-@class SSURLRequestProperties;
+@class ISDataProvider, SSAuthenticationContext, SSURLRequestProperties;
 
 @interface SUXMLHTTPStoreRequestOperation : ISOperation
 {
     CDUnknownBlockType _outputBlock;
     SSURLRequestProperties *_requestProperties;
+    SSAuthenticationContext *_authenticationContext;
+    ISDataProvider *_dataProvider;
 }
 
+@property(retain, nonatomic) ISDataProvider *dataProvider; // @synthesize dataProvider=_dataProvider;
+@property(retain, nonatomic) SSAuthenticationContext *authenticationContext; // @synthesize authenticationContext=_authenticationContext;
 - (void).cxx_destruct;
 - (void)run;
 @property(copy) CDUnknownBlockType outputBlock;

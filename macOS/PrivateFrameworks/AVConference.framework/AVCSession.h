@@ -44,6 +44,7 @@
 - (void)setupNotificationQueue:(id)arg1;
 - (void)deregisterFromNotifications;
 - (void)registerBlocksForNotifications;
+- (void)didDetectErrorHandler:(id)arg1;
 - (void)endParticipantConfiguration;
 - (void)beginParticipantConfiguration;
 - (void)updateConfiguration:(id)arg1;

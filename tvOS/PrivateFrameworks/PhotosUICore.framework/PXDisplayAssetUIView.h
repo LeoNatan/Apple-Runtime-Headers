@@ -28,6 +28,8 @@
     PXImageRequester *_imageRequester;
     PXRoundProgressView *_progressView;
     PXLoadingFailureBadgeView *_failureView;
+    double _imageProgress;
+    double _loadingProgress;
     struct CGSize _targetSize;
     struct CGRect _contentBounds;
     struct CGRect _contentsRect;
@@ -37,6 +39,8 @@
 + (id)checkOutViewForAsset:(id)arg1 withPlaybackStyle:(long long)arg2;
 + (id)checkOutViewForAsset:(id)arg1;
 + (id)viewPool;
+@property(readonly, nonatomic) double loadingProgress; // @synthesize loadingProgress=_loadingProgress;
+@property(readonly, nonatomic) double imageProgress; // @synthesize imageProgress=_imageProgress;
 @property(retain, nonatomic) PXLoadingFailureBadgeView *failureView; // @synthesize failureView=_failureView;
 @property(retain, nonatomic) PXRoundProgressView *progressView; // @synthesize progressView=_progressView;
 @property(retain, nonatomic) PXImageRequester *imageRequester; // @synthesize imageRequester=_imageRequester;
@@ -61,6 +65,7 @@
 - (void)_updateTargetSize;
 - (void)_updateIfNeeded;
 - (void)updateContent;
+- (void)imageProgressDidChange;
 - (void)isDisplayingFullQualityContentDidChange;
 - (void)placeholderTransitionDurationDidChange;
 - (void)contentModeDidChange;
@@ -68,6 +73,8 @@
 - (void)contentsRectDidChange;
 - (void)placeholderImageFiltersDidChange;
 - (void)imageDidChange;
+- (void)invalidateLoadingProgress;
+- (void)setImageProgress:(double)arg1;
 - (void)setNeedsUpdateContent;
 @property(readonly, nonatomic) struct CGRect currentContentsRect;
 @property(readonly, nonatomic) UIImage *currentImage;

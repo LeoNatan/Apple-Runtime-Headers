@@ -16,6 +16,11 @@ __attribute__((visibility("hidden")))
 }
 
 + (void)load;
+- (unsigned long long)retainCount;
+- (BOOL)allowsWeakReference;
+- (BOOL)retainWeakReference;
+- (oneway void)release;
+- (id)retain;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

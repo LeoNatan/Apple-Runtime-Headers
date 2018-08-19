@@ -11,7 +11,7 @@
 @protocol INImageStoring <INImageServing>
 - (void)purgeImageWithIdentifier:(NSString *)arg1 completion:(void (^)(NSError *))arg2;
 - (void)retrieveImageWithIdentifier:(NSString *)arg1 completion:(void (^)(INImage *, NSError *))arg2;
-- (void)storeImage:(INImage *)arg1 scaled:(_Bool)arg2 completion:(void (^)(NSString *, NSError *))arg3;
+- (void)storeImage:(INImage *)arg1 scaled:(_Bool)arg2 qualityOfService:(unsigned int)arg3 storeType:(unsigned long long)arg4 completion:(void (^)(NSString *, NSError *))arg5;
 - (_Bool)canStoreImage:(INImage *)arg1;
 
 @optional

@@ -10,7 +10,10 @@
 
 @interface CKNavigationButtonView : UIView
 {
+    _Bool _wantsLongPress;
+    _Bool _buttonEnabled;
     CDUnknownBlockType _buttonTappedCallback;
+    CDUnknownBlockType _buttonLongPressCallback;
     long long _joinButtonStyle;
     UIImage *_image;
     UIImage *_defaultImage;
@@ -26,14 +29,18 @@
 @property(retain, nonatomic) UIButton *imageButton; // @synthesize imageButton=_imageButton;
 @property(retain, nonatomic) UIImage *defaultImage; // @synthesize defaultImage=_defaultImage;
 @property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
+@property(nonatomic, getter=isButtonEnabled) _Bool buttonEnabled; // @synthesize buttonEnabled=_buttonEnabled;
+@property(nonatomic) _Bool wantsLongPress; // @synthesize wantsLongPress=_wantsLongPress;
 @property(nonatomic) long long joinButtonStyle; // @synthesize joinButtonStyle=_joinButtonStyle;
+@property(copy, nonatomic) CDUnknownBlockType buttonLongPressCallback; // @synthesize buttonLongPressCallback=_buttonLongPressCallback;
 @property(copy, nonatomic) CDUnknownBlockType buttonTappedCallback; // @synthesize buttonTappedCallback=_buttonTappedCallback;
 - (void).cxx_destruct;
 - (void)layoutSubviews;
 - (struct CGSize)intrinsicContentSize;
+- (void)_buttonLongPressed:(id)arg1;
 - (void)_buttonTapped:(id)arg1;
 - (void)_setupImageButton;
-- (id)initWithImage:(id)arg1 text:(id)arg2;
+- (id)initWithImage:(id)arg1 text:(id)arg2 wantsLongPress:(_Bool)arg3;
 
 @end
 

@@ -28,9 +28,8 @@
 - (void).cxx_destruct;
 - (void)whatsNewNotNowButtonPressed;
 - (void)whatsNewConfirmPressed;
-- (void)_beginCallerIDWhatsNew;
-- (void)_beginFlowForCallerIDWhatsNew;
-- (_Bool)_shouldPresentCallerID;
+- (void)_beginNewInMessages;
+- (_Bool)_shouldPresentNewInMessages;
 - (void)_beginSurfWhatsNew;
 - (_Bool)_shouldPresentSurf;
 - (void)_tryToEnableHSA2;

@@ -17,12 +17,12 @@ __attribute__((visibility("hidden")))
 
 @property(retain, nonatomic) TSCHReferenceLineNonStyle *nonStyle; // @synthesize nonStyle=mNonStyle;
 @property(readonly, nonatomic) NSUUID *uuid; // @synthesize uuid=mUUID;
+- (void).cxx_destruct;
 - (void)saveToArchiver:(id)arg1 message:(struct ChartReferenceLineNonStyleItem *)arg2;
 - (id)initFromUnarchiver:(id)arg1 message:(const struct ChartReferenceLineNonStyleItem *)arg2;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)description;
-- (void)dealloc;
 - (id)initWithNonStyle:(id)arg1 uuid:(id)arg2;
 
 @end

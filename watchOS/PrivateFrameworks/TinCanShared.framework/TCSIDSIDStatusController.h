@@ -8,10 +8,13 @@
 
 #import "IDSBatchIDQueryControllerDelegate.h"
 
-@class IDSBatchIDQueryController, NSArray, NSMutableDictionary, NSNumber, NSString;
+@class IDSBatchIDQueryController, NSArray, NSMutableDictionary, NSNumber, NSObject<OS_dispatch_source>, NSString;
 
 @interface TCSIDSIDStatusController : NSObject <IDSBatchIDQueryControllerDelegate>
 {
+    NSObject<OS_dispatch_source> *_timer;
+    double _timeout;
+    id <TUIDSLookup> _item;
     id <TCSIDSIDStatusControllerDelegate> _delegate;
     IDSBatchIDQueryController *_queryController;
     NSArray *_destinations;
@@ -23,12 +26,15 @@
 @property(readonly, nonatomic) NSArray *destinations; // @synthesize destinations=_destinations;
 @property(retain, nonatomic) IDSBatchIDQueryController *queryController; // @synthesize queryController=_queryController;
 @property(readonly, nonatomic) __weak id <TCSIDSIDStatusControllerDelegate> delegate; // @synthesize delegate=_delegate;
+@property(readonly, nonatomic) id <TUIDSLookup> item; // @synthesize item=_item;
 - (void).cxx_destruct;
 - (void)idStatusUpdatedForDestinations:(id)arg1;
 @property(readonly, nonatomic) NSString *tinCanHandle;
 @property(readonly, nonatomic) NSNumber *status;
+- (void)_statusQueryTimedOut;
 - (void)dealloc;
-- (id)initWithItem:(id)arg1 delegate:(id)arg2;
+- (void)execute;
+- (id)initWithItem:(id)arg1 delegate:(id)arg2 timeout:(double)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

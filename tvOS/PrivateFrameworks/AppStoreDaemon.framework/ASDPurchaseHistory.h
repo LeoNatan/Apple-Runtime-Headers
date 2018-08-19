@@ -19,7 +19,9 @@
 + (id)interface;
 + (id)sharedInstance;
 - (void).cxx_destruct;
+- (void)updateWithContext:(unsigned long long)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)updateWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)updateForAccountID:(long long)arg1 withContext:(unsigned long long)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
 - (void)updateForAccountID:(long long)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)showAllWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)setHidden:(_Bool)arg1 forStoreItemID:(long long)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;

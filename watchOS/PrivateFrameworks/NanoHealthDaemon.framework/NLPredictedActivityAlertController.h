@@ -23,6 +23,7 @@
     NSMutableDictionary *_scheduledAlerts;
     _Bool _isStartEnabled;
     _Bool _isEndEnabled;
+    _Bool _restoreStateFromClassification;
     NSNumber *_minSecondsToAlertOverrideNumber;
     NSDateComponents *_muteForTodayDateComponents;
 }
@@ -37,6 +38,7 @@
 - (void)workoutManagerDidStartWorkout:(id)arg1 workout:(id)arg2 startDate:(id)arg3;
 - (_Bool)_isWorkout:(id)arg1 equalToPredictedActivity:(id)arg2;
 - (_Bool)_isUserInitiatedWorkout:(id)arg1;
+- (void)_disallowRestoreStateFromClassification;
 - (void)workoutManager:(id)arg1 issuedPrediction:(id)arg2;
 - (unsigned int)_predictionActivityType:(id)arg1;
 - (int)_predictionState:(id)arg1;
@@ -63,8 +65,9 @@
 - (int)_swimmingLocationTypeForSessionLocationType:(int)arg1 activityType:(unsigned int)arg2;
 - (void)_queue_showStartAlertForPredictedActivity:(id)arg1;
 - (double)_minimumAlertDelayForPreditedActivity:(id)arg1;
-- (void)didBeginPredictedActivityAtDate:(id)arg1 withIdentifier:(id)arg2;
+- (void)didBeginPredictedActivityAtDate:(id)arg1 withIdentifier:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_queue_stopMonitoringPredictedActivity:(id)arg1;
+- (_Bool)_isPredictionUserDismissable:(id)arg1;
 - (void)_queue_predictedActivityTimedOut:(id)arg1;
 - (void)_queue_startMonitoringPredictedActivity:(id)arg1;
 - (void)_queue_scheduleTimeoutForPredictedActivity:(id)arg1 atDispatchTime:(unsigned long long)arg2;

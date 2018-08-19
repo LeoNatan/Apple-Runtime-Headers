@@ -18,6 +18,8 @@
 
 + (id)recordsFromResolvingSyncConflicts:(id)arg1;
 + (struct NSOrderedSet *)changesFromReconcilingChanges:(struct NSOrderedSet *)arg1 withSavedRecords:(id)arg2 deletedRecordIDs:(id)arg3 partialFailures:(id)arg4;
++ (void)cloudKitAccountStatusForContainer:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
++ (void)getCloudKitAccountStatusWithAccessSpecifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
 @property(retain, nonatomic) VCRecordZoneInfo *recordZoneInfo; // @synthesize recordZoneInfo=_recordZoneInfo;
 @property(readonly, nonatomic) CKDatabase *database; // @synthesize database=_database;
 @property(readonly, nonatomic) CKContainer *container; // @synthesize container=_container;
@@ -35,7 +37,7 @@
 - (id)recordZoneInfoFromCreatingRecordZoneWithName:(id)arg1;
 - (id)currentRecordZoneInfo;
 - (_Bool)setupRecordZone:(id *)arg1;
-- (_Bool)isCloudKitContainerAccessible:(id *)arg1;
+- (_Bool)canSyncToCloudKitContainer:(id *)arg1;
 @property(readonly, nonatomic) CKRecordZoneID *activeZoneID;
 - (_Bool)authenticateClient:(id *)arg1;
 - (id)init;

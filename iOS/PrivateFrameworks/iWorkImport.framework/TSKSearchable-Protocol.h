@@ -6,12 +6,12 @@
 
 #import "TSKModel.h"
 
-@class TSKReplaceAllChildCommand, TSKReplaceAllCommand, TSKSearch;
+@class NSObject<TSKSearchReplaceProvider>, TSKCommand, TSKSearch;
 
 @protocol TSKSearchable <TSKModel>
 
 @optional
-- (TSKReplaceAllChildCommand *)childCommandForReplaceAllCommand:(TSKReplaceAllCommand *)arg1;
+- (TSKCommand *)commandForReplaceAllWithProvider:(NSObject<TSKSearchReplaceProvider> *)arg1;
 - (void)continueAnnotationSearch:(TSKSearch *)arg1;
 - (void)enumerateAllAnnotationsInModelWithHitBlock:(void (^)(id <TSKSearchReference>))arg1;
 - (TSKSearch *)searchForAnnotationsWithHitBlock:(void (^)(id <TSKSearchReference>))arg1;

@@ -23,6 +23,7 @@
 + (BOOL)supportsSecureCoding;
 + (void)_performWithCurrentAppearance:(id)arg1 usingBlock:(CDUnknownBlockType)arg2;
 + (id)_coreUIOptionsSharedKeySet;
++ (id)colorByAdjustingLightnessOfColor:(id)arg1 darker:(BOOL)arg2;
 + (id)_systemAppearanceProxy;
 + (id)_menuBarAppearanceProxy;
 + (void)setFunctionRowALSAttributes:(id)arg1;
@@ -48,7 +49,6 @@
 @property(readonly, copy) NSString *name; // @synthesize name=_name;
 - (BOOL)isEqual:(id)arg1;
 - (id)bestMatchFromAppearancesWithNames:(id)arg1;
-- (id)_temporaryCatalogForStatefulTextColorStyles;
 - (BOOL)_resolvesToFunctionRowAppearanceForWidget:(id)arg1;
 - (BOOL)_isFunctionRowAppearance;
 - (BOOL)_allowsCustomControlTintColors;

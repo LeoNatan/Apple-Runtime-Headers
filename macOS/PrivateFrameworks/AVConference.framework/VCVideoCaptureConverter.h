@@ -13,8 +13,9 @@ __attribute__((visibility("hidden")))
 {
     unsigned int _destinationFramerate;
     unsigned int _sourceFramerate;
-    unsigned char _throttleRate;
-    unsigned int _frameCount;
+    double _throttleRate;
+    unsigned int _sourceFrameCount;
+    unsigned int _lastDestinationFrameCount;
     BOOL _isThrottling;
     id _delegate;
 }

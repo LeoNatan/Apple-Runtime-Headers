@@ -88,7 +88,7 @@
 - (_Bool)_canShowAvatarView;
 - (double)_preferredHeightForTraitCollection:(id)arg1;
 - (id)_windowTraitCollection;
-- (void)startAudioCommunication;
+- (void)startAudioCommunicationUsingPreferredRouteIfAvailable:(_Bool)arg1;
 - (void)dealloc;
 - (id)initWithConversation:(id)arg1 navigationController:(id)arg2;
 - (id)initWithConversation:(id)arg1;

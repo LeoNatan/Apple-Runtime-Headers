@@ -44,6 +44,8 @@
 - (id)dataForThumbnailFileAtPath:(id)arg1 rotatedToOrientation:(int)arg2 size:(struct CGSize)arg3 compressionQuality:(float)arg4;
 - (id)_ptpThumbnailForFullSizeRenderWithAssetID:(id)arg1 size:(struct CGSize)arg2 compressionQuality:(float)arg3;
 - (id)_ptpThumbnailForOriginalWithAssetID:(id)arg1 size:(struct CGSize)arg2 compressionQuality:(float)arg3;
+- (_Bool)requestedSize:(struct CGSize)arg1 fitsInSourceSize:(struct CGSize)arg2;
+- (struct CGSize)masterThumbSize;
 - (id)ptpThumbnailForPhotoWithKey:(id)arg1 size:(struct CGSize)arg2 compressionQuality:(float)arg3;
 - (struct CGSize)_validateSize:(struct CGSize)arg1;
 - (id)ptpThumbnailForPhotoWithKey:(id)arg1;

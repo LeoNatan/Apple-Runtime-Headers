@@ -39,6 +39,7 @@ __attribute__((visibility("hidden")))
     _Bool _enableRedundancy;
     _Bool _enableVADFiltering;
     NSMutableArray *_peerSubscribedStreams;
+    NSMutableSet *_localPublishedStreams;
     float _averageSilenceAudioPower;
     unsigned char _audioPriorityRampUp;
     unsigned char _audioPriorityDecaySlow;
@@ -90,6 +91,7 @@ __attribute__((visibility("hidden")))
 - (void)flushVideoRedundancyEventQueue;
 - (void)processVideoEventQueue;
 - (void)enableRedundancy:(_Bool)arg1;
+- (_Bool)checkSubscribedStreamsConsistency:(id)arg1;
 - (void)updateUplinkStreamsForPeerSubscribedStreams:(id)arg1;
 - (void)generateKeyFrameWithStreamID:(unsigned short)arg1;
 - (void)setupEncodingModeWithVideoStreamConfig:(id)arg1;

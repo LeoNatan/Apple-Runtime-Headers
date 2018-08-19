@@ -34,6 +34,7 @@
     NSString *_launchId;
     NSString *_nanoLaunchId;
     NSString *_systemExtensionBundleId;
+    NSString *_systemUIExtensionBundleId;
     NSString *_intentDescription;
     NSString *_intentId;
     NSString *_originatingDeviceIdsIdentifier;
@@ -53,6 +54,7 @@
 @property(copy, nonatomic) NSString *intentDescription; // @synthesize intentDescription=_intentDescription;
 @property(nonatomic) BOOL confirmed; // @synthesize confirmed=_confirmed;
 @property(nonatomic) BOOL backgroundLaunch; // @synthesize backgroundLaunch=_backgroundLaunch;
+@property(copy, nonatomic) NSString *systemUIExtensionBundleId; // @synthesize systemUIExtensionBundleId=_systemUIExtensionBundleId;
 @property(copy, nonatomic) NSString *systemExtensionBundleId; // @synthesize systemExtensionBundleId=_systemExtensionBundleId;
 @property(copy, nonatomic) NSString *nanoLaunchId; // @synthesize nanoLaunchId=_nanoLaunchId;
 @property(copy, nonatomic) NSString *launchId; // @synthesize launchId=_launchId;
@@ -82,6 +84,7 @@
 @property(readonly, nonatomic) BOOL hasIntentDescription;
 @property(nonatomic) BOOL hasConfirmed;
 @property(nonatomic) BOOL hasBackgroundLaunch;
+@property(readonly, nonatomic) BOOL hasSystemUIExtensionBundleId;
 @property(readonly, nonatomic) BOOL hasSystemExtensionBundleId;
 - (int)StringAsRequiredEntitlements:(id)arg1;
 - (id)requiredEntitlementsAsString:(int)arg1;

@@ -11,13 +11,10 @@
 @interface STDevicePickupsUsageGroupSpecifierProvider : STUsageGroupSpecifierProvider
 {
     PSSpecifier *_pickupsSummaryGraphSpecifier;
-    PSSpecifier *_pickupsAfterBedtimeSpecifier;
 }
 
-@property(retain, nonatomic) PSSpecifier *pickupsAfterBedtimeSpecifier; // @synthesize pickupsAfterBedtimeSpecifier=_pickupsAfterBedtimeSpecifier;
 @property(retain, nonatomic) PSSpecifier *pickupsSummaryGraphSpecifier; // @synthesize pickupsSummaryGraphSpecifier=_pickupsSummaryGraphSpecifier;
 - (void).cxx_destruct;
-- (id)pickupsAfterBedtime:(id)arg1;
 - (id)mostPickups:(id)arg1;
 - (id)totalPickups:(id)arg1;
 - (id)getPickupInfo:(id)arg1;

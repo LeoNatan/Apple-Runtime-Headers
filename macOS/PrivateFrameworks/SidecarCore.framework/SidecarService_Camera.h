@@ -16,6 +16,7 @@ __attribute__((visibility("hidden")))
 - (id)localizedItemName;
 - (id)localizedDescription;
 - (id)serviceIdentifier;
+- (id)mutableRequestMessage;
 
 @end
 

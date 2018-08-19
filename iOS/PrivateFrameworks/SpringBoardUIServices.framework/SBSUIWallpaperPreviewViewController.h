@@ -63,7 +63,11 @@
 - (void)setImageWallpaperForLocations:(long long)arg1;
 - (void)setWallpaperForLocations:(long long)arg1;
 - (double)_parallaxFactor;
+- (long long)_wallpaperType;
+- (id)_wallpaperTypeDescription;
 - (id)wallpaperConfigurationManager;
+- (void)viewDidDisappear:(_Bool)arg1;
+- (void)viewDidAppear:(_Bool)arg1;
 - (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)loadView;

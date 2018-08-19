@@ -19,6 +19,7 @@
     _Bool _isNativeInterfaceObject;
     _Bool _isUpdatingTable;
     _Bool _tableViewDidReload;
+    _Bool _firstLayout;
     _Bool _checkedIsInNotificationUI;
     _Bool _isInInterfaceBuilder;
     _Bool _enabled;
@@ -53,6 +54,7 @@
 @property(nonatomic) _Bool isInInterfaceBuilder; // @synthesize isInInterfaceBuilder=_isInInterfaceBuilder;
 @property(nonatomic) _Bool checkedIsInNotificationUI; // @synthesize checkedIsInNotificationUI=_checkedIsInNotificationUI;
 @property(nonatomic) struct CGSize cachedTableViewContentSize; // @synthesize cachedTableViewContentSize=_cachedTableViewContentSize;
+@property(nonatomic) _Bool firstLayout; // @synthesize firstLayout=_firstLayout;
 @property(nonatomic) _Bool tableViewDidReload; // @synthesize tableViewDidReload=_tableViewDidReload;
 @property(nonatomic) _Bool isUpdatingTable; // @synthesize isUpdatingTable=_isUpdatingTable;
 @property(retain, nonatomic) NSMutableArray *updatedIndexPaths; // @synthesize updatedIndexPaths=_updatedIndexPaths;

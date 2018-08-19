@@ -31,7 +31,7 @@
 - (void)_reportIntentResultTohandler:(CDUnknownBlockType)arg1;
 - (void)_reportResultsTohandler:(CDUnknownBlockType)arg1;
 - (void)requestSiriSyncDataWithValidity:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)sendIntentCommand:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)sendIntentRequestCommand:(id)arg1 withPayload:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)sendSiriCommand:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)_registerToDaemon;
 - (void)_start;

@@ -9,6 +9,7 @@
 @class NSArray, NSSet, NSString, PBSDisplayMode;
 
 @protocol PBSDisplayState <NSObject>
+@property(readonly, nonatomic) _Bool deemed4KCapable;
 @property(readonly, nonatomic) _Bool detectedPoorCableConnection;
 @property(readonly, nonatomic) long long displayConnection;
 @property(readonly, nonatomic) _Bool shouldModeSwitchForFrameRate;

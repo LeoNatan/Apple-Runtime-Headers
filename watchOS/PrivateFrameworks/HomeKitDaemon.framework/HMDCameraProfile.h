@@ -39,7 +39,7 @@
 - (void)monitorForEventsForServices:(id)arg1;
 @property(readonly) unsigned int hash;
 - (_Bool)isEqual:(id)arg1;
-- (void)cameraSettingProactiveReaderDidCompleteRead:(id)arg1;
+- (void)cameraSettingProactiveReaderDidCompleteRead:(id)arg1 negotiateStreamMessageWasHandled:(_Bool)arg2;
 - (void)_handleStreamControlRequest:(id)arg1;
 - (void)_handleNegotiateStreamRequest:(id)arg1;
 - (void)registerForMessages;

@@ -9,7 +9,7 @@
 #import "PKPaymentServiceDelegate.h"
 #import "SBSHardwareButtonEventConsuming.h"
 
-@class CLInUseAssertion, NSArray, NSObject<OS_dispatch_group>, NSString, PKAssertion, PKFieldDetectEducationViewController, PKFieldProperties, PKPassGroupsViewController, PKPaymentService, SBSAssertion;
+@class CLInUseAssertion, NSArray, NSObject<OS_dispatch_group>, NSString, PKAssertion, PKEducationViewController, PKFieldProperties, PKPassGroupsViewController, PKPaymentService, SBSAssertion;
 
 @interface PKPaymentRemoteAlertViewController : SBUIRemoteAlertServiceViewController <PKPaymentServiceDelegate, SBSHardwareButtonEventConsuming>
 {
@@ -30,7 +30,7 @@
     _Bool _deviceUILocked;
     _Bool _processHomeButtonEvents;
     _Bool _brightnessRampingAllowed;
-    PKFieldDetectEducationViewController *_educationVC;
+    PKEducationViewController *_educationVC;
     _Bool _appearedOnce;
     _Bool _insertedGroupsVC;
     _Bool _shouldInsertGroupsVC;

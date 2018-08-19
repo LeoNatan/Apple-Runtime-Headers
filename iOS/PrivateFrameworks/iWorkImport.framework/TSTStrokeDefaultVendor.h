@@ -14,6 +14,7 @@ __attribute__((visibility("hidden")))
     _Bool _isValid;
     id <TSTTableStrokeProviding> _strokeProvider;
     id <TSTTableHiddenRowColumnProviding><TSTTableInternalGeometryProviding> _tableProvider;
+    id <TSTCategoryProviding> _categoryProvider;
     NSPointerArray *_strokeTypeToLayerMap;
     struct _NSRange _headerSideBorderColumnRange;
     struct _NSRange _headerColumnSeparatorColumnRange;
@@ -33,6 +34,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) struct _NSRange headerSideBorderColumnRange; // @synthesize headerSideBorderColumnRange=_headerSideBorderColumnRange;
 @property(retain, nonatomic) NSPointerArray *strokeTypeToLayerMap; // @synthesize strokeTypeToLayerMap=_strokeTypeToLayerMap;
 @property(nonatomic) _Bool isValid; // @synthesize isValid=_isValid;
+@property(nonatomic) __weak id <TSTCategoryProviding> categoryProvider; // @synthesize categoryProvider=_categoryProvider;
 @property(nonatomic) __weak id <TSTTableHiddenRowColumnProviding><TSTTableInternalGeometryProviding> tableProvider; // @synthesize tableProvider=_tableProvider;
 @property(nonatomic) __weak id <TSTTableStrokeProviding> strokeProvider; // @synthesize strokeProvider=_strokeProvider;
 - (void).cxx_destruct;
@@ -48,7 +50,7 @@ __attribute__((visibility("hidden")))
 - (id)strokeLayerForStrokeType:(int)arg1;
 - (id)strokeLayerForRow:(unsigned int)arg1;
 - (id)strokeLayerForColumn:(unsigned int)arg1;
-- (id)initWithStrokeProvider:(id)arg1 tableProvider:(id)arg2;
+- (id)initWithStrokeProvider:(id)arg1 tableProvider:(id)arg2 categoryProvider:(id)arg3;
 
 @end
 

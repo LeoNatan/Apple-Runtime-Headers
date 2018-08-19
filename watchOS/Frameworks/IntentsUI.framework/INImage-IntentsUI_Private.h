@@ -7,6 +7,6 @@
 #import "INImage.h"
 
 @interface INImage (IntentsUI_Private)
-- (id)_inui_downscaledPNGDataImageOfSize:(CDStruct_c3b9c2ee)arg1 error:(id *)arg2;
+- (id)_inui_downscaledPNGImageOfSize:(CDStruct_c3b9c2ee)arg1 error:(id *)arg2;
 @end
 

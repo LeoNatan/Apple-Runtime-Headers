@@ -13,6 +13,7 @@
 - (_Bool)isTomorrow;
 - (void)updateActivity:(id)arg1;
 - (id)dictionary;
+- (id)initWithDictionary:(id)arg1;
 - (id)initWithDate:(id)arg1 view:(unsigned long long)arg2 calendar:(id)arg3;
 
 @end

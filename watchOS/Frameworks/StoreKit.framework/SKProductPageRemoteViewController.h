@@ -33,6 +33,7 @@
 - (void)loadProductWithRequest:(id)arg1;
 - (void)loadProductWithPageDictionary:(id)arg1;
 - (void)finishImmediately;
+- (void)setVisibleInClientWindow:(id)arg1;
 - (void)setAskToBuy:(_Bool)arg1;
 - (void)setPromptString:(id)arg1;
 - (void)setShowsRightBarButton:(_Bool)arg1;

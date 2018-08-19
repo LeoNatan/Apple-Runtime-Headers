@@ -13,6 +13,7 @@
 - (PXAssetsDataSourceManager *)oneUpPresentationDataSourceManager:(PXOneUpPresentation *)arg1;
 
 @optional
+- (id <PXImportStatusManager>)oneUpPresentationImportStatusManager:(PXOneUpPresentation *)arg1;
 - (PXGestureProvider *)oneUpPresentationGestureProvider:(PXOneUpPresentation *)arg1;
 - (long long)oneUpPresentationActionContext:(PXOneUpPresentation *)arg1;
 - (PXAssetActionManager *)oneUpPresentationActionManagerForPreviewing:(PXOneUpPresentation *)arg1;

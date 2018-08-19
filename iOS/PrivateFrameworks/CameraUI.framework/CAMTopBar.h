@@ -8,7 +8,7 @@
 
 #import "CAMExpandableMenuButtonDelegate.h"
 
-@class CAMElapsedTimeView, CAMExpandableMenuButton, CAMFilterButton, CAMFlashButton, CAMFlipButton, CAMFramerateIndicatorView, CAMHDRButton, CAMLivePhotoButton, CAMTimerButton, NSArray, NSSet, PUReviewScreenDoneButton;
+@class CAMElapsedTimeView, CAMExpandableMenuButton, CAMFilterButton, CAMFlashButton, CAMFlipButton, CAMFramerateIndicatorView, CAMHDRButton, CAMLivePhotoButton, CAMMessagesPhotosButton, CAMTimerButton, NSArray, NSSet, PUReviewScreenDoneButton;
 
 @interface CAMTopBar : UIView <CAMExpandableMenuButtonDelegate>
 {
@@ -22,6 +22,7 @@
     CAMFilterButton *_filterButton;
     CAMTimerButton *_timerButton;
     CAMLivePhotoButton *_livePhotoButton;
+    CAMMessagesPhotosButton *_photosButton;
     PUReviewScreenDoneButton *_doneButton;
     CAMFramerateIndicatorView *_framerateIndicatorView;
     long long _orientation;
@@ -29,9 +30,12 @@
     NSArray *__allowedControls;
     NSSet *__controlsNeedingNonAnimatedLayout;
     CAMExpandableMenuButton *__expandedMenuButton;
+    long long __mode;
     struct UIEdgeInsets __expandedMenuButtonTappableInsets;
 }
 
++ (_Bool)isFloatingStyle:(long long)arg1;
+@property(readonly, nonatomic) long long _mode; // @synthesize _mode=__mode;
 @property(nonatomic, setter=_setExpandedMenuButtonTappableInsets:) struct UIEdgeInsets _expandedMenuButtonTappableInsets; // @synthesize _expandedMenuButtonTappableInsets=__expandedMenuButtonTappableInsets;
 @property(retain, nonatomic, setter=_setExpandedMenuButton:) CAMExpandableMenuButton *_expandedMenuButton; // @synthesize _expandedMenuButton=__expandedMenuButton;
 @property(retain, nonatomic, setter=_setControlsNeedingNonAnimatedLayout:) NSSet *_controlsNeedingNonAnimatedLayout; // @synthesize _controlsNeedingNonAnimatedLayout=__controlsNeedingNonAnimatedLayout;
@@ -40,6 +44,7 @@
 @property(nonatomic) long long orientation; // @synthesize orientation=_orientation;
 @property(retain, nonatomic) CAMFramerateIndicatorView *framerateIndicatorView; // @synthesize framerateIndicatorView=_framerateIndicatorView;
 @property(retain, nonatomic) PUReviewScreenDoneButton *doneButton; // @synthesize doneButton=_doneButton;
+@property(retain, nonatomic) CAMMessagesPhotosButton *photosButton; // @synthesize photosButton=_photosButton;
 @property(retain, nonatomic) CAMLivePhotoButton *livePhotoButton; // @synthesize livePhotoButton=_livePhotoButton;
 @property(retain, nonatomic) CAMTimerButton *timerButton; // @synthesize timerButton=_timerButton;
 @property(retain, nonatomic) CAMFilterButton *filterButton; // @synthesize filterButton=_filterButton;
@@ -59,6 +64,7 @@
 - (struct CGRect)expandedFrameForMenuButton:(id)arg1;
 - (void)collapseMenuButton:(id)arg1 animated:(_Bool)arg2;
 - (struct CGRect)collapsedFrameForMenuButton:(id)arg1;
+- (_Bool)shouldHidePhotosButtonForGraphConfiguration:(id)arg1;
 - (_Bool)shouldHideDoneButtonForGraphConfiguration:(id)arg1;
 - (_Bool)shouldHideFramerateIndicatorForGraphConfiguration:(id)arg1;
 - (_Bool)shouldHideLivePhotoButtonForGraphConfiguration:(id)arg1;
@@ -71,6 +77,8 @@
 - (_Bool)_shouldHideSubview:(id)arg1;
 - (_Bool)_shouldExpandButtonsHorizontally;
 - (void)_updateControlVisibilityAnimated:(_Bool)arg1;
+- (void)_setMode:(long long)arg1 style:(long long)arg2 animationDuration:(double)arg3 animationOptions:(unsigned long long)arg4;
+- (id)_allowedControlsForMode:(long long)arg1 style:(long long)arg2;
 - (void)configureForMode:(long long)arg1 animated:(_Bool)arg2;
 - (void)configureForMode:(long long)arg1;
 - (id)_allowedControlsForTimelapseMode;

@@ -50,6 +50,7 @@
 - (void)deactivate;
 - (void)activate;
 @property(readonly, nonatomic) id remoteProxy;
+- (id)_extractBundleIdentifier;
 - (id)extractTeamIdentifier;
 @property(readonly, nonatomic) NSString *effectiveLocationBundleIdentifier;
 @property(readonly, nonatomic) NSString *teamIdentifier;

@@ -11,26 +11,30 @@
 __attribute__((visibility("hidden")))
 @interface TNChartFormulaHelper : NSObject
 {
-    TNChartMediator *mChartMediator;
-    _Bool mCreateSpanningReferences;
+    TNChartMediator *_chartMediator;
+    _Bool _createSpanningReferences;
 }
 
-@property(readonly, nonatomic) TNChartMediator *chartMediator; // @synthesize chartMediator=mChartMediator;
-@property(nonatomic) _Bool createSpanningReferences; // @synthesize createSpanningReferences=mCreateSpanningReferences;
++ (id)chartFormulasForSummaryRegion:(id)arg1 inTable:(id)arg2;
++ (id)cellRegionCullingToFirstFoundLevelFrom:(id)arg1 inTable:(id)arg2 byRows:(_Bool)arg3;
+@property(readonly, nonatomic) TNChartMediator *chartMediator; // @synthesize chartMediator=_chartMediator;
+@property(nonatomic) _Bool createSpanningReferences; // @synthesize createSpanningReferences=_createSpanningReferences;
+- (void).cxx_destruct;
 - (_Bool)p_extendExistingSeriesWithSeriesRangeList:(id *)arg1 rowLabelRangeList:(id *)arg2 columnLabelRangeList:(id *)arg3 toFormulaMap:(id)arg4 withLocale:(id)arg5;
-- (void)p_addSeriesForTableModel:(id)arg1 seriesRange:(struct TSCERangeCoordinate)arg2 rowLabelRange:(struct TSCERangeCoordinate)arg3 columnLabelRange:(struct TSCERangeCoordinate)arg4 toFormulaMap:(id)arg5;
-- (void)p_addSeriesForRangeList:(id)arg1 rowLabelRangeList:(id)arg2 columnLabelRangeList:(id)arg3 toFormulaMap:(id)arg4;
 - (void)p_addSeriesForRangeList:(id)arg1 rowLabelRangeList:(id)arg2 columnLabelRangeList:(id)arg3 rowLabels:(id)arg4 columnLabels:(id)arg5 toFormulaMap:(id)arg6;
 - (void)p_addStringFormulasOfType:(unsigned long long)arg1 rangeList:(id)arg2 byRow:(_Bool)arg3 labels:(id)arg4 toFormulaMap:(id)arg5;
 - (id)p_labelsOfType:(unsigned long long)arg1 formulaMap:(id)arg2;
-- (void)p_addFormulasOfType:(unsigned long long)arg1 rangeList:(id)arg2 byRow:(_Bool)arg3 toFormulaMap:(id)arg4;
+- (unsigned char)p_addFormulasOfType:(unsigned long long)arg1 rangeList:(id)arg2 byRow:(_Bool)arg3 toFormulaMap:(id)arg4;
+- (unsigned char)p_addFormulasOfType:(unsigned long long)arg1 rangeList:(id)arg2 byRow:(_Bool)arg3 toFormulaMap:(id)arg4 ofLevel:(unsigned char)arg5;
+- (unsigned char)p_firstDataCategoryLevelInFormulaMap:(id)arg1 forTable:(UUIDData_5fbc143e)arg2;
 - (id)p_rangeListsForFormulas:(id)arg1 byRow:(_Bool)arg2 resolveSpanning:(_Bool)arg3;
 - (id)p_rangeListsForFormula:(id)arg1 argumentIndexes:(id)arg2 byRow:(_Bool)arg3 resolveSpanning:(_Bool)arg4;
 - (void)p_rangeListsForFormula:(id)arg1 argumentIndexes:(id)arg2 byRow:(_Bool)arg3 resolveSpanning:(_Bool)arg4 orderedListOfOwnerIDs:(id)arg5 ownerIDToRangeList:(id)arg6;
+- (id)chartFormulaByAppendingCategoryReferences:(vector_2431c21e)arg1 toFormula:(id)arg2 andLocale:(id)arg3;
 - (id)chartFormulaByAppendingRangeReference:(struct TSCERangeRef)arg1 toFormula:(id)arg2 andLocale:(id)arg3;
 - (_Bool)p_hasOneValuePerSeries;
+- (id)formulaStorageTransformTable:(UUIDData_5fbc143e)arg1 toLevel:(unsigned char)arg2;
 - (id)formulaStorageForChartGridDirection:(int)arg1;
-- (void)dealloc;
 - (id)initWithMediator:(id)arg1 createSpanningReferences:(_Bool)arg2;
 - (id)initWithMediator:(id)arg1;
 

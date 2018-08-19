@@ -23,8 +23,8 @@
 @property(nonatomic) __weak PSListController *listController; // @synthesize listController=_listController;
 - (void).cxx_destruct;
 - (void)managePlanPressed:(id)arg1;
-- (id)removePlanConfirmationTitle:(id)arg1;
-- (id)removePlanConfirmationMessage:(id)arg1;
+- (id)removeCellularPlanConfirmationTitle:(id)arg1;
+- (id)removeCellularPlanConfirmationMessage:(id)arg1;
 - (id)localizedManageAccountAlertTitle:(id)arg1;
 - (id)lastUpdatedText;
 - (id)specifiers;

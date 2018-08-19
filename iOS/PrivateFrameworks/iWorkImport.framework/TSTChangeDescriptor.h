@@ -6,19 +6,21 @@
 
 #import "NSObject.h"
 
-@class NSHashTable, TSTCellRegion;
+@class NSHashTable, TSKShuffleMapping, TSTCellRegion;
 
 __attribute__((visibility("hidden")))
 @interface TSTChangeDescriptor : NSObject
 {
-    int mChangeDescriptor;
-    TSTCellRegion *mCellRegion;
-    struct TSUCellCoord mCellID;
-    TSTCellRegion *mStrokeRegion;
-    NSHashTable *mReferenceIdentifiers;
+    int _changeDescriptor;
+    NSHashTable *_referenceIdentifiers;
+    TSTCellRegion *_cellRegion;
+    struct TSUCellCoord _cellID;
+    TSTCellRegion *_strokeRegion;
+    TSKShuffleMapping *_shuffleMapping;
 }
 
 + (void)enumerateChangeRecords:(id)arg1 withType:(int)arg2 block:(CDUnknownBlockType)arg3;
++ (id)changeDescriptorWithType:(int)arg1 shuffleMapping:(id)arg2;
 + (id)changeDescriptorWithType:(int)arg1 referenceIdentifiers:(id)arg2;
 + (id)changeDescriptorWithType:(int)arg1 cellRange:(struct TSUCellRect)arg2 strokeRange:(struct TSUCellRect)arg3;
 + (id)changeDescriptorWithType:(int)arg1 strokeRange:(struct TSUCellRect)arg2;
@@ -31,16 +33,17 @@ __attribute__((visibility("hidden")))
 + (id)changeDescriptorWithType:(int)arg1 strokeRegion:(id)arg2;
 + (id)changeDescriptorWithType:(int)arg1 cellRegion:(id)arg2 strokeRegion:(id)arg3;
 + (id)changeDescriptorWithType:(int)arg1 cellRegion:(id)arg2;
-@property(readonly, nonatomic) NSHashTable *referenceIdentifiers; // @synthesize referenceIdentifiers=mReferenceIdentifiers;
-@property(readonly, nonatomic) TSTCellRegion *strokeRegion; // @synthesize strokeRegion=mStrokeRegion;
-@property(readonly, nonatomic) struct TSUCellCoord cellID; // @synthesize cellID=mCellID;
-@property(readonly, nonatomic) TSTCellRegion *cellRegion; // @synthesize cellRegion=mCellRegion;
-@property(readonly, nonatomic) int changeDescriptor; // @synthesize changeDescriptor=mChangeDescriptor;
+@property(retain, nonatomic) TSKShuffleMapping *shuffleMapping; // @synthesize shuffleMapping=_shuffleMapping;
+@property(retain, nonatomic) TSTCellRegion *strokeRegion; // @synthesize strokeRegion=_strokeRegion;
+@property(nonatomic) struct TSUCellCoord cellID; // @synthesize cellID=_cellID;
+@property(retain, nonatomic) TSTCellRegion *cellRegion; // @synthesize cellRegion=_cellRegion;
+@property(nonatomic) int changeDescriptor; // @synthesize changeDescriptor=_changeDescriptor;
+@property(retain, nonatomic) NSHashTable *referenceIdentifiers; // @synthesize referenceIdentifiers=_referenceIdentifiers;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) struct TSUCellRect cellRange;
 @property(readonly, nonatomic) struct TSUCellRect strokeRange;
 - (_Bool)isEqual:(id)arg1;
-- (void)dealloc;
-- (id)initWithChangeDescriptorType:(int)arg1 andCellRegion:(id)arg2 andCellID:(struct TSUCellCoord)arg3 andStrokeRegion:(id)arg4 andReferenceIdentifiers:(id)arg5;
+- (id)initWithChangeDescriptorType:(int)arg1 cellRegion:(id)arg2 cellID:(struct TSUCellCoord)arg3 strokeRegion:(id)arg4 referenceIdentifiers:(id)arg5 shuffleMapping:(id)arg6;
 
 @end
 

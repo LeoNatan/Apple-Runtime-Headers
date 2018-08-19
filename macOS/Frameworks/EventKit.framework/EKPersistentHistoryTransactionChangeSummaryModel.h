@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class EKObjectPersistentChangesModel, NSArray;
+@class EKObjectPersistentChangesModel, NSArray, NSMutableArray;
 
 @interface EKPersistentHistoryTransactionChangeSummaryModel : NSObject
 {
@@ -15,8 +15,10 @@
     EKObjectPersistentChangesModel *_accounts;
     EKObjectPersistentChangesModel *_notifications;
     NSArray *_otherModifiedObjects;
+    NSMutableArray *_updatedProperties;
 }
 
+@property(retain, nonatomic) NSMutableArray *updatedProperties; // @synthesize updatedProperties=_updatedProperties;
 @property(readonly, nonatomic) NSArray *otherModifiedObjects; // @synthesize otherModifiedObjects=_otherModifiedObjects;
 @property(readonly, nonatomic) EKObjectPersistentChangesModel *notifications; // @synthesize notifications=_notifications;
 @property(readonly, nonatomic) EKObjectPersistentChangesModel *accounts; // @synthesize accounts=_accounts;
@@ -24,6 +26,8 @@
 @property(readonly, nonatomic) EKObjectPersistentChangesModel *calendarItems; // @synthesize calendarItems=_calendarItems;
 - (void).cxx_destruct;
 - (void)addRelevantObjectIDs:(id)arg1 withModificationType:(unsigned long long)arg2;
+- (void)addPropertyWithName:(id)arg1 onEntity:(id)arg2;
+- (BOOL)_entityIsPrincipalOrCalendar:(id)arg1;
 - (void)addRelevantObjectID:(id)arg1 withModificationType:(unsigned long long)arg2;
 - (id)_getNSSetForTypeOfModification:(unsigned long long)arg1 withObjectChangeModel:(id)arg2;
 - (id)_getChangeModelForObjectID:(id)arg1;

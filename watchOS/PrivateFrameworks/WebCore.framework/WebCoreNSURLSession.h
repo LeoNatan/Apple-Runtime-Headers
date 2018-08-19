@@ -15,6 +15,7 @@
     struct RetainPtr<NSOperationQueue> _queue;
     NSString *_sessionDescription;
     struct HashSet<WTF::RetainPtr<WebCoreNSURLSessionDataTask>, WTF::PtrHash<WTF::RetainPtr<WebCoreNSURLSessionDataTask>>, WTF::HashTraits<WTF::RetainPtr<WebCoreNSURLSessionDataTask>>> _dataTasks;
+    struct HashSet<WTF::RefPtr<WebCore::SecurityOrigin, WTF::DumbPtrTraits<WebCore::SecurityOrigin>>, WTF::PtrHash<WTF::RefPtr<WebCore::SecurityOrigin, WTF::DumbPtrTraits<WebCore::SecurityOrigin>>>, WTF::HashTraits<WTF::RefPtr<WebCore::SecurityOrigin, WTF::DumbPtrTraits<WebCore::SecurityOrigin>>>> _origins;
     // Error parsing type: {Lock="m_byte"{Atomic<unsigned char>="value"{atomic<unsigned char>="__a_"AC}}}, name: _dataTasksLock
     _Bool _invalidated;
     unsigned int _nextTaskIdentifier;
@@ -42,6 +43,7 @@
 - (void)resetWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)invalidateAndCancel;
 - (void)finishTasksAndInvalidate;
+-     // Error parsing type: B12@0:4r^{SecurityOrigin={atomic<unsigned int>=AI}{SecurityOriginData={String={RefPtr<WTF::StringImpl, WTF::DumbPtrTraits<WTF::StringImpl> >=^{StringImpl}}}{String={RefPtr<WTF::StringImpl, WTF::DumbPtrTraits<WTF::StringImpl> >=^{StringImpl}}}{optional<unsigned short>=B(constexpr_storage_t<unsigned short>=CS)}}{String={RefPtr<WTF::StringImpl, WTF::DumbPtrTraits<WTF::StringImpl> >=^{StringImpl}}}{String={RefPtr<WTF::StringImpl, WTF::DumbPtrTraits<WTF::StringImpl> >=^{StringImpl}}}BBBBiBBBB}8, name: wouldTaintOrigin:
 @property(readonly) _Bool didPassCORSAccessChecks; // @dynamic didPassCORSAccessChecks;
 // Error parsing type for property loader:
 // Property attributes: T^{PlatformMediaResourceLoader=^^?{atomic<unsigned int>=AI}},R,D
@@ -49,6 +51,7 @@
 @property(readonly, copy) NSURLSessionConfiguration *configuration; // @dynamic configuration;
 @property(readonly, retain) NSOperationQueue *delegateQueue; // @dynamic delegateQueue;
 @property(retain) id <NSURLSessionTaskDelegate> delegate; // @dynamic delegate;
+- (void)task:(id)arg1 didReceiveResponseFromOrigin:(Ref_4cc64869 *)arg2;
 - (void)task:(id)arg1 didReceiveCORSAccessCheckResult:(_Bool)arg2;
 - (void)addDelegateOperation:(Function_89d21b48 *)arg1;
 - (void)taskCompleted:(id)arg1;

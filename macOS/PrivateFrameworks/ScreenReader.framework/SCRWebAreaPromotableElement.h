@@ -56,7 +56,6 @@ __attribute__((visibility("hidden")))
 - (long long)_childIndex;
 - (BOOL)needToRebuildChildren;
 - (void)addItemNameToRequest:(id)arg1;
-- (void)setFocusedChild:(id)arg1;
 - (BOOL)containsStitchedText;
 - (BOOL)canFocusOutInto;
 - (BOOL)focusInto:(id)arg1 event:(id)arg2;

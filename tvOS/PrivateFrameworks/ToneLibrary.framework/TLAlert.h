@@ -19,6 +19,8 @@
 }
 
 + (_Bool)_stopAllAlerts;
++ (void)_setCurrentOverridePolicy:(long long)arg1 forType:(long long)arg2;
++ (long long)_currentOverridePolicyForType:(long long)arg1;
 + (id)alertWithConfiguration:(id)arg1;
 + (void)playAlertForType:(long long)arg1;
 + (void)playToneAndVibrationForType:(long long)arg1;

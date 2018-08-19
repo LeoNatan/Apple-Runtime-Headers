@@ -11,8 +11,8 @@
 __attribute__((visibility("hidden")))
 @interface TSCEWarning : NSObject
 {
-    NSDictionary *mMetadata;
-    _Bool mIgnored;
+    _Bool _ignored;
+    NSDictionary *_metadata;
 }
 
 + (void)reportComparisonWarningInContext:(struct TSCEWarningReportingContext *)arg1 leftType:(int)arg2 rightType:(int)arg3;
@@ -24,14 +24,15 @@ __attribute__((visibility("hidden")))
 + (void)reportMonthOutOfRangeWarningInContext:(struct TSCEWarningReportingContext *)arg1;
 + (void)reportNonNumericCellWarningInContext:(struct TSCEWarningReportingContext *)arg1 reference:(id)arg2;
 + (_Bool)setHasVisibleWarnings:(id)arg1;
+@property(retain, nonatomic) NSDictionary *metadata; // @synthesize metadata=_metadata;
+@property(nonatomic) _Bool ignored; // @synthesize ignored=_ignored;
+- (void).cxx_destruct;
 - (id)description;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)displayStringWithCalculationEngine:(id)arg1 forTable:(const UUIDData_5fbc143e *)arg2 andCellID:(struct TSUCellCoord)arg3;
-- (void)setIgnored:(_Bool)arg1;
 - (_Bool)isIgnored;
 - (id)type;
-- (void)dealloc;
 - (id)copyByRemappingEntityIDs:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithDictionary:(id)arg1;

@@ -97,6 +97,7 @@
 - (double)_preferredSectionHeightForNumberOfRows:(unsigned long long)arg1 withCellHeight:(double)arg2;
 - (double)preferredSectionHeightForNumberOfServiceRows:(unsigned long long)arg1 spanningColumns:(unsigned long long)arg2;
 - (double)preferredSectionHeightForNumberOfSceneRows:(unsigned long long)arg1;
+@property(readonly, nonatomic) double largeTitleCellTopMargin;
 @property(readonly, nonatomic) double statusListCellBottomMargin;
 @property(readonly, nonatomic) double statusListCellTopMargin;
 @property(readonly, nonatomic) double sectionHeaderCellHeight;

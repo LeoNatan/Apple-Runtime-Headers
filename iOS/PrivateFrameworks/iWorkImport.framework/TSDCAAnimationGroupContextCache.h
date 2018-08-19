@@ -17,10 +17,10 @@ __attribute__((visibility("hidden")))
 
 @property(readonly, nonatomic) NSArray *animationContextCaches; // @synthesize animationContextCaches=_animationContextCaches;
 @property(readonly, nonatomic) NSArray *animations; // @synthesize animations=_animations;
+- (void).cxx_destruct;
 - (double)p_groupTimingFactorAtTime:(double)arg1;
 - (id)valueForKeyPath:(id)arg1 atTime:(double)arg2 animationCache:(id)arg3;
 - (id)bestAnimationContextCacheForKeyPath:(id)arg1 atTime:(double)arg2;
-- (void)dealloc;
 - (id)initWithAnimation:(id)arg1;
 
 @end

@@ -6,27 +6,32 @@
 
 #import "NSObject.h"
 
+#import "NSCopying.h"
 #import "REUISiriShortcutContentViewModel.h"
 
 @class NSString, UIColor, UIImage;
 
-@interface REUIIntentActionConfirmContent : NSObject <REUISiriShortcutContentViewModel>
+@interface REUIIntentActionConfirmContent : NSObject <REUISiriShortcutContentViewModel, NSCopying>
 {
     UIColor *_tintColor;
     NSString *_titleString;
     NSString *_subtitleString;
     NSString *_confirmString;
+    UIImage *_contentImage;
 }
 
+@property(retain, nonatomic) UIImage *contentImage; // @synthesize contentImage=_contentImage;
 @property(copy, nonatomic) NSString *confirmString; // @synthesize confirmString=_confirmString;
 @property(copy, nonatomic) NSString *subtitleString; // @synthesize subtitleString=_subtitleString;
 @property(copy, nonatomic) NSString *titleString; // @synthesize titleString=_titleString;
 @property(copy, nonatomic) UIColor *tintColor; // @synthesize tintColor=_tintColor;
 - (void).cxx_destruct;
+- (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly, nonatomic) NSString *re_shortcut_confirmButtonString;
 @property(readonly, nonatomic) UIColor *re_shortcut_confirmButtonColor;
 @property(readonly, nonatomic) _Bool re_shortcut_showDismissButton;
 @property(readonly, nonatomic) _Bool re_shortcut_showConfirmButton;
+@property(readonly, nonatomic) UIImage *re_shortcut_contentImage;
 @property(readonly, nonatomic) NSString *re_shortcut_subtitleString;
 @property(readonly, nonatomic) NSString *re_shortcut_titleString;
 

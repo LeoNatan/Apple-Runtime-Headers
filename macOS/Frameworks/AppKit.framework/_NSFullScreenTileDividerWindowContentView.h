@@ -16,6 +16,7 @@ __attribute__((visibility("hidden")))
     BOOL _trackedInArea;
     BOOL _needsLiveResizeCleanup;
     unsigned long long _liveResizeOldPresentationOptions;
+    unsigned long long _liveResizeDragPresentationOptions;
     _NSFullScreenTileDividerWindow *_liveResizeDividerWindow;
     NSAlignmentFeedbackFilter *_liveResizeAlignmentFilter;
     struct CGPoint _liveResizeLastMouse;

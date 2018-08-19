@@ -26,6 +26,7 @@ __attribute__((visibility("hidden")))
     _Bool _isIncomingContent;
     _Bool _isVerticalText;
     _Bool _isFlattenedRepresentation;
+    _Bool _shouldGenerateMipmap;
     unsigned int _singleTextureName;
     struct CGImage *_bakedImage;
     TSDBitmapRenderingQualityInfo *_bitmapRenderingQualityInfo;
@@ -42,6 +43,7 @@ __attribute__((visibility("hidden")))
     double _textXHeight;
     long long _textureType;
     double _textureOpacity;
+    id <TSDLiveTexturedRectangleSource> _liveTexturedRectangleSource;
     struct CGPoint _offset;
     struct CGPoint _originalPosition;
     struct CGSize _singleTextureSize;
@@ -50,8 +52,10 @@ __attribute__((visibility("hidden")))
     struct CGRect _contentRect;
 }
 
++ (id)setupMetalShaderForContext:(id)arg1;
 + (struct CGRect)boundingRectOnCanvasForTextures:(id)arg1;
 + (struct CGRect)boundingRectForTextures:(id)arg1;
+@property __weak id <TSDLiveTexturedRectangleSource> liveTexturedRectangleSource; // @synthesize liveTexturedRectangleSource=_liveTexturedRectangleSource;
 @property(nonatomic) double textureOpacity; // @synthesize textureOpacity=_textureOpacity;
 @property(nonatomic) long long textureType; // @synthesize textureType=_textureType;
 @property(nonatomic) double textXHeight; // @synthesize textXHeight=_textXHeight;
@@ -62,12 +66,13 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) struct CGSize size; // @synthesize size=_size;
 @property(copy, nonatomic) TSUBezierPath *shapePath; // @synthesize shapePath=_shapePath;
 @property struct CGImage *sourceImage; // @synthesize sourceImage=_sourceImage;
-@property NSOperation *renderingOperationMetal; // @synthesize renderingOperationMetal=_renderingOperationMetal;
-@property NSOperation *renderingOperationOpenGL; // @synthesize renderingOperationOpenGL=_renderingOperationOpenGL;
-@property NSOperation *renderingOperation; // @synthesize renderingOperation=_renderingOperation;
+@property __weak NSOperation *renderingOperationMetal; // @synthesize renderingOperationMetal=_renderingOperationMetal;
+@property __weak NSOperation *renderingOperationOpenGL; // @synthesize renderingOperationOpenGL=_renderingOperationOpenGL;
+@property __weak NSOperation *renderingOperation; // @synthesize renderingOperation=_renderingOperation;
 @property(nonatomic) __weak TSDTextureSet *parent; // @synthesize parent=_parent;
 @property(nonatomic) struct CGPoint originalPosition; // @synthesize originalPosition=_originalPosition;
 @property(nonatomic) struct CGPoint offset; // @synthesize offset=_offset;
+@property(nonatomic) _Bool shouldGenerateMipmap; // @synthesize shouldGenerateMipmap=_shouldGenerateMipmap;
 @property(readonly, nonatomic) id <MTLTexture> metalTexture; // @synthesize metalTexture=_metalTexture;
 @property(readonly, nonatomic) CALayer *layer; // @synthesize layer=_layer;
 @property(nonatomic) _Bool isFlattenedRepresentation; // @synthesize isFlattenedRepresentation=_isFlattenedRepresentation;
@@ -78,7 +83,9 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) __weak TSDBitmapRenderingQualityInfo *bitmapRenderingQualityInfo; // @synthesize bitmapRenderingQualityInfo=_bitmapRenderingQualityInfo;
 @property struct CGImage *bakedImage; // @synthesize bakedImage=_bakedImage;
 - (void).cxx_destruct;
+- (void)drawFrameAtLayerTime:(double)arg1 context:(id)arg2;
 - (void)setupMetalTextureForDevice:(id)arg1;
+- (id)p_allocateMetalTextureForDevice:(id)arg1;
 - (void)releaseMetalTexture;
 - (_Bool)isMetalTextureSetup;
 - (void)waitUntilAsyncRenderingIsCompleteShouldCancel:(_Bool)arg1;
@@ -87,12 +94,13 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) struct CGRect frameOnCanvas;
 @property(readonly, nonatomic) CALayer *parentLayer;
 @property(readonly, nonatomic) _Bool isBackgroundTexture;
-- (void)p_renderIntoContext:(struct CGContext *)arg1 viewLayer:(id)arg2 shouldApplyAlpha:(_Bool)arg3 shouldIgnoreLayerVisibility:(_Bool)arg4;
-- (void)renderIntoContext:(struct CGContext *)arg1 eventIndex:(unsigned long long)arg2 shouldApplyAlpha:(_Bool)arg3;
+- (void)p_renderIntoContext:(struct CGContext *)arg1 viewLayer:(id)arg2 shouldApplyAlpha:(_Bool)arg3 shouldIgnoreLayerVisibility:(_Bool)arg4 shouldClipToBounds:(_Bool)arg5;
+- (void)renderIntoContext:(struct CGContext *)arg1 eventIndex:(unsigned long long)arg2 shouldApplyAlpha:(_Bool)arg3 shouldClipToBounds:(_Bool)arg4;
 - (void)renderIntoContext:(struct CGContext *)arg1 shouldApplyAlpha:(_Bool)arg2;
 - (void)renderIntoContext:(struct CGContext *)arg1 shouldApplyAlpha:(_Bool)arg2 shouldIgnoreLayerVisibility:(_Bool)arg3;
 - (void)p_bakeLayerWithAngle:(double)arg1 scale:(double)arg2 layer:(id)arg3;
 - (void)bakeLayerWithAngle:(double)arg1 scale:(double)arg2 layer:(id)arg3;
+@property(readonly, nonatomic) _Bool isBaked;
 @property(readonly, nonatomic) struct CGImage *image;
 @property(readonly, nonatomic) double singleTextureOpacity;
 - (void)releaseSingleTexture;
@@ -103,7 +111,7 @@ __attribute__((visibility("hidden")))
 - (void)setupSingleTexture;
 @property(readonly, nonatomic) _Bool isSingleTextureSetup;
 - (void)p_setupSingleTextureAndGenerateMipMaps:(_Bool)arg1 withContext:(id)arg2;
-- (char *)p_setupTextureDataWithSize:(struct CGSize)arg1;
+- (char *)p_setupTextureDataWithSize:(struct CGSize)arg1 isBGRA:(_Bool)arg2;
 - (void)renderLayerContentsIfNeeded;
 @property(readonly, nonatomic) _Bool isRenderable;
 @property(readonly, nonatomic) _Bool isRendered;

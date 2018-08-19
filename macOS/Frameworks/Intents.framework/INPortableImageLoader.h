@@ -24,7 +24,7 @@
 - (void)encodeWithCoder:(id)arg1;
 @property(readonly, nonatomic) unsigned long long servicePriority;
 @property(readonly, nonatomic) NSString *serviceIdentifier;
-- (void)loadImageDataFromImage:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)loadDataImageFromImage:(id)arg1 usingPortableImageLoader:(id)arg2 scaledSize:(CDStruct_8caa76fc)arg3 completion:(CDUnknownBlockType)arg4;
 - (BOOL)canLoadImageDataForImage:(id)arg1;
 - (void)loadImageDataFromImage:(id)arg1 accessSpecifier:(id)arg2 completion:(CDUnknownBlockType)arg3;
 

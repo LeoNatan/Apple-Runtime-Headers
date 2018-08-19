@@ -34,7 +34,7 @@ __attribute__((visibility("hidden")))
     _Bool _textIsVertical;
 }
 
-+ (struct CGRect)rectForInlineTableStartForCharIndex:(unsigned long long)arg1 withColumns:(id)arg2;
++ (_Bool)partitionedAttachmentStartsAtCharIndex:(unsigned long long)arg1 withColumns:(id)arg2;
 + (struct CGRect)columnRectForRange:(struct _NSRange)arg1 withColumns:(id)arg2;
 + (struct CGPoint)pinPoint:(struct CGPoint)arg1 toBottomOfLineFragmentInColumns:(id)arg2;
 + (struct CGSize)layoutSizeForParagraphEnumerator:(const struct TSWPParagraphEnumerator *)arg1 inColumns:(id)arg2 lineCount:(out unsigned long long *)arg3 nextLineOffset:(out double *)arg4;
@@ -60,6 +60,7 @@ __attribute__((visibility("hidden")))
 + (unsigned long long)charIndexForPoint:(struct CGPoint)arg1 inColumnsArray:(id)arg2 allowPastBreak:(_Bool)arg3 allowNotFound:(_Bool)arg4 pastCenterGoesToNextChar:(_Bool)arg5 constrainToAscentAndDescent:(_Bool)arg6 ignoreEmptyColumns:(_Bool)arg7 isAtEndOfLine:(_Bool *)arg8 leadingEdge:(_Bool *)arg9;
 + (unsigned long long)charIndexForPoint:(struct CGPoint)arg1 inColumnsArray:(id)arg2 allowPastBreak:(_Bool)arg3 allowNotFound:(_Bool)arg4 pastCenterGoesToNextChar:(_Bool)arg5 ignoreEmptyColumns:(_Bool)arg6 isAtEndOfLine:(_Bool *)arg7 leadingEdge:(_Bool *)arg8;
 + (unsigned long long)charIndexForPoint:(struct CGPoint)arg1 inColumnsArray:(id)arg2 allowPastBreak:(_Bool)arg3 allowNotFound:(_Bool)arg4 ignoreEmptyColumns:(_Bool)arg5 isAtEndOfLine:(_Bool *)arg6 leadingEdge:(_Bool *)arg7;
++ (struct _NSRange)charRangeOnSingleLineFragmentFromPoint:(struct CGPoint)arg1 toPoint:(struct CGPoint)arg2 inLayoutTarget:(id)arg3;
 + (id)closestColumnInColumnsArray:(id)arg1 forPoint:(struct CGPoint)arg2 ignoreEmptyColumns:(_Bool)arg3 ignoreDrawableOnlyColumns:(_Bool)arg4;
 + (struct CGPoint)connectionLinePointForChangeRange:(struct _NSRange)arg1 withColumns:(id)arg2 layoutTarget:(id)arg3;
 + (id)commentKnobBaseOriginForHighlightAtTextRange:(struct _NSRange)arg1 withColumns:(id)arg2;
@@ -107,6 +108,7 @@ __attribute__((visibility("hidden")))
 - (unsigned long long)charIndexFromPoint:(struct CGPoint)arg1 allowPastBreak:(_Bool)arg2 pastCenterGoesToNextChar:(_Bool)arg3 allowNotFound:(_Bool)arg4 constrainToAscentAndDescent:(_Bool)arg5 isAtEndOfLine:(_Bool *)arg6 leadingEdge:(_Bool *)arg7;
 - (id)drawableIntersectionRectsForSelection:(id)arg1 inTarget:(id)arg2;
 - (struct CGRect)erasableRectForSelectionRange:(struct _NSRange)arg1;
+- (id)rectsForSelection:(id)arg1 ranges:(id *)arg2 includePaginatedAttachments:(_Bool)arg3;
 - (id)rectsForSelection:(id)arg1 ranges:(id *)arg2;
 - (id)rectsForSelectionRange:(struct _NSRange)arg1 selectionType:(int)arg2 forParagraphMode:(_Bool)arg3 includeRuby:(_Bool)arg4 includePaginatedAttachments:(_Bool)arg5;
 - (id)rectsForSelectionRanges:(id)arg1 selectionType:(int)arg2;

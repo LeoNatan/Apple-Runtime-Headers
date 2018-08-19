@@ -19,6 +19,7 @@
 + (id)imageForToolbarButtonItemOfType:(unsigned long long)arg1;
 + (id)_imageNameForToolbarButtonItemOfType:(unsigned long long)arg1;
 + (id)titleForToolbarButtonItemOfType:(unsigned long long)arg1;
++ (struct CGSize)minimumSize;
 @property __weak AKController *controller; // @synthesize controller=_controller;
 - (void).cxx_destruct;
 - (id)_toolbarButtonItemOfType:(unsigned long long)arg1 style:(unsigned long long)arg2;

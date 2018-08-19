@@ -51,7 +51,7 @@
 - (_Bool)_shouldClearEventsDespiteError:(id)arg1 result:(id)arg2;
 - (_Bool)_shouldAllowEvent:(id)arg1;
 - (id)_prepareEvent:(id)arg1;
-- (void)_postEvents:(id)arg1 reportURL:(id)arg2 logKey:(id)arg3 completion:(CDUnknownBlockType)arg4;
+- (void)_postEvents:(id)arg1 reportURL:(id)arg2 account:(id)arg3 logKey:(id)arg4 completion:(CDUnknownBlockType)arg5;
 - (void)_openDatabaseIfNeeded;
 - (id)_metricsDictionary;
 - (id)_mescalSignatureWithBodyData:(id)arg1 logKey:(id)arg2;
@@ -59,7 +59,7 @@
 - (void)_flushTimerStart;
 - (void)_flushTimerInvalidate;
 - (void)_handleFlushTimer;
-- (id)_createRequestWithURL:(id)arg1 canary:(id)arg2 body:(id)arg3 signature:(id)arg4 logKey:(id)arg5;
+- (id)_createRequestWithURL:(id)arg1 canary:(id)arg2 account:(id)arg3 body:(id)arg4 signature:(id)arg5 logKey:(id)arg6;
 - (id)_baseMetricsURL;
 - (void)_addCancellablePromise:(id)arg1;
 - (void)_batchEventArray:(id)arg1 batchBlock:(CDUnknownBlockType)arg2;

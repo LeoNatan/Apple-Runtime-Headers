@@ -103,7 +103,6 @@
 - (id)_paymentApplicationForAutomaticAuthorization;
 - (_Bool)_passContainsPaymentApplication:(id)arg1;
 - (_Bool)_authenticationAllowed;
-- (_Bool)_isDemoMode;
 - (_Bool)_isTransactionViewVisible;
 - (_Bool)_isVASInfoViewVisible;
 - (_Bool)_isSummaryViewVisible;

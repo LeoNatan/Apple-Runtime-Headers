@@ -37,10 +37,10 @@ __attribute__((visibility("hidden")))
 - (UUIDData_5fbc143e)ownerUID;
 - (void)updateForSortRules:(id)arg1;
 - (id)p_ruleReferenceForTrackedReference:(id)arg1;
-- (unsigned char)p_columnForTrackedReference:(id)arg1;
-- (struct TSCESpanningRangeRef)p_referenceForColumnIndex:(unsigned char)arg1;
-- (void)unregisterFromCalculationEngine;
-- (void)registerWithCalculationEngine:(id)arg1;
+- (unsigned short)p_columnForTrackedReference:(id)arg1;
+- (struct TSCESpanningRangeRef)p_referenceForColumnIndex:(unsigned short)arg1;
+- (void)unregisterFromCalcEngine;
+- (void)registerWithCalcEngine:(id)arg1;
 - (id)initWithTableInfo:(id)arg1 context:(id)arg2;
 
 // Remaining properties

@@ -43,6 +43,7 @@
 - (BOOL)isWiFiNetworkChargeablePublicNetwork;
 - (BOOL)isAppleSWAP;
 - (id)accessoryFriendlyName;
+- (BOOL)isSecureWACDevice;
 - (BOOL)isUnconfiguredAirPrintAccessory;
 - (BOOL)isUnconfiguredAirPlayAccessory;
 - (BOOL)isUnconfiguredAccessory;

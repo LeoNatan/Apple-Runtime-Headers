@@ -6,10 +6,11 @@
 
 #import "NSObject.h"
 
-@class NSPointerArray;
+@class NSObject<OS_dispatch_queue>, NSPointerArray;
 
 @interface CRInvocationChain : NSObject
 {
+    NSObject<OS_dispatch_queue> *_chainedObjectsAccessQueue;
     id <CRInvocationChainDelegate> _delegate;
     NSPointerArray *_chainedObjects;
 }
@@ -17,13 +18,20 @@
 @property(retain, nonatomic, getter=_chainedObjects, setter=_setChainedObjects:) NSPointerArray *chainedObjects; // @synthesize chainedObjects=_chainedObjects;
 @property(nonatomic) __weak id <CRInvocationChainDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (_Bool)_isEligibleForSelector:(SEL)arg1;
+- (void)_enumerateChainedObjectsUsingBlock:(CDUnknownBlockType)arg1;
+- (void)_addChainedObject:(id)arg1;
+- (id)_methodSignatureForSelector:(SEL)arg1;
+- (_Bool)_respondsToSelector:(SEL)arg1;
+- (void)_forwardInvocation:(id)arg1;
+- (void)_accessChainedObjectsSafely:(CDUnknownBlockType)arg1;
 - (_Bool)isEligibleForSelector:(SEL)arg1;
 - (void)enumerateChainedObjectsUsingBlock:(CDUnknownBlockType)arg1;
 - (void)addChainedObject:(id)arg1;
-- (id)_immutableChainedObjects;
 - (id)methodSignatureForSelector:(SEL)arg1;
 - (_Bool)respondsToSelector:(SEL)arg1;
 - (void)forwardInvocation:(id)arg1;
+- (id)init;
 
 @end
 

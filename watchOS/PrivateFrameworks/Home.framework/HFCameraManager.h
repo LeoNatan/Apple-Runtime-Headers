@@ -37,6 +37,8 @@
 - (void).cxx_destruct;
 - (_Bool)_hasStreamRequesters;
 - (_Bool)_hasSnapshotRequesters;
+- (void)executionEnvironmentDidBecomeVisible:(id)arg1;
+- (void)executionEnvironmentDidBecomeOccluded:(id)arg1;
 - (void)executionEnvironmentDidBecomeActive:(id)arg1;
 - (void)executionEnvironmentWillResignActive:(id)arg1;
 - (void)accessoryDidUpdateReachability:(id)arg1;

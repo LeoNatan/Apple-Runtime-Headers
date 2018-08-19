@@ -13,22 +13,22 @@ __attribute__((visibility("hidden")))
 {
     _Bool _queriedModel;
     _Bool _modelIteratorHasCell;
-    unsigned short _numberOfLayoutColumns;
-    unsigned short _numberOfColumns;
-    unsigned short _numberOfRows;
-    struct TSUCellCoord _layoutCellID;
+    unsigned int _numberOfLayoutColumns;
+    unsigned int _numberOfColumns;
+    unsigned int _numberOfRows;
     TSTMasterLayout *_masterLayout;
-    struct TSUCellRect _layoutRange;
+    struct TSUCellCoord _layoutCellID;
     TSTCell *_layoutCell;
     TSTMutableCellIteratorData *_layoutCellData;
     id <TSTCellIteratorData> _modelIteratorData;
+    struct TSUCellRect _layoutRange;
 }
 
 @property(nonatomic) id <TSTCellIteratorData> modelIteratorData; // @synthesize modelIteratorData=_modelIteratorData;
 @property(retain, nonatomic) TSTMutableCellIteratorData *layoutCellData; // @synthesize layoutCellData=_layoutCellData;
-@property(nonatomic) unsigned short numberOfRows; // @synthesize numberOfRows=_numberOfRows;
-@property(nonatomic) unsigned short numberOfColumns; // @synthesize numberOfColumns=_numberOfColumns;
-@property(nonatomic) unsigned short numberOfLayoutColumns; // @synthesize numberOfLayoutColumns=_numberOfLayoutColumns;
+@property(nonatomic) unsigned int numberOfRows; // @synthesize numberOfRows=_numberOfRows;
+@property(nonatomic) unsigned int numberOfColumns; // @synthesize numberOfColumns=_numberOfColumns;
+@property(nonatomic) unsigned int numberOfLayoutColumns; // @synthesize numberOfLayoutColumns=_numberOfLayoutColumns;
 @property(nonatomic) _Bool modelIteratorHasCell; // @synthesize modelIteratorHasCell=_modelIteratorHasCell;
 @property(nonatomic) _Bool queriedModel; // @synthesize queriedModel=_queriedModel;
 @property(readonly, nonatomic) TSTCell *layoutCell; // @synthesize layoutCell=_layoutCell;

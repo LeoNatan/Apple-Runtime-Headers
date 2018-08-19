@@ -8,24 +8,22 @@
 
 #import "NSCopying.h"
 
-@class NSDate, NSNumber, NSString, TSTUidRangeRef;
+@class NSDate, NSNumber, NSString, TSTUIDRectRef;
 
 __attribute__((visibility("hidden")))
 @interface TSTFormulaPredArg : NSObject <NSCopying>
 {
     int _type;
     id _objcData;
-    struct TSCECellRef _cellRef;
+    RefTypeHolder_a8d05c9a _baseCellRef;
     struct TSCERelativeCellRef _relativeCellRef;
     _Bool _hasRelativeCellRef;
-    TSTUidRangeRef *_uidRangeRef;
-    struct TSUCellCoord _hostCellCoord;
+    TSTUIDRectRef *_uidRectRef;
+    struct TSCECategoryRef _categoryRef;
+    struct TSUModelCellCoord _hostCellCoord;
+    struct TSUPreserveFlags _preserveFlags;
     union {
         _Bool _boolValue;
-        struct {
-            _Bool _columnIsAbsolute;
-            _Bool _rowIsAbsolute;
-        } _stickyBits;
         struct {
             double _value;
             int _units;
@@ -34,39 +32,45 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)defaultPredicateArg;
-@property(nonatomic) struct TSUCellCoord hostCellCoord; // @synthesize hostCellCoord=_hostCellCoord;
+@property(nonatomic) struct TSUModelCellCoord hostCellCoord; // @synthesize hostCellCoord=_hostCellCoord;
+@property(retain, nonatomic) TSTUIDRectRef *uidRectRef; // @synthesize uidRectRef=_uidRectRef;
 @property(readonly, nonatomic) _Bool hasRelativeCellRef; // @synthesize hasRelativeCellRef=_hasRelativeCellRef;
 @property(readonly, nonatomic) int type; // @synthesize type=_type;
 - (id).cxx_construct;
-- (struct TSCEFormulaCreator)formulaCreatorForPredArgAtHostCell:(const struct TSUCellCoord *)arg1;
+- (void).cxx_destruct;
+- (struct TSCEFormulaCreator)formulaCreatorForPredArgAtHostCell:(const struct TSCECellRef *)arg1 calcEngine:(id)arg2;
 - (id)description;
-- (_Bool)isEqual:(id)arg1 atHostCoord:(struct TSUCellCoord)arg2;
+- (_Bool)isEqual:(id)arg1 atHostCoord:(struct TSUModelCellCoord)arg2;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(nonatomic) int durationUnits;
 @property(nonatomic) double durationValue;
 - (id)initWithDuration:(double)arg1 units:(int)arg2;
-@property(nonatomic) _Bool rowIsAbsolute;
-@property(nonatomic) _Bool columnIsAbsolute;
-- (void)setCellReference:(id)arg1 columnIsAbsolute:(_Bool)arg2 rowIsAbsolute:(_Bool)arg3;
-- (void)setCellRef:(const struct TSCECellRef *)arg1 columnIsAbsolute:(_Bool)arg2 rowIsAbsolute:(_Bool)arg3;
-- (void)setCellReference:(id)arg1;
-- (id)cellReferenceForHostCoord:(struct TSUCellCoord)arg1;
+- (void)setBaseCellReference:(id)arg1 preserveColumn:(_Bool)arg2 preserveRow:(_Bool)arg3;
+- (void)setBaseCellReference:(id)arg1;
 - (id)cellReference;
-- (id)initWithCellReference:(id)arg1 columnIsAbsolute:(_Bool)arg2 rowIsAbsolute:(_Bool)arg3;
-- (void)setCellRef:(const struct TSCECellRef *)arg1;
-- (struct TSCECellRef)cellRefForHostCoord:(struct TSUCellCoord)arg1;
-- (const struct TSCECellRef *)cellRef;
-- (id)initWithCellRef:(const struct TSCECellRef *)arg1 columnIsAbsolute:(_Bool)arg2 rowIsAbsolute:(_Bool)arg3;
-@property(retain, nonatomic) TSTUidRangeRef *uidRangeRef;
-- (_Bool)hasUidRangeRef;
-- (id)initWithUidRangeRef:(id)arg1;
+- (id)initWithBaseCellReference:(id)arg1 preserveColumn:(_Bool)arg2 preserveRow:(_Bool)arg3;
+- (void)setBaseCellRef:(const RefTypeHolder_a8d05c9a *)arg1 preserveColumn:(_Bool)arg2 preserveRow:(_Bool)arg3;
+- (void)setBaseCellRef:(const RefTypeHolder_a8d05c9a *)arg1 preserveFlags:(const struct TSUPreserveFlags *)arg2;
+- (void)setBaseCellRef:(const RefTypeHolder_a8d05c9a *)arg1;
+- (struct TSCECellRef)cellRefForHostCoord:(struct TSUModelCellCoord)arg1;
+- (const RefTypeHolder_a8d05c9a *)baseCellRef;
+- (id)initWithBaseCellRef:(const RefTypeHolder_a8d05c9a *)arg1 preserveFlags:(const struct TSUPreserveFlags *)arg2;
+@property(nonatomic) struct TSCECategoryRef categoryRef;
+@property(readonly, nonatomic) _Bool hasCategoryRef;
+- (id)initWithCategoryRef:(const struct TSCECategoryRef *)arg1;
+- (void)setUIDRectRef:(id)arg1;
+- (_Bool)hasUidRectRef;
+- (id)initWithUIDRectRef:(id)arg1;
 - (void)setRelativeCellRef:(const struct TSCERelativeCellRef *)arg1;
 - (const struct TSCERelativeCellRef *)relativeCellRef;
 - (id)initWithRelativeCellRef:(const struct TSCERelativeCellRef *)arg1;
 @property(copy, nonatomic) NSString *string;
 - (id)initWithString:(id)arg1;
 @property(retain, nonatomic) NSDate *date;
+@property(readonly, nonatomic) _Bool preserveColumn;
+@property(readonly, nonatomic) _Bool preserveRow;
+@property(nonatomic) struct TSUPreserveFlags preserveFlags;
 - (id)initWithDate:(id)arg1;
 @property(nonatomic) double numberValue;
 @property(retain, nonatomic) NSNumber *number;
@@ -74,7 +78,6 @@ __attribute__((visibility("hidden")))
 - (id)initWithDouble:(double)arg1;
 @property(nonatomic) _Bool boolValue;
 - (id)initWithBool:(_Bool)arg1;
-- (void)dealloc;
 - (id)init;
 
 @end

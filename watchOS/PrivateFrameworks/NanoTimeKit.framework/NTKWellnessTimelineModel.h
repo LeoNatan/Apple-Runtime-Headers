@@ -38,6 +38,7 @@
 - (void)getWellnessEntriesBeforeDate:(id)arg1 limit:(unsigned int)arg2 handler:(CDUnknownBlockType)arg3;
 - (void)getWellnessEntriesAfterDate:(id)arg1 limit:(unsigned int)arg2 handler:(CDUnknownBlockType)arg3;
 - (void)getCurrentWellnessEntryWithHandler:(CDUnknownBlockType)arg1;
+- (id)switcherWelnessEntry;
 - (id)timelineEndDate;
 - (id)timelineStartDate;
 - (void)removeSubscriber:(id)arg1;

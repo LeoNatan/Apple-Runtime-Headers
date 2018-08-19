@@ -70,6 +70,7 @@
 - (void)updateFindMyFriendsStateBasedOnRestriction;
 - (void)updateMutableStateBasedOnRestriction;
 - (void)disableAfterLoginConfirmation:(id)arg1;
+- (void)setSOSEntityAuthorized:(id)arg1 specifier:(id)arg2;
 - (void)setEntityAuthorized:(id)arg1 specifier:(id)arg2;
 - (void)_setEntityAuthorized:(_Bool)arg1 specifier:(id)arg2;
 - (id)isEntityAuthorized:(id)arg1;

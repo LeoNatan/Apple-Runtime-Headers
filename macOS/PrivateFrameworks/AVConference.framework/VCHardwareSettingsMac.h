@@ -25,6 +25,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)sharedInstance;
+@property(readonly, nonatomic) BOOL isDeviceLargeScreen;
 @property(readonly, nonatomic) unsigned int maxActiveVideoDecoders;
 @property(readonly, nonatomic) unsigned int maxActiveVideoEncoders;
 @property(readonly, nonatomic) BOOL useSoftFramerateSwitching;

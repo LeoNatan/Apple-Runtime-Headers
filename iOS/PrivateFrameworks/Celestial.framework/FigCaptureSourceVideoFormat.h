@@ -13,7 +13,6 @@
     _Bool _isMultiStreamFormat;
     _Bool _isExternalFormat;
     NSArray *_frontEndScalerCompanionFormats;
-    FigCaptureSourceCompanionFormat *_option3;
     FigCaptureSourceCompanionFormat *_option4;
     FigCaptureSourceCompanionFormat *_depthCompanionFormat;
     NSArray *_supportedDepthDataFormats;

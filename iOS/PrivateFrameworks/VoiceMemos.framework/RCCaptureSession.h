@@ -8,18 +8,21 @@
 
 #import "RCWaveformDataSourceObserver.h"
 
-@class AVAudioEngine, AVAudioFile, AVURLAsset, NSDate, NSError, NSMutableOrderedSet, NSObject<OS_dispatch_group>, NSString, RCAVState, RCAudioSessionRoutingAssertion, RCCaptureInputDevice, RCCaptureInputWaveformDataSource, SBSLockScreenContentAssertion;
+@class AVAudioEngine, AVURLAsset, NSDate, NSError, NSMutableOrderedSet, NSObject<OS_dispatch_group>, NSString, RCAVState, RCAudioSessionRoutingAssertion, RCCaptureInputDevice, RCCaptureInputWaveformDataSource, RCSSavedRecordingService, SBSLockScreenContentAssertion;
 
 @interface RCCaptureSession : NSObject <RCWaveformDataSourceObserver>
 {
     long long _writerState;
     AVAudioEngine *_captureEngine;
-    AVAudioFile *_captureFile;
+    RCSSavedRecordingService *_sharedService;
+    id <RCSAudioFile> _captureFile;
     AVURLAsset *_capturedAsset;
     NSError *_captureError;
     double _storeDemoTimeLimit;
     unsigned long long _beginCapturedHostTime;
+    unsigned long long _beginCapturedSampleCount;
     double _capturedDisplayTime;
+    double _capturedClockDelta;
     unsigned long long _backgroundTaskIdentifier;
     NSObject<OS_dispatch_group> *_endCaptureTaskGroup;
     RCAudioSessionRoutingAssertion *_captureRouteAssertion;

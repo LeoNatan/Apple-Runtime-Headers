@@ -29,6 +29,7 @@
 + (_Bool)resolveInstanceMethod:(SEL)arg1;
 + (int)_intentHandlingStatusFromCode:(int)arg1;
 + (_Bool)_appLaunchRequestedFromCode:(int)arg1;
++ (int)_codeFromIntentResponseCode:(int)arg1;
 + (int)_typeFromCode:(int)arg1;
 + (int)_codeFromType:(int)arg1 errorCode:(int)arg2 appLaunchRequested:(_Bool)arg3;
 + (id)responseFailure;

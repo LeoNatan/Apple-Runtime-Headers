@@ -19,5 +19,6 @@
 - (unsigned long long)menuItem:(NSMenuItem *)arg1 preferredEdgeForPoint:(struct CGPoint)arg2;
 - (id <QLPreviewItem>)menuItem:(NSMenuItem *)arg1 previewItemAtPoint:(struct CGPoint)arg2;
 - (NSView *)menuItem:(NSMenuItem *)arg1 viewAtScreenPoint:(struct CGPoint)arg2;
+- (BOOL)menuItem:(NSMenuItem *)arg1 shouldPositionNearPreviewItemAtScreenPoint:(struct CGPoint)arg2;
 @end
 

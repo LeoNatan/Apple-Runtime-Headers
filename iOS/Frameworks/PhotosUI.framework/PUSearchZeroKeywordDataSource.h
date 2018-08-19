@@ -8,24 +8,20 @@
 
 #import "PHPhotoLibraryChangeObserver.h"
 
-@class NSArray, NSObject<OS_dispatch_queue>, NSString, NSUserDefaults, PHFetchResult;
+@class NSArray, NSObject<OS_dispatch_queue>, NSString, PHFetchResult;
 
 __attribute__((visibility("hidden")))
 @interface PUSearchZeroKeywordDataSource : NSObject <PHPhotoLibraryChangeObserver>
 {
     _Bool _fetchInProgress;
-    _Bool _isShowingHolidayCalendarEvents;
     id <PUSearchZeroKeywordChangeDelegate> _delegate;
     PHFetchResult *_peopleFetchResult;
     NSObject<OS_dispatch_queue> *_fetchQueue;
-    NSUserDefaults *_userPreferencesDefaults;
     NSArray *_sections;
 }
 
 + (id)zeroKeywordLog;
 @property(copy, nonatomic) NSArray *sections; // @synthesize sections=_sections;
-@property(retain, nonatomic) NSUserDefaults *userPreferencesDefaults; // @synthesize userPreferencesDefaults=_userPreferencesDefaults;
-@property(nonatomic) _Bool isShowingHolidayCalendarEvents; // @synthesize isShowingHolidayCalendarEvents=_isShowingHolidayCalendarEvents;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *fetchQueue; // @synthesize fetchQueue=_fetchQueue;
 @property(retain, nonatomic) PHFetchResult *peopleFetchResult; // @synthesize peopleFetchResult=_peopleFetchResult;
 @property(nonatomic) _Bool fetchInProgress; // @synthesize fetchInProgress=_fetchInProgress;
@@ -35,11 +31,6 @@ __attribute__((visibility("hidden")))
 - (id)debugDictionary;
 - (id)tapToRadarAttachments;
 - (void)ppt_prepareZeroKeywordRequest:(CDUnknownBlockType)arg1;
-- (_Bool)_shouldDisplayItemOfType:(long long)arg1;
-- (void)_initializeUserPreferences;
-- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
-- (void)_removeUserPreferencesObserver;
-- (void)_addUserPreferencesObserver;
 - (void)photoLibraryDidChange:(id)arg1;
 - (id)_viewModelForKeywordDictionary:(id)arg1 ofType:(long long)arg2 peopleByKeyword:(id)arg3;
 - (void)_fetchAssetsForAssetViewModels:(id)arg1;

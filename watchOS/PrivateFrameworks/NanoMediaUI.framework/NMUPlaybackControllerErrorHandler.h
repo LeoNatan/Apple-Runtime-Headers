@@ -22,7 +22,7 @@
 - (void)_presentFailureWithTitle:(id)arg1 message:(id)arg2;
 - (void)_radioDidFailToPlayItem:(id)arg1 error:(id)arg2 errorType:(int)arg3;
 - (void)_musicDidFailToPlayItem:(id)arg1 error:(id)arg2 errorType:(int)arg3;
-- (id)_alertPresentingViewController;
+- (id)_alertPresentingViewControllerWithShouldPresentOnModalView:(_Bool)arg1;
 - (void)playbackControllerDidPauseForLeaseEnd:(id)arg1;
 - (void)playbackController:(id)arg1 didFailToPlayItem:(id)arg2 error:(id)arg3 errorType:(int)arg4;
 - (void)playbackController:(id)arg1 didFailToActivateWithError:(id)arg2 resolution:(CDUnknownBlockType)arg3;

@@ -33,6 +33,7 @@
 - (void)_registerForNotifications;
 - (double)_scoreForSecondsRelativeToNow:(double)arg1;
 - (id)_filterOutAllDayAndMultiDayEvents:(id)arg1;
+- (_Bool)_inObservedCalendars:(id)arg1;
 - (_Bool)_isAllDayOrMultiDay:(id)arg1;
 - (id)_predicateForRange:(struct _NSRange)arg1;
 - (id)_loadCalendars;

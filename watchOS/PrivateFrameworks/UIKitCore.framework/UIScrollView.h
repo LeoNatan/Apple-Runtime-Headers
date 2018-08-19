@@ -190,6 +190,7 @@
         unsigned int observingBoundingPathChanges:1;
         unsigned int resetsBoundingPathForSubtree:1;
         unsigned int scrubbing:3;
+        unsigned int alwaysAppliesKeyboardBottomInsetAdjustment:1;
     } _scrollViewFlags;
     NSTimer *_trackingWatchdogTimer;
     _Bool _useContentDimensionVariablesForConstraintLowering;
@@ -457,6 +458,8 @@
 - (void)_setTransfersScrollToContainer:(_Bool)arg1;
 - (_Bool)_transfersScrollToContainer;
 @property(nonatomic) _Bool alwaysBounceVertical;
+- (void)_setAlwaysAppliesKeyboardBottomInsetAdjustment:(_Bool)arg1;
+- (_Bool)_alwaysAppliesKeyboardBottomInsetAdjustment;
 - (float)keyboardBottomInsetAdjustmentDelta;
 - (_Bool)updateInsetBottomDuringKeyboardDismiss;
 - (void)setUpdateInsetBottomDuringKeyboardDismiss:(_Bool)arg1;

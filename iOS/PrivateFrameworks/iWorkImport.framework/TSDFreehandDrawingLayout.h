@@ -27,6 +27,7 @@ __attribute__((visibility("hidden")))
 - (void)transferLayoutGeometryToInfo:(id)arg1 withAdditionalTransform:(struct CGAffineTransform)arg2 assertIfInDocument:(_Bool)arg3;
 - (id)additionalInfosForChildLayouts;
 @property(readonly, nonatomic) _Bool shouldSpacerShapeProvideSpace;
+@property(readonly, nonatomic) struct CGRect frameForMovieExport;
 - (struct CGSize)minimumSize;
 - (void)processChangedProperty:(int)arg1;
 @property(readonly, nonatomic) TSDFreehandDrawingInfo *freehandInfo;

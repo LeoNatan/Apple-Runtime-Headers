@@ -16,10 +16,12 @@ __attribute__((visibility("hidden")))
     TSPCancellationState *_cancellationState;
     struct vector<TSP::FinalizeHandlerItem *, std::__1::allocator<TSP::FinalizeHandlerItem *>> _order;
     struct unordered_map<const long long, TSP::FinalizeHandlerItem, TSP::IdentifierHash, std::__1::equal_to<const long long>, std::__1::allocator<std::__1::pair<const long long, TSP::FinalizeHandlerItem>>> _map;
+    struct FinalizeHandlerItem *_currentItem;
 }
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
+- (long long)currentObjectIdentifier;
 - (_Bool)runFinalizeHandlers;
 - (void)runFinalizeHandlerForItem:(struct FinalizeHandlerItem *)arg1;
 - (void)visitItemForCycleDetection:(struct FinalizeHandlerItem *)arg1;

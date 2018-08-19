@@ -27,7 +27,6 @@ __attribute__((visibility("hidden")))
     NSMutableArray *_unknownKeyIndexList;
 }
 
-- (void)updateSendKeyMaterialWithIndex:(id)arg1 delay:(double)arg2;
 - (struct opaqueRTCReporting *)reportingAgent;
 - (void)pruneRecvKeyMaterialWithDelay:(double)arg1;
 - (void)pruneSendKeyMaterialWithDelay:(double)arg1;

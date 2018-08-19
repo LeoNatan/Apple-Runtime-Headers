@@ -51,7 +51,9 @@
 }
 
 + (id)_UNCategoryFromNotificationType:(long long)arg1;
-+ (id)requestIdentifierByNotificationType:(long long)arg1 keyObjectUUID:(id)arg2;
++ (id)requestIdentifierByNotificationType:(long long)arg1 keyObjectUUID:(id)arg2 photosBatchID:(id)arg3;
+@property(readonly) NSString *commentText; // @synthesize commentText=_commentText;
+@property(readonly) NSString *photosBatchID; // @synthesize photosBatchID=_photosBatchID;
 @property(readonly) _Bool offerToReportAsJunk; // @synthesize offerToReportAsJunk=_offerToReportAsJunk;
 @property(retain) NSData *thumbnailImageData; // @synthesize thumbnailImageData=_thumbnailImageData;
 @property(readonly) NSString *interestingMemoryUUID; // @synthesize interestingMemoryUUID=_interestingMemoryUUID;

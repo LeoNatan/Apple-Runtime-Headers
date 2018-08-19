@@ -36,7 +36,6 @@ __attribute__((visibility("hidden")))
 - (id)_URLRepresentation;
 - (id)_initWithURLRepresentation:(id)arg1;
 - (void)_loadImageDataAndSizeWithHelper:(id)arg1 accessSpecifier:(id)arg2 completion:(CDUnknownBlockType)arg3;
-- (id)_in_bundleImageFileWritingPathWithFileName:(id)arg1;
 
 @end
 

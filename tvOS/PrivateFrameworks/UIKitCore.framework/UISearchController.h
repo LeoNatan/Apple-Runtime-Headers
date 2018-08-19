@@ -102,6 +102,7 @@
 - (id)_presentationControllerForPresentedController:(id)arg1 presentingController:(id)arg2 sourceController:(id)arg3;
 - (void)_updateBarPresentationStyleForPresentingViewController:(id)arg1;
 - (_Bool)_allowFormSheetStylePresentation;
+- (id)focusItemContainer;
 - (void)_removeCarPlayLimitedUIObserver;
 - (void)_limitedUIDidChangeAnimated:(_Bool)arg1;
 - (void)_setCarPlayLimitedUIViewController:(id)arg1;

@@ -30,6 +30,8 @@
 @property(nonatomic) _Bool confirmed;
 @property(nonatomic) _Bool hasBackgroundLaunch;
 @property(nonatomic) _Bool backgroundLaunch;
+@property(readonly, nonatomic) _Bool hasSystemUIExtensionBundleId;
+@property(copy, nonatomic) NSString *systemUIExtensionBundleId;
 @property(readonly, nonatomic) _Bool hasSystemExtensionBundleId;
 @property(copy, nonatomic) NSString *systemExtensionBundleId;
 @property(readonly, nonatomic) unsigned int requiredEntitlementsCount;

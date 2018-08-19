@@ -6,7 +6,7 @@
 
 #import "UIView.h"
 
-@class MPButton, MPCPlayerPath, MPUMarqueeView, MTMaterialView, MediaControlsRouteLabel, NSString, UIButton, UIImageView, UILabel;
+@class MPButton, MPCPlayerPath, MPUMarqueeView, MTMaterialView, MediaControlsRouteLabel, MediaControlsRoutingButtonView, NSString, UIButton, UIImageView, UILabel;
 
 @interface MediaControlsHeaderView : UIView
 {
@@ -21,9 +21,8 @@
     MediaControlsRouteLabel *_routeLabel;
     NSString *_primaryString;
     NSString *_secondaryString;
-    MPButton *_routingButton;
+    MediaControlsRoutingButtonView *_routingButton;
     MPButton *_doneButton;
-    MPButton *_playPauseButton;
     UIButton *_launchNowPlayingAppButton;
     long long _buttonType;
     MTMaterialView *_artworkBackground;
@@ -32,11 +31,9 @@
     UILabel *_primaryLabel;
     MPUMarqueeView *_secondaryMarqueeView;
     UILabel *_secondaryLabel;
-    MTMaterialView *_buttonBackground;
     struct CGSize _overrideSize;
 }
 
-@property(retain, nonatomic) MTMaterialView *buttonBackground; // @synthesize buttonBackground=_buttonBackground;
 @property(nonatomic) _Bool shouldUseOverrideSize; // @synthesize shouldUseOverrideSize=_shouldUseOverrideSize;
 @property(retain, nonatomic) UILabel *secondaryLabel; // @synthesize secondaryLabel=_secondaryLabel;
 @property(retain, nonatomic) MPUMarqueeView *secondaryMarqueeView; // @synthesize secondaryMarqueeView=_secondaryMarqueeView;
@@ -49,9 +46,8 @@
 @property(nonatomic) long long buttonType; // @synthesize buttonType=_buttonType;
 @property(nonatomic) _Bool marqueeEnabled; // @synthesize marqueeEnabled=_marqueeEnabled;
 @property(retain, nonatomic) UIButton *launchNowPlayingAppButton; // @synthesize launchNowPlayingAppButton=_launchNowPlayingAppButton;
-@property(retain, nonatomic) MPButton *playPauseButton; // @synthesize playPauseButton=_playPauseButton;
 @property(retain, nonatomic) MPButton *doneButton; // @synthesize doneButton=_doneButton;
-@property(retain, nonatomic) MPButton *routingButton; // @synthesize routingButton=_routingButton;
+@property(retain, nonatomic) MediaControlsRoutingButtonView *routingButton; // @synthesize routingButton=_routingButton;
 @property(copy, nonatomic) NSString *secondaryString; // @synthesize secondaryString=_secondaryString;
 @property(copy, nonatomic) NSString *primaryString; // @synthesize primaryString=_primaryString;
 @property(retain, nonatomic) MediaControlsRouteLabel *routeLabel; // @synthesize routeLabel=_routeLabel;

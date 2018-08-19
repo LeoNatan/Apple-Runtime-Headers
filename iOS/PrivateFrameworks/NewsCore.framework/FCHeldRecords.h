@@ -18,6 +18,7 @@
 @property(retain, nonatomic) NSDictionary *interestTokensByID; // @synthesize interestTokensByID=_interestTokensByID;
 @property(retain, nonatomic) NSDictionary *recordsByID; // @synthesize recordsByID=_recordsByID;
 - (void).cxx_destruct;
+- (id)heldRecordsForIDs:(id)arg1;
 - (id)heldRecordsPassingTest:(CDUnknownBlockType)arg1;
 - (id)interestTokenForID:(id)arg1;
 - (id)recordWithID:(id)arg1;

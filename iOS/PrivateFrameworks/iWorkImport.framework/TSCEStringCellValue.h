@@ -12,12 +12,14 @@ __attribute__((visibility("hidden")))
     struct TSCEStringValue *_stringValue;
 }
 
+- (void)setPopulatedCustomFormat:(id)arg1;
 - (void)encodeToArchive:(struct StringCellValueArchive *)arg1;
 - (id)initWithArchive:(const struct StringCellValueArchive *)arg1 locale:(id)arg2;
 - (long long)compareToCellValue:(id)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqualToCellValue:(id)arg1;
+- (id)canonicalKeyString;
 - (id)displayString;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)format;

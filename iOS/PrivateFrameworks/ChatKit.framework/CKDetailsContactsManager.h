@@ -25,6 +25,11 @@
 @property(nonatomic) __weak id <CKDetailsContactsManagerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(copy, nonatomic) NSArray *contactsViewModels; // @synthesize contactsViewModels=_contactsViewModels;
 - (void).cxx_destruct;
+- (void)_setPreferredCallServiceToIDMap:(id)arg1;
+- (id)_preferredCallServiceToIDMap;
+- (_Bool)_preferredRoutesDisabledViaServerBag;
+- (void)setPreferredCallService:(unsigned long long)arg1 forID:(id)arg2;
+- (unsigned long long)preferredCallServiceForID:(id)arg1;
 - (void)_refreshFaceTimeIDSStatusWithCompletion:(CDUnknownBlockType)arg1;
 - (long long)_facetimeAudioIDStatusForEntity:(id)arg1;
 - (long long)_facetimeIDStatusForEntity:(id)arg1;
@@ -37,8 +42,9 @@
 - (_Bool)_showPhoneButtonForEntity:(id)arg1;
 - (void)_startFacetimeCommunicationForEntity:(id)arg1 audioOnly:(_Bool)arg2;
 - (void)_startCallWithEntity:(id)arg1 phoneAddress:(id)arg2;
-- (void)_startCommunicationForEntity:(id)arg1;
+- (void)_startCommunicationForEntity:(id)arg1 usePreferredRouteIfAvailable:(_Bool)arg2;
 - (void)_startMessageWithEntity:(id)arg1;
+- (void)startCommunicationForEntity:(id)arg1 action:(unsigned long long)arg2 address:(id)arg3 usePreferredRouteIfAvailable:(_Bool)arg4;
 - (void)startCommunicationForEntity:(id)arg1 action:(unsigned long long)arg2 address:(id)arg3;
 - (void)_handleAddressBookChange:(id)arg1;
 - (_Bool)_conversationHasLeft;

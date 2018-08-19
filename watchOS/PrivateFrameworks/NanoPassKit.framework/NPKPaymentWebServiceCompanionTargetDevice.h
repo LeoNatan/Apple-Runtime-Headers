@@ -40,6 +40,7 @@
 - (id)_sendProtobuf:(id)arg1 responseExpected:(_Bool)arg2 extraOptions:(id)arg3;
 - (id)_sendProtobuf:(id)arg1 responseExpected:(_Bool)arg2;
 - (void)_setOrResetCleanupTimerForRequest:(id)arg1;
+- (void)claimSecureElementForCurrentUserWithCompletion:(CDUnknownBlockType)arg1;
 - (_Bool)paymentWebServiceSupportsPeerPaymentRegistration:(id)arg1;
 - (void)handleUpdatedPeerPaymentWebServiceContext:(id)arg1;
 - (void)handleTransactionDefaultsNeededRequest:(id)arg1;

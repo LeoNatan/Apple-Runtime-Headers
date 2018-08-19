@@ -12,6 +12,7 @@
 
 @interface PUICEmojiCategoriesViewController : PUICQuickboardEmojiToSelectViewController <PUICQuickboardModalNavigationControllerContextProvider>
 {
+    _Bool _supportsStickers;
     UIButton *_cancelButton;
     id <PUICRecentEmojiViewDelegate> _emojiViewDelegate;
 }
@@ -25,7 +26,7 @@
 - (void)viewDidLoad;
 - (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
-- (id)initWithDelegate:(id)arg1;
+- (id)initWithDelegate:(id)arg1 supportsStickers:(_Bool)arg2;
 
 @end
 

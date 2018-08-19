@@ -15,7 +15,7 @@
 }
 
 + (id)providerWithCoordinator:(id)arg1 rootViewController:(id)arg2;
-@property(retain) UIViewController *rootViewController; // @synthesize rootViewController=_rootViewController;
+@property __weak UIViewController *rootViewController; // @synthesize rootViewController=_rootViewController;
 @property(retain) PSSpecifier *setupScreenTimeSpecifier; // @synthesize setupScreenTimeSpecifier=_setupScreenTimeSpecifier;
 - (void).cxx_destruct;
 - (void)saveValuesForModel:(id)arg1;

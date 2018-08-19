@@ -20,15 +20,13 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool elementUndefined; // @synthesize elementUndefined=mElementUndefined;
 @property(readonly, nonatomic) TSCHMultiDataAnimatingFrameLayer *labelLayer; // @synthesize labelLayer=mLabelLayer;
 @property(readonly, nonatomic) CALayer<TSCHMultiDataElementShapeLayer> *elementLayer; // @synthesize elementLayer=mElementLayer;
+- (void).cxx_destruct;
 - (void)addAnimationForKey:(id)arg1 values:(id)arg2 keyTimes:(id)arg3 toAnimationInfo:(id)arg4;
 - (void)setOpacity:(double)arg1;
 - (void)setContentsScale:(double)arg1;
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
-- (void)dealloc;
 - (id)initWithElementLayer:(id)arg1;
-- (id)init;
-- (id)initWithLayer:(id)arg1;
 
 @end
 

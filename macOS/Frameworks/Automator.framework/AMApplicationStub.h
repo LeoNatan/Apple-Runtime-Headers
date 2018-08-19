@@ -17,6 +17,7 @@
 - (void).cxx_destruct;
 - (BOOL)runWorkflowAtPath:(id)arg1 withInput:(id)arg2 error:(id *)arg3;
 - (BOOL)loadWorkflowAtPath:(id)arg1 error:(id *)arg2;
+- (void)_presentRecoverableErrorAndTerminateIfNeeded:(id)arg1;
 @property(readonly, nonatomic) BOOL stayOpen;
 @property(nonatomic) BOOL displayInMenuBar;
 - (id)init;

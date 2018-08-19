@@ -8,7 +8,7 @@
 
 #import "MRNowPlayingClientState.h"
 
-@class NSArray, NSMutableArray, NSObject<OS_dispatch_queue>, _MRDeviceInfoMessageProtobuf, _MRNowPlayingClientProtobuf, _MROriginProtobuf;
+@class MRApplicationActivity, NSArray, NSMutableArray, NSObject<OS_dispatch_queue>, _MRDeviceInfoMessageProtobuf, _MRNowPlayingClientProtobuf, _MROriginProtobuf;
 
 @interface MRNowPlayingOriginClient : NSObject <MRNowPlayingClientState>
 {
@@ -20,6 +20,7 @@
     NSMutableArray *_applicationPickedRoutes;
     unsigned int _inputMode;
     unsigned int _volumeCapabilities;
+    MRApplicationActivity *_activity;
     _MRDeviceInfoMessageProtobuf *_deviceInfo;
     CDUnknownBlockType _playbackQueueCallback;
     CDUnknownBlockType _playbackQueueTransactionCallback;
@@ -45,6 +46,7 @@
 - (void)removeClient:(id)arg1;
 - (id)nowPlayingClientForPlayerPath:(id)arg1;
 - (id)existingNowPlayingClientForPlayerPath:(id)arg1;
+@property(retain, nonatomic) MRApplicationActivity *activity;
 @property(retain, nonatomic) _MRNowPlayingClientProtobuf *activeNowPlayingClient; // @synthesize activeNowPlayingClient=_activeNowPlayingClient;
 @property(nonatomic) BOOL canBeNowPlayingApp;
 @property(readonly, nonatomic) _MRDeviceInfoMessageProtobuf *deviceInfo;

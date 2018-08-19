@@ -54,8 +54,9 @@
 + (_Bool)iMessageEnabled;
 + (_Bool)mmsEnabled;
 + (_Bool)smsEnabled;
++ (_Bool)iMessageEnabledForSenderLastAddressedHandle:(id)arg1 simID:(id)arg2 previousService:(id)arg3;
 + (_Bool)iMessageEnabledForSenderLastAddressedHandle:(id)arg1 simID:(id)arg2;
-+ (_Bool)_hasAlias:(id)arg1 onAccountForService:(id)arg2;
++ (_Bool)hasAlias:(id)arg1 onAccountForService:(id)arg2;
 + (_Bool)mmsEnabledforPhoneNumber:(id)arg1 simID:(id)arg2;
 + (id)operationalServicesWithCapability:(unsigned long long)arg1;
 + (id)connectedServicesWithCapability:(unsigned long long)arg1;

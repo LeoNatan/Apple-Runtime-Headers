@@ -23,6 +23,7 @@
     _Bool _mediaStalled;
     _Bool _videoDegraded;
     _Bool _videoPaused;
+    _Bool _videoMirrored;
     _Bool _blocked;
     _Bool _emergency;
     _Bool _sos;
@@ -121,6 +122,7 @@
 @property(nonatomic) int cameraType; // @synthesize cameraType=_cameraType;
 @property(nonatomic) struct CGRect remoteVideoContentRect; // @synthesize remoteVideoContentRect=_remoteVideoContentRect;
 @property(nonatomic) struct CGSize remoteAspectRatio; // @synthesize remoteAspectRatio=_remoteAspectRatio;
+@property(nonatomic, getter=isVideoMirrored) _Bool videoMirrored; // @synthesize videoMirrored=_videoMirrored;
 @property(nonatomic, getter=isVideoPaused) _Bool videoPaused; // @synthesize videoPaused=_videoPaused;
 @property(nonatomic, getter=isVideoDegraded) _Bool videoDegraded; // @synthesize videoDegraded=_videoDegraded;
 @property(nonatomic, getter=isMediaStalled) _Bool mediaStalled; // @synthesize mediaStalled=_mediaStalled;

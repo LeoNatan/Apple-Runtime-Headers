@@ -6,6 +6,8 @@
 
 #import "NSObject.h"
 
+@class NSString;
+
 @interface SRFPreferences : NSObject
 {
 }
@@ -22,6 +24,7 @@
 - (void)_killall:(id)arg1;
 @property(nonatomic, getter=isTypeToSiriEnabled) BOOL typeToSiriEnabled;
 @property(nonatomic, getter=isLaunchAgentEnabled) BOOL launchAgentEnabled;
+@property(readonly) NSString *languageCode;
 @property(nonatomic, getter=assistantIsEnabled) BOOL assistantIsEnabled;
 
 @end

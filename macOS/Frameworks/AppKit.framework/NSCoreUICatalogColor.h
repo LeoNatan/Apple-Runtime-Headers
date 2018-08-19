@@ -18,6 +18,7 @@ __attribute__((visibility("hidden")))
 + (id)_bundleFromCatalogName:(id)arg1;
 + (id)_catalogNameFromBundle:(id)arg1;
 @property(retain) NSBundle *bundle; // @synthesize bundle=_bundle;
+- (BOOL)_getSemanticallyEquivalentVisualEffectMaterial:(long long *)arg1;
 - (id)resolvedColor;
 - (long long)_bestMatchingDisplayGamutFor:(id)arg1;
 - (void)dealloc;

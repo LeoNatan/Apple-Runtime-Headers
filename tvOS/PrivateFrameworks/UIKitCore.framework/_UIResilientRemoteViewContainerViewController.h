@@ -33,6 +33,7 @@
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)invalidate;
 - (void)dealloc;
+- (void)viewWillLayoutSubviews;
 - (void)endDelayingDisplayOfRemoteController;
 - (void)delayDisplayOfRemoteController;
 - (void)_displayRemoteViewController;

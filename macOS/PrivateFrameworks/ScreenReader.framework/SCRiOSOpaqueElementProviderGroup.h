@@ -21,8 +21,11 @@ __attribute__((visibility("hidden")))
 - (BOOL)_moveToNextContentSibling;
 - (BOOL)focusInto:(id)arg1 event:(id)arg2;
 - (void)setFocusedChild:(id)arg1;
+- (BOOL)moveOutWithEvent:(id)arg1 request:(id)arg2;
+- (id)prepareArrayToFocusInto;
 - (id)firstChildForFocusing;
 - (BOOL)setFocusedIndex:(long long)arg1 withScrolling:(BOOL)arg2 withSelection:(BOOL)arg3 withMovement:(BOOL)arg4 forceFocus:(BOOL)arg5;
+- (id)focusOntoUIElement:(id)arg1 withScrolling:(BOOL)arg2 withSelection:(BOOL)arg3;
 - (unsigned long long)readContentsElementCount;
 - (BOOL)childrenShouldAddIndexToDescription;
 - (BOOL)isiOSOpaqueElementProviderGroup;

@@ -624,8 +624,9 @@ typedef struct {
     unsigned long long _field2;
     unsigned long long _field3;
     unsigned long long _field4;
-    CDStruct_c57d91d4 _field5[125];
-} CDStruct_32d4b02d;
+    unsigned long long _field5;
+    CDStruct_c57d91d4 _field6[125];
+} CDStruct_35a2250d;
 
 #pragma mark Typedef'd Unions
 

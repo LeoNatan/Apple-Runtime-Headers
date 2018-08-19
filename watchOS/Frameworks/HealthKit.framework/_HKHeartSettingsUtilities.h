@@ -11,6 +11,7 @@
 }
 
 + (id)heartRateSettingsURL;
++ (_Bool)isBackgroundHeartRateEnabled;
 + (_Bool)isWristDetectionEnabled;
 + (_Bool)isHeartRateEnabled;
 + (int)tachycardiaThresholdHeartRate;

@@ -40,6 +40,7 @@
 - (void)_fetchTagsForIDs:(id)arg1 maxCachedAge:(double)arg2 qualityOfService:(long long)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)_integrateTags:(id)arg1 eventInitiationLevel:(long long)arg2;
 - (void)_fetchMissingTagsWithCompletion:(CDUnknownBlockType)arg1;
+- (void)_enableTopStoriesNotifications;
 - (void)_refreshChannelsWithNotificationsEnabled;
 - (void)_updateNotificationsForPurchaseTagIDs:(id)arg1 isPaid:(_Bool)arg2;
 - (void)_purchaseListDidRemoveTagIDs:(id)arg1;

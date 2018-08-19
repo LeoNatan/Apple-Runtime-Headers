@@ -16,12 +16,14 @@ __attribute__((visibility("hidden")))
 @interface TSTTableStylePreset : TSPObject <TSSPreset, TSSStyleClient, TSKModel>
 {
     TSTTableStyleNetwork *_styleNetwork;
-    unsigned long long _tempUpgradePresetID;
     _Bool _tableHasStrongOwnership;
+    unsigned long long _tempUpgradePresetID;
 }
 
 + (_Bool)needsObjectUUID;
+@property(nonatomic) unsigned long long tempUpgradePresetID; // @synthesize tempUpgradePresetID=_tempUpgradePresetID;
 @property(nonatomic) _Bool tableHasStrongOwnership; // @synthesize tableHasStrongOwnership=_tableHasStrongOwnership;
+- (void).cxx_destruct;
 - (void)replaceReferencedStylesUsingBlock:(CDUnknownBlockType)arg1;
 - (id)referencedStyles;
 - (void)saveToArchiver:(id)arg1;
@@ -32,7 +34,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) NSString *presetKind;
 @property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;
-- (void)dealloc;
 - (id)initWithContext:(id)arg1;
 - (id)initWithStyleNetwork:(id)arg1;
 - (id)p_documentRoot;

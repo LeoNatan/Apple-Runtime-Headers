@@ -288,6 +288,7 @@
 - (id)layout:(id)arg1 modelTileTransformForItemAtIndexPath:(id)arg2;
 - (struct CGSize)layout:(id)arg1 loadingIndicatorSizeForItemAtIndexPath:(id)arg2;
 - (_Bool)layout:(id)arg1 shouldShowBufferingIndicatorForItemAtIndexPath:(id)arg2;
+- (_Bool)layout:(id)arg1 shouldMoveProgressIndicatorForItemAtIndexPath:(id)arg2;
 - (double)alphaForReviewScreenBarsInLayout:(id)arg1;
 - (_Bool)layoutShouldShowReviewScreenScrubberBar:(id)arg1;
 - (_Bool)layout:(id)arg1 shouldShowPlayButtonForItemAtIndexPath:(id)arg2;

@@ -22,6 +22,7 @@
 - (unsigned long long)charIndexMappedToStorage:(unsigned long long)arg1;
 - (long long)hyphenationLocationBeforeIndex:(long long)arg1 inRange:(struct _NSRange)arg2 locale:(NSLocale *)arg3 hyphenChar:(unsigned int *)arg4;
 - (unsigned short)characterAtIndex:(unsigned long long)arg1;
+- (struct _NSRange)wordAtCharIndex:(unsigned long long)arg1 includePreviousWord:(_Bool)arg2 includeHyphenation:(_Bool)arg3;
 - (struct _NSRange)wordAtCharIndex:(unsigned long long)arg1 includePreviousWord:(_Bool)arg2;
 - (TSWPCharacterStyle *)characterStyleAtCharIndex:(unsigned long long)arg1 effectiveRange:(struct _NSRange *)arg2;
 - (_Bool)isWritingDirectionRightToLeftForParagraphAtCharIndex:(unsigned long long)arg1;

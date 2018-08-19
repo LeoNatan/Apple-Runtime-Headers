@@ -708,6 +708,7 @@
 - (void)_setSectionContentInsetFollowsLayoutMargins:(_Bool)arg1;
 - (void)_setSectionContentInset:(struct UIEdgeInsets)arg1;
 - (void)_updateMarginWidthForVisibleViewsForceLayout:(_Bool)arg1;
+- (void)_rebuildGeometryForcingRowDataUpdate:(_Bool)arg1 skipContentOffsetAdjustment:(_Bool)arg2 updateImmediatelyIfPossible:(_Bool)arg3;
 - (void)_rebuildGeometry;
 @property(nonatomic) _Bool allowsMultipleSelectionDuringEditing;
 @property(nonatomic) _Bool allowsMultipleSelection;
@@ -723,6 +724,7 @@
 - (void)_scrollFirstResponderCellToVisible:(_Bool)arg1;
 - (void)setContentInset:(struct UIEdgeInsets)arg1;
 - (void)_updateForChangeInEffectiveContentInset;
+- (void)setContentSize:(struct CGSize)arg1 skipContentOffsetAdjustment:(_Bool)arg2;
 - (void)setContentSize:(struct CGSize)arg1;
 - (void)setContentOffset:(struct CGPoint)arg1;
 - (void)setShowsVerticalScrollIndicator:(_Bool)arg1;
@@ -1058,6 +1060,7 @@
 - (void)_updateVisibleHeadersAndFootersNow:(_Bool)arg1;
 - (void)_updateTableHeadersAndFootersNow:(_Bool)arg1;
 - (void)_updateVisibleCellsImmediatelyIfNecessary;
+- (void)_setNeedsVisibleCellsUpdate:(_Bool)arg1 withFrames:(_Bool)arg2 updateImmediatelyIfPossible:(_Bool)arg3;
 - (void)_setNeedsVisibleCellsUpdate:(_Bool)arg1 withFrames:(_Bool)arg2;
 - (void)_updateFocusedCellIndexPathIfNecessaryWithLastFocusedRect:(struct CGRect)arg1;
 - (void)_rebaseExistingShadowUpdatesIfNecessaryWithItems:(id)arg1 insertItems:(id)arg2 deleteItems:(id)arg3 sortedInsertItems:(id)arg4 sortedDeleteItems:(id)arg5 sortedMoveItems:(id)arg6;
@@ -1086,6 +1089,7 @@
 - (void)_boundingPathMayHaveChangedForView:(id)arg1 relativeToBoundsOriginOnly:(_Bool)arg2;
 - (void)_updateBackgroundView;
 - (void)_updateBackgroundViewFrame;
+- (void)_updateContentSizeSkippingContentOffsetAdjustment:(_Bool)arg1;
 - (void)_updateContentSize;
 - (void)_setDrawsTopShadowInGroupedSections:(_Bool)arg1;
 - (_Bool)_drawsTopShadowInGroupedSections;

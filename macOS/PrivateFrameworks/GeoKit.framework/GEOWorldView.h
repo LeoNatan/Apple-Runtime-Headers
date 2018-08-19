@@ -61,6 +61,7 @@
 - (void)_repositionOverlappingLayers;
 - (void)layout;
 - (void)viewDidMoveToWindow;
+- (void)effectiveAppearanceDidChange;
 - (void)awakeFromNib;
 - (void)_setupCopyRightLayer;
 - (void)_setHiddenToNOForLayer:(id)arg1;
@@ -71,13 +72,17 @@
 - (void)_addTrackingArea;
 - (void)dealloc;
 - (id)initWithFrame:(struct CGRect)arg1;
+- (void)updatedWorldMapEnabled;
 @property(nonatomic, getter=isEnabled) BOOL enabled;
 - (void)systemClockDidChangeNotificationHandler;
+- (void)_renderNightLayer;
+- (void)_renderDayLayer;
 - (void)_updateDayLayer;
 - (id)nightMapLayer;
 - (id)dayMapLayer;
 - (id)_createDayMapLayer;
 - (id)currentMapLayer;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (double)_scaleFactor;
 
 @end

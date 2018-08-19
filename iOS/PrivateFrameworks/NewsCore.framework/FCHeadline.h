@@ -28,6 +28,7 @@
     _Bool _paid;
     _Bool _showSubscriptionRequiredText;
     _Bool _canBePurchased;
+    _Bool _webEmbedsEnabled;
     _Bool _displayAsNativeAd;
     FCHeadlineThumbnail *_thumbnailLQ;
     FCHeadlineThumbnail *_thumbnail;
@@ -105,6 +106,7 @@
 @property(copy, nonatomic) NSString *titleCompact; // @synthesize titleCompact=_titleCompact;
 @property(copy, nonatomic) NSURL *headlineURL; // @synthesize headlineURL=_headlineURL;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
+@property(readonly, nonatomic) _Bool webEmbedsEnabled; // @synthesize webEmbedsEnabled=_webEmbedsEnabled;
 @property(readonly, nonatomic) NSArray *publisherSpecifiedArticleIDs; // @synthesize publisherSpecifiedArticleIDs=_publisherSpecifiedArticleIDs;
 @property(readonly, nonatomic) NSString *articleRecirculationConfigJSON; // @synthesize articleRecirculationConfigJSON=_articleRecirculationConfigJSON;
 @property(readonly, nonatomic) COMAPPLEFELDSPARPROTOCOLLIVERPOOLCohort *publisherCohort; // @synthesize publisherCohort=_publisherCohort;
@@ -213,7 +215,6 @@
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, nonatomic) id <FCHeadlineStocksFields> stocksFields;
 @property(readonly) Class superclass;
-@property(readonly, nonatomic) _Bool webEmbedsEnabled;
 
 @end
 

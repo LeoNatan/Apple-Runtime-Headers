@@ -22,6 +22,7 @@
     BOOL _hasReceivedPushAck;
     BOOL _hasAttemptedAPSDelivery;
     BOOL _httpDoNotDecodeData;
+    BOOL _ignoreMaxRetryCount;
     BOOL _alwaysForceCellular;
     int _timeoutRetries;
     id _context;
@@ -60,6 +61,7 @@
 @property(retain, nonatomic) NSDate *requestStart; // @synthesize requestStart=_requestStart;
 @property BOOL alwaysForceCellular; // @synthesize alwaysForceCellular=_alwaysForceCellular;
 @property(retain) APSOutgoingMessageCheckpointTrace *apsdCheckpointTrace; // @synthesize apsdCheckpointTrace=_apsdCheckpointTrace;
+@property BOOL ignoreMaxRetryCount; // @synthesize ignoreMaxRetryCount=_ignoreMaxRetryCount;
 @property BOOL httpDoNotDecodeData; // @synthesize httpDoNotDecodeData=_httpDoNotDecodeData;
 @property(nonatomic) unsigned long long receivedByteCount; // @synthesize receivedByteCount=_receivedByteCount;
 @property(nonatomic) unsigned long long sentByteCount; // @synthesize sentByteCount=_sentByteCount;

@@ -14,6 +14,7 @@
 {
 }
 
++ (id)_gradientWallpaperImageForIdentifier:(id)arg1;
 + (id)_defaultBlackWallpaperImage;
 - (id)imageForWallpaper:(id)arg1;
 - (id)defaultWallpaperForCollection:(long long)arg1;

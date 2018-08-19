@@ -98,7 +98,6 @@ __attribute__((visibility("hidden")))
 - (_Bool)isThemeContent;
 - (Class)repClass;
 - (Class)layoutClass;
-@property(readonly, nonatomic) _Bool isUserModifiable;
 - (id)exteriorTextWrapForMovingToFloating;
 @property(copy, nonatomic) TSDExteriorTextWrap *exteriorTextWrap;
 @property(readonly, nonatomic, getter=isAttachedToBodyText) _Bool attachedToBodyText;

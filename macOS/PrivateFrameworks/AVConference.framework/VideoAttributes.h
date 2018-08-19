@@ -17,11 +17,13 @@
     BOOL cameraSwitching;
     struct CGRect contentsRect;
     BOOL videoSourceScreen;
+    BOOL videoMirrored;
 }
 
 + (id)cameraUIDForVideoAttributeCamera:(int)arg1;
 + (int)videoAttributeCameraForCameraUID:(id)arg1;
 + (id)videoAttributesWithVideoAttributes:(id)arg1;
+@property(nonatomic) BOOL videoMirrored; // @synthesize videoMirrored;
 @property(nonatomic) BOOL videoSourceScreen; // @synthesize videoSourceScreen;
 @property(nonatomic) struct CGRect contentsRect; // @synthesize contentsRect;
 @property(nonatomic) BOOL cameraSwitching; // @synthesize cameraSwitching;

@@ -16,7 +16,7 @@
 
 + (id)fetchOrCreateWithDictionaryRepresentation:(id)arg1 inContext:(id)arg2 error:(id *)arg3;
 - (void)delete;
-- (void)updateWithDictionaryRepresentation:(id)arg1;
+- (BOOL)updateWithDictionaryRepresentation:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)computeUniqueIdentifier;
 - (void)didChangeValueForKey:(id)arg1;

@@ -15,14 +15,12 @@
     VCUIRecordButton *_recordButton;
     UIButton *_typeToSiriButton;
     UILabel *_buttonDescriptionLabel;
-    _UIBackdropView *_lightTrayBackdrop;
-    _UIBackdropView *_ultraLightTrayBackdrop;
+    _UIBackdropView *_trayBackdrop;
     NSLayoutConstraint *_buttonDescriptionLayoutConstraint;
 }
 
 @property(retain, nonatomic) NSLayoutConstraint *buttonDescriptionLayoutConstraint; // @synthesize buttonDescriptionLayoutConstraint=_buttonDescriptionLayoutConstraint;
-@property(retain, nonatomic) _UIBackdropView *ultraLightTrayBackdrop; // @synthesize ultraLightTrayBackdrop=_ultraLightTrayBackdrop;
-@property(retain, nonatomic) _UIBackdropView *lightTrayBackdrop; // @synthesize lightTrayBackdrop=_lightTrayBackdrop;
+@property(retain, nonatomic) _UIBackdropView *trayBackdrop; // @synthesize trayBackdrop=_trayBackdrop;
 @property(retain, nonatomic) UILabel *buttonDescriptionLabel; // @synthesize buttonDescriptionLabel=_buttonDescriptionLabel;
 @property(nonatomic) _Bool showButtonDescription; // @synthesize showButtonDescription=_showButtonDescription;
 @property(retain, nonatomic) UIButton *typeToSiriButton; // @synthesize typeToSiriButton=_typeToSiriButton;

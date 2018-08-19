@@ -92,6 +92,8 @@
 - (void)loadAlarmsSync;
 - (void)loadAlarms;
 - (id)_cleanUpForInternalBuild:(id)arg1;
+- (id)_cleanUpSleepAlarmRepeat:(id)arg1;
+- (id)_cleanUpSnoozeFireDate:(id)arg1;
 - (id)initWithPersistence:(id)arg1 migrator:(id)arg2 scheduler:(id)arg3 currentDateProvider:(CDUnknownBlockType)arg4;
 - (id)initWithPersistence:(id)arg1;
 - (id)init;

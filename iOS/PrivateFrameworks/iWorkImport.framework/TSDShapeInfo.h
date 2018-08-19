@@ -46,6 +46,7 @@ __attribute__((visibility("hidden")))
 - (void)setStyle:(id)arg1;
 - (_Bool)allowsParentGroupToBeResizedWithoutAspectRatioLock;
 - (_Bool)canAspectRatioLockBeChangedByUser;
+@property(readonly, nonatomic) _Bool isTreatedAsFillForFreehandDrawing;
 - (_Bool)isAllowedInFreehandDrawings;
 @property(readonly, nonatomic) _Bool supportsShrinkTextToFit;
 @property(readonly, nonatomic) _Bool supportsTextInset;

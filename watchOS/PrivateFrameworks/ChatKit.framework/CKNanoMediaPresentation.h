@@ -20,6 +20,7 @@
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)presentFromViewController:(id)arg1;
 - (void)_handleApplicationDidEnterBackground:(id)arg1;
+- (void)dealloc;
 - (id)initWithMediaObject:(id)arg1;
 
 // Remaining properties

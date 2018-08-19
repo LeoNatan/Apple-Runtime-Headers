@@ -27,6 +27,7 @@
 - (void)carrierInfoDidUpdate;
 - (void)localPlanInfoDidUpdate:(id)arg1;
 - (void)planInfoDidUpdate;
+- (id)getShortLabelsForLabels:(id)arg1;
 - (id)getSubscriptionContextUUIDforPlan:(id)arg1;
 - (void)userDidProvideConsentResponse:(int)arg1 forPlan:(id)arg2 isRemote:(_Bool)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)userDidProvideConsentResponse:(int)arg1 forPlan:(id)arg2 completion:(CDUnknownBlockType)arg3;

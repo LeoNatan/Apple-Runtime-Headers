@@ -13,7 +13,7 @@
 #import "NSXPCListenerDelegate.h"
 #import "UINavigationControllerDelegate.h"
 
-@class CPSApplicationStateMonitor, CPSBannerSource, CPSMapTemplateViewController, CPSOverlayViewController, FBScene, NSMutableDictionary, NSString, NSXPCConnection, NSXPCListener;
+@class CPSApplicationStateMonitor, CPSBannerSource, CPSMapTemplateViewController, CPSOverlayViewController, FBScene, NSMutableDictionary, NSString, NSUUID, NSXPCConnection, NSXPCListener;
 
 @interface CPSTemplateInstance : NSObject <NSXPCListenerDelegate, CPTemplateProviding, UINavigationControllerDelegate, CPSTemplateViewControllerDelegate, CPSSafeAreaDelegate, CPBannerDelegate>
 {
@@ -28,8 +28,10 @@
     id <CPTemplateServiceClientInterface> _remoteObjectProxy;
     CPSApplicationStateMonitor *_applicationStateMonitor;
     NSXPCConnection *_connection;
+    NSUUID *_actionSheetIdentifier;
 }
 
+@property(copy, nonatomic) NSUUID *actionSheetIdentifier; // @synthesize actionSheetIdentifier=_actionSheetIdentifier;
 @property(retain, nonatomic) NSXPCConnection *connection; // @synthesize connection=_connection;
 @property(retain, nonatomic) CPSApplicationStateMonitor *applicationStateMonitor; // @synthesize applicationStateMonitor=_applicationStateMonitor;
 @property(retain, nonatomic) id <CPTemplateServiceClientInterface> remoteObjectProxy; // @synthesize remoteObjectProxy=_remoteObjectProxy;

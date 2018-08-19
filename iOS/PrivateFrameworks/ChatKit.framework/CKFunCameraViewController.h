@@ -7,24 +7,28 @@
 #import "UIViewController.h"
 
 #import "CKBrowserViewControllerSendDelegate.h"
+#import "CKCamPhysicalCaptureNotifierDelegate.h"
 
-@class CKConversation, IMBalloonPlugin, NSString, UIView, UIViewController<CKBrowserViewControllerProtocol>;
+@class CKCamPhysicalCaptureNotifier, CKConversation, IMBalloonPlugin, NSString, UIView, UIViewController<CKBrowserViewControllerProtocol>;
 
-@interface CKFunCameraViewController : UIViewController <CKBrowserViewControllerSendDelegate>
+@interface CKFunCameraViewController : UIViewController <CKBrowserViewControllerSendDelegate, CKCamPhysicalCaptureNotifierDelegate>
 {
     id <CKFunCameraViewControllerDelegate> _delegate;
     IMBalloonPlugin *_balloonPlugin;
     UIView *_funCameraView;
     UIViewController<CKBrowserViewControllerProtocol> *_funCameraAppViewController;
+    CKCamPhysicalCaptureNotifier *_physicalCaptureNotifier;
     CKConversation *_conversation;
 }
 
 @property(retain, nonatomic) CKConversation *conversation; // @synthesize conversation=_conversation;
+@property(retain, nonatomic) CKCamPhysicalCaptureNotifier *physicalCaptureNotifier; // @synthesize physicalCaptureNotifier=_physicalCaptureNotifier;
 @property(retain, nonatomic) UIViewController<CKBrowserViewControllerProtocol> *funCameraAppViewController; // @synthesize funCameraAppViewController=_funCameraAppViewController;
 @property(retain, nonatomic) UIView *funCameraView; // @synthesize funCameraView=_funCameraView;
 @property(retain, nonatomic) IMBalloonPlugin *balloonPlugin; // @synthesize balloonPlugin=_balloonPlugin;
 @property(nonatomic) __weak id <CKFunCameraViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (void)physicalCaptureNotifierDidChangeState:(id)arg1;
 - (void)_dismissAndPresentPhotosApp:(_Bool)arg1;
 - (void)stageAssetArchive:(id)arg1 skipShelf:(_Bool)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)commitSticker:(id)arg1 withDragTarget:(id)arg2;

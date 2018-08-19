@@ -20,6 +20,7 @@ __attribute__((visibility("hidden")))
 + (id)emptySelectionWithChartInfo:(id)arg1;
 @property(readonly, copy, nonatomic) NSArray *paths; // @synthesize paths=mPaths;
 @property(readonly, retain, nonatomic) TSCHChartDrawableInfo *chartInfo; // @synthesize chartInfo=mInfo;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSSet *pathTypes;
 @property(readonly, copy, nonatomic) TSCHSelectionPathType *pathType;
 @property(readonly, copy, nonatomic) TSCHSelectionPath *firstPath;
@@ -33,8 +34,6 @@ __attribute__((visibility("hidden")))
 - (unsigned long long)hash;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (void)dealloc;
-- (id)init;
 - (id)initWithPaths:(id)arg1;
 - (id)initWithChartInfo:(id)arg1 path:(id)arg2;
 - (id)initWithChartInfo:(id)arg1 paths:(id)arg2;

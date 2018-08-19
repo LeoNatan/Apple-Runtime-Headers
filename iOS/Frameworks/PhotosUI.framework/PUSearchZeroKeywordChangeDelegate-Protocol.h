@@ -11,6 +11,5 @@
 @protocol PUSearchZeroKeywordChangeDelegate <NSObject>
 - (void)didRemoveSections:(NSIndexSet *)arg1;
 - (void)didUpdateSections:(NSIndexSet *)arg1;
-- (void)refreshData;
 @end
 

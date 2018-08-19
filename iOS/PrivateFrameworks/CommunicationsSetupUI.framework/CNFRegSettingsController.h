@@ -120,7 +120,9 @@
 - (void)showAllSettings:(_Bool)arg1 animated:(_Bool)arg2;
 - (void)refreshReceiveRelayCallsSettingsAnimated:(_Bool)arg1;
 - (void)showReceiveRelayCallsSettings:(_Bool)arg1 animated:(_Bool)arg2;
+- (id)callerIDWithURLFooterText;
 - (id)callerIDFooterText;
+- (void)configureCallerIDGroupSpecifier:(id)arg1;
 - (void)refreshiMessageCallerIDExtraText:(_Bool)arg1;
 - (_Bool)shouldShowExtraTextForiMessageCallerID;
 - (_Bool)isiMessageCallerIDNonDefault;
@@ -133,6 +135,7 @@
 - (void)refreshFaceTimeSettingsAnimated:(_Bool)arg1;
 - (void)refreshFaceTimeSettingsWithDelayAnimated:(_Bool)arg1;
 - (void)_refreshFaceTimeSettingsDelayed:(id)arg1;
+- (void)_showPrivacySheet:(id)arg1;
 - (id)getReceiveRelayedCallsEnabledForSpecifier:(id)arg1;
 - (void)setReceiveRelayedCallsEnabled:(id)arg1 specifier:(id)arg2;
 - (id)getFaceTimeEnabledForSpecifier:(id)arg1;

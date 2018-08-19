@@ -65,6 +65,10 @@
 - (id)myDeviceID;
 - (id)transformCaughtObject:(id)arg1 existingError:(id)arg2;
 - (id)transformResponseError:(id)arg1;
+- (void)removeAllClientsWithRetiring:(BOOL)arg1;
+- (void)removeClient:(id)arg1 forPeer:(id)arg2 retiring:(BOOL)arg3;
+- (void)setClient:(id)arg1 forPeer:(id)arg2;
+- (id)clientForPeer:(id)arg1;
 - (void)handleActivateCompanionLinkClient:(id)arg1 forPeer:(id)arg2 error:(id)arg3;
 - (void)handleActivateWithError:(id)arg1;
 - (void)handleDeviceLost:(id)arg1;

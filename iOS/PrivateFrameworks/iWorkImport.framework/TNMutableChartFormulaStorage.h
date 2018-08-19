@@ -12,7 +12,7 @@ __attribute__((visibility("hidden")))
 }
 
 - (unsigned long long)numberOfGroupsWithCalcEngine:(id)arg1 inEntity:(const UUIDData_5fbc143e *)arg2;
-- (void)addFormula:(id)arg1 withFormulaID:(CDStruct_ed6d627d)arg2;
+- (void)addFormula:(id)arg1 withFormulaID:(struct TSUCellCoord)arg2;
 - (void)setFormulaList:(id)arg1 forKey:(unsigned long long)arg2;
 - (id)mutableFormulaListForType:(unsigned long long)arg1;
 - (void)clearFormulaListForKey:(unsigned long long)arg1;

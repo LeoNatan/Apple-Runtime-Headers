@@ -198,6 +198,7 @@
 - (id)stringForOpenOption:(int)arg1;
 - (id)calendarItemsWithExternalIdentifier:(id)arg1;
 - (id)calendarItemWithIdentifier:(id)arg1;
+- (id)calendarItemWithIdentifier:(id)arg1 apiExpected:(BOOL)arg2;
 - (BOOL)saveNotifications:(id)arg1 commit:(BOOL)arg2 error:(id *)arg3;
 - (BOOL)saveNotification:(id)arg1 commit:(BOOL)arg2 error:(id *)arg3;
 - (BOOL)respondToSharedCalendarInvitation:(id)arg1 withStatus:(unsigned long long)arg2 commit:(BOOL)arg3 error:(id *)arg4;

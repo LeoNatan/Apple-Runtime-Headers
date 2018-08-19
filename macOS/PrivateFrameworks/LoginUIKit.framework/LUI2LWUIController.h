@@ -39,6 +39,7 @@
 @property(readonly) LUI2AuthHintViewController *authHintViewController; // @synthesize authHintViewController=_authHintViewController;
 @property(readonly) LUI2MultiWindowController *multiWindowController; // @synthesize multiWindowController=_multiWindowController;
 - (void)dealloc;
+- (id)initWithAuthorizationPluginView:(id)arg1;
 - (id)init;
 @property(readonly) LUI2BackgroundViewController *backgroundViewController;
 @property(getter=isEnabled) BOOL enabled; // @dynamic enabled;
@@ -47,7 +48,7 @@
 - (void)hidePopover;
 - (id)currentPopover;
 - (id)_viewForPopover:(int)arg1;
-- (void)_setupLWUIController;
+- (void)_setupLWUIControllerWithAuthorizationPluginView:(id)arg1;
 
 @end
 

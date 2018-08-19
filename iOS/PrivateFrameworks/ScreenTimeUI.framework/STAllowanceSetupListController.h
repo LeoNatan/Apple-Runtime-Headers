@@ -28,6 +28,7 @@
 - (void)cancelButtonTapped:(id)arg1;
 - (void)viewDidLoad;
 - (void)loadView;
+- (_Bool)canBeShownFromSuspendedState;
 - (id)initWithSelectedIdentifiers:(id)arg1;
 - (id)init;
 

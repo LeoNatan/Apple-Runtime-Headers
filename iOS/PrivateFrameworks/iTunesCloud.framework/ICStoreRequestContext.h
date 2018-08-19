@@ -14,16 +14,19 @@
     ICUserIdentity *_identity;
     ICUserIdentityStore *_identityStore;
     ICStoreDialogResponseHandler *_storeDialogResponseHandler;
+    long long _personalizationStyle;
     _Bool _allowsExpiredBags;
 }
 
 + (id)activeStoreAccountRequestContext;
+@property(readonly, nonatomic) long long personalizationStyle; // @synthesize personalizationStyle=_personalizationStyle;
 @property(readonly, nonatomic) _Bool allowsExpiredBags; // @synthesize allowsExpiredBags=_allowsExpiredBags;
 @property(readonly, copy, nonatomic) ICStoreDialogResponseHandler *storeDialogResponseHandler; // @synthesize storeDialogResponseHandler=_storeDialogResponseHandler;
 @property(readonly, nonatomic) ICUserIdentityStore *identityStore; // @synthesize identityStore=_identityStore;
 @property(readonly, copy, nonatomic) ICUserIdentity *delegatedIdentity; // @synthesize delegatedIdentity=_delegatedIdentity;
 @property(readonly, copy, nonatomic) ICUserIdentity *identity; // @synthesize identity=_identity;
 - (void).cxx_destruct;
+- (void)setPersonalizationStyle:(long long)arg1;
 - (void)setAllowsExpiredBags:(_Bool)arg1;
 - (void)setStoreDialogResponseHandler:(id)arg1;
 - (void)setIdentityStore:(id)arg1;

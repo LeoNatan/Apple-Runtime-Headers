@@ -17,6 +17,7 @@
 + (id)sharedConnection;
 - (id)filteredOpenInOriginatingAccounts:(id)arg1 targetAppBundleID:(id)arg2 targetAccountManagement:(long long)arg3;
 - (id)filteredOpenInAccounts:(id)arg1 originatingAppBundleID:(id)arg2 sourceAccountManagement:(long long)arg3;
+- (BOOL)mayShowLocalAccountsForTargetBundleID:(id)arg1 targetAccountManagement:(long long)arg2;
 - (BOOL)mayShowLocalAccountsForBundleID:(id)arg1 sourceAccountManagement:(long long)arg2;
 - (BOOL)isOpenInRestrictionInEffect;
 - (id)initWithProfileConnection:(id)arg1;

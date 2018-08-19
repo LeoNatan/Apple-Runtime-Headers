@@ -7,6 +7,8 @@
 @class NSData, NSDictionary, NSNumber, NSString, NSUUID;
 
 @protocol NRXPCPairingDelegate
+- (void)xpcGetMigrationCountForPairingID:(NSUUID *)arg1 completion:(void (^)(unsigned int, NSError *))arg2;
+- (void)xpcGetLastSwitchIndex:(void (^)(unsigned int, NSError *))arg1;
 - (void)xpcFakePairedSyncIsCompleteWithCompletion:(void (^)(NSError *))arg1;
 - (void)xpcClearRecoveryFlagWithCompletion:(void (^)(NSError *))arg1;
 - (void)xpcCheckIfFlaggedForRecoveryWithCompletion:(void (^)(_Bool, NSError *))arg1;

@@ -16,6 +16,7 @@
     _Bool _inclusionPredicateIsValid;
     _Bool _reverseSortOrder;
     _Bool _wantsCuration;
+    _Bool _preloadAssetTypeCounts;
     NSSet *_excludedOids;
     NSSet *_includedOids;
     NSSet *_curatedOids;
@@ -24,6 +25,7 @@
     PHFetchResult *_keyAssetsFetchResult;
 }
 
+@property(nonatomic) _Bool preloadAssetTypeCounts; // @synthesize preloadAssetTypeCounts=_preloadAssetTypeCounts;
 @property(nonatomic) _Bool wantsCuration; // @synthesize wantsCuration=_wantsCuration;
 @property(retain, nonatomic) PHFetchResult *keyAssetsFetchResult; // @synthesize keyAssetsFetchResult=_keyAssetsFetchResult;
 @property(retain, nonatomic) PHFetchResult *curatedFetchResult; // @synthesize curatedFetchResult=_curatedFetchResult;

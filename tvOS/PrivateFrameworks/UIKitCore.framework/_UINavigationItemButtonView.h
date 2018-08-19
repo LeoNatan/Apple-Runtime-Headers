@@ -95,6 +95,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)_wantsAccessibilityButtonShapes;
 - (_Bool)_showsAccessibilityBackgroundWhenEnabled;
 - (void)_resetRenderingModesForAccessibilityBackgrounds;
+- (id)initWithNavigationItem:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -43,8 +43,6 @@
 + (_Bool)canLoadDataRepresentation:(id)arg1;
 + (_Bool)canLoadDataRepresentationWithVersion:(unsigned short)arg1 minimumCompatibleVersion:(unsigned short)arg2 error:(id *)arg3;
 + (void)preloadAvatar:(id)arg1;
-+ (id)defaultEnvironment;
-+ (void)updateEnvironment:(id)arg1 withAvatar:(id)arg2 optimizeForSnapshot:(_Bool)arg3 arMode:(_Bool)arg4;
 + (struct SCNVector4)applyGazeCorrectionWithInputAngle:translation: /* Error: Ran out of types for this method. */;
 + (id)animationClips;
 + (id)animationClipForExpression:(long long)arg1;

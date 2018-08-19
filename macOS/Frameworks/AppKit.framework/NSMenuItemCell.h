@@ -48,6 +48,7 @@
 - (struct _NSRange)_characterRangeForPoint:(struct CGPoint)arg1 inRect:(struct CGRect)arg2 ofView:(id)arg3;
 - (void)drawTitleWithFrame:(struct CGRect)arg1 inView:(id)arg2;
 - (void)drawImageWithFrame:(struct CGRect)arg1 inView:(id)arg2;
+- (struct CGRect)_menuCellScaledImageAlignmentRectForImageRect:(struct CGRect)arg1 inView:(id)arg2;
 - (void)_preeffectBaseImage:(id *)arg1 state:(unsigned long long *)arg2 backgroundStyle:(int *)arg3 inView:(id)arg4;
 - (unsigned long long)_interiorContentValueStateInView:(id)arg1;
 - (unsigned long long)_interiorContentAppearanceInView:(id)arg1;

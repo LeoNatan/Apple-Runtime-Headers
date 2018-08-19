@@ -16,12 +16,14 @@ __attribute__((visibility("hidden")))
     BOOL _shouldRoundCorners;
     BOOL _maskSet;
     _NSTitlebarDecorationView *_decorationView;
+    NSView *_nonRootLayerBackedWindowChromeBackstopRenderingView;
 }
 
 @property(retain) _NSTitlebarDecorationView *decorationView; // @synthesize decorationView=_decorationView;
 @property double buttonRevealAmount; // @dynamic buttonRevealAmount;
 @property(readonly) double titleHeightToHideInFullScreen; // @dynamic titleHeightToHideInFullScreen;
 - (BOOL)layer:(id)arg1 shouldInheritContentsScale:(double)arg2 fromWindow:(id)arg3;
+- (void)_updateNonRootLayerBackedWindowChromeBackstopRenderingView;
 - (void)updateLayer;
 - (void)_setCornerMaskIfNeeded;
 - (void)_clearCornerMaskIfNeeded;
@@ -34,6 +36,7 @@ __attribute__((visibility("hidden")))
 - (id)_themeFrame;
 @property BOOL shouldRoundCorners; // @synthesize shouldRoundCorners=_shouldRoundCorners;
 - (void)layout;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)dealloc;
 @property BOOL transparent;
 @property BOOL drawsBottomSeparator;

@@ -26,6 +26,7 @@ __attribute__((visibility("hidden")))
 - (void)removeAllHeaders;
 - (void)removeHeaderForKey:(unsigned int)arg1;
 - (void)setHeader:(id)arg1 forKey:(unsigned int)arg2;
+- (void)willModifyAllHeaders;
 - (id)headerForKey:(unsigned int)arg1 willModify:(_Bool)arg2 createIfNotThere:(_Bool)arg3;
 - (id)headerForKey:(unsigned int)arg1 willModify:(_Bool)arg2;
 - (void)saveToArchive:(struct HeaderStorage *)arg1 archiver:(id)arg2;

@@ -50,6 +50,7 @@
 - (void)_scheduleCloudStoreContainerSetupBackgroundActivityWithNextInterval:(unsigned long long)arg1;
 - (void)_performCloudStoreContainerInitalizationBackgroundActivityWithCurrentInterval:(unsigned long long)arg1 nextBackgroundInterval:(unsigned long long)arg2;
 - (void)performScheduledActivityWithIdentifier:(id)arg1 activityCriteria:(id)arg2;
+- (void)noteAccountDeleted;
 - (void)noteCloudSyncPassesSwitchChanged;
 - (void)resetApplePayManateeViewWithCompletion:(CDUnknownBlockType)arg1;
 - (void)checkTLKsMissingWithCompletion:(CDUnknownBlockType)arg1;

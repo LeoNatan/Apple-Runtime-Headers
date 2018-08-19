@@ -26,6 +26,7 @@ __attribute__((visibility("hidden")))
 + (id)seriesSymbolsSelectionPathWithSeriesIndex:(unsigned long long)arg1;
 @property(readonly, nonatomic) TSCHSelectionPath *subSelection; // @synthesize subSelection=mSubSelection;
 @property(readonly, nonatomic) TSCHSelectionPathType *pathType; // @synthesize pathType=mPathType;
+- (void).cxx_destruct;
 - (void)saveToArchive:(struct ChartSelectionPathArchive *)arg1;
 - (id)initWithArchive:(const struct ChartSelectionPathArchive *)arg1;
 - (id)description;
@@ -38,10 +39,8 @@ __attribute__((visibility("hidden")))
 - (id)argumentAtIndex:(unsigned long long)arg1;
 - (id)name;
 - (id)type;
-- (void)dealloc;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithPathType:(id)arg1 arguments:(id)arg2 subSelection:(id)arg3;
-- (id)init;
 - (id)initWithType:(id)arg1 name:(id)arg2 arguments:(id)arg3;
 
 @end

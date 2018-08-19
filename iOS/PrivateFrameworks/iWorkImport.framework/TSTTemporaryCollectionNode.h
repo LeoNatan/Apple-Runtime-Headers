@@ -11,22 +11,22 @@
 __attribute__((visibility("hidden")))
 @interface TSTTemporaryCollectionNode : NSObject
 {
-    struct TSCEVectorIndexPair mDimensions;
-    NSMutableArray *mChildren;
-    NSString *mWhitespaceBeforeFirstChild;
-    NSMutableArray *mWhitespaceAfterDelimiters;
-    unsigned long long mFirstIndex;
-    unsigned long long mLastIndex;
+    struct TSCEVectorIndexPair _dimensions;
+    NSMutableArray *_children;
+    NSString *_whitespaceBeforeFirstChild;
+    NSMutableArray *_whitespaceAfterDelimiters;
+    unsigned long long _firstIndex;
+    unsigned long long _lastIndex;
 }
 
-@property(nonatomic) unsigned long long lastIndex; // @synthesize lastIndex=mLastIndex;
-@property(nonatomic) unsigned long long firstIndex; // @synthesize firstIndex=mFirstIndex;
-@property(retain, nonatomic) NSMutableArray *whitespaceAfterDelimiters; // @synthesize whitespaceAfterDelimiters=mWhitespaceAfterDelimiters;
-@property(retain, nonatomic) NSString *whitespaceBeforeFirstChild; // @synthesize whitespaceBeforeFirstChild=mWhitespaceBeforeFirstChild;
-@property(retain, nonatomic) NSMutableArray *children; // @synthesize children=mChildren;
-@property(nonatomic) struct TSCEVectorIndexPair dimensions; // @synthesize dimensions=mDimensions;
+@property(nonatomic) unsigned long long lastIndex; // @synthesize lastIndex=_lastIndex;
+@property(nonatomic) unsigned long long firstIndex; // @synthesize firstIndex=_firstIndex;
+@property(retain, nonatomic) NSMutableArray *whitespaceAfterDelimiters; // @synthesize whitespaceAfterDelimiters=_whitespaceAfterDelimiters;
+@property(retain, nonatomic) NSString *whitespaceBeforeFirstChild; // @synthesize whitespaceBeforeFirstChild=_whitespaceBeforeFirstChild;
+@property(retain, nonatomic) NSMutableArray *children; // @synthesize children=_children;
+@property(nonatomic) struct TSCEVectorIndexPair dimensions; // @synthesize dimensions=_dimensions;
 - (id).cxx_construct;
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)init;
 
 @end

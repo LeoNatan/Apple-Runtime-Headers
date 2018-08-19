@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class TSCECalculationEngine, TSCEOwnerFormulaMap, TSUSparseArray;
+@class TSCECalculationEngine, TSUSparseArray;
 
 __attribute__((visibility("hidden")))
 @interface TSTFormulaStore : NSObject
@@ -15,18 +15,20 @@ __attribute__((visibility("hidden")))
     TSCECalculationEngine *_calcEngine;
     TSUSparseArray *_formulas;
     unsigned long long _nextIndex;
-    TSCEOwnerFormulaMap *_formulasForUndo;
 }
 
++ (struct TSUModelCellRect)rangeFromFormula:(const struct TSCEFormula *)arg1 atCoord:(const struct TSUModelCellCoord *)arg2;
 + (struct TSUCellCoord)coordFromIndex:(unsigned long long)arg1;
 + (unsigned long long)indexFromCoord:(const struct TSUCellCoord *)arg1;
-@property(retain, nonatomic) TSCEOwnerFormulaMap *formulasForUndo; // @synthesize formulasForUndo=_formulasForUndo;
 @property(nonatomic) __weak TSCECalculationEngine *calcEngine; // @synthesize calcEngine=_calcEngine;
 @property(nonatomic) UUIDData_5fbc143e formulaOwnerUID; // @synthesize formulaOwnerUID=_formulaOwnerUID;
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)saveToArchive:(struct FormulaStoreArchive *)arg1 archiver:(id)arg2;
 - (id)initWithOwnerUID:(const UUIDData_5fbc143e *)arg1 archive:(const struct FormulaStoreArchive *)arg2 unarchiver:(id)arg3;
+- (void)remapRangeFormulasToOwnerUID:(const UUIDData_5fbc143e *)arg1;
+- (struct TSUModelCellRect)rangeFromFormulaAtIndex:(unsigned long long)arg1;
+- (struct TSCEFormula)createFormulaForRange:(struct TSUModelCellRect)arg1 atIndex:(unsigned long long)arg2 tableUID:(const UUIDData_5fbc143e *)arg3;
 - (void)foreach:(CDUnknownBlockType)arg1;
 - (const struct TSCEFormula *)formulaAtIndex:(unsigned long long)arg1;
 - (void)registerAllFormulaToCalculationEngine;

@@ -12,6 +12,7 @@
 - (void)setScriptContextDictionary:(NSDictionary *)arg1;
 - (void)setProductPageStyle:(NSNumber *)arg1;
 - (void)finishStarRatingPromptWithRating:(NSNumber *)arg1;
+- (void)setVisibleInClientWindow:(NSNumber *)arg1;
 - (void)setupWithClientBundleID:(NSString *)arg1 bagType:(long long)arg2;
 - (void)setPreview:(NSNumber *)arg1;
 - (void)setClientIdentifier:(NSString *)arg1;

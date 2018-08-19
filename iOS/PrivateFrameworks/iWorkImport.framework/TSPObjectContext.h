@@ -12,7 +12,7 @@
 #import "TSPPassphraseConsumer.h"
 #import "TSPSupportDirectoryDelegate.h"
 
-@class NSData, NSHashTable, NSMapTable, NSMutableArray, NSObject<OS_dispatch_group>, NSObject<OS_dispatch_queue>, NSProgress, NSRecursiveLock, NSSet, NSString, NSURL, NSUUID, SFUCryptoKey, TSPCancellationState, TSPComponentManager, TSPDataDownloadManager, TSPDataManager, TSPDocumentMetadata, TSPDocumentProperties, TSPDocumentRevision, TSPDocumentSaveOperationState, TSPObject, TSPObjectContainer, TSPObjectUUIDMap, TSPPackage, TSPPackageWriteCoordinator, TSPRegistry, TSPResourceContext, TSPSupportManager, TSPSupportMetadata, TSUTemporaryDirectory;
+@class NSData, NSHashTable, NSMapTable, NSMutableArray, NSMutableSet, NSObject<OS_dispatch_group>, NSObject<OS_dispatch_queue>, NSProgress, NSRecursiveLock, NSSet, NSString, NSURL, NSUUID, SFUCryptoKey, TSPCancellationState, TSPComponentManager, TSPDataDownloadManager, TSPDataManager, TSPDocumentMetadata, TSPDocumentProperties, TSPDocumentRevision, TSPDocumentSaveOperationState, TSPObject, TSPObjectContainer, TSPObjectUUIDMap, TSPPackage, TSPPackageWriteCoordinator, TSPRegistry, TSPResourceContext, TSPSupportManager, TSPSupportMetadata, TSUTemporaryDirectory;
 
 __attribute__((visibility("hidden")))
 @interface TSPObjectContext : NSObject <TSPFileCoordinatorDelegate, TSPLazyReferenceDelegate, TSPObjectDelegate, TSPSupportDirectoryDelegate, TSPPassphraseConsumer>
@@ -32,6 +32,7 @@ __attribute__((visibility("hidden")))
     TSPDocumentProperties *_documentProperties;
     NSMapTable *_objects;
     TSPObjectUUIDMap *_objectUUIDMap;
+    NSMutableSet *_deterministicObjectUUIDSet;
     TSPDocumentRevision *_documentRevision;
     long long _preferredPackageType;
     NSObject<OS_dispatch_queue> *_objectsQueue;
@@ -77,7 +78,6 @@ __attribute__((visibility("hidden")))
         unsigned int delegateRespondsToIgnoreDocumentSupport:1;
         unsigned int delegateRespondsToIsDocumentSupportTemporary:1;
         unsigned int delegateRespondsToShouldLoadAllComponents:1;
-        unsigned int delegateRespondsToNewObjectUUID:1;
         unsigned int delegateRespondsToIsInCollaborationModeForContext:1;
         unsigned int delegateRespondsToIsInReadOnlyModeForContext:1;
         unsigned int delegateRespondsToIsCollaborationOfflineForContext:1;
@@ -112,6 +112,7 @@ __attribute__((visibility("hidden")))
 + (void)removeDefaultSupportDirectory;
 + (id)documentRevisionAtURL:(id)arg1 passphrase:(id)arg2 error:(id *)arg3;
 + (_Bool)isTangierEditingFormatURL:(id)arg1;
++ (_Bool)isTangierEditingDirectoryFormatURL:(id)arg1;
 + (_Bool)isNativeDirectoryFormatURL:(id)arg1;
 + (_Bool)isNativeOrTangierEditingFormatURL:(id)arg1 hasNativeUTI:(_Bool)arg2 nestedDocumentFilename:(id)arg3;
 + (_Bool)isNativeOrTangierEditingFormatURL:(id)arg1 hasNativeUTI:(_Bool)arg2;
@@ -181,6 +182,7 @@ __attribute__((visibility("hidden")))
 - (id)initForQuickLookWithURL:(id)arg1 registry:(id)arg2 delegate:(id)arg3 passphrase:(id)arg4 error:(id *)arg5;
 - (id)initForSpotlightWithURL:(id)arg1 delegate:(id)arg2 registry:(id)arg3 error:(id *)arg4;
 - (void)canPerformUserActionUsingBlock:(CDUnknownBlockType)arg1;
+@property(readonly, nonatomic) _Bool hasCurrentFileFormatVersion;
 - (void)registerAsynchronousObjectModifier:(id)arg1;
 - (void)resumeAsynchronousModifications;
 - (void)suspendAsynchronousModificationsForObjectTargetType:(unsigned long long)arg1;
@@ -231,6 +233,7 @@ __attribute__((visibility("hidden")))
 - (id)objectForIdentifier:(long long)arg1;
 - (_Bool)didFinishSuccessfullyReadingObjects:(id)arg1 readCoordinator:(id)arg2 finalizeHandlerQueue:(id)arg3;
 - (_Bool)readWithReadCoordinator:(id)arg1 finalizeHandlerQueue:(id)arg2 rootObject:(id *)arg3 error:(id *)arg4 readCompletion:(CDUnknownBlockType)arg5;
+- (_Bool)continueReadingDocumentObjectFromDatabasePackageURL:(id)arg1 error:(id *)arg2;
 - (_Bool)readDocumentObjectFromDatabasePackageURL:(id)arg1 error:(id *)arg2;
 - (_Bool)continueReadingDocumentObjectFromPackageURL:(id)arg1 areExternalDataReferencesAllowed:(_Bool)arg2 error:(id *)arg3;
 - (_Bool)readDocumentObjectFromPackageURL:(id)arg1 error:(id *)arg2;
@@ -238,7 +241,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) unsigned long long documentObjectSize;
 @property(readonly, nonatomic) unsigned long long documentSize;
 - (unsigned long long)estimatedProgressTotalUnitCountForURL:(id)arg1 packageType:(long long)arg2;
-- (_Bool)copyIfAppropriateFromOriginalURL:(id)arg1 toURL:(id)arg2 apfsMode:(_Bool)arg3 originalPackage:(id)arg4 packageType:(long long)arg5;
+- (_Bool)copyIfAppropriateFromOriginalURL:(id)arg1 toURL:(id)arg2 apfsMode:(_Bool)arg3 originalPackage:(id)arg4 packageType:(long long)arg5 inheritPermissions:(_Bool)arg6;
 - (_Bool)shouldUseAPFSModeToWriteToURL:(id)arg1 originalURL:(id)arg2;
 @property(readonly, nonatomic) long long packageType;
 @property(readonly, nonatomic) TSPDocumentProperties *documentProperties;

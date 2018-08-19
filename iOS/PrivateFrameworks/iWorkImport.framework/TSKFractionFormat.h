@@ -11,9 +11,11 @@
 __attribute__((visibility("hidden")))
 @interface TSKFractionFormat : TSKFormat <NSCopying>
 {
+    _Bool _usePlusSign;
     int _fractionAccuracy;
 }
 
+@property(readonly, nonatomic) _Bool usePlusSign; // @synthesize usePlusSign=_usePlusSign;
 @property(readonly, nonatomic) int fractionAccuracy; // @synthesize fractionAccuracy=_fractionAccuracy;
 - (id)asFractionFormat;
 - (id)stringFromDouble:(double)arg1 locale:(id)arg2;

@@ -15,6 +15,7 @@
 
 @interface PUICClassicEmojiView : UIView <PUICEmojiCollectionViewDelegate, PUICCollectionViewDelegateFlowLayout, UIGestureRecognizerDelegate, PUICDiverseEmojiSelectionViewDelegate>
 {
+    _Bool _showStickers;
     PUICEmojiCollectionView *_collectionView;
     PUICEmojiCategoryHeaderView *_sizingHeader;
     NSMutableDictionary *_skinToneUsage;
@@ -55,7 +56,7 @@
 - (id)initWithFrame:(struct CGRect)arg1;
 - (void)configureCollectionViewWithCategoryIdentifiers:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1 categoryIdentifiers:(id)arg2 withHeader:(_Bool)arg3;
-- (id)initWithFrame:(struct CGRect)arg1 categoryIdentifiers:(id)arg2;
+- (id)initWithFrame:(struct CGRect)arg1 categoryIdentifiers:(id)arg2 showStickers:(_Bool)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

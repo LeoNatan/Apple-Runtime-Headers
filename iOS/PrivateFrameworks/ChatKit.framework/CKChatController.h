@@ -274,6 +274,7 @@
 - (void)_validateAndSendComposition:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)presentActionMenuForAccountSelection:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (_Bool)_shouldValidatePayloadBeforeSendingPayload:(id)arg1;
+@property(readonly, nonatomic) _Bool isFunCamPresented;
 - (void)prewarmFunCamera;
 - (void)sendCurrentLocation;
 - (void)chatInputControllerDidTransitionCollapsed:(id)arg1;
@@ -328,6 +329,7 @@
 - (struct UIEdgeInsets)_marginInsetsForEntryView;
 - (id)inputViewController;
 - (id)inputAccessoryView;
+- (void)inputLanguageDidChange:(id)arg1;
 - (void)_textInputModeDidChange:(id)arg1;
 - (void)composeRecipientViewShouldResignFirstResponder;
 - (void)_handleIsUnexpectedlyLoggedOutChanged:(id)arg1;
@@ -353,7 +355,7 @@
 - (void)_backbuttonPressed;
 - (void)_presentDetailsViewController;
 - (void)_detailsButtonPressed;
-- (void)navbarCanvasViewController:(id)arg1 buttonWasPressedOfType:(long long)arg2;
+- (void)navbarCanvasViewController:(id)arg1 buttonWasPressedOfType:(long long)arg2 wasLongPress:(_Bool)arg3;
 - (void)navbarCanvasViewControllerWantsNavbarResize:(id)arg1;
 - (void)navbarCanvasViewController:(id)arg1 didTapView:(id)arg2;
 - (void)navbarCanvasViewController:(id)arg1 avatarPickerViewControllerDidSelectEntity:(id)arg2;

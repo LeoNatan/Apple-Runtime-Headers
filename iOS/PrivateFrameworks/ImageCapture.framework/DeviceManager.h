@@ -21,8 +21,8 @@ __attribute__((visibility("hidden")))
 
 @property(retain) NSOperationQueue *deviceOperations; // @synthesize deviceOperations=_deviceOperations;
 @property(retain) DeviceManagerThread *thread; // @synthesize thread=_thread;
-- (void)addPVHOperation:(id)arg1;
-- (void)addPLOperation:(id)arg1;
+- (void)addInteractiveOperation:(id)arg1;
+- (void)addInitiatedOperation:(id)arg1;
 - (void)postNotification:(id)arg1;
 - (void)postCommandCompletionNotification:(id)arg1;
 - (long long)getDataOfFile:(id)arg1 fromDevice:(id)arg2 withOptions:(id)arg3 completion:(CDUnknownBlockType)arg4;

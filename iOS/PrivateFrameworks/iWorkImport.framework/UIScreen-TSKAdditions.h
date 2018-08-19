@@ -7,6 +7,7 @@
 #import "UIScreen.h"
 
 @interface UIScreen (TSKAdditions)
++ (_Bool)tsk_is3xScreenScale;
 + (double)tsk_screenScale;
 + (void)tsk_resetScreenScaleCache;
 + (double)tsk_expectedScreenScale;

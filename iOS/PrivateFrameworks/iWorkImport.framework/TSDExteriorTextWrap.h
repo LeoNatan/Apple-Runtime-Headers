@@ -21,6 +21,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)exteriorTextWrapWithIsHTMLWrap:(_Bool)arg1 type:(int)arg2 direction:(int)arg3 fitType:(int)arg4 margin:(double)arg5 alphaThreshold:(double)arg6;
++ (id)defaultExteriorTextWrap;
 + (id)exteriorTextWrap;
 @property(readonly, nonatomic) double alphaThreshold; // @synthesize alphaThreshold=_alphaThreshold;
 @property(readonly, nonatomic) double margin; // @synthesize margin=_margin;

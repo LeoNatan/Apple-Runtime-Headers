@@ -4456,6 +4456,10 @@ struct WeakObjCPtr<id<UIScrollViewDelegate>> {
     id m_weakReference;
 };
 
+struct WeakObjCPtr<id<UITextInputDelegate>> {
+    id m_weakReference;
+};
+
 struct WeakObjCPtr<id<WKActionSheetAssistantDelegate>> {
     id m_weakReference;
 };

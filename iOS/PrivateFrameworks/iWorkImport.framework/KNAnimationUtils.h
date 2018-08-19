@@ -25,8 +25,9 @@ __attribute__((visibility("hidden")))
 + (_Bool)isDisplayLoggingEnabled;
 + (_Bool)isResponsivenessLoggingEnabled;
 + (_Bool)isRenderingLocal;
++ (_Bool)shouldBadgeMetalRendering;
 + (_Bool)isMetalDisabled;
-+ (_Bool)isGLEverywhereEnabled;
++ (_Bool)areGLActionBuildsEnabled;
 + (_Bool)isMaxConcurrentTexturePrecachingEnabled;
 + (_Bool)isTexturePrecachingDisabled;
 + (_Bool)isGLStateValidationEnabled;

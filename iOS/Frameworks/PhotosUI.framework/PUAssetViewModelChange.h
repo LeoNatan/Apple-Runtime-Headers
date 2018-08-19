@@ -17,6 +17,7 @@
     _Bool _loadingStatusChanged;
     _Bool _saveProgressChanged;
     _Bool _saveStateChanged;
+    _Bool _importStateChanged;
     _Bool _forceBadgesVisibleChanged;
     _Bool _badgeInfoChanged;
     _Bool _isUpdatingDisplayedContentChanged;
@@ -39,6 +40,7 @@
 @property(retain, nonatomic, setter=_setIrisPlayerChange:) PUBrowsingIrisPlayerChange *irisPlayerChange; // @synthesize irisPlayerChange=_irisPlayerChange;
 @property(nonatomic, setter=_setForceBadgesVisibleChanged:) _Bool forceBadgesVisibleChanged; // @synthesize forceBadgesVisibleChanged=_forceBadgesVisibleChanged;
 @property(retain, nonatomic, setter=_setVideoPlayerChange:) PUBrowsingVideoPlayerChange *videoPlayerChange; // @synthesize videoPlayerChange=_videoPlayerChange;
+@property(nonatomic, setter=_setImportStateChanged:) _Bool importStateChanged; // @synthesize importStateChanged=_importStateChanged;
 @property(nonatomic, setter=_setSaveStateChanged:) _Bool saveStateChanged; // @synthesize saveStateChanged=_saveStateChanged;
 @property(nonatomic, setter=_setSaveProgressChanged:) _Bool saveProgressChanged; // @synthesize saveProgressChanged=_saveProgressChanged;
 @property(nonatomic, setter=_setLoadingStatusChanged:) _Bool loadingStatusChanged; // @synthesize loadingStatusChanged=_loadingStatusChanged;

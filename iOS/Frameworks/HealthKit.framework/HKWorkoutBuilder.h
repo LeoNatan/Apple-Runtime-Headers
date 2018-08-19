@@ -90,6 +90,7 @@
 - (id)goal;
 - (unsigned long long)goalType;
 - (id)_currentSnapshot;
+- (id)_resourceQueue_eventsBetweenStartDate:(id)arg1 endDate:(id)arg2;
 - (id)_resourceQueue_endDateForSnapshot;
 - (id)_resourceQueue_startDateForSnapshot;
 - (id)seriesBuilderForType:(id)arg1;

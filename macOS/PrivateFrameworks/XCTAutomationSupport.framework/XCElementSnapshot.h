@@ -44,6 +44,8 @@
 }
 
 + (id)axAttributesForSnapshotAttributes:(id)arg1;
++ (id)requiredAXAttributesForElementSnapshotHierarchy;
++ (id)sanitizedElementSnapshotHierarchyAttributesForAttributes:(id)arg1 isMacOS:(BOOL)arg2;
 + (id)axAttributesForElementSnapshotKeyPaths:(id)arg1;
 + (id)elementWithAccessibilityElement:(id)arg1;
 + (BOOL)supportsSecureCoding;
@@ -130,6 +132,8 @@
 - (void)_setIsFaultedIn:(int)arg1;
 - (BOOL)_isFaultedIn:(int)arg1;
 - (BOOL)_shouldAttemptFaultForBit:(int)arg1;
+- (void)_compensateForInsufficientElementTypeData;
+- (void)_recursivelyResetElementType;
 - (void)recursivelyClearDataSource;
 @property __weak id <XCTElementSnapshotAttributeDataSource> dataSource; // @synthesize dataSource=_dataSource;
 - (BOOL)isEqual:(id)arg1;

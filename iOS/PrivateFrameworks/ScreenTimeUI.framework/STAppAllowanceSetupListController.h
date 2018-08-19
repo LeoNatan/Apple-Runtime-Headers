@@ -24,7 +24,6 @@
 - (id)appSpecifiersForBundleIDs:(id)arg1;
 - (void)tableView:(id)arg1 didDeselectRowAtIndexPath:(id)arg2;
 - (void)addButtonTapped:(id)arg1;
-- (CDUnknownBlockType)localizedAppNameComparator;
 - (id)createChooseAppsSpecifiers;
 - (id)specifiers;
 - (_Bool)shouldReloadSpecifiersOnResume;

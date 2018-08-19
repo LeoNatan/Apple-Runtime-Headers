@@ -14,6 +14,7 @@
 - (void)service:(IDSService *)arg1 didSwitchActivePairedDevice:(IDSDevice *)arg2 acknowledgementBlock:(void (^)(void))arg3;
 - (void)serviceAllowedTrafficClassifiersDidReset:(IDSService *)arg1;
 - (void)serviceSpaceDidBecomeAvailable:(IDSService *)arg1;
+- (void)service:(IDSService *)arg1 account:(IDSAccount *)arg2 receivedGroupSessionParticipantDataUpdate:(IDSGroupSessionParticipantUpdate *)arg3;
 - (void)service:(IDSService *)arg1 account:(IDSAccount *)arg2 receivedGroupSessionParticipantUpdate:(IDSGroupSessionParticipantUpdate *)arg3;
 - (void)service:(IDSService *)arg1 account:(IDSAccount *)arg2 inviteReceivedForSession:(IDSSession *)arg3 fromID:(NSString *)arg4 withContext:(NSData *)arg5;
 - (void)service:(IDSService *)arg1 account:(IDSAccount *)arg2 inviteReceivedForSession:(IDSSession *)arg3 fromID:(NSString *)arg4 withOptions:(NSDictionary *)arg5;

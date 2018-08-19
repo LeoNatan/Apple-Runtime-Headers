@@ -32,8 +32,10 @@
     long long _cacheHits;
     long long _cacheRequests;
     long long _cacheManagementIOSentinel;
+    unsigned long long _maxPendingWrites;
 }
 
+@property(readonly) unsigned long long maxPendingWrites; // @synthesize maxPendingWrites=_maxPendingWrites;
 @property(readonly) long long cacheRequests; // @synthesize cacheRequests=_cacheRequests;
 @property(readonly) long long cacheHits; // @synthesize cacheHits=_cacheHits;
 @property(readonly) NSArray *expirationPolicies; // @synthesize expirationPolicies=_expirationPolicies;
@@ -46,6 +48,7 @@
 - (id)cacheDataForKey:(id)arg1 purgeLevel:(int)arg2;
 - (BOOL)removeCacheFileForKey:(id)arg1;
 - (id)initWithDirectory:(id)arg1 expirationPolicies:(id)arg2;
+- (id)initWithDirectory:(id)arg1 expirationPolicies:(id)arg2 maxPendingWrites:(unsigned long long)arg3;
 - (void)dealloc;
 - (id)init;
 - (BOOL)hasCacheFileForKey:(id)arg1;

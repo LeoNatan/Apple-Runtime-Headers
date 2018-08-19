@@ -56,11 +56,13 @@ __attribute__((visibility("hidden")))
     unsigned int _basebandFlushTransactionID;
     VCSessionDownlinkBandwidthAllocator *_downlinkBandwidthAllocator;
     NSMutableDictionary *_optInDictionary;
+    double _sessionStartTime;
     struct tagVCMediaQueue *_mediaQueue;
     _Bool _forceDisableMediaPriority;
     NSError *_stopError;
 }
 
+@property(readonly, nonatomic) VCSessionStatsController *sessionStatsController; // @synthesize sessionStatsController=_sessionStatsController;
 @property(retain, nonatomic) VCSessionMessaging *sessionMessaging; // @synthesize sessionMessaging=_sessionMessaging;
 @property(readonly, nonatomic) AVCRateController *downlinkRateController; // @synthesize downlinkRateController=_downlinkRateController;
 @property(readonly, nonatomic) struct opaqueRTCReporting *reportingAgent; // @synthesize reportingAgent=_reportingAgent;
@@ -81,7 +83,6 @@ __attribute__((visibility("hidden")))
 - (void)stopAllParticipants;
 - (void)dispatchedUpdateConfiguration:(id)arg1;
 - (void)tearDown;
-- (void)didStopWithError:(id)arg1;
 - (void)dispatchedStopWithError:(id)arg1;
 - (void)dispatchedStart;
 - (void)dispatchedRemoveParticipant:(id)arg1;
@@ -95,6 +96,7 @@ __attribute__((visibility("hidden")))
 - (void)reportingSessionParticipantEvent:(unsigned short)arg1 withParticipant:(id)arg2;
 - (void)reportingSessionParticipantEvent:(unsigned short)arg1 withStreamID:(unsigned short)arg2;
 - (struct __CFDictionary *)getClientSpecificUserInfo;
+- (void)resetDecryptionTimeout;
 - (_Bool)handleEncryptionInfoChange:(id)arg1;
 - (_Bool)generateReceptionReportList:(struct _RTCP_RECEPTION_REPORT *)arg1 reportCount:(char *)arg2;
 - (void)mediaStream:(id)arg1 didReceiveNewMasterKeyIndex:(id)arg2;
@@ -130,6 +132,7 @@ __attribute__((visibility("hidden")))
 - (void)setMediaQueuePeakBitrateWithTargetBitrate:(unsigned int)arg1;
 - (void)createMediaQueue;
 - (void)setupUplinkBitrateCaps;
+- (void)startRateControllers;
 - (void)setupRateControllers;
 - (void)setSessionInfoSynchronizerPeerSubscribedStreamsCallback;
 - (void)setSessionInfoSynchronizerErrorResponseCallback;
@@ -141,6 +144,8 @@ __attribute__((visibility("hidden")))
 - (int)flushBasebandWithPayloads:(id)arg1;
 - (void)mediaController:(void *)arg1 mediaSuggestionDidChange:(struct VCRateControlMediaSuggestion)arg2;
 - (void)rateController:(void *)arg1 targetBitrateDidChange:(unsigned int)arg2 rateChangeCounter:(unsigned int)arg3;
+- (void)vcSessionParticipant:(id)arg1 didDetectError:(id)arg2;
+- (void)vcSessionParticipantDidMediaDecryptionTimeOut:(id)arg1;
 - (void)vcSessionParticipantDidChangeReceivingStreams:(id)arg1;
 - (void)vcSessionParticipantDidChangeSendingStreams:(id)arg1;
 - (void)vcSessionParticipant:(id)arg1 didRequestVideoRedundancy:(_Bool)arg2;

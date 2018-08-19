@@ -12,7 +12,7 @@ __attribute__((visibility("hidden")))
 @interface _UIInternalDraggingSessionSource : _UIDraggingImageSlotOwner
 {
     struct CGPoint _lastNotifiedCentroid;
-    _Bool _hasProvidedFenceOnce;
+    _Bool _didHandOffDragImage;
     PBItemCollection *_pbItemCollection;
     _DUITouchRoutingPolicy *_touchRoutingPolicy;
     _UIDragSetDownAnimation *_setDownAnimation;
@@ -55,6 +55,7 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (void)_hostDidDeactivate;
 - (void)_hostWillBecomeActive;
+@property(readonly, nonatomic) _Bool didHandOffDragImage;
 @property(readonly, nonatomic) _Bool isActive;
 @property(readonly, nonatomic) _Bool canAddItems;
 - (void)cancelDrag;

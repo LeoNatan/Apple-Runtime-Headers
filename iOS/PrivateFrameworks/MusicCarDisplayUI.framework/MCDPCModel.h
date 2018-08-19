@@ -25,9 +25,11 @@
     MPWeakTimer *_playbackProgressTimeoutTimer;
     MPWeakTimer *_modelSourceInvalidatedTimer;
     NSObject<OS_dispatch_queue> *_mediaRemoteNotificationQueue;
+    NSObject<OS_dispatch_queue> *_mediaRemoteItemQueue;
     struct CGSize _imageSize;
 }
 
+@property(retain, nonatomic) NSObject<OS_dispatch_queue> *mediaRemoteItemQueue; // @synthesize mediaRemoteItemQueue=_mediaRemoteItemQueue;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *mediaRemoteNotificationQueue; // @synthesize mediaRemoteNotificationQueue=_mediaRemoteNotificationQueue;
 @property(nonatomic) _Bool shouldReloadAgain; // @synthesize shouldReloadAgain=_shouldReloadAgain;
 @property(retain, nonatomic) MPWeakTimer *modelSourceInvalidatedTimer; // @synthesize modelSourceInvalidatedTimer=_modelSourceInvalidatedTimer;

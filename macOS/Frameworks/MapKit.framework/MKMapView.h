@@ -583,6 +583,7 @@
 - (void)_updateAttribution;
 @property(nonatomic) int attributionCorner;
 - (id)_mapAttribution;
+@property(readonly, nonatomic) struct CGRect attributionBadgeBounds;
 @property(readonly, nonatomic, getter=_isShowingAttributionBadge) BOOL showingAttributionBadge;
 @property(nonatomic) BOOL canShowAttributionBadge;
 @property(nonatomic) BOOL showsAttribution;

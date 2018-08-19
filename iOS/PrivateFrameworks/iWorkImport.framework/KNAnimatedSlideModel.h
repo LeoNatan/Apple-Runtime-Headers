@@ -18,11 +18,13 @@ __attribute__((visibility("hidden")))
     NSMapTable *_infoToArrayOfAnimatedBuildsMap;
     NSMapTable *_animatedBuildToRendererMap;
     NSMutableSet *_ambientBuildRenderers;
+    _Bool _isMetalSlide;
     unsigned long long _numberOfAddedEvents;
     KNTransitionRenderer *_transitionRenderer;
     KNPlaybackSession *_session;
 }
 
+@property(readonly, nonatomic) _Bool isMetalSlide; // @synthesize isMetalSlide=_isMetalSlide;
 @property(nonatomic) __weak KNPlaybackSession *session; // @synthesize session=_session;
 @property(readonly, nonatomic) KNTransitionRenderer *transitionRenderer; // @synthesize transitionRenderer=_transitionRenderer;
 @property(nonatomic) unsigned long long numberOfAddedEvents; // @synthesize numberOfAddedEvents=_numberOfAddedEvents;
@@ -36,6 +38,8 @@ __attribute__((visibility("hidden")))
 - (void)p_addAmbientBuildRenderer:(id)arg1;
 - (_Bool)p_determineVisiblityOfInfo:(id)arg1 inOverloadedEvent:(long long)arg2 duringEvent:(long long)arg3;
 - (id)p_createBuildAnimationRecords:(id)arg1 info:(id)arg2 event:(long long)arg3 start:(double)arg4 eventStart:(double)arg5 animateAtEndOfPreviousBuild:(_Bool)arg6 previousAnimatedBuild:(id)arg7 parentBuild:(id)arg8;
+- (Class)p_rendererClassForBuildChunk:(id)arg1 parentBuild:(id)arg2 effectClass:(Class *)arg3;
+- (void)p_checkIfSlideIsMetalCapableWithBuildChunks:(id)arg1 andInfos:(id)arg2;
 - (void)p_setRenderer:(id)arg1 forAnimatedBuild:(id)arg2;
 - (id)rendererForAnimatedBuild:(id)arg1;
 - (id)p_newImplicitAmbientBuildRendererWithDrawable:(id)arg1 stageIndex:(long long)arg2 buildChunk:(id)arg3 startTime:(double)arg4 eventStartTime:(double)arg5 event:(long long)arg6 animateAtEndOfPreviousBuild:(_Bool)arg7;
@@ -50,6 +54,8 @@ __attribute__((visibility("hidden")))
 - (double)maxScaleFactorForDrawable:(id)arg1;
 - (id)finalActionEffectForDrawable:(id)arg1;
 - (id)actionEffectForDrawable:(id)arg1 atBeginningOfEvent:(long long)arg2;
+- (id)sortRenderers:(id)arg1;
+- (id)nextRendererAfterRenderer:(id)arg1;
 - (id)p_previousAnimatedBuildOfType:(long long)arg1 forInfo:(id)arg2 priorToBuild:(id)arg3;
 - (id)previousContentBuildForInfo:(id)arg1 priorToBuild:(id)arg2;
 - (id)previousBuildInForInfo:(id)arg1 priorToBuild:(id)arg2;

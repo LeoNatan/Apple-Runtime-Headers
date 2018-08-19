@@ -26,6 +26,7 @@
 - (BOOL)isAsynchronous;
 - (id)initWithStudentDaemonProxy:(id)arg1 sourcesByType:(id)arg2;
 - (id)initWithStudentDaemonProxy:(id)arg1;
+- (id)init;
 
 @end
 

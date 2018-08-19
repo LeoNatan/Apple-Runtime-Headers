@@ -6,30 +6,35 @@
 
 #import <iWorkImport/TSPObject.h>
 
-@class NSObject<TSDContainerInfo><TSWPStorageParent>, NSString, TSTIntegerKeyDict, TSTTableDataObjectKeyDict;
+#import "TSPCopying.h"
+
+@class NSObject<TSDContainerInfo><TSWPStorageParent>;
 
 __attribute__((visibility("hidden")))
-@interface TSTTableDataList : TSPObject
+@interface TSTTableDataList : TSPObject <TSPCopying>
 {
-    int mListType;
-    TSTIntegerKeyDict *mData;
-    TSTTableDataObjectKeyDict *mDataToKeyDict;
-    unsigned int mNextID;
+    struct unordered_map<unsigned int, TSTTableDataObject *, std::__1::hash<unsigned int>, std::__1::equal_to<unsigned int>, std::__1::allocator<std::__1::pair<const unsigned int, TSTTableDataObject *>>> _data;
+    struct unordered_map<TSTTableDataObject *, unsigned int, TSTTableDataObjectHash, TSTTableDataObjectEqual, std::__1::allocator<std::__1::pair<TSTTableDataObject *const, unsigned int>>> _dataToKeyDict;
+    _Bool _isNewForBraveNewCell;
+    int _listType;
+    unsigned int _nextID;
     NSObject<TSDContainerInfo><TSWPStorageParent> *_richTextParentInfo;
 }
 
 + (Class)classForUnarchiver:(id)arg1;
+@property(nonatomic) unsigned int nextID; // @synthesize nextID=_nextID;
+@property(nonatomic) _Bool isNewForBraveNewCell; // @synthesize isNewForBraveNewCell=_isNewForBraveNewCell;
+@property(nonatomic) int listType; // @synthesize listType=_listType;
 @property(nonatomic) NSObject<TSDContainerInfo><TSWPStorageParent> *richTextParentInfo; // @synthesize richTextParentInfo=_richTextParentInfo;
-@property(nonatomic) unsigned int nextID; // @synthesize nextID=mNextID;
-@property(retain, nonatomic) TSTTableDataObjectKeyDict *dataToKeyDict; // @synthesize dataToKeyDict=mDataToKeyDict;
-@property(retain, nonatomic) TSTIntegerKeyDict *data; // @synthesize data=mData;
-@property(nonatomic) int listType; // @synthesize listType=mListType;
-@property(readonly, retain, nonatomic) NSString *listTypeString;
+- (id).cxx_construct;
+- (void).cxx_destruct;
+- (id)copyWithContext:(id)arg1;
+- (id)listTypeString;
 - (void)dropReferenceForKey:(unsigned int)arg1;
 - (void)p_addReferencesForKey:(unsigned int)arg1 fromObject:(id)arg2;
 - (void)takeReferenceForKey:(unsigned int)arg1;
 - (unsigned int)refCountForKey:(unsigned int)arg1;
-@property(readonly, nonatomic) long long count;
+- (unsigned long long)count;
 - (void)replaceConditionalStyleSetsUsingBlock:(CDUnknownBlockType)arg1;
 - (void)replaceFormulasUsingBlock:(CDUnknownBlockType)arg1;
 - (void)enumerateDataObjectsUsingBlock:(CDUnknownBlockType)arg1;
@@ -39,34 +44,34 @@ __attribute__((visibility("hidden")))
 - (void)saveToArchiver:(id)arg1;
 - (void)loadFromUnarchiver:(id)arg1;
 - (id)packageLocator;
-- (void)dealloc;
 - (id)initWithType:(int)arg1 context:(id)arg2;
 - (void)p_setupWithType:(int)arg1 nextKeyID:(unsigned int)arg2;
-- (_Bool)supportsIDMapForType:(int)arg1;
-- (_Bool)auditMultipleChoiceListRefCountsAgainstExpected:(id)arg1 result:(id *)arg2;
-- (id)multipleChoiceListExpectedRefCountsFromFormatList;
+- (_Bool)useReverseMap;
 - (id)styleForKey:(unsigned int)arg1;
 - (id)stringForKey:(unsigned int)arg1;
-- (id)richTextPayloadForKey:(unsigned int)arg1;
+- (id)richTextForKey:(unsigned int)arg1;
 - (id)multipleChoiceListFormatForKey:(unsigned int)arg1;
 - (id)importWarningSetForKey:(unsigned int)arg1;
 - (id)formulaErrorForKey:(unsigned int)arg1;
-- (struct TSCEFormula *)formulaForKey:(unsigned int)arg1;
+- (id)controlCellSpecForKey:(unsigned int)arg1;
+- (id)formulaForKey:(unsigned int)arg1;
 - (id)conditionalStyleSetForKey:(unsigned int)arg1;
 - (id)commentStorageForKey:(unsigned int)arg1;
 - (id)cellFormatForKey:(unsigned int)arg1;
 - (unsigned int)addStyle:(id)arg1 atSuggestedKey:(unsigned int)arg2;
 - (unsigned int)addString:(id)arg1 atSuggestedKey:(unsigned int)arg2;
-- (unsigned int)addRichTextPayload:(id)arg1 atSuggestedKey:(unsigned int)arg2;
+- (unsigned int)addRichText:(id)arg1 atSuggestedKey:(unsigned int)arg2;
 - (unsigned int)addMultipleChoiceListFormat:(id)arg1 atSuggestedKey:(unsigned int)arg2;
 - (unsigned int)addImportWarningSet:(id)arg1 atSuggestedKey:(unsigned int)arg2;
 - (unsigned int)addFormulaError:(id)arg1 atSuggestedKey:(unsigned int)arg2;
-- (unsigned int)addFormula:(const struct TSCEFormula *)arg1 atSuggestedKey:(unsigned int)arg2;
+- (unsigned int)addControlCellSpec:(id)arg1 atSuggestedKey:(unsigned int)arg2;
+- (unsigned int)addFormula:(id)arg1 atSuggestedKey:(unsigned int)arg2;
 - (unsigned int)addConditionalStyleSet:(id)arg1 atSuggestedKey:(unsigned int)arg2;
 - (unsigned int)addCommentStorage:(id)arg1 atSuggestedKey:(unsigned int)arg2;
 - (unsigned int)addCellFormat:(id)arg1 atSuggestedKey:(unsigned int)arg2;
-- (_Bool)containsControlFormats;
-- (id)allRichTextPayloadStorages;
+- (_Bool)containsFormulas;
+- (_Bool)containsControlCellSpecs;
+- (id)allRichTextStorages;
 - (id)getRefCountsFromDataList;
 - (id)reassignCustomFormatUIDForPaste;
 - (void)upgradeConditionalStylesToLinkedRefWithTableUID:(const UUIDData_5fbc143e *)arg1;

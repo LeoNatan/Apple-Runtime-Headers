@@ -6,13 +6,15 @@
 
 #import "NSObject.h"
 
-@class CTXPCServiceSubscriptionInfo;
+@class CTXPCServiceSubscriptionInfo, NSArray;
 
 @interface IMCTXPCServiceSubscriptionInfo : NSObject
 {
     CTXPCServiceSubscriptionInfo *_subscriptionInfo;
+    NSArray *_allPhoneNumbers;
 }
 
+@property(retain, nonatomic) NSArray *allPhoneNumbers; // @synthesize allPhoneNumbers=_allPhoneNumbers;
 @property(retain, nonatomic) CTXPCServiceSubscriptionInfo *subscriptionInfo; // @synthesize subscriptionInfo=_subscriptionInfo;
 - (void).cxx_destruct;
 - (id)__im_subscriptionContextOrDefaultForForSimID:(id)arg1 phoneNumber:(id)arg2;
@@ -24,16 +26,19 @@
 - (id)__im_subscriptionContextForForSlotID:(long long)arg1;
 - (id)__imSIMIDForSubscriptionSlot:(long long)arg1;
 - (long long)__imSlotIDSForPhoneNumber:(id)arg1;
-- (id)__im_labelForPhoneNumber:(id)arg1;
+- (id)__im_labelForPhoneNumber:(id)arg1 simID:(id)arg2;
 - (id)__im_phoneNumberForSlotIDOrDefault:(long long)arg1;
 - (id)__im_phoneNumberForSlotID:(long long)arg1;
 - (id)preferredOrDefaultSubscriptionContext;
 - (id)__im_switchSubscriptionContextFromPhoneNumber:(id)arg1 simID:(id)arg2;
 - (id)__im_switchSubscriptionContextFromSubscriptionContext:(id)arg1;
 - (id)__im_preferredSubscriptionContext;
+- (id)__im_phoneNumbersForAllSubscriptions;
 - (_Bool)__im_hasMultipleSubscriptions;
 - (_Bool)__im_onlyHasActiveSlots;
 - (_Bool)__im_containsPhoneNumber:(id)arg1;
+- (void)_generatePhoneNumbersCache;
+- (void)_invalidatePhoneNumbersCache;
 - (id)subscriptions;
 - (id)allSubscriptions;
 - (id)__im_subscriptionsWithMMSSupport;

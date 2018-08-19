@@ -136,6 +136,7 @@
 - (void)_notifyDelegateOfSentEncryptedAuthenticatedData:(id)arg1 forCharacteristic:(id)arg2;
 - (void)_notifyDelegateOfReceivedPlaintextData:(id)arg1 forCharacteristic:(id)arg2;
 - (void)_notifyDelegateOfReceivedEncryptedAuthenticatedData:(id)arg1 forCharacteristic:(id)arg2;
+- (BOOL)isBLELinkConnected;
 - (void)_handleConnectionIdleTimeout;
 - (void)_suspendConnectionIdleTimer;
 - (void)_resumeConnectionIdleTimer;

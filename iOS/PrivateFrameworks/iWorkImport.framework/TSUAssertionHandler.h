@@ -19,7 +19,9 @@ __attribute__((visibility("hidden")))
 + (id)packedBacktraceString;
 + (void)_logBacktraceWithCallStackSymbols:(id)arg1;
 + (void)logFullBacktrace;
++ (void)logBacktraceThrottled;
 + (id)p_performBlockIgnoringAssertions:(CDUnknownBlockType)arg1 onlyFatal:(_Bool)arg2;
++ (id)performBlockIgnoringQAFatalAssertions:(CDUnknownBlockType)arg1;
 + (id)performBlockIgnoringFatalAssertions:(CDUnknownBlockType)arg1;
 + (id)performBlockIgnoringAssertions:(CDUnknownBlockType)arg1;
 + (void)initialize;

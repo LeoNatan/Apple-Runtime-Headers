@@ -123,6 +123,7 @@
 + (struct _NSModalSession *)_modalSessionForShownService:(id)arg1;
 + (void)removeFrameUsingName:(id)arg1;
 + (struct CGRect)_savedFrameFromString:(id)arg1;
++ (id)_allowedRunLoopModesForToolTips;
 + (BOOL)_currentWorkspaceIsUserSpace;
 + (id)windowNumbersWithOptions:(unsigned long long)arg1;
 + (id)_windowNumbersWithOptions:(unsigned long long)arg1 onSpace:(unsigned long long)arg2;
@@ -1466,6 +1467,7 @@
 - (BOOL)_hasActiveAppearance;
 - (void)_setForceInactiveShadow:(BOOL)arg1;
 - (BOOL)_forceInactiveShadow;
+@property(readonly) BOOL allowsInteriorShadow;
 - (BOOL)_contentHasShadow;
 - (void)_setContentHasShadow:(BOOL)arg1;
 - (struct CGSize)_shadowOffsetForActiveAppearance:(BOOL)arg1;

@@ -47,6 +47,7 @@
 @property(readonly, nonatomic) NSString *groupName;
 @property(readonly, nonatomic) NSNumber *groupNumber;
 @property(readonly, copy) NSString *description;
+- (BOOL)isDocumentQuery;
 - (unsigned long long)score;
 - (void)setScore:(unsigned long long)arg1;
 

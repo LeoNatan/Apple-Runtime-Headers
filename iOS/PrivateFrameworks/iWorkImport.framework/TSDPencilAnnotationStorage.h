@@ -8,7 +8,7 @@
 
 #import "TSKPencilAnnotationStorage.h"
 
-@class NSData, NSString, PKDrawing, TSPData, TSUColor;
+@class NSArray, NSData, NSString, PKDrawing, TSPData, TSUColor;
 
 __attribute__((visibility("hidden")))
 @interface TSDPencilAnnotationStorage : TSPObject <TSKPencilAnnotationStorage>
@@ -16,6 +16,7 @@ __attribute__((visibility("hidden")))
     struct CGPath *_path;
     TSPData *_rasterizedImageTSPData;
     TSUColor *_penColor;
+    long long _toolType;
     long long _attachedLocation;
     long long _attachedType;
     double _percentOfPAContainedInParentRep;
@@ -23,12 +24,16 @@ __attribute__((visibility("hidden")))
     unsigned long long _visibleStrokesCount;
     PKDrawing *_drawingForTextRecognition;
     TSPData *_encodedDrawingTSPData;
+    NSArray *_subStorages;
+    id <TSKPencilAnnotationStorage> _parentStorage;
     struct CGSize _rasterizedImageSize;
     struct CGPoint _markupOffset;
     struct CGSize _originalAttachedSize;
     struct CGRect _unscaledBoundsOfStrokes;
 }
 
+@property(nonatomic) __weak id <TSKPencilAnnotationStorage> parentStorage; // @synthesize parentStorage=_parentStorage;
+@property(retain, nonatomic) NSArray *subStorages; // @synthesize subStorages=_subStorages;
 @property(readonly, nonatomic) TSPData *encodedDrawingTSPData; // @synthesize encodedDrawingTSPData=_encodedDrawingTSPData;
 @property(retain, nonatomic) PKDrawing *drawingForTextRecognition; // @synthesize drawingForTextRecognition=_drawingForTextRecognition;
 @property(nonatomic) struct CGRect unscaledBoundsOfStrokes; // @synthesize unscaledBoundsOfStrokes=_unscaledBoundsOfStrokes;
@@ -39,6 +44,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) struct CGPoint markupOffset; // @synthesize markupOffset=_markupOffset;
 @property(nonatomic) long long attachedType; // @synthesize attachedType=_attachedType;
 @property(nonatomic) long long attachedLocation; // @synthesize attachedLocation=_attachedLocation;
+@property(readonly, nonatomic) long long toolType; // @synthesize toolType=_toolType;
 @property(readonly, nonatomic) TSUColor *penColor; // @synthesize penColor=_penColor;
 @property(readonly, nonatomic) TSPData *rasterizedImageTSPData; // @synthesize rasterizedImageTSPData=_rasterizedImageTSPData;
 @property(readonly, nonatomic) struct CGSize rasterizedImageSize; // @synthesize rasterizedImageSize=_rasterizedImageSize;
@@ -52,13 +58,16 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) _Bool shouldSplitAcrossAnchorRects;
 @property(readonly, nonatomic) _Bool shouldResizeWithAnchor;
 @property(readonly, nonatomic) struct CGPoint centerOfStrokes;
+@property(readonly, nonatomic) PKDrawing *drawing;
 @property(readonly, nonatomic) NSData *encodedDrawing;
+- (_Bool)p_isSubStorage;
+@property(readonly, nonatomic) _Bool shouldShowAnchorRect;
 @property(readonly, copy) NSString *description;
 - (void)dealloc;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)copyWithContext:(id)arg1;
-- (id)initWithContext:(id)arg1 markupOffset:(struct CGPoint)arg2 rasterizedImageTSPData:(id)arg3 attachedLocation:(long long)arg4 attachedType:(long long)arg5 encodedDrawing:(id)arg6 path:(struct CGPath *)arg7 unscaledBoundsOfStrokes:(struct CGRect)arg8 originalAttachedSize:(struct CGSize)arg9 percentOfPAContainedInParentRep:(double)arg10 textBaselinesTouchedCount:(unsigned long long)arg11 visibleStrokesCount:(unsigned long long)arg12 penColor:(id)arg13;
-- (id)initWithContext:(id)arg1 markupOffset:(struct CGPoint)arg2 rasterizedImage:(id)arg3 attachedLocation:(long long)arg4 attachedType:(long long)arg5 encodedDrawing:(id)arg6 path:(struct CGPath *)arg7 unscaledBoundsOfStrokes:(struct CGRect)arg8 originalAttachedSize:(struct CGSize)arg9 percentOfPAContainedInParentRep:(double)arg10 textBaselinesTouchedCount:(unsigned long long)arg11 visibleStrokesCount:(unsigned long long)arg12 penColor:(id)arg13;
+- (id)initWithContext:(id)arg1 markupOffset:(struct CGPoint)arg2 rasterizedImageTSPData:(id)arg3 attachedLocation:(long long)arg4 attachedType:(long long)arg5 encodedDrawing:(id)arg6 path:(struct CGPath *)arg7 unscaledBoundsOfStrokes:(struct CGRect)arg8 originalAttachedSize:(struct CGSize)arg9 percentOfPAContainedInParentRep:(double)arg10 textBaselinesTouchedCount:(unsigned long long)arg11 visibleStrokesCount:(unsigned long long)arg12 penColor:(id)arg13 toolType:(long long)arg14 subStorages:(id)arg15;
+- (id)initWithContext:(id)arg1 markupOffset:(struct CGPoint)arg2 rasterizedImage:(id)arg3 attachedLocation:(long long)arg4 attachedType:(long long)arg5 encodedDrawing:(id)arg6 path:(struct CGPath *)arg7 unscaledBoundsOfStrokes:(struct CGRect)arg8 originalAttachedSize:(struct CGSize)arg9 percentOfPAContainedInParentRep:(double)arg10 textBaselinesTouchedCount:(unsigned long long)arg11 visibleStrokesCount:(unsigned long long)arg12 penColor:(id)arg13 toolType:(long long)arg14 subStorages:(id)arg15;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

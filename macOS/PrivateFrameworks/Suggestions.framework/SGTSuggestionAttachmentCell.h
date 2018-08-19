@@ -18,6 +18,7 @@ __attribute__((visibility("hidden")))
     struct CGRect frameForMenu;
     int useShorterName;
     BOOL _leftClicked;
+    NSView *_controlView;
 }
 
 - (void).cxx_destruct;
@@ -31,6 +32,7 @@ __attribute__((visibility("hidden")))
 - (BOOL)isEditable;
 - (id)pullDownImageWithColor:(id)arg1;
 - (void)drawTokenWithFrame:(struct CGRect)arg1 inView:(id)arg2;
+- (id)textColor;
 - (id)_componentColor:(long long)arg1 state:(long long)arg2 isDark:(BOOL)arg3;
 - (long long)_currentState;
 - (BOOL)_shouldDrawScopeComponent;

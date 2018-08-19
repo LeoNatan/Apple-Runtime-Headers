@@ -18,7 +18,6 @@
     unsigned char _consumerSubType;
     NSUUID *_uuid;
     NSArray *_scoredActions;
-    NSArray *_unfilteredScoredActions;
     NSDate *_predictionDate;
     ATXAction *_engagedAction;
     ATXAction *_matchingIntentDonatedAction;
@@ -39,7 +38,6 @@
 @property(readonly, nonatomic) ATXAction *engagedAction; // @synthesize engagedAction=_engagedAction;
 @property(readonly, nonatomic) unsigned char consumerSubType; // @synthesize consumerSubType=_consumerSubType;
 @property(readonly, nonatomic) NSDate *predictionDate; // @synthesize predictionDate=_predictionDate;
-@property(readonly, nonatomic) NSArray *unfilteredScoredActions; // @synthesize unfilteredScoredActions=_unfilteredScoredActions;
 @property(readonly, nonatomic) NSArray *scoredActions; // @synthesize scoredActions=_scoredActions;
 @property(readonly, nonatomic) NSUUID *uuid; // @synthesize uuid=_uuid;
 - (void).cxx_destruct;

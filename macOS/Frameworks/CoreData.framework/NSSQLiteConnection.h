@@ -99,6 +99,7 @@ __attribute__((visibility("hidden")))
 - (long long)insertImportOperation:(id)arg1;
 - (BOOL)registerMigrationUpdateFunctionWithMigrator:(id)arg1;
 - (void)insertBatchDeleteChangesForTransactionID:(long long)arg1;
+- (id)gatherUpdatedObjectIDs;
 - (BOOL)_tableHasRows:(id)arg1;
 - (long long)_countOfRowsInTable:(id)arg1;
 - (void)insertUpdates:(id)arg1 transactionID:(long long)arg2 updatedAttributes:(id)arg3;
@@ -106,6 +107,7 @@ __attribute__((visibility("hidden")))
 - (void)prepareInsertStatementForAncillaryEntity:(id)arg1;
 - (long long)_insertTransactionForRequestContext:(id)arg1 andStrings:(id)arg2;
 - (id)_insertTransactionStringsForRequestContext:(id)arg1;
+- (void)processExternalDataReferenceFilesDeletedByRequest:(id)arg1;
 - (void)processDeleteRequest:(id)arg1;
 - (void)dropHistoryBeforeTransactionID:(id)arg1;
 - (id)hasAncillaryEntitiesInHistory;

@@ -25,6 +25,8 @@ __attribute__((visibility("hidden")))
 + (void)initialize;
 + (id)searchManager;
 @property(readonly, retain, nonatomic) SCRVisualsManager *_visualsManager; // @synthesize _visualsManager=__visualsManager;
+- (unsigned long long)_iOSPerformSearchWithSearchString:(id)arg1 orAttribute:(unsigned long long)arg2 inDirection:(unsigned long long)arg3 request:(id)arg4 element:(id)arg5 stayWithin:(id)arg6;
+- (id)_iOSGetElementForSearchWithSearchAttribute:(unsigned long long)arg1 inDirection:(unsigned long long)arg2 request:(id)arg3 element:(id)arg4 stayWithin:(id)arg5 provider:(id)arg6;
 - (id)_searchNotFoundString:(struct _SCRSearchData *)arg1;
 - (id)_searchNoExistingTypeString:(struct _SCRSearchData *)arg1;
 - (struct _NSRange)rangeForAttribute:(unsigned long long)arg1 direction:(unsigned long long)arg2 fromLocation:(double)arg3 element:(id)arg4;

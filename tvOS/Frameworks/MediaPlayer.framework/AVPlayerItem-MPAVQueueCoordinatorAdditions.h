@@ -9,6 +9,6 @@
 @class MPQueuePlayer;
 
 @interface AVPlayerItem (MPAVQueueCoordinatorAdditions)
-@property(nonatomic) MPQueuePlayer *MP_associatedQueuePlayer;
+@property(nonatomic) __weak MPQueuePlayer *MP_associatedQueuePlayer;
 @end
 

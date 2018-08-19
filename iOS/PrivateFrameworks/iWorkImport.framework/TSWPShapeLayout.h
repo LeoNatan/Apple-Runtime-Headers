@@ -64,6 +64,9 @@ __attribute__((visibility("hidden")))
 - (void)processChanges:(id)arg1 forChangeSource:(id)arg2;
 - (_Bool)isInvisibleAutosizingShape;
 - (void)createContainedLayoutForInstructionalText;
+- (_Bool)p_isEmptyParagraphWithFillOrBorders;
+- (_Bool)p_isEmptyList;
+- (_Bool)p_hasVisibleContents;
 - (void)invalidatePath;
 - (void)invalidateSize;
 - (void)replaceChild:(id)arg1 with:(id)arg2;

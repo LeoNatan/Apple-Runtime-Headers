@@ -101,6 +101,7 @@
 - (id)_switchFooterText:(_Bool *)arg1;
 - (void)setMadridEnabled:(id)arg1 specifier:(id)arg2;
 - (id)isMadridEnabled:(id)arg1;
+- (id)madridAccountsMultipleSubscriptionsSpecifierIdentifiers;
 - (id)madridSwitchSpecifierIdentifiers;
 - (_Bool)shouldShowIDSSubscriptions;
 - (_Bool)shouldShowMadridSwitch;
@@ -124,6 +125,7 @@
 - (void)_setupMultipleSubscriptionsMMSGroupSpecifiers:(id)arg1 wantsMMSBasicGroup:(_Bool)arg2;
 - (void)_setupMMSGroupSpecifiers:(id)arg1 wantsMMSBasicGroup:(_Bool)arg2;
 - (id)specifiers;
+- (void)_showPrivacySheet:(id)arg1;
 - (void)newCarrierNotification;
 - (_Bool)shouldReloadSpecifiersOnResume;
 - (void)systemApplicationDidEnterBackground;

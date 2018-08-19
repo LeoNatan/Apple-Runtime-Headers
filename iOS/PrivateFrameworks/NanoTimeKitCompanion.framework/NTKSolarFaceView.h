@@ -10,7 +10,7 @@
 #import "PUICCrownInputSequencerDelegate.h"
 #import "UIGestureRecognizerDelegate.h"
 
-@class NSDateFormatter, NSDictionary, NSMutableSet, NSString, NSTimer, NTKBezierPathView, NTKColorCurve, NTKDigitalTimeLabel, NTKDigitalTimeLabelStyle, NTKDigitialUtilitarianFaceViewComplicationFactory, NTKFloatCurve, NTKSolarDiskView, NTKSolarPath, NTKSolarTimeModel, UIImageView, UILabel, UITapGestureRecognizer, UIView;
+@class NSDateFormatter, NSDictionary, NSMutableSet, NSString, NSTimer, NTKBezierPathView, NTKColorCurve, NTKComplicationController, NTKDateComplicationLabel, NTKDigitalTimeLabel, NTKDigitalTimeLabelStyle, NTKDigitialUtilitarianFaceViewComplicationFactory, NTKFloatCurve, NTKLayoutRule, NTKSolarDiskView, NTKSolarPath, NTKSolarTimeModel, UIImageView, UILabel, UITapGestureRecognizer, UIView;
 
 @interface NTKSolarFaceView : NTKDigitalFaceView <NTKTimeView, PUICCrownInputSequencerDelegate, UIGestureRecognizerDelegate>
 {
@@ -47,6 +47,9 @@
     UITapGestureRecognizer *_viewModeTapGesture;
     long long _previousViewMode;
     struct NSNumber *_clockTimerToken;
+    NTKComplicationController *_dateComplicationController;
+    NTKDateComplicationLabel *_dateComplicationLabel;
+    NTKLayoutRule *_dateComplicationLayoutRule;
     struct NSString *_locationManagerToken;
     UILabel *_scrubLabel;
     UILabel *_overrideDateLabel;
@@ -84,6 +87,7 @@
 - (void)_layoutSolarDiskViewForViewMode:(long long)arg1;
 - (void)_layoutSolarPathAndContainerForViewMode:(long long)arg1;
 - (void)_layoutHorizonForViewMode:(long long)arg1;
+- (void)_layoutLegacyDateComplication;
 - (_Bool)_isAnimatingForReason:(id)arg1;
 - (_Bool)_isAnimating;
 - (void)_endAnimatingForReason:(id)arg1;

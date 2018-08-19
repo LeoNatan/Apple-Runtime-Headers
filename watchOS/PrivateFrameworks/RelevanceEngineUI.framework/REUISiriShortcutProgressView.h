@@ -18,6 +18,7 @@
 + (id)new;
 + (void)initialize;
 - (void).cxx_destruct;
+- (void)didMoveToWindow;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (id)init;
 

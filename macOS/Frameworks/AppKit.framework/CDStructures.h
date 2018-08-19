@@ -259,6 +259,7 @@ struct NSVisualEffectViewInternal {
     id _field10;
     id _field11;
     id _field12;
+    unsigned long long _field13;
 };
 
 struct NSWindowBatchOrderingTriplet {
@@ -1689,6 +1690,10 @@ typedef struct {
 typedef struct {
     char _field1[248];
 } CDStruct_e834ef07;
+
+typedef struct {
+    char bytes[32];
+} CDStruct_48875a69;
 
 typedef struct {
     unsigned int val[8];

@@ -13,7 +13,6 @@
     NSObject<OS_dispatch_queue> *_queue;
     float _musicVolumeLevel;
     float _alarmVolumeLevel;
-    float _phoneCallVolumeLevel;
 }
 
 + (id)sharedInstance;
@@ -23,7 +22,6 @@
 - (void)systemControllerDied:(id)arg1;
 - (void)systemVolumeDidChange:(id)arg1;
 - (void)fetchVolumeFromAVSystemControllerForAudioCategory:(id)arg1;
-- (float)phoneCallVolume;
 - (float)alarmVolume;
 - (float)musicVolume;
 - (void)dealloc;

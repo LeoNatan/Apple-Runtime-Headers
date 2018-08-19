@@ -25,9 +25,11 @@ __attribute__((visibility("hidden")))
     id inputAuxDataMetadata;
     NSDictionary *tuningParameters;
     float simulatedAperture;
+    NSNumber *inputDraftMode;
 }
 
 + (id)customAttributes;
+@property(retain, nonatomic) NSNumber *inputDraftMode; // @synthesize inputDraftMode;
 @property(retain, nonatomic) AVCameraCalibrationData *inputCalibrationData; // @synthesize inputCalibrationData;
 @property(retain, nonatomic) id inputAuxDataMetadata; // @synthesize inputAuxDataMetadata;
 @property(copy, nonatomic) NSNumber *inputScale; // @synthesize inputScale;
@@ -42,7 +44,7 @@ __attribute__((visibility("hidden")))
 @property(retain) CIImage *inputImage; // @synthesize inputImage;
 - (id)outputImage;
 - (id)blurMapV3:(id)arg1 shiftmap:(id)arg2 alphaImage:(id)arg3;
-- (id)refineShiftMapV3WithMainImage:(id)arg1 shiftmap:(id)arg2;
+- (id)refineShiftMapV3WithMainImage:(id)arg1 shiftmap:(id)arg2 lensModel:(id)arg3;
 - (id)blurMapV2:(id)arg1;
 - (id)smoothShiftMapV2:(id)arg1;
 - (id)faceMaskApply:(id)arg1 blurMap:(id)arg2;

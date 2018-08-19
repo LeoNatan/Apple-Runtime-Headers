@@ -14,7 +14,8 @@ __attribute__((visibility("hidden")))
 + (id)ParseTimeoutEnd:(id)arg1 withApplet:(id)arg2 error:(id *)arg3;
 + (id)ParseEndEventShort:(id)arg1 withApplet:(id)arg2 error:(id *)arg3;
 + (id)parseEndEvent:(id)arg1 withApplet:(id)arg2 error:(id *)arg3;
-+ (id)parseStartEvent:(id)arg1 withApplet:(id)arg2 error:(id *)arg3;
++ (id)parseStartEventISO:(id)arg1 withApplet:(id)arg2 error:(id *)arg3;
++ (id)parseStartEventNative:(id)arg1 withApplet:(id)arg2 error:(id *)arg3;
 + (id)getAppletStateAndHistory:(id)arg1 withApplet:(id)arg2 withPackage:(id)arg3 withModule:(id)arg4 withError:(id *)arg5;
 + (id)parseHCIEvent:(id)arg1 withApplet:(id)arg2 withPackage:(id)arg3 withModule:(id)arg4 withTransceiver:(id)arg5 withError:(id *)arg6;
 

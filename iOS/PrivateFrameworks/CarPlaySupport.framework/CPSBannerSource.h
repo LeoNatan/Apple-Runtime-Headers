@@ -11,7 +11,7 @@
 #import "SBUIBannerSource.h"
 #import "SBUIBannerTargetManagerObserver.h"
 
-@class NSMutableArray, NSString, NSTimer, UIView<SBUIBannerView>;
+@class NSMutableArray, NSString, NSTimer, NSUUID, UIView<SBUIBannerView>;
 
 @interface CPSBannerSource : NSObject <SBUIBannerTargetManagerObserver, CPBannerProviding, SBUIBannerSource, CPSApplicationStateObserving>
 {
@@ -22,8 +22,12 @@
     id <SBUIBannerTarget> _bannerTarget;
     UIView<SBUIBannerView> *_displayedBannerView;
     NSTimer *_dimissTimer;
+    NSUUID *_lastUserDismissedIdentifier;
+    NSTimer *_lastUserDismissedIdentifierResetTimer;
 }
 
+@property(retain, nonatomic) NSTimer *lastUserDismissedIdentifierResetTimer; // @synthesize lastUserDismissedIdentifierResetTimer=_lastUserDismissedIdentifierResetTimer;
+@property(retain, nonatomic) NSUUID *lastUserDismissedIdentifier; // @synthesize lastUserDismissedIdentifier=_lastUserDismissedIdentifier;
 @property(nonatomic, getter=isRateLimited) _Bool rateLimited; // @synthesize rateLimited=_rateLimited;
 @property(nonatomic, getter=isApplicationActive) _Bool applicationActive; // @synthesize applicationActive=_applicationActive;
 @property(retain, nonatomic) NSTimer *dimissTimer; // @synthesize dimissTimer=_dimissTimer;
@@ -33,6 +37,8 @@
 @property(nonatomic) __weak id <CPBannerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)applicationStateMonitor:(id)arg1 didBecomeActive:(_Bool)arg2;
+- (void)_resetLastUserDismissedIdentifierTimerFired:(id)arg1;
+- (void)_resetLastUserDismissedIdentifierTimer;
 - (void)_dismissTimerFired:(id)arg1;
 - (void)_resetDismissTimer;
 - (void)bannerViewDidDismiss:(id)arg1 forReason:(int)arg2;

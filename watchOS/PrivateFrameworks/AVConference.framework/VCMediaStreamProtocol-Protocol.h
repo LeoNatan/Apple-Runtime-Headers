@@ -15,11 +15,13 @@
 - (_Bool)setStreamConfig:(NSArray *)arg1 withError:(id *)arg2;
 
 @optional
-- (void)setRtcpSendInterval:(double)arg1;
+- (void)setDecryptionTimeOutInterval:(double)arg1;
 - (void)setRtcpTimeOutInterval:(double)arg1;
 - (void)setRtpTimeOutInterval:(double)arg1;
+- (void)setDecryptionTimeOutEnabled:(_Bool)arg1;
 - (void)setRtcpTimeOutEnabled:(_Bool)arg1;
 - (void)setRtpTimeOutEnabled:(_Bool)arg1;
+- (void)setRtcpSendInterval:(double)arg1;
 - (void)setRtcpEnabled:(_Bool)arg1;
 - (int)streamDirection;
 - (void)setStreamDirection:(int)arg1;

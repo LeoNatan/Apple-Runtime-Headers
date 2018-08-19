@@ -10,12 +10,13 @@
 #import "TSWPLayoutParent.h"
 #import "TSWPStyleProvider.h"
 
-@class NSString, TSWPLayout, TSWPPadding;
+@class NSMutableArray, NSString, TSWPLayout, TSWPPadding;
 
 __attribute__((visibility("hidden")))
 @interface KNNoteLayout : TSDLayout <TSWPStyleProvider, TSWPLayoutParent, TSWPColumnMetrics>
 {
     TSWPPadding *_padding;
+    NSMutableArray *_invertedParagraphsStyles;
     TSWPLayout *_containedLayout;
     struct CGSize _sizeOfScrollViewEnclosingCanvas;
 }

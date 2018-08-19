@@ -27,6 +27,7 @@
 - (void)processFetchedCloudStoreDataWithModifiedRecords:(id)arg1 deletedRecords:(id)arg2 operationGroupName:(id)arg3 shouldUpdateLocalDatabase:(_Bool)arg4 userInfo:(id)arg5 completion:(CDUnknownBlockType)arg6;
 - (void)setContainerState:(unsigned int)arg1 retryCount:(unsigned int)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)recordTypeForRecordID:(id)arg1;
+- (_Bool)shouldFetchAndStoreCloudDataAtStartup;
 - (_Bool)canInitializeContainer;
 - (id)initWithDataSource:(id)arg1 passManager:(id)arg2;
 

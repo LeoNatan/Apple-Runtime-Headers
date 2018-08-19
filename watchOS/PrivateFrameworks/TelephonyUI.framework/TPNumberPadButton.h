@@ -37,6 +37,7 @@
 + (id)imageForCharacter:(unsigned int)arg1 highlighted:(_Bool)arg2;
 + (id)imageForCharacter:(unsigned int)arg1;
 + (struct UIEdgeInsets)paddingOutsideRing;
++ (_Bool)useLargeFont;
 + (float)outerCircleDiameter;
 + (struct CGRect)circleBounds;
 + (struct CGSize)defaultSize;

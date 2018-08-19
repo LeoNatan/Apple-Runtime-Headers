@@ -8,20 +8,18 @@
 
 #import "NWKSelectedLocationWeatherMonitorObserver.h"
 
-@class NSDate, NSObject<OS_dispatch_queue>, NSString, NWKSelectedLocationWeatherMonitor;
+@class NSDate, NSString, NWKSelectedLocationWeatherMonitor;
 
 @interface NTKWeatherComplicationDataSource : NSObject <NWKSelectedLocationWeatherMonitorObserver>
 {
     _Bool _debugLastUpdateTimeEnabled;
     NWKSelectedLocationWeatherMonitor *_weatherMonitor;
-    NSObject<OS_dispatch_queue> *_workQueue;
     NSDate *_metricTrackingStartDate;
 }
 
 + (id)sharedInstance;
 @property(retain, nonatomic) NSDate *metricTrackingStartDate; // @synthesize metricTrackingStartDate=_metricTrackingStartDate;
 @property(nonatomic, getter=isDebugLastUpdateTimeEnabled) _Bool debugLastUpdateTimeEnabled; // @synthesize debugLastUpdateTimeEnabled=_debugLastUpdateTimeEnabled;
-@property(retain) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
 @property(readonly, nonatomic) NWKSelectedLocationWeatherMonitor *weatherMonitor; // @synthesize weatherMonitor=_weatherMonitor;
 - (void).cxx_destruct;
 - (void)_readDebugLastUpdateTimeEnabledPref;
@@ -45,7 +43,6 @@
 @property(readonly, nonatomic) unsigned int loggingCategory;
 - (void)_setMetricTrackingStartDateWithNow;
 - (void)_setMetricTrackingStartDateWithForecastData;
-- (void)_performBlockAsyncOnWorkQueue:(CDUnknownBlockType)arg1;
 - (void)_postUpdateNotification;
 - (void)_logComplicationStaleDuration;
 - (id)complicationApplicationIdentifier;

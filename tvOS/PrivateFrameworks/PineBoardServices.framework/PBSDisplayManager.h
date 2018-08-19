@@ -17,6 +17,7 @@
     _Bool _shouldModeSwitchForDynamicRange;
     _Bool _shouldModeSwitchForFrameRate;
     _Bool _detectedPoorCableConnection;
+    _Bool _deemed4KCapable;
     double _localeRefreshRate;
     NSArray *_sortedDisplayModes;
     PBSDisplayMode *_currentDisplayMode;
@@ -36,6 +37,7 @@
 + (void)preheat;
 @property(retain, nonatomic) PBSDisplayManagerServiceProxy *serviceProxy; // @synthesize serviceProxy=_serviceProxy;
 @property(retain, nonatomic) NSHashTable *stateObservers; // @synthesize stateObservers=_stateObservers;
+@property(nonatomic) _Bool deemed4KCapable; // @synthesize deemed4KCapable=_deemed4KCapable;
 @property(nonatomic) long long lastCablePollStatus; // @synthesize lastCablePollStatus=_lastCablePollStatus;
 @property(retain, nonatomic) NSSet *promotedVirtualDisplayModes; // @synthesize promotedVirtualDisplayModes=_promotedVirtualDisplayModes;
 @property(nonatomic) _Bool detectedPoorCableConnection; // @synthesize detectedPoorCableConnection=_detectedPoorCableConnection;

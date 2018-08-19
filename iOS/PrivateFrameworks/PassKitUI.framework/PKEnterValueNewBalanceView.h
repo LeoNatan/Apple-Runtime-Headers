@@ -19,6 +19,7 @@
     UILabel *_label;
     UIActivityIndicatorView *_spinner;
     UITapGestureRecognizer *_tapRecognizer;
+    _Bool _amountIsWithdrawal;
     NSString *_promptText;
     NSString *_updatedBalancePromptText;
     NSString *_maxLoadAmountText;
@@ -31,6 +32,7 @@
     id <PKEnterValueNewBalanceViewDelegate> _delegate;
 }
 
+@property(nonatomic) _Bool amountIsWithdrawal; // @synthesize amountIsWithdrawal=_amountIsWithdrawal;
 @property(nonatomic) __weak id <PKEnterValueNewBalanceViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(copy, nonatomic) NSDecimalNumber *minLoadAmount; // @synthesize minLoadAmount=_minLoadAmount;
 @property(copy, nonatomic) NSDecimalNumber *maxLoadAmount; // @synthesize maxLoadAmount=_maxLoadAmount;

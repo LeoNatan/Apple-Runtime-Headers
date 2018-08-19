@@ -30,6 +30,7 @@ __attribute__((visibility("hidden")))
 - (void)_renderForegroundInContext:(struct CGContext *)arg1;
 - (void)drawInContext:(struct CGContext *)arg1;
 - (void)display;
+- (void)layoutSublayers;
 - (void)NS_prepareContentRect:(struct CGRect)arg1;
 - (void)NS_invalidatePreparedContentRect;
 - (BOOL)NS_canDraw;

@@ -17,6 +17,7 @@
     NSTimer *_crashCountResetTimer;
     id <WBSCertificateWarningPagePresenter> _certificateWarningPagePresenterProxy;
     _WKRemoteObjectInterface *_certificateWarningPageHandlerInterface;
+    _Bool _certificateWarningPageHandlerInterfaceInvalidated;
     struct __SecTrust *_certificateTrust;
     CDUnknownBlockType _certificateRecoveryAttempter;
     NSURL *_certificateFailingURL;

@@ -73,7 +73,6 @@
 - (void)handleLostServerConnection;
 - (void)_startClearLoggingFilesTimer;
 - (void)_createClearLoggingFileTimer;
-- (void)CSSmartSiriVolumeDidReceivePhoneCallStateChanged:(_Bool)arg1;
 - (void)CSSmartSiriVolumeDidReceiveTimerChanged:(long long)arg1;
 - (void)CSSmartSiriVolumeDidReceiveAlarmChanged:(long long)arg1;
 - (void)CSSmartSiriVolumeDidReceiveMusicVolumeChanged:(float)arg1;

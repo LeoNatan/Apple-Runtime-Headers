@@ -6,13 +6,13 @@
 
 #import "NSObject.h"
 
-#import "TSDCanvasDelegate.h"
+#import "KNCanvasDelegate.h"
 #import "TSDConnectedInfoReplacing.h"
 
 @class KNAnimatedSlideModel, KNPlaybackSession, KNSlide, KNSlideNode, NSArray, NSIndexSet, NSLock, NSMapTable, NSMutableArray, NSMutableSet, NSSet, NSString, TSDCanvas;
 
 __attribute__((visibility("hidden")))
-@interface KNAnimatedSlideView : NSObject <TSDCanvasDelegate, TSDConnectedInfoReplacing>
+@interface KNAnimatedSlideView : NSObject <KNCanvasDelegate, TSDConnectedInfoReplacing>
 {
     unsigned long long _animationsActive;
     unsigned long long _animationsStarted;
@@ -78,7 +78,6 @@ __attribute__((visibility("hidden")))
 - (void)clearActiveAnimatedBuilds;
 - (void)removeActiveAnimatedBuild:(id)arg1;
 - (void)addActiveAnimatedBuild:(id)arg1;
-- (_Bool)shouldPreCache;
 - (void)serializeTextures;
 - (void)prepareAnimations;
 - (void)waitUntilAsyncRenderingIsCompleteShouldCancel:(_Bool)arg1;
@@ -117,13 +116,19 @@ __attribute__((visibility("hidden")))
 - (void)triggerNextEventIgnoringDelay:(_Bool)arg1;
 - (void)triggerNextEvent;
 - (_Bool)playAutomaticEvents;
+- (void)p_setupSlideMetalRendererShouldReset:(_Bool)arg1;
 - (void)renderIntoContext:(struct CGContext *)arg1 eventIndex:(unsigned long long)arg2 ignoreBuildVisibility:(_Bool)arg3;
+- (void)p_renderSlideContentWithCALayers;
+- (void)p_renderSlideContentWithMetal;
+- (void)p_makeMetalLayerVisible;
 - (void)p_renderCurrentEvent;
 - (void)renderCurrentEvent;
+- (void)p_addInfoToLayerTree:(id)arg1 rep:(id)arg2 renderer:(id)arg3 builtInfos:(id)arg4;
 - (id)p_addParentLayerForInfo:(id)arg1;
 @property(readonly, nonatomic) TSDCanvas *canvas; // @synthesize canvas=_canvas;
+@property(readonly, nonatomic) _Bool shouldPrepareAnimationsAsynchronously;
+@property(readonly, nonatomic) _Bool shouldPreCache;
 @property(readonly, nonatomic) KNAnimatedSlideView *nextASV;
-- (_Bool)slideContainsRepsThatMustDrawOnMainThread;
 - (_Bool)p_shouldAddInfoToTree:(id)arg1;
 - (_Bool)hasTransitionAtEventIndex:(long long)arg1;
 - (id)infosVisibleAtEvent:(unsigned long long)arg1 ignoreBuildVisibility:(_Bool)arg2;
@@ -139,6 +144,12 @@ __attribute__((visibility("hidden")))
 - (void)p_ambientBuildStarted:(id)arg1;
 - (void)transitionHasFinishedAnimating:(id)arg1;
 - (void)transitionHasImmediatelyFinishedAnimating:(id)arg1;
+- (void)p_notifyAmbientBuildEndWithObject:(id)arg1;
+- (void)p_notifyAmbientBuildStartWithObject:(id)arg1;
+- (void)p_notifyEventEndWithObject:(id)arg1;
+- (void)p_notifyEventImmediateEndWithObject:(id)arg1;
+- (void)p_notifyEventAnimationActiveWithObject:(id)arg1;
+- (void)p_notifyEventStart;
 - (void)registerForAmbientBuildEndCallback:(SEL)arg1 target:(id)arg2;
 - (void)registerForAmbientBuildStartCallback:(SEL)arg1 target:(id)arg2;
 - (void)registerForEventImmediateEndCallback:(SEL)arg1 target:(id)arg2;
@@ -147,7 +158,7 @@ __attribute__((visibility("hidden")))
 - (void)registerForEventStartCallback:(SEL)arg1 target:(id)arg2;
 - (id)infoToConnectToForConnectionLineConnectedToInfo:(id)arg1;
 - (_Bool)isInfoAKeynoteMasterObject:(id)arg1;
-- (unsigned long long)slideNumber;
+@property(readonly) unsigned long long slideNumber;
 - (_Bool)isRenderingForKPF;
 - (_Bool)isCanvasDrawingIntoPDF:(id)arg1;
 - (_Bool)shouldShowInstructionalText;

@@ -35,7 +35,7 @@
 - (void)_scheduleAllowPastWarningLimitTimer;
 - (void)_fadeWarningView;
 - (void)_updateCompactAccessoryImageForValue:(float)arg1;
-- (void)_setValue:(float)arg1 animated:(_Bool)arg2 sendAction:(_Bool)arg3;
+- (void)_setValue:(float)arg1 animated:(_Bool)arg2 sendAction:(_Bool)arg3 crown:(_Bool)arg4;
 - (void)setValue:(float)arg1 animated:(_Bool)arg2;
 - (void)setStyle:(int)arg1;
 - (void)layoutSubviews;

@@ -17,7 +17,6 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)payloadWithStorage:(id)arg1;
-- (_Bool)requiresRichText;
 - (id)string;
 - (void)saveToArchiver:(id)arg1;
 - (void)loadFromUnarchiver:(id)arg1;

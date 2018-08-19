@@ -26,8 +26,10 @@
 }
 
 + (struct __SIQuery *)_makeSIQueryWithQueryString:(id)arg1 queryContext:(id)arg2;
-+ (id)_makeQueryStringWithQueryString:(id)arg1 queryContext:(id)arg2;
-+ (id)_makeBundleQueryStringWithBundleIDs:(id)arg1;
++ (id)_makeBundleQueryStringForQueryContext:(id)arg1;
++ (id)_makeFilterQueryStringForQueryContext:(id)arg1;
++ (id)_makeDisabledBundlesQueryStringForQueryContext:(id)arg1;
++ (id)_makeBundleQueryStringForField:(id)arg1 withBundleIDs:(id)arg2;
 @property(nonatomic) double startTime; // @synthesize startTime=_startTime;
 @property(retain, nonatomic) NSMutableArray *jobs; // @synthesize jobs=_jobs;
 @property(copy, nonatomic) CDUnknownBlockType completionBlock; // @synthesize completionBlock=_completionBlock;

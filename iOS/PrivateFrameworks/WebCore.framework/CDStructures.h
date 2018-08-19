@@ -64,15 +64,16 @@ struct AXObjectCache {
     struct Timer _field15;
     struct Node *_field16;
     struct ListHashSet<WebCore::Node *, WTF::PtrHash<WebCore::Node *>> _field17;
-    struct AXTextStateChangeIntent _field18;
-    struct ListHashSet<WebCore::Element *, WTF::PtrHash<WebCore::Element *>> _field19;
-    struct ListHashSet<WebCore::Node *, WTF::PtrHash<WebCore::Node *>> _field20;
-    struct ListHashSet<WebCore::Element *, WTF::PtrHash<WebCore::Element *>> _field21;
-    struct HashMap<WebCore::Element *, WTF::String, WTF::PtrHash<WebCore::Element *>, WTF::HashTraits<WebCore::Element *>, WTF::HashTraits<WTF::String>> _field22;
-    struct HashMap<WebCore::Element *, WebCore::QualifiedName, WTF::PtrHash<WebCore::Element *>, WTF::HashTraits<WebCore::Element *>, WTF::HashTraits<WebCore::QualifiedName>> _field23;
-    struct Vector<std::__1::pair<WebCore::Node *, WebCore::Node *>, 0, WTF::CrashOnOverflow, 16> _field24;
-    _Bool _field25;
+    struct Timer _field18;
+    struct AXTextStateChangeIntent _field19;
+    struct ListHashSet<WebCore::Element *, WTF::PtrHash<WebCore::Element *>> _field20;
+    struct ListHashSet<WebCore::Node *, WTF::PtrHash<WebCore::Node *>> _field21;
+    struct ListHashSet<WebCore::Element *, WTF::PtrHash<WebCore::Element *>> _field22;
+    struct HashMap<WebCore::Element *, WTF::String, WTF::PtrHash<WebCore::Element *>, WTF::HashTraits<WebCore::Element *>, WTF::HashTraits<WTF::String>> _field23;
+    struct HashMap<WebCore::Element *, WebCore::QualifiedName, WTF::PtrHash<WebCore::Element *>, WTF::HashTraits<WebCore::Element *>, WTF::HashTraits<WebCore::QualifiedName>> _field24;
+    struct Vector<std::__1::pair<WebCore::Node *, WebCore::Node *>, 0, WTF::CrashOnOverflow, 16> _field25;
     _Bool _field26;
+    _Bool _field27;
 };
 
 struct AXTextSelection {
@@ -748,6 +749,10 @@ struct HashSet<WTF::RefPtr<WTF::SchedulePair, WTF::DumbPtrTraits<WTF::SchedulePa
     struct HashTable<WTF::RefPtr<WTF::SchedulePair, WTF::DumbPtrTraits<WTF::SchedulePair>>, WTF::RefPtr<WTF::SchedulePair, WTF::DumbPtrTraits<WTF::SchedulePair>>, WTF::IdentityExtractor, WTF::SchedulePairHash, WTF::HashTraits<WTF::RefPtr<WTF::SchedulePair, WTF::DumbPtrTraits<WTF::SchedulePair>>>, WTF::HashTraits<WTF::RefPtr<WTF::SchedulePair, WTF::DumbPtrTraits<WTF::SchedulePair>>>> m_impl;
 };
 
+struct HashSet<WTF::RefPtr<WebCore::SecurityOrigin, WTF::DumbPtrTraits<WebCore::SecurityOrigin>>, WTF::PtrHash<WTF::RefPtr<WebCore::SecurityOrigin, WTF::DumbPtrTraits<WebCore::SecurityOrigin>>>, WTF::HashTraits<WTF::RefPtr<WebCore::SecurityOrigin, WTF::DumbPtrTraits<WebCore::SecurityOrigin>>>> {
+    struct HashTable<WTF::RefPtr<WebCore::SecurityOrigin, WTF::DumbPtrTraits<WebCore::SecurityOrigin>>, WTF::RefPtr<WebCore::SecurityOrigin, WTF::DumbPtrTraits<WebCore::SecurityOrigin>>, WTF::IdentityExtractor, WTF::PtrHash<WTF::RefPtr<WebCore::SecurityOrigin, WTF::DumbPtrTraits<WebCore::SecurityOrigin>>>, WTF::HashTraits<WTF::RefPtr<WebCore::SecurityOrigin, WTF::DumbPtrTraits<WebCore::SecurityOrigin>>>, WTF::HashTraits<WTF::RefPtr<WebCore::SecurityOrigin, WTF::DumbPtrTraits<WebCore::SecurityOrigin>>>> m_impl;
+};
+
 struct HashSet<WTF::RetainPtr<WebCoreNSURLSessionDataTask>, WTF::PtrHash<WTF::RetainPtr<WebCoreNSURLSessionDataTask>>, WTF::HashTraits<WTF::RetainPtr<WebCoreNSURLSessionDataTask>>> {
     struct HashTable<WTF::RetainPtr<WebCoreNSURLSessionDataTask>, WTF::RetainPtr<WebCoreNSURLSessionDataTask>, WTF::IdentityExtractor, WTF::PtrHash<WTF::RetainPtr<WebCoreNSURLSessionDataTask>>, WTF::HashTraits<WTF::RetainPtr<WebCoreNSURLSessionDataTask>>, WTF::HashTraits<WTF::RetainPtr<WebCoreNSURLSessionDataTask>>> m_impl;
 };
@@ -826,6 +831,14 @@ struct HashTable<WTF::ListHashSetNode<unsigned int>*, WTF::ListHashSetNode<unsig
 
 struct HashTable<WTF::RefPtr<WTF::SchedulePair, WTF::DumbPtrTraits<WTF::SchedulePair>>, WTF::RefPtr<WTF::SchedulePair, WTF::DumbPtrTraits<WTF::SchedulePair>>, WTF::IdentityExtractor, WTF::SchedulePairHash, WTF::HashTraits<WTF::RefPtr<WTF::SchedulePair, WTF::DumbPtrTraits<WTF::SchedulePair>>>, WTF::HashTraits<WTF::RefPtr<WTF::SchedulePair, WTF::DumbPtrTraits<WTF::SchedulePair>>>> {
     struct RefPtr<WTF::SchedulePair, WTF::DumbPtrTraits<WTF::SchedulePair>> *m_table;
+    unsigned int m_tableSize;
+    unsigned int m_tableSizeMask;
+    unsigned int m_keyCount;
+    unsigned int m_deletedCount;
+};
+
+struct HashTable<WTF::RefPtr<WebCore::SecurityOrigin, WTF::DumbPtrTraits<WebCore::SecurityOrigin>>, WTF::RefPtr<WebCore::SecurityOrigin, WTF::DumbPtrTraits<WebCore::SecurityOrigin>>, WTF::IdentityExtractor, WTF::PtrHash<WTF::RefPtr<WebCore::SecurityOrigin, WTF::DumbPtrTraits<WebCore::SecurityOrigin>>>, WTF::HashTraits<WTF::RefPtr<WebCore::SecurityOrigin, WTF::DumbPtrTraits<WebCore::SecurityOrigin>>>, WTF::HashTraits<WTF::RefPtr<WebCore::SecurityOrigin, WTF::DumbPtrTraits<WebCore::SecurityOrigin>>>> {
+    struct RefPtr<WebCore::SecurityOrigin, WTF::DumbPtrTraits<WebCore::SecurityOrigin>> *m_table;
     unsigned int m_tableSize;
     unsigned int m_tableSizeMask;
     unsigned int m_keyCount;
@@ -1200,18 +1213,17 @@ struct MediaSessionManageriOS {
     struct unique_ptr<WebCore::RemoteCommandListener, std::__1::default_delete<WebCore::RemoteCommandListener>> _field6;
     struct unique_ptr<PAL::SystemSleepListener, std::__1::default_delete<PAL::SystemSleepListener>> _field7;
     struct RefPtr<WebCore::AudioHardwareListener, WTF::DumbPtrTraits<WebCore::AudioHardwareListener>> _field8;
-    struct unique_ptr<WebCore::DeferrableOneShotTimer, std::__1::default_delete<WebCore::DeferrableOneShotTimer>> _field9;
+    _Bool _field9;
     _Bool _field10;
     _Bool _field11;
-    _Bool _field12;
-    int _field13;
-    struct RetainPtr<WebMediaSessionHelper> _field14;
+    int _field12;
+    struct RetainPtr<WebMediaSessionHelper> _field13;
+    double _field14;
     double _field15;
     double _field16;
-    double _field17;
-    unsigned long long _field18;
-    struct String _field19;
-    _Bool _field20;
+    unsigned long long _field17;
+    struct String _field18;
+    _Bool _field19;
 };
 
 struct MediaStream;
@@ -1386,6 +1398,10 @@ struct Ref<WebCore::Document, WTF::DumbPtrTraits<WebCore::Document>> {
 };
 
 struct Ref<WebCore::MediaSample, WTF::DumbPtrTraits<WebCore::MediaSample>>;
+
+struct Ref<WebCore::SecurityOrigin, WTF::DumbPtrTraits<WebCore::SecurityOrigin>> {
+    struct SecurityOrigin *_field1;
+};
 
 struct Ref<const WTF::Logger, WTF::DumbPtrTraits<const WTF::Logger>> {
     struct Logger *_field1;
@@ -1576,6 +1592,8 @@ struct RefPtr<WebCore::ResourceHandle, WTF::DumbPtrTraits<WebCore::ResourceHandl
 struct RefPtr<WebCore::ResourceLoader, WTF::DumbPtrTraits<WebCore::ResourceLoader>> {
     struct ResourceLoader *m_ptr;
 };
+
+struct RefPtr<WebCore::SecurityOrigin, WTF::DumbPtrTraits<WebCore::SecurityOrigin>>;
 
 struct RefPtr<WebCore::SharedBuffer, WTF::DumbPtrTraits<WebCore::SharedBuffer>> {
     struct SharedBuffer *m_ptr;
@@ -1920,6 +1938,8 @@ struct ScriptExecutionContext;
 struct Seconds {
     double m_value;
 };
+
+struct SecurityOrigin;
 
 struct SelectionRect;
 
@@ -2563,12 +2583,6 @@ struct unique_ptr<WebCore::AXComputedObjectAttributeCache, std::__1::default_del
     } _field1;
 };
 
-struct unique_ptr<WebCore::DeferrableOneShotTimer, std::__1::default_delete<WebCore::DeferrableOneShotTimer>> {
-    struct __compressed_pair<WebCore::DeferrableOneShotTimer *, std::__1::default_delete<WebCore::DeferrableOneShotTimer>> {
-        struct DeferrableOneShotTimer *_field1;
-    } _field1;
-};
-
 struct unique_ptr<WebCore::Extensions3DOpenGL, std::__1::default_delete<WebCore::Extensions3DOpenGL>> {
     struct __compressed_pair<WebCore::Extensions3DOpenGL *, std::__1::default_delete<WebCore::Extensions3DOpenGL>> {
         struct Extensions3DOpenGL *_field1;
@@ -2666,6 +2680,10 @@ typedef struct {
 typedef struct Function<void ()> {
     struct unique_ptr<WTF::Function<void ()>::CallableWrapperBase, std::__1::default_delete<WTF::Function<void ()>::CallableWrapperBase>> m_callableWrapper;
 } Function_89d21b48;
+
+typedef struct Ref<WebCore::SecurityOrigin, WTF::DumbPtrTraits<WebCore::SecurityOrigin>> {
+    struct SecurityOrigin *_field1;
+} Ref_4cc64869;
 
 typedef struct RefPtr<JSC::Bindings::RootObject, WTF::DumbPtrTraits<JSC::Bindings::RootObject>> {
     struct RootObject *_field1;

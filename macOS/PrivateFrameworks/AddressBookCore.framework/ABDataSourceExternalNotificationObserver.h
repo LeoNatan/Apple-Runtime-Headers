@@ -16,6 +16,8 @@
     id <CNScheduler> _preprocessingScheduler;
 }
 
++ (BOOL)isConsideredAquaSession:(int)arg1;
++ (id)log;
 @property(readonly, nonatomic) id <CNScheduler> preprocessingScheduler; // @synthesize preprocessingScheduler=_preprocessingScheduler;
 @property(readonly, nonatomic) NSNotificationCenter *localNotificationCenter; // @synthesize localNotificationCenter=_localNotificationCenter;
 @property(readonly, nonatomic) NSDistributedNotificationCenter *distributedNotificationCenter; // @synthesize distributedNotificationCenter=_distributedNotificationCenter;
@@ -23,9 +25,9 @@
 - (void)postAccountConfigurationDidChangeNotificationFromDistributedNotification:(id)arg1;
 - (void)postInvalidatedExternallyNotificationFromDistributedNotification:(id)arg1;
 - (void)postRemovedExternallyNotificationFromDistributedNotification:(id)arg1;
-- (void)postChangedExternallyNotificationFromDistributedNotification:(id)arg1;
 - (void)postAddedExternallyNotificationFromDistributedNotification:(id)arg1;
-- (void)extractUidFromNotification:(id)arg1 andRunBlock:(CDUnknownBlockType)arg2;
+- (void)postChangedExternallyNotificationFromDistributedNotification:(id)arg1;
+- (void)extractUIDFromNotification:(id)arg1 andRunBlock:(CDUnknownBlockType)arg2;
 - (void)distributedAccountConfigurationDidChange:(id)arg1;
 - (void)distributedSourcesInvalidated:(id)arg1;
 - (void)removeSourceWithExternalNotification:(id)arg1;

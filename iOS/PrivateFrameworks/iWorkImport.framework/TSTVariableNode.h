@@ -11,11 +11,13 @@
 __attribute__((visibility("hidden")))
 @interface TSTVariableNode : TSTExpressionNode
 {
-    unsigned int mSymbol;
-    NSString *mIdentifier;
+    unsigned int _symbol;
+    NSString *_identifier;
 }
 
-@property(nonatomic) unsigned int symbol; // @synthesize symbol=mSymbol;
+@property(nonatomic) unsigned int symbol; // @synthesize symbol=_symbol;
+@property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
+- (void).cxx_destruct;
 - (void)saveToArchive:(struct VariableNodeArchive *)arg1 archiver:(id)arg2;
 - (void)loadFromArchive:(const struct VariableNodeArchive *)arg1 unarchiver:(id)arg2;
 - (void)saveToArchiver:(id)arg1;
@@ -25,12 +27,11 @@ __attribute__((visibility("hidden")))
 - (id)detokenizedText;
 - (id)formulaPlainText;
 - (void)insertFormulaText:(id)arg1 includeWhitespace:(_Bool)arg2;
-- (id)copyByResolvingIdentifiers:(id)arg1 hostTable:(id)arg2 forceReferenceInterpretation:(_Bool)arg3 symbolTable:(struct TSCESymbolTable *)arg4 oldToNewNodeMap:(id)arg5;
+- (id)copyByResolvingIdentifiers:(id)arg1 hostTable:(id)arg2 baseHostCell:(struct TSUCellCoord)arg3 forceReferenceInterpretation:(_Bool)arg4 symbolTable:(struct TSCESymbolTable *)arg5 oldToNewNodeMap:(id)arg6;
 - (id)string;
 - (int)tokenType;
 - (_Bool)isEqualToExpressionNode:(id)arg1;
 - (struct TSTCSENodeData)recordHashesForSubexpressions:(id)arg1;
-@property(nonatomic) NSString *identifier;
 - (id)initAsCopyOf:(id)arg1 intoContext:(id)arg2 children:(id)arg3;
 - (id)initWithContext:(id)arg1 children:(id)arg2 firstIndex:(unsigned long long)arg3 lastIndex:(unsigned long long)arg4;
 - (id)initWithContext:(id)arg1 identifier:(id)arg2 symbol:(unsigned int)arg3 firstIndex:(unsigned long long)arg4 lastIndex:(unsigned long long)arg5;

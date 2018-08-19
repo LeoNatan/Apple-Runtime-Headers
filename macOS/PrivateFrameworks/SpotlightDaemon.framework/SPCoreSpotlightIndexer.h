@@ -16,6 +16,8 @@
     double _lastUpdateTime;
     NSArray *_reindexIndexers;
     id <CSIndexExtensionDelegate> extensionDelegate;
+    NSDictionary *_fileProviderAppToExtensionBundleMap;
+    NSDictionary *_fileProviderExtensionToAppBundleMap;
     id <SPCoreSpotlightIndexerDelegate> _indexerDelegate;
     NSDictionary *_concreteIndexers;
     NSObject<OS_dispatch_source> *_prefsChangeSource;
@@ -26,7 +28,6 @@
     NSObject<OS_dispatch_source> *_reindexAllItemsSource;
     NSObject<OS_dispatch_source> *_reindexAllItemsWithIdentifiersSource;
     SPCoreSpotlightTask *_reindexAllItemsTask;
-    NSDictionary *_fileProviderAppToExtensionBundleMap;
     NSObject<OS_dispatch_queue> *_indexQueue;
     NSObject<OS_dispatch_queue> *_firstUnlockQueue;
     NSObject<OS_dispatch_queue> *_reindexAllQueue;
@@ -55,7 +56,6 @@
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *reindexAllQueue; // @synthesize reindexAllQueue=_reindexAllQueue;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *firstUnlockQueue; // @synthesize firstUnlockQueue=_firstUnlockQueue;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *indexQueue; // @synthesize indexQueue=_indexQueue;
-@property(retain) NSDictionary *fileProviderAppToExtensionBundleMap; // @synthesize fileProviderAppToExtensionBundleMap=_fileProviderAppToExtensionBundleMap;
 @property(retain) SPCoreSpotlightTask *reindexAllItemsTask; // @synthesize reindexAllItemsTask=_reindexAllItemsTask;
 @property(retain, nonatomic) NSObject<OS_dispatch_source> *reindexAllItemsWithIdentifiersSource; // @synthesize reindexAllItemsWithIdentifiersSource=_reindexAllItemsWithIdentifiersSource;
 @property(retain, nonatomic) NSObject<OS_dispatch_source> *reindexAllItemsSource; // @synthesize reindexAllItemsSource=_reindexAllItemsSource;
@@ -108,8 +108,10 @@
 - (void)indexFromBundle:(id)arg1 protectionClass:(id)arg2 options:(long long)arg3 items:(id)arg4 itemsText:(id)arg5 itemsHTML:(id)arg6 clientState:(id)arg7 clientStateName:(id)arg8 deletes:(id)arg9 completionHandler:(CDUnknownBlockType)arg10;
 - (BOOL)writeData:(id)arg1 toFile:(id)arg2;
 - (int)openIndex:(BOOL)arg1;
-- (void)extensionsChanged:(id)arg1;
-- (void)checkIfExtensionsNeedToBeLoaded;
+@property(readonly, nonatomic) NSDictionary *fileProviderExtensionToAppBundleMap; // @synthesize fileProviderExtensionToAppBundleMap=_fileProviderExtensionToAppBundleMap;
+@property(readonly, nonatomic) NSDictionary *fileProviderAppToExtensionBundleMap; // @synthesize fileProviderAppToExtensionBundleMap=_fileProviderAppToExtensionBundleMap;
+- (void)fileProviderInfoSetup;
+- (void)writeFileProviderBundleMap:(id)arg1;
 - (int)_openIndex:(BOOL)arg1;
 - (void)reindexAllItemsWithIndexers:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)recordEngagementForBundleID:(id)arg1 uniqueIdentifier:(id)arg2 protectionClass:(id)arg3 userQuery:(id)arg4 date:(id)arg5;

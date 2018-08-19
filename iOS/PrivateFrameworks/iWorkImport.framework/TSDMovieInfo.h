@@ -55,7 +55,8 @@ __attribute__((visibility("hidden")))
 - (id)objectForProperty:(int)arg1;
 - (_Bool)containsProperty:(int)arg1;
 - (_Bool)supportsAttachedComments;
-- (id)p_makePosterImageDataWithAVAsset:(id)arg1 inContext:(id)arg2;
+- (id)p_makePosterImageDataWithAVAsset:(id)arg1 inContext:(id)arg2 time:(double)arg3;
+- (id)synchronouslyGenerateNewPosterImageForAsset:(id)arg1 time:(double)arg2;
 - (id)synchronouslyGenerateDefaultPosterImageForContext:(id)arg1;
 - (id)generateEmptyPosterImageForContext:(id)arg1;
 - (id)makePosterImageGeneratorWithAVAsset:(id)arg1;
@@ -74,6 +75,7 @@ __attribute__((visibility("hidden")))
 - (Class)layoutClass;
 - (Class)styleClass;
 - (void)p_setPropertiesFromLoadedAsset:(id)arg1;
+- (_Bool)canBeReplaced;
 - (_Bool)canBeMediaPlaceholder;
 - (_Bool)canResetMediaSize;
 - (struct CGSize)rawDataSize;

@@ -65,6 +65,7 @@
 - (void)_attachFlamesViewIfNeeded;
 - (void)_setFlamesViewState:(int)arg1;
 - (id)_flamesView;
+- (_Bool)_deviceNeedsReducedFramerateForCarPlayThinkingState;
 - (void)_micButtonHeld:(id)arg1;
 - (void)_micButtonTapped:(id)arg1;
 - (_Bool)pointInside:(struct CGPoint)arg1 withEvent:(id)arg2;

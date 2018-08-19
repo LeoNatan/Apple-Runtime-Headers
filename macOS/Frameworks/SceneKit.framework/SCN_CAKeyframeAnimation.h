@@ -13,6 +13,7 @@ __attribute__((visibility("hidden")))
     BOOL _caReady;
 }
 
++ (BOOL)supportsSecureCoding;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (BOOL)cumulative;

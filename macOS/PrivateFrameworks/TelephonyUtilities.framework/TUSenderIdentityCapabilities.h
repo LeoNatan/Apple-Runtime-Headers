@@ -62,6 +62,8 @@
 @property(readonly, nonatomic, getter=isVoLTECallingEnabled) BOOL voLTECallingEnabled;
 @property(readonly, nonatomic) BOOL supportsVoLTECalling;
 @property(readonly, nonatomic, getter=isCSCallingCurrentlyAvailable) BOOL csCallingCurrentlyAvailable;
+@property(readonly, nonatomic) BOOL canAttemptEmergencyCallsWithoutCellularConnection;
+@property(readonly, nonatomic) BOOL canAttemptTelephonyCallsWithoutCellularConnection;
 @property(readonly, nonatomic) BOOL supportsSimultaneousVoiceAndData;
 - (id)initWithSenderIdentityUUID:(id)arg1 state:(id)arg2 client:(id)arg3;
 

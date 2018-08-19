@@ -8,7 +8,7 @@
 
 #import "CEMRegisteredTypeProtocol.h"
 
-@class NSNumber, NSString;
+@class NSArray, NSNumber, NSString;
 
 @interface CEMPredicateWeeklyTimeRange : CEMPredicateBase <CEMRegisteredTypeProtocol>
 {
@@ -17,13 +17,15 @@
     NSString *_payloadStartTime;
     NSNumber *_payloadEndDay;
     NSString *_payloadEndTime;
+    NSArray *_payloadNotificationTimes;
 }
 
 + (id)buildRequiredOnlyWithStartDay:(id)arg1 withStartTime:(id)arg2 withEndDay:(id)arg3 withEndTime:(id)arg4;
-+ (id)buildWithCalendarIdentifier:(id)arg1 withStartDay:(id)arg2 withStartTime:(id)arg3 withEndDay:(id)arg4 withEndTime:(id)arg5;
++ (id)buildWithCalendarIdentifier:(id)arg1 withStartDay:(id)arg2 withStartTime:(id)arg3 withEndDay:(id)arg4 withEndTime:(id)arg5 withNotificationTimes:(id)arg6;
 + (id)allowedPayloadKeys;
 + (id)registeredIdentifier;
 + (id)registeredClassName;
+@property(copy, nonatomic) NSArray *payloadNotificationTimes; // @synthesize payloadNotificationTimes=_payloadNotificationTimes;
 @property(copy, nonatomic) NSString *payloadEndTime; // @synthesize payloadEndTime=_payloadEndTime;
 @property(copy, nonatomic) NSNumber *payloadEndDay; // @synthesize payloadEndDay=_payloadEndDay;
 @property(copy, nonatomic) NSString *payloadStartTime; // @synthesize payloadStartTime=_payloadStartTime;

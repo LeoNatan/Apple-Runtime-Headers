@@ -28,7 +28,7 @@
 - (int)numberOfItems;
 - (id)headerView;
 - (id)indexItem;
-- (id)initShowingHeader:(_Bool)arg1;
+- (id)initShowingHeader:(_Bool)arg1 showingStickers:(_Bool)arg2;
 - (id)init;
 
 // Remaining properties

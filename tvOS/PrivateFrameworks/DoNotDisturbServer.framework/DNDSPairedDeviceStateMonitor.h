@@ -13,7 +13,7 @@
 
 @property(nonatomic) __weak id <DNDSPairedDeviceStateMonitorDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
-- (unsigned long long)pairedDeviceStateWithError:(id *)arg1;
+- (id)pairedDeviceWithError:(id *)arg1;
 
 @end
 

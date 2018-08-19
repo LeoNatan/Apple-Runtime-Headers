@@ -15,6 +15,7 @@ __attribute__((visibility("hidden")))
     double _opacity;
 }
 
+@property(nonatomic) double opacity; // @synthesize opacity=_opacity;
 @property(readonly, nonatomic) TSDShapeInfo *freehandDrawingSpacerShape; // @synthesize freehandDrawingSpacerShape=_freehandDrawingSpacerShape;
 - (void).cxx_destruct;
 - (id)tsaxTypeDescription;
@@ -22,7 +23,6 @@ __attribute__((visibility("hidden")))
 - (void)loadFromArchive:(const struct GroupArchive *)arg1 unarchiver:(id)arg2 upgradeDOLC:(_Bool)arg3;
 - (id)copyWithContext:(id)arg1;
 - (id)allNestedChildrenInfosForWrap;
-@property(nonatomic) double opacity; // @synthesize opacity=_opacity;
 - (Class)repClass;
 - (Class)layoutClass;
 - (void)wasRemovedFromDocumentRoot:(id)arg1;

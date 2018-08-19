@@ -78,6 +78,7 @@
 - (void)selectPluginAtIndexPath:(id)arg1;
 - (void)setInitiallySelectedPluginIfNeeded;
 @property(nonatomic) _Bool showBorders;
+- (struct UIEdgeInsets)insetsForAppStrip;
 - (void)layoutSubviews;
 - (void)willMoveToSuperview:(id)arg1;
 - (void)willMoveToWindow:(id)arg1;

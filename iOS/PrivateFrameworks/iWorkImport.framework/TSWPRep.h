@@ -8,7 +8,7 @@
 
 #import "CAAnimationDelegate.h"
 
-@class CALayer, CAShapeLayer, NSArray, NSString, NSTimer, TSDLayout<TSWPLayoutTarget>, TSWPSearchReference, TSWPSelection, TSWPStorage;
+@class CALayer, CAShapeLayer, NSArray, NSString, TSDLayout<TSWPLayoutTarget>, TSWPSearchReference, TSWPSelection, TSWPStorage;
 
 __attribute__((visibility("hidden")))
 @interface TSWPRep : TSDContainerRep <CAAnimationDelegate>
@@ -42,8 +42,6 @@ __attribute__((visibility("hidden")))
     _Bool _isShowingCommentKnobs;
     _Bool _tornDown;
     _Bool _searchHitsAreInvalid;
-    NSTimer *_caretTimer;
-    _Bool _caretCancelled;
     _Bool _findIsShowing;
     TSWPSearchReference *_activeSearchReference;
     NSArray *_searchReferences;
@@ -51,6 +49,7 @@ __attribute__((visibility("hidden")))
     struct CGAffineTransform _transformToConvertNaturalToScaledRoot;
 }
 
++ (void)initialize;
 @property(copy, nonatomic) TSWPSelection *lastSelection; // @synthesize lastSelection=_lastSelection;
 @property(retain, nonatomic) CALayer *floatingCaretLayer; // @synthesize floatingCaretLayer=_floatingCaretLayer;
 @property(retain, nonatomic) NSArray *searchReferences; // @synthesize searchReferences=_searchReferences;
@@ -61,9 +60,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool findIsShowing; // @synthesize findIsShowing=_findIsShowing;
 @property(retain, nonatomic) TSWPSearchReference *activeSearchReference; // @synthesize activeSearchReference=_activeSearchReference;
 - (void).cxx_destruct;
-- (_Bool)p_hasEmptyParagraphFillOrBorders;
-- (_Bool)p_hasEmptyList;
-- (_Bool)p_hasVisibleContents;
 - (void)p_drawTextInLayer:(id)arg1 context:(struct CGContext *)arg2 limitSelection:(id)arg3 rubyGlyphRange:(struct _NSRange)arg4 renderMode:(int)arg5 suppressInvisibles:(_Bool)arg6;
 - (void)p_teardown;
 @property(readonly, nonatomic) _Bool textIsVertical;

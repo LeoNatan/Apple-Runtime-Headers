@@ -11,14 +11,15 @@
 __attribute__((visibility("hidden")))
 @interface TSTEphemeralFilter : NSObject
 {
-    unsigned long long mFilterIndex;
-    unsigned char mColumnIndex;
-    NSArray *mRules;
+    unsigned long long _filterIndex;
+    struct TSUModelColumnIndex _baseColumnIndex;
+    NSArray *_rules;
 }
 
-+ (id)filterWithIndex:(unsigned long long)arg1 columnIndex:(unsigned char)arg2 rules:(id)arg3;
-@property(readonly, nonatomic) unsigned char columnIndex; // @synthesize columnIndex=mColumnIndex;
-@property(readonly, nonatomic) unsigned long long filterIndex; // @synthesize filterIndex=mFilterIndex;
++ (id)filterWithIndex:(unsigned long long)arg1 baseColumnIndex:(struct TSUModelColumnIndex)arg2 rules:(id)arg3;
+@property(readonly, nonatomic) struct TSUModelColumnIndex baseColumnIndex; // @synthesize baseColumnIndex=_baseColumnIndex;
+@property(readonly, nonatomic) unsigned long long filterIndex; // @synthesize filterIndex=_filterIndex;
+- (void).cxx_destruct;
 - (id)description;
 - (void)enumerateRulesUsingBlock:(CDUnknownBlockType)arg1;
 - (id)filterByClearingRules;
@@ -27,8 +28,7 @@ __attribute__((visibility("hidden")))
 - (id)filterWithRule:(id)arg1 atIndex:(unsigned long long)arg2;
 - (id)ruleAtIndex:(unsigned long long)arg1;
 @property(readonly, nonatomic) unsigned long long ruleCount;
-- (void)dealloc;
-- (id)initWithIndex:(unsigned long long)arg1 columnIndex:(unsigned char)arg2 rules:(id)arg3;
+- (id)initWithIndex:(unsigned long long)arg1 baseColumnIndex:(struct TSUModelColumnIndex)arg2 rules:(id)arg3;
 
 @end
 

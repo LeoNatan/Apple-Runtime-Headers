@@ -125,6 +125,7 @@
 - (void)_voiceOverStatusChanged;
 @property(readonly, getter=isVoiceOverEnabled) BOOL voiceOverEnabled;
 - (void)_sendFileSystemChangedNotificationForSavePanelInfo:(id)arg1;
+- (void)requestAuthorizationOfType:(long long)arg1 completionHandler:(CDUnknownBlockType)arg2;
 
 @end
 

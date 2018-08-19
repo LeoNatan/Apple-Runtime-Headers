@@ -7,8 +7,8 @@
 #import "UIAlertController.h"
 
 @interface UIAlertController (TelephonyUI)
-+ (id)networkUnavailableAlertControllerWithCallProvider:(id)arg1 dialType:(long long)arg2 preferredStyle:(long long)arg3;
-+ (id)networkUnavailableAlertControllerWithCallProvider:(id)arg1 dialType:(long long)arg2;
++ (id)telephonyAccountUnavailableAlertControllerWithSenderIdentities:(id)arg1 preferredStyle:(long long)arg2 completion:(CDUnknownBlockType)arg3;
++ (id)networkUnavailableAlertControllerWithCallProvider:(id)arg1 dialType:(long long)arg2 senderIdentityUUID:(id)arg3;
 + (id)enableWiFiCallingAlertControllerWithPreferredStyle:(long long)arg1;
 + (id)enableWiFiCallingAlertController;
 @end

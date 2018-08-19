@@ -41,6 +41,8 @@
     } _flags;
 }
 
++ (id)resultWithGlobalAPILockOnly:(CDUnknownBlockType)arg1;
++ (void)runWithGlobalAPILockOnly:(CDUnknownBlockType)arg1;
 + (void)abGlobalAPIUnlockInFile:(const char *)arg1 line:(unsigned long long)arg2 contextBlock:(CDUnknownBlockType)arg3 togglingSuddenTermination:(BOOL)arg4;
 + (void)abGlobalAPIUnlockInFile:(const char *)arg1 line:(unsigned long long)arg2 contextBlock:(CDUnknownBlockType)arg3;
 + (void)abGlobalAPILockInFile:(const char *)arg1 line:(unsigned long long)arg2 contextBlock:(CDUnknownBlockType)arg3 togglingSuddenTermination:(BOOL)arg4;

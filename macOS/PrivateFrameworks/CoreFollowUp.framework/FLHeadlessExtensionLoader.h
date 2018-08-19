@@ -30,6 +30,7 @@
 - (BOOL)_setupSessionIfNeeded:(id *)arg1;
 - (BOOL)_loadExtension:(id *)arg1;
 - (id)remoteInterface;
+- (void)_terminate;
 @property(readonly, nonatomic) NSExtension *extension;
 - (id)initWithIdentifier:(id)arg1;
 - (id)initWithFollowUp:(id)arg1 andDelegate:(id)arg2;

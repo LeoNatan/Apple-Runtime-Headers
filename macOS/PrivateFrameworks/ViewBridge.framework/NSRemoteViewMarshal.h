@@ -9,7 +9,7 @@
 #import "NSRemoteViewMarshal.h"
 #import "NSVBRedactedProtocol.h"
 
-@class CALayerHost, NSAccessibilityRemoteUIElement, NSArray, NSCFRunLoopSemaphore, NSColor, NSData, NSDictionary, NSFakeServiceResponder, NSMutableArray, NSMutableSet, NSProxy<NSXPCProxyCreating>, NSRemoteView, NSSet, NSString, NSTrackingArea, NSVBAccessoryWindow, NSViewBridge, NSViewRemoteBridge, NSXPCConnection, NSXPCInterface, NSXPCListenerEndpoint;
+@class CALayerHost, NSAccessibilityRemoteUIElement, NSAppearance, NSArray, NSCFRunLoopSemaphore, NSColor, NSData, NSDictionary, NSFakeServiceResponder, NSMutableArray, NSMutableSet, NSProxy<NSXPCProxyCreating>, NSRemoteView, NSSet, NSString, NSTrackingArea, NSVBAccessoryWindow, NSViewBridge, NSViewRemoteBridge, NSXPCConnection, NSXPCInterface, NSXPCListenerEndpoint;
 
 __attribute__((visibility("hidden")))
 @interface NSRemoteViewMarshal : NSObject <NSRemoteViewMarshal, NSVBRedactedProtocol>
@@ -53,7 +53,7 @@ __attribute__((visibility("hidden")))
     struct CGSize _windowContentMaxSize;
     struct CGSize _windowContentMinSize;
     NSString *_identifier;
-    NSString *_mostRecentlySentAppearanceName;
+    NSAppearance *_mostRecentlySentAppearance;
     NSString *_serviceName;
     NSString *_serviceSubclassIdentifier;
     NSString *_serviceSubclassName;

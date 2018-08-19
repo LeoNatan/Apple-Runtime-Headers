@@ -40,6 +40,8 @@
 - (id)_fiuiWorkoutActivityTypeIndoor:(_Bool)arg1;
 - (id)_stringForState:(int)arg1;
 - (void)setState:(int)arg1;
+- (id)stateString;
+- (int)state;
 - (void)setActivityType:(unsigned int)arg1;
 - (void)setSwimmingLocationType:(int)arg1;
 - (void)setLocationType:(int)arg1;
@@ -65,28 +67,30 @@
 - (void)_logEndCancelledBySystem;
 - (void)_logEndCancelledByUserWorkoutStop;
 - (void)_logEndDetected;
-- (void)_logEndAlertToCancelDuration;
 - (void)_logStartAlertDeniedByCarousel;
 - (void)_logStartAlertTimedOut;
 - (void)_logStartAlertCancelledBySystem;
 - (void)_logStartAlertCancelledByAlternateWorkout;
 - (void)_logStartAlertMuteForToday;
 - (void)_logStartAlertCancelledByUser;
-- (void)_logClassificationCancelledMuteForToday;
-- (void)_logEscalationToAlertCancelDuration;
+- (void)_logStartAlertAcceptedFromApp;
 - (void)_logStartAlertAccepted;
+- (void)_logClassificationAlerted;
+- (void)_logAlertTransitionedWithResult:(id)arg1;
+- (void)_logClassificationRealerted;
+- (void)_logClassificationCancelledMuteForToday;
 - (void)_logClassificationTimedOut;
 - (void)_logClassificationCancelledBySystem;
 - (void)_logClassificationCancelledByUser;
 - (void)_logClassificationCancelledByAlternateWorkout;
-- (void)_logClassificationAlerted;
-- (void)_logClassificationRealerted;
 - (void)_logClassification;
 - (void)_logEscalationCancelledMuteForToday;
 - (void)_logEscalationCancelledBySystem;
 - (void)_logEscalationTimedOut;
 - (void)_logEscalationCancelledByUser;
 - (void)_logEscalation;
+- (void)_logEvent:(id)arg1;
+- (id)_stringFromLocationType:(int)arg1;
 
 @end
 

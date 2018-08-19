@@ -52,6 +52,7 @@ __attribute__((visibility("hidden")))
 - (void)_onqueue_cleanUpConnectionEstablishmentState;
 - (void)_onqueue_tlsDisabled;
 - (void)_onqueue_tlsCompletion;
+- (_Bool)_onqueue_isSecure;
 - (void)_onqueue_setTCPIOConnection:(shared_ptr_f0c1381f)arg1;
 - (void)_onqueue_postConnectConfiguration:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)_onqueue_dealWithSessionClientCertAuth:(int)arg1 credential:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;

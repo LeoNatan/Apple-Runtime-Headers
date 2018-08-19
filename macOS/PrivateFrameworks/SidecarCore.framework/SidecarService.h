@@ -29,7 +29,7 @@
 - (id)makeRequest;
 @property(readonly, nonatomic) NSString *localizedItemName;
 @property(readonly, nonatomic) NSString *localizedDescription;
-- (id)requestMessage;
+- (id)mutableRequestMessage;
 - (id)serviceIdentifier;
 @property(readonly, nonatomic, getter=isEnabled) _Bool enabled;
 @property(readonly, nonatomic) NSArray *pasteboardTypes;

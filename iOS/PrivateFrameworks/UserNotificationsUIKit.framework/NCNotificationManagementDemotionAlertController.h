@@ -13,6 +13,7 @@
 
 @property(nonatomic) _Bool includeExplanation; // @synthesize includeExplanation=_includeExplanation;
 - (void)_configureView;
+- (id)initWithRequest:(id)arg1 withPresentingView:(id)arg2 settingsDelegate:(id)arg3 includeExplanation:(_Bool)arg4;
 
 @end
 

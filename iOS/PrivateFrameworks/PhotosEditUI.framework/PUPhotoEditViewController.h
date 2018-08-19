@@ -106,6 +106,7 @@
     _Bool _trimControllerScrubberNeedsVisualUpdate;
     _PPTState *_pptState;
     _Bool __isCachingVideo;
+    _Bool _isEmbeddedEdit;
     _Bool _canModifyPortraitEffects;
     CAMLightingControl *_lightingControl;
     CAMLightingNameBadge *_lightingNameBadge;

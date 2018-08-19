@@ -6,7 +6,7 @@
 
 #import "NSManagedObject.h"
 
-@class NSSet, NSString, RMCategory;
+@class NSString, RMCategory;
 
 @interface RMWebDomain : NSManagedObject
 {
@@ -15,10 +15,8 @@
 + (id)createOrReturnWebDomainWithDomainName:(id)arg1 inContext:(id)arg2 error:(id *)arg3;
 
 // Remaining properties
-@property(retain, nonatomic) NSSet *aggregateUsages; // @dynamic aggregateUsages;
 @property(retain, nonatomic) RMCategory *category; // @dynamic category;
 @property(copy, nonatomic) NSString *domainName; // @dynamic domainName;
-@property(retain, nonatomic) NSSet *usages; // @dynamic usages;
 
 @end
 

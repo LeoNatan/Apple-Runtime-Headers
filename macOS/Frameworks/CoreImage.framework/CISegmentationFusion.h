@@ -6,7 +6,7 @@
 
 #import <CoreImage/CIFilter.h>
 
-@class CIImage, CIVector, NSDictionary;
+@class CIImage, CIVector, NSDictionary, NSNumber;
 
 __attribute__((visibility("hidden")))
 @interface CISegmentationFusion : CIFilter
@@ -15,6 +15,7 @@ __attribute__((visibility("hidden")))
     CIImage *inputMatteImage;
     CIVector *inputAddBlur;
     CIVector *inputRemoveBlur;
+    NSNumber *inputApertureScaling;
     NSDictionary *inputTuningParameters;
 }
 

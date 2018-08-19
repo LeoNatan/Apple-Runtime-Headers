@@ -21,6 +21,7 @@
 }
 
 + (id)_fetchMusicRecommendations;
++ (unsigned long long)_mediaStorageSizeForCurrentDevice;
 + (id)_cachedIdentifiersDirectoryPath;
 + (id)_cachedAlbumIdentifiersFilePath;
 + (id)_cachedPlaylistIdentifiersFilePath;
@@ -42,7 +43,6 @@
 - (_Bool)_quotaManagerShouldFetchDownloadedItemsOnly;
 - (void)environmentMonitorDidChangePower:(id)arg1;
 - (void)_handlePodcastSizeInfoDidChangeNotification:(id)arg1;
-- (void)_handlePinningSettingsDidChangeNotification:(id)arg1;
 - (void)_handleMediaLibraryEntitiesAddedOrRemovedNotification:(id)arg1;
 - (void)_handleRecommendationsDidUpdateNotification:(id)arg1;
 - (void)_handleRecommendationLibraryContentsDidChangeNotification:(id)arg1;
@@ -86,6 +86,8 @@
 - (unsigned long long)addedSongsSize;
 - (id)itemGroupForIdentifiers:(id)arg1;
 @property(readonly, nonatomic) NSArray *addedPodcastsItems;
+- (unsigned long long)minimumCacheDeleteQuotaForDevice;
+- (id)itemsWithinAvailableSpace:(unsigned long long)arg1 downloadedItemsOnly:(_Bool)arg2;
 - (id)addedItemsForDownloadWithinAvailableSpace:(unsigned long long)arg1;
 @property(readonly, nonatomic) NSArray *addedMusicItems;
 @property(readonly, nonatomic) NSArray *addedItems;

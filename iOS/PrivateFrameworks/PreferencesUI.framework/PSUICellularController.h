@@ -81,6 +81,7 @@
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (void)prefetchResourcesFor:(id)arg1;
 - (id)specifiers;
+- (void)retryCarrierListFetch:(id)arg1;
 - (id)_deadTelephonySpecifiers;
 - (void)learnMoreLinkTapped;
 - (void)reloadSpecifiers;

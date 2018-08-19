@@ -13,24 +13,28 @@
 __attribute__((visibility("hidden")))
 @interface TSTConditionalStyleRule : NSObject <NSCopying>
 {
-    TSTFormulaPredicate *mPredicate;
-    TSWPParagraphStyle *mTextStyle;
-    TSTCellStyle *mCellStyle;
+    TSTFormulaPredicate *_predicate;
+    TSWPParagraphStyle *_textStyle;
+    TSTCellStyle *_cellStyle;
     int mPredicateType;
 }
 
 + (id)conditionalStyleRuleWithRule:(id)arg1;
 @property(readonly, nonatomic) int predicateType; // @synthesize predicateType=mPredicateType;
+- (void).cxx_destruct;
+- (void)getPrecedents:(struct TSCEReferenceSet *)arg1 calcEngine:(id)arg2 hostOwnerUID:(const UUIDData_5fbc143e *)arg3 hostCellID:(const struct TSUCellCoord *)arg4;
 - (_Bool)hasBadRefWithUidInfo;
 - (_Bool)containsUidReferences;
 - (void)setHostCell:(const UUIDData_5fbc143e *)arg1 hostColumnUID:(const UUIDData_5fbc143e *)arg2 hostRowUID:(const UUIDData_5fbc143e *)arg3;
 - (id)copyByClearingUids:(id)arg1 containingTableUID:(const UUIDData_5fbc143e *)arg2;
+- (void)iterateFormulasWithContext:(id)arg1 shouldStop:(_Bool *)arg2 block:(CDUnknownBlockType)arg3;
+- (id)copyByRewritingWithContext:(id)arg1 rewriteBlock:(CDUnknownBlockType)arg2;
 - (id)copyByRepairingBadReferences:(id)arg1;
 - (id)copyToGeometricFormWithRewriteContext:(id)arg1;
 - (id)copyToUidFormForTableInfo:(id)arg1 inCellCoordinate:(struct TSUCellCoord)arg2 preserveHostCell:(_Bool)arg3;
 - (id)copyByUpdatingHostCellRef:(const struct TSCECellRef *)arg1;
 - (id)copyByUpgradingToLinkedRefAtHostCellRef:(const struct TSCECellRef *)arg1;
-- (id)copyByOffsettingRelativeReferencesWithColumnOffset:(short)arg1 rowOffset:(int)arg2;
+- (id)copyByOffsettingRelativeReferencesWithOffset:(CDStruct_1ef3fb1f)arg1;
 - (id)copyByRewritingWithSpec:(id)arg1 inOwner:(id)arg2 inCellCoordinate:(struct TSUCellCoord)arg3;
 - (id)copyByRemappingHostCellAgnosticOwnerUIDsWithMap:(const UUIDMap_b66c2694 *)arg1 calcEngine:(id)arg2 ownerUID:(const UUIDData_5fbc143e *)arg3 error:(_Bool *)arg4;
 - (id)copyByRemappingOwnerUIDsWithMap:(const UUIDMap_b66c2694 *)arg1 calcEngine:(id)arg2 error:(_Bool *)arg3;
@@ -43,7 +47,6 @@ __attribute__((visibility("hidden")))
 - (_Bool)isEqualForInspector:(id)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
-- (void)dealloc;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)copyWithContext:(id)arg1;
 - (id)initWithPredicate:(id)arg1 cellStyle:(id)arg2 textStyle:(id)arg3;

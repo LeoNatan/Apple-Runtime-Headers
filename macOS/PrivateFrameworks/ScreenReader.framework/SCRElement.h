@@ -106,6 +106,8 @@
 - (id)ancestorOfKindOfClass:(Class)arg1;
 - (id)ancestorConformsToProtocol:(id)arg1;
 - (id)_ancestorMatchStartElement:(id)arg1 matchBlock:(CDUnknownBlockType)arg2;
+- (id)opaqueAncestorOfElement:(id)arg1;
+- (BOOL)_startReadToEndWithOutputRequest:(id)arg1;
 - (void)addContentToRequest:(id)arg1 visibleOnly:(BOOL)arg2;
 - (BOOL)handleWordWillBeSpokenCallbackForEvent:(id)arg1 request:(id)arg2;
 - (BOOL)handleReadValueChangeCallbackForEvent:(id)arg1 request:(id)arg2;
@@ -1094,9 +1096,8 @@
 - (id)moveiOSFocusToPreviousOpaqueChildElement;
 - (id)moveiOSFocusToNextOpaqueChildElement;
 @property(nonatomic, getter=isAssistiveTechnologyFocused) BOOL assistiveTechnologyFocused;
-@property(readonly, nonatomic) BOOL isVisibleiOSElement;
 @property(readonly, nonatomic) BOOL isiOSElement;
-- (BOOL)isIOSContentGroup;
+- (BOOL)isiOSContentGroup;
 - (id)deepestPotentialChild;
 - (BOOL)isScrollArea;
 - (id)scanElementForMarkerSearch;

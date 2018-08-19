@@ -15,11 +15,11 @@ __attribute__((visibility("hidden")))
 }
 
 @property(readonly, nonatomic) TSCHChartValueAxisLabelsLayoutItem *axisValueLabelsLayoutItem; // @synthesize axisValueLabelsLayoutItem=mValueLabels;
+- (void).cxx_destruct;
 - (struct CGRect)protected_layoutSpaceRectForAllLabels;
 - (id)renderersWithRep:(id)arg1;
 - (void)p_layoutLabelsNow;
 - (void)buildSubTree;
-- (void)dealloc;
 
 @end
 

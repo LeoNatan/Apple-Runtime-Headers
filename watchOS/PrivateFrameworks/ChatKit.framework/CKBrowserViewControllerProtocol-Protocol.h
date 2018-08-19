@@ -44,6 +44,7 @@
 @property(readonly, nonatomic) _Bool wasExpandedPresentation;
 @property(retain, nonatomic) NSString *sender;
 @property(retain, nonatomic) NSArray *recipients;
+- (void)volumeButtonPressed:(_Bool)arg1;
 - (void)killExtensionProcess;
 - (void)dropAssertion;
 - (void)setStoreLaunchURL:(NSURL *)arg1 sourceApplication:(NSString *)arg2;

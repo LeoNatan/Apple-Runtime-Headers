@@ -8,7 +8,7 @@
 
 #import "NTKActivityFaceViewFactoryDelegate.h"
 
-@class HKRingsView, NSDate, NSString, NTKActivityFaceViewFactory, NTKDigitalTimeLabel, NTKFaceViewTapControl, NTKPolygonCylinderView, UILabel, UIView;
+@class HKRingsView, NSDate, NSString, NTKActivityFaceViewFactory, NTKActivitySignificantRingChangeModel, NTKDigitalTimeLabel, NTKFaceViewTapControl, NTKPolygonCylinderView, UILabel, UIView;
 
 @interface NTKActivityDigitalFaceView : NTKFaceView <NTKActivityFaceViewFactoryDelegate>
 {
@@ -29,6 +29,7 @@
     int _energyStringMetricWidth;
     int _briskStringMetricWidth;
     int _standStringMetricWidth;
+    NTKActivitySignificantRingChangeModel *_significantRingChangeModel;
     _Bool _showSeconds;
     float _rightTimeViewInset;
 }

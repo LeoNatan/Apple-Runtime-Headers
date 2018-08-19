@@ -16,6 +16,7 @@
 - (void)readProtobufData:(id)arg1 type:(unsigned long long)arg2;
 - (void)failedSendingProtobufWithIDSIdentifier:(id)arg1 errorCode:(long long)arg2;
 - (void)successfullySentProtobufWithIDSIdentifier:(id)arg1;
+- (id)notifyCompanionAboutWebKitStatus:(id)arg1;
 - (id)notifyInitialSyncFinished:(id)arg1;
 - (id)requestHaltSync:(id)arg1;
 - (id)requestFullSync:(id)arg1;

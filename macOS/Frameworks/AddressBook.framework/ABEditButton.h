@@ -14,7 +14,6 @@
 {
 }
 
-- (struct CGSize)intrinsicContentSize;
 - (id)accessibilityTitle;
 - (void)setUpAlternateTitle;
 - (void)setUpTitle;

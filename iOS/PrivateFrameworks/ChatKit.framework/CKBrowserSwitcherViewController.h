@@ -36,6 +36,7 @@
     _Bool _allowFooterLabelUpdates;
     _Bool _allowPluginLaunchNotifications;
     _Bool _viewHasLaidOutSubviews;
+    _Bool _browserIsLoadingCompact;
     _Bool _browserIsCollapsingFromFullscreen;
     id <CKBrowserSwitcherViewControllerDelegate><CKBrowserTransitionCoordinatorDelegate> _delegate;
     UIViewController<CKBrowserViewControllerProtocol> *_currentViewController;
@@ -58,6 +59,7 @@
 }
 
 @property(nonatomic) _Bool browserIsCollapsingFromFullscreen; // @synthesize browserIsCollapsingFromFullscreen=_browserIsCollapsingFromFullscreen;
+@property(nonatomic) _Bool browserIsLoadingCompact; // @synthesize browserIsLoadingCompact=_browserIsLoadingCompact;
 @property(retain, nonatomic) NSDate *timeOfLastScrollingDecelerationEnded; // @synthesize timeOfLastScrollingDecelerationEnded=_timeOfLastScrollingDecelerationEnded;
 @property(nonatomic) _Bool viewHasLaidOutSubviews; // @synthesize viewHasLaidOutSubviews=_viewHasLaidOutSubviews;
 @property(copy, nonatomic) CDUnknownBlockType performAfterFirstLayoutBlock; // @synthesize performAfterFirstLayoutBlock=_performAfterFirstLayoutBlock;

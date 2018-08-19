@@ -16,7 +16,6 @@
     struct _NSRange _tokenRanges[8];
     unsigned int _tokenRangesCount;
     short _category;
-    unsigned int _assetIntersectionCount;
     struct __CFArray *_assetIds;
     struct __CFArray *_collectionIds;
     struct __CFArray *_tripIds;
@@ -29,7 +28,6 @@
 @property(retain, nonatomic) struct __CFArray *tripIds; // @synthesize tripIds=_tripIds;
 @property(retain, nonatomic) struct __CFArray *collectionIds; // @synthesize collectionIds=_collectionIds;
 @property(retain, nonatomic) struct __CFArray *assetIds; // @synthesize assetIds=_assetIds;
-@property(nonatomic) unsigned int assetIntersectionCount; // @synthesize assetIntersectionCount=_assetIntersectionCount;
 @property(readonly, retain, nonatomic) NSString *lookupIdentifier; // @synthesize lookupIdentifier=_lookupIdentifier;
 @property(readonly, retain, nonatomic) NSString *contentString; // @synthesize contentString=_contentString;
 @property(nonatomic) short category; // @synthesize category=_category;

@@ -11,14 +11,14 @@
 @interface PKPaymentRemoteDevicePreferenceController : PKPaymentPreferenceController
 {
     PKPaymentPreferenceContact *_billingPreference;
-    NSMutableDictionary *_passUniqueIDToCardEntryMap;
-    NSMutableDictionary *_passUniqueIDToAcceptedPaymentApplicationsMap;
-    NSMutableDictionary *_passUniqueIDToUnavailablePaymentApplicationsMap;
+    NSMutableDictionary *_instrumentToCardEntryMap;
+    NSMutableDictionary *_instrumentToAcceptedPaymentApplicationsMap;
+    NSMutableDictionary *_instrumentToUnavailablePaymentApplicationsMap;
 }
 
-@property(retain, nonatomic) NSMutableDictionary *passUniqueIDToUnavailablePaymentApplicationsMap; // @synthesize passUniqueIDToUnavailablePaymentApplicationsMap=_passUniqueIDToUnavailablePaymentApplicationsMap;
-@property(retain, nonatomic) NSMutableDictionary *passUniqueIDToAcceptedPaymentApplicationsMap; // @synthesize passUniqueIDToAcceptedPaymentApplicationsMap=_passUniqueIDToAcceptedPaymentApplicationsMap;
-@property(retain, nonatomic) NSMutableDictionary *passUniqueIDToCardEntryMap; // @synthesize passUniqueIDToCardEntryMap=_passUniqueIDToCardEntryMap;
+@property(retain, nonatomic) NSMutableDictionary *instrumentToUnavailablePaymentApplicationsMap; // @synthesize instrumentToUnavailablePaymentApplicationsMap=_instrumentToUnavailablePaymentApplicationsMap;
+@property(retain, nonatomic) NSMutableDictionary *instrumentToAcceptedPaymentApplicationsMap; // @synthesize instrumentToAcceptedPaymentApplicationsMap=_instrumentToAcceptedPaymentApplicationsMap;
+@property(retain, nonatomic) NSMutableDictionary *instrumentToCardEntryMap; // @synthesize instrumentToCardEntryMap=_instrumentToCardEntryMap;
 @property(retain, nonatomic) PKPaymentPreferenceContact *billingPreference; // @synthesize billingPreference=_billingPreference;
 - (void).cxx_destruct;
 - (BOOL)_shouldDisplayPaymentApplicationWithAcceptedApplicationsCount:(long long)arg1 unavailableApplicationsCount:(long long)arg2;

@@ -17,7 +17,7 @@
     struct shared_ptr<Archiver::MMappedFile> _mmapped_model;
     struct vector<unsigned char, std::__1::allocator<unsigned char>> _cached_model;
     unsigned long long num_dimensions;
-    struct vector<std::__1::basic_string<char>, std::__1::allocator<std::__1::basic_string<char>>> _classes_by_string;
+    vector_ebb6ef3e _classes_by_string;
     struct vector<long long, std::__1::allocator<long long>> _classes_by_int64_t;
     int _class_type;
     NSArray *_class_values;

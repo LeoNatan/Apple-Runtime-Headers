@@ -66,7 +66,8 @@ __attribute__((visibility("hidden")))
         unsigned int _explicitSurfaceColorSpace:1;
         unsigned int _vibrantBlendingStyleForSubtree:2;
         unsigned int _cachedEffectiveVibrantBlendingStyle:2;
-        unsigned int _UNUSED:2;
+        unsigned int _isOpenGLBased:1;
+        unsigned int _UNUSED:1;
     } _vFlags3;
     struct {
         unsigned int _acceptsIndirectTouches:1;
@@ -136,6 +137,7 @@ __attribute__((visibility("hidden")))
     unsigned int _shouldDoLayerPerformanceUpdates:1;
     unsigned int _deferredNeedsDisplay:1;
     unsigned int _enumeratingGeometryInWindowSensitiveSubviewsCount:4;
+    unsigned int _needsZOrderDidChangeNotificationCount:4;
     unsigned long long _needsGeometryInWindowDidChangeNotificationCount;
     NSMutableSet *_geometryInWindowSensitiveSubviews;
     struct CGRect _cachedVisibleRect;
@@ -170,6 +172,8 @@ __attribute__((visibility("hidden")))
     _NSViewLayerSurface *_layerSurface;
     unsigned int _layoutTransactionSeed;
     unsigned long long _antialiasThresholdChangedNotificationToken;
+    unsigned long long _descendantCount;
+    unsigned long long _zOrder;
 }
 
 - (void).cxx_destruct;

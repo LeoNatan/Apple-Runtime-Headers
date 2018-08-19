@@ -81,7 +81,7 @@
 @property(readonly, nonatomic) NSString *documentUnlockedWithPassword;
 - (void)_updateThumbnailViewAppearance;
 - (void)_updateThumbnailViewHolderConstraints;
-- (_Bool)_updateCachedThumbnailViewInsets;
+- (_Bool)_updateCachedThumbnailViewInsetsDidChangeRight;
 - (void)_boundingPathMayHaveChangedForView:(id)arg1 relativeToBoundsOriginOnly:(_Bool)arg2;
 - (void)_updatePDFViewDisplayMode;
 @property(readonly) unsigned long long pageCount;

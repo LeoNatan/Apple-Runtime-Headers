@@ -18,11 +18,14 @@
     _Bool _appIsInstalled;
 }
 
++ (_Bool)_isAppBlacklistedForRegion;
++ (_Bool)shouldAppBeInstalled;
 + (id)sharedInstance;
 @property(nonatomic) _Bool appIsInstalled; // @synthesize appIsInstalled=_appIsInstalled;
 - (void).cxx_destruct;
 - (void)_clearUserData;
 - (void)_clearUserDataIfNecessary;
+- (void)_updateCompanionWithAppIsInstalled:(_Bool)arg1;
 - (_Bool)_applicationProxiesContainTinCanApp:(id)arg1;
 - (void)applicationsDidUninstall:(id)arg1;
 - (void)applicationsDidInstall:(id)arg1;

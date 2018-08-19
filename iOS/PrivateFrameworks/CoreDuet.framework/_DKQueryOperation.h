@@ -10,7 +10,7 @@
 {
 }
 
-- (void)removeAllDependencies;
++ (_Bool)_removesDependenciesAfterFinish;
 - (void)main;
 
 @end

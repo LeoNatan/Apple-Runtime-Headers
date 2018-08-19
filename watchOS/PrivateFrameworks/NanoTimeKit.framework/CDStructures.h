@@ -189,10 +189,10 @@ typedef struct {
 } CDStruct_11f37819;
 
 typedef struct {
-    float _field1;
-    float _field2;
-    float _field3;
-} CDStruct_869f9c67;
+    float activeEnergyPercentage;
+    float briskPercentage;
+    float sedentaryPercentage;
+} CDStruct_fbe50fab;
 
 typedef struct {
     struct CGColor *colors[3];
@@ -253,9 +253,9 @@ union _GLKVector2 {
 };
 
 union _GLKVector3 {
-    CDStruct_869f9c67 _field1;
-    CDStruct_869f9c67 _field2;
-    CDStruct_869f9c67 _field3;
+    CDStruct_fbe50fab _field1;
+    CDStruct_fbe50fab _field2;
+    CDStruct_fbe50fab _field3;
     float _field4[3];
 };
 

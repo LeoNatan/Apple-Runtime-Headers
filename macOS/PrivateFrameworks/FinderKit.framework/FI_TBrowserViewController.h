@@ -26,7 +26,7 @@ __attribute__((visibility("hidden")))
     struct TNSRef<NSLayoutConstraint, void> _minimumHeightConstraint;
     struct TNSRef<NSMutableArray<NSLayoutConstraint *>, void> _layoutConstraints;
     NSView *_browserView;
-    struct unordered_map<TFENode, unsigned long, std::__1::hash<TFENode>, std::__1::equal_to<TFENode>, std::__1::allocator<std::__1::pair<const TFENode, unsigned long>>> _openContainerMap;
+    struct unordered_map<TFENode, ContainerObservingOptions, std::__1::hash<TFENode>, std::__1::equal_to<TFENode>, std::__1::allocator<std::__1::pair<const TFENode, ContainerObservingOptions>>> _openContainerMap;
     struct CGPoint _savedScrollPosition;
     int _sortBy;
     struct TNSRef<FI_TBrowserViewDataSource, void> _dataSource;

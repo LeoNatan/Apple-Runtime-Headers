@@ -12,14 +12,11 @@
 {
     PSSpecifier *_usageSummaryGraphSpecifier;
     PSSpecifier *_weeklyTotalSpecifier;
-    PSSpecifier *_screenTimeDuringDowntimeSpecifier;
 }
 
-@property(retain, nonatomic) PSSpecifier *screenTimeDuringDowntimeSpecifier; // @synthesize screenTimeDuringDowntimeSpecifier=_screenTimeDuringDowntimeSpecifier;
 @property(retain, nonatomic) PSSpecifier *weeklyTotalSpecifier; // @synthesize weeklyTotalSpecifier=_weeklyTotalSpecifier;
 @property(retain, nonatomic) PSSpecifier *usageSummaryGraphSpecifier; // @synthesize usageSummaryGraphSpecifier=_usageSummaryGraphSpecifier;
 - (void).cxx_destruct;
-- (id)screenTimeDuringDowntime:(id)arg1;
 - (id)weeklyTotal:(id)arg1;
 - (id)getUsageInfo:(id)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;

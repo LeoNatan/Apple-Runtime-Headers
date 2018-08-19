@@ -6,18 +6,23 @@
 
 #import "UIView.h"
 
-@class UILabel;
+@class UIImageView, UITextView;
 
 @interface REUISiriShortcutContentView : UIView
 {
-    UILabel *_titleLabel;
-    UILabel *_descriptionLabel;
+    _Bool _hasImage;
+    UITextView *_textView;
+    UIImageView *_imageView;
 }
 
 + (id)new;
-@property(readonly, nonatomic) UILabel *descriptionLabel; // @synthesize descriptionLabel=_descriptionLabel;
-@property(readonly, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
+@property(readonly, nonatomic) _Bool hasImage; // @synthesize hasImage=_hasImage;
+@property(readonly, nonatomic) UIImageView *imageView; // @synthesize imageView=_imageView;
+@property(readonly, nonatomic) UITextView *textView; // @synthesize textView=_textView;
 - (void).cxx_destruct;
+- (id)_attributedTextFromTitle:(id)arg1 description:(id)arg2;
+- (void)layoutSubviews;
+- (void)setTitle:(id)arg1 description:(id)arg2 image:(id)arg3;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (id)init;
 

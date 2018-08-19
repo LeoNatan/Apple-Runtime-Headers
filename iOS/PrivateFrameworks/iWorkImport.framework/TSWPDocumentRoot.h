@@ -8,7 +8,7 @@
 
 #import "TSWPObjectIndex.h"
 
-@class EQKitEnvironment, NSUUID;
+@class EQKitEnvironment, NSUUID, TSULocale;
 
 __attribute__((visibility("hidden")))
 @interface TSWPDocumentRoot : TSKDocumentRoot <TSWPObjectIndex>
@@ -35,6 +35,7 @@ __attribute__((visibility("hidden")))
 - (id)documentTSWPFontObjects;
 - (id)documentFonts;
 - (id)p_fontsInStylesheetUsingBlock:(CDUnknownBlockType)arg1;
+@property(readonly, nonatomic) TSULocale *typesettingLocale;
 - (_Bool)useLigatures;
 - (const struct __CFLocale *)hyphenationLocale;
 - (_Bool)shouldHyphenate;

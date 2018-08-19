@@ -9,7 +9,7 @@
 @class NSDictionary;
 
 @protocol RMSerializableManagedObject <NSObject>
-- (void)updateWithDictionaryRepresentation:(NSDictionary *)arg1;
+- (BOOL)updateWithDictionaryRepresentation:(NSDictionary *)arg1;
 - (NSDictionary *)dictionaryRepresentation;
 @end
 

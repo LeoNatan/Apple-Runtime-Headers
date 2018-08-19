@@ -6,7 +6,7 @@
 
 #import "NSViewController.h"
 
-@class NSBox, NSButton, NSMutableDictionary, NSStackView, NSTextField;
+@class NSBox, NSButton, NSMutableDictionary, NSProgressIndicator, NSStackView, NSTextField;
 
 __attribute__((visibility("hidden")))
 @interface SidecarPopoverViewController : NSViewController
@@ -15,12 +15,14 @@ __attribute__((visibility("hidden")))
     NSBox *_horizontalLine;
     NSButton *_cancelButton;
     NSStackView *_imageStack;
+    NSProgressIndicator *_progress;
     NSTextField *_textField;
     unsigned int _deallocating:1;
 }
 
 @property(retain) NSButton *cancelButton; // @synthesize cancelButton=_cancelButton;
 - (void).cxx_destruct;
+- (void)_showProgress;
 - (void)loadView;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)update;

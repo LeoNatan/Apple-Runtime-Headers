@@ -55,6 +55,7 @@
 - (void)recipientSelectionControllerSearchListDidShowOrHide:(id)arg1;
 - (void)recipientSelectionControllerReturnPressed:(id)arg1;
 - (void)recipientSelectionControllerDidChangeSize:(id)arg1;
+- (void)recipientSelectionControllerDidBecomeFirstResponder:(id)arg1;
 - (void)recipientSelectionController:(id)arg1 didSelectConversation:(id)arg2;
 - (void)sendAnimationManagerWillStartAnimation:(id)arg1 context:(id)arg2;
 - (_Bool)becomeFirstResponder;

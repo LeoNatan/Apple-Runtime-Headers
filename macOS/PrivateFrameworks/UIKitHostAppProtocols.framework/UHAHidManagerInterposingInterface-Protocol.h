@@ -11,6 +11,7 @@
 @protocol UHAHidManagerInterposingInterface <ROCKImpersonateable>
 @property(readonly) double doubleClickInterval;
 @property(readonly) BOOL forceClickPerformsQuickLook;
+@property(readonly, nonatomic) id <UHAHidSettingsInterface> settings;
 - (NSData *)pullNextEventDataFromQueue;
 - (void)registerEventPingHandler:(void (^)(void))arg1;
 @end

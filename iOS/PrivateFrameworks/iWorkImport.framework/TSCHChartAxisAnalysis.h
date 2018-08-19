@@ -11,7 +11,6 @@
 __attribute__((visibility("hidden")))
 @interface TSCHChartAxisAnalysis : NSObject
 {
-    // Error parsing type: Aq, name: _retainCount
     double _min;
     double _max;
     double _modelMin;
@@ -25,7 +24,6 @@ __attribute__((visibility("hidden")))
     NSArray *_totals;
 }
 
-+ (id)allocWithZone:(struct _NSZone *)arg1;
 @property(copy, nonatomic) NSArray *totals; // @synthesize totals=_totals;
 @property(copy, nonatomic) NSArray *minorGridLocations; // @synthesize minorGridLocations=_minorGridLocations;
 @property(copy, nonatomic) NSArray *majorGridLocations; // @synthesize majorGridLocations=_majorGridLocations;
@@ -37,10 +35,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) double modelMin; // @synthesize modelMin=_modelMin;
 @property(nonatomic) double max; // @synthesize max=_max;
 @property(nonatomic) double min; // @synthesize min=_min;
-- (void)dealloc;
-- (unsigned long long)retainCount;
-- (oneway void)release;
-- (id)retain;
+- (void).cxx_destruct;
 
 @end
 

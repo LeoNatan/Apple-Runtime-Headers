@@ -20,7 +20,7 @@
 + (long long)exposureModeForCaptureExposureMode:(long long)arg1;
 + (long long)captureExposureModeForExposureMode:(long long)arg1;
 + (long long)focusModeForCaptureFocusMode:(long long)arg1;
-+ (long long)captureFocusModeForFocusMode:(long long)arg1;
++ (long long)captureFocusModeForFocusMode:(long long)arg1 isPerformingContrastBasedFocus:(_Bool)arg2;
 + (long long)hdrModeForCaptureHDRMode:(long long)arg1;
 + (long long)captureHDRModeForHDRMode:(long long)arg1;
 + (long long)torchModeForCaptureTorchMode:(long long)arg1;

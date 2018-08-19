@@ -33,6 +33,7 @@
     PUICClientSideAnimation *_modeInterpolationAnimation;
     float _lastOffset;
     int _lastWaypoint;
+    struct CGPoint _significantSolarDiskCenter;
     float _solarDiskOverridePercentage;
     UILabel *_waypointLabel;
     NSDictionary *_waypoints;
@@ -109,6 +110,7 @@
 - (void)_animateSolarDiskFromPercentage:(float)arg1 toPercentage:(float)arg2 reason:(id)arg3;
 - (void)_animateSolarDiskToRestPercentageIfNeeded;
 - (void)_updateSolarDiskHaloViewPosition;
+- (void)_updateSignificantClockPositionWithSolarDiskCenter:(struct CGPoint)arg1;
 - (void)_solarDiskPercentageChanged:(float)arg1;
 - (float)_solarDiskIdealizedDatePercentage;
 - (float)_solarDiskRestPercentage;

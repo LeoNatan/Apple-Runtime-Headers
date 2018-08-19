@@ -6,9 +6,9 @@
 
 #import "NSObject.h"
 
-@class DNDSPairedDeviceStateMonitor;
+@class DNDSPairedDevice, DNDSPairedDeviceStateMonitor;
 
 @protocol DNDSPairedDeviceStateMonitorDelegate <NSObject>
-- (void)pairedDeviceStateMonitor:(DNDSPairedDeviceStateMonitor *)arg1 didReceiveUpdatedPairedDeviceState:(unsigned long long)arg2;
+- (void)pairedDeviceStateMonitor:(DNDSPairedDeviceStateMonitor *)arg1 didChangePairedDevice:(DNDSPairedDevice *)arg2;
 @end
 

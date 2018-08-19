@@ -31,6 +31,7 @@
 @property(copy, nonatomic) NSString *reason;
 - (void)_updateFontContstraints:(id)arg1;
 - (void)viewDidAppear:(_Bool)arg1;
+- (void)viewWillLayoutSubviews;
 - (void)loadView;
 - (void)updateViewConstraints;
 - (void)_configureCodeGenView;

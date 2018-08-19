@@ -29,12 +29,14 @@
     _Bool _complicationIsVisible;
     _Bool _snapshotContentViewsLoaded;
     UIView *_complicationEditingTimeOverlayView;
+    struct NSNumber *_clockTimerToken;
 }
 
 - (void).cxx_destruct;
 - (void)_initLargeTimeLabelIfNecessary;
 - (void)_initSmallTimeLabelIfNecessary;
 - (void)_applyShowContentForUnadornedSnapshot;
+- (void)_updateMinuteUpdates;
 - (void)_updateComplicationVisibility;
 - (void)_configureLargeTimeLabelColors;
 - (void)_configureSmallTimeLabelColors;

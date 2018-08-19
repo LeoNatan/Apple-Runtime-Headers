@@ -29,6 +29,7 @@ __attribute__((visibility("hidden")))
 
 - (void).cxx_destruct;
 - (void)enableBlur:(BOOL)arg1;
+- (void)enableBlur;
 - (void)updateLayer;
 - (BOOL)wantsUpdateLayer;
 - (void)prepareForLayers;

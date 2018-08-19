@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class NSMutableArray, TVSWiFiNetwork, TVSWiFiThroughputMeasurementTask;
+@class NSMutableArray, NSObject<OS_dispatch_source>, TVSWiFiNetwork, TVSWiFiThroughputMeasurementTask;
 
 @interface TVSWiFiQualityMeasurement : NSObject
 {
@@ -17,9 +17,13 @@
     unsigned long long _state;
     TVSWiFiThroughputMeasurementTask *_throughputMeasurementTask;
     TVSWiFiNetwork *_connectedWiFiNetwork;
+    CDUnknownBlockType _completionHandler;
+    NSObject<OS_dispatch_source> *_urlBagWatchdog;
 }
 
 + (unsigned long long)compareIdeal:(id)arg1 withActual:(id)arg2;
+@property(retain, nonatomic) NSObject<OS_dispatch_source> *urlBagWatchdog; // @synthesize urlBagWatchdog=_urlBagWatchdog;
+@property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 @property(retain, nonatomic) TVSWiFiNetwork *connectedWiFiNetwork; // @synthesize connectedWiFiNetwork=_connectedWiFiNetwork;
 @property(retain, nonatomic) TVSWiFiThroughputMeasurementTask *throughputMeasurementTask; // @synthesize throughputMeasurementTask=_throughputMeasurementTask;
 @property(nonatomic) unsigned long long state; // @synthesize state=_state;

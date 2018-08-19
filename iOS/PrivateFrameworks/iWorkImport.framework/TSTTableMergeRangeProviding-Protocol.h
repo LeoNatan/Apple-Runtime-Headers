@@ -11,6 +11,7 @@
 @protocol TSTTableMergeRangeProviding <NSObject>
 - (TSTCellRegion *)expandCellRegionToCoverMergedCells:(TSTCellRegion *)arg1;
 - (struct TSUCellRect)expandCellRangeToCoverMergedCells:(struct TSUCellRect)arg1;
+- (_Bool)hasRangeSpanningRowsForCellRange:(struct TSUCellRect)arg1;
 - (TSTMergeListWrapper *)mergesIntersectingCellRegion:(TSTCellRegion *)arg1;
 - (TSTMergeListWrapper *)mergesIntersectingRange:(struct TSUCellRect)arg1;
 @end

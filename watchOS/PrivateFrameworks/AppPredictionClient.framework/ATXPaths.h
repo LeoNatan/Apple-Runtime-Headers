@@ -10,12 +10,12 @@
 {
 }
 
-+ (id)appPredictionCacheDirectoryFile:(id)arg1;
 + (id)appPredictionCacheDirectory;
 + (id)appPredictionDirectoryFile:(id)arg1;
 + (void)createDataVault:(id)arg1;
-+ (id)makeDirectory;
++ (id)_getDirectoryCreating:(_Bool)arg1;
 + (id)appPredictionDirectory;
++ (void)createDirectoriesIfNeeded;
 
 @end
 

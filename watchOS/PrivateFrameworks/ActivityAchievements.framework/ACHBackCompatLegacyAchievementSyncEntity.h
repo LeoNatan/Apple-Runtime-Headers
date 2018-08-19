@@ -24,10 +24,7 @@
 + (id)decodeSyncObjectWithData:(id)arg1;
 + (id)syncEntityIdentifier;
 + (_Bool)supportsSyncStore:(id)arg1;
-+ (id)earnedInstanceStore;
 + (void)setEarnedInstanceStore:(id)arg1;
-+ (id)templateStore;
-+ (void)setTemplateStore:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

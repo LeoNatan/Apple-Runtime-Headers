@@ -97,6 +97,7 @@ __attribute__((visibility("hidden")))
 - (void)didChangeRange:(struct _NSRange)arg1 delta:(long long)arg2 broadcastKind:(int)arg3 attributeKindChanges:(id)arg4;
 - (void)didChangeRange:(struct _NSRange)arg1 delta:(long long)arg2 broadcastKind:(int)arg3;
 @property(readonly, nonatomic) TSWPCharacterStyle *hyperlinkStyle;
+- (void)afterReplacingReferencedStylesSetStylesheet:(id)arg1;
 - (void)replaceReferencedStylesUsingBlock:(CDUnknownBlockType)arg1;
 - (id)referencedStyles;
 - (id)referencedStylesOfClass:(Class)arg1;
@@ -148,6 +149,7 @@ __attribute__((visibility("hidden")))
 - (id)placeholderSmartFieldAtRange:(struct _NSRange)arg1;
 - (id)placeholderSmartFieldsIntersectingRange:(struct _NSRange)arg1;
 - (id)smartFieldsWithAttributeKind:(int)arg1 intersectingRange:(struct _NSRange)arg2;
+- (void)nonUndoableRemoveUnsupportedHyperlinks;
 - (id)smartFieldsWithAttributeKind:(int)arg1 intersectingRange:(struct _NSRange)arg2 passingTest:(CDUnknownBlockType)arg3;
 - (void)resetAllTextAttributeUUIDStrings;
 - (void)enumerateSmartFieldsWithAttributeKind:(int)arg1 inRange:(struct _NSRange)arg2 usingBlock:(CDUnknownBlockType)arg3;
@@ -286,6 +288,7 @@ __attribute__((visibility("hidden")))
 - (void)adoptStylesheet:(id)arg1 withMapper:(id)arg2;
 - (_Bool)styleOverridesAppliedToRange:(struct _NSRange)arg1;
 - (struct _NSRange)replaceAllOccurrencesOfStyle:(id)arg1 withStyle:(id)arg2 undoTransaction:(struct TSWPStorageTransaction *)arg3;
+- (void)removePencilAnnotations;
 - (_Bool)childrenCanBeAnnotatedWithPencil;
 - (_Bool)canBeAnnotatedWithPencil;
 - (void)enumeratePencilAnnotationsUsingBlock:(CDUnknownBlockType)arg1;

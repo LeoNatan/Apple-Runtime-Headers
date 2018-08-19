@@ -10,8 +10,7 @@
 {
 }
 
-+ (id)displayNameForUsageLimit:(id)arg1;
-+ (id)displayNameForBudget:(id)arg1;
++ (void)fetchDisplayNameForUsageLimit:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 
 @end
 

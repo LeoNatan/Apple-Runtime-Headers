@@ -110,10 +110,6 @@
 @property(readonly, nonatomic) STUsageReportGraphDataSet *appAndWebUsageDataSet; // @synthesize appAndWebUsageDataSet=_appAndWebUsageDataSet;
 @property(readonly, nonatomic) STUsageReportGraphDataSet *pickupsDataSet; // @synthesize pickupsDataSet=_pickupsDataSet;
 @property(readonly, nonatomic) STUsageReportGraphDataSet *notificationsDataSet; // @synthesize notificationsDataSet=_notificationsDataSet;
-- (id)getLocalizedPickupsDuringDeviceBedtime:(id)arg1;
-- (id)amountDuringBedtime:(id)arg1 itemType:(unsigned long long)arg2 budgetItemIdentifier:(id)arg3;
-- (id)getLocalizedUsageDuringDeviceBedtime:(id)arg1 usageItem:(id)arg2;
-- (id)getLocalizedScreenTimeDuringDeviceBedtime:(id)arg1;
 - (id)topUsageItemsWithMaxCount:(unsigned long long)arg1 type:(unsigned long long)arg2 includeAggregateItem:(_Bool)arg3 nonAggregateItems:(id *)arg4 darkColors:(_Bool)arg5;
 @property(readonly, copy, nonatomic) NSDateInterval *maxPickupsDateInterval; // @synthesize maxPickupsDateInterval=_maxPickupsDateInterval;
 - (id)description;

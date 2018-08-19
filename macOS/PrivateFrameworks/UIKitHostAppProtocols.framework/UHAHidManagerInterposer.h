@@ -12,14 +12,16 @@
 
 @interface UHAHidManagerInterposer : ROCKForwardingInterposer <UHAHidManagerInterface>
 {
+    id <UHAHidSettingsInterface> settings;
 }
 
-- (void)endKeyFocusForScene:(id)arg1 contextId:(unsigned int)arg2;
-- (void)beginKeyFocusForScene:(id)arg1 contextId:(unsigned int)arg2;
+@property(retain, nonatomic) id <UHAHidSettingsInterface> settings; // @synthesize settings;
+- (void).cxx_destruct;
 @property(readonly) double doubleClickInterval;
 @property(readonly) BOOL forceClickPerformsQuickLook;
 - (struct __IOHIDEvent *)pullNextEventFromQueue;
 - (void)registerEventPingHandler:(CDUnknownBlockType)arg1;
+- (id)initWithRemoteObject:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

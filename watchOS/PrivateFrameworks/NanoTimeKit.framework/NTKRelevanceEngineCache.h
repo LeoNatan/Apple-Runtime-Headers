@@ -7,10 +7,11 @@
 #import "NSObject.h"
 
 #import "NTKFaceCollectionObserver.h"
+#import "RERelevanceEngineObserver.h"
 
 @class NSLock, NSString, NTKFaceCollection, RERelevanceEngine;
 
-@interface NTKRelevanceEngineCache : NSObject <NTKFaceCollectionObserver>
+@interface NTKRelevanceEngineCache : NSObject <NTKFaceCollectionObserver, RERelevanceEngineObserver>
 {
     NSLock *_coordinatorLock;
     RERelevanceEngine *_coordinator;
@@ -26,7 +27,14 @@
 + (id)_dataSourceLoaderForRelevanceEngineDataSourcesForKey:(id)arg1;
 + (id)sharedCache;
 - (void).cxx_destruct;
+- (_Bool)relevanceEngine:(id)arg1 isElementAtPathVisible:(id)arg2;
+- (void)relevanceEngine:(id)arg1 didMoveElement:(id)arg2 fromPath:(id)arg3 toPath:(id)arg4;
+- (void)relevanceEngine:(id)arg1 didInsertElement:(id)arg2 atPath:(id)arg3;
+- (void)relevanceEngine:(id)arg1 didRemoveElement:(id)arg2 atPath:(id)arg3;
+- (void)relevanceEngine:(id)arg1 didReloadElement:(id)arg2 atPath:(id)arg3;
+- (void)relevanceEngine:(id)arg1 performBatchUpdateBlock:(CDUnknownBlockType)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_unloadCoordinatorIfNeeded;
+- (void)_beginLoadingDataForEngine:(id)arg1;
 - (void)_loadCoordinatorIfNeeded;
 - (_Bool)_faceCollectionContainsFaceNeedingElementCoordinator:(id)arg1;
 - (_Bool)_needsLiveElementCoordinator;

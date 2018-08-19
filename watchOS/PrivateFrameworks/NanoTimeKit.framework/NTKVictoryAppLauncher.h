@@ -12,7 +12,7 @@
 
 + (id)prelaunchApplicationIdentifiers;
 + (id)complication;
-+ (void)attemptLaunch;
++ (void)attemptLaunchWithDelegate:(id)arg1;
 
 @end
 

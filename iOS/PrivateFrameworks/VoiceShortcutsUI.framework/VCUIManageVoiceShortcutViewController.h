@@ -15,12 +15,11 @@
 #import "VCUIPhraseRecognizerDelegate.h"
 #import "VCUITypeToSiriFieldDelegate.h"
 
-@class NSArray, NSString, UIScrollView, VCUIButtonTray, VCUIManageVoiceShortcutView, VCUIPhraseRecognizer, VCVoiceShortcut, VCVoiceShortcutClient;
+@class NSArray, NSLayoutConstraint, NSString, UIScrollView, VCUIButtonTray, VCUIManageVoiceShortcutView, VCUIPhraseRecognizer, VCVoiceShortcut, VCVoiceShortcutClient;
 
 @interface VCUIManageVoiceShortcutViewController : UIViewController <VCUIButtonTrayDelegate, UIScrollViewDelegate, VCUIPhraseRecognizerDelegate, VCUIAlternativeTranscriptionsViewDelegate, VCUIManageVoiceShortcutConfirmationViewDelegate, VCUIManageVoiceShortcutInterstitialViewDelegate, SUICFlamesViewDelegate, VCUITypeToSiriFieldDelegate>
 {
     _Bool _dismissOnClientRequestsCompletion;
-    _Bool _typeToSiriEnabled;
     _Bool _userIsFinished;
     _Bool _recordButtonTapped;
     id <VCUIManageVoiceShortcutViewControllerDelegate> _delegate;
@@ -28,6 +27,8 @@
     VCVoiceShortcut *_voiceShortcut;
     VCVoiceShortcutClient *_voiceShortcutClient;
     UIScrollView *_scrollView;
+    NSLayoutConstraint *_scrollViewBottomConstraint;
+    NSLayoutConstraint *_scrollViewHeightConstraint;
     NSArray *_pageInAnimationBeginConstraints;
     NSArray *_pageInAnimationCompleteConstraints;
     VCUIManageVoiceShortcutView *_currentView;
@@ -46,7 +47,6 @@
 + (void)initialize;
 @property(nonatomic) _Bool recordButtonTapped; // @synthesize recordButtonTapped=_recordButtonTapped;
 @property(nonatomic) _Bool userIsFinished; // @synthesize userIsFinished=_userIsFinished;
-@property(nonatomic) _Bool typeToSiriEnabled; // @synthesize typeToSiriEnabled=_typeToSiriEnabled;
 @property(retain, nonatomic) NSArray *validationResult; // @synthesize validationResult=_validationResult;
 @property(retain, nonatomic) NSArray *alternativeTranscriptions; // @synthesize alternativeTranscriptions=_alternativeTranscriptions;
 @property(retain, nonatomic) NSString *latestTranscription; // @synthesize latestTranscription=_latestTranscription;
@@ -60,6 +60,8 @@
 @property(retain, nonatomic) VCUIManageVoiceShortcutView *currentView; // @synthesize currentView=_currentView;
 @property(retain, nonatomic) NSArray *pageInAnimationCompleteConstraints; // @synthesize pageInAnimationCompleteConstraints=_pageInAnimationCompleteConstraints;
 @property(retain, nonatomic) NSArray *pageInAnimationBeginConstraints; // @synthesize pageInAnimationBeginConstraints=_pageInAnimationBeginConstraints;
+@property(retain, nonatomic) NSLayoutConstraint *scrollViewHeightConstraint; // @synthesize scrollViewHeightConstraint=_scrollViewHeightConstraint;
+@property(retain, nonatomic) NSLayoutConstraint *scrollViewBottomConstraint; // @synthesize scrollViewBottomConstraint=_scrollViewBottomConstraint;
 @property(retain, nonatomic) UIScrollView *scrollView; // @synthesize scrollView=_scrollView;
 @property(readonly, nonatomic) VCVoiceShortcutClient *voiceShortcutClient; // @synthesize voiceShortcutClient=_voiceShortcutClient;
 @property(retain, nonatomic) VCVoiceShortcut *voiceShortcut; // @synthesize voiceShortcut=_voiceShortcut;
@@ -82,6 +84,7 @@
 - (void)validateTranscription:(id)arg1 alternativeTranscriptions:(id)arg2;
 - (void)updateForPhraseRecognitionComplete:(id)arg1;
 - (id)filterAlternativeTranscriptions:(id)arg1 withValidationResult:(id)arg2 bestTranscription:(id)arg3;
+- (void)showEnableAssistantConfirmationView;
 - (id)existingIdentifierFromError:(id)arg1;
 - (_Bool)dismiss;
 - (void)finishedClientRequest;
@@ -96,7 +99,7 @@
 - (void)didTapTypeToSiri;
 - (void)didTapRecord;
 - (void)didTapDone;
-- (void)didTapDelete;
+- (void)didTapDelete:(id)arg1;
 - (void)didTapCancel;
 - (void)updateDoneButton;
 - (void)updateButtonTrayBlurState;
@@ -106,6 +109,10 @@
 - (void)animatePageIn;
 - (id)alertControllerForError:(id)arg1;
 - (void)addDoneButton;
+- (void)ensureSiriFieldIsVisible;
+- (void)viewWillTransitionToSize:(struct CGSize)arg1 withTransitionCoordinator:(id)arg2;
+- (void)keyboardWillHide:(id)arg1;
+- (void)keyboardDidShow:(id)arg1;
 - (void)updateScrollHeightMetrics;
 - (void)viewDidLayoutSubviews;
 - (void)viewDidAppear:(_Bool)arg1;

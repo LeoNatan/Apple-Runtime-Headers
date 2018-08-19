@@ -6,43 +6,47 @@
 
 #import "NSObject.h"
 
-@class NSIndexSet, NSMutableIndexSet, TSTMergeOwner;
+@class NSMutableIndexSet, TSTMergeOwner;
 
 __attribute__((visibility("hidden")))
 @interface TSTMergeRangeCache : NSObject
 {
-    TSTMergeOwner *_mergeOwner;
-    struct unordered_map<unsigned long, TSUCellRect, std::__1::hash<unsigned long>, std::__1::equal_to<unsigned long>, std::__1::allocator<std::__1::pair<const unsigned long, TSUCellRect>>> _mergeRanges;
-    NSMutableIndexSet *_mergeIndexes;
+    struct unordered_map<unsigned long, TSUModelCellRect, std::__1::hash<unsigned long>, std::__1::equal_to<unsigned long>, std::__1::allocator<std::__1::pair<const unsigned long, TSUModelCellRect>>> _mergeRanges;
     struct TSCEBitGrid _mergedAtCellIds;
     struct TSCEBitGridTransaction *_transaction;
+    TSTMergeOwner *_mergeOwner;
+    NSMutableIndexSet *_mergeIndexes;
+    unsigned long long _count;
 }
 
-@property(readonly, nonatomic) TSTMergeOwner *mergeOwner; // @synthesize mergeOwner=_mergeOwner;
+@property(nonatomic) unsigned long long count; // @synthesize count=_count;
+@property(retain, nonatomic) NSMutableIndexSet *mergeIndexes; // @synthesize mergeIndexes=_mergeIndexes;
+@property(nonatomic) __weak TSTMergeOwner *mergeOwner; // @synthesize mergeOwner=_mergeOwner;
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (id)expandCellRegionToCoverMergedCells:(id)arg1;
-- (struct TSUCellRect)expandCellRangeToCoverMergedCells:(struct TSUCellRect)arg1;
-- (_Bool)hasRangeSpanningRowsForCellRange:(struct TSUCellRect)arg1;
-- (_Bool)partiallyIntersectsCellRegion:(id)arg1;
-- (_Bool)partiallyIntersectsCellRange:(struct TSUCellRect)arg1;
-- (struct TSUCellRect)mergedRangeForCellID:(struct TSUCellCoord)arg1;
-- (vector_e87daf7b)mergeRangesIntersectingCellRegion:(id)arg1;
-- (vector_e87daf7b)mergeRangesIntersectingRange:(struct TSUCellRect)arg1;
-- (vector_e87daf7b)mergeRanges;
+- (_Bool)hasRangeSpanningRowsForCellRegion:(id)arg1;
+- (_Bool)hasRangeSpanningRowsForCellRange:(struct TSUModelCellRect)arg1;
+- (id)expandBaseCellRegionToCoverMergedCells:(id)arg1;
+- (struct TSUModelCellRect)expandBaseCellRectToCoverMergedCells:(struct TSUModelCellRect)arg1;
+- (_Bool)hasRangeSpanningRowsForCellRect:(struct TSUModelCellRect)arg1;
+- (_Bool)partiallyIntersectsBaseCellRegion:(id)arg1;
+- (_Bool)partiallyIntersectsBaseCellRect:(struct TSUModelCellRect)arg1;
+- (struct TSUModelCellRect)mergedRangeForBaseCellCoord:(struct TSUModelCellCoord)arg1;
+- (vector_54ceaeac)mergeRangesIntersectingBaseCellRegion:(id)arg1;
+- (vector_54ceaeac)mergeRangesIntersectingBaseCellRect:(struct TSUModelCellRect)arg1;
+- (vector_54ceaeac)mergeRanges;
 - (id)mergedGridIndicesForDimension:(long long)arg1;
-- (void)enumerateCacheItemsIntersectingCellRegion:(id)arg1 usingBlock:(CDUnknownBlockType)arg2;
-- (void)enumerateCacheItemsIntersectingRange:(struct TSUCellRect)arg1 usingBlock:(CDUnknownBlockType)arg2;
+- (void)enumerateCacheItemsIntersectingBaseCellRegion:(id)arg1 usingBlock:(CDUnknownBlockType)arg2;
+- (void)enumerateCacheItemsIntersectingBaseCellRect:(struct TSUModelCellRect)arg1 usingBlock:(CDUnknownBlockType)arg2;
 - (void)enumerateCacheItemsUsingBlock:(CDUnknownBlockType)arg1;
 - (void)removeMergeRangeAtIndex:(unsigned long long)arg1;
-- (void)setMerge:(struct TSUCellRect)arg1 atIndex:(unsigned long long)arg2;
-- (void)p_updateGridForReplacingRange:(struct TSUCellRect)arg1 withRange:(struct TSUCellRect)arg2;
+- (void)setMerge:(struct TSUModelCellRect)arg1 atIndex:(unsigned long long)arg2;
+- (void)p_updateGridForReplacingRange:(struct TSUModelCellRect)arg1 withRange:(struct TSUModelCellRect)arg2;
 - (void)commitRewritingTransaction;
 - (void)openRewritingTransaction;
-- (struct TSUCellRect)mergeRangeAtIndex:(unsigned long long)arg1;
+- (struct TSUModelCellRect)mergeRangeAtIndex:(unsigned long long)arg1;
 - (id)description;
-@property(readonly, nonatomic) unsigned long long count;
-@property(readonly, nonatomic) NSIndexSet *mergeIndexes;
+- (void)clear;
 - (void)dealloc;
 - (id)initWithMergeOwner:(id)arg1;
 

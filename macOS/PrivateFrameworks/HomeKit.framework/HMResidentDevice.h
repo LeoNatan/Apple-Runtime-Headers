@@ -32,6 +32,7 @@
 @property(readonly) HMDevice *device; // @synthesize device=_device;
 @property __weak id <HMResidentDeviceDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (void)handleRuntimeStateUpdate:(id)arg1;
 - (BOOL)_mergeWithNewObject:(id)arg1 operations:(id)arg2;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

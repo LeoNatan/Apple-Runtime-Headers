@@ -24,7 +24,7 @@
 #import "UINavigationControllerDelegate.h"
 #import "UIPopoverPresentationControllerDelegate.h"
 
-@class CNContactPickerViewController, CNContactViewController, MFAddressPickerReformatter, MFAttachment, MFComposeActivityHandoffOperation, MFComposeImageSizeView, MFComposeRecipient, MFComposeRecipientTextView, MFComposeSubjectView, MFFuture, MFLANHandoffAgent, MFLock, MFMailAccountProxyGenerator, MFMailMarkup, MFMailPopoverManager, MFMailSignatureController, MFMailboxUid, MFMessageContentProgressLayer, MFModernComposeRecipientAtom, MFMutableMessageHeaders, MFOutgoingMessageDelivery, MFRecentComposeRecipient, MFSecureMIMECompositionManager, NSArray, NSDate, NSDictionary, NSMutableSet, NSObject<OS_dispatch_group>, NSString, NSTimer, QLPreviewController, UIAlertController, UIBarButtonItem, UIImagePickerController, UIKeyCommand, UIProgressView, UIResponder, UIView, UIView<MFComposeBodyField>, _MFMailCompositionContext;
+@class CNContactPickerViewController, CNContactViewController, MFAddressPickerReformatter, MFAttachment, MFComposeActivityHandoffOperation, MFComposeImageSizeView, MFComposeRecipient, MFComposeRecipientTextView, MFComposeSubjectView, MFFuture, MFLANHandoffAgent, MFLock, MFMailAccountProxyGenerator, MFMailMarkup, MFMailPopoverManager, MFMailSignatureController, MFMailboxUid, MFMessageContentProgressLayer, MFModernComposeRecipientAtom, MFMutableMessageHeaders, MFOutgoingMessageDelivery, MFRecentComposeRecipient, MFSecureMIMECompositionManager, NSArray, NSDate, NSDictionary, NSMutableSet, NSObject<OS_dispatch_group>, NSObject<OS_dispatch_queue>, NSString, NSTimer, QLPreviewController, UIAlertController, UIBarButtonItem, UIImagePickerController, UIKeyCommand, UIProgressView, UIResponder, UIView, UIView<MFComposeBodyField>, _MFMailCompositionContext;
 
 @interface MFMailComposeController : UIViewController <UINavigationControllerDelegate, CNContactViewControllerDelegate, MFMailComposeToFieldDelegate, NSUserActivityDelegate, MFComposeActivityHandoffOperationDelegate, QLPreviewControllerDelegate, MFMailComposeViewDelegate, MFComposeHeaderViewDelegate, MFComposeSubjectViewDelegate, MFComposeImageSizeViewDelegate, MFComposeRecipientTextViewDelegate, MFSecureMIMECompositionManagerDelegate, MFComposeTypeFactoryDelegate, UIImagePickerControllerDelegate, UIPopoverPresentationControllerDelegate, MFGroupDetailViewControllerDelegate, CNContactPickerDelegate>
 {
@@ -108,6 +108,7 @@
     NSDate *_autosavedDate;
     NSDate *_lastActiveDate;
     NSDictionary *_securityScopes;
+    // Error parsing type: AI, name: _autosaveCount
     UIResponder *_savedFirstResponder;
     MFFuture *_content;
     _Bool _isModal;
@@ -126,6 +127,7 @@
     CNContactViewController *_contactViewController;
     unsigned long long _markupReplyAttachmentLoadingProgress;
     NSMutableSet *_drawingFileAttachments;
+    NSObject<OS_dispatch_queue> *_autosaveQueue;
 }
 
 + (id)preferenceForKey:(id)arg1;
@@ -133,6 +135,7 @@
 + (_Bool)isSetupForDeliveryAllowingRestrictedAccounts:(_Bool)arg1;
 + (id)allocWithZone:(struct _NSZone *)arg1;
 + (void)initialize;
+@property(retain, nonatomic) NSObject<OS_dispatch_queue> *autosaveQueue; // @synthesize autosaveQueue=_autosaveQueue;
 @property(retain, nonatomic) NSMutableSet *drawingFileAttachments; // @synthesize drawingFileAttachments=_drawingFileAttachments;
 @property(nonatomic) unsigned long long markupReplyAttachmentLoadingProgress; // @synthesize markupReplyAttachmentLoadingProgress=_markupReplyAttachmentLoadingProgress;
 @property(nonatomic) _Bool delayToShowMarkupHasPassed; // @synthesize delayToShowMarkupHasPassed=_delayToShowMarkupHasPassed;

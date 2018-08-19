@@ -21,13 +21,14 @@ __attribute__((visibility("hidden")))
 + (id)checkboxFormat;
 + (id)ratingFormat;
 + (id)textFormat;
-+ (id)formatFromTSUFormatStruct:(CDStruct_28403e59)arg1;
-+ (id)defaultRootFormatForCustomFormatType:(int)arg1;
++ (id)formatFromTSUFormatStruct:(CDStruct_b1066b25)arg1;
 @property(readonly, nonatomic) int formatType; // @synthesize formatType=_formatType;
+- (void)encodeToArchive:(struct FormatStructArchive *)arg1 archivingCustomFormats:(_Bool)arg2;
 - (void)encodeToArchive:(struct FormatStructArchive *)arg1;
 - (id)description;
 - (id)asMultipleChoiceListFormat;
 - (id)asStepperSliderFormat;
+- (id)asBooleanFormat;
 - (id)asCustomFormatWrapper;
 - (id)asDurationFormat;
 - (id)asDateTimeFormat;
@@ -45,7 +46,7 @@ __attribute__((visibility("hidden")))
 - (unsigned long long)hash;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithFormatType:(int)arg1;
-@property(readonly, nonatomic) CDStruct_28403e59 formatStruct;
+@property(readonly, nonatomic) CDStruct_b1066b25 formatStruct;
 
 @end
 

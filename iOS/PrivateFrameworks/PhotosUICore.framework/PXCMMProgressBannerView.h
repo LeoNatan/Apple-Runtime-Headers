@@ -14,15 +14,22 @@
 {
     PXCMMAssetsProgressListener *_assetsProgressListener;
     UIVisualEffectView *_visualEffectView;
-    UILabel *_label;
+    UILabel *_activityLabel;
+    UILabel *_pauseLabel;
     UIProgressView *_progressView;
+    double _layoutHeight;
+    id <PXCMMProgressBannerViewLayoutDelegate> _layoutDelegate;
 }
 
-+ (double)height;
+@property(readonly, nonatomic) double layoutHeight; // @synthesize layoutHeight=_layoutHeight;
+@property(nonatomic) __weak id <PXCMMProgressBannerViewLayoutDelegate> layoutDelegate; // @synthesize layoutDelegate=_layoutDelegate;
 - (void).cxx_destruct;
 - (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void *)arg3;
-- (void)_performLayoutInWidth:(double)arg1 updateSubviewFrames:(_Bool)arg2;
+- (void)_contentSizeCategoryDidChange:(id)arg1;
+- (void)_updateFonts;
+- (struct CGSize)_performLayoutInWidth:(double)arg1 updateSubviewFrames:(_Bool)arg2;
 - (void)_updateProgress;
+- (void)_updatePauseTitle;
 - (void)_updateActivityTitle;
 - (void)layoutSubviews;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;

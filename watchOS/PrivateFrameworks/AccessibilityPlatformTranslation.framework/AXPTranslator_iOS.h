@@ -40,6 +40,7 @@
 - (id)processSetAttribute:(id)arg1;
 - (id)processCanSetAttribute:(id)arg1;
 - (id)_processAttributeSpecialCases:(unsigned int)arg1 uiElement:(id)arg2 parameter:(id)arg3 error:(unsigned int *)arg4;
+- (id)_processCustomActionsAttributeRequest:(id)arg1 error:(unsigned int *)arg2;
 - (id)_processAttributeSpecialCases:(unsigned int)arg1 uiElement:(id)arg2 error:(unsigned int *)arg3;
 - (id)_processSubroleAttributeRequest:(id)arg1 error:(unsigned int *)arg2;
 - (id)_processStringForRangeAttributeRequest:(id)arg1 parameter:(id)arg2 error:(unsigned int *)arg3;
@@ -59,6 +60,7 @@
 - (id)_processParameterizedAttributeRequest:(id)arg1 attribute:(long)arg2 parameter:(id)arg3 error:(unsigned int *)arg4;
 - (id)processActionRequest:(id)arg1;
 - (_Bool)_processScrollToVisibleAction:(id)arg1;
+- (_Bool)_processEscapeAction:(id)arg1;
 - (_Bool)_processPressAction:(id)arg1;
 - (_Bool)_processShowContextMenuAction:(id)arg1;
 - (_Bool)_processPerformCustomAction:(id)arg1;

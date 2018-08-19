@@ -10,6 +10,7 @@
 
 @interface _DKSyncBlockCompositeOperation : _DKSyncCompositeOperation
 {
+    struct os_unfair_lock_s _lock;
     NSMutableArray *_blocks;
 }
 

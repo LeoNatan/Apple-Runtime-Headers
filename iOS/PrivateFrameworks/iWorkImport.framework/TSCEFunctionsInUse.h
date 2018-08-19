@@ -19,6 +19,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, retain, nonatomic) TSCECalculationEngine *calcEngine; // @synthesize calcEngine=_calcEngine;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+- (id)description;
 - (void)dirtyCellsUsingFunction:(int)arg1;
 - (void)addFunctionUsesInFormula:(const struct TSCEFormula *)arg1 atCellRef:(const struct TSCECellRef *)arg2;
 - (void)addUseOfFunction:(int)arg1 atCellRef:(const struct TSCECellRef *)arg2;

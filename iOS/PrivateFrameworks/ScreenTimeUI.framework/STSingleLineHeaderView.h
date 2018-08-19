@@ -16,7 +16,7 @@
     PSSpecifier *_specifier;
 }
 
-@property(retain, nonatomic) PSSpecifier *specifier; // @synthesize specifier=_specifier;
+@property(nonatomic) __weak PSSpecifier *specifier; // @synthesize specifier=_specifier;
 @property(readonly, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 - (void).cxx_destruct;
 - (double)preferredHeightForWidth:(double)arg1;

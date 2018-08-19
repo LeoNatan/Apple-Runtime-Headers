@@ -28,6 +28,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)customAttributes;
++ (int)getDraftMode:(id)arg1;
 + (struct CGImageMetadata *)augmentMetadataWithRenderingPropertiesForImage:(id)arg1;
 + (struct CGImageMetadata *)metadataFromDictionary:(id)arg1 metadata:(struct CGImageMetadata *)arg2;
 + (id)tuningParametersFromMetadata:(struct CGImageMetadata *)arg1;

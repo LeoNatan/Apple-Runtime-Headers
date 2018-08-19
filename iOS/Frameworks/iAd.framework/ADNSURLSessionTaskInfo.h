@@ -21,6 +21,8 @@
 @property(readonly, retain) NSURLSessionDataTask *task; // @synthesize task=_task;
 - (void)invalidate;
 - (void)performBlockOnClientThread:(CDUnknownBlockType)arg1;
+- (void)perform:(CDUnknownBlockType)arg1 waitUntilDone:(_Bool)arg2;
+- (void)performBlockAndWait:(CDUnknownBlockType)arg1;
 - (void)performBlock:(CDUnknownBlockType)arg1;
 @property __weak id <NSURLSessionDataDelegate> delegate;
 - (void)dealloc;

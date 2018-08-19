@@ -11,6 +11,7 @@ __attribute__((visibility("hidden")))
 {
 }
 
+- (void)setFormatType:(int)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)addConditionalFormatOfType:(int)arg1 value:(double)arg2 data:(id)arg3;
 

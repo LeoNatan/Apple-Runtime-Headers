@@ -31,6 +31,7 @@
     BOOL _cloudDeviceCountChangedObserverRegistered;
     BOOL _cloudSyncAvailablityObserverRegistered;
     BOOL _rapportAvailablityObserverRegistered;
+    BOOL _siriSyncEnabledObserverRegistered;
     BOOL _syncPolicyChangedObserverRegistered;
     APSConnection *_connection;
     NSMutableSet *_streamNamesObservedForAdditions;
@@ -69,11 +70,18 @@
 - (void).cxx_destruct;
 - (void)removeBusyTransaction:(id)arg1;
 - (id)createBusyTransactionWithName:(const char *)arg1;
+- (void)_deleteNextBatchOfOurSiriEventsFromCloudWithStartDate:(id)arg1;
+- (void)_deleteSiriCloudEvents;
+- (void)_deleteForeignSiriEvents;
+- (void)_deleteSiriEventsIfSiriCloudSyncHasBeenDisabled;
 - (void)_destroyPushConnection;
 - (void)_createPushConnection;
 - (void)_unregisterSyncPolicyChangedObserver;
 - (void)_registerSyncPolicyChangedObserver;
 - (void)_syncPolicyDidChange:(id)arg1;
+- (void)_unregisterSiriSyncEnabledObserver;
+- (void)_registerSiriSyncEnabledObserver;
+- (void)_siriSyncEnabledDidChange;
 - (void)_unregisterRapportAvailablityObserver;
 - (void)_registerRapportAvailablityObserver;
 - (void)_unregisterCloudDeviceCountChangedObserver;

@@ -6,13 +6,14 @@
 
 #import <OnBoardingKit/OBPrivacyLinkController.h>
 
-@class NSColor, OBPrivacyLinkButton;
+@class NSColor, NSTextField, OBPrivacyLinkButton;
 
 @interface OBPrivacyLinkController_macOS : OBPrivacyLinkController
 {
     NSColor *_iconTintColor;
     NSColor *_textTintColor;
     OBPrivacyLinkButton *_button;
+    NSTextField *_caption;
 }
 
 - (void).cxx_destruct;
@@ -20,6 +21,7 @@
 - (void)setIconTintColor:(id)arg1;
 - (void)setLinkEnabled:(BOOL)arg1;
 - (void)viewDidLoad;
+- (void)viewDidLayout;
 - (void)viewPressed:(id)arg1;
 - (void)loadView;
 - (id)initWithBundleIdentifiers:(id)arg1;

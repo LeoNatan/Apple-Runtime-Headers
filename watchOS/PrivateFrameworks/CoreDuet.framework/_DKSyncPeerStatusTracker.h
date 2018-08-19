@@ -20,6 +20,7 @@
 @property(nonatomic) __weak _DKKnowledgeStorage *storage; // @synthesize storage=_storage;
 - (void).cxx_destruct;
 - (void)debugLogPeers;
+- (id)stringForTransports:(int)arg1;
 - (void)postCloudDeviceCountChangedNotification;
 - (void)_loadPeers;
 - (id)uuidWithUUIDString:(id)arg1;

@@ -6,7 +6,7 @@
 
 #import <NewsToday/NTTodayResultOperation.h>
 
-@class NSDate, NSDictionary, NTCatchUpOperationForYouFetchInfo, NTPBTodayResultOperationFetchInfo, NTTodayResults;
+@class NSDate, NSDictionary, NSObject, NTCatchUpOperationForYouFetchInfo, NTPBTodayResultOperationFetchInfo, NTTodayResults;
 
 @interface NTNewsTodayResultOperation : NTTodayResultOperation
 {
@@ -15,11 +15,15 @@
     NTCatchUpOperationForYouFetchInfo *_forYouFetchInfo;
     NTTodayResults *_resultTodayResults;
     NSDictionary *_resultAssetHandlesByAssetID;
+    NSObject *_resultAssetsHoldToken;
     NTPBTodayResultOperationFetchInfo *_resultFetchInfo;
+    NSDictionary *_todayConfigOperationHeldRecordsByType;
 }
 
 + (void)initialize;
+@property(retain, nonatomic) NSDictionary *todayConfigOperationHeldRecordsByType; // @synthesize todayConfigOperationHeldRecordsByType=_todayConfigOperationHeldRecordsByType;
 @property(copy, nonatomic) NTPBTodayResultOperationFetchInfo *resultFetchInfo; // @synthesize resultFetchInfo=_resultFetchInfo;
+@property(retain, nonatomic) NSObject *resultAssetsHoldToken; // @synthesize resultAssetsHoldToken=_resultAssetsHoldToken;
 @property(copy, nonatomic) NSDictionary *resultAssetHandlesByAssetID; // @synthesize resultAssetHandlesByAssetID=_resultAssetHandlesByAssetID;
 @property(copy, nonatomic) NTTodayResults *resultTodayResults; // @synthesize resultTodayResults=_resultTodayResults;
 @property(copy, nonatomic) NTCatchUpOperationForYouFetchInfo *forYouFetchInfo; // @synthesize forYouFetchInfo=_forYouFetchInfo;

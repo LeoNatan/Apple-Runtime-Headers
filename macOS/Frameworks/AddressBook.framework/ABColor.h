@@ -64,6 +64,7 @@
 + (id)monogramForegroundAdaptiveDarkColor;
 + (id)suggestionSnippetSelectedTextBackgroundColor;
 + (id)suggestionSnippetSelectedTextColor;
++ (id)suggestionSnippetTextColor;
 + (id)mergeDuplicateCardsUINewCardBannerColor;
 + (id)mergeDuplicateCardsUIOldCardBannerColor;
 + (id)actionButtonImageTintColor;

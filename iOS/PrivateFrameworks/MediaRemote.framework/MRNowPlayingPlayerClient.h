@@ -9,7 +9,7 @@
 #import "MRNowPlayingClientState.h"
 #import "MRTransactionSourceDelegate.h"
 
-@class MRNowPlayingArtwork, MRNowPlayingPlayerClientCallbacks, MRPlaybackQueueSubscriptionController, NSArray, NSDictionary, NSMutableArray, NSMutableDictionary, NSObject<OS_dispatch_queue>, _MRContentItemProtobuf, _MRNowPlayingPlayerPathProtobuf, _MRPlaybackQueueProtobuf;
+@class MRNowPlayingArtwork, MRNowPlayingPlayerClientCallbacks, MRPlaybackQueueSubscriptionController, NSArray, NSDate, NSDictionary, NSMutableArray, NSMutableDictionary, NSObject<OS_dispatch_queue>, _MRContentItemProtobuf, _MRNowPlayingPlayerPathProtobuf, _MRPlaybackQueueProtobuf;
 
 @interface MRNowPlayingPlayerClient : NSObject <MRNowPlayingClientState, MRTransactionSourceDelegate>
 {
@@ -21,6 +21,7 @@
     unsigned int _playbackState;
     double _playbackStateSetToPlayTimestamp;
     unsigned long long _capabilities;
+    NSDate *_lastReceivedCommandDate;
     _Bool _coalescingInvalidations;
     _Bool _coalescingRequests;
     _Bool _triggerInvalidation;
@@ -50,6 +51,7 @@
 - (void)endSendingTransactions;
 - (void)beginSendingTransactions;
 - (void)restoreNowPlayingClientState;
+@property(readonly, nonatomic) _Bool hasReceivedCommandRecently;
 - (void)preProcessCommand:(unsigned int)arg1 options:(id)arg2;
 - (void)preProcessChangePlaybackRateCommandWithOptions:(id)arg1;
 - (void)updateCacheWithContentItems:(id)arg1;

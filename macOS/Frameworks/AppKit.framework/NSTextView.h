@@ -23,6 +23,7 @@
 }
 
 + (id)defaultMenu;
++ (BOOL)mapsDocumentColorForColorPickers;
 + (BOOL)stronglyReferencesTextStorage;
 + (BOOL)alwaysReferencesTextStorageStrongly;
 + (void)initialize;
@@ -146,6 +147,11 @@
 - (void)setLayer:(id)arg1;
 - (id)makeBackingLayer;
 - (void)drawRect:(struct CGRect)arg1;
+- (id)_renderingColorForDocumentColor:(id)arg1;
+- (id)documentColorForRenderingColor:(id)arg1;
+- (id)renderingColorForDocumentColor:(id)arg1;
+- (void)_updateDarkEffectiveAppearanceFlagWithAppearance:(id)arg1;
+- (void)viewDidChangeEffectiveAppearance;
 - (void)prepareContentInRect:(struct CGRect)arg1;
 - (void)drawBackgroundOverhangInRect:(struct CGRect)arg1;
 - (void)drawViewBackgroundInRect:(struct CGRect)arg1;
@@ -220,6 +226,7 @@
 - (void)changeDocumentBackgroundColor:(id)arg1;
 - (void)changeColor:(id)arg1;
 - (void)changeAttributes:(id)arg1;
+- (id)_convertAttributesByMappingRenderingColor:(id)arg1 converter:(CDUnknownBlockType)arg2;
 - (void)changeFont:(id)arg1;
 - (void)selectAll:(id)arg1;
 - (void)delete:(id)arg1;
@@ -260,6 +267,7 @@
 - (void)updateInspectorBar;
 - (id)_currentEditingColor;
 - (void)updateFontPanel;
+- (id)_renderingAttributesForDocumentAttributes:(id)arg1;
 - (void)updateRuler;
 - (BOOL)_shouldDoLayerPerformanceUpdates;
 - (BOOL)canSmoothFontsInLayer;
@@ -822,6 +830,11 @@
 @property BOOL allowsDocumentBackgroundColorChange;
 @property(copy) NSArray *selectedRanges;
 - (void)setSelectedRange:(struct _NSRange)arg1;
+- (void)toggleUsesAdaptiveColorMappingForDarkAppearance:(id)arg1;
+- (BOOL)usesColorsWithInvertedLightness;
+- (void)setUsesColorsWithInvertedLightness:(BOOL)arg1;
+- (BOOL)usesAdaptiveColorMappingForDarkAppearance;
+- (void)setUsesAdaptiveColorMappingForDarkAppearance:(BOOL)arg1;
 @property BOOL drawsBackground;
 @property(copy) NSColor *backgroundColor;
 @property(getter=isRulerVisible) BOOL rulerVisible;

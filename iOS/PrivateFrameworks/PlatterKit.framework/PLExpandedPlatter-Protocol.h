@@ -11,6 +11,7 @@
 @protocol PLExpandedPlatter <PLPlatter>
 @property(nonatomic) double contentBottomInset;
 @property(nonatomic) _Bool clipsVisibleContentToBounds;
+@property(nonatomic) long long dismissControlPosition;
 @property(readonly, nonatomic) struct UIEdgeInsets dismissControlInsets;
 @property(readonly, nonatomic) UIControl *dismissControl;
 @property(nonatomic, getter=isActionsHidden) _Bool actionsHidden;

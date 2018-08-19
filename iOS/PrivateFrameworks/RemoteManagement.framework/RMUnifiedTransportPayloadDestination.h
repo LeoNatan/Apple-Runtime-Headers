@@ -30,7 +30,7 @@
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (void)updateWithDictionaryRepresentation:(id)arg1;
+- (_Bool)updateWithDictionaryRepresentation:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)initWithAddress:(id)arg1 type:(id)arg2 state:(unsigned long long)arg3;
 - (id)initWithAddress:(id)arg1 type:(id)arg2;

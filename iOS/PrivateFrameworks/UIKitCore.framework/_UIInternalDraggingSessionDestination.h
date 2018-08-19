@@ -75,7 +75,7 @@ __attribute__((visibility("hidden")))
 - (void)sawDragEndEvent;
 - (void)dragInteractionEnding;
 @property(readonly, nonatomic) _Bool didRequestDropToBePerformed;
-@property(readonly, nonatomic) _Bool hasConnectedToDruid;
+@property(readonly, nonatomic) _Bool shouldDragEventBeSentToGestureRecognizers;
 - (void)dataTransferMonitorFinishedTransfers:(id)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)dataTransferMonitorBeganTransfers:(id)arg1;

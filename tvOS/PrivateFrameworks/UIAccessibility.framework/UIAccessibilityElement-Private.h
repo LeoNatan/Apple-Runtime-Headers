@@ -15,5 +15,8 @@
 - (void)setData:(id)arg1 forKey:(id)arg2;
 - (id)_accessibilityProxyView;
 @property(nonatomic) __weak id accessibilityDelegate; // @dynamic accessibilityDelegate;
+
+// Remaining properties
+@property(readonly, nonatomic) _Bool _accessibilityUsesFrameInContainerSpace; // @dynamic _accessibilityUsesFrameInContainerSpace;
 @end
 

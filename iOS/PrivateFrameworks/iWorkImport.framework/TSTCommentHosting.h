@@ -20,8 +20,8 @@ __attribute__((visibility("hidden")))
 }
 
 @property(retain, nonatomic) NSString *annotationUUID; // @synthesize annotationUUID=_annotationUUID;
-@property(readonly, nonatomic) struct TSTCellUID cellUID; // @synthesize cellUID=_cellUID;
 @property(retain, nonatomic) TSTInfo *tableInfo; // @synthesize tableInfo=_tableInfo;
+@property(readonly, nonatomic) struct TSTCellUID cellUID; // @synthesize cellUID=_cellUID;
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (_Bool)isInDocument;
@@ -31,13 +31,15 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) int annotationType;
 @property(readonly, nonatomic) NSDate *date;
 @property(retain, nonatomic) TSKAnnotationAuthor *author;
-@property(readonly, nonatomic) struct TSUCellCoord cellID;
+@property(readonly, nonatomic) struct TSUModelCellCoord baseCellCoord;
+@property(readonly, nonatomic) struct TSUViewCellCoord viewCellCoord;
 - (_Bool)isFloatingComment;
 - (Class)editorClass;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(copy, nonatomic) TSDCommentStorage *storage;
 - (void)p_updateAnnotationUUID;
-- (id)initWithStorage:(id)arg1 forTableInfo:(id)arg2 cellID:(struct TSUCellCoord)arg3;
+- (id)initWithStorage:(id)arg1 forTableInfo:(id)arg2 baseCellCoord:(struct TSUModelCellCoord)arg3;
+- (id)initWithStorage:(id)arg1 forTableInfo:(id)arg2 cellUID:(struct TSTCellUID)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -17,6 +17,7 @@
     unsigned long long _activityType;
     PXCMMViewModel *_viewModel;
     PXCMMAssetsProgressListener *_assetsProgressListener;
+    id <PXImportStatusManager> _importStatusManager;
     _Bool _isViewLoaded;
     UIView *_underlyingView;
     UIButton *_actionButton;
@@ -46,7 +47,7 @@
 - (void)_handleActionButtonTapped:(id)arg1;
 @property(readonly, nonatomic) UIView *view;
 - (void)_loadViewIfNeeded;
-- (id)initWithActivityType:(unsigned long long)arg1 viewModel:(id)arg2 assetsProgressListener:(id)arg3;
+- (id)initWithActivityType:(unsigned long long)arg1 viewModel:(id)arg2 assetsProgressListener:(id)arg3 importStatusManager:(id)arg4;
 - (id)init;
 
 // Remaining properties

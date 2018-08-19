@@ -16,9 +16,11 @@ __attribute__((visibility("hidden")))
     NSDictionary *inputTuningParameters;
     NSNumber *inputScale;
     NSNumber *inputApertureScaling;
+    NSNumber *inputDraftMode;
 }
 
 + (id)customAttributes;
+@property(copy, nonatomic) NSNumber *inputDraftMode; // @synthesize inputDraftMode;
 @property(copy, nonatomic) NSNumber *inputApertureScaling; // @synthesize inputApertureScaling;
 @property(copy, nonatomic) NSNumber *inputScale; // @synthesize inputScale;
 @property(retain, nonatomic) NSDictionary *inputTuningParameters; // @synthesize inputTuningParameters;
@@ -27,10 +29,10 @@ __attribute__((visibility("hidden")))
 - (id)outputImage;
 - (id)_kernel:(BOOL)arg1 alpha:(BOOL)arg2;
 - (id)_lutKernel:(BOOL)arg1 alpha:(BOOL)arg2;
-- (id)_baseVecsImage:(unsigned int)arg1;
-- (id)_lut:(unsigned int)arg1;
-- (id)_cachedLutAndBaseVecsImageForNRings:(unsigned int)arg1;
-- (id)_createLUTForNRings:(unsigned int)arg1;
+- (id)baseVecsLUT:(unsigned int)arg1;
+- (id)stepsLUT:(unsigned int)arg1;
+- (id)baseVecsLUTGenerator;
+- (id)stepsLUTGenerator;
 - (BOOL)_useD2XRenderer;
 - (id)_packageParams:(BOOL)arg1 extent:(struct CGRect)arg2 image:(id)arg3 haveAlpha:(BOOL)arg4;
 

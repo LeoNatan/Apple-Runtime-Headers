@@ -6,9 +6,11 @@
 
 #import "UIViewController.h"
 
-@class NSDictionary, NSString, SKInvocationQueueProxy<SKUIServiceProductPageViewController>, SKRemoteProductViewController, _UIAsyncInvocation;
+#import "SKScreenTrackingDelegate.h"
 
-@interface SKStoreProductViewController : UIViewController
+@class NSDictionary, NSString, SKInvocationQueueProxy<SKUIServiceProductPageViewController>, SKRemoteProductViewController, SKScrollDetector, _UIAsyncInvocation;
+
+@interface SKStoreProductViewController : UIViewController <SKScreenTrackingDelegate>
 {
     NSString *_additionalBuyParameters;
     NSString *_affiliateIdentifier;
@@ -28,26 +30,30 @@
     _Bool _showsRightBarButton;
     _Bool _askToBuy;
     NSString *_promptString;
+    SKScrollDetector *_scrollDetector;
+    _Bool _viewWasOnScreen;
 }
 
 + (void)_validateURL:(id)arg1 withSheetInfo:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
 + (id)_defaultIXStoreSheetDictionary;
 + (void)getCanLoadURL:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 + (void)getCanLoadURL:(id)arg1 withURLBag:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
+@property(nonatomic) _Bool automaticallyDismisses; // @synthesize automaticallyDismisses=_automaticallyDismisses;
+@property(copy, nonatomic) NSString *promptString; // @synthesize promptString=_promptString;
+@property(nonatomic) _Bool showsRightBarButton; // @synthesize showsRightBarButton=_showsRightBarButton;
+@property(copy, nonatomic) NSString *rightBarButtonTitle; // @synthesize rightBarButtonTitle=_rightBarButtonTitle;
+@property(copy, nonatomic) NSString *cancelButtonTitle; // @synthesize cancelButtonTitle=_cancelButtonTitle;
 @property(nonatomic) _Bool showsStoreButton; // @synthesize showsStoreButton=_showsStoreButton;
 @property(nonatomic) _Bool askToBuy; // @synthesize askToBuy=_askToBuy;
-@property(copy, nonatomic) NSDictionary *scriptContextDictionary; // @synthesize scriptContextDictionary=_scriptContextDictionary;
-@property(nonatomic) _Bool showsRightBarButton; // @synthesize showsRightBarButton=_showsRightBarButton;
-@property(copy, nonatomic) NSString *cancelButtonTitle; // @synthesize cancelButtonTitle=_cancelButtonTitle;
-@property(copy, nonatomic) NSString *rightBarButtonTitle; // @synthesize rightBarButtonTitle=_rightBarButtonTitle;
-@property(copy, nonatomic) NSString *promptString; // @synthesize promptString=_promptString;
 @property(nonatomic) long long productPageStyle; // @synthesize productPageStyle=_productPageStyle;
-@property(nonatomic) __weak id <SKStoreProductViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
+@property(copy, nonatomic) NSDictionary *scriptContextDictionary; // @synthesize scriptContextDictionary=_scriptContextDictionary;
 @property(copy, nonatomic) NSString *clientIdentifier; // @synthesize clientIdentifier=_clientIdentifier;
-@property(nonatomic) _Bool automaticallyDismisses; // @synthesize automaticallyDismisses=_automaticallyDismisses;
 @property(copy, nonatomic) NSString *affiliateIdentifier; // @synthesize affiliateIdentifier=_affiliateIdentifier;
 @property(copy, nonatomic) NSString *additionalBuyParameters; // @synthesize additionalBuyParameters=_additionalBuyParameters;
+@property(nonatomic) __weak id <SKStoreProductViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (void)sk_didBecomeOffScreen:(id)arg1;
+- (void)sk_didBecomeOnScreen:(id)arg1;
 - (void)_throwUnsupportedPresentationException;
 - (void)_setLoadBlock:(CDUnknownBlockType)arg1;
 - (void)_requestRemoteViewController;
@@ -71,6 +77,7 @@
 - (void)_willBecomeContentViewControllerOfPopover:(id)arg1;
 - (void)viewDidDisappear:(_Bool)arg1;
 - (void)viewWillDisappear:(_Bool)arg1;
+- (void)viewWillLayoutSubviews;
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)willMoveToParentViewController:(id)arg1;
@@ -79,6 +86,12 @@
 - (void)loadProductWithParameters:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (void)dealloc;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

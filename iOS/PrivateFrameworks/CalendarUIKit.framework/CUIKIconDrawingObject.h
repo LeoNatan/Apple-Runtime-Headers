@@ -37,6 +37,7 @@
 @property(readonly, nonatomic) double minFullDateNameFontScale;
 @property(readonly, nonatomic) double dateNameHorizontalInset;
 @property(readonly, nonatomic) double dateNameBaselineVerticalInset;
+- (double)_homeScreenDateNameBaselineVerticalInset;
 - (_Bool)_shouldUseJ207SmallerFont:(id)arg1;
 - (id)_systemG2FromFont:(id)arg1;
 - (id)dateNameFont:(id)arg1;

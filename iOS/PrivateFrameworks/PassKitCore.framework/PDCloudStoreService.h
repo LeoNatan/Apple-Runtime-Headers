@@ -18,6 +18,7 @@
 
 @property(retain, nonatomic) PDCloudStoreNotificationCoordinator *cloudStoreNotificationCoordinator; // @synthesize cloudStoreNotificationCoordinator=_cloudStoreNotificationCoordinator;
 - (void).cxx_destruct;
+- (void)noteAccountDeletedWithHandler:(CDUnknownBlockType)arg1;
 - (void)noteCloudSyncPassesSwitchChangedWithHandler:(CDUnknownBlockType)arg1;
 - (void)generateRandomTransactionForPassWithUniqueIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)fetchAndStoreRecordsForPaymentPassWithUniqueIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;

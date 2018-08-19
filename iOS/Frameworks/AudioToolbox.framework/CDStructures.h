@@ -133,8 +133,6 @@ struct AudioComponentDescription {
     unsigned int componentFlagsMask;
 };
 
-struct AudioComponentPluginScanner;
-
 struct AudioComponentRegistrarImpl {
     _Bool _field1;
     _Bool _field2;
@@ -148,8 +146,7 @@ struct AudioComponentRegistrarImpl {
     struct AudioComponentVector _field10;
     struct PurgeableDataWrapper _field11;
     struct PurgeableDataWrapper _field12;
-    struct unique_ptr<AudioComponentPluginScanner, std::__1::default_delete<AudioComponentPluginScanner>> _field13;
-    struct shared_ptr<applesauce::experimental::sync::Synchronized<AUExtensionScanner, std::__1::mutex, applesauce::experimental::sync::EmptyAtomicInterface<AUExtensionScanner>>> _field14;
+    struct shared_ptr<applesauce::experimental::sync::Synchronized<AUExtensionScanner, std::__1::mutex, applesauce::experimental::sync::EmptyAtomicInterface<AUExtensionScanner>>> _field13;
 };
 
 struct AudioComponentVector {
@@ -371,11 +368,6 @@ struct function<void ()> {
     struct __base<void ()> *__f_;
 };
 
-struct function<void (AudioComponentVector &, AudioComponentVector &)> {
-    struct type __buf_;
-    struct __base<void (AudioComponentVector &, AudioComponentVector &)> *__f_;
-};
-
 struct function<void (const AudioComponentVector &, AudioComponentVector &)> {
     struct type _field1;
     struct __base<void (const AudioComponentVector &, AudioComponentVector &)> *_field2;
@@ -460,12 +452,6 @@ struct unique_ptr<AUv3InstanceBase::AllParameterListener, std::__1::default_dele
 };
 
 struct unique_ptr<AUv3InstanceBase::ClientPropertyListener, std::__1::default_delete<AUv3InstanceBase::ClientPropertyListener>>;
-
-struct unique_ptr<AudioComponentPluginScanner, std::__1::default_delete<AudioComponentPluginScanner>> {
-    struct __compressed_pair<AudioComponentPluginScanner *, std::__1::default_delete<AudioComponentPluginScanner>> {
-        struct AudioComponentPluginScanner *_field1;
-    } _field1;
-};
 
 struct unique_ptr<CAMutex, std::__1::default_delete<CAMutex>> {
     struct __compressed_pair<CAMutex *, std::__1::default_delete<CAMutex>> {

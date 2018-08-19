@@ -14,7 +14,7 @@ __attribute__((visibility("hidden")))
 }
 
 - (id)copyWithZone:(struct _NSZone *)arg1;
-@property(nonatomic) CDStruct_28403e59 formatStruct; // @dynamic formatStruct;
+@property(nonatomic) CDStruct_b1066b25 formatStruct; // @dynamic formatStruct;
 - (void)remapCustomFormatKeysWithOldToNewKeyMap:(id)arg1;
 - (void)upgradePreU2_0CustomFormatsForDocumentRoot:(id)arg1;
 - (void)updateAfterPasteForDocumentRoot:(id)arg1 pasteboardCustomFormatList:(id)arg2;

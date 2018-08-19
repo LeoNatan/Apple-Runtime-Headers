@@ -80,6 +80,7 @@ __attribute__((visibility("hidden")))
 - (BOOL)_hasWindowRef;
 - (BOOL)_managesWindowRef;
 - (void)dealloc;
+- (void)_commonAwake;
 - (id)initWithCarbonWindowRef:(struct OpaqueWindowPtr *)arg1;
 - (id)initWithContentRect:(struct CGRect)arg1 styleMask:(unsigned long long)arg2 backing:(unsigned long long)arg3 defer:(BOOL)arg4;
 - (id)accessibilityFocusedUIElement;

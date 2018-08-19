@@ -97,6 +97,7 @@
 - (id)_imageBySamplingNearest;
 - (id)imageBySamplingLinear;
 - (id)imageBySamplingNearest;
+- (id)imageBySettingPropertiesNoCopy:(id)arg1;
 - (id)imageBySettingProperties:(id)arg1;
 - (id)_imageByRenderingToIntermediate;
 - (id)imageByInsertingIntermediate:(_Bool)arg1;

@@ -18,6 +18,7 @@ __attribute__((visibility("hidden")))
 
 - (void).cxx_destruct;
 - (_Bool)preferBackgroundProcessing;
+- (id)processingDevice;
 - (id)observationClasses;
 - (id)originalRequests;
 - (id)detectorConfigurationOptions;

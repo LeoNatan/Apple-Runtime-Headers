@@ -25,6 +25,7 @@ __attribute__((visibility("hidden")))
 - (id)generateSQLStatmentForSourcesAndOrderKeysForDestination:(id)arg1 inManyToMany:(id)arg2;
 - (id)generateSQLStatmentForSourcesAndOrderKeysForDestination:(id)arg1 inToMany:(id)arg2;
 - (id)generateDeleteStatementsForRequest:(id)arg1 error:(id *)arg2;
+- (id)_generateExternalDataRefStatementsForEntities:(id)arg1 inRequestContext:(id)arg2;
 - (void)_cacheTriggers:(id)arg1 forEntity:(id)arg2;
 - (id)_cachedTriggersForEntity:(id)arg1;
 - (BOOL)generateTriggerForEntity:(id)arg1 alreadyCreated:(struct __CFDictionary *)arg2 correlations:(struct __CFDictionary *)arg3 batchHistory:(struct __CFDictionary *)arg4 fragments:(id)arg5 error:(id *)arg6;

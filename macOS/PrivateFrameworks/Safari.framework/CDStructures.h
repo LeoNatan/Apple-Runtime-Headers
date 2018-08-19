@@ -178,8 +178,6 @@ struct CertificateInfo {
     struct WKRetainPtr<const void *> _field1;
 };
 
-struct Client;
-
 struct CommandTarget;
 
 struct CompletionListAddressBookNonNameFieldAutoFillCommand {
@@ -816,21 +814,11 @@ struct PageGroup {
     struct WKRetainPtr<const void *> m_webKit2Object;
 };
 
-struct PageLoadTestWithChrome {
+struct PageLoadTestViewController {
     CDUnknownFunctionPointerType *_field1;
     unsigned int _field2;
-    unsigned int _field3;
-    struct Vector<std::__1::unique_ptr<Safari::PageLoadTest::PageLoad, std::__1::default_delete<Safari::PageLoadTest::PageLoad>>, 0, WTF::CrashOnOverflow, 16> _field4;
-    struct Client *_field5;
-    unsigned int _field6;
-    int _field7;
-    double _field8;
-    double _field9;
-    double _field10;
-    unsigned int _field11;
-    double _field12;
-    id _field13;
-    id _field14;
+    id _field3;
+    id _field4;
 };
 
 struct PageUIClient {
@@ -1429,12 +1417,6 @@ struct Vector<std::__1::unique_ptr<Safari::KeyValueObserver::Observee, std::__1:
     unsigned int _field3;
 };
 
-struct Vector<std::__1::unique_ptr<Safari::PageLoadTest::PageLoad, std::__1::default_delete<Safari::PageLoadTest::PageLoad>>, 0, WTF::CrashOnOverflow, 16> {
-    struct unique_ptr<Safari::PageLoadTest::PageLoad, std::__1::default_delete<Safari::PageLoadTest::PageLoad>> *_field1;
-    unsigned int _field2;
-    unsigned int _field3;
-};
-
 struct Vector<unsigned int, 0, WTF::CrashOnOverflow, 16> {
     unsigned int *m_buffer;
     unsigned int m_capacity;
@@ -1615,8 +1597,6 @@ struct unique_ptr<Safari::ObjCAdapter<Safari::UnifiedFieldCompletionListGenerato
         struct ObjCAdapter<Safari::UnifiedFieldCompletionListGenerator> *_field1;
     } _field1;
 };
-
-struct unique_ptr<Safari::PageLoadTest::PageLoad, std::__1::default_delete<Safari::PageLoadTest::PageLoad>>;
 
 struct unique_ptr<Safari::PerformanceCollector, std::__1::default_delete<Safari::PerformanceCollector>> {
     struct __compressed_pair<Safari::PerformanceCollector *, std::__1::default_delete<Safari::PerformanceCollector>> {

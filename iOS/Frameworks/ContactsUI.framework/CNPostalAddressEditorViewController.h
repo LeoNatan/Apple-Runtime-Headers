@@ -32,6 +32,7 @@ __attribute__((visibility("hidden")))
 - (void)propertyCell:(id)arg1 didUpdateItem:(id)arg2 withNewValue:(id)arg3;
 - (void)propertyCell:(id)arg1 didUpdateItem:(id)arg2 withNewLabel:(id)arg3;
 @property(readonly) _Bool isPresentingModalViewController;
+- (void)sender:(id)arg1 dismissViewController:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)sender:(id)arg1 dismissViewController:(id)arg2;
 - (void)sender:(id)arg1 presentViewController:(id)arg2;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;

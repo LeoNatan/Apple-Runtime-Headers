@@ -25,12 +25,14 @@
 - (void).cxx_destruct;
 - (id)_defaultFillColor;
 - (id)_placeholderImage;
+- (void)_updateFocusSizeIncrease;
 - (void)_updateContentviewImage:(id)arg1;
 - (void)_updateMonogramImage;
 - (id)_newCircularImageForImage:(id)arg1;
 - (void)_updateAppearanceForFocusUpdateContext:(id)arg1 withAnimationCoordinator:(id)arg2;
 - (void)_createFooterView;
 - (void)willMoveToWindow:(id)arg1;
+- (void)didMoveToSuperview;
 - (void)layoutSubviews;
 @property(copy, nonatomic) NSString *subtitle;
 @property(copy, nonatomic) NSString *title;

@@ -93,6 +93,8 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSArray *trailingBarItems;
 @property(retain, nonatomic) NSArray *leadingBarItems;
 - (void)updateTitleHeight;
+- (void)updateAugmentedTitleViewLayout;
+- (void)_updateAugmentedTitleViewLayout;
 - (void)updateAugmentedTitleViewHeight;
 @property(readonly, nonatomic) UIView *effectiveTitleView;
 - (void)_keepConstraintsActiveIfNecessary:(id *)arg1 updateLayout:(CDUnknownBlockType)arg2;

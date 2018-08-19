@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
 + (id)propertiesForChangePropagation;
 + (id)propertiesForStorage:(id)arg1 characterIndex:(unsigned long long)arg2;
 + (id)filteredTextPropertiesFromTextProperties:(id)arg1;
++ (id)defaultTextProperties;
 + (id)fontNameFromTextProperties:(id)arg1;
 + (id)eqKitEquationWithWithContext:(id)arg1 source:(id)arg2 error:(id *)arg3;
 + (id)equationInfoWithContext:(id)arg1 string:(id)arg2 textStorage:(id)arg3 charIndex:(unsigned long long)arg4;
@@ -43,15 +44,19 @@ __attribute__((visibility("hidden")))
 - (void)acceptVisitor:(id)arg1;
 - (void)saveToArchive:(struct ImageArchive *)arg1 archiver:(id)arg2;
 - (void)loadFromArchive:(const struct ImageArchive *)arg1 unarchiver:(id)arg2;
+- (void)didFinalizeUnarchivingFromWPStorage:(id)arg1;
 - (id)propertiesForParentAttachment;
 - (void)saveCharacterStylePropertiesFromPropertyMap:(id)arg1 toArchive:(struct CharacterStylePropertiesArchive *)arg2 archiver:(id)arg3;
 - (void)loadCharacterStylePropertiesIntoPropertyMap:(id)arg1 fromArchive:(const struct CharacterStylePropertiesArchive *)arg2 unarchiver:(id)arg3;
 - (id)imageDataWithObjectContext:(id)arg1;
 - (void)p_rebuildEquationPDF;
 - (void)replaceSourceWithNewSource:(id)arg1;
+- (void)willChangeProperty:(int)arg1;
 - (void)updateTextProperties:(id)arg1;
 - (void)updateForStyleChangeToStorage:(id)arg1 charIndex:(unsigned long long)arg2;
+- (void)updateForStyleChangeToStorage:(id)arg1 charIndex:(unsigned long long)arg2 isAnchoredOrFloating:(_Bool)arg3;
 - (_Bool)needsUpdateForStyleChangeToStorage:(id)arg1 charIndex:(unsigned long long)arg2;
+- (_Bool)needsUpdateForStyleChangeToStorage:(id)arg1 charIndex:(unsigned long long)arg2 isAnchoredOrFloating:(_Bool)arg3;
 - (struct CGSize)rawDataSize;
 - (struct CGSize)defaultOriginalSize;
 - (int)elementKind;

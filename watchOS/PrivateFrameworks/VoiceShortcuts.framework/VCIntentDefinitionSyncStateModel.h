@@ -16,6 +16,7 @@
     _Bool _needsSave;
 }
 
++ (void)initialize;
 - (void).cxx_destruct;
 - (void)readWithBlock:(CDUnknownBlockType)arg1;
 - (void)modifyWithBlock:(CDUnknownBlockType)arg1;

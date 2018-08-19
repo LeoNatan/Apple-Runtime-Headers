@@ -4,13 +4,12 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-@class NSSet, NSString, RMUserNotificationContext;
+@class NSSet, RMUserNotificationContext;
 
 @protocol RMToolXPCInterface
 - (void)removeNotificationWithContext:(RMUserNotificationContext *)arg1 completionHandler:(void (^)(NSError *))arg2;
 - (void)postNotificationWithContext:(RMUserNotificationContext *)arg1 completionHandler:(void (^)(NSError *))arg2;
 - (void)postWeeklyReportNotificationWithCompletionHandler:(void (^)(NSError *))arg1;
-- (void)purgeUsageDataWithAllWeb:(BOOL)arg1 webDomainOrURLString:(NSString *)arg2 completionHandler:(void (^)(NSError *))arg3;
 - (void)rollupUsageData:(void (^)(NSError *))arg1;
 - (void)fetchFamilyStatus:(void (^)(NSDictionary *))arg1;
 - (void)requeryFamilyStatus:(void (^)(NSDictionary *, NSError *))arg1;

@@ -17,6 +17,7 @@ __attribute__((visibility("hidden")))
     TSDBitmapImageProvider *_adornment;
     CALayer *_maskLayer;
     _Bool _shouldEnableBlendMode;
+    _Bool _missingImageProviders;
 }
 
 @property(readonly, nonatomic) TSDFrame *frame; // @synthesize frame=_frame;
@@ -31,6 +32,10 @@ __attribute__((visibility("hidden")))
 - (void)p_drawFrameIntoRect:(struct CGRect)arg1 inContext:(struct CGContext *)arg2 withImages:(id)arg3 atViewScale:(double)arg4 isMask:(_Bool)arg5;
 - (struct CGImage *)p_newRenderedFrameForMask:(_Bool)arg1 size:(struct CGSize)arg2 forCALayer:(_Bool)arg3 viewScale:(double)arg4;
 - (struct CGImage *)newFrameForMask:(_Bool)arg1 size:(struct CGSize)arg2 forCALayer:(_Bool)arg3 viewScale:(double)arg4;
+- (_Bool)p_shouldRenderForRectWithCoverage:(struct CGRect)arg1;
+- (_Bool)p_shouldRenderForRectWithoutCoverage:(struct CGRect)arg1;
+- (_Bool)p_willRenderForRect:(struct CGRect)arg1;
+- (_Bool)p_shouldRender;
 - (void)updateCALayer:(id)arg1 toRect:(struct CGRect)arg2 withRepLayer:(id)arg3 maskLayer:(id)arg4 viewScale:(double)arg5 maskLayerTransform:(struct CGAffineTransform)arg6;
 - (id)applyToCALayer:(id)arg1 withRepLayer:(id)arg2 maskLayer:(id)arg3 viewScale:(double)arg4;
 - (void)blendMaskBeforeRenderingImageInContext:(struct CGContext *)arg1;

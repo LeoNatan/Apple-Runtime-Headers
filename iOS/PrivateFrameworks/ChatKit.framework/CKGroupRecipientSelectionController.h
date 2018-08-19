@@ -27,6 +27,7 @@
 - (void)recipientSelectionControllerSearchListDidShowOrHide:(id)arg1;
 - (void)recipientSelectionControllerReturnPressed:(id)arg1;
 - (void)recipientSelectionControllerDidChangeSize:(id)arg1;
+- (void)recipientSelectionControllerDidBecomeFirstResponder:(id)arg1;
 - (_Bool)alwaysShowSearchResultsTable;
 - (_Bool)shouldSuppressSearchResultsTable;
 - (_Bool)homogenizePreferredServiceForiMessage;

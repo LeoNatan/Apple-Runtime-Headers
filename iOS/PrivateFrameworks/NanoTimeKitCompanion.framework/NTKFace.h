@@ -16,7 +16,7 @@
 @interface NTKFace : NSObject <NSSecureCoding, NSCopying, NTKInstalledSystemApplicationsChangeObserver, NTKEditModeMapping>
 {
     NTKFaceConfiguration *_configuration;
-    id <NTKFaceObserver> _primaryObserver;
+    NSHashTable *_fvcObservers;
     NSHashTable *_observers;
     NSDictionary *_complicationSlotDescriptors;
     _Bool _editOptionsPrepared;
@@ -189,12 +189,12 @@
 - (void)setResourceDirectoryByHardLinkingDirectory:(id)arg1;
 - (void)setResourceDirectory:(id)arg1;
 - (void)removeObserver:(id)arg1;
-- (void)addPrimaryObserver:(id)arg1;
 - (void)addObserver:(id)arg1;
 - (_Bool)isEqual:(id)arg1;
 @property(readonly, copy) NSString *description;
 - (void)dealloc;
 - (id)_initWithFaceStyle:(long long)arg1 forDevice:(id)arg2;
+- (void)_registerComplicationsDidChangeNotification;
 - (void)_commonInit;
 - (id)_complicationMigrationPaths;
 - (long long)_editModeForOldEncodingIndex:(long long)arg1;

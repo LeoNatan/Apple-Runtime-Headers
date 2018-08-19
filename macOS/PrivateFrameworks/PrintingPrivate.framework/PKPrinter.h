@@ -53,6 +53,7 @@
 @property(readonly, nonatomic) NSString *adminURL;
 @property(readonly, nonatomic) NSString *resourcePath;
 @property(readonly, nonatomic) NSString *product;
+@property(readonly, nonatomic) NSString *dnssdDomain;
 @property(readonly, nonatomic) NSString *uuid;
 @property(readonly, nonatomic) NSString *location;
 @property(readonly, nonatomic) NSString *name;

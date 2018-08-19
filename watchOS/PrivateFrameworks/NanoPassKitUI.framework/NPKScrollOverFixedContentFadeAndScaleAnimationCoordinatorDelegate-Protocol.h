@@ -9,6 +9,7 @@
 @class NPKScrollOverFixedContentFadeAndScaleAnimationCoordinator;
 
 @protocol NPKScrollOverFixedContentFadeAndScaleAnimationCoordinatorDelegate <NSObject>
+- (void)resetFadeAndScaleEffect;
 - (void)fadeAndScaleAndimationCoordinator:(NPKScrollOverFixedContentFadeAndScaleAnimationCoordinator *)arg1 didUpdateSideButtonAlignedAlpha:(float)arg2 otherContentAlpha:(float)arg3 scale:(float)arg4;
 @end
 

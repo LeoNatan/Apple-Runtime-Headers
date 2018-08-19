@@ -6,13 +6,15 @@
 
 #import <PhotosUICore/PXAssetActionPerformer.h>
 
-@class PXSectionedSelectionManager;
+@class PXCMMPhotoKitImportStatusManager, PXSectionedSelectionManager;
 
 @interface PXCMMAssetActionPerformer : PXAssetActionPerformer
 {
     PXSectionedSelectionManager *_cmmSelectionManager;
+    PXCMMPhotoKitImportStatusManager *_importStatusManager;
 }
 
+@property(retain, nonatomic) PXCMMPhotoKitImportStatusManager *importStatusManager; // @synthesize importStatusManager=_importStatusManager;
 @property(retain, nonatomic) PXSectionedSelectionManager *cmmSelectionManager; // @synthesize cmmSelectionManager=_cmmSelectionManager;
 - (void).cxx_destruct;
 

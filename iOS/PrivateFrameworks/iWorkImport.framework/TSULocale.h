@@ -138,6 +138,7 @@ __attribute__((visibility("hidden")))
 - (id)languageIdentifierWithLanguageAndRegionOnly;
 - (id)initWithLocale:(id)arg1 documentLanguageIdentifier:(id)arg2 useAutoupdating:(_Bool)arg3;
 - (id)initWithLocale:(id)arg1 documentLanguageIdentifier:(id)arg2;
+- (id)localizedLabelForAggType:(unsigned char)arg1;
 - (id)allLocalizedFunctions;
 - (id)localizedCategoryArray;
 - (id)localizedFunctionCategoryDictionary;

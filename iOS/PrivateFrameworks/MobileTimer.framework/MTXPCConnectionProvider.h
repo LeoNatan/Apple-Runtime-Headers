@@ -38,6 +38,7 @@
 - (void)_didTerminateConnection;
 - (void)_didInvalidateConnection;
 - (void)_didInterruptConnection;
+- (void)dealloc;
 - (id)initWithConnectionInfo:(id)arg1 errorHandler:(CDUnknownBlockType)arg2 reconnectHandler:(CDUnknownBlockType)arg3;
 
 @end

@@ -15,6 +15,7 @@
 {
     NSUUID *_UUID;
     NSString *_accountDescription;
+    NSString *_shortLabel;
     CXHandle *_handle;
     NSString *_isoCountryCode;
     NSString *_serviceName;
@@ -26,6 +27,7 @@
 @property(readonly, copy, nonatomic) NSString *serviceName; // @synthesize serviceName=_serviceName;
 @property(readonly, copy, nonatomic) NSString *isoCountryCode; // @synthesize isoCountryCode=_isoCountryCode;
 @property(readonly, nonatomic) CXHandle *handle; // @synthesize handle=_handle;
+@property(readonly, copy, nonatomic) NSString *shortLabel; // @synthesize shortLabel=_shortLabel;
 @property(readonly, copy, nonatomic) NSString *accountDescription; // @synthesize accountDescription=_accountDescription;
 @property(readonly, nonatomic) NSUUID *UUID; // @synthesize UUID=_UUID;
 - (void).cxx_destruct;
@@ -37,6 +39,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (id)initWithUUID:(id)arg1 description:(id)arg2 serviceName:(id)arg3 isoCountryCode:(id)arg4 handle:(id)arg5 shortLabel:(id)arg6;
 - (id)initWithUUID:(id)arg1 description:(id)arg2 serviceName:(id)arg3 isoCountryCode:(id)arg4 handle:(id)arg5;
 - (id)init;
 

@@ -24,7 +24,6 @@
 @property(nonatomic) BOOL isLocalDevice; // @dynamic isLocalDevice;
 @property(retain, nonatomic) NSDate *lastUsageEventDate; // @dynamic lastUsageEventDate;
 @property(copy, nonatomic) NSString *name; // @dynamic name;
-@property(retain, nonatomic) NSSet *usageIdentifiers; // @dynamic usageIdentifiers;
 @property(retain, nonatomic) NSSet *userDevicePairs; // @dynamic userDevicePairs;
 
 @end

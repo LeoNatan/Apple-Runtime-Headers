@@ -25,6 +25,7 @@
 }
 
 + (_Bool)_checkForFileExistenceAtPath:(id)arg1 allowingTCCPreflight:(_Bool)arg2;
++ (id)_currentOverridePolicyPreferenceKeyForAlertType:(int)arg1;
 + (id)_defaultToneIdentifierForAlertType:(int)arg1 topic:(id)arg2;
 + (id)_systemWideTonePreferenceKeyForAlertType:(int)arg1;
 + (id)sharedToneManager;
@@ -36,6 +37,9 @@
 - (id)_localizedNameOfToneWithIdentifier:(id)arg1;
 - (id)_fileNameFromToneIdentifier:(id)arg1 withPrefix:(id)arg2;
 - (void)_performBlockInAccessQueue:(CDUnknownBlockType)arg1;
+- (void)_setCurrentOverridePolicy:(int)arg1 forAlertType:(int)arg2;
+- (int)_currentOverridePolicyForAlertType:(int)arg1 didFindAlertOverridePolicy:(_Bool *)arg2;
+- (int)_currentOverridePolicyForAlertType:(int)arg1;
 - (void)_handleWatchPrefersSalientNotificationDidChange;
 - (void)_setWatchPrefersSalientNotifications:(_Bool)arg1;
 - (_Bool)_watchPrefersSalientNotifications;
@@ -63,6 +67,8 @@
 - (id)_filePathForToneIdentifier:(id)arg1 isValid:(_Bool *)arg2;
 - (id)filePathForToneIdentifier:(id)arg1;
 - (id)_soundForToneIdentifier:(id)arg1;
+- (_Bool)hasSpecificDefaultToneIdentifierForAlertType:(int)arg1 topic:(id)arg2;
+- (id)_defaultPreferablyNonSilentToneIdentifierForAlertType:(int)arg1 topic:(id)arg2;
 - (id)_defaultRingtonePath;
 - (id)_defaultRingtoneName;
 - (id)defaultRingtoneIdentifier;

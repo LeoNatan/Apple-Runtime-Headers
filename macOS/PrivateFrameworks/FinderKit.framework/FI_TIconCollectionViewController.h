@@ -73,9 +73,9 @@ __attribute__((visibility("hidden")))
 - (void)dataSourceItemsDidChange:(const unordered_map_f886f0c5 *)arg1;
 - (long long)insertOrResortIndexOffset;
 - (void)reusingDataSource;
-- (void)performBatchUpdatesCompletionHandler:(const unordered_set_931aff12 *)arg1:(const unordered_map_f8b1458f *)arg2:(_Bool)arg3:(_Bool)arg4:(unsigned long long)arg5;
+- (void)performBatchUpdatesCompletionHandler:(const unordered_set_931aff12 *)arg1:(_Bool)arg2:(const unordered_map_f8b1458f *)arg3:(_Bool)arg4:(_Bool)arg5:(unsigned long long)arg6;
 - (void)configureGroupNodes:(const unordered_set_931aff12 *)arg1 firstPopulation:(_Bool)arg2;
-- (void)dataSourceChanged_insert:(const struct TFENode *)arg1:(const struct TBVDSChangedPayload *)arg2:(unordered_set_931aff12 *)arg3:(_Bool *)arg4;
+- (void)dataSourceChanged_buildInsert:(const struct TFENode *)arg1:(const struct TBVDSChangedPayload *)arg2:(map_a2752b13 *)arg3:(map_a2752b13 *)arg4;
 - (void)dataSourceChanged:(const vector_274a36ec *)arg1;
 - (_Bool)handleMouseUp:(id)arg1;
 - (void)updateSpatialDataAfterGridSizeChange:(const struct CGSize *)arg1 oldFirstIconAnchorPoint:(const struct CGPoint *)arg2;

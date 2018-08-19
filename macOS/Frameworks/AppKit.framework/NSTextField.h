@@ -24,10 +24,16 @@
     struct CGSize _cachedIntrinsicContentSize;
     unsigned long long _textAlignmentPolicy;
     long long _updateConstraintsPassCounter;
+    struct NSEdgeInsets _cachedLanguageAwareOutsets;
+    BOOL _shouldUpdateCachedLanguageAwareOutsets;
+    BOOL _shouldCheckCurrentContentsForBoundsOutsets;
+    BOOL _contentsRequiresBoundsOutsets;
 }
 
 + (id)_fieldsContainingString:(id)arg1;
 + (BOOL)requiresConstraintBasedLayout;
++ (BOOL)_shouldUseBoundsOutsetsForString:(id)arg1;
++ (struct __CFCharacterSet *)_tooBigChars;
 + (BOOL)_serviceDeferredTextLayerUpdateQueue:(BOOL)arg1 forWindow:(id)arg2;
 + (BOOL)_checkLastQueuedWindowFrameForChange:(id)arg1;
 + (id)_deferredFrameUpdateQueue:(BOOL)arg1;
@@ -118,6 +124,12 @@
 @property(copy) NSColor *backgroundColor;
 @property(copy) NSAttributedString *placeholderAttributedString;
 @property(copy) NSString *placeholderString;
+- (void)updateCell:(id)arg1;
+- (struct NSEdgeInsets)boundsOutsetsForTextLayer:(id)arg1;
+- (struct NSEdgeInsets)_languageAwareOutsetsWithFont:(id)arg1;
+- (void)_invalidateCachedLanguageAwareOutsets;
+- (BOOL)_shouldUseBoundsOutsetsForCurrentConfig;
+- (void)_invalidateEffectiveVibrantBlendingStyle;
 - (BOOL)shouldSetFontSmoothingBackgroundColor;
 - (void)setFrameSize:(struct CGSize)arg1;
 - (BOOL)isFlipped;

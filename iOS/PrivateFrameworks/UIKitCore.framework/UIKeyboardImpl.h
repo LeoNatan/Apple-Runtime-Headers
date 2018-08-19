@@ -218,6 +218,8 @@
 + (void)applicationDidReceiveMemoryWarning:(id)arg1;
 + (void)applicationWillEnterForeground:(id)arg1;
 + (void)applicationDidEnterBackground:(id)arg1;
++ (void)applicationDidRemoveDeactivationReason:(id)arg1;
++ (void)applicationWillAddDeactivationReason:(id)arg1;
 + (void)viewServiceHostDidBecomeActive:(id)arg1;
 + (void)viewServiceHostWillResignActive:(id)arg1;
 + (void)applicationDidBecomeActive:(id)arg1;

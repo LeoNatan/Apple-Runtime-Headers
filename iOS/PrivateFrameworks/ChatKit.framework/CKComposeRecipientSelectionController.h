@@ -6,12 +6,11 @@
 
 #import <ChatKit/CKRecipientSelectionController.h>
 
-#import "TPPillViewDelegate.h"
 #import "UITextFieldDelegate.h"
 
 @class NSArray, NSString;
 
-@interface CKComposeRecipientSelectionController : CKRecipientSelectionController <UITextFieldDelegate, TPPillViewDelegate>
+@interface CKComposeRecipientSelectionController : CKRecipientSelectionController <UITextFieldDelegate>
 {
     CDUnknownBlockType _sendBlock;
 }
@@ -19,7 +18,9 @@
 @property(copy, nonatomic) CDUnknownBlockType sendBlock; // @synthesize sendBlock=_sendBlock;
 - (void).cxx_destruct;
 - (_Bool)textFieldShouldReturn:(id)arg1;
-- (void)_updateBackfillForNewRecipients;
+- (id)_handlesForRecipients:(id)arg1;
+- (_Bool)_updateBackfillForNewRecipients;
+- (_Bool)_hasExistingConversationWithAddedRecipient:(id)arg1;
 - (_Bool)alwaysShowSearchResultsTable;
 - (_Bool)shouldSuppressSearchResultsTable;
 - (_Bool)homogenizePreferredServiceForiMessage;
@@ -28,6 +29,7 @@
 - (void)reset;
 - (void)atomizeAndSendTimeoutHandler;
 - (void)atomizeAndInvokeBlock:(CDUnknownBlockType)arg1;
+- (void)_legacyAddRecipient:(id)arg1;
 - (void)addRecipient:(id)arg1;
 @property(readonly, nonatomic) NSArray *proposedRecipients;
 @property(readonly, nonatomic) NSArray *expandedRecipients;

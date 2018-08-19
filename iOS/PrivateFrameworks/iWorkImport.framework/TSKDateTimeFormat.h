@@ -16,6 +16,7 @@ __attribute__((visibility("hidden")))
     NSString *_formatString;
 }
 
++ (id)defaultDateOnlyShortFormatForLocale:(id)arg1;
 + (id)nowFormatForLocale:(id)arg1;
 + (id)todayFormatForLocale:(id)arg1;
 @property(readonly, nonatomic) NSString *formatString; // @synthesize formatString=_formatString;

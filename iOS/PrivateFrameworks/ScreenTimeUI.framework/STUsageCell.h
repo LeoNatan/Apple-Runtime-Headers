@@ -23,6 +23,11 @@
 @property(readonly, nonatomic) STCandyBarView *usageBarView; // @synthesize usageBarView=_usageBarView;
 @property(readonly, nonatomic) UILabel *itemNameLabel; // @synthesize itemNameLabel=_itemNameLabel;
 - (void).cxx_destruct;
+- (void)_didFetchAppInfo:(id)arg1;
+- (void)_registerForAppInfoCacheNotifications;
+- (void)_didFetchIcon:(id)arg1;
+- (void)_registerForIconCacheNotifications;
+- (void)refreshCellContentsWithSpecifier:(id)arg1;
 - (void)setValue:(id)arg1;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2 specifier:(id)arg3;
 

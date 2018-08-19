@@ -73,10 +73,10 @@ __attribute__((visibility("hidden")))
 - (void)removeAnimationsAndFinish:(_Bool)arg1;
 - (void)updateAnimationsForLayerTime:(double)arg1;
 - (_Bool)addAnimationsAtLayerTime:(double)arg1;
-- (void)animateAfterDelay:(double)arg1;
+- (void)animate;
 @property(nonatomic) __weak KNBuildRenderer *buildInRenderer;
 - (void)dealloc;
-- (id)initWithAnimatedBuild:(id)arg1 info:(id)arg2 buildStage:(id)arg3 session:(id)arg4 animatedSlideView:(id)arg5;
+- (id)initWithAnimatedBuild:(id)arg1 info:(id)arg2 buildStage:(id)arg3 animatedSlideView:(id)arg4;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

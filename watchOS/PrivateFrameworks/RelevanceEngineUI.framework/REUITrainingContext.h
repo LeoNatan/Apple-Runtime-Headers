@@ -11,6 +11,7 @@
 @interface REUITrainingContext : RETrainingContext
 {
     NSMutableDictionary *_becameVisibleDates;
+    NSMutableDictionary *_visibilityDurations;
     _Bool _resetsWhenResignsCurrent;
 }
 

@@ -16,7 +16,7 @@
 - (id)_alternateTimersForTargetTimerState:(long long)arg1 inTimers:(id)arg2 allowedTimerStates:(id)arg3;
 - (id)_onlyUnnamedTimerInTimers:(id)arg1 forTargetTimer:(id)arg2 allowMultiple:(_Bool)arg3;
 - (void)_genericallyResolveTargetTimer:(id)arg1 multiple:(_Bool)arg2 allowedTimerStatesForFollowup:(id)arg3 completion:(CDUnknownBlockType)arg4;
-- (void)_matchTimersFromIntentsTimer:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)_matchTimersFromIntentsTimer:(id)arg1 excludeStoppedTimers:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)_timerManager;
 
 @end

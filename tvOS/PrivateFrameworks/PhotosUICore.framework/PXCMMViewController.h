@@ -57,6 +57,7 @@
 @property(nonatomic) __weak id <PXCMMViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) PXCMMSession *session; // @synthesize session=_session;
 - (void).cxx_destruct;
+- (void)ppt_setSelecting:(_Bool)arg1;
 - (void)didDismissToastViewController:(id)arg1;
 - (_Bool)actionPerformer:(id)arg1 dismissViewController:(struct NSObject *)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (_Bool)actionPerformer:(id)arg1 presentViewController:(struct NSObject *)arg2;

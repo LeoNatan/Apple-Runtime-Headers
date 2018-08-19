@@ -42,11 +42,12 @@
 @property(retain, nonatomic) NSArray *mediaQueryList; // @synthesize mediaQueryList=_mediaQueryList;
 @property(readonly, copy, nonatomic) IKCSSRule *cssRule; // @synthesize cssRule=_cssRule;
 - (void).cxx_destruct;
+- (id)_declarationForStyleName:(id)arg1 expectedClass:(Class)arg2;
 - (id)_styleNameForAlias:(id)arg1;
 - (void)_addDeclaration:(id)arg1;
 - (void)_addElementStyle:(id)arg1;
 - (void)_addParentStyle:(id)arg1;
-- (struct UIEdgeInsets)_edgeInsetsForStyleKey:(id)arg1;
+- (struct UIEdgeInsets)_edgeInsetsForStyleName:(id)arg1;
 - (id)_newColorFromString:(id)arg1;
 - (id)_gradientFromString:(id)arg1;
 - (unsigned long long)typeForStyle:(id)arg1;

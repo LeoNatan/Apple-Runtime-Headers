@@ -22,6 +22,7 @@
     NSMutableDictionary *_intentInstanceDescriptionMapping;
     NSArray *_parameterImages;
     NSDictionary *_parameterCombinations;
+    unsigned int _indexingHash;
     NSString *_identifier;
     PBCodable *_backingStore;
     NSArray *_airPlayRouteIds;
@@ -39,7 +40,7 @@
 @property(retain, nonatomic, setter=_setParameterCombinations:) NSDictionary *_parameterCombinations; // @synthesize _parameterCombinations;
 - (void).cxx_destruct;
 - (id)_spotlightContentType;
-- (_Bool)configureAttributeSet:(id)arg1;
+- (_Bool)configureAttributeSet:(id)arg1 includingData:(_Bool)arg2;
 - (_Bool)setValue:(id)arg1 forProperty:(id)arg2;
 - (id)valueForProperty:(id)arg1;
 - (void)setValue:(id)arg1 forUndefinedKey:(id)arg2;
@@ -71,6 +72,7 @@
 - (void)_redactForMissingPrivacyEntitlementOptions:(unsigned int)arg1 containingAppBundleId:(id)arg2;
 - (void)trimDataAgainstTCCForAuditToken:(CDStruct_6ad76789)arg1 bundle:(id)arg2;
 @property(nonatomic, getter=_isUserConfirmationRequired, setter=_setUserConfirmationRequired:) _Bool _userConfirmationRequired;
+@property(readonly) unsigned int _indexingHash; // @synthesize _indexingHash;
 @property(readonly, nonatomic) int _type;
 - (id)_emptyCopy;
 - (id)_nonNilParameters;
@@ -89,6 +91,7 @@
 @property(readonly, nonatomic) int triggerMethod;
 @property(nonatomic, setter=_setExecutionContext:) int _executionContext;
 @property(retain, nonatomic, setter=_setNanoLaunchId:) NSString *_nanoLaunchId;
+@property(retain, nonatomic, setter=_setUiExtensionBundleId:) NSString *_uiExtensionBundleId;
 @property(retain, nonatomic, setter=_setExtensionBundleId:) NSString *extensionBundleId;
 @property(retain, nonatomic, setter=_setLaunchId:) NSString *launchId;
 @property(retain, nonatomic, setter=_setDefaultImage:) INImage *_defaultImage;

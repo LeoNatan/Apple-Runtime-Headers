@@ -15,7 +15,7 @@
 #import "UITableViewDataSource.h"
 #import "UITableViewDelegate.h"
 
-@class LAUIPhysicalButtonView, NSLayoutConstraint, NSMutableSet, NSString, PKAuthenticator, PKPaymentAuthorizationFooterView, PKPaymentAuthorizationLayout, PKPaymentAuthorizationPasswordButtonView, PKPaymentAuthorizationStateMachine, PKPaymentAuthorizationSummaryItemsView, PKPaymentAuthorizationTotalView, PKPaymentPreferencesViewController, PKPeerPaymentAccount, UIBarButtonItem, UITableView, UIView;
+@class CNContact, LAUIPhysicalButtonView, NSLayoutConstraint, NSMutableSet, NSString, PKAuthenticator, PKPaymentAuthorizationFooterView, PKPaymentAuthorizationLayout, PKPaymentAuthorizationPasswordButtonView, PKPaymentAuthorizationStateMachine, PKPaymentAuthorizationSummaryItemsView, PKPaymentAuthorizationTotalView, PKPaymentPreferencesViewController, PKPeerPaymentAccount, UIBarButtonItem, UITableView, UIView;
 
 @interface PKPaymentAuthorizationServiceViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UINavigationControllerDelegate, PKPaymentAuthorizationFooterViewDelegate, PKAuthenticatorDelegate, PKPaymentAuthorizationStateMachineDelegate, AKAppleIDAuthenticationInAppContextDelegate, PKPaymentAuthorizationServiceProtocol>
 {
@@ -57,6 +57,7 @@
     PKPeerPaymentAccount *_peerPaymentAccount;
     _Bool _peerPaymentBalanceIsInsufficient;
     NSMutableSet *_completionHandlers;
+    CNContact *_lastUnservicableAddress;
     _Bool _userIntentRequired;
     _Bool _shouldIgnorePhysicalButton;
     _Bool _blockingHardwareCancels;
@@ -90,6 +91,7 @@
 - (id)_compactNavigationController;
 - (long long)_totalViewStyle;
 - (void)_updatePreferredContentSize;
+- (void)_showUnservicableAddressAlertForErrors:(id)arg1;
 - (void)_updatePreferencesWithErrors:(id)arg1;
 - (void)_updateShippingMethods;
 - (id)_availabilityStringForPass:(id)arg1;

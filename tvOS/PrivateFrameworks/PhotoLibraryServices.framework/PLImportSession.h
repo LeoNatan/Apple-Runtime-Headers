@@ -31,7 +31,14 @@
 - (_Bool)validateImportSessionID:(id *)arg1 error:(id *)arg2;
 - (void)removePersistedFileSystemData;
 - (void)persistMetadataToFileSystem;
+- (id)batchedAssets;
+- (_Bool)_isDateAfterEndDate:(id)arg1;
+- (_Bool)_isDateBeforeStartDate:(id)arg1;
+- (_Bool)_isAssetIncludedInImportDates:(id)arg1;
+- (void)updateImportDatesFromAddedAsset:(id)arg1;
 - (void)revalidateImportDates;
+- (void)_updateEndDate:(id)arg1;
+- (void)_updateStartDate:(id)arg1;
 
 // Remaining properties
 @property(retain, nonatomic) NSOrderedSet *assets; // @dynamic assets;

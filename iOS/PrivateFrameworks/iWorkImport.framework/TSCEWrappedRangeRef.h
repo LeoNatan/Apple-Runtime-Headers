@@ -19,6 +19,7 @@ __attribute__((visibility("hidden")))
 + (id)invalidRangeRef;
 @property(readonly, nonatomic) struct TSCERangeRef rangeRef; // @synthesize rangeRef=_rangeRef;
 - (id).cxx_construct;
+- (id)description;
 - (_Bool)isValid;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

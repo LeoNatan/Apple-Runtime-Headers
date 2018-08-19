@@ -27,6 +27,7 @@
 - (void)vcMediaStream:(id <VCMediaStreamProtocol>)arg1 didSwitchToAudioStreamWithID:(unsigned short)arg2;
 - (void)vcMediaStream:(id <VCMediaStreamProtocol>)arg1 updateFrequencyLevel:(NSData *)arg2 isInputMeter:(BOOL)arg3;
 - (void)vcMediaStream:(id <VCMediaStreamProtocol>)arg1 didReceiveDTMFEventWithDigit:(BOOL)arg2;
+- (void)vcMediaStreamDidDecryptionTimeOut:(id <VCMediaStreamProtocol>)arg1;
 - (void)vcMediaStream:(id <VCMediaStreamProtocol>)arg1 didReceiveRTCPPackets:(NSArray *)arg2;
 - (void)vcMediaStreamDidRTCPTimeOut:(id <VCMediaStreamProtocol>)arg1;
 - (void)vcMediaStreamDidRTPTimeOut:(id <VCMediaStreamProtocol>)arg1;

@@ -41,6 +41,7 @@
 - (void)autoConfigureTargets;
 - (void)_saveTargetUUIDs;
 - (void)__characteristicsChanged:(id)arg1;
+- (void)registerForActiveIdentifierNotifications;
 - (void)_registerForActiveIdentifierNotifications;
 - (void)_handleActiveIdentifierReadResponses:(id)arg1;
 - (void)__handleActiveIdentifierChanges:(id)arg1;

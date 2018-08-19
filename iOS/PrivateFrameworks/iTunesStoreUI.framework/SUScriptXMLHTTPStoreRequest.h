@@ -6,7 +6,7 @@
 
 #import <iTunesStoreUI/SUScriptObject.h>
 
-@class NSDictionary, NSMutableDictionary, NSString, SSMutableURLRequestProperties, SUXMLHTTPStoreRequestOperation, WebScriptObject;
+@class ISDataProvider, NSDictionary, NSMutableDictionary, NSString, SSAuthenticationContext, SSMutableURLRequestProperties, SUXMLHTTPStoreRequestOperation, WebScriptObject;
 
 @interface SUScriptXMLHTTPStoreRequest : SUScriptObject
 {
@@ -20,11 +20,15 @@
     unsigned long long _status;
     NSString *_statusText;
     unsigned long long _timeout;
+    SSAuthenticationContext *_authenticationContext;
+    ISDataProvider *_dataProvider;
 }
 
 + (void)initialize;
 + (id)webScriptNameForSelector:(SEL)arg1;
 + (id)webScriptNameForKeyName:(id)arg1;
+@property(retain, nonatomic) ISDataProvider *dataProvider; // @synthesize dataProvider=_dataProvider;
+@property(retain, nonatomic) SSAuthenticationContext *authenticationContext; // @synthesize authenticationContext=_authenticationContext;
 @property __weak id <SUScriptXMLHTTPStoreRequestDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (id)scriptAttributeKeys;

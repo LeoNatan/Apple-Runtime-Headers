@@ -17,6 +17,7 @@
 }
 
 + (_Bool)isWebKitSupported;
++ (_Bool)isJapanRegion;
 + (id)sharedInstance;
 @property(readonly, nonatomic) _Bool isRunningInStoreDemoMode; // @synthesize isRunningInStoreDemoMode=_isRunningInStoreDemoMode;
 @property(readonly, nonatomic) NSString *registryBasePath; // @synthesize registryBasePath=_registryBasePath;

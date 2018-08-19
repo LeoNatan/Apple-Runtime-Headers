@@ -8,16 +8,19 @@
 
 #import "ITIdleTimerStateRequestHandling.h"
 
-@class NSString;
+@class NSMutableSet, NSObject<OS_dispatch_queue>, NSString;
 
 @interface ITIdleTimerStateClient : FBSServiceFacilityClient <ITIdleTimerStateRequestHandling>
 {
+    NSObject<OS_dispatch_queue> *_accessQueue;
+    NSMutableSet *_assertionReasons;
 }
 
-+ (id)_sharedInstanceAccessQueue;
-+ (void)relinquishSharedInstance;
-+ (id)acquireSharedInstance;
++ (id)sharedInstance;
+- (void).cxx_destruct;
 - (_Bool)_requestIsIdleTimerServiceAvailable;
+- (void)_queue_setIdleTimerDisabled:(_Bool)arg1 forReason:(id)arg2;
+- (void)configureConnectMessage:(id)arg1;
 - (void)setIdleTimerDisabled:(_Bool)arg1 forReason:(id)arg2;
 - (_Bool)isIdleTimerServiceAvailable;
 - (id)_init;

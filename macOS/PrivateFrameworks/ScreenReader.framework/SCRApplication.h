@@ -462,6 +462,8 @@ __attribute__((visibility("hidden")))
 - (BOOL)focusInto:(id)arg1 event:(id)arg2;
 - (BOOL)allowsFocusInto;
 - (void)_applicationActivated:(id)arg1;
+- (void)_layoutChanged:(id)arg1;
+- (BOOL)_isiOSApp;
 - (void)registerForGeneralNotifications;
 - (void)dispatchSetIsKeyboardEventHandler:(BOOL)arg1;
 - (void)setIsKeyboardEventHandler:(BOOL)arg1;

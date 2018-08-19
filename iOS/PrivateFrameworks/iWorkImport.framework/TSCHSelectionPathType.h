@@ -43,6 +43,7 @@ __attribute__((visibility("hidden")))
 + (id)chartTitleType;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=mName;
 @property(readonly, nonatomic) NSString *type; // @synthesize type=mType;
+- (void).cxx_destruct;
 - (void)saveToArchive:(struct ChartSelectionPathTypeArchive *)arg1;
 - (id)initWithArchive:(const struct ChartSelectionPathTypeArchive *)arg1;
 - (_Bool)canApplyChartStyleWithDescription:(id)arg1;
@@ -52,9 +53,7 @@ __attribute__((visibility("hidden")))
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (void)dealloc;
 - (id)initWithType:(id)arg1 name:(id)arg2;
-- (id)init;
 
 @end
 

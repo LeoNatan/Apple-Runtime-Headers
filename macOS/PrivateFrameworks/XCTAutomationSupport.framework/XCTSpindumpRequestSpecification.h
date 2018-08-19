@@ -34,6 +34,7 @@
 - (id)initWithCoder:(id)arg1;
 - (id)description;
 - (id)init;
+- (id)initWithProcessID:(int)arg1;
 - (id)initWithProcessID:(int)arg1 durationMilliseconds:(unsigned long long)arg2 intervalMicroseconds:(unsigned long long)arg3 spindumpFlags:(unsigned long long)arg4 reason:(id)arg5 signature:(id)arg6 filename:(id)arg7;
 
 @end

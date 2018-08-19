@@ -22,6 +22,7 @@
     NSMutableDictionary *_intentInstanceDescriptionMapping;
     NSArray *_parameterImages;
     NSDictionary *_parameterCombinations;
+    unsigned long long _indexingHash;
     NSString *_identifier;
     PBCodable *_backingStore;
     NSArray *_airPlayRouteIds;
@@ -70,6 +71,7 @@
 - (void)_redactForMissingPrivacyEntitlementOptions:(unsigned long long)arg1 containingAppBundleId:(id)arg2;
 - (void)trimDataAgainstTCCForAuditToken:(CDStruct_6ad76789)arg1 bundle:(id)arg2;
 @property(nonatomic, getter=_isUserConfirmationRequired, setter=_setUserConfirmationRequired:) _Bool _userConfirmationRequired;
+@property(readonly) unsigned long long _indexingHash; // @synthesize _indexingHash;
 @property(readonly, nonatomic) long long _type;
 - (id)_emptyCopy;
 - (id)_nonNilParameters;
@@ -88,6 +90,7 @@
 @property(readonly, nonatomic) long long triggerMethod;
 @property(nonatomic, setter=_setExecutionContext:) long long _executionContext;
 @property(retain, nonatomic, setter=_setNanoLaunchId:) NSString *_nanoLaunchId;
+@property(retain, nonatomic, setter=_setUiExtensionBundleId:) NSString *_uiExtensionBundleId;
 @property(retain, nonatomic, setter=_setExtensionBundleId:) NSString *extensionBundleId;
 @property(retain, nonatomic, setter=_setLaunchId:) NSString *launchId;
 @property(retain, nonatomic, setter=_setDefaultImage:) INImage *_defaultImage;

@@ -6,12 +6,13 @@
 
 #import <PhotosUI/PUTileViewController.h>
 
+#import "PUAssetViewModelChangeObserver.h"
 #import "PXChangeObserver.h"
 
-@class NSString, PUAssetActionManager, PUAssetReference, PUBrowsingViewModel, UIButton;
+@class NSString, PUAssetActionManager, PUAssetReference, PUAssetViewModel, PUBrowsingViewModel, UIButton;
 
 __attribute__((visibility("hidden")))
-@interface PUOneUpSelectionIndicatorTileViewController : PUTileViewController <PXChangeObserver>
+@interface PUOneUpSelectionIndicatorTileViewController : PUTileViewController <PXChangeObserver, PUAssetViewModelChangeObserver>
 {
     _Bool __performingChanges;
     _Bool __needsUpdateButton;
@@ -20,8 +21,10 @@ __attribute__((visibility("hidden")))
     PUAssetReference *_assetReference;
     PUAssetActionManager *_actionManager;
     UIButton *__button;
+    PUAssetViewModel *_assetViewModel;
 }
 
+@property(retain, nonatomic) PUAssetViewModel *assetViewModel; // @synthesize assetViewModel=_assetViewModel;
 @property(nonatomic, getter=_isButtonVisible, setter=_setButtonVisible:) _Bool _buttonVisible; // @synthesize _buttonVisible=__buttonVisible;
 @property(retain, nonatomic, setter=_setButton:) UIButton *_button; // @synthesize _button=__button;
 @property(nonatomic, setter=_setNeedsUpdateButton:) _Bool _needsUpdateButton; // @synthesize _needsUpdateButton=__needsUpdateButton;
@@ -30,6 +33,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) PUAssetReference *assetReference; // @synthesize assetReference=_assetReference;
 @property(retain, nonatomic) PUBrowsingViewModel *browsingViewModel; // @synthesize browsingViewModel=_browsingViewModel;
 - (void).cxx_destruct;
+- (void)viewModel:(id)arg1 didChange:(id)arg2;
 - (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void *)arg3;
 - (void)_setButtonVisible:(_Bool)arg1 animated:(_Bool)arg2;
 - (void)_updateButtonIfNeeded;

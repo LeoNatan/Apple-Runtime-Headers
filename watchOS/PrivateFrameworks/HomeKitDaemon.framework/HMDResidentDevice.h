@@ -53,6 +53,7 @@
 - (void)__deviceUpdated:(id)arg1;
 - (void)__deviceAdded:(id)arg1;
 - (void)__accountAdded:(id)arg1;
+- (id)runtimeState;
 @property(readonly, nonatomic) _Bool supportsMediaSystem;
 @property(readonly, nonatomic) _Bool supportsSharedEventTriggerActivation;
 @property(readonly, nonatomic) unsigned int status;

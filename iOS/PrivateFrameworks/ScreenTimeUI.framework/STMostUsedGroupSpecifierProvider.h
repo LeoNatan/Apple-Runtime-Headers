@@ -17,8 +17,8 @@
 @property(nonatomic) unsigned long long selectedItemType; // @synthesize selectedItemType=_selectedItemType;
 @property(copy, nonatomic) NSDictionary *allowancesByActiveBudgetedIdentifier; // @synthesize allowancesByActiveBudgetedIdentifier=_allowancesByActiveBudgetedIdentifier;
 - (void).cxx_destruct;
+- (id)allowanceIconForUsageItem:(id)arg1;
 - (void)showMostUsedDetailListController:(id)arg1;
-- (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 - (void)reloadMostUsedSpecifiers;
 - (void)toggleSelectedItemType:(id)arg1;
 - (id)getUsageItem:(id)arg1;

@@ -19,6 +19,7 @@
     _Bool _canPeel;
     _Bool _pressed;
     _Bool _scaledDown;
+    _Bool _hasMovedToWindow;
     id <CKBrowserDragViewControllerDelegate> _delegate;
     double _dragViewScale;
     UILongPressGestureRecognizer *_gestureRecognizer;
@@ -65,6 +66,7 @@
 + (id)springAnimationWithKeyPath:(id)arg1 speed:(float)arg2;
 + (id)meshTransform;
 + (_Bool)supportsForceTouch;
+@property(nonatomic) _Bool hasMovedToWindow; // @synthesize hasMovedToWindow=_hasMovedToWindow;
 @property(nonatomic, getter=isScaledDown) _Bool scaledDown; // @synthesize scaledDown=_scaledDown;
 @property(nonatomic, getter=isPressed) _Bool pressed; // @synthesize pressed=_pressed;
 @property(nonatomic) double elasticScaleY; // @synthesize elasticScaleY=_elasticScaleY;
@@ -132,6 +134,7 @@
 - (void)manuallyUpdateDragPositionToPoint:(struct CGPoint)arg1;
 - (void)manuallyInitializeDragAtPoint:(struct CGPoint)arg1;
 - (void)gestureRecognized:(id)arg1;
+- (void)viewDidMoveToWindow:(id)arg1 shouldAppearOrDisappear:(_Bool)arg2;
 - (void)viewWillTransitionToSize:(struct CGSize)arg1 withTransitionCoordinator:(id)arg2;
 - (void)viewDidDisappear:(_Bool)arg1;
 - (void)viewDidAppear:(_Bool)arg1;

@@ -74,7 +74,6 @@ __attribute__((visibility("hidden")))
 - (id)endCollectingChanges;
 - (void)willChangeProperty:(int)arg1;
 - (void)beginCollectingChanges;
-@property(readonly, nonatomic) _Bool isUserModifiable;
 @property(readonly, nonatomic) _Bool needsDownload;
 - (_Bool)isThemeContent;
 - (Class)repClass;

@@ -27,10 +27,12 @@
     map_c80acf4e _redBias;
     map_c80acf4e _grayBias;
     map_c80acf4e _scale;
+    set_b70af9b4 _configurationNames;
 }
 
 + (id)specFromFeatureDescriptions:(id)arg1 inputDesc:(id)arg2 outputDesc:(id)arg3 outputLayerNames:(id)arg4 parameters:(id)arg5;
 + (id)specFromFilePath:(id)arg1 inputLayerNames:(id)arg2 outputLayerNames:(id)arg3 parameters:(id)arg4;
+@property set_b70af9b4 configurationNames; // @synthesize configurationNames=_configurationNames;
 @property(nonatomic) _Bool isBiasPreprocessingShared; // @synthesize isBiasPreprocessingShared=_isBiasPreprocessingShared;
 @property(nonatomic) map_c80acf4e scale; // @synthesize scale=_scale;
 @property(nonatomic) map_c80acf4e grayBias; // @synthesize grayBias=_grayBias;
@@ -50,6 +52,7 @@
 @property(retain, nonatomic) NSString *modelFilePath; // @synthesize modelFilePath=_modelFilePath;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+- (id)initWithFeatureDescriptions:(id)arg1 inputDesc:(id)arg2 outputDesc:(id)arg3 outputLayerNames:(id)arg4 parameters:(id)arg5 configurations:(vector_ebb6ef3e)arg6;
 - (id)initWithFeatureDescriptions:(id)arg1 inputDesc:(id)arg2 outputDesc:(id)arg3 outputLayerNames:(id)arg4 parameters:(id)arg5;
 - (id)initWithFilePath:(id)arg1 inputLayerNames:(id)arg2 outputLayerNames:(id)arg3 parameters:(id)arg4;
 

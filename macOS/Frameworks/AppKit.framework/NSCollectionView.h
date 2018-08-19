@@ -38,7 +38,6 @@
         unsigned int unarchiving:1;
         unsigned int observingScroll:1;
         unsigned int scheduledResize:1;
-        unsigned int isOpaque:1;
         unsigned int observingClipFrameChanges:1;
         unsigned int allowsSectionDrop:1;
         unsigned int backgroundViewScrollsWithContent:1;
@@ -47,7 +46,7 @@
         unsigned int restoringState:1;
         unsigned int needsResize:1;
         unsigned int itemPrototypeInitialized:1;
-        unsigned int reserved:9;
+        unsigned int reserved:10;
     } _cvFlags;
     id _delegate;
     NSMutableArray *_backgroundLayers;
@@ -147,8 +146,8 @@
 - (long long)_createGridBackgroundInRect:(struct CGRect)arg1 withSelector:(SEL)arg2;
 - (void)_createBackgroundLayerWithProperties:(id)arg1;
 - (void)_drawBackgroundGridWithProperties:(id)arg1;
-- (BOOL)_needsCollectionViewContentBackgroundView;
-- (BOOL)_hasContentBackgroundColor;
+- (BOOL)_needsCollectionViewDesktopTintedBackgroundWithMaterial:(long long *)arg1;
+- (BOOL)_hasDesktopTintedBackgroundColorWithMaterial:(long long *)arg1;
 - (struct _NSRange)_contiguousRangeOfItemsForRect:(struct CGRect)arg1;
 - (void)_scheduleEndOfAnimationTimer:(double)arg1;
 - (void)_displayItems:(id)arg1 withConfiguration:(CDStruct_22276b4c)arg2 animate:(BOOL)arg3;
@@ -328,7 +327,6 @@
 - (void)registerClass:(Class)arg1 forSupplementaryViewOfKind:(id)arg2 withReuseIdentifier:(id)arg3;
 - (void)registerNib:(id)arg1 forItemWithReuseIdentifier:(id)arg2;
 - (void)registerClass:(Class)arg1 forItemWithReuseIdentifier:(id)arg2;
-- (void)_updateOpaqueFlag;
 - (BOOL)isOpaque;
 @property BOOL backgroundViewScrollsWithContent;
 @property(retain) NSView *backgroundView;

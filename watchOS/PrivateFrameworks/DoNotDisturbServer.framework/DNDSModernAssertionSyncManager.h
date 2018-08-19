@@ -38,7 +38,7 @@
 - (id)allModeAssertionsWithError:(id *)arg1;
 - (id)assertionWithUUID:(id)arg1 error:(id *)arg2;
 - (void)invalidateAllModeAssertionsTakenBeforeDate:(id)arg1 forReason:(unsigned int)arg2;
-- (void)update;
+- (void)updateForReason:(unsigned int)arg1;
 - (void)resume;
 - (id)init;
 

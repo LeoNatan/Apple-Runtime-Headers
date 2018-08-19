@@ -56,6 +56,7 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) NSArray *interstitialStrings; // @synthesize interstitialStrings=_interstitialStrings;
 @property(copy, nonatomic) NSString *formatString; // @synthesize formatString=_formatString;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) _Bool isCurrency;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

@@ -43,6 +43,7 @@
 - (void)suggestionsWindowWillShow:(id)arg1;
 - (id)taggingTokenField;
 - (void)dealloc;
+- (void)viewDidChangeEffectiveAppearance;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end

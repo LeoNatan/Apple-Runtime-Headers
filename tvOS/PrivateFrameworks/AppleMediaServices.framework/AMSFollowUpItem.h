@@ -44,6 +44,7 @@
 @property(retain, nonatomic) ACAccount *account; // @synthesize account=_account;
 @property(readonly, nonatomic) NSString *groupIdentifier;
 @property(readonly, nonatomic) NSString *backingIdentifier;
+@property(readonly, nonatomic) _Bool active;
 - (id)initWithFollowUpItem:(id)arg1;
 - (id)initWithIdentifier:(id)arg1 account:(id)arg2 priority:(long long)arg3;
 

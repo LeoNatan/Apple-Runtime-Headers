@@ -30,6 +30,7 @@
 @property(retain, nonatomic) NSMutableDictionary *userInfo;
 @property(nonatomic) _Bool requiresFollowUpUI;
 @property(retain, nonatomic) NSURLRequest *request;
+@property(retain, nonatomic) NSString *preferredClient;
 @property(retain, nonatomic) NSDictionary *metrics;
 @property(retain, nonatomic) NSString *logKey;
 - (id)initWithLabel:(id)arg1;

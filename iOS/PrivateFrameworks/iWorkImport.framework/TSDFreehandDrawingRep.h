@@ -13,12 +13,17 @@ __attribute__((visibility("hidden")))
 
 - (id)textureForDescription:(id)arg1;
 - (id)accessibilityLabel;
+- (_Bool)tsaxAllowedToEditChildren;
+- (id)tsaxChildren;
 - (_Bool)isAccessibilityElement;
 - (id)p_childrenForDrawingRecursively;
 - (id)p_freehandDrawingLayout;
 - (double)opacity;
-- (void)recursivelyDrawChildrenInContext:(struct CGContext *)arg1;
+- (struct CGRect)clipRect;
+- (void)recursivelyDrawChildrenInContext:(struct CGContext *)arg1 keepingChildrenPassingTest:(CDUnknownBlockType)arg2;
+- (void)recursivelyDrawInContext:(struct CGContext *)arg1 keepingChildrenPassingTest:(CDUnknownBlockType)arg2;
 - (void)p_drawChildShapeReps:(id)arg1 togetherInContext:(struct CGContext *)arg2;
+- (_Bool)p_shouldDrawShapeRep:(id)arg1 withOtherShapeRep:(id)arg2;
 - (void)willBeRemoved;
 - (id)p_freehandDrawingInfo;
 - (id)initWithLayout:(id)arg1 canvas:(id)arg2;

@@ -6,7 +6,11 @@
 
 #import <HealthDaemon/HDQuantitySampleEntity.h>
 
-@interface HDQuantitySampleSeriesEntity : HDQuantitySampleEntity
+#import "HDSeriesEntity.h"
+
+@class NSString;
+
+@interface HDQuantitySampleSeriesEntity : HDQuantitySampleEntity <HDSeriesEntity>
 {
 }
 
@@ -15,6 +19,7 @@
 + (_Bool)supportsObjectMerging;
 + (_Bool)deleteSeriesFromHFDWithKey:(long long)arg1 database:(id)arg2 error:(id *)arg3;
 + (_Bool)enumerateDataWithTransaction:(id)arg1 HFDKey:(long long)arg2 error:(id *)arg3 handler:(CDUnknownBlockType)arg4;
++ (id)hasSeriesDataForHFDKey:(id)arg1 transaction:(id)arg2 error:(id *)arg3;
 + (id)_quantitySampleWithID:(id)arg1 canBeUnfrozen:(_Bool)arg2 profile:(id)arg3 error:(id *)arg4;
 + (id)entityEncoderForProfile:(id)arg1 database:(id)arg2 purpose:(int)arg3 encodingOptions:(id)arg4 authorizationFilter:(CDUnknownBlockType)arg5;
 + (id)additionalPredicateForEnumeration;
@@ -23,8 +28,8 @@
 + (_Bool)_updateFrozenEntityToMatchReplacedUnfrozenEntity:(id)arg1 unfrozenSeriesUUID:(id)arg2 unfrozenSeriesHFDKey:(long long)arg3 database:(id)arg4 error:(id *)arg5;
 + (void)_setStatistics:(id)arg1 cumulativeQuantitySeriesSample:(id)arg2;
 + (void)_setStatistics:(id)arg1 discreteQuantitySeriesSample:(id)arg2;
-+ (_Bool)replaceObjectID:(id)arg1 replacementObjectID:(id)arg2 profile:(id)arg3 database:(id)arg4 error:(id *)arg5;
-+ (_Bool)deleteSeriesWithID:(id)arg1 profile:(id)arg2 database:(id)arg3 error:(id *)arg4;
++ (_Bool)replaceObjectID:(id)arg1 replacementObjectID:(id)arg2 deleteOriginalHFDData:(_Bool)arg3 profile:(id)arg4 database:(id)arg5 error:(id *)arg6;
++ (_Bool)deleteSeriesWithID:(id)arg1 deleteHFDData:(_Bool)arg2 profile:(id)arg3 database:(id)arg4 error:(id *)arg5;
 + (id)quantitySampleSeriesEntitiesForAutoFreezeSQL;
 + (id)quantitySampleSeriesEntitiesForAutoFreezeWithTransaction:(id)arg1 error:(id *)arg2;
 + (_Bool)performPostJournalMergeCleanupWithTransaction:(id)arg1 profile:(id)arg2 error:(id *)arg3;
@@ -62,6 +67,12 @@
 - (id)HFDKeyWithDatabase:(id)arg1 error:(id *)arg2;
 - (_Bool)_canAddDatumInDatabase:(id)arg1 error:(id *)arg2;
 - (_Bool)insertValues:(id)arg1 transaction:(id)arg2 error:(id *)arg3;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned int hash;
+@property(readonly) Class superclass;
 
 @end
 

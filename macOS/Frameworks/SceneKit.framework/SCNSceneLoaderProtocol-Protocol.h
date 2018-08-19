@@ -4,9 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-@class NSDictionary, NSURL;
+@class NSArray, NSDictionary, NSURL;
 
 @protocol SCNSceneLoaderProtocol
 - (void)loadSceneAtURL:(NSURL *)arg1 options:(NSDictionary *)arg2 withReply:(void (^)(NSData *, NSError *))arg3;
+- (void)consumeExtensions:(NSArray *)arg1;
 @end
 

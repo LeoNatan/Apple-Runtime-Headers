@@ -10,7 +10,8 @@
 + (void)tsp_performSynchronousOperationWithThreadDictionaryObject:(id)arg1 forKey:(id)arg2 usingBlock:(CDUnknownBlockType)arg3;
 + (void)tsp_performSynchronousOperationWithReadFileAccessUsingBlock:(CDUnknownBlockType)arg1;
 + (_Bool)tsp_hasReadFileAccess;
-+ (void)tsp_runFinalizeHandlersForReadCoordinator:(id)arg1 usingBlock:(CDUnknownBlockType)arg2;
++ (void)tsp_runFinalizeHandlersForReadCompletionInfo:(id)arg1 usingBlock:(CDUnknownBlockType)arg2;
++ (id)tsp_currentReadCompletionInfo;
 + (_Bool)tsp_isRunningFinalizeHandlersForLegacyDocument;
 + (_Bool)tsp_isRunningFinalizeHandlersForUpgrade;
 + (void)tsp_performSynchronousArchiverOperationUsingBlock:(CDUnknownBlockType)arg1;

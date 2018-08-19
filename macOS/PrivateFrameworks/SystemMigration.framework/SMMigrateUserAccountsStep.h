@@ -28,7 +28,7 @@
 - (void)updateFDE;
 - (BOOL)enableFDEReturningError:(id *)arg1;
 - (id)transferUserAccounts;
-- (BOOL)authorizeExistingTokenUserInDB:(id)arg1 returningError:(id *)arg2;
+- (id)authorizeExistingTokenUserInDB:(id)arg1 returningError:(id *)arg2;
 - (BOOL)requiresSecureTokenOperations;
 - (id)getBiometricKitReference;
 - (void)calculateDeletedSize;

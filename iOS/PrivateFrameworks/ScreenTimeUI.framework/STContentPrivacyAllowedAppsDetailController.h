@@ -15,7 +15,7 @@
 - (void).cxx_destruct;
 - (void)_addSystemAppSwitchSpecifier:(id)arg1 forBundleID:(id)arg2;
 - (id)_nameForInstalledSystemApp:(id)arg1;
-- (id)defaultSwitchSpecifierWithConfiguration:(id)arg1 key:(id)arg2 icon:(id)arg3;
+- (id)defaultSwitchSpecifierWithConfiguration:(id)arg1 key:(id)arg2 label:(id)arg3 icon:(id)arg4;
 - (id)defaultSwitchSpecifierWithItem:(id)arg1 label:(id)arg2 icon:(id)arg3;
 - (id)radioGroupSpecifierWithName:(id)arg1 footerText:(id)arg2 item:(id)arg3;
 - (void)addAppButtonPressed:(id)arg1;

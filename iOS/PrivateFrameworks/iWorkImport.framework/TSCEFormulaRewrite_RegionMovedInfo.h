@@ -14,16 +14,20 @@ __attribute__((visibility("hidden")))
     TSCEFormulaRewrite_RegionInfo *_srcRegion;
     TSCEFormulaRewrite_RegionInfo *_dstRegion;
     TSCEFormulaRewrite_RegionInfo *_originalSrcRegion;
+    UUIDData_5fbc143e _finalDstTableUID;
     UUIDMap_b66c2694 _srcUidForDstUid;
     UUIDMap_b66c2694 _dstUidForSrcUid;
     _Bool _spanningRows;
     _Bool _spanningColumns;
+    unsigned int _finalTopRowIndex;
 }
 
+@property(nonatomic) unsigned int finalTopRowIndex; // @synthesize finalTopRowIndex=_finalTopRowIndex;
 @property(nonatomic) _Bool spanningColumns; // @synthesize spanningColumns=_spanningColumns;
 @property(nonatomic) _Bool spanningRows; // @synthesize spanningRows=_spanningRows;
 @property(readonly, nonatomic) const UUIDMap_b66c2694 *dstUidForSrcUid; // @synthesize dstUidForSrcUid=_dstUidForSrcUid;
 @property(readonly, nonatomic) const UUIDMap_b66c2694 *srcUidForDstUid; // @synthesize srcUidForDstUid=_srcUidForDstUid;
+@property(nonatomic) UUIDData_5fbc143e finalDstTableUID; // @synthesize finalDstTableUID=_finalDstTableUID;
 @property(retain, nonatomic) TSCEFormulaRewrite_RegionInfo *originalSrcRegion; // @synthesize originalSrcRegion=_originalSrcRegion;
 @property(readonly, nonatomic) TSCEFormulaRewrite_RegionInfo *dstRegion; // @synthesize dstRegion=_dstRegion;
 @property(readonly, nonatomic) TSCEFormulaRewrite_RegionInfo *srcRegion; // @synthesize srcRegion=_srcRegion;
@@ -34,8 +38,10 @@ __attribute__((visibility("hidden")))
 - (UUIDData_5fbc143e)srcUidForDstUid:(const UUIDData_5fbc143e *)arg1;
 - (UUIDData_5fbc143e)dstUidForSrcUid:(const UUIDData_5fbc143e *)arg1;
 - (void)unloadIndexes;
-- (void)loadIndexesForSrcTable:(id)arg1 dstTable:(id)arg2;
+- (void)loadIndexesForSrcTable:(id)arg1 srcUidResolver:(id)arg2 dstTable:(id)arg3 dstUidResolver:(id)arg4;
 - (void)loadIndexesFromRegions;
+- (_Bool)isForDstTable:(const UUIDData_5fbc143e *)arg1;
+- (_Bool)isForSrcTable:(const UUIDData_5fbc143e *)arg1;
 @property(readonly, nonatomic) TSCEFormulaRewrite_Uids *originalSrcRowUids;
 @property(readonly, nonatomic) TSCEFormulaRewrite_Uids *originalSrcColumnUids;
 @property(readonly, nonatomic) TSCEFormulaRewrite_Uids *dstRowUids;
@@ -49,8 +55,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) UUIDData_5fbc143e dstTableUID;
 @property(readonly, nonatomic) UUIDData_5fbc143e srcTableUID;
 - (id)description;
-- (void)dealloc;
-- (id)initWithSrcTableUID:(const UUIDData_5fbc143e *)arg1 srcColumnUids:(const vector_4dc5f307 *)arg2 srcRowUids:(const vector_4dc5f307 *)arg3 dstTableUID:(const UUIDData_5fbc143e *)arg4 dstColumnUids:(const vector_4dc5f307 *)arg5 dstRowUids:(const vector_4dc5f307 *)arg6;
+- (id)initWithSrcTableUID:(const UUIDData_5fbc143e *)arg1 srcTract:(const UUIDRect_d701734b *)arg2 dstTableUID:(const UUIDData_5fbc143e *)arg3 destTract:(const UUIDRect_d701734b *)arg4;
 
 @end
 

@@ -13,8 +13,8 @@
     EXReadState *mExcelState;
 }
 
+@property(readonly) __weak EXReadState *excelState; // @synthesize excelState=mExcelState;
 - (void).cxx_destruct;
-- (id)excelState;
 - (id)initWithExcelState:(id)arg1;
 
 @end

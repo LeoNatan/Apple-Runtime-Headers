@@ -45,7 +45,7 @@
 - (id)accessibilityActionDescription:(id)arg1;
 - (id)accessibilityActionNames;
 - (id)accessibilityIndexAttribute;
-- (BOOL)accessibilitySelectedAttribute;
+- (id)accessibilitySelectedAttribute;
 - (BOOL)accessibilityIsIgnored;
 - (id)accessibilityRoleAttribute;
 - (id)accessibilityAttributeValue:(id)arg1;

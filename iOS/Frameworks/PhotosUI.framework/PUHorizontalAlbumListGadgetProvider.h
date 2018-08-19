@@ -10,7 +10,7 @@
 #import "PXCollectionsDataSourceManagerObserver.h"
 #import "PXSettingsKeyObserver.h"
 
-@class NSString, PUSessionInfo, PXExtendedTraitCollection, PXPhotoKitCollectionsDataSourceManager;
+@class NSString, PUAlbumsGadgetProvider, PUSessionInfo, PXExtendedTraitCollection, PXPhotoKitCollectionsDataSourceManager;
 
 @interface PUHorizontalAlbumListGadgetProvider : PXHorizontalCollectionGadgetProvider <PXSettingsKeyObserver, PXChangeObserver, PXCollectionsDataSourceManagerObserver>
 {
@@ -19,8 +19,10 @@
     unsigned long long _type;
     PXExtendedTraitCollection *_traitCollection;
     PXPhotoKitCollectionsDataSourceManager *_dataSourceManager;
+    PUAlbumsGadgetProvider *_albumsGadgetProvider;
 }
 
+@property(retain, nonatomic) PUAlbumsGadgetProvider *albumsGadgetProvider; // @synthesize albumsGadgetProvider=_albumsGadgetProvider;
 @property(retain, nonatomic) PXPhotoKitCollectionsDataSourceManager *dataSourceManager; // @synthesize dataSourceManager=_dataSourceManager;
 @property(readonly, nonatomic) PXExtendedTraitCollection *traitCollection; // @synthesize traitCollection=_traitCollection;
 @property(readonly, nonatomic) unsigned long long type; // @synthesize type=_type;
@@ -35,6 +37,7 @@
 - (void)_handleDataSourceChange;
 - (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void *)arg3;
 - (void)settings:(id)arg1 changedValueForKey:(id)arg2;
+- (void)startLoadingRemainingData;
 - (void)generateGadgets;
 - (unsigned long long)estimatedNumberOfGadgets;
 - (void)loadDataForGadgets;

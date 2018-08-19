@@ -19,7 +19,8 @@
     UITableView *_internalBuildTableView;
     UILabel *_yoMLabel;
     UIImageView *_QRSNImageView;
-    UIImageView *_EPUPImageView;
+    UIImageView *_indiaBISImageView;
+    UILabel *_indiaBISLabel;
     NSArray *_platformInfoArray;
 }
 

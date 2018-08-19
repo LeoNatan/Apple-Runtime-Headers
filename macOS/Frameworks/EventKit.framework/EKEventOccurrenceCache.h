@@ -49,6 +49,7 @@
 - (void)_binEvent:(id)arg1 timeZoneString:(id)arg2;
 - (void)_binEvents:(id)arg1;
 - (void)binEvents:(id)arg1;
+- (void)clearAll;
 - (id)copyForBackingStore:(id)arg1;
 - (id)initWithBackingStore:(id)arg1;
 

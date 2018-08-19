@@ -65,6 +65,7 @@
 - (void)_doubleTapGesture:(id)arg1;
 - (void)_panGesture:(id)arg1;
 - (void)_tapGesture:(id)arg1;
+- (_Bool)_shouldOpenInSafari;
 - (_Bool)_shouldRetryOnTap;
 - (_Bool)_shouldNavigateToContent;
 - (void)_retryMomentShareFetch;

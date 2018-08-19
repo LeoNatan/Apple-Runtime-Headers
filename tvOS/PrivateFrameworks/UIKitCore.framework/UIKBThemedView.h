@@ -53,6 +53,7 @@ __attribute__((visibility("hidden")))
 - (id)initWithFrame:(struct CGRect)arg1 style:(int)arg2;
 
 // Remaining properties
+@property(readonly, nonatomic) long long cacheDeferPriority;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;

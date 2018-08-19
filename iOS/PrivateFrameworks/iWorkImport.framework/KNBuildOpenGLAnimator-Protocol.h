@@ -7,8 +7,7 @@
 #import "KNAnimationPluginFrameRendering.h"
 
 @protocol KNBuildOpenGLAnimator <KNAnimationPluginFrameRendering>
-- (void)updateAnimationFrame:(struct CGRect)arg1;
-- (struct CGRect)frameOfEffectWithFrame:(struct CGRect)arg1 context:(id <KNAnimationPluginContext>)arg2;
+- (struct CGRect)frameOfEffectWithContext:(id <KNAnimationPluginContext>)arg1;
 
 @optional
 + (_Bool)requiresSingleTexturePerStage;

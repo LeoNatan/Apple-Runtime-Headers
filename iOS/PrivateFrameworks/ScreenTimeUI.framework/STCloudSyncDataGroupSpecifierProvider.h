@@ -6,20 +6,31 @@
 
 #import <ScreenTimeUI/STRootGroupSpecifierProvider.h>
 
-@class PSSpecifier;
+#import "AAUIDeviceToDeviceEncryptionHelperDelegate.h"
 
-@interface STCloudSyncDataGroupSpecifierProvider : STRootGroupSpecifierProvider
+@class NSString, PSSpecifier;
+
+@interface STCloudSyncDataGroupSpecifierProvider : STRootGroupSpecifierProvider <AAUIDeviceToDeviceEncryptionHelperDelegate>
 {
     PSSpecifier *_toggleCloudSyncDataSpecifier;
 }
 
 @property(retain, nonatomic) PSSpecifier *toggleCloudSyncDataSpecifier; // @synthesize toggleCloudSyncDataSpecifier=_toggleCloudSyncDataSpecifier;
 - (void).cxx_destruct;
+- (void)deviceToDeviceEncryptionHelper:(id)arg1 shouldContinueUpgradingUserToHSA2WithCompletion:(CDUnknownBlockType)arg2;
 - (id)cloudSyncData:(id)arg1;
+- (void)performAccountUpgradeIfApplicable:(CDUnknownBlockType)arg1;
+- (void)setScreenTimeSyncing:(_Bool)arg1;
 - (void)setCloudSyncData:(id)arg1 specifier:(id)arg2;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)setCoordinator:(id)arg1;
 - (id)init;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

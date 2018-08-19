@@ -6,11 +6,12 @@
 
 #import "NSObject.h"
 
-@class PXCloudPhotoWelcomeView;
+@class PXCloudPhotoWelcomeView, UITraitCollection;
 
 @protocol PXCloudPhotoWelcomeViewDelegate <NSObject>
 - (void)cloudPhotoWelcomeViewLearnMoreTapped:(PXCloudPhotoWelcomeView *)arg1;
 - (void)cloudPhotoWelcomeViewNotNowButtonTapped:(PXCloudPhotoWelcomeView *)arg1;
 - (void)cloudPhotoWelcomeViewGoButtonTapped:(PXCloudPhotoWelcomeView *)arg1;
+- (UITraitCollection *)presentingViewControllerTraitCollection;
 @end
 

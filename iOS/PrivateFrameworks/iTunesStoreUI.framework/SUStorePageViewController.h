@@ -159,6 +159,7 @@
 - (id)newRotationController;
 - (id)navigationItemForScriptInterface;
 - (void)loadView;
+- (_Bool)_shouldShowPlaceholderForEmptyPage;
 - (_Bool)loadMoreWithURL:(id)arg1;
 - (void)iTunesStoreUI_searchFieldControllerDidChange:(id)arg1;
 - (id)iTunesStoreUI_searchFieldController;

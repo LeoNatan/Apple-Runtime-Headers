@@ -9,13 +9,12 @@
 @class NSURL;
 
 @protocol TSKRenderingExporter <TSKExporter>
-- (_Bool)paginate;
-- (void)setPaginate:(_Bool)arg1;
-- (unsigned long long)pageCount;
-- (double)progressForCurrentPage;
+@property(nonatomic) _Bool paginate;
+@property(readonly, nonatomic) unsigned long long pageCount;
+@property(readonly, nonatomic) double progressForCurrentPage;
+@property(readonly, nonatomic) struct CGRect unscaledClipRect;
+@property(readonly, nonatomic) struct CGRect boundsRect;
 - (void)performBlockWithImager:(void (^)(TSDImager *))arg1;
-- (struct CGRect)unscaledClipRect;
-- (struct CGRect)boundsRect;
 - (_Bool)drawCurrentPageInContext:(struct CGContext *)arg1 viewScale:(double)arg2 unscaledClipRect:(struct CGRect)arg3 createPage:(_Bool)arg4;
 - (_Bool)setInfosToCurrentPage;
 - (_Bool)incrementPage;

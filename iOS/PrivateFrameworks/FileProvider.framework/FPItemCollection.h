@@ -61,6 +61,8 @@
 + (id)activeCollections;
 + (_Bool)_item:(id)arg1 isCollectionRootForObservedItemID:(id)arg2;
 + (_Bool)item:(id)arg1 isValidForObservedItemID:(id)arg2;
++ (void)applicationDidEnterBackground:(id)arg1;
++ (void)applicationWillEnterForeground:(id)arg1;
 + (id)collectionWithIdentifier:(id)arg1 domainIdentifier:(id)arg2 providerIdentifier:(id)arg3 sortDescriptors:(id)arg4;
 + (void)initialize;
 @property(readonly, nonatomic) FPPacer *updatePacer; // @synthesize updatePacer=_updatePacer;
@@ -92,8 +94,6 @@
 - (void)_didEncounterError:(id)arg1 forObservationID:(unsigned long long)arg2;
 - (void)_didEncounterError:(id)arg1;
 - (_Bool)isRegatheringAfterSignal;
-- (void)applicationDidEnterBackground:(id)arg1;
-- (void)applicationWillEnterForeground:(id)arg1;
 - (_Bool)__isObservingID:(unsigned long long)arg1;
 - (_Bool)_isObservingID:(unsigned long long)arg1;
 - (id)_itemsMutableCopy;

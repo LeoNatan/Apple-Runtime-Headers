@@ -54,6 +54,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithContext:(id)arg1;
 - (void)saveMessage:(struct DrawableAttachmentArchive *)arg1 toArchiver:(id)arg2;
+- (void)didFinalizeUnarchivingFromWPStorage:(id)arg1;
 - (void)saveToArchiver:(id)arg1;
 - (void)loadMessage:(const struct DrawableAttachmentArchive *)arg1 fromUnarchiver:(id)arg2;
 - (void)loadFromUnarchiver:(id)arg1;

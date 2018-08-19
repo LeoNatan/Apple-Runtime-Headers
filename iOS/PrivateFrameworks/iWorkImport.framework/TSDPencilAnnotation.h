@@ -31,7 +31,6 @@ __attribute__((visibility("hidden")))
 - (void)wasRemovedFromDocumentRoot:(id)arg1;
 - (void)wasAddedToDocumentRoot:(id)arg1 dolcContext:(id)arg2;
 @property(readonly, nonatomic) NSString *uuid;
-@property(readonly, nonatomic) PKDrawing *drawing; // @dynamic drawing;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)copyWithContext:(id)arg1;
 - (id)initWithContext:(id)arg1 pencilAnnotationStorage:(id)arg2;
@@ -39,6 +38,7 @@ __attribute__((visibility("hidden")))
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
+@property(readonly, nonatomic) PKDrawing *drawing; // @dynamic drawing;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 

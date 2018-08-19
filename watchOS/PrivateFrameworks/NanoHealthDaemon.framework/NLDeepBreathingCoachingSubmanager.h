@@ -41,8 +41,7 @@
 - (void)wristOnStateChangedTo:(_Bool)arg1;
 - (void)daemonAndCoachingManagerReady;
 - (void)_setScheduledAlertDate:(id)arg1;
-- (id)_nextFireDateForIntervalWithFirstOnWristTodayDate:(id)arg1 withNextAllowedDate:(id)arg2;
-- (id)_closestAvailableDateToDate:(id)arg1 inInterval:(id)arg2;
+- (id)_nextFireDateForIntervalWithFirstOnWristTodayDate:(id)arg1 baseDate:(id)arg2;
 - (double)_alertInterval;
 - (int)_remindersPerDay;
 - (void)_rescheduleAlert;

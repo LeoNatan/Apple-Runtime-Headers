@@ -115,7 +115,7 @@ __attribute__((visibility("hidden")))
 - (void)traitCollectionDidChange:(id)arg1;
 - (id)pathOfCenterMostCell;
 - (void)trackCenterCell;
-- (id)getPageImageForPage:(long long)arg1 grayscale:(_Bool)arg2;
+- (id)getPageImageForPage:(long long)arg1 grayscale:(_Bool)arg2 deepColor:(_Bool)arg3;
 @property(retain) NSURL *pdfURL;
 - (void)resetCellSizesArray;
 - (void)resetAllPageImages;

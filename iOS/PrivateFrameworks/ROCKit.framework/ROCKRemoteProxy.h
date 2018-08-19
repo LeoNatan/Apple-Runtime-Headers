@@ -6,14 +6,15 @@
 
 #import <ROCKit/ROCKImpersonatableProxy.h>
 
-#import "NSRemoteInvocationInterface.h"
+#import "ROCKRemoteInvocationInterface.h"
 
 @class NSMapTable, NSObject<OS_xpc_object>, NSSet;
 
 __attribute__((visibility("hidden")))
-@interface ROCKRemoteProxy : ROCKImpersonatableProxy <NSRemoteInvocationInterface>
+@interface ROCKRemoteProxy : ROCKImpersonatableProxy <ROCKRemoteInvocationInterface>
 {
     NSSet *_protocols;
+    unsigned long long _invocationFlags;
     NSObject<OS_xpc_object> *_connectionUUID;
     NSMapTable *_selectorsToMethodSignatures;
 }
@@ -21,6 +22,7 @@ __attribute__((visibility("hidden")))
 + (id)remoteProxyWithSessionManager:(id)arg1 xpcDictionary:(id)arg2;
 @property(retain, nonatomic) NSMapTable *selectorsToMethodSignatures; // @synthesize selectorsToMethodSignatures=_selectorsToMethodSignatures;
 @property(retain, nonatomic) NSObject<OS_xpc_object> *connectionUUID; // @synthesize connectionUUID=_connectionUUID;
+@property(nonatomic) unsigned long long invocationFlags; // @synthesize invocationFlags=_invocationFlags;
 @property(readonly, nonatomic) NSSet *protocols; // @synthesize protocols=_protocols;
 - (void).cxx_destruct;
 - (void)remoteInvocation:(id)arg1 sessionManager:(id)arg2 invocationHandler:(CDUnknownBlockType)arg3;

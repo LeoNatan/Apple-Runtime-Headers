@@ -16,10 +16,12 @@
     UIFont *_previousFont;
     NSMutableSet *_previousRouteNames;
     _Bool _previousForcesUppercaseText;
+    _Bool _previousDisplayAsSiriSuggestion;
     long long _previousTruncationMode;
     NSMutableSet *_routeNames;
     UILabel *_sizingLabel;
     _Bool _forcesUppercaseText;
+    _Bool _displayAsSiriSuggestion;
     long long _minimumEndCharacterCount;
     NSString *_text;
     long long _truncationMode;
@@ -35,6 +37,7 @@
 @property(retain, nonatomic) UIColor *textColor; // @synthesize textColor=_textColor;
 @property(readonly, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(retain, nonatomic) MPAVRoute *route; // @synthesize route=_route;
+@property(nonatomic) _Bool displayAsSiriSuggestion; // @synthesize displayAsSiriSuggestion=_displayAsSiriSuggestion;
 @property(nonatomic) _Bool forcesUppercaseText; // @synthesize forcesUppercaseText=_forcesUppercaseText;
 @property(nonatomic) long long truncationMode; // @synthesize truncationMode=_truncationMode;
 @property(readonly, copy, nonatomic) NSString *text; // @synthesize text=_text;

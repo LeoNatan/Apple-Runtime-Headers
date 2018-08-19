@@ -8,12 +8,11 @@
 
 #import "VCControlChannelTransactionDelegate.h"
 #import "VCControlChannelencryptionDelegate.h"
-#import "VCSecurityEventHandler.h"
 
 @class NSMutableArray, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString;
 
 __attribute__((visibility("hidden")))
-@interface VCControlChannelMultiWay : VCControlChannel <VCControlChannelencryptionDelegate, VCControlChannelTransactionDelegate, VCSecurityEventHandler>
+@interface VCControlChannelMultiWay : VCControlChannel <VCControlChannelencryptionDelegate, VCControlChannelTransactionDelegate>
 {
     unsigned int _transportSessionID;
     int _vfdMessage;
@@ -33,7 +32,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) int vfdCancel; // @synthesize vfdCancel=_vfdCancel;
 @property(nonatomic) int vfdMessage; // @synthesize vfdMessage=_vfdMessage;
 @property(nonatomic) unsigned int transportSessionID; // @synthesize transportSessionID=_transportSessionID;
-- (_Bool)handleEncryptionInfoChange:(id)arg1;
 - (void)flushReportingStats;
 - (void)flushRealTimeReportingStats;
 - (void)deregisterPeriodicTask;

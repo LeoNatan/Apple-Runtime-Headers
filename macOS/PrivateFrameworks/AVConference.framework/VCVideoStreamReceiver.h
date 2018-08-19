@@ -37,6 +37,7 @@ __attribute__((visibility("hidden")))
     VideoAttributes *_remoteVideoAttributes;
     VCMediaStreamSynchronizer *_mediaStreamSynchronizer;
     int _remoteVideoCamera;
+    BOOL _remoteVideoMirrored;
     BOOL _enableCVO;
     unsigned long long _cvoExtensionID;
     unsigned long long _lastKeyFrameSampleBufferSize;

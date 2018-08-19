@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
 
 @property(nonatomic) double viewScale; // @synthesize viewScale=_viewScale;
 @property(retain, nonatomic) TSDFill *fill; // @synthesize fill=mFill;
+- (void).cxx_destruct;
 - (void)setContentsScale:(double)arg1;
 - (void)setDelegate:(id)arg1;
 - (id)currentValueLayer;
@@ -35,7 +36,6 @@ __attribute__((visibility("hidden")))
 - (void)p_addLayerAnimationsForUpdatingImage:(struct CGImage *)arg1 bounds:(struct CGRect)arg2 position:(struct CGPoint)arg3 toAnimationInfo:(id)arg4;
 - (void)setFill:(id)arg1 stroke:(id)arg2 withViewScale:(double)arg3;
 - (id)chartRep;
-- (void)dealloc;
 - (id)init;
 
 @end

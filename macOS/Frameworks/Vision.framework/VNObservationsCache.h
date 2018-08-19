@@ -6,12 +6,12 @@
 
 #import "NSObject.h"
 
-@class NSCache;
+@class NSMapTable;
 
 __attribute__((visibility("hidden")))
 @interface VNObservationsCache : NSObject
 {
-    NSCache *_observationsCache;
+    NSMapTable *_observationsCache;
 }
 
 - (void).cxx_destruct;

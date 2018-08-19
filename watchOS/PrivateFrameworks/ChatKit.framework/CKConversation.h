@@ -40,7 +40,7 @@
 + (double)_iMessage_maxTrimDurationForMediaType:(int)arg1;
 + (unsigned int)_iMessage_maxTransferFileSizeForWiFi:(_Bool)arg1;
 + (id)_iMessage_localizedErrorForReason:(int)arg1;
-+ (_Bool)_iMessage_canSendComposition:(id)arg1 lastAddressedHandle:(id)arg2 lastAddressedSIMID:(id)arg3 error:(id *)arg4;
++ (_Bool)_iMessage_canSendComposition:(id)arg1 lastAddressedHandle:(id)arg2 lastAddressedSIMID:(id)arg3 currentService:(id)arg4 forceSMS:(_Bool)arg5 error:(id *)arg6;
 + (_Bool)_iMessage_canSendMessageWithMediaObjectTypes:(int *)arg1;
 + (_Bool)_iMessage_canSendMessageWithMediaObjectTypes:(int *)arg1 errorCode:(int *)arg2;
 + (int)_iMessage_maxAttachmentCount;

@@ -22,11 +22,6 @@
 - (void)didChangeValueForKey:(id)arg1;
 
 // Remaining properties
-@property(retain, nonatomic) NSSet *aggregateAppUsages; // @dynamic aggregateAppUsages;
-@property(retain, nonatomic) NSSet *aggregateCategoryUsages; // @dynamic aggregateCategoryUsages;
-@property(retain, nonatomic) NSSet *aggregateScreenUsages; // @dynamic aggregateScreenUsages;
-@property(retain, nonatomic) NSSet *aggregateWebUsages; // @dynamic aggregateWebUsages;
-@property(retain, nonatomic) NSSet *allUsages; // @dynamic allUsages;
 @property(copy, nonatomic) NSString *altID; // @dynamic altID;
 @property(retain, nonatomic) NSSet *appliedActivations; // @dynamic appliedActivations;
 @property(retain, nonatomic) NSSet *askForTimeRequests; // @dynamic askForTimeRequests;

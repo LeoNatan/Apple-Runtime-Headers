@@ -6,12 +6,9 @@
 
 #import "NSObject.h"
 
-#import "NSPasteboardItemDataProvider.h"
-#import "NSPasteboardWriting.h"
-
 @class NSData, NSString;
 
-@interface SidecarItem : NSObject <NSPasteboardWriting, NSPasteboardItemDataProvider>
+@interface SidecarItem : NSObject
 {
     NSData *_data;
     NSString *_type;
@@ -20,19 +17,10 @@
 @property(readonly) NSString *type; // @synthesize type=_type;
 @property(readonly) NSData *data; // @synthesize data=_data;
 - (void).cxx_destruct;
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
+- (id)debugDescription;
+- (id)description;
 - (_Bool)conformsToType:(id)arg1;
 - (id)initWithData:(id)arg1 type:(id)arg2;
-- (void)pasteboardFinishedWithDataProvider:(id)arg1;
-- (void)pasteboard:(id)arg1 item:(id)arg2 provideDataForType:(id)arg3;
-- (id)pasteboardPropertyListForType:(id)arg1;
-- (unsigned long long)writingOptionsForType:(id)arg1 pasteboard:(id)arg2;
-- (id)writableTypesForPasteboard:(id)arg1;
-
-// Remaining properties
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
 
 @end
 

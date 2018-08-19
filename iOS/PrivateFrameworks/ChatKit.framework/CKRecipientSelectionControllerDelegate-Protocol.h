@@ -17,5 +17,6 @@
 - (void)recipientSelectionControllerSearchListDidShowOrHide:(CKRecipientSelectionController *)arg1;
 - (void)recipientSelectionControllerReturnPressed:(CKRecipientSelectionController *)arg1;
 - (void)recipientSelectionControllerDidChangeSize:(CKRecipientSelectionController *)arg1;
+- (void)recipientSelectionControllerDidBecomeFirstResponder:(CKRecipientSelectionController *)arg1;
 @end
 

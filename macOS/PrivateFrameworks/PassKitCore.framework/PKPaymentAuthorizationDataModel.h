@@ -18,11 +18,11 @@
     BOOL _ignoreProximity;
     NSArray *_acceptedPasses;
     NSArray *_unavailablePasses;
-    NSMutableDictionary *_acceptedApplications;
     NSMapTable *_instrumentToDeviceMap;
     NSMutableDictionary *_remoteDeviceToAcceptedInstruments;
     NSArray *_allRemoteDevices;
     NSMutableDictionary *_statusForPass;
+    NSMutableDictionary *_acceptedApplications;
     NSString *_paymentApplicationIdentifierForErrors;
     NSArray *_clientErrors;
     BOOL _shippingEditable;

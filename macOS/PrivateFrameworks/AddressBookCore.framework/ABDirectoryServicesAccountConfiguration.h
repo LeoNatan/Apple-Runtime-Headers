@@ -16,6 +16,7 @@
     ABDirectoryServicesConnectivityTest *_directoryServicesConnectivityTest;
 }
 
++ (id)log;
 @property(retain) ABDirectoryServicesConnectivityTest *directoryServicesConnectivityTest; // @synthesize directoryServicesConnectivityTest=_directoryServicesConnectivityTest;
 - (void)updateSearchability:(BOOL)arg1;
 - (BOOL)shouldCheckDirectoryServicesConnectivity;

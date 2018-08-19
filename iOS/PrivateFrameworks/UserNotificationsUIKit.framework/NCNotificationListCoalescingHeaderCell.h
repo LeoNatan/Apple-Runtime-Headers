@@ -27,6 +27,9 @@
 }
 
 + (double)coalescingHeaderCellHeightForWidth:(double)arg1 title:(id)arg2;
++ (struct CGSize)_coalescingControlsViewPreferredSize;
++ (void)_contentSizeCategoryDidChange:(id)arg1;
++ (void)initialize;
 @property(retain, nonatomic) _UILegibilitySettings *legibilitySettings; // @synthesize legibilitySettings=_legibilitySettings;
 @property(retain, nonatomic) NCNotificationListHeaderTitleView *headerTitleView; // @synthesize headerTitleView=_headerTitleView;
 @property(retain, nonatomic) NCNotificationListCoalescingControlsView *coalescingControlsView; // @synthesize coalescingControlsView=_coalescingControlsView;
@@ -39,6 +42,7 @@
 - (void).cxx_destruct;
 - (void)_layoutHeaderTitleView;
 - (void)_layoutCoalescingControlsView;
+- (struct CGRect)_coalescingControlsViewFrameForBounds:(struct CGRect)arg1;
 - (void)_configureHeaderTitleViewIfNecessary;
 - (void)_configureCoalescingControlsViewIfNecessary;
 - (void)traitCollectionDidChange:(id)arg1;

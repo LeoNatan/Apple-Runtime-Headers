@@ -69,6 +69,7 @@ __attribute__((visibility("hidden")))
 - (id)stringForCollaboratorConflictDetails;
 - (id)stringForCollaboratorConflict;
 - (id)stringForUpdatingDocumentWithoutServiceType;
+- (id)stringForUserActivityTitleForFilename:(id)arg1;
 - (id)templateTypeDisplayName;
 - (id)documentTypeDisplayNameForSharingInvitation;
 - (id)documentTypeDisplayName;

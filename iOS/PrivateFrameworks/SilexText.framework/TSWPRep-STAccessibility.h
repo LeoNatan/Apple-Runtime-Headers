@@ -8,7 +8,15 @@
 
 #import "UIAccessibilityReadingContent.h"
 
+@class NSArray;
+
 @interface TSWPRep (STAccessibility) <UIAccessibilityReadingContent>
+- (id)sxaxNameForEditRotorAction:(id)arg1;
+@property(readonly, nonatomic) NSArray *sxaxSupportedEditRotorActions;
+- (id)_sxaxTextInputEditor;
+- (_Bool)accessibilityEditOperationAction:(id)arg1;
+- (id)_accessibilityTextOperations;
+- (_Bool)_accessibilityHasTextOperations;
 - (id)_accessibilityTextRangeFromNSRange:(struct _NSRange)arg1;
 - (struct _NSRange)_accessibilityRawRangeForUITextRange:(id)arg1;
 - (_Bool)_accessibilitySpeakThisShouldScrollTextRects;
@@ -17,6 +25,7 @@
 - (id)_STAXColumnForStorageRelativeCharIndex:(unsigned long long)arg1;
 - (struct _NSRange)_sxaxStorageRelativeRangeOfLineFragmentAtStorageRelativeCharIndex:(unsigned long long)arg1;
 - (long long)_accessibilityLineEndPosition;
+- (struct _NSRange)_accessibilityLineRangeForPosition:(unsigned long long)arg1;
 - (long long)_accessibilityLineStartPosition;
 - (void)_accessibilitySetSelectedTextRange:(struct _NSRange)arg1;
 - (struct _NSRange)_accessibilitySelectedTextRange;

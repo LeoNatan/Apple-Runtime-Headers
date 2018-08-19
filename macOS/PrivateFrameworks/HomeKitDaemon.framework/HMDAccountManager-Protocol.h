@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class HMDAccount, HMDBackingStore, HMDBackingStoreModelObject, HMDBackingStoreTransactionActions, HMDDevice;
+@class HMDAccount, HMDAccountHandle, HMDBackingStore, HMDBackingStoreModelObject, HMDBackingStoreTransactionActions, HMDDevice;
 
 @protocol HMDAccountManager <NSObject>
 @property(retain, nonatomic) HMDBackingStore *backingStore;
@@ -15,5 +15,8 @@
 - (BOOL)shouldSyncDevice:(HMDDevice *)arg1;
 - (BOOL)shouldSyncAccount:(HMDAccount *)arg1;
 - (BOOL)shouldCacheAccount:(HMDAccount *)arg1;
+
+@optional
+- (HMDAccountHandle *)primaryHandleForAccount:(HMDAccount *)arg1;
 @end
 

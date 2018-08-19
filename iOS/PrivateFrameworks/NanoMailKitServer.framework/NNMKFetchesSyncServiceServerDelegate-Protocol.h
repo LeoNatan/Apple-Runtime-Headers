@@ -6,9 +6,10 @@
 
 #import "NSObject.h"
 
-@class NNMKFetchesSyncServiceServer, NNMKProtoContentRequest, NNMKProtoFetchBatchRequest, NNMKProtoFetchRequest, NNMKProtoFullSyncRequest, NNMKProtoHaltSyncRequest, NNMKProtoInitialSyncFinishedNotification, NNMKProtoMoreMessagesBatchRequest, NNMKProtoMoreMessagesForConversationRequest, NNMKProtoMoreMessagesRequest, NSString;
+@class NNMKFetchesSyncServiceServer, NNMKProtoContentRequest, NNMKProtoFetchBatchRequest, NNMKProtoFetchRequest, NNMKProtoFullSyncRequest, NNMKProtoHaltSyncRequest, NNMKProtoInitialSyncFinishedNotification, NNMKProtoMoreMessagesBatchRequest, NNMKProtoMoreMessagesForConversationRequest, NNMKProtoMoreMessagesRequest, NNMKProtoWebKitStatusNotification, NSString;
 
 @protocol NNMKFetchesSyncServiceServerDelegate <NSObject>
+- (void)fetchesSyncServiceServer:(NNMKFetchesSyncServiceServer *)arg1 didNotifyAboutWebKitStatus:(NNMKProtoWebKitStatusNotification *)arg2;
 - (void)fetchesSyncServiceServer:(NNMKFetchesSyncServiceServer *)arg1 didNotifyInitialSyncFinished:(NNMKProtoInitialSyncFinishedNotification *)arg2;
 - (void)fetchesSyncServiceServer:(NNMKFetchesSyncServiceServer *)arg1 didRequestHaltSync:(NNMKProtoHaltSyncRequest *)arg2;
 - (void)fetchesSyncServiceServer:(NNMKFetchesSyncServiceServer *)arg1 didRequestFullSync:(NNMKProtoFullSyncRequest *)arg2;

@@ -18,7 +18,6 @@
 @property(retain, nonatomic) UIViewController *contentViewController; // @synthesize contentViewController=_contentViewController;
 - (void).cxx_destruct;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
-- (void)viewDidLayoutSubviews;
 - (void)cancel;
 - (void)viewDidLoad;
 - (void)setNeedsStatusBarAppearanceUpdate;

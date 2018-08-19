@@ -8,7 +8,7 @@
 
 #import "TSKLayerMediaPlayerController.h"
 
-@class CADisplayLink, NSArray, NSMutableSet, NSString;
+@class NSArray, NSMutableSet, NSString;
 
 __attribute__((visibility("hidden")))
 @interface TSKAnimatedGIFController : NSObject <TSKLayerMediaPlayerController>
@@ -19,7 +19,6 @@ __attribute__((visibility("hidden")))
     NSMutableSet *mLayers;
     _Bool mPlaying;
     double mLastDisplayUpdateTime;
-    unsigned long long mDisplayLinkCounter;
     double mAbsoluteCurrentTime;
     float mRate;
     float mRateBeforeScrubbing;
@@ -29,7 +28,6 @@ __attribute__((visibility("hidden")))
     float mVolume;
     long long mRepeatMode;
     NSMutableSet *mObservationTokens;
-    CADisplayLink *mDisplayLink;
     _Bool fastReversing;
     _Bool fastForwarding;
 }
@@ -48,12 +46,8 @@ __attribute__((visibility("hidden")))
 - (id)delegate;
 - (void)setRate:(float)arg1;
 - (float)rate;
+- (void).cxx_destruct;
 - (void)p_updateLayers;
-- (void)p_displayLinkDidTrigger:(id)arg1;
-- (void)p_disableDisplayLink;
-- (void)p_enableDisplayLink;
-- (void)p_getAbsoluteMovieTime:(double *)arg1 shouldStopPlayback:(_Bool *)arg2 shouldReversePlayback:(_Bool *)arg3;
-- (void)p_updateDisplayLink;
 - (void)p_prepareFrameTimes;
 @property(readonly, nonatomic) struct CGImage *imageForCurrentTime;
 - (id)newLayer;

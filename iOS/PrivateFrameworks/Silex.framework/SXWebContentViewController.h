@@ -9,7 +9,7 @@
 #import "WKNavigationDelegate.h"
 #import "WKUIDelegate.h"
 
-@class NSString, WKWebView;
+@class NSString, SXWebContentLoader, WKWebView;
 
 @interface SXWebContentViewController : UIViewController <WKNavigationDelegate, WKUIDelegate>
 {
@@ -24,8 +24,10 @@
     id <SXWebContentContentRuleManager> _contentRuleManager;
     id <SXReachabilityProvider> _reachabilityProvider;
     id <SXWebContentLogger> _logger;
+    SXWebContentLoader *_loader;
 }
 
+@property(retain, nonatomic) SXWebContentLoader *loader; // @synthesize loader=_loader;
 @property(readonly, nonatomic) id <SXWebContentLogger> logger; // @synthesize logger=_logger;
 @property(readonly, nonatomic) id <SXReachabilityProvider> reachabilityProvider; // @synthesize reachabilityProvider=_reachabilityProvider;
 @property(readonly, nonatomic) id <SXWebContentContentRuleManager> contentRuleManager; // @synthesize contentRuleManager=_contentRuleManager;
@@ -45,6 +47,7 @@
 - (void)webView:(id)arg1 decidePolicyForNavigationAction:(id)arg2 decisionHandler:(CDUnknownBlockType)arg3;
 - (void)webView:(id)arg1 didStartProvisionalNavigation:(id)arg2;
 - (void)webViewWebContentProcessDidTerminate:(id)arg1;
+- (void)initiateLoadingWithLoader:(id)arg1;
 - (void)loadHTMLString:(id)arg1 baseURL:(id)arg2;
 - (void)loadURL:(id)arg1;
 - (void)viewDidLayoutSubviews;

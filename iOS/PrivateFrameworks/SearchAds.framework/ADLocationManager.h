@@ -8,27 +8,28 @@
 
 #import "CLLocationManagerDelegate.h"
 
-@class CLLocation, CLLocationManager, CLPlacemark, NSMutableArray, NSString, NSThread;
+@class CLLocation, CLLocationManager, CLPlacemark, NSMutableArray, NSObject<OS_dispatch_queue>, NSString;
 
 @interface ADLocationManager : NSObject <CLLocationManagerDelegate>
 {
+    NSObject<OS_dispatch_queue> *_locationQueue;
     _Bool _updatingPlacemark;
     _Bool _isLocationUpdating;
     _Bool _isLocationInitialized;
+    int _callerStatus;
     CLPlacemark *_currentPlacemark;
     CLLocation *_lastPlacemarkLocation;
     NSMutableArray *_listeners;
     CLLocationManager *_locationManager;
     CLLocation *_actualLocation;
-    NSThread *_myThread;
 }
 
 + (id)sharedInstance;
-@property(retain, nonatomic) NSThread *myThread; // @synthesize myThread=_myThread;
+@property(nonatomic) int callerStatus; // @synthesize callerStatus=_callerStatus;
 @property(retain, nonatomic) CLLocation *actualLocation; // @synthesize actualLocation=_actualLocation;
 @property(nonatomic) _Bool isLocationInitialized; // @synthesize isLocationInitialized=_isLocationInitialized;
 @property(nonatomic) _Bool isLocationUpdating; // @synthesize isLocationUpdating=_isLocationUpdating;
-@property(nonatomic) _Bool updatingPlacemark; // @synthesize updatingPlacemark=_updatingPlacemark;
+@property _Bool updatingPlacemark; // @synthesize updatingPlacemark=_updatingPlacemark;
 @property(retain, nonatomic) CLLocationManager *locationManager; // @synthesize locationManager=_locationManager;
 @property(retain, nonatomic) NSMutableArray *listeners; // @synthesize listeners=_listeners;
 @property(retain, nonatomic) CLLocation *lastPlacemarkLocation; // @synthesize lastPlacemarkLocation=_lastPlacemarkLocation;
@@ -37,6 +38,7 @@
 - (void)locationManager:(id)arg1 didUpdateLocations:(id)arg2;
 - (void)locationManager:(id)arg1 didChangeAuthorizationStatus:(int)arg2;
 - (_Bool)isLocationBasedAdsEnabled;
+- (_Bool)locationEnabledFor:(int)arg1;
 - (id)obfuscatedLocation;
 - (id)currentLocation;
 @property(retain) CLPlacemark *currentPlacemark; // @synthesize currentPlacemark=_currentPlacemark;
@@ -44,7 +46,6 @@
 - (void)stop;
 - (void)start;
 - (void)addListener:(id)arg1;
-- (void)createLocationManager;
 - (id)init;
 
 // Remaining properties

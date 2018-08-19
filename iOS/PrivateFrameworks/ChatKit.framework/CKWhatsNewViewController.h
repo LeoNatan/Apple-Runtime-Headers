@@ -59,6 +59,9 @@
 @property(readonly, nonatomic) unsigned long long whatsNewLayout; // @synthesize whatsNewLayout=_whatsNewLayout;
 @property(nonatomic) __weak id <CKWhatsNewViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (double)newFeatureStackLeading;
+- (double)newFeatureStackFirstBaseline;
+- (double)newFeatureStackItemSpacing;
 @property(readonly, nonatomic) double descriptionLabelLastBaselineAnchorLayoutConstraintConstant;
 @property(readonly, nonatomic) double descriptionLabelFirstBaselineAnchorLayoutConstraintConstant;
 @property(readonly, nonatomic) double paragraphTextLabelFirstBaselineAnchorLayoutConstraintConstant;
@@ -75,7 +78,7 @@
 - (void)welcomeViewCancelButtonTapped:(id)arg1;
 - (void)handleUIContentSizeCategoryDidChangeNotification:(id)arg1;
 - (void)handleUIDeviceOrientationDidChangeNotification:(id)arg1;
-- (void)layoutForCallerID;
+- (void)layoutForNewInMessages;
 - (void)layoutForSurf;
 - (void)layoutForMOC;
 - (void)updateConstraints;

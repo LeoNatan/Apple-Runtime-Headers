@@ -10,14 +10,14 @@
 #import "PKPaymentSetupBrowseProductsViewControllerDelegate.h"
 #import "PKPaymentSetupHideSetupLaterButtonProtocol.h"
 
-@class NSArray, NSMutableArray, NSString, PKPaymentProvisioningController, PKPaymentSetupFooterView, PKTableHeaderView;
+@class NSMutableArray, NSSet, NSString, PKPaymentProvisioningController, PKPaymentSetupFooterView, PKTableHeaderView;
 
 @interface PKPaymentSetupFlowPickerViewController : PKPaymentSetupTableViewController <PKPaymentSetupActivitySpinnerProtocol, PKPaymentSetupBrowseProductsViewControllerDelegate, PKPaymentSetupHideSetupLaterButtonProtocol>
 {
     PKTableHeaderView *_headerView;
     PKPaymentSetupFooterView *_footerView;
     NSMutableArray *_pickerSections;
-    NSArray *_betaTransitNetworks;
+    NSSet *_betaNetworks;
     _Bool _hideSetupLaterButton;
     _Bool _allowsManualEntry;
     PKPaymentProvisioningController *_provisioningController;

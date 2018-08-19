@@ -77,6 +77,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic, setter=p_setTintColor:) TSUColor *p_tintColor;
 @property(nonatomic, setter=p_setTechnique:) int p_technique;
 @property(retain, nonatomic, setter=p_setImageData:) TSPData *p_imageData;
+- (void)flushImageCache;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;
 - (void)p_clearTintedImageCache;

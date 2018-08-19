@@ -19,7 +19,6 @@
     NSObject<OS_dispatch_queue> *_accessQueue;
     _Bool _allowsAirPlayFromCloud;
     NSNumber *_bookmarkTime;
-    NSOperationQueue *_utilitySerialQueue;
     _Bool _hasLoadedSubscriptionLeaseSession;
     NSObject<OS_dispatch_queue> *_subscriptionLeaseSessionLoadQueue;
     ICMusicSubscriptionLeaseSession *_subscriptionLeaseSession;
@@ -69,6 +68,7 @@
     long long _equivalencySourceAdamID;
 }
 
++ (id)_utilitySerialQueue;
 + (_Bool)_prefersHighQualityVideoContentForNetworkType:(int)arg1;
 + (_Bool)_prefersHighQualityAudioContentForNetworkType:(int)arg1;
 @property(nonatomic) int stationItemLikedState; // @synthesize stationItemLikedState=_stationItemLikedState;
@@ -86,7 +86,6 @@
 @property(readonly, copy, nonatomic) ICMusicSubscriptionLeaseStatus *leaseStatus; // @synthesize leaseStatus=_leaseStatus;
 @property(readonly, nonatomic) int leasePlaybackPreventionState; // @synthesize leasePlaybackPreventionState=_leasePlaybackPreventionState;
 - (void).cxx_destruct;
-- (id)_utilitySerialQueue;
 - (void)_updatePreventionStatusWithLeaseSession:(id)arg1;
 - (void)_updateJingleTimedMetadata;
 - (void)_updateBookmarkTime:(double)arg1 isCheckpoint:(_Bool)arg2;

@@ -30,7 +30,6 @@
 @property(readonly, nonatomic) UIButton *dismissButton; // @synthesize dismissButton=_dismissButton;
 @property(nonatomic) __weak id <PXCMMCloudViewViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
-- (id)_goButtonBackgroundImageWithColor:(id)arg1;
 - (void)_didTapDismissButton:(id)arg1;
 - (void)_learnMoreTapped:(id)arg1;
 - (struct CGSize)_performLayoutInRect:(struct CGRect)arg1 updateSubviewFrames:(_Bool)arg2;

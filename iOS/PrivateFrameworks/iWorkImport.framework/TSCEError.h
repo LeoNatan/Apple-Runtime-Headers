@@ -13,7 +13,7 @@
 __attribute__((visibility("hidden")))
 @interface TSCEError : NSObject <NSCopying>
 {
-    NSDictionary *mErrorDictionary;
+    NSDictionary *_errorDictionary;
 }
 
 + (id)remoteDataUnavailableErrorWithAttribute:(id)arg1;
@@ -54,7 +54,6 @@ __attribute__((visibility("hidden")))
 + (void)raiseCharInputOutOfBoundsError;
 + (void)raiseVectorValueNotNumberErrorForFunctionName:(id)arg1 argumentNumber:(int)arg2;
 + (void)raiseMismatchedMaxUnitsError;
-+ (void)raiseCategoryCellReferenceError;
 + (void)raiseInvalidMatchModeError;
 + (void)raiseNegativeReceivedAmountError;
 + (void)raiseDataInvalidWidthError;
@@ -72,6 +71,7 @@ __attribute__((visibility("hidden")))
 + (void)raiseInvalidIntersectionError:(vector_99ef3555)arg1 hostTableUID:(const UUIDData_5fbc143e *)arg2 calcEngine:(id)arg3;
 + (void)raiseNotEnoughInputsErrorForFunctionName:(id)arg1 argumentNumber:(int)arg2 required:(int)arg3;
 + (void)raiseSumMixedDurationsAndUnitlessWithoutADateErrorForFunctionName:(id)arg1;
++ (id)sumMixedDurationsAndUnitlessWithoutADateErrorForFunctionName:(id)arg1;
 + (void)raiseMismatchedCurrenciesErrorForFunctionName:(id)arg1;
 + (id)durationNotAllowedError:(id)arg1 argumentNumber:(int)arg2;
 + (void)raiseDurationNotAllowedError:(id)arg1 argumentNumber:(int)arg2;
@@ -120,11 +120,12 @@ __attribute__((visibility("hidden")))
 + (void)raiseEmptyArgumentError;
 + (void)raiseInvalidTokenInFormulaError;
 + (void)raiseNoModeError;
-+ (void)raiseIndirectErrorForRangeReference:(struct TSCERangeRef)arg1 hostTableUID:(const UUIDData_5fbc143e *)arg2 calculationEngine:(id)arg3;
-+ (id)indirectErrorForRangeReference:(struct TSCERangeRef)arg1 hostTableUID:(const UUIDData_5fbc143e *)arg2 calculationEngine:(id)arg3;
++ (void)raiseIndirectErrorForRangeReference:(struct TSCERangeRef)arg1 hostTableUID:(const UUIDData_5fbc143e *)arg2;
++ (id)indirectErrorForRangeReference:(struct TSCERangeRef)arg1 hostTableUID:(const UUIDData_5fbc143e *)arg2;
 + (void)raiseInvalidArgumentsErrorForFunctionName:(id)arg1 argumentIndex:(int)arg2;
 + (void)raiseMixedTypeManipulationErrorForFunctionName:(id)arg1;
 + (void)raiseInvalidDateManipulationError;
++ (id)invalidDateManipulationError;
 + (void)raiseDifferentNumberOfDataPointsErrorForFunctionName:(id)arg1;
 + (void)raiseStartNumberExceedsStringLengthErrorForFunctionName:(id)arg1;
 + (void)raiseMatchNotFoundErrorForValue:(id)arg1 functionName:(id)arg2;
@@ -134,6 +135,7 @@ __attribute__((visibility("hidden")))
 + (id)invalidMergeReference:(struct TSCERangeRef)arg1 contextEntityUID:(const UUIDData_5fbc143e *)arg2;
 + (void)raiseErrorForInvalidReference:(struct TSCERangeRef)arg1 orString:(id)arg2 contextEntityUID:(const UUIDData_5fbc143e *)arg3 invalidMergeReference:(_Bool)arg4 disqualifiedFromEndCell:(_Bool)arg5;
 + (void)raiseErrorForInvalidReference:(struct TSCERangeRef)arg1 orString:(id)arg2 contextEntityUID:(const UUIDData_5fbc143e *)arg3;
++ (id)invalidReferenceError;
 + (void)raiseErrorForInvalidReference;
 + (void)raiseArgumentSetUsedOutOfContextError;
 + (void)raiseValueNotAvailableErrorForFunctionName:(id)arg1;
@@ -167,6 +169,7 @@ __attribute__((visibility("hidden")))
 + (id)syntaxError;
 + (id)errorForToken:(id)arg1;
 + (id)errorWithDictionary:(id)arg1;
+- (void).cxx_destruct;
 - (id)bakedString;
 - (_Bool)isNativelyEqual:(struct TSCEValue)arg1;
 - (struct TSCEReferenceValue *)referenceValue;
@@ -183,12 +186,10 @@ __attribute__((visibility("hidden")))
 - (struct TSCENumberValue *)numberForFunction:(id)arg1 argumentIndex:(int)arg2 warningReportingContext:(struct TSCEWarningReportingContext *)arg3;
 - (int)deepType;
 - (int)nativeType;
-- (void)dealloc;
 - (void)setErrorDictionary:(id)arg1;
 - (id)errorDictionary;
 - (_Bool)isInvalidReference;
 - (struct TSCERangeRef)rangeRef;
-- (void)performSelector:(SEL)arg1 withObject:(id)arg2 andDescend:(_Bool)arg3;
 - (_Bool)isErrorReferenceError;
 - (_Bool)isUnsupportedFunctionError;
 - (_Bool)isNotReadyError;

@@ -24,11 +24,11 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) CALayer *dataSetNameLayer; // @synthesize dataSetNameLayer;
 @property(retain, nonatomic) CALayer *backgroundLayer; // @synthesize backgroundLayer;
 @property(retain, nonatomic) CALayer *legendLayer; // @synthesize legendLayer;
+- (void).cxx_destruct;
 - (id)layersAlreadyHaveProperTransforms;
 - (id)layersRequiringGeometryTransformsBackgroundOnly:(_Bool)arg1;
 - (id)elementFadingLayers;
 - (id)allBackgroundFadingLayers;
-- (void)dealloc;
 
 @end
 

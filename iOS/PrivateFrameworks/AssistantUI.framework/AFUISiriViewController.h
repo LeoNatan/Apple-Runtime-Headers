@@ -207,7 +207,7 @@
 - (void)siriRemoteViewControllerDidDetectMicButtonLongPressBegan:(id)arg1;
 - (void)siriRemoteViewControllerDidDetectMicButtonTap:(id)arg1;
 - (_Bool)siriRemoteViewController:(id)arg1 openURL:(id)arg2 appBundleID:(id)arg3 allowSiriDismissal:(_Bool)arg4;
-- (_Bool)siriRemoteViewController:(id)arg1 openURL:(id)arg2 delaySessionEndForTTS:(_Bool)arg3;
+- (void)siriRemoteViewController:(id)arg1 openURL:(id)arg2 delaySessionEndForTTS:(_Bool)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)siriRemoteViewController:(id)arg1 didReadBulletinWithIdentifier:(id)arg2;
 - (void)siriRemoteViewControllerPulseHelpButton:(id)arg1;
 - (void)siriRemoteViewControllerDidPresentUserInterface:(id)arg1;

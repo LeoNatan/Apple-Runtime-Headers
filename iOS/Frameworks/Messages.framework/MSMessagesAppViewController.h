@@ -8,10 +8,11 @@
 
 #import "MSConversationDelegate.h"
 #import "MSMessagesAppTranscriptPresentation.h"
+#import "MSRootViewControllerProtocol.h"
 
 @class MSConversation, NSString;
 
-@interface MSMessagesAppViewController : UIViewController <MSConversationDelegate, MSMessagesAppTranscriptPresentation>
+@interface MSMessagesAppViewController : UIViewController <MSRootViewControllerProtocol, MSConversationDelegate, MSMessagesAppTranscriptPresentation>
 {
     _Bool _isReadyForDisplay;
     _Bool _viewHasAppeared;
@@ -21,10 +22,10 @@
 }
 
 @property(retain, nonatomic) id <_MSMessageComposeExtensionImplProtocol> appContext; // @synthesize appContext=_appContext;
-@property(nonatomic) struct CGRect initialFrameBeforeAppearance; // @synthesize initialFrameBeforeAppearance=_initialFrameBeforeAppearance;
 @property(nonatomic) _Bool viewHasAppeared; // @synthesize viewHasAppeared=_viewHasAppeared;
 @property(nonatomic) _Bool isReadyForDisplay; // @synthesize isReadyForDisplay=_isReadyForDisplay;
 @property(retain, nonatomic) MSConversation *activeConversation; // @synthesize activeConversation=_activeConversation;
+@property(nonatomic) struct CGRect initialFrameBeforeAppearance; // @synthesize initialFrameBeforeAppearance=_initialFrameBeforeAppearance;
 - (void).cxx_destruct;
 - (void)_prepareForPresentationWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)_didRemoveAssetArchiveWithIdentifier:(id)arg1;
@@ -49,7 +50,7 @@
 - (void)requestPresentationStyle:(unsigned long long)arg1;
 - (void)_conversation:(id)arg1 didSelectMessage:(id)arg2;
 - (void)_conversation:(id)arg1 willSelectMessage:(id)arg2;
-- (void)viewWillLayoutSubviews;
+- (void)viewWillAppear:(_Bool)arg1;
 - (void)_setContentOverlayInsets:(struct UIEdgeInsets)arg1;
 - (void)dealloc;
 - (void)didTransitionToPresentationStyle:(unsigned long long)arg1;
@@ -60,6 +61,7 @@
 - (void)didSelectMessage:(id)arg1 conversation:(id)arg2;
 - (void)willSelectMessage:(id)arg1 conversation:(id)arg2;
 - (void)dismiss;
+- (void)_volumeButtonPressed:(_Bool)arg1;
 - (void)_dismissAndPresentPhotosApp;
 
 // Remaining properties

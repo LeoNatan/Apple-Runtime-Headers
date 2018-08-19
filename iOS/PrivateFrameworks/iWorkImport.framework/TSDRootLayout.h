@@ -18,7 +18,7 @@ __attribute__((visibility("hidden")))
     TSURetainedPointerKeyDictionary *_shiftedObjects;
 }
 
-@property(readonly, nonatomic) TSDLayoutController *layoutController; // @synthesize layoutController=_layoutController;
+@property(readonly, nonatomic) __weak TSDLayoutController *layoutController; // @synthesize layoutController=_layoutController;
 - (void).cxx_destruct;
 - (struct CGPoint)applyAdaptiveLayoutTo:(id)arg1 info:(id)arg2 offset:(struct CGPoint)arg3;
 - (struct CGPoint)adjustMappingPointForInfo:(id)arg1 fromPoint:(struct CGPoint)arg2;

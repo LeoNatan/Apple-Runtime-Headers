@@ -39,6 +39,7 @@
 + (id)cleanImageMetadataFromData:(id)arg1;
 + (BOOL)hasPrivateImageMetadata:(id)arg1;
 + (id)supportedOutputTypes;
++ (struct CGSize)minimumToolbarSize;
 @property BOOL cropToolEnabled; // @synthesize cropToolEnabled=_cropToolEnabled;
 @property(copy, nonatomic) NSString *hostProcessBundleIdentifier; // @synthesize hostProcessBundleIdentifier=_hostProcessBundleIdentifier;
 @property BOOL encryptPrivateMetadata; // @synthesize encryptPrivateMetadata=_encryptPrivateMetadata;
@@ -66,6 +67,7 @@
 - (BOOL)_writeToDataConsumer:(struct CGDataConsumer *)arg1 embedSourceImageAndEditModel:(BOOL)arg2 error:(id *)arg3;
 - (id)_outputContentType;
 - (id)_sourceContentType;
+- (void)finalizeCrop;
 - (void)editDetectedForAnnotationController:(id)arg1;
 - (id)annotationControllerOfContentViewController:(id)arg1 willSetToolbarItems:(id)arg2;
 - (struct CGRect)positioningRectForCandidatePickerForContentViewController:(id)arg1;

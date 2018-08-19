@@ -56,6 +56,7 @@
     _Bool _allowsActionsModel;
     _Bool _hideCardActions;
     _Bool _outOfProcessSetupComplete;
+    _Bool _didSetFirstResponder;
     _Bool _contactSupportsTTYCalls;
     _Bool _runningPPT;
     _Bool _allowsEditInApp;
@@ -183,6 +184,7 @@
 @property(nonatomic) _Bool contactSupportsTTYCalls; // @synthesize contactSupportsTTYCalls=_contactSupportsTTYCalls;
 @property(retain, nonatomic) CNUIUserActionListDataSource *actionsDataSource; // @synthesize actionsDataSource=_actionsDataSource;
 @property(retain, nonatomic) NSArray *highlightedProperties; // @synthesize highlightedProperties=_highlightedProperties;
+@property(nonatomic) _Bool didSetFirstResponder; // @synthesize didSetFirstResponder=_didSetFirstResponder;
 @property(nonatomic) _Bool outOfProcessSetupComplete; // @synthesize outOfProcessSetupComplete=_outOfProcessSetupComplete;
 @property(retain, nonatomic) HKHealthStore *healthStore; // @synthesize healthStore=_healthStore;
 @property(retain, nonatomic) NSDictionary *userActivityUserInfo; // @synthesize userActivityUserInfo=_userActivityUserInfo;
@@ -417,6 +419,7 @@
 - (void)contactInlineActionsViewControllerWillPresentDisambiguationUI:(id)arg1;
 - (_Bool)contactInlineActionsViewController:(id)arg1 shouldPerformActionOfType:(id)arg2 withContactProperty:(id)arg3;
 @property(readonly) _Bool isPresentingModalViewController;
+- (void)sender:(id)arg1 dismissViewController:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)sender:(id)arg1 dismissViewController:(id)arg2;
 - (long long)_modalPresentationStyleForViewController:(id)arg1;
 - (long long)adaptivePresentationStyleForPresentationController:(id)arg1;

@@ -7,13 +7,13 @@
 #import <RemoteUI/RUIElement.h>
 
 #import "CAAnimationDelegate.h"
+#import "PSPasscodeFieldDelegate.h"
 #import "RUITableFooterDelegate.h"
 #import "RUITopLevelPageElement.h"
-#import "_TVDigitEntryViewControllerDelegate.h"
 
-@class NSString, PSPasscodeField, RUIHTMLHeaderElement, RUIHeaderElement, RUIObjectModel, RUIPage, UIColor, UIScrollView, UITextField, UIView<RUIHeader>, UIView<RemoteUITableFooter>, _TVDigitEntryViewController;
+@class NSString, PSPasscodeField, RUIHTMLHeaderElement, RUIHeaderElement, RUIObjectModel, RUIPage, TVDigitEntryViewController, UIColor, UIScrollView, UITextField, UIView<RUIHeader>, UIView<RemoteUITableFooter>;
 
-@interface RUIPasscodeView : RUIElement <RUITableFooterDelegate, _TVDigitEntryViewControllerDelegate, CAAnimationDelegate, RUITopLevelPageElement>
+@interface RUIPasscodeView : RUIElement <RUITableFooterDelegate, PSPasscodeFieldDelegate, CAAnimationDelegate, RUITopLevelPageElement>
 {
     UIScrollView *_containerView;
     UIView<RUIHeader> *_headerView;
@@ -23,7 +23,7 @@
     NSString *_pendingAutoFillToken;
     _Bool _appeared;
     unsigned long long _passcodeValidationAttempts;
-    _TVDigitEntryViewController *_tvDigitEntry;
+    TVDigitEntryViewController *_tvDigitEntry;
     RUIObjectModel *_objectModel;
     RUIPage *_page;
     NSString *_headerTitle;
@@ -55,7 +55,7 @@
 - (void)autofillWithToken:(id)arg1;
 - (void)_clearPasscode;
 - (void)submitPIN;
-- (void)digitEntryViewControllerDidFinish:(id)arg1;
+- (void)_didSelectMenu;
 - (void)passcodeField:(id)arg1 enteredPasscode:(id)arg2;
 - (void)footerView:(id)arg1 activatedLinkWithURL:(id)arg2;
 - (id)footerView;

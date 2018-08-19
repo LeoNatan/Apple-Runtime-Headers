@@ -26,6 +26,7 @@
     NSNotificationCenter *_notificationCenter;
     AVTDeviceResourceManager *_deviceResourceManager;
     double _actionAnimationsMultiplier;
+    struct CGSize _mainScreenSize;
 }
 
 + (id)imageCacheStoreLocationWithError:(id *)arg1;
@@ -47,6 +48,7 @@
 @property(readonly, copy, nonatomic) CDUnknownBlockType lockProvider; // @synthesize lockProvider=_lockProvider;
 @property(readonly, copy, nonatomic) CDUnknownBlockType serialQueueProvider; // @synthesize serialQueueProvider=_serialQueueProvider;
 @property(readonly, nonatomic) long long userInterfaceLayoutDirection; // @synthesize userInterfaceLayoutDirection=_userInterfaceLayoutDirection;
+@property(readonly, nonatomic) struct CGSize mainScreenSize; // @synthesize mainScreenSize=_mainScreenSize;
 @property(readonly, nonatomic) double mainScreenScale; // @synthesize mainScreenScale=_mainScreenScale;
 @property(readonly, nonatomic) id <AVTUILogger> logger; // @synthesize logger=_logger;
 - (void).cxx_destruct;

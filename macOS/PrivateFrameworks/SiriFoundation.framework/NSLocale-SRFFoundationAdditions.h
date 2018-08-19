@@ -7,6 +7,7 @@
 #import "NSLocale.h"
 
 @interface NSLocale (SRFFoundationAdditions)
++ (id)siriRecognitionLanguageFromLocaleIdentifier:(id)arg1;
 + (BOOL)hasAmbiguousSiriLanguage;
 + (BOOL)hasSupportedSiriLanguage;
 + (id)supportedSiriLanguageCodes;

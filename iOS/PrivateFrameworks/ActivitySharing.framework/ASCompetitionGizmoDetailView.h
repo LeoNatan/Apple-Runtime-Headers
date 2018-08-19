@@ -30,7 +30,7 @@
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)layoutForWidth:(double)arg1;
 - (void)layoutSubviews;
-- (id)initWithDetailViewType:(long long)arg1 thumbnailCreationBlock:(CDUnknownBlockType)arg2;
+- (id)initWithDetailViewType:(long long)arg1;
 
 @end
 

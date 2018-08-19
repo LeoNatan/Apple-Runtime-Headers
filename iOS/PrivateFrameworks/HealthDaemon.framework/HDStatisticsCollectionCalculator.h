@@ -42,6 +42,7 @@
 - (_Bool)performAddSampleTransaction:(CDUnknownBlockType)arg1 error:(id *)arg2;
 - (_Bool)addSampleValue:(double)arg1 startTime:(double)arg2 endTime:(double)arg3 sourceID:(long long)arg4 error:(id *)arg5;
 @property(nonatomic) __weak id <HDStatisticsCollectionCalculatorDataSource> dataSource;
+- (void)configureMergeAnchor:(id)arg1;
 @property(copy, nonatomic) NSDateInterval *dateInterval;
 @property(nonatomic) double mergeGranularity;
 - (_Bool)setMaskedIntervals:(id)arg1 error:(id *)arg2;

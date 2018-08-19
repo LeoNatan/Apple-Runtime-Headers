@@ -13,11 +13,11 @@ __attribute__((visibility("hidden")))
     id <NSSliderTickMarksDelegate> _delegate;
 }
 
-@property __weak id <NSSliderTickMarksDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)drawRect:(struct CGRect)arg1;
 @property CDStruct_5a39c0a2 drawingState;
 - (BOOL)isFlipped;
+@property __weak id <NSSliderTickMarksDelegate> delegate;
 
 @end
 

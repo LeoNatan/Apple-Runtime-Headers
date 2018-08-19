@@ -211,7 +211,7 @@
 - (void)_resetChatRegistry;
 - (id)chatPersonIDToChatMap;
 - (void)_handleMergedChatReconstructions:(id)arg1;
-- (id)_copyMergedChatsDictionaryFromMergedChatsArray:(id)arg1;
+- (id)_copyMergedChatsPairedArrayFromMergedChatsArray:(id)arg1;
 - (void)frequentRepliesQuery:(id)arg1 finishedWithResult:(id)arg2 limit:(unsigned int)arg3;
 - (void)frequentRepliesQuery:(id)arg1 chatID:(id)arg2 services:(id)arg3 finishedWithResult:(id)arg4 limit:(unsigned int)arg5;
 - (void)markAsSpamQuery:(id)arg1 chatID:(id)arg2 services:(id)arg3 finishedWithResult:(id)arg4;
@@ -229,7 +229,9 @@
 - (void)lastFailedMessageDateChanged:(long long)arg1;
 - (void)unreadCountChanged:(int)arg1;
 - (void)chat:(id)arg1 updated:(id)arg2;
+- (void)_updateInfo:(id)arg1 forGUID:(id)arg2 updatingUnreadCount:(_Bool)arg3 shouldPostUnreadNotification:(_Bool)arg4;
 - (void)_updateInfo:(id)arg1 forGUID:(id)arg2 updatingUnreadCount:(_Bool)arg3;
+- (void)_updateUnreadCountForChat:(id)arg1 shouldPostNotification:(_Bool)arg2;
 - (void)_updateUnreadCountForChat:(id)arg1;
 - (void)engroupParticipantsUpdatedForChat:(id)arg1;
 - (void)chat:(id)arg1 engramIDUpdated:(id)arg2;

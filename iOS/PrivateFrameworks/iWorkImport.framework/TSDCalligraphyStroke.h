@@ -12,7 +12,6 @@ __attribute__((visibility("hidden")))
 }
 
 + (Class)mutableClass;
-- (double)i_verticalOffsetForSwatch;
 - (double)horizontalMarginForSwatch;
 - (struct CGRect)boundsForLineEnd:(id)arg1 atPoint:(struct CGPoint)arg2 atAngle:(double)arg3 withScale:(double)arg4 transform:(struct CGAffineTransform)arg5;
 - (void)paintLineEnd:(id)arg1 atPoint:(struct CGPoint)arg2 atAngle:(double)arg3 withScale:(double)arg4 inContext:(struct CGContext *)arg5 useFastDrawing:(_Bool)arg6;

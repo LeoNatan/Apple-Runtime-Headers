@@ -26,7 +26,7 @@
 - (void)deregisterIdentity:(id)arg1 object:(id)arg2;
 - (void)registerIdentity:(id)arg1 account:(id)arg2 object:(id)arg3;
 - (void)registerIdentity:(id)arg1 device:(id)arg2 object:(id)arg3;
-- (id)accountForIdentity:(id)arg1;
+- (id)accountsForIdentity:(id)arg1;
 - (id)identitiesForAccount:(id)arg1;
 - (id)identitiesForDevice:(id)arg1;
 - (id)identityForIdentifier:(id)arg1;

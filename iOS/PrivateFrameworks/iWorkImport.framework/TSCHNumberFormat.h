@@ -21,12 +21,12 @@ __attribute__((visibility("hidden")))
 {
     NSString *mPrefixString;
     NSString *mSuffixString;
-    CDStruct_28403e59 mFormatStruct;
+    CDStruct_b1066b25 mFormatStruct;
 }
 
 + (int)labelFormatTypeFromTSUFormatType:(int)arg1;
 + (_Bool)supportsFormatType:(int)arg1;
-+ (id)numberFormatWithFormatStruct:(CDStruct_28403e59)arg1 prefixString:(id)arg2 suffixString:(id)arg3;
++ (id)numberFormatWithFormatStruct:(CDStruct_b1066b25)arg1 prefixString:(id)arg2 suffixString:(id)arg3;
 + (id)numberFormatWithFormatType:(int)arg1 decimalPlaces:(unsigned int)arg2 showThousandsSeparator:(_Bool)arg3;
 + (id)defaultDecimalNumberFormat;
 + (_Bool)defaultBaseUseMinusSign;
@@ -49,7 +49,7 @@ __attribute__((visibility("hidden")))
 - (id)dataFormatterForDocumentRoot:(id)arg1 pasteboardCustomFormatList:(id)arg2;
 - (id)customFormatListKey;
 - (id)customFormatKey;
-- (CDStruct_28403e59)formatStruct;
+- (CDStruct_b1066b25)formatStruct;
 - (_Bool)isCustom;
 @property(readonly, nonatomic) _Bool baseUseMinusSign;
 - (_Bool)p_baseUseMinusSignIfAvailable;
@@ -99,8 +99,8 @@ __attribute__((visibility("hidden")))
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)dealloc;
 - (id)init;
-- (id)initWithFormatStruct:(CDStruct_28403e59)arg1 prefixString:(id)arg2 suffixString:(id)arg3;
-- (id)p_initWithFormatStruct:(CDStruct_28403e59)arg1 prefixString:(id)arg2 suffixString:(id)arg3;
+- (id)initWithFormatStruct:(CDStruct_b1066b25)arg1 prefixString:(id)arg2 suffixString:(id)arg3;
+- (id)p_initWithFormatStruct:(CDStruct_b1066b25)arg1 prefixString:(id)arg2 suffixString:(id)arg3;
 - (id)upgradedNumberFormatFromPreUFFOrUnity1_0;
 - (void)saveToArchive:(struct FormatStructArchive *)arg1 archiver:(id)arg2;
 - (id)initWithArchive:(const struct FormatStructArchive *)arg1 unarchiver:(id)arg2;

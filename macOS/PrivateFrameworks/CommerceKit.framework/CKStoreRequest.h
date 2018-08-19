@@ -51,7 +51,7 @@
 - (id)initWithStoreClient:(id)arg1 bagURLKey:(id)arg2;
 - (id)_initWithStoreClient:(id)arg1;
 - (id)_cookieHeader;
-- (id)_URLRequest;
+- (id)_URLRequestWithError:(id *)arg1;
 
 @end
 

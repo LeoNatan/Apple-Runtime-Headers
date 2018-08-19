@@ -8,6 +8,7 @@
 
 @protocol SPRemoteNotificationViewHost
 @property(readonly, copy, nonatomic) NSString *hostID;
+- (void)localServiceViewDidDisappear;
 - (void)localServiceViewDidAppear;
 - (void)didShowStaticPresentation;
 - (void)didShowRemoteView;

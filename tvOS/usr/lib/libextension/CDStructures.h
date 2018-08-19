@@ -408,7 +408,8 @@ typedef struct {
 typedef struct {
     id _field1;
     void *_field2;
-} CDStruct_c69bce23;
+    long long _field3;
+} CDStruct_4829dca9;
 
 typedef struct {
     _Bool _field1;

@@ -28,6 +28,7 @@
     } _flags;
 }
 
+@property(readonly, getter=isElasticOnly) BOOL elasticOnly;
 - (BOOL)hasElasticRange;
 - (void)justifyWithFactor:(double)arg1;
 - (void)saveWithGlyphOrigin:(double)arg1;

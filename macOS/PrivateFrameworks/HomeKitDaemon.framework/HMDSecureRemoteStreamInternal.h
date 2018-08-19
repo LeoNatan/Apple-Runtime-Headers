@@ -6,9 +6,11 @@
 
 #import "HMFObject.h"
 
+#import "HMFLogging.h"
+
 @class NSMutableArray, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, NSString;
 
-@interface HMDSecureRemoteStreamInternal : HMFObject
+@interface HMDSecureRemoteStreamInternal : HMFObject <HMFLogging>
 {
     unsigned char _cipherReadKey[32];
     unsigned char _cipherReadNonce[8];
@@ -18,7 +20,6 @@
     NSObject<OS_dispatch_source> *_idleTimer;
     NSObject<OS_dispatch_queue> *_internalQueue;
     CDUnknownBlockType _internalRequestHandler;
-    const char *_label;
     unsigned char _pairVerifyDone;
     struct PairingSessionPrivate *_pairVerifySession;
     NSMutableDictionary *_prepareRequests;
@@ -43,6 +44,7 @@
     unsigned long long _sendUserTimeoutNanos;
 }
 
++ (id)logCategory;
 @property(copy) CDUnknownBlockType transportSendMessage; // @synthesize transportSendMessage=_transportSendMessage;
 @property(copy) CDUnknownBlockType stoppedHandler; // @synthesize stoppedHandler=_stoppedHandler;
 @property(copy) CDUnknownBlockType startedHandler; // @synthesize startedHandler=_startedHandler;
@@ -52,6 +54,7 @@
 @property(copy) CDUnknownBlockType internalRequestHandler; // @synthesize internalRequestHandler=_internalRequestHandler;
 @property(retain) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_userQueue;
 - (void).cxx_destruct;
+- (id)logIdentifier;
 - (void)_serverCompletePrepareRequest:(id)arg1;
 - (int)_serverHandleCommitRequest:(id)arg1 responseHandler:(CDUnknownBlockType)arg2;
 - (int)_serverHandlePrepareRequest:(id)arg1 responseHandler:(CDUnknownBlockType)arg2;
@@ -83,6 +86,12 @@
 - (void)dealloc;
 - (id)initWithType:(long long)arg1 commitTimeout:(unsigned long long)arg2 clientIdleTimeout:(unsigned long long)arg3 serverIdleTimeout:(unsigned long long)arg4 sendInternalTimeout:(unsigned long long)arg5 sendUserTimeout:(unsigned long long)arg6;
 - (id)init;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

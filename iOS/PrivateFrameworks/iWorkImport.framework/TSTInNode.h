@@ -17,7 +17,7 @@ __attribute__((visibility("hidden")))
 - (void)saveToArchiver:(id)arg1;
 - (void)loadFromUnarchiver:(id)arg1;
 - (id)formulaPlainText;
-- (id)argumentSpec;
+- (struct TSCEFunctionArgSpec *)argumentSpec;
 - (id)string;
 - (int)tokenType;
 

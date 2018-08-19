@@ -32,7 +32,6 @@
 + (id)_findFirstKeyViewInDirection:(unsigned long long)arg1 forKeyLoopGroupingView:(id)arg2;
 + (id)_remoteViewForIdentifier:(id)arg1;
 + (void)initialize;
-+ (void)load;
 + (void)_addFreeWindow:(id)arg1 parameters:(const CDStruct_d1b93830 *)arg2 listenerEndpoint:(id)arg3 reply:(CDUnknownBlockType)arg4;
 + (BOOL)automaticallyNotifiesObserversOfTouchBar;
 - (BOOL)_windowGeometryChangingAtRequestOfService;
@@ -196,7 +195,6 @@
 - (void)_copyFromBootstrapParameters:(const CDStruct_e2fa5527 *)arg1;
 - (double)_reportScaleFactor;
 - (double)_backingScaleFactorOrZero;
-- (id)_effectiveAppearanceName;
 - (id)auxiliaryClientListenerEndpoint;
 - (id)auxiliaryServiceListenerEndpoint;
 - (id)auxiliaryListenerEndpointForProtocol:(id)arg1;

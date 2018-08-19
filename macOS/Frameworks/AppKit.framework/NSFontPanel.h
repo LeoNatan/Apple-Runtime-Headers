@@ -170,7 +170,6 @@
 - (void *)_carbonNotification;
 - (oneway void)release;
 - (void)_fontPanelDidLoad;
-- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (id)initWithContentRect:(struct CGRect)arg1 styleMask:(unsigned long long)arg2 backing:(unsigned long long)arg3 defer:(BOOL)arg4;
 - (void)_setup;
 - (id)_currentFamilyName;

@@ -28,7 +28,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
-+ (long long)_defaultOutputFormat;
++ (long long)_outputFormatForSnapshot:(id)arg1;
 + (void)_configureSnapshot:(id)arg1 withCompatibilityInfo:(id)arg2 forLaunchRequest:(id)arg3;
 + (id)_snapshotPredicateForRequest:(id)arg1;
 + (void)_flushManifestQueue;

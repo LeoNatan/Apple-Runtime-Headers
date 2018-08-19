@@ -21,13 +21,16 @@
     _Bool _isWebUIFlowSupported;
     _Bool _isActivationCodeFlowSupported;
     _Bool _isCarrierItemFlowSupported;
+    _Bool _carrierListFetchInProgress;
     NSArray *_cachedCarrierItems;
 }
 
 + (id)sharedInstance;
+@property _Bool carrierListFetchInProgress; // @synthesize carrierListFetchInProgress=_carrierListFetchInProgress;
 @property(retain) NSArray *cachedCarrierItems; // @synthesize cachedCarrierItems=_cachedCarrierItems;
 - (void).cxx_destruct;
 - (id)subscriptionContextForPlanItem:(id)arg1 cachedSubscriptionContexts:(id)arg2;
+- (void)clearCachedCarrierItems;
 @property(readonly, nonatomic) NSArray *carrierItems;
 @property(readonly, nonatomic) _Bool isCarrierItemFlowSupported;
 @property(readonly, nonatomic) _Bool isActivationCodeFlowSupported;
@@ -49,8 +52,8 @@
 @property(readonly, nonatomic) _Bool shouldShowDataPlanList;
 @property(readonly, nonatomic) _Bool shouldShowAddPlan;
 - (void)_fetchPlanItemsIfNeeded;
-- (void)_invalidatePlanItemsCache;
 - (void)_carrierInfoDidChange;
+- (void)_invalidatePlanItemsCache;
 - (void)_planInfoDidChange;
 - (void)dealloc;
 - (id)init;

@@ -82,6 +82,7 @@
 @property(readonly, nonatomic) long long alertType; // @synthesize alertType=_alertType;
 @property(nonatomic) __weak id <TKTonePickerControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (void)_handleAlertOverridePolicyDidChangeNotification:(id)arg1;
 - (void)_toneManagerContentsChanged:(id)arg1;
 - (void)_resetSelectedClassicAlertToneIndex;
 - (void)_resetSelectedClassicRingtoneIndex;

@@ -17,10 +17,8 @@
 - (void)didChangeValueForKey:(id)arg1;
 
 // Remaining properties
-@property(retain, nonatomic) NSSet *aggregateUsages; // @dynamic aggregateUsages;
 @property(retain, nonatomic) NSSet *apps; // @dynamic apps;
 @property(copy, nonatomic) NSString *identifier; // @dynamic identifier;
-@property(retain, nonatomic) NSSet *usages; // @dynamic usages;
 
 @end
 

@@ -143,6 +143,7 @@
 - (void)cleanUpAfterGestureFailureForEventGestureController:(id)arg1;
 - (_Bool)_shouldEndGestureEditingOnTap;
 - (_Bool)eventEditorPopoverActiveWhileDraggingForEventGestureController:(id)arg1;
+- (void)validateInterfaceOrientation;
 - (void)externallyEndedGestureDragging;
 - (_Bool)didScrollWhenEventGestureController:(id)arg1 scrollTimerFiredToMoveLeft:(_Bool)arg2 right:(_Bool)arg3 vertically:(_Bool)arg4 towardPoint:(struct CGPoint)arg5;
 - (void)eventGestureController:(id)arg1 didSingleTapOccurrence:(id)arg2;

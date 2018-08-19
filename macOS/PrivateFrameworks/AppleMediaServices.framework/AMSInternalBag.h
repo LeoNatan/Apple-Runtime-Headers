@@ -6,6 +6,7 @@
 
 #import "NSObject.h"
 
+#import "AMSDeviceOfferBagContract.h"
 #import "AMSLookupBagContract.h"
 #import "AMSMescalBagContract.h"
 #import "AMSMetricsBagContract.h"
@@ -13,7 +14,7 @@
 @class AMSBag, AMSBagValue, NSString;
 
 __attribute__((visibility("hidden")))
-@interface AMSInternalBag : NSObject <AMSMetricsBagContract, AMSMescalBagContract, AMSLookupBagContract>
+@interface AMSInternalBag : NSObject <AMSDeviceOfferBagContract, AMSMetricsBagContract, AMSMescalBagContract, AMSLookupBagContract>
 {
     AMSBag *_bag;
 }
@@ -42,6 +43,8 @@ __attribute__((visibility("hidden")))
 @property(readonly) AMSBagValue *metricsURL;
 @property(readonly) AMSBagValue *metricsDictionary;
 @property(readonly) AMSBagValue *unpersonalizedLookupURL;
+@property(readonly) AMSBagValue *iCloudDeviceOfferDeepLink;
+@property(readonly) AMSBagValue *appleMusicDeviceOfferDeepLink;
 - (id)init;
 
 // Remaining properties

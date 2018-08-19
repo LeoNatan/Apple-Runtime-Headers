@@ -7,10 +7,11 @@
 #import "NSObject.h"
 
 #import "CRSCardServing.h"
+#import "CRSIdentifiedServing.h"
 
 @class NSString;
 
-@interface APUICardService : NSObject <CRSCardServing>
+@interface APUICardService : NSObject <CRSCardServing, CRSIdentifiedServing>
 {
 }
 
@@ -20,6 +21,7 @@
 - (void)requestCard:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (unsigned long long)servicePriorityForRequest:(id)arg1;
 - (_Bool)canSatisfyCardRequest:(id)arg1;
+@property(readonly, copy, nonatomic) NSString *serviceIdentifier;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

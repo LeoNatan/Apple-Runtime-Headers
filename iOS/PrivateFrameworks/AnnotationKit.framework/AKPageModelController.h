@@ -16,12 +16,14 @@
     AKCropAnnotation *_cropAnnotation;
     AKInkAnnotation *_inkCanvasAnnotation;
     AKStatistics *_statisticsLogger;
+    struct CGRect _appliedCropRect;
 }
 
 + (_Bool)automaticallyNotifiesObserversForKey:(id)arg1;
 @property(nonatomic) __weak AKStatistics *statisticsLogger; // @synthesize statisticsLogger=_statisticsLogger;
 @property(retain) AKInkAnnotation *inkCanvasAnnotation; // @synthesize inkCanvasAnnotation=_inkCanvasAnnotation;
 @property(retain) AKCropAnnotation *cropAnnotation; // @synthesize cropAnnotation=_cropAnnotation;
+@property struct CGRect appliedCropRect; // @synthesize appliedCropRect=_appliedCropRect;
 @property __weak id representedObject; // @synthesize representedObject=_representedObject;
 - (void).cxx_destruct;
 - (void)_postSelectedAnnotationsChangedNotification;

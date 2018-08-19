@@ -66,7 +66,8 @@
 - (void)generateCachePayloadWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_injectProxiesForImages:(CDUnknownBlockType)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_loadImageDataAndSizeWithHelper:(id)arg1 accessSpecifier:(id)arg2 completion:(CDUnknownBlockType)arg3;
-- (id)_in_writeableFilePersistenceConfiguration;
+- (id)_in_writeableFilePersistenceConfigurationForStoreType:(unsigned long long)arg1;
+- (id)_in_downscaledImageForFilePersistence;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

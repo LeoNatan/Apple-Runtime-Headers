@@ -10,13 +10,12 @@
 #import "HMFMessageReceiver.h"
 #import "HMFTimerDelegate.h"
 
-@class HMDAccountRegistry, HMDCentralMessageDispatcher, HMDHomeManager, HMDResidentMeshMeshStorage, HMFTimer, NSMutableArray, NSObject<OS_dispatch_queue>, NSSet, NSString, NSUUID;
+@class HMDCentralMessageDispatcher, HMDHomeManager, HMDResidentMeshMeshStorage, HMFTimer, NSMutableArray, NSObject<OS_dispatch_queue>, NSSet, NSString, NSUUID;
 
 @interface HMDResidentMesh : HMFObject <HMFTimerDelegate, HMFMessageReceiver, HMFLogging>
 {
     NSUUID *_uuid;
     HMDHomeManager *_homeManager;
-    HMDAccountRegistry *_accountRegistry;
     HMDCentralMessageDispatcher *_remoteMessageDispatcher;
     NSMutableArray *_residents;
     HMDResidentMeshMeshStorage *_resident;
@@ -41,7 +40,6 @@
 @property(nonatomic) __weak HMDResidentMeshMeshStorage *resident; // @synthesize resident=_resident;
 @property(retain, nonatomic) NSMutableArray *residents; // @synthesize residents=_residents;
 @property(nonatomic) __weak HMDCentralMessageDispatcher *remoteMessageDispatcher; // @synthesize remoteMessageDispatcher=_remoteMessageDispatcher;
-@property(nonatomic) __weak HMDAccountRegistry *accountRegistry; // @synthesize accountRegistry=_accountRegistry;
 @property(nonatomic) __weak HMDHomeManager *homeManager; // @synthesize homeManager=_homeManager;
 @property unsigned long long broadcastRate; // @synthesize broadcastRate=_broadcastRate;
 @property(retain, nonatomic) NSUUID *uuid; // @synthesize uuid=_uuid;

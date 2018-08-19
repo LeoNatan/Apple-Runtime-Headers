@@ -113,6 +113,7 @@
 - (void)_determineCacheFiles;
 - (void)_determineCacheDirectory;
 - (void)_processHomeConfigurationRequest:(id)arg1 refreshRequested:(_Bool)arg2;
+- (void)__handleHomeManagerState:(id)arg1;
 - (void)_requestRefresh;
 - (void)_fetchHomeConfigurationWithPrivacyCheckWithCache:(_Bool)arg1 refreshRequested:(_Bool)arg2;
 - (void)_start;

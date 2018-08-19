@@ -17,7 +17,7 @@ __attribute__((visibility("hidden")))
 
 @property(readonly, nonatomic) TSTCellUIDList *cellFillList; // @synthesize cellFillList=_cellFillList;
 @property(readonly, nonatomic) NSMutableSet *tableStyleSet; // @synthesize tableStyleSet=_tableStyleSet;
-- (void)setTableStyleImageForArea:(unsigned long long)arg1;
+- (void)setTableStyleImageForStyleArea:(unsigned long long)arg1;
 - (void)addCellUIDToFillList:(struct TSTCellUID)arg1;
 - (void)dealloc;
 - (id)init;

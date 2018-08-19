@@ -19,7 +19,6 @@
 @property(readonly, nonatomic) id <UHASystemAppearanceInterface> systemAppearance;
 @property(copy, nonatomic) CDUnknownBlockType resignFirstResponderHandler;
 @property(copy, nonatomic) CDUnknownBlockType becomeFirstResponderHandler;
-@property(copy, nonatomic) CDUnknownBlockType performAction;
 @property(copy, nonatomic) CDUnknownBlockType performActionWithCompletionHandler;
 @property(copy, nonatomic) CDUnknownBlockType mainHostWindowDidChangeCallback;
 @property(readonly, nonatomic) id <UHAWindowInterface> mainHostWindow;

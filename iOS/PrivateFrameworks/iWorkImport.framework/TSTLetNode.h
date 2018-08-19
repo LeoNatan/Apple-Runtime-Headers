@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSString *whitespaceAfterEquals; // @synthesize whitespaceAfterEquals=_whitespaceAfterEquals;
 @property(retain, nonatomic) NSString *whitespaceAfterIdentifier; // @synthesize whitespaceAfterIdentifier=_whitespaceAfterIdentifier;
 @property(retain, nonatomic) NSString *whitespaceAfterLet; // @synthesize whitespaceAfterLet=_whitespaceAfterLet;
+- (void).cxx_destruct;
 - (void)saveToArchive:(struct LetNodeArchive *)arg1 archiver:(id)arg2;
 - (void)loadFromArchive:(const struct LetNodeArchive *)arg1 unarchiver:(id)arg2;
 - (void)saveToArchiver:(id)arg1;
@@ -31,17 +32,16 @@ __attribute__((visibility("hidden")))
 - (void)buildASTNodeArray:(struct TSCEASTNodeArray *)arg1 hostCell:(struct TSUCellCoord)arg2 symbolTable:(struct TSCESymbolTable *)arg3;
 - (id)formulaPlainText;
 - (void)addAllIdentifiersToSymbolTable:(struct TSCESymbolTable *)arg1;
-- (id)copyByResolvingIdentifiers:(id)arg1 hostTable:(id)arg2 forceReferenceInterpretation:(_Bool)arg3 symbolTable:(struct TSCESymbolTable *)arg4 oldToNewNodeMap:(id)arg5;
+- (id)copyByResolvingIdentifiers:(id)arg1 hostTable:(id)arg2 baseHostCell:(struct TSUCellCoord)arg3 forceReferenceInterpretation:(_Bool)arg4 symbolTable:(struct TSCESymbolTable *)arg5 oldToNewNodeMap:(id)arg6;
 - (void)p_fixupNodeIfFunctionNode:(id)arg1;
 - (unsigned int)boundSymbol;
-- (id)argumentSpec;
+- (struct TSCEFunctionArgSpec *)argumentSpec;
 - (id)string;
 - (int)tokenType;
 - (_Bool)isEqualToExpressionNode:(id)arg1;
 - (struct TSTCSENodeData)recordHashesForSubexpressions:(id)arg1;
 - (void)addVariablesMatchingPrefix:(id)arg1 forFormulaIndex:(unsigned long long)arg2 toDictionary:(id)arg3 symbolTable:(struct TSCESymbolTable *)arg4;
 - (void)setChildren:(id)arg1;
-- (void)dealloc;
 - (id)initAsCopyOf:(id)arg1 intoContext:(id)arg2 children:(id)arg3;
 - (id)initWithContext:(id)arg1 children:(id)arg2;
 - (id)initWithContext:(id)arg1 children:(id)arg2 firstIndex:(unsigned long long)arg3 lastIndex:(unsigned long long)arg4;

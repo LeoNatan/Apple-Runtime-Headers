@@ -25,6 +25,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) double timeOffset; // @synthesize timeOffset=_timeOffset;
 @property(readonly, nonatomic) double beginTime; // @synthesize beginTime=_beginTime;
 @property(readonly, nonatomic) CAMediaTimingFunction *timingFunction; // @synthesize timingFunction=_timingFunction;
+- (void).cxx_destruct;
 - (double)percentAtTime:(double)arg1;
 - (id)valueAtTime:(double)arg1 initialValue:(id)arg2;
 - (id)valueAtTime:(double)arg1 initialValue:(id)arg2 groupTimingFactor:(double)arg3;

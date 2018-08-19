@@ -24,10 +24,12 @@
     HFWallpaper *_customWallpaper;
     UIDropInteraction *_dropInteraction;
     NSIndexPath *_selectedIndexPath;
+    unsigned long long _numberOfWallpapersFittingInWidth;
     struct CGSize _imageSize;
 }
 
 + (_Bool)useWallpaperPickerCell;
+@property(nonatomic) unsigned long long numberOfWallpapersFittingInWidth; // @synthesize numberOfWallpapersFittingInWidth=_numberOfWallpapersFittingInWidth;
 @property(retain, nonatomic) NSIndexPath *selectedIndexPath; // @synthesize selectedIndexPath=_selectedIndexPath;
 @property(retain, nonatomic) UIDropInteraction *dropInteraction; // @synthesize dropInteraction=_dropInteraction;
 @property(retain, nonatomic) HFWallpaper *customWallpaper; // @synthesize customWallpaper=_customWallpaper;
@@ -40,6 +42,7 @@
 @property(retain, nonatomic) NSArray *namedWallpapers; // @synthesize namedWallpapers=_namedWallpapers;
 @property(nonatomic) struct CGSize imageSize; // @synthesize imageSize=_imageSize;
 - (void).cxx_destruct;
+- (void)updateScrolling;
 - (id)wallpaperForIndexPath:(id)arg1;
 @property(readonly) HFWallpaper *selectedWallpaper;
 @property(readonly) unsigned long long numberOfWallpapers;
@@ -55,7 +58,7 @@
 - (long long)numberOfSectionsInCollectionView:(id)arg1;
 - (void)setSelectedIndexPath:(id)arg1 animated:(_Bool)arg2;
 - (void)setSelectedWallpaper:(id)arg1 animated:(_Bool)arg2;
-- (void)setImageSizeToFitWidth:(double)arg1;
+- (void)setImageSizeToFitWidth:(double)arg1 forNumberOfWallpapers:(unsigned long long)arg2;
 - (void)setCustomWallpaper:(id)arg1 image:(id)arg2;
 - (struct CGSize)preferredContentSize;
 - (void)viewDidLoad;

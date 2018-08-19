@@ -115,6 +115,7 @@ __attribute__((visibility("hidden")))
 @property(readonly) BOOL enableVPBLogging;
 @property(readonly) int enable2vuyCapture;
 @property(readonly) BOOL enableBitstreamCapture;
+- (unsigned int)forceThermalLevelFramerate:(unsigned int)arg1;
 @property(readonly) BOOL forceEnablePearlCamera;
 @property(readonly) BOOL forceMirroredCapture;
 @property(readonly) BOOL forceARCapture;

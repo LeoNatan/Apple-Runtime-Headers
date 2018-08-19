@@ -8,15 +8,18 @@
 
 #import "KNAnimationPluginContext.h"
 
-@class KNAnimatedBuild, KNAnimationRandomGenerator, NSArray, NSDictionary, NSString, TSDGLState, TSDRep;
+@class KNAnimatedBuild, KNAnimationRandomGenerator, NSArray, NSDictionary, NSString, TSDGLState, TSDMetalContext, TSDRep;
 
 __attribute__((visibility("hidden")))
 @interface KNAnimationPluginContext : NSObject <KNAnimationPluginContext>
 {
     _Bool _isMotionBlurred;
     _Bool _isPreview;
+    _Bool _isMovieExport;
     _Bool _isWarmingUp;
     NSArray *_textures;
+    NSArray *_highlightingTextures;
+    NSArray *_allTextures;
     NSDictionary *_scaledTextures;
     NSArray *_tags;
     unsigned long long _direction;
@@ -26,18 +29,25 @@ __attribute__((visibility("hidden")))
     NSDictionary *_transitionAttributes;
     NSArray *_magicMoveMatches;
     TSDGLState *_GLState;
+    TSDMetalContext *_metalContext;
     TSDRep *_rep;
     long long _rendererType;
     KNAnimationRandomGenerator *_randomGenerator;
     struct CGRect _boundingRectOnCanvas;
     struct CGRect _boundingRect;
+    struct CGRect _drawableFrame;
+    struct CGRect _animationFrame;
 }
 
 @property(retain, nonatomic) KNAnimationRandomGenerator *randomGenerator; // @synthesize randomGenerator=_randomGenerator;
 @property(nonatomic) long long rendererType; // @synthesize rendererType=_rendererType;
 @property(nonatomic) __weak TSDRep *rep; // @synthesize rep=_rep;
 @property(nonatomic) _Bool isWarmingUp; // @synthesize isWarmingUp=_isWarmingUp;
+@property(nonatomic) struct CGRect animationFrame; // @synthesize animationFrame=_animationFrame;
+@property(nonatomic) struct CGRect drawableFrame; // @synthesize drawableFrame=_drawableFrame;
+@property(retain, nonatomic) TSDMetalContext *metalContext; // @synthesize metalContext=_metalContext;
 @property(retain, nonatomic) TSDGLState *GLState; // @synthesize GLState=_GLState;
+@property(nonatomic) _Bool isMovieExport; // @synthesize isMovieExport=_isMovieExport;
 @property(nonatomic) _Bool isPreview; // @synthesize isPreview=_isPreview;
 @property(nonatomic) __weak NSArray *magicMoveMatches; // @synthesize magicMoveMatches=_magicMoveMatches;
 @property(nonatomic) __weak NSDictionary *transitionAttributes; // @synthesize transitionAttributes=_transitionAttributes;
@@ -50,6 +60,8 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) unsigned long long direction; // @synthesize direction=_direction;
 @property(retain, nonatomic) NSArray *tags; // @synthesize tags=_tags;
 @property(retain, nonatomic) NSDictionary *scaledTextures; // @synthesize scaledTextures=_scaledTextures;
+@property(retain, nonatomic) NSArray *allTextures; // @synthesize allTextures=_allTextures;
+@property(retain, nonatomic) NSArray *highlightingTextures; // @synthesize highlightingTextures=_highlightingTextures;
 @property(retain, nonatomic) NSArray *textures; // @synthesize textures=_textures;
 - (void).cxx_destruct;
 @property(readonly, copy) NSString *description;

@@ -12,10 +12,15 @@ __attribute__((visibility("hidden")))
 @interface TSDBrushStrokeLayoutOptions : NSObject
 {
     NSArray *_patternOffsetsBySubpath;
+    NSArray *_transparencyLayersBySubpath;
+    double _strokeEnd;
 }
 
+@property(nonatomic) double strokeEnd; // @synthesize strokeEnd=_strokeEnd;
+@property(copy, nonatomic) NSArray *transparencyLayersBySubpath; // @synthesize transparencyLayersBySubpath=_transparencyLayersBySubpath;
 @property(copy, nonatomic) NSArray *patternOffsetsBySubpath; // @synthesize patternOffsetsBySubpath=_patternOffsetsBySubpath;
 - (void).cxx_destruct;
+- (id)init;
 
 @end
 

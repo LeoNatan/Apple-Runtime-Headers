@@ -21,6 +21,7 @@
     unsigned int _reserved:28;
 }
 
++ (struct CGColor *)newColorByAdjustingLightnessOfColor:(struct CGColor *)arg1 darker:(_Bool)arg2;
 + (id)bestMatchUsingImages:(id)arg1 scaleFactor:(float)arg2 deviceIdiom:(int)arg3 deviceSubtype:(unsigned int)arg4 displayGamut:(unsigned int)arg5 layoutDirection:(unsigned int)arg6 sizeClassHorizontal:(int)arg7 sizeClassVertical:(int)arg8;
 + (id)bestMatchUsingImages:(id)arg1 scaleFactor:(float)arg2 deviceIdiom:(int)arg3 displayGamut:(unsigned int)arg4 deviceSubtype:(unsigned int)arg5 sizeClassHorizontal:(int)arg6 sizeClassVertical:(int)arg7;
 + (id)bestMatchUsingImages:(id)arg1 scaleFactor:(float)arg2 deviceIdiom:(int)arg3 deviceSubtype:(unsigned int)arg4 sizeClassHorizontal:(int)arg5 sizeClassVertical:(int)arg6;

@@ -133,6 +133,8 @@
 - (void)_accessibilitySetNavigationControllerInset:(struct UIEdgeInsets)arg1;
 - (void)_accessibilityConvertStyleAttributesToAccessibility:(id)arg1;
 - (void)_accessibilitySetValue:(id)arg1;
+- (_Bool)_accessibilityIncreaseLayoutBounds;
+- (void)_accessibilitySetIncreaseLayoutBounds:(_Bool)arg1;
 - (_Bool)_accessibilityTextViewShouldBreakUpParagraphs;
 - (void)_accessibilitySetTextViewShouldBreakUpParagraphs:(_Bool)arg1;
 - (id)_accessibilityTextChecker;
@@ -706,6 +708,8 @@
 - (_Bool)_accessibilityIsMainWindow;
 - (void)_setAccessibilityWindowVisible:(_Bool)arg1;
 - (_Bool)_accessibilityWindowVisible;
+- (void)_setAccessibilityEncodedHierarchyData:(id)arg1;
+- (id)_accessibilityEncodedHierarchyData;
 - (_Bool)_accessibilitySelfFoundByHitTesting;
 - (id)_accessibilityBaseHitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (_Bool)_accessibilityAllowOutOfBoundsHitTestAtPoint:(struct CGPoint)arg1 withEvent:(id)arg2;

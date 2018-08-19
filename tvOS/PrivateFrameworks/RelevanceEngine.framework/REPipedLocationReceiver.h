@@ -24,6 +24,7 @@
 - (void)_queue_setupConnection;
 @property(copy, nonatomic) CLLocation *location;
 - (void)_queue_setLocation:(id)arg1;
+- (void)dealloc;
 - (id)init;
 
 // Remaining properties

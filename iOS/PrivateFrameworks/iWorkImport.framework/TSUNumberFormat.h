@@ -54,7 +54,7 @@ __attribute__((visibility("hidden")))
 + (id)numberFormatWithValueType:(int)arg1 formatString:(id)arg2 decimalPlaces:(unsigned short)arg3 currencyCode:(id)arg4 useAccountingStyle:(_Bool)arg5 negativeStyle:(int)arg6 showThousandsSeparator:(_Bool)arg7 fractionAccuracy:(int)arg8 prefixString:(id)arg9 suffixString:(id)arg10 scaleFactor:(double)arg11 base:(unsigned char)arg12 basePlaces:(unsigned short)arg13 baseUseMinusSign:(_Bool)arg14 isCustom:(_Bool)arg15 formatName:(id)arg16;
 + (id)numberFormatWithValueType:(int)arg1 formatString:(id)arg2 decimalPlaces:(unsigned short)arg3 currencyCode:(id)arg4 useAccountingStyle:(_Bool)arg5 negativeStyle:(int)arg6 showThousandsSeparator:(_Bool)arg7 fractionAccuracy:(int)arg8;
 + (id)instanceWithArchive:(const struct FormatStructArchive *)arg1 unarchiver:(id)arg2;
-+ (id)numberFormatFromFormatStruct:(CDStruct_28403e59)arg1;
++ (id)numberFormatFromFormatStruct:(CDStruct_b1066b25)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly, copy) NSString *description;
@@ -111,7 +111,7 @@ __attribute__((visibility("hidden")))
 - (id)baseStringFromDouble:(double)arg1;
 - (id)initWithArchive:(const struct FormatStructArchive *)arg1 unarchiver:(id)arg2;
 - (void)saveToArchive:(struct FormatStructArchive *)arg1 archiver:(id)arg2;
-- (CDStruct_28403e59)formatStructAndCustomFormatData:(id *)arg1;
+- (CDStruct_b1066b25)formatStructAndCustomFormatData:(id *)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

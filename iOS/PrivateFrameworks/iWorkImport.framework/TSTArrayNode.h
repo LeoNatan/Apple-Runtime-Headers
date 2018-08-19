@@ -11,26 +11,26 @@
 __attribute__((visibility("hidden")))
 @interface TSTArrayNode : TSTExpressionNode
 {
-    struct TSCEVectorIndexPair mDimensions;
-    NSString *mWhitespaceBeforeFirstChild;
-    NSArray *mWhitespaceAfterDelimiters;
+    struct TSCEVectorIndexPair _dimensions;
+    NSString *_whitespaceBeforeFirstChild;
+    NSArray *_whitespaceAfterDelimiters;
 }
 
-@property(retain) NSArray *whitespaceAfterDelimiters; // @synthesize whitespaceAfterDelimiters=mWhitespaceAfterDelimiters;
-@property(retain) NSString *whitespaceBeforeFirstChild; // @synthesize whitespaceBeforeFirstChild=mWhitespaceBeforeFirstChild;
+@property(retain) NSArray *whitespaceAfterDelimiters; // @synthesize whitespaceAfterDelimiters=_whitespaceAfterDelimiters;
+@property(retain) NSString *whitespaceBeforeFirstChild; // @synthesize whitespaceBeforeFirstChild=_whitespaceBeforeFirstChild;
+@property(readonly) struct TSCEVectorIndexPair dimensions; // @synthesize dimensions=_dimensions;
 - (id).cxx_construct;
+- (void).cxx_destruct;
 - (void)saveToArchive:(struct ArrayNodeArchive *)arg1 archiver:(id)arg2;
 - (void)loadFromArchive:(const struct ArrayNodeArchive *)arg1 unarchiver:(id)arg2;
 - (void)saveToArchiver:(id)arg1;
 - (void)loadFromUnarchiver:(id)arg1;
 - (void)buildASTNodeArray:(struct TSCEASTNodeArray *)arg1 hostCell:(struct TSUCellCoord)arg2 symbolTable:(struct TSCESymbolTable *)arg3;
 - (void)insertFormulaText:(id)arg1 includeWhitespace:(_Bool)arg2;
-- (id)argumentSpec;
+- (struct TSCEFunctionArgSpec *)argumentSpec;
 - (id)string;
 - (int)tokenType;
 - (struct TSTCSENodeData)recordHashesForSubexpressions:(id)arg1;
-- (struct TSCEVectorIndexPair)dimensions;
-- (void)dealloc;
 - (id)initAsCopyOf:(id)arg1 intoContext:(id)arg2 children:(id)arg3;
 - (id)initWithContext:(id)arg1 firstIndex:(unsigned long long)arg2 lastIndex:(unsigned long long)arg3;
 - (id)initWithContext:(id)arg1 children:(id)arg2 columns:(unsigned char)arg3 rows:(unsigned short)arg4 firstIndex:(unsigned long long)arg5 lastIndex:(unsigned long long)arg6;

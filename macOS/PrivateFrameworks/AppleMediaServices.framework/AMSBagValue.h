@@ -19,6 +19,7 @@
 + (id)_valueFromDictionary:(id)arg1 forBagKey:(id)arg2;
 + (id)globalBagValueStorage;
 + (id)frozenBagValueWithKey:(id)arg1 value:(id)arg2 valueType:(unsigned long long)arg3;
++ (id)failingBagValueWithKey:(id)arg1 valueType:(unsigned long long)arg2 error:(id)arg3;
 @property unsigned long long valueType; // @synthesize valueType=_valueType;
 @property(retain) NSString *key; // @synthesize key=_key;
 @property __weak id <AMSBagDataSourceProtocol> dataSource; // @synthesize dataSource=_dataSource;

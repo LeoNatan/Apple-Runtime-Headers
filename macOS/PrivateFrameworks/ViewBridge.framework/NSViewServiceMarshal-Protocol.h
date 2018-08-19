@@ -6,7 +6,7 @@
 
 #import "NSVB_ViewServiceUIBehaviorInterface.h"
 
-@class NSBitmapImageRep, NSColor, NSData, NSDictionary, NSNumber, NSObject<NSSecureCoding>, NSString;
+@class NSAppearance, NSBitmapImageRep, NSColor, NSData, NSDictionary, NSNumber, NSObject<NSSecureCoding>, NSString;
 
 @protocol NSViewServiceMarshal <NSVB_ViewServiceUIBehaviorInterface>
 - (void)remoteViewDidChangeState:(unsigned char)arg1 ofPopoverBar:(NSString *)arg2 forItem:(NSString *)arg3;
@@ -45,7 +45,7 @@
 - (void)validateAction:(NSString *)arg1 withReply:(void (^)(BOOL, NSString *, struct, struct, NSString *))arg2;
 - (void)endHostModalSession:(NSString *)arg1;
 - (void)beginHostModalSession:(NSString *)arg1 title:(NSString *)arg2 size:(struct CGSize)arg3 withReply:(void (^)(NSError *))arg4;
-- (void)setAppearance:(NSString *)arg1;
+- (void)setRemoteViewEffectiveAppearance:(NSAppearance *)arg1;
 - (void)setViewVibrantBlendingStyle:(unsigned long long)arg1;
 - (void)bootstrap:(CDStruct_e2fa5527)arg1 withReply:(void (^)(NSString *, struct, NSProxy<NSXPCProxyCreating> *, NSProxy<NSXPCProxyCreating> *))arg2;
 - (void)snapshot:(void (^)(NSError *, NSBitmapImageRep *))arg1;

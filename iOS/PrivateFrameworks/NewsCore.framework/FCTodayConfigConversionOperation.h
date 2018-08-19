@@ -6,7 +6,7 @@
 
 #import <NewsCore/FCOperation.h>
 
-@class NSArray, NSData, NTPBTodayConfig;
+@class NSArray, NSData, NSDictionary, NTPBTodayConfig;
 
 @interface FCTodayConfigConversionOperation : FCOperation
 {
@@ -16,8 +16,10 @@
     CDUnknownBlockType _todayConfigCompletionHandler;
     NTPBTodayConfig *_resultTodayConfig;
     NSArray *_networkEvents;
+    NSDictionary *_resultHeldRecordsByType;
 }
 
+@property(retain, nonatomic) NSDictionary *resultHeldRecordsByType; // @synthesize resultHeldRecordsByType=_resultHeldRecordsByType;
 @property(copy, nonatomic) NSArray *networkEvents; // @synthesize networkEvents=_networkEvents;
 @property(copy, nonatomic) NTPBTodayConfig *resultTodayConfig; // @synthesize resultTodayConfig=_resultTodayConfig;
 @property(copy, nonatomic) CDUnknownBlockType todayConfigCompletionHandler; // @synthesize todayConfigCompletionHandler=_todayConfigCompletionHandler;

@@ -38,6 +38,7 @@
     long long _lastAggdSubmittedActivitySummaryIndex;
     _Bool _aggdActivitySetupSent;
     NSObject<OS_dispatch_queue> *_overrideQueue;
+    NSObject<OS_dispatch_queue> *_serialQueue;
     int _significantTimeChangeToken;
     NSDate *_mostRecentStartOfDayTasksRunDate;
     FITypicalDayActivityModel *_typicalDayModel;

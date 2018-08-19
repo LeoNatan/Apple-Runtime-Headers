@@ -19,6 +19,7 @@ __attribute__((visibility("hidden")))
     SCNRenderTargetRegistry *_renderTargetRegistry;
     double _superSamplingFactor;
     struct CATransform3D _screenTransform;
+    long long _sampleCount;
     BOOL _needSuperSampling;
     SCNMTLResourceManager *_resourceManager;
     id <MTLDevice> _device;
@@ -31,7 +32,6 @@ __attribute__((visibility("hidden")))
     unsigned int _disableLinearRendering:1;
     unsigned int _useFunctionConstants:1;
     unsigned int _reverseZ:1;
-    id <MTLCommandQueue> _ownedCommandQueue;
     NSObject<OS_dispatch_semaphore> *_inFlightSemaphore;
     // Error parsing type: {atomic<int>="__a_"Ai}, name: _pendingGPUFrameCount
     id <MTLTexture> _textureTarget;
@@ -152,7 +152,6 @@ __attribute__((visibility("hidden")))
     id <MTLCommandBuffer> _clientCommandBuffer;
     unsigned long long _debugOptions;
     double _contentScaleFactor;
-    long long _sampleCount;
     NSString *_generatedTexturePath;
 }
 
@@ -162,7 +161,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) void *frameTexturePool; // @synthesize frameTexturePool=_frameTexturePool;
 @property(readonly, nonatomic) SCNRenderTargetRegistry *renderTargetRegistry; // @synthesize renderTargetRegistry=_renderTargetRegistry;
 @property(readonly, nonatomic) SCNMTLResourceManager *resourceManager; // @synthesize resourceManager=_resourceManager;
-@property(nonatomic) long long sampleCount; // @synthesize sampleCount=_sampleCount;
 @property(nonatomic) BOOL enablesDeferredShading; // @synthesize enablesDeferredShading;
 @property(nonatomic) double contentScaleFactor; // @synthesize contentScaleFactor=_contentScaleFactor;
 @property(nonatomic) unsigned long long debugOptions; // @synthesize debugOptions=_debugOptions;
@@ -259,6 +257,7 @@ __attribute__((visibility("hidden")))
 - (struct __C3DEngineStats *)stats;
 - (void)_clearUnusedBindingPoints;
 @property(nonatomic) BOOL isOpaque;
+@property(nonatomic) long long sampleCount;
 @property(readonly, nonatomic) BOOL reverseZ;
 @property(nonatomic) BOOL disableLinearRendering;
 @property(readonly, nonatomic) long long pendingGPUFrameCount;

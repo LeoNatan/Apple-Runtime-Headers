@@ -38,7 +38,9 @@
 + (id)meContact;
 + (id)_myNumber;
 + (_Bool)_isBasebandDevice;
++ (void)_sendCKMessage:(id)arg1 failureBlock:(CDUnknownBlockType)arg2;
 + (void)_sendMessage:(id)arg1 location:(id)arg2 recipients:(id)arg3 useStandalone:(_Bool)arg4 failureBlock:(CDUnknownBlockType)arg5;
++ (void)_sendSMSMessage:(id)arg1 MMSMessage:(id)arg2 location:(id)arg3 recipients:(id)arg4 failureBlock:(CDUnknownBlockType)arg5;
 + (void)_sendMessageToRecipients:(id)arg1 withLocation:(id)arg2 isFirstMessage:(_Bool)arg3 Reason:(int)arg4;
 + (id)sharedInstance;
 @property(retain, nonatomic) NSMutableArray *clientConnections; // @synthesize clientConnections=_clientConnections;

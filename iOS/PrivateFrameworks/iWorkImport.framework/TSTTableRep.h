@@ -10,11 +10,12 @@
 #import "TSTTableRepInternal.h"
 #import "UITextFieldDelegate.h"
 
-@class CALayer, CAShapeLayer, NSMutableArray, NSMutableDictionary, NSSet, NSString, TSDTilingLayer, TSTAnimation, TSTCellSelection, TSTInfo, TSTLayout, TSTMasterLayout, TSTSelectionDragController, TSTTableModel, TSTTableReferences;
+@class CALayer, CAShapeLayer, NSMutableArray, NSMutableDictionary, NSSet, NSString, TSDTilingLayer, TSTAnimation, TSTCellSelection, TSTInfo, TSTLayout, TSTMasterLayout, TSTSelectionDragController, TSTTableReferences;
 
 __attribute__((visibility("hidden")))
 @interface TSTTableRep : TSWPTextHostRep <TSTTableRepInternal, UITextFieldDelegate, CALayerDelegate>
 {
+    _Bool _tableRepIsBeingRemovedFromBackgroundLayout;
     _Bool _selectionDragAbortedOnNewSelection;
     _Bool _selectionUsesBezierPath;
     _Bool _selectsCellOnInitialTap;
@@ -27,8 +28,8 @@ __attribute__((visibility("hidden")))
     _Bool _zoomOperationIsInProgress;
     _Bool _recursivelyDrawingInContext;
     _Bool _dragByHandleOnly;
-    struct TSUCellCoord _ratingsDragCellID;
     NSMutableDictionary *_childTextReps;
+    struct TSUCellCoord _ratingsDragCellID;
     TSTTableReferences *_references;
     TSTSelectionDragController *_cellDragController;
     NSSet *_visibleFillKnobs;
@@ -45,11 +46,11 @@ __attribute__((visibility("hidden")))
     CALayer *_overlayFrozenHeaderTableBodyMask;
     CALayer *_overlayFrozenHeaderTableNameMask;
     double _currentScreenScale;
-    struct TSUCellRect _dirtyCellRange;
     NSMutableArray *_animationStack;
-    struct TSUCellRect _zoomToEditVisibleCellRange;
     CAShapeLayer *_cellEditingMaskLayer;
     CAShapeLayer *_findSelectionHighlightLayer;
+    struct TSUCellRect _dirtyCellRange;
+    struct TSUCellRect _zoomToEditVisibleCellRange;
     struct CGRect _searchSelectionBounds;
 }
 
@@ -91,11 +92,12 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) TSTTableReferences *references; // @synthesize references=_references;
 @property(nonatomic) struct TSUCellCoord ratingsDragCellID; // @synthesize ratingsDragCellID=_ratingsDragCellID;
 @property(nonatomic) struct CGRect searchSelectionBounds; // @synthesize searchSelectionBounds=_searchSelectionBounds;
+@property _Bool tableRepIsBeingRemovedFromBackgroundLayout; // @synthesize tableRepIsBeingRemovedFromBackgroundLayout=_tableRepIsBeingRemovedFromBackgroundLayout;
 @property(readonly, nonatomic) NSMutableDictionary *childTextReps; // @synthesize childTextReps=_childTextReps;
 - (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (void)drawInContext:(struct CGContext *)arg1;
-- (void)recursivelyDrawInContext:(struct CGContext *)arg1;
+- (void)recursivelyDrawInContext:(struct CGContext *)arg1 keepingChildrenPassingTest:(CDUnknownBlockType)arg2;
 - (_Bool)canDrawInParallel;
 - (_Bool)mustDrawOnMainThreadForInteractiveCanvas;
 - (_Bool)canDrawInBackgroundDuringScroll;
@@ -162,7 +164,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) TSTMasterLayout *masterLayout;
 @property(readonly, nonatomic) _Bool layoutDirectionIsLeftToRight;
 @property(readonly, nonatomic) TSTLayout *tableLayout;
-@property(readonly, nonatomic) TSTTableModel *tableModel;
+@property(readonly, nonatomic) TSTInfo *tableModel;
 @property(readonly, nonatomic) TSTInfo *tableInfo;
 
 // Remaining properties

@@ -32,5 +32,6 @@
 - (_Bool)notificationViewControllerShouldInterpretTapAsDefaultAction:(NCNotificationViewController *)arg1;
 - (_Bool)notificationViewControllerShouldPan:(NCNotificationViewController *)arg1;
 - (long long)notificationViewControllerDateFormatStyle:(NCNotificationViewController *)arg1;
+- (void)notificationViewControllerWillDismissForCancelAction:(NCNotificationViewController *)arg1;
 @end
 

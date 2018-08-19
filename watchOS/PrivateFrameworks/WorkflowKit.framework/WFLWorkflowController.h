@@ -17,9 +17,11 @@
     int _executionContext;
     unsigned int _currentActionIndex;
     WFLActionImplementation *_currentActionImplementation;
+    WFLActionImplementation *_previousActionImplementation;
 }
 
 + (void)initialize;
+@property(retain, nonatomic) WFLActionImplementation *previousActionImplementation; // @synthesize previousActionImplementation=_previousActionImplementation;
 @property(retain, nonatomic) WFLActionImplementation *currentActionImplementation; // @synthesize currentActionImplementation=_currentActionImplementation;
 @property(nonatomic) unsigned int currentActionIndex; // @synthesize currentActionIndex=_currentActionIndex;
 @property(nonatomic) int executionContext; // @synthesize executionContext=_executionContext;

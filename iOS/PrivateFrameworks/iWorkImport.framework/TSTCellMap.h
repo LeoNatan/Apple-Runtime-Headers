@@ -22,14 +22,14 @@ __attribute__((visibility("hidden")))
     TSTCellUIDList *_cellUIDs;
     NSMutableArray *_cellLists;
     unordered_map_d2ee14f6 *_searchableIDMap;
-    unordered_map_cc9c6ffa *_searchableUIDMap;
+    unordered_map_7f472e10 *_searchableUIDMap;
 }
 
 + (id)cellMapWithContext:(id)arg1;
 + (id)uuidBasedCellMapWithContext:(id)arg1;
 @property(readonly, nonatomic, getter=isOneToMany) _Bool oneToMany; // @synthesize oneToMany=_oneToMany;
 @property(nonatomic, getter=isUIDBased) _Bool uidBased; // @synthesize uidBased=_uidBased;
-@property(nonatomic) unordered_map_cc9c6ffa *searchableUIDMap; // @synthesize searchableUIDMap=_searchableUIDMap;
+@property(nonatomic) unordered_map_7f472e10 *searchableUIDMap; // @synthesize searchableUIDMap=_searchableUIDMap;
 @property(nonatomic) unordered_map_d2ee14f6 *searchableIDMap; // @synthesize searchableIDMap=_searchableIDMap;
 @property(nonatomic) _Bool mayModifyValuesReferencedByFormulas; // @synthesize mayModifyValuesReferencedByFormulas=_mayModifyValuesReferencedByFormulas;
 @property(nonatomic) _Bool mayModifyFormulasInCells; // @synthesize mayModifyFormulasInCells=_mayModifyFormulasInCells;
@@ -41,8 +41,10 @@ __attribute__((visibility("hidden")))
 - (void)p_resolveCellIDsToUUIDsByTableInfo:(id)arg1 preserveHostCells:(_Bool)arg2;
 - (void)p_copyCellsAndUUIDsFromCellMap:(id)arg1 convertingToCellIDsWithTableInfo:(id)arg2;
 - (id)p_addCell:(id)arg1;
+- (void)p_shallowAddCell:(id)arg1 atCellCoord:(struct TSUCellCoord)arg2;
 - (id)p_cellAtIndex:(unsigned long long)arg1 inCellListArray:(id)arg2;
 - (id)cellMapMaskedByUIDs:(const vector_4dc5f307 *)arg1 inRows:(_Bool)arg2;
+- (id)shallowCopyToCoordFormUsingMap:(id)arg1;
 - (id)uuidBasedCellMapByTableInfo:(id)arg1;
 - (id)uuidBasedCellMapByTableInfo:(id)arg1 preserveHostCells:(_Bool)arg2;
 - (id)cellIDBasedCellMapByTableInfo:(id)arg1;
@@ -58,7 +60,7 @@ __attribute__((visibility("hidden")))
 - (void)replaceCellAtIndex0:(id)arg1;
 - (void)addCell:(id)arg1 andCellID:(struct TSUCellCoord)arg2;
 - (void)addCell:(id)arg1 andCellUID:(const struct TSTCellUID *)arg2;
-- (id)changeDescriptorsForTable:(id)arg1;
+- (id)changeDescriptorsForTable:(id)arg1 outCellRegion:(out id *)arg2;
 - (id)findCellForCellUID:(const struct TSTCellUID *)arg1;
 - (id)findCellForCellID:(struct TSUCellCoord)arg1;
 - (_Bool)containsMergeChanges;

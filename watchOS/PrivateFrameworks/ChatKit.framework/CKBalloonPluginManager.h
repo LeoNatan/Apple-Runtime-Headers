@@ -17,6 +17,7 @@
     NSArray *_visibleRecentAppStripPlugins;
     _Bool _isAppInstallationEnabled;
     _Bool _isAppRemovalEnabled;
+    _Bool _isCameraAllowed;
     _Bool _appStoreAutoEnableToggled;
     _Bool _keepingEmptySections;
     _Bool _isAppInstallationObserver;
@@ -65,6 +66,7 @@
 @property(retain, nonatomic) NSArray *cachedPotentiallyVisiblePlugins; // @synthesize cachedPotentiallyVisiblePlugins=_cachedPotentiallyVisiblePlugins;
 @property(retain, nonatomic) NSArray *visiblePlugins; // @synthesize visiblePlugins=_visiblePlugins;
 @property(nonatomic, getter=isAppStoreAutoEnableToggled) _Bool appStoreAutoEnableToggled; // @synthesize appStoreAutoEnableToggled=_appStoreAutoEnableToggled;
+@property(nonatomic) _Bool isCameraAllowed; // @synthesize isCameraAllowed=_isCameraAllowed;
 @property(nonatomic) _Bool isAppRemovalEnabled; // @synthesize isAppRemovalEnabled=_isAppRemovalEnabled;
 @property(nonatomic) _Bool isAppInstallationEnabled; // @synthesize isAppInstallationEnabled=_isAppInstallationEnabled;
 @property(nonatomic) __weak IMBalloonPlugin *lastViewedPlugin; // @synthesize lastViewedPlugin=_lastViewedPlugin;
@@ -137,10 +139,12 @@
 - (void)updateSnapshotForBrowserViewController:(id)arg1 currentBounds:(struct CGRect)arg2;
 - (id)browserSnapshotForKey:(id)arg1;
 - (void)_invalidatePluginForKey:(id)arg1;
+- (void)invalidateAllActivePluginsSkippingCameraApp:(_Bool)arg1;
 - (void)invalidateAllActivePlugins;
 - (void)invalidateAllActiveSwitcherPlugins;
-- (void)forceTearDownRemoteViews;
+- (void)forceTearDownRemoteViewsSkippingCameraApp:(_Bool)arg1;
 - (void)forceKillNonCameraRemoteExtensionsImmediately;
+- (void)forceKillRemoteExtensionsWithDelay:(_Bool)arg1 skipCameraApp:(_Bool)arg2;
 - (void)forceKillRemoteExtensionsWithDelay:(_Bool)arg1;
 - (void)prepareForSuspend;
 - (_Bool)isViewController:(id)arg1 fromPluginWithIdentifier:(id)arg2;

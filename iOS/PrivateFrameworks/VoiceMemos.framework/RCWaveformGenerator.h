@@ -15,7 +15,6 @@
     NSObject<OS_dispatch_queue> *_queue;
     double _totalDigestedTime;
     double _totalFlushedTime;
-    double _lastFlushingTime;
     NSHashTable *_weakObservers;
     NSMutableArray *_internalFinishedLoadingBlockUUIDs;
     NSMutableArray *_internalFinishedLoadingBlocks;
@@ -60,7 +59,6 @@
 - (void)_onQueue_performInternalFinishedLoadingBlocksAndFinishObservers;
 - (void)_onQueue_performLoadingFinishedBlock:(CDUnknownBlockType)arg1 internalBlockUUID:(id)arg2 isTimeout:(_Bool)arg3;
 - (void)async_finishLoadingByTerminating:(_Bool)arg1 loadingFinishedBlockTimeout:(unsigned long long)arg2 loadingFinishedBlock:(CDUnknownBlockType)arg3;
-- (double)totalFlushedTime;
 - (void)finishLoadingWithCompletionTimeout:(unsigned long long)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (void)terminateLoadingImmediately;
 @property(nonatomic) _Bool paused;

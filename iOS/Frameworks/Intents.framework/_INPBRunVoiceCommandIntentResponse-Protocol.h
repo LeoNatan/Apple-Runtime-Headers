@@ -11,6 +11,8 @@
 @protocol _INPBRunVoiceCommandIntentResponse <NSObject>
 @property(readonly, nonatomic) _Bool hasVerb;
 @property(copy, nonatomic) NSString *verb;
+@property(readonly, nonatomic) _Bool hasUnderlyingIntentTitle;
+@property(copy, nonatomic) NSString *underlyingIntentTitle;
 @property(readonly, nonatomic) _Bool hasUnderlyingIntentResponse;
 @property(retain, nonatomic) _INPBArchivedObject *underlyingIntentResponse;
 @property(readonly, nonatomic) _Bool hasUnderlyingIntent;

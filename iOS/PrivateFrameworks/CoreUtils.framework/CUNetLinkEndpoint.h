@@ -13,6 +13,7 @@
     CDUnknownBlockType _stateChangedHandler;
     unsigned long long _expireTime;
     unsigned long long _expiredTicks;
+    _Bool _present;
     unsigned int _seqNum;
     unsigned int _stateChanges;
     _Bool _client;

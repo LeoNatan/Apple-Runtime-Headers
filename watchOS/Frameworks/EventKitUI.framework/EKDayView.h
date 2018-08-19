@@ -66,6 +66,7 @@
 
 @property(nonatomic) float hourScale; // @synthesize hourScale=_hourScale;
 @property(nonatomic) double scrollAnimationDurationOverride; // @synthesize scrollAnimationDurationOverride=_scrollAnimationDurationOverride;
+@property(nonatomic) int orientation; // @synthesize orientation=_orientation;
 @property(nonatomic) float todayScrollSecondBuffer; // @synthesize todayScrollSecondBuffer=_todayScrollSecondBuffer;
 @property(nonatomic) _Bool allowPinchingHourHeights; // @synthesize allowPinchingHourHeights=_allowPinchingHourHeights;
 @property(nonatomic) _Bool usesVibrantGridDrawing; // @synthesize usesVibrantGridDrawing=_usesVibrantGridDrawing;
@@ -190,7 +191,6 @@
 @property(nonatomic) _Bool animatesTimeMarker;
 @property(nonatomic) _Bool showsTimeLabel;
 - (void)adjustForSignificantTimeChange;
-- (void)setOrientation:(int)arg1;
 - (void)setTimeZone:(id)arg1;
 - (void)updateMarkerPosition;
 - (void)_invalidateMarkerTimer;

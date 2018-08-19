@@ -11,6 +11,7 @@ __attribute__((visibility("hidden")))
 {
 }
 
++ (void)migrateVersion1to2WithMigration:(id)arg1;
 + (void)migrateVersion0to1WithMigration:(id)arg1;
 + (id)_containerURLForContainerId:(id)arg1;
 + (void)_applyProtectionClassForDirectoryAtURL:(id)arg1;

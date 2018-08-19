@@ -41,6 +41,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool shouldSummarize; // @synthesize shouldSummarize=_shouldSummarize;
 @property(nonatomic) long long samplingPercentage; // @synthesize samplingPercentage=_samplingPercentage;
 - (void).cxx_destruct;
+- (void)logScalarValueAddition:(long long)arg1 forKey:(id)arg2;
 - (void)logDistributionValue:(double)arg1 forKey:(id)arg2;
 - (void)logScalarValue:(long long)arg1 forKey:(id)arg2;
 - (void)finishMessage;

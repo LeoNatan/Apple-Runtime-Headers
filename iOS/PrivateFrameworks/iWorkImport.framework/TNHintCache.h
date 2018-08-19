@@ -13,7 +13,7 @@ __attribute__((visibility("hidden")))
 {
     TNPageController *mPageController;
     TSDDrawableInfo *mInfo;
-    CDStruct_d8c645bd mPageRange;
+    CDStruct_39acd760 mPageRange;
     _Bool mIsMaxColumnValid;
     _Bool mIsMaxRowValid;
     TNPageCoordinateDictionary *mHintCacheEntryDictionary;
@@ -24,7 +24,7 @@ __attribute__((visibility("hidden")))
 - (id)p_hintCacheEntryAtCoordinate:(struct TSUCellCoord)arg1;
 - (void)invalidate;
 - (id)layoutAtCoordinate:(struct TSUCellCoord)arg1 parentLayout:(id)arg2;
-- (CDStruct_d8c645bd)pageRangeWithUpperBound:(struct TSUCellCoord)arg1;
+- (CDStruct_39acd760)pageRangeWithUpperBound:(struct TSUCellCoord)arg1;
 - (void)dealloc;
 - (id)initWithInfo:(id)arg1 pageController:(id)arg2;
 

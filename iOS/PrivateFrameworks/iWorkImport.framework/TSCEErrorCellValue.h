@@ -15,6 +15,7 @@ __attribute__((visibility("hidden")))
 - (void)encodeToArchive:(struct ErrorCellValueArchive *)arg1;
 - (id)initWithArchive:(const struct ErrorCellValueArchive *)arg1 locale:(id)arg2;
 - (_Bool)isEqualToCellValue:(id)arg1;
+- (id)canonicalKeyString;
 - (id)displayString;
 - (id)format;
 - (struct TSCEValue)tsceValue;

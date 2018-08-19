@@ -8,17 +8,24 @@
 
 #import "PLNavigableCollectionContainer.h"
 
-@class NSString, PUSessionInfo;
+@class NSString, PUSessionInfo, UIBarButtonItem;
 
 @interface PUAlbumsGadgetViewController : PXGadgetViewController <PLNavigableCollectionContainer>
 {
     PUSessionInfo *_sessionInfo;
+    UIBarButtonItem *_plusButtonItem;
 }
 
+@property(retain, nonatomic) UIBarButtonItem *plusButtonItem; // @synthesize plusButtonItem=_plusButtonItem;
 @property(retain, nonatomic) PUSessionInfo *sessionInfo; // @synthesize sessionInfo=_sessionInfo;
 - (void).cxx_destruct;
 - (void)_pushViewController:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)_handlePlusButtonLongPress:(id)arg1;
 - (void)_handlePlusButton:(id)arg1;
+- (void)_presentNewActionAlertControllerIncludeNewFolderAction:(_Bool)arg1;
+- (id)_newSharedAlbumActionWithSpec:(id)arg1;
+- (id)_newFolderActionWithSpec:(id)arg1;
+- (id)_newAlbumActionWithSpec:(id)arg1;
 - (void)_handleDoneButton:(id)arg1;
 - (void)_updateNavigationBar;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;

@@ -11,7 +11,7 @@
 #import "NTKTimeView.h"
 #import "UIGestureRecognizerDelegate.h"
 
-@class NSArray, NSDate, NSDateFormatter, NSString, NTKAstronomyLocationDot, NTKAstronomyRotationModel, NTKAstronomyVistaView, NTKColoringLabel, NTKDelayedBlock, NTKDigitalTimeLabel, NTKDigitalTimeLabelStyle, NTKDigitialUtilitarianFaceViewComplicationFactory, UIImageView, UIPanGestureRecognizer, UITapGestureRecognizer;
+@class NSArray, NSDate, NSDateFormatter, NSString, NTKAstronomyLocationDot, NTKAstronomyRotationModel, NTKAstronomyVistaView, NTKColoringLabel, NTKDateComplicationLabel, NTKDelayedBlock, NTKDigitalTimeLabel, NTKDigitalTimeLabelStyle, NTKDigitialUtilitarianFaceViewComplicationFactory, UIImageView, UIPanGestureRecognizer, UITapGestureRecognizer;
 
 @interface NTKAstronomyFaceView : NTKDigitalFaceView <NTKTimeView, NTKAstronomyRotationModelObserver, NTKAstronomyVistaViewObserver, UIGestureRecognizerDelegate>
 {
@@ -28,6 +28,9 @@
     UITapGestureRecognizer *_supplementalModeDoubleTapGesture;
     UITapGestureRecognizer *_interactiveModeTapGesture;
     struct NSString *_locationManagerToken;
+    NTKDateComplicationLabel *_legacyDateLabel;
+    UIImageView *_legacyLeftBottomImageView;
+    UIImageView *_legacyRightBottomImageView;
     NTKAstronomyVistaView *_astronomyVistaView;
     NTKColoringLabel *_scrubLabel;
     NTKColoringLabel *_phaseLabel;
@@ -91,6 +94,7 @@
 - (void)_hideLocationDot;
 - (void)_showLocationDotIfNeeded;
 - (void)layoutSubviews;
+- (void)_layoutLegacyViews;
 - (void)_updateDigitalTimeLabelStylesForBounds:(struct CGRect)arg1;
 - (void)_layoutSpheroidLabel:(int)arg1;
 - (void)_layoutPhaseLabel;

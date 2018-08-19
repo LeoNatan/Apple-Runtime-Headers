@@ -22,8 +22,10 @@
     AVPlayerItem *_videoPlayerItem;
     NSNumber *_queuePosition;
     ISWrappedAVAudioSession *_audioSession;
+    double _videoLoadingProgress;
 }
 
+@property(nonatomic) double videoLoadingProgress; // @synthesize videoLoadingProgress=_videoLoadingProgress;
 @property(retain, nonatomic) ISWrappedAVAudioSession *audioSession; // @synthesize audioSession=_audioSession;
 @property(retain, nonatomic) NSNumber *queuePosition; // @synthesize queuePosition=_queuePosition;
 @property(nonatomic) _Bool canLoadVideo; // @synthesize canLoadVideo=_canLoadVideo;
@@ -42,13 +44,14 @@
 - (void)_unloadVideo;
 @property(nonatomic) unsigned long long activityCoordinatorQueuePosition;
 - (void)contentsRectDidChange;
-- (void)placeholderTransitionDurationDidChange;
 - (void)isDisplayingFullQualityContentDidChange;
 - (_Bool)isDisplayingFullQualityContent;
 - (void)contentModeDidChange;
 - (void)placeholderImageFiltersDidChange;
 - (void)animatedContentEnabledDidChange;
+- (void)imageProgressDidChange;
 - (void)imageDidChange;
+- (double)loadingProgress;
 - (void)updateContent;
 - (void)didMoveToWindow;
 - (id)currentImage;

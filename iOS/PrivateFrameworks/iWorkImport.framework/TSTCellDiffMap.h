@@ -37,7 +37,8 @@ __attribute__((visibility("hidden")))
 - (const vector_38b190b0 *)cellIDs;
 - (void)p_resolveCellIDsToUUIDsByTableInfo:(id)arg1;
 - (id)uuidBasedCellDiffMapByTableInfo:(id)arg1;
-- (id)prunedCellDiffMapAgainstTable:(id)arg1 allowMergeFragment:(_Bool)arg2 addingPrunedIndicesToIndexSet:(id)arg3;
+- (id)pruneCellDiffMapAgainstTable:(id)arg1 behavior:(unsigned long long)arg2 usingBlock:(CDUnknownBlockType)arg3;
+- (id)pruneCellDiffMapAgainstTable:(id)arg1 behavior:(unsigned long long)arg2;
 - (void)addCellDiff:(id)arg1 andCellID:(struct TSUCellCoord)arg2;
 - (void)addCellDiff:(id)arg1 andCellUID:(struct TSTCellUID)arg2;
 @property(readonly, nonatomic) unsigned long long count;

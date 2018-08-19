@@ -11,6 +11,7 @@
 }
 
 + (BOOL)isDirectoryServicesConfigured;
++ (id)log;
 - (void)beginCheckingIsDirectoryServicesConfiguredWithDelay:(double)arg1 completionHandler:(CDUnknownBlockType)arg2;
 
 @end

@@ -18,6 +18,7 @@ __attribute__((visibility("hidden")))
 @property(copy) NSString *inputFilterName; // @synthesize inputFilterName;
 @property(retain) NSMutableDictionary *_dict; // @synthesize _dict;
 - (id)outputImage;
+- (id)dummyImagesForImages:(id)arg1;
 - (id)attributes;
 - (id)inputKeys;
 - (void)setValue:(id)arg1 forKey:(id)arg2;

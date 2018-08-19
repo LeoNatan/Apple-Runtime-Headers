@@ -105,6 +105,7 @@
 - (void)appDataUpdated:(id)arg1 message:(id)arg2;
 - (void)_handleSetAppData:(id)arg1;
 @property(retain, nonatomic) HMDApplicationData *appData; // @synthesize appData=_appData;
+- (id)runtimeState;
 - (void)_remoteAccessEnabled:(BOOL)arg1;
 - (void)remoteAccessEnabled:(BOOL)arg1;
 - (void)_notifyConnectivityChangedWithReachabilityState:(BOOL)arg1 remoteAccessChanged:(BOOL)arg2;

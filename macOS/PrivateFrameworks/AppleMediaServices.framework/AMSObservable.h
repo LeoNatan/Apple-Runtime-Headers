@@ -44,6 +44,7 @@ __attribute__((visibility("hidden")))
 - (id)initWithObserver:(id)arg1;
 - (id)init;
 - (id)initWithObject:(id)arg1 keyPath:(id)arg2 options:(unsigned long long)arg3;
+- (id)initWithNotification:(id)arg1 object:(id)arg2;
 
 @end
 

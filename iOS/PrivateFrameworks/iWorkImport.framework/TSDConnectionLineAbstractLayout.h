@@ -78,6 +78,7 @@ __attribute__((visibility("hidden")))
 - (struct CGPoint)controlPointForPointA:(struct CGPoint)arg1 pointB:(struct CGPoint)arg2 andOriginalA:(struct CGPoint)arg3 originalB:(struct CGPoint)arg4;
 - (id)createConnectedPathFrom:(id)arg1 to:(id)arg2 withControlPoints:(struct CGPoint [3])arg3;
 - (void)checkConnections;
+- (_Bool)p_connectedInfoInDocument:(id)arg1;
 - (void)invalidateSize;
 - (void)invalidatePosition;
 - (void)invalidateConnections;

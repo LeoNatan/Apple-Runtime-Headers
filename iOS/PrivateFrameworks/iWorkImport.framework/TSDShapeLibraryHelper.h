@@ -11,7 +11,6 @@ __attribute__((visibility("hidden")))
 {
 }
 
-+ (_Bool)shouldUseStringScoreBasedSearchForLocale:(id)arg1;
 + (_Bool)shouldAddBaseShapeNameAndKeywordsForLocale:(id)arg1;
 + (id)keywordByCapitalizingLowercasedKeyword:(id)arg1 locale:(id)arg2;
 + (id)keywordsByCapitalizingLowercasedKeywords:(id)arg1 locale:(id)arg2;

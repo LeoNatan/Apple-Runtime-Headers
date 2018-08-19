@@ -59,9 +59,13 @@
 - (void)performScheduledActivityWithIdentifier:(id)arg1 activityCriteria:(id)arg2;
 - (void)_cancelCloudStoreInitializationTimer;
 - (void)_startCloudStoreInitializationTimer;
+- (void)saveServerSubscriptionsForKey:(id)arg1;
+- (void)saveServerZonesForKey:(id)arg1;
 - (void)saveServerFetchTimestampsForKey:(id)arg1;
 - (void)saveServerChangeTokensForKey:(id)arg1;
 - (void)resetCachedContainerValues;
+- (void)retrieveCachedServerSubscriptionsForKey:(id)arg1;
+- (void)retrieveCachedServerZonesForKey:(id)arg1;
 - (void)retrieveCachedServerFetchTimestampsForKey:(id)arg1;
 - (void)retrieveCachedServerChangeTokensForKey:(id)arg1;
 - (id)errorWithCode:(int)arg1 description:(id)arg2;
@@ -112,6 +116,7 @@
 - (id)recordTypesForCloudStoreItemType:(unsigned int)arg1;
 - (id)zoneForCloudStoreItemType:(unsigned int)arg1;
 - (id)cloudRecordObjectFromItemType:(unsigned int)arg1 records:(id)arg2;
+- (_Bool)shouldFetchAndStoreCloudDataAtStartup;
 - (_Bool)canUpdateAndFetchRecords;
 - (_Bool)canInitializeContainer;
 - (_Bool)isSetup;

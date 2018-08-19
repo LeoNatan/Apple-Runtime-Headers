@@ -22,7 +22,7 @@ __attribute__((visibility("hidden")))
     NSObject<OS_dispatch_queue> *_queue;
 }
 
-+ (id)cellUIDListFromRange:(const struct TSTCellUIDRange *)arg1;
++ (id)cellUIDListFromRange:(const UUIDRect_d701734b *)arg1;
 + (id)cellUIDList;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(readonly, nonatomic) unsigned long long compressedSize; // @synthesize compressedSize=_compressedSize;
@@ -30,6 +30,8 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)enumerateCellUIDsUsingBlock:(CDUnknownBlockType)arg1;
+- (id)pruneCellUIDListAgainstTable:(id)arg1 behavior:(unsigned long long)arg2 usingBlock:(CDUnknownBlockType)arg3;
+- (id)pruneCellUIDListAgainstTable:(id)arg1 behavior:(unsigned long long)arg2;
 - (void)compressUIDIndexListFrom:(const vector_12bd641b *)arg1 withUIDCount:(unsigned long long)arg2 to:(vector_12bd641b *)arg3;
 - (void)p_compressUID:(const UUIDData_5fbc143e *)arg1 index:(unsigned long long)arg2 UIDtoIndexMap:(map_2cd530a9 *)arg3 UIDs:(vector_4dc5f307 *)arg4 compressedIndexes:(vector_12bd641b *)arg5 lastSameUIDIndex:(vector_06e666a8 *)arg6;
 - (void)compress;

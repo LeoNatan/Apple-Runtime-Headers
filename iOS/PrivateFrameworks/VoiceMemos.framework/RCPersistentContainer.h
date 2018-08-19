@@ -22,7 +22,6 @@ __attribute__((visibility("hidden")))
     NSPersistentHistoryToken *_latestHistoryToken;
     NSMutableArray *_transactionsBuffer;
     NSArray *_contextsToNotify;
-    id _changeNotificationObserver;
     NSDate *_changeNotificationDate;
 }
 
@@ -41,6 +40,7 @@ __attribute__((visibility("hidden")))
 - (id)_fetchLegacyRecordingsForMigrationWithContext:(id)arg1;
 - (void)_deleteOrphanedEntityRevisionsWithContext:(id)arg1;
 - (id)_valueForDatabaseProperty:(id)arg1 context:(id)arg2;
+- (void)_handleRemoteChangeNotification:(id)arg1;
 - (void)_handleRemoteChangeNotificationOnMainQueue:(id)arg1;
 - (id)_nextTransactionAfterToken:(id)arg1 context:(id)arg2 error:(id *)arg3;
 - (id)newContextWithConcurrencyType:(unsigned long long)arg1;

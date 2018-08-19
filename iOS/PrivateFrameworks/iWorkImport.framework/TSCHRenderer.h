@@ -13,11 +13,11 @@
 __attribute__((visibility("hidden")))
 @interface TSCHRenderer : NSObject <TSCHSupportsTextEditing>
 {
-    id <TSCHSupportsRendering> mChartRep;
     TSCHChartLayoutItem *mChartLayoutItem;
+    id <TSCHSupportsRendering> mChartRep;
 }
 
-@property(readonly, nonatomic) id <TSCHSupportsRendering> chartRep; // @synthesize chartRep=mChartRep;
+@property(readonly, nonatomic) __weak id <TSCHSupportsRendering> chartRep; // @synthesize chartRep=mChartRep;
 - (void).cxx_destruct;
 - (struct CGRect)tLayerRectForContext:(struct CGContext *)arg1;
 - (struct CGRect)chartLayoutSpaceRenderingRect;

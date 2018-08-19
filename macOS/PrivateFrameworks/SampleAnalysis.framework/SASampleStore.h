@@ -8,7 +8,7 @@
 
 #import "NSSecureCoding.h"
 
-@class NSArray, NSDictionary, NSMutableArray, NSMutableDictionary, NSMutableSet, NSObject<OS_dispatch_queue>, NSString, SABinaryLocator, SAFrame, SAMountStatusTracker, SASharedCache, SATask, SATimestamp, SAWSUpdateDataStore;
+@class NSArray, NSDictionary, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString, SABinaryLocator, SAFrame, SAMountStatusTracker, SASharedCache, SATask, SATimestamp, SAWSUpdateDataStore;
 
 @interface SASampleStore : NSObject <NSSecureCoding>
 {
@@ -98,13 +98,11 @@
     NSString *_targetProcessCommerceExternalID;
     NSString *_targetProcessVendorID;
     NSMutableSet *_rootKernelFrames;
-    NSObject<OS_dispatch_queue> *_extraWorkQueue;
 }
 
 + (BOOL)supportsSecureCoding;
 + (BOOL)canOpenFileAsKTraceFile:(const char *)arg1 errorOut:(id *)arg2;
 + (id)sampleStoreForSpindumpFile:(const char *)arg1;
-@property(readonly) NSObject<OS_dispatch_queue> *extraWorkQueue; // @synthesize extraWorkQueue=_extraWorkQueue;
 @property(readonly) NSMutableSet *rootKernelFrames; // @synthesize rootKernelFrames=_rootKernelFrames;
 @property(readonly) NSString *targetProcessVendorID; // @synthesize targetProcessVendorID=_targetProcessVendorID;
 @property(readonly) NSString *targetProcessCommerceExternalID; // @synthesize targetProcessCommerceExternalID=_targetProcessCommerceExternalID;

@@ -36,6 +36,8 @@
 - (void)prepareForReuse;
 - (void)setBorderStyle:(long long)arg1;
 - (void)applyLayoutAttributes:(id)arg1;
+- (double)browserCellSelectionBorderOutset;
+- (struct CGRect)browserCellIconFrame;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect)arg1;
 @property(readonly) UIView *iconView;

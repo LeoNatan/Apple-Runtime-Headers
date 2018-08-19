@@ -7,6 +7,7 @@
 #import "NSDateInterval.h"
 
 @interface NSDateInterval (Schedule)
++ (id)dnds_dateIntervalUntilEndOfScheduleForScheduleSettings:(id)arg1 startDate:(id)arg2 calendar:(id)arg3;
 + (id)dnds_dateIntervalForScheduleSettings:(id)arg1 date:(id)arg2 calendar:(id)arg3;
 @end
 

@@ -13,6 +13,7 @@ __attribute__((visibility("hidden")))
 {
     CALayer *_decorationLayer;
     CALayer *_separatorLayer;
+    CALayer *_topHighlightLayer;
     BOOL _drawsBottomSeparator;
     NSTitlebarContainerView *_titlebarContainerView;
 }

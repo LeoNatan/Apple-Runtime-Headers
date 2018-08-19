@@ -624,8 +624,9 @@ typedef struct {
     unsigned int _field2;
     unsigned int _field3;
     unsigned int _field4;
-    CDStruct_97694245 _field5[125];
-} CDStruct_e75431af;
+    unsigned int _field5;
+    CDStruct_97694245 _field6[125];
+} CDStruct_b5108d36;
 
 #pragma mark Typedef'd Unions
 

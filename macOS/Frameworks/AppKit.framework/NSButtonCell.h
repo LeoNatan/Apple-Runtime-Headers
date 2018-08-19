@@ -24,7 +24,8 @@
     unsigned short _periodicDelay;
     unsigned short _periodicInterval;
     struct __BCFlags {
-        unsigned int __reserved:2;
+        unsigned int __reserved:1;
+        unsigned int calculatingPreferredAppearance:1;
         unsigned int alwaysRadioExclusive:1;
         unsigned int leadingOrTrailing:1;
         unsigned int shouldNotHighlightOnPerformClick:1;
@@ -135,7 +136,6 @@
 - (void)_updateTitleTextFieldWithFrame:(struct CGRect)arg1 inView:(id)arg2;
 - (void)setAlignment:(unsigned long long)arg1;
 - (void)_setSubviewsNeedLayout;
-- (id)_currentTitleTextFieldAttributedString;
 - (void)_removeTitleTextField;
 - (void)_setTitleTextField:(id)arg1;
 - (id)_titleTextField;
@@ -163,6 +163,7 @@
 - (struct CGSize)_coreUIWidgetFrameSizeForRect:(struct CGRect)arg1 inView:(id)arg2;
 - (BOOL)_contentHuggingDefault_isUsuallyFixedHeight;
 - (BOOL)_contentHuggingDefault_isUsuallyFixedWidth;
+- (struct NSEdgeInsets)_alignmentRectInsetsForRect:(struct CGRect)arg1 inView:(id)arg2;
 - (struct CGSize)cellSizeForBounds:(struct CGRect)arg1;
 - (struct CGSize)_autolayout_cellSize;
 - (struct CGSize)_minCellSizeIncrement;
@@ -287,11 +288,13 @@
 - (id)_imageSynthesizedForCheckOrRadio:(char *)arg1;
 - (long long)compare:(id)arg1;
 - (void)setAttributedAlternateTitle:(id)arg1;
+- (id)_displayedAttributedAlternateTitle;
 - (id)attributedAlternateTitle;
 @property(copy) NSString *alternateTitle;
 - (id)_defaultFont;
 - (void)setFont:(id)arg1;
 - (void)setAttributedTitle:(id)arg1;
+- (id)_displayedAttributedTitle;
 - (id)attributedTitle;
 @property(copy) NSString *title;
 - (void)_convertToText:(id)arg1;
@@ -327,6 +330,7 @@
 - (id)_interiorBackgroundFillColor;
 - (struct CGRect)_centerTitle:(id)arg1 inRect:(struct CGRect)arg2;
 - (struct CGRect)_alignedTitleRectWithRect:(struct CGRect)arg1;
+- (struct CGRect)_imageRectWithRect:(struct CGRect *)arg1 allowImageScaling:(BOOL)arg2;
 - (struct CGRect)_imageRectWithRect:(struct CGRect *)arg1;
 - (struct CGSize)_titleSizeWithSize:(struct CGSize)arg1;
 - (struct CGSize)_unconstrainedImageSize;

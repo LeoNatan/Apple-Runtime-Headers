@@ -22,6 +22,7 @@
     _Bool _pressRelease;
     _Bool _hiddenFromAutoFavorites;
     _Bool _paid;
+    _Bool _webEmbedsEnabled;
     NSString *_versionIdentifier;
     NSString *_identifier;
     NSString *_articleID;
@@ -76,6 +77,7 @@
 @property(retain, nonatomic) NSString *flintDocumentUrlString; // @synthesize flintDocumentUrlString=_flintDocumentUrlString;
 @property(retain, nonatomic) NSDictionary *articlePayload; // @synthesize articlePayload=_articlePayload;
 @property(retain, nonatomic) FCAssetManager *assetManager; // @synthesize assetManager=_assetManager;
+- (_Bool)webEmbedsEnabled;
 - (id)coverArt;
 - (void)setPaid:(_Bool)arg1;
 - (_Bool)isPaid;

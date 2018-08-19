@@ -19,7 +19,7 @@
 #import "CPSTripInitiating.h"
 #import "UIGestureRecognizerDelegate.h"
 
-@class CARSessionStatus, CPMapTemplate, CPSApplicationStateMonitor, CPSEventObserver, CPSNavigationAlertQueue, CPSNavigationCardView, CPSNavigationETAView, CPSNavigator, CPSPanViewController, CPSTripPreviewsCardView, CPTripPreviewTextConfiguration, NSArray, NSLayoutConstraint, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString, NSTimer, UIColor, UIPanGestureRecognizer, UIStackView, UITapGestureRecognizer, UIView;
+@class CARSessionStatus, CPMapTemplate, CPSApplicationStateMonitor, CPSEventObserver, CPSNavigationAlertQueue, CPSNavigationCardView, CPSNavigationETAView, CPSNavigator, CPSPanViewController, CPSTripPreviewsCardView, CPTripPreviewTextConfiguration, NSArray, NSLayoutConstraint, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString, NSTimer, UIColor, UIFocusGuide, UIPanGestureRecognizer, UIStackView, UITapGestureRecognizer, UIView, _CPSFocusHoldingButton;
 
 @interface CPSMapTemplateViewController : CPSBaseTemplateViewController <CARSessionObserving, CPSButtonDelegate, CPSTripInitiating, UIGestureRecognizerDelegate, CPSPanEventDelegate, CPSNavigationAlertQueueDelegate, CPSNavigationDisplaying, CARNavigationOwnershipManagerDelegate, CPSEventObserverDelegate, CPSApplicationStateObserving, CPMapTemplateProviding, CPSLinearFocusProviding>
 {
@@ -29,6 +29,7 @@
     _Bool _demoAutoHideTimerDisabled;
     _Bool _applicationIsFrontmost;
     _Bool _rightHandDrive;
+    _Bool _shouldRestoreFocusToNavigationBar;
     UIStackView *_trailingBottomStackView;
     unsigned long long _maximumMapButtonCount;
     NSMutableArray *_mapButtons;
@@ -63,9 +64,16 @@
     id <UIFocusItem> _itemFocusedBeforeNavAlert;
     UIColor *_guidanceBackgroundColor;
     unsigned long long _tripEstimateStyle;
+    _CPSFocusHoldingButton *_focusHoldingButton;
+    UIFocusGuide *_focusHolderLeftFocusGuide;
+    UIFocusGuide *_focusHolderRightFocusGuide;
     struct CGPoint _lastPanGesturePoint;
 }
 
+@property(nonatomic) _Bool shouldRestoreFocusToNavigationBar; // @synthesize shouldRestoreFocusToNavigationBar=_shouldRestoreFocusToNavigationBar;
+@property(retain, nonatomic) UIFocusGuide *focusHolderRightFocusGuide; // @synthesize focusHolderRightFocusGuide=_focusHolderRightFocusGuide;
+@property(retain, nonatomic) UIFocusGuide *focusHolderLeftFocusGuide; // @synthesize focusHolderLeftFocusGuide=_focusHolderLeftFocusGuide;
+@property(retain, nonatomic) _CPSFocusHoldingButton *focusHoldingButton; // @synthesize focusHoldingButton=_focusHoldingButton;
 @property(nonatomic) unsigned long long tripEstimateStyle; // @synthesize tripEstimateStyle=_tripEstimateStyle;
 @property(retain, nonatomic) UIColor *guidanceBackgroundColor; // @synthesize guidanceBackgroundColor=_guidanceBackgroundColor;
 @property(nonatomic) struct CGPoint lastPanGesturePoint; // @synthesize lastPanGesturePoint=_lastPanGesturePoint;
@@ -134,6 +142,7 @@
 - (void)_handleTapGesture:(id)arg1;
 - (void)_hideBar:(id)arg1;
 - (void)_showBar;
+- (void)_setFocusHoldersEnabled:(_Bool)arg1;
 - (void)_animateButtonsHidden:(_Bool)arg1;
 - (void)_resetAutoHideTimer;
 - (void)_setAutoHideDisabled:(_Bool)arg1 forRequester:(id)arg2;
@@ -164,6 +173,7 @@
 - (void)navigator:(id)arg1 didEndTrip:(_Bool)arg2;
 - (id)_tripDidBegin:(id)arg1 withEstimates:(id)arg2 forIdentifier:(id)arg3;
 - (void)_updateManeuverCardIfNeededForAlertShowing:(_Bool)arg1;
+- (_Bool)canAnimateNavigationAlert;
 - (void)navigationAlertQueue:(id)arg1 shouldRemoveAlertView:(id)arg2 animated:(_Bool)arg3 dismissalContext:(unsigned long long)arg4;
 - (void)navigationAlertQueue:(id)arg1 shouldDisplayAlertView:(id)arg2 animated:(_Bool)arg3;
 - (void)_setNavigationAlertView:(id)arg1 visible:(_Bool)arg2 animated:(_Bool)arg3 completion:(CDUnknownBlockType)arg4;
@@ -175,6 +185,7 @@
 - (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)_updateMapButtonsWithButtons:(id)arg1;
+- (void)_updateMapButtonVisibility;
 - (void)_setMaximumVisibleMapButtons:(unsigned long long)arg1;
 - (void)viewDidLoad;
 @property(readonly, nonatomic) CPMapTemplate *mapTemplate;

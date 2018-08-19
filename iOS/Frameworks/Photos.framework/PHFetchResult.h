@@ -51,6 +51,7 @@
 - (_Bool)isFullyBackedByObjectIDs;
 - (void)getMediaTypeCounts;
 - (unsigned long long)countOfAssetsWithMediaType:(long long)arg1;
+- (unsigned long long)cachedCountOfAssetsWithMediaType:(long long)arg1;
 - (void)enumerateObjectsAtIndexes:(id)arg1 options:(unsigned long long)arg2 usingBlock:(CDUnknownBlockType)arg3;
 - (void)enumerateObjectsWithOptions:(unsigned long long)arg1 usingBlock:(CDUnknownBlockType)arg2;
 - (void)enumerateObjectsUsingBlock:(CDUnknownBlockType)arg1;

@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
 - (void)beginAssertOnRead;
 - (void)object:(id)arg1 didChangeUUIDToValue:(id)arg2 fromValue:(id)arg3;
 - (id)objectWithUUID:(id)arg1 onlyIfLoaded:(_Bool)arg2 validateNewObjects:(_Bool)arg3 identifier:(long long *)arg4;
+- (_Bool)hasObjectUUID:(id)arg1;
 - (void)objectWillBeRemovedFromDocument:(id)arg1;
 - (void)objectWasAddedToDocument:(id)arg1 options:(unsigned long long)arg2;
 - (_Bool)shouldSuppressAssertionForObjectUUID:(id)arg1;

@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class NSArray, NSDictionary, NSMutableDictionary, NSString, PSIParse;
+@class NSArray, NSDictionary, NSMutableDictionary, NSMutableSet, NSSet, NSString, PSIParse;
 
 @interface PSIQuery : NSObject
 {
@@ -20,7 +20,11 @@
     NSDictionary *_substitutionsByStringToken;
     // Error parsing type: AB, name: _didStart
     // Error parsing type: AB, name: _isCanceled
+    NSMutableSet *_socialGroupExtendedAssetIds;
+    NSMutableSet *_socialGroupExtendedCollectionIds;
+    NSMutableSet *_socialGroupExtendedTripIds;
     _Bool _usesPrefixBasedWordEmbedding;
+    _Bool _calculateTokenCounts;
     _Bool _useWildcardText;
     NSArray *_queryTokens;
     NSString *_searchText;
@@ -28,6 +32,7 @@
     NSDictionary *_substitutions;
     unsigned long long _numberOfNextKeywordSuggestionToProcess;
     NSArray *_nextKeywordSuggestions;
+    NSArray *_dedupedGroupResults;
 }
 
 + (void)bootstrap;
@@ -39,6 +44,11 @@
 + (id)dateFilterByCombiningDateFilter:(id)arg1 withDateFilter:(id)arg2;
 + (id)dateFilterWithAttributes:(id)arg1;
 @property(readonly, nonatomic) _Bool useWildcardText; // @synthesize useWildcardText=_useWildcardText;
+@property(copy, nonatomic) NSSet *socialGroupExtendedTripIds; // @synthesize socialGroupExtendedTripIds=_socialGroupExtendedTripIds;
+@property(copy, nonatomic) NSSet *socialGroupExtendedCollectionIds; // @synthesize socialGroupExtendedCollectionIds=_socialGroupExtendedCollectionIds;
+@property(copy, nonatomic) NSSet *socialGroupExtendedAssetIds; // @synthesize socialGroupExtendedAssetIds=_socialGroupExtendedAssetIds;
+@property(copy, nonatomic) NSArray *dedupedGroupResults; // @synthesize dedupedGroupResults=_dedupedGroupResults;
+@property(nonatomic) _Bool calculateTokenCounts; // @synthesize calculateTokenCounts=_calculateTokenCounts;
 @property(retain, nonatomic) NSArray *nextKeywordSuggestions; // @synthesize nextKeywordSuggestions=_nextKeywordSuggestions;
 @property(nonatomic) unsigned long long numberOfNextKeywordSuggestionToProcess; // @synthesize numberOfNextKeywordSuggestionToProcess=_numberOfNextKeywordSuggestionToProcess;
 @property(retain, nonatomic) NSDictionary *substitutions; // @synthesize substitutions=_substitutions;

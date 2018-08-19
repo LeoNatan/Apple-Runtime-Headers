@@ -17,7 +17,7 @@ __attribute__((visibility("hidden")))
     TSCECalculationEngine *_calculationEngine;
     TSTInfo *_hostInfo;
     NSString *_initialWhitespace;
-    struct TSUCellCoord _hostCell;
+    struct TSUModelCellCoord _hostCell;
     _Bool _syntaxError;
     _Bool _fixupFormulas;
     _Bool _formulaWasFixable;
@@ -37,7 +37,7 @@ __attribute__((visibility("hidden")))
 + (id)leadingSingleQuoteEscapeCharacters;
 + (id)singleQuoteCharacters;
 + (_Bool)storageExceedsMaxFormulaLength:(id)arg1;
-+ (id)formulaForCell:(id)arg1 atCellID:(struct TSUCellCoord)arg2 inTable:(id)arg3;
++ (id)formulaForCell:(id)arg1 atCellID:(struct TSUViewCellCoord)arg2 inTable:(id)arg3;
 @property(copy, nonatomic) NSString *initialWhitespace; // @synthesize initialWhitespace=_initialWhitespace;
 @property(nonatomic, getter=isEmpty) _Bool empty; // @synthesize empty=_empty;
 @property(readonly, nonatomic) _Bool formulaFixupsShouldStick; // @synthesize formulaFixupsShouldStick=_formulaFixupsShouldStick;
@@ -63,10 +63,13 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) struct TSCEFormula formula;
 @property(readonly, nonatomic) struct TSCEFormula geometricFormula;
 - (void)reset;
-- (id)initWithCalculationEngine:(id)arg1 hostCell:(struct TSUCellCoord)arg2 hostTable:(id)arg3;
-- (id)initWithContext:(id)arg1 calculationEngine:(id)arg2 hostCell:(struct TSUCellCoord)arg3 TSCEFormula:(const struct TSCEFormula *)arg4 ownerUID:(const UUIDData_5fbc143e *)arg5;
-- (id)initWithContext:(id)arg1 calculationEngine:(id)arg2 hostCell:(struct TSUCellCoord)arg3 TSCEFormula:(const struct TSCEFormula *)arg4 ownerUID:(const UUIDData_5fbc143e *)arg5 suppressAutomaticNamedReferenceInvalidation:(_Bool)arg6;
-- (id)initWithCalculationEngine:(id)arg1 expressionTree:(id)arg2 hostCell:(struct TSUCellCoord)arg3 hostTable:(id)arg4;
+- (id)initWithCalculationEngine:(id)arg1 viewHostCell:(struct TSUViewCellCoord)arg2 hostTable:(id)arg3;
+- (id)initWithCalculationEngine:(id)arg1 baseHostCell:(struct TSUModelCellCoord)arg2 hostTable:(id)arg3;
+- (id)initWithContext:(id)arg1 calculationEngine:(id)arg2 baseHostCell:(struct TSUModelCellCoord)arg3 TSCEFormula:(const struct TSCEFormula *)arg4 ownerUID:(const UUIDData_5fbc143e *)arg5;
+- (id)initWithContext:(id)arg1 calculationEngine:(id)arg2 viewHostCell:(struct TSUViewCellCoord)arg3 TSCEFormula:(const struct TSCEFormula *)arg4 ownerUID:(const UUIDData_5fbc143e *)arg5;
+- (id)initWithContext:(id)arg1 calculationEngine:(id)arg2 baseHostCell:(struct TSUModelCellCoord)arg3 TSCEFormula:(const struct TSCEFormula *)arg4 ownerUID:(const UUIDData_5fbc143e *)arg5 suppressAutomaticNamedReferenceInvalidation:(_Bool)arg6;
+- (id)initWithContext:(id)arg1 calculationEngine:(id)arg2 viewHostCell:(struct TSUViewCellCoord)arg3 TSCEFormula:(const struct TSCEFormula *)arg4 ownerUID:(const UUIDData_5fbc143e *)arg5 suppressAutomaticNamedReferenceInvalidation:(_Bool)arg6;
+- (id)initWithCalculationEngine:(id)arg1 expressionTree:(id)arg2 baseHostCell:(struct TSUModelCellCoord)arg3 hostTable:(id)arg4;
 
 @end
 

@@ -47,7 +47,6 @@ __attribute__((visibility("hidden")))
 - (id)plistProperties;
 @property(readonly, nonatomic) NSString *lookupString;
 - (void)dealloc;
-- (id)init;
 - (id)initWithIdentifier:(id)arg1 plistPath:(id)arg2;
 
 @end

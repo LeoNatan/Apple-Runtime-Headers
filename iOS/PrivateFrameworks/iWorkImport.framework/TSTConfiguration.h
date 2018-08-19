@@ -80,6 +80,7 @@ __attribute__((visibility("hidden")))
     _Bool _supportsStockUI;
     _Bool _shouldZoomOutOnEndEditing;
     _Bool _forceZoomInOnBeginEditing;
+    _Bool _supportsCategorization;
     _Bool _allowsBlackDragDropBackground;
     unsigned int _maxNumberOfRows;
     unsigned int _maxNumberOfColumns;
@@ -93,6 +94,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool allowsBlackDragDropBackground; // @synthesize allowsBlackDragDropBackground=_allowsBlackDragDropBackground;
 @property(nonatomic) double structuredTextImportConfidenceThresholdForCanvas; // @synthesize structuredTextImportConfidenceThresholdForCanvas=_structuredTextImportConfidenceThresholdForCanvas;
 @property(nonatomic) double structuredTextImportConfidenceThreshold; // @synthesize structuredTextImportConfidenceThreshold=_structuredTextImportConfidenceThreshold;
+@property(nonatomic) _Bool supportsCategorization; // @synthesize supportsCategorization=_supportsCategorization;
 @property(nonatomic) _Bool forceZoomInOnBeginEditing; // @synthesize forceZoomInOnBeginEditing=_forceZoomInOnBeginEditing;
 @property(nonatomic) _Bool shouldZoomOutOnEndEditing; // @synthesize shouldZoomOutOnEndEditing=_shouldZoomOutOnEndEditing;
 @property(nonatomic) _Bool supportsStockUI; // @synthesize supportsStockUI=_supportsStockUI;

@@ -18,6 +18,7 @@
 + (id)_circularMediumImageProvider;
 + (id)_circularSmallImageProvider;
 + (id)_modularSmallImageProvider;
++ (id)companionModel;
 @property(nonatomic) double countdownDuration; // @synthesize countdownDuration=_countdownDuration;
 @property(nonatomic) unsigned int state; // @synthesize state=_state;
 @property(nonatomic) double remainingTime; // @synthesize remainingTime=_remainingTime;

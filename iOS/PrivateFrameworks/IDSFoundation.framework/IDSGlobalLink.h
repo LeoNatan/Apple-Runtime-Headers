@@ -115,6 +115,7 @@
 - (_Bool)link:(id)arg1 didReceivePacket:(CDStruct_c4cff10b *)arg2 fromDeviceUniqueID:(id)arg3 cbuuid:(id)arg4;
 - (void)link:(id)arg1 didDisconnectForDeviceUniqueID:(id)arg2 cbuuid:(id)arg3;
 - (void)link:(id)arg1 didConnectForDeviceUniqueID:(id)arg2 cbuuid:(id)arg3;
+- (void)updateSessionParticipants:(id)arg1 relaySessionID:(id)arg2 participants:(id)arg3;
 - (void)getSessionInfo:(id)arg1 relaySessionID:(id)arg2 requestType:(long long)arg3 options:(id)arg4;
 - (_Bool)_getSessionStreamInfo:(id)arg1 relaySessionID:(id)arg2 options:(id)arg3;
 - (_Bool)_getSessionParticipants:(id)arg1 relaySessionID:(id)arg2 options:(id)arg3;

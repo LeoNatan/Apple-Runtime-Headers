@@ -9,30 +9,32 @@
 __attribute__((visibility("hidden")))
 @interface TSTTableTileRowInfo : TSPContainedObject
 {
-    struct __CFData *mStorageBuffer;
-    unsigned short mStorageOffsets[255];
-    unsigned short mBufferSize;
-    unsigned short mTileRowIndex;
-    unsigned short mCellCount;
-    unsigned char mMaxTileColumnIndex;
-    _Bool mMaxTileColumnIndexValid;
-    unsigned char mStorageVersion;
+    struct __CFData *_storageBuffer;
+    unsigned short _storageOffsets[255];
+    unsigned short _bufferSize;
+    struct __CFData *_storageBufferPreBNC;
+    unsigned short _storageOffsetsPreBNC[255];
+    unsigned short _bufferSizePreBNC;
+    unsigned short _maxTileColumnIndex;
+    _Bool _maxTileColumnIndexValid;
+    unsigned char _storageVersion;
+    unsigned short _cellCount;
+    unsigned int _tileRowIndex;
 }
 
-@property(readonly, nonatomic) unsigned short cellCount; // @synthesize cellCount=mCellCount;
-@property(nonatomic) unsigned short tileRowIndex; // @synthesize tileRowIndex=mTileRowIndex;
-- (_Bool)searchCellStorageRefAtColumnIndex:(unsigned char)arg1 searchMask:(unsigned long long)arg2;
+@property(readonly, nonatomic) unsigned short cellCount; // @synthesize cellCount=_cellCount;
+@property(nonatomic) unsigned int tileRowIndex; // @synthesize tileRowIndex=_tileRowIndex;
+- (_Bool)searchCellStorageRefAtColumnIndex:(unsigned short)arg1 searchMask:(unsigned long long)arg2;
+- (void)enumerateStoragesInColumnRange:(struct _NSRange)arg1 getPreBNC:(_Bool)arg2 withBlock:(CDUnknownBlockType)arg3;
 - (void)enumerateStoragesInColumnRange:(struct _NSRange)arg1 withBlock:(CDUnknownBlockType)arg2;
 - (id)description;
-- (id)p_debugDumpCompact;
 - (_Bool)validateWithResult:(id *)arg1;
 - (void)validate;
-- (void)debugDump;
+@property(readonly, nonatomic) _Bool bncStorageBufferExists;
 - (void)saveToArchive:(struct TileRowInfo *)arg1 archiver:(id)arg2;
 - (id)initWithArchive:(const struct TileRowInfo *)arg1 owner:(id)arg2;
 - (void)dealloc;
-- (id)initWithOwner:(id)arg1 tileRowIndex:(unsigned short)arg2;
-- (void)i_upgradeWithDataStore:(id)arg1;
+- (id)initWithOwner:(id)arg1 tileRowIndex:(unsigned int)arg2;
 
 @end
 

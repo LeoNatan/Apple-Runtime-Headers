@@ -21,6 +21,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) long long deviceType; // @synthesize deviceType=_deviceType;
 @property(readonly, nonatomic) long long platform; // @synthesize platform=_platform;
 @property(readonly, nonatomic) _Bool isMetalCapable;
+- (_Bool)p_isMetalCapable;
 - (struct CGSize)maximumMetalTextureSizeForDevice:(id)arg1;
 @property(readonly, nonatomic) struct CGSize maximumHardcodedTextureSize;
 - (struct CGSize)maximumTextureSizeWithGLContext:(id)arg1;

@@ -8,8 +8,11 @@
 
 @interface WBUHistory : WBSHistory
 {
+    _Bool _shouldScheduleMaintenance;
 }
 
+@property(nonatomic) _Bool shouldScheduleMaintenance; // @synthesize shouldScheduleMaintenance=_shouldScheduleMaintenance;
+- (_Bool)historyStoreShouldScheduleMaintenance:(id)arg1;
 - (void)historyStoreDidFailDatabaseIntegrityCheck:(id)arg1;
 - (_Bool)historyStoreShouldCheckDatabaseIntegrity:(id)arg1;
 - (Class)_historyItemClass;

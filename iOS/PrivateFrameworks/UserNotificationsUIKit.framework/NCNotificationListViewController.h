@@ -152,8 +152,6 @@
 - (id)notificationRequestInLongLook;
 @property(readonly, nonatomic, getter=isPresentingNotificationInLongLook) _Bool presentingNotificationInLongLook;
 - (_Bool)isContentExtensionVisible:(id)arg1;
-- (void)didDismissModalView;
-- (void)didPresentModalView;
 - (_Bool)hasVisibleContent;
 - (_Bool)hasContent;
 - (void)showRequestsForNotificationSectionSettings:(id)arg1;

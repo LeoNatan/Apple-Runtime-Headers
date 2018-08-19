@@ -29,8 +29,7 @@
 @property(nonatomic) unsigned int deviceID; // @synthesize deviceID=_deviceID;
 @property(copy, nonatomic) NSString *key; // @synthesize key=_key;
 - (void).cxx_destruct;
-- (unsigned short)characterAtIndex:(unsigned int)arg1;
-- (unsigned int)length;
+- (id)forwardingTargetForSelector:(SEL)arg1;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)description;

@@ -13,6 +13,7 @@
 - (double)baseFontSize;
 
 @optional
+- (double)textMacroFontSize;
 - (struct CGColor *)baseFontColor;
 @end
 

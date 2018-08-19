@@ -29,6 +29,8 @@
 - (void).cxx_destruct;
 - (id)candidateForSelectionKey:(id)arg1;
 @property(readonly, nonatomic) BOOL selectedCandidateIsVisible;
+- (void)updateHighlightBasedOnSelection;
+- (void)updateIndexOfSelectedCandidate;
 - (id)groupTitleForLineWithIndex:(long long)arg1;
 - (id)viewForLineWithIndex:(long long)arg1 frame:(struct CGRect)arg2;
 - (void)updateLines:(id)arg1 animate:(BOOL)arg2;

@@ -106,6 +106,7 @@
 - (_Bool)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
 - (void)_preemptKeyboardForTapOnDrawing:(id)arg1;
 - (_Bool)hitTestResizeHandles:(struct CGPoint)arg1 threshold:(double)arg2;
+- (_Bool)hitByTouchLocation:(struct CGPoint)arg1 bounds:(struct CGRect)arg2;
 - (_Bool)hitChrome:(struct CGPoint)arg1 isStylus:(_Bool)arg2;
 - (void)_setHeight:(double)arg1 originalHeight:(double)arg2 growFromTop:(_Bool)arg3;
 - (void)updateDrawingHeight:(double)arg1 notifyDrawingDidChange:(_Bool)arg2;

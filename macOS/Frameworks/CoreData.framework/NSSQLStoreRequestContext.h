@@ -22,8 +22,10 @@ __attribute__((visibility("hidden")))
     BOOL _useConcurrentFetching;
     BOOL _hasHistoryTracking;
     NSNumber *_transactionID;
+    BOOL _storeIsInMemory;
 }
 
+@property(readonly, nonatomic) BOOL storeIsInMemory; // @synthesize storeIsInMemory=_storeIsInMemory;
 @property(readonly, nonatomic) NSNumber *transactionID; // @synthesize transactionID=_transactionID;
 @property(retain, nonatomic) id result; // @synthesize result=_result;
 @property(retain, nonatomic) id exception; // @synthesize exception=_exception;

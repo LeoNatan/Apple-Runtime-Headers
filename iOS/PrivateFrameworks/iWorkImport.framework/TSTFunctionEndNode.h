@@ -24,6 +24,8 @@ __attribute__((visibility("hidden")))
 - (void)insertFormulaText:(id)arg1 includeWhitespace:(_Bool)arg2;
 - (id)string;
 - (int)tokenType;
+- (unsigned long long)lastIndex;
+- (unsigned long long)firstIndex;
 - (id)initWithContext:(id)arg1 children:(id)arg2 firstIndex:(unsigned long long)arg3 lastIndex:(unsigned long long)arg4;
 - (id)initWithContext:(id)arg1 functionNode:(id)arg2 firstIndex:(unsigned long long)arg3 lastIndex:(unsigned long long)arg4;
 

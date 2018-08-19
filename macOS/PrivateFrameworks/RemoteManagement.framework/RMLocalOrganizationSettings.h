@@ -14,7 +14,7 @@
 
 @property(copy, nonatomic) NSString *passcode; // @dynamic passcode;
 - (id)dictionaryRepresentation;
-- (void)updateWithDictionaryRepresentation:(id)arg1;
+- (BOOL)updateWithDictionaryRepresentation:(id)arg1;
 - (id)computeUniqueIdentifier;
 
 // Remaining properties

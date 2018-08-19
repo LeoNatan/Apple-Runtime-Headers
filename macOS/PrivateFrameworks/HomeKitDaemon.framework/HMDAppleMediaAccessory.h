@@ -79,6 +79,7 @@
 - (void)notifyClientsOfUpdatedRootSettings:(id)arg1;
 - (void)setRootSettings:(id)arg1;
 @property(readonly) HMDAccessorySettingGroup *rootSettings; // @synthesize rootSettings=_rootSettings;
+- (id)runtimeState;
 - (long long)reachableTransports;
 - (void)setRemotelyReachable:(BOOL)arg1;
 - (BOOL)isRemotelyReachable;

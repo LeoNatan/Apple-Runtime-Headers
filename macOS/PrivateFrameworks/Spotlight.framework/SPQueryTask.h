@@ -8,7 +8,7 @@
 
 #import "SPKQueryDelegate.h"
 
-@class NSArray, NSDictionary, NSMutableArray, NSMutableDictionary, NSMutableOrderedSet, NSObject<OS_dispatch_queue>, NSObject<SPQueryTaskDelegate>, NSString, PRSRankingConfiguration, PRSResult, SFStartLocalSearchFeedback, SPMetadataQuery;
+@class NSArray, NSDictionary, NSMutableArray, NSMutableDictionary, NSMutableOrderedSet, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, NSObject<SPQueryTaskDelegate>, NSString, PRSRankingConfiguration, PRSResult, SFStartLocalSearchFeedback, SPMetadataQuery;
 
 @interface SPQueryTask : NSObject <SPKQueryDelegate>
 {
@@ -17,6 +17,7 @@
     BOOL _canceled;
     BOOL _willSendPerformanceFeedback;
     unsigned int _qosClass;
+    NSObject<OS_dispatch_source> *_timer;
     BOOL _forceStableResults;
     BOOL _parsecFinished;
     BOOL _metadataFinished;
@@ -97,7 +98,7 @@
 - (void)queryTask:(id)arg1 gotResponse:(id)arg2;
 - (void)finishWithResponseKind:(int)arg1 results:(id)arg2 groupedResults:(id)arg3 userQueryString:(id)arg4 topHitIsIn:(BOOL)arg5 suggestions:(id)arg6;
 - (void)_processResponse:(id)arg1 toQuery:(id)arg2;
-- (void)_addAssistantQueryResults:(id)arg1 toResults:(id)arg2;
+- (void)_addParsecQueryResults:(id)arg1 toResults:(id)arg2;
 - (BOOL)_isInternallyCompleted;
 - (BOOL)_topHitIsIn;
 - (void)cancel;

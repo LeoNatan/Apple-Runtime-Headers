@@ -10,7 +10,6 @@
 
 @interface VCUIManageVoiceShortcutRecordingView : VCUIManageVoiceShortcutView
 {
-    _Bool _typeToSiriEnabled;
     _Bool _speechStarted;
     _Bool _animatingHeadlineView;
     SUICFlamesView *_flamesView;
@@ -28,11 +27,11 @@
 @property(retain, nonatomic) NSLayoutConstraint *headlineViewAnimationBeginConstraint; // @synthesize headlineViewAnimationBeginConstraint=_headlineViewAnimationBeginConstraint;
 @property(retain, nonatomic) VCUIHeadlineView *headlineView; // @synthesize headlineView=_headlineView;
 @property(nonatomic) _Bool speechStarted; // @synthesize speechStarted=_speechStarted;
-@property(nonatomic) _Bool typeToSiriEnabled; // @synthesize typeToSiriEnabled=_typeToSiriEnabled;
 @property(retain, nonatomic) VCUITypeToSiriField *typeToSiriField; // @synthesize typeToSiriField=_typeToSiriField;
 @property(retain, nonatomic) UILabel *typeToSiriLabel; // @synthesize typeToSiriLabel=_typeToSiriLabel;
 @property(retain, nonatomic) SUICFlamesView *flamesView; // @synthesize flamesView=_flamesView;
 - (void).cxx_destruct;
+- (_Bool)isFirstResponder;
 - (void)updateButtonTrayDelta:(double)arg1;
 - (_Bool)showRecordingButtonOverlayDescription;
 - (_Bool)showRecordingButtonOverlay;

@@ -6,13 +6,16 @@
 
 #import "NSObject.h"
 
-@class HDDatabaseTransactionContext, HDSQLiteDatabase;
+@class HDDatabaseTransactionContext, HDSQLiteDatabase, NSMutableArray;
 
 @interface HDDatabaseTransaction : NSObject
 {
+    id <HDSQLiteDatabaseProvider> _databaseProvider;
+    NSMutableArray *_onCommitBlocks;
+    NSMutableArray *_onRollbackBlocks;
     _Bool _isActive;
     _Bool _isOutermostTransactionUnprotected;
-    id <HDSQLiteDatabaseProvider> _databaseProvider;
+    _Bool _isHandlingTransactionEnd;
     _Bool _performingMigration;
     HDSQLiteDatabase *_unprotectedDatabase;
     HDSQLiteDatabase *_protectedDatabase;
@@ -24,6 +27,8 @@
 @property(readonly, nonatomic) HDSQLiteDatabase *protectedDatabase; // @synthesize protectedDatabase=_protectedDatabase;
 @property(readonly, nonatomic) HDSQLiteDatabase *unprotectedDatabase; // @synthesize unprotectedDatabase=_unprotectedDatabase;
 - (void).cxx_destruct;
+- (void)transactionDidEndWithSuccess:(_Bool)arg1;
+- (void)onCommit:(CDUnknownBlockType)arg1 orRollback:(CDUnknownBlockType)arg2;
 - (_Bool)performWithOptions:(unsigned long long)arg1 error:(id *)arg2 block:(CDUnknownBlockType)arg3 inaccessibilityHandler:(CDUnknownBlockType)arg4;
 - (id)databaseForEntityClass:(Class)arg1;
 - (id)databaseForEntity:(id)arg1;

@@ -11,6 +11,7 @@
 __attribute__((visibility("hidden")))
 @interface EQKitBox : NSObject <NSCopying>
 {
+    struct CGColor *mFontSmoothingBackgroundColor;
 }
 
 - (id)description;
@@ -18,6 +19,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)p_getTransform:(struct CGAffineTransform *)arg1 fromDescendant:(id)arg2;
 - (struct CGAffineTransform)transformFromDescendant:(id)arg1;
 - (void)renderIntoContext:(struct CGContext *)arg1 offset:(struct CGPoint)arg2;
+@property(nonatomic) struct CGColor *fontSmoothingBackgroundColor; // @synthesize fontSmoothingBackgroundColor=mFontSmoothingBackgroundColor;
 - (struct CGRect)erasableBounds;
 @property(readonly, nonatomic) double layoutVSize;
 @property(readonly, nonatomic) double layoutDepth;

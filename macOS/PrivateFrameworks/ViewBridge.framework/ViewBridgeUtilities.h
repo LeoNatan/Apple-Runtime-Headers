@@ -11,6 +11,7 @@ __attribute__((visibility("hidden")))
 {
 }
 
++ (void)withAppearance:(id)arg1 perform:(CDUnknownBlockType)arg2;
 + (id)appearanceNamed:(id)arg1;
 + (void)whileHoldingLock:(struct os_unfair_lock_s *)arg1 perform:(CDUnknownBlockType)arg2;
 + (BOOL)maintainConstraintForView:(id)arg1 withIdentifier:(id)arg2 andConstant:(double)arg3 createdByMeansOf:(CDUnknownBlockType)arg4;

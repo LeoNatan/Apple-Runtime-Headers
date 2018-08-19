@@ -7,7 +7,6 @@
 #import "NSObject.h"
 
 @protocol CSSmartSiriVolumeDelegate <NSObject>
-- (void)CSSmartSiriVolumeDidReceivePhoneCallStateChanged:(BOOL)arg1;
 - (void)CSSmartSiriVolumeDidReceiveTimerChanged:(long long)arg1;
 - (void)CSSmartSiriVolumeDidReceiveAlarmChanged:(long long)arg1;
 - (void)CSSmartSiriVolumeDidReceiveMusicVolumeChanged:(float)arg1;

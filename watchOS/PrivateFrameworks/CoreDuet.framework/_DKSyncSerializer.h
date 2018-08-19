@@ -16,6 +16,7 @@
 }
 
 + (id)underlyingQueue;
++ (id)operationQueue;
 + (void)addDependentOperationWithBlock:(CDUnknownBlockType)arg1;
 + (void)addDependentOperation:(id)arg1;
 + (void)addOperationWithBlock:(CDUnknownBlockType)arg1;

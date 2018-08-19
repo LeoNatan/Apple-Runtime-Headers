@@ -10,6 +10,7 @@
 {
 }
 
+- (void)_setDefaultKeyViewLoopForView:(id)arg1;
 - (void)_setDefaultKeyViewLoop;
 
 @end

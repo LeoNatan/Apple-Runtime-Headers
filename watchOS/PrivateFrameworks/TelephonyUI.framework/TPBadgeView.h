@@ -4,23 +4,34 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "UIView.h"
+#import <TelephonyUI/TPView.h>
 
-@class NSString, UILabel;
+@class NSLayoutConstraint, NSString, UILabel;
 
-@interface TPBadgeView : UIView
+@interface TPBadgeView : TPView
 {
-    NSString *_title;
     unsigned int _theme;
-    UILabel *_label;
+    NSString *_title;
+    UILabel *_titleLabel;
+    NSLayoutConstraint *_titleLabelBottomAnchorLayoutConstraint;
+    NSLayoutConstraint *_titleLabelLeadingAnchorLayoutConstraint;
+    NSLayoutConstraint *_titleLabelTopAnchorLayoutConstraint;
+    NSLayoutConstraint *_titleLabelTrailingAnchorLayoutConstraint;
 }
 
-@property(readonly, nonatomic) UILabel *label; // @synthesize label=_label;
-@property(nonatomic) unsigned int theme; // @synthesize theme=_theme;
+@property(retain, nonatomic) NSLayoutConstraint *titleLabelTrailingAnchorLayoutConstraint; // @synthesize titleLabelTrailingAnchorLayoutConstraint=_titleLabelTrailingAnchorLayoutConstraint;
+@property(retain, nonatomic) NSLayoutConstraint *titleLabelTopAnchorLayoutConstraint; // @synthesize titleLabelTopAnchorLayoutConstraint=_titleLabelTopAnchorLayoutConstraint;
+@property(retain, nonatomic) NSLayoutConstraint *titleLabelLeadingAnchorLayoutConstraint; // @synthesize titleLabelLeadingAnchorLayoutConstraint=_titleLabelLeadingAnchorLayoutConstraint;
+@property(retain, nonatomic) NSLayoutConstraint *titleLabelBottomAnchorLayoutConstraint; // @synthesize titleLabelBottomAnchorLayoutConstraint=_titleLabelBottomAnchorLayoutConstraint;
+@property(readonly, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
+@property(nonatomic) unsigned int theme; // @synthesize theme=_theme;
 - (void).cxx_destruct;
-- (id)shortStringForTitle:(id)arg1;
-- (void)updateView;
+- (struct CGSize)intrinsicContentSize;
+- (void)updateTheme;
+- (void)updateFonts;
+- (void)loadConstraints;
+- (void)commonInit;
 - (id)initWithTitle:(id)arg1 theme:(unsigned int)arg2;
 - (id)initWithTitle:(id)arg1;
 

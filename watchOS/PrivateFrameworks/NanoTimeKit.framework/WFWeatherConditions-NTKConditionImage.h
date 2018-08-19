@@ -8,11 +8,7 @@
 
 @interface WFWeatherConditions (NTKConditionImage)
 - (id)ntkConditionImageProviderForFamily:(int)arg1 forceDaytime:(_Bool)arg2;
-- (id)ntkUpNextConditionImageNameForSize:(id)arg1 shouldForceDaytime:(_Bool)arg2;
-- (id)_ntkUpNextConditionImageProvider:(id)arg1 shouldForceDaytime:(_Bool)arg2;
-- (id)ntkSmallUpNextConditionImage:(_Bool)arg1;
-- (id)ntkSmallUpNextConditionImageProvider:(_Bool)arg1;
-- (id)ntkLargeUpNextConditionImage:(_Bool)arg1;
-- (id)ntkLargeUpNextConditionImageProvider:(_Bool)arg1;
+- (id)ntkConditionImageForFamily:(int)arg1 forceDaytime:(_Bool)arg2;
+- (id)_ntkBaseNameForConditionImageForFamily:(int)arg1 forceDaytime:(_Bool)arg2;
 @end
 

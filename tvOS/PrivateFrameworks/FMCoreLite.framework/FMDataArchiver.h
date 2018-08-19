@@ -24,7 +24,6 @@
 @property(nonatomic) _Bool backedUp; // @synthesize backedUp=_backedUp;
 @property(nonatomic) long long dataProtectionClass; // @synthesize dataProtectionClass=_dataProtectionClass;
 - (void).cxx_destruct;
-- (id)readData:(id *)arg1 class:(Class)arg2;
 - (unsigned long long)dataWritingOptionForDataProtectionClass:(long long)arg1;
 - (id)saveObject:(id)arg1;
 - (_Bool)saveDictionary:(id)arg1 error:(id *)arg2;

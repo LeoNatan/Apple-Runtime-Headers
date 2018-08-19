@@ -16,14 +16,13 @@
     NSDictionary *mAttributeDictionary;
     IOBluetoothDevice *mDeviceForService;
     NSArray *sortedAttributes;
-    NSArray *_sortedAttributes;
 }
 
 + (id)withServiceDictionary:(id)arg1 device:(id)arg2;
 + (id)withSDPServiceRecordRef:(struct OpaqueIOBluetoothObjectRef *)arg1;
 + (id)publishedServiceRecordWithDictionary:(id)arg1;
 + (BOOL)supportsSecureCoding;
-@property(copy) NSArray *sortedAttributes; // @synthesize sortedAttributes=_sortedAttributes;
+@property(copy) NSArray *sortedAttributes; // @synthesize sortedAttributes;
 @property(retain) IOBluetoothDevice *device; // @synthesize device=mDeviceForService;
 @property(copy) NSDictionary *attributes; // @synthesize attributes=mAttributeDictionary;
 - (id)shortDescription;

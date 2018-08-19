@@ -7,6 +7,6 @@
 #import "NSObject.h"
 
 @protocol ROCKInvocationInterposable <NSObject>
-- (void)invokeWithInvocation:(id <NSInvocationInterface>)arg1 completionHandler:(void (^)(NSError *))arg2;
+- (void)invokeWithInvocation:(id <ROCKInvocationInterface>)arg1 completionHandler:(void (^)(NSError *))arg2;
 @end
 

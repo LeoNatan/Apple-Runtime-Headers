@@ -7,6 +7,6 @@
 #import "NSData.h"
 
 @interface NSData (INImageFilePersistence)
-- (void)_in_writeDataToPathForImage:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)_in_writeDataToPathForImage:(id)arg1 storeType:(unsigned int)arg2 completion:(CDUnknownBlockType)arg3;
 @end
 

@@ -136,6 +136,8 @@
 - (void)setLabel:(id)arg1 label:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)copyLabel:(id)arg1 error:(id *)arg2;
 - (void)copyLabel:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (id)getShortLabel:(id)arg1 error:(id *)arg2;
+- (void)getShortLabel:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)getSimLabel:(id)arg1 error:(id *)arg2;
 - (void)getSimLabel:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)getRemainingPUKAttemptCount:(id)arg1 error:(id *)arg2;
@@ -255,7 +257,9 @@
 - (id)copyMobileCountryCode:(id)arg1 error:(id *)arg2;
 - (void)copyMobileCountryCode:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)copyServingPlmn:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (id)copyRegistrationDisplayStatus:(id)arg1 error:(id *)arg2;
 - (void)copyRegistrationDisplayStatus:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (id)copyRegistrationStatus:(id)arg1 error:(id *)arg2;
 - (void)copyRegistrationStatus:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)listPersonalWallets:(id *)arg1;
 - (id)deletePersonalWallet:(id)arg1;

@@ -8,11 +8,14 @@
 
 #import "NSPopoverDelegate.h"
 
-@class NSString;
+@class NSButton, NSString, _NSDrawingHandlerView;
 
 @interface NSPopoverColorWell : NSColorWell <NSPopoverDelegate>
 {
     CDUnknownBlockType _afterRenderer;
+    BOOL _rendersUsingSubviews;
+    NSButton *_button;
+    _NSDrawingHandlerView *_colorRenderer;
     struct {
         unsigned int _noSelection:1;
         unsigned int _emptyColor:1;
@@ -31,6 +34,7 @@
 @property(copy) CDUnknownBlockType afterRenderer; // @synthesize afterRenderer=_afterRenderer;
 - (BOOL)isOpaque;
 - (void)setColor:(id)arg1;
+- (void)setNeedsDisplay:(BOOL)arg1;
 @property BOOL hasNoSelection;
 - (void)performClick:(id)arg1;
 - (void)mouseDown:(id)arg1;
@@ -38,6 +42,7 @@
 - (void)popoverWillClose:(id)arg1;
 - (void)_showPopover;
 - (BOOL)drawColor;
+- (BOOL)_drawColor:(BOOL)arg1;
 - (struct NSEdgeInsets)_colorSwatchEdgeInsets;
 - (void)_drawBorderInRect:(struct CGRect)arg1;
 - (void)_windowChangedKeyState;
@@ -51,6 +56,10 @@
 - (BOOL)_hasExtra10_11BordersInToolbars;
 - (struct CGSize)intrinsicContentSize;
 - (struct NSEdgeInsets)alignmentRectInsets;
+- (id)initWithCoder:(id)arg1;
+- (id)initWithFrame:(struct CGRect)arg1;
+- (id)init;
+- (void)_commonInit;
 - (id)_bezelRenderingButton;
 
 // Remaining properties

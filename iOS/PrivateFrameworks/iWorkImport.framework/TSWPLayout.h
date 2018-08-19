@@ -21,12 +21,10 @@ __attribute__((visibility("hidden")))
     TSWPStorage *_storage;
     unsigned long long _lastLayoutMgrChangeCount;
     TSDLayout<TSWPLayoutParent> *_wpLayoutParent;
-    _Bool _optimizeSegmentationOfEmptyLines;
     _Bool _useBlackTextColor;
 }
 
 @property(nonatomic) _Bool useBlackTextColor; // @synthesize useBlackTextColor=_useBlackTextColor;
-@property(nonatomic) _Bool optimizeSegmentationOfEmptyLines; // @synthesize optimizeSegmentationOfEmptyLines=_optimizeSegmentationOfEmptyLines;
 @property(readonly, nonatomic) NSMutableArray *columns; // @synthesize columns=_columns;
 @property(readonly, nonatomic) TSWPStorage *storage; // @synthesize storage=_storage;
 - (void).cxx_destruct;
@@ -38,7 +36,7 @@ __attribute__((visibility("hidden")))
 - (struct CGRect)p_rectForSelectionPath:(id)arg1 useParagraphModeRects:(_Bool)arg2;
 - (_Bool)selectionMustBeEntirelyOnscreenToCountAsVisibleInSelectionPath:(id)arg1;
 - (double)viewScaleForZoomingToSelectionPath:(id)arg1 targetPointSize:(double)arg2;
-- (id)rectsInRootForAnchoringPencilAnnotationsForSelectionPath:(id)arg1 attachedType:(long long)arg2;
+- (id)unscaledAnchorRectsForPencilAnnotationSelectionPath:(id)arg1 attachedType:(long long)arg2;
 - (struct CGRect)rectInRootForPresentingAnnotationPopoverForSelectionPath:(id)arg1;
 - (struct CGRect)rectInRootOfAutoZoomContextOfSelectionPath:(id)arg1;
 - (struct CGRect)rectInRootForZoomingToSelectionPath:(id)arg1;
@@ -110,9 +108,6 @@ __attribute__((visibility("hidden")))
 - (struct CGPoint)capturedInfoPositionForAttachment;
 - (void)validate;
 - (void)i_validateTextLayout;
-- (_Bool)p_hasEmptyParagraphFillOrBorders;
-- (_Bool)p_hasEmptyList;
-- (_Bool)p_hasVisibleContents;
 - (void)validateTextLayoutForcibly;
 - (id)reliedOnLayouts;
 - (id)dependentLayouts;

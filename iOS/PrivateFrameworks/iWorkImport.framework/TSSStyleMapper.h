@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool clientsMustRemap; // @synthesize clientsMustRemap=_clientsMustRemap;
 @property(readonly, nonatomic) NSSet *createdStyles; // @synthesize createdStyles=_createdStyles;
 @property(nonatomic) _Bool forceMatchStyle; // @synthesize forceMatchStyle=_forceMatchStyle;
+- (void).cxx_destruct;
 - (id)mappedStyleForStyle:(id)arg1;
 - (id)_mappedStyleForStyle:(id)arg1 depth:(unsigned long long)arg2;
 - (_Bool)shouldMapParentOfStyle:(id)arg1;

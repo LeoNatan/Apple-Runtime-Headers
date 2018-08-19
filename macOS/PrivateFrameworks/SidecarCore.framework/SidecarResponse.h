@@ -15,6 +15,7 @@
 {
     SidecarDevice *_device;
     NSError *_error;
+    id <SidecarMessage> _message;
     NSProgress *_progress;
     SidecarSession *_session;
     NSMutableArray *_transfers;
@@ -26,6 +27,7 @@
 }
 
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
+@property(readonly, nonatomic) id <SidecarMessage> message; // @synthesize message=_message;
 - (void).cxx_destruct;
 - (void)sendCompletion:(id)arg1;
 - (void)sidecarTransfer:(id)arg1 didComplete:(id)arg2;

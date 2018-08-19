@@ -10,5 +10,8 @@
 
 @protocol TSKArchivedSelection <NSObject>
 @property(retain, nonatomic) TSKSelection *selection;
+
+@optional
+- (TSKSelection *)selectionWithParent:(TSKSelection *)arg1;
 @end
 

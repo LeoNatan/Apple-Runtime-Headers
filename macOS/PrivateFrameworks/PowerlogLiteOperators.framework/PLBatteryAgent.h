@@ -43,6 +43,8 @@
     NSString *_entryKeyEAPencilStats;
     double _EAEnergyDrained;
     NSNumber *_lastkIOPSAppleBatteryCaseCumulativeCurrentKey;
+    PLTimer *_periodicAggdTimer;
+    PLEntry *_lastBatteryConfigEntry;
     PLXPCResponderOperatorComposition *_batteryInfoResponder;
     PLXPCResponderOperatorComposition *_batteryTemperatureResponder;
     PLXPCResponderOperatorComposition *_batteryDischargeCurrentResponder;
@@ -145,6 +147,8 @@
 @property(retain) PLXPCResponderOperatorComposition *batteryDischargeCurrentResponder; // @synthesize batteryDischargeCurrentResponder=_batteryDischargeCurrentResponder;
 @property(retain) PLXPCResponderOperatorComposition *batteryTemperatureResponder; // @synthesize batteryTemperatureResponder=_batteryTemperatureResponder;
 @property(retain) PLXPCResponderOperatorComposition *batteryInfoResponder; // @synthesize batteryInfoResponder=_batteryInfoResponder;
+@property(retain) PLEntry *lastBatteryConfigEntry; // @synthesize lastBatteryConfigEntry=_lastBatteryConfigEntry;
+@property(retain) PLTimer *periodicAggdTimer; // @synthesize periodicAggdTimer=_periodicAggdTimer;
 @property _Bool lifetimeDataLogged; // @synthesize lifetimeDataLogged=_lifetimeDataLogged;
 @property _Bool isFirstTimeCheckingPingPong; // @synthesize isFirstTimeCheckingPingPong=_isFirstTimeCheckingPingPong;
 @property _Bool isPingPongCharging; // @synthesize isPingPongCharging=_isPingPongCharging;
@@ -194,6 +198,7 @@
 - (void)logEventNoneBatteryConfigWithRawData:(id)arg1;
 - (void)logEventPointBatteryShutdown;
 - (void)logBatteryConfigToAggd:(id)arg1;
+- (void)aggdTimerFired;
 - (void)logBatteryShutdownToAggd:(id)arg1;
 - (void)setAggdIntegerValueFromEntry:(id)arg1 forKey:(id)arg2 withPrefix:(id)arg3;
 - (id)getBatteryShutdownData;

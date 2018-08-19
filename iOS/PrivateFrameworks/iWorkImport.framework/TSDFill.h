@@ -27,6 +27,7 @@ __attribute__((visibility("hidden")))
 - (id)referenceColor;
 - (_Bool)drawsInOneStep;
 - (_Bool)isClear;
+- (_Bool)requiresOutlineOnBackgroundWithAppearance:(unsigned long long)arg1;
 - (_Bool)isNearlyWhite;
 - (_Bool)isOpaque;
 - (void)applyToCAShapeLayer:(id)arg1 withScale:(double)arg2;

@@ -19,7 +19,7 @@
 + (id)startDateKeyPaths;
 - (id)syncableRootObject;
 - (id)dictionaryRepresentation;
-- (void)updateWithDictionaryRepresentation:(id)arg1;
+- (BOOL)updateWithDictionaryRepresentation:(id)arg1;
 - (void)setStartTime:(id)arg1 endTime:(id)arg2 forDay:(unsigned long long)arg3;
 - (void)setStartTime:(id)arg1 endTime:(id)arg2;
 - (id)scheduleRepresentation;

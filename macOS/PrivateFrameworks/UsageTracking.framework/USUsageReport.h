@@ -22,13 +22,9 @@
     NSDateInterval *_interval;
     NSTimeZone *_timeZone;
     NSDate *_lastEventDate;
-    unsigned long long _deviceUnlocks;
-    unsigned long long _screenWakes;
 }
 
 + (BOOL)supportsSecureCoding;
-@property(readonly) unsigned long long screenWakes; // @synthesize screenWakes=_screenWakes;
-@property(readonly) unsigned long long deviceUnlocks; // @synthesize deviceUnlocks=_deviceUnlocks;
 @property(readonly) NSDate *lastEventDate; // @synthesize lastEventDate=_lastEventDate;
 @property(readonly) NSTimeZone *timeZone; // @synthesize timeZone=_timeZone;
 @property(readonly) NSDateInterval *interval; // @synthesize interval=_interval;
@@ -40,15 +36,11 @@
 @property(readonly) NSDateInterval *longestSession; // @synthesize longestSession=_longestSession;
 @property(readonly) double screenTime; // @synthesize screenTime=_screenTime;
 - (void).cxx_destruct;
-@property(readonly) NSDictionary *categoryUsageBySecondaryIdentifier;
-@property(readonly) NSDictionary *categoryUsageByPrimaryIdentifier;
-@property(readonly) NSDictionary *webUsageByDomain;
-@property(readonly) NSDictionary *applicationUsageByBundleIdentifier;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (void)_usUsageReportCommonInitWithScreenTime:(double)arg1 longestSession:(id)arg2 categoryUsage:(id)arg3 deviceUnlocks:(unsigned long long)arg4 screenWakes:(unsigned long long)arg5 notifications:(id)arg6 pickupsByBundleIdentifier:(id)arg7 pickupsWithoutApplicationUsage:(unsigned long long)arg8 firstPickup:(id)arg9 interval:(id)arg10 timeZone:(id)arg11 lastEventDate:(id)arg12;
-- (id)initWithScreenTime:(double)arg1 longestSession:(id)arg2 categoryUsage:(id)arg3 deviceUnlocks:(unsigned long long)arg4 screenWakes:(unsigned long long)arg5 notifications:(id)arg6 pickupsByBundleIdentifier:(id)arg7 pickupsWithoutApplicationUsage:(unsigned long long)arg8 firstPickup:(id)arg9 interval:(id)arg10 timeZone:(id)arg11 lastEventDate:(id)arg12;
+- (void)_usUsageReportCommonInitWithScreenTime:(double)arg1 longestSession:(id)arg2 categoryUsage:(id)arg3 notifications:(id)arg4 pickupsByBundleIdentifier:(id)arg5 pickupsWithoutApplicationUsage:(unsigned long long)arg6 firstPickup:(id)arg7 interval:(id)arg8 timeZone:(id)arg9 lastEventDate:(id)arg10;
+- (id)initWithScreenTime:(double)arg1 longestSession:(id)arg2 categoryUsage:(id)arg3 notifications:(id)arg4 pickupsByBundleIdentifier:(id)arg5 pickupsWithoutApplicationUsage:(unsigned long long)arg6 firstPickup:(id)arg7 interval:(id)arg8 timeZone:(id)arg9 lastEventDate:(id)arg10;
 
 @end
 

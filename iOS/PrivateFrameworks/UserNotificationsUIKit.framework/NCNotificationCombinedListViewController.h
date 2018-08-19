@@ -183,6 +183,7 @@
 - (_Bool)_isMissedNotificationSectionAtIndex:(unsigned long long)arg1;
 - (id)_missedNotificationSectionHeaderTitle;
 - (_Bool)_isDisplayingMissedNotificationSection;
+- (void)_reloadVisibleCellsIfNecessaryForCollectionViewAnimation;
 - (_Bool)_notificationHistoryHasContent;
 - (void)_enumerateAllNotificationListGroupingSectionsWithBlock:(CDUnknownBlockType)arg1;
 - (unsigned long long)_currentAnimationState;
@@ -203,7 +204,6 @@
 - (id)notificationListSection:(id)arg1 coalescingIdentifierForNotificationRequest:(id)arg2;
 - (_Bool)notificationListSection:(id)arg1 shouldInsertForExpandedStackNotificationRequest:(id)arg2;
 - (void)adjustForLegibilitySettingsChange:(id)arg1;
-- (void)scrollViewDidEndScrollingAnimation:(id)arg1;
 - (void)scrollViewDidEndDecelerating:(id)arg1;
 - (void)scrollViewWillEndDragging:(id)arg1 withVelocity:(struct CGPoint)arg2 targetContentOffset:(inout struct CGPoint *)arg3;
 - (void)scrollViewDidScroll:(id)arg1;

@@ -89,7 +89,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)needsInflation;
 - (struct CGRect)p_rectForSelection:(id)arg1 useParagraphModeRects:(_Bool)arg2;
 - (struct CGRect)rectForPresentingAnnotationPopoverForSelectionPath:(id)arg1;
-- (id)rectsInRootForAnchoringPencilAnnotationsForSelectionPath:(id)arg1 attachedType:(long long)arg2;
+- (id)unscaledAnchorRectsForPencilAnnotationSelectionPath:(id)arg1 attachedType:(long long)arg2;
 - (struct CGRect)rectInRootForPresentingAnnotationPopoverForSelectionPath:(id)arg1;
 - (struct CGRect)rectForSelection:(id)arg1;
 - (_Bool)selectionMustBeEntirelyOnscreenToCountAsVisibleInSelectionPath:(id)arg1;

@@ -35,6 +35,8 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) _Bool masksToBounds;
 - (void)willBeRemoved;
 - (void)drawInContext:(struct CGContext *)arg1;
+- (void)dynamicOverrideDidChange;
+@property(readonly, nonatomic) NSObject *dynamicOverride;
 @property(readonly, nonatomic) struct CGRect frameForMagicMove;
 - (void)didDisplayTextureWithDescription:(id)arg1 isAtEndOfBuild:(_Bool)arg2;
 - (id)textureForDescription:(id)arg1;
@@ -45,8 +47,8 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) struct CGRect boundsForStandardKnobs;
 - (void)willLayoutAndRenderInBackground;
 - (void)i_configureFontSmoothingForContext:(struct CGContext *)arg1 layer:(id)arg2;
-- (void)recursivelyDrawChildrenInContext:(struct CGContext *)arg1;
-- (void)recursivelyDrawInContext:(struct CGContext *)arg1;
+- (void)recursivelyDrawChildrenInContext:(struct CGContext *)arg1 keepingChildrenPassingTest:(CDUnknownBlockType)arg2;
+- (void)recursivelyDrawInContext:(struct CGContext *)arg1 keepingChildrenPassingTest:(CDUnknownBlockType)arg2;
 - (void)addBitmapsToRenderingQualityInfo:(id)arg1 inContext:(struct CGContext *)arg2;
 @property(readonly, nonatomic) struct CGRect clipRect;
 @property(readonly, nonatomic) _Bool isDrawingInFlippedContext;

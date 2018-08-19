@@ -21,7 +21,7 @@ __attribute__((visibility("hidden")))
 - (id)initWithArchive:(const struct CellCoordinateVectorArchive *)arg1;
 - (void)removeAllCellCoordinates;
 - (void)addCellCoordinate:(struct TSUCellCoord)arg1;
-- (unordered_set_c5f37819)cellCoordinatesSet;
+- (unordered_set_cb28a53b)cellCoordinatesSet;
 - (vector_38b190b0 *)cellCoordinates;
 - (id)init;
 

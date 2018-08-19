@@ -20,6 +20,7 @@ __attribute__((visibility("hidden")))
 - (BOOL)accessibilityIsIgnored;
 - (void)dealloc;
 - (id)_textAttributes;
+- (BOOL)_usesBezeledSelectionStyle;
 - (id)_effectiveStyleEffectConfigurationInView:(id)arg1;
 - (BOOL)_shouldUseStyledTextInView:(id)arg1;
 - (long long)interiorBackgroundStyle;

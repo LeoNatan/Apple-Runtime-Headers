@@ -31,6 +31,7 @@
 - (_Bool)_isIpadOrIOSMac;
 - (_Bool)recordingViewHidesBlurEffectsWhenInactive;
 - (_Bool)showsEmptyLibraryMessageInLibrary;
+- (_Bool)supportsLockScreen;
 - (_Bool)supportsLockScreenRotation;
 - (_Bool)playbackCardHasInsets;
 - (_Bool)allowsScrollingUnderNavBar;

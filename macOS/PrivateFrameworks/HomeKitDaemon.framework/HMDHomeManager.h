@@ -123,7 +123,6 @@
 }
 
 + (id)getCurrentAltDSID;
-+ (id)getCurrentUserID;
 + (id)activeAccountIdentifier;
 + (id)idsDeviceForDevice:(id)arg1;
 + (id)remotePeerDeviceAddress:(id)arg1;
@@ -453,7 +452,8 @@
 - (void)_handlePairingIdentityRequest:(id)arg1;
 - (void)sendPairingIdentity:(id)arg1 includePrivateKey:(BOOL)arg2 requestMessage:(id)arg3;
 - (void)_handleRequestRuntimeStateUpdate:(id)arg1;
-- (void)_getRuntimeStateUpdateForMediaAccessories:(BOOL)arg1 includeHAPAccessoryState:(BOOL)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)_getRuntimeStateUpdateForHomeManager:(BOOL)arg1 includeMediaAccessoryState:(BOOL)arg2 includeHAPAccessoryState:(BOOL)arg3 includeResidentDeviceState:(BOOL)arg4 completion:(CDUnknownBlockType)arg5;
+- (id)_runtimeState;
 - (void)_handleRequestFetchHomeConfiguration:(id)arg1;
 - (void)_retryCloudOperationWithName:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)_startTimerToResetCloudOperationRetryCounter;

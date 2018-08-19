@@ -11,20 +11,17 @@
 __attribute__((visibility("hidden")))
 @interface TSPUnknownContent : NSObject
 {
-    NSArray *_messages;
-    NSArray *_ignoreAndPreserveFields;
-    NSArray *_ignoreAndDropFields;
-    NSArray *_savedIgnoreAndPreserveFields;
-    NSArray *_savedIgnoreAndDropFields;
+    NSArray *_preserveMessages;
+    NSArray *_preserveUntilModifiedMessages;
+    NSArray *_preserveFields;
+    NSArray *_preserveUntilModifiedFields;
 }
 
-@property(readonly, nonatomic) NSArray *messages; // @synthesize messages=_messages;
 - (void).cxx_destruct;
 - (void)willModifyObject;
-- (void)updateMessageInfo:(struct MessageInfo *)arg1;
-- (void)saveToArchiver:(id)arg1;
 - (void)loadFromUnarchiver:(id)arg1;
-- (id)initWithMessages:(id)arg1 ignoreAndPreserveFields:(id)arg2 ignoreAndDropFields:(id)arg3;
+- (id)newUnknownContentSnapshot;
+- (id)initWithMessages:(id)arg1 messagesAreDiffs:(_Bool)arg2 preserveFields:(id)arg3 preserveUntilModifiedFields:(id)arg4;
 - (id)init;
 
 @end

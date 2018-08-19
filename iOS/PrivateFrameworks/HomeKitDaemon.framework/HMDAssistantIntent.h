@@ -21,8 +21,9 @@
 @property(retain, nonatomic) NSArray *homeKitObjects; // @synthesize homeKitObjects=_homeKitObjects;
 - (void).cxx_destruct;
 - (void)_handleActionSetForExecution:(id)arg1 message:(id)arg2;
+- (void)_handleActionSetForConfirmation:(id)arg1 message:(id)arg2;
 - (id)_getObjectsWithUUID;
-- (void)_handleIntent:(id)arg1;
+- (void)_handleIntentRequestMessage:(id)arg1;
 - (void)performWithGather:(id)arg1 message:(id)arg2;
 - (id)initWithIntent:(id)arg1;
 

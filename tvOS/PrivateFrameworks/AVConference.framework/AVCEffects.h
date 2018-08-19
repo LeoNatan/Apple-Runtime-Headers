@@ -14,8 +14,12 @@
     AVConferenceXPCClient *_connection;
     NSObject<OS_dispatch_queue> *_avConferenceEffectsQueue;
     int _mode;
+    _Bool _isEffectsApplied;
+    _Bool _isFaceMeshTrackingEnabled;
+    int _effectType;
 }
 
+@property(nonatomic) int effectType; // @synthesize effectType=_effectType;
 @property(nonatomic) int mode; // @synthesize mode=_mode;
 - (void)encodeProcessedVideoFrame:(id)arg1;
 - (void)avcVideoFrameDidRelease:(id)arg1;

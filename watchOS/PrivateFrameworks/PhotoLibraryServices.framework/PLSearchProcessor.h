@@ -24,7 +24,7 @@
 - (id)_numberOfAssetsSortDescriptors;
 - (id)_dateSortDescriptors;
 - (id)_alphabeticalSortDescriptors;
-- (id)completionSuggestionsForQuery:(id)arg1 withSearchSections:(id)arg2 numberOfSuggestions:(unsigned int)arg3 calculateAssetCounts:(_Bool)arg4;
+- (id)completionSuggestionsForQuery:(id)arg1 withSearchSections:(id)arg2 numberOfSuggestions:(unsigned int)arg3;
 - (id)updatedSearchSections:(id)arg1 withTopCollectionResults:(id)arg2;
 - (id)searchResultSectionsWithAssetResults:(id)arg1 collectionResults:(id)arg2 tripResults:(id)arg3 combineAssetSections:(_Bool)arg4;
 - (void)performQuery:(id)arg1 withResultsHandler:(CDUnknownBlockType)arg2;

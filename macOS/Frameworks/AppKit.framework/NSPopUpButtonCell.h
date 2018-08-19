@@ -47,6 +47,8 @@
 - (void)_removeIndicatorImageView;
 - (void)_updateIndicatorViewImageInView:(id)arg1;
 - (void)_updateIndicatorImageViewWithFrame:(struct CGRect)arg1 inView:(id)arg2;
+- (void)_updateImageViewImageInView:(id)arg1;
+- (struct CGRect)_imageViewFrameWithFrame:(struct CGRect)arg1 inView:(id)arg2;
 - (void)_updateSubviewsInView:(id)arg1 includeTitleTextField:(BOOL)arg2;
 - (void)layoutLayerWithFrame:(struct CGRect)arg1 inView:(id)arg2;
 - (BOOL)_obeysHiddenBit;

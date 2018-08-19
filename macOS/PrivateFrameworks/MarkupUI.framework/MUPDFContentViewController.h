@@ -43,6 +43,7 @@ __attribute__((visibility("hidden")))
 - (void)_stopObservingAllPageModelControllers;
 - (void)_stopObservingPageModelControllerForAddedAnnotations:(id)arg1;
 - (void)_startObservingPageModelControllerForAddedAnnotations:(id)arg1;
+- (void)finalizeCrop;
 - (void)_stopObservingAllCropAnnotations;
 - (void)_stopObservingCropAnnotationForFirstEdit:(id)arg1;
 - (void)_startObservingCropAnnotationForFirstEdit:(id)arg1;

@@ -16,6 +16,7 @@
 + (void)addDelegate:(id)arg1 queue:(id)arg2;
 + (id)client;
 + (id)_senderIdentityCapabilitiesByUUID;
++ (id)senderIdentityCapabilitiesWithUUID:(id)arg1;
 + (id)senderIdentityCapabilities;
 + (BOOL)supportsCarrierServices;
 + (BOOL)isEmergencyCallbackPossible;
@@ -83,8 +84,6 @@
 + (int)telephonyCallSupport;
 + (BOOL)supportsBasebandCalling;
 + (BOOL)supportsPrimaryCalling;
-+ (BOOL)canAttemptEmergencyCallsInAirplaneMode;
-+ (BOOL)canAttemptTelephonyCallsInAirplaneMode;
 + (BOOL)canAttemptEmergencyCallsWithoutCellularConnection;
 + (BOOL)canAttemptTelephonyCallsWithoutCellularConnection;
 + (BOOL)supportsFaceTimeVideoCalls;

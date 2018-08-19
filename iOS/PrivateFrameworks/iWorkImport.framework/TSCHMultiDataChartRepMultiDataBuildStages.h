@@ -25,6 +25,7 @@ __attribute__((visibility("hidden")))
 + (unsigned long long)numberOfFadingBuildStages;
 @property(readonly, nonatomic) double duration; // @synthesize duration=mDuration;
 @property(readonly, nonatomic) unsigned long long currentStage; // @synthesize currentStage=mCurrentStage;
+- (void).cxx_destruct;
 - (_Bool)hasStage;
 - (void)advanceStage;
 - (unsigned long long)dataSetIndexForStage:(unsigned long long)arg1;

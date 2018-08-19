@@ -16,7 +16,7 @@ __attribute__((visibility("hidden")))
 + (int)getCertificateExpirationDate:(double *)arg1;
 + (int)prepare;
 + (void)setDelegate:(id)arg1;
-+ (void)load;
++ (void)initialize;
 
 @end
 

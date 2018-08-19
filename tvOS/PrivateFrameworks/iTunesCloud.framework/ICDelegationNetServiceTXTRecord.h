@@ -25,6 +25,7 @@
 - (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSData *TXTRecordData;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)initWithTXTRecordData:(id)arg1;

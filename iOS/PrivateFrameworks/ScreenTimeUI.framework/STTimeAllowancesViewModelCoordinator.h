@@ -45,10 +45,9 @@
 - (id)_iCloudAccountPredicate;
 - (_Bool)_isPersonalOrganization;
 - (void)loadViewModelWithCompletionHandler:(CDUnknownBlockType)arg1;
-- (void)groupResultsController:(id)arg1 didChangeResultsForRequest:(id)arg2 objectID:(id)arg3 changeType:(unsigned long long)arg4;
-- (void)_persistenceStoreDidChange:(id)arg1;
+- (void)groupResultsControllerDidChangeContents:(id)arg1;
 - (void)_registerForPersistenceStoreNotifications;
-- (void)_saveDefaultAlwaysAllowList;
+- (void)saveDefaultAlwaysAllowListWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (id)initWithPersistenceController:(id)arg1 organizationIdentifier:(id)arg2 userDSID:(id)arg3;
 
 // Remaining properties

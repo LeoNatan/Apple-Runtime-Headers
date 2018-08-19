@@ -65,7 +65,8 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) NSDictionary *additionalDocumentPropertiesForWrite;
 - (void)saveToArchive:(struct DocumentArchive *)arg1 archiver:(id)arg2;
 - (void)loadFromArchive:(const struct DocumentArchive *)arg1 unarchiver:(id)arg2;
-@property(readonly, nonatomic) _Bool isCollaborative;
+@property(readonly, nonatomic) _Bool isCollaborativeClientOrServer;
+@property(readonly, nonatomic) _Bool isCollaborativeClient;
 - (void)dumpReaderWriterThreads;
 - (id)modelEnumeratorWithFlags:(unsigned long long)arg1 forObjectsPassingTest:(CDUnknownBlockType)arg2;
 - (id)modelEnumeratorForObjectsPassingTest:(CDUnknownBlockType)arg1;
@@ -94,6 +95,7 @@ __attribute__((visibility("hidden")))
 - (void)willClose;
 - (void)didDisconnectFromServerWithCollaborationContext:(id)arg1;
 - (void)didConnectToServerWithCollaborationContext:(id)arg1;
+- (void)setupAccessController;
 - (void)documentDidLoad;
 - (void)didSaveWithEncryptionChange;
 - (id)uniqueDocumentCachePathForProposedPath:(id)arg1;

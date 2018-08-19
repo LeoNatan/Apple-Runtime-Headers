@@ -29,7 +29,7 @@ __attribute__((visibility("hidden")))
     _Bool _isPreview;
     _Bool _interrupted;
     _Bool _isAnimationForPlayback;
-    _Bool _areAnimationsPrepared;
+    _Bool _areAnimationsReadyToStart;
     _Bool _usingFinalTexture;
     _Bool _isTextureCachedAtEndOfBuild;
     _Bool _shouldUseMagicMoveTextures;
@@ -68,11 +68,12 @@ __attribute__((visibility("hidden")))
 - (void)updateAnimationsForLayerTime:(double)arg1;
 - (_Bool)addAnimationsAtLayerTime:(double)arg1;
 - (void)resetHighlightsBeforeAnimationOnTextureSet:(id)arg1;
-- (id)prepareAnimationsSynchronously;
+- (void)animationDidEnd;
+- (id)animationWillBegin;
 - (id)p_initializeTextureSetForEndOfBuild:(_Bool)arg1 endOfSlide:(_Bool)arg2 description:(id)arg3 isRenderingToContext:(_Bool)arg4;
 - (id)initializeTextureSetForEndOfBuild:(_Bool)arg1 endOfSlide:(_Bool)arg2 description:(id)arg3 isRenderingToContext:(_Bool)arg4;
 - (void)setGeometryAndActionAttributesOnTextureSet:(id)arg1 isAtEndOfBuild:(_Bool)arg2 isAtEndOfSlide:(_Bool)arg3 isRenderingToContext:(_Bool)arg4;
-- (void)animateAfterDelay:(double)arg1;
+- (void)animate;
 - (void)setLayerVisibility:(id)arg1 isAtEndOfBuild:(_Bool)arg2;
 - (_Bool)p_isTextDrawable;
 - (void)p_updateTextureDescription:(id)arg1 forStage:(long long)arg2 isAtEndOfBuild:(_Bool)arg3;
@@ -94,7 +95,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, copy) NSString *description;
 - (void)teardown;
 - (void)dealloc;
-- (id)initWithAnimatedBuild:(id)arg1 info:(id)arg2 buildStage:(id)arg3 session:(id)arg4 animatedSlideView:(id)arg5;
+- (id)initWithAnimatedBuild:(id)arg1 info:(id)arg2 buildStage:(id)arg3 animatedSlideView:(id)arg4;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

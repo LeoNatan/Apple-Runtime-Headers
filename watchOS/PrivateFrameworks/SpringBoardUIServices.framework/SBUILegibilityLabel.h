@@ -49,6 +49,7 @@
 @property(readonly, nonatomic) struct UIEdgeInsets characterOverflowInsets;
 - (void)setOptions:(int)arg1;
 @property(readonly, nonatomic) float baselineOffset;
+@property(nonatomic) float hyphenationFactor; // @dynamic hyphenationFactor;
 @property(nonatomic) int lineBreakMode; // @dynamic lineBreakMode;
 @property(nonatomic) int textAlignment; // @dynamic textAlignment;
 @property(nonatomic) float minimumScaleFactor; // @dynamic minimumScaleFactor;

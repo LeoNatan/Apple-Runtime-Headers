@@ -183,6 +183,7 @@
 - (void)_cancel;
 - (void)cancel:(id)arg1;
 - (void)done:(id)arg1;
+- (void)finalizeCrop;
 - (id)createArchivedModelData;
 - (id)dataRepresentationWithError:(id *)arg1;
 - (id)dataRepresentationEmbeddingSourceImageAndEditModel:(_Bool)arg1 error:(id *)arg2;

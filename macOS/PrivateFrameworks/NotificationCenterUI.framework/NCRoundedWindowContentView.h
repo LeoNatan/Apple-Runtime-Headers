@@ -69,6 +69,7 @@ __attribute__((visibility("hidden")))
 - (void)viewDidChangeBackingProperties;
 @property(readonly, nonatomic) BOOL isDraggingEdge;
 - (BOOL)isOpaque;
+- (BOOL)wantsUpdateLayer;
 - (BOOL)isFlipped;
 - (void)_updateLayerMasksToBoundsFromView;
 - (BOOL)clipsToBounds;

@@ -7,6 +7,7 @@
 #import "NSObject.h"
 
 @protocol TSKPencilAnnotationContainer <NSObject>
+- (void)removePencilAnnotations;
 - (_Bool)childrenCanBeAnnotatedWithPencil;
 - (_Bool)canBeAnnotatedWithPencil;
 - (void)enumeratePencilAnnotationsUsingBlock:(void (^)(id <TSKPencilAnnotation>, _Bool *))arg1;

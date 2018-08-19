@@ -32,6 +32,8 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) long long streamDirection;
 - (BOOL)setThrottlingInterval:(double)arg1;
 - (BOOL)sendIntervalDidElapse:(int *)arg1 remainingTime:(double *)arg2;
+@property(nonatomic) double decryptionTimeoutInterval;
+@property(nonatomic, getter=isDecryptionTimeoutEnabled) BOOL decryptionTimeoutEnabled;
 @property(nonatomic) double rtcpTimeoutInterval;
 @property(nonatomic, getter=isRTCPTimeoutEnabled) BOOL rtcpTimeoutEnabled;
 @property(nonatomic) double rtpTimeoutInterval;

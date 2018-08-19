@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class MPAVRoute, MPAVRoutingController, MPAVRoutingControllerSelection, MPWeakTimer, NSMapTable, NSMutableArray, NSMutableSet, NSObject<OS_dispatch_queue>, NSSet;
+@class MPAVRoute, MPAVRoutingController, MPAVRoutingControllerSelection, MSVTimer, NSMapTable, NSMutableArray, NSMutableSet, NSObject<OS_dispatch_queue>, NSSet;
 
 @interface MPAVRoutingControllerSelectionQueue : NSObject
 {
@@ -14,7 +14,7 @@
     NSMutableArray *_selectionsEnqueued;
     MPAVRoutingControllerSelection *_selectionInProgress;
     NSMutableSet *_pendingRoutes;
-    MPWeakTimer *_selectionInProgressTimer;
+    MSVTimer *_selectionInProgressTimer;
     NSMapTable *_pendingSelectionTimers;
     BOOL _hasPendingPickedRoutes;
     MPAVRoutingController *_routingController;

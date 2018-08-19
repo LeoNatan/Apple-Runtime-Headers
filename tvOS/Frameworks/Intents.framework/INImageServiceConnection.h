@@ -21,9 +21,9 @@
 - (void).cxx_destruct;
 - (void)purgeImageWithIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)retrieveImageWithIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)storeImage:(id)arg1 scaled:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)storeImage:(id)arg1 scaled:(_Bool)arg2 qualityOfService:(unsigned int)arg3 storeType:(unsigned long long)arg4 completion:(CDUnknownBlockType)arg5;
 - (_Bool)canStoreImage:(id)arg1;
-- (void)loadImageData:(id)arg1 usingPortableImageLoader:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)loadDataImageFromImage:(id)arg1 usingPortableImageLoader:(id)arg2 scaledSize:(CDStruct_8caa76fc)arg3 completion:(CDUnknownBlockType)arg4;
 - (_Bool)canLoadImageDataForImage:(id)arg1;
 @property(readonly, nonatomic) unsigned long long servicePriority;
 @property(readonly, nonatomic) NSString *serviceIdentifier;
@@ -31,7 +31,6 @@
 - (id)serviceProxyWithErrorHandler:(CDUnknownBlockType)arg1;
 - (id)synchronousServiceProxyWithErrorHandler:(CDUnknownBlockType)arg1;
 - (id)loadDataImageFromImage:(id)arg1 scaledSize:(CDStruct_8caa76fc)arg2 error:(id *)arg3;
-- (void)loadImageDataFromImage:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)loadImageDataAndSizeForImage:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)dealloc;
 - (id)init;

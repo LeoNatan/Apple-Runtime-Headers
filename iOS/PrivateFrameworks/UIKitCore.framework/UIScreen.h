@@ -149,6 +149,7 @@
 - (void)_accessibilityForceTouchEnabledChanged:(id)arg1;
 @property(readonly, nonatomic) double nativeScale;
 - (double)_nativeScale;
+- (double)_nativeScaleWithLevel:(unsigned long long)arg1;
 @property(readonly, nonatomic) struct CGRect nativeBounds;
 - (struct CGRect)_nativeDisplayBounds;
 - (id)_snapshotExcludingWindows:(id)arg1 withRect:(struct CGRect)arg2;

@@ -192,7 +192,7 @@ __attribute__((visibility("hidden")))
 - (void)recursiveSubdivideOntoPath:(id)arg1 withScaling:(CDStruct_c3b9c2ee)arg2 inElementRange:(struct _NSRange)arg3 into:(id)arg4;
 - (void)recursiveSubdivideOntoPath:(id)arg1 withScaling:(CDStruct_c3b9c2ee)arg2 into:(id)arg3;
 - (void)recursiveSubdivideOntoPath:(id)arg1 into:(id)arg2;
-- (double)curvatureAt:(double)arg1 fromElement:(int)arg2;
+- (double)curvatureAt:(double)arg1 fromElement:(long long)arg2;
 - (double)curvatureAt:(double)arg1;
 - (struct CGPoint)myGradientAt:(double)arg1 fromElement:(long long)arg2;
 - (struct CGPoint)myGradientAt:(double)arg1;
@@ -207,7 +207,6 @@ __attribute__((visibility("hidden")))
 - (struct CGPoint)pointAt:(double)arg1 fromElement:(long long)arg2;
 - (long long)elementPercentage:(double *)arg1 forOverallPercentage:(double)arg2 startingElementIndex:(long long)arg3 lengthToStartingElement:(double)arg4;
 - (long long)elementPercentage:(double *)arg1 forOverallPercentage:(double)arg2;
-- (id)pressure;
 - (struct CGPoint)nearestAngleOnPathToLine:(struct CGPoint [2])arg1;
 - (struct CGPoint)nearestPointOnPathToLine:(struct CGPoint [2])arg1;
 - (id)copyFromSegment:(int)arg1 t:(double)arg2 toSegment:(int)arg3 t:(double)arg4;

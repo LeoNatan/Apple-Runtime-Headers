@@ -16,6 +16,7 @@
 
 @interface CPTemplate : NSObject <CPBarButtonDelegate, CPBarButtonProviding, CPControlDelegate, CPTemplateDelegate, NSSecureCoding>
 {
+    id _userInfo;
     id <CPBaseTemplateProviding> _templateProvider;
     NSUUID *_identifier;
     id <CPTemplateDelegate> _templateDelegate;
@@ -31,6 +32,7 @@
 @property(nonatomic) __weak id <CPTemplateDelegate> templateDelegate; // @synthesize templateDelegate=_templateDelegate;
 @property(readonly, nonatomic) NSUUID *identifier; // @synthesize identifier=_identifier;
 @property(retain, nonatomic) id <CPBaseTemplateProviding> templateProvider; // @synthesize templateProvider=_templateProvider;
+@property(retain, nonatomic) id userInfo; // @synthesize userInfo=_userInfo;
 - (void).cxx_destruct;
 - (_Bool)barButton:(id)arg1 setTitle:(id)arg2;
 - (_Bool)barButton:(id)arg1 setImage:(id)arg2;

@@ -25,6 +25,7 @@
 - (void).cxx_destruct;
 - (void)dismissControlCenter;
 - (void)dismissModule;
+- (void)expandedModuleDidUpdatePreferredSize;
 - (void)requestExpandModule;
 - (void)enqueueStatusUpdate:(id)arg1;
 - (void)openApplication:(id)arg1 withOptions:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;

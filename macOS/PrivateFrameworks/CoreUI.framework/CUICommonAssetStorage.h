@@ -85,6 +85,7 @@
 - (id)deploymentPlatformVersion;
 - (id)deploymentPlatform;
 - (id)thinningArguments;
+- (void)_loadExtendedMetadata;
 - (unsigned int)colorSpaceID;
 - (unsigned int)associatedChecksum;
 - (id)uuid;

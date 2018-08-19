@@ -17,7 +17,7 @@
     long long _inProgressSyncCount;
 }
 
-+ (void)_containerIdentifiersWithEncryptionSupportEnabled:(_Bool)arg1 manateeEnabledForHSA2Accounts:(_Bool)arg2 resultHandler:(CDUnknownBlockType)arg3;
++ (void)_containerIdentifiersWithEncryptionSupportEnabled:(_Bool)arg1 accountManateeEnabled:(_Bool)arg2 internalSettingManateeEnabled:(_Bool)arg3 resultHandler:(CDUnknownBlockType)arg4;
 @property(nonatomic) long long inProgressSyncCount; // @synthesize inProgressSyncCount=_inProgressSyncCount;
 @property(nonatomic) _Bool shouldResync; // @synthesize shouldResync=_shouldResync;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
@@ -28,6 +28,9 @@
 - (void)_addFinalProgressUpdateWithTaskTree:(id)arg1 progress:(id)arg2;
 - (void)_cloudSyncRepositoriesForProfile:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_containerIdentifiersForCurrentAccountWithCompletion:(CDUnknownBlockType)arg1;
+- (id)_primaryiCloudAccountAltDSID;
+- (unsigned long long)_primaryiCloudAccountSecurityLevel;
+- (_Bool)_isAccountManateeEnabled;
 - (id)_containerWithIdentifier:(id)arg1 error:(id *)arg2;
 - (void)queue_cloudSyncRepositoriesWithCompletion:(CDUnknownBlockType)arg1;
 - (id)disableAndDeleteAllSyncDataWithTaskTree:(id)arg1;

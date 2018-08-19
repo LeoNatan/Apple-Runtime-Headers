@@ -9,12 +9,12 @@
 #import "HMDCameraPowerAssertionProtocol.h"
 #import "HMFLogging.h"
 
-@class HMDAccessory, HMDCameraSessionID, NSObject<OS_dispatch_queue>, NSString, NSUUID;
+@class HMDAccessory, HMDCameraSessionID, HMDDevice, NSObject<OS_dispatch_queue>, NSString, NSUUID;
 
 @interface HMDCameraSnapshotSender : HMFObject <HMFLogging, HMDCameraPowerAssertionProtocol>
 {
     NSUUID *_uniqueIdentifier;
-    NSString *_destinationID;
+    HMDDevice *_device;
     HMDAccessory *_accessory;
     HMDCameraSessionID *_sessionID;
     NSObject<OS_dispatch_queue> *_workQueue;
@@ -26,12 +26,12 @@
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
 @property(readonly, nonatomic) HMDCameraSessionID *sessionID; // @synthesize sessionID=_sessionID;
 @property(readonly, nonatomic) __weak HMDAccessory *accessory; // @synthesize accessory=_accessory;
-@property(readonly, nonatomic) NSString *destinationID; // @synthesize destinationID=_destinationID;
+@property(readonly, nonatomic) HMDDevice *device; // @synthesize device=_device;
 @property(readonly, nonatomic) NSUUID *uniqueIdentifier; // @synthesize uniqueIdentifier=_uniqueIdentifier;
 - (void).cxx_destruct;
 - (void)_sendImageSendFailure:(id)arg1;
 - (id)logIdentifier;
-- (id)initWithSessionID:(id)arg1 workQueue:(id)arg2 destinationID:(id)arg3 accessory:(id)arg4 delegateQueue:(id)arg5 uniqueIdentifier:(id)arg6;
+- (id)initWithSessionID:(id)arg1 workQueue:(id)arg2 device:(id)arg3 accessory:(id)arg4 delegateQueue:(id)arg5 uniqueIdentifier:(id)arg6;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

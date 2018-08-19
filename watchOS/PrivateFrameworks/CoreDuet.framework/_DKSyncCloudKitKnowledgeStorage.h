@@ -21,6 +21,7 @@
     NSMutableDictionary *_recordZonesByZoneID;
     NSMutableSet *_zoneIDsWithAdditionChanges;
     NSMutableSet *_zoneIDsWithDeletionChanges;
+    NSMutableSet *_zoneIDsWithUnrecoverableDecryptionErrors;
     CKServerChangeToken *_fetchDatabaseChangesServerChangeToken;
     NSOperation *_previousDependentOperation;
     NSHashTable *_outstandingOperations;
@@ -65,6 +66,7 @@
 - (void)addSourceDeviceIdentifierWithRecordZoneID:(id)arg1;
 - (void)fetchChangedZonesWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_storeZoneIDFromRecords:(id)arg1 orError:(id)arg2;
+- (void)_deleteZoneWithZoneID:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_createZoneWithZoneID:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)setZoneIDsBySourceDeviceID:(id)arg1;
 - (void)configureCloudPseudoPeerWithMySyncZoneID:(id)arg1;
@@ -74,6 +76,7 @@
 - (void)_performThrottledUpdateSyncedDeviceIdentifiersWithCompletion:(CDUnknownBlockType)arg1;
 - (void)performUpdateSyncedDeviceIdentifiersWithCompletion:(CDUnknownBlockType)arg1;
 - (_Bool)_queueOperationForPrivateCloudDatabase:(id)arg1 dependent:(_Bool)arg2 policy:(id)arg3 error:(id *)arg4;
+- (id)_handleAnySpecialnessWithOperationError:(id)arg1;
 - (void)_cloudSyncAvailabilityDidChange:(id)arg1;
 - (void)_unregisterCloudSyncAvailablityObserver;
 - (void)_registerCloudSyncAvailablityObserver;

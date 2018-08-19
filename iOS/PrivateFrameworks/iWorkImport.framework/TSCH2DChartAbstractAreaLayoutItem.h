@@ -17,10 +17,10 @@ __attribute__((visibility("hidden")))
 }
 
 @property(readonly, nonatomic) TSCHChartBodyLayoutItem *bodyLayoutItem; // @synthesize bodyLayoutItem=mChartBody;
+- (void).cxx_destruct;
 - (struct CGRect)i_currentBufferAreaUnitRect;
 - (void)setChartBodyLayoutSize:(struct CGSize)arg1;
 - (struct CGRect)chartBodyLayoutRect;
-- (void)dealloc;
 
 @end
 

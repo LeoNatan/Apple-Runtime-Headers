@@ -58,6 +58,7 @@
 - (id)specifiers;
 - (void)willResignActive;
 - (void)viewWillDisappear:(_Bool)arg1;
+- (_Bool)canBeShownFromSuspendedState;
 - (id)init;
 
 // Remaining properties

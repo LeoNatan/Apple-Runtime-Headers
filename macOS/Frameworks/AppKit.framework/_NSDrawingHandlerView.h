@@ -19,6 +19,7 @@ __attribute__((visibility("hidden")))
 - (void)drawRect:(struct CGRect)arg1;
 - (BOOL)isOpaque;
 - (BOOL)isFlipped;
+- (void)dealloc;
 - (id)initWithFrame:(struct CGRect)arg1 flipped:(BOOL)arg2 opaque:(BOOL)arg3;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

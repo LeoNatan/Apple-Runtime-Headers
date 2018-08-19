@@ -6,9 +6,10 @@
 
 #import "NSObject.h"
 
-@class TCSCall;
+@class CNContact, TCSCall;
 
 @protocol TCSServerXPC <NSObject>
+- (void)queryIsTinCannable:(CNContact *)arg1;
 - (void)setClientRecordingInProgress:(_Bool)arg1;
 - (void)remoteMeterLevelForCall:(TCSCall *)arg1 result:(void (^)(float))arg2;
 - (void)localMeterLevelForCall:(TCSCall *)arg1 result:(void (^)(float))arg2;

@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
 
 @property(readonly, nonatomic) TSCEFormulaRewrite_RegionInfo *mergeRegion; // @synthesize mergeRegion=_mergeRegion;
 @property(nonatomic) const struct TSUCellCoord *mergeSource; // @synthesize mergeSource=_mergeSource;
+- (void).cxx_destruct;
 - (id)description;
-- (void)dealloc;
 - (id)initWithMergeRegion:(id)arg1 mergeSource:(struct TSUCellCoord)arg2;
 
 @end

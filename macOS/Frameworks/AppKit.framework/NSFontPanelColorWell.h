@@ -6,11 +6,13 @@
 
 #import <AppKit/NSColorWell.h>
 
-@class NSImage;
+@class NSButton, NSImage, _NSDrawingHandlerView;
 
 __attribute__((visibility("hidden")))
 @interface NSFontPanelColorWell : NSColorWell
 {
+    NSButton *_button;
+    _NSDrawingHandlerView *_colorRenderer;
     NSImage *_bezelImage;
 }
 
@@ -20,7 +22,13 @@ __attribute__((visibility("hidden")))
 - (struct CGSize)intrinsicContentSize;
 - (struct NSEdgeInsets)alignmentRectInsets;
 - (BOOL)drawColor;
+- (BOOL)_drawColor:(BOOL)arg1;
+- (id)initWithCoder:(id)arg1;
+- (id)initWithFrame:(struct CGRect)arg1;
+- (id)init;
+- (void)_commonInit;
 - (void)_windowChangedKeyState;
+- (void)setNeedsDisplay:(BOOL)arg1;
 - (void)setColor:(id)arg1;
 - (void)_drawBorderInRect:(struct CGRect)arg1;
 - (id)_bezelRenderingButton;

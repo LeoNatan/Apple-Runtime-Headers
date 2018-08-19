@@ -13,9 +13,11 @@
     NSArray *_replies;
     unsigned int _state;
     NSArray *_additionalReplies;
+    NSArray *_replyFrames;
 }
 
 + (id)sharedLoader;
+@property(retain, nonatomic) NSArray *replyFrames; // @synthesize replyFrames=_replyFrames;
 @property(copy, nonatomic) NSArray *additionalReplies; // @synthesize additionalReplies=_additionalReplies;
 @property(readonly, nonatomic) unsigned int state; // @synthesize state=_state;
 - (void).cxx_destruct;

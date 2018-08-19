@@ -66,7 +66,6 @@
 - (void)_removeSubviewsForReuse;
 - (void)prepareForReuse;
 - (_Bool)_shouldMaskToBoundsWhileAnimating;
-- (void)setFrame:(struct CGRect)arg1;
 - (id)actionForLayer:(id)arg1 forKey:(id)arg2;
 - (void)_systemTextSizeChanged;
 @property(nonatomic) _Bool usesCustomHighlightAlpha;

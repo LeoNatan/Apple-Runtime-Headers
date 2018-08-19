@@ -10,7 +10,6 @@
 
 @interface IDSService (HMDAccounts)
 @property(readonly, copy) HMDDeviceHandle *hmd_localDeviceHandle;
-@property(readonly, copy) HMDDeviceHandle *hmd_preferredGlobalDeviceHandle;
 @property(readonly, copy) HMDAccountHandle *hmd_preferredHandle;
 @property(readonly, copy) NSArray *hmd_handles;
 @property(readonly, nonatomic, getter=hmd_isActive) _Bool hmd_active;

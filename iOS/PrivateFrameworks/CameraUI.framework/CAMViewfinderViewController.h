@@ -45,7 +45,7 @@
 #import "CAMZoomSliderDelegate.h"
 #import "UIGestureRecognizerDelegate.h"
 
-@class BCSAVParsingSession, CAMAnimationDelegate, CAMBarsAccessibilityHUDManager, CAMBottomBar, CAMBurstIndicatorView, CAMCallStatusMonitor, CAMCameraRollController, CAMCaptureGraphConfiguration, CAMClosedViewfinderController, CAMCreativeCameraButton, CAMDisabledModeOverlayView, CAMDisabledPreviewController, CAMElapsedTimeView, CAMFeedbackContoller, CAMFilterButton, CAMFilterNameBadge, CAMFilterScrubberView, CAMFlashBadge, CAMFlashButton, CAMFlipButton, CAMFocusLockBadge, CAMFramerateIndicatorView, CAMGridView, CAMHDRBadge, CAMHDRButton, CAMIdleController, CAMImageWell, CAMKeepAliveController, CAMLevelIndicatorView, CAMLevelViewModel, CAMLightingControl, CAMLightingNameBadge, CAMLivePhotoBadge, CAMLivePhotoButton, CAMLocationController, CAMMachineReadableCodeLoggingController, CAMModeDial, CAMMotionController, CAMPanoramaViewController, CAMPhysicalCaptureNotifier, CAMPhysicalCaptureRecognizer, CAMPortraitModeDescriptionOverlayView, CAMPortraitModeInstructionLabel, CAMPowerController, CAMPreciseTimer, CAMPreviewViewController, CAMQRCodeDescriptionOverlayView, CAMQRCodeInstructionLabel, CAMRemoteShutterController, CAMShallowDepthOfFieldBadge, CAMShutterIndicatorView, CAMStorageController, CAMTimelapseController, CAMTimerButton, CAMTimerIndicatorView, CAMTopBar, CAMTorchPatternController, CAMUtilityBar, CAMZoomControl, CAMZoomSlider, CUCaptureController, CUShutterButton, NSDate, NSMutableSet, NSSet, NSString, PUReviewScreenDoneButton, UIAlertController, UIButton, UIGestureRecognizer, UIPanGestureRecognizer, UIPinchGestureRecognizer, UISwipeGestureRecognizer, UIView;
+@class BCSAVParsingSession, CAMAnimationDelegate, CAMBarsAccessibilityHUDManager, CAMBottomBar, CAMBurstIndicatorView, CAMCallStatusMonitor, CAMCameraRollController, CAMCaptureGraphConfiguration, CAMClosedViewfinderController, CAMCreativeCameraButton, CAMDisabledModeOverlayView, CAMDisabledPreviewController, CAMElapsedTimeView, CAMFeedbackContoller, CAMFilterButton, CAMFilterNameBadge, CAMFilterScrubberView, CAMFlashBadge, CAMFlashButton, CAMFlipButton, CAMFocusLockBadge, CAMFramerateIndicatorView, CAMGridView, CAMHDRBadge, CAMHDRButton, CAMIdleController, CAMImageWell, CAMKeepAliveController, CAMLevelIndicatorView, CAMLevelViewModel, CAMLightingControl, CAMLightingNameBadge, CAMLivePhotoBadge, CAMLivePhotoButton, CAMLocationController, CAMMachineReadableCodeLoggingController, CAMMessagesPhotosButton, CAMModeDial, CAMMotionController, CAMPanoramaViewController, CAMPhysicalCaptureNotifier, CAMPhysicalCaptureRecognizer, CAMPortraitModeDescriptionOverlayView, CAMPortraitModeInstructionLabel, CAMPowerController, CAMPreciseTimer, CAMPreviewViewController, CAMQRCodeDescriptionOverlayView, CAMQRCodeInstructionLabel, CAMRemoteShutterController, CAMShallowDepthOfFieldBadge, CAMShutterIndicatorView, CAMStorageController, CAMTimelapseController, CAMTimerButton, CAMTimerIndicatorView, CAMTopBar, CAMTorchPatternController, CAMUtilityBar, CAMZoomControl, CAMZoomSlider, CUCaptureController, CUShutterButton, NSDate, NSMutableSet, NSSet, NSString, PUReviewScreenDoneButton, UIAlertController, UIButton, UIGestureRecognizer, UIPanGestureRecognizer, UIPinchGestureRecognizer, UISwipeGestureRecognizer, UIView;
 
 @interface CAMViewfinderViewController : UIViewController <UIGestureRecognizerDelegate, CAMModeDialDataSource, CAMStillImageCaptureRequestDelegate, CAMVideoCaptureRequestDelegate, CAMPanoramaCaptureRequestDelegate, CAMFacesDelegate, CAMMachineReadableCodeDelegate, CAMConfigurationDelegate, CAMSuggestionDelegate, CAMAvailabilityDelegate, CAMBurstDelegate, CAMTimerButtonDelegate, CAMControlVisibilityDelegate, CAMControlVisibilityUpdateDelegate, CAMPreviewViewControllerDelegate, CAMCaptureRecoveryDelegate, CAMCaptureInterruptionDelegate, CAMCaptureRunningDelegate, CAMZoomDelegate, CAMZoomSliderDelegate, CAMTimelapseControllerDelegate, CAMCameraRollControllerImageWellDelegate, CAMCameraRollControllerSessionDelegate, CAMCameraRollControllerPresentationDelegate, CAMClosedViewfinderControllerDelegate, CAMDisabledPreviewControllerDelegate, CAMStillImageCapturingVideoDelegate, CAMZoomControlDelegate, CAMShallowDepthOfFieldStatusDelegate, CAMPhysicalCaptureNotifierDelegate, CAMFilterScrubberViewDelegate, CAMVideoThumbnailContentsDelegate, CAMBarsAccessibilityHUDManagerDelegate, CAMDescriptionOverlayViewDelegate, CAMShutterButtonDelegate, CAMLightingControlDelegate, CAMStorageControllerDelegate, CAMRemoteShutterDelegate>
 {
@@ -64,7 +64,6 @@
     _Bool __outOfDiskSpace;
     _Bool __performingTopBarOrientationChange;
     _Bool __flashingLivePhotoBadge;
-    _Bool __preventingAdditionalCaptures;
     _Bool __wantsFilterScrubberVisible;
     _Bool __shouldShowFilterScrubberAfterNextRender;
     _Bool __showingFilterScrubber;
@@ -77,6 +76,7 @@
     _Bool _performingTileTransition;
     _Bool _disablingMultipleCaptureFeatures;
     _Bool _disablingAdditionalCaptures;
+    _Bool _preventingAdditionalCaptures;
     _Bool _showingStandardControls;
     _Bool _performingReviewUsingOverlay;
     int __lastConfigurationRequestID;
@@ -132,6 +132,7 @@
     CAMFocusLockBadge *__focusAndExposureLockBadge;
     UIButton *__reviewButton;
     CAMCreativeCameraButton *__creativeCameraButton;
+    CAMMessagesPhotosButton *__photosButton;
     PUReviewScreenDoneButton *__doneButton;
     CAMFilterNameBadge *__filterNameBadge;
     CAMLivePhotoBadge *__livePhotoBadge;
@@ -209,6 +210,7 @@
 @property(readonly, nonatomic) long long emulationMode; // @synthesize emulationMode=_emulationMode;
 @property(readonly, nonatomic) long long messagesTransitionState; // @synthesize messagesTransitionState=_messagesTransitionState;
 @property(nonatomic) unsigned long long persistenceBehavior; // @synthesize persistenceBehavior=_persistenceBehavior;
+@property(nonatomic, getter=isPreventingAdditionalCaptures, setter=_setPreventingAdditionalCaptures:) _Bool preventingAdditionalCaptures; // @synthesize preventingAdditionalCaptures=_preventingAdditionalCaptures;
 @property(nonatomic, getter=isDisablingAdditionalCaptures) _Bool disablingAdditionalCaptures; // @synthesize disablingAdditionalCaptures=_disablingAdditionalCaptures;
 @property(nonatomic, getter=isDisablingMultipleCaptureFeatures) _Bool disablingMultipleCaptureFeatures; // @synthesize disablingMultipleCaptureFeatures=_disablingMultipleCaptureFeatures;
 @property(nonatomic, getter=isPerformingTileTransition) _Bool performingTileTransition; // @synthesize performingTileTransition=_performingTileTransition;
@@ -230,7 +232,6 @@
 @property(nonatomic, getter=_isShowingFilterScrubber, setter=_setShowingFilterScrubber:) _Bool _showingFilterScrubber; // @synthesize _showingFilterScrubber=__showingFilterScrubber;
 @property(nonatomic, setter=_setShouldShowFilterScrubberAfterNextRender:) _Bool _shouldShowFilterScrubberAfterNextRender; // @synthesize _shouldShowFilterScrubberAfterNextRender=__shouldShowFilterScrubberAfterNextRender;
 @property(nonatomic, setter=_setWantsFilterScrubberVisible:) _Bool _wantsFilterScrubberVisible; // @synthesize _wantsFilterScrubberVisible=__wantsFilterScrubberVisible;
-@property(nonatomic, getter=_isPreventingAdditionalCaptures, setter=_setPreventingAdditionalCaptures:) _Bool _preventingAdditionalCaptures; // @synthesize _preventingAdditionalCaptures=__preventingAdditionalCaptures;
 @property(nonatomic, getter=_isFlashingLivePhotoBadge, setter=_setFlashingLivePhotoBadge:) _Bool _flashingLivePhotoBadge; // @synthesize _flashingLivePhotoBadge=__flashingLivePhotoBadge;
 @property(nonatomic, getter=_isPerformingTopBarOrientationChange, setter=_setPerformingTopBarOrientationChange:) _Bool _performingTopBarOrientationChange; // @synthesize _performingTopBarOrientationChange=__performingTopBarOrientationChange;
 @property(nonatomic, getter=_isOutOfDiskSpace, setter=_setOutOfDiskSpace:) _Bool _outOfDiskSpace; // @synthesize _outOfDiskSpace=__outOfDiskSpace;
@@ -289,6 +290,7 @@
 @property(readonly, nonatomic) CAMLivePhotoBadge *_livePhotoBadge; // @synthesize _livePhotoBadge=__livePhotoBadge;
 @property(readonly, nonatomic) CAMFilterNameBadge *_filterNameBadge; // @synthesize _filterNameBadge=__filterNameBadge;
 @property(readonly, nonatomic) PUReviewScreenDoneButton *_doneButton; // @synthesize _doneButton=__doneButton;
+@property(readonly, nonatomic) CAMMessagesPhotosButton *_photosButton; // @synthesize _photosButton=__photosButton;
 @property(readonly, nonatomic) CAMCreativeCameraButton *_creativeCameraButton; // @synthesize _creativeCameraButton=__creativeCameraButton;
 @property(retain, nonatomic) UIButton *_reviewButton; // @synthesize _reviewButton=__reviewButton;
 @property(readonly, nonatomic) CAMFocusLockBadge *_focusAndExposureLockBadge; // @synthesize _focusAndExposureLockBadge=__focusAndExposureLockBadge;
@@ -348,6 +350,7 @@
 - (void).cxx_destruct;
 - (void)_handleCreativeCameraButtonTouchAttemptedWhileDisabled:(id)arg1;
 - (void)_handleDoneButtonReleased:(id)arg1;
+- (void)_handlePhotosButtonReleased:(id)arg1;
 - (void)_handleCreativeCameraButtonReleased:(id)arg1;
 - (void)_handleCreativeCameraButtonPressed:(id)arg1;
 - (unsigned long long)_shutterButtonFeedbackForCurrentConfiguration;
@@ -378,6 +381,8 @@
 - (_Bool)stopRecording;
 - (_Bool)startRecording;
 - (_Bool)capturePhoto;
+@property(readonly, nonatomic, getter=isCapturingLivePhoto) _Bool capturingLivePhoto;
+@property(readonly, nonatomic, getter=isCapturingPhoto) _Bool capturingPhoto;
 @property(readonly, nonatomic, getter=isRecording) _Bool recording;
 - (void)changeToMode:(long long)arg1 device:(long long)arg2 animated:(_Bool)arg3;
 - (void)changeToMode:(long long)arg1 device:(long long)arg2;
@@ -551,6 +556,7 @@
 - (_Bool)_shouldApplyTopBarRotationForGraphConfiguration:(id)arg1;
 - (_Bool)_shouldRotateTopBarForGraphConfiguration:(id)arg1;
 - (void)_rotateTopBarAndControlsToOrientation:(long long)arg1 shouldAnimate:(_Bool)arg2;
+- (long long)_topBarStyleForGraphConfiguration:(id)arg1 capturing:(_Bool)arg2;
 - (void)_updateTopBarStyleForGraphConfiguration:(id)arg1 capturing:(_Bool)arg2 animated:(_Bool)arg3;
 - (void)_validateViewfinderLayoutIfNeeded;
 - (void)_endDisablingInterfaceAutorotation;
@@ -583,6 +589,8 @@
 - (void)_dominantPhysicalButtonChanged:(id)arg1;
 - (void)_stopGeneratingDominantPhysicalButtonNotificationsIfSupported;
 - (void)_startGeneratingDominantPhysicalButtonNotificationsIfSupported;
+- (void)handleVolumeButtonReleased;
+- (void)handleVolumeButtonPressed;
 - (void)_handlePhysicalButtonCancelled:(long long)arg1;
 - (void)_handlePhysicalButtonReleased:(long long)arg1;
 - (void)_handlePhysicalButtonPressed:(long long)arg1;
@@ -729,6 +737,7 @@
 - (_Bool)_shouldHideShutterButtonForGraphConfiguration:(id)arg1;
 - (_Bool)_shouldHideStillDuringVideoButtonForGraphConfiguration:(id)arg1;
 - (_Bool)_shouldHideDoneButtonForGraphConfiguration:(id)arg1;
+- (_Bool)_shouldHidePhotosButtonForGraphConfiguration:(id)arg1;
 - (_Bool)_shouldHideCreativeCameraButtonForGraphConfiguration:(id)arg1;
 - (_Bool)_shouldHideReviewButtonForGraphConfiguration:(id)arg1;
 - (_Bool)_shouldHideImageWellForGraphConfiguration:(id)arg1;
@@ -765,6 +774,7 @@
 - (void)_embedBurstIndicatorViewWithLayoutStyle:(long long)arg1;
 - (void)_embedFilterButtonWithLayoutStyle:(long long)arg1;
 - (void)_embedDoneButtonWithLayoutStyle:(long long)arg1;
+- (void)_embedPhotosButtonWithLayoutStyle:(long long)arg1;
 - (void)_embedCreativeCameraButtonWithLayoutStyle:(long long)arg1;
 - (void)_embedReviewButtonWithLayoutStyle:(long long)arg1;
 - (void)_embedImageWellWithLayoutStyle:(long long)arg1;
@@ -834,6 +844,8 @@
 - (void)_createShutterButtonIfNecessary;
 - (void)_createFilterButtonIfNecessary;
 - (void)_createDoneButtonIfNecessary;
+- (void)_createPhotosButtonIfNecessary;
+- (_Bool)_shouldCreatePhotosButton;
 - (void)_createCreativeCameraButtonIfNecessary;
 - (void)_createReviewButtonIfNecessary;
 - (void)_createImageWellIfNecessary;
@@ -843,6 +855,7 @@
 - (void)_createVideoControlsIfNecessary;
 - (void)_createPortraitModeControlsIfNecessary;
 - (void)_createStillImageControlsIfNecessary;
+- (void)_createControlsIfNecessaryForMode:(long long)arg1;
 - (void)_createModeSpecificControlsIfNecessary;
 - (void)_createCommonControlsIfNecessary;
 - (void)_destroyFilterScrubberGestureRecognizers;

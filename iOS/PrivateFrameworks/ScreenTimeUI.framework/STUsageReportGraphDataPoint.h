@@ -25,6 +25,7 @@
 @property(nonatomic) unsigned long long itemType; // @synthesize itemType=_itemType;
 @property(nonatomic) unsigned long long timePeriod; // @synthesize timePeriod=_timePeriod;
 - (void).cxx_destruct;
+- (id)description;
 - (id)initWithTimePeriod:(unsigned long long)arg1 itemType:(unsigned long long)arg2 dateInterval:(id)arg3 total:(id)arg4 totalAsPercentageOfMax:(double)arg5 segments:(id)arg6;
 @property(readonly, nonatomic) NSDate *date;
 

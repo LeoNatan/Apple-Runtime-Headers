@@ -52,8 +52,10 @@
 - (void)removeFromPendingTerminated:(id)arg1;
 - (void)handleAppStateChangedInfo:(id)arg1;
 - (void)_postAppTerminatedNotification:(id)arg1;
+- (void)_postHomeUIServiceTerminatedNotification;
 - (_Bool)infoIsForViewService:(id)arg1;
 - (unsigned long long)translateApplicationStateForInfo:(id)arg1 processInfo:(id)arg2;
+- (void)_removeProcess:(id)arg1;
 - (void)removeProcess:(id)arg1;
 - (void)addProcess:(id)arg1;
 - (void)_stopMonitoringApplicationStateChangesForBundleIdentifier:(id)arg1;

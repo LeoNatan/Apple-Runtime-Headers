@@ -7,8 +7,6 @@
 #import "NSObject.h"
 
 #import "TPBackgroundLayoutControllerDelegate.h"
-#import "TPLayoutStateConsumer.h"
-#import "TPLayoutStateProvider.h"
 #import "TPPageLayoutInfoProvider.h"
 #import "TSKChangeSourceObserver.h"
 #import "TSWPLayoutOwner.h"
@@ -16,7 +14,7 @@
 @class NSArray, NSMutableArray, NSString, TPDocumentRoot, TPFootnoteLayoutController, TPPageControllerCanvasDelegate, TPPageLayoutState, TPTextFlowLayoutController, TPTextWrapController, TSUMutablePointerSet, TSWPLayoutManager, TSWPLayoutMetricsCache;
 
 __attribute__((visibility("hidden")))
-@interface TPPageController : NSObject <TPPageLayoutInfoProvider, TSKChangeSourceObserver, TSWPLayoutOwner, TPLayoutStateConsumer, TPLayoutStateProvider, TPBackgroundLayoutControllerDelegate>
+@interface TPPageController : NSObject <TPPageLayoutInfoProvider, TSKChangeSourceObserver, TSWPLayoutOwner, TPBackgroundLayoutControllerDelegate>
 {
     // Error parsing type: Ai, name: _isScrolling
     // Error parsing type: Ai, name: _isZooming
@@ -142,18 +140,6 @@ __attribute__((visibility("hidden")))
 - (unsigned long long)pageIndexFromCanvasPoint:(struct CGPoint)arg1;
 - (struct CGRect)pageRectForPageIndex:(unsigned long long)arg1 allowAfterLayoutPoint:(_Bool)arg2;
 - (struct CGPoint)pageOriginForPageIndex:(unsigned long long)arg1 allowAfterLayoutPoint:(_Bool)arg2;
-- (id)sectionHintsForArchivedLayoutState:(id)arg1;
-- (unsigned long long)bodyLengthForArchivedLayoutState:(id)arg1;
-- (unsigned long long)lastPageCountForArchivedLayoutState:(id)arg1;
-- (unsigned long long)documentPageIndexForArchivedLayoutState:(id)arg1;
-- (unsigned long long)sectionPageIndexForArchivedLayoutState:(id)arg1;
-- (unsigned long long)sectionIndexForArchivedLayoutState:(id)arg1;
-- (_Bool)archivedLayoutState:(id)arg1 setSectionHints:(id)arg2;
-- (_Bool)archivedLayoutState:(id)arg1 setBodyLength:(unsigned long long)arg2;
-- (void)archivedLayoutState:(id)arg1 setLastPageCount:(unsigned long long)arg2;
-- (void)archivedLayoutState:(id)arg1 setDocumentPageIndex:(unsigned long long)arg2;
-- (void)archivedLayoutState:(id)arg1 setSectionPageIndex:(unsigned long long)arg2;
-- (void)archivedLayoutState:(id)arg1 setSectionIndex:(unsigned long long)arg2;
 - (id)metricsCacheForStorage:(id)arg1;
 - (void)didLayoutChangingDirtyRanges;
 - (void)layoutManager:(id)arg1 didClearDirtyRangeWithDelta:(long long)arg2 afterCharIndex:(unsigned long long)arg3;
@@ -206,6 +192,8 @@ __attribute__((visibility("hidden")))
 - (struct CGSize)pageSize;
 @property(readonly, nonatomic) _Bool isPaginated;
 - (void)accquireLockAndPerformAction:(CDUnknownBlockType)arg1;
+- (void)saveIntoLayoutState:(id)arg1;
+- (void)restoreFromLayoutState:(id)arg1;
 - (void)dealloc;
 - (void)teardown;
 @property(readonly, nonatomic) __weak TPDocumentRoot *documentRoot;
@@ -246,7 +234,7 @@ __attribute__((visibility("hidden")))
 - (void)i_trimPageAtIndex:(unsigned long long)arg1 toCharIndex:(unsigned long long)arg2 removeFootnoteReferenceCount:(unsigned long long)arg3 removeAutoNumberFootnoteCount:(unsigned long long)arg4;
 - (id)i_pageIndexPathForPageIndex:(unsigned long long)arg1 forceLayout:(_Bool)arg2 allowAfterLayoutPoint:(_Bool)arg3;
 - (id)i_pageHintForPageIndex:(unsigned long long)arg1;
-- (void)d_toggleWrapAnimation;
+@property(readonly, nonatomic) TPTextWrapController *d_wrapController;
 - (void)d_timeLayout;
 
 // Remaining properties

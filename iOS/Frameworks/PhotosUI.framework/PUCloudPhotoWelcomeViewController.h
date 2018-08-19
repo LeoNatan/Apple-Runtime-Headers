@@ -38,6 +38,7 @@
 - (void)cloudPhotoWelcomeViewNotNowButtonTapped:(id)arg1;
 - (void)cloudPhotoWelcomeViewLearnMoreTapped:(id)arg1;
 - (void)cloudPhotoWelcomeViewGoButtonTapped:(id)arg1;
+- (id)presentingViewControllerTraitCollection;
 - (void)_handleGoButtonTapped;
 - (void)_continueWithoutStoragePurchase:(id)arg1;
 - (void)_enableCPLDataClass;
@@ -52,6 +53,7 @@
 - (long long)preferredInterfaceOrientationForPresentation;
 - (unsigned long long)supportedInterfaceOrientations;
 - (void)_updateCurrentActivity;
+- (void)viewWillLayoutSubviews;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)_applicationWillEnterForeground:(id)arg1;
 - (void)viewDidLoad;

@@ -12,7 +12,7 @@ __attribute__((visibility("hidden")))
 }
 
 - (_Bool)p_shouldDraw;
-- (void)recursivelyDrawChildrenInContext:(struct CGContext *)arg1;
+- (void)recursivelyDrawChildrenInContext:(struct CGContext *)arg1 keepingChildrenPassingTest:(CDUnknownBlockType)arg2;
 - (void)drawInContext:(struct CGContext *)arg1;
 - (_Bool)forcesPlacementOnTop;
 - (_Bool)modelIsReadOnly;

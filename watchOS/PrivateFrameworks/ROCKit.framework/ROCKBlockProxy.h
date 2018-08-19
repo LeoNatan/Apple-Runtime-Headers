@@ -6,13 +6,13 @@
 
 #import "NSBlock.h"
 
-#import "NSRemoteInvocationInterface.h"
-#import "ROCKImpersonateable.h"
+#import "ROCKImpersonatable.h"
+#import "ROCKRemoteInvocationInterface.h"
 
 @class NSString, ROCKRemoteBlockProxy;
 
 __attribute__((visibility("hidden")))
-@interface ROCKBlockProxy : NSBlock <NSRemoteInvocationInterface, ROCKImpersonateable>
+@interface ROCKBlockProxy : NSBlock <ROCKRemoteInvocationInterface, ROCKImpersonatable>
 {
     struct {
         int flags;

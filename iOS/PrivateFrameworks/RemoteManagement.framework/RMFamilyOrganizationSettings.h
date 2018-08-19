@@ -6,21 +6,28 @@
 
 #import <RemoteManagement/RMCoreOrganizationSettings.h>
 
-@class NSString, RMFamilyOrganization;
+@class NSData, NSString, RMFamilyOrganization, RMVersionVector;
 
 @interface RMFamilyOrganizationSettings : RMCoreOrganizationSettings
 {
+    RMVersionVector *_cachedVersionVector;
 }
 
+- (void).cxx_destruct;
 - (id)dictionaryRepresentation;
-- (void)updateWithDictionaryRepresentation:(id)arg1;
+- (_Bool)updateWithDictionaryRepresentation:(id)arg1;
 @property(copy, nonatomic) NSString *passcode; // @dynamic passcode;
 @property(nonatomic) _Bool isManaged; // @dynamic isManaged;
 - (id)computeUniqueIdentifier;
 - (void)didChangeValueForKey:(id)arg1;
+@property(readonly, copy, nonatomic) NSData *unmodeled_versionVector;
+@property(copy, nonatomic) RMVersionVector *versionVector; // @dynamic versionVector;
+- (void)awakeFromInsert;
 
 // Remaining properties
+@property(nonatomic) _Bool isDirty; // @dynamic isDirty;
 @property(retain, nonatomic) RMFamilyOrganization *organization; // @dynamic organization;
+@property(nonatomic) _Bool shareWebUsage; // @dynamic shareWebUsage;
 
 @end
 

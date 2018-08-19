@@ -9,12 +9,12 @@
 __attribute__((visibility("hidden")))
 @interface TSTDurationNode : TSTExpressionNode
 {
-    struct TSTDurationWrapper mValue;
-    _Bool mBlank;
+    _Bool _blank;
+    struct TSTDurationWrapper _value;
 }
 
-@property(nonatomic, getter=isBlank) _Bool blank; // @synthesize blank=mBlank;
-@property(nonatomic) struct TSTDurationWrapper value; // @synthesize value=mValue;
+@property(nonatomic, getter=isBlank) _Bool blank; // @synthesize blank=_blank;
+@property(nonatomic) struct TSTDurationWrapper value; // @synthesize value=_value;
 - (id)description;
 - (void)saveToArchive:(struct DurationNodeArchive *)arg1 archiver:(id)arg2;
 - (void)loadFromArchive:(const struct DurationNodeArchive *)arg1 unarchiver:(id)arg2;

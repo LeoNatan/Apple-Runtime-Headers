@@ -19,10 +19,12 @@
     id <VCVoiceShortcutSyncService> _masterSyncService;
     NSObject<OS_dispatch_queue> *_syncServicesIsolationQueue;
     HMHomeManager *_hmHomeManager;
+    NSObject<OS_dispatch_queue> *_updateVoiceShortcutsSharedVocabularyQueue;
 }
 
 + (id)sharedManager;
 + (void)initialize;
+@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *updateVoiceShortcutsSharedVocabularyQueue; // @synthesize updateVoiceShortcutsSharedVocabularyQueue=_updateVoiceShortcutsSharedVocabularyQueue;
 @property(retain, nonatomic) HMHomeManager *hmHomeManager; // @synthesize hmHomeManager=_hmHomeManager;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *syncServicesIsolationQueue; // @synthesize syncServicesIsolationQueue=_syncServicesIsolationQueue;
 @property(nonatomic) __weak id <VCVoiceShortcutSyncService> masterSyncService; // @synthesize masterSyncService=_masterSyncService;
@@ -30,8 +32,12 @@
 - (void).cxx_destruct;
 - (void)describeSyncStateIncludingDeleted:(_Bool)arg1 accessSpecifier:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)requestSyncForServiceClassName:(id)arg1 forceReset:(_Bool)arg2 accessSpecifier:(id)arg3 completion:(CDUnknownBlockType)arg4;
+- (void)populateBlacklistStatusOnVoiceShortcut:(id)arg1 withAccessSpecifier:(id)arg2;
 - (id)addExtraVocabForDemoIfAppropriate:(id)arg1;
+- (void)_updateVoiceShortcutsSharedVocabularyAccessSpecifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)scheduleVocabularySyncToServerWithAccessSpecifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)syncVocabularyToServer;
+- (void)handleAssistantPrefChangedNotification;
 - (_Bool)isSyncServiceRegisteredWithIdentifier:(id)arg1;
 - (void)enumerateSyncServicesUsingBlock:(CDUnknownBlockType)arg1;
 - (void)deregisterSyncServiceWithIdentifier:(id)arg1;
@@ -46,12 +52,12 @@
 - (void)rehydrateFromMasterSyncServiceIfNeeded;
 @property(nonatomic) _Bool needsToBeRehydratedFromMasterSyncService;
 - (_Bool)deleteSyncedData:(id *)arg1;
-- (void)deleteShortcutSuggestionsFromDeletedApps;
+- (void)cleanUpAfterDeletedApps;
+- (void)setUpAfterInstalledApps:(id)arg1;
 - (void)getShortcutSuggestionsForAllAppsWithLimit:(unsigned int)arg1 accessSpecifier:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)getShortcutSuggestionsForAppWithBundleIdentifier:(id)arg1 accessSpecifier:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)setShortcutSuggestions:(id)arg1 forAppWithBundleIdentifier:(id)arg2 accessSpecifier:(id)arg3;
 - (_Bool)phraseHasHomeKitConflict:(id)arg1;
-- (id)blacklistedPhrases;
 - (id)sanitizePhrase:(id)arg1;
 - (void)validateVoiceShortcutPhrases:(id)arg1 accessSpecifier:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)deleteVoiceShortcutWithIdentifier:(id)arg1 accessSpecifier:(id)arg2 completion:(CDUnknownBlockType)arg3;

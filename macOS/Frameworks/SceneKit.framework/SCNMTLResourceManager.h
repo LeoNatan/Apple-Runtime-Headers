@@ -12,6 +12,7 @@ __attribute__((visibility("hidden")))
 @interface SCNMTLResourceManager : NSObject
 {
     id <MTLDevice> _device;
+    id <MTLCommandQueue> _commandQueue;
     struct __C3DEngineStats *__engineStats;
     SCNMTLLibraryManager *_libraryManager;
     SCNMTLShaderBindingsGenerator *_bindingsGenerator;
@@ -56,6 +57,7 @@ __attribute__((visibility("hidden")))
 
 + (void)unregisterManagerForDevice:(id)arg1;
 + (id)resourceManagerForDevice:(id)arg1;
+@property(readonly, nonatomic) id <MTLCommandQueue> commandQueue; // @synthesize commandQueue=_commandQueue;
 @property(readonly, nonatomic) id <MTLDevice> device; // @synthesize device=_device;
 @property(retain, nonatomic) SCNMTLLibraryManager *libraryManager; // @synthesize libraryManager=_libraryManager;
 - (id)depthAndStencilStateWithReadWriteDepthDisabled;

@@ -16,6 +16,7 @@
     UIImageView *_achievementThumbnailView;
     UILabel *_scoreTypeHeaderLabel;
     NSNumber *_previousLayoutWidth;
+    _Bool _isRTLLayout;
 }
 
 + (double)preferredHeightForConfiguration:(id)arg1 friend:(id)arg2;

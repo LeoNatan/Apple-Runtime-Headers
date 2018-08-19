@@ -15,22 +15,24 @@
     NSObject<OS_dispatch_queue> *_notifyQueue;
     _MDIndexExtensionLoader *_extensionLoader;
     NSDictionary *_indexExtensionsByBundleID;
+    NSDictionary *_fileProviderBundleMap;
     NSObject<OS_dispatch_queue> *_queue;
     NSCondition *_extensionsCondition;
     NSObject<OS_dispatch_queue> *_extensionManagerQueue;
+    long long _loaderCallbackCount;
 }
 
 + (void)setMemoryPressureStatus:(unsigned long long)arg1;
 + (id)sharedManager;
+@property(nonatomic) long long loaderCallbackCount; // @synthesize loaderCallbackCount=_loaderCallbackCount;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *extensionManagerQueue; // @synthesize extensionManagerQueue=_extensionManagerQueue;
 @property(retain, nonatomic) NSCondition *extensionsCondition; // @synthesize extensionsCondition=_extensionsCondition;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
+@property(retain, nonatomic) NSDictionary *fileProviderBundleMap; // @synthesize fileProviderBundleMap=_fileProviderBundleMap;
 @property(retain, nonatomic) NSDictionary *indexExtensionsByBundleID; // @synthesize indexExtensionsByBundleID=_indexExtensionsByBundleID;
 @property(retain, nonatomic) _MDIndexExtensionLoader *extensionLoader; // @synthesize extensionLoader=_extensionLoader;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *notifyQueue; // @synthesize notifyQueue=_notifyQueue;
 - (void).cxx_destruct;
-- (id)fetchFileProviderBundleMap;
-- (void)findExtensionsWithCompletionBlock:(CDUnknownBlockType)arg1;
 - (void)indexRequestsPerformDataJob:(id)arg1 forBundle:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)indexRequestsPerformJob:(id)arg1 extensions:(id)arg2 perExtensionCompletionHandler:(CDUnknownBlockType)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)indexRequestsPerformJob:(id)arg1 perExtensionCompletionHandler:(CDUnknownBlockType)arg2 completionHandler:(CDUnknownBlockType)arg3;
@@ -42,10 +44,9 @@
 - (id)extensions;
 - (id)anyExtensionWithBlock:(CDUnknownBlockType)arg1;
 - (id)allExtensionsWithBlock:(CDUnknownBlockType)arg1;
-- (void)_filterExtensionsWithBlock:(CDUnknownBlockType)arg1;
+- (void)_waitForLoadLocked;
 - (void)_notifyForLoadedExtensions;
-- (void)loadExtensionsSynchronously;
-- (void)buildExtensionsCache;
+- (void)findExtensionsWithCompletionBlock:(CDUnknownBlockType)arg1;
 - (void)loadExtensions;
 - (id)init;
 

@@ -19,6 +19,8 @@
 }
 
 + (_Bool)_stopAllAlerts;
++ (void)_setCurrentOverridePolicy:(int)arg1 forType:(int)arg2;
++ (int)_currentOverridePolicyForType:(int)arg1;
 + (void)_setWatchPrefersSalientToneAndVibration:(_Bool)arg1;
 + (_Bool)_watchPrefersSalientToneAndVibration;
 + (id)alertWithConfiguration:(id)arg1;

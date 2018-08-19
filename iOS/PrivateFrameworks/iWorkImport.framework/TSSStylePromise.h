@@ -18,9 +18,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)promiseForStyle:(id)arg1;
+- (void).cxx_destruct;
 - (void)fulfillWithStyle:(id)arg1;
 - (void)addPromisee:(id)arg1;
-- (void)dealloc;
 - (id)initWithStyle:(id)arg1;
 
 @end

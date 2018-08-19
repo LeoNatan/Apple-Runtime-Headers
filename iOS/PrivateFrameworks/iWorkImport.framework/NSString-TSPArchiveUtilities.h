@@ -7,9 +7,9 @@
 #import "NSString.h"
 
 @interface NSString (TSPArchiveUtilities)
-+ (id)tsp_stringWithProtobufString:(const basic_string_a1f69cfb *)arg1;
-- (void)tsp_saveToProtobufString:(basic_string_a1f69cfb *)arg1;
++ (id)tsp_stringWithProtobufString:(const basic_string_23d93216 *)arg1;
+- (void)tsp_saveToProtobufString:(basic_string_23d93216 *)arg1;
 - (const char *)tsp_protobufString;
-- (id)tsp_initWithProtobufString:(const basic_string_a1f69cfb *)arg1;
+- (id)tsp_initWithProtobufString:(const basic_string_23d93216 *)arg1;
 @end
 

@@ -75,6 +75,7 @@
 - (struct __CFArray *)_inqNewCollectionIdsWithDateFilter:(id)arg1;
 - (struct __CFArray *)_inqNewAssetIdsForGroupId:(unsigned long long)arg1 dateFilter:(id)arg2;
 - (struct __CFArray *)_inqNewAssetIdsWithDateFilter:(id)arg1;
+- (id)_inqNewSynonymTextsByOwningGroupIdWithGroupIds:(struct __CFSet *)arg1;
 - (struct __CFSet *)_inqNewGroupIdsWithOwningGroupIds:(struct __CFSet *)arg1;
 - (struct __CFSet *)_inqNewSurvivingGroupIdsForDeleteOperationWithMatchingGroupIds:(struct __CFSet *)arg1;
 - (id)_inqGroupsWithMatchingGroupIds:(struct __CFSet *)arg1 dateFilter:(id)arg2 includeObjects:(_Bool)arg3 matchingPredicateBlock:(CDUnknownBlockType)arg4;

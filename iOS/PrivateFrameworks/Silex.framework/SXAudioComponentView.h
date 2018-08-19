@@ -30,6 +30,7 @@
 @property(readonly, nonatomic) id <SXHost> host; // @synthesize host=_host;
 @property(readonly, nonatomic) id <SXResourceDataSource> resourceDataSource; // @synthesize resourceDataSource=_resourceDataSource;
 - (void).cxx_destruct;
+- (void)viewport:(id)arg1 appearStateChangedFromState:(unsigned long long)arg2;
 - (void)playerViewController:(id)arg1 metricsCollectionEventOccured:(long long)arg2;
 - (_Bool)allowHierarchyRemoval;
 - (void)submitMediaEngageCompleteEvent;

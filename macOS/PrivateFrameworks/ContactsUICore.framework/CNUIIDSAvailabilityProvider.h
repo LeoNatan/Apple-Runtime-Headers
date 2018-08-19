@@ -8,13 +8,13 @@
 
 #import "CNUIIDSAvailabilityProvider.h"
 
-@class CNCache, NSArray, NSString;
+@class CNUIDSHandleAvailablityCache, NSArray, NSString;
 
 @interface CNUIIDSAvailabilityProvider : NSObject <CNUIIDSAvailabilityProvider>
 {
     id <CNUIIDSIDQueryControllerWrapper> _queryControllerWrapper;
-    CNCache *_faceTimeRequests;
-    CNCache *_iMessageRequests;
+    CNUIDSHandleAvailablityCache *_faceTimeRequests;
+    CNUIDSHandleAvailablityCache *_iMessageRequests;
     NSArray *_requestFutures;
     id <CNScheduler> _resourceLock;
 }
@@ -23,8 +23,8 @@
 + (id)makeFaceTimeRequestsCache;
 @property(retain, nonatomic) id <CNScheduler> resourceLock; // @synthesize resourceLock=_resourceLock;
 @property(retain, nonatomic) NSArray *requestFutures; // @synthesize requestFutures=_requestFutures;
-@property(retain, nonatomic) CNCache *iMessageRequests; // @synthesize iMessageRequests=_iMessageRequests;
-@property(retain, nonatomic) CNCache *faceTimeRequests; // @synthesize faceTimeRequests=_faceTimeRequests;
+@property(retain, nonatomic) CNUIDSHandleAvailablityCache *iMessageRequests; // @synthesize iMessageRequests=_iMessageRequests;
+@property(retain, nonatomic) CNUIDSHandleAvailablityCache *faceTimeRequests; // @synthesize faceTimeRequests=_faceTimeRequests;
 @property(retain, nonatomic) id <CNUIIDSIDQueryControllerWrapper> queryControllerWrapper; // @synthesize queryControllerWrapper=_queryControllerWrapper;
 - (void).cxx_destruct;
 - (id)validateHandlesForIMessage:(id)arg1 schedulerProvider:(id)arg2;

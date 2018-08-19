@@ -16,12 +16,13 @@
 #import "UITableViewDataSourcePrefetching.h"
 #import "UITableViewDelegate.h"
 
-@class NSArray, NSIndexPath, NSObject<OS_dispatch_semaphore>, NSString, NSTimer, PHCachingImageManager, PLSearchMetadataStore, PSIDatabase, PUNavigationController, PUSearchResultsFooterView, PUSearchResultsSectionedDataSource, PUSearchResultsSuggestionsAggdLogHelper, PUSearchTopResultContentView, PXAssetReference, PXAssetsDataSourceManager, PXPhotoKitUIMediaProvider, UILabel, UISearchController, UITableView, UITableViewCell;
+@class NSArray, NSIndexPath, NSObject<OS_dispatch_semaphore>, NSString, NSTimer, PHCachingImageManager, PLSearchMetadataStore, PSIDatabase, PUNavigationController, PUSearchResultsFooterView, PUSearchResultsSectionedDataSource, PUSearchResultsSuggestionsAggdLogHelper, PUSearchTopResultContentView, PXAssetReference, PXAssetsDataSourceManager, PXPhotoKitUIMediaProvider, PXPhotosDataSource, UILabel, UISearchController, UITableView, UITableViewCell;
 
 @interface PUSearchResultsViewController : UIViewController <UISearchBarDelegate, UITableViewDataSource, UITableViewDataSourcePrefetching, UITableViewDelegate, PUSearchResultsSectionedDataSourceChangeObserver, PUSearchResultsFooterViewDelegate, PUTopResultDelegate, PXOneUpPresentationDelegate, UISearchResultsUpdating>
 {
     PXPhotoKitUIMediaProvider *_oneUpMediaProvider;
     PXAssetsDataSourceManager *_oneUpDataSourceManager;
+    PXPhotosDataSource *_oneUpDataSource;
     PXAssetReference *_oneUpInitialAssetReference;
     _Bool _indexing;
     _Bool _aggdSearchSucceeded;
@@ -133,6 +134,7 @@
 - (void)_configureCell:(id)arg1 inTableView:(id)arg2 atIndexAPath:(id)arg3;
 - (void)_configureTopResultsCell:(id)arg1 atIndexPath:(id)arg2;
 - (id)_configureContentViewForCell:(id)arg1;
+- (id)_configureSuggestionsContentViewForCell:(id)arg1;
 - (void)_getInfoForCellInTableView:(id)arg1 atIndexPath:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_getTitleForSearchResult:(id)arg1 outAttributedTitle:(id *)arg2 outSubtitle:(id *)arg3;
 - (id)_resultTitleForCurrentSearch;

@@ -20,6 +20,7 @@ __attribute__((visibility("hidden")))
     int _sendFramesCount;
     int _receivedFramesCount;
     double _effectsTimeoutThreshold;
+    int _thermalPressureLevel;
 }
 
 + (id)sharedManager;
@@ -31,6 +32,7 @@ __attribute__((visibility("hidden")))
 - (void)capturedPixelBuffer:(struct __CVBuffer *)arg1 depthBuffer:(struct __CVBuffer *)arg2 time:(CDStruct_1b6d18a9)arg3 imageData:(id)arg4 toClient:(id)arg5;
 - (void)renderPixelBuffer:(struct __CVBuffer *)arg1 time:(CDStruct_1b6d18a9)arg2;
 - (void)capturedPixelBuffer:(struct __CVBuffer *)arg1 depthDataPixelBuffer:(struct __CVBuffer *)arg2 time:(CDStruct_1b6d18a9)arg3 imageData:(id)arg4;
+- (void)updateThermalLevel:(int)arg1;
 - (void)clearAllStickers:(BOOL)arg1;
 - (void)addStickerWithURL:(id)arg1 isFaceSticker:(BOOL)arg2 atPosition:(struct CGPoint)arg3 identifier:(id)arg4;
 - (void)setMemoji:(id)arg1;

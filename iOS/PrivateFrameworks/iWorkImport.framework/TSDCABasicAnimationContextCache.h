@@ -15,6 +15,7 @@ __attribute__((visibility("hidden")))
 
 @property(readonly, nonatomic) id toValue; // @synthesize toValue=_toValue;
 @property(readonly, nonatomic) id fromValue; // @synthesize fromValue=_fromValue;
+- (void).cxx_destruct;
 - (double)percentAtTime:(double)arg1;
 - (id)valueAtTime:(double)arg1 initialValue:(id)arg2 groupTimingFactor:(double)arg3;
 - (id)initWithAnimation:(id)arg1;

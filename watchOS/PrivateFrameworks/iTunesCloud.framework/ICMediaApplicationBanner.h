@@ -21,9 +21,13 @@
     NSDate *_displayWindowEndTime;
     int _maxDisplayCount;
     int _displayCount;
+    NSString *_setID;
+    _Bool _hasBeenTapped;
 }
 
 + (_Bool)supportsSecureCoding;
+@property(readonly, nonatomic) _Bool hasBeenTapped; // @synthesize hasBeenTapped=_hasBeenTapped;
+@property(readonly, nonatomic) NSString *setID; // @synthesize setID=_setID;
 @property(readonly, nonatomic) int displayCount; // @synthesize displayCount=_displayCount;
 @property(readonly, nonatomic) int maxDisplayCount; // @synthesize maxDisplayCount=_maxDisplayCount;
 @property(readonly, nonatomic) NSDate *displayWindowEndTime; // @synthesize displayWindowEndTime=_displayWindowEndTime;

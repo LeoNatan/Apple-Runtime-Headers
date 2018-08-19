@@ -173,6 +173,7 @@ struct VCRateControlAlgorithmConfig {
     double rampUpOverBandwidthCalmDuration;
     int rampUpOverBandwidthTierNumber;
     int rampDownLossEventThreshold;
+    double rampUpFrozenPLRThreshold;
     double rampUpRateLimitedRatio;
     double unstableRateLimitedDuration;
     double congestionWaitDuration;

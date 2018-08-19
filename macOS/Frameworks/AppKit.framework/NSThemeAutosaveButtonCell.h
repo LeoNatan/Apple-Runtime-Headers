@@ -18,7 +18,7 @@ __attribute__((visibility("hidden")))
 - (BOOL)_hasRolloverContentArt;
 - (long long)interiorBackgroundStyle;
 - (id)_textAttributes;
-- (struct CGRect)_imageRectWithRect:(struct CGRect *)arg1;
+- (struct CGRect)_imageRectWithRect:(struct CGRect *)arg1 allowImageScaling:(BOOL)arg2;
 - (struct CGRect)titleRectForBounds:(struct CGRect)arg1;
 - (struct CGSize)_minCellSize;
 - (void)performClick:(id)arg1;

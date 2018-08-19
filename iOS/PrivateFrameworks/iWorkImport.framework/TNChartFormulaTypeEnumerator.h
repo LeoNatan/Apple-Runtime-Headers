@@ -6,16 +6,18 @@
 
 #import "NSObject.h"
 
+@class NSArray;
+
 __attribute__((visibility("hidden")))
 @interface TNChartFormulaTypeEnumerator : NSObject
 {
-    unsigned long long **_keys;
+    NSArray *_keys;
     unsigned long long _count;
     unsigned long long _index;
 }
 
+- (void).cxx_destruct;
 - (unsigned long long)nextFormulaType;
-- (void)dealloc;
 - (id)initWithChartFormulaStorage:(id)arg1;
 
 @end

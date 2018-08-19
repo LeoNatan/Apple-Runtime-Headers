@@ -62,6 +62,7 @@ __attribute__((visibility("hidden")))
 - (id)stringForCollaboratorConflictDetails;
 - (id)stringForCollaboratorConflict;
 - (id)stringForUpdatingDocumentWithoutServiceType;
+- (id)stringForUserActivityTitleForFilename:(id)arg1;
 - (id)equationEditorAPDID;
 - (id)templateTypeDisplayName;
 - (id)documentTypeDisplayNameForSharingInvitation;

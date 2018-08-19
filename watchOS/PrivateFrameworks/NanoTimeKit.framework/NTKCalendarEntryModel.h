@@ -41,7 +41,6 @@
 + (id)_modularSmallCalendarImageProvider;
 + (id)smallUtility:(id)arg1;
 + (id)_swapPlaceholderString:(id)arg1 withTimeStringForDate:(id)arg2 inString:(id)arg3 usingBaseFont:(id)arg4 smallCapsBaseFont:(id)arg5 timeZone:(id)arg6 options:(unsigned int)arg7;
-+ (id)contentForSignatureRectangular:(id)arg1;
 + (id)contentForLargeModular:(id)arg1;
 + (id)largeModular:(id)arg1;
 @property(retain, nonatomic) NSArray *eventColors; // @synthesize eventColors=_eventColors;

@@ -11,6 +11,8 @@
 @protocol HFExecutionEnvironmentObserver <NSObject>
 
 @optional
+- (void)executionEnvironmentDidBecomeOccluded:(HFExecutionEnvironment *)arg1;
+- (void)executionEnvironmentDidBecomeVisible:(HFExecutionEnvironment *)arg1;
 - (void)executionEnvironmentDidEnterBackground:(HFExecutionEnvironment *)arg1;
 - (void)executionEnvironmentWillResignActive:(HFExecutionEnvironment *)arg1;
 - (void)executionEnvironmentDidBecomeActive:(HFExecutionEnvironment *)arg1;

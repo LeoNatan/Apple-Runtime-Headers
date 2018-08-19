@@ -28,6 +28,8 @@ __attribute__((visibility("hidden")))
 - (void)p_announceNewItemForAccessibilityIfNeeded;
 - (void)didDisplayTextureWithDescription:(id)arg1 isAtEndOfBuild:(_Bool)arg2;
 - (id)p_newTextureForStage:(unsigned long long)arg1 isIncoming:(_Bool)arg2 includeImage:(_Bool)arg3 includeCaption:(_Bool)arg4 size:(struct CGSize)arg5 offset:(struct CGPoint)arg6 renderTransform:(struct CGAffineTransform)arg7;
+- (id)p_galleryItemForTextureStage:(unsigned long long)arg1 isIncoming:(_Bool)arg2;
+- (_Bool)p_shouldIncludeItemCaptionTextForStage:(unsigned long long)arg1 isIncoming:(_Bool)arg2;
 - (id)textureForDescription:(id)arg1;
 - (id)p_emptyPlaceholderImage;
 - (id)imageDrawingHelperThumbnailAdjustedImageData:(id)arg1;

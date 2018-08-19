@@ -15,14 +15,17 @@ __attribute__((visibility("hidden")))
     _Bool _isAnimationKeyHidden;
     _Bool _isAnimationKeyDoubleSided;
     _Bool _isObjectTypeCGColor;
+    _Bool _isContentsAnimation;
     NSString *_keyPath;
 }
 
+@property(nonatomic) _Bool isContentsAnimation; // @synthesize isContentsAnimation=_isContentsAnimation;
 @property(nonatomic) _Bool isObjectTypeCGColor; // @synthesize isObjectTypeCGColor=_isObjectTypeCGColor;
 @property(readonly, nonatomic) _Bool isAnimationKeyDoubleSided; // @synthesize isAnimationKeyDoubleSided=_isAnimationKeyDoubleSided;
 @property(readonly, nonatomic) _Bool isAnimationKeyHidden; // @synthesize isAnimationKeyHidden=_isAnimationKeyHidden;
 @property(readonly, nonatomic) _Bool isAnimationKeyTypeOfRotation; // @synthesize isAnimationKeyTypeOfRotation=_isAnimationKeyTypeOfRotation;
 @property(readonly, nonatomic) NSString *keyPath; // @synthesize keyPath=_keyPath;
+- (void).cxx_destruct;
 - (id)interpolatedValueFrom:(id)arg1 to:(id)arg2 percent:(double)arg3;
 - (id)adjustedResultWithValue:(id)arg1;
 - (id)valueForKeyPath:(id)arg1 atTime:(double)arg2 animationCache:(id)arg3;

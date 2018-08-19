@@ -8,19 +8,26 @@
 
 #import "TSKArchivedSelection.h"
 
-@class NSString, TSKSelection, TSTCellSelection;
+@class NSString, TSKSelection, TSTCellRegion, TSTCellSelection;
 
 __attribute__((visibility("hidden")))
 @interface TSTArchivedCellSelection : TSPObject <TSKArchivedSelection>
 {
-    TSTCellSelection *mCellSelection;
+    TSTCellSelection *_cellSelection;
+    _Bool _isLegacyBasedIDSelection;
+    struct TSUCellCoord _legacyAnchorCellID;
+    struct TSUCellCoord _legacyCursorCellID;
+    TSTCellRegion *_legacyCellRegion;
+    TSTCellRegion *_legacyBaseCellRegion;
+    long long _selectionType;
 }
 
-@property(retain, nonatomic) TSKSelection *selection; // @synthesize selection=mCellSelection;
+- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (void)saveToArchiver:(id)arg1;
 - (void)loadFromUnarchiver:(id)arg1;
-- (void)dealloc;
+@property(retain, nonatomic) TSKSelection *selection;
+- (id)selectionWithParent:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

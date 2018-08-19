@@ -40,6 +40,7 @@
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;
 @property(readonly) NSOrderedSet *objectIDs;
+- (id)initWithOids:(id)arg1 fetchType:(id)arg2 fetchPropertySets:(id)arg3 identifier:(id)arg4 registerIfNeeded:(_Bool)arg5 photosCount:(unsigned int)arg6 videosCount:(unsigned int)arg7 audiosCount:(unsigned int)arg8;
 - (id)initWithOids:(id)arg1 fetchType:(id)arg2 fetchPropertySets:(id)arg3 identifier:(id)arg4 registerIfNeeded:(_Bool)arg5;
 - (id)initWithObjects:(id)arg1 fetchType:(id)arg2 fetchPropertySets:(id)arg3 identifier:(id)arg4 registerIfNeeded:(_Bool)arg5;
 - (id)initWithObjects:(id)arg1 fetchType:(id)arg2 fetchPropertySets:(id)arg3;

@@ -186,6 +186,7 @@
 @property(readonly, nonatomic) id <ADAdRecipient> recipient;
 - (void)_requestAdFromAdServingDaemon;
 @property(readonly, nonatomic) ADAdSpaceConfiguration *configuration;
+- (struct CGSize)currentAdSizeForContainerSize:(struct CGSize)arg1;
 @property(readonly, nonatomic) NSString *connectionAssertionIdentifier;
 @property(readonly, copy) NSString *description;
 - (id)initForRecipient:(id)arg1;

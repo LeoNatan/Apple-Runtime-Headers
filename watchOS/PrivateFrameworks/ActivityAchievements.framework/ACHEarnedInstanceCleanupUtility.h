@@ -15,6 +15,7 @@
 
 @property(retain, nonatomic) ACHEarnedInstanceStore *earnedInstanceStore; // @synthesize earnedInstanceStore=_earnedInstanceStore;
 - (void).cxx_destruct;
+- (id)_cleanupLongestMoveStreakAchievements;
 - (id)_cleanupBestWorkoutAchievements;
 - (id)_cleanupFirstWorkoutAchievements;
 - (void)performCleanup;

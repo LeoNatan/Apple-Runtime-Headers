@@ -10,10 +10,12 @@
 
 @protocol VCVoiceShortcutManagerXPCInterface <NSObject>
 - (void)describeSyncStateIncludingDeleted:(_Bool)arg1 completion:(void (^)(NSString *, NSError *))arg2;
+- (void)getCloudKitAccountStatusWithCompletion:(void (^)(unsigned int, _Bool, NSError *))arg1;
 - (void)setInteger:(int)arg1 forKey:(NSString *)arg2 inDomain:(NSString *)arg3 completionHandler:(void (^)(_Bool, NSError *))arg4;
 - (void)getShortcutSuggestionsForAllAppsWithLimit:(unsigned int)arg1 completion:(void (^)(NSDictionary *, NSError *))arg2;
 - (void)getShortcutSuggestionsForAppWithBundleIdentifier:(NSString *)arg1 completion:(void (^)(NSArray *, NSError *))arg2;
 - (void)setShortcutSuggestions:(NSArray *)arg1 forAppWithBundleIdentifier:(NSString *)arg2;
+- (void)scheduleVocabularySyncToServer:(void (^)(_Bool, NSError *))arg1;
 - (void)requestSyncForServiceClassName:(NSString *)arg1 forceReset:(_Bool)arg2 completion:(void (^)(_Bool, NSError *))arg3;
 - (void)validateVoiceShortcutPhrases:(NSArray *)arg1 completion:(void (^)(NSArray *, NSError *))arg2;
 - (void)deleteVoiceShortcutWithIdentifier:(NSString *)arg1 completion:(void (^)(_Bool, NSError *))arg2;

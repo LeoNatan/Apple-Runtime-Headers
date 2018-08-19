@@ -10,11 +10,12 @@
 #import "CRKCardPresentationDelegate.h"
 #import "CRKCardViewControllerDelegate.h"
 
-@class APUIWFLIntentController, ATXAction, CRKCardPresentation, INIntent, NSString, UIViewController<CRKCardViewControlling>;
+@class APUIWFLIntentController, ATXAction, CRKCardPresentation, INIntent, NSString, UIActivityIndicatorView, UIViewController<CRKCardViewControlling>;
 
 @interface APUIIntentHandlingViewController : UIViewController <CRKCardPresentationDelegate, CRKCardViewControllerDelegate, APUIWFLIntentControllerDelegate>
 {
     _Bool _intentIsDirty;
+    _Bool _suppressSpinner;
     INIntent *_intent;
     long long _executionContext;
     id <APUIIntentHandlingViewControllerDelegate> _delegate;
@@ -22,10 +23,13 @@
     CRKCardPresentation *_cardPresentation;
     UIViewController<CRKCardViewControlling> *_currentCardViewController;
     double _preferredPlatterContentHeight;
+    UIActivityIndicatorView *_activityIndicatorView;
     ATXAction *_atxAction;
 }
 
 @property(retain, nonatomic) ATXAction *atxAction; // @synthesize atxAction=_atxAction;
+@property(retain, nonatomic) UIActivityIndicatorView *activityIndicatorView; // @synthesize activityIndicatorView=_activityIndicatorView;
+@property(nonatomic) _Bool suppressSpinner; // @synthesize suppressSpinner=_suppressSpinner;
 @property(nonatomic) double preferredPlatterContentHeight; // @synthesize preferredPlatterContentHeight=_preferredPlatterContentHeight;
 @property(retain, nonatomic) UIViewController<CRKCardViewControlling> *currentCardViewController; // @synthesize currentCardViewController=_currentCardViewController;
 @property(retain, nonatomic) CRKCardPresentation *cardPresentation; // @synthesize cardPresentation=_cardPresentation;
@@ -49,12 +53,14 @@
 - (id)_contentForCardRequestWithInteraction:(id)arg1;
 - (void)_createOrUpdateCardViewControllerForInteraction:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_installChildViewController:(id)arg1;
+- (void)_setupProgressIndicator;
 - (void)launchAppWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (id)titleForConfirmAction;
 - (void)confirmationGranted:(_Bool)arg1;
 - (void)beginRunningIntent;
 - (void)setPreferredPlatterContentHeight:(double)arg1 notifyDelegate:(_Bool)arg2;
 - (void)_setWorkflowControllerExecutionContext;
+- (void)viewDidLoad;
 - (id)initWithIntent:(id)arg1;
 
 // Remaining properties

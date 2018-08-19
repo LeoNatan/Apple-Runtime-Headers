@@ -66,7 +66,6 @@
 - (void)reloadActionsForIdentifiers:(id)arg1;
 - (void)_reloadActionWithoutNotifying:(id)arg1;
 - (id)_loadedActionOrPlaceholderForActionDictionary:(id)arg1 isViewVisible:(id)arg2 isTigerWorkflow:(BOOL)arg3 error:(id *)arg4;
-- (void)attemptRecoveryFromError:(id)arg1 optionIndex:(unsigned long long)arg2 delegate:(id)arg3 didRecoverSelector:(SEL)arg4 contextInfo:(void *)arg5;
 - (id)preflightForRunningWithModeReturningError:(unsigned long long)arg1;
 @property(readonly, nonatomic) NSDictionary *_warningMessageDictOnRun;
 - (id)_suggestedTestingActionBundleID;

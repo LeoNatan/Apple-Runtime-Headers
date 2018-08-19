@@ -29,6 +29,7 @@
 - (void)fingerDrawingEnabledDidChange;
 - (void)drawingDidChange;
 - (void)drawingWillBegin;
+- (_Bool)hitByTouchLocation:(struct CGPoint)arg1 bounds:(struct CGRect)arg2;
 - (_Bool)hitChrome:(struct CGPoint)arg1 isStylus:(_Bool)arg2;
 @property(readonly, nonatomic) UIView *tileMaskView;
 @property(readonly, nonatomic) double drawingScale;

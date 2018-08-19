@@ -8,7 +8,7 @@
 
 #import "UHATouchBarInterface.h"
 
-@class NSArray, NSSet, NSString;
+@class NSArray, NSObject<OS_dispatch_queue>, NSSet, NSString;
 
 @interface UHASTouchBar : UHASRemoteObject <UHATouchBarInterface>
 {
@@ -33,9 +33,9 @@
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
-@property(readonly, nonatomic) const struct __CFString *forwardingInterposableRunLoopMode;
-@property(readonly, nonatomic) double forwardingInterposableRunLoopTimeOut;
 @property(readonly) unsigned long long hash;
+@property(readonly, nonatomic) unsigned long long rock_invocationFlags;
+@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *rock_invocationQueue;
 @property(readonly) Class superclass;
 
 @end

@@ -53,6 +53,7 @@ __attribute__((visibility("hidden")))
 
 - (void)flushRealTimeReportingStats;
 - (void)deregisterPeriodicTask;
+- (void)periodicTask:(void *)arg1;
 - (void)registerPeriodicTask;
 @property(readonly) id reportingAgent;
 - (void)resetHealthPrintCounters;

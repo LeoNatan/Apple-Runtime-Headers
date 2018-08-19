@@ -43,6 +43,8 @@ __attribute__((visibility("hidden")))
 - (void)p_makeFormatNameStemAndTag;
 - (unsigned long long)hash;
 - (void)p_addConditionOfType:(int)arg1 value:(double)arg2 data:(id)arg3;
+- (void)p_setFormatType:(int)arg1;
+@property(readonly, nonatomic) _Bool conditionsAllowed;
 @property(readonly, nonatomic) unsigned long long conditionCount;
 - (id)customFormatWithNewName:(id)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;

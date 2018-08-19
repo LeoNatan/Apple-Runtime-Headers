@@ -15,6 +15,7 @@
 - (void)_updateEffectNode:(id)arg1 forTraitCollection:(id)arg2;
 - (_Bool)_needsUpdateForMovingToWindow:(id)arg1 fromWindow:(id)arg2 inEffectView:(id)arg3;
 - (_Bool)_needsUpdateForMovingToSuperview:(id)arg1 fromSuperview:(id)arg2 inEffectView:(id)arg3;
+- (_Bool)_needsUpdateForOption:(id)arg1;
 - (_Bool)_needsUpdateForTransitionFromTraitCollection:(id)arg1 toTraitCollection:(id)arg2;
 - (_Bool)isEqual:(id)arg1;
 

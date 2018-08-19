@@ -28,6 +28,7 @@
     UITapGestureRecognizer *_viewModeTapGesture;
     long long _previousViewMode;
     NSTimer *_viewResetTimer;
+    NSTimer *_positiveDwellForTopElementsTimer;
     NSTimer *_wakeWheelTimer;
     NSTimer *_wheelDelayTimer;
     NSTimer *_buttonPressTimer;
@@ -127,6 +128,10 @@
 - (void)collectionView:(id)arg1 didHighlightItemAtIndexPath:(id)arg2;
 - (_Bool)collectionView:(id)arg1 shouldHighlightItemAtIndexPath:(id)arg2;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
+- (void)_postPositiveDwellEventsForTopElements;
+- (void)_stopPositiveDwellForTopElementsTimer;
+- (void)_startPositiveDwellForTopElementsTimerIfNeeded;
+- (void)_resetVisibilityForCells;
 - (void)_updateVisibilityForCells;
 - (void)scrollViewDidScroll:(id)arg1;
 - (void)scrollViewDidEndDecelerating:(id)arg1;

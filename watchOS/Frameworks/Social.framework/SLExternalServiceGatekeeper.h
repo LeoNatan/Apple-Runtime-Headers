@@ -22,6 +22,7 @@
 - (id)connection:(id)arg1 willSendRequest:(id)arg2 redirectResponse:(id)arg3;
 - (_Bool)connection:(id)arg1 canAuthenticateAgainstProtectionSpace:(id)arg2;
 - (void)_completeWithURLToLoad:(id)arg1 error:(id)arg2;
+- (_Bool)_gatekeepingIsNotAvailable;
 - (id)initForPermissionToAccessURL:(id)arg1 fromURLString:(id)arg2 completion:(CDUnknownBlockType)arg3;
 
 // Remaining properties

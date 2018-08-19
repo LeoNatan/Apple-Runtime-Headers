@@ -9,41 +9,42 @@
 #import "NSCopying.h"
 #import "NSMutableCopying.h"
 
+@class NSMutableDictionary;
+
 __attribute__((visibility("hidden")))
 @interface TNChartFormulaStorage : NSObject <NSCopying, NSMutableCopying>
 {
-    struct __CFDictionary *mStorage;
-    int mDirection;
-    unsigned long long mCachedNumberOfGroups;
-    _Bool mCachedNumberOfGroupsValid;
+    NSMutableDictionary *_storage;
+    int _direction;
+    unsigned long long _cachedNumberOfGroups;
+    _Bool _cachedNumberOfGroupsValid;
 }
 
 + (vector_2bba1c52)persistentFormulaTypes;
+- (void).cxx_destruct;
 - (id)areaFormulaWithCalcEngine:(id)arg1 inOwner:(const UUIDData_5fbc143e *)arg2;
 - (void)saveToArchive:(struct ChartMediatorFormulaStorage *)arg1 archiver:(id)arg2;
 - (id)initWithArchive:(const struct ChartMediatorFormulaStorage *)arg1 unarchiver:(id)arg2;
 - (void)clearCachesForCalculationEngine:(id)arg1;
 - (_Bool)dataFormulaAreRegularForSeriesInsertionWithCalcEngine:(id)arg1 inOwner:(const UUIDData_5fbc143e *)arg2;
-- (unsigned long long)categoryLabelFormulaType;
-- (unsigned long long)seriesLabelFormulaType;
+@property(readonly, nonatomic) unsigned long long categoryLabelFormulaType;
+@property(readonly, nonatomic) unsigned long long seriesLabelFormulaType;
 - (unsigned long long)numberOfSeries;
-- (unsigned long long)numberOfDataFormulas;
+@property(readonly, nonatomic) unsigned long long numberOfDataFormulas;
 - (_Bool)labelFormulasAreAllStaticWithCalcEngine:(id)arg1 inEntity:(const UUIDData_5fbc143e *)arg2;
 - (_Bool)formulasOfType:(unsigned long long)arg1 areAllStaticWithCalcEngine:(id)arg2 inEntity:(const UUIDData_5fbc143e *)arg3;
 - (unsigned long long)numberOfGroupsWithCalcEngine:(id)arg1 inEntity:(const UUIDData_5fbc143e *)arg2;
 - (unsigned long long)p_calculateNumberOfGroupsWithCalcEngine:(id)arg1 inEntity:(const UUIDData_5fbc143e *)arg2;
 - (id)description;
-- (struct __CFDictionary *)p_cfDictionary;
 - (id)formulaTypeEnumerator;
 - (id)formulaListForType:(unsigned long long)arg1;
-- (id)formulaForID:(CDStruct_ed6d627d)arg1;
+- (id)formulaForID:(struct TSUCellCoord)arg1;
 - (id)copyByRewriting:(_Bool)arg1 withCalcEngine:(id)arg2 andHostUID:(const UUIDData_5fbc143e *)arg3;
-- (unsigned long long)count;
+@property(readonly, nonatomic) unsigned long long count;
 - (_Bool)isEqualToFormulaStorage:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;
-- (int)direction;
-- (void)dealloc;
+@property(readonly, nonatomic) int direction;
 - (id)initWithChartFormulaStorage:(id)arg1;
 - (id)initWithDirection:(int)arg1;
 - (id)init;

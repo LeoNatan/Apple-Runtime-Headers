@@ -97,8 +97,11 @@
 @property(nonatomic, getter=isPerformingTileTransition) _Bool performingTileTransition;
 @property(nonatomic) _Bool automaticallyAdjustsApplicationIdleTimer;
 @property(nonatomic) unsigned long long persistenceBehavior;
+@property(readonly, nonatomic, getter=isPreventingAdditionalCaptures) _Bool preventingAdditionalCaptures;
 @property(nonatomic, getter=isDisablingAdditionalCaptures) _Bool disablingAdditionalCaptures;
 @property(nonatomic, getter=isDisablingMultipleCaptureFeatures) _Bool disablingMultipleCaptureFeatures;
+- (void)handleVolumeButtonReleased;
+- (void)handleVolumeButtonPressed;
 - (void)setMessagesTransitionState:(long long)arg1 animated:(_Bool)arg2;
 @property(readonly, nonatomic) long long messagesTransitionState;
 - (void)resumeCameraSession;
@@ -107,6 +110,8 @@
 - (_Bool)startRecording;
 - (_Bool)capturePhoto;
 @property(readonly, nonatomic, getter=isRecording) _Bool recording;
+@property(readonly, nonatomic, getter=isCapturingLivePhoto) _Bool capturingLivePhoto;
+@property(readonly, nonatomic, getter=isCapturingPhoto) _Bool capturingPhoto;
 @property(nonatomic) long long livePhotoMode;
 @property(nonatomic) long long timerDuration;
 @property(nonatomic, setter=setHDRMode:) long long hdrMode;

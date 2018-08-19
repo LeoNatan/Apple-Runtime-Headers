@@ -9,6 +9,7 @@
 #import "DNDSAssertionSyncManagerDataSource.h"
 #import "DNDSAssertionSyncManagerDelegate.h"
 #import "DNDSEventBehaviorResolverDataSource.h"
+#import "DNDSLegacyAssertionSyncManagerDataSource.h"
 #import "DNDSLifetimeMonitorDataSource.h"
 #import "DNDSLifetimeMonitorDelegate.h"
 #import "DNDSModeAssertionProviderObserver.h"
@@ -23,7 +24,7 @@
 
 @class DNDSCalendarEventLifetimeMonitor, DNDSEventBehaviorResolver, DNDSLocalAssertionManager, DNDSModeAssertionStateProvider, DNDSPairedDeviceStateMonitor, DNDSRemoteServiceProvider, DNDSScheduleManager, DNDSSettingsManager, NSArray, NSObject<OS_dispatch_queue>, NSString;
 
-@interface DNDSServer : NSObject <DNDSEventBehaviorResolverDataSource, DNDSLifetimeMonitorDataSource, DNDSLifetimeMonitorDelegate, DNDSModeAssertionProviderObserver, DNDSModeAssertionStateProviderDataSource, DNDSStateProviderUpdateListener, DNDSRemoteServiceProviderDelegate, DNDSAssertionSyncManagerDataSource, DNDSAssertionSyncManagerDelegate, DNDSSettingsSyncManagerDataSource, DNDSSettingsSyncManagerDelegate, DNDSScheduleManagerDataSource, DNDSSettingsManagerDelegate, DNDSPairedDeviceStateMonitorDelegate>
+@interface DNDSServer : NSObject <DNDSEventBehaviorResolverDataSource, DNDSLifetimeMonitorDataSource, DNDSLifetimeMonitorDelegate, DNDSModeAssertionProviderObserver, DNDSModeAssertionStateProviderDataSource, DNDSStateProviderUpdateListener, DNDSRemoteServiceProviderDelegate, DNDSAssertionSyncManagerDataSource, DNDSAssertionSyncManagerDelegate, DNDSLegacyAssertionSyncManagerDataSource, DNDSSettingsSyncManagerDataSource, DNDSSettingsSyncManagerDelegate, DNDSScheduleManagerDataSource, DNDSSettingsManagerDelegate, DNDSPairedDeviceStateMonitorDelegate>
 {
     NSObject<OS_dispatch_queue> *_queue;
     DNDSLocalAssertionManager *_localAssertionManager;
@@ -46,11 +47,12 @@
 @property unsigned int lockState; // @synthesize lockState=_lockState;
 - (void).cxx_destruct;
 - (void)_queue_handlePairedDeviceAndSyncSettingsChange;
+- (id)_activeDateIntervalForModeAssertion:(id)arg1;
 - (id)_effectiveLifetimeForModeAssertion:(id)arg1;
 - (id)_activeModeAssertionsConsideringProviders:(id)arg1;
 - (void)_queue_updateLifetimeMonitorsAndStateForReason:(unsigned int)arg1;
 - (void)_queue_resume;
-- (void)pairedDeviceStateMonitor:(id)arg1 didReceiveUpdatedPairedDeviceState:(unsigned int)arg2;
+- (void)pairedDeviceStateMonitor:(id)arg1 didChangePairedDevice:(id)arg2;
 - (void)settingsManager:(id)arg1 didReceiveUpdatedSyncSettings:(id)arg2;
 - (void)settingsManager:(id)arg1 didReceiveUpdatedScheduleSettings:(id)arg2;
 - (void)settingsManager:(id)arg1 didReceiveUpdatedPhoneCallBypassSettings:(id)arg2;
@@ -61,6 +63,7 @@
 - (void)syncManager:(id)arg1 didReceiveUpdatedPhoneCallBypassSettings:(id)arg2;
 - (id)scheduleSettingsForSyncManager:(id)arg1;
 - (id)phoneCallBypassSettingsForSyncManager:(id)arg1;
+- (id)legacyAssertionSyncManager:(id)arg1 activeDateIntervalForModeAssertion:(id)arg2;
 - (void)syncManager:(id)arg1 invalidateAllModeAssertionsTakenBeforeDate:(id)arg2 forReason:(unsigned int)arg3;
 - (id)lastModeAssertionsUpdateDateForSyncManager:(id)arg1;
 - (id)lastModeAssertionsCompleteInvalidationDateForSyncManager:(id)arg1;

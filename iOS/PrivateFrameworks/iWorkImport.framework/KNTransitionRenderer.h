@@ -38,7 +38,7 @@ __attribute__((visibility("hidden")))
 - (void)updateAnimationsForLayerTime:(double)arg1;
 - (_Bool)p_addAnimations:(id)arg1 atTime:(double)arg2 relativeToCurrentMediaTime:(_Bool)arg3;
 - (_Bool)addAnimationsAtTime:(double)arg1 relativeToCurrentMediaTime:(_Bool)arg2;
-- (void)animateWithDelay:(double)arg1;
+- (void)animate;
 - (void)renderSlideIndex:(unsigned long long)arg1;
 - (void)waitUntilAsyncRenderingIsCompleteShouldCancel:(_Bool)arg1;
 - (void)renderTexturesSynchronously;

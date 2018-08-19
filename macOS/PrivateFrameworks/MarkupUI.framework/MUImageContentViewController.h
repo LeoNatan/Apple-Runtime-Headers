@@ -28,6 +28,11 @@ __attribute__((visibility("hidden")))
 @property(retain) id sourceContent; // @synthesize sourceContent=_sourceContent;
 @property BOOL contentViewControllerCropEnabled; // @synthesize contentViewControllerCropEnabled;
 - (void).cxx_destruct;
+- (id)_applyFilters:(id)arg1 to:(id)arg2;
+- (id)_cropFilterChainForSourceImage:(id)arg1 withCropRect:(struct CGRect)arg2 originalSize:(struct CGSize)arg3;
+- (void)_translateAnnotationsByX:(double)arg1 byY:(double)arg2;
+- (void)_updateOverlayForGeometryChange;
+- (void)finalizeCrop;
 - (void)_ensureContentImage;
 - (long long)_exifOrientationFromImageProperties:(id)arg1;
 - (void)_updateMinZoomFactor;

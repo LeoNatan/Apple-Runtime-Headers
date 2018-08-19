@@ -19,6 +19,7 @@
     BOOL _isMachineLicensed;
     BOOL _isLegacyApp;
     BOOL _metadataChangeIsExpected;
+    BOOL _metadataChangeHasAlreadyOccurred;
     NSString *_accountOpaqueDSID;
     NSString *_accountIdentifier;
     NSString *_bundleIdentifier;
@@ -44,6 +45,7 @@
 + (BOOL)supportsSecureCoding;
 @property(copy) NSNumber *expectedStoreVersion; // @synthesize expectedStoreVersion=_expectedStoreVersion;
 @property(copy) NSString *expectedBundleVersion; // @synthesize expectedBundleVersion=_expectedBundleVersion;
+@property BOOL metadataChangeHasAlreadyOccurred; // @synthesize metadataChangeHasAlreadyOccurred=_metadataChangeHasAlreadyOccurred;
 @property BOOL metadataChangeIsExpected; // @synthesize metadataChangeIsExpected=_metadataChangeIsExpected;
 @property long long source; // @synthesize source=_source;
 @property BOOL isLegacyApp; // @synthesize isLegacyApp=_isLegacyApp;

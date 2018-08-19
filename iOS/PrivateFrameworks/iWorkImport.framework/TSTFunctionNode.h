@@ -11,11 +11,11 @@
 __attribute__((visibility("hidden")))
 @interface TSTFunctionNode : TSTExpressionNode
 {
-    int _functionIndex;
     TSTFunctionEndNode *_functionEndNode;
-    NSString *_whitespaceAfterFunctionName;
+    int _functionIndex;
     NSString *_whitespaceAfterLeftParen;
     NSArray *_whitespaceAfterDelimiters;
+    NSString *_whitespaceAfterFunctionName;
     NSString *_invalidFunctionName;
 }
 
@@ -48,11 +48,13 @@ __attribute__((visibility("hidden")))
 - (_Bool)isMissingRequiredArgument;
 - (_Bool)isEmptyFunctionNode;
 - (void)resurrectModeTokens;
+- (id)mostSpecificNodeContainingIndex:(unsigned long long)arg1 correspondingIndex:(unsigned long long)arg2;
 @property(retain, nonatomic) TSTFunctionEndNode *functionEndNode;
 - (void)setChildren:(id)arg1;
 @property(readonly, nonatomic) short maxArguments;
 @property(readonly, nonatomic) short minArguments;
 @property(readonly, nonatomic) unsigned long long numArguments;
+- (unsigned long long)lastIndexOfSubtree;
 - (_Bool)isFunctionNode;
 - (id)initAsCopyOf:(id)arg1 intoContext:(id)arg2 children:(id)arg3;
 - (id)initWithContext:(id)arg1 children:(id)arg2 firstIndex:(unsigned long long)arg3 lastIndex:(unsigned long long)arg4;

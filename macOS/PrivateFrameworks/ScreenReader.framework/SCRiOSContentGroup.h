@@ -11,7 +11,7 @@ __attribute__((visibility("hidden")))
 {
 }
 
-- (BOOL)isIOSContentGroup;
+- (BOOL)isiOSContentGroup;
 - (BOOL)isiOSElement;
 - (unsigned long long)groupBehavior;
 

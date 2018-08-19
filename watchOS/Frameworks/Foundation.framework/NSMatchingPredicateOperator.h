@@ -10,7 +10,7 @@ __attribute__((visibility("hidden")))
 @interface NSMatchingPredicateOperator : NSStringPredicateOperator
 {
     int _contextLock;
-    CDStruct_c69bce23 *_regexContext;
+    CDStruct_7cb3148a *_regexContext;
 }
 
 - (_Bool)performPrimitiveOperationUsingObject:(id)arg1 andObject:(id)arg2;

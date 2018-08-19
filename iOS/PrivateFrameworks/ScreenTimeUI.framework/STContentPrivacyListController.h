@@ -37,6 +37,7 @@
 - (id)_topLevelSpecifiers;
 - (id)_featureSwitchSpecifier;
 - (id)specifiers;
+- (_Bool)canBeShownFromSuspendedState;
 - (id)init;
 
 @end

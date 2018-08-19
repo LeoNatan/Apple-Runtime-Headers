@@ -33,6 +33,7 @@
     unsigned int expectedPhotoProcessingFlags;
     unsigned int actualPhotoProcessingFlags;
     AVApplePortraitMetadata *portraitMetadata;
+    _Bool lensStabilizationSupported;
 }
 
 @end

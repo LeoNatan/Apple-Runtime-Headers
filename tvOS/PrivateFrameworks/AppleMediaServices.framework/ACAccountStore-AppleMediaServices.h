@@ -20,6 +20,8 @@
 - (void)_createLocalAccount;
 - (id)_allCommerceiTunesAccounts;
 - (id)_alliTunesAccounts;
+- (_Bool)_addUserCookiesForResponse:(id)arg1 account:(id)arg2 error:(id *)arg3;
+- (_Bool)_addGlobalCookiesForResponse:(id)arg1 error:(id *)arg2;
 - (_Bool)ams_removeCookiesMatchingProperties:(id)arg1 error:(id *)arg2;
 - (_Bool)ams_addCookiesForResponse:(id)arg1 request:(id)arg2 account:(id)arg3 error:(id *)arg4;
 - (_Bool)ams_addCookiesForResponse:(id)arg1 account:(id)arg2 error:(id *)arg3;

@@ -11,13 +11,13 @@
 #import "IDSServiceDelegate.h"
 #import "IDSSessionDelegate.h"
 
-@class AVCPacketRelay, HMDCameraNetworkConfig, HMDCameraSessionID, HMFOSTransaction, NSNumber, NSObject<OS_dispatch_queue>, NSString;
+@class AVCPacketRelay, HMDCameraNetworkConfig, HMDCameraSessionID, HMDDevice, HMFOSTransaction, NSNumber, NSObject<OS_dispatch_queue>, NSString;
 
 @interface HMDCameraIDSSessionInitiator : HMDCameraIDSSessionHandler <IDSServiceDelegate, IDSSessionDelegate, HMDCameraRemoteStreamSenderProtocol, HMDCameraPowerAssertionProtocol>
 {
     id <HMDCameraIDSSessionInitiatorDelegate> _delegate;
     NSObject<OS_dispatch_queue> *_delegateQueue;
-    NSString *_destinationID;
+    HMDDevice *_device;
     HMDCameraNetworkConfig *_localNetworkConfig;
     AVCPacketRelay *_packetRelay;
     HMFOSTransaction *_packetRelayTransaction;
@@ -27,7 +27,7 @@
 @property(retain, nonatomic) HMFOSTransaction *packetRelayTransaction; // @synthesize packetRelayTransaction=_packetRelayTransaction;
 @property(retain, nonatomic) AVCPacketRelay *packetRelay; // @synthesize packetRelay=_packetRelay;
 @property(readonly, nonatomic) HMDCameraNetworkConfig *localNetworkConfig; // @synthesize localNetworkConfig=_localNetworkConfig;
-@property(readonly, copy, nonatomic) NSString *destinationID; // @synthesize destinationID=_destinationID;
+@property(readonly, nonatomic) HMDDevice *device; // @synthesize device=_device;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *delegateQueue; // @synthesize delegateQueue=_delegateQueue;
 @property(readonly, nonatomic) __weak id <HMDCameraIDSSessionInitiatorDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
@@ -45,7 +45,7 @@
 - (void)dealloc;
 @property(readonly, nonatomic) NSNumber *mtu;
 - (id)logIdentifier;
-- (id)initWithSessionID:(id)arg1 workQueue:(id)arg2 destinationID:(id)arg3 localNetworkConfig:(id)arg4 delegate:(id)arg5 delegateQueue:(id)arg6;
+- (id)initWithSessionID:(id)arg1 workQueue:(id)arg2 device:(id)arg3 localNetworkConfig:(id)arg4 delegate:(id)arg5 delegateQueue:(id)arg6;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

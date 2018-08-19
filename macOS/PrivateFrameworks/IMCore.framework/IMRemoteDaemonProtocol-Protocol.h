@@ -10,6 +10,7 @@
 
 @protocol IMRemoteDaemonProtocol <NSObject>
 - (void)preWarm;
+- (void)simulateMessageReceive:(NSString *)arg1 serviceName:(NSString *)arg2 handles:(NSArray *)arg3 sender:(NSString *)arg4;
 - (void)simulateOneTimeCodeArriving:(NSDictionary *)arg1;
 - (void)consumeCodeWithMessageGUID:(NSString *)arg1;
 - (void)requestOneTimeCodeStatus;

@@ -29,6 +29,7 @@
 - (void)_notifyObserver;
 - (void)_queue_fetchPredicitions;
 - (void)_requestPredictions;
+- (void)forceDonationsRefresh;
 - (void)fetchPerformedTodayCountForActionWithBundleIdentifer:(id)arg1 actionIdentifier:(unsigned long long)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_accessOrEnqueueDataRequest:(CDUnknownBlockType)arg1 error:(CDUnknownBlockType)arg2;
 - (void)fetchFirstPerformedActionDate:(CDUnknownBlockType)arg1;

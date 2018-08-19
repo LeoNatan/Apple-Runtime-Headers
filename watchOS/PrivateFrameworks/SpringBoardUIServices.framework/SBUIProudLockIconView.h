@@ -13,6 +13,8 @@
     int _state;
     SBUICAPackageView *_lockView;
     NSSet *_imageLayers;
+    NSSet *_shadowImageLayers;
+    NSSet *_shadowFilterLayers;
     SBUIFaceIDCameraGlyphView *_cameraCoveredView;
     _UILegibilitySettings *_legibilitySettings;
     UIColor *_contentColor;
@@ -35,9 +37,11 @@
 - (id)_transformAnimationSettingsForTransitionFromViews:(id)arg1 andState:(int)arg2 toViews:(id)arg3 andState:(int)arg4 forIncomingViews:(_Bool)arg5;
 - (void)_transitionToState:(int)arg1 animated:(_Bool)arg2 options:(int)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)_forEachLayerInHierarchy:(id)arg1 perform:(CDUnknownBlockType)arg2;
+- (void)_configureShadowFromLegibilitySettings:(id)arg1;
 - (void)setState:(int)arg1 animated:(_Bool)arg2 options:(int)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)setState:(int)arg1 animated:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)setState:(int)arg1 animated:(_Bool)arg2;
+- (id)fileNameForCurrentDevice;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end

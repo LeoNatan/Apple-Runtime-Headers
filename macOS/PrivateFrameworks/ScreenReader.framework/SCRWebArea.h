@@ -196,6 +196,7 @@ __attribute__((visibility("hidden")))
 - (void)setCurrentLandmark:(id)arg1;
 - (id)currentLandmark;
 - (BOOL)focusInto:(id)arg1 event:(id)arg2;
+- (void)setFocusedChild:(id)arg1;
 - (void)endFocus;
 - (void)beginFocusFromElement:(id)arg1 withEvent:(id)arg2;
 - (BOOL)didLoadPage;

@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class NSMutableArray, NSMutableDictionary, NSString;
+@class NSMutableArray, NSString;
 
 @interface VMUClassInfo : NSObject
 {
@@ -27,7 +27,6 @@
     VMUClassInfo *_genericLayout;
     NSMutableArray *_variantEvaluators;
     NSMutableArray *_variantActions;
-    NSMutableDictionary *_variantCache;
     const char *_weakLayout;
     const char *_strongLayout;
     BOOL _hasSpecificLayout;

@@ -47,7 +47,7 @@
 - (void)submitApplicationGracefulTerminationRequest:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)submitSceneActiveRequest:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)submitSceneResizeRequest:(id)arg1 error:(id *)arg2;
-- (id)submitRequestSync:(id)arg1 replyType:(Class)arg2 error:(id *)arg3;
+- (id)submitRequestSync:(id)arg1 shouldRunRunLoopInMode:(const struct __CFString *)arg2 replyType:(Class)arg3 error:(id *)arg4;
 - (void)submitRequestAsync:(id)arg1 replyType:(Class)arg2 completionQueue:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)submitRequestAsync:(id)arg1 completionQueue:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 @property(readonly, nonatomic) BOOL isConnected;

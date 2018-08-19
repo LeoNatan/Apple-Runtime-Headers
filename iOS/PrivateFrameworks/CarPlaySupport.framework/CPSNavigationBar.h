@@ -13,10 +13,8 @@
 @interface CPSNavigationBar : UINavigationBar <CPSLinearFocusProviding>
 {
     NSMapTable *_lastFocusedItems;
-    id <UIFocusItem> _lastFocusedItem;
 }
 
-@property(nonatomic) __weak id <UIFocusItem> lastFocusedItem; // @synthesize lastFocusedItem=_lastFocusedItem;
 @property(retain, nonatomic) NSMapTable *lastFocusedItems; // @synthesize lastFocusedItems=_lastFocusedItems;
 - (void).cxx_destruct;
 - (id)_linearFocusItems;

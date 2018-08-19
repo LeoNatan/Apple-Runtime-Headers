@@ -16,8 +16,10 @@ __attribute__((visibility("hidden")))
 
 + (unsigned long long)zipArchiveOptions;
 + (id)zipArchiveURLFromPackageURL:(id)arg1;
-+ (_Bool)isValidOrEmptyPackageAtURL:(id)arg1 hasNativeUTI:(_Bool)arg2;
++ (_Bool)isValidOrEmptyPackageOrTangierEditingFormatAtURL:(id)arg1 hasNativeUTI:(_Bool)arg2;
++ (_Bool)isValidTangierEditingFormatAtURL:(id)arg1;
 + (_Bool)isValidPackageAtURL:(id)arg1;
++ (_Bool)isValidTangierEditingFormatAtZipArchive:(id)arg1;
 + (_Bool)isValidPackageAtZipArchive:(id)arg1;
 - (void).cxx_destruct;
 - (void)prepareForDocumentReplacementWithSuccess:(_Bool)arg1 forSafeSave:(_Bool)arg2 originalURL:(id)arg3;

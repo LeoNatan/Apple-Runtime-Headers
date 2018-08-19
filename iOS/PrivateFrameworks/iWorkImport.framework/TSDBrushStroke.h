@@ -11,29 +11,31 @@ __attribute__((visibility("hidden")))
 {
 }
 
-+ (id)p_glShaderForCurrentContext;
++ (void)p_clearFrameBuffers:(id)arg1;
++ (void)p_drawFrameBuffers:(id)arg1 intoFrameBuffer:(id)arg2 withAlpha:(double)arg3 usingDataBuffer:(id)arg4;
++ (id)p_glOpacityShaderForCurrentContext;
++ (id)p_glBrushShaderForCurrentContext;
 + (id)p_glContextArray;
 + (id)p_glContextQueue;
 + (id)p_glContextSemaphore;
++ (unsigned long long)p_glContextCount;
 + (Class)mutableClass;
-- (struct CGImage *)p_newCGImageFromGL;
+- (struct CGImage *)p_newCGImageFromGLWithWidth:(int)arg1 height:(int)arg2;
 - (long long)p_fastElementPercentage:(double *)arg1 forOverallPercentage:(double)arg2 onPath:(id)arg3 withCachedCurrentElementPercentage:(CDStruct_45a6b6f8 *)arg4;
 - (_Bool)p_isFreehandDrawingStrokeWithFixedTileWidth;
 - (_Bool)p_drawsToPDFAsBitmap;
 - (id)p_glTextureForCurrentStrokeAndContext;
-- (void)p_finishOpenGLRenderInContext:(struct CGContext *)arg1 orDirectly:(id)arg2 pathVertexData:(vector_b5dead7b *)arg3 parameterized:(_Bool)arg4 shouldReverseDrawOrder:(_Bool)arg5;
-- (void)p_renderOpenGLSection:(id)arg1 sectionIndex:(unsigned long long)arg2 ontoPath:(id)arg3 inElementRange:(struct _NSRange)arg4 into:(vector_b5dead7b *)arg5 viewScale:(double)arg6 strokeTileLayout:(CDStruct_d2b197d1)arg7 cachedCurrentElementPercentage:(CDStruct_45a6b6f8 *)arg8;
+- (void)p_finishOpenGLRenderInContext:(struct CGContext *)arg1 orDirectly:(id)arg2 pathVertexData:(vector_8bba9095 *)arg3 parameterized:(_Bool)arg4 shouldReverseDrawOrder:(_Bool)arg5 withLayoutOptions:(id)arg6;
+- (void)p_renderOpenGLSection:(id)arg1 sectionIndex:(unsigned long long)arg2 ontoPath:(id)arg3 inElementRange:(struct _NSRange)arg4 into:(vector_8bba9095 *)arg5 viewScale:(double)arg6 strokeTileLayout:(CDStruct_d2b197d1)arg7 cachedCurrentElementPercentage:(CDStruct_45a6b6f8 *)arg8;
 - (void)p_glBrushPath:(struct CGPath *)arg1 inContext:(struct CGContext *)arg2 orDirectly:(id)arg3 parameterized:(_Bool)arg4 shouldReverseDrawOrder:(_Bool)arg5 withLayoutOptions:(id)arg6;
-- (void)p_brushSection:(id)arg1 sectionIndex:(unsigned long long)arg2 ontoPath:(id)arg3 inElementRange:(struct _NSRange)arg4 intoPath:(id)arg5 orIntoVector:(vector_b5dead7b *)arg6 viewScale:(double)arg7 strokeTileLayout:(CDStruct_d2b197d1)arg8 cachedCurrentElementPercentage:(CDStruct_45a6b6f8 *)arg9;
-- (void)p_brushPath:(id)arg1 withScaling:(CDStruct_c3b9c2ee)arg2 inElementRange:(struct _NSRange)arg3 intoPath:(id)arg4 orIntoVector:(vector_b5dead7b *)arg5 sectionIndex:(unsigned long long *)arg6 viewScale:(double)arg7 withLayoutOptions:(id)arg8 currentSubpathIndex:(unsigned long long)arg9 cachedCurrentElementPercentage:(CDStruct_45a6b6f8 *)arg10;
+- (void)p_brushSection:(id)arg1 sectionIndex:(unsigned long long)arg2 ontoPath:(id)arg3 inElementRange:(struct _NSRange)arg4 intoPath:(id)arg5 orIntoVector:(vector_8bba9095 *)arg6 viewScale:(double)arg7 strokeTileLayout:(CDStruct_d2b197d1)arg8 cachedCurrentElementPercentage:(CDStruct_45a6b6f8 *)arg9;
+- (void)p_brushPath:(id)arg1 withScaling:(CDStruct_c3b9c2ee)arg2 inElementRange:(struct _NSRange)arg3 intoPath:(id)arg4 orIntoVector:(vector_8bba9095 *)arg5 sectionIndex:(unsigned long long *)arg6 viewScale:(double)arg7 withLayoutOptions:(id)arg8 currentSubpathIndex:(unsigned long long)arg9 cachedCurrentElementPercentage:(CDStruct_45a6b6f8 *)arg10;
 - (void)p_brushPath:(struct CGPath *)arg1 inContext:(struct CGContext *)arg2 orDirectly:(id)arg3 parameterized:(_Bool)arg4 drawWithOpenGL:(_Bool)arg5 shouldReverseDrawOrder:(_Bool)arg6 withLayoutOptions:(id)arg7;
 - (void)paintPath:(struct CGPath *)arg1 wantsInteriorStroke:(_Bool)arg2 inContext:(struct CGContext *)arg3 useFastDrawing:(_Bool)arg4 parameterized:(_Bool)arg5 drawWithOpenGL:(_Bool)arg6 shouldReverseDrawOrder:(_Bool)arg7 withLayoutOptions:(id)arg8;
 - (void)paintPath:(struct CGPath *)arg1 wantsInteriorStroke:(_Bool)arg2 inContext:(struct CGContext *)arg3 useFastDrawing:(_Bool)arg4 parameterized:(_Bool)arg5 drawWithOpenGL:(_Bool)arg6 shouldReverseDrawOrder:(_Bool)arg7;
-- (void)paintPath:(struct CGPath *)arg1 directlyUsingContext:(id)arg2 withLayoutOptions:(id)arg3;
 - (void)paintLineEnd:(id)arg1 atPoint:(struct CGPoint)arg2 atAngle:(double)arg3 withScale:(double)arg4 inContext:(struct CGContext *)arg5 useFastDrawing:(_Bool)arg6;
 - (id)strokeLineEnd:(id)arg1;
 - (_Bool)needsToExtendJoinsForBoundsCalculation;
-- (double)i_verticalOffsetForSwatch;
 - (double)horizontalMarginForSwatch;
 - (void)i_setCap:(int)arg1;
 - (int)cap;

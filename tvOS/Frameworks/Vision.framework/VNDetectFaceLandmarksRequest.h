@@ -14,10 +14,12 @@
 {
 }
 
++ (id)defaultProcessingDeviceForRevision:(unsigned long long)arg1;
 + (const CDStruct_d47b9615 *)dependentRequestCompatability;
 + (Class)configurationClass;
 + (const CDStruct_7d93034e *)revisionAvailability;
 - (_Bool)internalPerformRevision:(unsigned long long)arg1 inContext:(id)arg2 error:(id *)arg3;
+- (id)newDefaultDetectorOptionsForRequestRevision:(unsigned long long)arg1;
 - (void)applyConfigurationOfRequest:(id)arg1;
 - (void)_determineFacesToProcessFrom:(id)arg1 outputFacesThatNeedNoProcessing:(id)arg2 outputFacesThatNeedAlignment:(id)arg3 outputFacesThatNeedLandmarks:(id)arg4;
 - (long long)dependencyProcessingOrdinality;

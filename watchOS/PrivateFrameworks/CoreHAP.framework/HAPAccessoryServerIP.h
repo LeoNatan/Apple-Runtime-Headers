@@ -12,7 +12,7 @@
 #import "HMFNetMonitorDelegate.h"
 #import "HMFTimerDelegate.h"
 
-@class HAPAccessory, HAPAccessoryProtocolInfo, HAPAccessoryServerBrowserIP, HAPAuthSession, HAPHTTPClient, HAPWACClient, HMFBlockOperation, HMFNetAddress, HMFNetMonitor, HMFTimer, NSArray, NSData, NSDictionary, NSMutableArray, NSMutableSet, NSOperationQueue, NSString;
+@class HAPAccessory, HAPAccessoryProtocolInfo, HAPAccessoryServerBrowserIP, HAPAuthSession, HAPHTTPClient, HAPWACClient, HMFBlockOperation, HMFNetMonitor, HMFTimer, NSArray, NSData, NSDictionary, NSMutableArray, NSMutableSet, NSOperationQueue, NSString;
 
 @interface HAPAccessoryServerIP : HAPAccessoryServer <HAPHTTPClientDelegate, HAPHTTPClientDebugDelegate, HMFTimerDelegate, HAPAuthSessionDelegate, HMFNetMonitorDelegate>
 {
@@ -185,7 +185,6 @@
 - (void)_isAccessoryPublicKeyPresent:(_Bool *)arg1 registeredWithHomeKit:(_Bool *)arg2;
 - (void)_establishSecureConnectionAndFetchAttributeDatabase;
 - (void)discoverAccessories;
-@property(readonly, nonatomic) HMFNetAddress *localAddress;
 - (int)linkType;
 - (id)primaryAccessory;
 - (id)services;

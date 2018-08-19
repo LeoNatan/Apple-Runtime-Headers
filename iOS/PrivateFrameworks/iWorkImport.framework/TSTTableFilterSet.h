@@ -13,36 +13,36 @@
 __attribute__((visibility("hidden")))
 @interface TSTTableFilterSet : TSPObject <TSPCopying>
 {
-    int mType;
-    _Bool mIsEnabled;
-    NSArray *mRules;
-    _Bool mNeedsFormulaRewriteForImport;
-    vector_06e666a8 mFilterOffsets;
+    int _type;
+    _Bool _isEnabled;
+    NSArray *_rules;
+    _Bool _needsFormulaRewriteForImport;
+    vector_06e666a8 _filterOffsets;
 }
 
+@property(nonatomic) _Bool needsFormulaRewriteForImport; // @synthesize needsFormulaRewriteForImport=_needsFormulaRewriteForImport;
+@property(nonatomic) _Bool isEnabled; // @synthesize isEnabled=_isEnabled;
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)saveToArchive:(struct FilterSetArchive *)arg1 archiver:(id)arg2;
 - (void)loadFromArchive:(const struct FilterSetArchive *)arg1 unarchiver:(id)arg2;
 - (void)saveToArchiver:(id)arg1;
 - (void)loadFromUnarchiver:(id)arg1;
-- (void)setNeedsFormulaRewriteForImport:(_Bool)arg1;
-- (_Bool)needsFormulaRewriteForImport;
-- (id)columnIndicesForRulesInTable:(id)arg1;
-@property(nonatomic) _Bool isEnabled;
-- (id)absoluteRuleIndicesForColumn:(unsigned char)arg1 inTable:(id)arg2;
+- (id)viewColumnIndicesForRulesInTable:(id)arg1;
+- (id)baseColumnIndicesForRulesInTable:(id)arg1;
+- (id)absoluteRuleIndicesForColumn:(struct TSUModelColumnIndex)arg1 inTable:(id)arg2;
 - (unsigned long long)numberOfRulesInFilter:(unsigned long long)arg1;
 - (unsigned long long)ruleIndexInFilter:(unsigned long long)arg1 matchingCell:(id)arg2;
-- (unsigned long long)firstFilterIndexForColumn:(unsigned char)arg1 inTable:(id)arg2;
-- (id)filterIndicesForColumn:(unsigned char)arg1 inTable:(id)arg2;
+- (unsigned long long)firstFilterIndexForBaseColumn:(struct TSUModelColumnIndex)arg1 inTable:(id)arg2;
+- (id)filterIndicesForBaseColumn:(struct TSUModelColumnIndex)arg1 inTable:(id)arg2;
 - (void)enumerateRulesInFilterIndex:(unsigned long long)arg1 usingBlock:(CDUnknownBlockType)arg2;
-- (void)enumerateFiltersForColumn:(unsigned char)arg1 withTable:(id)arg2 usingBlock:(CDUnknownBlockType)arg3;
+- (void)enumerateFiltersForColumn:(struct TSUModelColumnIndex)arg1 withTable:(id)arg2 usingBlock:(CDUnknownBlockType)arg3;
 - (void)enumerateFilterIndicesInTable:(id)arg1 usingBlock:(CDUnknownBlockType)arg2;
 - (void)enumerateFiltersInTable:(id)arg1 usingBlock:(CDUnknownBlockType)arg2;
 - (void)replaceRule:(id)arg1 atRuleIndex:(unsigned long long)arg2 inFilter:(unsigned long long)arg3;
 - (void)addRules:(id)arg1 inFilter:(unsigned long long)arg2;
 - (void)p_addRules:(id)arg1 atRuleIndices:(id)arg2 inFilter:(unsigned long long)arg3 isNew:(_Bool)arg4;
-- (void)removeRulesForColumnIndices:(id)arg1 withTableInfo:(id)arg2;
+- (void)removeRulesForBaseColumnIndices:(id)arg1 withTableInfo:(id)arg2;
 - (void)removeRulesWithIndices:(id)arg1 inFilter:(unsigned long long)arg2;
 - (id)removeRulesWithAbsoluteIndices:(id)arg1;
 @property(readonly, nonatomic) unsigned long long filterCount;
@@ -53,7 +53,7 @@ __attribute__((visibility("hidden")))
 - (id)filterAtIndex:(unsigned long long)arg1 inTable:(id)arg2;
 - (id)ruleInFilter:(unsigned long long)arg1 atIndex:(unsigned long long)arg2;
 - (id)ruleAtAbsoluteIndex:(unsigned long long)arg1;
-- (_Bool)rowIsShown:(unsigned short)arg1 withHiddenStateFormulaOwner:(id)arg2 withCalculationEngine:(id)arg3;
+- (_Bool)rowIsShown:(unsigned int)arg1 withHiddenStateExtent:(id)arg2 withCalcEngine:(id)arg3;
 - (_Bool)p_thresholdComparisonMatchesFilter:(long long)arg1 withPredicateType:(int)arg2;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
@@ -61,7 +61,6 @@ __attribute__((visibility("hidden")))
 - (id)copyByRewritingFilterRulesToGeometricFormWithContext:(id)arg1 withTableInfo:(id)arg2;
 - (id)copyByRewritingFilterRulesToUidFormWithContext:(id)arg1 withTableInfo:(id)arg2;
 - (id)copyWithContext:(id)arg1;
-- (void)dealloc;
 - (id)initWithFilterRules:(id)arg1 type:(int)arg2 context:(id)arg3;
 
 @end

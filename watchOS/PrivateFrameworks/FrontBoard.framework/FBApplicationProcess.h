@@ -38,6 +38,7 @@
     unsigned long long _htAppIdentifier;
     BKSProcess *_bksProcess;
     BKSProcessAssertion *_launchProcessAssertion;
+    BKSProcessAssertion *_viewServiceProcessAssertion;
     BKSProcessAssertion *_continuousProcessAssertion;
     _Bool _recordingAudio;
     _Bool _nowPlayingWithAudio;
@@ -62,6 +63,7 @@
 - (void)process:(id)arg1 isBeingDebugged:(_Bool)arg2;
 - (void)processWillExpire:(id)arg1;
 - (void)process:(id)arg1 taskStateDidChange:(int)arg2;
+- (void)_queue_dropViewServiceAssertion;
 - (void)_queue_dropContinuousProcessAssertion;
 - (void)_queue_dropLaunchProcessAssertion;
 - (void)_queue_takeLaunchProcessAssertion;
@@ -95,6 +97,7 @@
 - (id)_watchdogProvider;
 - (id)_workspaceServer;
 - (id)_workspace;
+- (void)_queue_noteSceneCreationAcknowledged:(id)arg1;
 - (void)_queue_executeTerminateRequestCompletionBlocksIfNecessaryForSucccess:(_Bool)arg1;
 - (void)_queue_executeLaunchCompletionBlocks;
 - (void)_queue_executeBlockAfterLaunchCompletes:(CDUnknownBlockType)arg1;

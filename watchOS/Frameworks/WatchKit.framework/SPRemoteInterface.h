@@ -102,6 +102,7 @@
 + (void)controller:(id)arg1 pushInterfaceController:(id)arg2 context:(id)arg3;
 + (void)_logDuplicate:(id)arg1 controller:(id)arg2 key:(id)arg3 property:(id)arg4 value:(id)arg5;
 + (void)setController:(id)arg1 key:(id)arg2 property:(id)arg3 value:(id)arg4;
++ (_Bool)isControllerActive:(id)arg1;
 + (void)setControllerInactive:(id)arg1;
 + (void)setControllerActive:(id)arg1;
 + (void)clearStorageForController:(id)arg1;

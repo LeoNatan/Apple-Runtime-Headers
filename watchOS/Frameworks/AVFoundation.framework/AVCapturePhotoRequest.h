@@ -21,9 +21,11 @@
     struct opaqueCMSampleBuffer *_previewSampleBuffer;
     void *_thumbnailSurface;
     _Bool _delegateSupportsDebugMetadataSidecarFile;
+    _Bool _lensStabilizationSupported;
 }
 
-+ (id)requestWithDelegate:(id)arg1 settings:(id)arg2;
++ (id)requestWithDelegate:(id)arg1 settings:(id)arg2 lensStabilizationSupported:(_Bool)arg3;
+@property(readonly) _Bool lensStabilizationSupported; // @synthesize lensStabilizationSupported=_lensStabilizationSupported;
 @property(readonly) _Bool delegateSupportsDebugMetadataSidecarFile; // @synthesize delegateSupportsDebugMetadataSidecarFile=_delegateSupportsDebugMetadataSidecarFile;
 @property(retain, nonatomic) void *thumbnailSurface; // @synthesize thumbnailSurface=_thumbnailSurface;
 @property(retain, nonatomic) struct opaqueCMSampleBuffer *previewSampleBuffer; // @synthesize previewSampleBuffer=_previewSampleBuffer;
@@ -38,7 +40,7 @@
 @property(retain, nonatomic) AVCaptureResolvedPhotoSettings *resolvedSettings;
 @property(readonly, nonatomic) unsigned int expectedPhotoCount;
 - (void)dealloc;
-- (id)initWithDelegate:(id)arg1 settings:(id)arg2;
+- (id)initWithDelegate:(id)arg1 settings:(id)arg2 lensStabilizationSupported:(_Bool)arg3;
 
 @end
 

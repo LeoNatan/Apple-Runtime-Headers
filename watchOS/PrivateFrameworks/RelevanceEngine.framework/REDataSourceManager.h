@@ -28,6 +28,8 @@
     id <REDataSourceManagerObserver> _delegate;
 }
 
++ (_Bool)_isPrioritizedDataSourceClass:(Class)arg1;
++ (id)_prioritizedDataSourceClasses;
 @property(readonly, nonatomic) __weak id <REDataSourceManagerObserver> delegate; // @synthesize delegate=_delegate;
 @property(retain) NSArray *currentDataSources; // @synthesize currentDataSources=_currentDataSources;
 @property(retain) NSSet *currentDataSourceIdentifiers; // @synthesize currentDataSourceIdentifiers=_currentDataSourceIdentifiers;

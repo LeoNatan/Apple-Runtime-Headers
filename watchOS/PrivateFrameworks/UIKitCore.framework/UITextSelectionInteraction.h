@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
 - (void)oneFingerTapSelectsAll:(id)arg1;
 - (void)performTapActionAtPoint:(struct CGPoint)arg1 granularity:(int)arg2 modifierFlags:(int)arg3;
 - (void)performTapActionAtPoint:(struct CGPoint)arg1 granularity:(int)arg2;
+- (_Bool)isNowWithinRepeatedTapTime;
 - (_Bool)_isShiftKeyBeingHeldForGesture:(id)arg1;
 - (void)oneFingerDoubleTap:(id)arg1;
 - (id)initWithMode:(int)arg1;

@@ -18,6 +18,7 @@
     unsigned long long _activityType;
     unsigned long long _sourceType;
     PXCMMViewModel *_viewModel;
+    id <PXImportStatusManager> _importStatusManager;
     NSArray *_displayNames;
     PXCMMAssetsProgressListener *_assetsProgressListener;
     id <PXCMMBannerTileControllerDelegate> _delegate;
@@ -45,7 +46,7 @@
 - (void)_updateBannerActionButton;
 - (void)_updateCounts;
 - (void)setPeopleSuggestionDataSourceManager:(id)arg1 mediaProvider:(id)arg2;
-- (id)initWithActivityType:(unsigned long long)arg1 sourceType:(unsigned long long)arg2 viewModel:(id)arg3 assetsProgressListener:(id)arg4;
+- (id)initWithActivityType:(unsigned long long)arg1 sourceType:(unsigned long long)arg2 viewModel:(id)arg3 assetsProgressListener:(id)arg4 importStatusManager:(id)arg5;
 - (id)init;
 
 // Remaining properties

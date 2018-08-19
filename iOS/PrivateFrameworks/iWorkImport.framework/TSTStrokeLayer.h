@@ -8,16 +8,17 @@
 
 #import "NSCopying.h"
 #import "NSMutableCopying.h"
+#import "TSTStrokeLayerEnumerating.h"
 
 __attribute__((visibility("hidden")))
-@interface TSTStrokeLayer : TSPObject <NSCopying, NSMutableCopying>
+@interface TSTStrokeLayer : TSPObject <NSCopying, NSMutableCopying, TSTStrokeLayerEnumerating>
 {
     vector_613d3e5a mStrokeRuns;
-    unsigned short _columnOrRowIndex;
+    unsigned int _columnOrRowIndex;
 }
 
 + (id)strokeLayer;
-@property(nonatomic) unsigned short columnOrRowIndex; // @synthesize columnOrRowIndex=_columnOrRowIndex;
+@property(nonatomic) unsigned int columnOrRowIndex; // @synthesize columnOrRowIndex=_columnOrRowIndex;
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)saveToArchiver:(id)arg1;
@@ -31,6 +32,9 @@ __attribute__((visibility("hidden")))
 - (void)p_invalidate;
 - (void)p_setStroke:(id)arg1 inRange:(struct TSTSimpleRange)arg2 order:(int)arg3;
 - (void)p_appendStroke:(id)arg1 inRange:(struct TSTSimpleRange)arg2 order:(int)arg3;
+- (void)replaceStrokeLayerAtIndex:(unsigned long long)arg1 withObject:(id)arg2;
+- (id)strokeLayerAtIndex:(unsigned long long)arg1;
+@property(readonly) unsigned long long strokeLayerCount;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)strokeLayerModifiedByRemovingRangeAt:(struct TSTSimpleRange)arg1;
@@ -41,7 +45,7 @@ __attribute__((visibility("hidden")))
 - (id)findStrokeAndRangeAtIndex:(long long)arg1;
 - (long long)startingIndex;
 @property(readonly, nonatomic) _Bool isEmpty;
-- (id)initWithContext:(id)arg1 columnOrRowIndex:(unsigned short)arg2;
+- (id)initWithContext:(id)arg1 columnOrRowIndex:(unsigned int)arg2;
 
 @end
 

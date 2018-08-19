@@ -6,11 +6,12 @@
 
 #import "UIViewController.h"
 
+#import "MSRootViewControllerProtocol.h"
 #import "MSStickerBrowserViewDataSource.h"
 
 @class MSStickerBrowserView, NSString;
 
-@interface MSStickerBrowserViewController : UIViewController <MSStickerBrowserViewDataSource>
+@interface MSStickerBrowserViewController : UIViewController <MSRootViewControllerProtocol, MSStickerBrowserViewDataSource>
 {
     _Bool _viewHasAppeared;
     MSStickerBrowserView *_stickerBrowserView;
@@ -18,10 +19,10 @@
     struct CGRect _initialFrameBeforeAppearance;
 }
 
-@property(nonatomic) struct CGRect initialFrameBeforeAppearance; // @synthesize initialFrameBeforeAppearance=_initialFrameBeforeAppearance;
 @property(nonatomic) _Bool viewHasAppeared; // @synthesize viewHasAppeared=_viewHasAppeared;
 @property(readonly, nonatomic) int stickerSize; // @synthesize stickerSize=_stickerSize;
 @property(retain, nonatomic) MSStickerBrowserView *stickerBrowserView; // @synthesize stickerBrowserView=_stickerBrowserView;
+@property(nonatomic) struct CGRect initialFrameBeforeAppearance; // @synthesize initialFrameBeforeAppearance=_initialFrameBeforeAppearance;
 - (void).cxx_destruct;
 - (void)disableUserInteraction;
 - (void)enableUserInteraction;
@@ -32,8 +33,8 @@
 - (void)willTransitionToPresentationStyle:(unsigned int)arg1;
 - (void)viewDidDisappear:(_Bool)arg1;
 - (void)viewDidAppear:(_Bool)arg1;
+- (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLayoutSubviews;
-- (void)viewWillLayoutSubviews;
 - (void)_setContentOverlayInsets:(struct UIEdgeInsets)arg1;
 - (void)loadView;
 - (id)initWithStickerSize:(int)arg1;

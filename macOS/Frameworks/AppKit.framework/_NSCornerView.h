@@ -6,17 +6,29 @@
 
 #import <AppKit/NSView.h>
 
+@class NSBannerView;
+
 __attribute__((visibility("hidden")))
 @interface _NSCornerView : NSView
 {
+    NSBannerView *_backgroundView;
 }
 
+- (void).cxx_destruct;
+- (BOOL)isOpaque;
 - (BOOL)_drawingEndSeparator;
 - (int)_vibrancyBlendMode;
 - (BOOL)allowsVibrancy;
+- (unsigned long long)_vibrantBlendingStyleForSubtree;
 - (void)drawRect:(struct CGRect)arg1;
 - (struct CGRect)fillRect;
 - (id)enclosingScrollView;
+- (void)_addOrRemoveBlurViewIfNecessary;
+- (void)_invalidateHeaderDependentDrawing;
+- (void)viewWillMoveToSuperview:(id)arg1;
+- (void)viewDidMoveToSuperview;
+- (void)setFrame:(struct CGRect)arg1;
+- (void)_finishedMakingConnections;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 

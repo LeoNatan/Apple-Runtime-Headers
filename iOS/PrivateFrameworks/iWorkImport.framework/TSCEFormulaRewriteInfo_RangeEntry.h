@@ -11,18 +11,17 @@ __attribute__((visibility("hidden")))
 {
     struct _NSRange _range;
     vector_4dc5f307 _orderedUuids;
-    unsigned short _offset;
+    unsigned int _offset;
 }
 
-@property unsigned short offset; // @synthesize offset=_offset;
+@property unsigned int offset; // @synthesize offset=_offset;
 @property(readonly) const vector_4dc5f307 *orderedUuids; // @synthesize orderedUuids=_orderedUuids;
 @property(readonly) struct _NSRange range; // @synthesize range=_range;
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)saveToMessage:(struct RewriteRangeEntryArchive *)arg1;
 - (id)initFromMessage:(const struct RewriteRangeEntryArchive *)arg1;
-- (id)description;
-- (id)initWithRange:(struct _NSRange)arg1 orderedUuids:(const vector_4dc5f307 *)arg2 offset:(unsigned short)arg3;
+- (id)initWithRange:(struct _NSRange)arg1 orderedUuids:(const vector_4dc5f307 *)arg2 offset:(unsigned int)arg3;
 
 @end
 

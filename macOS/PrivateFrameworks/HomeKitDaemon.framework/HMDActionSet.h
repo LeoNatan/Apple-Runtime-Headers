@@ -88,6 +88,7 @@
 - (void)removeService:(id)arg1;
 - (void)executeWithTriggerSource:(id)arg1 captureCurrentState:(BOOL)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)execute:(id)arg1;
+- (id)isAccessValidForExecutionWithMessage:(id)arg1;
 - (id)dumpState;
 @property(readonly, copy) NSString *description;
 - (void)dealloc;

@@ -14,7 +14,7 @@ __attribute__((visibility("hidden")))
     NSCalendar *_calendar;
 }
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (void)extractComponentsFromDate:(id)arg1 year:(long long *)arg2 month:(long long *)arg3 day:(long long *)arg4;
 - (void)extractComponentsFromDate:(id)arg1 year:(long long *)arg2 month:(long long *)arg3 day:(long long *)arg4 hour:(long long *)arg5 minute:(long long *)arg6 second:(long long *)arg7;
 - (id)components:(unsigned long long)arg1 fromDate:(id)arg2 toDate:(id)arg3 options:(unsigned long long)arg4;

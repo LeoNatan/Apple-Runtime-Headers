@@ -36,13 +36,9 @@
 @property(copy, nonatomic) NSArray *devices; // @synthesize devices=_devices;
 @property(readonly, nonatomic) STUsageDetailsViewModel *viewModel; // @synthesize viewModel=_viewModel;
 - (void).cxx_destruct;
-- (void)updateWithUserDevicePairRecord:(id)arg1;
-- (void)updateWithUser:(id)arg1;
 - (void)loadViewModelWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (id)_usageItemsWithUser:(id)arg1 device:(id)arg2 lastUpdatedDate:(id *)arg3 inManagedObjectContext:(id)arg4 error:(id *)arg5;
 - (void)controllerDidChangeContent:(id)arg1;
-- (void)_persistenceStoreDidChange:(id)arg1;
-- (void)_registerForPersistenceStoreNotifications;
 - (void)refreshUsageDataWithCompletion:(CDUnknownBlockType)arg1;
 - (void)refreshUsageData;
 - (void)scheduleRefreshUsageData;

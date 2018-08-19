@@ -9,9 +9,10 @@
 __attribute__((visibility("hidden")))
 @interface TSTBooleanNode : TSTExpressionNode
 {
-    _Bool mValue;
+    _Bool _value;
 }
 
+@property(nonatomic) _Bool value; // @synthesize value=_value;
 - (void)saveToArchive:(struct BooleanNodeArchive *)arg1 archiver:(id)arg2;
 - (void)loadFromArchive:(const struct BooleanNodeArchive *)arg1 unarchiver:(id)arg2;
 - (void)saveToArchiver:(id)arg1;
@@ -23,7 +24,6 @@ __attribute__((visibility("hidden")))
 - (int)tokenType;
 - (_Bool)isEqualToExpressionNode:(id)arg1;
 - (struct TSTCSENodeData)recordHashesForSubexpressions:(id)arg1;
-@property(nonatomic) _Bool value;
 - (id)initAsCopyOf:(id)arg1 intoContext:(id)arg2 children:(id)arg3;
 - (id)initWithContext:(id)arg1 children:(id)arg2 firstIndex:(unsigned long long)arg3 lastIndex:(unsigned long long)arg4;
 - (id)initWithContext:(id)arg1 boolValue:(_Bool)arg2 firstIndex:(unsigned long long)arg3 lastIndex:(unsigned long long)arg4;

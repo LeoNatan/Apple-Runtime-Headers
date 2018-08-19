@@ -8,10 +8,11 @@
 
 #import "PUAssetSharedViewModelChangeObserver.h"
 #import "PUAssetViewModelChangeObserver.h"
+#import "PXImportStatusObserver.h"
 
 @class NSDate, NSMutableSet, NSString, PUAssetReference, PUAssetsDataSource, PUCachedMapTable, PUMediaProvider, PUReviewScreenBarsModel;
 
-@interface PUBrowsingViewModel : PUViewModel <PUAssetViewModelChangeObserver, PUAssetSharedViewModelChangeObserver>
+@interface PUBrowsingViewModel : PUViewModel <PUAssetViewModelChangeObserver, PUAssetSharedViewModelChangeObserver, PXImportStatusObserver>
 {
     PUAssetReference *_currentAssetReference;
     NSDate *_currentAssetReferenceChangedDate;
@@ -44,10 +45,12 @@
     NSMutableSet *__animatingTransitionIdentifiers;
     NSMutableSet *__videoDisallowedReasons;
     PUMediaProvider *_mediaProvider;
+    id <PXImportStatusManager> _importStatusManager;
     struct CGSize _secondScreenSize;
 }
 
 + (void)initialize;
+@property(retain, nonatomic) id <PXImportStatusManager> importStatusManager; // @synthesize importStatusManager=_importStatusManager;
 @property(retain, nonatomic) PUMediaProvider *mediaProvider; // @synthesize mediaProvider=_mediaProvider;
 @property(retain, nonatomic, setter=_setVideoDisallowedReasons:) NSMutableSet *_videoDisallowedReasons; // @synthesize _videoDisallowedReasons=__videoDisallowedReasons;
 @property(retain, nonatomic, setter=_setAnimatingTransitionIdentifiers:) NSMutableSet *_animatingTransitionIdentifiers; // @synthesize _animatingTransitionIdentifiers=__animatingTransitionIdentifiers;
@@ -71,9 +74,11 @@
 @property(retain, nonatomic) PUAssetsDataSource *assetsDataSource; // @synthesize assetsDataSource=_assetsDataSource;
 - (void).cxx_destruct;
 - (id)debugDetailedDescription;
+- (void)importStatusManager:(id)arg1 didChangeStatusForAssetReference:(id)arg2;
 - (void)_handleAssetSharedViewModel:(id)arg1 didChange:(id)arg2;
 - (void)_handleAssetViewModel:(id)arg1 didChange:(id)arg2;
 - (void)viewModel:(id)arg1 didChange:(id)arg2;
+- (long long)_importStateForAssetReference:(id)arg1;
 - (id)_badgeInfoPromiseForAssetReference:(id)arg1;
 - (double)_focusValueForAsset:(id)arg1;
 - (void)_updateNeighboringAssetReferences;

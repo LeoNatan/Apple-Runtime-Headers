@@ -38,6 +38,7 @@ __attribute__((visibility("hidden")))
 - (void)removeInvalidationHandler:(id)arg1;
 - (id)addPlayerPathInvalidationHandler:(id)arg1;
 - (void)fetchPickableRoutesWithCategory:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (_Bool)isOriginRegistered:(id)arg1;
 - (void)unregisterAllOriginsWithCompletion:(CDUnknownBlockType)arg1;
 - (void)unregisterOrigin:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)registerOrigin:(id)arg1 withDeviceInfo:(id)arg2 completion:(CDUnknownBlockType)arg3;

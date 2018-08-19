@@ -12,9 +12,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (int)dimensionForUnit:(int)arg1;
-+ (double)convert:(double)arg1 fromUnit:(CDStruct_945081a1)arg2 toUnit:(CDStruct_945081a1)arg3;
++ (double)convert:(double)arg1 fromUnit:(CDStruct_1ef3fb1f)arg2 toUnit:(CDStruct_1ef3fb1f)arg3;
 + (_Bool)unitIsMetric:(int)arg1;
-+ (CDStruct_945081a1)prefixedUnitForString:(id)arg1;
++ (CDStruct_1ef3fb1f)prefixedUnitForString:(id)arg1;
 + (int)binaryUnitPrefixForChars:(unsigned short)arg1:(unsigned short)arg2;
 + (int)unitPrefixForCharacter:(unsigned short)arg1;
 + (double)multiplierForUnitPrefix:(int)arg1;

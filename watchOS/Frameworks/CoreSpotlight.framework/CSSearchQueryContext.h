@@ -25,6 +25,7 @@
     NSArray *_disableBundles;
     NSString *_userQuery;
     int _rankingType;
+    NSArray *_filterQueries;
     NSString *_filterQuery;
     int _strongRankingQueryCount;
     int _dominantRankingQueryCount;
@@ -53,6 +54,7 @@
 @property(nonatomic) int dominantRankingQueryCount; // @synthesize dominantRankingQueryCount=_dominantRankingQueryCount;
 @property(nonatomic) int strongRankingQueryCount; // @synthesize strongRankingQueryCount=_strongRankingQueryCount;
 @property(retain, nonatomic) NSString *filterQuery; // @synthesize filterQuery=_filterQuery;
+@property(copy, nonatomic) NSArray *filterQueries; // @synthesize filterQueries=_filterQueries;
 @property(nonatomic) int rankingType; // @synthesize rankingType=_rankingType;
 @property(retain, nonatomic) NSString *userQuery; // @synthesize userQuery=_userQuery;
 @property(retain, nonatomic) NSArray *disableBundles; // @synthesize disableBundles=_disableBundles;

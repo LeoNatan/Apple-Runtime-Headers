@@ -24,6 +24,7 @@
 - (void)setPropertiesByName:(id)arg1;
 - (id)propertiesByName;
 - (id)_dictionaryRepresentation;
+@property(copy) NSString *underlyingIntentTitle;
 @property(copy) NSNumber *interstitialDisabled;
 @property(copy) NSNumber *continueRunning;
 @property long long toggleState;

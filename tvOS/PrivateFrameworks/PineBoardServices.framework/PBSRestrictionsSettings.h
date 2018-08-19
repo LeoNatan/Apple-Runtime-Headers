@@ -33,6 +33,7 @@
 @property(nonatomic) unsigned long long allowsExplicitContent;
 @property(readonly, nonatomic) _Bool restrictionsEnabled;
 - (void)dealloc;
+- (void)resetRestrictionSettings;
 - (id)init;
 
 @end

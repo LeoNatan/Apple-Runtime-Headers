@@ -9,6 +9,7 @@
 @class NSArray, NSString;
 
 @protocol PDCloudStoreServiceExportedInterface <PDXPCServiceExportedInterface>
+- (void)noteAccountDeletedWithHandler:(void (^)(void))arg1;
 - (void)noteCloudSyncPassesSwitchChangedWithHandler:(void (^)(void))arg1;
 - (void)generateRandomTransactionForPassWithUniqueIdentifier:(NSString *)arg1 completion:(void (^)(PKCloudRecordArray *, NSError *))arg2;
 - (void)fetchAndStoreRecordsForPaymentPassWithUniqueIdentifier:(NSString *)arg1 completion:(void (^)(PKCloudRecordArray *, NSError *))arg2;

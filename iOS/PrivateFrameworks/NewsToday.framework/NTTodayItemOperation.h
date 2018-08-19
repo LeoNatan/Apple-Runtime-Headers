@@ -6,7 +6,7 @@
 
 #import "FCOperation.h"
 
-@class NSArray, NSDictionary, NSSet, NTCatchUpOperationForYouFetchInfo;
+@class NSArray, NSDictionary, NSObject, NSSet, NTCatchUpOperationForYouFetchInfo;
 
 @interface NTTodayItemOperation : FCOperation
 {
@@ -22,8 +22,10 @@
     NSArray *_feedItems;
     NSDictionary *_resultTodayItemsBySectionDescriptor;
     NSDictionary *_resultAssetFileURLsByRemoteURL;
+    NSObject *_resultAssetsHoldToken;
 }
 
+@property(retain, nonatomic) NSObject *resultAssetsHoldToken; // @synthesize resultAssetsHoldToken=_resultAssetsHoldToken;
 @property(retain, nonatomic) NSDictionary *resultAssetFileURLsByRemoteURL; // @synthesize resultAssetFileURLsByRemoteURL=_resultAssetFileURLsByRemoteURL;
 @property(retain, nonatomic) NSDictionary *resultTodayItemsBySectionDescriptor; // @synthesize resultTodayItemsBySectionDescriptor=_resultTodayItemsBySectionDescriptor;
 @property(copy, nonatomic) NSArray *feedItems; // @synthesize feedItems=_feedItems;

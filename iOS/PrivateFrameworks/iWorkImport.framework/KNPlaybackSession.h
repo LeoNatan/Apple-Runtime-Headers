@@ -15,12 +15,14 @@ __attribute__((visibility("hidden")))
 {
     KNSlideNode *_currentSlideNode;
     _Bool _hasEndShowHandlerBeenCancelled;
-    id <MTLDevice> _metalDevice;
+    _Bool _isMetalEnabled;
     _Bool _isMetalCapable;
     _Bool _isMetalCapableCheckInitialized;
+    CALayer *_noMetalBadgeLayer;
     _Bool _disableAutoAnimationRemoval;
     _Bool _disableTransitionTextureCaching;
     _Bool _isExitingShow;
+    _Bool _isMovieExport;
     _Bool _isShowLayerVisible;
     _Bool _shouldAlwaysSetCurrentGLContextWhenDrawing;
     _Bool _shouldAnimateTransitionOnLastSlide;
@@ -48,8 +50,9 @@ __attribute__((visibility("hidden")))
     id <TSDCanvasDelegate> _canvasDelegate;
     CDUnknownBlockType _endShowHandler;
     long long _playMode;
-    TSDMetalLayer *_sharedMetalLayer;
     CALayer *_rootLayer;
+    id <MTLDevice> _metalDevice;
+    TSDMetalLayer *_sharedMetalLayer;
     KNShow *_show;
     TSDGLLayer *_sharedGLLayer;
     NSMutableArray *_animationDurationArray;
@@ -79,10 +82,12 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool shouldAnimateNullTransitions; // @synthesize shouldAnimateNullTransitions=_shouldAnimateNullTransitions;
 @property(nonatomic) _Bool shouldAnimateTransitionOnLastSlide; // @synthesize shouldAnimateTransitionOnLastSlide=_shouldAnimateTransitionOnLastSlide;
 @property(nonatomic) _Bool shouldAlwaysSetCurrentGLContextWhenDrawing; // @synthesize shouldAlwaysSetCurrentGLContextWhenDrawing=_shouldAlwaysSetCurrentGLContextWhenDrawing;
-@property(readonly, nonatomic) CALayer *rootLayer; // @synthesize rootLayer=_rootLayer;
 @property(retain, nonatomic) TSDMetalLayer *sharedMetalLayer; // @synthesize sharedMetalLayer=_sharedMetalLayer;
+@property(readonly, nonatomic) id <MTLDevice> metalDevice; // @synthesize metalDevice=_metalDevice;
+@property(readonly, nonatomic) CALayer *rootLayer; // @synthesize rootLayer=_rootLayer;
 @property(nonatomic) long long playMode; // @synthesize playMode=_playMode;
 @property(nonatomic) _Bool isShowLayerVisible; // @synthesize isShowLayerVisible=_isShowLayerVisible;
+@property(nonatomic) _Bool isMovieExport; // @synthesize isMovieExport=_isMovieExport;
 @property(nonatomic) _Bool isExitingShow; // @synthesize isExitingShow=_isExitingShow;
 @property(copy, nonatomic) CDUnknownBlockType endShowHandler; // @synthesize endShowHandler=_endShowHandler;
 @property(nonatomic) _Bool disableTransitionTextureCaching; // @synthesize disableTransitionTextureCaching=_disableTransitionTextureCaching;
@@ -97,9 +102,11 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) __weak KNSlideNode *alternateNextSlideNode; // @synthesize alternateNextSlideNode=_alternateNextSlideNode;
 @property(nonatomic) __weak id <TSKAccessControllerReadTicket> accessControllerReadTicket; // @synthesize accessControllerReadTicket=_accessControllerReadTicket;
 - (void).cxx_destruct;
+- (void)enableMetalBadge:(_Bool)arg1;
+- (void)p_setupBadging;
+@property(readonly, nonatomic) _Bool isMetalEnabled;
 @property(readonly, nonatomic) _Bool isMetalCapable;
-@property(readonly, nonatomic) id <MTLDevice> metalDevice;
-- (void)tearDownSharedMetalLayer;
+- (void)makeSharedMetalLayerVisible:(_Bool)arg1;
 - (void)setSharedGLContextAsCurrentContextShouldCreate:(_Bool)arg1;
 - (void)tearDownSharedGLLayer;
 - (void)resizeShowLayer;
@@ -140,7 +147,7 @@ __attribute__((visibility("hidden")))
 - (void)tearDown;
 - (void)dealloc;
 - (id)init;
-- (id)initWithShow:(id)arg1 viewScale:(double)arg2 showLayer:(id)arg3 canvasDelegate:(id)arg4 endShowHandler:(CDUnknownBlockType)arg5;
+- (id)initWithShow:(id)arg1 viewScale:(double)arg2 showLayer:(id)arg3 canvasDelegate:(id)arg4 isMetalEnabled:(_Bool)arg5 endShowHandler:(CDUnknownBlockType)arg6;
 @property(readonly, nonatomic) _Bool shouldShowInstructionalText;
 
 // Remaining properties

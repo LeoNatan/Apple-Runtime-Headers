@@ -8,13 +8,14 @@
 
 #import "NSCopying.h"
 
-@class NSArray, NSMutableArray, NSObject<OS_dispatch_queue>, NSString;
+@class NSArray, NSMutableArray, NSMutableSet, NSObject<OS_dispatch_queue>, NSString;
 
 @interface PUImportAssetCollection : NSObject <NSCopying>
 {
     NSObject<OS_dispatch_queue> *_assetQueue;
     NSMutableArray *_assetList;
     NSArray *_arrangedAssetList;
+    NSMutableSet *_assetUUIDs;
     _Bool _needsSorting;
     _Bool _alreadyImportedGroup;
     NSString *_identifier;

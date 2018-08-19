@@ -39,7 +39,8 @@
 - (id)supportedRegionsForOSVersion:(id)arg1 deviceClass:(id)arg2;
 - (id)maxRefreshIntervalForRegion:(id)arg1;
 - (id)maxRefreshIntervalForUnsupportedRegion;
-- (id)betaTransitPaymentNetworksForRegion:(id)arg1;
+- (id)betaPaymentNetworkVersionsForRegion:(id)arg1;
+- (id)betaPaymentNetworksForRegion:(id)arg1;
 - (_Bool)userCanResetCloudStoreApplePayViewForRegion:(id)arg1;
 - (_Bool)peerPaymentEnabledForRegion:(id)arg1;
 - (double)provisioningEnablementPercentageForRegion:(id)arg1;

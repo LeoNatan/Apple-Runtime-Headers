@@ -77,6 +77,7 @@ __attribute__((visibility("hidden")))
 - (void)drawContentsOfRenderers:(id)arg1;
 @property(readonly, nonatomic) _Bool keepNonPersistent;
 @property(readonly, nonatomic) float cachedWidth;
+@property(readonly, nonatomic) int cacheDeferPriority;
 @property(readonly, nonatomic) _Bool cacheDeferable;
 - (void)displayLayer:(id)arg1;
 - (id)cacheKeysForRenderFlags:(id)arg1;

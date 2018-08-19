@@ -16,6 +16,7 @@
 + (id)depthEffectInfoDictionaryFromFaceObservations:(id)arg1 metadata:(id)arg2 orientation:(long long)arg3 apertureValues:(id)arg4;
 + (id)portraitInfoDictionaryFromFaceObservations:(id)arg1 metadata:(id)arg2 orientation:(long long)arg3 apertureValues:(id)arg4;
 + (_Bool)canApplyPortraitEffectsWithMetadata:(id)arg1;
++ (_Bool)isStillImageDisparity:(id)arg1;
 + (id)focusRectDictionaryFromRect:(struct CGRect)arg1;
 + (id)focusRectDictionaryFromMetadata:(id)arg1;
 + (struct CGPoint)convertFacePoint:(struct CGPoint)arg1 toImagePointWithFaceRect:(struct CGRect)arg2 orientation:(long long)arg3;

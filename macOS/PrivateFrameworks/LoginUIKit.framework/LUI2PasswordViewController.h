@@ -27,6 +27,7 @@
 - (void)shake;
 - (void)setEnabled:(BOOL)arg1;
 - (void)secureTextFieldTextDidChange:(id)arg1;
+- (void)_removeSecureTextFieldViewController;
 - (void)_updateBlendingMode:(id)arg1;
 
 @end

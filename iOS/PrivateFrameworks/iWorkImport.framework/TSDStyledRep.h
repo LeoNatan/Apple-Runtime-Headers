@@ -27,7 +27,7 @@ __attribute__((visibility("hidden")))
 - (void)drawInContextWithoutEffectsForAlphaOnly:(struct CGContext *)arg1;
 - (void)drawInContextWithoutEffectsOrChildren:(struct CGContext *)arg1;
 - (void)drawInContextWithoutEffects:(struct CGContext *)arg1;
-- (void)drawInContextWithoutEffects:(struct CGContext *)arg1 withContent:(_Bool)arg2 strokeDrawOptions:(unsigned long long)arg3 withOpacity:(_Bool)arg4 forAlphaOnly:(_Bool)arg5 drawChildren:(_Bool)arg6;
+- (void)drawInContextWithoutEffects:(struct CGContext *)arg1 withContent:(_Bool)arg2 strokeDrawOptions:(unsigned long long)arg3 withOpacity:(_Bool)arg4 forAlphaOnly:(_Bool)arg5 drawChildren:(_Bool)arg6 keepingChildrenPassingTest:(CDUnknownBlockType)arg7;
 - (void)drawInContext:(struct CGContext *)arg1;
 - (void)drawReflectionInContext:(struct CGContext *)arg1 drawChildren:(_Bool)arg2;
 - (void)drawReflectionInContext:(struct CGContext *)arg1 withTransparencyLayer:(_Bool)arg2 applyingOpacity:(_Bool)arg3 shouldClipGradient:(_Bool)arg4 withBlock:(CDUnknownBlockType)arg5;

@@ -9,31 +9,14 @@
 __attribute__((visibility("hidden")))
 @interface TSTMergeRegionMap : TSPObject
 {
-    unordered_map_ddbde191 mCellIDToMergeOrigin;
-    unordered_map_89444acf mMergeOriginToSize;
-    struct TSUCellRect mUnionedMergeRange;
+    vector_e87daf7b _mergedRects;
 }
 
-+ (id)mergeRegionMapWithContext:(id)arg1 andCellRangesSet:(const unordered_set_ea210bc4 *)arg2;
-+ (id)mergeRegionMapWithContext:(id)arg1 andCellRanges:(const vector_e87daf7b *)arg2;
-+ (id)mergeRegionMapFromMap:(id)arg1 intersectingRange:(struct TSUCellRect)arg2;
+@property(readonly, nonatomic) const vector_e87daf7b *mergedRects; // @synthesize mergedRects=_mergedRects;
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (const unordered_map_89444acf *)mergeOriginToSize;
-- (const unordered_map_ddbde191 *)cellIDToMergeOrigin;
-- (_Bool)hasRangeSpanningRows;
-- (_Bool)find:(struct TSUCellRect)arg1;
-- (struct TSUCellRect)mergedRangeForCellID:(struct TSUCellCoord)arg1;
-- (unsigned long long)count;
-- (void)enumerateRangesUsingBlock:(CDUnknownBlockType)arg1;
-- (id)iterator;
-- (_Bool)remove:(struct TSUCellRect)arg1;
-- (_Bool)insert:(struct TSUCellRect)arg1;
 - (void)saveToArchiver:(id)arg1;
 - (void)loadFromUnarchiver:(id)arg1;
-- (id)initWithContext:(id)arg1;
-- (id)initRegionMapFromMap:(id)arg1 intersectingRange:(struct TSUCellRect)arg2;
-- (id)initRegionMapFromMap:(id)arg1 rowRemapping:(id)arg2;
 
 @end
 

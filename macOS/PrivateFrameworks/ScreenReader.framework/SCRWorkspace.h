@@ -8,7 +8,7 @@
 
 #import "SCRCUserDefaultsDiskArbDelegate.h"
 
-@class NSDate, NSDictionary, NSLock, NSMutableDictionary, NSString, NSTimer, SCRApplicationManager, SCRCTargetSelectorTimer, SCRCThreadKey, SCRDFRFocusManager, SCRDFRManager, SCREventDispatcher, SCREventFactory, SCRGuide, SCRSiriObserver, SCRSpeechAttributeGuide, SCRSystemKeyManager, SCRVisualsManager, SCRWorkspaceApplication;
+@class NSDate, NSDictionary, NSLock, NSMutableDictionary, NSString, NSTimer, SCRApplicationManager, SCRCTargetSelectorTimer, SCRCThreadKey, SCRDFRFocusManager, SCRDFRManager, SCREventDispatcher, SCREventFactory, SCRFocusManager, SCRGuide, SCRSiriObserver, SCRSpeechAttributeGuide, SCRSystemKeyManager, SCRVisualsManager, SCRWorkspaceApplication;
 
 @interface SCRWorkspace : NSObject <SCRCUserDefaultsDiskArbDelegate>
 {
@@ -87,6 +87,7 @@
     unsigned int __sleepAssertionID;
     SCRSpeechAttributeGuide *_speechAttributeGuide;
     SCRDFRManager *_dfrManager;
+    SCRFocusManager *_focusManager;
     NSDate *_lastFocusTimestamp;
     SCRDFRFocusManager *__dfrFocusManager;
     double __lastWorkspaceSummaryTime;
@@ -123,6 +124,7 @@
 @property(retain, nonatomic) SCRDFRFocusManager *_dfrFocusManager; // @synthesize _dfrFocusManager=__dfrFocusManager;
 @property(retain, nonatomic) NSDate *lastFocusTimestamp; // @synthesize lastFocusTimestamp=_lastFocusTimestamp;
 @property(nonatomic) BOOL isScreenCurtainEnabled; // @synthesize isScreenCurtainEnabled=_isScreenCurtainEnabled;
+@property(retain, nonatomic) SCRFocusManager *focusManager; // @synthesize focusManager=_focusManager;
 @property(retain, nonatomic) SCRDFRManager *dfrManager; // @synthesize dfrManager=_dfrManager;
 @property(nonatomic, setter=setLoggedIn:) BOOL isLoggedIn; // @synthesize isLoggedIn=_isLoggedIn;
 @property(nonatomic, setter=setKeyboardHelpEnabled:) BOOL isKeyboardHelpEnabled; // @synthesize isKeyboardHelpEnabled=_isKeyboardHelpEnabled;

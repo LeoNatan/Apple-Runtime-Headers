@@ -17,13 +17,11 @@
 @property(copy, nonatomic) NSString *bundleIdentifier; // @dynamic bundleIdentifier;
 
 // Remaining properties
-@property(retain, nonatomic) NSSet *aggregateUsages; // @dynamic aggregateUsages;
 @property(copy, nonatomic) NSURL *artworkURL60; // @dynamic artworkURL60;
 @property(retain, nonatomic) RMCategory *category; // @dynamic category;
 @property(retain, nonatomic) NSSet *installedOnDevices; // @dynamic installedOnDevices;
 @property(copy, nonatomic) NSString *name; // @dynamic name;
 @property(copy, nonatomic) NSString *nameLanguageCode; // @dynamic nameLanguageCode;
-@property(retain, nonatomic) NSSet *usages; // @dynamic usages;
 
 @end
 

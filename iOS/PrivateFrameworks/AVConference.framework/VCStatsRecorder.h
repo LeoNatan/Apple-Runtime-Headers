@@ -10,7 +10,7 @@ __attribute__((visibility("hidden")))
 @interface VCStatsRecorder : NSObject
 {
     struct _opaque_pthread_rwlock_t _stateRWLock;
-    CDStruct_b5e1e8f2 _localStats[64];
+    CDStruct_b5e1e8f2 _localStats[128];
     unsigned short _currentLocalStatsIndex;
     unsigned int _uplinkServerStatsByteUsed;
 }

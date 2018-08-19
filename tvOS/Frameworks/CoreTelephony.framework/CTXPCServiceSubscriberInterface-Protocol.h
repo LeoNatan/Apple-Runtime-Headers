@@ -14,6 +14,7 @@
 - (void)setLabel:(CTXPCServiceSubscriptionContext *)arg1 label:(NSString *)arg2 completion:(void (^)(NSError *))arg3;
 - (void)generateUICCAuthenticationInfo:(CTXPCServiceSubscriptionContext *)arg1 authParams:(NSDictionary *)arg2 completion:(void (^)(NSDictionary *, NSError *))arg3;
 - (void)copyLabel:(CTXPCServiceSubscriptionContext *)arg1 completion:(void (^)(NSString *, NSError *))arg2;
+- (void)getShortLabel:(CTXPCServiceSubscriptionContext *)arg1 completion:(void (^)(NSString *, NSError *))arg2;
 - (void)getSimLabel:(CTXPCServiceSubscriptionContext *)arg1 completion:(void (^)(CTSimLabel *, NSError *))arg2;
 - (void)getRemainingPUKAttemptCount:(CTXPCServiceSubscriptionContext *)arg1 completion:(void (^)(NSNumber *, NSError *))arg2;
 - (void)getRemainingPINAttemptCount:(CTXPCServiceSubscriptionContext *)arg1 completion:(void (^)(NSNumber *, NSError *))arg2;

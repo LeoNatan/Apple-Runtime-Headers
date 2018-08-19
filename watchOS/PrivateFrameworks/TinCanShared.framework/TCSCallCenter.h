@@ -28,10 +28,12 @@
 - (void)disconnectCall:(id)arg1;
 - (void)setUplinkMuted:(_Bool)arg1 for:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)applicationWillEnterForeground;
+- (void)queryIsTinCannable:(id)arg1;
 - (void)sessionViewControllerViewDidAppear;
 - (id)endingCall;
 - (id)currentCall;
 - (id)activeCall;
+- (void)synchronouslyFetchCall;
 - (id)_callPassingPredicate:(CDUnknownBlockType)arg1;
 - (_Bool)hasValidConnection;
 - (void)invalidate;

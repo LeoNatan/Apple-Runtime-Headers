@@ -21,7 +21,7 @@
 - (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long servicePriority;
 - (_Bool)canLoadImageDataForImage:(id)arg1;
-- (void)loadImageDataFromImage:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)loadDataImageFromImage:(id)arg1 usingPortableImageLoader:(id)arg2 scaledSize:(CDStruct_c3b9c2ee)arg3 accessSpecifier:(id)arg4 completion:(CDUnknownBlockType)arg5;
 @property(readonly, nonatomic) NSString *serviceIdentifier;
 - (_Bool)loadImage:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)dealloc;

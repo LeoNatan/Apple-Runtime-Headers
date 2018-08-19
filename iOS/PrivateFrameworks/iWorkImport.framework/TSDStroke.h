@@ -61,6 +61,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)canApplyToCAShapeLayer;
 - (void)applyToRepCALayer:(id)arg1 withScale:(double)arg2;
 - (_Bool)canApplyDirectlyToRepCALayer;
+- (_Bool)requiresOutlineOnBackgroundWithAppearance:(unsigned long long)arg1;
 @property(readonly, nonatomic) _Bool isNearlyWhite;
 @property(readonly, nonatomic) _Bool isFrame;
 @property(readonly, nonatomic) double suggestedMinimumLineWidth;
@@ -69,7 +70,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) _Bool supportsWidth;
 @property(readonly, nonatomic) _Bool supportsPattern;
 - (void)drawSwatchInRect:(struct CGRect)arg1 inContext:(struct CGContext *)arg2;
-@property(readonly, nonatomic) double i_verticalOffsetForSwatch;
 - (double)horizontalMarginForSwatch;
 - (id)pathForLineEnd:(id)arg1 wrapPath:(_Bool)arg2 atPoint:(struct CGPoint)arg3 atAngle:(double)arg4 withScale:(double)arg5;
 - (struct CGRect)boundsForLineEnd:(id)arg1 atPoint:(struct CGPoint)arg2 atAngle:(double)arg3 withScale:(double)arg4 transform:(struct CGAffineTransform)arg5;

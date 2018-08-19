@@ -27,6 +27,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) EQKitBox *box; // @synthesize box=mBox;
 @property(readonly, copy) NSString *description;
 - (void)renderIntoContext:(struct CGContext *)arg1 offset:(struct CGPoint)arg2;
+- (void)setFontSmoothingBackgroundColor:(struct CGColor *)arg1;
 - (struct CGSize)naturalSize;
 - (struct CGRect)erasableBounds;
 - (double)naturalAlignmentOffset;

@@ -22,6 +22,7 @@ __attribute__((visibility("hidden")))
     NSMapTable *_textureToStageIndexMap;
     NSMapTable *_flattenKeyToFlattenedTextureMap;
     long long _textureZOrder;
+    NSMapTable *_origBoundingRectForStageMap;
     _Bool _isBackground;
     _Bool _isBaked;
     _Bool _isFlippedHorizontally;
@@ -68,6 +69,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) CALayer *alternateLayer; // @synthesize alternateLayer=_alternateLayer;
 @property(readonly, nonatomic) NSArray *allTextures; // @synthesize allTextures=_allTextures;
 - (void).cxx_destruct;
+- (void)drawFrameAtLayerTime:(double)arg1 context:(id)arg2;
 - (id)description;
 - (id)viewLayerAtEventIndex:(unsigned long long)arg1;
 - (void)removeAllPerspectiveLayers;
@@ -99,6 +101,8 @@ __attribute__((visibility("hidden")))
 - (id)firstVisibleTextureForTextureType:(long long)arg1;
 - (void)removeRenderable:(id)arg1;
 - (_Bool)hasTexture:(id)arg1 beenFlattenedForKey:(id)arg2;
+- (id)p_insertNewFlattenedTextureWithArray:(id)arg1 rect:(struct CGRect)arg2 stage:(long long)arg3 insertAfter:(id)arg4 flattenKey:(id)arg5;
+- (id)visibleTexturesBeforeStage:(long long)arg1 isBuildIn:(_Bool)arg2 isContentBuild:(_Bool)arg3 shouldFlatten:(_Bool)arg4 flattenKey:(id)arg5;
 - (id)visibleTexturesForStage:(long long)arg1 isBuildIn:(_Bool)arg2 isContentBuild:(_Bool)arg3 shouldFlatten:(_Bool)arg4 flattenKey:(id)arg5;
 @property(readonly, nonatomic) NSArray *visibleTextures;
 - (void)renderLayerContentsIfNeeded;

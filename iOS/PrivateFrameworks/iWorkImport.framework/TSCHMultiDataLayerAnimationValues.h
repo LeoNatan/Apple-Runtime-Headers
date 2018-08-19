@@ -26,8 +26,8 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) NSArray *values; // @synthesize values=mValues;
 @property(readonly, nonatomic) NSString *key; // @synthesize key=mKey;
 @property(readonly, nonatomic) CALayer *layer; // @synthesize layer=mLayer;
+- (void).cxx_destruct;
 - (id)description;
-- (void)dealloc;
 - (id)initWithLayer:(id)arg1 key:(id)arg2 values:(id)arg3 keyTimes:(id)arg4 needPresentationLayerValues:(_Bool)arg5;
 
 @end

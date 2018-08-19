@@ -51,6 +51,7 @@ __attribute__((visibility("hidden")))
 + (float)overlapHeight;
 + (float)predictionViewWidthForOrientation:(int)arg1;
 + (float)predictionViewHeightPaddingForOrientation:(int)arg1;
++ (float)predictionViewHeightForScreenTraits:(id)arg1 orientation:(int)arg2;
 + (float)predictionViewHeightForState:(int)arg1 orientation:(int)arg2;
 + (float)predictionCellHeightForOrientation:(int)arg1;
 + (unsigned int)numberOfCandidates;

@@ -40,6 +40,8 @@
 - (id)_filePathForToneIdentifier:(id)arg1 isValid:(char *)arg2;
 - (id)filePathForToneIdentifier:(id)arg1;
 - (id)_soundForToneIdentifier:(id)arg1;
+- (BOOL)hasSpecificDefaultToneIdentifierForAlertType:(long long)arg1 topic:(id)arg2;
+- (id)_defaultPreferablyNonSilentToneIdentifierForAlertType:(long long)arg1 topic:(id)arg2;
 - (id)_defaultRingtonePath;
 - (id)_defaultRingtoneName;
 - (id)defaultRingtoneIdentifier;

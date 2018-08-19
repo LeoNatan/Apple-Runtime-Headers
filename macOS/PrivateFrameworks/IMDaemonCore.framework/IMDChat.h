@@ -67,6 +67,7 @@
 - (int)getNumberOfTimesRespondedToThread;
 - (BOOL)isSMSSpam;
 - (void)updateSMSSpamExtensionNameChatProperty:(id)arg1;
+- (void)updateShouldForceToSMS:(BOOL)arg1;
 - (void)updateIsSMSSpamChatProperty:(BOOL)arg1;
 - (void)updateNumberOfTimesRespondedToThread;
 - (void)updateIsFiltered:(BOOL)arg1;

@@ -19,7 +19,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) NSArray *allRepsContainedInGroup;
 - (void)updateFromLayout;
 - (struct CGRect)frameInUnscaledCanvas;
-- (void)recursivelyDrawInContext:(struct CGContext *)arg1;
+- (void)recursivelyDrawInContext:(struct CGContext *)arg1 keepingChildrenPassingTest:(CDUnknownBlockType)arg2;
 - (struct CGRect)clipRect;
 - (void)drawInContext:(struct CGContext *)arg1;
 - (id)p_groupInfo;

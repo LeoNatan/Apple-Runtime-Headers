@@ -8,7 +8,7 @@
 
 #import "PLNotificationUNCenterDelegate.h"
 
-@class NSObject<OS_dispatch_queue>, NSString, PLNotificationUNCenter;
+@class NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString, PLNotificationUNCenter;
 
 @interface PLNotificationManager : NSObject <PLNotificationUNCenterDelegate>
 {
@@ -17,6 +17,7 @@
     void *_addressBook;
     int _alertFiltrationEnabled;
     NSObject<OS_dispatch_queue> *_isolationQueue;
+    NSMutableDictionary *_waitingAssetsAddNotifications;
     PLNotificationUNCenter *_UNCenter;
 }
 
@@ -34,8 +35,12 @@
 - (void)reportAsJunkPhotoStreamInvitationForAlbumWithCloudGUID:(id)arg1;
 - (void)sendResponse:(_Bool)arg1 toPhotoStreamInvitationForAlbumWithCloudGUID:(id)arg2;
 - (void)discardAllNotifications;
+- (void)_updateImageDataForNotification:(id)arg1;
 - (void)getThumbnailImageDataAssetUUID:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)triggerNotificationThumbnailUpdateForAsset:(id)arg1;
+- (void)_removeWaitingNotificationForPhotosBatchID:(id)arg1;
+- (id)_waitingNotificationForPhotosBatchID:(id)arg1;
+- (id)_addWaitingNotification:(id)arg1 forPhotosBatchID:(id)arg2;
 - (void)calculateCurrentBadgeCountWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (unsigned int)_appBadgeCount;
 - (unsigned int)currentAppBadgeCountForNotificationUNCenter:(id)arg1;

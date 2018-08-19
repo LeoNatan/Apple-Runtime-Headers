@@ -6,18 +6,19 @@
 
 #import <PhotosUICore/PXAssetActionManager.h>
 
-@class NSMutableDictionary;
+@class NSMutableDictionary, PXCMMPhotoKitImportStatusManager;
 
 @interface PXCMMAssetActionManager : PXAssetActionManager
 {
     NSMutableDictionary *_performerClassByType;
+    PXCMMPhotoKitImportStatusManager *_importStatusManager;
 }
 
 - (void).cxx_destruct;
 - (id)actionPerformerForActionType:(id)arg1;
 - (_Bool)shouldEnableActionType:(id)arg1 onAsset:(id)arg2;
 - (_Bool)canPerformActionType:(id)arg1;
-- (id)initWithSelectionManager:(id)arg1 allowsSelection:(_Bool)arg2 allowsAddToLibrary:(_Bool)arg3;
+- (id)initWithSelectionManager:(id)arg1 importStatusManager:(id)arg2 allowsSelection:(_Bool)arg3;
 
 @end
 

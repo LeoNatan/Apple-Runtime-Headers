@@ -13,6 +13,7 @@
     unsigned char _ob_slop[1];
     _Bool _fancy;
     int _fd;
+    _Bool _vis;
     unsigned char _colorMode;
     unsigned short _cur_attrs;
 }

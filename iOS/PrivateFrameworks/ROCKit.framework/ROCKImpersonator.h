@@ -6,12 +6,12 @@
 
 #import "NSObject.h"
 
-#import "ROCKImpersonateable.h"
+#import "ROCKImpersonatable.h"
 
 @class NSString;
 
 __attribute__((visibility("hidden")))
-@interface ROCKImpersonator : NSObject <ROCKImpersonateable>
+@interface ROCKImpersonator : NSObject <ROCKImpersonatable>
 {
 }
 

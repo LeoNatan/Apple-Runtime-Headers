@@ -8,33 +8,26 @@
 
 #import "TSWPTextWrap.h"
 
-@class NSTimer, TPDocumentRoot;
+@class TPDocumentRoot;
 
 __attribute__((visibility("hidden")))
 @interface TPTextWrapController : NSObject <TSWPTextWrap>
 {
-    TPDocumentRoot *_documentRoot;
     struct CGAffineTransform _canvasSpaceToWrapSpace;
     struct CGAffineTransform _wrapSpaceToCanvasSpace;
-    _Bool _wrapAnimationEnabled;
-    NSTimer *_wrapAnimationTimer;
+    TPDocumentRoot *_documentRoot;
 }
 
-+ (struct CGPoint)p_baseWrappablePoint;
+@property(readonly, nonatomic) __weak TPDocumentRoot *documentRoot; // @synthesize documentRoot=_documentRoot;
 - (void).cxx_destruct;
 - (unsigned int)p_splitLine:(struct CGRect)arg1 lineSegmentRects:(struct CGRect [128])arg2 wrappable:(id)arg3 cookie:(id)arg4 skipHint:(double *)arg5;
-- (void)stopAnimation;
-- (void)toggleWrapAnimation;
 - (_Bool)p_shouldTextFlowAroundWrappable:(id)arg1 inTarget:(id)arg2 inColumn:(id)arg3;
-- (void)p_animateWrap;
-- (void)p_setWrapAnimationPhase:(double)arg1;
 - (_Bool)checkForUnobstructedSpan:(struct CGRect)arg1 wrappableAttachments:(id)arg2 userInfo:(id)arg3;
 - (double)nextUnobstructedSpanStartingAt:(struct CGRect)arg1 wrappableAttachments:(id)arg2 userInfo:(id)arg3;
 - (id)p_wrapDrawables:(id)arg1 userInfo:(id)arg2;
 - (unsigned int)splitLine:(struct CGRect)arg1 lineSegmentRects:(out struct CGRect [128])arg2 wrappableAttachments:(id)arg3 ignoreFloatingGraphics:(_Bool)arg4 canvasCausedWrap:(out _Bool *)arg5 skipHint:(out double *)arg6 userInfo:(id)arg7;
 - (id)p_groupInfoContainingWrappable:(id)arg1;
 - (id)beginWrappingToColumn:(id)arg1 target:(id)arg2 hasWrapables:(_Bool *)arg3;
-- (void)dealloc;
 - (id)initWithDocumentRoot:(id)arg1;
 
 @end

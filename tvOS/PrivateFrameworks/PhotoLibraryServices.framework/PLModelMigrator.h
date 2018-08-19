@@ -18,6 +18,7 @@
     NSDictionary *_syncedPropertiesByUUID;
 }
 
++ (_Bool)_resetAnalysisStateForVideosInStore:(id)arg1;
 + (_Bool)_deleteVideoThumbsMadeFromPreferredFrameInStore:(id)arg1;
 + (_Bool)_filterSceneClassificationsInStore:(id)arg1;
 + (_Bool)_ensureAllUserVerifiedPersonsHaveFaceCropsInStore:(id)arg1;
@@ -307,6 +308,7 @@
 + (void)_recipeAndDerivativeStateFromCPLResourceType:(unsigned long long)arg1 fromAdjustedSet:(_Bool)arg2 assetType:(short)arg3 recipeID:(unsigned int *)arg4;
 + (_Bool)_isPenultimateVersionFromCPLType:(unsigned long long)arg1;
 + (unsigned int)_recipeIDFromCPLResourceType:(unsigned long long)arg1 assetType:(short)arg2 fromAdjustedSet:(_Bool)arg3;
++ (_Bool)resetAnalysisStateForVideosWithMoc:(id)arg1;
 + (_Bool)markUserConfirmedFacesAndCorrespondingFaceAnalysisStatesDirtyInStore:(id)arg1;
 + (_Bool)markAllDirtyFaceAnalysisStatesWithFaceDetectionWorkerFlagsInStore:(id)arg1;
 + (_Bool)resetRejectedFacesOnAllPersonsInStore:(id)arg1;

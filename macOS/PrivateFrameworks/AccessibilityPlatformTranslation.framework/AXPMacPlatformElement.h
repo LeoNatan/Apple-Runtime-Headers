@@ -34,6 +34,7 @@
 - (void)accessibilityPerformAction:(id)arg1;
 - (void)performDecrementAction;
 - (void)performIncrementAction;
+- (BOOL)performEscapeAction;
 - (void)performScrollToVisible;
 - (void)_synthesizeMouseClickAtElementCenter;
 - (id)_convertTranslatorResponse:(id)arg1 forAttribute:(unsigned long long)arg2;
@@ -44,7 +45,11 @@
 - (id)_accessibilityProcessAttribute:(id)arg1 parameter:(id)arg2;
 - (id)_accessibilityProcessAttribute:(id)arg1;
 - (id)_accessibilityProcessImmediateAttributeResult:(id)arg1;
+- (id)_accessibilityTranslationRootParent;
 - (id)accessibilityAttributeValue:(id)arg1;
+- (void)setAccessibilityValue:(id)arg1;
+- (id)accessibilityValue;
+- (id)accessibilityTitle;
 - (id)accessibilityParent;
 - (struct CGRect)accessibilityFrame;
 - (struct CGPoint)accessibilityActivationPoint;

@@ -229,7 +229,7 @@
 - (id)_itemWithUpdatedCalendarForItem:(id)arg1;
 - (id)_itemWithIdentifier:(id)arg1 options:(long long)arg2;
 - (id)_itemWithIdentifier:(id)arg1;
-- (void)_repopulateCacheWithIdentifier:(id)arg1;
+- (id)_fetchAndRepopulateCacheWithIdentifier:(id)arg1;
 - (id)_itemsWithExternalIdentifier:(id)arg1;
 - (id)_lookupItemsWithExternalIdentifier:(id)arg1 type:(unsigned long long)arg2;
 - (id)_lookupItemsWithIdentifiers:(id)arg1 type:(unsigned long long)arg2;
@@ -238,6 +238,7 @@
 - (id)_apiExpectedEventForEvent:(id)arg1;
 - (id)itemsWithExternalIdentifier:(id)arg1 ofType:(unsigned long long)arg2;
 - (id)itemsWithIdentifiers:(id)arg1 apiExpected:(BOOL)arg2;
+- (id)itemWithIdentifier:(id)arg1 apiExpected:(BOOL)arg2;
 - (id)itemWithIdentifier:(id)arg1;
 - (id)_remindersWithIsCompleted:(BOOL)arg1 maxResults:(unsigned long long)arg2 withCalendarIdentifiers:(id)arg3;
 - (id)_remindersWithContactIdentifier:(id)arg1;

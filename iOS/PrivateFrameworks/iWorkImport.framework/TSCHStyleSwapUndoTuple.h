@@ -28,6 +28,7 @@ __attribute__((visibility("hidden")))
 @property(readonly) TSSStyle *afterValue; // @synthesize afterValue=mNewValue;
 @property(readonly) TSSStyle *beforeValue; // @synthesize beforeValue=mOldValue;
 @property(readonly, retain, nonatomic) TSPObject<TSCHStyleSwapSupporting> *styleSwapSupporting; // @synthesize styleSwapSupporting=mStyleSwapSupporting;
+- (void).cxx_destruct;
 - (id)convertedSwapTupleForChartInfo:(id)arg1;
 - (id)migratedSwapTupleForDocumentRoot:(id)arg1;
 - (id)migratedStyleForStyle:(id)arg1 documentRoot:(id)arg2;
@@ -46,7 +47,6 @@ __attribute__((visibility("hidden")))
 - (_Bool)isSwappingSameStyleObject:(id)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (id)inverse;
-- (void)dealloc;
 - (id)initFromSOSWithSwapType:(int)arg1 index:(unsigned long long)arg2 oldValue:(id)arg3 newValue:(id)arg4 refLineUUID:(id)arg5;
 - (id)initWithChartStylePreset:(id)arg1 swapType:(int)arg2 index:(unsigned long long)arg3 oldValue:(id)arg4 newValue:(id)arg5;
 - (id)initWithChartInfo:(id)arg1 swapType:(int)arg2 index:(unsigned long long)arg3 oldValue:(id)arg4 newValue:(id)arg5;

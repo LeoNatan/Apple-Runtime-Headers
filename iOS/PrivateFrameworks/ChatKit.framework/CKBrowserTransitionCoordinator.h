@@ -23,6 +23,7 @@
     UIViewController<CKBrowserViewControllerProtocol> *_currentBrowser;
     UIWindow *_appWindow;
     UIWindow *_previousKeyWindow;
+    UIWindow *_preModalKeyWindow;
     long long _lastTransitionReason;
     UIWindow *_modalAppWindow;
     UINavigationController *_presentedModalBrowserNavigationController;
@@ -35,6 +36,7 @@
 @property(retain, nonatomic) UIWindow *modalAppWindow; // @synthesize modalAppWindow=_modalAppWindow;
 @property(nonatomic) long long lastTransitionReason; // @synthesize lastTransitionReason=_lastTransitionReason;
 @property(nonatomic) struct CGRect cachedCompactFrame; // @synthesize cachedCompactFrame=_cachedCompactFrame;
+@property(nonatomic) __weak UIWindow *preModalKeyWindow; // @synthesize preModalKeyWindow=_preModalKeyWindow;
 @property(nonatomic) __weak UIWindow *previousKeyWindow; // @synthesize previousKeyWindow=_previousKeyWindow;
 @property(retain, nonatomic) UIWindow *appWindow; // @synthesize appWindow=_appWindow;
 @property(retain, nonatomic) UIViewController<CKBrowserViewControllerProtocol> *currentBrowser; // @synthesize currentBrowser=_currentBrowser;

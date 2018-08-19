@@ -23,13 +23,13 @@ __attribute__((visibility("hidden")))
 + (id)styleOwnerPathForSemanticTag:(id)arg1 ofChart:(id)arg2;
 + (unsigned char)styleOwnerPathTypeForStyleOwner:(id)arg1;
 @property(readonly, nonatomic) NSArray *uuids; // @synthesize uuids=mUuids;
+- (void).cxx_destruct;
 - (id)pathByPrefixingWithUUIDs:(id)arg1;
 - (id)TSUUUIDPath;
 - (void)didInitFromSOS;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (void)dealloc;
 - (id)initWithUUIDs:(id)arg1;
 - (void)saveToArchive:(struct StyleOwnerPath *)arg1 archiver:(id)arg2;
 - (id)initWithArchive:(const struct StyleOwnerPath *)arg1 unarchiver:(id)arg2;

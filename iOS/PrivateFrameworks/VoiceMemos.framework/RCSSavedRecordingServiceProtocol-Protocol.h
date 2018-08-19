@@ -6,7 +6,7 @@
 
 #import "NSObject.h"
 
-@class NSArray, NSDate, NSString, NSURL, RCSSavedRecordingAccessToken;
+@class AVAudioPCMBuffer, NSArray, NSDate, NSDictionary, NSString, NSURL, RCSSavedRecordingAccessToken;
 
 @protocol RCSSavedRecordingServiceProtocol <NSObject>
 - (oneway void)updateSearchMetadataWithRecordingURIsToInsert:(NSArray *)arg1 recordingURIsToUpdate:(NSArray *)arg2 recordingURIsToDelete:(NSArray *)arg3 completionBlock:(void (^)(NSError *))arg4;
@@ -24,6 +24,9 @@
 - (oneway void)prepareToTrimCompositionAVURL:(NSURL *)arg1 accessRequestHandler:(void (^)(RCSSavedRecordingAccessToken *, NSError *))arg2;
 - (oneway void)prepareToExportCompositionAVURL:(NSURL *)arg1 cacheWaveform:(_Bool)arg2 accessRequestHandler:(void (^)(RCSSavedRecordingAccessToken *, NSError *))arg3;
 - (oneway void)prepareToPreviewCompositionAVURL:(NSURL *)arg1 accessRequestHandler:(void (^)(RCSSavedRecordingAccessToken *, NSError *))arg2;
+- (oneway void)writeAudioFile:(NSURL *)arg1 buffer:(AVAudioPCMBuffer *)arg2 completionBlock:(void (^)(NSError *))arg3;
+- (oneway void)closeAudioFile:(RCSSavedRecordingAccessToken *)arg1 completionBlock:(void (^)(NSError *))arg2;
+- (oneway void)openAudioFile:(NSURL *)arg1 settings:(NSDictionary *)arg2 accessRequestHandler:(void (^)(RCSSavedRecordingAccessToken *, NSError *))arg3;
 - (oneway void)prepareToCaptureToCompositionAVURL:(NSURL *)arg1 accessRequestHandler:(void (^)(RCSSavedRecordingAccessToken *, NSError *))arg2;
 - (oneway void)expungeRecordingsFromCloud:(void (^)(NSNumber *, NSError *))arg1;
 - (oneway void)exportRecordingsToCloud:(void (^)(NSNumber *, NSError *))arg1;

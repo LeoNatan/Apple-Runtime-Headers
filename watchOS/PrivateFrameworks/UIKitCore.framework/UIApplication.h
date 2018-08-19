@@ -423,6 +423,7 @@
 - (void)_handleUserDefaultsDidChange:(id)arg1;
 - (void)batteryStatusDidChange:(id)arg1;
 - (void)significantTimeChange;
+- (void)_alertItemStateChanged;
 - (unsigned int)blockInteractionEventsCount;
 - (_Bool)ignoresInteractionEvents;
 - (void)setIgnoresInteractionEvents:(_Bool)arg1;
@@ -504,6 +505,7 @@
 - (void)_performSnapshotsWithAction:(id)arg1 forScene:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_handleSnapshotAction:(id)arg1 forScene:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_beginSnapshotSessionForScene:(id)arg1 withSnapshotBlock:(CDUnknownBlockType)arg2;
+- (id)_createSnapshotContextForSceneRemoval:(id)arg1 withName:(id)arg2;
 - (id)_createSnapshotContextForScene:(id)arg1 withName:(id)arg2 performLayoutWithSettings:(id)arg3;
 - (double)defaultImageSnapshotExpiration;
 - (_Bool)removeDefaultImage:(id)arg1 forScreen:(id)arg2;

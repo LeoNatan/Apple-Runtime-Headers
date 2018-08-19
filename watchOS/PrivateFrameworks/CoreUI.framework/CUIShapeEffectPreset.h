@@ -55,7 +55,7 @@
 - (id)layerEffectsRepresentation;
 - (id)CUIEffectDataRepresentation;
 - (unsigned int)_parameterCount;
-- (id)initWithConstantPreset:(const CDStruct_e75431af *)arg1;
+- (id)initWithConstantPreset:(const CDStruct_b5108d36 *)arg1;
 
 @end
 

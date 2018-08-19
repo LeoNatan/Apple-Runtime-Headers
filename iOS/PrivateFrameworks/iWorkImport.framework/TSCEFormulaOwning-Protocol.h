@@ -6,13 +6,14 @@
 
 #import "NSObject.h"
 
-@class TSCECalculationEngine, TSCEFormulaRewriteSpec;
+@class TSCECalculationEngine;
 
 @protocol TSCEFormulaOwning <NSObject>
-- (void)beginRewriteForCalculationEngine:(TSCECalculationEngine *)arg1 spec:(TSCEFormulaRewriteSpec *)arg2;
-- (void)rewriteForCalculationEngine:(TSCECalculationEngine *)arg1 formulaID:(CDStruct_ed6d627d)arg2 rewriteSpec:(TSCEFormulaRewriteSpec *)arg3;
-- (void)invalidateForCalculationEngine:(TSCECalculationEngine *)arg1;
-- (void)writeResultsForCalculationEngine:(TSCECalculationEngine *)arg1;
-- (CDStruct_2a4d9400)recalculateForCalculationEngine:(TSCECalculationEngine *)arg1 formulaID:(CDStruct_ed6d627d)arg2 isInCycle:(_Bool)arg3 hasCalculatedPrecedents:(_Bool)arg4;
+- (UUIDData_5fbc143e)ownerUID;
+- (void)invalidateForCalcEngine:(TSCECalculationEngine *)arg1;
+- (void)writeResultsForCalcEngine:(TSCECalculationEngine *)arg1;
+- (CDStruct_2a4d9400)recalculateForCalcEngine:(TSCECalculationEngine *)arg1 atFormulaCoord:(struct TSUCellCoord)arg2 recalcOptions:(CDStruct_3d581f42)arg3;
+- (id <TSCEReferenceResolving>)linkedResolver;
+- (int)ownerKind;
 @end
 

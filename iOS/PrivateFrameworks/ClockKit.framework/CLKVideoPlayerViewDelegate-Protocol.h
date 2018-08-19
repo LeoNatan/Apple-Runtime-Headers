@@ -14,6 +14,7 @@
 - (void)videoPlayerViewDidBeginPlaying:(CLKVideoPlayerView *)arg1;
 
 @optional
+- (void)videoPlayerView:(CLKVideoPlayerView *)arg1 didFinishPrerolling:(_Bool)arg2;
 - (void)videoPlayerViewWillBeginPlaying:(CLKVideoPlayerView *)arg1;
 @end
 

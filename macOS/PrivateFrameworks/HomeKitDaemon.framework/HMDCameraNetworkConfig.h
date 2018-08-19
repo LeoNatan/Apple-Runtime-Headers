@@ -12,19 +12,20 @@
 
 @interface HMDCameraNetworkConfig : HMFObject <NSCopying>
 {
+    CDUnion_fab80606 _ipv4SockAddress;
+    CDUnion_fab80606 _ipv6SockAddress;
     BOOL _ipv6;
     NSString *_ipAddress;
     NSNumber *_rtpPort;
 }
 
++ (id)localIPAddress;
 @property(retain, nonatomic) NSNumber *rtpPort; // @synthesize rtpPort=_rtpPort;
 @property(nonatomic) BOOL ipv6; // @synthesize ipv6=_ipv6;
 @property(retain, nonatomic) NSString *ipAddress; // @synthesize ipAddress=_ipAddress;
 - (void).cxx_destruct;
-- (BOOL)getSockAddr:(CDUnion_4a4a8072 *)arg1;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (id)initWithAddress:(id)arg1 rtpPort:(id)arg2;
 - (id)initWithAddress:(id)arg1 ipv6:(BOOL)arg2 rtpPort:(id)arg3;
 - (id)init;
 

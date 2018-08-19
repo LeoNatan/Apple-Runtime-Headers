@@ -6,7 +6,7 @@
 
 #import <PhotosUI/PUFeedCell.h>
 
-@class AVPlayerItem, ISWrappedAVPlayer, PUImageViewExtraction, PXRoundedCornerOverlayView, PXUIAssetBadgeView, PXVideoPlayerView, UIButton, UIImage, UIImageView, UIView<PXVideoOverlayButton>;
+@class AVPlayerItem, ISWrappedAVAudioSession, ISWrappedAVPlayer, PUImageViewExtraction, PXRoundedCornerOverlayView, PXUIAssetBadgeView, PXVideoPlayerView, UIButton, UIImage, UIImageView, UIView<PXVideoOverlayButton>;
 
 __attribute__((visibility("hidden")))
 @interface PUFeedImageCell : PUFeedCell
@@ -27,6 +27,7 @@ __attribute__((visibility("hidden")))
     double _cornerRadius;
     PXVideoPlayerView *_videoPlayerView;
     ISWrappedAVPlayer *_videoPlayer;
+    ISWrappedAVAudioSession *_audioSession;
     UIImageView *__imageView;
     long long __imageTag;
     UIView<PXVideoOverlayButton> *__overlayPlayButton;
@@ -61,6 +62,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic, setter=_setImageFrame:) struct CGRect _imageFrame; // @synthesize _imageFrame=__imageFrame;
 @property(nonatomic, setter=_setImageTag:) long long _imageTag; // @synthesize _imageTag=__imageTag;
 @property(retain, nonatomic, setter=_setImageView:) UIImageView *_imageView; // @synthesize _imageView=__imageView;
+@property(readonly, nonatomic) ISWrappedAVAudioSession *audioSession; // @synthesize audioSession=_audioSession;
 @property(readonly, nonatomic) ISWrappedAVPlayer *videoPlayer; // @synthesize videoPlayer=_videoPlayer;
 @property(readonly, nonatomic) PXVideoPlayerView *videoPlayerView; // @synthesize videoPlayerView=_videoPlayerView;
 @property(nonatomic) double cornerRadius; // @synthesize cornerRadius=_cornerRadius;
@@ -85,6 +87,8 @@ __attribute__((visibility("hidden")))
 - (void)layoutSubviews;
 - (void)_layoutImageView;
 - (void)_updateVideoViewContentMode;
+- (void)_updateVideoPlayerContents;
+- (void)setAudioSession:(id)arg1;
 - (void)setImage:(id)arg1 withTag:(long long)arg2;
 - (void)setParallaxOffset:(struct CGPoint)arg1;
 - (void)prepareForReuse;

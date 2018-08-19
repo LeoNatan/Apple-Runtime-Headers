@@ -55,7 +55,7 @@
 - (id)init;
 - (id)deviceForSenderContext:(id)arg1;
 - (id)accountForSenderContext:(id)arg1;
-- (void)__handleSendMessageFailureWithError:(id)arg1 handle:(id)arg2;
+- (void)__handleSendMessageFailureWithError:(id)arg1 destination:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

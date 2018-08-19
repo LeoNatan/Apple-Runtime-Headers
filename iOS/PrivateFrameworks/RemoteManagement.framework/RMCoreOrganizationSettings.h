@@ -16,10 +16,9 @@
 
 + (id)fetchOrCreateWithDictionaryRepresentation:(id)arg1 inContext:(id)arg2 error:(id *)arg3;
 + (id)fetchResultsRequestsForChangesToOrganizationSettingsForUserWithDSID:(id)arg1;
-+ (id)fetchResultsRequestsForChangesToOrganizationSettingsForLocalUser;
 - (void)_changeAppLimitsFromAskToWarn:(id)arg1;
 - (id)dictionaryRepresentation;
-- (void)updateWithDictionaryRepresentation:(id)arg1;
+- (_Bool)updateWithDictionaryRepresentation:(id)arg1;
 - (void)delete;
 
 // Remaining properties

@@ -72,6 +72,7 @@
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLoad;
 - (void)loadView;
+- (void)expandedModuleDidChangeSizeWithIdentifier:(id)arg1;
 - (_Bool)isModuleExpandedForIdentifier:(id)arg1;
 - (void)dismissPresentedContentAnimated:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)dismissExpandedModuleAnimated:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;

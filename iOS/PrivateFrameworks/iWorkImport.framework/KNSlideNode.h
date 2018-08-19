@@ -81,6 +81,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic, getter=isHidden) _Bool hidden;
 @property(retain, nonatomic) KNAbstractSlide *slide;
 @property(readonly, nonatomic) KNAbstractSlide *slideIfLoaded;
+- (id)slideAndReturnError:(id *)arg1;
 - (id)childEnumerator;
 - (id)p_getSlideSpecificMappingForStorage:(id)arg1 forSlideNode:(id)arg2;
 - (void)removeSlideSpecificMappingsFromDrawablesInGroup:(id)arg1;

@@ -18,7 +18,7 @@
 + (id)bundleIdentifiersInstalledForDSID:(id)arg1 inContext:(id)arg2 error:(id *)arg3;
 + (id)createOrReturnInstalledAppWithBundleIdentifier:(id)arg1 userDeviceState:(id)arg2 inContext:(id)arg3 error:(id *)arg4;
 - (void)delete;
-- (void)updateWithDictionaryRepresentation:(id)arg1;
+- (BOOL)updateWithDictionaryRepresentation:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)computeUniqueIdentifier;
 - (void)didChangeValueForKey:(id)arg1;

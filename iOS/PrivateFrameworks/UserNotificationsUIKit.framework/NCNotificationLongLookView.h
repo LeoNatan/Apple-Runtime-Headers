@@ -64,6 +64,7 @@
 @property(readonly, copy) NSString *description;
 @property(readonly, nonatomic) UIControl *dismissControl;
 @property(readonly, nonatomic) struct UIEdgeInsets dismissControlInsets;
+@property(nonatomic) long long dismissControlPosition;
 @property(nonatomic) _Bool hasShadow;
 @property(readonly) unsigned long long hash;
 @property(readonly, nonatomic) NSArray *iconButtons;

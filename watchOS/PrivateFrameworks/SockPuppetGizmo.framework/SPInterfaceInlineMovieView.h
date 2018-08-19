@@ -65,6 +65,7 @@
 - (void).cxx_destruct;
 - (void)layoutSubviews;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
+- (void)willDisappearForNotificationUI;
 - (_Bool)_readyForPlayback;
 - (void)_play;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;

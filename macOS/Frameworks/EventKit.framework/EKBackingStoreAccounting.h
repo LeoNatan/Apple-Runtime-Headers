@@ -87,6 +87,7 @@
 - (id)accountedForOccurrenceWithIdentifier:(id)arg1 queue:(id)arg2 lookupCachedBlock:(CDUnknownBlockType)arg3 fetchBlock:(CDUnknownBlockType)arg4 updateBlock:(CDUnknownBlockType)arg5;
 - (void)_accountForMultipleObjectsCheckBlock:(CDUnknownBlockType)arg1 lookupCachedBlock:(CDUnknownBlockType)arg2 fetchContainersBlock:(CDUnknownBlockType)arg3 fetchObjectsBlock:(CDUnknownBlockType)arg4 updateBlock:(CDUnknownBlockType)arg5 addReceiptBlock:(CDUnknownBlockType)arg6 queue:(id)arg7;
 - (void)_accountForObjectCheckBlock:(CDUnknownBlockType)arg1 lookupCachedBlock:(CDUnknownBlockType)arg2 fetchContainersBlock:(CDUnknownBlockType)arg3 fetchObjectsBlock:(CDUnknownBlockType)arg4 updateBlock:(CDUnknownBlockType)arg5 addReceiptBlock:(CDUnknownBlockType)arg6 queue:(id)arg7;
+- (void)clearAll;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)copyForBackingStore:(id)arg1;

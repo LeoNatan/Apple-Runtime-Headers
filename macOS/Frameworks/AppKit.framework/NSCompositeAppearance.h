@@ -21,7 +21,6 @@ __attribute__((visibility("hidden")))
 - (BOOL)_allowsSystemControlTintColors;
 - (BOOL)isEqual:(id)arg1;
 - (id)bestMatchFromAppearancesWithNames:(id)arg1;
-- (id)_temporaryCatalogForStatefulTextColorStyles;
 - (id)uniqueIdentifier;
 - (BOOL)_isFunctionRowAppearance;
 - (id)debugDescription;

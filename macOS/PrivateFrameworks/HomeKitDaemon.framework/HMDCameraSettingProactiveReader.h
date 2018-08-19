@@ -30,6 +30,7 @@
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
 @property(readonly, nonatomic) HMFMessage *message; // @synthesize message=_message;
 - (void).cxx_destruct;
+- (void)_callDidCompleteReadDelegateCallbackWithMessageHandled:(BOOL)arg1;
 - (void)_handleStreamStatusMultireadResponse:(id)arg1;
 - (void)readSetting;
 - (id)logIdentifier;

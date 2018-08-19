@@ -78,6 +78,7 @@
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)viewDidLoad;
 - (void)loadView;
+- (_Bool)canBeShownFromSuspendedState;
 - (id)initWithCoordinator:(id)arg1;
 
 // Remaining properties

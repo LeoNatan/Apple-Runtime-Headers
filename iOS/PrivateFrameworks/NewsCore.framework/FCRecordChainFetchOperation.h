@@ -19,6 +19,7 @@
     CDUnknownBlockType _dynamicCachePolicyBlock;
     FCEdgeCacheHint *_edgeCacheHint;
     NSArray *_additionalRecordSources;
+    CDUnknownBlockType _cachedRecordsLookupBlock;
     CDUnknownBlockType _recordChainCompletionHandler;
     NSArray *_recordSources;
     NSDictionary *_recordSourcesByRecordType;
@@ -39,6 +40,7 @@
 @property(retain, nonatomic) NSDictionary *recordSourcesByRecordType; // @synthesize recordSourcesByRecordType=_recordSourcesByRecordType;
 @property(retain, nonatomic) NSArray *recordSources; // @synthesize recordSources=_recordSources;
 @property(copy, nonatomic) CDUnknownBlockType recordChainCompletionHandler; // @synthesize recordChainCompletionHandler=_recordChainCompletionHandler;
+@property(copy, nonatomic) CDUnknownBlockType cachedRecordsLookupBlock; // @synthesize cachedRecordsLookupBlock=_cachedRecordsLookupBlock;
 @property(nonatomic) _Bool shouldBypassRecordSourcePersistence; // @synthesize shouldBypassRecordSourcePersistence=_shouldBypassRecordSourcePersistence;
 @property(retain, nonatomic) NSArray *additionalRecordSources; // @synthesize additionalRecordSources=_additionalRecordSources;
 @property(copy, nonatomic) FCEdgeCacheHint *edgeCacheHint; // @synthesize edgeCacheHint=_edgeCacheHint;

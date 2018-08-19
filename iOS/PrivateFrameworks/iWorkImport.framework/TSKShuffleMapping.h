@@ -11,37 +11,45 @@
 __attribute__((visibility("hidden")))
 @interface TSKShuffleMapping : NSObject <NSCopying>
 {
-    unsigned short mStartIndex;
-    unsigned short mEndIndex;
-    unsigned short *mMapping;
-    _Bool mIsVertical;
-    _Bool mIsMoveOperation;
-    unsigned short mFirstMovedIndex;
-    unsigned short mDestinationIndexForMove;
-    unsigned short mNumberOfIndicesMoved;
+    vector_12da65de _mapping;
+    _Bool _isMoveOperation;
+    _Bool _isVertical;
+    unsigned int _startIndex;
+    unsigned int _endIndex;
+    unsigned int _firstMovedIndex;
+    unsigned int _destinationIndexForMove;
+    unsigned int _numberOfIndexesMoved;
 }
 
-@property(readonly, nonatomic) unsigned short *mapping; // @synthesize mapping=mMapping;
-@property(readonly, nonatomic) unsigned short endIndex; // @synthesize endIndex=mEndIndex;
-@property(readonly, nonatomic) unsigned short startIndex; // @synthesize startIndex=mStartIndex;
-- (void)swapIndex:(unsigned short)arg1 withIndex:(unsigned short)arg2;
-- (void)remove:(unsigned short)arg1 indicesAtIndex:(unsigned short)arg2;
-- (void)insert:(unsigned short)arg1 indicesAtIndex:(unsigned short)arg2 insertingBefore:(_Bool)arg3;
+@property(nonatomic) unsigned int numberOfIndexesMoved; // @synthesize numberOfIndexesMoved=_numberOfIndexesMoved;
+@property(nonatomic) unsigned int destinationIndexForMove; // @synthesize destinationIndexForMove=_destinationIndexForMove;
+@property(nonatomic) unsigned int firstMovedIndex; // @synthesize firstMovedIndex=_firstMovedIndex;
+@property(nonatomic) _Bool isVertical; // @synthesize isVertical=_isVertical;
+@property(readonly, nonatomic) _Bool isMoveOperation; // @synthesize isMoveOperation=_isMoveOperation;
+@property(readonly, nonatomic) unsigned int endIndex; // @synthesize endIndex=_endIndex;
+@property(readonly, nonatomic) unsigned int startIndex; // @synthesize startIndex=_startIndex;
+@property(readonly, nonatomic) vector_12da65de *mapping; // @synthesize mapping=_mapping;
+- (id).cxx_construct;
+- (void).cxx_destruct;
+- (void)swapIndex:(unsigned int)arg1 withIndex:(unsigned int)arg2;
+- (void)remove:(unsigned int)arg1 IndexesAtIndex:(unsigned int)arg2;
+- (void)insert:(unsigned int)arg1 IndexesAtIndex:(unsigned int)arg2 insertingBefore:(_Bool)arg3;
+- (void)applyMappingToIndexSet:(id)arg1;
+- (void)enumerateMappingFollowingSwapsUsingBlock:(CDUnknownBlockType)arg1;
 - (void)enumerateMappingRange:(struct _NSRange)arg1 usingBlock:(CDUnknownBlockType)arg2;
 @property(readonly, nonatomic) _Bool isIdentityMapping;
 - (_Bool)isMove;
-- (_Bool)isVertical;
-- (unsigned short)reverseMapIndex:(unsigned short)arg1;
-- (unsigned short)mapIndex:(unsigned short)arg1;
+- (unsigned int)reverseMapIndex:(unsigned int)arg1;
+- (unsigned int)mapIndex:(unsigned int)arg1;
+- (id)sourceIndexes;
 - (id)copyInverse;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-@property(readonly, nonatomic) unsigned short mappingSize; // @dynamic mappingSize;
+@property(readonly, nonatomic) unsigned int mappingSize;
 - (void)saveToArchive:(struct ShuffleMappingArchive *)arg1;
 - (id)initWithArchive:(const struct ShuffleMappingArchive *)arg1;
-- (void)dealloc;
-- (id)initForMovedIndicesStartingAtIndex:(unsigned short)arg1 destinationIndex:(unsigned short)arg2 numberOfIndices:(unsigned short)arg3 vertical:(_Bool)arg4;
-- (id)initWithStartIndex:(unsigned short)arg1 endIndex:(unsigned short)arg2;
-- (id)initWithStartIndex:(unsigned short)arg1 endIndex:(unsigned short)arg2 mapping:(unsigned short *)arg3;
+- (id)initForMovedIndexesStartingAtIndex:(unsigned int)arg1 destinationIndex:(unsigned int)arg2 numberOfIndexes:(unsigned int)arg3 vertical:(_Bool)arg4;
+- (id)initWithStartIndex:(unsigned int)arg1 endIndex:(unsigned int)arg2;
+- (id)initWithStartIndex:(unsigned int)arg1 endIndex:(unsigned int)arg2 mapping:(const vector_12da65de *)arg3;
 - (struct TSUCellCoord)reverseMapCoordinate:(struct TSUCellCoord)arg1;
 - (struct TSUCellCoord)mapCoordinate:(struct TSUCellCoord)arg1;
 

@@ -53,8 +53,9 @@
 - (void)setAXAttribute:(long)arg1 withLong:(long)arg2;
 - (void)setAXAttribute:(long)arg1 withString:(id)arg2;
 - (void)setAXAttribute:(long)arg1 withBOOL:(_Bool)arg2;
-- (id)_elementsWithParameter:(long)arg1 andCount:(unsigned int)arg2;
+- (id)_elementsWithParameter:(long)arg1 count:(unsigned int)arg2 prefetchAttributes:(_Bool)arg3;
 - (id)previousElementsWithCount:(unsigned int)arg1;
+- (id)nextElementsIncludingPrefetchedAttributesWithCount:(unsigned int)arg1;
 - (id)nextElementsWithCount:(unsigned int)arg1;
 - (id)uiElementsWithAttribute:(long)arg1;
 - (id)uiElementsWithAttribute:(long)arg1 parameter:(void *)arg2 fetchAttributes:(_Bool)arg3;

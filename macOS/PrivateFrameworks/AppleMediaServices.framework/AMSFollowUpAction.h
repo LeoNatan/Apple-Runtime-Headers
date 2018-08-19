@@ -31,6 +31,7 @@
 @property(retain) NSMutableDictionary *userInfo;
 @property BOOL requiresFollowUpUI;
 @property(retain) NSURLRequest *request;
+@property(retain) NSString *preferredClient;
 @property(retain) NSDictionary *metrics;
 @property(retain) NSString *logKey;
 - (id)initWithAction:(id)arg1;

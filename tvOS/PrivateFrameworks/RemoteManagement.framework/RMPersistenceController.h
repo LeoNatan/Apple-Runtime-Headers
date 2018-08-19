@@ -7,20 +7,17 @@
 #import "NSObject.h"
 
 #import "RMPersistenceControllerProtocol.h"
-#import "RMPersistenceStoreChangeProcessingOperationDelegate.h"
 
-@class CATSerialOperationQueue, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSPersistentContainer, NSString;
+@class NSMutableDictionary, NSObject<OS_dispatch_queue>, NSPersistentContainer, NSString;
 
-@interface RMPersistenceController : NSObject <RMPersistenceControllerProtocol, RMPersistenceStoreChangeProcessingOperationDelegate>
+@interface RMPersistenceController : NSObject <RMPersistenceControllerProtocol>
 {
     NSObject *_lastPersistentHistoryTokenByStoreIdentifierLock;
     NSPersistentContainer *_persistentContainer;
     NSMutableDictionary *_lastPersistentHistoryTokenByStoreIdentifier;
     NSObject<OS_dispatch_queue> *_coreDataQueue;
-    CATSerialOperationQueue *_operationQueue;
 }
 
-@property(readonly, nonatomic) CATSerialOperationQueue *operationQueue; // @synthesize operationQueue=_operationQueue;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *coreDataQueue; // @synthesize coreDataQueue=_coreDataQueue;
 @property(readonly, copy, nonatomic) NSMutableDictionary *lastPersistentHistoryTokenByStoreIdentifier; // @synthesize lastPersistentHistoryTokenByStoreIdentifier=_lastPersistentHistoryTokenByStoreIdentifier;
 @property(retain, nonatomic) NSPersistentContainer *persistentContainer; // @synthesize persistentContainer=_persistentContainer;

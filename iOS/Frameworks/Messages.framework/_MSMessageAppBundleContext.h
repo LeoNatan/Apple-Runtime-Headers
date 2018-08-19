@@ -40,6 +40,7 @@
 - (void)stageRichLink:(id)arg1 skipShelf:(_Bool)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)stageMediaItem:(id)arg1 skipShelf:(_Bool)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)stageAppItem:(id)arg1 skipShelf:(_Bool)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)_volumeButtonPressed:(_Bool)arg1;
 - (void)_prepareForPresentationWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)_didRemoveAssetArchiveWithIdentifier:(id)arg1;
 - (void)_handleTextInputPayload:(id)arg1 withPayloadID:(id)arg2 completion:(CDUnknownBlockType)arg3;

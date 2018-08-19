@@ -8,14 +8,16 @@
 
 #import "TSPCopying.h"
 
-@class NSMutableArray;
+@class NSArray, NSMutableArray;
 
 __attribute__((visibility("hidden")))
 @interface TSTConditionalStyleSet : TSPObject <TSPCopying>
 {
-    NSMutableArray *mConditionalStyleSetRules;
+    NSMutableArray *_conditionalStyleSetRules;
 }
 
+@property(readonly, nonatomic) NSArray *currentRules; // @synthesize currentRules=_conditionalStyleSetRules;
+- (void).cxx_destruct;
 - (void)saveToArchiver:(id)arg1;
 - (void)loadFromUnarchiver:(id)arg1;
 - (unsigned long long)ruleCount;
@@ -25,18 +27,22 @@ __attribute__((visibility("hidden")))
 - (_Bool)isEqualForInspector:(id)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
-- (void)dealloc;
+- (id)precedentsWithCalcEngine:(id)arg1 hostOwnerUID:(const UUIDData_5fbc143e *)arg2 hostCellID:(const struct TSUCellCoord *)arg3;
 - (_Bool)hasBadRefWithUidInfo;
 - (_Bool)containsUidReferences;
 - (id)copyByRepairingBadReferences:(id)arg1;
-- (id)copyToGeometricFormForTableInfo:(id)arg1 inCellCoordinate:(struct TSUCellCoord)arg2 rewriteFlags:(unsigned char)arg3;
 - (id)copyToGeometricFormWithRewriteContext:(id)arg1;
 - (id)copyToUidFormForTableInfo:(id)arg1 inCellCoordinate:(struct TSUCellCoord)arg2 preserveHostCell:(_Bool)arg3;
 - (void)setHostCell:(const UUIDData_5fbc143e *)arg1 hostColumnUID:(const UUIDData_5fbc143e *)arg2 hostRowUID:(const UUIDData_5fbc143e *)arg3;
 - (id)copyByClearingUids:(id)arg1 containingTableUID:(const UUIDData_5fbc143e *)arg2;
+- (id)copyByConvertingToRelativeAncestorsWithRewriteContext:(id)arg1;
+- (id)copyByResolvingRelativeAncestorsWithRewriteContext:(id)arg1;
+- (id)copyByReparenting:(id)arg1 groupByUID:(const UUIDData_5fbc143e *)arg2 rewriteContext:(id)arg3;
+- (void)iterateFormulasWithContext:(id)arg1 block:(CDUnknownBlockType)arg2;
+- (id)copyByRewritingWithContext:(id)arg1 rewriteBlock:(CDUnknownBlockType)arg2;
 - (id)copyByUpdatingHostCellRef:(const struct TSCECellRef *)arg1;
 - (id)copyByUpgradingToLinkedRefAtHostCellRef:(const struct TSCECellRef *)arg1;
-- (id)copyByOffsettingRelativeReferencesWithColumnOffset:(short)arg1 rowOffset:(int)arg2;
+- (id)copyByOffsettingRelativeReferencesWithOffset:(CDStruct_1ef3fb1f)arg1;
 - (id)copyByRewritingWithSpec:(id)arg1 inOwner:(id)arg2 inCellCoordinate:(struct TSUCellCoord)arg3;
 - (id)copyByRemappingHostCellAgnosticOwnerUIDsWithMap:(const UUIDMap_b66c2694 *)arg1 calcEngine:(id)arg2 ownerUID:(const UUIDData_5fbc143e *)arg3 error:(_Bool *)arg4;
 - (id)copyByRemappingOwnerUIDsWithMap:(const UUIDMap_b66c2694 *)arg1 calcEngine:(id)arg2 error:(_Bool *)arg3;

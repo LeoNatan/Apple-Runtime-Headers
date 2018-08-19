@@ -12,6 +12,7 @@ __attribute__((visibility("hidden")))
 }
 
 - (BOOL)isEmphasized;
+- (int)_semanticContext;
 
 @end
 

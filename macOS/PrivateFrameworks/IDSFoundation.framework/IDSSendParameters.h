@@ -18,6 +18,7 @@
 
 - (void).cxx_destruct;
 @property(readonly, nonatomic) NSDate *expirationDate;
+@property(nonatomic) BOOL ignoreMaxRetryCount;
 @property(nonatomic) BOOL liveMessageDelivery;
 @property(nonatomic) BOOL disallowRefresh;
 @property(nonatomic) BOOL alwaysSkipSelf;

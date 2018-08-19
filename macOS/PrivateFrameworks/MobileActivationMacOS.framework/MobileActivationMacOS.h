@@ -17,7 +17,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) NSXPCConnection *connection; // @synthesize connection=_connection;
 - (void).cxx_destruct;
 - (BOOL)deactivateDevice:(id *)arg1;
-- (BOOL)handleActivationInfo:(id)arg1 error:(id *)arg2;
+- (BOOL)handleActivationInfo:(id)arg1 options:(id)arg2 error:(id *)arg3;
 - (id)createActivationInfo:(id)arg1 error:(id *)arg2;
 - (id)getActivationState:(id *)arg1;
 - (void)dealloc;

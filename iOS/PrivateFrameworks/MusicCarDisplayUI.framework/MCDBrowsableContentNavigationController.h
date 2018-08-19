@@ -46,6 +46,7 @@
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)updateTitleAndTabBarItemsAtIndexes:(id)arg1;
 - (id)_hostTabAtIndex:(unsigned long long)arg1 dummyTab:(_Bool)arg2;
+- (id)_tabBarItemForViewController:(id)arg1 fromItem:(id)arg2;
 - (void)tabBarController:(id)arg1 didSelectViewController:(id)arg2;
 - (void)invalidateAndReloadTabsWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_loadAllHostTabs;

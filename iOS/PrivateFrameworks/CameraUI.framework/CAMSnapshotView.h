@@ -46,6 +46,7 @@
 - (void)_setupLowQualityBlurOnSnapshot;
 - (void)_removeSnapshotBlurForStyle:(long long)arg1 animated:(_Bool)arg2 withCompletionBlock:(CDUnknownBlockType)arg3;
 - (void)_applySnapshotBlurForStyle:(long long)arg1 animated:(_Bool)arg2 withCompletionBlock:(CDUnknownBlockType)arg3;
+- (double)_resumeFadeInDuration;
 - (void)_prepareForApplyingBlurForStyle:(long long)arg1 applying:(_Bool)arg2 inputRadiusAmount:(double *)arg3 inputRadiusDuration:(double *)arg4 inputRadiusDelay:(double *)arg5 inputRadiusTimingFunction:(id *)arg6 opacityAmount:(double *)arg7 opacityDuration:(double *)arg8 opacityDelay:(double *)arg9 opacityTimingFunction:(id *)arg10;
 - (void)setDimmed:(_Bool)arg1 animated:(_Bool)arg2 withCompletionBlock:(CDUnknownBlockType)arg3;
 - (void)setBlurred:(_Bool)arg1 animated:(_Bool)arg2 style:(long long)arg3 withCompletionBlock:(CDUnknownBlockType)arg4;

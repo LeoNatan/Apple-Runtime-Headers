@@ -19,7 +19,7 @@
 __attribute__((visibility("hidden")))
 @interface TSUFormatObject : NSObject <TSCHDataFormatter, TSCHDataFormatterPersistableStyleObject, TSCHDataFormatterSupportedClientFormatObject, TSCHFormatTypeSupport, TSCHCustomFormatSupport, NSCopying, NSMutableCopying>
 {
-    CDStruct_28403e59 mFormatStruct;
+    CDStruct_b1066b25 mFormatStruct;
     _Bool mUseExpandedContents;
 }
 
@@ -29,13 +29,13 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) _Bool useExpandedContents; // @synthesize useExpandedContents=mUseExpandedContents;
 - (_Bool)isEqual:(id)arg1;
 @property(readonly) unsigned long long hash;
-- (void)p_setFormatStruct:(CDStruct_28403e59)arg1;
-@property(readonly, nonatomic) CDStruct_28403e59 formatStruct;
+- (void)p_setFormatStruct:(CDStruct_b1066b25)arg1;
+@property(readonly, nonatomic) CDStruct_b1066b25 formatStruct;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)dealloc;
-- (id)initWithTSUFormatFormatStruct:(CDStruct_28403e59)arg1;
-- (id)initWithTSUFormatFormatStruct:(CDStruct_28403e59)arg1 useExpandedContents:(_Bool)arg2;
+- (id)initWithTSUFormatFormatStruct:(CDStruct_b1066b25)arg1;
+- (id)initWithTSUFormatFormatStruct:(CDStruct_b1066b25)arg1 useExpandedContents:(_Bool)arg2;
 - (id)init;
 - (id)initWithArchive:(const struct FormatStructArchive *)arg1 unarchiver:(id)arg2;
 - (void)saveToArchive:(struct FormatStructArchive *)arg1 archiver:(id)arg2;

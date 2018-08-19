@@ -19,6 +19,8 @@
 - (void).cxx_destruct;
 - (id)_imageForKey:(id)arg1;
 - (void)_queue_pruneCacheIfNecessary;
+- (id)imageForRawImage:(id)arg1 maxSize:(struct CGSize)arg2 cornerRadius:(double)arg3;
+- (id)imageForRawImage:(id)arg1 maxSize:(struct CGSize)arg2 maskMode:(long long)arg3;
 - (id)imageForRawImage:(id)arg1 scale:(double)arg2 cornerRadius:(double)arg3;
 - (id)imageForRawImage:(id)arg1 scale:(double)arg2 maskMode:(long long)arg3;
 - (id)init;

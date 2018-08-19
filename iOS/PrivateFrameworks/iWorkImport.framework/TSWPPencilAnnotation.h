@@ -43,11 +43,11 @@ __attribute__((visibility("hidden")))
 - (void)i_setTextAttributeUUIDString:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)copyWithContext:(id)arg1;
-@property(readonly, nonatomic) PKDrawing *drawing; // @dynamic drawing;
 - (id)initWithContext:(id)arg1 pencilAnnotationStorage:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
+@property(readonly, nonatomic) PKDrawing *drawing; // @dynamic drawing;
 @property(readonly) Class superclass;
 
 @end

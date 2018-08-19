@@ -11,47 +11,50 @@
 __attribute__((visibility("hidden")))
 @interface TSTTableTile : TSPObject
 {
-    unsigned char _maxColumn;
     unsigned char _storageVersion;
-    unsigned short _maxRow;
+    _Bool _lastSavedInBNC;
+    unsigned short _maxColumn;
     unsigned short _numCells;
-    unsigned short _numRows;
+    unsigned int _maxRow;
+    unsigned int _numRows;
     NSMutableArray *_rowInfos;
 }
 
-@property(nonatomic) unsigned char storageVersion; // @synthesize storageVersion=_storageVersion;
 @property(retain, nonatomic) NSMutableArray *rowInfos; // @synthesize rowInfos=_rowInfos;
-@property(nonatomic) unsigned short numRows; // @synthesize numRows=_numRows;
+@property(nonatomic) unsigned int numRows; // @synthesize numRows=_numRows;
 @property(nonatomic) unsigned short numCells; // @synthesize numCells=_numCells;
-@property(nonatomic) unsigned short maxRow; // @synthesize maxRow=_maxRow;
-@property(nonatomic) unsigned char maxColumn; // @synthesize maxColumn=_maxColumn;
+@property(nonatomic) unsigned int maxRow; // @synthesize maxRow=_maxRow;
+@property(nonatomic) unsigned short maxColumn; // @synthesize maxColumn=_maxColumn;
 - (void).cxx_destruct;
-- (void)mergeWithTile:(id)arg1 atRowOffset:(unsigned short)arg2;
-- (id)splitAtRowIndex:(unsigned short)arg1;
-@property(readonly, nonatomic) unsigned short midpointForRowSplit;
+- (void)mergeWithTile:(id)arg1 atRowOffset:(unsigned int)arg2;
+- (id)splitAtRowIndex:(unsigned int)arg1;
+@property(readonly, nonatomic) unsigned int midpointForRowSplit;
 - (_Bool)shouldMergeRowsWithTile:(id)arg1;
 @property(readonly, nonatomic) _Bool shouldMergeRows;
 @property(readonly, nonatomic) _Bool shouldSplitRows;
-- (void)spliceAtTileRowIndex:(unsigned short)arg1 withRowInfo:(id)arg2;
-- (id)yankRowInfoAtTileRowIndex:(unsigned short)arg1;
-- (void)yankRowsAtTileRowIndex:(unsigned short)arg1 numberOfRows:(unsigned short)arg2 outRowArray:(id)arg3;
-- (void)removeRowsAtTileRowIndex:(unsigned short)arg1 numberOfRows:(unsigned short)arg2;
-- (void)insertRowsAtTileRowIndex:(unsigned short)arg1 numberOfRows:(unsigned short)arg2;
-- (void)moveColumnsAtColumnIndex:(unsigned char)arg1 numberOfColumns:(unsigned short)arg2 toDestColumnIndex:(unsigned char)arg3;
-- (int)removeColumnsAtColumnIndex:(unsigned char)arg1 numberOfColumns:(unsigned short)arg2;
-- (int)insertColumnsAtColumnIndex:(unsigned char)arg1 numberOfColumns:(unsigned short)arg2;
-- (void)setCell:(id)arg1 atColumnIndex:(unsigned char)arg2 tileRowIndex:(unsigned short)arg3;
-- (struct TSTCellStorage *)cellStorageRefAtColumnIndex:(unsigned char)arg1 tileRowIndex:(unsigned short)arg2;
-- (id)rowInfoForTileArrayIndex:(unsigned short)arg1;
-- (id)rowInfoAtOrAfterTileRowIndex:(unsigned short)arg1 outTileRowIndex:(out unsigned short *)arg2;
-- (id)rowInfoForTileRowIndex:(unsigned short)arg1 createIfMissing:(_Bool)arg2;
+- (void)spliceAtTileRowIndex:(unsigned int)arg1 withRowInfo:(id)arg2;
+- (id)yankRowInfoAtTileRowIndex:(unsigned int)arg1;
+- (void)yankRowsAtTileRowIndex:(unsigned int)arg1 numberOfRows:(unsigned int)arg2 outRowArray:(id)arg3;
+- (void)removeRowsAtTileRowIndex:(unsigned int)arg1 numberOfRows:(unsigned int)arg2;
+- (void)insertRowsAtTileRowIndex:(unsigned int)arg1 numberOfRows:(unsigned int)arg2;
+- (void)moveColumnsAtColumnIndex:(unsigned short)arg1 numberOfColumns:(unsigned int)arg2 toDestColumnIndex:(unsigned short)arg3;
+- (int)removeColumnsAtColumnIndex:(unsigned short)arg1 numberOfColumns:(unsigned int)arg2;
+- (int)insertColumnsAtColumnIndex:(unsigned short)arg1 numberOfColumns:(unsigned int)arg2;
+- (void)setCell:(id)arg1 atColumnIndex:(unsigned short)arg2 tileRowIndex:(unsigned int)arg3 formatKeys:(CDStruct_c8ca99d5 *)arg4;
+- (struct TSTCellStorage *)preBNCCellStorageRefAtColumnIndex:(unsigned short)arg1 tileRowIndex:(unsigned int)arg2;
+- (struct TSTCellStorage *)cellStorageRefAtColumnIndex:(unsigned short)arg1 tileRowIndex:(unsigned int)arg2;
+- (id)rowInfoForTileArrayIndex:(unsigned int)arg1;
+- (id)rowInfoAtOrAfterTileRowIndex:(unsigned int)arg1 outTileRowIndex:(out unsigned int *)arg2;
+- (id)rowInfoForTileRowIndex:(unsigned int)arg1 createIfMissing:(_Bool)arg2;
 - (void)p_removeRowInfo:(id)arg1;
-- (id)p_addRowInfoAtTileRowIndex:(unsigned short)arg1;
-- (void)p_insertRowInfo:(id)arg1 atTileRowIndex:(unsigned short)arg2;
+- (id)p_addRowInfoAtTileRowIndex:(unsigned int)arg1;
+- (void)p_insertRowInfo:(id)arg1 atTileRowIndex:(unsigned int)arg2;
 - (void)pruneEmptyRows;
 - (id)description;
 - (void)saveToArchiver:(id)arg1;
+- (void)willModify;
 - (void)loadFromUnarchiver:(id)arg1;
+@property(readonly, nonatomic) _Bool lastSavedInBNC;
 - (id)packageLocator;
 - (id)initWithContext:(id)arg1;
 - (id)initWithRows:(id)arg1 context:(id)arg2;
@@ -59,7 +62,6 @@ __attribute__((visibility("hidden")))
 - (void)p_recalculateMaxRowAndColumn;
 - (void)p_recalculateMaxColumn;
 - (void)p_recalculateMaxRow;
-- (void)i_upgradeTileRowInfosWithDataStore:(id)arg1;
 
 @end
 

@@ -53,7 +53,7 @@ __attribute__((visibility("hidden")))
 - (struct CGPoint)transformableObjectAnchorPoint;
 - (id)textureDeliveryStylesLocalized:(_Bool)arg1 animationFilter:(id)arg2;
 @property(readonly, nonatomic) NSArray *childInfos;
-- (id)copyRemovingTrackedChangesWithContext:(id)arg1;
+- (id)copyAcceptingTrackedChangesWithContext:(id)arg1;
 - (id)copyWithContext:(id)arg1;
 - (Class)repClass;
 - (Class)layoutClass;

@@ -27,10 +27,14 @@
     NSURLSessionDownloadTask *_downloadTask;
     NSURL *_downloadedFileURL;
     NSError *_moveFileError;
+    float _doneButtonLeftMargin;
+    float _doneButtonTopMargin;
     long long _downloadedBytes;
     long long _fileSize;
 }
 
+@property(nonatomic) float doneButtonTopMargin; // @synthesize doneButtonTopMargin=_doneButtonTopMargin;
+@property(nonatomic) float doneButtonLeftMargin; // @synthesize doneButtonLeftMargin=_doneButtonLeftMargin;
 @property(retain, nonatomic) NSError *moveFileError; // @synthesize moveFileError=_moveFileError;
 @property(retain, nonatomic) NSURL *downloadedFileURL; // @synthesize downloadedFileURL=_downloadedFileURL;
 @property(nonatomic) long long fileSize; // @synthesize fileSize=_fileSize;

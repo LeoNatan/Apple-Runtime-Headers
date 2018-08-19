@@ -59,7 +59,6 @@ __attribute__((visibility("hidden")))
 - (id)root;
 - (void)dealloc;
 - (id)initWithChartInfo:(id)arg1;
-- (id)initWithParent:(id)arg1;
 
 @end
 

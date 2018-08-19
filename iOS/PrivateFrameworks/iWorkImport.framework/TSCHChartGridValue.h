@@ -19,7 +19,6 @@ __attribute__((visibility("hidden")))
 + (id)numberValueWithDouble:(double)arg1;
 + (void)saveGridValue:(id)arg1 toArchive:(struct GridValue *)arg2;
 + (id)instanceWithArchive:(const struct GridValue *)arg1;
-- (id)init;
 - (id)initWithArchive:(const struct GridValue *)arg1;
 
 @end

@@ -6,10 +6,10 @@
 
 #import "INImageServing.h"
 
-@class INImage;
+@class INImage, INPortableImageLoader;
 
 @protocol INImageLoading <INImageServing>
-- (void)loadImageDataFromImage:(INImage *)arg1 completion:(void (^)(INImage *, NSError *))arg2;
+- (void)loadDataImageFromImage:(INImage *)arg1 usingPortableImageLoader:(INPortableImageLoader *)arg2 scaledSize:(CDStruct_8caa76fc)arg3 completion:(void (^)(INImage *, NSError *))arg4;
 - (_Bool)canLoadImageDataForImage:(INImage *)arg1;
 @end
 

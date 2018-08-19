@@ -19,6 +19,7 @@
 
 + (id)sharedInstance;
 - (void).cxx_destruct;
+- (id)_blankIconImage;
 - (void)_getImageForArtwork:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)_loadImageWithBundleIdentifier:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (_Bool)loadImage:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;

@@ -56,6 +56,8 @@
 }
 
 + (float)badgeAspectRatio;
++ (float)screenScaleMaximum;
++ (float)screenScaleMultiple;
 @property(nonatomic) __weak id <AAUIBadgeViewDelegate> badgeDelegate; // @synthesize badgeDelegate=_badgeDelegate;
 @property(copy, nonatomic) CDUnknownBlockType shortenedBadgeBacksideStringProvider; // @synthesize shortenedBadgeBacksideStringProvider=_shortenedBadgeBacksideStringProvider;
 @property(retain, nonatomic) AAUIBadgeModelConfiguration *configuration; // @synthesize configuration=_configuration;

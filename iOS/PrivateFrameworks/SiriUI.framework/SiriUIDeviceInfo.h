@@ -13,9 +13,11 @@
     _Bool _deviceShouldUseFrozenBackdropSnapshot;
     _Bool _deviceShouldFreezeAura;
     _Bool _deviceShouldDeferFlamesView;
+    _Bool _deviceShouldSkipGuidePreloading;
 }
 
 + (id)sharedInstance;
+@property(readonly, nonatomic) _Bool deviceShouldSkipGuidePreloading; // @synthesize deviceShouldSkipGuidePreloading=_deviceShouldSkipGuidePreloading;
 @property(readonly, nonatomic) _Bool deviceShouldDeferFlamesView; // @synthesize deviceShouldDeferFlamesView=_deviceShouldDeferFlamesView;
 @property(readonly, nonatomic) _Bool deviceShouldFreezeAura; // @synthesize deviceShouldFreezeAura=_deviceShouldFreezeAura;
 @property(readonly, nonatomic) _Bool deviceShouldUseFrozenBackdropSnapshot; // @synthesize deviceShouldUseFrozenBackdropSnapshot=_deviceShouldUseFrozenBackdropSnapshot;

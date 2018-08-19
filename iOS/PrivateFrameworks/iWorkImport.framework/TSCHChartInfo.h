@@ -255,7 +255,6 @@ __attribute__((visibility("hidden")))
 - (void)clearParent;
 - (void)dealloc;
 - (id)initWithChartType:(id)arg1 legendShowing:(id)arg2 chartBodyFrame:(id)arg3 chartAreaFrame:(id)arg4 circumscribingFrame:(id)arg5 legendFrame:(id)arg6 stylePreset:(id)arg7 privateSeriesStyles:(id)arg8 chartNonStyle:(id)arg9 legendNonStyle:(id)arg10 valueAxisNonStyles:(id)arg11 categoryAxisNonStyles:(id)arg12 seriesNonStyles:(id)arg13 refLineNonStylesMap:(id)arg14 refLineStylesMap:(id)arg15 forDocumentLocale:(id)arg16;
-- (id)init;
 - (id)p_init;
 - (id)allStylesAndNonStylesThatCanHaveCustomNumberFormats;
 - (void)updateAfterPaste;
@@ -271,6 +270,8 @@ __attribute__((visibility("hidden")))
 - (id)clamped3DRotationPropertyObject;
 - (id)pasteboardCustomFormatList;
 - (_Bool)supportsAndHasRoundedCorners;
+- (_Bool)hasTractReference;
+- (_Bool)hasCategoryReferences;
 - (_Bool)p_containsCalloutLinesWithModelSync:(_Bool)arg1;
 - (_Bool)containsCalloutLines;
 - (_Bool)isSingleCircleSpecialCase;

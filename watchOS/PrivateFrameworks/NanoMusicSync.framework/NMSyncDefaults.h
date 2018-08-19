@@ -18,7 +18,6 @@
     NPSDomainAccessor *_domainAccessor;
     NSDictionary *_notifiersDict;
     NMSNotificationDispatcher *_settingsNotifier;
-    NMSNotificationDispatcher *_pinningSettingsNotifier;
     NMSNotificationDispatcher *_musicPinningSelectionsNotifier;
     NMSNotificationDispatcher *_podcastsPinningSelectionsNotifier;
     NMSNotificationDispatcher *_podcastsSubscriptionMetadataNotifier;
@@ -37,7 +36,6 @@
     NSArray *_listenNowPodcastIdentifiers;
 }
 
-+ (unsigned long long)_defaultMediaStorageSizeForCurrentDevice;
 + (id)sharedDefaults;
 @property(copy, nonatomic) NSArray *listenNowPodcastIdentifiers; // @synthesize listenNowPodcastIdentifiers=_listenNowPodcastIdentifiers;
 @property(retain, nonatomic, setter=setAssetSyncPlaylistPersistentID:) NSNumber *assetSyncPlaylistPersistentID; // @synthesize assetSyncPlaylistPersistentID=_assetSyncPlaylistPersistentID;
@@ -58,7 +56,6 @@
 @property(readonly, nonatomic) NSDictionary *clientPinningSettingsToken;
 @property(copy, nonatomic) NSDate *lastSiriFaceActiveDate;
 @property(copy, nonatomic) NSDate *lastMusicAppActiveDate;
-@property(readonly, copy, nonatomic) NSNumber *availableMediaStorageOnWatch;
 @property(copy, nonatomic) NSData *cachedRecommendationsData;
 @property(copy, nonatomic) NSDate *recommendationExpirationDate;
 - (void)_preSeed2_setMusicRecommendationDict:(id)arg1;
@@ -69,7 +66,6 @@
 @property(copy, nonatomic) NSArray *libraryRecommendationAlbums;
 - (void)setPodcastSizeEstimationData:(id)arg1;
 - (id)podcastSizeEstimationData;
-@property(copy, nonatomic) NSArray *availableGizmoPodcasts;
 @property(copy, nonatomic) NSNumber *podcastsAssetSyncLimit;
 @property(copy, nonatomic) NSSet *pinnedPodcasts;
 @property(copy, nonatomic) NSArray *pinnedPodcastIdentifiers;
@@ -79,7 +75,6 @@
 @property(nonatomic) _Bool pinnedPodcastsAreUserSet;
 @property(copy, nonatomic) NSDictionary *gizmoPodcastEpisodeLimits;
 @property(copy, nonatomic) NSDictionary *gizmoPodcastDownloadOrders;
-@property(copy, nonatomic) NSArray *gizmoPodcastFeedURLs;
 @property(copy, nonatomic) NSArray *pinnedAlbums;
 @property(retain, nonatomic) NSNumber *workoutPlaylistID;
 @property(copy, nonatomic) NSArray *pinnedPlaylists;
@@ -91,7 +86,6 @@
 - (id)_defaultPlaylistPersistentID;
 - (unsigned int)_spaceQuotaForNumberOfSongs:(unsigned int)arg1;
 - (void)_removeOldMusicRecommendationsInfoIfPossible;
-- (void)_updateMediaCapacityIfNecessary;
 - (void)_migrateDataIfNecessary;
 - (void)_writePropertiesToDefaults;
 - (void)_reloadPropertiesFromDefaults;

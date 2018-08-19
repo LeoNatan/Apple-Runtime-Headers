@@ -43,7 +43,6 @@ __attribute__((visibility("hidden")))
     double _anchorPointZInitialValue;
     struct CGColor *_borderColorInitialValue;
     double _borderWidthInitialValue;
-    struct CGImage *_contentsInitialValue;
     double _opacityInitialValue;
     double _transformRotationInitialValue;
     double _transformRotationXInitialValue;
@@ -61,6 +60,7 @@ __attribute__((visibility("hidden")))
     struct CGPoint _anchorPointInitialValue;
     struct CGPoint _positionInitialValue;
     struct CGPoint _transformTranslationInitialValue;
+    struct _TSDContentBlend _contentsInitialValue;
     struct CGRect _boundsInitialValue;
     struct CATransform3D _transformInitialValue;
 }
@@ -102,7 +102,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) _Bool hiddenAnimationExists; // @synthesize hiddenAnimationExists=_hiddenAnimationExists;
 @property(readonly, nonatomic) _Bool doubleSidedInitialValue; // @synthesize doubleSidedInitialValue=_doubleSidedInitialValue;
 @property(readonly, nonatomic) _Bool doubleSidedAnimationExists; // @synthesize doubleSidedAnimationExists=_doubleSidedAnimationExists;
-@property(readonly, nonatomic) struct CGImage *contentsInitialValue; // @synthesize contentsInitialValue=_contentsInitialValue;
+@property(readonly, nonatomic) struct _TSDContentBlend contentsInitialValue; // @synthesize contentsInitialValue=_contentsInitialValue;
 @property(readonly, nonatomic) _Bool contentsAnimationExists; // @synthesize contentsAnimationExists=_contentsAnimationExists;
 @property(readonly, nonatomic) struct CGRect boundsInitialValue; // @synthesize boundsInitialValue=_boundsInitialValue;
 @property(readonly, nonatomic) _Bool boundsAnimationExists; // @synthesize boundsAnimationExists=_boundsAnimationExists;
@@ -116,6 +116,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) _Bool anchorPointAnimationExists; // @synthesize anchorPointAnimationExists=_anchorPointAnimationExists;
 @property(readonly, nonatomic) CAAnimation *animation; // @synthesize animation=_animation;
 @property(readonly, nonatomic) CALayer *layer; // @synthesize layer=_layer;
+- (void).cxx_destruct;
 - (id)p_valueForKeyPath:(id)arg1 atTime:(double)arg2;
 - (double)zPositionCachedValueAtTime:(double)arg1 layer:(id)arg2 animation:(id)arg3;
 - (double)transformTranslationZCachedValueAtTime:(double)arg1 layer:(id)arg2 animation:(id)arg3;
@@ -134,11 +135,11 @@ __attribute__((visibility("hidden")))
 - (double)opacityCachedValueAtTime:(double)arg1 layer:(id)arg2 animation:(id)arg3;
 - (_Bool)hiddenCachedValueAtTime:(double)arg1 layer:(id)arg2 animation:(id)arg3;
 - (_Bool)doubleSidedCachedValueAtTime:(double)arg1 layer:(id)arg2 animation:(id)arg3;
+- (struct _TSDContentBlend)contentsCachedValueAtTime:(double)arg1 layer:(id)arg2 animation:(id)arg3;
 - (struct CGRect)boundsCachedValueAtTime:(double)arg1 layer:(id)arg2 animation:(id)arg3;
 - (double)borderWidthCachedValueAtTime:(double)arg1 layer:(id)arg2 animation:(id)arg3;
 - (double)anchorPointZCachedValueAtTime:(double)arg1 layer:(id)arg2 animation:(id)arg3;
 - (struct CGPoint)anchorPointCachedValueAtTime:(double)arg1 layer:(id)arg2 animation:(id)arg3;
-- (void)dealloc;
 - (id)initWithLayer:(id)arg1 animation:(id)arg2 overrideInitialValues:(id)arg3 cacheAnimationValues:(_Bool)arg4;
 - (void)p_setupAndCacheAnimationValues:(_Bool)arg1;
 - (id)getKeyPathsFromAnimation:(id)arg1;

@@ -12,6 +12,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)_fetchEnabledFeatures;
++ (void)clear;
 + (id)cookie;
 
 @end

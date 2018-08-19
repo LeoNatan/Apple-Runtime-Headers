@@ -39,6 +39,7 @@
     AFSpeechSynthesisRecord *_speechSynthesisRecord;
     CLLocation *_location;
     NSString *_locationStatus;
+    NSDictionary *_clientAnalyticsContext;
     NSDictionary *_startContext;
     NSDictionary *_stopContext;
     double _homeButtonDownEventTime;
@@ -52,6 +53,7 @@
 @property(nonatomic) _Bool isOnPhoneCall; // @synthesize isOnPhoneCall=_isOnPhoneCall;
 @property(copy, nonatomic) NSDictionary *stopContext; // @synthesize stopContext=_stopContext;
 @property(copy, nonatomic) NSDictionary *startContext; // @synthesize startContext=_startContext;
+@property(copy, nonatomic) NSDictionary *clientAnalyticsContext; // @synthesize clientAnalyticsContext=_clientAnalyticsContext;
 @property(copy, nonatomic) NSString *locationStatus; // @synthesize locationStatus=_locationStatus;
 @property(copy, nonatomic) CLLocation *location; // @synthesize location=_location;
 @property(copy, nonatomic) AFSpeechSynthesisRecord *speechSynthesisRecord; // @synthesize speechSynthesisRecord=_speechSynthesisRecord;

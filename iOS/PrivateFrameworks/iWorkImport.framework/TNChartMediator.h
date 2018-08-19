@@ -9,7 +9,7 @@
 #import "TSCECalculationEngineRegistration.h"
 #import "TSCEFormulaOwning.h"
 
-@class NSCondition, NSMutableArray, NSString, TNChartFormulaStorage, TNMutableChartFormulaStorage, TSCECalculationEngine, TSCEFormulaRewriteSpec, TSUIntToIntDictionary;
+@class NSCondition, NSString, TNChartFormulaStorage, TNMutableChartFormulaStorage, TSCECalculationEngine, TSUIntToIntDictionary;
 
 __attribute__((visibility("hidden")))
 @interface TNChartMediator : TSCHChartMediator <TSCECalculationEngineRegistration, TSCEFormulaOwning>
@@ -17,9 +17,7 @@ __attribute__((visibility("hidden")))
     UUIDData_5fbc143e mEntityUID;
     TNChartFormulaStorage *mFormulaStorage;
     TNChartFormulaStorage *mCleanFormulaStorage;
-    NSMutableArray *mFormulasToRewrite;
-    NSMutableArray *mFormulasToRecalculate;
-    TSCEFormulaRewriteSpec *mInFlightRewriteSpec;
+    unordered_set_cb28a53b _formulasToRecalculate;
     int mScatterFormat;
     _Bool mIsRegisteredWithCalcEngine;
     _Bool mIsEditing;
@@ -41,6 +39,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) _Bool hasBlittedSinceConditionVarSet; // @synthesize hasBlittedSinceConditionVarSet=mHasBlittedSinceConditionVarSet;
 @property(readonly, nonatomic) UUIDData_5fbc143e entityUID; // @synthesize entityUID=mEntityUID;
 - (id).cxx_construct;
+- (void).cxx_destruct;
 - (void)localizeFormulaLiteralsWithBundle:(id)arg1;
 - (id)customNegScatterXFormulas;
 - (id)customPosScatterXFormulas;
@@ -50,8 +49,6 @@ __attribute__((visibility("hidden")))
 - (id)rowFormulas;
 - (int)formulasDirection;
 - (id)dataFormulas;
-- (void)replaceReferencesInFormulasWithOwnerIDMap:(id)arg1;
-- (void)replaceReferencesInFormulas:(id)arg1 withOwnerIDMap:(id)arg2;
 - (_Bool)p_tableHasCell:(struct TSCECellRef)arg1 withCalcEngine:(id)arg2;
 - (_Bool)p_tableHasRange:(struct TSCERangeRef)arg1 withCalcEngine:(id)arg2;
 - (id)referencedEntities;
@@ -62,6 +59,7 @@ __attribute__((visibility("hidden")))
 - (void)repairMissingCategoryLabelsInMap:(id)arg1;
 - (void)repairMissingCategoryLabelsInMap:(id)arg1 ignoringNonVisibleLabels:(_Bool)arg2;
 - (void)p_repairMissingCategoryLabelsInMap:(id)arg1;
+- (void)p_promoteSpanningCategorizedCategoryLabelsInMap:(id)arg1;
 - (void)p_repairMissingTabularCategoryLabelsRegularInMap:(id)arg1;
 - (void)p_repairMissingTabularCategoryLabelsIrregularInMap:(id)arg1;
 - (void)p_disconnectLabelsInMap:(id)arg1 ofType:(unsigned long long)arg2;
@@ -69,6 +67,8 @@ __attribute__((visibility("hidden")))
 - (id)p_newStaticNameForCategoryAvoidingExistingNames:(id)arg1 runningCount:(unsigned long long *)arg2;
 - (_Bool)p_tabularCategoryLabelsAppearRegularInMap:(id)arg1;
 - (_Bool)p_labelsAreStaticInMap:(id)arg1 ofType:(unsigned long long)arg2;
+- (unsigned long long)p_formulaComponents:(id)arg1;
+- (unsigned long long)p_formulaComponentsInMap:(id)arg1 ofType:(unsigned long long)arg2;
 - (void)saveToArchive:(struct ChartMediatorArchive *)arg1 archiver:(id)arg2;
 - (id)initFromArchive:(const struct ChartMediatorArchive *)arg1 unarchiver:(id)arg2;
 - (id)commandToSetNewSeriesIndex:(unsigned long long)arg1 forSeriesIndex:(unsigned long long)arg2;
@@ -85,28 +85,35 @@ __attribute__((visibility("hidden")))
 - (void)setImportUpgradeCondition:(id)arg1;
 - (void)copyValuesIntoChartModelOutOfBandUsingCalcEngine:(id)arg1 formulaMap:(id)arg2;
 - (_Bool)registerLast;
-- (void)unregisterFromCalculationEngine:(id)arg1;
-- (void)registerWithCalculationEngineForDocumentLoad:(id)arg1;
+- (void)unregisterFromCalcEngine:(id)arg1;
+- (void)registerWithCalcEngineForDocumentLoad:(id)arg1;
 - (void)p_reregister:(_Bool)arg1 withCalculationEngine:(id)arg2;
 - (id)objectToArchiveInDependencyTracker;
-- (id)endRewriteForCalculationEngine:(id)arg1 spec:(id)arg2;
+- (void)resetFormulasForCellRefs:(const struct TSCEReferenceSet *)arg1 calcEngine:(id)arg2;
+- (void)amendRewriteSpec:(id)arg1 withPostCellRefs:(const struct TSCEReferenceSet *)arg2 calcEngine:(id)arg3;
+- (void)prepareRewriteSpec:(id)arg1 withPreCellRefs:(const struct TSCEReferenceSet *)arg2 calcEngine:(id)arg3;
+- (_Bool)interestedInRewrite:(id)arg1;
 - (void)p_removeDeletedFormulas:(id)arg1;
 - (void)repairBadRefsInFormulas:(id)arg1;
-- (void)p_detectAndRepairInsertedSeriesConditionFromPreviousState:(id)arg1 andEditingState:(id)arg2;
-- (void)p_detectAndRepairInsertedCategoryConditionFromPreviousState:(id)arg1 andEditingState:(id)arg2;
-- (void)beginRewriteForCalculationEngine:(id)arg1 spec:(id)arg2;
+- (void)p_detectAndRepairInsertedSeriesConditionFromPreviousState:(id)arg1 andEditingState:(id)arg2 rewriteSpec:(id)arg3;
+- (void)p_detectAndRepairInsertedCategoryConditionFromPreviousState:(id)arg1 andEditingState:(id)arg2 rewriteSpec:(id)arg3;
 - (void)updateForTableIDHistoryWithCalcEngine:(id)arg1;
 - (void)p_registerFormulaeWithCalcEngine:(id)arg1;
 - (void)p_registerAreaFormulaForMap:(id)arg1 withCalcEngine:(id)arg2;
 - (void)p_registerHubFormulaWithCalcEngine:(id)arg1;
 - (void)p_unregisterAllFormulaeFromCalcEngine:(id)arg1;
-- (void)writeResultsForCalculationEngine:(id)arg1;
-- (CDStruct_2a4d9400)recalculateForCalculationEngine:(id)arg1 formulaID:(CDStruct_ed6d627d)arg2 isInCycle:(_Bool)arg3 hasCalculatedPrecedents:(_Bool)arg4;
-- (void)invalidateForCalculationEngine:(id)arg1;
-- (void)rewriteForCalculationEngine:(id)arg1 formulaID:(CDStruct_ed6d627d)arg2 rewriteSpec:(id)arg3;
+- (void)writeResultsForCalcEngine:(id)arg1;
+- (CDStruct_2a4d9400)recalculateForCalcEngine:(id)arg1 atFormulaCoord:(struct TSUCellCoord)arg2 recalcOptions:(CDStruct_3d581f42)arg3;
+- (id)linkedResolver;
+- (UUIDData_5fbc143e)ownerUID;
+- (int)ownerKind;
+- (id)hubFormulaPrecedentsWithCalcEngine:(id)arg1 hostOwnerUID:(const UUIDData_5fbc143e *)arg2;
+- (void)invalidateForCalcEngine:(id)arg1;
 - (void)p_copyValuesIntoToChartModel:(id)arg1 formulaMap:(id)arg2;
 - (id)untitledLabelOfType:(unsigned long long)arg1 formulaMap:(id)arg2 existingLabels:(id)arg3 runningIndex:(unsigned long long *)arg4;
 - (id)p_untitledLabelWithIndex:(unsigned long long)arg1;
+- (_Bool)hasTractReference;
+- (_Bool)hasCategoryReferences;
 - (void)synchronizeModelFromFormulaStorage;
 - (void)setFormulaStorage:(id)arg1;
 - (void)setFormulaStorage:(id)arg1 doRegistration:(_Bool)arg2;
@@ -124,11 +131,9 @@ __attribute__((visibility("hidden")))
 - (id)commandToChangeLabelFormulas:(id)arg1 forType:(unsigned long long)arg2 modelUpdateDataType:(int)arg3;
 - (id)categoryLabelFormulas;
 - (id)labelFormulasForType:(unsigned long long)arg1;
-- (id)dataFormatterForSeries:(id)arg1 index:(unsigned long long)arg2 axisType:(int)arg3 documentRoot:(id)arg4;
-- (id)nonDefaultDataFormatterForSeries:(id)arg1 index:(unsigned long long)arg2 axisType:(int)arg3 documentRoot:(id)arg4;
-- (id)dataFormatterForAxis:(id)arg1 documentRoot:(id)arg2;
 - (unsigned long long)formulaIndexForSeriesDimension:(id)arg1;
 - (id)seriesDimensionForFormulaIndex:(unsigned long long)arg1;
+- (id)p_chartFormulaStorageForEditingOverride;
 - (_Bool)p_isScatterOrBubble;
 - (id)commandToSetChartGridDirection:(int)arg1 documentRoot:(id)arg2;
 - (void)invalidateAndSynchronizeMediator;
@@ -139,6 +144,7 @@ __attribute__((visibility("hidden")))
 - (void)synchronizeModelFromFormulaStorage:(id)arg1;
 - (void)resumeCalculationEngine;
 - (void)pauseCalculationEngine;
+- (id)formulaStorageFromCatTable:(id)arg1 selection:(id)arg2 direction:(int)arg3;
 - (id)formulaStorageFromTable:(id)arg1 selection:(id)arg2 direction:(int)arg3;
 @property(readonly, nonatomic) TSCECalculationEngine *calculationEngine;
 - (_Bool)isPhantom;
@@ -148,13 +154,16 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) _Bool labelFormulasAreAllStatic;
 - (_Bool)labelFormulasAreAllStaticInFormulaStorage:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (void)dealloc;
 - (id)initWithChartInfo:(id)arg1 withTable:(id)arg2 direction:(int)arg3;
 - (id)initWithChartInfo:(id)arg1 withTable:(id)arg2 selection:(id)arg3 direction:(int)arg4;
 - (id)initWithChartInfo:(id)arg1;
 - (id)ownerUIDMapper;
 - (void)setFormulaOwnerUID:(const UUIDData_5fbc143e *)arg1;
 - (UUIDData_5fbc143e)formulaOwnerUID;
+- (id)dataFormatterForSeries:(id)arg1 index:(unsigned long long)arg2 axisType:(int)arg3 documentRoot:(id)arg4;
+- (id)nonDefaultDataFormatterForSeries:(id)arg1 index:(unsigned long long)arg2 axisType:(int)arg3 documentRoot:(id)arg4;
+- (id)dataFormatterFromFormatStruct:(CDStruct_b1066b25)arg1 in:(id)arg2;
+- (id)dataFormatterForAxis:(id)arg1 documentRoot:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -32,8 +32,9 @@
 
 + (void)initialize;
 - (void).cxx_destruct;
+- (void)_handleSignificantTimeChange;
 - (id)_attachmentForIdentifier:(id)arg1;
-- (void)_queue_postOrRemoveNotificationWithUpdatedBehavior:(_Bool)arg1;
+- (void)_queue_postOrRemoveNotificationWithUpdatedBehavior:(_Bool)arg1 significantTimeChange:(_Bool)arg2;
 - (void)userNotificationCenter:(id)arg1 didReceiveNotificationResponse:(id)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
 - (void)settingsService:(id)arg1 didReceiveUpdatedPhoneCallBypassSettings:(id)arg2;
 - (void)settingsService:(id)arg1 didReceiveUpdatedBehaviorSettings:(id)arg2;

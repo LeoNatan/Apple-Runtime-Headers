@@ -11,11 +11,11 @@
 __attribute__((visibility("hidden")))
 @interface TSCESumAccumulator : NSObject
 {
-    _Bool _mixedDurationsAndNumbers;
-    _Bool _foundANumber;
     NSDate *_dateAccumulator;
     double _secondsToAdd;
     struct TSCENumberValue _numberAccumulator;
+    _Bool _mixedDurationsAndNumbers;
+    _Bool _foundANumber;
 }
 
 @property(nonatomic) _Bool foundANumber; // @synthesize foundANumber=_foundANumber;

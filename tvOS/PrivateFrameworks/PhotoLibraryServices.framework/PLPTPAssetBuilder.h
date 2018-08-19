@@ -23,6 +23,7 @@
     PLPTPAsset *_fullSizeRenderImagePtpAsset;
     PLPTPAsset *_fullSizeRenderVideoPtpAsset;
     NSMutableArray *_convertedAssets;
+    _Bool _irisSidecarRequiresFormatConversion;
 }
 
 + (_Bool)_shouldIncludeDiagnosticFile;
@@ -54,9 +55,10 @@
 - (void)_buildExifAvailable;
 - (_Bool)_buildDirectoryPathAndFilename;
 - (_Bool)_suppressPtpInfo;
+- (void)_updateOriginalAssetFormatConversionFromVideoComplement;
 - (void)_updateAsset:(id)arg1 withConversionResult:(id)arg2;
 - (void)_updateAssetForTranscodeChoice:(id)arg1 withConversionResult:(id)arg2;
-- (void)updateAssetForFormatConversion:(id)arg1 isVideo:(_Bool)arg2 isRender:(_Bool)arg3;
+- (void)updateAssetForFormatConversion:(id)arg1 isVideo:(_Bool)arg2 isRender:(_Bool)arg3 forceLegacyConversion:(_Bool)arg4;
 - (_Bool)_buildOriginalAsset;
 - (void)_buildCommonAsset;
 - (id)pictureTransferProtocolAssets;

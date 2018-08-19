@@ -44,7 +44,8 @@ __attribute__((visibility("hidden")))
 - (_Bool)selectionMustBeEntirelyOnscreenToCountAsVisibleInSelectionPath:(id)arg1;
 - (_Bool)canvasShouldScrollForSelectionPath:(id)arg1;
 - (double)viewScaleForZoomingToSelectionPath:(id)arg1 targetPointSize:(double)arg2;
-- (id)rectsInRootForAnchoringPencilAnnotationsForSelectionPath:(id)arg1 attachedType:(long long)arg2;
+- (id)unscaledAnchorRectsForPencilAnnotationSelectionPath:(id)arg1 attachedType:(long long)arg2;
+- (double)percentOfUnscaledRectContainedInParentRep:(struct CGRect)arg1;
 - (struct CGRect)rectInRootForPresentingAnnotationPopoverForSelectionPath:(id)arg1;
 - (struct CGRect)rectInRootForZoomingToSelectionPath:(id)arg1;
 - (struct CGRect)rectInRootForSelectionPath:(id)arg1;
@@ -71,7 +72,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) NSArray *additionalLayoutsForRepCreation;
 @property(readonly, nonatomic) NSSet *reliedOnLayouts;
 @property(readonly, nonatomic) NSArray *dependentLayouts;
-- (struct CGPoint)commentPoleTopPosition;
+@property(readonly, nonatomic) struct CGPoint commentPoleUnscaledOffset;
 - (struct CGPoint)activityLineUnscaledEndPointForSearchReference:(id)arg1;
 - (struct CGPoint)calculatePointFromSearchReference:(id)arg1;
 - (struct CGRect)rectInRootForCalculatingActivityLineEndpoint;
@@ -133,7 +134,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) _Bool isInTopLevelContainerForEditing;
 @property(readonly, nonatomic) _Bool isInGroup;
 @property(readonly, nonatomic) _Bool shouldBeDisplayedInShowMode;
-- (struct CGPoint)infoGeometryPositionForCurrentAttachedLayoutGeometry;
 @property(readonly, nonatomic) Class repClassOverride;
 - (void)processChanges:(id)arg1;
 - (id)computeInfoGeometryFromPureLayoutGeometry:(id)arg1;

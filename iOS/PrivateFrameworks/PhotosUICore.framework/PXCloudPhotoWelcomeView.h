@@ -6,7 +6,7 @@
 
 #import "UIView.h"
 
-@class NSArray, NSLayoutConstraint, UIButton, UIImageView, UILabel, UIScrollView;
+@class NSArray, NSLayoutConstraint, PXUIButton, UIButton, UIImageView, UILabel, UIScrollView, UIVisualEffectView;
 
 @interface PXCloudPhotoWelcomeView : UIView
 {
@@ -21,23 +21,27 @@
     } _delegateRespondsTo;
     _Bool _buttonsEnabled;
     id <PXCloudPhotoWelcomeViewDelegate> _delegate;
+    UIVisualEffectView *_statusBarVisualEffectView;
     UIImageView *_graphicImageView;
     UILabel *_titleLabel;
     UILabel *_bodyLabel;
-    UIButton *_goButton;
-    UILabel *_finePrintLabel;
     UIButton *_learnMoreButton;
+    UILabel *_finePrintLabel;
+    UIVisualEffectView *_buttonContainerVisualEffectView;
+    PXUIButton *_goButton;
     UIButton *_notNowButton;
 }
 
 + (void)initialize;
 @property(readonly, nonatomic) UIButton *notNowButton; // @synthesize notNowButton=_notNowButton;
-@property(readonly, nonatomic) UIButton *learnMoreButton; // @synthesize learnMoreButton=_learnMoreButton;
+@property(readonly, nonatomic) PXUIButton *goButton; // @synthesize goButton=_goButton;
+@property(readonly, nonatomic) UIVisualEffectView *buttonContainerVisualEffectView; // @synthesize buttonContainerVisualEffectView=_buttonContainerVisualEffectView;
 @property(readonly, nonatomic) UILabel *finePrintLabel; // @synthesize finePrintLabel=_finePrintLabel;
-@property(readonly, nonatomic) UIButton *goButton; // @synthesize goButton=_goButton;
+@property(readonly, nonatomic) UIButton *learnMoreButton; // @synthesize learnMoreButton=_learnMoreButton;
 @property(readonly, nonatomic) UILabel *bodyLabel; // @synthesize bodyLabel=_bodyLabel;
 @property(readonly, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(readonly, nonatomic) UIImageView *graphicImageView; // @synthesize graphicImageView=_graphicImageView;
+@property(readonly, nonatomic) UIVisualEffectView *statusBarVisualEffectView; // @synthesize statusBarVisualEffectView=_statusBarVisualEffectView;
 @property(nonatomic, getter=areButtonsEnabled) _Bool buttonsEnabled; // @synthesize buttonsEnabled=_buttonsEnabled;
 @property(nonatomic) __weak id <PXCloudPhotoWelcomeViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
@@ -47,9 +51,9 @@
 - (void)_setupConstraints;
 - (void)_setupSubviews;
 - (void)_updateFontAndStyle;
-- (id)_constrainedFontForTextStyle:(id)arg1 maximumContentSizeCategory:(id)arg2;
+- (void)flashScrollIndicators;
+- (void)reloadContent;
 - (void)traitCollectionDidChange:(id)arg1;
-- (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end

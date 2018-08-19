@@ -24,7 +24,7 @@
 - (id)__im_subscriptionContextForForSlotID:(int)arg1;
 - (id)__imSIMIDForSubscriptionSlot:(int)arg1;
 - (int)__imSlotIDSForPhoneNumber:(id)arg1;
-- (id)__im_labelForPhoneNumber:(id)arg1;
+- (id)__im_labelForPhoneNumber:(id)arg1 simID:(id)arg2;
 - (id)__im_phoneNumberForSlotIDOrDefault:(int)arg1;
 - (id)__im_phoneNumberForSlotID:(int)arg1;
 - (id)preferredOrDefaultSubscriptionContext;

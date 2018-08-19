@@ -92,7 +92,6 @@ __attribute__((visibility("hidden")))
 - (void)dealloc;
 - (void)clearParent;
 - (id)initWithChartType:(id)arg1;
-- (id)init;
 - (int)deprecated3DShadowSpecificProperty;
 - (int)deprecated3DBevelEdgesSpecificProperty;
 

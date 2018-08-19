@@ -11,20 +11,21 @@
 __attribute__((visibility("hidden")))
 @interface TSTCompletionToken : TSTWPTokenAttachment
 {
-    NSString *mCompletionText;
-    struct _NSRange mPrefixRange;
-    int mRenderAsTokenType;
-    TSTReferenceNode *mEditingReferenceNode;
-    TSUColor *mReferenceColor;
-    id <TSTCanvasReferenceProvider> mCanvasReferenceProvider;
+    int _renderAsTokenType;
+    NSString *_completionText;
+    TSTReferenceNode *_editingReferenceNode;
+    TSUColor *_referenceColor;
+    id <TSTCanvasReferenceProvider> _canvasReferenceProvider;
+    struct _NSRange _prefixRange;
 }
 
-@property(nonatomic) id <TSTCanvasReferenceProvider> canvasReferenceProvider; // @synthesize canvasReferenceProvider=mCanvasReferenceProvider;
-@property(retain, nonatomic) TSUColor *referenceColor; // @synthesize referenceColor=mReferenceColor;
-@property(retain, nonatomic) TSTReferenceNode *editingReferenceNode; // @synthesize editingReferenceNode=mEditingReferenceNode;
-@property(readonly, nonatomic) int renderAsTokenType; // @synthesize renderAsTokenType=mRenderAsTokenType;
-@property(nonatomic) struct _NSRange prefixRange; // @synthesize prefixRange=mPrefixRange;
-@property(retain, nonatomic) NSString *completionText; // @synthesize completionText=mCompletionText;
+@property(nonatomic) __weak id <TSTCanvasReferenceProvider> canvasReferenceProvider; // @synthesize canvasReferenceProvider=_canvasReferenceProvider;
+@property(retain, nonatomic) TSUColor *referenceColor; // @synthesize referenceColor=_referenceColor;
+@property(retain, nonatomic) TSTReferenceNode *editingReferenceNode; // @synthesize editingReferenceNode=_editingReferenceNode;
+@property(readonly, nonatomic) int renderAsTokenType; // @synthesize renderAsTokenType=_renderAsTokenType;
+@property(nonatomic) struct _NSRange prefixRange; // @synthesize prefixRange=_prefixRange;
+@property(retain, nonatomic) NSString *completionText; // @synthesize completionText=_completionText;
+- (void).cxx_destruct;
 - (id)description;
 - (void)p_createCanvasReference;
 - (void)p_removeCanvasReference;

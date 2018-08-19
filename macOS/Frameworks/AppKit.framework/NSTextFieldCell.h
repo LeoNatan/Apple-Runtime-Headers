@@ -85,7 +85,7 @@
 - (void)_invalidateCachedLineRef;
 - (BOOL)_isEditingInView:(id)arg1;
 - (void)_drawForegroundOfTextLayer;
-- (struct CGRect)_textLayerFrameForCellFrame:(struct CGRect)arg1;
+- (struct CGRect)_textLayerDrawingRectForCellFrame:(struct CGRect)arg1;
 - (BOOL)wantsUpdateLayerInView:(id)arg1;
 - (BOOL)_maybeCheckTitleClippingForFrame:(struct CGRect)arg1 inView:(id)arg2;
 - (void)drawWithFrame:(struct CGRect)arg1 inView:(id)arg2;
@@ -106,6 +106,8 @@
 - (id)_selectOrEdit:(const struct CGRect *)arg1 inView:(id)arg2 target:(id)arg3 editor:(id)arg4 event:(id)arg5 start:(long long)arg6 end:(long long)arg7;
 - (struct CGRect)titleRectForBounds:(struct CGRect)arg1;
 - (struct CGRect)drawingRectForBounds:(struct CGRect)arg1;
+- (BOOL)_shouldAdjustDrawingRectUsingSquareBezelHacks;
+- (struct CGRect)_adjustedFrameUsingSquareBezelHacks:(struct CGRect)arg1;
 - (struct CGSize)cellSizeForBounds:(struct CGRect)arg1;
 - (double)_coreUIHeightForRoundedBezel;
 @property(copy) NSAttributedString *placeholderAttributedString;

@@ -34,6 +34,7 @@
 - (void)cloudPhotoWelcomeViewLearnMoreTapped:(id)arg1;
 - (void)cloudPhotoWelcomeViewNotNowButtonTapped:(id)arg1;
 - (void)cloudPhotoWelcomeViewGoButtonTapped:(id)arg1;
+- (id)presentingViewControllerTraitCollection;
 - (void)_handleGoButtonTapped;
 - (void)_continueWithoutStoragePurchase:(id)arg1;
 - (void)_enableCPLDataClass;
@@ -41,13 +42,16 @@
 - (void)_dismiss;
 - (void)_presentStoragePurchaseController;
 - (void)_enableButtons;
+- (void)_updateCurrentActivity;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (_Bool)shouldAutorotate;
 - (long long)preferredInterfaceOrientationForPresentation;
 - (unsigned long long)supportedInterfaceOrientations;
-- (void)_updateCurrentActivity;
+- (void)viewWillLayoutSubviews;
+- (void)traitCollectionDidChange:(id)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)_applicationWillEnterForeground:(id)arg1;
+- (void)viewDidAppear:(_Bool)arg1;
 - (void)viewDidLoad;
 
 // Remaining properties

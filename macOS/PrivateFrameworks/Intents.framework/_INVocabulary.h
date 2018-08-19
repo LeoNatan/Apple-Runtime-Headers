@@ -6,12 +6,13 @@
 
 #import "NSObject.h"
 
-@class INVocabularyUpdater, _INVocabularyValidator;
+@class INVocabularyUpdater, NSObject<OS_dispatch_queue>, _INVocabularyValidator;
 
 @interface _INVocabulary : NSObject
 {
     INVocabularyUpdater *_vocabularyUpdater;
     _INVocabularyValidator *_validator;
+    NSObject<OS_dispatch_queue> *_queue;
 }
 
 + (id)sharedVocabulary;

@@ -25,6 +25,7 @@
 - (void)workflowControllerDidFinishRunning:(id)arg1 withOutput:(id)arg2;
 - (void)workflowControllerDidStop:(id)arg1 withError:(id)arg2;
 - (id)workflowController:(id)arg1 userInterfaceForRunningAction:(id)arg2;
+- (void)_submitMetricsWithError:(id)arg1;
 - (void)_workflowDidFinishWithError:(id)arg1;
 - (void)_handleDismiss;
 - (void)_workflowDidFinishWithResponse:(id)arg1;

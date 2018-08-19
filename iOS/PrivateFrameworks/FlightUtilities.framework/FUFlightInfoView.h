@@ -126,7 +126,6 @@ __attribute__((visibility("hidden")))
 - (void)dealloc;
 - (void)updateFlightButtonIcon;
 - (void)setupLabelStylesWithStyle:(unsigned long long)arg1;
-- (_Bool)deviceSupportsRotation;
 - (double)standardTableCellContentInset;
 - (void)awakeFromNib;
 

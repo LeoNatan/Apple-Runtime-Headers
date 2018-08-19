@@ -209,11 +209,12 @@
 + (id)controlFillColor;
 + (id)scriptingColorWithDescriptor:(id)arg1;
 + (id)transparencyCheckboardPatternColor;
+- (BOOL)_getSemanticallyEquivalentVisualEffectMaterial:(long long *)arg1;
 - (id)colorWithSystemEffect:(long long)arg1;
 - (id)pasteboardPropertyListForType:(id)arg1;
 - (id)writableTypesForPasteboard:(id)arg1;
 - (id)initWithPasteboardPropertyList:(id)arg1 ofType:(id)arg2;
-- (BOOL)_isSourceListColor;
+@property(readonly) BOOL _isSourceListColor;
 - (id)shadowWithLevel:(double)arg1;
 - (id)highlightWithLevel:(double)arg1;
 - (void)setStroke;
@@ -221,7 +222,7 @@
 - (id)colorUsingColorSpaceName:(id)arg1;
 - (id)colorUsingColorSpaceName:(id)arg1 device:(id)arg2;
 - (id)_colorWithDynamicAlphaComponent:(double)arg1;
-- (double)_luminance;
+@property(readonly) double _luminance;
 - (id)colorSpaceName;
 - (void)getComponents:(double *)arg1;
 @property(readonly) long long numberOfComponents;
@@ -270,7 +271,6 @@
 - (double)CA_distanceToValue:(id)arg1;
 - (id)CA_interpolateValue:(id)arg1 byFraction:(float)arg2;
 - (id)CA_addValue:(id)arg1 multipliedBy:(int)arg2;
-- (id)_colorVariantForBackgroundStyle:(long long)arg1;
 - (id)_colorForSelectedTextBackground;
 - (id)_accessibilityValue;
 - (id)replacementObjectForPortCoder:(id)arg1;

@@ -15,10 +15,11 @@ __attribute__((visibility("hidden")))
     NSFetchRequest *_fetchRequest;
 }
 
+- (id)dropObjectIDCaptureStatements;
+- (id)createObjectIDCaptureStatements;
 - (void)executeRequestCore:(id *)arg1;
 - (void)executePrologue;
 - (BOOL)isWritingRequest;
-- (id)createCountRequestContextForObjectsToUpdate;
 - (id)createFetchRequestContextForObjectsToUpdate;
 - (id)fetchRequestDescribingObjectsToUpdate;
 @property(readonly, nonatomic) NSSQLiteStatement *updateStatement;

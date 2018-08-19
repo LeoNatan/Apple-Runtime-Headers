@@ -51,7 +51,7 @@
 @property(readonly, copy, nonatomic) NSString *name;
 @property(readonly, nonatomic) int deviceClass;
 @property(readonly, copy, nonatomic) NSString *pairedDeviceGUID;
-@property(readonly, copy, nonatomic) NSData *deviceGUIDData;
+@property(readonly, copy, nonatomic) NSData *deviceFairPlayGUIDData;
 @property(readonly, copy, nonatomic) NSString *deviceGUID;
 @property(readonly, copy, nonatomic) NSString *hardwarePlatform;
 @property(readonly, copy, nonatomic) NSString *systemReleaseType;

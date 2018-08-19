@@ -8,15 +8,17 @@
 
 #import "NCNotificationManagementController.h"
 #import "NCNotificationManagementControllerSettingsDelegate.h"
+#import "NCNotificationManagementViewPresenterDelegate.h"
 
-@class NCNotificationManagementView, NCNotificationRequest, NSString, NSURL;
+@class NCNotificationManagementView, NCNotificationManagementViewPresenter, NCNotificationRequest, NSString, NSURL;
 
-@interface NCNotificationManagementViewController : UIViewController <NCNotificationManagementControllerSettingsDelegate, NCNotificationManagementController>
+@interface NCNotificationManagementViewController : UIViewController <NCNotificationManagementControllerSettingsDelegate, NCNotificationManagementViewPresenterDelegate, NCNotificationManagementController>
 {
     NCNotificationManagementView *_platterView;
     NCNotificationRequest *_request;
     _Bool _isDeliveredQuietly;
     NSURL *_settingsURL;
+    NCNotificationManagementViewPresenter *_viewPresenter;
     id <NCNotificationManagementControllerSettingsDelegate> _settingsDelegate;
 }
 
@@ -25,8 +27,16 @@
 @property(retain, nonatomic) NSURL *settingsURL; // @synthesize settingsURL=_settingsURL;
 @property(nonatomic) __weak id <NCNotificationManagementControllerSettingsDelegate> settingsDelegate; // @synthesize settingsDelegate=_settingsDelegate;
 - (void).cxx_destruct;
+- (void)_setAllowsCriticalAlerts:(_Bool)arg1 forNotificationRequest:(id)arg2 withSectionIdentifier:(id)arg3;
+- (void)_setDeliverQuietly:(_Bool)arg1 forNotificationRequest:(id)arg2 withSectionIdentifier:(id)arg3;
+- (void)_setAllowsNotifications:(_Bool)arg1 forNotificationRequest:(id)arg2 withSectionIdentifier:(id)arg3;
+- (id)_sectionSettingsForSectionIdentifier:(id)arg1;
+- (void)notificationManagementViewPresenter:(id)arg1 setAllowsCriticalAlerts:(_Bool)arg2 forNotificationRequest:(id)arg3 withSectionIdentifier:(id)arg4;
+- (void)notificationManagementViewPresenter:(id)arg1 setDeliverQuietly:(_Bool)arg2 forNotificationRequest:(id)arg3 withSectionIdentifier:(id)arg4;
+- (void)notificationManagementViewPresenter:(id)arg1 setAllowsNotifications:(_Bool)arg2 forNotificationRequest:(id)arg3 withSectionIdentifier:(id)arg4;
+- (id)notificationManagementViewPresenter:(id)arg1 sectionSettingsForSectionIdentifier:(id)arg2;
 - (void)notificationManagementController:(id)arg1 setAllowsCriticalAlerts:(_Bool)arg2 forNotificationRequest:(id)arg3 withSectionIdentifier:(id)arg4;
-- (void)notificationManagementController:(id)arg1 setDeliverQuietly:(_Bool)arg2 forNotificationRequest:(id)arg3 withSectionIdentifier:(id)arg4 subSectionIdentifier:(id)arg5;
+- (void)notificationManagementController:(id)arg1 setDeliverQuietly:(_Bool)arg2 forNotificationRequest:(id)arg3 withSectionIdentifier:(id)arg4;
 - (void)notificationManagementController:(id)arg1 setAllowsNotifications:(_Bool)arg2 forNotificationRequest:(id)arg3 withSectionIdentifier:(id)arg4;
 - (id)notificationManagementController:(id)arg1 sectionSettingsForSectionIdentifier:(id)arg2;
 - (void)_offButtonTapped:(id)arg1;

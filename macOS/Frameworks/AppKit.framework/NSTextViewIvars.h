@@ -45,7 +45,8 @@ __attribute__((visibility("hidden")))
         unsigned int touchBarInstantiated:1;
         unsigned int calculatingContainerOrigin:1;
         unsigned int doesOverrideDrawInsertionPointInRect:1;
-        unsigned int _pad:4;
+        unsigned int darkEffectiveAppearance:1;
+        unsigned int _pad:3;
     } tvFlags;
     NSTextViewSharedData *sharedData;
     NSMutableArray *eventList;

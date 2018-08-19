@@ -27,6 +27,7 @@
 + (void)initialize;
 + (id)secureTextViewForWindow:(id)arg1;
 + (void)_doMenu:(id)arg1;
+- (BOOL)_shouldUseBoundsOutsets;
 - (void)updateCandidates;
 - (BOOL)isAutomaticTextCompletionEnabled;
 - (id)candidateListTouchBarItem;

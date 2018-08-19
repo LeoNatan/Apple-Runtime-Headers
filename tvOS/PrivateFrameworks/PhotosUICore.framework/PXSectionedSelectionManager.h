@@ -43,8 +43,8 @@
 - (id)mutableChangeObject;
 - (id)init;
 - (id)initWithDataSourceManager:(id)arg1;
-- (_Bool)areAllUnsavedAssetsSelected;
-- (void)selectNonCopiedAssets;
+- (_Bool)areAllUnsavedAssetsSelectedWithImportStatusManager:(id)arg1;
+- (void)selectNonCopiedAssetsWithImportStatusManager:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

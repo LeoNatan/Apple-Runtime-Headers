@@ -33,6 +33,7 @@
     NSMutableDictionary *_viewConfigurationStorage;
 }
 
++ (BOOL)pinnedConversationsEnabled;
 + (BOOL)supportsSecureCoding;
 + (id)allowedSecureArchivingClasses_so;
 @property(retain) NSMutableDictionary *viewConfigurationStorage; // @synthesize viewConfigurationStorage=_viewConfigurationStorage;
@@ -54,6 +55,10 @@
 @property(copy, nonatomic) NSString *customTitle; // @synthesize customTitle=_customTitle;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 - (void).cxx_destruct;
+- (long long)compareForConversationListSorting:(id)arg1;
+- (long long)compareBySequenceNumberAndDateDescending:(id)arg1;
+- (id)deviceIndependentID;
+- (BOOL)isPinned;
 - (void)dealloc;
 - (id)init;
 - (void)encodeWithCoder:(id)arg1;

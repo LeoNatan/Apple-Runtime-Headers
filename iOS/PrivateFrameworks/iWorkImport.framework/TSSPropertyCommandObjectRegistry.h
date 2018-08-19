@@ -18,7 +18,7 @@ __attribute__((visibility("hidden")))
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (int)indexForClass:(Class)arg1;
-- (const basic_string_a1f69cfb *)nameForIndex:(int)arg1;
+- (const basic_string_23d93216 *)nameForIndex:(int)arg1;
 - (Class)classForIndex:(int)arg1;
 - (void)registerClass:(Class)arg1 withField:(id)arg2;
 - (id)init;

@@ -8,12 +8,13 @@
 
 #import "NSCopying.h"
 
-@class NSBundle, NSMutableDictionary, NSString, TSUOnce;
+@class NSBundle, NSDictionary, NSMutableDictionary, NSString, TSUOnce;
 
 __attribute__((visibility("hidden")))
 @interface TSDFrameSpec : NSObject <NSCopying>
 {
     NSBundle *mBundle;
+    NSDictionary *mInfoDictionary;
     _Bool mProviderWasInvalid;
     NSString *mFrameName;
     double mLeftInset;

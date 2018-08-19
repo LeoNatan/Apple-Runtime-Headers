@@ -25,6 +25,7 @@
 - (id)_activeFont;
 - (void)layoutSubviews;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
+@property(readonly, nonatomic) double firstLineBaseline;
 @property(copy, nonatomic) NSString *text;
 - (id)init;
 

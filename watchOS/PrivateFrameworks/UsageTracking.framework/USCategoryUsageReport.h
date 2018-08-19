@@ -13,20 +13,21 @@
 @interface USCategoryUsageReport : NSObject <NSSecureCoding>
 {
     NSArray *_applicationUsage;
-    NSDictionary *_webUsageByDomain;
+    NSArray *_webUsage;
     double _totalUsageTime;
 }
 
 + (_Bool)supportsSecureCoding;
-@property(readonly, copy) NSDictionary *webUsageByDomain; // @synthesize webUsageByDomain=_webUsageByDomain;
+@property(readonly, copy) NSArray *webUsage; // @synthesize webUsage=_webUsage;
 @property(readonly, copy) NSArray *applicationUsage; // @synthesize applicationUsage=_applicationUsage;
 @property(readonly) double totalUsageTime; // @synthesize totalUsageTime=_totalUsageTime;
 - (void).cxx_destruct;
+@property(readonly, copy) NSDictionary *webUsageByDomain;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (void)_usCategoryUsageReportCommonInitWithTotalUsageTime:(double)arg1 applicationUsage:(id)arg2 webUsageByDomain:(id)arg3;
-- (id)initWithTotalUsageTime:(double)arg1 applicationUsage:(id)arg2 webUsageByDomain:(id)arg3;
+- (void)_usCategoryUsageReportCommonInitWithTotalUsageTime:(double)arg1 applicationUsage:(id)arg2 webUsage:(id)arg3;
+- (id)initWithTotalUsageTime:(double)arg1 applicationUsage:(id)arg2 webUsage:(id)arg3;
 
 @end
 

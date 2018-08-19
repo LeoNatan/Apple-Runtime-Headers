@@ -6,15 +6,18 @@
 
 #import "NSObject.h"
 
+#import "NSCopying.h"
+
 @class NSMutableIndexSet;
 
 __attribute__((visibility("hidden")))
-@interface TSTHiddenStateIndexSet : NSObject
+@interface TSTHiddenStateIndexSet : NSObject <NSCopying>
 {
     NSMutableIndexSet *_visibleIndexSet;
 }
 
 @property(retain, nonatomic) NSMutableIndexSet *visibleIndexSet; // @synthesize visibleIndexSet=_visibleIndexSet;
+- (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)swapIndex:(unsigned long long)arg1 withIndex:(unsigned long long)arg2;
 - (void)insertRange:(struct _NSRange)arg1;
 - (void)deleteRange:(struct _NSRange)arg1;

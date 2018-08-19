@@ -45,7 +45,6 @@
 - (id)accessibilitySnapshotOrError:(id *)arg1;
 - (id)_accessibilitySnapshotForElement:(id)arg1 error:(id *)arg2;
 - (id)safeParametersForParameters:(id)arg1;
-- (id)safeAttributesForAttributes:(id)arg1;
 
 @end
 

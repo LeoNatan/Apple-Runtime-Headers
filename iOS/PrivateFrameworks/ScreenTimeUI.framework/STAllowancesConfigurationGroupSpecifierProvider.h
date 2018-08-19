@@ -24,6 +24,7 @@
 @property(retain, nonatomic) PSSpecifier *appLimitsSpecifier; // @synthesize appLimitsSpecifier=_appLimitsSpecifier;
 @property(retain, nonatomic) PSSpecifier *deviceBedtimeSpecifier; // @synthesize deviceBedtimeSpecifier=_deviceBedtimeSpecifier;
 - (void).cxx_destruct;
+- (_Bool)showDemoModeAlertIfNeeded;
 - (void)showContentPrivacyViewController:(id)arg1;
 - (id)contentPrivacyDetailText;
 - (void)alwaysAllowListController:(id)arg1 didFinishEditingAlwaysAllowList:(id)arg2;

@@ -815,6 +815,7 @@
 - (void)_setSectionContentInsetFollowsLayoutMargins:(_Bool)arg1;
 - (void)_setSectionContentInset:(struct UIEdgeInsets)arg1;
 - (void)_updateMarginWidthForVisibleViewsForceLayout:(_Bool)arg1;
+- (void)_rebuildGeometryForcingRowDataUpdate:(_Bool)arg1;
 - (void)_rebuildGeometry;
 @property(nonatomic) _Bool allowsMultipleSelectionDuringEditing;
 @property(nonatomic) _Bool allowsMultipleSelection;

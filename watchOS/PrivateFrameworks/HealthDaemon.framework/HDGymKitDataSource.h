@@ -36,6 +36,7 @@
 - (void)addSamples:(id)arg1 dataSource:(id)arg2;
 @property(readonly) unsigned int workoutDataDestinationState;
 - (id)quantityTypesToIncludeWhilePaused;
+- (void)workoutDataDestination:(id)arg1 requestsFinalDataFrom:(id)arg2 to:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)workoutDataDestination:(id)arg1 didChangeFromState:(unsigned int)arg2 toState:(unsigned int)arg3;
 - (void)workoutDataDestination:(id)arg1 requestsDataFrom:(id)arg2 to:(id)arg3;
 @property(readonly, copy) NSUUID *workoutDataProcessorUUID;

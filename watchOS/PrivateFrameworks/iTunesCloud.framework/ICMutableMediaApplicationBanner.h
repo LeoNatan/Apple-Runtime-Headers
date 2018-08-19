@@ -12,6 +12,8 @@
 {
 }
 
+@property(nonatomic) _Bool hasBeenTapped; // @dynamic hasBeenTapped;
+@property(copy, nonatomic) NSString *setID; // @dynamic setID;
 @property(copy, nonatomic) NSDictionary *rawPayload; // @dynamic rawPayload;
 @property(nonatomic) int displayCount; // @dynamic displayCount;
 @property(nonatomic) int maxDisplayCount; // @dynamic maxDisplayCount;

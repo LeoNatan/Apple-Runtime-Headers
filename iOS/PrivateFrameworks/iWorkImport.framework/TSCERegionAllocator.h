@@ -9,17 +9,19 @@
 __attribute__((visibility("hidden")))
 @interface TSCERegionAllocator : NSObject
 {
-    struct TSCERegionNode *mHead;
-    struct TSCERegionNode *mCurBlock;
-    unsigned int mBlockOffset;
-    struct _NSZone *mZone;
+    struct TSCERegionNode *_head;
+    struct TSCERegionNode *_curBlock;
+    unsigned int _blockOffset;
+    struct vector<TSCEASTNodeArrayChunk *, std::__1::allocator<TSCEASTNodeArrayChunk *>> _nodeArrayChunks;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 - (void)dealloc;
-- (struct _NSZone *)zone;
 - (void)reset;
 - (void *)calloc:(unsigned long long)arg1;
 - (void *)malloc:(unsigned long long)arg1;
+- (struct TSCEASTNodeArray *)managedNodeArrayWithCapacity:(unsigned long long)arg1;
 - (id)initWithInitialCapacity:(unsigned long long)arg1;
 
 @end

@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
 - (struct CGRect)p_cacheErasableBounds;
 - (void)p_cacheDimensionsForHeight:(double *)arg1 depth:(double *)arg2 width:(double *)arg3;
 - (id)description;
+- (void)setFontSmoothingBackgroundColor:(struct CGColor *)arg1;
 - (struct CGRect)erasableBounds;
 @property(readonly, nonatomic) double width;
 @property(readonly, nonatomic) double depth;

@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     TSTLayoutSpaceBundle *mBundle;
     int mLayoutSpaceType;
     _Bool mInvalidTableOffset;
-    unsigned char mInvalidColumnIndex;
-    unsigned short mInvalidRowIndex;
+    unsigned short mInvalidColumnIndex;
+    unsigned int mInvalidRowIndex;
     CDStruct_58eae27c mGridRange;
     _Bool mHeaderColumnsRepeat;
     _Bool mHeaderRowsRepeat;
@@ -63,8 +63,8 @@ __attribute__((visibility("hidden")))
 - (void)validateCoordinateDirection;
 - (int)validate:(id)arg1;
 - (void)invalidateTableOffset;
-- (void)invalidateCoordinatesAfterRow:(unsigned short)arg1;
-- (void)invalidateCoordinatesAfterColumn:(unsigned char)arg1;
+- (void)invalidateCoordinatesAfterRow:(unsigned int)arg1;
+- (void)invalidateCoordinatesAfterColumn:(unsigned short)arg1;
 - (void)invalidateCoordinates;
 - (void)unlock;
 - (void)lockForWrite;

@@ -40,6 +40,7 @@
     _Bool _scheduledProcessing;
     _Bool _scheduledRefresh;
     _Bool _scheduledVerification;
+    _Bool _suspendedForContentProtection;
     _Bool _dataSourceIndexingPermitted;
     id <MFLibrarySearchableIndexDataSource> _dataSource;
     id <MFSearchableIndexSchedulableDelegate> _schedulableDelegate;
@@ -85,8 +86,12 @@
 - (void)_dataSourceAssignTransaction:(long long)arg1 updates:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_dataSourceScheduleWork:(CDUnknownBlockType)arg1;
 - (void)refresh;
+- (void)resumeForContentProtection;
+- (void)suspendForContentProtection;
 - (void)resume;
+- (void)_resume;
 - (void)suspend;
+- (void)_suspend;
 - (void)_invalidateCache;
 - (long long)_nextTransaction;
 @property(readonly, getter=_transaction) long long transaction;

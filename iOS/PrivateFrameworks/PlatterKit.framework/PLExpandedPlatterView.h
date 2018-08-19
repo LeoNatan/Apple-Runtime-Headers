@@ -28,6 +28,7 @@
     UIScrollView *_scrollView;
     UIControl *_dismissControl;
     double _contentBottomInset;
+    long long _dismissControlPosition;
     id <PLExpandedPlatterViewDelegate> _delegate;
     UIView *_mainContentView;
     struct CGSize _customContentSize;
@@ -35,6 +36,7 @@
 
 @property(retain, nonatomic, getter=_mainContentView) UIView *mainContentView; // @synthesize mainContentView=_mainContentView;
 @property(nonatomic) __weak id <PLExpandedPlatterViewDelegate> delegate; // @synthesize delegate=_delegate;
+@property(nonatomic) long long dismissControlPosition; // @synthesize dismissControlPosition=_dismissControlPosition;
 @property(nonatomic) double contentBottomInset; // @synthesize contentBottomInset=_contentBottomInset;
 @property(nonatomic) _Bool clipsVisibleContentToBounds; // @synthesize clipsVisibleContentToBounds=_clipsVisibleContentToBounds;
 @property(nonatomic) struct CGSize customContentSize; // @synthesize customContentSize=_customContentSize;
@@ -63,8 +65,8 @@
 @property(readonly, nonatomic) UIView *customContentView; // @synthesize customContentView=_customContentView;
 - (struct CGSize)_actionsSizeThatFits:(struct CGSize)arg1 includingPadding:(_Bool)arg2;
 - (struct CGSize)_sizeThatFitsContentExcludingActionsWithSize:(struct CGSize)arg1;
-- (double)_dismissControlPlusHeaderHeight;
-- (double)_dismissControlHeightIncludingPadding;
+- (struct CGRect)_boundsInsetFromDismissControlIfNecessary;
+- (struct UIEdgeInsets)_dismissControlTotalOutset;
 @property(retain, nonatomic) NSArray *interfaceActions;
 - (struct CGRect)_contentViewFrame;
 - (struct CGRect)scrollViewFrame;
@@ -98,6 +100,7 @@
 - (void)_configureCustomContentView;
 - (void)_configureMainContentViewIfNecessary;
 - (struct CGSize)_contentSizeThatFitsContentWithSizeExcludingActions:(struct CGSize)arg1;
+- (void)_layoutMainContentViewIfNecessary;
 - (struct CGSize)_flexibleAreaSizeForBounds:(struct CGRect)arg1;
 @property(readonly, nonatomic, getter=_headerContentView) UIView *headerContentView;
 

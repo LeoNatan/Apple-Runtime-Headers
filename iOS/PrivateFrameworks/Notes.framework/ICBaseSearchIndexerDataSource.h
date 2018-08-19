@@ -21,6 +21,10 @@
     NSMutableDictionary *_identifiersByObjectID;
 }
 
++ (void)unmarkAccountReindexedForMigration:(id)arg1;
++ (void)markAccountReindexedForMigration:(id)arg1;
++ (_Bool)isAccountReindexedForMigration:(id)arg1;
++ (id)didReindexForMigrationUserDefaultKeyForIdentifier:(id)arg1;
 @property _Bool needsReindexing; // @synthesize needsReindexing=_needsReindexing;
 @property(nonatomic, getter=isObservingChanges) _Bool observingChanges; // @synthesize observingChanges=_observingChanges;
 @property(retain, nonatomic) NSMutableDictionary *identifiersByObjectID; // @synthesize identifiersByObjectID=_identifiersByObjectID;

@@ -80,7 +80,9 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) NSString *defaultDraftName;
 @property(readonly, nonatomic) NSString *name;
 - (void)removePencilAnnotationsFromDrawables:(id)arg1;
+- (void)enumeratePencilAnnotationsFromRootObject:(id)arg1 usingBlock:(CDUnknownBlockType)arg2;
 - (void)enumeratePencilAnnotationsUsingBlock:(CDUnknownBlockType)arg1;
+- (id)pencilAnnotationEnumeratorFromRootObect:(id)arg1;
 - (_Bool)hasPencilAnnotations;
 - (void)removePencilAnnotations;
 - (_Bool)childrenCanBeAnnotatedWithPencil;

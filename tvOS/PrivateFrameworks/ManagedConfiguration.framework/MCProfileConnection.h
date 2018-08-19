@@ -565,6 +565,10 @@
 - (void)unenrollWithCompletionBlock:(CDUnknownBlockType)arg1;
 - (void)enrollProvisionallyWithNonce:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (id)cloudConfigurationDetails;
+- (_Bool)_shouldApplyContactsFilterForTargetBundleID:(id)arg1 targetAccountManagement:(int)arg2 outAllowManagedAccounts:(_Bool *)arg3 outAllowUnmanagedAccounts:(_Bool *)arg4;
+- (_Bool)_shouldApplyContactsFilterForBundleID:(id)arg1 sourceAccountManagement:(int)arg2 outAllowManagedAccounts:(_Bool *)arg3 outAllowUnmanagedAccounts:(_Bool *)arg4;
+- (_Bool)_managedMayWriteUnmanagedContacts;
+- (_Bool)_unmanagedMayReadManagedContacts;
 - (void)allowedKeyboardBundleIDsAfterApplyingFilterToBundleIDs:(id)arg1 hostAppBundleID:(id)arg2 accountIsManaged:(_Bool)arg3 completion:(CDUnknownBlockType)arg4;
 - (id)filteredOpenInOriginatingAccounts:(id)arg1 targetAppBundleID:(id)arg2 targetAccountManagement:(int)arg3;
 - (id)filteredOpenInAccounts:(id)arg1 originatingAppBundleID:(id)arg2 sourceAccountManagement:(int)arg3;
@@ -575,6 +579,10 @@
 - (_Bool)canSendMail:(id)arg1 sourceAccountManagement:(int)arg2;
 - (_Bool)mayShowLocalAccountsForTargetBundleID:(id)arg1 targetAccountManagement:(int)arg2;
 - (_Bool)mayShowLocalAccountsForBundleID:(id)arg1 sourceAccountManagement:(int)arg2;
+- (_Bool)mayShowLocalContactsAccountsForTargetBundleID:(id)arg1 targetAccountManagement:(int)arg2;
+- (id)filteredOpenInOriginatingContactsAccounts:(id)arg1 targetAppBundleID:(id)arg2 targetAccountManagement:(int)arg3;
+- (id)filteredOpenInContactsAccounts:(id)arg1 originatingAppBundleID:(id)arg2 sourceAccountManagement:(int)arg3;
+- (_Bool)mayShowLocalContactsAccountsForBundleID:(id)arg1 sourceAccountManagement:(int)arg2;
 - (long long)dragDropTargetManagementStateForBundleID:(id)arg1;
 - (long long)dragDropSourceManagementStateForBundleID:(id)arg1;
 - (long long)dragDropBidirectionalManagementStateForBaseBundleID:(id)arg1;
