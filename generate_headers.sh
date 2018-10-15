@@ -4,7 +4,6 @@ rm -fr iOS
 rm -fr macOS
 rm -fr watchOS
 rm -fr tvOS
-rm -fr macOS
 
 mkdir -p iOS/Frameworks
 mkdir -p iOS/PrivateFrameworks
