@@ -22,7 +22,6 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (id)methodSignatureForSelector:(SEL)arg1;
 - (void)forwardInvocation:(id)arg1;
-- (void)remoteObjectRespondsToSelector:(SEL)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)initWithQueue:(struct queue)arg1;
 
 // Remaining properties

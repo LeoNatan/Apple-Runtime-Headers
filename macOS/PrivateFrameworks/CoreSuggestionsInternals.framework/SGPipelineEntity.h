@@ -6,7 +6,7 @@
 
 #import <CoreSuggestionsInternals/SGEntity.h>
 
-@class NSArray, NSData, NSIndexSet, NSMutableArray, NSMutableDictionary, NSNumber, NSSet, NSString, SGMessage;
+@class NSArray, NSData, NSIndexSet, NSMutableArray, NSMutableDictionary, NSSet, NSString, SGMessage;
 
 @interface SGPipelineEntity : SGEntity
 {
@@ -18,7 +18,6 @@
     BOOL _fullDownloadRequested;
     CDStruct_b2968299 _inhumanFeatures;
     struct _opaque_pthread_mutex_t _dissectorLock;
-    NSNumber *_isAppleInternalConversation;
     BOOL _contactInformationExtracted;
     BOOL _pendingGeocode;
     NSIndexSet *_plainTextQuotedRegions;
@@ -66,8 +65,6 @@
 @property(retain, nonatomic) NSArray *externalEnrichments; // @synthesize externalEnrichments=_externalEnrichments;
 @property(retain, nonatomic) NSArray *enrichments; // @synthesize enrichments=_enrichments;
 - (void).cxx_destruct;
-- (BOOL)isAuthorKnownAppleContact;
-- (BOOL)isAppleInternalConversation;
 - (void)runWithDissectorLock:(CDUnknownBlockType)arg1;
 - (void)releaseDissectorLock;
 - (void)acquireDissectorLock;

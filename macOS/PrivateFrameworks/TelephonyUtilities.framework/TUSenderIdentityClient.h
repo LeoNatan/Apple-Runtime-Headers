@@ -6,31 +6,35 @@
 
 #import <objc/NSObject.h>
 
-@class TUCoreTelephonyClient;
-@protocol OS_dispatch_queue;
+@protocol OS_dispatch_queue, TUCoreTelephonyClient;
 
 @interface TUSenderIdentityClient : NSObject
 {
     NSObject<OS_dispatch_queue> *_queue;
-    TUCoreTelephonyClient *_client;
+    id <TUCoreTelephonyClient> _client;
 }
 
-@property(readonly, nonatomic) TUCoreTelephonyClient *client; // @synthesize client=_client;
+@property(retain, nonatomic) id <TUCoreTelephonyClient> client; // @synthesize client=_client;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 - (void).cxx_destruct;
+- (id)init;
+- (BOOL)isTTYSoftwareSupportedForSenderIdentityUUID:(id)arg1;
+- (BOOL)isTTYSoftwareEnabledForSenderIdentityUUID:(id)arg1;
+- (BOOL)isTTYSoftwareAvailableForSenderIdentityUUID:(id)arg1;
+- (BOOL)isTTYHardwareSupportedForSenderIdentityUUID:(id)arg1;
+- (BOOL)isTTYHardwareEnabledForSenderIdentityUUID:(id)arg1;
+- (BOOL)isTTYHardwareAvailableForSenderIdentityUUID:(id)arg1;
+- (BOOL)isTTYSupportedForSenderIdentityUUID:(id)arg1;
+- (BOOL)isTTYEnabledForSenderIdentityUUID:(id)arg1;
+- (BOOL)isTTYAvailableForSenderIdentityUUID:(id)arg1;
+- (BOOL)isRTTSupportedForSenderIdentityUUID:(id)arg1;
+- (BOOL)isRTTAvailableForSenderIdentityUUID:(id)arg1;
+- (BOOL)shouldShowEmergencyCallbackModeAlertForSenderIdentityUUID:(id)arg1 error:(id *)arg2;
+- (BOOL)shouldShowEmergencyCallbackModeAlertForSenderIdentityUUID:(id)arg1;
 - (BOOL)isWhitelistedEmergencyNumberForDigits:(id)arg1 senderIdentityUUID:(id)arg2 error:(id *)arg3;
 - (BOOL)isWhitelistedEmergencyNumberForDigits:(id)arg1 senderIdentityUUID:(id)arg2;
-- (BOOL)isWhitelistedEmergencyNumberForDigits:(id)arg1 senderIdentities:(id)arg2 error:(id *)arg3;
-- (BOOL)isWhitelistedEmergencyNumberForDigits:(id)arg1 senderIdentities:(id)arg2;
-- (BOOL)isWhitelistedEmergencyNumberForDigits:(id)arg1 senderIdentity:(id)arg2 error:(id *)arg3;
-- (BOOL)isWhitelistedEmergencyNumberForDigits:(id)arg1 senderIdentity:(id)arg2;
 - (BOOL)isEmergencyNumberForDigits:(id)arg1 senderIdentityUUID:(id)arg2 error:(id *)arg3;
 - (BOOL)isEmergencyNumberForDigits:(id)arg1 senderIdentityUUID:(id)arg2;
-- (BOOL)isEmergencyNumberForDigits:(id)arg1 senderIdentities:(id)arg2 error:(id *)arg3;
-- (BOOL)isEmergencyNumberForDigits:(id)arg1 senderIdentities:(id)arg2;
-- (BOOL)isEmergencyNumberForDigits:(id)arg1 senderIdentity:(id)arg2 error:(id *)arg3;
-- (BOOL)isEmergencyNumberForDigits:(id)arg1 senderIdentity:(id)arg2;
-- (id)init;
 
 @end
 

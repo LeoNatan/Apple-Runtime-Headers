@@ -32,6 +32,7 @@
     BOOL _supportsMediaAccessControl;
     BOOL _supportsTargetControl;
     BOOL _supportsTargetController;
+    BOOL _targetControllerHardwareSupport;
     BOOL _paired;
     BOOL _needsReprovisioning;
     NSUUID *_uniqueIdentifier;
@@ -196,6 +197,7 @@
 - (void)removeControlTargetUUIDs:(id)arg1;
 - (void)addControlTargetUUIDs:(id)arg1;
 @property(copy, nonatomic) NSArray *controlTargetUUIDs; // @synthesize controlTargetUUIDs=_controlTargetUUIDs;
+@property(nonatomic) BOOL targetControllerHardwareSupport; // @synthesize targetControllerHardwareSupport=_targetControllerHardwareSupport;
 @property(nonatomic) BOOL supportsTargetController; // @synthesize supportsTargetController=_supportsTargetController;
 @property(nonatomic) BOOL supportsTargetControl; // @synthesize supportsTargetControl=_supportsTargetControl;
 @property(nonatomic) BOOL supportsMediaAccessControl; // @synthesize supportsMediaAccessControl=_supportsMediaAccessControl;

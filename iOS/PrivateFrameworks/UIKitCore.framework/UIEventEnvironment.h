@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSCountedSet, NSMutableArray, NSMutableDictionary, NSMutableSet, NSSet, UIApplication, UIPhysicalKeyboardEvent, UIPressesEvent, UITouch, UITouchesEvent, UIWheelEvent, _UIGameControllerEvent;
+@class NSCountedSet, NSMutableArray, NSMutableDictionary, NSMutableSet, NSSet, UIApplication, UIPencilEvent, UIPhysicalKeyboardEvent, UIPressesEvent, UITouch, UITouchesEvent, UIWheelEvent, _UIGameControllerEvent;
 
 __attribute__((visibility("hidden")))
 @interface UIEventEnvironment : NSObject
@@ -18,6 +18,7 @@ __attribute__((visibility("hidden")))
     UIWheelEvent *_wheelEvent;
     _UIGameControllerEvent *_gameControllerEvent;
     UIPhysicalKeyboardEvent *_physicalKeyboardEvent;
+    UIPencilEvent *_pencilEvent;
     NSMutableDictionary *_dragEventsByContextAndSessionIDPair;
     NSCountedSet *_contextAndSessionIDPairsForAdditionalDragEvents;
     _Bool _isSystemApplication;

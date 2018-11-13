@@ -7,6 +7,7 @@
 #import <objc/NSObject.h>
 
 @class NSString;
+@protocol SegmentStatsDelegate;
 
 __attribute__((visibility("hidden")))
 @interface MultiwaySegment : NSObject
@@ -26,6 +27,7 @@ __attribute__((visibility("hidden")))
     unsigned long long _totalBytesReceived;
     NSString *_segmentName;
     NSString *_previousSegmentName;
+    id <SegmentStatsDelegate> _delegate;
 }
 
 @property unsigned long long totalBytesReceived; // @synthesize totalBytesReceived=_totalBytesReceived;
@@ -44,8 +46,10 @@ __attribute__((visibility("hidden")))
 @property(readonly) double averageTargetBitrate;
 - (id)segmentReport;
 - (unsigned int)RTPeriod;
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
 - (void)dealloc;
-- (id)initWithSegmentName:(id)arg1 previousSegmentName:(id)arg2;
+- (id)initWithSegmentName:(id)arg1 previousSegmentName:(id)arg2 delegate:(id)arg3;
 
 @end
 

@@ -11,34 +11,24 @@
 
 @interface VMVoicemailCapabilities : NSObject <NSCopying, NSSecureCoding>
 {
-    _Bool _canChangeGreeting;
-    _Bool _canChangePassword;
-    _Bool _mailboxRequiresSetup;
     _Bool _transcriptionEnabled;
-    int _mailboxGreetingState;
-    unsigned int _minimumPasswordLength;
-    unsigned int _maximumPasswordLength;
-    double _maximumGreetingDuration;
 }
 
++ (id)unarchivedObjectFromData:(id)arg1 error:(id *)arg2;
++ (id)unarchivedObjectClasses;
 + (_Bool)supportsSecureCoding;
 @property(readonly, nonatomic, getter=isTranscriptionEnabled) _Bool transcriptionEnabled; // @synthesize transcriptionEnabled=_transcriptionEnabled;
-@property(readonly, nonatomic) unsigned int maximumPasswordLength; // @synthesize maximumPasswordLength=_maximumPasswordLength;
-@property(readonly, nonatomic) unsigned int minimumPasswordLength; // @synthesize minimumPasswordLength=_minimumPasswordLength;
-@property(readonly, nonatomic) double maximumGreetingDuration; // @synthesize maximumGreetingDuration=_maximumGreetingDuration;
-@property(readonly, nonatomic) int mailboxGreetingState; // @synthesize mailboxGreetingState=_mailboxGreetingState;
-@property(readonly, nonatomic) _Bool mailboxRequiresSetup; // @synthesize mailboxRequiresSetup=_mailboxRequiresSetup;
-@property(readonly, nonatomic) _Bool canChangePassword; // @synthesize canChangePassword=_canChangePassword;
-@property(readonly, nonatomic) _Bool canChangeGreeting; // @synthesize canChangeGreeting=_canChangeGreeting;
-- (id)initWithCoder:(id)arg1;
-- (void)encodeWithCoder:(id)arg1;
+- (id)archivedDataWithError:(id *)arg1;
 - (_Bool)isEqualToCapabilities:(id)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (id)debugDescription;
+- (id)description;
+- (id)initWithCoder:(id)arg1;
+- (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithCapabilities:(id)arg1;
-- (id)initWithCanChangeGreeting:(_Bool)arg1 canChangePassword:(_Bool)arg2 mailboxRequiresSetup:(_Bool)arg3 mailboxGreetingState:(int)arg4 maximumGreetingDuration:(double)arg5 minimumPasswordLength:(unsigned int)arg6 maximumPasswordLength:(unsigned int)arg7 transcriptionEnabled:(_Bool)arg8;
+- (id)initWithTranscriptionEnabled:(_Bool)arg1;
 - (id)init;
 
 @end

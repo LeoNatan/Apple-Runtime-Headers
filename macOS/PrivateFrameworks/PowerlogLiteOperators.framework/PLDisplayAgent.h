@@ -141,6 +141,7 @@
 - (double)calculatePowerFromAPL:(double)arg1 withAvgRed:(double)arg2 withAvgGreen:(double)arg3 withAvgBlue:(double)arg4;
 - (void)modelDynamicDisplayPower:(id)arg1;
 - (double)averageFrameRateFromIOMFBScanout:(id)arg1;
+- (id)getSubFrameMap;
 - (double)uAmpsToDisplayPower:(double)arg1;
 - (void)qualifyDisplayPower:(id)arg1;
 - (void)modelDisplayPower:(id)arg1;

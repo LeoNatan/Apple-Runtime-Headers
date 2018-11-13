@@ -10,7 +10,7 @@
 #import <Intents/NSSecureCoding-Protocol.h>
 #import <Intents/_INPBRunVoiceCommandIntentResponse-Protocol.h>
 
-@class NSString, _INPBArchivedObject, _INPBDictionary;
+@class NSArray, NSString, _INPBArchivedObject, _INPBDictionary;
 
 @interface _INPBRunVoiceCommandIntentResponse : PBCodable <_INPBRunVoiceCommandIntentResponse, NSSecureCoding, NSCopying>
 {
@@ -29,6 +29,7 @@
     NSString *_localizedAppName;
     _INPBDictionary *_parameters;
     NSString *_responseTemplate;
+    NSArray *_steps;
     int _toggleState;
     _INPBArchivedObject *_underlyingIntent;
     _INPBArchivedObject *_underlyingIntentResponse;
@@ -36,11 +37,13 @@
     NSString *_verb;
 }
 
++ (Class)stepType;
 @property(copy, nonatomic) NSString *verb; // @synthesize verb=_verb;
 @property(copy, nonatomic) NSString *underlyingIntentTitle; // @synthesize underlyingIntentTitle=_underlyingIntentTitle;
 @property(retain, nonatomic) _INPBArchivedObject *underlyingIntentResponse; // @synthesize underlyingIntentResponse=_underlyingIntentResponse;
 @property(retain, nonatomic) _INPBArchivedObject *underlyingIntent; // @synthesize underlyingIntent=_underlyingIntent;
 @property(nonatomic) int toggleState; // @synthesize toggleState=_toggleState;
+@property(copy, nonatomic) NSArray *steps; // @synthesize steps=_steps;
 @property(copy, nonatomic) NSString *responseTemplate; // @synthesize responseTemplate=_responseTemplate;
 @property(retain, nonatomic) _INPBDictionary *parameters; // @synthesize parameters=_parameters;
 @property(copy, nonatomic) NSString *localizedAppName; // @synthesize localizedAppName=_localizedAppName;
@@ -63,6 +66,10 @@
 - (int)StringAsToggleState:(id)arg1;
 - (id)toggleStateAsString:(int)arg1;
 @property(nonatomic) _Bool hasToggleState;
+- (id)stepAtIndex:(unsigned int)arg1;
+@property(readonly, nonatomic) unsigned int stepsCount;
+- (void)addStep:(id)arg1;
+- (void)clearSteps;
 @property(readonly, nonatomic) _Bool hasResponseTemplate;
 @property(readonly, nonatomic) _Bool hasParameters;
 @property(readonly, nonatomic) _Bool hasLocalizedAppName;

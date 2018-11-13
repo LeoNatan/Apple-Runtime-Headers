@@ -4,11 +4,12 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <VisualVoicemail/NSObject-Protocol.h>
+#import <VisualVoicemail/VMAccountManagerXPCClient-Protocol.h>
+#import <VisualVoicemail/VMGreetingManagerXPCClient-Protocol.h>
 
 @class NSOrderedSet, VMVoicemailCapabilities;
 
-@protocol VMClientXPCProtocol <NSObject>
+@protocol VMClientXPCProtocol <VMAccountManagerXPCClient, VMGreetingManagerXPCClient>
 - (void)setTranscribing:(_Bool)arg1;
 - (void)setStorageUsage:(unsigned int)arg1;
 - (void)setSyncInProgress:(_Bool)arg1;

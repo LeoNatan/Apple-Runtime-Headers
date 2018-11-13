@@ -11,6 +11,9 @@
 @protocol PKInlineInkPickerDelegate <NSObject>
 
 @optional
+- (_Bool)inlineInkPickerShouldRespondToPencilGestures:(PKInlineInkPicker *)arg1;
+- (void)inlineInkPicker:(PKInlineInkPicker *)arg1 toolIndicatorWillPresent:(_Bool)arg2 animated:(_Bool)arg3;
+- (struct CGRect)inlineInkPickerCenteringRectForToolIndicator:(PKInlineInkPicker *)arg1;
 - (struct CGRect)inlineInkPickerRectForContentsHiddenColorPickerPresentation:(PKInlineInkPicker *)arg1;
 - (UIBarButtonItem *)inlineInkPickerBarButtonItemForContentsHiddenColorPickerPresentation:(PKInlineInkPicker *)arg1;
 - (UIViewController *)viewControllerForPopoverPresentationFromInlineInkPicker:(PKInlineInkPicker *)arg1;

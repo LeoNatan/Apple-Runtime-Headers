@@ -26,6 +26,8 @@
 - (NSDate *)initialSyncDateForScope:(CPLEngineScope *)arg1;
 - (struct NSData *)initialSyncAnchorForScope:(CPLEngineScope *)arg1;
 - (BOOL)setInitialSyncAnchor:(struct NSData *)arg1 forScope:(CPLEngineScope *)arg2 error:(id *)arg3;
+- (BOOL)setHasFetchedInitialSyncAnchor:(BOOL)arg1 forScope:(CPLEngineScope *)arg2 error:(id *)arg3;
+- (BOOL)hasScopeFetchedInitialSyncAnchor:(CPLEngineScope *)arg1;
 - (BOOL)setClassNameOfRecordsForInitialQuery:(NSString *)arg1 forScope:(CPLEngineScope *)arg2 error:(id *)arg3;
 - (NSString *)classNameOfRecordsForInitialQueryForScope:(CPLEngineScope *)arg1;
 - (BOOL)storeTransientSyncAnchor:(struct NSData *)arg1 forScope:(CPLEngineScope *)arg2 error:(id *)arg3;

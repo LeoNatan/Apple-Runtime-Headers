@@ -13,6 +13,7 @@
 }
 
 + (id)_fetchRequestForUsersWithAppleID:(id)arg1;
++ (id)fetchRequestForFamilyMembers;
 + (id)fetchRequestForUsersWithDSID:(id)arg1;
 + (id)fetchRequestMatchingLocalUser;
 + (id)fetchUserWithAppleID:(id)arg1 inContext:(id)arg2 error:(id *)arg3;

@@ -170,6 +170,7 @@
 - (id)initWithData:(id)arg1 scale:(double)arg2;
 - (id)initWithData:(id)arg1;
 - (id)initWithContentsOfFile:(id)arg1;
+- (id)_subimageInRect:(struct CGRect)arg1;
 - (_Bool)_hasDecompressionInfo;
 - (_Bool)_isDecompressing;
 - (id)_initWithData:(id)arg1 immediateLoadWithMaxSize:(struct CGSize)arg2 scale:(double)arg3 renderingIntent:(int)arg4 cache:(_Bool)arg5;
@@ -237,7 +238,6 @@
 - (id)_applyBackdropViewSettings:(id)arg1 includeTints:(_Bool)arg2 includeBlur:(_Bool)arg3;
 - (id)_applyBackdropViewSettings:(id)arg1;
 - (id)_applyBackdropViewSettings:(id)arg1 allowImageResizing:(_Bool)arg2;
-- (id)_subimageInRect:(struct CGRect)arg1;
 - (id)_imageWithBrightnessModifiedForLegibilityStyle:(long long)arg1;
 - (void)_drawImageForLegibilitySettings:(id)arg1 strength:(double)arg2 size:(struct CGSize)arg3 alphaOnly:(_Bool)arg4;
 - (void)_drawImageForLegibilitySettings:(id)arg1 strength:(double)arg2 size:(struct CGSize)arg3;

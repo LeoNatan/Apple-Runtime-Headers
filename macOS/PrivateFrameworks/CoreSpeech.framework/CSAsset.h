@@ -28,6 +28,7 @@
 - (BOOL)isEqualAsset:(id)arg1;
 - (id)description;
 @property(readonly, nonatomic) NSString *hashFromResourcePath;
+- (BOOL)containsKey:(id)arg1 category:(id)arg2;
 - (id)getStringForKey:(id)arg1 category:(id)arg2 default:(id)arg3;
 - (BOOL)getBoolForKey:(id)arg1 category:(id)arg2 default:(BOOL)arg3;
 - (id)getNumberForKey:(id)arg1 category:(id)arg2 default:(id)arg3;
@@ -77,6 +78,7 @@
 @property(readonly, nonatomic) float VTSecondPassRecognizerThresholdOffset;
 @property(readonly, nonatomic) BOOL VTSecondPassUseKeywordSpotting;
 @property(readonly, nonatomic) NSString *VTSecondPassConfigPathRecognizer;
+@property(readonly, nonatomic) BOOL VTSecondPassConfigPathRecognizerExist;
 @property(readonly, nonatomic) NSString *VTSecondPassConfigPathNDAPI;
 @property(readonly, nonatomic) float VTSecondPassAnalyzerTrailingAudioTime;
 @property(readonly, nonatomic) float VTSecondPassAnalyzerPrependingAudioTime;

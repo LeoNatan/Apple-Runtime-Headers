@@ -6,20 +6,25 @@
 
 #import <objc/NSObject.h>
 
+#import <CoreUtils/NSSecureCoding-Protocol.h>
+
 @class NSData, NSString;
 
-@interface CUTDSEndpoint : NSObject
+@interface CUTDSEndpoint : NSObject <NSSecureCoding>
 {
     int _dataLinkType;
     NSData *_deviceAddress;
     NSString *_serviceType;
 }
 
++ (BOOL)supportsSecureCoding;
 @property(copy, nonatomic) NSString *serviceType; // @synthesize serviceType=_serviceType;
 @property(copy, nonatomic) NSData *deviceAddress; // @synthesize deviceAddress=_deviceAddress;
 @property(nonatomic) int dataLinkType; // @synthesize dataLinkType=_dataLinkType;
 - (void).cxx_destruct;
 - (id)description;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 
 @end
 

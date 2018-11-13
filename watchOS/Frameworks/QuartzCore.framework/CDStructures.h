@@ -72,11 +72,22 @@ struct CAColorMatrix {
     float m45;
 };
 
+struct CADisplayModeCriteriaPriv {
+    struct CGSize _field1;
+    double _field2;
+    int _field3;
+};
+
 struct CADisplayModePriv {
     struct Mode _field1;
     id _field2;
     unsigned int _field3;
     unsigned int _field4;
+};
+
+struct CADisplayPreferencesPriv {
+    _Bool _field1;
+    int _field2;
 };
 
 struct CADoublePoint {
@@ -301,40 +312,41 @@ struct Deleted;
 struct Display {
     CDUnknownFunctionPointerType *_field1;
     struct Mutex _field2;
-    id _field3;
-    struct __CFString *_field4;
+    struct SpinLock _field3;
+    id _field4;
     struct __CFString *_field5;
-    unsigned int _field6;
+    struct __CFString *_field6;
     unsigned int _field7;
     unsigned int _field8;
-    struct __CFString *_field9;
+    unsigned int _field9;
     struct __CFString *_field10;
-    struct ModeSet _field11;
-    struct Mode _field12;
+    struct __CFString *_field11;
+    struct ModeSet _field12;
     struct Mode _field13;
-    struct Bounds _field14;
+    struct Mode _field14;
     struct Bounds _field15;
-    struct Vec2<float> _field16;
-    int _field17;
-    unsigned int _field18;
-    int _field19;
-    double _field20;
+    struct Bounds _field16;
+    struct Vec2<float> _field17;
+    int _field18;
+    unsigned int _field19;
+    int _field20;
     double _field21;
-    unsigned int _field22;
-    struct DisplayShmemInfo _field23;
-    unsigned int _field24;
+    double _field22;
+    unsigned int _field23;
+    struct DisplayShmemInfo _field24;
     unsigned int _field25;
-    int _field26;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
+    unsigned int _field26;
+    int _field27;
+    _Bool _field28;
+    _Bool _field29;
+    _Bool _field30;
+    _Bool _field31;
+    _Bool _field32;
+    _Bool _field33;
+    _Bool _field34;
+    _Bool _field35;
+    _Bool _field36;
+    _Bool _field37;
 };
 
 struct DisplayLink;
@@ -365,7 +377,7 @@ struct DisplayLinkItem {
 struct DisplayShmemInfo {
     CDUnknownFunctionPointerType *_field1;
     struct SpinLock _field2;
-    struct Shmem *_field3;
+    struct Ref<CA::Render::Shmem> _field3;
     struct DisplayTimings *_field4;
 };
 
@@ -488,6 +500,10 @@ struct Ref<CA::Render::Layer::Ext> {
 
 struct Ref<CA::Render::Object> {
     struct Object *_field1;
+};
+
+struct Ref<CA::Render::Shmem> {
+    struct Shmem *_field1;
 };
 
 struct Ref<CA::Render::String> {

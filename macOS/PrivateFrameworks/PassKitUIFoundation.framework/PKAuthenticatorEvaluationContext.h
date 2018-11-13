@@ -58,7 +58,6 @@
 - (void)_handleLiftFinger;
 - (void)_setLiftFingerTimer;
 - (void)event:(long long)arg1 params:(id)arg2 reply:(CDUnknownBlockType)arg3;
-- (void)handleDFRConfirmationEventWithParameters:(id)arg1;
 - (void)handleTouchIDEventWithParameters:(id)arg1;
 - (void)handlePassphraseEventWithParameters:(id)arg1;
 - (void)handlePasscodeEventWithParameters:(id)arg1;

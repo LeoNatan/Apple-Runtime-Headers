@@ -12,7 +12,7 @@
 #import <AvatarUI/AVTPushNotificationsSupportDelegate-Protocol.h>
 
 @class AVTAvatarRecordImageGenerator, AVTCoreEnvironment, NSXPCStoreServer;
-@protocol AVTAvatarRecordChangeTracker, AVTAvatarsDaemonServer, AVTBlockScheduler, AVTCoreDataCloudKitMirroringHandler, AVTCoreDataPersistentStoreLocalConfiguration, AVTCoreDataRemoteChangesObserver, AVTPushNotificationsSupport, AVTStoreBackend, AVTSyncSchedulingAuthority, AVTUILogger, OS_dispatch_queue;
+@protocol AVTAvatarRecordChangeTracker, AVTAvatarsDaemonServer, AVTBlockScheduler, AVTCoreDataCloudKitMirroringHandler, AVTCoreDataPersistentStoreLocalConfiguration, AVTCoreDataRemoteChangesObserver, AVTCoreDataStoreMaintenance, AVTPushNotificationsSupport, AVTStoreBackend, AVTSyncSchedulingAuthority, AVTUILogger, OS_dispatch_queue;
 
 @interface AVTCoreDataStoreServer : NSObject <AVTPushNotificationsSupportDelegate, AVTCoreDataCloudKitMirroringHandlerDelegate, AVTAvatarsDaemonServerDelegate, AVTAvatarStoreServer>
 {
@@ -32,6 +32,7 @@
     AVTAvatarRecordImageGenerator *_imageGenerator;
     id <AVTAvatarRecordChangeTracker> _changeTracker;
     id <AVTAvatarsDaemonServer> _daemonServer;
+    id <AVTCoreDataStoreMaintenance> _storeMaintenance;
     CDUnknownBlockType _migrationActivityCompletion;
 }
 
@@ -39,6 +40,7 @@
 + (id)imageGeneratorForEnvironment:(id)arg1;
 @property(copy, nonatomic) CDUnknownBlockType migrationActivityCompletion; // @synthesize migrationActivityCompletion=_migrationActivityCompletion;
 @property(nonatomic) _Bool setupCompleted; // @synthesize setupCompleted=_setupCompleted;
+@property(readonly, nonatomic) id <AVTCoreDataStoreMaintenance> storeMaintenance; // @synthesize storeMaintenance=_storeMaintenance;
 @property(readonly, nonatomic) id <AVTAvatarsDaemonServer> daemonServer; // @synthesize daemonServer=_daemonServer;
 @property(readonly, nonatomic) id <AVTAvatarRecordChangeTracker> changeTracker; // @synthesize changeTracker=_changeTracker;
 @property(readonly, nonatomic) AVTAvatarRecordImageGenerator *imageGenerator; // @synthesize imageGenerator=_imageGenerator;
@@ -62,7 +64,7 @@
 - (void)scheduleUpdateThumbnails;
 - (void)updateThumbnails;
 - (void)scheduleExportWithManagedObjectContext:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (_Bool)performMaintenanceTasks:(CDUnknownBlockType)arg1;
+- (_Bool)processInternalSettingsChanges:(CDUnknownBlockType)arg1;
 - (void)scheduleImportThen:(CDUnknownBlockType)arg1;
 - (void)migrate;
 - (void)scheduleMigrationThen:(CDUnknownBlockType)arg1;
@@ -71,7 +73,7 @@
 - (void)scheduleSetupThen:(CDUnknownBlockType)arg1;
 - (void)completeMigrationActivityIfNeeded;
 - (void)startListening;
-- (id)initWithLocalBackend:(id)arg1 configuration:(id)arg2 migratorProvider:(CDUnknownBlockType)arg3 pushSupport:(id)arg4 mirroringHandler:(id)arg5 schedulingAuthority:(id)arg6 remoteChangesObserver:(id)arg7 imageGenerator:(id)arg8 changeTracker:(id)arg9 daemonServer:(id)arg10 backgroundQueue:(id)arg11 environment:(id)arg12;
+- (id)initWithLocalBackend:(id)arg1 configuration:(id)arg2 migratorProvider:(CDUnknownBlockType)arg3 pushSupport:(id)arg4 mirroringHandler:(id)arg5 schedulingAuthority:(id)arg6 remoteChangesObserver:(id)arg7 imageGenerator:(id)arg8 changeTracker:(id)arg9 daemonServer:(id)arg10 storeMaintenance:(id)arg11 backgroundQueue:(id)arg12 environment:(id)arg13;
 - (id)initWithEnvironment:(id)arg1;
 
 @end

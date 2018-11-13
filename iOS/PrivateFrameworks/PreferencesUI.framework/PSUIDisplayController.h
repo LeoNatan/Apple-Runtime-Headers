@@ -22,6 +22,10 @@
 
 + (id)booleanCapabilitiesToTest;
 - (void).cxx_destruct;
+- (void)handlePSUIExternalDisplayManagerCurrentModeDidChangeNotification:(id)arg1;
+- (void)removeExternalDisplaySpecifiers;
+- (void)insertExternalDisplaySpecifiers;
+- (id)connectedDisplaySpecifiers;
 - (void)showAlertToDisableAccessibilityFilters:(CDUnknownBlockType)arg1 cancel:(CDUnknownBlockType)arg2;
 - (void)setAutoWhiteBalanceEnabled:(id)arg1 forSpecifier:(id)arg2;
 - (id)getAutoWhiteBalanceEnabled:(id)arg1;

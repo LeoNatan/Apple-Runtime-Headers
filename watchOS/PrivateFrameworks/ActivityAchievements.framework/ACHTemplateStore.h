@@ -56,7 +56,7 @@
 - (void)addTemplates:(id)arg1;
 - (id)_queue_templatesFilteredForDuplicates:(id)arg1;
 - (void)loadAllTemplatesFromDatabaseIfNecessary;
-- (id)availableTemplatesForDateComponents:(id)arg1;
+- (id)availableTemplatesForDateComponents:(id)arg1 countryCode:(id)arg2;
 - (id)templateForTemplateKey:(unsigned int)arg1;
 - (id)templateForUniqueName:(id)arg1;
 @property(readonly, nonatomic) NSArray *allTemplates;

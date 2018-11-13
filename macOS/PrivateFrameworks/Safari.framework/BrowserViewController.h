@@ -715,6 +715,7 @@ __attribute__((visibility("hidden")))
 - (BOOL)_passwordFieldHasAutomaticStrongPasswordTreatment:(id)arg1 form:(id)arg2 frame:(id)arg3;
 - (void)passwordFieldBlurredInFrame:(id)arg1 formMetadata:(id)arg2 passwordFieldMetadata:(id)arg3;
 - (void)passwordFieldFocusedInFrame:(id)arg1 formMetadata:(id)arg2 passwordFieldMetadata:(id)arg3;
+- (void)sensitiveFieldFocusedInFrame:(id)arg1;
 - (void)_sensitiveFormFieldDidBlurOnPage;
 - (void)_sensitiveFormFieldDidFocusOnPage;
 - (BOOL)hasFrameBeenAutoFilled:(const struct Frame *)arg1;

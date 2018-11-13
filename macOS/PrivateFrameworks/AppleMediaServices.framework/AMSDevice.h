@@ -10,14 +10,14 @@
 {
 }
 
++ (BOOL)deviceIsSeedBuild;
++ (BOOL)deviceIsInternalBuild;
 + (id)_systemVersionDictionary;
 + (id)_dataForNVRAMKey:(id)arg1;
 + (id)_compatibleProductType;
-+ (BOOL)deviceIsSeedBuild;
 + (BOOL)deviceIsiPod;
 + (BOOL)deviceIsiPhone;
 + (BOOL)deviceIsiPad;
-+ (BOOL)deviceIsInternalBuild;
 + (BOOL)deviceIsAppleWatch;
 + (BOOL)deviceIsAppleTV;
 + (BOOL)deviceIsAudioAccessory;
@@ -41,6 +41,8 @@
 + (BOOL)postAllDeviceOfferFollowUpsForAccount:(id)arg1 priority:(long long)arg2 logKey:(id)arg3;
 + (id)deviceOffersForProductType:(unsigned long long)arg1;
 + (BOOL)deviceOffersContainProductType:(unsigned long long)arg1;
++ (void)_performAuth;
++ (id)_notificationIdFromFollowUpId:(id)arg1 account:(id)arg2;
 + (id)_followUpItemWithIdentifier:(id)arg1 account:(id)arg2 priority:(long long)arg3 bagContract:(id)arg4 logKey:(id)arg5;
 + (BOOL)tearDownDeviceOfferFollowUpWithIdentifier:(id)arg1 account:(id)arg2 logKey:(id)arg3;
 + (BOOL)tearDownAllDeviceOfferFollowUpsForAccount:(id)arg1 logKey:(id)arg2;

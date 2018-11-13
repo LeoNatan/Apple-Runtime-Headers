@@ -16,7 +16,7 @@
 @class NSArray, NSString, NSUndoManager, NSUserActivity, UIInputViewController, UITextInputAssistantItem, UITextInputMode, UIView;
 @protocol UITextInput, UITextInputPrivate;
 
-@interface UIResponder : NSObject <UIUserActivityRestoring, _UIStateRestorationContinuation, UITextInput_Internal, UITextInputAdditions, _UITouchable, UIResponderStandardEditActions>
+@interface UIResponder : NSObject <UITextInput_Internal, UITextInputAdditions, UIUserActivityRestoring, _UIStateRestorationContinuation, _UITouchable, UIResponderStandardEditActions>
 {
     unsigned int _hasOverrideClient:1;
     unsigned int _hasOverrideHost:1;
@@ -155,26 +155,6 @@
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 - (void)dealloc;
 - (_Bool)_usesDeemphasizedTextAppearance;
-@property(readonly, nonatomic) UITextInputAssistantItem *inputAssistantItem;
-- (void)reloadInputViewsWithoutReset;
-- (void)reloadInputViews;
-- (_Bool)shouldReloadInputViews;
-@property(readonly, nonatomic) NSString *textInputContextIdentifier;
-@property(readonly, nonatomic) UITextInputMode *textInputMode;
-@property(readonly, nonatomic) UIInputViewController *inputAccessoryViewController;
-@property(readonly, nonatomic) UIInputViewController *inputViewController;
-@property(readonly, nonatomic) UIView *inputAccessoryView;
-@property(readonly, nonatomic) UIView *inputView;
-@property(readonly, nonatomic) NSArray *keyCommands;
-- (void)restoreUserActivityState:(id)arg1;
-- (void)updateUserActivityState:(id)arg1;
-@property(retain, nonatomic) NSUserActivity *userActivity;
-- (id)_userActivity;
-- (void)decodeRestorableStateWithCoder:(id)arg1;
-- (void)encodeRestorableStateWithCoder:(id)arg1;
-- (id)_restorationIdentifierPath;
-@property(copy, nonatomic) NSString *restorationIdentifier;
-- (void)_rebuildStateRestorationIdentifierPath;
 - (id)_selectableText;
 @property(readonly, nonatomic) UIView<UITextInputPrivate> *_textSelectingContainer;
 - (struct CGRect)_lastRectForRange:(id)arg1;
@@ -274,6 +254,26 @@
 - (void)__createInteractionAssistantIfNecessaryWithSet:(int)arg1;
 - (id)interactionAssistant;
 - (id)textInputView;
+@property(readonly, nonatomic) UITextInputAssistantItem *inputAssistantItem;
+- (void)reloadInputViewsWithoutReset;
+- (void)reloadInputViews;
+- (_Bool)shouldReloadInputViews;
+@property(readonly, nonatomic) NSString *textInputContextIdentifier;
+@property(readonly, nonatomic) UITextInputMode *textInputMode;
+@property(readonly, nonatomic) UIInputViewController *inputAccessoryViewController;
+@property(readonly, nonatomic) UIInputViewController *inputViewController;
+@property(readonly, nonatomic) UIView *inputAccessoryView;
+@property(readonly, nonatomic) UIView *inputView;
+@property(readonly, nonatomic) NSArray *keyCommands;
+- (void)restoreUserActivityState:(id)arg1;
+- (void)updateUserActivityState:(id)arg1;
+@property(retain, nonatomic) NSUserActivity *userActivity;
+- (id)_userActivity;
+- (void)decodeRestorableStateWithCoder:(id)arg1;
+- (void)encodeRestorableStateWithCoder:(id)arg1;
+- (id)_restorationIdentifierPath;
+@property(copy, nonatomic) NSString *restorationIdentifier;
+- (void)_rebuildStateRestorationIdentifierPath;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

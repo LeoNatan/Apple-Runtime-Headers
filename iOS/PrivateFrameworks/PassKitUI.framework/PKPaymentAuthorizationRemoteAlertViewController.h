@@ -12,7 +12,7 @@
 #import <PassKitUI/PKPaymentSetupDelegate-Protocol.h>
 #import <PassKitUI/SBSHardwareButtonEventConsuming-Protocol.h>
 
-@class LAUIPhysicalButtonView, NSString, NSXPCConnection, PKAssertion, PKCompactNavigationContainerController, PKInAppPaymentService, PKPaymentAuthorizationRemoteAlertViewControllerExportedObject, PKPaymentAuthorizationServiceNavigationController, PKPaymentProvisioningController, PKPaymentRequest, PKPaymentSetupNavigationController;
+@class LAUIHorizontalArrowView, LAUIPhysicalButtonView, NSString, NSXPCConnection, PKAssertion, PKCompactNavigationContainerController, PKInAppPaymentService, PKPaymentAuthorizationRemoteAlertViewControllerExportedObject, PKPaymentAuthorizationServiceNavigationController, PKPaymentProvisioningController, PKPaymentRequest, PKPaymentSetupNavigationController;
 @protocol BSInvalidatable;
 
 @interface PKPaymentAuthorizationRemoteAlertViewController : SBUIRemoteAlertServiceViewController <PKCompactNavigationContainerControllerDelegate, PKPaymentAuthorizationServiceViewControllerDelegate, PKPaymentAuthorizationHostProtocol, PKPaymentSetupDelegate, SBSHardwareButtonEventConsuming>
@@ -30,6 +30,8 @@
     PKPaymentAuthorizationServiceNavigationController *_navigationController;
     _Bool _pearlViewsInserted;
     LAUIPhysicalButtonView *_physicalButtonView;
+    LAUIHorizontalArrowView *_cameraArrowView;
+    long long _coachingState;
     PKPaymentProvisioningController *_paymentProvisioningController;
     PKPaymentSetupNavigationController *_paymentSetupNavigationController;
     _Bool _paymentSetupWasRequired;
@@ -64,6 +66,7 @@
 - (void)authorizationDidRequestMerchantSession;
 - (void)authorizationWillStart;
 - (void)authorizationViewController:(id)arg1 didEncounterAuthorizationEvent:(unsigned long long)arg2;
+- (void)authorizationViewControllerDidChangeCoachingState:(id)arg1;
 - (void)authorizationViewControllerDidChangeUserIntentRequirement:(id)arg1;
 - (void)compactNavigationContainerControllerReceivedExternalTap:(id)arg1;
 - (void)consumeDoublePressUpForButtonKind:(long long)arg1;

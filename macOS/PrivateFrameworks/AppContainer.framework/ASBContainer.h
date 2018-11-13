@@ -55,6 +55,7 @@
 - (id)initWithHomeDirectory:(id)arg1 andContainerURL:(id)arg2 error:(id *)arg3;
 - (id)initWithHomeDirectory:(id)arg1 andContainerPath:(id)arg2 error:(id *)arg3;
 - (id)sanitizedPath:(id)arg1;
+- (void)recordPermissionsError:(id *)arg1 withAuxString:(id)arg2 writePath:(id)arg3 readPath:(id)arg4;
 
 @end
 

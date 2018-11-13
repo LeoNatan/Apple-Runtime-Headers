@@ -14,6 +14,7 @@
     _Bool _useInitialLayoutAttributesForRotation;
     _Bool _isResting;
     _Bool _easingUp;
+    _Bool _invalidatedViaBoundsChange;
     _Bool _hasLoadMore;
     _Bool _useFastQuanta;
     _Bool _sizeCategoryIsAccessibilitySizeCategory;
@@ -41,6 +42,7 @@
 @property(retain, nonatomic) NSMutableDictionary *finalParentVerticalOffsets; // @synthesize finalParentVerticalOffsets=_finalParentVerticalOffsets;
 @property(retain, nonatomic) NSMutableDictionary *initialParentLayoutAttributes; // @synthesize initialParentLayoutAttributes=_initialParentLayoutAttributes;
 @property(nonatomic) _Bool hasLoadMore; // @synthesize hasLoadMore=_hasLoadMore;
+@property(nonatomic) _Bool invalidatedViaBoundsChange; // @synthesize invalidatedViaBoundsChange=_invalidatedViaBoundsChange;
 @property(nonatomic) _Bool easingUp; // @synthesize easingUp=_easingUp;
 @property(nonatomic) struct CGSize contentSize; // @synthesize contentSize=_contentSize;
 @property(nonatomic) double prevTimestamp; // @synthesize prevTimestamp=_prevTimestamp;
@@ -62,6 +64,7 @@
 - (void)reduceMotionSettingChanged:(id)arg1;
 - (void)sizeCategoryDidChange:(id)arg1;
 - (void)updateFrames;
+- (void)_invalidateLayoutForDisplayLink;
 - (void)displayLinkFired:(id)arg1;
 - (float)bezierPointForPercentage:(float)arg1 anchor1:(float)arg2 anchor2:(float)arg3 control1:(float)arg4 control2:(float)arg5;
 - (void)updateAttributesForTargetContentOffsetChangeWithAttributes:(id)arg1;

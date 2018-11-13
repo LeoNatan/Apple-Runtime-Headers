@@ -98,6 +98,7 @@
 - (void)drawKnobSlotInRect:(struct CGRect)arg1 highlight:(BOOL)arg2;
 - (void)_compositeScrollerPart:(unsigned long long)arg1 inRect:(struct CGRect)arg2 withAlpha:(double)arg3 drawHandler:(CDUnknownBlockType)arg4;
 - (void)displayLayer:(id)arg1;
+- (id)effectiveAppearance;
 - (int)_vibrancyBlendModeForAppearance:(id)arg1;
 - (struct __CFDictionary *)copyCoreUITrackOptions;
 - (struct __CFDictionary *)copyCoreUIKnobOptions;

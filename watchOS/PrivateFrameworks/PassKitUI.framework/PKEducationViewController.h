@@ -23,7 +23,10 @@
     PKPaymentPass *_paymentPass;
     unsigned int _educationContext;
     _Bool _isFaceIDDevice;
+    _Bool _isPad;
+    float _maxHeight;
     AVPlayerLayer *_video;
+    UIView *_videoBoundingView;
     AVPlayer *_player;
     AVPlayerItem *_playerItem;
     _Bool _playerStarted;
@@ -31,6 +34,7 @@
     CDUnknownBlockType _continueHandler;
 }
 
++ (id)assetBackgroundColorPad;
 + (id)assetBackgroundColor;
 + (_Bool)shouldPresentForPass:(id)arg1 inEducationContext:(unsigned int)arg2;
 @property(copy, nonatomic) CDUnknownBlockType continueHandler; // @synthesize continueHandler=_continueHandler;
@@ -46,6 +50,7 @@
 - (void)explanationViewDidSelectContinue:(id)arg1;
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)viewWillLayoutSubviews;
+- (void)viewDidLoad;
 - (void)loadView;
 - (void)dealloc;
 - (id)initWithPaymentPass:(id)arg1 setupContext:(int)arg2 educationContext:(unsigned int)arg3;

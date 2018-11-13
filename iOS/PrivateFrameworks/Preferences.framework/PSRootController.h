@@ -26,6 +26,7 @@
 + (void)writePreference:(id)arg1;
 - (void).cxx_destruct;
 - (void)viewDidDisappear:(_Bool)arg1;
+- (void)viewWillDisappear:(_Bool)arg1;
 - (void)_setNavigationBarHidden:(_Bool)arg1 edge:(unsigned long long)arg2 duration:(double)arg3;
 - (void)pushControllersAsStack:(id)arg1;
 - (_Bool)respondsToSelector:(SEL)arg1;

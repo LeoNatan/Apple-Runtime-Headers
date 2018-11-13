@@ -19,6 +19,7 @@
     NSObject<OS_dispatch_semaphore> *_canBeginRenderSemaphore;
     // Error parsing type: {atomic_flag="_Value"AB}, name: _readyToBeginRender
     // Error parsing type: Ad, name: _lastFrameDuration
+    // Error parsing type: AQ, name: _lastPresentationTime
     // Error parsing type: Ai, name: _queuedRenders
     NSMutableArray *_postPresentCallbacks;
     BOOL _isTorndown;
@@ -29,6 +30,7 @@
     double _presentationDelayGrowth;
     double _presentationMaxDelay;
     CDUnknownBlockType _vSyncTimeoutBlock;
+    struct PKRunningStat _strokeLatencyStat;
     id <CAMetalDrawable> _currentDrawable;
     PKStrokeGenerator *_inputController;
     PKLinedPaper *_linedPaper;
@@ -53,12 +55,14 @@
 @property(readonly, nonatomic) PKStrokeGenerator *inputController; // @synthesize inputController=_inputController;
 @property(nonatomic) struct CGAffineTransform strokeTransform; // @synthesize strokeTransform=_strokeTransform;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *renderQueue; // @synthesize renderQueue=_renderQueue;
+- (id).cxx_construct;
 - (void).cxx_destruct;
 - (BOOL)setupCurrentDrawable;
 - (BOOL)_renderAheadWithTransform:(struct CGAffineTransform)arg1 at:(double)arg2;
 - (void)callBlockAfterPresenting:(CDUnknownBlockType)arg1;
 - (void)didFinishRendering:(CDUnknownBlockType)arg1;
 - (BOOL)prerenderWithTransform:(struct CGAffineTransform)arg1 inputScale:(double)arg2 at:(double)arg3;
+- (void)pokeEventDispatcher;
 - (void)_renderLiveStrokeAndPresentWithTransform:(struct CGAffineTransform)arg1 at:(double)arg2;
 - (void)_present:(double)arg1;
 - (void)_renderAndPresent:(BOOL)arg1 withTransform:(struct CGAffineTransform)arg2;

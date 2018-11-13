@@ -12,16 +12,19 @@ __attribute__((visibility("hidden")))
 @interface NMSPodcastDownloadInfo : NSObject
 {
     NSString *_feedURL;
+    unsigned int _episodeLimit;
     unsigned int _downloadOrder;
 }
 
 @property(readonly, nonatomic) unsigned int downloadOrder; // @synthesize downloadOrder=_downloadOrder;
+@property(nonatomic) unsigned int episodeLimit; // @synthesize episodeLimit=_episodeLimit;
 @property(readonly, nonatomic) NSString *feedURL; // @synthesize feedURL=_feedURL;
 - (void).cxx_destruct;
 - (id)description;
 - (id)predicatesForFeedURL;
 - (_Bool)isEqual:(id)arg1;
 - (id)initWithFeedURL:(id)arg1 downloadOrder:(unsigned int)arg2;
+- (id)initWithFeedURL:(id)arg1 episodeLimit:(unsigned int)arg2 downloadOrder:(unsigned int)arg3;
 
 @end
 

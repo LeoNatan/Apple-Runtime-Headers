@@ -116,6 +116,7 @@
 - (_Bool)isElementAccessibilityExposedToInterfaceBuilder;
 - (unsigned long long)defaultAccessibilityTraits;
 - (_Bool)isAccessibilityElementByDefault;
+- (void)_applySettingsForLegibilityStyle:(long long)arg1;
 - (_Bool)useBlockyMagnificationInClassic;
 - (void)decodeRestorableStateWithCoder:(id)arg1;
 - (void)encodeRestorableStateWithCoder:(id)arg1;
@@ -124,7 +125,6 @@
 - (void)_clearPretiledImageCacheForImage:(id)arg1;
 - (void)_updatePretiledImageCacheForImage:(id)arg1;
 - (_Bool)_recomputePretilingState;
-- (void)_applySettingsForLegibilityStyle:(long long)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

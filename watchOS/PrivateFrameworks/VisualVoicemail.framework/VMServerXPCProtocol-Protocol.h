@@ -4,15 +4,15 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <VisualVoicemail/NSObject-Protocol.h>
+#import <VisualVoicemail/VMAccountManagerXPCServer-Protocol.h>
+#import <VisualVoicemail/VMGreetingManagerXPCServer-Protocol.h>
 
-@class NSArray, NSProgress, NSString, VMVoicemailGreeting;
+@class NSArray, NSProgress;
 
-@protocol VMServerXPCProtocol <NSObject>
+@protocol VMServerXPCProtocol <VMAccountManagerXPCServer, VMGreetingManagerXPCServer>
 - (void)obliterate;
 - (void)reportTranscriptionRatedAccurate:(_Bool)arg1 forIdentifier:(int)arg2;
 - (void)reportTranscriptionProblemForIdentifier:(int)arg1;
-- (void)changePassword:(NSString *)arg1 completionBlock:(void (^)(NSError *))arg2;
 - (void)removeAllVoicemails;
 - (void)retrieveDataForIdentifier:(int)arg1;
 - (void)setReadForIdentifiers:(NSArray *)arg1;
@@ -21,8 +21,6 @@
 - (void)setDeletedForIdentifier:(int)arg1;
 - (void)removeVoicemailFromTrashWithIdentifier:(int)arg1;
 - (void)setTrashedForIdentifiers:(NSArray *)arg1;
-- (void)setVoicemailGreeting:(VMVoicemailGreeting *)arg1 completionBlock:(void (^)(NSError *))arg2;
-- (void)retrieveVoicemailGreeting:(void (^)(VMVoicemailGreeting *, NSError *))arg1;
 - (void)allVoicemails:(void (^)(NSOrderedSet *))arg1;
 - (void)synchronize;
 - (NSProgress *)requestTranscriptionProgress:(void (^)(_Bool))arg1;

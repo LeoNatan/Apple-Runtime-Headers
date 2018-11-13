@@ -44,6 +44,7 @@
 - (void)_persistState:(id)arg1 syncStore:(id)arg2;
 - (int)_queue_checkForOwnershipLoss;
 - (int)_queue_checkForOwnershipTakeover;
+- (void)_queue_markOwnedZonesAsSeized;
 - (void)_queue_performCleanupAndFinishFetch;
 - (void)_queue_garbageCollectZones;
 - (id)_queue_findAbandonedZones;

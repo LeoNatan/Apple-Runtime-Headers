@@ -18,8 +18,7 @@
     BOOL _isEncrypted;
     BOOL _hasEncryptedDescendantPart;
     BOOL _isSigned;
-    BOOL _blockRemoteContent;
-    BOOL _hasBlockedRemoteContent;
+    BOOL _hasBlockedMessageContent;
     NSArray *_attachments;
     long long _imageScale;
     Class _webAttachmentClass;
@@ -28,6 +27,7 @@
     NSURL *_baseURL;
     NSDictionary *_dataDetectorsContext;
     NSError *_smimeError;
+    long long _messageContentTypeToBlock;
     MUIRemoteImageCollector *_remoteImageCollector;
     unsigned long long _originalEncoding;
 }
@@ -35,8 +35,8 @@
 + (BOOL)supportsSecureCoding;
 @property(nonatomic) unsigned long long originalEncoding; // @synthesize originalEncoding=_originalEncoding;
 @property(retain, nonatomic) MUIRemoteImageCollector *remoteImageCollector; // @synthesize remoteImageCollector=_remoteImageCollector;
-@property(nonatomic) BOOL hasBlockedRemoteContent; // @synthesize hasBlockedRemoteContent=_hasBlockedRemoteContent;
-@property(nonatomic) BOOL blockRemoteContent; // @synthesize blockRemoteContent=_blockRemoteContent;
+@property(nonatomic) long long messageContentTypeToBlock; // @synthesize messageContentTypeToBlock=_messageContentTypeToBlock;
+@property(nonatomic) BOOL hasBlockedMessageContent; // @synthesize hasBlockedMessageContent=_hasBlockedMessageContent;
 @property(retain, nonatomic) NSError *smimeError; // @synthesize smimeError=_smimeError;
 @property(copy, nonatomic) NSDictionary *dataDetectorsContext; // @synthesize dataDetectorsContext=_dataDetectorsContext;
 @property(retain, nonatomic) NSURL *baseURL; // @synthesize baseURL=_baseURL;

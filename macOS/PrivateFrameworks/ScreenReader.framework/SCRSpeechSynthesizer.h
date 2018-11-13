@@ -69,6 +69,7 @@ __attribute__((visibility("hidden")))
 - (void)stopSpeaking;
 - (BOOL)startSpeakingString:(id)arg1 toURL:(id)arg2;
 - (BOOL)startSpeakingString:(id)arg1;
+@property(readonly, nonatomic) BOOL shouldPostWhenSpeechCompletes;
 @property(readonly, nonatomic) float pitchBase;
 @property(readonly, retain, nonatomic) NSArray *supportedLiteralCharacterRanges;
 @property(readonly, retain, nonatomic) NSArray *supportedCharacterRanges;

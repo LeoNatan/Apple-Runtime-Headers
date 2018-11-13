@@ -287,9 +287,6 @@
 - (id)_scopeBarContainer;
 - (int)_barPosition;
 - (void)_setBarPosition:(int)arg1;
-- (float)_defaultAutolayoutSpacing;
-- (float)_autolayoutSpacingAtEdge:(int)arg1 forAttribute:(int)arg2 inContainer:(id)arg3 isGuide:(_Bool)arg4;
-- (_Bool)_hasCustomAutolayoutNeighborSpacingForAttribute:(int *)arg1;
 - (_Bool)isElementAccessibilityExposedToInterfaceBuilder;
 - (void)_updateBackgroundToBackdropStyle:(int)arg1;
 - (id)_scopeBarContainerView;
@@ -338,6 +335,9 @@
 - (_Bool)_isInBar;
 - (void)setPretendsIsInBar:(_Bool)arg1;
 - (_Bool)pretendsIsInBar;
+- (float)_defaultAutolayoutSpacing;
+- (float)_autolayoutSpacingAtEdge:(int)arg1 forAttribute:(int)arg2 inContainer:(id)arg3 isGuide:(_Bool)arg4;
+- (_Bool)_hasCustomAutolayoutNeighborSpacingForAttribute:(int *)arg1;
 
 // Remaining properties
 @property(copy, nonatomic) NSIndexSet *PINEntrySeparatorIndexes;

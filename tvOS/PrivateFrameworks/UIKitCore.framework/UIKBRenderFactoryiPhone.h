@@ -40,6 +40,7 @@ __attribute__((visibility("hidden")))
 - (struct UIEdgeInsets)wideShadowPaddleInsets;
 - (void)_customizeSymbolStyle:(id)arg1 forKey:(id)arg2 contents:(id)arg3;
 - (void)_customizeGeometry:(id)arg1 forKey:(id)arg2 contents:(id)arg3;
+- (_Bool)iPadSansHomeButtonLayout;
 - (_Bool)iPadFudgeLayout;
 - (double)skinnyKeyThreshold;
 - (id)shiftLockImageName;

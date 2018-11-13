@@ -14,6 +14,7 @@
 {
 }
 
++ (_Bool)_shouldNotifyForTrigger:(id)arg1;
 - (void)dismissNotificationsForTimer:(id)arg1;
 - (void)postNotificationForScheduledTimer:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (void)dismissNotificationsForAlarm:(id)arg1;

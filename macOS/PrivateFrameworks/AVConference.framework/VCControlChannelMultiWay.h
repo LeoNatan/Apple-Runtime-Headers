@@ -18,6 +18,7 @@ __attribute__((visibility("hidden")))
     unsigned int _transportSessionID;
     int _vfdMessage;
     int _vfdCancel;
+    BOOL _isRunning;
     struct _opaque_pthread_t *_pidReceiveProc;
     NSMutableDictionary *_dialogs;
     NSMutableArray *_activeParticipants;
@@ -28,6 +29,7 @@ __attribute__((visibility("hidden")))
     NSObject<OS_dispatch_queue> *_sequentialKeyMaterialQueue;
 }
 
+@property(readonly) BOOL isRunning; // @synthesize isRunning=_isRunning;
 @property(readonly) BOOL isEncryptionEnabled; // @synthesize isEncryptionEnabled=_isEncryptionEnabled;
 @property(readonly, nonatomic) NSMutableDictionary *dialogs; // @synthesize dialogs=_dialogs;
 @property(nonatomic) int vfdCancel; // @synthesize vfdCancel=_vfdCancel;
@@ -55,6 +57,8 @@ __attribute__((visibility("hidden")))
 - (id)processEncryptedMessage:(id)arg1 sequenceNumber:(id)arg2 MKIData:(id)arg3 participantID:(id)arg4;
 - (BOOL)decryptMessageWithMKI:(void *)arg1 message:(id)arg2 buffer:(char *)arg3 size:(unsigned int)arg4 sequenceNumber:(unsigned short)arg5;
 - (void)flushActiveMessages;
+- (void)stop;
+- (void)start;
 - (void)dealloc;
 - (id)initWithTransportSessionID:(unsigned int)arg1 reportingAgent:(struct opaqueRTCReporting *)arg2;
 - (BOOL)decryptWithMKI:(void *)arg1 data:(char *)arg2 size:(int)arg3 sequenceNumber:(unsigned short)arg4;

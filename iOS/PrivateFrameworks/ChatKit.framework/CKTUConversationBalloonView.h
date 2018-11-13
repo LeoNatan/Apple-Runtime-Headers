@@ -6,7 +6,7 @@
 
 #import <ChatKit/CKColoredBalloonView.h>
 
-@class NSUUID, UIButton, UIImageView, UILabel;
+@class NSString, NSUUID, UIButton, UIImageView, UILabel;
 
 @interface CKTUConversationBalloonView : CKColoredBalloonView
 {
@@ -18,10 +18,12 @@
     UILabel *_statusLabel;
     UILabel *_durationLabel;
     UIButton *_joinButton;
+    NSString *_joinButtonText_TestingOverride;
 }
 
 + (id)facetimeImageForSize:(struct CGSize)arg1;
 + (struct CGSize)facetimeIconSize;
+@property(copy, nonatomic) NSString *joinButtonText_TestingOverride; // @synthesize joinButtonText_TestingOverride=_joinButtonText_TestingOverride;
 @property(nonatomic) _Bool animating; // @synthesize animating=_animating;
 @property(retain, nonatomic) UIButton *joinButton; // @synthesize joinButton=_joinButton;
 @property(retain, nonatomic) UILabel *durationLabel; // @synthesize durationLabel=_durationLabel;
@@ -31,10 +33,14 @@
 @property(nonatomic) unsigned long long state; // @synthesize state=_state;
 @property(retain, nonatomic) NSUUID *tuConversationUUID; // @synthesize tuConversationUUID=_tuConversationUUID;
 - (void).cxx_destruct;
+- (_Bool)joinButtonIsShowingTextContent;
+- (_Bool)joinButtonIsShowingImageContent;
+- (id)_joinButtonText;
 - (void)_joinButtonTapped:(id)arg1;
 - (id)_currentCall;
 - (void)_updateStatusLabelForDuration;
 - (id)_joinStateStatusString;
+@property(readonly, nonatomic) _Bool shouldRenderJoinButtonAsIcon;
 - (void)configureForCurrentState;
 - (id)tuConversation;
 - (_Bool)wantsGradient;

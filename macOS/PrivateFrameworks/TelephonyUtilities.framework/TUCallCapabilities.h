@@ -18,7 +18,6 @@
 + (id)_senderIdentityCapabilitiesByUUID;
 + (id)senderIdentityCapabilitiesWithUUID:(id)arg1;
 + (id)senderIdentityCapabilities;
-+ (BOOL)supportsCarrierServices;
 + (BOOL)isEmergencyCallbackPossible;
 + (void)endEmergencyCallbackMode;
 + (BOOL)isEmergencyCallbackModeEnabled;
@@ -39,6 +38,7 @@
 + (void)invalidateAndRefreshThumperCallingProvisioningURL;
 + (void)invalidateAndRefreshWiFiCallingProvisioningURL;
 + (void)setThumperCallingAllowedOnDefaultPairedSecondaryDevice:(BOOL)arg1;
++ (void)setThumperCallingAllowed:(BOOL)arg1 onSecondaryDeviceWithID:(id)arg2 forSenderIdentityWithUUID:(id)arg3;
 + (void)setThumperCallingAllowed:(BOOL)arg1 onSecondaryDeviceWithID:(id)arg2;
 + (BOOL)isThumperCallingAllowedOnDefaultPairedSecondaryDevice;
 + (BOOL)isThumperCallingAllowedOnSecondaryDeviceWithID:(id)arg1;
@@ -84,7 +84,9 @@
 + (int)telephonyCallSupport;
 + (BOOL)supportsBasebandCalling;
 + (BOOL)supportsPrimaryCalling;
++ (BOOL)canAttemptEmergencyCallsWithoutCellularConnectionWithUUID:(id)arg1;
 + (BOOL)canAttemptEmergencyCallsWithoutCellularConnection;
++ (BOOL)canAttemptTelephonyCallsWithoutCellularConnectionWithSenderIdentityCapabilities:(id)arg1;
 + (BOOL)canAttemptTelephonyCallsWithoutCellularConnection;
 + (BOOL)supportsFaceTimeVideoCalls;
 + (BOOL)supportsFaceTimeAudioCalls;

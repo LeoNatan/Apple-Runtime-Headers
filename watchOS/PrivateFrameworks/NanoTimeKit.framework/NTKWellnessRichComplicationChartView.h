@@ -6,21 +6,18 @@
 
 #import <UIKit/UIView.h>
 
-@class CLKDevice, NSArray, NSDateFormatter, NSNumber, UIColor, UILabel;
+@class CLKDevice, NSArray, NSDateFormatter, NSDictionary, NSNumber, UIColor, UILabel;
 
 @interface NTKWellnessRichComplicationChartView : UIView
 {
     CLKDevice *_device;
-    unsigned int _quantityBucketCount;
-    unsigned int _standBucketCount;
-    NSArray *_quantityBucketDates;
-    NSArray *_moveChartPoints;
+    NSDictionary *_moveChartPoints;
     NSNumber *_minMoveValue;
     NSNumber *_maxMoveValue;
-    NSArray *_exerciseChartPoints;
+    NSDictionary *_exerciseChartPoints;
     NSNumber *_minExerciseValue;
     NSNumber *_maxExerciseValue;
-    NSArray *_standChartPoints;
+    NSDictionary *_standChartPoints;
     UIColor *_chartLineColor;
     float _moveChartBottomLineY;
     float _exerciseChartBottomLineY;
@@ -51,15 +48,13 @@
 - (void)drawRect:(struct CGRect)arg1;
 - (void)layoutSubviews;
 - (void)_generateStandChartPointsForStandHourInfo:(id)arg1;
-- (int)_qauntityBucketIndexForDate:(id)arg1;
-- (id)_quantityBucketDateForIndex:(unsigned int)arg1;
 - (id)_generateChartPointsForQuantityStatisticsInfo:(id)arg1 withUnit:(id)arg2 accumulateFractionalValues:(_Bool)arg3;
+- (id)_keyForDate:(id)arg1;
 - (void)_generateExerciseChartPoints;
 - (void)_generateMoveChartPoints;
-- (_Bool)_date:(id)arg1 fallsBetweenDate:(id)arg2 andDate:(id)arg3;
 - (void)_registerForNotifications;
 - (void)_currentLocaleChangeOccurred;
-- (void)_createQuantityDateBuckets;
+- (void)_generateChartPoints;
 - (void)_updateHourLabelsText;
 - (void)_createHourFormatter;
 - (void)dealloc;

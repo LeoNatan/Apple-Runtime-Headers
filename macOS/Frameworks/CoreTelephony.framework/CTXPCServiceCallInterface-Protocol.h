@@ -7,6 +7,7 @@
 @class CTXPCServiceSubscriptionContext, NSString;
 
 @protocol CTXPCServiceCallInterface
+- (void)shouldShowUserWarningWhenDialingCallOnContext:(CTXPCServiceSubscriptionContext *)arg1 completion:(void (^)(BOOL, NSError *))arg2;
 - (void)getOperatorMultiPartyCallCountMaximum:(CTXPCServiceSubscriptionContext *)arg1 completion:(void (^)(NSNumber *, NSError *))arg2;
 - (void)getCallCapabilities:(CTXPCServiceSubscriptionContext *)arg1 completion:(void (^)(CTCallCapabilities *, NSError *))arg2;
 - (void)isEmergencyNumberWithWhitelistIncluded:(CTXPCServiceSubscriptionContext *)arg1 number:(NSString *)arg2 completion:(void (^)(BOOL, NSError *))arg3;

@@ -9,7 +9,7 @@
 #import <PersistentConnection/CoreTelephonyClientDataDelegate-Protocol.h>
 #import <PersistentConnection/PCInterfaceMonitorDelegate-Protocol.h>
 
-@class CoreTelephonyClient, NSMapTable, NSRecursiveLock, NSString, NSTimer, PCSimpleTimer;
+@class CTXPCServiceSubscriptionContext, CoreTelephonyClient, NSMapTable, NSRecursiveLock, NSString, NSTimer, PCSimpleTimer;
 
 @interface PCPersistentInterfaceManager : NSObject <CoreTelephonyClientDataDelegate, PCInterfaceMonitorDelegate>
 {
@@ -37,6 +37,7 @@
     BOOL _isWakeOnWiFiEnabled;
     BOOL _shouldOverrideOnCallBehavior;
     CoreTelephonyClient *_ctClient;
+    CTXPCServiceSubscriptionContext *_currentDataSimContext;
     void *_ctServerConnection;
 }
 

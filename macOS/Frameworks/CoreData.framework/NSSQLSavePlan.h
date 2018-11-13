@@ -22,9 +22,9 @@ __attribute__((visibility("hidden")))
     struct __CFDictionary *_updatedFOKRowsInCurrentSave;
     struct __CFDictionary *_deletedFOKRowsInCurrentSave;
     NSMutableArray *_externalDataReferencesToSave;
-    NSMutableSet *_externalDataReferencesToDelete;
-    NSMutableSet *_fileBackedFuturesToCopy;
-    NSMutableSet *_fileBackedFuturesToDelete;
+    NSMutableArray *_externalDataReferencesToDelete;
+    NSMutableArray *_fileBackedFuturesToCopy;
+    NSMutableArray *_fileBackedFuturesToDelete;
     NSMutableDictionary *_toManyRelationshipChanges;
     int _transactionInMemorySequence;
     struct _sqlSaveFlags {

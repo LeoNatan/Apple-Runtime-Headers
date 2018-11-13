@@ -12,28 +12,46 @@ __attribute__((visibility("hidden")))
 @interface MultiwayStream : NSObject
 {
     NSString *_streamID;
+    int _interval;
+    int _frequency;
     double _lastReceivedVideoStallTime;
     double _currentStallTime;
     double _totalVideoStallTime;
     double _maxVideoStallTime;
     unsigned short _significantVideoStallCount;
-    double _lastReceivedAudioErasure;
     unsigned short _audioErasureCount;
-    double _totalAudioErasureRate;
+    double _totalAudioErasureTime;
     double _averageFramerateSum;
     unsigned short _averageFramerateReportCounter;
     double _averageJitterLengthSum;
     unsigned short _averageJitterReportCounter;
+    int _totalVideoPacketsReceived;
+    int _oooPacketCount;
+    unsigned int _totalFIRDemandCounter;
+    unsigned int _totalFIRCounter;
+    unsigned int _videoFrameDecodedButSkippedCounter;
+    unsigned int _videoFrameImcompleteNextTSCounter;
+    unsigned int _videoFrameTotalIncompleteCounter;
+    unsigned int _decodedVideoFrameEnqueueCounter;
 }
 
+- (unsigned int)decodedVideoFrameEnqueueCounter;
+- (unsigned int)videoFrameTotalIncompleteCounter;
+- (unsigned int)videoFrameImcompleteNextTSCounter;
+- (unsigned int)videoFrameDecodedButSkippedCounter;
+- (unsigned int)totalFIRCounter;
+- (unsigned int)totalFIRDemandCounter;
+- (unsigned int)totalVideoPacketsReceived;
+- (unsigned int)oooPacketCount;
 - (unsigned short)averageJitterReportCounter;
 - (double)averageJitterLengthSum;
 - (unsigned short)averageFramerateReportCounter;
 - (double)averageFramerateSum;
-- (double)audioErasureTotalRate;
+- (double)audioErasureTotalTime;
 - (unsigned short)audioErasureCount;
 - (double)videoStallTotalTime;
 - (unsigned short)significantVideoStallCount;
+- (unsigned int)RTPeriod;
 - (void)processData:(id)arg1;
 - (void)dealloc;
 - (id)initStreamWithID:(id)arg1;

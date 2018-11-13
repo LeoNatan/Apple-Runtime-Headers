@@ -28,6 +28,8 @@
 - (unsigned int)state;
 @property(readonly, nonatomic) NSString *destination;
 @property(readonly, nonatomic) NSString *sessionID;
+- (id)_internal_sessionWithValidityCheck;
+- (void)invalidate;
 - (void)dealloc;
 - (id)initWithAccount:(id)arg1 options:(id)arg2;
 - (id)initWithAccount:(id)arg1 destinations:(id)arg2 options:(id)arg3;

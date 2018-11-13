@@ -8,19 +8,17 @@
 
 #import <ImageCapture/ICDeviceManagerProtocol-Protocol.h>
 
-@class DeviceManagerThread, NSDictionary, NSMutableDictionary, NSOperationQueue, NSString;
+@class NSDictionary, NSMutableDictionary, NSOperationQueue, NSString;
 
 __attribute__((visibility("hidden")))
 @interface DeviceManager : NSObject <ICDeviceManagerProtocol>
 {
-    DeviceManagerThread *_thread;
     NSDictionary *_deviceMatchingInfo;
     NSMutableDictionary *_devices;
-    NSOperationQueue *_deviceOperations;
+    NSOperationQueue *_deviceOperationQueue;
 }
 
-@property(retain) NSOperationQueue *deviceOperations; // @synthesize deviceOperations=_deviceOperations;
-@property(retain) DeviceManagerThread *thread; // @synthesize thread=_thread;
+@property(retain) NSOperationQueue *deviceOperations; // @synthesize deviceOperations=_deviceOperationQueue;
 - (void)addInteractiveOperation:(id)arg1;
 - (void)addInitiatedOperation:(id)arg1;
 - (void)postNotification:(id)arg1;
@@ -52,8 +50,6 @@ __attribute__((visibility("hidden")))
 - (long long)openSession:(id)arg1 contextInfo:(void *)arg2;
 - (long long)closeDevice:(id)arg1 contextInfo:(void *)arg2;
 - (long long)openDevice:(id)arg1 contextInfo:(void *)arg2;
-- (void)stopRunning;
-- (void)startRunning;
 - (void)dealloc;
 - (id)init;
 

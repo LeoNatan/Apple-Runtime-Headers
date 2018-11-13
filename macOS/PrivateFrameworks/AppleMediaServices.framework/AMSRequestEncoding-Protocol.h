@@ -6,9 +6,12 @@
 
 #import <AppleMediaServices/NSObject-Protocol.h>
 
-@class NSMutableURLRequest, NSURLRequest;
+@class AMSPromise, NSMutableURLRequest, NSURLRequest;
 
 @protocol AMSRequestEncoding <NSObject>
+
+@optional
 - (NSMutableURLRequest *)requestByEncodingRequest:(NSURLRequest *)arg1 parameters:(id)arg2 error:(id *)arg3;
+- (AMSPromise *)requestByEncodingRequest:(NSURLRequest *)arg1 parameters:(id)arg2;
 @end
 

@@ -32,8 +32,6 @@
     unsigned int _ifIndex;
     unsigned int _ifMedia;
     char _ifName[17];
-    CDUnion_fab80606 _peerAddr;
-    CDUnion_fab80606 _selfAddr;
     int _defaultPort;
     unsigned int _flags;
     int _keepAliveSeconds;
@@ -49,6 +47,8 @@
     NSString *_label;
     CUNetLinkManager *_netLinkManager;
     CDUnknownBlockType _serverInvalidationHandler;
+    CDUnion_fab80606 _peerAddr;
+    CDUnion_fab80606 _selfAddr;
 }
 
 @property(copy, nonatomic) CDUnknownBlockType serverInvalidationHandler; // @synthesize serverInvalidationHandler=_serverInvalidationHandler;
@@ -66,6 +66,8 @@
 @property(retain, nonatomic) CUBonjourDevice *destinationBonjour; // @synthesize destinationBonjour=_destinationBonjour;
 @property(nonatomic) double dataTimeoutSecs; // @synthesize dataTimeoutSecs=_dataTimeoutSecs;
 @property(nonatomic) double connectTimeoutSecs; // @synthesize connectTimeoutSecs=_connectTimeoutSecs;
+@property(readonly, nonatomic) CDUnion_fab80606 selfAddr; // @synthesize selfAddr=_selfAddr;
+@property(readonly, nonatomic) CDUnion_fab80606 peerAddr; // @synthesize peerAddr=_peerAddr;
 - (void).cxx_destruct;
 - (void)_completeWriteRequest:(id)arg1 error:(id)arg2;
 - (void)_abortWritesWithError:(id)arg1;

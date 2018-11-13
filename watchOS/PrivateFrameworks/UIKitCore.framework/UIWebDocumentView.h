@@ -575,6 +575,7 @@
 - (id)initSimpleHTMLDocumentWithStyle:(id)arg1 frame:(struct CGRect)arg2 preferences:(id)arg3 groupName:(id)arg4;
 - (struct CGRect)webViewFrameForUIFrame:(struct CGRect)arg1;
 - (void)_restoreViewportSettingsWithSize:(struct CGSize)arg1;
+- (Class)_printFormatterClass;
 @property(getter=_acceptsFirstResponder, setter=_setAcceptsFirstResponder:) _Bool _acceptsFirstResponder;
 - (id)_doubleTapGestureRecognizer;
 - (id)superviewForSheet;
@@ -657,7 +658,6 @@
 - (void)_showImageSheet;
 - (void)_appendOpenActionsForURL:(id)arg1 actions:(id)arg2;
 - (void)_createSheetWithElementActions:(id)arg1 showLinkTitle:(_Bool)arg2;
-- (Class)_printFormatterClass;
 - (struct CGPoint)constrainedPoint:(struct CGPoint)arg1;
 - (_Bool)mouseEventsChangeSelection;
 - (id)positionAtStartOrEndOfWord:(id)arg1;

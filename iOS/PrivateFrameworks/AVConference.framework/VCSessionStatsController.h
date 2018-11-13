@@ -45,6 +45,7 @@ __attribute__((visibility("hidden")))
     unsigned int _statsResponseCounter;
     unsigned int _numStatsDroppedDueToStatsID;
     unsigned int _numStatsDroppedDueToLinkID;
+    unsigned int _numStatsDroppedDueToTooLate;
     unsigned int _numStatsProcessed;
     unsigned int _numStatsTriggered;
     double _totalStatsTransportStreamQueueTime;
@@ -63,6 +64,7 @@ __attribute__((visibility("hidden")))
 - (void)statsReceiveStatsPayload;
 - (void)triggerRateControlWithLocalSessionStats:(CDStruct_b5e1e8f2)arg1 time:(double)arg2;
 - (unsigned short)translateTimestampFromMicro:(double)arg1;
+- (_Bool)isRemoteSessionStatsTooLateWithStatsId:(unsigned short)arg1;
 - (void)updateRemoteSessionStats:(CDStruct_2756d7ac)arg1;
 - (void)stopLocalSessionStatsUpdate;
 - (void)startLocalSessionStatsSend;

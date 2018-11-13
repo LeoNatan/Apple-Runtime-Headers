@@ -34,8 +34,6 @@
 @property(readonly) NSString *deviceClass; // @synthesize deviceClass=_deviceClass;
 @property(readonly) NSString *buildVersion; // @synthesize buildVersion=_buildVersion;
 @property _Bool basicMediaModel; // @synthesize basicMediaModel=_basicMediaModel;
-- (void)waitForCommandCompletion;
-- (void)signalCommandCompletion;
 - (_Bool)applePTPCapable;
 - (void)removeFolder:(id)arg1;
 - (void)addFolder:(id)arg1;
@@ -64,7 +62,6 @@
 - (void)addCameraFileToIndex:(id)arg1;
 - (void)removeCameraFolderFromIndex:(id)arg1;
 - (void)addCameraFolderToIndex:(id)arg1;
-- (void)removeMediaFiles:(id)arg1;
 - (_Bool)updateMediaPresentation;
 @property unsigned long long mediaPresentation;
 - (id)cameraFileIndexesMatchingDateCriteria:(id)arg1;
@@ -91,9 +88,8 @@
 - (void)setApplePTPObjectLimit:(id)arg1;
 - (id)applePTPObjectLimit;
 - (id)applePTPFiles;
-- (id)deviceQSemaphore;
-- (id)enumerationQ;
-- (id)generalQ;
+- (id)deviceCommandQueue;
+- (id)deviceNotificationQueue;
 @property(getter=isApplePTPCapable) _Bool applePTPCapable;
 - (_Bool)legacyDevice;
 - (void)setAppleRelatedUUIDSupport:(unsigned long long)arg1;

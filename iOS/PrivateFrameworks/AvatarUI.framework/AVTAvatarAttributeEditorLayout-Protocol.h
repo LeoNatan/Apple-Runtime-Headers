@@ -7,6 +7,7 @@
 @class NSString, UIColor;
 
 @protocol AVTAvatarAttributeEditorLayout
+@property(readonly, nonatomic) unsigned long long supportedLayoutOrientation;
 @property(readonly, nonatomic) UIColor *backgroundColor;
 @property(readonly, nonatomic) struct UIEdgeInsets attributesContentViewScrollIndicatorInsets;
 @property(readonly, nonatomic) struct UIEdgeInsets attributesContentViewInsets;

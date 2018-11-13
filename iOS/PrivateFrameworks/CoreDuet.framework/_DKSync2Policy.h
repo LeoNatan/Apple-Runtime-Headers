@@ -38,6 +38,7 @@
 + (id)syncPolicyConfigPathForFilename:(id)arg1;
 + (void)handleDownloadSyncPolicyResponse:(id)arg1 data:(id)arg2 error:(id)arg3;
 + (void)possiblyDownloadSyncPolicyWithPolicyDownloadIntervalInDays:(unsigned long long)arg1;
++ (id)productVersion;
 + (id)policyFromDictionary:(id)arg1;
 + (void)setOkToDownloadPolicyUpdates:(_Bool)arg1;
 + (_Bool)cloudSyncDisabled;

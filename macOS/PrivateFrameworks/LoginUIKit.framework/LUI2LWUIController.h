@@ -48,6 +48,7 @@
 - (void)hidePopover;
 - (id)currentPopover;
 - (id)_viewForPopover:(int)arg1;
+- (void)_updateKeyViews:(id)arg1;
 - (void)_setupLWUIControllerWithAuthorizationPluginView:(id)arg1;
 
 @end

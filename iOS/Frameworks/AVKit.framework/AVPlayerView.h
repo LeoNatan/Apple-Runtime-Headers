@@ -6,22 +6,19 @@
 
 #import <UIKit/UIView.h>
 
-@class AVPlayerViewControllerContentView, UIScreen;
+@class AVPlayerViewControllerContentView;
 
 @interface AVPlayerView : UIView
 {
     _Bool _needsInitialLayout;
     AVPlayerViewControllerContentView *_contentView;
-    UIScreen *_primaryScreen;
 }
 
 @property(nonatomic) _Bool needsInitialLayout; // @synthesize needsInitialLayout=_needsInitialLayout;
-@property(nonatomic) __weak UIScreen *primaryScreen; // @synthesize primaryScreen=_primaryScreen;
 @property(readonly, nonatomic) AVPlayerViewControllerContentView *contentView; // @synthesize contentView=_contentView;
 - (void).cxx_destruct;
 - (void)layoutSubviews;
 - (void)setClipsToBounds:(_Bool)arg1;
-- (void)willMoveToWindow:(id)arg1;
 - (void)beginManagingContentView;
 - (id)initWithFrame:(struct CGRect)arg1 contentView:(id)arg2;
 

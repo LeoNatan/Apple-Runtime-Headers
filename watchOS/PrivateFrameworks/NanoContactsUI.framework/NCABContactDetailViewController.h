@@ -51,6 +51,7 @@
 - (id)initWithPerson:(void *)arg1;
 - (struct CGSize)_sizeForContactTextCellContent;
 - (_Bool)_shouldUseCompactOffsetForIndexPath:(id)arg1;
+- (id)_senderIdentity;
 - (void)canCallPossiblyChanged:(id)arg1;
 - (void)quickCellDidSelectMail:(id)arg1;
 - (void)quickCellDidSelectMessage:(id)arg1;

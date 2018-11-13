@@ -56,6 +56,17 @@
 - (_Bool)_shouldUpdateSyncStatsForMessage:(id)arg1 originalSyncState:(long long)arg2;
 - (_Bool)_shouldUpdateSyncStatsForChat:(id)arg1 originalSyncState:(int)arg2;
 - (id)_statsCollector;
+- (void)_updateHandleInDBWithPCMID:(id)arg1 handle:(id)arg2;
+- (void)_updatePCMIDForHandle:(id)arg1;
+- (id)_personCentricIDForHandleID:(id)arg1;
+- (void)_updatePCMIDOnHandles:(id)arg1;
+- (id)_handlesThatNeedPCMIDUpdatedGivenArray:(id)arg1;
+- (id)_handlesThatNeedPCMIDsUpdatedGivenMap:(id)arg1;
+- (void)_addHandlesToPCMIDMapForChatParticipants:(id)arg1 pcmidToHandleMap:(id)arg2;
+- (id)_pcmidToHandlesMapForChats:(id)arg1;
+- (void)_noteDownAttemptToMigratePersonCentricIDsOnIMDHandles;
+- (_Bool)_shouldMigrateIMDHandlesPersonCentricIDsOnAllChats;
+- (void)repairPersonCentricIDsOnChatsIfNeeded;
 - (void)resetChatSyncStateForRecord:(id)arg1;
 - (void)markDefferredChatsAsNeedingSync;
 - (void)markChatAsDeferredForSyncingUsingCKRecord:(id)arg1;
@@ -103,6 +114,7 @@
 - (id)_chatInfoForNumberOfChats:(int)arg1;
 - (id)_allChatInfo;
 - (id)_chatInfoForConnection;
+- (void)_fixUpChatParticipantsIfNeeded:(id)arg1;
 - (void)removeMessage:(id)arg1 fromChat:(id)arg2;
 - (void)addMessage:(id)arg1 toChat:(id)arg2 deferSpotlightIndexing:(_Bool)arg3;
 - (void)addMessage:(id)arg1 toChat:(id)arg2;

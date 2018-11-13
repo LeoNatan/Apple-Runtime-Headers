@@ -13,6 +13,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (unsigned int)nwActivityLabel;
 
 @end
 

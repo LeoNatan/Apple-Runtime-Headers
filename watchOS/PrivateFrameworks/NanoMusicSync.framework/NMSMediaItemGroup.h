@@ -25,7 +25,7 @@
 + (id)itemGroupWithLibraryHeavyRotationRecommendation:(id)arg1 albumID:(id)arg2 downloadedItemsOnly:(_Bool)arg3;
 + (id)itemGroupWithLibraryHeavyRotationRecommendation:(id)arg1 playlistID:(id)arg2 downloadedItemsOnly:(_Bool)arg3;
 + (id)itemGroupWithPodcastFeedURL:(id)arg1 downloadOrder:(unsigned int)arg2;
-+ (id)itemGroupWithPodcastFeedURL:(id)arg1 downloadOrder:(unsigned int)arg2 downloadedItemsOnly:(_Bool)arg3;
++ (id)itemGroupWithPodcastFeedURL:(id)arg1 downloadOrder:(unsigned int)arg2 episodeLimit:(unsigned int)arg3 downloadedItemsOnly:(_Bool)arg4;
 + (id)itemGroupWithSyncedAlbumID:(id)arg1 downloadedItemsOnly:(_Bool)arg2;
 + (id)itemGroupWithSyncedPlaylistID:(id)arg1 downloadedItemsOnly:(_Bool)arg2;
 @property(retain, nonatomic) NSDictionary *itemSizesDict; // @synthesize itemSizesDict=_itemSizesDict;

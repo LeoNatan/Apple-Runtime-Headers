@@ -312,9 +312,6 @@
 - (struct UIEdgeInsets)_combinedContentPaddingInsets;
 - (id)_layoutDebuggingTitle;
 @property(retain, nonatomic) UIColor *tintColor; // @dynamic tintColor;
-- (double)_autolayoutSpacingAtEdge:(int)arg1 forAttribute:(id)arg2 nextToNeighbor:(id)arg3 edge:(int)arg4 attribute:(long long)arg5 multiplier:(double)arg6;
-- (double)_autolayoutSpacingAtEdge:(int)arg1 forAttribute:(long long)arg2 inContainer:(id)arg3 isGuide:(_Bool)arg4;
-- (_Bool)_hasCustomAutolayoutNeighborSpacingForAttribute:(long long *)arg1;
 - (_Bool)isElementAccessibilityExposedToInterfaceBuilder;
 - (unsigned long long)defaultAccessibilityTraits;
 - (_Bool)isAccessibilityElementByDefault;
@@ -323,6 +320,9 @@
 - (double)_scaleFactorForImage;
 - (struct CGSize)_effectiveSizeForImage:(id)arg1;
 - (void)_uikit_applyValueFromTraitStorage:(id)arg1 forKeyPath:(id)arg2;
+- (double)_autolayoutSpacingAtEdge:(int)arg1 forAttribute:(id)arg2 nextToNeighbor:(id)arg3 edge:(int)arg4 attribute:(long long)arg5 multiplier:(double)arg6;
+- (double)_autolayoutSpacingAtEdge:(int)arg1 forAttribute:(long long)arg2 inContainer:(id)arg3 isGuide:(_Bool)arg4;
+- (_Bool)_hasCustomAutolayoutNeighborSpacingForAttribute:(long long *)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -25,7 +25,7 @@
 - (BOOL)_saveFrequentlyVisitedSites:(id)arg1;
 - (id)_canonicalizedFavoritesURLStringSet;
 - (void)_updateFrequentlyVisitedSitesWithCandidates:(id)arg1;
-- (float)_scoreForHistoryItemOnHistoryQueue:(id)arg1;
+- (float)_scoreForHistoryItem:(id)arg1;
 - (id)_computeFrequentlyVisitedSiteCandidates;
 - (void)_recomputeFrequentlyVisitedSitesNow;
 - (void)clearFrequentlyVisitedSites;

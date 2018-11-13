@@ -62,10 +62,6 @@
 + (id)_imageNamed:(id)arg1 withTrait:(id)arg2;
 + (id)imageNamed:(id)arg1;
 + (void)initialize;
-+ (id)writableTypeIdentifiersForItemProvider;
-+ (id)objectWithItemProviderData:(id)arg1 typeIdentifier:(id)arg2 error:(id *)arg3;
-+ (id)readableTypeIdentifiersForItemProvider;
-+ (id)newObjectWithItemProviderData:(id)arg1 typeIdentifier:(id)arg2 options:(id)arg3 error:(id *)arg4;
 + (id)_noiseImage;
 + (id)_deviceSpecificImageNamed:(id)arg1 inBundle:(id)arg2;
 + (id)_deviceSpecificImageNamed:(id)arg1;
@@ -94,6 +90,10 @@
 + (id)_tintedImageForSize:(struct CGSize)arg1 withTint:(id)arg2 maskImage:(id)arg3 effectsImage:(id)arg4 style:(int)arg5;
 + (id)_tintedImageForSize:(struct CGSize)arg1 withTint:(id)arg2 effectsImage:(id)arg3 maskImage:(id)arg4 style:(int)arg5;
 + (struct CGSize)_legibilityImageSizeForSize:(struct CGSize)arg1 style:(long long)arg2;
++ (id)writableTypeIdentifiersForItemProvider;
++ (id)objectWithItemProviderData:(id)arg1 typeIdentifier:(id)arg2 error:(id *)arg3;
++ (id)readableTypeIdentifiersForItemProvider;
++ (id)newObjectWithItemProviderData:(id)arg1 typeIdentifier:(id)arg2 options:(id)arg3 error:(id *)arg4;
 @property(retain, nonatomic) UIImageAsset *imageAsset; // @synthesize imageAsset=_imageAsset;
 @property(retain, nonatomic) _UIImageVectorImageSupport *vectorImageSupport; // @synthesize vectorImageSupport=_vectorImageSupport;
 @property(readonly, nonatomic) _Bool flipsForRightToLeftLayoutDirection; // @synthesize flipsForRightToLeftLayoutDirection=_flipsForRightToLeftLayoutDirection;
@@ -176,10 +176,7 @@
 - (id)initWithData:(id)arg1 scale:(double)arg2;
 - (id)initWithData:(id)arg1;
 - (id)initWithContentsOfFile:(id)arg1;
-@property(readonly, nonatomic) struct CGSize preferredPresentationSizeForItemProvider;
-- (id)loadDataWithTypeIdentifier:(id)arg1 forItemProviderCompletionHandler:(CDUnknownBlockType)arg2;
-- (id)initWithItemProviderData:(id)arg1 typeIdentifier:(id)arg2 error:(id *)arg3;
-- (void)registerLoadHandlersToItemProvider:(id)arg1;
+- (id)_subimageInRect:(struct CGRect)arg1;
 - (_Bool)_hasDecompressionInfo;
 - (_Bool)_isDecompressing;
 - (id)_initWithData:(id)arg1 immediateLoadWithMaxSize:(struct CGSize)arg2 scale:(double)arg3 renderingIntent:(int)arg4 cache:(_Bool)arg5;
@@ -247,7 +244,6 @@
 - (id)_applyBackdropViewSettings:(id)arg1 includeTints:(_Bool)arg2 includeBlur:(_Bool)arg3;
 - (id)_applyBackdropViewSettings:(id)arg1;
 - (id)_applyBackdropViewSettings:(id)arg1 allowImageResizing:(_Bool)arg2;
-- (id)_subimageInRect:(struct CGRect)arg1;
 - (id)_imageWithBrightnessModifiedForLegibilityStyle:(long long)arg1;
 - (void)_drawImageForLegibilitySettings:(id)arg1 strength:(double)arg2 size:(struct CGSize)arg3 alphaOnly:(_Bool)arg4;
 - (void)_drawImageForLegibilitySettings:(id)arg1 strength:(double)arg2 size:(struct CGSize)arg3;
@@ -255,6 +251,10 @@
 - (id)_imageForLegibilitySettings:(id)arg1 strength:(double)arg2 alphaOnly:(_Bool)arg3;
 - (id)_imageForLegibilitySettings:(id)arg1 strength:(double)arg2;
 - (id)_imageForLegibilityStyle:(long long)arg1;
+@property(readonly, nonatomic) struct CGSize preferredPresentationSizeForItemProvider;
+- (id)loadDataWithTypeIdentifier:(id)arg1 forItemProviderCompletionHandler:(CDUnknownBlockType)arg2;
+- (id)initWithItemProviderData:(id)arg1 typeIdentifier:(id)arg2 error:(id *)arg3;
+- (void)registerLoadHandlersToItemProvider:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

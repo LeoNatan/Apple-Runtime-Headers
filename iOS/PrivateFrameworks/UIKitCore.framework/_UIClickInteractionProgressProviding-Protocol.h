@@ -7,12 +7,13 @@
 #import <UIKitCore/NSObject-Protocol.h>
 
 @class UIView;
-@protocol _UIClickInteractionProgressProvidingDelegate;
+@protocol UICoordinateSpace, _UIClickInteractionProgressProvidingDelegate;
 
 @protocol _UIClickInteractionProgressProviding <NSObject>
 @property(readonly, nonatomic) long long currentState;
 @property(retain, nonatomic) UIView *view;
 @property(nonatomic) __weak id <_UIClickInteractionProgressProvidingDelegate> delegate;
+- (struct CGPoint)locationInCoordinateSpace:(id <UICoordinateSpace>)arg1;
 - (void)cancelInteraction;
 - (_Bool)shouldInvokeActionWhenTransitioningFromState:(long long)arg1 toState:(long long)arg2;
 @end

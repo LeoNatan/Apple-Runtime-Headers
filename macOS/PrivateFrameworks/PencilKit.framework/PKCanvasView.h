@@ -24,6 +24,7 @@
     NSColor *_backgroundColor;
     PKRecognitionOverlayView *_overlayView;
     PKSelectionController *_selectionController;
+    long long _aggd_cachedVisibleStrokeCount;
     PKInternalDrawingView *_drawingView;
     id <PKSelectionDelegate> _selectionViewDelegate;
     struct CGSize _fixedPixelSize;
@@ -33,6 +34,7 @@
 @property(nonatomic) BOOL visualizationsEnabled; // @synthesize visualizationsEnabled=_visualizationsEnabled;
 @property(retain, nonatomic) PKInternalDrawingView *drawingView; // @synthesize drawingView=_drawingView;
 @property(nonatomic) BOOL _maintainsTransformsOnLayout; // @synthesize _maintainsTransformsOnLayout=__maintainsTransformsOnLayout;
+@property(nonatomic) long long aggd_cachedVisibleStrokeCount; // @synthesize aggd_cachedVisibleStrokeCount=_aggd_cachedVisibleStrokeCount;
 @property(retain, nonatomic) PKSelectionController *selectionController; // @synthesize selectionController=_selectionController;
 @property(retain, nonatomic) PKRecognitionOverlayView *overlayView; // @synthesize overlayView=_overlayView;
 @property(retain, nonatomic) NSColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;

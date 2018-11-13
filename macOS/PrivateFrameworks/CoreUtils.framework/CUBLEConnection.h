@@ -33,6 +33,7 @@
     struct NSMutableArray *_writeRequests;
     struct LogCategory *_ucat;
     unsigned short _destinationPSM;
+    int _connectionLatency;
     NSUUID *_destinationUUID;
     NSObject<OS_dispatch_queue> *_dispatchQueue;
     CDUnknownBlockType _errorHandler;
@@ -50,6 +51,7 @@
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
 @property(copy, nonatomic) NSUUID *destinationUUID; // @synthesize destinationUUID=_destinationUUID;
 @property(nonatomic) unsigned short destinationPSM; // @synthesize destinationPSM=_destinationPSM;
+@property(nonatomic) int connectionLatency; // @synthesize connectionLatency=_connectionLatency;
 - (void).cxx_destruct;
 - (void)peripheral:(id)arg1 didOpenL2CAPChannel:(id)arg2 error:(id)arg3;
 - (void)centralManager:(id)arg1 didFailToConnectPeripheral:(id)arg2 error:(id)arg3;

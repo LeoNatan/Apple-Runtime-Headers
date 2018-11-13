@@ -10,9 +10,12 @@
 {
 }
 
++ (id)_valueForKey:(id)arg1 domain:(struct __CFString *)arg2;
 + (id)_valueForKey:(id)arg1;
++ (void)_setValue:(id)arg1 forKey:(id)arg2 domain:(struct __CFString *)arg3;
 + (void)_setValue:(id)arg1 forKey:(id)arg2;
 + (void)_setInteger:(long long)arg1 forKey:(id)arg2;
++ (void)_setBool:(BOOL)arg1 forKey:(id)arg2 domain:(struct __CFString *)arg3;
 + (void)_setBool:(BOOL)arg1 forKey:(id)arg2;
 + (double)_randomDouble;
 + (long long)_integerForKey:(id)arg1 defaultValue:(long long)arg2 domain:(struct __CFString *)arg3;
@@ -27,6 +30,7 @@
 + (void)setIncludeFullResponseInHARLogging:(BOOL)arg1;
 + (void)setIncludeFullRequestInHARLogging:(BOOL)arg1;
 + (void)setIgnoreServerTrustEvaluation:(BOOL)arg1;
++ (void)setPerfomedDeviceOfferSetup:(BOOL)arg1;
 + (void)setMigratedToNewCookieStorage:(BOOL)arg1;
 + (void)setMetricsTimingWindowStartTime:(id)arg1;
 + (void)setMetricsCanaryIdentifier:(id)arg1;
@@ -39,9 +43,9 @@
 + (void)setBagURLCookies:(id)arg1;
 + (void)setAlwaysSendCacheBuster:(BOOL)arg1;
 + (void)setAlwaysSendGUID:(BOOL)arg1;
-+ (id)deviceOffersSerialNumber;
 + (BOOL)useNewCookieStorage;
 + (id)storefrontSuffixes;
++ (BOOL)perfomedDeviceOfferSetup;
 + (id)metricsTimingWindowStartTime;
 + (id)mescalCertExpiration;
 + (BOOL)includeFullResponseInHARLogging;
@@ -54,6 +58,7 @@
 + (long long)reversePushEnabled;
 + (BOOL)disableHARLogging;
 + (BOOL)didRetrieveDeviceOffers;
++ (id)deviceOffersSerialNumber;
 + (id)deviceOfferEligibility;
 + (id)bagURLCookies;
 + (BOOL)alwaysSendCacheBuster;

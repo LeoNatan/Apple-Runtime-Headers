@@ -6,12 +6,12 @@
 
 #import <objc/NSObject.h>
 
-#import <CoreSpeech/CSAssetManagerDelegate-Protocol.h>
+#import <CoreSpeech/CSVoiceTriggerAssetDownloadMonitorDelegate-Protocol.h>
 
 @class NSString;
 @protocol OS_dispatch_queue;
 
-@interface CSSpeakerIdRecognizerFactory : NSObject <CSAssetManagerDelegate>
+@interface CSSpeakerIdRecognizerFactory : NSObject <CSVoiceTriggerAssetDownloadMonitorDelegate>
 {
     BOOL _currentlyRetraining;
     NSObject<OS_dispatch_queue> *_stateSerialQueue;
@@ -20,7 +20,7 @@
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *stateSerialQueue; // @synthesize stateSerialQueue=_stateSerialQueue;
 @property(nonatomic) BOOL currentlyRetraining; // @synthesize currentlyRetraining=_currentlyRetraining;
 - (void).cxx_destruct;
-- (void)CSAssetManagerDidDownloadNewAsset:(id)arg1;
+- (void)CSVoiceTriggerAssetDownloadMonitor:(id)arg1 didInstallNewAsset:(BOOL)arg2;
 - (id)speakerIdRecognizerWithContext:(id)arg1 delegate:(id)arg2;
 - (id)init;
 

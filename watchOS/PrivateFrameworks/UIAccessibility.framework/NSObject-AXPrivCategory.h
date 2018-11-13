@@ -571,6 +571,10 @@
 - (unsigned long)axContainerTypeFromUIKitContainerType:(int)arg1;
 - (_Bool)_accessibilityElementShouldBeInvalid;
 - (_Bool)_accessibilityCanPerformEscapeAction;
+- (void)_accessibilitySetControlShouldPerformAccessibilityActivate:(_Bool)arg1;
+- (_Bool)_accessibilityControlShouldPerformAccessibilityActivate;
+- (void)_axSetStoredControlShouldPerformAccessibilityActivate:(id)arg1;
+- (id)_axStoredControlShouldPerformAccessibilityActivate;
 - (_Bool)_accessibilitySupportsActivateAction;
 - (_Bool)_accessibilityAlwaysOrderedFirst;
 - (id)_accessibilitySupportGesturesAttributes;

@@ -33,7 +33,6 @@
     BOOL _supportsFaceTimeVideoRelayCalling;
     BOOL _emergencyCallbackModeEnabled;
     BOOL _emergencyCallbackPossible;
-    BOOL _supportsCarrierServices;
     int _relayCallingAvailability;
     NSDictionary *_relayCallingDisabledForDeviceID;
     NSString *_outgoingRelayCallerID;
@@ -43,7 +42,6 @@
 
 + (BOOL)supportsSecureCoding;
 @property(copy, nonatomic) NSDictionary *senderIdentityCapabilitiesStateByUUID; // @synthesize senderIdentityCapabilitiesStateByUUID=_senderIdentityCapabilitiesStateByUUID;
-@property(nonatomic) BOOL supportsCarrierServices; // @synthesize supportsCarrierServices=_supportsCarrierServices;
 @property(nonatomic, getter=isEmergencyCallbackPossible) BOOL emergencyCallbackPossible; // @synthesize emergencyCallbackPossible=_emergencyCallbackPossible;
 @property(nonatomic, getter=isEmergencyCallbackModeEnabled) BOOL emergencyCallbackModeEnabled; // @synthesize emergencyCallbackModeEnabled=_emergencyCallbackModeEnabled;
 @property(copy, nonatomic) NSArray *cloudCallingDevices; // @synthesize cloudCallingDevices=_cloudCallingDevices;

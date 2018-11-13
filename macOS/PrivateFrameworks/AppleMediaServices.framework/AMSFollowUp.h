@@ -24,6 +24,7 @@
 - (id)pendingFollowUpsForAccount:(id)arg1;
 - (id)pendingFollowUps;
 - (id)clearFollowUpWithIdentifier:(id)arg1 account:(id)arg2;
+- (id)clearFollowUpItem:(id)arg1;
 - (id)init;
 
 @end

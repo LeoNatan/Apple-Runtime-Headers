@@ -59,6 +59,8 @@
 + (id)clearImage:(struct CGRect)arg1;
 + (id)imageWithDepthData:(id)arg1;
 + (id)imageWithDepthData:(id)arg1 options:(id)arg2;
++ (id)imageWithPortraitEffectsMatte:(id)arg1;
++ (id)imageWithPortraitEffectsMatte:(id)arg1 options:(id)arg2;
 + (id)imageWithPortaitEffectsMatte:(id)arg1;
 + (id)imageWithPortaitEffectsMatte:(id)arg1 options:(id)arg2;
 + (id)imageWithAttributedString:(id)arg1 format:(int)arg2 options:(id)arg3;
@@ -206,6 +208,8 @@
 - (struct CGPoint)calcIntersection:(struct CGPoint)arg1 slope1:(struct CGPoint)arg2 pt2:(struct CGPoint)arg3 slope2:(struct CGPoint)arg4;
 - (id)initWithDepthData:(id)arg1;
 - (id)initWithDepthData:(id)arg1 options:(id)arg2;
+- (id)initWithPortraitEffectsMatte:(id)arg1;
+- (id)initWithPortraitEffectsMatte:(id)arg1 options:(id)arg2;
 - (id)initWithPortaitEffectsMatte:(id)arg1;
 - (id)initWithPortaitEffectsMatte:(id)arg1 options:(id)arg2;
 - (id)initWithAttributedString:(id)arg1 format:(int)arg2 options:(id)arg3;

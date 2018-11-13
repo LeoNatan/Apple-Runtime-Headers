@@ -13,8 +13,12 @@ __attribute__((visibility("hidden")))
 {
     int _effectsMode;
     VCVideoFrameBufferPool *_bufferPool;
+    BOOL _effectsApplied;
+    BOOL _faceMeshTrackingEnabled;
 }
 
+@property(nonatomic) BOOL faceMeshTrackingEnabled; // @synthesize faceMeshTrackingEnabled=_faceMeshTrackingEnabled;
+@property(nonatomic) BOOL effectsApplied; // @synthesize effectsApplied=_effectsApplied;
 @property(nonatomic) int effectsMode; // @synthesize effectsMode=_effectsMode;
 - (BOOL)releaseFrameWithTime:(long long)arg1;
 - (BOOL)addFrame:(struct __CVBuffer *)arg1 time:(long long)arg2;

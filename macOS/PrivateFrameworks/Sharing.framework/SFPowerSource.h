@@ -19,9 +19,11 @@
     BOOL _lowPowerModeEnabled;
     BOOL _showChargingUI;
     BOOL _adapterSharedSource;
+    BOOL _added;
     BOOL _present;
     int _powerState;
     int _role;
+    unsigned int _changes;
     NSString *_accessoryCategory;
     NSString *_accessoryID;
     double _chargeLevel;
@@ -35,9 +37,6 @@
     long long _productID;
     long long _sourceID;
     NSString *_state;
-    SFPowerSource *_subLeft;
-    SFPowerSource *_subRight;
-    SFPowerSource *_subCase;
     long long _temperature;
     NSString *_transportType;
     NSString *_type;
@@ -51,7 +50,9 @@
 }
 
 + (BOOL)supportsSecureCoding;
+@property(nonatomic) unsigned int changes; // @synthesize changes=_changes;
 @property(nonatomic) BOOL present; // @synthesize present=_present;
+@property(nonatomic) BOOL added; // @synthesize added=_added;
 @property(copy, nonatomic) NSDictionary *ioKitDescription; // @synthesize ioKitDescription=_ioKitDescription;
 @property(copy, nonatomic) NSDictionary *ioKitAdapterDescription; // @synthesize ioKitAdapterDescription=_ioKitAdapterDescription;
 @property(nonatomic) long long adapterSourceID; // @synthesize adapterSourceID=_adapterSourceID;
@@ -63,9 +64,6 @@
 @property(copy, nonatomic) NSString *type; // @synthesize type=_type;
 @property(copy, nonatomic) NSString *transportType; // @synthesize transportType=_transportType;
 @property(nonatomic) long long temperature; // @synthesize temperature=_temperature;
-@property(retain, nonatomic) SFPowerSource *subCase; // @synthesize subCase=_subCase;
-@property(retain, nonatomic) SFPowerSource *subRight; // @synthesize subRight=_subRight;
-@property(retain, nonatomic) SFPowerSource *subLeft; // @synthesize subLeft=_subLeft;
 @property(copy, nonatomic) NSString *state; // @synthesize state=_state;
 @property(nonatomic) long long sourceID; // @synthesize sourceID=_sourceID;
 @property(nonatomic) BOOL showChargingUI; // @synthesize showChargingUI=_showChargingUI;
@@ -89,10 +87,9 @@
 - (unsigned int)updateWithPowerSourceDescription:(id)arg1;
 - (void)updateWithPowerSource:(id)arg1;
 - (unsigned int)updateWithPowerAdapterDetails:(id)arg1;
-@property(readonly, nonatomic) BOOL aggregateComponent;
-@property(readonly, nonatomic) BOOL aggregate;
+@property(readonly, nonatomic) BOOL wirelessCharging;
+@property(readonly, nonatomic) long long matID;
 @property(readonly, nonatomic, getter=isInternal) BOOL internal;
-- (void)handleSubComponentsUpdated;
 - (void)lowPowerModeChanged:(int)arg1;
 - (void)startLowPowerMonitoringIfAppropriate;
 - (void)invalidate;

@@ -6,35 +6,38 @@
 
 #import <objc/NSObject.h>
 
-@class CNCache, CNContactStore, CNObservable, CNQueue, CNUIPRLikenessResolver;
-@protocol CNScheduler, CNSchedulerProvider;
+@class CNCache, CNContactStore, CNObservable, CNQueue;
+@protocol CNScheduler, CNSchedulerProvider, CNUIPRLikenessResolver;
 
 @interface CNAvatarCache : NSObject
 {
     BOOL _liveUpdating;
-    CNUIPRLikenessResolver *_likenessResolver;
+    CNObservable *_contactStoreChangeNotificationWatcher;
+    id <CNUIPRLikenessResolver> _likenessResolver;
     CNContactStore *_contactStore;
     CNCache *_likenessCache;
     CNQueue *_evictionQueue;
-    CNObservable *_contactStoreChangeNotificationWatcher;
     id <CNSchedulerProvider> _schedulerProvider;
     id <CNScheduler> _likenessResolverScheduler;
 }
 
-+ (id)_cacheKeyForContact:(id)arg1;
 @property(nonatomic) BOOL liveUpdating; // @synthesize liveUpdating=_liveUpdating;
 @property(readonly, nonatomic) id <CNScheduler> likenessResolverScheduler; // @synthesize likenessResolverScheduler=_likenessResolverScheduler;
 @property(readonly, nonatomic) id <CNSchedulerProvider> schedulerProvider; // @synthesize schedulerProvider=_schedulerProvider;
-@property(retain, nonatomic) CNObservable *contactStoreChangeNotificationWatcher; // @synthesize contactStoreChangeNotificationWatcher=_contactStoreChangeNotificationWatcher;
-@property(retain) CNQueue *evictionQueue; // @synthesize evictionQueue=_evictionQueue;
-@property(retain) CNCache *likenessCache; // @synthesize likenessCache=_likenessCache;
-@property(retain, nonatomic) CNContactStore *contactStore; // @synthesize contactStore=_contactStore;
-@property(retain, nonatomic) CNUIPRLikenessResolver *likenessResolver; // @synthesize likenessResolver=_likenessResolver;
+@property(readonly, nonatomic) CNQueue *evictionQueue; // @synthesize evictionQueue=_evictionQueue;
+@property(readonly, nonatomic) CNCache *likenessCache; // @synthesize likenessCache=_likenessCache;
+@property(readonly, nonatomic) CNContactStore *contactStore; // @synthesize contactStore=_contactStore;
+@property(readonly, nonatomic) id <CNUIPRLikenessResolver> likenessResolver; // @synthesize likenessResolver=_likenessResolver;
 - (void).cxx_destruct;
 - (void)refreshCacheKey:(id)arg1;
 - (id)refetchContact:(id)arg1;
+@property(readonly, nonatomic) CNObservable *contactStoreChangeNotificationWatcher; // @synthesize contactStoreChangeNotificationWatcher=_contactStoreChangeNotificationWatcher;
 - (id)didChangeWatcherForContact:(id)arg1;
 - (id)updateWatcherForContact:(id)arg1;
+- (id)queryMemoizingLatestResultOfQuery:(id)arg1;
+- (id)liveUpdatingQueryForLikenessOfContact:(id)arg1;
+- (id)oneShotQueryForLikenessOfContact:(id)arg1;
+- (id)queryForLikenessOfContact:(id)arg1;
 - (id)likenessHandlerForContact:(id)arg1;
 - (void)invalidate;
 - (id)initWithLikenessResolver:(id)arg1 contactStore:(id)arg2;

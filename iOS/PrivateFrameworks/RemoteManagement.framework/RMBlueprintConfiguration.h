@@ -15,6 +15,7 @@
 {
 }
 
++ (id)fetchRequestMatchingBlueprintsForUserWithDSID:(id)arg1 ofType:(id)arg2;
 + (id)fetchOrCreateWithDictionaryRepresentation:(id)arg1 inContext:(id)arg2 error:(id *)arg3;
 - (void)delete;
 - (id)syncableRootObject;

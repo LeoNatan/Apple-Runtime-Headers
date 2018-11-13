@@ -83,7 +83,9 @@
 + (int)telephonyCallSupport;
 + (_Bool)supportsBasebandCalling;
 + (_Bool)supportsPrimaryCalling;
++ (_Bool)canAttemptEmergencyCallsWithoutCellularConnectionWithUUID:(id)arg1;
 + (_Bool)canAttemptEmergencyCallsWithoutCellularConnection;
++ (_Bool)canAttemptTelephonyCallsWithoutCellularConnectionWithSenderIdentityCapabilities:(id)arg1;
 + (_Bool)canAttemptTelephonyCallsWithoutCellularConnection;
 + (_Bool)supportsFaceTimeVideoCalls;
 + (_Bool)supportsFaceTimeAudioCalls;

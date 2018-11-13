@@ -6,10 +6,12 @@
 
 #import <objc/NSObject.h>
 
-@class CKContainer, CKServerChangeToken, NSHashTable, NSMutableDictionary, NSMutableSet, NSOperation, _DKSyncPeerStatusTracker, _DKThrottledActivity;
+#import <CoreDuet/APSConnectionDelegate-Protocol.h>
+
+@class APSConnection, CKContainer, CKServerChangeToken, NSHashTable, NSMutableDictionary, NSMutableSet, NSOperation, NSString, _DKSyncPeerStatusTracker, _DKThrottledActivity;
 @protocol _DKKeyValueStore, _DKSyncRemoteKnowledgeStorageFetchDelegate;
 
-@interface _DKSyncCloudKitKnowledgeStorage : NSObject
+@interface _DKSyncCloudKitKnowledgeStorage : NSObject <APSConnectionDelegate>
 {
     _Bool _started;
     id <_DKKeyValueStore> _keyValueStore;
@@ -17,9 +19,12 @@
     _DKSyncPeerStatusTracker *_tracker;
     _Bool _cloudSyncAvailablityObserverRegistered;
     CKContainer *_container;
+    APSConnection *_connection;
     double _updateSyncedDeviceIdentifiersBackoffTimeInterval;
     NSMutableDictionary *_zoneIDsBySourceDeviceID;
     NSMutableDictionary *_recordZonesByZoneID;
+    _Bool _databaseChangesExist;
+    _Bool _isPrewarmed;
     NSMutableSet *_zoneIDsWithAdditionChanges;
     NSMutableSet *_zoneIDsWithDeletionChanges;
     NSMutableSet *_zoneIDsWithUnrecoverableDecryptionErrors;
@@ -38,6 +43,8 @@
 @property(getter=isAvailable) _Bool available; // @synthesize available=_available;
 @property(retain) id <_DKSyncRemoteKnowledgeStorageFetchDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (void)_destroyPushConnection;
+- (void)_createPushConnection;
 - (int)transportType;
 - (id)name;
 - (void)syncUpToCloudWithRecordsToSave:(id)arg1 recordIDsToDelete:(id)arg2 completion:(CDUnknownBlockType)arg3;
@@ -57,6 +64,8 @@
 - (void)fetchEventsFromPeer:(id)arg1 creationDateBetweenDate:(id)arg2 andDate:(id)arg3 streamNames:(id)arg4 limit:(unsigned int)arg5 fetchOrder:(int)arg6 highPriority:(_Bool)arg7 completion:(CDUnknownBlockType)arg8;
 - (void)commitFetchDatabaseChangesServerChangeToken;
 - (void)prewarmFetchWithCompletion:(CDUnknownBlockType)arg1;
+- (void)clearPrewarmedFlag;
+- (void)setPrewarmedFlag;
 - (void)setHasDeletionsFlag:(_Bool)arg1 forPeer:(id)arg2;
 - (_Bool)hasDeletionsFlagForPeer:(id)arg1;
 - (void)setHasAdditionsFlag:(_Bool)arg1 forPeer:(id)arg2;
@@ -80,11 +89,20 @@
 - (id)_handleAnySpecialnessWithOperationError:(id)arg1;
 - (void)_cloudSyncAvailabilityDidChange:(id)arg1;
 - (void)_unregisterCloudSyncAvailablityObserver;
+- (void)_registerDatabaseChangesSubscription;
 - (void)_registerCloudSyncAvailablityObserver;
 - (void)cancelOutstandingOperations;
 - (void)start;
 - (void)dealloc;
 - (id)init;
+- (void)connection:(id)arg1 didReceiveIncomingMessage:(id)arg2;
+- (void)connection:(id)arg1 didReceivePublicToken:(id)arg2;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned int hash;
+@property(readonly) Class superclass;
 
 @end
 

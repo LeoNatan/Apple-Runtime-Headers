@@ -36,9 +36,13 @@
     CDUnknownBlockType _incrementalUpdateCompletionHandler;
     NSObject<OS_dispatch_queue> *_internalQueue;
     NSNumber *_overrideIsAppleWatch;
+    NSString *_overrideWatchCountryCode;
+    NSString *_watchCountryCode;
 }
 
 @property(nonatomic) _Bool isObservingSummaryUpdates; // @synthesize isObservingSummaryUpdates=_isObservingSummaryUpdates;
+@property(retain, nonatomic) NSString *watchCountryCode; // @synthesize watchCountryCode=_watchCountryCode;
+@property(retain, nonatomic) NSString *overrideWatchCountryCode; // @synthesize overrideWatchCountryCode=_overrideWatchCountryCode;
 @property(retain, nonatomic) NSNumber *overrideIsAppleWatch; // @synthesize overrideIsAppleWatch=_overrideIsAppleWatch;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *internalQueue; // @synthesize internalQueue=_internalQueue;
 @property(copy, nonatomic) CDUnknownBlockType incrementalUpdateCompletionHandler; // @synthesize incrementalUpdateCompletionHandler=_incrementalUpdateCompletionHandler;

@@ -21,6 +21,7 @@
 - (struct CGRect)userInfoFrame;
 - (struct CGRect)groupDialContainerFrame;
 - (struct CGRect)avatarContainerFrame;
+- (unsigned long long)supportedLayoutOrientation;
 
 @end
 

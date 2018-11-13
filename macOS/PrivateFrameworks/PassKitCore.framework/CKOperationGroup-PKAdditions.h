@@ -7,6 +7,7 @@
 #import <CloudKit/CKOperationGroup.h>
 
 @interface CKOperationGroup (PKAdditions)
++ (id)pk_operationGroupWithName:(id)arg1 suffix:(id)arg2;
 + (id)pk_operationGroupWithName:(id)arg1;
 @end
 

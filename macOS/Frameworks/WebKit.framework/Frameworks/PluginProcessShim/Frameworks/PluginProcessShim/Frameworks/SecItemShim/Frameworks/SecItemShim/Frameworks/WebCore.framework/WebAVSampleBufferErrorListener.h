@@ -9,7 +9,7 @@
 __attribute__((visibility("hidden")))
 @interface WebAVSampleBufferErrorListener : NSObject
 {
-    struct SourceBufferPrivateAVFObjC *_parent;
+    WeakPtr_9f6accbd _parent;
     struct Vector<WTF::RetainPtr<AVSampleBufferDisplayLayer>, 0, WTF::CrashOnOverflow, 16> _layers;
     struct Vector<WTF::RetainPtr<AVSampleBufferAudioRenderer>, 0, WTF::CrashOnOverflow, 16> _renderers;
 }
@@ -24,7 +24,7 @@ __attribute__((visibility("hidden")))
 - (void)beginObservingLayer:(id)arg1;
 - (void)invalidate;
 - (void)dealloc;
-- (id)initWithParent:(struct SourceBufferPrivateAVFObjC *)arg1;
+- (id)initWithParent:(WeakPtr_9f6accbd *)arg1;
 
 @end
 

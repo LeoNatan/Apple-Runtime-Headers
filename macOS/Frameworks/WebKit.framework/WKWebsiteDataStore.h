@@ -21,6 +21,7 @@
 + (id)nonPersistentDataStore;
 + (id)defaultDataStore;
 + (void)_allowWebsiteDataRecordsForAllOrigins;
++ (void)_deleteDefaultDataStoreForTesting;
 + (BOOL)_defaultDataStoreExists;
 + (id)_allWebsiteDataTypesIncludingPrivate;
 @property(readonly) struct Object *_apiObject;

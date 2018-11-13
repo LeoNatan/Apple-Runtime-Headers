@@ -228,6 +228,7 @@
 - (void)context:(id)arg1 getCapability:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)context:(id)arg1 canSetCapability:(id)arg2 allowed:(_Bool *)arg3 with:(id *)arg4;
 - (void)context:(id)arg1 canSetCapability:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (id)getPublicSignalStrength:(id)arg1 error:(id *)arg2;
 - (id)getDataMode:(id)arg1 error:(id *)arg2;
 - (void)isNetworkReselectionNeeded:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)copyNetworkSelectionInfo:(id)arg1 error:(id *)arg2;

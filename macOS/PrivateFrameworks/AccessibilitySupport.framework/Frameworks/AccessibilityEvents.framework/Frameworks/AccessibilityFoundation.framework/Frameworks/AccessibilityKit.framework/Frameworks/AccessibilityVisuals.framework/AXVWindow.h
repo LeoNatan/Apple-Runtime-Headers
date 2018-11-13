@@ -15,6 +15,7 @@
 - (struct CGRect)contentFrameWithinVoiceOverStyleBorder;
 - (id)_maskImageWithCornerRadius:(double)arg1;
 - (void)enableVoiceOverVisualStyle;
+- (void)_setTrustedForObscuring;
 - (void)_registerForNotifications;
 - (void)screenParametersDidChange:(id)arg1;
 - (void)hideWindow;

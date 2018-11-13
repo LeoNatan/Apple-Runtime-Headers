@@ -43,6 +43,7 @@
 - (id)description;
 - (BOOL)isEqual:(id)arg1;
 - (id)_bagDictionary;
+- (id)_ams_createBagContract;
 - (void)bagValuesForKeys:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)bagValueForKey:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)bagURLForKey:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;

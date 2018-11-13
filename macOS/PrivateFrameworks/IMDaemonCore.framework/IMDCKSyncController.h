@@ -70,6 +70,8 @@
 - (BOOL)_hasDumpedRestoreFailureLogsInPastHour;
 - (BOOL)_hasDumpedLogsInPastHour;
 - (void)recordMetricIsCloudKitEnabled;
+- (void)_performLastCompleteSyncedDBDateMetricForSuccessfulSync;
+- (void)_performLastSyncDateMetricForSuccessfulSync;
 - (void)performMetricForSuccessfulSync;
 - (void)clearLocalCloudKitSyncState;
 - (void)clearCKRelatedDefaults;

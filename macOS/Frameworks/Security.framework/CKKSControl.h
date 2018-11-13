@@ -30,6 +30,7 @@
 - (void)rpcResetCloudKit:(id)arg1 reason:(id)arg2 reply:(CDUnknownBlockType)arg3;
 - (void)rpcResetCloudKit:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)rpcResetLocal:(id)arg1 reply:(CDUnknownBlockType)arg2;
+- (void)rpcFastStatus:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)rpcStatus:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (id)initWithConnection:(id)arg1;
 

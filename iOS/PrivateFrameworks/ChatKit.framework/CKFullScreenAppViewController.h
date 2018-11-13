@@ -82,6 +82,7 @@
 - (_Bool)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
 - (void)touchTrackerRecognized:(id)arg1;
 - (void)collapseGestureTouchMoved:(id)arg1;
+- (void)setGrabberView:(id)arg1;
 - (void)reverseAndCleanupCollapseAnimator;
 - (void)setupPausedCollapseAnimatorIfNeeded;
 - (double)collapseTargetOriginY;

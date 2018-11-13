@@ -380,6 +380,7 @@ __attribute__((visibility("hidden")))
 - (id)_currentKeyplaneTransformationContext;
 - (_Bool)_shouldAttemptToAddSupplementaryControlKeys;
 - (void)_updateSupplementaryKeys;
+- (void)_swapGlobeAndMoreKeysIfNecessary;
 - (void)mergeKeysIfNeeded;
 - (id)keylistContainingKey:(id)arg1;
 - (int)stateForKeyplaneSwitchKey:(id)arg1;

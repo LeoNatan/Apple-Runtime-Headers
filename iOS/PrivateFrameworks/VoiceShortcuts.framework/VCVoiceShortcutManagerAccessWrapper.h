@@ -21,7 +21,7 @@
 - (void).cxx_destruct;
 - (void)getCloudKitAccountStatusWithCompletion:(CDUnknownBlockType)arg1;
 - (void)setInteger:(long long)arg1 forKey:(id)arg2 inDomain:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
-- (void)scheduleVocabularySyncToServer:(CDUnknownBlockType)arg1;
+- (void)requestDataMigration:(CDUnknownBlockType)arg1;
 - (void)validateVoiceShortcutPhrases:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)describeSyncStateIncludingDeleted:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)getShortcutSuggestionsForAllAppsWithLimit:(unsigned long long)arg1 completion:(CDUnknownBlockType)arg2;

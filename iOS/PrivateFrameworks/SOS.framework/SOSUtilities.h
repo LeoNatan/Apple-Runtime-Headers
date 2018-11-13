@@ -28,6 +28,7 @@
 + (_Bool)mustAllowThreeClickTrigger;
 + (void)setNewtonTriggersEmergencySOS:(_Bool)arg1;
 + (_Bool)newtonTriggersEmergencySOS;
++ (id)newtonTriggersEmergencySOSNumber;
 + (void)setLongPressTriggersEmergencySOS:(_Bool)arg1;
 + (_Bool)longPressTriggersEmergencySOS;
 + (id)_userFriendsDefaults;

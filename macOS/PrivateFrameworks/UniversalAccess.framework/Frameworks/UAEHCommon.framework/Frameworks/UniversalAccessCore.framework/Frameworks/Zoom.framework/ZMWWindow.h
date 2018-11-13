@@ -66,6 +66,7 @@
 - (void)reorder;
 - (void)moveWindowToMultiMonitorSpace;
 - (void)refresh;
+- (void)_setTrustedForObscuring;
 - (id)initWithRect:(struct CGRect)arg1;
 
 @end

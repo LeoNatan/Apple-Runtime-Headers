@@ -37,7 +37,7 @@
 - (void)_handleControllerUnreachable:(id)arg1;
 - (void)_targetAccessoryUnconfiguredWithController:(id)arg1;
 - (void)_targetAccessoryConfiguredWithController:(id)arg1;
-- (void)__characteristicsChanged:(id)arg1;
+- (void)__characteristicsEventsReceived:(id)arg1;
 - (void)_handleButtonEvent:(id)arg1 fromControlService:(id)arg2;
 - (id)__getOrCreateEventReceiver:(id)arg1;
 - (void)__serviceRemoved:(id)arg1;

@@ -39,6 +39,7 @@
 + (id)entryEventBackwardDefinitionDisplay;
 + (id)entryEventBackwardDefinitionGPUCStates;
 + (id)entryEventBackwardDefinitionHapticsStats;
++ (id)entryEventBackwardDefinitionCarnelianVaxholmStats;
 + (id)entryEventBackwardDefinitionPPMStatsDroopController;
 + (id)entryEventBackwardDefinitionCLPCStatsLimiterControlEffort;
 + (id)entryEventBackwardDefinitionLimiterControlEffort;
@@ -175,6 +176,7 @@
 - (void)logEventBackwardComplexThermalUPOLimiting:(id)arg1 withChannels:(id)arg2;
 - (id)getBucketName:(int)arg1;
 - (void)logEventBackwardComplexPerformanceStates:(id)arg1;
+- (int)getChannelId:(id)arg1;
 - (void)ioReportLogEntry:(id)arg1;
 - (id)entryKeyForEventWithGroupName:(id)arg1 withSubGroupName:(id)arg2;
 - (void)logEventBackwardIOReportAtScreenStateChange;

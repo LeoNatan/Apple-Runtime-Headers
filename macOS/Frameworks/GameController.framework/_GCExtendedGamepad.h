@@ -26,6 +26,8 @@
     _GCControllerButtonInput *_rightShoulder;
     _GCControllerButtonInput *_leftTrigger;
     _GCControllerButtonInput *_rightTrigger;
+    _GCControllerButtonInput *_leftThumbstickButton;
+    _GCControllerButtonInput *_rightThumbstickButton;
     BOOL _dpadFlippedY;
     BOOL _leftFlippedY;
     BOOL _rightFlippedY;
@@ -35,6 +37,8 @@
 + (BOOL)supportsSecureCoding;
 - (id)rightTrigger;
 - (id)leftTrigger;
+- (id)rightThumbstickButton;
+- (id)leftThumbstickButton;
 - (id)rightThumbstick;
 - (id)leftThumbstick;
 - (id)rightShoulder;
@@ -53,7 +57,7 @@
 @property(readonly) NSString *name;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithController:(id)arg1 dpadFlippedY:(BOOL)arg2 leftFlippedY:(BOOL)arg3 rightFlippedY:(BOOL)arg4;
+- (id)initWithController:(id)arg1 dpadFlippedY:(BOOL)arg2 leftFlippedY:(BOOL)arg3 rightFlippedY:(BOOL)arg4 l3r3andDigitalSupported:(BOOL)arg5;
 - (id)initWithController:(id)arg1;
 
 // Remaining properties

@@ -148,6 +148,7 @@
 - (id)mutableCopy;
 - (id)copy;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (void)_copyAttributesTo:(id)arg1;
 - (void)_setupObjCModelFrom:(id)arg1;
 - (void)_setAttributes:(id)arg1;
 - (id)getBoundingBox;

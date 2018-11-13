@@ -10,6 +10,7 @@
 + (id)pk_constraintWithItem:(id)arg1 attribute:(long long)arg2 relatedBy:(long long)arg3 toItem:(id)arg4 attribute:(long long)arg5;
 + (id)pk_constraintWithItem:(id)arg1 attribute:(long long)arg2 equalToItem:(id)arg3;
 + (id)pk_constraintWithItem:(id)arg1 attribute:(long long)arg2 constant:(double)arg3;
++ (id)pk_constraintsWithItem:(id)arg1 equalToItem:(id)arg2 margin:(double)arg3;
 + (id)pk_constraintsWithItem:(id)arg1 equalToItem:(id)arg2;
 @end
 

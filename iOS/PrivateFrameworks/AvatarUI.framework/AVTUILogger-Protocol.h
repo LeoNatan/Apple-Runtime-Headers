@@ -36,6 +36,11 @@
 - (void)logCarouselChangesCenterItemTo:(NSString *)arg1;
 - (void)logCarouselChangingToMultiMode;
 - (void)logCarouselChangingToSingleMode;
+- (void)logDeduplicateRecordWithIdentifier:(NSString *)arg1 toNewRecordWithIdentifier:(NSString *)arg2;
+- (void)logDiscoveredDuplicates:(NSString *)arg1 count:(unsigned long long)arg2;
+- (void)logMaintenanceCompleted;
+- (void)logErrorMitigatingDuplicates:(NSString *)arg1;
+- (void)runningMaintenance:(void (^)(void (^)(void)))arg1;
 - (void)checkingIn:(void (^)(void (^)(void)))arg1;
 - (void)logNoProxyToAvatarsDaemon;
 - (void)logErrorGettingAvatarsDaemonClientProxy:(NSString *)arg1;

@@ -15,8 +15,10 @@
     int _age;
     int _distanceToSuggestion;
     int _peopleSuggesterRank;
+    int _poiOpenState;
     int _serverEntryType;
     int _suggestionType;
+    BOOL _isFavorite;
     BOOL _matchedUsingAddress;
     BOOL _matchedUsingEventName;
     BOOL _matchedUsingLabel;
@@ -29,8 +31,10 @@
         unsigned int age:1;
         unsigned int distanceToSuggestion:1;
         unsigned int peopleSuggesterRank:1;
+        unsigned int poiOpenState:1;
         unsigned int serverEntryType:1;
         unsigned int suggestionType:1;
+        unsigned int isFavorite:1;
         unsigned int matchedUsingAddress:1;
         unsigned int matchedUsingEventName:1;
         unsigned int matchedUsingLabel:1;
@@ -40,6 +44,7 @@
     } _has;
 }
 
+@property(nonatomic) BOOL isFavorite; // @synthesize isFavorite=_isFavorite;
 @property(nonatomic) int peopleSuggesterRank; // @synthesize peopleSuggesterRank=_peopleSuggesterRank;
 @property(nonatomic) BOOL matchedUsingEventName; // @synthesize matchedUsingEventName=_matchedUsingEventName;
 @property(nonatomic) BOOL matchedUsingLabel; // @synthesize matchedUsingLabel=_matchedUsingLabel;
@@ -59,6 +64,11 @@
 - (BOOL)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+- (int)StringAsPoiOpenState:(id)arg1;
+- (id)poiOpenStateAsString:(int)arg1;
+@property(nonatomic) BOOL hasPoiOpenState;
+@property(nonatomic) int poiOpenState; // @synthesize poiOpenState=_poiOpenState;
+@property(nonatomic) BOOL hasIsFavorite;
 - (int)StringAsServerEntryType:(id)arg1;
 - (id)serverEntryTypeAsString:(int)arg1;
 @property(nonatomic) BOOL hasServerEntryType;

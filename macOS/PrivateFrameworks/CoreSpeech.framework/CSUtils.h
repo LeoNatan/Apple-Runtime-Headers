@@ -23,11 +23,12 @@
 + (BOOL)supportCircularBuffer;
 + (BOOL)shouldDeinterleaveAudioOnCS;
 + (BOOL)supportPacketDecoding;
++ (id)boardID;
++ (BOOL)hasRemoteBuiltInMic;
 + (BOOL)hasRemoteCoreSpeech;
 + (BOOL)supportPremiumModel;
 + (BOOL)supportRaiseToSpeak;
 + (BOOL)supportSAT;
-+ (BOOL)canLookupVoiceTriggerModelFromMobileAsset;
 + (BOOL)supportImplicitTraining;
 + (BOOL)supportSmartVolume;
 + (BOOL)supportHybridEndpointer;
@@ -53,10 +54,10 @@
 + (id)spIdSiriDebugTrainedUsersFilePathForLocale:(id)arg1;
 + (id)spIdSiriDebugVoiceProfileStoreRootDirectoryForLocale:(id)arg1;
 + (id)spIdSiriDebugVoiceProfileStoreRootDirectory;
-+ (id)spIdSiriDebugGradingDataRootDirectory;
++ (id)spIdDataRootDirectory;
 + (id)spIdSiriDebugVTDataDirectory;
 + (BOOL)spIdAudioLogsCountLimitReached;
-+ (id)spIdAudioLogsGradingDir;
++ (id)spIdAudioLogsDir2;
 + (id)spIdAudioLogsDir;
 + (void)createDirectoryIfDoesNotExist:(id)arg1;
 + (id)spIdVoiceProfileImportRootDir;

@@ -8,16 +8,14 @@
 
 #import <Spotlight/NSSecureCoding-Protocol.h>
 
-@class NSArray, NSSet;
+@class NSArray;
 
 @interface SPApplicationQueryResult : SPMetadataResult <NSSecureCoding>
 {
     NSArray *_displayNameInitials;
-    NSSet *_supportedRegions;
 }
 
 + (BOOL)supportsSecureCoding;
-@property(retain) NSSet *supportedRegions; // @synthesize supportedRegions=_supportedRegions;
 @property(retain) NSArray *displayNameInitials; // @synthesize displayNameInitials=_displayNameInitials;
 - (void).cxx_destruct;
 - (BOOL)isFile;

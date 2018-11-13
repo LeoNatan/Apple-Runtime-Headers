@@ -15,6 +15,7 @@
     AVTAvatarConfigurationImageRenderer *_renderer;
     AVTInMemoryImageCache *_inMemoryImageCache;
     id <AVTUsageTrackingSession> _usageTrackingSession;
+    _Bool _deviceIsSunflower;
     AVTCoreEnvironment *_coreEnvironment;
     double _mainScreenScale;
     long long _userInterfaceLayoutDirection;
@@ -34,6 +35,7 @@
 @property(readonly, nonatomic) AVTDeviceResourceManager *deviceResourceManager; // @synthesize deviceResourceManager=_deviceResourceManager;
 @property(readonly, copy, nonatomic) NSObject<OS_dispatch_queue> *backgroundRenderingQueue; // @synthesize backgroundRenderingQueue=_backgroundRenderingQueue;
 @property(readonly, copy, nonatomic) NSObject<OS_dispatch_queue> *backgroundQueue; // @synthesize backgroundQueue=_backgroundQueue;
+@property(readonly, nonatomic) _Bool deviceIsSunflower; // @synthesize deviceIsSunflower=_deviceIsSunflower;
 @property(readonly, nonatomic) long long userInterfaceLayoutDirection; // @synthesize userInterfaceLayoutDirection=_userInterfaceLayoutDirection;
 @property(readonly, nonatomic) struct CGSize mainScreenSize; // @synthesize mainScreenSize=_mainScreenSize;
 @property(readonly, nonatomic) double mainScreenScale; // @synthesize mainScreenScale=_mainScreenScale;

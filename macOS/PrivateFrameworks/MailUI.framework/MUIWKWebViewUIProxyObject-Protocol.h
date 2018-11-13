@@ -13,7 +13,7 @@
 - (void)dataDetectorsExternalUIRequested:(NSData *)arg1;
 - (void)logInjectedWebBundleMessage:(NSString *)arg1;
 - (void)logWebConsoleMessage:(NSString *)arg1;
-- (void)setMessageHasBlockedRemoteContent;
+- (void)setMessageHasBlockedMessageContent;
 - (void)completeWebDocumentPasteboardType;
 @end
 

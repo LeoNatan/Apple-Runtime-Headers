@@ -44,6 +44,7 @@ __attribute__((visibility("hidden")))
     NSNumber *inputClosingDilation;
     NSNumber *inputSplat;
     NSNumber *inputSpecArea;
+    NSNumber *inputSpecAreaScale;
     NSNumber *inputWhiteCutoff;
     NSNumber *inputFalloffDensity;
     NSNumber *inputFalloffRepair;
@@ -76,8 +77,14 @@ __attribute__((visibility("hidden")))
     NSNumber *inputFoobar4;
     NSNumber *inputRefilterRange;
     NSNumber *inputRefilterSpace;
+    NSNumber *inputMaxInterDispersion;
+    NSNumber *inputGlintThreshold;
+    NSNumber *inputTargetClosing;
 }
 
+@property(retain, nonatomic) NSNumber *inputTargetClosing; // @synthesize inputTargetClosing;
+@property(retain, nonatomic) NSNumber *inputGlintThreshold; // @synthesize inputGlintThreshold;
+@property(retain, nonatomic) NSNumber *inputMaxInterDispersion; // @synthesize inputMaxInterDispersion;
 @property(retain, nonatomic) NSNumber *inputDetectRed; // @synthesize inputDetectRed;
 @property(retain, nonatomic) NSNumber *inputDetectWhite; // @synthesize inputDetectWhite;
 @property(retain, nonatomic) NSNumber *inputRefilterRange; // @synthesize inputRefilterRange;
@@ -106,6 +113,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSNumber *inputAbortDensityDiff; // @synthesize inputAbortDensityDiff;
 @property(retain, nonatomic) NSNumber *inputAbortDensityLo; // @synthesize inputAbortDensityLo;
 @property(retain, nonatomic) NSNumber *inputWhiteCutoff; // @synthesize inputWhiteCutoff;
+@property(retain, nonatomic) NSNumber *inputSpecAreaScale; // @synthesize inputSpecAreaScale;
 @property(retain, nonatomic) NSNumber *inputSpecArea; // @synthesize inputSpecArea;
 @property(retain, nonatomic) NSNumber *inputRecover; // @synthesize inputRecover;
 @property(retain, nonatomic) NSNumber *inputRepairDither; // @synthesize inputRepairDither;

@@ -21,7 +21,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) __weak UIViewController *hostViewController; // @synthesize hostViewController=_hostViewController;
 - (void).cxx_destruct;
 - (void)messageComposeViewController:(id)arg1 didFinishWithResult:(long long)arg2;
-- (void)reportViaSMSWithSender:(id)arg1 body:(id)arg2;
+- (void)reportResponseViaSMS:(id)arg1 forExtension:(id)arg2 withCompletion:(CDUnknownBlockType)arg3;
 - (void)reportResponseViaNetwork:(id)arg1 forExtension:(id)arg2 withCompletion:(CDUnknownBlockType)arg3;
 - (void)reportResponse:(id)arg1 forExtension:(id)arg2 withCompletion:(CDUnknownBlockType)arg3;
 - (id)init;

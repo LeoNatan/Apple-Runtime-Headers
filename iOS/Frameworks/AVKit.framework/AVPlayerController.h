@@ -133,6 +133,8 @@
 + (id)keyPathsForValuesAffectingHasLegibleMediaSelectionOptions;
 + (id)keyPathsForValuesAffectingHasAudioMediaSelectionOptions;
 + (id)keyPathsForValuesAffectingHasMediaSelectionOptions;
++ (id)keyPathsForValuesAffectingMaximumVideoResolution;
++ (id)keyPathsForValuesAffectingPreferredDisplayCriteria;
 + (id)keyPathsForValuesAffectingUsesExternalPlaybackWhileExternalScreenIsActive;
 @property(nonatomic, getter=isDeviceBatteryChargingOrFull) _Bool deviceBatteryChargingOrFull; // @synthesize deviceBatteryChargingOrFull=_deviceBatteryChargingOrFull;
 @property(nonatomic, getter=isDisablingAutomaticTermination) _Bool disablingAutomaticTermination; // @synthesize disablingAutomaticTermination=_disablingAutomaticTermination;
@@ -325,6 +327,8 @@
 - (_Bool)hasAudioMediaSelectionOptions;
 - (_Bool)hasMediaSelectionOptions;
 - (void)setRateWithForce:(double)arg1;
+@property(readonly, nonatomic) struct CGSize maximumVideoResolution;
+- (id)preferredDisplayCriteria;
 @property(readonly, nonatomic) _Bool usesExternalPlaybackWhileExternalScreenIsActive;
 @property(nonatomic) _Bool handlesAudioSessionInterruptions;
 

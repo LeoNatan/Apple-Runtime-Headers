@@ -6,7 +6,7 @@
 
 #import <CoreData/NSManagedObject.h>
 
-@class NSDate, NSSet, NSString, NSUUID;
+@class NSDate, NSSet, NSString, NSURL, NSUUID;
 
 @interface _CDAttachmentRecord : NSManagedObject
 {
@@ -15,6 +15,8 @@
 
 // Remaining properties
 @property(retain, nonatomic) NSUUID *cloudIdentifier; // @dynamic cloudIdentifier;
+@property(retain, nonatomic) NSString *contentText; // @dynamic contentText;
+@property(retain, nonatomic) NSURL *contentURL; // @dynamic contentURL;
 @property(retain, nonatomic) NSDate *creationDate; // @dynamic creationDate;
 @property(retain, nonatomic) NSUUID *identifier; // @dynamic identifier;
 @property(retain, nonatomic) NSSet *interactions; // @dynamic interactions;

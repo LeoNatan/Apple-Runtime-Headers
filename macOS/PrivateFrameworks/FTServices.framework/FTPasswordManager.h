@@ -39,6 +39,8 @@
 - (void)cleanUpAccountsBasedOnInUseUsernames:(id)arg1 profileIDs:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
 - (void)cleanUpAccountsWithUsername:(id)arg1 orProfileID:(id)arg2 basedOnInUseUsernames:(id)arg3 profileIDs:(id)arg4 completionBlock:(CDUnknownBlockType)arg5;
 - (void)performCleanUpWithCompletion:(CDUnknownBlockType)arg1;
+- (BOOL)_usernameHasCorrespondingIdMSAccount:(id)arg1;
+- (BOOL)_shouldForceSilentOnlyAuthForUsername:(id)arg1 serviceIdentifier:(id)arg2;
 - (void)updatePreviousUsername:(id)arg1 toNewUsername:(id)arg2;
 - (id)_accountBasedOnProfileID:(id)arg1 orUsername:(id)arg2 inStore:(id)arg3;
 - (id)_accountWithProfileIDMatchingUser:(id)arg1 inStore:(id)arg2;

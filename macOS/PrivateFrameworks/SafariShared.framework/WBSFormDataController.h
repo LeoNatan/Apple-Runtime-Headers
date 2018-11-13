@@ -74,7 +74,7 @@
 - (id)_credentialMatchesWithCriteria:(id)arg1 protectionSpaceMatches:(id)arg2;
 - (id)_protectionSpaceMatchesWithCriteria:(id)arg1 credentialsByProtectionSpace:(id)arg2 associatedDomainsManager:(id)arg3;
 - (void)credentialMatchesWithCriteria:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (void)_getCredentialMatches:(id *)arg1 andPotentialMatches:(id *)arg2 matchesForAssociatedDomains:(id *)arg3 forURL:(id)arg4 matchingPartialUsername:(id)arg5 omittingCredentialsUserHasDeniedAccessTo:(BOOL)arg6;
+- (void)getCredentialMatches:(id *)arg1 andPotentialMatches:(id *)arg2 matchesForAssociatedDomains:(id *)arg3 forURL:(id)arg4 matchingPartialUsername:(id)arg5 omittingCredentialsUserHasDeniedAccessTo:(BOOL)arg6;
 - (void)getCredentialMatches:(id *)arg1 andPotentialMatches:(id *)arg2 forURL:(id)arg3 matchingPartialUsername:(id)arg4 omittingCredentialsUserHasDeniedAccessTo:(BOOL)arg5;
 - (void)getCredentialMatches:(id *)arg1 andPotentialMatches:(id *)arg2 matchesForAssociatedDomains:(id *)arg3 forURL:(id)arg4 matchingPartialUsername:(id)arg5;
 - (id)credentialMatchesForURL:(id)arg1 matchingPartialString:(id)arg2;

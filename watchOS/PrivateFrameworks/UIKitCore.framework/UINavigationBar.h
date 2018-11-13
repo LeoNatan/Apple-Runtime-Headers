@@ -341,12 +341,12 @@
 @property(retain, nonatomic, setter=_setBackgroundView:) UIView *_backgroundView;
 - (void)_performUpdatesIgnoringLock:(CDUnknownBlockType)arg1;
 @property(readonly, copy) NSString *description;
-- (float)_defaultAutolayoutSpacing;
-- (float)_autolayoutSpacingAtEdge:(int)arg1 forAttribute:(int)arg2 inContainer:(id)arg3 isGuide:(_Bool)arg4;
-- (_Bool)_hasCustomAutolayoutNeighborSpacingForAttribute:(int *)arg1;
 - (_Bool)isElementAccessibilityExposedToInterfaceBuilder;
 - (id)backButtonViewAtPoint:(struct CGPoint)arg1;
 - (void)_uikit_applyValueFromTraitStorage:(id)arg1 forKeyPath:(id)arg2;
+- (float)_defaultAutolayoutSpacing;
+- (float)_autolayoutSpacingAtEdge:(int)arg1 forAttribute:(int)arg2 inContainer:(id)arg3 isGuide:(_Bool)arg4;
+- (_Bool)_hasCustomAutolayoutNeighborSpacingForAttribute:(int *)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

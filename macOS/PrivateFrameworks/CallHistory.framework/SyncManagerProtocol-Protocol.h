@@ -6,7 +6,7 @@
 
 #import <CallHistory/NSObject-Protocol.h>
 
-@class CHRecentCall, NSArray, NSDictionary, NSString;
+@class CHRecentCall, NSArray, NSDictionary, NSPredicate, NSString;
 
 @protocol SyncManagerProtocol <NSObject>
 - (void)resetTimers;
@@ -25,5 +25,6 @@
 - (void)insertRecordsWithoutTransactions:(NSArray *)arg1;
 - (void)insertWithoutTransaction:(CHRecentCall *)arg1;
 - (void)insert:(CHRecentCall *)arg1;
+- (NSArray *)fetchCallsWithPredicate:(NSPredicate *)arg1 sortDescriptors:(NSArray *)arg2 limit:(unsigned long long)arg3;
 @end
 

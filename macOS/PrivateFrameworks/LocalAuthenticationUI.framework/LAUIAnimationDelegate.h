@@ -13,12 +13,15 @@
 __attribute__((visibility("hidden")))
 @interface LAUIAnimationDelegate : NSObject <CAAnimationDelegate>
 {
+    CDUnknownBlockType _didStartHandler;
     CDUnknownBlockType _didStopHandler;
 }
 
 @property(copy, nonatomic) CDUnknownBlockType didStopHandler; // @synthesize didStopHandler=_didStopHandler;
+@property(copy, nonatomic) CDUnknownBlockType didStartHandler; // @synthesize didStartHandler=_didStartHandler;
 - (void).cxx_destruct;
 - (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;
+- (void)animationDidStart:(id)arg1;
 - (void)dealloc;
 
 // Remaining properties

@@ -13,11 +13,14 @@
     NSString *_identifier;
 }
 
++ (id)NewlyAddedEmoji;
 + (id)ProfessionEmoji;
 + (id)GenderEmoji;
 + (id)SkinToneEmoji;
 + (id)NoneVariantEmoji;
 + (id)DingbatsVariantEmoji;
++ (BOOL)_isNewlyAddedEmoji:(id)arg1;
++ (BOOL)_isFlagEmoji:(id)arg1;
 + (BOOL)_isProfessionEmoji:(id)arg1;
 + (BOOL)_isGenderEmoji:(id)arg1;
 + (BOOL)_isSkinToneEmoji:(id)arg1;
@@ -37,6 +40,7 @@
 + (id)categoryWithIdentifier:(id)arg1;
 + (id)categoryIdentifierList;
 + (id)flagEmojiCountryCodesCommon;
++ (id)FlagsEmoji;
 + (id)SymbolsEmoji;
 + (id)ObjectsEmoji;
 + (id)TravelAndPlacesEmoji;

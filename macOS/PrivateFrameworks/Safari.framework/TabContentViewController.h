@@ -7,12 +7,13 @@
 #import <AppKit/NSViewController.h>
 
 #import <Safari/ReaderInstallationTarget-Protocol.h>
+#import <Safari/TabContentViewDelegate-Protocol.h>
 #import <Safari/VisualTabPickerThumbnailSnapshotProviding-Protocol.h>
 
 @class BrowserViewController, BrowserWindowController, ContinuousReadingListPageItem, ContinuousReadingListViewController, NSHashTable, NSString, NSView, ReaderContainerViewController, TabContentView, TabDialogInstaller;
 
 __attribute__((visibility("hidden")))
-@interface TabContentViewController : NSViewController <ReaderInstallationTarget, VisualTabPickerThumbnailSnapshotProviding>
+@interface TabContentViewController : NSViewController <TabContentViewDelegate, ReaderInstallationTarget, VisualTabPickerThumbnailSnapshotProviding>
 {
     ReaderContainerViewController *_readerContainerViewController;
     TabDialogInstaller *_tabDialogInstaller;
@@ -32,6 +33,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) BrowserViewController *currentBrowserViewController; // @synthesize currentBrowserViewController=_currentBrowserViewController;
 @property(readonly, nonatomic) BrowserViewController *browserViewController; // @synthesize browserViewController=_browserViewController;
 - (void).cxx_destruct;
+- (id)webContentModalViewInTabContentView:(id)arg1;
 @property(readonly, nonatomic) struct CGRect visualTabPickerThumbnailContentViewVisibleBounds;
 @property(readonly, nonatomic) NSView *visualTabPickerThumbnailContentView;
 @property(readonly, nonatomic) long long visualTabPickerThumbnailContentViewType;
@@ -71,6 +73,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) BOOL shouldDisableTitlebarBlurringForCurrentContentView;
 @property(readonly, nonatomic) BOOL isActiveWebViewMagnified;
 @property(readonly, nonatomic) NSView *dockedInspectorView;
+@property(readonly, nonatomic) NSView *currentDialogOrContentView;
 @property(readonly, nonatomic) TabContentView *tabContentView;
 @property(readonly, nonatomic) BrowserWindowController *browserWindowController;
 - (void)willClose;

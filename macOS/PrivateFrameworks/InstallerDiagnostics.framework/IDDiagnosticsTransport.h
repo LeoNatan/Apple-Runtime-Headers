@@ -15,6 +15,9 @@
 + (BOOL)shouldRespectDU:(unsigned short)arg1;
 + (id)nameForClient:(unsigned short)arg1;
 + (unsigned short)clientForInstallEvent:(id)arg1;
++ (id)prependKeysInDictionary:(id)arg1 withString:(id)arg2;
++ (id)stripOutGPUFirmwareUpdate:(id)arg1;
++ (BOOL)containsGPUUpdateData:(id)arg1;
 + (id)stripOutSampledMetrics:(id)arg1;
 + (id)getPreviousShutdownCause;
 + (BOOL)efiApplePayloadExists;

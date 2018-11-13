@@ -11,7 +11,6 @@
 
 @class AMSURLRequestProperties;
 
-__attribute__((visibility("hidden")))
 @interface AMSURLRequest : NSMutableURLRequest <NSCopying, NSMutableCopying>
 {
     AMSURLRequestProperties *_properties;

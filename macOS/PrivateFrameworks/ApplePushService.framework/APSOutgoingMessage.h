@@ -14,8 +14,6 @@
 }
 
 @property(retain, nonatomic) APSOutgoingMessageCheckpointTrace *checkpointTrace; // @synthesize checkpointTrace=_checkpointTrace;
-- (long long)retries;
-- (void)setRetries:(long long)arg1;
 - (id)sentTimestamp;
 - (void)setSentTimestamp:(id)arg1;
 - (id)originator;

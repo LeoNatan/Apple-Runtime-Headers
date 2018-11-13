@@ -28,8 +28,11 @@
 @property(nonatomic) id <_SBUIBiometricKitInterfaceDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (id)_createPresenceDetectOperationsForDeviceTypes:(id)arg1 error:(id *)arg2;
+- (unsigned long long)_biometricEventForFaceDetectFeedback:(long long)arg1;
 - (unsigned long long)_eventForLockoutState:(long long)arg1;
+- (void)_sendDelegateEventForFeedback:(long long)arg1;
 - (void)_sendDelegateEvent:(unsigned long long)arg1;
+- (void)matchOperation:(id)arg1 providedFeedback:(long long)arg2;
 - (void)matchOperation:(id)arg1 matchedWithResult:(id)arg2;
 - (void)operation:(id)arg1 presenceStateChanged:(_Bool)arg2;
 - (void)matchOperation:(id)arg1 failedWithReason:(long long)arg2;

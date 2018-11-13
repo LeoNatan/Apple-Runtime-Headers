@@ -21,7 +21,7 @@
 - (void).cxx_destruct;
 - (id)bodyDictionaryWithDeviceData:(id)arg1;
 @property(readonly, nonatomic) NSString *endpointName;
-- (id)_urlRequestWithServiceURL:(id)arg1 deviceData:(id)arg2 account:(id)arg3;
+- (id)_urlRequestWithServiceURL:(id)arg1 deviceData:(id)arg2 appleAccountInformation:(id)arg3;
 - (id)initWithWrappedPayment:(id)arg1 paymentPass:(id)arg2;
 
 @end

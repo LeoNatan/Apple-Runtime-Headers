@@ -47,7 +47,7 @@
 - (id)_observer;
 - (void)creditCardFieldFocused:(id)arg1 inFrame:(id)arg2;
 - (id)_assistedNodeMetadataWithPasswordField:(id)arg1 passwordFieldMetadata:(id)arg2 formMetadata:(id)arg3 inFrame:(id)arg4;
-- (void)passwordFieldFocused:(id)arg1 inFrame:(id)arg2;
+- (void)passwordFieldFocused:(id)arg1 inFrame:(id)arg2 isPasswordFieldForUserCredentials:(_Bool)arg3;
 - (void)usernameFieldFocused:(id)arg1 fieldMetadata:(id)arg2 inForm:(id)arg3 inFrame:(id)arg4;
 - (id)formAutoFillNodeForJSWrapper:(struct OpaqueJSValue *)arg1 inContext:(struct OpaqueJSContext *)arg2;
 - (void)clearScriptWorld;

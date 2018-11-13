@@ -11,7 +11,7 @@ typedef void (^CDUnknownBlockType)(void); // return type and parameters are unkn
 #pragma mark Named Structures
 
 struct EmergencyMode {
-    _Bool _field1;
+    int _field1;
     int _field2;
     int _field3;
 };

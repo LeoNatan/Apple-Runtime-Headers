@@ -819,6 +819,7 @@ struct PageLoadTestViewController {
     unsigned int _field2;
     id _field3;
     id _field4;
+    struct Timer<Safari::PageLoadTestViewController> _field5;
 };
 
 struct PageUIClient {
@@ -1069,6 +1070,10 @@ struct RetainPtr<RemoteNotificationCenterRequest> {
     void *m_ptr;
 };
 
+struct RetainPtr<__CFRunLoopTimer *> {
+    void *_field1;
+};
+
 struct RetainPtr<__SecTrust *> {
     void *_field1;
 };
@@ -1182,6 +1187,11 @@ struct TabPlacementHint {
     BrowserWindowController *m_browserWindowController;
     BrowserViewController *m_browserViewController;
     _Bool m_contentViewIsAncestorTab;
+};
+
+struct Timer<Safari::PageLoadTestViewController> {
+    struct PageLoadTestViewController *_field1;
+    struct RetainPtr<__CFRunLoopTimer *> _field2;
 };
 
 struct TopSite {

@@ -10,7 +10,7 @@
 {
 }
 
-- (id)_urlRequestWithServiceURL:(id)arg1 deviceIdentifier:(id)arg2 companionSerialNumber:(id)arg3 account:(id)arg4;
+- (id)_urlRequestWithServiceURL:(id)arg1 deviceIdentifier:(id)arg2 companionSerialNumber:(id)arg3 appleAccountInformation:(id)arg4;
 
 @end
 

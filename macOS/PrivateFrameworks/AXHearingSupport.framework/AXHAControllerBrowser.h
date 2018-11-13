@@ -53,7 +53,7 @@
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
-@property(nonatomic) id <AXIDCManagerSecurityDelegate> securityDelegate;
+@property(nonatomic) __weak id <AXIDCManagerSecurityDelegate> securityDelegate;
 @property(readonly) Class superclass;
 
 @end

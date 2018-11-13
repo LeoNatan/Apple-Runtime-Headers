@@ -11,6 +11,7 @@
 @protocol CoreTelephonyClientCarrierBundleDelegate <NSObject>
 
 @optional
+- (void)defaultBundleChange;
 - (void)operatorBundleChange:(CTXPCServiceSubscriptionContext *)arg1;
 - (void)carrierBundleChange:(CTXPCServiceSubscriptionContext *)arg1;
 @end

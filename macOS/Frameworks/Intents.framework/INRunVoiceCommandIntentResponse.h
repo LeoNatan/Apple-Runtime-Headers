@@ -8,7 +8,7 @@
 
 #import <Intents/INRunVoiceCommandIntentResponseExport-Protocol.h>
 
-@class INArchivedObject, NSDictionary, NSNumber, NSString, _INPBRunVoiceCommandIntentResponse;
+@class INArchivedObject, NSArray, NSDictionary, NSNumber, NSString, _INPBRunVoiceCommandIntentResponse;
 
 @interface INRunVoiceCommandIntentResponse : INIntentResponse <INRunVoiceCommandIntentResponseExport>
 {
@@ -24,6 +24,7 @@
 - (void)setPropertiesByName:(id)arg1;
 - (id)propertiesByName;
 - (id)_dictionaryRepresentation;
+@property(copy) NSArray *steps;
 @property(copy) NSString *underlyingIntentTitle;
 @property(copy) NSNumber *interstitialDisabled;
 @property(copy) NSNumber *continueRunning;

@@ -22,7 +22,7 @@
 - (id)_originDeviceIDForCloudStoreRecord:(id)arg1;
 - (id)_passUniqueIdentifierForCloudStoreRecord:(id)arg1;
 - (id)_serviceIdentfierToRecordDictionaryFromArray:(id)arg1;
-- (void)_fetchMissingRecordsFromModifiedRecords:(id)arg1 operationGroupName:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)_fetchMissingRecordsFromModifiedRecords:(id)arg1 operationGroupName:(id)arg2 operationGroupNameSuffix:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (BOOL)_canFormTransactionFromCloudStoreRecord:(id)arg1;
 - (id)_parseModifiedRecords:(id)arg1 counterpartRecords:(id)arg2 shouldUpdateLocalDatabase:(BOOL)arg3 updateReasons:(unsigned long long)arg4;
 - (BOOL)_isTransactionItemFromRecordType:(id)arg1;
@@ -40,14 +40,14 @@
 - (void)requestUpdatesForPassUniqueIdentifier:(id)arg1;
 - (void)allItemsOfItemType:(unsigned long long)arg1 storeLocally:(BOOL)arg2 userInfo:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)allItemsOfItemType:(unsigned long long)arg1 storeLocally:(BOOL)arg2 completion:(CDUnknownBlockType)arg3;
-- (void)createZones:(id)arg1 userInfo:(id)arg2 completion:(CDUnknownBlockType)arg3;
-- (void)createZones:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)createZones:(id)arg1 operationGroupNameSuffix:(id)arg2 userInfo:(id)arg3 completion:(CDUnknownBlockType)arg4;
+- (void)createZones:(id)arg1 operationGroupNameSuffix:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)readCachedContainerValues;
 - (void)saveCachedContainerValues;
 - (void)_handlePeerPaymentAccountChanged:(id)arg1;
-- (void)processResultWithError:(id)arg1 nextExpectedState:(unsigned long long)arg2 retryCount:(unsigned long long)arg3 shouldRetry:(BOOL)arg4 completion:(CDUnknownBlockType)arg5;
-- (void)processFetchedCloudStoreDataWithModifiedRecords:(id)arg1 deletedRecords:(id)arg2 operationGroupName:(id)arg3 shouldUpdateLocalDatabase:(BOOL)arg4 userInfo:(id)arg5 completion:(CDUnknownBlockType)arg6;
-- (void)setContainerState:(unsigned long long)arg1 retryCount:(unsigned long long)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)processResultWithError:(id)arg1 nextExpectedState:(unsigned long long)arg2 operationGroupNameSuffix:(id)arg3 retryCount:(unsigned long long)arg4 shouldRetry:(BOOL)arg5 completion:(CDUnknownBlockType)arg6;
+- (void)processFetchedCloudStoreDataWithModifiedRecords:(id)arg1 deletedRecords:(id)arg2 operationGroupName:(id)arg3 operationGroupNameSuffix:(id)arg4 shouldUpdateLocalDatabase:(BOOL)arg5 userInfo:(id)arg6 completion:(CDUnknownBlockType)arg7;
+- (void)setContainerState:(unsigned long long)arg1 operationGroupNameSuffix:(id)arg2 retryCount:(unsigned long long)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)cloudStoreAccountChanged:(id)arg1;
 - (id)cloudStoreSpecificKeysForItem:(id)arg1;
 - (BOOL)canInitializeContainer;

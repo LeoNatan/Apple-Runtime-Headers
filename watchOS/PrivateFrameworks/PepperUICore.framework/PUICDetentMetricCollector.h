@@ -22,7 +22,7 @@
 - (void)userScrolled:(_Bool)arg1;
 - (void)crownRotated:(double)arg1;
 - (void)majorDetentPlayed:(int)arg1;
-- (void)_recordMetrics;
+- (void)_inQueue_recordMetrics;
 - (void)recordMetrics:(id)arg1;
 - (void)_applicationWillResignActiveNotification:(id)arg1;
 - (id)init;

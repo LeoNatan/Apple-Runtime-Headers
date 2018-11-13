@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSProgress, WFLActionImplementation, WFLWorkflow;
+@class INVoiceCommandDeviceInformation, NSProgress, WFLActionImplementation, WFLWorkflow;
 @protocol WFLWorkflowControllerDelegate;
 
 @interface WFLWorkflowController : NSObject
@@ -16,6 +16,7 @@
     WFLWorkflow *_workflow;
     NSProgress *_progress;
     int _executionContext;
+    INVoiceCommandDeviceInformation *_originDeviceInformation;
     unsigned int _currentActionIndex;
     WFLActionImplementation *_currentActionImplementation;
     WFLActionImplementation *_previousActionImplementation;
@@ -25,6 +26,7 @@
 @property(retain, nonatomic) WFLActionImplementation *previousActionImplementation; // @synthesize previousActionImplementation=_previousActionImplementation;
 @property(retain, nonatomic) WFLActionImplementation *currentActionImplementation; // @synthesize currentActionImplementation=_currentActionImplementation;
 @property(nonatomic) unsigned int currentActionIndex; // @synthesize currentActionIndex=_currentActionIndex;
+@property(retain, nonatomic) INVoiceCommandDeviceInformation *originDeviceInformation; // @synthesize originDeviceInformation=_originDeviceInformation;
 @property(nonatomic) int executionContext; // @synthesize executionContext=_executionContext;
 @property(retain, nonatomic) NSProgress *progress; // @synthesize progress=_progress;
 @property(nonatomic, getter=isRunning) _Bool running; // @synthesize running=_running;

@@ -17,6 +17,7 @@
     _Bool _shouldSuppressInCallUI;
     _Bool _wantsStagingArea;
     _Bool _showUIPrompt;
+    _Bool _uplinkMuted;
     NSSet *_remoteMembers;
     NSUUID *_UUID;
     TUHandle *_callerID;
@@ -33,6 +34,7 @@
 + (_Bool)shouldSuppressInCallUIFromURLComponents:(id)arg1;
 + (_Bool)videoEnabledFromURLComponents:(id)arg1;
 + (id)remoteMembersFromURLComponents:(id)arg1;
+@property(nonatomic, getter=isUplinkMuted) _Bool uplinkMuted; // @synthesize uplinkMuted=_uplinkMuted;
 @property(nonatomic) _Bool showUIPrompt; // @synthesize showUIPrompt=_showUIPrompt;
 @property(copy, nonatomic) NSString *messagesGroupName; // @synthesize messagesGroupName=_messagesGroupName;
 @property(copy, nonatomic) NSUUID *messagesGroupUUID; // @synthesize messagesGroupUUID=_messagesGroupUUID;

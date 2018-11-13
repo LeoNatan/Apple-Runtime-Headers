@@ -11,7 +11,6 @@ __attribute__((visibility("hidden")))
 {
 }
 
-- (void)setKeyboardFocus:(BOOL)arg1;
 - (BOOL)isToolbarSearchField;
 - (void)_popupSelectionDidChange:(id)arg1;
 

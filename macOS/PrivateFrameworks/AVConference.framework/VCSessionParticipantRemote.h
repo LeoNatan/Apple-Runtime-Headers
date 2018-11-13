@@ -91,6 +91,7 @@ __attribute__((visibility("hidden")))
 - (id)recommendedStreamIDsForSelectedMediaEntries:(id)arg1 forceSeamlessTransition:(BOOL)arg2;
 - (void)setActiveStreamIDs:(id)arg1;
 - (void)setMuted:(BOOL)arg1;
+- (id)getAudioDumpName;
 - (id)entryForStreamID:(id)arg1;
 - (BOOL)setupAudioStreamFromMediaBlobWithIDSDestination:(id)arg1;
 - (BOOL)setupBandwidthAllocationTableForMediaStreamConfigs:(id)arg1 entryType:(unsigned char)arg2;

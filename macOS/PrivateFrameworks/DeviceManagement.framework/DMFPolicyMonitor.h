@@ -11,6 +11,7 @@
 
 @interface DMFPolicyMonitor : NSObject
 {
+    int _keyBagFirstUnlockNotificationToken;
     NSXPCConnection *_xpcConnection;
     NSObject<OS_dispatch_queue> *_registrationCallbackQueue;
     NSMutableDictionary *_notificationTokensByPolicyMonitorIdentifier;
@@ -25,6 +26,8 @@
 @property(readonly, nonatomic) NSXPCConnection *xpcConnection; // @synthesize xpcConnection=_xpcConnection;
 - (void).cxx_destruct;
 - (void)requestPoliciesForTypes:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)_notifyClientsOfChange:(id)arg1;
+- (void)_notifyClientsOfApplicationsChange:(id)arg1;
 - (void)_notifyClientsOfCategoryChange:(id)arg1;
 - (void)addRegistration:(id)arg1 forPolicyMonitorIdentifier:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)invalidatePolicyMonitor:(id)arg1;

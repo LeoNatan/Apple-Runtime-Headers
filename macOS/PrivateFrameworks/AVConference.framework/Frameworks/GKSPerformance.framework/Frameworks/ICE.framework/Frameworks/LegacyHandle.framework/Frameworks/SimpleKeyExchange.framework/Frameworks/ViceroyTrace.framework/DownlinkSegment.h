@@ -6,17 +6,21 @@
 
 #import <ViceroyTrace/MultiwaySegment.h>
 
-@protocol DownlinkSegmentDelegate;
-
 __attribute__((visibility("hidden")))
 @interface DownlinkSegment : MultiwaySegment
 {
-    id <DownlinkSegmentDelegate> _delegate;
+    double _videoDegradedStartTime;
+    BOOL _isVideoDegraded;
+    unsigned int _videoDegradedTotalCounter;
+    double _videoDegradedTotalTime;
 }
 
+@property unsigned int videoDegradedTotalCounter; // @synthesize videoDegradedTotalCounter=_videoDegradedTotalCounter;
+@property double videoDegradedStartTime; // @synthesize videoDegradedStartTime=_videoDegradedStartTime;
+@property double videoDegradedTotalTime; // @synthesize videoDegradedTotalTime=_videoDegradedTotalTime;
+@property BOOL isVideoDegraded; // @synthesize isVideoDegraded=_isVideoDegraded;
 - (id)segmentReport;
-- (void)setDelegate:(id)arg1;
-- (id)delegate;
+- (void)processVideoDegraded:(BOOL)arg1;
 - (void)dealloc;
 - (id)initWithSegmentName:(id)arg1 previousSegmentName:(id)arg2 delegate:(id)arg3;
 

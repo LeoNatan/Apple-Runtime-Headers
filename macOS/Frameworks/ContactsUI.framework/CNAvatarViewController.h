@@ -11,7 +11,7 @@
 #import <ContactsUI/NSImmediateActionGestureRecognizerDelegate-Protocol.h>
 #import <ContactsUI/QLPreviewMenuItemDelegate-Protocol.h>
 
-@class CNAvatarCache, CNAvatarView, CNAvatarViewModel, CNContact, CNContactStore, CNLikenessEditorPresentationController, CNUIPRLikenessResolver, CNVariableChangeHelper, NSArray, NSLayoutConstraint, NSString, PRLikeness, PRPersonaStore;
+@class CNAvatarCache, CNAvatarView, CNAvatarViewModel, CNContact, CNContactStore, CNLikenessEditorPresentationController, CNVariableChangeHelper, NSArray, NSLayoutConstraint, NSString, PRLikeness, PRPersonaStore;
 @protocol CNAvatarUpdating, CNAvatarViewDelegate, CNCancelable;
 
 @interface CNAvatarViewController : NSViewController <CNAvatarEditorDelegate, CNAvatarEditorViewControllerSettings, NSImmediateActionGestureRecognizerDelegate, QLPreviewMenuItemDelegate>
@@ -22,6 +22,7 @@
     BOOL _alwaysAcceptDrop;
     BOOL _directEditing;
     BOOL _userSetup;
+    CNAvatarCache *_avatarCache;
     CNAvatarView<CNAvatarUpdating> *_avatarView;
     NSLayoutConstraint *_avatarHeightConstraint;
     NSLayoutConstraint *_topMarginConstraint;
@@ -29,14 +30,12 @@
     CNLikenessEditorPresentationController *_likenessEditorController;
     NSViewController *_presentingViewController;
     CNVariableChangeHelper *_contactDebouncer;
-    CNUIPRLikenessResolver *_likenessResolver;
     id <CNCancelable> _likenessResolverToken;
     id <CNCancelable> _likenessSaveToken;
     NSArray *_overrideLikenesses;
     long long _displayStyle;
     CNContactStore *_contactStore;
     PRPersonaStore *_personaStore;
-    CNAvatarCache *_avatarCache;
     unsigned long long _style;
     id <CNAvatarViewDelegate> _delegate;
 }
@@ -49,13 +48,13 @@
 + (id)_monogramStringForContact:(id)arg1;
 + (id)defaultMonogramLikenessForContact:(id)arg1;
 + (id)defaultMonogramLikenessForFullName:(id)arg1;
++ (id)log;
 + (id)meMonitor;
 + (id)personaStore;
 + (id)contactStore;
 + (id)descriptorForRequiredKeys;
 @property __weak id <CNAvatarViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) unsigned long long style; // @synthesize style=_style;
-@property(retain, nonatomic) CNAvatarCache *avatarCache; // @synthesize avatarCache=_avatarCache;
 @property BOOL userSetup; // @synthesize userSetup=_userSetup;
 @property BOOL directEditing; // @synthesize directEditing=_directEditing;
 @property(readonly) PRPersonaStore *personaStore; // @synthesize personaStore=_personaStore;
@@ -66,7 +65,6 @@
 @property(retain) NSArray *overrideLikenesses; // @synthesize overrideLikenesses=_overrideLikenesses;
 @property(retain) id <CNCancelable> likenessSaveToken; // @synthesize likenessSaveToken=_likenessSaveToken;
 @property(retain) id <CNCancelable> likenessResolverToken; // @synthesize likenessResolverToken=_likenessResolverToken;
-@property(retain) CNUIPRLikenessResolver *likenessResolver; // @synthesize likenessResolver=_likenessResolver;
 @property(retain) CNVariableChangeHelper *contactDebouncer; // @synthesize contactDebouncer=_contactDebouncer;
 @property(retain) NSViewController *presentingViewController; // @synthesize presentingViewController=_presentingViewController;
 @property(retain) CNLikenessEditorPresentationController *likenessEditorController; // @synthesize likenessEditorController=_likenessEditorController;
@@ -127,6 +125,7 @@
 - (void)updateLikenesses;
 - (void)updateViewModelWithContacts:(id)arg1;
 - (void)setLikenessProviders:(id)arg1;
+@property(retain, nonatomic) CNAvatarCache *avatarCache; // @synthesize avatarCache=_avatarCache;
 @property(retain) NSArray *contacts;
 @property(copy) CNContact *contact;
 - (void)dealloc;

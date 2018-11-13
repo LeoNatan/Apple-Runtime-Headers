@@ -25,6 +25,9 @@
     NSMutableData *_telegramDataIn;
     unsigned short objectBlockTransferSizes[4];
     unsigned int _firmwareImageBaseTransferAddress;
+    unsigned short _accessoryCapabilities;
+    unsigned int _totalBytesDownloadedInCurrentSession;
+    BOOL _startEventSent;
     NSObject<OS_dispatch_queue> *_dispatchQ;
 }
 
@@ -42,6 +45,7 @@
 - (void)processDownloadCompleteCommand:(char *)arg1 length:(unsigned int)arg2;
 - (void)processRequestDownloadCommand:(char *)arg1 length:(unsigned int)arg2;
 - (void)processIdentifyCommand:(char *)arg1 length:(unsigned int)arg2;
+- (void)setResumeInfo:(char *)arg1 length:(unsigned int)arg2;
 - (void)setBootloaderEntry;
 - (void)sendCommand:(unsigned char)arg1 payload:(char *)arg2 payload_length:(unsigned short)arg3;
 - (unsigned char)appendByteWithEscaping:(unsigned char)arg1 toObject:(id *)arg2;
@@ -53,6 +57,7 @@
 - (void)resetParser;
 - (unsigned int)supportedTargetProductIDCode;
 - (void)dealloc;
+- (id)getNumberOfBytesDownloadedInCurrentSession;
 - (id)initInstance;
 
 @end

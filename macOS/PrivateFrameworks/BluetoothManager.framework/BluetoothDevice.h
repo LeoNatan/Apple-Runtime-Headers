@@ -19,6 +19,7 @@
 - (unsigned int)getConnectingServiceMask;
 - (void)setConnectingServicemask:(unsigned int)arg1;
 - (BOOL)setUserName:(id)arg1;
+- (BOOL)supportsHS;
 - (BOOL)isAppleAudioDevice;
 - (void)setSyncGroup:(int)arg1 enabled:(BOOL)arg2;
 - (id)syncGroups;

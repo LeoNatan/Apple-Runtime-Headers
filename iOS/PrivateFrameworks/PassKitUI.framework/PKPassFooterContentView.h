@@ -19,9 +19,11 @@
     PKLinkedAppIconView *_appIconView;
     UIButton *_infoButton;
     UIView *_bottomRule;
+    long long _coachingState;
 }
 
 @property(readonly, nonatomic) _Bool invalidated; // @synthesize invalidated=_invalidated;
+@property(readonly, nonatomic) long long coachingState; // @synthesize coachingState=_coachingState;
 @property(readonly, nonatomic, getter=isUserIntentRequired) _Bool userIntentRequired; // @synthesize userIntentRequired=_userIntentRequired;
 @property(readonly, nonatomic) UIView *bottomRule; // @synthesize bottomRule=_bottomRule;
 @property(readonly, nonatomic) UIButton *infoButton; // @synthesize infoButton=_infoButton;
@@ -32,6 +34,7 @@
 - (void).cxx_destruct;
 - (double)_bottomRulePadding;
 - (void)_infoButtonPressed:(id)arg1;
+- (void)_setCoachingState:(long long)arg1;
 - (void)_setUserIntentRequired:(_Bool)arg1;
 @property(readonly, nonatomic, getter=isPassAuthorized) _Bool passAuthorized;
 - (void)invalidate;

@@ -24,6 +24,7 @@
 @property(readonly, nonatomic) float keepProbability; // @synthesize keepProbability=_keepProbability;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+- (unsigned long long)maxBatchSize;
 - (struct NSArray *)encodeBatchToCommandBuffer:(id)arg1 sourceImages:(struct NSArray *)arg2 destinationStates:(struct NSArray **)arg3 destinationStateIsTemporary:(BOOL)arg4;
 - (id)encodeToCommandBuffer:(id)arg1 sourceImage:(id)arg2 destinationState:(id *)arg3 destinationStateIsTemporary:(BOOL)arg4;
 - (id)resultStateForSourceImage:(id)arg1 sourceStates:(id)arg2 destinationImage:(id)arg3;

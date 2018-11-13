@@ -4,9 +4,12 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@class CTXPCServiceSubscriptionContext, NSData, NSDictionary, NSString;
+@class CTServiceDescriptor, CTSubscriberAuthRequest, CTXPCServiceSubscriptionContext, NSData, NSDictionary, NSString;
 
 @protocol CTXPCServiceSubscriberInterface
+- (void)refreshUserAuthToken:(CTServiceDescriptor *)arg1 completion:(void (^)(NSError *))arg2;
+- (void)getUserAuthToken:(CTServiceDescriptor *)arg1 completion:(void (^)(NSData *, NSError *))arg2;
+- (void)authenticate:(CTServiceDescriptor *)arg1 request:(CTSubscriberAuthRequest *)arg2 completion:(void (^)(CTSubscriberAuthResult *, NSError *))arg3;
 - (void)setAllowedToLaunchSimUnlockDuringBuddy:(BOOL)arg1 completion:(void (^)(NSError *))arg2;
 - (void)SIMUnlockProcedureDidComplete;
 - (void)setActiveUserDataSelection:(CTXPCServiceSubscriptionContext *)arg1 completion:(void (^)(NSError *))arg2;

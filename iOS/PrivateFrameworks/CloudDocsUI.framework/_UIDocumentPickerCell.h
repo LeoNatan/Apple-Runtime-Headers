@@ -34,6 +34,7 @@ __attribute__((visibility("hidden")))
     UIImageView *_selectionView;
     UIView *_selectionViewsThumbnailView;
     NSMutableArray *_selectionViewConstraints;
+    UILongPressGestureRecognizer *_pickableDiagnosticGestureRecognizer;
     UILongPressGestureRecognizer *_actionGestureRecognizer;
     NSArray *_availableActions;
     UIView *_cachedSelectedBackgroundView;
@@ -46,6 +47,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) UIView *cachedSelectedBackgroundView; // @synthesize cachedSelectedBackgroundView=_cachedSelectedBackgroundView;
 @property(retain, nonatomic) NSArray *availableActions; // @synthesize availableActions=_availableActions;
 @property(retain, nonatomic) UILongPressGestureRecognizer *actionGestureRecognizer; // @synthesize actionGestureRecognizer=_actionGestureRecognizer;
+@property(retain, nonatomic) UILongPressGestureRecognizer *pickableDiagnosticGestureRecognizer; // @synthesize pickableDiagnosticGestureRecognizer=_pickableDiagnosticGestureRecognizer;
 @property(retain, nonatomic) NSMutableArray *selectionViewConstraints; // @synthesize selectionViewConstraints=_selectionViewConstraints;
 @property(retain, nonatomic) UIView *selectionViewsThumbnailView; // @synthesize selectionViewsThumbnailView=_selectionViewsThumbnailView;
 @property(retain, nonatomic) UIImageView *selectionView; // @synthesize selectionView=_selectionView;
@@ -70,6 +72,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) UILabel *subtitleLabel; // @synthesize subtitleLabel=_subtitleLabel;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 - (void).cxx_destruct;
+- (void)_showPickableDiagnostic;
 - (_Bool)canBecomeFirstResponder;
 - (id)targetForAction:(SEL)arg1 withSender:(id)arg2;
 - (_Bool)canPerformAction:(SEL)arg1 withSender:(id)arg2;

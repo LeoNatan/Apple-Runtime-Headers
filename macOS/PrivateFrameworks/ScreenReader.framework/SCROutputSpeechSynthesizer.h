@@ -56,6 +56,7 @@ __attribute__((visibility("hidden")))
 - (BOOL)canBePaused;
 - (void)adjustOnTheFlyChangesForAction:(id)arg1 adjustRate:(BOOL)arg2 adjustPitch:(BOOL)arg3 adjustVolume:(BOOL)arg4 adjustIntonation:(BOOL)arg5 adjustVoice:(BOOL)arg6 adjustingCurrentSpeech:(BOOL)arg7 lastSpokenWordRange:(struct _NSRange)arg8 speakResults:(BOOL)arg9;
 - (void)startAction;
+- (BOOL)shouldPostWhenSpeechCompletes;
 @property(nonatomic) float volume;
 @property(nonatomic) float pitchBase;
 @property(nonatomic) float pitchMod;

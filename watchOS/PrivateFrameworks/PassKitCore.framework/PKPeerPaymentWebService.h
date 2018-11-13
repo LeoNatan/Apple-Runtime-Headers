@@ -39,6 +39,8 @@
 - (id)_createDeviceScorerForEndpoint:(id)arg1 recipientAddress:(id)arg2;
 - (void)prewarmDeviceScoreForEndpoint:(id)arg1 recipientAddress:(id)arg2;
 - (void)prewarmDeviceScoreForEndpoint:(id)arg1;
+- (void)_renewAppleAccountWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (id)_appleAccountInformation;
 - (id)_deviceMetadata;
 - (void)_deviceRegistrationDataWithCompletion:(CDUnknownBlockType)arg1;
 - (id)_deviceIdentifier;
@@ -70,6 +72,7 @@
 - (void)handleWillPerformHTTPRedirectionWithResponse:(id)arg1 redirectHandler:(CDUnknownBlockType)arg2;
 - (id)forbiddenErrorWithResponse:(id)arg1;
 - (id)badRequestErrorWithResponse:(id)arg1;
+- (void)handleAuthenticationFailureWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)handleResponse:(id)arg1 withError:(id)arg2 data:(id)arg3 task:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
 - (void)performRequest:(id)arg1 taskIdentifier:(unsigned int)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (id)initWithContext:(id)arg1 targetDevice:(id)arg2 archiver:(id)arg3;

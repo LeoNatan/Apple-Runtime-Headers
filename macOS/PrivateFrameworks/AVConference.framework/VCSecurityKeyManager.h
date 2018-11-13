@@ -24,7 +24,6 @@ __attribute__((visibility("hidden")))
     BOOL _isKeyIndexNotReceivedReported;
     double _lastKeyIndexNotReceived;
     id _reportingAgentWeak;
-    BOOL _isDuplicateKeyReported;
     NSMutableArray *_unknownKeyIndexList;
 }
 

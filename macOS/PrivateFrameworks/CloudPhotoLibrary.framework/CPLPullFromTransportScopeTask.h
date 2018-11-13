@@ -6,18 +6,15 @@
 
 #import <CloudPhotoLibrary/CPLEngineScopedTask.h>
 
-@class CPLEngineTransport, CPLFeatureVersionHistory, CPLLibraryInfo, NSObject;
-@protocol CPLEngineTransportDownloadBatchTask, CPLEngineTransportGetLibraryInfoTask, CPLEngineTransportGroup, CPLEngineTransportQueryTask, OS_dispatch_queue;
+@class CPLEngineTransport, CPLFeatureVersionHistory, CPLLibraryInfo, CPLLibraryState, NSObject;
+@protocol CPLEngineTransportDownloadBatchTask, CPLEngineTransportGetCurrentSyncAnchorTask, CPLEngineTransportGroup, CPLEngineTransportQueryTask, OS_dispatch_queue;
 
 @interface CPLPullFromTransportScopeTask : CPLEngineScopedTask
 {
     NSObject<OS_dispatch_queue> *_queue;
     CPLEngineTransport *_transport;
-    struct NSData *_initialSyncAnchor;
     id <CPLEngineTransportDownloadBatchTask> _downloadTask;
     id <CPLEngineTransportQueryTask> _queryTask;
-    id <CPLEngineTransportGetLibraryInfoTask> _getLibraryInfoTask;
-    struct NSData *_lastKnownSyncAnchor;
     CPLLibraryInfo *_currentLibraryInfo;
     Class _currentQueryClass;
     BOOL _ignoreNewBatches;
@@ -29,6 +26,12 @@
     unsigned long long _totalAssetCountForScope;
     BOOL _hasCachedTotalAssetCountForScope;
     long long _taskItem;
+    BOOL _hasFetchedInitialSyncAnchor;
+    BOOL _shouldStoreInitialSyncAnchor;
+    struct NSData *_initialSyncAnchor;
+    CPLLibraryInfo *_initialLibraryInfo;
+    CPLLibraryState *_initialLibraryState;
+    id <CPLEngineTransportGetCurrentSyncAnchorTask> _fetchInitialSyncAnchorTask;
 }
 
 - (void).cxx_destruct;
@@ -38,10 +41,12 @@
 - (void)launch;
 - (void)_launch;
 - (void)_checkServerFeatureVersionWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)_fetchInitialSyncAnchor;
 - (void)_launchPullTasksAndDisableQueries:(BOOL)arg1;
 - (void)_launchNextQueryTask;
 - (void)_launchQueryForClass:(Class)arg1 cursor:(id)arg2;
 - (void)_handleNewBatchFromQuery:(id)arg1 newCursor:(id)arg2;
+- (void)_storeInitialSyncAnchorIfNecessaryInTransaction:(id)arg1;
 - (void)_handleNewBatchFromQuery:(id)arg1 newCursor:(id)arg2 inTransaction:(id)arg3;
 - (void)_launchFetchChangesFromSyncAnchor:(struct NSData *)arg1;
 - (void)_updateLastFeatureVersionAndRelaunchFetchChangesFromSyncAnchor:(struct NSData *)arg1;

@@ -34,6 +34,7 @@
 @property(readonly, retain) NSString *customTitleForPostInstallNotification;
 @property(readonly) BOOL showPostInstallNotification;
 @property(readonly) long long autoInstallWithDelayInHours;
+@property(readonly) BOOL isMajorOSUpdateInternal;
 @property(readonly, retain) SUMajorProduct *majorProduct;
 @property(readonly) BOOL isMajorOSUpdate;
 @property(readonly) BOOL isCritical;

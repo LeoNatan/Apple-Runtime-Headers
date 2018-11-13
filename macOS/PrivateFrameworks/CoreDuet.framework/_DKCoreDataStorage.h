@@ -21,6 +21,7 @@
     BOOL _readOnly;
     BOOL _localOnly;
     BOOL _sync;
+    BOOL _requiresManualMigration;
     NSString *_directory;
     NSURL *_modelURL;
     NSString *_databaseName;
@@ -38,6 +39,7 @@
 + (unsigned long long)countObjectsInContext:(id)arg1 entityName:(id)arg2 predicate:(id)arg3 includeSubentities:(BOOL)arg4 includePendingChanges:(BOOL)arg5;
 + (unsigned long long)deleteObjectsInContext:(id)arg1 entityName:(id)arg2 predicate:(id)arg3 sortDescriptors:(id)arg4 fetchOffset:(unsigned long long)arg5 fetchLimit:(unsigned long long)arg6 includeSubentities:(BOOL)arg7 includePendingChanges:(BOOL)arg8;
 + (unsigned long long)deleteObjectsInContext:(id)arg1 entityName:(id)arg2 predicate:(id)arg3 sortDescriptors:(id)arg4 fetchLimit:(unsigned long long)arg5 includeSubentities:(BOOL)arg6 includePendingChanges:(BOOL)arg7;
+@property(nonatomic) BOOL requiresManualMigration; // @synthesize requiresManualMigration=_requiresManualMigration;
 @property(readonly) NSString *containerIdentifier; // @synthesize containerIdentifier=_containerIdentifier;
 @property(readonly) NSCloudKitMirroringDelegate *mirroringDelegate; // @synthesize mirroringDelegate=_mirroringDelegate;
 @property __weak id <_DKCoreDataStorageDelegate> delegate; // @synthesize delegate=_delegate;

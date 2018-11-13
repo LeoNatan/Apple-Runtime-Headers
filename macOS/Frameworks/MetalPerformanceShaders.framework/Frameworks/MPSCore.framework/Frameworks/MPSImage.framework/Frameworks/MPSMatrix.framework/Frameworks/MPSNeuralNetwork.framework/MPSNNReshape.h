@@ -8,9 +8,13 @@
 
 @interface MPSNNReshape : MPSCNNKernel
 {
+    unsigned long long _reshapedWidth;
+    unsigned long long _reshapedHeight;
+    unsigned long long _reshapedFeatureChannels;
 }
 
 + (const struct MPSLibraryInfo *)libraryInfo;
+- (id)destinationImageDescriptorForSourceImages:(id)arg1 sourceStates:(id)arg2 paddingMethod:(unsigned long long)arg3 sourceOffset:(CDStruct_d6af7fc0 *)arg4;
 - (id)debugDescription;
 - (id)copyWithZone:(struct _NSZone *)arg1 device:(id)arg2;
 - (void)encodeWithCoder:(id)arg1;

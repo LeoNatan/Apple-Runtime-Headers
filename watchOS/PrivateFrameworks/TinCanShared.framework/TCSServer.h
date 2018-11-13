@@ -25,6 +25,7 @@
 - (void)_removeConnection:(id)arg1;
 - (void)_enumerateConnectionsWithBlock:(CDUnknownBlockType)arg1;
 - (void)_addConnection:(id)arg1;
+- (void)ensureUplinkMuted;
 - (void)setClientRecordingInProgress:(_Bool)arg1;
 - (void)remoteMeterLevelForCall:(id)arg1 result:(CDUnknownBlockType)arg2;
 - (void)localMeterLevelForCall:(id)arg1 result:(CDUnknownBlockType)arg2;

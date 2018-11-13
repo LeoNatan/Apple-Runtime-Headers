@@ -23,7 +23,6 @@
     int _personalRequestsState;
     int _mediaSystemRoleEffective;
     NSString *_deviceColor;
-    NSString *_groupID;
     NSUUID *_homeKitIdentifier;
     NSString *_idsPersonalDeviceIdentifier;
     NSUUID *_mediaSystemIdentifier;
@@ -31,7 +30,6 @@
     NSString *_publicIdentifier;
     NSString *_roomName;
     NSDictionary *_siriInfo;
-    NSString *_sourceVersion;
     NSString *_role;
     NSUUID *_mediaSystemIdentifierEffective;
     NSUUID *_pairingIdentifier;
@@ -47,7 +45,6 @@
 @property(nonatomic) BOOL changed; // @synthesize changed=_changed;
 @property(nonatomic) BOOL btPipeConnected; // @synthesize btPipeConnected=_btPipeConnected;
 @property(copy, nonatomic) NSString *role; // @synthesize role=_role;
-@property(copy, nonatomic) NSString *sourceVersion; // @synthesize sourceVersion=_sourceVersion;
 @property(copy, nonatomic) NSDictionary *siriInfo; // @synthesize siriInfo=_siriInfo;
 @property(copy, nonatomic) NSString *roomName; // @synthesize roomName=_roomName;
 @property(copy, nonatomic) NSString *publicIdentifier; // @synthesize publicIdentifier=_publicIdentifier;
@@ -60,7 +57,6 @@
 @property(copy, nonatomic) NSUUID *mediaSystemIdentifier; // @synthesize mediaSystemIdentifier=_mediaSystemIdentifier;
 @property(copy, nonatomic) NSString *idsPersonalDeviceIdentifier; // @synthesize idsPersonalDeviceIdentifier=_idsPersonalDeviceIdentifier;
 @property(copy, nonatomic) NSUUID *homeKitIdentifier; // @synthesize homeKitIdentifier=_homeKitIdentifier;
-@property(readonly, copy, nonatomic) NSString *groupID; // @synthesize groupID=_groupID;
 @property(nonatomic) unsigned int flags; // @synthesize flags=_flags;
 @property(copy, nonatomic) NSString *deviceColor; // @synthesize deviceColor=_deviceColor;
 - (void).cxx_destruct;

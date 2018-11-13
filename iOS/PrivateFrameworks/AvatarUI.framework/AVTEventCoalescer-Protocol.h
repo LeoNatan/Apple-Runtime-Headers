@@ -8,6 +8,6 @@
 
 @protocol AVTEventCoalescer
 - (void)eventDidOccur;
-- (void)startCoalescingEventWithLabel:(NSString *)arg1 handler:(void (^)(void))arg2;
+- (void)registerEventForCoalescingWithLabel:(NSString *)arg1 handler:(void (^)(void))arg2;
 @end
 

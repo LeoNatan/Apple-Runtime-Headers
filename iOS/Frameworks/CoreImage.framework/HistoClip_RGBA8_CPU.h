@@ -14,6 +14,8 @@ __attribute__((visibility("hidden")))
     CIImage *inputImage;
     CIImage *inputCenterLeft;
     CIImage *inputCenterRight;
+    CIVector *inputCenterExtentLeft;
+    CIVector *inputCenterExtentRight;
     NSNumber *inputPercentileRepair;
     NSNumber *inputPercentileSpecular;
     NSNumber *inputPercentRepair;
@@ -23,8 +25,10 @@ __attribute__((visibility("hidden")))
     NSNumber *inputMinDensity;
     NSNumber *inputMaxRelDensity;
     NSNumber *inputDensityRadius;
+    NSNumber *inputMaxInterDispersion;
     CIVector *inputMinimum;
     CIVector *inputMaxArea;
+    CIVector *inputMaxAreaRatio;
     CIVector *inputCenterOffsetLeft;
     CIVector *inputCenterOffsetRight;
     CIImage *inputDetectionLeft;
@@ -37,8 +41,10 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) CIImage *inputDetectionLeft; // @synthesize inputDetectionLeft;
 @property(retain, nonatomic) CIVector *inputCenterOffsetRight; // @synthesize inputCenterOffsetRight;
 @property(retain, nonatomic) CIVector *inputCenterOffsetLeft; // @synthesize inputCenterOffsetLeft;
+@property(retain, nonatomic) CIVector *inputMaxAreaRatio; // @synthesize inputMaxAreaRatio;
 @property(retain, nonatomic) CIVector *inputMaxArea; // @synthesize inputMaxArea;
 @property(retain, nonatomic) CIVector *inputMinimum; // @synthesize inputMinimum;
+@property(retain, nonatomic) NSNumber *inputMaxInterDispersion; // @synthesize inputMaxInterDispersion;
 @property(retain, nonatomic) NSNumber *inputDensityRadius; // @synthesize inputDensityRadius;
 @property(retain, nonatomic) NSNumber *inputMaxRelDensity; // @synthesize inputMaxRelDensity;
 @property(retain, nonatomic) NSNumber *inputMinDensity; // @synthesize inputMinDensity;
@@ -48,6 +54,8 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSNumber *inputPercentRepair; // @synthesize inputPercentRepair;
 @property(retain, nonatomic) NSNumber *inputPercentileSpecular; // @synthesize inputPercentileSpecular;
 @property(retain, nonatomic) NSNumber *inputPercentileRepair; // @synthesize inputPercentileRepair;
+@property(retain, nonatomic) CIVector *inputCenterExtentRight; // @synthesize inputCenterExtentRight;
+@property(retain, nonatomic) CIVector *inputCenterExtentLeft; // @synthesize inputCenterExtentLeft;
 @property(retain, nonatomic) CIImage *inputCenterRight; // @synthesize inputCenterRight;
 @property(retain, nonatomic) CIImage *inputCenterLeft; // @synthesize inputCenterLeft;
 - (id)outputImage;

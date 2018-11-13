@@ -56,11 +56,6 @@ struct nw_protocol_callbacks;
 
 struct nw_protocol_identifier;
 
-struct tls_buffer_list_s {
-    struct tls_buffer_list_s *_field1;
-    CDStruct_061587d8 _field2;
-};
-
 #pragma mark Typedef'd Structures
 
 typedef struct {

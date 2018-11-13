@@ -16,7 +16,7 @@
 @property(copy, nonatomic) CDUnknownBlockType handler; // @synthesize handler=_handler;
 - (void).cxx_destruct;
 - (void)eventDidOccur;
-- (void)startCoalescingEventWithLabel:(id)arg1 handler:(CDUnknownBlockType)arg2;
+- (void)registerEventForCoalescingWithLabel:(id)arg1 handler:(CDUnknownBlockType)arg2;
 
 @end
 

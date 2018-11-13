@@ -31,14 +31,16 @@
 - (void)printDiagnostics;
 - (void)timeListener:(id)arg1 didDetectSignificantTimeChangeWithCompletionBlock:(CDUnknownBlockType)arg2;
 - (void)sleepMonitor:(id)arg1 sleepAlarmDidChange:(id)arg2;
+- (void)sleepMonitor:(id)arg1 wakeUpAlarmWasSnoozed:(id)arg2 sleepAlarm:(id)arg3;
 - (void)sleepMonitor:(id)arg1 wakeUpAlarmWasDismissed:(id)arg2 sleepAlarm:(id)arg3;
+- (void)sleepMonitor:(id)arg1 wakeUpAlarmDidFire:(id)arg2 sleepAlarm:(id)arg3;
 - (void)sleepMonitor:(id)arg1 bedtimeWasReached:(id)arg2 sleepAlarm:(id)arg3;
 - (void)sleepMonitor:(id)arg1 bedtimeReminderWasConfirmed:(id)arg2 sleepAlarm:(id)arg3;
 - (void)sleepMonitor:(id)arg1 bedtimeReminderDidFire:(id)arg2 sleepAlarm:(id)arg3;
 - (void)handleManualDNDInvalidation;
 - (void)modeAssertionService:(id)arg1 didReceiveModeAssertionInvalidation:(id)arg2;
 - (void)disengageDND;
-- (void)engageDND;
+- (void)engageDNDUntilDate:(id)arg1;
 - (void)_checkDNDForAlarm:(id)arg1 delay:(double)arg2;
 - (void)_checkDNDForAlarm:(id)arg1;
 - (void)checkDND;

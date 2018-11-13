@@ -43,6 +43,8 @@
 @property(retain, nonatomic) NSArray *recentCalls; // @synthesize recentCalls=_recentCalls;
 @property BOOL generateSyncTransactions; // @synthesize generateSyncTransactions=_generateSyncTransactions;
 - (void).cxx_destruct;
+- (id)latestTelephonyCallMatchingNormalizedRemoteParticipantHandleValues:(id)arg1;
+- (id)latestRecentCallMatchingPredicate:(id)arg1;
 - (void)addMultipleCallsToCallHistory:(id)arg1;
 - (void)flush;
 - (void)callTimersReset;

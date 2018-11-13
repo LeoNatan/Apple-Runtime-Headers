@@ -110,7 +110,9 @@
 - (id)fmfHandlesFromIMHandles:(id)arg1;
 - (void)presentFullFMFMapViewController;
 - (void)scrollViewWillBeginDragging:(id)arg1;
+- (void)_updateSharedAssetsControllersForScrollView:(id)arg1 cell:(id)arg2;
 - (void)scrollViewDidScroll:(id)arg1;
+- (struct CGSize)screenSize;
 - (void)_toggleSharingStateFromABCard;
 - (void)_showContactCardForEntity:(id)arg1 fromView:(id)arg2;
 - (void)_requestCallTypeForEntity:(id)arg1 withAddresses:(id)arg2 withLabels:(id)arg3 faceTimeAudioEnabled:(_Bool)arg4;

@@ -79,6 +79,7 @@ __attribute__((visibility("hidden")))
 - (void)stopTimeoutHeartbeat;
 - (void)startTimeoutHeartbeat;
 - (void)timeoutHeartbeat;
+- (void)checkForDecryptionTimeout;
 - (void)checkDecryptionTimeoutAgainstTime:(double)arg1 decryptionErrorStartTime:(double)arg2;
 - (void)checkRTCPPacketTimeoutAgainstTime:(double)arg1 lastReceivedPacketTime:(double)arg2;
 - (void)checkRTPPacketTimeoutAgainstTime:(double)arg1 lastReceivedPacketTime:(double)arg2;

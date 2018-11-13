@@ -60,6 +60,7 @@
 - (void)setupNotificationQueue:(id)arg1;
 - (void)deregisterFromNotifications;
 - (void)registerBlocksForNotifications;
+- (id)newNSErrorWithErrorDictionary:(id)arg1;
 - (id)initWithParticipantID:(unsigned long long)arg1 data:(id)arg2 delegate:(id)arg3 queue:(id)arg4;
 @property(readonly, nonatomic) NSDictionary *config;
 @property(retain, nonatomic) VCXPCClientShared *sharedXPCConnection;

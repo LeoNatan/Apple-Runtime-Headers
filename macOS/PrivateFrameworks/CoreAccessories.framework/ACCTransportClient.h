@@ -36,6 +36,7 @@
 - (id)propertiesForConnectionWithUUID:(id)arg1;
 - (id)accessoryInfoForEndpointWithUUID:(id)arg1;
 - (id)accessoryInfoForConnectionWithUUID:(id)arg1;
+- (void)setConnectionAuthenticated:(id)arg1 state:(_Bool)arg2;
 - (BOOL)isConnectionAuthenticated:(id)arg1;
 - (int)authStatusForConnectionWithUUID:(id)arg1 authType:(int)arg2;
 - (id)endpointUUIDsForConnectionWithUUID:(id)arg1;

@@ -55,6 +55,7 @@
 - (void)handleFetchEventsWithResponse:(id)arg1 options:(id)arg2 error:(id)arg3 peer:(id)arg4 completion:(CDUnknownBlockType)arg5;
 - (void)handleFetchEventsWithRequest:(id)arg1 options:(id)arg2 responseHandler:(CDUnknownBlockType)arg3;
 - (void)fetchEventsFromPeer:(id)arg1 creationDateBetweenDate:(id)arg2 andDate:(id)arg3 streamNames:(id)arg4 limit:(unsigned int)arg5 fetchOrder:(int)arg6 highPriority:(_Bool)arg7 completion:(CDUnknownBlockType)arg8;
+- (void)clearPrewarmedFlag;
 - (void)setHasDeletionsFlag:(_Bool)arg1 forPeer:(id)arg2;
 - (_Bool)hasDeletionsFlagForPeer:(id)arg1;
 - (void)setHasAdditionsFlag:(_Bool)arg1 forPeer:(id)arg2;

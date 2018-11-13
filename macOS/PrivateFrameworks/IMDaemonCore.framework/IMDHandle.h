@@ -16,10 +16,10 @@
     NSString *_personCentricID;
 }
 
-@property(retain, nonatomic) NSString *personCentricID; // @synthesize personCentricID=_personCentricID;
 @property(retain, nonatomic) NSString *unformattedID; // @synthesize unformattedID=_unformattedID;
 @property(retain, nonatomic) NSString *countryCode; // @synthesize countryCode=_countryCode;
 @property(retain, nonatomic) NSString *ID; // @synthesize ID=_id;
+@property(retain, nonatomic) NSString *personCentricID; // @synthesize personCentricID=_personCentricID;
 - (BOOL)isBusiness;
 @property(readonly, retain, nonatomic) NSDictionary *handleInfo;
 - (id)description;

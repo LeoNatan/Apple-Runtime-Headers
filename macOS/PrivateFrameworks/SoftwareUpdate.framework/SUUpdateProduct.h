@@ -17,6 +17,7 @@
     BOOL _shouldLaunchFirstLoginOptimization;
     BOOL _isABaseSystemUpdate;
     BOOL _isMajorOSUpdate;
+    BOOL _isMajorOSUpdateInternal;
     BOOL _adminDeferred;
     BOOL _doItLaterUpdateAndNowIsLater;
     BOOL _isFirmwareUpdate;
@@ -88,6 +89,7 @@
 @property(readonly, retain) NSDate *adminDeferralDate; // @synthesize adminDeferralDate=_adminDeferralDate;
 @property(readonly) BOOL adminDeferred; // @synthesize adminDeferred=_adminDeferred;
 @property(readonly, retain) SUMajorProduct *majorProduct; // @synthesize majorProduct=_majorProduct;
+@property(readonly) BOOL isMajorOSUpdateInternal; // @synthesize isMajorOSUpdateInternal=_isMajorOSUpdateInternal;
 @property(readonly) BOOL isMajorOSUpdate; // @synthesize isMajorOSUpdate=_isMajorOSUpdate;
 @property BOOL isABaseSystemUpdate; // @synthesize isABaseSystemUpdate=_isABaseSystemUpdate;
 @property(readonly) BOOL shouldLaunchFirstLoginOptimization; // @synthesize shouldLaunchFirstLoginOptimization=_shouldLaunchFirstLoginOptimization;

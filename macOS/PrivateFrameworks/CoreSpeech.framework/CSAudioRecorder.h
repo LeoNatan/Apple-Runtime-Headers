@@ -100,6 +100,7 @@
 - (BOOL)setRecordBufferDuration:(double)arg1;
 - (void)setSynchronousCallbackEnabled:(BOOL)arg1;
 - (id)recordSettings;
+- (void)enableMiniDucking:(BOOL)arg1;
 @property(nonatomic) BOOL duckOthersOption;
 - (void)prewarmAudioSession;
 - (BOOL)setCurrentContext:(id)arg1 error:(id *)arg2;

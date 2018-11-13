@@ -14,6 +14,7 @@
 @interface PKGlyphView : NSView <PKFingerprintGlyphViewDelegate>
 {
     long long _style;
+    _Bool _isPad;
     unsigned long long _transitionIndex;
     BOOL _transitioning;
     BOOL _transitioningAnimated;
@@ -38,6 +39,7 @@
     double _phoneAspectRatio;
     CALayer *_customImageLayer;
     struct NSColor *_secondaryColor;
+    unsigned int _userIntentEdge;
     long long _colorMode;
     NSColor *_primaryColor;
     struct CGImage *_customImage;
@@ -49,6 +51,7 @@
 + (id)sharedStaticResources;
 + (BOOL)automaticallyNotifiesObserversOfState;
 @property(nonatomic) __weak id <PKGlyphViewDelegate> delegate; // @synthesize delegate=_delegate;
+@property(readonly, nonatomic) unsigned int userIntentEdge; // @synthesize userIntentEdge=_userIntentEdge;
 @property(readonly, nonatomic) long long state; // @synthesize state=_state;
 @property(readonly, nonatomic) struct CGImage *customImage; // @synthesize customImage=_customImage;
 @property(readonly, nonatomic) struct NSEdgeInsets customImageAlignmentEdgeInsets; // @synthesize customImageAlignmentEdgeInsets=_customImageAlignmentEdgeInsets;
@@ -71,6 +74,7 @@
 - (void)_setRecognizedIfNecessaryWithTransitionIndex:(unsigned long long)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_updateCheckViewStateAnimated:(BOOL)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)_updateCustomImageLayerOpacityAnimated:(BOOL)arg1;
+- (void)_updateUserIntentLayerRotation;
 - (void)_updateUserIntentLayoutAnimated:(BOOL)arg1;
 - (void)_endPhoneWiggle;
 - (void)_startPhoneWiggle;
@@ -85,6 +89,7 @@
 - (void)_executeAfterMinimumAnimationDurationForStateTransition:(CDUnknownBlockType)arg1;
 - (void)_updateLastAnimationTimeWithAnimationOfDuration:(double)arg1;
 - (void)updateRasterizationScale:(double)arg1;
+- (void)updateRotation;
 - (void)_layoutContentLayer:(id)arg1;
 - (void)layout;
 - (void)viewDidChangeBackingProperties;

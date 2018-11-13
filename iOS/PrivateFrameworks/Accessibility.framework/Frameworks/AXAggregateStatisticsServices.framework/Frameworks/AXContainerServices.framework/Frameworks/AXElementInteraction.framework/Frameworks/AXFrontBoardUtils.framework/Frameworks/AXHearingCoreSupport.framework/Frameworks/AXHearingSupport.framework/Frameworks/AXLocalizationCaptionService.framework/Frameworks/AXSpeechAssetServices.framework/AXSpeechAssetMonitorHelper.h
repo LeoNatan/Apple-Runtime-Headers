@@ -13,6 +13,7 @@
 }
 
 + (id)sharedInstance;
+- (void)clearCurrentVoicesAndRefreshTTSVoiceList;
 - (void)_checkForAssetUpdatesNowAndNextWeek;
 - (void)_monitorSpeechAssetChanges;
 - (void)updateAvailableSpeechAssets;

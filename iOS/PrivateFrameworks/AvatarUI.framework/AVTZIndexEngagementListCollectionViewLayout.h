@@ -29,6 +29,7 @@
 - (void)prepareForCollectionViewUpdates:(id)arg1;
 - (id)layoutAttributesForItemAtIndexPath:(id)arg1;
 - (id)layoutAttributesForElementsInRect:(struct CGRect)arg1;
+- (double)alphaForSunflowerElementWithEngagement:(double)arg1;
 - (double)alphaForElementWithAttributes:(id)arg1;
 - (long long)zIndexForElementWithAttributes:(id)arg1;
 - (struct UIEdgeInsets)engagementInsetsForCollectionViewBounds:(struct CGSize)arg1;

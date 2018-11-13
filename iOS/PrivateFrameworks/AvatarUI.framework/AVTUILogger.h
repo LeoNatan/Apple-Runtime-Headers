@@ -49,6 +49,11 @@
 - (void)logCarouselChangesCenterItemTo:(id)arg1;
 - (void)logCarouselChangingToMultiMode;
 - (void)logCarouselChangingToSingleMode;
+- (void)logDeduplicateRecordWithIdentifier:(id)arg1 toNewRecordWithIdentifier:(id)arg2;
+- (void)logDiscoveredDuplicates:(id)arg1 count:(unsigned long long)arg2;
+- (void)logMaintenanceCompleted;
+- (void)logErrorMitigatingDuplicates:(id)arg1;
+- (void)runningMaintenance:(CDUnknownBlockType)arg1;
 - (void)checkingIn:(CDUnknownBlockType)arg1;
 - (void)logNoProxyToAvatarsDaemon;
 - (void)logErrorGettingAvatarsDaemonClientProxy:(id)arg1;

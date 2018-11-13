@@ -315,6 +315,7 @@
 - (BOOL)isOpaque;
 - (id)makeCellAtRow:(long long)arg1 column:(long long)arg2;
 - (BOOL)_containedInSingleColumnClipView;
+- (void)_setPrototypeNoCopy:(id)arg1;
 @property(copy) NSCell *prototype;
 @property Class cellClass;
 - (void)dealloc;

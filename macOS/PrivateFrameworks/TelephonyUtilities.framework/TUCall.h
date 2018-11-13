@@ -149,6 +149,7 @@
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToCall:(id)arg1;
+@property(readonly, copy, nonatomic) NSUUID *localSenderIdentityAccountUUID;
 @property(readonly, copy, nonatomic) NSUUID *localSenderIdentityUUID;
 @property(readonly, copy, nonatomic) TUSenderIdentity *localSenderIdentity;
 @property(readonly, copy, nonatomic) NSUUID *callGroupUUID;

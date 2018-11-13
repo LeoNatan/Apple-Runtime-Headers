@@ -30,6 +30,7 @@
 - (void)fetchDeletedEventIDsFromPeer:(id)arg1 sinceDate:(id)arg2 streamNames:(id)arg3 limit:(unsigned long long)arg4 highPriority:(BOOL)arg5 completion:(CDUnknownBlockType)arg6;
 - (void)fetchAdditionsHighWaterMarkWithPeer:(id)arg1 highPriority:(BOOL)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)fetchEventsFromPeer:(id)arg1 creationDateBetweenDate:(id)arg2 andDate:(id)arg3 streamNames:(id)arg4 limit:(unsigned long long)arg5 fetchOrder:(long long)arg6 highPriority:(BOOL)arg7 completion:(CDUnknownBlockType)arg8;
+- (void)clearPrewarmedFlag;
 - (void)setHasDeletionsFlag:(BOOL)arg1 forPeer:(id)arg2;
 - (BOOL)hasDeletionsFlagForPeer:(id)arg1;
 - (void)setHasAdditionsFlag:(BOOL)arg1 forPeer:(id)arg2;

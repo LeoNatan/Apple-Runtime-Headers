@@ -8,6 +8,7 @@
 
 @interface CLPPoiTriggerEvent (RTExtensions)
 + (int)subType:(unsigned long long)arg1;
++ (unsigned long long)mapItemSource:(int)arg1;
 - (id)description;
 - (id)initWithMapItem:(id)arg1 date:(id)arg2;
 @end

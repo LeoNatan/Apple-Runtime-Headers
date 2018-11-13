@@ -9,6 +9,7 @@
 @class PKPaymentAuthorizationServiceViewController;
 
 @protocol PKPaymentAuthorizationServiceViewControllerDelegate <NSObject>
+- (void)authorizationViewControllerDidChangeCoachingState:(PKPaymentAuthorizationServiceViewController *)arg1;
 - (void)authorizationViewControllerDidChangeUserIntentRequirement:(PKPaymentAuthorizationServiceViewController *)arg1;
 
 @optional

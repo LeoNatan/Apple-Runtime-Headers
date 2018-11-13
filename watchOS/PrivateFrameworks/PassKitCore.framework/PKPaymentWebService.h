@@ -128,6 +128,8 @@
 - (unsigned int)configurePaymentServiceWithCompletion:(CDUnknownBlockType)arg1;
 - (void)handleWillPerformHTTPRedirectionWithResponse:(id)arg1 redirectHandler:(CDUnknownBlockType)arg2;
 - (void)processRetryRequest:(id)arg1 responseData:(id)arg2 orginalRequest:(id)arg3 completion:(CDUnknownBlockType)arg4;
+- (void)_renewAppleAccountWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (id)_appleAccountInformation;
 - (_Bool)_isSandboxAccount;
 - (void)signNonce:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (id)logFacility;
@@ -152,6 +154,7 @@
 - (id)initWithContext:(id)arg1 targetDevice:(id)arg2;
 - (id)init;
 - (_Bool)canBypassTrustExtendedValidation;
+- (void)handleAuthenticationFailureWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)handleResponse:(id)arg1 withError:(id)arg2 data:(id)arg3 task:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
 
 // Remaining properties

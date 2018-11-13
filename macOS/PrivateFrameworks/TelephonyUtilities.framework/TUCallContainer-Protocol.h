@@ -29,6 +29,7 @@
 @property(readonly, copy, nonatomic) NSArray *callsWithAnEndpointElsewhere;
 @property(readonly, copy, nonatomic) NSArray *callsHostedElsewhere;
 @property(readonly, copy, nonatomic) NSArray *conferenceParticipantCalls;
+@property(readonly, copy, nonatomic) NSArray *displayedAudioAndVideoCalls;
 @property(readonly, copy, nonatomic) NSArray *displayedCalls;
 @property(readonly, copy, nonatomic) NSArray *incomingCalls;
 @property(readonly, copy, nonatomic) NSArray *currentAudioAndVideoCalls;

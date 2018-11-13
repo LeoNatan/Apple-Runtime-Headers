@@ -11,6 +11,7 @@
 @interface CXJoinCallAction : CXCallAction
 {
     _Bool _videoEnabled;
+    _Bool _uplinkMuted;
     _Bool _shouldSuppressInCallUI;
     _Bool _wantsStagingArea;
     _Bool _upgrade;
@@ -29,6 +30,7 @@
 @property(nonatomic, getter=isUpgrade) _Bool upgrade; // @synthesize upgrade=_upgrade;
 @property(nonatomic) _Bool wantsStagingArea; // @synthesize wantsStagingArea=_wantsStagingArea;
 @property(nonatomic) _Bool shouldSuppressInCallUI; // @synthesize shouldSuppressInCallUI=_shouldSuppressInCallUI;
+@property(nonatomic, getter=isUplinkMuted) _Bool uplinkMuted; // @synthesize uplinkMuted=_uplinkMuted;
 @property(nonatomic, getter=isVideoEnabled) _Bool videoEnabled; // @synthesize videoEnabled=_videoEnabled;
 @property(copy, nonatomic) CXHandle *callerID; // @synthesize callerID=_callerID;
 @property(copy, nonatomic) NSSet *remoteMembers; // @synthesize remoteMembers=_remoteMembers;

@@ -47,6 +47,7 @@
 }
 
 + (id)supportedIPAPhonemeLanguages;
++ (id)_speechVoiceForIdentifier:(id)arg1 language:(id)arg2 footprint:(long long)arg3 useFallbackDefault:(_Bool)arg4;
 + (id)_speechVoiceForIdentifier:(id)arg1 language:(id)arg2 footprint:(long long)arg3;
 + (_Bool)isSystemSpeaking;
 + (id)availableLanguageCodes;

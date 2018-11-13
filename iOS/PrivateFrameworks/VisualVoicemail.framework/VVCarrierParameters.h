@@ -23,7 +23,7 @@
 @property(readonly, nonatomic) NSDictionary *parameterValues; // @synthesize parameterValues=_parameterValues;
 - (void).cxx_destruct;
 - (id)parameterValueForKey:(id)arg1;
-- (id)initWithSubscriptionContext:(id)arg1 service:(id)arg2;
+- (id)initWithService:(id)arg1;
 
 @end
 

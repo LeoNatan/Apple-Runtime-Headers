@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSNumber;
+@class NSNumber, NSUserDefaults;
 
 @interface SymptomsPreferences : NSObject
 {
@@ -15,6 +15,8 @@
     BOOL _optin_autobugcapture;
     BOOL _disable_autobugcapture;
     BOOL _dut_flag;
+    BOOL _is_automated_device_group;
+    BOOL _ignore_automated_device_group;
     BOOL _apns_enable;
     BOOL _apns_dev_environment;
     BOOL _arbitrator_disable_dampening;
@@ -28,8 +30,10 @@
     unsigned long long _dampening_restriction_factor;
     double _api_rate_limit;
     double _api_limit_window;
+    NSUserDefaults *_automatedDeviceGroupDefaults;
 }
 
+@property(retain, nonatomic) NSUserDefaults *automatedDeviceGroupDefaults; // @synthesize automatedDeviceGroupDefaults=_automatedDeviceGroupDefaults;
 @property(nonatomic) double api_limit_window; // @synthesize api_limit_window=_api_limit_window;
 @property(nonatomic) double api_rate_limit; // @synthesize api_rate_limit=_api_rate_limit;
 @property(nonatomic) unsigned long long dampening_restriction_factor; // @synthesize dampening_restriction_factor=_dampening_restriction_factor;
@@ -42,6 +46,8 @@
 @property(nonatomic) BOOL arbitrator_disable_dampening; // @synthesize arbitrator_disable_dampening=_arbitrator_disable_dampening;
 @property(nonatomic) BOOL apns_dev_environment; // @synthesize apns_dev_environment=_apns_dev_environment;
 @property(nonatomic) BOOL apns_enable; // @synthesize apns_enable=_apns_enable;
+@property(nonatomic) BOOL ignore_automated_device_group; // @synthesize ignore_automated_device_group=_ignore_automated_device_group;
+@property(nonatomic) BOOL is_automated_device_group; // @synthesize is_automated_device_group=_is_automated_device_group;
 @property(nonatomic) BOOL dut_flag; // @synthesize dut_flag=_dut_flag;
 @property(nonatomic) BOOL disable_autobugcapture; // @synthesize disable_autobugcapture=_disable_autobugcapture;
 @property(nonatomic) BOOL optin_autobugcapture; // @synthesize optin_autobugcapture=_optin_autobugcapture;

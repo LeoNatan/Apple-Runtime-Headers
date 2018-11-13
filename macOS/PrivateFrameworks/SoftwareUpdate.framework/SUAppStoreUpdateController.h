@@ -32,6 +32,7 @@
     NSObject<OS_dispatch_queue> *_authQueue;
     NSLock *_statusTimerLock;
     NSObject<OS_dispatch_queue> *_initialAvailableUpdatesQueryQueue;
+    BOOL _isSystemAppleInternal;
     NSURLCredential *_sharedURLCredential;
 }
 

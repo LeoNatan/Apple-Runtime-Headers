@@ -571,6 +571,12 @@
 - (void)_centerContentIfNecessary;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
+- (void)_trackingDidEnd;
+- (void)_trackingDidBegin;
+- (_Bool)isElementAccessibilityExposedToInterfaceBuilder;
+- (double)maxVelocityInDirection:(int)arg1;
+- (int)scrollableDirections;
+- (void)_autoScrollAssistantUpdateContentOffset:(struct CGPoint)arg1;
 - (void)_accumulateViewConstraintsIntoArray:(id)arg1;
 - (void)_old_updateAutomaticContentSizeConstraintsIfNecessaryWithContentSize:(struct CGSize)arg1;
 - (void)_resizeWithOldSuperviewSize:(struct CGSize)arg1;
@@ -580,7 +586,6 @@
 - (void)_didAddDependentConstraint:(id)arg1;
 - (_Bool)_constraintAffectsContentSize:(id)arg1;
 - (void)_adjustCrossingConstraintsIfNecessaryForOldContentInset:(struct UIEdgeInsets)arg1;
-- (_Bool)isElementAccessibilityExposedToInterfaceBuilder;
 @property(readonly, nonatomic) _UIAutoScrollAssistant *_autoScrollAssistant;
 - (void)_adjustContentOffsetIfNecessary;
 - (void)_applyAutomaticAdjustedContentOffset:(struct CGPoint)arg1;
@@ -740,9 +745,6 @@
 - (void)_suppressImplicitAnimationsForScrollTest;
 - (void)_reenableImplicitAnimationsAfterScrollTest;
 - (_Bool)_isScrollingEnabled;
-- (double)maxVelocityInDirection:(int)arg1;
-- (int)scrollableDirections;
-- (void)_autoScrollAssistantUpdateContentOffset:(struct CGPoint)arg1;
 
 // Remaining properties
 @property(readonly, nonatomic) id <UICoordinateSpace> coordinateSpace;

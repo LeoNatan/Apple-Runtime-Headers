@@ -4,10 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@class CTCellularPlanProvisioningRequest, CTXPCServiceSubscriptionContext, NSString;
+@class CTCellularPlanProvisioningRequest, CTXPCServiceSubscriptionContext, NSArray, NSString;
 
 @protocol CTXPCServiceCellularPlanManagerInterface
 - (void)addPlanWith:(CTXPCServiceSubscriptionContext *)arg1 request:(CTCellularPlanProvisioningRequest *)arg2 appName:(NSString *)arg3 completionHandler:(void (^)(unsigned long long, NSError *))arg4;
-- (void)supportsPlanProvisioning:(CTXPCServiceSubscriptionContext *)arg1 completionHandler:(void (^)(BOOL))arg2;
+- (void)supportsPlanProvisioning:(CTXPCServiceSubscriptionContext *)arg1 carrierDescriptors:(NSArray *)arg2 smdpUrl:(NSString *)arg3 iccidPrefix:(NSString *)arg4 completionHandler:(void (^)(BOOL))arg5;
 @end
 

@@ -30,6 +30,8 @@
 + (id)moduleWithName:(id)arg1;
 + (id)moduleWithPath:(id)arg1;
 + (id)localizedSaverNameForPath:(id)arg1;
+- (void)requestConfigurationViewController:(CDUnknownBlockType)arg1;
+- (id)loadViewForFrame:(struct CGRect)arg1 isPreview:(BOOL)arg2;
 - (void)setEnabled:(BOOL)arg1;
 - (BOOL)enabled;
 - (id)description;

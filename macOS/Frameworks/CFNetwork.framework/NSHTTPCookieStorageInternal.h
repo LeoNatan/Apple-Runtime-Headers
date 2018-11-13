@@ -15,6 +15,8 @@ __attribute__((visibility("hidden")))
     struct OpaqueCFHTTPCookieStorage *privateStorage;
     NSRecursiveLock *dataLock;
     BOOL privateBrowsing;
+    BOOL _storage_didRegister;
+    BOOL _privateStorage_didRegister;
 }
 
 - (void)dealloc;

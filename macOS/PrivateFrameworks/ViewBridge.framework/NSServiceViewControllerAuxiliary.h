@@ -15,6 +15,7 @@ __attribute__((visibility("hidden")))
     NSWindow *serviceWindow;
     NSViewServiceMarshal *marshal;
     unsigned int invalid:1;
+    unsigned int didSetWindowContentView:1;
     unsigned int makesExplicitResizeRequests:1;
     unsigned int retainedMarshal:1;
     unsigned int mostRecentCallToSetViewWasNonNil:1;

@@ -22,6 +22,7 @@
 - (BOOL)hasDeletionsFlagForPeer:(_DKSyncPeer *)arg1;
 - (void)setHasAdditionsFlag:(BOOL)arg1 forPeer:(_DKSyncPeer *)arg2;
 - (BOOL)hasAdditionsFlagForPeer:(_DKSyncPeer *)arg1;
+- (void)clearPrewarmedFlag;
 - (void)prewarmFetchWithCompletion:(void (^)(NSError *))arg1;
 - (void)cancelOutstandingOperations;
 - (void)start;

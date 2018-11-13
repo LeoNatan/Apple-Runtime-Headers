@@ -94,7 +94,6 @@
     double _basicConfigSecs;
     NSString *_deviceGUID;
     NSString *_deviceSerialNumber;
-    BOOL _wifiSetupEnabled;
     SFDeviceOperationWiFiSetup *_wifiSetupOperation;
     int _wifiSetupState;
     double _wifiSetupSecs;

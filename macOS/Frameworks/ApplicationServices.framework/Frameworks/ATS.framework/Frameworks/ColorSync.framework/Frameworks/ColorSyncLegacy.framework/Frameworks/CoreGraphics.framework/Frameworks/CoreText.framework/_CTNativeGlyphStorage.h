@@ -44,7 +44,7 @@ __attribute__((visibility("hidden")))
 - (BOOL)_tryRetain;
 - (id)copyWithRange:(CDStruct_912cb5d2)arg1;
 - (id)initWithCount:(long long)arg1;
-- (void)prepareWithCapacity:(long long)arg1 preallocated:(_Bool)arg2;
+- (id)prepareWithCapacity:(long long)arg1 preallocated:(_Bool)arg2;
 
 @end
 

@@ -23,6 +23,7 @@
     BOOL _timeInformationServiceExists;
     BOOL _supportsTargetController;
     BOOL _keyGenerationInProgress;
+    BOOL _hardwareSupport;
     BOOL _supportsRelay;
     unsigned char _keyGenerationType;
     BOOL _systemTimeNeedsUpdate;
@@ -251,6 +252,7 @@
 - (void)_autoConfigureTargetController;
 - (void)_configureTargetControllerWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_notifyClientsOfTargetControlSupportUpdate;
+- (void)notifyClientsOfTargetControlSupportUpdate;
 - (unsigned long long)targetControllerTicksPerSecond;
 - (id)targetControllerButtonConfiguration;
 - (void)registerForActiveIdentifierNotifications;
@@ -320,6 +322,9 @@
 - (void)_saveTargetUUIDs:(id)arg1;
 - (void)saveTargetUUIDs:(id)arg1;
 @property(retain, nonatomic) HMDTargetControllerManager *targetControllerManager; // @synthesize targetControllerManager=_targetControllerManager;
+- (void)_saveHardwareSupport:(BOOL)arg1;
+- (void)saveHardwareSupport:(BOOL)arg1;
+@property(nonatomic) BOOL hardwareSupport; // @synthesize hardwareSupport=_hardwareSupport;
 @property(retain, nonatomic) NSArray *targetUUIDs; // @synthesize targetUUIDs=_targetUUIDs;
 - (void)evaluateSymptomHandler;
 - (BOOL)_doesAccessoryProvideServiceOfType:(id)arg1;

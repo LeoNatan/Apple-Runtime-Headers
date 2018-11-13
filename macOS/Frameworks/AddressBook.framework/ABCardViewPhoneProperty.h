@@ -6,11 +6,11 @@
 
 #import <AddressBook/ABCardViewProperty.h>
 
-@class ABTTYServices;
+@class ABRTTServices;
 
 @interface ABCardViewPhoneProperty : ABCardViewProperty
 {
-    ABTTYServices *_ttyServices;
+    ABRTTServices *_ttyServices;
 }
 
 - (void).cxx_destruct;

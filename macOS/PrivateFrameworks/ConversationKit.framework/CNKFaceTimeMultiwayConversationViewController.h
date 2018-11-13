@@ -6,7 +6,7 @@
 
 #import <ConversationKit/_TtC15ConversationKit22PlatformViewController.h>
 
-@class TUCall;
+@class NSTimer, TUCall;
 @protocol CNKFaceTimeMultiwayConversationViewControllerDelegate;
 
 @interface CNKFaceTimeMultiwayConversationViewController : _TtC15ConversationKit22PlatformViewController
@@ -17,6 +17,7 @@
     // Error parsing type: , name: viewContent
     // Error parsing type: , name: inCallControlsDismissTimer
     // Error parsing type: , name: hideInactiveParticipantsTimer
+    // Error parsing type: , name: effectsLayoutController
     // Error parsing type: , name: deviceOrientation
     // Error parsing type: , name: delegate
     // Error parsing type: , name: shouldInitializeEffects
@@ -30,8 +31,10 @@
 - (id)accessibilityConstraintController;
 - (void)setControllerIsPipped:(BOOL)arg1;
 - (void)openMessagesConversation;
+- (void)muteVideo;
 - (void)toggleVideoMute;
 - (void)toggleAudioMute;
+- (void)restartAutoHideInCallControlsDrawerTimer;
 - (void)updateViewConstraints;
 - (void)viewDidAppear;
 - (void)viewDidLoad;
@@ -44,7 +47,9 @@
 @property(nonatomic) BOOL effectsEnabled; // @synthesize effectsEnabled;
 @property(nonatomic) __weak id <CNKFaceTimeMultiwayConversationViewControllerDelegate> delegate; // @synthesize delegate;
 @property(nonatomic) long long deviceOrientation; // @synthesize deviceOrientation;
+@property(nonatomic, readonly) BOOL wantsApplicationDismissalStyle;
 @property(nonatomic, readonly) TUCall *call;
+@property(nonatomic, retain) NSTimer *inCallControlsDismissTimer; // @synthesize inCallControlsDismissTimer;
 
 @end
 

@@ -20,6 +20,8 @@
 - (void)streamDidRTCPTimeOut:(AVCAudioStream *)arg1;
 - (void)streamDidRTPTimeOut:(AVCAudioStream *)arg1;
 - (void)stream:(AVCAudioStream *)arg1 didStartSynchronizer:(BOOL)arg2 error:(NSError *)arg3;
+- (void)streamDidInterruptionEnd:(AVCAudioStream *)arg1;
+- (void)streamDidInterruptionBegin:(AVCAudioStream *)arg1;
 - (void)stream:(AVCAudioStream *)arg1 didResume:(BOOL)arg2 error:(NSError *)arg3;
 - (void)stream:(AVCAudioStream *)arg1 didPause:(BOOL)arg2 error:(NSError *)arg3;
 - (void)streamDidStop:(AVCAudioStream *)arg1;

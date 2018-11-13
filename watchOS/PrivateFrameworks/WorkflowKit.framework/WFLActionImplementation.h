@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, NSProgress, WFLAction;
+@class INVoiceCommandDeviceInformation, NSArray, NSProgress, WFLAction;
 @protocol WFLActionUserInterface;
 
 @interface WFLActionImplementation : NSObject
@@ -18,10 +18,12 @@
     NSArray *_output;
     int _executionContext;
     CDUnknownBlockType _completionHandler;
+    INVoiceCommandDeviceInformation *_originDeviceInformation;
 }
 
 + (id)userCancelledError;
 + (void)initialize;
+@property(retain, nonatomic) INVoiceCommandDeviceInformation *originDeviceInformation; // @synthesize originDeviceInformation=_originDeviceInformation;
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 @property(nonatomic) int executionContext; // @synthesize executionContext=_executionContext;
 @property(retain, nonatomic) NSArray *output; // @synthesize output=_output;

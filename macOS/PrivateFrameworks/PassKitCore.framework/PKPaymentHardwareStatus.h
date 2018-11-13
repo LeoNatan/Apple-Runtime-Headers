@@ -17,12 +17,22 @@
     BOOL _clamshellClosed;
     BOOL _screenReaderRunning;
     BOOL _remotePaymentsRequiredForVoiceover;
+    BOOL _hasLocalCoprocessor;
+    BOOL _hasTouchBar;
+    BOOL _automaticallyCheckForUpdates;
+    BOOL _automaticallyInstallConfigDataAndSecurityUpdates;
+    BOOL _canEvaluatePolicy;
     BOOL _canMakeRemotePayments;
     unsigned long long _ownershipState;
 }
 
 + (BOOL)supportsSecureCoding;
 @property(nonatomic) BOOL canMakeRemotePayments; // @synthesize canMakeRemotePayments=_canMakeRemotePayments;
+@property(nonatomic) BOOL canEvaluatePolicy; // @synthesize canEvaluatePolicy=_canEvaluatePolicy;
+@property(nonatomic) BOOL automaticallyInstallConfigDataAndSecurityUpdates; // @synthesize automaticallyInstallConfigDataAndSecurityUpdates=_automaticallyInstallConfigDataAndSecurityUpdates;
+@property(nonatomic) BOOL automaticallyCheckForUpdates; // @synthesize automaticallyCheckForUpdates=_automaticallyCheckForUpdates;
+@property(nonatomic) BOOL hasTouchBar; // @synthesize hasTouchBar=_hasTouchBar;
+@property(nonatomic) BOOL hasLocalCoprocessor; // @synthesize hasLocalCoprocessor=_hasLocalCoprocessor;
 @property(nonatomic) BOOL remotePaymentsRequiredForVoiceover; // @synthesize remotePaymentsRequiredForVoiceover=_remotePaymentsRequiredForVoiceover;
 @property(nonatomic, getter=isScreenReaderRunning) BOOL screenReaderRunning; // @synthesize screenReaderRunning=_screenReaderRunning;
 @property(nonatomic, getter=isClamshellClosed) BOOL clamshellClosed; // @synthesize clamshellClosed=_clamshellClosed;
@@ -30,6 +40,8 @@
 @property(nonatomic) unsigned long long ownershipState; // @synthesize ownershipState=_ownershipState;
 @property(nonatomic) BOOL hasRemoteDevices; // @synthesize hasRemoteDevices=_hasRemoteDevices;
 @property(nonatomic) BOOL hasSecureElement; // @synthesize hasSecureElement=_hasSecureElement;
+@property(readonly, nonatomic, getter=_isDemoModeActive) BOOL _isDemoModeActive;
+- (BOOL)canAddCardWithError:(id *)arg1;
 @property(readonly, nonatomic) BOOL canMakeLocalPayments;
 @property(readonly, nonatomic) BOOL canMakePayments;
 - (id)copyWithZone:(struct _NSZone *)arg1;

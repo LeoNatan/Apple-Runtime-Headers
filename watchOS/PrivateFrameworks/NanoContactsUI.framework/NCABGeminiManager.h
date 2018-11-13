@@ -25,9 +25,10 @@
 - (void)providersChangedForProviderManager:(id)arg1;
 - (void)_updateShowSIMInfo;
 - (id)_userDefaults;
-- (id)sharedPairedHostDeviceTelephonyProvider;
+@property(readonly, nonatomic) TUCallProvider *sharedPairedHostDeviceTelephonyProvider;
+@property(readonly, nonatomic) CNGeminiManager *CNGeminiManager;
 - (id)_CNGeminiManager;
-- (_Bool)shouldShowSIMInfo;
+@property(readonly, nonatomic) _Bool shouldShowSIMInfo;
 - (void)dealloc;
 - (id)init;
 

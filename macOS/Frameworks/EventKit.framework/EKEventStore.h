@@ -120,6 +120,7 @@
 - (id)backingEventsWithIdentifiers:(id)arg1;
 - (id)eventsWithCalendarIdentifiers:(id)arg1;
 - (id)eventsWithIdentifiers:(id)arg1;
+- (id)eventsWithIdentifiers:(id)arg1 apiExpected:(BOOL)arg2;
 - (id)calendarItemsWithEWSIdentifier:(id)arg1;
 - (id)eventWithIdentifier:(id)arg1;
 - (id)eventWithUniqueId:(id)arg1;

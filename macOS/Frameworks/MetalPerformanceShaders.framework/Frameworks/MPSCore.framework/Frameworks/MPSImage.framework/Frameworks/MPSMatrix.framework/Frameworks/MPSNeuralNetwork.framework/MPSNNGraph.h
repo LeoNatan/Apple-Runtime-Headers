@@ -22,6 +22,7 @@
 }
 
 + (const struct MPSLibraryInfo *)libraryInfo;
++ (id)graphWithDevice:(id)arg1 resultImages:(id)arg2 resultsAreNeeded:(char *)arg3;
 + (id)graphWithDevice:(id)arg1 resultImage:(id)arg2;
 + (id)graphWithDevice:(id)arg1 resultImage:(id)arg2 resultImageIsNeeded:(BOOL)arg3;
 @property(nonatomic) unsigned long long format; // @synthesize format=_format;
@@ -29,6 +30,8 @@
 @property(nonatomic) BOOL outputStateIsTemporary; // @synthesize outputStateIsTemporary=_outputStateIsTemporary;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+- (unsigned long long)readCountForSourceStateAtIndex:(unsigned long long)arg1;
+- (unsigned long long)readCountForSourceImageAtIndex:(unsigned long long)arg1;
 - (void)reloadFromDataSources;
 - (void)setOptions:(unsigned long long)arg1;
 - (id)executeAsyncWithSourceImages:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
@@ -45,7 +48,7 @@
 @property(readonly, copy, nonatomic) NSArray *intermediateImageHandles;
 @property(readonly, copy, nonatomic) NSArray *sourceStateHandles;
 @property(readonly, copy, nonatomic) NSArray *sourceImageHandles;
-- (id)initTrainingGraphWithDevice:(id)arg1 resultImage:(id)arg2 resultImageIsNeeded:(BOOL)arg3 gradientCustomizationBlock:(CDUnknownBlockType)arg4;
+- (id)initWithDevice:(id)arg1 resultImages:(id)arg2 resultsAreNeeded:(char *)arg3;
 - (id)initWithDevice:(id)arg1 resultImage:(id)arg2 resultImageIsNeeded:(BOOL)arg3;
 - (id)initWithDevice:(id)arg1 resultImage:(id)arg2;
 - (void)dealloc;

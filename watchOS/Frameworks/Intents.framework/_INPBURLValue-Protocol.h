@@ -6,11 +6,13 @@
 
 #import <Intents/NSObject-Protocol.h>
 
-@class NSString, _INPBValueMetadata;
+@class NSData, NSString, _INPBValueMetadata;
 
 @protocol _INPBURLValue <NSObject>
 @property(readonly, nonatomic) _Bool hasValueMetadata;
 @property(retain, nonatomic) _INPBValueMetadata *valueMetadata;
+@property(readonly, nonatomic) _Bool hasScope;
+@property(copy, nonatomic) NSData *scope;
 @property(readonly, nonatomic) _Bool hasAbsoluteString;
 @property(copy, nonatomic) NSString *absoluteString;
 @end

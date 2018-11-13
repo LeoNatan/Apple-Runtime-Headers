@@ -32,6 +32,7 @@
 @property(readonly, nonatomic) int eventType; // @synthesize eventType=_eventType;
 - (void).cxx_destruct;
 - (void)dealloc;
+- (id)eventQualifierStringForKey:(id)arg1;
 - (char *)originatorForLogging;
 - (id)initWithType:(int)arg1 length:(long long)arg2 data:(void *)arg3 fromPid:(unsigned long long)arg4 named:(char *)arg5 bundleId:(const char *)arg6;
 - (id)description;

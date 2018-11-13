@@ -34,6 +34,7 @@
 - (id)initWithPasteboardPropertyList:(id)arg1 ofType:(id)arg2;
 - (id)pasteboardPropertyListForType:(id)arg1;
 - (id)writableTypesForPasteboard:(id)arg1;
+- (id)_mimeTypeForFilename:(id)arg1;
 @property(readonly, nonatomic) BOOL shouldAlwaysAutomaticallyDownload;
 @property(readonly, nonatomic) BOOL isDataDownloaded;
 @property(readonly, nonatomic) __weak NSURL *downloadDirectory;

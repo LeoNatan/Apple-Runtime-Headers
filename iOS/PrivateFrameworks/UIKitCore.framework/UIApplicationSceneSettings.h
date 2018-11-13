@@ -9,7 +9,7 @@
 #import <UIKitCore/UIApplicationSceneSettings-Protocol.h>
 #import <UIKitCore/_UIDisplayEdgeInfoProviding-Protocol.h>
 
-@class NSNumber, NSString;
+@class BSCornerRadiusConfiguration, NSNumber, NSString;
 
 @interface UIApplicationSceneSettings : FBSSceneSettings <_UIDisplayEdgeInfoProviding, UIApplicationSceneSettings>
 {
@@ -26,6 +26,7 @@
 @property(readonly, nonatomic) _Bool idleModeEnabled;
 @property(readonly, nonatomic) _Bool canShowAlerts;
 @property(readonly, nonatomic) _Bool deviceOrientationEventsEnabled;
+@property(readonly, nonatomic) BSCornerRadiusConfiguration *cornerRadiusConfiguration;
 @property(readonly, nonatomic) struct UIEdgeInsets safeAreaInsetsLandscapeRight;
 @property(readonly, nonatomic) struct UIEdgeInsets safeAreaInsetsPortraitUpsideDown;
 @property(readonly, nonatomic) struct UIEdgeInsets safeAreaInsetsLandscapeLeft;

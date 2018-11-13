@@ -28,7 +28,7 @@ __attribute__((visibility("hidden")))
     NSLock *_notificationQueueLock;
     BOOL _notificationQueueSuspended;
     NSObject<OS_dispatch_queue> *_operationQueue;
-    NSLock *_operationQueueLock;
+    struct os_unfair_lock_s _operationQueueLock;
     BOOL _operationQueueSuspended;
     NSObject<OS_dispatch_group> *_activityGroup;
     BOOL _isAccessRestrictedAppleDevice;
@@ -108,8 +108,6 @@ __attribute__((visibility("hidden")))
 @property BOOL batteryLevelAvailable; // @synthesize batteryLevelAvailable=_batteryLevelAvailable;
 @property unsigned long long contentCatalogPercentCompleted; // @synthesize contentCatalogPercentCompleted=_contentCatalogPercentCompleted;
 @property(retain) NSString *mountPoint; // @synthesize mountPoint=_mountPoint;
-- (void)unlockOperationQueue;
-- (void)lockOperationQueue;
 - (void)unlockNotificationQueue;
 - (void)lockNotificationQueue;
 - (void)setteardownPhase:(BOOL)arg1;

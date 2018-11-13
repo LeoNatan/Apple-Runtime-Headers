@@ -36,6 +36,7 @@
 - (void)registerSyncService:(id)arg1 asMaster:(_Bool)arg2;
 - (id)createMessageFromData:(id)arg1;
 - (void)getUnsyncedChangesForSyncServiceWithIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)removeSyncStateForChanges:(id)arg1 withSyncServiceWithIdentifier:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)markChangesAsSynced:(id)arg1 withSyncServiceWithIdentifier:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)applyChangeSet:(id)arg1 fromSyncServiceWithIdentifier:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)_createIntentDefinitionWithProtobuff:(id)arg1;

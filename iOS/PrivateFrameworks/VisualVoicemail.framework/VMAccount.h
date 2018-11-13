@@ -6,33 +6,45 @@
 
 #import <objc/NSObject.h>
 
-@class VMVoicemailManager;
+#import <VisualVoicemail/NSCopying-Protocol.h>
+#import <VisualVoicemail/NSMutableCopying-Protocol.h>
+#import <VisualVoicemail/VMSecureCoding-Protocol.h>
 
-@interface VMAccount : NSObject
+@class NSString, NSUUID, VMHandle;
+
+@interface VMAccount : NSObject <NSCopying, NSMutableCopying, VMSecureCoding>
 {
-    VMVoicemailManager *_voicemailManager;
+    _Bool _provisioned;
+    NSUUID *_UUID;
+    NSString *_accountDescription;
+    NSString *_abbreviatedAccountDescription;
+    VMHandle *_handle;
+    NSString *_isoCountryCode;
+    NSString *_serviceName;
 }
 
-@property(retain, nonatomic) VMVoicemailManager *voicemailManager; // @synthesize voicemailManager=_voicemailManager;
++ (id)unarchivedObjectFromData:(id)arg1 error:(id *)arg2;
++ (id)unarchivedObjectClasses;
++ (_Bool)supportsSecureCoding;
+@property(nonatomic, getter=isProvisioned) _Bool provisioned; // @synthesize provisioned=_provisioned;
+@property(copy, nonatomic) NSString *serviceName; // @synthesize serviceName=_serviceName;
+@property(copy, nonatomic) NSString *isoCountryCode; // @synthesize isoCountryCode=_isoCountryCode;
+@property(retain, nonatomic) VMHandle *handle; // @synthesize handle=_handle;
+@property(copy, nonatomic) NSString *abbreviatedAccountDescription; // @synthesize abbreviatedAccountDescription=_abbreviatedAccountDescription;
+@property(copy, nonatomic) NSString *accountDescription; // @synthesize accountDescription=_accountDescription;
+@property(retain, nonatomic) NSUUID *UUID; // @synthesize UUID=_UUID;
 - (void).cxx_destruct;
-- (id)allVoicemailsWithFlags:(unsigned long long)arg1 withoutFlags:(unsigned long long)arg2;
-- (void)moveVoicemailFromTrash:(id)arg1;
-- (void)moveVoicemailToTrash:(id)arg1;
-- (id)voicemailWithIdentifier:(unsigned long long)arg1;
-- (_Bool)isSubscribed;
-- (void)setProvisionalPassword:(id)arg1;
-- (void)setGreetingType:(long long)arg1 withData:(id)arg2 duration:(unsigned int)arg3;
-- (void)changePassword:(id)arg1 fromPassword:(id)arg2;
-- (void)synchronize:(_Bool)arg1;
-- (_Bool)greetingAvailable;
-- (int)mailboxUsage;
-- (_Bool)isOfflineDueToRoaming;
-- (_Bool)isOnline;
-- (_Bool)mailboxRequiresSetup;
-- (void)handlePasswordNotificationResponse:(id)arg1;
-- (_Bool)isMessageWaiting;
-- (unsigned int)recentUnreadCount;
-- (unsigned int)unreadCount;
+- (id)archivedDataWithError:(id *)arg1;
+- (_Bool)isEqualToAccount:(id)arg1;
+- (void)copyPropertiesWithZone:(struct _NSZone *)arg1 toAccount:(id)arg2;
+- (unsigned long long)hash;
+- (_Bool)isEqual:(id)arg1;
+- (id)description;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+- (id)mutableCopyWithZone:(struct _NSZone *)arg1;
+- (id)copyWithZone:(struct _NSZone *)arg1;
+- (id)initWithUUID:(id)arg1;
 - (id)init;
 
 @end

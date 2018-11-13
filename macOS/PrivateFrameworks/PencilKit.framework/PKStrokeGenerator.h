@@ -13,6 +13,7 @@
 
 @interface PKStrokeGenerator : NSObject <PKInputProvider>
 {
+    double _latestNonPredictedTimestamp;
     vector_58517711 _drawPoints;
     vector_03cfcf00 _outputPoints;
     long long _outputImmutableCount;
@@ -92,6 +93,7 @@
 - (void)closeStroke;
 - (void)addPoint:(CDStruct_57911ed6)arg1;
 - (void)addPoints:(vector_58517711)arg1;
+- (double)latestNonPredictedTimestamp;
 - (void)removePredictedTouches;
 - (void)updateImmutableCount;
 - (void)drawingUpdateAllPoints;
@@ -114,6 +116,7 @@
 - (struct CGPoint)getRulerSnapLineOriginAndTangent:(struct CGPoint *)arg1 andNormal:(struct CGPoint *)arg2;
 - (void)allowSnappingToRuler:(struct CGAffineTransform)arg1 width:(double)arg2;
 - (void)drawingBeganWithStroke:(id)arg1 inputType:(long long)arg2 inputScale:(double)arg3 start:(CDUnknownBlockType)arg4;
+@property(readonly, nonatomic) long long inputType; // @dynamic inputType;
 - (void)dealloc;
 - (id)init;
 

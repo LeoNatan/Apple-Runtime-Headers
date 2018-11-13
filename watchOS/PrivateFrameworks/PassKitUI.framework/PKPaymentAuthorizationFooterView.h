@@ -39,6 +39,7 @@
     _Bool _isPad;
     _Bool _hasPearl;
     float _minimumHeight;
+    unsigned int _emphasizedEdge;
     int _state;
     PKPaymentAuthorizationLayout *_layout;
     unsigned int _requestType;
@@ -57,6 +58,7 @@
 @property(nonatomic) int state; // @synthesize state=_state;
 - (void).cxx_destruct;
 - (void)_payWithPasscodePressed;
+- (void)glyphViewUserIntentEdgeDidChange:(id)arg1;
 - (void)glyphView:(id)arg1 revealingCheckmark:(_Bool)arg2;
 - (id)_payWithPasscodeTitleForState:(int)arg1;
 - (id)_titleAttributedStringForState:(int)arg1;
@@ -65,6 +67,7 @@
 - (void)updateConstraints;
 - (id)defaultHeightConstraints;
 - (void)setHidden:(_Bool)arg1;
+- (void)updateRotation;
 - (void)_createSubviews;
 - (void)setState:(int)arg1 string:(id)arg2 animated:(_Bool)arg3 withCompletion:(CDUnknownBlockType)arg4;
 - (void)setState:(int)arg1 string:(id)arg2 animated:(_Bool)arg3;

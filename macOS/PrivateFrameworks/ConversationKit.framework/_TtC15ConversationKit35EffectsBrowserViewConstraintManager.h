@@ -8,7 +8,8 @@
 
 @interface _TtC15ConversationKit35EffectsBrowserViewConstraintManager : SwiftObject
 {
-    // Error parsing type: , name: constraints
+    // Error parsing type: , name: constantConstraints
+    // Error parsing type: , name: effectsBrowserViewTopAnchor
 }
 
 @end

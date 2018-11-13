@@ -6,17 +6,19 @@
 
 #import <UIKit/UIView.h>
 
-@class LAUIPearlGlyphView, NSSet, SBUICAPackageView, SBUIFaceIDCameraGlyphView, UIColor, _UILegibilitySettings;
+@class LAUIPearlGlyphView, NSSet, SBUICAPackageView, SBUIFaceIDCameraGlyphView, SBUIFaceIDCoachingView, UIColor, _UILegibilitySettings;
 
 @interface SBUIProudLockIconView : UIView
 {
     long long _state;
+    UIView *_iconContainerView;
     SBUICAPackageView *_lockView;
     NSSet *_imageLayers;
     NSSet *_shadowImageLayers;
     NSSet *_shadowFilterLayers;
     LAUIPearlGlyphView *_lazy_pearlGlyphView;
     id _pearlGlyphViewSharedResources;
+    SBUIFaceIDCoachingView *_lazy_faceIDCoachingView;
     _Bool _performingIncomingLayout;
     SBUIFaceIDCameraGlyphView *_cameraCoveredView;
     _UILegibilitySettings *_legibilitySettings;
@@ -30,9 +32,17 @@
 @property(readonly, nonatomic) SBUIFaceIDCameraGlyphView *cameraCoveredView; // @synthesize cameraCoveredView=_cameraCoveredView;
 @property(nonatomic) long long state; // @synthesize state=_state;
 - (void).cxx_destruct;
+- (void)_resetCameraGlyphView;
+- (void)_resetfaceIDCoachingView;
 - (void)_resetPearlGlyphView;
+- (id)_faceIDCoachingView;
 - (id)_pearlGlyphView;
 - (double)_alphaForActiveViewForState:(long long)arg1;
+- (double)_lockToCoachingSpacing;
+- (struct CGSize)_smallLockSizeForTextSize:(id)arg1;
+- (struct CGSize)_smallLockSize;
+- (double)_scaleAmountForZoom;
+- (struct CGAffineTransform)_zoomedTransform;
 - (struct CGAffineTransform)_outgoingTransformForView:(id)arg1 fromState:(long long)arg2;
 - (struct CGAffineTransform)_transformForActiveView:(id)arg1 forState:(long long)arg2;
 - (struct CGAffineTransform)_incomingTransformForActiveView:(id)arg1 forState:(long long)arg2;

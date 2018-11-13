@@ -8,17 +8,19 @@
 
 #import <CoreSpeech/CSAudioServerCrashMonitorGibraltarDelegate-Protocol.h>
 #import <CoreSpeech/CSKeywordAnalyzerNDAPIScoreDelegate-Protocol.h>
+#import <CoreSpeech/CSKeywordAnalyzerNDEAPIScoreDelegate-Protocol.h>
 #import <CoreSpeech/CSKeywordAnalyzerQuasarScoreDelegate-Protocol.h>
 #import <CoreSpeech/CSSpeakerDetectorNDAPIDelegate-Protocol.h>
 #import <CoreSpeech/CSSpeechManagerDelegate-Protocol.h>
 #import <CoreSpeech/CSVoiceTriggerEnabledMonitorDelegate-Protocol.h>
 #import <CoreSpeech/CSVoiceTriggerFirstPassDelegate-Protocol.h>
 
-@class CSAsset, CSAudioCircularBuffer, CSKeywordAnalyzerNDAPI, CSKeywordAnalyzerQuasar, CSSpeakerDetectorNDAPI, CSSpeakerModel, CSSpeechManager, NSData, NSDictionary, NSString;
+@class CSAsset, CSAudioCircularBuffer, CSKeywordAnalyzerNDAPI, CSKeywordAnalyzerNDEAPI, CSKeywordAnalyzerQuasar, CSPlainAudioFileWriter, CSSpeakerDetectorNDAPI, CSSpeakerModel, CSSpeechManager, NSData, NSDictionary, NSString;
 @protocol CSVoiceTriggerDelegate, OS_dispatch_queue;
 
-@interface CSVoiceTriggerSecondPass : NSObject <CSKeywordAnalyzerNDAPIScoreDelegate, CSSpeakerDetectorNDAPIDelegate, CSKeywordAnalyzerQuasarScoreDelegate, CSVoiceTriggerEnabledMonitorDelegate, CSAudioServerCrashMonitorGibraltarDelegate, CSSpeechManagerDelegate, CSVoiceTriggerFirstPassDelegate>
+@interface CSVoiceTriggerSecondPass : NSObject <CSKeywordAnalyzerNDAPIScoreDelegate, CSKeywordAnalyzerNDEAPIScoreDelegate, CSSpeakerDetectorNDAPIDelegate, CSKeywordAnalyzerQuasarScoreDelegate, CSVoiceTriggerEnabledMonitorDelegate, CSAudioServerCrashMonitorGibraltarDelegate, CSSpeechManagerDelegate, CSVoiceTriggerFirstPassDelegate>
 {
+    BOOL _hasReceivedNDEAPIResult;
     BOOL _useSAT;
     BOOL _hasPendingNearMiss;
     BOOL _isRunningRecognizer;
@@ -37,6 +39,7 @@
     NSObject<OS_dispatch_queue> *_queue;
     CSAsset *_currentAsset;
     CSKeywordAnalyzerNDAPI *_keywordAnalyzerNDAPI;
+    CSKeywordAnalyzerNDEAPI *_keywordAnalyzerNDEAPI;
     CSKeywordAnalyzerQuasar *_keywordAnalyzerQuasar;
     CSSpeakerDetectorNDAPI *_speakerDetector;
     CSSpeakerModel *_speakerModel;
@@ -66,8 +69,13 @@
     CSAudioCircularBuffer *_audioBuffer;
     unsigned long long _firstPassSource;
     NSString *_firstPassDeviceID;
+    CSPlainAudioFileWriter *_audioFileWriter;
 }
 
++ (id)timeStampString;
++ (id)secondPassAudioLogDirectory;
++ (id)secondPassAudioLoggingFilePath;
+@property(retain, nonatomic) CSPlainAudioFileWriter *audioFileWriter; // @synthesize audioFileWriter=_audioFileWriter;
 @property(retain, nonatomic) NSString *firstPassDeviceID; // @synthesize firstPassDeviceID=_firstPassDeviceID;
 @property(nonatomic) unsigned long long firstPassSource; // @synthesize firstPassSource=_firstPassSource;
 @property(nonatomic) __weak CSAudioCircularBuffer *audioBuffer; // @synthesize audioBuffer=_audioBuffer;
@@ -107,9 +115,11 @@
 @property(nonatomic) float keywordThreshold; // @synthesize keywordThreshold=_keywordThreshold;
 @property(nonatomic) unsigned long long numProcessedSamples; // @synthesize numProcessedSamples=_numProcessedSamples;
 @property(nonatomic) unsigned long long secondPassTimeout; // @synthesize secondPassTimeout=_secondPassTimeout;
+@property(nonatomic) BOOL hasReceivedNDEAPIResult; // @synthesize hasReceivedNDEAPIResult=_hasReceivedNDEAPIResult;
 @property(retain, nonatomic) CSSpeakerModel *speakerModel; // @synthesize speakerModel=_speakerModel;
 @property(retain, nonatomic) CSSpeakerDetectorNDAPI *speakerDetector; // @synthesize speakerDetector=_speakerDetector;
 @property(retain, nonatomic) CSKeywordAnalyzerQuasar *keywordAnalyzerQuasar; // @synthesize keywordAnalyzerQuasar=_keywordAnalyzerQuasar;
+@property(retain, nonatomic) CSKeywordAnalyzerNDEAPI *keywordAnalyzerNDEAPI; // @synthesize keywordAnalyzerNDEAPI=_keywordAnalyzerNDEAPI;
 @property(retain, nonatomic) CSKeywordAnalyzerNDAPI *keywordAnalyzerNDAPI; // @synthesize keywordAnalyzerNDAPI=_keywordAnalyzerNDAPI;
 @property(retain, nonatomic) CSAsset *currentAsset; // @synthesize currentAsset=_currentAsset;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
@@ -127,6 +137,7 @@
 - (void)speakerDetector:(id)arg1 didDetectSpeaker:(id)arg2;
 - (void)_markSecondPassTriggerMachAbsoluteTime:(unsigned long long)arg1;
 - (void)keywordAnalyzerQuasar:(id)arg1 hasResultAvailable:(id)arg2 forChannel:(unsigned long long)arg3;
+- (void)keywordAnalyzerNDEAPI:(id)arg1 hasResultAvailable:(id)arg2 forChannel:(unsigned long long)arg3;
 - (void)keywordAnalyzerNDAPI:(id)arg1 hasResultAvailable:(id)arg2 forChannel:(unsigned long long)arg3;
 - (void)_analyzeForKeywordDetection:(id)arg1 result:(id)arg2 forChannel:(unsigned long long)arg3 forceMaximized:(BOOL)arg4;
 - (void)speechManagerDidStopForwarding:(id)arg1 forReason:(long long)arg2;

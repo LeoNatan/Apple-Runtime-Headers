@@ -16,6 +16,7 @@ __attribute__((visibility("hidden")))
     // Error parsing type: , name: includeLocalParticipantInVisibleParticipants
     // Error parsing type: , name: audioFrequencyController
     // Error parsing type: , name: audioCallbackQueue
+    // Error parsing type: , name: recentPresentationContexts
     // Error parsing type: , name: conversationState
     // Error parsing type: , name: deviceOrientation
     // Error parsing type: , name: broadcastingState
@@ -26,7 +27,7 @@ __attribute__((visibility("hidden")))
     // Error parsing type: , name: didStartVideoForVisibleParticipant
     // Error parsing type: , name: participantsMediaPrioritiesDidChange
     // Error parsing type: , name: participantAudioPowerDidChange
-    // Error parsing type: , name: audioRouteDidChanged
+    // Error parsing type: , name: audioRouteDidChange
     // Error parsing type: , name: didUpdateLocalParticipant
     // Error parsing type: , name: didStartVideoForLocalParticipant
     // Error parsing type: , name: conversationStateDidChange

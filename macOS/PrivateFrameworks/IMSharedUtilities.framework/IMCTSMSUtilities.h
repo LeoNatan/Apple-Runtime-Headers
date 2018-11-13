@@ -35,6 +35,7 @@
 + (unsigned long long)IMReadAttachmentPreviewTranscodingQualitySizeCarrierValueForPhoneNumber:(id)arg1 simID:(id)arg2;
 + (BOOL)IMReadEnablePreviewTranscodingQualityCarrierValueForPhoneNumber:(id)arg1 simID:(id)arg2;
 + (BOOL)IMMMSEnabledForPhoneNumber:(id)arg1 simID:(id)arg2;
++ (id)IMPhoneNumbersEnabledForMultipleSubscriptionDevice;
 + (BOOL)IMReadMMSUserOverrideForPhoneNumber:(id)arg1 simID:(id)arg2;
 + (id)IMUniqueIdentifierForPhoneNumber:(id)arg1 simID:(id)arg2;
 

@@ -6,7 +6,10 @@
 
 #import <IOBluetooth/NSObject-Protocol.h>
 
+@class NSData, NSString;
+
 @protocol BluetoothClientInterface <NSObject>
+- (void)aacpCustomDataEvent:(unsigned int)arg1 withData:(NSData *)arg2 forDevice:(NSString *)arg3;
 - (void)switchEvent:(unsigned int)arg1;
 @end
 

@@ -48,6 +48,7 @@
 - (void)addResolvedConflictLoserEtag:(id)arg1;
 - (void)removeLiveConflictLoserEtag:(id)arg1;
 @property(readonly, nonatomic) NSDictionary *conflictLoserState;
+- (BOOL)contentRecordNeedsForceAllFieldsWhenDeadInServerTruth:(BOOL)arg1;
 - (void)markOverQuotaWithError:(id)arg1;
 - (void)markNeedsUploadOrSyncingUp;
 - (void)markUploadedWithRecord:(id)arg1;

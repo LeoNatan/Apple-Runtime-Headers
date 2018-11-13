@@ -40,7 +40,7 @@
     AFAudioPowerUpdater *_inputAudioPowerUpdater;
     AFClientConfiguration *_clientConfiguration;
     AFInterstitialProvider *_interstitialProvider;
-    NSMutableArray *_interstitialCommandWrappers;
+    NSMutableArray *_interstitialCommands;
     unsigned int _clientConfigurationIsInSync:1;
     unsigned int _voiceOverIsActive:1;
     NSError *_lastRetryError;
@@ -153,7 +153,7 @@
 - (void)_endInterstitialsForReason:(id)arg1;
 - (void)_handleInterstitialPhase:(long long)arg1 fromProvider:(id)arg2 displayText:(id)arg3 speakableText:(id)arg4 context:(id)arg5 completion:(CDUnknownBlockType)arg6;
 - (void)_beginInterstitialsForReason:(id)arg1;
-- (void)_enqueueInterstitialCommand:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
+- (void)_enqueueInterstitialCommand:(id)arg1;
 - (_Bool)_isInterstitialsRunning;
 - (void)_willPresentUsefulUserResultWithType:(long long)arg1;
 - (void)_willCompleteRequest;

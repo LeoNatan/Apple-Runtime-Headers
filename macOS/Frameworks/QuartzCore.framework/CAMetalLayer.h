@@ -34,6 +34,7 @@
 - (void)dealloc;
 - (void)didChangeValueForKey:(id)arg1;
 - (BOOL)shouldArchiveValueForKey:(id)arg1;
+@property double drawableTimeoutSeconds;
 @property BOOL serverSyncEnabled;
 @property BOOL fenceEnabled;
 @property BOOL nonDefaultColorspace;

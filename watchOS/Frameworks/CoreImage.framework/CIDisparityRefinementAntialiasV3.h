@@ -6,7 +6,7 @@
 
 #import <CoreImage/CIFilter.h>
 
-@class CIImage, NSDictionary;
+@class CIImage, NSDictionary, NSNumber;
 
 __attribute__((visibility("hidden")))
 @interface CIDisparityRefinementAntialiasV3 : CIFilter
@@ -15,8 +15,10 @@ __attribute__((visibility("hidden")))
     CIImage *inputPreprocImage;
     CIImage *inputDisparityWeightImage;
     NSDictionary *inputTuningParameters;
+    NSNumber *inputScale;
 }
 
+@property(retain) NSNumber *inputScale; // @synthesize inputScale;
 @property(retain) NSDictionary *inputTuningParameters; // @synthesize inputTuningParameters;
 @property(retain) CIImage *inputDisparityWeightImage; // @synthesize inputDisparityWeightImage;
 @property(retain) CIImage *inputPreprocImage; // @synthesize inputPreprocImage;

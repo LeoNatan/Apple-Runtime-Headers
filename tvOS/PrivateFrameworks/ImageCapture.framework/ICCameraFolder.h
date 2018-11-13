@@ -24,6 +24,7 @@
 - (id)files;
 - (id)valueForUndefinedKey:(id)arg1;
 @property(readonly) NSArray *contents;
+- (_Bool)containsItem:(id)arg1;
 - (void)deleteFolder:(id)arg1;
 - (void)deleteFile:(id)arg1;
 - (void)deleteItem:(id)arg1;

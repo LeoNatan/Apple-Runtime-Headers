@@ -14,13 +14,16 @@
     _GCControllerAxisInput *_xAxis;
     _GCControllerAxisInput *_yAxis;
     NSString *_descriptionName;
+    BOOL _nonAnalog;
 }
 
+@property BOOL nonAnalog; // @synthesize nonAnalog=_nonAnalog;
 - (id)yAxis;
 - (id)xAxis;
 - (void)setValueChangedHandler:(CDUnknownBlockType)arg1;
 - (CDUnknownBlockType)valueChangedHandler;
 - (void).cxx_destruct;
+- (BOOL)isAnalog;
 - (id)right;
 - (id)left;
 - (id)down;

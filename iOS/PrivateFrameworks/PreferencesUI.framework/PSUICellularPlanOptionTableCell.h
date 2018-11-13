@@ -20,7 +20,11 @@
 @property(retain, nonatomic) UILabel *numberLabel; // @synthesize numberLabel=_numberLabel;
 @property(retain, nonatomic) UILabel *nameLabel; // @synthesize nameLabel=_nameLabel;
 - (void).cxx_destruct;
+- (id)detailTextLabel;
+- (id)textLabel;
 - (void)refreshCellContentsWithSpecifier:(id)arg1;
+- (void)_setLabel:(id)arg1 andPhoneNumber:(id)arg2;
+- (void)_setCenteredText:(id)arg1;
 - (_Bool)canBeChecked;
 - (_Bool)canReload;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;

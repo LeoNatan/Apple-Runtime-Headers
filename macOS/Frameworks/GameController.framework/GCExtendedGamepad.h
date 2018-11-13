@@ -22,6 +22,8 @@
 - (void)setDpad:(id)arg1 x:(double)arg2 y:(double)arg3;
 - (id)inputForElement:(struct __IOHIDElement *)arg1;
 - (id)saveSnapshot;
+@property(readonly, nonatomic) GCControllerButtonInput *leftThumbstickButton;
+@property(readonly, nonatomic) GCControllerButtonInput *rightThumbstickButton;
 @property(readonly, nonatomic) GCControllerButtonInput *rightTrigger;
 @property(readonly, nonatomic) GCControllerButtonInput *leftTrigger;
 @property(readonly, nonatomic) GCControllerButtonInput *rightShoulder;

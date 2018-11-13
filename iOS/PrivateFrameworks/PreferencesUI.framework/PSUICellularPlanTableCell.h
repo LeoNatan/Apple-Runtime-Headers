@@ -14,15 +14,23 @@
     UILabel *_nameLabel;
     UILabel *_numberLabel;
     UILabel *_statusLabel;
+    PSUIBadgeView *_centeredBadgeView;
+    UILabel *_centeredNameLabel;
 }
 
 + (long long)cellStyle;
+@property(retain, nonatomic) UILabel *centeredNameLabel; // @synthesize centeredNameLabel=_centeredNameLabel;
+@property(retain, nonatomic) PSUIBadgeView *centeredBadgeView; // @synthesize centeredBadgeView=_centeredBadgeView;
 @property(retain, nonatomic) UILabel *statusLabel; // @synthesize statusLabel=_statusLabel;
 @property(retain, nonatomic) UILabel *numberLabel; // @synthesize numberLabel=_numberLabel;
 @property(retain, nonatomic) UILabel *nameLabel; // @synthesize nameLabel=_nameLabel;
 @property(retain, nonatomic) PSUIBadgeView *badgeView; // @synthesize badgeView=_badgeView;
 - (void).cxx_destruct;
+- (id)detailTextLabel;
+- (id)textLabel;
 - (void)refreshCellContentsWithSpecifier:(id)arg1;
+- (void)_setBadge:(id)arg1 andLabel:(id)arg2 andPhoneNumber:(id)arg3;
+- (void)_setCenteredBadge:(id)arg1 andLabel:(id)arg2;
 - (_Bool)canBeChecked;
 - (_Bool)canReload;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;

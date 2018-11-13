@@ -113,7 +113,6 @@
 - (void)parentScrollViewDidScroll:(struct CGPoint)arg1;
 - (struct CGSize)contentSizeThatFits:(struct CGSize)arg1;
 - (unsigned long long)assetType;
-- (struct CGSize)screenSize;
 - (void)viewWillTransitionToSize:(struct CGSize)arg1 withTransitionCoordinator:(id)arg2;
 - (void)didReceiveMemoryWarning;
 - (void)viewDidLayoutSubviews;

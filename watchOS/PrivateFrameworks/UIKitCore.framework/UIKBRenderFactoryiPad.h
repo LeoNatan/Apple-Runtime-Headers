@@ -57,6 +57,7 @@ __attribute__((visibility("hidden")))
 - (struct UIEdgeInsets)variantDisplayFrameInsets;
 - (struct UIEdgeInsets)variantPaddedFrameInsets;
 - (struct UIEdgeInsets)wideShadowPaddleInsets;
+- (_Bool)iPadSansHomeButtonLayout;
 - (_Bool)iPadFudgeLayout;
 - (float)predictiveKeyCornerRadius;
 - (float)skinnyKeyThreshold;

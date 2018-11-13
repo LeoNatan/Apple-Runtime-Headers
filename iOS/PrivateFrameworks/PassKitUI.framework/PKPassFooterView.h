@@ -30,10 +30,12 @@
     unsigned char _contentViewVisibility;
     _Bool _userIntentRequired;
     long long _state;
+    long long _coachingState;
     id <PKPassFooterViewDelegate> _delegate;
 }
 
 @property(nonatomic) __weak id <PKPassFooterViewDelegate> delegate; // @synthesize delegate=_delegate;
+@property(readonly, nonatomic) long long coachingState; // @synthesize coachingState=_coachingState;
 @property(readonly, nonatomic, getter=isUserIntentRequired) _Bool userIntentRequired; // @synthesize userIntentRequired=_userIntentRequired;
 @property(readonly, nonatomic) long long state; // @synthesize state=_state;
 @property(retain, nonatomic) PKPassView *passView; // @synthesize passView=_passView;
@@ -46,6 +48,7 @@
 - (void)_endSession;
 - (void)_advanceContentViewVisibilityToState:(unsigned char)arg1 animated:(_Bool)arg2;
 - (void)_advanceVisibilityToState:(unsigned char)arg1 animated:(_Bool)arg2;
+- (void)_setCoachingState:(long long)arg1;
 - (void)_setUserIntentRequired:(_Bool)arg1;
 - (void)_setContentView:(id)arg1 animated:(_Bool)arg2;
 - (void)_configureForValueAddedServiceWithContext:(id)arg1;
@@ -62,6 +65,7 @@
 - (void)foregroundActiveArbiter:(id)arg1 didUpdateForegroundActiveState:(CDStruct_973bafd3)arg2;
 - (void)passFooterContentViewDidEndAuthenticating:(id)arg1;
 - (void)passFooterContentViewDidBeginAuthenticating:(id)arg1;
+- (void)passFooterContentViewDidChangeCoachingState:(id)arg1;
 - (void)passFooterContentViewDidChangeUserIntentRequirement:(id)arg1;
 - (void)passFooterContentViewRequestsSessionSuppression:(id)arg1;
 @property(readonly, nonatomic, getter=isPassAuthorized) _Bool passAuthorized;

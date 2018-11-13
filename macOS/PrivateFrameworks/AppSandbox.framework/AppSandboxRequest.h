@@ -29,7 +29,7 @@
 + (id)implicitMacosProfilePaths;
 + (id)implicitProfilePaths;
 + (id)profileSnippetFileName;
-+ (BOOL)_setFatalError:(id *)arg1 forRequest:(id)arg2 withMessage:(id)arg3;
++ (BOOL)_setFatalError:(id *)arg1 withMessage:(id)arg2;
 @property(nonatomic) BOOL disableContainerRepair; // @synthesize disableContainerRepair=_disableContainerRepair;
 @property(nonatomic) BOOL developerMode; // @synthesize developerMode=_developerMode;
 @property(retain, nonatomic) NSArray *otherImageBundles; // @synthesize otherImageBundles=_otherImageBundles;

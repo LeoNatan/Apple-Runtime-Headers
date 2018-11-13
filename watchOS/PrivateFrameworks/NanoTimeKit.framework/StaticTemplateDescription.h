@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class CLKComplicationTemplateGraphicCircular, CLKImageProvider, CLKTextProvider;
+@class CLKImageProvider, CLKTextProvider;
 
 @interface StaticTemplateDescription : NSObject
 {
@@ -23,12 +23,10 @@
     CLKImageProvider *_extraLargeTop;
     CLKTextProvider *_extraLargeBottom;
     CLKTextProvider *_signatureBezel;
-    CLKComplicationTemplateGraphicCircular *_signatureCircular;
     CLKTextProvider *_signatureCornerTextProvider;
 }
 
 @property(retain, nonatomic) CLKTextProvider *signatureCornerTextProvider; // @synthesize signatureCornerTextProvider=_signatureCornerTextProvider;
-@property(retain, nonatomic) CLKComplicationTemplateGraphicCircular *signatureCircular; // @synthesize signatureCircular=_signatureCircular;
 @property(retain, nonatomic) CLKTextProvider *signatureBezel; // @synthesize signatureBezel=_signatureBezel;
 @property(retain, nonatomic) CLKTextProvider *extraLargeBottom; // @synthesize extraLargeBottom=_extraLargeBottom;
 @property(retain, nonatomic) CLKImageProvider *extraLargeTop; // @synthesize extraLargeTop=_extraLargeTop;

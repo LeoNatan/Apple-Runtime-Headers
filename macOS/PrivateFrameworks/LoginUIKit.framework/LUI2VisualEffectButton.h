@@ -39,6 +39,7 @@
 - (BOOL)performKeyEquivalent:(id)arg1;
 @property unsigned long long keyEquivalentModifierMask;
 @property(copy) NSString *keyEquivalent;
+- (void)setNextKeyView:(id)arg1;
 - (void)_setupVisualEffectButton;
 
 // Remaining properties

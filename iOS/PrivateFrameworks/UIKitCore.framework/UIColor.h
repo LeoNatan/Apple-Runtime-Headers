@@ -81,10 +81,6 @@
 + (id)colorWithWhite:(double)arg1 alpha:(double)arg2;
 + (id)allocWithZone:(struct _NSZone *)arg1;
 + (void)initialize;
-+ (id)writableTypeIdentifiersForItemProvider;
-+ (id)objectWithItemProviderData:(id)arg1 typeIdentifier:(id)arg2 error:(id *)arg3;
-+ (id)readableTypeIdentifiersForItemProvider;
-+ (id)newObjectWithItemProviderData:(id)arg1 typeIdentifier:(id)arg2 options:(id)arg3 error:(id *)arg4;
 + (id)scrollViewTexturedBackgroundColor;
 + (id)underPageBackgroundColor;
 + (id)viewFlipsideBackgroundColor;
@@ -177,6 +173,10 @@
 + (id)_systemInteractionTintColor;
 + (id)colorNamed:(id)arg1 inBundle:(id)arg2 compatibleWithTraitCollection:(id)arg3;
 + (id)colorNamed:(id)arg1;
++ (id)writableTypeIdentifiersForItemProvider;
++ (id)objectWithItemProviderData:(id)arg1 typeIdentifier:(id)arg2 error:(id *)arg3;
++ (id)readableTypeIdentifiersForItemProvider;
++ (id)newObjectWithItemProviderData:(id)arg1 typeIdentifier:(id)arg2 options:(id)arg3 error:(id *)arg4;
 - (void).cxx_destruct;
 - (id)_colorBlendedWithColors:(id)arg1;
 - (id)_colorBlendedWithColor:(id)arg1;
@@ -215,11 +215,11 @@
 - (id)initWithRed:(double)arg1 green:(double)arg2 blue:(double)arg3 alpha:(double)arg4;
 - (id)initWithHue:(double)arg1 saturation:(double)arg2 brightness:(double)arg3 alpha:(double)arg4;
 - (id)initWithWhite:(double)arg1 alpha:(double)arg2;
-- (id)_ui_swipeActionHighlightedColor;
 - (id)loadDataWithTypeIdentifier:(id)arg1 forItemProviderCompletionHandler:(CDUnknownBlockType)arg2;
 @property(readonly, copy, nonatomic) NSArray *writableTypeIdentifiersForItemProvider;
 - (id)initWithItemProviderData:(id)arg1 typeIdentifier:(id)arg2 error:(id *)arg3;
 - (void)registerLoadHandlersToItemProvider:(id)arg1;
+- (id)_ui_swipeActionHighlightedColor;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

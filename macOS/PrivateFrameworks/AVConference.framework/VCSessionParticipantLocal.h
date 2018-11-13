@@ -32,6 +32,7 @@ __attribute__((visibility("hidden")))
     struct tagVCMediaQueue *_mediaQueue;
     unsigned int _uplinkBitrateCapWifi;
     unsigned int _uplinkBitrateCapCell;
+    struct tagVCMemoryPool *_audioStreamUpdatePool;
     struct tagVCMemoryPool *_redundancyPool;
     struct tagVCMemoryPool *_videoRedundancyPool;
     // Error parsing type: AC, name: _videoPriority
@@ -81,7 +82,7 @@ __attribute__((visibility("hidden")))
 - (BOOL)onCaptureFrame:(struct opaqueCMSampleBuffer *)arg1 frameTime:(CDStruct_1b6d18a9)arg2 droppedFrames:(int)arg3 cameraStatusBits:(unsigned char)arg4;
 - (void)generateKeyFrameForStreamsWithNewCompoundStreamIDsWithActiveVideoStreams:(id)arg1;
 - (void)updateStreamIDsWithActiveVideoStreams:(id)arg1;
-- (void)updateActiveAudioStreams:(id)arg1;
+- (void)updateActiveAudioStreams:(id)arg1 allStreamIds:(id)arg2;
 - (void)updateActiveAudioStreamWithTargetBitrate:(unsigned int)arg1;
 - (void)updateActiveVideoStreamWithTargetBitrate:(unsigned int)arg1;
 - (void)dispatchedUpdateUplinkMediaStreamsWithTargetBitrate:(unsigned int)arg1;
@@ -97,6 +98,7 @@ __attribute__((visibility("hidden")))
 - (void)setupEncodingModeWithVideoStreamConfig:(id)arg1;
 - (BOOL)setupVideoStreamWithConfiguration:(id)arg1 idsDestination:(id)arg2;
 - (void)setupVideoStreamConfig:(id)arg1 initialConfiguration:(id)arg2;
+- (id)getAudioDumpName;
 - (void)updateAudioPriorityWithSampleBuffer:(struct opaqueVCAudioBufferList *)arg1;
 - (void)stopVoiceActivityDetection;
 - (void)startVoiceActivityDetection;

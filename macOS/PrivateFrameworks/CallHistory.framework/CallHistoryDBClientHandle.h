@@ -63,6 +63,7 @@
 - (id)fetchWithCallTypes:(unsigned int)arg1;
 - (id)fetchAllNoLimit;
 - (id)fetchAll;
+- (id)fetchCallsWithPredicate:(id)arg1 sortDescriptors:(id)arg2 limit:(unsigned long long)arg3;
 - (void)unRegisterForNotifications;
 - (void)registerForNotifications;
 - (id)init:(BOOL)arg1;

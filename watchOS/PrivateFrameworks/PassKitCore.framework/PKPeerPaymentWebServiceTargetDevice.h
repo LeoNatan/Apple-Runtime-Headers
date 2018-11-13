@@ -17,6 +17,8 @@
 
 + (id)localTargetDevice;
 - (void).cxx_destruct;
+- (void)renewAppleAccountWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (id)appleAccountInformation;
 - (void)_handleAccountChangedNotification:(id)arg1;
 - (void)resetApplePayManateeViewWithCompletion:(CDUnknownBlockType)arg1;
 - (void)checkTLKsMissingWithCompletion:(CDUnknownBlockType)arg1;

@@ -858,13 +858,13 @@
 - (id)_presentationControllerClassName;
 - (void)_containingAlertControllerDidChangeVisualStyle:(id)arg1;
 - (id)_visualStyleOfContainingAlertController;
+@property(readonly, nonatomic) _UIActionSheetPresentationController *actionSheetPresentationController;
 - (int)_imagePickerStatusBarStyle;
 - (_Bool)_displaysFullScreen;
 - (void)_setImagePickerMediaTypes:(id)arg1;
 - (void)_setUseTelephonyUI:(_Bool)arg1;
-@property(readonly, nonatomic) UIMultiColumnViewController *_multiColumnViewController;
 - (struct CGSize)_resolvedPreferredContentSize;
-- (id)_nextViewControllerForUnwindSegueSearch;
+@property(readonly, nonatomic) UIMultiColumnViewController *_multiColumnViewController;
 - (id)moreListTableCell;
 - (id)moreListSelectedImage;
 - (id)moreListImage;
@@ -956,16 +956,21 @@
 - (id)_navigationBarForDragAffordance;
 - (void)_dismissAccessibilityHUD;
 - (void)_showAccessibilityHUDItem:(id)arg1;
-- (void)beginRequestWithExtensionContext:(id)arg1;
-@property(readonly, nonatomic) NSExtensionContext *extensionContext; // @dynamic extensionContext;
-- (id)_extensionContextUUID;
-@property(retain, nonatomic, setter=_setExtensionContextUUID:) NSUUID *extensionContextUUID; // @dynamic extensionContextUUID;
 - (id)autorelease;
 - (_Bool)_isDeallocating;
 - (_Bool)_tryRetain;
 - (unsigned int)retainCount;
 - (oneway void)release;
 - (id)retain;
+- (void)beginRequestWithExtensionContext:(id)arg1;
+@property(readonly, nonatomic) NSExtensionContext *extensionContext; // @dynamic extensionContext;
+- (id)_extensionContextUUID;
+@property(retain, nonatomic, setter=_setExtensionContextUUID:) NSUUID *extensionContextUUID; // @dynamic extensionContextUUID;
+- (id)_safeViewControllerForSupportedInterfaceOrientationsWithDismissCheck:(_Bool)arg1;
+- (id)_safePrimaryViewControllerForAutorotation;
+- (id)_safeViewControllerForRotationWithDismissCheck:(_Bool)arg1;
+- (id)_safeWindowForAutorotation;
+- (id)_nextViewControllerForUnwindSegueSearch;
 - (CDStruct_4c969caf)_hostAuditToken;
 - (int)_hostProcessIdentifier;
 - (id)_remoteViewControllerProxyWithErrorHandler:(CDUnknownBlockType)arg1;
@@ -985,11 +990,6 @@
 - (void)_setHostApplicationBundleIdentifier:(id)arg1;
 - (id)invalidate;
 - (void)_stateRestorationDidFinish:(_Bool)arg1;
-@property(readonly, nonatomic) _UIActionSheetPresentationController *actionSheetPresentationController;
-- (id)_safeViewControllerForSupportedInterfaceOrientationsWithDismissCheck:(_Bool)arg1;
-- (id)_safePrimaryViewControllerForAutorotation;
-- (id)_safeViewControllerForRotationWithDismissCheck:(_Bool)arg1;
-- (id)_safeWindowForAutorotation;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

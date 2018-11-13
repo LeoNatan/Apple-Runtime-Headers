@@ -23,6 +23,7 @@
     _DKSyncHistory *_history;
     id <_DKKeyValueStore> _keyValueStore;
     NSString *_hadDeletionsKey;
+    _Bool _hadDeletions;
     NSDate *_highWaterMark;
     unsigned long long _batchNumber;
     _Bool _foundDeletions;
@@ -37,6 +38,7 @@
 - (void)handleFetchedDeletedEventIDs:(id)arg1 startDate:(id)arg2 endDate:(id)arg3 untilDate:(id)arg4;
 - (void)performSyncDownPeerDeletionsWithPreviousUntilDate:(id)arg1;
 - (void)performSyncDownPeerDeletionsWithHighWaterMark:(id)arg1 orError:(id)arg2;
+- (void)performSyncDownPeerDeletionsWithDidPrewarm:(_Bool)arg1 orError:(id)arg2;
 - (void)performSyncDownPeerDeletions;
 - (void)main;
 - (_Bool)isAsynchronous;

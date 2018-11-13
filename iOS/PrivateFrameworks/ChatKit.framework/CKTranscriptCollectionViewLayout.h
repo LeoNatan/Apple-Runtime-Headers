@@ -14,8 +14,10 @@
     _Bool _useInitialLayoutAttributesForRotation;
     _Bool _isResting;
     _Bool _easingUp;
+    _Bool _invalidatedViaBoundsChange;
     _Bool _hasLoadMore;
     _Bool _useFastQuanta;
+    _Bool _coalesceInvalidations;
     _Bool _sizeCategoryIsAccessibilitySizeCategory;
     double _anchorYPosition;
     NSIndexSet *_indicesOfChatItemsToBeRemovedWithoutFading;
@@ -37,10 +39,12 @@
 + (Class)layoutAttributesClass;
 + (long long)translateLayoutIndexToEffectIndex:(long long)arg1;
 @property(nonatomic) _Bool sizeCategoryIsAccessibilitySizeCategory; // @synthesize sizeCategoryIsAccessibilitySizeCategory=_sizeCategoryIsAccessibilitySizeCategory;
+@property(nonatomic) _Bool coalesceInvalidations; // @synthesize coalesceInvalidations=_coalesceInvalidations;
 @property(nonatomic) _Bool useFastQuanta; // @synthesize useFastQuanta=_useFastQuanta;
 @property(retain, nonatomic) NSMutableDictionary *finalParentVerticalOffsets; // @synthesize finalParentVerticalOffsets=_finalParentVerticalOffsets;
 @property(retain, nonatomic) NSMutableDictionary *initialParentLayoutAttributes; // @synthesize initialParentLayoutAttributes=_initialParentLayoutAttributes;
 @property(nonatomic) _Bool hasLoadMore; // @synthesize hasLoadMore=_hasLoadMore;
+@property(nonatomic) _Bool invalidatedViaBoundsChange; // @synthesize invalidatedViaBoundsChange=_invalidatedViaBoundsChange;
 @property(nonatomic) _Bool easingUp; // @synthesize easingUp=_easingUp;
 @property(nonatomic) struct CGSize contentSize; // @synthesize contentSize=_contentSize;
 @property(nonatomic) double prevTimestamp; // @synthesize prevTimestamp=_prevTimestamp;
@@ -62,6 +66,7 @@
 - (void)reduceMotionSettingChanged:(id)arg1;
 - (void)sizeCategoryDidChange:(id)arg1;
 - (void)updateFrames;
+- (void)_invalidateLayoutForDisplayLink;
 - (void)displayLinkFired:(id)arg1;
 - (double)bezierPointForPercentage:(double)arg1 anchor1:(double)arg2 anchor2:(double)arg3 control1:(double)arg4 control2:(double)arg5;
 - (void)updateAttributesForTargetContentOffsetChangeWithAttributes:(id)arg1;

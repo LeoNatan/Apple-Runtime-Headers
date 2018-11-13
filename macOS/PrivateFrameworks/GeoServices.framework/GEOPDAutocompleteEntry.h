@@ -24,10 +24,15 @@ __attribute__((visibility("hidden")))
     GEOPDAutocompleteEntryHighlightLine *_highlightMain;
     GEOPDAutocompleteEntryQuery *_query;
     GEOPDRetainedSearchMetadata *_retainSearch;
+    int _sortPriority;
     int _type;
-    CDStruct_f953fb60 _has;
+    struct {
+        unsigned int sortPriority:1;
+        unsigned int type:1;
+    } _has;
 }
 
+@property(nonatomic) int sortPriority; // @synthesize sortPriority=_sortPriority;
 @property(retain, nonatomic) GEOPDRetainedSearchMetadata *retainSearch; // @synthesize retainSearch=_retainSearch;
 @property(retain, nonatomic) GEOPDAutocompleteEntryDirectionIntent *directionIntent; // @synthesize directionIntent=_directionIntent;
 @property(retain, nonatomic) GEOPDAutocompleteEntryClientResolved *clientResolved; // @synthesize clientResolved=_clientResolved;
@@ -49,6 +54,7 @@ __attribute__((visibility("hidden")))
 - (BOOL)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(nonatomic) BOOL hasSortPriority;
 @property(readonly, nonatomic) BOOL hasRetainSearch;
 @property(readonly, nonatomic) BOOL hasDirectionIntent;
 @property(readonly, nonatomic) BOOL hasClientResolved;

@@ -7,18 +7,18 @@
 #import <objc/NSObject.h>
 
 @class NSString;
-@protocol OS_dispatch_queue, OS_dispatch_semaphore;
+@protocol OS_dispatch_queue, OS_dispatch_source;
 
 @interface EOSSerialLog : NSObject
 {
     int _serialFileDescriptor;
     NSString *_serialFilePath;
+    NSObject<OS_dispatch_source> *_source;
     NSObject<OS_dispatch_queue> *_q;
-    NSObject<OS_dispatch_semaphore> *_stop;
 }
 
-@property(retain) NSObject<OS_dispatch_semaphore> *stop; // @synthesize stop=_stop;
 @property(retain) NSObject<OS_dispatch_queue> *q; // @synthesize q=_q;
+@property(retain) NSObject<OS_dispatch_source> *source; // @synthesize source=_source;
 @property int serialFileDescriptor; // @synthesize serialFileDescriptor=_serialFileDescriptor;
 @property(retain) NSString *serialFilePath; // @synthesize serialFilePath=_serialFilePath;
 - (void).cxx_destruct;

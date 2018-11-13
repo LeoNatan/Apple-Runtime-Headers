@@ -36,6 +36,7 @@
 - (id)predicateForCallKind:(id)arg1;
 - (id)fetchObjectWithUniqueId:(id)arg1;
 - (id)fetchAllObjects;
+- (id)fetchCallsWithPredicate:(id)arg1 sortDescriptors:(id)arg2 limit:(unsigned long long)arg3;
 - (void)insertRecordsWithoutTransactions:(id)arg1;
 - (void)insertWithoutTransaction:(id)arg1;
 - (void)insert:(id)arg1;

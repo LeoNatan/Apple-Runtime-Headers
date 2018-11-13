@@ -56,6 +56,7 @@
 @property(retain, nonatomic) MCDPCContainer *container; // @synthesize container=_container;
 - (void).cxx_destruct;
 - (void)_limitedUIChanged:(id)arg1;
+- (_Bool)_shouldLimitLists;
 - (void)_clearTableViewSelectionAnimated:(_Bool)arg1;
 - (void)_nowPlayingDidChange:(id)arg1;
 - (void)_appRegisteredForContent:(id)arg1;

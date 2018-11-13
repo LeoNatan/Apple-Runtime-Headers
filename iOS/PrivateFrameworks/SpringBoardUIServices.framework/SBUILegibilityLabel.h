@@ -54,7 +54,6 @@
 @property(nonatomic) long long textAlignment; // @dynamic textAlignment;
 @property(nonatomic) double minimumScaleFactor; // @dynamic minimumScaleFactor;
 @property(nonatomic) _Bool adjustsFontSizeToFitWidth; // @dynamic adjustsFontSizeToFitWidth;
-@property(nonatomic) double preferredMaxLayoutWidth; // @dynamic preferredMaxLayoutWidth;
 @property(nonatomic) long long numberOfLines; // @dynamic numberOfLines;
 @property(copy, nonatomic) UIColor *textColor;
 - (id)initWithSettings:(id)arg1 strength:(double)arg2 string:(id)arg3 font:(id)arg4 options:(long long)arg5;

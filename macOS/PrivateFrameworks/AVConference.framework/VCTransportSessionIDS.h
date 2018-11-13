@@ -20,7 +20,6 @@ __attribute__((visibility("hidden")))
     BOOL _requireEncryptionInfo;
     VCIDSSessionInfoSynchronizer *_sessionInfoSynchronizer;
     BOOL _isIDSDCEventUsageErrorReported;
-    BOOL _isSessionStarted;
 }
 
 @property(readonly, nonatomic) VCIDSSessionInfoSynchronizer *sessionInfoSynchronizer; // @synthesize sessionInfoSynchronizer=_sessionInfoSynchronizer;
@@ -28,6 +27,7 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) NSString *destination; // @synthesize destination=_destination;
 - (void)VCIDSSessionInfoSynchronizer:(void *)arg1 sendVCIDSSessionInfoRequest:(id)arg2;
 - (void)optOutAllStreamsForConnection:(id)arg1;
+- (void)resetParticipantGenerationCounter;
 - (void)updateParticipantGenerationCounter:(unsigned char)arg1;
 - (void)didEnableDuplication:(BOOL)arg1 activeConnection:(id)arg2;
 - (void)discardConnection:(id)arg1;
@@ -51,6 +51,7 @@ __attribute__((visibility("hidden")))
 - (void)setConnectionSetupPiggybackBlob:(id)arg1;
 - (void)stop;
 - (void)start;
+- (void)dispatchedProcessDatagramChannelEventInfo:(id)arg1;
 - (void)processDatagramChannelEventInfo:(id)arg1;
 - (BOOL)getConnectionSetupData:(id *)arg1 withOptions:(id)arg2 error:(id *)arg3;
 - (void)dealloc;

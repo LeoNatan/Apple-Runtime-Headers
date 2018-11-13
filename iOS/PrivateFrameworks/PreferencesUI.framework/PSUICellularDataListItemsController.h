@@ -10,6 +10,7 @@
 {
 }
 
+- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (id)specifiers;
 - (void)reloadCache;
 - (id)init;

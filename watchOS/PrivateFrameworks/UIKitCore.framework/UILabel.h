@@ -232,14 +232,16 @@
 - (void)_setCuiStyleEffectConfiguration:(id)arg1;
 - (id)_cuiCatalog;
 - (void)_setCuiCatalog:(id)arg1;
+- (unsigned long long)defaultAccessibilityTraits;
+- (_Bool)isElementAccessibilityExposedToInterfaceBuilder;
+- (_Bool)isAccessibilityElementByDefault;
+- (id)_image;
+- (_Bool)_isTextFieldCenteredLabel;
 - (float)_autolayoutSpacingAtEdge:(int)arg1 forAttribute:(int)arg2 nextToNeighbor:(id)arg3 edge:(int)arg4 attribute:(int)arg5 multiplier:(float)arg6;
 - (float)_autolayoutSpacingAtEdge:(int)arg1 forAttribute:(int)arg2 inContainer:(id)arg3 isGuide:(_Bool)arg4;
 - (_Bool)_hasCustomAutolayoutNeighborSpacingForAttribute:(int *)arg1;
 - (id)_fontInfoForBaselineSpacing;
 - (_Bool)_hasFontInfoForVerticalBaselineSpacing;
-- (unsigned long long)defaultAccessibilityTraits;
-- (_Bool)isElementAccessibilityExposedToInterfaceBuilder;
-- (_Bool)isAccessibilityElementByDefault;
 @property(nonatomic, setter=_setLastLineBaselineFrameOriginY:) float _lastLineBaselineFrameOriginY;
 @property(nonatomic, setter=_setFirstLineBaselineFrameOriginY:) float _firstLineBaselineFrameOriginY;
 @property(nonatomic, setter=_setFirstLineCapFrameOriginY:) float _firstLineCapFrameOriginY;
@@ -264,8 +266,6 @@
 - (void)_setColor:(id)arg1;
 - (_Bool)autotrackTextToFit;
 - (void)setAutotrackTextToFit:(_Bool)arg1;
-- (_Bool)_isTextFieldCenteredLabel;
-- (id)_image;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

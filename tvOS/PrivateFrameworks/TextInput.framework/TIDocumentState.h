@@ -19,6 +19,11 @@
     struct _NSRange _selectedRangeInMarkedText;
 }
 
++ (id)_selectedTextByDeletingInteriorSentences:(id)arg1;
++ (id)_contextStringByTrimmingSuccedingLines:(id)arg1;
++ (id)_contextStringByTrimmingPrecedingLines:(id)arg1;
++ (id)_string:(id)arg1 byTrimmingWordsAfterIndex:(unsigned long long)arg2;
++ (id)_string:(id)arg1 byTrimmingWordsBeforeIndex:(unsigned long long)arg2;
 + (id)documentStateWithContextBefore:(id)arg1 markedText:(id)arg2 selectedRange:(struct _NSRange)arg3 contextAfter:(id)arg4;
 + (id)documentStateWithContextBefore:(id)arg1 selectedText:(id)arg2 contextAfter:(id)arg3;
 + (_Bool)supportsSecureCoding;

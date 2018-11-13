@@ -30,6 +30,7 @@
 - (id)description;
 - (id)initWithDestinations:(id)arg1;
 - (id)initWithContact:(id)arg1;
+- (id)initWithContact:(id)arg1 additionalHandles:(id)arg2;
 - (id)initWithHandles:(id)arg1;
 
 @end

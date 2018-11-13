@@ -8,6 +8,7 @@
 
 @interface NSObject (Intents)
 - (SEL)_intents_setterForPropertyWithName:(id)arg1;
+- (id)_intents_indexingRepresentation;
 - (id)descriptionAtIndent:(unsigned long long)arg1;
 @end
 

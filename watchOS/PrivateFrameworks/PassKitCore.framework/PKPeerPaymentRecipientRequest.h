@@ -19,7 +19,7 @@
 @property(copy, nonatomic) NSString *senderAddress; // @synthesize senderAddress=_senderAddress;
 @property(copy, nonatomic) NSString *recipientAddress; // @synthesize recipientAddress=_recipientAddress;
 - (void).cxx_destruct;
-- (id)_urlRequestWithServiceURL:(id)arg1 account:(id)arg2 deviceIdentifier:(id)arg3;
+- (id)_urlRequestWithServiceURL:(id)arg1 appleAccountInformation:(id)arg2 deviceIdentifier:(id)arg3;
 
 @end
 

@@ -6,9 +6,10 @@
 
 #import <UIKitCore/NSObject-Protocol.h>
 
-@class NSNumber;
+@class BSCornerRadiusConfiguration, NSNumber;
 
 @protocol UIApplicationSceneSettings <NSObject>
+@property(readonly, nonatomic) BSCornerRadiusConfiguration *cornerRadiusConfiguration;
 @property(readonly, nonatomic) unsigned long long artworkSubtype;
 @property(readonly, nonatomic) long long deviceOrientation;
 @property(readonly, nonatomic) struct UIEdgeInsets safeAreaInsetsLandscapeRight;

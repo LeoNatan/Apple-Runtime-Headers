@@ -76,6 +76,8 @@
 - (id)_parseMessageStatus:(id)arg1;
 - (id)parseChatItem:(id)arg1 chat:(id)arg2;
 - (void)setTextDirection:(id)arg1;
+- (BOOL)_shouldHandlePhishingAttempts;
+- (id)_createPhishingMessageDOMElement;
 @property(readonly, nonatomic) PluginStatusDOMProvider *pluginStatusDOMProvider; // @synthesize pluginStatusDOMProvider=_pluginStatusDOMProvider;
 @property(readonly, nonatomic) BalloonPluginDOMProvider *balloonPluginDOMProvider; // @synthesize balloonPluginDOMProvider=_balloonPluginDOMProvider;
 @property(readonly, nonatomic) CollectiveAssociatedMessagesDOMProvider *associatedMessagesDOMProvider; // @synthesize associatedMessagesDOMProvider=_associatedMessagesDOMProvider;

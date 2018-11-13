@@ -8,7 +8,7 @@
 
 #import <HomeKitDaemon/HMFLogging-Protocol.h>
 
-@class HMFUnfairLock, HMFWiFiManager, NSMapTable, NSMutableDictionary, NSObject, NSSet, NSString;
+@class HMFUnfairLock, HMFWiFiManager, NSMapTable, NSObject, NSSet, NSString;
 @protocol HMDCompanionLinkClient, HMDSharingDeviceDiscovery, OS_dispatch_queue;
 
 @interface HMDSymptomManager : HMFObject <HMFLogging>
@@ -21,7 +21,7 @@
     id <HMDSharingDeviceDiscovery> _deviceDiscovery;
     id <HMDCompanionLinkClient> _companionLinkClient;
     HMFWiFiManager *_wifiManager;
-    NSMutableDictionary *_symptomContainerByRegisteredIDSIdentifier;
+    NSMapTable *_symptomContainerByRegisteredAccessory;
     NSMapTable *_nearbySFDevices;
     NSMapTable *_networkReachableRPCompanionLinkDevices;
     unsigned long long _deviceDiscoveryFlags;
@@ -35,7 +35,7 @@
 @property(nonatomic) unsigned long long deviceDiscoveryFlags; // @synthesize deviceDiscoveryFlags=_deviceDiscoveryFlags;
 @property(readonly, nonatomic) NSMapTable *networkReachableRPCompanionLinkDevices; // @synthesize networkReachableRPCompanionLinkDevices=_networkReachableRPCompanionLinkDevices;
 @property(readonly, nonatomic) NSMapTable *nearbySFDevices; // @synthesize nearbySFDevices=_nearbySFDevices;
-@property(readonly, nonatomic) NSMutableDictionary *symptomContainerByRegisteredIDSIdentifier; // @synthesize symptomContainerByRegisteredIDSIdentifier=_symptomContainerByRegisteredIDSIdentifier;
+@property(readonly, nonatomic) NSMapTable *symptomContainerByRegisteredAccessory; // @synthesize symptomContainerByRegisteredAccessory=_symptomContainerByRegisteredAccessory;
 @property(readonly, nonatomic) HMFWiFiManager *wifiManager; // @synthesize wifiManager=_wifiManager;
 @property(readonly, nonatomic) id <HMDCompanionLinkClient> companionLinkClient; // @synthesize companionLinkClient=_companionLinkClient;
 @property(readonly, nonatomic) id <HMDSharingDeviceDiscovery> deviceDiscovery; // @synthesize deviceDiscovery=_deviceDiscovery;
@@ -43,6 +43,7 @@
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
 - (void).cxx_destruct;
 - (void)handleCurrentNetworkDidChangeNotification:(id)arg1;
+- (void)handleAccessoryWiFiNetworkInfoUpdatedNotification:(id)arg1;
 - (void)handleAccessoryRemovedNotification:(id)arg1;
 - (void)_rpDeviceLostHandler:(id)arg1;
 - (void)_rpDeviceChangedHandler:(id)arg1;
@@ -51,9 +52,11 @@
 - (void)_sfDeviceChangedHandler:(id)arg1;
 - (void)_sfDeviceFoundHandler:(id)arg1;
 - (void)_updateSymptomsForAllRegisteredAccessories;
-- (void)_updateSymptomsForAccessoryWithIDSIdentifier:(id)arg1;
+- (void)_updateSymptomsForRegisteredAccessory:(id)arg1;
+- (void)_updateSymptomsForRegisteredAccessoryWithIDSIdentifier:(id)arg1;
+- (id)_registeredAccessoryWithIDSIdentifier:(id)arg1;
 - (void)_initiateFixForAccessory:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (id)_localSymptomsForAccessoryWithIDSIdentifier:(id)arg1;
+- (id)_localSymptomsForRegisteredAccessory:(id)arg1;
 - (id)_currentDeviceSymptoms;
 - (void)_stopCompanionLinkClient;
 - (void)_stopDeviceDiscovery;

@@ -27,6 +27,8 @@
 @property(retain) NSMutableDictionary *dataStatusDict; // @synthesize dataStatusDict=_dataStatusDict;
 @property(retain, nonatomic) CoreTelephonyClient *client; // @synthesize client=_client;
 - (void).cxx_destruct;
+- (void)setDataFallbackEnabled:(_Bool)arg1;
+- (_Bool)isDataFallbackEnabled;
 - (_Bool)isAirplaneModeEnabled;
 - (void)setCellularDataEnabled:(_Bool)arg1;
 - (_Bool)isCellularDataEnabled;

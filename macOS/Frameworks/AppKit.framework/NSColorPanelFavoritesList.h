@@ -10,7 +10,7 @@
 #import <AppKit/NSCollectionViewDelegate-Protocol.h>
 #import <AppKit/NSUserInterfaceValidations-Protocol.h>
 
-@class NSArray, NSCollectionView, NSString;
+@class NSAppearance, NSArray, NSCollectionView, NSString;
 
 __attribute__((visibility("hidden")))
 @interface NSColorPanelFavoritesList : NSView <NSUserInterfaceValidations, NSCollectionViewDelegate, NSCollectionViewDataSource>
@@ -19,11 +19,13 @@ __attribute__((visibility("hidden")))
     NSArray *_savedColors;
     NSArray *_savedColorsStoreIndexes;
     CDUnknownBlockType _colorSelectionHandler;
+    NSAppearance *_appearanceForRenderingColor;
 }
 
 @property(copy) CDUnknownBlockType colorSelectionHandler; // @synthesize colorSelectionHandler=_colorSelectionHandler;
 - (long long)storeIndexForColorIndex:(long long)arg1;
 - (void)_favoritesDidChange:(id)arg1;
+@property(retain) NSAppearance *appearanceForRenderingColor;
 - (void)setSavedColors:(id)arg1;
 - (id)savedColors;
 - (void)collectionView:(id)arg1 draggingSession:(id)arg2 endedAtPoint:(struct CGPoint)arg3 dragOperation:(unsigned long long)arg4;

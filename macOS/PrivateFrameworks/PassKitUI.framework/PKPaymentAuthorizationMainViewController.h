@@ -11,7 +11,7 @@
 #import <PassKitUI/PKPaymentAuthorizationItemsViewDelegate-Protocol.h>
 #import <PassKitUI/PKPaymentAuthorizationPasswordEntryViewControllerDelegate-Protocol.h>
 
-@class CNContact, NSButton, NSImageView, NSLayoutConstraint, NSString, NSView, PKAuthenticator, PKPaymentAuthorizationFooterViewController, PKPaymentAuthorizationItemsView;
+@class CNContact, NSButton, NSImageView, NSLayoutConstraint, NSOcclusionDetectionView, NSString, NSView, PKAuthenticator, PKPaymentAuthorizationFooterViewController, PKPaymentAuthorizationItemsView;
 @protocol PKPaymentAuthorizationMainViewControllerDelegate;
 
 @interface PKPaymentAuthorizationMainViewController : PKPaymentAuthorizationChildViewController <PKPaymentAuthorizationItemsViewDelegate, PKPaymentAuthorizationFooterViewControllerDelegate, PKAuthenticatorDelegate, PKPaymentAuthorizationPasswordEntryViewControllerDelegate>
@@ -19,10 +19,12 @@
     id <PKPaymentAuthorizationMainViewControllerDelegate> _delegate;
     PKPaymentAuthorizationFooterViewController *_footerViewController;
     PKPaymentAuthorizationItemsView *_paymentItemsView;
+    NSOcclusionDetectionView *_occlusionDetectionView;
     NSLayoutConstraint *_viewBottomConstraint;
     NSImageView *_logoImageView;
     NSButton *_cancelButton;
     NSView *_separatorView;
+    id _validationToken;
     PKAuthenticator *_authenticator;
     long long _authenticationState;
     CNContact *_lastSelectedShippingContact;
@@ -31,10 +33,12 @@
 @property(retain, nonatomic) CNContact *lastSelectedShippingContact; // @synthesize lastSelectedShippingContact=_lastSelectedShippingContact;
 @property(nonatomic) long long authenticationState; // @synthesize authenticationState=_authenticationState;
 @property(retain, nonatomic) PKAuthenticator *authenticator; // @synthesize authenticator=_authenticator;
+@property(retain, nonatomic) id validationToken; // @synthesize validationToken=_validationToken;
 @property(retain, nonatomic) NSView *separatorView; // @synthesize separatorView=_separatorView;
 @property(retain, nonatomic) NSButton *cancelButton; // @synthesize cancelButton=_cancelButton;
 @property(retain, nonatomic) NSImageView *logoImageView; // @synthesize logoImageView=_logoImageView;
 @property(retain, nonatomic) NSLayoutConstraint *viewBottomConstraint; // @synthesize viewBottomConstraint=_viewBottomConstraint;
+@property(retain, nonatomic) NSOcclusionDetectionView *occlusionDetectionView; // @synthesize occlusionDetectionView=_occlusionDetectionView;
 @property(retain, nonatomic) PKPaymentAuthorizationItemsView *paymentItemsView; // @synthesize paymentItemsView=_paymentItemsView;
 @property(retain, nonatomic) PKPaymentAuthorizationFooterViewController *footerViewController; // @synthesize footerViewController=_footerViewController;
 @property(nonatomic) __weak id <PKPaymentAuthorizationMainViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
@@ -42,6 +46,8 @@
 - (void)_prepareConstraints;
 - (void)_cancelMenuTracking;
 - (void)_createSubviews;
+- (void)_notifyViewDidBecomeUnoccluded:(id)arg1;
+- (void)_notifyViewDidBecomeOccluded:(id)arg1;
 - (id)_evaluationRequest;
 - (long long)_authenticatorPolicy;
 - (void)_startEvaluation;
@@ -53,7 +59,7 @@
 - (void)dismissPasscodeViewController;
 - (void)presentPasscodeViewController:(struct NSViewController *)arg1 completionHandler:(CDUnknownBlockType)arg2 reply:(CDUnknownBlockType)arg3;
 - (id)passcodeViewController;
-- (void)authenticatorDidActivateDynamicFunctionRowConfirmation:(id)arg1;
+- (void)authenticatorDidDeactivateTouchID:(id)arg1 status:(long long)arg2;
 - (void)authenticatorDidEncounterMatchMiss:(id)arg1;
 - (void)authenticatorDidEncounterFingerOff:(id)arg1;
 - (void)authenticatorDidEncounterFingerOn:(id)arg1;

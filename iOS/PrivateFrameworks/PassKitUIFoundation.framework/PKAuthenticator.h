@@ -22,6 +22,7 @@
 + (unsigned long long)_currentStateForMechanisms:(id)arg1;
 + (unsigned long long)currentStateForAccessControl:(struct __SecAccessControl *)arg1;
 + (unsigned long long)currentStateForPolicy:(long long)arg1;
++ (void)delayCoachingStateTransition;
 + (void)removeUserIntentAvailable;
 + (_Bool)isUserIntentAvailable;
 + (void)resetSharedRootContextWithCompletion:(CDUnknownBlockType)arg1;
@@ -37,6 +38,7 @@
 @property(readonly, nonatomic) _Bool passphraseActive;
 @property(readonly, nonatomic) _Bool passcodeActive;
 @property(readonly, nonatomic) _Bool fingerPresent;
+@property(readonly, nonatomic) long long coachingState;
 @property(readonly, nonatomic) _Bool userIntentAvailable;
 - (void)setFingerPresentTimeout:(double)arg1 preventRestart:(_Bool)arg2;
 @property(readonly, nonatomic) unsigned long long authenticationIdentifier;

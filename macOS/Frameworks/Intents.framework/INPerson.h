@@ -83,6 +83,7 @@
 - (long long)_compareSubProducerOne:(id)arg1 subProducerTwo:(id)arg2;
 @property(readonly) INImage *_keyImage;
 - (void)_injectProxiesForImages:(CDUnknownBlockType)arg1 completion:(CDUnknownBlockType)arg2;
+- (id)_intents_indexingRepresentation;
 - (id)spokenPhrases;
 @property(readonly, copy) NSArray *siriMatches;
 @property(readonly) NSArray *alternativeSpeakableMatches;

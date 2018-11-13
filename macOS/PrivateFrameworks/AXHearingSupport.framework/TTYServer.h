@@ -4,16 +4,19 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <AXHearingCoreSupport/AXHeardServer.h>
+#import <objc/NSObject.h>
 
-@class NSLock, NSMutableDictionary, NSObject;
+#import <AXHearingSupport/AXHeardServerMessageDelegate-Protocol.h>
+
+@class HCServer, NSLock, NSMutableDictionary, NSString;
 @protocol OS_dispatch_queue;
 
-@interface TTYServer : AXHeardServer
+@interface TTYServer : NSObject <AXHeardServerMessageDelegate>
 {
     NSLock *_dataResponseBlocksLock;
     NSMutableDictionary *_databaseResponseBlocks;
     NSObject<OS_dispatch_queue> *_commonRequestQueue;
+    HCServer *_server;
     CDUnknownBlockType _actionCompletionBlock;
 }
 
@@ -25,7 +28,7 @@
 - (BOOL)contactIsTTYContact:(id)arg1;
 - (BOOL)deleteConversationWithCallUID:(id)arg1;
 - (void)registerForUpdates:(CDUnknownBlockType)arg1 forCallUID:(id)arg2;
-- (void)sendCharacter:(unsigned short)arg1 forCallUID:(id)arg2;
+- (void)sendString:(id)arg1 forCallUID:(id)arg2;
 - (void)findConversationForCallUID:(id)arg1 andResult:(CDUnknownBlockType)arg2;
 - (void)registerResponseBlock:(CDUnknownBlockType)arg1 forUUID:(id)arg2;
 - (void)setShouldSuppressIncomingNotification:(BOOL)arg1;
@@ -37,6 +40,12 @@
 - (void)resetConnection;
 - (void)dealloc;
 - (id)init;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

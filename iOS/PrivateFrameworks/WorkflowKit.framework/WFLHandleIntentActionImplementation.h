@@ -23,7 +23,7 @@
 - (void)dealloc;
 - (void)cancelRunning;
 - (void)handleIntent:(id)arg1 inBackgroundAppWithBundleIdentifier:(id)arg2 reply:(CDUnknownBlockType)arg3;
-- (void)finishRunningByContinuingInApp;
+- (void)finishRunningByContinuingInAppForIntent:(id)arg1 response:(id)arg2;
 - (void)handleIntent:(id)arg1 withExtensionProxy:(id)arg2;
 - (void)confirmIntent:(id)arg1 withExtensionProxy:(id)arg2;
 - (void)resolveIntent:(id)arg1 withExtensionProxy:(id)arg2;

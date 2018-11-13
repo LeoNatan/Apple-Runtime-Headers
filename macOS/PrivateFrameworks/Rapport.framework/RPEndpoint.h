@@ -17,9 +17,11 @@
     NSString *_identifier;
     NSString *_idsDeviceIdentifier;
     NSString *_mediaRemoteIdentifier;
+    NSString *_mediaRouteIdentifier;
     NSString *_model;
     NSString *_name;
     unsigned long long _statusFlags;
+    NSString *_sourceVersion;
     BOOL _present;
     int _proximity;
 }
@@ -29,10 +31,12 @@
 @property(nonatomic) BOOL present; // @synthesize present=_present;
 @property(retain, nonatomic) CUBonjourDevice *bonjourDevice; // @synthesize bonjourDevice=_bonjourDevice;
 @property(retain, nonatomic) SFDevice *bleDevice; // @synthesize bleDevice=_bleDevice;
+@property(copy, nonatomic) NSString *sourceVersion; // @synthesize sourceVersion=_sourceVersion;
 @property(nonatomic) unsigned long long statusFlags; // @synthesize statusFlags=_statusFlags;
 @property(readonly, nonatomic) int proximity; // @synthesize proximity=_proximity;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(copy, nonatomic) NSString *model; // @synthesize model=_model;
+@property(copy, nonatomic) NSString *mediaRouteIdentifier; // @synthesize mediaRouteIdentifier=_mediaRouteIdentifier;
 @property(copy, nonatomic) NSString *mediaRemoteIdentifier; // @synthesize mediaRemoteIdentifier=_mediaRemoteIdentifier;
 @property(copy, nonatomic) NSString *idsDeviceIdentifier; // @synthesize idsDeviceIdentifier=_idsDeviceIdentifier;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;

@@ -11,14 +11,16 @@
 #import <PassKitUI/PKPaymentServiceDelegate-Protocol.h>
 #import <PassKitUI/PKPostalAddressEditorViewControllerDelegate-Protocol.h>
 
-@class NSArray, NSButton, NSImage, NSNumberFormatter, NSPopUpButton, NSString, NSTableView, NSTextField, NSView, NSWindow, PKPassLibrary, PKPaymentCardVerificationViewController, PKPaymentOptionsDefaults, PKPaymentPass, PKPaymentPreferenceContact, PKPaymentService;
+@class NSArray, NSButton, NSImage, NSNumberFormatter, NSPopUpButton, NSString, NSTableView, NSTextField, NSView, NSWindow, PKInAppPaymentService, PKPassLibrary, PKPaymentCardVerificationViewController, PKPaymentOptionsDefaults, PKPaymentPass, PKPaymentPreferenceContact, PKPaymentService;
 
 @interface PKCardInfoViewController : NSViewController <NSTableViewDelegate, NSTableViewDataSource, PKPaymentServiceDelegate, PKPostalAddressEditorViewControllerDelegate>
 {
+    BOOL _isUpdatingContentView;
     PKPaymentPass *_card;
     NSView *_healthyCardView;
     NSView *_invalidCardView;
     NSView *_lostModeCardView;
+    NSView *_securityConfigurationView;
     PKPassLibrary *_passLibrary;
     PKPaymentService *_paymentService;
     NSButton *_transactionsCheckbox;
@@ -45,8 +47,13 @@
     PKPaymentCardVerificationViewController *_verificationVC;
     NSWindow *_sheet;
     PKPaymentPreferenceContact *_addressPreference;
+    PKInAppPaymentService *_inAppPaymentService;
+    unsigned long long _hasValidSecurityConfiguration;
 }
 
+@property(nonatomic) BOOL isUpdatingContentView; // @synthesize isUpdatingContentView=_isUpdatingContentView;
+@property unsigned long long hasValidSecurityConfiguration; // @synthesize hasValidSecurityConfiguration=_hasValidSecurityConfiguration;
+@property(retain) PKInAppPaymentService *inAppPaymentService; // @synthesize inAppPaymentService=_inAppPaymentService;
 @property(retain) PKPaymentPreferenceContact *addressPreference; // @synthesize addressPreference=_addressPreference;
 @property(retain) NSWindow *sheet; // @synthesize sheet=_sheet;
 @property(retain) PKPaymentCardVerificationViewController *verificationVC; // @synthesize verificationVC=_verificationVC;
@@ -73,6 +80,7 @@
 @property(retain) NSButton *transactionsCheckbox; // @synthesize transactionsCheckbox=_transactionsCheckbox;
 @property(retain) PKPaymentService *paymentService; // @synthesize paymentService=_paymentService;
 @property(retain) PKPassLibrary *passLibrary; // @synthesize passLibrary=_passLibrary;
+@property(retain) NSView *securityConfigurationView; // @synthesize securityConfigurationView=_securityConfigurationView;
 @property(retain) NSView *lostModeCardView; // @synthesize lostModeCardView=_lostModeCardView;
 @property(retain) NSView *invalidCardView; // @synthesize invalidCardView=_invalidCardView;
 @property(retain) NSView *healthyCardView; // @synthesize healthyCardView=_healthyCardView;
@@ -87,6 +95,7 @@
 - (id)_primaryTextFromTransaction:(id)arg1;
 - (id)tableView:(id)arg1 viewForTableColumn:(id)arg2 row:(long long)arg3;
 - (long long)numberOfRowsInTableView:(id)arg1;
+- (void)didClickSecurityConfigurationLearnMoreButton:(id)arg1;
 - (void)didClickEnterPasswordButton:(id)arg1;
 - (void)privacyPolicyAction:(id)arg1;
 - (BOOL)_showPrivacyPolicyButton;
@@ -98,7 +107,11 @@
 - (void)transactionsCheckboxActions:(id)arg1;
 - (id)nibBundle;
 - (void)_fetchTransactions;
+- (void)_configureContentView;
+- (void)_updateContentView;
+- (void)preferencePaneWillSelect:(id)arg1;
 - (void)viewWillAppear;
+- (void)viewDidLoad;
 - (void)_updateForStoreDemoIfNecessary;
 - (void)awakeFromNib;
 

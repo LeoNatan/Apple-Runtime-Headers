@@ -25,6 +25,7 @@
 + (_Bool)tsk_phoneUI667H;
 + (_Bool)tsk_phoneUI568HOrSmaller;
 + (_Bool)tsk_phoneUI568H;
++ (_Bool)tsk_pad1194H;
 + (_Bool)tsk_pad1112H;
 + (_Bool)tsk_pad1366HOrLarger;
 + (_Bool)tsk_pad1366H;

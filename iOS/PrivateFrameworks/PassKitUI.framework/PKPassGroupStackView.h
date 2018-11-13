@@ -96,6 +96,7 @@
     _Bool _footerSuppressed;
     _Bool _staggerPileAnimations;
     id <PKPassGroupStackViewDatasource> _datasource;
+    long long _coachingState;
     UIColor *_pageIndicatorTintColor;
     UIColor *_currentPageIndicatorTintColor;
     double _topContentSeparatorHeight;
@@ -106,6 +107,7 @@
 @property(nonatomic) double topContentSeparatorHeight; // @synthesize topContentSeparatorHeight=_topContentSeparatorHeight;
 @property(copy, nonatomic) UIColor *currentPageIndicatorTintColor; // @synthesize currentPageIndicatorTintColor=_currentPageIndicatorTintColor;
 @property(copy, nonatomic) UIColor *pageIndicatorTintColor; // @synthesize pageIndicatorTintColor=_pageIndicatorTintColor;
+@property(readonly, nonatomic) long long coachingState; // @synthesize coachingState=_coachingState;
 @property(nonatomic) _Bool footerSuppressed; // @synthesize footerSuppressed=_footerSuppressed;
 @property(nonatomic) unsigned long long modalGroupIndex; // @synthesize modalGroupIndex=_modalGroupIndex;
 @property(nonatomic) long long presentationState; // @synthesize presentationState=_presentationState;
@@ -122,6 +124,8 @@
 - (void)deleteAnimationControllerWillBeginDeleteAnimation:(id)arg1;
 - (unsigned long long)suppressedContentForPassFooter:(id)arg1;
 - (_Bool)isPassFooterViewInGroup:(id)arg1;
+- (void)_updateCoachingState;
+- (void)passFooterViewDidChangeCoachingState:(id)arg1;
 - (void)passFooterViewDidChangeUserIntentRequirement:(id)arg1 withContext:(id)arg2;
 - (void)passFooterViewDidChangeUserIntentRequirement:(id)arg1;
 - (void)groupViewDidUpdatePageControlVisibility:(id)arg1;

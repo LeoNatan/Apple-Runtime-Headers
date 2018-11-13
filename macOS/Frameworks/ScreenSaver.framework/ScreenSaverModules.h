@@ -23,6 +23,7 @@
 - (id)loadModule:(id)arg1 frame:(struct CGRect)arg2 isPreview:(BOOL)arg3;
 - (id)sortedModulesForType:(id)arg1;
 - (void)findModulesWithOrder:(id)arg1 forceRebuild:(BOOL)arg2;
+- (id)_findExtensionModules;
 - (id)randomModule;
 - (id)defaultModule;
 - (id)basicModule;
@@ -30,7 +31,9 @@
 - (id)pathForModuleName:(id)arg1;
 - (id)findAll32BitModules;
 - (id)findAllModules;
+- (id)findModuleWithPath:(id)arg1;
 - (id)findModuleWithName:(id)arg1;
+- (id)moduleWithPath:(id)arg1;
 - (id)moduleWithName:(id)arg1;
 - (id)moduleNames;
 - (BOOL)modulePathIsAppleModule:(id)arg1;

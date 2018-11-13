@@ -11,7 +11,7 @@
 #import <TelephonyUtilities/TUCallRequest-Protocol.h>
 #import <TelephonyUtilities/TUVideoRequest-Protocol.h>
 
-@class CNContactStore, IDSDestination, NSArray, NSDate, NSString, NSURL, NSUUID, NSUserActivity, TUCallProvider, TUCallProviderManager, TUHandle, TUSenderIdentityClient;
+@class CNContactStore, IDSDestination, NSArray, NSDate, NSString, NSURL, NSUUID, NSUserActivity, TUCallProvider, TUCallProviderManager, TUHandle, TUSenderIdentity, TUSenderIdentityClient;
 
 @interface TUDialRequest : NSObject <TUCallRequest, TUVideoRequest, NSSecureCoding, NSCopying>
 {
@@ -40,6 +40,7 @@
     NSDate *_dateDialed;
     NSString *_endpointIDSDestinationURI;
     NSUUID *_localSenderIdentityUUID;
+    NSUUID *_localSenderIdentityAccountUUID;
     long long _originatingUIType;
     struct CGSize _localPortraitAspectRatio;
     struct CGSize _localLandscapeAspectRatio;
@@ -62,6 +63,7 @@
 @property(nonatomic, getter=isRedial) BOOL redial; // @synthesize redial=_redial;
 @property(nonatomic, getter=isSOS, setter=setSOS:) BOOL sos; // @synthesize sos=_sos;
 @property(nonatomic) long long originatingUIType; // @synthesize originatingUIType=_originatingUIType;
+@property(copy, nonatomic) NSUUID *localSenderIdentityAccountUUID; // @synthesize localSenderIdentityAccountUUID=_localSenderIdentityAccountUUID;
 @property(copy, nonatomic) NSUUID *localSenderIdentityUUID; // @synthesize localSenderIdentityUUID=_localSenderIdentityUUID;
 @property(copy, nonatomic) NSString *endpointIDSDestinationURI; // @synthesize endpointIDSDestinationURI=_endpointIDSDestinationURI;
 @property(nonatomic) BOOL endpointOnCurrentDevice; // @synthesize endpointOnCurrentDevice=_endpointOnCurrentDevice;
@@ -118,6 +120,7 @@
 - (id)suppressAssistURLQueryItem;
 - (id)forceAssistURLQueryItem;
 - (id)audioSourceIdentifierURLQueryItem;
+- (id)localSenderIdentityAccountUUIDURLQueryItem;
 - (id)localSenderIdentityUUIDURLQueryItem;
 - (id)providerCustomIdentifierURLQueryItem;
 - (id)contactIdentifierURLQueryItem;
@@ -135,6 +138,7 @@
 @property(readonly, nonatomic) IDSDestination *endpointIDSDestination;
 @property(copy, nonatomic) NSString *destinationID;
 @property(readonly, nonatomic) TUSenderIdentityClient *senderIdentityClient; // @synthesize senderIdentityClient=_senderIdentityClient;
+@property(readonly, copy, nonatomic) TUSenderIdentity *localSenderIdentity;
 @property(readonly, nonatomic) CNContactStore *contactStore;
 @property(readonly, nonatomic) BOOL useTTY;
 @property(readonly, nonatomic) int service;
@@ -146,6 +150,8 @@
 - (id)initWithURL:(id)arg1;
 - (id)initWithService:(int)arg1;
 - (id)initWithProvider:(id)arg1;
+@property(readonly, nonatomic, getter=isTTYAvailable) BOOL ttyAvailable;
+@property(readonly, nonatomic, getter=isRTTAvailable) BOOL rttAvailable;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -7,26 +7,37 @@
 #import <objc/NSObject.h>
 
 #import <VisualVoicemail/CoreTelephonyClientDelegate-Protocol.h>
+#import <VisualVoicemail/VMTelephonyClient-Protocol.h>
 
-@class CoreTelephonyClient, NSArray, NSString;
-@protocol OS_dispatch_queue;
+@class NSArray, NSMapTable, NSString;
+@protocol OS_dispatch_queue, VMCoreTelephonyClient;
 
-@interface VMTelephonyClient : NSObject <CoreTelephonyClientDelegate>
+@interface VMTelephonyClient : NSObject <CoreTelephonyClientDelegate, VMTelephonyClient>
 {
     NSArray *_subscriptions;
     struct os_unfair_lock_s _accessorLock;
-    CoreTelephonyClient *_client;
+    struct os_unfair_lock_s _delegateLock;
+    NSMapTable *_delegateToQueue;
+    id <VMCoreTelephonyClient> _client;
     NSObject<OS_dispatch_queue> *_queue;
 }
 
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
-@property(readonly, nonatomic) CoreTelephonyClient *client; // @synthesize client=_client;
-@property(nonatomic) struct os_unfair_lock_s accessorLock; // @synthesize accessorLock=_accessorLock;
+@property(readonly, nonatomic) id <VMCoreTelephonyClient> client; // @synthesize client=_client;
+@property(readonly, nonatomic) NSMapTable *delegateToQueue; // @synthesize delegateToQueue=_delegateToQueue;
+@property(readonly, nonatomic) struct os_unfair_lock_s delegateLock; // @synthesize delegateLock=_delegateLock;
+@property(readonly, nonatomic) struct os_unfair_lock_s accessorLock; // @synthesize accessorLock=_accessorLock;
 - (void).cxx_destruct;
 - (void)subscriptionInfoDidChange;
 - (id)fetchSubscriptions;
+- (id)isoCountryCodeForSubscription:(id)arg1;
+- (id)abbreviatedLabelForSubscription:(id)arg1;
+- (void)performAtomicDelegateBlock:(CDUnknownBlockType)arg1;
 - (void)performAtomicAccessorBlock:(CDUnknownBlockType)arg1;
+- (void)removeDelegate:(id)arg1;
+- (void)addDelegate:(id)arg1 queue:(id)arg2;
 @property(copy, nonatomic) NSArray *subscriptions; // @synthesize subscriptions=_subscriptions;
+- (id)initWithQueue:(id)arg1 client:(id)arg2;
 - (id)initWithQueue:(id)arg1;
 - (id)init;
 

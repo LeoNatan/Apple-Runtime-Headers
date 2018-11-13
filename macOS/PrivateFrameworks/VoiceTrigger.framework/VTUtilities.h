@@ -15,7 +15,7 @@
 + (BOOL)isInternalInstall;
 + (BOOL)supportPremiumAssets;
 + (BOOL)isAlwaysOn;
-+ (BOOL)VTIsHorseman;
++ (BOOL)VTRunsPremium;
 + (BOOL)isNano;
 + (double)systemUpTime;
 + (double)_round:(double)arg1 withPlaces:(int)arg2;

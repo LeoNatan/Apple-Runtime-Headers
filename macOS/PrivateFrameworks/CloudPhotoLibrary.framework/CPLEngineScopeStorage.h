@@ -53,6 +53,8 @@
 - (BOOL)resetInitialSyncAnchorForScope:(id)arg1 error:(id *)arg2;
 - (struct NSData *)initialSyncAnchorForScope:(id)arg1;
 - (BOOL)setInitialSyncAnchor:(struct NSData *)arg1 forScope:(id)arg2 error:(id *)arg3;
+- (BOOL)setHasFetchedInitialSyncAnchor:(BOOL)arg1 forScope:(id)arg2 error:(id *)arg3;
+- (BOOL)hasScopeFetchedInitialSyncAnchor:(id)arg1;
 - (BOOL)markInitialQueryIsDoneForRecordsOfClass:(Class)arg1 forScope:(id)arg2 error:(id *)arg3;
 - (Class)classOfRecordsForInitialQueryForScope:(id)arg1;
 - (unsigned long long)_indexOfCurrentClassForInitialQueriesForScope:(id)arg1;

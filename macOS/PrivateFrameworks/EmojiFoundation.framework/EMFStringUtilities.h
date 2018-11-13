@@ -10,6 +10,7 @@
 {
 }
 
++ (BOOL)_isNewlyAddedEmoji:(id)arg1;
 + (id)_skinToneVariantsForString:(id)arg1;
 + (int)_skinToneForString:(id)arg1;
 + (BOOL)_hasSkinToneVariantsForString:(id)arg1;

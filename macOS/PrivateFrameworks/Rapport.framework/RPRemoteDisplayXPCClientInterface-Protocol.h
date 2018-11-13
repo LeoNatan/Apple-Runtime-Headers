@@ -20,6 +20,7 @@
 - (void)remoteDisplayChangedDevice:(RPRemoteDisplayDevice *)arg1 changes:(unsigned int)arg2;
 - (void)remoteDisplayLostDevice:(RPRemoteDisplayDevice *)arg1;
 - (void)remoteDisplayFoundDevice:(RPRemoteDisplayDevice *)arg1;
+- (void)remoteDisplayAuthCompleted:(NSError *)arg1;
 - (void)remoteDisplayPromptForPasswordWithFlags:(unsigned int)arg1 throttleSeconds:(int)arg2;
 - (void)remoteDisplayHidePasswordWithFlags:(unsigned int)arg1;
 - (void)remoteDisplayShowPassword:(NSString *)arg1 flags:(unsigned int)arg2;

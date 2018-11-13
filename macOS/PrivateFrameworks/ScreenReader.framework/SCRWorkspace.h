@@ -96,6 +96,7 @@
     SCRVisualsManager *__visualsManager;
     long long __preventSleepRequestCount;
     NSTimer *__sleepAssertionFailsafeTimer;
+    double __shieldWindowRaisedTime;
     SCRSystemKeyManager *_systemKeyManager;
 }
 
@@ -114,6 +115,7 @@
 + (id)stringForCommand:(id)arg1 inCategory:(id)arg2 withExtension:(id)arg3 warnOnMissingString:(BOOL)arg4;
 + (id)stringForCommand:(id)arg1 inCategory:(id)arg2 withExtension:(id)arg3;
 @property(retain, nonatomic) SCRSystemKeyManager *systemKeyManager; // @synthesize systemKeyManager=_systemKeyManager;
+@property(nonatomic) double _shieldWindowRaisedTime; // @synthesize _shieldWindowRaisedTime=__shieldWindowRaisedTime;
 @property(retain, nonatomic) NSTimer *_sleepAssertionFailsafeTimer; // @synthesize _sleepAssertionFailsafeTimer=__sleepAssertionFailsafeTimer;
 @property(nonatomic) long long _preventSleepRequestCount; // @synthesize _preventSleepRequestCount=__preventSleepRequestCount;
 @property(nonatomic) unsigned int _sleepAssertionID; // @synthesize _sleepAssertionID=__sleepAssertionID;
@@ -204,6 +206,7 @@
 - (void)setShouldSkipRedundantLabels:(BOOL)arg1;
 - (BOOL)toggleScreenCurtain;
 @property(nonatomic, getter=isPreventingSleep) BOOL preventSleep; // @dynamic preventSleep;
+- (void)_shieldWindowRaised:(id)arg1;
 - (void)_setPreventSleep:(id)arg1;
 - (void)_disablePreventSleep;
 - (void)updateSystemActivity;

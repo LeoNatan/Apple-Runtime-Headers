@@ -9,13 +9,12 @@
 #import <ScreenTimeUI/NSFetchedResultsControllerDelegate-Protocol.h>
 #import <ScreenTimeUI/STContentPrivacyViewModelCoordinator-Protocol.h>
 
-@class NSFetchedResultsController, NSManagedObjectID, NSMutableDictionary, NSNumber, NSString, STContentPrivacyViewModel;
+@class NSArray, NSManagedObjectID, NSMutableDictionary, NSNumber, NSString, STContentPrivacyViewModel;
 @protocol RMPersistenceControllerProtocol;
 
 @interface STContentPrivacyViewModelCoordinator : NSObject <NSFetchedResultsControllerDelegate, STContentPrivacyViewModelCoordinator>
 {
     _Bool _isLocalDevice;
-    _Bool _needsViewModelRefresh;
     STContentPrivacyViewModel *_viewModel;
     id <RMPersistenceControllerProtocol> _persistenceController;
     NSString *_organizationIdentifier;
@@ -23,15 +22,12 @@
     NSString *_userName;
     NSManagedObjectID *_userObjectID;
     NSMutableDictionary *_configurationPayloadsByType;
-    NSFetchedResultsController *_blueprintFetchController;
-    NSFetchedResultsController *_configurationFetchController;
-    unsigned long long _expectedChanges;
+    NSArray *_fetchedResultsControllers;
+    unsigned long long _numExpectedChanges;
 }
 
-@property(nonatomic) _Bool needsViewModelRefresh; // @synthesize needsViewModelRefresh=_needsViewModelRefresh;
-@property unsigned long long expectedChanges; // @synthesize expectedChanges=_expectedChanges;
-@property(readonly, nonatomic) NSFetchedResultsController *configurationFetchController; // @synthesize configurationFetchController=_configurationFetchController;
-@property(readonly, nonatomic) NSFetchedResultsController *blueprintFetchController; // @synthesize blueprintFetchController=_blueprintFetchController;
+@property unsigned long long numExpectedChanges; // @synthesize numExpectedChanges=_numExpectedChanges;
+@property(retain, nonatomic) NSArray *fetchedResultsControllers; // @synthesize fetchedResultsControllers=_fetchedResultsControllers;
 @property(retain, nonatomic) NSMutableDictionary *configurationPayloadsByType; // @synthesize configurationPayloadsByType=_configurationPayloadsByType;
 @property(nonatomic) _Bool isLocalDevice; // @synthesize isLocalDevice=_isLocalDevice;
 @property(copy, nonatomic) NSManagedObjectID *userObjectID; // @synthesize userObjectID=_userObjectID;
@@ -53,7 +49,7 @@
 - (id)_createUnrestrictedConfiguration:(id)arg1;
 - (id)_identifierForConfigurationType:(id)arg1;
 - (id)_activationIdentifier;
-- (void)controllerDidChangeContent:(id)arg1;
+- (void)reloadViewModelForRemoteChanges;
 - (void)controller:(id)arg1 didChangeObject:(id)arg2 atIndexPath:(id)arg3 forChangeType:(unsigned long long)arg4 newIndexPath:(id)arg5;
 - (void)_registerForPersistenceStoreNotifications;
 - (id)_valuesByRestriction;

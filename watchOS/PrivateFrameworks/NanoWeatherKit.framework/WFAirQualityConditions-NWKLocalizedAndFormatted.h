@@ -15,5 +15,8 @@
 @property(readonly, nonatomic) NSString *nwkLocalizedDescription;
 @property(readonly, nonatomic) NSString *nwkLocalizedDescriptionShort;
 - (id)_nwkWFAirQualityConditionsDescriptionKeyForCategory;
+@property(readonly, nonatomic, getter=nwk_isUBACountry) _Bool nwk_ubaCountry;
+@property(readonly, nonatomic, getter=nwk_isDAQICountry) _Bool nwk_daqiCountry;
+@property(readonly, nonatomic, getter=nwk_isAQICountry) _Bool nwk_aqiCountry;
 @end
 

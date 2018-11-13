@@ -13,6 +13,8 @@
     char *_bufferPtr;
     NSError *_error;
     unsigned long long _length;
+    unsigned char _messageUUID[16];
+    BOOL _hasMessageUUID;
     void *_bufferBytes;
     NSMutableData *_bufferData;
     CDUnknownBlockType _completion;
@@ -21,6 +23,7 @@
     unsigned long long _maxLength;
 }
 
+@property(nonatomic) BOOL hasMessageUUID; // @synthesize hasMessageUUID=_hasMessageUUID;
 @property(nonatomic) unsigned long long maxLength; // @synthesize maxLength=_maxLength;
 @property(nonatomic) unsigned long long minLength; // @synthesize minLength=_minLength;
 @property(readonly, nonatomic) unsigned long long length; // @synthesize length=_length;
@@ -30,6 +33,7 @@
 @property(retain, nonatomic) NSMutableData *bufferData; // @synthesize bufferData=_bufferData;
 @property(nonatomic) void *bufferBytes; // @synthesize bufferBytes=_bufferBytes;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) char *messageUUID;
 
 @end
 

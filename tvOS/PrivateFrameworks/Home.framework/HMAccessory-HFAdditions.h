@@ -6,13 +6,14 @@
 
 #import <HomeKit/HMAccessory.h>
 
-@class HMResidentDevice, NSSet, NSString;
+@class HMResidentDevice, NSArray, NSSet, NSString;
 
 @interface HMAccessory (HFAdditions)
 @property(readonly, copy, nonatomic) NSString *hf_defaultName;
 @property(readonly, nonatomic) NSString *hf_editingName;
 @property(readonly, nonatomic) _Bool hf_needsReprovisioningCheck;
 @property(readonly, nonatomic) HMAccessory *hf_owningBridgeAccessory;
+@property(readonly, nonatomic) NSArray *hf_bridgedAccessories;
 @property(readonly, nonatomic) NSSet *hf_servicesBehindBridge;
 @property(readonly, nonatomic) NSSet *hf_programmableSwitchNamespaceServices;
 - (id)hf_serviceOfType:(id)arg1;

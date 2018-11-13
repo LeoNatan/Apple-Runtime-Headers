@@ -15,7 +15,9 @@
     struct iovec *_iop;
     int _ion;
     unsigned long long _offset;
+    unsigned char _messageUUID[16];
     BOOL _endOfData;
+    BOOL _hasMessageUUID;
     struct iovec *_bytesIOArray;
     unsigned long long _bytesIOCount;
     unsigned long long _bytesIOMaxCount;
@@ -23,6 +25,7 @@
     NSArray *_dataArray;
 }
 
+@property(nonatomic) BOOL hasMessageUUID; // @synthesize hasMessageUUID=_hasMessageUUID;
 @property(readonly, nonatomic) NSError *error; // @synthesize error=_error;
 @property(nonatomic) BOOL endOfData; // @synthesize endOfData=_endOfData;
 @property(retain, nonatomic) NSArray *dataArray; // @synthesize dataArray=_dataArray;
@@ -31,6 +34,7 @@
 @property(nonatomic) unsigned long long bytesIOCount; // @synthesize bytesIOCount=_bytesIOCount;
 @property(readonly, nonatomic) struct iovec *bytesIOArray; // @synthesize bytesIOArray=_bytesIOArray;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) char *messageUUID;
 - (id)init;
 
 @end

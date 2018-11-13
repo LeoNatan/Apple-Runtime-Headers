@@ -131,6 +131,7 @@
 - (id)_majorOSInstallerBundleIdentifier;
 - (id)_majorProduct;
 - (void)_setMajorOSProduct:(id)arg1;
+- (BOOL)_isMajorOSUpdateInternal;
 - (void)_setMajorOSUpdate:(BOOL)arg1;
 - (BOOL)_isMajorOSUpdate;
 - (void)_setPostDate:(id)arg1;

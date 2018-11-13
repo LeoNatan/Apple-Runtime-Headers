@@ -32,7 +32,7 @@
     float _sendButtonTextInsetWidth;
     UIViewController<CKPluginEntryViewController> *_pluginEntryViewController;
     CKConversation *_conversation;
-    UIView *_activeView;
+    CKMessageEntryTextView *_activeView;
     IMPluginPayload *_shelfPluginPayload;
     UIView *_textAndSubjectDividerLine;
     UIView *_pluginDividerLine;
@@ -56,7 +56,7 @@
 @property(retain, nonatomic) UIView *pluginDividerLine; // @synthesize pluginDividerLine=_pluginDividerLine;
 @property(retain, nonatomic) UIView *textAndSubjectDividerLine; // @synthesize textAndSubjectDividerLine=_textAndSubjectDividerLine;
 @property(retain, nonatomic) IMPluginPayload *shelfPluginPayload; // @synthesize shelfPluginPayload=_shelfPluginPayload;
-@property(nonatomic) __weak UIView *activeView; // @synthesize activeView=_activeView;
+@property(nonatomic) __weak CKMessageEntryTextView *activeView; // @synthesize activeView=_activeView;
 @property(nonatomic) __weak CKConversation *conversation; // @synthesize conversation=_conversation;
 @property(retain, nonatomic) UIViewController<CKPluginEntryViewController> *pluginEntryViewController; // @synthesize pluginEntryViewController=_pluginEntryViewController;
 @property(nonatomic) float sendButtonTextInsetWidth; // @synthesize sendButtonTextInsetWidth=_sendButtonTextInsetWidth;

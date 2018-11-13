@@ -124,6 +124,7 @@
 - (void)_updateGroupBackgroundView;
 - (BOOL)_drawsGroupRowBackground;
 - (unsigned long long)_dividerPosition;
+- (BOOL)_drawMethodsOverridden;
 - (id)_preferredAppearance;
 - (void)setSelectionBlendingMode:(long long)arg1;
 - (long long)selectionBlendingMode;

@@ -6,13 +6,14 @@
 
 #import <objc/NSObject.h>
 
+#import <UIKitCore/UIGestureRecognizerDelegate-Protocol.h>
 #import <UIKitCore/_UIClickInteractionProgressProviding-Protocol.h>
 
 @class CADisplayLink, NSString, UILongPressGestureRecognizer, UIView;
 @protocol _UIClickInteractionProgressProvidingDelegate;
 
 __attribute__((visibility("hidden")))
-@interface _UIClickInteractionLongPressProgressProvider : NSObject <_UIClickInteractionProgressProviding>
+@interface _UIClickInteractionLongPressProgressProvider : NSObject <UIGestureRecognizerDelegate, _UIClickInteractionProgressProviding>
 {
     id <_UIClickInteractionProgressProvidingDelegate> _delegate;
     UIView *_view;
@@ -29,9 +30,11 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) UIView *view; // @synthesize view=_view;
 @property(nonatomic) __weak id <_UIClickInteractionProgressProvidingDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (_Bool)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (void)_displayLinkDidFire:(id)arg1;
 - (void)_updateInteractionFromGestureRecognizer;
 - (void)_handleGestureRecognizer:(id)arg1;
+- (struct CGPoint)locationInCoordinateSpace:(id)arg1;
 - (void)cancelInteraction;
 - (_Bool)shouldInvokeActionWhenTransitioningFromState:(long long)arg1 toState:(long long)arg2;
 - (void)dealloc;

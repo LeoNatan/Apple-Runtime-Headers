@@ -39,7 +39,7 @@ struct FilterGraphNode {
 struct Graph {
     struct NodeList<ResourceGraphNode *> _graphSourceImages;
     struct NodeList<ResourceGraphNode *> _graphSourceStates;
-    struct ResourceGraphNode *_graphResultImage;
+    struct NodeList<ResourceGraphNode *> _graphResultImages;
     struct NodeList<ResourceGraphNode *> _graphIntermediateImages;
     struct NodeList<ResourceGraphNode *> _graphResultStates;
     MPSNNGraph *_graph;
@@ -54,6 +54,12 @@ struct MPSDeviceSpecificInfo {
     struct MPSKernelInfo *_field1;
     CDUnknownFunctionPointerType _field2;
     unsigned long long _field3;
+};
+
+struct MPSImageCoordinate {
+    unsigned long long x;
+    unsigned long long y;
+    unsigned long long channel;
 };
 
 struct MPSImageInfo {

@@ -16,6 +16,7 @@ __attribute__((visibility("hidden")))
     // Error parsing type: , name: includeLocalParticipantInVisibleParticipants
     // Error parsing type: , name: audioFrequencyController
     // Error parsing type: , name: audioCallbackQueue
+    // Error parsing type: , name: recentPresentationContexts
     // Error parsing type: , name: conversationState
     // Error parsing type: , name: deviceOrientation
     // Error parsing type: , name: broadcastingState

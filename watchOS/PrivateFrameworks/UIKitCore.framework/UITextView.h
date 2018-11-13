@@ -24,7 +24,7 @@
 @class CUICatalog, NSAttributedString, NSDictionary, NSIndexSet, NSLayoutManager, NSString, NSTextContainer, NSTextStorage, UIAutoscroll, UIColor, UIFont, UIImage, UIInputContextHistory, UILabel, UITextInputController, UITextInputPasswordRules, UITextInputTraits, UITextInteractionAssistant, UITextPosition, UITextRange, UIView, _UICharacterStreamingManager, _UISiriStreamingManager, _UITextContainerView, _UITextSizeCache, _UITextViewContentPadding, _UITextViewRestorableScrollPosition, _UITextViewVisualStyle;
 @protocol UITextInputDelegate, UITextInputTokenizer, UITextViewDelegate;
 
-@interface UITextView : UIScrollView <_UIViewBaselineSpacing, UITextLinkInteraction, UIPreviewItemDelegate, _UITextContainerViewDelegate, _UITextViewContentPaddingDelegate, UITextInputControllerDelegate, UITextAutoscrolling, UIKeyboardInput, UITextInputTraits_Private, _UIMultilineTextContentSizing, _UILayoutBaselineUpdating, UIViewGhostedRangeSupporting, UITextInput, UIContentSizeCategoryAdjusting>
+@interface UITextView : UIScrollView <UITextLinkInteraction, UIPreviewItemDelegate, _UIViewBaselineSpacing, _UITextContainerViewDelegate, _UITextViewContentPaddingDelegate, UITextInputControllerDelegate, UITextAutoscrolling, UIKeyboardInput, UITextInputTraits_Private, _UIMultilineTextContentSizing, _UILayoutBaselineUpdating, UIViewGhostedRangeSupporting, UITextInput, UIContentSizeCategoryAdjusting>
 {
     id _private;
     NSTextStorage *_textStorage;
@@ -402,13 +402,10 @@
 - (id)initWithFrame:(struct CGRect)arg1 textContainer:(id)arg2;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (void)_commonInitWithTextContainer:(id)arg1 isDecoding:(_Bool)arg2 isEditable:(_Bool)arg3 isSelectable:(_Bool)arg4 isDraggable:(_Bool)arg5;
-- (float)_autolayoutSpacingAtEdge:(int)arg1 forAttribute:(int)arg2 nextToNeighbor:(id)arg3 edge:(int)arg4 attribute:(int)arg5 multiplier:(float)arg6;
-- (float)_autolayoutSpacingAtEdge:(int)arg1 forAttribute:(int)arg2 inContainer:(id)arg3 isGuide:(_Bool)arg4;
-- (_Bool)_hasCustomAutolayoutNeighborSpacingForAttribute:(int *)arg1;
-- (id)_fontInfoForBaselineSpacing;
-- (_Bool)_hasFontInfoForVerticalBaselineSpacing;
 - (_Bool)isElementAccessibilityExposedToInterfaceBuilder;
 - (_Bool)isAccessibilityElementByDefault;
+- (void)drawRect:(struct CGRect)arg1 forViewPrintFormatter:(id)arg2;
+- (Class)_printFormatterClass;
 - (void)endSnapshotSeparation;
 - (void)addSnapshotSeparation:(float)arg1 withAffinity:(int)arg2;
 - (float)beginSnapshotSeparationOfHeight:(float)arg1 atYOffset:(float)arg2;
@@ -417,8 +414,6 @@
 @property(nonatomic, setter=_setDrawsDebugBaselines:) _Bool _drawsDebugBaselines;
 - (void)decodeRestorableStateWithCoder:(id)arg1;
 - (void)encodeRestorableStateWithCoder:(id)arg1;
-- (void)drawRect:(struct CGRect)arg1 forViewPrintFormatter:(id)arg2;
-- (Class)_printFormatterClass;
 - (void)_finishHandlingInteraction:(id)arg1;
 - (void)validateInteractionWithLinkAtPoint:(struct CGPoint)arg1;
 - (_Bool)willInteractWithLinkAtPoint:(struct CGPoint)arg1;
@@ -439,6 +434,11 @@
 - (_Bool)_interactionShouldBeginFromPreviewItemController:(id)arg1 forPosition:(struct CGPoint)arg2;
 - (id)_presentationRectsForPreviewItemController:(id)arg1;
 - (id)_dataForPreviewItemController:(id)arg1 atPosition:(struct CGPoint)arg2 type:(int *)arg3;
+- (float)_autolayoutSpacingAtEdge:(int)arg1 forAttribute:(int)arg2 nextToNeighbor:(id)arg3 edge:(int)arg4 attribute:(int)arg5 multiplier:(float)arg6;
+- (float)_autolayoutSpacingAtEdge:(int)arg1 forAttribute:(int)arg2 inContainer:(id)arg3 isGuide:(_Bool)arg4;
+- (_Bool)_hasCustomAutolayoutNeighborSpacingForAttribute:(int *)arg1;
+- (id)_fontInfoForBaselineSpacing;
+- (_Bool)_hasFontInfoForVerticalBaselineSpacing;
 
 // Remaining properties
 @property(copy, nonatomic) NSIndexSet *PINEntrySeparatorIndexes;

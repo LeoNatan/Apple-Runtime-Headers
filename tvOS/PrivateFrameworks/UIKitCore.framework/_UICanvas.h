@@ -60,12 +60,9 @@
 - (void)_setDisplayConfigurationRequest:(id)arg1;
 - (id)_displayConfigurationRequest;
 - (void)_setAVKitRequestedRefreshRate:(double)arg1 HDRMode:(long long)arg2 overscanCompensation:(long long)arg3;
-- (void)_setRequestedRefreshRate:(double)arg1 HDRMode:(long long)arg2;
 @property(nonatomic, getter=_screenRequestedOverscanCompensation, setter=_setScreenRequestedOverscanCompensation:) long long screenRequestedOverscanCompensation; // @synthesize screenRequestedOverscanCompensation=_screenRequestedOverscanCompensation;
 - (long long)_resolvedOverscanCompensation;
 @property(nonatomic, getter=_screenRequestedDisplayPixelSize, setter=_setScreenRequestedDisplayPixelSize:) struct CGSize screenRequestedDisplayPixelSize; // @dynamic screenRequestedDisplayPixelSize;
-@property(readonly, nonatomic, getter=_requestedHDRMode) long long requestedHDRMode; // @dynamic requestedHDRMode;
-@property(readonly, nonatomic, getter=_requestedRefreshRate) double requestedRefreshRate; // @dynamic requestedRefreshRate;
 @property(readonly, nonatomic) id <_UIAnimationFenceCoordinating> animationFencingCoordinator;
 - (void)_invalidate;
 - (void)_recycleAttachmentForWindow:(id)arg1;

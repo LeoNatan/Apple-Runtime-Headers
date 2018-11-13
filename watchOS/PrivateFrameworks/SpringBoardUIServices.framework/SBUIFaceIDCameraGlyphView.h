@@ -6,20 +6,24 @@
 
 #import <SpringBoardFoundation/SBFTouchPassThroughView.h>
 
-@class SBUILegibilityLabel, UIView, _UILegibilitySettings;
+@class SBUILegibilityLabel, UIView, _UILegibilitySettings, _UILegibilityView;
 
 @interface SBUIFaceIDCameraGlyphView : SBFTouchPassThroughView
 {
     _UILegibilitySettings *_legibilitySettings;
-    UIView *_arrowContainer;
+    _UILegibilityView *_arrow;
     SBUILegibilityLabel *_callToActionLabel;
     unsigned int _state;
+    UIView *_arrowContainer;
+    UIView *_localRotationView;
     struct CGAffineTransform _localTransform;
 }
 
+@property(retain, nonatomic) UIView *localRotationView; // @synthesize localRotationView=_localRotationView;
+@property(retain, nonatomic) UIView *arrowContainer; // @synthesize arrowContainer=_arrowContainer;
 @property(nonatomic) unsigned int state; // @synthesize state=_state;
-@property(readonly, nonatomic) SBUILegibilityLabel *callToActionLabel; // @synthesize callToActionLabel=_callToActionLabel;
-@property(readonly, nonatomic) UIView *arrowContainer; // @synthesize arrowContainer=_arrowContainer;
+@property(retain, nonatomic) SBUILegibilityLabel *callToActionLabel; // @synthesize callToActionLabel=_callToActionLabel;
+@property(retain, nonatomic) _UILegibilityView *arrow; // @synthesize arrow=_arrow;
 @property(nonatomic) struct CGAffineTransform localTransform; // @synthesize localTransform=_localTransform;
 @property(retain, nonatomic) _UILegibilitySettings *legibilitySettings; // @synthesize legibilitySettings=_legibilitySettings;
 - (void).cxx_destruct;

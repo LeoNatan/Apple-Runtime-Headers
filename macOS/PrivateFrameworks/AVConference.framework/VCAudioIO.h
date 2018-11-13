@@ -35,9 +35,11 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _stopCompletionBlock;
     struct _VCAudioEndpointData _sourceData;
     struct _VCAudioEndpointData _sinkData;
+    unsigned int _pullAudioSamplesCount;
 }
 
 + (id)controllerForDeviceRole:(int)arg1;
+@property(readonly, nonatomic) unsigned int pullAudioSamplesCount; // @synthesize pullAudioSamplesCount=_pullAudioSamplesCount;
 @property(readonly, nonatomic) struct AudioStreamBasicDescription controllerFormat; // @synthesize controllerFormat=_controllerFormat;
 @property(readonly, nonatomic) unsigned int state; // @synthesize state=_state;
 @property(nonatomic) BOOL isGKVoiceChat; // @synthesize isGKVoiceChat=_isGKVoiceChat;

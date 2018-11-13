@@ -14,7 +14,7 @@
 + (id)deleteStatementForObjectAssociationsWithDatabase:(id)arg1;
 + (id)deleteStatementForAssociationWithDatabase:(id)arg1;
 + (id)objectIDsForAssociationEntityWithPersistentID:(long long)arg1 profile:(id)arg2 error:(id *)arg3;
-+ (_Bool)realizePendingAssociationsWithDatabase:(id)arg1 error:(id *)arg2;
++ (_Bool)realizePendingAssociationsWithTransaction:(id)arg1 startingAnchor:(long long)arg2 error:(id *)arg3;
 + (_Bool)_insertPendingAssociationsForParentUUID:(id)arg1 childUUIDData:(id)arg2 provenance:(long long)arg3 database:(id)arg4 error:(id *)arg5;
 + (_Bool)_insertAssociationEntryWithAssociationID:(long long)arg1 objectID:(long long)arg2 provenance:(long long)arg3 database:(id)arg4 error:(id *)arg5;
 + (_Bool)_insertEntriesWithParentUUID:(id)arg1 childUUIDsData:(id)arg2 provenance:(long long)arg3 enforceSameSource:(_Bool)arg4 permitPendingAssociations:(_Bool)arg5 profile:(id)arg6 error:(id *)arg7;

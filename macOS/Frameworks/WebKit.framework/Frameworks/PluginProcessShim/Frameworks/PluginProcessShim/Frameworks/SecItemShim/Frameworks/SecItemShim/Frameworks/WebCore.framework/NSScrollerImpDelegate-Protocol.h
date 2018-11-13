@@ -6,7 +6,7 @@
 
 #import <WebCore/NSObject-Protocol.h>
 
-@class CALayer, NSScrollerImp;
+@class CALayer, NSAppearance, NSScrollerImp;
 
 @protocol NSScrollerImpDelegate <NSObject>
 - (void)scrollerImp:(NSScrollerImp *)arg1 overlayScrollerStateChangedTo:(unsigned long long)arg2;
@@ -17,6 +17,7 @@
 - (struct CGRect)convertRectToBacking:(struct CGRect)arg1;
 
 @optional
+- (NSAppearance *)effectiveAppearanceForScrollerImp:(NSScrollerImp *)arg1;
 - (BOOL)shouldUseLayerPerPartForScrollerImp:(NSScrollerImp *)arg1;
 - (struct CGRect)convertRectToLayer:(struct CGRect)arg1;
 - (struct CGPoint)mouseLocationInScrollerForScrollerImp:(NSScrollerImp *)arg1;

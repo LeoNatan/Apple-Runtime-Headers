@@ -6,13 +6,13 @@
 
 #import <PencilKit/NSObject-Protocol.h>
 
-@class PKInlineColorPicker, PKInlineInkPicker, UIBarButtonItem;
+@class PKInlineColorPicker, UIBarButtonItem;
 
 @protocol PKInlineColorPickerContentsHiddenDelegate <NSObject>
 
 @optional
 - (_Bool)_colorPickerIsInkPickerContentsHidden:(PKInlineColorPicker *)arg1;
-- (struct CGRect)_colorPickerRectForContentsHiddenColorPickerPresentation:(PKInlineInkPicker *)arg1;
+- (struct CGRect)_colorPickerRectForContentsHiddenColorPickerPresentation:(PKInlineColorPicker *)arg1;
 - (UIBarButtonItem *)_colorPickerBarButtonItemForContentsHiddenColorPickerPresentation:(PKInlineColorPicker *)arg1;
 @end
 

@@ -83,7 +83,6 @@
 - (void)prefetchResourcesFor:(id)arg1;
 - (id)specifiers;
 - (void)turnOnLocationServicesPressed:(id)arg1;
-- (_Bool)isBootstrap;
 - (void)retryCarrierListFetch:(id)arg1;
 - (id)_deadTelephonySpecifiers;
 - (void)learnMoreLinkTapped;

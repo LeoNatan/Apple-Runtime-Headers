@@ -22,6 +22,7 @@
 @property(readonly, copy, nonatomic) NSString *colorGamut;
 @property(readonly, copy, nonatomic) NSString *hdrMode;
 @property(readonly, copy, nonatomic) NSString *colorMode;
+@property(readonly, nonatomic, getter=isHighBandwidth) BOOL highBandwidth;
 @property(readonly, nonatomic) BOOL isVirtual;
 @property(readonly, nonatomic) double refreshRate;
 @property(readonly, nonatomic) double pixelAspectRatio;

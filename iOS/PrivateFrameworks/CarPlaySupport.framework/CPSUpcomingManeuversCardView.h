@@ -8,12 +8,13 @@
 
 #import <CarPlaySupport/CPSNavigationDisplaying-Protocol.h>
 
-@class CPSHairlineView, NSArray, NSMutableArray, NSString;
+@class CPSHairlineView, NSArray, NSMutableArray, NSMutableDictionary, NSString;
 
 @interface CPSUpcomingManeuversCardView : CPSInheritedBackgroundColorView <CPSNavigationDisplaying>
 {
     _Bool _minimalMode;
     NSArray *_maneuvers;
+    NSMutableDictionary *_currentTravelEstimatesForManeuverIdentifiers;
     NSArray *_maneuverStyles;
     NSMutableArray *_maneuverViewStack;
     NSMutableArray *_verticalConstraints;
@@ -24,6 +25,7 @@
 @property(readonly, nonatomic) NSMutableArray *verticalConstraints; // @synthesize verticalConstraints=_verticalConstraints;
 @property(readonly, nonatomic) NSMutableArray *maneuverViewStack; // @synthesize maneuverViewStack=_maneuverViewStack;
 @property(readonly, nonatomic) NSArray *maneuverStyles; // @synthesize maneuverStyles=_maneuverStyles;
+@property(retain, nonatomic) NSMutableDictionary *currentTravelEstimatesForManeuverIdentifiers; // @synthesize currentTravelEstimatesForManeuverIdentifiers=_currentTravelEstimatesForManeuverIdentifiers;
 @property(readonly, nonatomic) NSArray *maneuvers; // @synthesize maneuvers=_maneuvers;
 @property(nonatomic, getter=isMinimalMode) _Bool minimalMode; // @synthesize minimalMode=_minimalMode;
 - (void).cxx_destruct;

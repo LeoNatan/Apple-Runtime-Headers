@@ -70,7 +70,9 @@
 @property(readonly) struct CGPoint center;
 @property(readonly) struct CGRect visibleFrame;
 @property(readonly) XCElementSnapshot *scrollView;
+@property(readonly) XCElementSnapshot *scrollableContainer;
 - (id)nearestSharedAncestorOfElement:(id)arg1 matchingType:(long long)arg2;
+- (id)_nearestAncestorMatchingAnyOfTypes:(id)arg1;
 - (id)nearestAncestorMatchingType:(long long)arg1;
 - (BOOL)_frameFuzzyMatchesElement:(id)arg1;
 - (BOOL)_fuzzyMatchesElement:(id)arg1;

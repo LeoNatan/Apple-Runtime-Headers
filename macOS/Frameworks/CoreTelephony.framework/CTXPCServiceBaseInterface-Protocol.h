@@ -4,7 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
+@class NSArray;
+
 @protocol CTXPCServiceBaseInterface
+- (void)registerForNotifications:(NSArray *)arg1 completion:(void (^)(NSError *))arg2;
 - (void)ping:(void (^)(NSError *))arg1;
 - (void)getDescriptorsForDomain:(long long)arg1 completion:(void (^)(CTServiceDescriptorContainer *, NSError *))arg2;
 - (void)getDualSimCapability:(void (^)(long long, NSError *))arg1;

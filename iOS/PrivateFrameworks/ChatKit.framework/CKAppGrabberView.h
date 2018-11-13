@@ -30,6 +30,7 @@
 @property(nonatomic) _Bool showsAppTitle; // @synthesize showsAppTitle=_showsAppTitle;
 @property(nonatomic) __weak id <CKAppGrabberViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (id)headerView;
 - (void)setState:(long long)arg1 animated:(_Bool)arg2;
 @property(nonatomic) long long state;
 - (void)updateHeaderFrame:(_Bool)arg1;

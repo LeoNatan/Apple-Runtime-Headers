@@ -43,6 +43,7 @@
 @property(nonatomic) long long syncControllerRecordType; // @dynamic syncControllerRecordType;
 @property(nonatomic) long long syncControllerSyncType; // @dynamic syncControllerSyncType;
 @property(nonatomic) unsigned long long syncControllerSyncState; // @dynamic syncControllerSyncState;
+@property(copy, nonatomic) NSDate *lastCompleteSyncedDBDate; // @dynamic lastCompleteSyncedDBDate;
 @property(copy, nonatomic) NSDate *lastSyncDate; // @dynamic lastSyncDate;
 @property(copy, nonatomic) NSDate *exitDate; // @dynamic exitDate;
 @property(nonatomic, getter=isStartingInitialSyncSetByCloudKitHooks) BOOL startingInitialSyncSetByCloudKitHooks; // @dynamic startingInitialSyncSetByCloudKitHooks;

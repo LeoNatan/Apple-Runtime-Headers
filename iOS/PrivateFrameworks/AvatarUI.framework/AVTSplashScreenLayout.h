@@ -30,10 +30,12 @@
 + (struct CGRect)subTitleFrameForString:(id)arg1 titleFrame:(struct CGRect)arg2 buttonFrame:(struct CGRect)arg3 wantsSecondaryVideo:(_Bool)arg4 containerSize:(struct CGSize)arg5 labelEdgePadding:(double)arg6;
 + (struct CGRect)titleFrameForString:(id)arg1 yOrigin:(double)arg2 containerSize:(struct CGSize)arg3 labelEdgePadding:(double)arg4;
 + (struct CGRect)buttonFrameForString:(id)arg1 containerSize:(struct CGSize)arg2 edgeInsets:(struct UIEdgeInsets)arg3;
++ (double)defaultLabelEdgePaddingForLabelEdgePaddingStyle:(unsigned long long)arg1 contentSizeCategory:(id)arg2 numberOfLines:(long long)arg3;
 + (id)buttonFont;
 + (id)subTitleFont;
 + (id)titleFont;
 + (id)blueButton;
++ (unsigned long long)appropriateLabelEdgePaddingStyleForViewSize:(struct CGSize)arg1;
 @property(nonatomic) _Bool needsLayout; // @synthesize needsLayout=_needsLayout;
 @property(copy, nonatomic) NSString *currentContentSizeCategory; // @synthesize currentContentSizeCategory=_currentContentSizeCategory;
 @property(nonatomic) _Bool wantsSecondaryVideo; // @synthesize wantsSecondaryVideo=_wantsSecondaryVideo;

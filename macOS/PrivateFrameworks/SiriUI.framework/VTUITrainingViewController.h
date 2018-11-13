@@ -15,7 +15,6 @@
 
 @interface VTUITrainingViewController : NSViewController <CSVTUITrainingManagerDelegate, SiriUIFlamesAndAuraViewDelegate, AFMyriadDelegate>
 {
-    VTUIPagedLabel *_instructionPagedLabel;
     NSTextField *_statusLabel;
     SiriUIFlamesAndAuraView *_flamesView;
     NSButton *_endpointButton;
@@ -30,18 +29,29 @@
     long long _AVVCRetryCount;
     long long _timeoutRetryCount;
     BOOL _hasCancelledTraining;
+    BOOL _waitingForSpeechNotification;
     AFMyriadCoordinator *_myriadCoordinator;
     BOOL _hasCompletedTraining;
+    BOOL _inBuddy;
     NSString *_siriLanguageCode;
     id <VTUITrainingViewControllerDelegate> _delegate;
     long long _currentTrainingState;
+    CDUnknownBlockType _voiceOverCompletionBlock;
+    VTUIPagedLabel *_instructionPagedLabel;
 }
 
+@property(retain) VTUIPagedLabel *instructionPagedLabel; // @synthesize instructionPagedLabel=_instructionPagedLabel;
+@property(copy) CDUnknownBlockType voiceOverCompletionBlock; // @synthesize voiceOverCompletionBlock=_voiceOverCompletionBlock;
+@property(nonatomic, getter=isInBuddy) BOOL inBuddy; // @synthesize inBuddy=_inBuddy;
 @property BOOL hasCompletedTraining; // @synthesize hasCompletedTraining=_hasCompletedTraining;
 @property(nonatomic) long long currentTrainingState; // @synthesize currentTrainingState=_currentTrainingState;
 @property __weak id <VTUITrainingViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(copy, nonatomic) NSString *siriLanguageCode; // @synthesize siriLanguageCode=_siriLanguageCode;
 - (void).cxx_destruct;
+- (void)_postAccessibilityNotificationWithMessage:(id)arg1;
+- (id)_getWindowOrView;
+- (void)voiceOverFinishedSpeaking;
+- (void)slideInText:(id)arg1 afterDelay:(double)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)shouldContinue:(id)arg1;
 - (void)shouldAbortAnotherDeviceBetter:(id)arg1;
 - (BOOL)canRetryCurrentInstruction;

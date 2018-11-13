@@ -16,6 +16,7 @@
 - (void)propertiesForConnectionWithUUID:(NSString *)arg1 withReply:(void (^)(NSDictionary *))arg2;
 - (void)accessoryInfoForEndpointWithUUID:(NSString *)arg1 withReply:(void (^)(NSDictionary *))arg2;
 - (void)accessoryInfoForConnectionWithUUID:(NSString *)arg1 withReply:(void (^)(NSDictionary *))arg2;
+- (void)setConnectionAuthenticated:(NSString *)arg1 state:(_Bool)arg2;
 - (void)isConnectionAuthenticatedForUUID:(NSString *)arg1 withReply:(void (^)(BOOL))arg2;
 - (void)authStatusForConnectionWithUUID:(NSString *)arg1 authType:(int)arg2 withReply:(void (^)(int))arg3;
 - (void)endpointUUIDsForConnectionWithUUID:(NSString *)arg1 withReply:(void (^)(NSArray *))arg2;

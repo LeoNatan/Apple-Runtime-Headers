@@ -6,21 +6,30 @@
 
 #import <Preferences/PSTableCell.h>
 
-@class UILabel;
+@class UILabel, UIView;
 
 @interface PSUIDanglingPlanTableCell : PSTableCell
 {
     UILabel *_nameLabel;
     UILabel *_numberLabel;
     UILabel *_statusLabel;
+    UILabel *_centeredNameLabel;
+    UIView *_accessorySpacerView;
 }
 
 + (long long)cellStyle;
+@property(retain, nonatomic) UIView *accessorySpacerView; // @synthesize accessorySpacerView=_accessorySpacerView;
+@property(retain, nonatomic) UILabel *centeredNameLabel; // @synthesize centeredNameLabel=_centeredNameLabel;
 @property(retain, nonatomic) UILabel *statusLabel; // @synthesize statusLabel=_statusLabel;
 @property(retain, nonatomic) UILabel *numberLabel; // @synthesize numberLabel=_numberLabel;
 @property(retain, nonatomic) UILabel *nameLabel; // @synthesize nameLabel=_nameLabel;
 - (void).cxx_destruct;
+- (id)detailTextLabel;
+- (id)textLabel;
 - (void)refreshCellContentsWithSpecifier:(id)arg1;
+- (void)_setCenteredText:(id)arg1;
+- (void)_setLabel:(id)arg1 andPhoneNumber:(id)arg2;
+- (void)setAccessoryType:(long long)arg1;
 - (_Bool)canBeChecked;
 - (_Bool)canReload;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;

@@ -23,7 +23,7 @@
     NLBridgeSettings *_bridgeSettings;
     HDKeyValueDomain *_earnedKeyValueDomain;
     HDKeyValueDomain *_unearnedKeyValueDomain;
-    NSCalendar *_calendar;
+    NSCalendar *_gregorianCalendar;
     NSMutableDictionary *_achievementsToAlert;
     NSSet *_pendingAlertRequests;
     NSSet *_achievementsToAlertWhenProtectedDataAvailable;
@@ -36,7 +36,7 @@
 @property(retain, nonatomic) NSSet *achievementsToAlertWhenProtectedDataAvailable; // @synthesize achievementsToAlertWhenProtectedDataAvailable=_achievementsToAlertWhenProtectedDataAvailable;
 @property(retain, nonatomic) NSSet *pendingAlertRequests; // @synthesize pendingAlertRequests=_pendingAlertRequests;
 @property(retain, nonatomic) NSMutableDictionary *achievementsToAlert; // @synthesize achievementsToAlert=_achievementsToAlert;
-@property(retain, nonatomic) NSCalendar *calendar; // @synthesize calendar=_calendar;
+@property(retain, nonatomic) NSCalendar *gregorianCalendar; // @synthesize gregorianCalendar=_gregorianCalendar;
 @property(retain, nonatomic) HDKeyValueDomain *unearnedKeyValueDomain; // @synthesize unearnedKeyValueDomain=_unearnedKeyValueDomain;
 @property(retain, nonatomic) HDKeyValueDomain *earnedKeyValueDomain; // @synthesize earnedKeyValueDomain=_earnedKeyValueDomain;
 @property(retain, nonatomic) NLBridgeSettings *bridgeSettings; // @synthesize bridgeSettings=_bridgeSettings;
@@ -62,6 +62,7 @@
 - (_Bool)unearnedAchievementWasEverAlerted:(id)arg1;
 - (_Bool)earnedAchievementWasEverAlerted:(id)arg1;
 - (_Bool)achievementAlertDateReached:(id)arg1;
+- (_Bool)achievement:(id)arg1 alertableForWatchCountryCode:(id)arg2;
 - (_Bool)achievementTypeRequiresUnearnedAlert:(id)arg1;
 - (_Bool)earnedAchievementWasAlertedToday:(id)arg1;
 - (_Bool)achievementWasEarnedToday:(id)arg1;

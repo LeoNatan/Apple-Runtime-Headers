@@ -99,6 +99,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
+- (void)_connectInterfaceBuilderEventConnection:(id)arg1;
 - (void)_commitInteractionDurationStatisticMeasurements;
 - (void)_beginInteractionDurationStatisticMeasurements;
 - (void)_incrementStatisticsForUserActionForEvents:(unsigned long long)arg1;
@@ -108,7 +109,6 @@
 - (id)__distributionStatisticsForUserInteractionDuration;
 - (id)__scalarStatisticsForUserValueChangedEvent;
 - (id)__scalarStatisticsForUserTouchUpInsideEvent;
-- (void)_connectInterfaceBuilderEventConnection:(id)arg1;
 
 @end
 

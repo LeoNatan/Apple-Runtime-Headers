@@ -54,6 +54,8 @@ __attribute__((visibility("hidden")))
 @property(readonly) unsigned char audioPriorityDecayFast;
 @property(readonly) unsigned char audioPriorityDecaySlow;
 @property(readonly) BOOL forceDisableMediaPriority;
+- (BOOL)enableAudioDumpParticipantLocal:(BOOL)arg1;
+- (BOOL)enableAudioDumpParticipantRemote:(BOOL)arg1;
 @property(readonly) BOOL forceFECRepairStream;
 @property(readonly) unsigned int forceVisibilityIndex;
 @property(readonly) unsigned int minParticipantCountSendVoiceActiveOnly;

@@ -4,6 +4,8 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
+@class CALayer, NSObject, NSString, UIImageView;
+
 #pragma mark Blocks
 
 typedef void (^CDUnknownBlockType)(void); // return type and parameters are unknown
@@ -21,15 +23,52 @@ struct CGRect {
 };
 
 struct CGSize {
-    double _field1;
-    double _field2;
+    double width;
+    double height;
 };
 
 struct UIColor {
     Class _field1;
 };
 
+struct UIOffset {
+    double horizontal;
+    double vertical;
+};
+
+struct __tree_end_node<std::__1::__tree_node_base<void *>*> {
+    struct __tree_node_base<void *> *__left_;
+};
+
 struct animation_completion_handler_container;
+
+struct array<(anonymous namespace)::blur_container, 2> {
+    struct blur_container __elems_[2];
+};
+
+struct blur_container {
+    UIImageView *view;
+    struct periodic_animation_state pulse;
+};
+
+struct map<CALayer *__unsafe_unretained, CALayer *, std::__1::less<CALayer *__unsafe_unretained>, std::__1::allocator<std::__1::pair<CALayer *const __unsafe_unretained, CALayer *>>> {
+    struct __tree<std::__1::__value_type<CALayer *__unsafe_unretained, CALayer *>, std::__1::__map_value_compare<CALayer *__unsafe_unretained, std::__1::__value_type<CALayer *__unsafe_unretained, CALayer *>, std::__1::less<CALayer *__unsafe_unretained>, true>, std::__1::allocator<std::__1::__value_type<CALayer *__unsafe_unretained, CALayer *>>> {
+        struct __tree_end_node<std::__1::__tree_node_base<void *>*> *__begin_node_;
+        struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *>*>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<CALayer *__unsafe_unretained, CALayer *>, void *>>> {
+            struct __tree_end_node<std::__1::__tree_node_base<void *>*> __value_;
+        } __pair1_;
+        struct __compressed_pair<unsigned long, std::__1::__map_value_compare<CALayer *__unsafe_unretained, std::__1::__value_type<CALayer *__unsafe_unretained, CALayer *>, std::__1::less<CALayer *__unsafe_unretained>, true>> {
+            unsigned long long __value_;
+        } __pair3_;
+    } __tree_;
+};
+
+struct periodic_animation_state {
+    _Bool enabled;
+    NSString *_key;
+    CALayer *_layer;
+    NSObject *_removal_timer;
+};
 
 struct vector<CAShapeLayer *, std::__1::allocator<CAShapeLayer *>> {
     id *__begin_;
@@ -44,6 +83,14 @@ struct vector<LAUI_CA_utilities::animation_completion_handler_container, std::__
     struct animation_completion_handler_container *__end_;
     struct __compressed_pair<LAUI_CA_utilities::animation_completion_handler_container *, std::__1::allocator<LAUI_CA_utilities::animation_completion_handler_container>> {
         struct animation_completion_handler_container *__value_;
+    } __end_cap_;
+};
+
+struct vector<UIView *, std::__1::allocator<UIView *>> {
+    id *__begin_;
+    id *__end_;
+    struct __compressed_pair<UIView *__strong *, std::__1::allocator<UIView *>> {
+        id *__value_;
     } __end_cap_;
 };
 

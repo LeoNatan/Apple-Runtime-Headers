@@ -17,8 +17,11 @@
 
 @property(retain) NSXPCConnection *connection; // @synthesize connection=_connection;
 @property id <IOBluetoothDaemonNSXPCDelegate> delegate; // @synthesize delegate=_delegate;
+- (void)aacpCustomDataEvent:(unsigned int)arg1 withData:(id)arg2 forDevice:(id)arg3;
 - (void)switchEvent:(unsigned int)arg1;
+- (void)sendAACPCustomData:(unsigned int)arg1 withData:(id)arg2 forDevice:(id)arg3;
 - (void)debugMessage;
+- (void)getAccessoryAddressString:(CDUnknownBlockType)arg1;
 - (void)captureAccessoryLogs:(CDUnknownBlockType)arg1;
 - (void)clearAccessoryCrashLog;
 - (id)initWithDelegate:(id)arg1;

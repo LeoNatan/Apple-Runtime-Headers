@@ -14,6 +14,7 @@
 @interface PKGlyphView : UIView <PKFingerprintGlyphViewDelegate>
 {
     int _style;
+    _Bool _isPad;
     unsigned int _transitionIndex;
     _Bool _transitioning;
     _Bool _transitioningAnimated;
@@ -41,6 +42,7 @@
     UIColor *_primaryColor;
     struct CGImage *_customImage;
     int _state;
+    unsigned int _userIntentEdge;
     id <PKGlyphViewDelegate> _delegate;
     struct UIEdgeInsets _customImageAlignmentEdgeInsets;
 }
@@ -48,6 +50,7 @@
 + (id)sharedStaticResources;
 + (_Bool)automaticallyNotifiesObserversOfState;
 @property(nonatomic) __weak id <PKGlyphViewDelegate> delegate; // @synthesize delegate=_delegate;
+@property(readonly, nonatomic) unsigned int userIntentEdge; // @synthesize userIntentEdge=_userIntentEdge;
 @property(readonly, nonatomic) int state; // @synthesize state=_state;
 @property(readonly, nonatomic) struct CGImage *customImage; // @synthesize customImage=_customImage;
 @property(readonly, nonatomic) struct UIEdgeInsets customImageAlignmentEdgeInsets; // @synthesize customImageAlignmentEdgeInsets=_customImageAlignmentEdgeInsets;
@@ -70,6 +73,7 @@
 - (void)_setRecognizedIfNecessaryWithTransitionIndex:(unsigned int)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_updateCheckViewStateAnimated:(_Bool)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)_updateCustomImageLayerOpacityAnimated:(_Bool)arg1;
+- (void)_updateUserIntentLayerRotation;
 - (void)_updateUserIntentLayoutAnimated:(_Bool)arg1;
 - (void)_endPhoneWiggle;
 - (void)_startPhoneWiggle;
@@ -84,6 +88,7 @@
 - (void)_executeAfterMinimumAnimationDurationForStateTransition:(CDUnknownBlockType)arg1;
 - (void)_updateLastAnimationTimeWithAnimationOfDuration:(double)arg1;
 - (void)updateRasterizationScale:(float)arg1;
+- (void)updateRotation;
 - (void)tintColorDidChange;
 - (void)_layoutContentLayer:(id)arg1;
 - (void)layoutSubviews;

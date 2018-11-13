@@ -8,15 +8,15 @@
 
 #import <AddressBook/ABCollectionItemMessagingAvailabilityHelperDelegate-Protocol.h>
 
-@class ABCollectionItemMessagingAvailabilityHelper, ABTTYServices;
+@class ABCollectionItemMessagingAvailabilityHelper, ABRTTServices;
 
 @interface ABPhoneCollectionViewItem : ABCollectionViewItem <ABCollectionItemMessagingAvailabilityHelperDelegate>
 {
     ABCollectionItemMessagingAvailabilityHelper *_messagingHelper;
-    ABTTYServices *_ttyServices;
+    ABRTTServices *_ttyServices;
 }
 
-@property(retain, nonatomic) ABTTYServices *ttyServices; // @synthesize ttyServices=_ttyServices;
+@property(retain, nonatomic) ABRTTServices *ttyServices; // @synthesize ttyServices=_ttyServices;
 @property(retain, nonatomic) ABCollectionItemMessagingAvailabilityHelper *messagingHelper; // @synthesize messagingHelper=_messagingHelper;
 - (void).cxx_destruct;
 - (void)messagingAvailabilityDidChangeHelper:(id)arg1;

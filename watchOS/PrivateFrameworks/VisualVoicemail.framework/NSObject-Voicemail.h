@@ -7,5 +7,6 @@
 #import <objc/NSObject.h>
 
 @interface NSObject (Voicemail)
++ (id)vm_classIdentifier;
 @end
 

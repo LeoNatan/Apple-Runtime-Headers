@@ -7,12 +7,9 @@
 #import <objc/NSObject.h>
 
 @interface NSObject (BaseBoardDeprecated)
-+ (BOOL)bs_synchronousWrapper:(CDUnknownBlockType)arg1 timeout:(double)arg2;
 + (id)bs_decodedFromData:(id)arg1;
 + (id)bs_objectFromData:(id)arg1;
 + (id)bs_dataFromObject:(id)arg1;
-- (BOOL)bs_performSynchronously:(CDUnknownBlockType)arg1 timeout:(double)arg2;
-- (BOOL)bs_performSynchronously:(CDUnknownBlockType)arg1;
 - (id)bs_encoded;
 @end
 

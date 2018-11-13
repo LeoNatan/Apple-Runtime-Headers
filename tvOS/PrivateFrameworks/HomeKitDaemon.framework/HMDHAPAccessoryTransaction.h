@@ -21,6 +21,7 @@
 @property(retain, nonatomic) NSString *bridgeUUID; // @dynamic bridgeUUID;
 @property(retain, nonatomic) NSData *broadcastKey; // @dynamic broadcastKey;
 @property(retain, nonatomic) NSNumber *certificationStatus; // @dynamic certificationStatus;
+@property(retain, nonatomic) NSNumber *hardwareSupport; // @dynamic hardwareSupport;
 @property(retain, nonatomic) NSNumber *keyUpdatedStateNumber; // @dynamic keyUpdatedStateNumber;
 @property(retain, nonatomic) NSDate *keyUpdatedTime; // @dynamic keyUpdatedTime;
 @property(retain, nonatomic) NSString *pairingUsername; // @dynamic pairingUsername;

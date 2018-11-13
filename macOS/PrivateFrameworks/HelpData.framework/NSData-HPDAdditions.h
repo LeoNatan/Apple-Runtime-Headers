@@ -7,6 +7,8 @@
 #import <Foundation/NSData.h>
 
 @interface NSData (HPDAdditions)
++ (id)hpd_dataFromHexString:(id)arg1;
+- (id)hpd_hexString;
 - (id)hpd_decompressedDataUsingAlgorithm:(int)arg1;
 - (id)hpd_compressedDataUsingAlgorithm:(int)arg1;
 - (id)hpd_dataUsingCompressionAlgorithm:(int)arg1 operation:(int)arg2;

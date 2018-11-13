@@ -11,7 +11,7 @@
 #import <AVKit/AVScrollViewObserverDelegate-Protocol.h>
 #import <AVKit/AVTransportControlsViewDelegate-Protocol.h>
 
-@class AVNowPlayingInfoController, AVObservationController, AVPictureInPictureController, AVPlaybackControlsView, AVPlaybackControlsVisibilityControllerItem, AVPlayerController, AVPlayerControllerTimeResolver, AVPlayerViewController, AVRouteDetectorCoordinator, AVScrollViewObserver, AVTimeFormatter, AVTurboModePlaybackControlsPlaceholderView, AVVolumeController, NSArray, NSString, NSTimer, UIAlertController, UIViewPropertyAnimator;
+@class AVNowPlayingInfoController, AVObservationController, AVPictureInPictureController, AVPlaybackControlsView, AVPlaybackControlsVisibilityControllerItem, AVPlayerController, AVPlayerControllerTimeResolver, AVPlayerViewController, AVRouteDetectorCoordinator, AVScrollViewObserver, AVSecondScreenContentViewConnection, AVTimeFormatter, AVTurboModePlaybackControlsPlaceholderView, AVVolumeController, NSArray, NSString, NSTimer, UIAlertController, UIViewPropertyAnimator;
 
 @interface AVPlaybackControlsController : NSObject <AVTransportControlsViewDelegate, AVRoutePickerViewDelegate, AVScrollViewObserverDelegate, AVPlayerViewControllerContentViewDelegate>
 {
@@ -55,6 +55,7 @@
     AVPictureInPictureController *_pictureInPictureController;
     AVVolumeController *_volumeController;
     AVNowPlayingInfoController *_nowPlayingInfoControllerIfLoaded;
+    AVSecondScreenContentViewConnection *_secondScreenConnection;
     AVPlayerViewController *_playerViewController;
     AVPlaybackControlsView *_playbackControlsView;
     AVTurboModePlaybackControlsPlaceholderView *_turboModePlaybackControlsPlaceholderView;
@@ -138,6 +139,7 @@
 @property(nonatomic) __weak AVTurboModePlaybackControlsPlaceholderView *turboModePlaybackControlsPlaceholderView; // @synthesize turboModePlaybackControlsPlaceholderView=_turboModePlaybackControlsPlaceholderView;
 @property(retain, nonatomic) AVPlaybackControlsView *playbackControlsView; // @synthesize playbackControlsView=_playbackControlsView;
 @property(readonly, nonatomic) __weak AVPlayerViewController *playerViewController; // @synthesize playerViewController=_playerViewController;
+@property(retain, nonatomic) AVSecondScreenContentViewConnection *secondScreenConnection; // @synthesize secondScreenConnection=_secondScreenConnection;
 @property(retain, nonatomic) AVNowPlayingInfoController *nowPlayingInfoControllerIfLoaded; // @synthesize nowPlayingInfoControllerIfLoaded=_nowPlayingInfoControllerIfLoaded;
 @property(readonly, nonatomic) AVVolumeController *volumeController; // @synthesize volumeController=_volumeController;
 @property(retain, nonatomic) AVPictureInPictureController *pictureInPictureController; // @synthesize pictureInPictureController=_pictureInPictureController;
@@ -166,6 +168,7 @@
 @property(nonatomic) _Bool playerViewControllerIsBeingTransitionedWithResizing; // @synthesize playerViewControllerIsBeingTransitionedWithResizing=_playerViewControllerIsBeingTransitionedWithResizing;
 @property(nonatomic) __weak AVPlayerController *playerController; // @synthesize playerController=_playerController;
 - (void).cxx_destruct;
+- (void)_updateSecondScreenConnectionReadyToConnect;
 - (void)_updateEdgeInsetsForLetterboxedContentInContentView:(id)arg1;
 - (void)_updateIsBeingScrolledOrOffScreen;
 - (void)_updatePreferredPlaybackControlsLoadedStatusNotifyingContentViewOfChanges:(_Bool)arg1;
@@ -208,6 +211,8 @@
 - (void)transportControls:(id)arg1 scrubberDidScrub:(id)arg2;
 - (void)transportControls:(id)arg1 scrubberDidBeginScrubbing:(id)arg2;
 - (void)transportControlsNeedsLayoutIfNeeded:(id)arg1;
+- (void)secondScreenConnectionDidResignActive:(id)arg1;
+- (void)secondScreenConnectionDidBecomeActive:(id)arg1;
 - (_Bool)playerViewControllerContentViewIsBeingTransitionedFromFullScreen:(id)arg1;
 - (_Bool)playerViewControllerContentViewHasActiveTransition:(id)arg1;
 - (void)playerViewControllerContentViewDidChangeVideoGravity:(id)arg1;

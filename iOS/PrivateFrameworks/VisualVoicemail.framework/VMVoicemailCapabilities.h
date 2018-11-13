@@ -11,34 +11,24 @@
 
 @interface VMVoicemailCapabilities : NSObject <NSCopying, NSSecureCoding>
 {
-    _Bool _canChangeGreeting;
-    _Bool _canChangePassword;
-    _Bool _mailboxRequiresSetup;
     _Bool _transcriptionEnabled;
-    long long _mailboxGreetingState;
-    double _maximumGreetingDuration;
-    unsigned long long _minimumPasswordLength;
-    unsigned long long _maximumPasswordLength;
 }
 
++ (id)unarchivedObjectFromData:(id)arg1 error:(id *)arg2;
++ (id)unarchivedObjectClasses;
 + (_Bool)supportsSecureCoding;
 @property(readonly, nonatomic, getter=isTranscriptionEnabled) _Bool transcriptionEnabled; // @synthesize transcriptionEnabled=_transcriptionEnabled;
-@property(readonly, nonatomic) unsigned long long maximumPasswordLength; // @synthesize maximumPasswordLength=_maximumPasswordLength;
-@property(readonly, nonatomic) unsigned long long minimumPasswordLength; // @synthesize minimumPasswordLength=_minimumPasswordLength;
-@property(readonly, nonatomic) double maximumGreetingDuration; // @synthesize maximumGreetingDuration=_maximumGreetingDuration;
-@property(readonly, nonatomic) long long mailboxGreetingState; // @synthesize mailboxGreetingState=_mailboxGreetingState;
-@property(readonly, nonatomic) _Bool mailboxRequiresSetup; // @synthesize mailboxRequiresSetup=_mailboxRequiresSetup;
-@property(readonly, nonatomic) _Bool canChangePassword; // @synthesize canChangePassword=_canChangePassword;
-@property(readonly, nonatomic) _Bool canChangeGreeting; // @synthesize canChangeGreeting=_canChangeGreeting;
-- (id)initWithCoder:(id)arg1;
-- (void)encodeWithCoder:(id)arg1;
+- (id)archivedDataWithError:(id *)arg1;
 - (_Bool)isEqualToCapabilities:(id)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)debugDescription;
+- (id)description;
+- (id)initWithCoder:(id)arg1;
+- (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithCapabilities:(id)arg1;
-- (id)initWithCanChangeGreeting:(_Bool)arg1 canChangePassword:(_Bool)arg2 mailboxRequiresSetup:(_Bool)arg3 mailboxGreetingState:(long long)arg4 maximumGreetingDuration:(double)arg5 minimumPasswordLength:(unsigned long long)arg6 maximumPasswordLength:(unsigned long long)arg7 transcriptionEnabled:(_Bool)arg8;
+- (id)initWithTranscriptionEnabled:(_Bool)arg1;
 - (id)init;
 
 @end

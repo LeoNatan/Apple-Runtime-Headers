@@ -41,11 +41,11 @@
 - (void)updateTargets:(id)arg1;
 - (void)autoConfigureTargets;
 - (void)_saveTargetUUIDs;
-- (void)__characteristicsChanged:(id)arg1;
+- (void)__characteristicEventsReceived:(id)arg1;
 - (void)registerForActiveIdentifierNotifications;
 - (void)_registerForActiveIdentifierNotifications;
 - (void)_handleActiveIdentifierReadResponses:(id)arg1;
-- (void)__handleActiveIdentifierChanges:(id)arg1;
+- (void)__handleActiveIdentifierChange:(id)arg1 forCharacteristic:(id)arg2;
 - (void)acknowledgeTargetControlService:(id)arg1 active:(BOOL)arg2;
 - (void)_resetTargets;
 - (id)_dataForResetTargetsWithOutError:(id *)arg1;

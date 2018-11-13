@@ -86,6 +86,7 @@
 - (void)validateTranscription:(id)arg1 alternativeTranscriptions:(id)arg2;
 - (void)updateForPhraseRecognitionComplete:(id)arg1;
 - (id)filterAlternativeTranscriptions:(id)arg1 withValidationResult:(id)arg2 bestTranscription:(id)arg3;
+- (void)createPhraseRecognizerIfNeeded;
 - (void)showEnableAssistantConfirmationView;
 - (id)existingIdentifierFromError:(id)arg1;
 - (_Bool)dismiss;

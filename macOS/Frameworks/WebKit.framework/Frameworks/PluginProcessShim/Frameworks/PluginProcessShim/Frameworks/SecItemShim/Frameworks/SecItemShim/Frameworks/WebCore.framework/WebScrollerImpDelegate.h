@@ -30,6 +30,7 @@ __attribute__((visibility("hidden")))
 - (void)scrollerImp:(id)arg1 animateTrackAlphaTo:(double)arg2 duration:(double)arg3;
 - (void)scrollerImp:(id)arg1 animateKnobAlphaTo:(double)arg2 duration:(double)arg3;
 - (void)setUpAlphaAnimation:(RetainPtr_e7fde790 *)arg1 scrollerPainter:(id)arg2 part:(int)arg3 animateAlphaTo:(double)arg4 duration:(double)arg5;
+- (id)effectiveAppearanceForScrollerImp:(id)arg1;
 - (BOOL)shouldUseLayerPerPartForScrollerImp:(id)arg1;
 - (struct CGRect)convertRectToLayer:(struct CGRect)arg1;
 - (struct CGPoint)mouseLocationInScrollerForScrollerImp:(id)arg1;

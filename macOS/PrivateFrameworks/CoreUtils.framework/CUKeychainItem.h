@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSData, NSDictionary, NSString;
+@class NSArray, NSData, NSDictionary, NSString;
 
 @interface CUKeychainItem : NSObject
 {
@@ -17,6 +17,7 @@
     NSString *_accessGroup;
     NSString *_identifier;
     NSDictionary *_metadata;
+    NSArray *_removedMetadata;
     NSString *_name;
     NSData *_persistentRef;
     NSDictionary *_secrets;
@@ -32,6 +33,7 @@
 @property(copy, nonatomic) NSDictionary *secrets; // @synthesize secrets=_secrets;
 @property(copy, nonatomic) NSData *persistentRef; // @synthesize persistentRef=_persistentRef;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
+@property(copy, nonatomic) NSArray *removedMetadata; // @synthesize removedMetadata=_removedMetadata;
 @property(copy, nonatomic) NSDictionary *metadata; // @synthesize metadata=_metadata;
 @property(nonatomic) BOOL legacy; // @synthesize legacy=_legacy;
 @property(nonatomic) BOOL invisible; // @synthesize invisible=_invisible;

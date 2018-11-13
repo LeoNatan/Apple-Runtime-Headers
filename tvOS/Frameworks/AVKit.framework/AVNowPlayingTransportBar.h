@@ -31,6 +31,7 @@
     _AVPlayerLayerThumbnailView *_scrubPlayerView;
     UIImageView *_scrubImageView;
     AVGradientView *_gradientView;
+    _Bool _isClonedPlayerViewActive;
     _Bool _shouldFadeTimeLabels;
     UILabel *_scrubNeedleTimeLabel;
     UILabel *_elapsedTimeLabel;

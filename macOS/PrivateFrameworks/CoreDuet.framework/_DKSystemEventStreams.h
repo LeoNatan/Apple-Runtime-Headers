@@ -52,6 +52,8 @@
 + (id)deviceIsPluggedInStream;
 + (id)keybagIsLockedStream;
 + (id)deviceIsLockedStream;
++ (id)nextEventForTopOffProtectionStream;
++ (id)doNotDisturbStream;
 + (id)deviceActivityLevelStream;
 + (id)notificationUsageStream;
 + (id)appViewedInDockStream;

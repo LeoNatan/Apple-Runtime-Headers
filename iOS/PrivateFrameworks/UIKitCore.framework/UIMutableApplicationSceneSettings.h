@@ -8,7 +8,7 @@
 
 #import <UIKitCore/UIApplicationSceneSettings-Protocol.h>
 
-@class NSNumber, NSString;
+@class BSCornerRadiusConfiguration, NSNumber, NSString;
 
 @interface UIMutableApplicationSceneSettings : FBSMutableSceneSettings <UIApplicationSceneSettings>
 {
@@ -25,6 +25,7 @@
 @property(nonatomic) _Bool idleModeEnabled;
 @property(nonatomic) _Bool canShowAlerts;
 @property(nonatomic) _Bool deviceOrientationEventsEnabled;
+@property(retain, nonatomic) BSCornerRadiusConfiguration *cornerRadiusConfiguration;
 @property(nonatomic) struct UIEdgeInsets safeAreaInsetsLandscapeRight;
 @property(nonatomic) struct UIEdgeInsets safeAreaInsetsPortraitUpsideDown;
 @property(nonatomic) struct UIEdgeInsets safeAreaInsetsLandscapeLeft;

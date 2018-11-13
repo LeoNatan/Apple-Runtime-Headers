@@ -190,6 +190,8 @@ __attribute__((visibility("hidden")))
 - (void)enumerateFaultsAsyncWithBlock:(CDUnknownBlockType)arg1 batchSize:(unsigned long long)arg2;
 - (struct PQLResultSet *)documentsNotIdleEnumeratorWithDB:(id)arg1;
 - (struct PQLResultSet *)itemsWithInFlightDiffsEnumerator;
+- (BOOL)hasItems;
+- (BOOL)hasItemsWithInFlightDiffs;
 - (struct PQLResultSet *)itemsEnumeratorWithDB:(id)arg1;
 - (BOOL)existsByParentID:(id)arg1 andLogicalName:(id)arg2 db:(id)arg3;
 - (BOOL)existsByParentID:(id)arg1 andLogicalName:(id)arg2;

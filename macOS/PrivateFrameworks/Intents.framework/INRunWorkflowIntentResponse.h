@@ -8,7 +8,7 @@
 
 #import <Intents/INRunWorkflowIntentResponseExport-Protocol.h>
 
-@class INArchivedObject, NSNumber, NSString, _INPBRunWorkflowIntentResponse;
+@class INArchivedObject, NSArray, NSNumber, NSString, _INPBRunWorkflowIntentResponse;
 
 @interface INRunWorkflowIntentResponse : INIntentResponse <INRunWorkflowIntentResponseExport>
 {
@@ -24,6 +24,7 @@
 - (void)setPropertiesByName:(id)arg1;
 - (id)propertiesByName;
 - (id)_dictionaryRepresentation;
+@property(copy) NSArray *steps;
 @property(copy) NSNumber *continueRunning;
 @property(copy) NSNumber *waitingForResume;
 @property(copy) NSString *utterance;

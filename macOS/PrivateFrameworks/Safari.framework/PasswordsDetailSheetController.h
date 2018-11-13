@@ -30,10 +30,12 @@ __attribute__((visibility("hidden")))
     NSLayoutConstraint *_scrollViewHeightConstraint;
     NSImageView *_passwordReusedWarningImageView;
     ContentHuggingTextView *_passwordReusedWarningLabel;
+    NSScrollView *_passwordReusedWarningLabelEnclosingScrollView;
     NSClipView *_passwordReusedWarningLabelEnclosingClipView;
 }
 
-@property __weak NSClipView *passwordReusedWarningLabelEnclosingClipView; // @synthesize passwordReusedWarningLabelEnclosingClipView=_passwordReusedWarningLabelEnclosingClipView;
+@property(nonatomic) __weak NSClipView *passwordReusedWarningLabelEnclosingClipView; // @synthesize passwordReusedWarningLabelEnclosingClipView=_passwordReusedWarningLabelEnclosingClipView;
+@property(nonatomic) __weak NSScrollView *passwordReusedWarningLabelEnclosingScrollView; // @synthesize passwordReusedWarningLabelEnclosingScrollView=_passwordReusedWarningLabelEnclosingScrollView;
 @property ContentHuggingTextView *passwordReusedWarningLabel; // @synthesize passwordReusedWarningLabel=_passwordReusedWarningLabel;
 @property(nonatomic) __weak NSImageView *passwordReusedWarningImageView; // @synthesize passwordReusedWarningImageView=_passwordReusedWarningImageView;
 @property(nonatomic) __weak NSLayoutConstraint *scrollViewHeightConstraint; // @synthesize scrollViewHeightConstraint=_scrollViewHeightConstraint;

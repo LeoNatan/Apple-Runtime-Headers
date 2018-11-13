@@ -13,8 +13,8 @@
     id _folderProperties;
 }
 
-- (void)sendDidRemoveItemMessageToDelegateOfCameraDevice:(id)arg1;
-- (void)sendDidAddItemMessageToDelegateOfCameraDevice:(id)arg1;
+- (void)sendDidRemoveFolderItemMessageToDelegateOfCameraDevice:(id)arg1;
+- (void)sendDidAddFolderItemMessageToDelegateOfCameraDevice:(id)arg1;
 - (id)metadataIfAvailable;
 - (struct CGImage *)largeThumbnailIfAvailable;
 - (struct CGImage *)thumbnailIfAvailable;

@@ -6,9 +6,10 @@
 
 #import <Intents/NSObject-Protocol.h>
 
-@class NSString, _INPBArchivedObject, _INPBDictionary;
+@class NSArray, NSString, _INPBArchivedObject, _INPBDictionary, _INPBVoiceCommandStepInfo;
 
 @protocol _INPBRunVoiceCommandIntentResponse <NSObject>
++ (Class)stepType;
 @property(readonly, nonatomic) BOOL hasVerb;
 @property(copy, nonatomic) NSString *verb;
 @property(readonly, nonatomic) BOOL hasUnderlyingIntentTitle;
@@ -19,6 +20,8 @@
 @property(retain, nonatomic) _INPBArchivedObject *underlyingIntent;
 @property(nonatomic) BOOL hasToggleState;
 @property(nonatomic) int toggleState;
+@property(readonly, nonatomic) unsigned long long stepsCount;
+@property(copy, nonatomic) NSArray *steps;
 @property(readonly, nonatomic) BOOL hasResponseTemplate;
 @property(copy, nonatomic) NSString *responseTemplate;
 @property(readonly, nonatomic) BOOL hasParameters;
@@ -37,6 +40,9 @@
 @property(copy, nonatomic) NSString *appBundleId;
 - (int)StringAsToggleState:(NSString *)arg1;
 - (NSString *)toggleStateAsString:(int)arg1;
+- (_INPBVoiceCommandStepInfo *)stepAtIndex:(unsigned long long)arg1;
+- (void)addStep:(_INPBVoiceCommandStepInfo *)arg1;
+- (void)clearSteps;
 - (int)StringAsIntentCategory:(NSString *)arg1;
 - (NSString *)intentCategoryAsString:(int)arg1;
 @end

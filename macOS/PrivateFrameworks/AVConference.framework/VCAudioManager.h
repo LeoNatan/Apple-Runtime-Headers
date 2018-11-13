@@ -43,6 +43,7 @@ __attribute__((visibility("hidden")))
     BOOL _isSuspended;
     struct _VCAudioIOControllerIOState _sinkData;
     struct _VCAudioIOControllerIOState _sourceData;
+    struct opaqueVCAudioLimiter *_audioLimiter;
 }
 
 + (id)sharedInstance;

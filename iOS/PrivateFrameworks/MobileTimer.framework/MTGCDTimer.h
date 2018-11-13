@@ -6,11 +6,13 @@
 
 #import <objc/NSObject.h>
 
+@class MTPowerAssertion;
 @protocol OS_dispatch_source;
 
 @interface MTGCDTimer : NSObject
 {
     NSObject<OS_dispatch_source> *_timer;
+    MTPowerAssertion *_powerAssertion;
 }
 
 - (void).cxx_destruct;

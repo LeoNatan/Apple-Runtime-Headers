@@ -565,6 +565,7 @@ __attribute__((visibility("hidden")))
 - (id)scanElementForMarkerSearch;
 - (BOOL)isSecurityAgentApplication;
 - (BOOL)isSetupAssistantApplication;
+- (BOOL)isProToolsApplication;
 - (BOOL)isSpotlightApplication;
 - (BOOL)isSystemApplication;
 - (BOOL)isSystemPreferencesApplication;

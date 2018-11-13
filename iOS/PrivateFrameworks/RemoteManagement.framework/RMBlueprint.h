@@ -8,11 +8,10 @@
 
 #import <RemoteManagement/RMUniquelySerializableManagedObject-Protocol.h>
 
-@class NSData, NSDate, NSSet, NSString, RMBlueprintSchedule, RMBlueprintUsageLimit, RMCoreOrganization, RMVersionVector;
+@class NSData, NSDate, NSSet, NSString, RMBlueprintSchedule, RMBlueprintUsageLimit, RMCoreOrganization;
 
 @interface RMBlueprint : RMUniquedManagedObject <RMUniquelySerializableManagedObject>
 {
-    RMVersionVector *_cachedVersionVector;
 }
 
 + (id)fetchOrCreateWithDictionaryRepresentation:(id)arg1 inContext:(id)arg2 error:(id *)arg3;
@@ -24,17 +23,13 @@
 + (id)fetchRequestMatchingBlueprintsForUserWithDSID:(id)arg1 ofType:(id)arg2;
 + (id)fetchRequestMatchingBlueprintsForUserWithDSID:(id)arg1;
 + (id)fetchRequestMatchingExpiredBlueprints;
-- (void).cxx_destruct;
 - (void)delete;
 - (id)dictionaryRepresentation;
 - (_Bool)updateWithDictionaryRepresentation:(id)arg1;
 - (id)computeUniqueIdentifier;
 - (void)didChangeValueForKey:(id)arg1;
 - (id)declarationsWithError:(id *)arg1;
-@property(readonly, copy, nonatomic) NSData *unmodeled_versionVector;
-@property(copy, nonatomic) RMVersionVector *versionVector; // @dynamic versionVector;
 - (void)tombstone;
-- (void)awakeFromInsert;
 
 // Remaining properties
 @property(retain, nonatomic) NSSet *configurations; // @dynamic configurations;
@@ -53,6 +48,7 @@
 @property(copy, nonatomic) NSString *type; // @dynamic type;
 @property(retain, nonatomic) RMBlueprintUsageLimit *usageLimit; // @dynamic usageLimit;
 @property(retain, nonatomic) NSSet *users; // @dynamic users;
+@property(copy, nonatomic) NSData *versionVector; // @dynamic versionVector;
 
 @end
 

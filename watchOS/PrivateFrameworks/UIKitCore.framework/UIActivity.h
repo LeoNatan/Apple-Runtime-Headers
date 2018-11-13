@@ -71,6 +71,8 @@
 @property(readonly, nonatomic) NSString *activityTitle;
 @property(readonly, nonatomic) NSString *activityType;
 - (id)init;
+- (_Bool)_isExecutedInProcess;
+- (void)_injectedJavaScriptResult:(id)arg1;
 - (struct CGSize)_thumbnailSize;
 - (_Bool)_dismissActivityFromViewController:(id)arg1 animated:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 - (_Bool)_presentActivityOnViewController:(id)arg1 animated:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
@@ -83,8 +85,6 @@
 - (id)_activityBundleImageConfiguration;
 - (id)_bundleIdentifierForActivityImageCreation;
 @property(readonly, nonatomic) NSExtension *applicationExtension;
-- (_Bool)_isExecutedInProcess;
-- (void)_injectedJavaScriptResult:(id)arg1;
 - (id)_encodableActivitySettingsImageConfiguration;
 - (id)_encodableActivityImageConfiguration;
 

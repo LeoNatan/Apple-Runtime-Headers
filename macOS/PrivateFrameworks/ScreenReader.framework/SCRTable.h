@@ -156,7 +156,7 @@ __attribute__((visibility("hidden")))
 - (struct SCRDataCell)_cellToTheLeftOfCell:(struct SCRDataCell)arg1 needToWrap:(char *)arg2;
 - (struct SCRDataCell)_cellToTheRightOfCell:(struct SCRDataCell *)arg1 needToWrap:(char *)arg2;
 - (struct SCRDataCell)_cellAtStartOfColSpanForCell:(struct SCRDataCell)arg1;
-- (BOOL)_updateRequest:(id)arg1 forDirection:(long long)arg2 toCell:(struct SCRDataCell *)arg3 allowFullWrapping:(BOOL)arg4 didWrap:(BOOL)arg5 event:(id)arg6;
+- (BOOL)_updateRequest:(id)arg1 forDirection:(long long)arg2 toCell:(struct SCRDataCell *)arg3 allowFullWrapping:(BOOL)arg4 didWrapRowOrCol:(BOOL)arg5 didWrapAround:(BOOL)arg6 event:(id)arg7;
 - (void)handleBoundaryWithDirection:(long long)arg1 cell:(struct SCRDataCell)arg2 outputRequest:(id)arg3 event:(id)arg4;
 - (void)_delayedAddSelectedRowDescription;
 - (void)_delayedAddItemDescription;

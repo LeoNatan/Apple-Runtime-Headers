@@ -6,9 +6,10 @@
 
 #import <Intents/NSObject-Protocol.h>
 
-@class NSString, _INPBArchivedObject;
+@class NSArray, NSString, _INPBArchivedObject, _INPBVoiceCommandStepInfo;
 
 @protocol _INPBRunWorkflowIntentResponse <NSObject>
++ (Class)stepType;
 @property(nonatomic) _Bool hasWaitingForResume;
 @property(nonatomic) _Bool waitingForResume;
 @property(readonly, nonatomic) _Bool hasUtterance;
@@ -17,7 +18,12 @@
 @property(retain, nonatomic) _INPBArchivedObject *underlyingIntentResponse;
 @property(readonly, nonatomic) _Bool hasUnderlyingIntent;
 @property(retain, nonatomic) _INPBArchivedObject *underlyingIntent;
+@property(readonly, nonatomic) unsigned int stepsCount;
+@property(copy, nonatomic) NSArray *steps;
 @property(nonatomic) _Bool hasContinueRunning;
 @property(nonatomic) _Bool continueRunning;
+- (_INPBVoiceCommandStepInfo *)stepAtIndex:(unsigned int)arg1;
+- (void)addStep:(_INPBVoiceCommandStepInfo *)arg1;
+- (void)clearSteps;
 @end
 

@@ -24,6 +24,7 @@
 @property(retain, nonatomic) PSUICellularPlanUniversalReference *planReference; // @synthesize planReference=_planReference;
 - (void).cxx_destruct;
 - (void)removeCellularPlanConfirmed:(id)arg1;
+- (void)removeCellularPlan:(id)arg1;
 - (void)alignLeft;
 - (id)initWithPlanUniversalReference:(id)arg1 cellularPlanManager:(id)arg2 planManagerCache:(id)arg3 hostController:(id)arg4 popViewControllerOnPlanDeletion:(_Bool)arg5;
 

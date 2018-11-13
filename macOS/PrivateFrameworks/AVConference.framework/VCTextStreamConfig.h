@@ -11,8 +11,10 @@ __attribute__((visibility("hidden")))
 {
     unsigned char _numRedundantPayloads;
     BOOL _redEnabled;
+    float _txIntervalMin;
 }
 
+@property(nonatomic) float txIntervalMin; // @synthesize txIntervalMin=_txIntervalMin;
 @property(nonatomic) unsigned char numRedundantPayloads; // @synthesize numRedundantPayloads=_numRedundantPayloads;
 @property(readonly, nonatomic, getter=isRedEnabled) BOOL redEnabled; // @synthesize redEnabled=_redEnabled;
 - (BOOL)setupCodecWithClientDictionary:(id)arg1;

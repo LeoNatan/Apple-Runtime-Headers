@@ -15,10 +15,15 @@
 }
 
 - (void)carrierBundleChange:(id)arg1;
+- (id)objectForDomain:(id)arg1 key:(id)arg2 subscription:(id)arg3 error:(id *)arg4;
+- (id)objectForDomain:(id)arg1 key:(id)arg2 subscription:(id)arg3;
 - (id)objectForKey:(id)arg1 subscription:(id)arg2 error:(id *)arg3;
 - (id)objectForKey:(id)arg1 subscription:(id)arg2;
-- (_Bool)supportsPasswordChangeForSubscription:(id)arg1;
-- (_Bool)supportsPasswordChangeForDefaultSubscription;
+- (_Bool)isServiceSupportedForSubscription:(id)arg1;
+- (_Bool)isPasswordChangeSupportedForSubscription:(id)arg1;
+- (_Bool)isPasswordChangeSupportedForDefaultSubscription;
+- (double)maximumGreetingDurationForSubscription:(id)arg1;
+- (_Bool)isGreetingChangeSupportedForSubscription:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -52,7 +52,9 @@
 - (void)_notifyObserversWithBlock:(CDUnknownBlockType)arg1;
 - (void)notifyObserversWithBlock:(CDUnknownBlockType)arg1;
 - (void)registerObserver:(id)arg1;
+- (id)userDefinedSleepWindowForAlarm:(id)arg1 now:(id)arg2 inSleepWindow:(_Bool *)arg3;
 - (id)userDefinedSleepWindowForAlarm:(id)arg1 now:(id)arg2;
+- (id)userDefinedSleepWindowForAlarm:(id)arg1 inSleepWindow:(_Bool *)arg2;
 - (id)userDefinedSleepWindowForAlarm:(id)arg1;
 - (id)userDefinedSleepWindow;
 - (_Bool)inUserDefinedSleepWindowForAlarm:(id)arg1;

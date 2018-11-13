@@ -27,8 +27,8 @@
     long long _handleType;
     NSUUID *_localParticipantUUID;
     NSUUID *_outgoingLocalParticipantUUID;
-    CHHandle *_localParticipantHandle;
     NSSet *_remoteParticipantHandles;
+    CHHandle *_localParticipantHandle;
     NSString *_uniqueId;
     NSString *_serviceProvider;
     NSNumber *_bytesOfDataUsed;
@@ -112,7 +112,6 @@
 @property(copy, nonatomic) NSString *serviceProvider; // @synthesize serviceProvider=_serviceProvider;
 @property(nonatomic) unsigned int callStatus; // @synthesize callStatus=_callStatus;
 @property(copy, nonatomic) NSString *uniqueId; // @synthesize uniqueId=_uniqueId;
-@property(copy, nonatomic) NSSet *remoteParticipantHandles; // @synthesize remoteParticipantHandles=_remoteParticipantHandles;
 @property(retain, nonatomic) CHHandle *localParticipantHandle; // @synthesize localParticipantHandle=_localParticipantHandle;
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
@@ -146,6 +145,7 @@
 - (void)fetchAndSetFullContactSync;
 - (void)fetchAndSetContactIdentifierSync;
 @property(nonatomic) BOOL read; // @synthesize read=_read;
+@property(copy, nonatomic) NSSet *remoteParticipantHandles; // @synthesize remoteParticipantHandles=_remoteParticipantHandles;
 @property(retain, nonatomic) NSUUID *outgoingLocalParticipantUUID; // @synthesize outgoingLocalParticipantUUID=_outgoingLocalParticipantUUID;
 @property(retain, nonatomic) NSUUID *localParticipantUUID; // @synthesize localParticipantUUID=_localParticipantUUID;
 - (void)createOccurrenceArraySync;

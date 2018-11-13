@@ -33,7 +33,7 @@
 + (id)signatureRectangular:(id)arg1;
 + (id)_signatureCornerImageProvider;
 + (id)signatureCorner:(id)arg1;
-+ (id)_signatureCircularCalendarProvider;
++ (id)_signatureCircularCalendarProvider:(id)arg1;
 + (id)signatureCircular:(id)arg1;
 + (id)signatureBezel:(id)arg1;
 + (id)extraLarge:(id)arg1;

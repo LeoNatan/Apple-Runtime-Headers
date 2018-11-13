@@ -30,7 +30,7 @@
 - (void)deleteVoiceShortcutWithIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)updateVoiceShortcutWithIdentifier:(id)arg1 phrase:(id)arg2 workflow:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)createVoiceShortcutWithWorkflow:(id)arg1 phrase:(id)arg2 completion:(CDUnknownBlockType)arg3;
-- (void)scheduleVocabularySyncToServer:(CDUnknownBlockType)arg1;
+- (void)requestDataMigration:(CDUnknownBlockType)arg1;
 - (void)validateVoiceShortcutPhrases:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)getVoiceShortcutsForAppWithBundleIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)getVoiceShortcutsWithCompletion:(CDUnknownBlockType)arg1;

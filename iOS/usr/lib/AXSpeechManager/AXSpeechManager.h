@@ -68,6 +68,7 @@
 - (void)_startNextSpeechJob;
 - (id)_phonemeSubstitutionsForAction:(id)arg1;
 - (id)voiceIdentifierUsedForLanguage:(id)arg1;
+- (id)externalVoiceIdentifierUsedForLanguage:(id)arg1;
 - (void)_speechJobFinished:(_Bool)arg1 action:(id)arg2;
 - (void)_updateUserSubstitutions;
 - (void)_initialize;

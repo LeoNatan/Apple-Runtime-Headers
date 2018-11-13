@@ -9,7 +9,7 @@
 #import <AVKit/AVPictureInPictureViewControllerDelegate-Protocol.h>
 #import <AVKit/PGPictureInPictureProxyDelegate-Protocol.h>
 
-@class AVObservationController, AVPictureInPictureViewController, AVPlayerController, AVPlayerLayer, NSString, PGPictureInPictureProxy, __AVPlayerLayerView;
+@class AVObservationController, AVPictureInPictureViewController, AVPlayerController, AVPlayerLayer, AVSecondScreenConnection, NSString, PGPictureInPictureProxy, __AVPlayerLayerView;
 @protocol AVPictureInPictureControllerDelegate, OS_dispatch_source;
 
 @interface AVPictureInPictureController : NSObject <AVPictureInPictureViewControllerDelegate, PGPictureInPictureProxyDelegate>
@@ -19,6 +19,7 @@
     AVPlayerLayer *_playerLayer;
     __AVPlayerLayerView *_playerLayerView;
     AVPlayerController *_playerController;
+    AVSecondScreenConnection *_secondScreenConnection;
     PGPictureInPictureProxy *_pictureInPictureProxy;
     AVPictureInPictureViewController *_pictureInPictureViewController;
     NSObject<OS_dispatch_source> *_fullScreenCheckTimer;

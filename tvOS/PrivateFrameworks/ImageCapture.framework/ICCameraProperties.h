@@ -7,7 +7,7 @@
 #import <objc/NSObject.h>
 
 @class NSMutableArray, NSMutableIndexSet, NSMutableOrderedSet, NSNumber, NSString;
-@protocol OS_dispatch_queue, OS_dispatch_semaphore;
+@protocol OS_dispatch_queue;
 
 __attribute__((visibility("hidden")))
 @interface ICCameraProperties : NSObject
@@ -30,12 +30,6 @@ __attribute__((visibility("hidden")))
     unsigned long long _numberOfDownloadableItems;
     _Bool _contentReceived;
     double _downloadCancelTimestamp;
-    NSObject<OS_dispatch_queue> *_thumbnailFetchQ;
-    NSObject<OS_dispatch_queue> *_metadataFetchQ;
-    NSObject<OS_dispatch_queue> *_downloadQ;
-    NSObject<OS_dispatch_queue> *_generalQ;
-    NSObject<OS_dispatch_queue> *_enumerationQ;
-    NSObject<OS_dispatch_semaphore> *_deviceQSemaphore;
     NSMutableArray *_originalMediaFiles;
     NSMutableArray *_convertedMediaFiles;
     NSMutableArray *_universalMediaFiles;
@@ -50,6 +44,8 @@ __attribute__((visibility("hidden")))
     long long _appleRelatedUUIDSupport;
     long long _enumerationOrder;
     unsigned int _deviceFailureCount;
+    NSObject<OS_dispatch_queue> *_deviceNotificationQueue;
+    NSObject<OS_dispatch_queue> *_deviceCommandQueue;
     unsigned long long _mediaPresentation;
     NSMutableOrderedSet *_indexedCameraFileUUIDs;
     NSMutableOrderedSet *_indexedCameraFileDates;
@@ -72,12 +68,8 @@ __attribute__((visibility("hidden")))
 @property _Bool iCloudPhotosEnabled; // @synthesize iCloudPhotosEnabled=_iCloudPhotosEnabled;
 @property(retain) NSMutableIndexSet *enumeratedObjectIndexes; // @synthesize enumeratedObjectIndexes=_enumeratedObjectIndexes;
 @property _Bool accessRestrictedAppleDevice; // @synthesize accessRestrictedAppleDevice=_accessRestrictedAppleDevice;
-@property(retain, nonatomic) NSObject<OS_dispatch_semaphore> *deviceQSemaphore; // @synthesize deviceQSemaphore=_deviceQSemaphore;
-@property(retain, nonatomic) NSObject<OS_dispatch_queue> *enumerationQ; // @synthesize enumerationQ=_enumerationQ;
-@property(retain, nonatomic) NSObject<OS_dispatch_queue> *generalQ; // @synthesize generalQ=_generalQ;
-@property(retain, nonatomic) NSObject<OS_dispatch_queue> *downloadQ; // @synthesize downloadQ=_downloadQ;
-@property(retain, nonatomic) NSObject<OS_dispatch_queue> *metadataFetchQ; // @synthesize metadataFetchQ=_metadataFetchQ;
-@property(retain, nonatomic) NSObject<OS_dispatch_queue> *thumbnailFetchQ; // @synthesize thumbnailFetchQ=_thumbnailFetchQ;
+@property(retain, nonatomic) NSObject<OS_dispatch_queue> *deviceCommandQueue; // @synthesize deviceCommandQueue=_deviceCommandQueue;
+@property(retain, nonatomic) NSObject<OS_dispatch_queue> *deviceNotificationQueue; // @synthesize deviceNotificationQueue=_deviceNotificationQueue;
 @property double downloadCancelTimestamp; // @synthesize downloadCancelTimestamp=_downloadCancelTimestamp;
 @property _Bool contentReceived; // @synthesize contentReceived=_contentReceived;
 @property unsigned long long numberOfDownloadableItems; // @synthesize numberOfDownloadableItems=_numberOfDownloadableItems;

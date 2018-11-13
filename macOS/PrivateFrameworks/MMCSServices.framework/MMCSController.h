@@ -41,6 +41,7 @@
 - (id)getContentHeadersAsString;
 - (id)parseContentHeaderAsDictionary:(id)arg1 treatValuesAsArrays:(BOOL)arg2;
 - (void)cancelPutRequestID:(id)arg1;
+- (void)_cancelRequest:(id)arg1;
 - (void)removeRequestorContext:(id)arg1 transferID:(id)arg2;
 - (void)addRequestorContext:(id)arg1 transferID:(id)arg2;
 - (void)putFiles:(id)arg1 requestURL:(id)arg2 requestorID:(id)arg3 transferID:(id)arg4 authToken:(id)arg5 preauthenticate:(BOOL)arg6 completionBlock:(CDUnknownBlockType)arg7;

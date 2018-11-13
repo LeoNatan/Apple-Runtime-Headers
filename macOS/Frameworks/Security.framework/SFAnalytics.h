@@ -38,6 +38,7 @@
 - (id)eventDictForEventName:(id)arg1 withAttributes:(id)arg2 eventClass:(long long)arg3;
 - (void)logEventNamed:(id)arg1 class:(long long)arg2 attributes:(id)arg3;
 - (void)noteEventNamed:(id)arg1;
+- (void)logResultForEvent:(id)arg1 hardFailure:(_Bool)arg2 result:(id)arg3 withAttributes:(id)arg4;
 - (void)logResultForEvent:(id)arg1 hardFailure:(_Bool)arg2 result:(id)arg3;
 - (void)logSoftFailureForEventNamed:(id)arg1 withAttributes:(id)arg2;
 - (void)logHardFailureForEventNamed:(id)arg1 withAttributes:(id)arg2;

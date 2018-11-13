@@ -177,9 +177,9 @@
 - (void)_didRotate:(id)arg1;
 @property(nonatomic) _Bool keyboardDisplayRequiresUserAction;
 - (_Bool)isElementAccessibilityExposedToInterfaceBuilder;
+- (Class)_printFormatterClass;
 - (void)decodeRestorableStateWithCoder:(id)arg1;
 - (void)encodeRestorableStateWithCoder:(id)arg1;
-- (Class)_printFormatterClass;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

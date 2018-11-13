@@ -99,6 +99,10 @@ struct DSPSplitComplex {
 
 struct Frame;
 
+struct NSString {
+    Class _field1;
+};
+
 struct OWRDList {
     double time[100];
     double owrd[100];
@@ -415,6 +419,7 @@ struct _VCTextTransmitterConfiguration {
     unsigned int sampleRate;
     char isRedEnabled;
     unsigned int numRedundantPayloads;
+    float txIntervalMin;
 };
 
 struct _VCVideoFormat {
@@ -1048,8 +1053,8 @@ struct tagVCVideoReceiverStreamConfig {
     unsigned short _field3;
     _Bool _field4;
     unsigned int _field5;
-    unsigned int _field6[4];
-    unsigned int _field7[4];
+    unsigned short _field6[4];
+    unsigned short _field7[4];
     unsigned short _field8;
 };
 

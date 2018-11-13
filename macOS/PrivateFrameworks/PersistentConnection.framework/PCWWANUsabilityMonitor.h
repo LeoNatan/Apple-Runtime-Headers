@@ -10,7 +10,7 @@
 #import <PersistentConnection/PCInterfaceUsabilityMonitorDelegate-Protocol.h>
 #import <PersistentConnection/PCInterfaceUsabilityMonitorProtocol-Protocol.h>
 
-@class CUTWeakReference, CoreTelephonyClient, NSString, PCInterfaceUsabilityMonitor;
+@class CTXPCServiceSubscriptionContext, CUTWeakReference, CoreTelephonyClient, NSString, PCInterfaceUsabilityMonitor;
 @protocol OS_dispatch_queue, PCInterfaceUsabilityMonitorDelegate;
 
 @interface PCWWANUsabilityMonitor : NSObject <CoreTelephonyClientDataDelegate, PCInterfaceUsabilityMonitorProtocol, PCInterfaceUsabilityMonitorDelegate>
@@ -31,6 +31,7 @@
     CoreTelephonyClient *_ctClient;
     int _wwanContextID;
     NSObject<OS_dispatch_queue> *_ctServerQueue;
+    CTXPCServiceSubscriptionContext *_currentDataSimContext;
 }
 
 - (void).cxx_destruct;
@@ -54,10 +55,11 @@
 - (void)_forwardConfigurationOnIvarQueue;
 @property(readonly, nonatomic) struct __CFString *wwanInterfaceName;
 @property(readonly, nonatomic) int currentRAT; // @synthesize currentRAT=_currentRAT;
+- (id)_currentDataSimContext;
 @property(readonly, nonatomic) NSString *networkCode;
 @property(readonly, nonatomic) BOOL isLTEWithCDRX;
-- (void)_adjustInterfaceNameForWWANContextID:(int)arg1 interfaceName:(id)arg2;
-- (id)_dataPreferredSubcriptionContext;
+- (BOOL)_isCurrentDataSimContextOnIvarQueue:(id)arg1;
+- (void)_adjustInterfaceNameForWWANContextID:(int)arg1 interfaceName:(id)arg2 forContext:(id)arg3;
 - (void)_setupWWANMonitor;
 - (void)dealloc;
 - (id)initWithDelegateQueue:(id)arg1;

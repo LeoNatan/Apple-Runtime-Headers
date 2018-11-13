@@ -37,7 +37,9 @@ __attribute__((visibility("hidden")))
 - (void)setupTextTransmitter;
 - (void)onCallIDChanged;
 - (id)supportedPayloads;
+- (void)didReceiveText:(struct NSString *)arg1;
 - (void)didReceiveCharacter:(unsigned short)arg1;
+- (void)sendText:(struct NSString *)arg1;
 - (void)sendCharacter:(unsigned short)arg1;
 @property(nonatomic) id <VCTextReceiverDelegate> receiveDelegate;
 - (void)dealloc;

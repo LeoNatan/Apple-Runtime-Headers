@@ -18,6 +18,9 @@
 
 - (CDUnknownBlockType).cxx_destruct;
 - (id)init;
+- (void)updateConstraintsWith:(id)arg1 controlsViewController:(id)arg2 effectsView:(id)arg3 effectsBrowserViewController:(id)arg4;
+- (void)removeEffectsConstraints;
+- (void)updateFor:(struct CGRect)arg1 deviceOrientation:(long long)arg2;
 @property(nonatomic) long long inCallControlsState; // @synthesize inCallControlsState;
 @property(nonatomic) long long localParticipantState; // @synthesize localParticipantState;
 

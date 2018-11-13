@@ -15,6 +15,7 @@
 
 + (id)realTimeContext;
 - (void).cxx_destruct;
+- (void)osChannelInfoLog;
 - (void)optoutStreamIDs:(id)arg1;
 - (void)optinStreamIDs:(id)arg1;
 - (unsigned short)generateMetadata:(char *)arg1 maxSize:(unsigned long long)arg2 withDatagramInfo:(CDStruct_54fea20c)arg3 options:(CDStruct_920a6c75 *)arg4 currentDatagramCount:(unsigned char)arg5 totalDatagramCount:(unsigned char)arg6;

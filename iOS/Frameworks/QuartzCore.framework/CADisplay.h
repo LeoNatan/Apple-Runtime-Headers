@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class CADisplayAttributes, CADisplayMode, NSArray, NSString;
+@class CADisplayAttributes, CADisplayMode, CADisplayPreferences, NSArray, NSString;
 
 @interface CADisplay : NSObject
 {
@@ -17,6 +17,11 @@
 + (id)TVOutDisplay;
 + (id)mainDisplay;
 + (id)displays;
+- (id)allowedHDRModes;
+- (id)preferredHDRModes;
+- (id)supportedHDRModes;
+- (id)preferredModeWithCriteria:(id)arg1;
+@property(copy, nonatomic) CADisplayPreferences *preferences;
 @property(readonly, nonatomic) int linkQuality;
 @property(readonly, nonatomic) CADisplayAttributes *externalDisplayAttributes;
 - (id)description;
@@ -44,6 +49,7 @@
 @property(readonly, nonatomic) CADisplayMode *preferredMode;
 @property(retain, nonatomic) CADisplayMode *currentMode;
 @property(readonly, nonatomic) NSArray *availableModes;
+@property(readonly, nonatomic) NSString *productName;
 @property(readonly, nonatomic) NSString *uniqueId;
 @property(readonly, nonatomic) unsigned int connectionSeed;
 @property(readonly, nonatomic) unsigned int seed;

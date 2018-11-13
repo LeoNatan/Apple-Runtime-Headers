@@ -18,7 +18,7 @@
 - (void)_registerUnlockHandler;
 - (void)_openDbIfUnlocked;
 - (void)storeLogEntryForPlan:(struct NSString *)arg1 model:(id)arg2 serverIteration:(unsigned long long)arg3 timestamp:(double)arg4;
-- (void)loadSessionsForModel:(id)arg1 since:(double)arg2 limit:(unsigned long long)arg3 onlyAppleInternal:(BOOL)arg4 positiveLabel:(unsigned long long)arg5 skew:(double)arg6 ignoreIfSingular:(BOOL)arg7 block:(CDUnknownBlockType)arg8;
+- (void)loadSessionsForModel:(id)arg1 excludeItemIdsUsedWithin:(double)arg2 limit:(unsigned long long)arg3 onlyAppleInternal:(BOOL)arg4 positiveLabel:(unsigned long long)arg5 skew:(double)arg6 ignoreIfSingular:(BOOL)arg7 block:(CDUnknownBlockType)arg8;
 - (id)initWithSessionBatch:(id)arg1;
 
 @end

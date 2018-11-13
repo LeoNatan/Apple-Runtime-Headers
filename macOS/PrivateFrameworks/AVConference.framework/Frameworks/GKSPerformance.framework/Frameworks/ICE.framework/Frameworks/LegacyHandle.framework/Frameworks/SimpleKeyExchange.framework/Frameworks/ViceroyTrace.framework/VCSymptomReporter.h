@@ -17,7 +17,7 @@ __attribute__((visibility("hidden")))
     NSObject<OS_os_log> *_osLogNetworkingHandle;
     NSObject<OS_dispatch_queue> *_reportingQueue;
     CDUnknownFunctionPointerType _symptomReporterCallback;
-    void *_symptomReporterContext;
+    id _symptomReporterContext;
 }
 
 @property(copy, nonatomic) NSString *loggingDirectory; // @synthesize loggingDirectory=_loggingDirectory;
@@ -29,7 +29,6 @@ __attribute__((visibility("hidden")))
 - (int)reportMediaQueueFlushingTooFrequent;
 - (int)reportMediaQueueOvershoot;
 - (int)reportKeyFrameNotSpreading;
-- (int)reportReceiveMKIDuplicateKeys;
 - (int)reportUnexpectedLowTargetBitrate;
 - (int)reportTargetBitrateOvershoot;
 - (int)reportMediaQueuePoolEmpty;

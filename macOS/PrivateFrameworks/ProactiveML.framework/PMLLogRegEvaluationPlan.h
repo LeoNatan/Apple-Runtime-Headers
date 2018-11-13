@@ -43,7 +43,7 @@
 - (id)runWhile:(CDUnknownBlockType)arg1 didFinish:(char *)arg2;
 @property(readonly, copy) NSString *description;
 - (id)normalizeRegressor:(id)arg1;
-- (void)loadSessionsSince:(double)arg1 block:(CDUnknownBlockType)arg2;
+- (void)loadSessionsWithBlock:(CDUnknownBlockType)arg1;
 - (id)run;
 - (id)initWithStore:(id)arg1 tracker:(id)arg2 planId:(struct NSString *)arg3 isSynchronous:(BOOL)arg4 sessionDescriptor:(id)arg5 maxSessionsLimit:(unsigned long long)arg6 sessionsInBatch:(unsigned long long)arg7 currentModelWeights:(id)arg8 intercept:(BOOL)arg9 skew:(double)arg10 threshold:(double)arg11 isMultiLabel:(BOOL)arg12 positiveLabel:(unsigned long long)arg13 evaluationLevel:(unsigned long long)arg14;
 - (id)init;

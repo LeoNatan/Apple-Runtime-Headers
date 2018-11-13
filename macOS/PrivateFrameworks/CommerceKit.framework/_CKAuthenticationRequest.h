@@ -17,14 +17,13 @@
     NSDictionary *_arguments;
 }
 
-+ (BOOL)_isSetupRunning;
 @property(copy) NSDictionary *arguments; // @synthesize arguments=_arguments;
 @property BOOL createSession; // @synthesize createSession=_createSession;
 @property(readonly) NSString *password; // @synthesize password=_password;
 @property(readonly) NSString *username; // @synthesize username=_username;
 @property(readonly) CKStoreClient *storeClient; // @synthesize storeClient=_storeClient;
 - (void).cxx_destruct;
-- (void)_postFollowUpForDeviceOffersWithAccount:(id)arg1;
+- (id)_createBasicACAccountFromStoreAccount:(id)arg1;
 - (void)runAsyncWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (id)initWithStoreClient:(id)arg1 username:(id)arg2 password:(id)arg3;
 

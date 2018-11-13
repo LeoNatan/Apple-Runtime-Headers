@@ -15,7 +15,7 @@
 - (void)getShortcutSuggestionsForAllAppsWithLimit:(unsigned long long)arg1 completion:(void (^)(NSDictionary *, NSError *))arg2;
 - (void)getShortcutSuggestionsForAppWithBundleIdentifier:(NSString *)arg1 completion:(void (^)(NSArray *, NSError *))arg2;
 - (void)setShortcutSuggestions:(NSArray *)arg1 forAppWithBundleIdentifier:(NSString *)arg2;
-- (void)scheduleVocabularySyncToServer:(void (^)(_Bool, NSError *))arg1;
+- (void)requestDataMigration:(void (^)(_Bool, NSError *))arg1;
 - (void)requestSyncForServiceClassName:(NSString *)arg1 forceReset:(_Bool)arg2 completion:(void (^)(_Bool, NSError *))arg3;
 - (void)validateVoiceShortcutPhrases:(NSArray *)arg1 completion:(void (^)(NSArray *, NSError *))arg2;
 - (void)deleteVoiceShortcutWithIdentifier:(NSString *)arg1 completion:(void (^)(_Bool, NSError *))arg2;

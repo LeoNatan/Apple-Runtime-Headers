@@ -23,7 +23,10 @@
 - (void)vcMediaStream:(id <VCMediaStreamProtocol>)arg1 didUpdateVideoConfiguration:(BOOL)arg2 error:(NSError *)arg3 dictionary:(NSDictionary *)arg4;
 - (void)vcMediaStream:(id <VCMediaStreamProtocol>)arg1 uplinkQualityDidChange:(NSDictionary *)arg2;
 - (void)vcMediaStream:(id <VCMediaStreamProtocol>)arg1 downlinkQualityDidChange:(NSDictionary *)arg2;
+- (void)vcMediaStream:(id <VCMediaStreamProtocol>)arg1 didReceiveText:(struct NSString *)arg2;
 - (void)vcMediaStream:(id <VCMediaStreamProtocol>)arg1 didReceiveTTYCharacter:(unsigned short)arg2;
+- (void)vcMediaStreamDidInterruptionEnd:(id <VCMediaStreamProtocol>)arg1;
+- (void)vcMediaStreamDidInterruptionBegin:(id <VCMediaStreamProtocol>)arg1;
 - (void)vcMediaStream:(id <VCMediaStreamProtocol>)arg1 remoteMediaStalled:(BOOL)arg2;
 - (void)vcMediaStream:(id <VCMediaStreamProtocol>)arg1 didSwitchToAudioStreamWithID:(unsigned short)arg2;
 - (void)vcMediaStream:(id <VCMediaStreamProtocol>)arg1 updateFrequencyLevel:(NSData *)arg2 isInputMeter:(BOOL)arg3;

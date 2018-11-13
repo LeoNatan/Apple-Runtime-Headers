@@ -6,13 +6,20 @@
 
 #import <AddressBook/ABCollectionAbstractAction.h>
 
+@protocol ABRTTServices;
+
 @interface ABCollectionTTYAction : ABCollectionAbstractAction
 {
+    id <ABRTTServices> _ttyServices;
 }
 
+@property(readonly, nonatomic) id <ABRTTServices> ttyServices; // @synthesize ttyServices=_ttyServices;
+- (void).cxx_destruct;
 - (id)contactInCollectionViewItem:(id)arg1;
 - (void)executeWithTarget:(id)arg1;
 - (BOOL)validateWithTarget:(id)arg1;
+- (id)initWithTTYServices:(id)arg1;
+- (id)init;
 
 @end
 

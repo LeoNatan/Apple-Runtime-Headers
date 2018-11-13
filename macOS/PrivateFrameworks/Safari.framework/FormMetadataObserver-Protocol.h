@@ -14,6 +14,7 @@
 - (void)addressBookAutoFillableFieldBlurredInFrame:(_WKFrameHandle *)arg1 textFieldMetadata:(WBSFormControlMetadata *)arg2;
 - (void)addressBookAutoFillableFieldFocused:(NSString *)arg1 textFieldMetadata:(WBSFormControlMetadata *)arg2 formMetadata:(WBSFormMetadata *)arg3 inFrame:(_WKFrameHandle *)arg4;
 - (void)autoFilledFormWithMetadata:(WBSFormMetadata *)arg1 inFrame:(_WKFrameHandle *)arg2;
+- (void)sensitiveFieldFocusedInFrame:(_WKFrameHandle *)arg1;
 - (void)usernameFieldBlurredInFrame:(_WKFrameHandle *)arg1 formMetadata:(WBSFormMetadata *)arg2 usernameFieldMetadata:(WBSFormControlMetadata *)arg3;
 - (void)usernameFieldFocusedInFrame:(_WKFrameHandle *)arg1 formMetadata:(WBSFormMetadata *)arg2 usernameFieldMetadata:(WBSFormControlMetadata *)arg3;
 - (void)creditCardFieldBlurredInFrame:(_WKFrameHandle *)arg1 formMetadata:(WBSFormMetadata *)arg2 creditCardFieldMetadata:(WBSFormControlMetadata *)arg3;

@@ -13,9 +13,6 @@
 {
     BOOL _activateCalled;
     CUCoalescer *_updateCoalescer;
-    NSMutableDictionary *_aggregateSources;
-    NSMutableDictionary *_pendingAddedAggregates;
-    NSMutableDictionary *_pendingChangedAggregates;
     NSMutableDictionary *_powerSources;
     int _psNotifyTokenAccessoryAttach;
     int _psNotifyTokenAccessoryPowerSource;
@@ -24,27 +21,26 @@
     unsigned int _changeFlags;
     NSObject<OS_dispatch_queue> *_dispatchQueue;
     CDUnknownBlockType _invalidationHandler;
-    CDUnknownBlockType _powerSourceFoundHandler;
-    CDUnknownBlockType _powerSourceLostHandler;
-    CDUnknownBlockType _powerSourceChangedHandler;
+    CDUnknownBlockType _powerSourcesFoundHandler;
+    CDUnknownBlockType _powerSourcesLostHandler;
+    CDUnknownBlockType _powerSourcesChangedHandler;
 }
 
-@property(copy, nonatomic) CDUnknownBlockType powerSourceChangedHandler; // @synthesize powerSourceChangedHandler=_powerSourceChangedHandler;
-@property(copy, nonatomic) CDUnknownBlockType powerSourceLostHandler; // @synthesize powerSourceLostHandler=_powerSourceLostHandler;
-@property(copy, nonatomic) CDUnknownBlockType powerSourceFoundHandler; // @synthesize powerSourceFoundHandler=_powerSourceFoundHandler;
+@property(copy, nonatomic) CDUnknownBlockType powerSourcesChangedHandler; // @synthesize powerSourcesChangedHandler=_powerSourcesChangedHandler;
+@property(copy, nonatomic) CDUnknownBlockType powerSourcesLostHandler; // @synthesize powerSourcesLostHandler=_powerSourcesLostHandler;
+@property(copy, nonatomic) CDUnknownBlockType powerSourcesFoundHandler; // @synthesize powerSourcesFoundHandler=_powerSourcesFoundHandler;
 @property(copy, nonatomic) CDUnknownBlockType invalidationHandler; // @synthesize invalidationHandler=_invalidationHandler;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
 @property(nonatomic) unsigned int changeFlags; // @synthesize changeFlags=_changeFlags;
 - (void).cxx_destruct;
-- (void)_handlePowerSourceUpdate:(id)arg1 desc:(id)arg2 adapterDesc:(id)arg3;
-- (void)_handlePowerSourceLost:(id)arg1 sourceID:(id)arg2;
-- (void)_handlePowerSourceFound:(id)arg1 desc:(id)arg2 adapterDesc:(id)arg3;
+- (void)_handlePowerSourcesLost:(id)arg1;
+- (void)_handlePowerSourcesChanged:(id)arg1 changes:(unsigned int)arg2;
+- (void)_handlePowerSourcesFound:(id)arg1;
+- (void)_updatePowerSource:(id)arg1 desc:(id)arg2 adapterDesc:(id)arg3;
+- (void)_foundPowerSource:(id)arg1 desc:(id)arg2 adapterDesc:(id)arg3;
 - (void)_updatePowerSources;
 - (void)_triggerUpdatePowerSources;
 - (void)_update;
-- (void)_aggregatePowerSourceUpdate:(id)arg1 desc:(id)arg2;
-- (void)_aggregatePowerSourceComponentLost:(id)arg1;
-- (void)_aggregatePowerSourceComponentFound:(id)arg1;
 - (void)invalidate;
 - (void)activateWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_cleanup;

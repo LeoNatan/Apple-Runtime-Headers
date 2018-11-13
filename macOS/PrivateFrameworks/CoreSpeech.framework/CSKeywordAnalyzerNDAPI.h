@@ -25,6 +25,8 @@
 @property(nonatomic) unsigned int activePhraseId; // @synthesize activePhraseId=_activePhraseId;
 @property(nonatomic) unsigned long long activeChannel; // @synthesize activeChannel=_activeChannel;
 - (void).cxx_destruct;
+- (float)getLoggingThreshold;
+- (float)getThreshold;
 - (id)getSuperVectorWithEndPoint:(unsigned long long)arg1;
 - (id)getAnalyzedResult;
 - (void)analyzeWavData:(id)arg1 numSamples:(unsigned long long)arg2;

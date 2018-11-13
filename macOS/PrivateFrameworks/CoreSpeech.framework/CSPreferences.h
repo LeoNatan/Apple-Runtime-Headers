@@ -45,6 +45,7 @@
 - (id)_CSSATUpdatePath;
 - (id)CSSATBasePath;
 - (void)_secureSatBasePathAt:(id)arg1;
+- (BOOL)secondPassAudioLoggingEnabled;
 - (id)assistantAudioFileLogDirectory;
 - (id)assistantLogDirectory;
 - (id)voiceTriggerAudioLogDirectory;

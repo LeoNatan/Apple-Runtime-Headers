@@ -63,8 +63,10 @@ struct CoreAttributesFromRangeCompletionContext {
     struct _NSRange _field13;
     struct OpaqueEventRef *_field14;
     long long _field15;
-    char _field16;
+    long long _field16;
     char _field17;
+    char _field18;
+    char _field19;
 };
 
 struct DragTarget {

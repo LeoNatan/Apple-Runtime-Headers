@@ -31,6 +31,7 @@
 - (id)ic_fontScaledByFactor:(double)arg1;
 - (id)fontWithTabularNumbers;
 - (BOOL)fontHasSingleLineA;
+- (id)ic_fontWithoutSingleLineA;
 - (id)fontWithSingleLineA;
 @end
 

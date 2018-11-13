@@ -81,9 +81,9 @@
 - (void)_kill:(int)arg1;
 - (void)_safelyEndUsingWithProcessAssertion:(id)arg1 continuation:(CDUnknownBlockType)arg2;
 - (void)_safelyEndUsing:(CDUnknownBlockType)arg1;
-- (id)newAssertionToBeginUsingPluginWithError:(id *)arg1;
-- (void)_safelyBeginUsing_withAssertion:(CDUnknownBlockType)arg1;
-- (void)_safelyBeginUsingSynchronously:(_Bool)arg1 withAssertion_onSafeQueue:(CDUnknownBlockType)arg2;
+- (id)newAssertionToBeginUsingPluginWithOptions:(unsigned int)arg1 error:(id *)arg2;
+- (void)_safelyBeginUsingWithOptions:(unsigned int)arg1 withAssertion_onSafeQueue:(CDUnknownBlockType)arg2;
+- (void)_safelyBeginUsingSynchronously:(_Bool)arg1 options:(unsigned int)arg2 withAssertion_onSafeQueue:(CDUnknownBlockType)arg3;
 - (void)_safelyBeginUsing:(CDUnknownBlockType)arg1;
 - (int)_plugInProcessIdentifier;
 - (_Bool)_wantsProcessPerRequest;
@@ -105,6 +105,10 @@
 - (void)beginExtensionRequestWithInputItems:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)beginExtensionRequestWithInputItems:(id)arg1 listenerEndpoint:(id)arg2 error:(id *)arg3;
 - (void)beginExtensionRequestWithInputItems:(id)arg1 listenerEndpoint:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (id)beginExtensionRequestWithOptions:(unsigned int)arg1 inputItems:(id)arg2 listenerEndpoint:(id)arg3 error:(id *)arg4;
+- (void)beginExtensionRequestWithOptions:(unsigned int)arg1 inputItems:(id)arg2 listenerEndpoint:(id)arg3 completion:(CDUnknownBlockType)arg4;
+- (id)beginExtensionRequestWithOptions:(unsigned int)arg1 inputItems:(id)arg2 error:(id *)arg3;
+- (void)beginExtensionRequestWithOptions:(unsigned int)arg1 inputItems:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_reallyBeginExtensionRequestWithContext:(id)arg1 extensionServiceConnection:(id)arg2 listenerEndpoint:(id)arg3 synchronously:(_Bool)arg4 completion:(CDUnknownBlockType)arg5;
 - (id)_newExtensionContextAndGetConnection:(id *)arg1 assertion:(id)arg2 inputItems:(id)arg3;
 - (void)_reallyBeginExtensionRequestWithInputItems:(id)arg1 processAssertion:(id)arg2 listenerEndpoint:(id)arg3 completion:(CDUnknownBlockType)arg4;

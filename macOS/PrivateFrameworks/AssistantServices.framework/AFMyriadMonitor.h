@@ -6,16 +6,21 @@
 
 #import <objc/NSObject.h>
 
-@class NSMutableSet;
+#import <AssistantServices/AFNotifyObserverDelegate-Protocol.h>
+
+@class AFNotifyObserver, NSMutableArray, NSString;
 @protocol OS_dispatch_queue, OS_dispatch_source;
 
-@interface AFMyriadMonitor : NSObject
+@interface AFMyriadMonitor : NSObject <AFNotifyObserverDelegate>
 {
-    BOOL _myriadIsWaiting;
+    long long _state;
     NSObject<OS_dispatch_source> *_timer;
     struct __CFNotificationCenter *_center;
     NSObject<OS_dispatch_queue> *_myriadMonitorQueue;
-    NSMutableSet *_completions;
+    NSMutableArray *_completions;
+    AFNotifyObserver *_wonObserver;
+    AFNotifyObserver *_lostObserver;
+    AFNotifyObserver *_beganObserver;
 }
 
 + (void)clear;
@@ -23,12 +28,19 @@
 + (id)sharedMonitor;
 - (void).cxx_destruct;
 - (void)resultSeenWithValue:(BOOL)arg1;
-- (void)_flushCompletions;
+- (void)_flushCompletions:(BOOL)arg1;
 - (void)clear;
 - (void)addCompletion:(CDUnknownBlockType)arg1;
 - (void)setDecisionIsPending;
+- (void)notifyObserver:(id)arg1 didReceiveNotificationWithToken:(int)arg2;
 - (void)dealloc;
 - (id)init;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

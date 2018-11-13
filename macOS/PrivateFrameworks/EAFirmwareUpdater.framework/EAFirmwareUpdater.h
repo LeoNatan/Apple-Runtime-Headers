@@ -9,7 +9,7 @@
 #import <EAFirmwareUpdater/NSStreamDelegate-Protocol.h>
 #import <EAFirmwareUpdater/iAUPServerDelegate-Protocol.h>
 
-@class EAAccessory, EASession, NSMutableData, NSObject, NSString, NSTimer, NSURL, iAUPServer;
+@class EAAccessory, EASession, NSDate, NSMutableData, NSNumber, NSObject, NSString, NSTimer, NSURL, iAUPServer;
 @protocol OS_dispatch_queue;
 
 @interface EAFirmwareUpdater : MobileAssetUpdater <NSStreamDelegate, iAUPServerDelegate>
@@ -24,10 +24,24 @@
     unsigned long long _firmwareVersionMajor;
     unsigned long long _firmwareVersionMinor;
     unsigned long long _firmwareVersionRelease;
+    NSString *_currentFirmwareVersionOnAcc;
+    NSString *_firmwareVersionAvailable;
+    NSString *_transportType;
+    NSNumber *_cumulativeProgressPercent;
+    NSNumber *_resumedFromPercentNum;
+    NSNumber *_resumeCount;
+    NSNumber *_cumulativeTimeTaken;
+    NSNumber *_currentSessionTimeTaken;
+    NSNumber *_cumulativeBytesDownloaded;
+    NSNumber *_totalBytesForCompleteUpdate;
+    NSNumber *_cumulativeCloakTime;
+    NSNumber *_currentSessionCloakTime;
+    NSDate *_updateStartTime;
     NSString *_firmwareBundleFilename;
     NSURL *_firmwareBundleURL;
     CDUnknownBlockType _applyCompletion;
     CDUnknownBlockType _progressHandler;
+    CDUnknownBlockType _updateHandler;
     NSMutableData *_outputData;
     iAUPServer *_iAUPServer;
     NSObject<OS_dispatch_queue> *_eaNotificationDispatchQueue;
@@ -41,12 +55,22 @@
     NSString *_multiAssetAppProtocol;
     NSString *_updateBundleFilename;
     NSURL *_updateBundleURL;
+    NSNumber *_cumulativeCloak;
 }
 
 + (id)findAccessoryWithProtocolString:(id)arg1;
 + (id)multiAssetAppProtocolStringWithEAID:(id)arg1;
 + (id)appProtocolStringWithEAID:(id)arg1;
 + (id)bootloaderProtocolStringWithEAID:(id)arg1;
+@property(retain, nonatomic) NSNumber *currentSessionTimeTaken; // @synthesize currentSessionTimeTaken=_currentSessionTimeTaken;
+@property(retain, nonatomic) NSNumber *cumulativeCloak; // @synthesize cumulativeCloak=_cumulativeCloak;
+@property(retain, nonatomic) NSNumber *cumulativeTimeTaken; // @synthesize cumulativeTimeTaken=_cumulativeTimeTaken;
+@property(retain, nonatomic) NSNumber *cumulativeProgressPercent; // @synthesize cumulativeProgressPercent=_cumulativeProgressPercent;
+@property(retain, nonatomic) NSNumber *resumeCount; // @synthesize resumeCount=_resumeCount;
+@property(retain, nonatomic) NSNumber *resumedFromPercentNum; // @synthesize resumedFromPercentNum=_resumedFromPercentNum;
+@property(retain, nonatomic) NSString *transportType; // @synthesize transportType=_transportType;
+@property(retain, nonatomic) NSString *firmwareVersionAvailable; // @synthesize firmwareVersionAvailable=_firmwareVersionAvailable;
+@property(retain, nonatomic) NSString *currentFirmwareVersionOnAcc; // @synthesize currentFirmwareVersionOnAcc=_currentFirmwareVersionOnAcc;
 @property(nonatomic) BOOL isMultiAssetSession; // @synthesize isMultiAssetSession=_isMultiAssetSession;
 @property(nonatomic) BOOL skipDFUMode; // @synthesize skipDFUMode=_skipDFUMode;
 @property(nonatomic) BOOL forceSilentUpdate; // @synthesize forceSilentUpdate=_forceSilentUpdate;
@@ -64,13 +88,16 @@
 - (void)handleInputData;
 - (id)flushOutput;
 - (void)stream:(id)arg1 handleEvent:(unsigned long long)arg2;
-- (void)updateComplete:(id)arg1;
-- (void)firmwareUpdateComplete:(id)arg1;
+- (void)updateComplete:(id)arg1 error:(id)arg2;
+- (void)firmwareUpdateComplete:(id)arg1 error:(id)arg2;
+- (void)handleFirmwareUpdateStatus:(id)arg1;
+- (id)createEndOfUpdateEventDict:(id)arg1 error:(id)arg2;
 - (void)updateProgress:(double)arg1;
 - (void)logStatusString:(id)arg1;
 - (id)writeData:(id)arg1;
+- (void)closeSession;
 - (id)openSession;
-- (id)applyFirmware:(CDUnknownBlockType)arg1 progress:(CDUnknownBlockType)arg2;
+- (id)applyFirmware:(CDUnknownBlockType)arg1 progress:(CDUnknownBlockType)arg2 update:(CDUnknownBlockType)arg3;
 - (id)validateAsset;
 - (id)validateAssetAttributes:(id)arg1;
 - (id)assetWithMaxVersion:(id)arg1;

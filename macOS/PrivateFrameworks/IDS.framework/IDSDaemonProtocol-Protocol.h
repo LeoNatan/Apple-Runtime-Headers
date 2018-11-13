@@ -67,6 +67,7 @@
 - (void)cancelInvitation:(NSString *)arg1;
 - (void)sendInvitation:(NSString *)arg1 withData:(NSData *)arg2 declineOnError:(BOOL)arg3;
 - (void)sendInvitation:(NSString *)arg1 withOptions:(NSDictionary *)arg2;
+- (void)cleanupSessionWithInstanceID:(NSString *)arg1;
 - (void)cleanupSession:(NSString *)arg1;
 - (void)setupNewSessionWithConfiguration:(NSDictionary *)arg1;
 - (void)setNSUUID:(NSString *)arg1 onDeviceWithUniqueID:(NSString *)arg2 forService:(NSString *)arg3;

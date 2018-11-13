@@ -117,10 +117,10 @@
 - (void)_doCommonToolbarInit;
 - (_Bool)pointInside:(struct CGPoint)arg1 withEvent:(id)arg2;
 @property(readonly, copy) NSString *description;
+- (_Bool)isElementAccessibilityExposedToInterfaceBuilder;
 - (double)_defaultAutolayoutSpacing;
 - (double)_autolayoutSpacingAtEdge:(int)arg1 forAttribute:(long long)arg2 inContainer:(id)arg3 isGuide:(_Bool)arg4;
 - (_Bool)_hasCustomAutolayoutNeighborSpacingForAttribute:(long long *)arg1;
-- (_Bool)isElementAccessibilityExposedToInterfaceBuilder;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

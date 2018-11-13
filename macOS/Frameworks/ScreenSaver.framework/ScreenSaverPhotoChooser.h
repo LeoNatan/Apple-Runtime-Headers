@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class ILMediaBrowserView, ILMediaManager, NSArray, NSMutableArray, NSString, NSWindow, ScreenSaverDefaults;
+@class ILMediaBrowserView, ILMediaManager, NSArray, NSButton, NSMutableArray, NSPopUpButton, NSString, NSTextField, NSView, NSWindow, ScreenSaverDefaults;
 
 @interface ScreenSaverPhotoChooser : NSObject
 {
@@ -27,6 +27,11 @@
     NSArray *_mediaBrowserViewTLOArray;
     NSWindow *_mediaChooserWindow;
     ILMediaBrowserView *_mediaBrowserView;
+    NSArray *_customControlsViewTLOArray;
+    NSView *_customControlsView;
+    NSPopUpButton *_sourcePopUpButton;
+    NSTextField *_sourceLabelField;
+    NSButton *_sourceShuffleButton;
     CDUnknownBlockType _sourceMenuLoadedBlock;
     NSMutableArray *_blocksToCallOnceFinishedLoading;
 }
@@ -38,10 +43,10 @@
 - (id)_imageFilesInDirectory:(id)arg1;
 - (BOOL)photoStreamDetected;
 - (void)resetToDefaultImageSelection;
-- (void)generateLatestPhotosInGroups;
-- (void)checkLoadingMediaManagersForPhotoListRequest;
-- (void)loadiLifeSources;
-- (void)resetLastViewedPhotoPath;
+- (void)_generateLatestPhotosInGroups;
+- (void)_checkLoadingMediaManagersForPhotoListRequest;
+- (void)_loadiLifeSources;
+- (void)_resetLastViewedPhotoPath;
 - (void)setLastViewedPhotoPath:(id)arg1 forScreenSaverView:(id)arg2;
 - (void)changeToSourceType:(unsigned long long)arg1 identifier:(id)arg2 persistChange:(BOOL)arg3;
 - (void)changeToSourceType:(unsigned long long)arg1 identifier:(id)arg2;
@@ -58,6 +63,14 @@
 - (void)mediaBrowserCancel:(id)arg1;
 - (void)mediaBrowserChoosePhotoSet:(id)arg1;
 - (void)presentMediaBrowserSheetOnWindow:(id)arg1;
+- (id)customControlsView;
+- (void)iLifeEventClickedFromPopup:(id)arg1;
+- (void)chooseFromMediaBrowser:(id)arg1;
+- (void)chooseFolderClickedFromMenu:(id)arg1;
+- (void)generateSourcePopupMenu;
+- (void)sourceShuffleClicked:(id)arg1;
+- (void)sourcePopUpClicked:(id)arg1;
+- (void)_addHeaderString:(id)arg1 toMenu:(id)arg2;
 - (void)setShufflesPhotos:(BOOL)arg1;
 - (BOOL)shufflesPhotos;
 - (id)listOfPhotoPathsFromSelectedSource;

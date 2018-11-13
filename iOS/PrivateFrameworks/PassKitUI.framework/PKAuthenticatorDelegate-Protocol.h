@@ -24,6 +24,7 @@
 - (void)authenticator:(PKAuthenticator *)arg1 didRequestUserAction:(long long)arg2;
 - (void)authenticatorDidEncounterFingerOff:(PKAuthenticator *)arg1;
 - (void)authenticatorDidEncounterFingerOn:(PKAuthenticator *)arg1;
+- (void)authenticator:(PKAuthenticator *)arg1 didTransitionToCoachingState:(long long)arg2;
 - (void)authenticator:(PKAuthenticator *)arg1 didTransitionToPearlState:(long long)arg2;
 - (void)authenticatorWillRestartEvaluation:(PKAuthenticator *)arg1;
 @end

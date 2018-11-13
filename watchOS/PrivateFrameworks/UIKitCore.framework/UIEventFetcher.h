@@ -29,6 +29,7 @@ __attribute__((visibility("hidden")))
     double _lastImportantEventTimestamp;
     double _lastSignalTimestamp;
     double _estimatedDisplayLinkDrift;
+    int _lastSignalType;
     _Bool _needsSignalOnDisplayLink;
     id <UIEventFetcherSink> _eventFetcherSink;
     NSMutableDictionary *_latestMoveDragEventsBySessionID;
@@ -47,7 +48,7 @@ __attribute__((visibility("hidden")))
 - (void)_setWatchSystemAppHIDEventFilter:(CDUnknownBlockType)arg1;
 - (void)_removeHIDGameControllerEventObserver;
 - (void)_setHIDGameControllerEventObserver:(CDUnknownBlockType)arg1 onQueue:(id)arg2;
-- (void)signalEventsAvailableWithReason:(unsigned long long)arg1 filteredEventCount:(int)arg2;
+- (void)signalEventsAvailableWithReason:(unsigned int)arg1 filteredEventCount:(int)arg2;
 - (void)filterEvents;
 - (void)drainEventsIntoEnvironment:(id)arg1;
 - (void)_receiveHIDEventInternal:(struct __IOHIDEvent *)arg1;

@@ -364,6 +364,8 @@
 - (BOOL)_isDefaultButton;
 - (void)setEnabled:(BOOL)arg1;
 - (BOOL)_hasDefaultButtonIndicator;
+@property(retain, setter=_setAlternateImageWithMinimalSideEffects:) NSImage *_alternateImageWithMinimalSideEffects;
+@property(retain, setter=_setImageWithMinimalSideEffects:) NSImage *_imageWithMinimalSideEffects;
 - (void)_layoutExitingViewsWithRect:(struct CGRect)arg1 inView:(id)arg2;
 - (void)_exchangeImageViewsWithRect:(struct CGRect)arg1 inView:(id)arg2 withMutation:(CDUnknownBlockType)arg3;
 - (void)_exchangeTextFieldsWithRect:(struct CGRect)arg1 inView:(id)arg2 withMutation:(CDUnknownBlockType)arg3;

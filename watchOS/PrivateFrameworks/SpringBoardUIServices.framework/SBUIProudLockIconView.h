@@ -6,15 +6,17 @@
 
 #import <UIKit/UIView.h>
 
-@class NSSet, SBUICAPackageView, SBUIFaceIDCameraGlyphView, UIColor, _UILegibilitySettings;
+@class NSSet, SBUICAPackageView, SBUIFaceIDCameraGlyphView, SBUIFaceIDCoachingView, UIColor, _UILegibilitySettings;
 
 @interface SBUIProudLockIconView : UIView
 {
     int _state;
+    UIView *_iconContainerView;
     SBUICAPackageView *_lockView;
     NSSet *_imageLayers;
     NSSet *_shadowImageLayers;
     NSSet *_shadowFilterLayers;
+    SBUIFaceIDCoachingView *_lazy_faceIDCoachingView;
     _Bool _performingIncomingLayout;
     SBUIFaceIDCameraGlyphView *_cameraCoveredView;
     _UILegibilitySettings *_legibilitySettings;
@@ -28,7 +30,13 @@
 @property(readonly, nonatomic) SBUIFaceIDCameraGlyphView *cameraCoveredView; // @synthesize cameraCoveredView=_cameraCoveredView;
 @property(nonatomic) int state; // @synthesize state=_state;
 - (void).cxx_destruct;
+- (id)_faceIDCoachingView;
 - (float)_alphaForActiveViewForState:(int)arg1;
+- (float)_lockToCoachingSpacing;
+- (struct CGSize)_smallLockSizeForTextSize:(id)arg1;
+- (struct CGSize)_smallLockSize;
+- (float)_scaleAmountForZoom;
+- (struct CGAffineTransform)_zoomedTransform;
 - (struct CGAffineTransform)_outgoingTransformForView:(id)arg1 fromState:(int)arg2;
 - (struct CGAffineTransform)_transformForActiveView:(id)arg1 forState:(int)arg2;
 - (struct CGAffineTransform)_incomingTransformForActiveView:(id)arg1 forState:(int)arg2;

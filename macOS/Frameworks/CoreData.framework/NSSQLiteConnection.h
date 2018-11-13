@@ -248,8 +248,6 @@ __attribute__((visibility("hidden")))
 - (void)beginTransaction;
 - (void)disconnect;
 - (void)_forceDisconnectOnError;
-- (void)_endPowerAssertionWithAssert:(unsigned long long)arg1 andApp:(id)arg2;
-- (id)_beginPowerAssertionWithAssert:(unsigned long long *)arg1;
 - (void)_finalizeStatement;
 - (void)_clearTransactionCaches;
 - (void)connect;

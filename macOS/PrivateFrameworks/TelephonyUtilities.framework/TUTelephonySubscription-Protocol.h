@@ -6,9 +6,10 @@
 
 #import <TelephonyUtilities/NSObject-Protocol.h>
 
-@class NSUUID;
+@class NSString, NSUUID;
 
 @protocol TUTelephonySubscription <NSObject>
+@property(readonly, nonatomic) NSString *labelID;
 @property(readonly, nonatomic) NSUUID *uuid;
 - (id)initWithUUID:(NSUUID *)arg1;
 @end

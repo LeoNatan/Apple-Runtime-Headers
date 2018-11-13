@@ -70,6 +70,7 @@
 - (id)displayAppBundleIdentifier;
 - (id)senderIdentityForHandle:(id)arg1;
 - (id)senderIdentityForAccountUUID:(id)arg1;
+- (id)senderIdentityForUUID:(id)arg1;
 - (BOOL)hasRestrictionsInRetailEnvironment;
 - (BOOL)prefersShowingInCallUI;
 - (BOOL)supportsShowingInCallUI;

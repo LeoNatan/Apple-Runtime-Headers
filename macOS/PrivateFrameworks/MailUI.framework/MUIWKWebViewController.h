@@ -92,7 +92,7 @@
 - (void)setDocumentElementDirection:(long long)arg1;
 - (void)logInjectedWebBundleMessage:(id)arg1;
 - (void)logWebConsoleMessage:(id)arg1;
-- (void)setMessageHasBlockedRemoteContent;
+- (void)setMessageHasBlockedMessageContent;
 - (void)completeWebDocumentPasteboardType;
 - (void)_runPendingJavascriptRequests;
 - (void)_didLoadMainFrameTimeout;

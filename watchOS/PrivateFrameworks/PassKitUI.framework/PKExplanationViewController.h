@@ -27,7 +27,7 @@
 - (void)_dismissViewController;
 - (void)_donePressed;
 - (void)_cancelPressed;
-- (void)viewDidLayoutSubviews;
+- (void)viewWillLayoutSubviews;
 - (void)viewDidLoad;
 - (void)loadView;
 - (id)pkui_navigationBarTintColor;

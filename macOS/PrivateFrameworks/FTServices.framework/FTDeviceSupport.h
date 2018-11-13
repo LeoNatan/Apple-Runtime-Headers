@@ -63,6 +63,8 @@
 - (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL supportsFunCam;
 @property(readonly, nonatomic) BOOL lowRAMDevice;
+- (int)cpuFamily;
+@property(readonly, nonatomic) BOOL slowCPUDevice;
 @property(readonly, nonatomic) BOOL supportsApplePay;
 @property(readonly, nonatomic) BOOL isInMultiUserMode;
 @property(readonly, nonatomic) BOOL nonWifiCallingAvailable;
@@ -126,6 +128,7 @@
 @property(readonly, nonatomic) BOOL iMessageSupported;
 @property(readonly, nonatomic) BOOL iMessageBlocked;
 @property(readonly, nonatomic) BOOL iMessageAvailable;
+- (BOOL)inProcess_isCallingSupported;
 @property(readonly, nonatomic) BOOL callingSupported;
 @property(readonly, nonatomic) BOOL callingBlocked;
 @property(readonly, nonatomic) BOOL multiwaySupported;

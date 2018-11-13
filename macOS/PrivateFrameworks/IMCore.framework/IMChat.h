@@ -366,8 +366,9 @@
 @property(readonly, nonatomic) IMChatRegistry *chatRegistry;
 - (id)testChatItems;
 - (BOOL)canEditChatItem:(id)arg1;
-- (void)initiateTUConversationWithVideo:(BOOL)arg1;
-- (void)joinExistingTUConversation;
+- (void)initiateTUConversationWithVideoEnabled:(BOOL)arg1;
+- (void)joinExistingTUConversationWithVideoEnabled:(BOOL)arg1;
+- (void)_launchAppForJoinRequest:(id)arg1;
 - (BOOL)mapsToTUConversation:(id)arg1;
 - (id)messageAcknowledgmentSummaryForConversationListWithMessage:(id)arg1;
 - (void)sendMessageAcknowledgment:(long long)arg1 forChatItem:(id)arg2 withAssociatedMessageInfo:(id)arg3;

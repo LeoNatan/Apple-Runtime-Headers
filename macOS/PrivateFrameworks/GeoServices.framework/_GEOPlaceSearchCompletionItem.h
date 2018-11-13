@@ -39,6 +39,8 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) NSData *entryMetadata;
 - (void)sendFeedback;
 - (BOOL)getCoordinate:(CDStruct_c3b9c2ee *)arg1;
+@property(readonly, nonatomic) long long sortPriority;
+@property(readonly, nonatomic) BOOL hasSortPriority;
 @property(readonly, nonatomic) GEORetainedSearchMetadata *retainedSearchMetadata;
 @property(readonly, nonatomic) GEODirectionIntent *directionIntent;
 @property(readonly, nonatomic) GEOResolvedItem *clientResolved;

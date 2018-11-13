@@ -18,10 +18,8 @@
     NSObject<OS_dispatch_queue> *_indexingQueue;
 }
 
-+ (void)resetSpotlightIndex;
 + (_Bool)persistentStoreExistsInDirectory:(id)arg1;
 + (_Bool)destroyPersistentStoreInDirectory:(id)arg1 error:(id *)arg2;
-+ (void)persistentStoreWillNeedRecreation;
 + (void)initialize;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *indexingQueue; // @synthesize indexingQueue=_indexingQueue;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *callbackQueue; // @synthesize callbackQueue=_callbackQueue;
@@ -29,10 +27,6 @@
 @property(retain, nonatomic) NSManagedObjectContext *context; // @synthesize context=_context;
 @property(retain, nonatomic) NSPersistentContainer *container; // @synthesize container=_container;
 - (void).cxx_destruct;
-- (void)removeSpotlightIndexedItemForVoiceShortcutIdentifier:(id)arg1;
-- (void)addSpotlightIndexedItemForVoiceShortcut:(id)arg1;
-- (void)deleteSpotlightIndexedItemsKeepingApps:(id)arg1;
-- (void)addMissingSpotlightIndexedItemsForApps:(id)arg1;
 - (void)deleteShortcutSuggestionsKeepingApps:(id)arg1;
 - (void)getShortcutSuggestionsForAllAppsWithLimit:(unsigned long long)arg1 accessSpecifier:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)getShortcutSuggestionsForAppWithBundleIdentifier:(id)arg1 accessSpecifier:(id)arg2 completion:(CDUnknownBlockType)arg3;
@@ -41,6 +35,7 @@
 - (void)describeSyncStateIncludingDeleted:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)markManagedObject:(id)arg1 asSynced:(_Bool)arg2 withSyncServiceWithIdentifier:(id)arg3 syncMetadata:(id)arg4;
 - (void)markManagedObjectAsUnsynced:(id)arg1;
+- (id)existingSyncStateOfManagedObject:(id)arg1 forSyncServiceWithIdentifier:(id)arg2;
 - (id)syncStateOfManagedObject:(id)arg1 forSyncServiceWithIdentifier:(id)arg2;
 - (_Bool)isPhraseUsable:(id)arg1 error:(id *)arg2;
 - (id)existingVoiceShortcutWithPhrase:(id)arg1 accessSpecifier:(id)arg2 error:(id *)arg3;
@@ -53,6 +48,7 @@
 - (id)markAsDeletedVoiceShortcutWithIdentifier:(id)arg1 accessSpecifier:(id)arg2 error:(id *)arg3;
 - (id)managedObjectFromAddingVoiceShortcut:(id)arg1 accessSpecifier:(id)arg2 error:(id *)arg3;
 - (void)removeSyncStateForSyncServiceWithIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)removeSyncStateForChanges:(id)arg1 withSyncServiceWithIdentifier:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)markChangesAsSynced:(struct NSOrderedSet *)arg1 withSyncServiceWithIdentifier:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)getUnsyncedChangesForSyncServiceWithIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)applyChangeSet:(struct NSOrderedSet *)arg1 fromSyncServiceWithIdentifier:(id)arg2 completion:(CDUnknownBlockType)arg3;
@@ -61,8 +57,9 @@
 - (void)deleteVoiceShortcutWithIdentifier:(id)arg1 accessSpecifier:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)updateVoiceShortcutWithIdentifier:(id)arg1 phrase:(id)arg2 workflow:(id)arg3 accessSpecifier:(id)arg4 completion:(CDUnknownBlockType)arg5;
 - (void)addVoiceShortcut:(id)arg1 accessSpecifier:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)getAppsWithVoiceShortcutsWithAccessSpecifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)getVoiceShortcutsMatchingPredicate:(id)arg1 accessSpecifier:(id)arg2 completion:(CDUnknownBlockType)arg3;
-- (void)getVoiceShortcutsForAppWithBundleIdentifier:(id)arg1 accessSpecifier:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)getVoiceShortcutsForAppsWithBundleIdentifiers:(id)arg1 accessSpecifier:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)getVoiceShortcutsWithAccessSpecifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)validatePhrases:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)getVoiceShortcutWithPhrase:(id)arg1 accessSpecifier:(id)arg2 completion:(CDUnknownBlockType)arg3;

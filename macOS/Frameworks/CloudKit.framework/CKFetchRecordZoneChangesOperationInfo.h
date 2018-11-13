@@ -14,6 +14,7 @@
 {
     BOOL _shouldFetchAssetContents;
     BOOL _fetchAllChanges;
+    BOOL _shouldReportAllPerItemFailures;
     BOOL _forcePCSDecryptionAttempt;
     NSArray *_recordZoneIDs;
     NSDictionary *_configurationsByRecordZoneID;
@@ -23,6 +24,7 @@
 
 + (BOOL)supportsSecureCoding;
 @property(nonatomic) BOOL forcePCSDecryptionAttempt; // @synthesize forcePCSDecryptionAttempt=_forcePCSDecryptionAttempt;
+@property(nonatomic) BOOL shouldReportAllPerItemFailures; // @synthesize shouldReportAllPerItemFailures=_shouldReportAllPerItemFailures;
 @property(retain, nonatomic) NSDictionary *assetTransferOptionsByRecordTypeAndKey; // @synthesize assetTransferOptionsByRecordTypeAndKey=_assetTransferOptionsByRecordTypeAndKey;
 @property(nonatomic) BOOL fetchAllChanges; // @synthesize fetchAllChanges=_fetchAllChanges;
 @property(nonatomic) long long changeTypes; // @synthesize changeTypes=_changeTypes;

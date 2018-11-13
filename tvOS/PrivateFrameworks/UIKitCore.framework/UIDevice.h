@@ -63,6 +63,7 @@
 @property(readonly, nonatomic) NSString *name;
 - (id)_deviceInfoForKey:(struct __CFString *)arg1;
 - (void)_setActiveUserInterfaceIdiom:(long long)arg1;
+- (id)_tapticEngine;
 - (void)_enableDeviceOrientationEvents:(_Bool)arg1;
 - (_Bool)_supportsDeepColor;
 - (_Bool)_supportsForceTouch;
@@ -79,7 +80,6 @@
 - (long long)_nativeScreenGamut;
 - (long long)_predictionGraphicsQuality;
 - (long long)_keyboardGraphicsQuality;
-- (id)_tapticEngine;
 
 @end
 

@@ -350,6 +350,8 @@
 - (void)startJournaling;
 - (void)registerJournalUnlockHandler;
 - (void)tryExecuteSnippetsJournal;
+- (long long)migration_deleteSerializedContactsForEmergencyExtractions;
+- (long long)migration_deleteEmergencyExtractions;
 - (long long)migration_reimport;
 - (long long)migration_deleteInteractions;
 - (long long)migration_rebuildFTSWithDetailEntityIDDocIDs;

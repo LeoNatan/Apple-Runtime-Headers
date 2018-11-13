@@ -52,7 +52,6 @@ __attribute__((visibility("hidden")))
     int peer_trust;
     unsigned long long handshake_timer_fires;
     struct SSLCertificate *ssl_peer_certs;
-    struct tls_buffer_list_s *ssl_sct_list;
     struct OpaqueSecKeyRef *peer_public_key;
     struct __CFArray *peer_cert_chain;
     struct __SecTrust *peer_trust_ref;

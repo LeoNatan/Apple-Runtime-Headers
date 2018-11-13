@@ -22,10 +22,8 @@
         unsigned int delegateRespondsToDidChangeStateFromTo:1;
     } _flags;
     unsigned long long _state;
-    NSString *_name;
 }
 
-@property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
 - (void).cxx_destruct;
 - (void)_invalidate;
 - (void)_updateStateWithToken:(int)arg1;

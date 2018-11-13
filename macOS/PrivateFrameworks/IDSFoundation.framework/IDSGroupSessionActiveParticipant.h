@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSString, NSUUID;
+@class NSData, NSString, NSUUID;
 
 @interface IDSGroupSessionActiveParticipant : NSObject
 {
@@ -14,8 +14,10 @@
     unsigned long long _participantIdentifier;
     NSString *_participantURI;
     BOOL _isKnown;
+    NSData *_participantPushToken;
 }
 
+@property(readonly, nonatomic) NSData *participantPushToken; // @synthesize participantPushToken=_participantPushToken;
 @property(readonly, nonatomic) BOOL isKnown; // @synthesize isKnown=_isKnown;
 @property(readonly, nonatomic) NSString *participantURI; // @synthesize participantURI=_participantURI;
 @property(readonly, nonatomic) unsigned long long participantIdentifier; // @synthesize participantIdentifier=_participantIdentifier;
@@ -25,7 +27,7 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)initWithDictionaryRepresentation:(id)arg1;
-- (id)initWithGroupUUID:(id)arg1 participantIdentifier:(unsigned long long)arg2 isKnown:(BOOL)arg3 participantURI:(id)arg4;
+- (id)initWithGroupUUID:(id)arg1 participantIdentifier:(unsigned long long)arg2 isKnown:(BOOL)arg3 participantURI:(id)arg4 pushToken:(id)arg5;
 
 @end
 

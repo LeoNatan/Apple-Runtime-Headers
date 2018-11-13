@@ -7,6 +7,7 @@
 #import <objc/NSObject.h>
 
 @class NSMutableArray, NSMutableDictionary, NSNumber, VCConnectionManager;
+@protocol OS_dispatch_queue;
 
 __attribute__((visibility("hidden")))
 @interface VCIDSSessionInfoSynchronizer : NSObject
@@ -25,6 +26,7 @@ __attribute__((visibility("hidden")))
     VCConnectionManager *_connectionManager;
     id _reportingAgentWeak;
     BOOL _isSessionInfoErrorResponseReported;
+    NSObject<OS_dispatch_queue> *_stateQueue;
     int _sessionInfoRequestBytesUsed;
     int _sessionInfoResponseBytesUsed;
     int _lastProcessedBytesSent;
@@ -56,6 +58,7 @@ __attribute__((visibility("hidden")))
 - (void)optInStreamIDsForConnection:(id)arg1;
 - (void)updateVCIDSSessionInfoResponse:(id)arg1;
 - (void)checkVCIDSSessionInfoNeedUpdate:(unsigned char)arg1;
+- (void)resetParticipantGenerationCounter;
 @property(retain, nonatomic) NSNumber *duplicationLinkID;
 @property(retain, nonatomic) NSNumber *primaryLinkID;
 - (id)initWithDelegate:(id)arg1 connectionManager:(id)arg2 reportingAgent:(id)arg3;

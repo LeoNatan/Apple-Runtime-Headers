@@ -14,6 +14,7 @@
 - (void)registerSyncService:(id <VCVoiceShortcutSyncService>)arg1 asMaster:(_Bool)arg2;
 - (id)createMessageFromData:(NSData *)arg1;
 - (void)getUnsyncedChangesForSyncServiceWithIdentifier:(NSString *)arg1 completion:(void (^)(NSOrderedSet *, NSError *))arg2;
+- (void)removeSyncStateForChanges:(NSOrderedSet *)arg1 withSyncServiceWithIdentifier:(NSString *)arg2 completion:(void (^)(_Bool, NSError *))arg3;
 - (void)markChangesAsSynced:(NSOrderedSet *)arg1 withSyncServiceWithIdentifier:(NSString *)arg2 completion:(void (^)(_Bool, NSError *))arg3;
 - (void)applyChangeSet:(NSOrderedSet *)arg1 fromSyncServiceWithIdentifier:(NSString *)arg2 completion:(void (^)(_Bool, NSError *))arg3;
 - (int)handledMessageType;

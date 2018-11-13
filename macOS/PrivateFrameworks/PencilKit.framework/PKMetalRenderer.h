@@ -49,13 +49,11 @@
     double _backboardPaperMultiply;
     double _inputScale;
     double _eraserIndicatorAlpha;
-    double _latestTimestamp;
     struct CGAffineTransform _paperTransform;
 }
 
 + (id)tileQueue;
 + (BOOL)useBlitEncoder;
-@property(readonly, nonatomic) double latestTimestamp; // @synthesize latestTimestamp=_latestTimestamp;
 @property(nonatomic) double eraserIndicatorAlpha; // @synthesize eraserIndicatorAlpha=_eraserIndicatorAlpha;
 @property(nonatomic) double inputScale; // @synthesize inputScale=_inputScale;
 @property(readonly, nonatomic) PKMetalResourceHandler *resourceHandler; // @synthesize resourceHandler=_resourceHandler;
@@ -85,23 +83,23 @@
 - (void)purgeOriginalBackFramebuffer;
 - (void)clearFramebuffer:(id)arg1 waitUntilCompleted:(BOOL)arg2;
 - (void)addBufferForRenderCache:(id)arg1 strokeVertices:(StrokeVertex_27fc2c00 *)arg2 numVertices:(unsigned long long)arg3;
-- (id)generateCacheForParticleStroke:(struct AnimatingStroke *)arg1 points:(struct _PKStrokePointSlice)arg2 startPt:(BOOL)arg3 endPt:(BOOL)arg4;
-- (id)generateCacheForPenStroke:(struct AnimatingStroke *)arg1 points:(struct _PKStrokePointSlice)arg2;
-- (id)generateCacheForStroke:(struct AnimatingStroke *)arg1 points:(struct _PKStrokePointSlice)arg2;
+- (id)generateCacheForParticleStroke:(struct AnimatingStroke *)arg1 points:(_PKStrokePointSlice_0c0423af)arg2 startPt:(BOOL)arg3 endPt:(BOOL)arg4;
+- (id)generateCacheForPenStroke:(struct AnimatingStroke *)arg1 points:(_PKStrokePointSlice_0c0423af)arg2;
+- (id)generateCacheForStroke:(struct AnimatingStroke *)arg1 points:(_PKStrokePointSlice_0c0423af)arg2;
 - (void)buildRenderCacheForStrokes:(id)arg1;
 - (unsigned long long)clearAndRenderStrokes:(id)arg1 clippedToStrokeSpaceRect:(struct CGRect)arg2 strokeTransform:(struct CGAffineTransform)arg3 stopBlock:(CDUnknownBlockType)arg4;
 - (unsigned long long)_renderStrokes:(id)arg1 clippedToStrokeSpaceRect:(struct CGRect)arg2 strokeTransform:(struct CGAffineTransform)arg3 stopBlock:(CDUnknownBlockType)arg4;
 - (id)renderCommandEncoderForCommandBuffer:(id)arg1 backBufferLoadAction:(unsigned long long)arg2 backBufferStoreAction:(unsigned long long)arg3 paintBufferLoadAction:(unsigned long long)arg4 accumulatorBufferLoadAction:(unsigned long long)arg5 accumulatorBufferStoreAction:(unsigned long long)arg6 destinationLoadAction:(unsigned long long)arg7;
-- (unsigned long long)renderParticleStroke:(struct _PKStrokePointSlice)arg1 animatingStroke:(struct AnimatingStroke *)arg2 starts:(BOOL)arg3 ends:(BOOL)arg4 combinedRendering:(BOOL)arg5 renderEncoder:(id)arg6;
-- (id)generateParticleCacheForStroke:(struct _PKStrokePointSlice)arg1 animatingStroke:(struct AnimatingStroke *)arg2 starts:(BOOL)arg3 ends:(BOOL)arg4;
-- (id)generatePaintCacheForStroke:(struct _PKStrokePointSlice)arg1 animatingStroke:(struct AnimatingStroke *)arg2;
+- (unsigned long long)renderParticleStroke:(_PKStrokePointSlice_0c0423af)arg1 animatingStroke:(struct AnimatingStroke *)arg2 starts:(BOOL)arg3 ends:(BOOL)arg4 combinedRendering:(BOOL)arg5 renderEncoder:(id)arg6;
+- (id)generateParticleCacheForStroke:(_PKStrokePointSlice_0c0423af)arg1 animatingStroke:(struct AnimatingStroke *)arg2 starts:(BOOL)arg3 ends:(BOOL)arg4;
+- (id)generatePaintCacheForStroke:(_PKStrokePointSlice_0c0423af)arg1 animatingStroke:(struct AnimatingStroke *)arg2;
 - (void)setupRenderEncoder:(id)arg1 forParticleStroke:(struct AnimatingStroke *)arg2;
 - (void)renderParticleStrokeVertices:(const StrokeVertex_27fc2c00 *)arg1 numVertices:(unsigned long long)arg2 renderEncoder:(id)arg3;
-- (unsigned long long)renderPenStroke:(struct _PKStrokePointSlice)arg1 animatingStroke:(struct AnimatingStroke *)arg2 combinedRendering:(BOOL)arg3 renderEncoder:(id)arg4;
+- (unsigned long long)renderPenStroke:(_PKStrokePointSlice_0c0423af)arg1 animatingStroke:(struct AnimatingStroke *)arg2 combinedRendering:(BOOL)arg3 renderEncoder:(id)arg4;
 - (void)setupRenderEncoder:(id)arg1 forPenStroke:(struct AnimatingStroke *)arg2;
 - (void)renderPenStrokeVertices:(const StrokeVertex_27fc2c00 *)arg1 numVertices:(unsigned long long)arg2 renderEncoder:(id)arg3;
 - (void)setVertexBuffersForVertices:(const StrokeVertex_27fc2c00 *)arg1 numVertices:(unsigned long long)arg2 renderEncoder:(id)arg3;
-- (unsigned long long)renderStroke:(struct _PKStrokePointSlice)arg1 animatingStroke:(struct AnimatingStroke *)arg2 accumulating:(BOOL)arg3 combinedRendering:(BOOL)arg4 renderEncoder:(id)arg5 computeEncoder:(id)arg6 renderCache:(id)arg7;
+- (unsigned long long)renderStroke:(_PKStrokePointSlice_0c0423af)arg1 animatingStroke:(struct AnimatingStroke *)arg2 accumulating:(BOOL)arg3 combinedRendering:(BOOL)arg4 renderEncoder:(id)arg5 computeEncoder:(id)arg6 renderCache:(id)arg7;
 - (unsigned long long)renderParticleRenderCache:(id)arg1 renderEncoder:(id)arg2 computeEncoder:(id)arg3 animatingStroke:(struct AnimatingStroke *)arg4;
 - (unsigned long long)renderPaintRenderCache:(id)arg1 renderEncoder:(id)arg2 computeEncoder:(id)arg3 animatingStroke:(struct AnimatingStroke *)arg4;
 - (unsigned long long)renderStrokeRenderCache:(id)arg1 renderEncoder:(id)arg2 animatingStroke:(struct AnimatingStroke *)arg3 indexed:(BOOL)arg4;
@@ -164,6 +162,7 @@
 - (void)drawingEnded:(id)arg1 finishStrokeBlock:(CDUnknownBlockType)arg2;
 - (void)getAndRenderNewPoints:(id)arg1;
 - (void)drawingBeganWithStroke:(id)arg1;
+@property(readonly, nonatomic) double latestTimestamp;
 - (void)flushMemoryIfPossible;
 - (void)setup;
 - (void)dealloc;

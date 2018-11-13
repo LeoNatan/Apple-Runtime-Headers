@@ -73,6 +73,12 @@
     PLTimer *_ppmEventThresholdTimer;
 }
 
++ (int)chemIDForDevice:(int)arg1 withRawData:(id)arg2;
++ (int)wRaThresholdForDevice:(int)arg1 withRawData:(id)arg2;
++ (unsigned long long)determinableMaskForDeviceType:(int)arg1;
++ (unsigned long long)serviceFlagsMaskForDeviceType:(int)arg1;
++ (BOOL)hasChargingInfoLogging;
++ (BOOL)hasLPEMLogging;
 + (id)defaults;
 + (id)entryAggregateDefinitionUILevel;
 + (id)entryAggregateDefinitions;
@@ -86,6 +92,7 @@
 + (id)entryEventBackwardDefinitions;
 + (id)entryEventForwardDefinitionMitigationState;
 + (id)entryEventForwardDefinitionUPOStepper;
++ (id)connectStateStringToEnum:(id)arg1;
 + (id)entryEventForwardDefinitionExternalCharger;
 + (id)entryEventForwardDefinitionLightningConnectorStatus;
 + (id)entryEventForwardDefinitionEAPencil;
@@ -98,6 +105,7 @@
 + (id)entryEventPointDefinitionGasGaugeReconnect;
 + (id)entryEventPointDefinitionPPMClientMetrics;
 + (id)entryEventPointDefinitionPPMDebug;
++ (id)entryEventForwardDefinitionIOPMUBootLPMLog;
 + (BOOL)shouldLogPPMDebugDetail;
 + (id)entryEventPointDefinitions;
 + (id)entryEventNoneDefinitionBatteryConfig;
@@ -107,7 +115,6 @@
 + (void)load;
 + (BOOL)supportsxFlags;
 + (BOOL)hasWirelessCharger;
-+ (BOOL)hasPuckCharger;
 + (BOOL)hasLightning;
 + (BOOL)hasExternalAccessory;
 @property(retain) PLTimer *ppmEventThresholdTimer; // @synthesize ppmEventThresholdTimer=_ppmEventThresholdTimer;
@@ -172,23 +179,38 @@
 @property(readonly) PLIOKitOperatorComposition *iokitPPM; // @synthesize iokitPPM=_iokitPPM;
 @property(readonly) PLIOKitOperatorComposition *iokitPowerSource; // @synthesize iokitPowerSource=_iokitPowerSource;
 - (void).cxx_destruct;
-- (long long)xFlags;
-- (BOOL)shouldWaitForLifetimeDataWithRawData:(id)arg1;
+- (int)deviceType;
+- (id)overrideBatteryData:(id)arg1 withPath:(id)arg2;
+- (unsigned long long)setVersion:(unsigned long long)arg1 ForFlags:(unsigned long long)arg2;
+- (unsigned long long)getVersionForFlags:(unsigned long long)arg1;
 - (_Bool)isNewBattery:(id)arg1;
 - (_Bool)isOldServiceBatteryDefaultSet;
 - (short)serviceBatteryDefaultValue;
 - (_Bool)serviceBatteryDefaultExists;
+- (unsigned long long)serviceBatteryFlagsDefaultValue;
+- (void)setServiceFlagsDefaults:(unsigned long long)arg1;
 - (void)setServiceBatteryDefaults:(short)arg1;
 - (int)getMaximumCapacityPercentageValue;
 - (void)setMaximumCapacityPercentageDefaults:(int)arg1;
-- (void)checkBatteryHealthForBUISuggestion:(id)arg1;
 - (BOOL)shouldRejudgeBatteryWithDevice:(int)arg1 withPreviousOption:(short)arg2;
-- (int)raForDevice:(int)arg1 withRawData:(id)arg2;
-- (int)raThresholdForDevice:(int)arg1;
-- (short)getBatteryServiceOptionWithRawBatteryData:(id)arg1 withPreviousOption:(short)arg2;
+- (unsigned long long)chemIDFlagsWithFlags:(unsigned long long)arg1 withRawData:(id)arg2;
+- (unsigned long long)weightedRaFlagsWithFlags:(unsigned long long)arg1 withRawData:(id)arg2;
+- (unsigned long long)lifetimeMaxRaFlagsWithFlags:(unsigned long long)arg1 withRawData:(id)arg2;
+- (unsigned long long)bcdcFlagsWithFlags:(unsigned long long)arg1 withRawData:(id)arg2;
+- (unsigned long long)nccFlagsWithFlags:(unsigned long long)arg1 withRawData:(id)arg2;
+- (unsigned long long)oldServiceDefaultFlagsWithFlags:(unsigned long long)arg1;
+- (unsigned long long)mitigatedUPOFlagsWithFlags:(unsigned long long)arg1;
+- (unsigned long long)migrateFlags:(unsigned long long)arg1 FromOption:(short)arg2;
+- (unsigned long long)updateFlagsVersion:(unsigned long long)arg1 fromOption:(short)arg2 withRawData:(id)arg3;
+- (short)serviceOptionForFlags:(unsigned long long)arg1;
+- (unsigned long long)populateFlags:(unsigned long long)arg1 withRawData:(id)arg2;
+- (unsigned long long)resetFlags:(unsigned long long)arg1 withRawData:(id)arg2;
+- (void)checkBatteryHealthForBUISuggestion:(id)arg1;
 - (int)getMitigationDefaults;
 - (void)setMitigationStateDefault:(unsigned long long)arg1;
 - (void)handleMitigationStateCallback:(int)arg1;
+- (long long)xFlags;
+- (BOOL)shouldWaitForLifetimeDataWithRawData:(id)arg1;
 - (void)accountGaugePowerFromCurrentAccumulatorEntry:(id)arg1;
 - (void)logCurrentAccumulatorWithRawData:(id)arg1;
 - (void)gasGaugeRead;
@@ -235,6 +257,7 @@
 - (void)logEventIntervalGasGauge;
 - (void)logPPMDebug;
 - (id)getPPMDebugData;
+- (void)logEventForwardLPEM;
 - (void)logEventPointUPOStepper;
 - (void)fakeLogEntry:(id)arg1;
 - (void)log;
@@ -251,6 +274,7 @@
 - (void)cancelEALogging;
 - (void)setupEALogging;
 - (void)refreshEABatteryStatus;
+- (BOOL)modifiedExternalChargerEntry:(id)arg1;
 - (BOOL)hasAppleSmartBattery;
 - (void)dealloc;
 - (id)init;

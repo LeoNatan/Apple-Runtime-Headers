@@ -41,9 +41,11 @@ __attribute__((visibility("hidden")))
     unsigned int _netFlags;
     CDUnion_fab80606 _primaryIPv4Addr;
     CDUnion_fab80606 _primaryIPv6Addr;
+    NSString *_primaryNetworkSignature;
     int _powerSourceToken;
     BOOL _powerUnlimited;
     BOOL _primaryAppleIDIsHSA2;
+    int _primaryAppleIDNotifyToken;
     BOOL _primaryAppleIDObserving;
     CDStruct_83abfce7 _rotatingIdentifier48;
     NSData *_rotatingIdentifierData;

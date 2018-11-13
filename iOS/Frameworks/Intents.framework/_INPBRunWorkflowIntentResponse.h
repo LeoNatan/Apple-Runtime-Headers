@@ -10,7 +10,7 @@
 #import <Intents/NSSecureCoding-Protocol.h>
 #import <Intents/_INPBRunWorkflowIntentResponse-Protocol.h>
 
-@class NSString, _INPBArchivedObject;
+@class NSArray, NSString, _INPBArchivedObject;
 
 @interface _INPBRunWorkflowIntentResponse : PBCodable <_INPBRunWorkflowIntentResponse, NSSecureCoding, NSCopying>
 {
@@ -20,15 +20,18 @@
     } _has;
     _Bool _continueRunning;
     _Bool _waitingForResume;
+    NSArray *_steps;
     _INPBArchivedObject *_underlyingIntent;
     _INPBArchivedObject *_underlyingIntentResponse;
     NSString *_utterance;
 }
 
++ (Class)stepType;
 @property(nonatomic) _Bool waitingForResume; // @synthesize waitingForResume=_waitingForResume;
 @property(copy, nonatomic) NSString *utterance; // @synthesize utterance=_utterance;
 @property(retain, nonatomic) _INPBArchivedObject *underlyingIntentResponse; // @synthesize underlyingIntentResponse=_underlyingIntentResponse;
 @property(retain, nonatomic) _INPBArchivedObject *underlyingIntent; // @synthesize underlyingIntent=_underlyingIntent;
+@property(copy, nonatomic) NSArray *steps; // @synthesize steps=_steps;
 @property(nonatomic) _Bool continueRunning; // @synthesize continueRunning=_continueRunning;
 - (void).cxx_destruct;
 - (id)dictionaryRepresentation;
@@ -41,6 +44,10 @@
 @property(readonly, nonatomic) _Bool hasUtterance;
 @property(readonly, nonatomic) _Bool hasUnderlyingIntentResponse;
 @property(readonly, nonatomic) _Bool hasUnderlyingIntent;
+- (id)stepAtIndex:(unsigned long long)arg1;
+@property(readonly, nonatomic) unsigned long long stepsCount;
+- (void)addStep:(id)arg1;
+- (void)clearSteps;
 @property(nonatomic) _Bool hasContinueRunning;
 
 // Remaining properties

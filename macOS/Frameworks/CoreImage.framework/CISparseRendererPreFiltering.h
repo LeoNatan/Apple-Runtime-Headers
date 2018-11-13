@@ -14,8 +14,10 @@ __attribute__((visibility("hidden")))
     CIImage *inputImage;
     NSDictionary *inputTuningParameters;
     NSNumber *inputApertureScaling;
+    NSNumber *inputScale;
 }
 
+@property(retain) NSNumber *inputScale; // @synthesize inputScale;
 @property(copy) NSNumber *inputApertureScaling; // @synthesize inputApertureScaling;
 @property(retain) NSDictionary *inputTuningParameters; // @synthesize inputTuningParameters;
 @property(retain) CIImage *inputImage; // @synthesize inputImage;

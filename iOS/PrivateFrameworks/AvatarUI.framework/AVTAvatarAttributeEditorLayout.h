@@ -24,6 +24,7 @@
 @property(readonly, nonatomic) struct CGSize containerSize; // @synthesize containerSize=_containerSize;
 - (void).cxx_destruct;
 - (void)raiseExceptionForPropertyString:(id)arg1;
+@property(readonly, nonatomic) unsigned long long supportedLayoutOrientation;
 @property(readonly, nonatomic) UIColor *backgroundColor;
 @property(readonly, nonatomic) struct UIEdgeInsets attributesContentViewScrollIndicatorInsets;
 @property(readonly, nonatomic) struct UIEdgeInsets attributesContentViewInsets;

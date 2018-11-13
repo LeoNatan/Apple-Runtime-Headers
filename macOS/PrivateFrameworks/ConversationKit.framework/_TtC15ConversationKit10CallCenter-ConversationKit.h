@@ -11,6 +11,7 @@
 @interface _TtC15ConversationKit10CallCenter (ConversationKit) <TUConversationManagerDelegate>
 - (void)conversationManager:(id)arg1 removedActiveConversation:(id)arg2;
 - (void)conversationManager:(id)arg1 activeRemoteParticipantsChangedForConversation:(id)arg2;
+- (void)conversationManager:(id)arg1 localVideoToggledForConversation:(id)arg2;
 - (void)conversationManager:(id)arg1 stateChangedForConversation:(id)arg2;
 @end
 

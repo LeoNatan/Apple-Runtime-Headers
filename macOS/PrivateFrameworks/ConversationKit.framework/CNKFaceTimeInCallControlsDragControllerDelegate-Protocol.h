@@ -10,5 +10,6 @@
 - (void)inCallControlsDragController:(_TtC15ConversationKit28InCallControlsDragController *)arg1 didEndDragAt:(long long)arg2;
 - (void)inCallControlsDragController:(_TtC15ConversationKit28InCallControlsDragController *)arg1 didStartDragTo:(long long)arg2;
 - (void)inCallControlsDragController:(_TtC15ConversationKit28InCallControlsDragController *)arg1 willStartDragFrom:(long long)arg2;
+- (long long)inCallControlsDragControllerShortestState:(_TtC15ConversationKit28InCallControlsDragController *)arg1;
 @end
 

@@ -6,6 +6,8 @@
 
 #import <objc/NSObject.h>
 
+@class NSArray;
+
 @interface AXElementGrouper : NSObject
 {
     double _thresholdForDeterminingEqualSize;
@@ -15,10 +17,13 @@
 @property(nonatomic) long long heuristics; // @synthesize heuristics=_heuristics;
 - (id)_groupablesForItems:(id)arg1;
 - (id)_buildHierarchyForGroup:(id)arg1 indexOfKeyboard:(unsigned long long *)arg2;
+- (id)_applyTransformationPassesToRootGroup:(id)arg1;
+- (id)_applyTransformationPass:(id)arg1 toGroup:(id)arg2;
 - (id)_flattenHierarchyForGroup:(id)arg1 rootLevel:(_Bool)arg2;
 - (_Bool)_frame:(struct CGRect)arg1 isApproximatelySameSizeAsFrame:(struct CGRect)arg2;
 - (id)_groupRemovingImpossibleGroups:(id)arg1 isRootLevel:(_Bool)arg2;
 - (id)groupElementsInRootGroup:(id)arg1;
+@property(readonly, nonatomic) NSArray *transformationPasses;
 @property(readonly, nonatomic) double thresholdForDeterminingEqualSize; // @synthesize thresholdForDeterminingEqualSize=_thresholdForDeterminingEqualSize;
 @property(readonly, nonatomic) unsigned long long preferredGroupSize;
 @property(readonly, nonatomic) unsigned long long maximumGroupSize;

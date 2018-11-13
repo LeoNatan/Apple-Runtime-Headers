@@ -6,8 +6,12 @@
 
 #import <IOBluetooth/NSObject-Protocol.h>
 
+@class NSData, NSString;
+
 @protocol BluetoothDaemonInterface <NSObject>
+- (void)sendAACPCustomData:(unsigned int)arg1 withData:(NSData *)arg2 forDevice:(NSString *)arg3;
 - (void)clearAccessoryCrashLog;
+- (void)getAccessoryAddressString:(void (^)(NSString *))arg1;
 - (void)captureAccessoryLogs:(void (^)(NSArray *))arg1;
 - (void)registerClient;
 @end

@@ -14,6 +14,7 @@
 @interface SBUIProudLockContainerViewController : UIViewController <SBUIProudLockContainerViewControllerOrientationProvider>
 {
     int _desiredIconState;
+    unsigned int _desiredCoachingCondition;
     int _unlockSource;
     SBUIProudLockIconView *_testProudLockIconView;
     id <SBUIProudLockContainerViewControllerOrientationProvider> _orientationProvider;
@@ -51,6 +52,12 @@
 - (_Bool)_canTransitionToState:(int)arg1;
 - (void)_setIconState:(int)arg1 animated:(_Bool)arg2 options:(int)arg3 force:(_Bool)arg4 completion:(CDUnknownBlockType)arg5;
 - (void)_setIconState:(int)arg1 animated:(_Bool)arg2;
+- (void)_clearCoachingCondition;
+- (unsigned int)_effectiveCoachingConditionForCondition:(unsigned int)arg1 orientation:(int)arg2;
+- (unsigned int)_effectiveCoachingConditionForCondition:(unsigned int)arg1;
+- (void)_setCoachingCondition:(unsigned int)arg1 animated:(_Bool)arg2 skipScanningState:(_Bool)arg3 force:(_Bool)arg4;
+- (void)_setCoachingCondition:(unsigned int)arg1 animated:(_Bool)arg2 force:(_Bool)arg3;
+- (void)_setCoachingCondition:(unsigned int)arg1 animated:(_Bool)arg2;
 - (void)_dontCallThis_showLockIfNeededAnimated:(_Bool)arg1 force:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_updateIconViewStateAnimated:(_Bool)arg1 force:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_updateIconViewStateAnimated:(_Bool)arg1;

@@ -24,7 +24,7 @@
 @interface PKPassGroupsViewController : UIViewController <PKGroupsControllerDelegate, PKPassGroupStackViewDatasource, PKPassGroupStackViewDelegate, UIScrollViewDelegate, PKForegroundActiveArbiterObserver, PKPaymentServiceDelegate, PKPaymentSetupDelegate, PKPerformActionViewControllerDelegate, PKPeerPaymentAccountResolutionControllerDelegate, PKPGSVFooterViewDelegate, PKPassPersonalizationViewControllerDelegate>
 {
     int _backdropStyle;
-    _Bool _invalidated;
+    int _invalidationStatus;
     PKPassGroupStackView *_groupStackView;
     _UIBackdropView *_headerBackground;
     _UIBackdropView *_footerBackground;
@@ -102,7 +102,8 @@
 - (void)addSimulatorPassWithURL:(id)arg1;
 - (void)addVASPassWithIdentifier:(id)arg1;
 - (void)startPaymentPreflight:(id)arg1 withPaymentSetupMode:(int)arg2 referrerIdentifier:(id)arg3 paymentNetwork:(id)arg4;
-- (void)terminateFieldDetect;
+- (void)_invalidateForType:(int)arg1;
+- (void)partiallyInvalidate;
 - (void)invalidate;
 @property(readonly, retain, nonatomic) PKPassGroupStackView *groupStackView;
 - (void)performActionViewControllerDidPerformAction:(id)arg1;

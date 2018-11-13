@@ -569,6 +569,7 @@
 - (id)hapAccessoryUniqueIdentifiers;
 - (id)hapAccessoryServerIdentifiers;
 - (unsigned int)accessoryCountForRoom:(id)arg1;
+- (id)hapAccessoryWithIdentifier:(id)arg1 instanceID:(id)arg2;
 - (id)hapAccessoryWithIdentifier:(id)arg1;
 - (id)accessoryWithIdentifier:(id)arg1;
 - (void)_removeWithMergeSecondaryAccessory:(id)arg1 removedFromBridgeAccessory:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;

@@ -10,19 +10,22 @@
 #import <PencilKit/PKInlineColorPickerContentsHiddenDelegate-Protocol.h>
 #import <PencilKit/PKInlineColorPickerDelegate-Protocol.h>
 #import <PencilKit/PKInlineColorPickerSerialViewControllerTransitionDelegate-Protocol.h>
+#import <PencilKit/UIPencilInteractionDelegate-Protocol.h>
 #import <PencilKit/UIPopoverPresentationControllerDelegate-Protocol.h>
 #import <PencilKit/_PKAllowDrawingWhilePresentingPopoverViewDelegate-Protocol.h>
 #import <PencilKit/_PKInlineColorPickerAllowDrawingWithPopoverDelegate-Protocol.h>
+#import <PencilKit/_PKToolIndicatorDelegate-Protocol.h>
 
-@class NSArray, NSMutableDictionary, NSObject, NSString, PKInk, PKInkAttributesPicker, PKInlineColorPicker, UIColor, UILayoutGuide, UIView, _PKAllowDrawingWhilePresentingPopoverView;
+@class NSArray, NSMutableDictionary, NSObject, NSString, PKInk, PKInkAttributesPicker, PKInlineColorPicker, UIColor, UILayoutGuide, UIPencilInteraction, UIView, _PKAllowDrawingWhilePresentingPopoverView, _PKToolIndicator;
 @protocol OS_dispatch_queue, OS_dispatch_semaphore, PKInlineInkPickerDelegate;
 
-@interface PKInlineInkPicker : UIControl <PKInlineColorPickerDelegate, PKInlineColorPickerSerialViewControllerTransitionDelegate, PKInkAttributesPickerDelegate, UIPopoverPresentationControllerDelegate, PKInlineColorPickerContentsHiddenDelegate, _PKInlineColorPickerAllowDrawingWithPopoverDelegate, _PKAllowDrawingWhilePresentingPopoverViewDelegate>
+@interface PKInlineInkPicker : UIControl <PKInlineColorPickerDelegate, PKInlineColorPickerSerialViewControllerTransitionDelegate, PKInkAttributesPickerDelegate, UIPopoverPresentationControllerDelegate, PKInlineColorPickerContentsHiddenDelegate, _PKInlineColorPickerAllowDrawingWithPopoverDelegate, _PKAllowDrawingWhilePresentingPopoverViewDelegate, UIPencilInteractionDelegate, _PKToolIndicatorDelegate>
 {
     _Bool _shouldEmboss;
     _Bool _forceCompactLayout;
     _Bool _isUsedOnDarkBackground;
     _Bool _contentsHidden;
+    _Bool _pencilGestureSupportEnabled;
     NSArray *_inkIdentifiers;
     unsigned long long _selectedInkIndex;
     unsigned long long _previousDrawingToolIndex;
@@ -38,6 +41,8 @@
     PKInk *_aggd_initialInkOnPopoverOpen;
     NSObject<OS_dispatch_queue> *_serialViewControllerTransitionQueue;
     NSObject<OS_dispatch_semaphore> *_serialViewControllerTransitionSemaphore;
+    UIPencilInteraction *_pencilInteraction;
+    _PKToolIndicator *_contentsHiddenToolIndicator;
     id <PKInlineInkPickerDelegate> _delegate;
     unsigned long long _sizeState;
     unsigned long long _selectionState;
@@ -48,12 +53,15 @@
 + (_Bool)_axLargerTextSizesEnabled;
 + (id)sharedImageNameCache;
 + (id)imageNamed:(id)arg1;
++ (id)_sharedPencilUserDefaults;
++ (double)_outputForResistanceFunction:(double)arg1 factor:(double)arg2;
 + (id)_defaultCriticallyDampedSpringAnimator;
 + (id)defaultInkForAttributeSet:(unsigned long long)arg1;
 + (id)_defaultInkForIdentifier:(id)arg1 attributeSet:(unsigned long long)arg2;
 + (_Bool)inkIdentifierHasMutableAttributes:(id)arg1;
 + (double)spacingForToolIndex:(unsigned long long)arg1 sizeState:(unsigned long long)arg2;
 @property(nonatomic) unsigned long long attributeSet; // @synthesize attributeSet=_attributeSet;
+@property(nonatomic) _Bool pencilGestureSupportEnabled; // @synthesize pencilGestureSupportEnabled=_pencilGestureSupportEnabled;
 @property(nonatomic) _Bool contentsHidden; // @synthesize contentsHidden=_contentsHidden;
 @property(nonatomic) _Bool isUsedOnDarkBackground; // @synthesize isUsedOnDarkBackground=_isUsedOnDarkBackground;
 @property(readonly, nonatomic) UILayoutGuide *backgroundViewLayoutGuide; // @synthesize backgroundViewLayoutGuide=_backgroundViewLayoutGuide;
@@ -61,6 +69,8 @@
 @property(nonatomic) unsigned long long selectionState; // @synthesize selectionState=_selectionState;
 @property(nonatomic) unsigned long long sizeState; // @synthesize sizeState=_sizeState;
 @property(nonatomic) __weak id <PKInlineInkPickerDelegate> delegate; // @synthesize delegate=_delegate;
+@property(retain, nonatomic) _PKToolIndicator *contentsHiddenToolIndicator; // @synthesize contentsHiddenToolIndicator=_contentsHiddenToolIndicator;
+@property(retain, nonatomic) UIPencilInteraction *pencilInteraction; // @synthesize pencilInteraction=_pencilInteraction;
 @property(retain, nonatomic) NSObject<OS_dispatch_semaphore> *serialViewControllerTransitionSemaphore; // @synthesize serialViewControllerTransitionSemaphore=_serialViewControllerTransitionSemaphore;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *serialViewControllerTransitionQueue; // @synthesize serialViewControllerTransitionQueue=_serialViewControllerTransitionQueue;
 @property(retain, nonatomic) PKInk *aggd_initialInkOnPopoverOpen; // @synthesize aggd_initialInkOnPopoverOpen=_aggd_initialInkOnPopoverOpen;
@@ -80,6 +90,8 @@
 - (void).cxx_destruct;
 - (id)_axLabelForToolButton:(id)arg1;
 - (void)_axHandleLongPressForLargeTextHUD:(id)arg1;
+- (void)toolIndicator:(id)arg1 willPresent:(_Bool)arg2 animated:(_Bool)arg3;
+- (struct CGRect)toolIndicatorCenteringRect:(id)arg1;
 - (void)_allowDrawingWhilePresentingPopoverViewDidBeginDrawing:(id)arg1;
 - (void)_inlineColorPickerUpdateFrameForAllowDrawingPassthroughView:(id)arg1;
 - (void)_inlineColorPickerTeardownAllowDrawingPassthroughView:(id)arg1;
@@ -106,6 +118,12 @@
 - (void)_dismissInkAttributesPicker:(CDUnknownBlockType)arg1;
 - (void)_showInkAttributesPickerFromView:(id)arg1 frame:(struct CGRect)arg2 displayMode:(unsigned long long)arg3 shouldHideArrow:(_Bool)arg4 completion:(CDUnknownBlockType)arg5;
 - (id)_effectiveViewControllerForPopoverPresentation;
+- (void)_resetUIOnPencilDoubleTapTimerEnded;
+- (struct CGRect)_frameForNonDrawingToolAtIndex:(long long)arg1;
+- (id)_inkForSwitchingToPreviousToolOnPencilDoubleTap;
+- (id)_inkForTogglingEraserAndPreviousToolOnPencilDoubleTap;
+- (void)pencilInteractionDidTap:(id)arg1;
+- (_Bool)_shouldEnablePencilGestures;
 - (void)resetToDrawingToolWithAnimation:(_Bool)arg1;
 - (void)notifyColorSelected:(_Bool)arg1;
 - (void)notifyToolSelected:(_Bool)arg1;

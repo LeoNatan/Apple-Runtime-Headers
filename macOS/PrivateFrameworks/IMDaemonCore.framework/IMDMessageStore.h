@@ -21,6 +21,7 @@
 + (void)_updateCacheForMessageGUID:(id)arg1 fromMessage:(id)arg2 toMessage:(id)arg3 updateLastMessage:(BOOL)arg4;
 + (id)sharedInstance;
 @property(retain) NSString *modificationStamp; // @synthesize modificationStamp=_modificationStamp;
+- (void)markMessageAsIgnoreButNeedingSyncWithROWID:(long long)arg1;
 - (void)markMessageAsCleanWithROWID:(long long)arg1;
 - (void)clearMessagesTombStoneTable;
 - (void)deleteMessagesFromTombStoneTableWithRecordIDs:(id)arg1;

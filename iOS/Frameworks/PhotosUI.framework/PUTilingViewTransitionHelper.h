@@ -9,7 +9,7 @@
 #import <PhotosUI/PUInterruptibleViewControllerTransition-Protocol.h>
 #import <PhotosUI/PUTilingViewControllerTransition-Protocol.h>
 
-@class NSString, PUAnimationGroup, PUMaximumChangeRateValueFilter, PUTilingView, PUViewControllerTransition;
+@class NSArray, NSString, PUAnimationGroup, PUMaximumChangeRateValueFilter, PUTilingView, PUViewControllerTransition;
 @protocol PUTilingViewControllerTransition><PUInterruptibleViewControllerTransition, PUTilingViewControllerTransitionEndPoint;
 
 __attribute__((visibility("hidden")))
@@ -33,11 +33,13 @@ __attribute__((visibility("hidden")))
     id <PUTilingViewControllerTransitionEndPoint> __toEndPoint;
     id <PUTilingViewControllerTransitionEndPoint> __endPointOwningTilingView;
     unsigned long long __interactionOptions;
+    NSArray *_transitionPausingCall;
 }
 
 + (void)unregisterTransitionEndPoint:(id)arg1 forViewController:(id)arg2;
 + (void)registerTransitionEndPoint:(id)arg1 forViewController:(id)arg2;
 + (id)transitionEndPointWithViewController:(id)arg1;
+@property(copy, nonatomic) NSArray *transitionPausingCall; // @synthesize transitionPausingCall=_transitionPausingCall;
 @property(nonatomic, setter=_setInteractionOptions:) unsigned long long _interactionOptions; // @synthesize _interactionOptions=__interactionOptions;
 @property(nonatomic, setter=_setEndPointOwningTilingView:) __weak id <PUTilingViewControllerTransitionEndPoint> _endPointOwningTilingView; // @synthesize _endPointOwningTilingView=__endPointOwningTilingView;
 @property(nonatomic, setter=_setToEndPoint:) __weak id <PUTilingViewControllerTransitionEndPoint> _toEndPoint; // @synthesize _toEndPoint=__toEndPoint;

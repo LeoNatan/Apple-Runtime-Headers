@@ -12,7 +12,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (_Bool)processWithInputs:(id)arg1 arguments:(id)arg2 output:(id)arg3 error:(id *)arg4;
-+ (void)center:(struct CGPoint *)arg1 inImg:(id)arg2 fromRect:(struct CGRect)arg3 offset:(struct CGPoint)arg4;
++ (struct CGPoint)centerInImg:(id)arg1 fromRect:(struct CGRect)arg2 toRect:(struct CGRect)arg3 offset:(struct CGPoint)arg4;
 + (_Bool)allowPartialOutputRegion;
 + (_Bool)canReduceOutputChannels;
 + (struct CGRect)roiForInput:(int)arg1 arguments:(id)arg2 outputRect:(struct CGRect)arg3;

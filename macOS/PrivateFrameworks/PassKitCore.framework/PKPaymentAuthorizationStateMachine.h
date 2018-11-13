@@ -146,6 +146,7 @@
 - (void)didEncounterFatalError:(id)arg1;
 - (void)didEncounterError:(id)arg1;
 - (void)didCancel;
+- (void)didBecomeOccluded:(BOOL)arg1;
 - (void)didBecomeActive:(BOOL)arg1;
 - (void)didResignActive:(BOOL)arg1;
 - (BOOL)canSelectPaymentOptions;

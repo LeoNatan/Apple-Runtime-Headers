@@ -42,7 +42,7 @@
 - (id)initWithPlist:(id)arg1 chunks:(id)arg2 context:(id)arg3;
 - (id)toPlistWithChunks:(id)arg1;
 - (id)normalizeRegressor:(id)arg1;
-- (void)loadSessionsSince:(double)arg1 block:(CDUnknownBlockType)arg2;
+- (void)loadSessionsWithBlock:(CDUnknownBlockType)arg1;
 - (BOOL)train;
 - (id)initWithStore:(id)arg1 tracker:(id)arg2 noiseStrategy:(id)arg3 planId:(struct NSString *)arg4 isSynchronous:(BOOL)arg5 positiveLabel:(unsigned long long)arg6 skew:(double)arg7 sessionDescriptor:(id)arg8 maxSessionsLimit:(unsigned long long)arg9 sessionsInBatch:(unsigned long long)arg10 useOnlyAppleInternalSessions:(BOOL)arg11;
 - (id)init;

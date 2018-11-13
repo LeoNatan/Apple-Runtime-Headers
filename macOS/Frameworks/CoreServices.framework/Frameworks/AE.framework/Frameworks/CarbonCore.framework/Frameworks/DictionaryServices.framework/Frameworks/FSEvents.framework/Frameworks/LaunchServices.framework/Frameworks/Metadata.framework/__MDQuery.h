@@ -22,6 +22,7 @@ __attribute__((visibility("hidden")))
     struct __CFString *_completionString;
     struct __CFArray *_completionFields;
     struct __CFArray *_completions;
+    _Bool _didLocaleCheckForFilterQueries;
     struct {
         unsigned long long first_max_num;
         unsigned long long first_max_ms;

@@ -17,9 +17,11 @@ __attribute__((visibility("hidden")))
     NSNumber *inputScale;
     NSNumber *inputApertureScaling;
     NSNumber *inputDraftMode;
+    NSNumber *inputAperture;
 }
 
 + (id)customAttributes;
+@property(copy, nonatomic) NSNumber *inputAperture; // @synthesize inputAperture;
 @property(copy, nonatomic) NSNumber *inputDraftMode; // @synthesize inputDraftMode;
 @property(copy, nonatomic) NSNumber *inputApertureScaling; // @synthesize inputApertureScaling;
 @property(copy, nonatomic) NSNumber *inputScale; // @synthesize inputScale;

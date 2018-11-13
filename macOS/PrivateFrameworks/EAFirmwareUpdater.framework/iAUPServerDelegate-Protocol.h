@@ -4,11 +4,12 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@class NSData, NSError, NSString;
+@class NSData, NSDictionary, NSError, NSString;
 
 @protocol iAUPServerDelegate
 - (void)updateProgress:(double)arg1;
-- (void)firmwareUpdateComplete:(NSError *)arg1;
+- (void)firmwareUpdateComplete:(NSDictionary *)arg1 error:(NSError *)arg2;
+- (void)handleFirmwareUpdateStatus:(NSDictionary *)arg1;
 - (NSError *)writeData:(NSData *)arg1;
 - (void)logStatusString:(NSString *)arg1;
 @end

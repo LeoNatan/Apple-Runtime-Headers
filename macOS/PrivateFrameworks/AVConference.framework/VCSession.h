@@ -16,7 +16,7 @@
 #import <AVConference/VCSessionParticipantDelegate-Protocol.h>
 #import <AVConference/VCSessionParticipantStreamDelegate-Protocol.h>
 
-@class AVCRateController, NSArray, NSError, NSMutableArray, NSMutableDictionary, NSString, VCControlChannelMultiWay, VCNetworkFeedbackController, VCRateControlMediaController, VCSecurityKeyManager, VCSessionConfiguration, VCSessionDownlinkBandwidthAllocator, VCSessionMessaging, VCSessionParticipant, VCSessionParticipantLocal, VCSessionStatsController, VCTransportSession;
+@class AVCRateController, NSArray, NSDictionary, NSError, NSMutableArray, NSMutableDictionary, NSString, VCControlChannelMultiWay, VCNetworkFeedbackController, VCRateControlMediaController, VCSecurityKeyManager, VCSessionConfiguration, VCSessionDownlinkBandwidthAllocator, VCSessionMessaging, VCSessionParticipant, VCSessionParticipantLocal, VCSessionStatsController, VCTransportSession;
 @protocol OS_dispatch_queue, VCConnectionProtocol, VCSessionDelegate;
 
 __attribute__((visibility("hidden")))
@@ -170,6 +170,7 @@ __attribute__((visibility("hidden")))
 - (void)handleActiveConnectionChange:(id)arg1;
 - (void)handleCellularMTUChanged:(unsigned short)arg1 connection:(id)arg2;
 - (void)handleCellTechChange:(int)arg1 connection:(id)arg2;
+- (void)setTransportSessionEventHandler;
 @property(readonly, nonatomic) NSArray *remoteParticipants;
 - (void)mediaStateChangedForParticipant:(id)arg1;
 - (id)participantForID:(id)arg1;
@@ -184,6 +185,7 @@ __attribute__((visibility("hidden")))
 - (char *)sessionStateToString:(unsigned int)arg1;
 - (void)setState:(unsigned int)arg1;
 - (void)setupTransportSessionWithDestination:(id)arg1;
+@property(readonly, nonatomic) NSDictionary *capabilities;
 - (void)dealloc;
 - (id)initWithIDSDestination:(id)arg1 configurationDict:(id)arg2 delegate:(id)arg3 processId:(int)arg4;
 

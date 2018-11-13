@@ -9,7 +9,7 @@
 #import <CoreDuet/NSCopying-Protocol.h>
 #import <CoreDuet/NSSecureCoding-Protocol.h>
 
-@class NSDate, NSNumber, NSString, NSUUID;
+@class NSDate, NSNumber, NSString, NSURL, NSUUID;
 
 @interface _CDAttachment : NSObject <NSCopying, NSSecureCoding>
 {
@@ -18,10 +18,15 @@
     NSUUID *_identifier;
     NSUUID *_cloudIdentifier;
     NSNumber *_size;
+    NSURL *_contentURL;
+    NSString *_contentText;
 }
 
 + (BOOL)supportsSecureCoding;
++ (id)attachmentWithIdentifier:(id)arg1 cloudIdentifier:(id)arg2 type:(id)arg3 sizeInBytes:(id)arg4 creationDate:(id)arg5 contentURL:(id)arg6 contentText:(id)arg7;
 + (id)attachmentWithIdentifier:(id)arg1 cloudIdentifier:(id)arg2 type:(id)arg3 sizeInBytes:(id)arg4 creationDate:(id)arg5;
+@property(retain) NSString *contentText; // @synthesize contentText=_contentText;
+@property(retain) NSURL *contentURL; // @synthesize contentURL=_contentURL;
 @property(retain) NSNumber *size; // @synthesize size=_size;
 @property(retain) NSUUID *cloudIdentifier; // @synthesize cloudIdentifier=_cloudIdentifier;
 @property(retain) NSUUID *identifier; // @synthesize identifier=_identifier;
@@ -34,7 +39,7 @@
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithIdentifier:(id)arg1 cloudIdentifier:(id)arg2 type:(id)arg3 sizeInBytes:(id)arg4 creationDate:(id)arg5;
+- (id)initWithIdentifier:(id)arg1 cloudIdentifier:(id)arg2 type:(id)arg3 sizeInBytes:(id)arg4 creationDate:(id)arg5 contentURL:(id)arg6 contentText:(id)arg7;
 
 @end
 

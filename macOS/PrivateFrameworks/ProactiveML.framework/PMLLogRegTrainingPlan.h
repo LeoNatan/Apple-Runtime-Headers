@@ -67,7 +67,7 @@
 - (id)runWhile:(CDUnknownBlockType)arg1 didFinish:(char *)arg2;
 @property(readonly, copy) NSString *description;
 - (id)normalizeRegressor:(id)arg1;
-- (void)loadSessionsSince:(double)arg1 block:(CDUnknownBlockType)arg2;
+- (void)loadSessionsWithBlock:(CDUnknownBlockType)arg1;
 - (id)evaluationMetricsForPredictions:(id)arg1 objectives:(id)arg2 predicate:(CDUnknownBlockType)arg3 start:(id)arg4;
 - (id)train;
 - (float)scaleFactorFor:(id)arg1;

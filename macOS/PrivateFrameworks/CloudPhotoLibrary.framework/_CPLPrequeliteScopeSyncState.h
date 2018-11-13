@@ -15,6 +15,7 @@
     CPLPrequeliteVariable *_transientSyncAnchorVar;
     CPLPrequeliteVariable *_syncAnchorVar;
     CPLPrequeliteVariable *_stagedSyncAnchorVar;
+    CPLPrequeliteVariable *_hasFetchedInitialSyncAnchorVar;
     CPLPrequeliteVariable *_initialSyncAnchorVar;
     CPLPrequeliteVariable *_classForInitialQueryVar;
     CPLPrequeliteVariable *_uploadTransportGroupVar;
@@ -25,6 +26,7 @@
 @property(readonly, nonatomic) CPLPrequeliteVariable *uploadTransportGroupVar; // @synthesize uploadTransportGroupVar=_uploadTransportGroupVar;
 @property(readonly, nonatomic) CPLPrequeliteVariable *classForInitialQueryVar; // @synthesize classForInitialQueryVar=_classForInitialQueryVar;
 @property(readonly, nonatomic) CPLPrequeliteVariable *initialSyncAnchorVar; // @synthesize initialSyncAnchorVar=_initialSyncAnchorVar;
+@property(readonly, nonatomic) CPLPrequeliteVariable *hasFetchedInitialSyncAnchorVar; // @synthesize hasFetchedInitialSyncAnchorVar=_hasFetchedInitialSyncAnchorVar;
 @property(readonly, nonatomic) CPLPrequeliteVariable *stagedSyncAnchorVar; // @synthesize stagedSyncAnchorVar=_stagedSyncAnchorVar;
 @property(readonly, nonatomic) CPLPrequeliteVariable *syncAnchorVar; // @synthesize syncAnchorVar=_syncAnchorVar;
 @property(readonly, nonatomic) CPLPrequeliteVariable *transientSyncAnchorVar; // @synthesize transientSyncAnchorVar=_transientSyncAnchorVar;

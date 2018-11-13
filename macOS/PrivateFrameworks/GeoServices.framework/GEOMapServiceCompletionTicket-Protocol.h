@@ -6,12 +6,13 @@
 
 #import <GeoServices/NSObject-Protocol.h>
 
-@class GEOMapItemIdentifier, GEOMapServiceTraits, GEORPSuggestionEntry, GEORPSuggestionList, NSDictionary, NSString;
+@class GEOMapItemIdentifier, GEOMapServiceTraits, GEORPSuggestionEntry, GEORPSuggestionList, GEOSortPriorityMapping, NSDictionary, NSString;
 
 @protocol GEOMapServiceCompletionTicket <NSObject>
 @property(readonly, nonatomic) NSDictionary *responseUserInfo;
 @property(readonly, nonatomic) GEOMapServiceTraits *traits;
 @property(readonly, nonatomic, getter=_searchQuery) NSString *searchQuery;
+- (GEOSortPriorityMapping *)sortPriorityMapping;
 - (BOOL)shouldDisplayNoResults;
 - (BOOL)hasShouldDisplayNoResults;
 - (double)retainSearchTime;

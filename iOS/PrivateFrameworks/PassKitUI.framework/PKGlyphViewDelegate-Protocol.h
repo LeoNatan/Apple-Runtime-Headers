@@ -11,6 +11,7 @@
 @protocol PKGlyphViewDelegate <NSObject>
 
 @optional
+- (void)glyphViewUserIntentEdgeDidChange:(PKGlyphView *)arg1;
 - (void)glyphView:(PKGlyphView *)arg1 revealingCheckmark:(_Bool)arg2;
 - (void)glyphView:(PKGlyphView *)arg1 transitioningToState:(long long)arg2;
 @end

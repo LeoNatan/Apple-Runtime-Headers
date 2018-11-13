@@ -70,7 +70,7 @@
 - (void)interspeechPointDetected;
 - (void)startpointDetected;
 - (void)finishedRecording;
-- (void)lpcmRecordBufferForNonLPCMReceived:(struct AudioQueueBuffer *)arg1 atTime:(unsigned long long)arg2;
+- (void)lpcmRecordBufferForNonLPCMReceived:(struct AudioQueueBuffer *)arg1 atTime:(unsigned long long)arg2 withASBD:(struct AudioStreamBasicDescription *)arg3;
 - (void)recordBufferReceived:(struct MyAudioQueueBuffer *)arg1 atTime:(unsigned long long)arg2;
 - (void)avAudioPCMRecordBufferReceived:(id)arg1 atTime:(unsigned long long)arg2;
 - (void)avAudioPCMRecordBufferListReceived:(struct AudioBufferList *)arg1 numChannels:(unsigned int)arg2 atTime:(unsigned long long)arg3;

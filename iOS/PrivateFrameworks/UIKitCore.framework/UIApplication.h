@@ -836,6 +836,7 @@
 - (void)_updateAccessibilityItunesSettings;
 - (id)_accessibilitySettingsBundle;
 - (_Bool)_accessibilityCaptureSimulatorEvent:(struct __GSEvent *)arg1;
+- (_Bool)_canAnimateDragCancelInApp;
 - (void)setAlternateIconName:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)_setAlternateIconName:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 @property(readonly, nonatomic) NSString *alternateIconName;
@@ -934,7 +935,6 @@
 - (void)beginRemoteSheet:(id)arg1 delegate:(id)arg2 didEndSelector:(SEL)arg3 contextInfo:(void *)arg4 requireTopApplication:(_Bool)arg5 presentAnimated:(_Bool)arg6;
 - (void)beginRemoteSheet:(id)arg1 delegate:(id)arg2 didEndSelector:(SEL)arg3 contextInfo:(void *)arg4 requireTopApplication:(_Bool)arg5;
 - (void)beginRemoteSheet:(id)arg1 delegate:(id)arg2 didEndSelector:(SEL)arg3 contextInfo:(void *)arg4;
-- (_Bool)_canAnimateDragCancelInApp;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

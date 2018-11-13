@@ -17,11 +17,13 @@
     struct _CAMetalDrawablePrivate *_priv;
     id <MTLTexture> _cachedTexture;
     CAMetalLayer *_layer;
+    BOOL _presentScheduledInsertSeedValid;
     unsigned int _presentScheduledInsertSeed;
     NSMutableArray *_presentScheduledHandlers;
 }
 
 @property(nonatomic) unsigned int presentScheduledInsertSeed; // @synthesize presentScheduledInsertSeed=_presentScheduledInsertSeed;
+@property(nonatomic) BOOL presentScheduledInsertSeedValid; // @synthesize presentScheduledInsertSeedValid=_presentScheduledInsertSeedValid;
 - (void).cxx_destruct;
 @property(readonly) CAMetalLayer *layer;
 - (void)presentAtTime:(double)arg1;

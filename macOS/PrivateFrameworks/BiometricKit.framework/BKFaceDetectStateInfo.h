@@ -20,17 +20,19 @@
     NSNumber *_pitch;
     NSNumber *_yaw;
     NSNumber *_roll;
+    unsigned long long _orientation;
 }
 
-@property(readonly, nonatomic) NSNumber *roll; // @synthesize roll=_roll;
-@property(readonly, nonatomic) NSNumber *yaw; // @synthesize yaw=_yaw;
-@property(readonly, nonatomic) NSNumber *pitch; // @synthesize pitch=_pitch;
 @property(readonly, nonatomic) BOOL partiallyOutOfView; // @synthesize partiallyOutOfView=_partiallyOutOfView;
 @property(readonly, nonatomic) BOOL occlusion; // @synthesize occlusion=_occlusion;
 @property(readonly, nonatomic) BOOL flare; // @synthesize flare=_flare;
 @property(readonly, nonatomic) BOOL multipleFaces; // @synthesize multipleFaces=_multipleFaces;
 @property(readonly, nonatomic) BOOL tooFarFromCamera; // @synthesize tooFarFromCamera=_tooFarFromCamera;
 @property(readonly, nonatomic) BOOL tooCloseToCamera; // @synthesize tooCloseToCamera=_tooCloseToCamera;
+@property(readonly, nonatomic) unsigned long long orientation; // @synthesize orientation=_orientation;
+@property(readonly, nonatomic) NSNumber *roll; // @synthesize roll=_roll;
+@property(readonly, nonatomic) NSNumber *yaw; // @synthesize yaw=_yaw;
+@property(readonly, nonatomic) NSNumber *pitch; // @synthesize pitch=_pitch;
 @property(readonly, nonatomic) BOOL faceDetected; // @synthesize faceDetected=_faceDetected;
 - (void).cxx_destruct;
 

@@ -7,12 +7,13 @@
 #import <objc/NSObject.h>
 
 #import <Intents/INCacheableContainer-Protocol.h>
+#import <Intents/INImageProxyInjecting-Protocol.h>
 #import <Intents/NSCopying-Protocol.h>
 #import <Intents/NSSecureCoding-Protocol.h>
 
 @class INSpeakableString, NSArray, NSDateComponents, NSString;
 
-@interface INNote : NSObject <INCacheableContainer, NSCopying, NSSecureCoding>
+@interface INNote : NSObject <INImageProxyInjecting, INCacheableContainer, NSCopying, NSSecureCoding>
 {
     INSpeakableString *_title;
     NSArray *_contents;
@@ -27,7 +28,7 @@
 @property(readonly, copy) NSDateComponents *modifiedDateComponents; // @synthesize modifiedDateComponents=_modifiedDateComponents;
 @property(readonly, copy) NSDateComponents *createdDateComponents; // @synthesize createdDateComponents=_createdDateComponents;
 @property(readonly, copy) INSpeakableString *groupName; // @synthesize groupName=_groupName;
-@property(readonly, copy) NSArray *contents; // @synthesize contents=_contents;
+@property(copy, setter=_setContents:) NSArray *contents; // @synthesize contents=_contents;
 @property(readonly, copy) INSpeakableString *title; // @synthesize title=_title;
 - (void).cxx_destruct;
 - (id)_dictionaryRepresentation;
@@ -39,6 +40,7 @@
 - (BOOL)isEqual:(id)arg1;
 @property(readonly) unsigned long long hash;
 - (id)initWithTitle:(id)arg1 contents:(id)arg2 groupName:(id)arg3 createdDateComponents:(id)arg4 modifiedDateComponents:(id)arg5 identifier:(id)arg6;
+- (void)_injectProxiesForImages:(CDUnknownBlockType)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_intents_updateContainerWithCache:(id)arg1;
 - (id)_intents_cacheableObjects;
 

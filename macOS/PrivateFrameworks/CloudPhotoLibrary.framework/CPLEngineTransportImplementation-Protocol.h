@@ -8,7 +8,7 @@
 #import <CloudPhotoLibrary/CPLPlatformImplementation-Protocol.h>
 
 @class CPLChangeBatch, CPLEngineScope, CPLEngineScopeFlagsUpdate, CPLLibraryInfo, CPLMomentShare, CPLResource, NSArray, NSData, NSDictionary, NSError, NSSet, NSString, NSURL;
-@protocol CPLEngineTransportAcceptMomentShareTask, CPLEngineTransportCheckRecordsExistenceTask, CPLEngineTransportDeleteTransportScopeTask, CPLEngineTransportDownloadBatchTask, CPLEngineTransportFetchMomentShareTask, CPLEngineTransportFetchScopeListChangesTask, CPLEngineTransportFetchTransportScopeTask, CPLEngineTransportGetLibraryInfoTask, CPLEngineTransportGroup, CPLEngineTransportInMemoryResourceDownloadTask, CPLEngineTransportPublishMomentShareTask, CPLEngineTransportQueryTask, CPLEngineTransportQueryUserIdentitiesTask, CPLEngineTransportRampingRequestTask, CPLEngineTransportResourcePublishTask, CPLEngineTransportResourcesCheckTask, CPLEngineTransportResourcesDownloadTask, CPLEngineTransportSendFeedbackTask, CPLEngineTransportSetupTask, CPLEngineTransportUpdateTransportScopeTask, CPLEngineTransportUploadBatchTask;
+@protocol CPLEngineTransportAcceptMomentShareTask, CPLEngineTransportCheckRecordsExistenceTask, CPLEngineTransportDeleteTransportScopeTask, CPLEngineTransportDownloadBatchTask, CPLEngineTransportFetchMomentShareTask, CPLEngineTransportFetchScopeListChangesTask, CPLEngineTransportFetchTransportScopeTask, CPLEngineTransportGetCurrentSyncAnchorTask, CPLEngineTransportGetLibraryInfoTask, CPLEngineTransportGroup, CPLEngineTransportInMemoryResourceDownloadTask, CPLEngineTransportPublishMomentShareTask, CPLEngineTransportQueryTask, CPLEngineTransportQueryUserIdentitiesTask, CPLEngineTransportRampingRequestTask, CPLEngineTransportResourcePublishTask, CPLEngineTransportResourcesCheckTask, CPLEngineTransportResourcesDownloadTask, CPLEngineTransportSendFeedbackTask, CPLEngineTransportSetupTask, CPLEngineTransportUpdateTransportScopeTask, CPLEngineTransportUploadBatchTask;
 
 @protocol CPLEngineTransportImplementation <CPLPlatformImplementation, CPLEngineComponent>
 @property(readonly, nonatomic) Class userIdentifierClass;
@@ -49,6 +49,7 @@
 - (NSString *)simpleDescriptionForSyncAnchor:(struct NSData *)arg1;
 - (NSError *)bestErrorForUnderlyingError:(NSError *)arg1;
 - (id <CPLEngineTransportFetchTransportScopeTask>)fetchTransportScopeForScope:(CPLEngineScope *)arg1 transportScope:(NSData *)arg2 completionHandler:(void (^)(NSData *, CPLEngineScopeFlagsUpdate *, NSError *))arg3;
+- (id <CPLEngineTransportGetCurrentSyncAnchorTask>)getCurrentSyncAnchorWithTransportScope:(NSData *)arg1 scope:(CPLEngineScope *)arg2 completionHandler:(void (^)(struct NSData *, CPLLibraryInfo *, CPLLibraryState *, NSError *))arg3;
 - (id <CPLEngineTransportGetLibraryInfoTask>)getLibraryInfoAndStateWithTransportScope:(NSData *)arg1 scope:(CPLEngineScope *)arg2 completionHandler:(void (^)(long long, CPLLibraryInfo *, CPLLibraryState *, NSError *))arg3;
 - (id <CPLEngineTransportUpdateTransportScopeTask>)updateTransportScope:(NSData *)arg1 scope:(CPLEngineScope *)arg2 libraryInfo:(CPLLibraryInfo *)arg3 completionHandler:(void (^)(NSError *))arg4;
 - (id <CPLEngineTransportDeleteTransportScopeTask>)deleteTransportScope:(NSData *)arg1 scope:(CPLEngineScope *)arg2 completionHandler:(void (^)(NSError *))arg3;

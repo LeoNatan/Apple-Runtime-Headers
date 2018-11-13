@@ -64,7 +64,10 @@
 - (id)myPhoneNumber;
 - (BOOL)relayIsSupported;
 - (BOOL)contactIsTTYContact:(id)arg1;
+- (unsigned long long)currentPreferredTransportMethodForContext:(id)arg1;
 - (unsigned long long)currentPreferredTransportMethod;
+- (void)headphoneStateChangedNotification:(id)arg1;
+- (void)updateHeadphoneState;
 - (void)dealloc;
 - (id)init;
 

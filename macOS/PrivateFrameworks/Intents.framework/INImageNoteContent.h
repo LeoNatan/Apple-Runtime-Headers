@@ -7,18 +7,19 @@
 #import <Intents/INNoteContent.h>
 
 #import <Intents/INCacheableContainer-Protocol.h>
+#import <Intents/INImageProxyInjecting-Protocol.h>
 #import <Intents/NSCopying-Protocol.h>
 #import <Intents/NSSecureCoding-Protocol.h>
 
 @class INImage, NSString;
 
-@interface INImageNoteContent : INNoteContent <INCacheableContainer, NSSecureCoding, NSCopying>
+@interface INImageNoteContent : INNoteContent <INCacheableContainer, INImageProxyInjecting, NSSecureCoding, NSCopying>
 {
     INImage *_image;
 }
 
 + (BOOL)supportsSecureCoding;
-@property(readonly, copy) INImage *image; // @synthesize image=_image;
+@property(copy, setter=_setImage:) INImage *image; // @synthesize image=_image;
 - (void).cxx_destruct;
 - (id)_dictionaryRepresentation;
 - (void)encodeWithCoder:(id)arg1;
@@ -30,6 +31,7 @@
 - (id)_initWithImage:(id)arg1;
 - (void)_intents_updateContainerWithCache:(id)arg1;
 - (id)_intents_cacheableObjects;
+- (void)_injectProxiesForImages:(CDUnknownBlockType)arg1 completion:(CDUnknownBlockType)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

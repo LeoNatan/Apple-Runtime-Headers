@@ -4,16 +4,19 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <AXHearingCoreSupport/AXHeardServer.h>
+#import <objc/NSObject.h>
 
-@class NSLock, NSMutableDictionary, NSObject;
+#import <TTYUtilities/AXHeardServerMessageDelegate-Protocol.h>
+
+@class HCServer, NSLock, NSMutableDictionary, NSString;
 @protocol OS_dispatch_queue;
 
-@interface TTYServer : AXHeardServer
+@interface TTYServer : NSObject <AXHeardServerMessageDelegate>
 {
     NSLock *_dataResponseBlocksLock;
     NSMutableDictionary *_databaseResponseBlocks;
     NSObject<OS_dispatch_queue> *_commonRequestQueue;
+    HCServer *_server;
     CDUnknownBlockType _actionCompletionBlock;
 }
 
@@ -34,6 +37,12 @@
 - (void)resetConnection;
 - (void)dealloc;
 - (id)init;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 
