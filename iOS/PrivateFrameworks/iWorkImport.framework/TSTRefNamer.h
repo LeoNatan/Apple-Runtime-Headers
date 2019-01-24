@@ -23,7 +23,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) __weak TSCECalculationEngine *calcEngine; // @synthesize calcEngine=_calcEngine;
 - (void).cxx_destruct;
 - (id)nameForChromeColumnIndex:(const struct TSUChromeColumnIndex *)arg1 inTable:(const UUIDData_5fbc143e *)arg2 useSymbolicNames:(_Bool)arg3;
-- (id)cellRangeName:(id)arg1 namingContext:(id)arg2;
+- (id)cellRangeName:(id)arg1 namingContext:(id)arg2 asChrome:(_Bool)arg3;
 - (id)cellRangeNameFromChromeRangeRef:(const RefTypeHolder_8c6da553 *)arg1 namingContext:(id)arg2;
 - (id)p_symbolicRowNameForRefPair:(id)arg1 useTopLeft:(_Bool)arg2 isSticky:(_Bool)arg3 foundRange:(struct TSUModelCellRect *)arg4 inTableModel:(id)arg5 namingContext:(id)arg6;
 - (id)p_symbolicColumnNameForRefPair:(id)arg1 useTopLeft:(_Bool)arg2 isSticky:(_Bool)arg3 foundRange:(struct TSUModelCellRect *)arg4 inTableModel:(id)arg5 namingContext:(id)arg6;

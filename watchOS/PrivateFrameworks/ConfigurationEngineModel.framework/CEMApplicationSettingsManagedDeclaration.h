@@ -16,15 +16,19 @@
     NSNumber *_payloadAllowOpenFromUnmanagedToManaged;
     NSNumber *_payloadForceAirDropUnmanaged;
     NSNumber *_payloadAllowManagedAppsCloudSync;
+    NSNumber *_payloadAllowManagedToWriteUnmanagedContacts;
+    NSNumber *_payloadAllowUnmanagedToReadManagedContacts;
 }
 
 + (id)buildRequiredOnlyWithIdentifier:(id)arg1;
-+ (id)buildWithIdentifier:(id)arg1 withAllowOpenFromManagedToUnmanaged:(id)arg2 withAllowOpenFromUnmanagedToManaged:(id)arg3 withForceAirDropUnmanaged:(id)arg4 withAllowManagedAppsCloudSync:(id)arg5;
++ (id)buildWithIdentifier:(id)arg1 withAllowOpenFromManagedToUnmanaged:(id)arg2 withAllowOpenFromUnmanagedToManaged:(id)arg3 withForceAirDropUnmanaged:(id)arg4 withAllowManagedAppsCloudSync:(id)arg5 withAllowManagedToWriteUnmanagedContacts:(id)arg6 withAllowUnmanagedToReadManagedContacts:(id)arg7;
 + (id)restrictionPayloadKeys;
 + (id)allowedPayloadKeys;
 + (id)profileType;
 + (id)registeredIdentifier;
 + (id)registeredClassName;
+@property(copy, nonatomic) NSNumber *payloadAllowUnmanagedToReadManagedContacts; // @synthesize payloadAllowUnmanagedToReadManagedContacts=_payloadAllowUnmanagedToReadManagedContacts;
+@property(copy, nonatomic) NSNumber *payloadAllowManagedToWriteUnmanagedContacts; // @synthesize payloadAllowManagedToWriteUnmanagedContacts=_payloadAllowManagedToWriteUnmanagedContacts;
 @property(copy, nonatomic) NSNumber *payloadAllowManagedAppsCloudSync; // @synthesize payloadAllowManagedAppsCloudSync=_payloadAllowManagedAppsCloudSync;
 @property(copy, nonatomic) NSNumber *payloadForceAirDropUnmanaged; // @synthesize payloadForceAirDropUnmanaged=_payloadForceAirDropUnmanaged;
 @property(copy, nonatomic) NSNumber *payloadAllowOpenFromUnmanagedToManaged; // @synthesize payloadAllowOpenFromUnmanagedToManaged=_payloadAllowOpenFromUnmanagedToManaged;

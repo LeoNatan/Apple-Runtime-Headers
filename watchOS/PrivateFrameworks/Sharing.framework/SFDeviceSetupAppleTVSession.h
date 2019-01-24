@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSString, SFDevice, SFSession, UIViewController;
+@class NSString, SFDevice, SFDeviceOperationCDPSetup, SFSession, UIViewController;
 @protocol OS_dispatch_queue;
 
 @interface SFDeviceSetupAppleTVSession : NSObject
@@ -26,6 +26,10 @@
     _Bool _iCloudAccountMatches;
     int _pairSetupState;
     double _pairSetupSecs;
+    _Bool _cdpEnabled;
+    SFDeviceOperationCDPSetup *_cdpSetupOperation;
+    double _cdpSetupSecs;
+    int _cdpState;
     NSObject<OS_dispatch_queue> *_dispatchQueue;
     SFDevice *_peerDevice;
     UIViewController *_presentingViewController;
@@ -33,6 +37,7 @@
     CDUnknownBlockType _promptForHomeHandler;
     CDUnknownBlockType _promptForPINHandler;
     CDUnknownBlockType _promptForRoomHandler;
+    unsigned long long _peerFeatureFlags;
 }
 
 @property(copy, nonatomic) CDUnknownBlockType promptForRoomHandler; // @synthesize promptForRoomHandler=_promptForRoomHandler;
@@ -40,11 +45,13 @@
 @property(copy, nonatomic) CDUnknownBlockType promptForHomeHandler; // @synthesize promptForHomeHandler=_promptForHomeHandler;
 @property(copy, nonatomic) CDUnknownBlockType progressHandler; // @synthesize progressHandler=_progressHandler;
 @property(retain, nonatomic) UIViewController *presentingViewController; // @synthesize presentingViewController=_presentingViewController;
+@property(nonatomic) unsigned long long peerFeatureFlags; // @synthesize peerFeatureFlags=_peerFeatureFlags;
 @property(retain, nonatomic) SFDevice *peerDevice; // @synthesize peerDevice=_peerDevice;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
 - (void).cxx_destruct;
 - (_Bool)_verifyiCloudMatch:(unsigned long long)arg1 error:(id *)arg2;
 - (int)_runFinish:(_Bool)arg1;
+- (int)_runCDPSetup;
 - (void)_runBasicConfigResponse:(id)arg1 error:(id)arg2;
 - (void)_runBasicConfigRequest;
 - (int)_runBasicConfig;

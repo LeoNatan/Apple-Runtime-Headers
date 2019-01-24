@@ -16,6 +16,7 @@
 
 + (BOOL)updateUserApprovedQuarantineFlagForURL:(id)arg1 error:(id *)arg2;
 + (BOOL)actionIsThirdPartyWithURL:(id)arg1;
++ (BOOL)currentProcessHasEntitlement:(id)arg1 withValue:(const void *)arg2;
 + (BOOL)secAssessAction:(id)arg1 withURL:(id)arg2 error:(id *)arg3;
 @property(retain) NSObject<OS_dispatch_semaphore> *analyze_sem; // @synthesize analyze_sem=_analyze_sem;
 @property BOOL xprotectSucceeded; // @synthesize xprotectSucceeded=_xprotectSucceeded;
@@ -26,7 +27,6 @@
 - (BOOL)isActionSignatureInvalid:(id)arg1;
 - (BOOL)actionMeetsGatekeeperPolicy:(id)arg1;
 - (BOOL)_secAssessAction:(id)arg1 withURL:(id)arg2 error:(id *)arg3;
-- (BOOL)currentProcessHasEntitlement:(id)arg1 withValue:(const void *)arg2;
 
 @end
 

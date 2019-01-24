@@ -32,7 +32,8 @@ __attribute__((visibility("hidden")))
 - (id)orderedTabViewItems;
 - (void)setCurrentTabViewItem:(id)arg1;
 - (id)currentTabViewItem;
-- (id)accessibilityAttributeValue:(id)arg1;
+- (id)accessibilityChildren;
+- (id)accessibilityTitle;
 - (void)exitFullScreenMode:(id)arg1;
 - (void)enterFullScreenMode:(id)arg1;
 - (struct CGRect)constrainFrameRect:(struct CGRect)arg1 toScreen:(id)arg2;

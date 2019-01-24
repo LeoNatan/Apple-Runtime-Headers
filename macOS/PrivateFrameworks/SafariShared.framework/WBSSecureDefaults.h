@@ -27,7 +27,7 @@
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)_removeObjectForKeyOnInternalQueue:(id)arg1;
-- (id)_objectForKeyOnInternalQueue:(id)arg1;
+- (id)_objectForKeyOnInternalQueue:(id)arg1 performingMigrationToSecureDefaultsIfNecessary:(BOOL)arg2;
 - (void)_setObjectOnInternalQueue:(id)arg1 forKey:(id)arg2;
 - (BOOL)_boolForKeyOnInternalQueue:(id)arg1;
 - (void)synchronize;
@@ -38,7 +38,8 @@
 - (void)setObject:(id)arg1 forKey:(id)arg2;
 - (BOOL)boolForKey:(id)arg1;
 - (void)setBool:(BOOL)arg1 forKey:(id)arg2;
-- (void)triggerMigrationForPreference:(id)arg1;
+- (void)performSynchronousMigrationFromSecureDefaultsToUserDefaultsOfPreferences:(id)arg1;
+- (void)triggerMigrationFromUserDefaultsToSecureDefaultsForPreference:(id)arg1;
 - (void)_setPreferenceWasMigratedToSecureDefaults:(id)arg1;
 - (BOOL)_isPreferenceMigratedToSecureDefaults:(id)arg1;
 - (void)_writeDefaultsDictionaryAndMigratedKeysSynchronously;

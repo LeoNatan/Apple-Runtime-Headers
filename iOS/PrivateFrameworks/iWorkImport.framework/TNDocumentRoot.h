@@ -9,7 +9,7 @@
 #import <iWorkImport/TSTFormsSheetProvider-Protocol.h>
 #import <iWorkImport/TSTResolverContainerNameProvider-Protocol.h>
 
-@class NSArray, NSMutableArray, NSString, TNTheme, TNUIState, TSKTreeNode, TSSStylesheet;
+@class NSArray, NSMutableArray, NSString, TNDocumentViewController, TNTheme, TNUIState, TSKTreeNode, TSSStylesheet;
 
 __attribute__((visibility("hidden")))
 @interface TNDocumentRoot : TSADocumentRoot <TSTResolverContainerNameProvider, TSTFormsSheetProvider>
@@ -45,7 +45,7 @@ __attribute__((visibility("hidden")))
 - (id)previewImageForSize:(struct CGSize)arg1;
 - (double)p_imageBorderForSize:(struct CGSize)arg1;
 - (id)freehandDrawingToolkitUIState;
-- (_Bool)prepareAndValidateSidecarViewStateObjectWithVersionUUIDMismatch:(id)arg1 originalDocumentViewStateObject:(id)arg2;
+- (_Bool)prepareAndValidateSidecarViewStateRootWithVersionUUIDMismatch:(id)arg1 sidecarDocumentRevision:(id)arg2 originalDocumentViewStateRoot:(id)arg3;
 - (id)nearestDisplayableSheetToSheet:(id)arg1;
 - (void)collectDocumentOpenAnalyticsWithLogger:(id)arg1;
 - (void)documentDidLoad;
@@ -111,6 +111,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
+@property(readonly, nonatomic) TNDocumentViewController *viewController; // @dynamic viewController;
 
 @end
 

@@ -11,7 +11,6 @@
 @class NSArray, NSCache, SLFacebookAlbumManager, UIButton;
 @protocol SLFacebookAlbumChooserViewControllerDelegate;
 
-__attribute__((visibility("hidden")))
 @interface SLFacebookAlbumChooserViewController : UITableViewController <SLFacebookAlbumManagerDelegate>
 {
     NSCache *_coverImageCache;

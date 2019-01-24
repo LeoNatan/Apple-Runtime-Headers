@@ -16,19 +16,20 @@
     NSString *_instructions;
     NSDate *_dueDate;
     _Bool _reviewed;
+    NSDate *_lastReviewedDate;
     NSDate *_dateOfPublication;
-    NSDate *_dateLastReviewed;
     long long _state;
     long long _publishingState;
     NSError *_publishError;
+    NSDate *_dateLastReviewed;
 }
 
 + (_Bool)supportsSecureCoding;
 + (id)relations;
+@property(retain, nonatomic) NSDate *dateLastReviewed; // @synthesize dateLastReviewed=_dateLastReviewed;
 @property(retain, nonatomic) NSError *publishError; // @synthesize publishError=_publishError;
 @property(nonatomic) long long publishingState; // @synthesize publishingState=_publishingState;
 @property(nonatomic) long long state; // @synthesize state=_state;
-@property(retain, nonatomic) NSDate *dateLastReviewed; // @synthesize dateLastReviewed=_dateLastReviewed;
 @property(retain, nonatomic) NSDate *dateOfPublication; // @synthesize dateOfPublication=_dateOfPublication;
 - (void).cxx_destruct;
 - (id)dictionaryRepresentation;
@@ -40,6 +41,7 @@
 - (void)removeHandoutAttachment:(id)arg1;
 - (void)addHandoutAttachment:(id)arg1;
 - (void)mergeWithObject:(id)arg1;
+@property(retain, nonatomic) NSDate *lastReviewedDate;
 @property(nonatomic, getter=isReviewed) _Bool reviewed;
 @property(retain, nonatomic) NSDate *dueDate;
 @property(copy, nonatomic) NSString *instructions;

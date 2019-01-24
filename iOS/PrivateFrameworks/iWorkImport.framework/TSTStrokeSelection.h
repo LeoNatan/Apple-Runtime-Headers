@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
 + (id)strokeSelectionWithMask:(unsigned int)arg1;
 @property(readonly, nonatomic) unsigned int mask; // @synthesize mask=_mask;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (void)saveToArchive:(struct StrokeSelectionArchive *)arg1 archiver:(id)arg2;
-- (id)initWithArchive:(const struct StrokeSelectionArchive *)arg1 unarchiver:(id)arg2;
+-     // Error parsing type: v32@0:8^{StrokeSelectionArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}i}16@24, name: saveToArchive:archiver:
+-     // Error parsing type: @32@0:8r^{StrokeSelectionArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}i}16@24, name: initWithArchive:unarchiver:
 - (id)initWithStrokeVisibilityMask:(unsigned int)arg1;
 
 @end

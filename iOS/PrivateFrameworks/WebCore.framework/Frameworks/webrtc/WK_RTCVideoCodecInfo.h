@@ -22,15 +22,13 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (VideoCodec_88e09d5a)nativeVideoCodec;
-- (struct SdpVideoFormat)nativeSdpVideoFormat;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (_Bool)isEqualToCodecInfo:(id)arg1;
-- (id)initWithNativeVideoCodec:(VideoCodec_88e09d5a)arg1;
-- (id)initWithNativeSdpVideoFormat:(struct SdpVideoFormat)arg1;
 - (id)initWithName:(id)arg1 parameters:(id)arg2;
 - (id)initWithName:(id)arg1;
+- (struct SdpVideoFormat)nativeSdpVideoFormat;
+- (id)initWithNativeSdpVideoFormat:(struct SdpVideoFormat)arg1;
 
 @end
 

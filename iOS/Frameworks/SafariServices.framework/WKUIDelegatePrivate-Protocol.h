@@ -6,7 +6,7 @@
 
 #import <SafariServices/WKUIDelegate-Protocol.h>
 
-@class NSArray, NSDictionary, NSString, NSURL, UIDragItem, UIImage, UIScrollView, UITargetedDragPreview, UIViewController, WKFrameInfo, WKNavigationAction, WKSecurityOrigin, WKWebView, WKWebViewConfiguration, WKWindowFeatures, _WKActivatedElementInfo, _WKAttachment, _WKFrameHandle;
+@class NSArray, NSDictionary, NSString, NSURL, UIDragItem, UIDropProposal, UIImage, UIScrollView, UITargetedDragPreview, UIViewController, WKFrameInfo, WKNavigationAction, WKSecurityOrigin, WKWebView, WKWebViewConfiguration, WKWindowFeatures, _WKActivatedElementInfo, _WKAttachment, _WKFrameHandle;
 @protocol NSSecureCoding, UIDragSession, UIDropSession;
 
 @protocol WKUIDelegatePrivate <WKUIDelegate>
@@ -20,6 +20,7 @@
 - (NSArray *)_webView:(WKWebView *)arg1 willPerformDropWithSession:(id <UIDropSession>)arg2;
 - (UITargetedDragPreview *)_webView:(WKWebView *)arg1 previewForCancellingItem:(UIDragItem *)arg2 withDefault:(UITargetedDragPreview *)arg3;
 - (UITargetedDragPreview *)_webView:(WKWebView *)arg1 previewForLiftingItem:(UIDragItem *)arg2 session:(id <UIDragSession>)arg3;
+- (UIDropProposal *)_webView:(WKWebView *)arg1 willUpdateDropProposalToProposal:(UIDropProposal *)arg2 forSession:(id <UIDropSession>)arg3;
 - (unsigned long long)_webView:(WKWebView *)arg1 willUpdateDataInteractionOperationToOperation:(unsigned long long)arg2 forSession:(id)arg3;
 - (void)_webView:(WKWebView *)arg1 dataInteractionOperationWasHandled:(_Bool)arg2 forSession:(id)arg3 itemProviders:(NSArray *)arg4;
 - (void)_webView:(WKWebView *)arg1 dataInteraction:(id)arg2 session:(id)arg3 didEndWithOperation:(unsigned long long)arg4;
@@ -50,10 +51,12 @@
 - (void)_webView:(WKWebView *)arg1 didNotHandleTapAsClickAtPoint:(struct CGPoint)arg2;
 - (NSArray *)_webView:(WKWebView *)arg1 actionsForElement:(_WKActivatedElementInfo *)arg2 defaultActions:(NSArray *)arg3;
 - (_Bool)_webView:(WKWebView *)arg1 shouldIncludeAppLinkActionsForElement:(_WKActivatedElementInfo *)arg2;
+- (void)_webView:(WKWebView *)arg1 takeFocus:(long long)arg2;
+- (void)_webView:(WKWebView *)arg1 didChangeFontAttributes:(NSDictionary *)arg2;
 - (void)_webView:(WKWebView *)arg1 requestStorageAccessPanelForDomain:(NSString *)arg2 underCurrentDomain:(NSString *)arg3 completionHandler:(void (^)(_Bool))arg4;
 - (void)_webView:(WKWebView *)arg1 didResignInputElementStrongPasswordAppearanceWithUserInfo:(id <NSSecureCoding>)arg2;
+- (void)_webView:(WKWebView *)arg1 didInvalidateDataForAttachment:(_WKAttachment *)arg2;
 - (void)_webView:(WKWebView *)arg1 didInsertAttachment:(_WKAttachment *)arg2 withSource:(NSString *)arg3;
-- (void)_webView:(WKWebView *)arg1 didInsertAttachment:(_WKAttachment *)arg2;
 - (void)_webView:(WKWebView *)arg1 didRemoveAttachment:(_WKAttachment *)arg2;
 - (void)_webView:(WKWebView *)arg1 editorStateDidChange:(NSDictionary *)arg2;
 - (void)_webView:(WKWebView *)arg1 runBeforeUnloadConfirmPanelWithMessage:(NSString *)arg2 initiatedByFrame:(WKFrameInfo *)arg3 completionHandler:(void (^)(_Bool))arg4;
@@ -67,6 +70,8 @@
 - (void)_webView:(WKWebView *)arg1 imageOrMediaDocumentSizeChanged:(struct CGSize)arg2;
 - (void)_webView:(WKWebView *)arg1 hasVideoInPictureInPictureDidChange:(_Bool)arg2;
 - (void)_webViewDidLosePointerLock:(WKWebView *)arg1;
+- (void)_webViewDidShowSafeBrowsingWarning:(WKWebView *)arg1;
+- (void)_webViewDidRequestPointerLock:(WKWebView *)arg1 completionHandler:(void (^)(_Bool))arg2;
 - (void)_webViewRequestPointerLock:(WKWebView *)arg1;
 - (void)_webViewDidExitFullscreen:(WKWebView *)arg1;
 - (void)_webViewDidEnterFullscreen:(WKWebView *)arg1;
@@ -74,6 +79,7 @@
 - (void)_webViewClose:(WKWebView *)arg1;
 - (void)_webView:(WKWebView *)arg1 printFrame:(_WKFrameHandle *)arg2;
 - (void)_webView:(WKWebView *)arg1 decideWebApplicationCacheQuotaForSecurityOrigin:(WKSecurityOrigin *)arg2 currentQuota:(unsigned long long)arg3 totalBytesNeeded:(unsigned long long)arg4 decisionHandler:(void (^)(unsigned long long))arg5;
+- (void)_webView:(WKWebView *)arg1 decideDatabaseQuotaForSecurityOrigin:(WKSecurityOrigin *)arg2 databaseName:(NSString *)arg3 displayName:(NSString *)arg4 currentQuota:(unsigned long long)arg5 currentOriginUsage:(unsigned long long)arg6 currentDatabaseUsage:(unsigned long long)arg7 expectedUsage:(unsigned long long)arg8 decisionHandler:(void (^)(unsigned long long))arg9;
 - (void)_webView:(WKWebView *)arg1 decideDatabaseQuotaForSecurityOrigin:(WKSecurityOrigin *)arg2 currentQuota:(unsigned long long)arg3 currentOriginUsage:(unsigned long long)arg4 currentDatabaseUsage:(unsigned long long)arg5 expectedUsage:(unsigned long long)arg6 decisionHandler:(void (^)(unsigned long long))arg7;
 @end
 

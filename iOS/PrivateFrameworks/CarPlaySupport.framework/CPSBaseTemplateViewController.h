@@ -9,19 +9,22 @@
 #import <CarPlaySupport/CPBaseTemplateProviding-Protocol.h>
 #import <CarPlaySupport/CPSBaseTemplateViewController-Protocol.h>
 #import <CarPlaySupport/CPSButtonDelegate-Protocol.h>
+#import <CarPlaySupport/UIGestureRecognizerDelegate-Protocol.h>
 
-@class CPTemplate, NSString;
+@class CPTemplate, NSString, UITapGestureRecognizer;
 @protocol CPSTemplateViewControllerDelegate, CPTemplateDelegate;
 
-@interface CPSBaseTemplateViewController : UIViewController <CPSButtonDelegate, CPBaseTemplateProviding, CPSBaseTemplateViewController>
+@interface CPSBaseTemplateViewController : UIViewController <CPSButtonDelegate, UIGestureRecognizerDelegate, CPBaseTemplateProviding, CPSBaseTemplateViewController>
 {
     _Bool _isPopping;
     _Bool _didDisappear;
     CPTemplate *_associatedTemplate;
     id <CPTemplateDelegate> _templateDelegate;
     id <CPSTemplateViewControllerDelegate> _viewControllerDelegate;
+    UITapGestureRecognizer *_backGestureRecognizer;
 }
 
+@property(retain, nonatomic) UITapGestureRecognizer *backGestureRecognizer; // @synthesize backGestureRecognizer=_backGestureRecognizer;
 @property(nonatomic) _Bool didDisappear; // @synthesize didDisappear=_didDisappear;
 @property(nonatomic) _Bool isPopping; // @synthesize isPopping=_isPopping;
 @property(nonatomic) __weak id <CPSTemplateViewControllerDelegate> viewControllerDelegate; // @synthesize viewControllerDelegate=_viewControllerDelegate;
@@ -33,10 +36,16 @@
 - (void)setControl:(id)arg1 enabled:(_Bool)arg2;
 - (void)setTrailingNavigationBarButtons:(id)arg1;
 - (void)setLeadingNavigationBarButtons:(id)arg1;
+- (void)_updateTrailingBarButtons;
+- (void)_updateLeadingBarButtons;
+- (void)setHostBackButton:(id)arg1;
+- (void)_backGestureFired:(id)arg1;
+- (_Bool)gestureRecognizer:(id)arg1 shouldReceivePress:(id)arg2;
 - (id)_barButtonItemForIdentifier:(id)arg1;
 - (void)didSelectButton:(id)arg1;
 - (void)viewDidDisappear:(_Bool)arg1;
 - (void)viewWillDisappear:(_Bool)arg1;
+- (void)_addGestureRecognizerIfNecessary;
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLoad;

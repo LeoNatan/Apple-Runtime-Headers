@@ -20,6 +20,7 @@
 - (void)showUsageDetailController:(id)arg1;
 - (id)getCoordinator:(id)arg1;
 - (id)getUsageDescription:(id)arg1;
+- (void)reloadScreenTimeSummarySpecifier;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)setCoordinator:(id)arg1;
 - (id)init;

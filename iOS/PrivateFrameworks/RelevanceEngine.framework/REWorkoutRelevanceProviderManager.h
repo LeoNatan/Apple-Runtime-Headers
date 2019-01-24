@@ -8,15 +8,17 @@
 
 #import <RelevanceEngine/REPredictorObserver-Protocol.h>
 
-@class NSString;
+@class NSDate, NSString;
 
 @interface REWorkoutRelevanceProviderManager : RERelevanceProviderManager <REPredictorObserver>
 {
     unsigned long long _state;
+    NSDate *_lastWorkoutDate;
 }
 
 + (Class)_relevanceProviderClass;
 + (id)_features;
+- (void).cxx_destruct;
 - (void)collectLoggableState:(CDUnknownBlockType)arg1;
 - (void)predictorDidUpdate:(id)arg1;
 - (void)_prepareForUpdate;

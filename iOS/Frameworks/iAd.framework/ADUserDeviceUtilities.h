@@ -30,6 +30,7 @@
 @property(retain) NSNumber *lastiTunesAccountID; // @synthesize lastiTunesAccountID=_lastiTunesAccountID;
 @property(readonly, nonatomic) _Bool deviceHasHomeButton;
 - (void)unregisterForiTunesAccountChanges;
+- (void)dealloc;
 
 @end
 

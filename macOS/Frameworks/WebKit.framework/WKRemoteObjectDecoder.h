@@ -15,7 +15,7 @@ __attribute__((visibility("hidden")))
     SEL _replyToSelector;
     const struct Array *_objectStream;
     unsigned long long _objectStreamPosition;
-    const struct HashSet<Class, WTF::PtrHash<Class>, WTF::HashTraits<Class>> *_allowedClasses;
+    const struct HashSet<const void *, WTF::PtrHash<const void *>, WTF::HashTraits<const void *>> *_allowedClasses;
 }
 
 - (id).cxx_construct;

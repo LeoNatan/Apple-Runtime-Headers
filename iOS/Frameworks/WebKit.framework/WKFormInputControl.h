@@ -8,6 +8,8 @@
 
 #import <WebKit/WKFormPeripheral-Protocol.h>
 
+@class NSString;
+
 __attribute__((visibility("hidden")))
 @interface WKFormInputControl : NSObject <WKFormPeripheral>
 {
@@ -20,6 +22,7 @@ __attribute__((visibility("hidden")))
 - (void)endEditing;
 - (void)beginEditing;
 - (id)initWithView:(id)arg1;
+@property(readonly, nonatomic) NSString *dateTimePickerCalendarType;
 
 @end
 

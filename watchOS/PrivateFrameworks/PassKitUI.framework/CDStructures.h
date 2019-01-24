@@ -76,6 +76,10 @@ struct _NSRange {
     unsigned int length;
 };
 
+struct os_unfair_lock_s {
+    unsigned int _os_unfair_lock_opaque;
+};
+
 #pragma mark Typedef'd Structures
 
 typedef struct {
@@ -90,6 +94,11 @@ typedef struct {
 } CDStruct_808b339d;
 
 typedef struct {
+    double _field1;
+    double _field2;
+} CDStruct_c3b9c2ee;
+
+typedef struct {
     float visibility;
     float visibilityAnimationTarget;
     unsigned int animationCounter;
@@ -102,6 +111,11 @@ typedef struct {
     int highlightEffect;
     int disabledEffect;
 } CDStruct_6b96b72e;
+
+typedef struct {
+    CDStruct_c3b9c2ee _field1;
+    CDStruct_c3b9c2ee _field2;
+} CDStruct_90e2a262;
 
 typedef struct {
     struct CGSize preferredContentSize;

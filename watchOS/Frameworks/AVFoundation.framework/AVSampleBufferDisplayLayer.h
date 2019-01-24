@@ -57,8 +57,8 @@
 - (void)enqueueSampleBuffer:(struct opaqueCMSampleBuffer *)arg1;
 @property(readonly, retain) struct OpaqueCMTimebase *timebase;
 - (void)_didFinishSuspension:(id)arg1;
-- (id)videoPerformanceMetrics;
 @property(readonly, nonatomic) _Bool outputObscuredDueToInsufficientExternalProtection;
+@property(nonatomic) _Bool preventsCapture;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

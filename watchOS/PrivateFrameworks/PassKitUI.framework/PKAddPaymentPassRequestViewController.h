@@ -6,7 +6,7 @@
 
 #import <UIKit/UITableViewController.h>
 
-@class CLInUseAssertion, NSArray, NSObject, NSString, PKAddPaymentPassRequest, PKAddPaymentPassRequestConfiguration, PKPaymentProvisioningController, PKPaymentWebService, PKTableHeaderView, RemoteUIController;
+@class CLInUseAssertion, NSArray, NSObject, NSString, PKAddPaymentPassRequest, PKAddPaymentPassRequestConfiguration, PKPaymentProvisioningController, PKPaymentWebService, PKTableHeaderView;
 @protocol NSObject, OS_dispatch_source, PKAddPaymentPassRequestViewControllerDelegate;
 
 @interface PKAddPaymentPassRequestViewController : UITableViewController
@@ -27,7 +27,6 @@
     _Bool _viewAppearing;
     _Bool _preconditionsValidated;
     PKTableHeaderView *_headerView;
-    RemoteUIController *_termsController;
     _Bool _hidePrivacy;
     _Bool _singleTarget;
     id <PKAddPaymentPassRequestViewControllerDelegate> _delegate;

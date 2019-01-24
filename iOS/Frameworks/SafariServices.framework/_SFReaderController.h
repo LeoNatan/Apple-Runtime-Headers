@@ -11,7 +11,7 @@
 #import <SafariServices/WKNavigationDelegate-Protocol.h>
 #import <SafariServices/WKUIDelegatePrivate-Protocol.h>
 
-@class NSMutableDictionary, NSString, NSTimer, WBSReaderFontManager, WKWebView, _WKRemoteObjectInterface;
+@class NSMutableDictionary, NSString, NSTimer, WBSReaderConfigurationManager, WBSReaderFontManager, WKWebView, _WKRemoteObjectInterface;
 @protocol SFReaderWebProcessControllerProtocol, WKUIDelegatePrivate, _SFReaderControllerDelegate;
 
 @interface _SFReaderController : NSObject <SFReaderEventsListener, SFReaderContext, WKNavigationDelegate, WKUIDelegatePrivate>
@@ -19,6 +19,7 @@
     id <SFReaderWebProcessControllerProtocol> _readerControllerProxy;
     _WKRemoteObjectInterface *_eventsListenerInterface;
     WBSReaderFontManager *_fontManager;
+    WBSReaderConfigurationManager *_configurationManager;
     CDUnknownBlockType _readerMailContentCompletionHandler;
     CDUnknownBlockType _readerPrintContentCompletionHandler;
     NSMutableDictionary *_bookmarkIdentifierToReadingListItemInfoCompletionMap;
@@ -41,6 +42,7 @@
 @property(readonly) __weak WKWebView *readerWebView; // @synthesize readerWebView=_readerWebView;
 @property(readonly) __weak WKWebView *webView; // @synthesize webView=_webView;
 - (void).cxx_destruct;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)_webView:(id)arg1 dataInteractionOperationWasHandled:(_Bool)arg2 forSession:(id)arg3 itemProviders:(id)arg4;
 - (_Bool)_webView:(id)arg1 performDataInteractionOperationWithItemProviders:(id)arg2;
 - (unsigned long long)_webView:(id)arg1 willUpdateDataInteractionOperationToOperation:(unsigned long long)arg2 forSession:(id)arg3;
@@ -59,13 +61,19 @@
 - (void)didCollectReadingListItemInfo:(id)arg1 bookmarkID:(id)arg2;
 - (void)didSetReaderConfiguration:(id)arg1;
 - (void)didDetermineReaderAvailability:(_Bool)arg1 dueToSameDocumentNavigation:(_Bool)arg2;
+- (void)_updateJavaScriptEnabled;
+- (id)configurationManager;
 - (id)fontManager;
-- (id)configuration;
+- (void)sendConfigurationToWebProcess;
+- (void)_saveConfigurationAndSendToWebProcess;
+- (void)resetReaderTextSize;
 - (void)decreaseReaderTextSize;
 - (void)increaseReaderTextSize;
-- (void)setReaderTheme:(id)arg1;
-- (void)setReaderLanguageTag:(id)arg1;
+- (_Bool)canIncreaseReaderTextSize;
+- (_Bool)canDecreaseReaderTextSize;
+- (void)setReaderTheme:(long long)arg1 forAppearance:(long long)arg2;
 - (void)setReaderFont:(id)arg1;
+- (void)setReaderLanguageTag:(id)arg1;
 - (void)_collectReaderContentForMailWithCompletion:(CDUnknownBlockType)arg1;
 - (void)collectReaderContentForMailWithCompletion:(CDUnknownBlockType)arg1;
 - (id)readerURL;
@@ -83,7 +91,7 @@
 - (void)clearReaderWebView;
 - (void)stopLoadingNextPage;
 - (_Bool)isLoadingNextPage;
-- (void)_setUpReaderWebViewIfNeededAndPerformBlock:(CDUnknownBlockType)arg1;
+- (void)setUpReaderWebViewIfNeededAndPerformBlock:(CDUnknownBlockType)arg1;
 - (void)_performActionsDelayedUntilReaderWebViewIsReadyDidTimeout:(id)arg1;
 - (void)_performActionsDelayedUntilReaderWebViewIsReady;
 - (_Bool)_readerWebViewIsReady;

@@ -6,17 +6,19 @@
 
 #import <objc/NSObject.h>
 
-@protocol AXHeardServerDelegate, OS_dispatch_queue, OS_xpc_object;
+@protocol AXHeardServerDelegate, AXHeardServerMessageDelegate, OS_dispatch_queue, OS_xpc_object;
 
 @interface HCServer : NSObject
 {
     id <AXHeardServerDelegate> _delegate;
+    id <AXHeardServerMessageDelegate> _messageDelegate;
     NSObject<OS_dispatch_queue> *_connectionQueue;
     NSObject<OS_xpc_object> *_xpcConnection;
 }
 
 @property(retain, nonatomic) NSObject<OS_xpc_object> *xpcConnection; // @synthesize xpcConnection=_xpcConnection;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *connectionQueue; // @synthesize connectionQueue=_connectionQueue;
+@property(nonatomic) __weak id <AXHeardServerMessageDelegate> messageDelegate; // @synthesize messageDelegate=_messageDelegate;
 @property(nonatomic) __weak id <AXHeardServerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)handleMessageError:(id)arg1 destructive:(_Bool)arg2;

@@ -30,6 +30,7 @@
 - (void)wifiPasswordSharingAvailabilityWithCompletion:(CDUnknownBlockType)arg1;
 - (void)triggerProximityAutoFillDetectedWithURL:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)triggerHomeKitDeviceDetectedWithURL:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)testContinuityKeyboardBegin:(BOOL)arg1;
 - (void)showDevicePickerWithInfo:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)setupDevice:(id)arg1 home:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)retriggerProximitySetup:(CDUnknownBlockType)arg1;
@@ -39,6 +40,7 @@
 - (void)reenableProxCardType:(unsigned char)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)preventExitForLocaleReason:(id)arg1;
 - (void)openSetupURL:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)findContact:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)displayStringForContactIdentifier:(id)arg1 deviceIdentifier:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)displayNameForEmailHash:(id)arg1 phoneHash:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)contactIDForEmailHash:(id)arg1 phoneHash:(id)arg2 completion:(CDUnknownBlockType)arg3;

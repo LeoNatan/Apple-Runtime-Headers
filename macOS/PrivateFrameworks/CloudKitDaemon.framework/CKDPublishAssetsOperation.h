@@ -34,7 +34,6 @@ __attribute__((visibility("hidden")))
 - (void)_fetchRecords;
 - (void)_fetchPCSForRecords;
 - (void)_dispatchAssetURLsForRecord:(id)arg1 recordID:(id)arg2 pcs:(struct _OpaquePCSShareProtection *)arg3 error:(id)arg4;
-- (id)_expandTemplateURL:(id)arg1 fieldValues:(id)arg2;
 - (id)nameForState:(unsigned long long)arg1;
 - (BOOL)makeStateTransition;
 - (id)activityCreate;

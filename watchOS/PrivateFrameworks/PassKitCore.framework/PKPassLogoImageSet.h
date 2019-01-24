@@ -24,6 +24,7 @@
 
 + (_Bool)supportsSecureCoding;
 + (_Bool)shouldCache;
++ (unsigned int)currentVersion;
 + (id)archiveName;
 + (int)imageSetType;
 @property(retain, nonatomic) PKImage *cardBackgroundCombinedImage; // @synthesize cardBackgroundCombinedImage=_cardBackgroundCombinedImage;

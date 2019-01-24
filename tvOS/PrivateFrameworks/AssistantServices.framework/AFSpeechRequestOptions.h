@@ -23,6 +23,7 @@
     _Bool _useBorealisBuffer;
     _Bool _fetchSmartSiriVolume;
     _Bool _suppressStopAlert;
+    _Bool _hasPlayedStartAlert;
     _Bool _isOnPhoneCall;
     long long _activationEvent;
     NSString *_activationDeviceIdentifier;
@@ -58,6 +59,7 @@
 @property(copy, nonatomic) CLLocation *location; // @synthesize location=_location;
 @property(copy, nonatomic) AFSpeechSynthesisRecord *speechSynthesisRecord; // @synthesize speechSynthesisRecord=_speechSynthesisRecord;
 @property(nonatomic) unsigned long long bargeInOptions; // @synthesize bargeInOptions=_bargeInOptions;
+@property(nonatomic) _Bool hasPlayedStartAlert; // @synthesize hasPlayedStartAlert=_hasPlayedStartAlert;
 @property(nonatomic) _Bool suppressStopAlert; // @synthesize suppressStopAlert=_suppressStopAlert;
 @property(copy, nonatomic) NSURL *audioFileURL; // @synthesize audioFileURL=_audioFileURL;
 @property(copy, nonatomic) NSNumber *notifyState; // @synthesize notifyState=_notifyState;

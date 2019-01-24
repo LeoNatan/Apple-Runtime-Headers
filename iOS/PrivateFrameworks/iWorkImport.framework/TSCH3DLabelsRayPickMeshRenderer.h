@@ -11,7 +11,7 @@ __attribute__((visibility("hidden")))
 {
 }
 
-- (void)renderWithMeshRenderLabelInfo:(const struct LabelsMeshRendererLabelInfo *)arg1;
+- (void)renderWithMeshRenderLabelInfo:(id)arg1;
 
 @end
 

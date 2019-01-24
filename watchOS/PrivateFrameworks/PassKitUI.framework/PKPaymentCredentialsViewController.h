@@ -8,11 +8,12 @@
 
 #import <PassKitUI/PKPaymentProvisioningControllerDelegate-Protocol.h>
 #import <PassKitUI/PKPaymentSetupHideSetupLaterButtonProtocol-Protocol.h>
+#import <PassKitUI/PKPaymentSetupPresentationProtocol-Protocol.h>
 
 @class NSMutableArray, NSString, PKPaymentCredentialTableViewCell, PKPaymentProvisioningController, PKPaymentSetupFooterView, PKPaymentSetupProduct, PKTableHeaderView, UIImage;
 @protocol PKPaymentSetupViewControllerDelegate;
 
-@interface PKPaymentCredentialsViewController : PKPaymentSetupTableViewController <PKPaymentSetupHideSetupLaterButtonProtocol, PKPaymentProvisioningControllerDelegate>
+@interface PKPaymentCredentialsViewController : PKPaymentSetupTableViewController <PKPaymentSetupHideSetupLaterButtonProtocol, PKPaymentProvisioningControllerDelegate, PKPaymentSetupPresentationProtocol>
 {
     PKPaymentProvisioningController *_provisioningController;
     id <PKPaymentSetupViewControllerDelegate> _setupDelegate;
@@ -32,9 +33,10 @@
 @property(nonatomic) _Bool hideSetupLaterButton; // @synthesize hideSetupLaterButton=_hideSetupLaterButton;
 @property(retain, nonatomic) PKPaymentSetupProduct *product; // @synthesize product=_product;
 - (void).cxx_destruct;
+- (_Bool)shouldRemoveViewController;
+- (id)paymentSetupMarker;
 - (void)_createPassSnapshotFromPaymentPass:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)paymentPassUpdatedOnCredential:(id)arg1;
-- (void)_presentViewController:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_terminateSetupFlow;
 - (void)_startProvisioningForCredentials:(id)arg1;
 - (void)_startProvisioningForSelectedCards;
@@ -43,6 +45,7 @@
 - (void)_updateForSelectionCount;
 - (unsigned int)_numberOfSelectedCredentials;
 - (void)_updateMaximumSelectableCredentials;
+- (void)_sortCredentialCaches:(id)arg1;
 - (void)_updateRemoteCredentialCache;
 - (void)_updateTableHeaderViewSubtitle;
 - (void)tableView:(id)arg1 didDeselectRowAtIndexPath:(id)arg2;

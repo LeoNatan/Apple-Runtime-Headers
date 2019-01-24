@@ -9,18 +9,15 @@
 #import <PassKitUI/PKExplanationViewControllerDelegate-Protocol.h>
 #import <PassKitUI/PKExplanationViewDelegate-Protocol.h>
 #import <PassKitUI/PKPaymentSelectPassesViewControllerDelegate-Protocol.h>
-#import <PassKitUI/PKPaymentSetupHideSetupLaterButtonProtocol-Protocol.h>
-#import <PassKitUI/RemoteUIControllerDelegate-Protocol.h>
 
-@class NSString, PKPaymentProvisioningController, PKPeerPaymentCredential, PKPeerPaymentWebService, RemoteUIController, UIImage;
+@class NSString, PKPaymentProvisioningController, PKPeerPaymentCredential, PKPeerPaymentWebService, UIImage;
 @protocol PKPaymentSetupViewControllerDelegate;
 
-@interface PKPeerPaymentExplanationViewController : PKExplanationViewController <RemoteUIControllerDelegate, PKExplanationViewDelegate, PKPaymentSelectPassesViewControllerDelegate, PKExplanationViewControllerDelegate, PKPaymentSetupHideSetupLaterButtonProtocol>
+@interface PKPeerPaymentExplanationViewController : PKExplanationViewController <PKExplanationViewDelegate, PKPaymentSelectPassesViewControllerDelegate, PKExplanationViewControllerDelegate>
 {
     PKPaymentProvisioningController *_provisioningController;
     PKPeerPaymentCredential *_credential;
     id <PKPaymentSetupViewControllerDelegate> _setupDelegate;
-    RemoteUIController *_termsController;
     PKPeerPaymentWebService *_peerPaymentWebService;
     UIImage *_passSnapShot;
     _Bool _hidesSetupLater;
@@ -44,7 +41,6 @@
 - (id)_bodyText;
 - (void)explanationViewControllerDidSelectCancel:(id)arg1;
 - (void)selectPassesViewController:(id)arg1 didSelectPasses:(id)arg2 completion:(CDUnknownBlockType)arg3;
-- (void)remoteUIController:(id)arg1 didReceiveObjectModel:(id)arg2 actionSignal:(unsigned int *)arg3;
 - (void)explanationViewDidSelectSetupLater:(id)arg1;
 - (void)explanationViewDidSelectContinue:(id)arg1;
 - (void)setHideSetupLaterButton:(_Bool)arg1;

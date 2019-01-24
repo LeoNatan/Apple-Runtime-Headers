@@ -16,6 +16,7 @@
     NSString *_displayName;
     _Bool _prohibitedByStore;
     _Bool _developer;
+    _Bool _isSetTopBoxSupported;
     VSOptional *_uniqueID;
     VSOptional *_providerID;
     VSOptional *_providerInfo;
@@ -36,6 +37,7 @@
 @property(copy, nonatomic) NSString *userToken; // @synthesize userToken=_userToken;
 @property(copy, nonatomic) NSNumber *appPlacementPosition; // @synthesize appPlacementPosition=_appPlacementPosition;
 @property(copy, nonatomic) NSString *providerAppArtworkTemplateURL; // @synthesize providerAppArtworkTemplateURL=_providerAppArtworkTemplateURL;
+@property(nonatomic) _Bool isSetTopBoxSupported; // @synthesize isSetTopBoxSupported=_isSetTopBoxSupported;
 @property(copy, nonatomic) NSString *providerArtworkTemplateURL; // @synthesize providerArtworkTemplateURL=_providerArtworkTemplateURL;
 @property(copy, nonatomic) NSArray *appAdamIDs; // @synthesize appAdamIDs=_appAdamIDs;
 @property(copy, nonatomic) NSURL *appStoreRoomURL; // @synthesize appStoreRoomURL=_appStoreRoomURL;

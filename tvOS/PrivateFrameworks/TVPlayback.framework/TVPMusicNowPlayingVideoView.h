@@ -6,17 +6,28 @@
 
 #import <UIKit/UIView.h>
 
-@class AVPlayerLayer;
+@class AVPlayer, AVPlayerLayer, NSString;
 
 @interface TVPMusicNowPlayingVideoView : UIView
 {
-    AVPlayerLayer *_playerLayer;
+    _Bool _shouldAutomaticallyAdjustVideoGravity;
+    AVPlayer *_player;
+    NSString *_videoGravity;
 }
 
 + (Class)layerClass;
-@property(retain, nonatomic) AVPlayerLayer *playerLayer; // @synthesize playerLayer=_playerLayer;
+@property(nonatomic) _Bool shouldAutomaticallyAdjustVideoGravity; // @synthesize shouldAutomaticallyAdjustVideoGravity=_shouldAutomaticallyAdjustVideoGravity;
+@property(retain, nonatomic) NSString *videoGravity; // @synthesize videoGravity=_videoGravity;
+@property(retain, nonatomic) AVPlayer *player; // @synthesize player=_player;
 - (void).cxx_destruct;
+- (void)_updateVideoGravityIfPossible;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (struct CGSize)intrinsicContentSize;
+- (void)setFrame:(struct CGRect)arg1;
+- (void)_setVideoGravity:(id)arg1;
+- (void)dealloc;
+- (id)initWithFrame:(struct CGRect)arg1;
+@property(readonly, nonatomic) AVPlayerLayer *playerLayer;
 
 @end
 

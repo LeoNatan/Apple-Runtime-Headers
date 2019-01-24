@@ -13,25 +13,29 @@
 __attribute__((visibility("hidden")))
 @interface TSPAlternateArchiver : TSPArchiverBase <TSPKnownFieldRuleProvider>
 {
-    RepeatedPtrField_5867f37b _fieldPathsToRemove;
+    RepeatedPtrField_02f83fb8 _fieldPathsToRemove;
     struct {
         unsigned int hasPreserveNewerValueRule:1;
         unsigned int hasPreserveNewerValueUntilModifiedRule:1;
     } _flags;
     _Bool _isDiff;
-    const struct FieldPath *_fieldPath;
+    // Error parsing type: r^{FieldPath=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedField<unsigned int>=ii(Pointer=^{Arena}^{Rep})}i}, name: _fieldPath
     unsigned long long _diffReadVersion;
     TSPArchiverBase *_parentArchiver;
 }
 
 @property(readonly, nonatomic) __weak TSPArchiverBase *parentArchiver; // @synthesize parentArchiver=_parentArchiver;
 @property(readonly, nonatomic) unsigned long long diffReadVersion; // @synthesize diffReadVersion=_diffReadVersion;
-@property(readonly, nonatomic) const struct FieldPath *fieldPath; // @synthesize fieldPath=_fieldPath;
+// Error parsing type for property fieldPath:
+// Property attributes: Tr^{FieldPath=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedField<unsigned int>=ii(Pointer=^{Arena}^{Rep})}i},R,N,V_fieldPath
+
 @property(readonly, nonatomic) _Bool isDiff; // @synthesize isDiff=_isDiff;
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)enumerateKnownFieldRulesUsingBlock:(CDUnknownBlockType)arg1;
 @property(readonly, nonatomic) _Bool isContentUnknown;
+- (_Bool)isSavingCollaborativeDocument;
+- (_Bool)isSavingDocumentAs;
 - (id)alternateDiffToMergeBeforeVersion:(unsigned long long)arg1 fileFormatVersion:(unsigned long long)arg2 fieldPath:(int *)arg3;
 - (id)alternateDiffToMergeBeforeVersion:(unsigned long long)arg1 fileFormatVersion:(unsigned long long)arg2 field:(int)arg3;
 - (id)alternateDiffToMergeBeforeVersion:(unsigned long long)arg1 fileFormatVersion:(unsigned long long)arg2;
@@ -48,10 +52,10 @@ __attribute__((visibility("hidden")))
 - (void)setPreserveNewerValueRuleForFieldPath:(int *)arg1 fileFormatVersion:(unsigned long long)arg2;
 - (void)setPreserveNewerValueRuleForField:(int)arg1 fileFormatVersion:(unsigned long long)arg2 featureIdentifier:(id)arg3;
 - (void)setPreserveNewerValueRuleForField:(int)arg1 fileFormatVersion:(unsigned long long)arg2;
-- (const struct FieldPath *)baseFieldPathAndReturnShouldDeleteReturnedValue:(_Bool *)arg1;
-@property(readonly, nonatomic) const RepeatedPtrField_5867f37b *fieldPathsToRemove;
+-     // Error parsing type: r^{FieldPath=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedField<unsigned int>=ii(Pointer=^{Arena}^{Rep})}i}24@0:8^B16, name: baseFieldPathAndReturnShouldDeleteReturnedValue:
+@property(readonly, nonatomic) const RepeatedPtrField_02f83fb8 *fieldPathsToRemove;
 - (void)dealloc;
-- (id)initWithObject:(id)arg1 version:(unsigned long long)arg2 fieldPath:(const struct FieldPath *)arg3 isDiff:(_Bool)arg4 diffReadVersion:(unsigned long long)arg5 parentArchiver:(id)arg6;
+-     // Error parsing type: @60@0:8@16Q24r^{FieldPath=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedField<unsigned int>=ii(Pointer=^{Arena}^{Rep})}i}32B40Q44@52, name: initWithObject:version:fieldPath:isDiff:diffReadVersion:parentArchiver:
 - (id)initWithObject:(id)arg1;
 
 // Remaining properties

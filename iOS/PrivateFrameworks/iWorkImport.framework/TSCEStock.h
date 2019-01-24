@@ -18,7 +18,7 @@ __attribute__((visibility("hidden")))
 
 + (id)nativeLocaleIdentifier;
 + (id)kNilStockAttributeString;
-+ (id)stockFromArchive:(const struct StockArchive *)arg1;
++     // Error parsing type: @24@0:8r^{StockArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSCE::StockArchive_AttributeEntry>=^{Arena}ii^{Rep}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}d}16, name: stockFromArchive:
 + (id)stockWithAttributes:(id)arg1;
 @property(readonly, nonatomic) TSUSparseArray *attributes; // @synthesize attributes=_attributes;
 @property(retain, nonatomic) NSDate *date; // @synthesize date=_date;
@@ -31,8 +31,8 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) _Bool up;
 - (id)valueForAttribute:(long long)arg1 forLocale:(id)arg2;
 - (id)valueForAttribute:(long long)arg1;
-- (void)encodeToArchive:(struct StockArchive *)arg1;
-- (id)initFromArchive:(const struct StockArchive *)arg1;
+-     // Error parsing type: v24@0:8^{StockArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSCE::StockArchive_AttributeEntry>=^{Arena}ii^{Rep}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}d}16, name: encodeToArchive:
+-     // Error parsing type: @24@0:8r^{StockArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSCE::StockArchive_AttributeEntry>=^{Arena}ii^{Rep}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}d}16, name: initFromArchive:
 - (id)initWithAttributes:(id)arg1;
 - (id)initWithSymbol:(id)arg1;
 - (id)init;

@@ -16,15 +16,14 @@
     // Error parsing type: , name: animation
     // Error parsing type: , name: delegate
     // Error parsing type: , name: disabledScrollViews
-    // Error parsing type: , name: isDragging
 }
 
-- (CDUnknownBlockType).cxx_destruct;
+- (void).cxx_destruct;
 - (id)init;
 - (void)handlePanGestureRecognizer:(id)arg1;
 - (void)resetGestureRecognizer;
 - (id)initInCallControlsView:(id)arg1 constraintsController:(id)arg2;
-@property(nonatomic) _Bool isDragging; // @synthesize isDragging;
+@property(nonatomic, readonly) _Bool isDragging;
 @property(nonatomic) __weak id <CNKFaceTimeInCallControlsDragControllerDelegate> delegate; // @synthesize delegate;
 
 @end

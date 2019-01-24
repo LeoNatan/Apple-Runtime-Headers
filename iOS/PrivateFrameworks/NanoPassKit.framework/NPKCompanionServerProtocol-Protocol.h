@@ -37,6 +37,7 @@
 - (void)paymentPassesWithPrimaryAccountIdentifier:(NSString *)arg1 completion:(void (^)(NSSet *))arg2;
 - (void)paymentPassWithUniqueID:(NSString *)arg1 reply:(void (^)(PKPaymentPass *))arg2;
 - (void)paymentPassUniqueIDs:(void (^)(NSSet *))arg1;
+- (void)registerDeviceWithCompletion:(void (^)(unsigned long long, unsigned long long, NSError *))arg1;
 - (void)noteProvisioningPreflightCompleteWithSuccess:(_Bool)arg1 error:(NSError *)arg2 completion:(void (^)(void))arg3;
 - (void)beginProvisioningFromWatchOfferForPaymentPass:(PKPaymentPass *)arg1 withCompletion:(void (^)(_Bool, NSError *))arg2;
 - (void)noteWatchOfferDisplayedForPaymentPassWithUniqueID:(NSString *)arg1;

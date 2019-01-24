@@ -19,7 +19,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)package;
-+ (id)instanceWithArchive:(const struct Chart3DPhongMaterialPackageArchive *)arg1 unarchiver:(id)arg2;
++     // Error parsing type: @32@0:8r^{Chart3DPhongMaterialPackageArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{Chart3DEmissiveMaterialArchive}^{Chart3DDiffuseMaterialArchive}^{Chart3DModulateMaterialArchive}^{Chart3DSpecularMaterialArchive}^{Chart3DShininessMaterialArchive}}16@24, name: instanceWithArchive:unarchiver:
 @property(retain, nonatomic) TSCH3DShininessMaterial *shininess; // @synthesize shininess=_shininess;
 @property(retain, nonatomic) TSCH3DSpecularMaterial *specular; // @synthesize specular=_specular;
 @property(retain, nonatomic) TSCH3DModulateMaterial *modulate; // @synthesize modulate=_modulate;
@@ -32,8 +32,8 @@ __attribute__((visibility("hidden")))
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)dealloc;
 - (id)init;
-- (void)saveToArchive:(struct Chart3DPhongMaterialPackageArchive *)arg1 archiver:(id)arg2;
-- (id)initWithArchive:(const struct Chart3DPhongMaterialPackageArchive *)arg1 unarchiver:(id)arg2;
+-     // Error parsing type: v32@0:8^{Chart3DPhongMaterialPackageArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{Chart3DEmissiveMaterialArchive}^{Chart3DDiffuseMaterialArchive}^{Chart3DModulateMaterialArchive}^{Chart3DSpecularMaterialArchive}^{Chart3DShininessMaterialArchive}}16@24, name: saveToArchive:archiver:
+-     // Error parsing type: @32@0:8r^{Chart3DPhongMaterialPackageArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{Chart3DEmissiveMaterialArchive}^{Chart3DDiffuseMaterialArchive}^{Chart3DModulateMaterialArchive}^{Chart3DSpecularMaterialArchive}^{Chart3DShininessMaterialArchive}}16@24, name: initWithArchive:unarchiver:
 
 @end
 

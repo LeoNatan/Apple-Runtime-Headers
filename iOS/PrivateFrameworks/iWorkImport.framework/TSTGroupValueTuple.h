@@ -16,12 +16,11 @@ __attribute__((visibility("hidden")))
     NSArray *_groupValues;
 }
 
-+ (UUIDData_5fbc143e)rootUid;
 - (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
-- (void)encodeToArchive:(struct CategoryOwnerArchive_GroupByArchive_GroupNodeArchive_GroupValueTupleArchive *)arg1;
-- (id)initWithArchive:(const struct CategoryOwnerArchive_GroupByArchive_GroupNodeArchive_GroupValueTupleArchive *)arg1 locale:(id)arg2;
+-     // Error parsing type: v24@0:8^{CategoryOwnerArchive_GroupByArchive_GroupNodeArchive_GroupValueTupleArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSCE::CellValueArchive>=^{Arena}ii^{Rep}}}16, name: encodeToArchive:
+-     // Error parsing type: @32@0:8r^{CategoryOwnerArchive_GroupByArchive_GroupNodeArchive_GroupValueTupleArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSCE::CellValueArchive>=^{Arena}ii^{Rep}}}16@24, name: initWithArchive:locale:
 - (id)description;
 - (id)groupValueAtLevel:(unsigned char)arg1;
 - (id)prefixTupleToLevel:(unsigned char)arg1;

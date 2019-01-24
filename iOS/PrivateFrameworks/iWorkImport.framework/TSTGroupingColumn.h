@@ -37,8 +37,8 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) const UUIDData_5fbc143e *groupingColumnUid; // @synthesize groupingColumnUid=_groupingColumnUid;
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (void)encodeToArchive:(struct GroupColumnArchive *)arg1 archiver:(id)arg2;
-- (id)initWithArchive:(const struct GroupColumnArchive *)arg1;
+-     // Error parsing type: v32@0:8^{GroupColumnArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{UUID}^{FunctorArchive}^{UUID}i}16@24, name: encodeToArchive:archiver:
+-     // Error parsing type: @24@0:8r^{GroupColumnArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{UUID}^{FunctorArchive}^{UUID}i}16, name: initWithArchive:
 - (id)groupValueForValue:(id)arg1 calcEngine:(id)arg2;
 - (id)p_groupingFormatWithLocale:(id)arg1;
 - (void)setFunctorForType;

@@ -14,7 +14,7 @@ __attribute__((visibility("hidden")))
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (void)showFromView:(id)arg1 routeSharingPolicy:(int)arg2 routingContextUID:(id)arg3;
+- (void)showFromView:(id)arg1 routeSharingPolicy:(unsigned char)arg2 routingContextUID:(id)arg3 hasVideo:(_Bool)arg4;
 - (void)dealloc;
 
 @end

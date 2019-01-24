@@ -17,6 +17,8 @@ __attribute__((visibility("hidden")))
 
 @property(readonly) int type; // @synthesize type=_type;
 - (id)description;
+- (unsigned long long)numberOfValuesWithCalcEngine:(id)arg1 plotByRow:(_Bool)arg2;
+- (_Bool)isVisible:(id)arg1;
 - (UUIDData_5fbc143e)tableUID:(id)arg1;
 @property(readonly) struct TSCEValue *staticValue;
 @property(readonly) struct TSCECategoryRef categoryReference;

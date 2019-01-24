@@ -12,6 +12,9 @@ __attribute__((visibility("hidden")))
     struct TSCEFormula *_ptrToFormula;
     long long _cachedNumberOfValues;
     struct TSCEVector *_cachedOutputValueVector;
+    struct TSCEVector *_cachedOutputValueVectorWithoutHiddenData;
+    vector_38b190b0 _cachedChromeCoords;
+    vector_38b190b0 _cachedChromeCoordsWithoutHidden;
 }
 
 + (id)chartFormulaForCellRegion:(id)arg1 inTable:(id)arg2;
@@ -22,17 +25,21 @@ __attribute__((visibility("hidden")))
 + (id)chartFormulaForString:(id)arg1;
 + (id)emptyChartFormula;
 + (id)chartFormulaWithCopyOfTSCEFormula:(const struct TSCEFormula *)arg1;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 - (id)formulaByBakingValuesWithCalcEngine:(id)arg1 inOwner:(const UUIDData_5fbc143e *)arg2;
 - (id)formulaByRewriting:(_Bool)arg1 withCalcEngine:(id)arg2 andHostUID:(const UUIDData_5fbc143e *)arg3;
 - (id)formulaByProcessingArgumentsWithCalcEngine:(id)arg1 inOwner:(const UUIDData_5fbc143e *)arg2 usingBlock:(CDUnknownBlockType)arg3;
 - (_Bool)isAllStaticValuesWithCalcEngine:(id)arg1 inOwner:(const UUIDData_5fbc143e *)arg2;
 - (struct TSCERangeRef)rangeCircumscribingPrecedentsWithCalcEngine:(id)arg1 inOwner:(const UUIDData_5fbc143e *)arg2;
 - (id)stringValueForFormulaWithCalcEngine:(id)arg1 inOwner:(const UUIDData_5fbc143e *)arg2;
-- (struct TSCEValue)valueAtIndex:(unsigned long long)arg1 withCalcEngine:(id)arg2 inChart:(const UUIDData_5fbc143e *)arg3;
 - (id)argumentCollectionWithCalcEngine:(id)arg1 inChart:(const UUIDData_5fbc143e *)arg2 storeBadRef:(_Bool)arg3;
 - (id)argumentCollectionWithCalcEngine:(id)arg1 inChart:(const UUIDData_5fbc143e *)arg2;
+- (unsigned long long)numberOfTotalPlotwiseLabelValuesWithCalcEngine:(id)arg1 inChart:(const UUIDData_5fbc143e *)arg2 byRow:(_Bool)arg3 shouldSkipHiddenData:(_Bool)arg4;
 - (unsigned long long)numberOfValuesWithCalcEngine:(id)arg1 inChart:(const UUIDData_5fbc143e *)arg2;
-- (struct TSCEVector *)outputValueVector:(struct TSCEEvaluationContext *)arg1 inChromeOrder:(_Bool)arg2;
+- (id)plotwiseLabelValuesWithEvaluationContext:(struct TSCEEvaluationContext *)arg1 byRow:(_Bool)arg2 shouldSkipHiddenData:(_Bool)arg3;
+- (vector_06892659)outputVectorValuesWithChromeCoords:(struct TSCEEvaluationContext *)arg1 shouldSkipHiddenData:(_Bool)arg2;
+- (struct TSCEVector *)outputValueVector:(struct TSCEEvaluationContext *)arg1 shouldSkipHiddenData:(_Bool)arg2;
 - (id)description;
 @property(readonly) struct TSCEFormula *formula;
 - (unsigned long long)hash;

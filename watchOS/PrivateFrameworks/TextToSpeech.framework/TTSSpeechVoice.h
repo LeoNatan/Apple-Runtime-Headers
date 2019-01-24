@@ -16,6 +16,8 @@
 {
     id <TTSSpeechService> _service;
     _Bool _isDefault;
+    _Bool _isFallbackDefault;
+    _Bool _excludeInAvailableVoiceList;
     _Bool _canBeDownloaded;
     _Bool _isCombinedFootprint;
     _Bool _useVoiceBooster;
@@ -35,6 +37,8 @@
 @property(readonly, nonatomic) _Bool isCombinedFootprint; // @synthesize isCombinedFootprint=_isCombinedFootprint;
 @property(nonatomic) _Bool canBeDownloaded; // @synthesize canBeDownloaded=_canBeDownloaded;
 @property(nonatomic) int gender; // @synthesize gender=_gender;
+@property(readonly, nonatomic) _Bool excludeInAvailableVoiceList; // @synthesize excludeInAvailableVoiceList=_excludeInAvailableVoiceList;
+@property(readonly, nonatomic) _Bool isFallbackDefault; // @synthesize isFallbackDefault=_isFallbackDefault;
 @property(readonly, nonatomic) _Bool isDefault; // @synthesize isDefault=_isDefault;
 @property(nonatomic) int footprint; // @synthesize footprint=_footprint;
 @property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;

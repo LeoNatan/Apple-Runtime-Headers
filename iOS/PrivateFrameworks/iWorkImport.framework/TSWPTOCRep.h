@@ -6,12 +6,16 @@
 
 #import <iWorkImport/TSWPShapeRep.h>
 
+@class CAShapeLayer;
+
 __attribute__((visibility("hidden")))
 @interface TSWPTOCRep : TSWPShapeRep
 {
+    CAShapeLayer *_selectionHighlightLayer;
 }
 
 + (id)TOCReferenceNameWithParagraphIndex:(unsigned long long)arg1;
+- (void).cxx_destruct;
 - (unsigned long long)i_indexOfHitTOCEntryAtPoint:(struct CGPoint)arg1;
 - (id)i_paragraphStyleAtPoint:(struct CGPoint)arg1;
 - (id)hyperlinkRegions;

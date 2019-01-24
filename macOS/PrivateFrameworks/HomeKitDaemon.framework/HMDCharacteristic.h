@@ -59,6 +59,7 @@
 - (BOOL)isNonHomeNotificationsEnabled;
 - (BOOL)isClientNotificationEnabled;
 - (BOOL)isNotificationEnabled;
+- (BOOL)supportsWrite;
 - (BOOL)supportsRead;
 - (BOOL)supportsNotification;
 - (id)validateValue:(id)arg1 outValue:(id *)arg2;

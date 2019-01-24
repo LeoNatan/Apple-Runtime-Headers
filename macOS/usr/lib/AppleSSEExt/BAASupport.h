@@ -13,6 +13,7 @@ __attribute__((visibility("hidden")))
 
 + (void)setBlessedUser:(unsigned int)arg1 keybagUUID:(unsigned char [16])arg2;
 + (int)issueNewCertificate;
++ (int)getCertificates:(id *)arg1;
 + (int)getCertificateExpirationDate:(double *)arg1;
 + (int)prepare;
 + (void)setDelegate:(id)arg1;

@@ -47,6 +47,7 @@
     int _imageStyle;
     int _tabBarSizing;
     unsigned int _preferredFocusHeading;
+    int _displayStyle;
     NSArray *_backgroundEffects;
 }
 
@@ -54,6 +55,7 @@
 + (void)_initializeForIdiom:(int)arg1;
 + (id)_unselectedTabTintColorForView:(id)arg1;
 @property(copy, nonatomic) NSArray *backgroundEffects; // @synthesize backgroundEffects=_backgroundEffects;
+@property(nonatomic, getter=_displayStyle, setter=_setDisplayStyle:) int displayStyle; // @synthesize displayStyle=_displayStyle;
 @property(nonatomic, getter=_preferredFocusHeading, setter=_setPreferredFocusHeading:) unsigned int preferredFocusHeading; // @synthesize preferredFocusHeading=_preferredFocusHeading;
 @property(nonatomic) __weak UITabBarItem *selectedItem; // @synthesize selectedItem=_selectedItem;
 @property(nonatomic) __weak id <UITabBarDelegate> delegate; // @synthesize delegate=_delegate;

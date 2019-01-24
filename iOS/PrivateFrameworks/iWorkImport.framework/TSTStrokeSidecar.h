@@ -20,11 +20,10 @@ __attribute__((visibility("hidden")))
     NSPointerArray *_bottomRowStrokes;
 }
 
-@property(retain, nonatomic) NSPointerArray *bottomRowStrokes; // @synthesize bottomRowStrokes=_bottomRowStrokes;
-@property(retain, nonatomic) NSPointerArray *topRowStrokes; // @synthesize topRowStrokes=_topRowStrokes;
-@property(retain, nonatomic) NSPointerArray *rightColumnStrokes; // @synthesize rightColumnStrokes=_rightColumnStrokes;
-@property(retain, nonatomic) NSPointerArray *leftColumnStrokes; // @synthesize leftColumnStrokes=_leftColumnStrokes;
-@property(nonatomic) int maxOrder; // @synthesize maxOrder=_maxOrder;
+@property(readonly, nonatomic) NSPointerArray *bottomRowStrokes; // @synthesize bottomRowStrokes=_bottomRowStrokes;
+@property(readonly, nonatomic) NSPointerArray *topRowStrokes; // @synthesize topRowStrokes=_topRowStrokes;
+@property(readonly, nonatomic) NSPointerArray *rightColumnStrokes; // @synthesize rightColumnStrokes=_rightColumnStrokes;
+@property(readonly, nonatomic) NSPointerArray *leftColumnStrokes; // @synthesize leftColumnStrokes=_leftColumnStrokes;
 - (void).cxx_destruct;
 - (void)saveToArchiver:(id)arg1;
 - (void)loadFromUnarchiver:(id)arg1;
@@ -41,6 +40,7 @@ __attribute__((visibility("hidden")))
 - (void)insertColumns:(struct _NSRange)arg1;
 - (void)enumerateStrokesInRegion:(id)arg1 usingTopStrokeBlock:(CDUnknownBlockType)arg2 usingBottomStrokeBlock:(CDUnknownBlockType)arg3 usingLeftStrokeBlock:(CDUnknownBlockType)arg4 usingRightStrokeBlock:(CDUnknownBlockType)arg5;
 - (struct TSUCellRect)p_strokeRect;
+- (void)updateForTableSize:(CDStruct_c0454aff)arg1;
 - (void)flattenStrokeOrder;
 - (id)p_flattenMajorStrokeLayer:(id)arg1 minorStrokeLayer:(id)arg2;
 - (void)setStroke:(id)arg1 forRightOfColumn:(unsigned short)arg2 order:(int)arg3 rowRange:(struct TSTSimpleRange)arg4;
@@ -57,6 +57,7 @@ __attribute__((visibility("hidden")))
 - (void)p_setStroke:(id)arg1 order:(int)arg2 inStrokesArray:(id)arg3 atIndex:(unsigned int)arg4 atRange:(struct TSTSimpleRange)arg5;
 - (id)initForUpgradeWithTableModel:(id)arg1;
 - (id)initWithTableModel:(id)arg1;
+@property(nonatomic) int maxOrder; // @synthesize maxOrder=_maxOrder;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

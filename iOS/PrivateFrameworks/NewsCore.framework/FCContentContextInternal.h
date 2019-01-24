@@ -8,30 +8,36 @@
 
 #import <NewsCore/FCContentContextInternal-Protocol.h>
 
-@class FCArticleListRecordSource, FCArticleRecordSource, FCCKContentDatabase, FCChannelMembershipController, FCFeedDatabase, FCForYouConfigRecordSource, FCPurchaseLookupRecordSource, FCResourceRecordSource, FCTagRecordSource, FCWidgetSectionConfigRecordSource, NSArray, NSString;
+@class FCArticleListRecordSource, FCArticleRecordSource, FCCKContentDatabase, FCChannelMembershipController, FCFeedDatabase, FCForYouConfigRecordSource, FCIssueListRecordSource, FCIssueRecordSource, FCPurchaseLookupRecordSource, FCResourceRecordSource, FCTagListRecordSource, FCTagRecordSource, FCWidgetSectionConfigRecordSource, NSArray, NSString;
 
 @interface FCContentContextInternal : NSObject <FCContentContextInternal>
 {
     FCArticleRecordSource *_articleRecordSource;
     FCTagRecordSource *_tagRecordSource;
+    FCTagListRecordSource *_tagListRecordSource;
     FCChannelMembershipController *_channelMembershipController;
     FCResourceRecordSource *_resourceRecordSource;
     FCArticleListRecordSource *_articleListRecordSource;
     FCPurchaseLookupRecordSource *_purchaseLookupRecordSource;
     FCForYouConfigRecordSource *_forYouConfigRecordSource;
     FCWidgetSectionConfigRecordSource *_widgetSectionConfigRecordSource;
+    FCIssueRecordSource *_issueRecordSource;
+    FCIssueListRecordSource *_issueListRecordSource;
     FCFeedDatabase *_feedDatabase;
     FCCKContentDatabase *_contentDatabase;
 }
 
 @property(retain, nonatomic) FCCKContentDatabase *contentDatabase; // @synthesize contentDatabase=_contentDatabase;
 @property(retain) FCFeedDatabase *feedDatabase; // @synthesize feedDatabase=_feedDatabase;
+@property(retain, nonatomic) FCIssueListRecordSource *issueListRecordSource; // @synthesize issueListRecordSource=_issueListRecordSource;
+@property(retain, nonatomic) FCIssueRecordSource *issueRecordSource; // @synthesize issueRecordSource=_issueRecordSource;
 @property(retain, nonatomic) FCWidgetSectionConfigRecordSource *widgetSectionConfigRecordSource; // @synthesize widgetSectionConfigRecordSource=_widgetSectionConfigRecordSource;
 @property(retain, nonatomic) FCForYouConfigRecordSource *forYouConfigRecordSource; // @synthesize forYouConfigRecordSource=_forYouConfigRecordSource;
 @property(retain, nonatomic) FCPurchaseLookupRecordSource *purchaseLookupRecordSource; // @synthesize purchaseLookupRecordSource=_purchaseLookupRecordSource;
 @property(retain, nonatomic) FCArticleListRecordSource *articleListRecordSource; // @synthesize articleListRecordSource=_articleListRecordSource;
 @property(retain, nonatomic) FCResourceRecordSource *resourceRecordSource; // @synthesize resourceRecordSource=_resourceRecordSource;
 @property(retain, nonatomic) FCChannelMembershipController *channelMembershipController; // @synthesize channelMembershipController=_channelMembershipController;
+@property(retain, nonatomic) FCTagListRecordSource *tagListRecordSource; // @synthesize tagListRecordSource=_tagListRecordSource;
 @property(retain, nonatomic) FCTagRecordSource *tagRecordSource; // @synthesize tagRecordSource=_tagRecordSource;
 @property(retain, nonatomic) FCArticleRecordSource *articleRecordSource; // @synthesize articleRecordSource=_articleRecordSource;
 - (void).cxx_destruct;

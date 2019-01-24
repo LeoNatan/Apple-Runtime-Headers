@@ -6,13 +6,14 @@
 
 #import <SafariShared/WBSHistoryLoader-Protocol.h>
 
-@class NSArray, NSData, NSDate, NSSet, WBSHistoryItem, WBSHistoryTombstone, WBSHistoryVisit;
+@class NSArray, NSData, NSDate, NSSet, WBSHistoryItem, WBSHistoryVisit;
 @protocol WBSHistoryStoreDelegate;
 
 @protocol WBSHistoryStore <WBSHistoryLoader>
 @property(readonly, nonatomic) _Bool isUsingInMemoryDatabase;
 @property(nonatomic) _Bool pushNotificationsAreInitialized;
 @property(nonatomic) unsigned long long cachedNumberOfDevicesInSyncCircle;
+@property(copy, nonatomic) NSData *longLivedSaveOperationData;
 @property(copy, nonatomic) NSData *syncCircleSizeRetrievalThrottlerData;
 @property(copy, nonatomic) NSData *fetchThrottlerData;
 @property(copy, nonatomic) NSData *pushThrottlerData;
@@ -27,7 +28,7 @@
 - (void)setLastSeenDate:(NSDate *)arg1 forCloudClientVersion:(unsigned long long)arg2;
 - (NSDate *)lastSeenDateForCloudClientVersion:(unsigned long long)arg1;
 - (void)pruneTombstonesWithEndDatePriorToDate:(NSDate *)arg1;
-- (void)replayAndAddTombstone:(WBSHistoryTombstone *)arg1;
+- (void)replayAndAddTombstones:(NSArray *)arg1 completionHandler:(void (^)(NSError *))arg2;
 - (void)getAllTombstonesWithCompletion:(void (^)(NSSet *))arg1;
 - (void)closeWithCompletionHandler:(void (^)(void))arg1;
 - (void)performMaintenance:(void (^)(void))arg1;

@@ -4,11 +4,11 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <AttentionAwareness/NSObject-Protocol.h>
+#import <AttentionAwareness/BKDeviceDelegate-Protocol.h>
 
 @class BKDevice;
 
-@protocol BKDevicePearlDelegate <NSObject>
+@protocol BKDevicePearlDelegate <BKDeviceDelegate>
 
 @optional
 - (void)device:(BKDevice *)arg1 pearlStateChanged:(long long)arg2;

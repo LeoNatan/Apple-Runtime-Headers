@@ -21,6 +21,7 @@
 @property(retain, nonatomic) NSXPCConnection *connection; // @synthesize connection=_connection;
 @property(nonatomic) BiometricKitXPCServer *server; // @synthesize server=_server;
 - (void).cxx_destruct;
+- (void)getLastMatchEvent:(unsigned long long)arg1 replyBlock:(CDUnknownBlockType)arg2;
 - (void)pauseFaceDetectTimer:(BOOL)arg1 client:(unsigned long long)arg2 replyBlock:(CDUnknownBlockType)arg3;
 - (void)enableMatchAutoRetry:(BOOL)arg1 client:(unsigned long long)arg2 replyBlock:(CDUnknownBlockType)arg3;
 - (void)logEventOrCode:(unsigned long long)arg1;

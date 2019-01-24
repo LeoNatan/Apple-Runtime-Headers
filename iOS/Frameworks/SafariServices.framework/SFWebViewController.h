@@ -29,17 +29,20 @@ __attribute__((visibility("hidden")))
     NSString *_domainWhereUserDeclinedAutomaticStrongPassword;
     _Bool _loading;
     _Bool _didFirstVisuallyNonEmptyLayout;
+    _Bool _hasFocusedInputFieldOnCurrentPage;
     id <SFWebViewControllerDelegate> _delegate;
     WKWebViewConfiguration *_webViewConfiguration;
     _SFDialogController *_dialogController;
 }
 
+@property(readonly, nonatomic) _Bool hasFocusedInputFieldOnCurrentPage; // @synthesize hasFocusedInputFieldOnCurrentPage=_hasFocusedInputFieldOnCurrentPage;
 @property(readonly, nonatomic) _SFDialogController *dialogController; // @synthesize dialogController=_dialogController;
 @property(readonly, nonatomic) WKWebViewConfiguration *webViewConfiguration; // @synthesize webViewConfiguration=_webViewConfiguration;
 @property(readonly, nonatomic) _Bool didFirstVisuallyNonEmptyLayout; // @synthesize didFirstVisuallyNonEmptyLayout=_didFirstVisuallyNonEmptyLayout;
 @property(nonatomic, getter=isLoading) _Bool loading; // @synthesize loading=_loading;
 @property(nonatomic) __weak id <SFWebViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (void)sfWebViewDidEndFormControlInteraction:(id)arg1;
 - (void)sfWebViewDidBecomeFirstResponder:(id)arg1;
 - (void)sfWebViewDidChangeSafeAreaInsets:(id)arg1;
 - (void)dialogController:(id)arg1 dismissViewController:(id)arg2 withAdditionalAnimations:(CDUnknownBlockType)arg3;
@@ -73,11 +76,11 @@ __attribute__((visibility("hidden")))
 - (long long)_webView:(id)arg1 decidePolicyForFocusedElement:(id)arg2;
 - (void)_webView:(id)arg1 didStartInputSession:(id)arg2;
 - (void)_webView:(id)arg1 willStartInputSession:(id)arg2;
+- (void)formAutoFillControllerDidFocusSensitiveFormField:(id)arg1;
 - (void)_userDeclinedAutomaticStrongPasswordForCurrentDomain;
 - (void)_automaticPasswordInputViewNotification:(id)arg1;
 - (_Bool)formAutoFillControllerShouldShowIconsInPasswordPicker:(id)arg1;
-- (void)formAutoFillControllerGetAuthenticationForAutoFill:(id)arg1 onPageLoad:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
-- (void)formAutoFillControllerGetAuthenticationForAutoFillOnPageLoad:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)formAutoFillControllerGetAuthenticationForAutoFill:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)formAutoFillControllerOneTimeCodeMonitor:(id)arg1;
 - (void)_beginOneTimeCodeMonitoringIfNecessary;
 - (void)formAutoFillControllerUserChoseToUseGeneratedPassword:(id)arg1;
@@ -94,7 +97,7 @@ __attribute__((visibility("hidden")))
 - (void)webView:(id)arg1 didFailNavigation:(id)arg2 withError:(id)arg3;
 - (void)webView:(id)arg1 didFailProvisionalNavigation:(id)arg2 withError:(id)arg3;
 - (void)webView:(id)arg1 decidePolicyForNavigationResponse:(id)arg2 decisionHandler:(CDUnknownBlockType)arg3;
-- (void)webView:(id)arg1 decidePolicyForNavigationAction:(id)arg2 decisionHandler:(CDUnknownBlockType)arg3;
+- (void)_webView:(id)arg1 decidePolicyForNavigationAction:(id)arg2 userInfo:(id)arg3 decisionHandler:(CDUnknownBlockType)arg4;
 - (void)webView:(id)arg1 didFinishNavigation:(id)arg2;
 - (void)_webViewDidEndNavigationGesture:(id)arg1 withNavigationToBackForwardListItem:(id)arg2;
 - (void)_webView:(id)arg1 navigation:(id)arg2 didSameDocumentNavigation:(long long)arg3;

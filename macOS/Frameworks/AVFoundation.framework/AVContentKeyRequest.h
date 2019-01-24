@@ -6,13 +6,16 @@
 
 #import <objc/NSObject.h>
 
-@class AVContentKeyRequestInternal, NSData, NSError;
+@class AVContentKeyRequestInternal, NSData, NSDictionary, NSError;
 
 @interface AVContentKeyRequest : NSObject
 {
     AVContentKeyRequestInternal *_contentKeyRequest;
 }
 
++ (id)_createKeyRequestDictionaryForApp:(id)arg1 persistentKey:(id)arg2 serverChallenge:(id)arg3 cryptorKeyRequestID:(unsigned long long)arg4 purpose:(int)arg5;
++ (id)_ensureProtocolVersionList:(id)arg1;
++ (void)_validateServerChallenge:(id)arg1;
 + (void)_validateHLSEncryptionMethod:(id)arg1;
 + (void)_validateProtocolVersionList:(id)arg1;
 + (id)_mergePreloadingRequestOptions:(id)arg1 withCreateKeyRequestOptions:(id)arg2;
@@ -43,6 +46,7 @@
 - (int)_prepareForKeyRenewal;
 - (void)_clearContext;
 - (void)_setStatus:(long long)arg1;
+@property(readonly, copy) NSDictionary *options;
 @property(readonly) long long status;
 @property(readonly, nonatomic) NSData *initializationData;
 @property(readonly) id identifier;

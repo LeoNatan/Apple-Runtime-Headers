@@ -21,11 +21,14 @@ __attribute__((visibility("hidden")))
     CUBluetoothClient *_bluetoothClient;
     CXCallObserver *_callObserver;
     int _activeCallCount;
+    int _connectedCallCount;
     _Bool _familyFailed;
     NSArray *_familyMembers;
     _Bool _familyObserving;
     CUSystemMonitor *_familyPrimaryIPMonitor;
     int _familyUpdatedToken;
+    _Bool _manateeAvailable;
+    _Bool _manateeObserving;
     CUNetInterfaceMonitor *_netInterfaceMonitor;
     unsigned int _netFlags;
     CDUnion_fab80606 _primaryIPv4Addr;
@@ -38,7 +41,6 @@ __attribute__((visibility("hidden")))
     _Bool _primaryAppleIDObserving;
     CDStruct_83abfce7 _rotatingIdentifier48;
     NSData *_rotatingIdentifierData;
-    CUSystemMonitor *_rotatingIdentifierBluetoothAddressMonitor;
     NSObject<OS_dispatch_source> *_rotatingIdentifierTimer;
     _Bool _screenLocked;
     int _screenLockedToken;
@@ -64,9 +66,7 @@ __attribute__((visibility("hidden")))
 - (void)_screenLockedChanged;
 - (void)_screenLockedMonitorStop;
 - (void)_screenLockedMonitorStart;
-- (void)_rotatingIdentifierTimerReset:(_Bool)arg1;
 - (void)_rotatingIdentifierTimerFired;
-- (void)_rotatingIdentifierBTUpdated;
 - (void)_rotatingIdentifierMonitorStop;
 - (void)_rotatingIdentifierMonitorStart;
 - (void)_primaryAppleIDChanged:(id)arg1;
@@ -78,6 +78,10 @@ __attribute__((visibility("hidden")))
 - (void)_netInterfaceMonitorStart;
 - (void)_meDeviceMonitorStop;
 - (void)_meDeviceMonitorStart;
+- (void)_manateeChanged:(id)arg1;
+- (void)_manateeMonitorStop;
+- (void)_manateeMonitorStart;
+- (int)_connectedCallCountUnached;
 - (int)_activeCallCountUnached;
 - (void)callObserver:(id)arg1 callChanged:(id)arg2;
 - (void)_callMonitorStop;

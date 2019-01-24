@@ -13,12 +13,15 @@
 __attribute__((visibility("hidden")))
 @interface CKDPAsset : PBCodable <NSCopying>
 {
+    long long _constructedAssetDownloadEstimatedSize;
+    long long _constructedAssetDownloadURLExpiration;
     long long _downloadTokenExpiration;
     long long _downloadURLExpiration;
     long long _size;
     NSString *_assetAuthorizationResponseUUID;
     NSData *_assetCopyMetadata;
     NSData *_clearAssetKey;
+    NSString *_constructedAssetDownloadURL;
     NSString *_contentBaseURL;
     NSString *_derivedContentType;
     NSString *_downloadBaseURL;
@@ -33,12 +36,17 @@ __attribute__((visibility("hidden")))
     NSData *_signature;
     NSString *_uploadReceipt;
     struct {
+        unsigned int constructedAssetDownloadEstimatedSize:1;
+        unsigned int constructedAssetDownloadURLExpiration:1;
         unsigned int downloadTokenExpiration:1;
         unsigned int downloadURLExpiration:1;
         unsigned int size:1;
     } _has;
 }
 
+@property(nonatomic) long long constructedAssetDownloadEstimatedSize; // @synthesize constructedAssetDownloadEstimatedSize=_constructedAssetDownloadEstimatedSize;
+@property(nonatomic) long long constructedAssetDownloadURLExpiration; // @synthesize constructedAssetDownloadURLExpiration=_constructedAssetDownloadURLExpiration;
+@property(retain, nonatomic) NSString *constructedAssetDownloadURL; // @synthesize constructedAssetDownloadURL=_constructedAssetDownloadURL;
 @property(retain, nonatomic) NSString *assetAuthorizationResponseUUID; // @synthesize assetAuthorizationResponseUUID=_assetAuthorizationResponseUUID;
 @property(retain, nonatomic) NSData *clearAssetKey; // @synthesize clearAssetKey=_clearAssetKey;
 @property(retain, nonatomic) NSData *assetCopyMetadata; // @synthesize assetCopyMetadata=_assetCopyMetadata;
@@ -68,6 +76,9 @@ __attribute__((visibility("hidden")))
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(nonatomic) _Bool hasConstructedAssetDownloadEstimatedSize;
+@property(nonatomic) _Bool hasConstructedAssetDownloadURLExpiration;
+@property(readonly, nonatomic) _Bool hasConstructedAssetDownloadURL;
 @property(readonly, nonatomic) _Bool hasAssetAuthorizationResponseUUID;
 @property(readonly, nonatomic) _Bool hasClearAssetKey;
 @property(readonly, nonatomic) _Bool hasAssetCopyMetadata;

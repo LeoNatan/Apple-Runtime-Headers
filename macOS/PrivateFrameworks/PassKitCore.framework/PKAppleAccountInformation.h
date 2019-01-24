@@ -20,9 +20,11 @@
     NSString *_appleID;
     NSString *_firstName;
     NSString *_lastName;
+    NSString *_primaryEmailAddress;
 }
 
 + (BOOL)supportsSecureCoding;
+@property(copy, nonatomic) NSString *primaryEmailAddress; // @synthesize primaryEmailAddress=_primaryEmailAddress;
 @property(copy, nonatomic) NSString *lastName; // @synthesize lastName=_lastName;
 @property(copy, nonatomic) NSString *firstName; // @synthesize firstName=_firstName;
 @property(nonatomic) BOOL isSandboxAccount; // @synthesize isSandboxAccount=_isSandboxAccount;

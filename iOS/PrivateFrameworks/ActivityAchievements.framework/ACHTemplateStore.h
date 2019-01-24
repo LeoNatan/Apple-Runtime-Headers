@@ -50,9 +50,10 @@
 - (_Bool)removeAllTemplates:(id *)arg1;
 - (_Bool)removeTemplates:(id)arg1 error:(id *)arg2;
 - (void)_addTemplatesToLocalCollections:(id)arg1;
-- (_Bool)_queue_addTemplatesToDatabase:(id)arg1 provenance:(long long)arg2 error:(id *)arg3;
-- (void)_queue_addTemplates:(id)arg1 provenance:(long long)arg2 triggerSync:(_Bool)arg3;
+- (_Bool)_queue_addTemplatesToDatabase:(id)arg1 provenance:(long long)arg2 databaseContext:(id)arg3 error:(id *)arg4;
+- (void)_queue_addTemplates:(id)arg1 provenance:(long long)arg2 databaseContext:(id)arg3 triggerSync:(_Bool)arg4 error:(id *)arg5;
 - (_Bool)_isValidTemplate:(id)arg1;
+- (void)addTemplates:(id)arg1 databaseContext:(id)arg2 error:(id *)arg3;
 - (void)addTemplates:(id)arg1;
 - (id)_queue_templatesFilteredForDuplicates:(id)arg1;
 - (void)loadAllTemplatesFromDatabaseIfNecessary;

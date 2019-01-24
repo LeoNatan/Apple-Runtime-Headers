@@ -10,6 +10,8 @@
 
 @interface WBSCloudHistoryConfiguration : NSObject
 {
+    _Bool _shouldBatchSaveRecords;
+    _Bool _shouldUseLongLivedOperationsToSaveRecords;
     NSString *_singleDeviceSaveChangesThrottlingPolicyString;
     NSString *_multipleDeviceSaveChangesThrottlingPolicyString;
     NSString *_singleDeviceFetchChangesThrottlingPolicyString;
@@ -19,6 +21,8 @@
     double _syncWindow;
 }
 
+@property(readonly) _Bool shouldUseLongLivedOperationsToSaveRecords; // @synthesize shouldUseLongLivedOperationsToSaveRecords=_shouldUseLongLivedOperationsToSaveRecords;
+@property(readonly) _Bool shouldBatchSaveRecords; // @synthesize shouldBatchSaveRecords=_shouldBatchSaveRecords;
 @property double syncWindow; // @synthesize syncWindow=_syncWindow;
 @property unsigned long long maximumRequestCharacterCount; // @synthesize maximumRequestCharacterCount=_maximumRequestCharacterCount;
 @property(retain) NSString *syncCircleSizeRetrievalThrottlingPolicyString; // @synthesize syncCircleSizeRetrievalThrottlingPolicyString=_syncCircleSizeRetrievalThrottlingPolicyString;
@@ -27,8 +31,6 @@
 @property(retain) NSString *multipleDeviceSaveChangesThrottlingPolicyString; // @synthesize multipleDeviceSaveChangesThrottlingPolicyString=_multipleDeviceSaveChangesThrottlingPolicyString;
 @property(retain) NSString *singleDeviceSaveChangesThrottlingPolicyString; // @synthesize singleDeviceSaveChangesThrottlingPolicyString=_singleDeviceSaveChangesThrottlingPolicyString;
 - (void).cxx_destruct;
-@property(readonly) _Bool shouldUseLongLivedOperationsToSaveRecords;
-@property(readonly) _Bool shouldBatchSaveRecords;
 - (void)applyRemoteConfiguration:(id)arg1;
 - (void)applyPlatformConfiguration:(id)arg1 withTolerance:(long long)arg2;
 - (id)remoteConfiguration;
@@ -37,6 +39,8 @@
 - (void)_applyConfiguration:(id)arg1 withTolerance:(long long)arg2;
 - (void)_applyBuiltInConfiguration:(id)arg1;
 - (id)_builtInConfiguration;
+- (id)dictionaryRepresentation;
+- (id)initWithDictionary:(id)arg1;
 - (id)init;
 
 @end

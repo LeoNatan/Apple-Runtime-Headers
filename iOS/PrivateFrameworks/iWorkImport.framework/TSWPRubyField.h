@@ -18,13 +18,13 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (_Bool)supportsDeepCopyForUndo;
 - (void)loadFromUnarchiver:(id)arg1;
-- (void)loadFromArchive:(const struct RubyFieldArchive *)arg1 unarchiver:(id)arg2;
+-     // Error parsing type: v32@0:8r^{RubyFieldArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}^{SmartFieldArchive}}16@24, name: loadFromArchive:unarchiver:
 - (void)saveToArchiver:(id)arg1;
-- (void)saveToArchive:(struct RubyFieldArchive *)arg1 archiver:(id)arg2;
+-     // Error parsing type: v32@0:8^{RubyFieldArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}^{SmartFieldArchive}}16@24, name: saveToArchive:archiver:
 - (_Bool)canCopy:(struct _NSRange)arg1;
 - (_Bool)allowsEditing;
 - (int)styleAttributeArrayKind;
-- (int)attributeArrayKind;
+- (unsigned long long)attributeArrayKind;
 - (int)smartFieldKind;
 - (id)text;
 @property(readonly, nonatomic) int baseTextScript;

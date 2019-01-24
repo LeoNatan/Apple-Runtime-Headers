@@ -34,7 +34,10 @@
 - (void)prepareInViewController:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (struct NSDictionary *)_actionableDataclassOptions;
 - (_Bool)_hasPaymentPasses;
+- (_Bool)_hasiCloudPhotosData;
+- (_Bool)_hasiCloudDriveData;
 - (_Bool)_hasHealthData;
+- (id)_appendToSignoutMessage:(id)arg1 appendedString:(id)arg2;
 - (id)_signOutMessageSimplified:(_Bool)arg1 withConfirmation:(_Bool)arg2;
 - (id)_spinnerViewControllerForActions:(struct NSDictionary *)arg1;
 - (id)_dataclassViewController;

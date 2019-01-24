@@ -15,6 +15,6 @@
 - (void)setRemoteLocalizedAppName:(NSString *)arg1;
 - (void)setRemoteAppID:(NSString *)arg1;
 - (void)setWebViewURL:(NSURL *)arg1;
-- (void)authenticateToPresentInPopover:(_Bool)arg1 completion:(void (^)(_Bool, long long, long long))arg2;
+- (void)authenticateToPresentInPopover:(_Bool)arg1 completion:(void (^)(_Bool))arg2;
 @end
 

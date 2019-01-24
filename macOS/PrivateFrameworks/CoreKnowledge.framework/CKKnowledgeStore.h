@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSString, OS_dispatch_queue;
+@class NSString;
 @protocol CKKnowledgeStoreDelegate;
 
 @interface CKKnowledgeStore : NSObject
@@ -24,15 +24,13 @@
 + (id)defaultSynchedKnowledgeStore;
 + (id)defaultKnowledgeStore;
 + (id)directoryPath;
-- (CDUnknownBlockType).cxx_destruct;
+- (void).cxx_destruct;
 - (id)init;
-@property(nonatomic, readonly) long long hashValue;
 - (BOOL)isEqual:(id)arg1;
 @property(nonatomic, readonly) long long hash;
 @property(nonatomic, readonly) NSString *path;
 @property(nonatomic, readonly) NSString *name;
 @property(nonatomic, retain) id <CKKnowledgeStoreDelegate> delegate; // @synthesize delegate;
-@property(nonatomic, readonly) OS_dispatch_queue *sparqlQueue; // @synthesize sparqlQueue;
 - (void)disableSyncAndDeleteCloudDataWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (BOOL)removeAllValuesAndReturnError:(id *)arg1;
 - (void)removeAllValuesWithCompletionHandler:(CDUnknownBlockType)arg1;
@@ -56,7 +54,6 @@
 - (id)entityWithIdentifier:(id)arg1;
 - (id)valuesForKeysMatching:(id)arg1 error:(id *)arg2;
 - (void)valuesForKeysMatching:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (id)valuesForKeys:(id)arg1 error:(id *)arg2;
 - (void)valuesForKeys:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)valueForKey:(id)arg1;
 - (void)valueForKey:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
@@ -71,8 +68,6 @@
 - (id)dictionaryRepresentationAndReturnError:(id *)arg1;
 - (void)dictionaryRepresentationWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)importContentsOfJSONLDAtPath:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (void)importJSONLDWithData:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (void)evaluateJSONLDEntryForEntity:(id)arg1 key:(id)arg2 value:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (id)subgraphWithEntities:(id)arg1;
 - (void)inferLinkTo:(id)arg1 withPredicate:(id)arg2 when:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (BOOL)inferLinkTo:(id)arg1 withPredicate:(id)arg2 when:(id)arg3 error:(id *)arg4;

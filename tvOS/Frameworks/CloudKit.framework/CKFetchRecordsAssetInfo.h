@@ -8,7 +8,6 @@
 
 @class NSError, NSMutableData, NSMutableIndexSet;
 
-__attribute__((visibility("hidden")))
 @interface CKFetchRecordsAssetInfo : NSObject
 {
     NSError *_error;

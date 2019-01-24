@@ -7,9 +7,14 @@
 #import <iWorkImport/NSObject-Protocol.h>
 #import <iWorkImport/TSPCopying-Protocol.h>
 
-@class NSArray, NSData, PKDrawing, TSPData, TSUColor;
+@class NSArray, NSData, NSDate, PKDrawing, TSKPKDrawing, TSPData, TSUColor, TSUImage;
 
 @protocol TSKPencilAnnotationStorage <NSObject, TSPCopying>
+@property(nonatomic) long long compoundAnnotationType;
+@property(readonly, nonatomic) _Bool isCalloutParentStorage;
+@property(readonly, nonatomic) _Bool isStretchableParagraphAnnotation;
+@property(readonly, nonatomic) _Bool isCalloutMarginAnnotation;
+@property(readonly, nonatomic) _Bool isCalloutLine;
 @property(readonly, nonatomic) PKDrawing *drawingForTextRecognition;
 @property(readonly, nonatomic) _Bool needsTextRecognition;
 @property(readonly, nonatomic) _Bool shouldShowAnchorRect;
@@ -18,13 +23,15 @@
 @property(readonly, nonatomic) TSUColor *penColor;
 @property(readonly, nonatomic) _Bool shouldSplitAcrossAnchorRects;
 @property(readonly, nonatomic) _Bool shouldResizeWithAnchor;
-@property(readonly, nonatomic) struct CGPoint centerOfStrokes;
 @property(readonly, nonatomic) struct CGRect unscaledBoundsOfStrokes;
 @property(readonly, nonatomic) struct CGPath *path;
-@property(readonly, nonatomic) PKDrawing *drawing;
+@property(readonly, nonatomic) struct CGPath *unscaledPath;
+@property(readonly, nonatomic) NSDate *creationDate;
+@property(readonly, nonatomic) TSKPKDrawing *drawing;
 @property(readonly, nonatomic) NSData *encodedDrawing;
 @property(readonly, nonatomic) struct CGSize rasterizedImageSize;
 @property(readonly, nonatomic) TSPData *rasterizedImageTSPData;
+@property(readonly, nonatomic) TSUImage *rasterizedImage;
 @property(readonly, nonatomic) unsigned long long visibleStrokesCount;
 @property(readonly, nonatomic) unsigned long long textBaselinesTouchedCount;
 @property(readonly, nonatomic) double percentOfPAContainedInParentRep;
@@ -32,5 +39,11 @@
 @property(readonly, nonatomic) struct CGPoint markupOffset;
 @property(readonly, nonatomic) long long attachedType;
 @property(readonly, nonatomic) long long attachedLocation;
+- (struct CGSize)convertStrokeToUnscaledCanvasSize:(struct CGSize)arg1;
+- (struct CGSize)convertUnscaledCanvasToStrokeSize:(struct CGSize)arg1;
+- (struct CGPoint)convertStrokeToUnscaledCanvasPoint:(struct CGPoint)arg1;
+- (struct CGPoint)convertUnscaledCanvasToStrokePoint:(struct CGPoint)arg1;
+- (struct CGRect)convertStrokeRectToUnscaledCanvas:(struct CGRect)arg1;
+- (struct CGRect)convertUnscaledCanvasToStrokeRect:(struct CGRect)arg1;
 @end
 

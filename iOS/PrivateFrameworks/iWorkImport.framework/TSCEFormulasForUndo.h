@@ -9,7 +9,7 @@
 __attribute__((visibility("hidden")))
 @interface TSCEFormulasForUndo : NSObject
 {
-    struct unordered_map<TSCEFormulaOwnerKind, TSCEFormulasForUndoForOwnerKind *, std::__1::hash<TSCEFormulaOwnerKind>, std::__1::equal_to<TSCEFormulaOwnerKind>, std::__1::allocator<std::__1::pair<const TSCEFormulaOwnerKind, TSCEFormulasForUndoForOwnerKind *>>> _formulasForOwnerKind;
+    struct unordered_map<TSCESubFormulaOwnerIndex, TSCEFormulasForUndoForOwnerKind *, std::__1::hash<TSCESubFormulaOwnerIndex>, std::__1::equal_to<TSCESubFormulaOwnerIndex>, std::__1::allocator<std::__1::pair<const TSCESubFormulaOwnerIndex, TSCEFormulasForUndoForOwnerKind *>>> _formulasForOwnerKind;
     struct unordered_map<TSCECellRef, NSString *, std::__1::hash<TSCECellRef>, std::__1::equal_to<TSCECellRef>, std::__1::allocator<std::__1::pair<const TSCECellRef, NSString *>>> _formulaStringsForCellRefs;
 }
 
@@ -17,17 +17,17 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (id)formulaStringAtCellRef:(const struct TSCECellRef *)arg1;
 - (void)addFormulaString:(id)arg1 atCellRef:(const struct TSCECellRef *)arg2;
-- (void)saveToArchive:(struct FormulasForUndoArchive *)arg1 archiver:(id)arg2;
-- (id)initWithArchive:(const struct FormulasForUndoArchive *)arg1;
+-     // Error parsing type: v32@0:8^{FormulasForUndoArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSCE::FormulaCoordPairsByOwnerArchive>=^{Arena}ii^{Rep}}}16@24, name: saveToArchive:archiver:
+-     // Error parsing type: @24@0:8r^{FormulasForUndoArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSCE::FormulaCoordPairsByOwnerArchive>=^{Arena}ii^{Rep}}}16, name: initWithArchive:
 - (id)description;
-- (void)foreachFormulaInOwnerKind:(int)arg1 performBlock:(CDUnknownBlockType)arg2;
-- (unsigned long long)countForOwnerKind:(int)arg1;
-- (id)subsetForOwnerKind:(int)arg1;
-- (vector_79ca7eec)allOwnerKinds;
-- (unordered_set_c6a929bd)ownerUIDsForOwnerKind:(int)arg1;
+- (void)foreachFormulaInOwnerKind:(unsigned short)arg1 performBlock:(CDUnknownBlockType)arg2;
+- (unsigned long long)countForOwnerKind:(unsigned short)arg1;
+- (id)subsetForOwnerKind:(unsigned short)arg1;
+- (vector_8b45bc7e)allOwnerKinds;
+- (unordered_set_c6a929bd)ownerUIDsForOwnerKind:(unsigned short)arg1;
 - (_Bool)isEmpty;
 - (unsigned long long)count;
-- (void)addFormula:(struct TSCEFormula *)arg1 atCellRef:(const struct TSCECellRef *)arg2 forOwnerKind:(int)arg3;
+- (void)addFormula:(struct TSCEFormula *)arg1 atCellRef:(const struct TSCECellRef *)arg2 forOwnerKind:(unsigned short)arg3;
 
 @end
 

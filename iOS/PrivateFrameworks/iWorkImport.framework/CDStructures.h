@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@class NSDate, NSObject, NSSet, NSString, NSUUID, TSCEFunctionSpec, TSCEReferenceSetWrapper, TSCH3DScene, TSCH3DShaderVariable, TSCHChartInfo, TSCHChartSeriesType, TSCHChartType, TSDTexturedRectangle, TSKBooleanFormat, TSKCustomFormatWrapper, TSKDateTimeFormat, TSUCustomFormat;
+@class NSDate, NSSet, NSString, NSUUID, TSCEFunctionSpec, TSCEReferenceSetWrapper, TSDTexturedRectangle, TSKBooleanFormat, TSKCustomFormatWrapper, TSKDateTimeFormat, TSUCustomFormat;
 
 #pragma mark Function Pointers and Blocks
 
@@ -14,133 +14,15 @@ typedef void (^CDUnknownBlockType)(void); // return type and parameters are unkn
 
 #pragma mark Named Structures
 
-struct ASTNodeArrayArchive;
-
-struct ASTNodeArrayArchive_ASTStickyBits;
-
-struct ASTNodeArrayArchive_ASTUidList;
-
-struct ASTNodeArrayArchive_ASTUidTract {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct ASTNodeArrayArchive_ASTUidList *_field5;
-    struct ASTNodeArrayArchive_ASTUidList *_field6;
-    int _field7;
-    _Bool _field8;
-    _Bool _field9;
-};
-
-struct ASTNodeArrayArchive_ASTUidTractList {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct RepeatedPtrField<TSCE::ASTNodeArrayArchive_ASTUidTract> _field5;
-    struct ASTNodeArrayArchive_ASTStickyBits *_field6;
-};
-
-struct AccumulatorArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    unsigned int _field5;
-    unsigned int _field6;
-    unsigned int _field7;
-    unsigned int _field8;
-    unsigned int _field9;
-    unsigned int _field10;
-    unsigned int _field11;
-    _Bool _field12;
-    struct CellValueArchive *_field13;
-    struct CellValueArchive *_field14;
-    struct CellValueArchive *_field15;
-    struct CellValueArchive *_field16;
-    double _field17;
-    double _field18;
-};
+struct AbstractOperation;
 
 struct Action;
 
 struct ActionFinder;
 
-struct ActiveLabelsTypeBounds {
-    long long _field1;
-    struct ObjcSharedPtr<NSMutableIndexSet> _field2;
-    struct map<long, TSCH3D::CachedLabelBoundsArray, std::__1::less<long>, std::__1::allocator<std::__1::pair<const long, TSCH3D::CachedLabelBoundsArray>>> _field3;
-};
+struct ArchiveInfo;
 
-struct Address {
-    CDUnknownFunctionPointerType *_field1;
-    struct ExtensionSet _field2;
-    struct UnknownFieldSet _field3;
-    unsigned int _field4[1];
-    int _field5;
-    struct Address *_field6;
-};
-
-struct AllFootnoteSelectionArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-};
-
-struct AnimationAttributesArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    basic_string_23d93216 *_field5;
-    basic_string_23d93216 *_field6;
-    double _field7;
-    double _field8;
-    struct Color *_field9;
-    unsigned int _field10;
-    unsigned int _field11;
-    struct PathSourceArchive *_field12;
-    struct PathSourceArchive *_field13;
-    struct PathSourceArchive *_field14;
-    double _field15;
-    basic_string_23d93216 *_field16;
-    basic_string_23d93216 *_field17;
-    basic_string_23d93216 *_field18;
-    _Bool _field19;
-    _Bool _field20;
-};
-
-struct ArchiveInfo {
-    CDUnknownFunctionPointerType *_vptr$MessageLite;
-    struct UnknownFieldSet _unknown_fields_;
-    unsigned int _has_bits_[1];
-    int _cached_size_;
-    unsigned long long identifier_;
-    struct RepeatedPtrField<TSP::MessageInfo> message_infos_;
-    _Bool should_merge_;
-};
-
-struct ArgumentPlaceholderNodeArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct ExpressionNodeArchive *_field5;
-    unsigned int _field6;
-    unsigned int _field7;
-    unsigned int _field8;
-};
-
-struct ArrayNodeArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct ExpressionNodeArchive *_field5;
-    unsigned int _field6;
-    unsigned int _field7;
-};
+struct Arena;
 
 struct AttributeCollection {
     CDUnknownFunctionPointerType *_field1;
@@ -170,21 +52,9 @@ struct AttributeCollection {
 };
 
 struct AttributeSpecs {
-    unsigned long long stride;
-    unsigned long long offset;
-    unsigned long long components;
-};
-
-struct Attribution {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    basic_string_23d93216 *_field5;
-    basic_string_23d93216 *_field6;
-    basic_string_23d93216 *_field7;
-    basic_string_23d93216 *_field8;
-    basic_string_23d93216 *_field9;
+    unsigned long long _field1;
+    unsigned long long _field2;
+    unsigned long long _field3;
 };
 
 struct AxisGridLocation {
@@ -193,8 +63,6 @@ struct AxisGridLocation {
     unsigned long long _field3;
     tvec3_17f03ce0 _field4;
 };
-
-struct AxisLabelCacheItem;
 
 struct BarElementInfo {
     _Bool _field1;
@@ -232,129 +100,9 @@ struct BarExtrusionSpineDetails {
     float creaseAngle;
 };
 
-struct BarIntercept {
-    double _field1;
-    id _field2;
-};
-
-struct BezierPathSourceArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    basic_string_23d93216 *_field5;
-    struct Size *_field6;
-    struct Path *_field7;
-};
-
-struct BookmarkFieldArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct SmartFieldArchive *_field5;
-    basic_string_23d93216 *_field6;
-    unsigned int _field7;
-    unsigned int _field8;
-};
-
-struct BooleanCellValueArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct FormatStructArchive *_field5;
-    _Bool _field6;
-    _Bool _field7;
-};
-
-struct BooleanNodeArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct ExpressionNodeArchive *_field5;
-    _Bool _field6;
-};
-
-struct BufferStates {
-    struct array<TSCH3D::GLSingleState, 2> states;
-};
-
-struct BuildArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct Reference *_field5;
-    basic_string_23d93216 *_field6;
-    double _field7;
-    struct BuildAttributesArchive *_field8;
-    int _field9;
-};
-
-struct BuildAttributesArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[2];
-    struct AnimationAttributesArchive *_field4;
-    double _field5;
-    unsigned int _field6;
-    int _field7;
-    double _field8;
-    double _field9;
-    unsigned int _field10;
-    unsigned int _field11;
-    double _field12;
-    double _field13;
-    int _field14;
-    int _field15;
-    double _field16;
-    struct PathSourceArchive *_field17;
-    int _field18;
-    int _field19;
-    unsigned int _field20;
-    _Bool _field21;
-    _Bool _field22;
-    _Bool _field23;
-    _Bool _field24;
-    double _field25;
-    int _field26;
-    _Bool _field27;
-    double _field28;
-    double _field29;
-    basic_string_23d93216 *_field30;
-    basic_string_23d93216 *_field31;
-    double _field32;
-    double _field33;
-    struct Color *_field34;
-    basic_string_23d93216 *_field35;
-    unsigned int _field36;
-    int _field37;
-};
-
-struct BuildChunkArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct Reference *_field5;
-    double _field6;
-    double _field7;
-    unsigned int _field8;
-    _Bool _field9;
-    _Bool _field10;
-    struct BuildChunkIdentifierArchive *_field11;
-    struct UUID *_field12;
-};
-
-struct BuildChunkIdentifierArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct UUID *_field5;
-    int _field6;
+struct BlendState {
+    _Bool mBlend;
+    int mBlendMode;
 };
 
 struct CATransform3D {
@@ -388,8 +136,6 @@ struct CC_SHA1state_st {
     int _field9;
 };
 
-struct CFUUIDArchive;
-
 struct CGAffineTransform {
     double a;
     double b;
@@ -416,681 +162,6 @@ struct CGSize {
     double height;
 };
 
-struct CachedLabelBounds {
-    tvec3_17f03ce0 _field1;
-    box_80622335 _field2;
-    tvec2_84d5962d _field3;
-    struct ObjcSharedPtr<NSString> _field4;
-};
-
-struct CalloutPathSourceArchive;
-
-struct CategoryOrderArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct Reference *_field5;
-    struct Reference *_field6;
-};
-
-struct CategoryOwnerArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct UUID *_field5;
-    struct RepeatedPtrField<TST::CategoryOwnerArchive_GroupByArchive> _field6;
-};
-
-struct CategoryOwnerArchive_GroupByArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct UUID *_field5;
-    struct RepeatedPtrField<TST::GroupColumnArchive> _field6;
-    struct CategoryOwnerArchive_GroupByArchive_GroupNodeArchive *_field7;
-    struct RepeatedPtrField<TST::CategoryOwnerArchive_GroupByArchive_AggregatorArchive> _field8;
-    struct RepeatedPtrField<TST::ColumnAggregateArchive> _field9;
-    struct CellCoordinateArchive *_field10;
-    struct CellCoordinateArchive *_field11;
-    struct CellCoordinateArchive *_field12;
-    struct CellCoordinateArchive *_field13;
-    _Bool _field14;
-};
-
-struct CategoryOwnerArchive_GroupByArchive_AggNodeArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct CellCoordinateArchive *_field5;
-    struct AccumulatorArchive *_field6;
-    struct RepeatedPtrField<TST::CategoryOwnerArchive_GroupByArchive_AggNodeArchive> _field7;
-};
-
-struct CategoryOwnerArchive_GroupByArchive_AggregatorArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct UUID *_field5;
-    struct CategoryOwnerArchive_GroupByArchive_AggNodeArchive *_field6;
-};
-
-struct CategoryOwnerArchive_GroupByArchive_GroupNodeArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct UUID *_field5;
-    struct CategoryOwnerArchive_GroupByArchive_GroupNodeArchive_GroupValueTupleArchive *_field6;
-    struct CellValueArchive *_field7;
-    struct RepeatedPtrField<TST::CategoryOwnerArchive_GroupByArchive_GroupNodeArchive> _field8;
-    RepeatedPtrField_bfda3daa _field9;
-    struct RepeatedPtrField<TSCE::CellCoordinateArchive> _field10;
-    struct CategoryOwnerArchive_GroupByArchive_GroupNodeArchive_FormatManagerArchive *_field11;
-};
-
-struct CategoryOwnerArchive_GroupByArchive_GroupNodeArchive_FormatManagerArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct CellValueArchive *_field5;
-    struct RepeatedPtrField<TSK::FormatStructArchive> _field6;
-    struct RepeatedPtrField<TST::CategoryOwnerArchive_GroupByArchive_GroupNodeArchive_FormatManagerArchive_RowSetArchive> _field7;
-};
-
-struct CategoryOwnerArchive_GroupByArchive_GroupNodeArchive_GroupValueTupleArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct RepeatedPtrField<TSCE::CellValueArchive> _field5;
-};
-
-struct CategoryReferenceArchive;
-
-struct CellBorderArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct StrokeArchive *_field5;
-    struct StrokeArchive *_field6;
-    int _field7;
-    int _field8;
-    struct StrokeArchive *_field9;
-    struct StrokeArchive *_field10;
-    int _field11;
-    int _field12;
-};
-
-struct CellCoordinateArchive;
-
-struct CellCoordinateVectorArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct RepeatedPtrField<TSCE::CellCoordinateArchive> _field5;
-};
-
-struct CellID;
-
-struct CellRange;
-
-struct CellReferenceArchive;
-
-struct CellRegion {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct RepeatedPtrField<TST::CellRange> _field5;
-};
-
-struct CellSpecArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct FormulaArchive *_field5;
-    double _field6;
-    double _field7;
-    double _field8;
-    unsigned int _field9;
-    _Bool _field10;
-    _Bool _field11;
-    struct Reference *_field12;
-};
-
-struct CellStyleArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct StyleArchive *_field5;
-    struct CellStylePropertiesArchive *_field6;
-    unsigned int _field7;
-};
-
-struct CellStylePropertiesArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct FillArchive *_field5;
-    struct Deprecated_TableStrokeArchive *_field6;
-    struct Deprecated_TableStrokeArchive *_field7;
-    _Bool _field8;
-    int _field9;
-    struct Deprecated_TableStrokeArchive *_field10;
-    struct Deprecated_TableStrokeArchive *_field11;
-    struct PaddingArchive *_field12;
-    struct StrokeArchive *_field13;
-    struct StrokeArchive *_field14;
-    struct StrokeArchive *_field15;
-    struct StrokeArchive *_field16;
-};
-
-struct CellUIDListArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    RepeatedPtrField_bfda3daa _field5;
-    RepeatedPtrField_bfda3daa _field6;
-    RepeatedField_c2891982 _field7;
-    RepeatedField_c2891982 _field8;
-};
-
-struct CellUIDRegionArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct RepeatedPtrField<TSP::UUIDRectArchive> _field5;
-};
-
-struct CellValueArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct BooleanCellValueArchive *_field5;
-    struct DateCellValueArchive *_field6;
-    struct NumberCellValueArchive *_field7;
-    struct StringCellValueArchive *_field8;
-    struct ErrorCellValueArchive *_field9;
-    int _field10;
-};
-
-struct CharacterStyleArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct StyleArchive *_field5;
-    struct CharacterStylePropertiesArchive *_field6;
-    unsigned int _field7;
-};
-
-struct CharacterStylePropertiesArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[2];
-    float _field4;
-    _Bool _field5;
-    _Bool _field6;
-    _Bool _field7;
-    _Bool _field8;
-    basic_string_23d93216 *_field9;
-    struct Color *_field10;
-    basic_string_23d93216 *_field11;
-    int _field12;
-    int _field13;
-    int _field14;
-    int _field15;
-    float _field16;
-    float _field17;
-    int _field18;
-    _Bool _field19;
-    _Bool _field20;
-    _Bool _field21;
-    _Bool _field22;
-    struct Color *_field23;
-    struct ShadowArchive *_field24;
-    float _field25;
-    float _field26;
-    struct Color *_field27;
-    struct Color *_field28;
-    float _field29;
-    _Bool _field30;
-    _Bool _field31;
-    _Bool _field32;
-    _Bool _field33;
-    struct Color *_field34;
-    float _field35;
-    int _field36;
-    struct RepeatedPtrField<TSWP::FontFeatureArchive> _field37;
-    basic_string_23d93216 *_field38;
-    _Bool _field39;
-    _Bool _field40;
-    _Bool _field41;
-    _Bool _field42;
-    _Bool _field43;
-    basic_string_23d93216 *_field44;
-    int _field45;
-};
-
-struct CharacterStylePropertyChangeSetArchive;
-
-struct Chart3DBaseImageTextureTilingArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct Chart3DVectorArchive *_field5;
-    float _field6;
-};
-
-struct Chart3DDiffuseMaterialArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct Chart3DTexturesMaterialArchive *_field5;
-    struct RepeatedPtrField<TSCH::Chart3DImageTextureTilingArchive> _field6;
-};
-
-struct Chart3DDirectionalLightArchive;
-
-struct Chart3DEmissiveMaterialArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct Chart3DTexturesMaterialArchive *_field5;
-    struct RepeatedPtrField<TSCH::Chart3DImageTextureTilingArchive> _field6;
-};
-
-struct Chart3DEnvironmentMaterialArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct Chart3DTexturesMaterialArchive *_field5;
-    struct RepeatedPtrField<TSCH::Chart3DBaseImageTextureTilingArchive> _field6;
-    struct RepeatedPtrField<TSCH::Chart3DImageTextureTilingArchive> _field7;
-    _Bool _field8;
-};
-
-struct Chart3DEnvironmentPackageArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct RepeatedPtrField<TSCH::Chart3DEnvironmentMaterialArchive> _field5;
-};
-
-struct Chart3DFillArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct Chart3DLightingModelArchive *_field5;
-    basic_string_23d93216 *_field6;
-    int _field7;
-    unsigned int _field8;
-};
-
-struct Chart3DFixedFunctionLightingModelArchive;
-
-struct Chart3DImageTextureTilingArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct Chart3DBaseImageTextureTilingArchive *_field5;
-    int _field6;
-    int _field7;
-    int _field8;
-    int _field9;
-    int _field10;
-    int _field11;
-    int _field12;
-    _Bool _field13;
-};
-
-struct Chart3DLightArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    basic_string_23d93216 *_field5;
-    struct Chart3DVectorArchive *_field6;
-    struct Chart3DVectorArchive *_field7;
-    struct Chart3DVectorArchive *_field8;
-    struct Chart3DVectorArchive *_field9;
-    float _field10;
-    unsigned int _field11;
-    struct Chart3DPointLightArchive *_field12;
-    struct Chart3DDirectionalLightArchive *_field13;
-    struct Chart3DSpotLightArchive *_field14;
-    _Bool _field15;
-};
-
-struct Chart3DLightingModelArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct Chart3DPhongLightingModelArchive *_field5;
-    struct Chart3DFixedFunctionLightingModelArchive *_field6;
-    struct Chart3DEnvironmentPackageArchive *_field7;
-};
-
-struct Chart3DLightingPackageArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    basic_string_23d93216 *_field5;
-    struct RepeatedPtrField<TSCH::Chart3DLightArchive> _field6;
-};
-
-struct Chart3DModulateMaterialArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct Chart3DTexturesMaterialArchive *_field5;
-    struct RepeatedPtrField<TSCH::Chart3DImageTextureTilingArchive> _field6;
-};
-
-struct Chart3DPhongLightingModelArchive;
-
-struct Chart3DPhongMaterialPackageArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct Chart3DEmissiveMaterialArchive *_field5;
-    struct Chart3DDiffuseMaterialArchive *_field6;
-    struct Chart3DModulateMaterialArchive *_field7;
-    struct Chart3DSpecularMaterialArchive *_field8;
-    struct Chart3DShininessMaterialArchive *_field9;
-};
-
-struct Chart3DPointLightArchive;
-
-struct Chart3DShininessMaterialArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct Chart3DTexturesMaterialArchive *_field5;
-    struct RepeatedPtrField<TSCH::Chart3DImageTextureTilingArchive> _field6;
-};
-
-struct Chart3DSpecularMaterialArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct Chart3DTexturesMaterialArchive *_field5;
-    struct RepeatedPtrField<TSCH::Chart3DImageTextureTilingArchive> _field6;
-};
-
-struct Chart3DSpotLightArchive;
-
-struct Chart3DTSPImageDataTextureArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct DataReference *_field5;
-    struct DataReference *_field6;
-    struct Reference *_field7;
-    struct Reference *_field8;
-};
-
-struct Chart3DTexturesMaterialArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct Chart3DVectorArchive *_field5;
-    struct RepeatedPtrField<TSCH::Chart3DTSPImageDataTextureArchive> _field6;
-};
-
-struct Chart3DVectorArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    float _field5;
-    float _field6;
-    float _field7;
-    float _field8;
-};
-
-struct ChartArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct ExtensionSet _field2;
-    struct UnknownFieldSet _field3;
-    unsigned int _field4[1];
-    int _field5;
-    int _field6;
-    int _field7;
-    struct RectArchive *_field8;
-    struct Reference *_field9;
-    struct ChartGridArchive *_field10;
-    struct Reference *_field11;
-    struct Reference *_field12;
-    struct Reference *_field13;
-    struct Reference *_field14;
-    struct Reference *_field15;
-    RepeatedPtrField_a0d2dbe7 _field16;
-    RepeatedPtrField_a0d2dbe7 _field17;
-    int _field18;
-    _Bool _field19;
-    _Bool _field20;
-    _Bool _field21;
-    RepeatedPtrField_a0d2dbe7 _field22;
-    RepeatedPtrField_a0d2dbe7 _field23;
-    RepeatedPtrField_a0d2dbe7 _field24;
-    struct SparseReferenceArray *_field25;
-    struct SparseReferenceArray *_field26;
-    RepeatedPtrField_a0d2dbe7 _field27;
-    struct Reference *_field28;
-    unsigned int _field29;
-};
-
-struct ChartAxisGenericPropertyMapArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[2];
-    struct FormatStructArchive *_field4;
-    struct FormatStructArchive *_field5;
-    struct StrokeArchive *_field6;
-    float _field7;
-    int _field8;
-    struct FormatStructArchive *_field9;
-    struct FormatStructArchive *_field10;
-    int _field11;
-    int _field12;
-    float _field13;
-    float _field14;
-    struct ShadowArchive *_field15;
-    struct StrokeArchive *_field16;
-    struct ShadowArchive *_field17;
-    struct StrokeArchive *_field18;
-    float _field19;
-    int _field20;
-    struct FormatStructArchive *_field21;
-    int _field22;
-    int _field23;
-    int _field24;
-    int _field25;
-    _Bool _field26;
-    _Bool _field27;
-    _Bool _field28;
-    _Bool _field29;
-    _Bool _field30;
-    _Bool _field31;
-    _Bool _field32;
-    _Bool _field33;
-    _Bool _field34;
-    _Bool _field35;
-    _Bool _field36;
-    int _field37;
-    basic_string_23d93216 *_field38;
-    struct ChartsNSNumberDoubleArchive *_field39;
-    int _field40;
-    int _field41;
-    struct ChartsNSNumberDoubleArchive *_field42;
-    int _field43;
-};
-
-struct ChartAxisIDArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    int _field5;
-    unsigned int _field6;
-};
-
-struct ChartGenericPropertyMapArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[2];
-    int _field4;
-    float _field5;
-    struct Chart3DLightingPackageArchive *_field6;
-    struct Chart3DVectorArchive *_field7;
-    struct Chart3DVectorArchive *_field8;
-    float _field9;
-    float _field10;
-    struct Chart3DVectorArchive *_field11;
-    struct FillArchive *_field12;
-    struct StrokeArchive *_field13;
-    struct ShadowArchive *_field14;
-    struct StrokeArchive *_field15;
-    _Bool _field16;
-    _Bool _field17;
-    _Bool _field18;
-    _Bool _field19;
-    int _field20;
-    float _field21;
-    int _field22;
-    int _field23;
-    float _field24;
-    struct FillArchive *_field25;
-    float _field26;
-    float _field27;
-    float _field28;
-    int _field29;
-    float _field30;
-    float _field31;
-    _Bool _field32;
-    _Bool _field33;
-    _Bool _field34;
-    _Bool _field35;
-    _Bool _field36;
-    struct Color *_field37;
-    basic_string_23d93216 *_field38;
-    int _field39;
-    int _field40;
-};
-
-struct ChartGridArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    RepeatedPtrField_236b8a23 _field5;
-    RepeatedPtrField_236b8a23 _field6;
-    int _field7;
-    _Bool _field8;
-    struct RepeatedPtrField<TSCH::PreUFF::ChartGridArchive_ValueRow> _field9;
-};
-
-struct ChartInfoArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct DrawableArchive *_field5;
-    struct ChartModelArchive *_field6;
-    struct Reference *_field7;
-    struct LegendModelArchive *_field8;
-    struct RectArchive *_field9;
-    RepeatedPtrField_a0d2dbe7 _field10;
-    RepeatedPtrField_a0d2dbe7 _field11;
-    RepeatedPtrField_a0d2dbe7 _field12;
-    RepeatedPtrField_a0d2dbe7 _field13;
-    RepeatedPtrField_a0d2dbe7 _field14;
-    int _field15;
-    int _field16;
-    struct SparseReferenceArray *_field17;
-    struct SparseReferenceArray *_field18;
-    struct Reference *_field19;
-    struct Reference *_field20;
-    struct Point *_field21;
-    struct Reference *_field22;
-    RepeatedPtrField_a0d2dbe7 _field23;
-    int _field24;
-    int _field25;
-    _Bool _field26;
-};
-
-struct ChartLabelsContainingLabelRenderInfo {
-    id _field1;
-    tvec2_3b141483 _field2;
-    tvec2_3b141483 _field3;
-    id _field4;
-    tvec3_17f03ce0 _field5;
-    tvec3_17f03ce0 _field6;
-    unsigned int _field7;
-    tvec2_84d5962d _field8;
-    float _field9;
-    tvec2_84d5962d _field10;
-    float _field11;
-};
-
-struct ChartMediatorFormulaStorage {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct RepeatedPtrField<TSCE::FormulaArchive> _field5;
-    struct RepeatedPtrField<TSCE::FormulaArchive> _field6;
-    struct RepeatedPtrField<TSCE::FormulaArchive> _field7;
-    struct RepeatedPtrField<TSCE::FormulaArchive> _field8;
-    struct RepeatedPtrField<TSCE::FormulaArchive> _field9;
-    struct RepeatedPtrField<TSCE::FormulaArchive> _field10;
-    struct RepeatedPtrField<TSCE::FormulaArchive> _field11;
-    int _field12;
-};
-
-struct ChartModelArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct Reference *_field5;
-    struct Reference *_field6;
-    RepeatedField_27dfe32f _field7;
-    struct ChartGridArchive *_field8;
-    unsigned int _field9;
-    unsigned int _field10;
-};
-
 struct ChartProjectedBoundsConverter {
     struct ChartProjectedBoundsSpaces *_field1;
     float _field2;
@@ -1109,364 +180,24 @@ struct ChartProjectedBoundsSpaces {
     box_80622335 mContainingViewport;
 };
 
-struct ChartReferenceLineNonStyleItem {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct Reference *_field5;
-    struct UUID *_field6;
-};
-
-struct ChartSceneInfo {
-    TSCH3DScene *scene;
-    TSCHChartInfo *chartInfo;
-    TSCHChartType *chartType;
-    TSCHChartSeriesType *seriesType;
-    CDStruct_b1c75024 layoutSettings;
-};
-
-struct ChartScenePropertyAccessor {
-    id _field1;
-    id _field2;
-};
-
-struct ChartSelectionPathArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct ChartSelectionPathTypeArchive *_field5;
-    struct ChartSelectionPathArchive *_field6;
-    struct RepeatedPtrField<TSCH::ChartSelectionPathArgumentArchive> _field7;
-};
-
-struct ChartSelectionPathTypeArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    basic_string_23d93216 *_field5;
-    basic_string_23d93216 *_field6;
-};
-
-struct ChartSeriesGenericPropertyMapArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[3];
-    int _field4;
-    struct FormatStructArchive *_field5;
-    struct FormatStructArchive *_field6;
-    float _field7;
-    float _field8;
-    struct LineEndArchive *_field9;
-    struct LineEndArchive *_field10;
-    struct StrokeArchive *_field11;
-    struct FormatStructArchive *_field12;
-    struct FormatStructArchive *_field13;
-    struct ChartsNSArrayOfNSNumberDoubleArchive *_field14;
-    struct ChartsNSArrayOfNSNumberDoubleArchive *_field15;
-    int _field16;
-    float _field17;
-    struct ChartsNSArrayOfNSNumberDoubleArchive *_field18;
-    struct ChartsNSArrayOfNSNumberDoubleArchive *_field19;
-    struct LineEndArchive *_field20;
-    float _field21;
-    float _field22;
-    struct LineEndArchive *_field23;
-    float _field24;
-    int _field25;
-    struct ShadowArchive *_field26;
-    int _field27;
-    float _field28;
-    struct StrokeArchive *_field29;
-    float _field30;
-    int _field31;
-    struct StrokeArchive *_field32;
-    struct FillArchive *_field33;
-    int _field34;
-    float _field35;
-    int _field36;
-    int _field37;
-    struct FormatStructArchive *_field38;
-    int _field39;
-    float _field40;
-    struct FormatStructArchive *_field41;
-    int _field42;
-    int _field43;
-    struct ShadowArchive *_field44;
-    _Bool _field45;
-    _Bool _field46;
-    _Bool _field47;
-    _Bool _field48;
-    _Bool _field49;
-    _Bool _field50;
-    _Bool _field51;
-    _Bool _field52;
-    int _field53;
-    _Bool _field54;
-    _Bool _field55;
-    _Bool _field56;
-    _Bool _field57;
-    struct StrokeArchive *_field58;
-    struct FillArchive *_field59;
-    struct StrokeArchive *_field60;
-    float _field61;
-    int _field62;
-    float _field63;
-    float _field64;
-    basic_string_23d93216 *_field65;
-    int _field66;
-    int _field67;
-    float _field68;
-    float _field69;
-    struct ShadowArchive *_field70;
-    _Bool _field71;
-    _Bool _field72;
-    _Bool _field73;
-    int _field74;
-    struct StrokeArchive *_field75;
-    float _field76;
-    int _field77;
-    float _field78;
-    int _field79;
-    int _field80;
-    int _field81;
-    float _field82;
-    int _field83;
-};
-
-struct ChartUIState {
-    CDUnknownFunctionPointerType *_field1;
-    struct ExtensionSet _field2;
-    struct UnknownFieldSet _field3;
-    unsigned int _field4[1];
-    int _field5;
-    struct Reference *_field6;
-    int _field7;
-    int _field8;
-    int _field9;
-    int _field10;
-    int _field11;
-    _Bool _field12;
-    _Bool _field13;
-};
-
-struct ChartsNSArrayOfNSNumberDoubleArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct RepeatedField<double> _field5;
-};
-
-struct ChartsNSNumberDoubleArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    double _field5;
-};
-
-struct ChartsNumberFormatArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    basic_string_23d93216 *_field5;
-    int _field6;
-    unsigned int _field7;
-    basic_string_23d93216 *_field8;
-    int _field9;
-    int _field10;
-    basic_string_23d93216 *_field11;
-    unsigned int _field12;
-    unsigned int _field13;
-    _Bool _field14;
-    _Bool _field15;
-    _Bool _field16;
-    _Bool _field17;
-    unsigned int _field18;
-    double _field19;
-    RepeatedPtrField_236b8a23 _field20;
-    struct IndexSet *_field21;
-    _Bool _field22;
-    unsigned int _field23;
-    unsigned int _field24;
-    unsigned int _field25;
-    basic_string_23d93216 *_field26;
-    basic_string_23d93216 *_field27;
-    unsigned int _field28;
-};
-
-struct ClassicStylesheetRecordArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct RepeatedPtrField<TSS::StylesheetArchive_IdentifiedStyleEntry> _field5;
-    struct Reference *_field6;
-};
-
-struct ClassicThemeRecordArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    basic_string_23d93216 *_field5;
-    struct Reference *_field6;
-    RepeatedPtrField_a0d2dbe7 _field7;
-};
-
 struct Collection;
+
+struct Color {
+    float _field1;
+    float _field2;
+    float _field3;
+    float _field4;
+};
 
 struct ColorResult {
     _Bool _field1;
-    struct Color {
-        float _field1;
-        float _field2;
-        float _field3;
-        float _field4;
-    } _field2;
-};
-
-struct ColumnAggregateArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct UUID *_field5;
-    unsigned int _field6;
-    int _field7;
-};
-
-struct ColumnAggregateListArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct RepeatedPtrField<TST::ColumnAggregateArchive> _field5;
-};
-
-struct ColumnOrRowUuidsInfoArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct UUID *_field5;
-    struct UUID *_field6;
-    struct IndexedUidsArchive *_field7;
-    struct RepeatedPtrField<TSCE::RewriteRangeEntryArchive> _field8;
-    struct RangeCoordinateArchive *_field9;
-    struct UUID *_field10;
-    _Bool _field11;
-};
-
-struct ColumnStyleArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct StyleArchive *_field5;
-    struct ColumnStylePropertiesArchive *_field6;
-    unsigned int _field7;
-};
-
-struct ColumnStylePropertiesArchive;
-
-struct ColumnsArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct ColumnsArchive_EqualColumnsArchive *_field5;
-    struct ColumnsArchive_NonEqualColumnsArchive *_field6;
-};
-
-struct ColumnsArchive_EqualColumnsArchive;
-
-struct ColumnsArchive_NonEqualColumnsArchive;
-
-struct CommentInfoArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct ShapeInfoArchive *_field5;
-    struct Reference *_field6;
-};
-
-struct CommentStorageArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    basic_string_23d93216 *_field5;
-    struct Date *_field6;
-    struct Reference *_field7;
-    RepeatedPtrField_a0d2dbe7 _field8;
-};
-
-struct CompletionTokenAttachmentArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct TokenAttachmentArchive *_field5;
-    basic_string_23d93216 *_field6;
-    unsigned int _field7;
-    unsigned int _field8;
+    struct Color _field2;
 };
 
 struct ComponentExternalReferenceInfo {
     long long _field1;
     _Bool _field2;
-};
-
-struct ComponentInfo {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    unsigned long long _field5;
-    basic_string_23d93216 *_field6;
-    basic_string_23d93216 *_field7;
-    RepeatedField_27dfe32f _field8;
-    int _field9;
-    RepeatedField_27dfe32f _field10;
-    int _field11;
-    RepeatedPtrField_1f1a6efb _field12;
-    struct RepeatedPtrField<TSP::ComponentDataReference> _field13;
-    RepeatedPtrField_c964a194 _field14;
-    struct RepeatedPtrField<TSP::FeatureInfo> _field15;
-    unsigned long long _field16;
-    _Bool _field17;
-};
-
-struct ConnectionLineArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct ShapeArchive *_field5;
-    struct Reference *_field6;
-    struct Reference *_field7;
-    struct UUID *_field8;
-    struct UUID *_field9;
-};
-
-struct ConnectionLinePathSourceArchive;
-
-struct ContactShadowArchive;
-
-struct ContainerArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct GeometryArchive *_field5;
-    struct Reference *_field6;
-    RepeatedPtrField_a0d2dbe7 _field7;
+    _Bool _field3;
 };
 
 struct CopyingFileOutputStream {
@@ -1485,38 +216,14 @@ struct CopyingOutputStreamAdaptor {
     _Bool _field3;
     _Bool _field4;
     long long _field5;
-    struct scoped_array<unsigned char> _field6;
+    struct unique_ptr<unsigned char [], std::__1::default_delete<unsigned char []>> _field6;
     int _field7;
     int _field8;
-};
-
-struct CurvedShadowArchive;
-
-struct CustomFormatArchive;
-
-struct DEPRECATEDChart3DFillArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct FillArchive *_field5;
-    struct Chart3DLightingModelArchive *_field6;
-    basic_string_23d93216 *_field7;
-    int _field8;
-    unsigned int _field9;
 };
 
 struct Data {
     tvec2_84d5962d _field1;
     tvec2_84d5962d _field2;
-};
-
-struct DataAttributes {
-    CDUnknownFunctionPointerType *_field1;
-    struct ExtensionSet _field2;
-    struct UnknownFieldSet _field3;
-    unsigned int _field4[1];
-    int _field5;
 };
 
 struct DataBuffer2DDimension {
@@ -1544,145 +251,10 @@ struct DataBufferLevelData {
     tvec3_c2818ced _field2;
 };
 
-struct DataInfo {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    unsigned long long _field5;
-    basic_string_23d93216 *_field6;
-    basic_string_23d93216 *_field7;
-    basic_string_23d93216 *_field8;
-    basic_string_23d93216 *_field9;
-    basic_string_23d93216 *_field10;
-    basic_string_23d93216 *_field11;
-    _Bool _field12;
-    int _field13;
-    struct DataAttributes *_field14;
-    struct EncryptionInfo *_field15;
-    basic_string_23d93216 *_field16;
+struct DepthState {
+    _Bool depthTest;
+    _Bool depthMask;
 };
-
-struct DataMetadata {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct Color *_field5;
-};
-
-struct DataMetadataMap {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct RepeatedPtrField<TSP::DataMetadataMap_DataMetadataMapEntry> _field5;
-};
-
-struct DataReference {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    unsigned long long _field5;
-};
-
-struct DataStore {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct HeaderStorage *_field5;
-    struct Reference *_field6;
-    struct TileStorage *_field7;
-    struct Reference *_field8;
-    struct Reference *_field9;
-    struct Reference *_field10;
-    struct Reference *_field11;
-    struct Reference *_field12;
-    struct Reference *_field13;
-    struct Reference *_field14;
-    struct Reference *_field15;
-    unsigned int _field16;
-    unsigned int _field17;
-    struct TableRBTree *_field18;
-    struct TableRBTree *_field19;
-    struct Reference *_field20;
-    struct Reference *_field21;
-    struct Reference *_field22;
-    struct Reference *_field23;
-    struct Reference *_field24;
-    struct Reference *_field25;
-    unsigned int _field26;
-};
-
-struct DatabaseDataArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct Reference *_field5;
-    basic_string_23d93216 *_field6;
-    basic_string_23d93216 *_field7;
-    unsigned long long _field8;
-    unsigned int _field9;
-    _Bool _field10;
-};
-
-struct Date {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    double _field5;
-};
-
-struct DateCellValueArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    double _field5;
-    struct FormatStructArchive *_field6;
-    _Bool _field7;
-    _Bool _field8;
-};
-
-struct DateNodeArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct ExpressionNodeArchive *_field5;
-    basic_string_23d93216 *_field6;
-    basic_string_23d93216 *_field7;
-};
-
-struct DeathhawkRdar39989167CellSelectionArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct Reference *_field5;
-    struct CellUIDRegionArchive *_field6;
-    struct CellUIDRegionArchive *_field7;
-    struct UUIDCoordArchive *_field8;
-    struct UUIDCoordArchive *_field9;
-    int _field10;
-};
-
-struct Deprecated_StrokePresetDataArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct Deprecated_TableStrokeArchive *_field5;
-    struct Deprecated_TableStrokeArchive *_field6;
-    struct Deprecated_TableStrokeArchive *_field7;
-    int _field8;
-};
-
-struct Deprecated_TableStrokeArchive;
 
 struct Descriptor {
     basic_string_23d93216 *_field1;
@@ -1690,36 +262,24 @@ struct Descriptor {
     struct FileDescriptor *_field3;
     struct Descriptor *_field4;
     struct MessageOptions *_field5;
-    _Bool _field6;
-    _Bool _field7;
-    int _field8;
-    struct FieldDescriptor *_field9;
-    int _field10;
-    struct OneofDescriptor *_field11;
-    int _field12;
-    struct Descriptor *_field13;
+    struct FieldDescriptor *_field6;
+    struct OneofDescriptor *_field7;
+    struct Descriptor *_field8;
+    struct EnumDescriptor *_field9;
+    struct ExtensionRange *_field10;
+    struct FieldDescriptor *_field11;
+    struct ReservedRange *_field12;
+    basic_string_23d93216 **_field13;
     int _field14;
-    struct EnumDescriptor *_field15;
+    int _field15;
     int _field16;
-    struct ExtensionRange *_field17;
+    int _field17;
     int _field18;
-    struct FieldDescriptor *_field19;
-};
-
-struct DesktopUILayoutArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    int _field5;
-    _Bool _field6;
-    _Bool _field7;
-    _Bool _field8;
-    _Bool _field9;
-    int _field10;
-    _Bool _field11;
-    _Bool _field12;
-    _Bool _field13;
+    int _field19;
+    int _field20;
+    int _field21;
+    _Bool _field22;
+    _Bool _field23;
 };
 
 struct Dictionary {
@@ -1737,63 +297,6 @@ struct DispatchDataInputStream {
     id _field5;
     unsigned long long _field6;
     char *_field7;
-};
-
-struct DocumentRevision;
-
-struct DoublePoint;
-
-struct DoubleSize;
-
-struct DrawableArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct GeometryArchive *_field5;
-    struct Reference *_field6;
-    struct ExteriorTextWrapArchive *_field7;
-    basic_string_23d93216 *_field8;
-    struct Reference *_field9;
-    basic_string_23d93216 *_field10;
-    RepeatedPtrField_a0d2dbe7 _field11;
-    _Bool _field12;
-    _Bool _field13;
-};
-
-struct DrawableAttachmentArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct Reference *_field5;
-    unsigned int _field6;
-    float _field7;
-    unsigned int _field8;
-    float _field9;
-};
-
-struct DrawableSelectionArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    RepeatedPtrField_a0d2dbe7 _field5;
-    RepeatedPtrField_a0d2dbe7 _field6;
-};
-
-struct DropShadowArchive;
-
-struct DurationNodeArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct ExpressionNodeArchive *_field5;
-    double _field6;
-    unsigned int _field7;
-    unsigned int _field8;
-    unsigned int _field9;
 };
 
 struct EQKitCache<EQKit::OpticalKern::Glyph::Key, std::__1::shared_ptr<EQKit::OpticalKern::Edge::Path>, std::__1::shared_ptr<const EQKit::OpticalKern::Edge::Path>>;
@@ -1856,27 +359,13 @@ struct EdgeDetectionParameters {
     float sharpEdgeThreshold;
 };
 
-struct EdgeInsetsArchive;
-
-struct EditableBezierPathSourceArchive;
-
 struct ElementRenderPass {
     int _field1;
-};
-
-struct EmptyExpressionNodeArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct ExpressionNodeArchive *_field5;
 };
 
 struct EnableClipDistances {
     struct array<bool, 8> states;
 };
-
-struct EncryptionInfo;
 
 struct Entry;
 
@@ -1884,69 +373,7 @@ struct EnumDescriptor;
 
 struct EnumValueDescriptor;
 
-struct ErrorCellValueArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    int _field5;
-    int _field6;
-    basic_string_23d93216 *_field7;
-    double _field8;
-};
-
-struct ExpandCollapseStateArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    RepeatedPtrField_bfda3daa _field5;
-    RepeatedPtrField_bfda3daa _field6;
-};
-
-struct ExpandedTrackedReferenceArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct ASTNodeArrayArchive *_field5;
-    unsigned int _field6;
-    unsigned int _field7;
-};
-
-struct ExpressionNodeArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    RepeatedPtrField_a0d2dbe7 _field5;
-    unsigned long long _field6;
-    unsigned long long _field7;
-};
-
 struct ExtensionRange;
-
-struct ExtensionSet {
-    struct map<int, google::protobuf::internal::ExtensionSet::Extension, std::__1::less<int>, std::__1::allocator<std::__1::pair<const int, google::protobuf::internal::ExtensionSet::Extension>>> _field1;
-};
-
-struct ExteriorTextWrapArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    unsigned int _field5;
-    unsigned int _field6;
-    unsigned int _field7;
-    float _field8;
-    float _field9;
-    _Bool _field10;
-};
-
-struct ExternalLabelAttribute {
-    id _field1;
-    tvec2_84d5962d _field2;
-};
 
 struct ExternalReferenceCompletionInfo;
 
@@ -1960,20 +387,24 @@ struct FieldDescriptor {
     basic_string_23d93216 *_field2;
     basic_string_23d93216 *_field3;
     basic_string_23d93216 *_field4;
-    struct FileDescriptor *_field5;
-    int _field6;
-    int _field7;
+    basic_string_23d93216 *_field5;
+    struct FileDescriptor *_field6;
+    struct GoogleOnceDynamic *_field7;
     int _field8;
-    _Bool _field9;
-    int _field10;
-    struct Descriptor *_field11;
-    struct OneofDescriptor *_field12;
-    struct Descriptor *_field13;
-    struct Descriptor *_field14;
-    struct EnumDescriptor *_field15;
-    struct FieldDescriptor *_field16;
-    struct FieldOptions *_field17;
-    _Bool _field18;
+    int _field9;
+    _Bool _field10;
+    _Bool _field11;
+    _Bool _field12;
+    int _field13;
+    int _field14;
+    struct Descriptor *_field15;
+    struct OneofDescriptor *_field16;
+    struct Descriptor *_field17;
+    struct Descriptor *_field18;
+    struct EnumDescriptor *_field19;
+    struct FieldOptions *_field20;
+    basic_string_23d93216 *_field21;
+    basic_string_23d93216 *_field22;
     union {
         int _field1;
         long long _field2;
@@ -1984,37 +415,10 @@ struct FieldDescriptor {
         _Bool _field7;
         struct EnumValueDescriptor *_field8;
         basic_string_23d93216 *_field9;
-    } _field19;
-};
-
-struct FieldInfo {
-    CDUnknownFunctionPointerType *_vptr$MessageLite;
-    struct UnknownFieldSet _unknown_fields_;
-    unsigned int _has_bits_[1];
-    int _cached_size_;
-    struct FieldPath *path_;
-    int type_;
-    int unknown_field_rule_;
-    struct RepeatedField<unsigned long long> object_references_;
-    int _object_references_cached_byte_size_;
-    struct RepeatedField<unsigned long long> data_references_;
-    int _data_references_cached_byte_size_;
-    RepeatedField_27dfe32f known_field_version_;
-    int _known_field_version_cached_byte_size_;
-    basic_string_23d93216 *known_field_feature_identifier_;
-    int known_field_rule_;
+    } _field23;
 };
 
 struct FieldOptions;
-
-struct FieldPath {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    RepeatedField_27dfe32f _field5;
-    int _field6;
-};
 
 struct FileDescriptor;
 
@@ -2022,39 +426,6 @@ struct FileOutputStream {
     CDUnknownFunctionPointerType *_field1;
     struct CopyingFileOutputStream _field2;
     struct CopyingOutputStreamAdaptor _field3;
-};
-
-struct FillArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct ExtensionSet _field2;
-    struct UnknownFieldSet _field3;
-    unsigned int _field4[1];
-    int _field5;
-    struct Color *_field6;
-    struct GradientArchive *_field7;
-    struct ImageFillArchive *_field8;
-};
-
-struct FilterRuleArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct FormulaPredicateArchive *_field5;
-    _Bool _field6;
-};
-
-struct FilterSetArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    int _field5;
-    _Bool _field6;
-    _Bool _field7;
-    struct RepeatedPtrField<TST::FilterRuleArchive> _field8;
-    RepeatedField_27dfe32f _field9;
-    RepeatedField_12b14242 _field10;
 };
 
 struct FinalizeHandlerItem {
@@ -2079,141 +450,10 @@ struct FindLinesContext {
     int _field6;
 };
 
-struct FlowInfoArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct Reference *_field5;
-    RepeatedPtrField_a0d2dbe7 _field6;
-    unsigned int _field7;
+struct FlushResult {
+    _Bool _field1;
+    _Bool _field2;
 };
-
-struct FlowInfoContainerArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    RepeatedPtrField_a0d2dbe7 _field5;
-    unsigned int _field6;
-};
-
-struct FormatStructArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct ExtensionSet _field2;
-    struct UnknownFieldSet _field3;
-    unsigned int _field4[2];
-    unsigned int _field5;
-    unsigned int _field6;
-    basic_string_23d93216 *_field7;
-    unsigned int _field8;
-    unsigned int _field9;
-    unsigned int _field10;
-    _Bool _field11;
-    _Bool _field12;
-    _Bool _field13;
-    _Bool _field14;
-    unsigned int _field15;
-    unsigned int _field16;
-    basic_string_23d93216 *_field17;
-    unsigned int _field18;
-    unsigned int _field19;
-    basic_string_23d93216 *_field20;
-    double _field21;
-    unsigned int _field22;
-    unsigned int _field23;
-    double _field24;
-    double _field25;
-    double _field26;
-    unsigned int _field27;
-    unsigned int _field28;
-    _Bool _field29;
-    _Bool _field30;
-    _Bool _field31;
-    _Bool _field32;
-    unsigned int _field33;
-    unsigned int _field34;
-    unsigned int _field35;
-    unsigned int _field36;
-    unsigned int _field37;
-    RepeatedPtrField_236b8a23 _field38;
-    struct IndexSet *_field39;
-    unsigned int _field40;
-    unsigned int _field41;
-    unsigned int _field42;
-    unsigned int _field43;
-    struct UUID *_field44;
-    struct CustomFormatArchive *_field45;
-    basic_string_23d93216 *_field46;
-    basic_string_23d93216 *_field47;
-    _Bool _field48;
-    _Bool _field49;
-    int _field50;
-};
-
-struct FormulaArchive;
-
-struct FormulaEqualsTokenAttachmentArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct UIGraphicalAttachment *_field5;
-};
-
-struct FormulaPredicateArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct FormulaArchive *_field5;
-    int _field6;
-    int _field7;
-    int _field8;
-    int _field9;
-    int _field10;
-    int _field11;
-};
-
-struct FormulaRewriteSpecArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct UUID *_field5;
-    struct UUID *_field6;
-    struct ColumnOrRowUuidsInfoArchive *_field7;
-    struct ColumnOrRowUuidsInfoArchive *_field8;
-    struct RegionMovedInfoArchive *_field9;
-    struct RegionInfoArchive *_field10;
-    int _field11;
-    _Bool _field12;
-    struct RewriteTableUIDInfoArchive *_field13;
-    struct TableTransposeInfoArchive *_field14;
-    struct MergeOriginMovedArchive *_field15;
-    struct MergeSourceArchive *_field16;
-    struct RewriteGroupNodeUIDInfoArchive *_field17;
-    struct GroupByChangeArchive *_field18;
-};
-
-struct FormulaStoreArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct RepeatedPtrField<TST::FormulaStoreArchive_FormulaStorePair> _field5;
-    unsigned int _field6;
-};
-
-struct FormulasForUndoArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct RepeatedPtrField<TSCE::FormulaCoordPairsByOwnerArchive> _field5;
-};
-
-struct FrameArchive;
 
 struct FramebufferAttributes {
     int type;
@@ -2223,66 +463,7 @@ struct FramebufferAttributes {
     int depthDataType;
     _Bool linearFilter;
     _Bool discardHint;
-};
-
-struct FreehandDrawingToolkitUIState {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct Color *_field5;
-    int _field6;
-    float _field7;
-    float _field8;
-    float _field9;
-    float _field10;
-    float _field11;
-    float _field12;
-    float _field13;
-    float _field14;
-    _Bool _field15;
-    struct Color *_field16;
-    struct Color *_field17;
-    struct Color *_field18;
-    struct Color *_field19;
-};
-
-struct FrustumRect {
-    float _field1;
-    float _field2;
-    float _field3;
-    float _field4;
-};
-
-struct FrustumSlice {
-    line_190fbfc7 _field1;
-    tvec3_17f03ce0 _field2;
-    tvec3_17f03ce0 _field3;
-};
-
-struct FunctionEndNodeArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct ExpressionNodeArchive *_field5;
-};
-
-struct FunctionNodeArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct ExpressionNodeArchive *_field5;
-    basic_string_23d93216 *_field6;
-    unsigned int _field7;
-};
-
-struct FunctorArchive;
-
-struct GLSingleState {
-    unsigned int target;
-    struct UpdatableValue<unsigned int> handle;
+    _Bool useIOSurfaceBacking;
 };
 
 struct GQHPathEndPointInfo {
@@ -2300,310 +481,12 @@ struct GQZEndOfCentralDirectory {
     long long _field3;
 };
 
-struct GalleryItem {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct Point *_field5;
-    struct DataReference *_field6;
-    struct DataReference *_field7;
-    struct ImageAdjustmentsArchive *_field8;
-    struct DataReference *_field9;
-    struct DataReference *_field10;
-    struct Reference *_field11;
-    basic_string_23d93216 *_field12;
-    float _field13;
-};
-
-struct GeometryArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct Point *_field5;
-    struct Size *_field6;
-    unsigned int _field7;
-    float _field8;
-};
-
-struct GeometryArrays {
-    unsigned int offset;
-    unsigned int count;
-    unsigned int capoffset;
-    unsigned int capcount;
-};
-
-struct GeometryResource {
-    int _field1;
-    struct ObjcSharedPtr<TSCH3DResource> _field2;
-    struct GeometryArrays _field3;
-    struct ObjcSharedPtr<TSCH3DGeometry> _field4;
-};
-
-struct GradientArchive;
-
-struct GradientArchive_GradientStop {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct Color *_field5;
-    float _field6;
-    float _field7;
-};
-
-struct GridRow {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct RepeatedPtrField<TSCH::GridValue> _field5;
-};
-
-struct GridValue {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    double _field5;
-    double _field6;
-    double _field7;
-    double _field8;
-};
-
-struct GroupArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct ExtensionSet _field2;
-    struct UnknownFieldSet _field3;
-    unsigned int _field4[1];
-    int _field5;
-    struct DrawableArchive *_field6;
-    RepeatedPtrField_a0d2dbe7 _field7;
-};
-
-struct GroupByChangeArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct UUID *_field5;
-    int _field6;
-    unsigned int _field7;
-    struct UUIDMapArchive *_field8;
-    struct UUIDMapArchive *_field9;
-    RepeatedPtrField_bfda3daa _field10;
-    unsigned int _field11;
-};
-
-struct GroupByNodeMapArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct RepeatedPtrField<TSCE::GroupByNodeMapArchive_GroupNodesForGroupBy> _field5;
-};
-
-struct GroupColumnArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct UUID *_field5;
-    struct FunctorArchive *_field6;
-    struct UUID *_field7;
-    int _field8;
-};
-
-struct GroupColumnListArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct RepeatedPtrField<TST::GroupColumnArchive> _field5;
-};
-
-struct HeaderStorage {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    RepeatedPtrField_a0d2dbe7 _field5;
-    unsigned int _field6;
-};
-
-struct HiddenStateExtentArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct UUID *_field5;
-    struct RepeatedPtrField<TST::HiddenStateExtentArchive_RowOrColumnState> _field6;
-    struct Reference *_field7;
-    int _field8;
-    _Bool _field9;
-    struct RepeatedPtrField<TSCE::CellValueArchive> _field10;
-    RepeatedPtrField_bfda3daa _field11;
-};
-
-struct HiddenStatesArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct UUID *_field5;
-    struct HiddenStateExtentArchive *_field6;
-    struct HiddenStateExtentArchive *_field7;
-};
-
-struct HiddenStatesOwnerArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct UUID *_field5;
-    struct RepeatedPtrField<TST::HiddenStatesArchive> _field6;
-};
-
-struct HighlightArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct Reference *_field5;
-    basic_string_23d93216 *_field6;
-};
-
-struct HyperlinkFieldArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct SmartFieldArchive *_field5;
-    basic_string_23d93216 *_field6;
-};
+struct GoogleOnceDynamic;
 
 struct IdentifierMap {
     unsigned short _field1;
     struct map<std::__1::basic_string<char>, unsigned short, std::__1::less<std::__1::basic_string<char>>, std::__1::allocator<std::__1::pair<const std::__1::basic_string<char>, unsigned short>>> _field2;
     struct vector<std::__1::basic_string<char>, std::__1::allocator<std::__1::basic_string<char>>> _field3;
-};
-
-struct IdentifierNodeArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct ExpressionNodeArchive *_field5;
-    basic_string_23d93216 *_field6;
-    unsigned int _field7;
-};
-
-struct ImageAdjustmentsArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    float _field5;
-    float _field6;
-    float _field7;
-    float _field8;
-    float _field9;
-    float _field10;
-    float _field11;
-    float _field12;
-    float _field13;
-    float _field14;
-    float _field15;
-    float _field16;
-    _Bool _field17;
-    _Bool _field18;
-};
-
-struct ImageArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct ExtensionSet _field2;
-    struct UnknownFieldSet _field3;
-    unsigned int _field4[1];
-    int _field5;
-    struct DrawableArchive *_field6;
-    struct DataReference *_field7;
-    struct Reference *_field8;
-    struct Size *_field9;
-    struct Reference *_field10;
-    struct DataReference *_field11;
-    struct DataReference *_field12;
-    struct Size *_field13;
-    struct Path *_field14;
-    struct ImageAdjustmentsArchive *_field15;
-    unsigned int _field16;
-    _Bool _field17;
-    struct DataReference *_field18;
-    struct DataReference *_field19;
-    struct DataReference *_field20;
-    struct Reference *_field21;
-    struct Reference *_field22;
-    struct Reference *_field23;
-    struct Path *_field24;
-    struct Attribution *_field25;
-};
-
-struct ImageFillArchive;
-
-struct ImportWarningSetArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct ImportWarningSetArchive_FormulaImportWarning *_field5;
-    _Bool _field6;
-    _Bool _field7;
-    _Bool _field8;
-    _Bool _field9;
-    _Bool _field10;
-    _Bool _field11;
-    _Bool _field12;
-    _Bool _field13;
-    _Bool _field14;
-    _Bool _field15;
-    _Bool _field16;
-    _Bool _field17;
-    _Bool _field18;
-    basic_string_23d93216 *_field19;
-};
-
-struct ImportWarningSetArchive_FormulaImportWarning;
-
-struct ImportWarningSetByCellRefArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct RepeatedPtrField<TST::CellRefImportWarningSetPairArchive> _field5;
-};
-
-struct InNodeArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct ExpressionNodeArchive *_field5;
-};
-
-struct IndexSet {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    RepeatedPtrField_c67bb210 _field5;
-};
-
-struct IndexedUidsArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct RepeatedPtrField<TSCE::IndexedUidsArchive_IndexedUid> _field5;
 };
 
 struct Info {
@@ -2636,230 +519,8 @@ struct LabelTransform {
     _Bool _field5;
 };
 
-struct LabelsMeshRendererLabelInfo {
-    id _field1;
-    tvec3_17f03ce0 _field2;
-    tvec3_17f03ce0 _field3;
-    tvec3_17f03ce0 _field4;
-    float _field5;
-    tvec2_84d5962d _field6;
-    tvec2_84d5962d _field7;
-    struct ExternalLabelAttribute *_field8;
-};
-
-struct LargeArray {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    RepeatedPtrField_c67bb210 _field5;
-    RepeatedPtrField_a0d2dbe7 _field6;
-    unsigned long long _field7;
-    unsigned long long _field8;
-    unsigned int _field9;
-    _Bool _field10;
-    _Bool _field11;
-};
-
-struct LargeArraySegment {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    _Bool _field5;
-    unsigned int _field6;
-    basic_string_23d93216 *_field7;
-};
-
-struct LargeDictionary {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    RepeatedPtrField_c67bb210 _field5;
-    RepeatedPtrField_a0d2dbe7 _field6;
-    unsigned long long _field7;
-    unsigned long long _field8;
-    unsigned long long _field9;
-    unsigned int _field10;
-    _Bool _field11;
-    _Bool _field12;
-};
-
-struct LargeDictionarySegment {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    _Bool _field5;
-    unsigned int _field6;
-    basic_string_23d93216 *_field7;
-};
-
-struct LargeNumberArray {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct LargeArray *_field5;
-};
-
-struct LargeNumberArraySegment {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct LargeArraySegment *_field5;
-    struct RepeatedField<double> _field6;
-};
-
-struct LargeObjectArray {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct LargeArray *_field5;
-};
-
-struct LargeObjectArraySegment {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct LargeArraySegment *_field5;
-    RepeatedPtrField_a0d2dbe7 _field6;
-};
-
-struct LargeStringArray {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct LargeArray *_field5;
-};
-
-struct LargeStringArraySegment {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct LargeArraySegment *_field5;
-    struct RepeatedPtrField<TSP::LargeStringArraySegment_OptionalElement> _field6;
-};
-
-struct LargeStringToObjectDictionary {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct LargeDictionary *_field5;
-};
-
-struct LargeStringToObjectDictionarySegment {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct LargeDictionarySegment *_field5;
-    struct RepeatedPtrField<TSP::StringToObjectDictionaryElement> _field6;
-};
-
-struct LargeUUIDArray {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct LargeArray *_field5;
-};
-
-struct LargeUUIDArraySegment {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct LargeArraySegment *_field5;
-    RepeatedPtrField_bfda3daa _field6;
-};
-
-struct LayoutHintArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct CellRange *_field5;
-    struct CellID *_field6;
-    struct Size *_field7;
-    _Bool _field8;
-    _Bool _field9;
-    unsigned int _field10;
-    struct Size *_field11;
-    unsigned int _field12;
-};
-
-struct LayoutStateArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    unsigned int _field5;
-    unsigned int _field6;
-    unsigned int _field7;
-    unsigned int _field8;
-    struct RepeatedPtrField<TP::SectionHintArchive> _field9;
-    RepeatedPtrField_236b8a23 _field10;
-    unsigned int _field11;
-    int _field12;
-};
-
-struct LegendGenericPropertyMapArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct FillArchive *_field5;
-    int _field6;
-    float _field7;
-    struct ShadowArchive *_field8;
-    struct StrokeArchive *_field9;
-};
-
-struct LegendModelArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct Reference *_field5;
-    struct RectArchive *_field6;
-    struct Reference *_field7;
-    struct Reference *_field8;
-};
-
-struct LetNodeArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct ExpressionNodeArchive *_field5;
-    basic_string_23d93216 *_field6;
-    basic_string_23d93216 *_field7;
-    basic_string_23d93216 *_field8;
-    basic_string_23d93216 *_field9;
-};
-
 struct LightingPackageShaderEffectState {
     struct array<glm::detail::tmat4x4<float>, 2> transforms;
-};
-
-struct LineEndArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct Path *_field5;
-    struct Point *_field6;
-    int _field7;
-    _Bool _field8;
-    basic_string_23d93216 *_field9;
 };
 
 struct LineExtrusionGeometryXRangeInfo {
@@ -2867,201 +528,15 @@ struct LineExtrusionGeometryXRangeInfo {
     _Bool _field2;
 };
 
-struct LineSpacingArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    int _field5;
-    float _field6;
-    float _field7;
-};
+struct Lookup<TSCH3D::AttributeSpecs>;
 
-struct ListNodeArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct ExpressionNodeArchive *_field5;
-};
-
-struct ListStyleArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct StyleArchive *_field5;
-    RepeatedField_c2891982 _field6;
-    RepeatedField_324622b8 _field7;
-    RepeatedField_324622b8 _field8;
-    struct RepeatedPtrField<TSWP::ListStyleArchive_LabelGeometry> _field9;
-    RepeatedField_c2891982 _field10;
-    RepeatedPtrField_236b8a23 _field11;
-    struct RepeatedPtrField<TSWP::ListStyleArchive_LabelImage> _field12;
-    unsigned int _field13;
-    _Bool _field14;
-    _Bool _field15;
-    _Bool _field16;
-    struct ShadowArchive *_field17;
-    struct Color *_field18;
-    basic_string_23d93216 *_field19;
-    RepeatedField_12b14242 _field20;
-    int _field21;
-};
-
-struct Lookup;
-
-struct MaskArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct DrawableArchive *_field5;
-    struct PathSourceArchive *_field6;
-};
-
-struct MaterialShaderVariables {
-    TSCH3DShaderVariable *texture;
-    TSCH3DShaderVariable *intensity;
-    TSCH3DShaderVariable *factor;
-    TSCH3DShaderVariable *textureColor;
-    TSCH3DShaderVariable *color;
-    TSCH3DShaderVariable *modulation;
-    TSCH3DShaderVariable *texcoords;
-    TSCH3DShaderVariable *textureMatrix;
-};
-
-struct MediaStyleArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct StyleArchive *_field5;
-    struct MediaStylePropertiesArchive *_field6;
-    unsigned int _field7;
-};
-
-struct MediaStylePropertiesArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct StrokeArchive *_field5;
-    struct ShadowArchive *_field6;
-    struct ReflectionArchive *_field7;
-    float _field8;
-};
-
-struct MergeOperationArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct RepeatedPtrField<TSP::UUIDRectArchive> _field5;
-    struct RepeatedPtrField<TSCE::FormulaArchive> _field6;
-    RepeatedField_27dfe32f _field7;
-    int _field8;
-};
-
-struct MergeOriginMovedArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    RepeatedField_27dfe32f _field5;
-    RepeatedField_27dfe32f _field6;
-    RepeatedField_27dfe32f _field7;
-    RepeatedField_27dfe32f _field8;
-};
-
-struct MergeOwnerArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct CFUUIDArchive *_field5;
-    struct FormulaStoreArchive *_field6;
-};
-
-struct MergeSourceArchive;
-
-struct MeshData {
-    id _field1;
-    id _field2;
-};
+struct Lookup<TSCH3D::TextureAttributes>;
 
 struct Message {
     CDUnknownFunctionPointerType *_field1;
 };
 
-struct MessageInfo {
-    CDUnknownFunctionPointerType *_vptr$MessageLite;
-    struct UnknownFieldSet _unknown_fields_;
-    unsigned int _has_bits_[1];
-    int _cached_size_;
-    RepeatedField_27dfe32f version_;
-    int _version_cached_byte_size_;
-    unsigned int type_;
-    unsigned int length_;
-    struct RepeatedPtrField<TSP::FieldInfo> field_infos_;
-    struct RepeatedField<unsigned long long> object_references_;
-    int _object_references_cached_byte_size_;
-    struct RepeatedField<unsigned long long> data_references_;
-    int _data_references_cached_byte_size_;
-    RepeatedField_27dfe32f diff_merge_version_;
-    int _diff_merge_version_cached_byte_size_;
-    struct FieldPath *diff_field_path_;
-    RepeatedPtrField_5867f37b fields_to_remove_;
-    RepeatedField_27dfe32f diff_read_version_;
-    int _diff_read_version_cached_byte_size_;
-    unsigned int base_message_index_;
-};
-
 struct MessageOptions;
-
-struct MovieArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct DrawableArchive *_field5;
-    struct DataReference *_field6;
-    struct DataReference *_field7;
-    basic_string_23d93216 *_field8;
-    basic_string_23d93216 *_field9;
-    float _field10;
-    float _field11;
-    float _field12;
-    unsigned int _field13;
-    int _field14;
-    float _field15;
-    _Bool _field16;
-    _Bool _field17;
-    _Bool _field18;
-    _Bool _field19;
-    _Bool _field20;
-    struct DataReference *_field21;
-    struct DataReference *_field22;
-    unsigned int _field23;
-    unsigned int _field24;
-    struct Reference *_field25;
-    struct Reference *_field26;
-    struct Reference *_field27;
-    struct Reference *_field28;
-    struct Size *_field29;
-    struct Size *_field30;
-    struct Attribution *_field31;
-};
-
-struct MovieSegmentArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct DataReference *_field5;
-    double _field6;
-    struct Reference *_field7;
-};
 
 struct NSDictionary {
     Class _field1;
@@ -3097,73 +572,12 @@ struct NSThread {
     unsigned char _field3[44];
 };
 
-struct NativeContentDescription {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    basic_string_23d93216 *_field5;
-    basic_string_23d93216 *_field6;
-    basic_string_23d93216 *_field7;
-    RepeatedPtrField_a0d2dbe7 _field8;
-};
-
 struct Node;
-
-struct NoteArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct Reference *_field5;
-};
-
-struct NumberCellValueArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    double _field5;
-    basic_string_23d93216 *_field6;
-    struct FormatStructArchive *_field7;
-    int _field8;
-    _Bool _field9;
-    _Bool _field10;
-};
-
-struct NumberNodeArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct ExpressionNodeArchive *_field5;
-    double _field6;
-};
 
 struct ObjcSharedPtr<GQDWrapPoint>;
 
-struct ObjcSharedPtr<NSMutableIndexSet> {
-    id _field1;
-};
-
-struct ObjcSharedPtr<NSObject> {
-    NSObject *mValue;
-};
-
 struct ObjcSharedPtr<NSSet> {
     NSSet *mValue;
-};
-
-struct ObjcSharedPtr<NSString> {
-    id _field1;
-};
-
-struct ObjcSharedPtr<TSCH3DGeometry> {
-    id _field1;
-};
-
-struct ObjcSharedPtr<TSCH3DResource> {
-    id _field1;
 };
 
 struct ObjectBounds {
@@ -3182,36 +596,12 @@ struct ObjectLocation {
     long long _field2;
 };
 
-struct ObjectSerializationDirectory {
-    CDUnknownFunctionPointerType *_vptr$MessageLite;
-    struct UnknownFieldSet _unknown_fields_;
-    unsigned int _has_bits_[1];
-    int _cached_size_;
-    struct RepeatedPtrField<TSP::ObjectSerializationDirectory_Entry> entries_;
-};
-
-struct ObjectSerializationMetadata {
-    CDUnknownFunctionPointerType *_vptr$MessageLite;
-    struct UnknownFieldSet _unknown_fields_;
-    unsigned int _has_bits_[1];
-    int _cached_size_;
-    RepeatedField_27dfe32f version_;
-    int _version_cached_byte_size_;
-    struct UUID *source_document_uuid_;
-    struct UUID *version_uuid_;
-    struct ComponentInfo *component_;
-    RepeatedPtrField_fe6aca30 datas_;
-    RepeatedPtrField_c964a194 external_object_uuid_map_entries_;
-    struct Reference *data_metadata_map_;
-};
-
 struct ObjectStackEntry;
 
 struct ObjectState {
     struct ObjcSharedPtr<NSSet> mEffects;
-    struct vector<TSCH3D::ObjectState::Lookup, std::__1::allocator<TSCH3D::ObjectState::Lookup>> mAttributes;
-    struct array<SFUtility::ObjcSharedPtr<NSObject>, 8> mTextures;
-    struct array<TSCH3D::TextureAttributes, 8> mTextureAttributes;
+    struct vector<TSCH3D::ObjectState::Lookup<TSCH3D::AttributeSpecs>, std::__1::allocator<TSCH3D::ObjectState::Lookup<TSCH3D::AttributeSpecs>>> mAttributes;
+    struct vector<TSCH3D::ObjectState::Lookup<TSCH3D::TextureAttributes>, std::__1::allocator<TSCH3D::ObjectState::Lookup<TSCH3D::TextureAttributes>>> mTextures;
 };
 
 struct ObjectStateIdentifier {
@@ -3221,66 +611,18 @@ struct ObjectStateIdentifier {
     id _field4;
 };
 
+struct ObjectStateMatchObject {
+    struct ObjcSharedPtr<NSSet> mEffects;
+    struct vector<TSCH3D::ResourceAttributeState, std::__1::allocator<TSCH3D::ResourceAttributeState>> mAttributes;
+    struct vector<TSCH3D::TextureAttributeState, std::__1::allocator<TSCH3D::TextureAttributeState>> mTextures;
+};
+
 struct ObjectTransforms {
     struct deque<TSCH3D::Transform, std::__1::allocator<TSCH3D::Transform>> _field1;
     struct deque<TSCH3D::Transform, std::__1::allocator<TSCH3D::Transform>> _field2;
 };
 
 struct OneofDescriptor;
-
-struct Operation {
-    CDUnknownFunctionPointerType *_field1;
-    struct ExtensionSet _field2;
-    struct UnknownFieldSet _field3;
-    unsigned int _field4[1];
-    int _field5;
-    _Bool _field6;
-};
-
-struct OperationTransformer {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct RepeatedPtrField<TSK::Operation> _field5;
-    _Bool _field6;
-};
-
-struct OperatorNodeArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct ExpressionNodeArchive *_field5;
-    unsigned int _field6;
-};
-
-struct OwnerUIDMapperArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct UUID *_field5;
-    struct UUID *_field6;
-    struct UUID *_field7;
-    struct UUID *_field8;
-    struct UUID *_field9;
-    struct UUID *_field10;
-    struct UUID *_field11;
-    struct UUID *_field12;
-    struct UUID *_field13;
-    struct UUID *_field14;
-    struct UUID *_field15;
-    struct UUID *_field16;
-    struct UUID *_field17;
-    struct UUID *_field18;
-    struct UUID *_field19;
-    struct UUID *_field20;
-    struct UUID *_field21;
-    struct UUID *_field22;
-    struct UUID *_field23;
-    struct UUID *_field24;
-};
 
 struct PATHSEGMENT {
     unsigned int :4;
@@ -3292,238 +634,19 @@ struct PODType<unsigned char>;
 
 struct PODType<unsigned short>;
 
-struct PackageMetadata {
-    CDUnknownFunctionPointerType *_vptr$MessageLite;
-    struct UnknownFieldSet _unknown_fields_;
-    unsigned int _has_bits_[1];
-    int _cached_size_;
-    unsigned long long last_object_identifier_;
-    struct DocumentRevision *revision_;
-    struct RepeatedPtrField<TSP::ComponentInfo> components_;
-    RepeatedPtrField_fe6aca30 datas_;
-    RepeatedField_27dfe32f read_version_;
-    int _read_version_cached_byte_size_;
-    RepeatedField_27dfe32f write_version_;
-    int _write_version_cached_byte_size_;
-    RepeatedField_27dfe32f file_format_version_;
-    int _file_format_version_cached_byte_size_;
-    unsigned long long save_token_;
-    struct Reference *data_metadata_map_;
-    int preferred_package_type_;
-};
-
-struct PaddingArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    float _field5;
-    float _field6;
-    float _field7;
-    float _field8;
-};
-
-struct PageHintArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct RepeatedPtrField<TP::TargetHintArchive> _field5;
-    struct Range *_field6;
-    struct Range *_field7;
-    struct Reference *_field8;
-    int _field9;
-    unsigned int _field10;
-    struct Reference *_field11;
-    struct RepeatedPtrField<TP::AnchorPosArchive> _field12;
-    struct TopicNumberHintsArchive *_field13;
-    RepeatedPtrField_a0d2dbe7 _field14;
-    RepeatedPtrField_bfda3daa _field15;
-    RepeatedPtrField_a0d2dbe7 _field16;
-    unsigned int _field17;
-    int _field18;
-    struct RepeatedPtrField<TP::TargetHintArchive> _field19;
-    struct RepeatedPtrField<TP::TopicNumberHintsArchive> _field20;
-    unsigned int _field21;
-    unsigned int _field22;
-};
-
-struct ParagraphStyleArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct StyleArchive *_field5;
-    struct CharacterStylePropertiesArchive *_field6;
-    struct ParagraphStylePropertiesArchive *_field7;
-    unsigned int _field8;
-};
-
-struct ParagraphStylePropertiesArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[2];
-    int _field4;
-    float _field5;
-    basic_string_23d93216 *_field6;
-    struct Color *_field7;
-    _Bool _field8;
-    _Bool _field9;
-    _Bool _field10;
-    _Bool _field11;
-    float _field12;
-    float _field13;
-    _Bool _field14;
-    _Bool _field15;
-    _Bool _field16;
-    _Bool _field17;
-    struct LineSpacingArchive *_field18;
-    int _field19;
-    float _field20;
-    struct Point *_field21;
-    float _field22;
-    float _field23;
-    struct TabsArchive *_field24;
-    float _field25;
-    unsigned int _field26;
-    _Bool _field27;
-    _Bool _field28;
-    _Bool _field29;
-    _Bool _field30;
-    int _field31;
-    basic_string_23d93216 *_field32;
-    struct StrokeArchive *_field33;
-    basic_string_23d93216 *_field34;
-    _Bool _field35;
-    _Bool _field36;
-    _Bool _field37;
-    _Bool _field38;
-    int _field39;
-    struct Reference *_field40;
-    struct Reference *_field41;
-    _Bool _field42;
-    int _field43;
-};
-
-struct ParagraphStylePropertyChangeSetArchive;
-
-struct PasteboardMetadata {
-    CDUnknownFunctionPointerType *_vptr$MessageLite;
-    struct UnknownFieldSet _unknown_fields_;
-    unsigned int _has_bits_[1];
-    int _cached_size_;
-    RepeatedField_27dfe32f version_;
-    int _version_cached_byte_size_;
-    basic_string_23d93216 *app_name_;
-    RepeatedPtrField_fe6aca30 datas_;
-    struct UUID *source_document_uuid_;
-    struct Reference *data_metadata_map_;
-};
-
-struct PathSourceArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct PointPathSourceArchive *_field5;
-    struct ScalarPathSourceArchive *_field6;
-    struct BezierPathSourceArchive *_field7;
-    struct CalloutPathSourceArchive *_field8;
-    struct ConnectionLinePathSourceArchive *_field9;
-    struct EditableBezierPathSourceArchive *_field10;
-    basic_string_23d93216 *_field11;
-    basic_string_23d93216 *_field12;
-    _Bool _field13;
-    _Bool _field14;
-};
-
-struct PatternedStrokeArchive;
-
-struct PencilAnnotationOwnerArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct CFUUIDArchive *_field5;
-    struct FormulaStoreArchive *_field6;
-    RepeatedPtrField_a0d2dbe7 _field7;
-};
-
-struct PencilAnnotationSelectionArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct Reference *_field5;
-};
-
-struct PencilAnnotationStorageArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct Point *_field5;
-    struct DataReference *_field6;
-    struct DataReference *_field7;
-    int _field8;
-    int _field9;
-    struct Path *_field10;
-    struct Point *_field11;
-    struct Size *_field12;
-    struct Size *_field13;
-    double _field14;
-    unsigned long long _field15;
-    unsigned long long _field16;
-    struct Color *_field17;
-    RepeatedPtrField_a0d2dbe7 _field18;
-    int _field19;
-};
-
-struct PlaceholderArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct ShapeInfoArchive *_field5;
+struct Path {
+    int _field1;
+    int _field2;
+    int _field3;
+    struct path_descr *_field4;
+    int _field5;
     int _field6;
-};
-
-struct PlaceholderSmartFieldArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct SmartFieldArchive *_field5;
-    basic_string_23d93216 *_field6;
     _Bool _field7;
-};
-
-struct Point {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    float _field5;
-    float _field6;
-};
-
-struct PointPathSourceArchive;
-
-struct PopUpMenuModel {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct RepeatedPtrField<TST::PopUpMenuModel_CellValue> _field5;
-    struct RepeatedPtrField<TSCE::CellValueArchive> _field6;
-};
-
-struct PostfixOperatorNodeArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct OperatorNodeArchive *_field5;
+    _Bool _field8;
+    int _field9;
+    int _field10;
+    int _field11;
+    char *_field12;
 };
 
 struct PrefilteredLineVertexProperties {
@@ -3532,53 +655,6 @@ struct PrefilteredLineVertexProperties {
     tvec4_ac57c72d *_field3;
     int _field4;
     box_80622335 _field5;
-};
-
-struct PrefixOperatorNodeArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct OperatorNodeArchive *_field5;
-};
-
-struct PrimitiveInfo {
-    int _field1;
-    int _field2;
-    int _field3;
-    id _field4;
-};
-
-struct PropertyValueStorageContainerArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct ExtensionSet _field2;
-    struct UnknownFieldSet _field3;
-    unsigned int _field4[1];
-    int _field5;
-    struct Reference *_field6;
-    struct Reference *_field7;
-    struct Reference *_field8;
-    struct Reference *_field9;
-    struct SparseReferenceArray *_field10;
-    struct SparseReferenceArray *_field11;
-    struct SparseReferenceArray *_field12;
-    struct SparseReferenceArray *_field13;
-    struct SparseReferenceArray *_field14;
-    struct SparseReferenceArray *_field15;
-    struct SparseReferenceArray *_field16;
-    struct SparseReferenceArray *_field17;
-};
-
-struct PrototypeForUndoMasterChangeArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct Reference *_field5;
-    struct UUID *_field6;
-    RepeatedPtrField_bfda3daa _field7;
-    RepeatedPtrField_a0d2dbe7 _field8;
-    RepeatedPtrField_236b8a23 _field9;
 };
 
 struct QuantizationConfig {
@@ -3593,77 +669,6 @@ struct RTree<unsigned int, 2, double, 8, 4> {
     struct Node *_field2;
     double _field3;
 };
-
-struct Range {
-    tvec2_84d5962d _field1;
-    _Bool _field2;
-};
-
-struct RangeCoordinateArchive;
-
-struct RangeReferenceArchive;
-
-struct RecordingArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    RepeatedPtrField_a0d2dbe7 _field5;
-    struct Reference *_field6;
-    double _field7;
-    struct Date *_field8;
-    struct RecordingSyncState *_field9;
-    int _field10;
-};
-
-struct RecordingEventArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    double _field5;
-    struct RecordingNavigationEventArchive *_field6;
-    struct RecordingLaserEventArchive *_field7;
-    struct RecordingPauseEventArchive *_field8;
-    struct RecordingMovieEventArchive *_field9;
-};
-
-struct RecordingEventTrackArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    basic_string_23d93216 *_field5;
-    struct RepeatedPtrField<KN::RecordingEventArchive> _field6;
-};
-
-struct RecordingLaserEventArchive;
-
-struct RecordingMovieEventArchive;
-
-struct RecordingMovieTrackArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct RepeatedPtrField<KN::MovieSegmentArchive> _field5;
-    _Bool _field6;
-};
-
-struct RecordingNavigationEventArchive;
-
-struct RecordingPauseEventArchive;
-
-struct RecordingSyncState {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct UUID *_field5;
-    _Bool _field6;
-};
-
-struct RectArchive;
 
 struct RefTypeHolder<TSCECellRef, 0> {
     struct TSCECellRef _ref;
@@ -3689,51 +694,7 @@ struct RefTypeHolder<TSCERangeRef, 2> {
     struct TSCERangeRef _ref;
 };
 
-struct Reference {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    unsigned long long _field5;
-    int _field6;
-    _Bool _field7;
-};
-
 struct ReferenceCompletionInfo;
-
-struct ReferenceLineGenericPropertyMapArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct ChartsNSNumberDoubleArchive *_field5;
-    basic_string_23d93216 *_field6;
-    struct ShadowArchive *_field7;
-    int _field8;
-    _Bool _field9;
-    _Bool _field10;
-    _Bool _field11;
-    struct StrokeArchive *_field12;
-    int _field13;
-    int _field14;
-};
-
-struct ReferenceNodeArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct ExpressionNodeArchive *_field5;
-    struct RangeReferenceArchive *_field6;
-    basic_string_23d93216 *_field7;
-    struct CellReferenceArchive *_field8;
-    struct UUID *_field9;
-    struct UUIDCoordArchive *_field10;
-    struct UUIDCoordArchive *_field11;
-    struct CategoryReferenceArchive *_field12;
-    struct UUIDRectArchive *_field13;
-    unsigned int _field14;
-};
 
 struct ReferencePrinter {
     int _field1;
@@ -3753,76 +714,13 @@ struct Reflection {
     CDUnknownFunctionPointerType *_field1;
 };
 
-struct ReflectionArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    float _field5;
-};
-
-struct RegionInfoArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct UUID *_field5;
-    struct IndexedUidsArchive *_field6;
-    struct IndexedUidsArchive *_field7;
-};
-
-struct RegionMovedInfoArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct RegionInfoArchive *_field5;
-    struct RegionInfoArchive *_field6;
-    struct RegionInfoArchive *_field7;
-    struct UUID *_field8;
-    _Bool _field9;
-    _Bool _field10;
-};
-
-struct RemoteDataSpecifierArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    basic_string_23d93216 *_field5;
-    unsigned int _field6;
-    unsigned int _field7;
-    double _field8;
-};
-
-struct RemoteDataValueMapArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct RepeatedPtrField<TSCE::RemoteDataValueMapArchive_RemoteDataMapEntry> _field5;
-};
-
-struct RenderElementInfo {
-    id _field1;
-    id _field2;
-    id _field3;
-    tvec2_3b141483 _field4;
-    _Bool _field5;
-    _Bool _field6;
-    _Bool _field7;
-    _Bool _field8;
-};
-
 struct RenderHints {
-    struct TextureSizeHint textureSizeHint;
+    struct TextureSizeHint _field1;
 };
 
 struct RenderState {
-    _Bool mBlend;
-    int blendMode;
-    _Bool depthTest;
-    _Bool depthMask;
+    struct BlendState blendState;
+    struct DepthState depthState;
     _Bool culling;
     _Bool cullBack;
     _Bool polygonOffset;
@@ -3831,768 +729,165 @@ struct RenderState {
     struct EnableClipDistances enableClipDistances;
 };
 
-struct RenderbufferAllocatorInfo {
-    struct FramebufferAttributes *_field1;
-    tvec2_3b141483 *_field2;
-    id _field3;
-};
+struct Rep;
 
 struct RepeatedExternalReferenceCompletionInfo;
 
 struct RepeatedField<bool> {
-    _Bool *_field1;
+    int _field1;
     int _field2;
-    int _field3;
-};
-
-struct RepeatedField<double> {
-    double *_field1;
-    int _field2;
-    int _field3;
+    union Pointer _field3;
 };
 
 struct RepeatedField<float> {
-    float *_field1;
+    int _field1;
     int _field2;
-    int _field3;
+    union Pointer _field3;
 };
 
 struct RepeatedField<int> {
-    int *_field1;
+    int _field1;
     int _field2;
-    int _field3;
+    union Pointer _field3;
 };
 
 struct RepeatedField<long long> {
-    long long *elements_;
     int current_size_;
     int total_size_;
+    union Pointer ptr_;
 };
 
 struct RepeatedField<std::__1::basic_string<char>> {
-    basic_string_23d93216 *elements_;
     int current_size_;
     int total_size_;
+    union Pointer ptr_;
 };
 
 struct RepeatedField<unsigned int> {
-    unsigned int *elements_;
-    int current_size_;
-    int total_size_;
+    int _field1;
+    int _field2;
+    union Pointer _field3;
 };
 
 struct RepeatedField<unsigned long long> {
-    unsigned long long *elements_;
-    int current_size_;
-    int total_size_;
-};
-
-struct RepeatedPtrField<KN::BuildChunkArchive> {
-    void **_field1;
+    int _field1;
     int _field2;
-    int _field3;
-    int _field4;
-};
-
-struct RepeatedPtrField<KN::MovieSegmentArchive> {
-    void **_field1;
-    int _field2;
-    int _field3;
-    int _field4;
-};
-
-struct RepeatedPtrField<KN::RecordingEventArchive> {
-    void **_field1;
-    int _field2;
-    int _field3;
-    int _field4;
-};
-
-struct RepeatedPtrField<KN::SlideArchive_SageTagMapEntry> {
-    void **_field1;
-    int _field2;
-    int _field3;
-    int _field4;
-};
-
-struct RepeatedPtrField<KN::SlideCollectionSelectionArchive_OutlineSelection> {
-    void **_field1;
-    int _field2;
-    int _field3;
-    int _field4;
-};
-
-struct RepeatedPtrField<KN::SlideNodeArchive_SlideSpecificHyperlinkMapEntry> {
-    void **_field1;
-    int _field2;
-    int _field3;
-    int _field4;
-};
-
-struct RepeatedPtrField<KN::ThemeCustomTimingCurveArchive> {
-    void **_field1;
-    int _field2;
-    int _field3;
-    int _field4;
-};
-
-struct RepeatedPtrField<TN::SheetUIStateDictionaryEntryArchive> {
-    void **_field1;
-    int _field2;
-    int _field3;
-    int _field4;
-};
-
-struct RepeatedPtrField<TN::UUIDSheetUIStateDictionaryArchive> {
-    void **_field1;
-    int _field2;
-    int _field3;
-    int _field4;
-};
-
-struct RepeatedPtrField<TP::AnchorPosArchive> {
-    void **_field1;
-    int _field2;
-    int _field3;
-    int _field4;
-};
-
-struct RepeatedPtrField<TP::PageHintArchive> {
-    void **_field1;
-    int _field2;
-    int _field3;
-    int _field4;
-};
-
-struct RepeatedPtrField<TP::SectionHintArchive> {
-    void **_field1;
-    int _field2;
-    int _field3;
-    int _field4;
-};
-
-struct RepeatedPtrField<TP::TargetHintArchive> {
-    void **_field1;
-    int _field2;
-    int _field3;
-    int _field4;
-};
-
-struct RepeatedPtrField<TP::TopicNumberEntryArchive> {
-    void **_field1;
-    int _field2;
-    int _field3;
-    int _field4;
-};
-
-struct RepeatedPtrField<TP::TopicNumberHintsArchive> {
-    void **_field1;
-    int _field2;
-    int _field3;
-    int _field4;
-};
-
-struct RepeatedPtrField<TSA::ShortcutControllerArchive_ShortcutMapEntry> {
-    void **_field1;
-    int _field2;
-    int _field3;
-    int _field4;
-};
-
-struct RepeatedPtrField<TSCE::ASTNodeArrayArchive_ASTUidTract> {
-    void **_field1;
-    int _field2;
-    int _field3;
-    int _field4;
-};
-
-struct RepeatedPtrField<TSCE::CellCoordinateArchive> {
-    void **_field1;
-    int _field2;
-    int _field3;
-    int _field4;
-};
-
-struct RepeatedPtrField<TSCE::CellValueArchive> {
-    void **_field1;
-    int _field2;
-    int _field3;
-    int _field4;
-};
-
-struct RepeatedPtrField<TSCE::FormulaArchive> {
-    void **_field1;
-    int _field2;
-    int _field3;
-    int _field4;
-};
-
-struct RepeatedPtrField<TSCE::FormulaCoordPairsByOwnerArchive> {
-    void **_field1;
-    int _field2;
-    int _field3;
-    int _field4;
-};
-
-struct RepeatedPtrField<TSCE::GroupByNodeMapArchive_GroupNodesForGroupBy> {
-    void **_field1;
-    int _field2;
-    int _field3;
-    int _field4;
-};
-
-struct RepeatedPtrField<TSCE::IndexedUidsArchive_IndexedUid> {
-    void **_field1;
-    int _field2;
-    int _field3;
-    int _field4;
-};
-
-struct RepeatedPtrField<TSCE::RemoteDataValueMapArchive_RemoteDataMapEntry> {
-    void **_field1;
-    int _field2;
-    int _field3;
-    int _field4;
-};
-
-struct RepeatedPtrField<TSCE::RewriteRangeEntryArchive> {
-    void **_field1;
-    int _field2;
-    int _field3;
-    int _field4;
-};
-
-struct RepeatedPtrField<TSCE::RewriteTableUIDInfoArchive_TableUIDMapEntryArchive> {
-    void **_field1;
-    int _field2;
-    int _field3;
-    int _field4;
-};
-
-struct RepeatedPtrField<TSCE::StockArchive_AttributeEntry> {
-    void **_field1;
-    int _field2;
-    int _field3;
-    int _field4;
-};
-
-struct RepeatedPtrField<TSCE::UuidReferenceMapArchive_CellRefsForUuid> {
-    void **_field1;
-    int _field2;
-    int _field3;
-    int _field4;
-};
-
-struct RepeatedPtrField<TSCE::UuidSetStoreArchive_UuidSet> {
-    void **_field1;
-    int _field2;
-    int _field3;
-    int _field4;
-};
-
-struct RepeatedPtrField<TSCH::Chart3DBaseImageTextureTilingArchive> {
-    void **_field1;
-    int _field2;
-    int _field3;
-    int _field4;
-};
-
-struct RepeatedPtrField<TSCH::Chart3DEnvironmentMaterialArchive> {
-    void **_field1;
-    int _field2;
-    int _field3;
-    int _field4;
-};
-
-struct RepeatedPtrField<TSCH::Chart3DImageTextureTilingArchive> {
-    void **_field1;
-    int _field2;
-    int _field3;
-    int _field4;
-};
-
-struct RepeatedPtrField<TSCH::Chart3DLightArchive> {
-    void **_field1;
-    int _field2;
-    int _field3;
-    int _field4;
-};
-
-struct RepeatedPtrField<TSCH::Chart3DTSPImageDataTextureArchive> {
-    void **_field1;
-    int _field2;
-    int _field3;
-    int _field4;
-};
-
-struct RepeatedPtrField<TSCH::ChartSelectionPathArchive> {
-    void **_field1;
-    int _field2;
-    int _field3;
-    int _field4;
-};
-
-struct RepeatedPtrField<TSCH::ChartSelectionPathArgumentArchive> {
-    void **_field1;
-    int _field2;
-    int _field3;
-    int _field4;
-};
-
-struct RepeatedPtrField<TSCH::ChartUIState> {
-    void **_field1;
-    int _field2;
-    int _field3;
-    int _field4;
+    union Pointer _field3;
 };
 
 struct RepeatedPtrField<TSCH::GridRow> {
-    void **_field1;
+    struct Arena *_field1;
     int _field2;
     int _field3;
-    int _field4;
-};
-
-struct RepeatedPtrField<TSCH::GridValue> {
-    void **_field1;
-    int _field2;
-    int _field3;
-    int _field4;
-};
-
-struct RepeatedPtrField<TSCH::PreUFF::ChartGridArchive_ValueRow> {
-    void **_field1;
-    int _field2;
-    int _field3;
-    int _field4;
+    struct Rep *_field4;
 };
 
 struct RepeatedPtrField<TSCH::StyleSwapUndoTupleArchive> {
-    void **_field1;
+    struct Arena *_field1;
     int _field2;
     int _field3;
-    int _field4;
+    struct Rep *_field4;
 };
 
 struct RepeatedPtrField<TSCH::StyleSwapUndoTuplesArchive> {
-    void **_field1;
+    struct Arena *_field1;
     int _field2;
     int _field3;
-    int _field4;
+    struct Rep *_field4;
 };
 
 struct RepeatedPtrField<TSD::ExteriorTextWrapArchive> {
-    void **_field1;
+    struct Arena *_field1;
     int _field2;
     int _field3;
-    int _field4;
+    struct Rep *_field4;
 };
 
 struct RepeatedPtrField<TSD::GeometryArchive> {
-    void **_field1;
+    struct Arena *_field1;
     int _field2;
     int _field3;
-    int _field4;
-};
-
-struct RepeatedPtrField<TSD::GuideArchive> {
-    void **_field1;
-    int _field2;
-    int _field3;
-    int _field4;
-};
-
-struct RepeatedPtrField<TSK::FormatStructArchive> {
-    void **_field1;
-    int _field2;
-    int _field3;
-    int _field4;
-};
-
-struct RepeatedPtrField<TSK::Operation> {
-    void **_field1;
-    int _field2;
-    int _field3;
-    int _field4;
-};
-
-struct RepeatedPtrField<TSK::ShuffleMappingArchive_Entry> {
-    void **_field1;
-    int _field2;
-    int _field3;
-    int _field4;
+    struct Rep *_field4;
 };
 
 struct RepeatedPtrField<TSP::Color> {
-    void **_field1;
+    struct Arena *_field1;
     int _field2;
     int _field3;
-    int _field4;
-};
-
-struct RepeatedPtrField<TSP::ComponentDataReference> {
-    void **_field1;
-    int _field2;
-    int _field3;
-    int _field4;
+    struct Rep *_field4;
 };
 
 struct RepeatedPtrField<TSP::ComponentExternalReference> {
-    void **_field1;
+    struct Arena *_field1;
     int _field2;
     int _field3;
-    int _field4;
-};
-
-struct RepeatedPtrField<TSP::ComponentInfo> {
-    void **elements_;
-    int current_size_;
-    int allocated_size_;
-    int total_size_;
+    struct Rep *_field4;
 };
 
 struct RepeatedPtrField<TSP::DataInfo> {
-    void **elements_;
-    int current_size_;
-    int allocated_size_;
-    int total_size_;
-};
-
-struct RepeatedPtrField<TSP::DataMetadataMap_DataMetadataMapEntry> {
-    void **_field1;
+    struct Arena *_field1;
     int _field2;
     int _field3;
-    int _field4;
+    struct Rep *_field4;
 };
 
 struct RepeatedPtrField<TSP::DataReference> {
-    void **_field1;
+    struct Arena *_field1;
     int _field2;
     int _field3;
-    int _field4;
-};
-
-struct RepeatedPtrField<TSP::FeatureInfo> {
-    void **_field1;
-    int _field2;
-    int _field3;
-    int _field4;
-};
-
-struct RepeatedPtrField<TSP::FieldInfo> {
-    void **elements_;
-    int current_size_;
-    int allocated_size_;
-    int total_size_;
+    struct Rep *_field4;
 };
 
 struct RepeatedPtrField<TSP::FieldPath> {
-    void **elements_;
+    struct Arena *arena_;
     int current_size_;
-    int allocated_size_;
     int total_size_;
-};
-
-struct RepeatedPtrField<TSP::LargeStringArraySegment_OptionalElement> {
-    void **_field1;
-    int _field2;
-    int _field3;
-    int _field4;
-};
-
-struct RepeatedPtrField<TSP::MessageInfo> {
-    void **elements_;
-    int current_size_;
-    int allocated_size_;
-    int total_size_;
-};
-
-struct RepeatedPtrField<TSP::ObjectSerializationDirectory_Entry> {
-    void **elements_;
-    int current_size_;
-    int allocated_size_;
-    int total_size_;
+    struct Rep *rep_;
 };
 
 struct RepeatedPtrField<TSP::ObjectUUIDMapEntry> {
-    void **elements_;
-    int current_size_;
-    int allocated_size_;
-    int total_size_;
-};
-
-struct RepeatedPtrField<TSP::Path_Element> {
-    void **_field1;
+    struct Arena *_field1;
     int _field2;
     int _field3;
-    int _field4;
+    struct Rep *_field4;
 };
 
 struct RepeatedPtrField<TSP::Range> {
-    void **_field1;
+    struct Arena *_field1;
     int _field2;
     int _field3;
-    int _field4;
+    struct Rep *_field4;
 };
 
 struct RepeatedPtrField<TSP::Reference> {
-    void **_field1;
+    struct Arena *_field1;
     int _field2;
     int _field3;
-    int _field4;
-};
-
-struct RepeatedPtrField<TSP::Size> {
-    void **_field1;
-    int _field2;
-    int _field3;
-    int _field4;
-};
-
-struct RepeatedPtrField<TSP::SparseReferenceArray_Entry> {
-    void **_field1;
-    int _field2;
-    int _field3;
-    int _field4;
-};
-
-struct RepeatedPtrField<TSP::SparseUUIDArray_Entry> {
-    void **_field1;
-    int _field2;
-    int _field3;
-    int _field4;
-};
-
-struct RepeatedPtrField<TSP::SparseUUIDPathArray_Entry> {
-    void **_field1;
-    int _field2;
-    int _field3;
-    int _field4;
-};
-
-struct RepeatedPtrField<TSP::StringToObjectDictionaryElement> {
-    void **_field1;
-    int _field2;
-    int _field3;
-    int _field4;
+    struct Rep *_field4;
 };
 
 struct RepeatedPtrField<TSP::UUID> {
-    void **_field1;
+    struct Arena *_field1;
     int _field2;
     int _field3;
-    int _field4;
+    struct Rep *_field4;
 };
 
 struct RepeatedPtrField<TSP::UUIDPath> {
-    void **_field1;
+    struct Arena *_field1;
     int _field2;
     int _field3;
-    int _field4;
-};
-
-struct RepeatedPtrField<TSP::UUIDRectArchive> {
-    void **_field1;
-    int _field2;
-    int _field3;
-    int _field4;
-};
-
-struct RepeatedPtrField<TSS::StylesheetArchive_IdentifiedStyleEntry> {
-    void **_field1;
-    int _field2;
-    int _field3;
-    int _field4;
-};
-
-struct RepeatedPtrField<TSS::StylesheetArchive_StyleChildrenEntry> {
-    void **_field1;
-    int _field2;
-    int _field3;
-    int _field4;
-};
-
-struct RepeatedPtrField<TST::CategoryOwnerArchive_GroupByArchive> {
-    void **_field1;
-    int _field2;
-    int _field3;
-    int _field4;
-};
-
-struct RepeatedPtrField<TST::CategoryOwnerArchive_GroupByArchive_AggNodeArchive> {
-    void **_field1;
-    int _field2;
-    int _field3;
-    int _field4;
-};
-
-struct RepeatedPtrField<TST::CategoryOwnerArchive_GroupByArchive_AggregatorArchive> {
-    void **_field1;
-    int _field2;
-    int _field3;
-    int _field4;
-};
-
-struct RepeatedPtrField<TST::CategoryOwnerArchive_GroupByArchive_GroupNodeArchive> {
-    void **_field1;
-    int _field2;
-    int _field3;
-    int _field4;
-};
-
-struct RepeatedPtrField<TST::CategoryOwnerArchive_GroupByArchive_GroupNodeArchive_FormatManagerArchive_RowSetArchive> {
-    void **_field1;
-    int _field2;
-    int _field3;
-    int _field4;
-};
-
-struct RepeatedPtrField<TST::CellRange> {
-    void **_field1;
-    int _field2;
-    int _field3;
-    int _field4;
-};
-
-struct RepeatedPtrField<TST::CellRefImportWarningSetPairArchive> {
-    void **_field1;
-    int _field2;
-    int _field3;
-    int _field4;
-};
-
-struct RepeatedPtrField<TST::ColumnAggregateArchive> {
-    void **_field1;
-    int _field2;
-    int _field3;
-    int _field4;
-};
-
-struct RepeatedPtrField<TST::Deprecated_StrokePresetDataArchive> {
-    void **_field1;
-    int _field2;
-    int _field3;
-    int _field4;
-};
-
-struct RepeatedPtrField<TST::FilterRuleArchive> {
-    void **_field1;
-    int _field2;
-    int _field3;
-    int _field4;
-};
-
-struct RepeatedPtrField<TST::FormulaStoreArchive_FormulaStorePair> {
-    void **_field1;
-    int _field2;
-    int _field3;
-    int _field4;
-};
-
-struct RepeatedPtrField<TST::GroupColumnArchive> {
-    void **_field1;
-    int _field2;
-    int _field3;
-    int _field4;
-};
-
-struct RepeatedPtrField<TST::HiddenStateExtentArchive_RowOrColumnState> {
-    void **_field1;
-    int _field2;
-    int _field3;
-    int _field4;
-};
-
-struct RepeatedPtrField<TST::HiddenStatesArchive> {
-    void **_field1;
-    int _field2;
-    int _field3;
-    int _field4;
-};
-
-struct RepeatedPtrField<TST::PopUpMenuModel_CellValue> {
-    void **_field1;
-    int _field2;
-    int _field3;
-    int _field4;
-};
-
-struct RepeatedPtrField<TST::StrokePresetDataArchive> {
-    void **_field1;
-    int _field2;
-    int _field3;
-    int _field4;
-};
-
-struct RepeatedPtrField<TST::SummaryCellVendorArchive_SummaryCellEntry> {
-    void **_field1;
-    int _field2;
-    int _field3;
-    int _field4;
-};
-
-struct RepeatedPtrField<TST::TableSortOrderArchive_SortRuleArchive> {
-    void **_field1;
-    int _field2;
-    int _field3;
-    int _field4;
-};
-
-struct RepeatedPtrField<TST::TileStorage_Tile> {
-    void **_field1;
-    int _field2;
-    int _field3;
-    int _field4;
-};
-
-struct RepeatedPtrField<TSWP::FontFeatureArchive> {
-    void **_field1;
-    int _field2;
-    int _field3;
-    int _field4;
-};
-
-struct RepeatedPtrField<TSWP::ListStyleArchive_LabelGeometry> {
-    void **_field1;
-    int _field2;
-    int _field3;
-    int _field4;
-};
-
-struct RepeatedPtrField<TSWP::ListStyleArchive_LabelImage> {
-    void **_field1;
-    int _field2;
-    int _field3;
-    int _field4;
-};
-
-struct RepeatedPtrField<TSWP::TOCSettingsArchive_TOCEntryData> {
-    void **_field1;
-    int _field2;
-    int _field3;
-    int _field4;
-};
-
-struct RepeatedPtrField<TSWP::TabArchive> {
-    void **_field1;
-    int _field2;
-    int _field3;
-    int _field4;
-};
-
-struct RepeatedPtrField<TSWP::TextPresetDisplayItemArchive> {
-    void **_field1;
-    int _field2;
-    int _field3;
-    int _field4;
+    struct Rep *_field4;
 };
 
 struct RepeatedPtrField<std::__1::basic_string<char>> {
-    void **_field1;
+    struct Arena *_field1;
     int _field2;
     int _field3;
-    int _field4;
+    struct Rep *_field4;
 };
+
+struct ReservedRange;
 
 struct ResizeData {
     tvec2_84d5962d size;
@@ -4611,50 +906,11 @@ struct ResizingSize {
 
 struct ResourceAttributeState;
 
-struct RewriteGroupNodeUIDInfoArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct UUID *_field5;
-    struct UUIDMapArchive *_field6;
-};
-
-struct RewriteRangeEntryArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    unsigned int _field5;
-    unsigned int _field6;
-    RepeatedPtrField_bfda3daa _field7;
-    unsigned int _field8;
-};
-
-struct RewriteTableUIDInfoArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct RepeatedPtrField<TSCE::RewriteTableUIDInfoArchive_TableUIDMapEntryArchive> _field5;
-};
-
-struct RubyFieldArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct SmartFieldArchive *_field5;
-    basic_string_23d93216 *_field6;
-};
-
 struct SFUZipEndOfCentralDirectory {
     unsigned long long _field1;
     long long _field2;
     long long _field3;
 };
-
-struct ScalarPathSourceArchive;
 
 struct Schemata {
     CDUnknownFunctionPointerType *_field1;
@@ -4662,349 +918,6 @@ struct Schemata {
     id _field3;
     id _field4;
 };
-
-struct SectionArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    RepeatedPtrField_a0d2dbe7 _field5;
-    RepeatedPtrField_a0d2dbe7 _field6;
-    float _field7;
-    float _field8;
-    float _field9;
-    float _field10;
-    _Bool _field11;
-    _Bool _field12;
-    _Bool _field13;
-    _Bool _field14;
-    float _field15;
-    float _field16;
-    float _field17;
-    float _field18;
-    float _field19;
-    RepeatedPtrField_a0d2dbe7 _field20;
-    float _field21;
-    unsigned int _field22;
-    unsigned int _field23;
-    _Bool _field24;
-    _Bool _field25;
-    _Bool _field26;
-    struct Reference *_field27;
-    struct Reference *_field28;
-    struct Reference *_field29;
-    basic_string_23d93216 *_field30;
-    struct Reference *_field31;
-    struct FillArchive *_field32;
-    unsigned int _field33;
-};
-
-struct SectionHintArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct RepeatedPtrField<TP::PageHintArchive> _field5;
-    unsigned int _field6;
-};
-
-struct SelectionPathArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    RepeatedPtrField_a0d2dbe7 _field5;
-};
-
-struct SessionLoadResourceResult {
-    _Bool _field1;
-    _Bool _field2;
-    _Bool _field3;
-    id _field4;
-    id _field5;
-};
-
-struct ShadowArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct Color *_field5;
-    float _field6;
-    float _field7;
-    int _field8;
-    float _field9;
-    _Bool _field10;
-    int _field11;
-    struct DropShadowArchive *_field12;
-    struct ContactShadowArchive *_field13;
-    struct CurvedShadowArchive *_field14;
-};
-
-struct ShapeArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct DrawableArchive *_field5;
-    struct Reference *_field6;
-    struct PathSourceArchive *_field7;
-    struct LineEndArchive *_field8;
-    struct LineEndArchive *_field9;
-    float _field10;
-};
-
-struct ShapeInfoArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct ShapeArchive *_field5;
-    struct Reference *_field6;
-    struct Reference *_field7;
-    struct Reference *_field8;
-    _Bool _field9;
-};
-
-struct ShapeStyleArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct ShapeStyleArchive *_field5;
-    struct ShapeStylePropertiesArchive *_field6;
-    unsigned int _field7;
-};
-
-struct ShapeStylePropertyChangeSetArchive;
-
-struct SheetArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    basic_string_23d93216 *_field5;
-    RepeatedPtrField_a0d2dbe7 _field6;
-    _Bool _field7;
-    _Bool _field8;
-    _Bool _field9;
-    _Bool _field10;
-    float _field11;
-    struct EdgeInsetsArchive *_field12;
-    int _field13;
-    int _field14;
-    float _field15;
-    float _field16;
-    struct Reference *_field17;
-    struct Reference *_field18;
-    struct Reference *_field19;
-    _Bool _field20;
-    _Bool _field21;
-    int _field22;
-    RepeatedPtrField_a0d2dbe7 _field23;
-    RepeatedPtrField_a0d2dbe7 _field24;
-};
-
-struct SheetUIStateArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct Point *_field5;
-    float _field6;
-    float _field7;
-    struct Point *_field8;
-    _Bool _field9;
-    _Bool _field10;
-    _Bool _field11;
-    unsigned int _field12;
-    struct Size *_field13;
-    struct Size *_field14;
-    struct SelectionPathArchive *_field15;
-};
-
-struct ShortcutControllerArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct RepeatedPtrField<TSA::ShortcutControllerArchive_ShortcutMapEntry> _field5;
-};
-
-struct ShowArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct Reference *_field5;
-    struct Reference *_field6;
-    struct SlideTreeArchive *_field7;
-    struct Size *_field8;
-    struct Reference *_field9;
-    struct Reference *_field10;
-    double _field11;
-    int _field12;
-    _Bool _field13;
-    _Bool _field14;
-    _Bool _field15;
-    _Bool _field16;
-    double _field17;
-    double _field18;
-    struct Reference *_field19;
-    struct Reference *_field20;
-};
-
-struct ShuffleMappingArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    unsigned int _field5;
-    unsigned int _field6;
-    struct RepeatedPtrField<TSK::ShuffleMappingArchive_Entry> _field7;
-    _Bool _field8;
-    _Bool _field9;
-    unsigned int _field10;
-    unsigned int _field11;
-    unsigned int _field12;
-};
-
-struct Size;
-
-struct SlideArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[2];
-    struct Reference *_field4;
-    RepeatedPtrField_a0d2dbe7 _field5;
-    struct RepeatedPtrField<KN::BuildChunkArchive> _field6;
-    RepeatedPtrField_a0d2dbe7 _field7;
-    struct TransitionArchive *_field8;
-    struct Reference *_field9;
-    struct Reference *_field10;
-    struct Reference *_field11;
-    struct Reference *_field12;
-    RepeatedPtrField_a0d2dbe7 _field13;
-    RepeatedPtrField_a0d2dbe7 _field14;
-    struct RepeatedPtrField<KN::SlideArchive_SageTagMapEntry> _field15;
-    basic_string_23d93216 *_field16;
-    struct GeometryArchive *_field17;
-    unsigned int _field18;
-    unsigned int _field19;
-    struct ShapeStylePropertiesArchive *_field20;
-    struct GeometryArchive *_field21;
-    unsigned int _field22;
-    unsigned int _field23;
-    struct ShapeStylePropertiesArchive *_field24;
-    struct GeometryArchive *_field25;
-    unsigned int _field26;
-    unsigned int _field27;
-    struct ShapeStylePropertiesArchive *_field28;
-    struct Reference *_field29;
-    RepeatedPtrField_a0d2dbe7 _field30;
-    RepeatedPtrField_a0d2dbe7 _field31;
-    basic_string_23d93216 *_field32;
-    basic_string_23d93216 *_field33;
-    struct Reference *_field34;
-    struct RepeatedPtrField<TSD::GuideArchive> _field35;
-    struct Reference *_field36;
-    struct Reference *_field37;
-    RepeatedPtrField_a0d2dbe7 _field38;
-    struct Reference *_field39;
-    _Bool _field40;
-    _Bool _field41;
-    _Bool _field42;
-    _Bool _field43;
-    int _field44;
-};
-
-struct SlideCollectionSelectionArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    RepeatedPtrField_a0d2dbe7 _field5;
-    struct Reference *_field6;
-    struct RepeatedPtrField<KN::SlideCollectionSelectionArchive_OutlineSelection> _field7;
-    struct Range *_field8;
-};
-
-struct SlideNodeArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    RepeatedPtrField_a0d2dbe7 _field5;
-    struct Reference *_field6;
-    RepeatedPtrField_5fb0b506 _field7;
-    struct RepeatedPtrField<TSP::Size> _field8;
-    RepeatedPtrField_236b8a23 _field9;
-    unsigned int _field10;
-    _Bool _field11;
-    _Bool _field12;
-    _Bool _field13;
-    _Bool _field14;
-    _Bool _field15;
-    _Bool _field16;
-    _Bool _field17;
-    _Bool _field18;
-    unsigned int _field19;
-    basic_string_23d93216 *_field20;
-    basic_string_23d93216 *_field21;
-    unsigned int _field22;
-    unsigned int _field23;
-    _Bool _field24;
-    _Bool _field25;
-    _Bool _field26;
-    _Bool _field27;
-    unsigned int _field28;
-    struct RepeatedPtrField<KN::SlideNodeArchive_SlideSpecificHyperlinkMapEntry> _field29;
-    struct Reference *_field30;
-    RepeatedPtrField_a0d2dbe7 _field31;
-};
-
-struct SlideStyleArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct StyleArchive *_field5;
-    struct SlideStylePropertiesArchive *_field6;
-    unsigned int _field7;
-};
-
-struct SlideStylePropertiesArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct FillArchive *_field5;
-    struct TransitionAttributesArchive *_field6;
-    _Bool _field7;
-    _Bool _field8;
-    _Bool _field9;
-    _Bool _field10;
-    _Bool _field11;
-};
-
-struct SlideTreeArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct Reference *_field5;
-    RepeatedPtrField_a0d2dbe7 _field6;
-};
-
-struct SmartFieldArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    basic_string_23d93216 *_field5;
-};
-
-struct SmartStrokeArchive;
 
 struct SnappySource {
     CDUnknownFunctionPointerType *_field1;
@@ -5015,41 +928,6 @@ struct SnappySource {
     unsigned long long _field6;
     unsigned long long _field7;
     char *_field8;
-};
-
-struct SortRuleReferenceTrackerArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct Reference *_field5;
-};
-
-struct SparseReferenceArray {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct RepeatedPtrField<TSP::SparseReferenceArray_Entry> _field5;
-    unsigned int _field6;
-};
-
-struct SparseUUIDArray {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct RepeatedPtrField<TSP::SparseUUIDArray_Entry> _field5;
-    unsigned int _field6;
-};
-
-struct SparseUUIDPathArray {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct RepeatedPtrField<TSP::SparseUUIDPathArray_Entry> _field5;
-    unsigned int _field6;
 };
 
 struct Spec {
@@ -5085,284 +963,6 @@ struct StateStack<glm::detail::tmat4x4<float>, 8> {
     unsigned long long mIndex;
     tmat4x4_3074befe mCurrent;
     tmat4x4_3074befe mStack[8];
-};
-
-struct StockArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    basic_string_23d93216 *_field5;
-    double _field6;
-    struct RepeatedPtrField<TSCE::StockArchive_AttributeEntry> _field7;
-};
-
-struct StringCellValueArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    basic_string_23d93216 *_field5;
-    struct FormatStructArchive *_field6;
-    _Bool _field7;
-    _Bool _field8;
-};
-
-struct StringNodeArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct ExpressionNodeArchive *_field5;
-    basic_string_23d93216 *_field6;
-};
-
-struct StrokeArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct Color *_field5;
-    float _field6;
-    int _field7;
-    int _field8;
-    float _field9;
-    struct StrokePatternArchive *_field10;
-    struct SmartStrokeArchive *_field11;
-    struct FrameArchive *_field12;
-    struct PatternedStrokeArchive *_field13;
-};
-
-struct StrokePatternArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    int _field5;
-    float _field6;
-    RepeatedField_324622b8 _field7;
-    unsigned int _field8;
-};
-
-struct StrokePresetDataArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct StrokeArchive *_field5;
-    struct StrokeArchive *_field6;
-    struct StrokeArchive *_field7;
-    int _field8;
-};
-
-struct StrokePresetListArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct RepeatedPtrField<TST::Deprecated_StrokePresetDataArchive> _field5;
-    struct RepeatedPtrField<TST::StrokePresetDataArchive> _field6;
-    int _field7;
-};
-
-struct StrokeSelectionArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    int _field5;
-};
-
-struct StructuredTextImportRecord {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct StructuredTextImportSettings *_field5;
-    basic_string_23d93216 *_field6;
-    double _field7;
-    basic_string_23d93216 *_field8;
-    unsigned long long _field9;
-    struct CellRegion *_field10;
-    unsigned long long _field11;
-    unsigned long long _field12;
-    float _field13;
-};
-
-struct StructuredTextImportSettings {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    int _field5;
-    int _field6;
-    RepeatedPtrField_236b8a23 _field7;
-    RepeatedPtrField_236b8a23 _field8;
-    RepeatedPtrField_236b8a23 _field9;
-    RepeatedPtrField_236b8a23 _field10;
-    struct IndexSet *_field11;
-    unsigned long long _field12;
-    _Bool _field13;
-    _Bool _field14;
-    _Bool _field15;
-    _Bool _field16;
-};
-
-struct StyleArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    basic_string_23d93216 *_field5;
-    basic_string_23d93216 *_field6;
-    struct Reference *_field7;
-    struct Reference *_field8;
-    _Bool _field9;
-};
-
-struct StyleDiffArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct Reference *_field5;
-    struct CharacterStylePropertyChangeSetArchive *_field6;
-    struct ParagraphStylePropertyChangeSetArchive *_field7;
-    struct ShapeStylePropertyChangeSetArchive *_field8;
-};
-
-struct StyleOwnerPath {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    RepeatedPtrField_bfda3daa _field5;
-};
-
-struct StyleSwapUndoTupleArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct Reference *_field5;
-    int _field6;
-    unsigned int _field7;
-    struct Reference *_field8;
-    struct Reference *_field9;
-    struct UUID *_field10;
-};
-
-struct StyleSwapUndoTuplesArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    RepeatedPtrField_a96af6e2 _field5;
-};
-
-struct StylesheetArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    RepeatedPtrField_a0d2dbe7 _field5;
-    struct RepeatedPtrField<TSS::StylesheetArchive_IdentifiedStyleEntry> _field6;
-    struct Reference *_field7;
-    struct RepeatedPtrField<TSS::StylesheetArchive_StyleChildrenEntry> _field8;
-    _Bool _field9;
-    _Bool _field10;
-};
-
-struct SummaryCellVendorArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct Reference *_field5;
-    struct RepeatedPtrField<TST::SummaryCellVendorArchive_SummaryCellEntry> _field6;
-};
-
-struct SummaryModelGroupByChangeStateArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct Reference *_field5;
-    struct RepeatedField<double> _field6;
-    struct RepeatedField<double> _field7;
-    RepeatedField_27dfe32f _field8;
-};
-
-struct TOCAttachmentArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct DrawableAttachmentArchive *_field5;
-};
-
-struct TOCEntryInstanceArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    unsigned int _field5;
-    unsigned int _field6;
-    basic_string_23d93216 *_field7;
-    struct Reference *_field8;
-    unsigned int _field9;
-    unsigned int _field10;
-    struct Reference *_field11;
-    basic_string_23d93216 *_field12;
-    unsigned int _field13;
-};
-
-struct TOCEntryStyleArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct ParagraphStyleArchive *_field5;
-    struct TOCEntryStylePropertiesArchive *_field6;
-};
-
-struct TOCEntryStylePropertiesArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct Reference *_field5;
-    _Bool _field6;
-    _Bool _field7;
-};
-
-struct TOCInfoArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct ShapeInfoArchive *_field5;
-    struct Reference *_field6;
-    RepeatedPtrField_a0d2dbe7 _field7;
-    RepeatedPtrField_c67bb210 _field8;
-};
-
-struct TOCLayoutHintArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct Range *_field5;
-};
-
-struct TOCSettingsArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    basic_string_23d93216 *_field5;
-    struct RepeatedPtrField<TSWP::TOCSettingsArchive_TOCEntryData> _field6;
-    unsigned int _field7;
 };
 
 struct TPSectionEnumerator {
@@ -5429,41 +1029,45 @@ struct TSCECalcEngine {
     id _field14;
     id _field15;
     struct unordered_set<unsigned short, std::__1::hash<unsigned short>, std::__1::equal_to<unsigned short>, std::__1::allocator<unsigned short>> _field16;
-    struct vector<TSCERecalcPhaseState *, std::__1::allocator<TSCERecalcPhaseState *>> _field17;
-    struct TSCEInternalCellRefSet _field18;
-    struct TSCECellRefSet _field19;
-    struct _opaque_pthread_mutex_t _field20;
-    _Bool _field21;
-    struct TSCERefResolverMap _field22;
-    id _field23;
-    unsigned long long _field24;
-    id _field25;
+    unordered_set_c6a929bd _field17;
+    struct vector<TSCERecalcPhaseState *, std::__1::allocator<TSCERecalcPhaseState *>> _field18;
+    struct TSCEInternalCellRefSet _field19;
+    struct TSCECellRefSet _field20;
+    struct _opaque_pthread_mutex_t _field21;
+    _Bool _field22;
+    _Bool _field23;
+    struct os_unfair_lock_s _field24;
+    struct TSCERefResolverMap _field25;
     id _field26;
-    id _field27;
-    unsigned long long _field28;
+    unsigned long long _field27;
+    id _field28;
     id _field29;
     id _field30;
-    id _field31;
-    int _field32;
+    unsigned long long _field31;
+    id _field32;
     id _field33;
     id _field34;
-    id _field35;
+    int _field35;
     id _field36;
     id _field37;
     id _field38;
     id _field39;
-    id _field40;
+    _Bool _field40;
     id _field41;
-    _Bool _field42;
-    _Bool _field43;
+    id _field42;
+    id _field43;
     id _field44;
     id _field45;
-    id _field46;
-    id _field47;
-    _Bool _field48;
-    _Bool _field49;
+    _Bool _field46;
+    _Bool _field47;
+    id _field48;
+    id _field49;
     id _field50;
     id _field51;
+    _Bool _field52;
+    _Bool _field53;
+    id _field54;
+    id _field55;
 };
 
 struct TSCECategoryRef {
@@ -5496,7 +1100,7 @@ struct TSCECellDependencies {
     struct TSCEBitGrid _field8;
     UUIDData_5fbc143e _field9;
     unsigned short _field10;
-    int _field11;
+    struct TSCESubFormulaOwnerID _field11;
     _Bool _field12;
     struct TSCECellRecordList *_field13;
 };
@@ -5612,6 +1216,12 @@ struct TSCEFormulaCreator {
     CDUnknownBlockType _field1;
 };
 
+struct TSCEFormulaRewriteContext {
+    id _field1;
+    id _field2;
+    struct vector<TSCEFormulaRewriteContextRecord, std::__1::allocator<TSCEFormulaRewriteContextRecord>> _field3;
+};
+
 struct TSCEFormulaRewriteContextRecord;
 
 struct TSCEFormulaTranslationFlags {
@@ -5643,6 +1253,8 @@ struct TSCEFunctor {
     struct TSCEFormula _formula;
     unsigned char _numArgs;
 };
+
+struct TSCEGroupingColumnChange;
 
 struct TSCEInternalCellRefSet {
     struct unordered_map<unsigned short, TSCECellCoordSet, std::__1::hash<unsigned short>, std::__1::equal_to<unsigned short>, std::__1::allocator<std::__1::pair<const unsigned short, TSCECellCoordSet>>> _field1;
@@ -5787,6 +1399,11 @@ struct TSCEStringValue {
     struct TSCEFormat _field3;
 };
 
+struct TSCESubFormulaOwnerID {
+    UUIDData_5fbc143e _baseOwnerUID;
+    unsigned short _ownerIndex;
+};
+
 struct TSCESymbolTable {
     id _field1;
     unsigned int _field2;
@@ -5878,15 +1495,6 @@ struct TSCH3DChartSceneAreaLayoutItemCacheValues {
     tvec2_3b141483 modelSize;
     CDStruct_b1c75024 layoutSettings;
     _Bool forcedValid;
-};
-
-struct TSCH3DGLTextureFormat {
-    int _field1;
-};
-
-struct TSCH3DScenePart {
-    id _field1;
-    id _field2;
 };
 
 struct TSCH3DShaderType {
@@ -6015,15 +1623,6 @@ struct TSTSimpleRange {
 
 struct TSTStrokeLayerRun;
 
-struct TSTTableRBTreeNode_s {
-    unsigned int _field1;
-    unsigned short _field2;
-    struct TSTTableRBTreeNode_s *_field3;
-    struct TSTTableRBTreeNode_s *_field4;
-    struct TSTTableRBTreeNode_s *_field5;
-    char _field6;
-};
-
 struct TSUCellCoord {
     unsigned int row;
     unsigned short column;
@@ -6046,6 +1645,8 @@ struct TSUCellTractRef {
     unsigned char _spanType;
     struct TSUPreserveFlags _preserveFlags;
     _Bool _preserveRectangular;
+    _Bool _mixedColumnStartedWithPreserve;
+    _Bool _mixedRowStartedWithPreserve;
 };
 
 struct TSUChromeCellCoord {
@@ -6058,6 +1659,11 @@ struct TSUChromeColumnIndex {
 
 struct TSUChromeRowIndex {
     unsigned int _field1;
+};
+
+struct TSUColumnRowOffset {
+    int _field1;
+    int _field2;
 };
 
 struct TSUFlushableObjectInfo {
@@ -6145,7 +1751,7 @@ struct TSUViewRowIndex {
 
 struct TSWPAttributeArray {
     CDUnknownFunctionPointerType *_field1;
-    int _field2;
+    unsigned long long _field2;
     unsigned long long _field3;
     unsigned long long _field4;
     struct TSWPAttributeRecord *_field5;
@@ -6174,7 +1780,7 @@ struct TSWPAttributeRecord {
 
 struct TSWPChangeAttributeArray {
     CDUnknownFunctionPointerType *_field1;
-    int _field2;
+    unsigned long long _field2;
     unsigned long long _field3;
     unsigned long long _field4;
     struct TSWPAttributeRecord *_field5;
@@ -6252,7 +1858,13 @@ struct TSWPLineFragment {
 
 struct TSWPLineFragmentArray;
 
-struct TSWPLineRef;
+struct TSWPLineRef {
+    struct __CTLine *_field1;
+    struct CGPoint _field2;
+    struct _NSRange _field3;
+    unsigned long long _field4;
+    unsigned long long _field5;
+};
 
 struct TSWPMarkers {
     struct vector<std::__1::pair<unsigned long, unsigned short>, std::__1::allocator<std::__1::pair<unsigned long, unsigned short>>> _field1;
@@ -6264,7 +1876,7 @@ struct TSWPMarkers {
 
 struct TSWPParagraphAttributeArray {
     CDUnknownFunctionPointerType *_field1;
-    int _field2;
+    unsigned long long _field2;
     unsigned long long _field3;
     unsigned long long _field4;
     struct TSWPAttributeRecord *_field5;
@@ -6400,254 +2012,20 @@ struct TSWPStorageTransaction {
 
 struct TSWPStorageTransactionObject;
 
-struct TabArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    float _field5;
-    int _field6;
-    basic_string_23d93216 *_field7;
-};
-
-struct TableInfoArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct DrawableArchive *_field5;
-    struct Reference *_field6;
-    struct Reference *_field7;
-    struct Reference *_field8;
-    struct Reference *_field9;
-    struct Reference *_field10;
-    struct UUID *_field11;
-    struct UUID *_field12;
-};
-
-struct TableRBTree;
-
-struct TableSortOrderArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct RepeatedPtrField<TST::TableSortOrderArchive_SortRuleArchive> _field5;
-    int _field6;
-};
-
-struct TableSortOrderArchive_SortRuleArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    unsigned int _field5;
-    int _field6;
-};
-
-struct TableStrokePresetArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    int _field5;
-};
-
-struct TableStyleNetworkArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct Reference *_field5;
-    struct Reference *_field6;
-    struct Reference *_field7;
-    struct Reference *_field8;
-    struct Reference *_field9;
-    struct Reference *_field10;
-    struct Reference *_field11;
-    struct Reference *_field12;
-    struct Reference *_field13;
-    struct Reference *_field14;
-    struct Reference *_field15;
-    struct Reference *_field16;
-    struct Reference *_field17;
-    struct Reference *_field18;
-    struct Reference *_field19;
-    struct Reference *_field20;
-    struct Reference *_field21;
-    struct Reference *_field22;
-    struct Reference *_field23;
-    struct Reference *_field24;
-    struct Reference *_field25;
-    struct Reference *_field26;
-    struct Reference *_field27;
-    struct Reference *_field28;
-    struct Reference *_field29;
-    struct Reference *_field30;
-    struct Reference *_field31;
-    struct Reference *_field32;
-    struct Reference *_field33;
-    struct Reference *_field34;
-    struct Reference *_field35;
-    unsigned int _field36;
-};
-
-struct TableStylePresetArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct Reference *_field5;
-    struct Reference *_field6;
-    int _field7;
-};
-
-struct TableStylePropertiesArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[3];
-    int _field4;
-    struct FillArchive *_field5;
-    struct Deprecated_TableStrokeArchive *_field6;
-    struct Deprecated_TableStrokeArchive *_field7;
-    struct Deprecated_TableStrokeArchive *_field8;
-    struct Deprecated_TableStrokeArchive *_field9;
-    struct Deprecated_TableStrokeArchive *_field10;
-    struct Deprecated_TableStrokeArchive *_field11;
-    struct Deprecated_TableStrokeArchive *_field12;
-    struct Deprecated_TableStrokeArchive *_field13;
-    struct Deprecated_TableStrokeArchive *_field14;
-    struct Deprecated_TableStrokeArchive *_field15;
-    struct Deprecated_TableStrokeArchive *_field16;
-    struct Deprecated_TableStrokeArchive *_field17;
-    _Bool _field18;
-    _Bool _field19;
-    _Bool _field20;
-    _Bool _field21;
-    _Bool _field22;
-    _Bool _field23;
-    _Bool _field24;
-    _Bool _field25;
-    struct Deprecated_TableStrokeArchive *_field26;
-    struct Deprecated_TableStrokeArchive *_field27;
-    struct Deprecated_TableStrokeArchive *_field28;
-    struct Deprecated_TableStrokeArchive *_field29;
-    struct StrokePresetListArchive *_field30;
-    _Bool _field31;
-    _Bool _field32;
-    _Bool _field33;
-    _Bool _field34;
-    _Bool _field35;
-    basic_string_23d93216 *_field36;
-    int _field37;
-    int _field38;
-    struct StrokeArchive *_field39;
-    struct StrokeArchive *_field40;
-    struct StrokeArchive *_field41;
-    struct StrokeArchive *_field42;
-    struct StrokeArchive *_field43;
-    struct StrokeArchive *_field44;
-    struct StrokeArchive *_field45;
-    struct StrokeArchive *_field46;
-    struct StrokeArchive *_field47;
-    struct StrokeArchive *_field48;
-    struct StrokeArchive *_field49;
-    struct StrokeArchive *_field50;
-    struct StrokeArchive *_field51;
-    struct StrokeArchive *_field52;
-    struct StrokeArchive *_field53;
-    struct StrokeArchive *_field54;
-    struct StrokeArchive *_field55;
-    struct StrokeArchive *_field56;
-    struct StrokeArchive *_field57;
-    struct StrokeArchive *_field58;
-    struct StrokeArchive *_field59;
-    struct StrokeArchive *_field60;
-    struct StrokeArchive *_field61;
-    struct StrokeArchive *_field62;
-    struct StrokeArchive *_field63;
-    struct StrokeArchive *_field64;
-    struct StrokeArchive *_field65;
-    struct StrokeArchive *_field66;
-    struct StrokeArchive *_field67;
-    struct StrokeArchive *_field68;
-    struct StrokeArchive *_field69;
-    struct StrokeArchive *_field70;
-    struct StrokeArchive *_field71;
-    struct StrokeArchive *_field72;
-    struct StrokeArchive *_field73;
-    struct StrokeArchive *_field74;
-};
-
-struct TableTransposeInfoArchive;
-
-struct TabsArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct RepeatedPtrField<TSWP::TabArchive> _field5;
-};
-
-struct TargetHintArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct Point *_field5;
-    struct Size *_field6;
-    struct Range *_field7;
-    struct Range *_field8;
-    unsigned int _field9;
-    unsigned int _field10;
-    struct DoublePoint *_field11;
-    struct DoubleSize *_field12;
-    unsigned int _field13;
-    _Bool _field14;
-    _Bool _field15;
-};
-
 struct TexCoordTilingShaderEffectState {
     struct array<TSCH3D::TexCoordTilingShaderEffectState::Data, 3> _field1;
 };
 
-struct TextPresetDisplayItemArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct Reference *_field5;
-    basic_string_23d93216 *_field6;
-};
-
-struct TextStylePresetArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    basic_string_23d93216 *_field5;
-    struct Reference *_field6;
-    struct Reference *_field7;
-};
-
-struct TextualAttachmentArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    basic_string_23d93216 *_field5;
-    int _field6;
-};
+struct TextureAttributeState;
 
 struct TextureAttributes {
-    int object;
-    int format;
-    _Bool mipmap;
-    _Bool repeat;
-    _Bool nearest;
-    long long unit;
-    struct TextureSizeHint textureSizeHint;
-    _Bool is3DTexture;
+    int _field1;
+    int _field2;
+    _Bool _field3;
+    _Bool _field4;
+    _Bool _field5;
+    struct TextureSizeHint _field6;
+    _Bool _field7;
 };
 
 struct TextureCoordinateConverter {
@@ -6655,69 +2033,8 @@ struct TextureCoordinateConverter {
 };
 
 struct TextureSizeHint {
-    int loadOptimizedMipmaps;
-    tvec2_3b141483 sizeLODHint;
-};
-
-struct TextureUnitStates {
-    struct UpdatableValue<unsigned long> activeTexture;
-    struct array<TSCH3D::GLSingleState, 4> states;
-};
-
-struct TextureVariables {
-    id _field1;
-    id _field2;
-    id _field3;
-};
-
-struct TileRowInfo {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    unsigned int _field5;
-    unsigned int _field6;
-    basic_string_23d93216 *_field7;
-    basic_string_23d93216 *_field8;
-    basic_string_23d93216 *_field9;
-    basic_string_23d93216 *_field10;
-    unsigned int _field11;
-};
-
-struct TileStorage {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct RepeatedPtrField<TST::TileStorage_Tile> _field5;
-};
-
-struct TokenAttachmentArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct UIGraphicalAttachment *_field5;
-    struct Reference *_field6;
-};
-
-struct TopicNumberHintsArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct RepeatedPtrField<TP::TopicNumberEntryArchive> _field5;
-    unsigned int _field6;
-    unsigned int _field7;
-};
-
-struct TrackedReferenceArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct ASTNodeArrayArchive *_field5;
-    unsigned int _field6;
+    int _field1;
+    tvec2_3b141483 _field2;
 };
 
 struct Transform {
@@ -6728,62 +2045,12 @@ struct Transform {
     _Bool _field5;
 };
 
-struct TransitionArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct TransitionAttributesArchive *_field5;
-};
-
-struct TransitionAttributesArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct AnimationAttributesArchive *_field5;
-    float _field6;
-    unsigned int _field7;
-    unsigned int _field8;
-    int _field9;
-    int _field10;
-    _Bool _field11;
-    _Bool _field12;
-    _Bool _field13;
-    _Bool _field14;
-    basic_string_23d93216 *_field15;
-    basic_string_23d93216 *_field16;
-    float _field17;
-    unsigned int _field18;
-    double _field19;
-    struct Color *_field20;
-    float _field21;
-};
-
 struct UIEdgeInsets {
     double top;
     double left;
     double bottom;
     double right;
 };
-
-struct UIGraphicalAttachment {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-};
-
-struct UUID {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    unsigned long long _field5;
-    unsigned long long _field6;
-};
-
-struct UUIDCoordArchive;
 
 struct UUIDData<TSP::UUIDData> {
     union {
@@ -6828,22 +2095,10 @@ struct UUIDMap<TSP::UUIDMap> {
     } __table_;
 };
 
-struct UUIDMapArchive;
-
-struct UUIDPath {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    RepeatedPtrField_bfda3daa _field5;
-};
-
 struct UUIDRect<TSP::UUIDRect> {
     vector_4dc5f307 _colIdList;
     vector_4dc5f307 _rowIdList;
 };
-
-struct UUIDRectArchive;
 
 struct UUIDSet<TSP::UUIDSet> {
     struct __hash_table<TSU::UUIDData<TSP::UUIDData>, std::__1::hash<TSUUUID>, std::__1::equal_to<TSU::UUIDData<TSP::UUIDData>>, std::__1::allocator<TSU::UUIDData<TSP::UUIDData>>> __table_;
@@ -6854,46 +2109,7 @@ struct UnarchiverReference;
 struct UnarchiverRepeatedReference;
 
 struct UnknownFieldSet {
-    struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField>> *fields_;
-};
-
-struct UpdatableValue<unsigned int> {
-    unsigned int value;
-};
-
-struct UpdatableValue<unsigned long> {
-    unsigned long long value;
-};
-
-struct UuidReferenceMapArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct RepeatedPtrField<TSCE::UuidReferenceMapArchive_CellRefsForUuid> _field5;
-};
-
-struct UuidSetStoreArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct RepeatedPtrField<TSCE::UuidSetStoreArchive_UuidSet> _field5;
-};
-
-struct UuidSetStoreArchive_UuidSet {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    RepeatedPtrField_bfda3daa _field5;
-    unsigned int _field6;
-};
-
-struct VAOLoadResult {
-    _Bool _field1;
-    _Bool _field2;
-    id _field3;
+    struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField>> *_field1;
 };
 
 struct ValueEnumerator {
@@ -6903,69 +2119,15 @@ struct ValueEnumerator {
     double mValue;
 };
 
-struct VariableNodeArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct ExpressionNodeArchive *_field5;
-    basic_string_23d93216 *_field6;
-    unsigned int _field7;
-};
-
 struct Vector3 {
     float _field1;
     float _field2;
     float _field3;
 };
 
-struct ViewStateMetadata {
-    CDUnknownFunctionPointerType *_vptr$MessageLite;
-    struct UnknownFieldSet _unknown_fields_;
-    unsigned int _has_bits_[1];
-    int _cached_size_;
-    RepeatedField_27dfe32f version_;
-    int _version_cached_byte_size_;
-    struct UUID *version_uuid_;
-    struct ComponentInfo *component_;
-    RepeatedPtrField_c964a194 external_object_uuid_map_entries_;
-};
-
 struct WHCCol;
 
 struct WHCRow;
-
-struct WPTableInfoArchive {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct TableInfoArchive *_field5;
-    struct Reference *_field6;
-};
-
-struct WrittenComponentInfo {
-    id _field1;
-    id _field2;
-    _Bool _field3;
-    _Bool _field4;
-    _Bool _field5;
-    id _field6;
-    _Bool _field7;
-    _Bool _field8;
-    _Bool _field9;
-    id _field10;
-    id _field11;
-    _Bool _field12;
-    unsigned long long _field13;
-    unsigned long long _field14;
-    id _field15;
-    id _field16;
-    id _field17;
-    id _field18;
-    id _field19;
-    id _field20;
-};
 
 struct WrittenObjectInfo;
 
@@ -7090,10 +2252,6 @@ struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<TSCECo
     struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<TSCEColumnRangeContextPair, TSCEInternalCellRefSet>, void *>*> *_field1;
 };
 
-struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<TSCEFormulaOwnerKind, TSCEFormulasForUndoForOwnerKind *>, void *>*> {
-    struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<TSCEFormulaOwnerKind, TSCEFormulasForUndoForOwnerKind *>, void *>*> *__next_;
-};
-
 struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<TSCEFormulaRangeContext, std::__1::map<TSU::UUIDData<TSP::UUIDData>, std::__1::unordered_set<TSCERangeCoordinate, std::__1::hash<TSCERangeCoordinate>, std::__1::equal_to<TSCERangeCoordinate>, std::__1::allocator<TSCERangeCoordinate>>, std::__1::less<TSU::UUIDData<TSP::UUIDData>>, std::__1::allocator<std::__1::pair<const TSU::UUIDData<TSP::UUIDData>, std::__1::unordered_set<TSCERangeCoordinate, std::__1::hash<TSCERangeCoordinate>, std::__1::equal_to<TSCERangeCoordinate>, std::__1::allocator<TSCERangeCoordinate>>>>>>, void *>*> {
     struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<TSCEFormulaRangeContext, std::__1::map<TSU::UUIDData<TSP::UUIDData>, std::__1::unordered_set<TSCERangeCoordinate, std::__1::hash<TSCERangeCoordinate>, std::__1::equal_to<TSCERangeCoordinate>, std::__1::allocator<TSCERangeCoordinate>>, std::__1::less<TSU::UUIDData<TSP::UUIDData>>, std::__1::allocator<std::__1::pair<const TSU::UUIDData<TSP::UUIDData>, std::__1::unordered_set<TSCERangeCoordinate, std::__1::hash<TSCERangeCoordinate>, std::__1::equal_to<TSCERangeCoordinate>, std::__1::allocator<TSCERangeCoordinate>>>>>>, void *>*> *_field1;
 };
@@ -7108,6 +2266,10 @@ struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<TSCEIn
 
 struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<TSCEInternalCellReference, std::__1::unordered_set<TSU::UUIDCoord<TSP::UUIDCoord>, std::__1::hash<TSUUuidCoord>, std::__1::equal_to<TSU::UUIDCoord<TSP::UUIDCoord>>, std::__1::allocator<TSU::UUIDCoord<TSP::UUIDCoord>>>>, void *>*> {
     struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<TSCEInternalCellReference, std::__1::unordered_set<TSU::UUIDCoord<TSP::UUIDCoord>, std::__1::hash<TSUUuidCoord>, std::__1::equal_to<TSU::UUIDCoord<TSP::UUIDCoord>>, std::__1::allocator<TSU::UUIDCoord<TSP::UUIDCoord>>>>, void *>*> *__next_;
+};
+
+struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<TSCESubFormulaOwnerIndex, TSCEFormulasForUndoForOwnerKind *>, void *>*> {
+    struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<TSCESubFormulaOwnerIndex, TSCEFormulasForUndoForOwnerKind *>, void *>*> *__next_;
 };
 
 struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<TSTCellUID, TSTCell *>, void *>*> {
@@ -7128,6 +2290,10 @@ struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<TSU::U
 
 struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<TSU::UUIDData<TSP::UUIDData>, TSCECellCoordSet>, void *>*> {
     struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<TSU::UUIDData<TSP::UUIDData>, TSCECellCoordSet>, void *>*> *_field1;
+};
+
+struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<TSU::UUIDData<TSP::UUIDData>, TSCECoordMapper *>, void *>*> {
+    struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<TSU::UUIDData<TSP::UUIDData>, TSCECoordMapper *>, void *>*> *__next_;
 };
 
 struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<TSU::UUIDData<TSP::UUIDData>, TSCEInternalCellRefSet>, void *>*> {
@@ -7326,6 +2492,14 @@ struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsign
     struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned int, const google::protobuf::Message *>, void *>*> *__next_;
 };
 
+struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned int, unsigned int>, void *>*> {
+    struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned int, unsigned int>, void *>*> *__next_;
+};
+
+struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long, TSPLazyReference *>, void *>*> {
+    struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long, TSPLazyReference *>, void *>*> *_field1;
+};
+
 struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long, TSUModelCellRect>, void *>*> {
     struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long, TSUModelCellRect>, void *>*> *__next_;
 };
@@ -7340,10 +2514,6 @@ struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsign
 
 struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned short, TSUIndexSet>, void *>*> {
     struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned short, TSUIndexSet>, void *>*> *_field1;
-};
-
-struct __hash_node_base<std::__1::__hash_node<std::__1::pair<unsigned int, SFUtility::ObjcSharedPtr<NSObject>>, void *>*> {
-    struct __hash_node_base<std::__1::__hash_node<std::__1::pair<unsigned int, SFUtility::ObjcSharedPtr<NSObject>>, void *>*> *_field1;
 };
 
 struct __hash_node_base<std::__1::__hash_node<unsigned short, void *>*> {
@@ -7484,32 +2654,12 @@ struct _xmlNs {
     struct _xmlDoc *_field6;
 };
 
-struct array<(anonymous namespace)::TextureVariables, 2> {
-    struct TextureVariables _field1[2];
-};
-
-struct array<SFUtility::ObjcSharedPtr<NSObject>, 8> {
-    struct ObjcSharedPtr<NSObject> __elems_[8];
-};
-
 struct array<TSCH3D::BarExtrusionDetails, 2> {
     struct BarExtrusionDetails __elems_[2];
 };
 
-struct array<TSCH3D::GLSingleState, 2> {
-    struct GLSingleState __elems_[2];
-};
-
-struct array<TSCH3D::GLSingleState, 4> {
-    struct GLSingleState __elems_[4];
-};
-
 struct array<TSCH3D::TexCoordTilingShaderEffectState::Data, 3> {
     struct Data _field1[3];
-};
-
-struct array<TSCH3D::TextureAttributes, 8> {
-    struct TextureAttributes __elems_[8];
 };
 
 struct array<TSCH3DShaderVariableScopeType, 2> {
@@ -7799,21 +2949,6 @@ struct gzFile_s {
     long long _field3;
 };
 
-struct hash_map<unsigned int, SFUtility::ObjcSharedPtr<NSObject>, TSTIntHasher, std::__1::equal_to<unsigned int>, std::__1::allocator<std::__1::pair<const unsigned int, SFUtility::ObjcSharedPtr<NSObject>>>> {
-    struct __hash_table<std::__1::pair<unsigned int, SFUtility::ObjcSharedPtr<NSObject>>, __gnu_cxx::__hash_map_hasher<std::__1::pair<unsigned int, SFUtility::ObjcSharedPtr<NSObject>>, TSTIntHasher, true>, __gnu_cxx::__hash_map_equal<std::__1::pair<unsigned int, SFUtility::ObjcSharedPtr<NSObject>>, std::__1::equal_to<unsigned int>, true>, std::__1::allocator<std::__1::pair<unsigned int, SFUtility::ObjcSharedPtr<NSObject>>>> {
-        struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::pair<unsigned int, SFUtility::ObjcSharedPtr<NSObject>>, void *>*>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::pair<unsigned int, SFUtility::ObjcSharedPtr<NSObject>>, void *>*>*>>> _field1;
-        struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::pair<unsigned int, SFUtility::ObjcSharedPtr<NSObject>>, void *>*>, std::__1::allocator<std::__1::__hash_node<std::__1::pair<unsigned int, SFUtility::ObjcSharedPtr<NSObject>>, void *>>> {
-            struct __hash_node_base<std::__1::__hash_node<std::__1::pair<unsigned int, SFUtility::ObjcSharedPtr<NSObject>>, void *>*> _field1;
-        } _field2;
-        struct __compressed_pair<unsigned long, __gnu_cxx::__hash_map_hasher<std::__1::pair<unsigned int, SFUtility::ObjcSharedPtr<NSObject>>, TSTIntHasher, true>> {
-            unsigned long long _field1;
-        } _field3;
-        struct __compressed_pair<float, __gnu_cxx::__hash_map_equal<std::__1::pair<unsigned int, SFUtility::ObjcSharedPtr<NSObject>>, std::__1::equal_to<unsigned int>, true>> {
-            float _field1;
-        } _field4;
-    } _field1;
-};
-
 struct in_addr {
     unsigned int _field1;
 };
@@ -7839,18 +2974,6 @@ struct map<Class, int, std::__1::less<Class>, std::__1::allocator<std::__1::pair
             struct __tree_end_node<std::__1::__tree_node_base<void *>*> __value_;
         } __pair1_;
         struct __compressed_pair<unsigned long, std::__1::__map_value_compare<Class, std::__1::__value_type<Class, int>, std::__1::less<Class>, true>> {
-            unsigned long long __value_;
-        } __pair3_;
-    } __tree_;
-};
-
-struct map<TSCH3D::SceneObjectSharedPointer, TSCH3D::ActiveLabelsTypeBounds, std::__1::less<TSCH3D::SceneObjectSharedPointer>, std::__1::allocator<std::__1::pair<const TSCH3D::SceneObjectSharedPointer, TSCH3D::ActiveLabelsTypeBounds>>> {
-    struct __tree<std::__1::__value_type<TSCH3D::SceneObjectSharedPointer, TSCH3D::ActiveLabelsTypeBounds>, std::__1::__map_value_compare<TSCH3D::SceneObjectSharedPointer, std::__1::__value_type<TSCH3D::SceneObjectSharedPointer, TSCH3D::ActiveLabelsTypeBounds>, std::__1::less<TSCH3D::SceneObjectSharedPointer>, true>, std::__1::allocator<std::__1::__value_type<TSCH3D::SceneObjectSharedPointer, TSCH3D::ActiveLabelsTypeBounds>>> {
-        struct __tree_end_node<std::__1::__tree_node_base<void *>*> *__begin_node_;
-        struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *>*>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<TSCH3D::SceneObjectSharedPointer, TSCH3D::ActiveLabelsTypeBounds>, void *>>> {
-            struct __tree_end_node<std::__1::__tree_node_base<void *>*> __value_;
-        } __pair1_;
-        struct __compressed_pair<unsigned long, std::__1::__map_value_compare<TSCH3D::SceneObjectSharedPointer, std::__1::__value_type<TSCH3D::SceneObjectSharedPointer, TSCH3D::ActiveLabelsTypeBounds>, std::__1::less<TSCH3D::SceneObjectSharedPointer>, true>> {
             unsigned long long __value_;
         } __pair3_;
     } __tree_;
@@ -7916,18 +3039,6 @@ struct map<int, TSPFieldTreeNode *, std::__1::less<int>, std::__1::allocator<std
     } __tree_;
 };
 
-struct map<int, google::protobuf::internal::ExtensionSet::Extension, std::__1::less<int>, std::__1::allocator<std::__1::pair<const int, google::protobuf::internal::ExtensionSet::Extension>>> {
-    struct __tree<std::__1::__value_type<int, google::protobuf::internal::ExtensionSet::Extension>, std::__1::__map_value_compare<int, std::__1::__value_type<int, google::protobuf::internal::ExtensionSet::Extension>, std::__1::less<int>, true>, std::__1::allocator<std::__1::__value_type<int, google::protobuf::internal::ExtensionSet::Extension>>> {
-        struct __tree_end_node<std::__1::__tree_node_base<void *>*> *_field1;
-        struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *>*>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<int, google::protobuf::internal::ExtensionSet::Extension>, void *>>> {
-            struct __tree_end_node<std::__1::__tree_node_base<void *>*> _field1;
-        } _field2;
-        struct __compressed_pair<unsigned long, std::__1::__map_value_compare<int, std::__1::__value_type<int, google::protobuf::internal::ExtensionSet::Extension>, std::__1::less<int>, true>> {
-            unsigned long long _field1;
-        } _field3;
-    } _field1;
-};
-
 struct map<int, std::__1::pair<Class, std::__1::basic_string<char>>, std::__1::less<int>, std::__1::allocator<std::__1::pair<const int, std::__1::pair<Class, std::__1::basic_string<char>>>>> {
     struct __tree<std::__1::__value_type<int, std::__1::pair<Class, std::__1::basic_string<char>>>, std::__1::__map_value_compare<int, std::__1::__value_type<int, std::__1::pair<Class, std::__1::basic_string<char>>>, std::__1::less<int>, true>, std::__1::allocator<std::__1::__value_type<int, std::__1::pair<Class, std::__1::basic_string<char>>>>> {
         struct __tree_end_node<std::__1::__tree_node_base<void *>*> *__begin_node_;
@@ -7959,18 +3070,6 @@ struct map<long long, std::__1::pair<long long, long long>, std::__1::less<long 
             struct __tree_end_node<std::__1::__tree_node_base<void *>*> _field1;
         } _field2;
         struct __compressed_pair<unsigned long, std::__1::__map_value_compare<long long, std::__1::__value_type<long long, std::__1::pair<long long, long long>>, std::__1::less<long long>, true>> {
-            unsigned long long _field1;
-        } _field3;
-    } _field1;
-};
-
-struct map<long, TSCH3D::CachedLabelBoundsArray, std::__1::less<long>, std::__1::allocator<std::__1::pair<const long, TSCH3D::CachedLabelBoundsArray>>> {
-    struct __tree<std::__1::__value_type<long, TSCH3D::CachedLabelBoundsArray>, std::__1::__map_value_compare<long, std::__1::__value_type<long, TSCH3D::CachedLabelBoundsArray>, std::__1::less<long>, true>, std::__1::allocator<std::__1::__value_type<long, TSCH3D::CachedLabelBoundsArray>>> {
-        struct __tree_end_node<std::__1::__tree_node_base<void *>*> *_field1;
-        struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *>*>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<long, TSCH3D::CachedLabelBoundsArray>, void *>>> {
-            struct __tree_end_node<std::__1::__tree_node_base<void *>*> _field1;
-        } _field2;
-        struct __compressed_pair<unsigned long, std::__1::__map_value_compare<long, std::__1::__value_type<long, TSCH3D::CachedLabelBoundsArray>, std::__1::less<long>, true>> {
             unsigned long long _field1;
         } _field3;
     } _field1;
@@ -8276,16 +3375,16 @@ struct map<std::__1::pair<unsigned short, EQKit::Config::Operator::Form>, EQKit:
     } _field1;
 };
 
-struct map<unsigned int, SFUtility::ObjcSharedPtr<NSObject>, std::__1::less<unsigned int>, std::__1::allocator<std::__1::pair<const unsigned int, SFUtility::ObjcSharedPtr<NSObject>>>> {
-    struct __tree<std::__1::__value_type<unsigned int, SFUtility::ObjcSharedPtr<NSObject>>, std::__1::__map_value_compare<unsigned int, std::__1::__value_type<unsigned int, SFUtility::ObjcSharedPtr<NSObject>>, std::__1::less<unsigned int>, true>, std::__1::allocator<std::__1::__value_type<unsigned int, SFUtility::ObjcSharedPtr<NSObject>>>> {
-        struct __tree_end_node<std::__1::__tree_node_base<void *>*> *_field1;
-        struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *>*>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<unsigned int, SFUtility::ObjcSharedPtr<NSObject>>, void *>>> {
-            struct __tree_end_node<std::__1::__tree_node_base<void *>*> _field1;
-        } _field2;
-        struct __compressed_pair<unsigned long, std::__1::__map_value_compare<unsigned int, std::__1::__value_type<unsigned int, SFUtility::ObjcSharedPtr<NSObject>>, std::__1::less<unsigned int>, true>> {
-            unsigned long long _field1;
-        } _field3;
-    } _field1;
+struct map<unsigned int, TSTTableHeaderInfo *, std::__1::less<unsigned int>, std::__1::allocator<std::__1::pair<const unsigned int, TSTTableHeaderInfo *>>> {
+    struct __tree<std::__1::__value_type<unsigned int, TSTTableHeaderInfo *>, std::__1::__map_value_compare<unsigned int, std::__1::__value_type<unsigned int, TSTTableHeaderInfo *>, std::__1::less<unsigned int>, true>, std::__1::allocator<std::__1::__value_type<unsigned int, TSTTableHeaderInfo *>>> {
+        struct __tree_end_node<std::__1::__tree_node_base<void *>*> *__begin_node_;
+        struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *>*>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<unsigned int, TSTTableHeaderInfo *>, void *>>> {
+            struct __tree_end_node<std::__1::__tree_node_base<void *>*> __value_;
+        } __pair1_;
+        struct __compressed_pair<unsigned long, std::__1::__map_value_compare<unsigned int, std::__1::__value_type<unsigned int, TSTTableHeaderInfo *>, std::__1::less<unsigned int>, true>> {
+            unsigned long long __value_;
+        } __pair3_;
+    } __tree_;
 };
 
 struct map<unsigned int, std::__1::map<long long, TSPComponent *, std::__1::less<long long>, std::__1::allocator<std::__1::pair<const long long, TSPComponent *>>>, std::__1::less<unsigned int>, std::__1::allocator<std::__1::pair<const unsigned int, std::__1::map<long long, TSPComponent *, std::__1::less<long long>, std::__1::allocator<std::__1::pair<const long long, TSPComponent *>>>>>> {
@@ -8324,13 +3423,13 @@ struct map<unsigned long, CGRect, std::__1::less<unsigned long>, std::__1::alloc
     } _field1;
 };
 
-struct map<unsigned long, TSWPFontHeightCacheEntry, std::__1::less<unsigned long>, std::__1::allocator<std::__1::pair<const unsigned long, TSWPFontHeightCacheEntry>>> {
-    struct __tree<std::__1::__value_type<unsigned long, TSWPFontHeightCacheEntry>, std::__1::__map_value_compare<unsigned long, std::__1::__value_type<unsigned long, TSWPFontHeightCacheEntry>, std::__1::less<unsigned long>, true>, std::__1::allocator<std::__1::__value_type<unsigned long, TSWPFontHeightCacheEntry>>> {
+struct map<unsigned long, TSWPFontMetricsCacheEntry, std::__1::less<unsigned long>, std::__1::allocator<std::__1::pair<const unsigned long, TSWPFontMetricsCacheEntry>>> {
+    struct __tree<std::__1::__value_type<unsigned long, TSWPFontMetricsCacheEntry>, std::__1::__map_value_compare<unsigned long, std::__1::__value_type<unsigned long, TSWPFontMetricsCacheEntry>, std::__1::less<unsigned long>, true>, std::__1::allocator<std::__1::__value_type<unsigned long, TSWPFontMetricsCacheEntry>>> {
         struct __tree_end_node<std::__1::__tree_node_base<void *>*> *__begin_node_;
-        struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *>*>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<unsigned long, TSWPFontHeightCacheEntry>, void *>>> {
+        struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *>*>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<unsigned long, TSWPFontMetricsCacheEntry>, void *>>> {
             struct __tree_end_node<std::__1::__tree_node_base<void *>*> __value_;
         } __pair1_;
-        struct __compressed_pair<unsigned long, std::__1::__map_value_compare<unsigned long, std::__1::__value_type<unsigned long, TSWPFontHeightCacheEntry>, std::__1::less<unsigned long>, true>> {
+        struct __compressed_pair<unsigned long, std::__1::__map_value_compare<unsigned long, std::__1::__value_type<unsigned long, TSWPFontMetricsCacheEntry>, std::__1::less<unsigned long>, true>> {
             unsigned long long __value_;
         } __pair3_;
     } __tree_;
@@ -8372,13 +3471,13 @@ struct map<unsigned short, unsigned long, std::__1::less<unsigned short>, std::_
     } _field1;
 };
 
-struct multimap<TSUCellCoord, std::__1::tuple<unsigned int, unsigned short, TSTCellStorage *>, std::__1::less<TSUCellCoord>, std::__1::allocator<std::__1::pair<const TSUCellCoord, std::__1::tuple<unsigned int, unsigned short, TSTCellStorage *>>>> {
-    struct __tree<std::__1::__value_type<TSUCellCoord, std::__1::tuple<unsigned int, unsigned short, TSTCellStorage *>>, std::__1::__map_value_compare<TSUCellCoord, std::__1::__value_type<TSUCellCoord, std::__1::tuple<unsigned int, unsigned short, TSTCellStorage *>>, std::__1::less<TSUCellCoord>, true>, std::__1::allocator<std::__1::__value_type<TSUCellCoord, std::__1::tuple<unsigned int, unsigned short, TSTCellStorage *>>>> {
+struct multimap<TSUCellCoord, std::__1::tuple<unsigned int, unsigned long, TSTCellStorage *>, std::__1::less<TSUCellCoord>, std::__1::allocator<std::__1::pair<const TSUCellCoord, std::__1::tuple<unsigned int, unsigned long, TSTCellStorage *>>>> {
+    struct __tree<std::__1::__value_type<TSUCellCoord, std::__1::tuple<unsigned int, unsigned long, TSTCellStorage *>>, std::__1::__map_value_compare<TSUCellCoord, std::__1::__value_type<TSUCellCoord, std::__1::tuple<unsigned int, unsigned long, TSTCellStorage *>>, std::__1::less<TSUCellCoord>, true>, std::__1::allocator<std::__1::__value_type<TSUCellCoord, std::__1::tuple<unsigned int, unsigned long, TSTCellStorage *>>>> {
         struct __tree_end_node<std::__1::__tree_node_base<void *>*> *_field1;
-        struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *>*>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<TSUCellCoord, std::__1::tuple<unsigned int, unsigned short, TSTCellStorage *>>, void *>>> {
+        struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *>*>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<TSUCellCoord, std::__1::tuple<unsigned int, unsigned long, TSTCellStorage *>>, void *>>> {
             struct __tree_end_node<std::__1::__tree_node_base<void *>*> _field1;
         } _field2;
-        struct __compressed_pair<unsigned long, std::__1::__map_value_compare<TSUCellCoord, std::__1::__value_type<TSUCellCoord, std::__1::tuple<unsigned int, unsigned short, TSTCellStorage *>>, std::__1::less<TSUCellCoord>, true>> {
+        struct __compressed_pair<unsigned long, std::__1::__map_value_compare<TSUCellCoord, std::__1::__value_type<TSUCellCoord, std::__1::tuple<unsigned int, unsigned long, TSTCellStorage *>>, std::__1::less<TSUCellCoord>, true>> {
             unsigned long long _field1;
         } _field3;
     } _field1;
@@ -8409,6 +3508,8 @@ struct multiset<TSTColumnOrRowMap, TSTColumnOrRowMapPbLess, std::__1::allocator<
 struct os_unfair_lock_s {
     unsigned int _os_unfair_lock_opaque;
 };
+
+struct pair<TSCEValue, TSUCellCoord>;
 
 struct pair<TSCH3D::IteratorRange<const char *>, TSCH3D::IteratorRange<const char *>> {
     IteratorRange_617e5e79 _field1;
@@ -8446,12 +3547,9 @@ struct pair<double, double> {
     double _field2;
 };
 
-struct pair<int, int> {
-    int _field1;
-    int _field2;
-};
-
 struct pair<unsigned int, bool>;
+
+struct pair<unsigned int, unsigned long>;
 
 struct pair<unsigned long, unsigned short>;
 
@@ -8471,8 +3569,9 @@ struct range<double> {
     double _field2;
 };
 
-struct scoped_array<unsigned char> {
-    char *_field1;
+struct range<unsigned int> {
+    unsigned int _field1;
+    unsigned int _field2;
 };
 
 struct segment_data<double>;
@@ -8618,6 +3717,11 @@ struct shared_ptr<TSCEValue> {
     struct __shared_weak_count *_field2;
 };
 
+struct shared_ptr<TSKCO::AbstractOperation> {
+    struct AbstractOperation *_field1;
+    struct __shared_weak_count *_field2;
+};
+
 struct shared_ptr<TSP::ArchiveInfo> {
     struct ArchiveInfo *__ptr_;
     struct __shared_weak_count *__cntrl_;
@@ -8702,10 +3806,6 @@ struct timeval {
     int tv_usec;
 };
 
-struct tmat2x2<float> {
-    tvec2_84d5962d _field1[2];
-};
-
 struct tmat3x3<float> {
     tvec3_17f03ce0 value[3];
 };
@@ -8725,21 +3825,7 @@ struct tsuSaPage {
     CDUnknownFunctionPointerType *_field1;
 };
 
-struct tvec1<float> {
-    union {
-        float _field1;
-        float _field2;
-        float _field3;
-    } _field1;
-};
-
-struct tvec1<int> {
-    union {
-        int _field1;
-        int _field2;
-        int _field3;
-    } _field1;
-};
+struct tvec1<float>;
 
 struct tvec2<bool> {
     union {
@@ -8778,29 +3864,6 @@ struct tvec3<int> {
         int b;
         int p;
     } ;
-};
-
-struct tvec4<bool> {
-    union {
-        _Bool _field1;
-        _Bool _field2;
-        _Bool _field3;
-    } _field1;
-    union {
-        _Bool _field1;
-        _Bool _field2;
-        _Bool _field3;
-    } _field2;
-    union {
-        _Bool _field1;
-        _Bool _field2;
-        _Bool _field3;
-    } _field3;
-    union {
-        _Bool _field1;
-        _Bool _field2;
-        _Bool _field3;
-    } _field4;
 };
 
 struct tvec4<float> {
@@ -9024,17 +4087,6 @@ struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__h
     } _field1;
 };
 
-struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<TSCEFormulaOwnerKind, TSCEFormulasForUndoForOwnerKind *>, void *>*>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<TSCEFormulaOwnerKind, TSCEFormulasForUndoForOwnerKind *>, void *>*>*>>> {
-    struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<TSCEFormulaOwnerKind, TSCEFormulasForUndoForOwnerKind *>, void *>*>**, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<TSCEFormulaOwnerKind, TSCEFormulasForUndoForOwnerKind *>, void *>*>*>>> {
-        struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<TSCEFormulaOwnerKind, TSCEFormulasForUndoForOwnerKind *>, void *>*> **__value_;
-        struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<TSCEFormulaOwnerKind, TSCEFormulasForUndoForOwnerKind *>, void *>*>*>> {
-            struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<TSCEFormulaOwnerKind, TSCEFormulasForUndoForOwnerKind *>, void *>*>*>> {
-                unsigned long long __value_;
-            } __data_;
-        } __value_;
-    } __ptr_;
-};
-
 struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<TSCEFormulaRangeContext, std::__1::map<TSU::UUIDData<TSP::UUIDData>, std::__1::unordered_set<TSCERangeCoordinate, std::__1::hash<TSCERangeCoordinate>, std::__1::equal_to<TSCERangeCoordinate>, std::__1::allocator<TSCERangeCoordinate>>, std::__1::less<TSU::UUIDData<TSP::UUIDData>>, std::__1::allocator<std::__1::pair<const TSU::UUIDData<TSP::UUIDData>, std::__1::unordered_set<TSCERangeCoordinate, std::__1::hash<TSCERangeCoordinate>, std::__1::equal_to<TSCERangeCoordinate>, std::__1::allocator<TSCERangeCoordinate>>>>>>, void *>*>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<TSCEFormulaRangeContext, std::__1::map<TSU::UUIDData<TSP::UUIDData>, std::__1::unordered_set<TSCERangeCoordinate, std::__1::hash<TSCERangeCoordinate>, std::__1::equal_to<TSCERangeCoordinate>, std::__1::allocator<TSCERangeCoordinate>>, std::__1::less<TSU::UUIDData<TSP::UUIDData>>, std::__1::allocator<std::__1::pair<const TSU::UUIDData<TSP::UUIDData>, std::__1::unordered_set<TSCERangeCoordinate, std::__1::hash<TSCERangeCoordinate>, std::__1::equal_to<TSCERangeCoordinate>, std::__1::allocator<TSCERangeCoordinate>>>>>>, void *>*>*>>> {
     struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<TSCEFormulaRangeContext, std::__1::map<TSU::UUIDData<TSP::UUIDData>, std::__1::unordered_set<TSCERangeCoordinate, std::__1::hash<TSCERangeCoordinate>, std::__1::equal_to<TSCERangeCoordinate>, std::__1::allocator<TSCERangeCoordinate>>, std::__1::less<TSU::UUIDData<TSP::UUIDData>>, std::__1::allocator<std::__1::pair<const TSU::UUIDData<TSP::UUIDData>, std::__1::unordered_set<TSCERangeCoordinate, std::__1::hash<TSCERangeCoordinate>, std::__1::equal_to<TSCERangeCoordinate>, std::__1::allocator<TSCERangeCoordinate>>>>>>, void *>*>**, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<TSCEFormulaRangeContext, std::__1::map<TSU::UUIDData<TSP::UUIDData>, std::__1::unordered_set<TSCERangeCoordinate, std::__1::hash<TSCERangeCoordinate>, std::__1::equal_to<TSCERangeCoordinate>, std::__1::allocator<TSCERangeCoordinate>>, std::__1::less<TSU::UUIDData<TSP::UUIDData>>, std::__1::allocator<std::__1::pair<const TSU::UUIDData<TSP::UUIDData>, std::__1::unordered_set<TSCERangeCoordinate, std::__1::hash<TSCERangeCoordinate>, std::__1::equal_to<TSCERangeCoordinate>, std::__1::allocator<TSCERangeCoordinate>>>>>>, void *>*>*>>> {
         struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<TSCEFormulaRangeContext, std::__1::map<TSU::UUIDData<TSP::UUIDData>, std::__1::unordered_set<TSCERangeCoordinate, std::__1::hash<TSCERangeCoordinate>, std::__1::equal_to<TSCERangeCoordinate>, std::__1::allocator<TSCERangeCoordinate>>, std::__1::less<TSU::UUIDData<TSP::UUIDData>>, std::__1::allocator<std::__1::pair<const TSU::UUIDData<TSP::UUIDData>, std::__1::unordered_set<TSCERangeCoordinate, std::__1::hash<TSCERangeCoordinate>, std::__1::equal_to<TSCERangeCoordinate>, std::__1::allocator<TSCERangeCoordinate>>>>>>, void *>*> **_field1;
@@ -9073,6 +4125,17 @@ struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__h
         struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<TSCEInternalCellReference, std::__1::unordered_set<TSU::UUIDCoord<TSP::UUIDCoord>, std::__1::hash<TSUUuidCoord>, std::__1::equal_to<TSU::UUIDCoord<TSP::UUIDCoord>>, std::__1::allocator<TSU::UUIDCoord<TSP::UUIDCoord>>>>, void *>*> **__value_;
         struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<TSCEInternalCellReference, std::__1::unordered_set<TSU::UUIDCoord<TSP::UUIDCoord>, std::__1::hash<TSUUuidCoord>, std::__1::equal_to<TSU::UUIDCoord<TSP::UUIDCoord>>, std::__1::allocator<TSU::UUIDCoord<TSP::UUIDCoord>>>>, void *>*>*>> {
             struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<TSCEInternalCellReference, std::__1::unordered_set<TSU::UUIDCoord<TSP::UUIDCoord>, std::__1::hash<TSUUuidCoord>, std::__1::equal_to<TSU::UUIDCoord<TSP::UUIDCoord>>, std::__1::allocator<TSU::UUIDCoord<TSP::UUIDCoord>>>>, void *>*>*>> {
+                unsigned long long __value_;
+            } __data_;
+        } __value_;
+    } __ptr_;
+};
+
+struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<TSCESubFormulaOwnerIndex, TSCEFormulasForUndoForOwnerKind *>, void *>*>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<TSCESubFormulaOwnerIndex, TSCEFormulasForUndoForOwnerKind *>, void *>*>*>>> {
+    struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<TSCESubFormulaOwnerIndex, TSCEFormulasForUndoForOwnerKind *>, void *>*>**, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<TSCESubFormulaOwnerIndex, TSCEFormulasForUndoForOwnerKind *>, void *>*>*>>> {
+        struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<TSCESubFormulaOwnerIndex, TSCEFormulasForUndoForOwnerKind *>, void *>*> **__value_;
+        struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<TSCESubFormulaOwnerIndex, TSCEFormulasForUndoForOwnerKind *>, void *>*>*>> {
+            struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<TSCESubFormulaOwnerIndex, TSCEFormulasForUndoForOwnerKind *>, void *>*>*>> {
                 unsigned long long __value_;
             } __data_;
         } __value_;
@@ -9132,6 +4195,17 @@ struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__h
             } _field1;
         } _field2;
     } _field1;
+};
+
+struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<TSU::UUIDData<TSP::UUIDData>, TSCECoordMapper *>, void *>*>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<TSU::UUIDData<TSP::UUIDData>, TSCECoordMapper *>, void *>*>*>>> {
+    struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<TSU::UUIDData<TSP::UUIDData>, TSCECoordMapper *>, void *>*>**, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<TSU::UUIDData<TSP::UUIDData>, TSCECoordMapper *>, void *>*>*>>> {
+        struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<TSU::UUIDData<TSP::UUIDData>, TSCECoordMapper *>, void *>*> **__value_;
+        struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<TSU::UUIDData<TSP::UUIDData>, TSCECoordMapper *>, void *>*>*>> {
+            struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<TSU::UUIDData<TSP::UUIDData>, TSCECoordMapper *>, void *>*>*>> {
+                unsigned long long __value_;
+            } __data_;
+        } __value_;
+    } __ptr_;
 };
 
 struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<TSU::UUIDData<TSP::UUIDData>, TSCEInternalCellRefSet>, void *>*>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<TSU::UUIDData<TSP::UUIDData>, TSCEInternalCellRefSet>, void *>*>*>>> {
@@ -9673,6 +4747,28 @@ struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__h
     } __ptr_;
 };
 
+struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned int, unsigned int>, void *>*>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned int, unsigned int>, void *>*>*>>> {
+    struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned int, unsigned int>, void *>*>**, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned int, unsigned int>, void *>*>*>>> {
+        struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned int, unsigned int>, void *>*> **__value_;
+        struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned int, unsigned int>, void *>*>*>> {
+            struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned int, unsigned int>, void *>*>*>> {
+                unsigned long long __value_;
+            } __data_;
+        } __value_;
+    } __ptr_;
+};
+
+struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long, TSPLazyReference *>, void *>*>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long, TSPLazyReference *>, void *>*>*>>> {
+    struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long, TSPLazyReference *>, void *>*>**, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long, TSPLazyReference *>, void *>*>*>>> {
+        struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long, TSPLazyReference *>, void *>*> **_field1;
+        struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long, TSPLazyReference *>, void *>*>*>> {
+            struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long, TSPLazyReference *>, void *>*>*>> {
+                unsigned long long _field1;
+            } _field1;
+        } _field2;
+    } _field1;
+};
+
 struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long, TSUModelCellRect>, void *>*>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long, TSUModelCellRect>, void *>*>*>>> {
     struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long, TSUModelCellRect>, void *>*>**, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long, TSUModelCellRect>, void *>*>*>>> {
         struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long, TSUModelCellRect>, void *>*> **__value_;
@@ -9717,17 +4813,6 @@ struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__h
     } _field1;
 };
 
-struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::pair<unsigned int, SFUtility::ObjcSharedPtr<NSObject>>, void *>*>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::pair<unsigned int, SFUtility::ObjcSharedPtr<NSObject>>, void *>*>*>>> {
-    struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::pair<unsigned int, SFUtility::ObjcSharedPtr<NSObject>>, void *>*>**, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::pair<unsigned int, SFUtility::ObjcSharedPtr<NSObject>>, void *>*>*>>> {
-        struct __hash_node_base<std::__1::__hash_node<std::__1::pair<unsigned int, SFUtility::ObjcSharedPtr<NSObject>>, void *>*> **_field1;
-        struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::pair<unsigned int, SFUtility::ObjcSharedPtr<NSObject>>, void *>*>*>> {
-            struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::pair<unsigned int, SFUtility::ObjcSharedPtr<NSObject>>, void *>*>*>> {
-                unsigned long long _field1;
-            } _field1;
-        } _field2;
-    } _field1;
-};
-
 struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<unsigned short, void *>*>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<unsigned short, void *>*>*>>> {
     struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<unsigned short, void *>*>**, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<unsigned short, void *>*>*>>> {
         struct __hash_node_base<std::__1::__hash_node<unsigned short, void *>*> **_field1;
@@ -9736,6 +4821,12 @@ struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<unsigned shor
                 unsigned long long _field1;
             } _field1;
         } _field2;
+    } _field1;
+};
+
+struct unique_ptr<unsigned char [], std::__1::default_delete<unsigned char []>> {
+    struct __compressed_pair<unsigned char *, std::__1::default_delete<unsigned char []>> {
+        char *_field1;
     } _field1;
 };
 
@@ -9904,21 +4995,6 @@ struct unordered_map<TSCEColumnRangeContextPair, TSCEInternalCellRefSet, TSCECol
     } _field1;
 };
 
-struct unordered_map<TSCEFormulaOwnerKind, TSCEFormulasForUndoForOwnerKind *, std::__1::hash<TSCEFormulaOwnerKind>, std::__1::equal_to<TSCEFormulaOwnerKind>, std::__1::allocator<std::__1::pair<const TSCEFormulaOwnerKind, TSCEFormulasForUndoForOwnerKind *>>> {
-    struct __hash_table<std::__1::__hash_value_type<TSCEFormulaOwnerKind, TSCEFormulasForUndoForOwnerKind *>, std::__1::__unordered_map_hasher<TSCEFormulaOwnerKind, std::__1::__hash_value_type<TSCEFormulaOwnerKind, TSCEFormulasForUndoForOwnerKind *>, std::__1::hash<TSCEFormulaOwnerKind>, true>, std::__1::__unordered_map_equal<TSCEFormulaOwnerKind, std::__1::__hash_value_type<TSCEFormulaOwnerKind, TSCEFormulasForUndoForOwnerKind *>, std::__1::equal_to<TSCEFormulaOwnerKind>, true>, std::__1::allocator<std::__1::__hash_value_type<TSCEFormulaOwnerKind, TSCEFormulasForUndoForOwnerKind *>>> {
-        struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<TSCEFormulaOwnerKind, TSCEFormulasForUndoForOwnerKind *>, void *>*>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<TSCEFormulaOwnerKind, TSCEFormulasForUndoForOwnerKind *>, void *>*>*>>> __bucket_list_;
-        struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<TSCEFormulaOwnerKind, TSCEFormulasForUndoForOwnerKind *>, void *>*>, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<TSCEFormulaOwnerKind, TSCEFormulasForUndoForOwnerKind *>, void *>>> {
-            struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<TSCEFormulaOwnerKind, TSCEFormulasForUndoForOwnerKind *>, void *>*> __value_;
-        } __p1_;
-        struct __compressed_pair<unsigned long, std::__1::__unordered_map_hasher<TSCEFormulaOwnerKind, std::__1::__hash_value_type<TSCEFormulaOwnerKind, TSCEFormulasForUndoForOwnerKind *>, std::__1::hash<TSCEFormulaOwnerKind>, true>> {
-            unsigned long long __value_;
-        } __p2_;
-        struct __compressed_pair<float, std::__1::__unordered_map_equal<TSCEFormulaOwnerKind, std::__1::__hash_value_type<TSCEFormulaOwnerKind, TSCEFormulasForUndoForOwnerKind *>, std::__1::equal_to<TSCEFormulaOwnerKind>, true>> {
-            float __value_;
-        } __p3_;
-    } __table_;
-};
-
 struct unordered_map<TSCEFormulaRangeContext, std::__1::map<TSU::UUIDData<TSP::UUIDData>, std::__1::unordered_set<TSCERangeCoordinate, std::__1::hash<TSCERangeCoordinate>, std::__1::equal_to<TSCERangeCoordinate>, std::__1::allocator<TSCERangeCoordinate>>, std::__1::less<TSU::UUIDData<TSP::UUIDData>>, std::__1::allocator<std::__1::pair<const TSU::UUIDData<TSP::UUIDData>, std::__1::unordered_set<TSCERangeCoordinate, std::__1::hash<TSCERangeCoordinate>, std::__1::equal_to<TSCERangeCoordinate>, std::__1::allocator<TSCERangeCoordinate>>>>>, std::__1::hash<TSCEFormulaRangeContext>, std::__1::equal_to<TSCEFormulaRangeContext>, std::__1::allocator<std::__1::pair<const TSCEFormulaRangeContext, std::__1::map<TSU::UUIDData<TSP::UUIDData>, std::__1::unordered_set<TSCERangeCoordinate, std::__1::hash<TSCERangeCoordinate>, std::__1::equal_to<TSCERangeCoordinate>, std::__1::allocator<TSCERangeCoordinate>>, std::__1::less<TSU::UUIDData<TSP::UUIDData>>, std::__1::allocator<std::__1::pair<const TSU::UUIDData<TSP::UUIDData>, std::__1::unordered_set<TSCERangeCoordinate, std::__1::hash<TSCERangeCoordinate>, std::__1::equal_to<TSCERangeCoordinate>, std::__1::allocator<TSCERangeCoordinate>>>>>>>> {
     struct __hash_table<std::__1::__hash_value_type<TSCEFormulaRangeContext, std::__1::map<TSU::UUIDData<TSP::UUIDData>, std::__1::unordered_set<TSCERangeCoordinate, std::__1::hash<TSCERangeCoordinate>, std::__1::equal_to<TSCERangeCoordinate>, std::__1::allocator<TSCERangeCoordinate>>, std::__1::less<TSU::UUIDData<TSP::UUIDData>>, std::__1::allocator<std::__1::pair<const TSU::UUIDData<TSP::UUIDData>, std::__1::unordered_set<TSCERangeCoordinate, std::__1::hash<TSCERangeCoordinate>, std::__1::equal_to<TSCERangeCoordinate>, std::__1::allocator<TSCERangeCoordinate>>>>>>, std::__1::__unordered_map_hasher<TSCEFormulaRangeContext, std::__1::__hash_value_type<TSCEFormulaRangeContext, std::__1::map<TSU::UUIDData<TSP::UUIDData>, std::__1::unordered_set<TSCERangeCoordinate, std::__1::hash<TSCERangeCoordinate>, std::__1::equal_to<TSCERangeCoordinate>, std::__1::allocator<TSCERangeCoordinate>>, std::__1::less<TSU::UUIDData<TSP::UUIDData>>, std::__1::allocator<std::__1::pair<const TSU::UUIDData<TSP::UUIDData>, std::__1::unordered_set<TSCERangeCoordinate, std::__1::hash<TSCERangeCoordinate>, std::__1::equal_to<TSCERangeCoordinate>, std::__1::allocator<TSCERangeCoordinate>>>>>>, std::__1::hash<TSCEFormulaRangeContext>, true>, std::__1::__unordered_map_equal<TSCEFormulaRangeContext, std::__1::__hash_value_type<TSCEFormulaRangeContext, std::__1::map<TSU::UUIDData<TSP::UUIDData>, std::__1::unordered_set<TSCERangeCoordinate, std::__1::hash<TSCERangeCoordinate>, std::__1::equal_to<TSCERangeCoordinate>, std::__1::allocator<TSCERangeCoordinate>>, std::__1::less<TSU::UUIDData<TSP::UUIDData>>, std::__1::allocator<std::__1::pair<const TSU::UUIDData<TSP::UUIDData>, std::__1::unordered_set<TSCERangeCoordinate, std::__1::hash<TSCERangeCoordinate>, std::__1::equal_to<TSCERangeCoordinate>, std::__1::allocator<TSCERangeCoordinate>>>>>>, std::__1::equal_to<TSCEFormulaRangeContext>, true>, std::__1::allocator<std::__1::__hash_value_type<TSCEFormulaRangeContext, std::__1::map<TSU::UUIDData<TSP::UUIDData>, std::__1::unordered_set<TSCERangeCoordinate, std::__1::hash<TSCERangeCoordinate>, std::__1::equal_to<TSCERangeCoordinate>, std::__1::allocator<TSCERangeCoordinate>>, std::__1::less<TSU::UUIDData<TSP::UUIDData>>, std::__1::allocator<std::__1::pair<const TSU::UUIDData<TSP::UUIDData>, std::__1::unordered_set<TSCERangeCoordinate, std::__1::hash<TSCERangeCoordinate>, std::__1::equal_to<TSCERangeCoordinate>, std::__1::allocator<TSCERangeCoordinate>>>>>>>> {
         struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<TSCEFormulaRangeContext, std::__1::map<TSU::UUIDData<TSP::UUIDData>, std::__1::unordered_set<TSCERangeCoordinate, std::__1::hash<TSCERangeCoordinate>, std::__1::equal_to<TSCERangeCoordinate>, std::__1::allocator<TSCERangeCoordinate>>, std::__1::less<TSU::UUIDData<TSP::UUIDData>>, std::__1::allocator<std::__1::pair<const TSU::UUIDData<TSP::UUIDData>, std::__1::unordered_set<TSCERangeCoordinate, std::__1::hash<TSCERangeCoordinate>, std::__1::equal_to<TSCERangeCoordinate>, std::__1::allocator<TSCERangeCoordinate>>>>>>, void *>*>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<TSCEFormulaRangeContext, std::__1::map<TSU::UUIDData<TSP::UUIDData>, std::__1::unordered_set<TSCERangeCoordinate, std::__1::hash<TSCERangeCoordinate>, std::__1::equal_to<TSCERangeCoordinate>, std::__1::allocator<TSCERangeCoordinate>>, std::__1::less<TSU::UUIDData<TSP::UUIDData>>, std::__1::allocator<std::__1::pair<const TSU::UUIDData<TSP::UUIDData>, std::__1::unordered_set<TSCERangeCoordinate, std::__1::hash<TSCERangeCoordinate>, std::__1::equal_to<TSCERangeCoordinate>, std::__1::allocator<TSCERangeCoordinate>>>>>>, void *>*>*>>> _field1;
@@ -9974,6 +5050,21 @@ struct unordered_map<TSCEInternalCellReference, std::__1::unordered_set<TSU::UUI
             unsigned long long __value_;
         } __p2_;
         struct __compressed_pair<float, std::__1::__unordered_map_equal<TSCEInternalCellReference, std::__1::__hash_value_type<TSCEInternalCellReference, std::__1::unordered_set<TSU::UUIDCoord<TSP::UUIDCoord>, std::__1::hash<TSUUuidCoord>, std::__1::equal_to<TSU::UUIDCoord<TSP::UUIDCoord>>, std::__1::allocator<TSU::UUIDCoord<TSP::UUIDCoord>>>>, std::__1::equal_to<TSCEInternalCellReference>, true>> {
+            float __value_;
+        } __p3_;
+    } __table_;
+};
+
+struct unordered_map<TSCESubFormulaOwnerIndex, TSCEFormulasForUndoForOwnerKind *, std::__1::hash<TSCESubFormulaOwnerIndex>, std::__1::equal_to<TSCESubFormulaOwnerIndex>, std::__1::allocator<std::__1::pair<const TSCESubFormulaOwnerIndex, TSCEFormulasForUndoForOwnerKind *>>> {
+    struct __hash_table<std::__1::__hash_value_type<TSCESubFormulaOwnerIndex, TSCEFormulasForUndoForOwnerKind *>, std::__1::__unordered_map_hasher<TSCESubFormulaOwnerIndex, std::__1::__hash_value_type<TSCESubFormulaOwnerIndex, TSCEFormulasForUndoForOwnerKind *>, std::__1::hash<TSCESubFormulaOwnerIndex>, true>, std::__1::__unordered_map_equal<TSCESubFormulaOwnerIndex, std::__1::__hash_value_type<TSCESubFormulaOwnerIndex, TSCEFormulasForUndoForOwnerKind *>, std::__1::equal_to<TSCESubFormulaOwnerIndex>, true>, std::__1::allocator<std::__1::__hash_value_type<TSCESubFormulaOwnerIndex, TSCEFormulasForUndoForOwnerKind *>>> {
+        struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<TSCESubFormulaOwnerIndex, TSCEFormulasForUndoForOwnerKind *>, void *>*>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<TSCESubFormulaOwnerIndex, TSCEFormulasForUndoForOwnerKind *>, void *>*>*>>> __bucket_list_;
+        struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<TSCESubFormulaOwnerIndex, TSCEFormulasForUndoForOwnerKind *>, void *>*>, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<TSCESubFormulaOwnerIndex, TSCEFormulasForUndoForOwnerKind *>, void *>>> {
+            struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<TSCESubFormulaOwnerIndex, TSCEFormulasForUndoForOwnerKind *>, void *>*> __value_;
+        } __p1_;
+        struct __compressed_pair<unsigned long, std::__1::__unordered_map_hasher<TSCESubFormulaOwnerIndex, std::__1::__hash_value_type<TSCESubFormulaOwnerIndex, TSCEFormulasForUndoForOwnerKind *>, std::__1::hash<TSCESubFormulaOwnerIndex>, true>> {
+            unsigned long long __value_;
+        } __p2_;
+        struct __compressed_pair<float, std::__1::__unordered_map_equal<TSCESubFormulaOwnerIndex, std::__1::__hash_value_type<TSCESubFormulaOwnerIndex, TSCEFormulasForUndoForOwnerKind *>, std::__1::equal_to<TSCESubFormulaOwnerIndex>, true>> {
             float __value_;
         } __p3_;
     } __table_;
@@ -10052,6 +5143,21 @@ struct unordered_map<TSU::UUIDData<TSP::UUIDData>, TSCECellCoordSet, std::__1::h
             float _field1;
         } _field4;
     } _field1;
+};
+
+struct unordered_map<TSU::UUIDData<TSP::UUIDData>, TSCECoordMapper *, std::__1::hash<TSUUUID>, std::__1::equal_to<TSU::UUIDData<TSP::UUIDData>>, std::__1::allocator<std::__1::pair<const TSU::UUIDData<TSP::UUIDData>, TSCECoordMapper *>>> {
+    struct __hash_table<std::__1::__hash_value_type<TSU::UUIDData<TSP::UUIDData>, TSCECoordMapper *>, std::__1::__unordered_map_hasher<TSU::UUIDData<TSP::UUIDData>, std::__1::__hash_value_type<TSU::UUIDData<TSP::UUIDData>, TSCECoordMapper *>, std::__1::hash<TSUUUID>, true>, std::__1::__unordered_map_equal<TSU::UUIDData<TSP::UUIDData>, std::__1::__hash_value_type<TSU::UUIDData<TSP::UUIDData>, TSCECoordMapper *>, std::__1::equal_to<TSU::UUIDData<TSP::UUIDData>>, true>, std::__1::allocator<std::__1::__hash_value_type<TSU::UUIDData<TSP::UUIDData>, TSCECoordMapper *>>> {
+        struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<TSU::UUIDData<TSP::UUIDData>, TSCECoordMapper *>, void *>*>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<TSU::UUIDData<TSP::UUIDData>, TSCECoordMapper *>, void *>*>*>>> __bucket_list_;
+        struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<TSU::UUIDData<TSP::UUIDData>, TSCECoordMapper *>, void *>*>, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<TSU::UUIDData<TSP::UUIDData>, TSCECoordMapper *>, void *>>> {
+            struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<TSU::UUIDData<TSP::UUIDData>, TSCECoordMapper *>, void *>*> __value_;
+        } __p1_;
+        struct __compressed_pair<unsigned long, std::__1::__unordered_map_hasher<TSU::UUIDData<TSP::UUIDData>, std::__1::__hash_value_type<TSU::UUIDData<TSP::UUIDData>, TSCECoordMapper *>, std::__1::hash<TSUUUID>, true>> {
+            unsigned long long __value_;
+        } __p2_;
+        struct __compressed_pair<float, std::__1::__unordered_map_equal<TSU::UUIDData<TSP::UUIDData>, std::__1::__hash_value_type<TSU::UUIDData<TSP::UUIDData>, TSCECoordMapper *>, std::__1::equal_to<TSU::UUIDData<TSP::UUIDData>>, true>> {
+            float __value_;
+        } __p3_;
+    } __table_;
 };
 
 struct unordered_map<TSU::UUIDData<TSP::UUIDData>, TSCEInternalCellRefSet, std::__1::hash<TSUUUID>, std::__1::equal_to<TSU::UUIDData<TSP::UUIDData>>, std::__1::allocator<std::__1::pair<const TSU::UUIDData<TSP::UUIDData>, TSCEInternalCellRefSet>>> {
@@ -10729,6 +5835,36 @@ struct unordered_map<unsigned int, const google::protobuf::Message *, std::__1::
     } __table_;
 };
 
+struct unordered_map<unsigned int, unsigned int, std::__1::hash<unsigned int>, std::__1::equal_to<unsigned int>, std::__1::allocator<std::__1::pair<const unsigned int, unsigned int>>> {
+    struct __hash_table<std::__1::__hash_value_type<unsigned int, unsigned int>, std::__1::__unordered_map_hasher<unsigned int, std::__1::__hash_value_type<unsigned int, unsigned int>, std::__1::hash<unsigned int>, true>, std::__1::__unordered_map_equal<unsigned int, std::__1::__hash_value_type<unsigned int, unsigned int>, std::__1::equal_to<unsigned int>, true>, std::__1::allocator<std::__1::__hash_value_type<unsigned int, unsigned int>>> {
+        struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned int, unsigned int>, void *>*>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned int, unsigned int>, void *>*>*>>> __bucket_list_;
+        struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned int, unsigned int>, void *>*>, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<unsigned int, unsigned int>, void *>>> {
+            struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned int, unsigned int>, void *>*> __value_;
+        } __p1_;
+        struct __compressed_pair<unsigned long, std::__1::__unordered_map_hasher<unsigned int, std::__1::__hash_value_type<unsigned int, unsigned int>, std::__1::hash<unsigned int>, true>> {
+            unsigned long long __value_;
+        } __p2_;
+        struct __compressed_pair<float, std::__1::__unordered_map_equal<unsigned int, std::__1::__hash_value_type<unsigned int, unsigned int>, std::__1::equal_to<unsigned int>, true>> {
+            float __value_;
+        } __p3_;
+    } __table_;
+};
+
+struct unordered_map<unsigned long, TSPLazyReference *, std::__1::hash<unsigned long>, std::__1::equal_to<unsigned long>, std::__1::allocator<std::__1::pair<const unsigned long, TSPLazyReference *>>> {
+    struct __hash_table<std::__1::__hash_value_type<unsigned long, TSPLazyReference *>, std::__1::__unordered_map_hasher<unsigned long, std::__1::__hash_value_type<unsigned long, TSPLazyReference *>, std::__1::hash<unsigned long>, true>, std::__1::__unordered_map_equal<unsigned long, std::__1::__hash_value_type<unsigned long, TSPLazyReference *>, std::__1::equal_to<unsigned long>, true>, std::__1::allocator<std::__1::__hash_value_type<unsigned long, TSPLazyReference *>>> {
+        struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long, TSPLazyReference *>, void *>*>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long, TSPLazyReference *>, void *>*>*>>> _field1;
+        struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long, TSPLazyReference *>, void *>*>, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long, TSPLazyReference *>, void *>>> {
+            struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long, TSPLazyReference *>, void *>*> _field1;
+        } _field2;
+        struct __compressed_pair<unsigned long, std::__1::__unordered_map_hasher<unsigned long, std::__1::__hash_value_type<unsigned long, TSPLazyReference *>, std::__1::hash<unsigned long>, true>> {
+            unsigned long long _field1;
+        } _field3;
+        struct __compressed_pair<float, std::__1::__unordered_map_equal<unsigned long, std::__1::__hash_value_type<unsigned long, TSPLazyReference *>, std::__1::equal_to<unsigned long>, true>> {
+            float _field1;
+        } _field4;
+    } _field1;
+};
+
 struct unordered_map<unsigned long, TSUModelCellRect, std::__1::hash<unsigned long>, std::__1::equal_to<unsigned long>, std::__1::allocator<std::__1::pair<const unsigned long, TSUModelCellRect>>> {
     struct __hash_table<std::__1::__hash_value_type<unsigned long, TSUModelCellRect>, std::__1::__unordered_map_hasher<unsigned long, std::__1::__hash_value_type<unsigned long, TSUModelCellRect>, std::__1::hash<unsigned long>, true>, std::__1::__unordered_map_equal<unsigned long, std::__1::__hash_value_type<unsigned long, TSUModelCellRect>, std::__1::equal_to<unsigned long>, true>, std::__1::allocator<std::__1::__hash_value_type<unsigned long, TSUModelCellRect>>> {
         struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long, TSUModelCellRect>, void *>*>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long, TSUModelCellRect>, void *>*>*>>> __bucket_list_;
@@ -10928,14 +6064,6 @@ struct unordered_set<unsigned short, std::__1::hash<unsigned short>, std::__1::e
     } _field1;
 };
 
-struct vector<(anonymous namespace)::Range, std::__1::allocator<(anonymous namespace)::Range>> {
-    struct Range *__begin_;
-    struct Range *__end_;
-    struct __compressed_pair<(anonymous namespace)::Range *, std::__1::allocator<(anonymous namespace)::Range>> {
-        struct Range *__value_;
-    } __end_cap_;
-};
-
 struct vector<CGPoint, std::__1::allocator<CGPoint>> {
     struct CGPoint *__begin_;
     struct CGPoint *__end_;
@@ -11056,20 +6184,12 @@ struct vector<TSCEFormula, std::__1::allocator<TSCEFormula>> {
     } __end_cap_;
 };
 
-struct vector<TSCEFormulaOwnerKind, std::__1::allocator<TSCEFormulaOwnerKind>> {
-    int *_field1;
-    int *_field2;
-    struct __compressed_pair<TSCEFormulaOwnerKind *, std::__1::allocator<TSCEFormulaOwnerKind>> {
-        int *_field1;
-    } _field3;
-};
-
 struct vector<TSCEFormulaRewriteContextRecord, std::__1::allocator<TSCEFormulaRewriteContextRecord>> {
-    struct TSCEFormulaRewriteContextRecord *__begin_;
-    struct TSCEFormulaRewriteContextRecord *__end_;
+    struct TSCEFormulaRewriteContextRecord *_field1;
+    struct TSCEFormulaRewriteContextRecord *_field2;
     struct __compressed_pair<TSCEFormulaRewriteContextRecord *, std::__1::allocator<TSCEFormulaRewriteContextRecord>> {
-        struct TSCEFormulaRewriteContextRecord *__value_;
-    } __end_cap_;
+        struct TSCEFormulaRewriteContextRecord *_field1;
+    } _field3;
 };
 
 struct vector<TSCEFunctionArgSpec, std::__1::allocator<TSCEFunctionArgSpec>> {
@@ -11077,6 +6197,14 @@ struct vector<TSCEFunctionArgSpec, std::__1::allocator<TSCEFunctionArgSpec>> {
     struct TSCEFunctionArgSpec *__end_;
     struct __compressed_pair<TSCEFunctionArgSpec *, std::__1::allocator<TSCEFunctionArgSpec>> {
         struct TSCEFunctionArgSpec *__value_;
+    } __end_cap_;
+};
+
+struct vector<TSCEGroupingColumnChange, std::__1::allocator<TSCEGroupingColumnChange>> {
+    struct TSCEGroupingColumnChange *__begin_;
+    struct TSCEGroupingColumnChange *__end_;
+    struct __compressed_pair<TSCEGroupingColumnChange *, std::__1::allocator<TSCEGroupingColumnChange>> {
+        struct TSCEGroupingColumnChange *__value_;
     } __end_cap_;
 };
 
@@ -11112,6 +6240,14 @@ struct vector<TSCEReferenceValue, std::__1::allocator<TSCEReferenceValue>> {
     } _field3;
 };
 
+struct vector<TSCESubFormulaOwnerIndex, std::__1::allocator<TSCESubFormulaOwnerIndex>> {
+    unsigned short *_field1;
+    unsigned short *_field2;
+    struct __compressed_pair<TSCESubFormulaOwnerIndex *, std::__1::allocator<TSCESubFormulaOwnerIndex>> {
+        unsigned short *_field1;
+    } _field3;
+};
+
 struct vector<TSCETableResolver *, std::__1::allocator<TSCETableResolver *>> {
     struct TSCETableResolver **_field1;
     struct TSCETableResolver **_field2;
@@ -11133,14 +6269,6 @@ struct vector<TSCEValue, std::__1::allocator<TSCEValue>> {
     struct TSCEValue *__end_;
     struct __compressed_pair<TSCEValue *, std::__1::allocator<TSCEValue>> {
         struct TSCEValue *__value_;
-    } __end_cap_;
-};
-
-struct vector<TSCH3D::AxisLabelCacheItem, std::__1::allocator<TSCH3D::AxisLabelCacheItem>> {
-    struct AxisLabelCacheItem *__begin_;
-    struct AxisLabelCacheItem *__end_;
-    struct __compressed_pair<TSCH3D::AxisLabelCacheItem *, std::__1::allocator<TSCH3D::AxisLabelCacheItem>> {
-        struct AxisLabelCacheItem *__value_;
     } __end_cap_;
 };
 
@@ -11168,11 +6296,19 @@ struct vector<TSCH3D::Math::ExtendedTypesDetails::plane<glm::detail::tvec3<float
     } _field3;
 };
 
-struct vector<TSCH3D::ObjectState::Lookup, std::__1::allocator<TSCH3D::ObjectState::Lookup>> {
-    struct Lookup *__begin_;
-    struct Lookup *__end_;
-    struct __compressed_pair<TSCH3D::ObjectState::Lookup *, std::__1::allocator<TSCH3D::ObjectState::Lookup>> {
-        struct Lookup *__value_;
+struct vector<TSCH3D::ObjectState::Lookup<TSCH3D::AttributeSpecs>, std::__1::allocator<TSCH3D::ObjectState::Lookup<TSCH3D::AttributeSpecs>>> {
+    struct Lookup<TSCH3D::AttributeSpecs> *__begin_;
+    struct Lookup<TSCH3D::AttributeSpecs> *__end_;
+    struct __compressed_pair<TSCH3D::ObjectState::Lookup<TSCH3D::AttributeSpecs>*, std::__1::allocator<TSCH3D::ObjectState::Lookup<TSCH3D::AttributeSpecs>>> {
+        struct Lookup<TSCH3D::AttributeSpecs> *__value_;
+    } __end_cap_;
+};
+
+struct vector<TSCH3D::ObjectState::Lookup<TSCH3D::TextureAttributes>, std::__1::allocator<TSCH3D::ObjectState::Lookup<TSCH3D::TextureAttributes>>> {
+    struct Lookup<TSCH3D::TextureAttributes> *__begin_;
+    struct Lookup<TSCH3D::TextureAttributes> *__end_;
+    struct __compressed_pair<TSCH3D::ObjectState::Lookup<TSCH3D::TextureAttributes>*, std::__1::allocator<TSCH3D::ObjectState::Lookup<TSCH3D::TextureAttributes>>> {
+        struct Lookup<TSCH3D::TextureAttributes> *__value_;
     } __end_cap_;
 };
 
@@ -11192,19 +6328,19 @@ struct vector<TSCH3D::PODType<unsigned short>, std::__1::allocator<TSCH3D::PODTy
     } __end_cap_;
 };
 
-struct vector<TSCH3D::RenderElementInfo, std::__1::allocator<TSCH3D::RenderElementInfo>> {
-    struct RenderElementInfo *__begin_;
-    struct RenderElementInfo *__end_;
-    struct __compressed_pair<TSCH3D::RenderElementInfo *, std::__1::allocator<TSCH3D::RenderElementInfo>> {
-        struct RenderElementInfo *__value_;
-    } __end_cap_;
-};
-
 struct vector<TSCH3D::ResourceAttributeState, std::__1::allocator<TSCH3D::ResourceAttributeState>> {
     struct ResourceAttributeState *__begin_;
     struct ResourceAttributeState *__end_;
     struct __compressed_pair<TSCH3D::ResourceAttributeState *, std::__1::allocator<TSCH3D::ResourceAttributeState>> {
         struct ResourceAttributeState *__value_;
+    } __end_cap_;
+};
+
+struct vector<TSCH3D::TextureAttributeState, std::__1::allocator<TSCH3D::TextureAttributeState>> {
+    struct TextureAttributeState *__begin_;
+    struct TextureAttributeState *__end_;
+    struct __compressed_pair<TSCH3D::TextureAttributeState *, std::__1::allocator<TSCH3D::TextureAttributeState>> {
+        struct TextureAttributeState *__value_;
     } __end_cap_;
 };
 
@@ -11230,6 +6366,14 @@ struct vector<TSDWrapSegment, std::__1::allocator<TSDWrapSegment>> {
     struct __compressed_pair<TSDWrapSegment *, std::__1::allocator<TSDWrapSegment>> {
         CDStruct_183601bc *__value_;
     } __end_cap_;
+};
+
+struct vector<TSKOperationPropertyId, std::__1::allocator<TSKOperationPropertyId>> {
+    unsigned short *_field1;
+    unsigned short *_field2;
+    struct __compressed_pair<TSKOperationPropertyId *, std::__1::allocator<TSKOperationPropertyId>> {
+        unsigned short *_field1;
+    } _field3;
 };
 
 struct vector<TSP::ExternalReferenceCompletionInfo, std::__1::allocator<TSP::ExternalReferenceCompletionInfo>> {
@@ -11385,10 +6529,10 @@ struct vector<TSWPAttachmentPosition, std::__1::allocator<TSWPAttachmentPosition
 };
 
 struct vector<TSWPAttributeArrayKind, std::__1::allocator<TSWPAttributeArrayKind>> {
-    int *_field1;
-    int *_field2;
+    unsigned long long *_field1;
+    unsigned long long *_field2;
     struct __compressed_pair<TSWPAttributeArrayKind *, std::__1::allocator<TSWPAttributeArrayKind>> {
-        int *_field1;
+        unsigned long long *_field1;
     } _field3;
 };
 
@@ -11511,19 +6655,11 @@ struct vector<float, std::__1::allocator<float>> {
 };
 
 struct vector<glm::detail::tvec1<float>, std::__1::allocator<glm::detail::tvec1<float>>> {
-    tvec1_58a8085a *__begin_;
-    tvec1_58a8085a *__end_;
+    struct tvec1<float> *__begin_;
+    struct tvec1<float> *__end_;
     struct __compressed_pair<glm::detail::tvec1<float>*, std::__1::allocator<glm::detail::tvec1<float>>> {
-        tvec1_58a8085a *__value_;
+        struct tvec1<float> *__value_;
     } __end_cap_;
-};
-
-struct vector<glm::detail::tvec1<int>, std::__1::allocator<glm::detail::tvec1<int>>> {
-    tvec1_dad7e00b *_field1;
-    tvec1_dad7e00b *_field2;
-    struct __compressed_pair<glm::detail::tvec1<int>*, std::__1::allocator<glm::detail::tvec1<int>>> {
-        tvec1_dad7e00b *_field1;
-    } _field3;
 };
 
 struct vector<glm::detail::tvec2<float>, std::__1::allocator<glm::detail::tvec2<float>>> {
@@ -11550,28 +6686,12 @@ struct vector<glm::detail::tvec3<float>, std::__1::allocator<glm::detail::tvec3<
     } __end_cap_;
 };
 
-struct vector<glm::detail::tvec3<int>, std::__1::allocator<glm::detail::tvec3<int>>> {
-    tvec3_c2818ced *_field1;
-    tvec3_c2818ced *_field2;
-    struct __compressed_pair<glm::detail::tvec3<int>*, std::__1::allocator<glm::detail::tvec3<int>>> {
-        tvec3_c2818ced *_field1;
-    } _field3;
-};
-
 struct vector<glm::detail::tvec4<float>, std::__1::allocator<glm::detail::tvec4<float>>> {
     tvec4_ac57c72d *__begin_;
     tvec4_ac57c72d *__end_;
     struct __compressed_pair<glm::detail::tvec4<float>*, std::__1::allocator<glm::detail::tvec4<float>>> {
         tvec4_ac57c72d *__value_;
     } __end_cap_;
-};
-
-struct vector<glm::detail::tvec4<int>, std::__1::allocator<glm::detail::tvec4<int>>> {
-    tvec4_f99fd489 *_field1;
-    tvec4_f99fd489 *_field2;
-    struct __compressed_pair<glm::detail::tvec4<int>*, std::__1::allocator<glm::detail::tvec4<int>>> {
-        tvec4_f99fd489 *_field1;
-    } _field3;
 };
 
 struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField>>;
@@ -11624,6 +6744,14 @@ struct vector<std::__1::basic_string<char>, std::__1::allocator<std::__1::basic_
     } _field3;
 };
 
+struct vector<std::__1::pair<TSCEValue, TSUCellCoord>, std::__1::allocator<std::__1::pair<TSCEValue, TSUCellCoord>>> {
+    struct pair<TSCEValue, TSUCellCoord> *_field1;
+    struct pair<TSCEValue, TSUCellCoord> *_field2;
+    struct __compressed_pair<std::__1::pair<TSCEValue, TSUCellCoord>*, std::__1::allocator<std::__1::pair<TSCEValue, TSUCellCoord>>> {
+        struct pair<TSCEValue, TSUCellCoord> *_field1;
+    } _field3;
+};
+
 struct vector<std::__1::pair<TSUCellCoord, double>, std::__1::allocator<std::__1::pair<TSUCellCoord, double>>> {
     struct pair<TSUCellCoord, double> *__begin_;
     struct pair<TSUCellCoord, double> *__end_;
@@ -11646,6 +6774,14 @@ struct vector<std::__1::pair<unsigned int, bool>, std::__1::allocator<std::__1::
     struct __compressed_pair<std::__1::pair<unsigned int, bool>*, std::__1::allocator<std::__1::pair<unsigned int, bool>>> {
         struct pair<unsigned int, bool> *__value_;
     } __end_cap_;
+};
+
+struct vector<std::__1::pair<unsigned int, unsigned long>, std::__1::allocator<std::__1::pair<unsigned int, unsigned long>>> {
+    struct pair<unsigned int, unsigned long> *_field1;
+    struct pair<unsigned int, unsigned long> *_field2;
+    struct __compressed_pair<std::__1::pair<unsigned int, unsigned long>*, std::__1::allocator<std::__1::pair<unsigned int, unsigned long>>> {
+        struct pair<unsigned int, unsigned long> *_field1;
+    } _field3;
 };
 
 struct vector<std::__1::pair<unsigned long, unsigned short>, std::__1::allocator<std::__1::pair<unsigned long, unsigned short>>> {
@@ -11740,13 +6876,6 @@ struct z_stream_s {
 #if 0
 // Names with conflicting types:
 typedef struct {
-    float _field1;
-    float _field2;
-    float _field3;
-    float _field4;
-} Color_1703f521;
-
-typedef struct {
     int _field1;
     _Bool _field2;
     _Bool _field3;
@@ -11766,378 +6895,6 @@ typedef struct {
     _Bool _field3;
     struct QuantizationConfig _field4;
 } Manager_36464627;
-
-typedef struct {
-    int _field1;
-    int _field2;
-    int _field3;
-    struct path_descr *_field4;
-    int _field5;
-    int _field6;
-    _Bool _field7;
-    _Bool _field8;
-    int _field9;
-    int _field10;
-    int _field11;
-    char *_field12;
-} Path_1b135553;
-
-typedef struct {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct ChartMediatorArchive *_field5;
-    basic_string_23d93216 *_field6;
-    struct ChartMediatorFormulaStorage *_field7;
-    _Bool _field8;
-    _Bool _field9;
-} ChartMediatorArchive_65508aa1;
-
-typedef struct {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct DocumentArchive *_field5;
-    struct Reference *_field6;
-    struct Reference *_field7;
-} DocumentArchive_f565e1a7;
-
-typedef struct {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct DocumentArchive *_field5;
-    struct RepeatedPtrField<TSWP::TextPresetDisplayItemArchive> _field6;
-    basic_string_23d93216 *_field7;
-    struct Reference *_field8;
-    struct Reference *_field9;
-    struct Reference *_field10;
-    struct Reference *_field11;
-    basic_string_23d93216 *_field12;
-    struct Reference *_field13;
-    struct Reference *_field14;
-    struct Reference *_field15;
-    struct Reference *_field16;
-    _Bool _field17;
-    _Bool _field18;
-    _Bool _field19;
-} DocumentArchive_2216b979;
-
-typedef struct {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct DrawableSelectionArchive *_field5;
-    struct Reference *_field6;
-    struct RepeatedPtrField<TSCH::ChartSelectionPathArchive> _field7;
-} ChartSelectionArchive_0103965d;
-
-typedef struct {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct FillArchive *_field5;
-    struct StrokeArchive *_field6;
-    struct ShadowArchive *_field7;
-    struct ReflectionArchive *_field8;
-    struct LineEndArchive *_field9;
-    struct LineEndArchive *_field10;
-    float _field11;
-} ShapeStylePropertiesArchive_14f5c167;
-
-typedef struct {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct RangeReferenceArchive *_field5;
-    struct ChartSelectionArchive *_field6;
-    struct Reference *_field7;
-    struct DrawableSelectionArchive *_field8;
-} ChartSelectionArchive_b21c617c;
-
-typedef struct {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct Range *_field5;
-    int _field6;
-    int _field7;
-    struct Range *_field8;
-    int _field9;
-} SelectionArchive_4d81a463;
-
-typedef struct {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct Range *_field5;
-    int _field6;
-    int _field7;
-    RepeatedPtrField_a0d2dbe7 _field8;
-    RepeatedPtrField_a0d2dbe7 _field9;
-    RepeatedPtrField_a0d2dbe7 _field10;
-    struct Reference *_field11;
-    int _field12;
-} CanvasSelectionArchive_0d79e056;
-
-typedef struct {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct Reference *_field5;
-    struct CellID *_field6;
-    struct RepeatedPtrField<TST::CellRange> _field7;
-    struct RepeatedPtrField<TST::CellRange> _field8;
-    struct CellID *_field9;
-    struct Reference *_field10;
-    struct CellUIDRegionArchive *_field11;
-    struct CellUIDRegionArchive *_field12;
-    struct UUIDCoordArchive *_field13;
-    struct UUIDCoordArchive *_field14;
-    int _field15;
-} SelectionArchive_8bd2a625;
-
-typedef struct {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct Reference *_field5;
-    struct Reference *_field6;
-} PencilAnnotationArchive_c920bbe2;
-
-typedef struct {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct Reference *_field5;
-    RepeatedField_27dfe32f _field6;
-    RepeatedField_27dfe32f _field7;
-} ChartMediatorArchive_9bee4689;
-
-typedef struct {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct ThemeArchive *_field5;
-    RepeatedPtrField_a0d2dbe7 _field6;
-    basic_string_23d93216 *_field7;
-    RepeatedPtrField_a0d2dbe7 _field8;
-    struct Reference *_field9;
-    struct Reference *_field10;
-    struct RepeatedPtrField<KN::ThemeCustomTimingCurveArchive> _field11;
-    _Bool _field12;
-} ThemeArchive_846062da;
-
-typedef struct {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct ThemeArchive *_field5;
-    RepeatedPtrField_a0d2dbe7 _field6;
-} ThemeArchive_59195ce6;
-
-typedef struct {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    basic_string_23d93216 *_field5;
-    struct Reference *_field6;
-    RepeatedPtrField_a0d2dbe7 _field7;
-    basic_string_23d93216 *_field8;
-    _Bool _field9;
-    _Bool _field10;
-    _Bool _field11;
-} DocumentArchive_9de3ea16;
-
-typedef struct {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    int _field5;
-    _Bool _field6;
-    _Bool _field7;
-    _Bool _field8;
-    _Bool _field9;
-    struct ColumnsArchive *_field10;
-    struct PaddingArchive *_field11;
-    unsigned int _field12;
-    _Bool _field13;
-    struct Reference *_field14;
-} ShapeStylePropertiesArchive_7f628ad1;
-
-typedef struct {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    int _field5;
-    float _field6;
-    float _field7;
-    float _field8;
-    int _field9;
-    float _field10;
-    float _field11;
-    float _field12;
-    float _field13;
-    float _field14;
-    float _field15;
-} Color_0722d876;
-
-typedef struct {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    struct RepeatedPtrField<TSP::Path_Element> _field5;
-} Path_91321ae4;
-
-typedef struct {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    RepeatedPtrField_a0d2dbe7 _field5;
-    struct RepeatedPtrField<TN::SheetUIStateDictionaryEntryArchive> _field6;
-    unsigned int _field7;
-    unsigned int _field8;
-    struct SelectionArchive *_field9;
-    struct RepeatedPtrField<TN::SheetUIStateDictionaryEntryArchive> _field10;
-    int _field11;
-    int _field12;
-    unsigned int _field13;
-    unsigned int _field14;
-    struct ChartSelectionArchive *_field15;
-    struct Reference *_field16;
-    int _field17;
-    _Bool _field18;
-    _Bool _field19;
-    _Bool _field20;
-    _Bool _field21;
-    RepeatedField_27dfe32f _field22;
-    struct Point *_field23;
-    struct Size *_field24;
-    struct Size *_field25;
-    struct RepeatedPtrField<TSCH::ChartUIState> _field26;
-    struct SelectionPathArchive *_field27;
-    struct RepeatedPtrField<TN::UUIDSheetUIStateDictionaryArchive> _field28;
-    struct Reference *_field29;
-    _Bool _field30;
-    _Bool _field31;
-    _Bool _field32;
-    _Bool _field33;
-} UIStateArchive_d4d4fdcb;
-
-typedef struct {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[1];
-    int _field4;
-    RepeatedPtrField_a0d2dbe7 _field5;
-    RepeatedPtrField_a0d2dbe7 _field6;
-    struct Reference *_field7;
-} CanvasSelectionArchive_cc53fcdb;
-
-typedef struct {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[2];
-    struct Point *_field4;
-    struct Reference *_field5;
-    struct Reference *_field6;
-    float _field7;
-    _Bool _field8;
-    _Bool _field9;
-    _Bool _field10;
-    _Bool _field11;
-    struct Size *_field12;
-    struct RepeatedPtrField<TSCH::ChartUIState> _field13;
-    _Bool _field14;
-    _Bool _field15;
-    _Bool _field16;
-    _Bool _field17;
-    int _field18;
-    struct Point *_field19;
-    struct Size *_field20;
-    float _field21;
-    unsigned int _field22;
-    basic_string_23d93216 *_field23;
-    float _field24;
-    float _field25;
-    struct SelectionPathArchive *_field26;
-    _Bool _field27;
-    _Bool _field28;
-    _Bool _field29;
-    _Bool _field30;
-    int _field31;
-    struct SelectionPathArchive *_field32;
-    basic_string_23d93216 *_field33;
-    _Bool _field34;
-    _Bool _field35;
-    int _field36;
-    struct Reference *_field37;
-    struct Reference *_field38;
-    float _field39;
-    int _field40;
-} UIStateArchive_65353e99;
-
-typedef struct {
-    CDUnknownFunctionPointerType *_field1;
-    struct UnknownFieldSet _field2;
-    unsigned int _field3[2];
-    struct Reference *_field4;
-    struct Reference *_field5;
-    struct Size *_field6;
-    struct Point *_field7;
-    float _field8;
-    float _field9;
-    RepeatedPtrField_a0d2dbe7 _field10;
-    struct Point *_field11;
-    struct Point *_field12;
-    struct Reference *_field13;
-    float _field14;
-    float _field15;
-    struct Point *_field16;
-    struct RepeatedPtrField<TSCH::ChartUIState> _field17;
-    float _field18;
-    _Bool _field19;
-    _Bool _field20;
-    _Bool _field21;
-    _Bool _field22;
-    RepeatedPtrField_a0d2dbe7 _field23;
-    RepeatedPtrField_a0d2dbe7 _field24;
-    RepeatedPtrField_a0d2dbe7 _field25;
-    float _field26;
-    float _field27;
-    struct Size *_field28;
-    float _field29;
-    _Bool _field30;
-    _Bool _field31;
-    _Bool _field32;
-    _Bool _field33;
-    struct Point *_field34;
-    struct SelectionPathArchive *_field35;
-    RepeatedPtrField_a0d2dbe7 _field36;
-    float _field37;
-    float _field38;
-    struct Reference *_field39;
-    _Bool _field40;
-    int _field41;
-} UIStateArchive_c8a5529a;
 
 typedef struct {
     struct set<wchar_t, std::__1::less<wchar_t>, std::__1::allocator<wchar_t>> _field1;
@@ -12227,6 +6984,13 @@ typedef struct {
     unsigned long long _field1;
     double _field2;
 } CDStruct_316206b0;
+
+typedef struct {
+    unsigned short id;
+    _Bool firstOneWin;
+    _Bool hasDescendantProperties;
+    unsigned short path[6];
+} CDStruct_1464e8ba;
 
 typedef struct {
     CDUnknownFunctionPointerType _field1;
@@ -12427,6 +7191,11 @@ typedef struct {
 } CDStruct_e3b9714e;
 
 typedef struct {
+    struct TSCERelativeCellCoordinate _field1;
+    struct TSCERelativeCellCoordinate _field2;
+} CDStruct_d36d9755;
+
+typedef struct {
     struct TSUCellCoord topLeft;
     struct TSUCellCoord bottomRight;
 } CDStruct_39acd760;
@@ -12492,7 +7261,8 @@ typedef struct {
     double _field4;
     double _field5;
     _Bool _field6;
-} CDStruct_7e4c5a1e;
+    struct CGAffineTransform _field7;
+} CDStruct_249a8bf0;
 
 typedef struct {
     struct CGRect _field1;
@@ -12502,7 +7272,8 @@ typedef struct {
     struct CGRect _field5;
     double _field6;
     CDStruct_5b0a1db3 _field7;
-} CDStruct_d12891c8;
+    struct CGAffineTransform _field8;
+} CDStruct_8299b2ea;
 
 typedef struct {
     struct CGRect cachedRect;
@@ -12581,146 +7352,152 @@ typedef struct RefTypeHolder<TSCERangeRef, 2> {
 } RefTypeHolder_8c6da553;
 
 typedef struct RepeatedField<bool> {
-    _Bool *_field1;
+    int _field1;
     int _field2;
-    int _field3;
-} RepeatedField_12b14242;
+    union Pointer _field3;
+} RepeatedField_11b8965c;
 
 typedef struct RepeatedField<float> {
-    float *_field1;
+    int _field1;
     int _field2;
-    int _field3;
-} RepeatedField_324622b8;
+    union Pointer _field3;
+} RepeatedField_75407ea4;
 
 typedef struct RepeatedField<int> {
-    int *_field1;
+    int _field1;
     int _field2;
-    int _field3;
-} RepeatedField_c2891982;
+    union Pointer _field3;
+} RepeatedField_f3b68cf6;
 
 typedef struct RepeatedField<unsigned int> {
-    unsigned int *elements_;
-    int current_size_;
-    int total_size_;
-} RepeatedField_27dfe32f;
+    int _field1;
+    int _field2;
+    union Pointer _field3;
+} RepeatedField_018d745b;
+
+typedef struct RepeatedField<unsigned long long> {
+    int _field1;
+    int _field2;
+    union Pointer _field3;
+} RepeatedField_f5bceadf;
 
 typedef struct RepeatedPtrField<TSCH::GridRow> {
-    void **_field1;
+    struct Arena *_field1;
     int _field2;
     int _field3;
-    int _field4;
-} RepeatedPtrField_b5a3b001;
+    struct Rep *_field4;
+} RepeatedPtrField_36342b27;
 
 typedef struct RepeatedPtrField<TSCH::StyleSwapUndoTupleArchive> {
-    void **_field1;
+    struct Arena *_field1;
     int _field2;
     int _field3;
-    int _field4;
-} RepeatedPtrField_a96af6e2;
+    struct Rep *_field4;
+} RepeatedPtrField_6c786866;
 
 typedef struct RepeatedPtrField<TSCH::StyleSwapUndoTuplesArchive> {
-    void **_field1;
+    struct Arena *_field1;
     int _field2;
     int _field3;
-    int _field4;
-} RepeatedPtrField_daf2f3db;
+    struct Rep *_field4;
+} RepeatedPtrField_e6d64692;
 
 typedef struct RepeatedPtrField<TSD::ExteriorTextWrapArchive> {
-    void **_field1;
+    struct Arena *_field1;
     int _field2;
     int _field3;
-    int _field4;
-} RepeatedPtrField_3504fdd6;
+    struct Rep *_field4;
+} RepeatedPtrField_c7c49ab2;
 
 typedef struct RepeatedPtrField<TSD::GeometryArchive> {
-    void **_field1;
+    struct Arena *_field1;
     int _field2;
     int _field3;
-    int _field4;
-} RepeatedPtrField_45e8210e;
+    struct Rep *_field4;
+} RepeatedPtrField_27865cdd;
 
 typedef struct RepeatedPtrField<TSP::Color> {
-    void **_field1;
+    struct Arena *_field1;
     int _field2;
     int _field3;
-    int _field4;
-} RepeatedPtrField_634a5f45;
+    struct Rep *_field4;
+} RepeatedPtrField_c17961e4;
 
 typedef struct RepeatedPtrField<TSP::ComponentExternalReference> {
-    void **_field1;
+    struct Arena *_field1;
     int _field2;
     int _field3;
-    int _field4;
-} RepeatedPtrField_1f1a6efb;
+    struct Rep *_field4;
+} RepeatedPtrField_5bff772f;
 
 typedef struct RepeatedPtrField<TSP::DataInfo> {
-    void **elements_;
-    int current_size_;
-    int allocated_size_;
-    int total_size_;
-} RepeatedPtrField_fe6aca30;
+    struct Arena *_field1;
+    int _field2;
+    int _field3;
+    struct Rep *_field4;
+} RepeatedPtrField_afbe103d;
 
 typedef struct RepeatedPtrField<TSP::DataReference> {
-    void **_field1;
+    struct Arena *_field1;
     int _field2;
     int _field3;
-    int _field4;
-} RepeatedPtrField_5fb0b506;
+    struct Rep *_field4;
+} RepeatedPtrField_867c874a;
 
 typedef struct RepeatedPtrField<TSP::FieldPath> {
-    void **elements_;
+    struct Arena *arena_;
     int current_size_;
-    int allocated_size_;
     int total_size_;
-} RepeatedPtrField_5867f37b;
+    struct Rep *rep_;
+} RepeatedPtrField_02f83fb8;
 
 typedef struct RepeatedPtrField<TSP::ObjectUUIDMapEntry> {
-    void **elements_;
-    int current_size_;
-    int allocated_size_;
-    int total_size_;
-} RepeatedPtrField_c964a194;
+    struct Arena *_field1;
+    int _field2;
+    int _field3;
+    struct Rep *_field4;
+} RepeatedPtrField_87e3812e;
 
 typedef struct RepeatedPtrField<TSP::Range> {
-    void **_field1;
+    struct Arena *_field1;
     int _field2;
     int _field3;
-    int _field4;
-} RepeatedPtrField_c67bb210;
+    struct Rep *_field4;
+} RepeatedPtrField_6e0d89e6;
 
 typedef struct RepeatedPtrField<TSP::Reference> {
-    void **_field1;
+    struct Arena *_field1;
     int _field2;
     int _field3;
-    int _field4;
-} RepeatedPtrField_a0d2dbe7;
+    struct Rep *_field4;
+} RepeatedPtrField_54b3089c;
 
 typedef struct RepeatedPtrField<TSP::UUID> {
-    void **_field1;
+    struct Arena *_field1;
     int _field2;
     int _field3;
-    int _field4;
-} RepeatedPtrField_bfda3daa;
+    struct Rep *_field4;
+} RepeatedPtrField_c4607516;
 
 typedef struct RepeatedPtrField<TSP::UUIDPath> {
-    void **_field1;
+    struct Arena *_field1;
     int _field2;
     int _field3;
-    int _field4;
-} RepeatedPtrField_0a3269f6;
+    struct Rep *_field4;
+} RepeatedPtrField_4f2d564d;
 
 typedef struct RepeatedPtrField<std::__1::basic_string<char>> {
-    void **_field1;
+    struct Arena *_field1;
     int _field2;
     int _field3;
-    int _field4;
-} RepeatedPtrField_236b8a23;
+    struct Rep *_field4;
+} RepeatedPtrField_fe7cf120;
 
 typedef struct StateStack<TSCH3D::ObjectState, 6> {
     unsigned long long mIndex;
     struct ObjectState mCurrent;
     struct ObjectState mStack[6];
-} StateStack_6cdf83e9;
+} StateStack_2a9a65b0;
 
 typedef struct UUIDData<TSP::UUIDData> {
     union {
@@ -12777,10 +7554,6 @@ typedef struct UUIDSet<TSP::UUIDSet> {
 typedef struct __wrap_iter<double *> {
     double *_field1;
 } __wrap_iter_8fb6ff7c;
-
-typedef struct array<(anonymous namespace)::TextureVariables, 2> {
-    struct TextureVariables _field1[2];
-} array_bb63b711;
 
 typedef struct array<unsigned char, 20> {
     unsigned char __elems_[20];
@@ -12865,6 +7638,18 @@ typedef struct map<TSU::UUIDData<TSP::UUIDData>, unsigned long, std::__1::less<T
     } _field1;
 } map_2cd530a9;
 
+typedef struct map<unsigned int, TSTTableHeaderInfo *, std::__1::less<unsigned int>, std::__1::allocator<std::__1::pair<const unsigned int, TSTTableHeaderInfo *>>> {
+    struct __tree<std::__1::__value_type<unsigned int, TSTTableHeaderInfo *>, std::__1::__map_value_compare<unsigned int, std::__1::__value_type<unsigned int, TSTTableHeaderInfo *>, std::__1::less<unsigned int>, true>, std::__1::allocator<std::__1::__value_type<unsigned int, TSTTableHeaderInfo *>>> {
+        struct __tree_end_node<std::__1::__tree_node_base<void *>*> *__begin_node_;
+        struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *>*>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<unsigned int, TSTTableHeaderInfo *>, void *>>> {
+            struct __tree_end_node<std::__1::__tree_node_base<void *>*> __value_;
+        } __pair1_;
+        struct __compressed_pair<unsigned long, std::__1::__map_value_compare<unsigned int, std::__1::__value_type<unsigned int, TSTTableHeaderInfo *>, std::__1::less<unsigned int>, true>> {
+            unsigned long long __value_;
+        } __pair3_;
+    } __tree_;
+} map_9aa73377;
+
 typedef struct map<unsigned long long, std::__1::tuple<std::__1::shared_ptr<google::protobuf::Message>, std::__1::shared_ptr<std::__1::unordered_map<const TSP::FieldPath, TSP::FieldInfoRuleAttributes, TSP::FieldPathHash, TSP::FieldPathEqualTo, std::__1::allocator<std::__1::pair<const TSP::FieldPath, TSP::FieldInfoRuleAttributes>>>>, std::__1::shared_ptr<std::__1::unordered_map<const long long, bool, TSP::IdentifierHash, std::__1::equal_to<const long long>, std::__1::allocator<std::__1::pair<const long long, bool>>>>>, std::__1::less<unsigned long long>, std::__1::allocator<std::__1::pair<const unsigned long long, std::__1::tuple<std::__1::shared_ptr<google::protobuf::Message>, std::__1::shared_ptr<std::__1::unordered_map<const TSP::FieldPath, TSP::FieldInfoRuleAttributes, TSP::FieldPathHash, TSP::FieldPathEqualTo, std::__1::allocator<std::__1::pair<const TSP::FieldPath, TSP::FieldInfoRuleAttributes>>>>, std::__1::shared_ptr<std::__1::unordered_map<const long long, bool, TSP::IdentifierHash, std::__1::equal_to<const long long>, std::__1::allocator<std::__1::pair<const long long, bool>>>>>>>> {
     struct __tree<std::__1::__value_type<unsigned long long, std::__1::tuple<std::__1::shared_ptr<google::protobuf::Message>, std::__1::shared_ptr<std::__1::unordered_map<const TSP::FieldPath, TSP::FieldInfoRuleAttributes, TSP::FieldPathHash, TSP::FieldPathEqualTo, std::__1::allocator<std::__1::pair<const TSP::FieldPath, TSP::FieldInfoRuleAttributes>>>>, std::__1::shared_ptr<std::__1::unordered_map<const long long, bool, TSP::IdentifierHash, std::__1::equal_to<const long long>, std::__1::allocator<std::__1::pair<const long long, bool>>>>>>, std::__1::__map_value_compare<unsigned long long, std::__1::__value_type<unsigned long long, std::__1::tuple<std::__1::shared_ptr<google::protobuf::Message>, std::__1::shared_ptr<std::__1::unordered_map<const TSP::FieldPath, TSP::FieldInfoRuleAttributes, TSP::FieldPathHash, TSP::FieldPathEqualTo, std::__1::allocator<std::__1::pair<const TSP::FieldPath, TSP::FieldInfoRuleAttributes>>>>, std::__1::shared_ptr<std::__1::unordered_map<const long long, bool, TSP::IdentifierHash, std::__1::equal_to<const long long>, std::__1::allocator<std::__1::pair<const long long, bool>>>>>>, std::__1::less<unsigned long long>, true>, std::__1::allocator<std::__1::__value_type<unsigned long long, std::__1::tuple<std::__1::shared_ptr<google::protobuf::Message>, std::__1::shared_ptr<std::__1::unordered_map<const TSP::FieldPath, TSP::FieldInfoRuleAttributes, TSP::FieldPathHash, TSP::FieldPathEqualTo, std::__1::allocator<std::__1::pair<const TSP::FieldPath, TSP::FieldInfoRuleAttributes>>>>, std::__1::shared_ptr<std::__1::unordered_map<const long long, bool, TSP::IdentifierHash, std::__1::equal_to<const long long>, std::__1::allocator<std::__1::pair<const long long, bool>>>>>>>> {
         struct __tree_end_node<std::__1::__tree_node_base<void *>*> *_field1;
@@ -12877,17 +7662,17 @@ typedef struct map<unsigned long long, std::__1::tuple<std::__1::shared_ptr<goog
     } _field1;
 } map_4bea934e;
 
-typedef struct multimap<TSUCellCoord, std::__1::tuple<unsigned int, unsigned short, TSTCellStorage *>, std::__1::less<TSUCellCoord>, std::__1::allocator<std::__1::pair<const TSUCellCoord, std::__1::tuple<unsigned int, unsigned short, TSTCellStorage *>>>> {
-    struct __tree<std::__1::__value_type<TSUCellCoord, std::__1::tuple<unsigned int, unsigned short, TSTCellStorage *>>, std::__1::__map_value_compare<TSUCellCoord, std::__1::__value_type<TSUCellCoord, std::__1::tuple<unsigned int, unsigned short, TSTCellStorage *>>, std::__1::less<TSUCellCoord>, true>, std::__1::allocator<std::__1::__value_type<TSUCellCoord, std::__1::tuple<unsigned int, unsigned short, TSTCellStorage *>>>> {
+typedef struct multimap<TSUCellCoord, std::__1::tuple<unsigned int, unsigned long, TSTCellStorage *>, std::__1::less<TSUCellCoord>, std::__1::allocator<std::__1::pair<const TSUCellCoord, std::__1::tuple<unsigned int, unsigned long, TSTCellStorage *>>>> {
+    struct __tree<std::__1::__value_type<TSUCellCoord, std::__1::tuple<unsigned int, unsigned long, TSTCellStorage *>>, std::__1::__map_value_compare<TSUCellCoord, std::__1::__value_type<TSUCellCoord, std::__1::tuple<unsigned int, unsigned long, TSTCellStorage *>>, std::__1::less<TSUCellCoord>, true>, std::__1::allocator<std::__1::__value_type<TSUCellCoord, std::__1::tuple<unsigned int, unsigned long, TSTCellStorage *>>>> {
         struct __tree_end_node<std::__1::__tree_node_base<void *>*> *_field1;
-        struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *>*>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<TSUCellCoord, std::__1::tuple<unsigned int, unsigned short, TSTCellStorage *>>, void *>>> {
+        struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *>*>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<TSUCellCoord, std::__1::tuple<unsigned int, unsigned long, TSTCellStorage *>>, void *>>> {
             struct __tree_end_node<std::__1::__tree_node_base<void *>*> _field1;
         } _field2;
-        struct __compressed_pair<unsigned long, std::__1::__map_value_compare<TSUCellCoord, std::__1::__value_type<TSUCellCoord, std::__1::tuple<unsigned int, unsigned short, TSTCellStorage *>>, std::__1::less<TSUCellCoord>, true>> {
+        struct __compressed_pair<unsigned long, std::__1::__map_value_compare<TSUCellCoord, std::__1::__value_type<TSUCellCoord, std::__1::tuple<unsigned int, unsigned long, TSTCellStorage *>>, std::__1::less<TSUCellCoord>, true>> {
             unsigned long long _field1;
         } _field3;
     } _field1;
-} multimap_672c207c;
+} multimap_0345fd13;
 
 typedef struct multimap<unsigned long, TPPageLayout *, std::__1::less<unsigned long>, std::__1::allocator<std::__1::pair<const unsigned long, TPPageLayout *>>> {
     struct __tree<std::__1::__value_type<unsigned long, TPPageLayout *>, std::__1::__map_value_compare<unsigned long, std::__1::__value_type<unsigned long, TPPageLayout *>, std::__1::less<unsigned long>, true>, std::__1::allocator<std::__1::__value_type<unsigned long, TPPageLayout *>>> {
@@ -12936,11 +7721,6 @@ typedef struct pair<double, double> {
     double _field2;
 } pair_b2618ff2;
 
-typedef struct pair<int, int> {
-    int _field1;
-    int _field2;
-} pair_65f741c2;
-
 typedef struct plane<glm::detail::tvec3<float>> {
     tvec3_17f03ce0 mNormal;
     float mDistance;
@@ -12950,6 +7730,11 @@ typedef struct range<double> {
     double _field1;
     double _field2;
 } range_2a4e38ce;
+
+typedef struct range<unsigned int> {
+    unsigned int _field1;
+    unsigned int _field2;
+} range_f61e6b34;
 
 typedef struct set<EQKitTypes::Attributes::Enum, std::__1::less<EQKitTypes::Attributes::Enum>, std::__1::allocator<EQKitTypes::Attributes::Enum>> {
     struct __tree<EQKitTypes::Attributes::Enum, std::__1::less<EQKitTypes::Attributes::Enum>, std::__1::allocator<EQKitTypes::Attributes::Enum>> {
@@ -13010,6 +7795,11 @@ typedef struct set<long long, std::__1::less<long long>, std::__1::allocator<lon
     } _field1;
 } set_713dd2e1;
 
+typedef struct shared_ptr<TSKCO::AbstractOperation> {
+    struct AbstractOperation *_field1;
+    struct __shared_weak_count *_field2;
+} shared_ptr_f167ad79;
+
 typedef struct shared_ptr<TSP::ArchiveInfo> {
     struct ArchiveInfo *__ptr_;
     struct __shared_weak_count *__cntrl_;
@@ -13030,11 +7820,6 @@ typedef struct shared_ptr<google::protobuf::Message> {
     struct __shared_weak_count *_field2;
 } shared_ptr_cd1ed623;
 
-typedef struct shared_ptr<google::protobuf::UnknownFieldSet> {
-    struct UnknownFieldSet *__ptr_;
-    struct __shared_weak_count *__cntrl_;
-} shared_ptr_b9bbcad9;
-
 typedef struct stack<std::__1::pair<const Action *, int>, std::__1::deque<std::__1::pair<const Action *, int>, std::__1::allocator<std::__1::pair<const Action *, int>>>> {
     struct deque<std::__1::pair<const Action *, int>, std::__1::allocator<std::__1::pair<const Action *, int>>> _field1;
 } stack_00018fe6;
@@ -13042,10 +7827,6 @@ typedef struct stack<std::__1::pair<const Action *, int>, std::__1::deque<std::_
 typedef struct stack<std::__1::shared_ptr<StateSpec>, std::__1::deque<std::__1::shared_ptr<StateSpec>, std::__1::allocator<std::__1::shared_ptr<StateSpec>>>> {
     struct deque<std::__1::shared_ptr<StateSpec>, std::__1::allocator<std::__1::shared_ptr<StateSpec>>> _field1;
 } stack_e5003a0d;
-
-typedef struct tmat2x2<float> {
-    tvec2_84d5962d _field1[2];
-} tmat2x2_6cc53533;
 
 typedef struct tmat3x3<float> {
     tvec3_17f03ce0 value[3];
@@ -13061,22 +7842,6 @@ typedef struct tquat<float> {
     float z;
     float w;
 } tquat_f3d6c8fe;
-
-typedef struct tvec1<float> {
-    union {
-        float _field1;
-        float _field2;
-        float _field3;
-    } _field1;
-} tvec1_58a8085a;
-
-typedef struct tvec1<int> {
-    union {
-        int _field1;
-        int _field2;
-        int _field3;
-    } _field1;
-} tvec1_dad7e00b;
 
 typedef struct tvec2<bool> {
     union {
@@ -13116,29 +7881,6 @@ typedef struct tvec3<int> {
         int p;
     } ;
 } tvec3_c2818ced;
-
-typedef struct tvec4<bool> {
-    union {
-        _Bool _field1;
-        _Bool _field2;
-        _Bool _field3;
-    } _field1;
-    union {
-        _Bool _field1;
-        _Bool _field2;
-        _Bool _field3;
-    } _field2;
-    union {
-        _Bool _field1;
-        _Bool _field2;
-        _Bool _field3;
-    } _field3;
-    union {
-        _Bool _field1;
-        _Bool _field2;
-        _Bool _field3;
-    } _field4;
-} tvec4_d23a2b6e;
 
 typedef struct tvec4<float> {
     CDUnion_d07f0a1e ;
@@ -13339,6 +8081,21 @@ typedef struct unordered_map<const long long, bool, TSP::IdentifierHash, std::__
     } __table_;
 } unordered_map_38045d47;
 
+typedef struct unordered_map<unsigned long, TSPLazyReference *, std::__1::hash<unsigned long>, std::__1::equal_to<unsigned long>, std::__1::allocator<std::__1::pair<const unsigned long, TSPLazyReference *>>> {
+    struct __hash_table<std::__1::__hash_value_type<unsigned long, TSPLazyReference *>, std::__1::__unordered_map_hasher<unsigned long, std::__1::__hash_value_type<unsigned long, TSPLazyReference *>, std::__1::hash<unsigned long>, true>, std::__1::__unordered_map_equal<unsigned long, std::__1::__hash_value_type<unsigned long, TSPLazyReference *>, std::__1::equal_to<unsigned long>, true>, std::__1::allocator<std::__1::__hash_value_type<unsigned long, TSPLazyReference *>>> {
+        struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long, TSPLazyReference *>, void *>*>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long, TSPLazyReference *>, void *>*>*>>> _field1;
+        struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long, TSPLazyReference *>, void *>*>, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long, TSPLazyReference *>, void *>>> {
+            struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long, TSPLazyReference *>, void *>*> _field1;
+        } _field2;
+        struct __compressed_pair<unsigned long, std::__1::__unordered_map_hasher<unsigned long, std::__1::__hash_value_type<unsigned long, TSPLazyReference *>, std::__1::hash<unsigned long>, true>> {
+            unsigned long long _field1;
+        } _field3;
+        struct __compressed_pair<float, std::__1::__unordered_map_equal<unsigned long, std::__1::__hash_value_type<unsigned long, TSPLazyReference *>, std::__1::equal_to<unsigned long>, true>> {
+            float _field1;
+        } _field4;
+    } _field1;
+} unordered_map_52392278;
+
 typedef struct unordered_set<TSCEArgumentType, std::__1::hash<TSCEArgumentType>, std::__1::equal_to<TSCEArgumentType>, std::__1::allocator<TSCEArgumentType>> {
     struct __hash_table<TSCEArgumentType, std::__1::hash<TSCEArgumentType>, std::__1::equal_to<TSCEArgumentType>, std::__1::allocator<TSCEArgumentType>> {
         struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<TSCEArgumentType, void *>*>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<TSCEArgumentType, void *>*>*>>> __bucket_list_;
@@ -13445,14 +8202,6 @@ typedef struct vector<TSCEFormula, std::__1::allocator<TSCEFormula>> {
     } __end_cap_;
 } vector_eeb872f1;
 
-typedef struct vector<TSCEFormulaOwnerKind, std::__1::allocator<TSCEFormulaOwnerKind>> {
-    int *_field1;
-    int *_field2;
-    struct __compressed_pair<TSCEFormulaOwnerKind *, std::__1::allocator<TSCEFormulaOwnerKind>> {
-        int *_field1;
-    } _field3;
-} vector_79ca7eec;
-
 typedef struct vector<TSCEFunctionArgSpec, std::__1::allocator<TSCEFunctionArgSpec>> {
     struct TSCEFunctionArgSpec *__begin_;
     struct TSCEFunctionArgSpec *__end_;
@@ -13460,6 +8209,14 @@ typedef struct vector<TSCEFunctionArgSpec, std::__1::allocator<TSCEFunctionArgSp
         struct TSCEFunctionArgSpec *__value_;
     } __end_cap_;
 } vector_2a3fe66d;
+
+typedef struct vector<TSCEGroupingColumnChange, std::__1::allocator<TSCEGroupingColumnChange>> {
+    struct TSCEGroupingColumnChange *__begin_;
+    struct TSCEGroupingColumnChange *__end_;
+    struct __compressed_pair<TSCEGroupingColumnChange *, std::__1::allocator<TSCEGroupingColumnChange>> {
+        struct TSCEGroupingColumnChange *__value_;
+    } __end_cap_;
+} vector_6018b200;
 
 typedef struct vector<TSCERangeCoordinate, std::__1::allocator<TSCERangeCoordinate>> {
     struct TSCERangeCoordinate *__begin_;
@@ -13484,6 +8241,14 @@ typedef struct vector<TSCEReferenceValue, std::__1::allocator<TSCEReferenceValue
         struct TSCEReferenceValue *_field1;
     } _field3;
 } vector_99ef3555;
+
+typedef struct vector<TSCESubFormulaOwnerIndex, std::__1::allocator<TSCESubFormulaOwnerIndex>> {
+    unsigned short *_field1;
+    unsigned short *_field2;
+    struct __compressed_pair<TSCESubFormulaOwnerIndex *, std::__1::allocator<TSCESubFormulaOwnerIndex>> {
+        unsigned short *_field1;
+    } _field3;
+} vector_8b45bc7e;
 
 typedef struct vector<TSCEValue, std::__1::allocator<TSCEValue>> {
     struct TSCEValue *__begin_;
@@ -13517,14 +8282,6 @@ typedef struct vector<TSCH3D::PODType<unsigned short>, std::__1::allocator<TSCH3
     } __end_cap_;
 } vector_e28bcd8e;
 
-typedef struct vector<TSCH3D::RenderElementInfo, std::__1::allocator<TSCH3D::RenderElementInfo>> {
-    struct RenderElementInfo *__begin_;
-    struct RenderElementInfo *__end_;
-    struct __compressed_pair<TSCH3D::RenderElementInfo *, std::__1::allocator<TSCH3D::RenderElementInfo>> {
-        struct RenderElementInfo *__value_;
-    } __end_cap_;
-} vector_d7c2985b;
-
 typedef struct vector<TSCH3DShaderVariableScopeType, std::__1::allocator<TSCH3DShaderVariableScopeType>> {
     struct TSCH3DShaderVariableScopeType *__begin_;
     struct TSCH3DShaderVariableScopeType *__end_;
@@ -13540,6 +8297,14 @@ typedef struct vector<TSDBrushVertexData, std::__1::allocator<TSDBrushVertexData
         CDStruct_183601bc *_field1;
     } _field3;
 } vector_8bba9095;
+
+typedef struct vector<TSKOperationPropertyId, std::__1::allocator<TSKOperationPropertyId>> {
+    unsigned short *_field1;
+    unsigned short *_field2;
+    struct __compressed_pair<TSKOperationPropertyId *, std::__1::allocator<TSKOperationPropertyId>> {
+        unsigned short *_field1;
+    } _field3;
+} vector_941b75ab;
 
 typedef struct vector<TSP::UnarchiverReference, std::__1::allocator<TSP::UnarchiverReference>> {
     struct UnarchiverReference *__begin_;
@@ -13676,20 +8441,12 @@ typedef struct vector<float, std::__1::allocator<float>> {
 } vector_7584168e;
 
 typedef struct vector<glm::detail::tvec1<float>, std::__1::allocator<glm::detail::tvec1<float>>> {
-    tvec1_58a8085a *__begin_;
-    tvec1_58a8085a *__end_;
+    struct tvec1<float> *__begin_;
+    struct tvec1<float> *__end_;
     struct __compressed_pair<glm::detail::tvec1<float>*, std::__1::allocator<glm::detail::tvec1<float>>> {
-        tvec1_58a8085a *__value_;
+        struct tvec1<float> *__value_;
     } __end_cap_;
 } vector_9ed239ac;
-
-typedef struct vector<glm::detail::tvec1<int>, std::__1::allocator<glm::detail::tvec1<int>>> {
-    tvec1_dad7e00b *_field1;
-    tvec1_dad7e00b *_field2;
-    struct __compressed_pair<glm::detail::tvec1<int>*, std::__1::allocator<glm::detail::tvec1<int>>> {
-        tvec1_dad7e00b *_field1;
-    } _field3;
-} vector_319661ea;
 
 typedef struct vector<glm::detail::tvec2<float>, std::__1::allocator<glm::detail::tvec2<float>>> {
     tvec2_84d5962d *__begin_;
@@ -13699,14 +8456,6 @@ typedef struct vector<glm::detail::tvec2<float>, std::__1::allocator<glm::detail
     } __end_cap_;
 } vector_d73af98f;
 
-typedef struct vector<glm::detail::tvec2<int>, std::__1::allocator<glm::detail::tvec2<int>>> {
-    tvec2_3b141483 *__begin_;
-    tvec2_3b141483 *__end_;
-    struct __compressed_pair<glm::detail::tvec2<int>*, std::__1::allocator<glm::detail::tvec2<int>>> {
-        tvec2_3b141483 *__value_;
-    } __end_cap_;
-} vector_522a5b3a;
-
 typedef struct vector<glm::detail::tvec3<float>, std::__1::allocator<glm::detail::tvec3<float>>> {
     tvec3_17f03ce0 *__begin_;
     tvec3_17f03ce0 *__end_;
@@ -13715,14 +8464,6 @@ typedef struct vector<glm::detail::tvec3<float>, std::__1::allocator<glm::detail
     } __end_cap_;
 } vector_7200ab52;
 
-typedef struct vector<glm::detail::tvec3<int>, std::__1::allocator<glm::detail::tvec3<int>>> {
-    tvec3_c2818ced *_field1;
-    tvec3_c2818ced *_field2;
-    struct __compressed_pair<glm::detail::tvec3<int>*, std::__1::allocator<glm::detail::tvec3<int>>> {
-        tvec3_c2818ced *_field1;
-    } _field3;
-} vector_e600bae4;
-
 typedef struct vector<glm::detail::tvec4<float>, std::__1::allocator<glm::detail::tvec4<float>>> {
     tvec4_ac57c72d *__begin_;
     tvec4_ac57c72d *__end_;
@@ -13730,14 +8471,6 @@ typedef struct vector<glm::detail::tvec4<float>, std::__1::allocator<glm::detail
         tvec4_ac57c72d *__value_;
     } __end_cap_;
 } vector_ccfc515b;
-
-typedef struct vector<glm::detail::tvec4<int>, std::__1::allocator<glm::detail::tvec4<int>>> {
-    tvec4_f99fd489 *_field1;
-    tvec4_f99fd489 *_field2;
-    struct __compressed_pair<glm::detail::tvec4<int>*, std::__1::allocator<glm::detail::tvec4<int>>> {
-        tvec4_f99fd489 *_field1;
-    } _field3;
-} vector_50d79d4a;
 
 typedef struct vector<int, std::__1::allocator<int>> {
     int *__begin_;
@@ -13754,6 +8487,22 @@ typedef struct vector<long, std::__1::allocator<long>> {
         long long *__value_;
     } __end_cap_;
 } vector_afed86a5;
+
+typedef struct vector<std::__1::pair<TSCEValue, TSUCellCoord>, std::__1::allocator<std::__1::pair<TSCEValue, TSUCellCoord>>> {
+    struct pair<TSCEValue, TSUCellCoord> *_field1;
+    struct pair<TSCEValue, TSUCellCoord> *_field2;
+    struct __compressed_pair<std::__1::pair<TSCEValue, TSUCellCoord>*, std::__1::allocator<std::__1::pair<TSCEValue, TSUCellCoord>>> {
+        struct pair<TSCEValue, TSUCellCoord> *_field1;
+    } _field3;
+} vector_06892659;
+
+typedef struct vector<std::__1::pair<unsigned int, unsigned long>, std::__1::allocator<std::__1::pair<unsigned int, unsigned long>>> {
+    struct pair<unsigned int, unsigned long> *_field1;
+    struct pair<unsigned int, unsigned long> *_field2;
+    struct __compressed_pair<std::__1::pair<unsigned int, unsigned long>*, std::__1::allocator<std::__1::pair<unsigned int, unsigned long>>> {
+        struct pair<unsigned int, unsigned long> *_field1;
+    } _field3;
+} vector_ceceab0b;
 
 typedef struct vector<unsigned char, std::__1::allocator<unsigned char>> {
     char *__begin_;
@@ -13795,15 +8544,16 @@ typedef struct vector<void (^)(), std::__1::allocator<void (^)()>> {
     } __end_cap_;
 } vector_3c415888;
 
+#pragma mark Named Unions
+
+union Pointer {
+    struct Arena *arena;
+    struct Rep *rep;
+};
+
 #pragma mark Typedef'd Unions
 
 // Ambiguous groups
-typedef union {
-    _Bool _field1;
-    _Bool _field2;
-    _Bool _field3;
-} CDUnion_2cf95dea;
-
 typedef union {
     float x;
     float r;

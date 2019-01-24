@@ -14,7 +14,7 @@ __attribute__((visibility("hidden")))
     TSCH3DPrefilteredLineRenderer *mRenderer;
 }
 
-+ (struct TSCH3DScenePart)partWithAxes:(id)arg1;
++ (id)partWithAxes:(id)arg1;
 - (void)postGetBounds:(id)arg1;
 - (void)primeRenderCaches:(id)arg1;
 - (void)getBounds:(id)arg1;

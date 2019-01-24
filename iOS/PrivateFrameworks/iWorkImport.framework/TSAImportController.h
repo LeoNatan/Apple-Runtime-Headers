@@ -11,7 +11,7 @@
 #import <iWorkImport/TSPObjectContextDelegate-Protocol.h>
 
 @class NSDictionary, NSError, NSMapTable, NSMutableArray, NSMutableSet, NSOperationQueue, NSProgress, NSSet, NSString, NSURL, NSUUID, TSPObjectContext, TSUProgressContext, TSUTemporaryDirectory;
-@protocol NSFilePresenter, OS_dispatch_group, TSAImportDelegate, TSKImporter;
+@protocol NSFilePresenter, OS_dispatch_group, TSADocumentPassphraseProvider, TSAImportDelegate, TSKImporter;
 
 __attribute__((visibility("hidden")))
 @interface TSAImportController : NSObject <TSPObjectContextDelegate, NSFilePresenter, TSDImportExportDelegate>
@@ -39,10 +39,12 @@ __attribute__((visibility("hidden")))
     NSError *_error;
     TSPObjectContext *_documentContext;
     TSUProgressContext *_progressContext;
+    id <TSADocumentPassphraseProvider> _passphraseProvider;
     NSURL *_fileURL;
 }
 
 @property(copy, nonatomic) NSURL *fileURL; // @synthesize fileURL=_fileURL;
+@property(nonatomic) __weak id <TSADocumentPassphraseProvider> passphraseProvider; // @synthesize passphraseProvider=_passphraseProvider;
 @property(retain, nonatomic) TSUProgressContext *progressContext; // @synthesize progressContext=_progressContext;
 @property(readonly, nonatomic) TSPObjectContext *documentContext; // @synthesize documentContext=_documentContext;
 @property(readonly, nonatomic) NSError *error; // @synthesize error=_error;
@@ -70,9 +72,9 @@ __attribute__((visibility("hidden")))
 - (void)addWarning:(id)arg1;
 - (id)warnings;
 @property(readonly, nonatomic) _Bool hasWarnings;
+- (id)documentProvider;
 - (id)defaultDraftName;
 - (id)name;
-- (id)sharingStateForContext:(id)arg1;
 - (id)logContext;
 - (void)_setPresentedItemURL:(id)arg1;
 - (void)removeFilePresenter;
@@ -85,7 +87,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) _Bool isImportCancelled;
 - (void)cancelImport;
 - (void)finishImportWithSuccess:(_Bool)arg1 error:(id)arg2;
-- (void)didSaveImportedDocumentWithPassphrase:(id)arg1;
 - (void)willSaveImportedDocument;
 - (void)_performImportWithCompletedSteps:(int)arg1;
 - (_Bool)_saveContextToTemporaryURL:(id)arg1 passphrase:(id)arg2 originalURL:(id)arg3 documentUUID:(id)arg4 error:(id *)arg5;

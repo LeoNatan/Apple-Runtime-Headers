@@ -34,7 +34,7 @@
 - (id)payloads;
 - (id)localizedManagedPayloadSummaryByType;
 - (id)localizedPayloadSummaryByType;
-- (id)initWithDictionary:(id)arg1 allowEmptyPayload:(_Bool)arg2 outError:(id *)arg3;
+- (id)initWithDictionary:(id)arg1 signerCerts:(id)arg2 allowEmptyPayload:(_Bool)arg3 outError:(id *)arg4;
 - (id)_unsupportedValueErrorWithFieldName:(id)arg1 value:(id)arg2;
 - (id)_badDataTypeErrorWithFieldName:(id)arg1;
 

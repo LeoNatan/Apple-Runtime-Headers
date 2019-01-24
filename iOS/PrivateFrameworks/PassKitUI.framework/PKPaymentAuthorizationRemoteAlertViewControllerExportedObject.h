@@ -27,6 +27,7 @@
 - (void)authorizationDidSelectPaymentMethodCompleteWithUpdate:(id)arg1;
 - (void)authorizationDidSelectShippingAddressCompleteWithUpdate:(id)arg1;
 - (void)authorizationDidSelectShippingMethodCompleteWithUpdate:(id)arg1;
+- (void)authorizationDidAuthorizeDisbursementWithResult:(id)arg1;
 - (void)authorizationDidAuthorizePeerPaymentQuoteCompleteWithResult:(id)arg1;
 - (void)authorizationDidAuthorizePurchaseCompleteWithStatus:(long long)arg1;
 - (void)authorizationDidAuthorizePaymentCompleteWithResult:(id)arg1;

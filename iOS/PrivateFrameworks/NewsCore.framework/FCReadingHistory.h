@@ -6,13 +6,15 @@
 
 #import <NewsCore/FCPrivateDataController.h>
 
-@class FCMTWriterMutexLock, NSMutableDictionary, NSSet;
+#import <NewsCore/FCClearableReadingHistory-Protocol.h>
 
-@interface FCReadingHistory : FCPrivateDataController
+@class FCMTWriterLock, NSMutableDictionary, NSSet, NSString;
+
+@interface FCReadingHistory : FCPrivateDataController <FCClearableReadingHistory>
 {
     NSMutableDictionary *_itemsByIdentifier;
     NSMutableDictionary *_itemsByArticleID;
-    FCMTWriterMutexLock *_itemsLock;
+    FCMTWriterLock *_itemsLock;
 }
 
 + (void)configureKeyValueStoreForJSONHandling:(id)arg1;
@@ -29,7 +31,7 @@
 + (_Bool)requiresBatchedSync;
 + (_Bool)requiresPushNotificationSupport;
 + (id)desiredKeys;
-@property(retain, nonatomic) FCMTWriterMutexLock *itemsLock; // @synthesize itemsLock=_itemsLock;
+@property(retain, nonatomic) FCMTWriterLock *itemsLock; // @synthesize itemsLock=_itemsLock;
 @property(retain, nonatomic) NSMutableDictionary *itemsByArticleID; // @synthesize itemsByArticleID=_itemsByArticleID;
 @property(retain, nonatomic) NSMutableDictionary *itemsByIdentifier; // @synthesize itemsByIdentifier=_itemsByIdentifier;
 - (void).cxx_destruct;
@@ -77,6 +79,12 @@
 - (void)loadLocalCachesFromStore;
 - (id)syncReadingHistoryItemRecords:(id)arg1 deletedArticleIDs:(id)arg2 didRemoveLastVisitedAt:(out _Bool *)arg3;
 - (id)initWithContext:(id)arg1 pushNotificationCenter:(id)arg2 storeDirectory:(id)arg3;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

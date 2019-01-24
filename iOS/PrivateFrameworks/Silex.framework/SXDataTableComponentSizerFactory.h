@@ -9,23 +9,25 @@
 #import <Silex/SXComponentSizerFactory-Protocol.h>
 
 @class NSString;
-@protocol SXDataTableTextSourceFactory, SXDocumentControllerProvider, SXTextComponentLayoutHosting;
+@protocol SXDOMObjectProviding, SXDataRecordValueTransformerFactory, SXDataTableTextSourceFactory, SXTextComponentLayoutHosting;
 
 @interface SXDataTableComponentSizerFactory : NSObject <SXComponentSizerFactory>
 {
-    id <SXDocumentControllerProvider> _documentControllerProvider;
+    id <SXDOMObjectProviding> _DOMObjectProvider;
     id <SXTextComponentLayoutHosting> _textComponentLayoutHosting;
     id <SXDataTableTextSourceFactory> _textSourceFactory;
+    id <SXDataRecordValueTransformerFactory> _recordValueTransformerFactory;
 }
 
+@property(readonly, nonatomic) id <SXDataRecordValueTransformerFactory> recordValueTransformerFactory; // @synthesize recordValueTransformerFactory=_recordValueTransformerFactory;
 @property(readonly, nonatomic) id <SXDataTableTextSourceFactory> textSourceFactory; // @synthesize textSourceFactory=_textSourceFactory;
 @property(readonly, nonatomic) id <SXTextComponentLayoutHosting> textComponentLayoutHosting; // @synthesize textComponentLayoutHosting=_textComponentLayoutHosting;
-@property(readonly, nonatomic) id <SXDocumentControllerProvider> documentControllerProvider; // @synthesize documentControllerProvider=_documentControllerProvider;
+@property(readonly, nonatomic) id <SXDOMObjectProviding> DOMObjectProvider; // @synthesize DOMObjectProvider=_DOMObjectProvider;
 - (void).cxx_destruct;
-- (id)sizerForComponent:(id)arg1 componentLayout:(id)arg2 layoutAttributes:(id)arg3;
+- (id)sizerForComponent:(id)arg1 componentLayout:(id)arg2 layoutOptions:(id)arg3 DOMObjectProvider:(id)arg4;
 @property(readonly, nonatomic) int role;
 @property(readonly, nonatomic) NSString *type;
-- (id)initWithDocumentControllerProvider:(id)arg1 textComponentLayoutHosting:(id)arg2 textSourceFactory:(id)arg3;
+- (id)initWithDOMObjectProvider:(id)arg1 textComponentLayoutHosting:(id)arg2 textSourceFactory:(id)arg3 recordValueTransformerFactory:(id)arg4;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

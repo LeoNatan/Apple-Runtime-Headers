@@ -12,6 +12,8 @@
 {
 }
 
+- (id)_appState;
+- (id)description;
 @property(readonly, nonatomic, getter=isSatisfied) _Bool satisfied;
 
 @end

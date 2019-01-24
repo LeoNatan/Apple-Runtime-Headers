@@ -8,18 +8,16 @@
 
 #import <AppKit/NSCollectionViewElement-Protocol.h>
 
-@class NSAppearance, NSColor, NSString;
+@class NSColor, NSString;
 
 __attribute__((visibility("hidden")))
 @interface NSColorPanelFavoriteSwatchView : NSView <NSCollectionViewElement>
 {
     NSColor *_color;
-    NSAppearance *_appearanceForRenderingColor;
 }
 
 + (struct CGSize)intrinsicContentSize;
 + (id)keyPathsForValuesInvalidatingDisplay;
-@property(retain) NSAppearance *appearanceForRenderingColor; // @synthesize appearanceForRenderingColor=_appearanceForRenderingColor;
 @property(copy) NSColor *color; // @synthesize color=_color;
 - (struct CGRect)focusRingMaskBounds;
 - (void)drawFocusRingMask;

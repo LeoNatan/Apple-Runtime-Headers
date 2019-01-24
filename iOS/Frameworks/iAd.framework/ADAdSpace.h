@@ -52,6 +52,7 @@
     ADMediaAnalyticsEventInfo *_pendingAnalyticsEventInfo;
     ADMRAIDAction *_mraidAction;
     long long _visibility;
+    long long _requestOrientation;
     double _lastSlowCheck;
     ADCreativeController *_creativeController;
     ADWebViewActionViewController *_webViewActionViewController;
@@ -81,6 +82,7 @@
 @property(retain, nonatomic) ADCreativeController *creativeController; // @synthesize creativeController=_creativeController;
 @property(nonatomic) double lastSlowCheck; // @synthesize lastSlowCheck=_lastSlowCheck;
 @property(nonatomic) _Bool shouldMonitorVisibility; // @synthesize shouldMonitorVisibility=_shouldMonitorVisibility;
+@property(nonatomic) long long requestOrientation; // @synthesize requestOrientation=_requestOrientation;
 @property(nonatomic) _Bool adRequestMade; // @synthesize adRequestMade=_adRequestMade;
 @property(nonatomic) _Bool visibilityCheckScheduled; // @synthesize visibilityCheckScheduled=_visibilityCheckScheduled;
 @property(nonatomic) long long visibility; // @synthesize visibility=_visibility;
@@ -133,7 +135,9 @@
 - (void)_tearDownCustomActionViewController;
 - (void)_tearDownWebActionViewController;
 - (void)presentActionViewController:(id)arg1;
+- (void)useSafariViewControllerToOpenURL:(id)arg1;
 - (void)_considerPresentingWebViewActionViewControllerWithURL:(id)arg1;
+- (_Bool)isInternalDeepLinkURL:(id)arg1;
 - (void)_remote_resumeBannerMedia;
 - (void)_remote_pauseBannerMedia;
 - (void)_openURLInBrowser:(id)arg1;

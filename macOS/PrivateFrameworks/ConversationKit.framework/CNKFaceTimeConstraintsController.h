@@ -16,7 +16,7 @@
     // Error parsing type: , name: viewControllerLayout
 }
 
-- (CDUnknownBlockType).cxx_destruct;
+- (void).cxx_destruct;
 - (id)init;
 - (void)updateConstraintsWith:(id)arg1 controlsViewController:(id)arg2 effectsView:(id)arg3 effectsBrowserViewController:(id)arg4;
 - (void)removeEffectsConstraints;

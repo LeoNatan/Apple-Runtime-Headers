@@ -8,7 +8,7 @@
 
 #import <NewsCore/FCFeedTransforming-Protocol.h>
 
-@class NSSet, NSString;
+@class FCBundleSubscription, NSSet, NSString;
 
 @interface FCFeedTransformationFilter : NSObject <FCFeedTransforming>
 {
@@ -19,11 +19,13 @@
     NSSet *_subscribedTagIDs;
     NSSet *_purchasedTagIDs;
     NSString *_briefingsTagID;
+    FCBundleSubscription *_bundleSubscription;
 }
 
 + (id)transformationWithFilterOptions:(long long)arg1 configuration:(id)arg2 context:(id)arg3;
 + (id)transformationWithFilterOptions:(long long)arg1 configuration:(id)arg2 context:(id)arg3 otherArticleIDs:(id)arg4;
-+ (id)transformationWithFilterOptions:(long long)arg1 otherArticleIDs:(id)arg2 otherClusterIDs:(id)arg3 subscribedTagIDs:(id)arg4 mutedChannelTagIDs:(id)arg5 purchasedTagIDs:(id)arg6 briefingsTagID:(id)arg7;
++ (id)transformationWithFilterOptions:(long long)arg1 otherArticleIDs:(id)arg2 otherClusterIDs:(id)arg3 subscribedTagIDs:(id)arg4 mutedChannelTagIDs:(id)arg5 purchasedTagIDs:(id)arg6 briefingsTagID:(id)arg7 bundleSubscription:(id)arg8;
+@property(copy, nonatomic) FCBundleSubscription *bundleSubscription; // @synthesize bundleSubscription=_bundleSubscription;
 @property(copy, nonatomic) NSString *briefingsTagID; // @synthesize briefingsTagID=_briefingsTagID;
 @property(copy, nonatomic) NSSet *purchasedTagIDs; // @synthesize purchasedTagIDs=_purchasedTagIDs;
 @property(copy, nonatomic) NSSet *subscribedTagIDs; // @synthesize subscribedTagIDs=_subscribedTagIDs;

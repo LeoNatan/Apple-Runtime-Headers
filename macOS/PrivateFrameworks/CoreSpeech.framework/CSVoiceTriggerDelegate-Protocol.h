@@ -6,12 +6,13 @@
 
 #import <CoreSpeech/NSObject-Protocol.h>
 
-@class NSDictionary;
+@class NSData, NSDictionary;
 
 @protocol CSVoiceTriggerDelegate <NSObject>
 - (void)voiceTriggerDidDetectKeyword:(NSDictionary *)arg1;
 
 @optional
+- (void)voiceTriggerGotSuperVector:(NSData *)arg1;
 - (void)keywordDetectorDidDetectKeyword;
 - (void)voiceTriggerDidDetectTwoShotAtTime:(double)arg1;
 - (void)voiceTriggerDidDetectSpeakerReject:(NSDictionary *)arg1;

@@ -15,7 +15,7 @@
     // Error parsing type: , name: authenticationProvider
 }
 
-- (CDUnknownBlockType).cxx_destruct;
+- (void).cxx_destruct;
 - (id)init;
 - (void)invalidate;
 - (void)registerAuthenticationProvider:(id)arg1;

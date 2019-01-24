@@ -27,22 +27,24 @@
     struct CGRect _contentFrame;
     struct CGRect _absoluteFrame;
     struct UIEdgeInsets _contentInsets;
+    struct UIEdgeInsets _layoutMargins;
 }
 
 + (_Bool)supportsSecureCoding;
 @property(readonly, nonatomic) NSDictionary *infoFromLayouting; // @synthesize infoFromLayouting=_infoFromLayouting;
 @property(nonatomic) struct CGSize suggestedSizeAfterInvalidation; // @synthesize suggestedSizeAfterInvalidation=_suggestedSizeAfterInvalidation;
 @property(retain, nonatomic) SXComponentSizer *componentSizer; // @synthesize componentSizer=_componentSizer;
+@property(nonatomic) struct UIEdgeInsets layoutMargins; // @synthesize layoutMargins=_layoutMargins;
 @property(nonatomic) struct UIEdgeInsets contentInsets; // @synthesize contentInsets=_contentInsets;
 @property(nonatomic) struct CGRect absoluteFrame; // @synthesize absoluteFrame=_absoluteFrame;
 @property(nonatomic) struct CGRect contentFrame; // @synthesize contentFrame=_contentFrame;
 @property(nonatomic) struct CGRect frame; // @synthesize frame=_frame;
 @property(nonatomic) _Bool hasValidPosition; // @synthesize hasValidPosition=_hasValidPosition;
 @property(nonatomic) _Bool hasValidSize; // @synthesize hasValidSize=_hasValidSize;
+@property(nonatomic) struct _NSRange columnRange; // @synthesize columnRange=_columnRange;
 @property(nonatomic) __weak SXLayoutBlueprint *parentLayoutBlueprint; // @synthesize parentLayoutBlueprint=_parentLayoutBlueprint;
 @property(readonly, nonatomic) id <SXComponentLayout> componentLayout; // @synthesize componentLayout=_componentLayout;
 @property(readonly, nonatomic) id <SXComponent> component; // @synthesize component=_component;
-@property(nonatomic) struct _NSRange columnRange; // @synthesize columnRange=_columnRange;
 - (void).cxx_destruct;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
@@ -50,8 +52,7 @@
 - (void)invalidateSize;
 - (void)invalidatePosition;
 - (void)invalidateLayout;
-@property(readonly, nonatomic) __weak SXLayoutBlueprint *rootLayoutBlueprint;
-- (struct UIEdgeInsets)contentInsetsForComponentWidth:(double)arg1;
+@property(readonly, nonatomic) SXLayoutBlueprint *rootLayoutBlueprint;
 @property(readonly, nonatomic) _Bool hasValidLayout;
 - (void)updatePosition:(struct CGPoint)arg1;
 - (void)updateSize:(struct CGSize)arg1;

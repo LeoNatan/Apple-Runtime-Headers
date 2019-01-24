@@ -21,8 +21,10 @@
     NSData *_data;
     unsigned long _minLength;
     unsigned long _maxLength;
+    unsigned int _statusFlags;
 }
 
+@property(nonatomic) unsigned int statusFlags; // @synthesize statusFlags=_statusFlags;
 @property(nonatomic) _Bool hasMessageUUID; // @synthesize hasMessageUUID=_hasMessageUUID;
 @property(nonatomic) unsigned long maxLength; // @synthesize maxLength=_maxLength;
 @property(nonatomic) unsigned long minLength; // @synthesize minLength=_minLength;

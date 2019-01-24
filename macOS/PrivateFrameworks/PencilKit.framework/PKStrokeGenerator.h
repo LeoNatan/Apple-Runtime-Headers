@@ -96,6 +96,7 @@
 - (double)latestNonPredictedTimestamp;
 - (void)removePredictedTouches;
 - (void)updateImmutableCount;
+- (void)drawingUpdateAllPointsDidTimeout:(BOOL)arg1;
 - (void)drawingUpdateAllPoints;
 - (void)drawingUpdatePoint:(CDStruct_57911ed6)arg1;
 - (long long)fetchFilteredPointsFromIndex:(long long)arg1 accessBlock:(CDUnknownBlockType)arg2;

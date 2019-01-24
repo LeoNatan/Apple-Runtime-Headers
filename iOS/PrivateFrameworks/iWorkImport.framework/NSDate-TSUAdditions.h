@@ -8,12 +8,14 @@
 
 @interface NSDate (TSUAdditions)
 - (_Bool)tsu_isEqualToDate:(id)arg1;
-- (id)tsu_fullFormattedDateWithPeriod;
+- (_Bool)p_localeUses24HourTimeCycle;
+- (id)dateFormatterFromTemplate12Hour:(id)arg1 template24Hour:(id)arg2 withDateFormatter:(id)arg3;
+- (id)tsu_shortFormattedDate;
+- (id)tsu_fullFormattedDate;
 - (id)p_ruleForOverAYearAgoForDate:(id)arg1 withDateFormatter:(id)arg2;
 - (id)p_ruleForOverAWeekAgoForDate:(id)arg1 withDateFormatter:(id)arg2;
 - (id)p_ruleForUpToSevenDaysAgoAndNotYesterdayForDate:(id)arg1 withDateFormatter:(id)arg2;
 - (id)p_ruleForYesterday:(id)arg1 withDateFormatter:(id)arg2;
-- (id)p_ruleForYesterdayShortAsPossible:(id)arg1;
 - (id)p_rule1To23HoursAgo:(long long)arg1;
 - (id)p_rule1To59MinutesAgo:(long long)arg1;
 - (id)tsu_relativeAnnotationStringForEarlierDate:(id)arg1;

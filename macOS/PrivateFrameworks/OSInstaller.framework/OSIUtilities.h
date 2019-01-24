@@ -10,6 +10,7 @@
 {
 }
 
++ (id)serialNumber;
 + (BOOL)shouldAllowInsecureCollections;
 + (BOOL)isNetBooted;
 + (id)mountDiskImageWithPath:(id)arg1 withError:(id *)arg2;

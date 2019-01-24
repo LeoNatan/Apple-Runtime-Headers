@@ -14,6 +14,7 @@
 @interface XCTElementQuery : NSObject <NSSecureCoding>
 {
     BOOL _suppressAttributeKeyPathAnalysis;
+    BOOL _isMacOS;
     id <XCTElementSnapshotProvider> _snapshotProvider;
     id <XCTElementSnapshotAttributeDataSource> _elementSnapshotAttributeDataSource;
     unsigned long long _options;
@@ -33,6 +34,7 @@
 @property double responsivenessTimeout; // @synthesize responsivenessTimeout=_responsivenessTimeout;
 @property(copy, nonatomic) CDUnknownBlockType evaluationContext; // @synthesize evaluationContext=_evaluationContext;
 @property(retain) XCElementSnapshot *rootElementSnapshot; // @synthesize rootElementSnapshot=_rootElementSnapshot;
+@property(readonly) BOOL isMacOS; // @synthesize isMacOS=_isMacOS;
 @property(readonly) unsigned long long options; // @synthesize options=_options;
 @property BOOL suppressAttributeKeyPathAnalysis; // @synthesize suppressAttributeKeyPathAnalysis=_suppressAttributeKeyPathAnalysis;
 @property __weak id <XCTElementSnapshotAttributeDataSource> elementSnapshotAttributeDataSource; // @synthesize elementSnapshotAttributeDataSource=_elementSnapshotAttributeDataSource;
@@ -53,6 +55,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 @property(readonly) BOOL supportsRemoteEvaluation;
+- (id)initWithRootElement:(id)arg1 transformers:(id)arg2 options:(unsigned long long)arg3 isMacOS:(BOOL)arg4;
 - (id)initWithRootElement:(id)arg1 transformers:(id)arg2 options:(unsigned long long)arg3;
 - (id)initWithRootElement:(id)arg1 transformers:(id)arg2;
 

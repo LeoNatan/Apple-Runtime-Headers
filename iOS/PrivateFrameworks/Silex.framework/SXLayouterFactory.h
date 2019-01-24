@@ -6,17 +6,27 @@
 
 #import <objc/NSObject.h>
 
-@protocol SXLayouterDelegate;
+#import <Silex/SXLayouterFactory-Protocol.h>
 
-@interface SXLayouterFactory : NSObject
+@class NSString;
+@protocol SXColumnCalculator;
+
+@interface SXLayouterFactory : NSObject <SXLayouterFactory>
 {
-    id <SXLayouterDelegate> _layouterDelegate;
+    id <SXColumnCalculator> _columnCalculator;
 }
 
-@property(readonly, nonatomic) __weak id <SXLayouterDelegate> layouterDelegate; // @synthesize layouterDelegate=_layouterDelegate;
+@property(readonly, nonatomic) id <SXColumnCalculator> columnCalculator; // @synthesize columnCalculator=_columnCalculator;
 - (void).cxx_destruct;
-- (id)layouterForContainerComponentBlueprint:(id)arg1;
-- (id)initWithDelegate:(id)arg1;
+- (id)layouterForContainerComponentBlueprint:(id)arg1 delegate:(id)arg2;
+- (id)createColumnLayouterWithDelegate:(id)arg1;
+- (id)initWithColumnCalculator:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

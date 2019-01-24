@@ -150,7 +150,7 @@ __attribute__((visibility("hidden")))
 @property(readonly) NSTouchBar *touchBar; // @synthesize touchBar=_functionBar;
 - (void)dealloc;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
-- (id)init;
+- (id)initWithCombinedFavoritesController:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

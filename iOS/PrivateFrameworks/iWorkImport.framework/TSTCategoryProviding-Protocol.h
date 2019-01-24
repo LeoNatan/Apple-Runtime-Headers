@@ -33,6 +33,7 @@
 - (unsigned char)aggregateTypeForColumnUID:(UUIDData_5fbc143e)arg1 atGroupLevel:(unsigned char)arg2;
 - (_Bool)isCategoryGroupOrParentsCollapsed:(UUIDData_5fbc143e)arg1;
 - (TSUUUIDSet *)allRowUIDsAtSameLevelAsRowIndex:(unsigned int)arg1 withFilter:(_Bool (^)(struct UUIDData<TSP::UUIDData>, struct UUIDData<TSP::UUIDData>))arg2;
+- (_Bool)groupingTypesAreUniqueForColumn:(unsigned short)arg1;
 - (unsigned long long)groupingColumnLevelCountForColumn:(unsigned short)arg1;
 - (NSString *)columnDisplayNameForCategoryLevel:(unsigned char)arg1;
 - (TSTCellRegion *)regionSubtractingCategoryColumnsAndRows:(TSTCellRegion *)arg1;
@@ -52,6 +53,7 @@
 - (NSIndexSet *)indexesForLabelRowsInRegion:(TSTCellRegion *)arg1;
 - (NSIndexSet *)indexesForSummaryRows;
 - (NSIndexSet *)indexesForSummaryRowsUpToGroupLevel:(unsigned char)arg1 omitGroupsWithUids:(const UUIDSet_bcc2db41 *)arg2;
+- (NSIndexSet *)indexesForBodyRowsInGroupWithRowAtIndex:(unsigned int)arg1;
 - (NSIndexSet *)indexesForSummaryRowsAtGroupLevel:(unsigned char)arg1;
 - (NSIndexSet *)indexesForSummaryRowsAtGroupLevel:(unsigned char)arg1 inRegion:(TSTCellRegion *)arg2;
 - (NSIndexSet *)indexesForSummaryRowsInRegion:(TSTCellRegion *)arg1;

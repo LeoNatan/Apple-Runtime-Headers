@@ -4,49 +4,24 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <UIKit/UIViewController.h>
+#import <AuthenticationServices/_ASExtensionViewController.h>
 
-#import <AuthenticationServices/_ASCredentialProviderExtensionHostContextDelegate-Protocol.h>
-
-@class ASPasswordCredentialIdentity, NSExtension, NSString, NSTimer, _ASCredentialProviderExtensionHostContext;
+@class ASPasswordCredentialIdentity;
 @protocol _ASPasswordCredentialAuthenticationViewControllerDelegate;
 
-@interface _ASPasswordCredentialAuthenticationViewController : UIViewController <_ASCredentialProviderExtensionHostContextDelegate>
+@interface _ASPasswordCredentialAuthenticationViewController : _ASExtensionViewController
 {
-    NSExtension *_extension;
     ASPasswordCredentialIdentity *_credentialIdentity;
-    _ASCredentialProviderExtensionHostContext *_nonUIHostContext;
-    _ASCredentialProviderExtensionHostContext *_requestHostContext;
-    UIViewController *_remoteViewController;
-    NSTimer *_nonUIRequestTimer;
-    _Bool _dismissOnBackground;
     id <_ASPasswordCredentialAuthenticationViewControllerDelegate> _delegate;
 }
 
-@property(nonatomic) _Bool dismissOnBackground; // @synthesize dismissOnBackground=_dismissOnBackground;
 @property(nonatomic) __weak id <_ASPasswordCredentialAuthenticationViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
-- (id)childViewControllerForWhitePointAdaptivityStyle;
-- (id)childViewControllerForStatusBarStyle;
-- (id)childViewControllerForStatusBarHidden;
-- (id)childViewControllerForScreenEdgesDeferringSystemGestures;
-- (id)childViewControllerForHomeIndicatorAutoHidden;
-- (void)prepareToCancelRequestWithHostContext:(id)arg1 error:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)prepareToCompleteRequestWithHostContext:(id)arg1 credential:(id)arg2 completion:(CDUnknownBlockType)arg3;
-- (void)_setRemoteViewController:(id)arg1;
-- (void)_didInstantiateRequestViewController:(id)arg1 withRequestID:(id)arg2 error:(id)arg3;
-- (void)_presentUI;
+- (void)_requestDidFailWithError:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_finishWithCredential:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)_didInstantiatePreflightViewController:(id)arg1 withRequestID:(id)arg2 error:(id)arg3;
-- (void)_nonUIRequestTimedOut;
-- (void)_invalidateNonUIRequestTimerIfNeeded;
+- (void)_nonUIRequestDidRequireUserInteraction;
 - (id)initWithExtension:(id)arg1 credentialIdentity:(id)arg2;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
 
 @end
 

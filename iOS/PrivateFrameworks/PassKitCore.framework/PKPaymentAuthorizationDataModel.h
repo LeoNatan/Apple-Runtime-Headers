@@ -8,7 +8,7 @@
 
 #import <PassKitCore/PKPaymentValidating-Protocol.h>
 
-@class CNContact, NSArray, NSDecimalNumber, NSMapTable, NSMutableArray, NSMutableDictionary, NSSet, NSString, PKPassLibrary, PKPayment, PKPaymentApplication, PKPaymentInstructions, PKPaymentOptionsDefaults, PKPaymentOptionsRecents, PKPaymentPass, PKPaymentRequest, PKPaymentWebService, PKPeerPaymentQuote, PKPeerPaymentService, PKRemoteDevice, PKRemotePaymentInstrument, PKShippingMethod;
+@class CNContact, NSArray, NSDecimalNumber, NSMapTable, NSMutableArray, NSMutableDictionary, NSSet, NSString, PKDisbursementApplicationInformation, PKPassLibrary, PKPayment, PKPaymentApplication, PKPaymentInstructions, PKPaymentOptionsDefaults, PKPaymentOptionsRecents, PKPaymentPass, PKPaymentRequest, PKPaymentWebService, PKPeerPaymentQuote, PKPeerPaymentService, PKRemoteDevice, PKRemotePaymentInstrument, PKShippingMethod;
 
 @interface PKPaymentAuthorizationDataModel : NSObject <PKPaymentValidating>
 {
@@ -52,6 +52,7 @@
     NSArray *_pendingTransactions;
     CDUnknownBlockType _updateHandler;
     PKPeerPaymentQuote *_peerPaymentQuote;
+    PKDisbursementApplicationInformation *_disbursementApplicationInformation;
     PKPaymentApplication *_paymentApplication;
     PKPaymentInstructions *_instructions;
     PKRemotePaymentInstrument *_remotePaymentInstrument;
@@ -69,6 +70,7 @@
 @property(readonly, nonatomic) NSArray *allRemoteDevices; // @synthesize allRemoteDevices=_allRemoteDevices;
 @property(retain, nonatomic) PKPaymentInstructions *instructions; // @synthesize instructions=_instructions;
 @property(retain, nonatomic) PKPaymentApplication *paymentApplication; // @synthesize paymentApplication=_paymentApplication;
+@property(retain, nonatomic) PKDisbursementApplicationInformation *disbursementApplicationInformation; // @synthesize disbursementApplicationInformation=_disbursementApplicationInformation;
 @property(retain, nonatomic) PKPeerPaymentQuote *peerPaymentQuote; // @synthesize peerPaymentQuote=_peerPaymentQuote;
 @property(readonly, nonatomic) NSArray *items; // @synthesize items=_items;
 @property(copy, nonatomic) CDUnknownBlockType updateHandler; // @synthesize updateHandler=_updateHandler;
@@ -121,6 +123,7 @@
 @property(readonly, nonatomic) NSArray *remoteDevices;
 - (void)setPass:(id)arg1 withSelectedPaymentApplication:(id)arg2;
 @property(retain, nonatomic) PKPaymentPass *pass; // @synthesize pass=_pass;
+- (void)setPaymentPassWithPassTypeIdentifier:(id)arg1 serialNumber:(id)arg2;
 - (_Bool)isValidWithError:(id *)arg1;
 - (id)paymentErrorsFromLegacyStatus:(long long)arg1;
 - (id)_filterAndProcessPaymentPassesUsingConfiguration:(id)arg1;

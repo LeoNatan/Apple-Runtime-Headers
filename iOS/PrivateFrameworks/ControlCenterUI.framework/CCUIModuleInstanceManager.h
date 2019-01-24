@@ -34,6 +34,7 @@
 - (void)dismissExpandedViewForContentModuleContext:(id)arg1;
 - (void)requestExpandModuleForContentModuleContext:(id)arg1;
 - (void)contentModuleContext:(id)arg1 enqueueStatusUpdate:(id)arg2;
+- (void)contentModuleContext:(id)arg1 didUpdateHomeGestureDismissalAllowed:(_Bool)arg2;
 - (void)loadableModulesChangedForModuleRepository:(id)arg1;
 - (void)_runBlockOnObservers:(CDUnknownBlockType)arg1;
 - (void)removeObserver:(id)arg1;

@@ -6,14 +6,17 @@
 
 #import <webrtc/NSObject-Protocol.h>
 
-@class NSString, WK_RTCEncodedImage, WK_RTCRtpFragmentationHeader, WK_RTCVideoEncoderSettings;
+@class NSString, WK_RTCEncodedImage, WK_RTCVideoEncoderSettings;
 @protocol WK_RTCCodecSpecificInfo;
 
 @protocol WK_RTCVideoDecoder <NSObject>
 - (NSString *)implementationName;
-- (long long)decode:(WK_RTCEncodedImage *)arg1 missingFrames:(_Bool)arg2 fragmentationHeader:(WK_RTCRtpFragmentationHeader *)arg3 codecSpecificInfo:(id <WK_RTCCodecSpecificInfo>)arg4 renderTimeMs:(long long)arg5;
+- (long long)decode:(WK_RTCEncodedImage *)arg1 missingFrames:(_Bool)arg2 codecSpecificInfo:(id <WK_RTCCodecSpecificInfo>)arg3 renderTimeMs:(long long)arg4;
 - (long long)releaseDecoder;
 - (long long)startDecodeWithSettings:(WK_RTCVideoEncoderSettings *)arg1 numberOfCores:(int)arg2;
 - (void)setCallback:(void (^)(WK_RTCVideoFrame *))arg1;
+
+@optional
+- (long long)startDecodeWithNumberOfCores:(int)arg1;
 @end
 

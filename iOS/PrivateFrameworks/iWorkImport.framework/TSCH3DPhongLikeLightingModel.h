@@ -18,8 +18,8 @@ __attribute__((visibility("hidden")))
 - (tvec4_ac57c72d)p_lightenedColorForColor:(const tvec4_ac57c72d *)arg1 percentage:(id)arg2;
 - (id)phongMaterials;
 - (id)init;
-- (void)saveToPhongMaterialPackageArchive:(struct Chart3DPhongMaterialPackageArchive *)arg1 environmentPackageArchive:(struct Chart3DEnvironmentPackageArchive *)arg2 archiver:(id)arg3;
-- (id)initWithPhongMaterialPackageArchive:(const struct Chart3DPhongMaterialPackageArchive *)arg1 lightingModelArchive:(const struct Chart3DLightingModelArchive *)arg2 unarchiver:(id)arg3;
+-     // Error parsing type: v40@0:8^{Chart3DPhongMaterialPackageArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{Chart3DEmissiveMaterialArchive}^{Chart3DDiffuseMaterialArchive}^{Chart3DModulateMaterialArchive}^{Chart3DSpecularMaterialArchive}^{Chart3DShininessMaterialArchive}}16^{Chart3DEnvironmentPackageArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSCH::Chart3DEnvironmentMaterialArchive>=^{Arena}ii^{Rep}}}24@32, name: saveToPhongMaterialPackageArchive:environmentPackageArchive:archiver:
+-     // Error parsing type: @40@0:8r^{Chart3DPhongMaterialPackageArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{Chart3DEmissiveMaterialArchive}^{Chart3DDiffuseMaterialArchive}^{Chart3DModulateMaterialArchive}^{Chart3DSpecularMaterialArchive}^{Chart3DShininessMaterialArchive}}16r^{Chart3DLightingModelArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{Chart3DPhongLightingModelArchive}^{Chart3DFixedFunctionLightingModelArchive}^{Chart3DEnvironmentPackageArchive}}24@32, name: initWithPhongMaterialPackageArchive:lightingModelArchive:unarchiver:
 
 @end
 

@@ -30,6 +30,7 @@
 - (void).cxx_destruct;
 - (void)primaryAccountSignedOutWithCompletion:(CDUnknownBlockType)arg1;
 - (void)primaryAccountSignedInWithCompletion:(CDUnknownBlockType)arg1;
+- (void)getIdentitiesWithFlags:(unsigned int)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)getIdentitiesWithCompletion:(CDUnknownBlockType)arg1;
 - (void)diagnosticShow:(id)arg1 level:(int)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)diagnosticLogControl:(id)arg1 completion:(CDUnknownBlockType)arg2;

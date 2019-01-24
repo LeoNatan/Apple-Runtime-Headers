@@ -31,6 +31,7 @@
     NSURL *_publicDeviceServiceURL;
     NSURL *_publicCodeServiceURL;
     NSURL *_publicMetricsServiceURL;
+    NSURL *_publicDatabaseRPCServiceURL;
     NSString *_containerScopedUserID;
     NSString *_orgAdminUserID;
     NSHashTable *_proxies;
@@ -148,6 +149,7 @@
 @property(nonatomic) _Bool isForClouddInternalUse; // @synthesize isForClouddInternalUse=_isForClouddInternalUse;
 @property(copy) NSString *orgAdminUserID; // @synthesize orgAdminUserID=_orgAdminUserID;
 @property(copy) NSString *containerScopedUserID; // @synthesize containerScopedUserID=_containerScopedUserID;
+@property(copy) NSURL *publicDatabaseRPCServiceURL; // @synthesize publicDatabaseRPCServiceURL=_publicDatabaseRPCServiceURL;
 @property(copy) NSURL *publicMetricsServiceURL; // @synthesize publicMetricsServiceURL=_publicMetricsServiceURL;
 @property(copy) NSURL *publicCodeServiceURL; // @synthesize publicCodeServiceURL=_publicCodeServiceURL;
 @property(copy) NSURL *publicDeviceServiceURL; // @synthesize publicDeviceServiceURL=_publicDeviceServiceURL;

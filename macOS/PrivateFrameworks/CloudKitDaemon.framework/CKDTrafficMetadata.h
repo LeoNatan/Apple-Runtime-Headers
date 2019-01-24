@@ -12,14 +12,18 @@
 
 @interface CKDTrafficMetadata : NSObject <NSSecureCoding>
 {
+    BOOL _parsingStandaloneMessage;
     NSDate *_timestamp;
     NSURL *_url;
     NSString *_method;
     long long _status;
     NSDictionary *_headers;
+    NSString *_requestClassName;
 }
 
 + (BOOL)supportsSecureCoding;
+@property(nonatomic) BOOL parsingStandaloneMessage; // @synthesize parsingStandaloneMessage=_parsingStandaloneMessage;
+@property(retain, nonatomic) NSString *requestClassName; // @synthesize requestClassName=_requestClassName;
 @property(retain, nonatomic) NSDictionary *headers; // @synthesize headers=_headers;
 @property(nonatomic) long long status; // @synthesize status=_status;
 @property(retain, nonatomic) NSString *method; // @synthesize method=_method;

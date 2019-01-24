@@ -77,7 +77,7 @@ struct NoLock;
 
 struct OpaqueJSValue;
 
-struct Poisoned<WTF::Poison<&g_GlobalDataPoison>, const JSC::ClassInfo *, void> {
+struct Poisoned<WTF::Poison<&JSC::g_GlobalDataPoison>, const JSC::ClassInfo *, void> {
     unsigned int _field1;
 };
 
@@ -111,7 +111,7 @@ struct Structure {
     struct WriteBarrier<JSC::StructureChain, WTF::DumbPtrTraits<JSC::StructureChain>> _field13;
     struct WriteBarrier<JSC::JSCell, WTF::DumbPtrTraits<JSC::JSCell>> _field14;
     struct RefPtr<WTF::UniquedStringImpl, WTF::DumbPtrTraits<WTF::UniquedStringImpl>> _field15;
-    struct Poisoned<WTF::Poison<&g_GlobalDataPoison>, const JSC::ClassInfo *, void> _field16;
+    struct Poisoned<WTF::Poison<&JSC::g_GlobalDataPoison>, const JSC::ClassInfo *, void> _field16;
     struct StructureTransitionTable _field17;
     struct WriteBarrier<JSC::PropertyTable, WTF::DumbPtrTraits<JSC::PropertyTable>> _field18;
     struct WriteBarrier<JSC::InferredTypeTable, WTF::DumbPtrTraits<JSC::InferredTypeTable>> _field19;

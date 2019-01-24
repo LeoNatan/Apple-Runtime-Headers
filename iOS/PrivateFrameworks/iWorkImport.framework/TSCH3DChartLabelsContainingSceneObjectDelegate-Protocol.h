@@ -6,11 +6,11 @@
 
 #import <iWorkImport/TSCH3DSceneObjectDelegate-Protocol.h>
 
-@class TSCH3DChartLabelsContainingSceneObject, TSCH3DSceneRenderPipeline;
+@class TSCH3DChartLabelsContainingLabelRenderInfo, TSCH3DChartLabelsContainingSceneObject, TSCH3DExternalLabelAttribute, TSCH3DSceneRenderPipeline;
 
 @protocol TSCH3DChartLabelsContainingSceneObjectDelegate <TSCH3DSceneObjectDelegate>
-- (void)updateExternalLabelAttribute:(struct ExternalLabelAttribute *)arg1 sceneObject:(TSCH3DChartLabelsContainingSceneObject *)arg2 labelRenderInfo:(const struct ChartLabelsContainingLabelRenderInfo *)arg3;
-- (_Bool)willSubmitLabelForSceneObject:(TSCH3DChartLabelsContainingSceneObject *)arg1 labelRenderInfo:(const struct ChartLabelsContainingLabelRenderInfo *)arg2;
+- (void)updateExternalLabelAttribute:(TSCH3DExternalLabelAttribute *)arg1 sceneObject:(TSCH3DChartLabelsContainingSceneObject *)arg2 labelRenderInfo:(TSCH3DChartLabelsContainingLabelRenderInfo *)arg3;
+- (_Bool)willSubmitLabelForSceneObject:(TSCH3DChartLabelsContainingSceneObject *)arg1 labelRenderInfo:(TSCH3DChartLabelsContainingLabelRenderInfo *)arg2;
 - (_Bool)willSubmitLabelType:(int)arg1 boundsIndex:(long long)arg2 alignment:(unsigned long long)arg3 elementIndex:(unsigned long long)arg4 forSceneObject:(TSCH3DChartLabelsContainingSceneObject *)arg5;
 - (void)setOffset:(const tvec3_17f03ce0 *)arg1 labelType:(int)arg2 boundsIndex:(long long)arg3 forSceneObject:(TSCH3DChartLabelsContainingSceneObject *)arg4;
 - (void)labelsResourcesSessionWillEndForSceneObject:(TSCH3DChartLabelsContainingSceneObject *)arg1 pipeline:(TSCH3DSceneRenderPipeline *)arg2;

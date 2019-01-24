@@ -18,6 +18,8 @@
     NSMutableSet *_activeContentsAnimations;
     unsigned int _vista;
     unsigned int _isSupplemental:1;
+    unsigned int _isDisplayOn:1;
+    unsigned int _isAnimating:1;
     CLKDevice *_device;
     id <NTKAstronomyVistaViewObserver> _observer;
 }
@@ -25,6 +27,8 @@
 @property(nonatomic) __weak id <NTKAstronomyVistaViewObserver> observer; // @synthesize observer=_observer;
 @property(readonly, nonatomic) CLKDevice *device; // @synthesize device=_device;
 - (void).cxx_destruct;
+- (void)_handleCSLPIBacklightDidTurnOn;
+- (void)_handleCSLPIBacklightWillTurnOff;
 - (void)viewWillDisplay:(id)arg1 forTime:(double)arg2;
 - (void)setZoomFraction:(float)arg1 targetDiameter:(float)arg2;
 - (void)universeAnimationFinished:(id)arg1;
@@ -36,6 +40,7 @@
 - (id)rotatable:(unsigned int)arg1;
 - (void)layoutSubviews;
 - (void)renderSynchronouslyWithImageQueueDiscard:(_Bool)arg1;
+- (void)_updateAnimation;
 - (void)stopAnimation;
 - (void)startAnimation;
 - (void)updateSunLocationAnimated:(_Bool)arg1;

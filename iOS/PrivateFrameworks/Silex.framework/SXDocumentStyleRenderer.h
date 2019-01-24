@@ -10,13 +10,13 @@
 #import <Silex/SXViewportChangeListener-Protocol.h>
 
 @class NSString, SXGradientFillView, SXImageFillView, SXVideoFillView, SXViewport, UIView;
-@protocol SXDocumentControllerProvider, SXGradientFactory, SXImageViewFactory, SXPresentationDelegate;
+@protocol SXGradientFactory, SXImageFillViewFactory, SXPresentationDelegate, SXVideoFillViewFactory;
 
 @interface SXDocumentStyleRenderer : NSObject <SXViewportChangeListener, SXDocumentStyleRenderer>
 {
     id <SXPresentationDelegate> _presentationDelegate;
-    id <SXDocumentControllerProvider> _documentControllerProvider;
-    id <SXImageViewFactory> _imageViewFactory;
+    id <SXImageFillViewFactory> _imageFillViewFactory;
+    id <SXVideoFillViewFactory> _videoFillViewFactory;
     SXViewport *_viewport;
     id <SXGradientFactory> _gradientFactory;
     UIView *_topBackgroundView;
@@ -31,8 +31,8 @@
 @property(retain, nonatomic) UIView *topBackgroundView; // @synthesize topBackgroundView=_topBackgroundView;
 @property(readonly, nonatomic) id <SXGradientFactory> gradientFactory; // @synthesize gradientFactory=_gradientFactory;
 @property(readonly, nonatomic) SXViewport *viewport; // @synthesize viewport=_viewport;
-@property(readonly, nonatomic) id <SXImageViewFactory> imageViewFactory; // @synthesize imageViewFactory=_imageViewFactory;
-@property(readonly, nonatomic) id <SXDocumentControllerProvider> documentControllerProvider; // @synthesize documentControllerProvider=_documentControllerProvider;
+@property(readonly, nonatomic) id <SXVideoFillViewFactory> videoFillViewFactory; // @synthesize videoFillViewFactory=_videoFillViewFactory;
+@property(readonly, nonatomic) id <SXImageFillViewFactory> imageFillViewFactory; // @synthesize imageFillViewFactory=_imageFillViewFactory;
 @property(nonatomic) __weak id <SXPresentationDelegate> presentationDelegate; // @synthesize presentationDelegate=_presentationDelegate;
 - (void).cxx_destruct;
 - (void)viewport:(id)arg1 boundsDidChangeFromBounds:(struct CGRect)arg2;
@@ -45,7 +45,7 @@
 - (void)applyTopBackgroundForStyle:(id)arg1 onView:(id)arg2;
 - (void)applyBackgroundColorForStyle:(id)arg1 onView:(id)arg2;
 - (void)applyStyle:(id)arg1 onView:(id)arg2;
-- (id)initWithDocumentControllerProvider:(id)arg1 viewport:(id)arg2 imageViewFactory:(id)arg3 gradientFactory:(id)arg4;
+- (id)initWithViewport:(id)arg1 imageFillViewFactory:(id)arg2 videoFillViewFactory:(id)arg3 gradientFactory:(id)arg4;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

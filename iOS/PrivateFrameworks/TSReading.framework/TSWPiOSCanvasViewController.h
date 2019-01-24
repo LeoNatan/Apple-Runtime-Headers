@@ -51,6 +51,7 @@
 - (void)removeSwipeGestureRecognizers;
 - (void)addSwipeGestureRecognizers;
 - (_Bool)hasDelayedTapAction;
+- (void)_clearSelectedRange;
 - (void)finishDelayedTapAction;
 - (void)startDelayedTapAction:(id)arg1;
 - (void)cancelDelayedTapAction;

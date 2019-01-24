@@ -11,12 +11,13 @@
 __attribute__((visibility("hidden")))
 @interface TSKSelectionPath : NSObject
 {
-    NSArray *mCurrentSelection;
+    NSArray *_currentSelection;
 }
 
 + (id)selectionPathWithSelectionArray:(id)arg1;
-- (void)saveToArchive:(struct SelectionPathArchive *)arg1 archiver:(id)arg2 context:(id)arg3;
-- (id)initWithArchive:(const struct SelectionPathArchive *)arg1 unarchiver:(id)arg2;
+- (void).cxx_destruct;
+-     // Error parsing type: v40@0:8^{SelectionPathArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}}16@24@32, name: saveToArchive:archiver:context:
+-     // Error parsing type: @32@0:8r^{SelectionPathArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}}16@24, name: initWithArchive:unarchiver:
 @property(readonly, nonatomic) NSString *UUIDDescription;
 - (id)description;
 - (void)enumerateSelectionsLeastToMostSpecificInPathUsingBlock:(CDUnknownBlockType)arg1;
@@ -36,7 +37,6 @@ __attribute__((visibility("hidden")))
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (void)dealloc;
 - (id)initWithSelectionArray:(id)arg1;
 
 @end

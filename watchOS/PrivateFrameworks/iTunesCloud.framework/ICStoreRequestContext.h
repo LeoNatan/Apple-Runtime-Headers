@@ -6,9 +6,11 @@
 
 #import <iTunesCloud/ICRequestContext.h>
 
+#import <iTunesCloud/NSSecureCoding-Protocol.h>
+
 @class ICStoreDialogResponseHandler, ICUserIdentity, ICUserIdentityStore;
 
-@interface ICStoreRequestContext : ICRequestContext
+@interface ICStoreRequestContext : ICRequestContext <NSSecureCoding>
 {
     ICUserIdentity *_delegatedIdentity;
     ICUserIdentity *_identity;
@@ -18,6 +20,7 @@
     _Bool _allowsExpiredBags;
 }
 
++ (_Bool)supportsSecureCoding;
 + (id)activeStoreAccountRequestContext;
 @property(readonly, nonatomic) int personalizationStyle; // @synthesize personalizationStyle=_personalizationStyle;
 @property(readonly, nonatomic) _Bool allowsExpiredBags; // @synthesize allowsExpiredBags=_allowsExpiredBags;
@@ -32,6 +35,8 @@
 - (void)setIdentityStore:(id)arg1;
 - (void)setIdentity:(id)arg1;
 - (void)setDelegatedIdentity:(id)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (id)copyWithBlock:(CDUnknownBlockType)arg1;
 - (id)initWithBlock:(CDUnknownBlockType)arg1;
 - (id)initWithIdentity:(id)arg1 identityStore:(id)arg2 clientInfo:(id)arg3 authenticationProvider:(id)arg4;

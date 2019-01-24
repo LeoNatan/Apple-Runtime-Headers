@@ -42,7 +42,6 @@
 - (void)dictationViewController:(id)arg1 finishedRecordingAudio:(id)arg2;
 - (id)fileHandleForAudioRecording;
 - (void)extraButtonTapped;
-- (id)extraButtonImage;
 - (id)inputContextIdentifierForQuickboard:(id)arg1;
 - (id)blurSourceViewForQuickboard:(id)arg1;
 - (void)quickboardInputCancelled:(id)arg1;

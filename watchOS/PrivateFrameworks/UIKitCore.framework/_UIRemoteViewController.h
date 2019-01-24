@@ -146,8 +146,6 @@
 - (_Bool)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (void)didMoveToParentViewController:(id)arg1;
 - (void)viewDidMoveToWindow:(id)arg1 shouldAppearOrDisappear:(_Bool)arg2;
-- (void)__setServiceMaxFrameSize:(struct CGSize)arg1;
-- (void)_configureSizeViewConstraintsForWindow:(id)arg1 interfaceOrientation:(int)arg2;
 - (void)viewDidDisappear:(_Bool)arg1;
 - (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewDidAppear:(_Bool)arg1;

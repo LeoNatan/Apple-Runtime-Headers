@@ -19,6 +19,7 @@
     _Bool _allowsUpdatingModelFile;
     REDataSourceLoader *_dataSourceLoader;
     unsigned int _trainingBehavior;
+    unsigned int _modelStorageBehavior;
     RELocationManager *_locationManager;
     NSMutableArray *_sectionDescriptions;
     NSMutableArray *_interactionDescriptions;
@@ -41,6 +42,7 @@
 @property(readonly, nonatomic) RELocationManager *locationManager;
 @property(readonly, copy, nonatomic) NSArray *interactionDescriptors;
 @property(readonly, copy, nonatomic) NSArray *sectionDescriptors;
+@property(readonly, nonatomic) unsigned int modelStorageBehavior;
 @property(readonly, nonatomic) unsigned int trainingBehavior;
 @property(readonly, copy, nonatomic) REDataSourceLoader *dataSourceLoader;
 @property(readonly, nonatomic) _Bool allowsUpdatingModelFile;
@@ -52,7 +54,7 @@
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned int hash;
 - (_Bool)isEqual:(id)arg1;
-- (id)initWithModelFileURL:(id)arg1 baseModelFileURL:(id)arg2 allowsUpdatingModelFile:(_Bool)arg3 dataSourceLoader:(id)arg4 trainingBehavior:(unsigned int)arg5 sectionDescriptions:(id)arg6 locationManager:(id)arg7 featureSet:(id)arg8 wantsImmutableContent:(_Bool)arg9 preferenceDomain:(id)arg10 interactionDescriptions:(id)arg11 allowsRemoteTraining:(_Bool)arg12 wantsBackup:(_Bool)arg13 ignoreDeviceLockState:(_Bool)arg14;
+- (id)initWithModelFileURL:(id)arg1 baseModelFileURL:(id)arg2 allowsUpdatingModelFile:(_Bool)arg3 dataSourceLoader:(id)arg4 trainingBehavior:(unsigned int)arg5 modelStorageBehavior:(unsigned int)arg6 sectionDescriptions:(id)arg7 locationManager:(id)arg8 featureSet:(id)arg9 wantsImmutableContent:(_Bool)arg10 preferenceDomain:(id)arg11 interactionDescriptions:(id)arg12 allowsRemoteTraining:(_Bool)arg13 wantsBackup:(_Bool)arg14 ignoreDeviceLockState:(_Bool)arg15;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

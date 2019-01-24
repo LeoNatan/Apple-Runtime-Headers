@@ -40,6 +40,7 @@ __attribute__((visibility("hidden")))
 - (void)deleteFromInputWithFlags:(unsigned int)arg1;
 - (void)deleteFromInput;
 - (void)addInputString:(id)arg1 withFlags:(unsigned int)arg2;
+- (_Bool)handleKeyCommandForCurrentEvent;
 - (void)webView:(id)arg1 didReceiveMessage:(id)arg2;
 - (void)webView:(id)arg1 didHideFullScreenForPlugInView:(id)arg2;
 - (void)webView:(id)arg1 willShowFullScreenForPlugInView:(id)arg2;

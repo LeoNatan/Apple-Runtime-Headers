@@ -28,12 +28,14 @@
     FCHeldRecords *_cachedRecords;
     NSMutableSet *_actualTopLevelRecordIDs;
     NSMutableSet *_skippedTopLevelRecordIDs;
+    NSMutableSet *_missingCachedOnlyTopLevelRecordIDs;
     NSDictionary *_resultHeldRecordsByType;
     NSMutableArray *_mutableNetworkEvents;
 }
 
 @property(retain, nonatomic) NSMutableArray *mutableNetworkEvents; // @synthesize mutableNetworkEvents=_mutableNetworkEvents;
 @property(retain, nonatomic) NSDictionary *resultHeldRecordsByType; // @synthesize resultHeldRecordsByType=_resultHeldRecordsByType;
+@property(retain, nonatomic) NSMutableSet *missingCachedOnlyTopLevelRecordIDs; // @synthesize missingCachedOnlyTopLevelRecordIDs=_missingCachedOnlyTopLevelRecordIDs;
 @property(retain, nonatomic) NSMutableSet *skippedTopLevelRecordIDs; // @synthesize skippedTopLevelRecordIDs=_skippedTopLevelRecordIDs;
 @property(retain, nonatomic) NSMutableSet *actualTopLevelRecordIDs; // @synthesize actualTopLevelRecordIDs=_actualTopLevelRecordIDs;
 @property(retain, nonatomic) FCHeldRecords *cachedRecords; // @synthesize cachedRecords=_cachedRecords;
@@ -53,7 +55,8 @@
 @property(retain, nonatomic) id <FCContentContext> context; // @synthesize context=_context;
 - (void).cxx_destruct;
 - (id)_errorForMissingRecordNames:(id)arg1;
-- (id)_partialErrorForMissingRecordName:(id)arg1;
+- (id)_partialUncachedErrorForMissingRecordName:(id)arg1;
+- (id)_partialFetchErrorForMissingRecordName:(id)arg1;
 - (id)_recordSourceForRecordType:(id)arg1;
 - (int)_pbRecordTypeForRecordType:(id)arg1;
 - (id)_recordTypeForRecordID:(id)arg1;
@@ -61,9 +64,9 @@
 - (void)_finalizeResultFromCachedRecords;
 - (id)_recordIDsMissingFromCachedRecords;
 - (void)_filterOrphansFromCachedRecords;
-- (void)_walkRecordChainStartingWithRecordIDs:(id)arg1 recordsLookupBlock:(CDUnknownBlockType)arg2 visitorBlock:(CDUnknownBlockType)arg3;
+- (void)_walkRecordChainStartingWithRecordIDs:(id)arg1 visitedRecordIDs:(id)arg2 recordsLookupBlock:(CDUnknownBlockType)arg3 visitorBlock:(CDUnknownBlockType)arg4;
 - (void)_issueCloudRequestIfNeeded;
-- (void)_collectActualTopLevelRecordIDsFromRecordIDs:(id)arg1;
+- (void)_collectActualTopLevelRecordIDsFromRecordIDs:(id)arg1 visitedRecordIDs:(id)arg2;
 - (void)_collectCachedRecordsFromRecordIDs:(id)arg1;
 - (void)operationWillFinishWithError:(id)arg1;
 @property(readonly, copy, nonatomic) NSArray *networkEvents;

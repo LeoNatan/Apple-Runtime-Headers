@@ -72,6 +72,9 @@
     AVPlayer *_contentTransitioningPlayer;
     AVObservationController *__observationController;
     long long __numberOfTrackedUserInteractions;
+    NSMutableDictionary *__localizedDiscoverabilityTitleForKeyCommandLocalizationKey;
+    NSString *_overrideRouteContextUID;
+    unsigned long long _overrideRouteSharingPolicy;
     NSArray *_customControlItems;
 }
 
@@ -86,6 +89,9 @@
 @property(copy, nonatomic) NSArray *customControlItems; // @synthesize customControlItems=_customControlItems;
 @property(nonatomic) _Bool playbackControlsIncludeVolumeControls; // @synthesize playbackControlsIncludeVolumeControls=_playbackControlsIncludeVolumeControls;
 @property(nonatomic) _Bool canPausePlaybackWhenExitingFullScreen; // @synthesize canPausePlaybackWhenExitingFullScreen=_canPausePlaybackWhenExitingFullScreen;
+@property(nonatomic) unsigned long long overrideRouteSharingPolicy; // @synthesize overrideRouteSharingPolicy=_overrideRouteSharingPolicy;
+@property(copy, nonatomic) NSString *overrideRouteContextUID; // @synthesize overrideRouteContextUID=_overrideRouteContextUID;
+@property(readonly, nonatomic) NSMutableDictionary *_localizedDiscoverabilityTitleForKeyCommandLocalizationKey; // @synthesize _localizedDiscoverabilityTitleForKeyCommandLocalizationKey=__localizedDiscoverabilityTitleForKeyCommandLocalizationKey;
 @property(nonatomic, setter=_setNumberOfTrackedUserInteractions:) long long _numberOfTrackedUserInteractions; // @synthesize _numberOfTrackedUserInteractions=__numberOfTrackedUserInteractions;
 @property(nonatomic) _Bool _hasBegunObservation; // @synthesize _hasBegunObservation=__hasBegunObservation;
 @property(readonly, nonatomic) AVObservationController *_observationController; // @synthesize _observationController=__observationController;
@@ -246,6 +252,7 @@
 @property(readonly, nonatomic) long long activeContentTransitionType;
 @property(readonly, nonatomic) UIView *contentTransitioningOverlayView;
 @property(nonatomic) __weak id <AVPlayerViewControllerContentTransitioning_NewsOnly> contentTransitioningDelegate;
+- (void)setWebKitOverrideRouteSharingPolicy:(unsigned long long)arg1 routingContextUID:(id)arg2;
 @property(readonly, nonatomic) _Bool pictureInPictureWasStartedWhenEnteringBackground;
 @property(readonly, nonatomic, getter=isPictureInPictureSuspended) _Bool pictureInPictureSuspended;
 @property(readonly, nonatomic, getter=isPictureInPictureActive) _Bool pictureInPictureActive;

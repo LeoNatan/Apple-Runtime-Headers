@@ -29,6 +29,7 @@
 - (void)_loadClassesUsingBlock:(CDUnknownBlockType)arg1;
 - (void)enumerateBundleConfigurations:(CDUnknownBlockType)arg1;
 - (void)enumerationDataSourceClassesWithBlock:(CDUnknownBlockType)arg1;
+- (void)prewarm;
 
 @end
 

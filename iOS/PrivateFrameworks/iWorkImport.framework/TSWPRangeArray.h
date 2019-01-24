@@ -15,6 +15,7 @@ __attribute__((visibility("hidden")))
     vector_b5e32e34 _rangeVector;
 }
 
++ (id)rangeArrayWithRange:(struct _NSRange)arg1;
 + (id)rangeArray;
 - (id).cxx_construct;
 - (void).cxx_destruct;
@@ -35,6 +36,8 @@ __attribute__((visibility("hidden")))
 - (struct _NSRange)rangeAtIndex:(unsigned long long)arg1;
 @property(readonly, nonatomic) struct _NSRange superRange;
 @property(readonly, nonatomic) unsigned long long rangeCount;
+- (unsigned long long)hash;
+- (_Bool)isEqual:(id)arg1;
 - (_Bool)isEqualToRangeArray:(id)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

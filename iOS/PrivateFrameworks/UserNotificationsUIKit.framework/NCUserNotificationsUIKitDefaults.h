@@ -11,13 +11,11 @@
 }
 
 + (id)standardDefaults;
-- (_Bool)shouldPermitAutomaticTransitionToPreviewIfNecessary;
 - (void)_bindAndRegisterDefaults;
 - (id)init;
 
 // Remaining properties
-@property(nonatomic) _Bool _shouldEnableNotificationsPeaceBFeatures; // @dynamic _shouldEnableNotificationsPeaceBFeatures;
-@property(nonatomic) _Bool _shouldPermitAutomaticTransitionToPreviewIfNecessary; // @dynamic _shouldPermitAutomaticTransitionToPreviewIfNecessary;
+@property(nonatomic) _Bool shouldForceHapticTouchForPreview; // @dynamic shouldForceHapticTouchForPreview;
 
 @end
 

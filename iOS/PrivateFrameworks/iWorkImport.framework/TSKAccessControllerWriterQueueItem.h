@@ -14,7 +14,7 @@ __attribute__((visibility("hidden")))
     struct NSThread *_threadIdentifier;
 }
 
-+ (id)priorityMainThreadWriterQueueItem;
++ (id)priorityPrimaryThreadWriterQueueItemForAccessController:(id)arg1;
 + (id)writerQueueItemWithThreadIdentifier:(struct NSThread *)arg1;
 @property(readonly, nonatomic) NSThread *threadIdentifier; // @synthesize threadIdentifier=_threadIdentifier;
 - (void).cxx_destruct;

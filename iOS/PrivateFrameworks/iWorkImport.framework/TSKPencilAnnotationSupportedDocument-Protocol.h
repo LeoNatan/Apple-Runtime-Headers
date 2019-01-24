@@ -10,6 +10,7 @@
 @protocol NSFastEnumeration;
 
 @protocol TSKPencilAnnotationSupportedDocument <TSKPencilAnnotationContainer>
+- (double)currentDesiredPencilAnnotationDrawingScale;
 - (void)removePencilAnnotationsFromDrawables:(id <NSFastEnumeration>)arg1;
 - (void)removePencilAnnotations;
 - (NSSet *)allPencilAnnotations;

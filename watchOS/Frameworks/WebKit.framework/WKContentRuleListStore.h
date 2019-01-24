@@ -23,7 +23,6 @@
 - (void)removeContentRuleListForIdentifier:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)getAvailableContentRuleListIdentifiers:(CDUnknownBlockType)arg1;
 - (void)lookUpContentRuleListForIdentifier:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (void)_compileContentRuleListForIdentifier:(id)arg1 encodedContentRuleList:(id)arg2 completionHandler:(CDUnknownBlockType)arg3 releasesArgument:(_Bool)arg4;
 - (void)compileContentRuleListForIdentifier:(id)arg1 encodedContentRuleList:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)dealloc;
 - (void)_compileContentRuleListForIdentifier:(id)arg1 encodedContentRuleList:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;

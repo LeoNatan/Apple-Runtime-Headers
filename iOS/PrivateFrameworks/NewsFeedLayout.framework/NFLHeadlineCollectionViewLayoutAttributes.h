@@ -29,6 +29,12 @@
     double _excerptLineHeight;
     long long _accessoryContentMode;
     NSString *_accessoryFontName;
+    double _accessoryViewBottomPadding;
+    double _accessoryViewTopPadding;
+    double _accessoryContentViewLeftPadding;
+    double _accessoryContentViewRightPadding;
+    unsigned long long _numberOfSegments;
+    unsigned long long _segmentedColorViewDirection;
     UIColor *_accessoryFontColor;
     UIColor *_accessoryIconColor;
     double _accessoryFontSize;
@@ -43,6 +49,7 @@
     struct CGRect _titleFrame;
     struct CGRect _excerptFrame;
     struct CGRect _accessoryViewFrame;
+    struct CGRect _segmentedColorViewFrame;
     struct CGRect _sharrowFrame;
     struct CGRect _publisherLogoFrame;
 }
@@ -63,6 +70,13 @@
 @property(nonatomic) double accessoryFontSize; // @synthesize accessoryFontSize=_accessoryFontSize;
 @property(retain, nonatomic) UIColor *accessoryIconColor; // @synthesize accessoryIconColor=_accessoryIconColor;
 @property(retain, nonatomic) UIColor *accessoryFontColor; // @synthesize accessoryFontColor=_accessoryFontColor;
+@property(nonatomic) unsigned long long segmentedColorViewDirection; // @synthesize segmentedColorViewDirection=_segmentedColorViewDirection;
+@property(nonatomic) unsigned long long numberOfSegments; // @synthesize numberOfSegments=_numberOfSegments;
+@property(nonatomic) struct CGRect segmentedColorViewFrame; // @synthesize segmentedColorViewFrame=_segmentedColorViewFrame;
+@property(nonatomic) double accessoryContentViewRightPadding; // @synthesize accessoryContentViewRightPadding=_accessoryContentViewRightPadding;
+@property(nonatomic) double accessoryContentViewLeftPadding; // @synthesize accessoryContentViewLeftPadding=_accessoryContentViewLeftPadding;
+@property(nonatomic) double accessoryViewTopPadding; // @synthesize accessoryViewTopPadding=_accessoryViewTopPadding;
+@property(nonatomic) double accessoryViewBottomPadding; // @synthesize accessoryViewBottomPadding=_accessoryViewBottomPadding;
 @property(retain, nonatomic) NSString *accessoryFontName; // @synthesize accessoryFontName=_accessoryFontName;
 @property(nonatomic) long long accessoryContentMode; // @synthesize accessoryContentMode=_accessoryContentMode;
 @property(nonatomic) struct CGRect accessoryViewFrame; // @synthesize accessoryViewFrame=_accessoryViewFrame;

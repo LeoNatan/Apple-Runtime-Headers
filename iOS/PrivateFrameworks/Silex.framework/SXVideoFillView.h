@@ -30,7 +30,7 @@
 - (void)play;
 - (struct CGRect)fillFrameWithBoundingSize:(struct CGSize)arg1;
 - (void)layoutSubviews;
-- (id)initWithVideoFill:(id)arg1 documentController:(id)arg2 imageViewFactory:(id)arg3;
+- (id)initWithVideoFill:(id)arg1 DOMObjectProvider:(id)arg2 imageViewFactory:(id)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

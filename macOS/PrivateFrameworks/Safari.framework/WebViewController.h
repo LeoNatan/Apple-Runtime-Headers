@@ -11,7 +11,7 @@
 #import <Safari/FindBannerDelegate-Protocol.h>
 #import <Safari/SearchableWKViewFullScreenDelegate-Protocol.h>
 
-@class BannerContainerView, FileWrapper, FindBanner, HeaderFooterPrintRenderer, NSArray, NSData, NSMutableArray, NSString, NSURL, SearchableWKView, TabContentViewController, WKWebsiteDataStore;
+@class BannerContainerView, FileWrapper, FindBanner, HeaderFooterPrintRenderer, NSArray, NSData, NSMutableArray, NSString, NSURL, SearchableWKView, TabContentViewController, WKWebViewConfiguration, WKWebsiteDataStore;
 
 __attribute__((visibility("hidden")))
 @interface WebViewController : NSViewController <FindBannerDelegate, BannerContainerViewDelegate, BannerDelegate, SearchableWKViewFullScreenDelegate>
@@ -21,7 +21,7 @@ __attribute__((visibility("hidden")))
     BannerContainerView *_bannerContainerView;
     NSMutableArray *_installedBanners;
     NSString *_suggestedFilenameForFrameToSave;
-    struct WKRetainPtr<const OpaqueWKPageConfiguration *> _configuration;
+    WKWebViewConfiguration *_configuration;
     BOOL _isDeferringViewInWindowChanges;
     BOOL _isClosed;
     BOOL _isSavingAsPDF;
@@ -134,7 +134,6 @@ __attribute__((visibility("hidden")))
 - (void)presentSaveDialogForFileWrapper:(id)arg1;
 - (void)presentSaveDialogForFrame:(const struct Frame *)arg1;
 - (id)_suggestedFilenameForFrameToSave;
-- (id)_suggestedFilenameFromTitle:(id)arg1;
 @property(readonly, copy, nonatomic) NSString *suggestedFilenameToSave;
 @property(readonly, copy, nonatomic) NSString *mimeTypeForSaving;
 @property(readonly, nonatomic) BOOL isSaveDialogPending;
@@ -155,14 +154,14 @@ __attribute__((visibility("hidden")))
 - (void)invalidate;
 - (void)_willClosePage;
 - (void)_close;
-- (id)_createWebViewWithConfigurationRef:(struct OpaqueWKPageConfiguration *)arg1;
+- (id)_createWebViewWithConfiguration:(id)arg1;
 - (BOOL)tryClose;
 - (void)close;
 - (void)dealloc;
 - (void)viewDidLoad;
 - (void)loadView;
 @property(readonly, nonatomic) SearchableWKView *webView; // @synthesize webView=_webView;
-- (id)initWithContext:(const struct Context *)arg1 pageGroup:(const struct PageGroup *)arg2 relatedToPage:(const struct Page *)arg3 browsingMode:(unsigned long long)arg4 websiteDataStore:(id)arg5;
+- (id)initWithConfiguration:(id)arg1 browsingMode:(unsigned long long)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

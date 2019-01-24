@@ -19,6 +19,7 @@
     NSSet *_sectionsWithHeaders;
     _Bool _needsHeaderUpdate;
     _Bool _needsInsetsUpdate;
+    NSIndexPath *_lastIndexPathContainingContent;
     _Bool _needsNotchesUpdated;
     _Bool _useFixedLowTransitionLayout;
     _Bool _snappingEnabled;
@@ -80,7 +81,7 @@
 - (id)flowLayoutAttributesForItemAtIndexPath:(id)arg1;
 - (id)invalidationContextForBoundsChange:(struct CGRect)arg1;
 - (void)finalizeCollectionViewUpdates;
-- (_Bool)isLastIndexPathWithContent:(id)arg1;
+- (id)_findLastIndexPathWithContent;
 - (void)prepareLayout;
 - (void)invalidateLayoutWithContext:(id)arg1;
 - (_Bool)shouldInvalidateLayoutForBoundsChange:(struct CGRect)arg1;

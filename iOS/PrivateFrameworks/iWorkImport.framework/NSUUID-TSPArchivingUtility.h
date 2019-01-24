@@ -7,7 +7,7 @@
 #import <Foundation/NSUUID.h>
 
 @interface NSUUID (TSPArchivingUtility)
-- (void)tsp_saveToMessage:(struct UUID *)arg1;
-- (id)tsp_initWithMessage:(const struct UUID *)arg1;
+-     // Error parsing type: v24@0:8^{UUID=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}QQ}16, name: tsp_saveToMessage:
+-     // Error parsing type: @24@0:8r^{UUID=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}QQ}16, name: tsp_initWithMessage:
 @end
 

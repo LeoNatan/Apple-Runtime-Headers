@@ -24,6 +24,7 @@
 + (void)xpcActivityUnregisterIdentifier:(const char *)arg1;
 + (void)xpcActivityRegisterIdentifier:(const char *)arg1 criteria:(id)arg2 handler:(CDUnknownBlockType)arg3;
 + (id)criteriaDictionaryWithCriteria:(id)arg1;
++ (id)lastCompleteDateKeyForIdentifier:(id)arg1;
 + (id)lastAttemptDateKeyForIdentifier:(id)arg1;
 @property(retain, nonatomic) NSMutableArray *pendingTasks; // @synthesize pendingTasks=_pendingTasks;
 @property(nonatomic) BOOL runningTask; // @synthesize runningTask=_runningTask;
@@ -40,6 +41,8 @@
 - (void)runRegistrantWithIdentifier:(id)arg1 handler:(CDUnknownBlockType)arg2;
 - (void)_runRegistrantWithIdentifier:(id)arg1 handler:(CDUnknownBlockType)arg2;
 - (void)_registerActivityWithIdentifier:(id)arg1 criteria:(id)arg2 handler:(CDUnknownBlockType)arg3;
+- (void)_updateLastCompleteDateForIdentifier:(id)arg1;
+- (id)_lastCompleteDateForIdentifier:(id)arg1;
 - (void)_updateLastAttemptDateForIdentifier:(id)arg1;
 - (id)_lastAttemptDateForIdentifier:(id)arg1;
 - (void)_setup;

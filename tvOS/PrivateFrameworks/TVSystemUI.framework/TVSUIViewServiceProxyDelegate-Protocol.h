@@ -9,7 +9,7 @@
 @class NSArray, NSError, TVSUIViewServiceProxy, UIViewController;
 
 @protocol TVSUIViewServiceProxyDelegate <NSObject>
-- (void)proxy:(TVSUIViewServiceProxy *)arg1 requestsHostViewControllerDismissal:(UIViewController *)arg2 withItems:(NSArray *)arg3 completionHandler:(void (^)(NSArray *, NSError *))arg4;
+- (void)proxy:(TVSUIViewServiceProxy *)arg1 didCompleteViewServiceDismissal:(UIViewController *)arg2 withItems:(NSArray *)arg3 completionHandler:(void (^)(NSArray *, NSError *))arg4;
 
 @optional
 - (void)proxy:(TVSUIViewServiceProxy *)arg1 didChangeState:(long long)arg2;

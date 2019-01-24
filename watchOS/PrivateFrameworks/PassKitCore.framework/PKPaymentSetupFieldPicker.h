@@ -13,11 +13,13 @@
     NSArray *_pickerItems;
 }
 
-@property(readonly, copy, nonatomic) NSArray *pickerItems; // @synthesize pickerItems=_pickerItems;
+@property(copy, nonatomic) NSArray *pickerItems; // @synthesize pickerItems=_pickerItems;
 - (void).cxx_destruct;
-- (id)submissionString;
+- (_Bool)submissionStringMeetsAllRequirements;
+- (id)_submissionStringForValue:(id)arg1;
 - (id)displayString;
 @property(copy, nonatomic) PKPaymentSetupFieldPickerItem *currentValue; // @dynamic currentValue;
+- (void)_commonUpdate;
 - (void)updateWithConfiguration:(id)arg1;
 - (unsigned int)fieldType;
 

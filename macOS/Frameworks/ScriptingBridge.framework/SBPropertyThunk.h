@@ -18,6 +18,8 @@ __attribute__((visibility("hidden")))
 - (id)selectorNameForName:(id)arg1;
 - (id)signatureFormat;
 - (BOOL)isEqual:(id)arg1;
+- (BOOL)is_value;
+- (unsigned int)ae_type;
 - (unsigned int)code;
 - (id)initWithElement:(id)arg1 inDocument:(id)arg2;
 

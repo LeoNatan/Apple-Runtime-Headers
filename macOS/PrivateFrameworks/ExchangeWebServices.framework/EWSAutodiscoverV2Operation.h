@@ -8,21 +8,27 @@
 
 #import <ExchangeWebServices/NSURLSessionDataDelegate-Protocol.h>
 
-@class EWSAutodiscoverV2Binding, EWSAutodiscoverV2Response, NSError, NSString, NSURLSession;
+@class EWSAutodiscoverKillSwitch, EWSAutodiscoverV2Binding, EWSAutodiscoverV2Response, NSError, NSString, NSURLSession;
 
 @interface EWSAutodiscoverV2Operation : NSObject <NSURLSessionDataDelegate>
 {
     BOOL _logsActivity;
     BOOL _inProgress;
+    BOOL _retrieveAuthURI;
     EWSAutodiscoverV2Operation *_me;
     NSString *_emailAddress;
     EWSAutodiscoverV2Response *_response;
     EWSAutodiscoverV2Binding *_binding;
     NSError *_error;
     NSURLSession *_session;
+    EWSAutodiscoverKillSwitch *_killSwitch;
+    NSString *_protocol;
 }
 
 + (void)initialize;
+@property(nonatomic) BOOL retrieveAuthURI; // @synthesize retrieveAuthURI=_retrieveAuthURI;
+@property(retain, nonatomic) NSString *protocol; // @synthesize protocol=_protocol;
+@property(retain, nonatomic) EWSAutodiscoverKillSwitch *killSwitch; // @synthesize killSwitch=_killSwitch;
 @property(nonatomic) BOOL inProgress; // @synthesize inProgress=_inProgress;
 @property(readonly, nonatomic) NSURLSession *session; // @synthesize session=_session;
 @property(retain, nonatomic) NSError *error; // @synthesize error=_error;
@@ -33,6 +39,7 @@
 @property BOOL logsActivity; // @synthesize logsActivity=_logsActivity;
 - (void).cxx_destruct;
 - (id)_authorizationURIFromHttpHeader:(id)arg1;
+- (void)_sendAutodiscoverRequest;
 - (void)startWithProtocol:(id)arg1 retrieveAuthURI:(BOOL)arg2;
 - (void)dealloc;
 - (id)init;

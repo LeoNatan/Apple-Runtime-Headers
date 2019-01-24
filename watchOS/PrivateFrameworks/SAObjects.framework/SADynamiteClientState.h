@@ -25,6 +25,8 @@
 @property(copy, nonatomic) NSNumber *userHistoryUnmodifiable;
 @property(copy, nonatomic) NSString *status;
 @property(retain, nonatomic) SACalendar *expirationDate;
+@property(nonatomic) _Bool ageVerificationRequired;
+@property(nonatomic) _Bool activeTvUser;
 - (id)encodedClassName;
 - (id)groupIdentifier;
 

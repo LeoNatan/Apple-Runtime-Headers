@@ -27,9 +27,9 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) NSString *textAttributeUUIDString;
 - (_Bool)isEquivalentToObject:(id)arg1;
 - (void)resetTextAttributeUUIDString;
-- (void)loadFromArchive:(const struct SmartFieldArchive *)arg1 unarchiver:(id)arg2;
+-     // Error parsing type: v32@0:8r^{SmartFieldArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}}16@24, name: loadFromArchive:unarchiver:
 - (void)saveToArchiver:(id)arg1;
-- (void)saveToArchive:(struct SmartFieldArchive *)arg1 archiver:(id)arg2;
+-     // Error parsing type: v32@0:8^{SmartFieldArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}}16@24, name: saveToArchive:archiver:
 - (void)wasRemovedFromDocumentRoot:(id)arg1;
 - (void)willBeRemovedFromDocumentRoot:(id)arg1;
 - (void)wasAddedToDocumentRoot:(id)arg1 dolcContext:(id)arg2;
@@ -41,7 +41,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)allowsEditing;
 @property(readonly, nonatomic) struct _NSRange range;
 @property(readonly, nonatomic) int styleAttributeArrayKind;
-@property(readonly, nonatomic) int attributeArrayKind;
+@property(readonly, nonatomic) unsigned long long attributeArrayKind;
 - (int)smartFieldKind;
 - (id)copyWithContext:(id)arg1;
 - (void)i_setTextAttributeUUIDString:(id)arg1;

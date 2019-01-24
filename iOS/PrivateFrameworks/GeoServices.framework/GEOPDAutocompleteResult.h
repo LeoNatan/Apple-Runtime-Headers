@@ -16,6 +16,7 @@ __attribute__((visibility("hidden")))
     PBUnknownFields *_unknownFields;
     unsigned int _retainSearchTime;
     NSMutableArray *_sections;
+    NSMutableArray *_sortPriorityMappings;
     _Bool _enableRap;
     _Bool _shouldDisplayNoResults;
     struct {
@@ -25,7 +26,9 @@ __attribute__((visibility("hidden")))
     } _has;
 }
 
++ (Class)sortPriorityMappingType;
 + (Class)sectionsType;
+@property(retain, nonatomic) NSMutableArray *sortPriorityMappings; // @synthesize sortPriorityMappings=_sortPriorityMappings;
 @property(nonatomic) unsigned int retainSearchTime; // @synthesize retainSearchTime=_retainSearchTime;
 @property(nonatomic) _Bool shouldDisplayNoResults; // @synthesize shouldDisplayNoResults=_shouldDisplayNoResults;
 @property(nonatomic) _Bool enableRap; // @synthesize enableRap=_enableRap;
@@ -41,6 +44,10 @@ __attribute__((visibility("hidden")))
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+- (id)sortPriorityMappingAtIndex:(unsigned long long)arg1;
+- (unsigned long long)sortPriorityMappingsCount;
+- (void)addSortPriorityMapping:(id)arg1;
+- (void)clearSortPriorityMappings;
 @property(nonatomic) _Bool hasRetainSearchTime;
 @property(nonatomic) _Bool hasShouldDisplayNoResults;
 @property(nonatomic) _Bool hasEnableRap;

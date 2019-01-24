@@ -4,11 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <objc/NSObject.h>
+#import <SpringBoardServices/SBSLockScreenContentAssertion.h>
 
-@class SBSLockScreenContentAssertion;
-
-@interface SBSSecureAppAssertion : NSObject
+@interface SBSSecureAppAssertion : SBSLockScreenContentAssertion
 {
     SBSLockScreenContentAssertion *_actualAssertion;
 }
@@ -16,9 +14,6 @@
 + (id)acquireSecureAppAssertionWithType:(unsigned int)arg1 errorHandler:(CDUnknownBlockType)arg2;
 @property(retain, nonatomic) SBSLockScreenContentAssertion *actualAssertion; // @synthesize actualAssertion=_actualAssertion;
 - (void).cxx_destruct;
-- (void)invalidate;
-- (void)dealloc;
-- (id)initWithType:(unsigned int)arg1 errorHandler:(CDUnknownBlockType)arg2;
 
 @end
 

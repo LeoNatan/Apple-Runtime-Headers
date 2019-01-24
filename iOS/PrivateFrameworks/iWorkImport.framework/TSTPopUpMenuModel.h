@@ -31,9 +31,9 @@ __attribute__((visibility("hidden")))
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)copyWithContext:(id)arg1;
 - (void)saveToArchiver:(id)arg1;
-- (void)saveToArchive:(struct PopUpMenuModel *)arg1 archiver:(id)arg2;
+-     // Error parsing type: v32@0:8^{PopUpMenuModel=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TST::PopUpMenuModel_CellValue>=^{Arena}ii^{Rep}}{RepeatedPtrField<TSCE::CellValueArchive>=^{Arena}ii^{Rep}}}16@24, name: saveToArchive:archiver:
 - (void)loadFromUnarchiver:(id)arg1;
-- (void)loadFromArchive:(const struct PopUpMenuModel *)arg1;
+-     // Error parsing type: v24@0:8r^{PopUpMenuModel=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TST::PopUpMenuModel_CellValue>=^{Arena}ii^{Rep}}{RepeatedPtrField<TSCE::CellValueArchive>=^{Arena}ii^{Rep}}}16, name: loadFromArchive:
 - (id)popUpItemFromDate:(id)arg1 format:(id)arg2;
 - (id)popUpItemFromString:(id)arg1;
 - (id)popUpItemFromBoolean:(_Bool)arg1;

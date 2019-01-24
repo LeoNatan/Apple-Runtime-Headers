@@ -74,7 +74,7 @@ __attribute__((visibility("hidden")))
 - (void)_replaceTabsWithContentsOfFolder:(id)arg1;
 - (void)_openContentsOfFolderInNewTabs:(id)arg1;
 - (void)_openFolder:(id)arg1;
-- (void)_userDefaultsDidChange:(id)arg1;
+- (void)_showFrequentlyVisitedSitesPreferenceDidChange:(id)arg1;
 - (void)_frequentSitesDidChange:(id)arg1;
 - (void)_favoritesDidChange:(id)arg1;
 - (void)_suppressUIUpdatesFromFrequentlyVisitedSitesChangeNotificationsInBlock:(CDUnknownBlockType)arg1;
@@ -97,8 +97,8 @@ __attribute__((visibility("hidden")))
 - (void)_reloadFrequentlyVisitedSitesSoon;
 - (BOOL)_updateFrequentlyVisitedSiteVisibility;
 - (BOOL)_shouldHideFrequentlyVisitedSites;
-- (struct TopSite *)_draggedFrequentSite;
-- (struct TopSite *)_frequentSiteAtIndex:(unsigned long long)arg1;
+- (id)_draggedFrequentSite;
+- (id)_frequentSiteAtIndex:(unsigned long long)arg1;
 - (void)_instrumentUserDidActivateFavoritesGridItem:(id)arg1 viaContextMenu:(BOOL)arg2;
 - (void)_updateBackButtonVisibility;
 - (void)_updateFavoritesTitle;
@@ -112,6 +112,7 @@ __attribute__((visibility("hidden")))
 - (void)_invalidateCachedDisplayedFavorites;
 - (id)_displayedFavorites;
 - (BOOL)_isShowingRootFolder;
+- (id)_combinedFavoritesController;
 - (void)_stopObservingScrollViewContentInsetsChangesIfNeeded;
 - (void)_updatePresentationModeAttributes;
 - (id)_enqueuedSiteMetadataRequestForCellView:(id)arg1 url:(id)arg2 orBookmark:(id)arg3;
@@ -128,7 +129,7 @@ __attribute__((visibility("hidden")))
 - (void)_beginEditingAddressOfBookmark:(id)arg1;
 - (void)_beginRenamingBookmark:(id)arg1;
 - (void)_reloadCellForBookmark:(id)arg1;
-- (id)_contextMenuBuilderForBookmark:(id)arg1 topSite:(struct TopSite *)arg2;
+- (id)_contextMenuBuilderForBookmark:(id)arg1 topSite:(id)arg2;
 - (id)_contextMenuBuilderForCellView:(id)arg1;
 - (void)_addToggleFrequentlyVisitedSitesVisibilityMenuItemToMenu:(id)arg1;
 - (id)menuForEvent:(id)arg1;

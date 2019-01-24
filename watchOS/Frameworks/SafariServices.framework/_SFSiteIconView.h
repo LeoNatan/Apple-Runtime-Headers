@@ -6,7 +6,7 @@
 
 #import <UIKit/UIImageView.h>
 
-@class UILabel, WebBookmark;
+@class UIImage, UILabel, WebBookmark;
 
 @interface _SFSiteIconView : UIImageView
 {
@@ -15,8 +15,10 @@
     int _state;
     id _touchIconRequestToken;
     WebBookmark *_bookmark;
+    UIImage *_leadingImage;
 }
 
+@property(retain, nonatomic) UIImage *leadingImage; // @synthesize leadingImage=_leadingImage;
 @property(retain, nonatomic) WebBookmark *bookmark; // @synthesize bookmark=_bookmark;
 - (void).cxx_destruct;
 - (void)_setState:(int)arg1;

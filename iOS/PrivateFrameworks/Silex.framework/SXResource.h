@@ -7,10 +7,11 @@
 #import <Silex/SXJSONObject.h>
 
 #import <Silex/SXClassFactoryProtocol-Protocol.h>
+#import <Silex/SXResource-Protocol.h>
 
 @class NSString, NSURL;
 
-@interface SXResource : SXJSONObject <SXClassFactoryProtocol>
+@interface SXResource : SXJSONObject <SXResource, SXClassFactoryProtocol>
 {
 }
 

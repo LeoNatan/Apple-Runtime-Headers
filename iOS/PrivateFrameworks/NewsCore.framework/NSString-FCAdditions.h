@@ -12,8 +12,11 @@
 + (id)fc_string:(CDUnknownBlockType)arg1;
 - (_Bool)fc_isValidColorHexString;
 - (unsigned long long)fc_unsignedLongLongValue;
-- (_Bool)fc_hasTagIDPrefix;
-- (_Bool)fc_hasArticleIDPrefix;
+- (_Bool)fc_isValidTagID;
+- (_Bool)fc_isValidHardPaywallArticleID;
+- (_Bool)fc_isValidArticleID;
+- (_Bool)fc_isValidCloudKitIDWithPrefix:(id)arg1;
+- (_Bool)fc_isValidCloudKitID;
 - (id)fc_numberFollowingString:(id)arg1;
 - (id)fc_stringByPrefixingLinesWithString:(id)arg1;
 - (id)fc_stringByReplacingOccurrencesOfStrings:(id)arg1 withString:(id)arg2;

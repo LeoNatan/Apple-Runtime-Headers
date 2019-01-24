@@ -106,8 +106,10 @@
 @property(copy, nonatomic) NSString *_DKMetadataHomeKitScene__clientName; // @dynamic _DKMetadataHomeKitScene__clientName;
 @property(copy, nonatomic) NSString *_DKMetadataHomeKitScene__homeUUID; // @dynamic _DKMetadataHomeKitScene__homeUUID;
 @property(copy, nonatomic) NSString *_DKMetadataHomeKitScene__sceneName; // @dynamic _DKMetadataHomeKitScene__sceneName;
+@property(copy, nonatomic) NSString *_DKMicroLocationMetadataKey__domain; // @dynamic _DKMicroLocationMetadataKey__domain;
 @property(copy, nonatomic) NSString *_DKMicroLocationMetadataKey__locationDistribution; // @dynamic _DKMicroLocationMetadataKey__locationDistribution;
 @property(copy, nonatomic) NSString *_DKMicroLocationMetadataKey__microLocationDistribution; // @dynamic _DKMicroLocationMetadataKey__microLocationDistribution;
+@property(retain, nonatomic) NSData *_DKMicroLocationMetadataKey__probabilityVector; // @dynamic _DKMicroLocationMetadataKey__probabilityVector;
 @property(copy, nonatomic) NSString *_DKNotificationUsageMetadataKey__bundleID; // @dynamic _DKNotificationUsageMetadataKey__bundleID;
 @property(copy, nonatomic) NSString *_DKNotificationUsageMetadataKey__identifier; // @dynamic _DKNotificationUsageMetadataKey__identifier;
 @property(copy, nonatomic) NSString *_DKNowPlayingMetadataKey__album; // @dynamic _DKNowPlayingMetadataKey__album;
@@ -116,6 +118,9 @@
 @property(copy, nonatomic) NSNumber *_DKNowPlayingMetadataKey__elapsed; // @dynamic _DKNowPlayingMetadataKey__elapsed;
 @property(copy, nonatomic) NSString *_DKNowPlayingMetadataKey__genre; // @dynamic _DKNowPlayingMetadataKey__genre;
 @property(copy, nonatomic) NSNumber *_DKNowPlayingMetadataKey__identifier; // @dynamic _DKNowPlayingMetadataKey__identifier;
+@property(nonatomic) _Bool _DKNowPlayingMetadataKey__isAirPlayVideo; // @dynamic _DKNowPlayingMetadataKey__isAirPlayVideo;
+@property(copy, nonatomic) NSString *_DKNowPlayingMetadataKey__mediaType; // @dynamic _DKNowPlayingMetadataKey__mediaType;
+@property(retain, nonatomic) NSData *_DKNowPlayingMetadataKey__outputDeviceIDs; // @dynamic _DKNowPlayingMetadataKey__outputDeviceIDs;
 @property(nonatomic) short _DKNowPlayingMetadataKey__playing; // @dynamic _DKNowPlayingMetadataKey__playing;
 @property(copy, nonatomic) NSString *_DKNowPlayingMetadataKey__title; // @dynamic _DKNowPlayingMetadataKey__title;
 @property(copy, nonatomic) NSDate *_DKPeriodMetadataKey__periodEnd; // @dynamic _DKPeriodMetadataKey__periodEnd;

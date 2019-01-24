@@ -47,6 +47,7 @@
 - (void)_queue_updateSettingsWithAuthorizationStatus:(int)arg1 options:(unsigned int)arg2 topics:(id)arg3 forBundleIdentifier:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
 - (id)_queue_authorizedBundleIdentifiersForBundleIdentifiers:(id)arg1;
 - (id)_queue_sectionInfoForBundleIdentifier:(id)arg1;
+- (id)_queue_effectiveSectionInfoForBundleIdentifier:(id)arg1;
 - (void)_queue_setSectionInfo:(id)arg1 forBundleIdentifier:(id)arg2;
 - (id)_queue_notificationSettingsForBundleIdentifier:(id)arg1;
 - (void)_queue_removeObserver:(id)arg1;

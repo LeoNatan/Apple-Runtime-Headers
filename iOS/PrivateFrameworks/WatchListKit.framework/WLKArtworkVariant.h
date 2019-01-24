@@ -13,7 +13,6 @@
     NSString *_artworkURLTemplate;
     _Bool _supportsLayeredImage;
     _Bool _alpha;
-    NSURL *_artworkURL;
     NSString *_artworkURLString;
     long long _artworkType;
     NSString *_format;
@@ -27,13 +26,13 @@
 @property(readonly, nonatomic) long long artworkType; // @synthesize artworkType=_artworkType;
 @property(readonly, nonatomic) struct CGSize artworkSize; // @synthesize artworkSize=_artworkSize;
 @property(readonly, copy, nonatomic) NSString *artworkURLString; // @synthesize artworkURLString=_artworkURLString;
-@property(readonly, copy, nonatomic) NSURL *artworkURL; // @synthesize artworkURL=_artworkURL;
 - (void).cxx_destruct;
 - (id)_sizeDescription:(struct CGSize)arg1;
 - (id)description;
 - (id)artworkSizeTemplateURL;
 - (id)artworkURLForSize:(struct CGSize)arg1 format:(id)arg2;
 - (id)artworkURLForSize:(struct CGSize)arg1;
+@property(readonly, copy, nonatomic) NSURL *artworkURL;
 - (id)initWithDictionary:(id)arg1;
 
 @end

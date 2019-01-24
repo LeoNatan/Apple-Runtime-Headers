@@ -7,9 +7,6 @@
 #import <Foundation/NSOperationQueue.h>
 
 @interface NSOperationQueue (TSUAdditions)
-+ (id)tsu_newSerialOperationQueueWithName:(id)arg1 attribute:(id)arg2;
 + (id)tsu_newSerialOperationQueueWithName:(id)arg1;
-- (void)tsu_performBlock:(CDUnknownBlockType)arg1;
-@property(readonly, nonatomic) _Bool tsu_isCurrentQueue;
 @end
 

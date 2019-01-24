@@ -12,11 +12,11 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)loader;
-- (int)virtualScreenForContext:(id)arg1;
-- (unsigned long long)uploadResource:(id)arg1 handle:(id)arg2 insideSession:(id)arg3 config:(void *)arg4;
-- (_Bool)shouldReuploadHandle:(id)arg1 config:(void *)arg2;
+- (long long)virtualScreenForContext:(id)arg1;
+- (unsigned long long)uploadResource:(id)arg1 handle:(id)arg2 insideSession:(id)arg3 config:(id)arg4;
+- (_Bool)shouldReuploadHandle:(id)arg1 config:(id)arg2;
 - (void)destroyHandle:(id)arg1 insideContext:(id)arg2;
-- (void)postbindHandle:(id)arg1 config:(void *)arg2;
+- (void)postbindHandle:(id)arg1 config:(id)arg2;
 
 @end
 

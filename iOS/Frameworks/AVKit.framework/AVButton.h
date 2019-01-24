@@ -6,12 +6,13 @@
 
 #import <UIKit/UIButton.h>
 
-@class AVMicaPackage, AVUserInteractionObserverGestureRecognizer, NSNumber, NSString, NSTimer, UIViewPropertyAnimator;
+@class AVMicaPackage, AVUserInteractionObserverGestureRecognizer, NSNumber, NSString, NSTimer, UIViewPropertyAnimator, UIVisualEffectView;
 
 @interface AVButton : UIButton
 {
     _Bool _wasLongPressed;
     _Bool _treatsForcePressAsLongPress;
+    _Bool _usesBackgroundEffectViewForTextOnlyButtons;
     _Bool _multipleTouchesEndsTracking;
     _Bool _disablesHighlightWhenLongPressed;
     _Bool _clampsHitRectInsetsWhenContainedInScrollableView;
@@ -35,11 +36,13 @@
     NSNumber *_previousHorizontalPositionOfLongPress;
     NSTimer *_longPressTimer;
     AVUserInteractionObserverGestureRecognizer *_userInteractionGestureRecognizer;
+    UIVisualEffectView *_backgroundEffectView;
     struct CGSize _extrinsicContentSize;
     struct NSDirectionalEdgeInsets _hitRectInsets;
 }
 
 + (id)buttonWithAccessibilityIdentifier:(id)arg1;
+@property(retain, nonatomic) UIVisualEffectView *backgroundEffectView; // @synthesize backgroundEffectView=_backgroundEffectView;
 @property(nonatomic) _Bool hasFullScreenAppearance; // @synthesize hasFullScreenAppearance=_hasFullScreenAppearance;
 @property(nonatomic) _Bool hasAlternateAppearance; // @synthesize hasAlternateAppearance=_hasAlternateAppearance;
 @property(nonatomic, getter=isIncluded) _Bool included; // @synthesize included=_included;
@@ -65,19 +68,24 @@
 @property(nonatomic) double maximumForceSinceTrackingBegan; // @synthesize maximumForceSinceTrackingBegan=_maximumForceSinceTrackingBegan;
 @property(nonatomic) double force; // @synthesize force=_force;
 @property(nonatomic) double forceThreshold; // @synthesize forceThreshold=_forceThreshold;
+@property(nonatomic) _Bool usesBackgroundEffectViewForTextOnlyButtons; // @synthesize usesBackgroundEffectViewForTextOnlyButtons=_usesBackgroundEffectViewForTextOnlyButtons;
 @property(nonatomic) _Bool treatsForcePressAsLongPress; // @synthesize treatsForcePressAsLongPress=_treatsForcePressAsLongPress;
 @property(nonatomic) _Bool wasLongPressed; // @synthesize wasLongPressed=_wasLongPressed;
 - (void).cxx_destruct;
 - (id)_preferredImageName;
+- (void)_updateBackgroundEffectViewIsHidden;
+- (void)_updateEdgeInsets;
 - (void)_updateIsHiddenAndAlpha;
 - (void)_updateImageIfNeeded;
 - (void)_resetTrackedState;
 - (void)_handleUserInteractionGestureRecognizer:(id)arg1;
 - (struct CGSize)_preferredLayoutSize;
+- (void)layoutSubviews;
 - (struct CGSize)intrinsicContentSize;
 - (_Bool)pointInside:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (struct CGRect)hitRect;
 - (void)setBounds:(struct CGRect)arg1;
+- (void)setTitle:(id)arg1 forState:(unsigned long long)arg2;
 - (void)setImage:(id)arg1 forState:(unsigned long long)arg2;
 - (void)cancelTrackingWithEvent:(id)arg1;
 - (void)endTrackingWithTouch:(id)arg1 withEvent:(id)arg2;

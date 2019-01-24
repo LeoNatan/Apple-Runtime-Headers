@@ -13,7 +13,6 @@
 @property(copy, nonatomic, setter=webui_setLastGeneratedPasswordForCurrentBackForwardItem:) NSString *webui_lastGeneratedPasswordForCurrentBackForwardItem;
 @property(readonly, nonatomic) _Bool webui_privateBrowsingEnabled;
 @property(readonly, nonatomic) UIViewController *webui_presentingViewController;
-- (WBSFormMetadata *)webui_formMetadataAndFrame:(id *)arg1 forLastPasswordGenerationOrSubmitEventInFrame:(id <WBUFormAutoFillFrameHandle>)arg2;
 - (void)webui_removeFormMetadataForLastPasswordGenerationOrSubmitEventInFrame:(id <WBUFormAutoFillFrameHandle>)arg1;
 - (void)webui_setFormMetadata:(WBSFormMetadata *)arg1 forLastPasswordGenerationOrSubmitEventInFrame:(id <WBUFormAutoFillFrameHandle>)arg2;
 - (WBSFormMetadata *)webui_formMetadataForLastPasswordGenerationOrSubmitEventInFrame:(id <WBUFormAutoFillFrameHandle>)arg1;

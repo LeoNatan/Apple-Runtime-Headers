@@ -67,13 +67,6 @@
 - (struct _NSRange)_hardQueuePlaylistIndexRangeIncludingCurrentItem:(_Bool)arg1;
 - (long long)_hardQueueIndexForIndex:(long long)arg1;
 - (void)_handleConfiguredQueueFeeder:(id)arg1 fromPlaybackContext:(id)arg2;
-- (void)_invalidateCachedMusicPlayerControllerQueue;
-- (void)_updateMusicPlayerControllerQueueWithCompletionHandler:(CDUnknownBlockType)arg1;
-- (unsigned long long)_indexOfMediaItem:(id)arg1;
-- (_Bool)setMusicPlayerControllerQueue:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
-- (void)requestMusicPlayerControllerQueueWithCompletionHandler:(CDUnknownBlockType)arg1;
-- (id)musicPlayerControllerQueueForUUID:(id)arg1;
-- (id)currentQueueUUID;
 @property(readonly, nonatomic) _Bool userCanChangeShuffleAndRepeatType;
 - (_Bool)supportsAddToQueue;
 - (_Bool)preventsHardQueueModificationsForItem:(id)arg1;
@@ -116,6 +109,7 @@
 @property(readonly, nonatomic) struct _NSRange hardQueuePlaylistIndexRange;
 - (void)clearSoftQueue;
 - (void)clearHardQueue;
+- (void)addPlaybackContext:(id)arg1 toQueueWithInsertionType:(long long)arg2 atIndex:(unsigned long long)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)addPlaybackContext:(id)arg1 toQueueWithInsertionType:(long long)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (id)uniqueIdentifier;
 - (void)encodeWithCoder:(id)arg1;

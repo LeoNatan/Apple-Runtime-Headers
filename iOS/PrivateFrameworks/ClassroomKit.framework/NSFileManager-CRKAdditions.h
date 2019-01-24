@@ -7,7 +7,11 @@
 #import <Foundation/NSFileManager.h>
 
 @interface NSFileManager (CRKAdditions)
++ (id)crk_computeNonContainerizedHomeDirectoryURL;
++ (id)crk_nonContainerizedHomeDirectoryURL;
+- (id)crk_collisionAvoidingURLForURL:(id)arg1;
 - (id)crk_deepContentsOfDirectoryAtPath:(id)arg1 options:(unsigned long long)arg2 error:(id *)arg3;
 - (_Bool)crk_safeRemoveItemAtURL:(id)arg1 error:(id *)arg2;
+@property(readonly) _Bool crk_isStudentdInstalled;
 @end
 

@@ -6,17 +6,17 @@
 
 #import <Preferences/PSListController.h>
 
-@class STContentPrivacyMediaRestrictionsDetailController;
+@class NSObject, STContentPrivacyMediaRestrictionsDetailController;
 @protocol STContentPrivacyViewModelCoordinator;
 
 @interface STWebFilterDetailController : PSListController
 {
-    id <STContentPrivacyViewModelCoordinator> _coordinator;
+    NSObject<STContentPrivacyViewModelCoordinator> *_coordinator;
     STContentPrivacyMediaRestrictionsDetailController *_parentMediaRestrictionsController;
 }
 
 @property __weak STContentPrivacyMediaRestrictionsDetailController *parentMediaRestrictionsController; // @synthesize parentMediaRestrictionsController=_parentMediaRestrictionsController;
-@property(retain, nonatomic) id <STContentPrivacyViewModelCoordinator> coordinator; // @synthesize coordinator=_coordinator;
+@property(retain, nonatomic) NSObject<STContentPrivacyViewModelCoordinator> *coordinator; // @synthesize coordinator=_coordinator;
 - (void).cxx_destruct;
 - (id)_addButtonSpecifierWithGroup:(id)arg1 action:(SEL)arg2;
 - (id)listItemSpecifierWithGroup:(id)arg1 name:(id)arg2 value:(id)arg3;
@@ -35,6 +35,8 @@
 - (id)getItemSpecifierValue:(id)arg1;
 - (void)addSite:(id)arg1;
 - (void)addNamedSite:(id)arg1;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
+- (void)dealloc;
 - (id)_listItemSpecifiersForSitesGroup:(id)arg1;
 - (id)_listItemSpecifiersForNamedSitesGroup:(id)arg1;
 - (id)specifiers;

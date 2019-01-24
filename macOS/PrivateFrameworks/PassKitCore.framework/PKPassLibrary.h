@@ -78,9 +78,13 @@
 - (id)_remoteLibrary;
 - (BOOL)_hasRemoteLibrary;
 - (BOOL)isPaymentPassActivationAvailable;
+- (void)_transitTopUpMessage:(id)arg1 passes:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)transitMessageDidDisplay:(id)arg1;
+- (void)_transitDCIMessage:(id)arg1 paymentPasses:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (BOOL)_shouldNotifyForParter:(id)arg1;
+- (void)transitMessageForRouteInfo:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)_defaultPaymentPassForPaymentRequest:(id)arg1;
 - (void)supportedTransitPartnersForDigitalIssuance:(CDUnknownBlockType)arg1;
-- (void)supportedPartnersForDigitalIssuance:(CDUnknownBlockType)arg1;
 - (id)_sortedPaymentPassesForPaymentRequest:(id)arg1;
 - (void)sortedTransitPassesForAppletDataFormat:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)expressFelicaTransitPasses;
@@ -136,7 +140,7 @@
 - (void)hasInAppPrivateLabelPaymentPassesForApplicationIdentifier:(id)arg1 issuerCountryCodes:(id)arg2 withHandler:(CDUnknownBlockType)arg3;
 - (id)inAppPrivateLabelPaymentPassesForApplicationIdentifier:(id)arg1 issuerCountryCodes:(id)arg2;
 - (void)hasInAppPaymentPassesForNetworks:(id)arg1 capabilities:(unsigned long long)arg2 issuerCountryCodes:(id)arg3 withHandler:(CDUnknownBlockType)arg4;
-- (id)_filterPeerPaymentPass:(id)arg1;
+- (id)_filterPeerPaymentPass:(id)arg1 request:(id)arg2;
 - (id)inAppPaymentPassesForPaymentRequest:(id)arg1;
 - (BOOL)isPassbookVisible;
 - (BOOL)isRemovingPassesOfType:(unsigned long long)arg1;

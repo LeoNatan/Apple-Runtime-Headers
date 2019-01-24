@@ -14,6 +14,7 @@
 - (void)findKeyPressed;
 - (void)navigateForwardKeyPressed;
 - (void)navigateBackKeyPressed;
+- (void)reloadFromOriginKeyPressed;
 - (void)reloadKeyPressed;
 @end
 

@@ -10,6 +10,7 @@
 {
 }
 
+@property(nonatomic) double responseEnd;
 @property(nonatomic) double responseStart;
 @property(nonatomic) double requestStart;
 @property(nonatomic) double secureConnectionStart;
@@ -17,8 +18,11 @@
 @property(nonatomic) double connectStart;
 @property(nonatomic) double domainLookupEnd;
 @property(nonatomic) double domainLookupStart;
+@property(nonatomic) double fetchStart;
+@property(nonatomic) double redirectEnd;
+@property(nonatomic) double redirectStart;
 @property(nonatomic) double startTime;
-- (id)initWithStartTime:(double)arg1 domainLookupStart:(double)arg2 domainLookupEnd:(double)arg3 connectStart:(double)arg4 connectEnd:(double)arg5 secureConnectionStart:(double)arg6 requestStart:(double)arg7 responseStart:(double)arg8;
+- (id)initWithStartTime:(double)arg1 redirectStart:(double)arg2 redirectEnd:(double)arg3 fetchStart:(double)arg4 domainLookupStart:(double)arg5 domainLookupEnd:(double)arg6 connectStart:(double)arg7 connectEnd:(double)arg8 secureConnectionStart:(double)arg9 requestStart:(double)arg10 responseStart:(double)arg11 responseEnd:(double)arg12;
 
 @end
 

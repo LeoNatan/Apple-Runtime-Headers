@@ -43,7 +43,7 @@
 - (void)assetForCurrentLanguageOfType:(unsigned int)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)assetForCurrentLanguageOfType:(unsigned int)arg1;
 - (void)setDaemonRunningMode:(_Bool)arg1;
-- (id)init;
+- (id)initWithDaemonMode:(_Bool)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

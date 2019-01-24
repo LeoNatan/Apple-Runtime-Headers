@@ -9,7 +9,7 @@
 #import <NewsCore/FCOperationThrottlerDelegate-Protocol.h>
 #import <NewsCore/FCReadingListContentControllerObserving-Protocol.h>
 
-@class FCCloudContext, FCMTWriterMutexLock, FCReadingListContentController, NSArray, NSMutableDictionary, NSString;
+@class FCCloudContext, FCMTWriterLock, FCReadingListContentController, NSMutableDictionary, NSString;
 @protocol FCOperationThrottler;
 
 @interface FCReadingList : FCPrivateDataController <FCReadingListContentControllerObserving, FCOperationThrottlerDelegate>
@@ -17,9 +17,8 @@
     NSMutableDictionary *_entriesByArticleID;
     FCReadingListContentController *_readingListContentController;
     FCCloudContext *_cloudContext;
-    NSArray *_allSortedEntriesInReadingList;
     id <FCOperationThrottler> _articleIDsAvailableForOfflineReadingUpdateThrottler;
-    FCMTWriterMutexLock *_itemsLock;
+    FCMTWriterLock *_itemsLock;
 }
 
 + (id)commandsToMergeLocalDataToCloud:(id)arg1;
@@ -33,14 +32,15 @@
 + (_Bool)requiresBatchedSync;
 + (_Bool)requiresPushNotificationSupport;
 + (id)desiredKeys;
-@property(retain, nonatomic) FCMTWriterMutexLock *itemsLock; // @synthesize itemsLock=_itemsLock;
+@property(retain, nonatomic) FCMTWriterLock *itemsLock; // @synthesize itemsLock=_itemsLock;
 @property(retain, nonatomic) id <FCOperationThrottler> articleIDsAvailableForOfflineReadingUpdateThrottler; // @synthesize articleIDsAvailableForOfflineReadingUpdateThrottler=_articleIDsAvailableForOfflineReadingUpdateThrottler;
-@property(retain, nonatomic) NSArray *allSortedEntriesInReadingList; // @synthesize allSortedEntriesInReadingList=_allSortedEntriesInReadingList;
 @property(retain, nonatomic) FCCloudContext *cloudContext; // @synthesize cloudContext=_cloudContext;
 @property(retain, nonatomic) FCReadingListContentController *readingListContentController; // @synthesize readingListContentController=_readingListContentController;
 @property(retain, nonatomic) NSMutableDictionary *entriesByArticleID; // @synthesize entriesByArticleID=_entriesByArticleID;
 - (void).cxx_destruct;
-- (void)_invalidateAllSortedEntriesInReadingList;
+- (id)_allSortedEntriesInReadingList;
+- (id)_allEntriesInReadingList;
+- (id)_readingListEntryForArticleID:(id)arg1;
 - (void)_addedArticleIDs:(id)arg1 removedArticleIDs:(id)arg2 eventInitiationLevel:(long long)arg3;
 - (void)operationThrottler:(id)arg1 performAsyncOperationWithCompletion:(CDUnknownBlockType)arg2;
 - (void)readingListContentControllerDidUpdateArticleAvailabilityInOfflineMode:(id)arg1;

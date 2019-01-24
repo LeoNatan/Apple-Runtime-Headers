@@ -8,7 +8,7 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class NSMutableArray, NSString, PBUnknownFields;
+@class GEOLocalizedString, GEOStyleAttributes, NSMutableArray, NSString, PBUnknownFields;
 
 __attribute__((visibility("hidden")))
 @interface GEOPDEntity : PBCodable <NSCopying>
@@ -26,7 +26,10 @@ __attribute__((visibility("hidden")))
     NSMutableArray *_names;
     int _placeDisplayType;
     int _searchSection;
+    GEOLocalizedString *_secondaryName;
+    GEOLocalizedString *_secondarySpokenName;
     NSMutableArray *_spokenNames;
+    GEOStyleAttributes *_styleAttributes;
     NSString *_telephone;
     int _type;
     NSString *_url;
@@ -57,6 +60,9 @@ __attribute__((visibility("hidden")))
 + (Class)altFaxType;
 + (Class)altTelephoneType;
 + (id)entityForPlaceData:(id)arg1;
+@property(retain, nonatomic) GEOStyleAttributes *styleAttributes; // @synthesize styleAttributes=_styleAttributes;
+@property(retain, nonatomic) GEOLocalizedString *secondarySpokenName; // @synthesize secondarySpokenName=_secondarySpokenName;
+@property(retain, nonatomic) GEOLocalizedString *secondaryName; // @synthesize secondaryName=_secondaryName;
 @property(nonatomic) int capacity; // @synthesize capacity=_capacity;
 @property(nonatomic) unsigned long long brandMuid; // @synthesize brandMuid=_brandMuid;
 @property(nonatomic) _Bool isStandaloneBrand; // @synthesize isStandaloneBrand=_isStandaloneBrand;
@@ -84,6 +90,9 @@ __attribute__((visibility("hidden")))
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(readonly, nonatomic) _Bool hasStyleAttributes;
+@property(readonly, nonatomic) _Bool hasSecondarySpokenName;
+@property(readonly, nonatomic) _Bool hasSecondaryName;
 - (int)StringAsPlaceLookupCategorys:(id)arg1;
 - (id)placeLookupCategorysAsString:(int)arg1;
 - (void)setPlaceLookupCategorys:(int *)arg1 count:(unsigned int)arg2;

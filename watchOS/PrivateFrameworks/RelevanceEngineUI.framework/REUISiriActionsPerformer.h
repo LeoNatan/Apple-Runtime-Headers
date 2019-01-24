@@ -38,7 +38,7 @@
 @property(readonly, nonatomic) UIImage *appIcon; // @synthesize appIcon=_appIcon;
 - (void).cxx_destruct;
 - (void)_reset;
-- (void)_handleDismiss;
+- (void)_handleDismissAnimation:(unsigned int)arg1;
 - (void)_handleConfirm;
 - (id)newContainerViewControllerContainingViewController:(id)arg1;
 - (void)blurredContainerControllerDidDisappear:(id)arg1;

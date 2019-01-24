@@ -18,6 +18,7 @@
     unsigned int _convertPacketCount;
     unsigned int _convertAudioCapacity;
     unsigned long long _lastTimestamp;
+    float _outPacketSizeInSec;
     id <CSAudioConverterDelegate> _delegate;
 }
 

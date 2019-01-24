@@ -6,9 +6,9 @@
 
 #import <PassKitUI/NSObject-Protocol.h>
 
-@class NSData, NSError, NSNumber, PKPaymentHeroImageController;
+@class NSData, NSError, PKPaymentHeroImage, PKPaymentHeroImageController;
 
 @protocol PKPaymentHeroImageControllerDelegate <NSObject>
-- (void)heroImageController:(PKPaymentHeroImageController *)arg1 didFinishDownloadingImageData:(NSData *)arg2 forNetwork:(NSNumber *)arg3 error:(NSError *)arg4;
+- (void)heroImageController:(PKPaymentHeroImageController *)arg1 didFinishDownloadingImageData:(NSData *)arg2 forImage:(PKPaymentHeroImage *)arg3 error:(NSError *)arg4;
 @end
 

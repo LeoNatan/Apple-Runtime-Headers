@@ -17,7 +17,7 @@ __attribute__((visibility("hidden")))
 }
 
 - (void).cxx_destruct;
-- (void)pageController:(id)arg1 didLayoutPageAtIndex:(unsigned long long)arg2 sectionIndex:(unsigned long long)arg3 syncing:(_Bool)arg4;
+- (void)pageController:(id)arg1 didLayOutPageAtIndex:(unsigned long long)arg2 sectionIndex:(unsigned long long)arg3 syncing:(_Bool)arg4;
 - (void)teardown;
 - (void)dealloc;
 - (id)initWithPageController:(id)arg1;

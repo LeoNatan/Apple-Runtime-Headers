@@ -16,6 +16,7 @@
     NSObject<OS_dispatch_queue> *_queue;
     CDUnknownBlockType _prewarmHandler;
     CDUnknownBlockType _requestHandler;
+    CDUnknownBlockType _dismissalHandler;
     CDUnknownBlockType _intentHandler;
     int _speechRequestToken;
     CDUnknownBlockType _speechRequestHandler;
@@ -26,12 +27,14 @@
 - (void)setNewSpeechRequestHandler:(CDUnknownBlockType)arg1;
 - (void)_setupSpeechRequestListener;
 - (void)setIntentHandler:(CDUnknownBlockType)arg1;
+- (void)setDismissalHandler:(CDUnknownBlockType)arg1;
 - (void)setNewRequestHandler:(CDUnknownBlockType)arg1;
 - (void)setPrewarmHandler:(CDUnknownBlockType)arg1;
 - (void)_setupRequestListener;
 - (void)siriActivationListener:(id)arg1 handleIntent:(id)arg2 inBackgroundAppWithBundleId:(id)arg3 reply:(CDUnknownBlockType)arg4;
-- (void)siriActivationListener:(id)arg1 handleActivationWithRequestInfo:(id)arg2;
-- (void)siriActivationListener:(id)arg1 handlePrewarmForRequestInfo:(id)arg2;
+- (void)siriActivationListener:(id)arg1 deactivateForReason:(long long)arg2 options:(unsigned long long)arg3 analyticsContext:(id)arg4;
+- (void)siriActivationListener:(id)arg1 activateWithRequestInfo:(id)arg2;
+- (void)siriActivationListener:(id)arg1 prewarmWithRequestInfo:(id)arg2;
 - (void)dealloc;
 - (id)init;
 

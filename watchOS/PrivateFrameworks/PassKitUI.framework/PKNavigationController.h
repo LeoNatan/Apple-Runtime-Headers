@@ -16,6 +16,7 @@
     int _shadowStyle;
     _Bool _hasExplicitlyDefinedSupportedInterfaceOrientations;
     unsigned int _explicitlyDefinedSupportedInterfaceOrientations;
+    float _navigationBarOpacity;
     UIView *_backgroundView;
     UIImageView *_wallpaperView;
     UIVisualEffectView *_blurView;
@@ -28,10 +29,12 @@
 - (_Bool)shouldAutorotate;
 - (void)setSupportedInterfaceOrientations:(unsigned int)arg1;
 - (void)_updateWithWallpaperImage:(id)arg1;
+- (void)setNeedsNavigationBarUpdate;
 - (void)setupWallpaper;
 - (void)setupBackgroundViewWithBlurEffect:(int)arg1;
-- (void)_updateBarTintColorForViewController:(id)arg1;
+- (void)_updateBarAppearanceForViewController:(id)arg1;
 - (void)_applyShadowStyleForViewController:(id)arg1;
+- (id)childViewControllerForStatusBarStyle;
 - (void)viewWillLayoutSubviews;
 - (void)viewDidLoad;
 - (void)dealloc;

@@ -8,5 +8,6 @@
 
 @interface NSThread (NSThread_TSUAdditions)
 + (id)tsu_currentThreadName;
+@property(readonly) unsigned int tsu_qualityOfServiceClass;
 @end
 

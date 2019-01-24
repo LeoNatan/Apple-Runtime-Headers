@@ -8,9 +8,11 @@
 
 @interface MPCFWrapper : NSObject
 {
+    BOOL _nullRef;
     const void *_refValue;
 }
 
+@property(nonatomic, getter=isNullRef) BOOL nullRef; // @synthesize nullRef=_nullRef;
 @property(readonly, nonatomic) const void *refValue; // @synthesize refValue=_refValue;
 - (id)description;
 - (void)dealloc;

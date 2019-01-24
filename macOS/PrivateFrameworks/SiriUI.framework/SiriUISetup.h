@@ -10,7 +10,5 @@
 {
 }
 
-+ (BOOL)_assistantIsRestricted;
-
 @end
 

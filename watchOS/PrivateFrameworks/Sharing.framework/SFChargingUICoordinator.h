@@ -13,6 +13,7 @@
 {
     _Bool _activateCalled;
     _Bool _invalidateCalled;
+    _Bool _animationSPIAdopted;
     _Bool _runningAsCarry;
     NSDate *_uiUpdateMaxDate;
     NSDate *_uiUpdateRequestDate;
@@ -34,6 +35,7 @@
 - (id)machServiceName;
 - (void)_timingInvalidateMinTimer;
 - (void)_timingRestartMinTimer;
+- (void)requestAnimationDateWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_initialViewControllerDidDisappear;
 - (void)initialViewControllerDidDisappear;
 - (void)_initialViewControllerDidAppear;
@@ -43,6 +45,8 @@
 - (void)sendDismissUIWithReason:(int)arg1;
 - (void)_requestToDismissUIHandler:(CDUnknownBlockType)arg1;
 - (void)requestToDismissUIHandler:(CDUnknownBlockType)arg1;
+- (void)_requestToStartAnimationAtDate:(id)arg1;
+- (void)requestToStartAnimationAtDate:(id)arg1;
 - (void)requestToShowUIWithHandler:(CDUnknownBlockType)arg1;
 - (void)_invalidate;
 - (void)invalidate;

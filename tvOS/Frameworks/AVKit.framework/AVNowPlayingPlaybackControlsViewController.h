@@ -97,6 +97,8 @@
 @property(readonly) AVTimeRange *currentInterstitialTimeRange;
 - (id)displayedTimeRangeOfContentLoaded;
 - (id)timeRangeForScrubbing;
+- (double)_scrubbingVelocityUpperBound;
+- (double)_scrubberTranslationForGesture:(id)arg1;
 - (_Bool)isScrubbing;
 - (id)animationControllerForDismissedController:(id)arg1;
 - (id)animationControllerForPresentedController:(id)arg1 presentingController:(id)arg2 sourceController:(id)arg3;
@@ -247,7 +249,7 @@
 - (void)setShowsLoadingIndicator:(_Bool)arg1;
 - (void)setShowsLoadingIndicator:(_Bool)arg1 afterDelay:(double)arg2;
 - (_Bool)showsLoadingIndicator;
-- (_Bool)isPausingEnabled;
+@property(readonly, nonatomic) _Bool isPausingEnabled;
 - (void)setScanningImage:(id)arg1;
 - (_Bool)isScanningEnabled;
 @property(readonly, nonatomic, getter=isScanning) _Bool scanning;

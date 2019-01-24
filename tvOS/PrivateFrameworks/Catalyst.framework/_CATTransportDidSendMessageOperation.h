@@ -6,6 +6,7 @@
 
 #import <Foundation/NSBlockOperation.h>
 
+__attribute__((visibility("hidden")))
 @interface _CATTransportDidSendMessageOperation : NSBlockOperation
 {
 }

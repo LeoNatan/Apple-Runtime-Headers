@@ -21,6 +21,7 @@
 - (void)_updateManagedLostModeWithInfo:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (_Bool)_isRunningAsMobileUser;
 - (id)newErrorForCode:(int)arg1 message:(id)arg2;
+- (void)_stopAlarm;
 - (void)_forceFMWUpgradeAlertWithCompletion:(CDUnknownBlockType)arg1;
 - (void)getAccessoriesWithCompletion:(CDUnknownBlockType)arg1;
 - (void)clearData:(unsigned long long)arg1 completion:(CDUnknownBlockType)arg2;

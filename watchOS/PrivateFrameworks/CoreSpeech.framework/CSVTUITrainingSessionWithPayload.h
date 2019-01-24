@@ -10,19 +10,25 @@
 #import <CoreSpeech/CSVTUIEndPointDelegate-Protocol.h>
 #import <CoreSpeech/SFSpeechRecognitionTaskDelegate-Protocol.h>
 
-@class NSString;
+@class NSDictionary, NSString;
 
 @interface CSVTUITrainingSessionWithPayload : CSVTUITrainingSession <SFSpeechRecognitionTaskDelegate, CSVTUIAudioSessionDelegate, CSVTUIEndPointDelegate>
 {
     _Bool _detectBOS;
     _Bool _ASRResultReceived;
     _Bool _reportedStopListening;
+    _Bool _utteranceStored;
+    unsigned int _numSamplesFed;
+    NSDictionary *_voiceTriggerEventInfo;
 }
 
+@property(retain, nonatomic) NSDictionary *voiceTriggerEventInfo; // @synthesize voiceTriggerEventInfo=_voiceTriggerEventInfo;
+- (void).cxx_destruct;
 - (void)matchRecognitionResult:(id)arg1 withMatchedBlock:(CDUnknownBlockType)arg2 withNonMatchedBlock:(CDUnknownBlockType)arg3;
 - (void)speechRecognitionTask:(id)arg1 didFinishSuccessfully:(_Bool)arg2;
 - (void)speechRecognitionTask:(id)arg1 didFinishRecognition:(id)arg2;
 - (void)speechRecognitionTask:(id)arg1 didHypothesizeTranscription:(id)arg2;
+- (void)closeSessionWithStatus:(int)arg1 successfully:(_Bool)arg2;
 - (void)didDetectEndOfSpeech:(int)arg1;
 - (void)didDetectBeginOfSpeech;
 - (void)audioSessionUnsupportedAudioRoute;
@@ -34,6 +40,7 @@
 - (void)_reportStopListening;
 - (void)_firedEndPointTimeout;
 - (void)_registerEndPointTimeout;
+- (void)_registerForceEndPointTimeout;
 - (void)_firedVoiceTriggerTimeout;
 - (void)_registerVoiceTriggerTimeout;
 - (_Bool)shouldMatchPayload;

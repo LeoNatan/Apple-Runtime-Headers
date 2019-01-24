@@ -6,21 +6,30 @@
 
 #import <VisualVoicemail/VMTelephonyRequestController.h>
 
-@protocol VMCTMessageCenter;
+#import <VisualVoicemail/CoreTelephonyClientSMSDelegate-Protocol.h>
 
-@interface VMCarrierStateRequestController : VMTelephonyRequestController
+@class NSString;
+@protocol VMCTMessageCenter, VMCoreTelephonyClient;
+
+@interface VMCarrierStateRequestController : VMTelephonyRequestController <CoreTelephonyClientSMSDelegate>
 {
     id <VMCTMessageCenter> _messageCenter;
+    id <VMCoreTelephonyClient> _telephonyClient;
 }
 
+@property(readonly, nonatomic) id <VMCoreTelephonyClient> telephonyClient; // @synthesize telephonyClient=_telephonyClient;
 - (void).cxx_destruct;
-- (void)performSynchronousBlock:(CDUnknownBlockType)arg1;
-- (void)handleCTMessageCenterNotification:(id)arg1;
+- (void)postSMSMessageSent:(id)arg1 success:(_Bool)arg2 messageID:(int)arg3 err1:(int)arg4 err2:(int)arg5;
 @property(readonly, nonatomic) id <VMCTMessageCenter> messageCenter; // @synthesize messageCenter=_messageCenter;
 - (void)executeRequest:(id)arg1;
-- (void)dealloc;
-- (id)initWithMessageCenter:(id)arg1;
+- (id)initWithMessageCenter:(id)arg1 telephonyClient:(id)arg2 queue:(id)arg3;
 - (id)init;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned int hash;
+@property(readonly) Class superclass;
 
 @end
 

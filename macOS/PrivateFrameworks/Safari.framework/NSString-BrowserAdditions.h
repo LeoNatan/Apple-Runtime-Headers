@@ -12,13 +12,11 @@
 + (id)safari_stringWithData:(id)arg1 encoding:(unsigned long long)arg2;
 + (double)safari_heightOfLinesOfText:(unsigned long long)arg1 withAttributes:(id)arg2;
 + (id)safari_identityPreferenceDomainForURLString:(id)arg1;
-- (CDStruct_2ec95fd7)safari_operatingSystemVersionFromOperatingSystemVersionString;
 - (struct _NSRange)safari_rangeOfCharaterFromSet:(id)arg1 atOccurence:(long long)arg2;
 - (struct _NSRange)safari_longestSelectableTrailingRangeFromLocation:(unsigned long long)arg1;
 - (struct _NSRange)safari_rangeOfURLScheme;
 - (struct _NSRange)safari_rangeOfURLHost;
 - (BOOL)safari_looksLikeAbsoluteURLString;
-- (BOOL)safari_isSearchProviderHomePageURLString;
 - (BOOL)safari_isFileURLString;
 - (id)safari_stringByStrippingLeadingPlayGlyphsAndWhitespace;
 - (id)safari_stringByStrippingWebsiteNameFromTitleOfURL:(id)arg1;
@@ -31,6 +29,7 @@
 - (id)safari_stringByReplacingTabsWithSpaces;
 - (id)_safari_stringByReplacingLineEndingsWithString:(id)arg1;
 - (float)safari_widthWithFont:(id)arg1;
+- (id)safari_stringByCenterTruncatingForMenuWithMaxWidth:(double)arg1;
 - (id)safari_stringByCenterTruncatingForMenu;
 - (id)safari_stringByRightTruncatingToWidth:(float)arg1 font:(id)arg2;
 - (id)safari_stringByCenterTruncatingToWidth:(float)arg1 font:(id)arg2;

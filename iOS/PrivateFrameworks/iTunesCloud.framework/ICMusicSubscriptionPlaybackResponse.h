@@ -6,9 +6,11 @@
 
 #import <objc/NSObject.h>
 
+#import <iTunesCloud/ICStoreResponseProtocol-Protocol.h>
+
 @class ICStoreDialogResponse, ICURLBag, NSArray, NSData, NSDate, NSDictionary, NSError, NSString;
 
-@interface ICMusicSubscriptionPlaybackResponse : NSObject
+@interface ICMusicSubscriptionPlaybackResponse : NSObject <ICStoreResponseProtocol>
 {
     NSDictionary *_responseDictionary;
     NSDate *_requestDate;
@@ -26,6 +28,12 @@
 @property(readonly, copy, nonatomic) NSString *householdID;
 @property(readonly, copy, nonatomic) ICStoreDialogResponse *dialog;
 - (id)initWithResponseDictionary:(id)arg1 requestDate:(id)arg2 urlBag:(id)arg3;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

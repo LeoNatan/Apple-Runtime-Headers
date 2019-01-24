@@ -15,6 +15,7 @@
     _Bool _wantsDetailedKeepLocalRequestableResponse;
     MPMediaLibrary *_mediaLibrary;
     NSArray *_allowedItemIdentifiers;
+    NSArray *_allowedSectionIdentifiers;
     NSArray *_scopedContainers;
     unsigned int _filteringOptions;
     MPMediaQuery *_legacyMediaQuery;
@@ -27,6 +28,7 @@
 @property(nonatomic) struct _NSRange contentRange; // @synthesize contentRange=_contentRange;
 @property(nonatomic) unsigned int filteringOptions; // @synthesize filteringOptions=_filteringOptions;
 @property(copy, nonatomic) NSArray *scopedContainers; // @synthesize scopedContainers=_scopedContainers;
+@property(copy, nonatomic) NSArray *allowedSectionIdentifiers; // @synthesize allowedSectionIdentifiers=_allowedSectionIdentifiers;
 @property(copy, nonatomic) NSArray *allowedItemIdentifiers; // @synthesize allowedItemIdentifiers=_allowedItemIdentifiers;
 @property(retain, nonatomic) MPMediaLibrary *mediaLibrary; // @synthesize mediaLibrary=_mediaLibrary;
 - (void).cxx_destruct;

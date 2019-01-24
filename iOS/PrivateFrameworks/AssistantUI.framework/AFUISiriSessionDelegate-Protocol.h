@@ -6,7 +6,7 @@
 
 #import <AssistantUI/AFUISiriSessionListener-Protocol.h>
 
-@class AFSpeechInterpretation, AFUIRequestOptions, AceObject, INImage, NSArray, NSError, NSString, NSURL, SACardShowNextCard, SAGuidanceGuideUpdate, SAPhonePlayVoiceMail, SAPreSynthesizeTTS, SASSpeechPartialResult, SASSpeechRecognized, SASettingSetUIGuidedAccess, SASmsPlayAudio, SAUIAddContentToView, SAUIAddViews, SAUIAppPunchOut, SAUIChangePrimaryUtterance, SAUIClearScreen, SAUICloseAssistant, SAUIDisambiguationItemSelected, SAUIGetResponseAlternativesPlayback, SAUIHideSiriOverlay, SAUIListenForPronunciation, SAUIOpenLink, SAUIRepeatIt, SAUISayIt, SAUISetSuggestedUtterances, SAUIShowHelp, SAUIShowSpeechAlternatives, SAUIUpdateViews, SAVCSPlayContent;
+@class AFSpeechInterpretation, AFUIRequestOptions, AceObject, INImage, NSArray, NSError, NSString, NSURL, SACardShowNextCard, SAGuidanceGuideUpdate, SAPhonePlayVoiceMail, SAPreSynthesizeTTS, SASSpeechPartialResult, SASSpeechRecognized, SASettingSetUIGuidedAccess, SASmsPlayAudio, SAUIAddContentToView, SAUIAddViews, SAUIAppPunchOut, SAUIChangePrimaryUtterance, SAUIClearScreen, SAUICloseAssistant, SAUIDisambiguationItemSelected, SAUIGetResponseAlternativesPlayback, SAUIHideSiriOverlay, SAUILaunchTVRemote, SAUIListenForPronunciation, SAUIOpenLink, SAUIRepeatIt, SAUISayIt, SAUISetSuggestedUtterances, SAUIShowHelp, SAUIShowSpeechAlternatives, SAUIUpdateViews, SAVCSPlayContent;
 @protocol SAAceCommand;
 
 @protocol AFUISiriSessionDelegate <AFUISiriSessionListener>
@@ -19,6 +19,7 @@
 - (void)siriSessionSpeechRecordingDidCancel;
 - (void)siriSessionSpeechRecordingDidEnd;
 - (void)siriSessionSpeechRecordingDidChangeAVRecordRoute:(NSString *)arg1;
+- (void)siriSessionDidReceiveLaunchTVRemoteCommand:(SAUILaunchTVRemote *)arg1 completion:(void (^)(AceObject<SAAceCommand> *))arg2;
 - (void)siriSessionDidReceivePlayContentCommand:(SAVCSPlayContent *)arg1 completion:(void (^)(AceObject<SAAceCommand> *))arg2;
 - (void)siriSessionDidReceiveDisambiguationItemSelected:(SAUIDisambiguationItemSelected *)arg1;
 - (void)siriSessionDidReceivePreSynthesizeTTSCommand:(SAPreSynthesizeTTS *)arg1 completion:(void (^)(AceObject<SAAceCommand> *))arg2;

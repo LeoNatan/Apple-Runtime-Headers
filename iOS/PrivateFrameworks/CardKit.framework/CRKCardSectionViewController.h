@@ -53,6 +53,7 @@
 - (void)userDidEngageCardSection:(id)arg1 withEngagementFeedback:(id)arg2;
 - (_Bool)performCommand:(id)arg1 forViewController:(id)arg2;
 - (void)cardSectionViewDidSelectPreferredPunchoutIndex:(long long)arg1;
+- (void)willDismissViewController:(id)arg1;
 - (void)presentViewController:(id)arg1;
 - (void)cardSectionViewDidInvalidateSize:(id)arg1;
 - (void)cardSectionViewDidInvalidateSize:(id)arg1 animate:(_Bool)arg2;
@@ -74,6 +75,7 @@
 - (void)_buttonOverlayWasTouchedDown:(id)arg1;
 - (void)_buttonOverlayWasTouchedUpOutside:(id)arg1;
 - (void)_buttonOverlayWasTouchedUpInside:(id)arg1;
+- (void)_cardSectionTapped;
 - (id)_preferredPunchoutCommand;
 - (id)_destinationPunchout;
 - (id)_commands;

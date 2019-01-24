@@ -6,7 +6,7 @@
 
 #import <UIKit/UIView.h>
 
-@class PKPass, PKPassView, PKPeerPaymentAccount, PKRemoteDataAccessor, PKTransitPassProperties, UIColor, UIImageView, UILabel;
+@class PKPass, PKPassView, PKPeerPaymentAccount, PKRemoteDataAccessor, PKTransitBalanceModel, UIColor, UIImageView, UILabel;
 @protocol PKPassHeaderViewDelegate, PKPassLibraryDataProvider;
 
 @interface PKPassHeaderView : UIView
@@ -24,7 +24,7 @@
     _Bool _valueLabelsShouldStack;
     PKPass *_pass;
     PKPassView *_passView;
-    PKTransitPassProperties *_transitProperties;
+    PKTransitBalanceModel *_transitBalanceModel;
     PKPeerPaymentAccount *_peerPaymentAccount;
     unsigned long long _suppressedContent;
     UIColor *_primaryTextColor;
@@ -42,7 +42,7 @@
 @property(nonatomic, getter=isLargeStyle) _Bool largeStyle; // @synthesize largeStyle=_largeStyle;
 @property(nonatomic) unsigned long long suppressedContent; // @synthesize suppressedContent=_suppressedContent;
 @property(retain, nonatomic) PKPeerPaymentAccount *peerPaymentAccount; // @synthesize peerPaymentAccount=_peerPaymentAccount;
-@property(retain, nonatomic) PKTransitPassProperties *transitProperties; // @synthesize transitProperties=_transitProperties;
+@property(retain, nonatomic) PKTransitBalanceModel *transitBalanceModel; // @synthesize transitBalanceModel=_transitBalanceModel;
 @property(readonly, nonatomic) PKPassView *passView; // @synthesize passView=_passView;
 @property(readonly, nonatomic) PKPass *pass; // @synthesize pass=_pass;
 - (void).cxx_destruct;

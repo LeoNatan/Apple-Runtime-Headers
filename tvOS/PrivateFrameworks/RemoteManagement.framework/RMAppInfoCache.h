@@ -26,6 +26,7 @@
 @property(readonly, nonatomic) NSCache *appInfoByBundleIdentifier; // @synthesize appInfoByBundleIdentifier=_appInfoByBundleIdentifier;
 - (void).cxx_destruct;
 - (id)_localAppNameForBundleIdentifier:(id)arg1;
+- (id)_placeholderAppInfoWithBundleIdentifier:(id)arg1;
 - (id)_preloadedAppInfoWithBundleIdentifier:(id)arg1;
 - (void)_finishedFetchingAppInfoByBundleIdentifier:(id)arg1;
 - (void)_handleiTunesResponseForBundleIdentifiers:(id)arg1 response:(id)arg2 data:(id)arg3 error:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
@@ -33,8 +34,11 @@
 - (void)_fetchAppInfoFromAppStoreAndNotifyWithBundleIdentifier:(id)arg1;
 - (id)_fetchAppInfoFromLaunchServicesWithBundleIdentifier:(id)arg1;
 - (id)_appInfoForBundleIdentifier:(id)arg1;
+- (void)removeObserver:(id)arg1 bundleIdentifier:(id)arg2;
+- (void)addObserver:(id)arg1 selector:(SEL)arg2 bundleIdentifier:(id)arg3;
 - (void)fetchAppInfoForBundleIdentifier:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)appInfoForBundleIdentifier:(id)arg1;
+- (id)appInfoForBundleIdentifier:(id)arg1 localOnly:(_Bool)arg2;
 - (void)dealloc;
 - (id)init;
 

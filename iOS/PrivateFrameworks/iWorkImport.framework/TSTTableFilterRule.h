@@ -22,8 +22,8 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool doesNotNeedFormulaRewriteForImport; // @synthesize doesNotNeedFormulaRewriteForImport=_doesNotNeedFormulaRewriteForImport;
 @property(retain, nonatomic) TSTFormulaPredicate *predicate; // @synthesize predicate=_predicate;
 - (void).cxx_destruct;
-- (id)initFromArchive:(const struct FilterRuleArchive *)arg1;
-- (void)encodeToArchive:(struct FilterRuleArchive *)arg1 archiver:(id)arg2;
+-     // Error parsing type: @24@0:8r^{FilterRuleArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{FormulaPredicateArchive}B}16, name: initFromArchive:
+-     // Error parsing type: v32@0:8^{FilterRuleArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{FormulaPredicateArchive}B}16@24, name: encodeToArchive:archiver:
 - (_Bool)matchesCell:(id)arg1;
 - (struct TSUModelColumnIndex)baseColumnIndexForFilterRuleInTableInfo:(id)arg1;
 - (_Bool)matchesRow:(unsigned int)arg1 withFormulaTableUID:(const UUIDData_5fbc143e *)arg2 withCalculationEngine:(id)arg3;

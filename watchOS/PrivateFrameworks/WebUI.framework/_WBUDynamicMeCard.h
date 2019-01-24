@@ -20,8 +20,7 @@
 - (void).cxx_destruct;
 - (void)performWhenReady:(CDUnknownBlockType)arg1;
 - (id)valueForProperty:(id)arg1 contact:(id)arg2;
-- (void)_addressBookChanged:(id)arg1;
-- (void)dealloc;
+- (void)_meCardChanged:(id)arg1;
 - (id)init;
 - (id)me;
 

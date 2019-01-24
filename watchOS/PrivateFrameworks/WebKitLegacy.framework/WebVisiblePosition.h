@@ -27,7 +27,7 @@
 - (id)positionByMovingInDirection:(int)arg1 amount:(unsigned long)arg2;
 - (id)positionByMovingInDirection:(int)arg1 amount:(unsigned long)arg2 withAffinityDownstream:(_Bool)arg3;
 - (_Bool)directionIsDownstream:(int)arg1;
-- (int)textDirection;
+- (unsigned char)textDirection;
 - (id)description;
 - (int)distanceFromPosition:(id)arg1;
 - (int)compare:(id)arg1;

@@ -25,10 +25,15 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) NSArray *availableLanguages; // @synthesize availableLanguages=_availableLanguages;
 @property(retain, nonatomic) id <TSKCompatibilityDelegate> compatibilityDelegate; // @synthesize compatibilityDelegate=_compatibilityDelegate;
 - (void).cxx_destruct;
+- (void)donateAddBodyRowAtBottomIntentWithInfo:(id)arg1;
 - (void)collectDocumentCreationAnalyticsWithLogger:(id)arg1;
 - (void)logDocumentCreationWithImportState:(_Bool)arg1;
 - (void)collectAppLaunchAnalyticsWithLogger:(id)arg1;
 - (void)logAppLaunchAnalytics;
+- (unsigned long long)operationStoragePruningThresholdWithDocumentRoot:(id)arg1;
+@property(readonly, nonatomic) unsigned long long smallOperationStorageSize;
+@property(readonly, nonatomic) unsigned long long maxOperationStorageSize;
+@property(readonly, nonatomic) double minOperationStorageEntryAge;
 @property(readonly, nonatomic) NSDate *applicationLaunchTime;
 @property(readonly, nonatomic) NSString *bladerunnerContainerIdentifier;
 @property(readonly, nonatomic) NSString *cloudKitContainerIdentifier;

@@ -20,7 +20,6 @@
     struct _CDPerfEvent _perfEvent;
     NSArray *_streamNames;
     _Bool _hadAdditions;
-    NSDate *_startDate;
     NSDate *_now;
     unsigned int _batchNumber;
     _DKSyncHistory *_history;

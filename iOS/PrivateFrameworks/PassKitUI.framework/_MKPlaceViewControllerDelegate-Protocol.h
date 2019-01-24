@@ -13,6 +13,7 @@
 @protocol _MKPlaceViewControllerDelegate <NSObject, UIScrollViewDelegate>
 
 @optional
+- (void)placeViewControllerLinkedServicesDidTapHeaderButton:(_MKPlaceViewController *)arg1;
 - (void)placeViewControllerDidUpdateHeight:(_MKPlaceViewController *)arg1;
 - (void)placeViewController:(_MKPlaceViewController *)arg1 didSelectParent:(MKMapItem *)arg2;
 - (void)placeViewController:(_MKPlaceViewController *)arg1 didSelectSearchCategory:(GEOSearchCategory *)arg2;

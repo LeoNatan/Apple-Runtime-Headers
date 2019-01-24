@@ -13,7 +13,6 @@
 __attribute__((visibility("hidden")))
 @interface KNUIState : NSObject <NSCopying>
 {
-    TSKSelectionPath *_selectionPath;
     double _mobileCanvasViewScale;
     struct CGPoint _mobileCanvasOffset;
     double _desktopCanvasViewScale;
@@ -28,6 +27,7 @@ __attribute__((visibility("hidden")))
     _Bool _showMasterGuides;
     _Bool _showsComments;
     _Bool _showsRuler;
+    TSKSelectionPath *_selectionPath;
     KNMacUILayout *_documentUILayout;
     double _lightTableZoomScale;
     double _mobileLightTableZoomScale;
@@ -71,8 +71,8 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) KNMacUILayout *documentUILayout; // @synthesize documentUILayout=_documentUILayout;
 @property(retain, nonatomic) TSKSelectionPath *selectionPath; // @synthesize selectionPath=_selectionPath;
 - (void).cxx_destruct;
-- (void)saveToArchive:(struct UIStateArchive *)arg1 archiver:(id)arg2 context:(id)arg3;
-- (void)loadFromArchive:(const struct UIStateArchive *)arg1 unarchiver:(id)arg2 context:(id)arg3;
+-     // Error parsing type: v40@0:8^{UIStateArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}{RepeatedPtrField<TSCH::ChartUIState>=^{Arena}ii^{Rep}}{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}^{Reference}^{Reference}^{Size}^{Point}^{Point}^{Point}^{Reference}^{Point}^{Size}^{Point}^{SelectionPathArchive}^{Reference}^{Reference}fffffBBBBfffBBBBffB}16@24@32, name: saveToArchive:archiver:context:
+-     // Error parsing type: v40@0:8r^{UIStateArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}{RepeatedPtrField<TSCH::ChartUIState>=^{Arena}ii^{Rep}}{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}^{Reference}^{Reference}^{Size}^{Point}^{Point}^{Point}^{Reference}^{Point}^{Size}^{Point}^{SelectionPathArchive}^{Reference}^{Reference}fffffBBBBfffBBBBffB}16@24@32, name: loadFromArchive:unarchiver:context:
 - (id)debugDescription;
 - (void)updateOutlineStateFromSlideTree:(id)arg1;
 - (id)archivedUIStateInContext:(id)arg1;

@@ -13,12 +13,12 @@
 #import <PhotoLibraryServices/PLCloudChangeTrackerDelegate-Protocol.h>
 #import <PhotoLibraryServices/PLCloudPersistentHistoryMigratorContext-Protocol.h>
 #import <PhotoLibraryServices/PLCloudUserSessionHandling-Protocol.h>
-#import <PhotoLibraryServices/PLForegroundObserver-Protocol.h>
+#import <PhotoLibraryServices/PLForegroundMonitorDelegate-Protocol.h>
 
-@class CPLLibraryManager, NSDate, NSMutableDictionary, NSNumber, NSString, PFCoalescer, PLBatterySaverWatcher, PLCloudBatchDownloader, PLCloudBatchUploader, PLCloudInMemoryTaskManager, PLCloudPhotoLibraryUploadTracker, PLCloudResourceManager, PLCloudTaskManager, PLPhotoLibrary;
+@class CPLLibraryManager, NSDate, NSMutableDictionary, NSNumber, NSString, PFCoalescer, PLBatterySaverWatcher, PLCloudBatchDownloader, PLCloudBatchUploader, PLCloudInMemoryTaskManager, PLCloudPhotoLibraryUploadTracker, PLCloudResourceManager, PLCloudTaskManager, PLForegroundMonitor, PLPhotoLibrary;
 @protocol OS_dispatch_queue, OS_dispatch_source, PLCloudChangeTracker;
 
-@interface PLCloudPhotoLibraryManager : NSObject <PLCloudChangeTrackerDelegate, PLCloudPersistentHistoryMigratorContext, CPLResourceProgressDelegate, CPLLibraryManagerDelegate, PLForegroundObserver, PLBatterySaverWatcherDelegate, PLCloudUserSessionHandling, CPLStatusDelegate>
+@interface PLCloudPhotoLibraryManager : NSObject <PLCloudChangeTrackerDelegate, PLCloudPersistentHistoryMigratorContext, CPLResourceProgressDelegate, CPLLibraryManagerDelegate, PLForegroundMonitorDelegate, PLBatterySaverWatcherDelegate, PLCloudUserSessionHandling, CPLStatusDelegate>
 {
     PLCloudBatchUploader *_uploader;
     PLCloudBatchDownloader *_downloader;
@@ -27,6 +27,7 @@
     _Bool _hasAttemptedMigration;
     NSObject<OS_dispatch_queue> *_isolationQueue;
     PLBatterySaverWatcher *_batterySaverWatcher;
+    PLForegroundMonitor *_foregroundMonitor;
     _Bool _processingChange;
     unsigned long long _mode;
     _Bool _checkEnableStateOnIdle;
@@ -111,7 +112,7 @@
 - (id)cplStatus;
 - (id)getCPLState;
 - (_Bool)isPausedForDownloadRequestHighPriority:(_Bool)arg1;
-- (void)foregroundMonitor:(id)arg1 changedStateToForeground:(_Bool)arg2 forBundleIdentifier:(id)arg3 context:(id)arg4;
+- (void)foregroundMonitor:(id)arg1 changedStateToForeground:(_Bool)arg2 forBundleIdentifier:(id)arg3;
 - (_Bool)_isColorAwareResource:(unsigned long long)arg1 adjustedResource:(_Bool)arg2;
 - (void)_updateAsset:(id)arg1 withImageFileURL:(id)arg2;
 - (void)_updateThumbnailDataForAsset:(id)arg1 withImageFileURL:(id)arg2;
@@ -186,10 +187,8 @@
 - (void)batterySaverModeDidChange;
 - (void)_checkEnableState;
 - (void)_processNextTransaction;
-- (void)reportLibrarySizeIfNeeded;
 - (void)_handleOptimizeSettingChange;
-- (void)reportDeviceData:(id)arg1;
-- (id)_addPrefix:(id)arg1 toKeysInDictionary:(id)arg2;
+- (void)reportMiscInformation:(id)arg1;
 - (void)_updatePendingResetSyncDate;
 - (_Bool)_setupTimerForUnpause;
 - (void)_constructUnpauseTimerFrom:(id)arg1 to:(id)arg2;

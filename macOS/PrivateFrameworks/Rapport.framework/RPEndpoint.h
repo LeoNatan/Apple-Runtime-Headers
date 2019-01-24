@@ -14,6 +14,7 @@
 {
     SFDevice *_bleDevice;
     CUBonjourDevice *_bonjourDevice;
+    unsigned int _hotspotInfo;
     NSString *_identifier;
     NSString *_idsDeviceIdentifier;
     NSString *_mediaRemoteIdentifier;
@@ -24,6 +25,7 @@
     NSString *_sourceVersion;
     BOOL _present;
     int _proximity;
+    NSString *_homeKitUserIdentifier;
 }
 
 + (BOOL)supportsSecureCoding;
@@ -40,6 +42,8 @@
 @property(copy, nonatomic) NSString *mediaRemoteIdentifier; // @synthesize mediaRemoteIdentifier=_mediaRemoteIdentifier;
 @property(copy, nonatomic) NSString *idsDeviceIdentifier; // @synthesize idsDeviceIdentifier=_idsDeviceIdentifier;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
+@property(readonly, nonatomic) unsigned int hotspotInfo; // @synthesize hotspotInfo=_hotspotInfo;
+@property(readonly, copy, nonatomic) NSString *homeKitUserIdentifier; // @synthesize homeKitUserIdentifier=_homeKitUserIdentifier;
 - (void).cxx_destruct;
 - (BOOL)removeSFDevice:(id)arg1;
 - (unsigned int)updateWithSFDevice:(id)arg1;

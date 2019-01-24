@@ -24,10 +24,13 @@
 - (void)_queue_distributeAllDonatedActions;
 - (void)_distributeRecentDonatedActions;
 - (void)_distributeAllDonatedActions;
+- (void)_finishLoadingData;
+- (void)_beginLoadingData;
 - (void)_subscribeToNotifications;
 - (void)triggerDistributeAllDonatedActions;
 - (void)fetchDonationWithIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)start;
+- (id)callbackQueue;
 - (void)dealloc;
 - (id)init;
 

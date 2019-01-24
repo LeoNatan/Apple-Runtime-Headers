@@ -21,7 +21,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (Class)effectClass;
-+ (id)instanceWithArchive:(const struct Chart3DLightArchive *)arg1 unarchiver:(id)arg2;
++     // Error parsing type: @32@0:8r^{Chart3DLightArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}^{Chart3DVectorArchive}^{Chart3DVectorArchive}^{Chart3DVectorArchive}^{Chart3DVectorArchive}^{Chart3DPointLightArchive}^{Chart3DDirectionalLightArchive}^{Chart3DSpotLightArchive}fIB}16@24, name: instanceWithArchive:unarchiver:
 @property(nonatomic) float dropOff; // @synthesize dropOff=_dropOff;
 @property(nonatomic) float cutOff; // @synthesize cutOff=_cutOff;
 @property(nonatomic) tvec3_17f03ce0 direction;
@@ -30,8 +30,8 @@ __attribute__((visibility("hidden")))
 - (id)description;
 - (void)dealloc;
 - (id)init;
-- (void)saveToArchive:(struct Chart3DLightArchive *)arg1 archiver:(id)arg2;
-- (id)initWithArchive:(const struct Chart3DLightArchive *)arg1 unarchiver:(id)arg2;
+-     // Error parsing type: v32@0:8^{Chart3DLightArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}^{Chart3DVectorArchive}^{Chart3DVectorArchive}^{Chart3DVectorArchive}^{Chart3DVectorArchive}^{Chart3DPointLightArchive}^{Chart3DDirectionalLightArchive}^{Chart3DSpotLightArchive}fIB}16@24, name: saveToArchive:archiver:
+-     // Error parsing type: @32@0:8r^{Chart3DLightArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}^{Chart3DVectorArchive}^{Chart3DVectorArchive}^{Chart3DVectorArchive}^{Chart3DVectorArchive}^{Chart3DPointLightArchive}^{Chart3DDirectionalLightArchive}^{Chart3DSpotLightArchive}fIB}16@24, name: initWithArchive:unarchiver:
 
 @end
 

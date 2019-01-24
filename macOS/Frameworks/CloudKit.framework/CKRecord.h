@@ -41,7 +41,6 @@
     NSData *_chainParentPublicKeyID;
     NSArray *_tombstonedPublicKeyIDs;
     NSURL *_mutableURL;
-    NSString *_displayedHostname;
     CKRecordValueStore *_valueStore;
     CKEncryptedRecordValueStore *_encryptedValueStore;
     NSString *_modifiedByDevice;
@@ -55,6 +54,7 @@
     NSString *_shareEtag;
     NSString *_routingKey;
     NSString *_baseToken;
+    NSString *_displayedHostname;
     long long _permission;
     NSDictionary *_pluginFields;
     NSString *_previousProtectionEtagFromUnitTest;
@@ -73,6 +73,7 @@
 @property(copy, nonatomic) NSDictionary *pluginFields; // @synthesize pluginFields=_pluginFields;
 @property long long permission; // @synthesize permission=_permission;
 @property(nonatomic) BOOL useLightweightPCS; // @synthesize useLightweightPCS=_useLightweightPCS;
+@property(copy, nonatomic) NSString *displayedHostname; // @synthesize displayedHostname=_displayedHostname;
 @property(nonatomic) BOOL wantsChainPCS; // @synthesize wantsChainPCS=_wantsChainPCS;
 @property(nonatomic) BOOL wantsPublicSharingKey; // @synthesize wantsPublicSharingKey=_wantsPublicSharingKey;
 @property(retain, nonatomic) NSString *baseToken; // @synthesize baseToken=_baseToken;
@@ -92,7 +93,6 @@
 @property(nonatomic) BOOL trackChanges; // @synthesize trackChanges=_trackChanges;
 @property(retain, nonatomic) CKEncryptedRecordValueStore *encryptedValueStore; // @synthesize encryptedValueStore=_encryptedValueStore;
 @property(retain, nonatomic) CKRecordValueStore *valueStore; // @synthesize valueStore=_valueStore;
-@property(copy, nonatomic) NSString *displayedHostname; // @synthesize displayedHostname=_displayedHostname;
 @property(copy, nonatomic) NSURL *mutableURL; // @synthesize mutableURL=_mutableURL;
 @property(retain, nonatomic) NSArray *tombstonedPublicKeyIDs; // @synthesize tombstonedPublicKeyIDs=_tombstonedPublicKeyIDs;
 @property(retain, nonatomic) NSData *chainParentPublicKeyID; // @synthesize chainParentPublicKeyID=_chainParentPublicKeyID;

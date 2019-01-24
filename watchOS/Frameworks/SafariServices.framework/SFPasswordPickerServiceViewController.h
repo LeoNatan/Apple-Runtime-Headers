@@ -10,12 +10,12 @@
 #import <SafariServices/_SFAuthenticationClient-Protocol.h>
 #import <SafariServices/_SFAuthenticationContextDelegate-Protocol.h>
 
-@class NSArray, NSString, NSURL, _SFAuthenticationContext, _SFPasswordPickerViewController;
+@class NSArray, NSString, NSURL, SFPasswordPickerViewController, _SFAuthenticationContext;
 
 __attribute__((visibility("hidden")))
 @interface SFPasswordPickerServiceViewController : SFPasswordServiceViewController <_SFAuthenticationClient, _SFAuthenticationContextDelegate, SFPasswordPickerServiceViewControllerProtocol>
 {
-    _SFPasswordPickerViewController *_passwordPickerViewController;
+    SFPasswordPickerViewController *_passwordPickerViewController;
     _Bool _presentInPopover;
     _Bool _hasAuthenticationForOtherPasswords;
     NSURL *_webViewURL;
@@ -25,7 +25,7 @@ __attribute__((visibility("hidden")))
     NSString *_remoteUnlocalizedAppName;
     NSArray *_externallyVerifiedAssociatedDomains;
     double _authenticationGracePeriod;
-    _Bool _credentialListPresentedDirectly;
+    CDUnknownBlockType _presentCredentialsHandler;
 }
 
 + (id)_exportedInterface;
@@ -38,19 +38,18 @@ __attribute__((visibility("hidden")))
 - (void)setRemoteAppID:(id)arg1;
 - (void)setWebViewURL:(id)arg1;
 - (void)_sendCredentialToClientAndDismiss:(id)arg1;
-- (void)_gatherAndShowPasswordsWithCompletion:(CDUnknownBlockType)arg1;
-- (_Bool)_shouldDismissOnCompletion;
+- (void)_authenticateAndSetPresentCredentialsHandlerWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_fillCredential:(id)arg1 needsAuthentication:(_Bool)arg2;
 - (void)authenticateToPresentInPopover:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_authenticateToViewOtherPasswordsWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_dismiss;
+- (void)viewDidAppear:(_Bool)arg1;
 - (void)viewWillDisappear:(_Bool)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (id)_context;
 - (_Bool)contextShouldAllowMultipleBiometricFailures:(id)arg1;
 - (_Bool)contextShouldAllowPasscodeFallback:(id)arg1;
 - (_Bool)contextRequiresSessionBasedAuthentication:(id)arg1;
-- (_Bool)authenticationEnabledForContext:(id)arg1;
 - (_Bool)displayMessageAsTitleForContext:(id)arg1;
 - (id)passcodePromptForContext:(id)arg1;
 - (id)authenticationMessageForContext:(id)arg1;

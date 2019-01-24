@@ -95,6 +95,7 @@
 - (void)handleWarrantySentinelResponse:(id)arg1;
 - (void)tellGizmoToDeleteWarrantySentinel;
 - (void)queryGizmoForShowWarrantySentinelAndRestoreDeviceName:(id)arg1;
+- (void)handleRemoteActivationDetails:(id)arg1;
 - (void)tellGizmoToKeepAliveForActivationEvent;
 - (void)activationTimeout:(id)arg1;
 - (void)refreshTimeoutTimer;

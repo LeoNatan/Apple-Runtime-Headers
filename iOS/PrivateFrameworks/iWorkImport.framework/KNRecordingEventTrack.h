@@ -26,8 +26,8 @@ __attribute__((visibility("hidden")))
 - (id)initWithContext:(id)arg1 type:(id)arg2 events:(id)arg3;
 - (void)saveToArchiver:(id)arg1;
 - (void)loadFromUnarchiver:(id)arg1;
-- (void)saveToArchive:(struct RecordingEventTrackArchive *)arg1 archiver:(id)arg2;
-- (void)loadFromArchive:(const struct RecordingEventTrackArchive *)arg1 unarchiver:(id)arg2;
+-     // Error parsing type: v32@0:8^{RecordingEventTrackArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<KN::RecordingEventArchive>=^{Arena}ii^{Rep}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}}16@24, name: saveToArchive:archiver:
+-     // Error parsing type: v32@0:8r^{RecordingEventTrackArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<KN::RecordingEventArchive>=^{Arena}ii^{Rep}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}}16@24, name: loadFromArchive:unarchiver:
 
 @end
 

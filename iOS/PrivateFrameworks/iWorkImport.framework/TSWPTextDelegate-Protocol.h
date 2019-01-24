@@ -7,6 +7,7 @@
 @class TSULocale, TSWPPadding;
 
 @protocol TSWPTextDelegate
+@property(readonly, nonatomic) _Bool shouldHyphenate;
 @property(readonly, nonatomic) TSULocale *locale;
 @property(readonly, nonatomic) double maxWidthForChildren;
 - (TSWPPadding *)padding;

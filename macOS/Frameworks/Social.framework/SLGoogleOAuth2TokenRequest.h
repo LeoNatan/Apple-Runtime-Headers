@@ -6,14 +6,24 @@
 
 #import <objc/NSObject.h>
 
-@interface SLGoogleOAuth2TokenRequest : NSObject
+#import <Social/SLWebOAuth2TokenRequest-Protocol.h>
+
+@class NSString;
+
+@interface SLGoogleOAuth2TokenRequest : NSObject <SLWebOAuth2TokenRequest>
 {
 }
 
-+ (id)_urlRequestForParams:(id)arg1;
-+ (id)urlRequestForClientID:(id)arg1 secret:(id)arg2 refreshToken:(id)arg3;
-+ (id)urlRequestForClientID:(id)arg1 secret:(id)arg2 redirectURI:(id)arg3 authCode:(id)arg4 codeVerifier:(id)arg5;
-+ (id)urlRequestForClientID:(id)arg1 secret:(id)arg2 redirectURI:(id)arg3 authCode:(id)arg4;
++ (id)_urlRequestForParams:(id)arg1 tokenURL:(id)arg2;
++ (id)urlRequestForClientID:(id)arg1 secret:(id)arg2 refreshToken:(id)arg3 tokenURL:(id)arg4;
++ (id)urlRequestForClientID:(id)arg1 secret:(id)arg2 redirectURI:(id)arg3 authCode:(id)arg4 tokenURL:(id)arg5 codeVerifier:(id)arg6;
++ (id)urlRequestForClientID:(id)arg1 secret:(id)arg2 redirectURI:(id)arg3 authCode:(id)arg4 tokenURL:(id)arg5;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

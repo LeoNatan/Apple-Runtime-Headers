@@ -45,10 +45,10 @@ __attribute__((visibility("hidden")))
 - (void)commentWillBeAddedToDocumentRoot;
 @property(readonly, nonatomic) NSDate *date;
 @property(retain, nonatomic) TSKAnnotationAuthor *author;
-- (void)saveToArchive:(struct CommentInfoArchive *)arg1 archiver:(id)arg2;
+-     // Error parsing type: v32@0:8^{CommentInfoArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{ShapeInfoArchive}^{Reference}}16@24, name: saveToArchive:archiver:
 - (void)saveToArchiver:(id)arg1;
 @property(readonly, nonatomic) double commentScalingMultiplier;
-- (void)loadFromArchive:(const struct CommentInfoArchive *)arg1 unarchiver:(id)arg2;
+-     // Error parsing type: v32@0:8r^{CommentInfoArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{ShapeInfoArchive}^{Reference}}16@24, name: loadFromArchive:unarchiver:
 - (void)loadFromUnarchiver:(id)arg1;
 - (void)enumerateAllAnnotationsInModelWithHitBlock:(CDUnknownBlockType)arg1;
 - (Class)editorClass;

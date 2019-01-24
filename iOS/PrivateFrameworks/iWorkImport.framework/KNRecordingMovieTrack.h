@@ -23,8 +23,8 @@ __attribute__((visibility("hidden")))
 - (id)initWithContext:(id)arg1 movieSegments:(id)arg2;
 - (void)saveToArchiver:(id)arg1;
 - (void)loadFromUnarchiver:(id)arg1;
-- (void)saveToArchive:(struct RecordingMovieTrackArchive *)arg1 archiver:(id)arg2;
-- (void)loadFromArchive:(const struct RecordingMovieTrackArchive *)arg1 unarchiver:(id)arg2;
+-     // Error parsing type: v32@0:8^{RecordingMovieTrackArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<KN::MovieSegmentArchive>=^{Arena}ii^{Rep}}B}16@24, name: saveToArchive:archiver:
+-     // Error parsing type: v32@0:8r^{RecordingMovieTrackArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<KN::MovieSegmentArchive>=^{Arena}ii^{Rep}}B}16@24, name: loadFromArchive:unarchiver:
 
 @end
 

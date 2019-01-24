@@ -8,7 +8,7 @@
 
 #import <WebKit/WKObject-Protocol.h>
 
-@class NSString, NSURL, NSURLRequest, WKFrameInfo, _WKUserInitiatedAction;
+@class NSString, NSURL, NSURLRequest, WKFrameInfo, WKNavigation, _WKUserInitiatedAction;
 
 @interface WKNavigationAction : NSObject <WKObject>
 {
@@ -24,6 +24,7 @@
 @property(readonly, copy, nonatomic) WKFrameInfo *sourceFrame;
 @property(readonly, copy) NSString *description;
 - (void)dealloc;
+@property(readonly, nonatomic) WKNavigation *_mainFrameNavigation;
 @property(readonly, nonatomic) BOOL _isRedirect;
 @property(readonly, nonatomic) _WKUserInitiatedAction *_userInitiatedAction;
 @property(readonly, nonatomic) BOOL _shouldOpenExternalURLs;

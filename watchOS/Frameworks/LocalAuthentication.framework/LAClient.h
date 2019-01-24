@@ -34,6 +34,7 @@ __attribute__((visibility("hidden")))
 - (void)setShowingCoachingHint:(_Bool)arg1 event:(int)arg2 reply:(CDUnknownBlockType)arg3;
 - (void)resetWithReply:(CDUnknownBlockType)arg1;
 - (void)prearmTouchIdWithReply:(CDUnknownBlockType)arg1;
+- (void)authMethodWithReply:(CDUnknownBlockType)arg1;
 @property(readonly, nonatomic) NSData *externalizedContext;
 - (void)externalizedContextWithReply:(CDUnknownBlockType)arg1;
 - (_Bool)setServerPropertyForOption:(int)arg1 value:(id)arg2 error:(id *)arg3;
@@ -46,8 +47,8 @@ __attribute__((visibility("hidden")))
 - (void)resetProcessedEvent:(int)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)retryProcessedEvent:(int)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)failProcessedEvent:(int)arg1 failureError:(id)arg2 reply:(CDUnknownBlockType)arg3;
-- (void)evaluateACL:(id)arg1 operation:(int)arg2 options:(id)arg3 reply:(CDUnknownBlockType)arg4;
-- (void)evaluateACL:(id)arg1 operation:(int)arg2 options:(id)arg3 uiDelegate:(id)arg4 reply:(CDUnknownBlockType)arg5;
+- (void)evaluateACL:(id)arg1 operation:(id)arg2 options:(id)arg3 reply:(CDUnknownBlockType)arg4;
+- (void)evaluateACL:(id)arg1 operation:(id)arg2 options:(id)arg3 uiDelegate:(id)arg4 reply:(CDUnknownBlockType)arg5;
 - (void)evaluatePolicy:(int)arg1 options:(id)arg2 reply:(CDUnknownBlockType)arg3;
 - (void)evaluatePolicy:(int)arg1 options:(id)arg2 uiDelegate:(id)arg3 reply:(CDUnknownBlockType)arg4;
 - (id)_updateOptions:(id)arg1;

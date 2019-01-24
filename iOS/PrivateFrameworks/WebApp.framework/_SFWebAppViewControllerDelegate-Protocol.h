@@ -6,9 +6,10 @@
 
 #import <WebApp/NSObject-Protocol.h>
 
-@class _SFWebAppViewController;
+@class NSError, _SFWebAppViewController;
 
 @protocol _SFWebAppViewControllerDelegate <NSObject>
+- (void)webAppViewController:(_SFWebAppViewController *)arg1 viewServiceDidTerminateWithError:(NSError *)arg2;
 - (void)webAppViewControllerDidFinishInitialLoad:(_SFWebAppViewController *)arg1;
 - (void)webAppViewController:(_SFWebAppViewController *)arg1 didChangeLoadingState:(_Bool)arg2;
 @end

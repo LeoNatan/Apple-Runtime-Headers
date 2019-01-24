@@ -146,6 +146,9 @@
 - (void)requireCellularForResourceWithURL:(id)arg1;
 - (void)reportAProblemForIdentifier:(id)arg1;
 - (void)removeDeviceOfferWithIdentifier:(id)arg1 account:(id)arg2;
+- (void)redeemCodesReloadDownloadManager;
+- (void)redeemCodes:(id)arg1 params:(id)arg2 completion:(id)arg3;
+- (void)redeemCode:(id)arg1;
 - (void)registerNavBarButtonWithTitle:(id)arg1 side:(id)arg2 function:(id)arg3;
 - (id)presentPrivacySplashWithIdentifier:(id)arg1;
 - (id)presentPrivacyViewControllerWithIdentifier:(id)arg1;
@@ -181,6 +184,8 @@
 - (void)startedTest:(id)arg1;
 - (_Bool)isRunningTest;
 - (_Bool)launchedToTest;
+- (id)makeRedeemCameraViewController;
+- (id)redeemCameraAvailable;
 @property(readonly) SUScriptDictionary *scriptStoreBagDictionary;
 - (void)_getSoftwareApplicationWithCompletionFunction:(id)arg1 lookupBlock:(CDUnknownBlockType)arg2;
 @property(readonly) NSArray *installedSoftwareApplications;
@@ -221,6 +226,7 @@
 @property(retain) SUScriptAccount *primaryLockerAccount;
 @property(retain) SUScriptAccount *primaryAccount;
 - (void)setAccounts:(id)arg1;
+- (id)primaryiCloudAccount;
 @property(readonly) NSArray *accounts;
 - (id)makeAccount;
 - (void)authenticateAppleIdWithUsername:(id)arg1 password:(id)arg2 callback:(id)arg3;
@@ -238,7 +244,6 @@
 @property(readonly) SUScriptSectionsController *sectionsController;
 - (void)selectSectionWithIdentifier:(id)arg1;
 - (void)reloadFooterSection:(id)arg1 withURL:(id)arg2;
-- (void)redeemCode:(id)arg1;
 - (void)openURL:(id)arg1;
 - (id)makeStorePageWithURLs:(id)arg1;
 - (id)makeNavigationControllerWithRootViewController:(id)arg1;

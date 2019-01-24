@@ -57,7 +57,6 @@
 - (void)layoutLayerWithFrame:(struct CGRect)arg1 inView:(id)arg2;
 - (BOOL)wantsUpdateLayerInView:(id)arg1;
 - (struct CGRect)_textLayerDrawingRectForCellFrame:(struct CGRect)arg1;
-- (struct CGRect)_textLayerRectForBounds:(struct CGRect)arg1;
 - (void)_setCancelButtonVisible:(BOOL)arg1 animate:(BOOL)arg2;
 - (void)_transitionInRect:(struct CGRect)arg1 ofView:(id)arg2 becomeFirstResponder:(BOOL)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)_resetResignTransition;

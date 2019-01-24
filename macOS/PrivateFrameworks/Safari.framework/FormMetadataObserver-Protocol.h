@@ -9,11 +9,13 @@
 @class NSString, WBSFormControlMetadata, WBSFormMetadata, _WKFrameHandle;
 
 @protocol FormMetadataObserver <NSObject>
+- (void)otherCreditCardFieldOrUnidentifiedFieldBlurredInFrame:(_WKFrameHandle *)arg1 formMetadata:(WBSFormMetadata *)arg2 textFieldMetadata:(WBSFormControlMetadata *)arg3;
+- (void)otherCreditCardFieldOrUnidentifiedFieldFocusedInFrame:(_WKFrameHandle *)arg1 formMetadata:(WBSFormMetadata *)arg2 textFieldMetadata:(WBSFormControlMetadata *)arg3;
 - (void)oneTimeCodeFieldBlurredInFrame:(_WKFrameHandle *)arg1 textFieldMetadata:(WBSFormControlMetadata *)arg2;
 - (void)oneTimeCodeFieldFocused:(NSString *)arg1 textFieldMetadata:(WBSFormControlMetadata *)arg2 formMetadata:(WBSFormMetadata *)arg3 inFrame:(_WKFrameHandle *)arg4;
 - (void)addressBookAutoFillableFieldBlurredInFrame:(_WKFrameHandle *)arg1 textFieldMetadata:(WBSFormControlMetadata *)arg2;
 - (void)addressBookAutoFillableFieldFocused:(NSString *)arg1 textFieldMetadata:(WBSFormControlMetadata *)arg2 formMetadata:(WBSFormMetadata *)arg3 inFrame:(_WKFrameHandle *)arg4;
-- (void)autoFilledFormWithMetadata:(WBSFormMetadata *)arg1 inFrame:(_WKFrameHandle *)arg2;
+- (void)autoFilledFormWithMetadata:(WBSFormMetadata *)arg1 inFrame:(_WKFrameHandle *)arg2 shouldSubmit:(BOOL)arg3;
 - (void)sensitiveFieldFocusedInFrame:(_WKFrameHandle *)arg1;
 - (void)usernameFieldBlurredInFrame:(_WKFrameHandle *)arg1 formMetadata:(WBSFormMetadata *)arg2 usernameFieldMetadata:(WBSFormControlMetadata *)arg3;
 - (void)usernameFieldFocusedInFrame:(_WKFrameHandle *)arg1 formMetadata:(WBSFormMetadata *)arg2 usernameFieldMetadata:(WBSFormControlMetadata *)arg3;

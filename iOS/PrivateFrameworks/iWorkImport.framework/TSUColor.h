@@ -45,6 +45,7 @@ __attribute__((visibility("hidden")))
 + (id)colorWithRed:(double)arg1 green:(double)arg2 blue:(double)arg3 alpha:(double)arg4 targetRGBSpace:(unsigned long long)arg5;
 + (id)colorWithRed:(double)arg1 green:(double)arg2 blue:(double)arg3 alpha:(double)arg4;
 + (id)colorWithCGColor:(struct CGColor *)arg1;
++ (id)tsd_darkInsertSwatchBackgroundColor;
 + (id)highContrastBackgroundColorForPreset:(id)arg1;
 + (id)instanceWithArchive:(const struct Message *)arg1 unarchiver:(id)arg2;
 + (void)bootstrapPresetsOfKind:(id)arg1 inTheme:(id)arg2 alternate:(int)arg3;
@@ -60,6 +61,7 @@ __attribute__((visibility("hidden")))
 - (id)colorByCompositingSourceOverDestinationColor:(id)arg1;
 - (id)newBlendedColorWithFraction:(double)arg1 ofColor:(id)arg2;
 - (id)blendedColorWithFraction:(double)arg1 ofColor:(id)arg2;
+- (_Bool)hasSimilarLuminanceToOtherColor:(id)arg1 minRatio:(double)arg2 maxRatio:(double)arg3;
 - (_Bool)wantsHighContrastBackgroundForDarkMode:(id)arg1;
 - (_Bool)requiresOutlineOnBackgroundWithAppearance:(unsigned long long)arg1;
 @property(readonly, nonatomic) _Bool isNearlyWhite;
@@ -94,14 +96,14 @@ __attribute__((visibility("hidden")))
 - (id)initWithCGColor:(struct CGColor *)arg1;
 - (id)initWithCGColor:(struct CGColor *)arg1 colorSpace:(unsigned long long)arg2;
 @property(readonly) struct CGColor *CGColor;
-- (void)saveToMessage:(struct Color *)arg1;
-- (id)initWithMessage:(const struct Color *)arg1;
+-     // Error parsing type: v24@0:8^{Color=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}ffffffffiif}16, name: saveToMessage:
+-     // Error parsing type: @24@0:8r^{Color=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}ffffffffiif}16, name: initWithMessage:
 - (id)mixedObjectWithFraction:(double)arg1 ofObject:(id)arg2;
 - (long long)mixingTypeWithObject:(id)arg1 context:(id)arg2;
 - (void)saveToPropertyCommandMessage:(struct Message *)arg1 archiver:(id)arg2;
 - (id)initFromPropertyCommandMessage:(const struct Message *)arg1 unarchiver:(id)arg2;
-- (void)saveToArchive:(struct Color *)arg1 archiver:(id)arg2;
-- (id)initWithArchive:(const struct Color *)arg1 unarchiver:(id)arg2;
+-     // Error parsing type: v32@0:8^{Color=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}ffffffffiif}16@24, name: saveToArchive:archiver:
+-     // Error parsing type: @32@0:8r^{Color=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}ffffffffiif}16@24, name: initWithArchive:unarchiver:
 @property(readonly, nonatomic) NSString *presetKind;
 
 // Remaining properties

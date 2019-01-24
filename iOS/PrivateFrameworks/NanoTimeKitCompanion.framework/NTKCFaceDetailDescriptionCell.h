@@ -20,6 +20,7 @@
 - (void).cxx_destruct;
 - (_Bool)textView:(id)arg1 shouldInteractWithURL:(id)arg2 inRange:(struct _NSRange)arg3 interaction:(long long)arg4;
 - (void)_fontSizeDidChange;
+- (id)_fontDescriptor;
 - (void)layoutSubviews;
 - (double)rowHeight;
 @property(copy, nonatomic) NSAttributedString *attributedText;

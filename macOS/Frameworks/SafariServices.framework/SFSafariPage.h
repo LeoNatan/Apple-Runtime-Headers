@@ -23,6 +23,8 @@
 - (void)getTitleWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)getIsPrivateWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)getIsActiveWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)getScreenshotOfVisibleAreaWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)getContainingTabWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)getPagePropertiesWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)reload;
 - (void)dispatchMessageToScriptWithName:(id)arg1 userInfo:(id)arg2;

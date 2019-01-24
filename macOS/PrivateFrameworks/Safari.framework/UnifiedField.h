@@ -13,7 +13,7 @@
 #import <Safari/UnifiedFieldEditorDelegate-Protocol.h>
 #import <Safari/WBSFluidProgressControllerDelegate-Protocol.h>
 
-@class BackgroundColorView, CALayer, DelayedPopUpRolloverImageButton, InteriorUnifiedField, NSButton, NSColor, NSEvent, NSImage, NSImageView, NSString, NSTimer, NSTrackingArea, NSURL, NSView, OneStepBookmarkingButton, RolloverImageButton, TextFieldThatIgnoresClicks, UnifiedFieldBezelView, WBSFaviconRequestsController, WBSFluidProgressState, WebBookmark;
+@class BackgroundColorView, CALayer, DelayedPopUpRolloverImageButton, InteriorUnifiedField, NSArray, NSButton, NSColor, NSEvent, NSImage, NSImageView, NSString, NSTimer, NSTrackingArea, NSURL, NSView, OneStepBookmarkingButton, RolloverImageButton, SearchProvidersController, TextFieldThatIgnoresClicks, UnifiedFieldBezelView, WBSFaviconRequestsController, WBSFluidProgressState, WebBookmark;
 @protocol UnifiedFieldDelegate;
 
 __attribute__((visibility("hidden")))
@@ -32,6 +32,7 @@ __attribute__((visibility("hidden")))
     BOOL _animatingToResignFirstResponder;
     BOOL _animateToResignFirstResponderSoon;
     BOOL _inSelectTextAsFirstResponder;
+    BOOL _animatingNotSecureAnnotation;
     NSTextField *_authenticationDescriptionTextField;
     NSTextField *_buttonDescriptionTextField;
     NSTimer *_showButtonDescriptionTimer;
@@ -59,13 +60,13 @@ __attribute__((visibility("hidden")))
     NSString *_evCertificateTitle;
     double _minProgressPosition;
     TextFieldThatIgnoresClicks *_hintTextField;
+    double _lastHintTextWidth;
     BOOL _loadInProgress;
     BOOL _fluidAnimationInProgress;
     WBSFluidProgressState *_currentFluidProgressState;
     CALayer *_rootLayer;
     CALayer *_textAndControlsLayer;
     CALayer *_progressFillLayer;
-    BackgroundColorView *_hintTextBackground;
     NSString *_rawPageStatus;
     NSString *_displayedPageStatus;
     NSString *_displayedPageTitleWithStatus;
@@ -73,14 +74,11 @@ __attribute__((visibility("hidden")))
     NSView *_overlayStaticTextFieldClipView;
     CALayer *_overlayStaticTextFieldOverflowFadeOutMaskLayer;
     BOOL _overlayStaticTextFieldNeedsResize;
-    BOOL _pageStatusTextFieldNeedUpdate;
     TextFieldThatIgnoresClicks *_pageStatusTextField;
     TextFieldThatIgnoresClicks *_notSecureAnnotationTextField;
-    NSView *_notSecureWebsiteMessageAndIconContainer;
-    TextFieldThatIgnoresClicks *_notSecureMessageTextField;
-    NSImageView *_notSecureIconImageView;
     BOOL _showsNotSecureAnnotation;
-    BOOL _showsNotSecureMessage;
+    NSView *_notSecureAnnotationContainer;
+    BOOL _sensitiveFormFieldHasEverHadFocus;
     TextFieldThatIgnoresClicks *_popUpWindowBlockedMessageTextField;
     NSImageView *_popUpWindowBlockedIconImageView;
     NSView *_popUpWindowBlockedMessageAndIconContainer;
@@ -110,8 +108,10 @@ __attribute__((visibility("hidden")))
     BOOL _showingAudioIndicator;
     BOOL _audioIndicatorShowingMutedState;
     BOOL _shouldDirectlyPerformMediaIndicatorAction;
+    BOOL _pageStatusTextFieldNeedUpdate;
     NSString *_placeholderString;
     UnifiedFieldBezelView *_bezelView;
+    SearchProvidersController *_searchProvidersController;
     unsigned long long _browsingMode;
     NSURL *_reflectedURL;
     NSString *_authenticationHost;
@@ -124,6 +124,7 @@ __attribute__((visibility("hidden")))
 + (double)urlTextYOffset;
 + (double)marginBeforeFirstComponent;
 + (void)initialize;
+@property(nonatomic) BOOL pageStatusTextFieldNeedUpdate; // @synthesize pageStatusTextFieldNeedUpdate=_pageStatusTextFieldNeedUpdate;
 @property(nonatomic) BOOL rightmostButtonIsForReader; // @synthesize rightmostButtonIsForReader=_rightmostButtonIsForReader;
 @property(readonly, nonatomic) InteriorUnifiedField *overlayStaticTextField; // @synthesize overlayStaticTextField=_overlayStaticTextField;
 @property(nonatomic) long long readerButtonState; // @synthesize readerButtonState=_readerButtonState;
@@ -139,6 +140,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) unsigned long long browsingMode; // @synthesize browsingMode=_browsingMode;
 @property(nonatomic, getter=isShowingSecurityUI) BOOL showingSecurityUI; // @synthesize showingSecurityUI=_showingSecurityUI;
 @property(nonatomic, getter=isShowingMagnifyingGlass) BOOL showingMagnifyingGlass; // @synthesize showingMagnifyingGlass=_showingMagnifyingGlass;
+@property(retain, nonatomic) SearchProvidersController *searchProvidersController; // @synthesize searchProvidersController=_searchProvidersController;
 @property(nonatomic) __weak UnifiedFieldBezelView *bezelView; // @synthesize bezelView=_bezelView;
 - (id)placeholderString;
 - (void).cxx_destruct;
@@ -205,6 +207,7 @@ __attribute__((visibility("hidden")))
 - (void)_hideOneStepBookmarkingButtonWithAnimation;
 - (BOOL)_isOneStepBookmarkingButtonVisible;
 - (BOOL)_shouldOneStepBookmarkingButtonBeVisible;
+- (BOOL)_canShowOneStepBookmarkingButton;
 - (BOOL)_shouldReserveSpaceForOneStepBookmarkingButton;
 @property(readonly, nonatomic) OneStepBookmarkingButton *oneStepBookmarkingButton;
 - (void)_createOneStepBookmarkingButtonIfNeeded;
@@ -256,6 +259,7 @@ __attribute__((visibility("hidden")))
 - (void)_notifyDelegateOfBecameFirstResponderSoon;
 - (void)_updateTruncationSoon;
 - (void)_updateTruncationNow;
+- (id)notSecureAnnotationColor;
 @property(readonly, nonatomic) NSColor *pageStatusStringColor;
 - (id)_pageStatusString;
 - (id)_hintStringColor;
@@ -307,7 +311,7 @@ __attribute__((visibility("hidden")))
 - (struct UnifiedFieldCompletionController *)_unifiedFieldCompletionController;
 - (id)_unifiedFieldTrackingArea;
 - (void)_updatePlaceholderAppearance;
-- (void)_systemColorsDidChange:(id)arg1;
+- (void)viewDidChangeEffectiveAppearance;
 - (void)_updateProgressBarColor;
 - (id)fluidProgressController:(id)arg1 windowImageForRect:(struct CGRect)arg2;
 - (void)fluidProgressController:(id)arg1 setProgressToCurrentPosition:(id)arg2;
@@ -344,18 +348,10 @@ __attribute__((visibility("hidden")))
 - (void)setShowsPopUpWindowBlockedButton:(BOOL)arg1;
 - (void)showPopUpWindowBlockedUI;
 - (void)_updateNotSecureWarningUI;
-- (id)_notSecureWarningIconImage;
 - (id)_notSecureWarningTextColor;
-- (void)_hideNotSecureWebsiteMessage;
-- (void)_notSecuredMessageTransition:(id)arg1 toView:(id)arg2;
-- (void)_showNotSecureWebsiteMessageAndIconContainer;
-- (void)_showNotSecureWebsiteMessage;
-- (void)_layOutNotSecureWebsiteMessageAndIconContainerIfNeeded;
-- (void)_createNotSecureWebsiteMessageAndIconContainerIfNeeded;
-- (void)_updateNotSecureMessageVisibility;
-- (BOOL)_isWebsiteNotSecureMessageVisible;
-- (BOOL)_websiteNotSecureMessageShouldBeVisible;
-- (void)setShowsNotSecureAnnotation:(BOOL)arg1 showsNotSecureMessage:(BOOL)arg2;
+- (id)_notSecureAnnotation;
+- (void)setShowsNotSecureAnnotation:(BOOL)arg1 hasFocusedSensitiveField:(BOOL)arg2;
+- (void)setUpNotSecureAnnotationContainer;
 - (void)setExtendedValidationCertificateTitle:(id)arg1;
 @property(readonly, nonatomic) struct CGRect urlTextFrame;
 - (BOOL)_extendedValidationCertificateIsAvailable;
@@ -377,6 +373,7 @@ __attribute__((visibility("hidden")))
 - (void)markedTextDidChangeForFieldEditor:(id)arg1;
 - (void)fieldEditorIsResigningFirstResponder:(id)arg1;
 - (void)fieldEditorDidBecomeFirstResponder:(id)arg1;
+- (double)extraTrailingPaddingForSelectionRectInUnifiedFieldEditor:(id)arg1;
 - (id)untruncatedStringValue;
 - (void)textDidEndEditing:(id)arg1;
 - (void)textDidBeginEditing:(id)arg1;
@@ -389,15 +386,12 @@ __attribute__((visibility("hidden")))
 - (void)setStringValue:(id)arg1;
 - (void)setAttributedStringValue:(id)arg1;
 - (id)accessibilityRoleDescription;
-- (id)_accessibilityRoleSuffix;
 - (BOOL)isAccessibilityAlternateUIVisible;
 - (BOOL)accessibilityPerformShowDefaultUI;
 - (BOOL)accessibilityPerformShowAlternateUI;
 - (id)accessibilityRole;
-- (BOOL)isAccessibilityElement;
-- (BOOL)isAccessibilityEnabled;
 - (void)_accessibilityShowAlternateUI:(BOOL)arg1;
-- (id)accessibilityChildren;
+@property(readonly, nonatomic) NSArray *unifiedFieldAccessibilityChildren;
 - (void)_navigateToItemOnPasteboard:(id)arg1;
 - (id)_stringFromPasteboard:(id)arg1;
 - (BOOL)prepareForDragOperation:(id)arg1;

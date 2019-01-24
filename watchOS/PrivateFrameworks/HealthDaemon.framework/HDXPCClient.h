@@ -52,6 +52,7 @@
 - (id)initWithConnection:(id)arg1 entitlements:(id)arg2;
 - (id)baseDataEntityEncodingOptions;
 - (id)_watchKitAvailabilityFilter;
+- (id)_antimonySourceFilterWithSourceManager:(id)arg1;
 - (id)filterWithQueryFilter:(id)arg1 objectType:(id)arg2 profile:(id)arg3;
 
 @end

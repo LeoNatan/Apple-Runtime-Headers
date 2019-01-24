@@ -6,9 +6,11 @@
 
 #import <objc/NSObject.h>
 
+#import <SafariShared/NSSecureCoding-Protocol.h>
+
 @class NSData, NSDictionary, NSString;
 
-@interface WBSHistoryTombstone : NSObject
+@interface WBSHistoryTombstone : NSObject <NSSecureCoding>
 {
     NSString *_urlString;
     NSData *_urlHash;
@@ -18,6 +20,7 @@
     long long _generation;
 }
 
++ (_Bool)supportsSecureCoding;
 @property(readonly, nonatomic) long long generation; // @synthesize generation=_generation;
 @property(readonly, nonatomic) double endTime; // @synthesize endTime=_endTime;
 @property(readonly, nonatomic) double startTime; // @synthesize startTime=_startTime;
@@ -25,6 +28,8 @@
 @property(readonly, nonatomic) NSData *urlHash; // @synthesize urlHash=_urlHash;
 @property(readonly, nonatomic) NSString *urlString; // @synthesize urlString=_urlString;
 - (void).cxx_destruct;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (id)secureTombstoneWithSalt:(id)arg1;
 @property(readonly, nonatomic, getter=isSecure) _Bool secure;
 - (id)description;

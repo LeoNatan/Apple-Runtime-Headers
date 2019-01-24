@@ -39,7 +39,7 @@ __attribute__((visibility("hidden")))
 - (struct CGImage *)newShadowImageWithSize:(struct CGSize)arg1 unflipped:(_Bool)arg2 withChildren:(_Bool)arg3;
 - (struct CGImage *)newShadowImageWithSize:(struct CGSize)arg1 shadow:(id)arg2 drawSelector:(SEL)arg3 unflipped:(_Bool)arg4;
 - (_Bool)canDrawShadowInOneStepWithChildren:(_Bool)arg1;
-- (struct CGRect)reflectionLayerFrameInRoot;
+- (struct CGRect)p_reflectionRenderableFrameInRoot;
 @property(readonly, nonatomic) _Bool isInvisible;
 @property(readonly, nonatomic) _Bool shouldShowShadow;
 @property(readonly, nonatomic) _Bool shouldShowReflection;

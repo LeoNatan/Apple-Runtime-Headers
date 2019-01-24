@@ -16,7 +16,7 @@ __attribute__((visibility("hidden")))
 
 + (id)sharedDelegate;
 @property(retain, nonatomic) TSABaseApplicationDelegate *baseApplicationDelegate; // @synthesize baseApplicationDelegate=_baseApplicationDelegate;
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)initWithBaseApplicationDelegate:(id)arg1;
 - (id)init;
 

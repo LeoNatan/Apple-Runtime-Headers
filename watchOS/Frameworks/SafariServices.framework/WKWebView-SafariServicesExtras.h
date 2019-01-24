@@ -17,7 +17,6 @@
 - (void)webui_removeFormMetadataForLastPasswordGenerationOrSubmitEventInFrame:(id)arg1;
 - (void)webui_setFormMetadata:(id)arg1 forLastPasswordGenerationOrSubmitEventInFrame:(id)arg2;
 - (id)webui_formMetadataForLastPasswordGenerationOrSubmitEventInFrame:(id)arg1;
-- (id)webui_formMetadataAndFrame:(id *)arg1 forLastPasswordGenerationOrSubmitEventInFrame:(id)arg2;
 @property(readonly, nonatomic) UIViewController *webui_presentingViewController;
 @property(readonly, nonatomic) _Bool webui_privateBrowsingEnabled;
 - (CDUnknownBlockType)webui_preventNavigationDuringAutoFillPrompt;

@@ -12,15 +12,19 @@
 {
     NSPredicate *_requiredGLPredicate;
     NSPredicate *_requiredCLPredicate;
+    NSPredicate *_requiredMetalPredicate;
     BOOL _requireSingleDevice;
     NSDictionary *_symbolTable;
 }
 
 @property BOOL requireSingleDevice; // @synthesize requireSingleDevice=_requireSingleDevice;
+@property(retain) NSPredicate *requiredMetalPredicate; // @synthesize requiredMetalPredicate=_requiredMetalPredicate;
 @property(retain) NSPredicate *requiredCLPredicate; // @synthesize requiredCLPredicate=_requiredCLPredicate;
 @property(retain) NSPredicate *requiredGLPredicate; // @synthesize requiredGLPredicate=_requiredGLPredicate;
+- (BOOL)_evaluateForMetalOnly;
 - (BOOL)_evaluateForOpenCLOnly;
 - (struct _CGLContextObject *)_newGLContextWithPixelFormatAttributes:(int *)arg1 numberOfDevices:(int *)arg2;
+- (unsigned long long)_registryIDForOpenGLContext:(struct _CGLContextObject *)arg1;
 - (BOOL)_evaluateForOpenGLVersion:(long long)arg1 pixelFormatAttributes:(int *)arg2;
 - (void)_loadSymbolicConstants;
 - (BOOL)areRequirementsMet;

@@ -19,10 +19,12 @@
 
 + (BOOL)supportsSecureCoding;
 + (id)_experimentalFeatures;
++ (id)_internalDebugFeatures;
 @property(readonly) struct Object *_apiObject;
 @property(nonatomic) BOOL tabFocusesLinks;
 @property(nonatomic) BOOL plugInsEnabled;
 @property(nonatomic) BOOL javaEnabled;
+@property(nonatomic, getter=isSafeBrowsingEnabled) BOOL safeBrowsingEnabled;
 @property(nonatomic, setter=_setStorageAccessPromptsEnabled:) BOOL _storageAccessPromptsEnabled;
 @property(nonatomic) BOOL javaScriptCanOpenWindowsAutomatically;
 @property(nonatomic) BOOL javaScriptEnabled;
@@ -32,6 +34,9 @@
 - (void)encodeWithCoder:(id)arg1;
 - (void)dealloc;
 - (id)init;
+@property(nonatomic, setter=_setDeviceOrientationEventEnabled:) BOOL _deviceOrientationEventEnabled;
+@property(nonatomic, setter=_setWebAnimationsCSSIntegrationEnabled:) BOOL _webAnimationsCSSIntegrationEnabled;
+@property(nonatomic, setter=_setVideoQualityIncludesDisplayCompositingEnabled:) BOOL _videoQualityIncludesDisplayCompositingEnabled;
 @property(nonatomic, setter=_setShouldEnableTextAutosizingBoost:) BOOL _shouldEnableTextAutosizingBoost;
 @property(nonatomic, setter=_setDOMPasteAllowed:) BOOL _domPasteAllowed;
 @property(nonatomic, setter=_setJavaScriptCanAccessClipboard:) BOOL _javaScriptCanAccessClipboard;
@@ -58,13 +63,12 @@
 @property(nonatomic, setter=_setBackspaceKeyNavigationEnabled:) BOOL _backspaceKeyNavigationEnabled;
 @property(nonatomic, setter=_setNotificationsEnabled:) BOOL _notificationsEnabled;
 @property(nonatomic, setter=_setStandardFontFamily:) NSString *_standardFontFamily;
-@property(nonatomic, setter=_setWebAnimationsCSSIntegrationEnabled:) BOOL _webAnimationsCSSIntegrationEnabled;
-@property(nonatomic, setter=_setCSSAnimationTriggersEnabled:) BOOL _cssAnimationTriggersEnabled;
 @property(nonatomic, setter=_setViewGestureDebuggingEnabled:) BOOL _viewGestureDebuggingEnabled;
 @property(nonatomic, setter=_setMediaSourceEnabled:) BOOL _mediaSourceEnabled;
 @property(nonatomic, setter=_setSubpixelCSSOMElementMetricsEnabled:) BOOL _subpixelCSSOMElementMetricsEnabled;
 @property(nonatomic, setter=_setPlugInSnapshottingEnabled:) BOOL _plugInSnapshottingEnabled;
 @property(nonatomic, setter=_setCookieEnabled:) BOOL _cookieEnabled;
+@property(nonatomic, setter=_setExperimentalPlugInSandboxProfilesEnabled:) BOOL _experimentalPlugInSandboxProfilesEnabled;
 @property(nonatomic, setter=_setArtificialPluginInitializationDelayEnabled:) BOOL _artificialPluginInitializationDelayEnabled;
 @property(nonatomic, setter=_setAsynchronousPluginInitializationEnabled:) BOOL _asynchronousPluginInitializationEnabled;
 @property(nonatomic, setter=_setSuppressesIncrementalRendering:) BOOL _suppressesIncrementalRendering;
@@ -82,6 +86,8 @@
 @property(nonatomic, setter=_setAcceleratedCompositingEnabled:) BOOL _acceleratedCompositingEnabled;
 @property(nonatomic, setter=_setCanvasUsesAcceleratedDrawing:) BOOL _canvasUsesAcceleratedDrawing;
 @property(nonatomic, setter=_setJavaEnabledForLocalFiles:) BOOL _javaEnabledForLocalFiles;
+@property(nonatomic, setter=_setShouldIgnoreMetaViewport:) BOOL _shouldIgnoreMetaViewport;
+@property(nonatomic, setter=_setLowPowerVideoAudioBufferSizeEnabled:) BOOL _lowPowerVideoAudioBufferSizeEnabled;
 @property(nonatomic, setter=_setPunchOutWhiteBackgroundsInDarkMode:) BOOL _punchOutWhiteBackgroundsInDarkMode;
 @property(nonatomic, setter=_setColorFilterEnabled:) BOOL _colorFilterEnabled;
 @property(nonatomic, setter=_setAVFoundationEnabled:) BOOL _avFoundationEnabled;
@@ -100,8 +106,12 @@
 @property(nonatomic, setter=_setLoadsImagesAutomatically:) BOOL _loadsImagesAutomatically;
 @property(nonatomic, setter=_setShouldSuppressKeyboardInputDuringProvisionalNavigation:) BOOL _shouldSuppressKeyboardInputDuringProvisionalNavigation;
 @property(nonatomic, setter=_setApplePayCapabilityDisclosureAllowed:) BOOL _applePayCapabilityDisclosureAllowed;
+- (void)_setEnabled:(BOOL)arg1 forExperimentalFeature:(id)arg2;
+- (BOOL)_isEnabledForExperimentalFeature:(id)arg1;
 - (void)_setEnabled:(BOOL)arg1 forFeature:(id)arg2;
 - (BOOL)_isEnabledForFeature:(id)arg1;
+- (void)_setEnabled:(BOOL)arg1 forInternalDebugFeature:(id)arg2;
+- (BOOL)_isEnabledForInternalDebugFeature:(id)arg1;
 @property(copy, nonatomic, setter=_setFixedPitchFontFamily:) NSString *_fixedPitchFontFamily;
 @property(nonatomic, setter=_setDefaultFixedPitchFontSize:) unsigned long long _defaultFixedPitchFontSize;
 @property(nonatomic, setter=_setDefaultFontSize:) unsigned long long _defaultFontSize;

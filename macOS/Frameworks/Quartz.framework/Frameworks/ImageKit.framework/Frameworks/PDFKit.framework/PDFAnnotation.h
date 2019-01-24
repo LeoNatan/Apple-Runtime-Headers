@@ -16,11 +16,21 @@
     PDFAnnotationPrivateVars *_private;
 }
 
++ (BOOL)annotationPageLayerEffectIsFlipped;
++ (void)setAnnotationPageLayerEffectIsFlipped:(BOOL)arg1;
 + (Class)classForAnnotationDictionary:(struct CGPDFDictionary *)arg1;
 + (id)getProperNameStringFromString:(id)arg1;
 + (id)nameForLineStyle:(long long)arg1;
 + (long long)lineStyleFromName:(id)arg1;
 - (void).cxx_destruct;
+- (void)discardTextStorageAndLayoutManager;
+- (void)createTextStorageAndLayoutManager;
+- (void)setTextInsets:(struct NSEdgeInsets)arg1;
+- (struct NSEdgeInsets)textInsets;
+- (void)setTextStorage:(id)arg1;
+- (id)textStorage;
+- (void)setLayoutManager:(id)arg1;
+- (id)layoutManager;
 - (id)akAnnotationAdaptor;
 - (id)formData;
 - (void)updateFormData;
@@ -109,6 +119,7 @@
 - (id)_createArrayForCGRect:(struct CGRect)arg1;
 - (void)addPageReferenceToDictionaryRef:(struct __CFDictionary *)arg1;
 - (id)_accessibilityTypeString;
+- (BOOL)isTextWidget;
 - (BOOL)isMarkupAnnotationSubtype;
 - (void)setParent:(id)arg1;
 - (id)parent;

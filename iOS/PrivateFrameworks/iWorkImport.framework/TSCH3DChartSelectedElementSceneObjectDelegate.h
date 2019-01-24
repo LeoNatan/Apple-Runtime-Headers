@@ -16,12 +16,12 @@ __attribute__((visibility("hidden")))
     unsigned long long mSelectedSeriesIndex;
 }
 
-- (_Bool)willSubmitElement:(const struct RenderElementInfo *)arg1 sceneObject:(id)arg2;
-- (_Bool)willRenderElement:(const struct RenderElementInfo *)arg1 sceneObject:(id)arg2;
-- (void)didTransformElement:(const struct RenderElementInfo *)arg1 sceneObject:(id)arg2;
-- (_Bool)willUpdateElementEffectsStatesForElement:(const struct RenderElementInfo *)arg1 sceneObject:(id)arg2;
-- (struct ElementRenderPass)renderPassForElement:(const struct RenderElementInfo *)arg1 sceneObject:(id)arg2;
-- (_Bool)willProcessElement:(const struct RenderElementInfo *)arg1 sceneObject:(id)arg2;
+- (_Bool)willSubmitElement:(id)arg1 sceneObject:(id)arg2;
+- (_Bool)willRenderElement:(id)arg1 sceneObject:(id)arg2;
+- (void)didTransformElement:(id)arg1 sceneObject:(id)arg2;
+- (_Bool)willUpdateElementEffectsStatesForElement:(id)arg1 sceneObject:(id)arg2;
+- (struct ElementRenderPass)renderPassForElement:(id)arg1 sceneObject:(id)arg2;
+- (_Bool)willProcessElement:(id)arg1 sceneObject:(id)arg2;
 - (void)didProcessElements:(id)arg1 sceneObject:(id)arg2 pipeline:(id)arg3;
 - (_Bool)willProcessElements:(id)arg1 sceneObject:(id)arg2 pipeline:(id)arg3;
 - (void)didGenerateShaderEffectsForSeriesAtIndex:(const tvec2_3b141483 *)arg1 effects:(id)arg2 sceneObject:(id)arg3 pipeline:(id)arg4;

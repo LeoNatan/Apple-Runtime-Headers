@@ -7,6 +7,9 @@
 #import <AppKit/NSImage.h>
 
 @interface NSImage (Compatibility)
++ (id)imageWithCGImage:(struct CGImage *)arg1;
 + (id)imageNamed:(id)arg1 inBundle:(id)arg2;
+@property(readonly, nonatomic) long long imageOrientation;
+@property(readonly, nonatomic) struct CGImage *CGImage;
 @end
 

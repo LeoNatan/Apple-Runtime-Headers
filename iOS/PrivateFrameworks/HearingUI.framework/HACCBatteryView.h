@@ -6,13 +6,14 @@
 
 #import <UIKit/UIView.h>
 
-@class UILabel, _UIBatteryView;
+@class NSNumberFormatter, UILabel, _UIBatteryView;
 
 @interface HACCBatteryView : UIView
 {
     UILabel *_sideLabel;
     UILabel *_valueLabel;
     _UIBatteryView *_batteryView;
+    NSNumberFormatter *_numberFormatter;
 }
 
 - (void).cxx_destruct;

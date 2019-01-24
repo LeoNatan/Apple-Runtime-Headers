@@ -51,12 +51,20 @@ typedef struct {
 
 // Ambiguous groups
 typedef struct {
+    unsigned int code:1;
+} CDStruct_9ab06576;
+
+typedef struct {
     unsigned int limit:1;
 } CDStruct_88fc3008;
 
 typedef struct {
     unsigned int status:1;
 } CDStruct_47fe53f2;
+
+typedef struct {
+    unsigned int success:1;
+} CDStruct_f2ecb737;
 
 typedef struct {
     unsigned int type:1;

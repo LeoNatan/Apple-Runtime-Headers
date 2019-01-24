@@ -30,6 +30,7 @@ __attribute__((visibility("hidden")))
 + (Class)uploadsType;
 + (Class)assetsType;
 + (id)options;
+@property(retain, nonatomic) NSData *authCopyRequest; // @synthesize authCopyRequest=_authCopyRequest;
 @property(retain, nonatomic) NSData *authPutRequest; // @synthesize authPutRequest=_authPutRequest;
 @property(retain, nonatomic) NSMutableArray *contentRequestHeaders; // @synthesize contentRequestHeaders=_contentRequestHeaders;
 @property(retain, nonatomic) NSMutableArray *uploads; // @synthesize uploads=_uploads;
@@ -52,6 +53,7 @@ __attribute__((visibility("hidden")))
 - (id)authPutTypeAsString:(int)arg1;
 @property(nonatomic) _Bool hasAuthPutType;
 @property(nonatomic) int authPutType; // @synthesize authPutType=_authPutType;
+@property(readonly, nonatomic) _Bool hasAuthCopyRequest;
 @property(readonly, nonatomic) _Bool hasAuthPutRequest;
 - (id)contentRequestHeadersAtIndex:(unsigned int)arg1;
 - (unsigned int)contentRequestHeadersCount;

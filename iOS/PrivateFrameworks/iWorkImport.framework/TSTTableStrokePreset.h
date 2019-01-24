@@ -19,7 +19,7 @@ __attribute__((visibility("hidden")))
 - (void)drawSwatchInRect:(struct CGRect)arg1 inContext:(struct CGContext *)arg2;
 @property(readonly, nonatomic) NSString *presetKind;
 - (void)saveToArchiver:(id)arg1;
-- (void)saveToArchive:(struct TableStrokePresetArchive *)arg1 archiver:(id)arg2;
+-     // Error parsing type: v32@0:8^{TableStrokePresetArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}i}16@24, name: saveToArchive:archiver:
 - (void)loadFromUnarchiver:(id)arg1;
 - (void)setIndex:(unsigned long long)arg1;
 - (unsigned long long)index;

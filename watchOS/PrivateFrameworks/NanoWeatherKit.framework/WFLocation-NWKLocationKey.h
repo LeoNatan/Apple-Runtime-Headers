@@ -9,6 +9,7 @@
 @class NSString;
 
 @interface WFLocation (NWKLocationKey)
+@property(readonly, nonatomic) NSString *locationKeyHashString;
 @property(readonly, nonatomic) unsigned int locationKeyHash;
 @property(readonly, nonatomic) NSString *locationKey;
 @end

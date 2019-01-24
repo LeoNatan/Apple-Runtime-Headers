@@ -13,9 +13,9 @@ __attribute__((visibility("hidden")))
 
 + (id)materialEffectClass;
 + (id)effectClass;
-+ (id)instanceWithArchive:(const struct Chart3DLightingModelArchive *)arg1 unarchiver:(id)arg2;
-- (void)saveToArchive:(struct Chart3DLightingModelArchive *)arg1 archiver:(id)arg2;
-- (id)initWithArchive:(const struct Chart3DLightingModelArchive *)arg1 unarchiver:(id)arg2;
++     // Error parsing type: @32@0:8r^{Chart3DLightingModelArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{Chart3DPhongLightingModelArchive}^{Chart3DFixedFunctionLightingModelArchive}^{Chart3DEnvironmentPackageArchive}}16@24, name: instanceWithArchive:unarchiver:
+-     // Error parsing type: v32@0:8^{Chart3DLightingModelArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{Chart3DPhongLightingModelArchive}^{Chart3DFixedFunctionLightingModelArchive}^{Chart3DEnvironmentPackageArchive}}16@24, name: saveToArchive:archiver:
+-     // Error parsing type: @32@0:8r^{Chart3DLightingModelArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{Chart3DPhongLightingModelArchive}^{Chart3DFixedFunctionLightingModelArchive}^{Chart3DEnvironmentPackageArchive}}16@24, name: initWithArchive:unarchiver:
 
 @end
 

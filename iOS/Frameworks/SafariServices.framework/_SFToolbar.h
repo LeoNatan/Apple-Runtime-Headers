@@ -6,9 +6,13 @@
 
 #import <UIKit/UIToolbar.h>
 
-@class NSString, UIView, _UIBackdropView, _UIBackdropViewSettings;
+#import <SafariServices/_SFBarCommon-Protocol.h>
+#import <SafariServices/_SFBarRegistrationObserving-Protocol.h>
 
-@interface _SFToolbar : UIToolbar
+@class NSString, UIView, _UIBackdropView, _UIBackdropViewSettings;
+@protocol _SFBarRegistrationToken;
+
+@interface _SFToolbar : UIToolbar <_SFBarCommon, _SFBarRegistrationObserving>
 {
     _UIBackdropView *_backgroundView;
     _UIBackdropViewSettings *_customBackdropSettings;
@@ -16,21 +20,39 @@
     _Bool _usesDarkTheme;
     long long _placement;
     unsigned long long _tintStyle;
+    id <_SFBarRegistrationToken> _barRegistration;
 }
 
+@property(nonatomic) __weak id <_SFBarRegistrationToken> barRegistration; // @synthesize barRegistration=_barRegistration;
 @property(nonatomic) unsigned long long tintStyle; // @synthesize tintStyle=_tintStyle;
 @property(readonly, nonatomic) long long placement; // @synthesize placement=_placement;
 - (void).cxx_destruct;
+- (void)didCompleteBarRegistrationWithToken:(id)arg1;
+- (id)popoverSourceInfoForBarItem:(long long)arg1;
+- (void)animateLinkImage:(struct CGImage *)arg1 fromRect:(struct CGRect)arg2 inView:(id)arg3 toBarItem:(long long)arg4 afterImageDisappearsBlock:(CDUnknownBlockType)arg5 afterDestinationLayerBouncesBlock:(CDUnknownBlockType)arg6;
+- (void)animateSafariIconLinkFromPoint:(struct CGPoint)arg1 inView:(id)arg2;
+- (void)_cancelLinkAnimations;
 - (void)updateBackdropSettings:(id)arg1;
 - (_Bool)_tintUsesDarkTheme;
+- (id)_controlsTintColor;
 - (void)updateTintColor;
+- (_Bool)isMinibar;
 - (id)_backdropInputSettings;
 @property(copy, nonatomic) NSString *backdropGroupName;
+- (void)traitCollectionDidChange:(id)arg1;
 - (void)layoutSubviews;
 @property(readonly, nonatomic) double URLFieldHorizontalMargin;
 @property(readonly, nonatomic) long long toolbarSize;
+- (void)setItems:(id)arg1 animated:(_Bool)arg2;
+- (void)dealloc;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (id)initWithPlacement:(long long)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

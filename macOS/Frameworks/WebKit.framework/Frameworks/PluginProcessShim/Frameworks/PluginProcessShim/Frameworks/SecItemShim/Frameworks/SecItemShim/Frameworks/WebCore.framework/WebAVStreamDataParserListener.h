@@ -14,11 +14,11 @@ __attribute__((visibility("hidden")))
 @interface WebAVStreamDataParserListener : NSObject <AVStreamDataParserOutputHandling>
 {
     WeakPtr_9f6accbd _parent;
-    OSObjectPtr_4a7d2093 _abortSemaphore;
+    Box_1b51c224 _abortSemaphore;
     AVStreamDataParser *_parser;
 }
 
-@property OSObjectPtr_4a7d2093 abortSemaphore; // @synthesize abortSemaphore=_abortSemaphore;
+@property Box_1b51c224 abortSemaphore; // @synthesize abortSemaphore=_abortSemaphore;
 @property WeakPtr_9f6accbd parent; // @synthesize parent=_parent;
 - (id).cxx_construct;
 - (void).cxx_destruct;

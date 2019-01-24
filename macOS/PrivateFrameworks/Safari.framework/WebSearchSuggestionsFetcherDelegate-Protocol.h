@@ -4,9 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@class WBSSearchSuggestionsFetcherResponse, WebSearchSuggestionsFetcher;
+@class WBSCompletionQuery, WBSSearchSuggestionsFetcherResponse, WebSearchSuggestionsFetcher;
 
 @protocol WebSearchSuggestionsFetcherDelegate
-- (void)fetcher:(WebSearchSuggestionsFetcher *)arg1 didReceiveResponse:(WBSSearchSuggestionsFetcherResponse *)arg2;
+- (void)fetcher:(WebSearchSuggestionsFetcher *)arg1 didReceiveResponse:(WBSSearchSuggestionsFetcherResponse *)arg2 originalQuery:(WBSCompletionQuery *)arg3;
 @end
 

@@ -83,7 +83,12 @@ __attribute__((visibility("hidden")))
     BOOL shouldUpdateLastReceivedPacketTimestamp;
     double lastReceivedPacketTimestamp;
     BOOL isRemoteMediaStalled;
+    unsigned int _mediaStallCount;
+    double _mediaStallTotalTime;
+    double _lastMediaStallDuration;
+    BOOL _currentlyMediaStall;
     int packetsSinceStall;
+    int packetsSinceMediaStall;
     int natType;
     NSObject<OS_dispatch_source> *pausedAudioHeartBeat;
     TimingCollection *perfTimers;

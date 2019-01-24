@@ -15,9 +15,11 @@
     MPCPlayerCommandRequest *_touchUpInsideCommandRequest;
     MPCPlayerCommandRequest *_holdBeginCommandRequest;
     MPCPlayerCommandRequest *_holdEndCommandRequest;
+    double _scaleFactor;
 }
 
 @property(readonly, nonatomic, getter=isPerformingHighlightAnimation) _Bool performingHighlightAnimation; // @synthesize performingHighlightAnimation=_performingHighlightAnimation;
+@property(nonatomic) double scaleFactor; // @synthesize scaleFactor=_scaleFactor;
 @property(nonatomic) _Bool shouldPresentActionSheet; // @synthesize shouldPresentActionSheet=_shouldPresentActionSheet;
 @property(retain, nonatomic) MPCPlayerCommandRequest *holdEndCommandRequest; // @synthesize holdEndCommandRequest=_holdEndCommandRequest;
 @property(retain, nonatomic) MPCPlayerCommandRequest *holdBeginCommandRequest; // @synthesize holdBeginCommandRequest=_holdBeginCommandRequest;

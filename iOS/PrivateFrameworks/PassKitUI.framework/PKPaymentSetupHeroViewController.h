@@ -8,7 +8,7 @@
 
 #import <PassKitUI/PKExplanationViewDelegate-Protocol.h>
 
-@class ACAccountStore, NSString, PKPaymentHeroImageController, PKPaymentProvisioningController, PKPaymentSetupHeroView, PKPaymentWebService;
+@class ACAccountStore, NSArray, NSString, PKPaymentHeroImageController, PKPaymentProvisioningController, PKPaymentSetupHeroView, PKPaymentWebService;
 @protocol PKPaymentSetupViewControllerDelegate;
 
 @interface PKPaymentSetupHeroViewController : PKExplanationViewController <PKExplanationViewDelegate>
@@ -19,6 +19,7 @@
     _Bool _hideSetupLater;
     _Bool _hasFelicaSecureElement;
     _Bool _preflightComplete;
+    NSArray *_featuredImages;
     _Bool _allowsManualEntry;
     PKPaymentProvisioningController *_provisioningController;
     id <PKPaymentSetupViewControllerDelegate> _delegate;
@@ -37,16 +38,15 @@
 - (void)_terminateSetupFlow;
 - (id)_bodyText;
 - (void)_next:(id)arg1;
+- (void)setFeaturedHeroImages:(id)arg1;
 @property(readonly, nonatomic) PKPaymentWebService *webService;
 - (void)viewDidDisappear:(_Bool)arg1;
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)viewWillLayoutSubviews;
 - (unsigned long long)edgesForExtendedLayout;
-- (void)_credentialRenewalRequired:(id)arg1;
 - (void)_preflightWithCompletion:(CDUnknownBlockType)arg1;
 - (void)viewDidLoad;
 - (void)loadView;
-- (void)dealloc;
 - (id)initWithProvisioningController:(id)arg1 context:(long long)arg2 delegate:(id)arg3;
 
 // Remaining properties

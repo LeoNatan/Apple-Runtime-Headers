@@ -9,7 +9,6 @@
 @class UIImage;
 
 @interface PKPaymentSetupProduct (PKUIUtilities)
-+ (id)_sharedDownloader;
 - (id)_generateThumbnailMask;
 - (id)_processThumbnailImage:(id)arg1 forSize:(struct CGSize)arg2;
 - (id)_processDigitalCardImage:(id)arg1;

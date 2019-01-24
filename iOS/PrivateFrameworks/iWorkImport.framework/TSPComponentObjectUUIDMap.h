@@ -23,12 +23,12 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (void)saveToMessage:(RepeatedPtrField_c964a194 *)arg1;
+- (void)saveToMessage:(RepeatedPtrField_87e3812e *)arg1;
 - (void)enumerateIdentifiersAndObjectUUIDsUsingBlock:(CDUnknownBlockType)arg1;
 - (long long)identifierForObjectUUID:(id)arg1;
 - (id)objectUUIDForIdentifier:(long long)arg1;
 @property(readonly, nonatomic) unsigned long long count;
-- (id)initWithMessage:(const RepeatedPtrField_c964a194 *)arg1;
+- (id)initWithMessage:(const RepeatedPtrField_87e3812e *)arg1;
 - (id)initWithIdentifierToObjectUUIDDictionary:(id)arg1 objectUUIDToIdentifierDictionary:(id)arg2;
 - (id)init;
 

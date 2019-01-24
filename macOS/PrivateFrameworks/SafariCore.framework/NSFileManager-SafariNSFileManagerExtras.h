@@ -14,6 +14,7 @@
 - (id)safari_autoFillQuirksDownloadDirectoryURL;
 - (id)safari_productionSafariSettingsDirectory;
 - (id)safari_containerSettingsDirectory;
+- (id)safari_nonContaineredSettingsDirectoryURL;
 - (id)safari_settingsDirectoryURL;
 - (id)safari_settingsDirectoryForHomeDirectory:(id)arg1;
 - (id)safari_settingsDirectoryForLibraryDirectory:(id)arg1;

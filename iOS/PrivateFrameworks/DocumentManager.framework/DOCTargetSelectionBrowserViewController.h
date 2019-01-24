@@ -8,11 +8,12 @@
 
 #import <DocumentManager/DOCAppearanceProtocol-Protocol.h>
 #import <DocumentManager/DOCHostTargetSelectionBrowserViewControllerProxy-Protocol.h>
+#import <DocumentManager/DOCRemoteViewControllerDelegate-Protocol.h>
 
 @class DOCAppearance, DOCConfiguration, NSArray, NSString, UIViewController, _UIResilientRemoteViewContainerViewController;
 @protocol DOCRemoteAppearanceInterface, DOCServiceTargetSelectionBrowserViewControllerProxy, DOCTargetSelectionBrowserViewControllerDelegate;
 
-@interface DOCTargetSelectionBrowserViewController : UINavigationController <DOCHostTargetSelectionBrowserViewControllerProxy, DOCAppearanceProtocol>
+@interface DOCTargetSelectionBrowserViewController : UINavigationController <DOCHostTargetSelectionBrowserViewControllerProxy, DOCAppearanceProtocol, DOCRemoteViewControllerDelegate>
 {
     _UIResilientRemoteViewContainerViewController *_remoteViewController;
     UIViewController<DOCRemoteAppearanceInterface> *_localViewController;
@@ -26,6 +27,7 @@
 
 @property(nonatomic) __weak id <DOCTargetSelectionBrowserViewControllerDelegate> targetSelectionDelegate; // @synthesize targetSelectionDelegate=_targetSelectionDelegate;
 - (void).cxx_destruct;
+- (void)remoteViewController:(id)arg1 didTerminateViewServiceWithError:(id)arg2;
 - (void)notifyDelegateOfCancellation;
 - (void)_dismissWithBlock:(CDUnknownBlockType)arg1;
 - (void)setURLs:(id)arg1;

@@ -6,9 +6,12 @@
 
 #import <Foundation/NSDictionary.h>
 
+@class NSString;
+
 @interface NSDictionary (CRKAdditions)
+- (id)JSONStringIsPrettyPrinted:(BOOL)arg1 sortKeys:(BOOL)arg2;
+@property(readonly, nonatomic) NSString *JSONString;
 - (id)crk_dictionaryByAddingEntriesFromDictionary:(id)arg1;
-- (id)crk_mapUsingBlock:(CDUnknownBlockType)arg1;
 @property(readonly, nonatomic) id crk_keyValueObservingNewObject;
 @property(readonly, nonatomic) id crk_keyValueObservingOldObject;
 @end

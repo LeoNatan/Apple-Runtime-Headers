@@ -6,13 +6,10 @@
 
 #import <objc/NSObject.h>
 
-@class NSOperationQueue;
-
 __attribute__((visibility("hidden")))
 @interface TSKDocumentRootICloudObserver : NSObject
 {
     long long _identifier;
-    NSOperationQueue *_operationQueue;
     CDUnknownBlockType _block;
     _Bool _suspendedCollaboration;
     long long _identifer;

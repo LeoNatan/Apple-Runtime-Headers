@@ -7,8 +7,6 @@
 #import <Foundation/NSString.h>
 
 @interface NSString (SafariSharedExtras)
-+ (id)safari_stringAsHexWithBuffer:(const char *)arg1 length:(unsigned long long)arg2;
-+ (id)safari_stringAsHexWithData:(id)arg1;
 + (id)safari_stringByBase64EncodingData:(id)arg1;
 + (id)safari_stringWithUTF8Bytes:(const void *)arg1 length:(unsigned long long)arg2;
 + (id)safari_localizedStringFromComponents:(id)arg1 usingConjunctionForFinalJoiner:(BOOL)arg2;
@@ -21,6 +19,7 @@
 - (id)safari_sha256Hash;
 - (id)safari_md5Hash;
 - (BOOL)safari_isVisualDuplicateOfURLString:(id)arg1;
+- (id)safari_canonicalURLForFrequentlyVisitedSites;
 - (id)safari_canonicalURLStringForFrequentlyVisitedSites;
 - (void)safari_enumerateSubdomainRangesInHostUsingBlock:(CDUnknownBlockType)arg1;
 - (id)safari_scriptIfJavaScriptURLString;

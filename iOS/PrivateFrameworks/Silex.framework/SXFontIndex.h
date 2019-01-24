@@ -8,15 +8,17 @@
 
 #import <Silex/SXFontIndex-Protocol.h>
 
-@class NSCache, NSDictionary, NSString;
+@class NSCache, NSDictionary, NSMutableArray, NSString;
 
 @interface SXFontIndex : NSObject <SXFontIndex>
 {
     NSDictionary *_fonts;
     NSCache *_attributeToFontIndex;
     NSCache *_fontToAttributeIndex;
+    NSMutableArray *_fontFamilyProviders;
 }
 
+@property(readonly, nonatomic) NSMutableArray *fontFamilyProviders; // @synthesize fontFamilyProviders=_fontFamilyProviders;
 @property(readonly, nonatomic) NSCache *fontToAttributeIndex; // @synthesize fontToAttributeIndex=_fontToAttributeIndex;
 @property(readonly, nonatomic) NSCache *attributeToFontIndex; // @synthesize attributeToFontIndex=_attributeToFontIndex;
 @property(readonly, nonatomic) NSDictionary *fonts; // @synthesize fonts=_fonts;
@@ -24,6 +26,7 @@
 - (id)fontsForFamilyProviders:(id)arg1;
 - (id)fontAttributesForFontName:(id)arg1;
 - (id)fontNameForFontAttributes:(id)arg1;
+- (void)addFontFamilyProvider:(id)arg1;
 - (id)initWithFontFamilyProviders:(id)arg1;
 
 // Remaining properties

@@ -10,7 +10,7 @@
 #import <Silex/SXTextSourceDataSource-Protocol.h>
 
 @class NSArray, NSString, SXDataRecordValueTransformerFactory, SXDataTableDictionary;
-@protocol SXDataTableComponentControllerDataSource, SXDataTableStyleFactory, SXDataTableTextSourceFactory;
+@protocol SXDOMObjectProviding, SXDataTableComponentControllerDataSource, SXDataTableStyleFactory, SXDataTableTextSourceFactory;
 
 @interface SXDataTableComponentController : NSObject <SXTextSourceDataSource, SXDataTableDataSource>
 {
@@ -21,8 +21,10 @@
     id <SXDataTableTextSourceFactory> _textSourceFactory;
     NSArray *_records;
     SXDataRecordValueTransformerFactory *_recordValueTransformerFactory;
+    id <SXDOMObjectProviding> _DOMObjectProvider;
 }
 
+@property(readonly, nonatomic) id <SXDOMObjectProviding> DOMObjectProvider; // @synthesize DOMObjectProvider=_DOMObjectProvider;
 @property(retain, nonatomic) SXDataRecordValueTransformerFactory *recordValueTransformerFactory; // @synthesize recordValueTransformerFactory=_recordValueTransformerFactory;
 @property(retain, nonatomic) NSArray *records; // @synthesize records=_records;
 @property(readonly, nonatomic) id <SXDataTableTextSourceFactory> textSourceFactory; // @synthesize textSourceFactory=_textSourceFactory;
@@ -33,7 +35,6 @@
 - (void).cxx_destruct;
 - (double)convertConvertibleValue:(struct _SXConvertibleValue)arg1;
 - (id)component;
-- (id)documentController;
 - (double)minimumWidthForStorage:(id)arg1 usingStringEnumeration:(unsigned long long)arg2;
 - (id)dataDescriptorForIdentifier:(id)arg1;
 - (id)dataDescriptorForIndexPath:(CDStruct_2fea82da)arg1;
@@ -41,13 +42,16 @@
 - (id)cellStyleForIndexPath:(CDStruct_2fea82da)arg1;
 - (id)columnStyleForColumnIndex:(unsigned long long)arg1;
 - (id)rowStyleForRowIndex:(unsigned long long)arg1;
+- (id)textStyleForIdentifier:(id)arg1;
 - (id)contentSizeCategoryForTextSource:(id)arg1;
-- (id)textStyleForTextSource:(id)arg1;
+- (id)linkStyleForTextSource:(id)arg1;
+- (id)defaultComponentTextStylesForTextSource:(id)arg1;
+- (id)defaultComponentTextStyleForTextSource:(id)arg1;
+- (id)componentTextStyleForTextSource:(id)arg1 inheritingFromDefaultStyles:(_Bool)arg2;
 - (id)inlineTextStylesForTextSource:(id)arg1;
 - (id)additionsForTextSource:(id)arg1;
 - (id)textRulesForTextSource:(id)arg1;
 - (id)textResizerForTextSource:(id)arg1;
-- (id)documentControllerForTextSource:(id)arg1;
 - (id)columnDividerAtIndex:(unsigned long long)arg1;
 - (id)rowDividerAtIndex:(unsigned long long)arg1;
 - (id)backgroundColorForCellAtIndexPath:(CDStruct_2fea82da)arg1;
@@ -74,7 +78,7 @@
 - (_Bool)indexPathIsHeader:(CDStruct_2fea82da)arg1;
 - (void)prepareForLayout;
 - (void)loadRecords;
-- (id)initWithStyleFactory:(id)arg1 textSourceFactory:(id)arg2 dataSource:(id)arg3;
+- (id)initWithStyleFactory:(id)arg1 textSourceFactory:(id)arg2 dataSource:(id)arg3 recordValueTransformerFactory:(id)arg4 DOMObjectProvider:(id)arg5;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

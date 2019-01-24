@@ -8,18 +8,24 @@
 
 #import <SafariCore/WBSRemotePlistSnapshot-Protocol.h>
 
-@class NSArray, NSDictionary, NSString;
+@class NSArray, NSDictionary, NSSet, NSString;
 
 @interface WBSAutoFillQuirksSnapshot : NSObject <WBSRemotePlistSnapshot>
 {
     NSDictionary *_autoFillQuirks;
     NSArray *_domainsWithAssociatedCredentials;
     NSDictionary *_passwordRequirementsByDomain;
+    NSArray *_domainsIneligibleForPasswordAuditing;
+    NSSet *_domainsIneligibleForAutomaticLogin;
 }
 
+@property(readonly, copy, nonatomic) NSSet *domainsIneligibleForAutomaticLogin; // @synthesize domainsIneligibleForAutomaticLogin=_domainsIneligibleForAutomaticLogin;
+@property(readonly, copy, nonatomic) NSArray *domainsIneligibleForPasswordAuditing; // @synthesize domainsIneligibleForPasswordAuditing=_domainsIneligibleForPasswordAuditing;
 @property(readonly, copy, nonatomic) NSArray *domainsWithAssociatedCredentials; // @synthesize domainsWithAssociatedCredentials=_domainsWithAssociatedCredentials;
 @property(readonly, copy, nonatomic) NSDictionary *passwordRequirementsByDomain; // @synthesize passwordRequirementsByDomain=_passwordRequirementsByDomain;
 - (void).cxx_destruct;
+- (id)_domainsIneligibleForAutomaticLoginFromAutoFillQuirks:(id)arg1 error:(id *)arg2;
+- (id)_domainsIneligibleForPasswordAuditingFromAutoFillQuirks:(id)arg1 error:(id *)arg2;
 - (id)_domainsWithAssociatedCredentialsFromAutoFillQuirks:(id)arg1 error:(id *)arg2;
 - (id)_passwordRequirementsByDomainFromAutoFillQuirks:(id)arg1 error:(id *)arg2;
 - (id)plistDataWithFormat:(unsigned int)arg1;

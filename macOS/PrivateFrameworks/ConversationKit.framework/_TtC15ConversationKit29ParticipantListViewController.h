@@ -15,7 +15,7 @@ __attribute__((visibility("hidden")))
     // Error parsing type: , name: participantsViewControllerDelegate
 }
 
-- (CDUnknownBlockType).cxx_destruct;
+- (void).cxx_destruct;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (id)init;
 - (void)viewDidLoad;

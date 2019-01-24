@@ -46,6 +46,7 @@
 + (id)_followUpItemWithIdentifier:(id)arg1 account:(id)arg2 priority:(long long)arg3 bagContract:(id)arg4 logKey:(id)arg5;
 + (BOOL)tearDownDeviceOfferFollowUpWithIdentifier:(id)arg1 account:(id)arg2 logKey:(id)arg3;
 + (BOOL)tearDownAllDeviceOfferFollowUpsForAccount:(id)arg1 logKey:(id)arg2;
++ (BOOL)shouldPresentSetupOffersForAccount:(id)arg1 issues:(long long *)arg2;
 + (BOOL)shouldPresentSetupOffersForAccount:(id)arg1;
 + (void)setDeviceOffersCheckEncodingForRequestParameters:(id)arg1;
 + (BOOL)saveDeviceOffersForAccount:(id)arg1 response:(id)arg2 logKey:(id)arg3;

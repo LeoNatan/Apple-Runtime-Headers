@@ -37,6 +37,8 @@
 - (void)incrementTransactionsForObject:(id)arg1;
 - (id)keyForObject:(id)arg1;
 - (void)_start;
+- (void)submitUptimeMetricsWithDefaultsMananger:(id)arg1;
+- (id)serviceWithClass:(Class)arg1;
 - (void)addService:(id)arg1;
 - (void)start;
 - (id)createSourceForSignal:(int)arg1 withBlock:(CDUnknownBlockType)arg2;

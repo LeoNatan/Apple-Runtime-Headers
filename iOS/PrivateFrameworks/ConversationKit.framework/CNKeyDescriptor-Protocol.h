@@ -8,6 +8,6 @@
 #import <ConversationKit/NSObject-Protocol.h>
 #import <ConversationKit/NSSecureCoding-Protocol.h>
 
-@protocol CNKeyDescriptor <NSCopying, NSSecureCoding, NSObject>
+@protocol CNKeyDescriptor <NSObject, NSSecureCoding, NSCopying>
 @end
 

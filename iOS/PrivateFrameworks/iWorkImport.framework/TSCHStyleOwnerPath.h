@@ -18,7 +18,7 @@ __attribute__((visibility("hidden")))
 
 + (id)styleOwnerPathWithUUIDs:(id)arg1;
 + (id)verifiedUUIDs:(id)arg1;
-+ (id)instanceWithArchive:(const struct StyleOwnerPath *)arg1 unarchiver:(id)arg2;
++     // Error parsing type: @32@0:8r^{StyleOwnerPath=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSP::UUID>=^{Arena}ii^{Rep}}}16@24, name: instanceWithArchive:unarchiver:
 + (id)styleOwnerPathForStyleOwner:(id)arg1;
 + (id)styleOwnerPathForSemanticTag:(id)arg1 ofChart:(id)arg2;
 + (unsigned char)styleOwnerPathTypeForStyleOwner:(id)arg1;
@@ -31,8 +31,8 @@ __attribute__((visibility("hidden")))
 - (unsigned long long)hash;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithUUIDs:(id)arg1;
-- (void)saveToArchive:(struct StyleOwnerPath *)arg1 archiver:(id)arg2;
-- (id)initWithArchive:(const struct StyleOwnerPath *)arg1 unarchiver:(id)arg2;
+-     // Error parsing type: v32@0:8^{StyleOwnerPath=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSP::UUID>=^{Arena}ii^{Rep}}}16@24, name: saveToArchive:archiver:
+-     // Error parsing type: @32@0:8r^{StyleOwnerPath=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSP::UUID>=^{Arena}ii^{Rep}}}16@24, name: initWithArchive:unarchiver:
 - (id)styleOwnerForChart:(id)arg1;
 - (id)p_referenceLineStyleOwnerForChart:(id)arg1;
 - (id)p_seriesStyleOwnerForChart:(id)arg1;

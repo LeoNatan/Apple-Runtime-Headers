@@ -48,8 +48,8 @@ __attribute__((visibility("hidden")))
 - (const vector_4dc5f307 *)columnUIDs;
 - (const vector_4dc5f307 *)compressedRowUIDs;
 - (const vector_4dc5f307 *)rowUIDs;
-- (void)saveToMessage:(struct CellUIDListArchive *)arg1 archiver:(id)arg2;
-- (id)initFromMessage:(const struct CellUIDListArchive *)arg1 unarchiver:(id)arg2;
+-     // Error parsing type: v32@0:8^{CellUIDListArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSP::UUID>=^{Arena}ii^{Rep}}{RepeatedPtrField<TSP::UUID>=^{Arena}ii^{Rep}}{RepeatedField<int>=ii(Pointer=^{Arena}^{Rep})}{RepeatedField<int>=ii(Pointer=^{Arena}^{Rep})}}16@24, name: saveToMessage:archiver:
+-     // Error parsing type: @32@0:8r^{CellUIDListArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSP::UUID>=^{Arena}ii^{Rep}}{RepeatedPtrField<TSP::UUID>=^{Arena}ii^{Rep}}{RepeatedField<int>=ii(Pointer=^{Arena}^{Rep})}{RepeatedField<int>=ii(Pointer=^{Arena}^{Rep})}}16@24, name: initFromMessage:unarchiver:
 - (void)dealloc;
 - (id)init;
 

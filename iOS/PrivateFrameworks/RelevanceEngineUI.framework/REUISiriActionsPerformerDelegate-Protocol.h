@@ -6,12 +6,13 @@
 
 #import <RelevanceEngineUI/NSObject-Protocol.h>
 
-@class NSError, REUISiriActionsPerformer, UIImage, UIViewController;
+@class NSError, REUISiriActionsPerformer, UIImage, UIView, UIViewController;
 
 @protocol REUISiriActionsPerformerDelegate <NSObject>
 - (void)siriActionsPerformer:(REUISiriActionsPerformer *)arg1 didFailWithError:(NSError *)arg2;
 - (void)siriActionsPerformerDidSucceed:(REUISiriActionsPerformer *)arg1;
 - (_Bool)siriActionsPerformer:(REUISiriActionsPerformer *)arg1 wantsToPresentViewController:(UIViewController *)arg2;
+- (UIView *)siriActionsPerformerWantsBackgroundViewToBlur:(REUISiriActionsPerformer *)arg1;
 - (UIImage *)siriActionsPerformerWantsAlertBackgroundImage:(REUISiriActionsPerformer *)arg1;
 @end
 

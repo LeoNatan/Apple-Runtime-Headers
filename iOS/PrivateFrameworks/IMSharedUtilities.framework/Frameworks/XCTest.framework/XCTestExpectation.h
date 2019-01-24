@@ -15,10 +15,13 @@
 }
 
 + (id)expectationWithDescription:(id)arg1;
++ (id)compoundOrExpectationWithSubexpectations:(id)arg1;
++ (id)compoundAndExpectationWithSubexpectations:(id)arg1;
 @property(readonly) _XCTestExpectationImplementation *internalImplementation; // @synthesize internalImplementation=_internalImplementation;
 - (void).cxx_destruct;
 - (void)cleanup;
 @property _Bool hasBeenWaitedOn;
+- (void)on_queue_setHasBeenWaitedOn:(_Bool)arg1;
 @property id <XCTestExpectationDelegate> delegate;
 @property(readonly, copy) NSArray *fulfillCallStackReturnAddresses;
 @property(readonly, copy) NSArray *creationCallStackReturnAddresses;

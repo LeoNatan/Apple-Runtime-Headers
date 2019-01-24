@@ -6,9 +6,11 @@
 
 #import <Accounts/ACAccount.h>
 
-@class NSNumber, NSString;
+@class NSDate, NSNumber, NSString;
 
 @interface ACAccount (ICAccountAdditions)
+@property(nonatomic, getter=ic_isSubscriptionStatusEnabled, setter=ic_setSubscriptionStatusEnabled:) _Bool ic_subscriptionStatusEnabled;
+@property(copy, nonatomic, setter=ic_setAgeVerificationExpirationDate:) NSDate *ic_ageVerificationExpirationDate;
 @property(nonatomic, getter=ic_isManagedAppleID, setter=ic_setManagedAppleID:) _Bool ic_managedAppleID;
 @property(readonly, nonatomic, getter=ic_isCloudBackupEnabled) _Bool ic_cloudBackupEnabled;
 @property(nonatomic, getter=ic_isActiveLockerAccount, setter=ic_setActiveLockerAccount:) _Bool ic_activeLockerAccount;

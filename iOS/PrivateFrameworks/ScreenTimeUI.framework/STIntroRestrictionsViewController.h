@@ -14,7 +14,6 @@
 @interface STIntroRestrictionsViewController : STIntroSplashViewController <UITableViewDataSource, UITableViewDelegate>
 {
     _Bool _showAllCategories;
-    _Bool _hasSetTimeAmount;
     _Bool _showingDatePicker;
     UITableView *_categoriesTableView;
     UITableView *_settingsTableView;
@@ -22,7 +21,6 @@
 }
 
 @property _Bool showingDatePicker; // @synthesize showingDatePicker=_showingDatePicker;
-@property _Bool hasSetTimeAmount; // @synthesize hasSetTimeAmount=_hasSetTimeAmount;
 @property _Bool showAllCategories; // @synthesize showAllCategories=_showAllCategories;
 @property(retain) STAllowance *allowance; // @synthesize allowance=_allowance;
 @property(retain) UITableView *settingsTableView; // @synthesize settingsTableView=_settingsTableView;
@@ -37,6 +35,8 @@
 - (long long)numberOfSectionsInTableView:(id)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (id)selectedCategories;
+- (_Bool)_hasSetTimeAmount;
+- (void)_updateSaveButton;
 - (void)datePickerChanged:(id)arg1;
 - (void)dealloc;
 - (void)viewDidAppear:(_Bool)arg1;

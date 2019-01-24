@@ -7,11 +7,12 @@
 #import <objc/NSObject.h>
 
 #import <iWorkImport/NSCopying-Protocol.h>
+#import <iWorkImport/TSCH3DObjectStateResource-Protocol.h>
 
-@class TSCH3DDataBuffer;
+@class NSString, TSCH3DDataBuffer;
 
 __attribute__((visibility("hidden")))
-@interface TSCH3DResource : NSObject <NSCopying>
+@interface TSCH3DResource : NSObject <NSCopying, TSCH3DObjectStateResource>
 {
     int mCaching;
     TSCH3DDataBuffer *mCache;
@@ -24,8 +25,6 @@ __attribute__((visibility("hidden")))
 
 + (id)resourceWithCaching:(int)arg1;
 + (id)resource;
-+ (void)deallocateResourceUniqueIdentifier:(unsigned long long)arg1;
-+ (unsigned long long)allocateResourceUniqueIdentifier;
 @property(readonly, nonatomic) unsigned long long uniqueIdentifier; // @synthesize uniqueIdentifier=mUniqueIdentifier;
 @property(nonatomic) int caching; // @synthesize caching=mCaching;
 @property(nonatomic) int update; // @synthesize update=mUpdate;
@@ -38,11 +37,16 @@ __attribute__((visibility("hidden")))
 - (void)updateBufferInfoFromBuffer:(id)arg1;
 @property(nonatomic) _Bool changed;
 @property(readonly, nonatomic) _Bool isTexturable;
-- (unsigned long long)hash;
+@property(readonly) unsigned long long hash;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)dealloc;
 - (id)init;
 - (id)initWithCaching:(int)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) Class superclass;
 
 @end
 

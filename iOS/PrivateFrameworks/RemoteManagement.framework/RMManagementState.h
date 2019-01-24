@@ -26,6 +26,7 @@
 - (void)screenTimeStateCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)screenTimeStateWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)isRestrictionsPasscodeSet:(CDUnknownBlockType)arg1;
+- (_Bool)clearRestrictionsPasscodeWithError:(id *)arg1;
 @property(readonly, nonatomic) _Bool isRestrictionsPasscodeSet;
 - (void)shouldRequestMoreTime:(CDUnknownBlockType)arg1;
 @property(readonly, nonatomic) _Bool shouldRequestMoreTime;

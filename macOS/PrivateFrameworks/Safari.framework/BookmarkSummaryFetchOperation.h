@@ -8,12 +8,14 @@
 
 #import <Safari/FetcherDelegate-Protocol.h>
 
-@class NSString;
+@class NSString, WebKitPreferencesManager;
 
 __attribute__((visibility("hidden")))
 @interface BookmarkSummaryFetchOperation : WBSSiteMetadataFetchOperation <FetcherDelegate>
 {
     CDUnknownBlockType _completionHandler;
+    struct Context _context;
+    WebKitPreferencesManager *_preferencesManager;
     struct unique_ptr<Safari::ReadingListFetcher, std::__1::default_delete<Safari::ReadingListFetcher>> _fetcher;
 }
 
@@ -27,7 +29,7 @@ __attribute__((visibility("hidden")))
 - (void)start;
 - (BOOL)isEqual:(id)arg1;
 @property(readonly) unsigned long long hash;
-- (id)initWithRequest:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (id)initWithRequest:(id)arg1 processContext:(const struct Context *)arg2 preferencesManager:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

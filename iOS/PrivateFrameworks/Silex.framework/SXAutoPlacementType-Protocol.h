@@ -4,11 +4,11 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <Silex/NSObject-Protocol.h>
+#import <Silex/SXConditionalObject-Protocol.h>
 
 @protocol SXAutoPlacementLayout;
 
-@protocol SXAutoPlacementType <NSObject>
+@protocol SXAutoPlacementType <SXConditionalObject>
 @property(readonly, nonatomic) id <SXAutoPlacementLayout> layout;
 @property(readonly, nonatomic) _Bool enabled;
 @end

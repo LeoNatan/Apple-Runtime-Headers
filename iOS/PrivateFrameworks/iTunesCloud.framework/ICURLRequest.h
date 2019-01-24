@@ -8,7 +8,7 @@
 
 #import <iTunesCloud/NSProgressReporting-Protocol.h>
 
-@class ICRequestContext, NSData, NSDictionary, NSError, NSMutableArray, NSMutableData, NSProgress, NSString, NSURL, NSURLRequest, NSURLResponse, NSURLSessionTask;
+@class ICRequestContext, ICURLResponseHandler, NSData, NSDictionary, NSError, NSMutableArray, NSMutableData, NSProgress, NSString, NSURL, NSURLRequest, NSURLResponse, NSURLSessionTask;
 @protocol OS_dispatch_queue, OS_dispatch_semaphore;
 
 @interface ICURLRequest : NSObject <NSProgressReporting>
@@ -27,6 +27,7 @@
     double _retryDelay;
     long long _requestState;
     NSData *_resumeData;
+    ICURLResponseHandler *_responseHandler;
     NSURLRequest *_urlRequest;
     NSURLSessionTask *_task;
     long long _type;
@@ -57,6 +58,7 @@
 @property(nonatomic) long long type; // @synthesize type=_type;
 @property(retain, nonatomic) NSURLSessionTask *task; // @synthesize task=_task;
 @property(readonly, nonatomic) NSURLRequest *urlRequest; // @synthesize urlRequest=_urlRequest;
+@property(retain, nonatomic) ICURLResponseHandler *responseHandler; // @synthesize responseHandler=_responseHandler;
 @property(nonatomic, getter=isExtendedCertificateValidationRequired) _Bool extendedCertificateValidationRequired; // @synthesize extendedCertificateValidationRequired=_extendedCertificateValidationRequired;
 @property(readonly, copy, nonatomic) NSData *resumeData; // @synthesize resumeData=_resumeData;
 @property(nonatomic) long long requestState; // @synthesize requestState=_requestState;

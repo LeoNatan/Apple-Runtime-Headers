@@ -9,5 +9,8 @@
 @protocol NSSNewsAnalyticsPBEventStreamObserver
 - (void)observeEvents:(NSArray *)arg1;
 - (void)observeEvent:(NTPBEvent *)arg1;
+
+@optional
+- (void)observeAppAnalyticsEvent:(NTPBEvent *)arg1;
 @end
 

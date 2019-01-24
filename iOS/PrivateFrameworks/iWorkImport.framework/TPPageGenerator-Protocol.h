@@ -6,10 +6,10 @@
 
 #import <iWorkImport/NSObject-Protocol.h>
 
-@class TPPageLayoutState, TPSectionHint;
+@class TPPaginationState, TPSectionHint;
 
 @protocol TPPageGenerator <NSObject>
-- (void)createOrUpdatePageHintInSectionHint:(TPSectionHint *)arg1 withState:(TPPageLayoutState *)arg2;
-- (_Bool)wantsPageInSectionHint:(TPSectionHint *)arg1 withState:(TPPageLayoutState *)arg2;
+- (void)createOrUpdatePageHintInSectionHint:(TPSectionHint *)arg1 withState:(TPPaginationState *)arg2;
+- (_Bool)wantsPageInSectionHint:(TPSectionHint *)arg1 withState:(TPPaginationState *)arg2;
 @end
 

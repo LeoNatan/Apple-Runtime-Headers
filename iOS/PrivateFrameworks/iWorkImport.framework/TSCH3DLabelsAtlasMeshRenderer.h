@@ -15,12 +15,12 @@ __attribute__((visibility("hidden")))
     TSUNoCopyDictionary *mExternalAttributeVariables;
 }
 
-- (void)renderWithMeshRenderLabelInfo:(const struct LabelsMeshRendererLabelInfo *)arg1;
+- (void)renderWithMeshRenderLabelInfo:(id)arg1;
 - (void)flushCache;
 - (void)submitResourcesWithProcessor:(id)arg1;
 - (void)p_submitExternalAttributesForIndex:(unsigned long long)arg1 processor:(id)arg2;
-- (id)p_resourceForExternalLabelAttribute:(const struct ExternalLabelAttribute *)arg1 index:(unsigned long long)arg2 createIfAbsent:(_Bool)arg3;
-- (unsigned long long)p_indexForExternalAttribute:(const struct ExternalLabelAttribute *)arg1;
+- (id)p_resourceForExternalLabelAttribute:(id)arg1 index:(unsigned long long)arg2 createIfAbsent:(_Bool)arg3;
+- (unsigned long long)p_indexForExternalAttribute:(id)arg1;
 - (id)p_texcoordResourceAtIndex:(unsigned long long)arg1 createIfAbsent:(_Bool)arg2;
 - (id)p_vertexResourceAtIndex:(unsigned long long)arg1 createIfAbsent:(_Bool)arg2;
 - (unsigned long long)p_resourceCount;

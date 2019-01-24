@@ -172,6 +172,13 @@
 - (id)windowHeaderSpacerViewBackgroundColor;
 - (id)playbackViewBackgroundColor;
 - (id)mainViewBackgroundColor;
+- (double)titleLabelLockScreenTopPaddingMultiplier;
+- (double)durationLabelLockScreenHorizontalPadding;
+- (double)dateLabelLockScreenHorizontalPadding;
+- (double)dateDurationLabelLockScreenVerticalPadding;
+- (double)waveformLockScreenTopPadding;
+- (double)waveformLockScreenBottomPadding;
+- (double)timeDisplayLabelLockScreenPadding;
 - (double)recordingControlLockScreenPadding;
 - (double)compactStyleTimeBarHeightInset;
 - (double)compactStyleTimeBarDefaultHeight;
@@ -318,6 +325,7 @@
 - (double)emptyLibraryLabelXInset;
 - (double)primaryColumnWidth;
 - (double)descriptionViewSecondaryLabelAlpha;
+- (double)recordingControlExtraHitOutset;
 - (double)recordingControlAlphaWhenPressed;
 - (double)recordingControlAnimationDuration;
 - (double)recordingViewResizeAnimationDuration;

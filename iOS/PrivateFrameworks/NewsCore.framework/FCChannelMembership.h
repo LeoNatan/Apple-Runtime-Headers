@@ -10,21 +10,19 @@
 
 @interface FCChannelMembership : NSObject
 {
-    _Bool _isAllowedToSeeDrafts;
-    NSString *_channelID;
-    NSString *_draftListID;
     NTPBChannelMembershipRecord *_record;
     FCInterestToken *_interestToken;
 }
 
 @property(retain, nonatomic) FCInterestToken *interestToken; // @synthesize interestToken=_interestToken;
 @property(retain, nonatomic) NTPBChannelMembershipRecord *record; // @synthesize record=_record;
-@property(retain, nonatomic) NSString *draftListID; // @synthesize draftListID=_draftListID;
-@property(nonatomic) _Bool isAllowedToSeeDrafts; // @synthesize isAllowedToSeeDrafts=_isAllowedToSeeDrafts;
-@property(retain, nonatomic) NSString *channelID; // @synthesize channelID=_channelID;
 - (void).cxx_destruct;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
+@property(readonly, nonatomic) NSString *draftIssueListID;
+@property(readonly, nonatomic) NSString *draftArticleListID;
+@property(readonly, nonatomic) _Bool isAllowedToSeeDrafts;
+@property(readonly, nonatomic) NSString *channelID;
 - (id)initWithRecord:(id)arg1 interestToken:(id)arg2;
 
 @end

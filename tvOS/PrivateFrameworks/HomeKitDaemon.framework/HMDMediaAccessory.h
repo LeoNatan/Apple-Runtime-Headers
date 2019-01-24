@@ -17,7 +17,6 @@
 }
 
 + (_Bool)supportsSecureCoding;
-+ (id)computedNameForCategoryType:(id)arg1 inRoom:(id)arg2;
 @property(readonly) HMDMediaProfile *mediaProfile; // @synthesize mediaProfile=_mediaProfile;
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;

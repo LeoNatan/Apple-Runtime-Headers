@@ -21,6 +21,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)sharedManager;
++ (int)cellViewTypeForResult:(id)arg1;
 @property(readonly, nonatomic) UnifiedFieldCompletionStyledTableCellView<ParsecTableCellView> *mostRecentlyUsedParsecCellView; // @synthesize mostRecentlyUsedParsecCellView=_mostRecentlyUsedParsecCellView;
 - (void).cxx_destruct;
 - (id)_identifierForParsecCellViewType:(int)arg1;

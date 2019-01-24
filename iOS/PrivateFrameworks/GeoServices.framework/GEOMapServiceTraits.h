@@ -66,6 +66,7 @@
     _Bool _supportDirectionIntentSearch;
     _Bool _supportDymSuggestion;
     _Bool _supportUnresolvedDirectionIntent;
+    _Bool _supportsBrandFallback;
     _Bool _useBackgroundUrl;
     _Bool _wantsBrandIcon;
     struct {
@@ -98,6 +99,7 @@
         unsigned int supportDirectionIntentSearch:1;
         unsigned int supportDymSuggestion:1;
         unsigned int supportUnresolvedDirectionIntent:1;
+        unsigned int supportsBrandFallback:1;
         unsigned int useBackgroundUrl:1;
         unsigned int wantsBrandIcon:1;
     } _has;
@@ -107,6 +109,7 @@
 + (Class)reviewUserPhotoSizesType;
 + (Class)photoSizesType;
 + (Class)deviceDisplayLanguageType;
+@property(nonatomic) _Bool supportsBrandFallback; // @synthesize supportsBrandFallback=_supportsBrandFallback;
 @property(nonatomic) _Bool appDarkMode; // @synthesize appDarkMode=_appDarkMode;
 @property(nonatomic) _Bool deviceDarkMode; // @synthesize deviceDarkMode=_deviceDarkMode;
 @property(nonatomic) _Bool supportUnresolvedDirectionIntent; // @synthesize supportUnresolvedDirectionIntent=_supportUnresolvedDirectionIntent;
@@ -162,6 +165,7 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(nonatomic) _Bool hasSupportsBrandFallback;
 @property(nonatomic) _Bool hasAppDarkMode;
 @property(nonatomic) _Bool hasDeviceDarkMode;
 @property(nonatomic) _Bool hasSupportUnresolvedDirectionIntent;

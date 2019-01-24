@@ -6,29 +6,38 @@
 
 #import <SpringBoardFoundation/SBFTouchPassThroughView.h>
 
-@class SBUILegibilityLabel, UIView, _UILegibilitySettings, _UILegibilityView;
+@class CALayer, SBUILegibilityLabel, UIView, _UILegibilitySettings, _UILegibilityView;
 
 @interface SBUIFaceIDCameraGlyphView : SBFTouchPassThroughView
 {
     _UILegibilitySettings *_legibilitySettings;
-    _UILegibilityView *_arrow;
+    UIView *_arrowContainer;
     SBUILegibilityLabel *_callToActionLabel;
     unsigned int _state;
-    UIView *_arrowContainer;
+    _UILegibilityView *_arrowHead;
+    _UILegibilityView *_arrowTail;
+    CALayer *_maskContainerLayer;
+    CALayer *_maskTopLayer;
+    CALayer *_maskLeftLayer;
+    CALayer *_maskRightLayer;
     UIView *_localRotationView;
     struct CGAffineTransform _localTransform;
 }
 
 @property(retain, nonatomic) UIView *localRotationView; // @synthesize localRotationView=_localRotationView;
-@property(retain, nonatomic) UIView *arrowContainer; // @synthesize arrowContainer=_arrowContainer;
+@property(retain, nonatomic) CALayer *maskRightLayer; // @synthesize maskRightLayer=_maskRightLayer;
+@property(retain, nonatomic) CALayer *maskLeftLayer; // @synthesize maskLeftLayer=_maskLeftLayer;
+@property(retain, nonatomic) CALayer *maskTopLayer; // @synthesize maskTopLayer=_maskTopLayer;
+@property(retain, nonatomic) CALayer *maskContainerLayer; // @synthesize maskContainerLayer=_maskContainerLayer;
+@property(retain, nonatomic) _UILegibilityView *arrowTail; // @synthesize arrowTail=_arrowTail;
+@property(retain, nonatomic) _UILegibilityView *arrowHead; // @synthesize arrowHead=_arrowHead;
 @property(nonatomic) unsigned int state; // @synthesize state=_state;
 @property(retain, nonatomic) SBUILegibilityLabel *callToActionLabel; // @synthesize callToActionLabel=_callToActionLabel;
-@property(retain, nonatomic) _UILegibilityView *arrow; // @synthesize arrow=_arrow;
+@property(retain, nonatomic) UIView *arrowContainer; // @synthesize arrowContainer=_arrowContainer;
 @property(nonatomic) struct CGAffineTransform localTransform; // @synthesize localTransform=_localTransform;
 @property(retain, nonatomic) _UILegibilitySettings *legibilitySettings; // @synthesize legibilitySettings=_legibilitySettings;
 - (void).cxx_destruct;
 - (void)_updateCallToActionLabelFont;
-- (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (void)layoutSubviews;
 - (void)_removeAnimations;
 - (void)_setAlpha:(float)arg1 onComponents:(id)arg2 completion:(CDUnknownBlockType)arg3;
@@ -36,6 +45,7 @@
 - (void)_fadeComponentsIn:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_flyInWithText:(_Bool)arg1 delay:(double)arg2;
 - (void)setState:(unsigned int)arg1 delay:(double)arg2;
+- (void)_installMask;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end

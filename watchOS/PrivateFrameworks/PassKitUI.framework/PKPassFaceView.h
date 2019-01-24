@@ -10,7 +10,6 @@
 #import <PassKitUI/PKPaymentServiceDelegate-Protocol.h>
 
 @class CAFilter, NSArray, NSMutableArray, NSMutableSet, NSString, PKLiveRenderedCardFaceView, PKPass, PKPassColorProfile, PKPassFaceTemplate, PKPaymentService, UIImage, UIImageView, UIView;
-@protocol PKPassFaceDelegate;
 
 @interface PKPassFaceView : WLEasyToHitCustomView <PKPaymentServiceDelegate, PKForegroundActiveArbiterObserver>
 {
@@ -33,16 +32,17 @@
     float _dimmer;
     NSMutableArray *_headerBucketViews;
     NSMutableArray *_bodyBucketViews;
+    NSMutableArray *_delayedAnimations;
     PKLiveRenderedCardFaceView *_liveBackgroundView;
     unsigned int _contentViewCreatedRegions;
     unsigned int _invariantViewCreatedRegions;
     _Bool _showsLiveRendering;
     _Bool _foregroundActive;
     PKPaymentService *_paymentService;
+    _Bool _invalidated;
     _Bool _clipsContent;
     _Bool _allowBackgroundPlaceHolders;
     _Bool _liveMotionEnabled;
-    id <PKPassFaceDelegate> _delegate;
     int _backgroundMode;
     unsigned int _visibleRegions;
     float _clippedContentHeight;
@@ -63,7 +63,6 @@
 @property(nonatomic) _Bool clipsContent; // @synthesize clipsContent=_clipsContent;
 @property(nonatomic) unsigned int visibleRegions; // @synthesize visibleRegions=_visibleRegions;
 @property(nonatomic) int backgroundMode; // @synthesize backgroundMode=_backgroundMode;
-@property(nonatomic) id <PKPassFaceDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)_handleTimeOrLocaleChange:(id)arg1;
 - (void)foregroundActiveArbiter:(id)arg1 didUpdateForegroundActiveState:(CDStruct_973bafd3)arg2;
@@ -97,6 +96,7 @@
 - (void)setDimmer:(float)arg1 animated:(_Bool)arg2;
 - (void)_createDimmingFilterIfNecessary;
 @property(readonly, nonatomic) _Bool bodyContentCreated;
+@property(nonatomic, getter=isPaused) _Bool paused;
 @property(readonly, nonatomic) PKPassColorProfile *colorProfile;
 @property(readonly, nonatomic) PKPass *pass;
 - (void)removeContentView:(id)arg1 ofType:(int)arg2;
@@ -106,6 +106,7 @@
 @property(readonly, nonatomic) UIView *contentView;
 - (struct UIEdgeInsets)alignmentRectInsets;
 - (void)setPass:(id)arg1 colorProfile:(id)arg2;
+- (void)invalidate;
 - (void)dealloc;
 - (id)initWithFrame:(struct CGRect)arg1;
 

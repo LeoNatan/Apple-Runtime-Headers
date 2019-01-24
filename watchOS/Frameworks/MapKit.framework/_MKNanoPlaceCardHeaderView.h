@@ -11,6 +11,7 @@
 @interface _MKNanoPlaceCardHeaderView : UITableViewCell
 {
     UILabel *_titleLabel;
+    UILabel *_secondaryNameLabel;
     UILabel *_openClosedLabel;
     UILabel *_hoursLabel;
     UILabel *_categoryLabel;
@@ -29,6 +30,7 @@
 
 - (void).cxx_destruct;
 - (struct CGSize)systemLayoutSizeFittingSize:(struct CGSize)arg1 withHorizontalFittingPriority:(float)arg2 verticalFittingPriority:(float)arg3;
+- (float)additionalBaselineSpacingWithTallCharactersSet:(id)arg1 label:(id)arg2;
 - (void)updateFontBasedConstraints;
 - (void)updateMapItemBasedContraints;
 - (void)setMapItem:(id)arg1 showsAddress:(_Bool)arg2;

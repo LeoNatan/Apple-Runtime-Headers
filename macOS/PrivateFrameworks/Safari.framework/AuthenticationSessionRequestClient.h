@@ -9,7 +9,7 @@
 #import <Safari/NSXPCListenerDelegate-Protocol.h>
 
 @class NSString, NSXPCConnection, NSXPCListener;
-@protocol AuthenticationSessionRequestHandling, AuthenticationSessionRequestServing, OS_dispatch_queue;
+@protocol AuthenticationSessionRequestServing, OS_dispatch_queue, _ASWebAuthenticationSessionRequestHandling;
 
 __attribute__((visibility("hidden")))
 @interface AuthenticationSessionRequestClient : NSObject <NSXPCListenerDelegate>
@@ -18,7 +18,7 @@ __attribute__((visibility("hidden")))
     NSXPCListener *_requestListener;
     NSXPCConnection *_serverConnection;
     id <AuthenticationSessionRequestServing> _requestServer;
-    id <AuthenticationSessionRequestHandling> _requestHandler;
+    id <_ASWebAuthenticationSessionRequestHandling> _requestHandler;
 }
 
 - (void).cxx_destruct;

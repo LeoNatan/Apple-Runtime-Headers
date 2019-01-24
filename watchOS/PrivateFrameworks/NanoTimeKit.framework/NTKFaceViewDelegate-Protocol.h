@@ -25,6 +25,7 @@
 - (void)faceViewDidScrubToDate:(NSDate *)arg1 forced:(_Bool)arg2;
 - (void)faceViewWillEnterTimeTravel;
 - (void)faceViewDidLayoutSubviews;
+- (void)faceViewDidChangeVerticalPaddingForStatusBar;
 - (void)faceViewDidChangeWantsStatusBarIconShadow;
 - (void)faceViewWantsStatusBarHidden:(_Bool)arg1 animated:(_Bool)arg2;
 - (void)faceViewWantsCustomKeylineFramesReloadedForEditMode:(int)arg1;

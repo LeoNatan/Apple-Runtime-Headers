@@ -14,7 +14,7 @@
 __attribute__((visibility("hidden")))
 @interface TSPUnknownMessage : NSObject <TSPArchivableContent>
 {
-    struct MessageInfo _messageInfo;
+    // Error parsing type: {MessageInfo="_vptr$MessageLite"^^?"_internal_metadata_"{InternalMetadataWithArena="ptr_"^v}"_has_bits_"{HasBits<1>="has_bits_"[1I]}"_cached_size_"{CachedSize="size_"{atomic<int>="__a_"Ai}}"version_"{RepeatedField<unsigned int>="current_size_"i"total_size_"i"ptr_"(Pointer="arena"^{Arena}"rep"^{Rep})}"_version_cached_byte_size_"i"field_infos_"{RepeatedPtrField<TSP::FieldInfo>="arena_"^{Arena}"current_size_"i"total_size_"i"rep_"^{Rep}}"object_references_"{RepeatedField<unsigned long long>="current_size_"i"total_size_"i"ptr_"(Pointer="arena"^{Arena}"rep"^{Rep})}"_object_references_cached_byte_size_"i"data_references_"{RepeatedField<unsigned long long>="current_size_"i"total_size_"i"ptr_"(Pointer="arena"^{Arena}"rep"^{Rep})}"_data_references_cached_byte_size_"i"diff_merge_version_"{RepeatedField<unsigned int>="current_size_"i"total_size_"i"ptr_"(Pointer="arena"^{Arena}"rep"^{Rep})}"_diff_merge_version_cached_byte_size_"i"fields_to_remove_"{RepeatedPtrField<TSP::FieldPath>="arena_"^{Arena}"current_size_"i"total_size_"i"rep_"^{Rep}}"diff_read_version_"{RepeatedField<unsigned int>="current_size_"i"total_size_"i"ptr_"(Pointer="arena"^{Arena}"rep"^{Rep})}"_diff_read_version_cached_byte_size_"i"diff_field_path_"^{FieldPath}"type_"I"length_"I"base_message_index_"I}, name: _messageInfo
     NSObject<OS_dispatch_data> *_messageData;
     TSPLazyReferenceArray *_objects;
     NSArray *_datas;
@@ -25,10 +25,12 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) NSObject<OS_dispatch_data> *messageData; // @synthesize messageData=_messageData;
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (const struct MessageInfo *)messageInfo;
-- (id)initWithMessageInfo:(const struct MessageInfo *)arg1 data:(id)arg2;
+-     // Error parsing type: r^{MessageInfo=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedField<unsigned int>=ii(Pointer=^{Arena}^{Rep})}i{RepeatedPtrField<TSP::FieldInfo>=^{Arena}ii^{Rep}}{RepeatedField<unsigned long long>=ii(Pointer=^{Arena}^{Rep})}i{RepeatedField<unsigned long long>=ii(Pointer=^{Arena}^{Rep})}i{RepeatedField<unsigned int>=ii(Pointer=^{Arena}^{Rep})}i{RepeatedPtrField<TSP::FieldPath>=^{Arena}ii^{Rep}}{RepeatedField<unsigned int>=ii(Pointer=^{Arena}^{Rep})}i^{FieldPath}III}16@0:8, name: messageInfo
+-     // Error parsing type: @32@0:8r^{MessageInfo=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedField<unsigned int>=ii(Pointer=^{Arena}^{Rep})}i{RepeatedPtrField<TSP::FieldInfo>=^{Arena}ii^{Rep}}{RepeatedField<unsigned long long>=ii(Pointer=^{Arena}^{Rep})}i{RepeatedField<unsigned long long>=ii(Pointer=^{Arena}^{Rep})}i{RepeatedField<unsigned int>=ii(Pointer=^{Arena}^{Rep})}i{RepeatedPtrField<TSP::FieldPath>=^{Arena}ii^{Rep}}{RepeatedField<unsigned int>=ii(Pointer=^{Arena}^{Rep})}i^{FieldPath}III}16@24, name: initWithMessageInfo:data:
 - (id)init;
-@property(readonly, nonatomic) const struct FieldPath *fieldPath;
+// Error parsing type for property fieldPath:
+// Property attributes: Tr^{FieldPath=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedField<unsigned int>=ii(Pointer=^{Arena}^{Rep})}i},R,N
+
 @property(readonly, nonatomic) unsigned long long messageVersion;
 @property(readonly, nonatomic) _Bool isDiff;
 @property(readonly, nonatomic) _Bool isContentUnknown;

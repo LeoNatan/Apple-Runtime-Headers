@@ -19,7 +19,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) TSKSelection *selection; // @synthesize selection=mDrawableSelection;
 @property(readonly, copy) NSString *description;
 - (void)saveToArchiver:(id)arg1;
-- (void)saveToArchiver:(id)arg1 intoMessage:(struct DrawableSelectionArchive *)arg2;
+-     // Error parsing type: v32@0:8@16^{DrawableSelectionArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}}24, name: saveToArchiver:intoMessage:
 - (void)loadFromUnarchiver:(id)arg1;
 - (void)dealloc;
 

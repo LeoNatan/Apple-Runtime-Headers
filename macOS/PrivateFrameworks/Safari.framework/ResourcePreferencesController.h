@@ -32,6 +32,7 @@ __attribute__((visibility("hidden")))
 - (id)homePageURLObtainingExtensionTokenIfNecessary:(BOOL)arg1;
 - (void)setSandboxExtensionWithToken:(id)arg1 forURL:(id)arg2 ofType:(unsigned long long)arg3;
 @property(copy, nonatomic) NSString *homePage;
+- (id)secureDefaults;
 - (id)homePageObtainingExtensionTokenIfNecessary:(BOOL)arg1;
 @property(readonly, nonatomic) BOOL homePageIsForced;
 @property(copy, nonatomic) NSURL *styleSheetFileURL;

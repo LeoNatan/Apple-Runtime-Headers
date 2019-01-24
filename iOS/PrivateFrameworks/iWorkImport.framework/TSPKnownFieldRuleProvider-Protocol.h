@@ -8,6 +8,6 @@
 
 @protocol TSPKnownFieldRuleProvider <NSObject>
 @property(readonly, nonatomic) _Bool isContentUnknown;
-- (void)enumerateKnownFieldRulesUsingBlock:(void (^)(struct FieldPath *, struct FieldInfoRuleAttributes *, unsigned long long, _Bool *))arg1;
+-     // Error parsing type: v24@0:8@?<v@?^{FieldPath=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedField<unsigned int>=ii(Pointer=^{Arena}^{Rep})}i}^{FieldInfoRuleAttributes=iQ@}Q^B>16, name: enumerateKnownFieldRulesUsingBlock:
 @end
 

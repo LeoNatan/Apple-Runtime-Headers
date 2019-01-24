@@ -8,7 +8,7 @@
 
 #import <ManagedConfigurationUI/UITableViewDelegate-Protocol.h>
 
-@class MCProfileInfo, NSArray, NSMutableArray, NSSManager, NSString, UIImage;
+@class NSMutableDictionary, NSSManager, NSString, UIImage;
 
 __attribute__((visibility("hidden")))
 @interface MCProfileListController : MCURLListenerListController <UITableViewDelegate>
@@ -17,50 +17,39 @@ __attribute__((visibility("hidden")))
     _Bool _hasFailedFetchingProfilesInfo;
     int _provisioningProfileInstalledToken;
     int _provisioningProfileRemovedToken;
-    NSMutableArray *_profileInfo;
+    NSMutableDictionary *_dataDictionary;
     UIImage *_profileListIcon;
     NSSManager *_nssManager;
-    MCProfileInfo *_mdmProfileInfo;
-    NSArray *_configurationProfilesInfoList;
-    NSArray *_enterpriseAppSigners;
-    NSArray *_developerAppSigners;
-    NSArray *_blockedApplications;
 }
 
 + (id)specifiersForBlockedApps:(id)arg1;
 @property(nonatomic) int provisioningProfileRemovedToken; // @synthesize provisioningProfileRemovedToken=_provisioningProfileRemovedToken;
 @property(nonatomic) int provisioningProfileInstalledToken; // @synthesize provisioningProfileInstalledToken=_provisioningProfileInstalledToken;
-@property(retain, nonatomic) NSArray *blockedApplications; // @synthesize blockedApplications=_blockedApplications;
-@property(retain, nonatomic) NSArray *developerAppSigners; // @synthesize developerAppSigners=_developerAppSigners;
-@property(retain, nonatomic) NSArray *enterpriseAppSigners; // @synthesize enterpriseAppSigners=_enterpriseAppSigners;
-@property(retain, nonatomic) NSArray *configurationProfilesInfoList; // @synthesize configurationProfilesInfoList=_configurationProfilesInfoList;
-@property(retain, nonatomic) MCProfileInfo *mdmProfileInfo; // @synthesize mdmProfileInfo=_mdmProfileInfo;
 @property(nonatomic) _Bool hasFailedFetchingProfilesInfo; // @synthesize hasFailedFetchingProfilesInfo=_hasFailedFetchingProfilesInfo;
 @property(nonatomic) _Bool hasFetchedProfilesInfo; // @synthesize hasFetchedProfilesInfo=_hasFetchedProfilesInfo;
 @property(retain, nonatomic) NSSManager *nssManager; // @synthesize nssManager=_nssManager;
 @property(retain, nonatomic) UIImage *profileListIcon; // @synthesize profileListIcon=_profileListIcon;
-@property(retain, nonatomic) NSMutableArray *profileInfo; // @synthesize profileInfo=_profileInfo;
+@property(retain, nonatomic) NSMutableDictionary *dataDictionary; // @synthesize dataDictionary=_dataDictionary;
 - (void).cxx_destruct;
 - (void)_hideProgressIndicatorAndShowBackButton:(_Bool)arg1;
 - (void)_showProgressIndicator;
+- (void)handleProfilesInfoResponse:(id)arg1 error:(id)arg2;
+- (void)fetchRemoteProfileList;
+- (void)_handleProfileCellSelectionAtIndexPath:(id)arg1;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
-- (id)_adjustCell:(id)arg1 forAppSigner:(id)arg2;
-- (long long)_resolveIndexPathForProfileIndex:(id)arg1;
-- (int)_resolveIndexPathForTableSection:(id)arg1;
+- (int)_resolveIndexPathForSection:(id)arg1;
+- (long long)_profilesCount;
+- (id)_dataForIndexPath:(id)arg1;
+- (_Bool)_isSectionPopulated:(int)arg1;
 - (_Bool)_isUIProfileInstallationRestricted;
-- (id)_isUIProfileInstallationEnabled:(id)arg1;
-- (void)_toggleUIProfileInstallationStatus:(id)arg1;
-- (void)viewWillDisappear:(_Bool)arg1;
+- (void)_fetchPhoneProfileList;
 - (id)specifiers;
-- (id)specifiersForMDMProfileInfo:(id)arg1 configurationProfilesInfo:(id)arg2 enterpriseAppSigners:(id)arg3 developerAppSigners:(id)arg4 blockedApps:(id)arg5;
-- (void)handleProfilesInfoResponse:(id)arg1 error:(id)arg2;
+- (id)_specifiersForDataDictionary;
 - (void)_appSignerApplicationsChanged:(id)arg1;
-- (void)_effectiveSettingsChanged:(id)arg1;
 - (void)_blockedAppsChanged:(id)arg1;
 - (void)_profileListChanged:(id)arg1;
 - (void)_installedApplicationsChanged:(id)arg1;
-- (void)fetchRemoteProfileList;
 - (void)dealloc;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 

@@ -13,6 +13,8 @@
 
 @interface MCProfileViewController : UITableViewController <PSStateRestoration>
 {
+    _Bool _wasSwizzled;
+    _Bool _installComplete;
     _Bool _profileOffersReenroll;
     _Bool _profileRemovable;
     id <MCProfileViewControllerDelegate> _profileViewControllerDelegate;
@@ -23,6 +25,8 @@
 @property(nonatomic) _Bool profileRemovable; // @synthesize profileRemovable=_profileRemovable;
 @property(nonatomic) _Bool profileOffersReenroll; // @synthesize profileOffersReenroll=_profileOffersReenroll;
 @property(retain, nonatomic) MCUIProfile *UIProfile; // @synthesize UIProfile=_UIProfile;
+@property(nonatomic) _Bool installComplete; // @synthesize installComplete=_installComplete;
+@property(nonatomic) _Bool wasSwizzled; // @synthesize wasSwizzled=_wasSwizzled;
 @property(nonatomic) long long profileViewMode; // @synthesize profileViewMode=_profileViewMode;
 @property(nonatomic) __weak id <MCProfileViewControllerDelegate> profileViewControllerDelegate; // @synthesize profileViewControllerDelegate=_profileViewControllerDelegate;
 - (void).cxx_destruct;
@@ -40,7 +44,6 @@
 - (_Bool)_shouldShowUpdateButton;
 - (void)setProfile:(id)arg1;
 - (_Bool)canBeShownFromSuspendedState;
-- (void)didReceiveMemoryWarning;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLoad;
 - (void)dealloc;

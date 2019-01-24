@@ -11,6 +11,8 @@
 }
 
 + (id)sharedTrainer;
+- (void)notifyImplicitTrainingUtteranceAvailable:(id)arg1 forVoiceProfileId:(id)arg2 withRecordDeviceInfo:(id)arg3 withRecordCtxt:(id)arg4 withVoiceTriggerCtxt:(id)arg5 withOtherCtxt:(id)arg6 withCompletion:(CDUnknownBlockType)arg7;
+- (_Bool)trainUtterance:(id)arg1 languageCode:(id)arg2 payload:(_Bool)arg3;
 - (_Bool)trainUtterance:(id)arg1 languageCode:(id)arg2;
 
 @end

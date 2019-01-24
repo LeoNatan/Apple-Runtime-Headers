@@ -9,28 +9,31 @@
 #import <Silex/SXTextSourceDataSource-Protocol.h>
 
 @class NSString, SXFormattedText;
-@protocol SXTextSourceDataSource;
+@protocol SXFullscreenCaptionDataSource;
 
 @interface SXFullscreenCaption : NSObject <SXTextSourceDataSource>
 {
     NSString *_text;
     SXFormattedText *_caption;
-    id <SXTextSourceDataSource> _textSourceDataSource;
+    id <SXFullscreenCaptionDataSource> _dataSource;
 }
 
-@property(readonly, nonatomic) __weak id <SXTextSourceDataSource> textSourceDataSource; // @synthesize textSourceDataSource=_textSourceDataSource;
+@property(readonly, nonatomic) __weak id <SXFullscreenCaptionDataSource> dataSource; // @synthesize dataSource=_dataSource;
 @property(readonly, nonatomic) SXFormattedText *caption; // @synthesize caption=_caption;
 @property(readonly, nonatomic) NSString *text; // @synthesize text=_text;
 - (void).cxx_destruct;
 - (id)contentSizeCategoryForTextSource:(id)arg1;
-- (id)textStyleForTextSource:(id)arg1;
+- (id)textStyleForIdentifier:(id)arg1;
+- (id)linkStyleForTextSource:(id)arg1;
+- (id)defaultComponentTextStylesForTextSource:(id)arg1;
+- (id)defaultComponentTextStyleForTextSource:(id)arg1;
+- (id)componentTextStyleForTextSource:(id)arg1 inheritingFromDefaultStyles:(_Bool)arg2;
 - (id)inlineTextStylesForTextSource:(id)arg1;
 - (id)additionsForTextSource:(id)arg1;
 - (id)textRulesForTextSource:(id)arg1;
 - (id)textResizerForTextSource:(id)arg1;
-- (id)documentControllerForTextSource:(id)arg1;
-- (id)initWithCaption:(id)arg1 textSourceDataSource:(id)arg2;
-- (id)initWithText:(id)arg1 textSourceDataSource:(id)arg2;
+- (id)initWithCaption:(id)arg1 dataSource:(id)arg2;
+- (id)initWithText:(id)arg1 dataSource:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

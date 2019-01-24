@@ -15,7 +15,7 @@
 #import <Safari/TableViewPlusDelegate-Protocol.h>
 #import <Safari/TableViewPlusScrollDelegate-Protocol.h>
 
-@class AddPasswordSheetController, NSArray, NSButton, NSCache, NSImageView, NSSearchField, NSSharingService, NSString, NSTextField, PasswordsAuditingPopoverViewController, PasswordsDetailSheetController, TableViewPlus, WBSFaviconRequestsController, WBSSavedPasswordStore, WBSSiteMetadataManager;
+@class AddPasswordSheetController, NSArray, NSButton, NSCache, NSImageView, NSSearchField, NSSharingService, NSString, NSTextField, PasswordsAuditingPopoverViewController, PasswordsDetailSheetController, TableViewPlus, WBSAutoFillQuirksManager, WBSFaviconRequestsController, WBSSavedPasswordAuditor, WBSSavedPasswordStore, WBSSiteMetadataManager;
 @protocol AggregatedPasswordsViewControllerDelegate;
 
 __attribute__((visibility("hidden")))
@@ -26,6 +26,8 @@ __attribute__((visibility("hidden")))
     NSArray *_displayedPasswords;
     WBSFaviconRequestsController *_iconRequestsController;
     WBSSiteMetadataManager *_siteMetadataManager;
+    WBSSavedPasswordAuditor *_savedPasswordAuditor;
+    WBSAutoFillQuirksManager *_autoFillQuirksManager;
     BOOL _ignoringSavedPasswordChangeNotifications;
     PasswordsDetailSheetController *_detailSheetController;
     AddPasswordSheetController *_addPasswordSheetController;
@@ -91,7 +93,6 @@ __attribute__((visibility("hidden")))
 - (void)changePasswordForSavedPassword:(id)arg1;
 - (id)passwordsReusedWarningStringForSavedPassword:(id)arg1;
 - (void)_updateDuplicatedPasswordsWarningVisibility:(BOOL)arg1;
-- (BOOL)_isPasswordsAuditingEnabled;
 - (void)aggregatedPasswordsAuditingTableCellViewAuditingButtonWasClicked:(id)arg1;
 - (void)passwordsDetailSheetControllerDoesNotWantLockPolicyDeferral:(id)arg1;
 - (void)passwordsDetailSheetControllerWantsLockPolicyDeferral:(id)arg1;
@@ -126,7 +127,7 @@ __attribute__((visibility("hidden")))
 - (void)viewWillDisappear;
 - (void)viewWillAppear;
 - (void)viewDidLoad;
-- (id)initWithPasswordsStore:(id)arg1 siteMetadataManager:(id)arg2;
+- (id)initWithPasswordsStore:(id)arg1 siteMetadataManager:(id)arg2 autoFillQuirksManager:(id)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

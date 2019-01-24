@@ -8,12 +8,12 @@
 
 #import <iWorkImport/TSDPartitioner-Protocol.h>
 
-@class NSMutableDictionary, TSDInfoGeometry, TSTInfo, TSTLayout, TSUPointerKeyDictionary;
+@class NSMutableDictionary, TSDInfoGeometry, TSTLayout, TSTTableInfo, TSUPointerKeyDictionary;
 
 __attribute__((visibility("hidden")))
 @interface TSTTablePartitioner : NSObject <TSDPartitioner>
 {
-    TSTInfo *mTableInfo;
+    TSTTableInfo *mTableInfo;
     TSDInfoGeometry *mInfoGeometry;
     _Bool mTableIsLTR;
     _Bool mLayoutIsLTR;
@@ -27,7 +27,7 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) TSDInfoGeometry *infoGeometry; // @synthesize infoGeometry=mInfoGeometry;
 @property(nonatomic) struct CGSize scaleToFit; // @synthesize scaleToFit=mScaleToFit;
 @property(readonly, nonatomic) double inlineTableWidth; // @synthesize inlineTableWidth=mFirstPartitionWidth;
-@property(readonly, nonatomic) TSTInfo *tableInfo; // @synthesize tableInfo=mTableInfo;
+@property(readonly, nonatomic) TSTTableInfo *tableInfo; // @synthesize tableInfo=mTableInfo;
 - (void)p_flushCacheAfterPartitioningFinished:(id)arg1 lastHint:(id)arg2 horizontally:(_Bool)arg3;
 - (id)hintCacheKeyForHint:(id)arg1;
 - (id)hintCacheKeyForPartitioningPass:(id)arg1 andHintID:(struct TSUCellCoord)arg2;

@@ -35,10 +35,12 @@
 @property(readonly, nonatomic) id <SXComponentAnchor> anchor; // @dynamic anchor;
 @property(readonly, nonatomic) SXComponentAnimation *animation; // @dynamic animation;
 @property(readonly, nonatomic) SXJSONArray *behaviors; // @dynamic behaviors;
+@property(readonly, nonatomic) SXJSONArray *conditional; // @dynamic conditional;
 @property(readonly, nonatomic) SXComponentConditions *conditions; // @dynamic conditions;
 @property(readonly, nonatomic) unsigned long long contentRelevance; // @dynamic contentRelevance;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly) unsigned long long hash;
+@property(readonly, nonatomic) _Bool hidden; // @dynamic hidden;
 @property(readonly, nonatomic) NSString *identifier; // @dynamic identifier;
 @property(readonly, nonatomic) NSString *layout; // @dynamic layout;
 @property(readonly, nonatomic) NSString *style; // @dynamic style;

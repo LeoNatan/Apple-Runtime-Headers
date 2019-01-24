@@ -10,7 +10,7 @@
 #import <XCTest/XCUIElementTypeQueryProvider-Protocol.h>
 
 @class NSArray, NSOrderedSet, NSString, XCElementSnapshot, XCTElementQuery, XCUIApplication, XCUIElement;
-@protocol XCTElementSetTransformer;
+@protocol XCTElementSetTransformer, XCTElementSnapshotAttributeDataSource;
 
 @interface XCUIElementQuery : NSObject <XCTElementSnapshotProvider, XCUIElementTypeQueryProvider>
 {
@@ -90,6 +90,7 @@
 @property(readonly, copy) XCUIElementQuery *sliders;
 @property(readonly, copy) XCUIElementQuery *collectionViews;
 @property(readonly, copy) XCUIElementQuery *browsers;
+- (id)disclosedChildRows;
 @property(readonly, copy) XCUIElementQuery *outlineRows;
 @property(readonly, copy) XCUIElementQuery *outlines;
 @property(readonly, copy) XCUIElementQuery *tableColumns;
@@ -121,10 +122,11 @@
 @property(readonly, copy) XCUIElementQuery *groups;
 @property(readonly, copy) XCUIElementQuery *touchBars;
 - (id)snapshotForElement:(id)arg1 attributes:(id)arg2 parameters:(id)arg3 error:(id *)arg4;
-- (_Bool)_resolveRemoteElements:(id)arg1 inSnapshot:(id)arg2 application:(id)arg3 containsBridgedElements:(_Bool *)arg4 error:(id *)arg5;
+- (_Bool)_resolveRemoteElements:(id)arg1 inSnapshot:(id)arg2 containsBridgedElements:(_Bool *)arg3 error:(id *)arg4;
 @property(readonly, copy) XCElementSnapshot *elementSnapshotForDebugDescription;
 - (id)matchingSnapshotsForLocallyEvaluatedQuery:(id)arg1 error:(id *)arg2;
 - (id)matchingSnapshotsWithError:(id *)arg1;
+@property(readonly) id <XCTElementSnapshotAttributeDataSource> elementSnapshotAttributeDataSource;
 @property(readonly, copy) XCTElementQuery *backingQuery;
 - (id)backingQueryWithRootElement:(id)arg1;
 - (id)matchingSnapshotsHandleUIInterruption:(_Bool)arg1 withError:(id *)arg2;

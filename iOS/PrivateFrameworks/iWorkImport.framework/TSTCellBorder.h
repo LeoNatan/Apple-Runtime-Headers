@@ -52,10 +52,10 @@ __attribute__((visibility("hidden")))
 - (id)objectByRemovingPropertiesInMap:(id)arg1 addingPropertiesInMap:(id)arg2 updateInverseResetPropertyMap:(id)arg3 updateInverseSetPropertyMap:(id)arg4;
 - (void)saveToPropertyCommandMessage:(struct Message *)arg1 archiver:(id)arg2;
 - (id)initFromPropertyCommandMessage:(const struct Message *)arg1 unarchiver:(id)arg2;
-- (void)saveToMessage:(struct CellBorderArchive *)arg1 archiver:(id)arg2;
-- (id)initFromMessage:(const struct CellBorderArchive *)arg1 unarchiver:(id)arg2;
+-     // Error parsing type: v32@0:8^{CellBorderArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{StrokeArchive}^{StrokeArchive}^{StrokeArchive}^{StrokeArchive}iiii}16@24, name: saveToMessage:archiver:
+-     // Error parsing type: @32@0:8r^{CellBorderArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{StrokeArchive}^{StrokeArchive}^{StrokeArchive}^{StrokeArchive}iiii}16@24, name: initFromMessage:unarchiver:
 - (id)copyWithZone:(struct _NSZone *)arg1;
-@property(readonly, nonatomic) _Bool isEmpty;
+@property(readonly, nonatomic) _Bool hasContent;
 - (void)applyToCell:(id)arg1;
 - (void)_clearRightStroke;
 - (void)_clearBottomStroke;

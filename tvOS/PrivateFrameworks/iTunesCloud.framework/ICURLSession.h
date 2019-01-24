@@ -22,11 +22,11 @@
     NSMutableDictionary *_completionHandlers;
     _Bool _paused;
     NSObject<OS_dispatch_source> *_requestTimeoutTimer;
-    unsigned long long _maxConcurrentRequests;
     NSURLSession *_urlSession;
+    unsigned long long _maxConcurrentRequests;
 }
 
-@property(readonly, nonatomic) NSURLSession *urlSession; // @synthesize urlSession=_urlSession;
++ (unsigned long long)defaultMaximumConcurrentRequests;
 @property(readonly, nonatomic) unsigned long long maxConcurrentRequests; // @synthesize maxConcurrentRequests=_maxConcurrentRequests;
 - (void).cxx_destruct;
 - (void)_updateProgressForRequest:(id)arg1 withTotalBytesWritten:(long long)arg2 totalBytesExpectedToWrite:(long long)arg3;
@@ -48,8 +48,6 @@
 - (void)URLSession:(id)arg1 task:(id)arg2 willPerformHTTPRedirection:(id)arg3 newRequest:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
 - (void)URLSession:(id)arg1 task:(id)arg2 didReceiveChallenge:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)URLSession:(id)arg1 task:(id)arg2 didCompleteWithError:(id)arg3;
-- (void)processCompletedResponse:(id)arg1 toRequest:(id)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
-- (void)processInitialResponse:(id)arg1 toRequest:(id)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
 - (void)resume;
 - (void)pause;
 - (void)cancelRequest:(id)arg1 withError:(id)arg2;

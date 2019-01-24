@@ -92,7 +92,7 @@
 @property(readonly, nonatomic) double lastStartOfVoiceActivityTime;
 - (void)_resetWithSampleRate:(unsigned long long)arg1;
 - (void)reset;
-- (void)resetForNewRequestWithSampleRate:(unsigned long long)arg1;
+- (void)resetForNewRequestWithSampleRate:(unsigned long long)arg1 recordContext:(id)arg2;
 - (void)preheat;
 - (void)recordingStoppedForReason:(unsigned long long)arg1;
 @property(readonly, nonatomic) BOOL canProcessCurrentRequest;

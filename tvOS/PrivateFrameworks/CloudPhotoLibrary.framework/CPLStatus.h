@@ -45,6 +45,7 @@
 @property(copy, nonatomic) NSDate *lastCompletePrefetchDate;
 @property(copy, nonatomic) NSDate *lastSuccessfulSyncDate;
 - (void)refetchFromDisk;
+- (void)checkInitialSyncMarker;
 - (_Bool)_deleteInitialSyncMarkerWithError:(id *)arg1;
 - (_Bool)writeInitialSyncMarker:(id *)arg1;
 - (_Bool)_writeInitialSyncMarkerForDate:(id)arg1 error:(id *)arg2;

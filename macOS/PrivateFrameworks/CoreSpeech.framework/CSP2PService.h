@@ -26,7 +26,7 @@
 - (void)_receiveVoiceProfileFromPeerId:(id)arg1 voiceProfileInfo:(id)arg2 withReply:(CDUnknownBlockType)arg3;
 - (void)_receiveData1FromPeerId:(id)arg1 requestInfo:(id)arg2 withReply:(CDUnknownBlockType)arg3;
 - (void)_receiveParallelRecordingFromPeerId:(id)arg1 recordingInfo:(id)arg2 withReply:(CDUnknownBlockType)arg3;
-- (void)_sendData1File:(id)arg1 withFileName:(id)arg2 toPeerId:(id)arg3 withCompressedFlag:(BOOL)arg4;
+- (void)_sendData1File:(id)arg1 withFileName:(id)arg2 toPeerId:(id)arg3 withCompressedFlag:(BOOL)arg4 withUncompressedDataSize:(unsigned long long)arg5 withRetainFileFlag:(BOOL)arg6;
 - (void)_sendData1ToPeerId:(id)arg1;
 - (void)_sendData2ToPeerId:(id)arg1;
 - (void)_sendParallelRecordingsToPeerId:(id)arg1 voiceProfileRequestInfo:(id)arg2 withReply:(CDUnknownBlockType)arg3;

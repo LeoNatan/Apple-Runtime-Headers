@@ -20,7 +20,6 @@ __attribute__((visibility("hidden")))
 + (id)scanString:(id)arg1 scanRange:(struct _NSRange)arg2;
 + (struct _NSRange)calculateScanRangeForString:(id)arg1 changedRange:(struct _NSRange)arg2;
 + (struct _NSRange)expandValidRange:(struct _NSRange)arg1 inString:(id)arg2;
-+ (void)initURLCharacterSets;
 + (void)setInvalidURLSchemes:(id)arg1;
 + (id)detectorIdentifier;
 

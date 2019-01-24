@@ -4,15 +4,15 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <objc/NSObject.h>
+#import <Safari/WBSSafariSandboxBrokerConnection.h>
 
 #import <Safari/SafariSandboxBrokerProtocol-Protocol.h>
 
-@class NSXPCConnection;
+@class NSObject, NSString, NSXPCConnection;
 @protocol OS_dispatch_queue;
 
 __attribute__((visibility("hidden")))
-@interface SafariSandboxBrokerConnection : NSObject <SafariSandboxBrokerProtocol>
+@interface SafariSandboxBrokerConnection : WBSSafariSandboxBrokerConnection <SafariSandboxBrokerProtocol>
 {
     NSXPCConnection *_connection;
     NSObject<OS_dispatch_queue> *_queue;
@@ -28,11 +28,15 @@ __attribute__((visibility("hidden")))
 - (void)writeWebArchiveWithoutQuarantineFlag:(id)arg1 atURL:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)synchronouslyIssueExtensionForDirectoryContainingDownloadDestinationAtURL:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)issueDevelopModeExtensionWithCompletionHandler:(CDUnknownBlockType)arg1;
-- (void)relatedExtensionsForURL:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)_establishSynchronousConnectionWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)_connectionWithCompletionHandler:(CDUnknownBlockType)arg1;
-- (void)ensureConnected:(CDUnknownBlockType)arg1;
 - (id)init;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

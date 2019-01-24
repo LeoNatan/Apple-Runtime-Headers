@@ -76,7 +76,7 @@
 - (id)noneVibrationPattern;
 - (id)noneVibrationName;
 - (_Bool)hasSpecificDefaultVibrationIdentifierForAlertType:(long long)arg1 topic:(id)arg2;
-- (id)_defaultPreferablyNonSilentVibrationIdentifierForAlertType:(long long)arg1 topic:(id)arg2;
+- (id)_defaultPreferablyNonSilentVibrationIdentifierForAlertType:(long long)arg1 topic:(id)arg2 correspondingToneIdentifier:(id)arg3;
 - (id)defaultVibrationPatternForAlertType:(long long)arg1;
 - (id)defaultVibrationNameForAlertType:(long long)arg1;
 - (id)_defaultVibrationIdentifierForAlertType:(long long)arg1 topic:(id)arg2 correspondingToneIdentifier:(id)arg3;

@@ -6,10 +6,12 @@
 
 #import <objc/NSObject.h>
 
+#import <MediaPlaybackCore/MPCExplicitContentAuthorizationDelegate-Protocol.h>
+
 @class MPCPlaybackIntent, MPCPlayerPath, MPProtocolProxy, NSString, UIView, _MPCAVController, _MPCLeaseManager, _MPCMediaRemotePublisher, _MPCReportingController;
 @protocol MPCPlaybackEngineDelegate, MPCPlaybackEngineEventObserving;
 
-@interface MPCPlaybackEngine : NSObject
+@interface MPCPlaybackEngine : NSObject <MPCExplicitContentAuthorizationDelegate>
 {
     _Bool _pictureInPictureSupported;
     _Bool _videoSupported;
@@ -27,6 +29,7 @@
     NSString *_audioSessionCategory;
 }
 
++ (_Bool)requiresMainThread;
 + (void)preheatPlayback;
 @property(copy, nonatomic) NSString *audioSessionCategory; // @synthesize audioSessionCategory=_audioSessionCategory;
 @property(nonatomic, getter=isSystemMusicApplication) _Bool systemMusicApplication; // @synthesize systemMusicApplication=_systemMusicApplication;
@@ -43,6 +46,7 @@
 @property(nonatomic) __weak id <MPCPlaybackEngineDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, copy, nonatomic) NSString *playerID; // @synthesize playerID=_playerID;
 - (void).cxx_destruct;
+- (void)requestAuthorizationForExplicitItem:(id)arg1 reason:(long long)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_restorePlaybackStateWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_preservePlaybackStateImmediately;
 - (void)_initializePlaybackStack;
@@ -58,6 +62,12 @@
 - (void)becomeActive;
 - (void)start;
 - (id)initWithPlayerID:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

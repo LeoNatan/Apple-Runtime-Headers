@@ -41,15 +41,17 @@
     XCAccessibilityElement *_accessibilityElement;
     XCAccessibilityElement *_parentAccessibilityElement;
     XCElementSnapshot *_parent;
+    NSSet *_disclosedChildRowAXElements;
     struct CGRect _frame;
 }
 
-+ (id)axAttributesForSnapshotAttributes:(id)arg1;
-+ (id)requiredAXAttributesForElementSnapshotHierarchy;
++ (id)axAttributesForSnapshotAttributes:(id)arg1 isMacOS:(BOOL)arg2;
++ (id)requiredAXAttributesForElementSnapshotHierarchyOnMacOS:(BOOL)arg1;
 + (id)sanitizedElementSnapshotHierarchyAttributesForAttributes:(id)arg1 isMacOS:(BOOL)arg2;
-+ (id)axAttributesForElementSnapshotKeyPaths:(id)arg1;
++ (id)axAttributesForElementSnapshotKeyPaths:(id)arg1 isMacOS:(BOOL)arg2;
 + (id)elementWithAccessibilityElement:(id)arg1;
 + (BOOL)supportsSecureCoding;
+@property(copy) NSSet *disclosedChildRowAXElements; // @synthesize disclosedChildRowAXElements=_disclosedChildRowAXElements;
 @property XCElementSnapshot *parent; // @synthesize parent=_parent;
 @property(retain) XCAccessibilityElement *parentAccessibilityElement; // @synthesize parentAccessibilityElement=_parentAccessibilityElement;
 @property(readonly, copy, nonatomic) XCAccessibilityElement *accessibilityElement; // @synthesize accessibilityElement=_accessibilityElement;
@@ -69,8 +71,11 @@
 @property(readonly) double centerX;
 @property(readonly) struct CGPoint center;
 @property(readonly) struct CGRect visibleFrame;
+@property(readonly) NSArray *disclosedChildRows;
+@property(readonly) XCElementSnapshot *outline;
+@property(readonly) XCElementSnapshot *menuItem;
+@property(readonly) XCElementSnapshot *menu;
 @property(readonly) XCElementSnapshot *scrollView;
-@property(readonly) XCElementSnapshot *scrollableContainer;
 - (id)nearestSharedAncestorOfElement:(id)arg1 matchingType:(long long)arg2;
 - (id)_nearestAncestorMatchingAnyOfTypes:(id)arg1;
 - (id)nearestAncestorMatchingType:(long long)arg1;

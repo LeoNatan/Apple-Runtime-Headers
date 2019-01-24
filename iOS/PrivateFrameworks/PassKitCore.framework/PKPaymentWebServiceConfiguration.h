@@ -48,6 +48,7 @@
 - (_Bool)regionHasProvisioningEnablementPercentage:(id)arg1;
 - (id)paymentSetupBrowsableProductTypesForRegion:(id)arg1;
 - (_Bool)suppressCardholderNameFieldForRegion:(id)arg1;
+- (id)marketsURL;
 - (id)heroImageManifestURLForRegion:(id)arg1;
 - (id)primaryFeaturedNetworkForRegion:(id)arg1;
 - (id)paymentSetupFeaturedNetworksForRegion:(id)arg1;

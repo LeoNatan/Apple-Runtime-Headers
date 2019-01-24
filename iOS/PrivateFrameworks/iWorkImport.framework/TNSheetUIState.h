@@ -13,34 +13,34 @@
 __attribute__((visibility("hidden")))
 @interface TNSheetUIState : NSObject <NSCopying>
 {
-    _Bool mHasVisibleRect;
-    _Bool mHasPreviousVisibleRect;
-    float mViewScale;
-    float mPreviousViewScale;
-    long long mDeviceIdiom;
-    TSKSelectionPath *mSelectionPath;
-    struct CGRect mVisibleRect;
-    struct CGRect mPreviousVisibleRect;
+    _Bool _hasVisibleRect;
+    _Bool _hasPreviousVisibleRect;
+    float _viewScale;
+    float _previousViewScale;
+    long long _archivedDeviceIdiom;
+    TSKSelectionPath *_selectionPath;
+    struct CGRect _visibleRect;
+    struct CGRect _previousVisibleRect;
 }
 
 + (long long)currentDeviceIdiom;
 + (id)sheetUIStateWithPreviousVisibleRect:(struct CGRect)arg1;
 + (id)sheetUIStateWithVisibleRect:(struct CGRect)arg1;
 + (id)sheetUIState;
-@property(retain, nonatomic) TSKSelectionPath *selectionPath; // @synthesize selectionPath=mSelectionPath;
-@property(nonatomic) long long archivedDeviceIdiom; // @synthesize archivedDeviceIdiom=mDeviceIdiom;
-@property(nonatomic) float previousViewScale; // @synthesize previousViewScale=mPreviousViewScale;
-@property(nonatomic) float viewScale; // @synthesize viewScale=mViewScale;
-@property(nonatomic) _Bool hasPreviousVisibleRect; // @synthesize hasPreviousVisibleRect=mHasPreviousVisibleRect;
-@property(nonatomic) _Bool hasVisibleRect; // @synthesize hasVisibleRect=mHasVisibleRect;
-@property(nonatomic) struct CGRect previousVisibleRect; // @synthesize previousVisibleRect=mPreviousVisibleRect;
-@property(nonatomic) struct CGRect visibleRect; // @synthesize visibleRect=mVisibleRect;
+@property(retain, nonatomic) TSKSelectionPath *selectionPath; // @synthesize selectionPath=_selectionPath;
+@property(nonatomic) long long archivedDeviceIdiom; // @synthesize archivedDeviceIdiom=_archivedDeviceIdiom;
+@property(nonatomic) float previousViewScale; // @synthesize previousViewScale=_previousViewScale;
+@property(nonatomic) float viewScale; // @synthesize viewScale=_viewScale;
+@property(nonatomic) _Bool hasPreviousVisibleRect; // @synthesize hasPreviousVisibleRect=_hasPreviousVisibleRect;
+@property(nonatomic) _Bool hasVisibleRect; // @synthesize hasVisibleRect=_hasVisibleRect;
+@property(nonatomic) struct CGRect previousVisibleRect; // @synthesize previousVisibleRect=_previousVisibleRect;
+@property(nonatomic) struct CGRect visibleRect; // @synthesize visibleRect=_visibleRect;
+- (void).cxx_destruct;
 - (id)p_persistableSelectionPathFromSelectionPath:(id)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (void)saveToArchive:(struct SheetUIStateArchive *)arg1 archiver:(id)arg2 context:(id)arg3;
-- (void)dealloc;
-- (id)initWithArchive:(const struct SheetUIStateArchive *)arg1 unarchiver:(id)arg2;
+-     // Error parsing type: v40@0:8^{SheetUIStateArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{Point}^{Point}^{Size}^{Size}^{SelectionPathArchive}^{Reference}ffBBBI}16@24@32, name: saveToArchive:archiver:context:
+-     // Error parsing type: @32@0:8r^{SheetUIStateArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{Point}^{Point}^{Size}^{Size}^{SelectionPathArchive}^{Reference}ffBBBI}16@24, name: initWithArchive:unarchiver:
 - (void)updateForDeviceIdiom:(long long)arg1;
 @property(readonly, nonatomic) struct CGPoint previousScrollPosition;
 @property(readonly, nonatomic) struct CGPoint scrollPosition;

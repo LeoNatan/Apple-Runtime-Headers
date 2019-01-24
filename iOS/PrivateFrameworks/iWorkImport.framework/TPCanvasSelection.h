@@ -26,8 +26,8 @@ __attribute__((visibility("hidden")))
 + (Class)archivedSelectionClass;
 - (void).cxx_destruct;
 - (void)p_commonCopyTo:(id)arg1;
-- (void)saveToArchive:(struct CanvasSelectionArchive *)arg1 archiver:(id)arg2;
-- (id)initWithArchive:(const struct CanvasSelectionArchive *)arg1 unarchiver:(id)arg2;
+-     // Error parsing type: v32@0:8^{CanvasSelectionArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}^{Range}^{Reference}iii}16@24, name: saveToArchive:archiver:
+-     // Error parsing type: @32@0:8r^{CanvasSelectionArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}^{Range}^{Reference}iii}16@24, name: initWithArchive:unarchiver:
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)copyExcludingInfo:(id)arg1;
 - (id)copyIncludingInfo:(id)arg1;
@@ -44,7 +44,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) NSSet *rawAdditionalInfos;
 @property(readonly, nonatomic) NSSet *rawExcludedInfos;
 @property(readonly, nonatomic) NSSet *rawInfos;
-- (id)copyWithVisualRanges:(id)arg1 headChar:(unsigned long long)arg2 tailChar:(unsigned long long)arg3 rightToLeft:(_Bool)arg4 sameLine:(_Bool)arg5;
+- (id)copyWithVisualRanges:(id)arg1 headCharIndex:(unsigned long long)arg2 tailCharIndex:(unsigned long long)arg3 rightToLeft:(_Bool)arg4 sameLine:(_Bool)arg5;
 - (id)copyWithNewVisualRanges:(id)arg1;
 - (id)copyWithNewStyleInsertionBehavior:(int)arg1 newCaretAffinity:(int)arg2;
 - (id)copyWithNewRange:(struct _NSRange)arg1;

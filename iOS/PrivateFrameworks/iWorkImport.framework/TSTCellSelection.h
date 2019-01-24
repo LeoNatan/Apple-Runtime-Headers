@@ -8,14 +8,14 @@
 
 #import <iWorkImport/TSDTextSelection-Protocol.h>
 
-@class NSString, TSTCellRegion, TSTCellUIDRegion, TSTInfo;
+@class NSString, TSTCellRegion, TSTCellUIDRegion, TSTTableInfo;
 
 __attribute__((visibility("hidden")))
 @interface TSTCellSelection : TSKSelection <TSDTextSelection>
 {
     _Bool _beginImplicitEditing;
     long long _selectionType;
-    TSTInfo *_tableInfo;
+    TSTTableInfo *_tableInfo;
     TSTCellUIDRegion *_cellUIDRegion;
     TSTCellUIDRegion *_baseCellUIDRegion;
     TSTCellRegion *_cachedCellRegion;
@@ -41,7 +41,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) struct TSTCellUID cursorCellUID; // @synthesize cursorCellUID=_cursorCellUID;
 @property(nonatomic) struct TSTCellUID anchorCellUID; // @synthesize anchorCellUID=_anchorCellUID;
 @property(retain, nonatomic) TSTCellUIDRegion *cellUIDRegion; // @synthesize cellUIDRegion=_cellUIDRegion;
-@property(nonatomic) __weak TSTInfo *tableInfo; // @synthesize tableInfo=_tableInfo;
+@property(nonatomic) __weak TSTTableInfo *tableInfo; // @synthesize tableInfo=_tableInfo;
 @property(nonatomic) struct _NSRange searchReferenceRange; // @synthesize searchReferenceRange=_searchReferenceRange;
 @property(readonly, nonatomic) _Bool beginImplicitEditing; // @synthesize beginImplicitEditing=_beginImplicitEditing;
 @property(readonly, nonatomic) long long selectionType; // @synthesize selectionType=_selectionType;
@@ -90,9 +90,9 @@ __attribute__((visibility("hidden")))
 - (id)selectionByRemovingCellRange:(struct TSUCellRect)arg1 inTable:(id)arg2 withAnchor:(struct TSUCellCoord)arg3 cursor:(struct TSUCellCoord)arg4 selectionType:(long long)arg5;
 - (id)selectionByAddingCellRange:(struct TSUCellRect)arg1 inTable:(id)arg2 withAnchor:(struct TSUCellCoord)arg3 cursor:(struct TSUCellCoord)arg4 selectionType:(long long)arg5;
 - (id)selectionByExtendingWithCellRange:(struct TSUCellRect)arg1 inTable:(id)arg2 selectionType:(long long)arg3 cursorCell:(struct TSUCellCoord)arg4;
-- (id)initWithRdar39989167Archive:(const struct DeathhawkRdar39989167CellSelectionArchive *)arg1 unarchiver:(id)arg2;
-- (void)saveToArchive:(struct SelectionArchive *)arg1 archiver:(id)arg2;
-- (id)initWithArchive:(const struct SelectionArchive *)arg1 unarchiver:(id)arg2;
+-     // Error parsing type: @32@0:8r^{DeathhawkRdar39989167CellSelectionArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{Reference}^{CellUIDRegionArchive}^{CellUIDRegionArchive}^{UUIDCoordArchive}^{UUIDCoordArchive}i}16@24, name: initWithRdar39989167Archive:unarchiver:
+-     // Error parsing type: v32@0:8^{SelectionArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TST::CellRange>=^{Arena}ii^{Rep}}{RepeatedPtrField<TST::CellRange>=^{Arena}ii^{Rep}}^{Reference}^{CellID}^{CellID}^{Reference}^{CellUIDRegionArchive}^{CellUIDRegionArchive}^{UUIDCoordArchive}^{UUIDCoordArchive}i}16@24, name: saveToArchive:archiver:
+-     // Error parsing type: @32@0:8r^{SelectionArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TST::CellRange>=^{Arena}ii^{Rep}}{RepeatedPtrField<TST::CellRange>=^{Arena}ii^{Rep}}^{Reference}^{CellID}^{CellID}^{Reference}^{CellUIDRegionArchive}^{CellUIDRegionArchive}^{UUIDCoordArchive}^{UUIDCoordArchive}i}16@24, name: initWithArchive:unarchiver:
 - (struct TSUCellCoord)logicalCellIDInTable:(id)arg1;
 @property(readonly, nonatomic) unsigned long long cellCount;
 @property(readonly, nonatomic) struct TSUCellCoord cursorCellID;
@@ -102,7 +102,7 @@ __attribute__((visibility("hidden")))
 - (id)initWithTableInfo:(id)arg1 columnIndices:(id)arg2;
 - (id)initWithTableInfo:(id)arg1 rowIndices:(id)arg2;
 - (id)initWithTableInfo:(id)arg1 cellRegion:(id)arg2;
-- (id)initWithTableInfo:(id)arg1 andPreviousSelection:(id)arg2 offsetBy:(CDStruct_1ef3fb1f)arg3;
+- (id)initWithTableInfo:(id)arg1 andPreviousSelection:(id)arg2 offsetBy:(struct TSUColumnRowOffset)arg3;
 - (id)initWithTableInfo:(id)arg1 rowOrColumn:(long long)arg2 index:(unsigned int)arg3 count:(unsigned int)arg4;
 - (id)initWithTableInfo:(id)arg1 startingColumnIndex:(unsigned short)arg2 numberOfColumns:(unsigned int)arg3;
 - (id)initWithTableInfo:(id)arg1 startingRowIndex:(unsigned int)arg2 numberOfRows:(unsigned int)arg3;

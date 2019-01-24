@@ -12,22 +12,25 @@
 {
     NSString *_slot;
     NSString *_identifier;
+    id _configurationObject;
     SBSLockScreenContentAction *_action;
     CDUnknownBlockType _errorHandler;
 }
 
 + (_Bool)_isRestrictedDevice;
++ (id)acquireContentProviderAssertionForType:(unsigned long long)arg1 slot:(id)arg2 identifier:(id)arg3 configurationObject:(id)arg4 errorHandler:(CDUnknownBlockType)arg5;
 + (id)acquireContentProviderAssertionForType:(unsigned long long)arg1 slot:(id)arg2 identifier:(id)arg3 errorHandler:(CDUnknownBlockType)arg4;
 @property(copy, nonatomic, getter=_errorHandler, setter=_setErrorHandler:) CDUnknownBlockType errorHandler; // @synthesize errorHandler=_errorHandler;
 @property(retain, nonatomic) SBSLockScreenContentAction *action; // @synthesize action=_action;
-@property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
+@property(retain, nonatomic) id configurationObject; // @synthesize configurationObject=_configurationObject;
+@property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(retain, nonatomic) NSString *slot; // @synthesize slot=_slot;
 - (void).cxx_destruct;
-- (void)_acquireAssertionWithType:(unsigned long long)arg1 slot:(id)arg2 identifier:(id)arg3;
+- (void)_acquireAssertionWithType:(unsigned long long)arg1 slot:(id)arg2 identifier:(id)arg3 configurationObject:(id)arg4;
 - (unsigned long long)type;
 - (void)invalidate;
 - (void)dealloc;
-- (id)initWithType:(unsigned long long)arg1 slot:(id)arg2 identifier:(id)arg3 errorHandler:(CDUnknownBlockType)arg4;
+- (id)initWithType:(unsigned long long)arg1 slot:(id)arg2 identifier:(id)arg3 configurationObject:(id)arg4 errorHandler:(CDUnknownBlockType)arg5;
 
 @end
 

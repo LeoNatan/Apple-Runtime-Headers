@@ -13,6 +13,7 @@
     UICubicTimingParameters *_springCubicTimingParameters;
 }
 
++ (id)standardTimingParameters;
 @property(copy, nonatomic) UICubicTimingParameters *springCubicTimingParameters; // @synthesize springCubicTimingParameters=_springCubicTimingParameters;
 - (void).cxx_destruct;
 - (id)cubicTimingParameters;

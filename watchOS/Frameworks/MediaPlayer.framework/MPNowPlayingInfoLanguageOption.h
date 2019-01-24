@@ -14,6 +14,8 @@
 }
 
 @property(readonly, nonatomic) void *mrLanguageOption; // @synthesize mrLanguageOption=_mrLanguageOption;
+- (_Bool)isEqualToLanguageOption:(id)arg1;
+- (id)copyExternalRepresentation;
 @property(readonly, nonatomic) NSString *identifier; // @dynamic identifier;
 @property(readonly, nonatomic) NSString *displayName; // @dynamic displayName;
 @property(readonly, nonatomic) NSArray *languageOptionCharacteristics; // @dynamic languageOptionCharacteristics;

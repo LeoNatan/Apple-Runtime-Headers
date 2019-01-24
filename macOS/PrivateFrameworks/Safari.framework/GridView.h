@@ -28,6 +28,7 @@ __attribute__((visibility("hidden")))
     struct CGSize _cellSize;
     struct CGSize _cellMargin;
     BOOL _isLTR;
+    struct NSEdgeInsets _contentInsets;
     NSEvent *_initialMouseDownEvent;
     unsigned long long _selectedCellIndex;
     GridCellView *_selectedCell;
@@ -71,7 +72,6 @@ __attribute__((visibility("hidden")))
     NSLayoutConstraint *_heightConstraint;
     struct CGSize _minimumCellMargin;
     struct CGSize _minimumCellSize;
-    struct NSEdgeInsets _contentInsets;
 }
 
 + (id)arrayByExchangingElementsInArray:(id)arg1 usingMap:(id)arg2;
@@ -82,7 +82,6 @@ __attribute__((visibility("hidden")))
 + (BOOL)requiresConstraintBasedLayout;
 @property(retain, nonatomic) NSLayoutConstraint *heightConstraint; // @synthesize heightConstraint=_heightConstraint;
 @property(readonly, nonatomic) double maximumWidth; // @synthesize maximumWidth=_maximumWidth;
-@property(readonly, nonatomic) struct NSEdgeInsets contentInsets; // @synthesize contentInsets=_contentInsets;
 @property(nonatomic) double maximumCellHeightToWidthRatio; // @synthesize maximumCellHeightToWidthRatio=_maximumCellHeightToWidthRatio;
 @property(nonatomic) double minimumCellHeightToWidthRatio; // @synthesize minimumCellHeightToWidthRatio=_minimumCellHeightToWidthRatio;
 @property(nonatomic) struct CGSize minimumCellSize; // @synthesize minimumCellSize=_minimumCellSize;
@@ -203,6 +202,7 @@ __attribute__((visibility("hidden")))
 - (void)_layoutSublayersOfLayer:(id)arg1;
 - (void)layout;
 - (void)setNeedsLayout:(BOOL)arg1;
+- (void)_updateConstraintConstants;
 - (void)updateConstraints;
 - (void)viewDidUnhide;
 - (void)viewDidHide;

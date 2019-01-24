@@ -8,7 +8,7 @@
 
 #import <NewsCore/NSCopying-Protocol.h>
 
-@class FCGroupConfig, FCInterestToken, FCSpecialEventGroupConfig, FCTopStoriesGroupConfig, FCVideoGroupConfig, NSArray, NSDate, NSString, NTPBForYouConfigRecord;
+@class FCGroupConfig, FCInterestToken, FCSpecialEventGroupConfig, FCSpotlightGroupConfig, FCTopStoriesGroupConfig, FCVideoGroupConfig, NSArray, NSDate, NSString, NTPBForYouConfigRecord;
 
 @interface FCForYouConfig : NSObject <NSCopying>
 {
@@ -16,6 +16,7 @@
     FCSpecialEventGroupConfig *_specialEventGroupConfig;
     FCTopStoriesGroupConfig *_topStoriesGroupConfig;
     FCGroupConfig *_trendingGroupConfig;
+    FCSpotlightGroupConfig *_spotlightGroupConfig;
     FCGroupConfig *_coverArticlesGroupConfig;
     NSArray *_editorialGroupConfigs;
     FCVideoGroupConfig *_topVideosGroupConfig;
@@ -30,6 +31,7 @@
 @property(retain, nonatomic) FCVideoGroupConfig *topVideosGroupConfig; // @synthesize topVideosGroupConfig=_topVideosGroupConfig;
 @property(retain, nonatomic) NSArray *editorialGroupConfigs; // @synthesize editorialGroupConfigs=_editorialGroupConfigs;
 @property(retain, nonatomic) FCGroupConfig *coverArticlesGroupConfig; // @synthesize coverArticlesGroupConfig=_coverArticlesGroupConfig;
+@property(retain, nonatomic) FCSpotlightGroupConfig *spotlightGroupConfig; // @synthesize spotlightGroupConfig=_spotlightGroupConfig;
 @property(retain, nonatomic) FCGroupConfig *trendingGroupConfig; // @synthesize trendingGroupConfig=_trendingGroupConfig;
 @property(retain, nonatomic) FCTopStoriesGroupConfig *topStoriesGroupConfig; // @synthesize topStoriesGroupConfig=_topStoriesGroupConfig;
 @property(retain, nonatomic) FCSpecialEventGroupConfig *specialEventGroupConfig; // @synthesize specialEventGroupConfig=_specialEventGroupConfig;
@@ -38,6 +40,7 @@
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly, nonatomic) NSDate *fetchedDate;
 @property(readonly, nonatomic) NSString *moreVideosArticleListID;
+@property(readonly, nonatomic) NSString *spotlightArticleID;
 @property(readonly, nonatomic) NSArray *topVideosArticleIDs;
 @property(readonly, nonatomic) NSArray *editorialSectionTagIDs;
 @property(readonly, nonatomic) NSArray *editorialArticleListIDs;

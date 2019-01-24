@@ -34,13 +34,14 @@
     NSObject<OS_dispatch_semaphore> *_resultSemaphore;
     double _minVergenceAngleCosine;
     double _resultLatency;
-    ARWorldTrackingOptions *_options;
     _Bool _allowPoseGraphUpdates;
     NSDictionary *_objectDetectionOptions;
+    ARWorldTrackingOptions *_mutableOptions;
 }
 
 + (_Bool)supportsVideoResolution:(struct CGSize)arg1;
 + (_Bool)isSupported;
+@property(retain) ARWorldTrackingOptions *mutableOptions; // @synthesize mutableOptions=_mutableOptions;
 - (void).cxx_destruct;
 - (_Bool)setupObjectDetection:(id)arg1;
 - (id)getObservers;
@@ -55,7 +56,6 @@
 -     // Error parsing type: {?=[4]}24@0:8d16, name: cameraTransformAtTimestamp:
 - (_Bool)isEqual:(id)arg1;
 - (long long)vioHandleState;
-@property(readonly, nonatomic) ARWorldTrackingOptions *mutableOptions;
 @property(readonly, copy, nonatomic) ARWorldTrackingOptions *options;
 - (id)initWithOptions:(id)arg1;
 - (id)init;

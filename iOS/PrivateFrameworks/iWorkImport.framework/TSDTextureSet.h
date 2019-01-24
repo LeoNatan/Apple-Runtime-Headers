@@ -69,7 +69,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) CALayer *alternateLayer; // @synthesize alternateLayer=_alternateLayer;
 @property(readonly, nonatomic) NSArray *allTextures; // @synthesize allTextures=_allTextures;
 - (void).cxx_destruct;
-- (void)drawFrameAtLayerTime:(double)arg1 context:(id)arg2;
+- (void)drawFrameWithMetalContext:(id)arg1;
 - (id)description;
 - (id)viewLayerAtEventIndex:(unsigned long long)arg1;
 - (void)removeAllPerspectiveLayers;

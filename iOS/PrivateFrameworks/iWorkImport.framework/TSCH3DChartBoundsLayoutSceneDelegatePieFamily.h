@@ -11,13 +11,13 @@ __attribute__((visibility("hidden")))
 {
 }
 
-- (_Bool)willSubmitElement:(const struct RenderElementInfo *)arg1 sceneObject:(id)arg2;
-- (_Bool)willRenderElement:(const struct RenderElementInfo *)arg1 sceneObject:(id)arg2;
-- (void)didTransformElement:(const struct RenderElementInfo *)arg1 sceneObject:(id)arg2;
-- (_Bool)willUpdateElementEffectsStatesForElement:(const struct RenderElementInfo *)arg1 sceneObject:(id)arg2;
-- (struct ElementRenderPass)renderPassForElement:(const struct RenderElementInfo *)arg1 sceneObject:(id)arg2;
+- (_Bool)willSubmitElement:(id)arg1 sceneObject:(id)arg2;
+- (_Bool)willRenderElement:(id)arg1 sceneObject:(id)arg2;
+- (void)didTransformElement:(id)arg1 sceneObject:(id)arg2;
+- (_Bool)willUpdateElementEffectsStatesForElement:(id)arg1 sceneObject:(id)arg2;
+- (struct ElementRenderPass)renderPassForElement:(id)arg1 sceneObject:(id)arg2;
 - (struct ElementRenderPass)renderPassForSceneObject:(id)arg1;
-- (_Bool)willProcessElement:(const struct RenderElementInfo *)arg1 sceneObject:(id)arg2;
+- (_Bool)willProcessElement:(id)arg1 sceneObject:(id)arg2;
 - (void)didProcessElements:(id)arg1 sceneObject:(id)arg2 pipeline:(id)arg3;
 - (_Bool)willProcessElements:(id)arg1 sceneObject:(id)arg2 pipeline:(id)arg3;
 - (void)didEndProcessingSceneObject:(id)arg1;

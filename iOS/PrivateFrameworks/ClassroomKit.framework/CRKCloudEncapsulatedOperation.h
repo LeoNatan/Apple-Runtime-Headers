@@ -16,7 +16,6 @@
 @property(readonly, nonatomic) CATOperationQueue *operationQueue; // @synthesize operationQueue=_operationQueue;
 - (void).cxx_destruct;
 - (id)initWithOperationQueue:(id)arg1 database:(id)arg2;
-- (id)initWithDatabase:(id)arg1;
 
 @end
 

@@ -20,8 +20,8 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (void)saveToArchiver:(id)arg1;
 - (void)loadFromUnarchiver:(id)arg1;
-- (void)saveToArchive:(struct ClassicStylesheetRecordArchive *)arg1 archiver:(id)arg2;
-- (void)loadFromArchive:(const struct ClassicStylesheetRecordArchive *)arg1 unarchiver:(id)arg2;
+-     // Error parsing type: v32@0:8^{ClassicStylesheetRecordArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSS::StylesheetArchive_IdentifiedStyleEntry>=^{Arena}ii^{Rep}}^{Reference}}16@24, name: saveToArchive:archiver:
+-     // Error parsing type: v32@0:8r^{ClassicStylesheetRecordArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSS::StylesheetArchive_IdentifiedStyleEntry>=^{Arena}ii^{Rep}}^{Reference}}16@24, name: loadFromArchive:unarchiver:
 - (id)childEnumerator;
 - (id)referencedStyles;
 - (void)adoptStylesheet:(id)arg1 withMapper:(id)arg2;

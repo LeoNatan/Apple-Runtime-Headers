@@ -4,25 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <Silex/NSObject-Protocol.h>
+#import <Silex/SXComponentProperties-Protocol.h>
+#import <Silex/SXConditionalObject-Protocol.h>
 
-@class NSString, SXComponentAnimation, SXComponentClassification, SXComponentConditions, SXJSONArray, SXJSONDictionary;
-@protocol SXComponentAnchor;
-
-@protocol SXComponent <NSObject>
-@property(readonly, nonatomic) unsigned long long traits;
-@property(readonly, nonatomic) unsigned long long contentRelevance;
-@property(readonly, nonatomic) SXComponentConditions *conditions;
-@property(readonly, nonatomic) SXJSONDictionary *analytics;
-@property(readonly, nonatomic) SXJSONArray *additions;
-@property(readonly, nonatomic) SXComponentClassification *classification;
-@property(readonly, nonatomic) SXComponentAnimation *animation;
-@property(readonly, nonatomic) SXJSONArray *behaviors;
-@property(readonly, nonatomic) id <SXComponentAnchor> anchor;
-@property(readonly, nonatomic) int role;
-@property(readonly, nonatomic) NSString *style;
-@property(readonly, nonatomic) NSString *layout;
-@property(readonly, nonatomic) NSString *type;
-@property(readonly, nonatomic) NSString *identifier;
+@protocol SXComponent <SXComponentProperties, SXConditionalObject>
 @end
 

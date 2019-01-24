@@ -6,37 +6,32 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, NSMutableArray, PKPaymentHeroImageManifest;
+@class NSArray, NSString, PKPaymentHeroImageManifest, PKPaymentWebService;
 @protocol PKPaymentHeroImageControllerDelegate;
 
 @interface PKPaymentHeroImageController : NSObject
 {
+    PKPaymentWebService *_webService;
+    NSString *_primaryImageIdentifier;
+    NSArray *_featuredImages;
     PKPaymentHeroImageManifest *_manifest;
-    NSMutableArray *_currentNetworksDownloading;
     id <PKPaymentHeroImageControllerDelegate> _delegate;
     long long _watchSize;
-    NSArray *_featuredNetworks;
 }
 
-+ (_Bool)_networkImageHasDownloadedWithError:(id)arg1;
-+ (void)_addNetworkImageDownloadError:(id)arg1 downloadedSha1:(id)arg2;
-+ (id)defaultPaymentCredentials;
-@property(copy, nonatomic) NSArray *featuredNetworks; // @synthesize featuredNetworks=_featuredNetworks;
++ (id)defaultImages;
 @property(nonatomic) long long watchSize; // @synthesize watchSize=_watchSize;
 @property(nonatomic) id <PKPaymentHeroImageControllerDelegate> delegate; // @synthesize delegate=_delegate;
+@property(readonly, nonatomic) PKPaymentHeroImageManifest *manifest; // @synthesize manifest=_manifest;
+@property(copy, nonatomic) NSArray *featuredImages; // @synthesize featuredImages=_featuredImages;
+@property(copy, nonatomic) NSString *primaryImageIdentifier; // @synthesize primaryImageIdentifier=_primaryImageIdentifier;
 - (void).cxx_destruct;
-- (id)_debugString;
-- (void)_alertDelgateOfDownloadedImageData:(id)arg1 network:(id)arg2 error:(id)arg3;
-- (id)_builtInNetworksCardImageData;
 - (struct CGSize)cardArtSizeForSize:(struct CGSize)arg1;
-- (id)primaryFeaturedNetwork;
-- (void)downloadRemoteImageForNetwork:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (_Bool)containsPaymentCredentialType:(long long)arg1;
-- (id)featuredNetworksImageData;
-- (void)beginDownloadingRemoteImagesWithCompletion:(CDUnknownBlockType)arg1;
-- (void)beginDownloadingRemoteImages;
-- (id)initWithManifest:(id)arg1 featuredNetworks:(id)arg2 webService:(id)arg3;
-- (id)initWithManifest:(id)arg1 featuredNetworks:(id)arg2;
+- (void)downloadImages:(id)arg1;
+- (id)featuredDefaultImages;
+- (id)filterImages:(id)arg1;
+- (id)featuredImageIdentifiers;
+- (id)initWithManifest:(id)arg1 webService:(id)arg2;
 
 @end
 

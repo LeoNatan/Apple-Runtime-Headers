@@ -4,31 +4,36 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <Safari/ColorInvertingTableCellView.h>
+#import <Safari/BiometricPromptCellView.h>
 
-@class NSImageView, NSLayoutConstraint, NSString, NSTextField;
+@class NSImageView, NSLayoutConstraint, NSString, NSTextField, NSView;
 
 __attribute__((visibility("hidden")))
-@interface CredentialCompletionAutoFillCellView : ColorInvertingTableCellView
+@interface CredentialCompletionAutoFillCellView : BiometricPromptCellView
 {
+    NSImageView *_trailingImageView;
     NSString *_userNameDescription;
     NSString *_credentialOriginDescription;
     NSTextField *_userNameDescriptionLabel;
     NSTextField *_credentialOriginDescriptionLabel;
-    NSImageView *_trailingImageView;
+    NSView *_trailingView;
     NSLayoutConstraint *_stackViewLeadingConstraint;
     NSLayoutConstraint *_stackViewTrailingConstraint;
 }
 
-+ (struct CGSize)sizeWithUserNameDescription:(id)arg1 origin:(id)arg2;
++ (struct CGSize)sizeWithUserNameDescription:(id)arg1 origin:(id)arg2 showsBiometricPrompt:(BOOL)arg3;
 @property(nonatomic) __weak NSLayoutConstraint *stackViewTrailingConstraint; // @synthesize stackViewTrailingConstraint=_stackViewTrailingConstraint;
 @property(nonatomic) __weak NSLayoutConstraint *stackViewLeadingConstraint; // @synthesize stackViewLeadingConstraint=_stackViewLeadingConstraint;
-@property(nonatomic) __weak NSImageView *trailingImageView; // @synthesize trailingImageView=_trailingImageView;
+@property(nonatomic) __weak NSView *trailingView; // @synthesize trailingView=_trailingView;
 @property(nonatomic) __weak NSTextField *credentialOriginDescriptionLabel; // @synthesize credentialOriginDescriptionLabel=_credentialOriginDescriptionLabel;
 @property(nonatomic) __weak NSTextField *userNameDescriptionLabel; // @synthesize userNameDescriptionLabel=_userNameDescriptionLabel;
 @property(copy, nonatomic) NSString *credentialOriginDescription; // @synthesize credentialOriginDescription=_credentialOriginDescription;
 @property(copy, nonatomic) NSString *userNameDescription; // @synthesize userNameDescription=_userNameDescription;
 - (void).cxx_destruct;
+- (void)_setUpBiometricPrompt;
+- (void)performBiometricPromptShakeAnimation;
+- (void)_updateBiometricPrompt;
+- (void)_updateLabelWithBiometricPrompt;
 - (void)awakeFromNib;
 
 @end

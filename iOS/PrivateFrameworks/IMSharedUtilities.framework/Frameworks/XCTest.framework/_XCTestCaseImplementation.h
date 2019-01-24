@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, NSDictionary, NSInvocation, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString, NSThread, XCTAttachmentManager, XCTWaiter, XCTestCaseRun, XCUITestContext;
+@class NSArray, NSDictionary, NSInvocation, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString, NSThread, XCTAttachmentManager, XCTWaiter, XCTestCaseRun;
 
 @interface _XCTestCaseImplementation : NSObject
 {
@@ -31,16 +31,15 @@
     XCTWaiter *_currentWaiter;
     NSMutableArray *_failureRecords;
     _Bool _shouldHaltWhenReceivesControl;
+    _Bool _shouldSetShouldHaltWhenReceivesControl;
     _Bool _shouldIgnoreSubsequentFailures;
     NSMutableArray *_teardownBlocks;
     _Bool _hasDequeuedTeardownBlocks;
     _Bool _hasAttemptedToCaptureScreenshotOnFailure;
     XCTAttachmentManager *_attachmentManager;
     NSDictionary *_activityAggregateStatistics;
-    XCUITestContext *_testContext;
 }
 
-@property(readonly) XCUITestContext *testContext; // @synthesize testContext=_testContext;
 @property(copy) NSDictionary *activityAggregateStatistics; // @synthesize activityAggregateStatistics=_activityAggregateStatistics;
 @property(retain) XCTAttachmentManager *attachmentManager; // @synthesize attachmentManager=_attachmentManager;
 @property _Bool hasAttemptedToCaptureScreenshotOnFailure; // @synthesize hasAttemptedToCaptureScreenshotOnFailure=_hasAttemptedToCaptureScreenshotOnFailure;
@@ -48,6 +47,7 @@
 @property(readonly) NSMutableArray *teardownBlocks; // @synthesize teardownBlocks=_teardownBlocks;
 @property(retain, nonatomic) XCTWaiter *currentWaiter; // @synthesize currentWaiter=_currentWaiter;
 @property _Bool shouldIgnoreSubsequentFailures; // @synthesize shouldIgnoreSubsequentFailures=_shouldIgnoreSubsequentFailures;
+@property _Bool shouldSetShouldHaltWhenReceivesControl; // @synthesize shouldSetShouldHaltWhenReceivesControl=_shouldSetShouldHaltWhenReceivesControl;
 @property _Bool shouldHaltWhenReceivesControl; // @synthesize shouldHaltWhenReceivesControl=_shouldHaltWhenReceivesControl;
 @property(retain, nonatomic) NSMutableArray *failureRecords; // @synthesize failureRecords=_failureRecords;
 @property long long runLoopNestingCount; // @synthesize runLoopNestingCount=_runLoopNestingCount;
@@ -69,7 +69,6 @@
 @property(retain) NSThread *primaryThread; // @synthesize primaryThread=_primaryThread;
 @property(retain) NSInvocation *invocation; // @synthesize invocation=_invocation;
 - (void).cxx_destruct;
-@property(readonly) _Bool hasImplicitExpectationsWhichHaveBeenWaitedOn;
 - (void)resetExpectationsInArray:(id)arg1;
 - (void)resetExpectations;
 - (void)addExpectation:(id)arg1;

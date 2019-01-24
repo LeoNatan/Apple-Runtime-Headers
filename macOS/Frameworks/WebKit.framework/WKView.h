@@ -6,19 +6,25 @@
 
 #import <AppKit/NSView.h>
 
+#import <WebKit/NSDraggingSource-Protocol.h>
+#import <WebKit/NSFilePromiseProviderDelegate-Protocol.h>
 #import <WebKit/NSTextInputClient-Protocol.h>
 #import <WebKit/NSTouchBarProvider-Protocol.h>
 #import <WebKit/WebViewImplDelegate-Protocol.h>
 
 @class NSColor, NSString, NSTouchBar, WKBrowsingContextController, WKViewData, _WKThumbnailView;
 
-@interface WKView : NSView <NSTouchBarProvider, WebViewImplDelegate, NSTextInputClient>
+@interface WKView : NSView <NSFilePromiseProviderDelegate, NSDraggingSource, NSTouchBarProvider, WebViewImplDelegate, NSTextInputClient>
 {
     WKViewData *_data;
     unsigned int _unused;
 }
 
 + (void)hideWordDefinitionWindow;
+- (void)draggingSession:(id)arg1 endedAtPoint:(struct CGPoint)arg2 operation:(unsigned long long)arg3;
+- (unsigned long long)draggingSession:(id)arg1 sourceOperationMaskForDraggingContext:(long long)arg2;
+- (void)filePromiseProvider:(id)arg1 writePromiseToURL:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (id)filePromiseProvider:(id)arg1 fileNameForType:(id)arg2;
 - (void)_web_didRemoveMediaControlsManager;
 - (void)_web_didAddMediaControlsManager:(id)arg1;
 - (id)candidateListTouchBarItem;
@@ -30,6 +36,7 @@
 - (void)_web_dismissContentRelativeChildWindowsWithAnimation:(BOOL)arg1;
 - (void)_web_dismissContentRelativeChildWindows;
 - (unsigned long long)_web_dragDestinationActionForDraggingInfo:(id)arg1;
+- (void)_web_didPerformDragOperation:(BOOL)arg1;
 - (void)_web_didChangeContentSize:(struct CGSize)arg1;
 - (void)_web_completeImmediateActionAnimation;
 - (void)_web_cancelImmediateActionAnimation;

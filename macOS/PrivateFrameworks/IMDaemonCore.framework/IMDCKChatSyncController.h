@@ -51,6 +51,8 @@
 - (void)_syncChatsWithCloudKitWithCompletionType:(long long)arg1 syncChatsCompletionBlock:(CDUnknownBlockType)arg2;
 - (void)_resetSyncToken;
 - (void)_processFetchRecordChangesCompleted:(id)arg1 completion:(CDUnknownBlockType)arg2 isUsingStingRay:(BOOL)arg3 syncType:(long long)arg4;
+- (void)_kickOffWriteIfNeededForSyncType:(long long)arg1 completion:(CDUnknownBlockType)arg2 isUsingStingRay:(BOOL)arg3;
+- (void)_kickOffWriteOnCKQueueWithCompletion:(CDUnknownBlockType)arg1 isUsingStingRay:(BOOL)arg2;
 - (void)_processRecordZoneFetchCompletion:(id)arg1 zoneID:(id)arg2 clientChangeTokenData:(id)arg3 moreComing:(BOOL)arg4 error:(id)arg5;
 - (void)_processRecordZoneChangeTokenUpdated:(id)arg1 zoneID:(id)arg2 clienChangeToken:(id)arg3;
 - (void)_processRecordChanged:(id)arg1 isUsingStingRay:(BOOL)arg2;

@@ -9,20 +9,15 @@
 #import <Silex/SXBlueprintAnalyzer-Protocol.h>
 
 @class NSString;
-@protocol SXDocumentControllerProvider;
 
 @interface SXBlueprintAnalyzer : NSObject <SXBlueprintAnalyzer>
 {
-    id <SXDocumentControllerProvider> _documentControllerProvider;
 }
 
-@property(retain, nonatomic) id <SXDocumentControllerProvider> documentControllerProvider; // @synthesize documentControllerProvider=_documentControllerProvider;
-- (void).cxx_destruct;
 - (_Bool)componentPlacedAboveComponentBlueprint:(id)arg1 blueprint:(id)arg2;
-- (id)markersFromBlueprint:(id)arg1 layoutDataProvider:(id)arg2 cursor:(id)arg3;
+- (id)markersFromBlueprint:(id)arg1 components:(id)arg2 DOMObjectProvider:(id)arg3 cursor:(id)arg4;
 - (void)iterateMarkers:(id)arg1 onMarkerFound:(CDUnknownBlockType)arg2 then:(CDUnknownBlockType)arg3 onEndReached:(CDUnknownBlockType)arg4;
-- (void)analyzeBlueprint:(id)arg1 layoutDataProvider:(id)arg2 onMarkerFound:(CDUnknownBlockType)arg3 then:(CDUnknownBlockType)arg4 onEndReached:(CDUnknownBlockType)arg5;
-- (id)initWithDocumentControllerProvider:(id)arg1;
+- (void)analyzeBlueprint:(id)arg1 DOMObjectProvider:(id)arg2 onMarkerFound:(CDUnknownBlockType)arg3 then:(CDUnknownBlockType)arg4 onEndReached:(CDUnknownBlockType)arg5;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

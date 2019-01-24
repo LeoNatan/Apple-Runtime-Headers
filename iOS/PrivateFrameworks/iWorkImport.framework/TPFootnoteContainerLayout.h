@@ -16,15 +16,18 @@
 __attribute__((visibility("hidden")))
 @interface TPFootnoteContainerLayout : TSDLayout <TSWPColumnMetrics, TSWPLayoutParent, TSWPFootnoteMarkProvider>
 {
-    double _width;
-    double _maxFootnoteHeight;
+    _Bool _vertical;
+    double _lineWidth;
+    double _maxFootnoteBlockHeight;
     double _footnoteSpacing;
     _Bool _includeFootnoteSeparatorLine;
     id <TSWPFootnoteMarkProvider> _footnoteMarkProvider;
 }
 
 @property(nonatomic) _Bool includeFootnoteSeparatorLine; // @synthesize includeFootnoteSeparatorLine=_includeFootnoteSeparatorLine;
+@property(readonly, nonatomic) double maxBlockHeight; // @synthesize maxBlockHeight=_maxFootnoteBlockHeight;
 - (void).cxx_destruct;
+- (_Bool)textIsVerticalForFootnoteReferenceStorage:(id)arg1;
 - (id)markStringForFootnoteReferenceStorage:(id)arg1 ignoreDeletedFootnotes:(_Bool)arg2 forceDocumentEndnotes:(_Bool)arg3;
 - (id)markStringForFootnoteReferenceStorage:(id)arg1;
 - (_Bool)textIsVertical;
@@ -37,29 +40,30 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) unsigned long long columnCount;
 @property(readonly, nonatomic) TSWPPadding *layoutMargins;
 - (struct CGSize)adjustedInsetsForTarget:(id)arg1;
-- (double)maxAutoGrowHeightForTextLayout:(id)arg1;
+- (_Bool)textLayoutShouldLayoutVertically:(id)arg1;
+- (double)maxAutoGrowBlockHeightForTextLayout:(id)arg1;
 - (Class)repClassForTextLayout:(id)arg1;
 - (id)dependentsOfTextLayout:(id)arg1;
 - (struct CGRect)autosizedFrameForTextLayout:(id)arg1 textSize:(struct CGSize)arg2;
 - (struct CGRect)nonAutosizedFrameForTextLayout:(id)arg1;
 - (void)invalidateForAutosizingTextLayout:(id)arg1;
 - (int)verticalAlignmentForTextLayout:(id)arg1;
-- (unsigned int)autosizeFlagsForTextLayout:(id)arg1;
+- (unsigned long long)autosizeFlagsForTextLayout:(id)arg1;
 - (_Bool)shouldProvideSizingGuides;
 - (Class)repClassOverride;
 - (id)computeLayoutGeometry;
 - (void)validate;
 @property(readonly, nonatomic) struct CGRect footnoteSeparatorLineFrame;
-@property(readonly, nonatomic) double height;
+@property(readonly, nonatomic) double blockHeight;
 @property(readonly, nonatomic) _Bool isEmpty;
 - (void)trimFootnoteLayoutsFromIndex:(unsigned long long)arg1;
 - (void)setFootnoteSpacing:(long long)arg1;
-- (void)setWidth:(double)arg1;
+- (void)setLineWidth:(double)arg1;
 - (void)removeAllFootnoteLayouts;
 - (void)removeFootnoteLayoutWithInfo:(id)arg1;
 - (void)removeFootnoteLayout:(id)arg1;
 - (void)addFootnoteLayout:(id)arg1;
-- (id)initWithFootnoteMarkProvider:(id)arg1 width:(double)arg2 maxFootnoteHeight:(double)arg3 footnoteSpacing:(double)arg4;
+- (id)initWithFootnoteMarkProvider:(id)arg1 vertical:(_Bool)arg2 lineWidth:(double)arg3 maxFootnoteBlockHeight:(double)arg4 footnoteSpacing:(double)arg5;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

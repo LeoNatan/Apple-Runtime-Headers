@@ -57,7 +57,7 @@
 - (void)_populateConditionsDataFromConditions:(id)arg1 forTemplate:(id)arg2;
 - (void)_populateAirQualityDataFromConditions:(id)arg1 forTemplate:(id)arg2;
 - (void)_updateMaxDynamicFontSizeOfTemplate:(id)arg1 withFontSizeMapping:(id)arg2 defaultFontSize:(int)arg3 forText:(id)arg4;
-- (id)_temperatureStringForConditions:(id)arg1 allowsDisplayOfTemperatureUnit:(_Bool)arg2;
+- (id)_temperatureStringForTemperature:(id)arg1 allowsDisplayOfTemperatureUnit:(_Bool)arg2;
 - (id)_temperatureConditionsStringForData:(id)arg1 allowsDisplayOfTemperatureUnit:(_Bool)arg2;
 - (id)_formattedTextProviderWithFontSize:(float)arg1 inTemplate:(id)arg2 forConditions:(id)arg3;
 - (void)_signatureRectangularTemplatePopulatedWithForecast:(id)arg1 startDate:(id)arg2 returnBlock:(CDUnknownBlockType)arg3;

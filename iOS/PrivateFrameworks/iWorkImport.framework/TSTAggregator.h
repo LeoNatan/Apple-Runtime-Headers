@@ -30,8 +30,8 @@ __attribute__((visibility("hidden")))
 - (struct TSCEValue)aggregateValueForType:(unsigned char)arg1 atLevel:(unsigned char)arg2 atRow:(struct TSUViewRowIndex)arg3;
 - (struct TSCEValue)aggregateValueForType:(unsigned char)arg1 groupNodeUid:(UUIDData_5fbc143e)arg2;
 @property(readonly, nonatomic) TSTCategoryOwner *categoryOwner;
-- (void)encodeToArchive:(struct CategoryOwnerArchive_GroupByArchive_AggregatorArchive *)arg1;
-- (id)initWithArchive:(const struct CategoryOwnerArchive_GroupByArchive_AggregatorArchive *)arg1 groupBy:(id)arg2;
+-     // Error parsing type: v24@0:8^{CategoryOwnerArchive_GroupByArchive_AggregatorArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{UUID}^{CategoryOwnerArchive_GroupByArchive_AggNodeArchive}}16, name: encodeToArchive:
+-     // Error parsing type: @32@0:8r^{CategoryOwnerArchive_GroupByArchive_AggregatorArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{UUID}^{CategoryOwnerArchive_GroupByArchive_AggNodeArchive}}16@24, name: initWithArchive:groupBy:
 - (id)initWithColumn:(const UUIDData_5fbc143e *)arg1 forGroupBy:(id)arg2;
 
 @end

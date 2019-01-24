@@ -14,6 +14,7 @@
 {
     NSString *_topStoriesChannelID;
     NSSet *_hiddenFeedIDs;
+    NSString *_paidBundleFeedID;
     NSSet *_mutedTagIDs;
     NSSet *_purchasedTagIDs;
     NSSet *_subscribedTagIDs;
@@ -28,11 +29,12 @@
 @property(readonly, copy, nonatomic) NSSet *subscribedTagIDs; // @synthesize subscribedTagIDs=_subscribedTagIDs;
 @property(readonly, copy, nonatomic) NSSet *purchasedTagIDs; // @synthesize purchasedTagIDs=_purchasedTagIDs;
 @property(readonly, copy, nonatomic) NSSet *mutedTagIDs; // @synthesize mutedTagIDs=_mutedTagIDs;
+@property(readonly, copy, nonatomic) NSString *paidBundleFeedID; // @synthesize paidBundleFeedID=_paidBundleFeedID;
 @property(readonly, copy, nonatomic) NSSet *hiddenFeedIDs; // @synthesize hiddenFeedIDs=_hiddenFeedIDs;
 @property(readonly, copy, nonatomic) NSString *topStoriesChannelID; // @synthesize topStoriesChannelID=_topStoriesChannelID;
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (id)initWithForYouTodaySectionSpecificConfig:(id)arg1 topStoriesChannelID:(id)arg2 hiddenFeedIDs:(id)arg3 mutedTagIDs:(id)arg4 purchasedTagIDs:(id)arg5 subscribedTagIDs:(id)arg6;
+- (id)initWithForYouTodaySectionSpecificConfig:(id)arg1 topStoriesChannelID:(id)arg2 hiddenFeedIDs:(id)arg3 paidBundleFeedID:(id)arg4 mutedTagIDs:(id)arg5 purchasedTagIDs:(id)arg6 subscribedTagIDs:(id)arg7;
 - (id)init;
 
 @end

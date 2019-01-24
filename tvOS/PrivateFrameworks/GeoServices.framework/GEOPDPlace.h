@@ -74,8 +74,12 @@
 - (id)copyWithoutETAComponents;
 - (int)placeDisplayType;
 - (id)businessURL;
+- (unsigned long long)brandMUID;
+- (_Bool)hasBrandMUID;
 - (_Bool)isStandAloneBrand;
 - (_Bool)isDisputed;
+- (id)secondarySpokenName;
+- (id)secondaryName;
 - (id)spokenNameForLocale:(id)arg1;
 - (id)bestName;
 - (id)_entityName;

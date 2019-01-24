@@ -10,7 +10,7 @@
 #import <NewsUI/NUPageable-Protocol.h>
 #import <NewsUI/SXAnalyticsReporting-Protocol.h>
 
-@class FCArticle, NFMultiDelegate, NSHashTable, NSString, UIView;
+@class FCArticle, FCIssue, NFMultiDelegate, NSHashTable, NSString, UIView;
 @protocol NUAnalyticsReporting, NUArticleViewControllerFactory, NUErrorMessageFactory, NULoadingDelegate, NULoadingViewProviding, NUSettings;
 
 @interface NUArticleHostViewController : UIViewController <NULoadingDelegate, SXAnalyticsReporting, NUPageable>
@@ -18,6 +18,7 @@
     NSString *_pageIdentifier;
     id <NULoadingDelegate> _loadingDelegate;
     FCArticle *_article;
+    FCIssue *_issue;
     id <NUArticleViewControllerFactory> _articleViewControllerFactory;
     id <NUSettings> _settings;
     UIViewController *_contentTypeViewController;
@@ -34,6 +35,7 @@
 @property(retain, nonatomic) UIViewController *contentTypeViewController; // @synthesize contentTypeViewController=_contentTypeViewController;
 @property(readonly, copy, nonatomic) id <NUSettings> settings; // @synthesize settings=_settings;
 @property(readonly, nonatomic) id <NUArticleViewControllerFactory> articleViewControllerFactory; // @synthesize articleViewControllerFactory=_articleViewControllerFactory;
+@property(readonly, nonatomic) FCIssue *issue; // @synthesize issue=_issue;
 @property(readonly, nonatomic) FCArticle *article; // @synthesize article=_article;
 @property(nonatomic) __weak id <NULoadingDelegate> loadingDelegate; // @synthesize loadingDelegate=_loadingDelegate;
 @property(readonly, copy, nonatomic) NSString *pageIdentifier; // @synthesize pageIdentifier=_pageIdentifier;
@@ -50,6 +52,7 @@
 @property(readonly, nonatomic) NSHashTable *loadingListeners;
 - (id)initWithArticle:(id)arg1 articleViewControllerFactory:(id)arg2 settings:(id)arg3 errorMessageFactory:(id)arg4;
 - (id)initWithArticle:(id)arg1 articleViewControllerFactory:(id)arg2 settings:(id)arg3 errorMessageFactory:(id)arg4 analyticsReporting:(id)arg5;
+- (id)initWithArticle:(id)arg1 issue:(id)arg2 articleViewControllerFactory:(id)arg3 settings:(id)arg4 errorMessageFactory:(id)arg5 analyticsReporting:(id)arg6;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

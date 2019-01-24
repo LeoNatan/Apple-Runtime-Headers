@@ -50,6 +50,7 @@
 - (void)_resetCachedCarrierSettingsForUniqueID:(id)arg1;
 - (id)_createSettingsDictionaryForUniqueID:(id)arg1;
 - (id)_cachedCarrierSettingsUniqueIDKeyForSubscriptionContext:(id)arg1;
+- (id)newSubscriptionContextWithPhoneNumber:(id)arg1 labelID:(id)arg2 isDefaultVoice:(id)arg3 isDefaultData:(id)arg4 slot:(int)arg5;
 - (id)newSubscriptionContextWithSlot:(int)arg1;
 - (id)init;
 

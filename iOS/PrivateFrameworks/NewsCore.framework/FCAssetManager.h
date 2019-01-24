@@ -10,7 +10,7 @@
 #import <NewsCore/FCCacheCoordinatorDelegate-Protocol.h>
 #import <NewsCore/FCCacheFlushing-Protocol.h>
 
-@class FCAssetStore, FCCacheCoordinator, FCKeyValueStore, FCNetworkBehaviorMonitor, NSMapTable, NSString, NSURL;
+@class FCAssetStore, FCCacheCoordinator, FCKeyValueStore, FCNetworkBehaviorMonitor, NFUnfairLock, NSMapTable, NSString, NSURL;
 @protocol OS_dispatch_queue;
 
 @interface FCAssetManager : NSObject <FCAssetHandleDelegate, FCCacheCoordinatorDelegate, FCCacheFlushing>
@@ -24,14 +24,14 @@
     FCAssetStore *_assetStore;
     FCCacheCoordinator *_cacheCoordinator;
     NSMapTable *_assetHandles;
-    NSObject<OS_dispatch_queue> *_assetHandlesQueue;
+    NFUnfairLock *_assetHandlesLock;
     FCNetworkBehaviorMonitor *_networkBehaviorMonitor;
     NSObject<OS_dispatch_queue> *_initQueue;
 }
 
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *initQueue; // @synthesize initQueue=_initQueue;
 @property(retain, nonatomic) FCNetworkBehaviorMonitor *networkBehaviorMonitor; // @synthesize networkBehaviorMonitor=_networkBehaviorMonitor;
-@property(retain, nonatomic) NSObject<OS_dispatch_queue> *assetHandlesQueue; // @synthesize assetHandlesQueue=_assetHandlesQueue;
+@property(retain, nonatomic) NFUnfairLock *assetHandlesLock; // @synthesize assetHandlesLock=_assetHandlesLock;
 @property(retain, nonatomic) NSMapTable *assetHandles; // @synthesize assetHandles=_assetHandles;
 @property(retain, nonatomic) FCCacheCoordinator *cacheCoordinator; // @synthesize cacheCoordinator=_cacheCoordinator;
 @property(retain, nonatomic) FCAssetStore *assetStore; // @synthesize assetStore=_assetStore;
@@ -60,6 +60,8 @@
 - (id)initWithName:(id)arg1 directory:(id)arg2 networkBehaviorMonitor:(id)arg3;
 - (id)init;
 - (id)assetHandleForRecordID:(id)arg1 field:(long long)arg2 lifetimeHint:(long long)arg3 contentDatabase:(id)arg4;
+- (id)assetHandleForResourceID:(id)arg1 lifetimeHint:(long long)arg2 contentContext:(id)arg3;
+- (id)assetHandleForResourceID:(id)arg1 contentContext:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

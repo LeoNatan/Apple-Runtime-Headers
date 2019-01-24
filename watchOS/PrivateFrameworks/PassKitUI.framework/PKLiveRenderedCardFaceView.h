@@ -16,6 +16,7 @@
     PK3DCardView *_cardView;
     UIImageView *_logoImageView;
     UIImageView *_maskView;
+    _Bool _invalidated;
 }
 
 - (void).cxx_destruct;
@@ -24,6 +25,8 @@
 - (void)setMotionEnabled:(_Bool)arg1;
 - (float)cornerRadiusForStyle:(int)arg1;
 - (_Bool)shouldUseContinuousCornersForStyle:(int)arg1;
+- (void)invalidate;
+- (void)dealloc;
 - (id)initWithFrame:(struct CGRect)arg1 pass:(id)arg2;
 
 @end

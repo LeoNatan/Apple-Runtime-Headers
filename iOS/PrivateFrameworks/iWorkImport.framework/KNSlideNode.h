@@ -123,9 +123,9 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool thumbnailsAreDirty;
 - (void)saveToArchiver:(id)arg1;
 - (void)loadFromUnarchiver:(id)arg1;
-- (void)saveToArchive:(struct SlideNodeArchive *)arg1 archiver:(id)arg2;
+-     // Error parsing type: v32@0:8^{SlideNodeArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}{RepeatedPtrField<TSP::Size>=^{Arena}ii^{Rep}}{RepeatedPtrField<TSP::DataReference>=^{Arena}ii^{Rep}}{RepeatedPtrField<KN::SlideNodeArchive_SlideSpecificHyperlinkMapEntry>=^{Arena}ii^{Rep}}{RepeatedPtrField<std::__1::basic_string<char> >=^{Arena}ii^{Rep}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}^{Reference}^{Reference}BBBBBBBBIIBBBBIII}16@24, name: saveToArchive:archiver:
 - (id)p_mappingFromString:(id)arg1;
-- (void)loadFromArchive:(const struct SlideNodeArchive *)arg1 unarchiver:(id)arg2;
+-     // Error parsing type: v32@0:8r^{SlideNodeArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}{RepeatedPtrField<TSP::Size>=^{Arena}ii^{Rep}}{RepeatedPtrField<TSP::DataReference>=^{Arena}ii^{Rep}}{RepeatedPtrField<KN::SlideNodeArchive_SlideSpecificHyperlinkMapEntry>=^{Arena}ii^{Rep}}{RepeatedPtrField<std::__1::basic_string<char> >=^{Arena}ii^{Rep}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}^{Reference}^{Reference}BBBBBBBBIIBBBBIII}16@24, name: loadFromArchive:unarchiver:
 - (void)didLoadSlide:(id)arg1;
 - (void)removeObsoleteFieldsFor20Upgrade;
 - (void)removeInvalidSlideSpecificHyperlinksWithSlideNodeUUIDStrings:(id)arg1;

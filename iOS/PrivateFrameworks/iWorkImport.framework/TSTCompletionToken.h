@@ -30,8 +30,8 @@ __attribute__((visibility("hidden")))
 - (id)description;
 - (void)p_createCanvasReference;
 - (void)p_removeCanvasReference;
-- (void)saveToArchive:(struct CompletionTokenAttachmentArchive *)arg1 archiver:(id)arg2;
-- (void)loadFromArchive:(const struct CompletionTokenAttachmentArchive *)arg1 unarchiver:(id)arg2;
+-     // Error parsing type: v32@0:8^{CompletionTokenAttachmentArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}^{TokenAttachmentArchive}II}16@24, name: saveToArchive:archiver:
+-     // Error parsing type: v32@0:8r^{CompletionTokenAttachmentArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}^{TokenAttachmentArchive}II}16@24, name: loadFromArchive:unarchiver:
 - (void)saveToArchiver:(id)arg1;
 - (void)loadFromUnarchiver:(id)arg1;
 - (id)copyIntoContext:(id)arg1 bakeModes:(_Bool)arg2;

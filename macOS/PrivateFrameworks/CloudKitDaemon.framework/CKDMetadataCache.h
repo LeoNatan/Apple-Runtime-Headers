@@ -22,6 +22,8 @@
 - (void)setContainerInfo:(id)arg1 forContainerID:(id)arg2;
 - (id)containerInfoForContainerID:(id)arg1;
 - (id)inlock_containerInfoForContainerID:(id)arg1;
+- (void)setPublicKey:(id)arg1 ofType:(id)arg2 withIdentifier:(id)arg3;
+- (id)publicKeyOfType:(id)arg1 withIdentifier:(id)arg2;
 - (void)setGlobalConfiguration:(id)arg1;
 - (id)globalConfiguration;
 - (void)removeKnownApplicationBundleID:(id)arg1;

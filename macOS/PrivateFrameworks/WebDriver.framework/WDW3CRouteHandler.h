@@ -42,6 +42,7 @@
 - (void)_handleExecuteScript:(id)arg1 response:(id)arg2 relatedSession:(id)arg3;
 - (void)_handleGetPageSource:(id)arg1 response:(id)arg2 relatedSession:(id)arg3;
 - (void)_handleElementSendKeys:(id)arg1 response:(id)arg2 relatedSession:(id)arg3;
+- (void)_ensureElementIsInteractable:(id)arg1 inSession:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (id)_keyInteractionsFromSequence:(id)arg1 inSession:(id)arg2;
 - (void)_selectLocalFiles:(id)arg1 forFileInputElement:(id)arg2 allowsMultipleSelection:(BOOL)arg3 inSession:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
 - (void)_handleElementClear:(id)arg1 response:(id)arg2 relatedSession:(id)arg3;

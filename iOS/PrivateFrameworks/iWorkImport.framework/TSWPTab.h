@@ -48,8 +48,8 @@ __attribute__((visibility("hidden")))
 - (long long)compare:(id)arg1;
 - (long long)compareToPosition:(double)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (void)saveToArchive:(struct TabArchive *)arg1 archiver:(id)arg2;
-- (id)initWithArchive:(const struct TabArchive *)arg1 unarchiver:(id)arg2;
+-     // Error parsing type: v32@0:8^{TabArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}fi}16@24, name: saveToArchive:archiver:
+-     // Error parsing type: @32@0:8r^{TabArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}fi}16@24, name: initWithArchive:unarchiver:
 - (id)initWithPosition:(double)arg1 alignment:(int)arg2 leader:(id)arg3;
 - (id)init;
 - (void)setPositionInInches:(double)arg1;

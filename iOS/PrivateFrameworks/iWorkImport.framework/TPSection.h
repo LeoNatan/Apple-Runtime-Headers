@@ -38,8 +38,8 @@ __attribute__((visibility("hidden")))
 - (id)pageMasterForType:(long long)arg1;
 @property(readonly, nonatomic) NSArray *pageMasters;
 - (void)p_makeUserGuideStorage;
-- (void)p_upgradePageSizeAndMarginsFromParsedArchive:(const struct SectionArchive *)arg1;
-- (void)p_unarchiveAndUpgrade:(id)arg1 archive:(const struct SectionArchive *)arg2;
+-     // Error parsing type: v24@0:8r^{SectionArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}^{Reference}^{Reference}^{Reference}^{Reference}^{FillArchive}ffffBBBBffffffIIBBBI}16, name: p_upgradePageSizeAndMarginsFromParsedArchive:
+-     // Error parsing type: v32@0:8@16r^{SectionArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}^{Reference}^{Reference}^{Reference}^{Reference}^{FillArchive}ffffBBBBffffffIIBBBI}24, name: p_unarchiveAndUpgrade:archive:
 - (void)i_clearPropertiesToDefaults;
 - (void)i_copyHeadersAndFootersFrom:(id)arg1 dolcContext:(id)arg2 withBlock:(CDUnknownBlockType)arg3;
 - (void)i_ensureHeaderFooterStoragesExistWithStylesheet:(id)arg1;

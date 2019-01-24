@@ -39,7 +39,7 @@ __attribute__((visibility("hidden")))
 - (void)p_emitEventWithType:(int)arg1 provider:(id)arg2 range:(struct _NSRange)arg3 object:(id)arg4;
 - (void)p_emitPendingCharactersAndEvent:(id)arg1;
 - (void)addLocationProvider:(id)arg1;
-- (void)addAttributeRangeProvider:(int)arg1;
+- (void)addAttributeRangeProvider:(unsigned long long)arg1;
 - (void)addRangeProvider:(id)arg1;
 - (id)initWithStorage:(id)arg1;
 

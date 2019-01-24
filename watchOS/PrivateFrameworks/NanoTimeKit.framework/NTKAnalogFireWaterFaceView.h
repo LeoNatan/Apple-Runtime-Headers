@@ -23,6 +23,7 @@
 - (void)setupDataSources;
 - (void)_updateDialSize;
 - (id)imageForEditOption:(id)arg1;
+- (id)_complicationsCompanionForegroundColor;
 - (void)_customizeVideoPlayerOnSetup;
 - (void)_applyOption:(id)arg1 forCustomEditMode:(int)arg2 slot:(id)arg3;
 - (id)_editOptionThatHidesAllComplications;

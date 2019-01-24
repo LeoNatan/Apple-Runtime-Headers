@@ -16,6 +16,8 @@ __attribute__((visibility("hidden")))
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
+- (void)viewDidMoveToWindow;
+- (void)viewWillMoveToWindow:(id)arg1;
 - (void)reloadFromOrigin:(id)arg1;
 - (void)reload:(id)arg1;
 @property(nonatomic) __weak id <WKInspectorWKWebViewDelegate> inspectorWKWebViewDelegate;

@@ -59,8 +59,6 @@
 @property(readonly, nonatomic) BOOL isImage;
 - (id)init;
 - (BOOL)validateRecordForTracker:(id)arg1;
-- (id)initWithCKRecord:(id)arg1 scopeIdentifier:(id)arg2 ckAssetProperties:(id)arg3;
-- (BOOL)fillCKRecord:(id)arg1 withRecordMap:(id)arg2 scopeProvider:(id)arg3 tempCKAssetURL:(id)arg4 error:(id *)arg5;
 
 @end
 

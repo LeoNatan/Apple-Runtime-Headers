@@ -25,6 +25,8 @@
     CLSAuthTree *_authTree;
     NSMutableArray *_runningActivities;
     NSDate *_lastPruneDate;
+    NSString *_appBundleIdentifier;
+    NSString *_appName;
     id <CLSDataStoreDelegate> _delegate;
     CLSContext *_mainAppContext;
     CLSEndpointConnection *_endpointConnection;
@@ -88,6 +90,8 @@
 @property(readonly, nonatomic) CLSAuthTree *authTree;
 - (void)_save;
 - (void)saveWithCompletion:(CDUnknownBlockType)arg1;
+- (void)fetchAndCompleteAllAssignedActivitiesForContextPath:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
+- (void)completeAllAssignedActivitiesMatching:(id)arg1;
 - (void)contextsMatchingPredicate:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)contextsMatchingIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)allContexts;

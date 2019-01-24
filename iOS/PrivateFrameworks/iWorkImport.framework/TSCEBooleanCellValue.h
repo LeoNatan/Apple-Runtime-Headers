@@ -12,8 +12,8 @@ __attribute__((visibility("hidden")))
     struct TSCEBooleanValue *_booleanValue;
 }
 
-- (void)encodeToArchive:(struct BooleanCellValueArchive *)arg1;
-- (id)initWithArchive:(const struct BooleanCellValueArchive *)arg1 locale:(id)arg2;
+-     // Error parsing type: v24@0:8^{BooleanCellValueArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{FormatStructArchive}BB}16, name: encodeToArchive:
+-     // Error parsing type: @32@0:8r^{BooleanCellValueArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{FormatStructArchive}BB}16@24, name: initWithArchive:locale:
 - (long long)compareToCellValue:(id)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;

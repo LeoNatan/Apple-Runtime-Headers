@@ -6,6 +6,7 @@
 
 #import <objc/NSObject.h>
 
+#import <CoreSpeech/CSActivationEventNotifierDelegate-Protocol.h>
 #import <CoreSpeech/CSAudioRecorderDelegate-Protocol.h>
 #import <CoreSpeech/CSAudioServerCrashMonitorGibraltarDelegate-Protocol.h>
 #import <CoreSpeech/CSLanguageCodeUpdateMonitorDelegate-Protocol.h>
@@ -15,14 +16,15 @@
 #import <CoreSpeech/CSVoiceTriggerAssetDownloadMonitorDelegate-Protocol.h>
 #import <CoreSpeech/CSVoiceTriggerDelegate-Protocol.h>
 
-@class CSAsset, CSAudioCircularBuffer, CSAudioRecorder, CSContinuousVoiceTrigger, CSKeywordDetector, CSMyriadPHash, CSSelfTriggerDetector, CSSmartSiriVolume, CSStateMachine, CSVoiceTriggerEventNotifier, CSVoiceTriggerFidesClient, CSVoiceTriggerFileLogger, CSVoiceTriggerFirstPass, CSVoiceTriggerSecondPass, NSDictionary, NSHashTable, NSString, NSUUID;
+@class CSAsset, CSAudioCircularBuffer, CSAudioRecorder, CSContinuousVoiceTrigger, CSKeywordDetector, CSMyriadPHash, CSSelfTriggerDetector, CSSmartSiriVolume, CSStateMachine, CSVoiceTriggerEventNotifier, CSVoiceTriggerFidesClient, CSVoiceTriggerFileLogger, CSVoiceTriggerFirstPass, CSVoiceTriggerFirstPassJarvis, CSVoiceTriggerSecondPass, NSDictionary, NSHashTable, NSString, NSUUID;
 @protocol CSSpeechManagerDelegate, OS_dispatch_queue, OS_dispatch_source;
 
-@interface CSSpeechManager : NSObject <CSAudioRecorderDelegate, CSStateMachineDelegate, CSVoiceTriggerDelegate, CSSiriEnabledMonitorDelegate, CSAudioServerCrashMonitorGibraltarDelegate, CSSmartSiriVolumeDelegate, CSVoiceTriggerAssetDownloadMonitorDelegate, CSLanguageCodeUpdateMonitorDelegate>
+@interface CSSpeechManager : NSObject <CSAudioRecorderDelegate, CSStateMachineDelegate, CSVoiceTriggerDelegate, CSSiriEnabledMonitorDelegate, CSAudioServerCrashMonitorGibraltarDelegate, CSSmartSiriVolumeDelegate, CSActivationEventNotifierDelegate, CSVoiceTriggerAssetDownloadMonitorDelegate, CSLanguageCodeUpdateMonitorDelegate>
 {
     BOOL _isSiriEnabled;
     BOOL _deviceRoleIsStereo;
     BOOL _isAudioSessionActive;
+    BOOL _shouldChangeContextAfterDidStop;
     CSAudioRecorder *_audioRecorder;
     NSObject<OS_dispatch_queue> *_queue;
     NSObject<OS_dispatch_queue> *_assetQueryQueue;
@@ -39,6 +41,7 @@
     CSKeywordDetector *_keywordDetector;
     CSMyriadPHash *_myriad;
     CSVoiceTriggerFidesClient *_voiceTriggerFidesClient;
+    CSVoiceTriggerFirstPassJarvis *_voiceTriggerFristPassJarvis;
     unsigned long long _secondPassStartSampleCount;
     NSDictionary *_lastVoiceTriggerEventInfo;
     CSSmartSiriVolume *_smartSiriVolume;
@@ -53,8 +56,11 @@
     NSUUID *_pendingSetRecordModeToRecordingToken;
     CDUnknownBlockType _pendingSetRecordModeToRecordingCompletion;
     double _audioSessionActivationDelay;
+    NSDictionary *_pendingContext;
 }
 
+@property(retain, nonatomic) NSDictionary *pendingContext; // @synthesize pendingContext=_pendingContext;
+@property(nonatomic) BOOL shouldChangeContextAfterDidStop; // @synthesize shouldChangeContextAfterDidStop=_shouldChangeContextAfterDidStop;
 @property(nonatomic) double audioSessionActivationDelay; // @synthesize audioSessionActivationDelay=_audioSessionActivationDelay;
 @property(nonatomic) BOOL isAudioSessionActive; // @synthesize isAudioSessionActive=_isAudioSessionActive;
 @property(nonatomic) BOOL deviceRoleIsStereo; // @synthesize deviceRoleIsStereo=_deviceRoleIsStereo;
@@ -72,6 +78,7 @@
 @property(retain, nonatomic) CSSmartSiriVolume *smartSiriVolume; // @synthesize smartSiriVolume=_smartSiriVolume;
 @property(retain, nonatomic) NSDictionary *lastVoiceTriggerEventInfo; // @synthesize lastVoiceTriggerEventInfo=_lastVoiceTriggerEventInfo;
 @property(nonatomic) unsigned long long secondPassStartSampleCount; // @synthesize secondPassStartSampleCount=_secondPassStartSampleCount;
+@property(retain, nonatomic) CSVoiceTriggerFirstPassJarvis *voiceTriggerFristPassJarvis; // @synthesize voiceTriggerFristPassJarvis=_voiceTriggerFristPassJarvis;
 @property(retain, nonatomic) CSVoiceTriggerFidesClient *voiceTriggerFidesClient; // @synthesize voiceTriggerFidesClient=_voiceTriggerFidesClient;
 @property(retain, nonatomic) CSMyriadPHash *myriad; // @synthesize myriad=_myriad;
 @property(retain, nonatomic) CSKeywordDetector *keywordDetector; // @synthesize keywordDetector=_keywordDetector;
@@ -89,6 +96,12 @@
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(retain, nonatomic) CSAudioRecorder *audioRecorder; // @synthesize audioRecorder=_audioRecorder;
 - (void).cxx_destruct;
+- (BOOL)_isBluetoothDeviceTriggerEvent:(unsigned long long)arg1;
+- (void)_teardownForBluetoothDevice;
+- (void)_prepareForBluetoothDeviceWithDeviceType:(unsigned long long)arg1 asset:(id)arg2;
+- (void)_setupForBluetoothDeviceIfNeededWithDeviceType:(unsigned long long)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)_setupForJarvisIfNeededWithCompletion:(CDUnknownBlockType)arg1;
+- (void)activationEventNotifier:(id)arg1 event:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)handleServerDidRestart;
 - (void)handleLostServerConnection;
 - (void)_startClearLoggingFilesTimer;
@@ -126,6 +139,8 @@
 - (void)_startForwardingToSecondPassVoiceTrigger;
 - (void)_stopForwardingToFirstPassVoiceTrigger;
 - (void)_startForwardingToFirstPassVoiceTrigger;
+- (void)_stopForwardingToVoiceTriggerFristPassJarvis;
+- (void)_startForwardingToVoiceTriggerFristPassJarvis;
 - (void)_stopForwardingToClient;
 - (void)_startForwardingToClient;
 - (void)_destroyAudioRecorderIfNeeded;
@@ -140,11 +155,14 @@
 - (void)stopRecordingWithEvent:(unsigned long long)arg1;
 - (void)_startRecordingForClient:(id)arg1 error:(id *)arg2;
 - (BOOL)_startRecordingForAOPFirstPassTriggerWithSettings:(id)arg1 error:(id *)arg2;
+- (BOOL)_startListeningForBluetoothDeviceVoiceTrigger:(unsigned long long)arg1 settings:(id)arg2 error:(id *)arg3;
 - (BOOL)_startRecordingWithSettings:(id)arg1 event:(unsigned long long)arg2 error:(id *)arg3;
 - (BOOL)startRecordingWithSetting:(id)arg1 event:(unsigned long long)arg2 error:(id *)arg3;
 - (void)startRecordingAsyncWithSetting:(id)arg1 event:(unsigned long long)arg2 completion:(CDUnknownBlockType)arg3;
+- (BOOL)_handleJarvisFirstPassTriggerEvent:(unsigned long long)arg1 settings:(id)arg2 error:(id *)arg3;
 - (BOOL)_handleVoiceTriggerSwitchAOP2APEvent:(unsigned long long)arg1 settings:(id)arg2 error:(id *)arg3;
 - (BOOL)_handleAOPFirstPassTriggerEvent:(unsigned long long)arg1 settings:(id)arg2 error:(id *)arg3;
+- (BOOL)_handleBluetoothDeviceTriggerEvent:(unsigned long long)arg1 settings:(id)arg2 error:(id *)arg3;
 - (void)_enableMiniDucking:(BOOL)arg1;
 - (BOOL)_setCurrentContext:(id)arg1 error:(id *)arg2;
 - (void)_performPendingSetRecordModeToRecordingForReason:(id)arg1;
@@ -152,6 +170,7 @@
 - (void)_scheduleSetRecordModeToRecordingWithDelay:(double)arg1 forReason:(id)arg2 validator:(CDUnknownBlockType)arg3 completion:(CDUnknownBlockType)arg4;
 - (BOOL)_setRecordMode:(long long)arg1 withDelay:(double)arg2 error:(id *)arg3;
 - (BOOL)_setRecordMode:(long long)arg1 error:(id *)arg2;
+- (BOOL)_startListeningWithSettings:(id)arg1 error:(id *)arg2;
 - (BOOL)_startListening:(id *)arg1;
 - (BOOL)_startRecordingWithSettings:(id)arg1 error:(id *)arg2;
 - (BOOL)prepareRecordingForClient:(id)arg1 error:(id *)arg2;
@@ -183,7 +202,7 @@
 - (void)reset;
 - (void)startManager;
 - (void)dealloc;
-- (id)initWithVoiceTriggerFirstPass:(id)arg1 voicetriggerSecondPass:(id)arg2 voicetriggerEventNotifier:(id)arg3 audioRecorder:(id)arg4;
+- (id)initWithVoiceTriggerFirstPass:(id)arg1 firstPassType:(unsigned long long)arg2 voicetriggerSecondPass:(id)arg3 voicetriggerEventNotifier:(id)arg4 audioRecorder:(id)arg5 stateMachineType:(unsigned long long)arg6;
 - (id)init;
 - (float)averagePowerForChannel:(unsigned long long)arg1;
 - (float)peakPowerForChannel:(unsigned long long)arg1;

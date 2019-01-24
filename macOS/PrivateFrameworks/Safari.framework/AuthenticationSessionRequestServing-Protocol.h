@@ -4,10 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@class AuthenticationSessionRequest, NSError, NSURL, NSXPCListenerEndpoint;
+@class NSError, NSURL, NSXPCListenerEndpoint, _ASWebAuthenticationSessionRequest;
 
 @protocol AuthenticationSessionRequestServing
-- (void)didFulfillAuthenticationSessionRequest:(AuthenticationSessionRequest *)arg1 withCallbackURL:(NSURL *)arg2 error:(NSError *)arg3;
+- (void)didFulfillAuthenticationSessionRequest:(_ASWebAuthenticationSessionRequest *)arg1 withCallbackURL:(NSURL *)arg2 error:(NSError *)arg3;
 - (void)connectToAuthenticationSessionRequestClientWithEndpoint:(NSXPCListenerEndpoint *)arg1;
 @end
 

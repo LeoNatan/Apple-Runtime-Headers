@@ -21,6 +21,8 @@
 + (void)removePendingExpiredSessionReports:(id)arg1 withAppIdentifier:(id)arg2 storageDirectoryAtURL:(id)arg3;
 + (id)pendingExpiredSessionReportsWithAppIdentifier:(id)arg1 storageDirectoryAtURL:(id)arg2;
 + (id)_uniqueIDForCyptorUUID:(id)arg1 cryptorKeyRequestID:(unsigned long long)arg2;
+- (void)invalidateAllPersistableContentKeysForApp:(id)arg1 options:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)invalidatePersistableContentKey:(id)arg1 options:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)makeSecureTokenForExpirationDateOfPersistableContentKey:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)renewExpiringResponseDataForContentKeyRequest:(id)arg1;
 - (void)processContentKeyRequestWithIdentifier:(id)arg1 initializationData:(id)arg2 options:(id)arg3;

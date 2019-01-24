@@ -30,6 +30,7 @@
 + (_Bool)shouldIgnoreResourceTypeOnUpload:(unsigned int)arg1;
 + (id)shortDescriptionForResourceType:(unsigned int)arg1;
 + (id)descriptionForResourceType:(unsigned int)arg1;
++ (unsigned int)resourceTypeFromShortDecription:(id)arg1;
 + (id)normalizedResourcesFromResources:(id)arg1 resourcePerResourceType:(id *)arg2;
 + (_Bool)cplShouldIgnorePropertyForEquality:(id)arg1;
 + (_Bool)supportsSecureCoding;

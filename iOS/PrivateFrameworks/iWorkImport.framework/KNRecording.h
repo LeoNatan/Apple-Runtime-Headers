@@ -35,7 +35,7 @@ __attribute__((visibility("hidden")))
 - (id)initWithContext:(id)arg1 eventTracks:(id)arg2 movieTrack:(id)arg3 duration:(double)arg4 modificationDate:(id)arg5;
 - (void)saveToArchiver:(id)arg1;
 - (void)loadFromUnarchiver:(id)arg1;
-- (void)saveToArchive:(struct RecordingArchive *)arg1 archiver:(id)arg2;
+-     // Error parsing type: v32@0:8^{RecordingArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}^{Reference}^{Date}^{RecordingSyncState}di}16@24, name: saveToArchive:archiver:
 
 @end
 

@@ -24,15 +24,15 @@ __attribute__((visibility("hidden")))
 + (id)movieStylePresetStyleDescriptor;
 + (id)imageStylePresetStyleDescriptor;
 + (void)initialize;
-+ (void)saveMediaStylePropertyMap:(id)arg1 toArchive:(struct MediaStylePropertiesArchive *)arg2 archiver:(id)arg3;
-+ (void)loadMediaStylePropertiesIntoPropertyMap:(id)arg1 fromArchive:(const struct MediaStylePropertiesArchive *)arg2 unarchiver:(id)arg3;
++     // Error parsing type: v40@0:8@16^{MediaStylePropertiesArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{StrokeArchive}^{ShadowArchive}^{ReflectionArchive}f}24@32, name: saveMediaStylePropertyMap:toArchive:archiver:
++     // Error parsing type: v40@0:8@16r^{MediaStylePropertiesArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{StrokeArchive}^{ShadowArchive}^{ReflectionArchive}f}24@32, name: loadMediaStylePropertiesIntoPropertyMap:fromArchive:unarchiver:
 - (id)boxedValueForProperty:(int)arg1 oldBoxedValue:(id)arg2 transformedByTransform:(struct CGAffineTransform)arg3;
 - (id)mixedObjectWithFraction:(double)arg1 ofObject:(id)arg2;
 - (long long)mixingTypeWithObject:(id)arg1 context:(id)arg2;
 @property(readonly, nonatomic) NSString *presetKind;
-- (void)saveToArchive:(struct MediaStyleArchive *)arg1 archiver:(id)arg2;
+-     // Error parsing type: v32@0:8^{MediaStyleArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{StyleArchive}^{MediaStylePropertiesArchive}I}16@24, name: saveToArchive:archiver:
 - (void)saveToArchiver:(id)arg1;
-- (void)loadFromArchive:(const struct MediaStyleArchive *)arg1 unarchiver:(id)arg2;
+-     // Error parsing type: v32@0:8r^{MediaStyleArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{StyleArchive}^{MediaStylePropertiesArchive}I}16@24, name: loadFromArchive:unarchiver:
 - (void)loadFromUnarchiver:(id)arg1;
 
 @end

@@ -9,6 +9,7 @@
 @class NFApplet, NSArray, NSData;
 
 @protocol NFContactlessPaymentSessionInterface <NFSessionInterface>
+- (oneway void)startExpressMode:(void (^)(NSError *))arg1;
 - (oneway void)enablePlasticCardMode:(BOOL)arg1 callback:(void (^)(NSError *))arg2;
 - (oneway void)getTransitAppletState:(NFApplet *)arg1 callback:(void (^)(NSDictionary *, NSError *))arg2;
 - (oneway void)getFelicaAppletState:(NFApplet *)arg1 callback:(void (^)(NSDictionary *, NSError *))arg2;

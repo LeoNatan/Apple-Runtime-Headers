@@ -6,7 +6,7 @@
 
 #import <Silex/NSObject-Protocol.h>
 
-@class SXComponentAnimationController, SXComponentBehaviorController, SXComponentController, SXComponentView, SXFullscreenCanvasController, SXFullscreenVideoPlaybackManager, SXMediaPlaybackController, SXPresentationAttributes, SXTangierController, SXViewport, UIView, UIViewController;
+@class SXComponentAnimationController, SXComponentBehaviorController, SXComponentController, SXComponentView, SXFullscreenCanvasController, SXFullscreenVideoPlaybackManager, SXMediaPlaybackController, SXPresentationAttributes, SXTangierController, UIView, UIViewController;
 @protocol SXAdDocumentStateManager, SXTextSelectionManager;
 
 @protocol SXPresentationDelegate <NSObject>
@@ -19,7 +19,6 @@
 @property(readonly, nonatomic) SXComponentAnimationController *animationController;
 @property(readonly, nonatomic) SXTangierController *tangierController;
 @property(readonly, nonatomic) SXComponentController *componentController;
-@property(readonly, nonatomic) SXViewport *viewport;
 - (void)updateBehaviorForComponentView:(SXComponentView *)arg1;
 - (void)releasePositionOfView:(UIView *)arg1;
 - (void)maintainPositionOfViewWhileScrolling:(UIView *)arg1;

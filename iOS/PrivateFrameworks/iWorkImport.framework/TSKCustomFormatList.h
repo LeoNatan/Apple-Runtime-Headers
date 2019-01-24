@@ -25,8 +25,8 @@ __attribute__((visibility("hidden")))
     NSMutableSet *_namesList;
 }
 
-+ (id)unarchiveKeys:(const RepeatedPtrField_bfda3daa *)arg1;
-+ (void)archiveKeys:(id)arg1 message:(RepeatedPtrField_bfda3daa *)arg2;
++ (id)unarchiveKeys:(const RepeatedPtrField_c4607516 *)arg1;
++ (void)archiveKeys:(id)arg1 message:(RepeatedPtrField_c4607516 *)arg2;
 @property(nonatomic) _Bool importingDone; // @synthesize importingDone=_importingDone;
 @property(nonatomic) _Bool upgradingDone; // @synthesize upgradingDone=_upgradingDone;
 @property(retain, nonatomic) NSMutableSet *namesList; // @synthesize namesList=_namesList;

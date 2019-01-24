@@ -10,13 +10,14 @@
 #import <NewsUI/NFCopying-Protocol.h>
 #import <NewsUI/NSObject-Protocol.h>
 
-@class FCArticleContentManifest, FCCoverArt, FCFeedPersonalizedArticleScoreProfile, FCHeadlineExperimentalTitleMetadata, FCHeadlineThumbnail, FCTopStoriesStyleConfiguration, NSArray, NSData, NSDate, NSSet, NSString, NSURL;
+@class FCArticleContentManifest, FCCoverArt, FCFeedPersonalizedItemScoreProfile, FCHeadlineExperimentalTitleMetadata, FCHeadlineThumbnail, FCIssue, FCTopStoriesStyleConfiguration, NSArray, NSData, NSDate, NSSet, NSString, NSURL;
 @protocol FCChannelProviding, FCContentContext, FCHeadlineStocksFields, FCNativeAdProviding;
 
 @protocol FCHeadlineProviding <NSObject, NFCopying, FCFeedElement, FCClassifiable, FCFeedTransformationItem>
 @property(readonly, nonatomic) NSArray *publisherSpecifiedArticleIDs;
 @property(readonly, nonatomic) NSString *articleRecirculationConfigJSON;
 @property(readonly, nonatomic) id <FCNativeAdProviding> associatedAd;
+@property(readonly, nonatomic) _Bool showPublisherLogo;
 @property(readonly, nonatomic) _Bool isBlockedExplicitContent;
 @property(readonly, nonatomic) _Bool showSubscriptionRequiredText;
 @property(readonly, copy, nonatomic) NSDate *displayDate;
@@ -27,7 +28,7 @@
 @property(readonly, nonatomic) _Bool usesImageOnTopLayout;
 @property(readonly, nonatomic) unsigned long long topStoryType;
 @property(readonly, nonatomic) _Bool isTopStory;
-@property(readonly, nonatomic) FCFeedPersonalizedArticleScoreProfile *scoreProfile;
+@property(readonly, nonatomic) FCFeedPersonalizedItemScoreProfile *scoreProfile;
 @property(readonly, nonatomic) double tileProminenceScore;
 @property(readonly, copy, nonatomic) NSSet *surfacedByTagIDs;
 @property(readonly, copy, nonatomic) NSString *surfacedByBinID;
@@ -40,6 +41,7 @@
 @property(readonly, nonatomic, getter=isPressRelease) _Bool pressRelease;
 @property(readonly, nonatomic) _Bool showMinimalChrome;
 @property(readonly, nonatomic) _Bool needsRapidUpdates;
+@property(readonly, copy, nonatomic) NSString *language;
 @property(readonly, copy, nonatomic) NSURL *videoCallToActionURL;
 @property(readonly, copy, nonatomic) NSString *videoCallToActionTitle;
 @property(readonly, nonatomic) FCCoverArt *coverArt;
@@ -61,7 +63,6 @@
 @property(readonly, nonatomic, getter=isFeatureCandidate) _Bool featureCandidate;
 @property(readonly, nonatomic) double videoDuration;
 @property(readonly, nonatomic) NSURL *videoURL;
-@property(readonly, copy, nonatomic) NSArray *endOfArticleTopicIDs;
 @property(readonly, copy, nonatomic) NSArray *topicIDs;
 @property(readonly, copy, nonatomic) NSArray *topics;
 @property(readonly, copy, nonatomic) NSDate *lastFetchedDate;
@@ -94,10 +95,15 @@
 @property(readonly, copy, nonatomic) NSString *versionIdentifier;
 
 @optional
+@property(readonly, nonatomic) _Bool showBundleSoftPaywall;
+@property(readonly, nonatomic, getter=isIssueOnly) _Bool issueOnly;
+@property(readonly, copy, nonatomic) FCIssue *masterIssue;
 @property(readonly, nonatomic) _Bool webEmbedsEnabled;
 @property(copy, nonatomic) FCHeadlineExperimentalTitleMetadata *experimentalTitleMetadata;
 @property(readonly, nonatomic) NSData *backingArticleRecordData;
 @property(readonly, nonatomic) id <FCHeadlineStocksFields> stocksFields;
+@property(readonly, nonatomic, getter=isBundlePaid) _Bool bundlePaid;
+@property(readonly, nonatomic) unsigned long long role;
 - (FCArticleContentManifest *)contentManifestWithContext:(id <FCContentContext>)arg1;
 @end
 

@@ -6,7 +6,7 @@
 
 #import <PineBoardServices/NSObject-Protocol.h>
 
-@class NSArray, NSDictionary, PBSOSUpdateDescriptor, PBSOSUpdateManagerClient;
+@class NSArray, PBSOSUpdateDescriptor, PBSOSUpdateManagerClient, PBSOSUpdateScanOptions;
 @protocol PBSOSUpdateServiceDelegate;
 
 @protocol PBSOSUpdateServiceInterface <NSObject>
@@ -19,7 +19,7 @@
 - (void)purgeDownload:(void (^)(_Bool, NSError *))arg1;
 - (void)cancelDownload:(void (^)(_Bool, NSError *))arg1;
 - (void)startDownload:(void (^)(_Bool, NSError *))arg1;
-- (void)checkForUpdatesWithConditions:(NSDictionary *)arg1 response:(void (^)(PBSOSUpdateDescriptor *, NSError *))arg2;
+- (void)checkForUpdatesWithOptions:(PBSOSUpdateScanOptions *)arg1 response:(void (^)(PBSOSUpdateDescriptor *, NSError *))arg2;
 - (void)checkForUpdateViaMDM;
 - (void)checkForUpdate;
 - (void)setAssetDownloadIsDiscretionary:(_Bool)arg1;

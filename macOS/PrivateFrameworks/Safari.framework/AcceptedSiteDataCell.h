@@ -20,11 +20,11 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) NSArray *descriptiveTextRows; // @synthesize descriptiveTextRows=_descriptiveTextRows;
 @property(copy, nonatomic) NSString *header; // @synthesize header=_header;
 - (void).cxx_destruct;
-- (BOOL)accessibilityIsAttributeSettable:(id)arg1;
-- (id)accessibilityAttributeValue:(id)arg1;
-- (id)accessibilityDescription;
-- (id)accessibilityAttributeNames;
-- (id)computeAccessibilityAttributeNames;
+- (id)accessibilityLabel;
+- (void)setAccessibilityLabel:(id)arg1;
+- (id)accessibilityRole;
+- (void)setAccessibilityRole:(id)arg1;
+- (id)_accessibilityDescription;
 - (void)drawWithFrame:(struct CGRect)arg1 inView:(id)arg2;
 
 @end

@@ -13,7 +13,7 @@
 - (void)actionSheetAssistant:(WKActionSheetAssistant *)arg1 shareElementWithURL:(NSURL *)arg2 rect:(struct CGRect)arg3;
 - (void)actionSheetAssistant:(WKActionSheetAssistant *)arg1 openElementAtLocation:(struct CGPoint)arg2;
 - (void)actionSheetAssistant:(WKActionSheetAssistant *)arg1 performAction:(int)arg2;
-- (optional_d8dc43b0)positionInformationForActionSheetAssistant:(WKActionSheetAssistant *)arg1;
+- (Optional_4c024558)positionInformationForActionSheetAssistant:(WKActionSheetAssistant *)arg1;
 
 @optional
 - (void)actionSheetAssistant:(WKActionSheetAssistant *)arg1 getAlternateURLForImage:(UIImage *)arg2 completion:(void (^)(NSURL *, NSDictionary *))arg3;
@@ -21,6 +21,7 @@
 - (NSDictionary *)dataDetectionContextForActionSheetAssistant:(WKActionSheetAssistant *)arg1;
 - (void)actionSheetAssistantDidStopInteraction:(WKActionSheetAssistant *)arg1;
 - (void)actionSheetAssistant:(WKActionSheetAssistant *)arg1 willStartInteractionWithElement:(_WKActivatedElementInfo *)arg2;
+- (struct CGRect)unoccludedWindowBoundsForActionSheetAssistant:(WKActionSheetAssistant *)arg1;
 - (void)updatePositionInformationForActionSheetAssistant:(WKActionSheetAssistant *)arg1;
 - (_Bool)actionSheetAssistant:(WKActionSheetAssistant *)arg1 showCustomSheetForElement:(_WKActivatedElementInfo *)arg2;
 @end

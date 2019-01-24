@@ -54,6 +54,7 @@
 - (void)selectFindOnPageText;
 - (void)dismissFindOnPage;
 - (void)prepareFindOnPageWithString:(id)arg1;
+- (void)prepareFindOnPage;
 - (void)_advance:(id)arg1;
 - (void)_dismiss:(id)arg1;
 - (void)deleteBackward;

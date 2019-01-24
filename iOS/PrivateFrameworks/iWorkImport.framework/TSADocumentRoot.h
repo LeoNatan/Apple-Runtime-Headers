@@ -74,7 +74,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) _Bool isClosed; // @synthesize isClosed=_isClosed;
 @property(copy, nonatomic) NSArray *buildVersionHistory; // @synthesize buildVersionHistory=_buildVersionHistory;
 - (void).cxx_destruct;
-- (_Bool)isMultiPageForQuickLook;
+@property(readonly, nonatomic) _Bool isMultiPageForQuickLook;
 - (_Bool)hasICloudConflict;
 - (id)commandForPropagatingPresetChangeCommand:(id)arg1 alwaysPreserveAppearance:(_Bool)arg2;
 - (id)readBuildVersionHistoryFromDiskHasPreUFFVersion:(_Bool)arg1;
@@ -84,6 +84,7 @@ __attribute__((visibility("hidden")))
 - (void)enumeratePencilAnnotationsFromRootObject:(id)arg1 usingBlock:(CDUnknownBlockType)arg2;
 - (void)enumeratePencilAnnotationsUsingBlock:(CDUnknownBlockType)arg1;
 - (id)pencilAnnotationEnumeratorFromRootObect:(id)arg1;
+- (double)currentDesiredPencilAnnotationDrawingScale;
 - (_Bool)hasPencilAnnotations;
 - (void)removePencilAnnotations;
 - (_Bool)childrenCanBeAnnotatedWithPencil;
@@ -155,6 +156,7 @@ __attribute__((visibility("hidden")))
 - (id)createViewStateRootForContinuation:(_Bool)arg1;
 - (void)p_updateViewStateWithRoot:(id)arg1;
 - (void)updateViewStateWithRoot:(id)arg1;
+- (void)applyViewState:(id)arg1;
 - (id)p_captureViewStateForImport:(_Bool)arg1;
 - (id)captureViewStateForImport;
 - (id)captureViewState;
@@ -179,10 +181,10 @@ __attribute__((visibility("hidden")))
 - (void)fulfillPasteboardPromises;
 - (id)additionalResourceRequestsForObjectContext:(id)arg1;
 - (id)additionalDocumentPropertiesForWrite;
-- (id)packageDataForWrite;
-- (void)saveToArchive:(struct DocumentArchive *)arg1 archiver:(id)arg2;
-- (void)loadFromArchive:(const struct DocumentArchive *)arg1 unarchiver:(id)arg2;
-- (void)stashUpgradeState:(const struct DocumentArchive *)arg1 unarchiver:(id)arg2;
+@property(readonly, nonatomic) NSDictionary *packageDataForWrite;
+-     // Error parsing type: v32@0:8^{DocumentArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSWP::TextPresetDisplayItemArchive>=^{Arena}ii^{Rep}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}^{DocumentArchive}^{Reference}^{Reference}^{Reference}^{Reference}^{Reference}^{Reference}^{Reference}^{Reference}BBB}16@24, name: saveToArchive:archiver:
+-     // Error parsing type: v32@0:8r^{DocumentArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSWP::TextPresetDisplayItemArchive>=^{Arena}ii^{Rep}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}^{DocumentArchive}^{Reference}^{Reference}^{Reference}^{Reference}^{Reference}^{Reference}^{Reference}^{Reference}BBB}16@24, name: loadFromArchive:unarchiver:
+-     // Error parsing type: v32@0:8r^{DocumentArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSWP::TextPresetDisplayItemArchive>=^{Arena}ii^{Rep}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}^{DocumentArchive}^{Reference}^{Reference}^{Reference}^{Reference}^{Reference}^{Reference}^{Reference}^{Reference}BBB}16@24, name: stashUpgradeState:unarchiver:
 - (id)upgradeState;
 - (void)collectDocumentCloseAnalyticsWithLogger:(id)arg1;
 - (void)collectDocumentOpenAnalyticsWithLogger:(id)arg1;

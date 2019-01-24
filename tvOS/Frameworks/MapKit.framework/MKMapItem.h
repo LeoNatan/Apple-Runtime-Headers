@@ -9,7 +9,7 @@
 #import <MapKit/GEOURLSerializable-Protocol.h>
 #import <MapKit/NSSecureCoding-Protocol.h>
 
-@class GEOAddress, GEOFeatureStyleAttributes, GEOMapItemDetourInfo, GEOMapItemStorage, GEOMapItemStorageUserValues, GEOMapRegion, GEOModuleLayoutEntry, GEOPDBusinessClaim, GEOPDFlyover, GEOPlace, MKMapItemIdentifier, MKMapItemMetadata, MKPlacemark, NSArray, NSData, NSNumber, NSNumberFormatter, NSString, NSTimeZone, NSURL, UIColor, _MKMapItemPhotosAttribution, _MKMapItemPlaceAttribution, _MKMapItemReviewsAttribution, _MKPlaceReservationInfo;
+@class GEOAddress, GEOBusinessHours, GEOFeatureStyleAttributes, GEOMapItemDetourInfo, GEOMapItemStorage, GEOMapItemStorageUserValues, GEOMapRegion, GEOModuleLayoutEntry, GEOPDBusinessClaim, GEOPDFlyover, GEOPlace, MKMapItemIdentifier, MKMapItemMetadata, MKPlacemark, NSArray, NSData, NSNumber, NSNumberFormatter, NSString, NSTimeZone, NSURL, UIColor, _MKMapItemPhotosAttribution, _MKMapItemPlaceAttribution, _MKMapItemReviewsAttribution, _MKPlaceReservationInfo;
 @protocol GEOAnnotatedItemList, GEOEncyclopedicInfo, GEOMapItem, GEOMapItemPrivate, GEOMapItemTransitInfo, GEOMapItemVenueInfo, GEOTransitAttribution, MKTransitInfoPreload, NSObject;
 
 @interface MKMapItem : NSObject <NSSecureCoding, GEOURLSerializable>
@@ -105,6 +105,8 @@
 @property(readonly, nonatomic, getter=_isMessageIDVerified) _Bool isMessageIDVerified;
 @property(readonly, nonatomic, getter=_messageURLString) NSString *messageURLString;
 @property(readonly, nonatomic, getter=_messageID) NSString *messageID;
+@property(readonly, nonatomic, getter=_brandMUID) unsigned long long brand;
+@property(readonly, nonatomic, getter=_hasBrandMUID) _Bool hasBrandMUID;
 @property(readonly, nonatomic, getter=_isStandAloneBrand) _Bool isStandAloneBrand;
 @property(readonly, nonatomic, getter=_parsecSectionType) int parsecSectionType;
 @property(readonly, nonatomic, getter=_isMapItemTypeBrand) _Bool isMapItemTypeBrand;
@@ -121,6 +123,10 @@
 @property(readonly, copy, nonatomic, getter=_providerURL) NSURL *providerURL;
 @property(readonly, copy, nonatomic, getter=_webURL) NSURL *webURL;
 @property(readonly, nonatomic, getter=_needsAttribution) _Bool needsAttribution;
+@property(readonly, nonatomic, getter=_linkedServices) NSArray *linkedServices;
+@property(readonly, nonatomic, getter=_hasLinkedServices) _Bool hasLinkedServices;
+@property(readonly, nonatomic, getter=_businessHours) NSArray *businessHours;
+@property(readonly, nonatomic, getter=_hasBusinessHours) _Bool hasBusinessHours;
 @property(readonly, nonatomic, getter=_alternativeAppAdamIds) NSArray *alternativeAppAdamIds;
 @property(readonly, nonatomic, getter=_preferedAppAdamID) NSNumber *preferedAppAdamID;
 - (id)venueLabelWithContext:(unsigned long long)arg1;
@@ -156,7 +162,7 @@
 @property(readonly, nonatomic, getter=_encyclopedicInfo) id <GEOEncyclopedicInfo> encyclopedicInfo;
 @property(readonly, nonatomic, getter=_hasEncyclopedicInfo) _Bool hasEncyclopedicInfo;
 @property(readonly, nonatomic, getter=_localizedResponseTime) NSString *localizedResponseTime;
-@property(readonly, nonatomic, getter=_messageBusinessHours) NSArray *messageBusinessHours;
+@property(readonly, nonatomic, getter=_messageBusinessHours) GEOBusinessHours *messageBusinessHours;
 - (id)_localizedNextOpeningStringShort:(_Bool)arg1;
 @property(readonly, nonatomic, getter=_hasLocalizedOperatingHours) _Bool hasLocalizedOperatingHours;
 @property(readonly, nonatomic, getter=_hasOperatingHours) _Bool hasOperatingHours;
@@ -221,6 +227,8 @@
 @property(copy, nonatomic) NSTimeZone *timeZone;
 @property(readonly, nonatomic, getter=_phoneNumberOptsOutOfAds) _Bool phoneNumberOptsOutOfAds;
 @property(copy, nonatomic) NSString *phoneNumber;
+@property(readonly, nonatomic, getter=_secondarySpokenName) NSString *secondarySpokenName;
+@property(readonly, nonatomic, getter=_secondaryName) NSString *secondaryName;
 @property(copy, nonatomic) NSString *name;
 @property(readonly, nonatomic) GEOMapItemStorageUserValues *userValues;
 @property(readonly, nonatomic, getter=_geoMapItemStorageForDragAndDrop) GEOMapItemStorage *geoMapItemStorageForDragAndDrop;

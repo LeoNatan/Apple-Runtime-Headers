@@ -7,6 +7,7 @@
 #import <Foundation/NSDictionary.h>
 
 @interface NSDictionary (AppleTVServices)
+- (id)tvs_dictionaryWithEntriesPassingTest:(CDUnknownBlockType)arg1;
 - (long long)tvs_appleTimingAppHeaderValue;
 - (id)tvs_dataForKey:(id)arg1;
 - (id)tvs_arrayForKey:(id)arg1;

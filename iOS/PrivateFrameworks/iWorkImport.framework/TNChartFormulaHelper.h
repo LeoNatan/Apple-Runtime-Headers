@@ -30,8 +30,9 @@ __attribute__((visibility("hidden")))
 - (id)p_rangeListsForFormulas:(id)arg1 byRow:(_Bool)arg2 resolveSpanning:(_Bool)arg3;
 - (id)p_rangeListsForFormula:(id)arg1 argumentIndexes:(id)arg2 byRow:(_Bool)arg3 resolveSpanning:(_Bool)arg4;
 - (void)p_rangeListsForFormula:(id)arg1 argumentIndexes:(id)arg2 byRow:(_Bool)arg3 resolveSpanning:(_Bool)arg4 orderedListOfOwnerIDs:(id)arg5 ownerIDToRangeList:(id)arg6;
-- (id)chartFormulaByAppendingCategoryReferences:(vector_2431c21e)arg1 toFormula:(id)arg2 andLocale:(id)arg3;
-- (id)chartFormulaByAppendingRangeReference:(struct TSCERangeRef)arg1 toFormula:(id)arg2 andLocale:(id)arg3;
+- (id)chartFormulaByAppendingCategoryReferences:(vector_2431c21e)arg1 toFormula:(id)arg2;
+- (id)chartFormulaByAppendingTractReference:(id)arg1 toFormula:(id)arg2;
+- (id)chartFormulaByAppendingRangeReference:(struct TSCERangeRef)arg1 toFormula:(id)arg2;
 - (_Bool)p_hasOneValuePerSeries;
 - (id)formulaStorageTransformTable:(UUIDData_5fbc143e)arg1 toLevel:(unsigned char)arg2;
 - (id)formulaStorageForChartGridDirection:(int)arg1;

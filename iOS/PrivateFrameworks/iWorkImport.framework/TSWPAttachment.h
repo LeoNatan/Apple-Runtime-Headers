@@ -21,7 +21,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)allocWithZone:(struct _NSZone *)arg1;
-+ (int)attributeArrayKind;
++ (unsigned long long)attributeArrayKind;
 @property(nonatomic) __weak TSWPStorage *parentStorage; // @synthesize parentStorage=_parentStorage;
 - (void).cxx_destruct;
 - (_Bool)preserveAttributesOverSelectionWhenInserting;

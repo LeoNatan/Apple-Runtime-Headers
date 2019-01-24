@@ -13,7 +13,7 @@
 __attribute__((visibility("hidden")))
 @interface WebCoreFPSContentKeySessionDelegate : NSObject <AVContentKeySessionDelegate>
 {
-    struct CDMInstanceFairPlayStreamingAVFObjC *_parent;
+    struct CDMInstanceSessionFairPlayStreamingAVFObjC *_parent;
 }
 
 - (void)contentKeySessionContentProtectionSessionIdentifierDidChange:(id)arg1;
@@ -25,7 +25,7 @@ __attribute__((visibility("hidden")))
 - (void)contentKeySession:(id)arg1 didProvideRenewingContentKeyRequest:(id)arg2;
 - (void)contentKeySession:(id)arg1 didProvideContentKeyRequest:(id)arg2;
 - (void)invalidate;
-- (id)initWithParent:(struct CDMInstanceFairPlayStreamingAVFObjC *)arg1;
+- (id)initWithParent:(struct CDMInstanceSessionFairPlayStreamingAVFObjC *)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

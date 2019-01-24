@@ -7,7 +7,7 @@
 #import <objc/NSObject.h>
 
 @class NSString;
-@protocol FudConnection, MobileAccessoryUpdaterDelegate, OS_dispatch_queue;
+@protocol FudConnection, MobileAccessoryUpdaterDelegate, OS_dispatch_queue, OS_dispatch_queue_attr;
 
 @interface MobileAccessoryUpdater : NSObject
 {
@@ -18,6 +18,7 @@
     char *_cClientIdentifier;
     NSObject<OS_dispatch_queue> *_sessionQueue;
     NSObject<OS_dispatch_queue> *_callbackQueue;
+    NSObject<OS_dispatch_queue_attr> *_attr;
     NSString *_activeFilter;
     BOOL _isInternalClient;
     BOOL _didUnregister;
@@ -31,6 +32,7 @@
 - (BOOL)setLastRemoteFindDate:(id)arg1;
 - (void)performNextStepWithOptions:(id)arg1;
 - (void)performStep:(id)arg1 withOptions:(id)arg2;
+- (void)doneWithOptions:(id)arg1;
 - (const char *)getActiveDeviceClassCString;
 - (id)getActiveDeviceClass;
 - (BOOL)setActiveDeviceClass:(id)arg1;

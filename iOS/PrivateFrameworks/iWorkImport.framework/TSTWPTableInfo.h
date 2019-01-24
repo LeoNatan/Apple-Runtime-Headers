@@ -4,15 +4,15 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <iWorkImport/TSTInfo.h>
+#import <iWorkImport/TSTTableInfo.h>
 
 __attribute__((visibility("hidden")))
-@interface TSTWPTableInfo : TSTInfo
+@interface TSTWPTableInfo : TSTTableInfo
 {
 }
 
 - (void)loadFromUnarchiver:(id)arg1;
-- (void)loadFromArchive:(const struct WPTableInfoArchive *)arg1 unarchiver:(id)arg2;
+-     // Error parsing type: v32@0:8r^{WPTableInfoArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{TableInfoArchive}^{Reference}}16@24, name: loadFromArchive:unarchiver:
 
 @end
 

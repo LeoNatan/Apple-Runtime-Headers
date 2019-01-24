@@ -8,7 +8,7 @@
 
 #import <PassKitUI/PKPeerPaymentContactResolverDelegate-Protocol.h>
 
-@class NSString, PKPaymentPass, PKPaymentTransaction, PKPeerPaymentContactResolver, PKStackedTextItemGroup, PKStackedTextItemGroupView, PKTransitPassProperties, UIImageView;
+@class NSString, PKPaymentPass, PKPaymentTransaction, PKPeerPaymentContactResolver, PKStackedTextItemGroup, PKStackedTextItemGroupView, PKTransitBalanceModel, UIImageView;
 
 @interface PKFooterTransactionView : UIView <PKPeerPaymentContactResolverDelegate>
 {
@@ -22,20 +22,21 @@
     _Bool _needsContentUpdate;
     PKPaymentPass *_pass;
     PKPaymentTransaction *_transaction;
-    PKTransitPassProperties *_transitProperties;
+    PKTransitBalanceModel *_transitBalanceModel;
     PKPeerPaymentContactResolver *_peerPaymentContactResolver;
 }
 
 @property(readonly, nonatomic) PKPeerPaymentContactResolver *peerPaymentContactResolver; // @synthesize peerPaymentContactResolver=_peerPaymentContactResolver;
-@property(readonly, nonatomic) PKTransitPassProperties *transitProperties; // @synthesize transitProperties=_transitProperties;
+@property(copy, nonatomic) PKTransitBalanceModel *transitBalanceModel; // @synthesize transitBalanceModel=_transitBalanceModel;
 @property(readonly, nonatomic) PKPaymentTransaction *transaction; // @synthesize transaction=_transaction;
 @property(readonly, nonatomic) PKPaymentPass *pass; // @synthesize pass=_pass;
 - (void).cxx_destruct;
+- (void)traitCollectionDidChange:(id)arg1;
 - (void)contactsDidChangeForContactResolver:(id)arg1;
 @property(readonly, nonatomic) _Bool hasContent;
 - (void)endUpdates:(_Bool)arg1;
 - (void)beginUpdates;
-- (void)setTransitProperties:(id)arg1 animated:(_Bool)arg2;
+- (void)setTransitBalanceModel:(id)arg1 animated:(_Bool)arg2;
 - (void)setTransaction:(id)arg1 animated:(_Bool)arg2;
 - (void)setPass:(id)arg1 animated:(_Bool)arg2;
 - (id)_image;

@@ -6,16 +6,18 @@
 
 #import <objc/NSObject.h>
 
-@class ACHActivitySummaryUtility, ACHWorkoutUtility;
+@class ACHActivitySummaryUtility, ACHWorkoutUtility, HDDatabaseTransactionContext;
 
 @interface ACHMonthlyChallengeDataSource : NSObject
 {
+    HDDatabaseTransactionContext *_databaseContext;
     ACHWorkoutUtility *_workoutUtility;
     ACHActivitySummaryUtility *_activitySummaryUtility;
 }
 
 @property(nonatomic) __weak ACHActivitySummaryUtility *activitySummaryUtility; // @synthesize activitySummaryUtility=_activitySummaryUtility;
 @property(nonatomic) __weak ACHWorkoutUtility *workoutUtility; // @synthesize workoutUtility=_workoutUtility;
+@property(nonatomic) __weak HDDatabaseTransactionContext *databaseContext; // @synthesize databaseContext=_databaseContext;
 - (void).cxx_destruct;
 - (int)numberOfWorkoutsCompletedDuringDateInterval:(id)arg1;
 - (int)numberOfDaysDoublingMoveGoalDuringDateComponentInterval:(id)arg1;

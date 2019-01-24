@@ -17,6 +17,7 @@
     NSString *_DSID;
     NSString *_userStoreFrontID;
     NSString *_contentStoreFrontID;
+    NSString *_primaryLanguageCode;
     NSString *_overrideContentStoreFrontID;
 }
 
@@ -24,6 +25,7 @@
 + (void)enableStoreFrontLocking;
 @property(copy, nonatomic) NSString *overrideContentStoreFrontID; // @synthesize overrideContentStoreFrontID=_overrideContentStoreFrontID;
 @property(nonatomic) _Bool iCloudAccountChanged; // @synthesize iCloudAccountChanged=_iCloudAccountChanged;
+@property(copy, nonatomic) NSString *primaryLanguageCode; // @synthesize primaryLanguageCode=_primaryLanguageCode;
 @property(copy, nonatomic) NSString *contentStoreFrontID; // @synthesize contentStoreFrontID=_contentStoreFrontID;
 @property(copy, nonatomic) NSString *userStoreFrontID; // @synthesize userStoreFrontID=_userStoreFrontID;
 @property(copy, nonatomic) NSString *DSID; // @synthesize DSID=_DSID;
@@ -47,7 +49,6 @@
 @property(readonly, nonatomic, getter=isPrivateDataSyncingEnabled) _Bool privateDataSyncingEnabled;
 - (void)_loadStoreFrontIfNeededWithCallbackAndAccessQueue:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)loadStoreFrontIfNeeded;
-- (void)loadStoreFrontIfNeededWithCompletion:(CDUnknownBlockType)arg1;
 - (id)init;
 
 // Remaining properties

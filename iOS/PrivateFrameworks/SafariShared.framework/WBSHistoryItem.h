@@ -42,12 +42,6 @@
 @property(nonatomic) long long databaseID; // @synthesize databaseID=_databaseID;
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (Vector_23cb8338)_timesForVisits:(unsigned long long)arg1 toSynthesizeBetweenStartTime:(double)arg2 endTime:(double)arg3;
-- (Vector_23cb8338)_timesForSynthesizedVisitsPreceedingDailyAndWeeklyRange:(unsigned long long)arg1;
-- (Vector_23cb8338)_timesOfVisitsToSynthesizeFromDailyCounts:(const Vector_3b5d2a9f *)arg1 weeklyCounts:(const Vector_3b5d2a9f *)arg2;
-- (void)recordSynthesizedRedirectFrom:(id)arg1 to:(id)arg2;
-- (void)recordExistingRedirectFrom:(id)arg1 to:(id)arg2;
-- (long long)compareWithItemByLastVisitedTimeInterval:(id)arg1;
 - (void)recomputeDerivedVisitCountScoresWithVisits:(id)arg1;
 @property(readonly, nonatomic) NSData *autocompleteTriggersDataOnSynchronizationQueue;
 @property(readonly, nonatomic) NSData *weeklyVisitCountScoresDataOnSynchronizationQueue;
@@ -74,7 +68,6 @@
 @property(readonly, nonatomic) WBSHistoryItem *lastVisitRedirectDestinationItem;
 - (void)addRedirectSourceItemFromSynchronizationQueue:(id)arg1;
 @property(readonly, nonatomic) NSArray *redirectSourceItems;
-@property(readonly, nonatomic) NSString *stringForUserTypedDomainExpansionOnSynchronizationQueue;
 @property(readonly, nonatomic) NSString *stringForUserTypedDomainExpansion;
 @property(readonly, nonatomic) _Bool lastVisitWasHTTPNonGet;
 @property(nonatomic) _Bool lastVisitWasFailure;
@@ -88,14 +81,11 @@
 @property(readonly, nonatomic) double lastVisitedTimeInterval;
 @property(readonly, nonatomic) WBSHistoryVisit *lastVisitOnSynchronizationQueue;
 @property(readonly, nonatomic) WBSHistoryVisit *lastVisit;
-@property(readonly, nonatomic) NSString *simplifiedUserVisibleURLString;
 @property(readonly, nonatomic) NSString *userVisibleURLString; // @synthesize userVisibleURLString=_userVisibleURLString;
-@property(readonly, nonatomic) NSURL *urlOnSynchronizationQueue;
 @property(readonly, nonatomic) NSURL *url; // @synthesize url=_url;
 @property(copy, nonatomic) NSString *title;
 - (id)initWithSQLiteRow:(id)arg1;
 - (id)initWithURLString:(id)arg1;
-- (id)initWithDictionaryRepresentation:(id)arg1;
 
 @end
 

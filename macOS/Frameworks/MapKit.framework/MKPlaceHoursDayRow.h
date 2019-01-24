@@ -6,24 +6,19 @@
 
 #import <MapKit/MKPlaceSectionRowView.h>
 
-@class NSArray, NSColor, NSLayoutConstraint;
+@class MKPlaceHoursView;
 
 @interface MKPlaceHoursDayRow : MKPlaceSectionRowView
 {
-    NSArray *_labels;
-    NSLayoutConstraint *_baselineToTop;
-    NSArray *_baselineToBaselineConstraints;
-    NSArray *_baselineToBottomConstraints;
-    NSColor *_openingStateColor;
+    MKPlaceHoursView *_hoursView;
 }
 
-@property(retain, nonatomic) NSColor *openingStateColor; // @synthesize openingStateColor=_openingStateColor;
+@property(retain, nonatomic) MKPlaceHoursView *hoursView; // @synthesize hoursView=_hoursView;
 - (void).cxx_destruct;
-- (void)_contentSizeDidChange;
-- (void)setDays:(id)arg1 hours:(id)arg2 shouldStack:(BOOL)arg3 isViewControllerExpanding:(BOOL)arg4 shouldCollapseFurther:(BOOL)arg5;
-- (id)_standardLabel;
-- (BOOL)wantsDefaultClipping;
-- (id)initWithFrame:(struct CGRect)arg1;
+- (void)_setUpConstraints;
+- (void)_setUpViewsForPlaceHoursDayRow;
+- (id)initWithBusinessHours:(id)arg1 frame:(struct CGRect)arg2;
+- (id)initWithPlaceDailyHours:(id)arg1 frame:(struct CGRect)arg2;
 
 @end
 

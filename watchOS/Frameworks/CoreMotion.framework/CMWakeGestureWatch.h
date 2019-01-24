@@ -20,6 +20,7 @@
     NSObject<OS_dispatch_queue> *fPrivateQueue;
     struct unique_ptr<CMWakeGestureVisitor, std::__1::default_delete<CMWakeGestureVisitor>> fWakeGestureVisitor;
     int fScreenDimmingNotificationToken;
+    int fSelector;
 }
 
 - (id).cxx_construct;
@@ -36,6 +37,7 @@
 - (void)setWrist:(int)arg1;
 - (void)dealloc;
 - (void)createGestureDispatcherIfNecessary;
+- (void)setDelegate:(id)arg1;
 - (id)init;
 
 @end

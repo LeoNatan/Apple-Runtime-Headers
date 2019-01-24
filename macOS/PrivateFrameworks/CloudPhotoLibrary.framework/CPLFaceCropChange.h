@@ -16,7 +16,6 @@
     NSString *_rejectedPersonIdentifier;
 }
 
-+ (id)ckAssetProperties;
 @property(copy, nonatomic) NSString *rejectedPersonIdentifier; // @synthesize rejectedPersonIdentifier=_rejectedPersonIdentifier;
 @property(nonatomic) long long faceCropType; // @synthesize faceCropType=_faceCropType;
 @property(copy, nonatomic) NSData *resourceData; // @synthesize resourceData=_resourceData;
@@ -31,9 +30,6 @@
 - (id)personScopedIdentifier;
 - (BOOL)supportsDirectDeletion;
 - (BOOL)supportsDeletion;
-- (void)fillMissingCKAssetProperties:(id)arg1 withCKRecord:(id)arg2;
-- (id)initWithCKRecord:(id)arg1 scopeIdentifier:(id)arg2 ckAssetProperties:(id)arg3;
-- (BOOL)fillCKRecord:(id)arg1 withRecordMap:(id)arg2 scopeProvider:(id)arg3 tempCKAssetURL:(id)arg4 error:(id *)arg5;
 
 @end
 

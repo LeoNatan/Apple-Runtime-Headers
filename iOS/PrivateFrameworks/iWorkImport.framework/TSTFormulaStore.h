@@ -17,6 +17,8 @@ __attribute__((visibility("hidden")))
     unsigned long long _nextIndex;
 }
 
++ (UUIDData_5fbc143e)tableUIDFromFormula:(const struct TSCEFormula *)arg1 atCoord:(const struct TSUModelCellCoord *)arg2;
++ (struct TSUModelCellRect)rangeFromFormula:(const struct TSCEFormula *)arg1 atCoord:(const struct TSUModelCellCoord *)arg2 useBoundingRange:(_Bool)arg3;
 + (struct TSUModelCellRect)rangeFromFormula:(const struct TSCEFormula *)arg1 atCoord:(const struct TSUModelCellCoord *)arg2;
 + (struct TSUCellCoord)coordFromIndex:(unsigned long long)arg1;
 + (unsigned long long)indexFromCoord:(const struct TSUCellCoord *)arg1;
@@ -24,10 +26,11 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) UUIDData_5fbc143e formulaOwnerUID; // @synthesize formulaOwnerUID=_formulaOwnerUID;
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (void)saveToArchive:(struct FormulaStoreArchive *)arg1 archiver:(id)arg2;
-- (id)initWithOwnerUID:(const UUIDData_5fbc143e *)arg1 archive:(const struct FormulaStoreArchive *)arg2 unarchiver:(id)arg3;
+-     // Error parsing type: v32@0:8^{FormulaStoreArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TST::FormulaStoreArchive_FormulaStorePair>=^{Arena}ii^{Rep}}I}16@24, name: saveToArchive:archiver:
+-     // Error parsing type: @40@0:8r^{UUIDData<TSP::UUIDData>=(?=[16C]{?=CCCCCCCCCCCCCCCC}{?=QQ})}16r^{FormulaStoreArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TST::FormulaStoreArchive_FormulaStorePair>=^{Arena}ii^{Rep}}I}24@32, name: initWithOwnerUID:archive:unarchiver:
 - (void)remapRangeFormulasToOwnerUID:(const UUIDData_5fbc143e *)arg1;
-- (struct TSUModelCellRect)rangeFromFormulaAtIndex:(unsigned long long)arg1;
+- (UUIDData_5fbc143e)tableUIDFromFormulaAtIndex:(unsigned long long)arg1;
+- (struct TSUModelCellRect)rangeFromFormulaAtIndex:(unsigned long long)arg1 useBoundingRange:(_Bool)arg2;
 - (struct TSCEFormula)createFormulaForRange:(struct TSUModelCellRect)arg1 atIndex:(unsigned long long)arg2 tableUID:(const UUIDData_5fbc143e *)arg3;
 - (void)foreach:(CDUnknownBlockType)arg1;
 - (const struct TSCEFormula *)formulaAtIndex:(unsigned long long)arg1;

@@ -8,7 +8,7 @@
 
 #import <NewsCore/FCHeadlineStocksFields-Protocol.h>
 
-@class COMAPPLEFELDSPARPROTOCOLLIVERPOOLCohort, FCCoverArt, FCHeadlineExperimentalTitleMetadata, FCHeadlineThumbnail, FCInterestToken, FCTopStoriesStyleConfiguration, NSArray, NSDate, NSString, NSURL, NTPBArticleRecord;
+@class COMAPPLEFELDSPARPROTOCOLLIVERPOOLCohortList, FCCoverArt, FCHeadlineExperimentalTitleMetadata, FCHeadlineThumbnail, FCInterestToken, FCIssue, FCTopStoriesStyleConfiguration, NSArray, NSDate, NSString, NSURL, NTPBArticleRecord;
 @protocol FCChannelProviding;
 
 @interface FCArticleHeadline : FCHeadline <FCHeadlineStocksFields>
@@ -25,8 +25,11 @@
     _Bool _pressRelease;
     _Bool _hiddenFromAutoFavorites;
     _Bool _webEmbedsEnabled;
+    _Bool _issueOnly;
     _Bool _paid;
+    _Bool _bundlePaid;
     _Bool _canBePurchased;
+    _Bool _showBundleSoftPaywall;
     NSString *_versionIdentifier;
     NSString *_identifier;
     NSString *_articleID;
@@ -57,8 +60,8 @@
     NSDate *_lastFetchedDate;
     NSArray *_topics;
     NSArray *_topicIDs;
-    COMAPPLEFELDSPARPROTOCOLLIVERPOOLCohort *_globalCohort;
-    COMAPPLEFELDSPARPROTOCOLLIVERPOOLCohort *_publisherCohort;
+    COMAPPLEFELDSPARPROTOCOLLIVERPOOLCohortList *_globalCohorts;
+    COMAPPLEFELDSPARPROTOCOLLIVERPOOLCohortList *_publisherCohorts;
     NSURL *_videoURL;
     double _videoDuration;
     NSArray *_iAdCategories;
@@ -68,12 +71,15 @@
     NSArray *_allowedStorefrontIDs;
     NSArray *_relatedArticleIDs;
     NSArray *_moreFromPublisherArticleIDs;
+    FCIssue *_masterIssue;
     unsigned long long _storyType;
     FCTopStoriesStyleConfiguration *_storyStyle;
     long long _minimumNewsVersion;
     FCCoverArt *_coverArt;
     NSString *_videoCallToActionTitle;
     NSURL *_videoCallToActionURL;
+    NSString *_language;
+    unsigned long long _role;
     NTPBArticleRecord *_articleRecord;
     FCInterestToken *_articleInterestToken;
     long long _behaviorFlags;
@@ -85,12 +91,19 @@
 @property(nonatomic) long long behaviorFlags; // @synthesize behaviorFlags=_behaviorFlags;
 @property(retain, nonatomic) FCInterestToken *articleInterestToken; // @synthesize articleInterestToken=_articleInterestToken;
 @property(retain, nonatomic) NTPBArticleRecord *articleRecord; // @synthesize articleRecord=_articleRecord;
+- (_Bool)showBundleSoftPaywall;
+- (void)setRole:(unsigned long long)arg1;
+- (unsigned long long)role;
+- (id)language;
 - (_Bool)canBePurchased;
 - (id)videoCallToActionURL;
 - (id)videoCallToActionTitle;
 - (id)coverArt;
+- (void)setBundlePaid:(_Bool)arg1;
+- (_Bool)isBundlePaid;
 - (void)setPaid:(_Bool)arg1;
 - (_Bool)isPaid;
+- (_Bool)isIssueOnly;
 - (_Bool)webEmbedsEnabled;
 - (long long)minimumNewsVersion;
 - (_Bool)isHiddenFromAutoFavorites;
@@ -103,6 +116,7 @@
 - (id)storyStyle;
 - (void)setStoryType:(unsigned long long)arg1;
 - (unsigned long long)storyType;
+- (id)masterIssue;
 - (id)moreFromPublisherArticleIDs;
 - (id)relatedArticleIDs;
 - (_Bool)isFeatureCandidate;
@@ -118,8 +132,8 @@
 - (_Bool)isSponsored;
 - (double)videoDuration;
 - (id)videoURL;
-- (id)publisherCohort;
-- (id)globalCohort;
+- (id)publisherCohorts;
+- (id)globalCohorts;
 - (void)setTopicIDs:(id)arg1;
 - (id)topicIDs;
 - (id)topics;
@@ -179,10 +193,9 @@
 - (id)publisherSpecifiedArticleIDs;
 - (id)articleRecirculationConfigJSON;
 - (id)backingArticleRecordData;
-- (id)endOfArticleTopicIDs;
 - (id)contentManifestWithContext:(id)arg1;
-- (id)initWithArticleRecordData:(id)arg1 sourceChannel:(id)arg2 assetManager:(id)arg3;
-- (id)initWithArticleRecord:(id)arg1 articleInterestToken:(id)arg2 sourceChannel:(id)arg3 storyStyleConfigs:(id)arg4 storyTypeTimeout:(long long)arg5 rapidUpdatesTimeout:(long long)arg6 assetManager:(id)arg7 experimentalTitleProvider:(id)arg8;
+- (id)initWithArticleRecordData:(id)arg1 sourceChannel:(id)arg2 masterIssue:(id)arg3 assetManager:(id)arg4;
+- (id)initWithArticleRecord:(id)arg1 articleInterestToken:(id)arg2 sourceChannel:(id)arg3 masterIssue:(id)arg4 storyStyleConfigs:(id)arg5 storyTypeTimeout:(long long)arg6 rapidUpdatesTimeout:(long long)arg7 assetManager:(id)arg8 experimentalTitleProvider:(id)arg9;
 - (id)init;
 
 @end

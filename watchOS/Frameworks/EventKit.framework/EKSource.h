@@ -78,6 +78,7 @@
 @property(nonatomic) _Bool allowsEvents;
 @property(nonatomic) _Bool allowsTasks;
 @property(nonatomic, getter=isEnabled) _Bool enabled;
+- (void)setDisabled:(_Bool)arg1;
 - (_Bool)disabled;
 @property(nonatomic) _Bool usesSelfAttendee;
 @property(nonatomic) _Bool wasMigrated;

@@ -6,19 +6,15 @@
 
 #import <objc/NSObject.h>
 
-@class CADisplayLink, CMMotionManager, NSMutableArray;
+@class CMMotionManager, NSHashTable;
 
 @interface PKMotionManager : NSObject
 {
     CMMotionManager *_motion;
-    NSMutableArray *_clients;
-    // Error parsing type: , name: _currentRollPitch
-    union _GLKQuaternion _restingQuaternion;
-    CADisplayLink *_displayLink;
-    CDUnknownBlockType _rollPitchForDeviceMotionHandler;
+    NSHashTable *_clients;
 }
 
-@property(copy, nonatomic) CDUnknownBlockType rollPitchForDeviceMotionHandler; // @synthesize rollPitchForDeviceMotionHandler=_rollPitchForDeviceMotionHandler;
++ (id)sharedManager;
 - (void).cxx_destruct;
 - (_Bool)isClientRegistered:(id)arg1;
 - (void)unregisterClient:(id)arg1;

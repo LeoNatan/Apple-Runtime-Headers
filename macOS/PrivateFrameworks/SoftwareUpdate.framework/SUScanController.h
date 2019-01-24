@@ -6,13 +6,14 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, NSDate, NSError, NSMutableArray, NSMutableDictionary, NSURL, SUScan;
+@class NSArray, NSDate, NSError, NSMutableArray, NSMutableDictionary, NSMutableSet, NSURL, SUScan;
 @protocol OS_dispatch_queue, OS_os_activity;
 
 @interface SUScanController : NSObject
 {
     NSObject<OS_os_activity> *_activity;
     NSMutableArray *_availableProducts;
+    NSMutableSet *_productsIneligibleForCleanup;
     NSMutableDictionary *_productByKey;
     NSURL *_catalogURLFromPrefs;
     NSURL *_appleCatalogURLFromPrefs;
@@ -38,6 +39,7 @@
 - (void)_handleDeferredInstallSettingsDidChangeNotification:(id)arg1;
 - (void)populateTagCache:(CDUnknownBlockType)arg1;
 - (void)removeInapplicableLocalProducts;
+- (void)setProductIneligibleForCleanup:(id)arg1;
 - (void)clearAllHidden;
 - (void)setScanDisabled:(BOOL)arg1;
 - (void)setHidden:(BOOL)arg1 forProductKeys:(id)arg2;

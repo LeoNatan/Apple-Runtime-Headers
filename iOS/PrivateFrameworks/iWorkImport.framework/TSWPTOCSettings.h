@@ -38,9 +38,9 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) NSSet *paragraphStylesShownInTOC;
 @property(readonly, nonatomic) NSSet *indexedStyles;
 - (void)saveToArchiver:(id)arg1;
-- (void)saveToArchive:(struct TOCSettingsArchive *)arg1 archiver:(id)arg2;
+-     // Error parsing type: v32@0:8^{TOCSettingsArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSWP::TOCSettingsArchive_TOCEntryData>=^{Arena}ii^{Rep}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}I}16@24, name: saveToArchive:archiver:
 - (void)loadFromUnarchiver:(id)arg1;
-- (void)loadFromArchive:(const struct TOCSettingsArchive *)arg1 unarchiver:(id)arg2;
+-     // Error parsing type: v32@0:8r^{TOCSettingsArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSWP::TOCSettingsArchive_TOCEntryData>=^{Arena}ii^{Rep}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}I}16@24, name: loadFromArchive:unarchiver:
 @property(readonly, nonatomic) NSString *presetKind;
 - (id)copyUsingDeepCopy;
 - (id)copyWithContext:(id)arg1;

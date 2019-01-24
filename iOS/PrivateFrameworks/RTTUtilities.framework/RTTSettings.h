@@ -25,6 +25,7 @@
 @property(nonatomic) _Bool internalOverrideTTYAvailability;
 - (void)resetCannedResponses;
 @property(retain, nonatomic) NSArray *cannedResponses;
+@property(nonatomic) _Bool continuityRTTIsSupported;
 @property(nonatomic) _Bool hasReceivedRTTCall;
 - (void)setPreferredRelayNumber:(id)arg1 forContext:(id)arg2;
 - (id)preferredRelayNumberForContext:(id)arg1;
@@ -57,6 +58,7 @@
 - (void)_setValue:(id)arg1 forPreferenceKey:(id)arg2;
 - (void)_setValue:(id)arg1 forPreferenceKey:(id)arg2 andContext:(id)arg3;
 - (void)updateGizmoValueIfNeeded:(id)arg1 forPreferenceKey:(id)arg2;
+- (id)uuidFromContext:(id)arg1;
 - (void)registerUpdateBlock:(CDUnknownBlockType)arg1 forRetrieveSelector:(SEL)arg2 withListener:(id)arg3;
 - (id)notificationForSelector:(SEL)arg1;
 - (void)_registerForNotification:(id)arg1;

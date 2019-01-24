@@ -14,6 +14,7 @@
 #import <XCTest/XCUIScreenshotProviding-Protocol.h>
 
 @class NSString, XCElementSnapshot, XCTLocalizableStringInfo, XCUIApplication, XCUICoordinate, XCUIElementQuery;
+@protocol XCUIDevice;
 
 @interface XCUIElement : NSObject <XCUIScreenshotProviding, XCUIElementSnapshotProviding, XCTNSPredicateExpectationObject, XCUIElementAttributesPrivate, XCUIElementAttributes, XCUIElementTypeQueryProvider>
 {
@@ -23,6 +24,7 @@
 }
 
 + (id)standardAttributeNames;
++ (_Bool)_dispatchEventWithEventBuilder:(CDUnknownBlockType)arg1 eventSynthesizer:(id)arg2 inContext:(id)arg3 withSnapshot:(id)arg4 applicationSnapshot:(id)arg5 process:(id)arg6 error:(id *)arg7;
 + (_Bool)_isInvalidEventDuration:(double)arg1;
 @property _Bool safeQueryResolutionEnabled; // @synthesize safeQueryResolutionEnabled=_safeQueryResolutionEnabled;
 @property(retain) XCElementSnapshot *lastSnapshot; // @synthesize lastSnapshot=_lastSnapshot;
@@ -79,6 +81,7 @@
 @property(readonly, copy) XCUIElementQuery *sliders;
 @property(readonly, copy) XCUIElementQuery *collectionViews;
 @property(readonly, copy) XCUIElementQuery *browsers;
+- (id)disclosedChildRows;
 @property(readonly, copy) XCUIElementQuery *outlineRows;
 @property(readonly, copy) XCUIElementQuery *outlines;
 @property(readonly, copy) XCUIElementQuery *tableColumns;
@@ -111,6 +114,8 @@
 @property(readonly, copy) XCUIElementQuery *touchBars;
 - (id)coordinateWithNormalizedOffset:(struct CGVector)arg1;
 @property(readonly, copy) XCUICoordinate *hitPointCoordinate;
+- (id)valueForAccessibilityAttribute:(id)arg1 error:(id *)arg2;
+- (id)valuesForAccessibilityAttributes:(id)arg1 error:(id *)arg2;
 @property(readonly) _Bool isTopLevelTouchBarElement;
 @property(readonly) _Bool isTouchBarElement;
 @property(readonly, getter=isHittable) _Bool hittable;
@@ -131,7 +136,10 @@
 @property(readonly) id value;
 - (_Bool)resolveHandleUIInterruption:(_Bool)arg1 error:(id *)arg2;
 - (void)resolveHandleUIInterruption:(_Bool)arg1;
+- (_Bool)resolve:(id *)arg1;
 - (void)resolve;
+- (_Bool)waitForNonExistenceWithTimeout:(double)arg1;
+- (id)makeNonExistenceExpectation;
 - (_Bool)waitForExistenceWithTimeout:(double)arg1;
 - (_Bool)_waitForExistenceWithTimeout:(double)arg1;
 - (_Bool)evaluatePredicateForExpectation:(id)arg1 debugMessage:(id *)arg2;
@@ -141,16 +149,17 @@
 - (id)childrenMatchingType:(unsigned long long)arg1;
 - (id)descendantsMatchingType:(unsigned long long)arg1;
 @property(readonly) _Bool exists;
+@property(readonly) id <XCUIDevice> device;
 @property(readonly, nonatomic) XCUIApplication *application;
 @property(readonly, copy) NSString *description;
-- (id)elementBoundByAccessibilityElement;
+@property(readonly, copy) XCUIElement *elementBoundByAccessibilityElement;
 - (id)initWithElementQuery:(id)arg1;
 - (id)screenshot;
 - (id)_screen;
 - (id)snapshotWithError:(id *)arg1;
 - (_Bool)_shouldDispatchEvent:(id *)arg1;
-- (void)_dispatchEvent:(id)arg1 block:(CDUnknownBlockType)arg2;
-- (_Bool)_dispatchEvent:(CDUnknownBlockType)arg1 error:(id *)arg2;
+- (void)_dispatchEvent:(id)arg1 eventBuilder:(CDUnknownBlockType)arg2;
+- (_Bool)_dispatchEventWithEventBuilder:(CDUnknownBlockType)arg1 error:(id *)arg2;
 - (void)typeText:(id)arg1;
 - (void)rotate:(double)arg1 withVelocity:(double)arg2;
 - (void)pinchWithScale:(double)arg1 velocity:(double)arg2;

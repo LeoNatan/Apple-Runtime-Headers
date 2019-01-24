@@ -35,6 +35,7 @@ __attribute__((visibility("hidden")))
 - (id)_createPageView:(id)arg1;
 - (void)enableTextSelectionHandles;
 - (void)clearTextSelectionHandles;
+- (id)pageBackgroundManager;
 - (void)forceUpdateActivePageIndex:(unsigned long long)arg1 withMaxDuration:(double)arg2;
 - (void)willForceUpdate;
 - (void)previewRotateShiftPages:(double)arg1;

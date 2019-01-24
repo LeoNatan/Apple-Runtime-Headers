@@ -24,7 +24,7 @@ __attribute__((visibility("hidden")))
     vector_adb99b2c _references;
     vector_cc556b2d _repeatedReferences;
     vector_3c415888 _finalizeHandlers;
-    struct FieldPath *_currentFieldPath;
+    // Error parsing type: ^{FieldPath=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedField<unsigned int>=ii(Pointer=^{Arena}^{Rep})}i}, name: _currentFieldPath
 }
 
 @property(readonly, nonatomic) __weak id <TSPUnarchiverDelegate> delegate; // @synthesize delegate=_delegate;
@@ -35,7 +35,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) unsigned int messageType; // @synthesize messageType=_messageType;
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (void)readRepeatedLazyReferenceMessage:(const RepeatedPtrField_a0d2dbe7 *)arg1 ownershipMode:(long long)arg2 validateStrongReferences:(_Bool)arg3 allowUnknownObject:(_Bool)arg4 selector:(SEL)arg5 completion:(CDUnknownBlockType)arg6;
+- (void)readRepeatedLazyReferenceMessage:(const RepeatedPtrField_54b3089c *)arg1 ownershipMode:(long long)arg2 validateStrongReferences:(_Bool)arg3 allowUnknownObject:(_Bool)arg4 selector:(SEL)arg5 completion:(CDUnknownBlockType)arg6;
 - (void)validateReferenceToObjectIdentifier:(long long)arg1 isWeak:(_Bool *)arg2 validateStrongReferences:(_Bool)arg3 selector:(SEL)arg4 weakSelector:(SEL)arg5;
 @property(readonly, nonatomic) _Bool canValidateReferences;
 - (vector_3c415888 *)finalizeHandlers;
@@ -44,49 +44,49 @@ __attribute__((visibility("hidden")))
 - (unordered_map_38045d47 *)strongReferences;
 @property(readonly, nonatomic) NSUUID *objectUUID;
 - (id)initWithMessageType:(unsigned int)arg1 message:(auto_ptr_4370f086)arg2 identifier:(long long)arg3 strongReferences:(auto_ptr_945ad503)arg4 messageVersion:(unsigned long long)arg5 unknownContent:(id)arg6 objectDelegate:(id)arg7 lazyReferenceDelegate:(id)arg8 delegate:(id)arg9;
-- (id)readRepeatedWeakObjectUUIDPathReferenceMessage:(const RepeatedPtrField_0a3269f6 *)arg1 completion:(CDUnknownBlockType)arg2;
-- (id)readRepeatedWeakObjectUUIDReferenceMessage:(const RepeatedPtrField_bfda3daa *)arg1 completion:(CDUnknownBlockType)arg2;
-- (id)readWeakObjectUUIDPathReferenceMessage:(const struct UUIDPath *)arg1 completion:(CDUnknownBlockType)arg2;
-- (id)readWeakObjectUUIDReferenceMessage:(const struct UUID *)arg1 completion:(CDUnknownBlockType)arg2;
+- (id)readRepeatedWeakObjectUUIDPathReferenceMessage:(const RepeatedPtrField_4f2d564d *)arg1 completion:(CDUnknownBlockType)arg2;
+- (id)readRepeatedWeakObjectUUIDReferenceMessage:(const RepeatedPtrField_c4607516 *)arg1 completion:(CDUnknownBlockType)arg2;
+-     // Error parsing type: @32@0:8r^{UUIDPath=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSP::UUID>=^{Arena}ii^{Rep}}}16@?24, name: readWeakObjectUUIDPathReferenceMessage:completion:
+-     // Error parsing type: @32@0:8r^{UUID=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}QQ}16@?24, name: readWeakObjectUUIDReferenceMessage:completion:
 - (void)readWeakReferenceToObjectUUID:(id)arg1 delegate:(id)arg2 completion:(CDUnknownBlockType)arg3;
 @property(readonly, nonatomic) long long sourceType;
 @property(readonly, nonatomic) _Bool hasDocumentVersionUUID;
 - (void)addFinalizeHandler:(CDUnknownBlockType)arg1;
 @property(readonly, nonatomic) _Bool documentHasCurrentFileFormatVersion;
 @property(readonly, nonatomic) unsigned long long fileFormatVersion;
-- (id)readDataReferenceMessage:(const struct DataReference *)arg1;
-- (void)readRepeatedLazyReferenceMessage:(const RepeatedPtrField_a0d2dbe7 *)arg1 ownershipMode:(long long)arg2 validateStrongReferences:(_Bool)arg3 allowUnknownObject:(_Bool)arg4 selector:(SEL)arg5 delegate:(id)arg6 completion:(CDUnknownBlockType)arg7;
-- (void)readRepeatedWeakLazyReferenceMessage:(const RepeatedPtrField_a0d2dbe7 *)arg1 retainObjectUntilArchived:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
-- (void)readRepeatedWeakLazyReferenceMessage:(const RepeatedPtrField_a0d2dbe7 *)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)readRepeatedLazyReferenceMessage:(const RepeatedPtrField_a0d2dbe7 *)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)readLazyReferenceMessage:(const struct Reference *)arg1 ownershipMode:(long long)arg2 validateStrongReferences:(_Bool)arg3 allowUnknownObject:(_Bool)arg4 selector:(SEL)arg5 delegate:(id)arg6 completion:(CDUnknownBlockType)arg7;
-- (void)readWeakLazyReferenceMessage:(const struct Reference *)arg1 retainObjectUntilArchived:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
-- (void)readWeakLazyReferenceMessage:(const struct Reference *)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)readLazyReferenceMessage:(const struct Reference *)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)readRepeatedReferenceMessage:(const RepeatedPtrField_a0d2dbe7 *)arg1 isWeak:(_Bool)arg2 validateStrongReferences:(_Bool)arg3 allowUnknownObject:(_Bool)arg4 selector:(SEL)arg5 completion:(CDUnknownBlockType)arg6;
-- (void)readRepeatedUnownedReferenceMessage:(const RepeatedPtrField_a0d2dbe7 *)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)readRepeatedWeakReferenceMessage:(const RepeatedPtrField_a0d2dbe7 *)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)readRepeatedReferenceMessage:(const RepeatedPtrField_a0d2dbe7 *)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)readReferenceMessage:(const struct Reference *)arg1 isWeak:(_Bool)arg2 validateStrongReferences:(_Bool)arg3 allowUnknownObject:(_Bool)arg4 selector:(SEL)arg5 weakSelector:(SEL)arg6 completion:(CDUnknownBlockType)arg7;
-- (void)readUnownedReferenceMessage:(const struct Reference *)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)readWeakReferenceMessage:(const struct Reference *)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)readReferenceMessage:(const struct Reference *)arg1 completion:(CDUnknownBlockType)arg2;
+-     // Error parsing type: @24@0:8r^{DataReference=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}Q}16, name: readDataReferenceMessage:
+- (void)readRepeatedLazyReferenceMessage:(const RepeatedPtrField_54b3089c *)arg1 ownershipMode:(long long)arg2 validateStrongReferences:(_Bool)arg3 allowUnknownObject:(_Bool)arg4 selector:(SEL)arg5 delegate:(id)arg6 completion:(CDUnknownBlockType)arg7;
+- (void)readRepeatedWeakLazyReferenceMessage:(const RepeatedPtrField_54b3089c *)arg1 retainObjectUntilArchived:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)readRepeatedWeakLazyReferenceMessage:(const RepeatedPtrField_54b3089c *)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)readRepeatedLazyReferenceMessage:(const RepeatedPtrField_54b3089c *)arg1 completion:(CDUnknownBlockType)arg2;
+-     // Error parsing type: v64@0:8r^{Reference=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}QiB}16q24B32B36:40@48@?56, name: readLazyReferenceMessage:ownershipMode:validateStrongReferences:allowUnknownObject:selector:delegate:completion:
+-     // Error parsing type: v36@0:8r^{Reference=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}QiB}16B24@?28, name: readWeakLazyReferenceMessage:retainObjectUntilArchived:completion:
+-     // Error parsing type: v32@0:8r^{Reference=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}QiB}16@?24, name: readWeakLazyReferenceMessage:completion:
+-     // Error parsing type: v32@0:8r^{Reference=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}QiB}16@?24, name: readLazyReferenceMessage:completion:
+- (void)readRepeatedReferenceMessage:(const RepeatedPtrField_54b3089c *)arg1 isWeak:(_Bool)arg2 validateStrongReferences:(_Bool)arg3 allowUnknownObject:(_Bool)arg4 selector:(SEL)arg5 completion:(CDUnknownBlockType)arg6;
+- (void)readRepeatedUnownedReferenceMessage:(const RepeatedPtrField_54b3089c *)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)readRepeatedWeakReferenceMessage:(const RepeatedPtrField_54b3089c *)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)readRepeatedReferenceMessage:(const RepeatedPtrField_54b3089c *)arg1 completion:(CDUnknownBlockType)arg2;
+-     // Error parsing type: v60@0:8r^{Reference=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}QiB}16B24B28B32:36:44@?52, name: readReferenceMessage:isWeak:validateStrongReferences:allowUnknownObject:selector:weakSelector:completion:
+-     // Error parsing type: v32@0:8r^{Reference=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}QiB}16@?24, name: readUnownedReferenceMessage:completion:
+-     // Error parsing type: v32@0:8r^{Reference=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}QiB}16@?24, name: readWeakReferenceMessage:completion:
+-     // Error parsing type: v32@0:8r^{Reference=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}QiB}16@?24, name: readReferenceMessage:completion:
 - (void)pushScopeForField:(int)arg1 usingBlock:(CDUnknownBlockType)arg2;
 - (const struct Message *)message;
 @property(readonly, nonatomic) __weak TSPObjectContext *context;
 - (void)dealloc;
-- (void)readWeakReferenceMessage:(const struct Reference *)arg1 repeatedMessage:(const RepeatedPtrField_a0d2dbe7 *)arg2 completion:(CDUnknownBlockType)arg3;
-- (void)readReferenceMessage:(const struct Reference *)arg1 repeatedMessage:(const RepeatedPtrField_a0d2dbe7 *)arg2 completion:(CDUnknownBlockType)arg3;
-- (void)readWeakReferenceMessage1:(const struct Reference *)arg1 message2:(const struct Reference *)arg2 completion:(CDUnknownBlockType)arg3;
-- (void)readReferenceMessage1:(const struct Reference *)arg1 message2:(const struct Reference *)arg2 completion:(CDUnknownBlockType)arg3;
+-     // Error parsing type: v40@0:8r^{Reference=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}QiB}16r^{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}24@?32, name: readWeakReferenceMessage:repeatedMessage:completion:
+-     // Error parsing type: v40@0:8r^{Reference=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}QiB}16r^{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}24@?32, name: readReferenceMessage:repeatedMessage:completion:
+-     // Error parsing type: v40@0:8r^{Reference=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}QiB}16r^{Reference=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}QiB}24@?32, name: readWeakReferenceMessage1:message2:completion:
+-     // Error parsing type: v40@0:8r^{Reference=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}QiB}16r^{Reference=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}QiB}24@?32, name: readReferenceMessage1:message2:completion:
 - (set_713dd2e1 *)filterIdentifiers:(const set_713dd2e1 *)arg1;
 @property(readonly, nonatomic) unsigned long long preUFFVersion;
 @property(readonly, nonatomic) _Bool hasPreUFFVersion;
-- (id)readSparseWeakObjectUUIDPathReferenceArrayMessage:(const struct SparseUUIDPathArray *)arg1;
-- (id)readSparseWeakObjectUUIDReferenceArrayMessage:(const struct SparseUUIDArray *)arg1;
-- (void)readSparseReferenceArrayMessage:(const struct SparseReferenceArray *)arg1 isWeak:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
-- (void)readSparseWeakReferenceArrayMessage:(const struct SparseReferenceArray *)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)readSparseReferenceArrayMessage:(const struct SparseReferenceArray *)arg1 completion:(CDUnknownBlockType)arg2;
+-     // Error parsing type: @24@0:8r^{SparseUUIDPathArray=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSP::SparseUUIDPathArray_Entry>=^{Arena}ii^{Rep}}I}16, name: readSparseWeakObjectUUIDPathReferenceArrayMessage:
+-     // Error parsing type: @24@0:8r^{SparseUUIDArray=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSP::SparseUUIDArray_Entry>=^{Arena}ii^{Rep}}I}16, name: readSparseWeakObjectUUIDReferenceArrayMessage:
+-     // Error parsing type: v36@0:8r^{SparseReferenceArray=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSP::SparseReferenceArray_Entry>=^{Arena}ii^{Rep}}I}16B24@?28, name: readSparseReferenceArrayMessage:isWeak:completion:
+-     // Error parsing type: v32@0:8r^{SparseReferenceArray=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSP::SparseReferenceArray_Entry>=^{Arena}ii^{Rep}}I}16@?24, name: readSparseWeakReferenceArrayMessage:completion:
+-     // Error parsing type: v32@0:8r^{SparseReferenceArray=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSP::SparseReferenceArray_Entry>=^{Arena}ii^{Rep}}I}16@?24, name: readSparseReferenceArrayMessage:completion:
 @property(readonly, nonatomic) _Bool isCrossAppPaste;
 @property(readonly, nonatomic) _Bool isCrossDocumentPaste;
 @property(readonly, nonatomic) _Bool isFromCopy;

@@ -27,8 +27,8 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) unsigned long long lastColSelectedInCDE; // @synthesize lastColSelectedInCDE=_lastColSelectedInCDE;
 @property(readonly, nonatomic) unsigned long long lastRowCountInCDE; // @synthesize lastRowCountInCDE=_lastRowCountInCDE;
 @property(readonly, nonatomic) unsigned long long lastRowSelectedInCDE; // @synthesize lastRowSelectedInCDE=_lastRowSelectedInCDE;
-- (void)saveToArchive:(struct ChartUIState *)arg1;
-- (id)initWithArchive:(const struct ChartUIState *)arg1;
+-     // Error parsing type: v24@0:8^{ChartUIState=^^?{ExtensionSet=^{Arena}SS(AllocatedData=^{KeyValue}^{map<int, google::protobuf::internal::ExtensionSet::Extension, std::__1::less<int>, std::__1::allocator<std::__1::pair<const int, google::protobuf::internal::ExtensionSet::Extension> > >})}{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{Reference}iiiiiBB}16, name: saveToArchive:
+-     // Error parsing type: @24@0:8r^{ChartUIState=^^?{ExtensionSet=^{Arena}SS(AllocatedData=^{KeyValue}^{map<int, google::protobuf::internal::ExtensionSet::Extension, std::__1::less<int>, std::__1::allocator<std::__1::pair<const int, google::protobuf::internal::ExtensionSet::Extension> > >})}{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{Reference}iiiiiBB}16, name: initWithArchive:
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)description;
 - (unsigned long long)hash;

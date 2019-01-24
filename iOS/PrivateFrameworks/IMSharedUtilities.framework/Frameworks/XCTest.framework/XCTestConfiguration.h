@@ -6,11 +6,12 @@
 
 #import <objc/NSObject.h>
 
+#import <XCTest/NSCopying-Protocol.h>
 #import <XCTest/NSSecureCoding-Protocol.h>
 
 @class NSArray, NSDictionary, NSNumber, NSSet, NSString, NSURL, NSUUID, XCTAggregateSuiteRunStatistics;
 
-@interface XCTestConfiguration : NSObject <NSSecureCoding>
+@interface XCTestConfiguration : NSObject <NSSecureCoding, NSCopying>
 {
     _Bool _reportResultsToIDE;
     _Bool _testsDrivenByIDE;
@@ -54,6 +55,7 @@
 @property long long userAttachmentLifetime; // @synthesize userAttachmentLifetime=_userAttachmentLifetime;
 @property long long systemAttachmentLifetime; // @synthesize systemAttachmentLifetime=_systemAttachmentLifetime;
 @property _Bool emitOSLogs; // @synthesize emitOSLogs=_emitOSLogs;
+@property(copy) NSString *bridgedProcessAutomationFrameworkPath; // @synthesize bridgedProcessAutomationFrameworkPath=_bridgedProcessAutomationFrameworkPath;
 @property(copy) NSString *automationFrameworkPath; // @synthesize automationFrameworkPath=_automationFrameworkPath;
 @property(copy) XCTAggregateSuiteRunStatistics *aggregateStatisticsBeforeCrash; // @synthesize aggregateStatisticsBeforeCrash=_aggregateStatisticsBeforeCrash;
 @property(copy) NSArray *targetApplicationArguments; // @synthesize targetApplicationArguments=_targetApplicationArguments;
@@ -80,12 +82,12 @@
 @property(copy) NSString *testBundleRelativePath; // @synthesize testBundleRelativePath=_testBundleRelativePath;
 @property(copy) NSString *absolutePath; // @synthesize absolutePath=_absolutePath;
 - (void).cxx_destruct;
-@property(copy) NSString *bridgedProcessAutomationFrameworkPath; // @synthesize bridgedProcessAutomationFrameworkPath=_bridgedProcessAutomationFrameworkPath;
 @property(readonly) long long testMode;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)description;
 - (_Bool)writeToFile:(id)arg1;
+- (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)init;

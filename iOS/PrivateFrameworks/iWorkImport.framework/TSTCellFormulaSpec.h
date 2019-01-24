@@ -20,14 +20,14 @@ __attribute__((visibility("hidden")))
     TSTStockDetails *_stockDetails;
 }
 
-+ (id)instanceWithArchive:(const struct CellSpecArchive *)arg1 unarchiver:(id)arg2;
++     // Error parsing type: @32@0:8r^{CellSpecArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{FormulaArchive}^{Reference}dddIBB}16@24, name: instanceWithArchive:unarchiver:
 @property(readonly, nonatomic) TSTStockDetails *stockDetails; // @synthesize stockDetails=_stockDetails;
 @property(readonly, nonatomic) unsigned char categoryAggregateType; // @synthesize categoryAggregateType=_categoryAggregateType;
 - (int)interactionType;
 @property(readonly, nonatomic) struct TSCEFormula *formula; // @synthesize formula=_formula;
 - (void).cxx_destruct;
-- (void)saveToArchive:(struct CellSpecArchive *)arg1 archiver:(id)arg2;
-- (id)initWithArchive:(const struct CellSpecArchive *)arg1 unarchiver:(id)arg2;
+-     // Error parsing type: v32@0:8^{CellSpecArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{FormulaArchive}^{Reference}dddIBB}16@24, name: saveToArchive:archiver:
+-     // Error parsing type: @32@0:8r^{CellSpecArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{FormulaArchive}^{Reference}dddIBB}16@24, name: initWithArchive:unarchiver:
 - (_Bool)isEquivalent:(id)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (_Bool)p_mightBeEqual:(id)arg1;

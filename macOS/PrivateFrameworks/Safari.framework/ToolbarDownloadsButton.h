@@ -6,14 +6,20 @@
 
 #import <Safari/ButtonPlus.h>
 
+@class ToolbarDownloadsButtonProgressBar;
+
 __attribute__((visibility("hidden")))
 @interface ToolbarDownloadsButton : ButtonPlus
 {
     float _lastUpdatedProgress;
+    ToolbarDownloadsButtonProgressBar *_progressBar;
 }
 
 + (Class)cellClass;
+- (void).cxx_destruct;
 - (void)updateWithProgress:(float)arg1;
+- (void)layout;
+- (void)viewDidMoveToSuperview;
 - (void)_commonInit;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;

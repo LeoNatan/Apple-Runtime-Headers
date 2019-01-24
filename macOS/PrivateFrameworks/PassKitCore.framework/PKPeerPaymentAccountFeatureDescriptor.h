@@ -6,11 +6,12 @@
 
 #import <objc/NSObject.h>
 
+#import <PassKitCore/NSCopying-Protocol.h>
 #import <PassKitCore/NSSecureCoding-Protocol.h>
 
 @class NSArray, NSDecimalNumber, NSString;
 
-@interface PKPeerPaymentAccountFeatureDescriptor : NSObject <NSSecureCoding>
+@interface PKPeerPaymentAccountFeatureDescriptor : NSObject <NSSecureCoding, NSCopying>
 {
     NSString *_identifier;
     NSDecimalNumber *_minimumAmount;
@@ -18,9 +19,15 @@
     NSString *_merchantIdentifier;
     NSArray *_supportedNetworks;
     unsigned long long _merchantCapabilities;
+    NSDecimalNumber *_feePercentage;
+    NSDecimalNumber *_minimumFee;
+    NSDecimalNumber *_maximumFee;
 }
 
 + (BOOL)supportsSecureCoding;
+@property(copy, nonatomic) NSDecimalNumber *maximumFee; // @synthesize maximumFee=_maximumFee;
+@property(copy, nonatomic) NSDecimalNumber *minimumFee; // @synthesize minimumFee=_minimumFee;
+@property(copy, nonatomic) NSDecimalNumber *feePercentage; // @synthesize feePercentage=_feePercentage;
 @property(nonatomic) unsigned long long merchantCapabilities; // @synthesize merchantCapabilities=_merchantCapabilities;
 @property(copy, nonatomic) NSArray *supportedNetworks; // @synthesize supportedNetworks=_supportedNetworks;
 @property(copy, nonatomic) NSString *merchantIdentifier; // @synthesize merchantIdentifier=_merchantIdentifier;
@@ -28,6 +35,7 @@
 @property(copy, nonatomic) NSDecimalNumber *minimumAmount; // @synthesize minimumAmount=_minimumAmount;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
+- (id)copyWithZone:(struct _NSZone *)arg1;
 - (BOOL)isEqualToPeerPaymentAccountFeatureDescriptor:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned long long)hash;

@@ -9,6 +9,7 @@
 @class BiometricKitIdentity, NSArray, NSData, NSDictionary, NSString, NSUUID;
 
 @protocol BiometricKitXpcProtocol <NSObject>
+- (void)getLastMatchEvent:(unsigned long long)arg1 replyBlock:(void (^)(int, NSDictionary *))arg2;
 - (void)pauseFaceDetectTimer:(BOOL)arg1 client:(unsigned long long)arg2 replyBlock:(void (^)(int))arg3;
 - (void)enableMatchAutoRetry:(BOOL)arg1 client:(unsigned long long)arg2 replyBlock:(void (^)(int))arg3;
 - (void)logEventOrCode:(unsigned long long)arg1;

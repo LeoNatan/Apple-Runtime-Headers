@@ -8,22 +8,22 @@
 
 #import <iWorkImport/TSCEReferenceTrackerDelegate-Protocol.h>
 
-@class NSMutableSet, NSString, TSCEReferenceTracker, TSTInfo;
+@class NSMutableSet, NSString, TSCEReferenceTracker, TSTTableInfo;
 
 __attribute__((visibility("hidden")))
 @interface TSTSortRuleReferenceTracker : NSObject <TSCEReferenceTrackerDelegate>
 {
-    TSTInfo *_tableInfo;
+    TSTTableInfo *_tableInfo;
     NSMutableSet *_references;
     TSCEReferenceTracker *_referenceTracker;
 }
 
 @property(retain, nonatomic) TSCEReferenceTracker *referenceTracker; // @synthesize referenceTracker=_referenceTracker;
 @property(retain, nonatomic) NSMutableSet *references; // @synthesize references=_references;
-@property(nonatomic) __weak TSTInfo *tableInfo; // @synthesize tableInfo=_tableInfo;
+@property(nonatomic) __weak TSTTableInfo *tableInfo; // @synthesize tableInfo=_tableInfo;
 - (void).cxx_destruct;
-- (id)initFromArchive:(const struct SortRuleReferenceTrackerArchive *)arg1 unarchiver:(id)arg2;
-- (void)encodeToArchive:(struct SortRuleReferenceTrackerArchive *)arg1 archiver:(id)arg2;
+-     // Error parsing type: @32@0:8r^{SortRuleReferenceTrackerArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{Reference}}16@24, name: initFromArchive:unarchiver:
+-     // Error parsing type: v32@0:8^{SortRuleReferenceTrackerArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{Reference}}16@24, name: encodeToArchive:archiver:
 - (void)referencedCellWasModified:(id)arg1;
 - (void)trackedReferenceWasDeleted:(id)arg1 fromOwnerUID:(const UUIDData_5fbc143e *)arg2;
 - (id)cellRangeWasInserted:(const struct TSCERangeRef *)arg1;

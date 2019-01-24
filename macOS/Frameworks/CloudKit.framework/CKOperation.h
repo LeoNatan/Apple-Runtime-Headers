@@ -100,6 +100,7 @@
 - (void)_handleCompletionCallback:(id)arg1;
 - (void)_handleRemoteProxyFailureWithError:(id)arg1;
 - (void)_handleStatisticsCallback:(id)arg1;
+- (void)_handleProgressCallback:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_handleProgressCallback:(id)arg1;
 - (void)_handleCheckpointCallback:(id)arg1;
 - (id)daemon;

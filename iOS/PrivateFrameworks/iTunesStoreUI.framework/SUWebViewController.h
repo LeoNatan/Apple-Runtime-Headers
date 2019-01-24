@@ -82,6 +82,7 @@
 - (void)setScriptProperties:(id)arg1;
 - (void)_setExistingNavigationItem:(id)arg1;
 - (void)reloadWithStorePage:(id)arg1 forURL:(id)arg2;
+- (void)presentViewController:(id)arg1 animated:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)parentViewControllerHierarchyDidChange;
 - (id)navigationItemForScriptInterface;
 - (struct CGSize)minimumViewSize;

@@ -8,7 +8,7 @@
 
 #import <iWorkImport/NSCopying-Protocol.h>
 
-@class NSDate, NSString, TSDCommentStorage, TSDFill, TSKFormat, TSTCellBorder, TSTCellSpec, TSTCellStyle, TSTConditionalStyleSet, TSTImportWarningSet, TSTStockDetails, TSULocale, TSWPParagraphStyle, TSWPStorage;
+@class NSDate, NSString, TSDCommentStorage, TSDFill, TSKFormat, TSTCellBorder, TSTCellSpec, TSTCellStyle, TSTConditionalStyleSet, TSTImportWarningSet, TSULocale, TSWPParagraphStyle, TSWPStorage;
 
 __attribute__((visibility("hidden")))
 @interface TSTCell_PreBNC : NSObject <NSCopying>
@@ -139,8 +139,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) _Bool hasFormulaAnyError;
 @property(readonly, nonatomic) _Bool hasFormulaEvaluationError;
 - (void)applyPopupChoiceIndex:(unsigned long long)arg1;
-@property(readonly, nonatomic) TSTStockDetails *stockDetails;
-@property(readonly, nonatomic) _Bool hasStockFormula;
 @property(readonly, nonatomic) _Bool hasFormula;
 @property(readonly, nonatomic) TSTCellSpec *cellSpecForDiff;
 @property(readonly, nonatomic) _Bool hasCellSpec;

@@ -8,21 +8,21 @@
 
 #import <Silex/SXQuickLookComponentFileProvider-Protocol.h>
 
-@class NSString, SXDocumentController;
-@protocol SXResourceDataSource;
+@class NSString;
+@protocol SXDOMObjectProviding, SXResourceDataSource;
 
 @interface SXQuickLookComponentFileProvider : NSObject <SXQuickLookComponentFileProvider>
 {
-    SXDocumentController *_documentController;
+    id <SXDOMObjectProviding> _DOMObjectProvider;
     id <SXResourceDataSource> _resourceDataSource;
 }
 
 @property(readonly, nonatomic) id <SXResourceDataSource> resourceDataSource; // @synthesize resourceDataSource=_resourceDataSource;
-@property(readonly, nonatomic) SXDocumentController *documentController; // @synthesize documentController=_documentController;
+@property(readonly, nonatomic) id <SXDOMObjectProviding> DOMObjectProvider; // @synthesize DOMObjectProvider=_DOMObjectProvider;
 - (void).cxx_destruct;
 - (id)copyFileIfNeeded:(id)arg1 to:(id)arg2 error:(id *)arg3;
 - (void)fileForComponent:(id)arg1 onCompletion:(CDUnknownBlockType)arg2 onError:(CDUnknownBlockType)arg3;
-- (id)initWithDocumentController:(id)arg1 resourceDataSource:(id)arg2;
+- (id)initWithDOMObjectProvider:(id)arg1 resourceDataSource:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

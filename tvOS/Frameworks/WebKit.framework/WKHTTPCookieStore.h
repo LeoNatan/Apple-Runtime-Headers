@@ -13,7 +13,7 @@
 @interface WKHTTPCookieStore : NSObject <WKObject>
 {
     struct ObjectStorage<API::HTTPCookieStore> _cookieStore;
-    struct HashMap<id<WKHTTPCookieStoreObserver>, std::__1::unique_ptr<WKHTTPCookieStoreObserver, std::__1::default_delete<WKHTTPCookieStoreObserver>>, WTF::PtrHash<id<WKHTTPCookieStoreObserver>>, WTF::HashTraits<id<WKHTTPCookieStoreObserver>>, WTF::HashTraits<std::__1::unique_ptr<WKHTTPCookieStoreObserver, std::__1::default_delete<WKHTTPCookieStoreObserver>>>> _observers;
+    struct HashMap<const void *, std::__1::unique_ptr<WKHTTPCookieStoreObserver, std::__1::default_delete<WKHTTPCookieStoreObserver>>, WTF::PtrHash<const void *>, WTF::HashTraits<const void *>, WTF::HashTraits<std::__1::unique_ptr<WKHTTPCookieStoreObserver, std::__1::default_delete<WKHTTPCookieStoreObserver>>>> _observers;
 }
 
 - (id).cxx_construct;

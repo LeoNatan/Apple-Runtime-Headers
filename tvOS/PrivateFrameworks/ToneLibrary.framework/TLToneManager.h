@@ -20,7 +20,7 @@
     _Bool _shouldIgnoreNextToneDidChangeNotification;
 }
 
-+ (_Bool)_checkForFileExistenceAtPath:(id)arg1 allowingTCCPreflight:(_Bool)arg2;
++ (_Bool)_ensureTCCAccessPreflightAndCheckForFileExistenceAtPath:(id)arg1;
 + (id)_currentOverridePolicyPreferenceKeyForAlertType:(long long)arg1;
 + (id)_defaultToneIdentifierForAlertType:(long long)arg1 topic:(id)arg2;
 + (id)_systemWideTonePreferenceKeyForAlertType:(long long)arg1;

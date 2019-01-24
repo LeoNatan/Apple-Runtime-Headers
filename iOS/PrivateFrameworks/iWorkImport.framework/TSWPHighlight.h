@@ -45,7 +45,7 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) TSDCommentStorage *storage;
 - (void)saveToArchiver:(id)arg1;
 - (void)loadFromUnarchiver:(id)arg1;
-- (void)loadFromArchive:(const struct HighlightArchive *)arg1 unarchiver:(id)arg2;
+-     // Error parsing type: v32@0:8r^{HighlightArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}^{Reference}}16@24, name: loadFromArchive:unarchiver:
 @property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;
 - (_Bool)isEquivalentToObject:(id)arg1;

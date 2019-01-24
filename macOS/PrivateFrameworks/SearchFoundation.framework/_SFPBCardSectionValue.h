@@ -9,7 +9,7 @@
 #import <SearchFoundation/NSSecureCoding-Protocol.h>
 #import <SearchFoundation/_SFPBCardSectionValue-Protocol.h>
 
-@class NSData, NSString, _SFPBActivityIndicatorCardSection, _SFPBAppLinkCardSection, _SFPBAudioPlaybackCardSection, _SFPBButtonCardSection, _SFPBDescriptionCardSection, _SFPBDetailedRowCardSection, _SFPBFlightCardSection, _SFPBHorizontalButtonCardSection, _SFPBHorizontalScrollCardSection, _SFPBImagesCardSection, _SFPBKeyValueDataCardSection, _SFPBMapCardSection, _SFPBMapsDetailedRowCardSection, _SFPBMediaInfoCardSection, _SFPBMediaPlayerCardSection, _SFPBMessageCardSection, _SFPBMetaInfoCardSection, _SFPBNowPlayingCardSection, _SFPBProductCardSection, _SFPBRichTitleCardSection, _SFPBRowCardSection, _SFPBScoreboardCardSection, _SFPBSectionHeaderCardSection, _SFPBSelectableGridCardSection, _SFPBSocialMediaPostCardSection, _SFPBStockChartCardSection, _SFPBSuggestionCardSection, _SFPBTableHeaderRowCardSection, _SFPBTableRowCardSection, _SFPBTextColumnsCardSection, _SFPBTitleCardSection, _SFPBTrackListCardSection, _SFPBVerticalLayoutCardSection, _SFPBWatchListCardSection, _SFPBWebCardSection;
+@class NSData, NSString, _SFPBActivityIndicatorCardSection, _SFPBAppLinkCardSection, _SFPBAudioPlaybackCardSection, _SFPBButtonCardSection, _SFPBDescriptionCardSection, _SFPBDetailedRowCardSection, _SFPBFlightCardSection, _SFPBHorizontalButtonCardSection, _SFPBHorizontalScrollCardSection, _SFPBImagesCardSection, _SFPBKeyValueDataCardSection, _SFPBMapCardSection, _SFPBMapsDetailedRowCardSection, _SFPBMediaInfoCardSection, _SFPBMediaPlayerCardSection, _SFPBMediaRemoteControlCardSection, _SFPBMessageCardSection, _SFPBMetaInfoCardSection, _SFPBNowPlayingCardSection, _SFPBProductCardSection, _SFPBRichTitleCardSection, _SFPBRowCardSection, _SFPBScoreboardCardSection, _SFPBSectionHeaderCardSection, _SFPBSelectableGridCardSection, _SFPBSocialMediaPostCardSection, _SFPBStockChartCardSection, _SFPBSuggestionCardSection, _SFPBTableHeaderRowCardSection, _SFPBTableRowCardSection, _SFPBTextColumnsCardSection, _SFPBTitleCardSection, _SFPBTrackListCardSection, _SFPBVerticalLayoutCardSection, _SFPBWatchListCardSection, _SFPBWebCardSection;
 
 @interface _SFPBCardSectionValue : PBCodable <_SFPBCardSectionValue, NSSecureCoding>
 {
@@ -48,8 +48,10 @@
     _SFPBVerticalLayoutCardSection *_verticalLayoutCardSection;
     _SFPBProductCardSection *_productCardSection;
     _SFPBHorizontalScrollCardSection *_horizontalScrollCardSection;
+    _SFPBMediaRemoteControlCardSection *_mediaRemoteControlCardSection;
 }
 
+@property(retain, nonatomic) _SFPBMediaRemoteControlCardSection *mediaRemoteControlCardSection; // @synthesize mediaRemoteControlCardSection=_mediaRemoteControlCardSection;
 @property(retain, nonatomic) _SFPBHorizontalScrollCardSection *horizontalScrollCardSection; // @synthesize horizontalScrollCardSection=_horizontalScrollCardSection;
 @property(retain, nonatomic) _SFPBProductCardSection *productCardSection; // @synthesize productCardSection=_productCardSection;
 @property(retain, nonatomic) _SFPBVerticalLayoutCardSection *verticalLayoutCardSection; // @synthesize verticalLayoutCardSection=_verticalLayoutCardSection;

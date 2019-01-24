@@ -24,8 +24,8 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) TSTCellMap *cellMap; // @synthesize cellMap=_cellMap;
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (id)initWithMessage:(const struct SummaryModelGroupByChangeStateArchive *)arg1 unarchiver:(id)arg2;
-- (void)saveToMessage:(struct SummaryModelGroupByChangeStateArchive *)arg1 archiver:(id)arg2;
+-     // Error parsing type: @32@0:8r^{SummaryModelGroupByChangeStateArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedField<double>=ii(Pointer=^{Arena}^{Rep})}{RepeatedField<double>=ii(Pointer=^{Arena}^{Rep})}{RepeatedField<unsigned int>=ii(Pointer=^{Arena}^{Rep})}^{Reference}}16@24, name: initWithMessage:unarchiver:
+-     // Error parsing type: v32@0:8^{SummaryModelGroupByChangeStateArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedField<double>=ii(Pointer=^{Arena}^{Rep})}{RepeatedField<double>=ii(Pointer=^{Arena}^{Rep})}{RepeatedField<unsigned int>=ii(Pointer=^{Arena}^{Rep})}^{Reference}}16@24, name: saveToMessage:archiver:
 
 @end
 

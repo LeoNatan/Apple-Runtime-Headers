@@ -20,6 +20,7 @@
         unsigned int latitude:1;
         unsigned int longitude:1;
         unsigned int isITunes:1;
+        unsigned int mediaEntityType:1;
     } _has;
     _Bool _isOverlay;
     _Bool _requiresLocalMedia;
@@ -45,9 +46,13 @@
     SFLatLng *_location;
     NSString *_messageIdentifier;
     NSURL *_messageURL;
+    NSString *_persistentID;
+    int _mediaEntityType;
 }
 
 + (_Bool)supportsSecureCoding;
+@property(nonatomic) int mediaEntityType; // @synthesize mediaEntityType=_mediaEntityType;
+@property(copy, nonatomic) NSString *persistentID; // @synthesize persistentID=_persistentID;
 @property(copy, nonatomic) NSURL *messageURL; // @synthesize messageURL=_messageURL;
 @property(copy, nonatomic) NSString *messageIdentifier; // @synthesize messageIdentifier=_messageIdentifier;
 @property(retain, nonatomic) SFLatLng *location; // @synthesize location=_location;
@@ -78,6 +83,7 @@
 @property(readonly, nonatomic) NSDictionary *dictionaryRepresentation;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (_Bool)hasMediaEntityType;
 - (_Bool)hasIsITunes;
 - (_Bool)hasLongitude;
 - (_Bool)hasLatitude;

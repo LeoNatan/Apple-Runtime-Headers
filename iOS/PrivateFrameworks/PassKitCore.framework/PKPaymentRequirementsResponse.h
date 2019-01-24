@@ -18,6 +18,7 @@
     NSString *_nonce;
 }
 
++ (_Bool)supportsSecureCoding;
 @property(readonly, copy, nonatomic) NSString *nonce; // @synthesize nonce=_nonce;
 @property(readonly, copy, nonatomic) NSURL *learnMoreURL; // @synthesize learnMoreURL=_learnMoreURL;
 @property(readonly, copy, nonatomic) NSArray *possibleProducts; // @synthesize possibleProducts=_possibleProducts;

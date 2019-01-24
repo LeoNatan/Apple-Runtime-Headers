@@ -6,9 +6,10 @@
 
 #import <DuetActivityScheduler/NSObject-Protocol.h>
 
-@class NSArray, NSString;
+@class NSArray, NSDictionary, NSString;
 
 @protocol _DASActivitySchedulerIntrospectingServer <NSObject>
+- (void)pauseWithParameters:(NSDictionary *)arg1 handler:(void (^)(BOOL))arg2;
 - (void)setBalance:(double)arg1 forBudgetWithName:(NSString *)arg2;
 - (void)remainingBalanceForBudgetWithName:(NSString *)arg1 withHandler:(void (^)(double))arg2;
 - (void)currentPredictionsWithHandler:(void (^)(NSDictionary *))arg1;

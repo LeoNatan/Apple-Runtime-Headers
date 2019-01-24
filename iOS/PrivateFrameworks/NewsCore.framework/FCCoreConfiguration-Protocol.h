@@ -6,7 +6,7 @@
 
 #import <NewsCore/NFCopying-Protocol.h>
 
-@class FCForYouGroupsConfiguration, FCNotificationsConfiguration, FCPersonalizationTreatment, FCTopStoriesConfiguration, FCVideoGroupsConfig, NSArray, NSDictionary, NSNumber, NSString, NTPBTodayConfig;
+@class FCForYouGroupsConfiguration, FCNotificationsConfiguration, FCPaidBundleConfiguration, FCPersonalizationTreatment, FCTopStoriesConfiguration, FCVideoGroupsConfig, NSArray, NSDictionary, NSNumber, NSString, NTPBTodayConfig;
 
 @protocol FCCoreConfiguration <NFCopying>
 @property(readonly, nonatomic) long long expirePinnedArticlesAfter;
@@ -64,11 +64,18 @@
 - (FCPersonalizationTreatment *)personalizationTreatmentForFeldsparID:(NSString *)arg1;
 
 @optional
+@property(readonly, nonatomic) NSString *spotlightChannelID;
+@property(readonly, nonatomic) long long subscriptionsGracePeriodForTokenVerificationSeconds;
+@property(readonly, nonatomic) long long subscriptionsPlacardGlobalMaximumPerDay;
+@property(readonly, nonatomic) long long subscriptionsPlacardPublisherFrequencyInSeconds;
+@property(readonly, nonatomic) NSString *magazinesConfigRecordID;
+@property(readonly, nonatomic) FCPaidBundleConfiguration *paidBundleConfig;
 @property(readonly, nonatomic) double delayBeforeRetryingDroppedFeeds;
 @property(readonly, nonatomic) long long maxRetriesForDroppedFeeds;
 @property(readonly, nonatomic) _Bool isSpecialEventsMicaAnimationDisabled;
 @property(readonly, nonatomic) long long singleChannelFeedMinFeedItemsPerRequest;
 @property(readonly, nonatomic) long long singleTopicFeedMinFeedItemsPerRequest;
 @property(readonly, nonatomic) _Bool shouldShowAlternateHeadlines;
+- (FCPersonalizationTreatment *)personalizationTreatment;
 @end
 

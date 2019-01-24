@@ -47,17 +47,17 @@ __attribute__((visibility("hidden")))
 - (void)i_importHeadersFooters:(id)arg1 headerType:(long long)arg2 useSingleHeaderFooter:(_Bool)arg3;
 - (struct CGRect)frame;
 @property(readonly, copy) NSString *description;
-- (void)saveToArchive:(struct SheetArchive *)arg1 archiver:(id)arg2;
+-     // Error parsing type: v32@0:8^{SheetArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}^{EdgeInsetsArchive}^{Reference}^{Reference}^{Reference}BBBBfiiffBBi}16@24, name: saveToArchive:archiver:
 - (void)saveToArchiver:(id)arg1;
 - (void)loadFromUnarchiver:(id)arg1;
-- (void)loadFromArchive:(const struct SheetArchive *)arg1 unarchiver:(id)arg2;
+-     // Error parsing type: v32@0:8r^{SheetArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}^{EdgeInsetsArchive}^{Reference}^{Reference}^{Reference}BBBBfiiffBBi}16@24, name: loadFromArchive:unarchiver:
 - (id)copyWithContext:(id)arg1;
 @property(readonly, nonatomic) _Bool supportsMultipleColumns;
 @property(readonly, nonatomic) long long contentWritingDirection;
 @property(readonly, nonatomic) _Bool preventsChangeTracking;
 @property(readonly, nonatomic) _Bool preventsComments;
 @property(readonly, nonatomic) _Bool textIsLinked;
-@property(readonly, nonatomic) _Bool textIsVertical;
+- (_Bool)textIsVerticalAtCharIndex:(unsigned long long)arg1;
 @property(readonly, nonatomic) _Bool autoListTermination;
 @property(readonly, nonatomic) _Bool autoListRecognition;
 - (_Bool)isThemeContent;

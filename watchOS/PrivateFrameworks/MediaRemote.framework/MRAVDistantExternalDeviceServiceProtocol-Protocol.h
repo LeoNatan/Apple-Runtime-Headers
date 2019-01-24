@@ -9,6 +9,7 @@
 @class NSArray, NSData, NSError, NSString;
 
 @protocol MRAVDistantExternalDeviceServiceProtocol <NSObject>
+- (void)sendButtonEventWithUsagePage:(unsigned int)arg1 usage:(unsigned int)arg2 down:(_Bool)arg3;
 - (void)pingWithTimeout:(double)arg1 callback:(void (^)(NSError *))arg2;
 - (void)sendCustomData:(NSData *)arg1 withName:(NSString *)arg2;
 - (void)modifyOutputContextOfType:(unsigned int)arg1 addingDeviceUIDs:(NSArray *)arg2 removingDeviceUIDs:(NSArray *)arg3 settingDeviceUIDs:(NSArray *)arg4 completion:(void (^)(NSError *))arg5;

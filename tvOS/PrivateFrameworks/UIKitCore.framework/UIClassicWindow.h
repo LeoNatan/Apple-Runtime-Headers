@@ -9,14 +9,11 @@
 __attribute__((visibility("hidden")))
 @interface UIClassicWindow : UIWindow
 {
-    struct CGSize _sceneSizeOverride;
 }
 
-@property(nonatomic) struct CGSize sceneSizeOverride; // @synthesize sceneSizeOverride=_sceneSizeOverride;
 - (double)_adjustedWindowLevelFromLevel:(double)arg1;
 - (_Bool)_shouldZoom;
 - (_Bool)_isConstrainedByScreenJail;
-- (struct CGRect)_sceneReferenceBounds;
 - (void)_updateTransformLayerForClassicPresentation;
 
 @end

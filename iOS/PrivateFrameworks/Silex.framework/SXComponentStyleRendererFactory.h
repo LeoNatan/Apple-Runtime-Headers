@@ -8,22 +8,26 @@
 
 #import <Silex/SXComponentStyleRendererFactory-Protocol.h>
 
-@class NSString;
-@protocol SXDocumentControllerProvider, SXGradientFactory, SXImageViewFactory;
+@class NSString, SXViewport;
+@protocol SXGradientFactory, SXImageFillViewFactory, SXRepeatableImageFillViewFactory, SXVideoFillViewFactory;
 
 @interface SXComponentStyleRendererFactory : NSObject <SXComponentStyleRendererFactory>
 {
-    id <SXDocumentControllerProvider> _documentControllerProvider;
-    id <SXImageViewFactory> _imageViewFactory;
+    id <SXImageFillViewFactory> _imageFillViewFactory;
+    id <SXVideoFillViewFactory> _videoFillViewFactory;
     id <SXGradientFactory> _gradientFactory;
+    id <SXRepeatableImageFillViewFactory> _repeatableImageFillViewFactory;
+    SXViewport *_viewport;
 }
 
+@property(readonly, nonatomic) SXViewport *viewport; // @synthesize viewport=_viewport;
+@property(readonly, nonatomic) id <SXRepeatableImageFillViewFactory> repeatableImageFillViewFactory; // @synthesize repeatableImageFillViewFactory=_repeatableImageFillViewFactory;
 @property(readonly, nonatomic) id <SXGradientFactory> gradientFactory; // @synthesize gradientFactory=_gradientFactory;
-@property(readonly, nonatomic) id <SXImageViewFactory> imageViewFactory; // @synthesize imageViewFactory=_imageViewFactory;
-@property(readonly, nonatomic) id <SXDocumentControllerProvider> documentControllerProvider; // @synthesize documentControllerProvider=_documentControllerProvider;
+@property(readonly, nonatomic) id <SXVideoFillViewFactory> videoFillViewFactory; // @synthesize videoFillViewFactory=_videoFillViewFactory;
+@property(readonly, nonatomic) id <SXImageFillViewFactory> imageFillViewFactory; // @synthesize imageFillViewFactory=_imageFillViewFactory;
 - (void).cxx_destruct;
-- (id)componentStyleRendererForComponent:(id)arg1;
-- (id)initWithDocumentControllerProvider:(id)arg1 imageViewFactory:(id)arg2 gradientFactory:(id)arg3;
+- (id)componentStyleRendererForComponentStyle:(id)arg1;
+- (id)initWithImageFillViewFactory:(id)arg1 videoFillViewFactory:(id)arg2 gradientFactory:(id)arg3 repeatableImageFillViewFactory:(id)arg4 viewport:(id)arg5;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

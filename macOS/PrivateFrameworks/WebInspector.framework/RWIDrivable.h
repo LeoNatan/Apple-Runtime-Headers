@@ -9,7 +9,6 @@
 @class NSNumber, NSString, RWIApplication;
 @protocol RWIDrivableDelegate, RWIDriverSession;
 
-__attribute__((visibility("hidden")))
 @interface RWIDrivable : NSObject
 {
     NSNumber *_targetIdentifier;

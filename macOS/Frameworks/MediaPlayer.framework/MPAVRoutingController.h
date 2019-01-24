@@ -23,6 +23,7 @@
     int _deviceAvailabilityNotifyToken;
     BOOL _deviceAvailabilityOverrideState;
     BOOL _fetchAvailableRoutesSynchronously;
+    BOOL _representsLongFormVideoContent;
     id <MPAVRoutingControllerDelegate> _delegate;
     MPAVRoutingDataSource *_dataSource;
     NSString *_name;
@@ -31,6 +32,8 @@
     long long _routeTypes;
     MPAVRoute *_legacyCachedRoute;
     id <MPAVOutputDevicePlaybackDataSource> _playbackDataSource;
+    NSString *_presentedBundleID;
+    NSString *_representedBundleID;
 }
 
 + (void)_getActiveRouteWithTimeout:(double)arg1 discoveredRoutes:(id)arg2 completion:(CDUnknownBlockType)arg3;
@@ -43,6 +46,9 @@
 + (id)_currentDeviceRoutingIconImage;
 + (id)_iconImageForRoute:(id)arg1;
 + (id)_sharedSerialQueue;
+@property(readonly, nonatomic) BOOL representsLongFormVideoContent; // @synthesize representsLongFormVideoContent=_representsLongFormVideoContent;
+@property(copy, nonatomic) NSString *representedBundleID; // @synthesize representedBundleID=_representedBundleID;
+@property(copy, nonatomic) NSString *presentedBundleID; // @synthesize presentedBundleID=_presentedBundleID;
 @property(nonatomic) __weak id <MPAVOutputDevicePlaybackDataSource> playbackDataSource; // @synthesize playbackDataSource=_playbackDataSource;
 @property(retain, nonatomic) MPAVRoute *legacyCachedRoute; // @synthesize legacyCachedRoute=_legacyCachedRoute;
 @property(nonatomic) long long routeTypes; // @synthesize routeTypes=_routeTypes;

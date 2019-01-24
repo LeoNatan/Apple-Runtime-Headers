@@ -26,9 +26,6 @@
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)initWithIdentifier:(id)arg1 startDate:(id)arg2 endDate:(id)arg3 metadata:(id)arg4;
-- (id)next;
-- (id)previous;
-- (id)initWithEntity:(id)arg1 error:(id *)arg2;
 
 @end
 

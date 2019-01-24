@@ -6,12 +6,13 @@
 
 #import <objc/NSObject.h>
 
+#import <ActivityAchievements/ACHEarnedInstanceEntityJournalEntryAppliedObserver-Protocol.h>
 #import <ActivityAchievements/ACHEarnedInstanceEntitySyncedEarnedInstancesObserver-Protocol.h>
 
 @class ACHEarnedInstanceDuplicateUtility, ACHEarnedInstanceEntityWrapper, HDProfile, NSArray, NSHashTable, NSMutableArray, NSString;
 @protocol OS_dispatch_queue;
 
-@interface ACHEarnedInstanceStore : NSObject <ACHEarnedInstanceEntitySyncedEarnedInstancesObserver>
+@interface ACHEarnedInstanceStore : NSObject <ACHEarnedInstanceEntitySyncedEarnedInstancesObserver, ACHEarnedInstanceEntityJournalEntryAppliedObserver>
 {
     _Bool _initialEarnedInstanceFetchComplete;
     unsigned char _device;
@@ -51,6 +52,7 @@
 - (id)earnedInstancesForTemplateUniqueName:(id)arg1;
 @property(readonly, nonatomic) NSArray *earnedInstances;
 - (id)_queue_earnedInstancesArray;
+- (void)earnedInstanceEntityDidApplyJournalEntriesInsertedEarnedInstances:(id)arg1 removedEarnedInstances:(id)arg2;
 - (_Bool)earnedInstanceEntityDidReceiveSyncedEarnedInstances:(id)arg1 provenance:(long long)arg2;
 - (id)initWithProfile:(id)arg1 earnedInstanceEntityWrapper:(id)arg2 earnedInstanceDuplicateUtility:(id)arg3 device:(unsigned char)arg4;
 

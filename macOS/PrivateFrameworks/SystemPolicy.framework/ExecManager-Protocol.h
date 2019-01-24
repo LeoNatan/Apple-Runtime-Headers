@@ -5,6 +5,7 @@
 //
 
 @protocol ExecManager
+- (void)logLegacyQTKitWithReply:(void (^)(BOOL, NSError *))arg1;
 - (void)copyLegacyExecutionHistoryWithReply:(void (^)(NSArray *, NSError *))arg1;
 @end
 

@@ -17,6 +17,7 @@ __attribute__((visibility("hidden")))
     NSArray *_uuids;
 }
 
++ (id)tokenizeUUIDPathString:(id)arg1;
 + (id)lastUUIDFromUUIDPathString:(id)arg1;
 @property(readonly, nonatomic) NSArray *uuids; // @synthesize uuids=_uuids;
 - (void).cxx_destruct;
@@ -30,8 +31,8 @@ __attribute__((visibility("hidden")))
 - (id)UUIDPathByAppendingUUID:(id)arg1;
 - (id)initWithUUIDPathString:(id)arg1;
 - (id)initWithArray:(id)arg1;
-- (void)saveToMessage:(struct UUIDPath *)arg1;
-- (id)initWithMessage:(const struct UUIDPath *)arg1;
+-     // Error parsing type: v24@0:8^{UUIDPath=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSP::UUID>=^{Arena}ii^{Rep}}}16, name: saveToMessage:
+-     // Error parsing type: @24@0:8r^{UUIDPath=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSP::UUID>=^{Arena}ii^{Rep}}}16, name: initWithMessage:
 
 @end
 

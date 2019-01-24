@@ -11,11 +11,11 @@ __attribute__((visibility("hidden")))
 {
 }
 
-+ (void)savePropertyMap:(id)arg1 toArchive:(struct ChartAxisGenericPropertyMapArchive *)arg2 archiver:(id)arg3;
++     // Error parsing type: v40@0:8@16^{ChartAxisGenericPropertyMapArchive=^^?{InternalMetadataWithArena=^v}{HasBits<2>=[2I]}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}^{FormatStructArchive}^{FormatStructArchive}^{StrokeArchive}^{FormatStructArchive}^{FormatStructArchive}^{ShadowArchive}^{StrokeArchive}^{ShadowArchive}^{StrokeArchive}^{FormatStructArchive}^{ChartsNSNumberDoubleArchive}^{ChartsNSNumberDoubleArchive}fiiifffiiiiiBBBBBBBBBBBiii{CachedSize={atomic<int>=Ai}}}24@32, name: savePropertyMap:toArchive:archiver:
 + (id)imageFillProperties;
 + (id)properties;
-- (void)saveToArchive:(struct ChartAxisGenericPropertyMapArchive *)arg1 archiver:(id)arg2;
-- (id)initWithArchive:(const struct ChartAxisGenericPropertyMapArchive *)arg1 unarchiver:(id)arg2;
+-     // Error parsing type: v32@0:8^{ChartAxisGenericPropertyMapArchive=^^?{InternalMetadataWithArena=^v}{HasBits<2>=[2I]}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}^{FormatStructArchive}^{FormatStructArchive}^{StrokeArchive}^{FormatStructArchive}^{FormatStructArchive}^{ShadowArchive}^{StrokeArchive}^{ShadowArchive}^{StrokeArchive}^{FormatStructArchive}^{ChartsNSNumberDoubleArchive}^{ChartsNSNumberDoubleArchive}fiiifffiiiiiBBBBBBBBBBBiii{CachedSize={atomic<int>=Ai}}}16@24, name: saveToArchive:archiver:
+-     // Error parsing type: @32@0:8r^{ChartAxisGenericPropertyMapArchive=^^?{InternalMetadataWithArena=^v}{HasBits<2>=[2I]}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}^{FormatStructArchive}^{FormatStructArchive}^{StrokeArchive}^{FormatStructArchive}^{FormatStructArchive}^{ShadowArchive}^{StrokeArchive}^{ShadowArchive}^{StrokeArchive}^{FormatStructArchive}^{ChartsNSNumberDoubleArchive}^{ChartsNSNumberDoubleArchive}fiiifffiiiiiBBBBBBBBBBBiii{CachedSize={atomic<int>=Ai}}}16@24, name: initWithArchive:unarchiver:
 
 @end
 

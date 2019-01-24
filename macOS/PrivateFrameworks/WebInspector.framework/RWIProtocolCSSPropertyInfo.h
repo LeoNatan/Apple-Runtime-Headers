@@ -12,8 +12,10 @@
 {
 }
 
+@property(nonatomic) BOOL inherited;
 @property(copy, nonatomic) NSArray *values;
 @property(copy, nonatomic) NSArray *longhands;
+@property(copy, nonatomic) NSArray *aliases;
 @property(copy, nonatomic) NSString *name;
 - (id)initWithName:(id)arg1;
 

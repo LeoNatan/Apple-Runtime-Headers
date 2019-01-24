@@ -25,6 +25,7 @@
 @property(nonatomic) BOOL internalOverrideTTYAvailability;
 - (void)resetCannedResponses;
 @property(retain, nonatomic) NSArray *cannedResponses;
+@property(nonatomic) BOOL continuityRTTIsSupported;
 @property(nonatomic) BOOL hasReceivedRTTCall;
 - (void)setPreferredRelayNumber:(id)arg1 forContext:(id)arg2;
 - (id)preferredRelayNumberForContext:(id)arg1;

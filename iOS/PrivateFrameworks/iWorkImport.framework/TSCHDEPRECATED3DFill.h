@@ -18,10 +18,10 @@ __attribute__((visibility("hidden")))
     TSCH3DFillSetIdentifier *mIdentifier;
 }
 
-+ (id)instanceWithArchive:(const struct DEPRECATEDChart3DFillArchive *)arg1 unarchiver:(id)arg2;
++     // Error parsing type: @32@0:8r^{DEPRECATEDChart3DFillArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}^{FillArchive}^{Chart3DLightingModelArchive}iI}16@24, name: instanceWithArchive:unarchiver:
 - (id)convertToTSDFill;
-- (void)saveToArchive:(struct DEPRECATEDChart3DFillArchive *)arg1 archiver:(id)arg2;
-- (id)initWithArchive:(const struct DEPRECATEDChart3DFillArchive *)arg1 unarchiver:(id)arg2;
+-     // Error parsing type: v32@0:8^{DEPRECATEDChart3DFillArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}^{FillArchive}^{Chart3DLightingModelArchive}iI}16@24, name: saveToArchive:archiver:
+-     // Error parsing type: @32@0:8r^{DEPRECATEDChart3DFillArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}^{FillArchive}^{Chart3DLightingModelArchive}iI}16@24, name: initWithArchive:unarchiver:
 - (void)dealloc;
 
 @end

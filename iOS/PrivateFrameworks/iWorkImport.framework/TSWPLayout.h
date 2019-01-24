@@ -37,7 +37,9 @@ __attribute__((visibility("hidden")))
 - (struct CGRect)p_rectForSelectionPath:(id)arg1 useParagraphModeRects:(_Bool)arg2;
 - (_Bool)selectionMustBeEntirelyOnscreenToCountAsVisibleInSelectionPath:(id)arg1;
 - (double)viewScaleForZoomingToSelectionPath:(id)arg1 targetPointSize:(double)arg2;
+- (_Bool)containsStartOfPencilAnnotation:(id)arg1;
 - (id)unscaledAnchorRectsForPencilAnnotationSelectionPath:(id)arg1 attachedType:(long long)arg2;
+- (id)containedPencilAnnotations;
 - (struct CGRect)rectInRootForPresentingAnnotationPopoverForSelectionPath:(id)arg1;
 - (struct CGRect)rectInRootOfAutoZoomContextOfSelectionPath:(id)arg1;
 - (struct CGRect)rectInRootForZoomingToSelectionPath:(id)arg1;
@@ -55,7 +57,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) unsigned long long pageCount;
 @property(readonly, nonatomic) unsigned long long pageNumber;
 - (id)p_firstAncestorRespondingToSelector:(SEL)arg1;
-@property(readonly, nonatomic) double maxAnchorY;
+@property(readonly, nonatomic) double maxAnchorInBlockDirection;
 - (id)currentAnchoredDrawableLayouts;
 - (id)currentInlineDrawableLayouts;
 - (void)addAttachmentLayout:(id)arg1;
@@ -68,7 +70,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) int naturalDirection;
 @property(readonly, nonatomic) int naturalAlignment;
 @property(readonly, nonatomic) int verticalAlignment;
-@property(readonly, nonatomic) unsigned int autosizeFlags;
+@property(readonly, nonatomic) unsigned long long autosizeFlags;
 @property(readonly, nonatomic) struct CGPoint anchorPoint;
 @property(readonly, nonatomic) struct CGPoint position;
 @property(readonly, nonatomic) struct CGSize currentSize;

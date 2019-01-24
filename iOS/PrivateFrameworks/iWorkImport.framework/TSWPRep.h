@@ -44,7 +44,7 @@ __attribute__((visibility("hidden")))
     _Bool _tornDown;
     _Bool _searchHitsAreInvalid;
     _Bool _findIsShowing;
-    TSWPSearchReference *_activeSearchReference;
+    TSWPSearchReference *_primaryFindResultSearchReference;
     NSArray *_searchReferences;
     CALayer *_floatingCaretLayer;
     struct CGAffineTransform _transformToConvertNaturalToScaledRoot;
@@ -59,7 +59,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) struct _NSRange dragRange; // @synthesize dragRange=_dragRange;
 @property(nonatomic, getter=isSelectionHighlightSuppressed) _Bool suppressSelectionHighlight; // @synthesize suppressSelectionHighlight=_suppressSelectionHighlight;
 @property(nonatomic) _Bool findIsShowing; // @synthesize findIsShowing=_findIsShowing;
-@property(retain, nonatomic) TSWPSearchReference *activeSearchReference; // @synthesize activeSearchReference=_activeSearchReference;
+@property(retain, nonatomic) TSWPSearchReference *primaryFindResultSearchReference; // @synthesize primaryFindResultSearchReference=_primaryFindResultSearchReference;
 - (void).cxx_destruct;
 - (void)p_drawTextInLayer:(id)arg1 context:(struct CGContext *)arg2 limitSelection:(id)arg3 rubyGlyphRange:(struct _NSRange)arg4 renderMode:(int)arg5 suppressInvisibles:(_Bool)arg6;
 - (void)p_teardown;
@@ -108,9 +108,9 @@ __attribute__((visibility("hidden")))
 - (struct CGRect)p_topicDragRectForSelection:(id)arg1;
 - (struct CGRect)p_caretRectForSelection:(id)arg1;
 - (struct CGRect)caretRectForSelection:(id)arg1;
-- (CDStruct_7e4c5a1e)wordMetricsAtCharIndex:(unsigned long long)arg1;
-- (CDStruct_d12891c8)lineMetricsAtCharIndex:(unsigned long long)arg1;
-- (CDStruct_d12891c8)lineMetricsAtPoint:(struct CGPoint)arg1;
+- (CDStruct_249a8bf0)wordMetricsAtCharIndex:(unsigned long long)arg1;
+- (CDStruct_8299b2ea)lineMetricsAtCharIndex:(unsigned long long)arg1;
+- (CDStruct_8299b2ea)lineMetricsAtPoint:(struct CGPoint)arg1;
 - (struct CGRect)caretRectForCharIndex:(unsigned long long)arg1 leadingEdge:(_Bool)arg2 caretAffinity:(int)arg3;
 - (struct CGRect)caretRectForCharIndex:(unsigned long long)arg1 caretAffinity:(int)arg2;
 - (struct CGRect)naturalBoundsRectForHyperlinkField:(id)arg1;

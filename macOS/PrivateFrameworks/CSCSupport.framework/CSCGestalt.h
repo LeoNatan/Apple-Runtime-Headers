@@ -10,6 +10,22 @@
 {
 }
 
+- (id)macOSSecureElementOSVersion:(id *)arg1;
+- (id)macOSSecureElementFWVersion:(id *)arg1;
+- (id)macOSStockholmFWVersion:(id *)arg1;
+- (id)macOSStorageFirmwareVersion:(id *)arg1;
+- (id)macOSBootRomVersion:(id *)arg1;
+- (id)macOSTrackpadMTVersion:(id *)arg1;
+- (id)macOSTrackpadSTVersion:(id *)arg1;
+- (id)macOSDisplayPresent:(id *)arg1;
+- (id)macOSWiFiVersion:(id *)arg1;
+- (id)macOSBluetoothVersion:(id *)arg1;
+- (id)macOSBatterySocLevel:(id *)arg1;
+- (id)macOSBatteryDesignCycleCnt:(id *)arg1;
+- (id)macOSBatteryActualCycleCnt:(id *)arg1;
+- (id)macOSInternalTrackpadProductId:(id *)arg1;
+- (id)macOSInternalTrackpadVendorId:(id *)arg1;
+- (id)macOSInternalTrackpadPresent:(id *)arg1;
 - (id)macOSThunderboltFirmwareVersion:(id *)arg1;
 - (id)macOSWifiFirmwareVersion:(id *)arg1;
 - (id)macOSWifiSKU:(id *)arg1;

@@ -28,11 +28,10 @@
 - (void).cxx_destruct;
 - (float)_alphaForIndex:(unsigned int)arg1;
 - (float)_angleForIndex:(unsigned int)arg1;
-- (struct CGAffineTransform)_transformForIndex:(unsigned int)arg1;
+- (struct CGAffineTransform)_transformForAngle:(float)arg1;
 - (void)layoutSubviews;
 - (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (void)_setCurrentFraction:(float)arg1;
-- (float)_fractionForSideIndex:(unsigned int)arg1;
 - (void)transitionToFraction:(float)arg1 fromSideAtIndex:(unsigned int)arg2 toSideAtIndex:(unsigned int)arg3;
 - (void)transitionToSideAtIndex:(unsigned int)arg1;
 - (void)enumerateSideViewsWithBlock:(CDUnknownBlockType)arg1;

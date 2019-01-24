@@ -32,7 +32,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) TSCH3DScene *scene; // @synthesize scene=mScene;
 - (id).cxx_construct;
 - (id)debugBounds;
-- (void)cacheLabels;
 - (void)resetContainingViewport;
 - (const struct ChartProjectedBoundsSpaces *)projectedBounds;
 - (const struct ChartProjectedBoundsSpaces *)p_projectedBoundsWithLabelsMode:(int)arg1;

@@ -16,6 +16,7 @@
     BOOL _suppressTotal;
     BOOL _shippingEditable;
     BOOL _requiresAddressPrecision;
+    BOOL _supportsInstantFundsIn;
     NSString *_merchantIdentifier;
     NSString *_countryCode;
     NSArray *_supportedNetworks;
@@ -50,6 +51,8 @@
     NSString *_localizedPasswordButtonTitle;
     NSString *_shippingEditableMessage;
     PKPaymentMerchantSession *_merchantSession;
+    NSString *_passTypeIdentifier;
+    NSString *_passSerialNumber;
     double _clientCallbackTimeout;
 }
 
@@ -62,7 +65,10 @@
 + (long long)version;
 + (id)availableNetworks;
 + (id)requestWithProtobuf:(id)arg1;
+@property(nonatomic) BOOL supportsInstantFundsIn; // @synthesize supportsInstantFundsIn=_supportsInstantFundsIn;
 @property(nonatomic) double clientCallbackTimeout; // @synthesize clientCallbackTimeout=_clientCallbackTimeout;
+@property(copy, nonatomic) NSString *passSerialNumber; // @synthesize passSerialNumber=_passSerialNumber;
+@property(copy, nonatomic) NSString *passTypeIdentifier; // @synthesize passTypeIdentifier=_passTypeIdentifier;
 @property(retain, nonatomic) PKPaymentMerchantSession *merchantSession; // @synthesize merchantSession=_merchantSession;
 @property(nonatomic) BOOL requiresAddressPrecision; // @synthesize requiresAddressPrecision=_requiresAddressPrecision;
 @property(copy, nonatomic) NSString *shippingEditableMessage; // @synthesize shippingEditableMessage=_shippingEditableMessage;
@@ -113,6 +119,8 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)init;
+- (id)disbursementPaymentRequest;
+- (BOOL)isDisbursementPaymentRequest;
 - (id)protobuf;
 - (id)serviceProviderPaymentRequest;
 - (BOOL)isServiceProviderPaymentRequest;

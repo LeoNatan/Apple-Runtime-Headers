@@ -6,9 +6,10 @@
 
 #import <NanoTimeKitCompanion/REElementActionDelegate-Protocol.h>
 
-@class REUIElementDonatedActionAction, UIImage;
+@class REUIElementDonatedActionAction, UIImage, UIView;
 
 @protocol REUIElementDonatedActionActionDelegate <REElementActionDelegate>
+- (UIView *)intentActionWantsBackgroundToBlurForAlert:(REUIElementDonatedActionAction *)arg1;
 - (UIImage *)intentActionWantsBackgroundImageForAlert:(REUIElementDonatedActionAction *)arg1;
 @end
 

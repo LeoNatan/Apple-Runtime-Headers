@@ -16,18 +16,19 @@ __attribute__((visibility("hidden")))
 {
 }
 
++ (_Bool)isShimControlFormatType:(int)arg1;
 + (int)shimControlFormatTypeForInteractionType:(int)arg1;
 + (int)interactionTypeForShimControlFormatType:(int)arg1;
 + (id)cellSpecFromTSKFormat:(id)arg1;
-+ (id)instanceWithArchive:(const struct CellSpecArchive *)arg1 unarchiver:(id)arg2;
++     // Error parsing type: @32@0:8r^{CellSpecArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{FormulaArchive}^{Reference}dddIBB}16@24, name: instanceWithArchive:unarchiver:
 + (id)cellDiffProperties;
 + (_Bool)interactionTypeIsControl:(int)arg1;
 + (id)defaultCellSpec;
 - (_Bool)validateFormatAndValue:(id)arg1;
 - (void)saveToPropertyCommandMessage:(struct Message *)arg1 archiver:(id)arg2;
 - (id)initFromPropertyCommandMessage:(const struct Message *)arg1 unarchiver:(id)arg2;
-- (void)saveToArchive:(struct CellSpecArchive *)arg1 archiver:(id)arg2;
-- (id)initWithArchive:(const struct CellSpecArchive *)arg1 unarchiver:(id)arg2;
+-     // Error parsing type: v32@0:8^{CellSpecArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{FormulaArchive}^{Reference}dddIBB}16@24, name: saveToArchive:archiver:
+-     // Error parsing type: @32@0:8r^{CellSpecArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{FormulaArchive}^{Reference}dddIBB}16@24, name: initWithArchive:unarchiver:
 - (_Bool)isEqual:(id)arg1;
 @property(readonly) unsigned long long hash;
 - (id)propertiesMatchingThoseInMap:(id)arg1;

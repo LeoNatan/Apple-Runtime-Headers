@@ -13,6 +13,7 @@ __attribute__((visibility("hidden")))
 }
 
 - (struct CGRect)attachmentBoundsForTextContainer:(id)arg1 proposedLineFragment:(struct CGRect)arg2 glyphPosition:(struct CGPoint)arg3 characterIndex:(unsigned long long)arg4;
+- (id)imageForBounds:(struct CGRect)arg1 textContainer:(id)arg2 characterIndex:(unsigned long long)arg3;
 - (id)initWithWidth:(double)arg1;
 
 @end

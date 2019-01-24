@@ -18,6 +18,7 @@
 + (_Bool)supportsSecureCoding;
 @property(copy, nonatomic) NSURL *moreResultsURL; // @synthesize moreResultsURL=_moreResultsURL;
 - (void).cxx_destruct;
+- (unsigned int)nwActivityLabel;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 

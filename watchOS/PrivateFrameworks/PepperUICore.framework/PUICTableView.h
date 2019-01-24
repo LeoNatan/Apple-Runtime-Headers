@@ -8,15 +8,17 @@
 
 #import <PepperUICore/PUICCrownInputSequencerDataSource-Protocol.h>
 #import <PepperUICore/PUICCrownInputSequencerDelegate-Protocol.h>
+#import <PepperUICore/PUICEllipticScrollingLayoutProviderDelegate-Protocol.h>
+#import <PepperUICore/PUICEllipticScrollingProvider-Protocol.h>
 #import <PepperUICore/PUICSectionable-Protocol.h>
 #import <PepperUICore/PUICTableViewCellActionBarDelegate-Protocol.h>
 #import <PepperUICore/UIGestureRecognizerDelegate-Protocol.h>
 #import <PepperUICore/_UIScrollViewScrollObserver-Protocol.h>
 
-@class NSIndexPath, NSString, PUICSelectionIndexController, PUICTableViewCellActionBar, PUICTableViewNotchProvider, UIPanGestureRecognizer, UIScrollView;
+@class NSIndexPath, NSString, PUICEllipticScrollingLayoutProvider, PUICSelectionIndexController, PUICTableViewCellActionBar, PUICTableViewNotchProvider, UIPanGestureRecognizer, UIScrollView;
 @protocol PUICTableViewDataSource, PUICTableViewDelegate;
 
-@interface PUICTableView : UITableView <PUICCrownInputSequencerDelegate, PUICCrownInputSequencerDataSource, UIGestureRecognizerDelegate, PUICSectionable, _UIScrollViewScrollObserver, PUICTableViewCellActionBarDelegate>
+@interface PUICTableView : UITableView <PUICCrownInputSequencerDelegate, PUICCrownInputSequencerDataSource, UIGestureRecognizerDelegate, PUICSectionable, _UIScrollViewScrollObserver, PUICEllipticScrollingProvider, PUICEllipticScrollingLayoutProviderDelegate, PUICTableViewCellActionBarDelegate>
 {
     UIPanGestureRecognizer *_swipeActionPanRecognizer;
     float _initialTranslation;
@@ -24,6 +26,7 @@
     _Bool _swipingLeft;
     UIScrollView *_observedScrollView;
     float _flattenExtremesProgress;
+    _Bool _applysOpacityToCurvingCells;
     struct {
         unsigned int dataSourceSectionIndexTitlesForTableView:1;
         unsigned int dataSourceTableViewSectionForSectionIndexTitleAtIndex:1;
@@ -42,23 +45,12 @@
     } _puicFlags;
     PUICSelectionIndexController *_indexController;
     _Bool _reducedMotion;
+    PUICEllipticScrollingLayoutProvider *_ellipticScrollingLayoutProvider;
     _Bool _showsSectionIndexOverlayOnCrownScroll;
-    _Bool _curvesTop;
-    _Bool _curvesBottom;
     _Bool _alwaysGenerateDetents;
-    _Bool _forceEllipticCurveTableViewEverywhere;
-    _Bool _forceCurvesTop;
-    _Bool _forceCurvesBottom;
-    _Bool _flattenExtremesTop;
-    _Bool _flattenExtremesBottom;
     _Bool _deviceSupportsHardwareDetents;
     PUICTableViewNotchProvider *_notchProvider;
     NSIndexPath *_swipedIndexPath;
-    float _threshold;
-    float _scaleExponent;
-    float _scaleAccentuate;
-    float _alphaExponent;
-    float _alphaAccentuate;
     unsigned int _numberOfTableAlteringOperationsInFlight;
     unsigned int _numberOfBatchUpdatesInFlight;
 }
@@ -66,19 +58,7 @@
 @property(nonatomic) _Bool deviceSupportsHardwareDetents; // @synthesize deviceSupportsHardwareDetents=_deviceSupportsHardwareDetents;
 @property(nonatomic) unsigned int numberOfBatchUpdatesInFlight; // @synthesize numberOfBatchUpdatesInFlight=_numberOfBatchUpdatesInFlight;
 @property(nonatomic) unsigned int numberOfTableAlteringOperationsInFlight; // @synthesize numberOfTableAlteringOperationsInFlight=_numberOfTableAlteringOperationsInFlight;
-@property(nonatomic) float alphaAccentuate; // @synthesize alphaAccentuate=_alphaAccentuate;
-@property(nonatomic) float alphaExponent; // @synthesize alphaExponent=_alphaExponent;
-@property(nonatomic) float scaleAccentuate; // @synthesize scaleAccentuate=_scaleAccentuate;
-@property(nonatomic) float scaleExponent; // @synthesize scaleExponent=_scaleExponent;
-@property(nonatomic) float threshold; // @synthesize threshold=_threshold;
-@property(nonatomic) _Bool flattenExtremesBottom; // @synthesize flattenExtremesBottom=_flattenExtremesBottom;
-@property(nonatomic) _Bool flattenExtremesTop; // @synthesize flattenExtremesTop=_flattenExtremesTop;
-@property(nonatomic) _Bool forceCurvesBottom; // @synthesize forceCurvesBottom=_forceCurvesBottom;
-@property(nonatomic) _Bool forceCurvesTop; // @synthesize forceCurvesTop=_forceCurvesTop;
-@property(nonatomic) _Bool forceEllipticCurveTableViewEverywhere; // @synthesize forceEllipticCurveTableViewEverywhere=_forceEllipticCurveTableViewEverywhere;
 @property(nonatomic) _Bool alwaysGenerateDetents; // @synthesize alwaysGenerateDetents=_alwaysGenerateDetents;
-@property(nonatomic) _Bool curvesBottom; // @synthesize curvesBottom=_curvesBottom;
-@property(nonatomic) _Bool curvesTop; // @synthesize curvesTop=_curvesTop;
 @property(nonatomic) _Bool showsSectionIndexOverlayOnCrownScroll; // @synthesize showsSectionIndexOverlayOnCrownScroll=_showsSectionIndexOverlayOnCrownScroll;
 @property(retain, nonatomic) NSIndexPath *swipedIndexPath; // @synthesize swipedIndexPath=_swipedIndexPath;
 @property(retain, nonatomic) PUICTableViewNotchProvider *notchProvider; // @synthesize notchProvider=_notchProvider;
@@ -129,13 +109,35 @@
 - (_Bool)_shouldDisplayExtraSeparatorsAtOffset:(float *)arg1;
 @property(nonatomic) __weak id <PUICTableViewDelegate> delegate; // @dynamic delegate;
 @property(nonatomic) __weak id <PUICTableViewDataSource> dataSource; // @dynamic dataSource;
-- (void)_applyEllipticCurveToCells;
-- (_Bool)_shouldCurve;
 - (void)_observeScrollViewDidScroll:(id)arg1;
 - (void)didMoveToWindow;
-- (float)bottomThreshold;
-- (float)topThreshold;
-- (float)visibleHeight;
+- (unsigned int)_totalCellCount;
+- (id)_ellipticParametersForCell:(id)arg1;
+- (struct CATransform3D)ellipticScrollingTransformForCell:(id)arg1;
+- (float)ellipticScrollingAlphaForCell:(id)arg1;
+- (void)setApplysOpacityToCurvingCells:(_Bool)arg1;
+- (id)_ellipticParametersForFooterView;
+- (struct CATransform3D)ellipticScrollingTransformForFooterView;
+- (float)ellipticScrollingAlphaForFooterView;
+- (_Bool)_shouldCurve;
+- (void)setTableFooterView:(id)arg1;
+- (void)_applyEllipticCurveToCells;
+- (void)setForceCurvesBottom:(_Bool)arg1;
+@property(nonatomic) _Bool curvesBottom;
+- (void)setForceCurvesTop:(_Bool)arg1;
+@property(nonatomic) _Bool curvesTop;
+- (void)setAlphaAccentuate:(float)arg1;
+- (void)setAlphaExponent:(float)arg1;
+- (void)setScaleAccentuate:(float)arg1;
+- (void)setScaleExponent:(float)arg1;
+- (void)setThreshold:(float)arg1;
+- (void)setFlattenExtremesBottom:(_Bool)arg1;
+- (void)setFlattenExtremesTop:(_Bool)arg1;
+- (struct CGPoint)layoutProvider:(id)arg1 convertPointToContainingView:(struct CGPoint)arg2;
+- (int)totalViewCountForEllipticScrollingLayoutProvider:(id)arg1;
+- (id)ellipticScrollingLayoutProvider:(id)arg1 visibleItemForIdentifier:(id)arg2;
+- (id)ellipticScrollingLayoutProvider:(id)arg1 visibleItemIdentifiersWithIndexOffset:(int *)arg2;
+- (float)scrollOffsetForEllipticScrollingLayoutProvider:(id)arg1;
 - (void)layoutSubviews;
 - (void)setBackgroundColor:(id)arg1;
 - (void)_performTableAlteringOperation:(CDUnknownBlockType)arg1;

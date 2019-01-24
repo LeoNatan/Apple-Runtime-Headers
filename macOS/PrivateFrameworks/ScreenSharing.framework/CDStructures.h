@@ -39,6 +39,13 @@ struct Point {
     short _field2;
 };
 
+struct RFBAssistCursorV2Info {
+    unsigned char _field1;
+    unsigned char _field2;
+    double _field3;
+    double _field4;
+};
+
 struct RFBScreenSizeInfo {
     unsigned short _field1;
     unsigned short _field2;

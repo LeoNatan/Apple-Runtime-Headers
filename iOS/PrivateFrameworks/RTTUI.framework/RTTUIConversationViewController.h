@@ -26,6 +26,7 @@
     NSMutableString *_voAnnouncementBuffer;
     NSLock *_realtimeSendLock;
     NSObject<OS_dispatch_queue> *_utteranceRequestQueue;
+    _Bool _serviceMessageVisible;
     _Bool _processingUtteranceBuffer;
     RTTConversation *_conversation;
     DDParsecCollectionViewController *_lookupController;
@@ -56,15 +57,17 @@
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (double)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
+- (long long)numberOfSectionsInTableView:(id)arg1;
 - (void)updateViewForKeyboard:(id)arg1;
 - (void)shareCallInfo:(id)arg1;
 - (void)setupTableView;
 - (void)updateTableViewSizeAnimated:(_Bool)arg1;
-- (void)replyCellActionDidActivate:(id)arg1;
-- (void)updateVoiceOverAnnouncement:(id)arg1;
+- (void)updateGAButton:(_Bool)arg1;
+- (void)replyCell:(id)arg1 didActivateWithReplyButtonType:(unsigned long long)arg2;
 - (void)realtimeTextDidChange;
 - (void)gaButtonPressed:(id)arg1;
 - (void)deviceDidReceiveString:(id)arg1 forUtterance:(id)arg2;
+- (void)updateVoiceOverAnnouncement:(id)arg1;
 - (id)currentContactPath;
 - (id)cannedResponses;
 - (id)cellAtIndexPath:(id)arg1;
@@ -74,7 +77,8 @@
 - (void)_sendNewUtteranceString:(id)arg1 atIndex:(unsigned long long)arg2 forCellPath:(id)arg3;
 - (void)processUtteranceQueue;
 - (id)addUtterance:(id)arg1;
-- (id)callContainingUtterance;
+- (void)insertServiceCell;
+- (id)currentCall;
 - (void)toggleMute:(id)arg1;
 - (void)updateMuteButton;
 - (void)callDidConnect:(id)arg1;

@@ -104,6 +104,7 @@
 - (void)browser:(id)arg1 didAddAdvertisements:(id)arg2;
 - (void)accessoryServer:(id)arg1 confirmUUID:(id)arg2 token:(id)arg3;
 - (void)accessoryServer:(id)arg1 authenticateUUID:(id)arg2 token:(id)arg3;
+- (void)accessoryServer:(id)arg1 validateCert:(id)arg2 model:(id)arg3;
 - (void)accessoryServer:(id)arg1 validateUUID:(id)arg2 token:(id)arg3 model:(id)arg4;
 - (void)accessoryServer:(id)arg1 didFinishAuth:(id)arg2;
 - (void)accessoryServer:(id)arg1 didUpdateName:(id)arg2;

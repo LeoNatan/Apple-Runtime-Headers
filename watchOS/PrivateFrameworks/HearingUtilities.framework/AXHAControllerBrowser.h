@@ -53,7 +53,7 @@
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned int hash;
-@property(nonatomic) id <HUIDCManagerSecurityDelegate> securityDelegate;
+@property(nonatomic) __weak id <HUIDCManagerSecurityDelegate> securityDelegate;
 @property(readonly) Class superclass;
 
 @end

@@ -19,30 +19,21 @@
     // Error parsing type: , name: _metadata
 }
 
-+ (id)identifierWithPrefix:(id)arg1 intent:(id)arg2 error:(id *)arg3;
 + (BOOL)supportsSecureCoding;
 + (id)dateFormat;
-+ (id)EventIdSeparator;
-- (CDUnknownBlockType).cxx_destruct;
+- (void).cxx_destruct;
 - (id)init;
 - (id)copyWithZone:(void *)arg1;
 - (id)initFrom:(id)arg1 withIdentifier:(id)arg2;
 - (id)init:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (id)initWithIdentifier:(id)arg1 firstSeen:(id)arg2 lastSeen:(id)arg3 frequency:(long long)arg4 lastDuration:(double)arg5 totalDuration:(double)arg6 metadata:(id)arg7;
 @property(nonatomic, readonly) NSDictionary *metadata;
 @property(nonatomic, readonly) double totalDuration;
 @property(nonatomic, readonly) double lastDuration;
 @property(nonatomic, readonly) long long frequency;
 @property(nonatomic, readonly) NSDate *lastSeen;
 @property(nonatomic, readonly) NSDate *firstSeen;
-@property(nonatomic, copy) NSDictionary *_metadata; // @synthesize _metadata;
-@property(nonatomic) double _totalDuration; // @synthesize _totalDuration;
-@property(nonatomic) double _lastDuration; // @synthesize _lastDuration;
-@property(nonatomic) long long _frequency; // @synthesize _frequency;
-@property(nonatomic, copy) NSDate *_lastSeen; // @synthesize _lastSeen;
-@property(nonatomic, copy) NSDate *_firstSeen; // @synthesize _firstSeen;
 @property(nonatomic, readonly) NSString *identifier; // @synthesize identifier;
 
 @end

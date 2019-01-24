@@ -41,6 +41,7 @@ __attribute__((visibility("hidden")))
 - (void)addToIncludedUidsTractColumnUids:(const vector_4dc5f307 *)arg1 rowUids:(const vector_4dc5f307 *)arg2;
 - (void)addToIncludedUidsTractColumnUids:(const vector_4dc5f307 *)arg1 rowUids:(const vector_4dc5f307 *)arg2 isRangeRef:(_Bool)arg3 preserveRectangularRange:(_Bool)arg4;
 - (void)addToIncludedUidsTractColumnUid:(const UUIDData_5fbc143e *)arg1 rowUid:(const UUIDData_5fbc143e *)arg2;
+- (id)removedByMoveUidTract;
 - (id)activeUidTract;
 - (id)preMoveRegionUidTract;
 - (id)preMergeUidTract;
@@ -48,8 +49,8 @@ __attribute__((visibility("hidden")))
 - (id)includedUidsTract;
 - (unsigned char)tractCount;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (void)saveToArchive:(struct ASTNodeArrayArchive_ASTUidTractList *)arg1;
-- (id)initWithArchive:(const struct ASTNodeArrayArchive_ASTUidTractList *)arg1;
+-     // Error parsing type: v24@0:8^{ASTNodeArrayArchive_ASTUidTractList=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSCE::ASTNodeArrayArchive_ASTUidTract>=^{Arena}ii^{Rep}}^{ASTNodeArrayArchive_ASTStickyBits}}16, name: saveToArchive:
+-     // Error parsing type: @24@0:8r^{ASTNodeArrayArchive_ASTUidTractList=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSCE::ASTNodeArrayArchive_ASTUidTract>=^{Arena}ii^{Rep}}^{ASTNodeArrayArchive_ASTStickyBits}}16, name: initWithArchive:
 
 @end
 

@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class MPCPlayerResponse, MPModelGenericObject, NSIndexPath, NSString;
+@class MPCPlayerResponse, MPModelGenericObject, NSArray, NSIndexPath, NSString;
 
 @interface MPCPlayerResponseItem : NSObject
 {
@@ -14,6 +14,7 @@
     _Bool _placeholder;
     NSString *_contentItemIdentifier;
     int _revision;
+    NSArray *_languageOptionGroups;
     MPCPlayerResponse *_response;
     NSIndexPath *_indexPath;
     MPModelGenericObject *_metadataObject;
@@ -24,11 +25,13 @@
 @property(readonly, nonatomic) MPModelGenericObject *metadataObject; // @synthesize metadataObject=_metadataObject;
 @property(readonly, nonatomic) NSIndexPath *indexPath; // @synthesize indexPath=_indexPath;
 @property(readonly, nonatomic) __weak MPCPlayerResponse *response; // @synthesize response=_response;
+@property(readonly, nonatomic) NSArray *languageOptionGroups; // @synthesize languageOptionGroups=_languageOptionGroups;
 @property(readonly, nonatomic) CDStruct_fce57115 duration; // @synthesize duration=_duration;
 @property(readonly, nonatomic) int revision; // @synthesize revision=_revision;
 @property(readonly, nonatomic) NSString *contentItemIdentifier; // @synthesize contentItemIdentifier=_contentItemIdentifier;
 - (void).cxx_destruct;
 - (id)_feedbackCommandWithMediaRemoteCommand:(unsigned int)arg1;
+- (id)_buildLanguageOptionGroups:(id)arg1 currentLanguageOptions:(id)arg2;
 - (unsigned int)_determineSeekSupport;
 - (id)startPictureInPicture;
 - (id)remove;

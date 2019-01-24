@@ -29,6 +29,7 @@
 @property(nonatomic) double rectLeft; // @dynamic rectLeft;
 @property(copy, nonatomic) NSString *passwordRules; // @dynamic passwordRules;
 @property(copy, nonatomic) NSString *value; // @dynamic value;
+- (void)setPlaceholder:(id)arg1;
 @property(copy, nonatomic) NSString *nextControlUniqueID; // @dynamic nextControlUniqueID;
 @property(copy, nonatomic) NSString *uniqueID; // @dynamic uniqueID;
 @property(copy, nonatomic) NSString *tagName; // @dynamic tagName;

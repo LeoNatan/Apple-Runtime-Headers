@@ -14,7 +14,7 @@
     ASDAudioDevice *_owningDevice;
     struct unique_ptr<ASDDSPStreamHelper, std::__1::default_delete<ASDDSPStreamHelper>> _streamHelper;
     struct list<ASDDSPGraphHelper, std::__1::allocator<ASDDSPGraphHelper>> _graphHelpers;
-    struct unique_ptr<applesauce::experimental::sync::LockFreeHashTable<unsigned long long, ASDDSPGraphHelper *, 3>, std::__1::default_delete<applesauce::experimental::sync::LockFreeHashTable<unsigned long long, ASDDSPGraphHelper *, 3>>> _clientToGraphMap;
+    struct unique_ptr<ca::concurrent::guarded_lookup_hash_table<unsigned long long, ASDDSPGraphHelper *, 3>, std::__1::default_delete<ca::concurrent::guarded_lookup_hash_table<unsigned long long, ASDDSPGraphHelper *, 3>>> _clientToGraphMap;
     NSObject<OS_dispatch_queue> *_dspQueue;
     NSObject<OS_dispatch_queue> *_propertyQueue;
     BOOL _isRunning;

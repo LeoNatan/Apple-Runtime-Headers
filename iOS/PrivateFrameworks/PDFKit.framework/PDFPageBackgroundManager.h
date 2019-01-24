@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
 - (void)_drawPageImage:(unsigned long long)arg1 forQuality:(int)arg2;
 - (_Bool)_findPageIndexNeedingUpdate:(unsigned long long *)arg1 forQuality:(int *)arg2;
 - (void)_update;
+- (void)forceSetBackgroundImage:(id)arg1 forPageIndex:(unsigned long long)arg2;
 - (void)cancel;
 - (void)didSwapPageAtIndex:(unsigned long long)arg1 withIndex:(unsigned long long)arg2;
 - (void)didRemovePageAtIndex:(unsigned long long)arg1;

@@ -12,7 +12,7 @@
 #import <NewsUI/SXScrollViewControllerDelegate-Protocol.h>
 
 @class FCObservable, NFEventManager, NFMultiDelegate, NSHashTable, NSString, NUArticleAdManager, SXScrollViewController, UIScrollView;
-@protocol NUArticleDataProvider, NUArticleKeyCommandManager, NUDynamicTypeProviding, NUEndOfArticleDataProvider, NULoadingDelegate, SXAnalyticsReporting;
+@protocol NUArticleDataProvider, NUArticleKeyCommandManager, NUDocumentSectionBlueprintProvider, NUDynamicTypeProviding, NUEndOfArticleDataProvider, NULoadingDelegate, SXAnalyticsReporting;
 
 @interface NUArticleViewController : UIViewController <SXScrollViewControllerDelegate, SXAnalyticsReporting, NUDynamicTypeObserving, NULoadable>
 {
@@ -31,8 +31,10 @@
     NFEventManager *_eventManager;
     id <NUArticleKeyCommandManager> _keyCommandManager;
     NSHashTable *_loadingListeners;
+    id <NUDocumentSectionBlueprintProvider> _documentSectionBlueprintProvider;
 }
 
+@property(readonly, nonatomic) id <NUDocumentSectionBlueprintProvider> documentSectionBlueprintProvider; // @synthesize documentSectionBlueprintProvider=_documentSectionBlueprintProvider;
 @property(readonly, nonatomic) NSHashTable *loadingListeners; // @synthesize loadingListeners=_loadingListeners;
 @property(readonly, nonatomic) id <NUArticleKeyCommandManager> keyCommandManager; // @synthesize keyCommandManager=_keyCommandManager;
 @property(readonly, nonatomic) NFEventManager *eventManager; // @synthesize eventManager=_eventManager;
@@ -51,6 +53,8 @@
 - (void).cxx_destruct;
 - (id)currentPresentationAttributes;
 - (void)updatePresentationAttributes;
+- (void)updateScrollViewControllerWithFooterBlueprint:(id)arg1;
+- (void)updateScrollViewControllerWithHeaderBlueprint:(id)arg1;
 - (void)scrollToTopAnimated:(_Bool)arg1;
 - (void)restoreScrollPositionIfNeeded;
 - (void)dynamicTypeDidChange:(id)arg1;
@@ -68,7 +72,7 @@
 - (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)viewDidLoad;
-- (id)initWithArticleDataProvider:(id)arg1 scrollViewController:(id)arg2 articleAdManager:(id)arg3 dynamicTypeProviding:(id)arg4 appStateMonitor:(id)arg5 keyCommandManager:(id)arg6 loadingListeners:(id)arg7;
+- (id)initWithArticleDataProvider:(id)arg1 scrollViewController:(id)arg2 articleAdManager:(id)arg3 dynamicTypeProviding:(id)arg4 appStateMonitor:(id)arg5 keyCommandManager:(id)arg6 loadingListeners:(id)arg7 headerBlueprintProvider:(id)arg8;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

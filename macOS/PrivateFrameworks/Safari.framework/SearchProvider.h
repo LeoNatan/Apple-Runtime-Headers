@@ -15,7 +15,6 @@ __attribute__((visibility("hidden")))
     NSMutableSet *_homepageURLs;
     BOOL _usesSecureSearchURL;
     NSString *_shortName;
-    NSString *_scriptingName;
     NSString *_identifier;
     NSString *_parsecSearchIdentifier;
     NSString *_parsecSearchSuggestionIdentifier;
@@ -26,14 +25,14 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) NSString *parsecSearchSuggestionIdentifier; // @synthesize parsecSearchSuggestionIdentifier=_parsecSearchSuggestionIdentifier;
 @property(copy, nonatomic) NSString *parsecSearchIdentifier; // @synthesize parsecSearchIdentifier=_parsecSearchIdentifier;
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-@property(readonly, nonatomic) NSString *scriptingName; // @synthesize scriptingName=_scriptingName;
 @property(readonly, nonatomic) NSString *shortName; // @synthesize shortName=_shortName;
 - (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *displayName;
 - (BOOL)searchShouldUseSafeSearchTemplate;
+- (BOOL)urlIsHomepage:(id)arg1 shouldUseCanonicalRepresentation:(BOOL)arg2;
 - (BOOL)urlIsHomepage:(id)arg1;
 - (Class)classForCoder;
-- (id)initWithIdentifier:(id)arg1 shortName:(id)arg2 localizableName:(id)arg3 scriptingName:(id)arg4 searchURLTemplate:(id)arg5 safeSearchURLTemplate:(id)arg6 safeSearchURLQueryParameters:(id)arg7 suggestionsURLTemplate:(id)arg8 homepageURLs:(id)arg9 hostSuffixes:(id)arg10 pathPrefixes:(id)arg11 usesSearchTermsFromFragment:(BOOL)arg12;
+- (id)initWithIdentifier:(id)arg1 shortName:(id)arg2 localizableName:(id)arg3 searchURLTemplate:(id)arg4 safeSearchURLTemplate:(id)arg5 safeSearchURLQueryParameters:(id)arg6 suggestionsURLTemplate:(id)arg7 homepageURLs:(id)arg8 hostSuffixes:(id)arg9 pathPrefixes:(id)arg10 usesSearchTermsFromFragment:(BOOL)arg11;
 
 @end
 

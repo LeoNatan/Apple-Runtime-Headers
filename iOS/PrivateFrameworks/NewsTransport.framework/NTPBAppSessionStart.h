@@ -27,6 +27,7 @@
     NSString *_notificationId;
     NSString *_notificationSenderChannelId;
     NSString *_notificationSourceChannelId;
+    int _notificationType;
     int _notitificationsEnabledChannelsCount;
     NSMutableArray *_paidSubscriptionChannelIds;
     int _portraitAutoSubscribeFeedCount;
@@ -43,6 +44,8 @@
     NTPBWidgetEngagement *_widgetEngagement;
     int _widgetSection;
     int _widgetSectionArticleRank;
+    _Bool _isMarketingNotificationEnabled;
+    _Bool _isNewIssuesNotificationEnabled;
     _Bool _startedFromNotification;
     struct {
         unsigned int lastAppSessionTimestamp:1;
@@ -50,6 +53,7 @@
         unsigned int channelSubscriptionCount:1;
         unsigned int internalAutoSubscribeFeedCount:1;
         unsigned int notificationEnabledChannelsCount:1;
+        unsigned int notificationType:1;
         unsigned int notitificationsEnabledChannelsCount:1;
         unsigned int portraitAutoSubscribeFeedCount:1;
         unsigned int safariAutoSubscribeFeedCount:1;
@@ -59,6 +63,8 @@
         unsigned int widgetArticleRank:1;
         unsigned int widgetSection:1;
         unsigned int widgetSectionArticleRank:1;
+        unsigned int isMarketingNotificationEnabled:1;
+        unsigned int isNewIssuesNotificationEnabled:1;
         unsigned int startedFromNotification:1;
     } _has;
 }
@@ -69,6 +75,8 @@
 + (Class)notificationChannelIdsType;
 + (Class)paidSubscriptionChannelIdsType;
 + (Class)visibleViewsType;
+@property(nonatomic) _Bool isMarketingNotificationEnabled; // @synthesize isMarketingNotificationEnabled=_isMarketingNotificationEnabled;
+@property(nonatomic) _Bool isNewIssuesNotificationEnabled; // @synthesize isNewIssuesNotificationEnabled=_isNewIssuesNotificationEnabled;
 @property(nonatomic) int internalAutoSubscribeFeedCount; // @synthesize internalAutoSubscribeFeedCount=_internalAutoSubscribeFeedCount;
 @property(nonatomic) int appsAutoSubscribeFeedCount; // @synthesize appsAutoSubscribeFeedCount=_appsAutoSubscribeFeedCount;
 @property(nonatomic) int safariAutoSubscribeFeedCount; // @synthesize safariAutoSubscribeFeedCount=_safariAutoSubscribeFeedCount;
@@ -107,6 +115,10 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(nonatomic) _Bool hasIsMarketingNotificationEnabled;
+@property(nonatomic) _Bool hasIsNewIssuesNotificationEnabled;
+@property(nonatomic) _Bool hasNotificationType;
+@property(nonatomic) int notificationType; // @synthesize notificationType=_notificationType;
 @property(nonatomic) _Bool hasViewabilityState;
 @property(nonatomic) int viewabilityState; // @synthesize viewabilityState=_viewabilityState;
 @property(nonatomic) _Bool hasInternalAutoSubscribeFeedCount;

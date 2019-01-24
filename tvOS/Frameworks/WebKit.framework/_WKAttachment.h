@@ -8,25 +8,25 @@
 
 #import <WebKit/WKObject-Protocol.h>
 
-@class NSString;
+@class NSString, _WKAttachmentInfo;
 
 @interface _WKAttachment : NSObject <WKObject>
 {
     struct ObjectStorage<API::Attachment> _attachment;
 }
 
+@property(readonly, nonatomic, getter=isConnected) _Bool connected;
 @property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
 @property(readonly, nonatomic) NSString *uniqueIdentifier;
 - (void)setData:(id)arg1 newContentType:(id)arg2 newFilename:(id)arg3 completion:(CDUnknownBlockType)arg4;
-- (void)setDisplayOptions:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)requestData:(CDUnknownBlockType)arg1;
+- (void)setFileWrapper:(id)arg1 contentType:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)requestInfo:(CDUnknownBlockType)arg1;
-- (_Bool)isEqual:(id)arg1;
+@property(readonly, nonatomic) _WKAttachmentInfo *info;
 @property(readonly) struct Object *_apiObject;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
+@property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 
 @end

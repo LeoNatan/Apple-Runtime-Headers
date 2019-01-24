@@ -20,6 +20,11 @@
 @property(readonly, nonatomic) AWDServerConnection *awdServer; // @synthesize awdServer=_awdServer;
 - (void).cxx_destruct;
 - (void)submitVersioningMetricWithVersion:(id)arg1 variant:(int)arg2;
+- (void)ckBookmarkSyncFinishedWithResult:(long long)arg1 error:(id)arg2;
+- (void)didFailToMigrateToCKBookmarksAsPrimaryMigrator:(_Bool)arg1 error:(id)arg2;
+- (void)didSuccessfullyMigrateToCKBookmarksAsPrimaryMigrator:(_Bool)arg1;
+- (void)didStartMigratingToCKBookmarksAsPrimaryMigrator:(_Bool)arg1 localState:(long long)arg2 remoteState:(long long)arg3;
+- (void)unableToSilentlyMigrateToCKBookmarksWithReason:(int)arg1;
 - (void)submitAutomaticReaderActivation:(int)arg1;
 - (void)didToggleDomainSpecificAutomaticReader:(_Bool)arg1;
 - (void)didToggleGloballyUseAutomaticReader:(_Bool)arg1;

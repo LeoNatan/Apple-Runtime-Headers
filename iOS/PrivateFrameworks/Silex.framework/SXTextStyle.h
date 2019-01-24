@@ -6,12 +6,12 @@
 
 #import <Silex/SXJSONObject.h>
 
-#import <Silex/SXTextStyleFontDescribing-Protocol.h>
+#import <Silex/SXTextStyle-Protocol.h>
 
 @class NSString, SXJSONArray, SXShadow, SXTextDecoration, SXTextStroke, UIColor;
 @protocol SXTextStyleFontAttributes;
 
-@interface SXTextStyle : SXJSONObject <SXTextStyleFontDescribing>
+@interface SXTextStyle : SXJSONObject <SXTextStyle>
 {
 }
 
@@ -23,6 +23,7 @@
 
 // Remaining properties
 @property(readonly, nonatomic) UIColor *backgroundColor; // @dynamic backgroundColor;
+@property(readonly, nonatomic) SXJSONArray *conditional; // @dynamic conditional;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly, nonatomic) id <SXTextStyleFontAttributes> fontAttributes; // @dynamic fontAttributes;

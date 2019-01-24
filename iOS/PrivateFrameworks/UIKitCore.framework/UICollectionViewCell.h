@@ -96,7 +96,7 @@
 - (void)_setContentView:(id)arg1 addToHierarchy:(_Bool)arg2;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
-@property(readonly, nonatomic, getter=_contentViewFrame) struct CGRect contentViewFrame;
+- (struct CGRect)_contentViewFrame;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

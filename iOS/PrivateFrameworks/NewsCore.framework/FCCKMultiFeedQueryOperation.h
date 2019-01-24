@@ -16,22 +16,24 @@
     NSArray *_desiredKeys;
     long long _sortingFunction;
     long long _queryPriority;
-    NSArray *_articleKeysMappingToTag;
+    NSArray *_articleLinkKeys;
     CDUnknownBlockType _queryCompletionHandler;
     NSArray *_networkEvents;
     NSArray *_resultFeedItemAndArticleRecords;
     NSArray *_resultTagRecords;
+    NSArray *_resultIssueRecords;
     NSArray *_resultFeedResponses;
     NSError *_resultError;
 }
 
 @property(retain, nonatomic) NSError *resultError; // @synthesize resultError=_resultError;
 @property(retain, nonatomic) NSArray *resultFeedResponses; // @synthesize resultFeedResponses=_resultFeedResponses;
+@property(retain, nonatomic) NSArray *resultIssueRecords; // @synthesize resultIssueRecords=_resultIssueRecords;
 @property(retain, nonatomic) NSArray *resultTagRecords; // @synthesize resultTagRecords=_resultTagRecords;
 @property(retain, nonatomic) NSArray *resultFeedItemAndArticleRecords; // @synthesize resultFeedItemAndArticleRecords=_resultFeedItemAndArticleRecords;
 @property(copy, nonatomic) NSArray *networkEvents; // @synthesize networkEvents=_networkEvents;
 @property(copy, nonatomic) CDUnknownBlockType queryCompletionHandler; // @synthesize queryCompletionHandler=_queryCompletionHandler;
-@property(copy, nonatomic) NSArray *articleKeysMappingToTag; // @synthesize articleKeysMappingToTag=_articleKeysMappingToTag;
+@property(copy, nonatomic) NSArray *articleLinkKeys; // @synthesize articleLinkKeys=_articleLinkKeys;
 @property(nonatomic) long long queryPriority; // @synthesize queryPriority=_queryPriority;
 @property(nonatomic) long long sortingFunction; // @synthesize sortingFunction=_sortingFunction;
 @property(copy, nonatomic) NSArray *desiredKeys; // @synthesize desiredKeys=_desiredKeys;
@@ -40,7 +42,7 @@
 @property(retain, nonatomic) FCCKContentDatabase *database; // @synthesize database=_database;
 - (void).cxx_destruct;
 - (id)_feedRelativeDictionaryFromResultsArray:(id)arg1;
-- (void)_processResultsRecord:(id)arg1 feedItemAndArticleRecords:(id)arg2 tagRecords:(id)arg3;
+- (void)_processResultsRecord:(id)arg1 feedItemAndArticleRecords:(id)arg2 tagRecords:(id)arg3 issueRecords:(id)arg4;
 - (id)_requiredKeys;
 - (id)_predicateForPerFeedFieldName:(id)arg1 key:(id)arg2 defaultValue:(id)arg3;
 - (id)_constructFeedQuery;

@@ -28,8 +28,8 @@ __attribute__((visibility("hidden")))
 - (id)selectionByRemovingPathsFromArray:(id)arg1;
 - (id)selectionByAddingPathsFromArray:(id)arg1;
 @property(readonly, nonatomic) unsigned long long pathCount;
-- (void)saveToArchive:(struct ChartSelectionArchive *)arg1 archiver:(id)arg2;
-- (id)initFromArchive:(const struct ChartSelectionArchive *)arg1 unarchiver:(id)arg2;
+-     // Error parsing type: v32@0:8^{ChartSelectionArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSCH::ChartSelectionPathArchive>=^{Arena}ii^{Rep}}^{Reference}^{DrawableSelectionArchive}}16@24, name: saveToArchive:archiver:
+-     // Error parsing type: @32@0:8r^{ChartSelectionArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSCH::ChartSelectionPathArchive>=^{Arena}ii^{Rep}}^{Reference}^{DrawableSelectionArchive}}16@24, name: initFromArchive:unarchiver:
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)description;

@@ -84,6 +84,7 @@ __attribute__((visibility("hidden")))
     NSString *reasonForWaitingToPlay;
     struct CGSize currentItemPresentationSize;
     _Bool currentItemNonForcedSubtitlesEnabled;
+    _Bool disallowsAutoPauseOnRouteRemovalIfNoAudio;
     struct __CFDictionary *videoLayers;
     NSMutableArray *subtitleLayers;
     NSMutableArray *closedCaptionLayers;

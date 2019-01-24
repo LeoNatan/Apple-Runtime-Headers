@@ -41,8 +41,8 @@ __attribute__((visibility("hidden")))
 - (id)initWithGradientStop:(id)arg1;
 - (id)initWithColor:(id)arg1 fraction:(double)arg2 inflection:(double)arg3;
 - (id)initWithColor:(id)arg1 fraction:(double)arg2;
-- (void)saveToArchive:(struct GradientArchive_GradientStop *)arg1 archiver:(id)arg2;
-- (id)initWithArchive:(const struct GradientArchive_GradientStop *)arg1 unarchiver:(id)arg2;
+-     // Error parsing type: v32@0:8^{GradientArchive_GradientStop=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{Color}ff}16@24, name: saveToArchive:archiver:
+-     // Error parsing type: @32@0:8r^{GradientArchive_GradientStop=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{Color}ff}16@24, name: initWithArchive:unarchiver:
 
 @end
 

@@ -6,8 +6,8 @@
 
 #import <iWorkImport/NSObject-Protocol.h>
 
-@class AVAsset, NSData, NSDictionary, NSString, NSURL, TSPData, TSPDataStorageWriteResult, TSPPackage, TSPPackageWriter, TSUColor;
-@protocol TSPCryptoInfo, TSPDataArchiver, TSPMutableCryptoInfo;
+@class AVAsset, NSData, NSDictionary, NSString, NSURL, TSPData, TSPPackage, TSUColor;
+@protocol TSPCryptoInfo, TSPMutableCryptoInfo;
 
 @protocol TSPDataStorage <NSObject>
 @property(readonly, nonatomic) _Bool readOnly;
@@ -21,8 +21,8 @@
 - (void)performIOChannelReadWithAccessor:(void (^)(id <TSUReadChannel>))arg1;
 - (_Bool)isInPackage:(TSPPackage *)arg1;
 - (NSString *)filenameForPreferredFilename:(NSString *)arg1;
-- (TSPDataStorageWriteResult *)writeData:(TSPData *)arg1 toPackageWriter:(TSPPackageWriter *)arg2 infoMessage:(struct DataInfo *)arg3 preferredFilename:(NSString *)arg4;
-- (_Bool)archiveInfoMessage:(struct DataInfo *)arg1 archiver:(id <TSPDataArchiver>)arg2 packageWriter:(TSPPackageWriter *)arg3;
+-     // Error parsing type: @"TSPDataStorageWriteResult"48@0:8@"TSPData"16@"TSPPackageWriter"24^{DataInfo=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}^{DataAttributes}^{EncryptionInfo}QBi}32@"NSString"40, name: writeData:toPackageWriter:infoMessage:preferredFilename:
+-     // Error parsing type: B40@0:8^{DataInfo=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}^{DataAttributes}^{EncryptionInfo}QBi}16@"<TSPDataArchiver>"24@"TSPPackageWriter"32, name: archiveInfoMessage:archiver:packageWriter:
 - (AVAsset *)AVAssetWithOptions:(NSDictionary *)arg1 forData:(TSPData *)arg2;
 - (NSData *)NSDataWithOptions:(unsigned long long)arg1;
 - (struct CGImageSource *)newCGImageSource;

@@ -41,6 +41,7 @@
 - (void)dismissExpandedViewForContentModuleContext:(id)arg1;
 - (void)requestExpandModuleForContentModuleContext:(id)arg1;
 - (void)contentModuleContext:(id)arg1 enqueueStatusUpdate:(id)arg2;
+- (void)contentModuleContext:(id)arg1 didUpdateHomeGestureDismissalAllowed:(_Bool)arg2;
 - (id)interactionHighlightContainerViewForModuleCollectionViewController:(id)arg1;
 - (id)obscuringBackgroundViewForModuleCollectionViewController:(id)arg1;
 - (void)moduleCollectionViewController:(id)arg1 willRemoveModuleContainerViewController:(id)arg2;
@@ -51,6 +52,7 @@
 - (void)moduleCollectionViewController:(id)arg1 willOpenExpandedModule:(id)arg2;
 - (void)moduleCollectionViewController:(id)arg1 didFinishInteractionWithModule:(id)arg2;
 - (void)moduleCollectionViewController:(id)arg1 didBeginInteractionWithModule:(id)arg2;
+- (void)moduleCollectionViewController:(id)arg1 didUpdateHomeGestureDismissalAllowed:(_Bool)arg2;
 - (long long)interfaceOrientationForModuleCollectionViewController:(id)arg1;
 - (void)viewWillTransitionToSize:(struct CGSize)arg1 withTransitionCoordinator:(id)arg2;
 - (struct CGSize)preferredContentSize;
@@ -68,6 +70,7 @@
 - (void)closeCurrentModuleWithCompletionHandler:(CDUnknownBlockType)arg1;
 @property(readonly, nonatomic) CCUIModuleCollectionViewController *moduleCollectionViewController; // @dynamic moduleCollectionViewController;
 @property(readonly, nonatomic) unsigned long long moduleRowCount; // @dynamic moduleRowCount;
+@property(readonly, nonatomic, getter=isHomeGestureDismissalAllowed) _Bool homeGestureDismissalAllowed; // @dynamic homeGestureDismissalAllowed;
 - (id)initWithSystemAgent:(id)arg1;
 
 // Remaining properties

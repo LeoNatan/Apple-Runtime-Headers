@@ -14,6 +14,7 @@ __attribute__((visibility("hidden")))
 {
     id <TSPArchiverManagerDelegate> _delegate;
     Class _archiverClass;
+    BOOL _archiverFlags;
     NSMapTable *_archivers;
     NSObject<OS_dispatch_queue> *_archiversHighQueue;
     NSObject<OS_dispatch_queue> *_archiversLowQueue;
@@ -21,11 +22,7 @@ __attribute__((visibility("hidden")))
     NSObject<OS_dispatch_queue> *_archiveDefaultQueue;
     NSObject<OS_dispatch_queue> *_archiveLowQueue;
     NSObject<OS_dispatch_queue> *_archiveCompletionQueue;
-    struct {
-        unsigned int isStopped:1;
-        unsigned int delegateRespondsToDidCreateArchiver:1;
-        unsigned int delegateRespondsToShouldDelayArchivingObject:1;
-    } _flags;
+    // Error parsing type: Ac, name: _flags
     TSPDescriptionGenerator *_descriptionGenerator;
 }
 
@@ -42,8 +39,7 @@ __attribute__((visibility("hidden")))
 - (void)impl_archiverForObject:(id)arg1 queue:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)archiverForObject:(id)arg1 hasArchiverAccessLock:(_Bool)arg2 queue:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)dealloc;
-- (id)initWithDelegate:(id)arg1 archiverClass:(Class)arg2;
-- (id)initWithDelegate:(id)arg1;
+- (id)initWithDelegate:(id)arg1 archiverClass:(Class)arg2 archiverFlags:(BOOL)arg3;
 - (id)init;
 
 @end

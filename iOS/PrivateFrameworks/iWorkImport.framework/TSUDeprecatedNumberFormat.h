@@ -15,7 +15,7 @@ __attribute__((visibility("hidden")))
 
 + (id)instanceWithArchive:(const struct Message *)arg1 unarchiver:(id)arg2;
 - (void)saveToArchive:(struct Message *)arg1 archiver:(id)arg2;
-- (id)initWithArchive:(const struct ChartsNumberFormatArchive *)arg1 unarchiver:(id)arg2;
+-     // Error parsing type: @32@0:8r^{ChartsNumberFormatArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<std::__1::basic_string<char> >=^{Arena}ii^{Rep}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}^{IndexSet}iIiiIIBBBBIdBIIII}16@24, name: initWithArchive:unarchiver:
 
 @end
 

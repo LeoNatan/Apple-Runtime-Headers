@@ -11,5 +11,7 @@
 @protocol SFReaderAppearanceFontSizeSelectorDelegate <NSObject>
 - (void)readerAppearanceFontSizeDidDecrease:(SFReaderAppearanceFontSizeSelectorTableViewCell *)arg1;
 - (void)readerAppearanceFontSizeDidIncrease:(SFReaderAppearanceFontSizeSelectorTableViewCell *)arg1;
+- (_Bool)readerAppearanceFontSizeCanDecrease:(SFReaderAppearanceFontSizeSelectorTableViewCell *)arg1;
+- (_Bool)readerAppearanceFontSizeCanIncrease:(SFReaderAppearanceFontSizeSelectorTableViewCell *)arg1;
 @end
 

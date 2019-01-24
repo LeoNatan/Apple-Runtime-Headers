@@ -15,7 +15,6 @@
 {
     _Bool _monitorFingerprints;
     id <RTLearnedLocationEngineProtocol> _delegate;
-    RTLearnedLocationEngineTrainingMetrics *_trainingMetrics;
     NSObject<OS_dispatch_queue> *_queue;
     RTAccountManager *_accountManager;
     RTLearnedLocationAlgorithmMetricCalculator *_algorithmMetricCalculator;
@@ -33,6 +32,7 @@
     RTMetricManager *_metricManager;
     RTMotionActivityManager *_motionActivityManager;
     RTPersonalizationPortraitManager *_portraitManager;
+    RTLearnedLocationEngineTrainingMetrics *_trainingMetrics;
     RTVisitManager *_visitManager;
     RTXPCActivityManager *_xpcActivityManager;
 }
@@ -43,6 +43,7 @@
 + (id)visitFromAggregateVisits:(id)arg1;
 @property(readonly, nonatomic) RTXPCActivityManager *xpcActivityManager; // @synthesize xpcActivityManager=_xpcActivityManager;
 @property(readonly, nonatomic) RTVisitManager *visitManager; // @synthesize visitManager=_visitManager;
+@property(retain, nonatomic) RTLearnedLocationEngineTrainingMetrics *trainingMetrics; // @synthesize trainingMetrics=_trainingMetrics;
 @property(readonly, nonatomic) RTPersonalizationPortraitManager *portraitManager; // @synthesize portraitManager=_portraitManager;
 @property(readonly, nonatomic) RTMotionActivityManager *motionActivityManager; // @synthesize motionActivityManager=_motionActivityManager;
 @property(readonly, nonatomic) RTMetricManager *metricManager; // @synthesize metricManager=_metricManager;
@@ -60,7 +61,6 @@
 @property(readonly, nonatomic) RTLearnedLocationAlgorithmMetricCalculator *algorithmMetricCalculator; // @synthesize algorithmMetricCalculator=_algorithmMetricCalculator;
 @property(readonly, nonatomic) RTAccountManager *accountManager; // @synthesize accountManager=_accountManager;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
-@property(retain, nonatomic) RTLearnedLocationEngineTrainingMetrics *trainingMetrics; // @synthesize trainingMetrics=_trainingMetrics;
 @property(nonatomic) _Bool monitorFingerprints; // @synthesize monitorFingerprints=_monitorFingerprints;
 @property(nonatomic) __weak id <RTLearnedLocationEngineProtocol> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
@@ -96,6 +96,7 @@
 - (_Bool)_processVisits:(id)arg1 error:(id *)arg2;
 - (id)_updateExistingPlaceNearMapItem:(id)arg1 error:(id *)arg2;
 - (id)_placeForMapItem:(id)arg1 error:(id *)arg2;
+- (void)_submitMetricsForVisit:(id)arg1 possibleInferredMapItems:(id)arg2 selectedInferredMapItem:(id)arg3;
 - (id)_bestInferredMapItemForVisit:(id)arg1 error:(id *)arg2;
 - (id)_bestInferredMapItemForVisit:(id)arg1 fromInferredMapItems:(id)arg2 error:(id *)arg3;
 - (id)_inferredMapItemsForVisit:(id)arg1 error:(id *)arg2;

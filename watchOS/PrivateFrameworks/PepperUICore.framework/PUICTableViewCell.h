@@ -7,6 +7,7 @@
 #import <UIKit/UITableViewCell.h>
 
 @class PUICTableView, PUICTableViewCellActionBar, PUICTableViewCellBackgroundView, UIColor, UIView;
+@protocol PUICEllipticScrollingProvider;
 
 @interface PUICTableViewCell : UITableViewCell
 {
@@ -20,6 +21,7 @@
     _Bool _usesCustomHighlightAlpha;
     float _preferredImageViewMaxWidth;
     _Bool _requestingLayout;
+    id <PUICEllipticScrollingProvider> _ellipticScrollingProvider;
     _Bool _radioSectionCell;
     UIView *_swipingContentWrapperView;
     PUICTableViewCellActionBar *_actionBar;
@@ -65,8 +67,8 @@
 - (void)setSectionLocation:(int)arg1 animated:(_Bool)arg2;
 - (void)_removeSubviewsForReuse;
 - (void)prepareForReuse;
-- (_Bool)_shouldMaskToBoundsWhileAnimating;
 - (id)actionForLayer:(id)arg1 forKey:(id)arg2;
+- (void)setFrame:(struct CGRect)arg1;
 - (void)_systemTextSizeChanged;
 @property(nonatomic) _Bool usesCustomHighlightAlpha;
 @property(nonatomic) _Bool usesDynamicType;

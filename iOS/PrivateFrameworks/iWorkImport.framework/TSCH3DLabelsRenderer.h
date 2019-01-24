@@ -12,6 +12,7 @@ __attribute__((visibility("hidden")))
 @interface TSCH3DLabelsRenderer : NSObject
 {
     TSCH3DResource *mLabelQuad;
+    TSCH3DResource *mLabelTexcoordQuad;
     _Bool mUseLabelBounds;
     TSCH3DLabelResource *mLabel;
     TSCH3DLabelResources *mResources;
@@ -35,7 +36,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool useLabelBounds; // @synthesize useLabelBounds=mUseLabelBounds;
 - (id).cxx_construct;
 - (void)delegateDidSubmitLabel;
-- (void)renderAtPosition:(const tvec3_17f03ce0 *)arg1 offset:(const tvec3_17f03ce0 *)arg2 alignment:(unsigned int)arg3 offset2D:(const tvec2_84d5962d *)arg4 rotation:(float)arg5 externalAttribute:(const struct ExternalLabelAttribute *)arg6;
+- (void)renderAtPosition:(const tvec3_17f03ce0 *)arg1 offset:(const tvec3_17f03ce0 *)arg2 alignment:(unsigned int)arg3 offset2D:(const tvec2_84d5962d *)arg4 rotation:(float)arg5 externalAttribute:(id)arg6;
 - (void)prepareCachedIndex:(const tvec2_3b141483 *)arg1 string:(id)arg2 alignmentPadding:(const tvec2_84d5962d *)arg3 width:(double)arg4 bitmapContextInfo:(id)arg5;
 - (void)endResources;
 - (_Bool)beginResources:(id)arg1 expectedSize:(tvec2_3b141483 *)arg2;

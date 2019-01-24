@@ -14,7 +14,7 @@ __attribute__((visibility("hidden")))
     struct TSUCellTractRef _cppCellTractRef;
 }
 
-+ (id)cellTractRefWithUidTractList:(id)arg1 onTable:(const UUIDData_5fbc143e *)arg2 preserveFlags:(struct TSUPreserveFlags)arg3 rewriteContext:(id)arg4;
++ (id)cellTractRefWithUidTractList:(id)arg1 onTable:(const UUIDData_5fbc143e *)arg2 preserveFlags:(struct TSUPreserveFlags)arg3 rewriteContext:(struct TSCEFormulaRewriteContext *)arg4;
 @property(nonatomic) struct TSUCellTractRef cppCellTractRef; // @synthesize cppCellTractRef=_cppCellTractRef;
 - (id).cxx_construct;
 - (void).cxx_destruct;
@@ -29,9 +29,11 @@ __attribute__((visibility("hidden")))
 - (_Bool)insertRowGapsAtIndexes:(id)arg1;
 - (_Bool)insertColumnGapsAtIndexes:(id)arg1;
 - (_Bool)transpose;
+- (void)foreachRangeRef:(CDUnknownBlockType)arg1;
 - (void)foreachCellRect:(CDUnknownBlockType)arg1;
 - (void)foreachAnyRef:(CDUnknownBlockType)arg1;
 - (struct TSUCellCoord)coordAtColumnOffset:(unsigned int)arg1 rowOffset:(unsigned int)arg2;
+- (void)intersectWithCellRectIgnoringSpanning:(const struct TSUCellRect *)arg1;
 - (void)intersectWithCellRect:(const struct TSUCellRect *)arg1;
 - (id)description;
 - (id)debugDescription;
@@ -42,21 +44,25 @@ __attribute__((visibility("hidden")))
 - (struct TSCERangeCoordinate)boundingRange;
 - (struct TSUCellCoord)bottomRight;
 - (struct TSUCellCoord)topLeft;
-- (void)adjustIndexesBy:(const CDStruct_1ef3fb1f *)arg1;
+- (void)adjustIndexesBy:(const struct TSUColumnRowOffset *)arg1;
 - (void)setRows:(const struct TSUIndexSet *)arg1;
 - (void)setColumns:(const struct TSUIndexSet *)arg1;
 - (const struct TSUIndexSet *)rows;
 - (const struct TSUIndexSet *)columns;
+- (void)removeRows:(const struct TSUIndexSet *)arg1;
+- (void)removeColumns:(const struct TSUIndexSet *)arg1;
 - (void)removeRowRange:(const struct TSUIndexRange *)arg1;
 - (void)removeColumnRange:(const struct TSUIndexRange *)arg1;
+- (void)addRows:(const struct TSUIndexSet *)arg1;
+- (void)addColumns:(const struct TSUIndexSet *)arg1;
 - (void)addRowRange:(const struct TSUIndexRange *)arg1;
 - (void)addColumnRange:(const struct TSUIndexRange *)arg1;
 - (void)addRow:(unsigned int)arg1;
 - (void)addColumn:(unsigned short)arg1;
 - (void)setPreserveFlagsOnSubrange:(struct TSCERangeRef *)arg1;
-- (struct TSUPreserveFlags)preserveFlagsForCoord:(const struct TSUCellCoord *)arg1;
-- (_Bool)isPreservedRow:(unsigned int)arg1;
-- (_Bool)isPreservedColumn:(unsigned short)arg1;
+- (struct TSUPreserveFlags)preserveFlagsForCoord:(const struct TSUCellCoord *)arg1 preferStart:(_Bool)arg2;
+- (_Bool)isPreservedRow:(unsigned int)arg1 preferStart:(_Bool)arg2;
+- (_Bool)isPreservedColumn:(unsigned short)arg1 preferStart:(_Bool)arg2;
 - (_Bool)isRectangularRange;
 - (_Bool)isSingleCellOrSpanningRange;
 - (_Bool)isSingleCell;
@@ -66,12 +72,15 @@ __attribute__((visibility("hidden")))
 - (_Bool)hasTableUID;
 @property(nonatomic) struct TSUPreserveFlags preserveFlags;
 @property(nonatomic) UUIDData_5fbc143e tableUID;
+@property(nonatomic) _Bool mixedRowStartedWithPreserve;
+@property(nonatomic) _Bool mixedColumnStartedWithPreserve;
 @property(nonatomic) _Bool preserveRectangular;
 @property(nonatomic) _Bool spansAllRows;
 @property(nonatomic) _Bool spansAllColumns;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
+- (id)initWithCellRefVector:(const vector_4115f7f8 *)arg1;
 - (id)initWithRangeRef:(const struct TSCERangeRef *)arg1;
 - (id)initWithTopLeft:(const struct TSUCellCoord *)arg1 bottomRight:(const struct TSUCellCoord *)arg2 tableUID:(const UUIDData_5fbc143e *)arg3;
 - (id)initWithTopLeft:(const struct TSUCellCoord *)arg1 bottomRight:(const struct TSUCellCoord *)arg2;

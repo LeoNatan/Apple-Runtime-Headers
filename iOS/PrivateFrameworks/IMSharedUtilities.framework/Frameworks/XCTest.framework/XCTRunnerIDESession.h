@@ -12,7 +12,7 @@
 #import <XCTest/XCUIXcodeApplicationManaging-Protocol.h>
 
 @class DTXConnection, NSString, XCTestRun;
-@protocol OS_dispatch_queue, XCTRunnerIDESessionDelegate, XCTTestWorker, XCTUIApplicationMonitor, XCTestManager_IDEInterface><NSObject;
+@protocol OS_dispatch_queue, XCTRunnerIDESessionDelegate, XCTTestWorker, XCTestManager_IDEInterface><NSObject, XCUIApplicationMonitor;
 
 @interface XCTRunnerIDESession : NSObject <XCTestObservation, XCTestDriverInterface, XCTTestRunSessionDelegate, XCUIXcodeApplicationManaging>
 {
@@ -21,13 +21,14 @@
     id <XCTestManager_IDEInterface><NSObject> _IDEProxy;
     long long _IDEProtocolVersion;
     id <XCTRunnerIDESessionDelegate> _delegate;
-    id <XCTUIApplicationMonitor> _applicationMonitor;
+    id <XCUIApplicationMonitor> _applicationMonitor;
     id <XCTTestWorker> _testWorker;
     XCTestRun *_currentTestRun;
     CDUnknownBlockType _readinessReply;
 }
 
-+ (id)transportForLocalPath:(id)arg1 error:(id *)arg2;
++ (id)daemonMediatedSessionForSessionIdentifier:(id)arg1 delegate:(id)arg2 error:(id *)arg3;
++ (double)IDEConnectionTimeout;
 + (void)setSharedSession:(id)arg1;
 + (id)sharedSession;
 + (id)sharedSessionQueue;
@@ -35,7 +36,7 @@
 @property(copy) CDUnknownBlockType readinessReply; // @synthesize readinessReply=_readinessReply;
 @property(retain) id <XCTestManager_IDEInterface><NSObject> IDEProxy; // @synthesize IDEProxy=_IDEProxy;
 @property(retain) DTXConnection *IDEConnection; // @synthesize IDEConnection=_IDEConnection;
-@property __weak id <XCTUIApplicationMonitor> applicationMonitor; // @synthesize applicationMonitor=_applicationMonitor;
+@property __weak id <XCUIApplicationMonitor> applicationMonitor; // @synthesize applicationMonitor=_applicationMonitor;
 @property __weak id <XCTRunnerIDESessionDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 - (void).cxx_destruct;
@@ -67,6 +68,7 @@
 - (id)_IDE_executeTestIdentifiers:(id)arg1 skippingTestIdentifiers:(id)arg2;
 - (id)_IDE_fetchDiscoveredTestClasses;
 - (id)_IDE_startExecutingTestPlanWithProtocolVersion:(id)arg1;
+- (void)reportBootstrappingFailure:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)requestReadinessForTesting:(CDUnknownBlockType)arg1;
 @property(readonly) _Bool supportsVariableScreenshotFormats;
 @property(readonly) _Bool reportsCrashes;

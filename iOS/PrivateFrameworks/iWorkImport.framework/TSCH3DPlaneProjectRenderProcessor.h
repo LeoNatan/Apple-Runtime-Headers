@@ -17,7 +17,7 @@ __attribute__((visibility("hidden")))
 + (id)processorWithPlane:(const plane_849e6053 *)arg1 projPt:(const tvec3_17f03ce0 *)arg2;
 @property(readonly, nonatomic) const box_a3bd9649 *bounds; // @synthesize bounds=mBounds;
 - (id).cxx_construct;
-- (void)submit:(const struct PrimitiveInfo *)arg1;
+- (void)submit:(id)arg1;
 - (id)initWithPlane:(const plane_849e6053 *)arg1 projPt:(const tvec3_17f03ce0 *)arg2;
 
 @end

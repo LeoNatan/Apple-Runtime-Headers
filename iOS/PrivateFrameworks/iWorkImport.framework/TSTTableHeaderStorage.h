@@ -6,39 +6,48 @@
 
 #import <iWorkImport/TSPContainedObject.h>
 
-#import <iWorkImport/TSTTableHeaderStorage-Protocol.h>
-
-@class NSString, TSTTableHeaderStorageBucket;
+@class TSPObject, TSTTableHeaderStorageBucket;
 
 __attribute__((visibility("hidden")))
-@interface TSTTableHeaderStorage : TSPContainedObject <TSTTableHeaderStorage>
+@interface TSTTableHeaderStorage : TSPContainedObject
 {
-    TSTTableHeaderStorageBucket *mBuckets[1];
+    TSTTableHeaderStorageBucket *_buckets[1];
 }
 
-- (unsigned int)lowerBound:(unsigned int)arg1;
-- (unsigned int)upperBound:(unsigned int)arg1;
-- (unsigned int)maxKey;
-- (unsigned int)minKey;
-- (long long)count;
-- (void)shiftKeysAtIndex:(unsigned int)arg1 amount:(int)arg2;
-- (void)enumerateHeadersWithBlock:(CDUnknownBlockType)arg1;
-- (void)removeAllHeaders;
-- (void)removeHeaderForKey:(unsigned int)arg1;
-- (void)setHeader:(id)arg1 forKey:(unsigned int)arg2;
-- (void)willModifyAllHeaders;
-- (id)headerForKey:(unsigned int)arg1 willModify:(_Bool)arg2 createIfNotThere:(_Bool)arg3;
-- (id)headerForKey:(unsigned int)arg1 willModify:(_Bool)arg2;
-- (void)saveToArchive:(struct HeaderStorage *)arg1 archiver:(id)arg2;
-- (id)initWithArchive:(const struct HeaderStorage *)arg1 unarchiver:(id)arg2 owner:(id)arg3;
-- (void)dealloc;
+- (void).cxx_destruct;
+@property(readonly, nonatomic) unsigned int maxIndex;
+@property(readonly, nonatomic) unsigned int minIndex;
+@property(readonly, nonatomic) unsigned long long count;
+- (void)forceLoadHeaders;
+- (unsigned long long)totalCellCount;
+- (void)resetAllCellCounts;
+- (void)incrementCellCountAtIndex:(unsigned int)arg1 byAmount:(unsigned long long)arg2;
+- (_Bool)decrementCellCountAtIndex:(unsigned int)arg1 byAmount:(unsigned long long)arg2;
+- (unsigned long long)cellCountAtIndex:(unsigned int)arg1;
+- (void)updateStylesWithBlock:(CDUnknownBlockType)arg1;
+- (void)setTextStyle:(id)arg1 atIndex:(unsigned int)arg2;
+- (id)textStyleAtIndex:(unsigned int)arg1;
+- (void)setCellStyle:(id)arg1 atIndex:(unsigned int)arg2;
+- (id)cellStyleAtIndex:(unsigned int)arg1;
+- (void)setHidingState:(unsigned char)arg1 atIndex:(unsigned int)arg2;
+- (unsigned char)hidingStateAtIndex:(unsigned int)arg1;
+- (void)setSize:(double)arg1 atIndex:(unsigned int)arg2;
+- (double)sizeAtIndex:(unsigned int)arg1;
+- (void)moveIndexRange:(struct _NSRange)arg1 toIndex:(unsigned int)arg2;
+- (void)swapIndex:(unsigned int)arg1 withIndex:(unsigned int)arg2;
+- (void)shiftIndexesAtIndex:(unsigned int)arg1 amount:(int)arg2;
+- (void)removeIndexesAtIndex:(unsigned int)arg1 count:(unsigned int)arg2;
+- (void)_setHeader:(id)arg1 atIndex:(unsigned int)arg2;
+- (id)_headerAtIndex:(unsigned int)arg1;
+- (id)_mutableNoCreateHeaderAtIndex:(unsigned int)arg1;
+- (id)_mutableHeaderAtIndex:(unsigned int)arg1;
+- (void)updateHeaderAtIndex:(unsigned int)arg1 fromMetadata:(id)arg2;
+- (id)metadataAtIndex:(unsigned int)arg1 hidingAction:(unsigned char)arg2 defaultSize:(double)arg3 uuid:(UUIDData_5fbc143e)arg4;
+-     // Error parsing type: v32@0:8^{HeaderStorage=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}I}16@24, name: encodeToArchive:archiver:
+-     // Error parsing type: @40@0:8r^{HeaderStorage=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}I}16@24@32, name: initFromArchive:unarchiver:owner:
+@property(readonly, nonatomic) TSPObject *firstBucketForArchiving;
+- (id)initWithBucket:(id)arg1 owner:(id)arg2;
 - (id)initWithOwner:(id)arg1;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
 
 @end
 

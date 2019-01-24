@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSCondition, NSMutableArray, NSMutableDictionary, TSUWeakReference;
+@class NSCondition, NSMutableArray, NSMutableDictionary, NSThread, TSUWeakReference;
 @protocol OS_dispatch_semaphore;
 
 __attribute__((visibility("hidden")))
@@ -15,25 +15,30 @@ __attribute__((visibility("hidden")))
     TSUWeakReference *_delegate;
     struct _opaque_pthread_rwlock_t _rwLock;
     _Bool _secondaryThreadWriting;
-    _Bool _thenReadingOnMainThread;
+    _Bool _thenReadingOnPrimaryThread;
     NSCondition *_cond;
     NSMutableDictionary *_signalIdentifiers;
     NSMutableDictionary *_waitIdentifiers;
-    struct __CFRunLoopSource *_mainThreadPingSource;
-    NSMutableArray *_pendingMainThreadBlocks;
+    struct __CFRunLoopSource *_primaryThreadPingSource;
+    NSMutableArray *_pendingPrimaryThreadBlocks;
     struct {
         struct _opaque_pthread_t *threadId;
         unsigned int count;
         CDStruct_2a021fcd ticketInfo;
     } _readerInfo[64];
-    CDStruct_2a021fcd _mainThreadTicketInfo;
+    CDStruct_2a021fcd _primaryThreadTicketInfo;
     unsigned int _readerCount;
     NSMutableArray *_writerQueue;
     NSObject<OS_dispatch_semaphore> *_outstandingTicketReadLock;
     unsigned int _outstandingTicketCount;
     _Bool _writeLockHeld;
-    unsigned long long _writeBlockedMainThreadCount;
-    unsigned long long _mainThreadWriteCount;
+    unsigned long long _writeBlockedPrimaryThreadCount;
+    unsigned long long _primaryThreadWriteCount;
+    // Error parsing type: A^{__CFRunLoop}, name: _runLoop
+    // Error parsing type: Aq, name: _runLoopReadCount
+    NSThread *_primaryThread;
+    struct os_unfair_lock_s _primaryThreadIVarLock;
+    // Error parsing type: AI, name: _primaryThreadQualityOfServiceClass
 }
 
 - (void)p_willRelinquishWriteLock;
@@ -44,37 +49,37 @@ __attribute__((visibility("hidden")))
 - (void)p_willAcquireReadLock;
 - (void)p_signalThread:(id)arg1;
 - (_Bool)p_waitWithCondition:(id)arg1 untilDate:(id)arg2;
-- (void)p_flushPendingMainThreadBlocksQueueAcquiringLock:(_Bool)arg1;
-- (void)p_performReadOnMainThread:(CDUnknownBlockType)arg1 result:(_Bool)arg2;
-- (void)p_scheduleMainThreadRead:(CDUnknownBlockType)arg1 result:(_Bool)arg2;
+- (void)p_flushPendingPrimaryThreadBlocksQueueAcquiringLock:(_Bool)arg1;
+- (void)p_performReadOnPrimaryThread:(CDUnknownBlockType)arg1 result:(_Bool)arg2;
+- (void)p_schedulePrimaryThreadRead:(CDUnknownBlockType)arg1 result:(_Bool)arg2;
 - (void)p_dequeueWrite;
 - (void)p_enqueueWriteAndBlockAllowingPendingWrites:(_Bool)arg1;
 - (unsigned long long)p_writerQueueIndexOfThreadIdentifier:(struct NSThread *)arg1;
 - (struct NSThread *)p_threadIdentifier;
-- (void)p_unblockMainThread;
-- (void)p_signalMainThreadWriteComplete;
+- (void)p_unblockPrimaryThread;
+- (void)p_signalPrimaryThreadWriteComplete;
 - (void)p_writeUnlock;
-- (void)p_blockMainThread;
-- (void)p_writeLockAndBlockMainThread:(_Bool)arg1;
-- (void)p_asyncPerformBlockOnMainThread:(CDUnknownBlockType)arg1;
-- (void)p_blockMainThreadForWrite;
+- (void)p_blockPrimaryThread;
+- (void)p_writeLockAndBlockPrimaryThread:(_Bool)arg1;
+- (void)p_asyncPerformBlockOnPrimaryThread:(CDUnknownBlockType)arg1;
+- (void)p_blockPrimaryThreadForWrite;
 - (void)p_readUnlockReleasingRealLock:(_Bool)arg1;
 - (void)p_readUnlock;
-- (_Bool)hasWrite;
-- (_Bool)hasRead;
+@property(readonly) _Bool hasWrite;
+@property(readonly) _Bool hasRead;
 - (_Bool)p_hasWrite;
 - (_Bool)p_hasRead;
 - (void)p_readLockTakingRealLock:(_Bool)arg1;
 - (void)p_readLock;
-- (_Bool)p_isMainThread;
+@property(readonly) _Bool isPrimaryThread;
 - (void)assertHasReadOrWrite;
 - (void)assertHasWrite;
 - (void)assertHasRead;
-- (void)p_performRead:(CDUnknownBlockType)arg1 eagerlyBlockingMainThread:(_Bool)arg2 thenWrite:(CDUnknownBlockType)arg3 allowingPendingWrites:(_Bool)arg4 thenReadOnMainThread:(CDUnknownBlockType)arg5;
-- (void)performRead:(CDUnknownBlockType)arg1 thenWriteBeforePendingWrites:(CDUnknownBlockType)arg2 thenReadOnMainThread:(CDUnknownBlockType)arg3;
-- (void)performReadAllowingOverlappingImplicitRead:(CDUnknownBlockType)arg1 thenWrite:(CDUnknownBlockType)arg2 thenReadOnMainThread:(CDUnknownBlockType)arg3;
-- (void)performRead:(CDUnknownBlockType)arg1 thenWrite:(CDUnknownBlockType)arg2 thenReadOnMainThread:(CDUnknownBlockType)arg3;
-- (void)performWrite:(CDUnknownBlockType)arg1 blockMainThread:(_Bool)arg2;
+- (void)p_performRead:(CDUnknownBlockType)arg1 eagerlyBlockingPrimaryThread:(_Bool)arg2 thenWrite:(CDUnknownBlockType)arg3 allowingPendingWrites:(_Bool)arg4 thenReadOnPrimaryThread:(CDUnknownBlockType)arg5;
+- (void)performRead:(CDUnknownBlockType)arg1 thenWriteBeforePendingWrites:(CDUnknownBlockType)arg2 thenReadOnPrimaryThread:(CDUnknownBlockType)arg3;
+- (void)performReadAllowingOverlappingImplicitRead:(CDUnknownBlockType)arg1 thenWrite:(CDUnknownBlockType)arg2 thenReadOnPrimaryThread:(CDUnknownBlockType)arg3;
+- (void)performRead:(CDUnknownBlockType)arg1 thenWrite:(CDUnknownBlockType)arg2 thenReadOnPrimaryThread:(CDUnknownBlockType)arg3;
+- (void)performWrite:(CDUnknownBlockType)arg1 blockPrimaryThread:(_Bool)arg2;
 - (void)performWrite:(CDUnknownBlockType)arg1;
 - (CDStruct_2a021fcd *)p_ticketInfoForCurrentThread;
 - (CDStruct_2a021fcd *)p_ticketInfoForTicket:(id)arg1;
@@ -87,7 +92,13 @@ __attribute__((visibility("hidden")))
 - (void)signalIdentifier:(id)arg1;
 - (_Bool)waitOnIdentifier:(id)arg1 untilDate:(id)arg2 releaseReadWhileWaiting:(_Bool)arg3;
 - (void)waitOnIdentifier:(id)arg1;
+@property(readonly) unsigned int primaryThreadQualityOfServiceClass;
+- (void)p_setPrimaryThreadIfNeeded;
+@property(readonly) NSThread *primaryThread;
+- (void)p_releaseRunLoop:(struct __CFRunLoop *)arg1;
+@property struct __CFRunLoop *runLoop;
 - (void)dealloc;
+- (id)initWithPrimaryRunloop:(struct __CFRunLoop *)arg1 delegate:(id)arg2;
 - (id)initWithDelegate:(id)arg1;
 - (id)init;
 

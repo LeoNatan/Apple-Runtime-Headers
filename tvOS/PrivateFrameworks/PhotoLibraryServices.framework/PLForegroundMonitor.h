@@ -6,28 +6,22 @@
 
 #import <objc/NSObject.h>
 
-@class NSCountedSet, NSMapTable, NSMutableSet;
-@protocol OS_dispatch_queue;
+@class BKSApplicationStateMonitor, NSMutableSet;
+@protocol OS_dispatch_queue, PLForegroundMonitorDelegate;
 
 @interface PLForegroundMonitor : NSObject
 {
-    NSObject<OS_dispatch_queue> *_queue;
-    NSCountedSet *_interestingApplications;
-    NSMutableSet *_foregroundApplications;
-    NSMapTable *_observers;
-    _Bool _isMonitoringApplicationStates;
+    NSMutableSet *_foregroundBundleIDs;
+    NSObject<OS_dispatch_queue> *_applicationStateMonitorQueue;
+    BKSApplicationStateMonitor *_applicationStateMonitor;
+    id <PLForegroundMonitorDelegate> _delegate;
 }
 
-+ (id)sharedInstance;
-- (void)_applicationStateDidChange:(id)arg1;
-- (void)_applicationDidMoveToBackgroundLocked:(id)arg1;
-- (void)_applicationDidMoveToForegroundLocked:(id)arg1;
-- (void)_stopMonitoringApplicationStatesLocked;
-- (void)_startMonitoringApplicationStatesLocked;
-- (void)removeForegroundObserver:(id)arg1 context:(id)arg2;
-- (void)addForegroundObserver:(id)arg1 context:(id)arg2;
-- (void)stopWatchingApplicationWithBundleIdentifier:(id)arg1;
-- (void)startWatchingApplicationWithBundleIdentifier:(id)arg1;
+@property(nonatomic) __weak id <PLForegroundMonitorDelegate> delegate; // @synthesize delegate=_delegate;
+- (void).cxx_destruct;
+- (void)_handleApplicationStateMonitorNotificationWithUserInfo:(id)arg1;
+- (void)_locked_applicationDidMoveToBackground:(id)arg1;
+- (void)_locked_applicationDidMoveToForeground:(id)arg1;
 - (void)dealloc;
 - (id)init;
 

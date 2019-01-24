@@ -9,12 +9,13 @@
 #import <ProactiveML/PMLEvaluationTrackerProtocol-Protocol.h>
 #import <ProactiveML/PMLLogRegTrackerProtocol-Protocol.h>
 
-@class NSString;
+@class NSMutableArray, NSString;
 
 @interface PMLPassThroughTracker : NSObject <PMLLogRegTrackerProtocol, PMLEvaluationTrackerProtocol>
 {
     struct NSString *_planId;
     unsigned long long _quantizationNumberOfBuckets;
+    NSMutableArray *_results;
 }
 
 - (void).cxx_destruct;

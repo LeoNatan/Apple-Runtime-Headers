@@ -10,6 +10,7 @@
 {
 }
 
++ (id)certificateCommonNamesFromPersistentID:(id)arg1;
 + (_Bool)identityExpiredWithPersistentId:(id)arg1;
 + (_Bool)certificateExpiredWithPersistentId:(id)arg1;
 + (_Bool)dateHasPassed:(id)arg1;
@@ -38,7 +39,7 @@
 + (id)getCertificatesWithPersistentIDs:(id)arg1;
 + (struct __SecIdentity *)copyIdentityWithPersistentID:(id)arg1;
 + (struct __SecCertificate *)copyCertificateWithPersistentID:(id)arg1;
-+ (void *)copyItemWithPersistentID:(id)arg1;
++ (const void *)copyItemWithPersistentID:(id)arg1;
 + (_Bool)removeItemWithPersistentID:(id)arg1;
 + (id)addPrivateKeyData:(id)arg1 certificateData:(id)arg2 toGroup:(id)arg3;
 + (id)addItem:(void *)arg1 toGroup:(id)arg2;

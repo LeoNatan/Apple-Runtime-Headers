@@ -6,12 +6,15 @@
 
 #import <objc/NSObject.h>
 
-@class NSMutableArray, NSUndoManager;
+@class BookmarksController, NSMutableArray, NSUndoManager;
+@protocol BookmarksUndoControllerDataStore;
 
 __attribute__((visibility("hidden")))
 @interface BookmarksUndoController : NSObject
 {
     NSUndoManager *_undoManager;
+    id <BookmarksUndoControllerDataStore> _dataStore;
+    BookmarksController *_bookmarksController;
     NSUndoManager *_strongUndoManager;
     unsigned long long _undoCompatibleChangeCount;
     NSMutableArray *_transactionActionNameStack;
@@ -75,9 +78,8 @@ __attribute__((visibility("hidden")))
 - (void)setCurrentTransactionActionName:(id)arg1;
 - (void)endTransaction;
 - (void)beginTransactionWithActionName:(id)arg1 logActionName:(id)arg2;
-- (id)initWithUndoManager:(id)arg1;
+- (id)initWithUndoManager:(id)arg1 dataStore:(id)arg2 bookmarksController:(id)arg3;
 - (void)dealloc;
-- (id)init;
 
 @end
 

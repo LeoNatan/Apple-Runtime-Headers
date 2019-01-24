@@ -22,6 +22,7 @@ __attribute__((visibility("hidden")))
 - (id)_getPagePoint:(struct CGPoint *)arg1 forGestureLocation:(struct CGPoint)arg2;
 - (id)_annotationAtGestureLocation:(struct CGPoint)arg1;
 - (int)_canLollipopDragAtLocation:(struct CGPoint)arg1 locationOfFirstTouch:(struct CGPoint)arg2 gestureType:(unsigned long long)arg3;
+- (void)_updateLollipopDragAtLocation:(struct CGPoint)arg1 locationOfFirstTouch:(struct CGPoint)arg2;
 - (void)_updateLollipopDragAtLocation:(struct CGPoint)arg1;
 - (void)_updateWordDragAtLocation:(struct CGPoint)arg1;
 - (_Bool)_canWordDragAtLocation:(struct CGPoint)arg1;

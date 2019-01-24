@@ -7,10 +7,11 @@
 #import <objc/NSObject.h>
 
 #import <iTunesCloud/NSCopying-Protocol.h>
+#import <iTunesCloud/NSSecureCoding-Protocol.h>
 
 @class ICClientInfo, ICDeviceInfo, ICNetworkConstraints, ICURLResponseAuthenticationProvider, NSString;
 
-@interface ICRequestContext : NSObject <NSCopying>
+@interface ICRequestContext : NSObject <NSCopying, NSSecureCoding>
 {
     unsigned int _allowsMutation:1;
     ICNetworkConstraints *_networkConstraints;
@@ -19,7 +20,8 @@
     ICURLResponseAuthenticationProvider *_authenticationProvider;
 }
 
-@property(readonly, copy, nonatomic) ICURLResponseAuthenticationProvider *authenticationProvider; // @synthesize authenticationProvider=_authenticationProvider;
++ (_Bool)supportsSecureCoding;
+@property(readonly, nonatomic) ICURLResponseAuthenticationProvider *authenticationProvider; // @synthesize authenticationProvider=_authenticationProvider;
 @property(readonly, nonatomic) ICDeviceInfo *deviceInfo; // @synthesize deviceInfo=_deviceInfo;
 @property(readonly, copy, nonatomic) ICClientInfo *clientInfo; // @synthesize clientInfo=_clientInfo;
 @property(readonly, copy, nonatomic) ICNetworkConstraints *networkConstraints; // @synthesize networkConstraints=_networkConstraints;
@@ -30,6 +32,8 @@
 - (void)setDeviceInfo:(id)arg1;
 - (void)setClientInfo:(id)arg1;
 - (void)setAuthenticationProvider:(id)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)copyWithBlock:(CDUnknownBlockType)arg1;
 - (id)initWithBlock:(CDUnknownBlockType)arg1;

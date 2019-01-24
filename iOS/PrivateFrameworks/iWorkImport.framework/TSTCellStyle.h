@@ -33,10 +33,10 @@ __attribute__((visibility("hidden")))
 - (void)validate;
 - (void)saveToArchiver:(id)arg1;
 - (void)loadFromUnarchiver:(id)arg1;
-- (void)saveCellStyleToArchive:(struct CellStyleArchive *)arg1 archiver:(id)arg2;
-- (void)loadCellStyleFromArchive:(const struct CellStyleArchive *)arg1 unarchiver:(id)arg2;
-- (void)saveCellStylePropertiesToArchive:(struct CellStylePropertiesArchive *)arg1 archiver:(id)arg2;
-- (void)loadCellStylePropertiesIntoPropertyMap:(id)arg1 fromArchive:(const struct CellStylePropertiesArchive *)arg2 unarchiver:(id)arg3;
+-     // Error parsing type: v32@0:8^{CellStyleArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{StyleArchive}^{CellStylePropertiesArchive}I}16@24, name: saveCellStyleToArchive:archiver:
+-     // Error parsing type: v32@0:8r^{CellStyleArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{StyleArchive}^{CellStylePropertiesArchive}I}16@24, name: loadCellStyleFromArchive:unarchiver:
+-     // Error parsing type: v32@0:8^{CellStylePropertiesArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{FillArchive}^{Deprecated_TableStrokeArchive}^{Deprecated_TableStrokeArchive}^{Deprecated_TableStrokeArchive}^{Deprecated_TableStrokeArchive}^{PaddingArchive}^{StrokeArchive}^{StrokeArchive}^{StrokeArchive}^{StrokeArchive}Bi}16@24, name: saveCellStylePropertiesToArchive:archiver:
+-     // Error parsing type: v40@0:8@16r^{CellStylePropertiesArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{FillArchive}^{Deprecated_TableStrokeArchive}^{Deprecated_TableStrokeArchive}^{Deprecated_TableStrokeArchive}^{Deprecated_TableStrokeArchive}^{PaddingArchive}^{StrokeArchive}^{StrokeArchive}^{StrokeArchive}^{StrokeArchive}Bi}24@32, name: loadCellStylePropertiesIntoPropertyMap:fromArchive:unarchiver:
 - (id)objectByRemovingPropertiesInMap:(id)arg1 addingPropertiesInMap:(id)arg2 updateInverseResetPropertyMap:(id)arg3 updateInverseSetPropertyMap:(id)arg4;
 
 @end

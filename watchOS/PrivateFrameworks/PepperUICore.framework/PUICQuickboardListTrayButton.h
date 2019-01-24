@@ -8,13 +8,21 @@
 
 @interface PUICQuickboardListTrayButton : PUICButton
 {
+    float _defaultHeight;
+    unsigned int _action;
 }
 
-+ (float)defaultCornerRadius;
 + (id)defaultBackgroundColor;
+@property(nonatomic) unsigned int action; // @synthesize action=_action;
+@property(nonatomic) float defaultHeight; // @synthesize defaultHeight=_defaultHeight;
+- (id)description;
+- (struct CGSize)intrinsicContentSize;
+- (void)configureBackgroundImageForAction:(unsigned int)arg1;
 - (void)setEnabled:(_Bool)arg1;
 - (id)initWithFrame:(struct CGRect)arg1 tintColor:(id)arg2 backgroundCornerRadius:(float)arg3;
+- (id)initWithFrame:(struct CGRect)arg1 tintColor:(id)arg2 defaultHeight:(float)arg3;
 - (id)initWithFrame:(struct CGRect)arg1;
+- (id)init;
 
 @end
 

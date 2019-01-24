@@ -48,18 +48,15 @@ __attribute__((visibility("hidden")))
 - (void)_showRemovalWarningAfterPINVerification;
 - (void)_removeProfile;
 - (void)_performReEnrollAfterPINVerification;
-- (void)performRemoveAfterFinalVerification;
 - (void)_profileRemovalDidFinish;
 - (void)profileViewControllerDidSelectUpdateProfile:(id)arg1;
 - (void)profileViewControllerDidSelectRemoveProfile:(id)arg1;
-- (void)_hideProgressIndicatorWithSuccess:(_Bool)arg1 showButtons:(_Bool)arg2;
-- (void)_showProgressIndicator;
 - (void)setInstallState:(int)arg1 animated:(_Bool)arg2;
 - (void)updateBarButtonItemsForProfileInstallationState:(int)arg1 animated:(_Bool)arg2;
 - (void)updateTitleForProfileInstallationState:(int)arg1;
 - (void)_clearCachedTableCells;
 - (void)_profileListChanged:(id)arg1;
-- (void)didReceiveMemoryWarning;
+- (_Bool)_isProfileInstalled;
 - (id)initWithProfile:(id)arg1;
 
 // Remaining properties

@@ -19,7 +19,7 @@ __attribute__((visibility("hidden")))
     // Error parsing type: , name: expandButton
 }
 
-- (CDUnknownBlockType).cxx_destruct;
+- (void).cxx_destruct;
 - (void)windowStateDidChange:(id)arg1;
 - (void)handleVideoMuteStateChanged:(id)arg1;
 - (void)handleAudioMuteStateChanged:(id)arg1;

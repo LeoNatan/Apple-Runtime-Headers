@@ -12,7 +12,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
-- (CDUnknownBlockType).cxx_destruct;
+- (void).cxx_destruct;
 - (id)init;
 - (id)init:(id)arg1;
 - (id)initWithCoder:(id)arg1;

@@ -6,16 +6,20 @@
 
 #import <objc/NSObject.h>
 
-@class CUReachabilityMonitor, SFSession;
+@class CUBonjourBrowser, CUReachabilityMonitor, NSString, SFSession;
 @protocol OS_dispatch_queue, OS_dispatch_source;
 
 @interface SFDeviceOperationWiFiSetup : NSObject
 {
+    CUBonjourBrowser *_bonjourBrowser;
+    NSString *_bonjourTestID;
     _Bool _invalidateCalled;
+    _Bool _reachabilityEnabled;
     CUReachabilityMonitor *_reachabilityMonitor;
     unsigned long long _startTicks;
     NSObject<OS_dispatch_source> *_timeoutTimer;
     unsigned int _repairFlags;
+    unsigned int _setupFlags;
     CDUnknownBlockType _completionHandler;
     NSObject<OS_dispatch_queue> *_dispatchQueue;
     double _metricSeconds;
@@ -23,12 +27,15 @@
 }
 
 @property(retain, nonatomic) SFSession *sfSession; // @synthesize sfSession=_sfSession;
+@property(nonatomic) unsigned int setupFlags; // @synthesize setupFlags=_setupFlags;
 @property(nonatomic) unsigned int repairFlags; // @synthesize repairFlags=_repairFlags;
 @property(readonly, nonatomic) double metricSeconds; // @synthesize metricSeconds=_metricSeconds;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 - (void).cxx_destruct;
 - (void)_complete:(id)arg1;
+- (void)_bonjourTestFoundDevice:(id)arg1;
+- (void)_bonjourTestStart;
 - (void)invalidate;
 - (void)_activate2;
 - (void)_activate;

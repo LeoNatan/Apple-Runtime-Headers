@@ -6,23 +6,21 @@
 
 #import <AppKit/NSView.h>
 
-@class NSObject;
+@class NSResponder;
 
 @interface WebCoreFullScreenPlaceholderView : NSView
 {
     struct RetainPtr<NSVisualEffectView> _effectView;
     struct RetainPtr<NSTextField> _exitWarning;
-    NSObject *_target;
-    SEL _action;
+    struct WeakObjCPtr<NSResponder> _target;
 }
 
-@property SEL action; // @synthesize action=_action;
-@property NSObject *target; // @synthesize target=_target;
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)mouseDown:(id)arg1;
 - (void)setExitWarningVisible:(BOOL)arg1;
 @property(retain) id contents; // @dynamic contents;
+@property __weak NSResponder *target;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end

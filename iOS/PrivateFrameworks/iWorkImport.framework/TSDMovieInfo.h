@@ -17,19 +17,19 @@ __attribute__((visibility("hidden")))
 @interface TSDMovieInfo : TSDMediaInfo <KNImplicitAmbientAnimating, TSDMixing, TSDCompatibilityAwareMediaContainer, TSDPlayableInfo>
 {
     TSPData *mMovieData;
-    NSURL *mMovieRemoteURL;
     TSPData *mImportedAuxiliaryMovieData;
     NSString *mImportedAuxiliaryMovieDataOriginalFilename;
+    _Bool mAudioOnly;
     TSPData *mAudioOnlyImageData;
     double mStartTime;
     double mEndTime;
     double mPosterTime;
+    long long mLoopOption;
+    float mVolume;
+    NSURL *mMovieRemoteURL;
     TSPData *mPosterImageData;
     _Bool mPosterImageGeneratedWithAlphaSupport;
     struct CGSize mNaturalSize;
-    long long mLoopOption;
-    float mVolume;
-    _Bool mAudioOnly;
     _Bool mStreaming;
     _Bool mNativeAudioRecording;
     TSDMediaStyle *mStyle;
@@ -66,6 +66,7 @@ __attribute__((visibility("hidden")))
 - (id)mixedObjectWithFraction:(double)arg1 ofObject:(id)arg2;
 - (long long)mixingTypeWithObject:(id)arg1 context:(id)arg2;
 - (id)animationFilters;
+- (void)takePropertiesFromReplacedMediaInfo:(id)arg1;
 @property(readonly, nonatomic) _Bool supportsLoopingBackAndForth;
 @property(readonly, nonatomic) _Bool supportsLooping;
 @property(readonly, nonatomic) _Bool supportsStartTimeAndEndTime;
@@ -89,7 +90,6 @@ __attribute__((visibility("hidden")))
 - (id)initWithContext:(id)arg1 geometry:(id)arg2 style:(id)arg3 movieRemoteURL:(id)arg4 loadedAsset:(id)arg5;
 - (id)initWithContext:(id)arg1 geometry:(id)arg2 style:(id)arg3 movieData:(id)arg4 loadedAsset:(id)arg5;
 - (id)initWithContext:(id)arg1 geometry:(id)arg2 style:(id)arg3;
-- (id)initWithContext:(id)arg1 geometry:(id)arg2;
 @property(nonatomic, getter=isNativeAudioRecording) _Bool nativeAudioRecording;
 @property(nonatomic, getter=isAudioOnly) _Bool audioOnly;
 @property(nonatomic) float volume;
@@ -102,9 +102,9 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSURL *movieRemoteURL;
 @property(retain, nonatomic) TSPData *movieData;
 - (void)saveToArchiver:(id)arg1;
-- (void)saveToArchive:(struct MovieArchive *)arg1 archiver:(id)arg2;
+-     // Error parsing type: v32@0:8^{MovieArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}^{DrawableArchive}^{Reference}^{Reference}^{Reference}^{DataReference}^{DataReference}^{DataReference}^{Reference}^{Size}^{Size}^{DataReference}^{Attribution}fffIfIIBBBBBi}16@24, name: saveToArchive:archiver:
 - (void)loadFromUnarchiver:(id)arg1;
-- (void)loadFromArchive:(const struct MovieArchive *)arg1 unarchiver:(id)arg2;
+-     // Error parsing type: v32@0:8r^{MovieArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}^{DrawableArchive}^{Reference}^{Reference}^{Reference}^{DataReference}^{DataReference}^{DataReference}^{Reference}^{Size}^{Size}^{DataReference}^{Attribution}fffIfIIBBBBBi}16@24, name: loadFromArchive:unarchiver:
 - (_Bool)isEquivalentForCrossDocumentPasteMasterComparison:(id)arg1;
 @property(readonly, nonatomic, getter=isImplicitAmbientAnimationInteractive) _Bool implicitAmbientAnimationInteractive;
 - (id)newImplicitAmbientBuildRendererWithAnimatedBuild:(id)arg1 buildChunk:(id)arg2 session:(id)arg3 animatedSlideView:(id)arg4;

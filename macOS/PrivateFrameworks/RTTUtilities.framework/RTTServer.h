@@ -24,6 +24,7 @@
 - (id)valueForTTYSetting:(id)arg1;
 - (BOOL)contactIsTTYContact:(id)arg1;
 - (BOOL)deleteConversationWithCallUID:(id)arg1;
+- (void)registerForRemoteUpdates:(CDUnknownBlockType)arg1 forCallUID:(id)arg2;
 - (void)registerForUpdates:(CDUnknownBlockType)arg1 forCallUID:(id)arg2;
 - (void)sendString:(id)arg1 forCallUID:(id)arg2;
 - (void)findConversationForCallUID:(id)arg1 andResult:(CDUnknownBlockType)arg2;

@@ -20,6 +20,7 @@
 - (void)makeError:(id *)arg1 withDescription:(id)arg2 code:(long)arg3;
 - (_Bool)setAttribute:(id)arg1 forKey:(id)arg2 error:(id *)arg3;
 - (id)attributeForKey:(id)arg1;
+- (_Bool)hasRouteSharingPolicyLongFormVideo:(id)arg1;
 - (_Bool)allowUserToExceedEUVolumeLimit;
 - (_Bool)currentRouteHasVolumeControl;
 - (id)pickableRoutesForCategory:(id)arg1;

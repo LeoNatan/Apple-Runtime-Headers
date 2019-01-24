@@ -26,6 +26,7 @@
 @property(copy, nonatomic) NSString *typeUTI;
 @property(readonly, nonatomic) _Bool needsSupplementalFiles;
 @property(readonly, nonatomic) TSUProgress *progress;
+- (void)setReturnCode:(int *)arg1;
 - (void)enableRenderAllContent;
 - (void)setOptions:(NSDictionary *)arg1;
 - (void)setSaveToURL:(NSURL *)arg1;

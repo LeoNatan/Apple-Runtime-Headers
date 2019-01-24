@@ -20,7 +20,6 @@
 - (void)setIsReadOnly:(BOOL)arg1;
 - (BOOL)isReadOnly;
 - (void)drawWithBox:(long long)arg1 inContext:(struct CGContext *)arg2;
-- (void)formFieldChanged:(id)arg1;
 - (void)dealloc;
 - (void)commonInit;
 - (id)initWithAnnotationDictionary:(struct CGPDFDictionary *)arg1 forPage:(id)arg2;

@@ -7,7 +7,7 @@
 #import <XCTest/XCUIElement.h>
 
 @class NSArray, NSDictionary, NSString, XCAccessibilityElement, XCApplicationQuery, XCUIApplicationImpl, XCUIApplicationOpenRequest;
-@protocol XCTRunnerAutomationSession;
+@protocol XCTRunnerAutomationSession, XCUIDevice;
 
 @interface XCUIApplication : XCUIElement
 {
@@ -31,8 +31,8 @@
 + (id)keyPathsForValuesAffectingSuspended;
 + (id)keyPathsForValuesAffectingRunning;
 + (id)keyPathsForValuesAffectingState;
++ (id)keyPathsForValuesAffectingIsApplicationStateKnown;
 + (id)new;
-+ (id)applicationWithPID:(int)arg1;
 @property(getter=isIdleAnimationWaitEnabled) _Bool idleAnimationWaitEnabled; // @synthesize idleAnimationWaitEnabled=_idleAnimationWaitEnabled;
 @property _Bool allowBackgroundInteraction; // @synthesize allowBackgroundInteraction=_allowBackgroundInteraction;
 @property(nonatomic) _Bool doesNotHandleUIInterruptions; // @synthesize doesNotHandleUIInterruptions=_doesNotHandleUIInterruptions;
@@ -51,8 +51,9 @@
 - (_Bool)setFauxCollectionViewCellsEnabled:(_Bool)arg1 error:(id *)arg2;
 @property(readonly) _Bool fauxCollectionViewCellsEnabled;
 @property(readonly, nonatomic) long long interfaceOrientation;
-- (void)_waitForViewControllerViewDidDisappearWithTimeout:(double)arg1;
+- (_Bool)_waitForViewControllerViewDidDisappearWithTimeout:(double)arg1 error:(id *)arg2;
 - (void)_waitForQuiescence;
+@property(readonly) _Bool hasAutomationSession;
 @property(readonly) _Bool backgroundInteractionAllowed;
 @property(readonly) _Bool shouldSkipPostEventQuiescence;
 @property(readonly) _Bool shouldSkipPreEventQuiescence;
@@ -71,6 +72,7 @@
 @property(readonly) int bridgedProcessID;
 @property(nonatomic) int processID;
 @property(nonatomic) unsigned long long state;
+- (_Bool)isApplicationStateKnown;
 - (void)resetAlertCount;
 @property(readonly) _Bool shouldBeCheckedForAlerts;
 - (_Bool)exists;
@@ -84,10 +86,13 @@
 @property(readonly) XCAccessibilityElement *bridgedProcessAccessibilityElement;
 @property(readonly) XCAccessibilityElement *accessibilityElement;
 - (unsigned long long)elementType;
+@property(readonly) id <XCUIDevice> device;
 @property(readonly) NSString *bundleID;
 @property(readonly) NSString *path;
-- (void)commonInitWithApplicationImpl:(id)arg1 isTestDependency:(_Bool)arg2;
+- (void)commonInitWithApplicationSpecifier:(id)arg1 device:(id)arg2;
 - (id)initPrivateWithPath:(id)arg1 bundleID:(id)arg2;
+- (id)initWithApplicationSpecifier:(id)arg1 device:(id)arg2;
+- (id)initWithBundleIdentifier:(id)arg1 device:(id)arg2;
 - (id)initWithBundleIdentifier:(id)arg1;
 - (id)init;
 - (id)initWithElementQuery:(id)arg1;

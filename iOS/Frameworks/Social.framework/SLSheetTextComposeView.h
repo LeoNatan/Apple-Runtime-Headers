@@ -8,7 +8,6 @@
 
 @class UILabel, UITextView;
 
-__attribute__((visibility("hidden")))
 @interface SLSheetTextComposeView : UIView
 {
     UITextView *_textView;

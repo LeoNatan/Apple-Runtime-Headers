@@ -6,28 +6,33 @@
 
 #import <objc/NSObject.h>
 
-@class NSURL;
+#import <WebKit/WKObject-Protocol.h>
 
-@interface _WKWebsiteDataStoreConfiguration : NSObject
+@class NSString, NSURL;
+
+@interface _WKWebsiteDataStoreConfiguration : NSObject <WKObject>
 {
-    struct RetainPtr<NSURL> _webStorageDirectoryURL;
-    struct RetainPtr<NSURL> _indexedDBDatabaseDirectoryURL;
-    struct RetainPtr<NSURL> _webSQLDatabaseDirectoryURL;
-    struct RetainPtr<NSURL> _cookieStorageFileURL;
-    struct RetainPtr<NSURL> _resourceLoadStatisticsDirectoryURL;
-    struct RetainPtr<NSURL> _cacheStorageDirectoryURL;
-    struct RetainPtr<NSURL> _serviceWorkerRegistrationDirectoryURL;
+    struct ObjectStorage<WebKit::WebsiteDataStoreConfiguration> _configuration;
 }
 
-- (id).cxx_construct;
-- (void).cxx_destruct;
+@property(readonly) struct Object *_apiObject;
+@property(copy, nonatomic) NSString *sourceApplicationSecondaryIdentifier;
+@property(copy, nonatomic) NSString *sourceApplicationBundleIdentifier;
 @property(copy, nonatomic, setter=_setServiceWorkerRegistrationDirectory:) NSURL *_serviceWorkerRegistrationDirectory;
 @property(copy, nonatomic, setter=_setCacheStorageDirectory:) NSURL *_cacheStorageDirectory;
 @property(copy, nonatomic, setter=_setResourceLoadStatisticsDirectory:) NSURL *_resourceLoadStatisticsDirectory;
 @property(copy, nonatomic, setter=_setCookieStorageFile:) NSURL *_cookieStorageFile;
+@property(copy, nonatomic, setter=setHTTPSProxy:) NSURL *httpsProxy;
+@property(copy, nonatomic, setter=setHTTPProxy:) NSURL *httpProxy;
 @property(copy, nonatomic, setter=_setWebSQLDatabaseDirectory:) NSURL *_webSQLDatabaseDirectory;
 @property(copy, nonatomic, setter=_setIndexedDBDatabaseDirectory:) NSURL *_indexedDBDatabaseDirectory;
 @property(copy, nonatomic, setter=_setWebStorageDirectory:) NSURL *_webStorageDirectory;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

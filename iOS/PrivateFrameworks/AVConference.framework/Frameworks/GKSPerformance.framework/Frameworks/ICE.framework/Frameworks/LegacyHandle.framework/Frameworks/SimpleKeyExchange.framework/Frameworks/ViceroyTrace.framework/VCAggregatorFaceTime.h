@@ -36,13 +36,16 @@ __attribute__((visibility("hidden")))
     double _callPoorConnectionMaxLength;
     unsigned int _callPoorConnectionFrequency;
     double _callTotalVideoStallTime;
+    double _callTotalMediaStallTime;
     double _callMaxVideoStallInterval;
     double _callTotalAudioStallTime;
     double _callMaxAudioStallInterval;
     double _lastReportedAudioStallTime;
     double _lastReportedVideoStallTime;
+    double _lastReportedMediaStallTime;
     double _callLastVideoResolutionChangeTime;
     unsigned int _noRemoteAtCallEnd;
+    unsigned int _callTotalMediaStallCount;
     unsigned int _remoteNoRemoteAtCallEnd;
     unsigned int _totalConnectionTime;
     unsigned int _startConnectionTime;
@@ -60,6 +63,14 @@ __attribute__((visibility("hidden")))
     unsigned int _initialRampUpTime;
     int _initialBitrateDelta;
     int _initialBitrate;
+    unsigned int _significantOOOPacketCount;
+    unsigned int _totalVideoPacketsExpected;
+    unsigned int _totalFIRDemandCounter;
+    unsigned int _totalFIRCounter;
+    unsigned int _videoFrameDecodedButSkippedCounter;
+    unsigned int _videoFrameImcompleteNextTSCounter;
+    unsigned int _videoFrameTotalIncompleteCounter;
+    unsigned int _decodedVideoFrameEnqueueCounter;
     VCHistogram *_callVideoSwitchPeriodHistogram;
     VCAdaptiveLearning *_adaptiveLearning;
 }

@@ -6,41 +6,26 @@
 
 #import <iWorkImport/TSPObject.h>
 
-#import <iWorkImport/TSTTableHeaderStorage-Protocol.h>
-
-@class NSString;
-
 __attribute__((visibility("hidden")))
-@interface TSTTableHeaderStorageBucket : TSPObject <TSTTableHeaderStorage>
+@interface TSTTableHeaderStorageBucket : TSPObject
 {
-    struct map<unsigned int, SFUtility::ObjcSharedPtr<NSObject>, std::__1::less<unsigned int>, std::__1::allocator<std::__1::pair<const unsigned int, SFUtility::ObjcSharedPtr<NSObject>>>> *mMap;
-    double mHorizontalScaleFactor;
+    map_9aa73377 _map;
 }
 
-@property(nonatomic) double horizontalScaleFactor; // @synthesize horizontalScaleFactor=mHorizontalScaleFactor;
-- (unsigned int)lowerBound:(unsigned int)arg1;
-- (unsigned int)upperBound:(unsigned int)arg1;
-- (unsigned int)maxKey;
-- (unsigned int)minKey;
-- (long long)count;
-- (void)shiftKeysAtIndex:(unsigned int)arg1 amount:(int)arg2;
-- (void)enumerateHeadersWithBlock:(CDUnknownBlockType)arg1;
-- (void)removeAllHeaders;
-- (void)removeHeaderForKey:(unsigned int)arg1;
-- (void)setHeader:(id)arg1 forKey:(unsigned int)arg2;
-- (id)headerForKey:(unsigned int)arg1 willModify:(_Bool)arg2 createIfNotThere:(_Bool)arg3;
-- (id)headerForKey:(unsigned int)arg1 willModify:(_Bool)arg2;
+@property(nonatomic) map_9aa73377 map; // @synthesize map=_map;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 - (void)saveToArchiver:(id)arg1;
 - (void)loadFromUnarchiver:(id)arg1;
 - (id)packageLocator;
-- (void)dealloc;
-- (id)initWithContext:(id)arg1;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
+- (void)shiftIndexesAtIndex:(unsigned int)arg1 amount:(int)arg2;
+- (void)enumerateHeadersWithBlock:(CDUnknownBlockType)arg1;
+- (void)setHeader:(id)arg1 atIndex:(unsigned int)arg2;
+- (id)mutableHeaderAtIndex:(unsigned int)arg1 allowCreation:(_Bool)arg2;
+- (id)headerAtIndex:(unsigned int)arg1;
+@property(readonly, nonatomic) unsigned int maxIndex;
+@property(readonly, nonatomic) unsigned int minIndex;
+@property(readonly, nonatomic) unsigned long long count;
 
 @end
 

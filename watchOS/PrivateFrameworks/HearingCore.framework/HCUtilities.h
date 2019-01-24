@@ -12,6 +12,7 @@
 
 + (_Bool)deviceHasHomeButton;
 + (_Bool)deviceIsPhone;
++ (_Bool)deviceIsPod;
 + (_Bool)deviceIsPad;
 + (_Bool)deviceIsSmallPhone;
 + (_Bool)deviceIsMultiUser;

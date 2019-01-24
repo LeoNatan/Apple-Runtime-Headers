@@ -6,7 +6,7 @@
 
 #import <AppKit/NSView.h>
 
-@class CALayer;
+@class CALayer, NSColor;
 
 @interface _WKThumbnailView : NSView
 {
@@ -18,6 +18,7 @@
     BOOL _snapshotWasDeferred;
     double _lastSnapshotScale;
     struct CGSize _lastSnapshotMaximumSize;
+    struct RetainPtr<NSColor *> _overrideBackgroundColor;
     BOOL _waitingForSnapshot;
     BOOL _exclusivelyUsesSnapshot;
     BOOL _shouldKeepSnapshotWhenRemovedFromSuperview;
@@ -41,6 +42,7 @@
 - (void)_requestSnapshotIfNeeded;
 - (void)_viewWasParented;
 - (void)_viewWasUnparented;
+@property(retain, nonatomic) NSColor *overrideBackgroundColor;
 - (void)requestSnapshot;
 - (void)updateLayer;
 - (BOOL)wantsUpdateLayer;

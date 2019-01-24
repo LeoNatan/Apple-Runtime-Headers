@@ -6,7 +6,7 @@
 
 #import <NewsCore/FCPrivateDataController.h>
 
-@class FCMTWriterMutexLock, NSDictionary, NSMutableDictionary, NSOrderedSet, NSSet;
+@class FCMTWriterLock, NSDictionary, NSMutableDictionary, NSOrderedSet, NSSet;
 @protocol FCTagRanking;
 
 @interface FCSubscriptionList : FCPrivateDataController
@@ -19,7 +19,7 @@
     NSSet *_ignoredTagIDs;
     id <FCTagRanking> _subscribedTagRanker;
     NSMutableDictionary *_mutableSubscriptionsBySubscriptionID;
-    FCMTWriterMutexLock *_itemsLock;
+    FCMTWriterLock *_itemsLock;
 }
 
 + (void)configureKeyValueStoreForJSONHandling:(id)arg1;
@@ -35,7 +35,7 @@
 + (_Bool)requiresBatchedSync;
 + (_Bool)requiresPushNotificationSupport;
 + (id)desiredKeys;
-@property(retain, nonatomic) FCMTWriterMutexLock *itemsLock; // @synthesize itemsLock=_itemsLock;
+@property(retain, nonatomic) FCMTWriterLock *itemsLock; // @synthesize itemsLock=_itemsLock;
 @property(retain, nonatomic) NSMutableDictionary *mutableSubscriptionsBySubscriptionID; // @synthesize mutableSubscriptionsBySubscriptionID=_mutableSubscriptionsBySubscriptionID;
 @property(retain, nonatomic) id <FCTagRanking> subscribedTagRanker; // @synthesize subscribedTagRanker=_subscribedTagRanker;
 @property(copy, nonatomic) NSSet *ignoredTagIDs; // @synthesize ignoredTagIDs=_ignoredTagIDs;

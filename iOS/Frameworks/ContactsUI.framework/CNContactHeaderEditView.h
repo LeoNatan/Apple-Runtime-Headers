@@ -17,6 +17,7 @@
 {
     UITableView *_editingTable;
     _Bool _pinToReadableContentGuide;
+    _Bool _allowsEditPhoto;
     NSArray *_editingGroups;
     id <CNPropertyCellDelegate> _namePropertyDelegate;
     NSLayoutConstraint *_tableToTrailingEdgeConstraint;
@@ -27,6 +28,7 @@
 + (id)contactHeaderViewWithContact:(id)arg1 editingGroups:(id)arg2 shouldAllowTakePhotoAction:(_Bool)arg3 delegate:(id)arg4;
 @property(retain, nonatomic) NSLayoutConstraint *tableToTrailingReadableGuideConstraint; // @synthesize tableToTrailingReadableGuideConstraint=_tableToTrailingReadableGuideConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *tableToTrailingEdgeConstraint; // @synthesize tableToTrailingEdgeConstraint=_tableToTrailingEdgeConstraint;
+@property(nonatomic) _Bool allowsEditPhoto; // @synthesize allowsEditPhoto=_allowsEditPhoto;
 @property(nonatomic) _Bool pinToReadableContentGuide; // @synthesize pinToReadableContentGuide=_pinToReadableContentGuide;
 @property(nonatomic) __weak id <CNPropertyCellDelegate> namePropertyDelegate; // @synthesize namePropertyDelegate=_namePropertyDelegate;
 @property(retain, nonatomic) NSArray *editingGroups; // @synthesize editingGroups=_editingGroups;

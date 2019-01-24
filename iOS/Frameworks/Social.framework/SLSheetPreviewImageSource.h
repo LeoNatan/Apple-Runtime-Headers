@@ -8,7 +8,6 @@
 
 @class ALAssetsLibrary, AVAssetImageGenerator;
 
-__attribute__((visibility("hidden")))
 @interface SLSheetPreviewImageSource : NSObject
 {
     ALAssetsLibrary *_assetsLibrary;

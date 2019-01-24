@@ -6,12 +6,12 @@
 
 #import <objc/NSObject.h>
 
-@class NSMutableDictionary, TSCECalculationEngine, TSTInfo;
+@class NSMutableDictionary, TSCECalculationEngine, TSTTableInfo;
 
 __attribute__((visibility("hidden")))
 @interface TSTHiddenStatesOwner : NSObject
 {
-    TSTInfo *_tableInfo;
+    TSTTableInfo *_tableInfo;
     TSCECalculationEngine *_calcEngine;
     UUIDData_5fbc143e _baseTableUID;
     UUIDData_5fbc143e _ownerUID;
@@ -24,18 +24,19 @@ __attribute__((visibility("hidden")))
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)remapTableUIDsInFormulasWithMap:(const UUIDMap_b66c2694 *)arg1 calcEngine:(id)arg2;
-- (void)saveToArchive:(struct HiddenStatesOwnerArchive *)arg1 archiver:(id)arg2;
-- (id)initWithArchive:(const struct HiddenStatesOwnerArchive *)arg1 unarchiver:(id)arg2 forBaseTableUID:(const UUIDData_5fbc143e *)arg3;
+-     // Error parsing type: v32@0:8^{HiddenStatesOwnerArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TST::HiddenStatesArchive>=^{Arena}ii^{Rep}}^{UUID}}16@24, name: saveToArchive:archiver:
+-     // Error parsing type: @40@0:8r^{HiddenStatesOwnerArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TST::HiddenStatesArchive>=^{Arena}ii^{Rep}}^{UUID}}16@24r^{UUIDData<TSP::UUIDData>=(?=[16C]{?=CCCCCCCCCCCCCCCC}{?=QQ})}32, name: initWithArchive:unarchiver:forBaseTableUID:
 - (void)didChangeExtentUids:(id)arg1;
 - (void)willChangeExtentUids:(id)arg1;
 - (void)unregisterHiddenStates:(id)arg1;
 - (id)hiddenStatesByExtentUid:(const UUIDData_5fbc143e *)arg1;
 - (id)hiddenStatesByUid:(const UUIDData_5fbc143e *)arg1;
-- (void)registerHiddenStates:(id)arg1;
+- (void)registerHiddenStates:(id)arg1 baseOwnerUID:(const UUIDData_5fbc143e *)arg2;
 - (id)calcEngine;
 - (void)unregisterFromCalcEngine;
-- (int)registerWithCalcEngine:(id)arg1;
-@property(nonatomic) __weak TSTInfo *tableInfo; // @synthesize tableInfo=_tableInfo;
+- (int)registerWithCalcEngine:(id)arg1 baseOwnerUID:(const UUIDData_5fbc143e *)arg2;
+@property(nonatomic) __weak TSTTableInfo *tableInfo; // @synthesize tableInfo=_tableInfo;
+- (id)tableModel;
 - (id)description;
 - (id)initWithBaseTableUID:(const UUIDData_5fbc143e *)arg1;
 - (id)initWithBaseTableUID:(const UUIDData_5fbc143e *)arg1 ownerUID:(const UUIDData_5fbc143e *)arg2;

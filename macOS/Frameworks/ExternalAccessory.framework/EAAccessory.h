@@ -73,6 +73,7 @@
 - (id)preferredApp;
 - (BOOL)shouldBeHiddenFromUI;
 - (BOOL)supportsPublicIap;
+- (id)ppid;
 - (id)certData;
 - (id)certSerial;
 - (id)macAddress;

@@ -14,7 +14,7 @@ __attribute__((visibility("hidden")))
     // Error parsing type: , name: calculatedContentSize
 }
 
-- (CDUnknownBlockType).cxx_destruct;
+- (void).cxx_destruct;
 - (id)layoutAttributesForElementsInRect:(struct CGRect)arg1;
 - (id)layoutAttributesForItemAtIndexPath:(id)arg1;
 - (BOOL)shouldInvalidateLayoutForBoundsChange:(struct CGRect)arg1;

@@ -13,6 +13,8 @@
 {
     NSObject<OS_xpc_object> *_clientConnection;
     NSObject<OS_dispatch_queue> *_sessionQueue;
+    NSObject<OS_xpc_object> *_event;
+    id _inputParameter2;
     TKToken *_token;
     id <TKTokenSessionDelegate> _delegate;
     LAContext *_LAContext;
@@ -31,6 +33,7 @@
 @property(readonly, nonatomic) NSString *name;
 - (void)terminate;
 - (_Bool)handleOperation:(long long)arg1 auditToken:(CDStruct_6ad76789)arg2 event:(id)arg3 reply:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
+@property(readonly) id inputParameter2;
 - (_Bool)handleCopyIdentitiesEvent:(id)arg1 reply:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (_Bool)handleCopyItemsEvent:(id)arg1 reply:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (_Bool)handleControlEvent:(id)arg1 reply:(id)arg2 attributes:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;

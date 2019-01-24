@@ -15,10 +15,12 @@ __attribute__((visibility("hidden")))
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (void)encodeToArchive:(struct GroupByNodeMapArchive *)arg1;
-- (id)initFromArchive:(const struct GroupByNodeMapArchive *)arg1;
+-     // Error parsing type: v24@0:8^{GroupByNodeMapArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSCE::GroupByNodeMapArchive_GroupNodesForGroupBy>=^{Arena}ii^{Rep}}}16, name: encodeToArchive:
+-     // Error parsing type: @24@0:8r^{GroupByNodeMapArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSCE::GroupByNodeMapArchive_GroupNodesForGroupBy>=^{Arena}ii^{Rep}}}16, name: initFromArchive:
+- (void)getCellRefs:(struct TSCEReferenceSet *)arg1 inGroupBys:(const vector_4dc5f307 *)arg2;
 - (void)getCellRefs:(struct TSCEReferenceSet *)arg1 inGroupBy:(const UUIDData_5fbc143e *)arg2;
-- (void)getCellRefs:(struct TSCEReferenceSet *)arg1 referringToGroupNodes:(const vector_4dc5f307 *)arg2 inGroupBy:(const UUIDData_5fbc143e *)arg3;
+- (void)getCellRefs:(struct TSCEReferenceSet *)arg1 forGroupRootInGroupBy:(const UUIDData_5fbc143e *)arg2;
+- (_Bool)getCellRefs:(struct TSCEReferenceSet *)arg1 referringToGroupNodes:(const vector_4dc5f307 *)arg2 inGroupBy:(const UUIDData_5fbc143e *)arg3;
 - (void)removeAllCellRefsInOwner:(unsigned short)arg1;
 - (void)removeCellRef:(const struct TSCEInternalCellReference *)arg1;
 - (void)removeCellRef:(const struct TSCEInternalCellReference *)arg1 usingCategoryRef:(const struct TSCECategoryRef *)arg2;

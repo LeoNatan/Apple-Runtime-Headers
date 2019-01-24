@@ -10,7 +10,7 @@
 #import <NewsCore/FCOperationIdentifying-Protocol.h>
 #import <NewsCore/FCOperationPrioritizing-Protocol.h>
 
-@class FCOnce, NFMutexLock, NSMutableArray, NSObject, NSString;
+@class FCOnce, NFUnfairLock, NSDictionary, NSMutableArray, NSObject, NSString;
 @protocol OS_dispatch_group;
 
 @interface FCOperation : NSOperation <FCOperationCanceling, FCOperationIdentifying, FCOperationPrioritizing>
@@ -26,14 +26,14 @@
     double _operationEndTime;
     CDUnknownBlockType _timedOutTest;
     NSMutableArray *_childOperations;
-    NFMutexLock *_childOperationsLock;
+    NFUnfairLock *_childOperationsLock;
     FCOnce *_startOnce;
     NSObject<OS_dispatch_group> *_finishedGroup;
 }
 
 @property(retain, nonatomic) NSObject<OS_dispatch_group> *finishedGroup; // @synthesize finishedGroup=_finishedGroup;
 @property(retain, nonatomic) FCOnce *startOnce; // @synthesize startOnce=_startOnce;
-@property(retain, nonatomic) NFMutexLock *childOperationsLock; // @synthesize childOperationsLock=_childOperationsLock;
+@property(retain, nonatomic) NFUnfairLock *childOperationsLock; // @synthesize childOperationsLock=_childOperationsLock;
 @property(nonatomic) _Bool childOperationsCancelled; // @synthesize childOperationsCancelled=_childOperationsCancelled;
 @property(retain, nonatomic) NSMutableArray *childOperations; // @synthesize childOperations=_childOperations;
 @property(copy, nonatomic) CDUnknownBlockType timedOutTest; // @synthesize timedOutTest=_timedOutTest;
@@ -46,7 +46,7 @@
 - (void).cxx_destruct;
 - (id)longOperationDescription;
 - (id)shortOperationDescription;
-- (id)_errorUserInfo;
+@property(readonly, copy, nonatomic) NSDictionary *errorUserInfo;
 - (void)_finishOperationWithError:(id)arg1;
 @property(readonly, nonatomic) _Bool hasOperationStarted;
 @property(readonly, nonatomic) FCOperation *proxyOperation;

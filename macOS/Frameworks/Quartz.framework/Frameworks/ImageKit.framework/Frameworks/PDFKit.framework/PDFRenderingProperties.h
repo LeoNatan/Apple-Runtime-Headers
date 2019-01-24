@@ -20,6 +20,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *loupeWorkQueue;
 @property(nonatomic) struct CGColorSpace *deviceColorSpace;
 @property(nonatomic) _Bool isUsingPDFExtensionView;
+@property(nonatomic) _Bool enableBackgroundImages;
 @property(nonatomic) _Bool enableTileUpdates;
 @property(nonatomic) double screenScaleFactor;
 @property(nonatomic) _Bool enablePageShadows;

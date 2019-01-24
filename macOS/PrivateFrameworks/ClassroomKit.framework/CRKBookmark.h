@@ -18,6 +18,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
++ (id)bookmarkFromDMFBookmark:(id)arg1;
 @property(copy, nonatomic) NSArray *childBookmarks; // @synthesize childBookmarks=_childBookmarks;
 @property(copy, nonatomic) NSString *urlString; // @synthesize urlString=_urlString;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;

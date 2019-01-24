@@ -16,7 +16,7 @@ __attribute__((visibility("hidden")))
     // Error parsing type: , name: accessibilityDisplayName
 }
 
-- (CDUnknownBlockType).cxx_destruct;
+- (void).cxx_destruct;
 @property(nonatomic, copy) NSString *accessibilityDisplayName; // @synthesize accessibilityDisplayName;
 - (void)prepareForReuse;
 - (id)initWithCoder:(id)arg1;

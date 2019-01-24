@@ -6,25 +6,21 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, NSDate, NSMutableArray, NSMutableDictionary, NSSet, NSString;
+@class NSArray, NSDate, NSMutableArray, NSMutableDictionary, NSString;
 
 @interface WBSSavedPassword : NSObject
 {
     NSMutableDictionary *_siteToProtectionSpaces;
     NSMutableArray *_sites;
     BOOL _userIsNeverSaveMarker;
-    BOOL __domainEligibleForPasswordReuseWarning;
     NSString *_highLevelDomain;
     NSString *_user;
     NSString *_password;
     NSDate *_earliestModifiedDateForSites;
-    NSSet *_associatedDomains;
 }
 
 + (BOOL)stringMatchesPatternWithTokenizer:(struct __CFStringTokenizer *)arg1 string:(id)arg2 pattern:(id)arg3 matchingType:(long long)arg4;
 + (void)enumerateRangesMatchingPatternWithTokenizer:(struct __CFStringTokenizer *)arg1 string:(id)arg2 pattern:(id)arg3 matchingType:(long long)arg4 withBlock:(CDUnknownBlockType)arg5;
-@property(nonatomic, getter=_isDomainEligibleForPasswordReuseWarning) BOOL _domainEligibleForPasswordReuseWarning; // @synthesize _domainEligibleForPasswordReuseWarning=__domainEligibleForPasswordReuseWarning;
-@property(readonly, nonatomic) NSSet *associatedDomains; // @synthesize associatedDomains=_associatedDomains;
 @property(readonly, nonatomic) NSDate *earliestModifiedDateForSites; // @synthesize earliestModifiedDateForSites=_earliestModifiedDateForSites;
 @property(readonly, nonatomic) BOOL userIsNeverSaveMarker; // @synthesize userIsNeverSaveMarker=_userIsNeverSaveMarker;
 @property(readonly, nonatomic) NSString *password; // @synthesize password=_password;
@@ -33,10 +29,10 @@
 - (void).cxx_destruct;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
-- (BOOL)_matchesSearchPattern:(id)arg1 matchAgainstUser:(BOOL)arg2;
-- (BOOL)matchesDomain:(id)arg1;
+- (BOOL)_matchesSearchPattern:(id)arg1 matchAgainstUser:(BOOL)arg2 associatedDomains:(id)arg3;
+- (BOOL)matchesDomain:(id)arg1 associatedDomains:(id)arg2;
 - (BOOL)matchesServiceNameHintString:(id)arg1;
-- (BOOL)matchesUserTypedSearchPattern:(id)arg1;
+- (BOOL)matchesUserTypedSearchPattern:(id)arg1 associatedDomains:(id)arg2;
 @property(readonly, nonatomic) NSArray *userVisibleSites;
 @property(readonly, nonatomic) NSString *userVisibleHighLevelDomain;
 - (void)_adoptSitesFromSavedPassword:(id)arg1;
@@ -52,10 +48,7 @@
 - (void)_addModificationDate:(id)arg1;
 - (void)_addProtectionSpace:(id)arg1 forSite:(id)arg2;
 - (id)description;
-- (void)addObject:(id)arg1;
-- (id)_initWithHighLevelDomain:(id)arg1 user:(id)arg2 password:(id)arg3 associatedDomains:(id)arg4;
-- (BOOL)hasDuplicatedPasswordWithSavedPassword:(id)arg1;
-@property(readonly, nonatomic) BOOL qualifiesForPasswordAuditing;
+- (id)_initWithHighLevelDomain:(id)arg1 user:(id)arg2 password:(id)arg3;
 
 @end
 

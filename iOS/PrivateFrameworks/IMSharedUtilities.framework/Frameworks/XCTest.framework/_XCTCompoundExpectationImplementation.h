@@ -10,16 +10,16 @@
 
 @interface _XCTCompoundExpectationImplementation : NSObject
 {
-    unsigned long long _compoundExpectationType;
+    unsigned long long _logicalType;
     NSArray *_subexpectations;
 }
 
 @property(readonly, copy, nonatomic) NSArray *subexpectations; // @synthesize subexpectations=_subexpectations;
-@property(readonly, nonatomic) unsigned long long compoundExpectationType; // @synthesize compoundExpectationType=_compoundExpectationType;
+@property(readonly, nonatomic) unsigned long long logicalType; // @synthesize logicalType=_logicalType;
 - (void).cxx_destruct;
 - (void)dealloc;
 - (void)cleanup;
-- (id)initWithType:(unsigned long long)arg1 subexpectations:(id)arg2;
+- (id)initWithLogicalType:(unsigned long long)arg1 subexpectations:(id)arg2;
 
 @end
 

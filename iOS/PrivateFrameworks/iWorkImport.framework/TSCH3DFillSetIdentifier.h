@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     int _fillPropertyType;
 }
 
-+ (id)instanceWithDEPRECATEDArchive:(const struct DEPRECATEDChart3DFillArchive *)arg1 unarchiver:(id)arg2;
-+ (id)instanceWithArchive:(const struct Chart3DFillArchive *)arg1 unarchiver:(id)arg2;
++     // Error parsing type: @32@0:8r^{DEPRECATEDChart3DFillArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}^{FillArchive}^{Chart3DLightingModelArchive}iI}16@24, name: instanceWithDEPRECATEDArchive:unarchiver:
++     // Error parsing type: @32@0:8r^{Chart3DFillArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}^{Chart3DLightingModelArchive}iI}16@24, name: instanceWithArchive:unarchiver:
 + (id)identifierWithContentsOfDictionary:(id)arg1;
 + (id)identifierWithFillPropertyType:(int)arg1 seriesIndex:(unsigned long long)arg2 textureSetID:(id)arg3;
 + (id)identifierWithFillName:(id)arg1 seriesName:(id)arg2 textureSetID:(id)arg3;
@@ -40,8 +40,8 @@ __attribute__((visibility("hidden")))
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)init;
-- (void)saveToArchive:(struct Chart3DFillArchive *)arg1 archiver:(id)arg2;
-- (id)initWithArchive:(const struct Chart3DFillArchive *)arg1 unarchiver:(id)arg2;
+-     // Error parsing type: v32@0:8^{Chart3DFillArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}^{Chart3DLightingModelArchive}iI}16@24, name: saveToArchive:archiver:
+-     // Error parsing type: @32@0:8r^{Chart3DFillArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}^{Chart3DLightingModelArchive}iI}16@24, name: initWithArchive:unarchiver:
 - (unsigned long long)countOfSeriesInFillSet;
 - (id)loadPropertiesDictionary;
 - (_Bool)isSageCompatible;

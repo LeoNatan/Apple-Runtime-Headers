@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
 + (id)cellUIDRegionFromRegion:(id)arg1 inTable:(id)arg2;
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (void)saveToMessage:(struct CellUIDRegionArchive *)arg1;
-- (id)initFromMessage:(const struct CellUIDRegionArchive *)arg1;
+-     // Error parsing type: v24@0:8^{CellUIDRegionArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSP::UUIDRectArchive>=^{Arena}ii^{Rep}}}16, name: saveToMessage:
+-     // Error parsing type: @24@0:8r^{CellUIDRegionArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSP::UUIDRectArchive>=^{Arena}ii^{Rep}}}16, name: initFromMessage:
 - (void)enumerateCellUIDRangesUsingBlock:(CDUnknownBlockType)arg1;
 @property(readonly, nonatomic) _Bool isEmpty;
 @property(readonly, nonatomic) unsigned long long cellCount;

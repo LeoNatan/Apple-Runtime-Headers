@@ -32,9 +32,9 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) unsigned long long currentToolType; // @synthesize currentToolType=_currentToolType;
 - (void).cxx_destruct;
 - (void)p_setColor:(id)arg1 forToolType:(unsigned long long)arg2;
-- (void)saveToArchive:(struct FreehandDrawingToolkitUIState *)arg1 archiver:(id)arg2;
+-     // Error parsing type: v32@0:8^{FreehandDrawingToolkitUIState=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{Color}^{Color}^{Color}^{Color}^{Color}iffffffffB}16@24, name: saveToArchive:archiver:
 - (void)saveToArchiver:(id)arg1;
-- (void)loadFromArchive:(const struct FreehandDrawingToolkitUIState *)arg1 unarchiver:(id)arg2;
+-     // Error parsing type: v32@0:8r^{FreehandDrawingToolkitUIState=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{Color}^{Color}^{Color}^{Color}^{Color}iffffffffB}16@24, name: loadFromArchive:unarchiver:
 - (void)loadFromUnarchiver:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

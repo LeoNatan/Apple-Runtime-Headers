@@ -33,6 +33,7 @@
 @property(retain, nonatomic) NSArray *recordIDs; // @synthesize recordIDs=_recordIDs;
 @property(retain, nonatomic) FCCKContentDatabase *database; // @synthesize database=_database;
 - (void).cxx_destruct;
+- (id)_desiredKeys;
 - (id)_constructQuery;
 - (void)operationWillFinishWithError:(id)arg1;
 - (void)performOperation;

@@ -18,8 +18,8 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) unsigned int symbol; // @synthesize symbol=_symbol;
 @property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
-- (void)saveToArchive:(struct VariableNodeArchive *)arg1 archiver:(id)arg2;
-- (void)loadFromArchive:(const struct VariableNodeArchive *)arg1 unarchiver:(id)arg2;
+-     // Error parsing type: v32@0:8^{VariableNodeArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}^{ExpressionNodeArchive}I}16@24, name: saveToArchive:archiver:
+-     // Error parsing type: v32@0:8r^{VariableNodeArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}^{ExpressionNodeArchive}I}16@24, name: loadFromArchive:unarchiver:
 - (void)saveToArchiver:(id)arg1;
 - (void)loadFromUnarchiver:(id)arg1;
 - (id)exportString;

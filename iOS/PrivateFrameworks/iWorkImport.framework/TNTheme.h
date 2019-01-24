@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
 
 + (void)initialize;
 - (void)saveToArchiver:(id)arg1;
-- (void)saveToArchive:(struct ThemeArchive *)arg1 archiver:(id)arg2;
+-     // Error parsing type: v32@0:8^{ThemeArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}^{ThemeArchive}}16@24, name: saveToArchive:archiver:
 - (void)loadFromUnarchiver:(id)arg1;
-- (void)loadFromArchive:(const struct ThemeArchive *)arg1 unarchiver:(id)arg2;
+-     // Error parsing type: v32@0:8r^{ThemeArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}^{ThemeArchive}}16@24, name: loadFromArchive:unarchiver:
 - (void)bootstrapBlackHardCodedTheme;
 - (void)bootstrapWhiteHardCodedTheme;
 - (void)p_initDefaultHardCodedStyles;

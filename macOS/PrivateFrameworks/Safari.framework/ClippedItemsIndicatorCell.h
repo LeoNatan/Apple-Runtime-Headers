@@ -11,8 +11,8 @@ __attribute__((visibility("hidden")))
 {
 }
 
-- (void)accessibilityPerformAction:(id)arg1;
-- (id)accessibilityActionNames;
+- (BOOL)accessibilityPerformPress;
+- (BOOL)accessibilityPerformShowMenu;
 
 @end
 

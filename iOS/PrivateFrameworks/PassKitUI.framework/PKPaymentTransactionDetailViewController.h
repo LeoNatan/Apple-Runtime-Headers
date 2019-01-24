@@ -9,11 +9,12 @@
 #import <PassKitUI/PKPaymentDataProviderDelegate-Protocol.h>
 #import <PassKitUI/PKPeerPaymentContactResolverDelegate-Protocol.h>
 
-@class NSArray, NSDateFormatter, NSString, PKPaymentPass, PKPaymentTransaction, PKPaymentTransactionDetailHeaderView, PKPaymentTransactionLocationSnapshotter, PKPeerPaymentBubbleView, PKPeerPaymentContactResolver, PKPeerPaymentController, PKPeerPaymentStatusResponse, UIImage;
+@class NSArray, NSDateFormatter, NSString, PKPaymentPass, PKPaymentTransaction, PKPaymentTransactionDetailHeaderView, PKPeerPaymentContactResolver, PKPeerPaymentController, PKPeerPaymentStatusResponse, UIImage;
 @protocol PKPaymentDataProvider;
 
 @interface PKPaymentTransactionDetailViewController : PKSectionTableViewController <PKPeerPaymentContactResolverDelegate, PKPaymentDataProviderDelegate>
 {
+    _Bool _reportingMapsIssue;
     _Bool _issuerAppDeepLinkingEnabled;
     _Bool _inBridge;
     PKPaymentTransaction *_transaction;
@@ -22,22 +23,18 @@
     PKPaymentTransactionDetailHeaderView *_headerView;
     PKPeerPaymentContactResolver *_contactResolver;
     PKPeerPaymentController *_peerPaymentController;
-    PKPaymentTransactionLocationSnapshotter *_merchantLocationSnapshotter;
     UIImage *_mapTilePlaceholderImage;
     NSArray *_lineItems;
     PKPeerPaymentStatusResponse *_peerPaymentStatusResponse;
-    PKPeerPaymentBubbleView *_bubbleView;
     NSDateFormatter *_transactionDateFormatter;
 }
 
 @property(retain, nonatomic) NSDateFormatter *transactionDateFormatter; // @synthesize transactionDateFormatter=_transactionDateFormatter;
-@property(retain, nonatomic) PKPeerPaymentBubbleView *bubbleView; // @synthesize bubbleView=_bubbleView;
 @property(retain, nonatomic) PKPeerPaymentStatusResponse *peerPaymentStatusResponse; // @synthesize peerPaymentStatusResponse=_peerPaymentStatusResponse;
 @property(retain, nonatomic) NSArray *lineItems; // @synthesize lineItems=_lineItems;
 @property(retain, nonatomic) UIImage *mapTilePlaceholderImage; // @synthesize mapTilePlaceholderImage=_mapTilePlaceholderImage;
 @property(nonatomic) _Bool inBridge; // @synthesize inBridge=_inBridge;
 @property(nonatomic) _Bool issuerAppDeepLinkingEnabled; // @synthesize issuerAppDeepLinkingEnabled=_issuerAppDeepLinkingEnabled;
-@property(retain, nonatomic) PKPaymentTransactionLocationSnapshotter *merchantLocationSnapshotter; // @synthesize merchantLocationSnapshotter=_merchantLocationSnapshotter;
 @property(retain, nonatomic) PKPeerPaymentController *peerPaymentController; // @synthesize peerPaymentController=_peerPaymentController;
 @property(retain, nonatomic) PKPeerPaymentContactResolver *contactResolver; // @synthesize contactResolver=_contactResolver;
 @property(retain, nonatomic) PKPaymentTransactionDetailHeaderView *headerView; // @synthesize headerView=_headerView;
@@ -51,25 +48,12 @@
 - (id)_tableView:(id)arg1 cellForAmountDetailLineItemAtIndex:(long long)arg2;
 - (id)_fraudRiskCellForTableView:(id)arg1;
 - (id)_transactionIdentifierCellForTableView:(id)arg1;
-- (unsigned long long)_locationType;
+- (id)_statusCellForTableView:(id)arg1;
 - (void)_tableView:(id)arg1 didSelectMechantAddressAtIndexPath:(id)arg2;
 - (id)_mapTilePlaceholderImage;
 - (id)_merchantAddressCellForTableView:(id)arg1;
 - (id)_transactionStatusString;
-- (id)_transactionDateDescription;
-- (id)_tableView:(id)arg1 cellForStatusRowAtIndex:(long long)arg2;
-- (long long)_rowIndexForStatusRow:(unsigned long long)arg1;
-- (unsigned long long)_statusRowForRowIndex:(long long)arg1;
-- (long long)_numberOfStatusRowsEnabled;
-- (_Bool)_shouldDisplayTransactionStatusChangedDate;
-- (_Bool)_statusRowIsEnabled:(unsigned long long)arg1;
 - (_Bool)_transactionHasNonZeroSecondaryFundingSourceAmount;
-- (id)_cellForPeerPaymentCounterpartInTableView:(id)arg1;
-- (id)_tableView:(id)arg1 cellForAccountInfoRowAtIndex:(long long)arg2;
-- (long long)_rowIndexForAccountInfoRow:(unsigned long long)arg1;
-- (unsigned long long)_accountInfoRowForRowIndex:(long long)arg1;
-- (long long)_numberOfAccountInfoRowsEnabled;
-- (_Bool)_accountInfoRowIsEnabled:(unsigned long long)arg1;
 - (void)_openTransactionInIssuerApp;
 - (void)_openMessagesToPresentAction:(unsigned long long)arg1;
 - (void)_tableView:(id)arg1 didSelectPeerPaymentAction:(id)arg2 atIndexPath:(id)arg3;
@@ -79,17 +63,24 @@
 - (long long)_rowIndexForActionRow:(unsigned long long)arg1;
 - (unsigned long long)_actionRowForRowIndex:(long long)arg1;
 - (long long)_numberOfActionRowsEnabled;
+- (_Bool)_shouldHighlightAction:(unsigned long long)arg1;
 - (_Bool)_actionRowIsEnabled:(unsigned long long)arg1;
 - (void)contactsDidChangeForContactResolver:(id)arg1;
 - (void)scrollViewDidScroll:(id)arg1;
+- (id)pkui_navigationBarItemTintColor;
 - (id)pkui_navigationBarTintColor;
 - (_Bool)pkui_prefersNavigationBarShadowHidden;
 - (void)_handlePeerPaymentDisplayableError:(id)arg1 withPeerPaymentController:(id)arg2;
 - (void)_performPeerPaymentAction:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
-- (void)_handleBubbleAction:(unsigned long long)arg1 forPeerPaymentBubbleView:(id)arg2;
-- (id)_reuseIdentifierForSection:(unsigned long long)arg1;
+- (id)_subtitleCellWithTitle:(id)arg1 subtitle:(id)arg2;
 - (id)_titleValueCellWithTitle:(id)arg1 value:(id)arg2;
+- (_Bool)tableView:(id)arg1 shouldHighlightRowAtIndexPath:(id)arg2;
+- (double)tableView:(id)arg1 heightForHeaderInSection:(long long)arg2;
+- (id)tableView:(id)arg1 viewForHeaderInSection:(long long)arg2;
+- (double)tableView:(id)arg1 heightForFooterInSection:(long long)arg2;
+- (id)tableView:(id)arg1 viewForFooterInSection:(long long)arg2;
 - (id)tableView:(id)arg1 titleForFooterInSection:(long long)arg2;
+- (id)tableView:(id)arg1 titleForHeaderInSection:(long long)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;

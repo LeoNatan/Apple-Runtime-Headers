@@ -26,8 +26,8 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) TSTAccumulator *accumulator; // @synthesize accumulator=_accumulator;
 @property(readonly, nonatomic) struct TSUCellCoord formulaCoord; // @synthesize formulaCoord=_formulaCoord;
 - (void).cxx_destruct;
-- (void)encodeToArchive:(struct CategoryOwnerArchive_GroupByArchive_AggNodeArchive *)arg1;
-- (id)initWithArchive:(const struct CategoryOwnerArchive_GroupByArchive_AggNodeArchive *)arg1 aggregator:(id)arg2;
+-     // Error parsing type: v24@0:8^{CategoryOwnerArchive_GroupByArchive_AggNodeArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TST::CategoryOwnerArchive_GroupByArchive_AggNodeArchive>=^{Arena}ii^{Rep}}^{CellCoordinateArchive}^{AccumulatorArchive}}16, name: encodeToArchive:
+-     // Error parsing type: @32@0:8r^{CategoryOwnerArchive_GroupByArchive_AggNodeArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TST::CategoryOwnerArchive_GroupByArchive_AggNodeArchive>=^{Arena}ii^{Rep}}^{CellCoordinateArchive}^{AccumulatorArchive}}16@24, name: initWithArchive:aggregator:
 - (void)enumerateDirectChildren:(CDUnknownBlockType)arg1;
 - (id)descriptionWithCategoryOwner:(id)arg1;
 - (id)description;

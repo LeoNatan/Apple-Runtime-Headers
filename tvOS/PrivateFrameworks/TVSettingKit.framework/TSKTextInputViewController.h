@@ -57,6 +57,7 @@
 - (void)_textFieldTextDidChange:(id)arg1;
 - (void)_menuPressed;
 - (void)_donePressed:(id)arg1;
+@property(copy, nonatomic) NSString *text;
 - (id)preferredFocusEnvironments;
 - (void)_configureSubmitButton;
 - (void)traitCollectionDidChange:(id)arg1;

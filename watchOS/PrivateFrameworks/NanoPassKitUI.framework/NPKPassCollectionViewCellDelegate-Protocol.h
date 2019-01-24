@@ -6,9 +6,10 @@
 
 #import <NanoPassKitUI/NSObject-Protocol.h>
 
-@class NPKPassCollectionViewCell;
+@class NPKPassAccessoryViewController, NPKPassCollectionViewCell;
 
 @protocol NPKPassCollectionViewCellDelegate <NSObject>
+- (void)npkPassCollectionViewCell:(NPKPassCollectionViewCell *)arg1 didDismissAccessoryViewController:(NPKPassAccessoryViewController *)arg2;
 - (void)npkPassCollectionViewCellDidDisplayCell:(NPKPassCollectionViewCell *)arg1;
 - (void)npkPassCollectionViewCellDidReceiveNewZIndex:(NPKPassCollectionViewCell *)arg1;
 - (void)npkPassCollectionViewCellDidChangeSuperview:(NPKPassCollectionViewCell *)arg1;

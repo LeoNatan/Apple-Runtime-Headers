@@ -31,6 +31,7 @@
     NSArray *_searchTerms;
     NSArray *_supportedCameraCaptureTypes;
     NSArray *_supportedInAppTypes;
+    NSArray *_supportedTransitNetworkIdentifiers;
     NSArray *_paymentOptions;
     NSDictionary *_rawDictionary;
     NSString *_identifier;
@@ -47,6 +48,7 @@
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(copy, nonatomic) NSDictionary *rawDictionary; // @synthesize rawDictionary=_rawDictionary;
 @property(readonly, copy, nonatomic) NSArray *paymentOptions; // @synthesize paymentOptions=_paymentOptions;
+@property(readonly, copy, nonatomic) NSArray *supportedTransitNetworkIdentifiers; // @synthesize supportedTransitNetworkIdentifiers=_supportedTransitNetworkIdentifiers;
 @property(readonly, copy, nonatomic) NSArray *supportedInAppTypes; // @synthesize supportedInAppTypes=_supportedInAppTypes;
 @property(readonly, copy, nonatomic) NSArray *supportedCameraCaptureTypes; // @synthesize supportedCameraCaptureTypes=_supportedCameraCaptureTypes;
 @property(readonly, copy, nonatomic) NSArray *searchTerms; // @synthesize searchTerms=_searchTerms;
@@ -67,6 +69,7 @@
 @property(nonatomic) unsigned long long type; // @synthesize type=_type;
 @property(copy, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
 - (void).cxx_destruct;
+- (BOOL)supportsDevice:(id)arg1;
 - (BOOL)supportsOSVersion:(id)arg1 deviceClass:(id)arg2;
 - (id)provisioningMethodTypes;
 - (void)setProvisioningMethodMetadata:(id)arg1 forType:(id)arg2;

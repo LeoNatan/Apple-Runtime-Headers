@@ -10,8 +10,12 @@
 {
 }
 
++ (int)getSMCKeyAsGeneric:(unsigned int)arg1 dataBufSize:(unsigned int)arg2 dataBuf:(char *)arg3 withError:(id *)arg4;
++ (int)getSMCKeyAsNumeric:(unsigned int)arg1 outInfo:(CDStruct_037d4da5 *)arg2 outValue:(CDUnion_18b537cf *)arg3 withError:(id *)arg4;
++ (id)getInternalBatteryInfoForKey:(id)arg1 withError:(id *)arg2;
++ (id)getReportDataForCustomizedIndex:(id)arg1 indexArray:(id)arg2 withError:(id *)arg3;
 + (id)getSystemProfilerReportForDataType:(id)arg1 withError:(id *)arg2;
-+ (id)getIORegistryEntryPropertiesForProduct:(id)arg1 withRootEntryPath:(id)arg2 error:(id *)arg3;
++ (id)getIORegistryEntryPropertiesForCriteria:(id)arg1 withRootEntryPath:(id)arg2 withPlane:(id)arg3 error:(id *)arg4;
 + (void *)getIORegistryEntryPropertyForPath:(id)arg1 andName:(id)arg2 withError:(id *)arg3;
 + (id)getIORegistryEntryPropertiesForPath:(id)arg1 withError:(id *)arg2;
 + (unsigned int)getIORegistryEntryForPath:(id)arg1 withError:(id *)arg2;

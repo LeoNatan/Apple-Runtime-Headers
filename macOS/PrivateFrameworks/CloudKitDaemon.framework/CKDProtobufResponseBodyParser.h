@@ -10,6 +10,7 @@
 
 @interface CKDProtobufResponseBodyParser : CKDResponseBodyParser
 {
+    BOOL _parsingStandaloneMessage;
     BOOL _isParsing;
     Class _messageClass;
     NSMutableData *_tailParserData;
@@ -21,6 +22,7 @@
 @property(nonatomic) BOOL isParsing; // @synthesize isParsing=_isParsing;
 @property(nonatomic) unsigned long long curObjectLength; // @synthesize curObjectLength=_curObjectLength;
 @property(retain, nonatomic) NSMutableData *tailParserData; // @synthesize tailParserData=_tailParserData;
+@property(nonatomic) BOOL parsingStandaloneMessage; // @synthesize parsingStandaloneMessage=_parsingStandaloneMessage;
 @property(nonatomic) Class messageClass; // @synthesize messageClass=_messageClass;
 - (void).cxx_destruct;
 - (void)finishWithCompletion:(CDUnknownBlockType)arg1;

@@ -13,7 +13,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (Class)layerClass;
-- (CDUnknownBlockType).cxx_destruct;
+- (void).cxx_destruct;
 - (void)itemDidEndNotification:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;

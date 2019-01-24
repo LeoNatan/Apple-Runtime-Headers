@@ -8,7 +8,7 @@
 
 #import <SafariServices/LAUIDelegate-Protocol.h>
 
-@class LAContext, NSHashTable, NSMapTable, NSMutableOrderedSet;
+@class LAContext, NSData, NSHashTable, NSMapTable, NSMutableOrderedSet;
 @protocol _SFAuthenticationClient, _SFAuthenticationContextDelegate;
 
 @interface _SFAuthenticationContext : NSObject <LAUIDelegate>
@@ -34,6 +34,7 @@
 
 @property(nonatomic) __weak id <_SFAuthenticationContextDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSData *externalizedContext;
 - (void)_handleTouchIDEventWithParameters:(id)arg1;
 - (void)event:(int)arg1 params:(id)arg2 reply:(CDUnknownBlockType)arg3;
 - (void)_cancelOngoingAuthentication;
@@ -47,8 +48,6 @@
 - (void)_evaluatePolicyForClient:(id)arg1 userInitiated:(_Bool)arg2 reply:(CDUnknownBlockType)arg3;
 - (void)authenticateForClient:(id)arg1 userInitiated:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_processNextClientAwaitingAuthenticationUserInitiated:(_Bool)arg1;
-- (_Bool)authenticateWithNoPromptForClient:(id)arg1;
-- (_Bool)_biometricProtectionEnabled;
 - (_Bool)_contextShouldAllowMultipleBiometricFailures;
 - (_Bool)_contextShouldAllowPasscodeFallback;
 - (_Bool)_contextRequiresSessionBasedAuthentication;

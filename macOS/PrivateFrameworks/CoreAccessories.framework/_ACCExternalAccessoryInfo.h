@@ -19,10 +19,12 @@
     NSString *_firmwareRevisionActive;
     NSString *_firmwareRevisionPending;
     NSString *_hardwareRevision;
+    NSString *_ppid;
     unsigned long long _destinationSharingOptions;
 }
 
 @property unsigned long long destinationSharingOptions; // @synthesize destinationSharingOptions=_destinationSharingOptions;
+@property(retain) NSString *ppid; // @synthesize ppid=_ppid;
 @property(retain) NSString *hardwareRevision; // @synthesize hardwareRevision=_hardwareRevision;
 @property(retain) NSString *firmwareRevisionPending; // @synthesize firmwareRevisionPending=_firmwareRevisionPending;
 @property(retain) NSString *firmwareRevisionActive; // @synthesize firmwareRevisionActive=_firmwareRevisionActive;

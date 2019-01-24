@@ -61,6 +61,8 @@ struct _mxnetTools_recordHeader_t_ {
 
 struct abstract_context;
 
+struct base_kernel;
+
 struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>> {
     struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>>::__rep, std::__1::allocator<char>> {
         struct __rep {
@@ -150,6 +152,11 @@ struct convolution_uniforms {
 
 struct fast_pyramid_resizer;
 
+struct function<void (const std::__1::shared_ptr<Espresso::abstract_batch>&, const Espresso::layer &)> {
+    struct type _field1;
+    struct __base<void (const std::__1::shared_ptr<Espresso::abstract_batch>&, const Espresso::layer &)> *_field2;
+};
+
 struct generic_load_constant_kernel;
 
 struct inner_product_uniforms {
@@ -179,6 +186,22 @@ struct inner_product_uniforms {
     unsigned int n8_splitk;
     int argmax_tree_n_clusters;
     int argmax_tree_n_clusters_keep;
+};
+
+struct layer {
+    CDUnknownFunctionPointerType *_field1;
+    int _field2;
+    int _field3;
+    struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>> _field4;
+    struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>> _field5;
+    struct shared_ptr<Espresso::base_kernel> _field6;
+    struct layer_data _field7;
+    struct layer_data _field8;
+    struct function<void (const std::__1::shared_ptr<Espresso::abstract_batch>&, const Espresso::layer &)> _field9;
+};
+
+struct layer_data {
+    struct vector<std::__1::shared_ptr<Espresso::abstract_blob_container>, std::__1::allocator<std::__1::shared_ptr<Espresso::abstract_blob_container>>> _field1;
 };
 
 struct list<vision::DCN::boundingbox, std::__1::allocator<vision::DCN::boundingbox>> {
@@ -340,9 +363,16 @@ struct shared_ptr<Espresso::V9Engine::v9_noise_kernel> {
     struct __shared_weak_count *__cntrl_;
 };
 
+struct shared_ptr<Espresso::abstract_blob_container>;
+
 struct shared_ptr<Espresso::abstract_context> {
     struct abstract_context *__ptr_;
     struct __shared_weak_count *__cntrl_;
+};
+
+struct shared_ptr<Espresso::base_kernel> {
+    struct base_kernel *_field1;
+    struct __shared_weak_count *_field2;
 };
 
 struct shared_ptr<Espresso::blob<float __attribute__((ext_vector_type(2))), 1>> {
@@ -410,6 +440,20 @@ struct shared_ptr<Espresso::net> {
     struct __shared_weak_count *__cntrl_;
 };
 
+struct shared_ptr<float> {
+    float *_field1;
+    struct __shared_weak_count *_field2;
+};
+
+struct shared_ptr<std::__1::basic_string<char>> {
+    struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>> *_field1;
+    struct __shared_weak_count *_field2;
+};
+
+struct type {
+    unsigned char _field1[32];
+};
+
 struct v9_noise_kernel;
 
 struct vImage_Buffer {
@@ -457,6 +501,14 @@ struct vector<std::__1::pair<unsigned long long, unsigned long long>, std::__1::
     struct __compressed_pair<std::__1::pair<unsigned long long, unsigned long long>*, std::__1::allocator<std::__1::pair<unsigned long long, unsigned long long>>> {
         struct pair<unsigned long long, unsigned long long> *__value_;
     } __end_cap_;
+};
+
+struct vector<std::__1::shared_ptr<Espresso::abstract_blob_container>, std::__1::allocator<std::__1::shared_ptr<Espresso::abstract_blob_container>>> {
+    struct shared_ptr<Espresso::abstract_blob_container> *_field1;
+    struct shared_ptr<Espresso::abstract_blob_container> *_field2;
+    struct __compressed_pair<std::__1::shared_ptr<Espresso::abstract_blob_container>*, std::__1::allocator<std::__1::shared_ptr<Espresso::abstract_blob_container>>> {
+        struct shared_ptr<Espresso::abstract_blob_container> *_field1;
+    } _field3;
 };
 
 struct vector<std::__1::shared_ptr<Espresso::blob<float, 3>>, std::__1::allocator<std::__1::shared_ptr<Espresso::blob<float, 3>>>> {
@@ -567,6 +619,16 @@ typedef struct shared_ptr<Espresso::abstract_context> {
     struct __shared_weak_count *__cntrl_;
 } shared_ptr_ae8b808b;
 
+typedef struct shared_ptr<Espresso::blob<float, 1>> {
+    struct blob<float, 1> *__ptr_;
+    struct __shared_weak_count *__cntrl_;
+} shared_ptr_0954c506;
+
+typedef struct shared_ptr<Espresso::blob<float, 2>> {
+    struct blob<float, 2> *__ptr_;
+    struct __shared_weak_count *__cntrl_;
+} shared_ptr_966620c9;
+
 typedef struct shared_ptr<Espresso::blob<float, 3>> {
     struct blob<float, 3> *_field1;
     struct __shared_weak_count *_field2;
@@ -591,6 +653,16 @@ typedef struct shared_ptr<Espresso::net> {
     struct net *__ptr_;
     struct __shared_weak_count *__cntrl_;
 } shared_ptr_d082c67d;
+
+typedef struct shared_ptr<float> {
+    float *_field1;
+    struct __shared_weak_count *_field2;
+} shared_ptr_6c49034a;
+
+typedef struct shared_ptr<std::__1::basic_string<char>> {
+    struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>> *_field1;
+    struct __shared_weak_count *_field2;
+} shared_ptr_210dbb06;
 
 typedef struct vector<FaceLandmarkDetectorPoint, std::__1::allocator<FaceLandmarkDetectorPoint>> {
     struct FaceLandmarkDetectorPoint *_field1;

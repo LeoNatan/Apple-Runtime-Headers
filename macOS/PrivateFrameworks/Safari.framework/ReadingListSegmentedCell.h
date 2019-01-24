@@ -14,7 +14,7 @@ __attribute__((visibility("hidden")))
 
 @property(nonatomic) __weak id accessibilityOverrideParent; // @synthesize accessibilityOverrideParent=_accessibilityOverrideParent;
 - (void).cxx_destruct;
-- (id)accessibilityAttributeValue:(id)arg1;
+- (id)accessibilityParent;
 - (id)init;
 
 @end

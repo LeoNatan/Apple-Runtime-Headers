@@ -18,8 +18,6 @@
 + (id)resultWithValue:(id)arg1;
 + (id)result;
 + (id)resultWithValue:(id)arg1 error:(id)arg2;
-+ (id)futureResultWithDescription:(id)arg1 block:(CDUnknownBlockType)arg2;
-+ (id)futureResultWithTimeout:(double)arg1 description:(id)arg2 block:(CDUnknownBlockType)arg3;
 @property(retain) NSError *error; // @synthesize error=_error;
 @property(retain) id value; // @synthesize value=_value;
 - (void).cxx_destruct;

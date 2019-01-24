@@ -11,11 +11,11 @@ __attribute__((visibility("hidden")))
 {
 }
 
-+ (void)savePropertyMap:(id)arg1 toArchive:(struct ReferenceLineGenericPropertyMapArchive *)arg2 archiver:(id)arg3;
++     // Error parsing type: v40@0:8@16^{ReferenceLineGenericPropertyMapArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}^{ChartsNSNumberDoubleArchive}^{ShadowArchive}^{StrokeArchive}iBBBii}24@32, name: savePropertyMap:toArchive:archiver:
 + (id)imageFillProperties;
 + (id)properties;
-- (void)saveToArchive:(struct ReferenceLineGenericPropertyMapArchive *)arg1 archiver:(id)arg2;
-- (id)initWithArchive:(const struct ReferenceLineGenericPropertyMapArchive *)arg1 unarchiver:(id)arg2;
+-     // Error parsing type: v32@0:8^{ReferenceLineGenericPropertyMapArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}^{ChartsNSNumberDoubleArchive}^{ShadowArchive}^{StrokeArchive}iBBBii}16@24, name: saveToArchive:archiver:
+-     // Error parsing type: @32@0:8r^{ReferenceLineGenericPropertyMapArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}^{ChartsNSNumberDoubleArchive}^{ShadowArchive}^{StrokeArchive}iBBBii}16@24, name: initWithArchive:unarchiver:
 
 @end
 

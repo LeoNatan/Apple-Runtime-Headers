@@ -15,6 +15,7 @@
 #import <MapKit/MKPlaceCardPhotosControllerDelegate-Protocol.h>
 #import <MapKit/MKPlaceCardReviewsControllerDelegate-Protocol.h>
 #import <MapKit/MKPlaceHeaderButtonsViewControllerDelegate-Protocol.h>
+#import <MapKit/MKPlaceServiceHoursViewControllerProtocol-Protocol.h>
 #import <MapKit/MKStackingViewControllerDelegate-Protocol.h>
 #import <MapKit/MKTransitAttributionViewControllerDelegate-Protocol.h>
 #import <MapKit/MKTransitDepaturesViewControllerDelegate-Protocol.h>
@@ -26,7 +27,7 @@
 @class CLLocation, CNContact, CNContactStore, GEOAutomobileOptions, GEOTransitOptions, MKETAProvider, MKMapItem, MKPlaceActionManager, MKPlaceCardActionsRowViewController, MKPlaceCardFooterActionsViewController, MKPlaceCardHeaderViewController, MKPlaceHeaderButtonsViewController, MKPlaceInfoViewController, MKPlaceInlineMapViewController, MKPlacePoisInlineMapViewController, NSMapTable, NSMutableArray, NSPopover, NSString, NSViewController, _MKDistanceDetailProvider, _MKPlaceActionButtonController;
 @protocol _MKPlaceItem, _MKPlaceViewControllerDelegate, _MKPlaceViewControllerFeedbackDelegate;
 
-@interface _MKPlaceViewController : MKLayoutCardViewController <MKStackingViewControllerDelegate, NSSharingServiceDelegate, NSSharingServicePickerDelegate, MKPlaceCardPhotosControllerDelegate, MKPlaceCardReviewsControllerDelegate, MKPlaceCardEncyclopedicControllerDelegate, MKTransitDepaturesViewControllerDelegate, MKPlaceCardHeaderViewControllerDelegate, MKTransitAttributionViewControllerDelegate, GEOLogContextDelegate, MKETAProviderDelegate, MKETAProviderObserver, MKPlaceHeaderButtonsViewControllerDelegate, _MKInfoCardController, _MKInfoCardAnalyticsDelegate, MKPlaceCardActionControllerDelegate>
+@interface _MKPlaceViewController : MKLayoutCardViewController <MKStackingViewControllerDelegate, NSSharingServiceDelegate, NSSharingServicePickerDelegate, MKPlaceCardPhotosControllerDelegate, MKPlaceCardReviewsControllerDelegate, MKPlaceCardEncyclopedicControllerDelegate, MKTransitDepaturesViewControllerDelegate, MKPlaceCardHeaderViewControllerDelegate, MKTransitAttributionViewControllerDelegate, GEOLogContextDelegate, MKETAProviderDelegate, MKETAProviderObserver, MKPlaceHeaderButtonsViewControllerDelegate, MKPlaceServiceHoursViewControllerProtocol, _MKInfoCardController, _MKInfoCardAnalyticsDelegate, MKPlaceCardActionControllerDelegate>
 {
     MKPlaceActionManager *_actionManager;
     MKPlaceCardHeaderViewController *_headerViewController;
@@ -102,6 +103,7 @@
 - (void)infoCardAnalyticsDidSelectAction:(int)arg1 target:(int)arg2 eventValue:(id)arg3 actionURL:(id)arg4 photoID:(id)arg5 feedbackDelegateSelector:(int)arg6;
 - (void)infoCardAnalyticsDidSelectAction:(int)arg1 target:(int)arg2 eventValue:(id)arg3 feedbackDelegateSelector:(int)arg4;
 - (void)infoCardAnalyticsDidSelectAction:(int)arg1 eventValue:(id)arg2 feedbackDelegateSelector:(int)arg3;
+- (void)placeServiceViewControllerDidTapHeaderButton:(id)arg1;
 - (void)_launchAttributionURLs:(id)arg1 withAttribution:(id)arg2 mapItem:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)placeCardActionControllerDidSelectViewAllPhotos:(id)arg1;
 - (void)placeCardActionControllerDidSelectAddPhoto:(id)arg1;
@@ -114,6 +116,7 @@
 - (void)transitDeparturesViewController:(id)arg1 showIncidents:(id)arg2;
 - (void)transitDeparturesViewController:(id)arg1 didSelectConnectionInformation:(id)arg2;
 - (void)transitDeparturesViewController:(id)arg1 didSelectAttributionController:(id)arg2;
+@property(readonly, nonatomic) double headerSecondaryNameLabelPadding;
 - (void)setContentAlpha:(double)arg1;
 - (double)contentAlpha;
 - (int)mapTypeForETAProvider:(id)arg1;
@@ -159,6 +162,7 @@
 - (id)attributionsVC;
 - (id)reviewsVC;
 - (id)businessInfosVC;
+- (id)serviceHoursVC;
 - (id)hoursVC;
 - (id)messagesHoursVC;
 - (id)infosVC;

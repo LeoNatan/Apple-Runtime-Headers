@@ -17,6 +17,7 @@
 + (unsigned int)supportedTechnologies;
 + (id)icefallSecureElement;
 + (id)embeddedSecureElement;
+- (BOOL)isSeshatAvailabledInRestrictedMode;
 - (unsigned int)hwType;
 - (id)manifestQueryBlob;
 - (void)_updateSecureElementInfo:(id)arg1;

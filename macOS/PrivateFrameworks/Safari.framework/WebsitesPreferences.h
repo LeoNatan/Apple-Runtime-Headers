@@ -50,8 +50,12 @@ __attribute__((visibility("hidden")))
     NSButton *_allowPromptingForNotificationsCheckbox;
     NSLayoutConstraint *_tableContainerWidth;
     NSTextField *_whenVisitingOtherWebsitesPreferenceLabel;
+    NSBox *_preferencesBorderBox;
+    NSBox *_notificationsPolicyBorderBox;
 }
 
+@property(nonatomic) __weak NSBox *notificationsPolicyBorderBox; // @synthesize notificationsPolicyBorderBox=_notificationsPolicyBorderBox;
+@property(nonatomic) __weak NSBox *preferencesBorderBox; // @synthesize preferencesBorderBox=_preferencesBorderBox;
 @property(nonatomic) __weak NSTextField *whenVisitingOtherWebsitesPreferenceLabel; // @synthesize whenVisitingOtherWebsitesPreferenceLabel=_whenVisitingOtherWebsitesPreferenceLabel;
 @property(retain, nonatomic) NSLayoutConstraint *tableContainerWidth; // @synthesize tableContainerWidth=_tableContainerWidth;
 @property(retain, nonatomic) NSButton *allowPromptingForNotificationsCheckbox; // @synthesize allowPromptingForNotificationsCheckbox=_allowPromptingForNotificationsCheckbox;

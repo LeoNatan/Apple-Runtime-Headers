@@ -21,3 +21,8 @@ struct CGSize {
     double height;
 };
 
+struct VTKPoint {
+    unsigned long long _field1;
+    unsigned long long _field2;
+};
+

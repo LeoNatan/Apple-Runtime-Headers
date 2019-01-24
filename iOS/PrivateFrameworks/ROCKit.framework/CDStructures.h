@@ -4,9 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#pragma mark Function Pointers and Blocks
-
-typedef void (*CDUnknownFunctionPointerType)(void); // return type and parameters are unknown
+#pragma mark Blocks
 
 typedef void (^CDUnknownBlockType)(void); // return type and parameters are unknown
 
@@ -14,27 +12,7 @@ typedef void (^CDUnknownBlockType)(void); // return type and parameters are unkn
 
 struct ROCKBlockDescriptorBase;
 
-struct _ffi_type;
-
 struct os_unfair_lock_s {
     unsigned int _os_unfair_lock_opaque;
 };
-
-#pragma mark Typedef'd Structures
-
-typedef struct {
-    char _field1[24];
-    struct *_field2;
-    CDUnknownFunctionPointerType _field3;
-    void *_field4;
-} CDStruct_94ba51a7;
-
-typedef struct {
-    int abi;
-    unsigned int nargs;
-    struct _ffi_type **arg_types;
-    struct _ffi_type *rtype;
-    unsigned int bytes;
-    unsigned int flags;
-} CDStruct_221febe4;
 

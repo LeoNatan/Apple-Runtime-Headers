@@ -33,6 +33,7 @@
     _Bool _wasHandled;
 }
 
++ (unsigned int)modifierFlags;
 @property(nonatomic) _Bool wasHandled; // @synthesize wasHandled=_wasHandled;
 @property(readonly, nonatomic) double timestamp; // @synthesize timestamp=_timestamp;
 @property(readonly, nonatomic) int type; // @synthesize type=_type;
@@ -64,7 +65,6 @@
 - (id)_typeDescription;
 - (void)dealloc;
 - (id)initWithKeyEventType:(int)arg1 timeStamp:(double)arg2 characters:(id)arg3 charactersIgnoringModifiers:(id)arg4 modifiers:(unsigned int)arg5 isRepeating:(_Bool)arg6 withFlags:(unsigned int)arg7 withInputManagerHint:(id)arg8 keyCode:(unsigned short)arg9 isTabKey:(_Bool)arg10;
-- (id)initWithKeyEventType:(int)arg1 timeStamp:(double)arg2 characters:(id)arg3 charactersIgnoringModifiers:(id)arg4 modifiers:(unsigned int)arg5 isRepeating:(_Bool)arg6 withFlags:(unsigned int)arg7 keyCode:(unsigned short)arg8 isTabKey:(_Bool)arg9 characterSet:(int)arg10;
 - (id)initWithTouchEventType:(int)arg1 timeStamp:(double)arg2 location:(struct CGPoint)arg3 modifiers:(unsigned int)arg4 touchCount:(unsigned int)arg5 touchLocations:(id)arg6 touchIdentifiers:(id)arg7 touchPhases:(id)arg8 isGesture:(_Bool)arg9 gestureScale:(float)arg10 gestureRotation:(float)arg11;
 - (id)initWithScrollWheelEventWithTimeStamp:(double)arg1 location:(struct CGPoint)arg2 deltaX:(float)arg3 deltaY:(float)arg4;
 - (id)initWithMouseEventType:(int)arg1 timeStamp:(double)arg2 location:(struct CGPoint)arg3;

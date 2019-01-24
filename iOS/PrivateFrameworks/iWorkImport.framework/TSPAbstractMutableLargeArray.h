@@ -9,7 +9,7 @@
 #import <iWorkImport/NSFastEnumeration-Protocol.h>
 #import <iWorkImport/TSPMutableLargeArraySegmentDelegate-Protocol.h>
 
-@class NSMutableArray;
+@class NSArray, NSMutableArray, NSString;
 
 __attribute__((visibility("hidden")))
 @interface TSPAbstractMutableLargeArray : TSPObject <NSFastEnumeration, TSPMutableLargeArraySegmentDelegate>
@@ -25,22 +25,25 @@ __attribute__((visibility("hidden")))
     _Bool _shouldDelayArchiving;
     unsigned int _delayedArchivingPriority;
     _Bool _storeOutsideObjectArchive;
+    unsigned long long _estimatedByteSize;
 }
 
 + (Class)arraySegmentClass;
+@property(readonly, nonatomic) unsigned long long estimatedByteSize; // @synthesize estimatedByteSize=_estimatedByteSize;
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (void)loadFromLargeArrayMessage:(const struct LargeArray *)arg1 unarchiver:(id)arg2;
-- (void)saveToLargeArrayMessage:(struct LargeArray *)arg1 archiver:(id)arg2;
+-     // Error parsing type: v32@0:8r^{LargeArray=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSP::Range>=^{Arena}ii^{Rep}}{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}QQIBBQ}16@24, name: loadFromLargeArrayMessage:unarchiver:
+-     // Error parsing type: v32@0:8^{LargeArray=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSP::Range>=^{Arena}ii^{Rep}}{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}QQIBBQ}16@24, name: saveToLargeArrayMessage:archiver:
 - (void)saveToArchiver:(id)arg1;
 - (void)loadFromUnarchiver:(id)arg1;
 @property(nonatomic) unsigned int delayedArchivingPriority;
 - (void)updateSegmentRangesAfterIndex:(unsigned long long)arg1;
 - (id)segmentAtIndex:(unsigned long long)arg1;
+@property(readonly, nonatomic) NSMutableArray *mutableArrayWrapper;
+@property(readonly, nonatomic) NSArray *allObjects;
 @property(nonatomic) unsigned long long maxSegmentSize;
 - (void)setMaxSegmentSize:(unsigned long long)arg1 willModify:(_Bool)arg2;
 @property(nonatomic) unsigned long long maxSegmentElementCount;
-- (void)setMaxSegmentElementCount:(unsigned long long)arg1 willModify:(_Bool)arg2;
 - (void)largeArraySegmentDidBisectAtIndex:(unsigned long long)arg1 segments:(id)arg2;
 - (void)mergeSegmentIfNeededAtIndex:(unsigned long long)arg1;
 - (void)bisectSegmentIfNeeded:(unsigned long long)arg1;
@@ -78,7 +81,9 @@ __attribute__((visibility("hidden")))
 - (id)initWithArray:(id)arg1 context:(id)arg2;
 @property(readonly, nonatomic) _Bool hasMaxSegmentSize;
 @property(readonly, nonatomic) _Bool hasMaxSegmentElementCount;
+- (void)setMaxSegmentElementCount:(unsigned long long)arg1 willModify:(_Bool)arg2;
 @property(readonly, nonatomic) _Bool hasDelayedArchivingPriority;
+@property(readonly, nonatomic) NSString *packageLocatorForSegments;
 - (id)createArraySegment;
 - (id)convertElementToSegmentElement:(id)arg1;
 - (id)convertSegmentElementToElement:(id)arg1;

@@ -27,8 +27,8 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool shouldDelayArchiving; // @synthesize shouldDelayArchiving=_shouldDelayArchiving;
 @property(nonatomic) _Bool storeOutsideObjectArchive; // @synthesize storeOutsideObjectArchive=_storeOutsideObjectArchive;
 - (void).cxx_destruct;
-- (void)loadFromLargeDictionarySegmentMessage:(const struct LargeDictionarySegment *)arg1 unarchiver:(id)arg2;
-- (void)saveToLargeDictionarySegmentMessage:(struct LargeDictionarySegment *)arg1 archiver:(id)arg2;
+-     // Error parsing type: v32@0:8r^{LargeDictionarySegment=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}BI}16@24, name: loadFromLargeDictionarySegmentMessage:unarchiver:
+-     // Error parsing type: v32@0:8^{LargeDictionarySegment=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}BI}16@24, name: saveToLargeDictionarySegmentMessage:archiver:
 - (void)loadStoreOutsideObjectArchiveFromUnarchiver:(id)arg1;
 - (void)saveToArchiver:(id)arg1;
 - (void)loadFromUnarchiver:(id)arg1;

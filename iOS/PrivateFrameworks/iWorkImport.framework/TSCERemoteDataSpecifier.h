@@ -21,7 +21,7 @@ __attribute__((visibility("hidden")))
     unsigned long long _hashVal;
 }
 
-+ (id)specifierFromArchive:(const struct RemoteDataSpecifierArchive *)arg1;
++     // Error parsing type: @24@0:8r^{RemoteDataSpecifierArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}IId}16, name: specifierFromArchive:
 + (id)specifierWithFunctionIndex:(int)arg1 symbol:(id)arg2 attribute:(long long)arg3 date:(id)arg4;
 @property(readonly, nonatomic) unsigned long long hashVal; // @synthesize hashVal=_hashVal;
 @property(readonly, nonatomic) NSDate *date; // @synthesize date=_date;
@@ -38,8 +38,8 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) _Bool isCold;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
-- (void)encodeToArchive:(struct RemoteDataSpecifierArchive *)arg1;
-- (id)initFromArchive:(const struct RemoteDataSpecifierArchive *)arg1;
+-     // Error parsing type: v24@0:8^{RemoteDataSpecifierArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}IId}16, name: encodeToArchive:
+-     // Error parsing type: @24@0:8r^{RemoteDataSpecifierArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}IId}16, name: initFromArchive:
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithFunctionIndex:(int)arg1 symbol:(id)arg2 attribute:(long long)arg3 date:(id)arg4;
 

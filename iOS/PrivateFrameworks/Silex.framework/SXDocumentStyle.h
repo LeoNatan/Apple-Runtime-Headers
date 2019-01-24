@@ -6,9 +6,11 @@
 
 #import <Silex/SXJSONObject.h>
 
-@class SXFill, SXJSONLinearGradient, UIColor;
+#import <Silex/SXDocumentStyle-Protocol.h>
 
-@interface SXDocumentStyle : SXJSONObject
+@class NSString, SXFill, SXJSONLinearGradient, UIColor;
+
+@interface SXDocumentStyle : SXJSONObject <SXDocumentStyle>
 {
 }
 
@@ -16,7 +18,11 @@
 
 // Remaining properties
 @property(readonly, nonatomic) UIColor *backgroundColor; // @dynamic backgroundColor;
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
 @property(readonly, nonatomic) SXFill *fill; // @dynamic fill;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 @property(readonly, nonatomic) UIColor *topBackgroundColor; // @dynamic topBackgroundColor;
 @property(readonly, nonatomic) SXJSONLinearGradient *topBackgroundGradient; // @dynamic topBackgroundGradient;
 

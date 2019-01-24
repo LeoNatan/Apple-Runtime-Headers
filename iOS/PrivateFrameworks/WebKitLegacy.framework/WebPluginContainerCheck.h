@@ -29,7 +29,7 @@ __attribute__((visibility("hidden")))
 - (void)_askPolicyDelegate;
 - (id)_actionInformationWithURL:(id)arg1;
 - (_Bool)_isForbiddenFileLoad;
-- (void)_continueWithPolicy:(int)arg1;
+- (void)_continueWithPolicy:(unsigned char)arg1;
 - (void)dealloc;
 - (id)initWithRequest:(id)arg1 target:(id)arg2 resultObject:(id)arg3 selector:(SEL)arg4 controller:(id)arg5 contextInfo:(id)arg6;
 

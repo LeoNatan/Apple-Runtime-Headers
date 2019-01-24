@@ -11,8 +11,10 @@ __attribute__((visibility("hidden")))
 {
 }
 
-- (void)inject:(id)arg1;
++ (id)variableTexture;
+- (void)injectCommonShaderInto:(id)arg1 context:(id)arg2;
 - (void)addVariables:(id)arg1;
+- (id)variableDiffuseTexture;
 
 @end
 

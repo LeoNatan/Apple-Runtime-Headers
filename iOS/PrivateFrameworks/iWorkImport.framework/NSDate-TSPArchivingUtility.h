@@ -7,7 +7,7 @@
 #import <Foundation/NSDate.h>
 
 @interface NSDate (TSPArchivingUtility)
-- (void)tsp_saveToMessage:(struct Date *)arg1;
-- (id)tsp_initWithMessage:(const struct Date *)arg1;
+-     // Error parsing type: v24@0:8^{Date=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}d}16, name: tsp_saveToMessage:
+-     // Error parsing type: @24@0:8r^{Date=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}d}16, name: tsp_initWithMessage:
 @end
 

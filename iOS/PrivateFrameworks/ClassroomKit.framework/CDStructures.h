@@ -11,18 +11,18 @@ typedef void (^CDUnknownBlockType)(void); // return type and parameters are unkn
 #pragma mark Named Structures
 
 struct CGPoint {
-    double _field1;
-    double _field2;
+    double x;
+    double y;
 };
 
 struct CGRect {
-    struct CGPoint _field1;
-    struct CGSize _field2;
+    struct CGPoint origin;
+    struct CGSize size;
 };
 
 struct CGSize {
-    double _field1;
-    double _field2;
+    double width;
+    double height;
 };
 
 struct _NSRange {
@@ -53,6 +53,18 @@ struct _ftsent {
     char _field20[1];
 };
 
+struct ifaddrs {
+    struct ifaddrs *_field1;
+    char *_field2;
+    unsigned int _field3;
+    struct sockaddr *_field4;
+    struct sockaddr *_field5;
+    struct sockaddr *_field6;
+    void *_field7;
+};
+
+struct sockaddr;
+
 struct stat {
     int st_dev;
     unsigned short st_mode;
@@ -80,6 +92,13 @@ struct timespec {
 };
 
 #pragma mark Typedef'd Structures
+
+typedef struct {
+    unsigned long long _field1;
+    id *_field2;
+    unsigned long long *_field3;
+    unsigned long long _field4[5];
+} CDStruct_70511ce9;
 
 typedef struct {
     struct _ftsent *_field1;

@@ -17,13 +17,13 @@
 __attribute__((visibility("hidden")))
 @interface TSDStroke : NSObject <TSSPropertyCommandSerializing, TSDPathPainter, TSDMixing, NSCopying, NSMutableCopying>
 {
-    TSUColor *mColor;
-    double mWidth;
-    double mActualWidth;
-    int mCap;
-    int mJoin;
-    TSDStrokePattern *mPattern;
-    double mMiterLimit;
+    int _cap;
+    int _join;
+    TSUColor *_color;
+    double _width;
+    double _miterLimit;
+    TSDStrokePattern *_pattern;
+    double _actualWidth;
 }
 
 + (_Bool)canMixWithNilObjects;
@@ -36,31 +36,26 @@ __attribute__((visibility("hidden")))
 + (Class)mutableClass;
 + (id)editedStrokeFromModelStroke:(id)arg1 selectedStroke:(id)arg2;
 + (long long)indexOfStroke:(id)arg1 strokeArray:(id)arg2;
-+ (id)instanceWithArchive:(const struct StrokeArchive *)arg1 unarchiver:(id)arg2;
++     // Error parsing type: @32@0:8r^{StrokeArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{Color}^{StrokePatternArchive}^{SmartStrokeArchive}^{FrameArchive}^{PatternedStrokeArchive}fiif}16@24, name: instanceWithArchive:unarchiver:
 + (id)portalStroke;
 + (id)mergeRangeEmptyStroke;
 + (id)zeroWidthEmptyStroke;
 + (id)emptyStrokeWithWidth:(double)arg1;
-@property(nonatomic) double i_actualWidth; // @synthesize i_actualWidth=mActualWidth;
-@property(copy, nonatomic, setter=i_setPattern:) TSDStrokePattern *i_pattern; // @synthesize i_pattern=mPattern;
-@property(nonatomic) double i_miterLimit; // @synthesize i_miterLimit=mMiterLimit;
-@property(nonatomic) int i_join; // @synthesize i_join=mJoin;
-@property(nonatomic, setter=i_setCap:) int i_cap; // @synthesize i_cap=mCap;
-@property(nonatomic) double i_width; // @synthesize i_width=mWidth;
-@property(copy, nonatomic) TSUColor *i_color; // @synthesize i_color=mColor;
+@property(nonatomic) double i_actualWidth; // @synthesize i_actualWidth=_actualWidth;
+@property(copy, nonatomic, setter=i_setPattern:) TSDStrokePattern *i_pattern; // @synthesize i_pattern=_pattern;
+@property(nonatomic) double i_miterLimit; // @synthesize i_miterLimit=_miterLimit;
+@property(nonatomic) int i_join; // @synthesize i_join=_join;
+@property(nonatomic, setter=i_setCap:) int i_cap; // @synthesize i_cap=_cap;
+@property(nonatomic) double i_width; // @synthesize i_width=_width;
+@property(copy, nonatomic) TSUColor *i_color; // @synthesize i_color=_color;
+- (void).cxx_destruct;
 - (_Bool)canDrawWithOtherStroke:(id)arg1;
 - (id)strokeByTransformingByTransform:(struct CGAffineTransform)arg1;
 - (id)mixedObjectWithFraction:(double)arg1 ofObject:(id)arg2;
 - (long long)mixingTypeWithObject:(id)arg1 context:(id)arg2;
-- (_Bool)usesOpenGL;
-- (_Bool)shouldAntialiasDefeat;
-- (_Bool)drawsInOneStep;
-- (void)applyToCAShapeLayer:(id)arg1 insideStroke:(_Bool)arg2 withScale:(double)arg3;
-- (void)applyToCAShapeLayer:(id)arg1 withScale:(double)arg2;
-- (_Bool)prefersToApplyToCAShapeLayerDuringManipulation;
-- (_Bool)canApplyToCAShapeLayer;
-- (void)applyToRepCALayer:(id)arg1 withScale:(double)arg2;
-- (_Bool)canApplyDirectlyToRepCALayer;
+@property(readonly, nonatomic) _Bool usesOpenGL;
+@property(readonly, nonatomic) _Bool shouldAntialiasDefeat;
+@property(readonly, nonatomic) _Bool drawsInOneStep;
 - (_Bool)requiresOutlineOnBackgroundWithAppearance:(unsigned long long)arg1;
 @property(readonly, nonatomic) _Bool isNearlyWhite;
 @property(readonly, nonatomic) _Bool isFrame;
@@ -75,10 +70,10 @@ __attribute__((visibility("hidden")))
 - (struct CGRect)boundsForLineEnd:(id)arg1 atPoint:(struct CGPoint)arg2 atAngle:(double)arg3 withScale:(double)arg4 transform:(struct CGAffineTransform)arg5;
 - (void)paintLineEnd:(id)arg1 atPoint:(struct CGPoint)arg2 atAngle:(double)arg3 withScale:(double)arg4 inContext:(struct CGContext *)arg5 useFastDrawing:(_Bool)arg6;
 - (void)paintLineEnd:(id)arg1 atPoint:(struct CGPoint)arg2 atAngle:(double)arg3 withScale:(double)arg4 inContext:(struct CGContext *)arg5;
-- (void)paintPathWithNormalClip:(struct CGPath *)arg1 wantsInteriorStroke:(_Bool)arg2 inContext:(struct CGContext *)arg3;
-- (void)paintPath:(struct CGPath *)arg1 wantsInteriorStroke:(_Bool)arg2 inContext:(struct CGContext *)arg3 useFastDrawing:(_Bool)arg4 parameterized:(_Bool)arg5 drawWithOpenGL:(_Bool)arg6 shouldReverseDrawOrder:(_Bool)arg7;
-- (void)paintPath:(struct CGPath *)arg1 wantsInteriorStroke:(_Bool)arg2 inContext:(struct CGContext *)arg3;
-- (void)paintPath:(struct CGPath *)arg1 inContext:(struct CGContext *)arg2;
+- (void)paintPathWithNormalClip:(const struct CGPath *)arg1 wantsInteriorStroke:(_Bool)arg2 inContext:(struct CGContext *)arg3;
+- (void)paintPath:(const struct CGPath *)arg1 wantsInteriorStroke:(_Bool)arg2 inContext:(struct CGContext *)arg3 useFastDrawing:(_Bool)arg4 parameterized:(_Bool)arg5 shouldReverseDrawOrder:(_Bool)arg6;
+- (void)paintPath:(const struct CGPath *)arg1 wantsInteriorStroke:(_Bool)arg2 inContext:(struct CGContext *)arg3;
+- (void)paintPath:(const struct CGPath *)arg1 inContext:(struct CGContext *)arg2;
 - (void)paintRect:(struct CGRect)arg1 wantsInteriorStroke:(_Bool)arg2 inContext:(struct CGContext *)arg3;
 - (void)paintRect:(struct CGRect)arg1 inContext:(struct CGContext *)arg2;
 - (id)colorForCGContext:(struct CGContext *)arg1;
@@ -94,8 +89,8 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) struct _TSDStrokeOutsets outsets;
 - (struct CGRect)boundsForPath:(id)arg1;
 - (id)pathToStrokeFromTSUBezierPath:(id)arg1;
-- (struct CGPath *)pathToStrokeFromCGPath:(struct CGPath *)arg1;
-- (_Bool)needsToExtendJoinsForBoundsCalculation;
+- (const struct CGPath *)pathToStrokeFromCGPath:(const struct CGPath *)arg1;
+@property(readonly, nonatomic) _Bool needsToExtendJoinsForBoundsCalculation;
 @property(readonly, nonatomic) _Bool drawsOutsideStrokeBounds;
 @property(readonly, nonatomic) _Bool isRoundDash;
 @property(readonly, nonatomic) _Bool isDash;
@@ -113,15 +108,14 @@ __attribute__((visibility("hidden")))
 @property(readonly, copy, nonatomic) TSUColor *color;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (void)dealloc;
 - (id)initWithColor:(id)arg1 width:(double)arg2 cap:(int)arg3 join:(int)arg4 pattern:(id)arg5;
 - (id)init;
 - (id)initWithColor:(id)arg1 width:(double)arg2 cap:(int)arg3 join:(int)arg4 pattern:(id)arg5 miterLimit:(double)arg6;
 - (void)aaDefeatedPaintLineEnd:(id)arg1 atPoint:(struct CGPoint)arg2 atAngle:(double)arg3 withScale:(double)arg4 inContext:(struct CGContext *)arg5;
 - (void)saveToPropertyCommandMessage:(struct Message *)arg1 archiver:(id)arg2;
 - (id)initFromPropertyCommandMessage:(const struct Message *)arg1 unarchiver:(id)arg2;
-- (void)saveToArchive:(struct StrokeArchive *)arg1 archiver:(id)arg2;
-- (id)initWithArchive:(const struct StrokeArchive *)arg1 unarchiver:(id)arg2;
+-     // Error parsing type: v32@0:8^{StrokeArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{Color}^{StrokePatternArchive}^{SmartStrokeArchive}^{FrameArchive}^{PatternedStrokeArchive}fiif}16@24, name: saveToArchive:archiver:
+-     // Error parsing type: @32@0:8r^{StrokeArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{Color}^{StrokePatternArchive}^{SmartStrokeArchive}^{FrameArchive}^{PatternedStrokeArchive}fiif}16@24, name: initWithArchive:unarchiver:
 - (_Bool)isPortalStroke;
 - (_Bool)isEqualToStroke:(id)arg1;
 @property(readonly, nonatomic) _Bool solid;

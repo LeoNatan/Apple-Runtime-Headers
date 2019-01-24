@@ -9,27 +9,21 @@
 #import <AppleMediaServices/AMSUserNotificationStrategy-Protocol.h>
 #import <AppleMediaServices/NSUserNotificationCenterDelegate-Protocol.h>
 
-@class AMSUserNotificationCenter, NSArray, NSString, NSUserNotificationCenter;
-@protocol AMSUserNotificationCenterDelegate;
+@class NSString, NSUserNotificationCenter;
 
 __attribute__((visibility("hidden")))
 @interface AMSNSUserNotificationStrategy : NSObject <NSUserNotificationCenterDelegate, AMSUserNotificationStrategy>
 {
-    id <AMSUserNotificationCenterDelegate> _delegate;
-    AMSUserNotificationCenter *_originalCenter;
     NSUserNotificationCenter *_center;
 }
 
++ (id)_centerForBundleId:(id)arg1;
++ (id)_removeNotificationWithIdentifier:(id)arg1 centerBundleId:(id)arg2 logKey:(id)arg3;
++ (id)_removeNotification:(id)arg1 centerBundleId:(id)arg2;
++ (id)_postNotification:(id)arg1 centerBundleId:(id)arg2;
++ (id)_activeNotificationsWithCenterBundleId:(id)arg1;
 @property(retain) NSUserNotificationCenter *center; // @synthesize center=_center;
-@property(readonly) __weak AMSUserNotificationCenter *originalCenter; // @synthesize originalCenter=_originalCenter;
-@property __weak id <AMSUserNotificationCenterDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
-- (BOOL)userNotificationCenter:(id)arg1 shouldPresentNotification:(id)arg2;
-- (void)userNotificationCenter:(id)arg1 didActivateNotification:(id)arg2;
-- (id)removeNotification:(id)arg1;
-- (id)postNotification:(id)arg1;
-@property(readonly) NSArray *activeNotifications;
-- (id)initWithOriginalCenter:(id)arg1 bundleId:(id)arg2 runningInDaemon:(BOOL)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

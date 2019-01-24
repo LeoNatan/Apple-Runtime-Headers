@@ -18,6 +18,7 @@
     _Bool _allowsNonOpaqueShadow;
     _Bool _boostBrightness;
     _Bool _hueShift;
+    _Bool _disableMask;
     _Bool _focusCursorEnabled;
     _Bool _fullBleedCenteredGrowth;
     unsigned int _maximumParallaxImages;
@@ -79,6 +80,7 @@
 @property(nonatomic) float radiosityOffset; // @synthesize radiosityOffset=_radiosityOffset;
 @property(nonatomic) float focusCursorBorderWidth; // @synthesize focusCursorBorderWidth=_focusCursorBorderWidth;
 @property(nonatomic) _Bool focusCursorEnabled; // @synthesize focusCursorEnabled=_focusCursorEnabled;
+@property(nonatomic) _Bool disableMask; // @synthesize disableMask=_disableMask;
 @property(nonatomic) _Bool hueShift; // @synthesize hueShift=_hueShift;
 @property(nonatomic) _Bool boostBrightness; // @synthesize boostBrightness=_boostBrightness;
 @property(nonatomic) _Bool allowsNonOpaqueShadow; // @synthesize allowsNonOpaqueShadow=_allowsNonOpaqueShadow;

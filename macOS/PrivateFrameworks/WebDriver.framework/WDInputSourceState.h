@@ -31,7 +31,7 @@
 @property(retain, nonatomic) NSNumber *locationX; // @synthesize locationX=_locationX;
 @property(retain, nonatomic) NSNumber *mouseButton; // @synthesize mouseButton=_mouseButton;
 @property(copy, nonatomic) NSString *charKey; // @synthesize charKey=_charKey;
-@property(retain, nonatomic) NSSet *virtualKeys; // @synthesize virtualKeys=_virtualKeys;
+@property(copy, nonatomic) NSSet *virtualKeys; // @synthesize virtualKeys=_virtualKeys;
 @property(copy, nonatomic) NSString *sourceId; // @synthesize sourceId=_sourceId;
 - (void).cxx_destruct;
 - (unsigned long long)hash;

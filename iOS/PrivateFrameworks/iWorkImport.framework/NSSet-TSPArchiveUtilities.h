@@ -7,7 +7,7 @@
 #import <Foundation/NSSet.h>
 
 @interface NSSet (TSPArchiveUtilities)
-- (id)tsp_initWithProtobufStringArray:(const RepeatedPtrField_236b8a23 *)arg1;
-- (void)tsp_saveToProtobufStringArray:(RepeatedPtrField_236b8a23 *)arg1;
+- (id)tsp_initWithProtobufStringArray:(const RepeatedPtrField_fe7cf120 *)arg1;
+- (void)tsp_saveToProtobufStringArray:(RepeatedPtrField_fe7cf120 *)arg1;
 @end
 

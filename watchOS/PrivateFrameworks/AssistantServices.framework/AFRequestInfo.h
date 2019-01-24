@@ -9,11 +9,12 @@
 #import <AssistantServices/NSCopying-Protocol.h>
 #import <AssistantServices/NSSecureCoding-Protocol.h>
 
-@class AFSpeechRequestOptions, NSData, NSDictionary, NSNumber, NSString, SAStartLocalRequest, SAStartRequest;
+@class AFSpeechRequestOptions, AFTurnIdentifier, NSData, NSDictionary, NSNumber, NSString, SAStartLocalRequest, SAStartRequest;
 
 @interface AFRequestInfo : NSObject <NSSecureCoding, NSCopying>
 {
     _Bool _handoffRequiresUserInteraction;
+    AFTurnIdentifier *_turnIdentifier;
     unsigned int _options;
     NSNumber *_notifyState;
     NSString *_text;
@@ -65,6 +66,7 @@
 @property(copy, nonatomic) NSString *text; // @synthesize text=_text;
 @property(copy, nonatomic) NSNumber *notifyState; // @synthesize notifyState=_notifyState;
 @property(nonatomic) unsigned int options; // @synthesize options=_options;
+@property(copy, nonatomic) AFTurnIdentifier *turnIdentifier; // @synthesize turnIdentifier=_turnIdentifier;
 @property(readonly, nonatomic) unsigned long long timestamp; // @synthesize timestamp=_timestamp;
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;

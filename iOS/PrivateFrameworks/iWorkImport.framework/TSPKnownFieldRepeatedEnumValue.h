@@ -9,7 +9,7 @@
 __attribute__((visibility("hidden")))
 @interface TSPKnownFieldRepeatedEnumValue : TSPKnownFieldRepeatedNumericValue
 {
-    shared_ptr_b9bbcad9 _unknownFieldSet;
+    struct shared_ptr<google::protobuf::UnknownFieldSet> _unknownFieldSet;
 }
 
 - (id).cxx_construct;
@@ -18,7 +18,7 @@ __attribute__((visibility("hidden")))
 - (void)mergeToMessage:(struct Message *)arg1 reflection:(const struct Reflection *)arg2;
 - (void)mergeToUnknownFieldSet:(struct UnknownFieldSet *)arg1;
 - (_Bool)hasUnknownValues;
-- (id)initWithFieldDescriptor:(const struct FieldDescriptor *)arg1 fieldInfo:(const struct FieldInfo *)arg2 message:(const struct Message *)arg3 reflection:(const struct Reflection *)arg4 unknownFieldSet:(shared_ptr_b9bbcad9 *)arg5;
+-     // Error parsing type: @56@0:8r^{FieldDescriptor=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}^{FileDescriptor}^{GoogleOnceDynamic}iiBBBii^{Descriptor}^{OneofDescriptor}^{Descriptor}^{Descriptor}^{EnumDescriptor}^{FieldOptions}^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}(?=iqIQfdB^{EnumValueDescriptor}^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >})}16r^{FieldInfo=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedField<unsigned long long>=ii(Pointer=^{Arena}^{Rep})}i{RepeatedField<unsigned long long>=ii(Pointer=^{Arena}^{Rep})}i{RepeatedField<unsigned int>=ii(Pointer=^{Arena}^{Rep})}i{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}^{FieldPath}iii}24r^{Message=^^?}32r^{Reflection=^^?}40^{shared_ptr<google::protobuf::UnknownFieldSet>=^{UnknownFieldSet}^{__shared_weak_count}}48, name: initWithFieldDescriptor:fieldInfo:message:reflection:unknownFieldSet:
 
 @end
 

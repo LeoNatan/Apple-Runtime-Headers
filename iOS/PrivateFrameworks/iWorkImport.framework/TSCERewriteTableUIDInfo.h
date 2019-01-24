@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
 - (void)rollbackMappings:(id)arg1;
 - (void)tableWasAdded:(const UUIDData_5fbc143e *)arg1;
 - (id)extendMappingWithTableUIDs:(const UUIDMap_b66c2694 *)arg1 calcEngine:(id)arg2;
-- (void)saveToMessage:(struct RewriteTableUIDInfoArchive *)arg1;
-- (id)initFromMessage:(const struct RewriteTableUIDInfoArchive *)arg1;
+-     // Error parsing type: v24@0:8^{RewriteTableUIDInfoArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSCE::RewriteTableUIDInfoArchive_TableUIDMapEntryArchive>=^{Arena}ii^{Rep}}}16, name: saveToMessage:
+-     // Error parsing type: @24@0:8r^{RewriteTableUIDInfoArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSCE::RewriteTableUIDInfoArchive_TableUIDMapEntryArchive>=^{Arena}ii^{Rep}}}16, name: initFromMessage:
 - (id)description;
 - (vector_4dc5f307)originalTableUIDs;
 - (const UUIDMap_b66c2694 *)tableUIDMap;

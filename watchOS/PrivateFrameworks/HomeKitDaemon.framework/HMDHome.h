@@ -345,6 +345,7 @@
 - (void)_removeCorruptAccessories;
 - (void)_encodeActionSets:(id)arg1 coder:(id)arg2;
 - (void)_encodeObjectsWithAcessoriesWithCoder:(id)arg1;
+- (void)__encodeAccessoriesWithCoder:(id)arg1 options:(unsigned int)arg2;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)fixupHomeAfterDecoding;

@@ -8,7 +8,7 @@
 
 #import <SoftwareUpdate/NSSecureCoding-Protocol.h>
 
-@class NSArray, NSData, NSDate, NSDictionary, NSString, NSURL, SUMajorProduct;
+@class NSArray, NSAttributedString, NSData, NSDate, NSDictionary, NSString, NSURL, SUMajorProduct;
 
 @interface SUUpdateProduct : NSObject <NSSecureCoding>
 {
@@ -27,13 +27,6 @@
     NSString *_title;
     NSString *_versionString;
     NSString *_currentLocalization;
-    NSData *_longDescriptionData;
-    NSString *_longDescriptionMIMEType;
-    NSString *_longDescriptionString;
-    NSData *_licenseAgreementData;
-    NSString *_licenseAgreementMIMEType;
-    NSData *_firmwareWarningData;
-    NSString *_firmwareWarningMIMEType;
     NSString *_productKey;
     long long _serverState;
     long long _type;
@@ -61,11 +54,23 @@
     NSString *_customTitleForPostInstallNotification;
     NSString *_customTextForPostInstallNotification;
     NSURL *_customURLForPostInstallNotification;
+    NSData *_longDescriptionRTFData;
+    NSData *_firmwareWarningRTFData;
+    NSData *_licenseAgreementRTFData;
+    NSAttributedString *_cachedLongDescription;
+    NSAttributedString *_cachedFirmwareWarning;
+    NSAttributedString *_cachedLicenseAgreement;
 }
 
 + (id)stringForUpdateType:(long long)arg1;
 + (id)stringForUpdateState:(long long)arg1;
 + (BOOL)supportsSecureCoding;
+@property(retain) NSAttributedString *cachedLicenseAgreement; // @synthesize cachedLicenseAgreement=_cachedLicenseAgreement;
+@property(retain) NSAttributedString *cachedFirmwareWarning; // @synthesize cachedFirmwareWarning=_cachedFirmwareWarning;
+@property(retain) NSAttributedString *cachedLongDescription; // @synthesize cachedLongDescription=_cachedLongDescription;
+@property(retain) NSData *licenseAgreementRTFData; // @synthesize licenseAgreementRTFData=_licenseAgreementRTFData;
+@property(retain) NSData *firmwareWarningRTFData; // @synthesize firmwareWarningRTFData=_firmwareWarningRTFData;
+@property(retain) NSData *longDescriptionRTFData; // @synthesize longDescriptionRTFData=_longDescriptionRTFData;
 @property(readonly, retain) NSURL *customURLForPostInstallNotification; // @synthesize customURLForPostInstallNotification=_customURLForPostInstallNotification;
 @property(readonly, retain) NSString *customTextForPostInstallNotification; // @synthesize customTextForPostInstallNotification=_customTextForPostInstallNotification;
 @property(readonly, retain) NSString *customTitleForPostInstallNotification; // @synthesize customTitleForPostInstallNotification=_customTitleForPostInstallNotification;
@@ -104,24 +109,16 @@
 @property(readonly) long long type; // @synthesize type=_type;
 @property(readonly) long long serverState; // @synthesize serverState=_serverState;
 @property(readonly, retain) NSString *productKey; // @synthesize productKey=_productKey;
-@property(readonly, retain) NSString *firmwareWarningMIMEType; // @synthesize firmwareWarningMIMEType=_firmwareWarningMIMEType;
-@property(readonly, retain) NSData *firmwareWarningData; // @synthesize firmwareWarningData=_firmwareWarningData;
-@property(readonly, retain) NSString *licenseAgreementMIMEType; // @synthesize licenseAgreementMIMEType=_licenseAgreementMIMEType;
-@property(readonly, retain) NSData *licenseAgreementData; // @synthesize licenseAgreementData=_licenseAgreementData;
-@property(readonly, retain) NSString *longDescriptionString; // @synthesize longDescriptionString=_longDescriptionString;
-@property(readonly, retain) NSString *longDescriptionMIMEType; // @synthesize longDescriptionMIMEType=_longDescriptionMIMEType;
-@property(readonly, retain) NSData *longDescriptionData; // @synthesize longDescriptionData=_longDescriptionData;
 @property(readonly, retain) NSString *currentLocalization; // @synthesize currentLocalization=_currentLocalization;
 @property(readonly) int action; // @synthesize action=_action;
 @property(readonly, retain) NSString *versionString; // @synthesize versionString=_versionString;
 @property(readonly, retain) NSString *title; // @synthesize title=_title;
 - (id)initWithProductKey:(id)arg1 title:(id)arg2 versionString:(id)arg3 longDescription:(id)arg4;
 - (id)getObjectFromExtendedMetaInfoForKey:(id)arg1;
+@property(readonly, retain) NSAttributedString *licenseAgreement;
+@property(readonly, retain) NSAttributedString *firmwareWarning;
+@property(readonly, retain) NSAttributedString *longDescription;
 - (id)updateLabel;
-- (id)licenseAgreement;
-- (id)firmwareWarning;
-- (id)stringRepresentationOfLongDescription;
-- (id)longDescription;
 - (id)debugDescription;
 - (id)description;
 - (unsigned long long)hash;

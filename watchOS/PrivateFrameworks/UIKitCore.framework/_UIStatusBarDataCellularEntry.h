@@ -10,8 +10,9 @@
 
 @interface _UIStatusBarDataCellularEntry : _UIStatusBarDataNetworkEntry
 {
+    _Bool _wifiCallingEnabled;
     _Bool _callForwardingEnabled;
-    _Bool _showsEmergencyOnlyWhenDisconnected;
+    _Bool _showsSOSWhenDisabled;
     int _type;
     NSString *_string;
     NSString *_crossfadeString;
@@ -19,8 +20,9 @@
 }
 
 + (_Bool)supportsSecureCoding;
-@property(nonatomic) _Bool showsEmergencyOnlyWhenDisconnected; // @synthesize showsEmergencyOnlyWhenDisconnected=_showsEmergencyOnlyWhenDisconnected;
+@property(nonatomic) _Bool showsSOSWhenDisabled; // @synthesize showsSOSWhenDisabled=_showsSOSWhenDisabled;
 @property(nonatomic) _Bool callForwardingEnabled; // @synthesize callForwardingEnabled=_callForwardingEnabled;
+@property(nonatomic) _Bool wifiCallingEnabled; // @synthesize wifiCallingEnabled=_wifiCallingEnabled;
 @property(copy, nonatomic) NSString *badgeString; // @synthesize badgeString=_badgeString;
 @property(copy, nonatomic) NSString *crossfadeString; // @synthesize crossfadeString=_crossfadeString;
 @property(copy, nonatomic) NSString *string; // @synthesize string=_string;

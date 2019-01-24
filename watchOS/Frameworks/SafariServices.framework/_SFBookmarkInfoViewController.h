@@ -8,15 +8,17 @@
 
 #import <SafariServices/UITableViewDataSource-Protocol.h>
 #import <SafariServices/UITableViewDelegate-Protocol.h>
+#import <SafariServices/_SFBookmarkInfoViewControllerDelegate-Protocol.h>
 #import <SafariServices/_SFBookmarkTextEntryTableViewControllerDelegate-Protocol.h>
 
 @class NSArray, NSString, UITextField, WebBookmark, WebBookmarkCollection, _SFBookmarkTextEntryTableViewCell, _SFSiteIconView;
 @protocol _SFBookmarkInfoViewControllerDelegate;
 
-@interface _SFBookmarkInfoViewController : _SFPopoverSizingTableViewController <_SFBookmarkTextEntryTableViewControllerDelegate, UITableViewDataSource, UITableViewDelegate>
+@interface _SFBookmarkInfoViewController : _SFPopoverSizingTableViewController <_SFBookmarkInfoViewControllerDelegate, _SFBookmarkTextEntryTableViewControllerDelegate, UITableViewDataSource, UITableViewDelegate>
 {
     WebBookmarkCollection *_collection;
     WebBookmark *_parentBookmark;
+    NSArray *_childBookmarks;
     _Bool _addingBookmark;
     _Bool _saveWhenDismissed;
     _SFBookmarkTextEntryTableViewCell *_titleCell;
@@ -29,13 +31,17 @@
     NSArray *_folders;
     int _selectedFolderIndex;
     UITextField *_textFieldToRestoreFirstResponder;
+    _Bool _enableAddFolder;
     id <_SFBookmarkInfoViewControllerDelegate> _delegate;
     WebBookmark *_bookmark;
 }
 
-@property(retain, nonatomic) WebBookmark *bookmark; // @synthesize bookmark=_bookmark;
+@property(copy, nonatomic) WebBookmark *bookmark; // @synthesize bookmark=_bookmark;
 @property(nonatomic) __weak id <_SFBookmarkInfoViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (_Bool)bookmarkInfoViewControllerShouldUseTranslucentAppearance:(id)arg1;
+- (_Bool)bookmarkInfoViewControllerCanSaveBookmarkChanges:(id)arg1;
+- (void)bookmarkInfoViewController:(id)arg1 didFinishWithResult:(_Bool)arg2;
 - (id)backgroundColorUsingTranslucentAppearance:(_Bool)arg1;
 - (void)updateTranslucentAppearance;
 - (_Bool)hasTranslucentAppearance;
@@ -56,13 +62,16 @@
 - (id)_iconForViewCellGivenBookmark:(id)arg1;
 - (id)_cellForParentBookmarkWithTableView:(id)arg1;
 - (id)_cellForExpandedFolderAtIndex:(int)arg1 withTableView:(id)arg2;
+- (id)_cellForNewFolderRowWithTableView:(id)arg1;
 - (id)_dequeueFolderPickerCellFromTableView:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
+- (_Bool)_isIndexPathForNewFolderRow:(id)arg1;
 - (int)_numberOfExpandedFolderPickerRows;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (int)numberOfSectionsInTableView:(id)arg1;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 willSelectRowAtIndexPath:(id)arg2;
+- (void)_createNewFolder;
 - (void)_editField:(unsigned int)arg1;
 - (_Bool)canSaveChanges;
 - (void)_updateSaveButton;
@@ -87,9 +96,8 @@
 - (void)_returnWasPressedInTextField:(id)arg1;
 - (void)cancel;
 - (void)_saveButtonPressed;
-- (id)initWithBookmarkForFavorites:(id)arg1 inCollection:(id)arg2 addingBookmark:(_Bool)arg3;
 - (id)initWithBookmark:(id)arg1 inCollection:(id)arg2 addingBookmark:(_Bool)arg3;
-- (id)initWithBookmark:(id)arg1 inCollection:(id)arg2 addingBookmark:(_Bool)arg3 toFavorites:(_Bool)arg4 willBeDisplayedModally:(_Bool)arg5;
+- (id)initWithBookmark:(id)arg1 childBookmarks:(id)arg2 inCollection:(id)arg3 addingBookmark:(_Bool)arg4 toFavorites:(_Bool)arg5 willBeDisplayedModally:(_Bool)arg6;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

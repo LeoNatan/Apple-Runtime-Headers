@@ -6,9 +6,10 @@
 
 #import <SafariServices/NSObject-Protocol.h>
 
-@class NSString, UIPrintInfo, _SFPrintController;
+@class NSString, UIPrintInfo, UIViewController, _SFPrintController;
 
 @protocol _SFPrintControllerDelegate <NSObject>
+- (UIViewController *)presentingViewControllerForPrintController:(_SFPrintController *)arg1;
 - (_Bool)printControllerCanPresentPrintUI:(_SFPrintController *)arg1;
 - (_Bool)printControllerPageIsLoading:(_SFPrintController *)arg1;
 - (_Bool)printControllerShouldPrintReader:(_SFPrintController *)arg1;

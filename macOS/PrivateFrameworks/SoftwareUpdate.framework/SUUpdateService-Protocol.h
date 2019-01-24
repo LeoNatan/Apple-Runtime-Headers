@@ -28,7 +28,6 @@
 - (void)registerRequestsToInstallAfterPostLogoutUpdates:(NSArray *)arg1 reply:(void (^)(NSError *))arg2;
 - (void)configureProgressPhasesEnablingFLO:(NSDictionary *)arg1 finishBlock:(void (^)(void))arg2;
 - (void)configureProgressPhasesWithFinishBlock:(void (^)(void))arg1;
-- (void)stringRepresentationOfLongDescriptionForProductKey:(NSString *)arg1 reply:(void (^)(NSString *))arg2;
 - (void)stashURLCredential:(NSURLCredential *)arg1;
 - (void)commitLoginCredentialsDisablingFLO:(BOOL)arg1 hasArmedBaseSystemUpdates:(BOOL)arg2 finishBlock:(void (^)(BOOL))arg3;
 - (void)stashLoginCredentialsEnablingFLO:(BOOL)arg1 reply:(void (^)(BOOL))arg2;

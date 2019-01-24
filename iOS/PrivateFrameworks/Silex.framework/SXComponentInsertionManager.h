@@ -8,26 +8,26 @@
 
 #import <Silex/SXComponentInsertionManager-Protocol.h>
 
-@class NSString;
-@protocol SXBlueprintAnalyzer, SXComponentInserterProvider, SXComponentInsertionConditionEngine;
+@class NSMutableArray, NSString;
+@protocol SXBlueprintAnalyzer, SXComponentInserterManager, SXComponentInsertionConditionEngine;
 
 @interface SXComponentInsertionManager : NSObject <SXComponentInsertionManager>
 {
-    _Bool _hasInsertedComponents;
     id <SXComponentInsertionConditionEngine> _conditionEngine;
-    id <SXComponentInserterProvider> _inserterProvider;
+    id <SXComponentInserterManager> _inserterManager;
     id <SXBlueprintAnalyzer> _blueprintAnalyzer;
+    NSMutableArray *_cache;
 }
 
-@property(nonatomic) _Bool hasInsertedComponents; // @synthesize hasInsertedComponents=_hasInsertedComponents;
+@property(readonly, nonatomic) NSMutableArray *cache; // @synthesize cache=_cache;
 @property(readonly, nonatomic) id <SXBlueprintAnalyzer> blueprintAnalyzer; // @synthesize blueprintAnalyzer=_blueprintAnalyzer;
-@property(readonly, nonatomic) id <SXComponentInserterProvider> inserterProvider; // @synthesize inserterProvider=_inserterProvider;
+@property(readonly, nonatomic) id <SXComponentInserterManager> inserterManager; // @synthesize inserterManager=_inserterManager;
 @property(readonly, nonatomic) id <SXComponentInsertionConditionEngine> conditionEngine; // @synthesize conditionEngine=_conditionEngine;
 - (void).cxx_destruct;
-- (void)updateLayoutDataProvider:(id)arg1 layoutBlueprint:(id)arg2 insert:(id)arg3 marker:(id)arg4;
-- (id)insertForMarker:(id)arg1 remainingMarkerCount:(unsigned long long)arg2 inserter:(id)arg3 layoutProvider:(id)arg4 layoutDataProvider:(id)arg5;
-- (void)insertComponentsForBlueprint:(id)arg1 layoutDataProvider:(id)arg2;
-- (id)initWithComponentInserterProvider:(id)arg1 conditionEngine:(id)arg2 blueprintAnalyzer:(id)arg3;
+- (void)updateDOM:(id)arg1 layoutBlueprint:(id)arg2 insert:(id)arg3 marker:(id)arg4;
+- (id)insertForMarker:(id)arg1 inserter:(id)arg2 DOMObjectProvider:(id)arg3 layoutProvider:(id)arg4;
+- (id)insertComponentsForBlueprint:(id)arg1 DOMObjectProvider:(id)arg2;
+- (id)initWithComponentInserterManager:(id)arg1 conditionEngine:(id)arg2 blueprintAnalyzer:(id)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

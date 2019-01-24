@@ -7,6 +7,7 @@
 #import <Foundation/NSURL.h>
 
 @interface NSURL (CKUtilsAdditions)
++ (id)databaseRPCURLWithCodeServicesURL:(id)arg1 inEnvironment:(long long)arg2;
 - (id)CKSharingURLSubscheme;
 @end
 

@@ -18,6 +18,7 @@
 
 + (id)sharedDownloadDispatcher;
 - (void).cxx_destruct;
+- (void)_downloadProcessDidCrash:(id)arg1;
 - (void)_downloadDidCancel:(id)arg1;
 - (void)_download:(id)arg1 didFailWithError:(id)arg2;
 - (void)_downloadDidFinish:(id)arg1;
@@ -25,7 +26,7 @@
 - (void)_download:(id)arg1 didReceiveData:(unsigned long long)arg2;
 - (void)_download:(id)arg1 didReceiveResponse:(id)arg2;
 - (void)_downloadDidStart:(id)arg1;
-- (id)startDownloadFromWebView:(id)arg1 type:(long long)arg2 userInitiatedAction:(id)arg3;
+- (id)startDownloadFromWebView:(id)arg1 request:(id)arg2 type:(long long)arg3 uti:(id)arg4 userInitiatedAction:(id)arg5;
 - (id)init;
 
 // Remaining properties

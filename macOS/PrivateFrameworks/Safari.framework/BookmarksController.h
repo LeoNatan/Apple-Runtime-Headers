@@ -7,18 +7,20 @@
 #import <objc/NSObject.h>
 
 #import <Safari/BookmarkGroupDelegate-Protocol.h>
+#import <Safari/BookmarksUndoControllerDataStore-Protocol.h>
 #import <Safari/Command1Through9Receiver-Protocol.h>
 #import <Safari/FileChangeObserverClient-Protocol.h>
 #import <Safari/FileLockerClient-Protocol.h>
 #import <Safari/FileLockerLogDelegate-Protocol.h>
 
-@class CloudBookmarksMigrationCoordinationConsul, FileChangeObserver, NSMutableArray, NSMutableDictionary, NSString, NSTimer, NSURL, SpotlightBookmarksWriter, WebBookmark, WebBookmarkGroup, WebBookmarkList;
+@class CloudBookmarksMigrationCoordinationConsul, FileChangeObserver, NSMutableArray, NSMutableDictionary, NSString, NSTimer, NSURL, SpotlightBookmarksWriter, WBSSiteMetadataManager, WebBookmark, WebBookmarkGroup, WebBookmarkList;
 
-@interface BookmarksController : NSObject <BookmarkGroupDelegate, FileChangeObserverClient, FileLockerClient, FileLockerLogDelegate, Command1Through9Receiver>
+@interface BookmarksController : NSObject <BookmarkGroupDelegate, FileChangeObserverClient, FileLockerClient, FileLockerLogDelegate, BookmarksUndoControllerDataStore, Command1Through9Receiver>
 {
     BOOL _loaded;
     NSMutableDictionary *_proxiesByIdentifier;
     SpotlightBookmarksWriter *_spotlightBookmarksWriter;
+    WBSSiteMetadataManager *_siteMetadataManager;
     unsigned long long _bookmarksFileSize;
     double _bookmarksFileTime;
     unsigned long long _bookmarksGeneration;
@@ -32,6 +34,7 @@
     FileChangeObserver *_fileChangeObserver;
     BOOL _userIsOffline;
     NSMutableArray *_bookmarksThatRequestedMetadataFetchWhileOffline;
+    NSURL *_builtInBookmarksURL;
     NSMutableArray *_migratedNonSafariBookmarkFiles;
     NSString *_bookmarksFileLockPath;
     BOOL _isReadOnly;
@@ -84,12 +87,12 @@
 - (void).cxx_destruct;
 - (void)_updateSandboxExtensionFromStoreIfNeeded:(id)arg1;
 - (void)_removeSandboxExtensionFromStoreIfNeeded:(id)arg1;
-- (void)_addSandboxExtensionToStoreIfNeeded:(id)arg1;
 - (void)_stopObservingNetworkChangeNotifications;
 - (void)_didReceiveNetworkChangeNotification:(id)arg1;
 - (void)_beginObservingNetworkChangeNotifications;
 - (BOOL)_shouldTryToFetchMetadataForBookmarkLeaf:(id)arg1;
 - (void)fetchMetadataForBookmark:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (id)bookmarkGroupForUndoController:(id)arg1;
 - (void)handleCommand1Through9ActionForIndex:(unsigned long long)arg1;
 - (BOOL)canHandleCommand1Through9ActionForIndex:(unsigned long long)arg1;
 - (void)displayNewBookmarksSheetForBookmark:(id)arg1 inWindow:(id)arg2;
@@ -110,8 +113,8 @@
 - (void)fetchBookmarksBarCollectionWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)dealloc;
 @property(readonly, nonatomic) WebBookmark *historyCollection;
-- (id)_initWithBookmarksFilePath:(id)arg1 migratedBookmarksFolder:(id)arg2 spotlightCacheController:(id)arg3;
-- (void)resetWithBookmarksFilePath:(id)arg1 migratedBookmarksFolder:(id)arg2 spotlightCacheController:(id)arg3;
+- (id)_initWithBookmarksFilePath:(id)arg1 builtInBookmarksURL:(id)arg2 migratedBookmarksFolder:(id)arg3 spotlightCacheController:(id)arg4 siteMetadataManager:(id)arg5;
+- (void)resetWithBookmarksFilePath:(id)arg1;
 - (void)_deleteMigratedNonSafariBookmarkFiles;
 - (void)_importMigratedNonSafariBookmarks;
 - (int)_importMigratedSafariBookmarks;

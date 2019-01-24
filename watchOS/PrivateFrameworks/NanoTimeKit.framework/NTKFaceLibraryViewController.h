@@ -51,6 +51,7 @@
     NTKFaceViewController *_emptyLibraryFaceViewController;
     NTKFaceConfiguration *_originalFaceConfiguration;
     CSLSSuspendSystemGestureAssertion *_suspendSystemGestureAssertion;
+    _Bool _isZoomingToLibrary;
     _Bool _isFaceEditing;
     _Bool _isFaceSwitching;
     id <NTKFaceLibraryViewControllerDelegate> _delegate;

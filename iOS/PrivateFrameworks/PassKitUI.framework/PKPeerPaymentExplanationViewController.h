@@ -10,13 +10,12 @@
 #import <PassKitUI/PKExplanationViewControllerDelegate-Protocol.h>
 #import <PassKitUI/PKExplanationViewDelegate-Protocol.h>
 #import <PassKitUI/PKPaymentSelectPassesViewControllerDelegate-Protocol.h>
-#import <PassKitUI/PKPaymentSetupHideSetupLaterButtonProtocol-Protocol.h>
 #import <PassKitUI/RemoteUIControllerDelegate-Protocol.h>
 
 @class NSString, PKPaymentProvisioningController, PKPeerPaymentCredential, PKPeerPaymentWebService, RemoteUIController, UIImage;
 @protocol PKPaymentSetupViewControllerDelegate;
 
-@interface PKPeerPaymentExplanationViewController : PKExplanationViewController <RemoteUIControllerDelegate, PKExplanationViewDelegate, PKPaymentSelectPassesViewControllerDelegate, AAUIDeviceToDeviceEncryptionHelperDelegate, PKExplanationViewControllerDelegate, PKPaymentSetupHideSetupLaterButtonProtocol>
+@interface PKPeerPaymentExplanationViewController : PKExplanationViewController <PKExplanationViewDelegate, PKPaymentSelectPassesViewControllerDelegate, AAUIDeviceToDeviceEncryptionHelperDelegate, RemoteUIControllerDelegate, PKExplanationViewControllerDelegate>
 {
     PKPaymentProvisioningController *_provisioningController;
     PKPeerPaymentCredential *_credential;

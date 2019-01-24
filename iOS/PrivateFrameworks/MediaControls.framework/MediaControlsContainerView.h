@@ -12,14 +12,14 @@
 {
     _Bool _empty;
     long long _style;
-    MediaControlsTransportStackView *_mediaControlsTransportStackView;
-    MediaControlsTimeControl *_mediaControlsTimeControl;
+    MediaControlsTransportStackView *_transportStackView;
+    MediaControlsTimeControl *_timeControl;
     UIVisualEffectView *_primaryVisualEffectView;
 }
 
 @property(retain, nonatomic) UIVisualEffectView *primaryVisualEffectView; // @synthesize primaryVisualEffectView=_primaryVisualEffectView;
-@property(retain, nonatomic) MediaControlsTimeControl *mediaControlsTimeControl; // @synthesize mediaControlsTimeControl=_mediaControlsTimeControl;
-@property(retain, nonatomic) MediaControlsTransportStackView *mediaControlsTransportStackView; // @synthesize mediaControlsTransportStackView=_mediaControlsTransportStackView;
+@property(retain, nonatomic) MediaControlsTimeControl *timeControl; // @synthesize timeControl=_timeControl;
+@property(retain, nonatomic) MediaControlsTransportStackView *transportStackView; // @synthesize transportStackView=_transportStackView;
 @property(nonatomic, getter=isEmpty) _Bool empty; // @synthesize empty=_empty;
 @property(nonatomic) long long style; // @synthesize style=_style;
 - (void).cxx_destruct;

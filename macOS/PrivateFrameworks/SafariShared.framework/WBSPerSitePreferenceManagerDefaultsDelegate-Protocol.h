@@ -6,11 +6,14 @@
 
 #import <SafariShared/NSObject-Protocol.h>
 
-@class WBSPerSitePreference, WBSPerSitePreferencesSQLiteStore;
+@class NSString, WBSPerSitePreference, WBSPerSitePreferencesSQLiteStore;
 
 @protocol WBSPerSitePreferenceManagerDefaultsDelegate <NSObject>
 @property(readonly, nonatomic) WBSPerSitePreferencesSQLiteStore *perSitePreferencesStore;
 - (id)defaultPreferenceValueForPreferenceIfNotCustomized:(WBSPerSitePreference *)arg1;
 - (long long)preferencesStoreKeyForPreference:(WBSPerSitePreference *)arg1;
+
+@optional
+- (void)getDefaultPreferenceValueIfNotCustomizedForPreference:(WBSPerSitePreference *)arg1 domain:(NSString *)arg2 completionHandler:(void (^)(id))arg3;
 @end
 

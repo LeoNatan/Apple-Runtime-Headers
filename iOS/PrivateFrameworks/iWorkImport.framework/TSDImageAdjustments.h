@@ -53,8 +53,8 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) double saturation;
 @property(readonly, nonatomic) double exposure;
 - (id)init;
-- (void)saveToArchive:(struct ImageAdjustmentsArchive *)arg1 archiver:(id)arg2;
-- (id)initWithArchive:(const struct ImageAdjustmentsArchive *)arg1 unarchiver:(id)arg2;
+-     // Error parsing type: v32@0:8^{ImageAdjustmentsArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}fffffffffffBBf}16@24, name: saveToArchive:archiver:
+-     // Error parsing type: @32@0:8r^{ImageAdjustmentsArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}fffffffffffBBf}16@24, name: initWithArchive:unarchiver:
 - (void)i_initFromDefaultArchive;
 
 @end

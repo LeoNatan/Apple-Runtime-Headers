@@ -10,7 +10,7 @@
 #import <CoreSpeech/CSEndpointAnalyzerImpl-Protocol.h>
 #import <CoreSpeech/EARCaesuraSilencePosteriorGeneratorDelegate-Protocol.h>
 
-@class CSAsset, CSServerEndpointFeatures, EARCaesuraSilencePosteriorGenerator, EARClientSilenceFeatures, NSDate, NSMutableArray, NSString, _EAREndpointer;
+@class CSAsset, CSServerEndpointFeatures, EARCaesuraSilencePosteriorGenerator, EARClientSilenceFeatures, NSDate, NSDictionary, NSMutableArray, NSString, _EAREndpointer;
 @protocol CSEndpointAnalyzerDelegate, OS_dispatch_queue;
 
 @interface CSHybridEndpointAnalyzer : NSObject <CSAssetManagerDelegate, EARCaesuraSilencePosteriorGeneratorDelegate, CSEndpointAnalyzerImpl>
@@ -55,6 +55,7 @@
     double _vtExtraAudioAtStartInMs;
     unsigned long long _vtEndInSampleCount;
     double _hepAudioOriginInMs;
+    NSDictionary *_recordContext;
     NSDate *_firstAudioPacketTimestamp;
     NSObject<OS_dispatch_queue> *_silencePosteriorGeneratorQueue;
     double _elapsedTimeWithNoSpeech;
@@ -66,6 +67,7 @@
 @property(nonatomic) _Bool recordingDidStop; // @synthesize recordingDidStop=_recordingDidStop;
 @property(nonatomic) _Bool didTimestampFirstAudioPacket; // @synthesize didTimestampFirstAudioPacket=_didTimestampFirstAudioPacket;
 @property(retain, nonatomic) NSDate *firstAudioPacketTimestamp; // @synthesize firstAudioPacketTimestamp=_firstAudioPacketTimestamp;
+@property(retain, nonatomic) NSDictionary *recordContext; // @synthesize recordContext=_recordContext;
 @property(nonatomic) double hepAudioOriginInMs; // @synthesize hepAudioOriginInMs=_hepAudioOriginInMs;
 @property(nonatomic) unsigned long long vtEndInSampleCount; // @synthesize vtEndInSampleCount=_vtEndInSampleCount;
 @property(nonatomic) double vtExtraAudioAtStartInMs; // @synthesize vtExtraAudioAtStartInMs=_vtExtraAudioAtStartInMs;
@@ -113,7 +115,7 @@
 @property(readonly, nonatomic) double lastEndOfVoiceActivityTime;
 - (void)reset;
 - (void)_readClientLagParametersFromHEPAsset:(id)arg1;
-- (void)resetForNewRequestWithSampleRate:(unsigned long long)arg1;
+- (void)resetForNewRequestWithSampleRate:(unsigned long long)arg1 recordContext:(id)arg2;
 - (void)recordingStoppedForReason:(unsigned long long)arg1;
 - (void)preheat;
 - (void)handleVoiceTriggerWithActivationInfo:(id)arg1;

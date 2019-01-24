@@ -8,15 +8,15 @@
 
 #import <iWorkImport/TSTLayoutDynamicContentProtocol-Protocol.h>
 
-@class NSString, TSTInfo;
+@class NSString, TSTTableInfo;
 
 __attribute__((visibility("hidden")))
 @interface TSTFilteredTableDynamicContentDelegate : NSObject <TSTLayoutDynamicContentProtocol>
 {
-    TSTInfo *_tableInfo;
+    TSTTableInfo *_tableInfo;
 }
 
-@property(retain, nonatomic) TSTInfo *tableInfo; // @synthesize tableInfo=_tableInfo;
+@property(retain, nonatomic) TSTTableInfo *tableInfo; // @synthesize tableInfo=_tableInfo;
 - (void).cxx_destruct;
 - (_Bool)dynamicContentMustDrawOnMainThread;
 - (_Bool)cell:(id *)arg1 forCellID:(struct TSUCellCoord)arg2;

@@ -42,8 +42,6 @@
 - (BOOL)_isInPageCache;
 - (id)_redirectURLs;
 - (BOOL)lastVisitWasFailure;
-- (void)_setTransientProperty:(id)arg1 forKey:(id)arg2;
-- (id)_transientPropertyForKey:(id)arg1;
 - (id)URL;
 - (id)children;
 - (void)setRSSFeedReferrer:(id)arg1;

@@ -127,6 +127,7 @@
 - (unsigned long long)archiveSize;
 - (unsigned long long)_sizeForFileOrDirectory:(id)arg1 withAttributes:(id)arg2;
 - (_Bool)writeOfflineWebView:(id)arg1 asArchive:(_Bool)arg2 inReaderForm:(_Bool)arg3;
+- (id)offlineArchiveDirectoryPath;
 - (id)webarchivePathForNextPageURL:(id)arg1;
 - (id)webarchivePathInReaderForm:(_Bool)arg1 fileExists:(_Bool *)arg2;
 - (id)_suggestedFileNameForWebView:(id)arg1;

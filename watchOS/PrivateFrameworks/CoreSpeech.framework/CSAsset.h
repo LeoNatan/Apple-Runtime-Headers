@@ -27,6 +27,7 @@
 - (_Bool)isEqualAsset:(id)arg1;
 - (id)description;
 @property(readonly, nonatomic) NSString *hashFromResourcePath;
+- (_Bool)containsCategory:(id)arg1;
 - (_Bool)containsKey:(id)arg1 category:(id)arg2;
 - (id)getStringForKey:(id)arg1 category:(id)arg2 default:(id)arg3;
 - (_Bool)getBoolForKey:(id)arg1 category:(id)arg2 default:(_Bool)arg3;
@@ -63,7 +64,7 @@
 @property(readonly, nonatomic) unsigned int SSVNoiseLevelChannelBitset;
 - (id)_sha256:(id)arg1;
 - (id)_sha1:(id)arg1;
-- (id)RTModel;
+- (id)RTModelWithFallbackLanguage:(id)arg1;
 
 @end
 

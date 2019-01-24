@@ -18,6 +18,8 @@
     NSMutableSet *_activeContentsAnimations;
     unsigned long long _vista;
     unsigned int _isSupplemental:1;
+    unsigned int _isDisplayOn:1;
+    unsigned int _isAnimating:1;
     CLKDevice *_device;
     id <NTKAstronomyVistaViewObserver> _observer;
 }
@@ -36,6 +38,7 @@
 - (id)rotatable:(unsigned long long)arg1;
 - (void)layoutSubviews;
 - (void)renderSynchronouslyWithImageQueueDiscard:(_Bool)arg1;
+- (void)_updateAnimation;
 - (void)stopAnimation;
 - (void)startAnimation;
 - (void)updateSunLocationAnimated:(_Bool)arg1;

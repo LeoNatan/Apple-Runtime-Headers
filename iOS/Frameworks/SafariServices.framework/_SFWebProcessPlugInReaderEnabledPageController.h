@@ -6,13 +6,12 @@
 
 #import <SafariServices/_SFWebProcessPlugInAutoFillPageController.h>
 
-#import <SafariServices/RequestDesktopSiteWebProcessPlugInListener-Protocol.h>
 #import <SafariServices/SFReaderWebProcessControllerProtocol-Protocol.h>
 
-@class NSDictionary, NSMutableDictionary, NSString, SFWebProcessPlugInCertificateWarningController, SFWebProcessPlugInPageExtensionController, _SFReaderWebProcessPlugInPageController, _SFWebProcessPlugInAppleConnectExtensionController, _SFWebProcessPlugInPageSafeBrowsingController, _SFWebProcessSharingLinkExtractor, _WKRemoteObjectInterface;
-@protocol RequestDesktopSiteUIProcessListener, SFReaderEventsListener;
+@class NSDictionary, NSString, SFWebProcessPlugInCertificateWarningController, SFWebProcessPlugInPageExtensionController, _SFReaderWebProcessPlugInPageController, _SFWebProcessPlugInAppleConnectExtensionController, _SFWebProcessSharingLinkExtractor, _WKRemoteObjectInterface;
+@protocol SFReaderEventsListener;
 
-@interface _SFWebProcessPlugInReaderEnabledPageController : _SFWebProcessPlugInAutoFillPageController <RequestDesktopSiteWebProcessPlugInListener, SFReaderWebProcessControllerProtocol>
+@interface _SFWebProcessPlugInReaderEnabledPageController : _SFWebProcessPlugInAutoFillPageController <SFReaderWebProcessControllerProtocol>
 {
     struct unique_ptr<SafariServices::ReaderAvailabilityController, std::__1::default_delete<SafariServices::ReaderAvailabilityController>> _readerAvailabilityController;
     _WKRemoteObjectInterface *_availabilityControllerInterface;
@@ -20,14 +19,10 @@
     _SFReaderWebProcessPlugInPageController *_readerPageController;
     long long _cachedReaderTopScrollOffset;
     NSDictionary *_initialScrollPositionAsDictionary;
-    _SFWebProcessPlugInPageSafeBrowsingController *_safeBrowsingController;
     SFWebProcessPlugInPageExtensionController *_extensionController;
     _SFWebProcessSharingLinkExtractor *_sharingLinkExtractor;
     SFWebProcessPlugInCertificateWarningController *_certificateWarningController;
     _SFWebProcessPlugInAppleConnectExtensionController *_appleConnectExtensionController;
-    id <RequestDesktopSiteUIProcessListener> _requestDesktopSiteUIProcessListener;
-    _WKRemoteObjectInterface *_requestDesktopSiteWebProcessPlugInListenerInterface;
-    NSMutableDictionary *_domainToUserAgentPolicyMap;
     _Bool _viewingReadingListArchive;
     NSDictionary *_initalArticleScrollPositionAsDictionary;
     NSDictionary *_initialReaderConfiguration;
@@ -40,9 +35,6 @@
 @property(retain, nonatomic) _SFReaderWebProcessPlugInPageController *readerPageController; // @synthesize readerPageController=_readerPageController;
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (void)markURLAsNeedingDesktopUserAgent:(id)arg1;
-- (void)_setUpUIProcessListenerIfNeeded;
-- (id)webProcessPlugInBrowserContextController:(id)arg1 frame:(id)arg2 userAgentForURL:(id)arg3;
 - (id)webProcessPlugInBrowserContextController:(id)arg1 frame:(id)arg2 willSendRequestForResource:(unsigned long long)arg3 request:(id)arg4 redirectResponse:(id)arg5;
 - (void)webProcessPlugInBrowserContextController:(id)arg1 renderingProgressDidChange:(unsigned long long)arg2;
 - (void)webProcessPlugInBrowserContextController:(id)arg1 didFinishLoadForFrame:(id)arg2;
@@ -51,8 +43,6 @@
 - (void)webProcessPlugInBrowserContextController:(id)arg1 didCommitLoadForFrame:(id)arg2;
 - (void)webProcessPlugInBrowserContextController:(id)arg1 globalObjectIsAvailableForFrame:(id)arg2 inScriptWorld:(id)arg3;
 - (void)webProcessPlugInBrowserContextController:(id)arg1 didStartProvisionalLoadForFrame:(id)arg2;
-- (void)_removeLoadDeferringReasonsForSafeBrowsingIfNecessary;
-- (void)_deferPageLoadingUntilSafeBrowsingCheckCompleteForFrame:(id)arg1 isMainFrame:(_Bool)arg2;
 - (void)prepareReaderContentForPrinting;
 - (void)collectReaderContentForMail;
 - (void)readerContentDidBecomeReadyWithDetectedLanguage:(id)arg1;
@@ -63,10 +53,7 @@
 - (void)prepareToTransitionToReader;
 - (void)willHideReader;
 - (void)didFinishPresentationUpdateAfterTransitioningToReader;
-- (void)decreaseReaderTextSize;
-- (void)increaseReaderTextSize;
-- (void)setReaderTheme:(id)arg1;
-- (void)setReaderFont:(id)arg1;
+- (void)setConfiguration:(id)arg1;
 - (void)setReaderInitialTopScrollOffset:(long long)arg1 configuration:(id)arg2 isViewingArchive:(_Bool)arg3;
 - (struct OpaqueJSValue *)originalArticleFinder;
 - (void)_detectReaderAvailabilityAfterSameDocumentNavigation;

@@ -76,6 +76,7 @@
 - (void)registerDeviceWithCompletion:(CDUnknownBlockType)arg1;
 - (void)handleCompanionSerialNumberChanged;
 - (void)registrationStatusWithCompletion:(CDUnknownBlockType)arg1;
+- (void)identityVerificationResponseWithCompletion:(CDUnknownBlockType)arg1;
 - (void)receivedPeerPaymentMessage:(id)arg1;
 - (void)handlePassLibraryChangedWithPassUniqueIdentifier:(id)arg1;
 - (void)accountWithCompletion:(CDUnknownBlockType)arg1;

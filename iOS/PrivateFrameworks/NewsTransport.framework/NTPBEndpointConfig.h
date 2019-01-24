@@ -19,8 +19,12 @@
     NSString *_eventRelayBaseUrl;
     NSString *_eventRelayBatchBaseUrl;
     NSString *_newsNotificationsBaseUrl;
+    NSString *_remoteDataSourceBaseUrl;
+    NSString *_staticAssetBaseUrl;
 }
 
+@property(retain, nonatomic) NSString *remoteDataSourceBaseUrl; // @synthesize remoteDataSourceBaseUrl=_remoteDataSourceBaseUrl;
+@property(retain, nonatomic) NSString *staticAssetBaseUrl; // @synthesize staticAssetBaseUrl=_staticAssetBaseUrl;
 @property(retain, nonatomic) NSString *analyticsEnvelopeContentTypePropJson; // @synthesize analyticsEnvelopeContentTypePropJson=_analyticsEnvelopeContentTypePropJson;
 @property(retain, nonatomic) NSString *analyticsEndpointUrlsJson; // @synthesize analyticsEndpointUrlsJson=_analyticsEndpointUrlsJson;
 @property(retain, nonatomic) NSString *newsNotificationsBaseUrl; // @synthesize newsNotificationsBaseUrl=_newsNotificationsBaseUrl;
@@ -37,6 +41,8 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(readonly, nonatomic) _Bool hasRemoteDataSourceBaseUrl;
+@property(readonly, nonatomic) _Bool hasStaticAssetBaseUrl;
 @property(readonly, nonatomic) _Bool hasAnalyticsEnvelopeContentTypePropJson;
 @property(readonly, nonatomic) _Bool hasAnalyticsEndpointUrlsJson;
 @property(readonly, nonatomic) _Bool hasNewsNotificationsBaseUrl;

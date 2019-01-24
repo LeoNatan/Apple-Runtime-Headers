@@ -4,15 +4,15 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@class TSCH3DChartElementSceneObject, TSCH3DChartModelEnumerator, TSCH3DSceneRenderPipeline;
+@class TSCH3DChartElementSceneObject, TSCH3DChartModelEnumerator, TSCH3DRenderElementInfo, TSCH3DSceneRenderPipeline;
 
 @protocol TSCH3DChartElementSceneObjectElementDelegate
-- (_Bool)willSubmitElement:(const struct RenderElementInfo *)arg1 sceneObject:(TSCH3DChartElementSceneObject *)arg2;
-- (_Bool)willRenderElement:(const struct RenderElementInfo *)arg1 sceneObject:(TSCH3DChartElementSceneObject *)arg2;
-- (void)didTransformElement:(const struct RenderElementInfo *)arg1 sceneObject:(TSCH3DChartElementSceneObject *)arg2;
-- (_Bool)willUpdateElementEffectsStatesForElement:(const struct RenderElementInfo *)arg1 sceneObject:(TSCH3DChartElementSceneObject *)arg2;
-- (struct ElementRenderPass)renderPassForElement:(const struct RenderElementInfo *)arg1 sceneObject:(TSCH3DChartElementSceneObject *)arg2;
-- (_Bool)willProcessElement:(const struct RenderElementInfo *)arg1 sceneObject:(TSCH3DChartElementSceneObject *)arg2;
+- (_Bool)willSubmitElement:(TSCH3DRenderElementInfo *)arg1 sceneObject:(TSCH3DChartElementSceneObject *)arg2;
+- (_Bool)willRenderElement:(TSCH3DRenderElementInfo *)arg1 sceneObject:(TSCH3DChartElementSceneObject *)arg2;
+- (void)didTransformElement:(TSCH3DRenderElementInfo *)arg1 sceneObject:(TSCH3DChartElementSceneObject *)arg2;
+- (_Bool)willUpdateElementEffectsStatesForElement:(TSCH3DRenderElementInfo *)arg1 sceneObject:(TSCH3DChartElementSceneObject *)arg2;
+- (struct ElementRenderPass)renderPassForElement:(TSCH3DRenderElementInfo *)arg1 sceneObject:(TSCH3DChartElementSceneObject *)arg2;
+- (_Bool)willProcessElement:(TSCH3DRenderElementInfo *)arg1 sceneObject:(TSCH3DChartElementSceneObject *)arg2;
 - (void)didProcessElements:(TSCH3DChartModelEnumerator *)arg1 sceneObject:(TSCH3DChartElementSceneObject *)arg2 pipeline:(TSCH3DSceneRenderPipeline *)arg3;
 - (_Bool)willProcessElements:(TSCH3DChartModelEnumerator *)arg1 sceneObject:(TSCH3DChartElementSceneObject *)arg2 pipeline:(TSCH3DSceneRenderPipeline *)arg3;
 @end

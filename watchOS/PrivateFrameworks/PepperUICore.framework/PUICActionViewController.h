@@ -13,6 +13,7 @@
 
 @interface PUICActionViewController : PUICBaseActionViewController <UIGestureRecognizerDelegate, CSLPIButtonHandlerProtocol>
 {
+    unsigned long long _stateHandler;
     _Bool _actionGroupDirty;
     _Bool _appearing;
     _Bool _visible;
@@ -72,6 +73,7 @@
 - (_Bool)_needsLongTitleLayoutForButtons:(id)arg1 withNumberOfRows:(int)arg2;
 - (void)_layout;
 - (void)dealloc;
+@property(readonly, copy) NSString *description;
 - (void)viewDidDisappear:(_Bool)arg1;
 - (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewDidAppear:(_Bool)arg1;
@@ -88,7 +90,6 @@
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
 @property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 

@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, NSDictionary, NSError, NSMutableDictionary, NSNumber, NSRecursiveLock, NSString, VMCarrierStateRequestController, VMTranscriptionService, VVVerifier;
+@class NSArray, NSDictionary, NSError, NSMutableDictionary, NSRecursiveLock, NSString, VMCarrierStateRequestController, VMTranscriptionService, VVVerifier;
 @protocol OS_dispatch_queue, VMTelephonySubscription;
 
 @interface VVService : NSObject
@@ -14,8 +14,6 @@
     NSRecursiveLock *_lock;
     int _mailboxUsage;
     double _trashCompactionAge;
-    unsigned int _unreadCount;
-    unsigned int _trashedCount;
     NSError *_passwordError;
     NSError *_activationError;
     NSString *_password;
@@ -34,9 +32,11 @@
         unsigned int notificationFallbackEnabled:1;
         unsigned int capabilitiesLoaded:1;
     } _serviceFlags;
+    _Bool _SMSReady;
     struct os_unfair_lock_s _accessorLock;
     NSMutableDictionary *_stateRequestAttemptCount;
-    NSNumber *_SMSReadyState;
+    unsigned long long _trashedCount;
+    unsigned long long _unreadCount;
     NSString *_serviceIdentifier;
     NSString *_serviceDestinationID;
     VMTranscriptionService *_transcriptionService;
@@ -73,6 +73,7 @@
 @property(copy, nonatomic) NSString *serviceDestinationID; // @synthesize serviceDestinationID=_serviceDestinationID;
 @property(copy, nonatomic) NSString *serviceIdentifier; // @synthesize serviceIdentifier=_serviceIdentifier;
 - (void).cxx_destruct;
+- (void)removeServiceInformation;
 - (void)performSynchronousBlock:(CDUnknownBlockType)arg1;
 - (void)performAtomicAccessorBlock:(CDUnknownBlockType)arg1;
 @property(readonly, nonatomic) NSMutableDictionary *stateRequestAttemptCount; // @synthesize stateRequestAttemptCount=_stateRequestAttemptCount;
@@ -132,7 +133,6 @@
 - (id)passwordIgnoringSubscription:(_Bool)arg1;
 - (id)password;
 - (_Bool)isPasswordReady;
-- (void)_handleIndicatorNotification:(struct __CFDictionary *)arg1;
 - (_Bool)respectsMWINotifications;
 - (void)handleNotification:(id)arg1 isMWI:(_Bool)arg2;
 - (Class)notificationInterpreterClass;
@@ -157,16 +157,11 @@
 - (void)setOnline:(_Bool)arg1;
 - (void)_setOnline:(_Bool)arg1 fallbackMode:(_Bool)arg2;
 - (_Bool)isOnline;
-@property(retain, nonatomic) NSNumber *SMSReadyState; // @synthesize SMSReadyState=_SMSReadyState;
-- (void)updateLoggingSettings;
-- (void)removeAllNonDetachedRecords;
-- (void)removeAllRecords;
+@property(nonatomic) unsigned long long unreadCount; // @synthesize unreadCount=_unreadCount;
+@property(nonatomic) unsigned long long trashedCount; // @synthesize trashedCount=_trashedCount;
+@property(nonatomic, getter=isSMSReady) _Bool SMSReady; // @synthesize SMSReady=_SMSReady;
 - (void)resetCounts;
 - (void)updateCountsForChangedFlags:(unsigned int)arg1 currentRecordFlags:(unsigned int)arg2;
-- (void)setTrashedCount:(unsigned int)arg1;
-- (unsigned int)trashedCount;
-- (void)setUnreadCount:(unsigned int)arg1;
-- (unsigned int)unreadCount;
 - (void)setMailboxUsage:(int)arg1;
 - (int)mailboxUsage;
 - (_Bool)sharedSubscriptionRequiresSetup;

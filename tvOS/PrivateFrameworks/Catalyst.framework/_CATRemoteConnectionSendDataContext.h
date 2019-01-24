@@ -10,6 +10,7 @@
 
 @class NSData, NSString;
 
+__attribute__((visibility("hidden")))
 @interface _CATRemoteConnectionSendDataContext : NSObject <_CATRemoteConnectionSendContext>
 {
     NSData *mEncodedData;

@@ -27,7 +27,7 @@
     id <NSStreamDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <NSStreamDelegate> delegate; // @synthesize delegate=_delegate;
+@property __weak id <NSStreamDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (_Bool)getBuffer:(char **)arg1 length:(unsigned long long *)arg2;
 - (_Bool)hasBytesAvailable;

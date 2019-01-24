@@ -10,7 +10,7 @@
 #import <DiagnosticExtensionsDaemon/NSSecureCoding-Protocol.h>
 
 @class DEDBugSessionConfiguration, DEDExtensionIdentifierManager, NSArray, NSDate, NSDictionary, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString;
-@protocol DEDClientProtocol, DEDFinisher><DEDSecureArchiving, DEDNotifier><DEDSecureArchiving, DEDUploadStatusDelegate, DEDWorkerProtocol, OS_os_log;
+@protocol DEDClientProtocol, DEDFinisher><DEDSecureArchiving, DEDNotifier><DEDSecureArchiving, DEDUploadStatusDelegate, DEDWorkerProtocol, OS_dispatch_queue, OS_os_log;
 
 @interface DEDBugSession : NSObject <NSSecureCoding, DEDSecureArchiving>
 {
@@ -36,10 +36,12 @@
     id <DEDWorkerProtocol> _worker;
     id <DEDFinisher><DEDSecureArchiving> __finisher;
     id <DEDNotifier><DEDSecureArchiving> __notifier;
+    NSObject<OS_dispatch_queue> *_callbackQueue;
 }
 
 + (id)archivedClasses;
 + (_Bool)supportsSecureCoding;
+@property(retain, nonatomic) NSObject<OS_dispatch_queue> *callbackQueue; // @synthesize callbackQueue=_callbackQueue;
 @property(retain) id <DEDNotifier><DEDSecureArchiving> _notifier; // @synthesize _notifier=__notifier;
 @property(retain) id <DEDFinisher><DEDSecureArchiving> _finisher; // @synthesize _finisher=__finisher;
 @property(retain) id <DEDWorkerProtocol> worker; // @synthesize worker=_worker;

@@ -42,6 +42,8 @@
 - (void)groupsController:(id)arg1 didMoveGroup:(id)arg2 fromIndex:(unsigned long long)arg3 toIndex:(unsigned long long)arg4;
 - (void)groupsController:(id)arg1 didRemoveGroup:(id)arg2 atIndex:(unsigned long long)arg3;
 - (void)groupsController:(id)arg1 didInsertGroup:(id)arg2 atIndex:(unsigned long long)arg3;
+- (_Bool)isInField;
+- (_Bool)supportsExternalPresentation;
 - (void)groupStackView:(id)arg1 didTransitionToState:(long long)arg2 animated:(_Bool)arg3;
 - (unsigned long long)suppressedContent;
 - (void)groupStackViewDidEndReordering:(id)arg1;

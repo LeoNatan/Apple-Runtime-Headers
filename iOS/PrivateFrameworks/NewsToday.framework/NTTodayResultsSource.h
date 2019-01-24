@@ -8,7 +8,7 @@
 
 #import <NewsToday/NTTodayResultsSource-Protocol.h>
 
-@class FCAsyncOnceOperation, NSString;
+@class FCAsyncSerialQueue, NSString;
 @protocol FCContentContext, NTReadablePrivateDataStorage, NTTodayResultsFetchDescriptor;
 
 @interface NTTodayResultsSource : NSObject <NTTodayResultsSource>
@@ -18,20 +18,19 @@
     id <NTReadablePrivateDataStorage> _privateDataStorage;
     id <FCContentContext> _contentContext;
     CDUnknownBlockType _sessionProvider;
-    FCAsyncOnceOperation *_firstOperationCompletionOperation;
-    NSObject *_latestConstituentAssetsHoldToken;
+    FCAsyncSerialQueue *_serialQueue;
 }
 
 @property(nonatomic, getter=hasFlushingBeenEnabled) _Bool flushingHasBeenEnabled; // @synthesize flushingHasBeenEnabled=_flushingHasBeenEnabled;
-@property(retain, nonatomic) NSObject *latestConstituentAssetsHoldToken; // @synthesize latestConstituentAssetsHoldToken=_latestConstituentAssetsHoldToken;
-@property(retain, nonatomic) FCAsyncOnceOperation *firstOperationCompletionOperation; // @synthesize firstOperationCompletionOperation=_firstOperationCompletionOperation;
-@property(copy, nonatomic) CDUnknownBlockType sessionProvider; // @synthesize sessionProvider=_sessionProvider;
-@property(retain, nonatomic) id <FCContentContext> contentContext; // @synthesize contentContext=_contentContext;
-@property(retain, nonatomic) id <NTReadablePrivateDataStorage> privateDataStorage; // @synthesize privateDataStorage=_privateDataStorage;
-@property(copy, nonatomic) id <NTTodayResultsFetchDescriptor> fetchDescriptor; // @synthesize fetchDescriptor=_fetchDescriptor;
+@property(readonly, nonatomic) FCAsyncSerialQueue *serialQueue; // @synthesize serialQueue=_serialQueue;
+@property(readonly, copy, nonatomic) CDUnknownBlockType sessionProvider; // @synthesize sessionProvider=_sessionProvider;
+@property(readonly, nonatomic) id <FCContentContext> contentContext; // @synthesize contentContext=_contentContext;
+@property(readonly, nonatomic) id <NTReadablePrivateDataStorage> privateDataStorage; // @synthesize privateDataStorage=_privateDataStorage;
+@property(readonly, copy, nonatomic) id <NTTodayResultsFetchDescriptor> fetchDescriptor; // @synthesize fetchDescriptor=_fetchDescriptor;
 - (void).cxx_destruct;
+- (void)_fetchLatestResultsWithOperationInfo:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)fetchLatestResultsWithOperationInfo:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (id)initWithFetchDescriptor:(id)arg1 privateDataStorage:(id)arg2 contentContext:(id)arg3 sessionProvider:(CDUnknownBlockType)arg4;
+- (id)initWithFetchDescriptor:(id)arg1 privateDataStorage:(id)arg2 contentContext:(id)arg3 sessionProvider:(CDUnknownBlockType)arg4 fetchQueue:(id)arg5;
 - (id)init;
 
 // Remaining properties

@@ -6,7 +6,6 @@
 
 #import <objc/NSObject.h>
 
-__attribute__((visibility("hidden")))
 @interface NFContainerPoolObject : NSObject
 {
     unsigned long long _ownership;

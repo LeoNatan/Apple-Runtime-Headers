@@ -34,6 +34,9 @@ __attribute__((visibility("hidden")))
 - (id).cxx_construct;
 - (id)variableAtIndex:(unsigned long long)arg1;
 @property(readonly, nonatomic) struct TSCH3DShaderType initialLinkType;
+@property(readonly, nonatomic) unsigned long long componentCount;
+@property(readonly, nonatomic) NSString *commonShaderType;
+@property(readonly, nonatomic) _Bool isTexture;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)description;

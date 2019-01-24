@@ -37,6 +37,7 @@
 @property(readonly, nonatomic) FCTagBanner *bannerImageForThemeBackground;
 @property(readonly, nonatomic) FCTagBanner *bannerImageForWhiteBackground;
 @property(readonly, nonatomic) FCTagBanner *defaultBannerImage;
+@property(readonly, nonatomic) _Bool isDark;
 @property(readonly, nonatomic) _Bool isWhite;
 @property(readonly, nonatomic) long long feedType;
 @end

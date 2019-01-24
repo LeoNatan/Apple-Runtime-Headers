@@ -9,10 +9,10 @@
 __attribute__((visibility("hidden")))
 @interface TSUScaledProgressStorage : NSObject
 {
-    double mMaxValue;
+    double _maxValue;
 }
 
-@property double maxValue; // @synthesize maxValue=mMaxValue;
+@property double maxValue; // @synthesize maxValue=_maxValue;
 
 @end
 

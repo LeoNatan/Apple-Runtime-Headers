@@ -7,10 +7,10 @@
 #import <Foundation/NSDictionary.h>
 
 @interface NSDictionary (TSPObjectSerialization)
-+ (id)tsp_decoderResourceNameDictionaryFromMessage:(const RepeatedPtrField_fe6aca30 *)arg1;
-+ (id)tsp_decoderDataInfoDictionaryFromMessage:(const RepeatedPtrField_fe6aca30 *)arg1;
-+ (id)tsp_identifierToObjectUUIDDictionaryFromMessage:(const RepeatedPtrField_c964a194 *)arg1;
-+ (id)tsp_identifierToObjectUUIDDictionaryFromWeakExternalReferences:(id)arg1 updatingComponentInfo:(struct ComponentInfo *)arg2 failIfReferenceIsNotPersisted:(_Bool)arg3 context:(id)arg4 error:(id *)arg5;
-- (void)tsp_saveIdentifierToObjectUUIDDictionaryToMessage:(RepeatedPtrField_c964a194 *)arg1;
++ (id)tsp_decoderResourceNameDictionaryFromMessage:(const RepeatedPtrField_afbe103d *)arg1;
++ (id)tsp_decoderDataInfoDictionaryFromMessage:(const RepeatedPtrField_afbe103d *)arg1;
++ (id)tsp_identifierToObjectUUIDDictionaryFromMessage:(const RepeatedPtrField_87e3812e *)arg1;
++     // Error parsing type: @52@0:8@16^{ComponentInfo=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedField<unsigned int>=ii(Pointer=^{Arena}^{Rep})}i{RepeatedField<unsigned int>=ii(Pointer=^{Arena}^{Rep})}i{RepeatedPtrField<TSP::ComponentExternalReference>=^{Arena}ii^{Rep}}{RepeatedPtrField<TSP::ComponentDataReference>=^{Arena}ii^{Rep}}{RepeatedPtrField<TSP::ObjectUUIDMapEntry>=^{Arena}ii^{Rep}}{RepeatedPtrField<TSP::FeatureInfo>=^{Arena}ii^{Rep}}{RepeatedField<unsigned int>=ii(Pointer=^{Arena}^{Rep})}i{RepeatedField<unsigned int>=ii(Pointer=^{Arena}^{Rep})}i{RepeatedPtrField<TSP::ComponentExternalReference>=^{Arena}ii^{Rep}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}QQBBI}24B32@36^@44, name: tsp_identifierToObjectUUIDDictionaryFromWeakExternalReferences:updatingComponentInfo:failIfReferenceIsNotPersisted:context:error:
+- (void)tsp_saveIdentifierToObjectUUIDDictionaryToMessage:(RepeatedPtrField_87e3812e *)arg1;
 @end
 

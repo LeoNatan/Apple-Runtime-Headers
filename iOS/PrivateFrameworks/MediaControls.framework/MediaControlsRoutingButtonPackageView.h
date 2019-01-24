@@ -10,7 +10,7 @@
 {
 }
 
-- (id)initWithFrame:(struct CGRect)arg1;
+- (id)initWithFrame:(struct CGRect)arg1 packageURL:(id)arg2;
 
 @end
 

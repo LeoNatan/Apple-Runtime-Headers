@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, NSMutableDictionary, NSSet, WBSAutoFillQuirksManager, WBSKeychainCredentialNotificationMonitor;
+@class NSArray, NSMutableDictionary, NSSet, WBSKeychainCredentialNotificationMonitor;
 @protocol OS_dispatch_queue;
 
 @interface WBSSavedPasswordStore : NSObject
@@ -15,7 +15,6 @@
     NSArray *_savedPasswords;
     WBSKeychainCredentialNotificationMonitor *_keychainMonitor;
     id _keychainNotificationRegistrationToken;
-    WBSAutoFillQuirksManager *_autoFillQuirksManager;
     NSObject<OS_dispatch_queue> *_queue;
     BOOL _hasPasswordsEligibleForAutoFill;
 }
@@ -32,7 +31,7 @@
 - (BOOL)canSaveUser:(id)arg1 password:(id)arg2 forProtectionSpace:(id)arg3 highLevelDomain:(id)arg4;
 - (BOOL)changeSavedPassword:(id)arg1 toUser:(id)arg2 password:(id)arg3;
 - (BOOL)canChangeSavedPassword:(id)arg1 toUser:(id)arg2 password:(id)arg3;
-- (void)removeSite:(id)arg1 fromPassword:(id)arg2;
+- (void)removeSite:(id)arg1 fromPassword:(id)arg2 withCompletion:(CDUnknownBlockType)arg3;
 - (void)removePassword:(id)arg1;
 - (void)_removePassword:(id)arg1;
 - (id)_savedPasswords;
@@ -42,10 +41,7 @@
 - (id)_allInternetPasswordEntriesFromKeychain;
 - (id)savedPasswordForURL:(id)arg1 user:(id)arg2 password:(id)arg3;
 - (void)dealloc;
-- (id)initUsingAutoFillQuirksManager:(BOOL)arg1;
-@property(readonly, nonatomic) BOOL hasDuplicatedPasswords;
-- (BOOL)savedPasswordHasReusedPassword:(id)arg1;
-- (id)savedPasswordsWithDuplicatedPassword:(id)arg1;
+- (id)init;
 
 @end
 

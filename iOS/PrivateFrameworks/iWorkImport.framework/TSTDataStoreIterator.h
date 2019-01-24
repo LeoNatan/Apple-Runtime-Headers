@@ -10,7 +10,7 @@
 #import <iWorkImport/TSTCellRegionIterating-Protocol.h>
 #import <iWorkImport/TSTMutableCellIteratorDataUpdating-Protocol.h>
 
-@class NSString, TSTCell, TSTCellRegion, TSTInfo, TSTTableDataStore, TSTTableModel, TSTTableTile, TSTTableTileRowInfo;
+@class NSString, TSTCell, TSTCellRegion, TSTTableDataStore, TSTTableInfo, TSTTableModel, TSTTableTile, TSTTableTileRowInfo;
 @protocol TSTCellRegionIterating;
 
 __attribute__((visibility("hidden")))
@@ -62,7 +62,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
-@property(readonly, retain, nonatomic) TSTInfo *tableInfo;
+@property(readonly, retain, nonatomic) TSTTableInfo *tableInfo;
 
 @end
 

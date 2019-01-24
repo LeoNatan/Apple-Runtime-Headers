@@ -6,7 +6,7 @@
 
 #import <SiriUI/NSObject-Protocol.h>
 
-@protocol CRAsyncCardReceiptFeedback, CRAsyncCardRequestFeedback, CRCard, CRCardSection, CRCardSectionEngagementFeedback, CRCardSectionViewAppearanceFeedback, CRCardSectionViewDisappearanceFeedback, CRCardViewAppearanceFeedback, CRCardViewDisappearanceFeedback;
+@protocol CRAsyncCardReceiptFeedback, CRAsyncCardRequestFeedback, CRCard, CRCardSection, CRCardSectionEngagementFeedback, CRCardSectionViewAppearanceFeedback, CRCardSectionViewDisappearanceFeedback, CRCardViewAppearanceFeedback, CRCardViewDisappearanceFeedback, CRUserReportRequestFeedback;
 
 @protocol CRFeedbackListener <NSObject>
 
@@ -21,6 +21,7 @@
 - (void)cardViewDidDisappearForCard:(id <CRCard>)arg1 withDisappearanceFeedback:(id <CRCardViewDisappearanceFeedback>)arg2;
 - (void)cardViewDidAppearForCard:(id <CRCard>)arg1 withAppearanceFeedback:(id <CRCardViewAppearanceFeedback>)arg2;
 - (void)cardViewWillAppearForCard:(id <CRCard>)arg1 withAppearanceFeedback:(id <CRCardViewAppearanceFeedback>)arg2;
+- (void)userDidReportFeedback:(id <CRUserReportRequestFeedback>)arg1 fromCardSection:(id <CRCardSection>)arg2;
 - (void)userDidEngageCardSection:(id <CRCardSection>)arg1 withEngagementFeedback:(id <CRCardSectionEngagementFeedback>)arg2;
 @end
 

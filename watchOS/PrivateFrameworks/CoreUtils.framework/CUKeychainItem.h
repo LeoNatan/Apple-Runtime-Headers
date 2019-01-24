@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, NSData, NSDictionary, NSString;
+@class NSArray, NSData, NSDate, NSDictionary, NSString;
 
 @interface CUKeychainItem : NSObject
 {
@@ -14,6 +14,8 @@
     _Bool _legacy;
     NSString *_accessGroup;
     int _accessibleType;
+    NSDate *_dateCreated;
+    NSDate *_dateModified;
     NSString *_identifier;
     NSDictionary *_metadata;
     NSArray *_removedMetadata;
@@ -38,6 +40,8 @@
 @property(nonatomic) _Bool legacy; // @synthesize legacy=_legacy;
 @property(nonatomic) _Bool invisible; // @synthesize invisible=_invisible;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
+@property(readonly, copy, nonatomic) NSDate *dateModified; // @synthesize dateModified=_dateModified;
+@property(readonly, copy, nonatomic) NSDate *dateCreated; // @synthesize dateCreated=_dateCreated;
 @property(nonatomic) int accessibleType; // @synthesize accessibleType=_accessibleType;
 @property(copy, nonatomic) NSString *accessGroup; // @synthesize accessGroup=_accessGroup;
 - (void).cxx_destruct;

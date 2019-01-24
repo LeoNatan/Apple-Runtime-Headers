@@ -6,7 +6,7 @@
 
 #import <iWorkImport/NSObject-Protocol.h>
 
-@class NSIndexSet, TSTCellRegion;
+@class NSIndexSet, NSMutableIndexSet, TSTCellRegion;
 
 @protocol TSTAdditionalHiddenRowColumnProviding <NSObject>
 - (_Bool)showColumnAtIndex:(unsigned short)arg1 forAction:(unsigned char)arg2;
@@ -27,6 +27,8 @@
 - (NSIndexSet *)indexesOfUserVisibleRowsInCellRange:(struct TSUCellRect)arg1;
 - (NSIndexSet *)indexesOfVisibleRowsInCellRegion:(TSTCellRegion *)arg1;
 - (NSIndexSet *)indexesOfVisibleRowsInCellRange:(struct TSUCellRect)arg1;
+- (NSMutableIndexSet *)indexesOfCollapsedRowsInCellRange:(struct TSUCellRect)arg1;
+- (NSIndexSet *)indexesOfFilteredRowsInCellRange:(struct TSUCellRect)arg1;
 - (NSIndexSet *)indexesOfUserHiddenRowsInCellRange:(struct TSUCellRect)arg1;
 - (NSIndexSet *)indexesOfHiddenRowsInCellRange:(struct TSUCellRect)arg1;
 - (unsigned int)numberOfHiddenColumnsInCellRange:(struct TSUCellRect)arg1;

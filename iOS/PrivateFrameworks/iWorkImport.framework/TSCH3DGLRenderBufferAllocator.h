@@ -19,9 +19,9 @@ __attribute__((visibility("hidden")))
 + (id)allocatorWithStorage:(id)arg1;
 + (id)allocator;
 - (_Bool)isEqual:(id)arg1;
-- (id)depthbufferWithAllocatorInfo:(const struct RenderbufferAllocatorInfo *)arg1;
-- (id)colorbufferWithAllocatorInfo:(const struct RenderbufferAllocatorInfo *)arg1;
-- (id)bufferWithAllocatorInfo:(const struct RenderbufferAllocatorInfo *)arg1 internalFormat:(unsigned int)arg2 attachment:(unsigned int)arg3;
+- (id)depthbufferWithAllocatorInfo:(id)arg1;
+- (id)colorbufferWithAllocatorInfo:(id)arg1;
+- (id)bufferWithAllocatorInfo:(id)arg1 internalFormat:(unsigned int)arg2 attachment:(unsigned int)arg3;
 @property(readonly, nonatomic) _Bool isTexturable;
 - (void)dealloc;
 - (id)initWithStorage:(id)arg1;

@@ -8,25 +8,27 @@
 
 #import <MediaControls/CCUIContentModuleContentViewController-Protocol.h>
 #import <MediaControls/MPAVRoutingViewControllerDelegate-Protocol.h>
+#import <MediaControls/MRPlatterViewControllerDelegate-Protocol.h>
 #import <MediaControls/MediaControlsCollectionViewDataSource-Protocol.h>
 #import <MediaControls/MediaControlsCollectionViewDelegate-Protocol.h>
 #import <MediaControls/MediaControlsEndpointsManagerDelegate-Protocol.h>
-#import <MediaControls/MediaControlsPanelViewControllerDelegate-Protocol.h>
 
 @class MPAVEndpointRoute, MPAVOutputDeviceRoutingDataSource, MPAVRoutingViewController, MPMediaControlsConfiguration, MediaControlsEndpointsManager, NSString;
 
-@interface MediaControlsEndpointsViewController : MediaControlsCollectionViewController <MPAVRoutingViewControllerDelegate, MediaControlsPanelViewControllerDelegate, MediaControlsCollectionViewDataSource, MediaControlsCollectionViewDelegate, MediaControlsEndpointsManagerDelegate, CCUIContentModuleContentViewController>
+@interface MediaControlsEndpointsViewController : MediaControlsCollectionViewController <MPAVRoutingViewControllerDelegate, MRPlatterViewControllerDelegate, MediaControlsCollectionViewDataSource, MediaControlsCollectionViewDelegate, MediaControlsEndpointsManagerDelegate, CCUIContentModuleContentViewController>
 {
     MPAVOutputDeviceRoutingDataSource *_outputDeviceRoutingDataSource;
-    long long _lastSelectedModeForActivePanelViewController;
+    long long _lastSelectedModeForActivePlatterViewController;
     _Bool _didRetrieveActiveSystemRouteOnce;
     _Bool _shouldReselectActiveSystemRoute;
     _Bool _prewarming;
     _Bool _shouldTransitionToVisibleWhenReady;
+    _Bool _shouldPresentUsingViewService;
     _Bool _dismissing;
     _Bool _onScreen;
     MPMediaControlsConfiguration *_configuration;
     CDUnknownBlockType _routingCornerViewTappedBlock;
+    CDUnknownBlockType _homeGestureDismissalAllowedBlock;
     MediaControlsEndpointsManager *_endpointsManager;
     MPAVRoutingViewController *_routingViewController;
     MPAVEndpointRoute *_selectedRoute;
@@ -39,6 +41,8 @@
 @property(retain, nonatomic) MediaControlsEndpointsManager *endpointsManager; // @synthesize endpointsManager=_endpointsManager;
 @property(nonatomic, getter=isOnScreen) _Bool onScreen; // @synthesize onScreen=_onScreen;
 @property(nonatomic, getter=isDismissing) _Bool dismissing; // @synthesize dismissing=_dismissing;
+@property(nonatomic) _Bool shouldPresentUsingViewService; // @synthesize shouldPresentUsingViewService=_shouldPresentUsingViewService;
+@property(copy, nonatomic) CDUnknownBlockType homeGestureDismissalAllowedBlock; // @synthesize homeGestureDismissalAllowedBlock=_homeGestureDismissalAllowedBlock;
 @property(copy, nonatomic) CDUnknownBlockType routingCornerViewTappedBlock; // @synthesize routingCornerViewTappedBlock=_routingCornerViewTappedBlock;
 @property(retain, nonatomic) MPMediaControlsConfiguration *configuration; // @synthesize configuration=_configuration;
 - (void).cxx_destruct;
@@ -50,8 +54,8 @@
 - (void)_setSelectedRoute:(id)arg1 isUserSelected:(_Bool)arg2;
 - (void)_setupRoutingViewController;
 - (void)_setupEndpointsManager;
-- (void)_updateSupportedModesForSelectedMediaControlsPanelViewController;
-- (void)_updateModesForSelectedMediaControlsPanelViewController;
+- (void)_updateSupportedModesForSelectedPlatterViewController;
+- (void)_updateModesForSelectedPlatterViewController;
 - (void)_supportedModesForSelectedRoute:(unsigned long long *)arg1 selectedMode:(long long *)arg2;
 - (void)_updateEndpointRouteForOutputDeviceDataSource:(id)arg1;
 - (void)_assignRouteViewControllerToSelectedPanelViewController;
@@ -68,26 +72,34 @@
 - (long long)defaultSelectedItemIndexForCollectionViewController:(id)arg1;
 - (id)mediaControlsCollectionViewController:(id)arg1 viewControllerForItemAtIndex:(long long)arg2;
 - (long long)numberOfItemsInCollectionViewController:(id)arg1;
+- (double)preferredItemHeightGivenWidth:(double)arg1;
+- (double)preferredItemHeight;
 - (void)_transitionToVisible:(_Bool)arg1;
 - (void)reloadData;
 - (void)setDisplayMode:(long long)arg1;
 - (void)updateContentInsets;
-- (void)dismissMediaControlsPanelViewController:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)dismissPlatterViewController:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)routingViewController:(id)arg1 didPickRoute:(id)arg2;
-- (void)mediaControlsPanelViewController:(id)arg1 willToggleRoutingPicker:(_Bool)arg2;
-- (void)mediaControlsPanelViewController:(id)arg1 didToggleRoutingPicker:(_Bool)arg2;
-- (void)stopPrewarming;
-- (void)startPrewarming;
-- (void)didSelectRoute:(id)arg1;
+- (void)platterViewController:(id)arg1 homeGestureDismisalAllowedDidChange:(_Bool)arg2;
+- (_Bool)shouldPresentUsingViewServicePlatterViewController:(id)arg1;
+- (id)platterViewController:(id)arg1 presentingViewForPresentedViewController:(id)arg2;
+- (void)platterViewController:(id)arg1 willToggleRoutingPicker:(_Bool)arg2;
+- (void)platterViewController:(id)arg1 didToggleRoutingPicker:(_Bool)arg2;
+- (void)dismissPresentedContentAnimated:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
+- (_Bool)canDismissPresentedContent;
 @property(readonly, nonatomic) _Bool providesOwnPlatter;
 @property(readonly, nonatomic) double preferredExpandedContentWidth;
 @property(readonly, nonatomic) double preferredExpandedContentHeight;
+- (void)stopPrewarming;
+- (void)startPrewarming;
+- (void)didSelectRoute:(id)arg1;
 - (void)viewDidLayoutSubviews;
 - (void)viewDidDisappear:(_Bool)arg1;
 - (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLoad;
 - (void)dealloc;
+- (id)init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

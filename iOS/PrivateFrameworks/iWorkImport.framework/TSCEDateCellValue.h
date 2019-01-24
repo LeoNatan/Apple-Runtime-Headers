@@ -12,9 +12,9 @@ __attribute__((visibility("hidden")))
     struct TSCEDateValue *_dateValue;
 }
 
-- (void)encodeToArchive:(struct DateCellValueArchive *)arg1;
+-     // Error parsing type: v24@0:8^{DateCellValueArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{FormatStructArchive}dBB}16, name: encodeToArchive:
 - (void)setPopulatedCustomFormat:(id)arg1;
-- (id)initWithArchive:(const struct DateCellValueArchive *)arg1 locale:(id)arg2;
+-     // Error parsing type: @32@0:8r^{DateCellValueArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{FormatStructArchive}dBB}16@24, name: initWithArchive:locale:
 - (long long)compareToCellValue:(id)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;

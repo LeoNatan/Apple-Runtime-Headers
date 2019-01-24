@@ -15,10 +15,10 @@ __attribute__((visibility("hidden")))
     _Bool _cacheIsValid;
     int _cachedVerticalAlignment;
     int _cachedParagraphAlignment;
-    unsigned int _cachedAutoSizeFlags;
     struct TSUCellCoord _cachedCellID;
     TSTCellStyle *_cachedCellStyle;
     TSWPParagraphStyle *_cachedTextStyle;
+    unsigned long long _cachedAutoSizeFlags;
     TSWPPadding *_cachedPadding;
     struct TSUCellRect _cachedMergeRange;
     struct TSUCellRect _cachedMaskSpillRange;
@@ -31,7 +31,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) TSWPPadding *cachedPadding; // @synthesize cachedPadding=_cachedPadding;
 @property(nonatomic) struct TSUCellRect cachedMaskSpillRange; // @synthesize cachedMaskSpillRange=_cachedMaskSpillRange;
 @property(nonatomic) struct CGRect cachedMaskRect; // @synthesize cachedMaskRect=_cachedMaskRect;
-@property(nonatomic) unsigned int cachedAutoSizeFlags; // @synthesize cachedAutoSizeFlags=_cachedAutoSizeFlags;
+@property(nonatomic) unsigned long long cachedAutoSizeFlags; // @synthesize cachedAutoSizeFlags=_cachedAutoSizeFlags;
 @property(nonatomic) struct TSUCellRect cachedMergeRange; // @synthesize cachedMergeRange=_cachedMergeRange;
 @property(nonatomic) int cachedParagraphAlignment; // @synthesize cachedParagraphAlignment=_cachedParagraphAlignment;
 @property(nonatomic) int cachedVerticalAlignment; // @synthesize cachedVerticalAlignment=_cachedVerticalAlignment;

@@ -69,7 +69,6 @@ __attribute__((visibility("hidden")))
 - (id)_dataFromPressesEvent:(id)arg1;
 - (void)_forwardFocusMovementAction:(id)arg1;
 - (id)preferredFocusEnvironments;
-- (void)viewWillMoveToWindow:(id)arg1;
 - (void)__restoreStateForSession:(id)arg1 restorationAnchor:(id)arg2;
 - (void)__saveStateForSession:(id)arg1 restorationAnchor:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (_Bool)_validateSessionIdentifier:(id)arg1 restorationAnchor:(id)arg2 functionName:(const char *)arg3;

@@ -6,17 +6,15 @@
 
 #import <AppKit/NSTextFieldCell.h>
 
-@class NSAppearance, NSColor;
+@class NSColor;
 
 __attribute__((visibility("hidden")))
 @interface NSColorSwatchCell : NSTextFieldCell
 {
     NSColor *_swatchColor;
     struct CGSize _swatchSize;
-    NSAppearance *_appearanceForRenderingColor;
 }
 
-@property(retain) NSAppearance *appearanceForRenderingColor; // @synthesize appearanceForRenderingColor=_appearanceForRenderingColor;
 @property(retain) NSColor *swatchColor; // @synthesize swatchColor=_swatchColor;
 @property struct CGSize swatchSize; // @synthesize swatchSize=_swatchSize;
 - (unsigned long long)hitTestForEvent:(id)arg1 inRect:(struct CGRect)arg2 ofView:(id)arg3;

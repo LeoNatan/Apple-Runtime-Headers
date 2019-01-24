@@ -44,6 +44,7 @@
 @property(readonly, nonatomic) BOOL hasMinibatchStats;
 @property(readonly, nonatomic) BOOL hasModelInfo;
 @property(nonatomic) BOOL hasTimestamp;
+- (float)precisionAtK:(unsigned long long)arg1;
 
 @end
 

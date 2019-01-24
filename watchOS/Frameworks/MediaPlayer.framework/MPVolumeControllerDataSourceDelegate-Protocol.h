@@ -10,6 +10,7 @@
 @protocol MPVolumeControllerDataSource;
 
 @protocol MPVolumeControllerDataSourceDelegate <NSObject>
+- (void)volumeControllerDataSource:(id <MPVolumeControllerDataSource>)arg1 didChangeVolumeCapabilities:(unsigned int)arg2;
 - (void)volumeControllerDataSource:(id <MPVolumeControllerDataSource>)arg1 didChangeVolumeControlAvailability:(_Bool)arg2;
 - (void)volumeControllerDataSource:(id <MPVolumeControllerDataSource>)arg1 didChangeVolumeAudioCategory:(NSString *)arg2;
 - (void)volumeControllerDataSource:(id <MPVolumeControllerDataSource>)arg1 didChangeEUVolumeLimitEnforced:(_Bool)arg2;

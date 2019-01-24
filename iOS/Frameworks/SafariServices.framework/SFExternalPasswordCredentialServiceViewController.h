@@ -32,7 +32,6 @@ __attribute__((visibility("hidden")))
 - (_Bool)contextShouldAllowMultipleBiometricFailures:(id)arg1;
 - (_Bool)contextShouldAllowPasscodeFallback:(id)arg1;
 - (_Bool)contextRequiresSessionBasedAuthentication:(id)arg1;
-- (_Bool)authenticationEnabledForContext:(id)arg1;
 - (_Bool)displayMessageAsTitleForContext:(id)arg1;
 - (id)passcodePromptForContext:(id)arg1;
 - (id)authenticationMessageForContext:(id)arg1;

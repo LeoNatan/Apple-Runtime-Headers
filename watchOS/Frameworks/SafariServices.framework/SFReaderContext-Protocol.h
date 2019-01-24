@@ -6,17 +6,20 @@
 
 #import <SafariServices/NSObject-Protocol.h>
 
-@class NSDictionary, NSString, NSURL, WBSReaderFontManager;
+@class NSDictionary, NSString, NSURL, WBSReaderConfigurationManager, WBSReaderFont, WBSReaderFontManager;
 
 @protocol SFReaderContext <NSObject>
+- (void)resetReaderTextSize;
 - (void)decreaseReaderTextSize;
 - (void)increaseReaderTextSize;
-- (void)setReaderTheme:(NSString *)arg1;
+- (_Bool)canDecreaseReaderTextSize;
+- (_Bool)canIncreaseReaderTextSize;
+- (void)setReaderTheme:(int)arg1 forAppearance:(int)arg2;
 - (void)setReaderLanguageTag:(NSString *)arg1;
-- (void)setReaderFont:(NSString *)arg1;
+- (void)setReaderFont:(WBSReaderFont *)arg1;
 - (void)collectReaderContentForMailWithCompletion:(void (^)(NSString *))arg1;
 - (WBSReaderFontManager *)fontManager;
-- (NSDictionary *)configuration;
+- (WBSReaderConfigurationManager *)configurationManager;
 - (NSURL *)readerURL;
 - (void)clearUnusedReaderResourcesSoon;
 - (void)loadNewArticle;

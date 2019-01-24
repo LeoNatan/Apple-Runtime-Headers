@@ -153,6 +153,7 @@
 - (void)_allocAuxiliaryStorage;
 - (void)_failsafeAllocAuxiliaryStorage;
 - (id)initWithISIcon:(id)arg1;
+- (id)_initWithIconRef:(struct OpaqueIconRef *)arg1 includeThumbnail:(BOOL)arg2;
 - (id)initWithIconRef:(struct OpaqueIconRef *)arg1;
 - (id)_initWithIconRef:(void *)arg1;
 - (id)_initWithData:(id)arg1 fileType:(id)arg2 hfsType:(id)arg3;

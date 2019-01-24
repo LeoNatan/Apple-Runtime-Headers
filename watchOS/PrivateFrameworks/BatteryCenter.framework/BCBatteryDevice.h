@@ -24,6 +24,7 @@
     _Bool _internal;
     _Bool _powerSource;
     _Bool _approximatesPercentCharge;
+    _Bool _wirelesslyCharging;
     _Bool _fake;
     int _vendor;
     int _powerSourceState;
@@ -42,6 +43,7 @@
 @property(nonatomic) int transportType; // @synthesize transportType=_transportType;
 @property(readonly, copy, nonatomic) NSString *matchIdentifier; // @synthesize matchIdentifier=_matchIdentifier;
 @property(copy, nonatomic) NSString *groupName; // @synthesize groupName=_groupName;
+@property(nonatomic, getter=isWirelesslyCharging) _Bool wirelesslyCharging; // @synthesize wirelesslyCharging=_wirelesslyCharging;
 @property(nonatomic) unsigned int accessoryCategory; // @synthesize accessoryCategory=_accessoryCategory;
 @property(nonatomic) unsigned int parts; // @synthesize parts=_parts;
 @property(nonatomic) _Bool approximatesPercentCharge; // @synthesize approximatesPercentCharge=_approximatesPercentCharge;

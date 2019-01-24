@@ -19,6 +19,8 @@
 - (UIViewController *)viewControllerForPopoverPresentationFromInlineInkPicker:(PKInlineInkPicker *)arg1;
 - (void)inlineInkPicker:(PKInlineInkPicker *)arg1 didChangeSizeState:(unsigned long long)arg2;
 - (void)inlineInkPicker:(PKInlineInkPicker *)arg1 didSelectColor:(UIColor *)arg2;
+- (_Bool)inlineInkPickerShouldChangeToolColorForSelectedColor:(PKInlineInkPicker *)arg1;
+- (void)inlineInkPickerDidToggleRuler:(PKInlineInkPicker *)arg1;
 - (void)inlineInkPicker:(PKInlineInkPicker *)arg1 didSelectTool:(NSString *)arg2;
 @end
 

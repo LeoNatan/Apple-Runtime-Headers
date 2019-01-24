@@ -21,6 +21,7 @@
     _Bool _requiresSetup;
     _Bool _showingMeContact;
     _Bool _allowsDisplayModePickerActions;
+    _Bool _allowsEditPhoto;
     CNContact *_contact;
     NSArray *_displayedPropertyKeys;
     id <CNContactViewControllerDelegate> _delegate;
@@ -56,6 +57,7 @@
 + (id)descriptorForRequiredKeys;
 @property(retain, nonatomic) UIViewController *contactHeaderViewController; // @synthesize contactHeaderViewController=_contactHeaderViewController;
 @property(retain, nonatomic) UIView *contactHeaderView; // @synthesize contactHeaderView=_contactHeaderView;
+@property(nonatomic) _Bool allowsEditPhoto; // @synthesize allowsEditPhoto=_allowsEditPhoto;
 @property(nonatomic) _Bool allowsDisplayModePickerActions; // @synthesize allowsDisplayModePickerActions=_allowsDisplayModePickerActions;
 @property(retain, nonatomic) NSString *primaryPropertyKey; // @synthesize primaryPropertyKey=_primaryPropertyKey;
 @property(retain, nonatomic) CNContactFormatter *contactFormatter; // @synthesize contactFormatter=_contactFormatter;

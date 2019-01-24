@@ -6,9 +6,9 @@
 
 #import <iWorkImport/NSObject-Protocol.h>
 
-@class TSCH3DGLFramebuffer;
+@class TSCH3DFramebuffer;
 
 @protocol TSCH3DPipelineLinkable <NSObject>
-- (TSCH3DGLFramebuffer *)output;
+- (TSCH3DFramebuffer *)output;
 @end
 

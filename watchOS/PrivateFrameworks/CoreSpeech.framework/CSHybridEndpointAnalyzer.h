@@ -9,7 +9,7 @@
 #import <CoreSpeech/CSAssetManagerDelegate-Protocol.h>
 #import <CoreSpeech/CSEndpointAnalyzerImpl-Protocol.h>
 
-@class CSAsset, CSServerEndpointFeatures, NSDate, NSMutableArray, NSString;
+@class CSAsset, CSServerEndpointFeatures, NSDate, NSDictionary, NSMutableArray, NSString;
 @protocol CSEndpointAnalyzerDelegate, OS_dispatch_queue;
 
 @interface CSHybridEndpointAnalyzer : NSObject <CSAssetManagerDelegate, CSEndpointAnalyzerImpl>
@@ -35,6 +35,7 @@
     NSObject<OS_dispatch_queue> *_stateSerialQueue;
     unsigned int _currentRequestSampleRate;
     unsigned int _vtEndInSampleCount;
+    NSDictionary *_recordContext;
     NSDate *_firstAudioPacketTimestamp;
     NSObject<OS_dispatch_queue> *_silencePosteriorGeneratorQueue;
     double _startWaitTime;
@@ -58,6 +59,7 @@
 @property(nonatomic) _Bool recordingDidStop; // @synthesize recordingDidStop=_recordingDidStop;
 @property(nonatomic) _Bool didTimestampFirstAudioPacket; // @synthesize didTimestampFirstAudioPacket=_didTimestampFirstAudioPacket;
 @property(retain, nonatomic) NSDate *firstAudioPacketTimestamp; // @synthesize firstAudioPacketTimestamp=_firstAudioPacketTimestamp;
+@property(retain, nonatomic) NSDictionary *recordContext; // @synthesize recordContext=_recordContext;
 @property(nonatomic) double hepAudioOriginInMs; // @synthesize hepAudioOriginInMs=_hepAudioOriginInMs;
 @property(nonatomic) unsigned int vtEndInSampleCount; // @synthesize vtEndInSampleCount=_vtEndInSampleCount;
 @property(nonatomic) double vtExtraAudioAtStartInMs; // @synthesize vtExtraAudioAtStartInMs=_vtExtraAudioAtStartInMs;
@@ -98,7 +100,7 @@
 @property(readonly, nonatomic) double lastEndOfVoiceActivityTime;
 - (void)reset;
 - (void)_readClientLagParametersFromHEPAsset:(id)arg1;
-- (void)resetForNewRequestWithSampleRate:(unsigned int)arg1;
+- (void)resetForNewRequestWithSampleRate:(unsigned int)arg1 recordContext:(id)arg2;
 - (void)recordingStoppedForReason:(unsigned int)arg1;
 - (void)preheat;
 - (void)handleVoiceTriggerWithActivationInfo:(id)arg1;

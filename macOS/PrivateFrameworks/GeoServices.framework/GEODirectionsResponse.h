@@ -21,6 +21,7 @@
     GEOClientMetrics *_clientMetrics;
     NSString *_dataVersion;
     GEOPDDatasetABStatus *_datasetAbStatus;
+    NSString *_debugData;
     GEOTransitDecoderData *_decoderData;
     NSData *_directionsResponseID;
     GEORouteDisplayHints *_displayHints;
@@ -73,6 +74,7 @@
 @property(retain, nonatomic) NSMutableArray *suggestedRoutes; // @synthesize suggestedRoutes=_suggestedRoutes;
 @property(retain, nonatomic) NSString *dataVersion; // @synthesize dataVersion=_dataVersion;
 @property(retain, nonatomic) NSString *serviceVersion; // @synthesize serviceVersion=_serviceVersion;
+@property(retain, nonatomic) NSString *debugData; // @synthesize debugData=_debugData;
 @property(retain, nonatomic) NSData *nonRecommendedRoutesCache; // @synthesize nonRecommendedRoutesCache=_nonRecommendedRoutesCache;
 @property(retain, nonatomic) NSMutableArray *trafficCameras; // @synthesize trafficCameras=_trafficCameras;
 @property(retain, nonatomic) GEOPDDatasetABStatus *datasetAbStatus; // @synthesize datasetAbStatus=_datasetAbStatus;
@@ -109,6 +111,7 @@
 - (void)clearSuggestedRoutes;
 @property(readonly, nonatomic) BOOL hasDataVersion;
 @property(readonly, nonatomic) BOOL hasServiceVersion;
+@property(readonly, nonatomic) BOOL hasDebugData;
 @property(nonatomic) BOOL hasHasKhSegments;
 @property(nonatomic) BOOL hasKhSegments; // @synthesize hasKhSegments=_hasKhSegments;
 @property(readonly, nonatomic) BOOL hasNonRecommendedRoutesCache;

@@ -31,7 +31,7 @@
 @property(readonly, nonatomic) _Bool unlockedSinceBoot;
 @property(readonly, nonatomic) _Bool isLocked;
 - (void)_loadDeviceInfo;
-- (id)init;
+- (id)_init;
 
 @end
 

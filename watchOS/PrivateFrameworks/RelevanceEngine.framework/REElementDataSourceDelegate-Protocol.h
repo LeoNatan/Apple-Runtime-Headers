@@ -15,7 +15,6 @@
 - (void)refreshElement:(REElement *)arg1;
 - (void)removeElementsWithIds:(NSArray *)arg1;
 - (void)reloadElement:(REElement *)arg1;
-- (void)dataBecameAvailable;
 - (void)addElements:(NSArray *)arg1 toSectionWithIdentifier:(NSString *)arg2;
 - (void)invalidateElements;
 - (NSObject<OS_dispatch_queue> *)elementOperationQueue;

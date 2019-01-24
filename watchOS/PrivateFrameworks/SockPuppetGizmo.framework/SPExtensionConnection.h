@@ -211,6 +211,8 @@
 - (_Bool)_resumeSendQueueIfSuspended;
 - (void)invalidate;
 - (void)dealloc;
+- (void)tearDownAccessibilityPortIfNecessaryWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)exchangeAccessibilityPortInformation:(id)arg1 replyHandler:(CDUnknownBlockType)arg2;
 - (void)setInProcessNotificationHostClientIdentifier:(id)arg1;
 - (id)extensionDirect;
 - (void)useRemoteInterface:(CDUnknownBlockType)arg1;

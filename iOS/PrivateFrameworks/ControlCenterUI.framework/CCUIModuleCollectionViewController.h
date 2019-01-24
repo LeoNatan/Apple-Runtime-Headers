@@ -24,15 +24,19 @@
     CCUILayoutOptions *_layoutOptions;
     NSDictionary *_moduleViewControllerByIdentifier;
     NSDictionary *_moduleContainerViewByIdentifier;
+    NSHashTable *_homeGestureDismissalAllowedModules;
     NSHashTable *_currentModules;
     NSHashTable *_expandedModules;
     NSObject<OS_dispatch_group> *_moduleCloseDispatchGroup;
     CCUIExpandedModuleBackgroundView *_sharedExpandedModuleBackgroundView;
+    _Bool _homeGestureDismissalAllowed;
     id <CCUIModuleCollectionViewControllerDelegate> _delegate;
 }
 
+@property(readonly, nonatomic, getter=isHomeGestureDismissalAllowed) _Bool homeGestureDismissalAllowed; // @synthesize homeGestureDismissalAllowed=_homeGestureDismissalAllowed;
 @property(nonatomic) __weak id <CCUIModuleCollectionViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (void)_updateHomeGestureDismissalAllowed;
 - (_Bool)_shouldApplyBackgroundEffects;
 - (long long)_interfaceOrientation;
 - (id)_currentLayoutOptions;
@@ -78,6 +82,7 @@
 - (void)dismissPresentedContentAnimated:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)dismissExpandedModuleAnimated:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)expandModuleWithIdentifier:(id)arg1;
+- (void)didUpdateHomeGestureDismissalAllowed:(_Bool)arg1 forModuleWithIdentifier:(id)arg2;
 - (void)willResignActive;
 - (void)willBecomeActive;
 @property(retain, nonatomic) CCUIModuleCollectionView *moduleCollectionView; // @dynamic moduleCollectionView;

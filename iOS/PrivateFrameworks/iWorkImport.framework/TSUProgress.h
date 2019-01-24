@@ -12,12 +12,14 @@
 __attribute__((visibility("hidden")))
 @interface TSUProgress : NSObject
 {
-    NSMutableSet *mProgressObservers;
-    NSObject<OS_dispatch_queue> *mProgressObserversQueue;
-    NSString *mMessage;
+    NSMutableSet *_progressObservers;
+    NSObject<OS_dispatch_queue> *_progressObserversQueue;
+    NSObject<OS_dispatch_queue> *_progressObserversValueQueue;
+    NSString *_message;
 }
 
-@property(copy) NSString *message; // @synthesize message=mMessage;
+@property(copy) NSString *message; // @synthesize message=_message;
+- (void).cxx_destruct;
 - (double)protected_minProgressObserverValueInterval;
 - (_Bool)protected_hasProgressObservers;
 - (void)protected_progressDidChange;
@@ -26,8 +28,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, getter=isIndeterminate) _Bool indeterminate;
 @property(readonly) double maxValue;
 @property(readonly) double value;
-- (void)dealloc;
-- (id)init;
+- (id)initForSubclass;
 
 @end
 

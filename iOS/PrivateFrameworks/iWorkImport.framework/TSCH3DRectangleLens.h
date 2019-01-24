@@ -29,7 +29,7 @@ __attribute__((visibility("hidden")))
 - (void)setPerPixel:(box_0260e9b3 *)arg1;
 - (void)deviceNormalize;
 - (void)normalize;
-- (struct FrustumRect)frustumRect;
+- (id)frustumRect;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)init;

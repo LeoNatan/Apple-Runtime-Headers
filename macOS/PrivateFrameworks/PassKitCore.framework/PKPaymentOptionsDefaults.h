@@ -34,6 +34,9 @@
 @property(retain, nonatomic) CNContact *defaultContactPhone; // @synthesize defaultContactPhone=_defaultContactPhone;
 - (void)deleteDefaultContactEmail;
 @property(retain, nonatomic) CNContact *defaultContactEmail; // @synthesize defaultContactEmail=_defaultContactEmail;
+- (id)_lastUpdatedDatesForBillingAddresses;
+- (void)updateLastUpdatedDate:(id)arg1 forPrimaryAccountIdentifier:(id)arg2;
+- (id)lastUpdatedDateForPrimaryAccountIdentifier:(id)arg1;
 - (void)_hardDeleteDefaultBillingAddress;
 - (void)deleteDefaultBillingAddress:(id)arg1;
 - (void)setDefaultBillingAddress:(id)arg1 forPrimaryAccountIdentifier:(id)arg2;

@@ -40,6 +40,7 @@
     _MKPlaceActionButtonController *_headerSecondaryButtonController;
     GEOAutomobileOptions *_automobileOptions;
     GEOTransitOptions *_transitOptions;
+    float _headerSecondaryNameLabelPadding;
     _MKPlaceActionButtonController *_headerTertiaryButtonController;
     CLLocation *_location;
 }
@@ -47,6 +48,7 @@
 + (float)headerHeightInMinimalMode;
 @property(retain, nonatomic) CLLocation *location; // @synthesize location=_location;
 @property(retain, nonatomic) _MKPlaceActionButtonController *headerTertiaryButtonController; // @synthesize headerTertiaryButtonController=_headerTertiaryButtonController;
+@property(readonly, nonatomic) float headerSecondaryNameLabelPadding; // @synthesize headerSecondaryNameLabelPadding=_headerSecondaryNameLabelPadding;
 @property(retain, nonatomic) GEOTransitOptions *transitOptions; // @synthesize transitOptions=_transitOptions;
 @property(retain, nonatomic) GEOAutomobileOptions *automobileOptions; // @synthesize automobileOptions=_automobileOptions;
 @property(retain, nonatomic) _MKPlaceActionButtonController *headerSecondaryButtonController; // @synthesize headerSecondaryButtonController=_headerSecondaryButtonController;

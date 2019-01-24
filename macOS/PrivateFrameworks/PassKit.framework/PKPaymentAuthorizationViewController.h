@@ -37,6 +37,7 @@
 - (void).cxx_destruct;
 - (void)extensionRemoteViewController:(id)arg1 didTerminateWithError:(id)arg2;
 - (void)authorizationDidAuthorizePeerPaymentQuote:(id)arg1;
+- (void)connectionDidOpen;
 - (void)authorizationDidPresent;
 - (void)authorizationDidSelectPaymentMethod:(id)arg1;
 - (void)authorizationDidSelectShippingAddress:(id)arg1;

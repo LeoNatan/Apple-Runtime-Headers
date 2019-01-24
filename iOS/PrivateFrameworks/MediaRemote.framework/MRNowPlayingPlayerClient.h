@@ -20,7 +20,7 @@
     NSDictionary *_nowPlayingInfo;
     MRNowPlayingArtwork *_nowPlayingArtwork;
     unsigned int _playbackState;
-    double _playbackStateSetToPlayTimestamp;
+    NSDate *_playbackStateDate;
     unsigned long long _capabilities;
     NSDate *_lastReceivedCommandDate;
     _Bool _coalescingInvalidations;
@@ -67,7 +67,8 @@
 - (void)unsetCoalescingInvalidations;
 - (_Bool)testAndSetCoalescingInvalidations;
 - (void)updatePlayer:(id)arg1;
-@property(nonatomic) unsigned int playbackState;
+@property(readonly, nonatomic) unsigned int playbackState;
+- (void)updatePlaybackState:(unsigned int)arg1 date:(id)arg2;
 @property(nonatomic) double invalidatationTimestamp;
 @property(copy, nonatomic) NSArray *supportedCommands;
 @property(retain, nonatomic) MRNowPlayingArtwork *nowPlayingArtwork;

@@ -7,11 +7,12 @@
 #import <EventKit/EKObject.h>
 
 #import <EventKit/EKIdentityProtocol-Protocol.h>
+#import <EventKit/EKParticipantSemanticIdentifierGeneratorDelegate-Protocol.h>
 #import <EventKit/NSCopying-Protocol.h>
 
 @class EKCalendarItem, NSPredicate, NSString, NSURL;
 
-@interface EKParticipant : EKObject <EKIdentityProtocol, NSCopying>
+@interface EKParticipant : EKObject <EKParticipantSemanticIdentifierGeneratorDelegate, EKIdentityProtocol, NSCopying>
 {
     EKCalendarItem *_owner;
 }
@@ -41,6 +42,8 @@
 @property(readonly, nonatomic) int participantRole;
 @property(readonly, nonatomic) int participantStatus;
 @property(readonly, nonatomic) int participantType;
+- (id)url;
+- (id)displayName;
 @property(copy, nonatomic) NSString *lastName;
 @property(copy, nonatomic) NSString *firstName;
 @property(copy, nonatomic) NSString *phoneNumber;

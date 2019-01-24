@@ -12,7 +12,7 @@
 #import <PassKitUI/PKPeerPaymentAccountResolutionControllerDelegate-Protocol.h>
 #import <PassKitUI/PKSwitchSpinnerTableCellDelegate-Protocol.h>
 
-@class NSArray, NSMutableDictionary, NSString, PKPaymentPreference, PKPaymentPreferenceCard, PKPaymentPreferencesViewController, PKPaymentSetupAboutViewController, PKPeerPaymentAccount, PKPeerPaymentAccountResolutionController, PKPeerPaymentWebService, PSSpecifier;
+@class NSArray, NSMutableDictionary, NSString, PKExpressPassController, PKPaymentPreference, PKPaymentPreferenceCard, PKPaymentPreferencesViewController, PKPaymentSetupAboutViewController, PKPeerPaymentAccount, PKPeerPaymentAccountResolutionController, PKPeerPaymentWebService, PSSpecifier;
 @protocol PKPassLibraryDataProvider, PKPassbookPeerPaymentSettingsDelegate, PKPassbookSettingsDataSource, PKPassbookSettingsDelegate, PKPaymentDataProvider, PKPaymentOptionsProtocol;
 
 @interface PKPassbookSettingsController : NSObject <PKPaymentServiceDelegate, PKPeerPaymentAccountResolutionControllerDelegate, PKPaymentDataProviderDelegate, PKSwitchSpinnerTableCellDelegate, PKPaymentPassTableCellDelegate>
@@ -50,30 +50,32 @@
     PKPeerPaymentAccountResolutionController *_peerPaymentAccountResolutionController;
     PKPeerPaymentAccount *_peerPaymentAccount;
     _Bool _registeringForPeerPayment;
-    NSArray *_expressTransitPasses;
-    NSString *_defaultExpressTransitPassIdentifier;
+    PKExpressPassController *_expressPassController;
+    _Bool _hasExpressCapablePass;
+    NSString *_expressTransitSubtitleText;
+    NSString *_expressTransitSectionFooterText;
     PSSpecifier *_defaultExpressTransitSpecifier;
-    NSMutableDictionary *_latestTransitPassProperties;
+    NSMutableDictionary *_lastestTransitBalanceModel;
+    id <PKPaymentDataProvider> _companionPaymentDataProvider;
     id <PKPassbookSettingsDelegate> _delegate;
 }
 
 @property(nonatomic) id <PKPassbookSettingsDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (void)_updateBalancesWithServerBalances:(id)arg1 transitPassProperties:(id)arg2 forPassWithUniqueIdentifier:(id)arg3;
+- (void)_fetchBalancesAndTransitPassPropertiesForPass:(id)arg1 withDataProvider:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (int)_paymentSetupContextForSettingsContext:(int)arg1;
 - (void)_transitPropertiesForPaymentPass:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)_performPhoneToWatchProvisioningForPaymentPass:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)_setCardAddProvisioningButtonEnabled:(_Bool)arg1 forPaymentPass:(id)arg2;
 - (void)_requestDelegatePresentViewController:(id)arg1;
 - (void)_handleProvisioningError:(id)arg1 viewController:(id)arg2;
-- (void)_presentProvisioningPaymentPassNavController:(id)arg1 paymentPass:(id)arg2;
+- (void)_presentPaymentSetupViewController:(id)arg1 paymentPass:(id)arg2;
 - (void)addButtonPressedForPaymentPass:(id)arg1;
-- (void)_finishDefaultExpressTransitUpdateWithContainer:(id)arg1 preference:(id)arg2;
-- (void)_handleDefaultExpressTransitPassChangedTo:(id)arg1 withContainer:(id)arg2 preference:(id)arg3;
-- (void)_showExpressTransitOptions:(id)arg1;
+- (void)openExpressTransitSettings:(id)arg1;
 - (id)_defaultExpressTransitPassDescription;
 - (id)_defaultExpressTransitSpecifier;
 - (id)_transitDefaultsGroupSpecifiers;
-- (id)_expressTransitFooter;
 - (_Bool)_useAlternateExpressTitle;
 - (void)switchSpinnerCell:(id)arg1 hasToggledSwitch:(_Bool)arg2;
 - (id)_peerPaymentSwitchSpecifier;
@@ -89,6 +91,7 @@
 - (void)peerPaymentAccountResolutionController:(id)arg1 requestsDismissCurrentViewControllerAnimated:(_Bool)arg2;
 - (void)peerPaymentAccountResolutionController:(id)arg1 requestsPresentViewController:(id)arg2 animated:(_Bool)arg3;
 - (void)_peerPaymentAccountDidChangeNotification:(id)arg1;
+- (void)paymentPassWithUniqueIdentifier:(id)arg1 didReceiveBalanceUpdate:(id)arg2;
 - (void)paymentPassWithUniqueIdentifier:(id)arg1 didUpdateWithTransitPassProperties:(id)arg2;
 - (id)_displayableStringForLabeledValue:(id)arg1;
 - (id)_getDefaultContactPhone;
@@ -143,9 +146,8 @@
 - (void)_updateCardsGroupSpecifier;
 - (void)_updateAddButtonSpecifier;
 - (void)_updateCompanionPassesAddButton;
+- (void)_expressPassDidChange;
 - (void)_regionConfigurationDidChangeNotification;
-- (void)_saveLatestTransitProperties:(id)arg1 forPass:(id)arg2;
-- (id)_latestTransitProperties:(id)arg1;
 - (void)dealloc;
 - (id)initWithDelegate:(id)arg1 dataSource:(id)arg2 context:(int)arg3;
 

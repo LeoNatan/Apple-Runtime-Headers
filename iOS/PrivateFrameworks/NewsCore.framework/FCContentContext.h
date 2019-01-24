@@ -24,6 +24,7 @@
     id <FCPPTContext> _pptContext;
     id <FCBackgroundTaskable> _backgroundTaskable;
     id <FCWebArchiveSource> _webArchiveSource;
+    long long _preferredMediaQuality;
     FCContextConfiguration *_contextConfiguration;
     NSString *_contentDirectory;
     NSURL *_assetCacheDirectoryURL;
@@ -39,6 +40,7 @@
 @property(retain, nonatomic) NSURL *assetCacheDirectoryURL; // @synthesize assetCacheDirectoryURL=_assetCacheDirectoryURL;
 @property(copy, nonatomic) NSString *contentDirectory; // @synthesize contentDirectory=_contentDirectory;
 @property(copy, nonatomic) FCContextConfiguration *contextConfiguration; // @synthesize contextConfiguration=_contextConfiguration;
+@property(readonly, nonatomic) long long preferredMediaQuality; // @synthesize preferredMediaQuality=_preferredMediaQuality;
 @property(readonly, nonatomic) __weak id <FCBackgroundTaskable> backgroundTaskable; // @synthesize backgroundTaskable=_backgroundTaskable;
 @property(readonly, nonatomic) id <FCPPTContext> pptContext; // @synthesize pptContext=_pptContext;
 @property(readonly, nonatomic) FCNetworkBehaviorMonitor *networkBehaviorMonitor; // @synthesize networkBehaviorMonitor=_networkBehaviorMonitor;
@@ -55,6 +57,7 @@
 @property(readonly, nonatomic) FCTagController *tagController; // @synthesize tagController=_tagController;
 @property(readonly, nonatomic) FCArticleController *articleController; // @synthesize articleController=_articleController;
 @property(readonly, nonatomic) FCAssetManager *assetManager; // @synthesize assetManager=_assetManager;
+- (id)magazinesConfigurationManager;
 - (id)news_core_ConfigurationManager;
 @property(readonly, nonatomic) id <FCNewsAppConfigurationManager> appConfigurationManager;
 @property(readonly, nonatomic) id <FCCoreConfigurationManager> configurationManager; // @synthesize configurationManager=_configurationManager;
@@ -63,8 +66,8 @@
 - (void)_updateReachabilityGivenRequirements;
 - (void)networkReachabilityRequirementDidBecomeDirty:(id)arg1;
 - (void)dealloc;
-- (id)initWithConfiguration:(id)arg1 configurationManager:(id)arg2 contentDatabase:(id)arg3 contentHostDirectory:(id)arg4 networkBehaviorMonitor:(id)arg5 setupExcerptURLProtocol:(_Bool)arg6 desiredHeadlineFieldOptions:(unsigned long long)arg7 feedUsage:(long long)arg8 backgroundTaskable:(id)arg9 pptContext:(id)arg10;
-- (id)initWithConfiguration:(id)arg1 configurationManager:(id)arg2 contentHostDirectory:(id)arg3 networkBehaviorMonitor:(id)arg4 desiredHeadlineFieldOptions:(unsigned long long)arg5 feedUsage:(long long)arg6 backgroundTaskable:(id)arg7 pptContext:(id)arg8;
+- (id)initWithConfiguration:(id)arg1 configurationManager:(id)arg2 contentDatabase:(id)arg3 contentHostDirectory:(id)arg4 networkBehaviorMonitor:(id)arg5 setupExcerptURLProtocol:(_Bool)arg6 desiredHeadlineFieldOptions:(unsigned long long)arg7 feedUsage:(long long)arg8 backgroundTaskable:(id)arg9 preferredMediaQuality:(long long)arg10 pptContext:(id)arg11;
+- (id)initWithConfiguration:(id)arg1 configurationManager:(id)arg2 contentHostDirectory:(id)arg3 networkBehaviorMonitor:(id)arg4 desiredHeadlineFieldOptions:(unsigned long long)arg5 feedUsage:(long long)arg6 backgroundTaskable:(id)arg7 preferredMediaQuality:(long long)arg8 pptContext:(id)arg9;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

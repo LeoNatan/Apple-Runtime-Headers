@@ -20,6 +20,7 @@
 @property(retain, nonatomic) _UIStatusBar *statusBar; // @synthesize statusBar=_statusBar;
 - (void).cxx_destruct;
 - (struct CGSize)intrinsicContentSize;
+- (void)statusBarServer:(id)arg1 didReceiveStyleOverrides:(int)arg2;
 - (void)statusBarServer:(id)arg1 didReceiveStatusBarData:(const CDStruct_1916f467 *)arg2 withActions:(int)arg3;
 - (void)forceUpdateData:(_Bool)arg1;
 - (void)forceUpdate:(_Bool)arg1;

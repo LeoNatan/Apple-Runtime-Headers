@@ -22,6 +22,7 @@ __attribute__((visibility("hidden")))
     TSUMutableUUIDSet *_rowUids;
     TSTGroupNode *_parentNode;
     TSTGroupNodeFormatManager *_formatManager;
+    unordered_map_8a2ad1cf _childNodesByRowUid;
 }
 
 + (id)localizedStringForCellValue:(id)arg1 categoryLevel:(unsigned char)arg2 groupBy:(id)arg3;
@@ -78,11 +79,12 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) _Bool isErrorNode;
 @property(readonly, nonatomic) _Bool isBlankNode;
 @property(readonly, nonatomic) _Bool isLeaf;
-- (void)encodeToArchive:(struct CategoryOwnerArchive_GroupByArchive_GroupNodeArchive *)arg1;
+-     // Error parsing type: v24@0:8^{CategoryOwnerArchive_GroupByArchive_GroupNodeArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TST::CategoryOwnerArchive_GroupByArchive_GroupNodeArchive>=^{Arena}ii^{Rep}}{RepeatedPtrField<TSP::UUID>=^{Arena}ii^{Rep}}{RepeatedPtrField<TSCE::CellCoordinateArchive>=^{Arena}ii^{Rep}}^{UUID}^{CategoryOwnerArchive_GroupByArchive_GroupNodeArchive_GroupValueTupleArchive}^{CategoryOwnerArchive_GroupByArchive_GroupNodeArchive_FormatManagerArchive}^{CellValueArchive}}16, name: encodeToArchive:
 - (id)safeChildren;
 - (void)removeChildForKey:(id)arg1;
 - (void)addChild:(id)arg1 withKey:(id)arg2;
-- (id)initWithArchive:(const struct CategoryOwnerArchive_GroupByArchive_GroupNodeArchive *)arg1 forGroupBy:(id)arg2 atLevel:(unsigned char)arg3;
+- (void)dealloc;
+-     // Error parsing type: @36@0:8r^{CategoryOwnerArchive_GroupByArchive_GroupNodeArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TST::CategoryOwnerArchive_GroupByArchive_GroupNodeArchive>=^{Arena}ii^{Rep}}{RepeatedPtrField<TSP::UUID>=^{Arena}ii^{Rep}}{RepeatedPtrField<TSCE::CellCoordinateArchive>=^{Arena}ii^{Rep}}^{UUID}^{CategoryOwnerArchive_GroupByArchive_GroupNodeArchive_GroupValueTupleArchive}^{CategoryOwnerArchive_GroupByArchive_GroupNodeArchive_FormatManagerArchive}^{CellValueArchive}}16@24C32, name: initWithArchive:forGroupBy:atLevel:
 - (id)initWithGroupCellValue:(id)arg1 atLevel:(unsigned char)arg2 groupUid:(UUIDData_5fbc143e)arg3 children:(id)arg4;
 - (id)initAsRootNode;
 @property(readonly, nonatomic) unordered_map_facfd2e8 *aggNodes;

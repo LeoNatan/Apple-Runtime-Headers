@@ -14,7 +14,7 @@
     // Error parsing type: , name: queue
 }
 
-- (CDUnknownBlockType).cxx_destruct;
+- (void).cxx_destruct;
 - (id)init;
 - (void)linkedDataWithCompletionHandler:(CDUnknownBlockType)arg1;
 @property(nonatomic, readonly) NSArray *entities;

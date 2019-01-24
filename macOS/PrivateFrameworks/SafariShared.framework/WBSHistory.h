@@ -37,6 +37,7 @@
 - (void)_removeAllVisitedLinks;
 - (id)_createHistoryStore;
 - (void)_unload;
+- (void)computeFrequentlyVisitedSites:(unsigned long long)arg1 minimalVisitCountScore:(unsigned long long)arg2 blacklist:(id)arg3 whitelist:(id)arg4 options:(unsigned long long)arg5 currentTime:(double)arg6 completionHandler:(CDUnknownBlockType)arg7;
 - (void)searchForUserTypedString:(id)arg1 options:(unsigned long long)arg2 currentTime:(double)arg3 enumerationBlock:(CDUnknownBlockType)arg4 completionHandler:(CDUnknownBlockType)arg5;
 - (void)historyStore:(id)arg1 didRemoveItems:(id)arg2;
 - (void)historyStore:(id)arg1 didRemoveVisits:(id)arg2;
@@ -92,10 +93,11 @@
 - (void)setLastSeenDate:(id)arg1 forCloudClientVersion:(unsigned long long)arg2;
 - (id)lastSeenDateForCloudClientVersion:(unsigned long long)arg1;
 - (void)pruneTombstonesWithEndDatePriorToDate:(id)arg1;
-- (void)replayAndAddTombstone:(id)arg1;
+- (void)replayAndAddTombstones:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)getAllTombstonesWithCompletion:(CDUnknownBlockType)arg1;
 @property(nonatomic) BOOL pushNotificationsAreInitialized;
 @property(nonatomic) unsigned long long cachedNumberOfDevicesInSyncCircle;
+@property(copy, nonatomic) NSData *longLivedSaveOperationData;
 @property(copy, nonatomic) NSData *syncCircleSizeRetrievalThrottlerData;
 @property(copy, nonatomic) NSData *fetchThrottlerData;
 @property(copy, nonatomic) NSData *pushThrottlerData;

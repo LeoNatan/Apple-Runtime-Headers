@@ -7,22 +7,28 @@
 #import <objc/NSObject.h>
 
 #import <iTunesCloud/NSCopying-Protocol.h>
+#import <iTunesCloud/NSSecureCoding-Protocol.h>
 
 @class ICMusicSubscriptionStatus, NSDate, NSDictionary;
 
-@interface ICMusicSubscriptionStatusResponse : NSObject <NSCopying>
+@interface ICMusicSubscriptionStatusResponse : NSObject <NSCopying, NSSecureCoding>
 {
+    _Bool _finalResponse;
     _Bool _needsReload;
     ICMusicSubscriptionStatus *_subscriptionStatus;
     NSDate *_expirationDate;
 }
 
++ (_Bool)supportsSecureCoding;
 @property(nonatomic) _Bool needsReload; // @synthesize needsReload=_needsReload;
+@property(nonatomic, getter=isFinalResponse) _Bool finalResponse; // @synthesize finalResponse=_finalResponse;
 @property(readonly, copy, nonatomic) NSDate *expirationDate; // @synthesize expirationDate=_expirationDate;
 @property(copy, nonatomic) ICMusicSubscriptionStatus *subscriptionStatus; // @synthesize subscriptionStatus=_subscriptionStatus;
 - (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSDictionary *propertyListRepresentation;
 @property(readonly, nonatomic, getter=isExpired) _Bool expired;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)_init;
 - (id)initWithResponseDictionary:(id)arg1 expirationDate:(id)arg2;

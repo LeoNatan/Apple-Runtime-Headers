@@ -15,7 +15,7 @@ __attribute__((visibility("hidden")))
     // Error parsing type: , name: tapGestureRecognizer
 }
 
-- (CDUnknownBlockType).cxx_destruct;
+- (void).cxx_destruct;
 - (void)handleRecognizer:(id)arg1;
 - (id)init;
 @property(nonatomic) long long numberOfTapsRequired;

@@ -6,30 +6,35 @@
 
 #import <iWorkImport/TSPObject.h>
 
-@class TSTColumnRowUIDMap, TSTInfo;
+@class TSTColumnRowUIDMap, TSTTableInfo;
 
 __attribute__((visibility("hidden")))
 @interface TSTCategoryOrder : TSPObject
 {
-    TSTInfo *_tableInfo;
+    _Bool _isRowOrderTemporary;
+    TSTTableInfo *_tableInfo;
     TSTColumnRowUIDMap *_uidMap;
 }
 
 + (UUIDData_5fbc143e)categoryColumnUID;
+@property _Bool isRowOrderTemporary; // @synthesize isRowOrderTemporary=_isRowOrderTemporary;
 @property(retain) TSTColumnRowUIDMap *uidMap; // @synthesize uidMap=_uidMap;
-@property(readonly) __weak TSTInfo *tableInfo; // @synthesize tableInfo=_tableInfo;
+@property(readonly) __weak TSTTableInfo *tableInfo; // @synthesize tableInfo=_tableInfo;
 - (void).cxx_destruct;
 - (id)columnRowUIDMap;
 - (vector_4dc5f307)groupUidsGivenRowUids:(const vector_4dc5f307 *)arg1 selectedLevels:(const unordered_map_3e9d252a *)arg2;
 - (void)removeRowUids:(const vector_4dc5f307 *)arg1;
 - (void)insertRowUids:(const vector_4dc5f307 *)arg1 beforeUid:(const UUIDData_5fbc143e *)arg2;
-- (void)saveToArchive:(struct CategoryOrderArchive *)arg1 archiver:(id)arg2;
+-     // Error parsing type: v32@0:8^{CategoryOrderArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{Reference}^{Reference}}16@24, name: saveToArchive:archiver:
 - (void)saveToArchiver:(id)arg1;
-- (void)loadFromArchive:(const struct CategoryOrderArchive *)arg1 unarchiver:(id)arg2;
+-     // Error parsing type: v32@0:8r^{CategoryOrderArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{Reference}^{Reference}}16@24, name: loadFromArchive:unarchiver:
 - (void)loadFromUnarchiver:(id)arg1;
+- (vector_4dc5f307)setRowOrderUsingViewOrder;
+- (void)setTemporaryRowOrder:(const vector_4dc5f307 *)arg1;
 - (void)setRowOrder:(const vector_4dc5f307 *)arg1;
 - (vector_4dc5f307)rowOrder;
-- (_Bool)isValid;
+- (_Bool)hasValidUidMap;
+- (_Bool)hasValidInfo;
 - (id)sortedArrayFromArray:(id)arg1;
 - (unsigned char)minimumCategoryLevelInRowRange:(struct _NSRange)arg1;
 - (id)targetGroupFromRowIndex:(unsigned int)arg1 minSourceLevel:(unsigned char)arg2 templateRowUID:(UUIDData_5fbc143e *)arg3;

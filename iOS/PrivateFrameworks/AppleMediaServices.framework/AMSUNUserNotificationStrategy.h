@@ -7,37 +7,17 @@
 #import <objc/NSObject.h>
 
 #import <AppleMediaServices/AMSUserNotificationStrategy-Protocol.h>
-#import <AppleMediaServices/UNUserNotificationCenterDelegate-Protocol.h>
-
-@class AMSUserNotificationCenter, NSArray, NSString, UNUserNotificationCenter;
-@protocol AMSUserNotificationCenterDelegate;
 
 __attribute__((visibility("hidden")))
-@interface AMSUNUserNotificationStrategy : NSObject <UNUserNotificationCenterDelegate, AMSUserNotificationStrategy>
+@interface AMSUNUserNotificationStrategy : NSObject <AMSUserNotificationStrategy>
 {
-    id <AMSUserNotificationCenterDelegate> _delegate;
-    AMSUserNotificationCenter *_originalCenter;
-    UNUserNotificationCenter *_center;
 }
 
-@property(retain, nonatomic) UNUserNotificationCenter *center; // @synthesize center=_center;
-@property(readonly, nonatomic) __weak AMSUserNotificationCenter *originalCenter; // @synthesize originalCenter=_originalCenter;
-@property(nonatomic) __weak id <AMSUserNotificationCenterDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
-- (void)_requestPermissionWithCompletion:(CDUnknownBlockType)arg1;
-- (id)_createNoteFromNotification:(id)arg1;
-- (void)userNotificationCenter:(id)arg1 didReceiveNotificationResponse:(id)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
-- (void)userNotificationCenter:(id)arg1 willPresentNotification:(id)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
-- (id)removeNotification:(id)arg1;
-- (id)postNotification:(id)arg1;
-@property(readonly, nonatomic) NSArray *activeNotifications;
-- (id)initWithOriginalCenter:(id)arg1 bundleId:(id)arg2 runningInDaemon:(_Bool)arg3;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
++ (id)_centerForBundleId:(id)arg1;
++ (id)_removeNotificationWithIdentifier:(id)arg1 centerBundleId:(id)arg2 logKey:(id)arg3;
++ (id)_removeNotification:(id)arg1 centerBundleId:(id)arg2;
++ (id)_postNotification:(id)arg1 centerBundleId:(id)arg2;
++ (id)_activeNotificationsWithCenterBundleId:(id)arg1;
 
 @end
 

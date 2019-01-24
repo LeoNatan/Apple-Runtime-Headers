@@ -22,6 +22,8 @@
 }
 
 - (void).cxx_destruct;
+- (id)_processNameWithPID:(int)arg1;
+- (id)_coordinatorsBundleIdentifier;
 - (void)_applicationStateChanged:(id)arg1;
 - (void)_removeAllAssertionCoordinators;
 - (void)_removeAssertionCoordinator:(id)arg1;

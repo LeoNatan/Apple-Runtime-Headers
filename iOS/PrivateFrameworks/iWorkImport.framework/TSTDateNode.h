@@ -21,8 +21,8 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSDate *value; // @synthesize value=_value;
 - (void).cxx_destruct;
 - (id)description;
-- (void)saveToArchive:(struct DateNodeArchive *)arg1 archiver:(id)arg2;
-- (void)loadFromArchive:(const struct DateNodeArchive *)arg1 unarchiver:(id)arg2;
+-     // Error parsing type: v32@0:8^{DateNodeArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}^{ExpressionNodeArchive}}16@24, name: saveToArchive:archiver:
+-     // Error parsing type: v32@0:8r^{DateNodeArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}^{ExpressionNodeArchive}}16@24, name: loadFromArchive:unarchiver:
 - (void)saveToArchiver:(id)arg1;
 - (void)loadFromUnarchiver:(id)arg1;
 - (struct TSTDurationWrapper)durationWrapper;

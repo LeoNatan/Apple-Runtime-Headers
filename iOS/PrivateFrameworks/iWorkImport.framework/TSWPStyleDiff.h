@@ -27,11 +27,11 @@ __attribute__((visibility("hidden")))
 - (_Bool)isEqual:(id)arg1;
 - (_Bool)isEqualToStyleDiff:(id)arg1;
 - (id)changedPropertyNames:(id)arg1;
-- (id)styleDiffForTable:(int)arg1 storage:(id)arg2 currentObject:(id)arg3;
+- (id)styleDiffForTable:(unsigned long long)arg1 storage:(id)arg2 currentObject:(id)arg3;
 - (void)saveToArchiver:(id)arg1;
-- (void)saveToArchive:(struct StyleDiffArchive *)arg1 archiver:(id)arg2;
+-     // Error parsing type: v32@0:8^{StyleDiffArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{Reference}^{CharacterStylePropertyChangeSetArchive}^{ParagraphStylePropertyChangeSetArchive}^{ShapeStylePropertyChangeSetArchive}}16@24, name: saveToArchive:archiver:
 - (void)loadFromUnarchiver:(id)arg1;
-- (void)loadFromArchive:(const struct StyleDiffArchive *)arg1 unarchiver:(id)arg2;
+-     // Error parsing type: v32@0:8r^{StyleDiffArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{Reference}^{CharacterStylePropertyChangeSetArchive}^{ParagraphStylePropertyChangeSetArchive}^{ShapeStylePropertyChangeSetArchive}}16@24, name: loadFromArchive:unarchiver:
 - (id)initWithContext:(id)arg1 changeSet:(id)arg2;
 - (id)initWithContext:(id)arg1 style:(id)arg2;
 - (void)didInitFromSOS;

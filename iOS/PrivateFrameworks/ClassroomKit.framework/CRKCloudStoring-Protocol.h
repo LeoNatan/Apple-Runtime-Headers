@@ -6,12 +6,11 @@
 
 #import <ClassroomKit/NSCopying-Protocol.h>
 #import <ClassroomKit/NSObject-Protocol.h>
-#import <ClassroomKit/NSSecureCoding-Protocol.h>
 
 @class CRKCloudRecord, NSDictionary, NSSet, NSString;
 @protocol CRKCloudStoring;
 
-@protocol CRKCloudStoring <NSObject, NSSecureCoding, NSCopying>
+@protocol CRKCloudStoring <NSObject, NSCopying>
 + (id)skeletonInstance;
 + (NSString *)recordType;
 + (id)instanceWithRecord:(CRKCloudRecord *)arg1;

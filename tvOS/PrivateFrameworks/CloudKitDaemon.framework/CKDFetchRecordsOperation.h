@@ -37,10 +37,12 @@ __attribute__((visibility("hidden")))
     unsigned long long _URLOptions;
     CKDRecordCache *_cache;
     NSMutableArray *_recordIDsToRefetch;
+    NSMutableDictionary *_keyOrErrorForHostname;
     NSDictionary *_webSharingIdentityDataByRecordID;
 }
 
 @property(retain, nonatomic) NSDictionary *webSharingIdentityDataByRecordID; // @synthesize webSharingIdentityDataByRecordID=_webSharingIdentityDataByRecordID;
+@property(retain, nonatomic) NSMutableDictionary *keyOrErrorForHostname; // @synthesize keyOrErrorForHostname=_keyOrErrorForHostname;
 @property(retain, nonatomic) NSMutableArray *recordIDsToRefetch; // @synthesize recordIDsToRefetch=_recordIDsToRefetch;
 @property(retain, nonatomic) CKDRecordCache *cache; // @synthesize cache=_cache;
 @property(nonatomic) unsigned long long URLOptions; // @synthesize URLOptions=_URLOptions;
@@ -70,10 +72,11 @@ __attribute__((visibility("hidden")))
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)finishWithError:(id)arg1;
 - (void)_downloadAssets;
+- (void)_fetchCloudCerts;
 - (void)_didDownloadAssetsWithError:(id)arg1;
 - (void)_finishAllDownloadTasksWithError:(id)arg1;
 - (void)_addDownloadTaskForRecord:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
-- (_Bool)_prepareAsset:(id)arg1 record:(id)arg2 recordKey:(id)arg3 assetTransferOptions:(id)arg4;
+- (int)_prepareAsset:(id)arg1 record:(id)arg2 recordKey:(id)arg3 assetTransferOptions:(id)arg4;
 - (void)_handleRecordFetch:(id)arg1 recordID:(id)arg2 etagMatched:(_Bool)arg3 responseCode:(id)arg4;
 - (void)_decryptPropertiesOnRecord:(id)arg1 recordID:(id)arg2;
 @property(readonly, nonatomic) _Bool hasRecordDecryptOperation;

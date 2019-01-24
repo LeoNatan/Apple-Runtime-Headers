@@ -41,7 +41,6 @@
 + (id)tsu_mediaBrowserNavigationBarTitleColor;
 + (id)tsu_rowItemDividersColor;
 + (id)tsu_sidebarCellBackgroundColor;
-+ (id)tsu_darkInsertSwatchBackgroundColor;
 + (id)tsu_insertPaneBackgroundColor;
 + (id)tsu_sidebarNavigationBarBackgroundColor;
 + (id)tsu_sidebarNavigationBarTintColor;

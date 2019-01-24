@@ -6,7 +6,7 @@
 
 #import <iWorkImport/TSCH3DGetBoundsPipeline.h>
 
-@class TSCH3DCamera;
+@class TSCH3DCamera, TSCH3DChartScenePropertyAccessor;
 
 __attribute__((visibility("hidden")))
 @interface TSCH3DChartGetProjectedBoundsPipeline : TSCH3DGetBoundsPipeline
@@ -16,7 +16,7 @@ __attribute__((visibility("hidden")))
     box_80622335 mContainingViewport;
     struct ChartProjectedBoundsSpaces mSpaces;
     TSCH3DCamera *mOriginalCamera;
-    struct ChartScenePropertyAccessor *mOriginalSceneAccessor;
+    TSCH3DChartScenePropertyAccessor *mOriginalSceneAccessor;
     box_a3bd9649 mShadowsLayoutBounds;
     box_a3bd9649 mLayoutBounds;
     box_a3bd9649 mConstantDepthBodyLayoutBounds;

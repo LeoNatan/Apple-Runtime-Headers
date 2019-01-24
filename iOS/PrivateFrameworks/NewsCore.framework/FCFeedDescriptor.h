@@ -11,7 +11,7 @@
 #import <NewsCore/NSCopying-Protocol.h>
 
 @class NSArray, NSString;
-@protocol FCContentContext, FCFeedPaginating, FCFeedTheming, FCTagProviding;
+@protocol FCChannelProviding, FCContentContext, FCFeedPaginating, FCFeedTheming, FCTagProviding;
 
 @interface FCFeedDescriptor : NSObject <NSCopying, FCFeedHeadlineSource, FCFeedAdMetadataProviding>
 {
@@ -51,6 +51,7 @@
 @property(readonly, nonatomic) NSString *backingTopicID;
 @property(readonly, nonatomic) NSString *backingSectionID;
 @property(readonly, nonatomic) NSString *backingChannelID;
+@property(readonly, nonatomic) id <FCChannelProviding> backingChannel;
 @property(readonly, nonatomic) id <FCTagProviding> backingTag;
 - (_Bool)enableNotificationsWithSubscriptionController:(id)arg1 error:(id *)arg2;
 - (_Bool)hasNotificationsEnabledWithSubscriptionController:(id)arg1;
@@ -62,6 +63,7 @@
 @property(readonly, nonatomic) _Bool hideAccessoryText;
 @property(readonly, nonatomic) NSString *name;
 @property(readonly, nonatomic) _Bool derivesContentsFromExplicitSubscriptions;
+- (id)languagesWithSubscriptionController:(id)arg1;
 @property(readonly, nonatomic) id <FCFeedTheming> theme;
 @property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;

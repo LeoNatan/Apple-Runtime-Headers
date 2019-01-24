@@ -49,8 +49,8 @@ __attribute__((visibility("hidden")))
 - (id)initWithUUIDSet:(id)arg1;
 - (id)initWithUUID:(const UUIDData_5fbc143e *)arg1;
 - (void)setIndex:(unsigned int)arg1;
-- (void)saveToMessage:(struct UuidSetStoreArchive_UuidSet *)arg1;
-- (id)initFromMessage:(const struct UuidSetStoreArchive_UuidSet *)arg1;
+-     // Error parsing type: v24@0:8^{UuidSetStoreArchive_UuidSet=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSP::UUID>=^{Arena}ii^{Rep}}I}16, name: saveToMessage:
+-     // Error parsing type: @24@0:8r^{UuidSetStoreArchive_UuidSet=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSP::UUID>=^{Arena}ii^{Rep}}I}16, name: initFromMessage:
 
 @end
 

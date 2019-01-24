@@ -87,7 +87,7 @@ __attribute__((visibility("hidden")))
 - (void)_adoptQueryGenerationWithSnapshot:(id)arg1;
 - (void)_freeQueryGenerationSnapshot:(id)arg1 pointerResponsibility:(unsigned long long)arg2;
 - (id)_currentQueryGenerationSnapshot:(id *)arg1;
-- (void)_ensureWalFileExists;
+- (long long)_ensureWalFileExists;
 - (id)executeMulticolumnUniquenessCheckSQLStatement:(id)arg1 returningColumns:(id)arg2;
 - (id)executeAttributeUniquenessCheckSQLStatement:(id)arg1 returningColumns:(id)arg2;
 - (void)_dropTableForCloudKitMetadataEntity:(id)arg1;

@@ -4,3 +4,29 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
+#pragma mark Function Pointers and Blocks
+
+typedef void (*CDUnknownFunctionPointerType)(void); // return type and parameters are unknown
+
+typedef void (^CDUnknownBlockType)(void); // return type and parameters are unknown
+
+#pragma mark Named Structures
+
+struct CGPoint {
+    double x;
+    double y;
+};
+
+struct CGSize {
+    double width;
+    double height;
+};
+
+#pragma mark Typedef'd Structures
+
+typedef struct {
+    unsigned int _field1;
+    unsigned int _field2;
+    double _field3;
+} CDStruct_1c8e0384;
+

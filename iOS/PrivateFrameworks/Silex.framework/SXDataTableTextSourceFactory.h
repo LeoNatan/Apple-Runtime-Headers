@@ -9,17 +9,21 @@
 #import <Silex/SXDataTableTextSourceFactory-Protocol.h>
 
 @class NSString;
-@protocol SXSmartFieldFactory;
+@protocol SXDocumentLanguageProviding, SXFontAttributesConstructor, SXSmartFieldFactory;
 
 @interface SXDataTableTextSourceFactory : NSObject <SXDataTableTextSourceFactory>
 {
     id <SXSmartFieldFactory> _smartFieldFactory;
+    id <SXDocumentLanguageProviding> _documentLanguageProvider;
+    id <SXFontAttributesConstructor> _fontAttributesConstructor;
 }
 
+@property(readonly, nonatomic) id <SXFontAttributesConstructor> fontAttributesConstructor; // @synthesize fontAttributesConstructor=_fontAttributesConstructor;
+@property(readonly, nonatomic) id <SXDocumentLanguageProviding> documentLanguageProvider; // @synthesize documentLanguageProvider=_documentLanguageProvider;
 @property(readonly, nonatomic) id <SXSmartFieldFactory> smartFieldFactory; // @synthesize smartFieldFactory=_smartFieldFactory;
 - (void).cxx_destruct;
 - (id)textSourceWithFormattedText:(id)arg1 indexPath:(CDStruct_2fea82da)arg2 dataSource:(id)arg3;
-- (id)initWithSmartFieldFactory:(id)arg1;
+- (id)initWithSmartFieldFactory:(id)arg1 documentLanguageProvider:(id)arg2 fontAttributesConstructor:(id)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

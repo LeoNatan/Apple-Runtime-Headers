@@ -6,42 +6,55 @@
 
 #import <UIKit/UIView.h>
 
-@class MPCPlayerResponse, MediaControlsTransportButton, NSBundle, UIColor;
-@protocol MediaControlsRatingActionSheet;
+@class MPCPlayerResponse, MediaControlsTransportButton, NSArray, NSBundle, UIColor;
+@protocol MediaControlsActionsDelegate;
 
 @interface MediaControlsTransportStackView : UIView
 {
     _Bool _empty;
     long long _style;
     MPCPlayerResponse *_response;
+    id <MediaControlsActionsDelegate> _actionsDelegate;
+    MediaControlsTransportButton *_tvRemoteButton;
     MediaControlsTransportButton *_leftButton;
-    id <MediaControlsRatingActionSheet> _ratingActionSheetDelegate;
     MediaControlsTransportButton *_middleButton;
     MediaControlsTransportButton *_rightButton;
+    MediaControlsTransportButton *_languageOptionsButton;
     NSBundle *_mediaControlsBundle;
     UIColor *_tintColorForCurrentStyle;
+    NSArray *_threeButtonContraints;
+    NSArray *_fiveButtonContraints;
 }
 
+@property(retain, nonatomic) NSArray *fiveButtonContraints; // @synthesize fiveButtonContraints=_fiveButtonContraints;
+@property(retain, nonatomic) NSArray *threeButtonContraints; // @synthesize threeButtonContraints=_threeButtonContraints;
 @property(retain, nonatomic) UIColor *tintColorForCurrentStyle; // @synthesize tintColorForCurrentStyle=_tintColorForCurrentStyle;
 @property(retain, nonatomic) NSBundle *mediaControlsBundle; // @synthesize mediaControlsBundle=_mediaControlsBundle;
+@property(retain, nonatomic) MediaControlsTransportButton *languageOptionsButton; // @synthesize languageOptionsButton=_languageOptionsButton;
 @property(retain, nonatomic) MediaControlsTransportButton *rightButton; // @synthesize rightButton=_rightButton;
 @property(retain, nonatomic) MediaControlsTransportButton *middleButton; // @synthesize middleButton=_middleButton;
-@property(nonatomic) __weak id <MediaControlsRatingActionSheet> ratingActionSheetDelegate; // @synthesize ratingActionSheetDelegate=_ratingActionSheetDelegate;
 @property(retain, nonatomic) MediaControlsTransportButton *leftButton; // @synthesize leftButton=_leftButton;
+@property(retain, nonatomic) MediaControlsTransportButton *tvRemoteButton; // @synthesize tvRemoteButton=_tvRemoteButton;
+@property(nonatomic) __weak id <MediaControlsActionsDelegate> actionsDelegate; // @synthesize actionsDelegate=_actionsDelegate;
 @property(nonatomic, getter=isEmpty) _Bool empty; // @synthesize empty=_empty;
 @property(retain, nonatomic) MPCPlayerResponse *response; // @synthesize response=_response;
 @property(nonatomic) long long style; // @synthesize style=_style;
 - (void).cxx_destruct;
 - (void)traitCollectionDidChange:(id)arg1;
+- (void)_updateButtonLayout;
 - (void)_resetTransportButton:(id)arg1;
+- (id)_createTransportButtonWithImageNamed:(id)arg1;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)_updateButtonBlendMode:(id)arg1;
 - (void)_updateButtonImage:(id)arg1 button:(id)arg2;
+- (void)updateOnRouteChange;
 - (void)buttonHoldReleased:(id)arg1;
 - (void)buttonHoldBegan:(id)arg1;
+- (void)touchUpInsideCaptionsButton:(id)arg1;
 - (void)touchUpInsideRightButton:(id)arg1;
 - (void)touchUpInsideMiddleButton:(id)arg1;
 - (void)touchUpInsideLeftButton:(id)arg1;
+- (void)touchUpInsideHangdogButton:(id)arg1;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect)arg1;
 

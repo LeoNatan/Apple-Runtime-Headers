@@ -38,6 +38,7 @@
 }
 
 - (void).cxx_destruct;
+- (void)_registerEndPointTimeout;
 - (void)speechRecognitionTask:(id)arg1 didHypothesizeTranscription:(id)arg2;
 - (void)stopMasterTimer;
 - (void)handleMasterTimeout:(id)arg1;

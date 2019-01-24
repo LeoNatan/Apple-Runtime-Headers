@@ -83,6 +83,7 @@
 @property(retain, nonatomic) CLKDevice *device; // @synthesize device=_device;
 @property(readonly, nonatomic) long long faceStyle; // @synthesize faceStyle=_faceStyle;
 - (void).cxx_destruct;
+- (_Bool)hasValidConfigurationForDeviceVersion:(unsigned int)arg1;
 - (void)_selectDefaultSlots;
 - (id)_sortedComplicationSlots;
 - (_Bool)_verifyCompatibilityOfConfiguration:(id)arg1;

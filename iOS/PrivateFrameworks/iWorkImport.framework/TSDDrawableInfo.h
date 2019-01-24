@@ -123,8 +123,8 @@ __attribute__((visibility("hidden")))
 - (void)clearBackPointerToParentInfoIfNeeded:(id)arg1;
 @property(nonatomic) NSObject<TSDContainerInfo> *parentInfo;
 - (id)initWithContext:(id)arg1 geometry:(id)arg2;
-- (void)saveToArchive:(struct DrawableArchive *)arg1 archiver:(id)arg2;
-- (void)loadFromArchive:(const struct DrawableArchive *)arg1 unarchiver:(id)arg2;
+-     // Error parsing type: v32@0:8^{DrawableArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}^{GeometryArchive}^{Reference}^{ExteriorTextWrapArchive}^{Reference}BB}16@24, name: saveToArchive:archiver:
+-     // Error parsing type: v32@0:8r^{DrawableArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}^{GeometryArchive}^{Reference}^{ExteriorTextWrapArchive}^{Reference}BB}16@24, name: loadFromArchive:unarchiver:
 - (void)setParentInfoDuringUnarchiving:(id)arg1 inDocument:(_Bool)arg2;
 - (id)objectUUIDPath;
 - (void)setInsertionCenterPosition:(struct CGPoint)arg1;

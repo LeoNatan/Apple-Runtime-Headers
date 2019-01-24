@@ -11,6 +11,7 @@
 + (id)safari_URLWithDataAsString:(id)arg1 relativeToURL:(id)arg2;
 + (id)safari_URLWithDataAsString:(id)arg1;
 + (id)safari_URLWithUserTypedString:(id)arg1;
+- (id)safari_relativePathToURL:(id)arg1;
 - (id)safari_wellKnownChangePasswordURL;
 - (BOOL)safari_isWellKnownChangePasswordURL;
 @property(readonly, nonatomic) BOOL safari_isURLTooLongToDisplay;
@@ -39,6 +40,7 @@
 - (BOOL)safari_isDataURL;
 - (BOOL)safari_isHTTPURL;
 - (BOOL)safari_isHTTPFamilyURL;
+- (BOOL)safari_hasLocalScheme;
 - (BOOL)safari_hasScheme:(id)arg1;
 - (id)safari_path;
 @end

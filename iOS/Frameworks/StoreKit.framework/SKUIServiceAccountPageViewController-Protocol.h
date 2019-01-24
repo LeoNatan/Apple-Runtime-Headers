@@ -9,9 +9,12 @@
 @class ACAccount, NSString, NSURL;
 
 @protocol SKUIServiceAccountPageViewController <NSObject>
+- (void)redeemCameraCodeDetected:(NSString *)arg1;
+- (void)dismissPresentingBridgedViewController;
 - (void)setLoadFromBridgedNavigation:(_Bool)arg1;
 - (void)bridgedRightButtonPressed;
-- (void)setBridgedNavigation:(_Bool)arg1;
+- (void)setPresentationBounds:(struct CGRect)arg1;
+- (void)setType:(long long)arg1;
 - (void)setAccount:(ACAccount *)arg1;
 - (void)performRedeemOperationWithCode:(NSString *)arg1 cameraRecognized:(_Bool)arg2 completion:(void (^)(SKUIRedeem *, NSError *))arg3;
 - (void)applicationDidEnterBackground;

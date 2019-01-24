@@ -19,7 +19,10 @@
 + (BOOL)supportsSecureCoding;
 @property(retain, nonatomic) NSExtensionContext *_extensionContext; // @synthesize _extensionContext=__extensionContext;
 - (void).cxx_destruct;
+- (void)close;
+- (void)navigateToURL:(id)arg1;
 - (void)activateWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)getContainingWindowWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)getPagesWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)getActivePageWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (id)_remoteObjectProxy;

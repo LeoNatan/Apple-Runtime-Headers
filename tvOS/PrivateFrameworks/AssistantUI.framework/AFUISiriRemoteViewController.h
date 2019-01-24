@@ -87,6 +87,7 @@
 - (void)setStatusViewDisabled:(_Bool)arg1;
 - (void)setCarDisplayGatekeeperVisible:(_Bool)arg1;
 - (void)setCarDisplaySnippetVisible:(_Bool)arg1;
+- (void)setTypeToSiriViewHidden:(_Bool)arg1;
 - (void)setStatusViewHidden:(_Bool)arg1;
 - (void)siriIdleAndQuietStatusDidChange:(_Bool)arg1;
 - (void)notifyOnNextUserInteraction;

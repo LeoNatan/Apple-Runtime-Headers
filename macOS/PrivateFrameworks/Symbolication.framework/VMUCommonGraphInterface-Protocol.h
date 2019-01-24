@@ -20,6 +20,7 @@
 @property(readonly, nonatomic) unsigned int zoneCount;
 @property(readonly, nonatomic) VMUClassInfoMap *realizedClasses;
 @property(readonly, nonatomic) unsigned int vmPageSize;
+@property(readonly, nonatomic) BOOL is64bit;
 @property(readonly, nonatomic) int pid;
 - (void *)contentForNode:(unsigned int)arg1;
 - (NSString *)shortLabelForNode:(unsigned int)arg1;
@@ -27,6 +28,7 @@
 - (BOOL)hasLabelsForNodes;
 - (void)refineTypesWithOverlay:(VMUScanOverlay *)arg1;
 - (void)markReachableNodesFromRoots:(void *)arg1 inMap:(void *)arg2;
+- (unsigned int)nodeForAddress:(unsigned long long)arg1;
 - (unsigned int)enumerateReferencesWithBlock:(void (^)(unsigned int, unsigned int, unsigned int, struct, char *))arg1;
 - (unsigned int)enumerateRegionsWithBlock:(void (^)(VMUVMRegion *, char *))arg1;
 - (unsigned int)enumerateMarkedObjects:(void *)arg1 withBlock:(void (^)(unsigned int, struct, char *))arg2;

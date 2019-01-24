@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class CUAudioPlayer, NSDate, NSString, RPCompanionLinkClient, SFClient, SFDeviceOperationHandlerWiFiSetup, SFService, SFSession, SFSiriClient, SFSiriDeviceSetupGreetingDetails;
+@class CUAudioPlayer, NSDate, NSString, RPCompanionLinkClient, SFClient, SFDeviceOperationHandlerCDPSetup, SFDeviceOperationHandlerWiFiSetup, SFService, SFSession, SFSiriClient, SFSiriDeviceSetupGreetingDetails;
 @protocol OS_dispatch_queue, OS_dispatch_source;
 
 @interface SFDeviceSetupB238Service : NSObject
@@ -35,8 +35,10 @@
     SFSiriDeviceSetupGreetingDetails *_siriGreetingDetails;
     _Bool _siriHeardWhatCanYouDo;
     _Bool _wifiSetupEnabled;
+    SFDeviceOperationHandlerCDPSetup *_cdpSetupHandler;
     SFDeviceOperationHandlerWiFiSetup *_wifiSetupHandler;
     CUAudioPlayer *_audioPlayer;
+    _Bool _prefCDPEnabled;
     NSString *_languageCode;
     NSString *_localeIdentifier;
     NSString *_temperatureUnit;

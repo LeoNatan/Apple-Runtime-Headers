@@ -11,33 +11,23 @@
 @interface NURenderer : NSObject
 {
     EAGLContext *_context;
-    EAGLSharegroup *_shareGroup;
     NSBundle *_bundle;
     struct NURendererResources _resources;
     unsigned int _initalizedProgams:1;
     unsigned int _initalizedHemi:1;
-    unsigned int _initalizedTextures:1;
     unsigned int _initalized:1;
     struct _NUGeometryRange _octahedronGeomRange;
     struct _NUGeometryRange _quadGeomRange;
+    EAGLSharegroup *_shareGroup;
 }
 
-+ (void)prime;
 + (void)_deallocInstance;
 + (id)sharedInstance;
 @property(readonly, nonatomic) EAGLSharegroup *shareGroup; // @synthesize shareGroup=_shareGroup;
 - (void).cxx_destruct;
-- (void)_prime;
-- (void)_purge;
-- (void)purge;
 - (void)_asyncDeallocInstance;
-- (_Bool)_initTextures;
-- (void)_loadTexture:(unsigned long long)arg1;
-- (void)_requireTexture:(unsigned long long)arg1 sync:(_Bool)arg2;
 - (_Bool)_initPrograms;
-- (id)snapshot:(id)arg1 size:(struct CGSize)arg2;
-- (void)_renderWithScene:(id)arg1 viewport:(struct NUViewport)arg2 prime:(_Bool)arg3;
-- (void)renderWithScene:(id)arg1 viewport:(struct NUViewport)arg2;
+- (void)renderWithScene:(id)arg1 viewport:(struct NUViewport)arg2 resources:(id)arg3;
 - (unsigned int)createVertexArray;
 - (_Bool)_initHemi;
 - (void)dealloc;

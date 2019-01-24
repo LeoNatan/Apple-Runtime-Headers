@@ -11,18 +11,19 @@
 #import <MapKit/_MKInfoCardChildViewControllerAnalyticsDelegate-Protocol.h>
 #import <MapKit/_MKStackViewDelegate-Protocol.h>
 
-@class MKImageView, MKPlaceSectionRowView, MKVibrancyAwareLabelView, NSArray, NSLayoutGuide, NSString, NSURL, NSView, _MKDataHeaderModel, _MKLocalizedHoursBuilder, _MKTokenAttributedString, _MKUILabel;
+@class MKImageView, MKPlaceSectionRowView, MKVibrancyAwareLabelView, NSArray, NSLayoutConstraint, NSLayoutGuide, NSString, NSURL, NSView, _MKDataHeaderModel, _MKLocalizedHoursBuilder, _MKTokenAttributedString, _MKUILabel;
 @protocol GEOTransitLineItem, MKPlaceCardHeaderViewControllerDelegate, _MKPlaceItem;
 
 @interface MKPlaceCardHeaderViewController : MKPlaceSectionViewController <_MKStackViewDelegate, _MKInfoCardChildViewControllerAnalyticsDelegate, MKModuleViewControllerProtocol, MKETAProviderObserver>
 {
     unsigned long long _layout;
-    MKPlaceSectionRowView *_titleOnlySectionView;
+    MKPlaceSectionRowView *_titleSectionView;
     MKPlaceSectionRowView *_labelsSectionView;
     MKImageView *_logoImageView;
     _MKUILabel *_titleOnlyLabel;
     _MKUILabel *_firstLabel;
     _MKUILabel *_secondLabel;
+    _MKUILabel *_secondaryNameLabel;
     MKVibrancyAwareLabelView *_thirdLabel;
     NSView *_thirdDisplayedLabel;
     NSArray *_constraints;
@@ -30,6 +31,7 @@
     NSURL *_logoURL;
     _MKDataHeaderModel *_dataModel;
     _MKTokenAttributedString *_titleToken;
+    _MKTokenAttributedString *_secondaryNameToken;
     _MKTokenAttributedString *_distanceToken;
     _MKTokenAttributedString *_ratingsToken;
     _MKTokenAttributedString *_priceToken;
@@ -39,9 +41,13 @@
     _MKTokenAttributedString *_userLocationToken;
     _MKTokenAttributedString *_venueToken;
     _MKTokenAttributedString *_verifiedToken;
+    NSLayoutConstraint *_secondLabelToFirstLabelConstraint;
+    double _secondLabelToFirstLabelConstraintConstantMax;
+    double _secondLabelToFirstLabelConstraintConstantMin;
     BOOL _isUserLocation;
     BOOL _optionSmallScreen;
     BOOL _constraintsCreated;
+    BOOL _notVerified;
     id <_MKPlaceItem> _placeItem;
     id <GEOTransitLineItem> _lineItem;
     id <MKPlaceCardHeaderViewControllerDelegate> _delegate;
@@ -55,6 +61,7 @@
 @property(readonly, nonatomic) id <_MKPlaceItem> placeItem; // @synthesize placeItem=_placeItem;
 - (void).cxx_destruct;
 - (void)infoCardThemeChanged:(id)arg1;
+- (void)updateContent;
 - (void)_contentSizeDidChange;
 - (void)setConstraints;
 - (void)updateViews;
@@ -69,7 +76,11 @@
 - (id)_openStateString;
 - (id)_reviewLabelText;
 - (id)_verifiedText;
+- (id)_secondaryNameTitle;
+- (BOOL)_hasSecondaryName;
 - (id)_currentTitle;
+- (double)secondaryNameLabelPadding;
+- (void)animateSecondLabelWithPercentage:(double)arg1;
 @property(nonatomic) double contentAlpha;
 - (void)updateHeaderTitle;
 - (void)viewWillAppear:(BOOL)arg1;
@@ -77,6 +88,7 @@
 - (void)_commonInit;
 - (id)initWithLineItem:(id)arg1 layout:(unsigned long long)arg2;
 - (id)initWithPlaceItem:(id)arg1 layout:(unsigned long long)arg2;
+- (id)secondaryNameTimingFunction;
 - (id)titleFont;
 
 // Remaining properties

@@ -25,6 +25,7 @@
 - (id)getShortLabelsForLabels:(id)arg1;
 - (id)getSubscriptionContextUUIDforPlan:(id)arg1;
 - (void)userDidProvideConsentResponse:(int)arg1 forPlan:(id)arg2 isRemote:(_Bool)arg3 completion:(CDUnknownBlockType)arg4;
+- (void)userDidProvideResponse:(int)arg1 confirmationCode:(id)arg2 forPlan:(id)arg3 isRemote:(_Bool)arg4 completion:(CDUnknownBlockType)arg5;
 - (id)getPredefinedLabels;
 - (void)eraseAllRemotePlansWithCompletion:(CDUnknownBlockType)arg1;
 - (void)remotePlanLaunchInfoForEid:(id)arg1 completion:(CDUnknownBlockType)arg2;

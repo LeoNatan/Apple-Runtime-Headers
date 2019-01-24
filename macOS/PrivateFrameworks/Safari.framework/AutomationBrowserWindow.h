@@ -14,6 +14,7 @@ __attribute__((visibility("hidden")))
 }
 
 @property(readonly, nonatomic) BOOL sendingWhitelistedEvent; // @synthesize sendingWhitelistedEvent=_sendingWhitelistedEvent;
+@property(readonly, nonatomic) BOOL sendingSynthesizedEvent; // @synthesize sendingSynthesizedEvent=_sendingSynthesizedEvent;
 - (void)postEvent:(id)arg1 atStart:(BOOL)arg2;
 - (void)sendEvent:(id)arg1;
 

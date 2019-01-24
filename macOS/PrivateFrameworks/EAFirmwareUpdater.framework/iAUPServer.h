@@ -33,6 +33,7 @@
 
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQ; // @synthesize dispatchQ=_dispatchQ;
 @property(nonatomic) int parserState; // @synthesize parserState=_parserState;
+@property(nonatomic) int serverState; // @synthesize serverState=_serverState;
 @property(nonatomic) BOOL byteEscape; // @synthesize byteEscape=_byteEscape;
 @property(retain, nonatomic) FirmwareBundle *firmwareBundle; // @synthesize firmwareBundle=_firmwareBundle;
 @property id <iAUPServerDelegate> delegate; // @synthesize delegate=_delegate;
@@ -58,7 +59,7 @@
 - (unsigned int)supportedTargetProductIDCode;
 - (void)dealloc;
 - (id)getNumberOfBytesDownloadedInCurrentSession;
-- (id)initInstance;
+- (id)initInstanceWithByteEscape:(BOOL)arg1;
 
 @end
 

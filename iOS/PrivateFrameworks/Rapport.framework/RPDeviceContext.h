@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class RPDevice, RPDeviceDiscovery, RPSession;
+@class RPDevice, RPLegacyDeviceDiscovery, RPLegacySession;
 
 __attribute__((visibility("hidden")))
 @interface RPDeviceContext : NSObject
@@ -14,14 +14,14 @@ __attribute__((visibility("hidden")))
     _Bool _reported;
     int _state;
     RPDevice *_device;
-    RPDeviceDiscovery *_discovery;
-    RPSession *_session;
+    RPLegacyDeviceDiscovery *_discovery;
+    RPLegacySession *_session;
 }
 
 @property(nonatomic) int state; // @synthesize state=_state;
-@property(retain, nonatomic) RPSession *session; // @synthesize session=_session;
+@property(retain, nonatomic) RPLegacySession *session; // @synthesize session=_session;
 @property(nonatomic) _Bool reported; // @synthesize reported=_reported;
-@property(retain, nonatomic) RPDeviceDiscovery *discovery; // @synthesize discovery=_discovery;
+@property(retain, nonatomic) RPLegacyDeviceDiscovery *discovery; // @synthesize discovery=_discovery;
 @property(retain, nonatomic) RPDevice *device; // @synthesize device=_device;
 - (void).cxx_destruct;
 - (void)systemInfoResponse:(id)arg1 error:(id)arg2;

@@ -20,8 +20,8 @@
 - (BOOL)setValue:(id)arg1 error:(id *)arg2;
 - (id)valueWithError:(id *)arg1;
 - (id)initWithDefaults:(id)arg1 key:(id)arg2 classes:(id)arg3;
+- (id)initWithStore:(id)arg1 key:(id)arg2 classes:(id)arg3;
 - (id)initWithKey:(id)arg1 classes:(id)arg2;
-- (id)initWithDefaults:(id)arg1 key:(id)arg2;
 
 @end
 

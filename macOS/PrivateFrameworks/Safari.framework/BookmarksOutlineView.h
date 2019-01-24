@@ -19,7 +19,7 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (void)_didRecogizeLongPress:(id)arg1;
 - (double)_totalHeightOfTableView;
-- (id)accessibilityAttributeValue:(id)arg1;
+- (struct CGRect)accessibilityFrame;
 - (id)hitTest:(struct CGPoint)arg1;
 - (BOOL)validateProposedFirstResponder:(id)arg1 forEvent:(id)arg2;
 - (void)drawGridInClipRect:(struct CGRect)arg1;

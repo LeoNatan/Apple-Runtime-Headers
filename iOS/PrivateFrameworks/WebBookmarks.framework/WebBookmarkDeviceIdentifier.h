@@ -33,6 +33,7 @@
 - (void)_resumeMonitoringMetaDataFile;
 - (void)_registerForMedadaDataFileChangeDistributedNotification;
 - (void)dealloc;
+- (void)_setUpWithPlistURL:(id)arg1 readOnly:(_Bool)arg2 queue:(id)arg3;
 - (id)initWithPlistURL:(id)arg1 readOnly:(_Bool)arg2;
 
 @end

@@ -33,7 +33,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) NSUUID *originalDocumentUUID; // @synthesize originalDocumentUUID=_originalDocumentUUID;
 - (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool isSameDocumentUpdate;
-@property(readonly, nonatomic) _Bool preserveDocumentUUID;
+@property(readonly, nonatomic) _Bool isSavingCurrentDocument;
 @property(readonly, nonatomic) _Bool shouldUpdate;
 - (id)initWithOriginalDocumentUUID:(id)arg1 originalVersionUUID:(id)arg2 originalURL:(id)arg3 updateType:(long long)arg4;
 - (id)init;

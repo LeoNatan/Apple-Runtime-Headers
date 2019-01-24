@@ -28,7 +28,6 @@
 @property(nonatomic) _Bool multideviceAudioEnabled;
 @property(nonatomic) _Bool multideviceSettingsEnabled;
 @property(nonatomic) _Bool exportsLiveListenToFile;
-@property(nonatomic) int inputRoutingOption;
 @property(nonatomic) int mediaAudioRoute;
 @property(nonatomic) int callAudioRoute;
 @property(nonatomic) _Bool shouldStreamToRightAid;

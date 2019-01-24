@@ -17,11 +17,14 @@
 
 @property(readonly) struct Object *_apiObject;
 @property(readonly, copy) NSString *description;
+@property(copy, nonatomic) NSString *customNavigatorPlatform;
+@property(copy, nonatomic) NSString *customUserAgent;
 @property(retain, nonatomic) WKWebsiteDataStore *websiteDataStore;
 @property(copy, nonatomic) NSDictionary *customHeaderFields;
 @property(nonatomic) unsigned long long popUpPolicy;
 @property(nonatomic) long long autoplayPolicy;
 @property(nonatomic) unsigned long long allowedAutoplayQuirks;
+@property(nonatomic) _Bool deviceOrientationEventEnabled;
 @property(nonatomic) _Bool contentBlockersEnabled;
 - (id)init;
 - (void)dealloc;

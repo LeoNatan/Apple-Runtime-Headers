@@ -84,6 +84,7 @@
 + (void)load;
 + (void)_initializeRegisteredDefaults;
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
++ (void)_installDisplayCycleCompletionBlock:(CDUnknownBlockType)arg1;
 + (id)_urlsWithWithPathOrPaths:(id)arg1 itWasPaths:(char *)arg2;
 + (id)_URLsWithEvent:(id)arg1;
 + (id)_fileURLsWithEvent:(id)arg1;
@@ -399,10 +400,16 @@
 - (void)_registerWithDock;
 - (void)_installAutoreleasePoolsOnCurrentThreadIfNecessary;
 - (void)_cleanUpForCarbonAppTermination;
-- (id)_applicationBundle;
-- (void)_emitApplicationLaunchExtendedSignpostsAppIsOptedIn:(BOOL)arg1;
+- (void)_postExtendedLaunchSignposts;
+- (void)_postBasicLaunchSignposts;
+- (void)_postSignpostsForCurrentPhase;
+- (void)_postSignpostsPossiblyDeferred;
+- (void)_finishedExtendedLaunch;
+- (void)_finishedBasicLaunch;
+- (BOOL)_isAppOptedIntoExtendedLaunchSignposts;
 - (void)markAppLaunchComplete;
 - (void)_emitApplicationLaunchSignpost;
+- (id)_applicationBundle;
 - (BOOL)_inInstallEnvironment;
 - (id)_accessibilityUIElementSpecifierRegisterIfNeeded:(BOOL)arg1;
 - (id)_accessibilityUIElementSpecifier;

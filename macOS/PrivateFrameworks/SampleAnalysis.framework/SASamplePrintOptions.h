@@ -15,6 +15,7 @@
     BOOL _printHeavyStacks;
     BOOL _printJson;
     BOOL _printSpinSignatureStack;
+    BOOL _printTargetThreadOnly;
     BOOL _printTargetHIDEvent;
     BOOL _forceOneBasedTimeIndexes;
     BOOL _orderTasksBySampleCount;
@@ -111,6 +112,7 @@
 @property BOOL orderTasksBySampleCount; // @synthesize orderTasksBySampleCount=_orderTasksBySampleCount;
 @property BOOL forceOneBasedTimeIndexes; // @synthesize forceOneBasedTimeIndexes=_forceOneBasedTimeIndexes;
 @property BOOL printTargetHIDEvent; // @synthesize printTargetHIDEvent=_printTargetHIDEvent;
+@property BOOL printTargetThreadOnly; // @synthesize printTargetThreadOnly=_printTargetThreadOnly;
 @property BOOL printSpinSignatureStack; // @synthesize printSpinSignatureStack=_printSpinSignatureStack;
 @property BOOL printJson; // @synthesize printJson=_printJson;
 @property BOOL printHeavyStacks; // @synthesize printHeavyStacks=_printHeavyStacks;

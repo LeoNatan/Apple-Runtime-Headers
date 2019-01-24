@@ -21,8 +21,8 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (void)dealloc;
 - (id)initWithContext:(id)arg1 andMediator:(id)arg2;
-- (void)saveToArchive:(struct ChartMediatorArchive *)arg1;
-- (void)loadFromArchive:(const struct ChartMediatorArchive *)arg1;
+-     // Error parsing type: v24@0:8^{ChartMediatorArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedField<unsigned int>=ii(Pointer=^{Arena}^{Rep})}{RepeatedField<unsigned int>=ii(Pointer=^{Arena}^{Rep})}^{Reference}}16, name: saveToArchive:
+-     // Error parsing type: v24@0:8r^{ChartMediatorArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedField<unsigned int>=ii(Pointer=^{Arena}^{Rep})}{RepeatedField<unsigned int>=ii(Pointer=^{Arena}^{Rep})}^{Reference}}16, name: loadFromArchive:
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

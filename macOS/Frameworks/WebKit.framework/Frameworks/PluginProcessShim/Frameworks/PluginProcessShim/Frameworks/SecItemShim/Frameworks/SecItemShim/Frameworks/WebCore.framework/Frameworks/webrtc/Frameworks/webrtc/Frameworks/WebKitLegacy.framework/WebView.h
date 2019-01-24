@@ -19,6 +19,12 @@
     WebViewPrivate *_private;
 }
 
++ (void)_preflightSpellChecker;
++ (void)_preflightSpellCheckerNow:(id)arg1;
++ (void)_preferencesRemovedNotification:(id)arg1;
++ (void)_cacheModelChangedNotification:(id)arg1;
++ (unsigned long long)_maxCacheModelInAnyInstance;
++ (BOOL)_didSetCacheModel;
 + (void)registerViewClass:(Class)arg1 representationClass:(Class)arg2 forMIMEType:(id)arg3;
 + (void)registerURLSchemeAsLocal:(id)arg1;
 + (id)URLTitleFromPasteboard:(id)arg1;
@@ -90,16 +96,16 @@
 + (id)_supportedMIMETypes;
 + (void)_reportException:(struct OpaqueJSValue *)arg1 inContext:(struct OpaqueJSContext *)arg2;
 + (id)_standardUserAgentWithApplicationName:(id)arg1;
-+ (void)_preflightSpellChecker;
-+ (void)_preflightSpellCheckerNow:(id)arg1;
-+ (void)_preferencesRemovedNotification:(id)arg1;
-+ (void)_cacheModelChangedNotification:(id)arg1;
-+ (unsigned long long)_maxCacheModelInAnyInstance;
-+ (BOOL)_didSetCacheModel;
 + (unsigned long long)_cacheModel;
 + (void)_setCacheModel:(unsigned long long)arg1;
 + (BOOL)shouldIncludeInWebKitStatistics;
 + (void)_setFontWhitelist:(id)arg1;
+- (id)_responderForResponderOperations;
+- (BOOL)_continuousCheckingAllowed;
+- (id)_frameViewAtWindowPoint:(struct CGPoint)arg1;
+- (BOOL)_isLoading;
+- (id)_focusedFrame;
+- (float)_deviceScaleFactor;
 - (void)candidateListTouchBarItem:(id)arg1 changedCandidateListVisibility:(BOOL)arg2;
 - (void)candidateListTouchBarItem:(id)arg1 endSelectingCandidateAtIndex:(long long)arg2;
 - (id)touchBar:(id)arg1 makeItemForIdentifier:(id)arg2;
@@ -152,6 +158,7 @@
 @property(copy, nonatomic) NSString *mediaStyle;
 @property(copy, nonatomic) NSString *customUserAgent;
 @property(copy, nonatomic) NSString *applicationNameForUserAgent;
+- (void)_invalidateUserAgentCache;
 - (void)_resetZoom:(id)arg1 isTextOnly:(BOOL)arg2;
 - (BOOL)_canResetZoom:(BOOL)arg1;
 - (void)_zoomIn:(id)arg1 isTextOnly:(BOOL)arg2;
@@ -177,9 +184,9 @@
 @property(nonatomic) id <WebUIDelegate> UIDelegate;
 @property(copy, nonatomic) NSString *preferencesIdentifier;
 @property(retain, nonatomic) WebPreferences *preferences;
+- (void)_windowDidChangeOcclusionState:(id)arg1;
 - (void)_windowDidChangeBackingProperties:(id)arg1;
 - (void)_windowWillClose:(id)arg1;
-- (void)_windowVisibilityChanged:(id)arg1;
 - (void)_windowWillOrderOffScreen:(id)arg1;
 - (void)_windowDidChangeScreen:(id)arg1;
 - (void)_windowWillOrderOnScreen:(id)arg1;
@@ -233,6 +240,8 @@
 - (void)_setPageLength:(double)arg1;
 - (BOOL)_paginationBehavesLikeColumns;
 - (void)_setPaginationBehavesLikeColumns:(BOOL)arg1;
+- (void)setWindowOcclusionDetectionEnabled:(BOOL)arg1;
+- (BOOL)windowOcclusionDetectionEnabled;
 - (void)_setVisibilityState:(int)arg1 isInitialState:(BOOL)arg2;
 - (void)_setIsVisible:(BOOL)arg1;
 - (int)_visibilityState;
@@ -276,8 +285,6 @@
 - (void)_executeCoreCommandByName:(id)arg1 value:(id)arg2;
 - (void)_clearUndoRedoOperations;
 - (id)textIteratorForRect:(struct CGRect)arg1;
-- (void)_setGlobalHistoryItem:(struct HistoryItem *)arg1;
-- (id)_globalHistoryItem;
 - (void)setUsesPageCache:(BOOL)arg1;
 - (BOOL)usesPageCache;
 - (void)setDefersCallbacks:(BOOL)arg1;
@@ -321,7 +328,6 @@
 - (BOOL)_isPerformingProgrammaticFocus;
 - (void)_popPerformingProgrammaticFocus;
 - (void)_pushPerformingProgrammaticFocus;
-- (void)_closeWindow;
 - (id)_editingDelegateForwarder;
 - (id)_UIDelegateForwarder;
 - (id)_policyDelegateForwarder;
@@ -365,8 +371,8 @@
 - (BOOL)validateUserInterfaceItem:(id)arg1;
 - (BOOL)validateUserInterfaceItemWithoutDelegate:(id)arg1;
 - (BOOL)_responderValidateUserInterfaceItem:(id)arg1;
-- (void)toggleContinuousSpellChecking:(id)arg1;
 - (void)toggleSmartInsertDelete:(id)arg1;
+- (void)toggleContinuousSpellChecking:(id)arg1;
 - (void)makeTextStandardSize:(id)arg1;
 @property(readonly, nonatomic) BOOL canMakeTextStandardSize;
 - (void)makeTextLarger:(id)arg1;
@@ -591,20 +597,16 @@
 - (void)alignJustified:(id)arg1;
 - (void)alignCenter:(id)arg1;
 - (void)_performResponderOperation:(SEL)arg1 with:(id)arg2;
+- (void)_searchWithSpotlightFromMenu:(id)arg1;
+- (void)_searchWithGoogleFromMenu:(id)arg1;
+- (void)_openFrameInNewWindowFromMenu:(id)arg1;
 - (void)_simplifyMarkup:(id)arg1 endNode:(id)arg2;
 - (BOOL)_selectionIsAll;
 - (BOOL)_selectionIsCaret;
 - (void)_replaceSelectionWithNode:(id)arg1 matchStyle:(BOOL)arg2;
 - (void)_insertNewlineInQuotedContent;
-- (void)_searchWithSpotlightFromMenu:(id)arg1;
-- (void)_searchWithGoogleFromMenu:(id)arg1;
-- (void)_openFrameInNewWindowFromMenu:(id)arg1;
-- (id)_responderForResponderOperations;
-- (BOOL)_continuousCheckingAllowed;
-- (id)_frameViewAtWindowPoint:(struct CGPoint)arg1;
-- (BOOL)_isLoading;
-- (id)_focusedFrame;
-- (float)_deviceScaleFactor;
+- (void)_closeWindow;
+- (void)_windowVisibilityChanged:(id)arg1;
 - (id)candidateList;
 - (void)prepareForMouseUp;
 - (void)prepareForMouseDown;

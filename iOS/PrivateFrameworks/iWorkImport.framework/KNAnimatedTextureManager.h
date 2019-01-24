@@ -34,8 +34,6 @@ __attribute__((visibility("hidden")))
 - (void)p_serializeTexturesForSlideNode:(id)arg1;
 - (void)p_invalidateASV:(id)arg1;
 - (void)addTextureToRasterizationQueue:(id)arg1 isOpenGL:(_Bool)arg2 asv:(id)arg3;
-- (void)addMetalTextureToRasterizationQueue:(id)arg1 asv:(id)arg2;
-- (void)p_setupMetalTexture:(id)arg1 forDevice:(id)arg2;
 - (void)p_rasterizeTexture:(id)arg1 isOpenGL:(_Bool)arg2;
 - (void)stopPreCaching;
 - (void)startPreCaching;

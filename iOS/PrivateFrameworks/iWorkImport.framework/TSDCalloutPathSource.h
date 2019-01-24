@@ -60,8 +60,8 @@ __attribute__((visibility("hidden")))
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)init;
 - (id)initWithCornerRadius:(double)arg1 tailPosition:(struct CGPoint)arg2 tailSize:(double)arg3 naturalSize:(struct CGSize)arg4 tailAtCenter:(_Bool)arg5;
-- (void)saveToArchive:(struct PathSourceArchive *)arg1;
-- (id)initWithArchive:(const struct PathSourceArchive *)arg1;
+-     // Error parsing type: v24@0:8^{PathSourceArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}^{PointPathSourceArchive}^{ScalarPathSourceArchive}^{BezierPathSourceArchive}^{CalloutPathSourceArchive}^{ConnectionLinePathSourceArchive}^{EditableBezierPathSourceArchive}BB}16, name: saveToArchive:
+-     // Error parsing type: @24@0:8r^{PathSourceArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}^{PointPathSourceArchive}^{ScalarPathSourceArchive}^{BezierPathSourceArchive}^{CalloutPathSourceArchive}^{ConnectionLinePathSourceArchive}^{EditableBezierPathSourceArchive}BB}16, name: initWithArchive:
 
 @end
 

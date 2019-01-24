@@ -20,8 +20,8 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) int level; // @synthesize level=_level;
 @property(readonly, nonatomic) const UUIDData_5fbc143e *columnUid; // @synthesize columnUid=_columnUid;
 - (id).cxx_construct;
-- (void)encodeToArchive:(struct ColumnAggregateArchive *)arg1 archiver:(id)arg2;
-- (id)initWithArchive:(const struct ColumnAggregateArchive *)arg1;
+-     // Error parsing type: v32@0:8^{ColumnAggregateArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{UUID}Ii}16@24, name: encodeToArchive:archiver:
+-     // Error parsing type: @24@0:8r^{ColumnAggregateArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{UUID}Ii}16, name: initWithArchive:
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithColumnUid:(const UUIDData_5fbc143e *)arg1 level:(int)arg2 aggregateType:(unsigned char)arg3;

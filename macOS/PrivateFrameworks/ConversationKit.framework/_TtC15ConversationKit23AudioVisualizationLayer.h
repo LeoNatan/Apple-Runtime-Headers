@@ -16,7 +16,7 @@ __attribute__((visibility("hidden")))
     // Error parsing type: , name: color
 }
 
-- (CDUnknownBlockType).cxx_destruct;
+- (void).cxx_destruct;
 - (void)addAnimation:(id)arg1 forKey:(id)arg2;
 @property(nonatomic) struct CGRect bounds;
 - (void)dealloc;

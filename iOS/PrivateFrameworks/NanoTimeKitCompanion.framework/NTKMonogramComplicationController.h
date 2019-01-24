@@ -18,9 +18,7 @@
 
 + (_Bool)_acceptsComplicationType:(unsigned long long)arg1 forDevice:(id)arg2;
 - (void).cxx_destruct;
-- (void)_handleLocaleChange;
-- (void)_handleFaceDefaultsChanged;
-- (void)_handleCustomMonogramChanged;
+- (void)_handleMonogramTextReload;
 - (void)setTimeTravelDate:(id)arg1 animated:(_Bool)arg2;
 - (void)_reloadMonogramText;
 - (void)_updateDisplay;

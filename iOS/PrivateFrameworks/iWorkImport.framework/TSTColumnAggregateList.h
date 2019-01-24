@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
 }
 
 - (void).cxx_destruct;
-- (void)encodeToArchive:(struct ColumnAggregateListArchive *)arg1 archiver:(id)arg2;
-- (id)initWithArchive:(const struct ColumnAggregateListArchive *)arg1;
+-     // Error parsing type: v32@0:8^{ColumnAggregateListArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TST::ColumnAggregateArchive>=^{Arena}ii^{Rep}}}16@24, name: encodeToArchive:archiver:
+-     // Error parsing type: @24@0:8r^{ColumnAggregateListArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TST::ColumnAggregateArchive>=^{Arena}ii^{Rep}}}16, name: initWithArchive:
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)description;
 - (id)aggregatesOnLevel:(unsigned char)arg1;

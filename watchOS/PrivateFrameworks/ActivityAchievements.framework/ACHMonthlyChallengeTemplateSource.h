@@ -30,12 +30,13 @@
 @property(retain, nonatomic) NSDate *currentDate; // @synthesize currentDate=_currentDate;
 @property(retain, nonatomic) NSCalendar *currentCalendar; // @synthesize currentCalendar=_currentCalendar;
 - (void).cxx_destruct;
+- (_Bool)subObjectsHaveDatabaseAssertions;
 - (void)setCurrentCalendarOverride:(id)arg1;
 - (void)setCurrentDateOverride:(id)arg1;
-- (_Bool)_monthlyChallengeIsRingBased:(unsigned int)arg1;
+- (id)_maximumValueForMonthlyChallengeType:(unsigned int)arg1;
 - (double)_roundedGoalValue:(double)arg1 monthlyChallengeType:(unsigned int)arg2;
 - (double)_goalValueForCurrentMonthForType:(unsigned int)arg1;
-- (id)_maximumValueForMonthlyChallengeType:(unsigned int)arg1;
+- (double)_targetGoalValueForCurrentMonthForType:(unsigned int)arg1;
 - (unsigned int)_numberOfDaysInMonthForDate:(id)arg1;
 - (id)_dateComponentIntervalForTwoMonthsAgo;
 - (id)_dateComponentIntervalForLastMonth;
@@ -54,6 +55,7 @@
 - (id)resourceBundleURLForTemplate:(id)arg1;
 - (id)localizationBundleURLForTemplate:(id)arg1;
 - (id)_createMonthlyChallengeTemplateWithType:(unsigned int)arg1 dateCompoonentInterval:(id)arg2 goalValue:(double)arg3;
+- (void)templatesForDate:(id)arg1 databaseContext:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)templatesForDate:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (_Bool)sourceShouldRunForDate:(id)arg1;
 @property(readonly, nonatomic) int runCadence;

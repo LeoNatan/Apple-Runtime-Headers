@@ -7,7 +7,7 @@
 #import <Foundation/NSArray.h>
 
 @interface NSArray (TSDExteriorTextWrapPersistenceAdditions)
-- (void)tsd_saveToExteriorTextWrapArray:(RepeatedPtrField_3504fdd6 *)arg1 archiver:(id)arg2;
-- (id)tsd_initWithExteriorTextWrapArray:(const RepeatedPtrField_3504fdd6 *)arg1;
+- (void)tsd_saveToExteriorTextWrapArray:(RepeatedPtrField_c7c49ab2 *)arg1 archiver:(id)arg2;
+- (id)tsd_initWithExteriorTextWrapArray:(const RepeatedPtrField_c7c49ab2 *)arg1;
 @end
 

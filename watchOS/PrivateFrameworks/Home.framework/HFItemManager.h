@@ -19,13 +19,14 @@
 #import <Home/HFStateDumpBuildable-Protocol.h>
 #import <Home/HFSymptomFixSessionObserver-Protocol.h>
 #import <Home/HFSymptomsHandlerObserver-Protocol.h>
+#import <Home/HFTelevisionObserver-Protocol.h>
 #import <Home/HFTemperatureUnitObserver-Protocol.h>
 #import <Home/HFUserObserver-Protocol.h>
 
 @class HFItem, HFItemManagerBatchedDelegateAdapter, HMHome, NAFuture, NSArray, NSMapTable, NSMutableDictionary, NSMutableSet, NSSet, NSString;
 @protocol HFCharacteristicReadPolicy, HFItemManagerDelegate;
 
-@interface HFItemManager : NSObject <HFStateDumpBuildable, HFHomeManagerObserver, HFHomeObserver, HFAccessoryObserver, HFResidentDeviceObserver, HFCameraObserver, HFMediaSessionObserver, HFMediaObjectObserver, HFSoftwareUpdateControllerObserver, HFSoftwareUpdateObserver, HFSymptomsHandlerObserver, HFUserObserver, HFSymptomFixSessionObserver, HFTemperatureUnitObserver, HFItemUpdating>
+@interface HFItemManager : NSObject <HFStateDumpBuildable, HFHomeManagerObserver, HFHomeObserver, HFAccessoryObserver, HFResidentDeviceObserver, HFCameraObserver, HFMediaSessionObserver, HFMediaObjectObserver, HFSoftwareUpdateControllerObserver, HFSoftwareUpdateObserver, HFSymptomsHandlerObserver, HFUserObserver, HFSymptomFixSessionObserver, HFTelevisionObserver, HFTemperatureUnitObserver, HFItemUpdating>
 {
     _Bool _hasRequestedFirstUpdate;
     id <HFItemManagerDelegate> _delegate;
@@ -81,6 +82,7 @@
 - (id)_itemsToUpdateForMediaSystemChange:(id)arg1;
 - (id)_invalidationReasonsForAddedOrRemovedMediaSystem:(id)arg1;
 - (id)_invalidationReasonsForAddedOrRemovedAccessory:(id)arg1;
+- (id)_itemsToUpdateForTelevisionProfiles:(id)arg1;
 - (id)_itemsToUpdateForModifiedSoftwareUpdates:(id)arg1;
 - (id)_itemsToUpdateForModifiedSoftwareUpdateControllers:(id)arg1;
 - (id)_itemsToUpdateForAccessorySettingChange:(id)arg1;
@@ -214,6 +216,7 @@
 - (void)home:(id)arg1 willExecuteActionSets:(id)arg2;
 - (void)home:(id)arg1 willWriteValuesForCharacteristics:(id)arg2;
 - (void)home:(id)arg1 willReadValuesForCharacteristics:(id)arg2;
+- (void)profileDidUpdateMediaSourceDisplayOrder:(id)arg1;
 - (void)fixSession:(id)arg1 didChangeState:(int)arg2;
 - (void)symptomsHandler:(id)arg1 didUpdateSymptoms:(id)arg2;
 - (void)accessorySettings:(id)arg1 didWriteValueForSettings:(id)arg2 failedSettings:(id)arg3;
@@ -234,6 +237,7 @@
 - (void)residentDevice:(id)arg1 didUpdateEnabled:(_Bool)arg2;
 - (void)residentDevice:(id)arg1 didUpdateCapabilities:(unsigned int)arg2;
 - (void)residentDevice:(id)arg1 didUpdateName:(id)arg2;
+- (void)accessory:(id)arg1 didUpdateLastKnownSleepDiscoveryModeForService:(id)arg2;
 - (void)home:(id)arg1 didUpdateReprovisionStateForAccessory:(id)arg2;
 - (void)accessory:(id)arg1 didRemoveControlTarget:(id)arg2;
 - (void)accessory:(id)arg1 didAddControlTarget:(id)arg2;

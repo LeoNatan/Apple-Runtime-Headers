@@ -39,11 +39,14 @@
 - (void)deleteMessagesZone;
 - (void)deleteMessageSyncToken;
 - (void)syncMessagesWithSyncType:(long long)arg1 deviceConditionsToCheck:(unsigned long long)arg2 activity:(id)arg3 completionBlock:(CDUnknownBlockType)arg4;
+- (_Bool)_kickOffWriteIfNeededForSyncType:(long long)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)_kickOffWriteOnCKQueueWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_updateAllMessagesAsNotNeedingReUpload;
 - (void)_markAllUnsuccessFullSyncMessagesAsNeedingSync;
 - (_Bool)_shouldMarkAllMessagesAsNeedingSync;
 - (void)_noteSyncEnded;
 - (void)_fetchMessageZoneChangesSyncType:(long long)arg1 currentBatchCount:(long long)arg2 maxNumberOfBatches:(long long)arg3 completionBlock:(CDUnknownBlockType)arg4;
+- (_Bool)_isDiskSpaceAvailableForSyncType:(long long)arg1 currentBatchCount:(long long)arg2;
 - (_Bool)_doesAnyRecordZoneIDHavePendingArchivedRecords:(long long)arg1;
 - (_Bool)_shouldFetchArchivedRecords:(id)arg1;
 - (void)_processFetchRecordZoneChangesCompletionWithError:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
@@ -58,9 +61,11 @@
 - (void)_resetArvchivedRecordSyncToken;
 @property(retain, nonatomic) CKServerChangeToken *archivedRecordSyncToken; // @synthesize archivedRecordSyncToken=_archivedRecordSyncToken;
 - (void)_migrateSyncTokens;
-- (_Bool)_deviceConditionsAllowsMessageSync;
+- (_Bool)_deviceConditionsAllowsMessageSyncForActivity:(id)arg1 deviceConditionsToCheck:(unsigned long long)arg2 currentBatchCount:(long long)arg3 maxBatchCount:(long long)arg4;
+- (_Bool)_isCoreDuetSyncForMaxBatchCount:(long long)arg1;
+- (_Bool)_shouldDeferCoreDuetMessagesSync;
 - (_Bool)_deviceConditionsAllowsMessageSyncForCurrentBatchCount:(long long)arg1 maxBatchCount:(long long)arg2;
-- (void)_updateDeviceCondictionsToCheckIfNeededForCurrentBatchCount:(long long)arg1 maxBatchCount:(long long)arg2;
+- (void)_updateDeviceConditionsToCheckIfNeededForCurrentBatchCount:(long long)arg1 maxBatchCount:(long long)arg2;
 - (void)_processRecordChange:(id)arg1;
 - (void)_writeDirtyMessagesToCloudKitWithCompletion:(CDUnknownBlockType)arg1;
 - (id)_syncOperationGroupName;

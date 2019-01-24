@@ -15,7 +15,6 @@
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (id)metadataForActiveFormInPageWithMainFrame:(id)arg1;
-- (_Bool)shouldAttemptToClassifyFormsWithoutAPasswordFieldAsLoginForms;
 - (_Bool)shouldIncludeNonEmptyFields;
 - (id)visibleNonEmptyTextFieldsInForm:(id)arg1 inFrame:(id)arg2;
 - (id)formSubmissionURLStringForSearchTextField:(id)arg1 inFrame:(id)arg2 useStrictDetection:(_Bool)arg3;
@@ -63,7 +62,7 @@
 - (void)fillField:(id)arg1 inFrame:(id)arg2 withGeneratedPassword:(id)arg3;
 - (id)fillForm:(double)arg1 inFrame:(id)arg2 withPassword:(id)arg3;
 - (void)setFormControls:(id)arg1 inFrame:(id)arg2 asAutoFilled:(_Bool)arg3;
-- (void)finishedAutoFillingForm:(id)arg1 inFrame:(id)arg2;
+- (void)finishedAutoFillingForm:(id)arg1 inFrame:(id)arg2 shouldSubmit:(_Bool)arg3;
 - (void)autoFillFormInFrame:(id)arg1 withValues:(id)arg2 fillSynchronously:(_Bool)arg3 setAutoFilled:(_Bool)arg4 focusFieldAfterFilling:(_Bool)arg5 fieldToFocus:(id)arg6;
 - (void)autoFillFormInFrame:(id)arg1 withValues:(id)arg2 fillSynchronously:(_Bool)arg3 setAutoFilled:(_Bool)arg4 selectFieldAfterFilling:(id)arg5;
 - (void)autoFillFormAsynchronouslyInFrame:(id)arg1 withValues:(id)arg2 selectFieldAfterFilling:(id)arg3;

@@ -23,7 +23,6 @@
     UIVisualEffectView *_buttonView;
     NSLayoutConstraint *_buttonViewBottomAnchorLayoutConstraint;
     NSLayoutConstraint *_buttonViewLeadingAnchorLayoutConstraint;
-    NSLayoutConstraint *_buttonViewTopAnchorLayoutConstraint;
     NSLayoutConstraint *_buttonViewTrailingAnchorLayoutConstraint;
     NSLayoutConstraint *_cancelButtonFirstBaselineAnchorLayoutConstraint;
     NSLayoutConstraint *_cancelButtonLastBaselineAnchorLayoutConstraint;
@@ -44,7 +43,6 @@
     NSLayoutConstraint *_titleLabelFirstBaselineAnchorLayoutConstraint;
     double _buttonViewBottomAnchorLayoutConstraintConstant;
     double _buttonViewLeadingAnchorLayoutConstraintConstant;
-    double _buttonViewTopAnchorLayoutConstraintConstant;
     double _buttonViewTrailingAnchorLayoutConstraintConstant;
     double _contentViewBottomAnchorLayoutConstraintConstant;
 }
@@ -52,7 +50,6 @@
 + (_Bool)requiresConstraintBasedLayout;
 @property(readonly, nonatomic) double contentViewBottomAnchorLayoutConstraintConstant; // @synthesize contentViewBottomAnchorLayoutConstraintConstant=_contentViewBottomAnchorLayoutConstraintConstant;
 @property(readonly, nonatomic) double buttonViewTrailingAnchorLayoutConstraintConstant; // @synthesize buttonViewTrailingAnchorLayoutConstraintConstant=_buttonViewTrailingAnchorLayoutConstraintConstant;
-@property(readonly, nonatomic) double buttonViewTopAnchorLayoutConstraintConstant; // @synthesize buttonViewTopAnchorLayoutConstraintConstant=_buttonViewTopAnchorLayoutConstraintConstant;
 @property(readonly, nonatomic) double buttonViewLeadingAnchorLayoutConstraintConstant; // @synthesize buttonViewLeadingAnchorLayoutConstraintConstant=_buttonViewLeadingAnchorLayoutConstraintConstant;
 @property(readonly, nonatomic) double buttonViewBottomAnchorLayoutConstraintConstant; // @synthesize buttonViewBottomAnchorLayoutConstraintConstant=_buttonViewBottomAnchorLayoutConstraintConstant;
 @property(nonatomic) NSLayoutConstraint *titleLabelFirstBaselineAnchorLayoutConstraint; // @synthesize titleLabelFirstBaselineAnchorLayoutConstraint=_titleLabelFirstBaselineAnchorLayoutConstraint;
@@ -73,7 +70,6 @@
 @property(nonatomic) NSLayoutConstraint *cancelButtonLastBaselineAnchorLayoutConstraint; // @synthesize cancelButtonLastBaselineAnchorLayoutConstraint=_cancelButtonLastBaselineAnchorLayoutConstraint;
 @property(nonatomic) NSLayoutConstraint *cancelButtonFirstBaselineAnchorLayoutConstraint; // @synthesize cancelButtonFirstBaselineAnchorLayoutConstraint=_cancelButtonFirstBaselineAnchorLayoutConstraint;
 @property(nonatomic) NSLayoutConstraint *buttonViewTrailingAnchorLayoutConstraint; // @synthesize buttonViewTrailingAnchorLayoutConstraint=_buttonViewTrailingAnchorLayoutConstraint;
-@property(nonatomic) NSLayoutConstraint *buttonViewTopAnchorLayoutConstraint; // @synthesize buttonViewTopAnchorLayoutConstraint=_buttonViewTopAnchorLayoutConstraint;
 @property(nonatomic) NSLayoutConstraint *buttonViewLeadingAnchorLayoutConstraint; // @synthesize buttonViewLeadingAnchorLayoutConstraint=_buttonViewLeadingAnchorLayoutConstraint;
 @property(nonatomic) NSLayoutConstraint *buttonViewBottomAnchorLayoutConstraint; // @synthesize buttonViewBottomAnchorLayoutConstraint=_buttonViewBottomAnchorLayoutConstraint;
 @property(nonatomic, getter=isConstraintsLoaded) _Bool constraintsLoaded; // @synthesize constraintsLoaded=_constraintsLoaded;
@@ -106,6 +102,7 @@
 - (void)handleConfirmButtonAction:(id)arg1;
 - (void)handleCancelButtonAction:(id)arg1;
 @property(nonatomic, getter=isCancelButtonHidden) _Bool cancelButtonHidden;
+- (void)layoutSubviews;
 - (void)updateFonts;
 - (void)updateConstraintConstants;
 - (void)updateConstraints;

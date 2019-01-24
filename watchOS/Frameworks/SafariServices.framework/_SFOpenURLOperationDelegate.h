@@ -20,6 +20,7 @@ __attribute__((visibility("hidden")))
 - (void)openResourceOperation:(id)arg1 didFailWithError:(id)arg2;
 - (void)openResourceOperationDidComplete:(id)arg1;
 - (void)openResourceOperation:(id)arg1 didFinishCopyingResource:(id)arg2;
+- (void)_didFinishWithSuccess:(_Bool)arg1;
 - (id)initWithCompletionHandler:(CDUnknownBlockType)arg1;
 
 // Remaining properties

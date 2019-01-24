@@ -5,9 +5,9 @@
 //
 
 @protocol TSCH3DFillData
-- (Color_1703f521)emissive;
-- (Color_1703f521)specular;
-- (Color_1703f521)diffuse;
+- (struct Color)emissive;
+- (struct Color)specular;
+- (struct Color)diffuse;
 - (float)shininess;
 - (float)opacity;
 @end

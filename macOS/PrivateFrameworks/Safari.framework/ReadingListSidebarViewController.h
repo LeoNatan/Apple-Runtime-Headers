@@ -70,7 +70,7 @@ __attribute__((visibility("hidden")))
 - (void)_updateViewsForNetworkReachabilityChange;
 - (void)_updateNetworkReachability;
 - (void)_didReceiveNetworkChangeNotification:(id)arg1;
-- (void)_userDefaultsDidChange:(id)arg1;
+- (void)_readingListSaveArticlesOfflineAutomaticallyPreferenceDidChange:(id)arg1;
 - (void)willBeInstalledBySidebarViewController:(id)arg1;
 - (void)setWindowController:(id)arg1;
 - (void)dealloc;

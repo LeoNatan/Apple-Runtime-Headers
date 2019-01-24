@@ -9,18 +9,17 @@
 #import <WebCore/NSURLConnectionDelegate-Protocol.h>
 
 @class NSString;
-@protocol OS_dispatch_semaphore;
 
 __attribute__((visibility("hidden")))
 @interface WebCoreResourceHandleAsOperationQueueDelegate : NSObject <NSURLConnectionDelegate>
 {
     struct ResourceHandle *m_handle;
-    NSObject<OS_dispatch_semaphore> *m_semaphore;
+    // Error parsing type: {BinarySemaphore="m_isSet"B"m_lock"{Lock="m_byte"{Atomic<unsigned char>="value"{atomic<unsigned char>="__a_"AC}}}"m_condition"{Condition="m_hasWaiters"{Atomic<bool>="value"{atomic<bool>="__a_"AB}}}}, name: m_semaphore
     // Error parsing type: ^{MessageQueue<WTF::Function<void ()> >={Lock={Atomic<unsigned char>={atomic<unsigned char>=AC}}}{Condition={Atomic<bool>={atomic<bool>=AB}}}{Deque<std::__1::unique_ptr<WTF::Function<void ()>, std::__1::default_delete<WTF::Function<void ()> > >, 0>=II{VectorBuffer<std::__1::unique_ptr<WTF::Function<void ()>, std::__1::default_delete<WTF::Function<void ()> > >, 0>=^{unique_ptr<WTF::Function<void ()>, std::__1::default_delete<WTF::Function<void ()> > >}II}}B}, name: m_messageQueue
     struct RetainPtr<NSURLRequest> m_requestResult;
     // Error parsing type: {Lock="m_byte"{Atomic<unsigned char>="value"{atomic<unsigned char>="__a_"AC}}}, name: m_mutex
     struct RetainPtr<NSCachedURLResponse> m_cachedResponseResult;
-    struct optional<WTF::HashSet<WTF::RefPtr<WTF::SchedulePair, WTF::DumbPtrTraits<WTF::SchedulePair>>, WTF::SchedulePairHash, WTF::HashTraits<WTF::RefPtr<WTF::SchedulePair, WTF::DumbPtrTraits<WTF::SchedulePair>>>>> m_scheduledPairs;
+    struct Optional<WTF::HashSet<WTF::RefPtr<WTF::SchedulePair, WTF::DumbPtrTraits<WTF::SchedulePair>>, WTF::SchedulePairHash, WTF::HashTraits<WTF::RefPtr<WTF::SchedulePair, WTF::DumbPtrTraits<WTF::SchedulePair>>>>> m_scheduledPairs;
     _Bool m_boolResult;
 }
 

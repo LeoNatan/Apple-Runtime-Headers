@@ -29,8 +29,8 @@
 - (void).cxx_destruct;
 - (void)_setNavigationBarEnabled:(_Bool)arg1;
 - (void)_setViewEnabledState:(_Bool)arg1;
-- (void)_continousButtonPressed;
-- (void)_setContinousButtonEnabledState;
+- (void)_continuousButtonPressed;
+- (void)_setContinuousButtonEnabledState;
 - (void)setHeaderViewTitle:(id)arg1 subtitle:(id)arg2;
 - (id)headerView;
 - (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;

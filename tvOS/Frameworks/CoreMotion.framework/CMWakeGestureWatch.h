@@ -8,6 +8,7 @@
 
 @interface CMWakeGestureWatch : CMWakeGestureManager
 {
+    int fSelector;
 }
 
 @end

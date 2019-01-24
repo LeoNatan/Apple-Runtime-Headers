@@ -10,6 +10,7 @@
 {
 }
 
++ (id)defaultFontFamilyNameForLanguageMap;
 + (id)defaultFontFamilyNameForLanguage:(id)arg1;
 + (id)fontsForLanguage:(id)arg1;
 

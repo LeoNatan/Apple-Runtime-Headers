@@ -33,6 +33,7 @@
 - (id)largestImageResourceForImageIdentifier:(id)arg1;
 - (id)imageResourceForImageIdentifier:(id)arg1 constrainedToSize:(struct CGSize)arg2 allowsUpscaling:(_Bool)arg3;
 - (id)imageResourceForVideoFill:(id)arg1;
+- (id)imageResourceForRepeatableImageFill:(id)arg1;
 - (id)imageResourceForImageFill:(id)arg1;
 - (id)imageResourcesForComponentStyle:(id)arg1;
 - (struct CGSize)sizeConstraintForComponent:(id)arg1;
@@ -47,7 +48,7 @@
 - (void)determineOptimalImagesForComponents:(id)arg1;
 - (void)determineOptimalImagesForMetadata;
 - (void)prepareImageResources;
-- (id)initWithDocumentController:(id)arg1;
+- (id)initWithDocumentController:(id)arg1 columnCalculator:(id)arg2;
 
 @end
 

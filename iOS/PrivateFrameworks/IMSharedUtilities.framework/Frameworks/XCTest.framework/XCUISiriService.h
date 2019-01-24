@@ -7,14 +7,18 @@
 #import <objc/NSObject.h>
 
 @class NSString, XCUIApplication;
+@protocol XCUIDevice, XCUIRemoteSiriInterface;
 
 @interface XCUISiriService : NSObject
 {
     XCUIApplication *_siriApplication;
+    id <XCUIDevice> _device;
+    id <XCUIRemoteSiriInterface> _remoteSiriInterface;
 }
 
-+ (id)siriService;
-@property(retain) XCUIApplication *siriApplication; // @synthesize siriApplication=_siriApplication;
+@property(readonly) id <XCUIRemoteSiriInterface> remoteSiriInterface; // @synthesize remoteSiriInterface=_remoteSiriInterface;
+@property(readonly) id <XCUIDevice> device; // @synthesize device=_device;
+@property(readonly) XCUIApplication *siriApplication; // @synthesize siriApplication=_siriApplication;
 - (void).cxx_destruct;
 - (id)forwardingTargetForSelector:(SEL)arg1;
 - (void)_waitForActivation;
@@ -24,7 +28,7 @@
 - (void)injectAssistantRecognitionStrings:(id)arg1;
 - (void)activateWithVoiceRecognitionText:(id)arg1;
 @property(readonly, copy) NSString *debugDescription;
-- (id)init;
+- (id)initWithDevice:(id)arg1 remoteSiriInterface:(id)arg2;
 
 @end
 

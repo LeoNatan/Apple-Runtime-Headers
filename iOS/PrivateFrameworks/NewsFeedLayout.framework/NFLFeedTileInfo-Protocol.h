@@ -7,14 +7,17 @@
 #import <NewsFeedLayout/NFCopying-Protocol.h>
 #import <NewsFeedLayout/NSObject-Protocol.h>
 
-@class NSArray, NSString;
+@class NFLHeadlineTileInfo, NSArray, NSString;
+@protocol FCHeadlineProviding, NFLFeedTileInfo;
 
 @protocol NFLFeedTileInfo <NSObject, NFCopying>
+@property(readonly, copy, nonatomic) NSString *groupIdentifier;
+@property(readonly, nonatomic) NFLHeadlineTileInfo *feedTileInfoForBookmarking;
 @property(readonly, nonatomic) NSArray *underlyingFeedElements;
 @property(readonly, nonatomic) unsigned long long bookmarkOffsetType;
-@property(readonly, nonatomic) _Bool bookmarkable;
 @property(readonly, nonatomic) _Bool pageable;
 @property(readonly, copy, nonatomic) NSString *identifier;
 @property(readonly, nonatomic) unsigned long long tileInfoType;
+- (id <NFLFeedTileInfo>)updatedTileInfoWithNewHeadline:(id <FCHeadlineProviding>)arg1;
 @end
 

@@ -17,7 +17,7 @@ __attribute__((visibility("hidden")))
     // Error parsing type: , name: activityIndicator
 }
 
-- (CDUnknownBlockType).cxx_destruct;
+- (void).cxx_destruct;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (void)didTapCancel:(id)arg1;
 - (void)viewDidLoad;

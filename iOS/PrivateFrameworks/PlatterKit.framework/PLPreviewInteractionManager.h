@@ -9,7 +9,7 @@
 #import <PlatterKit/UIGestureRecognizerDelegate-Protocol.h>
 #import <PlatterKit/UIPreviewInteractionDelegatePrivate-Protocol.h>
 
-@class NSString, UIPreviewInteraction, UIViewController, _UIPreviewInteractionViewControllerPresentation;
+@class NSString, UIGestureRecognizer, UIPreviewInteraction, UIViewController, _UIPreviewInteractionViewControllerPresentation;
 @protocol PLPreviewInteractionManagerDelegate, PLPreviewInteractionPresentable, PLPreviewInteractionPresenting;
 
 @interface PLPreviewInteractionManager : NSObject <UIGestureRecognizerDelegate, UIPreviewInteractionDelegatePrivate>
@@ -40,8 +40,10 @@
 - (_Bool)previewInteractionShouldBegin:(id)arg1;
 - (void)_previewInteractionViewControllerTransitionDidDismiss:(_Bool)arg1;
 - (void)_previewInteractionViewControllerTransitionDidPresent:(_Bool)arg1;
+@property(readonly, nonatomic) UIGestureRecognizer *gestureRecognizerForExclusionRelationship;
 @property(readonly, nonatomic, getter=hasCommittedToPresentation) _Bool committedToPresentation;
 - (void)resetForInitialInteraction;
+- (id)_newPreviewInteractionWithView:(id)arg1;
 - (_Bool)dismissIfPossible:(CDUnknownBlockType)arg1;
 - (void)completeTransitionImmediately;
 - (_Bool)presentIfPossible:(CDUnknownBlockType)arg1;

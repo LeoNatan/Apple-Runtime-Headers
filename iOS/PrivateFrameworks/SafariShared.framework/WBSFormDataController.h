@@ -26,17 +26,22 @@
     WBSAutoFillQuirksManager *_autoFillQuirksManager;
 }
 
++ (_Bool)isFieldUnidentified:(id)arg1;
 + (_Bool)_password:(id)arg1 appearsToBeMoreThanOneSymbolAppendedToPassword:(id)arg2;
 + (_Bool)_password:(id)arg1 appearsToBeASixDigitCodeAppendedToPassword:(id)arg2;
 + (_Bool)password:(id)arg1 shouldBeConsideredEqualToExistingPassword:(id)arg2;
 + (id)contactKeyForString:(id)arg1;
 + (_Bool)contactIsMe:(id)arg1;
++ (id)valuesFromUser:(id)arg1 password:(id)arg2 forLoginOrChangePasswordForm:(id)arg3;
++ (id)valuesFromCredential:(id)arg1 forLoginOrChangePasswordForm:(id)arg2;
 + (id)localizedLowercaseContactProperty:(id)arg1;
 + (_Bool)isNameProperty:(id)arg1;
 + (id)controlsConsideredByAutoFillInForm:(id)arg1;
 + (id)lastFieldInControls:(id)arg1 inForm:(id)arg2;
 + (id)nextFieldAfterControls:(id)arg1 inForm:(id)arg2;
 + (id)domainFromURL:(id)arg1;
++ (_Bool)textFieldLooksLikeCreditCardNumericFormField:(id)arg1;
++ (_Bool)textFieldLooksLikeCreditCardFormField:(id)arg1 inForm:(id)arg2;
 + (long long)availableManualAutoFillActionForTextField:(id)arg1 form:(id)arg2 outUsernameElementUniqueID:(id *)arg3 outPasswordElementUniqueID:(id *)arg4 outConfirmPasswordElementUniqueID:(id *)arg5;
 + (_Bool)canAutocompleteTextField:(id)arg1 inForm:(id)arg2;
 + (id)continuingFieldsInFormControls:(id)arg1 startingAtIndex:(unsigned long long)arg2 textFieldsOnly:(_Bool)arg3 ignorePositioning:(_Bool)arg4;
@@ -52,6 +57,8 @@
 + (_Bool)formContainsCreditCardNumberField:(id)arg1;
 + (_Bool)formContainsCreditCardData:(id)arg1;
 + (_Bool)stringLooksLikeCreditCardNumber:(id)arg1;
++ (id)fieldToFocusBeforeSubmittingForm:(id)arg1;
++ (_Bool)shouldSubmitForm:(id)arg1 withCredential:(id)arg2;
 + (id)valueOfControlWithUniqueID:(id)arg1 inForm:(id)arg2;
 + (id)_metadataForControlWithUniqueID:(id)arg1 inForm:(id)arg2;
 + (_Bool)convertNumber:(id)arg1 toAutoFillFormType:(unsigned long long *)arg2;
@@ -67,17 +74,14 @@
 - (void)updateLastUsedUsernameAndExtractUsernameAndPasswordFromForm:(id)arg1 atURL:(id)arg2 username:(id *)arg3 password:(id *)arg4;
 - (void)willSubmitFormWithCredentials:(id)arg1 atURL:(id)arg2 username:(id *)arg3 password:(id *)arg4;
 - (_Bool)isPasswordFieldForUserCredentialsWithMetadata:(id)arg1 formMetadata:(id)arg2;
-- (_Bool)hasCredentialsForPageWithMainFrame:(id)arg1;
 - (id)metadataOfBestFormForStreamlinedLogin:(id)arg1 frame:(struct OpaqueFormAutoFillFrame **)arg2;
-- (id)metadataOfActiveFormOrBestFormForPageLevelAutoFill:(id)arg1 frame:(struct OpaqueFormAutoFillFrame **)arg2 forPrefillingCredentials:(_Bool)arg3;
-- (id)activeOrFirstAutoFillableFormFromProvider:(id)arg1 frame:(struct OpaqueFormAutoFillFrame **)arg2 forPrefillingCredentials:(_Bool)arg3;
+- (id)metadataOfActiveFormOrBestFormForPageLevelAutoFill:(id)arg1 frame:(struct OpaqueFormAutoFillFrame **)arg2;
 - (id)_credentialMatchesWithCriteria:(id)arg1 protectionSpaceMatches:(id)arg2;
 - (id)_protectionSpaceMatchesWithCriteria:(id)arg1 credentialsByProtectionSpace:(id)arg2 associatedDomainsManager:(id)arg3;
 - (void)credentialMatchesWithCriteria:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)getCredentialMatches:(id *)arg1 andPotentialMatches:(id *)arg2 matchesForAssociatedDomains:(id *)arg3 forURL:(id)arg4 matchingPartialUsername:(id)arg5 omittingCredentialsUserHasDeniedAccessTo:(_Bool)arg6;
 - (void)getCredentialMatches:(id *)arg1 andPotentialMatches:(id *)arg2 forURL:(id)arg3 matchingPartialUsername:(id)arg4 omittingCredentialsUserHasDeniedAccessTo:(_Bool)arg5;
 - (void)getCredentialMatches:(id *)arg1 andPotentialMatches:(id *)arg2 matchesForAssociatedDomains:(id *)arg3 forURL:(id)arg4 matchingPartialUsername:(id)arg5;
-- (id)credentialMatchesForURL:(id)arg1 matchingPartialString:(id)arg2;
 - (id)encryptOrDecryptData:(id)arg1 encrypt:(_Bool)arg2;
 - (id)completionDBPath;
 - (_Bool)hasUserDeniedAccessToCredential:(id)arg1 inProtectionSpace:(id)arg2;
@@ -90,15 +94,12 @@
 - (void)_setLastUsedUsername:(id)arg1 andProtectionSpace:(id)arg2 forDomain:(id)arg3;
 - (id)_lastUsedUsernameForDomain:(id)arg1 protectionSpace:(id *)arg2;
 - (id)annotationsFromCredential:(id)arg1 forLoginOrChangePasswordForm:(id)arg2;
-- (id)valuesFromUser:(id)arg1 password:(id)arg2 forLoginOrChangePasswordForm:(id)arg3;
-- (id)valuesFromCredential:(id)arg1 forLoginOrChangePasswordForm:(id)arg2;
 - (id)credentialMatchesForForm:(id)arg1 atURL:(id)arg2 potentialMatches:(id *)arg3;
 - (id)valuesForContactFormWithMetadata:(id)arg1 matches:(id *)arg2 multiRoundAutoFillManager:(id)arg3 existingMatches:(id)arg4 shouldUseExistingMatchesToFillFocusedField:(_Bool)arg5 contact:(id)arg6;
 - (id)valuesForContactFormWithMetadata:(id)arg1 matches:(id *)arg2 multiRoundAutoFillManager:(id)arg3 existingMatches:(id)arg4 contact:(id)arg5;
 - (id)valuesForContactFormWithMetadata:(id)arg1 inDomain:(id)arg2 matches:(id *)arg3 multiRoundAutoFillManager:(id)arg4 contact:(id)arg5;
 - (id)valuesForContactFormWithMetadata:(id)arg1 inDomain:(id)arg2 matches:(id *)arg3 multiRoundAutoFillManager:(id)arg4;
 - (void)saveRecentlyUsedAutoFillSetWithMatchesToFill:(id)arg1 matchesForDoNotFill:(id)arg2;
-- (id)activeElementMetadataInForm:(id)arg1;
 - (unsigned long long)_addMatchesForControl:(id)arg1 startingAtIndex:(unsigned long long)arg2 formMetadata:(id)arg3 fromExistingMatches:(id)arg4 fromAllMatchesIfNecessary:(id)arg5 addToFoundMatches:(id)arg6 addToAutoFillValues:(id)arg7 multiRoundAutoFillManager:(id)arg8 propertyToIdentifierMapForFoundMatches:(id)arg9 shouldUseExistingMatchesToFillFocusedField:(_Bool)arg10;
 - (_Bool)_matchHasPreferredIdentifierOrShouldBeFilledInMultiRoundAutoFill:(id)arg1 specifier:(id)arg2 multiRoundAutoFillManager:(id)arg3 contact:(id)arg4;
 - (id)_valuesForStandardForm:(id)arg1 inDomain:(id)arg2 autoFillDataType:(long long)arg3 matches:(id *)arg4 preferredLabel:(id)arg5 multiRoundAutoFillManager:(id)arg6 wantAllMatches:(_Bool)arg7 contact:(id)arg8 existingMatches:(id)arg9 shouldUseExistingMatchesToFillFocusedField:(_Bool)arg10 allowingIdentifiedAddressBookLabelToOverridePreferredIdentifier:(_Bool)arg11;
@@ -107,6 +108,10 @@
 - (id)contactAutoFillSetForRecentlyUsedAutoFillSet:(id)arg1 contact:(id)arg2 form:(id)arg3;
 - (id)orderedHomeAndWorkSetsForContact:(id)arg1 form:(id)arg2;
 - (id)_autoFillSetFromMatches:(id)arg1 label:(id)arg2 contact:(id)arg3 form:(id)arg4;
+- (_Bool)isControlASelectElement:(id)arg1;
+- (void)getFormFieldValues:(id *)arg1 andFieldToFocus:(id *)arg2 withSingleCreditCardData:(id)arg3 inField:(id)arg4 inForm:(id)arg5;
+- (id)_nextFieldToFocusAfterFillingFieldAtIndex:(unsigned long long)arg1 inForm:(id)arg2;
+- (unsigned long long)_indexForControlWithUniqueID:(id)arg1 inForm:(id)arg2;
 - (void)getFormFieldValues:(id *)arg1 andFieldToFocus:(id *)arg2 forCreditCardForm:(id)arg3 fromCreditCardData:(id)arg4;
 - (unsigned long long)addValuesForStandardFormControls:(id)arg1 startingAtIndex:(unsigned long long)arg2 fromAutoFillItem:(id)arg3 toDictionary:(id)arg4 formTextSample:(id)arg5 multiRoundAutoFillManager:(id)arg6;
 - (unsigned long long)addValuesForStandardFormControlsInForm:(id)arg1 startingAtIndex:(unsigned long long)arg2 fromAutoFillItem:(id)arg3 toDictionary:(id)arg4 multiRoundAutoFillManager:(id)arg5;
@@ -136,10 +141,6 @@
 - (id)preferredIdentifierForProperty:(id)arg1 withContact:(id)arg2;
 - (void)setPreferredIdentifier:(id)arg1 forProperty:(id)arg2 withContact:(id)arg3;
 - (id)uniqueIDOfContact:(id)arg1;
-- (_Bool)preferredIdentifierExistsForProperty:(id)arg1;
-- (id)preferredIdentifierForProperty:(id)arg1;
-- (void)setPreferredIdentifier:(id)arg1 forProperty:(id)arg2;
-- (void)reapABMarker:(id)arg1 domain:(id)arg2 fieldName:(id)arg3;
 - (void)domainsWithPreviousDataChanged;
 - (void)setInfo:(id)arg1 forDomain:(id)arg2;
 - (id)infoForDomain:(id)arg1;
@@ -157,6 +158,7 @@
 - (void)dealloc;
 - (id)initWithAggressiveKeychainCaching:(_Bool)arg1;
 - (id)init;
+- (long long)autoFillActionForFormType:(unsigned long long)arg1 onURL:(id)arg2;
 
 @end
 

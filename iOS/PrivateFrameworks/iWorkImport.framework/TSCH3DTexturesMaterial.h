@@ -16,10 +16,11 @@ __attribute__((visibility("hidden")))
     NSArray *_tilings;
 }
 
-+ (id)instanceWithArchive:(const struct Chart3DTexturesMaterialArchive *)arg1 unarchiver:(id)arg2;
++     // Error parsing type: @32@0:8r^{Chart3DTexturesMaterialArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSCH::Chart3DTSPImageDataTextureArchive>=^{Arena}ii^{Rep}}^{Chart3DVectorArchive}}16@24, name: instanceWithArchive:unarchiver:
 - (void)didInitFromSOS;
 - (id)firstTiling;
 - (id)firstTexture;
+- (id)variableTexture;
 - (void)addTexture:(id)arg1 tiling:(id)arg2;
 - (id)textureEnumerator;
 - (unsigned long long)textureCount;
@@ -32,8 +33,8 @@ __attribute__((visibility("hidden")))
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)dealloc;
 - (id)init;
-- (void)saveToArchive:(struct Chart3DTexturesMaterialArchive *)arg1 archiver:(id)arg2;
-- (id)initWithArchive:(const struct Chart3DTexturesMaterialArchive *)arg1 unarchiver:(id)arg2;
+-     // Error parsing type: v32@0:8^{Chart3DTexturesMaterialArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSCH::Chart3DTSPImageDataTextureArchive>=^{Arena}ii^{Rep}}^{Chart3DVectorArchive}}16@24, name: saveToArchive:archiver:
+-     // Error parsing type: @32@0:8r^{Chart3DTexturesMaterialArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSCH::Chart3DTSPImageDataTextureArchive>=^{Arena}ii^{Rep}}^{Chart3DVectorArchive}}16@24, name: initWithArchive:unarchiver:
 
 @end
 

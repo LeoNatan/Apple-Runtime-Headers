@@ -45,9 +45,11 @@
 @property(readonly, nonatomic) NSString *type;
 
 // Remaining properties
+@property(readonly, nonatomic) SXJSONArray *conditional;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
+@property(readonly, nonatomic) _Bool hidden;
 @property(readonly) Class superclass;
 
 @end

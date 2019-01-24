@@ -24,6 +24,8 @@ __attribute__((visibility("hidden")))
 + (BOOL)viewIsInspectorWebView:(id)arg1;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+- (void)inspectorWKWebViewDidMoveToWindow:(id)arg1;
+- (void)inspectorWKWebView:(id)arg1 willMoveToWindow:(id)arg2;
 - (void)inspectorWKWebViewReloadFromOrigin:(id)arg1;
 - (void)inspectorWKWebViewReload:(id)arg1;
 - (void)webView:(id)arg1 decidePolicyForNavigationAction:(id)arg2 decisionHandler:(CDUnknownBlockType)arg3;

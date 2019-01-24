@@ -44,6 +44,8 @@
 @property(copy, nonatomic) CDUnknownBlockType interruptionHandler; // @synthesize interruptionHandler=_interruptionHandler;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
 - (void).cxx_destruct;
+- (void)removeAppleID:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)addAppleID:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)xpcPersonChanged:(id)arg1 changes:(unsigned int)arg2;
 - (void)xpcPersonLost:(id)arg1;
 - (void)xpcPersonFound:(id)arg1;

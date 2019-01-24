@@ -6,9 +6,10 @@
 
 #import <Silex/NSObject-Protocol.h>
 
-@class SXLayoutBlueprint, SXLayoutDataProvider;
+@class SXLayoutBlueprint;
+@protocol SXDOMObjectProviding;
 
 @protocol SXBlueprintAnalyzer <NSObject>
-- (void)analyzeBlueprint:(SXLayoutBlueprint *)arg1 layoutDataProvider:(SXLayoutDataProvider *)arg2 onMarkerFound:(unsigned long long (^)(id <SXBlueprintMarker>, unsigned long long))arg3 then:(unsigned long long (^)(unsigned long long))arg4 onEndReached:(unsigned long long (^)(void))arg5;
+- (void)analyzeBlueprint:(SXLayoutBlueprint *)arg1 DOMObjectProvider:(id <SXDOMObjectProviding>)arg2 onMarkerFound:(unsigned long long (^)(id <SXBlueprintMarker>, unsigned long long))arg3 then:(unsigned long long (^)(unsigned long long))arg4 onEndReached:(unsigned long long (^)(void))arg5;
 @end
 

@@ -6,11 +6,13 @@
 
 #import <AssistantServices/NSObject-Protocol.h>
 
-@class AFRequestInfo, INIntent, NSString;
+@class AFRequestInfo, AFSiriActivationContext, INIntent, NSDictionary, NSString;
 
 @protocol AFSiriActivationService <NSObject>
 - (oneway void)handleIntent:(INIntent *)arg1 inBackgroundAppWithBundleId:(NSString *)arg2 reply:(void (^)(INIntentResponse *, NSError *))arg3;
-- (oneway void)activateWithRequestInfo:(AFRequestInfo *)arg1 completion:(void (^)(NSError *))arg2;
-- (oneway void)prewarmForRequestInfo:(AFRequestInfo *)arg1 completion:(void (^)(NSError *))arg2;
+- (oneway void)handleContext:(AFSiriActivationContext *)arg1 completion:(void (^)(AFSiriActivationResult *))arg2;
+- (oneway void)deactivateForReason:(long long)arg1 options:(unsigned long long)arg2 analyticsContext:(NSDictionary *)arg3 completion:(void (^)(AFSiriActivationResult *))arg4;
+- (oneway void)activateWithRequestInfo:(AFRequestInfo *)arg1 completion:(void (^)(AFSiriActivationResult *))arg2;
+- (oneway void)prewarmWithRequestInfo:(AFRequestInfo *)arg1 completion:(void (^)(AFSiriActivationResult *))arg2;
 @end
 

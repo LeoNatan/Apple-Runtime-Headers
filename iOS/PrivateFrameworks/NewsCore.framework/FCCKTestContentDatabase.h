@@ -38,12 +38,16 @@
 - (void)insertArticleID:(id)arg1 atBottomOfFeedID:(id)arg2;
 - (void)insertArticleID:(id)arg1 atTopOfFeedID:(id)arg2;
 - (void)updateTagWithID:(id)arg1 properties:(id)arg2;
+- (void)insertTestIssueWithID:(id)arg1 properties:(id)arg2;
+- (id)insertTestIssueWithProperties:(id)arg1;
+- (void)insertTestTagWithID:(id)arg1 type:(id)arg2 properties:(id)arg3;
 - (id)insertTestTagWithType:(id)arg1 properties:(id)arg2;
 - (id)insertTestTagWithType:(id)arg1 feedID:(id)arg2 properties:(id)arg3;
 - (id)insertTestTagWithType:(id)arg1 feedID:(id)arg2;
 - (void)deleteArticleWithID:(id)arg1;
 - (void)updateArticleWithID:(id)arg1 modDate:(id)arg2 properties:(id)arg3;
 - (void)updateArticleWithID:(id)arg1 properties:(id)arg2;
+- (id)insertTestForYouConfigWithProperties:(id)arg1;
 - (void)insertTestArticleWithID:(id)arg1 properties:(id)arg2;
 - (id)insertTestArticleWithProperties:(id)arg1;
 - (id)insertTestArticle;

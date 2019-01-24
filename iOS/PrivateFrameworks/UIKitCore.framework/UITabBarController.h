@@ -10,11 +10,12 @@
 #import <UIKitCore/UIGestureRecognizerDelegate-Protocol.h>
 #import <UIKitCore/UILayoutContainerViewDelegate-Protocol.h>
 #import <UIKitCore/UITabBarDelegate-Protocol.h>
+#import <UIKitCore/_UIScrollViewScrollObserver-Protocol.h>
 
-@class NSArray, NSMapTable, NSMutableArray, NSString, UIFocusContainerGuide, UIGestureRecognizer, UILayoutContainerView, UILongPressGestureRecognizer, UIMoreNavigationController, UINavigationController, UITabBar, UITapGestureRecognizer, UIView;
+@class NSArray, NSMapTable, NSMutableArray, NSString, UIFocusContainerGuide, UIGestureRecognizer, UILayoutContainerView, UILongPressGestureRecognizer, UIMoreNavigationController, UINavigationController, UIScrollView, UITabBar, UITapGestureRecognizer, UIView;
 @protocol UITabBarControllerDelegate, UIViewControllerAnimatedTransitioning, UIViewControllerInteractiveTransitioning;
 
-@interface UITabBarController : UIViewController <UIGestureRecognizerDelegate, UILayoutContainerViewDelegate, UITabBarDelegate, NSCoding>
+@interface UITabBarController : UIViewController <UIGestureRecognizerDelegate, UILayoutContainerViewDelegate, _UIScrollViewScrollObserver, UITabBarDelegate, NSCoding>
 {
     UITabBar *_tabBar;
     UILayoutContainerView *_containerView;
@@ -35,6 +36,7 @@
     UIGestureRecognizer *_touchDetectionGestureRecognizer;
     UIFocusContainerGuide *_contentFocusContainerGuide;
     UILongPressGestureRecognizer *_accessibilityLongPressGestureRecognizer;
+    UIScrollView *_observingScrollView;
     struct {
         unsigned int isShowingMoreItem:1;
         unsigned int needsToRebuildItems:1;
@@ -164,6 +166,10 @@
 - (void)_rebuildTabBarItemsIfNeeded;
 @property(copy, nonatomic) NSArray *viewControllers;
 - (void)_configureTargetActionForTabBarItem:(id)arg1;
+- (void)_observeScrollViewDidScroll:(id)arg1;
+- (void)_adjustFloatingTabBarForContentScrollView:(id)arg1;
+- (void)_updateViewController:(id)arg1 forFloatingTabBar:(_Bool)arg2;
+- (_Bool)_isFloaty;
 - (id)_recallRememberedFocusedItemForViewController:(id)arg1;
 - (void)_forgetFocusedItemForViewController:(id)arg1;
 - (void)_rememberFocusedItem:(id)arg1 forViewController:(id)arg2;

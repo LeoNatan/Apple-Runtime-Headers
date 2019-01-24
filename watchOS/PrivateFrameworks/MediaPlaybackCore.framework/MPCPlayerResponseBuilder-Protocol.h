@@ -6,7 +6,7 @@
 
 #import <MediaPlaybackCore/NSObject-Protocol.h>
 
-@class MPCMediaRemoteController, MPMiddlewareChain, MPModelGenericObject, MPPropertySet, NSIndexPath, NSString, UIView;
+@class MPCMediaRemoteController, MPMiddlewareChain, MPModelGenericObject, MPPropertySet, NSArray, NSIndexPath, NSString, UIView;
 @protocol MPCVideoView;
 
 @protocol MPCPlayerResponseBuilder <NSObject>
@@ -14,6 +14,8 @@
 - (id)playerCommandOptionValue:(id)arg1 forKey:(NSString *)arg2 command:(unsigned int)arg3 chain:(MPMiddlewareChain *)arg4;
 - (_Bool)playerCommandEnabled:(_Bool)arg1 command:(unsigned int)arg2 chain:(MPMiddlewareChain *)arg3;
 - (_Bool)playerCommandSupported:(_Bool)arg1 command:(unsigned int)arg2 chain:(MPMiddlewareChain *)arg3;
+- (NSArray *)playerItemCurrentLanguageOptions:(NSArray *)arg1 atIndexPath:(NSIndexPath *)arg2 chain:(MPMiddlewareChain *)arg3;
+- (NSArray *)playerItemLanguageOptionGroups:(NSArray *)arg1 atIndexPath:(NSIndexPath *)arg2 chain:(MPMiddlewareChain *)arg3;
 - (int)playerGlobalItemCount:(int)arg1 chain:(MPMiddlewareChain *)arg2;
 - (int)playerPlayingItemGlobalIndex:(int)arg1 chain:(MPMiddlewareChain *)arg2;
 - (NSIndexPath *)playerPlayingItemIndexPath:(NSIndexPath *)arg1 chain:(MPMiddlewareChain *)arg2;

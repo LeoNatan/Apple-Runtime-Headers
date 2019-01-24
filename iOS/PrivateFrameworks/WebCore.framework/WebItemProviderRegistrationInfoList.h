@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSData, NSString, UIItemProvider;
+@class NSData, NSItemProvider, NSString;
 
 @interface WebItemProviderRegistrationInfoList : NSObject
 {
@@ -24,7 +24,7 @@
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (id)description;
-@property(readonly, nonatomic) UIItemProvider *itemProvider;
+@property(readonly, nonatomic) NSItemProvider *itemProvider;
 - (void)enumerateItems:(CDUnknownBlockType)arg1;
 - (id)itemAtIndex:(unsigned long long)arg1;
 - (unsigned long long)numberOfItems;

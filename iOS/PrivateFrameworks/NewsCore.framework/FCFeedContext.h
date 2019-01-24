@@ -13,6 +13,7 @@
 @interface FCFeedContext : NSObject <NSCopying>
 {
     _Bool _isHiddenFeed;
+    _Bool _isPaidBundleFeed;
     _Bool _isTopStories;
     _Bool _isEditorial;
     _Bool _isEditorialGems;
@@ -22,6 +23,7 @@
     NSString *_topicID;
 }
 
++ (id)feedContextForPaidBundleFeed;
 + (id)feedContextForHiddenFeed;
 + (id)feedContextForCoverArticlesFeed;
 + (id)feedContextForBreakingNewsChannelID:(id)arg1;
@@ -36,6 +38,7 @@
 @property(nonatomic) _Bool isEditorialGems; // @synthesize isEditorialGems=_isEditorialGems;
 @property(nonatomic) _Bool isEditorial; // @synthesize isEditorial=_isEditorial;
 @property(nonatomic) _Bool isTopStories; // @synthesize isTopStories=_isTopStories;
+@property(nonatomic) _Bool isPaidBundleFeed; // @synthesize isPaidBundleFeed=_isPaidBundleFeed;
 @property(nonatomic) _Bool isHiddenFeed; // @synthesize isHiddenFeed=_isHiddenFeed;
 @property(copy, nonatomic) NSString *topicID; // @synthesize topicID=_topicID;
 @property(copy, nonatomic) NSString *channelID; // @synthesize channelID=_channelID;

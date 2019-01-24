@@ -10,12 +10,10 @@
 
 @interface SXDataTableCellStyle : SXDataTableElementStyle
 {
-    NSArray *_textStyles;
 }
 
 + (CDUnknownBlockType)valueClassBlockForPropertyWithName:(id)arg1;
-- (void).cxx_destruct;
-@property(readonly, nonatomic) NSArray *textStyles; // @synthesize textStyles=_textStyles;
+- (id)textStylesWithValue:(id)arg1 withType:(int)arg2;
 - (unsigned long long)horizontalAlignmentWithValue:(id)arg1 withType:(int)arg2;
 - (unsigned long long)verticalAlignmentWithValue:(id)arg1 withType:(int)arg2;
 - (id)paddingWithValue:(id)arg1 withType:(int)arg2;
@@ -30,6 +28,7 @@
 @property(readonly, nonatomic) SXPadding *padding; // @dynamic padding;
 @property(readonly, nonatomic) SXJSONArray *selectors; // @dynamic selectors;
 @property(readonly, nonatomic) NSString *textStyle; // @dynamic textStyle;
+@property(readonly, nonatomic) NSArray *textStyles; // @dynamic textStyles;
 @property(readonly, nonatomic) unsigned long long verticalAlignment; // @dynamic verticalAlignment;
 @property(readonly, nonatomic) double width; // @dynamic width;
 

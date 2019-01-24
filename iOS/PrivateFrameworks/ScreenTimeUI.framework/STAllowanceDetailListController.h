@@ -16,6 +16,8 @@
 @interface STAllowanceDetailListController : PSListController <STUIDateTimePickerCellDelegate, STCustomizeDaysListControllerDelegate, STAllowanceSetupListControllerDelegate>
 {
     _Bool _isSetupController;
+    _Bool _useBackButton;
+    _Bool _creatingNewAllowance;
     _Bool _didDeleteAllowance;
     id <STAllowanceDetailListControllerDelegate> _delegate;
     STAllowance *_allowance;
@@ -25,25 +27,21 @@
     PSSpecifier *_timePickerSpecifier;
     PSSpecifier *_customizeDaysSpecifier;
     PSSpecifier *_selectedTimeSpecifier;
-    PSSpecifier *_appsCategoriesGroupSpecifier;
     NSArray *_budgetedItemSpecifiers;
-    PSSpecifier *_atAllowanceGroupSpecifier;
-    PSSpecifier *_atAllowanceSpecifier;
     UIColor *_defaultTimeCellDetailTextColor;
 }
 
 @property(retain, nonatomic) UIColor *defaultTimeCellDetailTextColor; // @synthesize defaultTimeCellDetailTextColor=_defaultTimeCellDetailTextColor;
 @property _Bool didDeleteAllowance; // @synthesize didDeleteAllowance=_didDeleteAllowance;
-@property(retain, nonatomic) PSSpecifier *atAllowanceSpecifier; // @synthesize atAllowanceSpecifier=_atAllowanceSpecifier;
-@property(retain, nonatomic) PSSpecifier *atAllowanceGroupSpecifier; // @synthesize atAllowanceGroupSpecifier=_atAllowanceGroupSpecifier;
 @property(retain, nonatomic) NSArray *budgetedItemSpecifiers; // @synthesize budgetedItemSpecifiers=_budgetedItemSpecifiers;
-@property(retain, nonatomic) PSSpecifier *appsCategoriesGroupSpecifier; // @synthesize appsCategoriesGroupSpecifier=_appsCategoriesGroupSpecifier;
 @property(retain, nonatomic) PSSpecifier *selectedTimeSpecifier; // @synthesize selectedTimeSpecifier=_selectedTimeSpecifier;
 @property(retain, nonatomic) PSSpecifier *customizeDaysSpecifier; // @synthesize customizeDaysSpecifier=_customizeDaysSpecifier;
 @property(retain, nonatomic) PSSpecifier *timePickerSpecifier; // @synthesize timePickerSpecifier=_timePickerSpecifier;
 @property(retain, nonatomic) PSSpecifier *timeSpecifier; // @synthesize timeSpecifier=_timeSpecifier;
 @property(retain, nonatomic) PSSpecifier *timeGroupSpecifier; // @synthesize timeGroupSpecifier=_timeGroupSpecifier;
 @property(readonly, nonatomic) NSObject<STRootViewModelCoordinator> *coordinator; // @synthesize coordinator=_coordinator;
+@property(nonatomic) _Bool creatingNewAllowance; // @synthesize creatingNewAllowance=_creatingNewAllowance;
+@property _Bool useBackButton; // @synthesize useBackButton=_useBackButton;
 @property(nonatomic) _Bool isSetupController; // @synthesize isSetupController=_isSetupController;
 @property(copy, nonatomic) STAllowance *allowance; // @synthesize allowance=_allowance;
 @property(nonatomic) __weak id <STAllowanceDetailListControllerDelegate> delegate; // @synthesize delegate=_delegate;
@@ -56,8 +54,10 @@
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (id)atEndOfLimitFooterText;
-- (id)askForMoreTime:(id)arg1;
-- (void)setAskForMoreTime:(id)arg1 specifier:(id)arg2;
+- (id)_allowanceEnabled:(id)arg1;
+- (void)_setAllowanceEnabled:(id)arg1 specifier:(id)arg2;
+- (id)_askForMoreTime:(id)arg1;
+- (void)_setAskForMoreTime:(id)arg1 specifier:(id)arg2;
 - (id)createBudgetedItemSpecifiers;
 - (void)deleteAllowance:(id)arg1;
 - (void)confirmDeletion:(id)arg1;

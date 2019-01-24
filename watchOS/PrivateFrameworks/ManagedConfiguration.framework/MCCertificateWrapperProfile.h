@@ -10,7 +10,7 @@
 {
 }
 
-+ (id)wrapperProfileDictionaryWithCertificateData:(id)arg1 fileName:(id)arg2;
++ (id)wrapperProfileDictionaryWithCertificateData:(id)arg1 fileName:(id)arg2 outSignerCerts:(id *)arg3;
 + (id)_wrapperProfileForWAPICertificate:(struct __SecCertificate *)arg1 fileName:(id)arg2 PEMData:(id)arg3;
 + (id)_wrapperProfileDictForCertificate:(struct __SecCertificate *)arg1 fileName:(id)arg2 certData:(id)arg3 type:(id)arg4;
 + (id)_basicWrapperProfileDictForCertificateName:(id)arg1 fileName:(id)arg2 identifier:(id)arg3;
@@ -21,7 +21,7 @@
 - (_Bool)isSigned;
 - (int)trustLevel;
 - (id)stubDictionary;
-- (id)initWithDictionary:(id)arg1 allowEmptyPayload:(_Bool)arg2 outError:(id *)arg3;
+- (id)initWithDictionary:(id)arg1 signerCerts:(id)arg2 allowEmptyPayload:(_Bool)arg3 outError:(id *)arg4;
 - (id)_certificatePayload;
 
 @end

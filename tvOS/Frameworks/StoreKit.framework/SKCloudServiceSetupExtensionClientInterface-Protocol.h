@@ -10,6 +10,7 @@
 
 @protocol SKCloudServiceSetupExtensionClientInterface <NSObject>
 - (void)presentSafariViewControllerWithURL:(NSURL *)arg1 animated:(_Bool)arg2 completion:(void (^)(void))arg3;
+- (void)overrideRedeemCameraPerformAction:(long long)arg1 withObject:(id)arg2;
 - (void)overrideCreditCardPresentationWithCompletion:(void (^)(SUCreditCardReaderOutput *))arg1;
 - (void)dismissSafariViewControllerAnimated:(_Bool)arg1 completion:(void (^)(void))arg2;
 - (void)dismissCloudServiceSetupViewControllerAnimated:(_Bool)arg1 completion:(void (^)(void))arg2;

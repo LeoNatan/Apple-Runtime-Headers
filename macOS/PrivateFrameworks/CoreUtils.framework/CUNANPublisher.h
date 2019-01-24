@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class CUNANServiceInfo, NSDictionary, NSString;
+@class NSDictionary, NSString;
 @protocol OS_dispatch_queue;
 
 @interface CUNANPublisher : NSObject
@@ -15,7 +15,6 @@
     BOOL _invalidateCalled;
     BOOL _invalidateDone;
     struct NSMutableDictionary *_sessions;
-    CUNANServiceInfo *_serviceInfo;
     struct LogCategory *_ucat;
     BOOL _dataPathEnabled;
     int _port;

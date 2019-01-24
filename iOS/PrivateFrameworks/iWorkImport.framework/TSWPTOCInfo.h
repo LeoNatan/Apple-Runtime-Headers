@@ -14,6 +14,7 @@ __attribute__((visibility("hidden")))
 @interface TSWPTOCInfo : TSWPShapeInfo <TSWPTextualEquivalentProvider>
 {
     TSWPTOCPartitioner *_partitioner;
+    _Bool _shouldSyncTOCSettingsWithTOCNavigator;
     NSArray *_tocEntries;
     TSWPTOCSettings *_tocSettings;
     NSArray *_pageNumberRanges;
@@ -21,13 +22,14 @@ __attribute__((visibility("hidden")))
 
 + (_Bool)canPartition;
 @property(retain, nonatomic) NSArray *pageNumberRanges; // @synthesize pageNumberRanges=_pageNumberRanges;
+@property(nonatomic) _Bool shouldSyncTOCSettingsWithTOCNavigator; // @synthesize shouldSyncTOCSettingsWithTOCNavigator=_shouldSyncTOCSettingsWithTOCNavigator;
 @property(retain, nonatomic, setter=setTOCSettings:) TSWPTOCSettings *tocSettings; // @synthesize tocSettings=_tocSettings;
 @property(retain, nonatomic, setter=setTOCEntries:) NSArray *tocEntries; // @synthesize tocEntries=_tocEntries;
 - (void).cxx_destruct;
 - (id)textualEquivalent;
-- (void)saveTOCInfoMessage:(struct TOCInfoArchive *)arg1 archiver:(id)arg2;
+-     // Error parsing type: v32@0:8^{TOCInfoArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}{RepeatedPtrField<TSP::Range>=^{Arena}ii^{Rep}}^{ShapeInfoArchive}^{Reference}B}16@24, name: saveTOCInfoMessage:archiver:
 - (void)saveToArchiver:(id)arg1;
-- (void)loadTOCInfoMessage:(const struct TOCInfoArchive *)arg1 unarchiver:(id)arg2;
+-     // Error parsing type: v32@0:8r^{TOCInfoArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}{RepeatedPtrField<TSP::Range>=^{Arena}ii^{Rep}}^{ShapeInfoArchive}^{Reference}B}16@24, name: loadTOCInfoMessage:unarchiver:
 - (void)loadFromUnarchiver:(id)arg1;
 - (_Bool)supportsAttachedComments;
 - (void)acceptVisitor:(id)arg1;
@@ -41,6 +43,8 @@ __attribute__((visibility("hidden")))
 - (id)partitioner;
 - (_Bool)wantsPositionFixedWhenCopying;
 - (int)elementKind;
+- (_Bool)isSelectable;
+- (Class)editorClass;
 - (Class)repClass;
 - (id)copyWithContext:(id)arg1;
 

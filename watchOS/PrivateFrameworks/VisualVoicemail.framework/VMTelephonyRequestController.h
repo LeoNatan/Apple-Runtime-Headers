@@ -11,17 +11,16 @@
 
 @interface VMTelephonyRequestController : NSObject
 {
+    VMTelephonyRequest *_pendingRequest;
     struct os_unfair_lock_s _accessorLock;
     struct os_unfair_lock_s _delegateLock;
     NSMapTable *_delegateToQueue;
-    VMTelephonyRequest *_pendingRequest;
     NSMutableOrderedSet *_requests;
     NSObject<OS_dispatch_queue> *_queue;
 }
 
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(retain, nonatomic) NSMutableOrderedSet *requests; // @synthesize requests=_requests;
-@property(retain, nonatomic) VMTelephonyRequest *pendingRequest; // @synthesize pendingRequest=_pendingRequest;
 @property(readonly, nonatomic) NSMapTable *delegateToQueue; // @synthesize delegateToQueue=_delegateToQueue;
 @property(readonly, nonatomic) struct os_unfair_lock_s delegateLock; // @synthesize delegateLock=_delegateLock;
 @property(readonly, nonatomic) struct os_unfair_lock_s accessorLock; // @synthesize accessorLock=_accessorLock;
@@ -30,12 +29,12 @@
 - (void)performAtomicAccessorBlock:(CDUnknownBlockType)arg1;
 - (void)postResponse:(id)arg1 forRequest:(id)arg2;
 - (void)executeRequest:(id)arg1;
-- (id)requestPassingTest:(CDUnknownBlockType)arg1;
 - (void)execute;
 - (void)removeRequest:(id)arg1;
 - (void)addRequest:(id)arg1;
 - (void)removeDelegate:(id)arg1;
 - (void)addDelegate:(id)arg1 queue:(id)arg2;
+@property(retain, nonatomic) VMTelephonyRequest *pendingRequest; // @synthesize pendingRequest=_pendingRequest;
 - (id)initWithQueue:(id)arg1;
 - (id)init;
 

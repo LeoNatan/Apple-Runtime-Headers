@@ -11,6 +11,7 @@
 @protocol AutoFillFunctionBarProviderDelegate <NSObject>
 
 @optional
+- (BOOL)isAwaitingBiometricAuthentication;
 - (BOOL)isTextFieldFocused;
 - (void)functionBarProvider:(AutoFillFunctionBarProvider *)arg1 didSelectCompletionListItem:(struct CompletionListItem *)arg2;
 - (void)showFunctionBarForProvider:(AutoFillFunctionBarProvider *)arg1;

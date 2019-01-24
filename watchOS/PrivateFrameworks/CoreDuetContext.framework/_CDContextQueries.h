@@ -106,6 +106,7 @@
 + (id)appBundleIdKey;
 + (id)keyPathForAppDataDictionary;
 + (id)nowPlayingCreationDateKey;
++ (id)nowPlayingOutputDeviceIDsKey;
 + (id)nowPlayingTrackKey;
 + (id)nowPlayingBundleIdKey;
 + (id)nowPlayingStatusKey;

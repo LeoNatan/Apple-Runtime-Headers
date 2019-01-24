@@ -162,6 +162,8 @@
     _Bool _forceEnablePredictionView;
     _Bool _handlingKeyCommandFromHardwareKeyboard;
     _Bool _suppressRTIClient;
+    _Bool _applicationStateIsActiveForRTI;
+    _Bool _viewServiceStateIsActiveForRTI;
     TISmartPunctuationController *m_smartPunctuationController;
     TIKeyboardTouchEvent *m_touchEventWaitingForKeyInputEvent;
     _UIActionWhenIdle *m_delayedCandidateRequest;
@@ -218,6 +220,7 @@
 + (void)applicationDidReceiveMemoryWarning:(id)arg1;
 + (void)applicationWillEnterForeground:(id)arg1;
 + (void)applicationDidEnterBackground:(id)arg1;
++ (void)screenModeDidChange:(id)arg1;
 + (void)applicationDidRemoveDeactivationReason:(id)arg1;
 + (void)applicationWillAddDeactivationReason:(id)arg1;
 + (void)viewServiceHostDidBecomeActive:(id)arg1;
@@ -237,6 +240,8 @@
 + (id)keyboardScreen;
 + (id)keyboardWindow;
 @property(retain, nonatomic) TICandidateRequestToken *currentCandidateRequest; // @synthesize currentCandidateRequest=_currentCandidateRequest;
+@property(nonatomic) _Bool viewServiceStateIsActiveForRTI; // @synthesize viewServiceStateIsActiveForRTI=_viewServiceStateIsActiveForRTI;
+@property(nonatomic) _Bool applicationStateIsActiveForRTI; // @synthesize applicationStateIsActiveForRTI=_applicationStateIsActiveForRTI;
 @property(nonatomic) _Bool suppressRTIClient; // @synthesize suppressRTIClient=_suppressRTIClient;
 @property(nonatomic) _Bool handlingKeyCommandFromHardwareKeyboard; // @synthesize handlingKeyCommandFromHardwareKeyboard=_handlingKeyCommandFromHardwareKeyboard;
 @property(retain, nonatomic) UIKeyboardScheduledTask *autocorrectPromptTask; // @synthesize autocorrectPromptTask=_autocorrectPromptTask;
@@ -594,7 +599,6 @@
 - (void)generateCandidatesAsynchronouslyWithRange:(struct _NSRange)arg1 selectedCandidate:(id)arg2;
 - (void)generateCandidatesAsynchronously;
 - (void)performKeyboardOutput:(id)arg1;
-- (void)restoreAutofillCustomInfoOnAppBecomeActiveIfNeeded;
 - (void)performKeyboardOutputInfo:(id)arg1;
 - (_Bool)dontPushOneTimeCode;
 - (void)replaceAllTextInResponder:(id)arg1 withText:(id)arg2;
@@ -864,6 +868,7 @@
 - (void)endAllowingRemoteTextInput:(id)arg1;
 - (void)beginAllowingRemoteTextInput:(id)arg1;
 - (void)_createRTIClientIfNecessary;
+- (void)_updateRTIAllowedAndNotify:(_Bool)arg1 withReason:(id)arg2;
 - (_Bool)isRTIClient;
 - (void)_showAutofillExtras;
 - (_Bool)shouldLoadAutofillSignUpInputViewController;

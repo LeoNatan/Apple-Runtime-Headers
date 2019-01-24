@@ -50,6 +50,7 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initWithSearchableItem:(id)arg1;
 - (id)init;
+- (id)spotlightReference;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

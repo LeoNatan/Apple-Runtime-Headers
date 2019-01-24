@@ -14,6 +14,7 @@
 - (void)loyaltyAndPaymentSessionDidReceiveActivityTimeout:(NFLoyaltyAndPaymentSession *)arg1 result:(NSString *)arg2;
 - (void)loyaltyAndPaymentSessionDidReceiveActivityTimeout:(NFLoyaltyAndPaymentSession *)arg1;
 - (void)loyaltyAndPaymentSession:(NFLoyaltyAndPaymentSession *)arg1 didFailDeferredAuthorization:(BOOL)arg2;
+- (void)loyaltyAndPaymentSession:(NFLoyaltyAndPaymentSession *)arg1 didExpressModeStateChange:(unsigned int)arg2 withObject:(NSString *)arg3;
 - (void)loyaltyAndPaymentSession:(NFLoyaltyAndPaymentSession *)arg1 didExpressModeStateChange:(unsigned int)arg2;
 - (void)loyaltyAndPaymentSession:(NFLoyaltyAndPaymentSession *)arg1 didFelicaStateChange:(NSDictionary *)arg2;
 - (void)loyaltyAndPaymentSession:(NFLoyaltyAndPaymentSession *)arg1 didPerformValueAddedServiceTransactions:(NSArray *)arg2;

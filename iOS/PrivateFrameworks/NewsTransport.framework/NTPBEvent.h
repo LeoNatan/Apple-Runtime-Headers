@@ -17,6 +17,10 @@
     long long _personalizationTreatmentId;
     long long _personalizedTreatmentId;
     long long _startTimestamp;
+    NSString *_appAnalyticsEventIdentifier;
+    NSString *_bundleOfferId;
+    NSString *_bundlePurchaseId;
+    int _bundleSubscriptionStatus;
     int _cellularRadioAccessTechnology;
     int _deviceOrientation;
     NTPBEventObject *_eventObject;
@@ -34,6 +38,7 @@
     NSData *_widgetSessionId;
     NSString *_widgetUserId;
     NSString *_windowFrameInScreen;
+    _Bool _isBundlePurchaser;
     _Bool _isPaidSubscriberDuringEvent;
     _Bool _isPaidSubscriberFromAppStoreDuringEvent;
     _Bool _isPaidSubscriberFromNewsDuringEvent;
@@ -44,11 +49,13 @@
         unsigned int personalizationTreatmentId:1;
         unsigned int personalizedTreatmentId:1;
         unsigned int startTimestamp:1;
+        unsigned int bundleSubscriptionStatus:1;
         unsigned int cellularRadioAccessTechnology:1;
         unsigned int deviceOrientation:1;
         unsigned int gestureType:1;
         unsigned int interfaceOrientation:1;
         unsigned int reachabilityStatus:1;
+        unsigned int isBundlePurchaser:1;
         unsigned int isPaidSubscriberDuringEvent:1;
         unsigned int isPaidSubscriberFromAppStoreDuringEvent:1;
         unsigned int isPaidSubscriberFromNewsDuringEvent:1;
@@ -57,6 +64,10 @@
 }
 
 + (Class)userPaidSubscriptionStatusType;
+@property(retain, nonatomic) NSString *appAnalyticsEventIdentifier; // @synthesize appAnalyticsEventIdentifier=_appAnalyticsEventIdentifier;
+@property(nonatomic) _Bool isBundlePurchaser; // @synthesize isBundlePurchaser=_isBundlePurchaser;
+@property(retain, nonatomic) NSString *bundleOfferId; // @synthesize bundleOfferId=_bundleOfferId;
+@property(retain, nonatomic) NSString *bundlePurchaseId; // @synthesize bundlePurchaseId=_bundlePurchaseId;
 @property(retain, nonatomic) NSString *widgetUserId; // @synthesize widgetUserId=_widgetUserId;
 @property(retain, nonatomic) NSMutableArray *userPaidSubscriptionStatus; // @synthesize userPaidSubscriptionStatus=_userPaidSubscriptionStatus;
 @property(retain, nonatomic) NSData *widgetSessionId; // @synthesize widgetSessionId=_widgetSessionId;
@@ -87,6 +98,14 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(readonly, nonatomic) _Bool hasAppAnalyticsEventIdentifier;
+@property(nonatomic) _Bool hasIsBundlePurchaser;
+@property(readonly, nonatomic) _Bool hasBundleOfferId;
+@property(readonly, nonatomic) _Bool hasBundlePurchaseId;
+- (int)StringAsBundleSubscriptionStatus:(id)arg1;
+- (id)bundleSubscriptionStatusAsString:(int)arg1;
+@property(nonatomic) _Bool hasBundleSubscriptionStatus;
+@property(nonatomic) int bundleSubscriptionStatus; // @synthesize bundleSubscriptionStatus=_bundleSubscriptionStatus;
 @property(readonly, nonatomic) _Bool hasWidgetUserId;
 - (id)userPaidSubscriptionStatusAtIndex:(unsigned long long)arg1;
 - (unsigned long long)userPaidSubscriptionStatusCount;

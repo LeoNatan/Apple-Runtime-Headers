@@ -9,6 +9,7 @@
 @interface CLKUIGLAtlas : CLKUIAtlas
 {
     unsigned int _gid;
+    unsigned int _gltarget;
 }
 
 - (void)purge;

@@ -23,7 +23,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) tvec2_84d5962d position; // @synthesize position=mPosition;
 - (id).cxx_construct;
 @property(readonly, nonatomic) NSArray *pickedPoints;
-- (void)submit:(const struct PrimitiveInfo *)arg1;
+- (void)submit:(id)arg1;
 - (void)geometry:(id)arg1;
 - (id)matrix;
 - (void)dealloc;

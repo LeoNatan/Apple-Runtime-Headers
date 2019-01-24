@@ -8,7 +8,7 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class GEORPCorrectedCoordinate, GEORPCorrectedLabel, GEORPCorrectedSearch, GEORPDirectionsProblem, GEORPMapLocation, GEORPPlaceProblem, NSMutableArray, NSString;
+@class GEORPCorrectedCoordinate, GEORPCorrectedLabel, GEORPCorrectedSearch, GEORPDirectionsProblem, GEORPMapLocation, GEORPMerchantLookupCorrections, GEORPPlaceProblem, NSMutableArray, NSString;
 
 @interface GEORPProblemCorrections : PBCodable <NSCopying>
 {
@@ -20,6 +20,7 @@
     GEORPMapLocation *_correctedMapLocation;
     GEORPCorrectedSearch *_correctedSearch;
     GEORPDirectionsProblem *_directionsProblem;
+    GEORPMerchantLookupCorrections *_merchantLookupCorrections;
     NSMutableArray *_photoWithMetadatas;
     GEORPPlaceProblem *_placeProblem;
     _Bool _delayed;
@@ -31,6 +32,7 @@
 + (Class)correctedFlagType;
 + (Class)photoWithMetadataType;
 + (Class)correctedFieldType;
+@property(retain, nonatomic) GEORPMerchantLookupCorrections *merchantLookupCorrections; // @synthesize merchantLookupCorrections=_merchantLookupCorrections;
 @property(retain, nonatomic) NSMutableArray *correctedFlags; // @synthesize correctedFlags=_correctedFlags;
 @property(nonatomic) _Bool delayed; // @synthesize delayed=_delayed;
 @property(retain, nonatomic) NSMutableArray *photoWithMetadatas; // @synthesize photoWithMetadatas=_photoWithMetadatas;
@@ -52,6 +54,7 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(readonly, nonatomic) _Bool hasMerchantLookupCorrections;
 - (id)correctedFlagAtIndex:(unsigned int)arg1;
 - (unsigned int)correctedFlagsCount;
 - (void)addCorrectedFlag:(id)arg1;

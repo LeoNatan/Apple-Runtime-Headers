@@ -10,6 +10,7 @@
 
 @interface _SFNavigationResult : NSObject
 {
+    _Bool _loadWasUserDriven;
     LSApplicationProxy *_externalApplication;
     long long _externalApplicationCategory;
     long long _type;
@@ -21,6 +22,7 @@
 + (id)resultWithAppLink:(id)arg1;
 + (id)resultWithRedirectToExternalURL:(id)arg1 preferredApplicationBundleIdentifier:(id)arg2;
 + (id)resultOfType:(long long)arg1 withURL:(id)arg2;
+@property(nonatomic) _Bool loadWasUserDriven; // @synthesize loadWasUserDriven=_loadWasUserDriven;
 @property(readonly, nonatomic) LSAppLink *appLink; // @synthesize appLink=_appLink;
 @property(readonly, nonatomic) NSURL *URL; // @synthesize URL=_URL;
 @property(readonly, nonatomic) long long type; // @synthesize type=_type;

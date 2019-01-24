@@ -12,15 +12,16 @@
 #import <VideoSubscriberAccountUI/VSRemoteNotifierDelegate-Protocol.h>
 #import <VideoSubscriberAccountUI/VSSupportedAppsViewControllerDelegate-Protocol.h>
 
-@class NSArray, NSOperationQueue, NSString, NSUndoManager, VSAppDescription, VSIdentityProviderRequestManager, VSPersistentStorage, VSPreferences, VSRemoteNotifier;
+@class NSArray, NSOperationQueue, NSString, NSUndoManager, VSAppDescription, VSDevice, VSIdentityProviderRequestManager, VSPersistentStorage, VSPreferences, VSRemoteNotifier;
 @protocol VSSetupFlowControllerDelegate;
 
 @interface VSSetupFlowController : NSObject <VSIdentityProviderPickerViewControllerDelegate, VSIdentityProviderViewControllerDelegate, VSRemoteNotifierDelegate, VSSupportedAppsViewControllerDelegate, VSIdentityProviderRequestManagerDelegate>
 {
     NSUndoManager *_undoManager;
-    _Bool _signingIn;
     _Bool _isInSTBMode;
+    _Bool _signingIn;
     _Bool _shouldAskForTVAppConsent;
+    _Bool _notifyDelegateFromActivation;
     id <VSSetupFlowControllerDelegate> _delegate;
     VSPreferences *_preferences;
     VSPersistentStorage *_storage;
@@ -30,11 +31,15 @@
     VSAppDescription *_appDescription;
     NSString *_providerAccountUsername;
     VSIdentityProviderRequestManager *_requestManager;
+    CDUnknownBlockType _goingBackActivationCompletionBlock;
+    VSDevice *_currentDevice;
 }
 
+@property(retain, nonatomic) VSDevice *currentDevice; // @synthesize currentDevice=_currentDevice;
+@property(copy, nonatomic) CDUnknownBlockType goingBackActivationCompletionBlock; // @synthesize goingBackActivationCompletionBlock=_goingBackActivationCompletionBlock;
+@property(nonatomic) _Bool notifyDelegateFromActivation; // @synthesize notifyDelegateFromActivation=_notifyDelegateFromActivation;
 @property(retain, nonatomic) VSIdentityProviderRequestManager *requestManager; // @synthesize requestManager=_requestManager;
 @property(nonatomic) _Bool shouldAskForTVAppConsent; // @synthesize shouldAskForTVAppConsent=_shouldAskForTVAppConsent;
-@property(nonatomic) _Bool isInSTBMode; // @synthesize isInSTBMode=_isInSTBMode;
 @property(retain, nonatomic) NSString *providerAccountUsername; // @synthesize providerAccountUsername=_providerAccountUsername;
 @property(retain, nonatomic) VSAppDescription *appDescription; // @synthesize appDescription=_appDescription;
 @property(nonatomic, getter=isSigningIn) _Bool signingIn; // @synthesize signingIn=_signingIn;
@@ -43,19 +48,24 @@
 @property(retain, nonatomic) NSOperationQueue *privateQueue; // @synthesize privateQueue=_privateQueue;
 @property(retain, nonatomic) VSPersistentStorage *storage; // @synthesize storage=_storage;
 @property(retain, nonatomic) VSPreferences *preferences; // @synthesize preferences=_preferences;
+@property(nonatomic) _Bool isInSTBMode; // @synthesize isInSTBMode=_isInSTBMode;
 @property(nonatomic) __weak id <VSSetupFlowControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)supportedAppsViewControllerDidFinish:(id)arg1;
 - (void)identityProviderViewController:(id)arg1 didAuthenticateAccount:(id)arg2 forRequest:(id)arg3;
 - (void)identityProviderViewController:(id)arg1 didFinishRequest:(id)arg2 withResult:(id)arg3;
+- (void)performDismissalOfIdentityProviderViewController:(id)arg1;
 - (void)identityProviderViewControllerDidCancel:(id)arg1;
 - (void)dismissIdentityProviderViewController:(id)arg1;
 - (void)identityProviderPickerViewController:(id)arg1 didPickIdentityProvider:(id)arg2;
 - (void)identityProviderPickerViewControllerDidCancel:(id)arg1;
 - (void)identityProviderRequestManager:(id)arg1 finishedRequest:(id)arg2 withResult:(id)arg3;
-- (void)startSilentSigningInForSTB;
+- (void)startSilentSigningInForSTBFromActivation:(_Bool)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (id)_getProviderWithUserTokenFromAllProviders:(id)arg1;
 - (void)showSupportedApps;
+- (void)forceSignOutWithAccount:(id)arg1;
+- (void)signOutForNotNowFlowWithIdentityProvider:(id)arg1;
+- (void)notNowWithIdentityProvider:(id)arg1;
 - (void)notNow;
 - (void)_offerFreeOnBoardingIfNeededAfterOfferingOptions:(_Bool)arg1 endingUndoGrouping:(_Bool)arg2 arrivedViaNotNowButton:(_Bool)arg3 arrivedAfterSigningIn:(_Bool)arg4 goingBack:(_Bool)arg5;
 - (void)startSigningInForIdentityProvider:(id)arg1;

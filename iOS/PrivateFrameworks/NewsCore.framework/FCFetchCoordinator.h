@@ -6,12 +6,12 @@
 
 #import <objc/NSObject.h>
 
-#import <NewsCore/FCOperationThrottlerDelegate-Protocol.h>
+#import <NewsCore/FCBoostableOperationThrottlerDelegate-Protocol.h>
 
 @class FCBoostableOperationThrottler, NFMutexLock, NSCountedSet, NSHashTable, NSMapTable, NSString;
 @protocol FCFetchCoordinatorDelegate;
 
-@interface FCFetchCoordinator : NSObject <FCOperationThrottlerDelegate>
+@interface FCFetchCoordinator : NSObject <FCBoostableOperationThrottlerDelegate>
 {
     id <FCFetchCoordinatorDelegate> _delegate;
     unsigned long long _maxConcurrentFetchCount;

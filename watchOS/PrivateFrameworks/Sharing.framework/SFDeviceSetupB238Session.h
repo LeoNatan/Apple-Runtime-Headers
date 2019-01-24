@@ -8,7 +8,7 @@
 
 #import <Sharing/AVAudioPlayerDelegate-Protocol.h>
 
-@class ACAccount, ACAccountStore, AVAudioPlayer, AVAudioSession, HMHome, NSArray, NSDictionary, NSString, RPCompanionLinkClient, SFDevice, SFDeviceOperationWiFiSetup, SFSession, SSAccount, UIViewController;
+@class ACAccount, ACAccountStore, AVAudioPlayer, AVAudioSession, HMHome, NSArray, NSDictionary, NSString, RPCompanionLinkClient, SFDevice, SFDeviceOperationCDPSetup, SFDeviceOperationWiFiSetup, SFSession, SSAccount, UIViewController;
 @protocol OS_dispatch_queue, OS_dispatch_source;
 
 @interface SFDeviceSetupB238Session : NSObject <AVAudioPlayerDelegate>
@@ -82,6 +82,10 @@
     SFDeviceOperationWiFiSetup *_wifiSetupOperation;
     int _wifiSetupState;
     double _wifiSetupSecs;
+    _Bool _cdpEnabled;
+    SFDeviceOperationCDPSetup *_cdpSetupOperation;
+    double _cdpSetupSecs;
+    int _cdpState;
     _Bool _hasExistingHomePod;
     int _finishState;
     unsigned long long _finishStartTicks;
@@ -89,6 +93,7 @@
     double _iTunesWaitSecs;
     double _mediaSystemWaitSecs;
     double _totalSecs;
+    _Bool _prefBonjourTest;
     _Bool _prefForceSiriGreeting;
     _Bool _liveOn;
     _Bool _pauseAfterPreAuth;
@@ -163,6 +168,7 @@
 - (void)_runFinishResponse:(id)arg1 error:(id)arg2;
 - (void)_runFinishRequest;
 - (int)_runFinishStart;
+- (int)_runCDPSetup;
 - (int)_runWiFiSetup;
 - (int)_runAppleMusic;
 - (void)_runBasicConfigReceiveResponse:(id)arg1 error:(id)arg2;

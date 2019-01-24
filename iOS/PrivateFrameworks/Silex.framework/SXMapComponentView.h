@@ -10,12 +10,14 @@
 #import <Silex/UIGestureRecognizerDelegate-Protocol.h>
 
 @class MKMapView, NSArray, NSMutableDictionary, NSString, SXMapSnapShotter, SXMediaEngageEvent, UIBarButtonItem, UIImageView, UISegmentedControl, UITapGestureRecognizer, UIViewController;
+@protocol SXDocumentTitleProviding;
 
 @interface SXMapComponentView : SXMediaComponentView <UIGestureRecognizerDelegate, MKMapViewDelegate>
 {
     MKMapView *_mapView;
     UITapGestureRecognizer *_tapGesture;
     NSArray *_annotations;
+    id <SXDocumentTitleProviding> _documentTitleProvider;
     UIBarButtonItem *_doneBarButtonItem;
     UIViewController *_fullScreenCanvasViewController;
     UISegmentedControl *_segmentedControl;
@@ -42,6 +44,7 @@
 @property(retain, nonatomic) UISegmentedControl *segmentedControl; // @synthesize segmentedControl=_segmentedControl;
 @property(retain, nonatomic) UIViewController *fullScreenCanvasViewController; // @synthesize fullScreenCanvasViewController=_fullScreenCanvasViewController;
 @property(retain, nonatomic) UIBarButtonItem *doneBarButtonItem; // @synthesize doneBarButtonItem=_doneBarButtonItem;
+@property(readonly, nonatomic) id <SXDocumentTitleProviding> documentTitleProvider; // @synthesize documentTitleProvider=_documentTitleProvider;
 @property(retain, nonatomic) NSArray *annotations; // @synthesize annotations=_annotations;
 @property(retain, nonatomic) UITapGestureRecognizer *tapGesture; // @synthesize tapGesture=_tapGesture;
 @property(retain, nonatomic) MKMapView *mapView; // @synthesize mapView=_mapView;
@@ -76,7 +79,7 @@
 - (void)renderContents;
 - (void)memoryWarning:(id)arg1;
 - (void)dealloc;
-- (id)initWithDocumentController:(id)arg1 viewport:(id)arg2 presentationDelegate:(id)arg3 analyticsReporting:(id)arg4 componentStyleRendererFactory:(id)arg5 appStateMonitor:(id)arg6;
+- (id)initWithDOMObjectProvider:(id)arg1 viewport:(id)arg2 presentationDelegate:(id)arg3 analyticsReporting:(id)arg4 componentStyleRendererFactory:(id)arg5 appStateMonitor:(id)arg6 documentTitleProvider:(id)arg7;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

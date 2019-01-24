@@ -4,6 +4,12 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@protocol _WKWebViewPrintProvider
+#import <WebKit/NSObject-Protocol.h>
+
+@class _WKWebViewPrintFormatter;
+
+@protocol _WKWebViewPrintProvider <NSObject>
+@property(readonly, nonatomic) struct CGPDFDocument *_wk_printedDocument;
+- (unsigned int)_wk_pageCountForPrintFormatter:(_WKWebViewPrintFormatter *)arg1;
 @end
 

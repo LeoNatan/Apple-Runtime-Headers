@@ -12,7 +12,6 @@
 {
     unsigned long long _numberOfRows;
     unsigned long long _numberOfColumns;
-    unsigned long long _layoutType;
     SXDataTableDictionary *_blueprint;
     SXDataTableDictionary *_contentBlueprint;
     SXDataTableDictionary *_rowDividers;
@@ -28,7 +27,6 @@
 @property(readonly, nonatomic) SXDataTableDictionary *contentBlueprint; // @synthesize contentBlueprint=_contentBlueprint;
 @property(readonly, nonatomic) SXDataTableDictionary *blueprint; // @synthesize blueprint=_blueprint;
 @property(nonatomic) struct CGSize tableSize; // @synthesize tableSize=_tableSize;
-@property(readonly, nonatomic) unsigned long long layoutType; // @synthesize layoutType=_layoutType;
 @property(readonly, nonatomic) struct UIEdgeInsets tableInsets; // @synthesize tableInsets=_tableInsets;
 @property(readonly, nonatomic) unsigned long long numberOfColumns; // @synthesize numberOfColumns=_numberOfColumns;
 @property(readonly, nonatomic) unsigned long long numberOfRows; // @synthesize numberOfRows=_numberOfRows;

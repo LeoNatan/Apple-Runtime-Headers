@@ -6,25 +6,23 @@
 
 #import <PassKitUI/PKSectionTableViewController.h>
 
-#import <PassKitUI/PKCommutePlanRenewalReminderSetupViewControllerDelegate-Protocol.h>
-#import <PassKitUI/PKLowBalanceReminderSetupViewControllerDelegate-Protocol.h>
+#import <PassKitUI/PKBalanceDetailsViewControllerDelegate-Protocol.h>
 #import <PassKitUI/PKPassHeaderViewDelegate-Protocol.h>
 #import <PassKitUI/PKPaymentDataProviderDelegate-Protocol.h>
 #import <PassKitUI/PKPaymentSetupDelegate-Protocol.h>
 #import <PassKitUI/PKPaymentVerificationControllerDelegate-Protocol.h>
 #import <PassKitUI/PKPeerPaymentAccountResolutionControllerDelegate-Protocol.h>
+#import <PassKitUI/PKPeerPaymentActionViewControllerDelegate-Protocol.h>
 #import <PassKitUI/PKPeerPaymentContactResolverDelegate-Protocol.h>
-#import <PassKitUI/PKPeerPaymentPerformActionViewControllerDelegate-Protocol.h>
-#import <PassKitUI/PKPerformActionViewControllerDelegate-Protocol.h>
 #import <PassKitUI/PSStateRestoration-Protocol.h>
 #import <PassKitUI/UITableViewDataSource-Protocol.h>
 #import <PassKitUI/UITableViewDelegate-Protocol.h>
 #import <PassKitUI/UIViewControllerPreviewingDelegate-Protocol.h>
 
-@class NSArray, NSDateComponentsFormatter, NSDateFormatter, NSDictionary, NSIndexPath, NSMutableDictionary, NSNumber, NSNumberFormatter, NSObject, NSString, PKExpressPassInformation, PKLinkedApplication, PKPassHeaderView, PKPaymentApplication, PKPaymentPass, PKPaymentPassDetailActivationFooterView, PKPaymentTransactionCellController, PKPaymentVerificationController, PKPaymentWebService, PKPeerPaymentAccount, PKPeerPaymentAccountResolutionController, PKPeerPaymentContactResolver, PKPeerPaymentController, PKPeerPaymentPerformActionViewController, PKPeerPaymentPreferences, PKPeerPaymentWebService, PKSettingTableCell, PKSpinnerHeaderView, PKTransitPassProperties, UIColor, UISegmentedControl, UIView, UIVisualEffectView;
+@class CNContact, NSArray, NSDateFormatter, NSDictionary, NSIndexPath, NSMutableDictionary, NSNumber, NSNumberFormatter, NSObject, NSString, PKExpressPassController, PKLinkedApplication, PKPassHeaderView, PKPaymentApplication, PKPaymentBalanceReminder, PKPaymentPass, PKPaymentPassDetailActivationFooterView, PKPaymentTransactionCellController, PKPaymentVerificationController, PKPaymentWebService, PKPeerPaymentAccount, PKPeerPaymentAccountResolutionController, PKPeerPaymentActionViewController, PKPeerPaymentContactResolver, PKPeerPaymentController, PKPeerPaymentPreferences, PKPeerPaymentWebService, PKSettingTableCell, PKSpinnerHeaderView, PKTransitBalanceModel, PKTransitPassProperties, UIColor, UIRefreshControl, UISegmentedControl, UIView, UIVisualEffectView;
 @protocol OS_dispatch_group, OS_dispatch_source, PKPassDeleteHandler, PKPassLibraryDataProvider, PKPaymentDataProvider;
 
-@interface PKPaymentPassDetailViewController : PKSectionTableViewController <PKPerformActionViewControllerDelegate, PKLowBalanceReminderSetupViewControllerDelegate, PKCommutePlanRenewalReminderSetupViewControllerDelegate, PKPeerPaymentContactResolverDelegate, PKPeerPaymentPerformActionViewControllerDelegate, PKPeerPaymentAccountResolutionControllerDelegate, PKPaymentDataProviderDelegate, PKPaymentVerificationControllerDelegate, PKPassHeaderViewDelegate, UIViewControllerPreviewingDelegate, UITableViewDataSource, UITableViewDelegate, PSStateRestoration, PKPaymentSetupDelegate>
+@interface PKPaymentPassDetailViewController : PKSectionTableViewController <PKPeerPaymentContactResolverDelegate, PKPeerPaymentActionViewControllerDelegate, PKPeerPaymentAccountResolutionControllerDelegate, PKPaymentDataProviderDelegate, PKPaymentVerificationControllerDelegate, PKPassHeaderViewDelegate, PKBalanceDetailsViewControllerDelegate, UIViewControllerPreviewingDelegate, UITableViewDataSource, UITableViewDelegate, PSStateRestoration, PKPaymentSetupDelegate>
 {
     id <PKPassLibraryDataProvider> _passLibraryDataProvider;
     id <PKPaymentDataProvider> _paymentServiceDataProvider;
@@ -37,6 +35,10 @@
     PKPaymentWebService *_webService;
     PKPaymentVerificationController *_verificationController;
     PKPaymentPassDetailActivationFooterView *_activationFooter;
+    UIRefreshControl *_refreshControl;
+    _Bool _forcedRefresh;
+    float _forcedTopContentInset;
+    NSObject<OS_dispatch_source> *_refreshTimeout;
     PKSettingTableCell *_messagesSwitch;
     PKSettingTableCell *_transactionsSwitch;
     PKSettingTableCell *_notificationsSwitch;
@@ -49,16 +51,20 @@
     NSNumberFormatter *_transactionCountFormatter;
     NSArray *_devicePaymentApplications;
     NSArray *_contactlessPaymentApplications;
-    PKExpressPassInformation *_expressAccessPassInformation;
-    _Bool _expressAccessEnabled;
+    _Bool _expressModeEnabled;
+    _Bool _expressModeSupported;
+    PKExpressPassController *_expressPassController;
     _Bool _performingCardTransfer;
     PKTransitPassProperties *_transitProperties;
+    PKPaymentBalanceReminder *_transitPropertiesBalanceReminder;
     NSArray *_commuterFields;
+    NSArray *_commutePlanFields;
     NSArray *_balanceFields;
     NSArray *_arbitraryInfoFields;
     NSDictionary *_balances;
+    NSDictionary *_actionForBalance;
+    NSMutableDictionary *_reminderForBalance;
     NSArray *_displayableBalanceFields;
-    NSDateComponentsFormatter *_commutePlanRenewalReminderTimeIntervalFormatter;
     NSArray *_tabBarSegments;
     float _headerHeight;
     struct UIEdgeInsets _headerContentInset;
@@ -74,7 +80,7 @@
     UIVisualEffectView *_blurView;
     UISegmentedControl *_tabBar;
     UIView *_keyLine;
-    _Bool _viewIsDisappearing;
+    unsigned char _visiblityState;
     PKPeerPaymentWebService *_peerPaymentWebService;
     PKPeerPaymentController *_peerPaymentController;
     PKPeerPaymentAccount *_peerPaymentAccount;
@@ -82,14 +88,19 @@
     PKPeerPaymentPreferences *_peerPaymentPreferences;
     _Bool _loadingPeerPaymentPreferences;
     PKSpinnerHeaderView *_peerPaymentPreferencesHeaderView;
-    PKPeerPaymentPerformActionViewController *_peerPaymentActionViewController;
+    PKPeerPaymentActionViewController *_peerPaymentActionViewController;
     NSIndexPath *_loadingPeerPaymentAccountActionIndexPath;
     PKPeerPaymentAccountResolutionController *_peerPaymentAccountResolutionController;
     unsigned int _peerPaymentAccountResolution;
     _Bool _requestingStatement;
+    _Bool _redeemingRewards;
     _Bool _isAppleAccess;
     NSObject<OS_dispatch_group> *_initialLoadGroup;
     _Bool _initialLoadTimedout;
+    PKTransitBalanceModel *_transitBalanceModel;
+    PKSpinnerHeaderView *_billingAddressHeaderView;
+    CNContact *_billingContact;
+    _Bool _loadingBillingContact;
     id <PKPassDeleteHandler> _deleteOverrider;
     UIColor *_primaryTextColor;
     UIColor *_detailTextColor;
@@ -103,13 +114,13 @@
 @property(nonatomic) UIColor *linkTextColor; // @synthesize linkTextColor=_linkTextColor;
 @property(nonatomic) UIColor *detailTextColor; // @synthesize detailTextColor=_detailTextColor;
 @property(nonatomic) UIColor *primaryTextColor; // @synthesize primaryTextColor=_primaryTextColor;
-@property(nonatomic) id <PKPassDeleteHandler> deleteOverrider; // @synthesize deleteOverrider=_deleteOverrider;
+@property(nonatomic) __weak id <PKPassDeleteHandler> deleteOverrider; // @synthesize deleteOverrider=_deleteOverrider;
 - (void).cxx_destruct;
+- (void)balanceDetailsViewController:(id)arg1 didUpdateBalanceReminder:(id)arg2 forBalance:(id)arg3;
+- (_Bool)shouldAllowRefresh;
+- (void)_refreshFinished:(_Bool)arg1;
+- (void)refreshControlValueChanged:(id)arg1;
 - (_Bool)canBeShownFromSuspendedState;
-- (void)performActionViewControllerDidPerformAction:(id)arg1;
-- (void)performActionViewControllerDidCancel:(id)arg1;
-- (void)commutePlanRenewalReminderValueDidChange:(id)arg1;
-- (void)lowBalanceReminderValueDidChange:(id)arg1;
 - (void)_presentMerchantDetailsViewWithTransaction:(id)arg1 forCell:(id)arg2;
 - (void)presentVerificationViewController:(id)arg1 animated:(_Bool)arg2;
 - (void)didChangeVerificationPresentation;
@@ -130,6 +141,7 @@
 - (void)_setTransitProperties:(id)arg1;
 - (float)_paymentTransactionCellHeightForIndexPath:(id)arg1 tableView:(id)arg2;
 - (float)_defaultTableViewCellHeight;
+- (_Bool)_isDeletingPass;
 - (float)_heightForPassStateSectionWithTableView:(id)arg1;
 - (id)_footerTextForPassStateSection;
 - (id)_footerViewForPassStateSection;
@@ -137,6 +149,8 @@
 - (void)_didSelectPassStateSection;
 - (id)_headerTitleForPassStateSection;
 - (unsigned int)_passStateSectionGenerateCellWithOutput:(id *)arg1 forRowIndex:(int)arg2 tableView:(id)arg3;
+- (int)_rowIndexForExpressTransitSettingsCell;
+- (_Bool)_canSelectBalanceOrCommutePlanCellAtRowIndex:(int)arg1;
 - (void)_didSelectDeleteCard;
 - (_Bool)_isJapaneseRegion;
 - (void)_handleProvisioningError:(id)arg1;
@@ -147,13 +161,12 @@
 - (void)_callIssuer;
 - (void)_emailIssuer;
 - (void)_presentContactBankViewController;
+- (void)postServiceModeNotification;
 - (void)_didSelectContactBankSectionAtIndexPath:(int)arg1;
 - (void)_didSelectTransactionAtRow:(int)arg1;
-- (void)_openPaymentSetup;
 - (void)_openPaymentSetupWithNetworkWhitelist:(id)arg1 paymentSetupMode:(int)arg2;
-- (void)_didSelectReminderConfigurationRowAtIndex:(int)arg1;
-- (void)_didSelectAvailableActionAtRow:(int)arg1;
 - (_Bool)_hasActionOfType:(unsigned int)arg1;
+- (id)_availableCommutePlanActions;
 - (id)_availableActions;
 - (_Bool)_transactionDeepLinkingEnabled;
 - (void)updateActivationFooterViewContents;
@@ -186,26 +199,32 @@
 - (void)_updatePeerPaymentPreferences;
 - (void)_updatePeerPaymentAccount;
 - (void)_presentNotImplementedAlertWithRadarNumber:(int)arg1;
-- (void)peerPaymentPerformActionViewControllerDidPerformAction:(id)arg1;
-- (void)peerPaymentPerformActionViewControllerDidCancel:(id)arg1;
+- (void)peerPaymentActionViewControllerDidPerformAction:(id)arg1;
+- (void)peerPaymentActionViewControllerDidCancel:(id)arg1;
 - (void)_showPeerPaymentActionViewControllerForAction:(unsigned int)arg1;
 - (void)_didSelectTransferToBank;
 - (void)presentTopUp;
 - (void)_doneLoadingPeerPaymentAccountAction;
+- (void)_didSelectCardInfoCellAtIndexPath:(id)arg1;
+- (void)_didSelectCommutePlanAtRowIndex:(int)arg1;
+- (void)_didSelectBalanceAtRowIndex:(int)arg1;
+- (void)_didSelectBalanceOrCommutePlanCellAtIndexPath:(id)arg1;
 - (void)_didSelectPeerPaymentStatementAtIndexPath:(id)arg1;
 - (void)_didSelectPeerPaymentAccountActionAtIndexPath:(id)arg1;
 - (void)_didSelectPeerPaymentManualIdentityVerificationAtIndexPath:(id)arg1;
 - (void)_didSelectAutomaticallyAcceptPaymentsPreferenceAtIndexPath:(id)arg1;
+- (void)_didSelectPeerPaymentBankAccountsAtIndexPath:(id)arg1;
 - (void)_didSelectPeerPaymentMoneyActionAtRow:(int)arg1;
 - (void)peerPaymentAccountResolutionController:(id)arg1 requestsDismissCurrentViewControllerAnimated:(_Bool)arg2;
 - (void)peerPaymentAccountResolutionController:(id)arg1 requestsPresentViewController:(id)arg2 animated:(_Bool)arg3;
 - (void)_updatePeerPaymentPreferencesWithNewPreferences:(id)arg1;
 - (void)_peerPaymentPaymentRequestPreferenceChanged:(id)arg1;
-- (void)_didSelectTransactionCountByYearAtIndexPath:(id)arg1;
-- (id)_transactionCountByYearCellForIndexPath:(id)arg1 tableView:(id)arg2;
+- (void)_didSelecttransactionCountByPeriodAtIndexPath:(id)arg1;
+- (id)_transactionCountByPeriodCellForIndexPath:(id)arg1 tableView:(id)arg2;
 - (id)_transactionCountFormatter;
 - (id)_transactionYearFormatter;
 - (id)_peerPaymentStatementCellForTableView:(id)arg1;
+- (id)_peerPaymentBankAccountsCellForRowIndex:(int)arg1 tableView:(id)arg2;
 - (id)_peerPaymentAutomaticallyAcceptPaymentsCellForRowIndex:(int)arg1 tableView:(id)arg2;
 - (id)_peerPaymentAccountActionCellForRowIndex:(int)arg1 tableView:(id)arg2;
 - (id)_peerPaymentManualIdentityVerificationCellForRowIndex:(int)arg1 tableView:(id)arg2;
@@ -217,10 +236,7 @@
 - (void)_refreshPaymentApplicationsSelection;
 - (void)_didSelectPaymentApplicationSectionRowAtIndexPath:(id)arg1;
 - (id)_paymentApplicationsCellForIndexPath:(id)arg1 tableView:(id)arg2;
-- (id)commutePlanRenewalReminderTimeIntervalFormatter;
-- (id)_remindersConfigurationCellForIndexPath:(id)arg1 tableView:(id)arg2;
-- (id)_availableActionCellForIndexPath:(id)arg1 tableView:(id)arg2;
-- (id)_commuterRouteCellForIndexPath:(id)arg1 tableView:(id)arg2;
+- (id)_commuterRouteCellForRowIndex:(int)arg1 tableView:(id)arg2;
 - (void)_didSelectTransitTicketAtRow:(int)arg1;
 - (int)_transitCellGenerateCellWithOutput:(id *)arg1 forRowIndex:(int)arg2 tableView:(id)arg3;
 - (_Bool)_transactionCellEditActionsGenerateWithOutput:(id *)arg1 forRowIndex:(int)arg2 tableView:(id)arg3;
@@ -232,7 +248,9 @@
 - (id)_automaticPresentationCellForTableView:(id)arg1;
 - (unsigned int)_contactBankCellWithOutput:(id *)arg1 forRowIndex:(int)arg2 tableView:(id)arg3;
 - (unsigned int)_passOperationsCellWithOutput:(id *)arg1 forRowIndex:(int)arg2 tableView:(id)arg3;
+- (id)_balanceReminderCellForRowIndex:(int)arg1 tableView:(id)arg2;
 - (id)_balanceCellForRowIndex:(int)arg1 tableView:(id)arg2;
+- (id)_balanceOrCommutePlanCellForRowIndex:(int)arg1 tableView:(id)arg2;
 - (id)_arbitraryInfoCellForRowIndex:(int)arg1 tableView:(id)arg2;
 - (id)_cellForField:(id)arg1 tableView:(id)arg2;
 - (unsigned int)_employeeInfoSectionGenerateCellWithOutput:(id *)arg1 forRowIndex:(int)arg2 tableView:(id)arg3;
@@ -242,7 +260,8 @@
 - (void)_didSelectPrivacySectionAtRow:(int)arg1;
 - (unsigned int)_privacyTermsSectionGenerateCellWithOutput:(id *)arg1 forRowIndex:(int)arg2 tableView:(id)arg3;
 - (void)_didSelectBillingAddress;
-- (id)_billingAddressCellForTableView:(id)arg1;
+- (_Bool)_canSelectBillingAddress;
+- (id)_billingAddressCellWithLabel:(_Bool)arg1 forTableView:(id)arg2;
 - (id)_moreTransactionsCellForTableView:(id)arg1;
 - (id)_linkedApplicationCellForTableView:(id)arg1;
 - (id)_linkedAppCellForTableView:(id)arg1;
@@ -260,7 +279,7 @@
 - (id)_defaultCellWithTextColor:(id)arg1 forTableView:(id)arg2;
 - (void)_applyDefaultDynamicStylingToCell:(id)arg1;
 - (void)_applyDefaultStaticStylingToCell:(id)arg1;
-- (_Bool)_transactionSectionsDataIsChangedForNewTransactions:(id)arg1 oldTransactions:(id)arg2 newTransactionCountByYear:(id)arg3 oldTransactionCountByYear:(id)arg4;
+- (_Bool)_transactionSectionsDataIsChangedForNewTransactions:(id)arg1 oldTransactions:(id)arg2 newtransactionCountByPeriod:(id)arg3 oldtransactionCountByPeriod:(id)arg4;
 - (void)_reloadTransactionsWithCompletion:(CDUnknownBlockType)arg1;
 - (void)paymentPassWithUniqueIdentifier:(id)arg1 didReceiveBalanceUpdate:(id)arg2;
 - (void)paymentPassWithUniqueIdentifier:(id)arg1 didEnableTransactionService:(_Bool)arg2;
@@ -280,6 +299,8 @@
 - (id)previewingContext:(id)arg1 viewControllerForLocation:(struct CGPoint)arg2;
 - (struct CGPoint)_normalizedContentOffsetForTargetOffset:(struct CGPoint)arg1;
 - (void)_normalizeContentOffset;
+- (void)scrollViewDidEndDecelerating:(id)arg1;
+- (void)scrollViewDidEndDragging:(id)arg1 willDecelerate:(_Bool)arg2;
 - (void)scrollViewWillEndDragging:(id)arg1 withVelocity:(struct CGPoint)arg2 targetContentOffset:(inout struct CGPoint *)arg3;
 - (void)scrollViewDidScroll:(id)arg1;
 - (id)tableView:(id)arg1 trailingSwipeActionsConfigurationForRowAtIndexPath:(id)arg2;
@@ -295,16 +316,19 @@
 - (void)reloadSections:(id)arg1;
 - (void)reloadSection:(unsigned int)arg1;
 - (_Bool)shouldMapSection:(unsigned int)arg1;
-- (void)_updateDisplayableBalancesWithBalances:(id)arg1 updateTableView:(_Bool)arg2;
+- (void)_updateBalanceRemindersWithCompletion:(CDUnknownBlockType)arg1;
+- (void)_updateDisplayableBalancesWithBalances:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)_updateDisplayableBalances;
-- (void)_updateTransitProperties;
-- (void)_updateAccessExpressPassInformation;
-- (void)_updatePassProperties;
+- (void)_updateTransitPropertiesWithCompletion:(CDUnknownBlockType)arg1;
+- (void)_updateExpressPassInformation;
+- (void)_updatePassProperties:(_Bool)arg1;
 - (void)_reloadTransactionSectionsAnimated:(_Bool)arg1;
 - (void)_reloadView;
+- (void)_reloadTitle;
 - (void)_reloadPassAndView;
 - (void)presentTransactionDetailsForTransaction:(id)arg1 animated:(_Bool)arg2;
 - (id)_transactionDetailViewControllerForTransaction:(id)arg1;
+- (float)_titleOpacityForBounds:(struct CGRect)arg1 lowerBoundary:(float)arg2 higherBoundary:(float)arg3;
 - (void)viewDidLayoutSubviews;
 - (void)viewDidDisappear:(_Bool)arg1;
 - (void)viewWillDisappear:(_Bool)arg1;

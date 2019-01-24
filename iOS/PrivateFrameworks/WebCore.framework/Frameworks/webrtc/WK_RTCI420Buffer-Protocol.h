@@ -4,8 +4,8 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <webrtc/WK_RTCYUVPlanarBuffer-Protocol.h>
+#import <webrtc/RTCYUVPlanarBuffer-Protocol.h>
 
-@protocol WK_RTCI420Buffer <WK_RTCYUVPlanarBuffer>
+@protocol WK_RTCI420Buffer <RTCYUVPlanarBuffer>
 @end
 

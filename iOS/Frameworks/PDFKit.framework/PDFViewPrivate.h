@@ -68,10 +68,8 @@ __attribute__((visibility("hidden")))
     double horizontalScaleFactorBeforeRotation;
     struct CGPoint documentViewCenterBeforeRotation;
     struct CGRect extensionViewBoundsInDocument;
-    struct CGRect extensionViewBoundsInView;
-    double extensionViewZoomScale;
     struct CGRect extensionViewFrame;
-    struct UIEdgeInsets extensionViewInsets;
+    double extensionViewZoomScale;
 }
 
 - (void).cxx_destruct;

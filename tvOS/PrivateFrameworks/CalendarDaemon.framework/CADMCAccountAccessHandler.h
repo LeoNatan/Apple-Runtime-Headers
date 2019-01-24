@@ -39,6 +39,7 @@
 - (_Bool)_mayShowLocalAccountsForAction:(unsigned long long)arg1;
 - (id)_filteredAccountsForAction:(unsigned long long)arg1 withUnfilteredAccounts:(id)arg2;
 - (id)_restrictedCalStoreInfosForAction:(unsigned long long)arg1;
+- (id)_cachedAccounts;
 - (id)_restrictedCalendarRowIDsForAction:(unsigned long long)arg1;
 - (_Bool)_existingCalStoreMapsToAccountIdentifier:(id)arg1;
 - (_Bool)_isDisabledForAction:(unsigned long long)arg1;

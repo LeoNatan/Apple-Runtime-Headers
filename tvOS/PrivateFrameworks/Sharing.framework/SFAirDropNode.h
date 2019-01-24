@@ -28,6 +28,7 @@
     UIImage *_displayIcon;
     NSString *_displayName;
     NSString *_secondaryName;
+    NSString *_model;
 }
 
 + (id)nodeWithSFNode:(struct __SFNode *)arg1;
@@ -41,6 +42,7 @@
 @property(getter=isMonogram) _Bool monogram; // @synthesize monogram=_monogram;
 @property(getter=isUnknown) _Bool unknown; // @synthesize unknown=_unknown;
 @property(getter=isMe) _Bool me; // @synthesize me=_me;
+@property(retain) NSString *model; // @synthesize model=_model;
 @property(retain) NSString *secondaryName; // @synthesize secondaryName=_secondaryName;
 @property(retain) NSString *displayName; // @synthesize displayName=_displayName;
 @property(retain) UIImage *displayIcon; // @synthesize displayIcon=_displayIcon;

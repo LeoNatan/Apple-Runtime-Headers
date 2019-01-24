@@ -7,9 +7,10 @@
 #import <Foundation/NSUserDefaults.h>
 
 @interface NSUserDefaults (SafariExtras)
++ (id)safari_defaultsForAllBrowserVariants;
++ (id)_safari_preferencesPlistURLWithBundleIdentifier:(id)arg1;
 - (void)safari_setInteger:(long long)arg1 forKeyByRemovingIfPossible:(id)arg2;
 - (void)safari_toggleBoolForKeyByRemovingIfPossible:(id)arg1;
-- (BOOL)safari_toggleBoolForKey:(id)arg1;
 - (void)safari_setURL:(id)arg1 forKey:(id)arg2;
 - (id)safari_URLForKey:(id)arg1;
 - (void)safari_removeStringForKey:(id)arg1 ifEqualToString:(id)arg2;

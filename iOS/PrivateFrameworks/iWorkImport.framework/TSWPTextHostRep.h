@@ -16,13 +16,13 @@ __attribute__((visibility("hidden")))
 {
     TSWPShapeRep *_editingRep;
     _Bool _useFindOverlayers;
-    NSObject<TSKSearchReference> *_activeSearchReference;
+    NSObject<TSKSearchReference> *_primaryFindResultSearchReference;
     NSArray *_searchReferences;
 }
 
 @property(retain, nonatomic) NSArray *searchReferences; // @synthesize searchReferences=_searchReferences;
 @property(readonly, nonatomic) _Bool useFindOverlayers; // @synthesize useFindOverlayers=_useFindOverlayers;
-@property(retain, nonatomic) NSObject<TSKSearchReference> *activeSearchReference; // @synthesize activeSearchReference=_activeSearchReference;
+@property(retain, nonatomic) NSObject<TSKSearchReference> *primaryFindResultSearchReference; // @synthesize primaryFindResultSearchReference=_primaryFindResultSearchReference;
 - (void).cxx_destruct;
 - (void)drawTextBackground:(struct CGContext *)arg1 insetRect:(struct CGRect)arg2 pulsating:(_Bool)arg3;
 - (void)drawTextBackground:(struct CGContext *)arg1 insetRect:(struct CGRect)arg2 pulsating:(_Bool)arg3 shouldTint:(_Bool)arg4;

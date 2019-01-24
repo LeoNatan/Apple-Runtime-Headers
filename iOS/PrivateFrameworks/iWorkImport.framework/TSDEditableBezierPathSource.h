@@ -102,8 +102,8 @@ __attribute__((visibility("hidden")))
 - (void)addTemporarySmoothNodes;
 - (void)updateSmoothNodes;
 - (void)morphWithMorphInfo:(id)arg1;
-- (void)saveToArchive:(struct PathSourceArchive *)arg1;
-- (id)initWithArchive:(const struct PathSourceArchive *)arg1;
+-     // Error parsing type: v24@0:8^{PathSourceArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}^{PointPathSourceArchive}^{ScalarPathSourceArchive}^{BezierPathSourceArchive}^{CalloutPathSourceArchive}^{ConnectionLinePathSourceArchive}^{EditableBezierPathSourceArchive}BB}16, name: saveToArchive:
+-     // Error parsing type: @24@0:8r^{PathSourceArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}^{PointPathSourceArchive}^{ScalarPathSourceArchive}^{BezierPathSourceArchive}^{CalloutPathSourceArchive}^{ConnectionLinePathSourceArchive}^{EditableBezierPathSourceArchive}BB}16, name: initWithArchive:
 
 @end
 

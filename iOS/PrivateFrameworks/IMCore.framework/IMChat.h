@@ -232,6 +232,7 @@
 @property(nonatomic) _Bool hasHadSuccessfulQuery;
 - (void)verifyChatShouldBeSMSSpam;
 - (void)updateWasDetectedAsSMSSpam:(_Bool)arg1;
+- (void)updateShouldForceToSMS:(_Bool)arg1;
 - (_Bool)shouldForceToSMS;
 - (_Bool)hasKnownParticipants;
 - (void)updateIsFiltered:(_Bool)arg1;

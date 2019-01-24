@@ -4,40 +4,21 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <UIKit/UIViewController.h>
+#import <AuthenticationServices/_ASExtensionViewController.h>
 
-#import <AuthenticationServices/_ASCredentialProviderExtensionHostContextDelegate-Protocol.h>
-
-@class NSExtension, NSString;
 @protocol _ASCredentialProviderExtensionConfigurationViewControllerDelegate;
 
-@interface _ASCredentialProviderExtensionConfigurationViewController : UIViewController <_ASCredentialProviderExtensionHostContextDelegate>
+@interface _ASCredentialProviderExtensionConfigurationViewController : _ASExtensionViewController
 {
-    NSExtension *_extension;
-    UIViewController *_remoteViewController;
     id <_ASCredentialProviderExtensionConfigurationViewControllerDelegate> _delegate;
 }
 
 @property(nonatomic) __weak id <_ASCredentialProviderExtensionConfigurationViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
-- (id)childViewControllerForWhitePointAdaptivityStyle;
-- (id)childViewControllerForStatusBarStyle;
-- (id)childViewControllerForStatusBarHidden;
-- (id)childViewControllerForScreenEdgesDeferringSystemGestures;
-- (id)childViewControllerForHomeIndicatorAutoHidden;
-- (void)prepareToCancelRequestWithHostContext:(id)arg1 error:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)prepareToCompleteExtensionConfigurationRequestWithHost:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)_setRemoteViewController:(id)arg1;
-- (void)_didInstantiateViewController:(id)arg1 withRequestID:(id)arg2 error:(id)arg3;
 - (void)_finishWithSuccess:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)_requestDidFailWithError:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)beginConfiguringExtension;
-- (id)initWithExtension:(id)arg1;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
 
 @end
 

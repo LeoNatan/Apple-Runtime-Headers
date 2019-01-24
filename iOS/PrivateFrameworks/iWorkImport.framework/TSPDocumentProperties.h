@@ -13,12 +13,12 @@
 __attribute__((visibility("hidden")))
 @interface TSPDocumentProperties : NSObject <NSCopying>
 {
-    NSUUID *_versionUUID;
     NSUUID *_shareUUID;
+    NSUUID *_documentUUID;
+    NSUUID *_versionUUID;
     unsigned long long _fileFormatVersion;
     TSPDocumentRevision *_revision;
     NSDictionary *_additionalProperties;
-    NSUUID *_documentUUID;
 }
 
 + (id)shareIdentifierRelativePath;

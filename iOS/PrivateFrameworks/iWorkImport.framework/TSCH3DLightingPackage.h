@@ -22,7 +22,7 @@ __attribute__((visibility("hidden")))
 + (id)packageFromName:(id)arg1;
 + (id)allNamedPackages;
 + (id)localizedNameForName:(id)arg1;
-+ (id)instanceWithArchive:(const struct Chart3DLightingPackageArchive *)arg1 unarchiver:(id)arg2;
++     // Error parsing type: @32@0:8r^{Chart3DLightingPackageArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSCH::Chart3DLightArchive>=^{Arena}ii^{Rep}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}}16@24, name: instanceWithArchive:unarchiver:
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 - (void)didInitFromSOS;
 @property(readonly, copy, nonatomic) NSString *localizedName;
@@ -33,8 +33,8 @@ __attribute__((visibility("hidden")))
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)dealloc;
 - (id)init;
-- (void)saveToArchive:(struct Chart3DLightingPackageArchive *)arg1 archiver:(id)arg2;
-- (id)initWithArchive:(const struct Chart3DLightingPackageArchive *)arg1 unarchiver:(id)arg2;
+-     // Error parsing type: v32@0:8^{Chart3DLightingPackageArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSCH::Chart3DLightArchive>=^{Arena}ii^{Rep}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}}16@24, name: saveToArchive:archiver:
+-     // Error parsing type: @32@0:8r^{Chart3DLightingPackageArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSCH::Chart3DLightArchive>=^{Arena}ii^{Rep}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}}16@24, name: initWithArchive:unarchiver:
 
 @end
 

@@ -45,8 +45,8 @@ __attribute__((visibility("hidden")))
 - (id)copyInverse;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly, nonatomic) unsigned int mappingSize;
-- (void)saveToArchive:(struct ShuffleMappingArchive *)arg1;
-- (id)initWithArchive:(const struct ShuffleMappingArchive *)arg1;
+-     // Error parsing type: v24@0:8^{ShuffleMappingArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSK::ShuffleMappingArchive_Entry>=^{Arena}ii^{Rep}}IIBIIIB}16, name: saveToArchive:
+-     // Error parsing type: @24@0:8r^{ShuffleMappingArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSK::ShuffleMappingArchive_Entry>=^{Arena}ii^{Rep}}IIBIIIB}16, name: initWithArchive:
 - (id)initForMovedIndexesStartingAtIndex:(unsigned int)arg1 destinationIndex:(unsigned int)arg2 numberOfIndexes:(unsigned int)arg3 vertical:(_Bool)arg4;
 - (id)initWithStartIndex:(unsigned int)arg1 endIndex:(unsigned int)arg2;
 - (id)initWithStartIndex:(unsigned int)arg1 endIndex:(unsigned int)arg2 mapping:(const vector_12da65de *)arg3;

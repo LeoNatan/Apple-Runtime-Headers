@@ -6,9 +6,9 @@
 
 #import <Silex/NSObject-Protocol.h>
 
-@class SXLayoutBlueprint, SXLayoutDataProvider;
+@class SXDOM, SXDOMObjectProvider, SXLayoutBlueprint;
 
 @protocol SXComponentInsertionManager <NSObject>
-- (void)insertComponentsForBlueprint:(SXLayoutBlueprint *)arg1 layoutDataProvider:(SXLayoutDataProvider *)arg2;
+- (SXDOM *)insertComponentsForBlueprint:(SXLayoutBlueprint *)arg1 DOMObjectProvider:(SXDOMObjectProvider *)arg2;
 @end
 

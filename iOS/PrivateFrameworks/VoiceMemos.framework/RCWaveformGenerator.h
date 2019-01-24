@@ -35,7 +35,7 @@
     long long _overviewUnitsPerSecond;
 }
 
-@property(readonly, nonatomic) _Bool canceled; // @synthesize canceled=_canceled;
+@property(nonatomic) _Bool canceled; // @synthesize canceled=_canceled;
 @property(readonly, nonatomic) long long state; // @synthesize state=_state;
 @property(nonatomic) long long overviewUnitsPerSecond; // @synthesize overviewUnitsPerSecond=_overviewUnitsPerSecond;
 @property(readonly, nonatomic) double segmentFlushInterval; // @synthesize segmentFlushInterval=_segmentFlushInterval;

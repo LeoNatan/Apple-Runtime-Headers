@@ -8,13 +8,13 @@
 
 #import <Silex/SXDragManagerDataSource-Protocol.h>
 #import <Silex/SXFullscreenCanvasShowable-Protocol.h>
+#import <Silex/SXFullscreenCaptionDataSource-Protocol.h>
 #import <Silex/SXImageViewDelegate-Protocol.h>
-#import <Silex/SXTextSourceDataSource-Protocol.h>
 
 @class NSString, SXDragManager, SXFullscreenCanvasController, SXImageResource, SXImageView, SXMediaViewEvent, UIView;
 @protocol SXFullscreenCanvasControllerFactory, SXImageViewFactory, SXMediaSharingPolicyProvider;
 
-@interface SXScalableImageComponentView : SXMediaComponentView <SXFullscreenCanvasShowable, SXImageViewDelegate, SXTextSourceDataSource, SXDragManagerDataSource>
+@interface SXScalableImageComponentView : SXMediaComponentView <SXFullscreenCanvasShowable, SXImageViewDelegate, SXFullscreenCaptionDataSource, SXDragManagerDataSource>
 {
     _Bool _presentingOnFullScreenCanvas;
     double _lastKnownPinchVelocity;
@@ -51,14 +51,12 @@
 - (void)createMediaViewEvent;
 - (unsigned long long)analyticsMediaType;
 - (void)submitEvents;
-- (id)contentSizeCategoryForTextSource:(id)arg1;
-- (id)textStyleForTextSource:(id)arg1;
-- (id)inlineTextStylesForTextSource:(id)arg1;
-- (id)additionsForTextSource:(id)arg1;
-- (id)textRulesForTextSource:(id)arg1;
-- (id)textResizerForTextSource:(id)arg1;
-- (id)documentControllerForTextSource:(id)arg1;
-- (_Bool)transitionViewUsesThumbnail;
+- (id)contentSizeCategoryForCaption:(id)arg1;
+- (id)componentTextStyleForIdentifier:(id)arg1 inheritingFromComponentTextStyle:(id)arg2;
+- (id)textStyleForIdentifier:(id)arg1;
+- (id)textRulesForCaption:(id)arg1;
+- (id)textResizerForCaption:(id)arg1;
+- (_Bool)usesThumbnailWithImageIdentifier:(id)arg1;
 - (struct CGRect)transitionContentFrame;
 - (id)transitionContentView;
 - (_Bool)gestureShouldBegin:(id)arg1;
@@ -89,7 +87,7 @@
 - (void)renderContents;
 - (void)presentComponentWithChanges:(CDStruct_1cc9d0d0)arg1;
 - (void)loadComponent:(id)arg1;
-- (id)initWithDocumentController:(id)arg1 viewport:(id)arg2 presentationDelegate:(id)arg3 analyticsReporting:(id)arg4 componentStyleRendererFactory:(id)arg5 appStateMonitor:(id)arg6 imageViewFactory:(id)arg7 canvasControllerFactory:(id)arg8 mediaSharingPolicyProvider:(id)arg9;
+- (id)initWithDOMObjectProvider:(id)arg1 viewport:(id)arg2 presentationDelegate:(id)arg3 analyticsReporting:(id)arg4 componentStyleRendererFactory:(id)arg5 appStateMonitor:(id)arg6 imageViewFactory:(id)arg7 canvasControllerFactory:(id)arg8 mediaSharingPolicyProvider:(id)arg9;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

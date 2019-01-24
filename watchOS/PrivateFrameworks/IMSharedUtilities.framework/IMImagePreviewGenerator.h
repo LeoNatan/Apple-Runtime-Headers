@@ -13,9 +13,6 @@
 {
 }
 
-+ (struct CGImage *)newCroppedAndRescaledImageFromImage:(struct CGImage *)arg1 constraints:(struct IMPreviewConstraints)arg2 targetPxSize:(struct CGSize)arg3;
-+ (struct CGRect)_scaledTargetRectForSize:(struct CGSize)arg1 andThumbnailSize:(struct CGSize)arg2;
-+ (float)_scaleFactorForThumbnailWithSize:(struct CGSize)arg1 constraints:(struct IMPreviewConstraints)arg2 targetPxSize:(struct CGSize)arg3;
 + (struct CGImage *)newThumbnailFillToSize:(struct CGSize)arg1 imagePxSize:(struct CGSize)arg2 imageSource:(struct CGImageSource *)arg3 scale:(float)arg4;
 + (struct CGImage *)newPreviewFromSourceURL:(id)arg1 withPreviewConstraints:(struct IMPreviewConstraints)arg2 error:(id *)arg3;
 + (id)UTITypes;

@@ -42,6 +42,7 @@
     _Bool _isArchived;
     _Bool _isFiltered;
     _Bool _hasHadSuccessfulQuery;
+    _Bool _wasReportedAsJunk;
     NSString *_cloudKitRecordID;
     NSString *_srCloudKitRecordID;
     NSString *_srServerChangeToken;
@@ -49,6 +50,7 @@
 }
 
 + (id)_recordType;
+@property _Bool wasReportedAsJunk; // @synthesize wasReportedAsJunk=_wasReportedAsJunk;
 @property _Bool pendingENGroupParticipantUpdate; // @synthesize pendingENGroupParticipantUpdate=_pendingENGroupParticipantUpdate;
 @property _Bool createEngramGroupOnMessageSend; // @synthesize createEngramGroupOnMessageSend=_createEngramGroupOnMessageSend;
 @property int srCloudKitSyncState; // @synthesize srCloudKitSyncState=_srCloudKitSyncState;

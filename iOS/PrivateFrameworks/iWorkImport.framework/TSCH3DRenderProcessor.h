@@ -6,13 +6,20 @@
 
 #import <objc/NSObject.h>
 
+@class TSCH3DFramebuffer;
+
 __attribute__((visibility("hidden")))
 @interface TSCH3DRenderProcessor : NSObject
 {
+    TSCH3DFramebuffer *_activeFramebuffer;
 }
 
 + (id)processor;
 + (void)initialize;
+@property(retain, nonatomic) TSCH3DFramebuffer *activeFramebuffer; // @synthesize activeFramebuffer=_activeFramebuffer;
+- (void)resetBuffers;
+- (void)endFrame;
+- (void)beginFrame;
 - (void)setRenderHints:(const struct RenderHints *)arg1;
 - (struct RenderHints)renderHints;
 - (void)popRenderState;
@@ -23,10 +30,10 @@ __attribute__((visibility("hidden")))
 - (void)popState;
 - (void)pushState;
 - (id)effects;
-- (long long)texture:(id)arg1;
 - (void)texcoords:(id)arg1;
 - (void)normals:(id)arg1;
 - (void)geometry:(id)arg1;
+- (void)dealloc;
 - (_Bool)canRenderPrefilteredLines;
 
 @end

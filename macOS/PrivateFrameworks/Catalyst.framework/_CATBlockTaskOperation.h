@@ -6,6 +6,7 @@
 
 #import <Catalyst/CATTaskOperation.h>
 
+__attribute__((visibility("hidden")))
 @interface _CATBlockTaskOperation : CATTaskOperation
 {
     CDUnknownBlockType mBlock;

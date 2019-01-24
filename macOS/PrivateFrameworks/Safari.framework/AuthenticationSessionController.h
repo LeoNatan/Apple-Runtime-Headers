@@ -7,13 +7,13 @@
 #import <objc/NSObject.h>
 
 #import <Safari/AuthenticationSessionDelegate-Protocol.h>
-#import <Safari/AuthenticationSessionRequestHandling-Protocol.h>
+#import <Safari/_ASWebAuthenticationSessionRequestHandling-Protocol.h>
 
 @class AuthenticationSessionLaunchAgentProxy, AuthenticationSessionRequestClient, NSMutableDictionary, NSString;
 @protocol OS_dispatch_queue;
 
 __attribute__((visibility("hidden")))
-@interface AuthenticationSessionController : NSObject <AuthenticationSessionRequestHandling, AuthenticationSessionDelegate>
+@interface AuthenticationSessionController : NSObject <_ASWebAuthenticationSessionRequestHandling, AuthenticationSessionDelegate>
 {
     NSObject<OS_dispatch_queue> *_internalQueue;
     AuthenticationSessionLaunchAgentProxy *_launchAgentProxy;

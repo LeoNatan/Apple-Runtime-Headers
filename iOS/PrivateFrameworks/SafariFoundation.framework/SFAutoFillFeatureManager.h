@@ -18,12 +18,14 @@
 
 + (const struct __CFString *)autoFillPreferencesDomain;
 + (_Bool)defaultValueForPasswordAndCreditCardAutoFill;
++ (void)autoFillPreferencesDidChange;
++ (id)_syncManager;
 + (id)sharedFeatureManager;
 - (void)profileConnectionDidReceiveEffectiveSettingsChangedNotification:(id)arg1 userInfo:(id)arg2;
 - (void)profileConnectionDidReceiveRestrictionChangedNotification:(id)arg1 userInfo:(id)arg2;
 - (void)_refreshCachedAutoFillRestrictionValues;
 - (_Bool)shouldAutoFillPasswords;
-- (_Bool)shouldAutoFillPasswordsFromKeychain;
+@property(nonatomic) _Bool shouldAutoFillPasswordsFromKeychain;
 - (void)dealloc;
 - (id)init;
 
@@ -31,6 +33,7 @@
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
+@property(retain, nonatomic) NSString *preferredCredentialProviderForSaving; // @dynamic preferredCredentialProviderForSaving;
 @property(readonly) Class superclass;
 
 @end

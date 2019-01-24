@@ -10,14 +10,14 @@
 {
 }
 
++ (_Bool)deviceIsSeedBuild;
++ (_Bool)deviceIsInternalBuild;
 + (id)_systemVersionDictionary;
 + (id)_dataForNVRAMKey:(id)arg1;
 + (id)_compatibleProductType;
-+ (_Bool)deviceIsSeedBuild;
 + (_Bool)deviceIsiPod;
 + (_Bool)deviceIsiPhone;
 + (_Bool)deviceIsiPad;
-+ (_Bool)deviceIsInternalBuild;
 + (_Bool)deviceIsAppleWatch;
 + (_Bool)deviceIsAppleTV;
 + (_Bool)deviceIsAudioAccessory;
@@ -41,10 +41,12 @@
 + (_Bool)postAllDeviceOfferFollowUpsForAccount:(id)arg1 priority:(int)arg2 logKey:(id)arg3;
 + (id)deviceOffersForProductType:(unsigned int)arg1;
 + (_Bool)deviceOffersContainProductType:(unsigned int)arg1;
-+ (id)_userNotificationCenter;
++ (void)_performAuth;
++ (id)_notificationIdFromFollowUpId:(id)arg1 account:(id)arg2;
 + (id)_followUpItemWithIdentifier:(id)arg1 account:(id)arg2 priority:(int)arg3 bagContract:(id)arg4 logKey:(id)arg5;
 + (_Bool)tearDownDeviceOfferFollowUpWithIdentifier:(id)arg1 account:(id)arg2 logKey:(id)arg3;
 + (_Bool)tearDownAllDeviceOfferFollowUpsForAccount:(id)arg1 logKey:(id)arg2;
++ (_Bool)shouldPresentSetupOffersForAccount:(id)arg1 issues:(int *)arg2;
 + (_Bool)shouldPresentSetupOffersForAccount:(id)arg1;
 + (void)setDeviceOffersCheckEncodingForRequestParameters:(id)arg1;
 + (_Bool)saveDeviceOffersForAccount:(id)arg1 response:(id)arg2 logKey:(id)arg3;

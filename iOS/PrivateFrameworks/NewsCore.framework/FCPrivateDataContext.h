@@ -8,12 +8,13 @@
 
 #import <NewsCore/FCPrivateDataContext-Protocol.h>
 
-@class FCABTestingAgent, FCNetworkBehaviorMonitor, FCPersonalizationData, FCPrivateChannelMembershipController, FCReadingHistory, FCReadingList, FCSubscriptionList, FCTagSettings, FCUserInfo, NSString;
-@protocol FCContentContext, FCPrivateDataContextInternal, FCPushNotificationHandling;
+@class FCIssueReadingHistory, FCNetworkBehaviorMonitor, FCPersonalizationData, FCPrivateChannelMembershipController, FCReadingHistory, FCReadingList, FCSubscriptionList, FCTagSettings, FCUserInfo, NSString;
+@protocol FCClearableReadingHistory, FCContentContext, FCPrivateDataContextInternal, FCPushNotificationHandling;
 
 @interface FCPrivateDataContext : NSObject <FCPrivateDataContext>
 {
     _Bool _privateDataSyncingEnabled;
+    FCIssueReadingHistory *_issueReadingHistory;
     FCPersonalizationData *_personalizationData;
     FCPrivateChannelMembershipController *_privateChannelMembershipController;
     FCReadingHistory *_readingHistory;
@@ -24,14 +25,14 @@
     FCTagSettings *_tagSettings;
     id <FCPushNotificationHandling> _privatePushNotificationHandler;
     FCNetworkBehaviorMonitor *_networkBehaviorMonitor;
+    id <FCClearableReadingHistory> _clearReadingHistoryManager;
     id <FCPrivateDataContextInternal> _internalPrivateDataContext;
     id <FCContentContext> _contentContext;
-    FCABTestingAgent *_abTestingAgent;
 }
 
-@property(retain, nonatomic) FCABTestingAgent *abTestingAgent; // @synthesize abTestingAgent=_abTestingAgent;
 @property(retain, nonatomic) id <FCContentContext> contentContext; // @synthesize contentContext=_contentContext;
 @property(retain, nonatomic) id <FCPrivateDataContextInternal> internalPrivateDataContext; // @synthesize internalPrivateDataContext=_internalPrivateDataContext;
+@property(readonly, nonatomic) id <FCClearableReadingHistory> clearReadingHistoryManager; // @synthesize clearReadingHistoryManager=_clearReadingHistoryManager;
 @property(readonly, nonatomic) FCNetworkBehaviorMonitor *networkBehaviorMonitor; // @synthesize networkBehaviorMonitor=_networkBehaviorMonitor;
 @property(readonly, nonatomic, getter=isPrivateDataSyncingEnabled) _Bool privateDataSyncingEnabled; // @synthesize privateDataSyncingEnabled=_privateDataSyncingEnabled;
 @property(readonly, nonatomic) FCTagSettings *tagSettings; // @synthesize tagSettings=_tagSettings;
@@ -45,6 +46,7 @@
 @property(readonly, nonatomic) FCReadingHistory *readingHistory; // @synthesize readingHistory=_readingHistory;
 @property(readonly, nonatomic) FCPrivateChannelMembershipController *privateChannelMembershipController; // @synthesize privateChannelMembershipController=_privateChannelMembershipController;
 @property(readonly, nonatomic) FCPersonalizationData *personalizationData; // @synthesize personalizationData=_personalizationData;
+@property(readonly, nonatomic) FCIssueReadingHistory *issueReadingHistory; // @synthesize issueReadingHistory=_issueReadingHistory;
 - (id)initWithConfiguration:(id)arg1 context:(id)arg2 privateDatabase:(id)arg3 privateDataDirectory:(id)arg4 privateDataActionProvider:(id)arg5 encryptionDelegate:(id)arg6 networkBehaviorMonitor:(id)arg7 privateDataSyncingEnabled:(_Bool)arg8 iCloudAccountChanged:(_Bool)arg9;
 - (id)initWithConfiguration:(id)arg1 context:(id)arg2 privateDataHostDirectory:(id)arg3 privateDataActionProvider:(id)arg4 encryptionDelegate:(id)arg5 networkBehaviorMonitor:(id)arg6 privateDataSyncingEnabled:(_Bool)arg7 iCloudAccountChanged:(_Bool)arg8;
 - (id)init;

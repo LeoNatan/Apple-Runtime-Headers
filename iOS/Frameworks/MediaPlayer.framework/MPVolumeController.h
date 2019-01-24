@@ -15,10 +15,13 @@
 {
     id <MPVolumeControllerDataSource> _dataSource;
     int _volumeChangeCoalescingCount;
+    unsigned int _volumeCapabilities;
     id <MPVolumeControllerDelegate> _delegate;
 }
 
++ (id)descriptionForWarningState:(long long)arg1;
 @property(retain, nonatomic) id <MPVolumeControllerDataSource> dataSource; // @synthesize dataSource=_dataSource;
+@property(readonly, nonatomic) unsigned int volumeCapabilities; // @synthesize volumeCapabilities=_volumeCapabilities;
 @property(nonatomic) __weak id <MPVolumeControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (_Bool)muted;
@@ -28,6 +31,7 @@
 - (void)volumeControllerDataSource:(id)arg1 didChangeEUVolumeLimitEnforced:(_Bool)arg2;
 - (void)volumeControllerDataSource:(id)arg1 didChangeEUVolumeLimit:(float)arg2;
 - (void)volumeControllerDataSource:(id)arg1 didChangeVolumeLabel:(id)arg2;
+- (void)volumeControllerDataSource:(id)arg1 didChangeVolumeCapabilities:(unsigned int)arg2;
 - (void)volumeControllerDataSource:(id)arg1 didChangeVolumeControlAvailability:(_Bool)arg2;
 - (void)volumeControllerDataSource:(id)arg1 didChangeVolume:(float)arg2;
 - (void)volumeControllerDataSource:(id)arg1 didChangeMuted:(_Bool)arg2;
@@ -36,6 +40,10 @@
 @property(readonly, nonatomic) float EUVolumeLimit;
 @property(readonly, nonatomic) long long volumeWarningState;
 @property(readonly, nonatomic) _Bool volumeWarningEnabled;
+- (void)endDecreasingRelativeVolume;
+- (void)beginDecreasingRelativeVolume;
+- (void)endIncreasingRelativeVolume;
+- (void)beginIncreasingRelativeVolume;
 - (void)setVolume:(float)arg1 withNoticationDelay:(float)arg2;
 - (void)getVolumeValueWithCompletion:(CDUnknownBlockType)arg1;
 - (void)adjustVolumeValue:(float)arg1;

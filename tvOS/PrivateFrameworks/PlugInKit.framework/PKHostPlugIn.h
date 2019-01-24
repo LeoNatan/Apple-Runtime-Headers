@@ -86,6 +86,7 @@
 @property(readonly) _Bool active;
 - (void)resume;
 - (void)suspend;
+- (void)updateFromForm:(id)arg1;
 @property(retain) NSDictionary *extensionState;
 @property long long userElection;
 @property(readonly) NSUserDefaults *defaults; // @synthesize defaults=_defaults;

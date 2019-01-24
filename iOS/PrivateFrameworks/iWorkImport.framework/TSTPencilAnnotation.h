@@ -8,24 +8,22 @@
 
 #import <iWorkImport/TSKPencilAnnotation-Protocol.h>
 
-@class NSString, TSDPencilAnnotationStorage, TSTInfo;
+@class NSString, TSDPencilAnnotationStorage, TSTTableInfo;
 
 __attribute__((visibility("hidden")))
 @interface TSTPencilAnnotation : TSPObject <TSKPencilAnnotation>
 {
     TSDPencilAnnotationStorage *_pencilAnnotationStorage;
-    TSTInfo *_table;
-    unsigned long long _index;
+    TSTTableInfo *_table;
 }
 
 + (_Bool)needsObjectUUID;
-@property(nonatomic) unsigned long long index; // @synthesize index=_index;
-@property(nonatomic) __weak TSTInfo *table; // @synthesize table=_table;
+@property(nonatomic) __weak TSTTableInfo *table; // @synthesize table=_table;
 @property(readonly, nonatomic) TSDPencilAnnotationStorage *pencilAnnotationStorage; // @synthesize pencilAnnotationStorage=_pencilAnnotationStorage;
 - (void).cxx_destruct;
-- (void)saveToArchive:(struct PencilAnnotationArchive *)arg1 archiver:(id)arg2;
+-     // Error parsing type: v32@0:8^{PencilAnnotationArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{Reference}^{Reference}}16@24, name: saveToArchive:archiver:
 - (void)saveToArchiver:(id)arg1;
-- (void)loadFromArchive:(const struct PencilAnnotationArchive *)arg1 unarchiver:(id)arg2;
+-     // Error parsing type: v32@0:8r^{PencilAnnotationArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{Reference}^{Reference}}16@24, name: loadFromArchive:unarchiver:
 - (void)loadFromUnarchiver:(id)arg1;
 - (struct TSUCellRect)_cellRange;
 @property(readonly, nonatomic) NSString *uuid;

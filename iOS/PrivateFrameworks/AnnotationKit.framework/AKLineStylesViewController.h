@@ -29,6 +29,7 @@
 - (void)selectedLineWidthChanged:(long long)arg1;
 - (long long)currentLineWidthTag;
 - (void)selectRowForTag:(long long)arg1;
+- (id)indexPathForLineWidthTag:(long long)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLoad;
 - (id)initWithController:(id)arg1;

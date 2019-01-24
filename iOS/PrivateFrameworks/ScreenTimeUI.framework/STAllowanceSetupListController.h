@@ -11,6 +11,7 @@
 
 @interface STAllowanceSetupListController : PSListController
 {
+    _Bool _creatingNewAllowance;
     NSArray *_initialSelectedIdentifiers;
     id <STAllowanceSetupListControllerDelegate> _delegate;
     PSSpecifier *_categoriesGroupSpecifier;
@@ -20,7 +21,8 @@
 @property(retain, nonatomic) PSSpecifier *allAppsAndCategoriesSpecifier; // @synthesize allAppsAndCategoriesSpecifier=_allAppsAndCategoriesSpecifier;
 @property(retain, nonatomic) PSSpecifier *categoriesGroupSpecifier; // @synthesize categoriesGroupSpecifier=_categoriesGroupSpecifier;
 @property __weak id <STAllowanceSetupListControllerDelegate> delegate; // @synthesize delegate=_delegate;
-@property(readonly, copy, nonatomic) NSArray *initialSelectedIdentifiers; // @synthesize initialSelectedIdentifiers=_initialSelectedIdentifiers;
+@property(readonly, nonatomic) _Bool creatingNewAllowance; // @synthesize creatingNewAllowance=_creatingNewAllowance;
+@property(copy, nonatomic) NSArray *initialSelectedIdentifiers; // @synthesize initialSelectedIdentifiers=_initialSelectedIdentifiers;
 - (void).cxx_destruct;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (long long)tableView:(id)arg1 editingStyleForRowAtIndexPath:(id)arg2;
@@ -30,8 +32,7 @@
 - (void)viewDidLoad;
 - (void)loadView;
 - (_Bool)canBeShownFromSuspendedState;
-- (id)initWithSelectedIdentifiers:(id)arg1;
-- (id)init;
+- (id)initWithSelectedIdentifiers:(id)arg1 creatingNewAllowance:(_Bool)arg2;
 
 @end
 

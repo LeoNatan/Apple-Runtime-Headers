@@ -18,8 +18,8 @@ __attribute__((visibility("hidden")))
 
 + (Class)archivedHintClass;
 @property(readonly, nonatomic) struct _NSRange charRange; // @synthesize charRange=_charRange;
-- (void)saveToArchive:(struct TOCLayoutHintArchive *)arg1 archiver:(id)arg2;
-- (id)initWithArchive:(const struct TOCLayoutHintArchive *)arg1 unarchiver:(id)arg2;
+-     // Error parsing type: v32@0:8^{TOCLayoutHintArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{Range}}16@24, name: saveToArchive:archiver:
+-     // Error parsing type: @32@0:8r^{TOCLayoutHintArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{Range}}16@24, name: initWithArchive:unarchiver:
 - (_Bool)isFirstHint;
 - (id)lastChildHint;
 - (id)firstChildHint;

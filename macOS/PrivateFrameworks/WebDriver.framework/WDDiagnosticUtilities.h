@@ -6,15 +6,29 @@
 
 #import <objc/NSObject.h>
 
+@class NSMutableDictionary, WDDiagnosticFileLogger;
+
 @interface WDDiagnosticUtilities : NSObject
 {
+    WDDiagnosticFileLogger *_fileLoggerForGlobalDiagnostics;
+    NSMutableDictionary *_fileLoggersPerSession;
+    BOOL _globalDiagnosticsEnabled;
 }
 
-+ (void)flushPendingWrites;
-+ (void)logProtocolMessageReceive:(id)arg1;
-+ (void)logProtocolMessageSend:(id)arg1;
-+ (void)logHTTPResponse:(id)arg1;
-+ (void)logHTTPRequest:(id)arg1;
++ (id)sharedInstance;
+@property(nonatomic) BOOL globalDiagnosticsEnabled; // @synthesize globalDiagnosticsEnabled=_globalDiagnosticsEnabled;
+- (void).cxx_destruct;
+- (void)flushPendingWrites;
+- (void)logProtocolMessageReceive:(id)arg1 sessionIdentifier:(id)arg2;
+- (void)logProtocolMessageSend:(id)arg1 sessionIdentifier:(id)arg2;
+- (void)logHTTPResponse:(id)arg1 sessionIdentifier:(id)arg2;
+- (void)logHTTPRequest:(id)arg1 sessionIdentifier:(id)arg2;
+- (void)logInitiatingHTTPRequest:(id)arg1 sessionIdentifier:(id)arg2;
+- (void)logMessageForSession:(id)arg1 withFormat:(id)arg2;
+- (BOOL)diagnosticsEnabledForSession:(id)arg1;
+- (void)setDiagnosticsEnabled:(BOOL)arg1 forSession:(id)arg2;
+- (BOOL)shouldLogDiagnosticMessages;
+- (id)init;
 
 @end
 

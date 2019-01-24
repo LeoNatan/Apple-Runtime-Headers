@@ -10,7 +10,7 @@
 #import <AppKit/NSTableViewDataSource-Protocol.h>
 #import <AppKit/NSTableViewDelegate-Protocol.h>
 
-@class NSAppearance, NSArray, NSButton, NSColorList, NSLayoutConstraint, NSMutableDictionary, NSPageableTableView, NSPanel, NSPopUpButton, NSSearchField, NSString, NSTextField, NSView;
+@class NSArray, NSButton, NSColorList, NSLayoutConstraint, NSMutableDictionary, NSPageableTableView, NSPanel, NSPopUpButton, NSSearchField, NSString, NSTextField, NSView;
 
 __attribute__((visibility("hidden")))
 @interface NSColorPickerPageableNameList : NSColorPicker <NSTableViewDelegate, NSTableViewDataSource, NSColorPickingCustom>
@@ -32,7 +32,6 @@ __attribute__((visibility("hidden")))
     NSArray *_sortedColorListNames;
     NSPageableTableView *_tableView;
     NSButton *removeColorButton;
-    NSAppearance *_appearanceForRenderingColor;
     unsigned int _showingError:1;
     unsigned int _selectionDidChangeHappened:1;
     unsigned int _ui_is_built:1;
@@ -111,7 +110,6 @@ __attribute__((visibility("hidden")))
 - (struct CGSize)minContentSize;
 - (double)_insertionOrder;
 - (id)provideNewButtonImage;
-@property(retain) NSAppearance *appearanceForRenderingColor;
 - (void)setColor:(id)arg1;
 - (void)_selectColorInTableView;
 - (long long)_colorIndexInTableView;

@@ -11,7 +11,7 @@
 __attribute__((visibility("hidden")))
 @interface TSPObjectSerializationMetadata : TSPObject
 {
-    struct ObjectSerializationMetadata _message;
+    // Error parsing type: {ObjectSerializationMetadata="_vptr$MessageLite"^^?"_internal_metadata_"{InternalMetadataWithArena="ptr_"^v}"_has_bits_"{HasBits<1>="has_bits_"[1I]}"_cached_size_"{CachedSize="size_"{atomic<int>="__a_"Ai}}"version_"{RepeatedField<unsigned int>="current_size_"i"total_size_"i"ptr_"(Pointer="arena"^{Arena}"rep"^{Rep})}"_version_cached_byte_size_"i"datas_"{RepeatedPtrField<TSP::DataInfo>="arena_"^{Arena}"current_size_"i"total_size_"i"rep_"^{Rep}}"external_object_uuid_map_entries_"{RepeatedPtrField<TSP::ObjectUUIDMapEntry>="arena_"^{Arena}"current_size_"i"total_size_"i"rep_"^{Rep}}"source_document_uuid_"^{UUID}"version_uuid_"^{UUID}"component_"^{ComponentInfo}"data_metadata_map_"^{Reference}}, name: _message
     TSPDataMetadataMap *_identifierToDataMetadataMap;
     NSArray *_dataReferences;
 }
@@ -20,7 +20,7 @@ __attribute__((visibility("hidden")))
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (long long)tsp_identifier;
-- (struct ObjectSerializationMetadata *)message;
+-     // Error parsing type: ^{ObjectSerializationMetadata=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedField<unsigned int>=ii(Pointer=^{Arena}^{Rep})}i{RepeatedPtrField<TSP::DataInfo>=^{Arena}ii^{Rep}}{RepeatedPtrField<TSP::ObjectUUIDMapEntry>=^{Arena}ii^{Rep}}^{UUID}^{UUID}^{ComponentInfo}^{Reference}}16@0:8, name: message
 - (void)saveToArchiver:(id)arg1;
 - (void)loadFromUnarchiver:(id)arg1;
 - (id)dataMetadataForDataIdentifier:(long long)arg1;

@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
 - (void)restart;
 - (void)stopIfNeeded;
 - (void)jitter;
+- (id)loadDelegate;
 - (void)update;
 - (_Bool)isAborting;
 @property(nonatomic, getter=isEnabled) _Bool enabled;

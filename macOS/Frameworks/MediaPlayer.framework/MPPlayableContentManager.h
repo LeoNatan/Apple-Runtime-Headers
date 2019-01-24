@@ -25,7 +25,7 @@
 
 + (BOOL)_deviceIsCarplayCapable;
 + (id)sharedContentManager;
-@property(retain, nonatomic) NSArray *nowPlayingIdentifiers; // @synthesize nowPlayingIdentifiers=_nowPlayingIdentifiers;
+@property(copy, nonatomic) NSArray *nowPlayingIdentifiers; // @synthesize nowPlayingIdentifiers=_nowPlayingIdentifiers;
 @property(readonly, nonatomic) MPPlayableContentManagerContext *context; // @synthesize context=_context;
 @property(nonatomic) __weak id <MPPlayableContentDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak id <MPPlayableContentDataSource> dataSource; // @synthesize dataSource=_dataSource;

@@ -6,20 +6,23 @@
 
 #import <UIKit/UIView.h>
 
-@class NSLayoutConstraint, UIImageView, UILabel;
+@class NSLayoutConstraint, UILabel;
 
 @interface MCDTitleView : UIView
 {
-    UIImageView *_explicitImageView;
-    NSLayoutConstraint *_explicitImageViewWidthConstraint;
     NSLayoutConstraint *_titlePaddingConstraint;
     _Bool _explicitTrack;
+    _Bool _shouldUseMusicExplicitGlyph;
     UILabel *_titleLabel;
+    UILabel *_explicitLabel;
 }
 
+@property(retain, nonatomic) UILabel *explicitLabel; // @synthesize explicitLabel=_explicitLabel;
+@property(nonatomic) _Bool shouldUseMusicExplicitGlyph; // @synthesize shouldUseMusicExplicitGlyph=_shouldUseMusicExplicitGlyph;
 @property(nonatomic, getter=isExplicitTrack) _Bool explicitTrack; // @synthesize explicitTrack=_explicitTrack;
 @property(readonly, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 - (void).cxx_destruct;
+- (void)_updateExplicitTreatmentString;
 - (id)_addLabelWithFont:(id)arg1;
 - (void)_addConstraints;
 - (id)initWithFrame:(struct CGRect)arg1;

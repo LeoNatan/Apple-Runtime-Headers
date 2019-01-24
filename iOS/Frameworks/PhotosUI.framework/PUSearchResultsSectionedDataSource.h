@@ -36,6 +36,7 @@ __attribute__((visibility("hidden")))
     NSObject<OS_dispatch_queue> *_queue;
     PHFetchResult *_homePersons;
     NSArray *_suggestions;
+    NSArray *_uncommittedSuggestions;
     NSDictionary *_sceneAncestryInformation;
     NSCalendar *_calendar;
     NSDateComponents *_dateRangeFormattingComponents;
@@ -46,6 +47,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSDateComponents *dateRangeFormattingComponents; // @synthesize dateRangeFormattingComponents=_dateRangeFormattingComponents;
 @property(retain, nonatomic) NSCalendar *calendar; // @synthesize calendar=_calendar;
 @property(retain) NSDictionary *sceneAncestryInformation; // @synthesize sceneAncestryInformation=_sceneAncestryInformation;
+@property(retain, nonatomic) NSArray *uncommittedSuggestions; // @synthesize uncommittedSuggestions=_uncommittedSuggestions;
 @property(retain, nonatomic) NSArray *suggestions; // @synthesize suggestions=_suggestions;
 @property(retain, nonatomic) PHFetchResult *homePersons; // @synthesize homePersons=_homePersons;
 // Error parsing type for property didMerge:

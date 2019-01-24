@@ -80,7 +80,7 @@
 - (void)_deleteAllZonesWithOperationGroupNameSuffix:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_subscriptionOperationWithSubscriptionsToSave:(id)arg1 subscriptionIDsToDelete:(id)arg2 operationGroupNameSuffix:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)_fetchRecordsWithQuery:(id)arg1 operationGroupName:(id)arg2 cursor:(id)arg3 fetchedRecords:(id)arg4 zone:(id)arg5 completion:(CDUnknownBlockType)arg6;
-- (void)_fetchRecordsWithQuery:(id)arg1 operationGroupName:(id)arg2 zone:(id)arg3 completion:(CDUnknownBlockType)arg4;
+- (void)fetchRecordsWithQuery:(id)arg1 operationGroupName:(id)arg2 zone:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)_modifyRecordsOperationWithRecordsToSave:(id)arg1 recordIDsToDelete:(id)arg2 operationGroupName:(id)arg3 operationGroupNameSuffix:(id)arg4 completion:(CDUnknownBlockType)arg5;
 - (void)resetContainerWithCompletion:(CDUnknownBlockType)arg1;
 - (void)removeItemsWithRecordNames:(id)arg1 itemType:(unsigned long long)arg2 completion:(CDUnknownBlockType)arg3;
@@ -109,6 +109,8 @@
 - (void)attachToContainer;
 - (void)invalidateCloudStoreWithOperationGroupNameSuffix:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)invalidateCloudStoreWithCompletion:(CDUnknownBlockType)arg1;
+- (void)invalidateCloudStoreIfPossibleWithOperationGroupNameSuffix:(id)arg1;
+- (void)invalidateCloudStoreIfPossible;
 - (id)lastFetchDateForZoneWithName:(id)arg1;
 - (id)cloudStoreSpecificKeysForItem:(id)arg1;
 - (id)recordTypeForRecordID:(id)arg1;

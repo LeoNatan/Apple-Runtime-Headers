@@ -38,6 +38,10 @@
 + (_Bool)detectNLEvents;
 + (_Bool)detectContacts;
 + (void)setUseMLModelForSelfId:(_Bool)arg1;
++ (void)setContactSharingNegativeSamplingRate:(float)arg1;
++ (float)contactSharingNegativeSamplingRate;
++ (void)setUseMLModelForContactSharing:(_Bool)arg1;
++ (_Bool)useMLModelForContactSharing;
 + (_Bool)useMLModelForSelfId;
 + (void)setUseMLModelForContacts:(_Bool)arg1;
 + (_Bool)useMLModelForContacts;

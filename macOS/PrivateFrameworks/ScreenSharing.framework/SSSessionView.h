@@ -494,12 +494,14 @@
 - (id)displayNameForDialogs;
 - (void)guestAccessRequestCancelled;
 - (void)gatheredCredentials:(id)arg1 withStatus:(int)arg2;
+- (void)IDSServiceMessageReceived:(id)arg1 context:(id)arg2;
 - (void)resolvedBonjourName:(id)arg1;
 - (void)startedBonjourResolveAtTimestamp:(id)arg1;
 - (void)resolvedAddresses:(id)arg1 withStatus:(int)arg2;
 - (void)logAddressResolutionToMessageTracerWithStatus:(int)arg1;
 - (void)teardownForNewConnectionPrompt;
 - (void)handleSessionEnded:(id)arg1 fromID:(id)arg2 withInfo:(id)arg3;
+- (void)session:(id)arg1 didReceiveData:(id)arg2;
 - (void)sessionEnded:(id)arg1 withReason:(unsigned int)arg2 error:(id)arg3;
 - (void)session:(id)arg1 receivedSessionEndFromID:(id)arg2 withData:(id)arg3;
 - (void)session:(id)arg1 receivedSessionMessageFromID:(id)arg2 withData:(id)arg3;
@@ -523,6 +525,7 @@
 - (void)conference:(id)arg1 didStopWithCallID:(long long)arg2 error:(id)arg3;
 - (void)conference:(id)arg1 didStartSession:(BOOL)arg2 withUserInfo:(id)arg3;
 - (void)conference:(id)arg1 withCallID:(long long)arg2 remoteMediaStalled:(BOOL)arg3;
+- (int)orientationForCurrentAngle;
 - (void)setOrientationForConference:(id)arg1 videoAttributes:(id)arg2 callID:(long long)arg3;
 - (int)J99HackForScreenOrientation:(int)arg1 videoOrientation:(int)arg2;
 - (id)inviteDictionaryForRemoteInviteDictionary:(id)arg1;

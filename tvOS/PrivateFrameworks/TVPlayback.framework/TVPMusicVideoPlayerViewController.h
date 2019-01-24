@@ -6,12 +6,13 @@
 
 #import <UIKit/UIViewController.h>
 
+#import <TVPlayback/UIViewControllerAnimatedTransitioning-Protocol.h>
 #import <TVPlayback/UIViewControllerTransitioningDelegate-Protocol.h>
 
 @class AVPlayer, AVPlayerViewController, NSString, TVPMusicNowPlayingVideoView, UIView;
 @protocol TVPMusicVideoPlayerViewControllerDelegate;
 
-@interface TVPMusicVideoPlayerViewController : UIViewController <UIViewControllerTransitioningDelegate>
+@interface TVPMusicVideoPlayerViewController : UIViewController <UIViewControllerTransitioningDelegate, UIViewControllerAnimatedTransitioning>
 {
     _Bool _viewVisible;
     id <TVPMusicVideoPlayerViewControllerDelegate> _delegate;
@@ -28,6 +29,10 @@
 @property(readonly, nonatomic) AVPlayerViewController *avPlayerViewController; // @synthesize avPlayerViewController=_avPlayerViewController;
 @property(nonatomic) __weak id <TVPMusicVideoPlayerViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (void)_animateDismissTransition:(id)arg1;
+- (void)_animatePresentTransition:(id)arg1;
+- (void)animateTransition:(id)arg1;
+- (double)transitionDuration:(id)arg1;
 - (id)animationControllerForDismissedController:(id)arg1;
 - (id)animationControllerForPresentedController:(id)arg1 presentingController:(id)arg2 sourceController:(id)arg3;
 - (id)presentationControllerForPresentedViewController:(id)arg1 presentingViewController:(id)arg2 sourceViewController:(id)arg3;

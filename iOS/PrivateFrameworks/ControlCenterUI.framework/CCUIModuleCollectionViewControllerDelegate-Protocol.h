@@ -10,6 +10,7 @@
 @protocol CCUIContentModule;
 
 @protocol CCUIModuleCollectionViewControllerDelegate <NSObject>
+- (void)moduleCollectionViewController:(CCUIModuleCollectionViewController *)arg1 didUpdateHomeGestureDismissalAllowed:(_Bool)arg2;
 - (UIView *)obscuringBackgroundViewForModuleCollectionViewController:(CCUIModuleCollectionViewController *)arg1;
 - (void)moduleCollectionViewController:(CCUIModuleCollectionViewController *)arg1 willRemoveModuleContainerViewController:(CCUIContentModuleContainerViewController *)arg2;
 - (void)moduleCollectionViewController:(CCUIModuleCollectionViewController *)arg1 didAddModuleContainerViewController:(CCUIContentModuleContainerViewController *)arg2;

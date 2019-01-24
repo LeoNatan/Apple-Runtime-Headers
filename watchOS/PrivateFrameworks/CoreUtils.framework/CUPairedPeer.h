@@ -8,7 +8,7 @@
 
 #import <CoreUtils/NSSecureCoding-Protocol.h>
 
-@class NSData, NSDictionary, NSString, NSUUID;
+@class NSData, NSDate, NSDictionary, NSString, NSUUID;
 
 @interface CUPairedPeer : NSObject <NSSecureCoding>
 {
@@ -20,11 +20,13 @@
     NSString *_model;
     NSString *_name;
     NSData *_publicKey;
+    NSDate *_dateModified;
     NSString *_identifierStr;
 }
 
 + (_Bool)supportsSecureCoding;
 @property(copy, nonatomic) NSString *identifierStr; // @synthesize identifierStr=_identifierStr;
+@property(copy, nonatomic) NSDate *dateModified; // @synthesize dateModified=_dateModified;
 @property(copy, nonatomic) NSData *publicKey; // @synthesize publicKey=_publicKey;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(copy, nonatomic) NSString *model; // @synthesize model=_model;

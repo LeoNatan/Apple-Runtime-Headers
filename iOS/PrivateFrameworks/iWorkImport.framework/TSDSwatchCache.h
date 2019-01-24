@@ -14,7 +14,6 @@ __attribute__((visibility("hidden")))
     NSOperationQueue *mOperationQueue;
 }
 
-+ (struct CGImage *)newImageForDarkBackground:(struct CGImage *)arg1 atScale:(double)arg2 ofSize:(struct CGSize)arg3 inset:(struct CGSize)arg4;
 + (void)applyFakeShadowForPresetsIfNecessary:(id)arg1 documentRoot:(id)arg2;
 + (_Bool)applyFakeStrokeIfNeededForShape:(id)arg1 documentRoot:(id)arg2 backgroundAppearance:(unsigned long long)arg3;
 + (id)swatchCache;

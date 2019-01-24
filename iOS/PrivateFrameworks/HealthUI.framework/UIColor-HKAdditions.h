@@ -37,6 +37,15 @@
 + (id)hk_clinicalRecordValueColor;
 + (id)hk_clinicalRecordSeparatorColor;
 + (id)hk_hearingHealthKeyColor;
++ (id)hk_electrocardiogramChartBorderColor;
++ (id)hk_electrocardiogramChartMajorGridlineColor;
++ (id)hk_electrocardiogramChartMediumGridlineColor;
++ (id)hk_electrocardiogramChartMinorGridlineColor;
++ (id)hk_electrocardiogramChartVeryMinorGridlineColor;
++ (id)hk_electrocardiogramCardOnboardingBackgroundColor;
++ (id)hk_electrocardiogramCardOnboardingHeaderColor;
++ (id)hk_electrocardiogramCardBackgroundColor;
++ (id)hk_electrocardiogramCardHeaderColor;
 + (id)hk_activityLegendLabelColor;
 + (id)hk_activityStandGoalMissedGradientBottomColor;
 + (id)hk_activityStandGoalMissedGradientTopColor;

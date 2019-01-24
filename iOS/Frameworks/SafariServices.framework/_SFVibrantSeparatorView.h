@@ -13,6 +13,7 @@
 }
 
 - (void).cxx_destruct;
+- (void)traitCollectionDidChange:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end

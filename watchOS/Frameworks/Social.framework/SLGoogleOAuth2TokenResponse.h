@@ -6,28 +6,38 @@
 
 #import <objc/NSObject.h>
 
+#import <Social/SLWebOAuth2TokenResponse-Protocol.h>
+
 @class NSDate, NSDictionary, NSError, NSString;
 
-@interface SLGoogleOAuth2TokenResponse : NSObject
+@interface SLGoogleOAuth2TokenResponse : NSObject <SLWebOAuth2TokenResponse>
 {
-    int _statusCode;
     NSDictionary *_data;
-    NSString *_token;
-    NSString *_refreshToken;
-    NSDate *_expiryDate;
     NSError *_error;
     NSString *_errorMessage;
+    NSDate *_expiryDate;
+    NSString *_GUID;
+    NSString *_refreshToken;
+    int _statusCode;
+    NSString *_token;
 }
 
+@property(readonly) NSString *token; // @synthesize token=_token;
+@property(readonly) int statusCode; // @synthesize statusCode=_statusCode;
+@property(readonly) NSString *refreshToken; // @synthesize refreshToken=_refreshToken;
+@property(readonly) NSString *GUID; // @synthesize GUID=_GUID;
+@property(readonly) NSDate *expiryDate; // @synthesize expiryDate=_expiryDate;
 @property(readonly) NSString *errorMessage; // @synthesize errorMessage=_errorMessage;
 @property(readonly) NSError *error; // @synthesize error=_error;
-@property(readonly) NSDate *expiryDate; // @synthesize expiryDate=_expiryDate;
-@property(readonly) NSString *refreshToken; // @synthesize refreshToken=_refreshToken;
-@property(readonly) NSString *token; // @synthesize token=_token;
 @property(readonly) NSDictionary *data; // @synthesize data=_data;
-@property(readonly) int statusCode; // @synthesize statusCode=_statusCode;
 - (void).cxx_destruct;
 - (id)initWithData:(id)arg1 urlResponse:(id)arg2 error:(id)arg3;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned int hash;
+@property(readonly) Class superclass;
 
 @end
 

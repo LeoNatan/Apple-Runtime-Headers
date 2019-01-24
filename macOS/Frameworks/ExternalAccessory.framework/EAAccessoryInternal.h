@@ -25,6 +25,7 @@
     NSString *_preferredApp;
     NSData *_certSerial;
     NSData *_certData;
+    NSString *_ppid;
     int _classType;
     NSDictionary *_audioPorts;
     unsigned int _capabilities;
@@ -59,6 +60,7 @@
 @property(copy, nonatomic) NSString *bonjourName; // @synthesize bonjourName=_bonjourName;
 @property(nonatomic) int locationSentenceTypesMask; // @synthesize locationSentenceTypesMask=_locationSentenceTypesMask;
 @property(copy, nonatomic) NSString *coreAccessoryPrimaryUUID; // @synthesize coreAccessoryPrimaryUUID=_coreAccessoryPrimaryUUID;
+@property(copy, nonatomic) NSString *ppid; // @synthesize ppid=_ppid;
 @property unsigned long long destinationSharingOptions; // @synthesize destinationSharingOptions=_destinationSharingOptions;
 @property(retain, nonatomic) NSMutableArray *enqueuedNMEASentences; // @synthesize enqueuedNMEASentences=_enqueuedNMEASentences;
 @property BOOL pointOfInterestHandoffEnabled; // @synthesize pointOfInterestHandoffEnabled=_pointOfInterestHandoffEnabled;

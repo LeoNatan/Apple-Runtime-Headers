@@ -6,15 +6,16 @@
 
 #import <objc/NSObject.h>
 
-#import <XCTest/XCTUIApplicationMonitor-Protocol.h>
-#import <XCTest/XCUIApplicationProcessTracker-Protocol.h>
+#import <XCTest/XCUIApplicationMonitor-Protocol.h>
 
 @class NSMutableDictionary, NSMutableSet, NSString, XCUIApplicationImplDepot, XCUIApplicationRegistry;
-@protocol OS_dispatch_queue;
+@protocol OS_dispatch_queue, XCUIDevice, XCUIPlatformApplicationServicesProviding;
 
-@interface XCUIApplicationMonitor : NSObject <XCTUIApplicationMonitor, XCUIApplicationProcessTracker>
+@interface XCUIApplicationMonitor : NSObject <XCUIApplicationMonitor>
 {
     XCUIApplicationRegistry *_applicationRegistry;
+    id <XCUIDevice> _device;
+    id <XCUIPlatformApplicationServicesProviding> _platformServicesProvider;
     NSObject<OS_dispatch_queue> *_queue;
     XCUIApplicationImplDepot *_applicationImplDepot;
     NSMutableSet *_trackedBundleIDs;
@@ -23,21 +24,20 @@
     NSMutableSet *_launchedApplications;
 }
 
-+ (id)sharedMonitor;
 @property(readonly, copy) NSMutableSet *launchedApplications; // @synthesize launchedApplications=_launchedApplications;
 @property(readonly, copy) NSMutableDictionary *applicationProcessesForToken; // @synthesize applicationProcessesForToken=_applicationProcessesForToken;
 @property(readonly, copy) NSMutableDictionary *applicationProcessesForPID; // @synthesize applicationProcessesForPID=_applicationProcessesForPID;
 @property(readonly, copy) NSMutableSet *trackedBundleIDs; // @synthesize trackedBundleIDs=_trackedBundleIDs;
 @property(readonly, copy) XCUIApplicationImplDepot *applicationImplDepot; // @synthesize applicationImplDepot=_applicationImplDepot;
 @property(retain) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
+@property(readonly) id <XCUIPlatformApplicationServicesProviding> platformServicesProvider; // @synthesize platformServicesProvider=_platformServicesProvider;
+@property(readonly) __weak id <XCUIDevice> device; // @synthesize device=_device;
 @property(retain) XCUIApplicationRegistry *applicationRegistry; // @synthesize applicationRegistry=_applicationRegistry;
 - (void).cxx_destruct;
 - (void)acquireBackgroundAssertionForPID:(int)arg1 reply:(CDUnknownBlockType)arg2;
-- (void)requestAutomationSessionForTestTargetWithPID:(int)arg1 preferredBackendPath:(id)arg2 reply:(CDUnknownBlockType)arg3;
 - (void)updatedApplicationStateSnapshot:(id)arg1;
 - (void)_setIsTrackingForBundleID:(id)arg1;
 - (_Bool)_isTrackingBundleID:(id)arg1;
-- (void)applicationWithBundleID:(id)arg1 didUpdatePID:(int)arg2 state:(unsigned long long)arg3;
 - (void)processWithToken:(id)arg1 exitedWithStatus:(int)arg2;
 - (void)stopTrackingProcessWithToken:(id)arg1;
 - (void)crashInProcessWithBundleID:(id)arg1 path:(id)arg2 pid:(int)arg3 symbol:(id)arg4;
@@ -49,13 +49,12 @@
 - (void)_terminateApplicationProcess:(id)arg1;
 - (void)terminateApplicationProcess:(id)arg1 withToken:(id)arg2;
 - (id)monitoredApplicationWithProcessIdentifier:(int)arg1;
-- (void)_beginMonitoringApplication:(id)arg1;
 - (void)setApplicationProcess:(id)arg1 forToken:(id)arg2;
 - (id)applicationProcessWithToken:(id)arg1;
 - (void)setApplicationProcess:(id)arg1 forPID:(int)arg2;
 - (id)applicationProcessWithPID:(int)arg1;
 - (id)applicationImplementationForApplicationAtPath:(id)arg1 bundleID:(id)arg2;
-- (id)init;
+- (id)initWithDevice:(id)arg1 platformServicesProvider:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

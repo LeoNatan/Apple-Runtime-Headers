@@ -11,29 +11,29 @@
 __attribute__((visibility("hidden")))
 @interface TSDFrame : TSDStroke
 {
-    TSDFrameSpec *mSpec;
-    NSString *mFrameName;
-    double mAssetScale;
-    _Bool mScaledSizesValid;
-    double mLeftWidth;
-    double mRightWidth;
-    double mTopHeight;
-    double mBottomHeight;
-    struct CGSize mAdornmentSize;
+    TSDFrameSpec *_spec;
+    NSString *_frameName;
+    double _assetScale;
+    double _leftWidth;
+    double _rightWidth;
+    double _topHeight;
+    double _bottomHeight;
+    struct CGSize _adornmentSize;
 }
 
 + (Class)mutableClass;
-@property(readonly, nonatomic) TSDFrameSpec *frameSpec; // @synthesize frameSpec=mSpec;
-@property(readonly, nonatomic) double assetScale; // @synthesize assetScale=mAssetScale;
+@property(readonly, nonatomic) TSDFrameSpec *frameSpec; // @synthesize frameSpec=_spec;
+@property(readonly, nonatomic) double assetScale; // @synthesize assetScale=_assetScale;
+- (void).cxx_destruct;
 - (struct CGSize)p_minimumRenderedSize;
 - (id)mixedObjectWithFraction:(double)arg1 ofObject:(id)arg2;
 - (long long)mixingTypeWithObject:(id)arg1 context:(id)arg2;
 - (void)drawSwatchInRect:(struct CGRect)arg1 inContext:(struct CGContext *)arg2;
-- (void)paintPath:(struct CGPath *)arg1 wantsInteriorStroke:(_Bool)arg2 inContext:(struct CGContext *)arg3 useFastDrawing:(_Bool)arg4;
+- (void)paintPath:(const struct CGPath *)arg1 wantsInteriorStroke:(_Bool)arg2 inContext:(struct CGContext *)arg3 useFastDrawing:(_Bool)arg4;
 - (_Bool)drawsInOneStep;
-- (_Bool)prefersToApplyToCAShapeLayerDuringManipulation;
-- (_Bool)canApplyToCAShapeLayer;
-- (_Bool)canApplyDirectlyToRepCALayer;
+- (_Bool)prefersToApplyToShapeRenderableDuringManipulation;
+- (_Bool)canApplyToShapeRenderable;
+- (_Bool)canApplyDirectlyToRepRenderable;
 - (_Bool)isNearlyWhite;
 - (_Bool)isNullStroke;
 - (double)equivalentStrokeWidth;
@@ -50,16 +50,15 @@ __attribute__((visibility("hidden")))
 - (struct CGRect)p_coverageRectWithAdornment:(struct CGRect)arg1;
 - (struct CGRect)p_coverageRectWithoutAdornment:(struct CGRect)arg1;
 - (struct CGRect)p_uncoveredRectWithoutAdornment:(struct CGRect)arg1;
-- (_Bool)hasMask;
-- (double)minimumAssetScale;
-- (id)archivableFrameName;
-- (id)frameName;
+@property(readonly, nonatomic) _Bool hasMask;
+@property(readonly, nonatomic) double minimumAssetScale;
+@property(readonly, nonatomic) NSString *archivableFrameName;
+@property(readonly, nonatomic) NSString *frameName;
 - (id)description;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (void)dealloc;
 - (id)initWithFrameName:(id)arg1;
 - (id)initWithFrameSpec:(id)arg1;
 - (id)initWithFrameSpec:(id)arg1 assetScale:(double)arg2;
@@ -71,8 +70,8 @@ __attribute__((visibility("hidden")))
 - (double)i_topHeight;
 - (double)i_rightWidth;
 - (double)i_leftWidth;
-- (void)saveToArchive:(struct StrokeArchive *)arg1 archiver:(id)arg2;
-- (id)initWithArchive:(const struct StrokeArchive *)arg1 unarchiver:(id)arg2;
+-     // Error parsing type: v32@0:8^{StrokeArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{Color}^{StrokePatternArchive}^{SmartStrokeArchive}^{FrameArchive}^{PatternedStrokeArchive}fiif}16@24, name: saveToArchive:archiver:
+-     // Error parsing type: @32@0:8r^{StrokeArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{Color}^{StrokePatternArchive}^{SmartStrokeArchive}^{FrameArchive}^{PatternedStrokeArchive}fiif}16@24, name: initWithArchive:unarchiver:
 
 @end
 

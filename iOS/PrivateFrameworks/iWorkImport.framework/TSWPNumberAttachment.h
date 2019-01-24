@@ -15,7 +15,6 @@ __attribute__((visibility("hidden")))
     NSString *_numberFormat;
 }
 
-+ (_Bool)allowsObjectDigestValidation;
 + (Class)classForUnarchiver:(id)arg1;
 @property(copy, nonatomic) NSString *numberFormat; // @synthesize numberFormat=_numberFormat;
 @property(copy, nonatomic) NSString *stringValue; // @synthesize stringValue=_stringValue;

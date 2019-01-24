@@ -35,10 +35,10 @@ __attribute__((visibility("hidden")))
 - (_Bool)isEqual:(id)arg1;
 - (void)saveToPropertyCommandMessage:(struct Message *)arg1 archiver:(id)arg2;
 - (id)initFromPropertyCommandMessage:(const struct Message *)arg1 unarchiver:(id)arg2;
-- (void)saveToArchive:(struct PaddingArchive *)arg1 archiver:(id)arg2;
+-     // Error parsing type: v32@0:8^{PaddingArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}ffff}16@24, name: saveToArchive:archiver:
 - (id)paddingByMirroringHorizontal;
 - (void)transform:(struct CGAffineTransform)arg1;
-- (id)initWithArchive:(const struct PaddingArchive *)arg1 unarchiver:(id)arg2;
+-     // Error parsing type: @32@0:8r^{PaddingArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}ffff}16@24, name: initWithArchive:unarchiver:
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithTopInset:(double)arg1 leftInset:(double)arg2 bottomInset:(double)arg3 rightInset:(double)arg4;
 - (id)init;

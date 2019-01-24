@@ -18,9 +18,11 @@
     UILabel *_titleLabel;
     UILabel *_messageLabel;
     PUICButton *_actionButton;
+    float _scrollViewMinimumTopInset;
 }
 
 + (void)_setupLayoutSpec;
+@property(nonatomic) float scrollViewMinimumTopInset; // @synthesize scrollViewMinimumTopInset=_scrollViewMinimumTopInset;
 @property(retain, nonatomic) PUICButton *actionButton; // @synthesize actionButton=_actionButton;
 @property(retain, nonatomic) UILabel *messageLabel; // @synthesize messageLabel=_messageLabel;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;

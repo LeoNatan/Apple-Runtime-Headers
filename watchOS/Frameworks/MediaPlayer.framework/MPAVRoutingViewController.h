@@ -44,6 +44,7 @@
     _Bool _hasUserSelections;
     unsigned int _updatesSincePresentation;
     int _discoveryModeBeforeEnteringBackground;
+    _Bool _sortByIsVideoRoute;
     unsigned int _style;
     id <MPAVRoutingViewControllerDelegate> _delegate;
     int _avItemType;
@@ -56,6 +57,7 @@
     MPVolumeGroupSliderCoordinator *_groupSliderCoordinator;
 }
 
+@property(nonatomic) _Bool sortByIsVideoRoute; // @synthesize sortByIsVideoRoute=_sortByIsVideoRoute;
 @property(retain, nonatomic) MPVolumeGroupSliderCoordinator *groupSliderCoordinator; // @synthesize groupSliderCoordinator=_groupSliderCoordinator;
 @property(retain, nonatomic) NSMapTable *outputDeviceVolumeSliders; // @synthesize outputDeviceVolumeSliders=_outputDeviceVolumeSliders;
 @property(retain, nonatomic) MPAVEndpointRoute *endpointRoute; // @synthesize endpointRoute=_endpointRoute;
@@ -104,7 +106,7 @@
 @property(readonly, nonatomic) float _expandedCellHeight;
 @property(readonly, nonatomic) MPAVRoutingController *_routingController;
 - (void)routingCell:(id)arg1 mirroringSwitchValueDidChange:(_Bool)arg2;
-- (void)routingController:(id)arg1 shouldHijackRoute:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)routingController:(id)arg1 shouldHijackRoute:(id)arg2 alertStyle:(int)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)routingController:(id)arg1 didFailToPickRouteWithError:(id)arg2;
 - (void)routingController:(id)arg1 pickedRoutesDidChange:(id)arg2;
 - (void)routingControllerAvailableRoutesDidChange:(id)arg1;

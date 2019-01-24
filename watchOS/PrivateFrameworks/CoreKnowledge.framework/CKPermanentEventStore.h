@@ -19,10 +19,9 @@
 
 + (id)defaultStore;
 + (id)createEventWithIdentifier:(id)arg1 dateInterval:(id)arg2 metadata:(id)arg3 fromEvent:(id)arg4;
-- (CDUnknownBlockType).cxx_destruct;
+- (void).cxx_destruct;
 - (id)init;
 - (id)initWithKnowledgeStore:(id)arg1;
-@property(nonatomic, readonly) CKKnowledgeStore *knowledgeStore; // @synthesize knowledgeStore;
 - (void)deleteInteractionsWithBundleId:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (_Bool)deleteInteractionsWithBundleId:(id)arg1 error:(id *)arg2;
 - (void)recordInteraction:(id)arg1 bundleId:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
@@ -31,7 +30,6 @@
 - (_Bool)recordInteraction:(id)arg1 error:(id *)arg2;
 - (_Bool)recordEvent:(id)arg1 error:(id *)arg2;
 - (void)recordEvent:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (void)createEventIfNotExistsWithIdentifier:(id)arg1 dateInterval:(id)arg2 metadata:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)historicEventsWithSourceBundleIdentifier:(id)arg1 andIntent:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)historicEventWithIdentifier:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)deleteEventWithIdentifier:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;

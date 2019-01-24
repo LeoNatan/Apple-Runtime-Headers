@@ -13,12 +13,12 @@ __attribute__((visibility("hidden")))
 {
 }
 
-+ (id)newDataAttributesWithMessage:(const struct DataAttributes *)arg1;
++     // Error parsing type: @24@0:8r^{DataAttributes=^^?{ExtensionSet=^{Arena}SS(AllocatedData=^{KeyValue}^{map<int, google::protobuf::internal::ExtensionSet::Extension, std::__1::less<int>, std::__1::allocator<std::__1::pair<const int, google::protobuf::internal::ExtensionSet::Extension> > >})}{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}}16, name: newDataAttributesWithMessage:
 + (void)registerDataAttributesClass:(Class)arg1 forExtensionNumber:(int)arg2;
 + (id)_classRegistry;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (void)saveToMessage:(struct DataAttributes *)arg1;
-- (id)initWithMessage:(const struct DataAttributes *)arg1;
+-     // Error parsing type: v24@0:8^{DataAttributes=^^?{ExtensionSet=^{Arena}SS(AllocatedData=^{KeyValue}^{map<int, google::protobuf::internal::ExtensionSet::Extension, std::__1::less<int>, std::__1::allocator<std::__1::pair<const int, google::protobuf::internal::ExtensionSet::Extension> > >})}{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}}16, name: saveToMessage:
+-     // Error parsing type: @24@0:8r^{DataAttributes=^^?{ExtensionSet=^{Arena}SS(AllocatedData=^{KeyValue}^{map<int, google::protobuf::internal::ExtensionSet::Extension, std::__1::less<int>, std::__1::allocator<std::__1::pair<const int, google::protobuf::internal::ExtensionSet::Extension> > >})}{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}}16, name: initWithMessage:
 
 @end
 

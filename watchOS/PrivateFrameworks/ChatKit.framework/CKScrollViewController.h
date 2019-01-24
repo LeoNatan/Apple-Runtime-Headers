@@ -18,9 +18,11 @@
     float _bottomInsetPadding;
     float _minimumBottomInset;
     IMScheduledUpdater *_updater;
+    CDUnknownBlockType _overrideScrollBlock;
     struct CGRect _keyboardScreenFrame;
 }
 
+@property(copy, nonatomic) CDUnknownBlockType overrideScrollBlock; // @synthesize overrideScrollBlock=_overrideScrollBlock;
 @property(retain, nonatomic) IMScheduledUpdater *updater; // @synthesize updater=_updater;
 @property(nonatomic) _Bool keyboardInteractionCancelled; // @synthesize keyboardInteractionCancelled=_keyboardInteractionCancelled;
 @property(nonatomic) struct CGRect keyboardScreenFrame; // @synthesize keyboardScreenFrame=_keyboardScreenFrame;

@@ -23,7 +23,7 @@
 - (void)templateEntityDidReceiveSyncedTemplates:(id)arg1 provenance:(long long)arg2;
 - (id)allTemplatesWithError:(id *)arg1;
 - (_Bool)removeTemplates:(id)arg1 error:(id *)arg2;
-- (_Bool)insertTemplates:(id)arg1 provenance:(long long)arg2 error:(id *)arg3;
+- (_Bool)insertTemplates:(id)arg1 provenance:(long long)arg2 databaseContext:(id)arg3 error:(id *)arg4;
 - (id)initWithProfile:(id)arg1;
 
 // Remaining properties

@@ -11,6 +11,7 @@
     void *_impl;
 }
 
+@property(readonly) BOOL remoteVoiceActivityAvailable;
 @property(readonly) unsigned char remoteVoiceActivityVAD;
 @property(readonly) unsigned char remoteVoiceActivityRMS;
 @property(readonly) struct AudioStreamBasicDescription *streamDescription;

@@ -9,7 +9,7 @@
 #import <GeoServices/GEOMapItemPrivate-Protocol.h>
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class GEOAddress, GEOAssociatedApp, GEOFeatureStyleAttributes, GEOLatLng, GEOMapItemClientAttributes, GEOMapItemContainedPlace, GEOMapItemDetourInfo, GEOMapItemIdentifier, GEOMapItemPhotosAttribution, GEOMapItemPlaceAttribution, GEOMapItemReviewsAttribution, GEOMapItemStorageUserValues, GEOMapRegion, GEOMessageLink, GEOPDBusinessClaim, GEOPDFlyover, GEOPDPlace, GEOPDResultDetourInfo, GEOPlace, GEOPlaceResult, GEOPlacecardLayoutConfiguration, GEOPriceDescription, GEORestaurantFeaturesLink, NSArray, NSData, NSDate, NSDictionary, NSString, NSTimeZone, NSURL, PBUnknownFields;
+@class GEOAddress, GEOAssociatedApp, GEOFeatureStyleAttributes, GEOLatLng, GEOMapItemClientAttributes, GEOMapItemContainedPlace, GEOMapItemDetourInfo, GEOMapItemIdentifier, GEOMapItemPhotosAttribution, GEOMapItemPlaceAttribution, GEOMapItemReviewsAttribution, GEOMapItemStorageUserValues, GEOMapRegion, GEOMessageLink, GEOPDBusinessClaim, GEOPDFlyover, GEOPDPlace, GEOPDResultDetourInfo, GEOPlace, GEOPlaceResult, GEOPlacecardLayoutConfiguration, GEOPriceDescription, GEORestaurantFeaturesLink, GEOStyleAttributes, NSArray, NSData, NSDate, NSDictionary, NSString, NSTimeZone, NSURL, PBUnknownFields;
 @protocol GEOAnnotatedItemList, GEOEncyclopedicInfo, GEOMapItemTransitInfo, GEOMapItemVenueInfo, GEOTransitAttribution;
 
 @interface GEOMapItemStorage : PBCodable <GEOMapItemPrivate, NSCopying>
@@ -66,6 +66,14 @@
 @property(readonly, nonatomic) BOOL hasClientAttributes;
 @property(readonly, nonatomic) BOOL hasPlace;
 @property(readonly, nonatomic) BOOL hasPlaceData;
+@property(readonly, nonatomic, getter=_walletPlaceStyling) GEOStyleAttributes *walletPlaceStyling;
+@property(readonly, nonatomic, getter=_walletPlaceLocalizedString) NSString *walletPlaceLocalizedString;
+@property(readonly, nonatomic, getter=_walletPlaceLocalizedStringLocale) NSString *walletPlaceLocalizedStringLocale;
+@property(readonly, nonatomic, getter=_walletCategoryStyling) GEOStyleAttributes *walletCategoryStyling;
+@property(readonly, nonatomic, getter=_walletCategoryLocalizedString) NSString *walletCategoryLocalizedString;
+@property(readonly, nonatomic, getter=_walletCategoryLocalizedStringLocale) NSString *walletCategoryLocalizedStringLocale;
+@property(readonly, nonatomic, getter=_walletMapsCategoryIdentifier) NSString *walletMapsCategoryIdentifier;
+@property(readonly, nonatomic, getter=_walletCategoryIdentifier) NSString *walletCategoryIdentifier;
 @property(readonly, nonatomic) NSArray *spatialMappedPlaceCategories;
 @property(readonly, nonatomic) long long venueCapacity;
 @property(readonly, nonatomic) BOOL hasVenueCapacity;
@@ -95,6 +103,8 @@
 @property(readonly, nonatomic, getter=_placecardLayoutConfiguration) GEOPlacecardLayoutConfiguration *placecardLayoutConfiguration;
 @property(readonly, nonatomic, getter=_quickLinks) NSArray *quickLinks;
 @property(readonly, nonatomic, getter=_messageLink) GEOMessageLink *messageLink;
+@property(readonly, nonatomic, getter=_brandMUID) unsigned long long brandMUID;
+@property(readonly, nonatomic, getter=_hasBrandMUID) BOOL hasBrandMUID;
 @property(readonly, nonatomic, getter=_isStandaloneBrand) BOOL isStandAloneBrand;
 @property(readonly, nonatomic, getter=_parsecSectionType) int parsecSectionType;
 @property(readonly, nonatomic, getter=_featureLink) GEORestaurantFeaturesLink *featureLink;
@@ -123,8 +133,6 @@
 @property(readonly, nonatomic, getter=_hasTelephone) BOOL hasTelephone;
 @property(readonly, nonatomic, getter=_encyclopedicInfo) id <GEOEncyclopedicInfo> encyclopedicInfo;
 @property(readonly, nonatomic, getter=_hasEncyclopedicInfo) BOOL hasEncyclopedicInfo;
-@property(readonly, nonatomic, getter=_completeOperatingHours) NSArray *completeOperatingHours;
-@property(readonly, nonatomic, getter=_operatingHours) NSArray *operatingHours;
 @property(readonly, nonatomic, getter=_hasCurrentOperatingHours) BOOL hasCurrentOperatingHours;
 @property(readonly, nonatomic, getter=_hasOperatingHours) BOOL hasOperatingHours;
 @property(readonly, nonatomic, getter=_hasGenderNeutralRestroom) BOOL hasGenderNeutralRestroom;
@@ -195,6 +203,8 @@
 @property(readonly, nonatomic) int referenceFrame;
 @property(readonly, nonatomic, getter=isDisputed) BOOL disputed;
 @property(readonly, nonatomic) NSData *encodedData;
+@property(readonly, nonatomic) NSString *secondarySpokenName;
+@property(readonly, nonatomic) NSString *secondaryName;
 - (id)spokenNameForLocale:(id)arg1;
 @property(readonly, nonatomic) NSString *name;
 @property(readonly, nonatomic, getter=isValid) BOOL valid;
@@ -205,6 +215,10 @@
 - (id)initWithPlace:(id)arg1 clientAttributes:(id)arg2 userValues:(id)arg3;
 - (id)_mapItemByStrippingOptionalData;
 @property(readonly, nonatomic, getter=_associatedApp) GEOAssociatedApp *associatedApp;
+@property(readonly, nonatomic, getter=_linkedServices) NSArray *linkedServices;
+@property(readonly, nonatomic, getter=_hasLinkedServices) BOOL hasLinkedServices;
+@property(readonly, nonatomic, getter=_businessHours) NSArray *businessHours;
+@property(readonly, nonatomic, getter=_hasBusinessHours) BOOL hasBusinessHours;
 @property(readonly, nonatomic, getter=_photos) NSArray *photos;
 @property(readonly, nonatomic, getter=_tips) NSArray *tips;
 @property(readonly, nonatomic, getter=_reviews) NSArray *reviews;

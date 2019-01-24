@@ -14,6 +14,7 @@ __attribute__((visibility("hidden")))
     TSWPTOCLayoutHint *_hint;
     unsigned long long _initialCharIndex;
     unsigned long long _storageChangeCount;
+    _Bool _textIsVertical;
     struct CGSize _maxSize;
 }
 
@@ -28,22 +29,23 @@ __attribute__((visibility("hidden")))
 - (id)layoutMargins;
 - (struct CGSize)adjustedInsetsForTarget:(id)arg1;
 - (_Bool)textLayoutShouldWrapAroundExternalDrawables:(id)arg1;
-- (double)maxAutoGrowHeightForTextLayout:(id)arg1;
+- (double)maxAutoGrowBlockHeightForTextLayout:(id)arg1;
 - (Class)repClassForTextLayout:(id)arg1;
 - (struct CGRect)autosizedFrameForTextLayout:(id)arg1 textSize:(struct CGSize)arg2;
 - (struct CGRect)nonAutosizedFrameForTextLayout:(id)arg1;
 - (void)invalidateForAutosizingTextLayout:(id)arg1;
 - (int)verticalAlignmentForTextLayout:(id)arg1;
-- (unsigned int)autosizeFlagsForTextLayout:(id)arg1;
+- (unsigned long long)autosizeFlagsForTextLayout:(id)arg1;
 - (id)commandToClampModelToLayoutSize;
 - (void)transferLayoutGeometryToInfo:(id)arg1 withAdditionalTransform:(struct CGAffineTransform)arg2 assertIfInDocument:(_Bool)arg3;
 - (_Bool)isDraggable;
 - (struct CGRect)boundsForStandardKnobs;
 - (id)computeLayoutGeometry;
+- (_Bool)textLayoutShouldLayoutVertically:(id)arg1;
 @property(readonly, nonatomic, getter=isLastLayoutInTOC) _Bool lastLayoutInTOC;
 @property(readonly, nonatomic) unsigned long long initialCharIndex;
 @property(readonly, nonatomic) TSWPTOCLayoutHint *hint;
-- (id)initWithInfo:(id)arg1 initialCharIndex:(unsigned long long)arg2 maxSize:(struct CGSize)arg3;
+- (id)initWithInfo:(id)arg1 initialCharIndex:(unsigned long long)arg2 textIsVertical:(_Bool)arg3 maxSize:(struct CGSize)arg4;
 - (id)initWithInfo:(id)arg1;
 
 @end

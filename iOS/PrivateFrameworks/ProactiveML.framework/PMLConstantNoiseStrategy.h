@@ -21,12 +21,8 @@
 - (id)initWithPlist:(id)arg1 chunks:(id)arg2 context:(id)arg3;
 - (id)toPlistWithChunks:(id)arg1;
 - (void)addNoiseToSparseMatrix:(id)arg1;
-- (void)addNoiseToDenseVector:(id)arg1;
+- (float)scaleAndAddNoiseToDenseVector:(id)arg1 usingNorm:(_Bool)arg2;
 - (void)addNoiseToSparseVector:(id)arg1;
-- (void)addNoiseToObjectiveFeatures:(id)arg1;
-- (void)addNoiseToFeatureMatrix:(id)arg1;
-- (void)addNoiseToGradient:(id)arg1;
-- (void)addNoiseToWeights:(id)arg1;
 - (id)init;
 
 // Remaining properties

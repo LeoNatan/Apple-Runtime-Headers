@@ -18,6 +18,7 @@
     unsigned long long _hosttime;
 }
 
++ (id)jarvisVoiceTriggerEvent:(id)arg1 activationInfo:(id)arg2 hostTime:(unsigned long long)arg3;
 + (id)builtInMicVoiceTriggerEvent:(id)arg1 hostTime:(unsigned long long)arg2;
 @property(nonatomic) float vadScore; // @synthesize vadScore=_vadScore;
 @property(nonatomic) unsigned long long hosttime; // @synthesize hosttime=_hosttime;

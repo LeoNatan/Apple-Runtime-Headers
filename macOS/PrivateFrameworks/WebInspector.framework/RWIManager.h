@@ -22,7 +22,7 @@
     NSObject<OS_dispatch_queue> *_simulatorAccessQueue;
     SimServiceContext *_simulatorService;
     SimDeviceSet *_simulatorDevices;
-    struct optional<unsigned long long> _simulatorDeviceSetNotificationHandler;
+    struct Optional<unsigned long long> _simulatorDeviceSetNotificationHandler;
     id <RWIManagerDelegate> _delegate;
 }
 

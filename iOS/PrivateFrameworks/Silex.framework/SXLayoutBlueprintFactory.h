@@ -18,7 +18,7 @@
 
 @property(readonly, nonatomic) id <SXComponentBlueprintFactory> componentBlueprintFactory; // @synthesize componentBlueprintFactory=_componentBlueprintFactory;
 - (void).cxx_destruct;
-- (id)createLayoutBlueprint;
+- (id)createLayoutBlueprintWithLayoutOptions:(id)arg1;
 - (id)initWithComponentBlueprintFactory:(id)arg1;
 
 // Remaining properties

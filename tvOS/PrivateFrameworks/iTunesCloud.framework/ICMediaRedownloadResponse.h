@@ -6,9 +6,11 @@
 
 #import <objc/NSObject.h>
 
-@class ICStoreDialogResponse, ICURLBag, NSArray, NSData, NSDate, NSDictionary, NSString;
+#import <iTunesCloud/ICStoreResponseProtocol-Protocol.h>
 
-@interface ICMediaRedownloadResponse : NSObject
+@class ICStoreDialogResponse, ICURLBag, NSArray, NSData, NSDate, NSDictionary, NSError, NSString;
+
+@interface ICMediaRedownloadResponse : NSObject <ICStoreResponseProtocol>
 {
     NSDate *_requestDate;
     ICURLBag *_urlBag;
@@ -21,11 +23,18 @@
 @property(readonly, copy, nonatomic) NSArray *items;
 @property(readonly, copy, nonatomic) NSString *jingleAction;
 @property(readonly, nonatomic) unsigned int downloadQueueItemCount;
+@property(readonly, copy, nonatomic) NSError *serverError;
 @property(readonly, copy, nonatomic) ICStoreDialogResponse *dialog;
 @property(readonly, nonatomic) long long status;
 @property(readonly, nonatomic) _Bool shouldCancelPurchaseBatch;
 @property(readonly, nonatomic) _Bool authorized;
 - (id)initWithResponseDictionary:(id)arg1 requestDate:(id)arg2 urlBag:(id)arg3;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

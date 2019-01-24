@@ -30,6 +30,9 @@
 @property(retain, nonatomic) NSMutableSet *membershipReferences; // @synthesize membershipReferences=_membershipReferences;
 @property(retain, nonatomic) NSDictionary *membershipsByChannelID; // @synthesize membershipsByChannelID=_membershipsByChannelID;
 - (void).cxx_destruct;
+- (void)fetchArticleIDsWithContext:(id)arg1 articleListID:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
+- (void)checkNextArticleID:(id)arg1 inMemberships:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
+- (void)checkArticleID:(id)arg1 inMemberships:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
 - (void)activityObservingApplicationDidBecomeActive;
 - (void)changedMembershipsFrom:(id)arg1 toMemberships:(id)arg2;
 - (void)removeObserver:(id)arg1;
@@ -41,11 +44,10 @@
 - (void)removeItemWithItemID:(id)arg1;
 - (void)addItem:(id)arg1 toStore:(_Bool)arg2;
 - (void)loadLocalCachesFromStore;
+- (_Bool)shouldShowAllDraftContent;
 - (_Bool)hasMemberships;
 - (void)isAllowedToSeeArticleID:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
-- (void)checkNextArticleID:(id)arg1 inFeedDescriptors:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
-- (void)checkArticleID:(id)arg1 inFeedDescriptors:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
-- (id)feedDescriptorForDraftFeedForChannelID:(id)arg1;
+- (id)feedDescriptorForDraftFeedForChannel:(id)arg1;
 - (_Bool)isAllowedToSeeDraftsForChannelID:(id)arg1;
 - (_Bool)isMemberOfChannelID:(id)arg1;
 - (void)dealloc;

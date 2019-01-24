@@ -30,6 +30,7 @@
     NSString *_processName;
     NSString *_metadata;
     NSArray *_metadataSegments;
+    NSArray *_stackFrames;
     unsigned long long __totalFrameCount;
     unsigned long long __machContinuousTimestamp;
 }
@@ -39,6 +40,7 @@
 @property(nonatomic) BOOL isAnimationStart; // @synthesize isAnimationStart=_isAnimationStart;
 @property(nonatomic) unsigned long long _totalFrameCount; // @synthesize _totalFrameCount=__totalFrameCount;
 @property(nonatomic) BOOL _hasTotalFrames; // @synthesize _hasTotalFrames=__hasTotalFrames;
+@property(retain, nonatomic) NSArray *stackFrames; // @synthesize stackFrames=_stackFrames;
 @property(retain, nonatomic) NSArray *metadataSegments; // @synthesize metadataSegments=_metadataSegments;
 @property(retain, nonatomic) NSString *metadata; // @synthesize metadata=_metadata;
 @property(retain, nonatomic) NSString *processName; // @synthesize processName=_processName;
@@ -77,7 +79,7 @@
 - (unsigned long long)_resolvedTime;
 @property(readonly, copy) NSString *debugDescription;
 - (id)descriptionStringForColumn:(unsigned long long)arg1 timeFormat:(unsigned long long)arg2;
-- (id)initWithSubsystem:(id)arg1 category:(id)arg2 timebaseRatio:(double)arg3 unixDate:(struct timeval *)arg4 unixTimeZone:(struct timezone *)arg5;
+- (id)initWithSubsystem:(id)arg1 category:(id)arg2 timebaseRatio:(double)arg3 unixDate:(struct timeval *)arg4 unixTimeZone:(struct timezone *)arg5 stackFrames:(id)arg6;
 - (BOOL)_overridesOwnTime;
 - (id)initWithDictionary:(id)arg1;
 - (id)_dictionaryRepresentationWithIsHumanReadable:(BOOL)arg1;

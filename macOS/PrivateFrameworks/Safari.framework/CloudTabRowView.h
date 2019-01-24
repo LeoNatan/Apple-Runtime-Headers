@@ -6,15 +6,18 @@
 
 #import <AppKit/NSTableRowView.h>
 
-@class NSBox;
+@class NSBox, NSVisualEffectView;
 
 __attribute__((visibility("hidden")))
 @interface CloudTabRowView : NSTableRowView
 {
     NSBox *_separatorView;
+    NSVisualEffectView *_backgroundVisualEffectView;
     BOOL _shouldDrawSeparator;
+    BOOL _shouldUseVisualEffectViewBackground;
 }
 
+@property(nonatomic) BOOL shouldUseVisualEffectViewBackground; // @synthesize shouldUseVisualEffectViewBackground=_shouldUseVisualEffectViewBackground;
 @property(nonatomic) BOOL shouldDrawSeparator; // @synthesize shouldDrawSeparator=_shouldDrawSeparator;
 - (void).cxx_destruct;
 - (void)drawSeparatorInRect:(struct CGRect)arg1;

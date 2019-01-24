@@ -7,6 +7,8 @@
 #import <AppKit/NSPasteboard.h>
 
 @interface NSPasteboard (BrowserExtras)
+- (id)safari_textOnPasteboard;
+- (BOOL)safari_containsAnyText;
 - (BOOL)safari_containsAnyURLsViableForTopSites;
 - (BOOL)safari_containsAnyURLs;
 - (id)safari_URLsFromString;

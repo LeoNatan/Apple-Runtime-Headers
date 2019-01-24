@@ -26,6 +26,7 @@
 - (UUIDData_5fbc143e)rowUIDForRowIndex:(unsigned int)arg1;
 - (NSString *)tableName;
 - (NSString *)sheetName;
+- (UUIDData_5fbc143e)groupByUID;
 - (UUIDData_5fbc143e)conditionalStyleFormulaOwnerUID;
 - (struct TSCERangeCoordinate)tableRangeCoordinate;
 - (UUIDData_5fbc143e)resolverUID;

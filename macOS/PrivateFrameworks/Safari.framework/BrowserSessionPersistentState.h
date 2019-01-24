@@ -19,7 +19,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) NSArray *pinnedTabsStates; // @synthesize pinnedTabsStates=_pinnedTabsStates;
 - (void).cxx_destruct;
 - (id)data;
-- (void)restoreSessionWithLaunchTimePerformanceMonitor:(id)arg1;
+- (void)restoreSessionWithLaunchTimePerformanceMonitor:(id)arg1 minimizeRestoredWindows:(BOOL)arg2;
 - (BOOL)containsAnyURLs;
 - (id)initFromFile:(id)arg1 encryptionProvider:(id)arg2;
 - (id)initFromCurrentSessionIgnoringPrivateWindows:(BOOL)arg1 encryptionProvider:(id)arg2;

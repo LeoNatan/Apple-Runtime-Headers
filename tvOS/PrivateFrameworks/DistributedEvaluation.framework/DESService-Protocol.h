@@ -6,17 +6,20 @@
 
 #import <DistributedEvaluation/NSObject-Protocol.h>
 
-@class NSArray, NSData, NSDictionary, NSString, NSURL, NSUUID;
+@class NSArray, NSData, NSDictionary, NSString, NSURL, NSUUID, _DKEvent;
 
 @protocol DESService <NSObject>
-- (void)postRecipeResultForBundleId:(NSString *)arg1 result:(NSDictionary *)arg2 recipeUUID:(NSUUID *)arg3 completion:(void (^)(NSError *))arg4;
+- (void)setValue:(NSString *)arg1 forInfoKey:(NSString *)arg2 bundleID:(NSString *)arg3 completion:(void (^)(NSDictionary *))arg4;
+- (void)postRecipeResultForBundleId:(NSString *)arg1 baseURL:(NSURL *)arg2 result:(NSDictionary *)arg3 recipeUUID:(NSUUID *)arg4 completion:(void (^)(NSError *))arg5;
 - (void)runLiveEvaluationForAllBundlesWithBaseURL:(NSURL *)arg1 localeIdentifier:(NSString *)arg2 completion:(void (^)(NSError *))arg3;
 - (void)runLiveEvaluationForBundleId:(NSString *)arg1 baseURL:(NSURL *)arg2 localeIdentifier:(NSString *)arg3 completion:(void (^)(NSError *))arg4;
 - (void)runEvaluationForBundleId:(NSString *)arg1 recipe:(NSDictionary *)arg2 recordUUID:(NSUUID *)arg3 attachments:(NSArray *)arg4 completion:(void (^)(NSDictionary *, NSError *))arg5;
 - (void)runEvaluationForBundleId:(NSString *)arg1 recipe:(NSDictionary *)arg2 recordInfo:(NSDictionary *)arg3 recordData:(NSData *)arg4 attachments:(NSArray *)arg5 completion:(void (^)(NSDictionary *, NSError *))arg6;
+- (void)saveCoreDuetEvent:(_DKEvent *)arg1 completion:(void (^)(_Bool, NSError *))arg2;
 - (void)deleteSavedRecordForBundleId:(NSString *)arg1 identfier:(NSUUID *)arg2 completion:(void (^)(NSError *))arg3;
 - (void)deleteAllSavedRecordsForBundleId:(NSString *)arg1 completion:(void (^)(NSError *))arg2;
-- (void)fetchSavedRecordInfoForBundleId:(NSString *)arg1 completion:(void (^)(NSDictionary *, NSError *))arg2;
+- (void)fetchRecordsForBundleId:(NSString *)arg1 completion:(void (^)(NSDictionary *, NSDictionary *, NSArray *, NSError *))arg2;
+- (void)fetchSavedRecordInfoForRecordType:(NSString *)arg1 completion:(void (^)(NSDictionary *, NSError *))arg2;
 - (void)saveRecordForBundleId:(NSString *)arg1 data:(NSData *)arg2 recordInfo:(NSDictionary *)arg3 completion:(void (^)(NSUUID *, NSError *))arg4;
 - (void)fetchInstalledBundlesIdsWithCompletion:(void (^)(NSArray *, NSError *))arg1;
 @end

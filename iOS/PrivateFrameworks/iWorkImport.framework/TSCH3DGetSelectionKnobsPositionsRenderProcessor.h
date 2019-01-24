@@ -19,7 +19,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) float normalizedKnobRadius; // @synthesize normalizedKnobRadius=mNormalizedKnobRadius;
 @property(retain, nonatomic) NSMutableArray *projectedPoints; // @synthesize projectedPoints=mProjectedPoints;
 @property(retain, nonatomic) TSCH3DGetSelectionKnobsPositionsPipelineDelegate *sceneObjectDelegate; // @synthesize sceneObjectDelegate=mSceneObjectDelegate;
-- (void)submit:(const struct PrimitiveInfo *)arg1;
+- (void)submit:(id)arg1;
 - (tmat4x4_3074befe)modelViewNormalizedProjection;
 - (void)dealloc;
 

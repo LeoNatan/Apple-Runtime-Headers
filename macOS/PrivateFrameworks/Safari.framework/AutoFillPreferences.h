@@ -6,7 +6,7 @@
 
 #import <Safari/PreferencesModule.h>
 
-@class CreditCardDataEditor, MiscFormsDataEditor, NSButton, PasswordsEditor;
+@class CreditCardDataEditor, MiscFormsDataEditor, NSButton, NSLayoutConstraint, NSTextField, NSView, PasswordsEditor;
 
 __attribute__((visibility("hidden")))
 @interface AutoFillPreferences : PreferencesModule
@@ -22,15 +22,28 @@ __attribute__((visibility("hidden")))
     MiscFormsDataEditor *miscFormsDataEditor;
     PasswordsEditor *passwordsEditor;
     CreditCardDataEditor *_creditCardDataEditor;
+    NSTextField *_autoFillTitle;
+    NSLayoutConstraint *_editOtherFormDataButtonBottomLayoutConstraint;
+    NSView *_mainContentView;
+    NSTextField *_touchIDTextField;
+    NSButton *_touchIDToAutoFillCheckBox;
 }
 
 - (void).cxx_destruct;
 - (id)helpAnchor;
+- (void)_removeTouchIDPreferenceIfNecessary;
+- (void)_addTouchIDPreferenceIfNecessary;
+- (void)_updateTouchIDPreferenceVisibility;
+- (void)_updateTouchIDAvailabilityIfNecessary:(id)arg1;
+- (void)moduleWillBeRemoved;
+- (void)moduleWasInstalled;
 - (void)willBeDisplayed;
 - (void)editCreditCardData:(id)arg1;
 - (void)editOtherFormData:(id)arg1;
 - (void)editPasswords:(id)arg1;
 - (void)editMyCard:(id)arg1;
+- (void)_setTouchIDToAutoFillEnabled:(BOOL)arg1;
+- (void)toggleTouchIDToAutoFill:(id)arg1;
 - (void)toggleAutoFillCreditCardData:(id)arg1;
 - (void)toggleAutoFillOtherForms:(id)arg1;
 - (void)toggleAutoFillPasswords:(id)arg1;

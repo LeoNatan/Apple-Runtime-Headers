@@ -14,7 +14,7 @@ __attribute__((visibility("hidden")))
     BOOL _currentDAIdle;
 }
 
-+ (void)waitForDAIdleWithDASession:(struct __DASession *)arg1 timeout:(double)arg2 didGoIdle:(char *)arg3;
++ (void)waitForDAIdleWithDASession:(struct __DASession *)arg1 timeout:(double)arg2 withDMTool:(id)arg3 didGoIdle:(char *)arg4;
 - (void)dealloc;
 - (id)init;
 

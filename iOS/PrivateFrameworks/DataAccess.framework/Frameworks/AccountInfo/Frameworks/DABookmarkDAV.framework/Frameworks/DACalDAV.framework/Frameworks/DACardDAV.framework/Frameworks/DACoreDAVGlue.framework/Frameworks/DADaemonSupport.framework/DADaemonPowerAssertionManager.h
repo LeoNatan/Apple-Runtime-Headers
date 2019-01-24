@@ -8,10 +8,8 @@
 
 @interface DADaemonPowerAssertionManager : DAPowerAssertionManager
 {
+    int _refCount;
 }
-
-- (void)_releaseAssertionForContext:(id)arg1;
-- (void)_retainAssertionForContext:(id)arg1;
 
 @end
 

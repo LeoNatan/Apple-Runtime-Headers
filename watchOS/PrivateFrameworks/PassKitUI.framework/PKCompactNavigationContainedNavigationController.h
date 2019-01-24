@@ -16,9 +16,11 @@
     NSLock *_observersLock;
     NSHashTable *_observers;
     _Bool _overridesContentOverlayInsets;
+    unsigned int _style;
 }
 
 @property(nonatomic) _Bool overridesContentOverlayInsets; // @synthesize overridesContentOverlayInsets=_overridesContentOverlayInsets;
+@property(readonly, nonatomic) unsigned int style; // @synthesize style=_style;
 - (void).cxx_destruct;
 - (id)_observers;
 - (void)removeContentContainerObserver:(id)arg1;
@@ -28,6 +30,8 @@
 - (void)preferredContentSizeDidChangeForChildContentContainer:(id)arg1;
 - (void)viewWillLayoutSubviews;
 - (void)viewDidLoad;
+- (void)loadView;
+- (id)initWithStyle:(unsigned int)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 
 // Remaining properties

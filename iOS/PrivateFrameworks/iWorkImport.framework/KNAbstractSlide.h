@@ -25,13 +25,13 @@ __attribute__((visibility("hidden")))
     KNSlideStyle *_style;
     KNSlideBackgroundInfo *_background;
     NSOrderedSet *_childInfos;
-    _Bool _inDocument;
     NSSet *_builds;
     NSArray *_buildChunks;
     _Bool _needsSlideNodeEventCountUpdate;
     TSUPointerKeyDictionary *_drawableToGhostInfosMap;
     TSUMutablePointerSet *_drawablesWithInvalidatedGhosts;
     _Bool _shouldConsiderAllChunksActive;
+    _Bool _inDocument;
     KNTransition *_transition;
     KNTitlePlaceholderInfo *_titlePlaceholder;
     KNBodyPlaceholderInfo *_bodyPlaceholder;
@@ -50,7 +50,7 @@ __attribute__((visibility("hidden")))
 + (unsigned long long)deliveryGroupIndexForBuildChunk:(id)arg1 inBuildChunks:(id)arg2;
 + (id)parentSlideForInfo:(id)arg1;
 @property(copy, nonatomic) NSDictionary *placeholdersForTags; // @synthesize placeholdersForTags=_placeholdersForTags;
-@property(readonly, nonatomic) _Bool inDocument; // @synthesize inDocument=_inDocument;
+@property(nonatomic) _Bool inDocument; // @synthesize inDocument=_inDocument;
 @property(readonly, nonatomic) __weak KNSlideNode *slideNode; // @synthesize slideNode=_slideNode;
 @property(retain, nonatomic) KNSlideNumberPlaceholderInfo *slideNumberPlaceholder; // @synthesize slideNumberPlaceholder=_slideNumberPlaceholder;
 @property(retain, nonatomic) KNObjectPlaceholderInfo *objectPlaceholder; // @synthesize objectPlaceholder=_objectPlaceholder;
@@ -63,10 +63,10 @@ __attribute__((visibility("hidden")))
 - (void)p_updateBuildEffects:(_Bool)arg1 version:(unsigned long long)arg2;
 - (unsigned long long)p_keynoteVersionFromUnarchiver:(id)arg1;
 - (void)p_updateOverlappingBuildEventTriggers;
-- (void)saveToArchive:(struct SlideArchive *)arg1 archiver:(id)arg2;
+-     // Error parsing type: v32@0:8^{SlideArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}{RepeatedPtrField<KN::BuildChunkArchive>=^{Arena}ii^{Rep}}{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}{RepeatedPtrField<TSD::GuideArchive>=^{Arena}ii^{Rep}}{RepeatedPtrField<KN::SlideArchive_SageTagMapEntry>=^{Arena}ii^{Rep}}{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}^{Reference}^{TransitionArchive}^{Reference}^{Reference}^{GeometryArchive}^{GeometryArchive}^{Reference}^{Reference}^{GeometryArchive}^{ShapeStylePropertiesArchive}^{ShapeStylePropertiesArchive}^{ShapeStylePropertiesArchive}^{Reference}^{Reference}^{Reference}^{Reference}^{Reference}IIIIIIBBBB}16@24, name: saveToArchive:archiver:
 - (void)p_updateStartAndEndOffsetsIfNecessaryForFileVersion:(unsigned long long)arg1;
 - (void)p_updateChunkCount;
-- (void)loadFromArchive:(const struct SlideArchive *)arg1 unarchiver:(id)arg2;
+-     // Error parsing type: v32@0:8r^{SlideArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}{RepeatedPtrField<KN::BuildChunkArchive>=^{Arena}ii^{Rep}}{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}{RepeatedPtrField<TSD::GuideArchive>=^{Arena}ii^{Rep}}{RepeatedPtrField<KN::SlideArchive_SageTagMapEntry>=^{Arena}ii^{Rep}}{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}^{Reference}^{TransitionArchive}^{Reference}^{Reference}^{GeometryArchive}^{GeometryArchive}^{Reference}^{Reference}^{GeometryArchive}^{ShapeStylePropertiesArchive}^{ShapeStylePropertiesArchive}^{ShapeStylePropertiesArchive}^{Reference}^{Reference}^{Reference}^{Reference}^{Reference}IIIIIIBBBB}16@24, name: loadFromArchive:unarchiver:
 - (void)p_updateBuildsReplacingPlaceholder:(id)arg1 withPlaceholder:(id)arg2;
 - (void)setSlideNode:(id)arg1;
 - (void)replaceReferencedStylesUsingBlock:(CDUnknownBlockType)arg1;
@@ -145,6 +145,7 @@ __attribute__((visibility("hidden")))
 - (id)p_ChunksForDrawable:(id)arg1 animationType:(long long)arg2 onlyActiveChunks:(_Bool)arg3;
 - (id)activeChunksForDrawable:(id)arg1;
 - (id)p_chunksWhichWillPlayWithChunksToSetToWith:(id)arg1;
+- (id)chunksWhichPlayWithChunk:(id)arg1;
 - (_Bool)canSetChunksToAutomaticWith:(id)arg1;
 - (id)availableEventTriggersForBuildChunks:(id)arg1;
 - (void)removeBuildChunk:(id)arg1 rollbackGeneratedIdentifier:(_Bool)arg2;

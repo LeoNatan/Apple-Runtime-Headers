@@ -14,6 +14,7 @@
 + (id)errorWithCode:(long long)arg1;
 + (id)errorWithCode:(long long)arg1 underlyingError:(id)arg2 userInfo:(id)arg3;
 + (id)localizedInternalRecoverySuggestionForErrorCode:(long long)arg1 underlyingError:(id)arg2 userInfo:(id)arg3;
++ (id)recoverySuggestionURLForErrorCode:(long long)arg1 underlyingError:(id)arg2 userInfo:(id)arg3;
 + (id)localizedDescriptionForErrorCode:(long long)arg1;
 
 @end

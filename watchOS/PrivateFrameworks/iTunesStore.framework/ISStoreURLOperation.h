@@ -24,10 +24,12 @@
     SSVFairPlaySAPSession *_sapSession;
     _Bool _shouldAppendAuthKitHeaders;
     _Bool _shouldAppendStorefrontToURL;
+    _Bool _shouldSendGUIDHeader;
     _Bool _shouldSendXTokenHeader;
     _Bool _urlKnownToBeTrusted;
     _Bool _useUserSpecificURLBag;
     _Bool _needsTermsAndConditionsAcceptance;
+    _Bool _shouldCancelBiometricTokenUpdate;
     _Bool _shouldSuppressUserInfo;
     _Bool _shouldSendAKClientInfoHeaders;
     _Bool _shouldSendDSIDHeader;
@@ -66,6 +68,7 @@
 @property _Bool useUserSpecificURLBag; // @synthesize useUserSpecificURLBag=_useUserSpecificURLBag;
 @property _Bool urlKnownToBeTrusted; // @synthesize urlKnownToBeTrusted=_urlKnownToBeTrusted;
 @property(nonatomic, getter=isURLBagRequest) _Bool URLBagRequest; // @synthesize URLBagRequest=_isURLBagRequest;
+@property _Bool shouldCancelBiometricTokenUpdate; // @synthesize shouldCancelBiometricTokenUpdate=_shouldCancelBiometricTokenUpdate;
 @property(nonatomic) _Bool shouldAppendStorefrontToURL; // @synthesize shouldAppendStorefrontToURL=_shouldAppendStorefrontToURL;
 @property(nonatomic) _Bool shouldAppendAuthKitHeaders; // @synthesize shouldAppendAuthKitHeaders=_shouldAppendAuthKitHeaders;
 @property _Bool needsURLBag; // @synthesize needsURLBag=_needsURLBag;
@@ -103,6 +106,7 @@
 - (id)authenticatedAccountDSID;
 @property(readonly) SSURLBagContext *URLBagContext;
 @property _Bool shouldSendXTokenHeader;
+@property _Bool shouldSendGUIDHeader;
 @property(retain) SSVFairPlaySAPSession *SAPSession;
 @property _Bool performsMachineDataActions;
 @property(nonatomic) _Bool ignorePreexistingSecureToken;

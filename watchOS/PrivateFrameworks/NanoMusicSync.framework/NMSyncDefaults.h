@@ -28,9 +28,9 @@
     NMSNotificationDispatcher *_syncStateNotifier;
     NMSNotificationDispatcher *_podcastsSizeInfoNotifier;
     NSNumber *_assetSyncLimit;
-    NSDate *_modificationDate;
     NSNumber *_lastFullySentAssetSyncPlaylistPersistentID;
     NSNumber *_lastFullySentAssetSyncPlaylistVersion;
+    NSDate *_modificationDate;
     unsigned int _assetSyncLimitType;
     unsigned int _assetSyncType;
     NSNumber *_assetSyncPlaylistPersistentID;
@@ -42,9 +42,9 @@
 @property(retain, nonatomic, setter=setAssetSyncPlaylistPersistentID:) NSNumber *assetSyncPlaylistPersistentID; // @synthesize assetSyncPlaylistPersistentID=_assetSyncPlaylistPersistentID;
 @property(nonatomic) unsigned int assetSyncType; // @synthesize assetSyncType=_assetSyncType;
 @property(nonatomic) unsigned int assetSyncLimitType; // @synthesize assetSyncLimitType=_assetSyncLimitType;
+@property(readonly, nonatomic) NSDate *modificationDate; // @synthesize modificationDate=_modificationDate;
 @property(copy, nonatomic) NSNumber *lastFullySentAssetSyncPlaylistVersion; // @synthesize lastFullySentAssetSyncPlaylistVersion=_lastFullySentAssetSyncPlaylistVersion;
 @property(copy, nonatomic) NSNumber *lastFullySentAssetSyncPlaylistPersistentID; // @synthesize lastFullySentAssetSyncPlaylistPersistentID=_lastFullySentAssetSyncPlaylistPersistentID;
-@property(readonly, nonatomic) NSDate *modificationDate; // @synthesize modificationDate=_modificationDate;
 - (void).cxx_destruct;
 - (void)_notifyChangesForKey:(id)arg1;
 - (void)_setBool:(_Bool)arg1 forKey:(id)arg2 domain:(id)arg3;
@@ -102,6 +102,16 @@
 - (void)dispatcherDidReceiveNotificationFromRemoteDevice:(id)arg1;
 - (void)endBatchUpdates;
 - (void)beginBatchUpdates;
+- (int)dormancyIntervalInHoursForBundleID:(id)arg1;
+- (id)installDateForBundleID:(id)arg1;
+- (id)lastUserPinningChangeDateForBundleID:(id)arg1;
+- (id)lastUserLaunchDateForBundleID:(id)arg1;
+- (id)_dateValueForKey:(id)arg1 bundleID:(id)arg2 domain:(id)arg3;
+- (void)setInstallDateForBundleID:(id)arg1;
+- (void)setLastUserPinningChangeDateForBundleID:(id)arg1;
+- (void)setLastUserLaunchDateForBundleID:(id)arg1;
+- (void)_writeDate:(id)arg1 forKey:(id)arg2 withBundleID:(id)arg3 domain:(id)arg4;
+- (void)clearAppActivityStatusDefaultsForBundleID:(id)arg1;
 - (void)clearPodcastsDefaults;
 @property(readonly, copy) NSString *description;
 - (id)init;

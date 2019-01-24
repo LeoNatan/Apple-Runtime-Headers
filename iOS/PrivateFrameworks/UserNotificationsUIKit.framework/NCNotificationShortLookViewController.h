@@ -56,6 +56,7 @@
 @property(readonly, nonatomic) struct CGRect initialPresentedFrameOfViewForPreview;
 @property(readonly, nonatomic) PLPreviewInteractionManager *previewInteractionManager; // @synthesize previewInteractionManager=_previewInteractionManager;
 @property(readonly, nonatomic) UIView *viewForPreview;
+- (_Bool)previewInteractionManagerShouldUseHapticTouch:(id)arg1;
 - (void)previewInteractionManager:(id)arg1 declinedDismissingPresentedContentWithTrigger:(long long)arg2;
 - (void)previewInteractionManager:(id)arg1 willDismissPresentedContentWithTrigger:(long long)arg2;
 - (void)_handlePresentedContentDismissalWithTrigger:(long long)arg1;

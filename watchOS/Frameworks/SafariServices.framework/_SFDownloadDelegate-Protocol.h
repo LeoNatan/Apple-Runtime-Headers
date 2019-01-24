@@ -4,9 +4,11 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
+#import <SafariServices/NSObject-Protocol.h>
+
 @class _SFDownload;
 
-@protocol _SFDownloadDelegate
+@protocol _SFDownloadDelegate <NSObject>
 - (void)downloadDidFail:(_SFDownload *)arg1;
 - (void)downloadDidFinish:(_SFDownload *)arg1;
 @end

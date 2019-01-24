@@ -11,15 +11,16 @@
 #import <Safari/NSTableViewDelegate-Protocol.h>
 #import <Safari/SecureWindow-Protocol.h>
 
-@class AutoFillCredentialPickerAuthorizationViewController, NSArray, NSButton, NSSearchField, NSString, NSTextField, NSView, NSWindow, SecureWindowLockPolicyEnforcer, WBSFaviconRequestsController, WBSSavedPasswordStore, WBSSiteMetadataManager;
+@class AutoFillCredentialPickerAuthorizationViewController, NSArray, NSButton, NSSearchField, NSString, NSTextField, NSView, NSWindow, SecureWindowLockPolicyEnforcer, WBSAutoFillQuirksManager, WBSFaviconRequestsController, WBSSavedPasswordStore, WBSSiteMetadataManager;
 
 __attribute__((visibility("hidden")))
-@interface AutoFillCredentialPicker : SheetWithTableController <AutoFillCredentialPickerAuthorizationDelegate, SecureWindow, NSTableViewDataSource, NSTableViewDelegate>
+@interface AutoFillCredentialPicker : SheetWithTableController <AutoFillCredentialPickerAuthorizationDelegate, NSTableViewDataSource, NSTableViewDelegate, SecureWindow>
 {
     NSArray *_displayedPasswords;
     WBSFaviconRequestsController *_iconRequestsController;
     WBSSavedPasswordStore *_savedPasswordStore;
     WBSSiteMetadataManager *_siteMetadataManager;
+    WBSAutoFillQuirksManager *_autoFillQuirksManager;
     BOOL _isWaitingForIconRequestCancellation;
     long long _purpose;
     NSWindow *_windowPresentingCredentialPicker;
@@ -58,7 +59,7 @@ __attribute__((visibility("hidden")))
 - (void)removeSelectedItems:(id)arg1;
 - (void)focusContentSearchField:(id)arg1;
 - (void)fillSelectedItem:(id)arg1;
-- (void)showSheetInWindow:(id)arg1 forPurpose:(long long)arg2 savedPasswordStore:(id)arg3 siteMetadataManager:(id)arg4 withCompletionHandler:(CDUnknownBlockType)arg5;
+- (void)showSheetInWindow:(id)arg1 forPurpose:(long long)arg2 savedPasswordStore:(id)arg3 siteMetadataManager:(id)arg4 autoFillQuirksManager:(id)arg5 withCompletionHandler:(CDUnknownBlockType)arg6;
 - (void)hideSheet:(id)arg1;
 - (void)awakeFromNib;
 - (id)windowNibName;

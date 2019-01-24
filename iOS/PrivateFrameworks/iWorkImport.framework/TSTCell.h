@@ -46,9 +46,9 @@ __attribute__((visibility("hidden")))
     TSKFormat *_durationFormat;
     TSKFormat *_textFormat;
     TSKFormat *_booleanFormat;
+    TSTImportWarningSet *_importWarningSet;
     TSULocale *_locale;
     TSDCommentStorage *_commentStorage;
-    TSTImportWarningSet *_importWarningSet;
 }
 
 + (id)stringForCellValueType:(int)arg1;
@@ -71,10 +71,10 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) unsigned int textStyleID; // @synthesize textStyleID=_textStyleID;
 @property(nonatomic) unsigned int cellStyleID; // @synthesize cellStyleID=_cellStyleID;
 @property(readonly, nonatomic) unsigned int cellFormatKind; // @synthesize cellFormatKind=_cellFormatKind;
-@property(retain, nonatomic) TSTImportWarningSet *importWarningSet; // @synthesize importWarningSet=_importWarningSet;
 @property(retain, nonatomic) TSDCommentStorage *commentStorage; // @synthesize commentStorage=_commentStorage;
 @property(retain, nonatomic) TSULocale *locale; // @synthesize locale=_locale;
 @property(nonatomic) unsigned short cellFlags; // @synthesize cellFlags=_cellFlags;
+@property(retain, nonatomic) TSTImportWarningSet *importWarningSet; // @synthesize importWarningSet=_importWarningSet;
 @property(readonly, nonatomic) TSKFormat *booleanFormat; // @synthesize booleanFormat=_booleanFormat;
 @property(readonly, nonatomic) TSKFormat *textFormat; // @synthesize textFormat=_textFormat;
 @property(readonly, nonatomic) TSKFormat *durationFormat; // @synthesize durationFormat=_durationFormat;
@@ -95,10 +95,11 @@ __attribute__((visibility("hidden")))
 - (id)cellValueTypeDescription;
 - (id)description;
 - (id)reorganizeValueForSorting;
-@property(readonly, nonatomic) _Bool hasImportWarningSet;
 @property(readonly, nonatomic) _Bool hasCommentStorage;
-- (void)setImportWarningSet:(id)arg1 clearingID:(_Bool)arg2;
 - (void)setCommentStorage:(id)arg1 clearingID:(_Bool)arg2;
+- (void)setImportWarningSet:(id)arg1 clearingID:(_Bool)arg2;
+@property(readonly, nonatomic) _Bool hasImportWarningSet;
+@property(readonly, nonatomic) _Bool hasAnyWarning;
 - (unsigned int)formatIDForStorageFlag:(unsigned int)arg1;
 - (id)formatForStorageFlag:(unsigned int)arg1;
 - (void)setFormatID:(unsigned int)arg1 forStorageFlag:(unsigned int)arg2;
@@ -153,7 +154,7 @@ __attribute__((visibility("hidden")))
 - (void)applyPopupChoiceIndex:(unsigned long long)arg1;
 @property(readonly, nonatomic) unsigned long long popupChoiceIndex;
 @property(readonly, nonatomic) TSTStockDetails *stockDetails;
-@property(readonly, nonatomic) _Bool hasStockFormula;
+@property(readonly, nonatomic) _Bool hasStockFormulaForStockUI;
 @property(readonly, nonatomic) _Bool hasFormula;
 @property(readonly, nonatomic) TSTCellSpec *cellSpecForDiff;
 @property(readonly, nonatomic) _Bool hasCellSpec;
@@ -168,6 +169,7 @@ __attribute__((visibility("hidden")))
 - (void)clearStrokes;
 - (void)copyJustStyleAndStrokesToCell:(id)arg1;
 - (void)copyJustStrokesToCell:(id)arg1;
+- (void)adoptStylesheet:(id)arg1 withMapper:(id)arg2 supportsInlineAttachments:(_Bool)arg3;
 @property(readonly, nonatomic) _Bool hasConditionalStyle;
 @property(readonly, nonatomic) _Bool hasTextStyle;
 @property(readonly, nonatomic) _Bool hasCellStyle;
@@ -222,6 +224,7 @@ __attribute__((visibility("hidden")))
 - (void)inflateFromStorageRef:(struct TSTCellStorage *)arg1 dataStore:(id)arg2 suppressingTransmutation:(_Bool)arg3;
 - (void)inflateFromStorageRef:(struct TSTCellStorage *)arg1 dataStore:(id)arg2;
 - (void)copyValueAndFormatToCell:(id)arg1;
+- (void)copyJustValueToCell:(id)arg1;
 - (void)shallowCopyToCell:(id)arg1;
 - (void)copyToCell:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

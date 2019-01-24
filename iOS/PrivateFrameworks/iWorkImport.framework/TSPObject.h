@@ -59,6 +59,9 @@ __attribute__((visibility("hidden")))
 - (void)willModifyToComponentRootObject:(id)arg1;
 @property(readonly, nonatomic) unsigned long long allowedObjectTargetTypes;
 @property(readonly, nonatomic) _Bool storeOutsideObjectArchive;
+@property(readonly, nonatomic) long long compressionAlgorithm;
+@property(readonly, nonatomic) _Bool componentCanBeDropped;
+@property(readonly, nonatomic) _Bool componentRequiresCurrentVersion;
 @property(readonly, nonatomic) _Bool isComponentRoot;
 @property(readonly, nonatomic) NSString *packageLocator;
 - (void)willModifyForUpgrade;
@@ -86,6 +89,7 @@ __attribute__((visibility("hidden")))
 - (id)tsp_referencedData;
 - (id)tsp_objectInfoWithDepth:(unsigned long long)arg1;
 - (void)didInitFromSOS;
+- (id)newObjectUUIDWithOffset:(unsigned long long)arg1;
 - (void)willBeRemovedFromDocumentWithContext:(id)arg1;
 - (void)wasAddedToDocumentDuringImportWithContext:(id)arg1;
 - (void)wasAddedToDocumentDuringUnarchiveWithContext:(id)arg1;

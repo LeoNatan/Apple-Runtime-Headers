@@ -15,7 +15,9 @@ __attribute__((visibility("hidden")))
 {
     PBUnknownFields *_unknownFields;
     int _type;
-    CDStruct_f953fb60 _has;
+    struct {
+        unsigned int type:1;
+    } _has;
 }
 
 - (void).cxx_destruct;

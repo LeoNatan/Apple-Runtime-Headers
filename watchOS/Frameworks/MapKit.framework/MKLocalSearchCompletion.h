@@ -39,6 +39,8 @@
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)description;
+@property(readonly, nonatomic) int sortPriority;
+@property(readonly, nonatomic) _Bool hasSortPriority;
 @property(readonly, nonatomic) GEORetainedSearchMetadata *retainedSearchMetadata;
 @property(readonly, nonatomic) GEODirectionIntent *directionIntent;
 @property(readonly, nonatomic) GEOResolvedItem *clientResolved;

@@ -20,10 +20,10 @@
 @property(nonatomic) __weak id <SFReaderAppearanceViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)navigationController:(id)arg1 willShowViewController:(id)arg2 animated:(_Bool)arg3;
-@property(readonly, nonatomic) NSString *themeName;
+@property(readonly, nonatomic) int theme;
 @property(readonly, nonatomic) WBSReaderFont *selectedFont;
 - (void)loadView;
-- (id)initWithInitialReaderConfiguration:(id)arg1 fontManager:(id)arg2;
+- (id)initWithConfigurationManager:(id)arg1 fontManager:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

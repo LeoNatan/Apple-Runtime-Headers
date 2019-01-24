@@ -72,6 +72,7 @@ typedef struct {
     unsigned int previousWebEmbedLocation:1;
     unsigned int publisherArticleVersion:1;
     unsigned int rankInVideoPlaylist:1;
+    unsigned int role:1;
     unsigned int topStoryMandatoryArticleCount:1;
     unsigned int topStoryOptionalArticleCount:1;
     unsigned int topStoryType:1;
@@ -102,9 +103,28 @@ typedef struct {
     unsigned int isVideoInFeed:1;
     unsigned int subscriptionOnlyArticle:1;
     unsigned int viewFromNotificationDirectOpen:1;
-} CDStruct_120998a0;
+} CDStruct_803929fe;
 
 // Ambiguous groups
+typedef struct {
+    unsigned int agedPersonalizationScore:1;
+    unsigned int agedUserFeedbackScore:1;
+    unsigned int autoSubscribeCtr:1;
+    unsigned int computedGlobalScoreCoefficient:1;
+    unsigned int diversifiedPersonalizationScore:1;
+    unsigned int featureCtr:1;
+    unsigned int globalScore:1;
+    unsigned int paidNonpaidSubscriptionCtr:1;
+    unsigned int personalizationScore:1;
+    unsigned int subscribedChannelCtr:1;
+    unsigned int userFeedbackScore:1;
+    unsigned int displayRank:1;
+    unsigned int groupType:1;
+    unsigned int parentFeedType:1;
+    unsigned int adSupportedChannel:1;
+    unsigned int isPaidSubscriberToSourceChannel:1;
+} CDStruct_2a523a1a;
+
 typedef struct {
     unsigned int widgetArticleCount:1;
     unsigned int widgetArticleCountInSection:1;
@@ -117,9 +137,20 @@ typedef struct {
 } CDStruct_de6d94e7;
 
 typedef struct {
+    unsigned int isEligibleForGrouping:1;
+    unsigned int isEligibleForGroupingIfFavorited:1;
+    unsigned int isHidden:1;
+} CDStruct_d00ad9e3;
+
+typedef struct {
     unsigned int articleHeadlineTreatmentId:1;
     unsigned int articleHeadlineTreatmentState:1;
 } CDStruct_762d0caf;
+
+typedef struct {
+    unsigned int issueType:1;
+    unsigned int isBundlePaid:1;
+} CDStruct_e072d072;
 
 typedef struct {
     unsigned int publisherArticleVersion:1;
@@ -129,6 +160,10 @@ typedef struct {
 typedef struct {
     unsigned int coverArticleWidgetArticleCount:1;
 } CDStruct_bb0d9f0d;
+
+typedef struct {
+    unsigned int isBundleChannel:1;
+} CDStruct_8fa617c1;
 
 typedef struct {
     unsigned int maxArticlesShown:1;

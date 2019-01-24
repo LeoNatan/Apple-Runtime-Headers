@@ -15,7 +15,7 @@
 - (id)_safari_bookmarksTopLevelOnly:(BOOL)arg1;
 - (void)_safari_writeBookmarks:(id)arg1 withOwner:(id)arg2 forInternalUseOnly:(BOOL)arg3;
 - (BOOL)safari_isDraggingFavoriteButton;
-- (void)safari_getExistingBookmarksFromPasteboard:(id *)arg1 newBookmarks:(id *)arg2 bookmarksController:(id)arg3;
+- (void)safari_getExistingBookmarksFromPasteboard:(id *)arg1 newBookmarks:(id *)arg2 bookmarkGroup:(id)arg3;
 - (id)safari_topLevelBookmarksOnPasteboard;
 - (void)_safari_addURLsFromBookmark:(id)arg1 toArray:(id)arg2;
 - (id)safari_urlsOnPasteboard;

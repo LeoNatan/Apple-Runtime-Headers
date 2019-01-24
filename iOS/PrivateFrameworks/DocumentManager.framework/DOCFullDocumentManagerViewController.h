@@ -163,6 +163,7 @@
 - (void)_updateOverlayOnViewController:(id)arg1;
 - (void)setAllowsPickingMultipleItems:(_Bool)arg1;
 - (void)setAdditionalToolbarButtonItems:(id)arg1;
+- (void)setAllowsDocumentCreation:(_Bool)arg1;
 - (void)navigateBack;
 - (void)setDelegate:(id)arg1;
 - (void)viewDidLoad;

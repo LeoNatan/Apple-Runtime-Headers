@@ -69,7 +69,6 @@
 - (void)reloadElement:(id)arg1;
 - (void)addElements:(id)arg1 toSectionWithIdentifier:(id)arg2;
 - (void)addElements:(id)arg1 toSection:(unsigned long long)arg2;
-- (void)dataBecameAvailable;
 - (void)invalidateElements;
 - (id)elementOperationQueue;
 - (void)invalidateAndReloadWithCompletion:(CDUnknownBlockType)arg1;

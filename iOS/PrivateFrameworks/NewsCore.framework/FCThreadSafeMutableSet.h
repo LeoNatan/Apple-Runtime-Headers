@@ -6,11 +6,11 @@
 
 #import <objc/NSObject.h>
 
-@class NFMutexLock, NSMutableSet, NSSet;
+@class NFUnfairLock, NSMutableSet, NSSet;
 
 @interface FCThreadSafeMutableSet : NSObject
 {
-    NFMutexLock *_mutexLock;
+    NFUnfairLock *_lock;
     NSMutableSet *_set;
 }
 

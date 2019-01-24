@@ -26,14 +26,15 @@
 + (id)supportedImageMIMETypes;
 + (id)supportedMediaMIMETypes;
 + (id)supportedMIMETypes;
+- (void)markedTextUpdate:(id)arg1;
 - (_Bool)_wantsKeyDownForEvent:(id)arg1;
 - (void)makeBaseWritingDirectionNatural:(id)arg1;
 - (void)capitalizeWord:(id)arg1;
 - (void)lowercaseWord:(id)arg1;
 - (void)uppercaseWord:(id)arg1;
 - (void)_changeWordCaseWithSelector:(SEL)arg1;
-- (void)_applyEditingStyleToSelection:(Ref_8e48ecf0 *)arg1 withUndoAction:(int)arg2;
-- (void)_applyStyleToSelection:(id)arg1 withUndoAction:(int)arg2;
+- (void)_applyEditingStyleToSelection:(Ref_8e48ecf0 *)arg1 withUndoAction:(unsigned char)arg2;
+- (void)_applyStyleToSelection:(id)arg1 withUndoAction:(unsigned char)arg2;
 - (id)_emptyStyle;
 - (void)centerSelectionInVisibleArea:(id)arg1;
 - (id)_accessibilityParentForSubview:(id)arg1;
@@ -239,7 +240,6 @@
 - (void)_selectionChanged;
 - (void)insertText:(id)arg1;
 - (void)doCommandBySelector:(SEL)arg1;
-- (void)markedTextUpdate:(id)arg1;
 - (void)setMarkedText:(id)arg1 selectedRange:(struct _NSRange)arg2;
 - (void)unmarkText;
 - (_Bool)hasMarkedText;

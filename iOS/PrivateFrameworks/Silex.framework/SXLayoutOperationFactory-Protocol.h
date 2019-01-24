@@ -6,9 +6,10 @@
 
 #import <Silex/NSObject-Protocol.h>
 
-@class SXLayoutDataProvider, SXLayoutOperation;
+@class SXLayoutOperation, SXLayoutTask;
+@protocol SXDOMObjectProviding;
 
 @protocol SXLayoutOperationFactory <NSObject>
-- (SXLayoutOperation *)layoutOperationWithViewportSize:(struct CGSize)arg1 constrainedToWidth:(double)arg2 layoutDataProvider:(SXLayoutDataProvider *)arg3;
+- (SXLayoutOperation *)layoutOperationWithTask:(SXLayoutTask *)arg1 DOMObjectProvider:(id <SXDOMObjectProviding>)arg2;
 @end
 

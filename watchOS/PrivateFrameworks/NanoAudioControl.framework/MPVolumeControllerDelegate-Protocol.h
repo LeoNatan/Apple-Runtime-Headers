@@ -17,6 +17,7 @@
 - (void)volumeController:(MPVolumeController *)arg1 mutedStateDidChange:(_Bool)arg2;
 - (void)volumeController:(MPVolumeController *)arg1 volumeValueDidChange:(float)arg2;
 - (void)volumeController:(MPVolumeController *)arg1 volumeControlLabelDidChange:(NSString *)arg2;
+- (void)volumeController:(MPVolumeController *)arg1 volumeControlCapabilitiesDidChange:(unsigned int)arg2;
 - (void)volumeController:(MPVolumeController *)arg1 volumeControlAvailableDidChange:(_Bool)arg2;
 @end
 

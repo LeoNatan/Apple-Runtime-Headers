@@ -22,6 +22,7 @@
 @property(nonatomic) float exploreExploitModulator; // @synthesize exploreExploitModulator=_exploreExploitModulator;
 @property(nonatomic) _Bool allowsExploreExploit; // @synthesize allowsExploreExploit=_allowsExploreExploit;
 - (void).cxx_destruct;
+- (void)logCoreAnalyticsMetrics;
 - (void)collectLoggableState:(CDUnknownBlockType)arg1;
 - (_Bool)requiresDirectory;
 - (long long)_getNumberOfCoordinates;

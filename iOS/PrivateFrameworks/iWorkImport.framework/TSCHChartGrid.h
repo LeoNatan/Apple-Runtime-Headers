@@ -99,11 +99,11 @@ __attribute__((visibility("hidden")))
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)dealloc;
 - (id)init;
-- (void)loadFromPreUFFArchive:(const struct ChartGridArchive *)arg1;
+-     // Error parsing type: v24@0:8r^{ChartGridArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<std::__1::basic_string<char> >=^{Arena}ii^{Rep}}{RepeatedPtrField<std::__1::basic_string<char> >=^{Arena}ii^{Rep}}{RepeatedPtrField<TSCH::PreUFF::ChartGridArchive_ValueRow>=^{Arena}ii^{Rep}}iB}16, name: loadFromPreUFFArchive:
 - (void)insertColumn:(unsigned long long)arg1 withName:(id)arg2;
 - (void)insertRow:(unsigned long long)arg1 withName:(id)arg2;
-- (void)saveToUnityArchive:(struct ChartArchive *)arg1 forCopy:(_Bool)arg2;
-- (void)loadFromUnityArchive:(const struct ChartArchive *)arg1 chartInfo:(id)arg2;
+-     // Error parsing type: v28@0:8^{ChartArchive=^^?{ExtensionSet=^{Arena}SS(AllocatedData=^{KeyValue}^{map<int, google::protobuf::internal::ExtensionSet::Extension, std::__1::less<int>, std::__1::allocator<std::__1::pair<const int, google::protobuf::internal::ExtensionSet::Extension> > >})}{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}^{RectArchive}^{Reference}^{ChartGridArchive}^{Reference}^{Reference}^{Reference}^{Reference}^{Reference}^{SparseReferenceArray}^{SparseReferenceArray}^{Reference}iiiBBBI}16B24, name: saveToUnityArchive:forCopy:
+-     // Error parsing type: v32@0:8r^{ChartArchive=^^?{ExtensionSet=^{Arena}SS(AllocatedData=^{KeyValue}^{map<int, google::protobuf::internal::ExtensionSet::Extension, std::__1::less<int>, std::__1::allocator<std::__1::pair<const int, google::protobuf::internal::ExtensionSet::Extension> > >})}{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}^{RectArchive}^{Reference}^{ChartGridArchive}^{Reference}^{Reference}^{Reference}^{Reference}^{Reference}^{SparseReferenceArray}^{SparseReferenceArray}^{Reference}iiiBBBI}16@24, name: loadFromUnityArchive:chartInfo:
 
 @end
 

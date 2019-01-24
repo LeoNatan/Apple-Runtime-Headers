@@ -12,6 +12,8 @@
 @property(readonly) BOOL useAVConference;
 
 @optional
+- (int)orientationForCurrentAngle;
+- (unsigned int)currentViewRotation;
 - (BOOL)ssSessionIsRedwood;
 - (BOOL)handleSSInputEvent:(SSInputEvent *)arg1;
 - (void)ssSessionRequestToAddTextToPasteboard:(SSSession *)arg1 result:(int)arg2;

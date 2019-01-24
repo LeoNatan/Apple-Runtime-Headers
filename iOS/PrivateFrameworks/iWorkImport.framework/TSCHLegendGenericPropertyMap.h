@@ -11,11 +11,11 @@ __attribute__((visibility("hidden")))
 {
 }
 
-+ (void)savePropertyMap:(id)arg1 toArchive:(struct LegendGenericPropertyMapArchive *)arg2 archiver:(id)arg3;
++     // Error parsing type: v40@0:8@16^{LegendGenericPropertyMapArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{FillArchive}^{ShadowArchive}^{StrokeArchive}if}24@32, name: savePropertyMap:toArchive:archiver:
 + (id)imageFillProperties;
 + (id)properties;
-- (void)saveToArchive:(struct LegendGenericPropertyMapArchive *)arg1 archiver:(id)arg2;
-- (id)initWithArchive:(const struct LegendGenericPropertyMapArchive *)arg1 unarchiver:(id)arg2;
+-     // Error parsing type: v32@0:8^{LegendGenericPropertyMapArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{FillArchive}^{ShadowArchive}^{StrokeArchive}if}16@24, name: saveToArchive:archiver:
+-     // Error parsing type: @32@0:8r^{LegendGenericPropertyMapArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{FillArchive}^{ShadowArchive}^{StrokeArchive}if}16@24, name: initWithArchive:unarchiver:
 
 @end
 

@@ -6,33 +6,22 @@
 
 #import <objc/NSObject.h>
 
-@class NSData, PKPeerPaymentContactResolver, UIFont;
+@class PKPeerPaymentContactResolver;
 
 @interface PKPaymentTransactionCellController : NSObject
 {
-    UIFont *_transactionCellPrimaryLabelFont;
-    UIFont *_transactionCellPrimaryLabelPeerPaymentFont;
-    UIFont *_transactionCellValueLabelFont;
-    UIFont *_transactionCellValueLabelPeerPaymentFont;
-    UIFont *_transactionCellSecondaryLabelFont;
-    UIFont *_transactionCellSecondaryLabelPeerPaymentFont;
-    NSData *_businessAvatarImageData;
-    NSData *_topUpAvatarImageData;
     PKPeerPaymentContactResolver *_contactResolver;
 }
 
 + (id)secondaryFundingSourceDescriptionForTransaction:(id)arg1 includeBankAccountSuffix:(_Bool)arg2 useGenericNameIfNoDescriptionAvailable:(_Bool)arg3;
++ (id)_statusAnnotationForTransaction:(id)arg1;
++ (id)_relativeDateForTransaction:(id)arg1;
++ (id)paymentMethodNameForTransaction:(id)arg1;
++ (id)presentationInformationForTransaction:(id)arg1 pass:(id)arg2 deviceName:(id)arg3 context:(unsigned long long)arg4;
 @property(readonly, nonatomic) PKPeerPaymentContactResolver *contactResolver; // @synthesize contactResolver=_contactResolver;
 - (void).cxx_destruct;
 - (void)_updatePrimaryLabelOnTransactionCell:(id)arg1 withPeerPaymentCounterpartHandle:(id)arg2 contact:(id)arg3;
-- (id)_businessAvatarImageData;
-- (id)_topUpAvatarImageData;
 - (void)_updateAvatarOnTransactionCell:(id)arg1 withTransaction:(id)arg2 contact:(id)arg3;
-- (id)_transactionCellSecondaryLabelFontForPass:(id)arg1;
-- (id)_transactionCellPrimaryLabelFontForPass:(id)arg1;
-- (id)_transactionCellValueLabelFontForPass:(id)arg1;
-- (double)paymentTransactionCellHeightForPass:(id)arg1;
-- (id)_relativeDateAndStatusForTransaction:(id)arg1;
 - (void)configureCell:(id)arg1 forTransaction:(id)arg2 paymentPass:(id)arg3 detailStyle:(long long)arg4 deviceName:(id)arg5 avatarViewDelegate:(id)arg6;
 - (id)initWithContactResolver:(id)arg1;
 

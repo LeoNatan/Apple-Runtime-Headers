@@ -15,6 +15,7 @@
 }
 
 @property(getter=isMirroringEnabled) _Bool mirroringEnabled; // @synthesize mirroringEnabled=_mirroringEnabled;
+@property(readonly) CDStruct_b2fbf00d whitepoint;
 - (id)description;
 @property _Bool disabled;
 @property _Bool disablesUpdates;

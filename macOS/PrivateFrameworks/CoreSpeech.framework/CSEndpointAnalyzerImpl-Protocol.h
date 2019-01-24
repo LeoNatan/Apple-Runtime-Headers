@@ -15,7 +15,7 @@
 @property(nonatomic) __weak id <CSEndpointAnalyzerDelegate> delegate;
 - (void)recordingStoppedForReason:(unsigned long long)arg1;
 - (void)processAudioSamplesAsynchronously:(CSAudioChunk *)arg1;
-- (void)resetForNewRequestWithSampleRate:(unsigned long long)arg1;
+- (void)resetForNewRequestWithSampleRate:(unsigned long long)arg1 recordContext:(NSDictionary *)arg2;
 
 @optional
 @property(readonly, nonatomic) double elapsedTimeWithNoSpeech;

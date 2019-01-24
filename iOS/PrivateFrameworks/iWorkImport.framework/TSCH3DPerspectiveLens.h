@@ -20,8 +20,8 @@ __attribute__((visibility("hidden")))
 - (id)narrowedByNormalizedBounds:(box_80622335 *)arg1;
 - (id)asFrustumLens;
 - (tmat4x4_3074befe)matrix;
-- (struct FrustumRect)frustumRectAtDistance:(float)arg1;
-- (struct FrustumRect)frustumRect;
+- (id)frustumRectAtDistance:(float)arg1;
+- (id)frustumRect;
 @property(readonly, nonatomic) float height;
 @property(readonly, nonatomic) float width;
 - (id)matrixDescription;

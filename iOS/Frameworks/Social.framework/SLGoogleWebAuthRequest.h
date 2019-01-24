@@ -6,19 +6,29 @@
 
 #import <objc/NSObject.h>
 
-@interface SLGoogleWebAuthRequest : NSObject
+#import <Social/SLWebAuthRequest-Protocol.h>
+
+@class NSString;
+
+@interface SLGoogleWebAuthRequest : NSObject <SLWebAuthRequest>
 {
 }
 
-+ (id)v2_authCodeFromRedirectURL:(id)arg1;
-+ (id)v2_urlForClientID:(id)arg1 redirectURI:(id)arg2 scope:(id)arg3 username:(id)arg4 codeChallenge:(id)arg5;
-+ (id)v2_urlForClientID:(id)arg1 redirectURI:(id)arg2 scope:(id)arg3 username:(id)arg4;
++ (id)authCodeFromRedirectURL:(id)arg1;
 + (id)authCodeFromWebPageTitle:(id)arg1;
 + (_Bool)urlPageWillContainAuthorizationCode:(id)arg1;
-+ (id)urlRequestForClientID:(id)arg1 redirectURI:(id)arg2 scope:(id)arg3 username:(id)arg4;
++ (id)urlRequestForClientID:(id)arg1 redirectURI:(id)arg2 scope:(id)arg3 username:(id)arg4 authRequestURL:(id)arg5;
 + (id)requestForURL:(id)arg1;
-+ (id)urlForClientID:(id)arg1 redirectURI:(id)arg2 scope:(id)arg3 username:(id)arg4;
-+ (void)clearCookiesFromStorage:(id)arg1;
++ (id)_parametersForClientID:(id)arg1 redirectURI:(id)arg2 scope:(id)arg3 username:(id)arg4 codeChallenge:(id)arg5;
++ (id)urlForClientID:(id)arg1 redirectURI:(id)arg2 scope:(id)arg3 username:(id)arg4 authRequestURL:(id)arg5 codeChallenge:(id)arg6;
++ (id)urlForClientID:(id)arg1 redirectURI:(id)arg2 scope:(id)arg3 username:(id)arg4 authRequestURL:(id)arg5;
++ (void)clearCookiesFromStorage:(id)arg1 authRequestURL:(id)arg2;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

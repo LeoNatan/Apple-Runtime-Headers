@@ -10,6 +10,7 @@
 @protocol WDSessionHost;
 
 @protocol WDSession <NSObject>
+@property(nonatomic) BOOL usesStrictFileInteractabilityChecks;
 @property(nonatomic) long long userPromptHandlerStrategy;
 @property(nonatomic) long long pageLoadStrategy;
 @property(nonatomic) unsigned long long asynchronousScriptTimeout;

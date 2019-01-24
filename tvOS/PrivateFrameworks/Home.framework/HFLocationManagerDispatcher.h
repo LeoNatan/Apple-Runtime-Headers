@@ -26,6 +26,8 @@
 @property(retain, nonatomic) NSHashTable *locationObservers; // @synthesize locationObservers=_locationObservers;
 @property(readonly, nonatomic) CLLocationManager *locationManager; // @synthesize locationManager=_locationManager;
 - (void).cxx_destruct;
+- (void)_updateMacAuthorizationStatus:(int)arg1;
+- (void)_authorizeHomeKitLocationServices;
 - (void)locationManager:(id)arg1 didFinishDeferredUpdatesWithError:(id)arg2;
 - (void)locationManagerDidResumeLocationUpdates:(id)arg1;
 - (void)locationManagerDidPauseLocationUpdates:(id)arg1;

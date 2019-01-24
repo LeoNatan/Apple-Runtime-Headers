@@ -17,6 +17,7 @@
     _SFDialogView *_dialogView;
     UIImageView *_placeholderView;
     NSTimer *_placeholderViewRemovalTimer;
+    float _placeholderOffset;
     int _navigationGesturePolicy;
     id <_SFWebViewDelegate> _delegate;
     UIView *_clippingView;
@@ -34,6 +35,7 @@
 - (int)webProcessIDForDialogController:(id)arg1;
 @property(readonly, nonatomic) UIView *effectiveViewToLayOut;
 - (void)setPlaceholderImage:(id)arg1;
+- (void)setPlaceholderImage:(id)arg1 offset:(float)arg2;
 @property(readonly, copy, nonatomic) NSString *evOrganizationName;
 - (void)didEndFormControlInteraction;
 - (_Bool)becomeFirstResponder;

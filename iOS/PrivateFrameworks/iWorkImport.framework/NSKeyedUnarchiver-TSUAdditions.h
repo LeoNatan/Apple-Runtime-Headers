@@ -10,6 +10,5 @@
 + (id)tsu_securelyUnarchiveObjectWithFile:(id)arg1 ofClasses:(id)arg2;
 + (id)tsu_securelyUnarchiveRoot:(id)arg1 forClasses:(id)arg2;
 + (id)tsu_securelyUnarchiveRoot:(id)arg1 forClass:(Class)arg2;
-- (id)tsu_initSecurelyFromData:(id)arg1 error:(id *)arg2;
 @end
 

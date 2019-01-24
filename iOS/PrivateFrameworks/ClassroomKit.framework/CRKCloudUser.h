@@ -30,7 +30,6 @@
 - (_Bool)isEqualToCloudUser:(id)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (id)initWithIdentifier:(id)arg1 isManagedAppleID:(_Bool)arg2 isHSA2:(_Bool)arg3;
-- (id)init;
 
 @end
 

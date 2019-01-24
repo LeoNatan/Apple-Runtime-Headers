@@ -11,11 +11,14 @@
 @interface GEOLogMsgStateMapUIShown : PBCodable <NSCopying>
 {
     BOOL _isAirQualityShown;
+    BOOL _isWeatherShown;
     struct {
         unsigned int isAirQualityShown:1;
+        unsigned int isWeatherShown:1;
     } _has;
 }
 
+@property(nonatomic) BOOL isWeatherShown; // @synthesize isWeatherShown=_isWeatherShown;
 @property(nonatomic) BOOL isAirQualityShown; // @synthesize isAirQualityShown=_isAirQualityShown;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -26,6 +29,7 @@
 - (BOOL)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(nonatomic) BOOL hasIsWeatherShown;
 @property(nonatomic) BOOL hasIsAirQualityShown;
 
 @end

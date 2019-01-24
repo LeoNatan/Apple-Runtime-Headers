@@ -6,11 +6,13 @@
 
 #import <WebKit/NSObject-Protocol.h>
 
-@class WKInspectorViewController;
+@class NSWindow, WKInspectorViewController;
 
 @protocol WKInspectorViewControllerDelegate <NSObject>
 
 @optional
+- (void)inspectorViewControllerDidMoveToWindow:(WKInspectorViewController *)arg1;
+- (void)inspectorViewController:(WKInspectorViewController *)arg1 willMoveToWindow:(NSWindow *)arg2;
 - (BOOL)inspectorViewControllerInspectorIsUnderTest:(WKInspectorViewController *)arg1;
 - (void)inspectorViewControllerInspectorDidCrash:(WKInspectorViewController *)arg1;
 @end

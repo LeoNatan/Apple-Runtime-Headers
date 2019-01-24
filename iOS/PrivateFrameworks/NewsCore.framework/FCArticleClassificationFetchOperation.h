@@ -6,11 +6,12 @@
 
 #import <NewsCore/FCMultiStepFetchOperation.h>
 
-@class FCCloudContext, FCHeldRecords, NSString;
+@class FCHeldRecords, NSString;
+@protocol FCContentContext;
 
 @interface FCArticleClassificationFetchOperation : FCMultiStepFetchOperation
 {
-    FCCloudContext *_context;
+    id <FCContentContext> _context;
     NSString *_articleID;
     FCHeldRecords *_heldArticleRecords;
     FCHeldRecords *_heldTopicRecords;
@@ -19,10 +20,9 @@
 @property(retain, nonatomic) FCHeldRecords *heldTopicRecords; // @synthesize heldTopicRecords=_heldTopicRecords;
 @property(retain, nonatomic) FCHeldRecords *heldArticleRecords; // @synthesize heldArticleRecords=_heldArticleRecords;
 @property(retain, nonatomic) NSString *articleID; // @synthesize articleID=_articleID;
-@property(retain, nonatomic) FCCloudContext *context; // @synthesize context=_context;
+@property(retain, nonatomic) id <FCContentContext> context; // @synthesize context=_context;
 - (void).cxx_destruct;
 - (id)completeFetchOperation;
-- (id)fetchTopicsWithCompletion:(CDUnknownBlockType)arg1;
 - (id)fetchArticleWithCompletion:(CDUnknownBlockType)arg1;
 - (id)initWithContext:(id)arg1 articleID:(id)arg2;
 

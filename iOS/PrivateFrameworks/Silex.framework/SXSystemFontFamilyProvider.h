@@ -21,6 +21,7 @@
 - (id)fontsForMetadata:(id)arg1;
 - (id)fontFamilies;
 - (id)initWithFontMetaData:(id)arg1;
+- (id)init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

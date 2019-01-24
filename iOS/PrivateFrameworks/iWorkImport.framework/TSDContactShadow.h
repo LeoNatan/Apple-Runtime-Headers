@@ -13,7 +13,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)contactShadowWithOffset:(double)arg1 height:(double)arg2 radius:(double)arg3 opacity:(double)arg4 color:(id)arg5 enabled:(_Bool)arg6;
-+ (id)instanceWithArchive:(const struct ShadowArchive *)arg1 unarchiver:(id)arg2;
++     // Error parsing type: @32@0:8r^{ShadowArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{Color}^{DropShadowArchive}^{ContactShadowArchive}^{CurvedShadowArchive}iBffif}16@24, name: instanceWithArchive:unarchiver:
 @property(readonly, nonatomic) double height; // @synthesize height=mHeight;
 - (id)mixedObjectWithFraction:(double)arg1 ofObject:(id)arg2;
 - (long long)mixingTypeWithObject:(id)arg1 context:(id)arg2;
@@ -32,8 +32,8 @@ __attribute__((visibility("hidden")))
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)shadowType;
 - (id)initWithOffset:(double)arg1 height:(double)arg2 radius:(double)arg3 opacity:(double)arg4 color:(id)arg5 enabled:(_Bool)arg6;
-- (void)saveToArchive:(struct ShadowArchive *)arg1 archiver:(id)arg2;
-- (id)initWithArchive:(const struct ShadowArchive *)arg1 unarchiver:(id)arg2;
+-     // Error parsing type: v32@0:8^{ShadowArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{Color}^{DropShadowArchive}^{ContactShadowArchive}^{CurvedShadowArchive}iBffif}16@24, name: saveToArchive:archiver:
+-     // Error parsing type: @32@0:8r^{ShadowArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{Color}^{DropShadowArchive}^{ContactShadowArchive}^{CurvedShadowArchive}iBffif}16@24, name: initWithArchive:unarchiver:
 
 @end
 

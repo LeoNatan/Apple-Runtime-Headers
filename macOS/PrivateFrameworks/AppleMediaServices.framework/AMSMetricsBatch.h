@@ -15,8 +15,10 @@ __attribute__((visibility("hidden")))
     NSURL *_reportURL;
     NSArray *_events;
     NSArray *_eventDictionaries;
+    NSArray *_blacklistedEvents;
 }
 
+@property(retain) NSArray *blacklistedEvents; // @synthesize blacklistedEvents=_blacklistedEvents;
 @property(retain) NSArray *eventDictionaries; // @synthesize eventDictionaries=_eventDictionaries;
 @property(retain) NSArray *events; // @synthesize events=_events;
 @property(retain) NSURL *reportURL; // @synthesize reportURL=_reportURL;

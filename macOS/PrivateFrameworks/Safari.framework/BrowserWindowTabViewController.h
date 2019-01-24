@@ -6,19 +6,28 @@
 
 #import <AppKit/NSTabViewController.h>
 
-@class BrowserTabViewItem, BrowserWindowTabView, NSArray;
-@protocol BrowserWindowTabViewControllerDelegate;
+#import <Safari/WBSTabOrderProvider-Protocol.h>
+
+@class BrowserTabViewItem, BrowserWindowTabView, NSArray, NSString, WBSTabOrderManager;
+@protocol BrowserWindowTabViewControllerDelegate, WBSOrderedTab;
 
 __attribute__((visibility("hidden")))
-@interface BrowserWindowTabViewController : NSTabViewController
+@interface BrowserWindowTabViewController : NSTabViewController <WBSTabOrderProvider>
 {
     BOOL _isAddingOrRemovingTabViewItem;
     BOOL _didSetUpTabView;
     id <BrowserWindowTabViewControllerDelegate> _delegate;
+    WBSTabOrderManager *_tabOrderManager;
 }
 
+@property(readonly, nonatomic) WBSTabOrderManager *tabOrderManager; // @synthesize tabOrderManager=_tabOrderManager;
 @property(nonatomic) __weak id <BrowserWindowTabViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (id)tabAtIndex:(unsigned long long)arg1;
+@property(readonly, nonatomic) id <WBSOrderedTab> selectedTabForTabOrderProvider;
+- (id)originatingTabForTab:(id)arg1;
+@property(readonly, nonatomic) unsigned long long numberOfTabs;
+@property(readonly, nonatomic) unsigned long long indexOfSelectedTab;
 - (id)tabViewItemsWithUnsubmittedFormTextPassingTest:(CDUnknownBlockType)arg1;
 - (id)firstTabViewItemWithUnsavedCredentialsPassingTest:(CDUnknownBlockType)arg1;
 @property(readonly, copy, nonatomic) NSArray *pinnedTabViewItems;
@@ -35,6 +44,12 @@ __attribute__((visibility("hidden")))
 - (void)_setUpTabView;
 @property(retain) BrowserWindowTabView *tabView; // @dynamic tabView;
 - (void)loadView;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

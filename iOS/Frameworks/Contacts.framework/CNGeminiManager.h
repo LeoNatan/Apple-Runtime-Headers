@@ -68,7 +68,7 @@
 - (id)geminiResultForHandle:(id)arg1 contactStore:(id)arg2 error:(id *)arg3;
 - (id)bestSenderIdentityForHandle:(id)arg1 contactStore:(id)arg2 error:(id *)arg3;
 - (id)contactForPhoneString:(id)arg1 contactStore:(id)arg2;
-- (id)channelForPreferredChannelString:(id)arg1 fromChannels:(id)arg2;
+- (id)channelForPreferredChannelString:(id)arg1 fromChannels:(id)arg2 synthesizeMissingChannels:(_Bool)arg3;
 - (id)geminiResultForContact:(id)arg1 substituteDefaultForDangling:(_Bool)arg2 error:(id *)arg3;
 - (id)geminiResultForContact:(id)arg1 error:(id *)arg2;
 - (id)remoteBestSenderIdentityForHandle:(id)arg1 contactStore:(id)arg2 error:(id *)arg3;

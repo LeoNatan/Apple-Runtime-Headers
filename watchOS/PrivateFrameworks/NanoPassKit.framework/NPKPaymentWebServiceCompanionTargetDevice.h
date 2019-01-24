@@ -35,8 +35,11 @@
 @property(nonatomic) unsigned int context; // @synthesize context=_context;
 @property(nonatomic) __weak id <NPKPaymentWebServiceCompanionTargetDeviceDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (id)_expressModesFromExpressPassesInformation:(id)arg1;
+- (id)_expressPassesInformationFromDataArray:(id)arg1;
 - (_Bool)_deviceIsFortuneOrLater;
 - (_Bool)_deviceIsDaytonaOrLater;
+- (_Bool)_deviceSupportMultipleExpressPasses;
 - (id)_serialNumbersOfAllPairedDevices;
 - (id)_sendProtobuf:(id)arg1 responseExpected:(_Bool)arg2 extraOptions:(id)arg3;
 - (id)_sendProtobuf:(id)arg1 responseExpected:(_Bool)arg2;
@@ -54,6 +57,8 @@
 - (void)handleCompanionMigrationResponse:(id)arg1;
 - (void)sendWebServiceContextToWatch:(id)arg1;
 - (void)sendPaymentOptionsDefaultsToWatch;
+- (void)_singleExpressTransitPassPaymentWebService:(id)arg1 handlePotentialExpressPassInformation:(id)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
+- (void)_handlePotentialExpressPassInformation:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)paymentWebService:(id)arg1 handlePotentialExpressPass:(id)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
 - (_Bool)supportsCredentialType:(int)arg1;
 - (_Bool)supportsExpressForAutomaticSelectionTechnologyType:(int)arg1;
@@ -82,6 +87,8 @@
 - (void)enableServiceModeForPassWithUniqueIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)cancelOutstandingSetDefaultExpressPassRequestsWithExpressMode:(id)arg1;
 - (void)enableServiceModeResponse:(id)arg1;
+- (void)conflictingExpressPassIdentifiersForPassInformationResponse:(id)arg1;
+- (void)conflictingExpressPassIdentifiersForPassInformation:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)removeExpressPassWithUniqueIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)removeExpressPassWithUniqueIdentifierResponse:(id)arg1;
 - (void)removeExpressPassesWithCardType:(int)arg1 completion:(CDUnknownBlockType)arg2;
@@ -114,6 +121,8 @@
 - (void)paymentWebService:(id)arg1 removePass:(id)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
 - (void)paymentWebService:(id)arg1 addPaymentPass:(id)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
 - (void)paymentWebService:(id)arg1 deleteApplicationWithAID:(id)arg2;
+- (id)deviceVersion;
+- (id)deviceClass;
 - (id)deviceName;
 - (id)deviceDescriptionForPaymentWebService:(id)arg1;
 - (int)paymentSupportedInCurrentRegionForWebService:(id)arg1;

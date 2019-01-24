@@ -12,8 +12,6 @@
 }
 
 @property(nonatomic) int mode; // @synthesize mode=_mode;
-@property(readonly, nonatomic) struct AttachmentDisplayOptions coreDisplayOptions;
-- (id)init;
 
 @end
 

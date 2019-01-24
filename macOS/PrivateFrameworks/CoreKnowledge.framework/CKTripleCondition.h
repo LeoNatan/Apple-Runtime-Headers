@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class CKGenericCondition, NSString;
+@class NSString;
 
 @interface CKTripleCondition : NSObject
 {
@@ -15,7 +15,7 @@
 
 + (void)setSupportsSecureCoding:(BOOL)arg1;
 + (BOOL)supportsSecureCoding;
-- (CDUnknownBlockType).cxx_destruct;
+- (void).cxx_destruct;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
@@ -25,9 +25,7 @@
 - (id)and:(id)arg1;
 - (id)initWithSubject:(id)arg1 predicate:(id)arg2 object:(id)arg3;
 - (id)initWithValue:(BOOL)arg1;
-- (id)init:(id)arg1;
 @property(nonatomic, readonly) NSString *description;
-@property(nonatomic, retain) CKGenericCondition *rawCondition; // @synthesize rawCondition;
 
 @end
 

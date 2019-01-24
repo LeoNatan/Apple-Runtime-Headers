@@ -8,19 +8,23 @@
 
 #import <NewsTransport/NSCopying-Protocol.h>
 
-@class NSData, NSString;
+@class NSData, NSString, NTPBIssueData;
 
 @interface NTPBPaidSubscriptionConversionPointExposure : PBCodable <NSCopying>
 {
     NSString *_articleId;
     NSData *_articleViewingSessionId;
     NSData *_feedViewExposureId;
+    NSString *_groupFeedId;
     int _groupType;
     NSString *_iadQtoken;
+    NTPBIssueData *_issueData;
     int _paidSubscriptionConversionPointExposureLocation;
     int _paidSubscriptionConversionPointExposurePresentationReason;
     int _paidSubscriptionConversionPointType;
+    NSString *_parentFeedId;
     int _parentFeedType;
+    NSString *_purchaseId;
     NSString *_sectionId;
     NSString *_sourceChannelId;
     NSData *_subscriptionPurchaseSessionId;
@@ -39,6 +43,10 @@
     } _has;
 }
 
+@property(retain, nonatomic) NTPBIssueData *issueData; // @synthesize issueData=_issueData;
+@property(retain, nonatomic) NSString *parentFeedId; // @synthesize parentFeedId=_parentFeedId;
+@property(retain, nonatomic) NSString *groupFeedId; // @synthesize groupFeedId=_groupFeedId;
+@property(retain, nonatomic) NSString *purchaseId; // @synthesize purchaseId=_purchaseId;
 @property(retain, nonatomic) NSData *feedViewExposureId; // @synthesize feedViewExposureId=_feedViewExposureId;
 @property(retain, nonatomic) NSData *subscriptionPurchaseSessionId; // @synthesize subscriptionPurchaseSessionId=_subscriptionPurchaseSessionId;
 @property(retain, nonatomic) NSString *iadQtoken; // @synthesize iadQtoken=_iadQtoken;
@@ -57,6 +65,10 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(readonly, nonatomic) _Bool hasIssueData;
+@property(readonly, nonatomic) _Bool hasParentFeedId;
+@property(readonly, nonatomic) _Bool hasGroupFeedId;
+@property(readonly, nonatomic) _Bool hasPurchaseId;
 - (int)StringAsGroupType:(id)arg1;
 - (id)groupTypeAsString:(int)arg1;
 @property(nonatomic) _Bool hasGroupType;

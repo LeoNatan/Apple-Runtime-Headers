@@ -8,6 +8,6 @@
 
 @interface NSNull (TSCHArchivingUtilities)
 - (void)tsch_saveToProtobufString:(basic_string_23d93216 *)arg1;
-- (void)tsch_saveToArchive:(struct ChartsNSNumberDoubleArchive *)arg1 archiver:(id)arg2;
+-     // Error parsing type: v32@0:8^{ChartsNSNumberDoubleArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}d}16@24, name: tsch_saveToArchive:archiver:
 @end
 

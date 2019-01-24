@@ -6,21 +6,23 @@
 
 #import <CloudKitDaemon/CKDDatabaseOperation.h>
 
-@class CKDCancelTokenGroup, NSArray, NSMapTable, NSMutableArray, NSObject;
+@class CKDCancelTokenGroup, NSArray, NSMapTable, NSMutableArray, NSMutableDictionary, NSObject;
 @protocol OS_dispatch_queue;
 
 __attribute__((visibility("hidden")))
 @interface CKDDownloadAssetsOperation : CKDDatabaseOperation
 {
-    BOOL _shouldFetchAssetContentInMemory;
     CDUnknownBlockType _downloadPreparationBlock;
     CDUnknownBlockType _downloadProgressBlock;
     CDUnknownBlockType _downloadCommandBlock;
     CDUnknownBlockType _downloadCompletionBlock;
-    NSArray *_assetsToDownloadInMemory;
+    CDUnknownBlockType _urlFilledOutBlock;
+    NSMutableDictionary *_keyOrErrorForHostname;
     NSObject<OS_dispatch_queue> *_queue;
     NSArray *_assetsToDownload;
     NSArray *_packageIndexSets;
+    NSArray *_assetsToDownloadInMemory;
+    NSArray *_assetURLInfosToFillOut;
     NSMutableArray *_MMCSItemsToDownload;
     NSMutableArray *_MMCSItemsToDownloadInMemory;
     NSMapTable *_downloadTasksByPackages;
@@ -28,16 +30,18 @@ __attribute__((visibility("hidden")))
     unsigned long long _maxPackageDownloadsPerBatch;
 }
 
-@property(nonatomic) BOOL shouldFetchAssetContentInMemory; // @synthesize shouldFetchAssetContentInMemory=_shouldFetchAssetContentInMemory;
 @property(nonatomic) unsigned long long maxPackageDownloadsPerBatch; // @synthesize maxPackageDownloadsPerBatch=_maxPackageDownloadsPerBatch;
 @property(retain, nonatomic) CKDCancelTokenGroup *cancelTokens; // @synthesize cancelTokens=_cancelTokens;
 @property(retain, nonatomic) NSMapTable *downloadTasksByPackages; // @synthesize downloadTasksByPackages=_downloadTasksByPackages;
 @property(retain, nonatomic) NSMutableArray *MMCSItemsToDownloadInMemory; // @synthesize MMCSItemsToDownloadInMemory=_MMCSItemsToDownloadInMemory;
 @property(retain, nonatomic) NSMutableArray *MMCSItemsToDownload; // @synthesize MMCSItemsToDownload=_MMCSItemsToDownload;
+@property(retain, nonatomic) NSArray *assetURLInfosToFillOut; // @synthesize assetURLInfosToFillOut=_assetURLInfosToFillOut;
+@property(retain, nonatomic) NSArray *assetsToDownloadInMemory; // @synthesize assetsToDownloadInMemory=_assetsToDownloadInMemory;
 @property(retain, nonatomic) NSArray *packageIndexSets; // @synthesize packageIndexSets=_packageIndexSets;
 @property(retain, nonatomic) NSArray *assetsToDownload; // @synthesize assetsToDownload=_assetsToDownload;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
-@property(retain, nonatomic) NSArray *assetsToDownloadInMemory; // @synthesize assetsToDownloadInMemory=_assetsToDownloadInMemory;
+@property(retain, nonatomic) NSMutableDictionary *keyOrErrorForHostname; // @synthesize keyOrErrorForHostname=_keyOrErrorForHostname;
+@property(copy, nonatomic) CDUnknownBlockType urlFilledOutBlock; // @synthesize urlFilledOutBlock=_urlFilledOutBlock;
 @property(copy, nonatomic) CDUnknownBlockType downloadCompletionBlock; // @synthesize downloadCompletionBlock=_downloadCompletionBlock;
 @property(copy, nonatomic) CDUnknownBlockType downloadCommandBlock; // @synthesize downloadCommandBlock=_downloadCommandBlock;
 @property(copy, nonatomic) CDUnknownBlockType downloadProgressBlock; // @synthesize downloadProgressBlock=_downloadProgressBlock;
@@ -46,6 +50,7 @@ __attribute__((visibility("hidden")))
 - (void)main;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)cancel;
+- (BOOL)_postProcess;
 - (void)_downloadMMCSItems:(id)arg1 downloadTasksByPackages:(id)arg2 shouldFetchAssetContentInMemory:(BOOL)arg3;
 - (BOOL)_download;
 - (void)_downloadPackageSectionsWithPendingTasks:(id)arg1 downloadingTasks:(id)arg2 completedTasks:(id)arg3;
@@ -63,6 +68,7 @@ __attribute__((visibility("hidden")))
 - (void)_collectMetricsFromMMCSOperationMetrics:(id)arg1;
 - (void)_didDownloadMMCSItem:(id)arg1 inMemory:(BOOL)arg2 error:(id)arg3;
 - (BOOL)_prepareForDownload;
+- (id)_tryToFillInTheDerivativeTemplateWithAsset:(id)arg1;
 - (void)_didDownloadAsset:(id)arg1 error:(id)arg2;
 - (void)_didCommandForAsset:(id)arg1 command:(id)arg2;
 - (void)_didMakeProgressForAsset:(id)arg1 progress:(double)arg2;

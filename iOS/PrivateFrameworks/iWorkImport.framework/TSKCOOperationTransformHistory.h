@@ -18,8 +18,8 @@ __attribute__((visibility("hidden")))
 
 - (void).cxx_destruct;
 - (id)description;
-- (void)didTransformOperationWithResult:(id)arg1 token:(id)arg2;
-- (id)willTransformOperation:(id)arg1 withOperation:(id)arg2;
+- (void)didTransformOperationWithResult:(shared_ptr_f167ad79)arg1 token:(id)arg2;
+- (id)willTransformOperation:(shared_ptr_f167ad79)arg1 withOperation:(shared_ptr_f167ad79)arg2;
 - (id)init;
 
 @end

@@ -11,13 +11,13 @@
 __attribute__((visibility("hidden")))
 @interface TSCEFormulasForUndoForOwnerKind : NSObject <NSCopying>
 {
-    int _ownerKind;
+    unsigned short _ownerKind;
     struct unordered_map<TSCECellRef, TSCEFormula, std::__1::hash<TSCECellRef>, std::__1::equal_to<TSCECellRef>, std::__1::allocator<std::__1::pair<const TSCECellRef, TSCEFormula>>> _formulas;
     struct unordered_set<TSCECellRef, std::__1::hash<TSCECellRef>, std::__1::equal_to<TSCECellRef>, std::__1::allocator<TSCECellRef>> _nonFormulaCells;
     unordered_set_c6a929bd _formulaOwnerUIDs;
 }
 
-@property(nonatomic) int ownerKind; // @synthesize ownerKind=_ownerKind;
+@property(nonatomic) unsigned short ownerKind; // @synthesize ownerKind=_ownerKind;
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (id)description;

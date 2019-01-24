@@ -9,11 +9,12 @@
 #import <CarPlay/NSCopying-Protocol.h>
 #import <CarPlay/NSSecureCoding-Protocol.h>
 
-@class CPImageSet, CPTravelEstimates, NSArray, NSMeasurement, NSSet, NSUUID;
+@class CPImageSet, CPTravelEstimates, NSArray, NSMeasurement, NSSet, NSUUID, UIImage;
 
 @interface CPManeuver : NSObject <NSCopying, NSSecureCoding>
 {
     CPImageSet *_symbolSet;
+    UIImage *_junctionImage;
     NSArray *_instructionVariants;
     CPTravelEstimates *_initialTravelEstimates;
     NSArray *_attributedInstructionVariants;
@@ -42,6 +43,7 @@
 @property(copy, nonatomic) NSArray *attributedInstructionVariants; // @synthesize attributedInstructionVariants=_attributedInstructionVariants;
 @property(retain, nonatomic) CPTravelEstimates *initialTravelEstimates; // @synthesize initialTravelEstimates=_initialTravelEstimates;
 @property(copy, nonatomic) NSArray *instructionVariants; // @synthesize instructionVariants=_instructionVariants;
+@property(retain, nonatomic) UIImage *junctionImage; // @synthesize junctionImage=_junctionImage;
 @property(retain, nonatomic) CPImageSet *symbolSet; // @synthesize symbolSet=_symbolSet;
 - (void).cxx_destruct;
 - (id)description;

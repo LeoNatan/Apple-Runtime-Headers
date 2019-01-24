@@ -8,7 +8,7 @@
 
 #import <iWorkImport/TSPMutableLargeDictionarySegmentDelegate-Protocol.h>
 
-@class NSMutableArray;
+@class NSMutableArray, NSString;
 
 __attribute__((visibility("hidden")))
 @interface TSPAbstractMutableLargeDictionary : TSPObject <TSPMutableLargeDictionarySegmentDelegate>
@@ -30,8 +30,8 @@ __attribute__((visibility("hidden")))
 + (Class)dictionarySegmentClass;
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (void)loadFromLargeDictionaryMessage:(const struct LargeDictionary *)arg1 unarchiver:(id)arg2;
-- (void)saveToLargeDictionaryMessage:(struct LargeDictionary *)arg1 archiver:(id)arg2;
+-     // Error parsing type: v32@0:8r^{LargeDictionary=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSP::Range>=^{Arena}ii^{Rep}}{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}QQQIBB}16@24, name: loadFromLargeDictionaryMessage:unarchiver:
+-     // Error parsing type: v32@0:8^{LargeDictionary=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSP::Range>=^{Arena}ii^{Rep}}{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}QQQIBB}16@24, name: saveToLargeDictionaryMessage:archiver:
 - (void)saveToArchiver:(id)arg1;
 - (void)loadFromUnarchiver:(id)arg1;
 @property(nonatomic) unsigned int delayedArchivingPriority;
@@ -70,6 +70,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) _Bool hasMaxSegmentSize;
 @property(readonly, nonatomic) _Bool hasMaxSegmentObjectCount;
 @property(readonly, nonatomic) _Bool hasDelayedArchivingPriority;
+@property(readonly, nonatomic) NSString *packageLocatorForSegments;
 - (id)createDictionarySegment;
 - (id)convertObjectToSegmentObject:(id)arg1;
 - (id)convertSegmentObjectToObject:(id)arg1;

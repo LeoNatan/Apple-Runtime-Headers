@@ -7,24 +7,32 @@
 #import <objc/NSObject.h>
 
 #import <iTunesCloud/NSCopying-Protocol.h>
+#import <iTunesCloud/NSSecureCoding-Protocol.h>
 
 @class ICStoreRequestContext;
 
-@interface ICMusicSubscriptionStatusRequest : NSObject <NSCopying>
+@interface ICMusicSubscriptionStatusRequest : NSObject <NSCopying, NSSecureCoding>
 {
     _Bool _allowsFallbackToExpiredStatus;
     _Bool _allowsFallbackToStatusNeedingReload;
     _Bool _shouldIgnoreCache;
+    int _carrierBundleProvisioningStyle;
+    int _reason;
     int _maximumRetryCount;
     ICStoreRequestContext *_storeRequestContext;
 }
 
++ (_Bool)supportsSecureCoding;
 @property(copy, nonatomic) ICStoreRequestContext *storeRequestContext; // @synthesize storeRequestContext=_storeRequestContext;
 @property(nonatomic) _Bool shouldIgnoreCache; // @synthesize shouldIgnoreCache=_shouldIgnoreCache;
 @property(nonatomic) int maximumRetryCount; // @synthesize maximumRetryCount=_maximumRetryCount;
+@property(nonatomic) int reason; // @synthesize reason=_reason;
+@property(nonatomic) int carrierBundleProvisioningStyle; // @synthesize carrierBundleProvisioningStyle=_carrierBundleProvisioningStyle;
 @property(nonatomic) _Bool allowsFallbackToStatusNeedingReload; // @synthesize allowsFallbackToStatusNeedingReload=_allowsFallbackToStatusNeedingReload;
 @property(nonatomic) _Bool allowsFallbackToExpiredStatus; // @synthesize allowsFallbackToExpiredStatus=_allowsFallbackToExpiredStatus;
 - (void).cxx_destruct;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithStoreRequestContext:(id)arg1;
 

@@ -48,7 +48,7 @@ __attribute__((visibility("hidden")))
 - (struct CGRect)nonAutosizedFrameForTextLayout:(id)arg1;
 - (void)invalidateForAutosizingTextLayout:(id)arg1;
 - (int)verticalAlignmentForTextLayout:(id)arg1;
-- (unsigned int)autosizeFlagsForTextLayout:(id)arg1;
+- (unsigned long long)autosizeFlagsForTextLayout:(id)arg1;
 - (id)pathForClippingConnectionLines;
 - (struct CGRect)boundsForStandardKnobs;
 - (id)infoGeometryForFittingInFrame:(struct CGRect)arg1;

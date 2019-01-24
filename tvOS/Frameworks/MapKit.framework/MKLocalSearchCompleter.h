@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class CLLocation, GEOMapServiceTraits, GEORetainedSearchMetadata, GEOSearchCategory, NSArray, NSString, NSTimer;
+@class CLLocation, GEOMapServiceTraits, GEORetainedSearchMetadata, GEOSearchCategory, GEOSortPriorityMapping, NSArray, NSString, NSTimer;
 @protocol GEOMapServiceCompletionTicket, MKAutocompleteAnalyticsProvider, MKLocalSearchCompleterDelegate, MKLocationManagerOperation;
 
 @interface MKLocalSearchCompleter : NSObject
@@ -25,7 +25,9 @@
     unsigned long long _mapType;
     double _lastRequestTime;
     _Bool _dirty;
+    _Bool _resultsAreCurrent;
     NSArray *_results;
+    GEOSortPriorityMapping *_sortPriorityMapping;
     NSTimer *_timer;
     id <GEOMapServiceCompletionTicket> _ticket;
     int _source;
@@ -37,6 +39,7 @@
 }
 
 @property(nonatomic, getter=_shouldPreloadTransitInfo, setter=_setShouldPreloadTransitInfo:) _Bool shouldPreloadTransitInfo; // @synthesize shouldPreloadTransitInfo=_shouldPreloadTransitInfo;
+@property(readonly, nonatomic, getter=_sortPriorityMapping) GEOSortPriorityMapping *sortPriorityMapping; // @synthesize sortPriorityMapping=_sortPriorityMapping;
 @property(readonly, nonatomic, getter=_shouldDisplayNoResults) _Bool shouldDisplayNoResults; // @synthesize shouldDisplayNoResults=_shouldDisplayNoResults;
 @property(retain, nonatomic) id <MKAutocompleteAnalyticsProvider> analyticsProvider; // @synthesize analyticsProvider=_analyticsProvider;
 @property(retain, nonatomic) GEOMapServiceTraits *traits; // @synthesize traits=_traits;

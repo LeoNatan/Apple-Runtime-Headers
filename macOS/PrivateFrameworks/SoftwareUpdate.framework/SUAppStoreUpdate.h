@@ -17,14 +17,12 @@
     NSError *_updateError;
     long long _lastState;
     NSObject<OS_dispatch_queue> *_q;
-    NSString *_longDescriptionString;
     NSXPCConnection *_connection;
 }
 
 + (BOOL)_connectToService;
 + (BOOL)supportsSecureCoding;
 @property(nonatomic) NSXPCConnection *connection; // @synthesize connection=_connection;
-@property(retain, nonatomic) NSString *longDescriptionString; // @synthesize longDescriptionString=_longDescriptionString;
 - (id)initWithProductKey:(id)arg1 title:(id)arg2 longDescription:(id)arg3;
 @property(readonly) BOOL canRetry;
 @property(readonly, retain) NSError *updateError;

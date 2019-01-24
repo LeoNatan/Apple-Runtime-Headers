@@ -11,20 +11,24 @@
 __attribute__((visibility("hidden")))
 @interface TSTTableHeaderInfo : NSObject
 {
-    TSTCellStyle *mCellStyle;
-    TSWPParagraphStyle *mTextStyle;
-    double mSize;
-    unsigned char mHidingState;
-    unsigned short mNumberOfCells;
+    unsigned char _hidingState;
+    unsigned int _numberOfCells;
+    TSTCellStyle *_cellStyle;
+    TSWPParagraphStyle *_textStyle;
+    double _size;
 }
 
-@property(nonatomic) unsigned short numberOfCells; // @synthesize numberOfCells=mNumberOfCells;
-@property(nonatomic) unsigned char hidingState; // @synthesize hidingState=mHidingState;
-@property(nonatomic) double size; // @synthesize size=mSize;
-@property(retain, nonatomic) TSWPParagraphStyle *textStyle; // @synthesize textStyle=mTextStyle;
-@property(retain, nonatomic) TSTCellStyle *cellStyle; // @synthesize cellStyle=mCellStyle;
+@property(nonatomic) unsigned int numberOfCells; // @synthesize numberOfCells=_numberOfCells;
+@property(nonatomic) unsigned char hidingState; // @synthesize hidingState=_hidingState;
+@property(nonatomic) double size; // @synthesize size=_size;
+@property(retain, nonatomic) TSWPParagraphStyle *textStyle; // @synthesize textStyle=_textStyle;
+@property(retain, nonatomic) TSTCellStyle *cellStyle; // @synthesize cellStyle=_cellStyle;
+- (void).cxx_destruct;
+- (void)updateFromMetadata:(id)arg1;
+-     // Error parsing type: v36@0:8^{HeaderStorageBucket_Header=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{Reference}^{Reference}IfII}16@24I32, name: encodeToArchive:archiver:index:
+-     // Error parsing type: @40@0:8r^{HeaderStorageBucket_Header=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{Reference}^{Reference}IfII}16@24^I32, name: initFromArchive:unarchiver:outIndex:
+@property(readonly, nonatomic) _Bool hasContent;
 - (id)description;
-- (void)dealloc;
 
 @end
 

@@ -9,7 +9,7 @@
 #import <NewsToday/NSSecureCoding-Protocol.h>
 #import <NewsToday/NTTodayItem-Protocol.h>
 
-@class NSDate, NSObject, NSString, NSURL, SFSearchResult;
+@class NSArray, NSDate, NSObject, NSString, NSURL, SFSearchResult;
 @protocol NTHeadlineAdElement, NTHeadlineAnalyticsElementProviding, NTHeadlineBackingElement, NTHeadlinePersonalizationMetadata;
 
 @protocol NTHeadlineProviding <NSObject, NFCopying, NSSecureCoding, NTTodayItem>
@@ -28,6 +28,7 @@
 @property(readonly, nonatomic) double videoDuration;
 @property(readonly, copy, nonatomic) NSURL *videoURL;
 @property(readonly, copy, nonatomic) SFSearchResult *searchResult;
+@property(readonly, copy, nonatomic) NSArray *topicIDs;
 @property(readonly, copy, nonatomic) NSString *storyType;
 @property(readonly, copy, nonatomic) NSString *identifier;
 @property(readonly, copy, nonatomic) NSURL *NewsURL;
@@ -38,6 +39,7 @@
 @property(readonly, copy, nonatomic) NSURL *compactSourceNameImageRemoteURL;
 @property(readonly, nonatomic) double sourceNameImageScale;
 @property(readonly, copy, nonatomic) NSURL *sourceNameImageRemoteURL;
+@property(readonly, copy, nonatomic) NSString *language;
 @property(readonly, copy, nonatomic) NSString *sourceTagID;
 @property(readonly, copy, nonatomic) NSString *compactSourceName;
 @property(readonly, copy, nonatomic) NSString *sourceName;

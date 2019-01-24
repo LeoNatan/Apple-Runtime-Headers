@@ -16,6 +16,9 @@ __attribute__((visibility("hidden")))
 + (id)stateSharingID;
 + (Class)stateClass;
 + (id)effect;
+- (void)injectMetalShaderInto:(id)arg1 context:(id)arg2;
+- (void)injectGLSLInto:(id)arg1 context:(id)arg2;
+- (void)injectCommonShaderInto:(id)arg1 context:(id)arg2;
 - (void)uploadData:(id)arg1 effectsStates:(id)arg2 updateCurrentStates:(id)arg3;
 - (void)uploadData:(id)arg1 effectsStates:(id)arg2;
 - (void)updateState:(id)arg1 effectsStates:(id)arg2;

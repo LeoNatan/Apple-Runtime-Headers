@@ -15,6 +15,5 @@
 - (_Bool)contextShouldAllowPasscodeFallback:(_SFAuthenticationContext *)arg1;
 - (_Bool)contextRequiresSessionBasedAuthentication:(_SFAuthenticationContext *)arg1;
 - (double)invalidationTimeoutIfApplicationEntersBackgroundDuringAuthenticationForContext:(_SFAuthenticationContext *)arg1;
-- (_Bool)authenticationEnabledForContext:(_SFAuthenticationContext *)arg1;
 @end
 

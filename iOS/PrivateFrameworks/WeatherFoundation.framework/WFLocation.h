@@ -67,6 +67,7 @@
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)initWithPlacemark:(id)arg1;
+- (id)initWithMapItem:(id)arg1 isCurrentLocation:(_Bool)arg2;
 - (id)initWithMapItem:(id)arg1;
 - (id)initWithSearchResponse:(id)arg1;
 - (id)init;

@@ -20,6 +20,7 @@
 
 @property(nonatomic) BOOL isContinuousRunningMode; // @synthesize isContinuousRunningMode=_isContinuousRunningMode;
 - (void).cxx_destruct;
+- (void)_notifySuperVector:(id)arg1;
 - (void)_notifyKeywordDetect;
 - (void)_notifyTwoShotDetectionAt:(double)arg1;
 - (void)_notifySpeakerReject:(id)arg1;
@@ -27,6 +28,7 @@
 - (void)_notifyTriggerEvent:(id)arg1;
 - (id)_createVoiceTriggerEventInfoString:(id)arg1;
 - (void)keywordDetectorDidDetectKeyword;
+- (void)voiceTriggerGotSuperVector:(id)arg1;
 - (void)voiceTriggerDidDetectTwoShotAtTime:(double)arg1;
 - (void)voiceTriggerDidDetectSpeakerReject:(id)arg1;
 - (void)voiceTriggerDidDetectNearMiss:(id)arg1;

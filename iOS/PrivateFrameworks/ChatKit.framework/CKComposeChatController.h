@@ -60,6 +60,7 @@
 - (void)recipientSelectionController:(id)arg1 didSelectConversation:(id)arg2;
 - (void)sendAnimationManagerWillStartAnimation:(id)arg1 context:(id)arg2;
 - (_Bool)becomeFirstResponder;
+- (id)textViewOnscreenWithEntryView;
 - (void)messageEntryViewSendButtonHitWhileDisabled:(id)arg1;
 - (void)_passKitUIDismissed:(id)arg1;
 - (void)messageEntryViewSendButtonHit:(id)arg1;

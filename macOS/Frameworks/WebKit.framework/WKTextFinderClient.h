@@ -25,6 +25,7 @@ __attribute__((visibility("hidden")))
 - (void)selectFindMatch:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)getSelectedText:(CDUnknownBlockType)arg1;
 - (void)findMatchesForString:(id)arg1 relativeToMatch:(id)arg2 findOptions:(unsigned long long)arg3 maxResults:(unsigned long long)arg4 resultCollector:(CDUnknownBlockType)arg5;
+- (void)replaceMatches:(id)arg1 withString:(id)arg2 inSelectionOnly:(BOOL)arg3 resultCollector:(CDUnknownBlockType)arg4;
 - (void)willDestroyView:(id)arg1;
 - (id)initWithPage:(struct WebPageProxy *)arg1 view:(id)arg2;
 

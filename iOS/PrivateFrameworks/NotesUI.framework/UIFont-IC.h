@@ -42,6 +42,7 @@
 - (id)fontConvertedToSize:(double)arg1;
 - (id)fontWithTabularNumbers;
 - (_Bool)fontHasSingleLineA;
+- (id)ic_fontWithoutSingleLineA;
 - (id)fontWithSingleLineA;
 @end
 

@@ -7,7 +7,7 @@
 #import <NearField/NSObject-Protocol.h>
 
 @class NSArray, NSData, NSObject, NSString, NSUUID;
-@protocol NFContactlessPaymentSessionCallbacks, NFContactlessSessionCallbacks, NFECommercePaymentSessionCallbacks, NFFieldDetectSessionCallbacks, NFHardwareManagerCallbacks, NFNdefTagSessionCallbacks, NFPeerPaymentSessionCallbacks, NFReaderSessionCallbacks, NFSecureElementManagerSessionCallbacks, NFSecureElementSessionCallbacks, NFSessionInterface, NFValueAddedServiceSessionCallbacks;
+@protocol NFContactlessPaymentSessionCallbacks, NFContactlessSessionCallbacks, NFECommercePaymentSessionCallbacks, NFFieldDetectSessionCallbacks, NFHardwareManagerCallbacks, NFNdefTagSessionCallbacks, NFPeerPaymentSessionCallbacks, NFReaderSessionCallbacks, NFSecureElementManagerSessionCallbacks, NFSecureElementSessionCallbacks, NFSessionInterface, NFTrustSessionCallbacks, NFValueAddedServiceSessionCallbacks;
 
 @protocol NFHardwareManagerInterface <NSObject>
 - (oneway void)actOnUserInitiatedSystemShutDown:(unsigned int)arg1 callback:(void (^)(void))arg2;
@@ -33,6 +33,7 @@
 - (oneway void)toggleGPIO:(unsigned short)arg1 callback:(void (^)(NSError *))arg2;
 - (oneway void)enableHeadlessTestMode:(unsigned short)arg1 callback:(void (^)(NSError *))arg2;
 - (oneway void)triggerDelayedWake:(unsigned char)arg1 callback:(void (^)(NSError *))arg2;
+- (oneway void)queueTrustSession:(NSObject<NFTrustSessionCallbacks> *)arg1 callback:(void (^)(NSObject<NFTrustSessionInterface> *, BOOL, NSError *))arg2;
 - (oneway void)queueLoyaltyAndPaymentSession:(NSObject<NFContactlessPaymentSessionCallbacks> *)arg1 callback:(void (^)(NSObject<NFContactlessPaymentSessionInterface> *, BOOL, NSError *))arg2;
 - (oneway void)queueHostCardEmulationSession:(NSObject<NFValueAddedServiceSessionCallbacks> *)arg1 withCards:(NSArray *)arg2 callback:(void (^)(NSObject<NFValueAddedServiceSessionInterface> *, NSError *))arg3;
 - (oneway void)queueSecureElementManagerSessionWithPriority:(NSObject<NFSecureElementManagerSessionCallbacks> *)arg1 callback:(void (^)(NSObject<NFSecureElementManagerSessionInterface> *, BOOL, NSError *))arg2;

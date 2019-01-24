@@ -34,6 +34,7 @@ __attribute__((visibility("hidden")))
 - (id)commandForPasteStyleWithContext:(id)arg1 pasteboardStyles:(id)arg2 tailLineEndInfo:(int)arg3;
 - (id)commandForPasteStyleWithContext:(id)arg1 pasteboardStyles:(id)arg2;
 - (id)stylesForCopyStyle;
+- (unsigned short)stylePropertyId;
 - (id)stylePropertyName;
 @property(retain, nonatomic) TSSStyle *style;
 - (Class)styleClass;

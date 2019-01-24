@@ -26,6 +26,7 @@
 @property(copy, nonatomic) NSString *sessionID; // @synthesize sessionID=_sessionID;
 - (void).cxx_destruct;
 - (void)getChangedIndexesForClientPeopleList:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
+- (void)getChangedIndexesForClientPeopleList:(id)arg1 peopleList:(unsigned long long)arg2 withCompletion:(CDUnknownBlockType)arg3;
 - (void)updateDiscoveredPeople;
 - (void)handleBrowserCallBack;
 - (void)stop;

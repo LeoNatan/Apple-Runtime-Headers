@@ -7,12 +7,13 @@
 #import <AppKit/NSSplitViewController.h>
 
 #import <Safari/NSSplitViewDelegate-Protocol.h>
+#import <Safari/SidebarStateRestorationContext-Protocol.h>
 
 @class BrowserWindowController, NSColor, NSSplitViewItem, NSString, NSView, NSVisualEffectView, SidebarViewController;
 @protocol BrowserWindowContentSplitViewControllerDelegate;
 
 __attribute__((visibility("hidden")))
-@interface BrowserWindowContentSplitViewController : NSSplitViewController <NSSplitViewDelegate>
+@interface BrowserWindowContentSplitViewController : NSSplitViewController <NSSplitViewDelegate, SidebarStateRestorationContext>
 {
     BrowserWindowController *_browserWindowController;
     NSSplitViewItem *_sidebarSplitViewItem;
@@ -23,6 +24,7 @@ __attribute__((visibility("hidden")))
     struct SidebarAnimationContext _sidebarAnimationContext;
     NSVisualEffectView *_visualEffectViewForHidingSeparator;
     unsigned long long _fakeSidebarTransitionDepth;
+    NSString *_lastDisplayedSidebarBookmarkListUUID;
     SidebarViewController *_sidebarViewController;
     NSView *_sidebarClipView;
     id <BrowserWindowContentSplitViewControllerDelegate> _delegate;
@@ -31,6 +33,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) __weak id <BrowserWindowContentSplitViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) NSView *sidebarClipView; // @synthesize sidebarClipView=_sidebarClipView;
 @property(retain, nonatomic) SidebarViewController *sidebarViewController; // @synthesize sidebarViewController=_sidebarViewController;
+@property(copy, nonatomic) NSString *lastDisplayedSidebarBookmarkListUUID; // @synthesize lastDisplayedSidebarBookmarkListUUID=_lastDisplayedSidebarBookmarkListUUID;
 - (void).cxx_destruct;
 - (id)_performanceOperationName;
 - (BOOL)_splitView:(id)arg1 canLiveCollapseArrangedSubview:(id)arg2;

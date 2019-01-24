@@ -52,6 +52,7 @@
 - (id)appearances;
 - (id)nameForAppearanceIdentifier:(unsigned short)arg1;
 - (unsigned short)appearanceIdentifierForName:(id)arg1;
+- (int)validatekeyformat;
 - (int)validateBitmapInfo;
 - (void)_buildBitmapInfoIntoDictionary:(id)arg1;
 - (void)_addBitmapIndexForNameIdentifier:(unsigned short)arg1 attribute:(int)arg2 withValue:(unsigned short)arg3 toDictionary:(id)arg4;

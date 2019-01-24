@@ -29,8 +29,8 @@ __attribute__((visibility("hidden")))
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithStartTime:(double)arg1;
 - (id)initWithStartTime:(double)arg1 targetSlideNode:(id)arg2 targetEventIndex:(unsigned long long)arg3 animationPhase:(long long)arg4;
-- (void)saveToArchive:(struct RecordingEventArchive *)arg1 archiver:(id)arg2;
-- (id)initWithParentEventTrack:(id)arg1 archive:(const struct RecordingEventArchive *)arg2 unarchiver:(id)arg3;
+-     // Error parsing type: v32@0:8^{RecordingEventArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{RecordingNavigationEventArchive}^{RecordingLaserEventArchive}^{RecordingPauseEventArchive}^{RecordingMovieEventArchive}d}16@24, name: saveToArchive:archiver:
+-     // Error parsing type: @40@0:8@16r^{RecordingEventArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{RecordingNavigationEventArchive}^{RecordingLaserEventArchive}^{RecordingPauseEventArchive}^{RecordingMovieEventArchive}d}24@32, name: initWithParentEventTrack:archive:unarchiver:
 
 @end
 

@@ -67,6 +67,7 @@
 - (void)requestProvisioning:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)requestEligibility:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)requestRequirements:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
+- (void)_logNormalizedLevenshteinDistanceFromString:(id)arg1 toField:(id)arg2 forKey:(id)arg3 onQueue:(id)arg4;
 - (id)newPaymentProvisioningRequest;
 - (id)newPaymentEligibilityRequest;
 - (id)newPaymentRequirementsRequest;

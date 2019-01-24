@@ -14,7 +14,7 @@ __attribute__((visibility("hidden")))
     id <TSPComponentParserDelegate> _delegate;
     unsigned long long _state;
     unsigned int _archiveInfoLength;
-    struct ArchiveInfo _archiveInfo;
+    // Error parsing type: {ArchiveInfo="_vptr$MessageLite"^^?"_internal_metadata_"{InternalMetadataWithArena="ptr_"^v}"_has_bits_"{HasBits<1>="has_bits_"[1I]}"_cached_size_"{CachedSize="size_"{atomic<int>="__a_"Ai}}"message_infos_"{RepeatedPtrField<TSP::MessageInfo>="arena_"^{Arena}"current_size_"i"total_size_"i"rep_"^{Rep}}"identifier_"Q"should_merge_"B}, name: _archiveInfo
     unsigned int _messagesLength;
 }
 

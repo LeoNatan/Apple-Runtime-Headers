@@ -14,6 +14,7 @@
     unsigned int connection;
     struct IONotificationPort *notificationPort;
     NSObject<OS_dispatch_queue> *callbackQueue;
+    NSObject<OS_dispatch_queue> *callbackActionQueue;
     unsigned int localArrivalIterator;
     unsigned int localDepartureIterator;
     unsigned int remoteArrivalIterator;

@@ -43,6 +43,7 @@
 @property(readonly, nonatomic) _Bool manuallyRenamed;
 - (void)setPlayable:(_Bool)arg1;
 @property(readonly, nonatomic) _Bool playable;
+@property(readonly, nonatomic) _Bool uploaded;
 @property(nonatomic) _Bool evicted;
 @property(nonatomic) _Bool pendingRestore;
 @property(nonatomic) _Bool synced;

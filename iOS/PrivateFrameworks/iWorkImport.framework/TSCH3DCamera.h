@@ -53,7 +53,7 @@ __attribute__((visibility("hidden")))
 - (tvec3_17f03ce0)backProjectCameraSpacePoint:(const tvec3_17f03ce0 *)arg1;
 - (tvec3_17f03ce0)fastProjectNormalizedPoint:(tvec2_84d5962d *)arg1 planeDistance:(float)arg2;
 - (tvec3_17f03ce0)projectNormalizedPoint:(tvec2_84d5962d *)arg1 planeDistance:(float)arg2;
-- (struct FrustumSlice)frustumSliceAtDistance:(float)arg1;
+- (id)frustumSliceAtDistance:(float)arg1;
 - (void)setPosition:(tvec3_17f03ce0)arg1;
 @property(readonly, nonatomic) tvec3_17f03ce0 position;
 - (void)setDirection:(tvec3_17f03ce0)arg1;

@@ -6,18 +6,10 @@
 
 #import <UIKit/UIPresentationController.h>
 
-@class UIView;
-
 @interface TVPMusicNowPlayingVideoPresentationController : UIPresentationController
 {
-    UIView *_dimmingView;
 }
 
-- (void).cxx_destruct;
-- (void)dismissalTransitionDidEnd:(_Bool)arg1;
-- (void)dismissalTransitionWillBegin;
-- (void)presentationTransitionDidEnd:(_Bool)arg1;
-- (void)presentationTransitionWillBegin;
 - (_Bool)shouldRemovePresentersView;
 
 @end

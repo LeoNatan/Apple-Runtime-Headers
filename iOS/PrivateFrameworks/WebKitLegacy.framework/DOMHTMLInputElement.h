@@ -69,6 +69,7 @@
 @property int maxLength;
 - (void)setMax:(id)arg1;
 - (id)max;
+- (id)list;
 @property _Bool indeterminate;
 - (void)setHeight:(unsigned int)arg1;
 - (unsigned int)height;

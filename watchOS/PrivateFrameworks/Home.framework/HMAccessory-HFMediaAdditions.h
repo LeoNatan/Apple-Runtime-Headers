@@ -11,6 +11,7 @@
 @interface HMAccessory (HFMediaAdditions)
 @property(readonly, nonatomic) NSSet *hf_fakeDebugSymptoms;
 - (void)_pushSymptomUpdate;
+@property(readonly, nonatomic) _Bool hf_fake8021xNetworkSymptom;
 @property(readonly, nonatomic) _Bool hf_fakeVPNProfileExpired;
 @property(nonatomic) _Bool hf_fakeWiFiMismatchSymptom;
 @property(readonly, nonatomic) _Bool hf_fakeShouldDisplayManualFixOption;

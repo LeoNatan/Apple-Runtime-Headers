@@ -10,6 +10,7 @@
 #import <NewsCore/FCFeedGroupOutlining-Protocol.h>
 
 @class FCColor, FCColorGradient, FCFeedEdition, FCSharedStringIndex, NSArray, NSDate, NSString, NTPBDiscoverMoreVideosInfo, NTPBFeedViewportGroup;
+@protocol FCForYouMagazineFeedGroup;
 
 @interface FCDeflatedFeedGroup : NSObject <FCFeedElement, FCFeedGroupOutlining>
 {
@@ -24,6 +25,8 @@
 @property(readonly, copy, nonatomic) NSArray *videoPlaylistHeadlines; // @synthesize videoPlaylistHeadlines=_videoPlaylistHeadlines;
 @property(readonly, copy, nonatomic) NSArray *headlines; // @synthesize headlines=_headlines;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <FCForYouMagazineFeedGroup> magazineGroup;
+@property(readonly, copy, nonatomic) NSArray *issueIDs;
 @property(readonly, copy, nonatomic) NSString *backingTagID;
 @property(readonly, nonatomic) unsigned long long mergeID;
 @property(readonly, nonatomic) unsigned long long options;
@@ -31,9 +34,13 @@
 @property(readonly, nonatomic) NSDate *creationDate;
 @property(readonly, copy, nonatomic) NTPBDiscoverMoreVideosInfo *discoverMoreVideosInfo;
 @property(readonly, copy, nonatomic) FCColorGradient *backgroundGradient;
+@property(readonly, copy, nonatomic) FCColorGradient *sauceGradient;
+@property(readonly, copy, nonatomic) FCColor *cardBackgroundColor;
 @property(readonly, copy, nonatomic) FCColor *titleColor;
+@property(readonly, copy, nonatomic) NSString *ctaText;
 @property(readonly, copy, nonatomic) NSString *subtitle;
 @property(readonly, copy, nonatomic) NSString *title;
+@property(readonly, copy, nonatomic) NSString *eyebrowText;
 @property(readonly, nonatomic) long long groupType;
 @property(readonly, copy, nonatomic) NSString *sourceIdentifier;
 - (_Bool)isGap;

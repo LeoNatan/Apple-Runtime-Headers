@@ -10,6 +10,8 @@
 
 @interface STUsageDetailsViewModel : NSObject
 {
+    _Bool _localDevice;
+    _Bool _hasAggregateUsageData;
     unsigned long long _selectedTimePeriod;
     NSString *_selectedItemDisplayName;
     NSDate *_lastUpdatedDate;
@@ -23,10 +25,13 @@
 @property(readonly, copy, nonatomic) NSArray *rawUsageItems; // @synthesize rawUsageItems=_rawUsageItems;
 @property(retain, nonatomic) STUsageReport *weekUsageReport; // @synthesize weekUsageReport=_weekUsageReport;
 @property(retain, nonatomic) STUsageReport *todayUsageReport; // @synthesize todayUsageReport=_todayUsageReport;
+@property _Bool hasAggregateUsageData; // @synthesize hasAggregateUsageData=_hasAggregateUsageData;
 @property(retain, nonatomic) NSDate *lastUpdatedDate; // @synthesize lastUpdatedDate=_lastUpdatedDate;
 @property(copy, nonatomic) NSString *selectedItemDisplayName; // @synthesize selectedItemDisplayName=_selectedItemDisplayName;
 @property unsigned long long selectedTimePeriod; // @synthesize selectedTimePeriod=_selectedTimePeriod;
+@property(getter=isLocalDevice) _Bool localDevice; // @synthesize localDevice=_localDevice;
 - (void).cxx_destruct;
+- (void)_setRawUsageItems:(id)arg1 lastUpdatedDate:(id)arg2 firstPickupOnReferenceDate:(id)arg3 referenceDate:(id)arg4;
 - (void)setRawUsageItems:(id)arg1 lastUpdatedDate:(id)arg2;
 @property(readonly, nonatomic) STUsageReport *selectedUsageReport;
 @property(readonly, nonatomic) _Bool hasUsageData;

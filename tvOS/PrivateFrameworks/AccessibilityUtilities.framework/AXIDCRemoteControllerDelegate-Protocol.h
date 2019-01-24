@@ -10,7 +10,7 @@
 @protocol AXIDCManagerSecurityDelegate;
 
 @protocol AXIDCRemoteControllerDelegate <NSObject>
-@property(nonatomic) id <AXIDCManagerSecurityDelegate> securityDelegate;
+@property(nonatomic) __weak id <AXIDCManagerSecurityDelegate> securityDelegate;
 - (void)controller:(AXIDCRemoteController *)arg1 didCloseConnectionWithError:(NSError *)arg2;
 - (void)controllerDidFinishConnecting:(AXIDCRemoteController *)arg1;
 - (void)controller:(AXIDCRemoteController *)arg1 didFinishSendingData:(AXIDCMessage *)arg2;

@@ -37,6 +37,7 @@
 - (id)startNdefTagSessionWithBluetoothLESecureOOBData:(id)arg1 callback:(CDUnknownBlockType)arg2;
 - (id)startNdefTagSession:(CDUnknownBlockType)arg1;
 - (id)startPeerPaymentSession:(CDUnknownBlockType)arg1;
+- (id)startTrustSession:(CDUnknownBlockType)arg1;
 - (BOOL)preWarm;
 - (id)startSesHatSession:(CDUnknownBlockType)arg1;
 - (id)startReaderSession:(CDUnknownBlockType)arg1;

@@ -21,6 +21,7 @@
 - (_Bool)_isFeldsparOldArticleURL;
 - (_Bool)fc_isNewsURL;
 - (id)fc_NewsArticleID;
+- (_Bool)fc_isHardPaywallNewsArticleURL:(out id *)arg1;
 - (_Bool)fc_isNewsArticleURL;
 @end
 

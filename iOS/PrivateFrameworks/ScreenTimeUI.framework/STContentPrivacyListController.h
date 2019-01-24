@@ -34,7 +34,7 @@
 - (void)showiTunesPurchasesRestrictions:(id)arg1;
 - (id)_allowChangesSpecifiers;
 - (id)_privacySpecifiers;
-- (id)_iTunesPurchasesSpecifiers;
+- (id)storeDetailSpecifiers;
 - (id)_topLevelSpecifiers;
 - (id)_featureSwitchSpecifier;
 - (id)specifiers;

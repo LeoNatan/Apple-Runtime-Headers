@@ -25,6 +25,7 @@
 - (void)fetchLatestRampState;
 - (void)writeCloudKitSyncCounts:(id)arg1;
 - (void)fetchSyncStateStatistics;
+- (void)updateAttachmentFileSizes;
 - (void)purgeAttachments:(long long)arg1;
 - (void)metricAttachments:(long long)arg1;
 - (void)deleteSalt;
@@ -81,6 +82,8 @@
 - (void)writeDirtyChats;
 - (void)createChatZone;
 - (void)setupIMCloudKitHooks;
+- (void)clearAnalyticDefaultsAndLocalSyncState;
+- (void)uploadDailyAnalyticstoCloudKit;
 - (id)init;
 - (id)logHandle;
 

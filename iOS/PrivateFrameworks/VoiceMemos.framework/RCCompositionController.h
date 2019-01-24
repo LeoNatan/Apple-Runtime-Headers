@@ -56,6 +56,7 @@
 - (void)activeRecordingSessionWillFinish;
 - (void)beginRecordingWithInputDevice:(id)arg1 captureInsertionRange:(CDStruct_73a5d3ca)arg2 isUndoable:(_Bool)arg3 isOverdub:(_Bool)arg4 sessionPreparedBlock:(CDUnknownBlockType)arg5 sessionFinishedBlock:(CDUnknownBlockType)arg6;
 - (void)_endAccessSessions:(CDUnknownBlockType)arg1;
+- (void)trimDidSave;
 - (void)endAccessSessionsWithCompletionBlock:(CDUnknownBlockType)arg1;
 - (void)endPreviewAccessSession;
 - (void)endEditingWithCompletionBlock:(CDUnknownBlockType)arg1;

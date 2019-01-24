@@ -11,8 +11,8 @@ __attribute__((visibility("hidden")))
 {
 }
 
-- (BOOL)accessibilityIsAttributeSettable:(id)arg1;
 - (id)accessibilityTabs;
+- (void)setAccessibilityTabs:(id)arg1;
 - (id)accessibilityRoleDescription;
 - (id)accessibilityRole;
 

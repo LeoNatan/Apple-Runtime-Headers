@@ -19,6 +19,7 @@
 + (id)customCategoricalTransformerWithName:(id)arg1 block:(CDUnknownBlockType)arg2;
 + (id)maskTransformWithWidth:(unsigned long long)arg1;
 + (id)hashTransform;
++ (id)roundTransformer;
 + (id)binaryTransformerWithThreshold:(id)arg1;
 + (id)logTransformerWithBase:(id)arg1;
 + (id)bucketTransformerWithBitWidth:(unsigned long long)arg1;

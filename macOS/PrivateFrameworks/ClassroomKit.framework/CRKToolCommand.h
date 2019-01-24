@@ -27,6 +27,7 @@
 + (id)help;
 + (id)description;
 + (id)aliases;
++ (id)subcommandPath;
 @property(copy, nonatomic) NSString *sessionIdentifier; // @synthesize sessionIdentifier=_sessionIdentifier;
 @property(nonatomic) __weak id <CRKToolCommandDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;

@@ -8,7 +8,7 @@
 
 #import <NewsTransport/NSCopying-Protocol.h>
 
-@class NSString;
+@class NSData, NSString, NTPBIssueData, NTPBIssueExposureData, NTPBIssueViewData;
 
 @interface NTPBAnfComponentExposure : PBCodable <NSCopying>
 {
@@ -19,6 +19,10 @@
     NSString *_anfComponentType;
     NSString *_articleId;
     NSString *_articleVersion;
+    NSData *_articleViewingSessionId;
+    NTPBIssueData *_issueData;
+    NTPBIssueExposureData *_issueExposureData;
+    NTPBIssueViewData *_issueViewData;
     NSString *_metadata;
     NSString *_sourceChannelId;
     struct {
@@ -27,6 +31,10 @@
     } _has;
 }
 
+@property(retain, nonatomic) NSData *articleViewingSessionId; // @synthesize articleViewingSessionId=_articleViewingSessionId;
+@property(retain, nonatomic) NTPBIssueViewData *issueViewData; // @synthesize issueViewData=_issueViewData;
+@property(retain, nonatomic) NTPBIssueExposureData *issueExposureData; // @synthesize issueExposureData=_issueExposureData;
+@property(retain, nonatomic) NTPBIssueData *issueData; // @synthesize issueData=_issueData;
 @property(nonatomic) long long backendArticleVersionInt64; // @synthesize backendArticleVersionInt64=_backendArticleVersionInt64;
 @property(nonatomic) long long publisherArticleVersionInt64; // @synthesize publisherArticleVersionInt64=_publisherArticleVersionInt64;
 @property(retain, nonatomic) NSString *articleVersion; // @synthesize articleVersion=_articleVersion;
@@ -45,6 +53,10 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(readonly, nonatomic) _Bool hasArticleViewingSessionId;
+@property(readonly, nonatomic) _Bool hasIssueViewData;
+@property(readonly, nonatomic) _Bool hasIssueExposureData;
+@property(readonly, nonatomic) _Bool hasIssueData;
 @property(nonatomic) _Bool hasBackendArticleVersionInt64;
 @property(nonatomic) _Bool hasPublisherArticleVersionInt64;
 @property(readonly, nonatomic) _Bool hasArticleVersion;

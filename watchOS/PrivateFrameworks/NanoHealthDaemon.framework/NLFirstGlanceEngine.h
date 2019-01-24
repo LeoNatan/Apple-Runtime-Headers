@@ -27,7 +27,8 @@
 - (double)recommendedGoalInCalories;
 - (id)bestCompletedActivitySummaryThisWeek;
 - (id)yesterdayActivitySummary;
-- (id)bestWorkoutYesterday;
+- (id)longestWorkoutYesterdayLongerThan60Minutes;
+- (id)bestWorkoutYesterdayLongerThan15Minutes;
 - (id)completedAchievementForYesterday;
 - (id)yesterdayLocalizationKeyForAchievement:(id)arg1;
 - (id)progressLocalizationKeyForAchievement:(id)arg1 progressMilestone:(id)arg2;

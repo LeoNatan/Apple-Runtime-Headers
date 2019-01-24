@@ -6,14 +6,18 @@
 
 #import <iTunesCloud/ICURLResponseAuthenticationProvider.h>
 
-@interface ICStoreURLResponseAuthenticationProvider : ICURLResponseAuthenticationProvider
+#import <iTunesCloud/NSSecureCoding-Protocol.h>
+
+@interface ICStoreURLResponseAuthenticationProvider : ICURLResponseAuthenticationProvider <NSSecureCoding>
 {
     long long _interactionLevel;
 }
 
-+ (id)defaultProvider;
++ (_Bool)supportsSecureCoding;
 - (void)_adjustedAuthenticationPolicyForResponse:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)_performAuthenticationUsingRequestContext:(id)arg1 usingVerificationInteractionLevel:(long long)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (void)performAuthenticationUsingRequestContext:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)performAuthenticationToHandleResponse:(id)arg1 toRequest:(id)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
 - (id)initWithUserInteractionLevel:(long long)arg1;

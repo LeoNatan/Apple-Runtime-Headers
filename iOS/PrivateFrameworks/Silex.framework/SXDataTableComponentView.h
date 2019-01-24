@@ -59,14 +59,13 @@
 - (id)textComponentLayoutHostingForDataTableComponentController:(id)arg1;
 - (id)contentSizeCategoryForDataTableComponentController:(id)arg1;
 - (id)documentColumnLayoutForDataTableComponentController:(id)arg1;
-- (id)documentControllerForDataTableComponentController:(id)arg1;
 - (id)componentForDataTableComponentController:(id)arg1;
 - (double)widthForDataTableComponentController:(id)arg1;
 - (id)dataTableView:(id)arg1 viewForCellAtIndexPath:(CDStruct_2fea82da)arg2 constraintToSize:(struct CGSize)arg3;
 - (void)receivedInfo:(id)arg1 fromLayoutingPhaseWithIdentifier:(id)arg2;
 - (void)dealloc;
 - (void)presentComponentWithChanges:(CDStruct_1cc9d0d0)arg1;
-- (id)initWithDocumentController:(id)arg1 viewport:(id)arg2 presentationDelegate:(id)arg3 analyticsReporting:(id)arg4 componentStyleRendererFactory:(id)arg5 imageViewFactory:(id)arg6 componentActionHandler:(id)arg7 textComponentLayoutHosting:(id)arg8 componentController:(id)arg9;
+- (id)initWithDOMObjectProvider:(id)arg1 viewport:(id)arg2 presentationDelegate:(id)arg3 analyticsReporting:(id)arg4 componentStyleRendererFactory:(id)arg5 imageViewFactory:(id)arg6 componentActionHandler:(id)arg7 textComponentLayoutHosting:(id)arg8 componentController:(id)arg9;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -17,6 +17,7 @@ __attribute__((visibility("hidden")))
     BOOL _retryPCSFailures;
     BOOL _canSetPreviousProtectionEtag;
     BOOL _trustProtectionData;
+    BOOL _shouldModifyRecordsInDatabase;
     BOOL _retriedRecords;
     BOOL _shouldOnlySaveAssetContent;
     BOOL _haveOutstandingHandlers;
@@ -72,6 +73,7 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) CDUnknownBlockType deleteCompletionBlock; // @synthesize deleteCompletionBlock=_deleteCompletionBlock;
 @property(copy, nonatomic) CDUnknownBlockType saveCompletionBlock; // @synthesize saveCompletionBlock=_saveCompletionBlock;
 @property(copy, nonatomic) CDUnknownBlockType saveProgressBlock; // @synthesize saveProgressBlock=_saveProgressBlock;
+@property(nonatomic) BOOL shouldModifyRecordsInDatabase; // @synthesize shouldModifyRecordsInDatabase=_shouldModifyRecordsInDatabase;
 @property(copy, nonatomic) NSData *cachedUserBoundaryKeyData; // @synthesize cachedUserBoundaryKeyData=_cachedUserBoundaryKeyData;
 @property(nonatomic) BOOL trustProtectionData; // @synthesize trustProtectionData=_trustProtectionData;
 @property(nonatomic) BOOL canSetPreviousProtectionEtag; // @synthesize canSetPreviousProtectionEtag=_canSetPreviousProtectionEtag;

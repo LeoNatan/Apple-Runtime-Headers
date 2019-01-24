@@ -9,6 +9,8 @@
 @class NSString, SBUIProudLockContainerViewController;
 
 @protocol SBUIPasscodeLockView_Internal <SBUIPasscodeLockView>
+@property(nonatomic) _Bool canSuggestSwipeToRetry;
+@property(nonatomic) _Bool confirmedNotInPocket;
 @property(nonatomic) CDStruct_4613c6c6 proudLockConfiguration;
 @property(retain, nonatomic) SBUIProudLockContainerViewController *overrideProudLockContainerViewController;
 - (void)didEndTransitionToState:(int)arg1;

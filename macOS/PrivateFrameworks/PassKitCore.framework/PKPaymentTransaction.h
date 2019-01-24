@@ -23,6 +23,7 @@
     BOOL _processedForStations;
     BOOL _hasAssociatedPaymentApplication;
     BOOL _hasNotificationServiceData;
+    BOOL _originatedByDevice;
     NSString *_identifier;
     NSString *_serviceIdentifier;
     NSString *_paymentHash;
@@ -67,6 +68,7 @@
     NSString *_secondaryFundingSourceDPANSuffix;
     NSString *_secondaryFundingSourceFPANIdentifier;
     NSString *_secondaryFundingSourceDescription;
+    long long _secondaryFundingSourceType;
     NSUUID *_requestDeviceScoreIdentifier;
     NSUUID *_sendDeviceScoreIdentifier;
     NSString *_merchantProvidedDescription;
@@ -90,6 +92,7 @@
 @property(nonatomic) long long technologyType; // @synthesize technologyType=_technologyType;
 @property(nonatomic) long long transactionType; // @synthesize transactionType=_transactionType;
 @property(nonatomic) long long transactionStatus; // @synthesize transactionStatus=_transactionStatus;
+@property(nonatomic) BOOL originatedByDevice; // @synthesize originatedByDevice=_originatedByDevice;
 @property(nonatomic) BOOL hasNotificationServiceData; // @synthesize hasNotificationServiceData=_hasNotificationServiceData;
 @property(nonatomic) BOOL hasAssociatedPaymentApplication; // @synthesize hasAssociatedPaymentApplication=_hasAssociatedPaymentApplication;
 @property(nonatomic) BOOL processedForStations; // @synthesize processedForStations=_processedForStations;
@@ -102,6 +105,7 @@
 @property(nonatomic) BOOL deviceScoreIdentifiersRequired; // @synthesize deviceScoreIdentifiersRequired=_deviceScoreIdentifiersRequired;
 @property(copy, nonatomic) NSUUID *sendDeviceScoreIdentifier; // @synthesize sendDeviceScoreIdentifier=_sendDeviceScoreIdentifier;
 @property(copy, nonatomic) NSUUID *requestDeviceScoreIdentifier; // @synthesize requestDeviceScoreIdentifier=_requestDeviceScoreIdentifier;
+@property(nonatomic) long long secondaryFundingSourceType; // @synthesize secondaryFundingSourceType=_secondaryFundingSourceType;
 @property(copy, nonatomic) NSString *secondaryFundingSourceDescription; // @synthesize secondaryFundingSourceDescription=_secondaryFundingSourceDescription;
 @property(copy, nonatomic) NSString *secondaryFundingSourceFPANIdentifier; // @synthesize secondaryFundingSourceFPANIdentifier=_secondaryFundingSourceFPANIdentifier;
 @property(copy, nonatomic) NSString *secondaryFundingSourceDPANSuffix; // @synthesize secondaryFundingSourceDPANSuffix=_secondaryFundingSourceDPANSuffix;

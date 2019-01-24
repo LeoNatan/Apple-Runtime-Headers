@@ -16,11 +16,11 @@
 }
 
 + (_Bool)supportsSecureCoding;
-- (CDUnknownBlockType).cxx_destruct;
+- (void).cxx_destruct;
 - (id)init;
 @property(nonatomic, readonly) NSString *description;
 - (_Bool)isEqual:(id)arg1;
-@property(nonatomic, readonly) int hashValue;
+@property(nonatomic, readonly) int hash;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithDeviceName:(id)arg1 ownerFirstName:(id)arg2 ownerLastName:(id)arg3;

@@ -11,7 +11,7 @@
 
 @interface PFCoalescer : NSObject
 {
-    long long _sequenceNumber;
+    // Error parsing type: Aq, name: _sequenceNumber
     long long _fireSequenceNumber;
     long long _resetSequenceNumber;
     long long _lastUpdateResetSequenceNumber;

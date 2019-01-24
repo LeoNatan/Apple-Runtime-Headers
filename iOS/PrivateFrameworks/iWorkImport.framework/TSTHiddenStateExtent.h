@@ -9,7 +9,7 @@
 #import <iWorkImport/TSCEFormulaOwning-Protocol.h>
 #import <iWorkImport/TSTGroupByChangeProtocol-Protocol.h>
 
-@class NSArray, NSMutableArray, NSMutableIndexSet, NSString, TSCECalculationEngine, TSTHiddenStatesOwner, TSTInfo, TSTTableFilterSet, TSUMutableUUIDSet, TSUUUIDSet;
+@class NSArray, NSMutableArray, NSMutableIndexSet, NSString, TSCECalculationEngine, TSTHiddenStatesOwner, TSTTableFilterSet, TSTTableInfo, TSUMutableUUIDSet, TSUUUIDSet;
 @protocol OS_dispatch_queue;
 
 __attribute__((visibility("hidden")))
@@ -23,7 +23,7 @@ __attribute__((visibility("hidden")))
     UUIDData_5fbc143e _hiddenStatesOwnerUid;
     TSTHiddenStatesOwner *_hiddenStatesOwner;
     TSCECalculationEngine *_calcEngine;
-    TSTInfo *_tableInfo;
+    TSTTableInfo *_tableInfo;
     NSMutableIndexSet *_baseUserHiddenIndexes;
     NSMutableIndexSet *_baseFilteredIndexes;
     NSMutableIndexSet *_anyBaseHiddenIndexes;
@@ -64,6 +64,8 @@ __attribute__((visibility("hidden")))
 - (struct TSCECellRef)cellReferenceForIndex:(struct TSUModelColumnOrRowIndex)arg1;
 - (_Bool)hasFilterRulesWithTable:(id)arg1 inBaseColumns:(id)arg2;
 - (void)dirtyFilterState;
+- (void)dirtyFilterStateForHeaders;
+- (void)dirtyFilterStateForRowRange:(struct _NSRange)arg1;
 - (void)filterSetUpdated;
 - (_Bool)hasActiveFilters;
 - (void)setFilterSetType:(int)arg1;
@@ -72,13 +74,13 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool needsFilterFormulaRewriteForImport;
 - (id)duplicateFilterSetInUidFormWithTable:(id)arg1;
 - (id)duplicateFilterSet;
-@property(retain, nonatomic) TSTTableFilterSet *filterSet; // @synthesize filterSet=_filterSet;
+@property(retain, nonatomic) TSTTableFilterSet *filterSet;
 - (void)invalidateForCalcEngine:(id)arg1;
 - (void)writeResultsForCalcEngine:(id)arg1;
 - (CDStruct_2a4d9400)recalculateForCalcEngine:(id)arg1 atFormulaCoord:(struct TSUCellCoord)arg2 recalcOptions:(CDStruct_3d581f42)arg3;
 - (id)linkedResolver;
 - (UUIDData_5fbc143e)ownerUID;
-- (int)ownerKind;
+- (unsigned short)ownerKind;
 - (id)p_createThresholdCellValue:(struct TSCEValue)arg1 locale:(id)arg2;
 - (struct TSCEValue)p_calculateTopOrBottomThresholdWithCalcEngine:(id)arg1 formulaCoord:(const struct TSUCellCoord *)arg2 isTop:(_Bool)arg3 keyScale:(int)arg4;
 - (struct TSCEValue)p_calculateAverageThresholdWithCalcEngine:(id)arg1 formulaCoord:(const struct TSUCellCoord *)arg2;
@@ -95,9 +97,9 @@ __attribute__((visibility("hidden")))
 - (void)p_removeAllFormulaFromCalculationEngine;
 - (void)remapTableUIDsInFormulasWithMap:(const UUIDMap_b66c2694 *)arg1 calcEngine:(id)arg2;
 - (void)unregisterFromCalcEngine;
-- (int)registerWithCalcEngine:(id)arg1;
-- (void)encodeToArchive:(struct HiddenStateExtentArchive *)arg1 archiver:(id)arg2;
-- (id)initWithArchive:(const struct HiddenStateExtentArchive *)arg1 unarchiver:(id)arg2 forHiddenStatesOwner:(id)arg3;
+- (int)registerWithCalcEngine:(id)arg1 baseOwnerUID:(const UUIDData_5fbc143e *)arg2;
+-     // Error parsing type: v32@0:8^{HiddenStateExtentArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TST::HiddenStateExtentArchive_RowOrColumnState>=^{Arena}ii^{Rep}}{RepeatedPtrField<TSCE::CellValueArchive>=^{Arena}ii^{Rep}}{RepeatedPtrField<TSP::UUID>=^{Arena}ii^{Rep}}^{UUID}iB}16@24, name: encodeToArchive:archiver:
+-     // Error parsing type: @40@0:8r^{HiddenStateExtentArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TST::HiddenStateExtentArchive_RowOrColumnState>=^{Arena}ii^{Rep}}{RepeatedPtrField<TSCE::CellValueArchive>=^{Arena}ii^{Rep}}{RepeatedPtrField<TSP::UUID>=^{Arena}ii^{Rep}}^{UUID}iB}16@24@32, name: initWithArchive:unarchiver:forHiddenStatesOwner:
 - (id)mutableAnyHiddenIndexes;
 - (id)mutableFilteredIndexes;
 - (id)mutableUserHiddenIndexes;
@@ -114,11 +116,14 @@ __attribute__((visibility("hidden")))
 - (_Bool)anyHiddenInRange:(struct _NSRange)arg1 forAction:(unsigned char)arg2;
 - (_Bool)anyHiddenInRange:(struct _NSRange)arg1;
 - (unsigned int)numberOfUserHiddenInRange:(struct _NSRange)arg1;
+- (unsigned int)numberOfUserHiddenInBaseRange:(struct _NSRange)arg1;
 - (unsigned int)numberOfHiddenInBaseRange:(struct _NSRange)arg1;
 - (unsigned int)numberOfHiddenInRange:(struct _NSRange)arg1;
 - (id)indexesOfVisibleIndexesInIndexes:(id)arg1;
 - (id)indexesOfUserVisibleInRange:(struct _NSRange)arg1;
 - (id)indexesOfVisibleInRange:(struct _NSRange)arg1;
+- (id)indexesOfCollapsedInRange:(struct _NSRange)arg1;
+- (id)indexesOfFilteredInRange:(struct _NSRange)arg1;
 - (id)indexesOfUserHiddenInRange:(struct _NSRange)arg1;
 - (id)indexesOfHiddenInBaseRange:(struct _NSRange)arg1;
 - (id)indexesOfHiddenInRange:(struct _NSRange)arg1;
@@ -153,7 +158,7 @@ __attribute__((visibility("hidden")))
 - (void)willChangeGroupByTo:(id)arg1;
 - (void)syncUpHiddenStateFormulaOwnerUIDs;
 - (void)setTableInfo:(id)arg1;
-@property(readonly, nonatomic) TSTInfo *tableInfo;
+@property(readonly, nonatomic) TSTTableInfo *tableInfo;
 - (void)dealloc;
 - (id)initWithHiddenStatesOwner:(id)arg1 forRows:(_Bool)arg2;
 

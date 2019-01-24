@@ -18,14 +18,15 @@ __attribute__((visibility("hidden")))
     unsigned long long start_time;
     unsigned long long end_time;
     NWConcrete_nw_activity *parent;
+    struct os_unfair_lock_s lock;
     unsigned int label;
     unsigned int domain;
     int reporting_strategy;
     int completion_reason;
-    // Error parsing type: {atomic_flag="_Value"AB}, name: activated
-    // Error parsing type: {atomic_flag="_Value"AB}, name: completed
     unsigned int is_retry:1;
     unsigned int is_lightweight:1;
+    unsigned int activated:1;
+    unsigned int completed:1;
 }
 
 - (void).cxx_destruct;

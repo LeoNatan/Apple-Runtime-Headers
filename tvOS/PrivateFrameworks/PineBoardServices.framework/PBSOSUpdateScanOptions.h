@@ -8,11 +8,25 @@
 
 #import <PineBoardServices/NSSecureCoding-Protocol.h>
 
+@class NSNumber, NSString;
+
 @interface PBSOSUpdateScanOptions : NSObject <NSSecureCoding>
 {
+    _Bool _MDMUseDelayPeriod;
+    NSString *_identifier;
+    NSString *_requestedPMV;
+    NSNumber *_delayPeriod;
 }
 
 + (_Bool)supportsSecureCoding;
++ (id)defaultOptions;
+@property(retain, nonatomic) NSNumber *delayPeriod; // @synthesize delayPeriod=_delayPeriod;
+@property(nonatomic) _Bool MDMUseDelayPeriod; // @synthesize MDMUseDelayPeriod=_MDMUseDelayPeriod;
+@property(retain, nonatomic) NSString *requestedPMV; // @synthesize requestedPMV=_requestedPMV;
+@property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
+- (void).cxx_destruct;
+- (void)_setDefaultOptions;
+- (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 

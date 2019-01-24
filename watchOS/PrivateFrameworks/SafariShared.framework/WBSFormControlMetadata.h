@@ -22,7 +22,9 @@
     NSString *_tagName;
     NSString *_uniqueID;
     NSString *_nextControlUniqueID;
+    NSString *_placeholder;
     NSString *_value;
+    NSString *_passwordRules;
     NSDictionary *_radioButtonInfo;
     NSDictionary *_annotations;
     NSArray *_selectElementInfo;
@@ -31,7 +33,7 @@
     double _rectTop;
     double _rectWidth;
     double _rectHeight;
-    CDUnion_7ece76f8 _flags;
+    CDUnion_2e36ff12 _flags;
     int _size;
     int _maxLength;
     int _minLength;
@@ -47,12 +49,14 @@
 @property(readonly, copy, nonatomic) NSArray *selectElementInfo; // @synthesize selectElementInfo=_selectElementInfo;
 @property(readonly, copy, nonatomic) NSDictionary *radioButtonInfo; // @synthesize radioButtonInfo=_radioButtonInfo;
 @property(readonly, copy, nonatomic) NSString *value; // @synthesize value=_value;
+@property(readonly, copy, nonatomic) NSString *placeholder; // @synthesize placeholder=_placeholder;
 @property(readonly, copy, nonatomic) NSString *nextControlUniqueID; // @synthesize nextControlUniqueID=_nextControlUniqueID;
 @property(readonly, copy, nonatomic) NSString *uniqueID; // @synthesize uniqueID=_uniqueID;
 @property(readonly, copy, nonatomic) NSString *tagName; // @synthesize tagName=_tagName;
 @property(readonly, copy, nonatomic) NSString *fieldName; // @synthesize fieldName=_fieldName;
 @property(readonly, copy, nonatomic) NSString *fieldID; // @synthesize fieldID=_fieldID;
 @property(readonly, copy, nonatomic) NSString *fieldClass; // @synthesize fieldClass=_fieldClass;
+@property(readonly, copy, nonatomic) NSString *passwordRules; // @synthesize passwordRules=_passwordRules;
 @property(readonly, copy, nonatomic) NSString *associatedUsername; // @synthesize associatedUsername=_associatedUsername;
 @property(readonly, copy, nonatomic) NSArray *autocompleteTokens; // @synthesize autocompleteTokens=_autocompleteTokens;
 @property(readonly, copy, nonatomic) NSDictionary *annotations; // @synthesize annotations=_annotations;
@@ -72,6 +76,7 @@
 @property(readonly, nonatomic, getter=isDisabled) _Bool disabled;
 @property(readonly, nonatomic, getter=isActive) _Bool active;
 @property(readonly, nonatomic, getter=isVisible) _Bool visible;
+@property(readonly, nonatomic) _Bool looksLikeOneTimeCodeField;
 @property(readonly, nonatomic) _Bool looksLikePasswordCredentialField;
 @property(readonly, nonatomic) _Bool looksLikeIgnoredDataTypeField;
 @property(readonly, nonatomic) _Bool looksLikeYearField;

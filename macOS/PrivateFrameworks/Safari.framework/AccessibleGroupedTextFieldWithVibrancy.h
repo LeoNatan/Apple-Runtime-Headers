@@ -15,11 +15,11 @@ __attribute__((visibility("hidden")))
 
 @property(nonatomic, getter=isPrimaryElement) BOOL primaryElement; // @synthesize primaryElement=_primaryElement;
 @property(nonatomic) long long siblingGroupingId; // @synthesize siblingGroupingId=_siblingGroupingId;
-- (id)accessibilityAttributeValue:(id)arg1;
+- (id)accessibilityRole;
+- (id)accessibilityChildren;
 - (struct CGRect)accessibilityFrame;
 - (id)accessibilityValue;
-- (id)accessibilityAttributeNames;
-- (BOOL)accessibilityIsIgnored;
+- (BOOL)isAccessibilityElement;
 
 @end
 

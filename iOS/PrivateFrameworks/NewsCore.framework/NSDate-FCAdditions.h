@@ -14,6 +14,9 @@
 + (id)fc_dateFromStringWithHTTPHeaderFormat:(id)arg1;
 + (id)fc_dateFromStringWithISO8601Format:(id)arg1;
 + (id)fc_dateFromString:(id)arg1 possibleFormats:(id)arg2;
++ (double)fc_timeIntervalOneWeek;
++ (double)fc_timeIntervalOneDay;
++ (double)fc_timeIntervalOneHour;
 - (id)fc_stringWithYearAndMonthFormat;
 - (id)fc_stringWithISO8601Format;
 - (_Bool)fc_isSameDayAs:(id)arg1;

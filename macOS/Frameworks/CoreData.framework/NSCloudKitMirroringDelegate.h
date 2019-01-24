@@ -28,6 +28,7 @@
     PFCloudKitExporterOptions *_exporterOptions;
     NSSQLCore *_observedStore;
     NSPersistentStoreCoordinator *_observedCoordinator;
+    // Error parsing type: Ai, name: _accountChangeNotificationIteration
 }
 
 + (void)initialize;
@@ -47,6 +48,7 @@
 @property(readonly, nonatomic) NSString *ckDatabaseName; // @synthesize ckDatabaseName=_ckDatabaseName;
 @property(readonly, copy, nonatomic) NSCloudKitMirroringDelegateOptions *options; // @synthesize options=_options;
 - (void).cxx_destruct;
+- (void)_setAccountNotificationBackoffInterval:(long long)arg1;
 - (void)_setZone:(id)arg1;
 - (void)_setContainer:(id)arg1;
 - (void)_setDatabase:(id)arg1;

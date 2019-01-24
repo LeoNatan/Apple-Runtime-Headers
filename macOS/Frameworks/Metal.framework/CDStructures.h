@@ -573,13 +573,13 @@ struct MTLTextureDescriptorPrivate {
         unsigned long long textureUsage;
         unsigned long long usage;
     } ;
-    unsigned long long cpuCacheMode;
-    unsigned long long storageMode;
     unsigned long long resourceOptions;
-    unsigned long long resolvedUsage;
     char allowGPUOptimizedContents;
     char forceResourceIndex;
     unsigned int resourceIndex;
+    unsigned long long resolvedUsage;
+    unsigned long long cpuCacheMode;
+    unsigned long long storageMode;
 };
 
 struct MTLVRTextureBounds {

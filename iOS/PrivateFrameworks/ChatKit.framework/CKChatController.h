@@ -211,6 +211,7 @@
 - (void)fullScreenBalloonViewControllerDidDisappear:(id)arg1;
 - (void)fullScreenBalloonViewController:(id)arg1 sendMessageAcknowledgment:(long long)arg2 forChatItem:(id)arg3;
 - (void)fullScreenBalloonViewController:(id)arg1 willDisappearWithSendAnimation:(_Bool)arg2;
+- (double)_currentScrollDelta;
 - (void)fullScreenBalloonViewController:(id)arg1 willAppearAnimated:(_Bool)arg2;
 - (void)showSMSReportSpamExtensionControllerForMessages:(id)arg1;
 - (void)showFullScreenAcknowledgmentPickerForBalloonAtIndexPath:(id)arg1 showActionMenu:(_Bool)arg2;

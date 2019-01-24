@@ -34,6 +34,8 @@
 - (void)sendCBAEngagementFeedback:(id)arg1 query:(unsigned long long)arg2;
 - (void)reportFeedback:(id)arg1 queryId:(unsigned long long)arg2;
 - (void)reportEvent:(id)arg1;
+- (void)didSubmitUserReportFeedback:(id)arg1;
+- (void)didReportUserResponseFeedback:(id)arg1;
 - (void)didGradeLookupHintRelevancy:(id)arg1;
 - (void)didGradeResultRelevancy:(id)arg1;
 - (void)didGoToSearch:(id)arg1;
@@ -46,6 +48,8 @@
 - (void)suggestionsDidBecomeVisible:(id)arg1;
 - (void)resultsDidBecomeVisible:(id)arg1;
 - (void)didEngageSuggestion:(id)arg1;
+- (void)_flushUsingConnectionToFBF:(id)arg1;
+- (void)_scheduleEagerFlush;
 - (void)sendCustomFeedback:(id)arg1;
 - (void)didErrorOccur:(id)arg1;
 - (void)didEngageCardSection:(id)arg1;

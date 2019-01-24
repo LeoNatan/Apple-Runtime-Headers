@@ -7,6 +7,7 @@
 #import <Foundation/NSMapTable.h>
 
 @interface NSMapTable (TSUAdditions)
+- (void)tsu_enumerateKeysAndObjectsUsingBlock:(CDUnknownBlockType)arg1;
 - (id)tsu_allObjects;
 - (id)tsu_allKeys;
 - (void)setObject:(id)arg1 forKeyedSubscript:(id)arg2;

@@ -13,6 +13,7 @@
 
 @interface AFAnalyticsEvent : NSObject <NSCopying, NSSecureCoding>
 {
+    unsigned int _deliveryStream;
     int _type;
     int _contextDataType;
     NSData *_contextData;
@@ -24,11 +25,15 @@
 @property(readonly, nonatomic) int contextDataType; // @synthesize contextDataType=_contextDataType;
 @property(readonly, nonatomic) unsigned long long timestamp; // @synthesize timestamp=_timestamp;
 @property(readonly, nonatomic) int type; // @synthesize type=_type;
+@property(readonly, nonatomic) unsigned int deliveryStream; // @synthesize deliveryStream=_deliveryStream;
 - (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (id)initWithType:(int)arg1 timestamp:(unsigned long long)arg2 contextDataType:(int)arg3 contextData:(id)arg4;
+- (id)contextDataAsProtobuf;
+- (id)contextDataAsDictionary;
+- (id)typeName;
+- (id)initWithDeliveryStream:(unsigned int)arg1 type:(int)arg2 timestamp:(unsigned long long)arg3 contextDataType:(int)arg4 contextData:(id)arg5;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (id)init;

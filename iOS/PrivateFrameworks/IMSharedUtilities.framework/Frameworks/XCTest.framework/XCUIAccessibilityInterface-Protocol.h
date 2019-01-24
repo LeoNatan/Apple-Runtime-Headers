@@ -14,6 +14,8 @@
 @protocol XCUIAccessibilityInterface <NSObject, XCUIAXNotificationHandling, XCTElementSnapshotAttributeDataSource, XCTElementSnapshotProvider>
 @property(readonly) _Bool supportsAnimationsInactiveNotifications;
 @property double AXTimeout;
+- (XCAccessibilityElement *)accessibilityElementForElementAtPoint:(struct CGPoint)arg1 error:(id *)arg2;
+- (void)performWhenMenuOpens:(XCAccessibilityElement *)arg1 block:(void (^)(void))arg2;
 - (void)removeObserver:(id)arg1 forAXNotification:(NSString *)arg2;
 - (id)addObserverForAXNotification:(NSString *)arg1 handler:(void (^)(XCAccessibilityElement *, NSDictionary *))arg2;
 - (void)registerForAXNotificationsForApplicationWithPID:(int)arg1 completion:(void (^)(_Bool, NSError *))arg2;

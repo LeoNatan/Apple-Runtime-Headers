@@ -18,6 +18,9 @@
 + (id)metadataExtractorScriptSource;
 @property(readonly, nonatomic) WKWebProcessPlugInFrame *webProcessPlugInFrame; // @synthesize webProcessPlugInFrame=_webProcessPlugInFrame;
 - (void).cxx_destruct;
+- (id)firstElementForSelector:(id)arg1;
+- (void)getTemplateIconURL:(id *)arg1 andColor:(id *)arg2;
+- (id)_colorFromColorComponents:(id)arg1;
 - (id)faviconURLs;
 - (id)appleTouchIconURLs;
 - (id)_resultForInvokingFunctionWithName:(id)arg1;

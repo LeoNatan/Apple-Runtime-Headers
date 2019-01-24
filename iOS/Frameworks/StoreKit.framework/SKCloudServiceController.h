@@ -13,10 +13,12 @@
     _Bool _hasValidCloudServiceCapability;
     unsigned long long _cloudServiceCapability;
     NSObject<OS_dispatch_queue> *_accessQueue;
+    _Bool _allowsPromptingForPrivacyAcknowledgement;
 }
 
 + (void)requestAuthorization:(CDUnknownBlockType)arg1;
 + (long long)authorizationStatus;
+@property(nonatomic, setter=_setAllowsPromptingForPrivacyAcknowledgement:) _Bool _allowsPromptingForPrivacyAcknowledgement; // @synthesize _allowsPromptingForPrivacyAcknowledgement;
 - (void).cxx_destruct;
 - (void)_updateCapabilitiesWithResponse:(id)arg1 postNotification:(_Bool)arg2;
 - (void)_handleInvalidation;

@@ -13,6 +13,8 @@
 + (id)hf_roomsForServices:(id)arg1;
 + (id)hf_standardServiceTypes;
 + (id)hf_standardServices;
+- (id)hf_defaultName;
+- (id)hf_editingName;
 - (_Bool)hf_canGroupWithService:(id)arg1;
 - (id)hf_effectiveServiceSubtype;
 - (id)hf_parentService;

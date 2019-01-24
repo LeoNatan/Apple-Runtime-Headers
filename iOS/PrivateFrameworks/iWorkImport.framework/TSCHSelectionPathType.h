@@ -44,8 +44,8 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) NSString *name; // @synthesize name=mName;
 @property(readonly, nonatomic) NSString *type; // @synthesize type=mType;
 - (void).cxx_destruct;
-- (void)saveToArchive:(struct ChartSelectionPathTypeArchive *)arg1;
-- (id)initWithArchive:(const struct ChartSelectionPathTypeArchive *)arg1;
+-     // Error parsing type: v24@0:8^{ChartSelectionPathTypeArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}}16, name: saveToArchive:
+-     // Error parsing type: @24@0:8r^{ChartSelectionPathTypeArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}}16, name: initWithArchive:
 - (_Bool)canApplyChartStyleWithDescription:(id)arg1;
 - (_Bool)canApplyShapeStyle;
 - (_Bool)canApplyParagraphStyle;

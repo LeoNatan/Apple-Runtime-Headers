@@ -6,13 +6,12 @@
 
 #import <SafariServices/_SFActivityItemProvider.h>
 
-@class NSData, NSString, WKWebView;
+@class NSData, NSString;
 
 @interface _SFImageActivityItemProvider : _SFActivityItemProvider
 {
     NSData *_imageOnlyDocumentData;
     NSString *_documentUTI;
-    WKWebView *_webView;
 }
 
 - (void).cxx_destruct;

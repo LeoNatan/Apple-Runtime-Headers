@@ -38,6 +38,7 @@
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
 + (id)tableForModelType:(short)arg1 forDatabase:(id)arg2;
 + (void)registerRepairBlocks:(id)arg1;
++ (id)localIdentifierCode;
 + (id)uuidsForModelIds:(id)arg1 fromDatabase:(id)arg2;
 + (id)modelIdListForUuids:(id)arg1 fromDatabase:(id)arg2;
 + (id)modelIdForUuid:(id)arg1 fromDatabase:(id)arg2;
@@ -54,7 +55,6 @@
 + (id)modelForId:(id)arg1 fromDatabase:(id)arg2;
 + (id)databasesForModels:(id)arg1;
 + (id)databaseForModels:(id)arg1;
-+ (id)localIdentifierCode;
 + (id)modelsForPhotoKitLocalIdentifiers:(id)arg1 fromDatabase:(id)arg2 loadOptions:(id)arg3;
 + (id)modelForPhotoKitLocalIdentifier:(id)arg1 fromDatabase:(id)arg2 loadOptions:(id)arg3;
 @property(retain) PFBSMResourceIdentifier *resourceAccessIdentifier; // @synthesize resourceAccessIdentifier=_resourceAccessIdentifier;

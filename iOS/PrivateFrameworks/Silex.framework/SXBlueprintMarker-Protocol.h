@@ -7,7 +7,7 @@
 #import <Silex/NSObject-Protocol.h>
 
 @class NSArray;
-@protocol SXComponent, SXComponentAnchor;
+@protocol SXBlueprintMarker, SXComponent, SXComponentAnchor;
 
 @protocol SXBlueprintMarker <NSObject>
 @property(retain, nonatomic) id <SXComponentAnchor> componentAnchor;
@@ -15,5 +15,6 @@
 @property(readonly, nonatomic) struct CGPoint approximateLocation;
 @property(readonly, nonatomic) id <SXComponent> trailingComponent;
 @property(readonly, nonatomic) id <SXComponent> leadingComponent;
+- (_Bool)isEqualToMarker:(id <SXBlueprintMarker>)arg1;
 @end
 

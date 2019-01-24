@@ -49,7 +49,7 @@
 - (BOOL)_canSaveAsWebArchive;
 - (BOOL)_canProvideDocumentSource;
 - (void)_dragSourceEndedAt:(struct CGPoint)arg1 operation:(unsigned long long)arg2;
-- (void)_setTypingStyle:(id)arg1 withUndoAction:(int)arg2;
+- (void)_setTypingStyle:(id)arg1 withUndoAction:(unsigned char)arg2;
 - (id)_typingStyle;
 - (id)_characterRangeAtPoint:(struct CGPoint)arg1;
 - (struct VisiblePosition)_visiblePositionForPoint:(struct CGPoint)arg1;
@@ -73,7 +73,7 @@
 - (id)_stringByEvaluatingJavaScriptFromString:(id)arg1;
 - (BOOL)_getVisibleRect:(struct CGRect *)arg1;
 - (void)_drawRect:(struct CGRect)arg1 contentsOnly:(BOOL)arg2;
-- (unsigned int)_paintBehaviorForDestinationContext:(struct CGContext *)arg1;
+- (OptionSet_8e32cbf3)_paintBehaviorForDestinationContext:(struct CGContext *)arg1;
 - (id)_stringForRange:(id)arg1;
 - (id)_selectedString;
 - (id)_nodesFromList:(Vector_1d266cd7 *)arg1;

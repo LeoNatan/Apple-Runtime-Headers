@@ -13,6 +13,7 @@
     _Bool _shrink;
     _Bool _useDemoArt;
     _Bool _useRasterizedPass;
+    _Bool _canUseDynamicView;
     UILabel *_cardNameLabel;
     UIView *_cardView;
     UIImageView *_backgroundCardArtView;
@@ -22,6 +23,7 @@
 + (struct CGSize)_sizePreservingAspectRatioForCardArt:(id)arg1 givenMaxConstraints:(struct CGSize)arg2;
 + (float)shrunkenCardHeight;
 + (float)cardHeight;
+@property(nonatomic) _Bool canUseDynamicView; // @synthesize canUseDynamicView=_canUseDynamicView;
 @property(retain, nonatomic) UILabel *fpanLabel; // @synthesize fpanLabel=_fpanLabel;
 @property(retain, nonatomic) UIImageView *backgroundCardArtView; // @synthesize backgroundCardArtView=_backgroundCardArtView;
 @property(retain, nonatomic) UIView *cardView; // @synthesize cardView=_cardView;
@@ -30,6 +32,9 @@
 @property(nonatomic) _Bool useDemoArt; // @synthesize useDemoArt=_useDemoArt;
 @property(nonatomic) _Bool shrink; // @synthesize shrink=_shrink;
 - (void).cxx_destruct;
+- (void)_handlePreferencesChanged:(id)arg1;
+- (void)_setupDynamicViewForPassIfNecessary:(id)arg1;
+- (void)setShowFullPass:(_Bool)arg1;
 - (void)_setPass:(id)arg1;
 - (_Bool)showFullPass;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;

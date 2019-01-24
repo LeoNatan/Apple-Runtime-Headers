@@ -13,15 +13,17 @@
 @interface FCEditorialFeedGroupInsertionDescriptor : NSObject <FCFeedGroupInsertionDescriptor>
 {
     NSSet *_groupTypesToExhaust;
+    unsigned long long _firstGroupMinPrecedingTopicGroups;
     unsigned long long _minPrecedingTopicGroups;
 }
 
 @property(readonly, nonatomic) unsigned long long minPrecedingTopicGroups; // @synthesize minPrecedingTopicGroups=_minPrecedingTopicGroups;
+@property(readonly, nonatomic) unsigned long long firstGroupMinPrecedingTopicGroups; // @synthesize firstGroupMinPrecedingTopicGroups=_firstGroupMinPrecedingTopicGroups;
 @property(readonly, copy, nonatomic) NSSet *groupTypesToExhaust; // @synthesize groupTypesToExhaust=_groupTypesToExhaust;
 - (void).cxx_destruct;
 - (_Bool)wantsToInsertGroup:(id)arg1 withContext:(id)arg2;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (id)initWithGroupTypesToExhaust:(id)arg1 minPrecedingTopicGroups:(unsigned long long)arg2;
+- (id)initWithGroupTypesToExhaust:(id)arg1 firstGroupMinPrecedingTopicGroups:(unsigned long long)arg2 minPrecedingTopicGroups:(unsigned long long)arg3;
 - (id)init;
 
 @end

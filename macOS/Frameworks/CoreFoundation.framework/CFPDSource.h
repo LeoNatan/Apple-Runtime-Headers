@@ -26,6 +26,7 @@ __attribute__((visibility("hidden")))
     struct os_unfair_lock_s _lock;
     unsigned int _lastEuid;
     unsigned int _lastEgid;
+    int _fileProtectionClass;
     short _generationShmemIndex;
     BOOL _handlingRequest;
     BOOL _dirty;

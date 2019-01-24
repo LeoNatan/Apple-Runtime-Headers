@@ -9,12 +9,13 @@
 #import <Safari/DelayedPopUpRolloverImageButtonDelegate-Protocol.h>
 #import <Safari/FormTextStatusWatcherDelegate-Protocol.h>
 #import <Safari/TabBarViewItem-Protocol.h>
+#import <Safari/WBSOrderedTab-Protocol.h>
 
 @class BrowserTabViewController, BrowserViewController, BrowserWindowController, ContinuousReadingListViewController, DelayedPopUpRolloverImageButton, NSArray, NSColor, NSImage, NSMutableArray, NSSet, NSString, NSTimer, NSURL, NSUUID, SearchState, TabContentViewController;
 @protocol VisualTabPickerThumbnailSnapshotProviding;
 
 __attribute__((visibility("hidden")))
-@interface BrowserTabViewItem : NSTabViewItem <DelayedPopUpRolloverImageButtonDelegate, FormTextStatusWatcherDelegate, TabBarViewItem>
+@interface BrowserTabViewItem : NSTabViewItem <DelayedPopUpRolloverImageButtonDelegate, FormTextStatusWatcherDelegate, TabBarViewItem, WBSOrderedTab>
 {
     BrowserViewController *_currentBrowserViewController;
     struct RefPtr<Safari::BrowserTab, WTF::DumbPtrTraits<Safari::BrowserTab>> _browserTab;
@@ -74,6 +75,11 @@ __attribute__((visibility("hidden")))
 @property(nonatomic, getter=isPinned) BOOL pinned; // @synthesize pinned=_pinned;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) BOOL shouldSelectOriginatingTabWhenClosed;
+@property(readonly, nonatomic) BOOL isPinnedTab;
+@property(readonly, nonatomic) NSString *windowIdentifier;
+@property(readonly, nonatomic) NSArray *ancestorTabIdentifiers;
+@property(readonly, nonatomic) NSString *identifier;
 - (void)_cancelSiteIconUpdate;
 - (void)_requestFaviconForURL:(id)arg1;
 - (void)_requestTemplateIconWithURL:(id)arg1;
@@ -127,14 +133,14 @@ __attribute__((visibility("hidden")))
 - (void)getVisibleContentsAsDataURLForContext:(struct OpaqueJSContext *)arg1 callback:(struct OpaqueJSValue *)arg2;
 -     // Error parsing type: c24@0:8r^{ExtensionAPIExtension=^^?{HashSet<Safari::EventTarget *, WTF::PtrHash<Safari::EventTarget *>, WTF::HashTraits<Safari::EventTarget *> >={HashTable<Safari::EventTarget *, Safari::EventTarget *, WTF::IdentityExtractor, WTF::PtrHash<Safari::EventTarget *>, WTF::HashTraits<Safari::EventTarget *>, WTF::HashTraits<Safari::EventTarget *> >=^^{EventTarget}IIII}}{Lock={Atomic<unsigned char>={atomic<unsigned char>=AC}}}^^?}16, name: allowAccessFromExtensionToAnyAssociatedPage:
 -     // Error parsing type: c24@0:8r^{ExtensionAPIExtension=^^?{HashSet<Safari::EventTarget *, WTF::PtrHash<Safari::EventTarget *>, WTF::HashTraits<Safari::EventTarget *> >={HashTable<Safari::EventTarget *, Safari::EventTarget *, WTF::IdentityExtractor, WTF::PtrHash<Safari::EventTarget *>, WTF::HashTraits<Safari::EventTarget *>, WTF::HashTraits<Safari::EventTarget *> >=^^{EventTarget}IIII}}{Lock={Atomic<unsigned char>={atomic<unsigned char>=AC}}}^^?}16, name: allowAccessFromExtension:
-- (void)loadURLFromExtension:(id)arg1;
+- (void)loadURLFromExtension:(id)arg1 waitInQueue:(BOOL)arg2;
 - (void)activateFromExtension;
 @property(readonly, nonatomic, getter=isClosed) BOOL closed;
 @property(readonly, nonatomic) BOOL isPrivate;
 @property(readonly, nonatomic) NSURL *urlForExtensions;
 @property(readonly, nonatomic) struct ReaderControllerProxy *readerControllerProxy;
 @property(readonly, nonatomic) struct WebPageProxy *page;
-- (void)_userPreferencesDidChange:(id)arg1;
+- (void)_showIconsInTabsPreferenceDidChange:(id)arg1;
 - (void)setDoesNotPreferCachedTabSnapshotForTouchBar;
 - (void)restoreFromBrowserTabState:(id)arg1 allowJavaScript:(BOOL)arg2;
 - (void)willUnselect;
@@ -147,8 +153,9 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) id <VisualTabPickerThumbnailSnapshotProviding> visualTabPickerThumbnailSnapshotProvider;
 @property(readonly, nonatomic) BrowserViewController *browserViewController;
 @property(readonly, nonatomic) TabContentViewController *representedTabContentViewController;
-- (id)computeTabLabel;
+- (id)computeTabLabelIncludingDebuggingContent:(BOOL)arg1;
 @property(readonly, nonatomic) NSURL *failedOrCurrentURL;
+@property(readonly, nonatomic) NSURL *expectedOrCurrentURLOrLastActiveURLIfCrashed;
 @property(readonly, nonatomic) NSURL *expectedOrCurrentURL;
 @property(readonly, copy, nonatomic) NSString *pageTitle;
 @property(readonly, copy, nonatomic) NSSet *allBrowserViewControllers;

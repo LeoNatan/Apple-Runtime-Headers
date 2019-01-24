@@ -20,10 +20,14 @@ __attribute__((visibility("hidden")))
 + (id)exportedInterface;
 @property(nonatomic) __weak SKAccountPageViewController *accountPageViewController; // @synthesize accountPageViewController=_accountPageViewController;
 - (void).cxx_destruct;
+- (id)disconnect;
+- (void)dismissBridgedViewController;
+- (void)presentBridgedViewController;
 - (void)popBridgedViewControllersToIndex:(unsigned long long)arg1;
 - (void)pushBridgedViewControllerAnimated:(_Bool)arg1 options:(id)arg2;
 - (void)setBridgedNavigationItemWithOptions:(id)arg1;
 - (void)overrideRedeemCameraWithCompletion:(CDUnknownBlockType)arg1;
+- (void)overrideRedeemCameraPerformAction:(long long)arg1 withObject:(id)arg2;
 - (void)overrideCreditCardPresentationWithCompletion:(CDUnknownBlockType)arg1;
 - (void)financeInterruptionResolved:(_Bool)arg1;
 - (void)dismissViewControllerWithResult:(id)arg1 error:(id)arg2;

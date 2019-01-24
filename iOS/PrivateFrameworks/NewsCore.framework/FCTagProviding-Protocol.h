@@ -26,10 +26,12 @@
 @property(readonly, nonatomic) _Bool publisherPaidWebAccessOptIn;
 @property(readonly, nonatomic) _Bool publisherPaidLeakyPaywallOptOut;
 @property(readonly, nonatomic) NSArray *publisherPaidOfferableConfigurations;
+@property(readonly, nonatomic) NSArray *publisherPaidBundlePurchaseIDs;
 @property(readonly, nonatomic) NSArray *publisherPaidFeldsparablePurchaseIDs;
 @property(readonly, copy, nonatomic) NSString *publisherPaidWebAccessURL;
 @property(readonly, copy, nonatomic) NSString *publisherPaidVerificationURL;
 @property(readonly, copy, nonatomic) NSString *publisherPaidAuthorizationURL;
+@property(readonly, copy, nonatomic) NSString *magazineGenre;
 @property(readonly, copy, nonatomic) NSString *subtitle;
 @property(readonly, nonatomic) _Bool isNotificationEnabled;
 @property(readonly, nonatomic) long long minimumNewsVersion;
@@ -55,6 +57,7 @@
 @property(readonly, nonatomic) _Bool isDeprecated;
 @property(readonly, nonatomic) _Bool isPublic;
 @property(readonly, nonatomic) long long contentProvider;
+@property(readonly, copy, nonatomic) NSString *language;
 @property(readonly, copy, nonatomic) NSString *versionKey;
 @property(readonly, copy, nonatomic) NSString *nameCompact;
 @property(readonly, copy, nonatomic) NSString *name;

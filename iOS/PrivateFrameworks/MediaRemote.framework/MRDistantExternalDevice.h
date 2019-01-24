@@ -54,6 +54,7 @@
 - (void)hostedExternalDeviceDidReceiveCustomData:(id)arg1 withName:(id)arg2;
 - (void)hostedExternalDeviceNameDidChange:(id)arg1;
 - (void)hostedExternalDeviceConnectionStateDidChange:(unsigned int)arg1 withError:(id)arg2;
+- (void)sendButtonEvent:(struct _MRHIDButtonEvent)arg1;
 - (void)ping:(double)arg1 callback:(CDUnknownBlockType)arg2 withQueue:(id)arg3;
 - (void)sendCustomData:(id)arg1 withName:(id)arg2;
 - (void)modifyOutputContextOfType:(unsigned int)arg1 addingDeviceUIDs:(id)arg2 removingDeviceUIDs:(id)arg3 settingDeviceUIDs:(id)arg4 withReplyQueue:(id)arg5 completion:(CDUnknownBlockType)arg6;

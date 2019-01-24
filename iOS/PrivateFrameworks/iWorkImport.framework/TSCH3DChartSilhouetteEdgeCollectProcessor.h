@@ -19,7 +19,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) TSCH3Dvec3DataBuffer *edges; // @synthesize edges=mEdges;
 @property(retain, nonatomic) TSCH3DResource *vertices; // @synthesize vertices=mVertices;
 - (id).cxx_construct;
-- (void)submit:(const struct PrimitiveInfo *)arg1;
+- (void)submit:(id)arg1;
 - (long long)attribute:(id)arg1 resource:(id)arg2 specs:(const struct AttributeSpecs *)arg3;
 - (id)matrix;
 - (void)dealloc;

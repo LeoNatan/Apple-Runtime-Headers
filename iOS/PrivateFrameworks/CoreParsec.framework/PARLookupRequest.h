@@ -26,6 +26,7 @@
 @property(copy, nonatomic) NSString *queryContext; // @synthesize queryContext=_queryContext;
 @property(copy, nonatomic) NSString *queryString; // @synthesize queryString=_queryString;
 - (void).cxx_destruct;
+- (unsigned int)nwActivityLabel;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 

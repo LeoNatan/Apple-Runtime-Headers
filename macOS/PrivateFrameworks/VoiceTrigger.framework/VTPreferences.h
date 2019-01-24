@@ -10,13 +10,12 @@
 {
 }
 
-+ (unsigned long long)_deviceCategoryForDeviceProductType:(id)arg1;
 + (id)deviceCategoryStringRepresentationForCategoryType:(unsigned long long)arg1;
 + (id)sharedPreferences;
 - (BOOL)useSiriActivationSPIForwatchOS;
 - (BOOL)useSiriActivationSPIForiOS;
 - (id)audioInjectionFilePath;
-- (id)_boardID;
+- (BOOL)_gibraltarHasBuiltInMic;
 - (void)enableVoiceTriggerUponVoiceProfileSyncForLanguage:(id)arg1;
 - (BOOL)hasVoiceProfileIniCloudForLanguageCode:(id)arg1;
 - (id)devicesWithVoiceProfileIniCloudForLanguage:(id)arg1;
@@ -28,8 +27,8 @@
 - (BOOL)voiceTriggerInCoreSpeech;
 - (id)getSATEnrollmentPath;
 - (id)getMD5HashForSATEnrollmentAudioForLanguageCode:(id)arg1;
-- (id)_getSATEnrollmentAudioPathForLanguageCode:(id)arg1;
 - (void)markSATEnrollmentSuccessForLanguageCode:(id)arg1;
+- (id)_getSATEnrollmentAudioPathForLanguageCodeForLegacyVoiceProfile:(id)arg1;
 - (void)discardAllSATEnrollment;
 - (void)discardSATEnrollmentForLanguageCode:(id)arg1;
 - (BOOL)_isSATMarkedForMarker:(id)arg1 languageCode:(id)arg2;

@@ -17,21 +17,24 @@
 }
 
 @property(readonly) struct Object *_apiObject;
+@property(copy, nonatomic) NSString *customWebContentServiceBundleIdentifier;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly, copy) NSString *description;
 @property(nonatomic) BOOL suppressesConnectionTerminationOnSystemChange;
+@property(nonatomic, getter=isJITEnabled) BOOL JITEnabled;
 @property(nonatomic) BOOL pageCacheEnabled;
 @property(nonatomic) BOOL processSwapsOnWindowOpenWithOpener;
 @property(nonatomic) BOOL alwaysKeepAndReuseSwappedProcesses;
+@property(nonatomic) BOOL prewarmsProcessesAutomatically;
 @property(nonatomic) BOOL processSwapsOnNavigation;
 @property(nonatomic) int presentingApplicationPID;
 @property(nonatomic) BOOL shouldCaptureAudioInUIProcess;
-@property(nonatomic) BOOL allowsCellularAccess;
 @property(copy, nonatomic) NSString *sourceApplicationSecondaryIdentifier;
 @property(copy, nonatomic) NSString *sourceApplicationBundleIdentifier;
 @property(copy, nonatomic) NSArray *alwaysRevalidatedURLSchemes;
 @property(copy, nonatomic) NSArray *cachePartitionedURLSchemes;
 @property(copy, nonatomic) NSArray *additionalReadAccessAllowedURLs;
+@property(nonatomic) BOOL attrStyleEnabled;
 @property(nonatomic) BOOL ignoreSynchronousMessagingTimeoutsForTesting;
 @property(nonatomic) BOOL diskCacheSpeculativeValidationEnabled;
 @property(nonatomic) long long diskCacheSizeOverride;

@@ -21,25 +21,27 @@
     FCEdgeCacheHint *_edgeCacheHint;
     unsigned long long _expectedNetworkEventCount;
     CDUnknownBlockType _requestCompletionHandler;
-    CDUnknownBlockType _requestCompletionHandlerWithInterestToken;
+    CDUnknownBlockType _requestCompletionHandlerWithHeldRecords;
     NSMutableArray *_mutableNetworkEvents;
     NSDictionary *_feedRequestsByFeedID;
     NSDictionary *_databaseLookupsByFeedID;
     NSMutableDictionary *_resultFeedResponses;
     FCHeldRecords *_resultHeldArticleRecords;
     FCHeldRecords *_resultHeldTagRecords;
+    FCHeldRecords *_resultHeldIssueRecords;
 }
 
 + (_Bool)_orderFeedTopKEnabled;
 + (id)feedRequestContentEnvironmentTokenWithContext:(id)arg1;
 + (void)initialize;
+@property(retain, nonatomic) FCHeldRecords *resultHeldIssueRecords; // @synthesize resultHeldIssueRecords=_resultHeldIssueRecords;
 @property(retain, nonatomic) FCHeldRecords *resultHeldTagRecords; // @synthesize resultHeldTagRecords=_resultHeldTagRecords;
 @property(retain, nonatomic) FCHeldRecords *resultHeldArticleRecords; // @synthesize resultHeldArticleRecords=_resultHeldArticleRecords;
 @property(retain, nonatomic) NSMutableDictionary *resultFeedResponses; // @synthesize resultFeedResponses=_resultFeedResponses;
 @property(retain, nonatomic) NSDictionary *databaseLookupsByFeedID; // @synthesize databaseLookupsByFeedID=_databaseLookupsByFeedID;
 @property(retain, nonatomic) NSDictionary *feedRequestsByFeedID; // @synthesize feedRequestsByFeedID=_feedRequestsByFeedID;
 @property(retain, nonatomic) NSMutableArray *mutableNetworkEvents; // @synthesize mutableNetworkEvents=_mutableNetworkEvents;
-@property(copy, nonatomic) CDUnknownBlockType requestCompletionHandlerWithInterestToken; // @synthesize requestCompletionHandlerWithInterestToken=_requestCompletionHandlerWithInterestToken;
+@property(copy, nonatomic) CDUnknownBlockType requestCompletionHandlerWithHeldRecords; // @synthesize requestCompletionHandlerWithHeldRecords=_requestCompletionHandlerWithHeldRecords;
 @property(copy, nonatomic) CDUnknownBlockType requestCompletionHandler; // @synthesize requestCompletionHandler=_requestCompletionHandler;
 @property(nonatomic) unsigned long long expectedNetworkEventCount; // @synthesize expectedNetworkEventCount=_expectedNetworkEventCount;
 @property(copy, nonatomic) FCEdgeCacheHint *edgeCacheHint; // @synthesize edgeCacheHint=_edgeCacheHint;

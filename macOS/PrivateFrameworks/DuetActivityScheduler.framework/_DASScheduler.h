@@ -57,6 +57,7 @@
 - (void)cancelActivities:(id)arg1;
 - (void)suspendActivities:(id)arg1;
 - (void)runActivities:(id)arg1;
+- (void)pauseWithParameters:(id)arg1;
 - (id)activityRunStatistics;
 - (id)scoresForActivityWithName:(id)arg1;
 - (void)forceRunActivities:(id)arg1;

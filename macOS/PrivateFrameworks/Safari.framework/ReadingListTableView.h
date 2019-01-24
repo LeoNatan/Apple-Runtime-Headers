@@ -26,7 +26,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) long long highlightedRowIndex; // @synthesize highlightedRowIndex=_highlightedRowIndex;
 - (void).cxx_destruct;
 - (double)_totalHeightOfTableView;
-- (id)accessibilityAttributeValue:(id)arg1;
+- (struct CGRect)accessibilityFrame;
 - (void)scrollView:(id)arg1 didScrollToPoint:(struct CGPoint)arg2;
 @property(readonly, retain, nonatomic) SidebarSearchFieldView *searchFieldView;
 @property(readonly, retain, nonatomic) NSSearchField *searchField;

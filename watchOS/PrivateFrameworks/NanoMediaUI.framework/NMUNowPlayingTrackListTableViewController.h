@@ -23,6 +23,7 @@
 
 @property(copy, nonatomic) CDUnknownBlockType selectionBlock; // @synthesize selectionBlock=_selectionBlock;
 - (void).cxx_destruct;
+- (void)_handleICAgeVerificationStateDidChangeNotification:(id)arg1;
 - (void)actionContentControllerCancel:(id)arg1;
 - (void)originObserver:(id)arg1 didUpdateSupportedCommandsForOrigin:(id)arg2;
 - (void)_handleRepeatButtonTapped:(id)arg1;
@@ -43,6 +44,7 @@
 - (id)_playerResponse;
 - (void)dismissAnimated:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)presentFromViewController:(id)arg1 animated:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)viewDidLoad;
 - (void)dealloc;
 - (id)initWithNowPlayingController:(id)arg1 origin:(id)arg2;
 

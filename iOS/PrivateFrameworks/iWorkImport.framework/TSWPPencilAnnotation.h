@@ -12,7 +12,7 @@
 #import <iWorkImport/TSWPOverlappingField-Protocol.h>
 #import <iWorkImport/TSWPTextSpanningObject-Protocol.h>
 
-@class NSString, PKDrawing, TSWPStorage;
+@class NSString, TSKPKDrawing, TSWPStorage;
 @protocol TSKPencilAnnotationStorage;
 
 __attribute__((visibility("hidden")))
@@ -29,7 +29,7 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (void)saveToArchiver:(id)arg1;
 - (void)loadFromUnarchiver:(id)arg1;
-- (void)loadFromArchive:(const struct PencilAnnotationArchive *)arg1 unarchiver:(id)arg2;
+-     // Error parsing type: v32@0:8r^{PencilAnnotationArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}^{Reference}}16@24, name: loadFromArchive:unarchiver:
 @property(readonly, nonatomic) NSString *uuid;
 - (_Bool)isInDocument;
 - (void)wasRemovedFromDocumentRoot:(id)arg1;
@@ -48,7 +48,7 @@ __attribute__((visibility("hidden")))
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
-@property(readonly, nonatomic) PKDrawing *drawing; // @dynamic drawing;
+@property(readonly, nonatomic) TSKPKDrawing *drawing; // @dynamic drawing;
 @property(readonly) Class superclass;
 
 @end

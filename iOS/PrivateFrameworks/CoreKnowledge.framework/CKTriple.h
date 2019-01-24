@@ -14,14 +14,13 @@
 }
 
 + (_Bool)supportsSecureCoding;
-- (CDUnknownBlockType).cxx_destruct;
+- (void).cxx_destruct;
 - (id)init;
-- (id)dictionary;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithSubject:(id)arg1 predicate:(id)arg2 object:(id)arg3 weight:(long long)arg4;
 - (_Bool)isEqual:(id)arg1;
-@property(nonatomic, readonly) long long hashValue;
+@property(nonatomic, readonly) long long hash;
 @property(nonatomic, readonly) NSString *description;
 @property(nonatomic, readonly) long long weight;
 @property(nonatomic, readonly) NSString *object;

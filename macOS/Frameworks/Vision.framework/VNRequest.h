@@ -45,6 +45,7 @@
 + (BOOL)getDoubleValue:(double *)arg1 forKey:(id)arg2 inOptions:(id)arg3 error:(id *)arg4;
 + (BOOL)getRequiredObject:(id *)arg1 ofClass:(Class)arg2 forKey:(id)arg3 inOptions:(id)arg4 error:(id *)arg5;
 + (BOOL)getOptionalObject:(id *)arg1 ofClass:(Class)arg2 forKey:(id)arg3 inOptions:(id)arg4 error:(id *)arg5;
++ (id)defaultProcessingDeviceForRevision:(unsigned long long)arg1;
 + (BOOL)defaultRequestInstanceWarmUpPerformer:(id)arg1 error:(id *)arg2;
 + (BOOL)warmUpRequestPerformer:(id)arg1 error:(id *)arg2;
 + (id)requestWithName:(id)arg1 options:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
@@ -104,6 +105,8 @@
 - (BOOL)willAcceptCachedResultsFromRequestWithConfiguration:(id)arg1;
 - (BOOL)allowsCachingOfResults;
 - (id)configuration;
+- (void)_updateProcessingDeviceOption;
+- (id)_defaultProcessingDevice;
 - (long long)dependencyProcessingOrdinality;
 
 // Remaining properties

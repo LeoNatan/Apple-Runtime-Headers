@@ -28,6 +28,7 @@
 - (void)authorizationDidSelectPaymentMethod:(id)arg1;
 - (void)authorizationDidSelectShippingAddress:(id)arg1;
 - (void)authorizationDidSelectShippingMethod:(id)arg1;
+- (void)authorizationDidAuthorizeDisbursement:(id)arg1;
 - (void)authorizationDidAuthorizePeerPaymentQuote:(id)arg1;
 - (void)authorizationDidAuthorizePurchase:(id)arg1;
 - (void)authorizationDidAuthorizePayment:(id)arg1;
@@ -35,6 +36,7 @@
 - (void)authorizationDidRequestMerchantSession;
 - (void)authorizationWillStart;
 - (void)didEncounterAuthorizationEvent:(unsigned int)arg1;
+- (void)connectionDidOpen;
 - (void)authorizationDidPresent;
 - (void)dealloc;
 - (id)initWithController:(id)arg1;

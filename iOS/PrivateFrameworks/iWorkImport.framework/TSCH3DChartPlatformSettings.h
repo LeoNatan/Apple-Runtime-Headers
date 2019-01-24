@@ -17,6 +17,9 @@ __attribute__((visibility("hidden")))
 + (id)sharedInstance;
 + (id)p_platformSettingsDictionary;
 + (id)p_defaultSettingsDictionary;
++ (_Bool)p_isMetalEnabled;
++ (_Bool)isMetalBlacklistedWithCapabilities:(id)arg1;
+- (void).cxx_destruct;
 - (_Bool)shouldHandleResourceCacheOutOfMemory;
 - (_Bool)backgroundLayoutUsesTiledRendering;
 - (double)backgroundLayoutContentsScaleFactor;
@@ -52,8 +55,8 @@ __attribute__((visibility("hidden")))
 - (_Bool)buildImageDefaultAntialias;
 - (unsigned long long)buildImageTileSize;
 - (_Bool)skipFirstMipmapLevel;
+- (_Bool)useMetal;
 - (id)description;
-- (void)dealloc;
 - (id)initWithDictionary:(id)arg1;
 
 @end

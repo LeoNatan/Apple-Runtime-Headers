@@ -35,6 +35,7 @@
 @property(readonly, nonatomic) _Bool emitsSingleRefreshSessionGroups;
 @property(readonly) unsigned long long hash;
 @property(readonly, nonatomic) _Bool isRequiredByFollowingEmitters;
+@property(readonly, nonatomic) _Bool requiresHeavyweightContent;
 @property(readonly) Class superclass;
 
 @end

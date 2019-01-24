@@ -141,6 +141,7 @@
 - (void)faceViewWantsCustomKeylineFramesReloadedForEditMode:(long long)arg1;
 - (void)faceViewWantsComplicationKeylineFramesReloaded;
 - (void)faceViewDidLayoutSubviews;
+- (void)faceViewDidChangeVerticalPaddingForStatusBar;
 - (void)faceViewDidChangeWantsStatusBarIconShadow;
 - (void)faceViewWantsStatusBarHidden:(_Bool)arg1 animated:(_Bool)arg2;
 - (void)editView:(id)arg1 keylineDidRubberBand:(double)arg2 forKey:(id)arg3 editMode:(long long)arg4;

@@ -9,7 +9,7 @@
 #import <Safari/NSFilePresenter-Protocol.h>
 
 @class BrowserWindowController, DownloadFile, NSArray, NSDate, NSDictionary, NSError, NSMutableArray, NSMutableDictionary, NSOperationQueue, NSProgress, NSSet, NSString, NSTimer, NSURL, NSURLDownload, NSURLRequest, NSURLResponse, WBSCoalescedAsynchronousWriter, WBSDownloadFileUnarchiver;
-@protocol DownloadProgressEntryDelegate, OS_dispatch_queue, SandboxExtensionToken, WebDownloadDelegate;
+@protocol DownloadProgressEntryDelegate, OS_dispatch_queue, WBSSandboxExtensionToken, WebDownloadDelegate;
 
 __attribute__((visibility("hidden")))
 @interface DownloadProgressEntry : NSObject <NSFilePresenter>
@@ -48,7 +48,7 @@ __attribute__((visibility("hidden")))
     BOOL _observingFileLocation;
     NSObject<OS_dispatch_queue> *_cachedBundlePathAccessQueue;
     NSTimer *_reportUpdatedProgressTimer;
-    id <SandboxExtensionToken> _sandboxTokenForContainingDirectory;
+    id <WBSSandboxExtensionToken> _sandboxTokenForContainingDirectory;
     NSObject<OS_dispatch_queue> *_downloadSandboxTokenQueue;
     BOOL _shouldUseRequestURLAsOriginURLIfNecessary;
     BOOL _didShowStorageManagerUI;

@@ -15,6 +15,7 @@
 }
 
 - (void).cxx_destruct;
+- (BOOL)logLegacyQTKit;
 - (id)legacyExecutionHistory;
 - (void)dealloc;
 - (id)init;

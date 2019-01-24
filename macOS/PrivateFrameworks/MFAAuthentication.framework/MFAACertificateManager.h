@@ -19,6 +19,7 @@
 @property(retain, nonatomic) NSUserDefaults *userDefaults; // @synthesize userDefaults=_userDefaults;
 @property(retain, nonatomic) NSXPCConnection *xpcConnection; // @synthesize xpcConnection=_xpcConnection;
 - (void).cxx_destruct;
+- (int)_validateCertificateWithServer:(id)arg1 issuerSeq:(id)arg2 error:(id *)arg3;
 - (int)_validateCertificate:(struct OpaqueSecCertificateRef *)arg1 realtime:(BOOL)arg2 error:(id *)arg3;
 - (void)requestMetadataForCertificate:(id)arg1 requestedLocale:(id)arg2 requestInfo:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (int)validateCertificate:(id)arg1 realtime:(BOOL)arg2 error:(id *)arg3;

@@ -26,8 +26,8 @@ __attribute__((visibility("hidden")))
 - (id)description;
 - (id)init;
 - (id)initWithOutOfSyncToken:(id)arg1 canClearOutOfSyncToken:(_Bool)arg2;
-- (void)saveToArchive:(struct RecordingSyncState *)arg1 archiver:(id)arg2;
-- (id)initWithArchive:(const struct RecordingSyncState *)arg1 unarchiver:(id)arg2;
+-     // Error parsing type: v32@0:8^{RecordingSyncState=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{UUID}B}16@24, name: saveToArchive:archiver:
+-     // Error parsing type: @32@0:8r^{RecordingSyncState=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{UUID}B}16@24, name: initWithArchive:unarchiver:
 
 @end
 

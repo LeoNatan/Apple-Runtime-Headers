@@ -12,8 +12,8 @@ __attribute__((visibility("hidden")))
     struct AVCaptureDeviceManager *m_callback;
 }
 
-- (void)deviceConnected:(id)arg1;
-- (void)deviceDisconnected:(id)arg1;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
+- (void)deviceConnectedDidChange:(id)arg1;
 - (void)disconnect;
 - (id)initWithCallback:(struct AVCaptureDeviceManager *)arg1;
 

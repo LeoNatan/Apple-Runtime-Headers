@@ -55,8 +55,8 @@
 - (void)registerObserver:(id)arg1;
 - (void)peerPaymentEnrollmentDataWithAlternateDSID:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)connectToServerWithPushTopic:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (_Bool)queueConnectionToSeverForAppletIdentifiers:(id)arg1;
-- (_Bool)queueConnectionToSeverWithPushTopic:(id)arg1;
+- (_Bool)queueConnectionToServerForAppletIdentifiers:(id)arg1;
+- (_Bool)queueConnectionToServerWithPushTopic:(id)arg1;
 - (void)signedPlatformDataWithCompletion:(CDUnknownBlockType)arg1;
 - (void)stateInformationWithCompletion:(CDUnknownBlockType)arg1;
 - (void)signatureForAuthToken:(id)arg1 completion:(CDUnknownBlockType)arg2;

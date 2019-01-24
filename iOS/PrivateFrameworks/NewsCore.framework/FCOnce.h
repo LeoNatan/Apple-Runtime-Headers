@@ -6,15 +6,15 @@
 
 #import <objc/NSObject.h>
 
-@class NFMutexLock;
+@class NFUnfairLock;
 
 @interface FCOnce : NSObject
 {
     _Bool _finished;
-    NFMutexLock *_lock;
+    NFUnfairLock *_lock;
 }
 
-@property(retain, nonatomic) NFMutexLock *lock; // @synthesize lock=_lock;
+@property(retain, nonatomic) NFUnfairLock *lock; // @synthesize lock=_lock;
 @property(nonatomic) _Bool finished; // @synthesize finished=_finished;
 - (void).cxx_destruct;
 - (_Bool)hasBeenTriggered;

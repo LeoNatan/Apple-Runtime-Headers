@@ -9,7 +9,7 @@
 #import <iWorkImport/TSCECalculationEngineRegistration-Protocol.h>
 #import <iWorkImport/TSCEFormulaOwning-Protocol.h>
 
-@class NSCondition, NSString, TNChartFormulaStorage, TNMutableChartFormulaStorage, TSCECalculationEngine, TSUIntToIntDictionary;
+@class NSCondition, NSDictionary, NSString, TNChartFormulaStorage, TNMutableChartFormulaStorage, TSCECalculationEngine, TSUIntToIntDictionary;
 
 __attribute__((visibility("hidden")))
 @interface TNChartMediator : TSCHChartMediator <TSCECalculationEngineRegistration, TSCEFormulaOwning>
@@ -30,6 +30,8 @@ __attribute__((visibility("hidden")))
     _Bool mHasBlittedSinceConditionVarSet;
     _Bool mShouldFixAreaFormula;
     TSUIntToIntDictionary *mFormulaIndexToGridIndex;
+    NSDictionary *mTableUidToHeaderRowRangesInPrecedents;
+    _Bool mShouldResetFormulas;
 }
 
 + (id)defaultErrorBarFormulaWrapper;
@@ -49,10 +51,12 @@ __attribute__((visibility("hidden")))
 - (id)rowFormulas;
 - (int)formulasDirection;
 - (id)dataFormulas;
-- (_Bool)p_tableHasCell:(struct TSCECellRef)arg1 withCalcEngine:(id)arg2;
-- (_Bool)p_tableHasRange:(struct TSCERangeRef)arg1 withCalcEngine:(id)arg2;
+- (_Bool)p_tableHasBaseCell:(struct TSCECellRef)arg1 withCalcEngine:(id)arg2;
+- (_Bool)p_tableHasBaseRange:(struct TSCERangeRef)arg1 withCalcEngine:(id)arg2;
 - (id)referencedEntities;
 - (id)referencedEntitiesInMap:(id)arg1;
+- (vector_5a16d233)p_expandSingleRangeForLabels:(const struct TSCERangeRef *)arg1 iterateOverRowsNotColumns:(_Bool)arg2;
+- (vector_5a16d233)expandSingleRangeForLabels:(const struct TSCERangeRef *)arg1 formulaType:(unsigned long long)arg2;
 - (vector_5a16d233)expandSingleRangeForProposedCategoryLabels:(const struct TSCERangeRef *)arg1;
 - (void)p_transposeSeriesAndCategoryLabelsInMap:(id)arg1;
 - (void)repairMissingSeriesLabelsInMap:(id)arg1;
@@ -60,6 +64,8 @@ __attribute__((visibility("hidden")))
 - (void)repairMissingCategoryLabelsInMap:(id)arg1 ignoringNonVisibleLabels:(_Bool)arg2;
 - (void)p_repairMissingCategoryLabelsInMap:(id)arg1;
 - (void)p_promoteSpanningCategorizedCategoryLabelsInMap:(id)arg1;
+- (void)p_repairCategorizedCategoryLabelsInMap:(id)arg1;
+- (unsigned long long)p_numberOfLabelsFromExpandedGeometricRangeRefsWithFormulas:(id)arg1 formulaType:(unsigned long long)arg2;
 - (void)p_repairMissingTabularCategoryLabelsRegularInMap:(id)arg1;
 - (void)p_repairMissingTabularCategoryLabelsIrregularInMap:(id)arg1;
 - (void)p_disconnectLabelsInMap:(id)arg1 ofType:(unsigned long long)arg2;
@@ -69,8 +75,8 @@ __attribute__((visibility("hidden")))
 - (_Bool)p_labelsAreStaticInMap:(id)arg1 ofType:(unsigned long long)arg2;
 - (unsigned long long)p_formulaComponents:(id)arg1;
 - (unsigned long long)p_formulaComponentsInMap:(id)arg1 ofType:(unsigned long long)arg2;
-- (void)saveToArchive:(struct ChartMediatorArchive *)arg1 archiver:(id)arg2;
-- (id)initFromArchive:(const struct ChartMediatorArchive *)arg1 unarchiver:(id)arg2;
+-     // Error parsing type: v32@0:8^{ChartMediatorArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}^{ChartMediatorArchive}^{ChartMediatorFormulaStorage}BB}16@24, name: saveToArchive:archiver:
+-     // Error parsing type: @32@0:8r^{ChartMediatorArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}^{ChartMediatorArchive}^{ChartMediatorFormulaStorage}BB}16@24, name: initFromArchive:unarchiver:
 - (id)commandToSetNewSeriesIndex:(unsigned long long)arg1 forSeriesIndex:(unsigned long long)arg2;
 - (id)commandSetCategoryName:(id)arg1 forCategoryIndex:(unsigned long long)arg2;
 - (id)p_commandToSetSeriesNameFormulaWrapper:(id)arg1 seriesIndex:(unsigned long long)arg2;
@@ -103,10 +109,12 @@ __attribute__((visibility("hidden")))
 - (void)p_registerHubFormulaWithCalcEngine:(id)arg1;
 - (void)p_unregisterAllFormulaeFromCalcEngine:(id)arg1;
 - (void)writeResultsForCalcEngine:(id)arg1;
+- (_Bool)p_didHeaderRowRangesChangeForCalcEngine:(id)arg1;
 - (CDStruct_2a4d9400)recalculateForCalcEngine:(id)arg1 atFormulaCoord:(struct TSUCellCoord)arg2 recalcOptions:(CDStruct_3d581f42)arg3;
 - (id)linkedResolver;
 - (UUIDData_5fbc143e)ownerUID;
-- (int)ownerKind;
+- (unsigned short)ownerKind;
+- (struct TSCERangeRef)p_headerRowRangeRefForTableInfo:(id)arg1;
 - (id)hubFormulaPrecedentsWithCalcEngine:(id)arg1 hostOwnerUID:(const UUIDData_5fbc143e *)arg2;
 - (void)invalidateForCalcEngine:(id)arg1;
 - (void)p_copyValuesIntoToChartModel:(id)arg1 formulaMap:(id)arg2;

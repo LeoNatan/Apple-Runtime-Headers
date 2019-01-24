@@ -6,17 +6,20 @@
 
 #import <SafariShared/WBSFeatureAvailability.h>
 
-@class NSObject;
+@class LAContext, NSObject;
 @protocol OS_dispatch_queue;
 
 __attribute__((visibility("hidden")))
 @interface FeatureAvailability : WBSFeatureAvailability
 {
     NSObject<OS_dispatch_queue> *_internalQueue;
+    LAContext *_laContext;
+    NSObject<OS_dispatch_queue> *_laContextQueue;
     BOOL _threadUnsafeUserSignedIntoICloud;
     BOOL _threadUnsafeSafariSyncEnabled;
     BOOL _threadUnsafeKeychainSyncEnabled;
     BOOL _threadUnsafeUserUsingManagedAppleID;
+    BOOL _cachedIsTouchIDAvailable;
 }
 
 + (BOOL)wantsAggressiveKeychainCredentialCaching;
@@ -24,6 +27,11 @@ __attribute__((visibility("hidden")))
 + (BOOL)_shouldShowChineseFeatures;
 + (id)_sharedInstance;
 + (BOOL)_safariIsInRecoverySystem;
++ (void)updateTouchIDAvailability;
++ (BOOL)isTouchIDAvailable;
++ (BOOL)isUserAllowedToToggleTouchIDToAutoFill;
++ (BOOL)canUseTouchIDWithAutoFill;
++ (BOOL)isTouchIDToAutoFillEnabledInUserDefaults;
 + (BOOL)isAirDropPasswordsAvailable;
 + (BOOL)isApplePayAvailable;
 + (BOOL)isPerSitePopUpBlockingPreferenceAvailable;
@@ -44,12 +52,14 @@ __attribute__((visibility("hidden")))
 + (BOOL)isSafariSyncEnabled;
 + (BOOL)isUserSignedIntoICloud;
 + (void)startMonitoringForAvailabilityChanges;
+@property BOOL cachedIsTouchIDAvailable; // @synthesize cachedIsTouchIDAvailable=_cachedIsTouchIDAvailable;
 @property(getter=isUserUsingManagedAppleID) BOOL userUsingManagedAppleID; // @synthesize userUsingManagedAppleID=_threadUnsafeUserUsingManagedAppleID;
 @property(getter=isKeychainSyncEnabled) BOOL keychainSyncEnabled; // @synthesize keychainSyncEnabled=_threadUnsafeKeychainSyncEnabled;
 @property(getter=isUserSignedIntoICloud) BOOL userSignedIntoICloud; // @synthesize userSignedIntoICloud=_threadUnsafeUserSignedIntoICloud;
 - (void).cxx_destruct;
 @property(getter=isSafariSyncEnabled) BOOL safariSyncEnabled; // @synthesize safariSyncEnabled=_threadUnsafeSafariSyncEnabled;
 - (void)_updateKeychainSyncingStatus;
+- (void)_updateTouchIDAvailability;
 - (void)_iCloudServiceStatusChanged:(id)arg1;
 - (void)_iCloudLoggedInStateDidChange:(id)arg1;
 - (id)init;

@@ -49,7 +49,6 @@
 @property(retain, nonatomic) NSString *payloadDescriptionName; // @synthesize payloadDescriptionName=_payloadDescriptionName;
 @property(retain, nonatomic) NSString *payloadDisplayName; // @synthesize payloadDisplayName=_payloadDisplayName;
 - (void).cxx_destruct;
-@property(readonly, nonatomic, getter=isStudentPayload) BOOL studentPayload;
 - (id)description;
 @property(readonly, copy, nonatomic) NSDictionary *configuration;
 - (id)parseDeviceGroupFromDictionary:(id)arg1 isStub:(BOOL)arg2 outError:(id *)arg3;

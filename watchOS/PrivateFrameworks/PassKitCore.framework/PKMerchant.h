@@ -9,51 +9,70 @@
 #import <PassKitCore/NSSecureCoding-Protocol.h>
 #import <PassKitCore/PKCloudStoreCoding-Protocol.h>
 
-@class CLLocation, CNPostalAddress, NSString, NSURL;
+@class NSString, NSURL, PKMapsBrand, PKMapsMerchant;
 
 @interface PKMerchant : NSObject <NSSecureCoding, PKCloudStoreCoding>
 {
+    _Bool _hasFallbackPOIType;
     NSString *_displayName;
-    int _resultProviderIdentifier;
+    NSURL *_originURL;
+    int _adamIdentifier;
     int _industryCode;
     NSString *_industryCategory;
     NSString *_name;
-    NSString *_mapsName;
     NSString *_rawName;
-    NSString *_phoneNumber;
-    NSURL *_url;
-    CNPostalAddress *_postalAddress;
-    unsigned long long _mapsIdentifier;
-    double _locationLatitude;
-    double _locationLongitude;
+    NSString *_merchantIdentifier;
+    NSString *_rawCANL;
+    NSString *_rawCity;
+    NSString *_rawState;
+    NSString *_rawCountry;
+    NSString *_city;
+    NSString *_state;
+    NSString *_zip;
+    int _cleanConfidenceLevel;
+    int _fallbackcategory;
+    NSString *_fallbackDetailedCategory;
+    int _fallbackPOIType;
+    PKMapsMerchant *_mapsMerchant;
+    PKMapsBrand *_mapsBrand;
 }
 
 + (_Bool)supportsSecureCoding;
-@property(copy, nonatomic) CNPostalAddress *postalAddress; // @synthesize postalAddress=_postalAddress;
-@property(nonatomic) double locationLongitude; // @synthesize locationLongitude=_locationLongitude;
-@property(nonatomic) double locationLatitude; // @synthesize locationLatitude=_locationLatitude;
-@property(copy, nonatomic, setter=setURL:) NSURL *url; // @synthesize url=_url;
-@property(copy, nonatomic) NSString *phoneNumber; // @synthesize phoneNumber=_phoneNumber;
+@property(retain, nonatomic) PKMapsBrand *mapsBrand; // @synthesize mapsBrand=_mapsBrand;
+@property(retain, nonatomic) PKMapsMerchant *mapsMerchant; // @synthesize mapsMerchant=_mapsMerchant;
+@property(nonatomic) int fallbackPOIType; // @synthesize fallbackPOIType=_fallbackPOIType;
+@property(nonatomic) _Bool hasFallbackPOIType; // @synthesize hasFallbackPOIType=_hasFallbackPOIType;
+@property(copy, nonatomic) NSString *fallbackDetailedCategory; // @synthesize fallbackDetailedCategory=_fallbackDetailedCategory;
+@property(nonatomic) int fallbackcategory; // @synthesize fallbackcategory=_fallbackcategory;
+@property(nonatomic) int cleanConfidenceLevel; // @synthesize cleanConfidenceLevel=_cleanConfidenceLevel;
+@property(copy, nonatomic) NSString *zip; // @synthesize zip=_zip;
+@property(copy, nonatomic) NSString *state; // @synthesize state=_state;
+@property(copy, nonatomic) NSString *city; // @synthesize city=_city;
+@property(copy, nonatomic) NSString *rawCountry; // @synthesize rawCountry=_rawCountry;
+@property(copy, nonatomic) NSString *rawState; // @synthesize rawState=_rawState;
+@property(copy, nonatomic) NSString *rawCity; // @synthesize rawCity=_rawCity;
+@property(copy, nonatomic) NSString *rawCANL; // @synthesize rawCANL=_rawCANL;
+@property(copy, nonatomic) NSString *merchantIdentifier; // @synthesize merchantIdentifier=_merchantIdentifier;
 @property(copy, nonatomic) NSString *rawName; // @synthesize rawName=_rawName;
-@property(copy, nonatomic) NSString *mapsName; // @synthesize mapsName=_mapsName;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(copy, nonatomic) NSString *industryCategory; // @synthesize industryCategory=_industryCategory;
 @property(nonatomic) int industryCode; // @synthesize industryCode=_industryCode;
-@property(nonatomic) int resultProviderIdentifier; // @synthesize resultProviderIdentifier=_resultProviderIdentifier;
-@property(nonatomic) unsigned long long mapsIdentifier; // @synthesize mapsIdentifier=_mapsIdentifier;
+@property(nonatomic) int adamIdentifier; // @synthesize adamIdentifier=_adamIdentifier;
+@property(copy, nonatomic) NSURL *originURL; // @synthesize originURL=_originURL;
 - (void).cxx_destruct;
-- (id)_jsonEncodedPostalAddressString;
 - (void)_regenerateDisplayName;
+@property(readonly, nonatomic) int poiType;
+@property(readonly, nonatomic) NSString *detailedCategory;
+@property(readonly, nonatomic) int category;
 @property(readonly, nonatomic) _Bool isValid;
 @property(readonly, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
-@property(copy, nonatomic) CLLocation *location;
 - (id)jsonDictionaryRepresentation;
 - (id)description;
-- (_Bool)hasCloudArchivableDeviceData;
-- (_Bool)isCloudArchivableDeviceDataEqual:(id)arg1;
 - (_Bool)isEqualToMerchant:(id)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned int)hash;
+- (_Bool)hasCloudArchivableDeviceData;
+- (_Bool)isCloudArchivableDeviceDataEqual:(id)arg1;
 - (unsigned int)itemType;
 - (id)recordTypesAndNames;
 - (void)encodeServerAndDeviceDataWithCloudStoreCoder:(id)arg1;

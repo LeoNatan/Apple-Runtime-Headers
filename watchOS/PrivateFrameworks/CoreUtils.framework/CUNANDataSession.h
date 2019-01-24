@@ -22,9 +22,11 @@
     CDUnknownBlockType _invalidationHandler;
     unsigned int _localInterfaceIndex;
     CUNANEndpoint *_peerEndpoint;
+    unsigned int _trafficFlags;
     CDUnion_fab80606 _peerAddress;
 }
 
+@property(nonatomic) unsigned int trafficFlags; // @synthesize trafficFlags=_trafficFlags;
 @property(retain, nonatomic) CUNANEndpoint *peerEndpoint; // @synthesize peerEndpoint=_peerEndpoint;
 @property(readonly, nonatomic) CDUnion_fab80606 peerAddress; // @synthesize peerAddress=_peerAddress;
 @property(readonly, nonatomic) unsigned int localInterfaceIndex; // @synthesize localInterfaceIndex=_localInterfaceIndex;

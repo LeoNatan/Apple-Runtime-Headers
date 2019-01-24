@@ -62,6 +62,7 @@
 - (void)_updateStyle;
 - (void)_setNeedsLabelUpdate;
 - (id)_nowPlayingTextForFields:(id)arg1;
+- (void)_handleICAgeVerificationStateDidChangeNotification:(id)arg1;
 - (void)marqueeViewDidEndMarqueeIteration:(id)arg1 finished:(_Bool)arg2;
 - (float)secondLineBaselineTallscriptOffset;
 - (id)lastLineContainerView;

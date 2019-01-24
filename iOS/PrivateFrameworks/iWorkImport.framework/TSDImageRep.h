@@ -16,14 +16,14 @@
 __attribute__((visibility("hidden")))
 @interface TSDImageRep : TSDMediaRep <CALayerDelegate, TSDImageDrawingDataSource, TSDMagicMoveMatching>
 {
-    TSDLayoutGeometry *mLastImageGeometryInRoot;
-    TSDLayoutGeometry *mLastMaskGeometryInRoot;
-    struct CGAffineTransform mLastLayoutToImageTransform;
-    struct CGRect mFrameInUnscaledCanvasRelativeToSuper;
-    _Bool mFrameInUnscaledCanvasIsValid;
-    TSDImageDrawingHelper *mDrawingHelper;
-    NSMutableArray *mUpdateFromLayoutBlocks;
-    NSObject<OS_dispatch_semaphore> *mUpdateFromLayoutBlocksLock;
+    TSDLayoutGeometry *_lastImageGeometryInRoot;
+    TSDLayoutGeometry *_lastMaskGeometryInRoot;
+    struct CGAffineTransform _lastLayoutToImageTransform;
+    struct CGRect _frameInUnscaledCanvasRelativeToSuper;
+    _Bool _frameInUnscaledCanvasIsValid;
+    TSDImageDrawingHelper *_drawingHelper;
+    NSMutableArray *_updateFromLayoutBlocks;
+    NSObject<OS_dispatch_semaphore> *_updateFromLayoutBlocksLock;
 }
 
 + (double)magicMoveAttributeMatchPercentBetweenOutgoingObject:(id)arg1 incomingObject:(id)arg2 mixingTypeContext:(id)arg3;

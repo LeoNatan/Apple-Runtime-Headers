@@ -55,6 +55,7 @@
 - (void)_setServerPropertyForOption:(int)arg1 value:(id)arg2;
 - (id)_serverPropertyValueForOption:(int)arg1;
 - (void)setShowingCoachingHint:(_Bool)arg1 event:(int)arg2 reply:(CDUnknownBlockType)arg3;
+- (void)authMethodWithReply:(CDUnknownBlockType)arg1;
 - (void)resetWithReply:(CDUnknownBlockType)arg1;
 - (void)prearmTouchIDWithReply:(CDUnknownBlockType)arg1;
 - (_Bool)isCredentialSet:(int)arg1;
@@ -63,6 +64,8 @@
 - (_Bool)setCredential:(id)arg1 type:(int)arg2;
 - (id)evaluateAccessControl:(struct __SecAccessControl *)arg1 operation:(int)arg2 options:(id)arg3 error:(id *)arg4;
 - (void)evaluateAccessControl:(struct __SecAccessControl *)arg1 operation:(int)arg2 localizedReason:(id)arg3 reply:(CDUnknownBlockType)arg4;
+- (void)_evaluateAccessControl:(struct __SecAccessControl *)arg1 operation:(id)arg2 options:(id)arg3 reply:(CDUnknownBlockType)arg4;
+- (void)evaluateAccessControl:(struct __SecAccessControl *)arg1 aksOperation:(void *)arg2 options:(id)arg3 reply:(CDUnknownBlockType)arg4;
 - (void)evaluateAccessControl:(struct __SecAccessControl *)arg1 operation:(int)arg2 options:(id)arg3 reply:(CDUnknownBlockType)arg4;
 - (void)setCredential:(id)arg1 forProcessedEvent:(int)arg2 credentialType:(int)arg3 reply:(CDUnknownBlockType)arg4;
 - (void)resetProcessedEvent:(int)arg1 reply:(CDUnknownBlockType)arg2;

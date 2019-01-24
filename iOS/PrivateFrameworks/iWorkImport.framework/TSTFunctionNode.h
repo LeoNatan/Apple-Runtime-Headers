@@ -29,8 +29,8 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (void)p_resetArgumentSpecForChildren;
 - (id)p_functionSpec;
-- (void)saveToArchive:(struct FunctionNodeArchive *)arg1 archiver:(id)arg2;
-- (void)loadFromArchive:(const struct FunctionNodeArchive *)arg1 unarchiver:(id)arg2;
+-     // Error parsing type: v32@0:8^{FunctionNodeArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}^{ExpressionNodeArchive}I}16@24, name: saveToArchive:archiver:
+-     // Error parsing type: v32@0:8r^{FunctionNodeArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}^{ExpressionNodeArchive}I}16@24, name: loadFromArchive:unarchiver:
 - (void)saveToArchiver:(id)arg1;
 - (void)loadFromUnarchiver:(id)arg1;
 - (void)addTSTCanvasReferencesToSet:(id)arg1 inRangeContext:(unsigned char)arg2 withColorHelper:(id)arg3 preferringNodesFromStorage:(id)arg4 allVisitedNodes:(id)arg5;

@@ -10,5 +10,6 @@
 - (void)inCallControlsDragController:(id)arg1 didEndDragAt:(long long)arg2;
 - (void)inCallControlsDragController:(id)arg1 didStartDragTo:(long long)arg2;
 - (void)inCallControlsDragController:(id)arg1 willStartDragFrom:(long long)arg2;
+- (long long)inCallControlsDragControllerShortestState:(id)arg1;
 @end
 

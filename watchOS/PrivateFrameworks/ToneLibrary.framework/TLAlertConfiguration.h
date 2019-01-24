@@ -29,6 +29,8 @@
     NSURL *_externalVibrationPatternFileURL;
     NSString *_audioCategory;
     float _audioVolume;
+    double _audioPlaybackInitiationDelay;
+    double _audioVolumeRampingDuration;
     unsigned long long _externalToneMediaLibraryItemIdentifier;
     double _maximumDuration;
 }
@@ -49,6 +51,8 @@
 @property(copy, nonatomic) NSString *toneIdentifier; // @synthesize toneIdentifier=_toneIdentifier;
 @property(copy, nonatomic) NSString *topic; // @synthesize topic=_topic;
 @property(readonly, nonatomic) int type; // @synthesize type=_type;
+@property(nonatomic, setter=_setAudioVolumeRampingDuration:) double _audioVolumeRampingDuration; // @synthesize _audioVolumeRampingDuration;
+@property(nonatomic, setter=_setAudioPlaybackInitiationDelay:) double _audioPlaybackInitiationDelay; // @synthesize _audioPlaybackInitiationDelay;
 @property(readonly, nonatomic) _Bool _hasCustomAudioVolume; // @synthesize _hasCustomAudioVolume;
 - (void).cxx_destruct;
 - (void)_throwForFrozenInstance;

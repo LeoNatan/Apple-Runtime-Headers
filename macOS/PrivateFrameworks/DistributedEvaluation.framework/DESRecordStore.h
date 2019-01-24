@@ -15,6 +15,7 @@
 
 + (void)_getServiceProxyWithErrorHandler:(CDUnknownBlockType)arg1 block:(CDUnknownBlockType)arg2;
 - (void).cxx_destruct;
+- (void)saveCoreDuetEvent:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)deleteSavedRecordWithIdentfier:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)deleteAllSavedRecordsWithCompletion:(CDUnknownBlockType)arg1;
 - (void)fetchSavedRecordInfoWithCompletion:(CDUnknownBlockType)arg1;

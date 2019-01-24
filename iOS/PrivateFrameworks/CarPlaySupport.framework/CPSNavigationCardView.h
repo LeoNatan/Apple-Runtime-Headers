@@ -26,10 +26,12 @@
 - (void)navigator:(id)arg1 pausedTripForReason:(unsigned long long)arg2 description:(id)arg3;
 - (void)updateEstimates:(id)arg1 forManeuver:(id)arg2;
 - (void)showManeuvers:(id)arg1 usingDisplayStyles:(id)arg2;
-- (struct CGSize)intrinsicContentSize;
-@property(nonatomic, getter=isMinimalMode) _Bool minimalMode;
 - (void)_showPausedViewForReason:(unsigned long long)arg1 description:(id)arg2;
 - (void)_showManeuversView;
+- (void)invalidateIntrinsicContentSize;
+- (struct CGSize)intrinsicContentSize;
+- (void)layoutSubviews;
+- (_Bool)hasContent;
 - (id)initWithBackgroundColor:(id)arg1;
 
 // Remaining properties

@@ -12,10 +12,12 @@
 
 @interface BFFSimplePasscodeInputView : BFFPasscodeInputView <PSPasscodeFieldDelegate>
 {
+    _Bool _limitCharactersToNumbers;
     PSPasscodeField *_passcodeField;
 }
 
 @property(retain, nonatomic) PSPasscodeField *passcodeField; // @synthesize passcodeField=_passcodeField;
+@property(nonatomic) _Bool limitCharactersToNumbers; // @synthesize limitCharactersToNumbers=_limitCharactersToNumbers;
 - (void).cxx_destruct;
 - (void)passcodeField:(id)arg1 enteredPasscode:(id)arg2;
 - (id)passcodeField:(id)arg1 shouldInsertText:(id)arg2;

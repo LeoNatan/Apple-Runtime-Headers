@@ -12,6 +12,9 @@
 {
     double _contactRelevanceScore;
     double _fractionOfMatch;
+    double _mapsSuggestionsContactRevelanceScore;
+    double _mapsSuggestionsIsTouristScore;
+    double _mapsSuggestionsPoiRevelanceScore;
     int _age;
     int _distanceToSuggestion;
     int _peopleSuggesterRank;
@@ -28,6 +31,9 @@
     struct {
         unsigned int contactRelevanceScore:1;
         unsigned int fractionOfMatch:1;
+        unsigned int mapsSuggestionsContactRevelanceScore:1;
+        unsigned int mapsSuggestionsIsTouristScore:1;
+        unsigned int mapsSuggestionsPoiRevelanceScore:1;
         unsigned int age:1;
         unsigned int distanceToSuggestion:1;
         unsigned int peopleSuggesterRank:1;
@@ -44,6 +50,9 @@
     } _has;
 }
 
+@property(nonatomic) double mapsSuggestionsIsTouristScore; // @synthesize mapsSuggestionsIsTouristScore=_mapsSuggestionsIsTouristScore;
+@property(nonatomic) double mapsSuggestionsPoiRevelanceScore; // @synthesize mapsSuggestionsPoiRevelanceScore=_mapsSuggestionsPoiRevelanceScore;
+@property(nonatomic) double mapsSuggestionsContactRevelanceScore; // @synthesize mapsSuggestionsContactRevelanceScore=_mapsSuggestionsContactRevelanceScore;
 @property(nonatomic) BOOL isFavorite; // @synthesize isFavorite=_isFavorite;
 @property(nonatomic) int peopleSuggesterRank; // @synthesize peopleSuggesterRank=_peopleSuggesterRank;
 @property(nonatomic) BOOL matchedUsingEventName; // @synthesize matchedUsingEventName=_matchedUsingEventName;
@@ -64,6 +73,9 @@
 - (BOOL)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(nonatomic) BOOL hasMapsSuggestionsIsTouristScore;
+@property(nonatomic) BOOL hasMapsSuggestionsPoiRevelanceScore;
+@property(nonatomic) BOOL hasMapsSuggestionsContactRevelanceScore;
 - (int)StringAsPoiOpenState:(id)arg1;
 - (id)poiOpenStateAsString:(int)arg1;
 @property(nonatomic) BOOL hasPoiOpenState;

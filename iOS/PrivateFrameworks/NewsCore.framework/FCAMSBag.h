@@ -6,12 +6,13 @@
 
 #import <objc/NSObject.h>
 
+#import <NewsCore/AMSDeviceOfferBagContract-Protocol.h>
 #import <NewsCore/AMSLookupBagContract-Protocol.h>
 
 @class AMSBag, AMSBagValue, NSString;
 @protocol AMSMescalBagContract, AMSMetricsBagContract;
 
-@interface FCAMSBag : NSObject <AMSLookupBagContract>
+@interface FCAMSBag : NSObject <AMSDeviceOfferBagContract, AMSLookupBagContract>
 {
     AMSBag *_bag;
 }
@@ -19,6 +20,8 @@
 + (id)_keySet;
 @property(retain, nonatomic) AMSBag *bag; // @synthesize bag=_bag;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) AMSBagValue *iCloudDeviceOfferDeepLink;
+@property(readonly, nonatomic) AMSBagValue *appleMusicDeviceOfferDeepLink;
 @property(readonly, nonatomic) AMSBagValue *unpersonalizedLookupURL;
 @property(readonly, nonatomic) AMSBagValue *trustedDomains;
 - (id)init;

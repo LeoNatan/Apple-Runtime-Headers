@@ -8,17 +8,18 @@
 
 #import <Silex/SXDataRecordValueTransformer-Protocol.h>
 
-@class NSString, SXDocumentController;
+@class NSString;
+@protocol SXDOMObjectProviding;
 
 @interface SXImageRecordValueTransformer : NSObject <SXDataRecordValueTransformer>
 {
-    SXDocumentController *_documentController;
+    id <SXDOMObjectProviding> _DOMObjectProvider;
 }
 
-@property(readonly, nonatomic) SXDocumentController *documentController; // @synthesize documentController=_documentController;
+@property(readonly, nonatomic) id <SXDOMObjectProviding> DOMObjectProvider; // @synthesize DOMObjectProvider=_DOMObjectProvider;
 - (void).cxx_destruct;
 - (id)transformValueForRecord:(id)arg1 descriptor:(id)arg2;
-- (id)initWithDocumentController:(id)arg1;
+- (id)initWithDOMObjectProvider:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

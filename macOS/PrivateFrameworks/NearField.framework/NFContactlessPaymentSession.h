@@ -43,7 +43,7 @@
 - (void)didReceiveActivityTimeout:(id)arg1;
 - (void)didReceivePendingServerRequest;
 - (void)didFailDeferredAuthorization;
-- (void)didExpressModeStateChange:(unsigned int)arg1;
+- (void)didExpressModeStateChange:(unsigned int)arg1 withObject:(id)arg2;
 - (void)didFelicaStateChange:(id)arg1;
 - (void)didExpireTransactionForApplet:(id)arg1;
 - (void)didReceiveButtonPressForApplet:(id)arg1;

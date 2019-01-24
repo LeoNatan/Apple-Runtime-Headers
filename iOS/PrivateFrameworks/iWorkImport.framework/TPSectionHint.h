@@ -19,8 +19,8 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) unsigned long long documentStartPageIndex; // @synthesize documentStartPageIndex=_documentStartPageIndex;
 @property(readonly, nonatomic) NSArray *pageHints; // @synthesize pageHints=_pageHints;
 - (void).cxx_destruct;
-- (void)saveToArchive:(struct SectionHintArchive *)arg1 archiver:(id)arg2 context:(id)arg3 shouldArchiveHintBlock:(CDUnknownBlockType)arg4;
-- (id)initWithArchive:(const struct SectionHintArchive *)arg1 unarchiver:(id)arg2;
+-     // Error parsing type: v48@0:8^{SectionHintArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TP::PageHintArchive>=^{Arena}ii^{Rep}}I}16@24@32@?40, name: saveToArchive:archiver:context:shouldArchiveHintBlock:
+-     // Error parsing type: @32@0:8r^{SectionHintArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TP::PageHintArchive>=^{Arena}ii^{Rep}}I}16@24, name: initWithArchive:unarchiver:
 - (void)setPageHints:(id)arg1;
 - (_Bool)containsDocumentPageIndex:(unsigned long long)arg1;
 - (_Bool)hasEndOfTextLayoutBeforePageIndex:(unsigned long long)arg1;

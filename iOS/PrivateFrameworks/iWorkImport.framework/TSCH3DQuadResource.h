@@ -14,6 +14,7 @@ __attribute__((visibility("hidden")))
 + (id)normalizedCube;
 + (id)normalizedCenteredCube;
 + (id)normalized2D;
++ (id)normalized3D;
 + (id)normalized4D;
 
 @end

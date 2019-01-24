@@ -30,6 +30,7 @@
 - (void)textFieldDidEndEditing:(id)arg1;
 - (_Bool)textFieldShouldReturn:(id)arg1;
 - (void)textFieldDidBeginEditing:(id)arg1;
+- (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)commitGroupName;
 - (id)initWithFrame:(struct CGRect)arg1;
 

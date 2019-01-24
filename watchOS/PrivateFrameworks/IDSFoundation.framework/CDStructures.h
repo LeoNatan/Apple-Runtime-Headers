@@ -30,8 +30,8 @@ struct IDSGlobalLinkAttribute {
 struct IDSNetBuffer_;
 
 struct IDSSimpleUInt16List {
-    int listSize;
-    int itemCount;
+    unsigned long listSize;
+    unsigned long itemCount;
     unsigned short *items;
 };
 

@@ -10,9 +10,6 @@
 {
 }
 
-+ (unsigned int)_deviceCategoryForDeviceProductType:(id)arg1;
-+ (id)deviceCategoryStringRepresentationForCategoryType:(unsigned int)arg1;
-+ (_Bool)isCurrentDeviceCompatibleWithVoiceProfileAt:(id)arg1;
 + (id)sharedPreferences;
 - (_Bool)useSiriActivationSPIForHomePod;
 - (unsigned int)maxNumLoggingFiles;
@@ -28,20 +25,29 @@
 - (id)interstitialRelativeDirForLevel:(int)arg1;
 - (double)remoteVoiceTriggerEndpointTimeoutWithDefault:(double)arg1;
 - (double)remoteVoiceTriggerDelayTime;
+- (void)notifyUserVoiceProfileDownloadReadyForUser:(id)arg1 getData:(CDUnknownBlockType)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)notifyUserVoiceProfileUploadComplete:(id)arg1;
+- (void)uploadUserVoiceProfile:(CDUnknownBlockType)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)markSATEnrollmentSuccessForLanguageCode:(id)arg1;
 - (_Bool)_markSATEnrollmentWithMarker:(id)arg1 forLanguage:(id)arg2;
 - (_Bool)_markSATEnrollmentMigratedForLanguageCode:(id)arg1;
 - (_Bool)_markSATEnrollmentSuccessForLanguageCode:(id)arg1;
 - (void)notifyUserVoiceProfileUpdateReady;
+- (id)_getUserVoiceProfileUpdateDirectoryWithUpdatePath:(id)arg1;
 - (id)getUserVoiceProfileUpdateDirectory;
+- (id)getUserVoiceProfileUpdateDirectoryForNewerZone;
 - (_Bool)_isDirectory:(id)arg1;
 - (void)notifyUserVoiceProfileUploadComplete;
 - (id)getUserVoiceProfileUploadPathWithEnrolledLanguageList:(id *)arg1;
-- (id)getUserVoiceProfileUploadPath;
 - (id)getUserVoiceProfileFileList;
 - (id)_getEnrolledLanguageList;
 - (id)_CSSATUploadPath;
-- (id)_CSSATUpdatePath;
+- (id)_CSSATDownloadPathForNewerZone;
+- (id)_CSSATDownloadPath;
 - (id)CSSATBasePath;
+- (int)getJarvisTriggerMode;
+- (void)setJarvisTriggerMode:(int)arg1;
+- (_Bool)jarvisAudioLoggingEnabled;
 - (_Bool)secondPassAudioLoggingEnabled;
 - (id)assistantAudioFileLogDirectory;
 - (id)assistantLogDirectory;

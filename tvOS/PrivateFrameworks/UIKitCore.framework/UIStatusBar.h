@@ -16,6 +16,7 @@
 {
     id <UIStatusBarStateProvider> _inProcessProvider;
     _Bool _showsForeground;
+    _Bool _observingDefaults;
     UIStatusBarBackgroundView *_backgroundView;
     UIStatusBarForegroundView *_foregroundView;
     UILabel *_doubleHeightLabel;
@@ -67,6 +68,8 @@
 - (void)setStatusBarWindow:(id)arg1;
 - (id)statusBarWindow;
 - (void).cxx_destruct;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
+- (void)_dateTimePreferencesUpdated;
 - (_Bool)_rectIntersectsTimeItem:(struct CGRect)arg1;
 - (void)_performBlockWhileIgnoringForegroundViewChanges:(CDUnknownBlockType)arg1;
 - (void)_clearOverrideHeight;

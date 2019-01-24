@@ -9,10 +9,13 @@
 @class NSDictionary, NSError, NSNumber;
 
 @protocol SKUIClientAccountPageViewController <NSObject>
+- (void)dismissBridgedViewController;
+- (void)presentBridgedViewController;
 - (void)popBridgedViewControllersToIndex:(unsigned long long)arg1;
 - (void)pushBridgedViewControllerAnimated:(_Bool)arg1 options:(NSDictionary *)arg2;
 - (void)setBridgedNavigationItemWithOptions:(NSDictionary *)arg1;
 - (void)overrideRedeemCameraWithCompletion:(void (^)(SKUIRedeem *, NSError *))arg1;
+- (void)overrideRedeemCameraPerformAction:(long long)arg1 withObject:(id)arg2;
 - (void)overrideCreditCardPresentationWithCompletion:(void (^)(SUCreditCardReaderOutput *))arg1;
 - (void)financeInterruptionResolved:(_Bool)arg1;
 - (void)dismissViewControllerWithResult:(NSNumber *)arg1 error:(NSError *)arg2;

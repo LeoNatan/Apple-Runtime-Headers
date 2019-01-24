@@ -14,6 +14,7 @@
 - (void)cardSectionViewDidSelectPreferredPunchoutIndex:(long long)arg1;
 - (void)cardSectionViewDidInvalidateSize:(UIView *)arg1;
 - (void)updateViewControllerTitle:(NSString *)arg1;
+- (void)willDismissViewController:(UIViewController *)arg1;
 - (void)presentViewController:(UIViewController *)arg1;
 - (void)cardSectionViewDidInvalidateSize:(UIView *)arg1 animate:(_Bool)arg2;
 - (_Bool)shouldHandleCardSectionEngagement:(SFCardSectionEngagementFeedback *)arg1;

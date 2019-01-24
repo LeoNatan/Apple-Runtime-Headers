@@ -7,16 +7,18 @@
 #import <objc/NSObject.h>
 
 #import <NewsUI/NUURLHandling-Protocol.h>
+#import <NewsUI/SXURLHandling-Protocol.h>
 
 @class NSExtensionContext, NSString;
 
-@interface NUExtensionURLHandler : NSObject <NUURLHandling>
+@interface NUExtensionURLHandler : NSObject <NUURLHandling, SXURLHandling>
 {
     NSExtensionContext *_extensionContext;
 }
 
 @property(readonly, nonatomic) NSExtensionContext *extensionContext; // @synthesize extensionContext=_extensionContext;
 - (void).cxx_destruct;
+- (void)openURL:(id)arg1;
 - (void)openURL:(id)arg1 options:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)initWithExtensionContext:(id)arg1;
 

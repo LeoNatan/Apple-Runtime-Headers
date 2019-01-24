@@ -49,6 +49,7 @@
 - (BOOL)isAirPlayReceiverSessionActive;
 - (BOOL)groupContainsGroupLeader;
 - (BOOL)isGroupLeader;
+- (BOOL)supportsRapport;
 - (BOOL)supportsBufferedAirPlay;
 - (BOOL)canRelayCommunicationChannel;
 - (BOOL)isRemoteControllable;

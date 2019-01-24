@@ -38,6 +38,7 @@ __attribute__((visibility("hidden")))
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)_dateTimePreferencesUpdated;
 - (_Bool)_updateDateAndTimePlacements;
+- (void)itemCreated:(id)arg1;
 - (void)sizeUpdatedFromSize:(struct CGSize)arg1;
 - (void)avoidanceFrameUpdatedFromFrame:(struct CGRect)arg1;
 - (void)_updateConstraintsForAvoidanceFrame:(struct CGRect)arg1;

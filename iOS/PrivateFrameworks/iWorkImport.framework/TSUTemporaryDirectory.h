@@ -17,6 +17,7 @@ __attribute__((visibility("hidden")))
 
 - (void).cxx_destruct;
 - (_Bool)_createDirectoryWithSignature:(id)arg1 subdirectory:(id)arg2 error:(id *)arg3;
+- (void)removeDirectory;
 - (void)leakTemporaryDirectory;
 - (id)URL;
 - (id)path;

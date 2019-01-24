@@ -274,7 +274,7 @@
 @property(readonly, retain, nonatomic) NSDictionary *buddyPictures;
 - (void)closeSessionChatID:(id)arg1 identifier:(id)arg2 style:(unsigned char)arg3;
 - (void)setProperties:(id)arg1 ofParticipant:(id)arg2 inChatID:(id)arg3 identifier:(id)arg4 style:(unsigned char)arg5;
-- (void)sendLogDumpMessageAtFilePath:(id)arg1 toRecipient:(id)arg2 shouldDeleteFile:(_Bool)arg3;
+- (void)sendLogDumpMessageAtFilePath:(id)arg1 toRecipient:(id)arg2 shouldDeleteFile:(_Bool)arg3 withCompletion:(CDUnknownBlockType)arg4;
 - (void)sendMessage:(id)arg1 toChatID:(id)arg2 identifier:(id)arg3 style:(unsigned char)arg4;
 - (void)declineInvitationToChatID:(id)arg1 identifier:(id)arg2 style:(unsigned char)arg3;
 - (void)invitePersonInfo:(id)arg1 withMessage:(id)arg2 toChatID:(id)arg3 identifier:(id)arg4 style:(unsigned char)arg5;

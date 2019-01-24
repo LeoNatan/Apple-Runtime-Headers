@@ -72,6 +72,7 @@
 - (void)_initializeForTraitCollection:(id)arg1;
 - (void)updateTitle:(id)arg1 animated:(_Bool)arg2;
 - (void)configureForEditing:(_Bool)arg1;
+- (_Bool)isFaceTimeVideoSupported;
 - (_Bool)isMultiwayFaceTimeAudioSupported;
 - (void)_notifyDelegateThatViewControllerWantsResize;
 - (void)_updateMultiwayButtonStateWithConversation:(id)arg1;

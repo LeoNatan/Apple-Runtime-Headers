@@ -7,6 +7,6 @@
 #import <UIKit/UIViewController.h>
 
 @interface UIViewController (WebViewHandler)
-- (void)presentBrowserViewControllerForURL:(id)arg1 inViewController:(id)arg2;
+- (id)presentBrowserViewControllerForURL:(id)arg1 inViewController:(id)arg2;
 @end
 

@@ -9,6 +9,6 @@
 @class AFSiriActivationContext;
 
 @protocol AFSiriActivationHandling <NSObject>
-- (_Bool)handleContext:(AFSiriActivationContext *)arg1 completion:(void (^)(_Bool, NSError *))arg2;
+- (_Bool)handleContext:(AFSiriActivationContext *)arg1 completion:(void (^)(AFSiriActivationResult *))arg2;
 @end
 

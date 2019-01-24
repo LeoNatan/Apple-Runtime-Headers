@@ -27,8 +27,8 @@ __attribute__((visibility("hidden")))
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (void)saveToArchive:(struct Point *)arg1 archiver:(id)arg2;
-- (id)initWithArchive:(const struct Point *)arg1 unarchiver:(id)arg2;
+-     // Error parsing type: v32@0:8^{Point=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}ff}16@24, name: saveToArchive:archiver:
+-     // Error parsing type: @32@0:8r^{Point=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}ff}16@24, name: initWithArchive:unarchiver:
 - (id)init;
 - (id)initWithDX:(double)arg1 dY:(double)arg2;
 

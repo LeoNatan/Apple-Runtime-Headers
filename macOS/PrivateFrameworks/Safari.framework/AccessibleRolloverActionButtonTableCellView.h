@@ -16,13 +16,11 @@ __attribute__((visibility("hidden")))
 
 @property(nonatomic) __weak id <AccessibleRolloverActionButtonTableCellViewDelegate> accessibilityDelegate; // @synthesize accessibilityDelegate=_accessibilityDelegate;
 - (void).cxx_destruct;
-- (void)accessibilityPerformAction:(id)arg1;
-- (id)accessibilityActionDescription:(id)arg1;
-- (id)accessibilityActionNames;
-- (BOOL)accessibilityIsAttributeSettable:(id)arg1;
-- (id)accessibilityAttributeValue:(id)arg1;
-- (id)accessibilityAttributeNames;
-- (BOOL)accessibilityIsIgnored;
+- (BOOL)accessibilityPerformPress;
+- (void)setAccessibilityLabel:(id)arg1;
+- (id)accessibilityLabel;
+- (id)accessibilityRole;
+- (BOOL)isAccessibilityElement;
 
 @end
 

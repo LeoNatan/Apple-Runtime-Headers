@@ -23,7 +23,6 @@ __attribute__((visibility("hidden")))
     NSMutableSet *_backgroundHighlightLayers;
     BOOL _active;
     BOOL _hasMouseOverHighlight;
-    BOOL _mouseOverHighlightShouldIncludeRightBorderFrameWidth;
     BOOL _forcesActiveWindowState;
     BOOL _shouldReduceTransparency;
     NSView *_contentView;
@@ -32,7 +31,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) BOOL shouldReduceTransparency; // @synthesize shouldReduceTransparency=_shouldReduceTransparency;
 @property(readonly, nonatomic) NSView *contentView; // @synthesize contentView=_contentView;
 @property(nonatomic) BOOL forcesActiveWindowState; // @synthesize forcesActiveWindowState=_forcesActiveWindowState;
-@property(nonatomic) BOOL mouseOverHighlightShouldIncludeRightBorderFrameWidth; // @synthesize mouseOverHighlightShouldIncludeRightBorderFrameWidth=_mouseOverHighlightShouldIncludeRightBorderFrameWidth;
 @property(nonatomic) BOOL hasMouseOverHighlight; // @synthesize hasMouseOverHighlight=_hasMouseOverHighlight;
 @property(nonatomic, getter=isActive) BOOL active; // @synthesize active=_active;
 - (void).cxx_destruct;

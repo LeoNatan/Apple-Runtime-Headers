@@ -30,6 +30,7 @@
 @property(readonly, nonatomic) FCCKRecordZone *sensitiveSubscriptionsRecordZone;
 @property(readonly, nonatomic) FCCKRecordZone *subscriptionsRecordZone;
 @property(readonly, nonatomic) FCCKRecordZone *readingListRecordZone;
+@property(readonly, nonatomic) FCCKRecordZone *issueReadingHistoryRecordZone;
 - (id)init;
 
 // Remaining properties

@@ -60,7 +60,6 @@
 - (void)_updateName:(id)arg1 buttonConfiguration:(id)arg2 target:(id)arg3;
 - (id)_dataForUpdateTarget:(id)arg1 name:(id)arg2 buttonConfiguration:(id)arg3 outError:(id *)arg4;
 - (void)updateButtonConfigurationForTarget:(id)arg1;
-- (void)_writeData:(id)arg1 toCharacteristic:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_auditTargets:(id)arg1;
 - (void)_listTargetsWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (id)_dataForListTargetsWithOutError:(id *)arg1;

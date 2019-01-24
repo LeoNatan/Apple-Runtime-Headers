@@ -67,8 +67,8 @@ __attribute__((visibility("hidden")))
 - (id)initWithContext:(id)arg1 geometry:(id)arg2;
 - (void)saveToArchiver:(id)arg1;
 - (void)loadFromUnarchiver:(id)arg1;
-- (void)saveToArchive:(struct ContainerArchive *)arg1 archiver:(id)arg2;
-- (void)loadFromArchive:(const struct ContainerArchive *)arg1 unarchiver:(id)arg2;
+-     // Error parsing type: v32@0:8^{ContainerArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}^{GeometryArchive}^{Reference}}16@24, name: saveToArchive:archiver:
+-     // Error parsing type: v32@0:8r^{ContainerArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}^{GeometryArchive}^{Reference}}16@24, name: loadFromArchive:unarchiver:
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

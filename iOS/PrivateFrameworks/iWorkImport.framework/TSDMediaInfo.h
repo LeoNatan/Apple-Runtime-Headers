@@ -42,6 +42,8 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) unsigned int flags;
 @property(readonly, nonatomic) struct CGSize defaultOriginalSize;
 - (id)copyWithContext:(id)arg1;
+@property(readonly, nonatomic) unsigned short propertyIdForOriginalSizeCommand;
+@property(readonly, nonatomic) unsigned short propertyIdForFlagsCommand;
 @property(readonly, nonatomic) NSString *propertyNameForOriginalSizeCommand;
 @property(readonly, nonatomic) NSString *propertyNameForFlagsCommand;
 - (id)initWithContext:(id)arg1 geometry:(id)arg2;

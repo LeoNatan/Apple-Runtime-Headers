@@ -10,7 +10,7 @@
 @protocol LAContextClientEvaluationProt
 - (void)setCredential:(NSData *)arg1 type:(int)arg2 reply:(void (^)(_Bool, NSError *))arg3;
 - (void)isCredentialSet:(int)arg1 reply:(void (^)(_Bool, NSError *))arg2;
-- (void)evaluateACL:(NSData *)arg1 operation:(int)arg2 options:(NSDictionary *)arg3 uiDelegate:(id <LAUIDelegate>)arg4 reply:(void (^)(NSDictionary *, NSError *))arg5;
+- (void)evaluateACL:(NSData *)arg1 operation:(id)arg2 options:(NSDictionary *)arg3 uiDelegate:(id <LAUIDelegate>)arg4 reply:(void (^)(NSDictionary *, NSError *))arg5;
 - (void)evaluatePolicy:(int)arg1 options:(NSDictionary *)arg2 uiDelegate:(id <LAUIDelegate>)arg3 reply:(void (^)(NSDictionary *, NSError *))arg4;
 @end
 

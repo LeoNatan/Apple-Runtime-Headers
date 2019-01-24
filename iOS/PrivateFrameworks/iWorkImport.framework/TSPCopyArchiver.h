@@ -18,8 +18,8 @@ __attribute__((visibility("hidden")))
 
 @property(nonatomic) __weak id <TSPProxyObjectMapping> proxyObjectMapping; // @synthesize proxyObjectMapping=_proxyObjectMapping;
 - (void).cxx_destruct;
-- (void)setStrongLazyReference:(id)arg1 message:(struct Reference *)arg2;
-- (void)setStrongReference:(id)arg1 message:(struct Reference *)arg2;
+-     // Error parsing type: v32@0:8@16^{Reference=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}QiB}24, name: setStrongLazyReference:message:
+-     // Error parsing type: v32@0:8@16^{Reference=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}QiB}24, name: setStrongReference:message:
 @property(readonly, nonatomic) long long targetType;
 
 @end

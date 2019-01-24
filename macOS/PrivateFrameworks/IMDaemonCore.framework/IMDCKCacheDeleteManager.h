@@ -11,9 +11,11 @@
     BOOL _alreadyCapturedErrorWithAutoBugCapture;
     BOOL _allowsWritingToDisk;
     BOOL _deviceLowOnDiskSpace;
+    BOOL _isUpdatingAttachmentFileSizes;
 }
 
 + (id)sharedInstance;
+@property BOOL isUpdatingAttachmentFileSizes; // @synthesize isUpdatingAttachmentFileSizes=_isUpdatingAttachmentFileSizes;
 @property(nonatomic, getter=isDeviceLowOnDiskSpace) BOOL deviceLowOnDiskSpace; // @synthesize deviceLowOnDiskSpace=_deviceLowOnDiskSpace;
 @property(nonatomic) BOOL allowsWritingToDisk; // @synthesize allowsWritingToDisk=_allowsWritingToDisk;
 @property(nonatomic) BOOL alreadyCapturedErrorWithAutoBugCapture; // @synthesize alreadyCapturedErrorWithAutoBugCapture=_alreadyCapturedErrorWithAutoBugCapture;
@@ -41,6 +43,8 @@
 - (id)_cacheDeleteRequestCacheableSpaceGuidanceWithID:(id)arg1 diskVolume:(id)arg2 urgency:(int)arg3 requestedSize:(unsigned long long)arg4;
 - (void)_cacheDeleteSetUp;
 - (void)registerWithCacheDelete;
+- (void)updateAttachmentFileSizesWithActivity:(id)arg1;
+- (BOOL)_deviceConditionsAllowsAttachmentFileSizeUpdateForActivity:(id)arg1;
 - (id)_ckUtilitiesSharedInstance;
 - (id)init;
 

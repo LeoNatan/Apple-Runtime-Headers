@@ -7,14 +7,18 @@
 #import <CloudKit/CKRecord.h>
 
 @interface CKRecord (PKAdditions)
+- (id)_dictionaryFromStringValue:(id)arg1;
+- (id)_arrayFromStringValue:(id)arg1;
 - (id)description;
 - (id)pk_description;
 - (id)pk_objectForKey:(id)arg1 ofClass:(Class)arg2;
+- (id)pk_referenceForKey:(id)arg1;
 - (unsigned long long)pk_unsignedIntegerForKey:(id)arg1;
 - (unsigned long long)pk_uint64ForKey:(id)arg1;
 - (int)pk_intForKey:(id)arg1;
 - (long long)pk_integerForKey:(id)arg1;
 - (_Bool)pk_boolForKey:(id)arg1;
+- (id)pk_arrayForKey:(id)arg1;
 - (id)pk_dictionaryForKey:(id)arg1;
 - (id)pk_urlForKey:(id)arg1;
 - (id)pk_decimalNumberForKey:(id)arg1;
@@ -29,6 +33,7 @@
 - (int)pk_encryptedIntForKey:(id)arg1;
 - (long long)pk_encryptedIntegerForKey:(id)arg1;
 - (_Bool)pk_encryptedBoolForKey:(id)arg1;
+- (id)pk_encryptedArrayForKey:(id)arg1;
 - (id)pk_encryptedDictionaryForKey:(id)arg1;
 - (id)pk_encryptedUrlForKey:(id)arg1;
 - (id)pk_encryptedDecimalNumberForKey:(id)arg1;

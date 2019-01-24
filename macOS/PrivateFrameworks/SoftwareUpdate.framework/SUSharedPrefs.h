@@ -28,6 +28,7 @@
 + (id)sharedPrefManager;
 + (BOOL)isAdminUser:(unsigned int)arg1;
 - (id)init;
+- (id)majorOSVariant;
 - (BOOL)shouldEvaluateCriticalIfUnchanged;
 - (void)clearCriticalUpdateNotificationDate;
 - (BOOL)shouldAutoInstallCriticalUpdatesNowForDelay:(long long)arg1;

@@ -19,7 +19,7 @@
 - (void)ignore;
 - (void)use;
 - (void)_invalidate;
-- (void)_usePolicy:(int)arg1;
+- (void)_usePolicy:(unsigned char)arg1;
 - (void)dealloc;
 - (id)_initWithTarget:(id)arg1 action:(SEL)arg2;
 

@@ -26,8 +26,8 @@ __attribute__((visibility("hidden")))
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (void)saveToArchive:(struct LineSpacingArchive *)arg1 archiver:(id)arg2;
-- (id)initWithArchive:(const struct LineSpacingArchive *)arg1 unarchiver:(id)arg2;
+-     // Error parsing type: v32@0:8^{LineSpacingArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}iff}16@24, name: saveToArchive:archiver:
+-     // Error parsing type: @32@0:8r^{LineSpacingArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}iff}16@24, name: initWithArchive:unarchiver:
 - (id)initWithMode:(int)arg1 amount:(double)arg2;
 - (id)initWithMode:(int)arg1 amount:(double)arg2 baselineRule:(double)arg3;
 - (id)init;

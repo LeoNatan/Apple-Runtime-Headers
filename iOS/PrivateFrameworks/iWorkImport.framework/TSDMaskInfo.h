@@ -30,9 +30,9 @@ __attribute__((visibility("hidden")))
 - (void)dealloc;
 - (id)initWithContext:(id)arg1 geometry:(id)arg2;
 - (id)initWithContext:(id)arg1 geometry:(id)arg2 pathSource:(id)arg3;
-- (void)saveToArchive:(struct MaskArchive *)arg1 archiver:(id)arg2;
+-     // Error parsing type: v32@0:8^{MaskArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{DrawableArchive}^{PathSourceArchive}}16@24, name: saveToArchive:archiver:
 - (void)saveToArchiver:(id)arg1;
-- (void)loadFromArchive:(const struct MaskArchive *)arg1 unarchiver:(id)arg2;
+-     // Error parsing type: v32@0:8r^{MaskArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{DrawableArchive}^{PathSourceArchive}}16@24, name: loadFromArchive:unarchiver:
 - (void)loadFromUnarchiver:(id)arg1;
 - (_Bool)isEquivalentForCrossDocumentPasteMasterComparison:(id)arg1;
 

@@ -12,8 +12,8 @@ __attribute__((visibility("hidden")))
 }
 
 - (id)description;
-- (void)saveToArchive:(struct EmptyExpressionNodeArchive *)arg1 archiver:(id)arg2;
-- (void)loadFromArchive:(const struct EmptyExpressionNodeArchive *)arg1 unarchiver:(id)arg2;
+-     // Error parsing type: v32@0:8^{EmptyExpressionNodeArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{ExpressionNodeArchive}}16@24, name: saveToArchive:archiver:
+-     // Error parsing type: v32@0:8r^{EmptyExpressionNodeArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{ExpressionNodeArchive}}16@24, name: loadFromArchive:unarchiver:
 - (void)saveToArchiver:(id)arg1;
 - (void)loadFromUnarchiver:(id)arg1;
 - (void)buildASTNodeArray:(struct TSCEASTNodeArray *)arg1 hostCell:(struct TSUCellCoord)arg2 symbolTable:(struct TSCESymbolTable *)arg3;

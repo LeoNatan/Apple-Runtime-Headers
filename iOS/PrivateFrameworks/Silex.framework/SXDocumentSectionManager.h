@@ -22,7 +22,7 @@
 - (void).cxx_destruct;
 - (id)view;
 - (id)viewController;
-- (double)heightForBlueprint:(id)arg1 width:(double)arg2;
+- (double)heightForBlueprint:(id)arg1 width:(double)arg2 traitCollection:(id)arg3;
 - (void)applySectionBlueprint:(id)arg1 identifier:(id)arg2 offset:(struct CGPoint)arg3 width:(double)arg4;
 - (id)initWithSectionHosting:(id)arg1;
 

@@ -6,10 +6,12 @@
 
 #import <SockPuppetGizmo/NSObject-Protocol.h>
 
-@class INIntent, NSArray, NSData, NSDictionary, NSNumber, NSString, NSUUID, NSUserActivity;
+@class BSMachPortSendRight, INIntent, NSArray, NSData, NSDictionary, NSNumber, NSString, NSUUID, NSUserActivity;
 @protocol SPRemoteNotificationViewHost;
 
 @protocol SPExtensionRemoteProtocol <NSObject>
+- (void)tearDownAccessibilityPortIfNecessaryWithCompletionHandler:(void (^)(void))arg1;
+- (void)exchangeAccessibilityPortInformation:(BSMachPortSendRight *)arg1 replyHandler:(void (^)(BSMachPortSendRight *, NSError *))arg2;
 - (void)runTest:(NSString *)arg1 options:(NSDictionary *)arg2 clientIdentifier:(NSString *)arg3;
 - (void)interfaceDidEndScrollingAnimation:(NSString *)arg1 clientIdentifier:(NSString *)arg2;
 - (void)interfaceContentSystemMinimumLayoutMargins:(NSString *)arg1 withValue:(struct NSDirectionalEdgeInsets)arg2;

@@ -6,15 +6,12 @@
 
 #import <AppKit/NSColorWell.h>
 
-@class NSAppearance;
-
 __attribute__((visibility("hidden")))
 @interface NSColorPanelColorWell : NSColorWell
 {
     BOOL _disabledAsColorDestination;
     BOOL _actsLikeButton;
     unsigned long long _controlSize;
-    NSAppearance *_appearanceForRenderingColor;
 }
 
 - (void)setColor:(id)arg1;
@@ -29,10 +26,8 @@ __attribute__((visibility("hidden")))
 - (BOOL)acceptsFirstResponder;
 - (void)mouseDown:(id)arg1;
 - (void)setActsLikeButton:(BOOL)arg1;
-@property(retain) NSAppearance *appearanceForRenderingColor;
 - (void)setAcceptsColorDrops:(BOOL)arg1;
 - (void)registerForDraggedTypes:(id)arg1;
-- (void)dealloc;
 
 @end
 

@@ -14,13 +14,17 @@
     NSString *_cardholderName;
     NSString *_cardNumber;
     NSDate *_expirationDate;
+    NSDate *_lastUsedDate;
 }
 
+@property(retain, nonatomic) NSDate *lastUsedDate; // @synthesize lastUsedDate=_lastUsedDate;
 @property(readonly, copy, nonatomic) NSDate *expirationDate; // @synthesize expirationDate=_expirationDate;
 @property(copy, nonatomic) NSString *cardNumber; // @synthesize cardNumber=_cardNumber;
 @property(copy, nonatomic) NSString *cardholderName; // @synthesize cardholderName=_cardholderName;
 @property(copy, nonatomic) NSString *cardName; // @synthesize cardName=_cardName;
 - (void).cxx_destruct;
+- (_Bool)hasSameCreditCardInformationAs:(id)arg1;
+- (id)creditCardDataByUpdatingLastUsedDate:(id)arg1;
 - (id)creditCardDataByMergingCardholderNameAndExpirationDateFromCard:(id)arg1;
 - (id)keychainRepresentation;
 - (id)initWithKeychainRepresentation:(id)arg1;

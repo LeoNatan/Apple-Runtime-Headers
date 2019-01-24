@@ -8,7 +8,7 @@
 
 #import <NewsTransport/NSCopying-Protocol.h>
 
-@class NSData, NSString;
+@class NSData, NSString, NTPBIssueData, NTPBIssueViewData;
 
 @interface NTPBArticleEngagement : PBCodable <NSCopying>
 {
@@ -18,6 +18,8 @@
     NSString *_articleId;
     NSString *_channelId;
     NSString *_countryCode;
+    NTPBIssueData *_issueData;
+    NTPBIssueViewData *_issueViewData;
     NSData *_sessionId;
     NSString *_userId;
     int _utcOffset;
@@ -31,6 +33,8 @@
     } _has;
 }
 
+@property(retain, nonatomic) NTPBIssueViewData *issueViewData; // @synthesize issueViewData=_issueViewData;
+@property(retain, nonatomic) NTPBIssueData *issueData; // @synthesize issueData=_issueData;
 @property(nonatomic) _Bool isPaidSubscriber; // @synthesize isPaidSubscriber=_isPaidSubscriber;
 @property(nonatomic) long long articleOpenedAtTimestamp; // @synthesize articleOpenedAtTimestamp=_articleOpenedAtTimestamp;
 @property(retain, nonatomic) NSString *countryCode; // @synthesize countryCode=_countryCode;
@@ -49,6 +53,8 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(readonly, nonatomic) _Bool hasIssueViewData;
+@property(readonly, nonatomic) _Bool hasIssueData;
 @property(nonatomic) _Bool hasIsPaidSubscriber;
 @property(nonatomic) _Bool hasArticleOpenedAtTimestamp;
 @property(readonly, nonatomic) _Bool hasCountryCode;

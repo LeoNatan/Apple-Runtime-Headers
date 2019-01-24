@@ -13,7 +13,7 @@ __attribute__((visibility("hidden")))
     // Error parsing type: , name: delegate
 }
 
-- (CDUnknownBlockType).cxx_destruct;
+- (void).cxx_destruct;
 - (id)init;
 
 @end

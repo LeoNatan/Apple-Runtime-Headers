@@ -57,6 +57,7 @@
 - (void)serviceRequestsActivationSourceWithReplyHandler:(void (^)(long long))arg1;
 
 @optional
+- (void)setTypeToSiriViewHidden:(_Bool)arg1;
 - (void)serviceDidDismissBugReporter;
 - (void)serviceDidPresentBugReporter;
 @end

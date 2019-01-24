@@ -85,7 +85,8 @@
 - (id)as_competitionLearnMoreFullDescription;
 - (id)as_competitionLearnMoreDetailMessage;
 - (id)as_competitionLearnMoreIntroduction;
-- (id)as_competitionLearnMoreAction;
+- (id)as_competitionLearnMoreDetailAction;
+- (id)as_competitionLearnMorePopupAction;
 - (id)as_competitionLearnMoreTitle;
 - (id)_competitionStartMessage:(id)arg1 replacingNameAndDatePlaceholdersForCompetitionStartDate:(id)arg2;
 - (id)as_competitionAcceptConfirmationMessageForCompetition:(id)arg1;

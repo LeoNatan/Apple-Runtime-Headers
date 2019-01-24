@@ -17,6 +17,10 @@
 @property(retain, nonatomic) STUsageSummaryView *summaryView; // @synthesize summaryView=_summaryView;
 @property(retain, nonatomic) UILabel *dailyAverageTitleLabel; // @synthesize dailyAverageTitleLabel=_dailyAverageTitleLabel;
 - (void).cxx_destruct;
+- (void)_layoutDidChangeFrom:(_Bool)arg1 to:(_Bool)arg2;
+- (void)_numberOfLinesDidChangeFrom:(id)arg1 to:(id)arg2;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
+- (void)dealloc;
 - (id)initWithUsageReport:(id)arg1;
 
 @end

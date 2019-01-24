@@ -15,6 +15,7 @@
     unsigned long long _length;
     unsigned char _messageUUID[16];
     _Bool _hasMessageUUID;
+    unsigned int _statusFlags;
     void *_bufferBytes;
     NSMutableData *_bufferData;
     CDUnknownBlockType _completion;
@@ -23,6 +24,7 @@
     unsigned long long _maxLength;
 }
 
+@property(nonatomic) unsigned int statusFlags; // @synthesize statusFlags=_statusFlags;
 @property(nonatomic) _Bool hasMessageUUID; // @synthesize hasMessageUUID=_hasMessageUUID;
 @property(nonatomic) unsigned long long maxLength; // @synthesize maxLength=_maxLength;
 @property(nonatomic) unsigned long long minLength; // @synthesize minLength=_minLength;

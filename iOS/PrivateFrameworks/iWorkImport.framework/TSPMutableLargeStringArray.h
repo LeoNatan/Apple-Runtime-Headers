@@ -12,9 +12,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (Class)arraySegmentClass;
-- (void)loadFromMessage:(const struct LargeStringArray *)arg1 unarchiver:(id)arg2;
+-     // Error parsing type: v32@0:8r^{LargeStringArray=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{LargeArray}}16@24, name: loadFromMessage:unarchiver:
 - (void)loadFromUnarchiver:(id)arg1;
-- (void)saveToMessage:(struct LargeStringArray *)arg1 archiver:(id)arg2;
+-     // Error parsing type: v32@0:8^{LargeStringArray=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{LargeArray}}16@24, name: saveToMessage:archiver:
 - (void)saveToArchiver:(id)arg1;
 
 @end

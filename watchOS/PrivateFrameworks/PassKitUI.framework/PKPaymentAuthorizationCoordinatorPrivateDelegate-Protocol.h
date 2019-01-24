@@ -6,12 +6,13 @@
 
 #import <PassKitUI/NSObject-Protocol.h>
 
-@class NSError, PKAuthorizedPeerPaymentQuote, PKPaymentAuthorizationCoordinator, PKServiceProviderPurchase;
+@class NSError, PKAuthorizedPeerPaymentQuote, PKDisbursementVoucher, PKPaymentAuthorizationCoordinator, PKServiceProviderPurchase;
 
 @protocol PKPaymentAuthorizationCoordinatorPrivateDelegate <NSObject>
 
 @optional
 - (void)paymentAuthorizationCoordinator:(PKPaymentAuthorizationCoordinator *)arg1 didEncounterAuthorizationEvent:(unsigned int)arg2;
+- (void)paymentAuthorizationCoordinator:(PKPaymentAuthorizationCoordinator *)arg1 didAuthorizeDisbursementVoucher:(PKDisbursementVoucher *)arg2 handler:(void (^)(PKPaymentAuthorizationResult *))arg3;
 - (void)paymentAuthorizationCoordinator:(PKPaymentAuthorizationCoordinator *)arg1 didAuthorizePeerPaymentQuote:(PKAuthorizedPeerPaymentQuote *)arg2 handler:(void (^)(PKPaymentAuthorizationResult *))arg3;
 - (void)paymentAuthorizationCoordinator:(PKPaymentAuthorizationCoordinator *)arg1 didAuthorizePurchase:(PKServiceProviderPurchase *)arg2 completion:(void (^)(int))arg3;
 - (void)paymentAuthorizationCoordinator:(PKPaymentAuthorizationCoordinator *)arg1 didRequestMerchantSession:(void (^)(PKPaymentMerchantSession *, NSError *))arg2;

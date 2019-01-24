@@ -11,9 +11,9 @@ __attribute__((visibility("hidden")))
 {
 }
 
-- (void)loadFromMessage:(const struct LargeStringToObjectDictionarySegment *)arg1 unarchiver:(id)arg2;
+-     // Error parsing type: v32@0:8r^{LargeStringToObjectDictionarySegment=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSP::StringToObjectDictionaryElement>=^{Arena}ii^{Rep}}^{LargeDictionarySegment}}16@24, name: loadFromMessage:unarchiver:
 - (void)loadFromUnarchiver:(id)arg1;
-- (void)saveToMessage:(struct LargeStringToObjectDictionarySegment *)arg1 archiver:(id)arg2;
+-     // Error parsing type: v32@0:8^{LargeStringToObjectDictionarySegment=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSP::StringToObjectDictionaryElement>=^{Arena}ii^{Rep}}^{LargeDictionarySegment}}16@24, name: saveToMessage:archiver:
 - (void)saveToArchiver:(id)arg1;
 - (unsigned long long)estimatedByteSizeOfElement:(id)arg1 andKey:(id)arg2;
 

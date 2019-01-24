@@ -22,7 +22,7 @@
 }
 
 @property(readonly, nonatomic) _Bool hasPendingPickedRoutes; // @synthesize hasPendingPickedRoutes=_hasPendingPickedRoutes;
-@property(readonly, nonatomic) MPAVRoutingController *routingController; // @synthesize routingController=_routingController;
+@property(readonly, nonatomic) __weak MPAVRoutingController *routingController; // @synthesize routingController=_routingController;
 - (void).cxx_destruct;
 - (void)_processSelection:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_dequeue;

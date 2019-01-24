@@ -15,7 +15,7 @@ __attribute__((visibility("hidden")))
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (Vector_1e8b6c82)_mimeTypesWithCustomContentProviders;
+- (Vector_14ac4456)_mimeTypesWithCustomContentProviders;
 - (Class)providerForMIMEType:(const struct String *)arg1;
 - (void)registerProvider:(Class)arg1 forMIMEType:(const struct String *)arg2;
 - (void)removePage:(struct WebPageProxy *)arg1;

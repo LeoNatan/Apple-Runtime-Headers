@@ -8,7 +8,7 @@
 
 #import <NewsTransport/NSCopying-Protocol.h>
 
-@class NSData, NSMutableArray, NSString, NTPBAlternateHeadline;
+@class NSData, NSMutableArray, NSString, NTPBAlternateHeadline, NTPBIssueData, NTPBIssueExposureData, NTPBIssueViewData;
 
 @interface NTPBArticleScroll : PBCodable <NSCopying>
 {
@@ -18,6 +18,9 @@
     NSData *_articleViewingSessionId;
     NSData *_feedViewExposureId;
     NSMutableArray *_fractionalCohortMemberships;
+    NTPBIssueData *_issueData;
+    NTPBIssueExposureData *_issueExposureData;
+    NTPBIssueViewData *_issueViewData;
     NSString *_referencedArticleId;
     int _scrollHostViewType;
     NSString *_scrollVelocity;
@@ -39,6 +42,9 @@
 }
 
 + (Class)fractionalCohortMembershipType;
+@property(retain, nonatomic) NTPBIssueExposureData *issueExposureData; // @synthesize issueExposureData=_issueExposureData;
+@property(retain, nonatomic) NTPBIssueViewData *issueViewData; // @synthesize issueViewData=_issueViewData;
+@property(retain, nonatomic) NTPBIssueData *issueData; // @synthesize issueData=_issueData;
 @property(retain, nonatomic) NTPBAlternateHeadline *alternateHeadline; // @synthesize alternateHeadline=_alternateHeadline;
 @property(retain, nonatomic) NSMutableArray *fractionalCohortMemberships; // @synthesize fractionalCohortMemberships=_fractionalCohortMemberships;
 @property(nonatomic) float scrollingVelocity; // @synthesize scrollingVelocity=_scrollingVelocity;
@@ -64,6 +70,9 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(readonly, nonatomic) _Bool hasIssueExposureData;
+@property(readonly, nonatomic) _Bool hasIssueViewData;
+@property(readonly, nonatomic) _Bool hasIssueData;
 @property(readonly, nonatomic) _Bool hasAlternateHeadline;
 - (id)fractionalCohortMembershipAtIndex:(unsigned long long)arg1;
 - (unsigned long long)fractionalCohortMembershipsCount;

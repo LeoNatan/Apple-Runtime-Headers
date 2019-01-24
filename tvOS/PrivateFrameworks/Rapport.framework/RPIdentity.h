@@ -12,8 +12,11 @@
 
 @interface RPIdentity : NSObject <NSSecureCoding>
 {
+    _Bool _userAdded;
     _Bool _present;
     int _type;
+    NSString *_accountID;
+    NSString *_contactID;
     NSDate *_dateAdded;
     NSDate *_dateRemoved;
     NSData *_deviceIRKData;
@@ -33,6 +36,7 @@
 @property(nonatomic) _Bool present; // @synthesize present=_present;
 @property(copy, nonatomic) NSDate *dateRequested; // @synthesize dateRequested=_dateRequested;
 @property(copy, nonatomic) NSDate *dateAcknowledged; // @synthesize dateAcknowledged=_dateAcknowledged;
+@property(nonatomic) _Bool userAdded; // @synthesize userAdded=_userAdded;
 @property(nonatomic) int type; // @synthesize type=_type;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(copy, nonatomic) NSString *model; // @synthesize model=_model;
@@ -44,6 +48,8 @@
 @property(copy, nonatomic) NSData *deviceIRKData; // @synthesize deviceIRKData=_deviceIRKData;
 @property(copy, nonatomic) NSDate *dateRemoved; // @synthesize dateRemoved=_dateRemoved;
 @property(copy, nonatomic) NSDate *dateAdded; // @synthesize dateAdded=_dateAdded;
+@property(copy, nonatomic) NSString *contactID; // @synthesize contactID=_contactID;
+@property(copy, nonatomic) NSString *accountID; // @synthesize accountID=_accountID;
 - (void).cxx_destruct;
 - (_Bool)verifySignaturePtr:(const void *)arg1 signatureLen:(unsigned long long)arg2 dataPtr:(const void *)arg3 dataLen:(unsigned long long)arg4 error:(id *)arg5;
 - (_Bool)verifySignature:(id)arg1 data:(id)arg2 error:(id *)arg3;
@@ -53,8 +59,6 @@
 - (_Bool)verifyAuthTag:(id)arg1 data:(id)arg2 type:(int)arg3 error:(id *)arg4;
 - (id)authTagForData:(id)arg1 type:(int)arg2 error:(id *)arg3;
 - (unsigned int)updateWithKeychainItem:(id)arg1 error:(id *)arg2;
-@property(readonly, nonatomic) _Bool sufficientForSelfIdentity;
-@property(readonly, nonatomic) _Bool sufficientForFamilyIdentity;
 - (unsigned int)compareWithRPIdentity:(id)arg1;
 - (id)descriptionWithLevel:(int)arg1;
 - (id)description;

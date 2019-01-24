@@ -16,6 +16,7 @@
 }
 
 + (id)programWithName:(id)arg1;
++ (id)context;
 + (id)shareGroup;
 + (id)sharedGLInstance;
 - (void).cxx_destruct;

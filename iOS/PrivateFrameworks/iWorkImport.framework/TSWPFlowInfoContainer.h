@@ -21,9 +21,9 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) unsigned long long nextUserInterfaceIdentifier; // @synthesize nextUserInterfaceIdentifier=_nextUserInterfaceIdentifier;
 - (void).cxx_destruct;
 @property(readonly, copy) NSString *debugDescription;
-- (void)saveToArchive:(struct FlowInfoContainerArchive *)arg1 archiver:(id)arg2;
+-     // Error parsing type: v32@0:8^{FlowInfoContainerArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}I}16@24, name: saveToArchive:archiver:
 - (void)saveToArchiver:(id)arg1;
-- (void)loadFromArchive:(const struct FlowInfoContainerArchive *)arg1 unarchiver:(id)arg2;
+-     // Error parsing type: v32@0:8r^{FlowInfoContainerArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}I}16@24, name: loadFromArchive:unarchiver:
 - (void)loadFromUnarchiver:(id)arg1;
 - (void)wasRemovedFromDocumentRoot:(id)arg1;
 - (void)willBeRemovedFromDocumentRoot:(id)arg1;

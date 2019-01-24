@@ -7,8 +7,9 @@
 #import <objc/NSObject.h>
 
 #import <iTunesCloud/NSCopying-Protocol.h>
+#import <iTunesCloud/NSSecureCoding-Protocol.h>
 
-@interface ICMusicSubscriptionStatusTerms : NSObject <NSCopying>
+@interface ICMusicSubscriptionStatusTerms : NSObject <NSCopying, NSSecureCoding>
 {
     long long _acceptedVersion;
     long long _currentVersion;
@@ -16,11 +17,15 @@
     long long _type;
 }
 
++ (_Bool)supportsSecureCoding;
 @property(readonly, nonatomic) long long type; // @synthesize type=_type;
 @property(readonly, nonatomic) long long sourceType; // @synthesize sourceType=_sourceType;
 @property(readonly, nonatomic) long long currentVersion; // @synthesize currentVersion=_currentVersion;
 @property(readonly, nonatomic) long long acceptedVersion; // @synthesize acceptedVersion=_acceptedVersion;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (_Bool)isEqual:(id)arg1;
 - (id)initWithResponseTermsDictionary:(id)arg1;
 
 @end

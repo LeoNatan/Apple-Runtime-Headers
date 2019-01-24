@@ -57,7 +57,10 @@
 @property(readonly) NSString *name;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithController:(id)arg1 dpadFlippedY:(_Bool)arg2 leftFlippedY:(_Bool)arg3 rightFlippedY:(_Bool)arg4 l3r3andDigitalSupported:(_Bool)arg5;
+- (id)initWithController:(id)arg1 dpadFlippedY:(_Bool)arg2 leftFlippedY:(_Bool)arg3 rightFlippedY:(_Bool)arg4;
+- (void)determineButtonDigitalness;
+- (void)locateThumbstickButtons;
+- (_Bool)elementIsDigital:(id)arg1;
 - (id)initWithController:(id)arg1;
 
 // Remaining properties

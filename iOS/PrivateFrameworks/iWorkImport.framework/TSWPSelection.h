@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
 {
     int _type;
     struct _NSRange _range;
-    unsigned long long _headChar;
-    unsigned long long _tailChar;
+    unsigned long long _headCharIndex;
+    unsigned long long _tailCharIndex;
     _Bool _leadingEdge;
     unsigned long long _leadingCharIndex;
     _Bool _validVisualRanges;
@@ -36,21 +36,19 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) _Bool validVisualRanges; // @synthesize validVisualRanges=_validVisualRanges;
 @property(readonly, nonatomic) unsigned long long leadingCharIndex; // @synthesize leadingCharIndex=_leadingCharIndex;
 @property(readonly, nonatomic) _Bool leadingEdge; // @synthesize leadingEdge=_leadingEdge;
-@property(nonatomic) unsigned long long tailChar; // @synthesize tailChar=_tailChar;
-@property(nonatomic) unsigned long long headChar; // @synthesize headChar=_headChar;
+@property(nonatomic) unsigned long long tailCharIndex; // @synthesize tailCharIndex=_tailCharIndex;
+@property(nonatomic) unsigned long long headCharIndex; // @synthesize headCharIndex=_headCharIndex;
 @property(readonly, nonatomic) struct _NSRange smartFieldRange; // @synthesize smartFieldRange=_smartFieldRange;
 @property(readonly, nonatomic) int type; // @synthesize type=_type;
 @property(readonly, nonatomic) struct _NSRange rawRange; // @synthesize rawRange=_range;
 - (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 @property(readonly, nonatomic) _Bool isAtEndOfLine;
-- (void)saveToArchive:(struct SelectionArchive *)arg1 archiver:(id)arg2;
+-     // Error parsing type: v32@0:8^{SelectionArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{Range}^{Range}iii}16@24, name: saveToArchive:archiver:
 - (_Bool)intersectsRange:(struct _NSRange)arg1;
 - (_Bool)containsCharacterAtIndex:(unsigned long long)arg1;
-- (unsigned long long)rightEdge;
-- (unsigned long long)leftEdge;
 - (unsigned long long)visualRangeCount;
-- (void)setHeadChar:(unsigned long long)arg1 tailChar:(unsigned long long)arg2;
+- (void)setHeadCharIndex:(unsigned long long)arg1 tailCharIndex:(unsigned long long)arg2;
 - (id)visualRangesArray;
 - (id)i_visualRanges;
 - (id)visualRanges;
@@ -58,7 +56,7 @@ __attribute__((visibility("hidden")))
 - (struct _NSRange)superRange;
 - (unsigned long long)end;
 - (unsigned long long)start;
-- (id)copyWithVisualRanges:(id)arg1 headChar:(unsigned long long)arg2 tailChar:(unsigned long long)arg3 rightToLeft:(_Bool)arg4 sameLine:(_Bool)arg5;
+- (id)copyWithVisualRanges:(id)arg1 headCharIndex:(unsigned long long)arg2 tailCharIndex:(unsigned long long)arg3 rightToLeft:(_Bool)arg4 sameLine:(_Bool)arg5;
 - (id)copyWithNewVisualRanges:(id)arg1;
 - (id)constrainToRange:(struct _NSRange)arg1;
 - (id)copyWithNewStyleInsertionBehavior:(int)arg1 newCaretAffinity:(int)arg2;
@@ -79,7 +77,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)p_isEqual:(id)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (id)initWithArchive:(const struct SelectionArchive *)arg1;
+-     // Error parsing type: @24@0:8r^{SelectionArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{Range}^{Range}iii}16, name: initWithArchive:
 - (id)initWithRange:(struct _NSRange)arg1;
 - (id)initWithType:(int)arg1 range:(struct _NSRange)arg2 styleInsertionBehavior:(int)arg3 caretAffinity:(int)arg4;
 - (id)initWithType:(int)arg1 range:(struct _NSRange)arg2 styleInsertionBehavior:(int)arg3 caretAffinity:(int)arg4 smartFieldRange:(struct _NSRange)arg5 leadingEdge:(_Bool)arg6 storage:(id)arg7;

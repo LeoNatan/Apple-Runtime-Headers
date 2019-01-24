@@ -13,17 +13,17 @@ typedef void (^CDUnknownBlockType)(void); // return type and parameters are unkn
 struct ChromaScaling_t {
     unsigned short hscaleMode;
     unsigned char hscaleNumTaps;
-    float hscaleCoefficents[16][32];
+    float hscaleCoefficents[15][32];
     unsigned short vscaleMode;
     unsigned char vscaleNumTaps;
-    float vscaleCoefficents[10][32];
+    float vscaleCoefficents[9][32];
 };
 
 struct ChromaticAdaptation_t {
     _Bool fixedPQRegamma_Enable;
     unsigned int mode1;
     struct MSRCSC_t cacsc1;
-    unsigned int toneMapMode_Enable;
+    int toneMapMode_Enable;
     union {
         struct {
             unsigned int precision;
@@ -75,7 +75,7 @@ struct CommonColorspaceToColorspaceB_t {
 struct DMAConfig_t {
     unsigned char inputBitDepth;
     int inputColorSpace;
-    unsigned int inputChromaFmt;
+    int inputChromaFmt;
     unsigned char outputBitDepth;
     int outputColorSpace;
 };
@@ -217,37 +217,30 @@ struct EDRMetaData_RBSP {
     unsigned int _field134;
     unsigned int _field135;
     unsigned int _field136;
-    unsigned int _field137;
-    unsigned int _field138;
-    unsigned int _field139;
-    unsigned int _field140;
-    unsigned int _field141;
-    unsigned int _field142;
-    unsigned int _field143;
-    unsigned int _field144;
-    unsigned int _field145;
-    unsigned int _field146;
-    int _field147;
-    unsigned int _field148;
-    unsigned int _field149;
-    unsigned int _field150;
-    unsigned int _field151;
-    unsigned int _field152;
-    unsigned int _field153;
-    unsigned int _field154;
-    unsigned int _field155;
-    unsigned int _field156;
-    unsigned int _field157;
-    unsigned int _field158;
-    unsigned int _field159;
-    unsigned int _field160;
-    int _field161[9];
-    unsigned int _field162[3];
-    int _field163[9];
-    int _field164[1][1][3][9][3];
-    unsigned int _field165[3][18];
-    unsigned int _field166[1][1][3][9];
-    unsigned int _field167[3];
+    CDStruct_e7effd28 _field137;
+    CDStruct_59f4615e _field138[16];
+    CDStruct_d32a9130 _field139;
+    struct {
+        unsigned short _field1;
+        unsigned short _field2;
+        unsigned short _field3;
+        unsigned short _field4;
+        unsigned short _field5;
+    } _field140;
+    struct {
+        unsigned short _field1;
+        unsigned short _field2;
+        unsigned short _field3;
+        unsigned short _field4;
+        unsigned short _field5;
+    } _field141;
+    int _field142[9];
+    unsigned int _field143[3];
+    int _field144[9];
+    int _field145[1][1][3][9][3];
+    unsigned int _field146[3][18];
+    unsigned int _field147[1][1][3][9];
+    unsigned int _field148[3];
 };
 
 struct GammaEncoding_t {
@@ -281,6 +274,15 @@ struct MSRCSC_t {
 struct MSRHDRContext {
     unsigned int contentType;
     unsigned int displayType;
+    unsigned int operation;
+    unsigned int inputFormat;
+    unsigned int outputFormat;
+    unsigned int inputColorSpace;
+    unsigned int outputColorSpace;
+    long long inputTransferFunctionType;
+    long long outputTransferFunctionType;
+    char enableReshaping;
+    char enableToneMapping;
 };
 
 struct ProcessingControlV0_t {
@@ -323,6 +325,8 @@ struct ToneCurve_Control {
     float maxEDRValue;
     float EDRFactor;
     float AmbientLight;
+    float sdrMaxBrightnessInNits;
+    _Bool HDRProcessingFullAmbientAdaptation;
     struct __CFString *targetColorPrimaries;
     unsigned int outputPixelFormat;
     float forwardDM_tMaxPq;
@@ -363,132 +367,6 @@ struct __sbuf {
 };
 
 #pragma mark Typedef'd Structures
-
-typedef struct {
-    unsigned char _field1;
-    unsigned char _field2;
-    unsigned char _field3;
-    unsigned char _field4;
-    unsigned char _field5;
-    unsigned char _field6;
-    unsigned char _field7;
-    unsigned char _field8;
-    unsigned char _field9;
-    unsigned char _field10;
-    unsigned char _field11;
-    unsigned char _field12;
-    unsigned char _field13;
-    unsigned char _field14;
-    unsigned char _field15;
-    unsigned char _field16;
-    unsigned char _field17;
-    unsigned char _field18;
-    unsigned char _field19;
-    unsigned char _field20;
-    unsigned char _field21;
-    unsigned char _field22;
-    unsigned char _field23;
-    unsigned char _field24;
-    unsigned char _field25;
-    unsigned char _field26;
-    unsigned char _field27;
-    unsigned char _field28;
-    unsigned char _field29;
-    unsigned char _field30;
-    unsigned char _field31;
-    unsigned char _field32;
-    unsigned char _field33;
-    unsigned char _field34;
-    unsigned char _field35;
-    unsigned char _field36;
-    unsigned char _field37;
-    unsigned char _field38;
-    unsigned char _field39;
-    unsigned char _field40;
-    unsigned char _field41;
-    unsigned char _field42;
-    unsigned char _field43;
-    unsigned char _field44;
-    unsigned char _field45;
-    unsigned char _field46;
-    unsigned char _field47;
-    unsigned char _field48;
-    unsigned char _field49;
-    unsigned char _field50;
-    unsigned char _field51;
-    unsigned char _field52;
-    unsigned char _field53;
-    unsigned char _field54;
-    unsigned char _field55;
-    unsigned char _field56;
-    unsigned char _field57;
-    unsigned char _field58;
-    unsigned char _field59;
-    unsigned char _field60;
-    unsigned char _field61;
-    unsigned char _field62;
-    unsigned char _field63;
-    unsigned char _field64;
-    unsigned char _field65;
-    unsigned char _field66;
-    unsigned char _field67;
-    unsigned char _field68;
-    unsigned char _field69;
-    unsigned char _field70;
-    unsigned char _field71;
-    unsigned char _field72;
-    unsigned char _field73;
-    unsigned char _field74;
-    unsigned char _field75;
-    unsigned char _field76;
-    unsigned char _field77;
-    unsigned char _field78;
-    unsigned char _field79;
-    unsigned char _field80;
-    unsigned char _field81;
-    unsigned char _field82;
-    unsigned char _field83;
-    unsigned char _field84;
-    unsigned char _field85;
-    unsigned char _field86;
-    unsigned char _field87;
-    unsigned char _field88;
-    unsigned char _field89;
-    unsigned char _field90;
-    unsigned char _field91;
-    unsigned char _field92;
-    unsigned char _field93;
-    unsigned char _field94;
-    unsigned char _field95;
-    unsigned char _field96;
-    unsigned char _field97;
-    unsigned char _field98;
-    unsigned char _field99;
-    unsigned char _field100;
-    unsigned char _field101;
-    unsigned char _field102;
-    unsigned char _field103;
-    unsigned char _field104;
-    unsigned char _field105;
-    unsigned char _field106;
-    unsigned char _field107;
-    unsigned char _field108;
-    unsigned char _field109;
-    unsigned char _field110;
-    unsigned char _field111;
-    unsigned char _field112;
-    unsigned char _field113;
-    unsigned char _field114;
-    unsigned char _field115;
-    unsigned char _field116;
-    unsigned char _field117;
-    unsigned char _field118;
-    unsigned char _field119;
-    unsigned char _field120;
-    unsigned char _field121;
-    unsigned char _field122;
-    unsigned char _field123;
-} CDStruct_5ad502c8;
 
 typedef struct {
     unsigned int BL_bit_depth_minus8;
@@ -546,6 +424,7 @@ typedef struct {
 
 typedef struct {
     unsigned int hdrContent;
+    unsigned int hwType;
     unsigned int bitDepth;
     unsigned int displayType;
     unsigned int displayDiagonalSize;
@@ -558,54 +437,8 @@ typedef struct {
     float RGBtoLMS_coef[9];
     unsigned int maxMasteringNits;
     float minMasteringNits;
-} CDStruct_bea360c6;
-
-typedef struct {
-    unsigned int vdr_dm_metadata_present_flag;
-    unsigned int affected_dm_metadata_id;
-    unsigned int current_dm_metadata_id;
-    unsigned int scene_refresh_flag;
-    int YCCtoRGB_coef[9];
-    unsigned int YCCtoRGB_offset[3];
-    int RGBtoLMS_coef[9];
-    unsigned int signal_eotf;
-    unsigned int signal_eotf_param0;
-    unsigned int signal_eotf_param1;
-    unsigned int signal_eotf_param2;
-    unsigned int signal_bit_depth;
-    unsigned int signal_color_space;
-    unsigned int signal_chroma_format;
-    unsigned int signal_full_range_flag;
-    unsigned int source_min_PQ;
-    unsigned int source_max_PQ;
-    unsigned int source_diagonal;
-    unsigned int num_ext_blocks;
-    unsigned int level1;
-    unsigned int min_PQ;
-    unsigned int max_PQ;
-    unsigned int avg_PQ;
-    unsigned int level2;
-    unsigned int target_max_PQ;
-    unsigned int trim_slope;
-    unsigned int trim_offset;
-    unsigned int trim_power;
-    unsigned int trim_chroma_weight;
-    unsigned int trim_saturation_gain;
-    int ms_weight;
-    unsigned int level4;
-    unsigned int anchor_PQ;
-    unsigned int anchor_power;
-    unsigned int level5;
-    unsigned int active_area_left_offset;
-    unsigned int active_area_right_offset;
-    unsigned int active_area_top_offset;
-    unsigned int active_area_bottom_offset;
-    unsigned int level6;
-    unsigned int max_display_mastering_luminance;
-    unsigned int min_display_mastering_luminance;
-    unsigned int max_content_light_level;
-    unsigned int max_frame_average_light_level;
-} CDStruct_6fbc3b41;
+    unsigned int transferFunction_RGhA;
+} CDStruct_d4eae393;
 
 typedef struct {
     unsigned short display_primaries_xg;
@@ -619,6 +452,30 @@ typedef struct {
     unsigned int max_display_mastering_luminance;
     unsigned int min_display_mastering_luminance;
 } CDStruct_5b5de198;
+
+typedef struct {
+    unsigned short valid;
+    unsigned short target_max_PQ;
+    unsigned short trim_slope;
+    unsigned short trim_offset;
+    unsigned short trim_power;
+    unsigned short trim_chroma_weight;
+    unsigned short trim_saturation_gain;
+    short ms_weight;
+} CDStruct_59f4615e;
+
+typedef struct {
+    unsigned short valid;
+    unsigned short min_PQ;
+    unsigned short max_PQ;
+    unsigned short avg_PQ;
+} CDStruct_e7effd28;
+
+typedef struct {
+    unsigned short valid;
+    unsigned short anchor_PQ;
+    unsigned short anchor_power;
+} CDStruct_d32a9130;
 
 typedef struct {
     unsigned short max_content_light_level;
@@ -637,7 +494,7 @@ typedef struct {
 } CDStruct_d2b197d1;
 
 typedef struct {
-    float ycc_to_rgb_offset__r_scale__g_scale__b_scale__LMStoRGB_coef0__LMStoRGB_coef1__LMStoRGB_coef2__RGBtoLMS_coef0__RGBtoLMS_coef1__RGBtoLMS_coef2__rangeInv;
+    float ycc_to_rgb_offset__r_scale__g_scale__b_scale__LMStoRGB_coef0__LMStoRGB_coef1__LMStoRGB_coef2__RGBtoLMS_coef0__RGBtoLMS_coef1__RGBtoLMS_coef2__RGBtoY_coefs__RGBtoRGB_coef0__RGBtoRGB_coef1__RGBtoRGB_coef2__rangeInv;
     float rangeMinTimesInvRange;
     unsigned int signal_eotf;
     float signal_eotf_gamma;
@@ -665,13 +522,112 @@ typedef struct {
     float Anchor;
     _Bool apply_srgb_gamma;
     float maxEDRValue;
+    float edrFactor;
     _Bool target_p3_d65;
+    float sourceContentSDRMaxBrightnessInNits;
+    int transfer_function_input;
     unsigned int maxMasteringNits;
-    float trim_gain;
+    float trim_slope;
     float trim_offset;
     float trim_power;
     float trim_sat;
-} CDStruct_0c31d166;
+    float s2t_ratio;
+    float sat2_p1;
+    float sat2_p2;
+    float sat2_p3;
+    float sat2_p4;
+    float sat2_p5;
+    float brightAdjBySat2;
+    float gamma;
+} CDStruct_bd901e1f;
+
+typedef struct {
+    unsigned char dm_metadata_id;
+    unsigned char scene_refresh_flag;
+    unsigned char YCCtoRGB_coef0_hi;
+    unsigned char YCCtoRGB_coef0_lo;
+    unsigned char YCCtoRGB_coef1_hi;
+    unsigned char YCCtoRGB_coef1_lo;
+    unsigned char YCCtoRGB_coef2_hi;
+    unsigned char YCCtoRGB_coef2_lo;
+    unsigned char YCCtoRGB_coef3_hi;
+    unsigned char YCCtoRGB_coef3_lo;
+    unsigned char YCCtoRGB_coef4_hi;
+    unsigned char YCCtoRGB_coef4_lo;
+    unsigned char YCCtoRGB_coef5_hi;
+    unsigned char YCCtoRGB_coef5_lo;
+    unsigned char YCCtoRGB_coef6_hi;
+    unsigned char YCCtoRGB_coef6_lo;
+    unsigned char YCCtoRGB_coef7_hi;
+    unsigned char YCCtoRGB_coef7_lo;
+    unsigned char YCCtoRGB_coef8_hi;
+    unsigned char YCCtoRGB_coef8_lo;
+    unsigned char YCCtoRGB_offset0_byte3;
+    unsigned char YCCtoRGB_offset0_byte2;
+    unsigned char YCCtoRGB_offset0_byte1;
+    unsigned char YCCtoRGB_offset0_byte0;
+    unsigned char YCCtoRGB_offset1_byte3;
+    unsigned char YCCtoRGB_offset1_byte2;
+    unsigned char YCCtoRGB_offset1_byte1;
+    unsigned char YCCtoRGB_offset1_byte0;
+    unsigned char YCCtoRGB_offset2_byte3;
+    unsigned char YCCtoRGB_offset2_byte2;
+    unsigned char YCCtoRGB_offset2_byte1;
+    unsigned char YCCtoRGB_offset2_byte0;
+    unsigned char RGBtoLMS_coef0_hi;
+    unsigned char RGBtoLMS_coef0_lo;
+    unsigned char RGBtoLMS_coef1_hi;
+    unsigned char RGBtoLMS_coef1_lo;
+    unsigned char RGBtoLMS_coef2_hi;
+    unsigned char RGBtoLMS_coef2_lo;
+    unsigned char RGBtoLMS_coef3_hi;
+    unsigned char RGBtoLMS_coef3_lo;
+    unsigned char RGBtoLMS_coef4_hi;
+    unsigned char RGBtoLMS_coef4_lo;
+    unsigned char RGBtoLMS_coef5_hi;
+    unsigned char RGBtoLMS_coef5_lo;
+    unsigned char RGBtoLMS_coef6_hi;
+    unsigned char RGBtoLMS_coef6_lo;
+    unsigned char RGBtoLMS_coef7_hi;
+    unsigned char RGBtoLMS_coef7_lo;
+    unsigned char RGBtoLMS_coef8_hi;
+    unsigned char RGBtoLMS_coef8_lo;
+    unsigned char signal_eotf_hi;
+    unsigned char signal_eotf_lo;
+    unsigned char signal_eotf_param0_hi;
+    unsigned char signal_eotf_param0_lo;
+    unsigned char signal_eotf_param1_hi;
+    unsigned char signal_eotf_param1_lo;
+    unsigned char signal_eotf_param2_byte3;
+    unsigned char signal_eotf_param2_byte2;
+    unsigned char signal_eotf_param2_byte1;
+    unsigned char signal_eotf_param2_byte0;
+    unsigned char signal_bit_depth;
+    unsigned char signal_color_space;
+    unsigned char signal_chroma_format;
+    unsigned char signal_full_range_flag;
+    unsigned char source_min_PQ_hi;
+    unsigned char source_min_PQ_lo;
+    unsigned char source_max_PQ_hi;
+    unsigned char source_max_PQ_lo;
+    unsigned char source_diagonal_hi;
+    unsigned char source_diagonal_lo;
+    unsigned char num_ext_blocks;
+    struct {
+        unsigned char ext_block1_length_byte3;
+        unsigned char ext_block1_length_byte2;
+        unsigned char ext_block1_length_byte1;
+        unsigned char ext_block1_length_byte0;
+        unsigned char ext_block1_level;
+        unsigned char min_PQ_hi;
+        unsigned char min_PQ_lo;
+        unsigned char max_PQ_hi;
+        unsigned char max_PQ_lo;
+        unsigned char avg_PQ_hi;
+        unsigned char avg_PQ_lo;
+    } L1;
+    unsigned char extendedBlock[339];
+} CDStruct_f6fd16b9;
 
 typedef struct {
     unsigned int _field1;
@@ -709,6 +665,45 @@ typedef struct {
 } CDStruct_26384d64;
 
 typedef struct {
+    unsigned int vdr_dm_metadata_present_flag;
+    unsigned int affected_dm_metadata_id;
+    unsigned int current_dm_metadata_id;
+    unsigned int scene_refresh_flag;
+    int YCCtoRGB_coef[9];
+    unsigned int YCCtoRGB_offset[3];
+    int RGBtoLMS_coef[9];
+    unsigned int signal_eotf;
+    unsigned int signal_eotf_param0;
+    unsigned int signal_eotf_param1;
+    unsigned int signal_eotf_param2;
+    unsigned int signal_bit_depth;
+    unsigned int signal_color_space;
+    unsigned int signal_chroma_format;
+    unsigned int signal_full_range_flag;
+    unsigned int source_min_PQ;
+    unsigned int source_max_PQ;
+    unsigned int source_diagonal;
+    unsigned int num_ext_blocks;
+    CDStruct_e7effd28 L1;
+    CDStruct_59f4615e L2[16];
+    CDStruct_d32a9130 L4;
+    struct {
+        unsigned short valid;
+        unsigned short active_area_left_offset;
+        unsigned short active_area_right_offset;
+        unsigned short active_area_top_offset;
+        unsigned short active_area_bottom_offset;
+    } L5;
+    struct {
+        unsigned short valid;
+        unsigned short max_display_mastering_luminance;
+        unsigned short min_display_mastering_luminance;
+        unsigned short max_content_light_level;
+        unsigned short max_frame_average_light_level;
+    } L6;
+} CDStruct_f4857302;
+
+typedef struct {
     float _field1;
     float _field2;
     float _field3;
@@ -719,16 +714,17 @@ typedef struct {
     float _field8[9];
     float _field9[9];
     float _field10[3];
-    float _field11;
-    unsigned int _field12;
+    float _field11[3];
+    float _field12;
     unsigned int _field13;
-    float _field14;
-    unsigned int _field15;
-    float _field16;
-    CDStruct_5b5de198 _field17;
-    CDStruct_3ad9644f _field18;
-    int _field19;
-} CDStruct_bd0e21b1;
+    unsigned int _field14;
+    float _field15;
+    unsigned int _field16;
+    float _field17;
+    CDStruct_5b5de198 _field18;
+    CDStruct_3ad9644f _field19;
+    int _field20;
+} CDStruct_096ecdcf;
 
 typedef struct {
     struct {
@@ -748,15 +744,24 @@ typedef struct {
 
 typedef struct {
     CDStruct_895ff2bf composerData;
-    CDStruct_6fbc3b41 dmData;
+    CDStruct_f4857302 dmData;
     struct ToneCurve_Control tcControl;
-    CDStruct_bea360c6 hdrControl;
+    CDStruct_d4eae393 hdrControl;
     CDStruct_52986d3b infoFrameData;
-} CDStruct_634fb64f;
+} CDStruct_192e2d5f;
 
 typedef struct {
-    unsigned int version;
+    int version;
     unsigned int size;
     struct HDRFrameProcessingControl_t hdrFrameControl;
-} CDStruct_6637a406;
+} CDStruct_481e6fe2;
+
+// Ambiguous groups
+typedef struct {
+    unsigned short _field1;
+    unsigned short _field2;
+    unsigned short _field3;
+    unsigned short _field4;
+    unsigned short _field5;
+} CDStruct_9d3ac55b;
 

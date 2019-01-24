@@ -8,7 +8,7 @@
 
 #import <NewsCore/FCOperationThrottlerDelegate-Protocol.h>
 
-@class FCCacheCoordinatorFlushPolicy, FCThreadSafeMutableDictionary, NFMutexLock, NSCountedSet, NSMutableSet, NSString;
+@class FCCacheCoordinatorFlushPolicy, FCThreadSafeMutableDictionary, NFUnfairLock, NSArray, NSCountedSet, NSMutableSet, NSString;
 @protocol FCCacheCoordinatorDelegate, FCCacheCoordinatorLocking, FCOperationThrottler;
 
 @interface FCCacheCoordinator : NSObject <FCOperationThrottlerDelegate>
@@ -18,17 +18,17 @@
     NSMutableSet *_storedKeys;
     NSCountedSet *_interestedKeys;
     FCThreadSafeMutableDictionary *_cacheHintsByKey;
-    NFMutexLock *_interestLock;
+    NFUnfairLock *_interestLock;
     id <FCCacheCoordinatorLocking> _underlyingLock;
     id <FCOperationThrottler> _flushThrottler;
     FCCacheCoordinatorFlushPolicy *_flushPolicy;
 }
 
 @property(getter=isFlushingEnabled) _Bool flushingEnabled; // @synthesize flushingEnabled=_flushingEnabled;
-@property(retain, nonatomic) FCCacheCoordinatorFlushPolicy *flushPolicy; // @synthesize flushPolicy=_flushPolicy;
+@property(retain) FCCacheCoordinatorFlushPolicy *flushPolicy; // @synthesize flushPolicy=_flushPolicy;
 @property(retain, nonatomic) id <FCOperationThrottler> flushThrottler; // @synthesize flushThrottler=_flushThrottler;
 @property(retain, nonatomic) id <FCCacheCoordinatorLocking> underlyingLock; // @synthesize underlyingLock=_underlyingLock;
-@property(retain, nonatomic) NFMutexLock *interestLock; // @synthesize interestLock=_interestLock;
+@property(retain, nonatomic) NFUnfairLock *interestLock; // @synthesize interestLock=_interestLock;
 @property(retain, nonatomic) FCThreadSafeMutableDictionary *cacheHintsByKey; // @synthesize cacheHintsByKey=_cacheHintsByKey;
 @property(retain, nonatomic) NSCountedSet *interestedKeys; // @synthesize interestedKeys=_interestedKeys;
 @property(retain, nonatomic) NSMutableSet *storedKeys; // @synthesize storedKeys=_storedKeys;
@@ -50,6 +50,8 @@
 - (_Bool)cacheContainsKey:(id)arg1;
 - (void)performCacheWrite:(CDUnknownBlockType)arg1;
 - (void)performCacheRead:(CDUnknownBlockType)arg1;
+@property(readonly, nonatomic) NSArray *keysWithNonZeroInterest;
+@property(readonly, nonatomic) NSArray *keysWithZeroInterest;
 - (id)holdTokensForKeys:(id)arg1;
 - (id)holdTokenForKeys:(id)arg1;
 - (id)holdTokenForKey:(id)arg1;

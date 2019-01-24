@@ -11,7 +11,7 @@
 #import <iTunesStoreUI/SSPurchaseRequestDelegatePrivate-Protocol.h>
 #import <iTunesStoreUI/SUContinuationDelegate-Protocol.h>
 
-@class NSDictionary, NSMutableArray, NSMutableSet, NSSet, NSString, SUQueueSessionManager;
+@class NSDictionary, NSMutableArray, NSMutableSet, NSNumber, NSSet, NSString, SUQueueSessionManager;
 @protocol SUPurchaseManagerDelegate;
 
 @interface SUPurchaseManager : NSObject <SSPurchaseRequestDelegatePrivate, SUContinuationDelegate, SSDownloadManagerObserver, SSPurchaseRequestDelegate>
@@ -30,8 +30,10 @@
     long long _updatesCount;
     NSString *_userAgent;
     _Bool _waitingForAuthentication;
+    NSNumber *_accountDSID;
 }
 
+@property(copy, nonatomic) NSNumber *accountDSID; // @synthesize accountDSID=_accountDSID;
 @property(copy, nonatomic) NSString *userAgent; // @synthesize userAgent=_userAgent;
 @property(copy, nonatomic) NSDictionary *tidHeaders; // @synthesize tidHeaders=_tidHeaders;
 @property(retain, nonatomic) SUQueueSessionManager *queueSessionManager; // @synthesize queueSessionManager=_queueSessionManager;
@@ -50,7 +52,7 @@
 - (void)_enqueueExternalDownload:(id)arg1;
 - (void)_enqueueContinuations:(id)arg1;
 - (id)_downloadManagerForDownloadKind:(id)arg1;
-- (id)_accountForPurchase:(id)arg1;
+- (id)_accountDSIDForPurchase:(id)arg1;
 - (void)requestDidFinish:(id)arg1;
 - (void)request:(id)arg1 didFailWithError:(id)arg2;
 - (void)purchaseRequest:(id)arg1 purchaseDidSucceedWithResponse:(id)arg2;

@@ -33,8 +33,8 @@ __attribute__((visibility("hidden")))
 - (id)changeDescriptorForTable:(id)arg1;
 - (id)remapUIDsByColumnMap:(const UUIDMap_b66c2694 *)arg1 rowMap:(const UUIDMap_b66c2694 *)arg2 ownerMap:(const UUIDMap_b66c2694 *)arg3;
 - (void)enumerateMergeFormulasUsingBlock:(CDUnknownBlockType)arg1;
-- (void)saveToArchive:(struct MergeOperationArchive *)arg1 archiver:(id)arg2;
-- (id)initWithArchive:(const struct MergeOperationArchive *)arg1 unarchiver:(id)arg2;
+-     // Error parsing type: v32@0:8^{MergeOperationArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSP::UUIDRectArchive>=^{Arena}ii^{Rep}}{RepeatedPtrField<TSCE::FormulaArchive>=^{Arena}ii^{Rep}}{RepeatedField<unsigned int>=ii(Pointer=^{Arena}^{Rep})}i}16@24, name: saveToArchive:archiver:
+-     // Error parsing type: @32@0:8r^{MergeOperationArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSP::UUIDRectArchive>=^{Arena}ii^{Rep}}{RepeatedPtrField<TSCE::FormulaArchive>=^{Arena}ii^{Rep}}{RepeatedField<unsigned int>=ii(Pointer=^{Arena}^{Rep})}i}16@24, name: initWithArchive:unarchiver:
 - (void)addFormulaIndex:(unsigned long long)arg1;
 - (void)addFormula:(const struct TSCEFormula *)arg1;
 @property(readonly, nonatomic) _Bool hasMultiRowMerge;

@@ -6,9 +6,10 @@
 
 #import <Silex/SXComponent-Protocol.h>
 
-@class NSString, NSURL;
+@class NSString, NSURL, SXJSONDictionary;
 
 @protocol SXWebContentComponent <SXComponent>
+@property(readonly, nonatomic) SXJSONDictionary *dataSourceReferences;
 @property(readonly, nonatomic) NSString *resourceIdentifier;
 @property(readonly, nonatomic) NSURL *URL;
 @end

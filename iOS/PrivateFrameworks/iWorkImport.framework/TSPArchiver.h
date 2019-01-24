@@ -38,11 +38,13 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) TSPObject *explicitComponentRootObject; // @synthesize explicitComponentRootObject=_explicitComponentRootObject;
 @property(readonly, nonatomic) NSUUID *objectUUID; // @synthesize objectUUID=_objectUUID;
 - (void).cxx_destruct;
+- (_Bool)isSavingCollaborativeDocument;
+- (_Bool)isSavingDocumentAs;
 - (void)validateOrderedArchivableContent:(id)arg1;
 - (id)calculateOrderedArchivableContent;
 - (void)cleanup;
 - (void)serialize;
-- (_Bool)updateMessageInfo:(struct MessageInfo *)arg1 withArchiver:(id)arg2;
+-     // Error parsing type: B32@0:8^{MessageInfo=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedField<unsigned int>=ii(Pointer=^{Arena}^{Rep})}i{RepeatedPtrField<TSP::FieldInfo>=^{Arena}ii^{Rep}}{RepeatedField<unsigned long long>=ii(Pointer=^{Arena}^{Rep})}i{RepeatedField<unsigned long long>=ii(Pointer=^{Arena}^{Rep})}i{RepeatedField<unsigned int>=ii(Pointer=^{Arena}^{Rep})}i{RepeatedPtrField<TSP::FieldPath>=^{Arena}ii^{Rep}}{RepeatedField<unsigned int>=ii(Pointer=^{Arena}^{Rep})}i^{FieldPath}III}16@24, name: updateMessageInfo:withArchiver:
 - (void)aggregateReferencesFromArchiver:(id)arg1;
 - (void)archive;
 @property(readonly, nonatomic) _Bool success;
@@ -50,7 +52,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)beginWrite;
 @property(readonly, nonatomic) _Bool needsArchive;
 - (_Bool)beginArchive;
-- (id)addAlternateArchiverForVersion:(unsigned long long)arg1 fieldPath:(const struct FieldPath *)arg2 isDiffArchiver:(_Bool)arg3 diffReadVersion:(unsigned long long)arg4;
+-     // Error parsing type: @44@0:8Q16r^{FieldPath=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedField<unsigned int>=ii(Pointer=^{Arena}^{Rep})}i}24B32Q36, name: addAlternateArchiverForVersion:fieldPath:isDiffArchiver:diffReadVersion:
 - (id)alternateForVersion:(unsigned long long)arg1;
 - (void)requiresDocumentVersion:(unsigned long long)arg1 featureIdentifier:(id)arg2;
 - (void)requiresDocumentVersion:(unsigned long long)arg1;
@@ -59,6 +61,7 @@ __attribute__((visibility("hidden")))
 - (void)addDocumentFeatureInfoWithIdentifier:(id)arg1 readVersion:(unsigned long long)arg2 writeVersion:(unsigned long long)arg3 validatingValues:(_Bool)arg4;
 @property(readonly, nonatomic) NSSet *featureInfos;
 @property(readonly, nonatomic) _Bool shouldSaveAlternates;
+- (id)initWithObject:(id)arg1 flags:(BOOL)arg2;
 - (id)initWithObject:(id)arg1;
 
 // Remaining properties

@@ -13,8 +13,8 @@ __attribute__((visibility("hidden")))
 }
 
 @property(nonatomic) unsigned short operatorChar; // @synthesize operatorChar=_operatorChar;
-- (void)saveToArchive:(struct OperatorNodeArchive *)arg1 archiver:(id)arg2;
-- (void)loadFromArchive:(const struct OperatorNodeArchive *)arg1 unarchiver:(id)arg2;
+-     // Error parsing type: v32@0:8^{OperatorNodeArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{ExpressionNodeArchive}I}16@24, name: saveToArchive:archiver:
+-     // Error parsing type: v32@0:8r^{OperatorNodeArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{ExpressionNodeArchive}I}16@24, name: loadFromArchive:unarchiver:
 - (void)saveToArchiver:(id)arg1;
 - (void)loadFromUnarchiver:(id)arg1;
 - (void)buildASTNodeArray:(struct TSCEASTNodeArray *)arg1 hostCell:(struct TSUCellCoord)arg2 symbolTable:(struct TSCESymbolTable *)arg3;

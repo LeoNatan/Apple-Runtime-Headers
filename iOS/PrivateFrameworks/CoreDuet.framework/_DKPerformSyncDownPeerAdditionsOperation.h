@@ -18,7 +18,6 @@
     _DKSyncType *_type;
     _CDMutablePerfMetric *_perfMetric;
     struct _CDPerfEvent _perfEvent;
-    NSDate *_startDate;
     NSArray *_streamNames;
     _Bool _highPriority;
     _DKSyncHistory *_history;

@@ -14,9 +14,7 @@
 @interface CRKToolCommand : NSObject <CATTaskClientDelegate>
 {
     NSObject<OS_dispatch_source> *mSIGINTSource;
-    CDUnknownBlockType mConnectCompletionBlock;
-    CATTaskClient *mStudentClient;
-    CATTaskClient *mInstructorClient;
+    CATTaskClient *mTaskClient;
     CATOperationQueue *mOperationQueue;
     CATOperation *mOperation;
     id <CRKToolCommandDelegate> _delegate;
@@ -29,6 +27,7 @@
 + (id)help;
 + (id)description;
 + (id)aliases;
++ (id)subcommandPath;
 @property(copy, nonatomic) NSString *sessionIdentifier; // @synthesize sessionIdentifier=_sessionIdentifier;
 @property(nonatomic) __weak id <CRKToolCommandDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
@@ -43,9 +42,8 @@
 - (void)_remoteTaskDidFinish:(id)arg1;
 - (void)_remoteTaskDidProgress:(id)arg1;
 - (void)executeOperation:(id)arg1;
-- (void)connectOperationDidFail:(id)arg1;
-- (void)connectOperationDidSucceed:(id)arg1;
 - (void)connectToTaskClientWithCompletionBlock:(CDUnknownBlockType)arg1;
+- (id)transportProvider;
 - (void)remoteTaskDidFinish:(id)arg1;
 - (void)remoteTaskDidProgress:(id)arg1;
 - (id)requestWithArguments:(id)arg1;

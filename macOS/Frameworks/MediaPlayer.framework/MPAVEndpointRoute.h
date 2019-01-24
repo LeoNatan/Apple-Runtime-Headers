@@ -38,7 +38,9 @@
 - (BOOL)isDeviceRoute;
 - (BOOL)isStereoPair;
 - (BOOL)isHomePodRoute;
+- (BOOL)isTVRoute;
 - (BOOL)isAppleTVRoute;
+- (id)groupLeaderAirplayIdentifier;
 - (BOOL)isAirPlayingToDevice;
 - (BOOL)presentsOptimizedUserInterfaceWhenPlayingFetchedAudioOnlyAssets;
 - (BOOL)canFetchMediaDataFromSender;

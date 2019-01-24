@@ -19,6 +19,7 @@
 @property(readonly, nonatomic) PMLModelRegressor *outcomes; // @synthesize outcomes=_outcomes;
 @property(readonly, nonatomic) PMLSparseMatrix *covariates; // @synthesize covariates=_covariates;
 - (void).cxx_destruct;
+- (id)minibatchStatsForPositiveLabels:(id)arg1;
 - (id)minibatchStats;
 - (id)minibatchStatsForPositiveLabel:(unsigned long long)arg1;
 - (id)initWithCovariates:(id)arg1 outcomes:(id)arg2;

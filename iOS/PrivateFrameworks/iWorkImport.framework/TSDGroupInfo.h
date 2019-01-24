@@ -79,8 +79,8 @@ __attribute__((visibility("hidden")))
 - (void)dealloc;
 - (id)initWithContext:(id)arg1 geometry:(id)arg2;
 - (void)saveToArchiver:(id)arg1;
-- (void)saveToArchive:(struct GroupArchive *)arg1 archiver:(id)arg2;
-- (void)loadFromArchive:(const struct GroupArchive *)arg1 unarchiver:(id)arg2 upgradeDOLC:(_Bool)arg3;
+-     // Error parsing type: v32@0:8^{GroupArchive=^^?{ExtensionSet=^{Arena}SS(AllocatedData=^{KeyValue}^{map<int, google::protobuf::internal::ExtensionSet::Extension, std::__1::less<int>, std::__1::allocator<std::__1::pair<const int, google::protobuf::internal::ExtensionSet::Extension> > >})}{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}^{DrawableArchive}}16@24, name: saveToArchive:archiver:
+-     // Error parsing type: v36@0:8r^{GroupArchive=^^?{ExtensionSet=^{Arena}SS(AllocatedData=^{KeyValue}^{map<int, google::protobuf::internal::ExtensionSet::Extension, std::__1::less<int>, std::__1::allocator<std::__1::pair<const int, google::protobuf::internal::ExtensionSet::Extension> > >})}{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}^{DrawableArchive}}16@24B32, name: loadFromArchive:unarchiver:upgradeDOLC:
 - (void)loadFromUnarchiver:(id)arg1;
 - (_Bool)containsDisallowedElementKind:(unsigned int)arg1;
 - (_Bool)isEquivalentForCrossDocumentPasteMasterComparison:(id)arg1;

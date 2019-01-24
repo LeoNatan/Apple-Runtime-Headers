@@ -6,20 +6,16 @@
 
 #import <SafariServices/_SFNavigationBar.h>
 
-@class _SFBrowserToolbar;
-
 __attribute__((visibility("hidden")))
 @interface _SFBrowserNavigationBar : _SFNavigationBar
 {
 }
 
 + (int)_metricsCategory;
-@property(readonly, nonatomic) _SFBrowserToolbar *toolbar;
 - (id)newTextField;
 - (float)placeholderHorizontalInset;
 - (id)toolbarPlacedOnTop;
-- (void)tintColorDidChange;
-- (void)updateToolbarTintColor;
+- (void)updateToolbarTintColor:(id)arg1;
 
 @end
 

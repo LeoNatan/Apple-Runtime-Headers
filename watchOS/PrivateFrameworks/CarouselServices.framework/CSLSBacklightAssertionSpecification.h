@@ -35,6 +35,7 @@
 @property(readonly, nonatomic, getter=shouldTouchlock) _Bool touchlock;
 @property(readonly, nonatomic, getter=shouldBlankScreen) _Bool blankScreen;
 @property(readonly, nonatomic, getter=willPreventUnblank) _Bool preventUnblank;
+@property(readonly, nonatomic) _Bool clearsUserHasInteracted;
 @property(readonly, nonatomic) _Bool doesTimeoutWhenDisplayOff;
 @property(readonly, nonatomic, getter=isUserInitiated) _Bool userInitiated;
 @property(readonly, nonatomic, getter=shouldRestartUserIdleTimer) _Bool restartUserIdleTimer;

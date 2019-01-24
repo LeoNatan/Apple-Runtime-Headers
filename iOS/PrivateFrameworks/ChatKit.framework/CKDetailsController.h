@@ -17,16 +17,15 @@
 #import <ChatKit/FMFMapViewControllerDelegate-Protocol.h>
 #import <ChatKit/UIAlertViewDelegate-Protocol.h>
 #import <ChatKit/UINavigationControllerDelegate-Protocol.h>
-#import <ChatKit/UIScrollViewDelegate-Protocol.h>
 #import <ChatKit/UITableViewDataSource-Protocol.h>
 #import <ChatKit/UITableViewDelegate-Protocol.h>
 #import <ChatKit/UITextViewDelegate-Protocol.h>
 #import <ChatKit/UIViewControllerPreviewingDelegate-Protocol.h>
 
-@class CKAvatarPickerViewController, CKBusinessInfoView, CKConversation, CKDetailsContactsManager, CKDetailsDownloadAttachmentsHeaderFooterView, CKDetailsGroupNameCell, CKDetailsLocationShareCell, CKDetailsMapViewCell, CKDetailsTableView, CKEntity, CKGroupRecipientSelectionController, CKTranscriptDetailsResizableCell, CNContactStore, FMFMapViewController, NSMutableArray, NSString, NSTimer, UITextView, UIVisualEffectView;
+@class CKAvatarPickerViewController, CKBusinessInfoView, CKConversation, CKDetailsAddGroupNameView, CKDetailsContactsManager, CKDetailsDownloadAttachmentsHeaderFooterView, CKDetailsGroupNameCell, CKDetailsLocationShareCell, CKDetailsMapViewCell, CKDetailsTableView, CKEntity, CKGroupRecipientSelectionController, CKTranscriptDetailsResizableCell, CNContactStore, FMFMapViewController, NSMutableArray, NSString, NSTimer, UITextView, UIVisualEffectView;
 @protocol CKDetailsControllerDelegate;
 
-@interface CKDetailsController : CKScrollViewController <UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate, UIViewControllerPreviewingDelegate, CKSharedAssetsControllerDelegate, CKDetailsAddGroupNameViewDelegate, FMFMapViewControllerDelegate, UITextViewDelegate, CKAttachmentCollectionManagerDelegate, UIAlertViewDelegate, CKDetailsContactsManagerDelegate, CNAvatarViewDelegate, CKDetailsContactsTableViewCellDelegate, CKBusinessInfoViewDelegate, CKDetailsDownloadAttachmentsHeaderFooterViewDelegate, UINavigationControllerDelegate>
+@interface CKDetailsController : CKScrollViewController <UIViewControllerPreviewingDelegate, CKSharedAssetsControllerDelegate, CKDetailsAddGroupNameViewDelegate, FMFMapViewControllerDelegate, UITextViewDelegate, CKAttachmentCollectionManagerDelegate, UIAlertViewDelegate, CKDetailsContactsManagerDelegate, CNAvatarViewDelegate, CKDetailsContactsTableViewCellDelegate, CKBusinessInfoViewDelegate, CKDetailsDownloadAttachmentsHeaderFooterViewDelegate, UINavigationControllerDelegate, UITableViewDelegate, UITableViewDataSource>
 {
     _Bool _fmfEnabled;
     _Bool _fmfRestricted;
@@ -38,6 +37,7 @@
     CKDetailsTableView *_tableView;
     UIVisualEffectView *_visualEffectView;
     CKDetailsGroupNameCell *_groupNameCell;
+    CKDetailsAddGroupNameView *_groupNameView;
     CKDetailsMapViewCell *_mapViewCell;
     CKDetailsLocationShareCell *_locationShareCell;
     CKTranscriptDetailsResizableCell *_locationSendCell;
@@ -89,6 +89,7 @@
 @property(retain, nonatomic) CKTranscriptDetailsResizableCell *locationSendCell; // @synthesize locationSendCell=_locationSendCell;
 @property(retain, nonatomic) CKDetailsLocationShareCell *locationShareCell; // @synthesize locationShareCell=_locationShareCell;
 @property(retain, nonatomic) CKDetailsMapViewCell *mapViewCell; // @synthesize mapViewCell=_mapViewCell;
+@property(retain, nonatomic) CKDetailsAddGroupNameView *groupNameView; // @synthesize groupNameView=_groupNameView;
 @property(retain, nonatomic) CKDetailsGroupNameCell *groupNameCell; // @synthesize groupNameCell=_groupNameCell;
 @property(retain, nonatomic) UIVisualEffectView *visualEffectView; // @synthesize visualEffectView=_visualEffectView;
 @property(retain, nonatomic) CKDetailsTableView *tableView; // @synthesize tableView=_tableView;
@@ -164,6 +165,10 @@
 - (id)childViewController:(id)arg1 cellForIndexPath:(id)arg2;
 - (id)editConversationCellForIndexPath:(id)arg1;
 - (id)chatOptionsCellForIndexPath:(id)arg1;
+- (_Bool)_allRecipientsAlreadyFollowingLocation;
+- (id)_conversationOfferTimeExpiration;
+- (id)_tableViewCellForSharingLocation:(_Bool)arg1;
+- (id)_tableViewCellForSendLocation;
 - (id)locationShareCellForIndexPath:(id)arg1;
 - (void)_configureSeparatorForCell:(id)arg1 indexPath:(id)arg2;
 - (void)contactsCellDidTapFaceTimeVideoButton:(id)arg1;
@@ -198,7 +203,9 @@
 - (_Bool)shouldDisplayFooterForSection:(unsigned long long)arg1;
 - (_Bool)shouldDisplayHeaderForSection:(unsigned long long)arg1;
 - (_Bool)tableView:(id)arg1 shouldHighlightRowAtIndexPath:(id)arg2;
-- (double)tableView:(id)arg1 estimatedHeightForRowAtIndexPath:(id)arg2;
+- (double)_heightForAuxContactCellAtindexPath:(id)arg1;
+- (double)_heightForContactCellAtIndexPath:(id)arg1;
+- (unsigned long long)_countOfContactViewModels;
 - (double)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;

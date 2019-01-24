@@ -16,7 +16,7 @@
     _Bool _inBandCommsBasedPowerSources;
     int _type;
     NSString *_uniqueIdentifier;
-    NSDate *_startedCharging;
+    NSDate *_startedWirelessCharging;
     NSArray *_powerSources;
     long long _matID;
 }
@@ -26,7 +26,7 @@
 @property(readonly, nonatomic) _Bool wirelessCharging; // @synthesize wirelessCharging=_wirelessCharging;
 @property(readonly, nonatomic) NSArray *powerSources; // @synthesize powerSources=_powerSources;
 @property(readonly, nonatomic) int type; // @synthesize type=_type;
-@property(retain, nonatomic) NSDate *startedCharging; // @synthesize startedCharging=_startedCharging;
+@property(retain, nonatomic) NSDate *startedWirelessCharging; // @synthesize startedWirelessCharging=_startedWirelessCharging;
 @property(readonly, nonatomic) NSString *uniqueIdentifier; // @synthesize uniqueIdentifier=_uniqueIdentifier;
 - (void).cxx_destruct;
 

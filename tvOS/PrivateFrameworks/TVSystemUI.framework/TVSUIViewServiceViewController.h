@@ -20,19 +20,21 @@
         unsigned int didEncounterError:1;
     } _delegateRespondsTo;
     id <TVSUIViewServiceViewControllerDelegate> _delegate;
+    long long _lastAnimationState;
     NSArray *_launchInputItems;
     TVSUIViewServiceProxy *_proxy;
 }
 
 @property(retain, nonatomic) TVSUIViewServiceProxy *proxy; // @synthesize proxy=_proxy;
 @property(retain, nonatomic) NSArray *launchInputItems; // @synthesize launchInputItems=_launchInputItems;
+@property(nonatomic) long long lastAnimationState; // @synthesize lastAnimationState=_lastAnimationState;
 @property(nonatomic) __weak id <TVSUIViewServiceViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)_setupConstraints;
 - (void)proxy:(id)arg1 didEncounterError:(id)arg2;
 - (void)proxy:(id)arg1 didChangeState:(long long)arg2;
 - (void)proxy:(id)arg1 didReceiveItemsFromViewService:(id)arg2 reply:(CDUnknownBlockType)arg3;
-- (void)proxy:(id)arg1 requestsHostViewControllerDismissal:(id)arg2 withItems:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
+- (void)proxy:(id)arg1 didCompleteViewServiceDismissal:(id)arg2 withItems:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)sendItemsToViewService:(id)arg1 withReply:(CDUnknownBlockType)arg2;
 - (_Bool)setViewServiceHidden:(_Bool)arg1 error:(id *)arg2;
 - (_Bool)dismissViewServiceWithItems:(id)arg1 error:(id *)arg2;

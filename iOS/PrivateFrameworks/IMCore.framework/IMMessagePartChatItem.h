@@ -20,15 +20,21 @@
     NSArray *_messageEditChatItems;
     _Bool _isBusiness;
     _Bool _chatInScrutinyMode;
+    _Bool _whitelistedRichLinkSender;
 }
 
 + (id)_messageItemWithPartsDeleted:(id)arg1 fromMessageItem:(id)arg2;
 + (id)_newMessagePartsForMessageItem:(id)arg1 shouldDisplayLink:(_Bool)arg2 isBusiness:(_Bool)arg3 parentChatIsSpam:(_Bool)arg4 hasKnownParticipants:(_Bool)arg5;
++ (_Bool)_supportsRichLinkURL:(id)arg1 forSender:(id)arg2 isWhitelistedRichLinkSender:(_Bool)arg3;
++ (id)_richLinkRangesForMessageText:(id)arg1 sender:(id)arg2 isWhitelistedRichLinkSender:(_Bool)arg3;
++ (id)_additionalSupportedRichLinkSchemesForWhitelistedSender:(id)arg1;
++ (_Bool)_isWhitelistedRichLinkSender:(id)arg1 isBusiness:(_Bool)arg2;
++ (id)_defaultRichLinkSenderWhitelist;
 + (_Bool)_isWhiteListedURL:(id)arg1;
 + (id)_defaultRichLinkWhiteList;
 + (id)_newMessagePartsForMessageItem:(id)arg1;
 + (id)_guidForMessage:(id)arg1 url:(id)arg2;
-+ (_Bool)_testingSupportsURL:(id)arg1;
+@property(nonatomic, getter=isWhitelistedRichLinkSender) _Bool whitelistedRichLinkSender; // @synthesize whitelistedRichLinkSender=_whitelistedRichLinkSender;
 @property(readonly, copy, nonatomic) NSAttributedString *fallbackCorruptText; // @synthesize fallbackCorruptText=_fallbackCorruptText;
 @property(nonatomic) _Bool chatInScrutinyMode; // @synthesize chatInScrutinyMode=_chatInScrutinyMode;
 @property(readonly, nonatomic) NSArray *messageEditChatItems; // @synthesize messageEditChatItems=_messageEditChatItems;

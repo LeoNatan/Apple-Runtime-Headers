@@ -14,7 +14,7 @@
     // Error parsing type: , name: inCallControlsConstraints
 }
 
-- (CDUnknownBlockType).cxx_destruct;
+- (void).cxx_destruct;
 - (id)init;
 @property(nonatomic) long long inCallControlsState; // @synthesize inCallControlsState;
 

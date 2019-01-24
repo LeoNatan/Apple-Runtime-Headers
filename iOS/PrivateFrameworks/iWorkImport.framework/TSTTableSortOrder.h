@@ -24,8 +24,8 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) int type; // @synthesize type=_type;
 @property(readonly, nonatomic) NSArray *rules; // @synthesize rules=_rules;
 - (void).cxx_destruct;
-- (void)encodeToArchive:(struct TableSortOrderArchive *)arg1;
-- (id)initFromArchive:(const struct TableSortOrderArchive *)arg1;
+-     // Error parsing type: v24@0:8^{TableSortOrderArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TST::TableSortOrderArchive_SortRuleArchive>=^{Arena}ii^{Rep}}i}16, name: encodeToArchive:
+-     // Error parsing type: @24@0:8r^{TableSortOrderArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TST::TableSortOrderArchive_SortRuleArchive>=^{Arena}ii^{Rep}}i}16, name: initFromArchive:
 - (_Bool)containsAnyRulesInBaseColumns:(id)arg1;
 - (id)sortOrderByRemovingBaseColumnIndices:(id)arg1;
 - (id)sortOrderByReplacingRulesWithRules:(id)arg1;

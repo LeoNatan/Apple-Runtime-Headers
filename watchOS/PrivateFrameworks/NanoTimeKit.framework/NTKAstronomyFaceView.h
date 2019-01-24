@@ -55,7 +55,6 @@
     unsigned int _isHandlingCrownEvents:1;
 }
 
-+ (void)_prewarmForDevice:(id)arg1;
 - (void).cxx_destruct;
 - (_Bool)_wantsMinorDetents;
 - (void)_renderSynchronouslyWithImageQueueDiscard:(_Bool)arg1;

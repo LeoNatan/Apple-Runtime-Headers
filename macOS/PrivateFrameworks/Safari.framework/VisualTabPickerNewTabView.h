@@ -19,9 +19,9 @@ __attribute__((visibility("hidden")))
 
 @property(nonatomic) __weak id <VisualTabPickerNewTabViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
-- (void)accessibilityPerformAction:(id)arg1;
-- (id)accessibilityActionNames;
-- (id)accessibilityAttributeValue:(id)arg1;
+- (BOOL)accessibilityPerformPress;
+- (id)accessibilityLabel;
+- (id)accessibilityRole;
 - (void)_setUpSubviews;
 - (void)animateToolbarImage:(id)arg1 height:(double)arg2 gridAnimation:(long long)arg3;
 - (void)animateSidebarImage:(id)arg1 width:(double)arg2 gridAnimation:(long long)arg3;

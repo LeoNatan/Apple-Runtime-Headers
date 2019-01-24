@@ -47,6 +47,7 @@
 - (void)setupServiceMessageSelectorMappings;
 - (void)endSetupTransaction;
 - (void)beginSetupTransaction;
+- (void)clearPowerAssertionIfNotPairing:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

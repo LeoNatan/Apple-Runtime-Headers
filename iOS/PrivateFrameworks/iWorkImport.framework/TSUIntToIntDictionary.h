@@ -15,6 +15,7 @@ __attribute__((visibility("hidden")))
     struct __CFDictionary *mDictionary;
 }
 
++ (id)dictionary;
 - (struct __CFDictionary *)p_cfDictionary;
 - (void)enumerateKeysAndValuesUsingBlock:(CDUnknownBlockType)arg1;
 - (id)description;
@@ -23,10 +24,13 @@ __attribute__((visibility("hidden")))
 - (id)allValues;
 - (id)allKeys;
 - (id)arrayOfBoxedKeys;
+- (void)addIntToIntDictionary:(id)arg1;
 - (void)applyFromIntToIntDictionary:(id)arg1;
 - (_Bool)containsKey:(long long)arg1;
 - (id)keyEnumerator;
 - (void)removeAllInts;
+- (void)incrementValueForKey:(long long)arg1;
+- (void)incrementValueBy:(long long)arg1 forKey:(long long)arg2;
 - (void)setInt:(long long)arg1 forKey:(long long)arg2;
 - (void)removeIntForKey:(long long)arg1;
 - (long long)intForKey:(long long)arg1;

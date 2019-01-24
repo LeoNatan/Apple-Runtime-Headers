@@ -11,7 +11,7 @@ __attribute__((visibility("hidden")))
 {
 }
 
-+ (struct TSCH3DScenePart)partWithEnumerator:(id)arg1 layoutSettings:(CDStruct_b1c75024)arg2;
++ (id)partWithEnumerator:(id)arg1 layoutSettings:(CDStruct_b1c75024)arg2;
 + (_Bool)isHorizontalChart;
 + (_Bool)isStacked;
 + (id)chartSeriesType;

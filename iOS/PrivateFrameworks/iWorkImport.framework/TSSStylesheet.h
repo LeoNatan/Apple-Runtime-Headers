@@ -13,10 +13,10 @@
 __attribute__((visibility("hidden")))
 @interface TSSStylesheet : TSPObject <TSKTransformableObject>
 {
+    NSMutableDictionary *mIdentifierToStyleMap;
+    TSUMutableRetainedPointerSet *mStyles;
     TSSStylesheet *mParent;
     TSSStylesheet *mChild;
-    TSUMutableRetainedPointerSet *mStyles;
-    NSMutableDictionary *mIdentifierToStyleMap;
     TSURetainedPointerKeyDictionary *mParentToChildrenStyleMap;
     NSMutableDictionary *mUUIDToStyleMap;
     _Bool mIsLocked;
@@ -103,7 +103,7 @@ __attribute__((visibility("hidden")))
 - (id)packageLocator;
 - (unsigned int)delayedArchivingPriority;
 - (_Bool)shouldDelayArchiving;
-- (set_713dd2e1 *)p_allFilteredIdentifiersInArchive:(const struct StylesheetArchive *)arg1 unarchiver:(id)arg2;
+-     // Error parsing type: ^{set<long long, std::__1::less<long long>, std::__1::allocator<long long> >={__tree<long long, std::__1::less<long long>, std::__1::allocator<long long> >=^{__tree_end_node<std::__1::__tree_node_base<void *> *>}{__compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *> *>, std::__1::allocator<std::__1::__tree_node<long long, void *> > >={__tree_end_node<std::__1::__tree_node_base<void *> *>=^{__tree_node_base<void *>}}}{__compressed_pair<unsigned long, std::__1::less<long long> >=Q}}}32@0:8r^{StylesheetArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}{RepeatedPtrField<TSS::StylesheetArchive_IdentifiedStyleEntry>=^{Arena}ii^{Rep}}{RepeatedPtrField<TSS::StylesheetArchive_StyleChildrenEntry>=^{Arena}ii^{Rep}}^{Reference}BB}16@24, name: p_allFilteredIdentifiersInArchive:unarchiver:
 - (id)headerAndFooterStyle;
 - (id)defaultEquationStyle;
 - (id)defaultTOCEntryStyle;

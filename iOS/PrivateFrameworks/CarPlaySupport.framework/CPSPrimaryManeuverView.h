@@ -10,23 +10,35 @@
 
 @interface CPSPrimaryManeuverView : CPSManeuverView
 {
+    _Bool _usesWideImage;
     CPSAbridgableLabel *_distanceLabel;
     UIImageView *_symbolView;
     CPManeuver *_maneuver;
     CPSAbridgableLabel *_titleLabel;
     CPSAbridgableLabel *_instructionLabel;
+    UIImageView *_junctionImageView;
 }
 
+@property(nonatomic) _Bool usesWideImage; // @synthesize usesWideImage=_usesWideImage;
+@property(retain, nonatomic) UIImageView *junctionImageView; // @synthesize junctionImageView=_junctionImageView;
 @property(retain, nonatomic) CPSAbridgableLabel *instructionLabel; // @synthesize instructionLabel=_instructionLabel;
 @property(retain, nonatomic) CPSAbridgableLabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(retain, nonatomic) CPManeuver *maneuver; // @synthesize maneuver=_maneuver;
 @property(retain, nonatomic) UIImageView *symbolView; // @synthesize symbolView=_symbolView;
 @property(readonly, nonatomic) CPSAbridgableLabel *distanceLabel; // @synthesize distanceLabel=_distanceLabel;
 - (void).cxx_destruct;
+- (struct CGSize)intrinsicContentSize;
 - (void)setCurrentTravelEstimates:(id)arg1;
 - (id)_formattedDistance;
-- (id)initWithManeuver:(id)arg1 minimalMode:(_Bool)arg2 style:(long long)arg3;
+- (void)_layoutMin;
+- (void)_layoutRemoveJunctionView;
+- (void)_layoutLevelNoInstruction;
+- (void)_layoutMaxSize;
+- (void)_cleanupViews;
+- (id)_maneuverSymbolImage;
 - (void)backgroundColorDidChange;
+- (void)setManeuverViewSize:(unsigned long long)arg1;
+- (id)initWithManeuver:(id)arg1 style:(long long)arg2;
 
 @end
 

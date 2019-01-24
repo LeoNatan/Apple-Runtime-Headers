@@ -15,7 +15,7 @@
 - (_Bool)adjustRangesByDelta:(long long)arg1 startingAt:(unsigned long long)arg2;
 - (struct _NSRange)charRangeRemappedFromStorage:(struct _NSRange)arg1;
 - (unsigned long long)charIndexRemappedFromStorage:(unsigned long long)arg1;
-- (id)objectAtLocationPriorToMappedCharIndex:(unsigned long long)arg1 forAttributeKind:(int)arg2 effectiveRange:(struct _NSRange *)arg3;
+- (id)objectAtLocationPriorToMappedCharIndex:(unsigned long long)arg1 forAttributeKind:(unsigned long long)arg2 effectiveRange:(struct _NSRange *)arg3;
 - (struct _NSRange)charRangeMappedFromStorage:(struct _NSRange)arg1;
 - (struct _NSRange)charRangeMappedToStorage:(struct _NSRange)arg1;
 - (unsigned long long)charIndexMappedFromStorage:(unsigned long long)arg1;
@@ -30,9 +30,9 @@
 - (TSWPAttachment *)attachmentOrFootnoteAtCharIndex:(unsigned long long)arg1;
 - (TSWPAttachment *)attachmentAtCharIndex:(unsigned long long)arg1;
 - (TSWPFootnoteReferenceAttachment *)footnoteReferenceAtCharIndex:(unsigned long long)arg1;
-- (NSArray *)smartFieldsWithAttributeKind:(int)arg1 intersectingRange:(struct _NSRange)arg2;
-- (TSWPSmartField *)smartFieldAtCharIndex:(unsigned long long)arg1 attributeKind:(int)arg2 effectiveRange:(struct _NSRange *)arg3;
-- (void)attributesAtCharIndex:(unsigned long long)arg1 attributesOfInterest:(_Bool [21])arg2 attributesTable:(id [21])arg3 effectiveRange:(struct _NSRange *)arg4;
+- (NSArray *)smartFieldsWithAttributeKind:(unsigned long long)arg1 intersectingRange:(struct _NSRange)arg2;
+- (TSWPSmartField *)smartFieldAtCharIndex:(unsigned long long)arg1 attributeKind:(unsigned long long)arg2 effectiveRange:(struct _NSRange *)arg3;
+- (void)attributesAtCharIndex:(unsigned long long)arg1 attributesOfInterest:(_Bool [22])arg2 attributesTable:(id [22])arg3 effectiveRange:(struct _NSRange *)arg4;
 - (_Bool)hasColumnStyleForParagraphBreakAtCharIndex:(unsigned long long)arg1;
 - (_Bool)hasColumnBreakAtCharIndex:(unsigned long long)arg1;
 - (void)getCharacters:(unsigned short *)arg1 range:(struct _NSRange)arg2;
@@ -41,8 +41,8 @@
 
 @optional
 - (_Bool)hasSmartFieldsInRange:(struct _NSRange)arg1;
-- (void)enumerateWithAttributeKind:(int)arg1 inRange:(struct _NSRange)arg2 usingBlock:(void (^)(id, struct _NSRange, _Bool *))arg3;
-- (void)enumerateSmartFieldsWithAttributeKind:(int)arg1 inRange:(struct _NSRange)arg2 usingBlock:(void (^)(id, struct _NSRange, _Bool *))arg3;
+- (void)enumerateWithAttributeKind:(unsigned long long)arg1 inRange:(struct _NSRange)arg2 usingBlock:(void (^)(id, struct _NSRange, _Bool *))arg3;
+- (void)enumerateSmartFieldsWithAttributeKind:(unsigned long long)arg1 inRange:(struct _NSRange)arg2 usingBlock:(void (^)(id, struct _NSRange, _Bool *))arg3;
 - (NSString *)substringWithRange:(struct _NSRange)arg1;
 @end
 

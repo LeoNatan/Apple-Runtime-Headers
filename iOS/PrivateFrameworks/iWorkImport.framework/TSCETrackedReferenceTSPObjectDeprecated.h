@@ -13,7 +13,7 @@ __attribute__((visibility("hidden")))
     CDStruct_8dbd2315 mFormulaID;
 }
 
-- (void)encodeToArchive:(struct TrackedReferenceArchive *)arg1;
+-     // Error parsing type: v24@0:8^{TrackedReferenceArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{ASTNodeArrayArchive}I}16, name: encodeToArchive:
 - (void)saveToArchiver:(id)arg1;
 - (CDStruct_8dbd2315)formulaID;
 - (struct TSCEASTNodeArray *)ast;

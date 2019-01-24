@@ -26,7 +26,7 @@
 - (id)_actionTitleForType:(long long)arg1 withActionCount:(unsigned long long)arg2;
 - (id)_supportedApplications;
 - (void)_updateActionButtons;
-- (void)presentDocumentInteractionControllerFromRect:(struct CGRect)arg1 inView:(id)arg2;
+- (void)presentDocumentInteractionControllerFromSource:(id)arg1;
 - (void)updateWithQuickLookDocument:(id)arg1;
 - (id)init;
 

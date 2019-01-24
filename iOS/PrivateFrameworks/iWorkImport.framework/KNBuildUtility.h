@@ -11,6 +11,7 @@ __attribute__((visibility("hidden")))
 {
 }
 
++ (unsigned long long)countOfInfosThatSupportContentBuilds:(id)arg1;
 + (id)validIdentifierForChunkToInsertAfterFromPossiblyInvalidIdentifier:(id)arg1 build:(id)arg2;
 + (id)nonNilChunkIdentifierFromPossiblyNilChunk:(id)arg1;
 + (id)identifiersForChunks:(id)arg1;

@@ -187,10 +187,8 @@
 - (void)batterySaverModeDidChange;
 - (void)_checkEnableState;
 - (void)_processNextTransaction;
-- (void)reportLibrarySizeIfNeeded;
 - (void)_handleOptimizeSettingChange;
-- (void)reportDeviceData:(id)arg1;
-- (id)_addPrefix:(id)arg1 toKeysInDictionary:(id)arg2;
+- (void)reportMiscInformation:(id)arg1;
 - (void)_updatePendingResetSyncDate;
 - (_Bool)_setupTimerForUnpause;
 - (void)_constructUnpauseTimerFrom:(id)arg1 to:(id)arg2;

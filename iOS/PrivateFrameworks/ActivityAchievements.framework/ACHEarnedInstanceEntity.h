@@ -37,6 +37,8 @@
 + (id)columnsDefinition;
 + (id)createTableSQL;
 + (id)databaseTable;
++ (id)journalEntryAppliedObserver;
++ (void)setJournalEntryAppliedObserver:(id)arg1;
 + (id)syncedEarnedInstancesObserver;
 + (void)setSyncedEarnedInstancesObserver:(id)arg1;
 

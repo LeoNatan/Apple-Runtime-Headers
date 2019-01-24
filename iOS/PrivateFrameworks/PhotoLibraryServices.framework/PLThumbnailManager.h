@@ -33,6 +33,7 @@
 + (id)cameraPreviewWellAssetUUIDFromPersistedFile;
 + (_Bool)_compareAsset:(id)arg1 toMetadata:(id)arg2;
 + (id)_fetchCameraPreviewWellMetadata;
++ (id)cameraPreviewWellAssetFetchRequest;
 + (id)_allowedForCameraPreviewWellPredicate;
 + (void)_updateCameraPreviewWellMetadataFromAsset:(id)arg1;
 + (_Bool)_cameraPreviewWellMetadataLoadAndUpdateIfNeeded:(id *)arg1;

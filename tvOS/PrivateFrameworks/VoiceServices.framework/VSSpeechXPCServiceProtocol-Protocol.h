@@ -33,6 +33,7 @@
 - (oneway void)pauseSpeechRequestAtMark:(long long)arg1;
 - (oneway void)startSynthesisRequest:(VSSpeechRequest *)arg1;
 - (oneway void)startSpeechRequest:(VSSpeechRequest *)arg1;
+- (oneway void)queryPhaticCapabilityWithRequest:(VSSpeechRequest *)arg1 reply:(void (^)(_Bool))arg2;
 - (oneway void)prewarmIfNeededWithRequest:(VSSpeechRequest *)arg1;
 - (oneway void)updateWithConnectionIdentifier:(NSString *)arg1;
 @end

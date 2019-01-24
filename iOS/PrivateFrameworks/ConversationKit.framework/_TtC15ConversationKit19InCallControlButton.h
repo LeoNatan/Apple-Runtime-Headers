@@ -9,15 +9,19 @@
 __attribute__((visibility("hidden")))
 @interface _TtC15ConversationKit19InCallControlButton : UIControl
 {
-    // Error parsing type: , name: discView
     // Error parsing type: , name: imageView
+    // Error parsing type: , name: toggledConstraints
+    // Error parsing type: , name: paragraphStyle
+    // Error parsing type: , name: style
+    // Error parsing type: , name: label
+    // Error parsing type: , name: discView
     // Error parsing type: , name: image
+    // Error parsing type: , name: colorConfiguration
 }
 
-- (CDUnknownBlockType).cxx_destruct;
+- (void).cxx_destruct;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (void)layoutSubviews;
-@property(nonatomic, readonly) struct CGSize intrinsicContentSize;
 - (id)initWithCoder:(id)arg1;
 @property(nonatomic) _Bool highlighted;
 - (_Bool)isHighlighted;

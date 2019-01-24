@@ -39,6 +39,7 @@
 + (unsigned char)guessLibraryStructureAtURL:(id)arg1;
 + (BOOL)isPotentialLibraryAtURL:(id)arg1;
 + (BOOL)checkLibraryURL:(id)arg1 accessFiles:(id)arg2 error:(id *)arg3;
++ (BOOL)checkSupportedFilesystemForTestMigrationForLibraryURL:(id)arg1 error:(id *)arg2;
 + (BOOL)checkSupportedFilesystemForLibraryURL:(id)arg1 error:(id *)arg2;
 + (unsigned char)checkLibraryUpgradeTypeAtURL:(id)arg1 updatedDatabasePath:(id *)arg2 error:(id *)arg3;
 + (id)metaSchemaSectionDataWithError:(id *)arg1;

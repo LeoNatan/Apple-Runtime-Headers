@@ -11,6 +11,7 @@
 }
 
 + (id)nopeState:(unsigned int)arg1;
++ (id)walkieTalkieState:(unsigned int)arg1;
 + (id)theaterState:(unsigned int)arg1;
 + (id)lockedState:(unsigned int)arg1;
 + (id)unreadNotificationsState:(unsigned int)arg1;

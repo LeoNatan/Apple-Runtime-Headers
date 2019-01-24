@@ -99,9 +99,9 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSString *UUID;
 @property(copy, nonatomic) NSArray *masters;
 - (void)saveToArchiver:(id)arg1;
-- (void)saveToArchive:(struct ThemeArchive *)arg1 archiver:(id)arg2;
+-     // Error parsing type: v32@0:8^{ThemeArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}{RepeatedPtrField<KN::ThemeCustomTimingCurveArchive>=^{Arena}ii^{Rep}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}^{ThemeArchive}^{Reference}^{Reference}B}16@24, name: saveToArchive:archiver:
 - (void)loadFromUnarchiver:(id)arg1;
-- (void)loadFromArchive:(const struct ThemeArchive *)arg1 unarchiver:(id)arg2;
+-     // Error parsing type: v32@0:8r^{ThemeArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}{RepeatedPtrField<KN::ThemeCustomTimingCurveArchive>=^{Arena}ii^{Rep}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}^{ThemeArchive}^{Reference}^{Reference}B}16@24, name: loadFromArchive:unarchiver:
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

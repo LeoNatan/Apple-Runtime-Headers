@@ -10,7 +10,7 @@
 #import <TemplateKit/TLKObservable-Protocol.h>
 #import <TemplateKit/TLKObserver-Protocol.h>
 
-@class NSString, TLKEmojiableVibrantLabel, TLKIconsView, TLKRichText, TLKRoundedCornerLabels, TLKStarsView, UIFont;
+@class NSString, TLKEmojiableVibrantLabel, TLKIconsView, TLKRichText, TLKRoundedCornerLabels, TLKStarsView, UIColor, UIFont;
 @protocol TLKObserver;
 
 @interface TLKRichTextField : TLKStackView <NUIContainerStackViewDelegate, TLKObservable, TLKObserver>
@@ -41,6 +41,7 @@
 - (void)updateRoundedCornerLabels:(id)arg1;
 - (void)updateIcons:(id)arg1;
 - (void)updateStarRating:(id)arg1;
+@property(readonly) UIColor *textColor;
 - (void)makeTertiary;
 @property(retain) UIFont *font;
 - (void)updateWithRichText:(id)arg1;

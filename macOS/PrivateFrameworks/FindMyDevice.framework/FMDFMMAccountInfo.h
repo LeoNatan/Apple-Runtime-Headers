@@ -20,12 +20,16 @@
     NSString *_fmdServerProtocolScheme;
     NSString *_fmdAPSEnvironment;
     NSString *_fmdIDSIdentifier;
+    NSString *_rootVolumeUUID;
     unsigned int _uid;
+    NSString *_userGUID;
 }
 
 + (BOOL)supportsSecureCoding;
 @property(retain, nonatomic) NSString *fmdIDSIdentifier; // @synthesize fmdIDSIdentifier=_fmdIDSIdentifier;
 @property(nonatomic) unsigned int uid; // @synthesize uid=_uid;
+@property(retain, nonatomic) NSString *userGUID; // @synthesize userGUID=_userGUID;
+@property(retain, nonatomic) NSString *rootVolumeUUID; // @synthesize rootVolumeUUID=_rootVolumeUUID;
 @property(retain, nonatomic) NSString *fmdAPSEnvironment; // @synthesize fmdAPSEnvironment=_fmdAPSEnvironment;
 @property(retain, nonatomic) NSString *fmdServerProtocolScheme; // @synthesize fmdServerProtocolScheme=_fmdServerProtocolScheme;
 @property(retain, nonatomic) NSString *fmdServerHost; // @synthesize fmdServerHost=_fmdServerHost;

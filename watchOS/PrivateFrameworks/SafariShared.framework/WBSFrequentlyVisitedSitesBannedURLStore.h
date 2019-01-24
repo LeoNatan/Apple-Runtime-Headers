@@ -21,6 +21,7 @@
 - (id)_bannedURLStringsToEntriesMap;
 - (void)_historyItemsWereRemoved:(id)arg1;
 - (void)_historyWasCleared:(id)arg1;
+- (id)urlStrings;
 - (void)removeAllURLStrings;
 - (void)removeURLStrings:(id)arg1;
 - (void)addURLString:(id)arg1;

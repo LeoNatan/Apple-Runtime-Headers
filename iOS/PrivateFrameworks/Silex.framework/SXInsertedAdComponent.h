@@ -14,6 +14,7 @@
 
 @interface SXInsertedAdComponent : NSObject <SXInsertableComponent, SXBannerAdComponent>
 {
+    _Bool _hidden;
     NSString *_identifier;
     SXComponentAnimation *_animation;
     SXJSONArray *_behaviors;
@@ -28,6 +29,7 @@
     SXJSONArray *_additions;
 }
 
+@property(readonly, nonatomic) _Bool hidden; // @synthesize hidden=_hidden;
 @property(readonly, nonatomic) SXJSONArray *additions; // @synthesize additions=_additions;
 @property(readonly, nonatomic) SXJSONDictionary *analytics; // @synthesize analytics=_analytics;
 @property(readonly, nonatomic) SXJSONDictionary *advertising; // @synthesize advertising=_advertising;
@@ -51,6 +53,7 @@
 - (id)initWithAdType:(unsigned long long)arg1;
 
 // Remaining properties
+@property(readonly, nonatomic) SXJSONArray *conditional;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;

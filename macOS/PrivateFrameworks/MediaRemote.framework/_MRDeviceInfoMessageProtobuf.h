@@ -33,6 +33,7 @@
     NSString *_uniqueIdentifier;
     BOOL _allowsPairing;
     BOOL _connected;
+    BOOL _isAirplayActive;
     BOOL _isGroupLeader;
     BOOL _isProxyGroupPlayer;
     BOOL _supportsACL;
@@ -48,6 +49,7 @@
         unsigned int sharedQueueVersion:1;
         unsigned int allowsPairing:1;
         unsigned int connected:1;
+        unsigned int isAirplayActive:1;
         unsigned int isGroupLeader:1;
         unsigned int isProxyGroupPlayer:1;
         unsigned int supportsACL:1;
@@ -59,6 +61,7 @@
 }
 
 + (Class)groupedDevicesType;
+@property(nonatomic) BOOL isAirplayActive; // @synthesize isAirplayActive=_isAirplayActive;
 @property(nonatomic) BOOL isGroupLeader; // @synthesize isGroupLeader=_isGroupLeader;
 @property(retain, nonatomic) NSMutableArray *groupedDevices; // @synthesize groupedDevices=_groupedDevices;
 @property(retain, nonatomic) NSString *groupName; // @synthesize groupName=_groupName;
@@ -96,6 +99,7 @@
 - (BOOL)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(nonatomic) BOOL hasIsAirplayActive;
 @property(nonatomic) BOOL hasIsGroupLeader;
 - (id)groupedDevicesAtIndex:(unsigned long long)arg1;
 - (unsigned long long)groupedDevicesCount;
@@ -130,6 +134,7 @@
 @property(readonly, nonatomic) BOOL hasLocalizedModelName;
 @property(readonly, nonatomic) BOOL hasName;
 @property(readonly, nonatomic) BOOL hasUniqueIdentifier;
+@property(readonly, nonatomic) NSString *deviceUID;
 
 @end
 

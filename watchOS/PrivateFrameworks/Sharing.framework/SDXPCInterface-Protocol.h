@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@class NSData, NSDictionary, NSError, NSString, NSURL, NSUUID, NSXPCListenerEndpoint, SFBLEDevice, SFCoordinatedAlertRequest, SFDevice, SFDeviceDiscovery, SFEventMessage, SFRemoteAutoFillSessionHelper, SFRemoteInteractionSession, SFRequestMessage, SFResponseMessage, SFService, SFSession, SFUserAlert;
+@class NSData, NSDictionary, NSError, NSString, NSURL, NSUUID, NSXPCListenerEndpoint, SFBLEDevice, SFContactInfo, SFCoordinatedAlertRequest, SFDevice, SFDeviceDiscovery, SFEventMessage, SFRemoteAutoFillSessionHelper, SFRemoteInteractionSession, SFRequestMessage, SFResponseMessage, SFService, SFSession, SFUserAlert;
 
 @protocol SDXPCInterface
 - (void)userNotificationPresent:(SFUserAlert *)arg1;
@@ -52,6 +52,7 @@
 - (void)coordinatedAlertsRequestStart:(SFCoordinatedAlertRequest *)arg1 completion:(void (^)(NSError *, _Bool, NSDictionary *))arg2;
 - (void)wifiPasswordSharingAvailabilityWithCompletion:(void (^)(unsigned int, NSError *))arg1;
 - (void)triggerHomeKitDeviceDetectedWithURL:(NSURL *)arg1 completion:(void (^)(NSError *))arg2;
+- (void)testContinuityKeyboardBegin:(_Bool)arg1;
 - (void)showDevicePickerWithInfo:(NSDictionary *)arg1 completion:(void (^)(NSError *))arg2;
 - (void)setupDevice:(SFDevice *)arg1 homeIdentifier:(NSUUID *)arg2 completion:(void (^)(NSError *))arg3;
 - (void)retriggerProximitySetup:(void (^)(NSError *))arg1;
@@ -60,12 +61,13 @@
 - (void)reenableProxCardType:(unsigned char)arg1 completion:(void (^)(NSError *))arg2;
 - (void)preventExitForLocaleReason:(NSString *)arg1;
 - (void)openSetupURL:(NSURL *)arg1 completion:(void (^)(NSError *))arg2;
-- (void)appleIDInfoWithCompletion:(void (^)(NSString *, NSData *, NSError *))arg1;
-- (void)activityStateWithCompletion:(void (^)(unsigned long long, NSError *))arg1;
-- (void)activateAssertionWithIdentifier:(NSString *)arg1;
+- (void)findContact:(SFContactInfo *)arg1 completion:(void (^)(SFContactInfo *, NSError *))arg2;
 - (void)displayStringForContactIdentifier:(NSString *)arg1 deviceIdentifier:(NSUUID *)arg2 completion:(void (^)(NSString *, _Bool, NSError *))arg3;
 - (void)displayNameForEmailHash:(NSString *)arg1 phoneHash:(NSString *)arg2 completion:(void (^)(NSString *, NSError *))arg3;
 - (void)contactIDForEmailHash:(NSString *)arg1 phoneHash:(NSString *)arg2 completion:(void (^)(NSString *, NSError *))arg3;
+- (void)appleIDInfoWithCompletion:(void (^)(NSString *, NSData *, NSError *))arg1;
+- (void)activityStateWithCompletion:(void (^)(unsigned long long, NSError *))arg1;
+- (void)activateAssertionWithIdentifier:(NSString *)arg1;
 - (void)autoFillHelperUserNotificationDidDismiss:(NSUUID *)arg1;
 - (void)autoFillHelperUserNotificationDidActivate:(NSUUID *)arg1;
 - (void)autoFillHelperTryPIN:(NSString *)arg1;

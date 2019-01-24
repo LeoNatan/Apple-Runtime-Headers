@@ -45,8 +45,6 @@
 - (int)designatedPhysicalStoreForContainer:(struct __DADisk *)arg1 designatedPhysicalStore:(struct __DADisk **)arg2;
 - (int)physicalStoresForContainer:(struct __DADisk *)arg1 physicalStores:(id *)arg2;
 - (int)containers:(id *)arg1;
-- (int)unlockTargetDiskModeVolume:(id)arg1 user:(id)arg2 passdataType:(unsigned char)arg3 passdata:(id)arg4 options:(id)arg5 details:(id *)arg6;
-- (int)unlockableVolumesForTargetDiskMode:(unsigned int)arg1 options:(id)arg2 list:(id *)arg3;
 - (int)prebootInfoForLockedOrUnlockedVolume:(struct __DADisk *)arg1 user:(id)arg2 info:(id *)arg3 options:(id)arg4;
 - (int)macOSUserForCryptoUserForVolume:(struct __DADisk *)arg1 cryptoUser:(id)arg2 macOSUserGUID:(id *)arg3 options:(id)arg4;
 - (int)cryptoUserForMacOSUserForVolume:(struct __DADisk *)arg1 macOSUser:(id)arg2 apfsCryptoUser:(id *)arg3 options:(id)arg4;

@@ -10,7 +10,6 @@
 
 @class NSString, UIWebView;
 
-__attribute__((visibility("hidden")))
 @interface SLURLPreviewGenerator : NSObject <UIWebViewDelegate>
 {
     UIWebView *_webView;

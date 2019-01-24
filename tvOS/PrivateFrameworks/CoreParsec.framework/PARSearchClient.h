@@ -48,6 +48,7 @@
 - (void)_invalidateConnection;
 - (id)initWithConnection:(id)arg1;
 - (id)init;
+- (void)sessionDidChange:(id)arg1;
 - (void)didDeleteResource:(id)arg1;
 - (void)didDownloadResource:(id)arg1;
 - (void)bagDidLoad:(id)arg1 error:(id)arg2;

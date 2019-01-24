@@ -11,7 +11,7 @@
 #import <SafariServices/_SFAuthenticationClient-Protocol.h>
 #import <SafariServices/_SFAutoFillInputViewDelegate-Protocol.h>
 
-@class NSArray, NSDictionary, NSMutableIndexSet, NSMutableSet, NSString, NSTimer, SFFormAutoFillFrameHandle, SFFormAutocompleteState, UIView, WBSOneTimeCodeMonitor, WKWebView, _SFAuthenticationContext, _SFAutoFillAuthenticationCache, _SFAutoFillInputView, _SFFormAutoFillInputSession, _WKRemoteObjectInterface;
+@class NSArray, NSDictionary, NSMutableIndexSet, NSMutableSet, NSString, NSTimer, SFFormAutoFillFrameHandle, SFFormAutocompleteState, UIView, WBSCreditCardData, WBSOneTimeCodeMonitor, WKWebView, _SFAuthenticationContext, _SFAutoFillInputView, _SFFormAutoFillInputSession, _WKRemoteObjectInterface;
 @protocol SFFormAutoFillControllerDelegate, SFFormAutoFiller, WBUFormAutoFillWebView;
 
 @interface _SFFormAutoFillController : NSObject <SFCredentialProviderExtensionManagerObserver, _SFAutoFillInputViewDelegate, SFFormMetadataObserver, _SFAuthenticationClient>
@@ -35,11 +35,13 @@
     NSArray *_preservedTrailingBarButtonGroups;
     NSDictionary *_externalCredentialIdentitiesForStreamlinedAutoFill;
     _Bool _metadataCorrectionsEnabled;
+    WBSCreditCardData *_lastFilledCreditCardData;
 }
 
 + (id)_filterAndSortCredentialIdentities:(id)arg1 pageURL:(id)arg2 exactMatchesOnly:(_Bool)arg3;
 + (void)_getExternalLoginCredentialSuggestionsForDomains:(id)arg1 pageURL:(id)arg2 completion:(CDUnknownBlockType)arg3;
 + (void)_getExternalLoginCredentialSuggestionsForDomains:(id)arg1 completion:(CDUnknownBlockType)arg2;
+@property(retain, nonatomic) WBSCreditCardData *lastFilledCreditCardData; // @synthesize lastFilledCreditCardData=_lastFilledCreditCardData;
 @property(nonatomic) _Bool metadataCorrectionsEnabled; // @synthesize metadataCorrectionsEnabled=_metadataCorrectionsEnabled;
 - (void).cxx_destruct;
 - (void)credentialProviderExtensionManagerExtensionListDidChange:(id)arg1;
@@ -57,7 +59,9 @@
 - (void)removeAutomaticPasswordButtonInitiatedByUser:(_Bool)arg1;
 - (void)removeAutomaticPasswordVisualTreatment;
 - (void)didRemoveAutomaticStrongPasswordInForm:(id)arg1 inputSessionUserObject:(id)arg2 inFrame:(id)arg3;
-- (void)autoFillDidFinishWithUpdatedFormMetadata:(id)arg1 inFrame:(id)arg2;
+- (void)_simulateCarriageReturnKeyEvents;
+- (id)_simulatedWebEventForReturnKeyWithType:(int)arg1;
+- (void)autoFillDidFinishWithUpdatedFormMetadata:(id)arg1 inFrame:(id)arg2 shouldSubmit:(_Bool)arg3;
 - (void)_removeUniqueIDsOfAutoFilledForm:(id)arg1;
 - (void)_addUniqueIDsOfAutoFilledForm:(id)arg1;
 - (void)willNavigateFrame:(id)arg1 withUnsubmittedForm:(id)arg2 loadingIsDeferred:(_Bool)arg3;
@@ -66,14 +70,15 @@
 - (void)didCollectFormMetadataForPreFilling:(id)arg1 atURL:(id)arg2 ancestorFramesOfFormToPreFill:(id)arg3;
 - (id)authenticationCustomUIProgressObserverForContext:(id)arg1;
 - (_Bool)displayMessageAsTitleForContext:(id)arg1;
+- (_Bool)_showingAutoFillInputView;
 - (id)passcodePromptForContext:(id)arg1;
 - (id)authenticationMessageForContext:(id)arg1;
+- (id)_preFillDisabledHosts;
 - (id)_websiteForAuthenticationPrompt;
 @property(readonly, nonatomic) WBSOneTimeCodeMonitor *oneTimeCodeMonitor;
-- (void)authenticateForAutoFillOnPageLoad:(_Bool)arg1 forAuthenticationType:(long long)arg2 withCompletion:(CDUnknownBlockType)arg3;
-- (void)_authenticateForAutoFillForHighLevelDomain:(id)arg1 onPageLoad:(_Bool)arg2 withCompletion:(CDUnknownBlockType)arg3;
+- (void)authenticateForAutoFillAuthenticationType:(long long)arg1 withCompletion:(CDUnknownBlockType)arg2;
+- (void)_authenticateForAutoFillForHighLevelDomain:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 @property(readonly, nonatomic) _SFAuthenticationContext *authenticationContext;
-@property(readonly, nonatomic) _SFAutoFillAuthenticationCache *authenticationCache;
 - (void)didCollectURLsForPreFilling:(id)arg1 atURL:(id)arg2;
 - (void)willSubmitFormValues:(id)arg1 userObject:(id)arg2 submissionHandler:(CDUnknownBlockType)arg3;
 - (void)_fieldFocusedWithInputSession:(id)arg1;
@@ -83,7 +88,6 @@
 - (void)_hideInputAssistantItemsIfNecessary;
 - (void)fieldWillFocusWithInputSession:(id)arg1;
 @property(readonly, nonatomic) UIView<WBUFormAutoFillWebView> *webView;
-- (void)_autoFillLoginFormSynchronouslyAndClearMetadata:(id)arg1 inFrame:(id)arg2;
 - (void)willSubmitForm:(id)arg1 inFrame:(id)arg2 submissionHandler:(CDUnknownBlockType)arg3;
 - (void)setFormControls:(id)arg1 areAutoFilled:(_Bool)arg2 andClearField:(id)arg3 inFrame:(id)arg4;
 - (void)autoFillOneTimeCodeFieldsInFrame:(id)arg1 withValue:(id)arg2;
@@ -91,8 +95,6 @@
 - (void)annotateForm:(long long)arg1 inFrame:(id)arg2 withValues:(id)arg3;
 - (void)autoFillForm:(long long)arg1 inFrame:(id)arg2 withGeneratedPassword:(id)arg3;
 - (void)autoFillFormInFrame:(id)arg1 withValues:(id)arg2 setAutoFilled:(_Bool)arg3 focusFieldAfterFilling:(_Bool)arg4 fieldToFocus:(id)arg5 submitForm:(_Bool)arg6;
-- (void)autoFillFormInFrame:(id)arg1 withValues:(id)arg2 setAutoFilled:(_Bool)arg3 focusFieldAfterFilling:(_Bool)arg4 fieldToFocus:(id)arg5;
-- (void)autoFillFormInFrame:(id)arg1 withValues:(id)arg2 setAutoFilled:(_Bool)arg3 andFocusField:(id)arg4;
 - (void)fetchMetadataForTextField:(id)arg1 inFrame:(id)arg2 withCompletion:(CDUnknownBlockType)arg3;
 - (void)textFieldFocused:(id)arg1 inForm:(id)arg2 inFrame:(id)arg3 inputSession:(id)arg4;
 - (void)passwordFieldFocused:(id)arg1 inForm:(id)arg2 inFrame:(id)arg3 inputSession:(id)arg4;

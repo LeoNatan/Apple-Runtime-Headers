@@ -6,12 +6,22 @@
 
 #import <objc/NSObject.h>
 
-@interface SXColumnCalculator : NSObject
+#import <Silex/SXColumnCalculator-Protocol.h>
+
+@class NSString;
+
+@interface SXColumnCalculator : NSObject <SXColumnCalculator>
 {
 }
 
-+ (id)columnLayoutWithViewportSize:(struct CGSize)arg1 targetedViewportSize:(struct CGSize)arg2 additionalMargins:(double)arg3 documentLayout:(id)arg4;
-+ (id)columnLayoutWithViewportSize:(struct CGSize)arg1 constrainedToWidth:(double)arg2 documentLayout:(id)arg3;
+- (id)columnLayoutWithConstrainedViewportSize:(struct CGSize)arg1 viewportSize:(struct CGSize)arg2 additionalMargins:(double)arg3 documentLayout:(id)arg4;
+- (id)columnLayoutWithViewportSize:(struct CGSize)arg1 constrainedToWidth:(double)arg2 documentLayout:(id)arg3;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

@@ -9,7 +9,7 @@
 #import <XCTest/XCTActivity-Protocol.h>
 #import <XCTest/XCTWaiterDelegate-Protocol.h>
 
-@class NSDictionary, NSInvocation, NSString, XCTestCaseRun, XCUITestContext, _XCTestCaseImplementation;
+@class NSDictionary, NSInvocation, NSString, XCTestCaseRun, _XCTestCaseImplementation;
 
 @interface XCTestCase : XCTest <XCTWaiterDelegate, XCTActivity>
 {
@@ -44,12 +44,12 @@
 - (void).cxx_destruct;
 - (void)removeUIInterruptionMonitor:(id)arg1;
 - (id)addUIInterruptionMonitorWithDescription:(id)arg1 handler:(CDUnknownBlockType)arg2;
-@property(readonly) XCUITestContext *testContext;
 - (void)_dequeueAndReportBackgroundAttachments;
 - (void)addAttachment:(id)arg1;
 @property(readonly) NSDictionary *activityAggregateStatistics;
 @property(readonly) unsigned long long activityRecordStackDepth;
 - (void)runActivityNamed:(id)arg1 inScope:(CDUnknownBlockType)arg2;
+- (void)recordActivityWithFormat:(id)arg1;
 - (void)startActivityWithTitle:(id)arg1 block:(CDUnknownBlockType)arg2;
 - (void)startActivityWithTitle:(id)arg1 type:(id)arg2 block:(CDUnknownBlockType)arg3;
 - (void)measureMetrics:(id)arg1 automaticallyStartMeasuring:(_Bool)arg2 forBlock:(CDUnknownBlockType)arg3;
@@ -93,6 +93,7 @@
 - (Class)_requiredTestRunBaseClass;
 - (void)recordFailureWithDescription:(id)arg1 inFile:(id)arg2 atLine:(unsigned long long)arg3 expected:(_Bool)arg4;
 - (void)_interruptTest;
+@property(nonatomic) _Bool shouldSetShouldHaltWhenReceivesControl;
 @property(nonatomic) _Bool shouldHaltWhenReceivesControl;
 @property _Bool continueAfterFailure;
 @property(retain) XCTestCaseRun *testCaseRun;
@@ -114,6 +115,7 @@
 - (void)waiter:(id)arg1 fulfillmentDidViolateOrderingConstraintsForExpectation:(id)arg2 requiredExpectation:(id)arg3;
 - (void)waiter:(id)arg1 didTimeoutWithUnfulfilledExpectations:(id)arg2;
 - (id)expectationForPredicate:(id)arg1 evaluatedWithObject:(id)arg2 handler:(CDUnknownBlockType)arg3;
+- (id)expectationForNotification:(id)arg1 object:(id)arg2 notificationCenter:(id)arg3 handler:(CDUnknownBlockType)arg4;
 - (id)expectationForNotification:(id)arg1 object:(id)arg2 handler:(CDUnknownBlockType)arg3;
 - (id)keyValueObservingExpectationForObject:(id)arg1 keyPath:(id)arg2 handler:(CDUnknownBlockType)arg3;
 - (id)keyValueObservingExpectationForObject:(id)arg1 keyPath:(id)arg2 expectedValue:(id)arg3;

@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class CALayer, NSMutableArray, PDFAnnotation, PDFPage, PDFPageLayer, PDFPageLayerEffect, PDFRenderingProperties, UIImage, UITextView, UIView;
+@class CALayer, NSMutableArray, PDFAnnotation, PDFPage, PDFPageLayer, PDFPageLayerEffect, PDFRenderingProperties, UIImage, UIView;
 @protocol PDFPageLayerGeometryInterface;
 
 __attribute__((visibility("hidden")))
@@ -29,7 +29,6 @@ __attribute__((visibility("hidden")))
     _Bool isPerformingUndo;
     CALayer *bookmarkLayer;
     struct CGSize bookmarkSize;
-    UITextView *activeTextView;
 }
 
 - (void).cxx_destruct;

@@ -15,14 +15,10 @@
 __attribute__((visibility("hidden")))
 @interface TSPLazyReference : NSObject <TSPReferenceItem, NSCopying>
 {
+    struct os_unfair_lock_s _objectLock;
     TSPObject *_strongObject;
     TSPObject *_weakObject;
-    struct {
-        unsigned int ownershipMode:2;
-        unsigned int isExternal:1;
-        unsigned int allowUnknownObject:1;
-        unsigned int keepObjectInMemory:1;
-    } _flags;
+    // Error parsing type: AC, name: _flags
     long long _identifier;
     id <TSPLazyReferenceDelegate> _delegate;
     TSPComponent *_component;

@@ -9,14 +9,14 @@
 #import <CarPlay/CPBarButtonProviding-Protocol.h>
 #import <CarPlay/CPGridTemplateClientDelegate-Protocol.h>
 
-@class NSArray, NSMutableArray, NSString;
+@class CPBarButton, NSArray, NSString;
 @protocol CPGridTemplateProviding;
 
 @interface CPGridTemplate : CPTemplate <CPGridTemplateClientDelegate, CPBarButtonProviding>
 {
-    NSMutableArray *_buttons;
     NSArray *_gridButtons;
     NSString *_title;
+    NSArray *_buttons;
 }
 
 + (_Bool)supportsSecureCoding;
@@ -30,6 +30,7 @@
 - (id)initWithTitle:(id)arg1 gridButtons:(id)arg2;
 
 // Remaining properties
+@property(retain, nonatomic) CPBarButton *backButton;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;

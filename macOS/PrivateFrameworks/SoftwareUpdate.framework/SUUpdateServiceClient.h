@@ -62,7 +62,6 @@
 - (void)stashAndCommitFDEKeyReplyingWithResult:(CDUnknownBlockType)arg1;
 - (void)consumeUUIDForToken:(id)arg1 replyWithResult:(CDUnknownBlockType)arg2;
 - (void)adoptManualProductArchiveByReadingFromFileHandle:(id)arg1 archiveName:(id)arg2 displayName:(id)arg3 displayVersion:(id)arg4 allowDevSigning:(BOOL)arg5 replyWithResult:(CDUnknownBlockType)arg6;
-- (void)stringRepresentationOfLongDescriptionForProductKey:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)stashURLCredential:(id)arg1;
 - (void)configureProgressPhasesEnablingFLO:(id)arg1 finishBlock:(CDUnknownBlockType)arg2;
 - (void)configureProgressPhasesWithFinishBlock:(CDUnknownBlockType)arg1;

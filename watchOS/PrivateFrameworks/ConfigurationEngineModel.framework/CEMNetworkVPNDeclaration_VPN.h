@@ -22,11 +22,15 @@
     NSNumber *_payloadDisconnectOnIdle;
     NSNumber *_payloadDisconnectOnIdleTimer;
     NSString *_payloadRemoteAddress;
+    NSString *_payloadPassword;
+    NSString *_payloadProviderBundleIdentifier;
 }
 
 + (id)buildRequiredOnly;
-+ (id)buildWithAuthName:(id)arg1 withAuthPassword:(id)arg2 withAuthenticationMethod:(id)arg3 withPayloadCertificateUUID:(id)arg4 withOnDemandEnabled:(id)arg5 withOnDemandMatchDomainsAlways:(id)arg6 withOnDemandMatchDomainsNever:(id)arg7 withOnDemandMatchDomainsOnRetry:(id)arg8 withOnDemandRules:(id)arg9 withDisconnectOnIdle:(id)arg10 withDisconnectOnIdleTimer:(id)arg11 withRemoteAddress:(id)arg12;
++ (id)buildWithAuthName:(id)arg1 withAuthPassword:(id)arg2 withAuthenticationMethod:(id)arg3 withPayloadCertificateUUID:(id)arg4 withOnDemandEnabled:(id)arg5 withOnDemandMatchDomainsAlways:(id)arg6 withOnDemandMatchDomainsNever:(id)arg7 withOnDemandMatchDomainsOnRetry:(id)arg8 withOnDemandRules:(id)arg9 withDisconnectOnIdle:(id)arg10 withDisconnectOnIdleTimer:(id)arg11 withRemoteAddress:(id)arg12 withPassword:(id)arg13 withProviderBundleIdentifier:(id)arg14;
 + (id)allowedPayloadKeys;
+@property(copy, nonatomic) NSString *payloadProviderBundleIdentifier; // @synthesize payloadProviderBundleIdentifier=_payloadProviderBundleIdentifier;
+@property(copy, nonatomic) NSString *payloadPassword; // @synthesize payloadPassword=_payloadPassword;
 @property(copy, nonatomic) NSString *payloadRemoteAddress; // @synthesize payloadRemoteAddress=_payloadRemoteAddress;
 @property(copy, nonatomic) NSNumber *payloadDisconnectOnIdleTimer; // @synthesize payloadDisconnectOnIdleTimer=_payloadDisconnectOnIdleTimer;
 @property(copy, nonatomic) NSNumber *payloadDisconnectOnIdle; // @synthesize payloadDisconnectOnIdle=_payloadDisconnectOnIdle;

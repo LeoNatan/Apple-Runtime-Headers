@@ -32,7 +32,10 @@
 - (void)_updateLabelMaxWidth;
 - (_Bool)_shouldLayoutWithImageView;
 - (void)_updateContentForMaxSizeChange;
+- (void)_updateHighlightViewCornerRadius;
 - (void)setShouldUseBackgroundPlatter:(_Bool)arg1;
+- (unsigned long long)imagePlacement;
+- (void)setUseBlockyHighlightCorners:(_Bool)arg1;
 - (void)setPlacement:(unsigned long long)arg1;
 - (void)setForegroundColor:(id)arg1;
 - (void)setCanUseCurvedText:(_Bool)arg1;

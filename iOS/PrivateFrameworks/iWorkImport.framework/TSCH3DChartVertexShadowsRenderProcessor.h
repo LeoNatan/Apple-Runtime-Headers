@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     NSArray *mShadowsEffects;
 }
 
-- (void)submit:(const struct PrimitiveInfo *)arg1;
-- (long long)texture:(id)arg1 attributes:(const struct TextureAttributes *)arg2;
+- (void)submit:(id)arg1;
+- (long long)texture:(id)arg1 resource:(id)arg2 attributes:(const struct TextureAttributes *)arg3;
 - (long long)attribute:(id)arg1 resource:(id)arg2 specs:(const struct AttributeSpecs *)arg3;
 - (void)dealloc;
 - (id)init;

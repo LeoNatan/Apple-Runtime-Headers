@@ -18,12 +18,12 @@ __attribute__((visibility("hidden")))
 + (void)createStylePresetInStylesheet:(id)arg1;
 - (struct CGSize)targetSizeForImageData:(id)arg1 associatedHint:(id)arg2;
 - (id)initWithContext:(id)arg1 name:(id)arg2 overridePropertyMap:(id)arg3 isVariation:(_Bool)arg4;
-- (void)saveToArchive:(struct SlideStyleArchive *)arg1 archiver:(id)arg2;
+-     // Error parsing type: v32@0:8^{SlideStyleArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{StyleArchive}^{SlideStylePropertiesArchive}I}16@24, name: saveToArchive:archiver:
 - (void)saveToArchiver:(id)arg1;
-- (void)loadFromArchive:(const struct SlideStyleArchive *)arg1 unarchiver:(id)arg2;
+-     // Error parsing type: v32@0:8r^{SlideStyleArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{StyleArchive}^{SlideStylePropertiesArchive}I}16@24, name: loadFromArchive:unarchiver:
 - (void)loadFromUnarchiver:(id)arg1;
-- (void)saveSlideStylePropertyMap:(id)arg1 toArchive:(struct SlideStylePropertiesArchive *)arg2 archiver:(id)arg3;
-- (void)loadSlideStylePropertiesIntoPropertyMap:(id)arg1 fromArchive:(const struct SlideStylePropertiesArchive *)arg2 unarchiver:(id)arg3;
+-     // Error parsing type: v40@0:8@16^{SlideStylePropertiesArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{FillArchive}^{TransitionAttributesArchive}BBBBB}24@32, name: saveSlideStylePropertyMap:toArchive:archiver:
+-     // Error parsing type: v40@0:8@16r^{SlideStylePropertiesArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{FillArchive}^{TransitionAttributesArchive}BBBBB}24@32, name: loadSlideStylePropertiesIntoPropertyMap:fromArchive:unarchiver:
 
 @end
 

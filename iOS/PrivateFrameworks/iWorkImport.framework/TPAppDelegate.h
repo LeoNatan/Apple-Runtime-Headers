@@ -27,6 +27,8 @@ __attribute__((visibility("hidden")))
 - (_Bool)imageGalleryCaptionsUsePlaceholderText;
 - (_Bool)supportsLinkedTextBoxes;
 - (_Bool)supportsAutosizingTextboxes;
+- (id)stringForSyncActivityPopoverTitle;
+- (id)stringForNoItemsSyncingListItem;
 - (id)stringForEquationChoiceUseEQKitButtonTitle;
 - (id)stringForEquationChoiceBody;
 - (id)stringForEquationChoiceTitle;
@@ -40,11 +42,12 @@ __attribute__((visibility("hidden")))
 - (id)stringForCloseDocumentConfirmationAlertMessage;
 - (id)stringForApplicationUpdateError;
 - (id)stringForDocumentViewOnly;
+- (id)stringForCollaborationOfflineTitle;
 - (id)stringForCollaborationConnecting;
 - (id)stringForCollaborationOnline;
 - (id)stringForGenericServerUnreachable;
 - (id)stringForICloudUnreachable;
-- (id)stringForCollaborationOffline;
+- (id)stringForCollaborationOfflinePlacard;
 - (id)stringForRemoveLastPrivateParticipantAlertConfirmationMessage;
 - (id)stringForRemoveSelfAlertConfirmationMessage;
 - (id)stringForRemoveSelfAlertConfirmationTitle;
@@ -63,6 +66,7 @@ __attribute__((visibility("hidden")))
 - (id)stringForCloseDocument;
 - (id)stringForOwnerPasswordOnConflictAlertMessage;
 - (id)stringForOwnerPasswordOnConflictAlertTitle;
+- (id)stringForChangePasswordWhileConnectingAlertMessage;
 - (id)stringForCollaborator1_6ConflictWithKeepDetails;
 - (id)stringForCollaborator1_6ConflictDetails;
 - (id)stringForCollaboratorConflictWithKeepDetails;

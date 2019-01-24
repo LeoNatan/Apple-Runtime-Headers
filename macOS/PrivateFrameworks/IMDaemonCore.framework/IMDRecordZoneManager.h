@@ -18,6 +18,8 @@
     CKRecordZone *_attachmentRecordZone;
     CKRecordZoneID *_messageRecordZoneID;
     CKRecordZone *_messageRecordZone;
+    CKRecordZoneID *_analyticRecordZoneID;
+    CKRecordZone *_analyticRecordZone;
     CKRecordZoneID *_deDupeSaltZoneID;
     CKRecordZone *_deDupeSaltRecordZone;
     CKRecordZoneID *_metricZoneID;
@@ -31,6 +33,8 @@
 @property(readonly, nonatomic) CKRecordZoneID *metricZoneID; // @synthesize metricZoneID=_metricZoneID;
 @property(readonly, nonatomic) CKRecordZone *deDupeSaltRecordZone; // @synthesize deDupeSaltRecordZone=_deDupeSaltRecordZone;
 @property(readonly, nonatomic) CKRecordZoneID *deDupeSaltZoneID; // @synthesize deDupeSaltZoneID=_deDupeSaltZoneID;
+@property(readonly, nonatomic) CKRecordZone *analyticRecordZone; // @synthesize analyticRecordZone=_analyticRecordZone;
+@property(readonly, nonatomic) CKRecordZoneID *analyticRecordZoneID; // @synthesize analyticRecordZoneID=_analyticRecordZoneID;
 @property(readonly, nonatomic) CKRecordZone *messageRecordZone; // @synthesize messageRecordZone=_messageRecordZone;
 @property(readonly, nonatomic) CKRecordZoneID *messageRecordZoneID; // @synthesize messageRecordZoneID=_messageRecordZoneID;
 @property(readonly, nonatomic) CKRecordZone *attachmentRecordZone; // @synthesize attachmentRecordZone=_attachmentRecordZone;
@@ -44,6 +48,8 @@
 - (void)createSubscriptionIfNeededOnDeDupeZoneForSubscription:(id)arg1 recordType:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
 - (void)deleteDeDupeSaltZone;
 - (void)createDeDupeSaltZoneIfNeededWithCompletionBlock:(CDUnknownBlockType)arg1;
+- (void)deleteAnalyticZone;
+- (void)createAnalyticZoneIfNeededWithCompletionBlock:(CDUnknownBlockType)arg1;
 - (void)deleteMessageZone;
 - (void)createMessageZoneIfNeededWithCompletionBlock:(CDUnknownBlockType)arg1;
 - (void)deleteAttachmentZone;

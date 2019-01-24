@@ -48,7 +48,7 @@
 - (void)achievementStore:(id)arg1 didAddAchievements:(id)arg2;
 - (void)achievementStore:(id)arg1 didRemoveAchievements:(id)arg2;
 - (void)achievementStoreDidFinishInitialFetch:(id)arg1;
-- (void)_queue_runTemplateSources:(id)arg1 requiringRunnnableForDate:(_Bool)arg2;
+- (_Bool)_queue_runTemplateSources:(id)arg1 requiringRunnnableForDate:(_Bool)arg2;
 - (void)_runAllTemplateSources;
 - (id)_runnableSourcesInSources:(id)arg1 forDate:(id)arg2 calendar:(id)arg3;
 - (void)database:(id)arg1 protectedDataDidBecomeAvailable:(_Bool)arg2;

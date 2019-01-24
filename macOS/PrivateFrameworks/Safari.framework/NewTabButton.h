@@ -35,7 +35,9 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) __weak id <ButtonInTabSyncGroupDelegate> buttonInTabSyncGroupDelegate; // @synthesize buttonInTabSyncGroupDelegate=_buttonInTabSyncGroupDelegate;
 - (void).cxx_destruct;
 - (void)setHighlightStateToPressed:(BOOL)arg1 hovered:(BOOL)arg2;
+- (unsigned long long)_draggedTextOperationForDraggingInfo:(id)arg1;
 - (unsigned long long)_draggedURLOperationForDraggingInfo:(id)arg1;
+- (unsigned long long)_draggedOperationForDraggingInfo:(id)arg1;
 - (void)concludeDragOperation:(id)arg1;
 - (BOOL)performDragOperation:(id)arg1;
 - (unsigned long long)draggingEntered:(id)arg1;

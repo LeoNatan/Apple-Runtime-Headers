@@ -49,7 +49,6 @@
     NSDate *_lastFetchedDate;
     NSArray *_topics;
     NSArray *_topicIDs;
-    NSArray *_endOfArticleTopicIDs;
     NSURL *_videoURL;
     double _videoDuration;
     NSArray *_iAdCategories;
@@ -108,7 +107,6 @@
 - (_Bool)isSponsored;
 - (double)videoDuration;
 - (id)videoURL;
-- (id)endOfArticleTopicIDs;
 - (void)setTopicIDs:(id)arg1;
 - (id)topicIDs;
 - (id)topics;

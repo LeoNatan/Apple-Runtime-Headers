@@ -28,7 +28,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) NSArray *childInfos; // @synthesize childInfos=_childInfos;
 @property(retain, nonatomic) KNSlideStyle *slideStyle; // @synthesize slideStyle=_style;
 @property(readonly, copy) NSString *description;
-- (void)saveToArchive:(struct PrototypeForUndoMasterChangeArchive *)arg1 archiver:(id)arg2;
+-     // Error parsing type: v32@0:8^{PrototypeForUndoMasterChangeArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSP::UUID>=^{Arena}ii^{Rep}}{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}{RepeatedPtrField<std::__1::basic_string<char> >=^{Arena}ii^{Rep}}^{Reference}^{UUID}}16@24, name: saveToArchive:archiver:
 - (void)saveToArchiver:(id)arg1;
 - (void)loadFromUnarchiver:(id)arg1;
 - (double)CGFloatValueForProperty:(int)arg1;

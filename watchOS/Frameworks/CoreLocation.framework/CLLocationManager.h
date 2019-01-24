@@ -73,7 +73,7 @@
 - (void)requestAlwaysAuthorization;
 - (void)requestWhenInUseAuthorizationWithPrompt;
 - (void)requestWhenInUseAuthorization;
-- (void)onClientEventMicroLocations:(id)arg1;
+- (void)onClientEventMicroLocation:(id)arg1;
 - (void)onClientEventSignificantLocationVisit:(id)arg1;
 - (void)onClientEventVehicleHeading:(id)arg1;
 - (void)onClientEventVehicleSpeed:(id)arg1;

@@ -9,7 +9,7 @@
 #import <iAd/ADAdRecipient-Protocol.h>
 #import <iAd/ADDimmerViewDelegate-Protocol.h>
 
-@class ADAdSpace, ADDimmerView, ADLayoutOptions, ADPrivacyButton, NSDate, NSString, NSTimer, NSURL, UILabel, UIViewController;
+@class ADAdSpace, ADDimmerView, ADLayoutOptions, ADPrivacyMarker, NSDate, NSString, NSTimer, NSURL, UILabel, UIViewController;
 @protocol ADBannerViewDelegate, ADBannerViewInternalDelegate;
 
 @interface ADBannerView : UIView <ADAdRecipient, ADDimmerViewDelegate>
@@ -42,7 +42,7 @@
     UIView *_highlightHittableView;
     UILabel *_idLbl;
     NSTimer *_highlightUpdateTimer;
-    ADPrivacyButton *_privacyButton;
+    ADPrivacyMarker *_privacyMarker;
     NSString *_authenticationUserName;
     NSURL *_serverURL;
     ADAdSpace *_adSpace;
@@ -88,7 +88,7 @@
 @property(readonly, nonatomic) _Bool createdForIBInternal; // @synthesize createdForIBInternal=_createdForIBInternal;
 @property(copy, nonatomic) NSURL *serverURL; // @synthesize serverURL=_serverURL;
 @property(copy, nonatomic) NSString *authenticationUserName; // @synthesize authenticationUserName=_authenticationUserName;
-@property(retain, nonatomic) ADPrivacyButton *privacyButton; // @synthesize privacyButton=_privacyButton;
+@property(retain, nonatomic) ADPrivacyMarker *privacyMarker; // @synthesize privacyMarker=_privacyMarker;
 @property(retain, nonatomic) NSTimer *highlightUpdateTimer; // @synthesize highlightUpdateTimer=_highlightUpdateTimer;
 @property(retain, nonatomic) UILabel *idLbl; // @synthesize idLbl=_idLbl;
 @property(retain, nonatomic) UIView *highlightHittableView; // @synthesize highlightHittableView=_highlightHittableView;

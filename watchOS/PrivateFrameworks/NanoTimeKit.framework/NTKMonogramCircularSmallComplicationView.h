@@ -17,6 +17,7 @@
 }
 
 - (void).cxx_destruct;
+- (void)_updateLabelsForFontChange;
 - (void)setMonogramText:(id)arg1;
 - (void)layoutSubviews;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;

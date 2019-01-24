@@ -19,8 +19,10 @@
 + (BOOL)supportsSecureCoding;
 @property(retain, nonatomic) NSExtensionContext *_extensionContext; // @synthesize _extensionContext=__extensionContext;
 - (void).cxx_destruct;
+- (void)close;
 - (void)getToolbarItemWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)openTabWithURL:(id)arg1 makeActiveIfPossible:(BOOL)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)getAllTabsWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)getActiveTabWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (id)_remoteObjectProxy;
 - (unsigned long long)hash;

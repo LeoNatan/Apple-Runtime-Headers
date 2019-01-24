@@ -6,17 +6,21 @@
 
 #import <iWorkImport/TSDGroupRep.h>
 
+@class NSCache;
+
 __attribute__((visibility("hidden")))
 @interface TSDFreehandDrawingRep : TSDGroupRep
 {
+    NSCache *_cachedClusteredShapeRepsForAnimationExport;
 }
 
+- (void).cxx_destruct;
 - (id)textureForDescription:(id)arg1;
 - (id)accessibilityLabel;
 - (_Bool)tsaxAllowedToEditChildren;
 - (id)tsaxChildren;
 - (_Bool)isAccessibilityElement;
-- (id)p_childrenForDrawingRecursively;
+- (id)p_shapeChildrenForDrawingRecursively;
 - (id)p_freehandDrawingLayout;
 - (double)opacity;
 - (struct CGRect)clipRect;

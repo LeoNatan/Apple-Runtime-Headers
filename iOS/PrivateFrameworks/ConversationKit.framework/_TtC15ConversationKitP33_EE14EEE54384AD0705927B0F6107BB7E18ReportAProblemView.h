@@ -14,7 +14,7 @@
     // Error parsing type: , name: didTapButton
 }
 
-- (CDUnknownBlockType).cxx_destruct;
+- (void).cxx_destruct;
 - (void)didTapButton:(id)arg1;
 - (void)didMoveToSuperview;
 - (id)initWithCoder:(id)arg1;

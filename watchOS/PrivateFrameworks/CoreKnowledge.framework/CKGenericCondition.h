@@ -17,13 +17,12 @@
 
 + (void)setSupportsSecureCoding:(_Bool)arg1;
 + (_Bool)supportsSecureCoding;
-- (CDUnknownBlockType).cxx_destruct;
+- (void).cxx_destruct;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(void *)arg1;
 - (_Bool)evaluateOn:(id)arg1;
-@property(nonatomic, copy) NSString *sql;
 - (id)or:(id)arg1;
 - (id)and:(id)arg1;
 - (id)initWithMatchType:(int)arg1 value:(id)arg2 negated:(_Bool)arg3;

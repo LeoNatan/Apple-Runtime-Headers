@@ -191,6 +191,7 @@
 - (id)_verifySignatureWithCMSDecoder:(struct _CMSDecoder *)arg1 againstSender:(id)arg2 signingError:(id *)arg3;
 - (struct _CMSDecoder *)_newCMSDecoderWithMimePart:(id)arg1 error:(id *)arg2;
 - (void)verifySignature;
+- (id)_attachmentForSecureSubpart;
 - (id)decodeApplicationPkcs7;
 - (void)extractCMSContent;
 - (id)decodeMultipartSigned;

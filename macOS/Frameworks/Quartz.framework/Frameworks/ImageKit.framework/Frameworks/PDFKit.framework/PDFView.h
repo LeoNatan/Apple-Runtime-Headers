@@ -227,6 +227,9 @@
 - (void)PDFViewWillClickOnLink:(id)arg1 withURL:(id)arg2;
 - (double)PDFViewWillChangeScaleFactor:(id)arg1 toScale:(double)arg2;
 @property(nonatomic) BOOL enableDataDetectors;
+- (void)setBackgroundImage:(id)arg1 forPage:(id)arg2;
+- (_Bool)backgroundImagesEnabled;
+- (void)enableBackgroundImages:(_Bool)arg1;
 - (id)visiblePageViews;
 @property(readonly, nonatomic) NSArray *visiblePages;
 - (BOOL)performDragOperation:(id)arg1;

@@ -18,6 +18,7 @@ __attribute__((visibility("hidden")))
 
 @property(readonly, nonatomic, getter=_searchQuery) NSString *searchQuery; // @synthesize searchQuery=_searchQuery;
 - (void).cxx_destruct;
+- (id)sortPriorityMapping;
 - (_Bool)shouldDisplayNoResults;
 - (_Bool)hasShouldDisplayNoResults;
 - (double)retainSearchTime;

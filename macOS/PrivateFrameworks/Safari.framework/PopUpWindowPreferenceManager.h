@@ -9,12 +9,13 @@
 #import <Safari/WBSPerSitePreferenceManagerDefaultsDelegate-Protocol.h>
 #import <Safari/WBSPerSitePreferenceManagerStorageDelegate-Protocol.h>
 
-@class NSString, WBSPerSitePreference, WBSPerSitePreferencesSQLiteStore;
+@class NSString, WBSMutableOrderedDictionary, WBSPerSitePreference, WBSPerSitePreferencesSQLiteStore;
 
 __attribute__((visibility("hidden")))
 @interface PopUpWindowPreferenceManager : WBSPerSitePreferenceManager <WBSPerSitePreferenceManagerStorageDelegate, WBSPerSitePreferenceManagerDefaultsDelegate>
 {
     WBSPerSitePreferencesSQLiteStore *_perSitePreferencesStore;
+    WBSMutableOrderedDictionary *_domainToPopUpWindowPreferenceValueMap;
     WBSPerSitePreference *_popUpWindowPreference;
 }
 
@@ -23,9 +24,14 @@ __attribute__((visibility("hidden")))
 - (id)defaultPreferenceValueForPreferenceIfNotCustomized:(id)arg1;
 - (long long)preferencesStoreKeyForPreference:(id)arg1;
 @property(readonly, nonatomic) WBSPerSitePreferencesSQLiteStore *perSitePreferencesStore;
+- (BOOL)popUpWindowPreferenceValueExistsForDomain:(id)arg1;
+- (long long)popUpWindowPreferenceValueForDomain:(id)arg1;
+- (void)addPopUpWindowPreferenceValue:(long long)arg1 forDomain:(id)arg2;
 - (id)localizedStringForValue:(id)arg1 inPreference:(id)arg2;
 - (id)valuesForPreference:(id)arg1;
 - (id)preferences;
+- (void)removePreferenceValuesForDomains:(id)arg1 fromPreference:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)setValue:(id)arg1 ofPreference:(id)arg2 forDomain:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)getPopUpWindowPreferenceValueForDomain:(id)arg1 withTimeout:(double)arg2 fallbackValue:(long long)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (id)initWithPerSitePreferencesStore:(id)arg1;
 - (id)init;

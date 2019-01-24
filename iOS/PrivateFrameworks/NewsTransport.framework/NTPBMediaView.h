@@ -8,7 +8,7 @@
 
 #import <NewsTransport/NSCopying-Protocol.h>
 
-@class NSData, NSMutableArray, NSString, NTPBWidgetEngagement;
+@class NSData, NSMutableArray, NSString, NTPBIssueData, NTPBIssueExposureData, NTPBIssueViewData, NTPBWidgetEngagement;
 
 @interface NTPBMediaView : PBCodable <NSCopying>
 {
@@ -35,6 +35,9 @@
     NSString *_iadNativeCampaign;
     NSString *_iadNativeCampaignAd;
     NSString *_iadNativeLine;
+    NTPBIssueData *_issueData;
+    NTPBIssueExposureData *_issueExposureData;
+    NTPBIssueViewData *_issueViewData;
     NSString *_mediaId;
     int _mediaType;
     NSString *_metadata;
@@ -76,6 +79,9 @@
 + (Class)fractionalCohortMembershipType;
 + (Class)galleryImageIdsType;
 + (Class)namedEntitiesType;
+@property(retain, nonatomic) NTPBIssueViewData *issueViewData; // @synthesize issueViewData=_issueViewData;
+@property(retain, nonatomic) NTPBIssueExposureData *issueExposureData; // @synthesize issueExposureData=_issueExposureData;
+@property(retain, nonatomic) NTPBIssueData *issueData; // @synthesize issueData=_issueData;
 @property(retain, nonatomic) NSString *iadNativeCampaignAd; // @synthesize iadNativeCampaignAd=_iadNativeCampaignAd;
 @property(retain, nonatomic) NSString *iadNativeAd; // @synthesize iadNativeAd=_iadNativeAd;
 @property(retain, nonatomic) NSString *iadNativeLine; // @synthesize iadNativeLine=_iadNativeLine;
@@ -121,6 +127,9 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(readonly, nonatomic) _Bool hasIssueViewData;
+@property(readonly, nonatomic) _Bool hasIssueExposureData;
+@property(readonly, nonatomic) _Bool hasIssueData;
 @property(readonly, nonatomic) _Bool hasIadNativeCampaignAd;
 @property(readonly, nonatomic) _Bool hasIadNativeAd;
 @property(readonly, nonatomic) _Bool hasIadNativeLine;

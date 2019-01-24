@@ -38,7 +38,7 @@
 - (id)contentViewForBehavior:(id)arg1;
 - (void)imageView:(id)arg1 didLoadImage:(id)arg2;
 - (void)imageView:(id)arg1 didLoadAnimatedImage:(id)arg2;
-- (_Bool)transitionViewUsesThumbnail;
+- (_Bool)usesThumbnailWithImageIdentifier:(id)arg1;
 - (struct CGRect)transitionContentFrame;
 - (id)transitionContentView;
 - (void)visibilityStateDidChangeFromState:(long long)arg1;
@@ -48,7 +48,7 @@
 - (struct CGRect)imageFrame;
 - (void)layoutImageView;
 - (void)loadComponent:(id)arg1;
-- (id)initWithDocumentController:(id)arg1 viewport:(id)arg2 presentationDelegate:(id)arg3 analyticsReporting:(id)arg4 componentStyleRendererFactory:(id)arg5 appStateMonitor:(id)arg6 imageViewFactory:(id)arg7 mediaSharingPolicyProvider:(id)arg8;
+- (id)initWithDOMObjectProvider:(id)arg1 viewport:(id)arg2 presentationDelegate:(id)arg3 analyticsReporting:(id)arg4 componentStyleRendererFactory:(id)arg5 appStateMonitor:(id)arg6 imageViewFactory:(id)arg7 mediaSharingPolicyProvider:(id)arg8;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

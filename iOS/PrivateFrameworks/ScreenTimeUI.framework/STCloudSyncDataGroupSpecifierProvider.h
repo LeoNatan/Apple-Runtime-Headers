@@ -21,7 +21,8 @@
 - (void).cxx_destruct;
 - (void)deviceToDeviceEncryptionHelper:(id)arg1 shouldContinueUpgradingUserToHSA2WithCompletion:(CDUnknownBlockType)arg2;
 - (id)cloudSyncData:(id)arg1;
-- (void)performAccountUpgradeIfApplicable:(CDUnknownBlockType)arg1;
+- (void)presentHSA2RepairUI:(CDUnknownBlockType)arg1;
+- (void)performHSA2RepairIfNeeded:(CDUnknownBlockType)arg1;
 - (void)setScreenTimeSyncing:(_Bool)arg1;
 - (void)cancelChangeSync:(id)arg1;
 - (void)acceptedPINToChangeSync:(id)arg1;

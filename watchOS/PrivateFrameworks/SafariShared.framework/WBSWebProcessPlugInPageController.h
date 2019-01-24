@@ -19,7 +19,6 @@
 @property(readonly, nonatomic) WBSWebProcessPlugIn *webProcessPlugIn; // @synthesize webProcessPlugIn=_webProcessPlugIn;
 @property(readonly, nonatomic) WKWebProcessPlugInBrowserContextController *browserContextController; // @synthesize browserContextController=_browserContextController;
 - (void).cxx_destruct;
-- (id)requestIfDoNotTrackEnabled:(id)arg1;
 @property(readonly, nonatomic) WKWebProcessPlugInFrame *mainFrame;
 - (void)willDestroyBrowserContextController:(id)arg1;
 - (id)initWithPlugIn:(id)arg1 contextController:(id)arg2;

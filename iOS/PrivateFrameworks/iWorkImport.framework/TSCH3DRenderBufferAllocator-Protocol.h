@@ -6,9 +6,11 @@
 
 #import <iWorkImport/NSObject-Protocol.h>
 
+@class TSCH3DRenderbufferAllocatorInfo;
+
 @protocol TSCH3DRenderBufferAllocator <NSObject>
 @property(readonly, nonatomic) _Bool isTexturable;
-- (id)depthbufferWithAllocatorInfo:(const struct RenderbufferAllocatorInfo *)arg1;
-- (id)colorbufferWithAllocatorInfo:(const struct RenderbufferAllocatorInfo *)arg1;
+- (id)depthbufferWithAllocatorInfo:(TSCH3DRenderbufferAllocatorInfo *)arg1;
+- (id)colorbufferWithAllocatorInfo:(TSCH3DRenderbufferAllocatorInfo *)arg1;
 @end
 

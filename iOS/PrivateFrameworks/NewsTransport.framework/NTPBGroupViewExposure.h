@@ -29,9 +29,11 @@
     int _groupType;
     NSData *_groupViewExposureId;
     NSMutableArray *_groupedArticleIds;
+    NSMutableArray *_groupedIssueIds;
     int _screenfulsFromTop;
     int _topStoryMandatoryArticleCount;
     int _topStoryOptionalArticleCount;
+    _Bool _isIssueContext;
     _Bool _isSubscribedToGroupFeed;
     _Bool _reachedEndOfGroup;
     struct {
@@ -48,12 +50,16 @@
         unsigned int screenfulsFromTop:1;
         unsigned int topStoryMandatoryArticleCount:1;
         unsigned int topStoryOptionalArticleCount:1;
+        unsigned int isIssueContext:1;
         unsigned int isSubscribedToGroupFeed:1;
         unsigned int reachedEndOfGroup:1;
     } _has;
 }
 
++ (Class)groupedIssueIdsType;
 + (Class)groupedArticleIdsType;
+@property(nonatomic) _Bool isIssueContext; // @synthesize isIssueContext=_isIssueContext;
+@property(retain, nonatomic) NSMutableArray *groupedIssueIds; // @synthesize groupedIssueIds=_groupedIssueIds;
 @property(nonatomic) int screenfulsFromTop; // @synthesize screenfulsFromTop=_screenfulsFromTop;
 @property(retain, nonatomic) NSData *articleViewingSessionId; // @synthesize articleViewingSessionId=_articleViewingSessionId;
 @property(retain, nonatomic) NSString *groupExposedInSourceChannelId; // @synthesize groupExposedInSourceChannelId=_groupExposedInSourceChannelId;
@@ -77,6 +83,11 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(nonatomic) _Bool hasIsIssueContext;
+- (id)groupedIssueIdsAtIndex:(unsigned long long)arg1;
+- (unsigned long long)groupedIssueIdsCount;
+- (void)addGroupedIssueIds:(id)arg1;
+- (void)clearGroupedIssueIds;
 @property(nonatomic) _Bool hasScreenfulsFromTop;
 @property(readonly, nonatomic) _Bool hasArticleViewingSessionId;
 @property(readonly, nonatomic) _Bool hasGroupExposedInSourceChannelId;

@@ -28,9 +28,11 @@ struct AVCaptureConnection {
 
 struct AVCaptureDeviceManager {
     CDUnknownFunctionPointerType *_field1;
-    struct HashMap<unsigned int, WTF::Function<void ()>, WTF::IntHash<unsigned int>, WTF::HashTraits<unsigned int>, WTF::HashTraits<WTF::Function<void ()>>> _field2;
+    struct WeakPtrFactory<WebCore::CaptureDeviceManager> _field2;
     struct RetainPtr<WebCoreAVCaptureDeviceManagerObserver> _field3;
     struct Vector<WebCore::CaptureDevice, 0, WTF::CrashOnOverflow, 16> _field4;
+    struct RetainPtr<NSMutableArray> _field5;
+    _Bool _field6;
 };
 
 struct AVCaptureOutput {
@@ -75,6 +77,14 @@ struct AuxiliaryBarrier<JSC::Butterfly *> {
     struct Butterfly *_field1;
 };
 
+struct Box<WTF::BinarySemaphore> {
+    struct RefPtr<WTF::Box<WTF::BinarySemaphore>::Data, WTF::DumbPtrTraits<WTF::Box<WTF::BinarySemaphore>::Data>> _field1;
+};
+
+struct Box<WTF::Semaphore> {
+    struct RefPtr<WTF::Box<WTF::Semaphore>::Data, WTF::DumbPtrTraits<WTF::Box<WTF::Semaphore>::Data>> m_data;
+};
+
 struct Butterfly;
 
 struct CATransform3D {
@@ -96,25 +106,26 @@ struct CATransform3D {
     double _field16;
 };
 
-struct CDMInstanceClient;
+struct CDMInstanceFairPlayStreamingAVFObjC;
 
-struct CDMInstanceFairPlayStreamingAVFObjC {
+struct CDMInstanceSessionFairPlayStreamingAVFObjC {
     CDUnknownFunctionPointerType *_field1;
     unsigned int _field2;
-    struct WeakPtrFactory<WebCore::CDMInstanceFairPlayStreamingAVFObjC> _field3;
-    struct RefPtr<WebCore::SharedBuffer, WTF::DumbPtrTraits<WebCore::SharedBuffer>> _field4;
-    _Bool _field5;
-    struct RetainPtr<NSURL> _field6;
-    struct RetainPtr<AVContentKeySession> _field7;
-    struct RetainPtr<AVContentKeyRequest> _field8;
-    struct RetainPtr<WebCoreFPSContentKeySessionDelegate> _field9;
-    struct Vector<WTF::RetainPtr<NSData>, 0, WTF::CrashOnOverflow, 16> _field10;
-    struct CDMInstanceClient *_field11;
-    struct String _field12;
-    struct Function<void (WTF::Ref<WebCore::SharedBuffer, WTF::DumbPtrTraits<WebCore::SharedBuffer>>&&, const WTF::String &, bool, WebCore::CDMInstance::SuccessValue)> _field13;
-    struct Function<void (bool, std::optional<WTF::Vector<std::__1::pair<WTF::Ref<WebCore::SharedBuffer, WTF::DumbPtrTraits<WebCore::SharedBuffer>>, WebCore::CDMKeyStatus>, 0, WTF::CrashOnOverflow, 16>>&&, std::optional<double>&&, std::optional<std::__1::pair<WebCore::CDMMessageType, WTF::Ref<WebCore::SharedBuffer, WTF::DumbPtrTraits<WebCore::SharedBuffer>>>>&&, WebCore::CDMInstance::SuccessValue)> _field14;
-    Function_701386c1 _field15;
-    struct Function<void (WTF::Vector<std::__1::pair<WTF::Ref<WebCore::SharedBuffer, WTF::DumbPtrTraits<WebCore::SharedBuffer>>, WebCore::CDMKeyStatus>, 0, WTF::CrashOnOverflow, 16>&&, std::optional<WTF::Ref<WebCore::SharedBuffer, WTF::DumbPtrTraits<WebCore::SharedBuffer>>>&&, WebCore::CDMInstance::SuccessValue)> _field16;
+    struct WeakPtrFactory<WebCore::CDMInstanceSessionFairPlayStreamingAVFObjC> _field3;
+    struct Ref<WebCore::CDMInstanceFairPlayStreamingAVFObjC, WTF::DumbPtrTraits<WebCore::CDMInstanceFairPlayStreamingAVFObjC>> _field4;
+    struct RetainPtr<AVContentKeySession> _field5;
+    struct RetainPtr<AVContentKeyRequest> _field6;
+    struct RetainPtr<WebCoreFPSContentKeySessionDelegate> _field7;
+    struct Vector<WTF::RetainPtr<NSData>, 0, WTF::CrashOnOverflow, 16> _field8;
+    struct WeakPtr<WebCore::CDMInstanceSessionClient> _field9;
+    struct String _field10;
+    _Bool _field11;
+    struct Vector<WTF::RetainPtr<AVContentKeyRequest>, 0, WTF::CrashOnOverflow, 16> _field12;
+    struct Vector<WTF::RetainPtr<AVContentKeyRequest>, 0, WTF::CrashOnOverflow, 16> _field13;
+    struct CompletionHandler<void (WTF::Ref<WebCore::SharedBuffer, WTF::DumbPtrTraits<WebCore::SharedBuffer>>&&, const WTF::String &, bool, WebCore::CDMInstanceSession::SuccessValue)> _field14;
+    struct CompletionHandler<void (bool, WTF::Optional<WTF::Vector<std::__1::pair<WTF::Ref<WebCore::SharedBuffer, WTF::DumbPtrTraits<WebCore::SharedBuffer>>, WebCore::CDMKeyStatus>, 0, WTF::CrashOnOverflow, 16>>&&, WTF::Optional<double>&&, WTF::Optional<std::__1::pair<WebCore::CDMMessageType, WTF::Ref<WebCore::SharedBuffer, WTF::DumbPtrTraits<WebCore::SharedBuffer>>>>&&, WebCore::CDMInstanceSession::SuccessValue)> _field15;
+    struct CompletionHandler<void ()> _field16;
+    struct CompletionHandler<void (WTF::Vector<std::__1::pair<WTF::Ref<WebCore::SharedBuffer, WTF::DumbPtrTraits<WebCore::SharedBuffer>>, WebCore::CDMKeyStatus>, 0, WTF::CrashOnOverflow, 16>&&, WTF::Optional<WTF::Ref<WebCore::SharedBuffer, WTF::DumbPtrTraits<WebCore::SharedBuffer>>>&&, WebCore::CDMInstanceSession::SuccessValue)> _field17;
 };
 
 struct CDMPrivateMediaSourceAVFObjC;
@@ -122,39 +133,41 @@ struct CDMPrivateMediaSourceAVFObjC;
 struct CDMSessionAVContentKeySession {
     CDUnknownFunctionPointerType *_field1;
     CDUnknownFunctionPointerType *_field2;
-    struct CDMPrivateMediaSourceAVFObjC *_field3;
-    struct LegacyCDMSessionClient *_field4;
-    struct Vector<WTF::RefPtr<WebCore::SourceBufferPrivateAVFObjC, WTF::DumbPtrTraits<WebCore::SourceBufferPrivateAVFObjC>>, 0, WTF::CrashOnOverflow, 16> _field5;
-    struct RefPtr<JSC::GenericTypedArrayView<JSC::Uint8Adaptor>, WTF::DumbPtrTraits<JSC::GenericTypedArrayView<JSC::Uint8Adaptor>>> _field6;
-    struct String _field7;
-    _Bool _field8;
-    struct RetainPtr<AVContentKeySession> _field9;
-    struct RetainPtr<WebCDMSessionAVContentKeySessionDelegate> _field10;
-    struct RetainPtr<AVContentKeyRequest> _field11;
-    struct RefPtr<JSC::GenericTypedArrayView<JSC::Uint8Adaptor>, WTF::DumbPtrTraits<JSC::GenericTypedArrayView<JSC::Uint8Adaptor>>> _field12;
-    struct RetainPtr<NSData> _field13;
-    struct Vector<int, 0, WTF::CrashOnOverflow, 16> _field14;
-    int _field15;
+    struct WeakPtrFactory<WebCore::CDMSessionMediaSourceAVFObjC> _field3;
+    struct CDMPrivateMediaSourceAVFObjC *_field4;
+    struct LegacyCDMSessionClient *_field5;
+    struct Vector<WTF::RefPtr<WebCore::SourceBufferPrivateAVFObjC, WTF::DumbPtrTraits<WebCore::SourceBufferPrivateAVFObjC>>, 0, WTF::CrashOnOverflow, 16> _field6;
+    struct RefPtr<JSC::GenericTypedArrayView<JSC::Uint8Adaptor>, WTF::DumbPtrTraits<JSC::GenericTypedArrayView<JSC::Uint8Adaptor>>> _field7;
+    struct String _field8;
+    _Bool _field9;
+    struct RetainPtr<AVContentKeySession> _field10;
+    struct RetainPtr<WebCDMSessionAVContentKeySessionDelegate> _field11;
+    struct RetainPtr<AVContentKeyRequest> _field12;
+    struct RefPtr<JSC::GenericTypedArrayView<JSC::Uint8Adaptor>, WTF::DumbPtrTraits<JSC::GenericTypedArrayView<JSC::Uint8Adaptor>>> _field13;
+    struct RetainPtr<NSData> _field14;
+    struct Vector<int, 0, WTF::CrashOnOverflow, 16> _field15;
     int _field16;
+    int _field17;
 };
 
 struct CDMSessionAVStreamSession {
     CDUnknownFunctionPointerType *_field1;
     CDUnknownFunctionPointerType *_field2;
-    struct CDMPrivateMediaSourceAVFObjC *_field3;
-    struct LegacyCDMSessionClient *_field4;
-    struct Vector<WTF::RefPtr<WebCore::SourceBufferPrivateAVFObjC, WTF::DumbPtrTraits<WebCore::SourceBufferPrivateAVFObjC>>, 0, WTF::CrashOnOverflow, 16> _field5;
-    struct RefPtr<JSC::GenericTypedArrayView<JSC::Uint8Adaptor>, WTF::DumbPtrTraits<JSC::GenericTypedArrayView<JSC::Uint8Adaptor>>> _field6;
-    struct String _field7;
-    _Bool _field8;
-    struct WeakPtrFactory<WebCore::CDMSessionAVStreamSession> _field9;
-    struct RetainPtr<AVStreamSession> _field10;
-    struct RefPtr<JSC::GenericTypedArrayView<JSC::Uint8Adaptor>, WTF::DumbPtrTraits<JSC::GenericTypedArrayView<JSC::Uint8Adaptor>>> _field11;
+    struct WeakPtrFactory<WebCore::CDMSessionMediaSourceAVFObjC> _field3;
+    struct CDMPrivateMediaSourceAVFObjC *_field4;
+    struct LegacyCDMSessionClient *_field5;
+    struct Vector<WTF::RefPtr<WebCore::SourceBufferPrivateAVFObjC, WTF::DumbPtrTraits<WebCore::SourceBufferPrivateAVFObjC>>, 0, WTF::CrashOnOverflow, 16> _field6;
+    struct RefPtr<JSC::GenericTypedArrayView<JSC::Uint8Adaptor>, WTF::DumbPtrTraits<JSC::GenericTypedArrayView<JSC::Uint8Adaptor>>> _field7;
+    struct String _field8;
+    _Bool _field9;
+    struct WeakPtrFactory<WebCore::CDMSessionAVStreamSession> _field10;
+    struct RetainPtr<AVStreamSession> _field11;
     struct RefPtr<JSC::GenericTypedArrayView<JSC::Uint8Adaptor>, WTF::DumbPtrTraits<JSC::GenericTypedArrayView<JSC::Uint8Adaptor>>> _field12;
-    struct RetainPtr<NSData> _field13;
-    struct RetainPtr<WebCDMSessionAVStreamSessionObserver> _field14;
-    struct Vector<int, 0, WTF::CrashOnOverflow, 16> _field15;
-    int _field16;
+    struct RefPtr<JSC::GenericTypedArrayView<JSC::Uint8Adaptor>, WTF::DumbPtrTraits<JSC::GenericTypedArrayView<JSC::Uint8Adaptor>>> _field13;
+    struct RetainPtr<NSData> _field14;
+    struct RetainPtr<WebCDMSessionAVStreamSessionObserver> _field15;
+    struct Vector<int, 0, WTF::CrashOnOverflow, 16> _field16;
+    int _field17;
 };
 
 struct CDMSessionMediaSourceAVFObjC;
@@ -207,6 +220,22 @@ struct Color {
     } _field1;
 };
 
+struct CompletionHandler<void ()> {
+    Function_701386c1 _field1;
+};
+
+struct CompletionHandler<void (WTF::Ref<WebCore::SharedBuffer, WTF::DumbPtrTraits<WebCore::SharedBuffer>>&&, const WTF::String &, bool, WebCore::CDMInstanceSession::SuccessValue)> {
+    struct Function<void (WTF::Ref<WebCore::SharedBuffer, WTF::DumbPtrTraits<WebCore::SharedBuffer>>&&, const WTF::String &, bool, WebCore::CDMInstanceSession::SuccessValue)> _field1;
+};
+
+struct CompletionHandler<void (WTF::Vector<std::__1::pair<WTF::Ref<WebCore::SharedBuffer, WTF::DumbPtrTraits<WebCore::SharedBuffer>>, WebCore::CDMKeyStatus>, 0, WTF::CrashOnOverflow, 16>&&, WTF::Optional<WTF::Ref<WebCore::SharedBuffer, WTF::DumbPtrTraits<WebCore::SharedBuffer>>>&&, WebCore::CDMInstanceSession::SuccessValue)> {
+    struct Function<void (WTF::Vector<std::__1::pair<WTF::Ref<WebCore::SharedBuffer, WTF::DumbPtrTraits<WebCore::SharedBuffer>>, WebCore::CDMKeyStatus>, 0, WTF::CrashOnOverflow, 16>&&, WTF::Optional<WTF::Ref<WebCore::SharedBuffer, WTF::DumbPtrTraits<WebCore::SharedBuffer>>>&&, WebCore::CDMInstanceSession::SuccessValue)> _field1;
+};
+
+struct CompletionHandler<void (bool, WTF::Optional<WTF::Vector<std::__1::pair<WTF::Ref<WebCore::SharedBuffer, WTF::DumbPtrTraits<WebCore::SharedBuffer>>, WebCore::CDMKeyStatus>, 0, WTF::CrashOnOverflow, 16>>&&, WTF::Optional<double>&&, WTF::Optional<std::__1::pair<WebCore::CDMMessageType, WTF::Ref<WebCore::SharedBuffer, WTF::DumbPtrTraits<WebCore::SharedBuffer>>>>&&, WebCore::CDMInstanceSession::SuccessValue)> {
+    struct Function<void (bool, WTF::Optional<WTF::Vector<std::__1::pair<WTF::Ref<WebCore::SharedBuffer, WTF::DumbPtrTraits<WebCore::SharedBuffer>>, WebCore::CDMKeyStatus>, 0, WTF::CrashOnOverflow, 16>>&&, WTF::Optional<double>&&, WTF::Optional<std::__1::pair<WebCore::CDMMessageType, WTF::Ref<WebCore::SharedBuffer, WTF::DumbPtrTraits<WebCore::SharedBuffer>>>>&&, WebCore::CDMInstanceSession::SuccessValue)> _field1;
+};
+
 struct ContainerNode;
 
 struct CubicBezierTimingFunction;
@@ -217,6 +246,8 @@ struct CurrentFramePainter {
     struct unique_ptr<WebCore::PixelBufferConformerCV, std::__1::default_delete<WebCore::PixelBufferConformerCV>> _field3;
 };
 
+struct Data;
+
 struct DataSegment;
 
 struct DeferrableOneShotTimer {
@@ -224,14 +255,14 @@ struct DeferrableOneShotTimer {
     struct MonotonicTime _field2;
     struct MonotonicTime _field3;
     struct Seconds _field4;
-    int _field5;
-    unsigned int _field6;
-    _Bool _field7;
-    struct Vector<WebCore::TimerBase *, 0, WTF::CrashOnOverflow, 16> *_field8;
-    struct Ref<WTF::Thread, WTF::DumbPtrTraits<WTF::Thread>> _field9;
-    Function_701386c1 _field10;
-    struct Seconds _field11;
-    _Bool _field12;
+    unsigned int :31;
+    unsigned int :1;
+    unsigned int _field5;
+    struct Vector<WebCore::TimerBase *, 0, WTF::CrashOnOverflow, 16> *_field6;
+    struct Ref<WTF::Thread, WTF::DumbPtrTraits<WTF::Thread>> _field7;
+    Function_701386c1 _field8;
+    struct Seconds _field9;
+    _Bool _field10;
 };
 
 struct Deque<WTF::Ref<WebCore::MediaSample, WTF::DumbPtrTraits<WebCore::MediaSample>>, 0> {
@@ -269,22 +300,27 @@ struct Function<void ()> {
     struct unique_ptr<WTF::Function<void ()>::CallableWrapperBase, std::__1::default_delete<WTF::Function<void ()>::CallableWrapperBase>> _field1;
 };
 
-struct Function<void (WTF::Ref<WebCore::SharedBuffer, WTF::DumbPtrTraits<WebCore::SharedBuffer>>&&, const WTF::String &, bool, WebCore::CDMInstance::SuccessValue)> {
-    struct unique_ptr<WTF::Function<void (WTF::Ref<WebCore::SharedBuffer, WTF::DumbPtrTraits<WebCore::SharedBuffer>>&&, const WTF::String &, bool, WebCore::CDMInstance::SuccessValue)>::CallableWrapperBase, std::__1::default_delete<WTF::Function<void (WTF::Ref<WebCore::SharedBuffer, WTF::DumbPtrTraits<WebCore::SharedBuffer>>&&, const WTF::String &, bool, WebCore::CDMInstance::SuccessValue)>::CallableWrapperBase>> _field1;
+struct Function<void (WTF::Ref<WebCore::SharedBuffer, WTF::DumbPtrTraits<WebCore::SharedBuffer>>&&, const WTF::String &, bool, WebCore::CDMInstanceSession::SuccessValue)> {
+    struct unique_ptr<WTF::Function<void (WTF::Ref<WebCore::SharedBuffer, WTF::DumbPtrTraits<WebCore::SharedBuffer>>&&, const WTF::String &, bool, WebCore::CDMInstanceSession::SuccessValue)>::CallableWrapperBase, std::__1::default_delete<WTF::Function<void (WTF::Ref<WebCore::SharedBuffer, WTF::DumbPtrTraits<WebCore::SharedBuffer>>&&, const WTF::String &, bool, WebCore::CDMInstanceSession::SuccessValue)>::CallableWrapperBase>> _field1;
 };
 
-struct Function<void (WTF::Vector<std::__1::pair<WTF::Ref<WebCore::SharedBuffer, WTF::DumbPtrTraits<WebCore::SharedBuffer>>, WebCore::CDMKeyStatus>, 0, WTF::CrashOnOverflow, 16>&&, std::optional<WTF::Ref<WebCore::SharedBuffer, WTF::DumbPtrTraits<WebCore::SharedBuffer>>>&&, WebCore::CDMInstance::SuccessValue)> {
-    struct unique_ptr<WTF::Function<void (WTF::Vector<std::__1::pair<WTF::Ref<WebCore::SharedBuffer, WTF::DumbPtrTraits<WebCore::SharedBuffer>>, WebCore::CDMKeyStatus>, 0, WTF::CrashOnOverflow, 16>&&, std::optional<WTF::Ref<WebCore::SharedBuffer, WTF::DumbPtrTraits<WebCore::SharedBuffer>>>&&, WebCore::CDMInstance::SuccessValue)>::CallableWrapperBase, std::__1::default_delete<WTF::Function<void (WTF::Vector<std::__1::pair<WTF::Ref<WebCore::SharedBuffer, WTF::DumbPtrTraits<WebCore::SharedBuffer>>, WebCore::CDMKeyStatus>, 0, WTF::CrashOnOverflow, 16>&&, std::optional<WTF::Ref<WebCore::SharedBuffer, WTF::DumbPtrTraits<WebCore::SharedBuffer>>>&&, WebCore::CDMInstance::SuccessValue)>::CallableWrapperBase>> _field1;
+struct Function<void (WTF::Vector<std::__1::pair<WTF::Ref<WebCore::SharedBuffer, WTF::DumbPtrTraits<WebCore::SharedBuffer>>, WebCore::CDMKeyStatus>, 0, WTF::CrashOnOverflow, 16>&&, WTF::Optional<WTF::Ref<WebCore::SharedBuffer, WTF::DumbPtrTraits<WebCore::SharedBuffer>>>&&, WebCore::CDMInstanceSession::SuccessValue)> {
+    struct unique_ptr<WTF::Function<void (WTF::Vector<std::__1::pair<WTF::Ref<WebCore::SharedBuffer, WTF::DumbPtrTraits<WebCore::SharedBuffer>>, WebCore::CDMKeyStatus>, 0, WTF::CrashOnOverflow, 16>&&, WTF::Optional<WTF::Ref<WebCore::SharedBuffer, WTF::DumbPtrTraits<WebCore::SharedBuffer>>>&&, WebCore::CDMInstanceSession::SuccessValue)>::CallableWrapperBase, std::__1::default_delete<WTF::Function<void (WTF::Vector<std::__1::pair<WTF::Ref<WebCore::SharedBuffer, WTF::DumbPtrTraits<WebCore::SharedBuffer>>, WebCore::CDMKeyStatus>, 0, WTF::CrashOnOverflow, 16>&&, WTF::Optional<WTF::Ref<WebCore::SharedBuffer, WTF::DumbPtrTraits<WebCore::SharedBuffer>>>&&, WebCore::CDMInstanceSession::SuccessValue)>::CallableWrapperBase>> _field1;
 };
 
-struct Function<void (bool, std::optional<WTF::Vector<std::__1::pair<WTF::Ref<WebCore::SharedBuffer, WTF::DumbPtrTraits<WebCore::SharedBuffer>>, WebCore::CDMKeyStatus>, 0, WTF::CrashOnOverflow, 16>>&&, std::optional<double>&&, std::optional<std::__1::pair<WebCore::CDMMessageType, WTF::Ref<WebCore::SharedBuffer, WTF::DumbPtrTraits<WebCore::SharedBuffer>>>>&&, WebCore::CDMInstance::SuccessValue)> {
-    struct unique_ptr<WTF::Function<void (bool, std::optional<WTF::Vector<std::__1::pair<WTF::Ref<WebCore::SharedBuffer, WTF::DumbPtrTraits<WebCore::SharedBuffer>>, WebCore::CDMKeyStatus>, 0, WTF::CrashOnOverflow, 16>>&&, std::optional<double>&&, std::optional<std::__1::pair<WebCore::CDMMessageType, WTF::Ref<WebCore::SharedBuffer, WTF::DumbPtrTraits<WebCore::SharedBuffer>>>>&&, WebCore::CDMInstance::SuccessValue)>::CallableWrapperBase, std::__1::default_delete<WTF::Function<void (bool, std::optional<WTF::Vector<std::__1::pair<WTF::Ref<WebCore::SharedBuffer, WTF::DumbPtrTraits<WebCore::SharedBuffer>>, WebCore::CDMKeyStatus>, 0, WTF::CrashOnOverflow, 16>>&&, std::optional<double>&&, std::optional<std::__1::pair<WebCore::CDMMessageType, WTF::Ref<WebCore::SharedBuffer, WTF::DumbPtrTraits<WebCore::SharedBuffer>>>>&&, WebCore::CDMInstance::SuccessValue)>::CallableWrapperBase>> _field1;
+struct Function<void (bool, WTF::Optional<WTF::Vector<std::__1::pair<WTF::Ref<WebCore::SharedBuffer, WTF::DumbPtrTraits<WebCore::SharedBuffer>>, WebCore::CDMKeyStatus>, 0, WTF::CrashOnOverflow, 16>>&&, WTF::Optional<double>&&, WTF::Optional<std::__1::pair<WebCore::CDMMessageType, WTF::Ref<WebCore::SharedBuffer, WTF::DumbPtrTraits<WebCore::SharedBuffer>>>>&&, WebCore::CDMInstanceSession::SuccessValue)> {
+    struct unique_ptr<WTF::Function<void (bool, WTF::Optional<WTF::Vector<std::__1::pair<WTF::Ref<WebCore::SharedBuffer, WTF::DumbPtrTraits<WebCore::SharedBuffer>>, WebCore::CDMKeyStatus>, 0, WTF::CrashOnOverflow, 16>>&&, WTF::Optional<double>&&, WTF::Optional<std::__1::pair<WebCore::CDMMessageType, WTF::Ref<WebCore::SharedBuffer, WTF::DumbPtrTraits<WebCore::SharedBuffer>>>>&&, WebCore::CDMInstanceSession::SuccessValue)>::CallableWrapperBase, std::__1::default_delete<WTF::Function<void (bool, WTF::Optional<WTF::Vector<std::__1::pair<WTF::Ref<WebCore::SharedBuffer, WTF::DumbPtrTraits<WebCore::SharedBuffer>>, WebCore::CDMKeyStatus>, 0, WTF::CrashOnOverflow, 16>>&&, WTF::Optional<double>&&, WTF::Optional<std::__1::pair<WebCore::CDMMessageType, WTF::Ref<WebCore::SharedBuffer, WTF::DumbPtrTraits<WebCore::SharedBuffer>>>>&&, WebCore::CDMInstanceSession::SuccessValue)>::CallableWrapperBase>> _field1;
 };
 
-struct GPUDevice {
+struct GPULegacyDevice {
+    struct RetainPtr<WebMetalLayer> _field1;
+    struct RetainPtr<NSObject<MTLDevice>> _field2;
+};
+
+struct GPUSwapChain {
     unsigned int _field1;
     struct RetainPtr<WebGPULayer> _field2;
-    struct RetainPtr<id> _field3;
+    struct RetainPtr<CAMetalDrawable> _field3;
 };
 
 struct GenericTypedArrayView<JSC::Uint8Adaptor>;
@@ -324,6 +360,7 @@ struct GraphicsContext3D {
     _Bool _field32;
     unsigned int _field33;
     _Bool _field34;
+    _Bool _field35;
 };
 
 struct GraphicsContext3DAttributes {
@@ -429,10 +466,6 @@ struct HashMap<int, WTF::RetainPtr<AVSampleBufferAudioRenderer>, WTF::IntHash<un
     struct HashTable<int, WTF::KeyValuePair<int, WTF::RetainPtr<AVSampleBufferAudioRenderer>>, WTF::KeyValuePairKeyExtractor<WTF::KeyValuePair<int, WTF::RetainPtr<AVSampleBufferAudioRenderer>>>, WTF::IntHash<unsigned int>, WTF::HashMap<int, WTF::RetainPtr<AVSampleBufferAudioRenderer>, WTF::IntHash<unsigned int>, WTF::HashTraits<int>, WTF::HashTraits<WTF::RetainPtr<AVSampleBufferAudioRenderer>>>::KeyValuePairTraits, WTF::HashTraits<int>> _field1;
 };
 
-struct HashMap<unsigned int, WTF::Function<void ()>, WTF::IntHash<unsigned int>, WTF::HashTraits<unsigned int>, WTF::HashTraits<WTF::Function<void ()>>> {
-    struct HashTable<unsigned int, WTF::KeyValuePair<unsigned int, WTF::Function<void ()>>, WTF::KeyValuePairKeyExtractor<WTF::KeyValuePair<unsigned int, WTF::Function<void ()>>>, WTF::IntHash<unsigned int>, WTF::HashMap<unsigned int, WTF::Function<void ()>, WTF::IntHash<unsigned int>, WTF::HashTraits<unsigned int>, WTF::HashTraits<WTF::Function<void ()>>>::KeyValuePairTraits, WTF::HashTraits<unsigned int>> _field1;
-};
-
 struct HashMap<unsigned int, WebCore::GraphicsContext3D::ActiveShaderSymbolCounts, WTF::IntHash<unsigned int>, WTF::HashTraits<unsigned int>, WTF::HashTraits<WebCore::GraphicsContext3D::ActiveShaderSymbolCounts>> {
     struct HashTable<unsigned int, WTF::KeyValuePair<unsigned int, WebCore::GraphicsContext3D::ActiveShaderSymbolCounts>, WTF::KeyValuePairKeyExtractor<WTF::KeyValuePair<unsigned int, WebCore::GraphicsContext3D::ActiveShaderSymbolCounts>>, WTF::IntHash<unsigned int>, WTF::HashMap<unsigned int, WebCore::GraphicsContext3D::ActiveShaderSymbolCounts, WTF::IntHash<unsigned int>, WTF::HashTraits<unsigned int>, WTF::HashTraits<WebCore::GraphicsContext3D::ActiveShaderSymbolCounts>>::KeyValuePairTraits, WTF::HashTraits<unsigned int>> _field1;
 };
@@ -465,8 +498,8 @@ struct HashSet<WTF::RefPtr<WebCore::SecurityOrigin, WTF::DumbPtrTraits<WebCore::
     struct HashTable<WTF::RefPtr<WebCore::SecurityOrigin, WTF::DumbPtrTraits<WebCore::SecurityOrigin>>, WTF::RefPtr<WebCore::SecurityOrigin, WTF::DumbPtrTraits<WebCore::SecurityOrigin>>, WTF::IdentityExtractor, WTF::PtrHash<WTF::RefPtr<WebCore::SecurityOrigin, WTF::DumbPtrTraits<WebCore::SecurityOrigin>>>, WTF::HashTraits<WTF::RefPtr<WebCore::SecurityOrigin, WTF::DumbPtrTraits<WebCore::SecurityOrigin>>>, WTF::HashTraits<WTF::RefPtr<WebCore::SecurityOrigin, WTF::DumbPtrTraits<WebCore::SecurityOrigin>>>> m_impl;
 };
 
-struct HashSet<WTF::RetainPtr<WebCoreNSURLSessionDataTask>, WTF::PtrHash<WTF::RetainPtr<WebCoreNSURLSessionDataTask>>, WTF::HashTraits<WTF::RetainPtr<WebCoreNSURLSessionDataTask>>> {
-    struct HashTable<WTF::RetainPtr<WebCoreNSURLSessionDataTask>, WTF::RetainPtr<WebCoreNSURLSessionDataTask>, WTF::IdentityExtractor, WTF::PtrHash<WTF::RetainPtr<WebCoreNSURLSessionDataTask>>, WTF::HashTraits<WTF::RetainPtr<WebCoreNSURLSessionDataTask>>, WTF::HashTraits<WTF::RetainPtr<WebCoreNSURLSessionDataTask>>> m_impl;
+struct HashSet<WTF::RetainPtr<const void *>, WTF::PtrHash<WTF::RetainPtr<const void *>>, WTF::HashTraits<WTF::RetainPtr<const void *>>> {
+    struct HashTable<WTF::RetainPtr<const void *>, WTF::RetainPtr<const void *>, WTF::IdentityExtractor, WTF::PtrHash<WTF::RetainPtr<const void *>>, WTF::HashTraits<WTF::RetainPtr<const void *>>, WTF::HashTraits<WTF::RetainPtr<const void *>>> m_impl;
 };
 
 struct HashTable<JSC::Bindings::RootObject::InvalidationCallback *, JSC::Bindings::RootObject::InvalidationCallback *, WTF::IdentityExtractor, WTF::PtrHash<JSC::Bindings::RootObject::InvalidationCallback *>, WTF::HashTraits<JSC::Bindings::RootObject::InvalidationCallback *>, WTF::HashTraits<JSC::Bindings::RootObject::InvalidationCallback *>> {
@@ -517,8 +550,8 @@ struct HashTable<WTF::RefPtr<WebCore::SecurityOrigin, WTF::DumbPtrTraits<WebCore
     unsigned int m_deletedCount;
 };
 
-struct HashTable<WTF::RetainPtr<WebCoreNSURLSessionDataTask>, WTF::RetainPtr<WebCoreNSURLSessionDataTask>, WTF::IdentityExtractor, WTF::PtrHash<WTF::RetainPtr<WebCoreNSURLSessionDataTask>>, WTF::HashTraits<WTF::RetainPtr<WebCoreNSURLSessionDataTask>>, WTF::HashTraits<WTF::RetainPtr<WebCoreNSURLSessionDataTask>>> {
-    struct RetainPtr<WebCoreNSURLSessionDataTask> *m_table;
+struct HashTable<WTF::RetainPtr<const void *>, WTF::RetainPtr<const void *>, WTF::IdentityExtractor, WTF::PtrHash<WTF::RetainPtr<const void *>>, WTF::HashTraits<WTF::RetainPtr<const void *>>, WTF::HashTraits<WTF::RetainPtr<const void *>>> {
+    struct RetainPtr<const void *> *m_table;
     unsigned int m_tableSize;
     unsigned int m_tableSizeMask;
     unsigned int m_keyCount;
@@ -551,14 +584,6 @@ struct HashTable<WTF::String, WTF::KeyValuePair<WTF::String, WTF::String>, WTF::
 
 struct HashTable<int, WTF::KeyValuePair<int, WTF::RetainPtr<AVSampleBufferAudioRenderer>>, WTF::KeyValuePairKeyExtractor<WTF::KeyValuePair<int, WTF::RetainPtr<AVSampleBufferAudioRenderer>>>, WTF::IntHash<unsigned int>, WTF::HashMap<int, WTF::RetainPtr<AVSampleBufferAudioRenderer>, WTF::IntHash<unsigned int>, WTF::HashTraits<int>, WTF::HashTraits<WTF::RetainPtr<AVSampleBufferAudioRenderer>>>::KeyValuePairTraits, WTF::HashTraits<int>> {
     struct KeyValuePair<int, WTF::RetainPtr<AVSampleBufferAudioRenderer>> *_field1;
-    unsigned int _field2;
-    unsigned int _field3;
-    unsigned int _field4;
-    unsigned int _field5;
-};
-
-struct HashTable<unsigned int, WTF::KeyValuePair<unsigned int, WTF::Function<void ()>>, WTF::KeyValuePairKeyExtractor<WTF::KeyValuePair<unsigned int, WTF::Function<void ()>>>, WTF::IntHash<unsigned int>, WTF::HashMap<unsigned int, WTF::Function<void ()>, WTF::IntHash<unsigned int>, WTF::HashTraits<unsigned int>, WTF::HashTraits<WTF::Function<void ()>>>::KeyValuePairTraits, WTF::HashTraits<unsigned int>> {
-    struct KeyValuePair<unsigned int, WTF::Function<void ()>> *_field1;
     unsigned int _field2;
     unsigned int _field3;
     unsigned int _field4;
@@ -652,8 +677,6 @@ struct KeyValuePair<WTF::String, WTF::RefPtr<WebCore::VideoTrackPrivateMediaStre
 struct KeyValuePair<WTF::String, WTF::String>;
 
 struct KeyValuePair<int, WTF::RetainPtr<AVSampleBufferAudioRenderer>>;
-
-struct KeyValuePair<unsigned int, WTF::Function<void ()>>;
 
 struct KeyValuePair<unsigned int, WebCore::GraphicsContext3D::ActiveShaderSymbolCounts>;
 
@@ -765,8 +788,24 @@ struct OSObjectPtr<NSObject<OS_dispatch_queue>*> {
     NSObject *m_ptr;
 };
 
-struct OSObjectPtr<NSObject<OS_dispatch_semaphore>*> {
-    NSObject *m_ptr;
+struct Optional<WTF::HashSet<WTF::RefPtr<WTF::SchedulePair, WTF::DumbPtrTraits<WTF::SchedulePair>>, WTF::SchedulePairHash, WTF::HashTraits<WTF::RefPtr<WTF::SchedulePair, WTF::DumbPtrTraits<WTF::SchedulePair>>>>> {
+    _Bool init_;
+    union storage_t<WTF::HashSet<WTF::RefPtr<WTF::SchedulePair, WTF::DumbPtrTraits<WTF::SchedulePair>>, WTF::SchedulePairHash, WTF::HashTraits<WTF::RefPtr<WTF::SchedulePair, WTF::DumbPtrTraits<WTF::SchedulePair>>>>> storage_;
+};
+
+struct Optional<WebCore::FloatRect> {
+    _Bool _field1;
+    union constexpr_storage_t<WebCore::FloatRect> _field2;
+};
+
+struct Optional<WebCore::FloatSize> {
+    _Bool _field1;
+    union constexpr_storage_t<WebCore::FloatSize> _field2;
+};
+
+struct Optional<unsigned int> {
+    _Bool _field1;
+    union constexpr_storage_t<unsigned int> _field2;
 };
 
 struct Page;
@@ -852,7 +891,7 @@ struct Range {
 
 struct RangeBoundaryPoint {
     struct RefPtr<WebCore::Node, WTF::DumbPtrTraits<WebCore::Node>> _field1;
-    struct optional<unsigned int> _field2;
+    struct Optional<unsigned int> _field2;
     struct RefPtr<WebCore::Node, WTF::DumbPtrTraits<WebCore::Node>> _field3;
 };
 
@@ -866,6 +905,10 @@ struct Ref<WTF::RunLoop, WTF::DumbPtrTraits<WTF::RunLoop>> {
 
 struct Ref<WTF::Thread, WTF::DumbPtrTraits<WTF::Thread>> {
     struct Thread *_field1;
+};
+
+struct Ref<WebCore::CDMInstanceFairPlayStreamingAVFObjC, WTF::DumbPtrTraits<WebCore::CDMInstanceFairPlayStreamingAVFObjC>> {
+    struct CDMInstanceFairPlayStreamingAVFObjC *_field1;
 };
 
 struct Ref<WebCore::Document, WTF::DumbPtrTraits<WebCore::Document>> {
@@ -882,6 +925,8 @@ struct Ref<WebCore::SecurityOrigin, WTF::DumbPtrTraits<WebCore::SecurityOrigin>>
     struct SecurityOrigin *_field1;
 };
 
+struct Ref<WebCore::SharedBuffer, WTF::DumbPtrTraits<WebCore::SharedBuffer>>;
+
 struct Ref<const WTF::Logger, WTF::DumbPtrTraits<const WTF::Logger>> {
     struct Logger *_field1;
 };
@@ -894,18 +939,42 @@ struct RefPtr<JSC::GenericTypedArrayView<JSC::Uint8Adaptor>, WTF::DumbPtrTraits<
     struct GenericTypedArrayView<JSC::Uint8Adaptor> *_field1;
 };
 
+struct RefPtr<WTF::Box<WTF::BinarySemaphore>::Data, WTF::DumbPtrTraits<WTF::Box<WTF::BinarySemaphore>::Data>> {
+    struct Data *_field1;
+};
+
+struct RefPtr<WTF::Box<WTF::Semaphore>::Data, WTF::DumbPtrTraits<WTF::Box<WTF::Semaphore>::Data>> {
+    struct Data *m_ptr;
+};
+
 struct RefPtr<WTF::SchedulePair, WTF::DumbPtrTraits<WTF::SchedulePair>>;
 
 struct RefPtr<WTF::StringImpl, WTF::DumbPtrTraits<WTF::StringImpl>> {
     struct StringImpl *_field1;
 };
 
-struct RefPtr<WTF::WeakReference<WebCore::CDMInstanceFairPlayStreamingAVFObjC>, WTF::DumbPtrTraits<WTF::WeakReference<WebCore::CDMInstanceFairPlayStreamingAVFObjC>>> {
-    struct WeakReference<WebCore::CDMInstanceFairPlayStreamingAVFObjC> *_field1;
+struct RefPtr<WTF::WeakReference<WebCore::CDMInstanceSessionClient>, WTF::DumbPtrTraits<WTF::WeakReference<WebCore::CDMInstanceSessionClient>>> {
+    struct WeakReference<WebCore::CDMInstanceSessionClient> *_field1;
+};
+
+struct RefPtr<WTF::WeakReference<WebCore::CDMInstanceSessionFairPlayStreamingAVFObjC>, WTF::DumbPtrTraits<WTF::WeakReference<WebCore::CDMInstanceSessionFairPlayStreamingAVFObjC>>> {
+    struct WeakReference<WebCore::CDMInstanceSessionFairPlayStreamingAVFObjC> *_field1;
 };
 
 struct RefPtr<WTF::WeakReference<WebCore::CDMSessionAVStreamSession>, WTF::DumbPtrTraits<WTF::WeakReference<WebCore::CDMSessionAVStreamSession>>> {
     struct WeakReference<WebCore::CDMSessionAVStreamSession> *_field1;
+};
+
+struct RefPtr<WTF::WeakReference<WebCore::CDMSessionMediaSourceAVFObjC>, WTF::DumbPtrTraits<WTF::WeakReference<WebCore::CDMSessionMediaSourceAVFObjC>>> {
+    struct WeakReference<WebCore::CDMSessionMediaSourceAVFObjC> *_field1;
+};
+
+struct RefPtr<WTF::WeakReference<WebCore::CaptureDeviceManager>, WTF::DumbPtrTraits<WTF::WeakReference<WebCore::CaptureDeviceManager>>> {
+    struct WeakReference<WebCore::CaptureDeviceManager> *_field1;
+};
+
+struct RefPtr<WTF::WeakReference<WebCore::MediaPlayerPrivateAVFoundationObjC>, WTF::DumbPtrTraits<WTF::WeakReference<WebCore::MediaPlayerPrivateAVFoundationObjC>>> {
+    struct WeakReference<WebCore::MediaPlayerPrivateAVFoundationObjC> *m_ptr;
 };
 
 struct RefPtr<WTF::WeakReference<WebCore::MediaPlayerPrivateMediaStreamAVFObjC>, WTF::DumbPtrTraits<WTF::WeakReference<WebCore::MediaPlayerPrivateMediaStreamAVFObjC>>> {
@@ -998,10 +1067,6 @@ struct RefPtr<WebCore::Range, WTF::DumbPtrTraits<WebCore::Range>> {
 
 struct RefPtr<WebCore::SecurityOrigin, WTF::DumbPtrTraits<WebCore::SecurityOrigin>>;
 
-struct RefPtr<WebCore::SharedBuffer, WTF::DumbPtrTraits<WebCore::SharedBuffer>> {
-    struct SharedBuffer *_field1;
-};
-
 struct RefPtr<WebCore::SourceBufferPrivateAVFObjC, WTF::DumbPtrTraits<WebCore::SourceBufferPrivateAVFObjC>>;
 
 struct RefPtr<WebCore::TextIndicator, WTF::DumbPtrTraits<WebCore::TextIndicator>> {
@@ -1086,6 +1151,10 @@ struct RetainPtr<CALayer> {
     void *_field1;
 };
 
+struct RetainPtr<CAMetalDrawable> {
+    void *_field1;
+};
+
 struct RetainPtr<CGImage *> {
     void *_field1;
 };
@@ -1114,6 +1183,14 @@ struct RetainPtr<NSError> {
     void *_field1;
 };
 
+struct RetainPtr<NSMutableArray> {
+    void *_field1;
+};
+
+struct RetainPtr<NSObject<MTLDevice>> {
+    void *_field1;
+};
+
 struct RetainPtr<NSOperationQueue> {
     void *m_ptr;
 };
@@ -1126,16 +1203,16 @@ struct RetainPtr<NSSpeechSynthesizer> {
     void *m_ptr;
 };
 
+struct RetainPtr<NSString> {
+    void *m_ptr;
+};
+
 struct RetainPtr<NSTextField> {
     void *m_ptr;
 };
 
 struct RetainPtr<NSTimer> {
     void *m_ptr;
-};
-
-struct RetainPtr<NSURL> {
-    void *_field1;
 };
 
 struct RetainPtr<NSURLRequest> {
@@ -1202,8 +1279,6 @@ struct RetainPtr<WebCoreFPSContentKeySessionDelegate> {
     void *_field1;
 };
 
-struct RetainPtr<WebCoreNSURLSessionDataTask>;
-
 struct RetainPtr<WebCoreTextTrackRepresentationCocoaHelper> {
     void *_field1;
 };
@@ -1213,6 +1288,10 @@ struct RetainPtr<WebGLLayer> {
 };
 
 struct RetainPtr<WebGPULayer> {
+    void *_field1;
+};
+
+struct RetainPtr<WebMetalLayer> {
     void *_field1;
 };
 
@@ -1247,6 +1326,8 @@ struct RetainPtr<WebVideoViewContainer> {
 struct RetainPtr<__CFRunLoopTimer *> {
     void *_field1;
 };
+
+struct RetainPtr<const void *>;
 
 struct RetainPtr<id<NSURLSessionDelegate>> {
     void *m_ptr;
@@ -1455,8 +1536,6 @@ struct ShBuiltInResources {
     int _field75;
 };
 
-struct SharedBuffer;
-
 struct SourceBufferPrivateAVFObjC {
     CDUnknownFunctionPointerType *_field1;
     unsigned int _field2;
@@ -1472,19 +1551,22 @@ struct SourceBufferPrivateAVFObjC {
     struct RetainPtr<WebAVStreamDataParserListener> _field12;
     struct RetainPtr<WebAVSampleBufferErrorListener> _field13;
     struct RetainPtr<NSError> _field14;
-    OSObjectPtr_4a7d2093 _field15;
+    struct Box<WTF::BinarySemaphore> _field15;
     struct OSObjectPtr<NSObject<OS_dispatch_group>*> _field16;
     struct RefPtr<WebCore::WebCoreDecompressionSession, WTF::DumbPtrTraits<WebCore::WebCoreDecompressionSession>> _field17;
     struct MediaSourcePrivateAVFObjC *_field18;
     struct SourceBufferPrivateClient *_field19;
     struct CDMSessionMediaSourceAVFObjC *_field20;
     struct RefPtr<WebCore::CDMInstanceFairPlayStreamingAVFObjC, WTF::DumbPtrTraits<WebCore::CDMInstanceFairPlayStreamingAVFObjC>> _field21;
-    struct optional<WebCore::FloatSize> _field22;
-    struct FloatSize _field23;
-    _Bool _field24;
+    struct Vector<WTF::Ref<WebCore::SharedBuffer, WTF::DumbPtrTraits<WebCore::SharedBuffer>>, 0, WTF::CrashOnOverflow, 16> _field22;
+    struct Optional<WebCore::FloatSize> _field23;
+    struct FloatSize _field24;
     _Bool _field25;
-    int _field26;
-    int _field27;
+    _Bool _field26;
+    _Bool _field27;
+    _Bool _field28;
+    int _field29;
+    int _field30;
 };
 
 struct SourceBufferPrivateAVFObjCErrorClient;
@@ -1540,7 +1622,7 @@ struct TileController {
     struct unique_ptr<WebCore::TileGrid, std::__1::default_delete<WebCore::TileGrid>> _field6;
     struct unique_ptr<WebCore::TileGrid, std::__1::default_delete<WebCore::TileGrid>> _field7;
     struct FloatRect _field8;
-    struct optional<WebCore::FloatRect> _field9;
+    struct Optional<WebCore::FloatRect> _field9;
     struct FloatRect _field10;
     struct IntRect _field11;
     struct Timer _field12;
@@ -1579,12 +1661,12 @@ struct Timer {
     struct MonotonicTime _field2;
     struct MonotonicTime _field3;
     struct Seconds _field4;
-    int _field5;
-    unsigned int _field6;
-    _Bool _field7;
-    struct Vector<WebCore::TimerBase *, 0, WTF::CrashOnOverflow, 16> *_field8;
-    struct Ref<WTF::Thread, WTF::DumbPtrTraits<WTF::Thread>> _field9;
-    Function_701386c1 _field10;
+    unsigned int :31;
+    unsigned int :1;
+    unsigned int _field5;
+    struct Vector<WebCore::TimerBase *, 0, WTF::CrashOnOverflow, 16> *_field6;
+    struct Ref<WTF::Thread, WTF::DumbPtrTraits<WTF::Thread>> _field7;
+    Function_701386c1 _field8;
 };
 
 struct Timer<WebCore::MediaPlaybackTargetPicker> {
@@ -1604,6 +1686,12 @@ struct Timer<WebCore::ScrollController> {
 struct TreeScope;
 
 struct ValidationMessage;
+
+struct Vector<WTF::Ref<WebCore::SharedBuffer, WTF::DumbPtrTraits<WebCore::SharedBuffer>>, 0, WTF::CrashOnOverflow, 16> {
+    struct Ref<WebCore::SharedBuffer, WTF::DumbPtrTraits<WebCore::SharedBuffer>> *_field1;
+    unsigned int _field2;
+    unsigned int _field3;
+};
 
 struct Vector<WTF::RefPtr<WebCore::AccessibilityObject, WTF::DumbPtrTraits<WebCore::AccessibilityObject>>, 0, WTF::CrashOnOverflow, 16> {
     struct RefPtr<WebCore::AccessibilityObject, WTF::DumbPtrTraits<WebCore::AccessibilityObject>> *_field1;
@@ -1639,6 +1727,12 @@ struct Vector<WTF::RetainPtr<AVAssetResourceLoadingRequest>, 0, WTF::CrashOnOver
     struct RetainPtr<AVAssetResourceLoadingRequest> *m_buffer;
     unsigned int m_capacity;
     unsigned int m_size;
+};
+
+struct Vector<WTF::RetainPtr<AVContentKeyRequest>, 0, WTF::CrashOnOverflow, 16> {
+    struct RetainPtr<AVContentKeyRequest> *_field1;
+    unsigned int _field2;
+    unsigned int _field3;
 };
 
 struct Vector<WTF::RetainPtr<AVSampleBufferAudioRenderer>, 0, WTF::CrashOnOverflow, 16> {
@@ -1745,6 +1839,18 @@ struct Weak<WebCore::JSDOMObject> {
 
 struct WeakImpl;
 
+struct WeakObjCPtr<NSResponder> {
+    id m_weakReference;
+};
+
+struct WeakPtr<WebCore::CDMInstanceSessionClient> {
+    struct RefPtr<WTF::WeakReference<WebCore::CDMInstanceSessionClient>, WTF::DumbPtrTraits<WTF::WeakReference<WebCore::CDMInstanceSessionClient>>> _field1;
+};
+
+struct WeakPtr<WebCore::MediaPlayerPrivateAVFoundationObjC> {
+    struct RefPtr<WTF::WeakReference<WebCore::MediaPlayerPrivateAVFoundationObjC>, WTF::DumbPtrTraits<WTF::WeakReference<WebCore::MediaPlayerPrivateAVFoundationObjC>>> m_ref;
+};
+
 struct WeakPtr<WebCore::ScrollView> {
     struct RefPtr<WTF::WeakReference<WebCore::ScrollView>, WTF::DumbPtrTraits<WTF::WeakReference<WebCore::ScrollView>>> _field1;
 };
@@ -1753,12 +1859,20 @@ struct WeakPtr<WebCore::SourceBufferPrivateAVFObjC> {
     struct RefPtr<WTF::WeakReference<WebCore::SourceBufferPrivateAVFObjC>, WTF::DumbPtrTraits<WTF::WeakReference<WebCore::SourceBufferPrivateAVFObjC>>> m_ref;
 };
 
-struct WeakPtrFactory<WebCore::CDMInstanceFairPlayStreamingAVFObjC> {
-    struct RefPtr<WTF::WeakReference<WebCore::CDMInstanceFairPlayStreamingAVFObjC>, WTF::DumbPtrTraits<WTF::WeakReference<WebCore::CDMInstanceFairPlayStreamingAVFObjC>>> _field1;
+struct WeakPtrFactory<WebCore::CDMInstanceSessionFairPlayStreamingAVFObjC> {
+    struct RefPtr<WTF::WeakReference<WebCore::CDMInstanceSessionFairPlayStreamingAVFObjC>, WTF::DumbPtrTraits<WTF::WeakReference<WebCore::CDMInstanceSessionFairPlayStreamingAVFObjC>>> _field1;
 };
 
 struct WeakPtrFactory<WebCore::CDMSessionAVStreamSession> {
     struct RefPtr<WTF::WeakReference<WebCore::CDMSessionAVStreamSession>, WTF::DumbPtrTraits<WTF::WeakReference<WebCore::CDMSessionAVStreamSession>>> _field1;
+};
+
+struct WeakPtrFactory<WebCore::CDMSessionMediaSourceAVFObjC> {
+    struct RefPtr<WTF::WeakReference<WebCore::CDMSessionMediaSourceAVFObjC>, WTF::DumbPtrTraits<WTF::WeakReference<WebCore::CDMSessionMediaSourceAVFObjC>>> _field1;
+};
+
+struct WeakPtrFactory<WebCore::CaptureDeviceManager> {
+    struct RefPtr<WTF::WeakReference<WebCore::CaptureDeviceManager>, WTF::DumbPtrTraits<WTF::WeakReference<WebCore::CaptureDeviceManager>>> _field1;
 };
 
 struct WeakPtrFactory<WebCore::MediaPlayerPrivateMediaStreamAVFObjC> {
@@ -1777,9 +1891,17 @@ struct WeakPtrFactory<WebCore::Widget> {
     struct RefPtr<WTF::WeakReference<WebCore::Widget>, WTF::DumbPtrTraits<WTF::WeakReference<WebCore::Widget>>> _field1;
 };
 
-struct WeakReference<WebCore::CDMInstanceFairPlayStreamingAVFObjC>;
+struct WeakReference<WebCore::CDMInstanceSessionClient>;
+
+struct WeakReference<WebCore::CDMInstanceSessionFairPlayStreamingAVFObjC>;
 
 struct WeakReference<WebCore::CDMSessionAVStreamSession>;
+
+struct WeakReference<WebCore::CDMSessionMediaSourceAVFObjC>;
+
+struct WeakReference<WebCore::CaptureDeviceManager>;
+
+struct WeakReference<WebCore::MediaPlayerPrivateAVFoundationObjC>;
 
 struct WeakReference<WebCore::MediaPlayerPrivateMediaStreamAVFObjC>;
 
@@ -1812,26 +1934,6 @@ struct array<int, 3> {
     int _field1[3];
 };
 
-struct optional<WTF::HashSet<WTF::RefPtr<WTF::SchedulePair, WTF::DumbPtrTraits<WTF::SchedulePair>>, WTF::SchedulePairHash, WTF::HashTraits<WTF::RefPtr<WTF::SchedulePair, WTF::DumbPtrTraits<WTF::SchedulePair>>>>> {
-    _Bool init_;
-    union storage_t<WTF::HashSet<WTF::RefPtr<WTF::SchedulePair, WTF::DumbPtrTraits<WTF::SchedulePair>>, WTF::SchedulePairHash, WTF::HashTraits<WTF::RefPtr<WTF::SchedulePair, WTF::DumbPtrTraits<WTF::SchedulePair>>>>> storage_;
-};
-
-struct optional<WebCore::FloatRect> {
-    _Bool _field1;
-    union constexpr_storage_t<WebCore::FloatRect> _field2;
-};
-
-struct optional<WebCore::FloatSize> {
-    _Bool _field1;
-    union constexpr_storage_t<WebCore::FloatSize> _field2;
-};
-
-struct optional<unsigned int> {
-    _Bool _field1;
-    union constexpr_storage_t<unsigned int> _field2;
-};
-
 struct unique_ptr<PAL::Clock, std::__1::default_delete<PAL::Clock>> {
     struct __compressed_pair<PAL::Clock *, std::__1::default_delete<PAL::Clock>> {
         struct Clock *_field1;
@@ -1844,20 +1946,20 @@ struct unique_ptr<WTF::Function<void ()>::CallableWrapperBase, std::__1::default
     } _field1;
 };
 
-struct unique_ptr<WTF::Function<void (WTF::Ref<WebCore::SharedBuffer, WTF::DumbPtrTraits<WebCore::SharedBuffer>>&&, const WTF::String &, bool, WebCore::CDMInstance::SuccessValue)>::CallableWrapperBase, std::__1::default_delete<WTF::Function<void (WTF::Ref<WebCore::SharedBuffer, WTF::DumbPtrTraits<WebCore::SharedBuffer>>&&, const WTF::String &, bool, WebCore::CDMInstance::SuccessValue)>::CallableWrapperBase>> {
-    struct __compressed_pair<WTF::Function<void (WTF::Ref<WebCore::SharedBuffer, WTF::DumbPtrTraits<WebCore::SharedBuffer>>&&, const WTF::String &, bool, WebCore::CDMInstance::SuccessValue)>::CallableWrapperBase *, std::__1::default_delete<WTF::Function<void (WTF::Ref<WebCore::SharedBuffer, WTF::DumbPtrTraits<WebCore::SharedBuffer>>&&, const WTF::String &, bool, WebCore::CDMInstance::SuccessValue)>::CallableWrapperBase>> {
+struct unique_ptr<WTF::Function<void (WTF::Ref<WebCore::SharedBuffer, WTF::DumbPtrTraits<WebCore::SharedBuffer>>&&, const WTF::String &, bool, WebCore::CDMInstanceSession::SuccessValue)>::CallableWrapperBase, std::__1::default_delete<WTF::Function<void (WTF::Ref<WebCore::SharedBuffer, WTF::DumbPtrTraits<WebCore::SharedBuffer>>&&, const WTF::String &, bool, WebCore::CDMInstanceSession::SuccessValue)>::CallableWrapperBase>> {
+    struct __compressed_pair<WTF::Function<void (WTF::Ref<WebCore::SharedBuffer, WTF::DumbPtrTraits<WebCore::SharedBuffer>>&&, const WTF::String &, bool, WebCore::CDMInstanceSession::SuccessValue)>::CallableWrapperBase *, std::__1::default_delete<WTF::Function<void (WTF::Ref<WebCore::SharedBuffer, WTF::DumbPtrTraits<WebCore::SharedBuffer>>&&, const WTF::String &, bool, WebCore::CDMInstanceSession::SuccessValue)>::CallableWrapperBase>> {
         struct CallableWrapperBase *_field1;
     } _field1;
 };
 
-struct unique_ptr<WTF::Function<void (WTF::Vector<std::__1::pair<WTF::Ref<WebCore::SharedBuffer, WTF::DumbPtrTraits<WebCore::SharedBuffer>>, WebCore::CDMKeyStatus>, 0, WTF::CrashOnOverflow, 16>&&, std::optional<WTF::Ref<WebCore::SharedBuffer, WTF::DumbPtrTraits<WebCore::SharedBuffer>>>&&, WebCore::CDMInstance::SuccessValue)>::CallableWrapperBase, std::__1::default_delete<WTF::Function<void (WTF::Vector<std::__1::pair<WTF::Ref<WebCore::SharedBuffer, WTF::DumbPtrTraits<WebCore::SharedBuffer>>, WebCore::CDMKeyStatus>, 0, WTF::CrashOnOverflow, 16>&&, std::optional<WTF::Ref<WebCore::SharedBuffer, WTF::DumbPtrTraits<WebCore::SharedBuffer>>>&&, WebCore::CDMInstance::SuccessValue)>::CallableWrapperBase>> {
-    struct __compressed_pair<WTF::Function<void (WTF::Vector<std::__1::pair<WTF::Ref<WebCore::SharedBuffer, WTF::DumbPtrTraits<WebCore::SharedBuffer>>, WebCore::CDMKeyStatus>, 0, WTF::CrashOnOverflow, 16>&&, std::optional<WTF::Ref<WebCore::SharedBuffer, WTF::DumbPtrTraits<WebCore::SharedBuffer>>>&&, WebCore::CDMInstance::SuccessValue)>::CallableWrapperBase *, std::__1::default_delete<WTF::Function<void (WTF::Vector<std::__1::pair<WTF::Ref<WebCore::SharedBuffer, WTF::DumbPtrTraits<WebCore::SharedBuffer>>, WebCore::CDMKeyStatus>, 0, WTF::CrashOnOverflow, 16>&&, std::optional<WTF::Ref<WebCore::SharedBuffer, WTF::DumbPtrTraits<WebCore::SharedBuffer>>>&&, WebCore::CDMInstance::SuccessValue)>::CallableWrapperBase>> {
+struct unique_ptr<WTF::Function<void (WTF::Vector<std::__1::pair<WTF::Ref<WebCore::SharedBuffer, WTF::DumbPtrTraits<WebCore::SharedBuffer>>, WebCore::CDMKeyStatus>, 0, WTF::CrashOnOverflow, 16>&&, WTF::Optional<WTF::Ref<WebCore::SharedBuffer, WTF::DumbPtrTraits<WebCore::SharedBuffer>>>&&, WebCore::CDMInstanceSession::SuccessValue)>::CallableWrapperBase, std::__1::default_delete<WTF::Function<void (WTF::Vector<std::__1::pair<WTF::Ref<WebCore::SharedBuffer, WTF::DumbPtrTraits<WebCore::SharedBuffer>>, WebCore::CDMKeyStatus>, 0, WTF::CrashOnOverflow, 16>&&, WTF::Optional<WTF::Ref<WebCore::SharedBuffer, WTF::DumbPtrTraits<WebCore::SharedBuffer>>>&&, WebCore::CDMInstanceSession::SuccessValue)>::CallableWrapperBase>> {
+    struct __compressed_pair<WTF::Function<void (WTF::Vector<std::__1::pair<WTF::Ref<WebCore::SharedBuffer, WTF::DumbPtrTraits<WebCore::SharedBuffer>>, WebCore::CDMKeyStatus>, 0, WTF::CrashOnOverflow, 16>&&, WTF::Optional<WTF::Ref<WebCore::SharedBuffer, WTF::DumbPtrTraits<WebCore::SharedBuffer>>>&&, WebCore::CDMInstanceSession::SuccessValue)>::CallableWrapperBase *, std::__1::default_delete<WTF::Function<void (WTF::Vector<std::__1::pair<WTF::Ref<WebCore::SharedBuffer, WTF::DumbPtrTraits<WebCore::SharedBuffer>>, WebCore::CDMKeyStatus>, 0, WTF::CrashOnOverflow, 16>&&, WTF::Optional<WTF::Ref<WebCore::SharedBuffer, WTF::DumbPtrTraits<WebCore::SharedBuffer>>>&&, WebCore::CDMInstanceSession::SuccessValue)>::CallableWrapperBase>> {
         struct CallableWrapperBase *_field1;
     } _field1;
 };
 
-struct unique_ptr<WTF::Function<void (bool, std::optional<WTF::Vector<std::__1::pair<WTF::Ref<WebCore::SharedBuffer, WTF::DumbPtrTraits<WebCore::SharedBuffer>>, WebCore::CDMKeyStatus>, 0, WTF::CrashOnOverflow, 16>>&&, std::optional<double>&&, std::optional<std::__1::pair<WebCore::CDMMessageType, WTF::Ref<WebCore::SharedBuffer, WTF::DumbPtrTraits<WebCore::SharedBuffer>>>>&&, WebCore::CDMInstance::SuccessValue)>::CallableWrapperBase, std::__1::default_delete<WTF::Function<void (bool, std::optional<WTF::Vector<std::__1::pair<WTF::Ref<WebCore::SharedBuffer, WTF::DumbPtrTraits<WebCore::SharedBuffer>>, WebCore::CDMKeyStatus>, 0, WTF::CrashOnOverflow, 16>>&&, std::optional<double>&&, std::optional<std::__1::pair<WebCore::CDMMessageType, WTF::Ref<WebCore::SharedBuffer, WTF::DumbPtrTraits<WebCore::SharedBuffer>>>>&&, WebCore::CDMInstance::SuccessValue)>::CallableWrapperBase>> {
-    struct __compressed_pair<WTF::Function<void (bool, std::optional<WTF::Vector<std::__1::pair<WTF::Ref<WebCore::SharedBuffer, WTF::DumbPtrTraits<WebCore::SharedBuffer>>, WebCore::CDMKeyStatus>, 0, WTF::CrashOnOverflow, 16>>&&, std::optional<double>&&, std::optional<std::__1::pair<WebCore::CDMMessageType, WTF::Ref<WebCore::SharedBuffer, WTF::DumbPtrTraits<WebCore::SharedBuffer>>>>&&, WebCore::CDMInstance::SuccessValue)>::CallableWrapperBase *, std::__1::default_delete<WTF::Function<void (bool, std::optional<WTF::Vector<std::__1::pair<WTF::Ref<WebCore::SharedBuffer, WTF::DumbPtrTraits<WebCore::SharedBuffer>>, WebCore::CDMKeyStatus>, 0, WTF::CrashOnOverflow, 16>>&&, std::optional<double>&&, std::optional<std::__1::pair<WebCore::CDMMessageType, WTF::Ref<WebCore::SharedBuffer, WTF::DumbPtrTraits<WebCore::SharedBuffer>>>>&&, WebCore::CDMInstance::SuccessValue)>::CallableWrapperBase>> {
+struct unique_ptr<WTF::Function<void (bool, WTF::Optional<WTF::Vector<std::__1::pair<WTF::Ref<WebCore::SharedBuffer, WTF::DumbPtrTraits<WebCore::SharedBuffer>>, WebCore::CDMKeyStatus>, 0, WTF::CrashOnOverflow, 16>>&&, WTF::Optional<double>&&, WTF::Optional<std::__1::pair<WebCore::CDMMessageType, WTF::Ref<WebCore::SharedBuffer, WTF::DumbPtrTraits<WebCore::SharedBuffer>>>>&&, WebCore::CDMInstanceSession::SuccessValue)>::CallableWrapperBase, std::__1::default_delete<WTF::Function<void (bool, WTF::Optional<WTF::Vector<std::__1::pair<WTF::Ref<WebCore::SharedBuffer, WTF::DumbPtrTraits<WebCore::SharedBuffer>>, WebCore::CDMKeyStatus>, 0, WTF::CrashOnOverflow, 16>>&&, WTF::Optional<double>&&, WTF::Optional<std::__1::pair<WebCore::CDMMessageType, WTF::Ref<WebCore::SharedBuffer, WTF::DumbPtrTraits<WebCore::SharedBuffer>>>>&&, WebCore::CDMInstanceSession::SuccessValue)>::CallableWrapperBase>> {
+    struct __compressed_pair<WTF::Function<void (bool, WTF::Optional<WTF::Vector<std::__1::pair<WTF::Ref<WebCore::SharedBuffer, WTF::DumbPtrTraits<WebCore::SharedBuffer>>, WebCore::CDMKeyStatus>, 0, WTF::CrashOnOverflow, 16>>&&, WTF::Optional<double>&&, WTF::Optional<std::__1::pair<WebCore::CDMMessageType, WTF::Ref<WebCore::SharedBuffer, WTF::DumbPtrTraits<WebCore::SharedBuffer>>>>&&, WebCore::CDMInstanceSession::SuccessValue)>::CallableWrapperBase *, std::__1::default_delete<WTF::Function<void (bool, WTF::Optional<WTF::Vector<std::__1::pair<WTF::Ref<WebCore::SharedBuffer, WTF::DumbPtrTraits<WebCore::SharedBuffer>>, WebCore::CDMKeyStatus>, 0, WTF::CrashOnOverflow, 16>>&&, WTF::Optional<double>&&, WTF::Optional<std::__1::pair<WebCore::CDMMessageType, WTF::Ref<WebCore::SharedBuffer, WTF::DumbPtrTraits<WebCore::SharedBuffer>>>>&&, WebCore::CDMInstanceSession::SuccessValue)>::CallableWrapperBase>> {
         struct CallableWrapperBase *_field1;
     } _field1;
 };
@@ -1962,13 +2064,13 @@ typedef struct {
 } CDStruct_198678f7;
 
 // Template types
+typedef struct Box<WTF::Semaphore> {
+    struct RefPtr<WTF::Box<WTF::Semaphore>::Data, WTF::DumbPtrTraits<WTF::Box<WTF::Semaphore>::Data>> m_data;
+} Box_1b51c224;
+
 typedef struct Function<void ()> {
     struct unique_ptr<WTF::Function<void ()>::CallableWrapperBase, std::__1::default_delete<WTF::Function<void ()>::CallableWrapperBase>> _field1;
 } Function_701386c1;
-
-typedef struct OSObjectPtr<NSObject<OS_dispatch_semaphore>*> {
-    NSObject *m_ptr;
-} OSObjectPtr_4a7d2093;
 
 typedef struct Ref<WebCore::SecurityOrigin, WTF::DumbPtrTraits<WebCore::SecurityOrigin>> {
     struct SecurityOrigin *_field1;
@@ -1991,6 +2093,10 @@ typedef struct Vector<WebCore::MediaSelectionOption, 0, WTF::CrashOnOverflow, 16
     unsigned int _field2;
     unsigned int _field3;
 } Vector_68c27e8a;
+
+typedef struct WeakPtr<WebCore::MediaPlayerPrivateAVFoundationObjC> {
+    struct RefPtr<WTF::WeakReference<WebCore::MediaPlayerPrivateAVFoundationObjC>, WTF::DumbPtrTraits<WTF::WeakReference<WebCore::MediaPlayerPrivateAVFoundationObjC>>> m_ref;
+} WeakPtr_db8b46a6;
 
 typedef struct WeakPtr<WebCore::SourceBufferPrivateAVFObjC> {
     struct RefPtr<WTF::WeakReference<WebCore::SourceBufferPrivateAVFObjC>, WTF::DumbPtrTraits<WTF::WeakReference<WebCore::SourceBufferPrivateAVFObjC>>> m_ref;

@@ -38,7 +38,7 @@ __attribute__((visibility("hidden")))
 + (id)filledDiamond;
 + (id)filledCircle;
 + (id)simpleArrow;
-+ (id)instanceWithArchive:(const struct LineEndArchive *)arg1 unarchiver:(id)arg2;
++     // Error parsing type: @32@0:8r^{LineEndArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}^{Path}^{Point}iB}16@24, name: instanceWithArchive:unarchiver:
 @property(readonly, nonatomic) int lineJoin; // @synthesize lineJoin=_lineJoin;
 @property(readonly, nonatomic) _Bool isFilled; // @synthesize isFilled=_isFilled;
 @property(readonly, nonatomic) struct CGPoint endPoint; // @synthesize endPoint=_endPoint;
@@ -58,8 +58,8 @@ __attribute__((visibility("hidden")))
 - (id)initWithPath:(const struct CGPath *)arg1 endPoint:(struct CGPoint)arg2 isFilled:(_Bool)arg3 identifier:(id)arg4;
 - (id)initWithPath:(const struct CGPath *)arg1 wrapPath:(const struct CGPath *)arg2 endPoint:(struct CGPoint)arg3 isFilled:(_Bool)arg4 identifier:(id)arg5 lineJoin:(int)arg6;
 - (id)initWithBezierPath:(id)arg1 wrapPath:(id)arg2 endPoint:(struct CGPoint)arg3 isFilled:(_Bool)arg4 identifier:(id)arg5 lineJoin:(int)arg6;
-- (void)saveToArchive:(struct LineEndArchive *)arg1 archiver:(id)arg2;
-- (id)initWithArchive:(const struct LineEndArchive *)arg1 unarchiver:(id)arg2;
+-     // Error parsing type: v32@0:8^{LineEndArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}^{Path}^{Point}iB}16@24, name: saveToArchive:archiver:
+-     // Error parsing type: @32@0:8r^{LineEndArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}^{Path}^{Point}iB}16@24, name: initWithArchive:unarchiver:
 
 @end
 

@@ -6,26 +6,40 @@
 
 #import <MediaPlayer/MPMusicPlayerController.h>
 
-@class MPCPlayerPath, MPCRemotePlaybackEngine;
+@class MPCPlayerPath, MPCRemotePlaybackEngine, NSObject, _MPMusicPlayerQueueTransaction;
+@protocol OS_dispatch_queue;
 
 @interface MPMusicPlayerApplicationController : MPMusicPlayerController
 {
-    int _notificationsCount;
+    _MPMusicPlayerQueueTransaction *_queueTransaction;
     MPCPlayerPath *_playerPath;
     MPCRemotePlaybackEngine *_playbackEngine;
+    int _notificationsCount;
+    NSObject<OS_dispatch_queue> *_queueTransactionQueue;
 }
 
 + (_Bool)_isPlayerInstalled;
-@property(retain, nonatomic) MPCRemotePlaybackEngine *playbackEngine; // @synthesize playbackEngine=_playbackEngine;
-@property(retain, nonatomic) MPCPlayerPath *playerPath; // @synthesize playerPath=_playerPath;
+@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queueTransactionQueue; // @synthesize queueTransactionQueue=_queueTransactionQueue;
+@property(nonatomic) int notificationsCount; // @synthesize notificationsCount=_notificationsCount;
+@property(readonly, nonatomic) MPCRemotePlaybackEngine *playbackEngine; // @synthesize playbackEngine=_playbackEngine;
+@property(readonly, nonatomic) MPCPlayerPath *playerPath; // @synthesize playerPath=_playerPath;
 - (void).cxx_destruct;
+- (id)_queueModificationRequestsFromTracklist:(id)arg1 withMutatedQueue:(id)arg2 mediaToResponseItemMap:(id)arg3;
+- (id)_mutableQueueFromTracklist:(id)arg1 mediaToResponseItemMap:(id *)arg2;
+- (id)_queueFromTracklist:(id)arg1;
+- (_Bool)_onAccessQueue_isPerformingQueueTransactionWithID:(id)arg1;
+- (void)_onAccessQueue_endQueueTransactionWithTracklist:(id)arg1 forReason:(int)arg2 error:(id)arg3;
+- (void)_onAccessQueue_transitionQueueTransactionToState:(int)arg1;
+- (id)_onAccessQueue_beginQueueTransactionWithCompletionHandler:(CDUnknownBlockType)arg1 usingSemaphore:(id)arg2;
 - (void)_playerPathDidChange:(id)arg1;
 - (void)_playbackEngineDidDisconnect:(id)arg1;
 - (void)performQueueTransaction:(CDUnknownBlockType)arg1 completionHandler:(CDUnknownBlockType)arg2;
+@property(retain, nonatomic) _MPMusicPlayerQueueTransaction *queueTransaction; // @synthesize queueTransaction=_queueTransaction;
 - (void)endGeneratingPlaybackNotifications;
 - (void)beginGeneratingPlaybackNotifications;
 - (void)prepareToPlay;
 - (id)_init;
+- (void)_queueDidChangeWithResponse:(id)arg1;
 
 @end
 

@@ -62,6 +62,7 @@
 - (void)updateEndpointerThreshold:(float)arg1;
 - (id)endpointerModelVersion;
 - (void)processServerEndpointFeatures:(id)arg1;
+- (unsigned int)endPointAnalyzerType;
 - (double)elapsedTimeWithNoSpeech;
 - (_Bool)_shouldEnterTwoShotAtEndPointTime:(double)arg1;
 - (_Bool)_shouldUseVAD2ForTwoShot;
@@ -74,7 +75,7 @@
 - (void)preheat;
 - (void)setActiveChannel:(unsigned int)arg1;
 - (void)resetForVoiceTriggerTwoShotWithSampleRate:(unsigned int)arg1;
-- (void)resetForNewRequestWithSampleRate:(unsigned int)arg1;
+- (void)resetForNewRequestWithSampleRate:(unsigned int)arg1 recordContext:(id)arg2;
 - (void)_setupVAD2Endpointer;
 - (id)init;
 

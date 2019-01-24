@@ -9,48 +9,54 @@
 #import <iWorkImport/NSFilePresenter-Protocol.h>
 
 @class NSData, NSError, NSOperationQueue, NSSet, NSString, NSURL, TSUURLTracker;
-@protocol OS_dispatch_queue, TSUURLTrackerDelegate;
+@protocol OS_dispatch_queue, TSULogContext, TSUURLTrackerDelegate;
 
 __attribute__((visibility("hidden")))
 @interface TSUURLTrackerFilePresenter : NSObject <NSFilePresenter>
 {
     TSUURLTracker *_urlTracker;
+    id <TSULogContext> _logContext;
     NSObject<OS_dispatch_queue> *_accessQueue;
     _Bool _hasStarted;
-    NSData *_bookmarkDataIfAvailable;
     _Bool _forceEncodingBookmarkData;
-    NSError *_latestError;
+    NSError *_latestBookmarkError;
     id <TSUURLTrackerDelegate> _delegate;
+    struct os_unfair_lock_s _propertiesLock;
+    NSURL *_URLIfAvailable;
+    NSData *_bookmarkDataIfAvailable;
     _Bool _deleted;
     NSOperationQueue *_presentedItemOperationQueue;
-    NSURL *_URLIfAvailable;
 }
 
-@property _Bool deleted; // @synthesize deleted=_deleted;
-@property(copy) NSURL *URLIfAvailable; // @synthesize URLIfAvailable=_URLIfAvailable;
 @property(readonly, retain) NSOperationQueue *presentedItemOperationQueue; // @synthesize presentedItemOperationQueue=_presentedItemOperationQueue;
 - (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
-- (id)_description;
 - (void)presentedItemDidChangeUbiquityAttributes:(id)arg1;
-- (void)_notifyURLTrackerPresentedItemDidMoveToURL:(id)arg1;
+- (void)p_notifyURLTrackerPresentedItemDidMoveToURL:(id)arg1;
 - (void)presentedItemDidMoveToURL:(id)arg1;
-- (void)_notifyURLTrackerPresentedItemWasDeleted;
+- (void)p_notifyURLTrackerPresentedItemWasDeleted;
 - (void)accommodatePresentedItemDeletionWithCompletionHandler:(CDUnknownBlockType)arg1;
-- (void)_notifyURLTrackerPresentedItemContentsDidChange;
+- (void)p_notifyURLTrackerPresentedItemContentsDidChange;
 - (void)relinquishPresentedItemToWriter:(CDUnknownBlockType)arg1;
 @property(readonly, copy) NSURL *presentedItemURL;
-- (id)_bookmarkDataAndReturnError:(id *)arg1;
+- (id)p_bookmarkDataAndReturnError:(id *)arg1;
 - (id)bookmarkDataAndReturnError:(id *)arg1;
+- (void)p_setDeleted:(_Bool)arg1;
+@property(readonly) _Bool deleted;
 - (void)stop;
 - (void)pauseForEnteringBackground:(_Bool)arg1;
 - (void)startOrResumeForEnteringForeground:(_Bool)arg1;
+- (void)p_setBookmarkDataIfAvailable:(id)arg1;
 @property(readonly) NSData *bookmarkDataIfAvailable;
-- (id)_bookmarkData;
+- (id)p_bookmarkData;
 @property(readonly) NSData *bookmarkData;
-- (id)_URLAndReturnError:(id *)arg1;
+- (id)p_lastKnownURLFromBookmark:(id)arg1;
+- (id)p_URLAndReturnError:(id *)arg1;
 - (id)URLAndReturnError:(id *)arg1;
-- (id)initWithURL:(id)arg1 bookmarkData:(id)arg2 urlTracker:(id)arg3 delegate:(id)arg4;
+- (void)p_setURLIfAvailable:(id)arg1;
+- (id)p_URLIfAvailableLoadingLastKnownURLFromBookmark:(_Bool)arg1;
+@property(readonly) NSURL *URLIfAvailable;
+- (id)initWithURL:(id)arg1 bookmarkData:(id)arg2 urlTracker:(id)arg3 logContext:(id)arg4 delegate:(id)arg5;
 - (id)init;
 
 // Remaining properties

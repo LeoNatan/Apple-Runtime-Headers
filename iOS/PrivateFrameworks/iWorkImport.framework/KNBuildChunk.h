@@ -79,11 +79,11 @@ __attribute__((visibility("hidden")))
 - (void)i_invalidateCaches;
 - (void)saveToArchiver:(id)arg1;
 - (void)loadFromUnarchiver:(id)arg1;
-- (void)saveToArchive:(struct BuildChunkArchive *)arg1 archiver:(id)arg2;
+-     // Error parsing type: v32@0:8^{BuildChunkArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{Reference}^{BuildChunkIdentifierArchive}^{UUID}ddIBB}16@24, name: saveToArchive:archiver:
 - (void)p_setDurationFromBuildAttributes:(id)arg1;
 - (void)p_setDelayFromBuildAttributes:(id)arg1 withReferent:(unsigned long long)arg2 automatic:(_Bool)arg3;
 - (void)i_didLoadBuild:(id)arg1;
-- (void)loadFromArchive:(const struct BuildChunkArchive *)arg1 unarchiver:(id)arg2;
+-     // Error parsing type: v32@0:8r^{BuildChunkArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{Reference}^{BuildChunkIdentifierArchive}^{UUID}ddIBB}16@24, name: loadFromArchive:unarchiver:
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

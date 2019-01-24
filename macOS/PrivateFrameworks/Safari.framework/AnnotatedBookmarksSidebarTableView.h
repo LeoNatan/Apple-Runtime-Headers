@@ -11,7 +11,7 @@ __attribute__((visibility("hidden")))
 {
 }
 
-- (id)accessibilityAttributeValue:(id)arg1;
+- (struct CGRect)accessibilityFrame;
 
 @end
 

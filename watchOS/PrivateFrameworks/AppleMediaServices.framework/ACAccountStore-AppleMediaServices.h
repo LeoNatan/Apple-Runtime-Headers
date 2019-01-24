@@ -32,6 +32,7 @@
 - (id)ams_iTunesAccountWithDSID:(id)arg1;
 - (id)ams_iTunesAccountWithAltDSID:(id)arg1 DSID:(id)arg2 username:(id)arg3;
 - (id)ams_iTunesAccountWithAltDSID:(id)arg1;
+- (id)ams_cookiesForURL:(id)arg1;
 @property(readonly, nonatomic) NSString *ams_mediaType;
 @property(readonly, nonatomic) ACAccount *ams_localiTunesAccount;
 @property(readonly, nonatomic) NSArray *ams_iTunesAccounts;

@@ -34,10 +34,12 @@
     _Bool _manifestSubmitted;
     NSString *_sessionID;
     NSString *_lastDeletedSUAssetID;
+    NSString *_lastAssetAudience;
 }
 
 + (id)currentState;
 + (id)statePath;
+@property(retain, nonatomic) NSString *lastAssetAudience; // @synthesize lastAssetAudience=_lastAssetAudience;
 @property(retain, nonatomic) NSString *lastDeletedSUAssetID; // @synthesize lastDeletedSUAssetID=_lastDeletedSUAssetID;
 @property(retain, nonatomic) NSString *sessionID; // @synthesize sessionID=_sessionID;
 @property(retain, nonatomic) NSDictionary *mandatoryUpdateDict; // @synthesize mandatoryUpdateDict=_mandatoryUpdateDict;

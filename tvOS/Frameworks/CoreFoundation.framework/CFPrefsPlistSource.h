@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
     // Error parsing type: AB, name: _lastWriteFailed
     // Error parsing type: AB, name: _observing
     // Error parsing type: AB, name: _disableBackup
+    // Error parsing type: Ai, name: _fileProtectionClass
 }
 
 - (void)dealloc;
@@ -57,6 +58,7 @@ __attribute__((visibility("hidden")))
 - (void *)alreadylocked_copyValueForKey:(struct __CFString *)arg1;
 - (void)setDaemonCacheEnabled:(_Bool)arg1;
 - (void)setAccessRestricted:(_Bool)arg1;
+- (void)setFileProtectionClass:(int)arg1;
 - (void)setBackupDisabled:(_Bool)arg1;
 - (id)initWithDomain:(struct __CFString *)arg1 user:(struct __CFString *)arg2 byHost:(_Bool)arg3 containerPath:(struct __CFString *)arg4 containingPreferences:(id)arg5;
 - (_Bool)isByHost;

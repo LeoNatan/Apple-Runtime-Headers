@@ -25,7 +25,6 @@
 - (void).cxx_destruct;
 - (id)_appImageSubviewWithImage:(id)arg1 dimension:(double)arg2;
 - (void)_didFetchIcon:(id)arg1;
-- (void)_registerForIconCacheNotifications;
 - (id)initWithUsageReport:(id)arg1;
 
 @end

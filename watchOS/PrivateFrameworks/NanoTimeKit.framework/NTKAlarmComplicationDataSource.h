@@ -6,12 +6,13 @@
 
 #import <NanoTimeKit/NTKComplicationDataSource.h>
 
-@class MTAlarm, MTAlarmManager;
+@class MTAlarm, MTAlarmManager, NTKAlarmTimelineEntry;
 
 @interface NTKAlarmComplicationDataSource : NTKComplicationDataSource
 {
     MTAlarm *_nextAlarm;
     struct NSNumber *_timerToken;
+    NTKAlarmTimelineEntry *_currentAlarmEntry;
     MTAlarmManager *_alarmManager;
 }
 

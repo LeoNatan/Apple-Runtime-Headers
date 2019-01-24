@@ -21,12 +21,12 @@ __attribute__((visibility("hidden")))
 - (id)_openDocumentWithContentsOfRequest:(id)arg1 behind:(BOOL)arg2 display:(BOOL)arg3 browsingMode:(unsigned long long)arg4;
 - (id)createBrowserContentViewControllerInTabUsingWindowController:(id)arg1 tabPlacementHint:(const struct TabPlacementHint *)arg2 windowPolicy:(long long)arg3 tryToCreateActive:(BOOL)arg4;
 - (id)createTabUsingWindowController:(id)arg1 tabPlacementHint:(const struct TabPlacementHint *)arg2 windowPolicy:(long long)arg3 tryToCreateActive:(BOOL)arg4;
-- (id)_goToEachRequest:(id)arg1 tabLabels:(id)arg2 windowPolicy:(long long)arg3 tabPlacementHint:(const struct TabPlacementHint *)arg4 forSearch:(BOOL)arg5 canceled:(_Bool *)arg6;
-- (id)_goToRequest:(id)arg1 tabLabel:(id)arg2 windowPolicy:(long long)arg3 tabPlacementHint:(const struct TabPlacementHint *)arg4 forSearch:(BOOL)arg5 canceled:(_Bool *)arg6;
+- (id)_goToEachRequest:(id)arg1 tabLabels:(id)arg2 windowPolicy:(long long)arg3 tabPlacementHint:(const struct TabPlacementHint *)arg4 forSearch:(BOOL)arg5 canceled:(_Bool *)arg6 inNewProcess:(BOOL)arg7;
+- (id)_goToRequest:(id)arg1 tabLabel:(id)arg2 windowPolicy:(long long)arg3 tabPlacementHint:(const struct TabPlacementHint *)arg4 forSearch:(BOOL)arg5 canceled:(_Bool *)arg6 inNewProcess:(BOOL)arg7;
 - (id)_frontmostBrowserDocumentIfAvailableUsingWindowPolicy:(long long)arg1;
 - (id)_frontmostNonPopupBrowserDocumentIfAvailableUsingWindowPolicy:(long long)arg1 browsingMode:(unsigned long long)arg2;
-- (id)_createEmptyBrowserDocumentAndDisplay:(BOOL)arg1 behind:(BOOL)arg2 loadWindow:(BOOL)arg3 suppressSidebar:(BOOL)arg4 isPopupWindow:(BOOL)arg5 browsingMode:(unsigned long long)arg6 websiteDataStore:(id)arg7 restoringFromLastSession:(BOOL)arg8 relatedToPage:(const struct Page *)arg9;
-- (id)_createEmptyBrowserDocumentAndDisplay:(BOOL)arg1 behind:(BOOL)arg2 loadWindow:(BOOL)arg3 suppressSidebar:(BOOL)arg4 isPopupWindow:(BOOL)arg5 browsingMode:(unsigned long long)arg6 websiteDataStore:(id)arg7 restoringFromLastSession:(BOOL)arg8;
+- (id)_createEmptyBrowserDocumentAndDisplay:(BOOL)arg1 behind:(BOOL)arg2 loadWindow:(BOOL)arg3 suppressSidebar:(BOOL)arg4 isPopupWindow:(BOOL)arg5 browsingMode:(unsigned long long)arg6 websiteDataStore:(id)arg7 restoringFromLastSession:(BOOL)arg8 relatedToPage:(const struct Page *)arg9 initialSize:(struct CGSize)arg10;
+- (id)_createEmptyBrowserDocumentAndDisplay:(BOOL)arg1 behind:(BOOL)arg2 loadWindow:(BOOL)arg3 suppressSidebar:(BOOL)arg4 isPopupWindow:(BOOL)arg5 browsingMode:(unsigned long long)arg6 websiteDataStore:(id)arg7 restoringFromLastSession:(BOOL)arg8 initialSize:(struct CGSize)arg9;
 - (void)_setUpNewTabOrWindowMenuItem:(id)arg1 addOptionFlagModifier:(BOOL)arg2;
 - (BOOL)_isNewTabDefaultForWindowUserTabbingPreference;
 - (BOOL)_canShowStartPage;
@@ -42,6 +42,7 @@ __attribute__((visibility("hidden")))
 - (void)showTopSitesWall:(id)arg1;
 - (id)browserDocuments;
 - (id)orderedBrowserDocuments;
+- (void)enumerateBrowserDocumentsUsingBlock:(CDUnknownBlockType)arg1;
 - (void)openLocation:(id)arg1;
 - (id)openEmptyBrowserDocumentWithBrowsingMode:(unsigned long long)arg1;
 - (void)newTab:(id)arg1;
@@ -50,6 +51,7 @@ __attribute__((visibility("hidden")))
 - (id)goToURL:(id)arg1 windowPolicy:(long long)arg2 tabPlacementHint:(const struct TabPlacementHint *)arg3;
 - (id)goToURL:(id)arg1 windowPolicy:(long long)arg2;
 - (id)goToURLFromExternalApplication:(id)arg1 forcingHTMLMIMEType:(BOOL)arg2 openInNewPrivateWindowIfNecessary:(BOOL)arg3 preferSelectingExistingTabWithoutReloading:(BOOL)arg4;
+- (id)goToRequest:(id)arg1 tabLabel:(id)arg2 windowPolicy:(long long)arg3 tabPlacementHint:(const struct TabPlacementHint *)arg4 inNewProcess:(BOOL)arg5;
 - (id)goToRequest:(id)arg1 tabLabel:(id)arg2 windowPolicy:(long long)arg3 tabPlacementHint:(const struct TabPlacementHint *)arg4;
 - (void)goHome:(id)arg1;
 - (id)frontmostBrowserDocumentPassingTest:(CDUnknownBlockType)arg1;
@@ -59,8 +61,9 @@ __attribute__((visibility("hidden")))
 - (id)createHiddenEmptyBrowserDocumentWithoutLoadingWindowWithBrowsingMode:(unsigned long long)arg1;
 - (id)createHiddenEmptyBrowserDocumentWithBrowsingMode:(unsigned long long)arg1 relatedToPage:(const struct Page *)arg2 websiteDataStore:(id)arg3 suppressSidebar:(BOOL)arg4 isPopupWindow:(BOOL)arg5;
 - (id)createHiddenEmptyBrowserDocumentWithBrowsingMode:(unsigned long long)arg1 isPopupWindow:(BOOL)arg2;
-- (id)createHiddenEmptyBrowserDocumentWithBrowsingMode:(unsigned long long)arg1 isPopupWindow:(BOOL)arg2 restoringFromLastSession:(BOOL)arg3;
+- (id)createHiddenEmptyBrowserDocumentWithBrowsingMode:(unsigned long long)arg1 isPopupWindow:(BOOL)arg2 restoringFromLastSession:(BOOL)arg3 initialSize:(struct CGSize)arg4;
 - (id)createHiddenEmptyBrowserDocumentRelatedToPage:(const struct Page *)arg1 suppressSidebar:(BOOL)arg2 isPopupWindow:(BOOL)arg3;
+- (id)createHiddenEmptyBrowserDocumentWithBrowsingMode:(unsigned long long)arg1 configuration:(id)arg2 suppressSidebar:(BOOL)arg3 isPopupWindow:(BOOL)arg4;
 - (id)createHiddenEmptyBrowserDocument;
 - (BOOL)canGoHome;
 - (BOOL)anyInactiveTabs;

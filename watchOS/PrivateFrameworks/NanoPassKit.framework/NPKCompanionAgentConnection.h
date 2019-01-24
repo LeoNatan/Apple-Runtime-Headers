@@ -90,6 +90,7 @@
 - (void)paymentPassWithUniqueID:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)paymentPassUniqueIDs:(CDUnknownBlockType)arg1;
 - (void)noteProvisioningPreflightCompleteWithSuccess:(_Bool)arg1 error:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)registerDeviceWithCompletion:(CDUnknownBlockType)arg1;
 - (void)beginProvisioningFromWatchOfferForPaymentPass:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)noteWatchOfferShownForPaymentPass:(id)arg1;
 - (void)shouldShowWatchOfferForPaymentPass:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;

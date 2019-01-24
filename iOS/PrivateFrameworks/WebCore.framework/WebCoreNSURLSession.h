@@ -14,8 +14,8 @@
     struct RefPtr<WebCore::PlatformMediaResourceLoader, WTF::DumbPtrTraits<WebCore::PlatformMediaResourceLoader>> _loader;
     struct RetainPtr<id<NSURLSessionDelegate>> _delegate;
     struct RetainPtr<NSOperationQueue> _queue;
-    NSString *_sessionDescription;
-    struct HashSet<WTF::RetainPtr<WebCoreNSURLSessionDataTask>, WTF::PtrHash<WTF::RetainPtr<WebCoreNSURLSessionDataTask>>, WTF::HashTraits<WTF::RetainPtr<WebCoreNSURLSessionDataTask>>> _dataTasks;
+    struct RetainPtr<NSString> _sessionDescription;
+    struct HashSet<WTF::RetainPtr<const void *>, WTF::PtrHash<WTF::RetainPtr<const void *>>, WTF::HashTraits<WTF::RetainPtr<const void *>>> _dataTasks;
     struct HashSet<WTF::RefPtr<WebCore::SecurityOrigin, WTF::DumbPtrTraits<WebCore::SecurityOrigin>>, WTF::PtrHash<WTF::RefPtr<WebCore::SecurityOrigin, WTF::DumbPtrTraits<WebCore::SecurityOrigin>>>, WTF::HashTraits<WTF::RefPtr<WebCore::SecurityOrigin, WTF::DumbPtrTraits<WebCore::SecurityOrigin>>>> _origins;
     // Error parsing type: {Lock="m_byte"{Atomic<unsigned char>="value"{atomic<unsigned char>="__a_"AC}}}, name: _dataTasksLock
     _Bool _invalidated;
@@ -24,7 +24,6 @@
     int _corsResults;
 }
 
-@property(copy) NSString *sessionDescription; // @synthesize sessionDescription=_sessionDescription;
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (_Bool)isKindOfClass:(Class)arg1;
@@ -44,11 +43,12 @@
 - (void)resetWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)invalidateAndCancel;
 - (void)finishTasksAndInvalidate;
--     // Error parsing type: B24@0:8r^{SecurityOrigin={atomic<unsigned int>=AI}{SecurityOriginData={String={RefPtr<WTF::StringImpl, WTF::DumbPtrTraits<WTF::StringImpl> >=^{StringImpl}}}{String={RefPtr<WTF::StringImpl, WTF::DumbPtrTraits<WTF::StringImpl> >=^{StringImpl}}}{optional<unsigned short>=B(constexpr_storage_t<unsigned short>=CS)}}{String={RefPtr<WTF::StringImpl, WTF::DumbPtrTraits<WTF::StringImpl> >=^{StringImpl}}}{String={RefPtr<WTF::StringImpl, WTF::DumbPtrTraits<WTF::StringImpl> >=^{StringImpl}}}BBBBiBBBB}16, name: wouldTaintOrigin:
+-     // Error parsing type: B24@0:8r^{SecurityOrigin={atomic<unsigned int>=AI}{SecurityOriginData={String={RefPtr<WTF::StringImpl, WTF::DumbPtrTraits<WTF::StringImpl> >=^{StringImpl}}}{String={RefPtr<WTF::StringImpl, WTF::DumbPtrTraits<WTF::StringImpl> >=^{StringImpl}}}{Optional<unsigned short>=B(constexpr_storage_t<unsigned short>=CS)}}{String={RefPtr<WTF::StringImpl, WTF::DumbPtrTraits<WTF::StringImpl> >=^{StringImpl}}}{String={RefPtr<WTF::StringImpl, WTF::DumbPtrTraits<WTF::StringImpl> >=^{StringImpl}}}BBBBiBBBB}16, name: wouldTaintOrigin:
 @property(readonly) _Bool didPassCORSAccessChecks; // @dynamic didPassCORSAccessChecks;
 // Error parsing type for property loader:
 // Property attributes: T^{PlatformMediaResourceLoader=^^?{atomic<unsigned int>=AI}},R,D
 
+@property(copy) NSString *sessionDescription;
 @property(readonly, copy) NSURLSessionConfiguration *configuration; // @dynamic configuration;
 @property(readonly, retain) NSOperationQueue *delegateQueue; // @dynamic delegateQueue;
 @property(retain) id <NSURLSessionTaskDelegate> delegate; // @dynamic delegate;

@@ -6,11 +6,11 @@
 
 #import <PassKitCore/NSSecureCoding-Protocol.h>
 
-@class NSDictionary, PKCloudStoreRecord;
+@class NSArray, PKCloudStoreRecord;
 
 @protocol PKCloudStoreCoding <NSSecureCoding>
 - (unsigned int)itemType;
-- (NSDictionary *)recordTypesAndNames;
+- (NSArray *)recordTypesAndNames;
 - (void)encodeWithCloudStoreCoder:(PKCloudStoreRecord *)arg1;
 - (id)initWithCloudStoreCoder:(PKCloudStoreRecord *)arg1;
 

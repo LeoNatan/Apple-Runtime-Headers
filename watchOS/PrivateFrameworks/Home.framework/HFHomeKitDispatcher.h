@@ -23,12 +23,13 @@
 #import <Home/HMSoftwareUpdateDelegate-Protocol.h>
 #import <Home/HMSymptomFixSessionDelegate-Protocol.h>
 #import <Home/HMSymptomsHandlerDelegate-Protocol.h>
+#import <Home/HMTelevisionProfileDelegate-Protocol.h>
 #import <Home/HMUserDelegatePrivate-Protocol.h>
 #import <Home/_HFSettingsObserverTupleOwning-Protocol.h>
 
 @class HFLocationSensingCoordinator, HMHome, HMHomeManager, NAFuture, NSHashTable, NSMutableArray, NSMutableDictionary, NSString, NSTimer;
 
-@interface HFHomeKitDispatcher : NSObject <HFLocationSensingCoordinatorDelegate, HFHomeAppInstallStateArbiterObserver, _HFSettingsObserverTupleOwning, HFStateRestorationSettingsObserver, HMResidentDeviceDelegate, HMCameraSnapshotControlDelegate, HMCameraStreamControlDelegate, HMMediaProfileDelegate, HMSoftwareUpdateControllerDelegate, HMAccessorySettingsDelegate, HMSoftwareUpdateDelegate, HMSymptomsHandlerDelegate, HMUserDelegatePrivate, HMHomeManagerDelegatePrivate, HMHomeDelegatePrivate, HMAccessoryDelegatePrivate, HFMediaObjectObserver, HFMediaSessionObserver, HMSymptomFixSessionDelegate>
+@interface HFHomeKitDispatcher : NSObject <HFLocationSensingCoordinatorDelegate, HFHomeAppInstallStateArbiterObserver, _HFSettingsObserverTupleOwning, HFStateRestorationSettingsObserver, HMResidentDeviceDelegate, HMCameraSnapshotControlDelegate, HMCameraStreamControlDelegate, HMMediaProfileDelegate, HMSoftwareUpdateControllerDelegate, HMAccessorySettingsDelegate, HMSoftwareUpdateDelegate, HMSymptomsHandlerDelegate, HMUserDelegatePrivate, HMTelevisionProfileDelegate, HMHomeManagerDelegatePrivate, HMHomeDelegatePrivate, HMAccessoryDelegatePrivate, HFMediaObjectObserver, HFMediaSessionObserver, HMSymptomFixSessionDelegate>
 {
     _Bool _hasLoadedHomes;
     HMHomeManager *_homeManager;
@@ -51,6 +52,7 @@
     NSHashTable *_softwareUpdateObservers;
     NSHashTable *_userObservers;
     NSHashTable *_symptomsHandlerObservers;
+    NSHashTable *_televisionObservers;
     NSMutableArray *_settingsObservers;
     NSMutableArray *_requestedSoftwareUpdates;
     NSMutableArray *_homePromises;
@@ -67,6 +69,7 @@
 @property(retain, nonatomic) NSMutableArray *homePromises; // @synthesize homePromises=_homePromises;
 @property(readonly, nonatomic) NSMutableArray *requestedSoftwareUpdates; // @synthesize requestedSoftwareUpdates=_requestedSoftwareUpdates;
 @property(retain, nonatomic) NSMutableArray *settingsObservers; // @synthesize settingsObservers=_settingsObservers;
+@property(retain, nonatomic) NSHashTable *televisionObservers; // @synthesize televisionObservers=_televisionObservers;
 @property(retain, nonatomic) NSHashTable *symptomsHandlerObservers; // @synthesize symptomsHandlerObservers=_symptomsHandlerObservers;
 @property(retain, nonatomic) NSHashTable *userObservers; // @synthesize userObservers=_userObservers;
 @property(retain, nonatomic) NSHashTable *softwareUpdateObservers; // @synthesize softwareUpdateObservers=_softwareUpdateObservers;
@@ -105,6 +108,7 @@
 - (void)_finishHomePromises:(id)arg1;
 - (void)_updateRemoteAccessStateForHome:(id)arg1 notifyingObservers:(_Bool)arg2;
 - (void)home:(id)arg1 didUpdateReprovisionStateForAccessory:(id)arg2;
+- (void)profileDidUpdateMediaSourceDisplayOrder:(id)arg1;
 - (void)symptomsHandler:(id)arg1 didUpdateSymptoms:(id)arg2;
 - (void)coordinator:(id)arg1 homeSensingStatusDidChange:(_Bool)arg2;
 - (void)coordinator:(id)arg1 locationSensingAvailabilityDidChange:(_Bool)arg2;
@@ -128,6 +132,7 @@
 - (void)residentDevice:(id)arg1 didUpdateStatus:(unsigned int)arg2;
 - (void)residentDevice:(id)arg1 didUpdateEnabled:(_Bool)arg2;
 - (void)residentDevice:(id)arg1 didUpdateName:(id)arg2;
+- (void)accessory:(id)arg1 didUpdateLastKnownSleepDiscoveryModeForService:(id)arg2;
 - (void)accessory:(id)arg1 didRemoveControlTarget:(id)arg2;
 - (void)accessory:(id)arg1 didAddControlTarget:(id)arg2;
 - (void)accessoryDidUpdateTargetControlSupport:(id)arg1;
@@ -244,6 +249,8 @@
 - (void)dispatchAccessoryObserverMessage:(CDUnknownBlockType)arg1 sender:(id)arg2;
 - (void)dispatchHomeObserverMessage:(CDUnknownBlockType)arg1 sender:(id)arg2;
 - (void)dispatchHomeManagerObserverMessage:(CDUnknownBlockType)arg1 sender:(id)arg2;
+- (void)removeTelevisionObserver:(id)arg1;
+- (void)addTelevisionObserver:(id)arg1;
 - (void)removeSymptomsHandlerObserver:(id)arg1;
 - (void)addSymptomsHandlerObserver:(id)arg1;
 - (void)removeUserObserver:(id)arg1;

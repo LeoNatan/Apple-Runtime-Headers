@@ -15,12 +15,13 @@
     unsigned long long _numberOfWorkoutsPerformedToday;
     HKQuery *_workoutObservationQuery;
     REUpNextTimer *_workoutQueryCoalesceTimer;
-    NSDate *_lastWorkoutQueryDate;
     _Bool _hasActiveWorkout;
+    NSDate *_lastCompletedWorkoutDate;
 }
 
 + (id)supportedFeatures;
 + (double)updateInterval;
+@property(retain) NSDate *lastCompletedWorkoutDate; // @synthesize lastCompletedWorkoutDate=_lastCompletedWorkoutDate;
 @property _Bool hasActiveWorkout; // @synthesize hasActiveWorkout=_hasActiveWorkout;
 - (void).cxx_destruct;
 - (void)collectLoggableState:(CDUnknownBlockType)arg1;
@@ -31,6 +32,7 @@
 - (void)_cancelMonitoringWorkoutIfNeeded;
 - (void)update;
 - (id)featureValueForFeature:(id)arg1 element:(id)arg2 engine:(id)arg3 trainingContext:(id)arg4;
+@property(readonly, nonatomic) NSDate *lastWorkoutDate;
 @property(readonly, nonatomic, getter=isActiveWorkout) _Bool activeWorkout;
 - (void)pause;
 - (void)resume;

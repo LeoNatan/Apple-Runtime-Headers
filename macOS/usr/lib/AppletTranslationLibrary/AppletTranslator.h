@@ -11,6 +11,7 @@
 }
 
 + (struct os_state_data_s *)dumpState;
++ (id)GetAppletProperties:(id)arg1 withPackage:(id)arg2 withModule:(id)arg3 withTransceiver:(id)arg4 withError:(id *)arg5;
 + (id)checkSEExpressAppletCompatibility:(id)arg1 error:(id *)arg2;
 + (BOOL)configureSEExpressApplets:(id)arg1 transceiver:(id)arg2 seHasActivatedApplets:(char *)arg3 skipAllActivations:(BOOL)arg4 error:(id *)arg5;
 + (BOOL)configureSEExpressApplets:(id)arg1 transceiver:(id)arg2 error:(id *)arg3;

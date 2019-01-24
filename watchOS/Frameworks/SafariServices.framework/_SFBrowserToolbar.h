@@ -6,22 +6,17 @@
 
 #import <SafariServices/_SFToolbar.h>
 
-#import <SafariServices/_SFBarRegistrationObserving-Protocol.h>
-
-@class NSString;
-@protocol _SFBarRegistrationToken, _SFBrowserToolbarDataSource;
+@protocol _SFBrowserToolbarDataSource;
 
 __attribute__((visibility("hidden")))
-@interface _SFBrowserToolbar : _SFToolbar <_SFBarRegistrationObserving>
+@interface _SFBrowserToolbar : _SFToolbar
 {
-    id <_SFBarRegistrationToken> _barRegistration;
     id <_SFBrowserToolbarDataSource> _dataSource;
 }
 
 @property(nonatomic) __weak id <_SFBrowserToolbarDataSource> dataSource; // @synthesize dataSource=_dataSource;
 - (void).cxx_destruct;
 - (void)didCompleteBarRegistrationWithToken:(id)arg1;
-- (id)popoverSourceInfoForBarItem:(int)arg1;
 - (float)_contentMargin;
 - (float)URLFieldHorizontalMargin;
 @property(readonly, nonatomic) float differenceBetweenWidthsOfLeadingAndTrailingItems;
@@ -30,12 +25,6 @@ __attribute__((visibility("hidden")))
 - (void)layoutSubviews;
 - (_Bool)isMinibar;
 - (id)_toolbarItems;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
 
 @end
 

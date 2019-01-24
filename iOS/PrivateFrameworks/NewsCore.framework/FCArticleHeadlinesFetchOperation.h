@@ -13,7 +13,6 @@
 {
     _Bool _overrideArticleCachePolicy;
     _Bool _overrideTagCachePolicy;
-    _Bool _allowRecordChainFetch;
     _Bool _shouldFilterHeadlinesWithoutSourceChannels;
     id <FCCoreConfiguration> _configuration;
     unsigned long long _articleCachePolicy;
@@ -33,7 +32,6 @@
 @property(retain, nonatomic) NSArray *articleIDs; // @synthesize articleIDs=_articleIDs;
 @property(retain, nonatomic) id <FCContentContext> context; // @synthesize context=_context;
 @property(nonatomic) _Bool shouldFilterHeadlinesWithoutSourceChannels; // @synthesize shouldFilterHeadlinesWithoutSourceChannels=_shouldFilterHeadlinesWithoutSourceChannels;
-@property(nonatomic) _Bool allowRecordChainFetch; // @synthesize allowRecordChainFetch=_allowRecordChainFetch;
 @property double tagMaximumCachedAge; // @synthesize tagMaximumCachedAge=_tagMaximumCachedAge;
 @property unsigned long long tagCachePolicy; // @synthesize tagCachePolicy=_tagCachePolicy;
 @property _Bool overrideTagCachePolicy; // @synthesize overrideTagCachePolicy=_overrideTagCachePolicy;
@@ -43,12 +41,9 @@
 @property(copy, nonatomic) id <FCCoreConfiguration> configuration; // @synthesize configuration=_configuration;
 - (void).cxx_destruct;
 - (id)completeFetchOperation;
-- (id)fetchArticleAndTagRecordsWithCompletion:(CDUnknownBlockType)arg1;
-- (id)fetchTagRecordsWithCompletion:(CDUnknownBlockType)arg1;
-- (id)fetchArticleRecordsWithCompletion:(CDUnknownBlockType)arg1;
+- (id)fetchRecordsWithCompletion:(CDUnknownBlockType)arg1;
 - (id)fetchConfigWithCompletion:(CDUnknownBlockType)arg1;
 - (id)determineAppropriateFetchStepsWithCompletion:(CDUnknownBlockType)arg1;
-- (void)customizeChildOperation:(id)arg1 forFetchStep:(SEL)arg2;
 - (id)initWithContext:(id)arg1 articleIDs:(id)arg2 ignoreCacheForArticleIDs:(id)arg3;
 - (id)init;
 

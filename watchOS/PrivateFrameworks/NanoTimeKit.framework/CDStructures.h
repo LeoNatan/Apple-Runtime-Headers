@@ -136,7 +136,7 @@ struct NTKLabelPosition {
 
 struct NUProgram {
     unsigned int program;
-    int uniforms[12];
+    int uniforms[13];
 };
 
 struct RingLayout {

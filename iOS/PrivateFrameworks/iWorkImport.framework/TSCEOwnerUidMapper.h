@@ -9,7 +9,6 @@
 __attribute__((visibility("hidden")))
 @interface TSCEOwnerUidMapper : TSKSosBase
 {
-    UUIDMap_b66c2694 _uidMap;
     UUIDData_5fbc143e _tableUid;
     UUIDData_5fbc143e _nextTableUid;
     UUIDData_5fbc143e _hiddenStateForRowsOwnerUid;
@@ -30,6 +29,7 @@ __attribute__((visibility("hidden")))
     UUIDData_5fbc143e _nextCategoryAggregatesOwnerUid;
     UUIDData_5fbc143e _groupByUid;
     UUIDData_5fbc143e _nextGroupByUid;
+    UUIDMap_b66c2694 _uidMap;
     UUIDData_5fbc143e _pbTableUid;
 }
 
@@ -56,8 +56,8 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) UUIDData_5fbc143e tableUID; // @synthesize tableUID=_tableUid;
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (void)saveToArchive:(struct OwnerUIDMapperArchive *)arg1;
-- (id)initWithArchive:(const struct OwnerUIDMapperArchive *)arg1;
+-     // Error parsing type: v24@0:8^{OwnerUIDMapperArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{UUID}^{UUID}^{UUID}^{UUID}^{UUID}^{UUID}^{UUID}^{UUID}^{UUID}^{UUID}^{UUID}^{UUID}^{UUID}^{UUID}^{UUID}^{UUID}^{UUID}^{UUID}^{UUID}^{UUID}}16, name: saveToArchive:
+-     // Error parsing type: @24@0:8r^{OwnerUIDMapperArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{UUID}^{UUID}^{UUID}^{UUID}^{UUID}^{UUID}^{UUID}^{UUID}^{UUID}^{UUID}^{UUID}^{UUID}^{UUID}^{UUID}^{UUID}^{UUID}^{UUID}^{UUID}^{UUID}^{UUID}}16, name: initWithArchive:
 - (const UUIDMap_b66c2694 *)ownerUIDMap;
 - (id)description;
 - (id)makeInverse;

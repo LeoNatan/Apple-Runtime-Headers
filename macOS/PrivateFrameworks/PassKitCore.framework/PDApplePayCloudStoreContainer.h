@@ -53,6 +53,7 @@
 - (BOOL)canInitializeContainer;
 - (id)allRecordNamesAssociatedWithRecordName:(id)arg1 inZone:(id)arg2;
 - (id)recordTypeForRecordID:(id)arg1;
+- (void)invalidateCloudStoreIfPossibleWithOperationGroupNameSuffix:(id)arg1;
 - (id)initWithDataSource:(id)arg1 transactionProcessor:(id)arg2 paymentWebService:(id)arg3;
 
 @end

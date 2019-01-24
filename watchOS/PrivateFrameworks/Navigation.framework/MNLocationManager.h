@@ -17,8 +17,8 @@
     unsigned int _locationProviderType;
     id <MNLocationProvider> _locationProvider;
     id <MNLocationRecorder> _locationRecorder;
-    NSBundle *_effectiveBundle;
     NSString *_effectiveBundleIdentifier;
+    NSBundle *_effectiveBundle;
     NSHashTable *_locationObservers;
     NSHashTable *_locationListeners;
     NSHashTable *_headingObservers;

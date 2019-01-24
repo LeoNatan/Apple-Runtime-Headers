@@ -25,6 +25,10 @@
 - (void)adjustVolumeValue:(float)arg1;
 
 @optional
+- (void)endDecreasingRelativeVolume;
+- (void)beginDecreasingRelativeVolume;
+- (void)endIncreasingRelativeVolume;
+- (void)beginIncreasingRelativeVolume;
 - (void)reloadWarning;
 @end
 

@@ -6,15 +6,19 @@
 
 #import <Silex/NSObject-Protocol.h>
 
-@class NSArray, NSString, SXComponentTextRules, SXComponentTextStyle, SXDocumentController, SXTextResizer, SXTextSource;
+@class NSArray, NSString, SXComponentTextRules, SXTextResizer, SXTextSource;
+@protocol SXComponentTextStyle, SXTextStyle;
 
 @protocol SXTextSourceDataSource <NSObject>
+- (id <SXTextStyle>)linkStyleForTextSource:(SXTextSource *)arg1;
+- (id <SXTextStyle>)textStyleForIdentifier:(NSString *)arg1;
+- (NSArray *)defaultComponentTextStylesForTextSource:(SXTextSource *)arg1;
+- (id <SXComponentTextStyle>)defaultComponentTextStyleForTextSource:(SXTextSource *)arg1;
+- (id <SXComponentTextStyle>)componentTextStyleForTextSource:(SXTextSource *)arg1 inheritingFromDefaultStyles:(_Bool)arg2;
 - (NSString *)contentSizeCategoryForTextSource:(SXTextSource *)arg1;
-- (SXComponentTextStyle *)textStyleForTextSource:(SXTextSource *)arg1;
 - (NSArray *)inlineTextStylesForTextSource:(SXTextSource *)arg1;
 - (NSArray *)additionsForTextSource:(SXTextSource *)arg1;
 - (SXComponentTextRules *)textRulesForTextSource:(SXTextSource *)arg1;
 - (SXTextResizer *)textResizerForTextSource:(SXTextSource *)arg1;
-- (SXDocumentController *)documentControllerForTextSource:(SXTextSource *)arg1;
 @end
 

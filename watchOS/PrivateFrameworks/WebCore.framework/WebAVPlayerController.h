@@ -16,6 +16,7 @@ __attribute__((visibility("hidden")))
     _Bool _pictureInPictureInterrupted;
     _Bool _muted;
     _Bool _liveStreamEventModePossible;
+    _Bool _isScrubbing;
     _Bool _canScanBackward;
     _Bool _canPlay;
     _Bool _canPause;
@@ -93,7 +94,6 @@ __attribute__((visibility("hidden")))
 @property struct PlaybackSessionInterfaceAVKit *playbackSessionInterface; // @synthesize playbackSessionInterface=_playbackSessionInterface;
 @property struct PlaybackSessionModel *delegate; // @synthesize delegate=_delegate;
 @property(retain) AVPlayerController *playerControllerProxy; // @synthesize playerControllerProxy=_playerControllerProxy;
-- (void)resetMediaState;
 - (_Bool)hasSeekableLiveStreamingContent;
 - (void)updateMinMaxTiming;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
@@ -119,6 +119,7 @@ __attribute__((visibility("hidden")))
 - (void)endScanningForward:(id)arg1;
 - (void)beginScanningForward:(id)arg1;
 @property(readonly) _Bool canScanForward;
+@property(readonly) _Bool isScrubbing;
 - (void)gotoEndOfSeekableRanges:(id)arg1;
 - (void)skipBackwardThirtySeconds:(id)arg1;
 @property(readonly) double minTime;

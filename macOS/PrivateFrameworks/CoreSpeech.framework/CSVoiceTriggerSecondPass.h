@@ -14,11 +14,12 @@
 #import <CoreSpeech/CSSpeechManagerDelegate-Protocol.h>
 #import <CoreSpeech/CSVoiceTriggerEnabledMonitorDelegate-Protocol.h>
 #import <CoreSpeech/CSVoiceTriggerFirstPassDelegate-Protocol.h>
+#import <CoreSpeech/CSVoiceTriggerFirstPassJarvisDelegate-Protocol.h>
 
 @class CSAsset, CSAudioCircularBuffer, CSKeywordAnalyzerNDAPI, CSKeywordAnalyzerNDEAPI, CSKeywordAnalyzerQuasar, CSPlainAudioFileWriter, CSSpeakerDetectorNDAPI, CSSpeakerModel, CSSpeechManager, NSData, NSDictionary, NSString;
 @protocol CSVoiceTriggerDelegate, OS_dispatch_queue;
 
-@interface CSVoiceTriggerSecondPass : NSObject <CSKeywordAnalyzerNDAPIScoreDelegate, CSKeywordAnalyzerNDEAPIScoreDelegate, CSSpeakerDetectorNDAPIDelegate, CSKeywordAnalyzerQuasarScoreDelegate, CSVoiceTriggerEnabledMonitorDelegate, CSAudioServerCrashMonitorGibraltarDelegate, CSSpeechManagerDelegate, CSVoiceTriggerFirstPassDelegate>
+@interface CSVoiceTriggerSecondPass : NSObject <CSKeywordAnalyzerNDAPIScoreDelegate, CSKeywordAnalyzerNDEAPIScoreDelegate, CSSpeakerDetectorNDAPIDelegate, CSKeywordAnalyzerQuasarScoreDelegate, CSVoiceTriggerEnabledMonitorDelegate, CSAudioServerCrashMonitorGibraltarDelegate, CSSpeechManagerDelegate, CSVoiceTriggerFirstPassDelegate, CSVoiceTriggerFirstPassJarvisDelegate>
 {
     BOOL _hasReceivedNDEAPIResult;
     BOOL _useSAT;
@@ -26,14 +27,19 @@
     BOOL _isRunningRecognizer;
     BOOL _recognizerResultPending;
     BOOL _hasTriggerCandidate;
+    BOOL _isStartSampleCountMarked;
+    BOOL _secondPassHasMadeDecision;
+    float _referenceKeywordThreshold;
     float _keywordThreshold;
     float _keywordLoggingThreshold;
     float _lastScore;
     float _recognizerScore;
     float _recognizerScoreScaleFactor;
+    float _recognizerThresholdOffset;
     float _firstPassChannelSelectionDelaySeconds;
     float _firstPassMasterChannelScoreBoost;
     float _firstPassOnsetScore;
+    float _twoShotFeedbackDelay;
     CSSpeechManager *_speechManager;
     id <CSVoiceTriggerDelegate> _delegate;
     NSObject<OS_dispatch_queue> *_queue;
@@ -45,6 +51,7 @@
     CSSpeakerModel *_speakerModel;
     unsigned long long _secondPassTimeout;
     unsigned long long _numProcessedSamples;
+    unsigned long long _numAnalyzedSamples;
     unsigned long long _extraSamplesAtStart;
     unsigned long long _analyzerPrependingSamples;
     unsigned long long _analyzerTrailingSamples;
@@ -60,6 +67,7 @@
     unsigned long long _firstPassTriggerFireSampleCount;
     NSDictionary *_firstPassChannelSelectionScores;
     unsigned long long _firstPassOnsetChannel;
+    unsigned long long _secondPassAnalyzerStartSampleCount;
     unsigned long long _secondPassTriggerMachAbsTime;
     NSObject<OS_dispatch_queue> *_stateSerialQueue;
     double _lastAggTime;
@@ -75,7 +83,9 @@
 + (id)timeStampString;
 + (id)secondPassAudioLogDirectory;
 + (id)secondPassAudioLoggingFilePath;
+@property(nonatomic) BOOL secondPassHasMadeDecision; // @synthesize secondPassHasMadeDecision=_secondPassHasMadeDecision;
 @property(retain, nonatomic) CSPlainAudioFileWriter *audioFileWriter; // @synthesize audioFileWriter=_audioFileWriter;
+@property(nonatomic) float twoShotFeedbackDelay; // @synthesize twoShotFeedbackDelay=_twoShotFeedbackDelay;
 @property(retain, nonatomic) NSString *firstPassDeviceID; // @synthesize firstPassDeviceID=_firstPassDeviceID;
 @property(nonatomic) unsigned long long firstPassSource; // @synthesize firstPassSource=_firstPassSource;
 @property(nonatomic) __weak CSAudioCircularBuffer *audioBuffer; // @synthesize audioBuffer=_audioBuffer;
@@ -85,6 +95,8 @@
 @property(nonatomic) double lastAggTime; // @synthesize lastAggTime=_lastAggTime;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *stateSerialQueue; // @synthesize stateSerialQueue=_stateSerialQueue;
 @property(nonatomic) unsigned long long secondPassTriggerMachAbsTime; // @synthesize secondPassTriggerMachAbsTime=_secondPassTriggerMachAbsTime;
+@property(nonatomic) unsigned long long secondPassAnalyzerStartSampleCount; // @synthesize secondPassAnalyzerStartSampleCount=_secondPassAnalyzerStartSampleCount;
+@property(nonatomic) BOOL isStartSampleCountMarked; // @synthesize isStartSampleCountMarked=_isStartSampleCountMarked;
 @property(nonatomic) BOOL hasTriggerCandidate; // @synthesize hasTriggerCandidate=_hasTriggerCandidate;
 @property(nonatomic) unsigned long long firstPassOnsetChannel; // @synthesize firstPassOnsetChannel=_firstPassOnsetChannel;
 @property(nonatomic) float firstPassOnsetScore; // @synthesize firstPassOnsetScore=_firstPassOnsetScore;
@@ -98,6 +110,7 @@
 @property(nonatomic) unsigned long long activeChannel; // @synthesize activeChannel=_activeChannel;
 @property(nonatomic) unsigned long long earlyDetectFiredMachTime; // @synthesize earlyDetectFiredMachTime=_earlyDetectFiredMachTime;
 @property(nonatomic) unsigned long long recognizerWaitSamples; // @synthesize recognizerWaitSamples=_recognizerWaitSamples;
+@property(nonatomic) float recognizerThresholdOffset; // @synthesize recognizerThresholdOffset=_recognizerThresholdOffset;
 @property(nonatomic) float recognizerScoreScaleFactor; // @synthesize recognizerScoreScaleFactor=_recognizerScoreScaleFactor;
 @property(nonatomic) BOOL recognizerResultPending; // @synthesize recognizerResultPending=_recognizerResultPending;
 @property(nonatomic) BOOL isRunningRecognizer; // @synthesize isRunningRecognizer=_isRunningRecognizer;
@@ -113,6 +126,8 @@
 @property(nonatomic) float lastScore; // @synthesize lastScore=_lastScore;
 @property(nonatomic) float keywordLoggingThreshold; // @synthesize keywordLoggingThreshold=_keywordLoggingThreshold;
 @property(nonatomic) float keywordThreshold; // @synthesize keywordThreshold=_keywordThreshold;
+@property(nonatomic) float referenceKeywordThreshold; // @synthesize referenceKeywordThreshold=_referenceKeywordThreshold;
+@property(nonatomic) unsigned long long numAnalyzedSamples; // @synthesize numAnalyzedSamples=_numAnalyzedSamples;
 @property(nonatomic) unsigned long long numProcessedSamples; // @synthesize numProcessedSamples=_numProcessedSamples;
 @property(nonatomic) unsigned long long secondPassTimeout; // @synthesize secondPassTimeout=_secondPassTimeout;
 @property(nonatomic) BOOL hasReceivedNDEAPIResult; // @synthesize hasReceivedNDEAPIResult=_hasReceivedNDEAPIResult;
@@ -126,6 +141,8 @@
 @property(nonatomic) __weak id <CSVoiceTriggerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak CSSpeechManager *speechManager; // @synthesize speechManager=_speechManager;
 - (void).cxx_destruct;
+- (void)_setStartAnalyzeTime:(unsigned long long)arg1;
+- (void)_resetStartAnalyzeTime;
 - (void)handleServerDidRestart;
 - (void)mediaserverdDidRestart;
 - (void)activationEventNotifier:(id)arg1 event:(id)arg2 completion:(CDUnknownBlockType)arg3;
@@ -145,8 +162,10 @@
 - (void)speechManagerRecordBufferAvailable:(id)arg1 buffer:(id)arg2;
 - (void)_notifySecondPassReject;
 - (void)speechManagerLPCMRecordBufferAvailable:(id)arg1 chunk:(id)arg2;
+- (void)voiceTriggerFristPassJarvis:(id)arg1 didDetectKeyword:(id)arg2 deviceId:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)voiceTriggerFirstPass:(id)arg1 from:(unsigned long long)arg2 didDetectKeyword:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)_voiceTriggerFirstPassDidDetectKeywordFrom:(unsigned long long)arg1 deviceId:(id)arg2 firstPassInfo:(id)arg3 completion:(CDUnknownBlockType)arg4;
+- (void)_handleVoiceTriggerFirstPassFromJarvis:(unsigned long long)arg1 deviceId:(id)arg2 firstPassInfo:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)_handleVoiceTriggerFirstPassFromAP:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_clearTriggerCandidate;
 - (void)_setAsset:(id)arg1;

@@ -11,7 +11,7 @@ __attribute__((visibility("hidden")))
 {
 }
 
-+ (id)semanticIdentifierForParticipantWithEmailAddress:(id)arg1 phoneNumber:(id)arg2 URL:(id)arg3 displayName:(id)arg4 firstName:(id)arg5 lastName:(id)arg6;
++ (id)semanticIdentifierForParticipant:(id)arg1;
 
 @end
 

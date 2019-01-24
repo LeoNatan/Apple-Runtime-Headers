@@ -6,7 +6,9 @@
 
 #import <objc/NSObject.h>
 
-@interface FCCachePolicy : NSObject
+#import <NewsCore/NSCopying-Protocol.h>
+
+@interface FCCachePolicy : NSObject <NSCopying>
 {
     unsigned long long _cachePolicy;
     double _maximumCachedAge;
@@ -18,6 +20,7 @@
 + (id)defaultCachePolicy;
 @property(nonatomic) double maximumCachedAge; // @synthesize maximumCachedAge=_maximumCachedAge;
 @property(nonatomic) unsigned long long cachePolicy; // @synthesize cachePolicy=_cachePolicy;
+- (id)copyWithZone:(struct _NSZone *)arg1;
 
 @end
 

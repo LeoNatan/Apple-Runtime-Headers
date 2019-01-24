@@ -7,11 +7,11 @@
 #import <objc/NSObject.h>
 
 @class UIView;
-@protocol PKPGSVSectionSubheaderView;
+@protocol PKPGSVSectionHeaderView, PKPGSVSectionSubheaderView;
 
 @interface PKPGSVSectionHeaderContext : NSObject
 {
-    UIView *_headerView;
+    UIView<PKPGSVSectionHeaderView> *_headerView;
     UIView<PKPGSVSectionSubheaderView> *_subheaderView;
     struct UIEdgeInsets _headerMargins;
     struct UIEdgeInsets _subheaderMargins;
@@ -21,7 +21,7 @@
 @property(nonatomic) struct UIEdgeInsets subheaderMargins; // @synthesize subheaderMargins=_subheaderMargins;
 @property(readonly, nonatomic) UIView<PKPGSVSectionSubheaderView> *subheaderView; // @synthesize subheaderView=_subheaderView;
 @property(nonatomic) struct UIEdgeInsets headerMargins; // @synthesize headerMargins=_headerMargins;
-@property(readonly, nonatomic) UIView *headerView; // @synthesize headerView=_headerView;
+@property(readonly, nonatomic) UIView<PKPGSVSectionHeaderView> *headerView; // @synthesize headerView=_headerView;
 - (void).cxx_destruct;
 @property(readonly, nonatomic) double headerHeight;
 @property(readonly, nonatomic) double totalHeight;

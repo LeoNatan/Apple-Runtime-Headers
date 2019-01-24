@@ -6,7 +6,7 @@
 
 #import <Safari/NSObject-Protocol.h>
 
-@class NSArray, NSString, NSURL;
+@class BookmarksUndoController, NSArray, NSString, NSURL;
 
 @protocol BookmarkItem <NSObject>
 @property(readonly, nonatomic) long long preferredIconType;
@@ -17,6 +17,6 @@
 @optional
 @property(readonly, nonatomic) NSURL *url;
 @property(readonly, nonatomic) NSArray *leafChildren;
-- (void)setTitleWithUndo:(NSString *)arg1;
+- (void)setTitle:(NSString *)arg1 usingUndoController:(BookmarksUndoController *)arg2;
 @end
 

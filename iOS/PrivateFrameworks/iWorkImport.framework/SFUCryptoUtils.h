@@ -29,7 +29,6 @@ __attribute__((visibility("hidden")))
 + (id)hashForPassphrase:(id)arg1 withSalt:(id)arg2;
 + (id)generateRandomSaltWithLength:(unsigned long long)arg1;
 + (id)generateRandomSalt;
-+ (_Bool)generateRandomDataInBuffer:(char *)arg1 length:(unsigned long long)arg2;
 
 @end
 

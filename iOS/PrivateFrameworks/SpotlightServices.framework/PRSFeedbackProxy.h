@@ -19,6 +19,7 @@
 - (void).cxx_destruct;
 - (void)didEngageSection:(id)arg1;
 - (void)didGradeResultRelevancy:(id)arg1;
+- (void)didReportUserResponseFeedback:(id)arg1;
 - (void)reportFeedback:(id)arg1 queryId:(long long)arg2;
 - (void)cardViewDidAppear:(id)arg1;
 - (void)sectionHeaderDidBecomeVisible:(id)arg1;

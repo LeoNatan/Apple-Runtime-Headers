@@ -19,8 +19,7 @@
 @property(readonly, nonatomic) _SFPrintController *printController; // @synthesize printController=_printController;
 - (void).cxx_destruct;
 - (id)item;
-- (void)dealloc;
-- (id)initWithPrintController:(id)arg1;
+- (id)initWithPrintController:(id)arg1 webView:(id)arg2;
 
 @end
 

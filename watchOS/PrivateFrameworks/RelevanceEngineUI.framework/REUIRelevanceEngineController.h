@@ -55,6 +55,7 @@
 - (void)relevanceEngine:(id)arg1 didRemoveElement:(id)arg2 atPath:(id)arg3;
 - (void)relevanceEngine:(id)arg1 didReloadElement:(id)arg2 atPath:(id)arg3;
 - (void)relevanceEngine:(id)arg1 performBatchUpdateBlock:(CDUnknownBlockType)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)_updateMetrics;
 - (void)_performOperations:(id)arg1 toSection:(unsigned int)arg2;
 - (void)_performBatchUpdateUsingBlock:(CDUnknownBlockType)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_performOrEnqueueOperation:(id)arg1;

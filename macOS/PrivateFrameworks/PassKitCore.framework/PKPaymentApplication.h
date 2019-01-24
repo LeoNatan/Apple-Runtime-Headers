@@ -19,6 +19,7 @@
     BOOL _requiresDeferredAuthorization;
     BOOL _inAppPINRequired;
     BOOL _auxiliary;
+    BOOL _supportsInstantFundsIn;
     NSString *_dpanIdentifier;
     NSString *_dpanSuffix;
     NSString *_sanitizedDPAN;
@@ -38,12 +39,15 @@
     long long _inAppPriority;
     NSString *_appletDataFormat;
     PKTransitPassProperties *_transitProperties;
+    NSArray *_supportedTransitNetworkIdentifiers;
 }
 
 + (BOOL)supportsSecureCoding;
 + (id)applicationWithProtobuf:(id)arg1;
+@property(copy, nonatomic) NSArray *supportedTransitNetworkIdentifiers; // @synthesize supportedTransitNetworkIdentifiers=_supportedTransitNetworkIdentifiers;
 @property(copy, nonatomic) PKTransitPassProperties *transitProperties; // @synthesize transitProperties=_transitProperties;
 @property(copy, nonatomic) NSString *appletDataFormat; // @synthesize appletDataFormat=_appletDataFormat;
+@property(nonatomic) BOOL supportsInstantFundsIn; // @synthesize supportsInstantFundsIn=_supportsInstantFundsIn;
 @property(nonatomic) long long inAppPriority; // @synthesize inAppPriority=_inAppPriority;
 @property(nonatomic) long long contactlessPriority; // @synthesize contactlessPriority=_contactlessPriority;
 @property(nonatomic, getter=isAuxiliary) BOOL auxiliary; // @synthesize auxiliary=_auxiliary;
@@ -69,6 +73,7 @@
 @property(copy, nonatomic, setter=setDPANIdentifier:) NSString *dpanIdentifier; // @synthesize dpanIdentifier=_dpanIdentifier;
 - (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *stationCodeProvider;
+@property(readonly, nonatomic) BOOL supportsTransitHistory;
 @property(readonly, nonatomic) BOOL generatesLocalTransactions;
 @property(readonly, nonatomic, getter=isParsedTransitApplication) BOOL parsedTransitApplication;
 @property(readonly, nonatomic) BOOL supportsExpressSuica;

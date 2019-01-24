@@ -46,6 +46,11 @@
 - (void)initializeVolume;
 - (void)adjustVolumeValue:(float)arg1;
 - (void)reload;
+- (void)_sendVolumeButtonEventWithUsagePage:(unsigned int)arg1 usage:(unsigned int)arg2 down:(_Bool)arg3;
+- (void)endIncreasingRelativeVolume;
+- (void)beginIncreasingRelativeVolume;
+- (void)endDecreasingRelativeVolume;
+- (void)beginDecreasingRelativeVolume;
 - (void)_setPendingVolumeIfNeeded;
 @property(readonly, copy, nonatomic) NSString *volumeControlLabel;
 @property(readonly, nonatomic) _Bool applicationShouldOverrideHardwareVolumeBehavior;

@@ -31,15 +31,16 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) id <ReaderBundlePageMessageReceiver> readerBundlePageMessageReceiver;
 - (id)presentingBrowserViewController;
 - (id)tabContentView;
-- (id)accessibilityAttributeValue:(id)arg1;
+- (id)accessibilityWindow;
+- (id)accessibilityParent;
 - (void)scrollWheel:(id)arg1;
 - (BOOL)handleScrollEventAsSwipeGesture:(id)arg1;
 @property(readonly, nonatomic) ReaderViewController *readerViewController;
 - (struct ReaderController *)_readerController;
 - (void)dealloc;
 - (void)invalidate;
-- (id)initWithReaderViewController:(id)arg1 configurationRef:(struct OpaqueWKPageConfiguration *)arg2;
-- (id)initWithWebViewController:(id)arg1 configurationRef:(struct OpaqueWKPageConfiguration *)arg2;
+- (id)initWithReaderViewController:(id)arg1 configuration:(id)arg2;
+- (id)initWithWebViewController:(id)arg1 configuration:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

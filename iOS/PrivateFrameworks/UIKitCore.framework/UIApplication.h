@@ -174,7 +174,6 @@
 + (_Bool)_isRunningWithFixedMainThreadPriority;
 + (long long)_classicMode;
 + (void)_screensHaveConnected;
-+ (_Bool)_shouldForceClassicForExtensions;
 + (_Bool)_shouldBigify;
 + (id)stringForInterfaceOrientation:(long long)arg1;
 + (long long)interfaceOrientationForString:(id)arg1;

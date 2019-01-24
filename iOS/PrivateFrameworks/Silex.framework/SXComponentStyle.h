@@ -6,23 +6,33 @@
 
 #import <Silex/SXJSONObject.h>
 
-@class SXBorder, SXDataTableStyle, SXFill, SXShadow, UIColor;
+#import <Silex/SXComponentStyle-Protocol.h>
 
-@interface SXComponentStyle : SXJSONObject
+@class NSString, SXBorder, SXComponentMask, SXDataTableStyle, SXFill, SXJSONArray, SXShadow, UIColor;
+
+@interface SXComponentStyle : SXJSONObject <SXComponentStyle>
 {
 }
 
++ (CDUnknownBlockType)valueClassBlockForPropertyWithName:(id)arg1;
 @property(readonly, nonatomic) unsigned long long traits;
+- (id)maskWithValue:(id)arg1 withType:(int)arg2;
 - (id)fillWithValue:(id)arg1 withType:(int)arg2;
 
 // Remaining properties
 @property(readonly, nonatomic) UIColor *backgroundColor; // @dynamic backgroundColor;
 @property(readonly, nonatomic) SXBorder *border; // @dynamic border;
+@property(readonly, nonatomic) SXJSONArray *conditional; // @dynamic conditional;
 @property(readonly, nonatomic) double cornerRadius; // @dynamic cornerRadius;
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
 @property(readonly, nonatomic) SXFill *fill; // @dynamic fill;
-@property(readonly, nonatomic) UIColor *fullscreenBackgroundColor; // @dynamic fullscreenBackgroundColor;
+@property(readonly) unsigned long long hash;
+@property(readonly, nonatomic) NSString *identifier; // @dynamic identifier;
+@property(readonly, nonatomic) SXComponentMask *mask; // @dynamic mask;
 @property(readonly, nonatomic) double opacity; // @dynamic opacity;
 @property(readonly, nonatomic) SXShadow *shadow; // @dynamic shadow;
+@property(readonly) Class superclass;
 @property(readonly, nonatomic) SXDataTableStyle *tableStyle; // @dynamic tableStyle;
 
 @end

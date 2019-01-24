@@ -54,6 +54,7 @@
     _Bool _bypassAuthenticator;
     double _keyboardHeight;
     _Bool _isPad;
+    _Bool _isAMPPayment;
     _Bool _needsFinalCallback;
     long long _preferencesStyle;
     struct __IOHIDEventSystemClient *_hidSystemClient;
@@ -62,6 +63,7 @@
     _Bool _peerPaymentBalanceIsInsufficient;
     NSMutableSet *_completionHandlers;
     CNContact *_lastUnservicableAddress;
+    double _authenticatorFingerOnTime;
     _Bool _userIntentRequired;
     _Bool _shouldIgnorePhysicalButton;
     _Bool _blockingHardwareCancels;
@@ -153,6 +155,7 @@
 - (void)authorizationDidSelectShippingAddressCompleteWithUpdate:(id)arg1;
 - (void)authorizationDidSelectShippingMethodCompleteWithUpdate:(id)arg1;
 - (void)authorizationDidRequestMerchantSessionCompleteWithSession:(id)arg1 error:(id)arg2;
+- (void)authorizationDidAuthorizeCashDisbursementWithResult:(id)arg1;
 - (void)authorizationDidAuthorizePeerPaymentQuoteCompleteWithResult:(id)arg1;
 - (void)authorizationDidAuthorizePurchaseCompleteWithStatus:(long long)arg1;
 - (void)authorizationDidAuthorizePaymentCompleteWithResult:(id)arg1;

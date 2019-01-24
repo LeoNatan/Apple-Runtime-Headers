@@ -13,7 +13,7 @@
     NSKeyedArchiver *_archiver;
 }
 
-@property(retain, nonatomic) NSKeyedArchiver *archiver; // @synthesize archiver=_archiver;
+@property(readonly, nonatomic) NSKeyedArchiver *archiver; // @synthesize archiver=_archiver;
 - (void).cxx_destruct;
 - (id)encodedData;
 - (void)finishEncoding;

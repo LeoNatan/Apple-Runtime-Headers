@@ -7,6 +7,7 @@
 #import <PassKitCore/PKPass.h>
 
 @interface PKPass (PKPassUIAdditions)
+- (id)cardImageWithDimensions:(struct CGSize)arg1;
 - (id)_icon;
 - (id)_generateIcon:(id)arg1 withVariant:(int)arg2;
 - (id)mailAttachmentIcon;

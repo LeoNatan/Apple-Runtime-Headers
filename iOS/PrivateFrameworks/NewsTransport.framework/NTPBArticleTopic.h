@@ -8,26 +8,22 @@
 
 #import <NewsTransport/NSCopying-Protocol.h>
 
-@class COMAPPLEFELDSPARPROTOCOLLIVERPOOLCohort, NSString;
+@class COMAPPLEFELDSPARPROTOCOLLIVERPOOLCohortList, NSString;
 
 @interface NTPBArticleTopic : PBCodable <NSCopying>
 {
-    COMAPPLEFELDSPARPROTOCOLLIVERPOOLCohort *_cohort;
+    COMAPPLEFELDSPARPROTOCOLLIVERPOOLCohortList *_cohorts;
     NSString *_tagID;
     _Bool _isEligibleForGrouping;
     _Bool _isEligibleForGroupingIfFavorited;
     _Bool _isHidden;
-    struct {
-        unsigned int isEligibleForGrouping:1;
-        unsigned int isEligibleForGroupingIfFavorited:1;
-        unsigned int isHidden:1;
-    } _has;
+    CDStruct_d00ad9e3 _has;
 }
 
 @property(nonatomic) _Bool isEligibleForGroupingIfFavorited; // @synthesize isEligibleForGroupingIfFavorited=_isEligibleForGroupingIfFavorited;
 @property(nonatomic) _Bool isEligibleForGrouping; // @synthesize isEligibleForGrouping=_isEligibleForGrouping;
 @property(nonatomic) _Bool isHidden; // @synthesize isHidden=_isHidden;
-@property(retain, nonatomic) COMAPPLEFELDSPARPROTOCOLLIVERPOOLCohort *cohort; // @synthesize cohort=_cohort;
+@property(retain, nonatomic) COMAPPLEFELDSPARPROTOCOLLIVERPOOLCohortList *cohorts; // @synthesize cohorts=_cohorts;
 @property(retain, nonatomic) NSString *tagID; // @synthesize tagID=_tagID;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -40,7 +36,7 @@
 @property(nonatomic) _Bool hasIsEligibleForGroupingIfFavorited;
 @property(nonatomic) _Bool hasIsEligibleForGrouping;
 @property(nonatomic) _Bool hasIsHidden;
-@property(readonly, nonatomic) _Bool hasCohort;
+@property(readonly, nonatomic) _Bool hasCohorts;
 @property(readonly, nonatomic) _Bool hasTagID;
 - (void)dealloc;
 

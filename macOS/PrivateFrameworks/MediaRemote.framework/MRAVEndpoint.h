@@ -33,6 +33,7 @@ __attribute__((visibility("hidden")))
 - (void)_callAllCompletionHandlersWithError:(id)arg1;
 - (void)_externalDeviceConnectionStateDidChangeNotification:(id)arg1;
 - (void)_requestSharedAudioPresentationOutputContextModificationWithAddingDevices:(id)arg1 removingDevices:(id)arg2 settingDevices:(id)arg3 replyQueue:(id)arg4 completion:(CDUnknownBlockType)arg5;
+- (BOOL)effectivelyEqual:(id)arg1;
 - (id)outputDeviceUIDsMatchingPredicate:(CDUnknownBlockType)arg1;
 - (id)outputDevicesMatchingPredicate:(CDUnknownBlockType)arg1;
 - (void)removeOutputDeviceFromParentGroup:(id)arg1 queue:(id)arg2 completion:(CDUnknownBlockType)arg3;

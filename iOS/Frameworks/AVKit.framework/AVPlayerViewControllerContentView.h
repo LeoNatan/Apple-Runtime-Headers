@@ -17,6 +17,7 @@
     _Bool _canAutomaticallyZoomLetterboxVideos;
     _Bool _styleSheetShouldUseCompactFullScreenItemSize;
     _Bool _needsInitialLayout;
+    _Bool _backdropCaptureViewHidden;
     NSString *_automaticVideoGravity;
     NSString *_captureGroupName;
     _UIVisualEffectBackdropView *_captureView;
@@ -38,6 +39,7 @@
     struct CGRect _boundsForLastLayoutSubviews;
 }
 
+@property(nonatomic) _Bool backdropCaptureViewHidden; // @synthesize backdropCaptureViewHidden=_backdropCaptureViewHidden;
 @property(retain, nonatomic) AVStyleSheet *styleSheet; // @synthesize styleSheet=_styleSheet;
 @property(nonatomic) struct CGRect boundsForLastLayoutSubviews; // @synthesize boundsForLastLayoutSubviews=_boundsForLastLayoutSubviews;
 @property(copy, nonatomic) NSString *externalPlaybackIndicatorSubtitle; // @synthesize externalPlaybackIndicatorSubtitle=_externalPlaybackIndicatorSubtitle;
@@ -88,6 +90,7 @@
 - (void)setShowsUnsupportedContentIndicator:(_Bool)arg1;
 - (_Bool)isViewDescendantOfPlaybackControlsSubview:(id)arg1;
 - (void)addPlayerLayerAndContentOverlayContainerViewIfNeeded;
+- (void)updateBackdropCaptureViewHidden;
 @property(readonly, nonatomic) UIView *iAdPreRollViewIfLoaded;
 @property(readonly, nonatomic) UIView *iAdPreRollView; // @synthesize iAdPreRollView=_iAdPreRollView;
 @property(readonly, nonatomic) UIView *playerLayerAndContentOverlayContainerView;

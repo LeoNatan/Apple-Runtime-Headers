@@ -39,6 +39,9 @@
 @property(retain) IDSService *idsServiceOSX_QR; // @synthesize idsServiceOSX_QR=_idsServiceOSX_QR;
 @property BOOL idsInviteAcceptedOnScreensharingQRService; // @synthesize idsInviteAcceptedOnScreensharingQRService=_idsInviteAcceptedOnScreensharingQRService;
 @property BOOL isIOSinvitation; // @synthesize isIOSinvitation=_isIOSinvitation;
+- (void)removeIDSServiceMessageDelegate:(id)arg1;
+- (void)addIDSServiceMessageObserver:(id)arg1 forSession:(id)arg2;
+- (void)service:(id)arg1 account:(id)arg2 incomingMessage:(id)arg3 fromID:(id)arg4 context:(id)arg5;
 @property(readonly, nonatomic) IDSAccount *idsAccount;
 - (void)dnsResolverError:(id)arg1;
 - (void)dnsResolverResolvedAddress:(id)arg1 userInfo:(id)arg2;

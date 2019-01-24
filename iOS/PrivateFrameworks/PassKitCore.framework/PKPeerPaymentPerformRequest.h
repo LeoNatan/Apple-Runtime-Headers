@@ -6,7 +6,7 @@
 
 #import <PassKitCore/PKPeerPaymentWebServiceRequest.h>
 
-@class NSData, NSDictionary, NSString;
+@class NSData, NSDictionary, NSString, PKContact;
 
 @interface PKPeerPaymentPerformRequest : PKPeerPaymentWebServiceRequest
 {
@@ -14,6 +14,7 @@
     NSData *_paymentData;
     NSDictionary *_certificates;
     NSString *_recipientPhoneOrEmail;
+    PKContact *_contact;
     NSString *_pushToken;
     NSData *_signedEnrollmentDataSignature;
 }
@@ -21,6 +22,7 @@
 + (id)requestWithAuthorizedPeerPaymentQuote:(id)arg1;
 @property(copy, nonatomic) NSData *signedEnrollmentDataSignature; // @synthesize signedEnrollmentDataSignature=_signedEnrollmentDataSignature;
 @property(copy, nonatomic) NSString *pushToken; // @synthesize pushToken=_pushToken;
+@property(retain, nonatomic) PKContact *contact; // @synthesize contact=_contact;
 @property(copy, nonatomic) NSString *recipientPhoneOrEmail; // @synthesize recipientPhoneOrEmail=_recipientPhoneOrEmail;
 @property(copy, nonatomic) NSDictionary *certificates; // @synthesize certificates=_certificates;
 @property(copy, nonatomic) NSData *paymentData; // @synthesize paymentData=_paymentData;

@@ -20,6 +20,7 @@
     UIView *_cameraView;
     UIView *_cameraInstructionContainerView;
     PKCameraCaptureInstructionView *_cameraInstructionView;
+    unsigned long long _cameraCaptureStartTime;
     _Bool _hideSetupLaterButton;
     UIColor *_maskColor;
     UIColor *_maskOutlineColor;

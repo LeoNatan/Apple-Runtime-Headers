@@ -122,6 +122,7 @@
 @property(retain, nonatomic, setter=_setLocalPath:) NSString *localPath;
 @property(readonly, retain, nonatomic) NSString *permanentHighQualityLocalPath;
 @property(readonly, retain, nonatomic) NSString *temporaryHighQualityLocalPath;
+@property(readonly, nonatomic) BOOL isOpusAudioMessage;
 @property(readonly, nonatomic) BOOL isAutoloopVideo;
 @property(readonly, nonatomic) BOOL isRecipeBasedSticker;
 @property(readonly, nonatomic) BOOL existsAtLocalPath;

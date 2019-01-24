@@ -209,6 +209,9 @@
 - (_Bool)playlistExistsWithPersistentID:(unsigned long long)arg1;
 - (_Bool)itemExistsInDatabaseWithPersistentID:(unsigned long long)arg1;
 - (_Bool)itemExistsWithPersistentID:(unsigned long long)arg1;
+- (_Bool)hasUserPlaylistsContainingAppleMusicContent;
+- (_Bool)hasAddedToLibraryAppleMusicContent;
+- (_Bool)hasUserPlaylists;
 - (_Bool)hasVideoPodcasts;
 - (_Bool)hasHomeVideos;
 - (_Bool)hasTVShows;

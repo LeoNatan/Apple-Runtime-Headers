@@ -30,7 +30,7 @@ __attribute__((visibility("hidden")))
 + (id)_supplementaryControlKeyWithName:(id)arg1 context:(id)arg2;
 + (id)_supplementaryControlKeySetForOrientation:(int)arg1 context:(id)arg2;
 + (float)_derivedTrailingControlKeyWidthForRow:(unsigned int)arg1 orientation:(int)arg2;
-+ (float)_derivedLeadingControlKeyWidthForRow:(unsigned int)arg1 keysForRow:(id)arg2 orientation:(int)arg3;
++ (float)_derivedLeadingControlKeyWidthForRow:(unsigned int)arg1 keysForRow:(id)arg2 context:(id)arg3;
 + (unsigned int)_numberOfKeysInRow:(id)arg1 firstKey:(id *)arg2 lastKey:(id *)arg3;
 + (float)_keyplanePaddingForOrientation:(int)arg1;
 + (float)_totalKeyPaddingForOrientation:(int)arg1;

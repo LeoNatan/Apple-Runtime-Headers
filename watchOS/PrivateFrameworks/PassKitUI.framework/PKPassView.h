@@ -6,14 +6,13 @@
 
 #import <UIKit/UIView.h>
 
-#import <PassKitUI/PKPassFaceDelegate-Protocol.h>
 #import <PassKitUI/PKPasscodeLockManagerObserver-Protocol.h>
 #import <PassKitUI/UIGestureRecognizerDelegate-Protocol.h>
 
-@class NSString, PKPass, PKPassColorProfile, PKPassFrontFaceView, PKPasscodeLockManager, UITapGestureRecognizer;
+@class NSMutableArray, NSString, PKPass, PKPassColorProfile, PKPassFrontFaceView, PKPasscodeLockManager, UITapGestureRecognizer;
 @protocol WLCardViewDelegate;
 
-@interface PKPassView : UIView <PKPassFaceDelegate, UIGestureRecognizerDelegate, PKPasscodeLockManagerObserver>
+@interface PKPassView : UIView <UIGestureRecognizerDelegate, PKPasscodeLockManagerObserver>
 {
     PKPassFrontFaceView *_frontFace;
     PKPassColorProfile *_colorProfile;
@@ -22,6 +21,8 @@
     PKPasscodeLockManager *_passcodeLockManager;
     unsigned int _contentModeToken;
     NSString *_suppressingIdentifier;
+    NSMutableArray *_delayedAnimations;
+    _Bool _invalidated;
     _Bool _modallyPresented;
     PKPass *_pass;
     id <WLCardViewDelegate> _delegate;
@@ -43,9 +44,6 @@
 - (unsigned int)_regionsForCurrentModes;
 - (int)_frontFaceBackgroundModeForContentMode;
 - (void)_applyContentMode:(_Bool)arg1;
-- (void)passFaceInfoButtonPressed:(id)arg1;
-- (_Bool)passFaceDeleteButtonEnabled;
-- (void)passFaceDeleteButtonPressed:(id)arg1;
 - (void)passcodeLockManager:(id)arg1 didReceivePasscodeSet:(_Bool)arg2;
 - (void)_updateHighEndLayerShadowAnimated:(_Bool)arg1 withDelay:(double)arg2;
 - (void)_updateLowEndLayerShadowAnimated:(_Bool)arg1 withDelay:(double)arg2;
@@ -59,8 +57,8 @@
 - (void)setModalShadowVisibility:(float)arg1 animated:(_Bool)arg2 withDelay:(double)arg3;
 - (void)setModalShadowVisibility:(float)arg1 animated:(_Bool)arg2;
 - (void)setDimmer:(float)arg1 animated:(_Bool)arg2;
+@property(nonatomic, getter=isPaused) _Bool paused;
 @property(readonly, nonatomic) _Bool frontFaceBodyContentCreated;
-@property(readonly, nonatomic) _Bool suppressesPile;
 @property(readonly, nonatomic) _Bool isForcedFrontFaceResized;
 @property(readonly, nonatomic) _Bool isFrontFaceResized;
 @property(readonly, nonatomic) NSString *uniqueID;
@@ -77,6 +75,7 @@
 - (void)tapRecognized:(id)arg1;
 - (_Bool)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
 - (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
+- (void)invalidate;
 - (void)dealloc;
 - (id)initWithPass:(id)arg1 content:(int)arg2 suppressedContent:(unsigned int)arg3;
 - (id)initWithPass:(id)arg1 content:(int)arg2;

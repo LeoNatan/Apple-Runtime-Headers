@@ -10,7 +10,7 @@
 #import <PepperUICore/PUICTableViewDelegate-Protocol.h>
 #import <PepperUICore/RadiosPreferencesDelegate-Protocol.h>
 
-@class ArouetPrewarmer, NSArray, NSMutableArray, NSString, PUICDictationViewController, PUICQuickboardListContentUnavailableCell, PUICQuickboardListItemCell, PUICQuickboardListTrayButton, PUICTableView, PUICTableViewCell, RadiosPreferences, UIButton, UIColor, UIView;
+@class ArouetPrewarmer, NSMutableArray, NSString, PUICDictationViewController, PUICQuickboardListContentUnavailableCell, PUICQuickboardListItemCell, PUICQuickboardListTrayButton, PUICQuickboardListViewButtonsCell, PUICQuickboardListViewSpecs, PUICTableView, RadiosPreferences, UIButton, UIColor, UIView;
 @protocol PUICDictationViewControllerDelegate;
 
 @interface PUICQuickboardListViewController : PUICQuickboardViewController <PUICTableViewDelegate, PUICTableViewDataSource, RadiosPreferencesDelegate>
@@ -18,7 +18,7 @@
     PUICTableView *_tableView;
     UIView *_topAnimationBackdrop;
     UIView *_bottomAnimationBackdrop;
-    PUICTableViewCell *_trayView;
+    PUICQuickboardListViewButtonsCell *_trayView;
     int _trayViewRowCount;
     PUICQuickboardListContentUnavailableCell *_contentUnavailableCell;
     PUICQuickboardListTrayButton *_arouetButton;
@@ -26,7 +26,6 @@
     PUICDictationViewController *_dictationViewController;
     _Bool _willPresentDictationViewController;
     UIButton *_dictationButton;
-    NSArray *_cachedTrayButtons;
     RadiosPreferences *_radiosPreferences;
     NSMutableArray *_dismissedViews;
     UIView *_cachedHeaderContentView;
@@ -37,10 +36,10 @@
     PUICQuickboardListItemCell *_selectedCell;
     ArouetPrewarmer *_arouetPrewarmer;
     CDUnknownBlockType _presentationCompleteCallback;
+    PUICQuickboardListViewSpecs *_specs;
 }
 
-+ (id)dictationImage;
-+ (id)arouetImage;
+@property(retain, nonatomic) PUICQuickboardListViewSpecs *specs; // @synthesize specs=_specs;
 @property(copy, nonatomic) CDUnknownBlockType presentationCompleteCallback; // @synthesize presentationCompleteCallback=_presentationCompleteCallback;
 @property(retain, nonatomic) ArouetPrewarmer *arouetPrewarmer; // @synthesize arouetPrewarmer=_arouetPrewarmer;
 @property(retain, nonatomic) PUICQuickboardListItemCell *selectedCell; // @synthesize selectedCell=_selectedCell;
@@ -67,11 +66,8 @@
 - (id)arouetButton;
 - (_Bool)shouldEnableArouet;
 - (id)dictationButton;
-- (void)layoutButtons:(id)arg1 row:(unsigned int)arg2;
 - (void)_updateArouetButtonAvailability;
-- (void)updateTrayButtonBackgroundColors;
 - (void)setupTrayView;
-- (float)trayViewHeight;
 - (id)createAndConfigureHeaderView;
 - (void)updateContentUnavailableText;
 - (id)contentUnavailableCell;

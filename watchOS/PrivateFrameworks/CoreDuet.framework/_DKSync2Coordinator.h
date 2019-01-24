@@ -9,7 +9,7 @@
 #import <CoreDuet/APSConnectionDelegate-Protocol.h>
 #import <CoreDuet/_DKSyncRemoteKnowledgeStorageFetchDelegate-Protocol.h>
 
-@class APSConnection, NSMutableArray, NSMutableSet, NSString, NSUUID, _CDMutablePerfMetric, _CDPeriodicSchedulerJob, _DKDataProtectionStateMonitor, _DKKnowledgeStorage, _DKSync2State, _DKSyncToggle, _DKThrottledActivity;
+@class APSConnection, NSMutableArray, NSMutableSet, NSString, NSUUID, _CDMutablePerfMetric, _CDPeriodicSchedulerJob, _DKDataProtectionStateMonitor, _DKKnowledgeStorage, _DKSync2State, _DKSyncToggle, _DKSyncType, _DKThrottledActivity;
 @protocol NSObject, _DKKeyValueStore, _DKSyncLocalKnowledgeStorage, _DKSyncRemoteKnowledgeStorage;
 
 @interface _DKSync2Coordinator : NSObject <APSConnectionDelegate, _DKSyncRemoteKnowledgeStorageFetchDelegate>
@@ -141,6 +141,7 @@
 - (id)initWithStorage:(id)arg1;
 - (void)connection:(id)arg1 didReceiveIncomingMessage:(id)arg2;
 - (void)connection:(id)arg1 didReceivePublicToken:(id)arg2;
+@property(readonly, nonatomic) _DKSyncType *syncType;
 - (id)deletedEventIDsSinceDate:(id)arg1 streamNames:(id)arg2 limit:(unsigned int)arg3 endDate:(id *)arg4 error:(id *)arg5;
 - (id)sortedEventsWithCreationDateBetweenDate:(id)arg1 andDate:(id)arg2 streamNames:(id)arg3 limit:(unsigned int)arg4 fetchOrder:(int)arg5 error:(id *)arg6;
 

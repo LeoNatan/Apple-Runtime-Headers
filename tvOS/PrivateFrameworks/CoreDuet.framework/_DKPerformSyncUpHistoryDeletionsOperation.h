@@ -21,7 +21,6 @@
     struct _CDPerfEvent _perfEvent;
     NSArray *_streamNames;
     _Bool _hadDeletions;
-    NSDate *_startDate;
     NSDate *_now;
     _DKSyncHistory *_history;
     unsigned long long _batchNumber;

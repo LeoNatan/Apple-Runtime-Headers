@@ -6,18 +6,38 @@
 
 #import <objc/NSObject.h>
 
-@protocol SXTransitionDataSource;
+#import <Silex/SXTransitionDataSource-Protocol.h>
 
-@interface SXTransitionDataSourceNode : NSObject
+@class NSString, UIView;
+@protocol SXTransitionableComponentView;
+
+@interface SXTransitionDataSourceNode : NSObject <SXTransitionDataSource>
 {
-    unsigned long long _type;
-    id <SXTransitionDataSource> _transitionDataSource;
+    _Bool _usesThumbnail;
+    unsigned long long _transitionType;
+    id <SXTransitionableComponentView> _componentView;
 }
 
-+ (id)nodeWithType:(unsigned long long)arg1 dataSource:(id)arg2;
-@property(readonly, nonatomic) id <SXTransitionDataSource> transitionDataSource; // @synthesize transitionDataSource=_transitionDataSource;
-@property(readonly, nonatomic) unsigned long long type; // @synthesize type=_type;
+@property(readonly, nonatomic) _Bool usesThumbnail; // @synthesize usesThumbnail=_usesThumbnail;
+@property(readonly, nonatomic) id <SXTransitionableComponentView> componentView; // @synthesize componentView=_componentView;
+@property(readonly, nonatomic) unsigned long long transitionType; // @synthesize transitionType=_transitionType;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) _Bool isTransitionable;
+@property(readonly, nonatomic) struct CGRect transitionContentFrame;
+@property(readonly, nonatomic) struct CGRect transitionContainerFrame;
+@property(readonly, nonatomic) struct CGRect transitionVisibleFrame;
+@property(readonly, nonatomic) _Bool transitionViewUsesThumbnail;
+@property(readonly, nonatomic) _Bool transitionViewShouldFadeInContent;
+@property(readonly, nonatomic) _Bool transitionViewIsVisible;
+@property(readonly, nonatomic) UIView *transitionContentView;
+@property(readonly, nonatomic) UIView *transitionContainerView;
+- (id)initWithComponentView:(id)arg1 transitionType:(unsigned long long)arg2 usesThumbnail:(_Bool)arg3;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

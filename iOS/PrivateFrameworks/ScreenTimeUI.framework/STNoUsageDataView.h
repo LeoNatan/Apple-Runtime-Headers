@@ -6,18 +6,18 @@
 
 #import <UIKit/UIView.h>
 
-@class STUser, UILabel;
+@class UILabel;
 
 @interface STNoUsageDataView : UIView
 {
-    STUser *_user;
+    _Bool _localDevice;
     UILabel *_noDataDetailTextLabel;
 }
 
 @property(readonly, nonatomic) UILabel *noDataDetailTextLabel; // @synthesize noDataDetailTextLabel=_noDataDetailTextLabel;
-@property(retain, nonatomic) STUser *user; // @synthesize user=_user;
+@property(nonatomic, getter=isLocalDevice) _Bool localDevice; // @synthesize localDevice=_localDevice;
 - (void).cxx_destruct;
-- (id)initWithPreferredFontTextStyle:(id)arg1 isWidget:(_Bool)arg2;
+- (id)initWithPreferredFontTextStyle:(id)arg1;
 
 @end
 

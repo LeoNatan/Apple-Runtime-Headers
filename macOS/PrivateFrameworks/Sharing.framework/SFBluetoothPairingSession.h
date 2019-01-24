@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSString, WPClient;
+@class NSData, NSString, WPClient;
 @protocol OS_dispatch_queue, OS_dispatch_source, OS_os_transaction;
 
 @interface SFBluetoothPairingSession : NSObject
@@ -20,13 +20,19 @@
     NSObject<OS_os_transaction> *_transaction;
     struct LogCategory *_ucat;
     WPClient *_wpClient;
+    BOOL _guestMode;
     CDUnknownBlockType _completionHandler;
     NSString *_deviceAddress;
     NSObject<OS_dispatch_queue> *_dispatchQueue;
+    NSString *_guestAddress;
+    NSData *_guestKey;
     NSString *_name;
 }
 
 @property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
+@property(nonatomic) BOOL guestMode; // @synthesize guestMode=_guestMode;
+@property(copy, nonatomic) NSData *guestKey; // @synthesize guestKey=_guestKey;
+@property(copy, nonatomic) NSString *guestAddress; // @synthesize guestAddress=_guestAddress;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
 @property(copy, nonatomic) NSString *deviceAddress; // @synthesize deviceAddress=_deviceAddress;
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;

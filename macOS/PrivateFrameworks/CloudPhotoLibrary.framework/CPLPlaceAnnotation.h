@@ -18,7 +18,6 @@
 }
 
 + (BOOL)supportsSecureCoding;
-+ (id)placeAnnotationWithCPLPlaceAnnotationDictionary:(id)arg1;
 @property(copy, nonatomic) NSString *placeName; // @synthesize placeName=_placeName;
 @property(copy, nonatomic) NSNumber *placeLevel; // @synthesize placeLevel=_placeLevel;
 - (void).cxx_destruct;
@@ -27,7 +26,6 @@
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (id)cplPlaceAnnotationDictionary;
 
 @end
 

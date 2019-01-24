@@ -22,6 +22,7 @@ __attribute__((visibility("hidden")))
     NSMutableDictionary *_plugInIdentifierToURLsToEnableForNotInstalledPlugIns;
     WebsitesKnownToUsePlugInsController *_websitesKnownToUsePlugInsController;
     PlugInAvailabilityManager *_plugInAvailabilityManager;
+    NSString *_preferencesPersistenceBundleIdentifier;
     BOOL _needsTurnOffOffByDefaultPlugIns;
     id <ManagedPlugInsControllerDelegate> _delegate;
 }
@@ -98,8 +99,7 @@ __attribute__((visibility("hidden")))
 - (void)populateManagedPlugInsIfNecessaryUsingCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)setUpPlugInsAvailability;
 - (void)dealloc;
-- (id)init;
-- (id)initWithWebsitesKnownToUsePlugInsController:(id)arg1;
+- (id)initWithWebsitesKnownToUsePlugInsController:(id)arg1 preferencesPersistenceBundleIdentifier:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

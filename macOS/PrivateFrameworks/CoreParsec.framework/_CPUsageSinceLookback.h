@@ -16,11 +16,13 @@
     int _client;
     int _totalUsagesInCollectionPeriod;
     int _configuredLookbackTimeInDays;
+    int _activeDaysInCollectionPeriod;
     long long _collectionStartTimestamp;
     long long _collectionEndTimestamp;
     _CPDeviceContext *_context;
 }
 
+@property(nonatomic) int activeDaysInCollectionPeriod; // @synthesize activeDaysInCollectionPeriod=_activeDaysInCollectionPeriod;
 @property(nonatomic) int configuredLookbackTimeInDays; // @synthesize configuredLookbackTimeInDays=_configuredLookbackTimeInDays;
 @property(retain, nonatomic) _CPDeviceContext *context; // @synthesize context=_context;
 @property(nonatomic) int totalUsagesInCollectionPeriod; // @synthesize totalUsagesInCollectionPeriod=_totalUsagesInCollectionPeriod;

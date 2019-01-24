@@ -17,6 +17,9 @@
 @property(retain, nonatomic) NSArray *allPhoneNumbers; // @synthesize allPhoneNumbers=_allPhoneNumbers;
 @property(retain, nonatomic) CTXPCServiceSubscriptionInfo *subscriptionInfo; // @synthesize subscriptionInfo=_subscriptionInfo;
 - (void).cxx_destruct;
+- (id)__im_contactPreferredSubscriptionContextForChatHandleIDs:(id)arg1;
+- (id)_senderIdentityManager;
+- (id)__im_subscriptionContextForSenderIdentity:(id)arg1;
 - (id)__im_subscriptionContextOrDefaultForForSimID:(id)arg1 phoneNumber:(id)arg2;
 - (id)__im_subscriptionContextForForSimID:(id)arg1 phoneNumber:(id)arg2;
 - (id)__im_subscriptionContextForPhoneNumberOrDefault:(id)arg1;

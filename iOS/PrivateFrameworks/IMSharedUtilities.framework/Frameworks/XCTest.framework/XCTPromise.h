@@ -10,13 +10,17 @@
 
 @interface XCTPromise : NSObject
 {
+    // Error parsing type: {atomic_flag="_Value"AB}, name: _promiseFulfilled
     NSError *_error;
     id _value;
     XCTestExpectation *_expectation;
     NSString *_promiseDescription;
 }
 
-@property(readonly) NSString *promiseDescription; // @synthesize promiseDescription=_promiseDescription;
+// Error parsing type for property promiseFulfilled:
+// Property attributes: T{atomic_flag=AB},R,V_promiseFulfilled
+
+@property(readonly, copy) NSString *promiseDescription; // @synthesize promiseDescription=_promiseDescription;
 @property(readonly) XCTestExpectation *expectation; // @synthesize expectation=_expectation;
 @property(retain) id value; // @synthesize value=_value;
 @property(retain) NSError *error; // @synthesize error=_error;

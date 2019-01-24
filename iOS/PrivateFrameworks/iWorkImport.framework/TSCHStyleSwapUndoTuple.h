@@ -53,8 +53,8 @@ __attribute__((visibility("hidden")))
 - (id)initWithChartInfo:(id)arg1 swapType:(int)arg2 index:(unsigned long long)arg3 oldValue:(id)arg4 newValue:(id)arg5;
 - (id)initWithChartInfo:(id)arg1 swapType:(int)arg2 index:(unsigned long long)arg3 oldValue:(id)arg4 newValue:(id)arg5 refLineUUID:(id)arg6;
 - (id)p_initWithPersistentStyleSwapSupporting:(id)arg1 swapType:(int)arg2 index:(unsigned long long)arg3 oldValue:(id)arg4 newValue:(id)arg5 refLineUUID:(id)arg6;
-- (id)initWithArchive:(const struct StyleSwapUndoTupleArchive *)arg1 unarchiver:(id)arg2;
-- (void)saveToArchive:(struct StyleSwapUndoTupleArchive *)arg1 archiver:(id)arg2;
+-     // Error parsing type: @32@0:8r^{StyleSwapUndoTupleArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{Reference}^{Reference}^{Reference}^{UUID}Ii}16@24, name: initWithArchive:unarchiver:
+-     // Error parsing type: v32@0:8^{StyleSwapUndoTupleArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{Reference}^{Reference}^{Reference}^{UUID}Ii}16@24, name: saveToArchive:archiver:
 
 @end
 

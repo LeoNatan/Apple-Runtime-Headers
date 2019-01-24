@@ -47,8 +47,6 @@
 - (void)_setScale:(float)arg1 isInitial:(_Bool)arg2;
 - (id)_redirectURLs;
 - (_Bool)lastVisitWasFailure;
-- (void)_setTransientProperty:(id)arg1 forKey:(id)arg2;
-- (id)_transientPropertyForKey:(id)arg1;
 - (id)URL;
 - (id)children;
 - (void)setRSSFeedReferrer:(id)arg1;

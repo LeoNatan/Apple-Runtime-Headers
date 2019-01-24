@@ -6,9 +6,7 @@
 
 #import <iWorkImport/NSObject-Protocol.h>
 
-@class TSPComponentParser;
-
 @protocol TSPComponentParserDelegate <NSObject>
-- (_Bool)componentParser:(TSPComponentParser *)arg1 didReadArchiveInfo:(const struct ArchiveInfo *)arg2 stream:(struct DispatchDataInputStream *)arg3 error:(id *)arg4;
+-     // Error parsing type: B48@0:8@"TSPComponentParser"16r^{ArchiveInfo=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSP::MessageInfo>=^{Arena}ii^{Rep}}QB}24^{DispatchDataInputStream=^^?@QQ@Q*}32^@40, name: componentParser:didReadArchiveInfo:stream:error:
 @end
 

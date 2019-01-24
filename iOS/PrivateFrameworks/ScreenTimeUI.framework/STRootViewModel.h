@@ -10,6 +10,7 @@
 
 @interface STRootViewModel : NSObject
 {
+    _Bool _canStopScreenTimeWithoutPasscode;
     _Bool _isCloudSyncEnabled;
     NSSet *_installedBundleIDs;
     NSDictionary *_installedBundleIDsByCategoryIdentifier;
@@ -37,6 +38,7 @@
 @property(copy, nonatomic) NSDictionary *installedBundleIDsByCategoryIdentifier; // @synthesize installedBundleIDsByCategoryIdentifier=_installedBundleIDsByCategoryIdentifier;
 @property(copy, nonatomic) NSSet *installedBundleIDs; // @synthesize installedBundleIDs=_installedBundleIDs;
 @property(nonatomic) _Bool isCloudSyncEnabled; // @synthesize isCloudSyncEnabled=_isCloudSyncEnabled;
+@property(nonatomic) _Bool canStopScreenTimeWithoutPasscode; // @synthesize canStopScreenTimeWithoutPasscode=_canStopScreenTimeWithoutPasscode;
 - (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool canToggleWebsiteData;
 @property(readonly, nonatomic) _Bool forceParentalControls;

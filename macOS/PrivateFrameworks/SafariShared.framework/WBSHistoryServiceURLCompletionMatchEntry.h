@@ -6,25 +6,28 @@
 
 #import <objc/NSObject.h>
 
+#import <SafariShared/NSSecureCoding-Protocol.h>
+
 @class NSString;
 
-@interface WBSHistoryServiceURLCompletionMatchEntry : NSObject
+@interface WBSHistoryServiceURLCompletionMatchEntry : NSObject <NSSecureCoding>
 {
     unique_ptr_1250213a _streamData;
     NSString *_url;
     NSString *_title;
 }
 
++ (BOOL)supportsSecureCoding;
 - (id).cxx_construct;
 - (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *title;
 @property(readonly, nonatomic) NSString *url;
 @property(readonly, nonatomic) float topSitesScore;
-@property(readonly, nonatomic) long long visitID;
-@property(readonly, nonatomic) long long itemID;
 @property(readonly, nonatomic) struct _HistoryStreamedMatchEntry *streamData;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (id)initWithStreamData:(unique_ptr_1250213a *)arg1;
-- (id)initWithItemID:(long long)arg1 url:(id)arg2 visitID:(long long)arg3 title:(id)arg4 topSitesScore:(float)arg5;
+- (id)initWithURLString:(id)arg1 title:(id)arg2 topSitesScore:(float)arg3;
 - (id)init;
 
 @end

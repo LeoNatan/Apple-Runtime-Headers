@@ -26,7 +26,7 @@
     // Error parsing type: , name: isPipped
 }
 
-- (CDUnknownBlockType).cxx_destruct;
+- (void).cxx_destruct;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (id)accessibilityConstraintController;
 - (void)setControllerIsPipped:(_Bool)arg1;

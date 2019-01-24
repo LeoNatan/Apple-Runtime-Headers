@@ -14,7 +14,7 @@
     XCUITestContextScope *_currentScope;
 }
 
-+ (CDUnknownBlockType)defaultAsynchronousUIElementHandler;
++ (CDUnknownBlockType)defaultUIInterruptionMonitor_iOS;
 @property _Bool didHandleUIInterruption; // @synthesize didHandleUIInterruption=_didHandleUIInterruption;
 @property(retain, nonatomic) XCUITestContextScope *currentScope; // @synthesize currentScope=_currentScope;
 - (void).cxx_destruct;

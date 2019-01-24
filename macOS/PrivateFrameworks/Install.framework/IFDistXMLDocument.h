@@ -33,6 +33,7 @@
     NSNumber *_requiredGigaBytesOfRAM;
     NSPredicate *_requiredGLRenderer;
     NSPredicate *_requiredCLDevice;
+    NSPredicate *_requiredMetalDevice;
     NSString *_descriptionOfGraphicsHardware;
     BOOL _singleGraphicsDevice;
     NSString *_requiredHardwareProperties;

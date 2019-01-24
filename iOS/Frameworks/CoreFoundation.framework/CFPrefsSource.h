@@ -28,6 +28,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)isByHost;
 - (struct __CFString *)domainIdentifier;
 - (struct __CFString *)userIdentifier;
+- (void)setFileProtectionClass:(int)arg1;
 - (void)setAccessRestricted:(_Bool)arg1;
 - (void)setDaemonCacheEnabled:(_Bool)arg1;
 - (void)alreadylocked_clearCache;

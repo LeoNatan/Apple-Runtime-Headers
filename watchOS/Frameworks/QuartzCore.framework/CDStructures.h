@@ -321,23 +321,23 @@ struct Display {
     unsigned int _field9;
     struct __CFString *_field10;
     struct __CFString *_field11;
-    struct ModeSet _field12;
-    struct Mode _field13;
+    struct __CFString *_field12;
+    struct ModeSet _field13;
     struct Mode _field14;
-    struct Bounds _field15;
+    struct Mode _field15;
     struct Bounds _field16;
-    struct Vec2<float> _field17;
-    int _field18;
-    unsigned int _field19;
-    int _field20;
-    double _field21;
+    struct Bounds _field17;
+    struct Vec2<float> _field18;
+    int _field19;
+    unsigned int _field20;
+    int _field21;
     double _field22;
-    unsigned int _field23;
-    struct DisplayShmemInfo _field24;
-    unsigned int _field25;
+    double _field23;
+    unsigned int _field24;
+    struct DisplayShmemInfo _field25;
     unsigned int _field26;
-    int _field27;
-    _Bool _field28;
+    unsigned int _field27;
+    int _field28;
     _Bool _field29;
     _Bool _field30;
     _Bool _field31;
@@ -347,6 +347,7 @@ struct Display {
     _Bool _field35;
     _Bool _field36;
     _Bool _field37;
+    _Bool _field38;
 };
 
 struct DisplayLink;
@@ -818,6 +819,11 @@ typedef struct {
     unsigned long *_field3;
     unsigned long _field4[5];
 } CDStruct_11f37819;
+
+typedef struct {
+    float _field1;
+    float _field2;
+} CDStruct_b2fbf00d;
 
 typedef struct {
     int _field1;

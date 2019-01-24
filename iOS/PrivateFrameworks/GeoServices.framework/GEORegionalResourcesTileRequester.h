@@ -11,12 +11,14 @@
 @interface GEORegionalResourcesTileRequester : GEOTileRequester
 {
     NSMutableArray *_loaders;
+    struct os_unfair_lock_s _loadersLock;
 }
 
 + (unsigned char)tileProviderIdentifier;
 - (void).cxx_destruct;
 - (void)cancel;
 - (void)start;
+- (id)initWithTileRequest:(id)arg1 delegateQueue:(id)arg2 delegate:(id)arg3;
 
 @end
 

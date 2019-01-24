@@ -14,7 +14,7 @@ __attribute__((visibility("hidden")))
     int _formatType;
 }
 
-+ (id)formatFromArchive:(const struct FormatStructArchive *)arg1;
++     // Error parsing type: @24@0:8r^{FormatStructArchive=^^?{ExtensionSet=^{Arena}SS(AllocatedData=^{KeyValue}^{map<int, google::protobuf::internal::ExtensionSet::Extension, std::__1::less<int>, std::__1::allocator<std::__1::pair<const int, google::protobuf::internal::ExtensionSet::Extension> > >})}{InternalMetadataWithArena=^v}{HasBits<2>=[2I]}{RepeatedPtrField<std::__1::basic_string<char> >=^{Arena}ii^{Rep}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}^{IndexSet}^{UUID}^{CustomFormatArchive}IIIIIBBBBIIIIdIIdddIIBBBBIIIIIIIIIBB{CachedSize={atomic<int>=Ai}}}16, name: formatFromArchive:
 + (unsigned int)validatedDecimalPlaces:(unsigned long long)arg1;
 + (id)defaultFormatWithFormatType:(int)arg1 locale:(id)arg2;
 + (id)booleanFormat;
@@ -23,8 +23,8 @@ __attribute__((visibility("hidden")))
 + (id)textFormat;
 + (id)formatFromTSUFormatStruct:(CDStruct_b1066b25)arg1;
 @property(readonly, nonatomic) int formatType; // @synthesize formatType=_formatType;
-- (void)encodeToArchive:(struct FormatStructArchive *)arg1 archivingCustomFormats:(_Bool)arg2;
-- (void)encodeToArchive:(struct FormatStructArchive *)arg1;
+-     // Error parsing type: v28@0:8^{FormatStructArchive=^^?{ExtensionSet=^{Arena}SS(AllocatedData=^{KeyValue}^{map<int, google::protobuf::internal::ExtensionSet::Extension, std::__1::less<int>, std::__1::allocator<std::__1::pair<const int, google::protobuf::internal::ExtensionSet::Extension> > >})}{InternalMetadataWithArena=^v}{HasBits<2>=[2I]}{RepeatedPtrField<std::__1::basic_string<char> >=^{Arena}ii^{Rep}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}^{IndexSet}^{UUID}^{CustomFormatArchive}IIIIIBBBBIIIIdIIdddIIBBBBIIIIIIIIIBB{CachedSize={atomic<int>=Ai}}}16B24, name: encodeToArchive:archivingCustomFormats:
+-     // Error parsing type: v24@0:8^{FormatStructArchive=^^?{ExtensionSet=^{Arena}SS(AllocatedData=^{KeyValue}^{map<int, google::protobuf::internal::ExtensionSet::Extension, std::__1::less<int>, std::__1::allocator<std::__1::pair<const int, google::protobuf::internal::ExtensionSet::Extension> > >})}{InternalMetadataWithArena=^v}{HasBits<2>=[2I]}{RepeatedPtrField<std::__1::basic_string<char> >=^{Arena}ii^{Rep}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}^{IndexSet}^{UUID}^{CustomFormatArchive}IIIIIBBBBIIIIdIIdddIIBBBBIIIIIIIIIBB{CachedSize={atomic<int>=Ai}}}16, name: encodeToArchive:
 - (id)description;
 - (id)asMultipleChoiceListFormat;
 - (id)asStepperSliderFormat;

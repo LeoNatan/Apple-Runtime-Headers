@@ -47,7 +47,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) _Bool textIsVertical;
 @property(readonly, nonatomic) unsigned long long pageCount;
 @property(readonly, nonatomic) unsigned long long pageNumber;
-@property(readonly, nonatomic) double maxAnchorY;
+@property(readonly, nonatomic) double maxAnchorInBlockDirection;
 - (id)currentAnchoredDrawableLayouts;
 - (void)addAttachmentLayout:(id)arg1;
 - (id)currentInlineDrawableLayouts;
@@ -59,7 +59,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) int naturalDirection;
 @property(readonly, nonatomic) int naturalAlignment;
 @property(readonly, nonatomic) int verticalAlignment;
-@property(readonly, nonatomic) unsigned int autosizeFlags;
+@property(readonly, nonatomic) unsigned long long autosizeFlags;
 @property(readonly, nonatomic) struct CGPoint anchorPoint;
 @property(readonly, nonatomic) struct CGPoint position;
 @property(readonly, nonatomic) struct CGSize currentSize;

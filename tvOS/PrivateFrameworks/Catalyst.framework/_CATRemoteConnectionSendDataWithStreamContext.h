@@ -10,6 +10,7 @@
 
 @class NSData, NSInputStream, NSMutableData, NSString;
 
+__attribute__((visibility("hidden")))
 @interface _CATRemoteConnectionSendDataWithStreamContext : NSObject <_CATRemoteConnectionSendContext>
 {
     NSMutableData *mBuffer;

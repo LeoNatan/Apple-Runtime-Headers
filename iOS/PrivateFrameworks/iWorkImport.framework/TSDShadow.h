@@ -39,7 +39,7 @@ __attribute__((visibility("hidden")))
 + (id)defaultDisabledShadow;
 + (id)defaultShadow;
 + (id)p_defaultShadowEnabled:(_Bool)arg1;
-+ (id)instanceWithArchive:(const struct ShadowArchive *)arg1 unarchiver:(id)arg2;
++     // Error parsing type: @32@0:8r^{ShadowArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{Color}^{DropShadowArchive}^{ContactShadowArchive}^{CurvedShadowArchive}iBffif}16@24, name: instanceWithArchive:unarchiver:
 @property(readonly, nonatomic, getter=isEnabled) _Bool enabled; // @synthesize enabled=mEnabled;
 @property(readonly, copy, nonatomic) TSUColor *color; // @synthesize color=mColor;
 @property(readonly, nonatomic) double opacity; // @synthesize opacity=mOpacity;
@@ -63,7 +63,6 @@ __attribute__((visibility("hidden")))
 - (void)applyToContext:(struct CGContext *)arg1 viewScale:(double)arg2 flipped:(_Bool)arg3;
 - (void)applyToContext:(struct CGContext *)arg1 viewScale:(double)arg2;
 @property(readonly, nonatomic) struct CGPoint offsetDelta;
-- (_Bool)usesOpenGL;
 - (id)typeDescription;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
@@ -81,8 +80,8 @@ __attribute__((visibility("hidden")))
 - (double)clampOpacity:(double)arg1;
 - (double)clampRadius:(double)arg1;
 - (double)clampOffset:(double)arg1;
-- (void)saveToArchive:(struct ShadowArchive *)arg1 archiver:(id)arg2;
-- (id)initWithArchive:(const struct ShadowArchive *)arg1 unarchiver:(id)arg2;
+-     // Error parsing type: v32@0:8^{ShadowArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{Color}^{DropShadowArchive}^{ContactShadowArchive}^{CurvedShadowArchive}iBffif}16@24, name: saveToArchive:archiver:
+-     // Error parsing type: @32@0:8r^{ShadowArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{Color}^{DropShadowArchive}^{ContactShadowArchive}^{CurvedShadowArchive}iBffif}16@24, name: initWithArchive:unarchiver:
 - (struct CGImage *)i_newEmptyImage;
 - (id)i_initWithOpacity:(double)arg1 color:(id)arg2 enabled:(_Bool)arg3;
 

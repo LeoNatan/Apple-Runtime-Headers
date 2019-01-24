@@ -10,13 +10,13 @@
 #import <Safari/NSTextViewDelegate-Protocol.h>
 #import <Safari/ReopensAtLaunch-Protocol.h>
 
-@class NSButton, NSString, NSTextView, SnippetEditorWKView;
+@class NSButton, NSString, NSTextView, SnippetEditorWKWebView;
 
 __attribute__((visibility("hidden")))
 @interface SnippetEditor : NSWindowController <NSTextViewDelegate, NSSplitViewDelegate, ReopensAtLaunch>
 {
     NSTextView *_textView;
-    SnippetEditorWKView *_wkView;
+    SnippetEditorWKWebView *_webView;
     NSButton *_updateAfterTypingCheckBox;
 }
 

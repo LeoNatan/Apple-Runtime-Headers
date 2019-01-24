@@ -122,15 +122,15 @@ __attribute__((visibility("hidden")))
 - (id)init;
 - (id)initWithChartInfo:(id)arg1 dataSetIndex:(unsigned long long)arg2;
 - (id)initWithChartInfo:(id)arg1;
-- (void)loadFromPreUFFArchive:(const struct ChartModelArchive *)arg1 unarchiver:(id)arg2 contextForUpgradeOnly:(id)arg3;
+-     // Error parsing type: v40@0:8r^{ChartModelArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedField<unsigned int>=ii(Pointer=^{Arena}^{Rep})}^{Reference}^{Reference}^{ChartGridArchive}II}16@24@32, name: loadFromPreUFFArchive:unarchiver:contextForUpgradeOnly:
 - (id)pieSeriesModelCacheForSeries:(unsigned long long)arg1;
 - (id)barModelCacheForSeries:(unsigned long long)arg1;
 - (id)lineAreaModelCacheForSeries:(unsigned long long)arg1;
 - (id)legendModelCache;
 - (void)clearTextEditingSelectionPath;
 - (void)setTextEditingSelectionPath:(id)arg1 string:(id)arg2;
-- (void)saveToUnityArchive:(struct ChartArchive *)arg1 forCopy:(_Bool)arg2;
-- (void)loadFromUnityArchive:(const struct ChartArchive *)arg1 unarchiver:(id)arg2 contextForUpgradeOnly:(id)arg3 chartInfo:(id)arg4;
+-     // Error parsing type: v28@0:8^{ChartArchive=^^?{ExtensionSet=^{Arena}SS(AllocatedData=^{KeyValue}^{map<int, google::protobuf::internal::ExtensionSet::Extension, std::__1::less<int>, std::__1::allocator<std::__1::pair<const int, google::protobuf::internal::ExtensionSet::Extension> > >})}{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}^{RectArchive}^{Reference}^{ChartGridArchive}^{Reference}^{Reference}^{Reference}^{Reference}^{Reference}^{SparseReferenceArray}^{SparseReferenceArray}^{Reference}iiiBBBI}16B24, name: saveToUnityArchive:forCopy:
+-     // Error parsing type: v48@0:8r^{ChartArchive=^^?{ExtensionSet=^{Arena}SS(AllocatedData=^{KeyValue}^{map<int, google::protobuf::internal::ExtensionSet::Extension, std::__1::less<int>, std::__1::allocator<std::__1::pair<const int, google::protobuf::internal::ExtensionSet::Extension> > >})}{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}^{RectArchive}^{Reference}^{ChartGridArchive}^{Reference}^{Reference}^{Reference}^{Reference}^{Reference}^{SparseReferenceArray}^{SparseReferenceArray}^{Reference}iiiBBBI}16@24@32@40, name: loadFromUnityArchive:unarchiver:contextForUpgradeOnly:chartInfo:
 
 @end
 

@@ -8,15 +8,16 @@
 
 #import <Silex/SXComponentInsertionLayoutProvider-Protocol.h>
 
-@class NSString, SXColumnLayout, SXLayoutBlueprint, SXLayoutDataProvider;
+@class NSString, SXColumnLayout, SXLayoutBlueprint;
+@protocol SXDOMObjectProviding;
 
 @interface SXComponentInsertionLayoutProvider : NSObject <SXComponentInsertionLayoutProvider>
 {
     SXLayoutBlueprint *_layoutBlueprint;
-    SXLayoutDataProvider *_layoutDataProvider;
+    id <SXDOMObjectProviding> _DOMObjectProvider;
 }
 
-@property(readonly, nonatomic) SXLayoutDataProvider *layoutDataProvider; // @synthesize layoutDataProvider=_layoutDataProvider;
+@property(readonly, nonatomic) id <SXDOMObjectProviding> DOMObjectProvider; // @synthesize DOMObjectProvider=_DOMObjectProvider;
 @property(readonly, nonatomic) SXLayoutBlueprint *layoutBlueprint; // @synthesize layoutBlueprint=_layoutBlueprint;
 - (void).cxx_destruct;
 - (id)suggestedMarginForMarker:(id)arg1;
@@ -24,7 +25,7 @@
 @property(readonly, nonatomic) SXColumnLayout *columnLayout;
 @property(readonly, nonatomic) struct CGSize documentSize;
 @property(readonly, nonatomic) struct CGSize viewportSize;
-- (id)initWithBlueprint:(id)arg1 layoutDataProvider:(id)arg2;
+- (id)initWithBlueprint:(id)arg1 DOMObjectProvider:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

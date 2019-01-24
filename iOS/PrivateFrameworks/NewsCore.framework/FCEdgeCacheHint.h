@@ -16,10 +16,13 @@
     NSString *_cacheControlKey;
 }
 
++ (id)edgeCacheHintForMagazineContent;
++ (id)edgeCacheHintForSpotlight;
++ (id)edgeCacheHintForFeaturedArticles;
 + (id)edgeCacheHintForVideos;
 + (id)edgeCacheHintForToday;
 + (id)edgeCacheHintForEditorial;
-+ (id)edgeCacheHintForFeatured;
++ (id)edgeCacheHintForCoverArticles;
 + (id)edgeCacheHintForTrending;
 + (id)edgeCacheHintForBreaking;
 + (id)edgeCacheHintForTopStories;

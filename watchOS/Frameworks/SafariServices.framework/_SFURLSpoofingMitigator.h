@@ -6,16 +6,20 @@
 
 #import <objc/NSObject.h>
 
-@class NSDate;
+@class NSDate, NSTimer, _WKUserInitiatedAction;
 
 @interface _SFURLSpoofingMitigator : NSObject
 {
     NSDate *_dateOfStartOfLastProvisionalNavigation;
     unsigned int _recentlyInterruptedNavigationCount;
+    _WKUserInitiatedAction *_userInitiatedAction;
+    NSTimer *_timerForRevertingToCommittedURL;
     _Bool _UIShouldReflectCommittedURLInsteadOfCurrentURL;
+    int _navigationSource;
 }
 
 + (_Bool)automaticallyNotifiesObserversOfUIShouldReflectCommittedURLInsteadOfCurrentURL;
+@property(nonatomic) int navigationSource; // @synthesize navigationSource=_navigationSource;
 @property(readonly, nonatomic) _Bool UIShouldReflectCommittedURLInsteadOfCurrentURL; // @synthesize UIShouldReflectCommittedURLInsteadOfCurrentURL=_UIShouldReflectCommittedURLInsteadOfCurrentURL;
 - (void).cxx_destruct;
 - (void)_setUIShouldReflectCommittedURLInsteadOfCurrentURL:(_Bool)arg1;
@@ -23,7 +27,7 @@
 - (void)_determineIfPageIsTryingToSpoofAddressFieldWhenInterruptingProvisionalNavigation;
 - (void)didCommitNavigation;
 - (void)didFailProvisionalNavigationWithError:(id)arg1;
-- (void)didStartProvisionalNavigation;
+- (void)didStartProvisionalNavigationWithUserInitiatedAction:(id)arg1;
 
 @end
 

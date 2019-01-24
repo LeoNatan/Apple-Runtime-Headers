@@ -16,6 +16,8 @@
     NFLCellGenerator *_imageOnTopCellGenerator;
     NFLCellGenerator *_premiumCellGenerator;
     NFLCellGenerator *_trendingCellGenerator;
+    NFLCellGenerator *_spotlightImageOnTopCellGenerator;
+    NFLCellGenerator *_spotlightImageOnSideCellGenerator;
     NFLCellGenerator *_gapCellGenerator;
     NFLFeedSettings *_feedSettings;
 }
@@ -23,6 +25,8 @@
 + (id)cellGeneratorWithFeedSettings:(id)arg1;
 @property(nonatomic) __weak NFLFeedSettings *feedSettings; // @synthesize feedSettings=_feedSettings;
 @property(retain, nonatomic) NFLCellGenerator *gapCellGenerator; // @synthesize gapCellGenerator=_gapCellGenerator;
+@property(retain, nonatomic) NFLCellGenerator *spotlightImageOnSideCellGenerator; // @synthesize spotlightImageOnSideCellGenerator=_spotlightImageOnSideCellGenerator;
+@property(retain, nonatomic) NFLCellGenerator *spotlightImageOnTopCellGenerator; // @synthesize spotlightImageOnTopCellGenerator=_spotlightImageOnTopCellGenerator;
 @property(retain, nonatomic) NFLCellGenerator *trendingCellGenerator; // @synthesize trendingCellGenerator=_trendingCellGenerator;
 @property(retain, nonatomic) NFLCellGenerator *premiumCellGenerator; // @synthesize premiumCellGenerator=_premiumCellGenerator;
 @property(retain, nonatomic) NFLCellGenerator *imageOnTopCellGenerator; // @synthesize imageOnTopCellGenerator=_imageOnTopCellGenerator;

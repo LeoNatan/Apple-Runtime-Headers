@@ -24,6 +24,7 @@
 - (void)setShowsLocation:(_Bool)arg1;
 - (void)_initConstraints;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
+- (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 
 @end
 

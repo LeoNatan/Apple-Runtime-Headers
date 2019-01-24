@@ -15,21 +15,20 @@ __attribute__((visibility("hidden")))
 - (double)horizontalMarginForSwatch;
 - (struct CGRect)boundsForLineEnd:(id)arg1 atPoint:(struct CGPoint)arg2 atAngle:(double)arg3 withScale:(double)arg4 transform:(struct CGAffineTransform)arg5;
 - (void)paintLineEnd:(id)arg1 atPoint:(struct CGPoint)arg2 atAngle:(double)arg3 withScale:(double)arg4 inContext:(struct CGContext *)arg5 useFastDrawing:(_Bool)arg6;
-- (void)paintPath:(struct CGPath *)arg1 wantsInteriorStroke:(_Bool)arg2 inContext:(struct CGContext *)arg3 useFastDrawing:(_Bool)arg4 parameterized:(_Bool)arg5 drawWithOpenGL:(_Bool)arg6 shouldReverseDrawOrder:(_Bool)arg7;
+- (void)paintPath:(struct CGPath *)arg1 wantsInteriorStroke:(_Bool)arg2 inContext:(struct CGContext *)arg3 useFastDrawing:(_Bool)arg4 parameterized:(_Bool)arg5 shouldReverseDrawOrder:(_Bool)arg6;
 - (void)applyToContext:(struct CGContext *)arg1 insideStroke:(_Bool)arg2;
 - (struct CGAffineTransform)transformInContext:(struct CGContext *)arg1;
 - (struct CGRect)boundsForPath:(id)arg1;
 - (struct CGRect)p_superBoundsForPath:(id)arg1;
 - (_Bool)drawsOutsideStrokeBounds;
 - (_Bool)drawsInOneStep;
-- (_Bool)prefersToApplyToCAShapeLayerDuringManipulation;
-- (_Bool)canApplyToCAShapeLayer;
-- (_Bool)chisel;
-- (double)scale;
-- (double)angle;
+- (_Bool)prefersToApplyToShapeRenderableDuringManipulation;
+- (_Bool)canApplyToShapeRenderable;
+@property(readonly, nonatomic) _Bool chisel;
+@property(readonly, nonatomic) double scale;
+@property(readonly, nonatomic) double angle;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (id)initWithName:(id)arg1 color:(id)arg2 width:(double)arg3 cap:(int)arg4 join:(int)arg5 pattern:(id)arg6 miterLimit:(double)arg7;
 - (id)initWithColor:(id)arg1 width:(double)arg2 cap:(int)arg3 join:(int)arg4 pattern:(id)arg5 miterLimit:(double)arg6;
 
 @end

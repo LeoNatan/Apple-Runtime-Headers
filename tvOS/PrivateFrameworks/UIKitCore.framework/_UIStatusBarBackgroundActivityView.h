@@ -13,11 +13,13 @@
 __attribute__((visibility("hidden")))
 @interface _UIStatusBarBackgroundActivityView : _UIStatusBarRoundedCornerView <_UIStatusBarPersistentAnimation>
 {
+    _Bool _pulsing;
     CALayer *_pulseLayer;
     struct UIEdgeInsets _alignmentRectInsets;
 }
 
 @property(retain, nonatomic) CALayer *pulseLayer; // @synthesize pulseLayer=_pulseLayer;
+@property(nonatomic) _Bool pulsing; // @synthesize pulsing=_pulsing;
 @property(nonatomic) struct UIEdgeInsets alignmentRectInsets; // @synthesize alignmentRectInsets=_alignmentRectInsets;
 - (void).cxx_destruct;
 - (void)layoutSubviews;

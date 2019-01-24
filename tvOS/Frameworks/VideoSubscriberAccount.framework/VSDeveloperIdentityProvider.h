@@ -6,7 +6,7 @@
 
 #import <CoreData/NSManagedObject.h>
 
-@class NSString;
+@class NSArray, NSString;
 
 __attribute__((visibility("hidden")))
 @interface VSDeveloperIdentityProvider : NSManagedObject
@@ -15,6 +15,7 @@ __attribute__((visibility("hidden")))
 
 
 // Remaining properties
+@property(copy, nonatomic) NSArray *authenticationSchemes; // @dynamic authenticationSchemes;
 @property(copy, nonatomic) NSString *authenticationURL; // @dynamic authenticationURL;
 @property(copy, nonatomic) NSString *certificateURL; // @dynamic certificateURL;
 @property(copy, nonatomic) NSString *nameForSorting; // @dynamic nameForSorting;

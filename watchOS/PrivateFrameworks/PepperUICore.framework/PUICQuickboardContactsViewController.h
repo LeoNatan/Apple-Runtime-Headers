@@ -14,8 +14,6 @@
     unsigned int _contactFilter;
 }
 
-+ (id)addPhoneNumberImage;
-+ (id)addContactImage;
 @property(nonatomic) unsigned int contactFilter; // @synthesize contactFilter=_contactFilter;
 @property(retain, nonatomic) NSArray *recentContacts; // @synthesize recentContacts=_recentContacts;
 - (void).cxx_destruct;

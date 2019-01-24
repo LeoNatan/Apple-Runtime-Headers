@@ -22,6 +22,7 @@
     _Bool _navbarHidesShadow;
     _Bool _viewHasShifted;
     _Bool _handledWillAppear;
+    _Bool _isForMusic;
     MCDTransportControlView *_transportControlView;
     MCDPlayModeControlView *_playModeControlView;
     MCDTitleView *_titleView;
@@ -44,6 +45,7 @@
     NSLayoutConstraint *_artistAlbumLabelConstraint;
 }
 
++ (id)nowPlayingViewControllerForMusic:(_Bool)arg1;
 @property(retain, nonatomic) NSLayoutConstraint *artistAlbumLabelConstraint; // @synthesize artistAlbumLabelConstraint=_artistAlbumLabelConstraint;
 @property(retain, nonatomic) NSString *playPauseTransportButtonImageIdentifier; // @synthesize playPauseTransportButtonImageIdentifier=_playPauseTransportButtonImageIdentifier;
 @property(retain, nonatomic) NSString *forwardTransportButtonImageIdentifier; // @synthesize forwardTransportButtonImageIdentifier=_forwardTransportButtonImageIdentifier;

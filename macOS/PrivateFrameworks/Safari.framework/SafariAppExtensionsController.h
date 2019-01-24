@@ -22,6 +22,7 @@ __attribute__((visibility("hidden")))
     id _keyBagLockStatusObservationToken;
     BOOL _shouldReadFromKeychainAfterKeyBagIsUnlocked;
     BOOL _allowUnsignedExtensions;
+    BOOL _extensionsEnabled;
     NSArray *_extensions;
     NSDictionary *_extensionIdentifierToBaseURIMap;
     NSString *_crashReporterMessage;
@@ -31,6 +32,7 @@ __attribute__((visibility("hidden")))
 + (id)_contentScriptsFromExtensionDictionary:(id)arg1;
 + (id)_extensionWebsiteAccessForExtensionDictionary:(id)arg1;
 + (id)sharedController;
+@property(nonatomic) BOOL extensionsEnabled; // @synthesize extensionsEnabled=_extensionsEnabled;
 @property(nonatomic) BOOL allowUnsignedExtensions; // @synthesize allowUnsignedExtensions=_allowUnsignedExtensions;
 @property(readonly, copy, nonatomic) NSString *crashReporterMessage; // @synthesize crashReporterMessage=_crashReporterMessage;
 @property(readonly, copy, nonatomic) NSDictionary *extensionIdentifierToBaseURIMap; // @synthesize extensionIdentifierToBaseURIMap=_extensionIdentifierToBaseURIMap;
@@ -39,6 +41,8 @@ __attribute__((visibility("hidden")))
 - (BOOL)canToggleAllowUnsignedExtensions;
 - (void)_handleKeyBagUnlock;
 - (void)_listenForKeyBagUnlockEvent;
+- (void)getBaseURIOfExtensionWithUUID:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)showPopoverFromToolbarItem:(id)arg1 forExtensionWithUUID:(id)arg2;
 - (void)setToolbarItem:(id)arg1 forExtensionWithUUID:(id)arg2 label:(id)arg3;
 - (void)setToolbarItem:(id)arg1 forExtensionWithUUID:(id)arg2 imageData:(id)arg3;
 - (void)setToolbarItem:(id)arg1 forExtensionWithUUID:(id)arg2 badgeText:(id)arg3;
@@ -47,12 +51,20 @@ __attribute__((visibility("hidden")))
 - (void)setToolbarItemsNeedUpdateForExtensionWithUUID:(id)arg1;
 - (void)openWindowWithURL:(id)arg1 forExtensionWithUUID:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)getActiveWindowWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)closeTab:(id)arg1;
+- (void)navigateTab:(id)arg1 toURL:(id)arg2;
 - (void)activateTab:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)getWindowForTab:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)getPagesInTab:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)getActivePageInTab:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)closeWindow:(id)arg1;
+- (void)getAllWindowsWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)getToolbarItemInWindow:(id)arg1 forExtensionWithUUID:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)openTabInWindow:(id)arg1 withURL:(id)arg2 forExtensionWithUUID:(id)arg3 makeActiveIfPossible:(BOOL)arg4 completionHandler:(CDUnknownBlockType)arg5;
+- (void)getAllTabsInWindow:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)getActiveTabInWindow:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)getScreenshotOfVisibleAreaForPage:(id)arg1 forExtensionWithUUID:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)getTabForPage:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)getPropertiesOfPage:(id)arg1 forExtensionWithUUID:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)reloadPage:(id)arg1;
 - (void)dispatchMessageWithName:(id)arg1 fromExtensionWithUUID:(id)arg2 toPage:(id)arg3 userInfo:(id)arg4;
@@ -111,7 +123,6 @@ __attribute__((visibility("hidden")))
 - (id)_composedIdentifierForExtensionStateForExtension:(id)arg1;
 - (void)_extensionsWereGloballyDisabled;
 - (void)_extensionsWereGloballyEnabled;
-- (BOOL)_extensionsEnabled;
 - (void)resetExtensionsState;
 - (void)disableUnsignedExtensionsIfNecessary;
 - (void)_writeExtensionsStateToKeychain;

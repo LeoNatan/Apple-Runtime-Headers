@@ -4,13 +4,13 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <GameController/_GCGamepad.h>
+#import <GameController/_GCMicroGamepad.h>
 
 #import <GameController/_GCSnapshot-Protocol.h>
 
 @class GCMotion, NSData, NSString;
 
-@interface _GCMicroGamepadSnapshot : _GCGamepad <_GCSnapshot>
+@interface _GCMicroGamepadSnapshot : _GCMicroGamepad <_GCSnapshot>
 {
     NSData *_snapshotData;
     GCMotion *_motion;

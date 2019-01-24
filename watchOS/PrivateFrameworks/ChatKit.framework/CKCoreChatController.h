@@ -29,8 +29,10 @@
     unsigned int _sendProgressSendCount;
     unsigned int _sendProgressTotalCount;
     CKFullScreenBalloonViewController *_fullScreenBalloonViewController;
+    CDUnknownBlockType _overrideScrollBlock;
 }
 
+@property(copy, nonatomic) CDUnknownBlockType overrideScrollBlock; // @synthesize overrideScrollBlock=_overrideScrollBlock;
 @property(nonatomic) _Bool disableAnimationsUnderTest; // @synthesize disableAnimationsUnderTest=_disableAnimationsUnderTest;
 @property(retain, nonatomic) CKFullScreenBalloonViewController *fullScreenBalloonViewController; // @synthesize fullScreenBalloonViewController=_fullScreenBalloonViewController;
 @property(nonatomic) unsigned int sendProgressTotalCount; // @synthesize sendProgressTotalCount=_sendProgressTotalCount;

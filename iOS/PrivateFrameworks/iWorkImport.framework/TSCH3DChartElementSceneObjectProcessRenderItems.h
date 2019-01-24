@@ -11,7 +11,7 @@ __attribute__((visibility("hidden")))
 {
 }
 
-- (void)processElementInfo:(const struct RenderElementInfo *)arg1 eachValue:(_Bool)arg2;
+- (void)processElementInfo:(id)arg1 eachValue:(_Bool)arg2;
 - (_Bool)processEnumeratorSeries:(id)arg1;
 
 @end

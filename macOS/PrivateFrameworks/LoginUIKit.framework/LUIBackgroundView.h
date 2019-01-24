@@ -9,9 +9,6 @@
 @interface LUIBackgroundView : NSImageView
 {
     int _style;
-    BOOL _fetching;
-    unsigned int _displayID;
-    struct CGImage *_backupImage;
 }
 
 - (id)accessibilityChildren;

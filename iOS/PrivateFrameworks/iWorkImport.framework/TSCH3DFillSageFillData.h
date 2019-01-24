@@ -29,9 +29,9 @@ __attribute__((visibility("hidden")))
 - (float)layerScaleForIndex:(unsigned long long)arg1;
 - (_Bool)isLayerEnabledForIndex:(unsigned long long)arg1;
 - (unsigned long long)layerCount;
-- (Color_1703f521)emissive;
-- (Color_1703f521)specular;
-- (Color_1703f521)diffuse;
+- (struct Color)emissive;
+- (struct Color)specular;
+- (struct Color)diffuse;
 - (float)shininess;
 - (float)opacity;
 - (id)materialAtIndex:(unsigned long long)arg1;

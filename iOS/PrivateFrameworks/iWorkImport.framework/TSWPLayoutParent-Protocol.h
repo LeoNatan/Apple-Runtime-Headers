@@ -14,7 +14,7 @@
 - (struct CGRect)nonAutosizedFrameForTextLayout:(TSWPLayout *)arg1;
 - (void)invalidateForAutosizingTextLayout:(TSWPLayout *)arg1;
 - (int)verticalAlignmentForTextLayout:(TSWPLayout *)arg1;
-- (unsigned int)autosizeFlagsForTextLayout:(TSWPLayout *)arg1;
+- (unsigned long long)autosizeFlagsForTextLayout:(TSWPLayout *)arg1;
 
 @optional
 - (struct CGRect)adjustRect:(struct CGRect)arg1 forScrollingToSelectionPath:(TSKSelectionPath *)arg2 forZoom:(_Bool)arg3;
@@ -26,8 +26,8 @@
 - (_Bool)textLayoutShouldLayoutVertically:(TSWPLayout *)arg1;
 - (_Bool)textLayoutShouldWrapAroundExternalDrawables:(TSWPLayout *)arg1;
 - (unsigned long long)initialCharIndex;
-- (double)maxAutoGrowHeightForTextLayout:(TSWPLayout *)arg1;
-- (double)maxAutoGrowWidthForTextLayout:(TSWPLayout *)arg1;
+- (double)maxAutoGrowBlockHeightForTextLayout:(TSWPLayout *)arg1;
+- (double)maxAutoGrowLineWidthForTextLayout:(TSWPLayout *)arg1;
 - (id <TSWPStyleProvider>)styleProvider;
 @end
 

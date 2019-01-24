@@ -15,7 +15,7 @@
     // Error parsing type: , name: textViewBottomConstraint
 }
 
-- (CDUnknownBlockType).cxx_destruct;
+- (void).cxx_destruct;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (void)handleKeyboardChangeNotification:(id)arg1;
 - (void)didTapNext:(id)arg1;

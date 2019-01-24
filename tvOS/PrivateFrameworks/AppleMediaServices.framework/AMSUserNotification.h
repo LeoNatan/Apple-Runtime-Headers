@@ -6,12 +6,13 @@
 
 #import <objc/NSObject.h>
 
-@class AMSUserNotificationAction, NSArray, NSMutableDictionary, NSString;
+@class ACAccount, AMSUserNotificationAction, NSArray, NSMutableDictionary, NSString, NSURL;
 
 @interface AMSUserNotification : NSObject
 {
+    ACAccount *_account;
+    NSURL *_artworkUrl;
     NSArray *_buttonActions;
-    long long _intent;
     AMSUserNotificationAction *_defaultAction;
     NSString *_identifier;
     NSString *_informativeText;
@@ -19,10 +20,14 @@
     NSString *_subtitle;
     NSString *_title;
     NSMutableDictionary *_userInfo;
+    long long _intent;
     NSString *_categoryIdentifier;
+    NSString *_threadIdentifier;
 }
 
-@property(readonly, nonatomic) NSString *categoryIdentifier; // @synthesize categoryIdentifier=_categoryIdentifier;
+@property(retain, nonatomic) NSString *threadIdentifier; // @synthesize threadIdentifier=_threadIdentifier;
+@property(retain, nonatomic) NSString *categoryIdentifier; // @synthesize categoryIdentifier=_categoryIdentifier;
+@property(nonatomic) long long intent; // @synthesize intent=_intent;
 @property(retain, nonatomic) NSMutableDictionary *userInfo; // @synthesize userInfo=_userInfo;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
 @property(retain, nonatomic) NSString *subtitle; // @synthesize subtitle=_subtitle;
@@ -30,19 +35,19 @@
 @property(retain, nonatomic) NSString *informativeText; // @synthesize informativeText=_informativeText;
 @property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(retain, nonatomic) AMSUserNotificationAction *defaultAction; // @synthesize defaultAction=_defaultAction;
-@property(nonatomic) long long intent; // @synthesize intent=_intent;
 @property(retain, nonatomic) NSArray *buttonActions; // @synthesize buttonActions=_buttonActions;
+@property(retain, nonatomic) NSURL *artworkUrl; // @synthesize artworkUrl=_artworkUrl;
+@property(retain, nonatomic) ACAccount *account; // @synthesize account=_account;
 - (void).cxx_destruct;
-- (void)_populatePropertiesFromStoredUserInfo:(id)arg1;
+- (_Bool)_populatePropertiesFromStoredUserInfo:(id)arg1;
 - (id)_compileStoredUserInfo;
-- (void)handleSelectedButton:(id)arg1;
-- (_Bool)shouldHandleSelection;
+- (id)handleSelectedButton:(id)arg1 bagContract:(id)arg2;
 - (void)addButtonAction:(id)arg1;
-- (id)createUNNotificationCategory;
+- (id)createUNNotificationActions;
 - (id)createUNNotificationContent;
 - (id)createNSUserNotification;
-- (id)initWithUNNotification:(id)arg1 center:(id)arg2;
-- (id)initWithNSUserNotification:(id)arg1 center:(id)arg2;
+- (id)initWithUNNotification:(id)arg1;
+- (id)initWithNSUserNotification:(id)arg1;
 - (id)initWithTitle:(id)arg1 intent:(long long)arg2;
 - (id)initWithTitle:(id)arg1;
 

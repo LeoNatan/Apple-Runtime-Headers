@@ -7,6 +7,7 @@
 #import <Foundation/NSURL.h>
 
 @interface NSURL (CRKAdditions)
++ (id)crk_uniqueTemporaryFileURL;
 + (id)crk_uniqueTemporaryDirectoryURL;
 - (_Bool)crk_isBundle;
 - (id)crk_escapedPath;

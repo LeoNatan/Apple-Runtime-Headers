@@ -23,8 +23,8 @@ __attribute__((visibility("hidden")))
 + (vector_2bba1c52)persistentFormulaTypes;
 - (void).cxx_destruct;
 - (id)areaFormulaWithCalcEngine:(id)arg1 inOwner:(const UUIDData_5fbc143e *)arg2;
-- (void)saveToArchive:(struct ChartMediatorFormulaStorage *)arg1 archiver:(id)arg2;
-- (id)initWithArchive:(const struct ChartMediatorFormulaStorage *)arg1 unarchiver:(id)arg2;
+-     // Error parsing type: v32@0:8^{ChartMediatorFormulaStorage=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSCE::FormulaArchive>=^{Arena}ii^{Rep}}{RepeatedPtrField<TSCE::FormulaArchive>=^{Arena}ii^{Rep}}{RepeatedPtrField<TSCE::FormulaArchive>=^{Arena}ii^{Rep}}{RepeatedPtrField<TSCE::FormulaArchive>=^{Arena}ii^{Rep}}{RepeatedPtrField<TSCE::FormulaArchive>=^{Arena}ii^{Rep}}{RepeatedPtrField<TSCE::FormulaArchive>=^{Arena}ii^{Rep}}{RepeatedPtrField<TSCE::FormulaArchive>=^{Arena}ii^{Rep}}i}16@24, name: saveToArchive:archiver:
+-     // Error parsing type: @32@0:8r^{ChartMediatorFormulaStorage=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSCE::FormulaArchive>=^{Arena}ii^{Rep}}{RepeatedPtrField<TSCE::FormulaArchive>=^{Arena}ii^{Rep}}{RepeatedPtrField<TSCE::FormulaArchive>=^{Arena}ii^{Rep}}{RepeatedPtrField<TSCE::FormulaArchive>=^{Arena}ii^{Rep}}{RepeatedPtrField<TSCE::FormulaArchive>=^{Arena}ii^{Rep}}{RepeatedPtrField<TSCE::FormulaArchive>=^{Arena}ii^{Rep}}{RepeatedPtrField<TSCE::FormulaArchive>=^{Arena}ii^{Rep}}i}16@24, name: initWithArchive:unarchiver:
 - (void)clearCachesForCalculationEngine:(id)arg1;
 - (_Bool)dataFormulaAreRegularForSeriesInsertionWithCalcEngine:(id)arg1 inOwner:(const UUIDData_5fbc143e *)arg2;
 @property(readonly, nonatomic) unsigned long long categoryLabelFormulaType;
@@ -33,6 +33,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) unsigned long long numberOfDataFormulas;
 - (_Bool)labelFormulasAreAllStaticWithCalcEngine:(id)arg1 inEntity:(const UUIDData_5fbc143e *)arg2;
 - (_Bool)formulasOfType:(unsigned long long)arg1 areAllStaticWithCalcEngine:(id)arg2 inEntity:(const UUIDData_5fbc143e *)arg3;
+- (unsigned long long)numberOfTotalCategoryLabelsWithCalcEngine:(id)arg1 inEntity:(const UUIDData_5fbc143e *)arg2;
 - (unsigned long long)numberOfGroupsWithCalcEngine:(id)arg1 inEntity:(const UUIDData_5fbc143e *)arg2;
 - (unsigned long long)p_calculateNumberOfGroupsWithCalcEngine:(id)arg1 inEntity:(const UUIDData_5fbc143e *)arg2;
 - (id)description;

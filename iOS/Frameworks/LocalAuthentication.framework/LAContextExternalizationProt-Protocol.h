@@ -5,6 +5,7 @@
 //
 
 @protocol LAContextExternalizationProt
+- (void)authMethodWithReply:(void (^)(NSData *, NSError *))arg1;
 - (void)externalizedContextWithReply:(void (^)(NSData *, NSError *))arg1;
 @end
 

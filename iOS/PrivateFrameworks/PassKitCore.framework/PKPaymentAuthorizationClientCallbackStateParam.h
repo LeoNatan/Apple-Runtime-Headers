@@ -6,7 +6,7 @@
 
 #import <PassKitCore/PKPaymentAuthorizationStateParam.h>
 
-@class CNContact, PKAuthorizedPeerPaymentQuote, PKPayment, PKPaymentMethod, PKServiceProviderPurchase, PKShippingMethod;
+@class CNContact, PKAuthorizedPeerPaymentQuote, PKDisbursementVoucher, PKPayment, PKPaymentMethod, PKServiceProviderPurchase, PKShippingMethod;
 
 @interface PKPaymentAuthorizationClientCallbackStateParam : PKPaymentAuthorizationStateParam
 {
@@ -19,6 +19,7 @@
 @property(nonatomic) long long kind; // @synthesize kind=_kind;
 - (void).cxx_destruct;
 - (id)description;
+@property(readonly, nonatomic) PKDisbursementVoucher *disbursementVoucher;
 @property(readonly, nonatomic) PKAuthorizedPeerPaymentQuote *authorizedPeerPaymentQuote;
 @property(readonly, nonatomic) PKServiceProviderPurchase *purchase;
 @property(readonly, nonatomic) PKPayment *payment;

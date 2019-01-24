@@ -20,6 +20,7 @@
     _Bool _useSharing;
     _Bool _useIDS;
     _Bool _embeddedInApp;
+    NSObject<OS_dispatch_queue> *_bugSessionCallbackQueue;
     DEDXPCConnector *_xpcConnector;
     DEDXPCInbound *_xpcInbound;
     NSXPCConnection *_xpcOutboundConnection;
@@ -68,6 +69,7 @@
 @property __weak NSXPCConnection *xpcOutboundConnection; // @synthesize xpcOutboundConnection=_xpcOutboundConnection;
 @property(retain) DEDXPCInbound *xpcInbound; // @synthesize xpcInbound=_xpcInbound;
 @property(retain) DEDXPCConnector *xpcConnector; // @synthesize xpcConnector=_xpcConnector;
+@property(retain, nonatomic) NSObject<OS_dispatch_queue> *bugSessionCallbackQueue; // @synthesize bugSessionCallbackQueue=_bugSessionCallbackQueue;
 - (void).cxx_destruct;
 - (id)sharingConnection;
 - (id)idsConnection;

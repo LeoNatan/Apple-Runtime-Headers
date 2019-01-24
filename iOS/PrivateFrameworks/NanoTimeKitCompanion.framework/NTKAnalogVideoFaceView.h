@@ -62,9 +62,9 @@
 - (id)_complicationsTapColor;
 - (id)_complicationsEditingColor;
 - (id)_complicationsForegroundColor;
+- (id)_complicationsCompanionForegroundColor;
 - (id)_complicationsPlatterColor;
 - (void)_faceLibraryDismissed;
-- (double)_verticalPaddingForStatusBar;
 - (struct CGPoint)_contentCenterOffset;
 - (id)_curvedPickerMaskForSlot:(id)arg1;
 - (void)_curvedComplicationCircleRadius:(double *)arg1 centerAngle:(double *)arg2 maxAngularWidth:(double *)arg3 circleCenter:(struct CGPoint *)arg4 interior:(_Bool *)arg5 forSlot:(id)arg6;

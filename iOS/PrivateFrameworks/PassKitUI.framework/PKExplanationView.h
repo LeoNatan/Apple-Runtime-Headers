@@ -16,12 +16,10 @@
 {
     long long _context;
     _Bool _privacyFooterShouldPin;
-    UIScrollView *_scrollView;
     UIImageView *_imageView;
     PKPaymentSetupDockView *_dockView;
     NSString *_titleText;
     UILabel *_titleLabel;
-    UITextView *_bodyTextView;
     UIActivityIndicatorView *_activityIndicator;
     PKCheckGlyphLayer *_checkmarkLayer;
     _UIBackdropView *_backdropView;
@@ -44,12 +42,16 @@
     NSAttributedString *_attributedBodyText;
     UIView *_bodyView;
     OBPrivacyLinkController *_privacyLink;
+    UIScrollView *_scrollView;
     UIImageView *_logoImageView;
+    UITextView *_bodyTextView;
 }
 
+@property(retain, nonatomic) UITextView *bodyTextView; // @synthesize bodyTextView=_bodyTextView;
 @property(retain, nonatomic) UIImageView *logoImageView; // @synthesize logoImageView=_logoImageView;
 @property(readonly, nonatomic) PKCheckGlyphLayer *checkmarkLayer; // @synthesize checkmarkLayer=_checkmarkLayer;
 @property(readonly, nonatomic) UIActivityIndicatorView *activityIndicator; // @synthesize activityIndicator=_activityIndicator;
+@property(readonly, nonatomic) UIScrollView *scrollView; // @synthesize scrollView=_scrollView;
 @property(readonly, nonatomic) PKPaymentSetupDockView *dockView; // @synthesize dockView=_dockView;
 @property(retain, nonatomic) OBPrivacyLinkController *privacyLink; // @synthesize privacyLink=_privacyLink;
 @property(retain, nonatomic) UIView *bodyView; // @synthesize bodyView=_bodyView;

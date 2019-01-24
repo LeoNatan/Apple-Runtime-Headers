@@ -16,6 +16,8 @@
 
 @property(nonatomic) BOOL shouldAutoRetry; // @synthesize shouldAutoRetry=_shouldAutoRetry;
 @property(nonatomic) BOOL longTimeout; // @synthesize longTimeout=_longTimeout;
+- (BOOL)pauseFaceDetectTimer:(BOOL)arg1 error:(id *)arg2;
+- (BOOL)enableAutoRetry:(BOOL)arg1 error:(id *)arg2;
 - (BOOL)startNewMatchAttemptWithError:(id *)arg1;
 
 // Remaining properties

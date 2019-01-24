@@ -76,6 +76,10 @@ struct _NSRange {
     unsigned long long length;
 };
 
+struct os_unfair_lock_s {
+    unsigned int _os_unfair_lock_opaque;
+};
+
 #pragma mark Typedef'd Structures
 
 typedef struct {
@@ -96,12 +100,22 @@ typedef struct {
 } CDStruct_6c46ada8;
 
 typedef struct {
+    double _field1;
+    double _field2;
+} CDStruct_c3b9c2ee;
+
+typedef struct {
     double cornerRadius;
     long long shape;
     long long style;
     long long highlightEffect;
     long long disabledEffect;
 } CDStruct_e6a35582;
+
+typedef struct {
+    CDStruct_c3b9c2ee _field1;
+    CDStruct_c3b9c2ee _field2;
+} CDStruct_90e2a262;
 
 typedef struct {
     struct CGSize preferredContentSize;

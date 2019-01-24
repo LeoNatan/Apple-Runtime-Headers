@@ -13,8 +13,10 @@
 {
     UIView *_blurView;
     id <REBlurredContainerControllerDelegate> _delegate;
+    UIView *_viewToBlur;
 }
 
+@property(nonatomic) __weak UIView *viewToBlur; // @synthesize viewToBlur=_viewToBlur;
 @property(nonatomic) __weak id <REBlurredContainerControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) UIView *blurView; // @synthesize blurView=_blurView;
 - (void).cxx_destruct;

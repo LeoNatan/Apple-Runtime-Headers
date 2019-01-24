@@ -58,8 +58,8 @@ __attribute__((visibility("hidden")))
 - (void)dealloc;
 - (id)init;
 - (id)initWithChartInfo:(id)arg1;
-- (void)saveToArchive:(struct ChartMediatorArchive *)arg1;
-- (void)loadFromArchive:(const struct ChartMediatorArchive *)arg1;
+-     // Error parsing type: v24@0:8^{ChartMediatorArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedField<unsigned int>=ii(Pointer=^{Arena}^{Rep})}{RepeatedField<unsigned int>=ii(Pointer=^{Arena}^{Rep})}^{Reference}}16, name: saveToArchive:
+-     // Error parsing type: v24@0:8r^{ChartMediatorArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedField<unsigned int>=ii(Pointer=^{Arena}^{Rep})}{RepeatedField<unsigned int>=ii(Pointer=^{Arena}^{Rep})}^{Reference}}16, name: loadFromArchive:
 - (id)copyWithContext:(id)arg1;
 
 @end

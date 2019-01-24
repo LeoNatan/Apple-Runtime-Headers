@@ -17,13 +17,15 @@
 }
 
 @property(nonatomic) _Bool dumpData; // @synthesize dumpData=_dumpData;
-@property(nonatomic) ETImageDescriptorExtractor *extractor; // @synthesize extractor=_extractor;
-@property(nonatomic) ETOptimizerDef *optimizer; // @synthesize optimizer=_optimizer;
-@property(nonatomic) ETModelDef *model; // @synthesize model=_model;
+@property(retain, nonatomic) ETImageDescriptorExtractor *extractor; // @synthesize extractor=_extractor;
+@property(retain, nonatomic) ETOptimizerDef *optimizer; // @synthesize optimizer=_optimizer;
+@property(retain, nonatomic) ETModelDef *model; // @synthesize model=_model;
+- (void).cxx_destruct;
 - (void)saveNetwork:(id)arg1;
 - (id)evaluate:(id)arg1;
 - (float)fit:(id)arg1 numberOfBatches:(unsigned int)arg2 withProgress:(CDUnknownBlockType)arg3;
 - (float)fit:(id)arg1 numberOfEpochs:(int)arg2 withProgress:(CDUnknownBlockType)arg3;
+- (id)initWithModelDef:(id)arg1 optimizerDef:(id)arg2 extractor:(id)arg3 needWeightsInitialization:(_Bool)arg4;
 - (id)initWithModelDef:(id)arg1 optimizerDef:(id)arg2 extractor:(id)arg3;
 - (id)init;
 

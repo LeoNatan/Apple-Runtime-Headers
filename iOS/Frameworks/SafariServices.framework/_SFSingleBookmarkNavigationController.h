@@ -19,7 +19,6 @@
     id <_SFSingleBookmarkNavigationControllerDelegate> _bookmarkNavDelegate;
 }
 
-+ (id)newBookmarkInfoViewControllerWithBookmark:(id)arg1 inCollection:(id)arg2 addingBookmark:(_Bool)arg3 toFavorites:(_Bool)arg4 willBeDisplayedModally:(_Bool)arg5;
 @property(nonatomic) __weak id <_SFSingleBookmarkNavigationControllerDelegate> bookmarkNavDelegate; // @synthesize bookmarkNavDelegate=_bookmarkNavDelegate;
 - (void).cxx_destruct;
 - (_Bool)bookmarkInfoViewControllerCanSaveBookmarkChanges:(id)arg1;
@@ -28,10 +27,11 @@
 - (_Bool)prepareForPresentationForAddingBookmark:(_Bool)arg1;
 - (void)viewDidDisappear:(_Bool)arg1;
 - (void)addBookmarkWithTitle:(id)arg1 address:(id)arg2 parentBookmark:(id)arg3;
+- (id)_lastSelectedFolder;
 - (id)initForAddingToFavoritesInCollection:(id)arg1;
 - (id)initWithCollection:(id)arg1;
 - (id)initWithBookmark:(id)arg1 inCollection:(id)arg2;
-- (id)_initWithBookmark:(id)arg1 inCollection:(id)arg2 addingBookmark:(_Bool)arg3 toFavorites:(_Bool)arg4;
+- (id)_initWithBookmark:(id)arg1 childBookmarks:(id)arg2 inCollection:(id)arg3 addingBookmark:(_Bool)arg4 toFavorites:(_Bool)arg5;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

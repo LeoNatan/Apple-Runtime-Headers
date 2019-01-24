@@ -14,14 +14,16 @@
 {
     NTPBRecordBase *_base;
     NSString *_channelID;
-    NSString *_draftListID;
+    NSString *_draftArticleListID;
+    NSString *_draftIssueListID;
     _Bool _canAccessDrafts;
     struct {
         unsigned int canAccessDrafts:1;
     } _has;
 }
 
-@property(retain, nonatomic) NSString *draftListID; // @synthesize draftListID=_draftListID;
+@property(retain, nonatomic) NSString *draftIssueListID; // @synthesize draftIssueListID=_draftIssueListID;
+@property(retain, nonatomic) NSString *draftArticleListID; // @synthesize draftArticleListID=_draftArticleListID;
 @property(nonatomic) _Bool canAccessDrafts; // @synthesize canAccessDrafts=_canAccessDrafts;
 @property(retain, nonatomic) NSString *channelID; // @synthesize channelID=_channelID;
 @property(retain, nonatomic) NTPBRecordBase *base; // @synthesize base=_base;
@@ -33,7 +35,8 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
-@property(readonly, nonatomic) _Bool hasDraftListID;
+@property(readonly, nonatomic) _Bool hasDraftIssueListID;
+@property(readonly, nonatomic) _Bool hasDraftArticleListID;
 @property(nonatomic) _Bool hasCanAccessDrafts;
 @property(readonly, nonatomic) _Bool hasChannelID;
 @property(readonly, nonatomic) _Bool hasBase;

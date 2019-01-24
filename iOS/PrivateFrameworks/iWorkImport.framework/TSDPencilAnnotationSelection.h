@@ -6,16 +6,18 @@
 
 #import <iWorkImport/TSKSelection.h>
 
-@class TSPObject;
+@class NSDate, TSPObject;
 @protocol TSKPencilAnnotation;
 
 __attribute__((visibility("hidden")))
 @interface TSDPencilAnnotationSelection : TSKSelection
 {
     TSPObject<TSKPencilAnnotation> *_pencilAnnotation;
+    NSDate *_pencilAnnotationAnchorStartDate;
 }
 
 + (Class)archivedSelectionClass;
+@property(retain, nonatomic) NSDate *pencilAnnotationAnchorStartDate; // @synthesize pencilAnnotationAnchorStartDate=_pencilAnnotationAnchorStartDate;
 @property(readonly, nonatomic) TSPObject<TSKPencilAnnotation> *pencilAnnotation; // @synthesize pencilAnnotation=_pencilAnnotation;
 - (void).cxx_destruct;
 - (_Bool)canSaveSelectionToArchivedViewState;

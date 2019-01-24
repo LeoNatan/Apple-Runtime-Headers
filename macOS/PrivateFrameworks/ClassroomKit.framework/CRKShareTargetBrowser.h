@@ -10,7 +10,7 @@
 #import <ClassroomKit/CATTaskOperationNotificationDelegate-Protocol.h>
 
 @class CATOperationQueue, CATRemoteTaskOperation, CATTaskClient, NSSet, NSString;
-@protocol CRKShareTargetBrowserDelegate, OS_dispatch_queue;
+@protocol CRKShareTargetBrowserDelegate, CRKTransportProviding, OS_dispatch_queue;
 
 @interface CRKShareTargetBrowser : NSObject <CATTaskClientDelegate, CATTaskOperationNotificationDelegate>
 {
@@ -37,6 +37,8 @@
 - (void)client:(id)arg1 didInterruptWithError:(id)arg2;
 - (void)clientDidDisconnect:(id)arg1;
 - (void)clientDidConnect:(id)arg1;
+@property(readonly, nonatomic) id <CRKTransportProviding> studentdTransportProvider;
+@property(readonly, nonatomic) id <CRKTransportProviding> instructorTransportProvider;
 - (void)instructorTargetsDidChange:(id)arg1;
 - (void)browseForInstructorTargetsOperationDidFinish:(id)arg1;
 - (void)stopBrowsingForInstructorTargets;
@@ -45,12 +47,13 @@
 - (void)fetchInstructorEndpointOperationDidFinish:(id)arg1;
 - (void)connectToInstructoriOS;
 - (void)connectToInstructorMacOS;
-- (id)instructorTransportProvider;
 - (void)studentTargetsDidChange:(id)arg1;
 - (void)browseForStudentTargetsOperationDidFinish:(id)arg1;
 - (void)stopBrowsingForStudentTargets;
 - (void)startBrowsingForStudentTargetsIfNeeded;
 - (void)acquireStudentActivityAssertion;
+- (void)didFetchStudentdTransport:(id)arg1 error:(id)arg2;
+- (void)connectToStudentd;
 - (void)invalidate;
 - (void)suspend;
 - (void)resume;

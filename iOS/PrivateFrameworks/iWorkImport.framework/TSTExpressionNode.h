@@ -29,8 +29,8 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) TSTWPTokenAttachment *tokenAttachment; // @synthesize tokenAttachment=_tokenAttachment;
 - (void).cxx_destruct;
 - (id)description;
-- (void)saveToArchive:(struct ExpressionNodeArchive *)arg1 archiver:(id)arg2;
-- (void)loadFromArchive:(const struct ExpressionNodeArchive *)arg1 unarchiver:(id)arg2;
+-     // Error parsing type: v32@0:8^{ExpressionNodeArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}QQ}16@24, name: saveToArchive:archiver:
+-     // Error parsing type: v32@0:8r^{ExpressionNodeArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}QQ}16@24, name: loadFromArchive:unarchiver:
 - (void)saveToArchiver:(id)arg1;
 - (void)loadFromUnarchiver:(id)arg1;
 - (_Bool)isEqualToExpressionNode:(id)arg1;

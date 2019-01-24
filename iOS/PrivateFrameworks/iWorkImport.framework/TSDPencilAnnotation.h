@@ -10,7 +10,7 @@
 #import <iWorkImport/TSKPencilAnnotation-Protocol.h>
 #import <iWorkImport/TSPCopying-Protocol.h>
 
-@class NSString, PKDrawing, TSDDrawableInfo, TSDPencilAnnotationStorage;
+@class NSString, TSDDrawableInfo, TSDPencilAnnotationStorage, TSKPKDrawing;
 
 __attribute__((visibility("hidden")))
 @interface TSDPencilAnnotation : TSPObject <TSPCopying, TSKDocumentObject, TSKPencilAnnotation>
@@ -25,7 +25,7 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (void)saveToArchiver:(id)arg1;
 - (void)loadFromUnarchiver:(id)arg1;
-- (void)loadFromArchive:(const struct PencilAnnotationArchive *)arg1 unarchiver:(id)arg2;
+-     // Error parsing type: v32@0:8r^{PencilAnnotationArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{Reference}}16@24, name: loadFromArchive:unarchiver:
 - (void)willBeRemovedFromDocumentRoot:(id)arg1;
 - (void)willBeAddedToDocumentRoot:(id)arg1 dolcContext:(id)arg2;
 - (void)wasRemovedFromDocumentRoot:(id)arg1;
@@ -38,7 +38,7 @@ __attribute__((visibility("hidden")))
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
-@property(readonly, nonatomic) PKDrawing *drawing; // @dynamic drawing;
+@property(readonly, nonatomic) TSKPKDrawing *drawing; // @dynamic drawing;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 

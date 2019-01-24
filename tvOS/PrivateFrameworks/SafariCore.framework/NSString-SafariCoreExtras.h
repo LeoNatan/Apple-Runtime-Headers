@@ -7,7 +7,10 @@
 #import <Foundation/NSString.h>
 
 @interface NSString (SafariCoreExtras)
++ (id)safari_stringAsHexWithBuffer:(const char *)arg1 length:(unsigned long long)arg2;
++ (id)safari_stringAsHexWithData:(id)arg1;
 + (void)safari_reverseEnumerateComponents:(id)arg1 usingBlock:(CDUnknownBlockType)arg2;
+@property(readonly, copy, nonatomic) NSString *safari_suggestedFilenameFromTitleString;
 - (id)safari_stringByRemovingWwwDotPrefix;
 - (long long)safari_localizedCompareSortingEmptyStringAndNumericPrefixToEnd:(id)arg1;
 @property(readonly, copy, nonatomic) NSString *safari_domainFromHost;

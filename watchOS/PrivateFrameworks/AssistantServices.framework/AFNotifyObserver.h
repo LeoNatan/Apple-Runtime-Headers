@@ -22,8 +22,10 @@
         unsigned int delegateRespondsToDidChangeStateFromTo:1;
     } _flags;
     unsigned long long _state;
+    NSString *_name;
 }
 
+@property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
 - (void).cxx_destruct;
 - (void)_invalidate;
 - (void)_updateStateWithToken:(int)arg1;
@@ -32,10 +34,10 @@
 @property(readonly, nonatomic) unsigned long long state;
 - (void)dealloc;
 - (id)initWithName:(id)arg1 options:(unsigned int)arg2 queue:(id)arg3 delegate:(id)arg4;
+@property(readonly, copy) NSString *description;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
 @property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 

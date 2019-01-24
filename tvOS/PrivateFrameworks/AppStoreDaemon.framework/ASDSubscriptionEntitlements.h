@@ -11,6 +11,8 @@
 @interface ASDSubscriptionEntitlements : NSObject
 {
     ASDServiceBroker *_serviceBroker;
+    int _cacheUpdatedNotificationToken;
+    int _cacheExpiredNotificationToken;
 }
 
 + (id)sharedInstance;
@@ -19,6 +21,7 @@
 - (void)getSubscriptionEntitlementsForActiveAccountWithResultHandler:(CDUnknownBlockType)arg1;
 - (void)setSubscriptionEntitlementsWithDictionary:(id)arg1 forAccountID:(id)arg2;
 - (id)_initWithServiceBroker:(id)arg1;
+- (void)dealloc;
 - (id)init;
 
 @end

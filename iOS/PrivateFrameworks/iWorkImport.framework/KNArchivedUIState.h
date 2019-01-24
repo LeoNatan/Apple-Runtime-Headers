@@ -18,8 +18,9 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (void)saveToArchiver:(id)arg1;
 - (void)loadFromUnarchiver:(id)arg1;
-- (_Bool)validateDesktopViewStateWithDocumentRoot:(id)arg1;
-- (_Bool)validateMobileViewStateWithDocumentRoot:(id)arg1;
+- (_Bool)p_validateViewStateWithDocumentRoot:(id)arg1 documentRevision:(id)arg2;
+- (_Bool)validateDesktopViewStateWithDocumentRoot:(id)arg1 documentRevision:(id)arg2;
+- (_Bool)validateMobileViewStateWithDocumentRoot:(id)arg1 documentRevision:(id)arg2;
 - (id)initWithUIState:(id)arg1 context:(id)arg2;
 
 @end

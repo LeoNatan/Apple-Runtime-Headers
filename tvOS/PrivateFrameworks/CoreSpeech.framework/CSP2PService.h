@@ -21,20 +21,20 @@
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(nonatomic) __weak id <CSADCompanionServiceProvider> adCompanionServiceProvider; // @synthesize adCompanionServiceProvider=_adCompanionServiceProvider;
 - (void).cxx_destruct;
-- (void)_processGradingDataFetchCommandWithRequest:(id)arg1 fromSenderID:(id)arg2 withReply:(CDUnknownBlockType)arg3;
+- (void)_processDataFetchCommandWithRequest:(id)arg1 fromSenderID:(id)arg2 withReply:(CDUnknownBlockType)arg3;
 - (void)_processVoiceProfileDeleteCommandWithRequest:(id)arg1 fromSenderID:(id)arg2 withReply:(CDUnknownBlockType)arg3;
 - (void)_receiveVoiceProfileFromPeerId:(id)arg1 voiceProfileInfo:(id)arg2 withReply:(CDUnknownBlockType)arg3;
-- (void)_receiveVoiceGradingDataFromPeerId:(id)arg1 requestInfo:(id)arg2 withReply:(CDUnknownBlockType)arg3;
+- (void)_receiveData1FromPeerId:(id)arg1 requestInfo:(id)arg2 withReply:(CDUnknownBlockType)arg3;
 - (void)_receiveParallelRecordingFromPeerId:(id)arg1 recordingInfo:(id)arg2 withReply:(CDUnknownBlockType)arg3;
-- (void)_sendGradingData:(id)arg1 withFileName:(id)arg2 toPeerId:(id)arg3 withCompressedFlag:(_Bool)arg4;
-- (void)_sendVoiceGradingDataToPeerId:(id)arg1;
-- (void)_sendNearMissGradingDataToPeerId:(id)arg1;
+- (void)_sendData1File:(id)arg1 withFileName:(id)arg2 toPeerId:(id)arg3 withCompressedFlag:(_Bool)arg4 withUncompressedDataSize:(unsigned long long)arg5 withRetainFileFlag:(_Bool)arg6;
+- (void)_sendData1ToPeerId:(id)arg1;
+- (void)_sendData2ToPeerId:(id)arg1;
 - (void)_sendParallelRecordingsToPeerId:(id)arg1 voiceProfileRequestInfo:(id)arg2 withReply:(CDUnknownBlockType)arg3;
 - (void)_compressFilesInDirectory:(id)arg1 matchingPredicate:(id)arg2 compressedFileAvailable:(CDUnknownBlockType)arg3;
 - (void)_processParallelRecordingCommandWithRequest:(id)arg1 fromSenderID:(id)arg2 withReply:(CDUnknownBlockType)arg3;
 - (void)_processRemoteHeySiriCommandWithRequest:(id)arg1 fromSenderID:(id)arg2 withReply:(CDUnknownBlockType)arg3;
-- (void)sendNearMissGradingDataToNearbyPeer;
-- (void)sendVoiceGradingDataToNearbyPeer;
+- (void)sendInfo2ToNearbyPeer;
+- (void)sendInfo1ToNearbyPeer;
 - (void)processRemoteCommandWithPayload:(id)arg1 fromPeer:(id)arg2 withReply:(CDUnknownBlockType)arg3;
 - (id)init;
 

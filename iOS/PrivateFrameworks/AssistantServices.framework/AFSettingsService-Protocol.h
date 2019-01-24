@@ -6,9 +6,17 @@
 
 #import <AssistantServices/NSObject-Protocol.h>
 
-@class AFAudioPlaybackRequest, AFRequestInfo, AFVoiceInfo, NSArray, NSData, NSDictionary, NSString, NSURL;
+@class AFAudioPlaybackRequest, AFRequestInfo, AFVoiceInfo, NSArray, NSData, NSDictionary, NSString, NSURL, NSUUID;
 
 @protocol AFSettingsService <NSObject>
+- (oneway void)getPairedBluetoothDeviceInfoArrayWithCompletion:(void (^)(NSArray *))arg1;
+- (oneway void)getConnectedBluetoothDeviceInfoArrayWithCompletion:(void (^)(NSArray *))arg1;
+- (oneway void)getBluetoothDeviceWithUID:(NSUUID *)arg1 completion:(void (^)(AFBluetoothDeviceInfo *))arg2;
+- (oneway void)getBluetoothDeviceWithAddress:(NSString *)arg1 completion:(void (^)(AFBluetoothDeviceInfo *))arg2;
+- (oneway void)setSiriOutputVolume:(float)arg1 completion:(void (^)(NSError *))arg2;
+- (oneway void)getSiriOutputVolumeWithCompletion:(void (^)(float, NSError *))arg1;
+- (oneway void)forceMultiUserSync:(_Bool)arg1 download:(_Bool)arg2 completion:(void (^)(_Bool))arg3;
+- (oneway void)getSharedCompanionInfo:(void (^)(NSDictionary *, NSError *))arg1;
 - (oneway void)configOverrides:(void (^)(NSDictionary *))arg1;
 - (oneway void)setConfigOverrides:(NSDictionary *)arg1 completion:(void (^)(void))arg2;
 - (oneway void)getStereoPairState:(void (^)(_Bool, NSError *))arg1;

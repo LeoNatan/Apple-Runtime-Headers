@@ -9,6 +9,7 @@
 @class NSError, NSURL, SKCloudServiceSetupRemoteViewController;
 
 @protocol SKCloudServiceSetupRemoteViewControllerDelegate <NSObject>
+- (void)overrideRedeemCameraPerformAction:(long long)arg1 withObject:(id)arg2;
 - (void)overrideCreditCardPresentationWithCompletion:(void (^)(SUCreditCardReaderOutput *))arg1;
 - (void)cloudServiceSetupRemoteViewController:(SKCloudServiceSetupRemoteViewController *)arg1 requestsDismissingSafariViewControllerAnimated:(_Bool)arg2 completion:(void (^)(void))arg3;
 - (void)cloudServiceSetupRemoteViewController:(SKCloudServiceSetupRemoteViewController *)arg1 requestsPresentingSafariViewControllerWithURL:(NSURL *)arg2 animated:(_Bool)arg3 completion:(void (^)(void))arg4;

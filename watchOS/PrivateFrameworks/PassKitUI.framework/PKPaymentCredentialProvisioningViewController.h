@@ -8,11 +8,12 @@
 
 #import <PassKitUI/PKPaymentProvisioningControllerDelegate-Protocol.h>
 #import <PassKitUI/PKPaymentSetupHideSetupLaterButtonProtocol-Protocol.h>
+#import <PassKitUI/PKPaymentSetupPresentationProtocol-Protocol.h>
 #import <PassKitUI/PKPaymentSetupRequiresPreflightProtocol-Protocol.h>
 
 @class NSString, PKPaymentCredential, PKPaymentCredentialMetadataTableController, PKPaymentSetupProduct, UIImage;
 
-@interface PKPaymentCredentialProvisioningViewController : PKPaymentSetupProvisioningFieldsViewController <PKPaymentSetupRequiresPreflightProtocol, PKPaymentProvisioningControllerDelegate, PKPaymentSetupHideSetupLaterButtonProtocol>
+@interface PKPaymentCredentialProvisioningViewController : PKPaymentSetupProvisioningFieldsViewController <PKPaymentSetupRequiresPreflightProtocol, PKPaymentProvisioningControllerDelegate, PKPaymentSetupHideSetupLaterButtonProtocol, PKPaymentSetupPresentationProtocol>
 {
     UIImage *_passSnapshotPlaceHolder;
     unsigned int _credentialProvisioningType;
@@ -29,6 +30,7 @@
 @property(copy, nonatomic) UIImage *passSnapshot; // @synthesize passSnapshot=_passSnapshot;
 @property(nonatomic) _Bool shouldAutoProvision; // @synthesize shouldAutoProvision=_shouldAutoProvision;
 - (void).cxx_destruct;
+- (id)onPresentationRemoveViewControllersAfterMarker;
 - (void)paymentPassUpdatedOnCredential:(id)arg1;
 - (void)_cleanupTransferredCredentialFromSourceDeviceWithCompletion:(CDUnknownBlockType)arg1;
 - (id)_defaultHeaderViewSubTitleForLocalCredential;

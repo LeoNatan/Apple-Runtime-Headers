@@ -8,16 +8,15 @@
 
 #import <Silex/NSCopying-Protocol.h>
 
-@class NSMutableArray, NSMutableDictionary, NSMutableSet, NSOrderedSet, SXComponentDependencyResolver, SXLayoutAttributes;
+@class NSMutableArray, NSMutableDictionary, NSMutableSet, NSOrderedSet, SXComponentDependencyResolver, SXLayoutOptions;
 @protocol SXComponentBlueprintFactory;
 
 @interface SXLayoutBlueprint : NSObject <NSCopying>
 {
     _Bool _isComplete;
     _Bool _updating;
-    _Bool _didPlaceDynamicAds;
     SXLayoutBlueprint *_parentLayoutBlueprint;
-    SXLayoutAttributes *_layoutAttributes;
+    SXLayoutOptions *_layoutOptions;
     id <SXComponentBlueprintFactory> _componentBlueprintFactory;
     NSMutableDictionary *_blueprint;
     NSMutableDictionary *_flattenedBlueprint;
@@ -27,28 +26,26 @@
     NSOrderedSet *_snapLines;
     struct CGPoint _offset;
     struct CGSize _blueprintSize;
-    struct CGSize _canvasSize;
     struct UIEdgeInsets _padding;
 }
 
 @property(retain, nonatomic) NSOrderedSet *snapLines; // @synthesize snapLines=_snapLines;
-@property(nonatomic) _Bool didPlaceDynamicAds; // @synthesize didPlaceDynamicAds=_didPlaceDynamicAds;
 @property(retain, nonatomic) SXComponentDependencyResolver *dependencySolver; // @synthesize dependencySolver=_dependencySolver;
 @property(nonatomic) struct UIEdgeInsets padding; // @synthesize padding=_padding;
-@property(nonatomic) struct CGSize canvasSize; // @synthesize canvasSize=_canvasSize;
 @property(retain, nonatomic) NSMutableSet *invalidatedComponents; // @synthesize invalidatedComponents=_invalidatedComponents;
 @property(nonatomic, getter=isUpdating) _Bool updating; // @synthesize updating=_updating;
 @property(retain, nonatomic) NSMutableArray *orderedComponentIdentifiers; // @synthesize orderedComponentIdentifiers=_orderedComponentIdentifiers;
 @property(retain, nonatomic) NSMutableDictionary *flattenedBlueprint; // @synthesize flattenedBlueprint=_flattenedBlueprint;
 @property(retain, nonatomic) NSMutableDictionary *blueprint; // @synthesize blueprint=_blueprint;
 @property(readonly, nonatomic) id <SXComponentBlueprintFactory> componentBlueprintFactory; // @synthesize componentBlueprintFactory=_componentBlueprintFactory;
-@property(retain, nonatomic) SXLayoutAttributes *layoutAttributes; // @synthesize layoutAttributes=_layoutAttributes;
+@property(readonly, nonatomic) SXLayoutOptions *layoutOptions; // @synthesize layoutOptions=_layoutOptions;
 @property(nonatomic) struct CGSize blueprintSize; // @synthesize blueprintSize=_blueprintSize;
 @property(readonly, nonatomic) _Bool isComplete; // @synthesize isComplete=_isComplete;
 @property(nonatomic) __weak SXLayoutBlueprint *parentLayoutBlueprint; // @synthesize parentLayoutBlueprint=_parentLayoutBlueprint;
 @property(nonatomic) struct CGPoint offset; // @synthesize offset=_offset;
 - (void).cxx_destruct;
 - (id)description;
+@property(readonly, nonatomic) SXLayoutBlueprint *rootLayoutBlueprint;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)snapLinesIncludingChildren:(_Bool)arg1;
 - (void)storeComponentsFromBlueprint:(id)arg1 inDictionary:(id)arg2;
@@ -71,7 +68,7 @@
 - (void)unregisterLayout:(id)arg1;
 - (void)registerLayout:(id)arg1 sizer:(id)arg2 forComponent:(id)arg3;
 - (void)registerLayout:(id)arg1 sizer:(id)arg2 forComponent:(id)arg3 atIndex:(unsigned long long)arg4;
-- (id)initWithComponentBlueprintFactory:(id)arg1;
+- (id)initWithLayoutOptions:(id)arg1 componentBlueprintFactory:(id)arg2;
 
 @end
 

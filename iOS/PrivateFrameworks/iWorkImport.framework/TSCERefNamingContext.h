@@ -13,7 +13,6 @@
 __attribute__((visibility("hidden")))
 @interface TSCERefNamingContext : NSObject <NSCopying>
 {
-    struct TSUPreserveFlags _preserveFlags;
     _Bool _suppressIdenticalEndReference;
     _Bool _useSymbolicNames;
     _Bool _allowTableName;
@@ -35,7 +34,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool useSymbolicNames; // @synthesize useSymbolicNames=_useSymbolicNames;
 @property(nonatomic) _Bool suppressIdenticalEndReference; // @synthesize suppressIdenticalEndReference=_suppressIdenticalEndReference;
 @property(nonatomic) UUIDData_5fbc143e hostTableUID; // @synthesize hostTableUID=_hostTableUID;
-@property(nonatomic) struct TSUPreserveFlags preserveFlags; // @synthesize preserveFlags=_preserveFlags;
 @property(retain, nonatomic) NSString *contextSheetName; // @synthesize contextSheetName=_contextSheetName;
 - (id).cxx_construct;
 - (void).cxx_destruct;

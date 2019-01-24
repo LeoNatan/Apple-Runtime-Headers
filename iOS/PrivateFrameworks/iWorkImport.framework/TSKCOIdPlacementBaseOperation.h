@@ -6,56 +6,27 @@
 
 #import <iWorkImport/TSKCOAbstractOperation.h>
 
-#import <iWorkImport/TSKCOIdOperation-Protocol.h>
-#import <iWorkImport/TSKCOTransforming-Protocol.h>
-
-@class TSKCOIdAddress;
-
 __attribute__((visibility("hidden")))
-@interface TSKCOIdPlacementBaseOperation : TSKCOAbstractOperation <TSKCOIdOperation, TSKCOTransforming>
+@interface TSKCOIdPlacementBaseOperation : TSKCOAbstractOperation
 {
     _Bool _isDominating;
     int _fromIndex;
     int _toIndex;
-    int _placementType;
-    TSKCOIdAddress *_address;
 }
 
 + (id)stringForPlacementType:(int)arg1;
-@property(readonly, nonatomic) TSKCOIdAddress *address; // @synthesize address=_address;
 @property(readonly, nonatomic) _Bool isDominating; // @synthesize isDominating=_isDominating;
-@property(readonly, nonatomic) int placementType; // @synthesize placementType=_placementType;
 @property(readonly, nonatomic) int toIndex; // @synthesize toIndex=_toIndex;
 @property(readonly, nonatomic) int fromIndex; // @synthesize fromIndex=_fromIndex;
-- (void).cxx_destruct;
-- (void)saveToArchiver:(id)arg1 message:(struct Operation *)arg2;
-- (id)initWithUnarchiver:(id)arg1 message:(const struct Operation *)arg2;
+-     // Error parsing type: v32@0:8@16^{Operation=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedField<unsigned long long>=ii(Pointer=^{Arena}^{Rep})}i{RepeatedField<unsigned int>=ii(Pointer=^{Arena}^{Rep})}iBBBIiiQiIii}24, name: saveToArchiver:message:
+-     // Error parsing type: @32@0:8@16r^{Operation=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedField<unsigned long long>=ii(Pointer=^{Arena}^{Rep})}i{RepeatedField<unsigned int>=ii(Pointer=^{Arena}^{Rep})}iBBBIiiQiIii}24, name: initWithUnarchiver:message:
 - (id)toString;
-- (id)ut_transformByTransformer:(id)arg1;
-- (id)transformDynamicByAnyOperation:(id)arg1 byHigherPriority:(_Bool)arg2 history:(id)arg3;
-- (id)transformStaticByAnyOperation:(id)arg1 byHigherPriority:(_Bool)arg2 history:(id)arg3;
-- (id)transformUpdateRangeOperation:(id)arg1 isHigherPriority:(_Bool)arg2 history:(id)arg3;
-- (id)transformReplaceRangeOperation:(id)arg1 isHigherPriority:(_Bool)arg2 history:(id)arg3;
-- (id)transformUpdateIdOperation:(id)arg1 isHigherPriority:(_Bool)arg2 history:(id)arg3;
-- (id)transformIdPlacementBaseOperation:(id)arg1 isHigherPriority:(_Bool)arg2 history:(id)arg3;
-- (id)transformRearrangeOrPlacementOperation:(id)arg1 isHigherPriority:(_Bool)arg2 history:(id)arg3;
-- (id)transformRemoveOperation:(id)arg1 isHigherPriority:(_Bool)arg2 history:(id)arg3;
-- (id)transformAddOperation:(id)arg1 isHigherPriority:(_Bool)arg2 history:(id)arg3;
-- (pair_65f741c2)transformBothIndexesByRearrange:(int)arg1 opToIndex:(int)arg2 isHigherPriority:(_Bool)arg3 history:(id)arg4;
-- (int)transformFromIndexByRearrange:(int)arg1 isHigherPriority:(_Bool)arg2 history:(id)arg3;
-- (int)transformToIndexByRearrange:(int)arg1 isHigherPriority:(_Bool)arg2 history:(id)arg3;
-- (pair_65f741c2)transformBothIndexesByRemove:(int)arg1 opToIndex:(int)arg2 isHigherPriority:(_Bool)arg3 history:(id)arg4;
-- (int)transformIndexByRemove:(int)arg1 isHigherPriority:(_Bool)arg2 isFromIndex:(_Bool)arg3 history:(id)arg4;
-- (pair_65f741c2)transformBothIndexesByAdd:(int)arg1 opToIndex:(int)arg2 isHigherPriority:(_Bool)arg3 history:(id)arg4;
-- (int)transformIndexByAdd:(int)arg1 isHigherPriority:(_Bool)arg2 isFromIndex:(_Bool)arg3 history:(id)arg4;
-- (_Bool)isFromToIndexEqual;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
-- (id)operationWithNewFromIndex:(int)arg1 toIndex:(int)arg2 dominating:(_Bool)arg3;
 - (id)operationWithNewNoop:(_Bool)arg1;
-- (id)initWithIdAddress:(id)arg1 fromIndex:(int)arg2 toIndex:(int)arg3;
-- (id)initWithIdAddress:(id)arg1 fromIndex:(int)arg2 toIndex:(int)arg3 dominating:(_Bool)arg4 noop:(_Bool)arg5;
-- (id)initWithIdAddress:(id)arg1 fromIndex:(int)arg2 toIndex:(int)arg3 dominating:(_Bool)arg4 placementType:(int)arg5 noop:(_Bool)arg6;
+@property(readonly, nonatomic) int placementType;
+- (id)initWithAddress:(const vector_4dc5f307 *)arg1 fromIndex:(int)arg2 toIndex:(int)arg3;
+- (id)initWithAddress:(const vector_4dc5f307 *)arg1 fromIndex:(int)arg2 toIndex:(int)arg3 dominating:(_Bool)arg4 noop:(_Bool)arg5;
 
 @end
 

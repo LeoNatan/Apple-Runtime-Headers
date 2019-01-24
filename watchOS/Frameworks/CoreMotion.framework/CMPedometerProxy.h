@@ -40,6 +40,7 @@
     int fElevationDescendedStart;
     int fElevationDescendedOffset;
     _Bool fElevationCountingAvailable;
+    int fDistanceSource;
 }
 
 - (void)_queryPedometerCalibrationBinsWithHandler:(CDUnknownBlockType)arg1 forType:(int)arg2 forRemote:(_Bool)arg3;
@@ -48,8 +49,9 @@
 - (void)_startWatchdogCheckins;
 - (void)_stopPedometerEventUpdates;
 - (void)_startPedometerEventUpdatesWithHandler:(CDUnknownBlockType)arg1;
-- (void)_handleRecordQueryResponse:(shared_ptr_bdcc6d0f)arg1 withHandler:(CDUnknownBlockType)arg2;
-- (void)_queryPedometerDataSinceDataRecord:(id)arg1 withHandler:(CDUnknownBlockType)arg2;
+- (void)_handleRecordQueryResponse:(shared_ptr_bdcc6d0f)arg1 withHandler:(CDUnknownBlockType)arg2 shouldStartUpdates:(_Bool)arg3;
+- (void)_queryPedometerDataSinceDataRecord:(id)arg1 withHandler:(CDUnknownBlockType)arg2 shouldStartUpdates:(_Bool)arg3;
+- (void)_subscribeToCumulativePedometerUpdates:(CDUnknownBlockType)arg1;
 - (void)_startPedometerUpdatesSinceDataRecord:(id)arg1 withHandler:(CDUnknownBlockType)arg2;
 - (void)_handleQueryResponse:(shared_ptr_bdcc6d0f)arg1 onQueue:(id)arg2 withHandler:(CDUnknownBlockType)arg3;
 - (void)_stopPedometerUpdates;

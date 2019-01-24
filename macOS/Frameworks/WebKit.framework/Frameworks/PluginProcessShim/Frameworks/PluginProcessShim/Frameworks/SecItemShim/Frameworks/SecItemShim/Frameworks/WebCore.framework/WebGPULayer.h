@@ -9,14 +9,13 @@
 __attribute__((visibility("hidden")))
 @interface WebGPULayer : CAMetalLayer
 {
-    struct GPUDevice *_context;
-    float _devicePixelRatio;
+    struct GPUSwapChain *_swapChain;
+    float _deviceScaleFactor;
 }
 
-@property(nonatomic) struct GPUDevice *context; // @synthesize context=_context;
-- (void)display;
+@property(nonatomic) struct GPUSwapChain *swapChain; // @synthesize swapChain=_swapChain;
 - (struct CGImage *)copyImageSnapshotWithColorSpace:(struct CGColorSpace *)arg1;
-- (id)initWithGPUDevice:(struct GPUDevice *)arg1;
+- (id)init;
 
 @end
 

@@ -6,12 +6,12 @@
 
 #import <objc/NSObject.h>
 
-@class NSLock, NSMutableArray, NSMutableSet, NSSet;
+@class NSMutableArray, NSMutableSet, NSRecursiveLock, NSSet;
 @protocol OS_os_log, TVSBluetoothManagerDelegate;
 
 @interface TVSBluetoothManager : NSObject
 {
-    NSLock *_lock;
+    NSRecursiveLock *_lock;
     NSMutableArray *_allBTDevices;
     NSMutableSet *_observers;
     NSObject<OS_os_log> *_log;

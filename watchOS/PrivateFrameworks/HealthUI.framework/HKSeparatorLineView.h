@@ -17,6 +17,7 @@
     float _trailingMargin;
 }
 
++ (id)_hkecg_separatorView;
 @property(nonatomic) float trailingMargin; // @synthesize trailingMargin=_trailingMargin;
 @property(nonatomic) float leadingMargin; // @synthesize leadingMargin=_leadingMargin;
 @property(nonatomic) int dashStyle; // @synthesize dashStyle=_dashStyle;

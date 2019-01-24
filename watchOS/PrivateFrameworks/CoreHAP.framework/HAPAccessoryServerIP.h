@@ -103,6 +103,8 @@
 - (void)listPairingsWithCompletionQueue:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (_Bool)removePairingForCurrentControllerOnQueue:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_handlePairingsResponseObject:(id)arg1 type:(unsigned int)arg2 httpStatus:(int)arg3 httpError:(id)arg4 removeRequest:(_Bool)arg5 completionQueue:(id)arg6 completionBlock:(CDUnknownBlockType)arg7;
+- (void)_sendRemovePairingWithData:(id)arg1 queue:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)_establishSecureSessionAndRemovePairing:(id)arg1 queue:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_removePairingWithIdentifier:(id)arg1 publicKey:(id)arg2 queue:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)removePairing:(id)arg1 completionQueue:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)_startAddPairingWithIdentifier:(id)arg1 publicKey:(id)arg2 admin:(_Bool)arg3 queue:(id)arg4 completion:(CDUnknownBlockType)arg5;
@@ -176,6 +178,8 @@
 - (CDUnknownBlockType)_queuedReadOperationBlock:(id)arg1 timeout:(double)arg2 queue:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)_error:(id)arg1 forWriteCharacteristicValues:(id)arg2 queue:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)_error:(id)arg1 forReadCharacteristicValues:(id)arg2 queue:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
+- (void)_continuePairingAfterMFiCertValidation;
+- (void)_handleMFiCertValidation;
 - (_Bool)stopPairingWithError:(id *)arg1;
 - (void)_tearDownSession;
 - (_Bool)tryPairingPassword:(id)arg1 error:(id *)arg2;

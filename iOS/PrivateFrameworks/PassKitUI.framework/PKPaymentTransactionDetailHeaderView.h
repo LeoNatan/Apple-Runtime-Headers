@@ -10,34 +10,26 @@
 
 @interface PKPaymentTransactionDetailHeaderView : UIView
 {
+    UILabel *_amountLabel;
+    UILabel *_subtitleLabel;
+    UILabel *_secondaryLabel;
+    UILabel *_tertiaryLabel;
+    _Bool _isTemplateLayout;
     _Bool _inBridge;
-    UIView *_contentView;
-    UIView *_contentViewSizingView;
+    NSString *_amountText;
     NSString *_subtitleText;
     NSString *_secondarySubtitleText;
-    double _topPadding;
-    double _contentToLabelPadding;
-    double _bottomPadding;
-    UILabel *_subtitleLabel;
-    UILabel *_secondarySubtitleLabel;
 }
 
-@property(nonatomic) _Bool inBridge; // @synthesize inBridge=_inBridge;
-@property(retain, nonatomic) UILabel *secondarySubtitleLabel; // @synthesize secondarySubtitleLabel=_secondarySubtitleLabel;
-@property(retain, nonatomic) UILabel *subtitleLabel; // @synthesize subtitleLabel=_subtitleLabel;
-@property(nonatomic) double bottomPadding; // @synthesize bottomPadding=_bottomPadding;
-@property(nonatomic) double contentToLabelPadding; // @synthesize contentToLabelPadding=_contentToLabelPadding;
-@property(nonatomic) double topPadding; // @synthesize topPadding=_topPadding;
 @property(copy, nonatomic) NSString *secondarySubtitleText; // @synthesize secondarySubtitleText=_secondarySubtitleText;
 @property(copy, nonatomic) NSString *subtitleText; // @synthesize subtitleText=_subtitleText;
-@property(readonly, nonatomic) UIView *contentViewSizingView; // @synthesize contentViewSizingView=_contentViewSizingView;
-@property(readonly, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;
+@property(copy, nonatomic) NSString *amountText; // @synthesize amountText=_amountText;
+@property(nonatomic) _Bool inBridge; // @synthesize inBridge=_inBridge;
 - (void).cxx_destruct;
+- (struct CGSize)_layoutWithBounds:(struct CGRect)arg1;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)layoutSubviews;
-- (void)_updateSecondarySubtitleLabel;
-- (void)_updateSubtitleLabel;
-- (id)initWithContentView:(id)arg1 contentViewSizingView:(id)arg2 subtitleText:(id)arg3 secondarySubtitleText:(id)arg4 runningInBridge:(_Bool)arg5;
+- (id)initWithFrame:(struct CGRect)arg1;
 
 @end
 

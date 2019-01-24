@@ -17,10 +17,10 @@ __attribute__((visibility("hidden")))
 
 @property(nonatomic) struct TSUCellCoord formulaCoord; // @synthesize formulaCoord=_formulaCoord;
 - (id)initWithTrackedReferenceTSPObjectDeprecated:(id)arg1;
-- (id)initFromExpandedArchive:(const struct ExpandedTrackedReferenceArchive *)arg1;
-- (id)initFromArchive:(const struct TrackedReferenceArchive *)arg1;
-- (void)encodeToExpandedArchive:(struct ExpandedTrackedReferenceArchive *)arg1 archiver:(id)arg2;
-- (void)encodeToArchive:(struct TrackedReferenceArchive *)arg1 archiver:(id)arg2;
+-     // Error parsing type: @24@0:8r^{ExpandedTrackedReferenceArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{ASTNodeArrayArchive}II}16, name: initFromExpandedArchive:
+-     // Error parsing type: @24@0:8r^{TrackedReferenceArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{ASTNodeArrayArchive}I}16, name: initFromArchive:
+-     // Error parsing type: v32@0:8^{ExpandedTrackedReferenceArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{ASTNodeArrayArchive}II}16@24, name: encodeToExpandedArchive:archiver:
+-     // Error parsing type: v32@0:8^{TrackedReferenceArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{ASTNodeArrayArchive}I}16@24, name: encodeToArchive:archiver:
 - (id)displayStringWithCalculationEngine:(id)arg1;
 - (id)description;
 - (_Bool)isValidWithReferenceTracker:(id)arg1;

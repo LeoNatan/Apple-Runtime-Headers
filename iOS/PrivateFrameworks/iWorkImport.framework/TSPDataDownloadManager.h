@@ -19,6 +19,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) __weak id <TSPDataDownloadManagerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (id)documentResourceDataWithDigestString:(id)arg1 locator:(id)arg2 filename:(id)arg3;
+- (id)unmaterializedRemoteData;
 - (id)initWithContext:(id)arg1;
 - (id)init;
 

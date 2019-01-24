@@ -24,7 +24,6 @@
 - (id)_siriTemplate;
 - (id)_newsTemplate;
 - (id)_messagesTemplate;
-- (id)_stocksTemplate;
 - (id)_breathingTemplate;
 - (id)_reminderTemplate;
 - (id)_workoutTemplate;
@@ -81,6 +80,7 @@
 - (id)_createSignatureCircularTemplate;
 - (id)_createSignatureBezelTemplate;
 - (id)_weatherTemplate;
+- (id)_stocksTemplate;
 
 @end
 

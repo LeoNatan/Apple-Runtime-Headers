@@ -48,8 +48,8 @@ __attribute__((visibility("hidden")))
 - (id)delegateForSceneObject:(id)arg1;
 - (void)setDelegate:(id)arg1 forObject:(id)arg2;
 - (id)delegateForObject:(id)arg1;
-- (void)setPart:(struct TSCH3DScenePart)arg1 forType:(id)arg2;
-- (struct TSCH3DScenePart)partForType:(id)arg1;
+- (void)setPart:(id)arg1 forType:(id)arg2;
+- (id)partForType:(id)arg1;
 - (void)resetProperties;
 - (void)copyPropertiesFromScene:(id)arg1;
 - (void)setEnumerator:(id)arg1 properties:(id)arg2 forType:(id)arg3;
@@ -77,7 +77,6 @@ __attribute__((visibility("hidden")))
 - (id)description;
 - (void)dealloc;
 - (id)init;
-- (struct ChartScenePropertyAccessor)chartProperties;
 - (id)renderCache;
 
 @end

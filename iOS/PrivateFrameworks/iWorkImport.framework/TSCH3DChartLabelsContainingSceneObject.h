@@ -14,7 +14,7 @@ __attribute__((visibility("hidden")))
     TSCH3DLabelsRenderer *mLabelsRenderer;
 }
 
-- (void)renderLabelRenderInfo:(const struct ChartLabelsContainingLabelRenderInfo *)arg1;
+- (void)renderLabelRenderInfo:(id)arg1;
 - (void)renderLabelsResourcesSessionWithResources:(id)arg1 expectedSize:(const tvec2_3b141483 *)arg2 pipeline:(id)arg3 renderBlock:(CDUnknownBlockType)arg4;
 - (void)dispatchElementLabelHandler:(CDUnknownBlockType)arg1;
 - (void)getSceneObjectElementsBounds:(id)arg1;

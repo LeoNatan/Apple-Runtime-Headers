@@ -6,10 +6,11 @@
 
 #import <objc/NSObject.h>
 
-@class NSData;
+@class NFTag, NSData;
 
 @interface PKNFCTag : NSObject
 {
+    NFTag *_underlyingTag;
     unsigned long long _technology;
     NSData *_tagIdentifier;
     NSData *_manufacturerIdentifier;

@@ -46,15 +46,15 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) TSTFormulaPredArg *predArg1; // @synthesize predArg1=mPredArg1;
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (id)initFromArchive:(const struct FormulaPredicateArchive *)arg1;
-- (void)encodeToArchive:(struct FormulaPredicateArchive *)arg1 archiver:(id)arg2;
+-     // Error parsing type: @24@0:8r^{FormulaPredicateArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{FormulaArchive}iiiiii}16, name: initFromArchive:
+-     // Error parsing type: v32@0:8^{FormulaPredicateArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{FormulaArchive}iiiiii}16@24, name: encodeToArchive:archiver:
 - (void)upgradeTopAndBottom;
-- (void)iterateFormulasWithContext:(id)arg1 shouldStop:(_Bool *)arg2 block:(CDUnknownBlockType)arg3;
-- (id)copyByRewritingWithContext:(id)arg1 rewriteBlock:(CDUnknownBlockType)arg2;
+- (void)iterateFormulasWithContext:(struct TSCEFormulaRewriteContext *)arg1 shouldStop:(_Bool *)arg2 block:(CDUnknownBlockType)arg3;
+- (id)copyByRewritingWithContext:(struct TSCEFormulaRewriteContext *)arg1 rewriteBlock:(CDUnknownBlockType)arg2;
 - (id)copyByClearingUids:(id)arg1 containingTableUID:(const UUIDData_5fbc143e *)arg2;
 - (id)copyByUpdatingLinkedTable:(const UUIDData_5fbc143e *)arg1 hostCell:(struct TSUCellCoord)arg2;
 - (id)copyByUpgradingToLinkedRefForTable:(const UUIDData_5fbc143e *)arg1 hostCell:(struct TSUCellCoord)arg2;
-- (id)copyByOffsettingRelativeReferencesWithOffset:(CDStruct_1ef3fb1f)arg1;
+- (id)copyByOffsettingRelativeReferencesWithOffset:(struct TSUColumnRowOffset)arg1;
 - (id)copyByRewritingWithSpec:(id)arg1 inOwner:(id)arg2 inCellCoordinate:(struct TSUCellCoord)arg3;
 - (id)copyByConvertingChromeToBase:(id)arg1 inOwner:(id)arg2 inCellCoordinate:(struct TSUCellCoord)arg3;
 - (id)copyByConvertingBaseToChrome:(id)arg1 inOwner:(id)arg2 inCellCoordinate:(struct TSUCellCoord)arg3;
@@ -96,7 +96,8 @@ __attribute__((visibility("hidden")))
 - (int)predicateType;
 - (void)setFormula:(const struct TSCEFormula *)arg1;
 - (struct TSCEFormula *)formula;
-- (_Bool)evaluateAtCellID:(struct TSUCellCoord)arg1 inFormulaOwner:(const UUIDData_5fbc143e *)arg2 calculationEngine:(id)arg3;
+- (_Bool)evaluateAtCellID:(struct TSUCellCoord)arg1 onSubOwnerID:(const struct TSCESubFormulaOwnerID *)arg2 calcEngine:(id)arg3;
+- (_Bool)evaluateAtCellID:(struct TSUCellCoord)arg1 inFormulaOwner:(const UUIDData_5fbc143e *)arg2 calcEngine:(id)arg3;
 - (_Bool)p_testDataTypesForArg0:(int)arg1 arg1:(int)arg2 arg2:(int)arg3 predShouldReturn:(_Bool *)arg4;
 - (int)p_argTypeForNodeTag:(unsigned char)arg1 argNum:(unsigned long long)arg2 calculationEngine:(id)arg3 hostCell:(struct TSUCellCoord)arg4;
 - (void)getPrecedents:(struct TSCEReferenceSet *)arg1 calcEngine:(id)arg2 hostOwnerUID:(const UUIDData_5fbc143e *)arg3 hostCellID:(const struct TSUCellCoord *)arg4;
@@ -106,9 +107,9 @@ __attribute__((visibility("hidden")))
 - (id)copyToUidFormForConditionalStylesWithTableInfo:(id)arg1 containingCell:(struct TSUCellCoord)arg2 preserveHostCell:(_Bool)arg3;
 - (id)copyToGeometricFormForHiddenRowsWithTableInfo:(id)arg1 containsBadRef:(_Bool *)arg2;
 - (id)copyToUidFormForHiddenRowsWithTableInfo:(id)arg1;
-- (id)copyByRepairingBadReferences:(id)arg1;
-- (id)copyToGeometricFormWithRewriteContext:(id)arg1;
-- (id)copyToUidFormWithRewriteContext:(id)arg1;
+- (id)copyByRepairingBadReferences:(struct TSCEFormulaRewriteContext *)arg1;
+- (id)copyToGeometricFormWithRewriteContext:(struct TSCEFormulaRewriteContext *)arg1;
+- (id)copyToUidFormWithRewriteContext:(struct TSCEFormulaRewriteContext *)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithLiteralTextType:(int)arg1 string:(id)arg2 argumentCellRef:(struct TSCECellRef)arg3 hostCell:(struct TSUCellCoord)arg4;
 - (id)initWithLiteralDurationType:(int)arg1 duration1:(double)arg2 durationUnits1:(int)arg3 duration2:(double)arg4 durationUnits2:(int)arg5 qualifier:(int)arg6 argumentCellRef:(struct TSCECellRef)arg7 hostCell:(struct TSUCellCoord)arg8;

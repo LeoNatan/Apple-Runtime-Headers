@@ -6,37 +6,53 @@
 
 #import <objc/NSObject.h>
 
-@class IMChat;
+#import <ChatKit/CKNanoComplicationDataSourceProxy-Protocol.h>
 
-@interface CKNanoComplicationDataSource : NSObject
+@class CKNanoComplicationSpecs, IMChat, NSString;
+
+@interface CKNanoComplicationDataSource : NSObject <CKNanoComplicationDataSourceProxy>
 {
     _Bool _messageRecdNotification;
+    NSString *_complicationApplicationIdentifier;
     IMChat *_lastReceivedChat;
     int _family;
     int _unreadMessageCount;
+    CKNanoComplicationSpecs *_specs;
 }
 
 + (_Bool)acceptsComplicationType:(unsigned int)arg1;
 + (_Bool)acceptsComplicationFamily:(int)arg1;
-+ (id)_imageProviderWithForegroundName:(id)arg1 unreadCount:(int)arg2 family:(int)arg3 locked:(_Bool)arg4;
-+ (id)_templateForFamily:(int)arg1 unreadMessageCount:(int)arg2 compact:(_Bool)arg3 locked:(_Bool)arg4;
++ (_Bool)acceptsComplicationType:(unsigned int)arg1 forDevice:(id)arg2;
++ (_Bool)acceptsComplicationFamily:(int)arg1 forDevice:(id)arg2;
++ (void)initialize;
+@property(readonly, nonatomic) CKNanoComplicationSpecs *specs; // @synthesize specs=_specs;
 @property(nonatomic) _Bool messageRecdNotification; // @synthesize messageRecdNotification=_messageRecdNotification;
 @property(nonatomic) int unreadMessageCount; // @synthesize unreadMessageCount=_unreadMessageCount;
 @property(nonatomic) int family; // @synthesize family=_family;
 @property(retain, nonatomic) IMChat *lastReceivedChat; // @synthesize lastReceivedChat=_lastReceivedChat;
+@property(readonly, copy, nonatomic) NSString *complicationApplicationIdentifier; // @synthesize complicationApplicationIdentifier=_complicationApplicationIdentifier;
 - (void).cxx_destruct;
-- (id)complicationApplicationIdentifier;
 - (void)getLaunchURLForTimelineEntryDate:(id)arg1 timeTravelDate:(id)arg2 withHandler:(CDUnknownBlockType)arg3;
 - (_Bool)supportsTapAction;
 - (void)getCurrentTimelineEntryWithHandler:(CDUnknownBlockType)arg1;
 - (void)getSupportedTimeTravelDirectionsWithHandler:(CDUnknownBlockType)arg1;
 - (id)lockedTemplate;
 - (id)currentSwitcherTemplate;
+- (id)_currentTemplateForLockedState:(_Bool)arg1;
 - (void)_populateComplication;
 - (void)_updateComplication:(id)arg1;
 - (void)resetUnreadState;
+- (void)disconnectFromDaemon;
 - (void)connectToDaemon;
+- (id)drawUnreadCount:(unsigned int)arg1 ontoImage:(id)arg2 family:(int)arg3 template:(id)arg4;
+- (id)_textProviderForUnreadCount:(unsigned int)arg1 locked:(_Bool)arg2 shortText:(_Bool)arg3 tintColor:(id)arg4;
+- (id)_fullColorImageProviderForUnreadCount:(unsigned int)arg1 family:(int)arg2 template:(id)arg3;
+- (void)_setDefaultBackgroundForTemplate:(id)arg1;
+- (id)_richTemplateForFamily:(int)arg1 unreadCount:(unsigned int)arg2 locked:(_Bool)arg3;
+- (id)_imageProviderWithForegroundName:(id)arg1 unreadCount:(int)arg2 family:(int)arg3 locked:(_Bool)arg4;
+- (id)_templateForFamily:(int)arg1 unreadMessageCount:(int)arg2 locked:(_Bool)arg3;
 - (id)initWithComplication:(id)arg1 family:(int)arg2;
+- (id)initWithComplication:(id)arg1 family:(int)arg2 forDevice:(id)arg3;
 - (void)dealloc;
 
 @end

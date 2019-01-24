@@ -28,6 +28,7 @@
 - (void)setService:(id)arg1;
 - (void)endEventsGrouping;
 - (void)beginEventsGrouping;
+- (void)logInstrumentation:(id)arg1 turnContext:(id)arg2;
 - (void)logEventWithType:(long long)arg1 contextProvider:(CDUnknownBlockType)arg2 contextProvidingQueue:(id)arg3;
 - (void)logEventWithType:(long long)arg1 contextProvider:(CDUnknownBlockType)arg2;
 - (void)logEventWithType:(long long)arg1 context:(id)arg2 contextNoCopy:(BOOL)arg3;
@@ -36,6 +37,7 @@
 - (id)_init;
 - (id)init;
 - (void)logClientFeedbackPresented:(id)arg1;
+- (id)createTurnBasedInstrumentationContext;
 
 @end
 

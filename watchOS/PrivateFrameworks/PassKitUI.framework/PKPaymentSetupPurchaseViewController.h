@@ -12,12 +12,11 @@
 #import <PassKitUI/PKPaymentSetupPurchaseAmountViewDelegate-Protocol.h>
 #import <PassKitUI/PKPaymentSetupRequiresPreflightProtocol-Protocol.h>
 #import <PassKitUI/PKPaymentSetupViewControllerDelegate-Protocol.h>
-#import <PassKitUI/RemoteUIControllerDelegate-Protocol.h>
 
-@class NSDecimalNumber, NSString, PKPaymentAuthorizationCoordinator, PKPaymentProvisioningController, PKPaymentProvisioningMethodMetadata, PKPaymentSetupProduct, PKPaymentSetupPurchaseAmountView, PKPaymentSetupPurchaseController, PKServiceProviderPurchase, RemoteUIController, UIActivityIndicatorView, UIImage, UIImageView, UILabel;
+@class NSDecimalNumber, NSString, PKPaymentAuthorizationCoordinator, PKPaymentProvisioningController, PKPaymentProvisioningMethodMetadata, PKPaymentSetupProduct, PKPaymentSetupPurchaseAmountView, PKPaymentSetupPurchaseController, PKServiceProviderPurchase, UIActivityIndicatorView, UIImage, UIImageView, UILabel;
 @protocol PKPaymentSetupViewControllerDelegate;
 
-@interface PKPaymentSetupPurchaseViewController : UIViewController <PKPaymentSetupPurchaseAmountViewDelegate, PKPaymentAuthorizationCoordinatorDelegate, PKPaymentAuthorizationCoordinatorPrivateDelegate, PKPaymentSetupViewControllerDelegate, RemoteUIControllerDelegate, PKPaymentSetupDelegate, PKPaymentSetupRequiresPreflightProtocol>
+@interface PKPaymentSetupPurchaseViewController : UIViewController <PKPaymentSetupPurchaseAmountViewDelegate, PKPaymentAuthorizationCoordinatorDelegate, PKPaymentAuthorizationCoordinatorPrivateDelegate, PKPaymentSetupViewControllerDelegate, PKPaymentSetupDelegate, PKPaymentSetupRequiresPreflightProtocol>
 {
     _Bool _fieldsVerified;
     _Bool _acceptedTerms;
@@ -33,7 +32,6 @@
     NSDecimalNumber *_currentAmount;
     PKPaymentAuthorizationCoordinator *_authorizationCoordinator;
     PKServiceProviderPurchase *_purchase;
-    RemoteUIController *_termsController;
     UIImage *_cardImage;
     UIActivityIndicatorView *_activityIndicator;
 }
@@ -41,7 +39,6 @@
 @property(retain, nonatomic) UIActivityIndicatorView *activityIndicator; // @synthesize activityIndicator=_activityIndicator;
 @property(retain, nonatomic) UIImage *cardImage; // @synthesize cardImage=_cardImage;
 @property(nonatomic) _Bool acceptedTerms; // @synthesize acceptedTerms=_acceptedTerms;
-@property(retain, nonatomic) RemoteUIController *termsController; // @synthesize termsController=_termsController;
 @property(nonatomic) _Bool fieldsVerified; // @synthesize fieldsVerified=_fieldsVerified;
 @property(retain, nonatomic) PKServiceProviderPurchase *purchase; // @synthesize purchase=_purchase;
 @property(retain, nonatomic) PKPaymentAuthorizationCoordinator *authorizationCoordinator; // @synthesize authorizationCoordinator=_authorizationCoordinator;
@@ -70,7 +67,6 @@
 - (_Bool)_shouldHideImage;
 - (_Bool)_shouldShowTransferButton;
 - (void)paymentSetupDidFinish:(id)arg1;
-- (void)remoteUIController:(id)arg1 didReceiveObjectModel:(id)arg2 actionSignal:(unsigned int *)arg3;
 - (void)viewControllerDidTerminateSetupFlow:(id)arg1;
 - (void)paymentAuthorizationCoordinator:(id)arg1 didAuthorizePurchase:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)paymentAuthorizationCoordinatorDidFinish:(id)arg1;

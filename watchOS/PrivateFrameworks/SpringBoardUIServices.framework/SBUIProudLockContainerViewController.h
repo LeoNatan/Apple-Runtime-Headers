@@ -68,6 +68,7 @@
 - (void)_setLocalTransformForOrientation:(int)arg1;
 - (void)_setCounterTransformForOrientation:(int)arg1;
 - (_Bool)_isBiometricLockedOut;
+- (int)_actualIconState;
 - (id)_proudLockIconView;
 @property(readonly, nonatomic) _Bool isPortrait;
 - (void)_updateLockForMatchStarted;

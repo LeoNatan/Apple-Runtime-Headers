@@ -32,6 +32,7 @@ __attribute__((visibility("hidden")))
 - (void)setAssigneeScopeToType:(struct TSCH3DShaderVariableScopeType)arg1;
 - (void)setGeneratedForType:(struct TSCH3DShaderType)arg1;
 @property(readonly, nonatomic) NSString *string;
+- (id)variableDeclaration;
 - (id)expressionStringForType:(struct TSCH3DShaderType)arg1;
 - (id)resolve;
 - (id)forceLinkageForType:(struct TSCH3DShaderType)arg1;
@@ -43,6 +44,7 @@ __attribute__((visibility("hidden")))
 - (id)varyingAssignmentForLinkage:(id)arg1;
 - (vector_22c20f1a *)dependeeScopes;
 @property(readonly, nonatomic) _Bool isLinked;
+- (_Bool)isMetal;
 @property(readonly, copy) NSString *description;
 - (void)dealloc;
 - (id)initWithAssigneeLinkage:(id)arg1 statement:(id)arg2 dependees:(id)arg3 program:(id)arg4;

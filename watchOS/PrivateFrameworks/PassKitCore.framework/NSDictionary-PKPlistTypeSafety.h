@@ -21,6 +21,7 @@
 - (id)PKStringForKey:(id)arg1;
 - (id)PKDateForKey:(id)arg1;
 - (id)PKDecimalNumberForKey:(id)arg1;
+- (id)PKDecimalNumberFromStringForKey:(id)arg1;
 - (id)PKNumberForKey:(id)arg1;
 @end
 

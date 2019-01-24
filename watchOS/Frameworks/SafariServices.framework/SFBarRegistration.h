@@ -8,12 +8,13 @@
 
 #import <SafariServices/_SFBarRegistrationToken-Protocol.h>
 
-@class NSString, UIBarButtonItem, UIView, _SFBarManager;
+@class NSOrderedSet, NSString, UIBarButtonItem, UIToolbar, _SFBarManager;
 
 __attribute__((visibility("hidden")))
 @interface SFBarRegistration : UIResponder <_SFBarRegistrationToken>
 {
-    UIView *_bar;
+    NSOrderedSet *_arrangedBarItems;
+    UIToolbar *_bar;
     _SFBarManager *_barManager;
     UIBarButtonItem *_backItem;
     UIBarButtonItem *_bookmarksItem;
@@ -32,6 +33,7 @@ __attribute__((visibility("hidden")))
 - (id)_UIBarButtonItemForBarItem:(int)arg1;
 - (id)popoverSourceInfoForItem:(int)arg1;
 - (id)UIBarButtonItemForItem:(int)arg1;
+- (_Bool)containsBarItem:(int)arg1;
 - (void)setBarItem:(int)arg1 enabled:(_Bool)arg2;
 - (void)setBookmarksItemSelected:(_Bool)arg1;
 - (_Bool)canPerformAction:(SEL)arg1 withSender:(id)arg2;

@@ -7,11 +7,12 @@
 #import <GameCenterPrivateUI/UICollectionViewDelegate-Protocol.h>
 #import <GameCenterPrivateUI/UICollectionViewFocusDelegate_Legacy-Protocol.h>
 
-@class NSIndexPath, NSString, UICollectionView, UICollectionViewCell;
+@class NSIndexPath, NSString, UICollectionView, UICollectionViewCell, _UIFocusFastScrollingIndexBarEntry, _UIHorizontalIndexTitleBar;
 
 @protocol UICollectionViewDelegate_Private <UICollectionViewDelegate, UICollectionViewFocusDelegate_Legacy>
 
 @optional
+- (void)_collectionView:(UICollectionView *)arg1 horizontalIndexTitleBar:(_UIHorizontalIndexTitleBar *)arg2 selectedEntry:(_UIFocusFastScrollingIndexBarEntry *)arg3;
 - (void)_collectionView:(UICollectionView *)arg1 willLayoutCell:(UICollectionViewCell *)arg2 usingTemplateLayoutCell:(UICollectionViewCell *)arg3 forItemAtIndexPath:(NSIndexPath *)arg4;
 - (UICollectionViewCell *)_collectionView:(UICollectionView *)arg1 templateLayoutCellForCellsWithReuseIdentifier:(NSString *)arg2;
 - (NSIndexPath *)_collectionView:(UICollectionView *)arg1 targetIndexPathForMoveFromItemAtIndexPath:(NSIndexPath *)arg2 toProposedIndexPath:(NSIndexPath *)arg3;

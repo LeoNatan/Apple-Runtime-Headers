@@ -32,7 +32,7 @@
     struct shared_ptr<Espresso::generic_load_constant_kernel> noise_load_constant_kernel;
     NSString *currentNetworkPath;
     long long currentResolutionPreset;
-    struct shared_ptr<Espresso::blob<float, 1>> precomputed_noise;
+    shared_ptr_0954c506 precomputed_noise;
     id <MTLTexture> tmpDestinationTexture;
     int _rotation_degrees;
     int _flip_y;

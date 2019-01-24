@@ -15,7 +15,8 @@ __attribute__((visibility("hidden")))
     NSArray *mCacheList;
 }
 
-- (void)inject:(id)arg1;
+- (void)injectMetalShaderInto:(id)arg1 context:(id)arg2;
+- (void)injectGLSLInto:(id)arg1 context:(id)arg2;
 - (void)addVariables:(id)arg1;
 - (void)enumerateEffectsUsingBlock:(CDUnknownBlockType)arg1;
 - (void)resetSection:(int)arg1 toArray:(id)arg2;

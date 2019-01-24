@@ -26,6 +26,7 @@
 + (_Bool)supportsSecureCoding;
 @property(readonly, nonatomic) WBSOpenSearchURLTemplate *suggestionsURLTemplate; // @synthesize suggestionsURLTemplate=_suggestionsURLTemplate;
 - (void).cxx_destruct;
+- (id)urlAttributingToSafariIfValidSearchURL:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)userVisibleQueryFromSearchURL:(id)arg1 allowQueryThatLooksLikeURL:(_Bool)arg2;

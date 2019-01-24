@@ -13,18 +13,18 @@
 #import <WebDriver/WDSessionProvider-Protocol.h>
 #import <WebDriver/WDXPCService-Protocol.h>
 
-@class NSArray, NSMutableArray, NSString, NSTimer, WDHTTPDriverInterface, WDRemoteSessionManager;
+@class NSArray, NSMutableDictionary, NSString, WDHTTPDriverInterface, WDRemoteSessionManager;
 
 @interface WDHTTPService : NSObject <RWIManagerDelegate, RWIDriverInterfaceDelegate, WDSessionProvider, WDServiceHost, NSXPCListenerDelegate, WDXPCService>
 {
     WDRemoteSessionManager *_sessionManager;
-    NSTimer *_inactivityAfterDisconnectTimer;
+    NSMutableDictionary *_clientTransactions;
     WDHTTPDriverInterface *_driver;
-    NSMutableArray *_driverClients;
+    NSMutableDictionary *_clientConnections;
 }
 
 + (void)initialize;
-@property(readonly, nonatomic) NSMutableArray *driverClients; // @synthesize driverClients=_driverClients;
+@property(readonly, nonatomic) NSMutableDictionary *clientConnections; // @synthesize clientConnections=_clientConnections;
 @property(readonly, nonatomic) WDHTTPDriverInterface *driver; // @synthesize driver=_driver;
 - (void).cxx_destruct;
 - (void)fetchAttributesForLocalFiles:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
@@ -42,8 +42,6 @@
 - (void)configureServerWithOptions:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)getServerStatusWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (BOOL)_allowIncomingClientConnection:(id)arg1;
-- (void)_inactivityAfterDisconnectTimerFired:(id)arg1;
-- (void)_startInactivityAfterDisconnectTimer;
 - (void)_removeDriverClient:(id)arg1;
 - (void)_addDriverClient:(id)arg1;
 - (CDUnknownBlockType)_defaultErrorHandler;

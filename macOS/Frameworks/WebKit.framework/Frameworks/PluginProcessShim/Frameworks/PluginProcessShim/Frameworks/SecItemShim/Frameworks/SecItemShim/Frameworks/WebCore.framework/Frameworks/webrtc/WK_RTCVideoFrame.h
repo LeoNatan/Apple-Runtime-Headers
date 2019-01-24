@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@protocol WK_RTCVideoFrameBuffer;
+@protocol RTCVideoFrameBuffer;
 
 __attribute__((visibility("hidden")))
 @interface WK_RTCVideoFrame : NSObject
@@ -14,14 +14,12 @@ __attribute__((visibility("hidden")))
     long long _rotation;
     long long _timeStampNs;
     int timeStamp;
-    id <WK_RTCVideoFrameBuffer> _buffer;
+    id <RTCVideoFrameBuffer> _buffer;
 }
 
 @property(nonatomic) int timeStamp; // @synthesize timeStamp;
-@property(readonly, nonatomic) id <WK_RTCVideoFrameBuffer> buffer; // @synthesize buffer=_buffer;
+@property(readonly, nonatomic) id <RTCVideoFrameBuffer> buffer; // @synthesize buffer=_buffer;
 - (void).cxx_destruct;
-- (struct VideoFrame)nativeVideoFrame;
-- (id)initWithNativeVideoFrame:(const struct VideoFrame *)arg1;
 - (id)initWithBuffer:(id)arg1 rotation:(long long)arg2 timeStampNs:(long long)arg3;
 - (id)initWithPixelBuffer:(struct __CVBuffer *)arg1 scaledWidth:(int)arg2 scaledHeight:(int)arg3 cropWidth:(int)arg4 cropHeight:(int)arg5 cropX:(int)arg6 cropY:(int)arg7 rotation:(long long)arg8 timeStampNs:(long long)arg9;
 - (id)initWithPixelBuffer:(struct __CVBuffer *)arg1 rotation:(long long)arg2 timeStampNs:(long long)arg3;

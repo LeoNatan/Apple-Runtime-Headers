@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class CKContextResponse, NSURL, WBSHistory;
+@class CKContextClient, CKContextResponse, NSURL, WBSHistory;
 @protocol OS_dispatch_queue;
 
 @interface WBSHistoryContextController : NSObject
@@ -14,6 +14,7 @@
     CKContextResponse *_cachedResponse;
     NSURL *_pageURLForCachedResponse;
     NSObject<OS_dispatch_queue> *_internalQueue;
+    CKContextClient *_client;
     WBSHistory *_history;
 }
 
@@ -22,7 +23,7 @@
 - (void)contextForPageURL:(id)arg1 content:(id)arg2 contentType:(long long)arg3 metadata:(id)arg4 isPrivate:(BOOL)arg5 isReaderAvailable:(BOOL)arg6 withCompletionHandler:(CDUnknownBlockType)arg7;
 - (void)invalidateCachedResults;
 - (void)cachedResponseForURL:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (id)initWithHistory:(id)arg1;
+- (id)initWithHistory:(id)arg1 contextClient:(id)arg2;
 
 @end
 

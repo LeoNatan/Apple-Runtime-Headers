@@ -37,7 +37,6 @@
 - (_Bool)isFeatureCandidate;
 - (double)videoDuration;
 - (id)videoURL;
-- (id)endOfArticleTopicIDs;
 - (id)topicIDs;
 - (id)lastModifiedDate;
 - (id)contentURL;

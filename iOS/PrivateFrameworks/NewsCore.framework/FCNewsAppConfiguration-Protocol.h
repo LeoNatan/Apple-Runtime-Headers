@@ -43,12 +43,6 @@
 @property(readonly, nonatomic) long long notificationArticleWithRapidUpdatesCacheTimeout;
 @property(readonly, nonatomic) long long notificationArticleCacheTimeout;
 @property(readonly, nonatomic) long long newFavoriteNotificationAlertsFrequency;
-@property(readonly, nonatomic) long long subscriptionsGracePeriodForTokenVerificationSeconds;
-@property(readonly, nonatomic) long long subscriptionsPlacardGlobalMaximumPerDay;
-@property(readonly, nonatomic) long long subscriptionsPlacardPublisherFrequencyInSeconds;
-@property(readonly, nonatomic) NSArray *topLevelRecommendedChannelTagIDs;
-@property(readonly, nonatomic) NSArray *topLevelRecommendedTopicTagIDs;
-@property(readonly, nonatomic) NSArray *topLevelCuratedTagIDs;
 @property(readonly, nonatomic) FCPrefetchConfiguration *prefetchConfig;
 @property(readonly, nonatomic) FCIAdConfiguration *iAdConfig;
 @property(readonly, nonatomic) double tileProminenceScoreBalanceValue;
@@ -56,13 +50,16 @@
 @property(readonly, nonatomic) double interstitialAdLoadDelay;
 @property(readonly, nonatomic) long long autoScrollToTopFeedTimeout;
 @property(readonly, nonatomic) NSArray *onboardingFeedIDs;
-@property(readonly, nonatomic) long long minimumFollowCountToRemovePersonalizePlacardInFollowingAndForYou;
 
 @optional
+@property(readonly, nonatomic) long long criticalStorageThreshold;
+@property(readonly, nonatomic) long long lowStorageThreshold;
+@property(readonly, nonatomic, getter=isArticleToolbarCompressionEnabled) _Bool articleToolbarCompressionEnabled;
+@property(readonly, nonatomic) NSString *issueArticleRecirculationConfigJSON;
+@property(readonly, nonatomic) NSString *translationMapResourceID;
 @property(readonly, nonatomic) _Bool enableBadgeInSpotlightTabBar;
 @property(readonly, nonatomic) NSString *description;
 @property(readonly, nonatomic) NSString *webEmbedContentBlockers;
-@property(readonly, nonatomic) long long showCardNavHintMaxCount;
 @property(readonly, nonatomic) NSString *feedNavigationConfigJSON;
 @property(readonly, nonatomic) _Bool disableThumbnailsForArticleRecirculation;
 @property(readonly, nonatomic) long long articleRecirculationPopularFeedQueryTimeRange;

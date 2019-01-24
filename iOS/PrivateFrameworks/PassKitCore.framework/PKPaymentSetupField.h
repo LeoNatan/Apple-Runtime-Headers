@@ -12,6 +12,7 @@
 @interface PKPaymentSetupField : NSObject
 {
     id <NSObject><NSCopying> _currentValue;
+    id <NSObject><NSCopying> _originalCameraCaptureValue;
     _Bool _optional;
     _Bool _currentValueFromCameraCapture;
     _Bool _requiresSecureSubmission;
@@ -37,6 +38,7 @@
 @property(copy, nonatomic) NSString *submissionDestination; // @synthesize submissionDestination=_submissionDestination;
 @property(copy, nonatomic) NSString *submissionKey; // @synthesize submissionKey=_submissionKey;
 @property(nonatomic, getter=isCurrentValueFromCameraCapture) _Bool currentValueFromCameraCapture; // @synthesize currentValueFromCameraCapture=_currentValueFromCameraCapture;
+@property(copy, nonatomic) id <NSObject><NSCopying> originalCameraCaptureValue; // @synthesize originalCameraCaptureValue=_originalCameraCaptureValue;
 @property(nonatomic, getter=isOptional) _Bool optional; // @synthesize optional=_optional;
 @property(copy, nonatomic) NSString *defaultValue; // @synthesize defaultValue=_defaultValue;
 @property(copy, nonatomic) NSString *displayFormat; // @synthesize displayFormat=_displayFormat;
@@ -48,6 +50,7 @@
 @property(readonly, nonatomic) unsigned long long fieldType;
 - (void)_setLocalizedDisplayName:(id)arg1;
 - (_Bool)submissionStringMeetsAllRequirements;
+- (id)_submissionStringForValue:(id)arg1;
 - (id)submissionString;
 - (id)displayString;
 @property(readonly, copy, nonatomic) NSString *compactLocalizedDisplayName;

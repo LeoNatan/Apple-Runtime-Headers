@@ -42,6 +42,7 @@
     unsigned int _classInfosCount;
     VMUClassInfoMap *_classInfoIndexer;
     struct _VMUScanLocationCache **_scanCaches;
+    unsigned int _recordAutoreleasePoolBoundaries;
     _Bool _exactScanningEnabled;
     unsigned long long _maxInteriorOffset;
     unsigned int _scanningMask;
@@ -92,7 +93,9 @@
 - (void)setNodeScanningLogger:(CDUnknownBlockType)arg1;
 @property(readonly, nonatomic) unsigned int nodeNamespaceSize;
 @property(readonly, nonatomic) unsigned int vmPageSize;
+@property(readonly, nonatomic) _Bool is64bit;
 - (void *)copyUserMarked;
+- (unsigned int)nodeForAddress:(unsigned long long)arg1;
 - (unsigned int)enumerateReferencesWithBlock:(CDUnknownBlockType)arg1;
 - (unsigned int)enumerateRegionsWithBlock:(CDUnknownBlockType)arg1;
 - (unsigned int)enumerateMarkedObjects:(void *)arg1 withBlock:(CDUnknownBlockType)arg2;
@@ -120,7 +123,7 @@
 - (void)markReachableNodesFromRoots:(void *)arg1 inMap:(void *)arg2;
 - (unsigned int)_removeFalsePositiveLeakedVMregionsFromNodes:(unsigned int *)arg1 nodeCount:(unsigned int)arg2 recorder:(CDUnknownBlockType)arg3;
 - (void)_orderedScanWithScanner:(CDUnknownBlockType)arg1 recorder:(CDUnknownBlockType)arg2 keepMapped:(_Bool)arg3 actions:(CDUnknownBlockType)arg4;
-- (void)orderedNodeTraversal:(int)arg1 withBlock:(CDUnknownBlockType)arg2;
+- (void)orderedNodeTraversal:(unsigned int)arg1 withBlock:(CDUnknownBlockType)arg2;
 - (void)_withOrderedNodeMapper:(CDUnknownBlockType)arg1;
 - (void)_withScanningContext:(CDUnknownBlockType)arg1;
 - (void)_buildRegionPageBlockMaps;
@@ -133,6 +136,8 @@
 - (void)addMallocNodesFromTask;
 - (void)_sortBlocks;
 - (void)addRootNodesFromTask;
+- (void)_addSpecialNodesFromTask;
+- (void)_addThreadNodesFromTask;
 - (void)_updateLinearClassInfos;
 - (void)_registerVariant:(id)arg1 forGenericInfo:(id)arg2 variantKey:(unsigned long long)arg3;
 - (id)_cachedVariantForGenericInfo:(id)arg1 variantKey:(unsigned long long)arg2;

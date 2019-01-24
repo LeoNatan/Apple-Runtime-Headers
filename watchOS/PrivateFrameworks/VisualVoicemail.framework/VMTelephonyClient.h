@@ -28,6 +28,7 @@
 @property(readonly, nonatomic) struct os_unfair_lock_s delegateLock; // @synthesize delegateLock=_delegateLock;
 @property(readonly, nonatomic) struct os_unfair_lock_s accessorLock; // @synthesize accessorLock=_accessorLock;
 - (void).cxx_destruct;
+- (void)subscriberCountryCodeDidChange:(id)arg1;
 - (void)subscriptionInfoDidChange;
 - (id)fetchSubscriptions;
 - (id)isoCountryCodeForSubscription:(id)arg1;

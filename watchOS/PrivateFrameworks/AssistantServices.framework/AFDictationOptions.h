@@ -9,7 +9,7 @@
 #import <AssistantServices/NSCopying-Protocol.h>
 #import <AssistantServices/NSSecureCoding-Protocol.h>
 
-@class NSArray, NSDictionary, NSString, NSURL, STSiriContext;
+@class AFLanguageDetectionUserContext, NSArray, NSDictionary, NSString, NSURL, STSiriContext;
 
 @interface AFDictationOptions : NSObject <NSSecureCoding, NSCopying>
 {
@@ -45,10 +45,12 @@
     NSURL *_originalAudioFileURL;
     NSDictionary *_recognitionOverrides;
     NSURL *_modelOverrideURL;
+    AFLanguageDetectionUserContext *_languageDetectionUserContext;
     double _maximumRecognitionDuration;
 }
 
 + (_Bool)supportsSecureCoding;
+@property(copy, nonatomic) AFLanguageDetectionUserContext *languageDetectionUserContext; // @synthesize languageDetectionUserContext=_languageDetectionUserContext;
 @property(copy, nonatomic) NSURL *modelOverrideURL; // @synthesize modelOverrideURL=_modelOverrideURL;
 @property(copy, nonatomic) NSDictionary *recognitionOverrides; // @synthesize recognitionOverrides=_recognitionOverrides;
 @property(copy, nonatomic) NSURL *originalAudioFileURL; // @synthesize originalAudioFileURL=_originalAudioFileURL;

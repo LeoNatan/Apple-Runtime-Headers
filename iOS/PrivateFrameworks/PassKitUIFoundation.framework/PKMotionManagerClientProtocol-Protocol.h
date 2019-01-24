@@ -6,7 +6,9 @@
 
 #import <PassKitUIFoundation/NSObject-Protocol.h>
 
+@class CMDeviceMotion, PKMotionManager;
+
 @protocol PKMotionManagerClientProtocol <NSObject>
-- (void)setRollPitch: /* Error: Ran out of types for this method. */;
+- (void)motionManager:(PKMotionManager *)arg1 didReceiveMotion:(CMDeviceMotion *)arg2;
 @end
 

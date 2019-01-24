@@ -4,15 +4,12 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@class AMSBinaryPromise, AMSUserNotification, AMSUserNotificationCenter, NSArray, NSString;
-@protocol AMSUserNotificationCenterDelegate;
+@class AMSBinaryPromise, AMSUserNotification, NSArray, NSString;
 
 @protocol AMSUserNotificationStrategy
-@property(readonly, nonatomic) __weak AMSUserNotificationCenter *originalCenter;
-@property(nonatomic) __weak id <AMSUserNotificationCenterDelegate> delegate;
-@property(readonly, nonatomic) NSArray *activeNotifications;
-- (AMSBinaryPromise *)removeNotification:(AMSUserNotification *)arg1;
-- (AMSBinaryPromise *)postNotification:(AMSUserNotification *)arg1;
-- (id)initWithOriginalCenter:(AMSUserNotificationCenter *)arg1 bundleId:(NSString *)arg2 runningInDaemon:(_Bool)arg3;
++ (AMSBinaryPromise *)_removeNotificationWithIdentifier:(NSString *)arg1 centerBundleId:(NSString *)arg2 logKey:(NSString *)arg3;
++ (AMSBinaryPromise *)_removeNotification:(AMSUserNotification *)arg1 centerBundleId:(NSString *)arg2;
++ (AMSBinaryPromise *)_postNotification:(AMSUserNotification *)arg1 centerBundleId:(NSString *)arg2;
++ (NSArray *)_activeNotificationsWithCenterBundleId:(NSString *)arg1;
 @end
 

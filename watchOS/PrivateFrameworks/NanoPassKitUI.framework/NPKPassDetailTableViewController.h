@@ -11,7 +11,7 @@
 #import <NanoPassKitUI/PKPaymentAuthorizationControllerDelegate-Protocol.h>
 #import <NanoPassKitUI/PKPaymentAuthorizationControllerPrivateDelegate-Protocol.h>
 
-@class NPKPassView, NPKTransitTopUpValueSelectionViewController, NPSDomainAccessor, NSArray, NSDecimalNumber, NSString, PKPass, PKPaymentAuthorizationController, PKTransitPassProperties;
+@class NPKPassView, NPKTransitPassInfo, NPKTransitTopUpValueSelectionViewController, NPSDomainAccessor, NSArray, NSDecimalNumber, NSString, PKPass, PKPaymentAuthorizationController;
 @protocol UIScrollViewDelegate;
 
 @interface NPKPassDetailTableViewController : PUICTableViewController <NPKTransitTopUpValueSelectionViewControllerDelegate, NPKTransitRenewalTableViewControllerDelegate, PKPaymentAuthorizationControllerDelegate, PKPaymentAuthorizationControllerPrivateDelegate>
@@ -20,7 +20,7 @@
     _Bool _hideCellBackgrounds;
     _Bool _purchaseSuccessful;
     PKPass *_pass;
-    PKTransitPassProperties *_transitProperties;
+    NPKTransitPassInfo *_transitPassinfo;
     id <UIScrollViewDelegate> _scrollViewDelegate;
     NPKPassView *_passView;
     NSArray *_transitDetails;
@@ -47,7 +47,7 @@
 @property(retain, nonatomic) NSArray *transitDetails; // @synthesize transitDetails=_transitDetails;
 @property(retain, nonatomic) NPKPassView *passView; // @synthesize passView=_passView;
 @property(nonatomic) __weak id <UIScrollViewDelegate> scrollViewDelegate; // @synthesize scrollViewDelegate=_scrollViewDelegate;
-@property(readonly, nonatomic) PKTransitPassProperties *transitProperties; // @synthesize transitProperties=_transitProperties;
+@property(readonly, nonatomic) NPKTransitPassInfo *transitPassinfo; // @synthesize transitPassinfo=_transitPassinfo;
 @property(readonly, nonatomic) PKPass *pass; // @synthesize pass=_pass;
 - (void).cxx_destruct;
 - (void)paymentAuthorizationController:(id)arg1 didAuthorizePurchase:(id)arg2 completion:(CDUnknownBlockType)arg3;
@@ -81,7 +81,7 @@
 - (int)numberOfSectionsInTableView:(id)arg1;
 - (void)_updateTransitDetailsSection;
 - (void)_updatePeerAccountBalance:(id)arg1;
-- (void)setPass:(id)arg1 transitProperties:(id)arg2;
+- (void)setPass:(id)arg1 transitPassInfo:(id)arg2;
 - (_Bool)canProvideActionController;
 - (id)actionController;
 - (void)viewDidAppear:(_Bool)arg1;

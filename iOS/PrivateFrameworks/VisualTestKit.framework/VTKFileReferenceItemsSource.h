@@ -18,8 +18,7 @@ __attribute__((visibility("hidden")))
 
 @property(copy, nonatomic) NSString *itemsDirectory; // @synthesize itemsDirectory=_itemsDirectory;
 - (void).cxx_destruct;
-- (id)referenceImageURLWithTestCase:(id)arg1;
-- (id)referenceImageWithID:(id)arg1 testCase:(id)arg2;
+- (id)referenceImageWithID:(id)arg1 testCase:(id)arg2 error:(id *)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

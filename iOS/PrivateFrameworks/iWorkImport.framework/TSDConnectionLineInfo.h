@@ -46,11 +46,11 @@ __attribute__((visibility("hidden")))
 - (Class)layoutClass;
 - (id)copyWithContext:(id)arg1;
 - (id)initWithContext:(id)arg1 geometry:(id)arg2 style:(id)arg3;
-- (void)saveGeometryToArchive:(struct GeometryArchive *)arg1 archiver:(id)arg2;
+-     // Error parsing type: v32@0:8^{GeometryArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{Point}^{Size}If}16@24, name: saveGeometryToArchive:archiver:
 - (void)saveToArchiver:(id)arg1;
-- (void)saveToArchive:(struct ConnectionLineArchive *)arg1 archiver:(id)arg2;
+-     // Error parsing type: v32@0:8^{ConnectionLineArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{ShapeArchive}^{Reference}^{Reference}^{UUID}^{UUID}}16@24, name: saveToArchive:archiver:
 - (void)loadFromUnarchiver:(id)arg1;
-- (void)loadFromArchive:(const struct ConnectionLineArchive *)arg1 unarchiver:(id)arg2;
+-     // Error parsing type: v32@0:8r^{ConnectionLineArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{ShapeArchive}^{Reference}^{Reference}^{UUID}^{UUID}}16@24, name: loadFromArchive:unarchiver:
 - (int)elementKind;
 
 @end

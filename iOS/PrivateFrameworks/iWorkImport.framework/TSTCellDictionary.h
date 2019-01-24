@@ -6,11 +6,15 @@
 
 #import <objc/NSObject.h>
 
+@class TSPObjectContext, TSPTemporaryObjectContextDelegate;
+
 __attribute__((visibility("hidden")))
 @interface TSTCellDictionary : NSObject
 {
     struct os_unfair_lock_s _lock;
     struct map<TSUCellCoord, TSTCell *, std::__1::less<TSUCellCoord>, std::__1::allocator<std::__1::pair<const TSUCellCoord, TSTCell *>>> _cellsByCoord;
+    TSPTemporaryObjectContextDelegate *_temporaryObjectContextDelegate;
+    TSPObjectContext *_temporaryContext;
 }
 
 - (id).cxx_construct;

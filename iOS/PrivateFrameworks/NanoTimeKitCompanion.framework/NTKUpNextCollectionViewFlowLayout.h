@@ -76,7 +76,6 @@
 - (id)flowLayoutAttributesForItemAtIndexPath:(id)arg1;
 - (id)invalidationContextForBoundsChange:(struct CGRect)arg1;
 - (void)finalizeCollectionViewUpdates;
-- (_Bool)isLastIndexPathWithContent:(id)arg1;
 - (void)prepareLayout;
 - (void)invalidateLayoutWithContext:(id)arg1;
 - (_Bool)shouldInvalidateLayoutForBoundsChange:(struct CGRect)arg1;

@@ -25,6 +25,7 @@
 - (void)setTitle:(id)arg1;
 - (void)setEnabled:(_Bool)arg1;
 - (id)initWithCPBarButton:(id)arg1;
+- (id)_initWithCPBarButton:(id)arg1 showBackIndicator:(_Bool)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

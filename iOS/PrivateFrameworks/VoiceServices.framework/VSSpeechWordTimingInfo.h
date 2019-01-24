@@ -14,6 +14,7 @@
     struct _NSRange _textRange;
 }
 
++ (id)utf16TimingInfoWithUTF8Range:(id)arg1 withText:(id)arg2;
 + (id)wordTimingInfoFrom:(id)arg1 timestamps:(id)arg2;
 + (_Bool)supportsSecureCoding;
 @property(nonatomic) struct _NSRange textRange; // @synthesize textRange=_textRange;

@@ -7,39 +7,32 @@
 #import <iWorkImport/TSKCOUpdateOperation.h>
 
 #import <iWorkImport/TSKCORangeOperation-Protocol.h>
-#import <iWorkImport/TSKCOTransforming-Protocol.h>
-#import <iWorkImport/TSKCOUpdateRangeOperationSubset-Protocol.h>
-
-@class TSKCORangeAddress;
 
 __attribute__((visibility("hidden")))
-@interface TSKCOUpdateRangeOperation : TSKCOUpdateOperation <TSKCORangeOperation, TSKCOUpdateRangeOperationSubset, TSKCOTransforming>
+@interface TSKCOUpdateRangeOperation : TSKCOUpdateOperation <TSKCORangeOperation>
 {
+    vector_b5e32e34 _rangeVector;
     int _transformBehavior;
-    TSKCORangeAddress *_address;
 }
 
 + (id)stringForTransformBehavior:(int)arg1;
++ (int)p_determineTransformBehaviorByPropertyId:(unsigned short)arg1;
 @property(readonly, nonatomic) int transformBehavior; // @synthesize transformBehavior=_transformBehavior;
-@property(readonly, nonatomic) TSKCORangeAddress *address; // @synthesize address=_address;
+- (id).cxx_construct;
 - (void).cxx_destruct;
-- (void)saveToArchiver:(id)arg1 message:(struct Operation *)arg2;
-- (id)initWithUnarchiver:(id)arg1 message:(const struct Operation *)arg2;
+-     // Error parsing type: v32@0:8@16^{Operation=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedField<unsigned long long>=ii(Pointer=^{Arena}^{Rep})}i{RepeatedField<unsigned int>=ii(Pointer=^{Arena}^{Rep})}iBBBIiiQiIii}24, name: saveToArchiver:message:
+-     // Error parsing type: @32@0:8@16r^{Operation=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedField<unsigned long long>=ii(Pointer=^{Arena}^{Rep})}i{RepeatedField<unsigned int>=ii(Pointer=^{Arena}^{Rep})}iBBBIiiQiIii}24, name: initWithUnarchiver:message:
+- (shared_ptr_f167ad79)newTransformableOperation;
 - (id)toString;
-- (id)ut_transformByTransformer:(id)arg1;
-- (id)transformDynamicByAnyOperation:(id)arg1 byHigherPriority:(_Bool)arg2 history:(id)arg3;
-- (id)transformStaticByAnyOperation:(id)arg1 byHigherPriority:(_Bool)arg2 history:(id)arg3;
-- (id)transformUpdateRangeOperation:(id)arg1 isHigherPriority:(_Bool)arg2 history:(id)arg3;
-- (id)transformReplaceRangeOperation:(id)arg1 isHigherPriority:(_Bool)arg2 history:(id)arg3;
-- (id)transformUpdateIdOperation:(id)arg1 isHigherPriority:(_Bool)arg2 history:(id)arg3;
-- (id)transformIdPlacementBaseOperation:(id)arg1 isHigherPriority:(_Bool)arg2 history:(id)arg3;
-- (id)toUpdateRangeOperation;
-- (id)operationWithNewAddress:(id)arg1;
+- (unsigned long long)hash;
+- (_Bool)isEqual:(id)arg1;
+@property(readonly, nonatomic) const vector_b5e32e34 *rangeVector;
 - (id)operationWithNewNoop:(_Bool)arg1;
-- (id)initWithRangeAddress:(id)arg1 selectionPropertyName:(id)arg2;
-- (id)initWithRangeAddress:(id)arg1 propertyName:(id)arg2 noop:(_Bool)arg3;
-- (id)initWithRangeAddress:(id)arg1 propertyName:(id)arg2;
-- (id)p_initWithRangeAddress:(id)arg1 propertyName:(id)arg2 transformBehavior:(int)arg3 noop:(_Bool)arg4;
+- (id)initWithAddress:(const vector_4dc5f307 *)arg1 rangeVector:(const vector_b5e32e34 *)arg2 selectionPropertyId:(unsigned short)arg3;
+- (id)initWithAddress:(const vector_4dc5f307 *)arg1 rangeVector:(const vector_b5e32e34 *)arg2 propertyId:(unsigned short)arg3 noop:(_Bool)arg4;
+- (id)initWithAddress:(const vector_4dc5f307 *)arg1 rangeVector:(const vector_b5e32e34 *)arg2 propertyId:(unsigned short)arg3;
+- (id)initWithAddress:(const vector_4dc5f307 *)arg1 rangeVector:(const vector_b5e32e34 *)arg2 propertyId:(unsigned short)arg3 transformBehavior:(int)arg4 noop:(_Bool)arg5;
+- (id)initWithAddress:(const vector_4dc5f307 *)arg1 rangeVector:(const vector_b5e32e34 *)arg2 propertyType:(CDStruct_1464e8ba)arg3 transformBehavior:(int)arg4 noop:(_Bool)arg5;
 
 @end
 

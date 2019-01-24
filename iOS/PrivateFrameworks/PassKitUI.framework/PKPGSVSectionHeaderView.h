@@ -6,9 +6,11 @@
 
 #import <UIKit/UIView.h>
 
-@class PKContinuousButton, UIActivityIndicatorView, UILabel;
+#import <PassKitUI/PKPGSVSectionHeaderView-Protocol.h>
 
-@interface PKPGSVSectionHeaderView : UIView
+@class NSString, PKContinuousButton, UIActivityIndicatorView, UILabel;
+
+@interface PKPGSVSectionHeaderView : UIView <PKPGSVSectionHeaderView>
 {
     UILabel *_titleView;
     UILabel *_environmentLabel;
@@ -22,11 +24,19 @@
 @property(nonatomic) _Bool showActivityIndicator; // @synthesize showActivityIndicator=_showActivityIndicator;
 @property(readonly, nonatomic) unsigned long long passType; // @synthesize passType=_passType;
 - (void).cxx_destruct;
+- (id)trailingView;
+- (id)leadingView;
 - (void)_addTapped;
 - (void)addTapped;
 - (void)layoutSubviews;
 - (id)initWithPassType:(unsigned long long)arg1;
 - (id)init;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

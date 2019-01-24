@@ -21,9 +21,11 @@
     long long _underlyingError;
     long long _underlyingErrorDomain;
     NSString *_activityUUID;
+    int _schedulingTier;
     int _taskType;
     NSMutableArray *_transactionMetrics;
     _Bool _isBackground;
+    _Bool _unused;
     struct {
         unsigned int didCompleteWithError:1;
         unsigned int error:1;
@@ -33,12 +35,15 @@
         unsigned int timestamp:1;
         unsigned int underlyingError:1;
         unsigned int underlyingErrorDomain:1;
+        unsigned int schedulingTier:1;
         unsigned int taskType:1;
         unsigned int isBackground:1;
+        unsigned int unused:1;
     } _has;
 }
 
 + (Class)transactionMetricsType;
+@property(nonatomic) _Bool unused; // @synthesize unused=_unused;
 @property(retain, nonatomic) NSMutableArray *transactionMetrics; // @synthesize transactionMetrics=_transactionMetrics;
 @property(nonatomic) _Bool isBackground; // @synthesize isBackground=_isBackground;
 @property(nonatomic) long long underlyingErrorDomain; // @synthesize underlyingErrorDomain=_underlyingErrorDomain;
@@ -59,6 +64,11 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(nonatomic) _Bool hasUnused;
+- (int)StringAsSchedulingTier:(id)arg1;
+- (id)schedulingTierAsString:(int)arg1;
+@property(nonatomic) _Bool hasSchedulingTier;
+@property(nonatomic) int schedulingTier; // @synthesize schedulingTier=_schedulingTier;
 - (id)transactionMetricsAtIndex:(unsigned long long)arg1;
 - (unsigned long long)transactionMetricsCount;
 - (void)addTransactionMetrics:(id)arg1;

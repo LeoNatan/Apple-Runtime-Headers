@@ -10,14 +10,24 @@
 
 @interface PKPaymentSetupFieldLabel : PKPaymentSetupField
 {
+    NSString *_buttonTitle;
+    NSString *_detailTitle;
+    NSString *_detailSubtitle;
+    NSString *_detailBody;
 }
 
+@property(copy, nonatomic) NSString *detailBody; // @synthesize detailBody=_detailBody;
+@property(copy, nonatomic) NSString *detailSubtitle; // @synthesize detailSubtitle=_detailSubtitle;
+@property(copy, nonatomic) NSString *detailTitle; // @synthesize detailTitle=_detailTitle;
+@property(copy, nonatomic) NSString *buttonTitle; // @synthesize buttonTitle=_buttonTitle;
+- (void).cxx_destruct;
 - (unsigned long long)fieldType;
 - (BOOL)submissionStringMeetsAllRequirements;
 - (id)submissionString;
 - (id)displayString;
 @property(readonly, copy, nonatomic) NSString *title;
 - (void)setCurrentValue:(id)arg1;
+- (void)_commonUpdate;
 - (void)updateWithConfiguration:(id)arg1;
 
 @end

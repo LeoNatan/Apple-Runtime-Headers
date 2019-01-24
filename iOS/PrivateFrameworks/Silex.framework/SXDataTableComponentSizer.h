@@ -24,15 +24,15 @@
 @property(retain, nonatomic) SXDataTableLayouter *layouter; // @synthesize layouter=_layouter;
 @property(readonly, nonatomic) id <SXTextComponentLayoutHosting> textComponentLayoutHosting; // @synthesize textComponentLayoutHosting=_textComponentLayoutHosting;
 - (void).cxx_destruct;
-- (id)tableStyleForComponent:(id)arg1 documentController:(id)arg2;
+- (id)tableStyleForComponent:(id)arg1;
 - (id)textComponentLayoutHostingForDataTableComponentController:(id)arg1;
 - (id)contentSizeCategoryForDataTableComponentController:(id)arg1;
 - (id)documentColumnLayoutForDataTableComponentController:(id)arg1;
-- (id)documentControllerForDataTableComponentController:(id)arg1;
+- (id)DOMObjectProviderForDataTableComponentController:(id)arg1;
 - (id)componentForDataTableComponentController:(id)arg1;
 - (double)widthForDataTableComponentController:(id)arg1;
 - (double)calculateHeightForWidth:(double)arg1 inColumnLayout:(id)arg2;
-- (id)initWithComponent:(id)arg1 componentLayout:(id)arg2 componentStyle:(id)arg3 documentController:(id)arg4 layoutAttributes:(id)arg5 textComponentLayoutHosting:(id)arg6 textSourceFactory:(id)arg7;
+- (id)initWithComponent:(id)arg1 componentLayout:(id)arg2 componentStyle:(id)arg3 DOMObjectProvider:(id)arg4 layoutOptions:(id)arg5 textComponentLayoutHosting:(id)arg6 textSourceFactory:(id)arg7 recordValueTransformerFactory:(id)arg8;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

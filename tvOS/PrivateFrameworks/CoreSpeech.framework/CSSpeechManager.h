@@ -6,6 +6,7 @@
 
 #import <objc/NSObject.h>
 
+#import <CoreSpeech/CSActivationEventNotifierDelegate-Protocol.h>
 #import <CoreSpeech/CSAudioRecorderDelegate-Protocol.h>
 #import <CoreSpeech/CSAudioRouteChangeMonitorDelegate-Protocol.h>
 #import <CoreSpeech/CSAudioServerCrashMonitorGibraltarDelegate-Protocol.h>
@@ -19,11 +20,12 @@
 @class CSAudioCircularBuffer, CSAudioRecorder, CSSmartSiriVolume, CSStateMachine, NSDictionary, NSHashTable, NSString, NSUUID;
 @protocol CSSpeechManagerDelegate, OS_dispatch_queue, OS_dispatch_source;
 
-@interface CSSpeechManager : NSObject <CSAudioRecorderDelegate, CSStateMachineDelegate, CSVoiceTriggerDelegate, CSSiriEnabledMonitorDelegate, CSAudioServerCrashMonitorGibraltarDelegate, CSSmartSiriVolumeDelegate, CSAudioRouteChangeMonitorDelegate, CSVoiceTriggerAssetDownloadMonitorDelegate, CSLanguageCodeUpdateMonitorDelegate>
+@interface CSSpeechManager : NSObject <CSAudioRecorderDelegate, CSStateMachineDelegate, CSVoiceTriggerDelegate, CSSiriEnabledMonitorDelegate, CSAudioServerCrashMonitorGibraltarDelegate, CSSmartSiriVolumeDelegate, CSActivationEventNotifierDelegate, CSAudioRouteChangeMonitorDelegate, CSVoiceTriggerAssetDownloadMonitorDelegate, CSLanguageCodeUpdateMonitorDelegate>
 {
     _Bool _isSiriEnabled;
     _Bool _deviceRoleIsStereo;
     _Bool _isAudioSessionActive;
+    _Bool _shouldChangeContextAfterDidStop;
     CSAudioRecorder *_audioRecorder;
     NSObject<OS_dispatch_queue> *_queue;
     NSObject<OS_dispatch_queue> *_assetQueryQueue;
@@ -44,8 +46,11 @@
     NSUUID *_pendingSetRecordModeToRecordingToken;
     CDUnknownBlockType _pendingSetRecordModeToRecordingCompletion;
     double _audioSessionActivationDelay;
+    NSDictionary *_pendingContext;
 }
 
+@property(retain, nonatomic) NSDictionary *pendingContext; // @synthesize pendingContext=_pendingContext;
+@property(nonatomic) _Bool shouldChangeContextAfterDidStop; // @synthesize shouldChangeContextAfterDidStop=_shouldChangeContextAfterDidStop;
 @property(nonatomic) double audioSessionActivationDelay; // @synthesize audioSessionActivationDelay=_audioSessionActivationDelay;
 @property(nonatomic) _Bool isAudioSessionActive; // @synthesize isAudioSessionActive=_isAudioSessionActive;
 @property(nonatomic) _Bool deviceRoleIsStereo; // @synthesize deviceRoleIsStereo=_deviceRoleIsStereo;
@@ -70,6 +75,7 @@
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(retain, nonatomic) CSAudioRecorder *audioRecorder; // @synthesize audioRecorder=_audioRecorder;
 - (void).cxx_destruct;
+- (_Bool)_isBluetoothDeviceTriggerEvent:(unsigned long long)arg1;
 - (void)handleServerDidRestart;
 - (void)handleLostServerConnection;
 - (void)_startClearLoggingFilesTimer;
@@ -114,11 +120,14 @@
 - (void)stopRecordingWithEvent:(unsigned long long)arg1;
 - (void)_startRecordingForClient:(id)arg1 error:(id *)arg2;
 - (_Bool)_startRecordingForAOPFirstPassTriggerWithSettings:(id)arg1 error:(id *)arg2;
+- (_Bool)_startListeningForBluetoothDeviceVoiceTrigger:(unsigned long long)arg1 settings:(id)arg2 error:(id *)arg3;
 - (_Bool)_startRecordingWithSettings:(id)arg1 event:(unsigned long long)arg2 error:(id *)arg3;
 - (_Bool)startRecordingWithSetting:(id)arg1 event:(unsigned long long)arg2 error:(id *)arg3;
 - (void)startRecordingAsyncWithSetting:(id)arg1 event:(unsigned long long)arg2 completion:(CDUnknownBlockType)arg3;
+- (_Bool)_handleJarvisFirstPassTriggerEvent:(unsigned long long)arg1 settings:(id)arg2 error:(id *)arg3;
 - (_Bool)_handleVoiceTriggerSwitchAOP2APEvent:(unsigned long long)arg1 settings:(id)arg2 error:(id *)arg3;
 - (_Bool)_handleAOPFirstPassTriggerEvent:(unsigned long long)arg1 settings:(id)arg2 error:(id *)arg3;
+- (_Bool)_handleBluetoothDeviceTriggerEvent:(unsigned long long)arg1 settings:(id)arg2 error:(id *)arg3;
 - (void)_enableMiniDucking:(_Bool)arg1;
 - (_Bool)_releaseAudioSessionForListening:(unsigned long long)arg1 error:(id *)arg2;
 - (void)_releaseClientAudioSession:(unsigned long long)arg1;
@@ -130,6 +139,7 @@
 - (void)_scheduleSetRecordModeToRecordingWithDelay:(double)arg1 forReason:(id)arg2 validator:(CDUnknownBlockType)arg3 completion:(CDUnknownBlockType)arg4;
 - (_Bool)_setRecordMode:(long long)arg1 withDelay:(double)arg2 error:(id *)arg3;
 - (_Bool)_setRecordMode:(long long)arg1 error:(id *)arg2;
+- (_Bool)_startListeningWithSettings:(id)arg1 error:(id *)arg2;
 - (_Bool)_startListening:(id *)arg1;
 - (_Bool)_startRecordingWithSettings:(id)arg1 error:(id *)arg2;
 - (_Bool)prepareRecordingForClient:(id)arg1 error:(id *)arg2;
@@ -156,7 +166,7 @@
 - (void)reset;
 - (void)startManager;
 - (void)dealloc;
-- (id)initWithVoiceTriggerFirstPass:(id)arg1 voicetriggerSecondPass:(id)arg2 voicetriggerEventNotifier:(id)arg3 audioRecorder:(id)arg4;
+- (id)initWithVoiceTriggerFirstPass:(id)arg1 firstPassType:(unsigned long long)arg2 voicetriggerSecondPass:(id)arg3 voicetriggerEventNotifier:(id)arg4 audioRecorder:(id)arg5 stateMachineType:(unsigned long long)arg6;
 - (id)init;
 - (float)averagePowerForChannel:(unsigned long long)arg1;
 - (float)peakPowerForChannel:(unsigned long long)arg1;

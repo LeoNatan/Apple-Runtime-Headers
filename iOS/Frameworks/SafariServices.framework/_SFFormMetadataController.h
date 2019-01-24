@@ -31,13 +31,12 @@
 - (id)_webProcessPlugInBrowserContextController:(id)arg1 willBeginInputSessionForElement:(id)arg2 inFrame:(id)arg3 userIsInteracting:(_Bool)arg4;
 - (void)_webProcessPlugInBrowserContextController:(id)arg1 textDidChangeInTextField:(id)arg2 inFrame:(id)arg3 initiatedByUserTyping:(_Bool)arg4;
 - (void)didFindSearchURLTemplateString:(id)arg1 inFrame:(id)arg2 pageController:(id)arg3;
-- (_Bool)shouldAttemptToClassifyFormsWithoutAPasswordFieldAsLoginForms;
 - (_Bool)shouldIncludeNonEmptyFields;
 - (void)didSameDocumentNavigation:(long long)arg1 inFrame:(id)arg2;
 - (_Bool)didStartProvisionalLoadForFrame:(id)arg1;
 - (_Bool)_willNavigateFrameWithUnsubmittedForm:(id)arg1 loadingWillBeDeferred:(_Bool)arg2;
 - (void)focusFormForStreamlinedLogin:(double)arg1 inFrame:(id)arg2;
-- (void)finishedAutoFillingForm:(id)arg1 inFrame:(id)arg2;
+- (void)finishedAutoFillingForm:(id)arg1 inFrame:(id)arg2 shouldSubmit:(_Bool)arg3;
 - (void)clearField:(id)arg1 inFrame:(id)arg2;
 - (void)removeAutomaticPasswordVisualTreatmentInFrame:(id)arg1 passwordControlUniqueIDs:(id)arg2;
 - (void)removeAutomaticPasswordElementsInFrame:(id)arg1 focusedPasswordControlUniqueID:(id)arg2 passwordControlUniqueIDs:(id)arg3 blurAfterRemoval:(_Bool)arg4;
@@ -52,6 +51,7 @@
 - (id)formAutoFillNodeForJSWrapper:(struct OpaqueJSValue *)arg1 inContext:(struct OpaqueJSContext *)arg2;
 - (void)clearScriptWorld;
 - (void)collectMetadataForTextField:(id)arg1 inFrame:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)_collectFormMetadataForPreFilling:(_Bool)arg1;
 - (void)collectFormMetadataForPreFilling;
 - (_Bool)_formContainsAutoFilledElements:(id)arg1;
 - (void)collectURLsForPreFilling;

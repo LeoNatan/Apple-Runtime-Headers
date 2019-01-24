@@ -64,7 +64,6 @@
 - (void)did_start_session:(id)arg1 service:(id)arg2 account:(id)arg3 fromID:(id)arg4 context:(id)arg5;
 - (void)start_session:(id)arg1 service:(id)arg2 account:(id)arg3 fromID:(id)arg4 context:(id)arg5;
 - (void)local_device_query_callback:(id)arg1 service:(id)arg2 account:(id)arg3 fromID:(id)arg4 context:(id)arg5;
-- (void)pingDeviceAtAddress:(id)arg1 withSessionID:(id)arg2;
 - (void)logMalformedMessage;
 - (id)initWithConnection:(id)arg1 controller:(id)arg2;
 - (id)init;

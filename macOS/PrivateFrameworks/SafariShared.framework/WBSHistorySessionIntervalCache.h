@@ -13,7 +13,7 @@
 {
     NSObject<OS_dispatch_queue> *_queue;
     NSCalendar *_calendar;
-    Vector_23cb8338 _intervalCache;
+    struct Vector<double, 0, WTF::CrashOnOverflow, 16> _intervalCache;
 }
 
 - (id).cxx_construct;

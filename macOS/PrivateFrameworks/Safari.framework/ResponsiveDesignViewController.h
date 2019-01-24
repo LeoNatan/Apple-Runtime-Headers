@@ -8,7 +8,7 @@
 
 #import <Safari/ResponsiveDesignContainerViewDelegate-Protocol.h>
 
-@class NSLayoutConstraint, NSString, ResponsiveDesignContainerView, ResponsiveDesignShelfViewController, WKView, WindowBackdropVisualEffectView;
+@class NSLayoutConstraint, NSString, ResponsiveDesignContainerView, ResponsiveDesignShelfViewController, WKWebView, WindowBackdropVisualEffectView;
 
 __attribute__((visibility("hidden")))
 @interface ResponsiveDesignViewController : NSViewController <ResponsiveDesignContainerViewDelegate>
@@ -18,10 +18,10 @@ __attribute__((visibility("hidden")))
     ResponsiveDesignContainerView *_responsiveDesignContainerView;
     NSLayoutConstraint *_visualEffectViewTopConstraint;
     BOOL _ignoreDisplayBrowserSizeChange;
-    WKView *_webView;
+    WKWebView *_webView;
 }
 
-@property(readonly, nonatomic) WKView *webView; // @synthesize webView=_webView;
+@property(readonly, nonatomic) WKWebView *webView; // @synthesize webView=_webView;
 - (void).cxx_destruct;
 - (void)responsiveDesignContainerView:(id)arg1 didChangeBrowserSize:(struct CGSize)arg2;
 - (id)snapHeightsForResponsiveDesignContainerView:(id)arg1;

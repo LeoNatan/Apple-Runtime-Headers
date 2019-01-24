@@ -57,6 +57,7 @@
 - (void)_disableInkPicker:(BOOL)arg1;
 - (void)didEndOrCancelStroke;
 - (void)beganDrawingStroke;
+- (void)updateInkIfNeeded:(id)arg1;
 - (void)resetToLastDrawingInk;
 - (void)setDefaultInk;
 - (void)restoreStrokeColorToSystemDefault;

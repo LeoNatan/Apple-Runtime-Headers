@@ -79,8 +79,6 @@
 - (_Bool)endTransaction:(_Bool)arg1;
 - (_Bool)beginExclusiveTransaction;
 - (_Bool)deleteRecordAll;
-- (_Bool)setUserVersion:(int)arg1;
-- (int)userVersion;
 - (_Bool)setupDatabase;
 - (_Bool)prepare:(const char *)arg1 statement:(struct sqlite3_stmt **)arg2;
 - (void)dealloc;

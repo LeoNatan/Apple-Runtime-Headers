@@ -27,6 +27,7 @@
     _Bool _wifiP2P;
     unsigned char _osVersion;
     _Bool _paired;
+    NSString *_accountID;
     NSArray *_batteryInfo;
     SFBLEDevice *_bleDevice;
     NSString *_contactIdentifier;
@@ -39,12 +40,14 @@
     NSString *_name;
     NSString *_requestSSID;
     unsigned int _systemPairState;
+    unsigned int _hotspotInfo;
     unsigned long long _problemFlags;
 }
 
 + (_Bool)supportsSecureCoding;
 @property(nonatomic) _Bool paired; // @synthesize paired=_paired;
 @property(nonatomic) unsigned char osVersion; // @synthesize osVersion=_osVersion;
+@property(nonatomic) unsigned int hotspotInfo; // @synthesize hotspotInfo=_hotspotInfo;
 @property(readonly, nonatomic) _Bool wifiP2P; // @synthesize wifiP2P=_wifiP2P;
 @property(nonatomic) _Bool watchLocked; // @synthesize watchLocked=_watchLocked;
 @property(nonatomic) _Bool wakeDevice; // @synthesize wakeDevice=_wakeDevice;
@@ -71,6 +74,7 @@
 @property(copy, nonatomic) NSArray *batteryInfo; // @synthesize batteryInfo=_batteryInfo;
 @property(nonatomic) _Bool autoUnlockWatch; // @synthesize autoUnlockWatch=_autoUnlockWatch;
 @property(nonatomic) _Bool autoUnlockEnabled; // @synthesize autoUnlockEnabled=_autoUnlockEnabled;
+@property(copy, nonatomic) NSString *accountID; // @synthesize accountID=_accountID;
 - (void).cxx_destruct;
 - (void)updateWithRPIdentity:(id)arg1;
 - (void)updateWithPairedPeer:(id)arg1;

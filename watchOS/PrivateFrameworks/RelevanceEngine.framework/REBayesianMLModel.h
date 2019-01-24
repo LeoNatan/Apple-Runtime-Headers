@@ -16,6 +16,7 @@
 + (unsigned int)featureBitWidth;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+- (void)logCoreAnalyticsMetrics;
 - (void)collectLoggableState:(CDUnknownBlockType)arg1;
 - (int)_getNumberOfCoordinates;
 - (void)_clearModel;
@@ -26,6 +27,7 @@
 - (void)_loadFeatureVector:(vector_cfeb9b06 *)arg1 fromFeatureMap:(id)arg2;
 - (id)_predictWithFeatures:(id)arg1;
 - (void)_trainWithFeatures:(id)arg1 positiveEvent:(id)arg2;
+- (unsigned long long)_maxFeatureCoordinates;
 - (id)initWithFeatureSet:(id)arg1;
 
 @end

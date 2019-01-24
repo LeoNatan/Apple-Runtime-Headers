@@ -20,20 +20,20 @@
 __attribute__((visibility("hidden")))
 @interface TSDImageInfo : TSDMediaInfo <TSDReducibleImageContainer, TSDContainerInfo, TSDMixing, TSSPresetSource, TSKTransformableObject, TSDCompatibilityAwareMediaContainer, TSDAttachmentAwareContainerInfo>
 {
+    TSUBezierPath *mInstantAlphaPath;
+    struct CGSize mNaturalSize;
+    TSDImageDataHelper *mImageDataHelper;
     TSPData *mImageData;
     TSPData *mThumbnailImageData;
     TSPData *mOriginalImageData;
     TSDImageAdjustments *mImageAdjustments;
     TSPData *mAdjustedImageData;
     TSPData *mThumbnailAdjustedImageData;
-    TSDImageDataHelper *mImageDataHelper;
     TSDImageDataHelper *mAdjustedImageDataHelper;
     TSPData *mEnhancedImageData;
     TSDMediaStyle *mStyle;
     TSDMaskInfo *mMaskInfo;
-    TSUBezierPath *mInstantAlphaPath;
     TSUBezierPath *mTracedPath;
-    struct CGSize mNaturalSize;
     _Bool mCurrentlyInDocument;
     double mDescentForInlineLayout;
     _Bool mDescentForInlineLayoutValid;
@@ -57,6 +57,8 @@ __attribute__((visibility("hidden")))
 - (void)acceptVisitor:(id)arg1;
 - (id)mixedObjectWithFraction:(double)arg1 ofObject:(id)arg2;
 - (long long)mixingTypeWithObject:(id)arg1 context:(id)arg2;
+- (unsigned short)propertyIdForOriginalSizeCommand;
+- (unsigned short)propertyIdForFlagsCommand;
 - (id)propertyNameForOriginalSizeCommand;
 - (id)propertyNameForFlagsCommand;
 @property(nonatomic) struct CGSize naturalSize;
@@ -120,11 +122,11 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) TSPData *enhancedImageData;
 @property(retain, nonatomic) TSPData *thumbnailAdjustedImageData;
 - (void)saveToArchiver:(id)arg1;
-- (void)saveToArchive:(struct ImageArchive *)arg1 archiver:(id)arg2;
+-     // Error parsing type: v32@0:8^{ImageArchive=^^?{ExtensionSet=^{Arena}SS(AllocatedData=^{KeyValue}^{map<int, google::protobuf::internal::ExtensionSet::Extension, std::__1::less<int>, std::__1::allocator<std::__1::pair<const int, google::protobuf::internal::ExtensionSet::Extension> > >})}{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{DrawableArchive}^{Reference}^{Reference}^{Size}^{Reference}^{Reference}^{Reference}^{Size}^{Path}^{DataReference}^{DataReference}^{DataReference}^{ImageAdjustmentsArchive}^{DataReference}^{DataReference}^{DataReference}^{Path}^{Attribution}IB}16@24, name: saveToArchive:archiver:
 - (void)p_upgradeImageThumbnail;
 - (void)p_upgradeImageGeometry;
 - (void)loadFromUnarchiver:(id)arg1;
-- (void)loadFromArchive:(const struct ImageArchive *)arg1 unarchiver:(id)arg2;
+-     // Error parsing type: v32@0:8r^{ImageArchive=^^?{ExtensionSet=^{Arena}SS(AllocatedData=^{KeyValue}^{map<int, google::protobuf::internal::ExtensionSet::Extension, std::__1::less<int>, std::__1::allocator<std::__1::pair<const int, google::protobuf::internal::ExtensionSet::Extension> > >})}{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{DrawableArchive}^{Reference}^{Reference}^{Size}^{Reference}^{Reference}^{Reference}^{Size}^{Path}^{DataReference}^{DataReference}^{DataReference}^{ImageAdjustmentsArchive}^{DataReference}^{DataReference}^{DataReference}^{Path}^{Attribution}IB}16@24, name: loadFromArchive:unarchiver:
 - (_Bool)isEquivalentForCrossDocumentPasteMasterComparison:(id)arg1;
 
 // Remaining properties

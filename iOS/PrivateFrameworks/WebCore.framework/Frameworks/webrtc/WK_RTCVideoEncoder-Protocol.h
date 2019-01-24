@@ -6,12 +6,13 @@
 
 #import <webrtc/NSObject-Protocol.h>
 
-@class NSArray, NSString, WK_RTCVideoEncoderQpThresholds, WK_RTCVideoEncoderSettings, WK_RTCVideoFrame;
+@class NSArray, NSString, WK_RTCVideoBitrateAllocation, WK_RTCVideoEncoderQpThresholds, WK_RTCVideoEncoderSettings, WK_RTCVideoFrame;
 @protocol WK_RTCCodecSpecificInfo;
 
 @protocol WK_RTCVideoEncoder <NSObject>
 - (WK_RTCVideoEncoderQpThresholds *)scalingSettings;
 - (NSString *)implementationName;
+- (int)setRateAllocation:(WK_RTCVideoBitrateAllocation *)arg1 framerate:(unsigned int)arg2;
 - (int)setBitrate:(unsigned int)arg1 framerate:(unsigned int)arg2;
 - (long long)encode:(WK_RTCVideoFrame *)arg1 codecSpecificInfo:(id <WK_RTCCodecSpecificInfo>)arg2 frameTypes:(NSArray *)arg3;
 - (long long)releaseEncoder;

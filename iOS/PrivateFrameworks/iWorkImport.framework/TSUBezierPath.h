@@ -96,9 +96,9 @@ __attribute__((visibility("hidden")))
 + (id)unitePolygonalBezierPaths:(id)arg1;
 + (id)uniteBezierPaths:(id)arg1;
 + (id)p_booleanWithBezierPaths:(id)arg1 operation:(int)arg2;
-+ (struct CGRect)p_pathToBounds:(Path_1b135553 *)arg1;
-+ (id)p_pathToBezier:(Path_1b135553 *)arg1;
-+ (Path_1b135553 *)p_bezierToPath:(id)arg1;
++ (struct CGRect)p_pathToBounds:(struct Path *)arg1;
++ (id)p_pathToBezier:(struct Path *)arg1;
++ (struct Path *)p_bezierToPath:(id)arg1;
 - (id)initWithCString:(const char *)arg1;
 - (const char *)cString;
 - (_Bool)containsPoint:(struct CGPoint)arg1;
@@ -216,8 +216,8 @@ __attribute__((visibility("hidden")))
 - (void)addIntersectionsWithPath:(id)arg1 to:(id)arg2;
 - (void)addIntersectionsWithPath:(id)arg1 to:(id)arg2 allIntersections:(_Bool)arg3 reversed:(_Bool)arg4;
 - (void)getStartPoint:(struct CGPoint *)arg1 andEndPoint:(struct CGPoint *)arg2;
-- (void)saveToArchive:(struct Path *)arg1;
-- (id)initWithArchive:(const struct Path *)arg1;
+-     // Error parsing type: v24@0:8^{Path=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSP::Path_Element>=^{Arena}ii^{Rep}}}16, name: saveToArchive:
+-     // Error parsing type: @24@0:8r^{Path=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSP::Path_Element>=^{Arena}ii^{Rep}}}16, name: initWithArchive:
 @property(readonly, nonatomic) double flattenedArea;
 - (id)copyWithPointsInRange:(struct _NSRange)arg1;
 - (id)p_copyWithPointsInRange:(struct _NSRange)arg1 countingSubpaths:(unsigned long long *)arg2;

@@ -15,7 +15,6 @@
 {
     NSDictionary *_assetCounts;
     CPLFeatureVersionHistory *_featureVersionHistory;
-    struct NSData *_lastKnownSyncAnchor;
     NSData *_accountFlagsData;
     CPLMomentShare *_momentShare;
 }
@@ -23,7 +22,6 @@
 + (_Bool)supportsSecureCoding;
 @property(retain, nonatomic) CPLMomentShare *momentShare; // @synthesize momentShare=_momentShare;
 @property(copy, nonatomic) NSData *accountFlagsData; // @synthesize accountFlagsData=_accountFlagsData;
-@property(copy, nonatomic) NSData *lastKnownSyncAnchor; // @synthesize lastKnownSyncAnchor=_lastKnownSyncAnchor;
 @property(retain, nonatomic) CPLFeatureVersionHistory *featureVersionHistory; // @synthesize featureVersionHistory=_featureVersionHistory;
 @property(copy, nonatomic) NSDictionary *assetCounts; // @synthesize assetCounts=_assetCounts;
 - (void).cxx_destruct;

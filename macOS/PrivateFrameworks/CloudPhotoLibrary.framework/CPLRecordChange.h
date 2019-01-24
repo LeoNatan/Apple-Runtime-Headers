@@ -49,8 +49,6 @@
 + (Class)classForStoredClassName:(id)arg1 forCPLArchiver:(id)arg2;
 + (BOOL)cplShouldIgnorePropertyForEquality:(id)arg1;
 + (BOOL)cplShouldIgnorePropertyForCoding:(id)arg1;
-+ (id)ckAssetProperties;
-+ (id)assetTransferOptionsByRecordTypeAndKey;
 @property(nonatomic) BOOL serverRecordIsCorrupted; // @synthesize serverRecordIsCorrupted=_serverRecordIsCorrupted;
 @property(copy, nonatomic) NSData *recordChangeData; // @synthesize recordChangeData=_recordChangeData;
 @property(copy, nonatomic) NSString *realIdentifier; // @synthesize realIdentifier=_realIdentifier;
@@ -139,12 +137,6 @@
 - (id)scopedIdentifiersForMapping;
 - (BOOL)validateRecordForTracker:(id)arg1;
 - (id)compactedChangeWithRelatedChanges:(id)arg1 isOnlyChange:(BOOL)arg2 fullRecord:(id)arg3 usingClientCache:(id)arg4;
-- (BOOL)shouldAppearInCKUploadContext;
-- (void)fillMissingCKAssetProperties:(id)arg1 withCKRecord:(id)arg2;
-- (id)initWithCKRecord:(id)arg1 scopeIdentifier:(id)arg2 ckAssetProperties:(id)arg3;
-- (void)fillCKRecord:(id)arg1 withRecordMap:(id)arg2 tempCKAssetURL:(id)arg3;
-- (BOOL)fillCKRecord:(id)arg1 withRecordMap:(id)arg2 scopeProvider:(id)arg3 tempCKAssetURL:(id)arg4 error:(id *)arg5;
-- (id)ckAssetFileURLForTempCKAssetURL:(id)arg1 propertyKey:(id)arg2;
 
 @end
 

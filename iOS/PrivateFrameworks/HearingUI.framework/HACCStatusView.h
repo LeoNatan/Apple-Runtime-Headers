@@ -8,11 +8,12 @@
 
 #import <HearingUI/HACCContentModule-Protocol.h>
 
-@class BCBatteryDevice, HACCBatteryGroupView, NSString, UIImageView, UILabel;
+@class BCBatteryDevice, HACCBatteryGroupView, NSNumberFormatter, NSString, UIImageView, UILabel;
 @protocol HACCContentModuleDelegate;
 
 @interface HACCStatusView : UIControl <HACCContentModule>
 {
+    NSNumberFormatter *_numberFormatter;
     unsigned long long module;
     id <HACCContentModuleDelegate> delegate;
     UILabel *_titleLabel;

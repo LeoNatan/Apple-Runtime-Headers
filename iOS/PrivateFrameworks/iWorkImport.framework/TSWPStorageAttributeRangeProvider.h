@@ -14,7 +14,7 @@ __attribute__((visibility("hidden")))
 
 - (void)nextRange;
 - (void)dealloc;
-- (id)initWithStorage:(id)arg1 kind:(int)arg2;
+- (id)initWithStorage:(id)arg1 kind:(unsigned long long)arg2;
 
 @end
 

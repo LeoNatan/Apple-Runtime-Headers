@@ -6,11 +6,12 @@
 
 #import <objc/NSObject.h>
 
-@class CUReachabilityMonitor, NSData, NSDictionary, NSError, NSString, SFSession;
+@class CUBonjourAdvertiser, CUReachabilityMonitor, NSData, NSDictionary, NSError, NSString, SFSession;
 @protocol OS_dispatch_queue;
 
 @interface SFDeviceOperationHandlerWiFiSetup : NSObject
 {
+    CUBonjourAdvertiser *_bonjourAdvertiser;
     BOOL _invalidateCalled;
     CUReachabilityMonitor *_reachabilityMonitor;
     CDUnknownBlockType _responseHandler;
@@ -18,9 +19,14 @@
     int _state;
     BOOL _stepDone;
     NSError *_stepError;
+    NSString *_bonjourTestID;
+    BOOL _reachabilityEnabled;
     unsigned int _repairFlags;
+    unsigned int _setupFlags;
     int _wifiChannel;
     _Bool _wifiDirected;
+    id _wifiEAPConfig;
+    id _wifiEAPTrustExceptions;
     _Bool _wifiHomeNetwork;
     NSString *_wifiPassword;
     NSData *_wifiPSK;
@@ -32,12 +38,14 @@
 @property(retain, nonatomic) SFSession *sfSession; // @synthesize sfSession=_sfSession;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
 - (void).cxx_destruct;
+- (void)_runBonjourTestStart;
 - (void)_runReachabilityStart;
 - (void)_runJoinStart:(int)arg1;
 - (void)_runScanResults:(id)arg1 error:(id)arg2 channel:(int)arg3;
 - (void)_runScanStart:(int)arg1;
 - (void)_run;
 - (void)_handleWiFiSetupRequest:(id)arg1 responseHandler:(CDUnknownBlockType)arg2;
+- (void)_handleRequestBonjourTestDone:(id)arg1 responseHandler:(CDUnknownBlockType)arg2;
 - (void)_completeError:(id)arg1;
 - (void)invalidate;
 - (void)_activate;

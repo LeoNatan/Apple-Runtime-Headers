@@ -32,6 +32,7 @@
 - (void)setRegistryBasePath:(id)arg1;
 - (id)_defaultRegistryBasePath;
 - (void)_updateDeviceUnlockedState;
+- (void)reloadMobileKeyBag;
 - (id)init;
 
 @end

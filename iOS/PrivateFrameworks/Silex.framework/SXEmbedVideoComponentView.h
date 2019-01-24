@@ -50,7 +50,7 @@
 - (void)visibilityStateDidChangeFromState:(long long)arg1;
 - (void)viewport:(id)arg1 appearStateChangedFromState:(unsigned long long)arg2;
 - (void)presentComponentWithChanges:(CDStruct_1cc9d0d0)arg1;
-- (id)initWithDocumentController:(id)arg1 viewport:(id)arg2 presentationDelegate:(id)arg3 analyticsReporting:(id)arg4 componentStyleRendererFactory:(id)arg5 appStateMonitor:(id)arg6 actionHandler:(id)arg7;
+- (id)initWithDOMObjectProvider:(id)arg1 viewport:(id)arg2 presentationDelegate:(id)arg3 analyticsReporting:(id)arg4 componentStyleRendererFactory:(id)arg5 appStateMonitor:(id)arg6 actionHandler:(id)arg7;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -20,13 +20,13 @@ __attribute__((visibility("hidden")))
     _Bool _shouldTintWhiteImages;
     unsigned long long _slideNumber;
     KNAbstractSlide *_slide;
-    double _elementListThumbnailContentInset;
-    struct CGSize _elementListThumbnailSize;
+    double _drawableThumbnailContentInset;
+    struct CGSize _drawableThumbnailSize;
 }
 
 @property(nonatomic) _Bool shouldTintWhiteImages; // @synthesize shouldTintWhiteImages=_shouldTintWhiteImages;
-@property(nonatomic) double elementListThumbnailContentInset; // @synthesize elementListThumbnailContentInset=_elementListThumbnailContentInset;
-@property(nonatomic) struct CGSize elementListThumbnailSize; // @synthesize elementListThumbnailSize=_elementListThumbnailSize;
+@property(nonatomic) double drawableThumbnailContentInset; // @synthesize drawableThumbnailContentInset=_drawableThumbnailContentInset;
+@property(nonatomic) struct CGSize drawableThumbnailSize; // @synthesize drawableThumbnailSize=_drawableThumbnailSize;
 @property(nonatomic) _Bool shouldShowInstructionalText; // @synthesize shouldShowInstructionalText=_shouldShowInstructionalText;
 @property(retain, nonatomic) KNBodyPlaceholderInfo *replacementBodyPlaceholder; // @synthesize replacementBodyPlaceholder=_replacementBodyPlaceholder;
 @property(retain, nonatomic) KNTitlePlaceholderInfo *replacementTitlePlaceholder; // @synthesize replacementTitlePlaceholder=_replacementTitlePlaceholder;
@@ -39,7 +39,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)p_requiresModifiedStrokeForDrawable:(id)arg1 atScaleFactor:(double)arg2;
 - (void)p_prepareShapeInfoStroke:(id)arg1 atScaleFactor:(double)arg2 finalRect:(struct CGRect *)arg3;
 - (void)p_prepareStyledInfoStyle:(id)arg1;
-@property(readonly, nonatomic) TSUImage *elementListThumbnailImage;
+@property(readonly, nonatomic) TSUImage *drawableThumbnailImage;
 - (id)infoToConnectToForConnectionLineConnectedToInfo:(id)arg1;
 - (_Bool)isInfoAKeynoteMasterObject:(id)arg1;
 - (id)initWithDocumentRoot:(id)arg1;

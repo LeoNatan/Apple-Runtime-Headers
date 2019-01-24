@@ -17,6 +17,7 @@
     _Bool _invalidatedViaBoundsChange;
     _Bool _hasLoadMore;
     _Bool _useFastQuanta;
+    _Bool _coalesceInvalidations;
     _Bool _sizeCategoryIsAccessibilitySizeCategory;
     float _anchorYPosition;
     NSIndexSet *_indicesOfChatItemsToBeRemovedWithoutFading;
@@ -38,6 +39,7 @@
 + (Class)layoutAttributesClass;
 + (int)translateLayoutIndexToEffectIndex:(int)arg1;
 @property(nonatomic) _Bool sizeCategoryIsAccessibilitySizeCategory; // @synthesize sizeCategoryIsAccessibilitySizeCategory=_sizeCategoryIsAccessibilitySizeCategory;
+@property(nonatomic) _Bool coalesceInvalidations; // @synthesize coalesceInvalidations=_coalesceInvalidations;
 @property(nonatomic) _Bool useFastQuanta; // @synthesize useFastQuanta=_useFastQuanta;
 @property(retain, nonatomic) NSMutableDictionary *finalParentVerticalOffsets; // @synthesize finalParentVerticalOffsets=_finalParentVerticalOffsets;
 @property(retain, nonatomic) NSMutableDictionary *initialParentLayoutAttributes; // @synthesize initialParentLayoutAttributes=_initialParentLayoutAttributes;

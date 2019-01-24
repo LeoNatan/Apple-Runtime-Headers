@@ -22,7 +22,6 @@
 __attribute__((visibility("hidden")))
 @interface WebPDFView : NSView <PDFViewDelegate, WebDocumentView, WebDocumentSearching, WebDocumentIncrementalSearching, WebMultipleTextMatches, WebDocumentSelection, WebDocumentElement, WebDocumentPDF, _WebDocumentViewState, _WebDocumentZooming>
 {
-    NSView *previewView;
     PDFView *PDFSubview;
     NSString *path;
     BOOL firstResponderIsPDFDocumentView;
@@ -35,11 +34,30 @@ __attribute__((visibility("hidden")))
     struct CGPoint lastScrollPosition;
 }
 
-+ (id)supportedMIMETypes;
-+ (id)PDFKitBundle;
 + (Class)_PDFSelectionClass;
 + (Class)_PDFViewClass;
-+ (Class)_PDFPreviewViewClass;
++ (id)supportedMIMETypes;
++ (id)PDFKitBundle;
+- (id)_visiblePDFPages;
+- (void)_updatePreferencesSoon;
+- (void)_updatePreferences:(id)arg1;
+- (void)_trackFirstResponder;
+- (id)_temporaryPDFDirectoryPath;
+- (void)_setTextMatches:(id)arg1;
+- (id)_scaledAttributedString:(id)arg1;
+- (void)_scaleOrDisplayModeOrPageChanged:(id)arg1;
+- (BOOL)_pointIsInSelection:(struct CGPoint)arg1;
+- (id)_PDFSubview;
+- (void)_PDFDocumentViewMightHaveScrolled:(id)arg1;
+- (id)_path;
+- (void)_openWithFinder:(id)arg1;
+- (id)_nextMatchFor:(id)arg1 direction:(BOOL)arg2 caseSensitive:(BOOL)arg3 wrap:(BOOL)arg4 fromSelection:(id)arg5 startInSelection:(BOOL)arg6;
+- (id)_menuItemsFromPDFKitForEvent:(id)arg1;
+- (void)_lookUpInDictionaryFromMenu:(id)arg1;
+- (id)_fakeKeyEventWithFunctionKey:(unsigned short)arg1;
+- (id)_clipViewForPDFDocumentView;
+- (BOOL)_canLookUpInDictionary;
+- (void)_applyPDFDefaults;
 - (void)PDFViewSavePDFToDownloadFolder:(id)arg1;
 - (void)PDFViewPerformPrint:(id)arg1;
 - (void)PDFViewOpenPDFInNativeApplication:(id)arg1;
@@ -112,26 +130,6 @@ __attribute__((visibility("hidden")))
 - (void)dealloc;
 - (id)PDFDocument;
 - (void)setPDFDocument:(id)arg1;
-- (id)_visiblePDFPages;
-- (void)_updatePreferencesSoon;
-- (void)_updatePreferences:(id)arg1;
-- (void)_trackFirstResponder;
-- (id)_temporaryPDFDirectoryPath;
-- (void)_setTextMatches:(id)arg1;
-- (id)_scaledAttributedString:(id)arg1;
-- (void)_scaleOrDisplayModeOrPageChanged:(id)arg1;
-- (BOOL)_pointIsInSelection:(struct CGPoint)arg1;
-- (id)_PDFSubview;
-- (void)_PDFDocumentViewMightHaveScrolled:(id)arg1;
-- (id)_path;
-- (void)_openWithFinder:(id)arg1;
-- (id)_nextMatchFor:(id)arg1 direction:(BOOL)arg2 caseSensitive:(BOOL)arg3 wrap:(BOOL)arg4 fromSelection:(id)arg5 startInSelection:(BOOL)arg6;
-- (id)_menuItemsFromPDFKitForEvent:(id)arg1;
-- (void)_lookUpInDictionaryFromMenu:(id)arg1;
-- (id)_fakeKeyEventWithFunctionKey:(unsigned short)arg1;
-- (id)_clipViewForPDFDocumentView;
-- (BOOL)_canLookUpInDictionary;
-- (void)_applyPDFDefaults;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

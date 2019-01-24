@@ -6,6 +6,9 @@
 
 #import <CoreSpeech/NSObject-Protocol.h>
 
+@class CSAudioRouteChangeMonitor;
+
 @protocol CSAudioRouteChangeMonitorDelegate <NSObject>
+- (void)CSAudioRouteChangeMonitor:(CSAudioRouteChangeMonitor *)arg1 didReceiveAudioRouteChangeEvent:(int)arg2;
 @end
 

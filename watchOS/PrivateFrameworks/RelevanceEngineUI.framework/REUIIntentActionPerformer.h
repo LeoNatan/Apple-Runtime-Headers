@@ -27,7 +27,7 @@
 - (id)workflowController:(id)arg1 userInterfaceForRunningAction:(id)arg2;
 - (void)_submitMetricsWithError:(id)arg1;
 - (void)_workflowDidFinishWithError:(id)arg1;
-- (void)_handleDismiss;
+- (void)_handleDismissAnimation:(unsigned int)arg1;
 - (void)_workflowDidFinishWithResponse:(id)arg1;
 - (void)_cancelWorkflow;
 - (void)_beginWorkflowWithIntentProperties:(id)arg1;

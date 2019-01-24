@@ -54,6 +54,10 @@
 + (id)availableVoicesForLanguageCode:(id)arg1;
 + (id)allAvailableVoices;
 + (void)refreshAllAvailableVoices;
++ (void)testingSetLastRuleConversion:(id)arg1 replacement:(id)arg2;
++ (id)testingLastRuleConversion;
++ (id)voiceAssetsForTesting;
++ (void)setVoiceAssetsForTesting:(id)arg1;
 + (void)testingSetAllVoices:(id)arg1;
 + (id)speechMarkupStringForType:(long long)arg1 forIdentifier:(id)arg2 string:(id)arg3;
 + (_Bool)employSpeechMarkupForType:(long long)arg1 identifier:(id)arg2 withLanguage:(id)arg3;

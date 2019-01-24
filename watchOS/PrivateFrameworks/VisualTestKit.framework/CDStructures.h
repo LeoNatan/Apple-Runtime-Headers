@@ -21,3 +21,8 @@ struct CGSize {
     float height;
 };
 
+struct VTKPoint {
+    unsigned int _field1;
+    unsigned int _field2;
+};
+

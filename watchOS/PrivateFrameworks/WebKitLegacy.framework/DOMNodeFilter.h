@@ -16,7 +16,6 @@ __attribute__((visibility("hidden")))
 }
 
 - (short)acceptNode:(id)arg1;
-- (void)finalize;
 - (void)dealloc;
 
 // Remaining properties

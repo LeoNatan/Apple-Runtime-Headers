@@ -26,6 +26,9 @@
 @property(readonly, nonatomic) __weak IKJSInspectorController *controller; // @synthesize controller=_controller;
 - (void).cxx_destruct;
 - (void)_fullfillNodePath:(id)arg1;
+- (void)setBreakpointForEventListenerWithErrorCallback:(CDUnknownBlockType)arg1 successCallback:(CDUnknownBlockType)arg2 eventListenerId:(int)arg3;
+- (void)removeBreakpointForEventListenerWithErrorCallback:(CDUnknownBlockType)arg1 successCallback:(CDUnknownBlockType)arg2 eventListenerId:(int)arg3;
+- (void)getSupportedEventNamesWithErrorCallback:(CDUnknownBlockType)arg1 successCallback:(CDUnknownBlockType)arg2;
 - (void)setInspectedNodeWithErrorCallback:(CDUnknownBlockType)arg1 successCallback:(CDUnknownBlockType)arg2 nodeId:(int)arg3;
 - (void)focusWithErrorCallback:(CDUnknownBlockType)arg1 successCallback:(CDUnknownBlockType)arg2 nodeId:(int)arg3;
 - (void)markUndoableStateWithErrorCallback:(CDUnknownBlockType)arg1 successCallback:(CDUnknownBlockType)arg2;

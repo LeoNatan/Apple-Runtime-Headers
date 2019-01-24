@@ -8,15 +8,15 @@
 
 #import <StoreKitUI/ISDialogOperationDelegate-Protocol.h>
 
-@class NSString, SKUIRedeemViewController;
+@class NSString, SKUIRedeemViewControllerLegacy;
 
 @interface SKUIRedeemIdRequiresValidationOperation : ISOperation <ISDialogOperationDelegate>
 {
     CDUnknownBlockType _resultBlock;
-    SKUIRedeemViewController *_redeemViewController;
+    SKUIRedeemViewControllerLegacy *_redeemViewController;
 }
 
-@property(nonatomic) __weak SKUIRedeemViewController *redeemViewController; // @synthesize redeemViewController=_redeemViewController;
+@property(nonatomic) __weak SKUIRedeemViewControllerLegacy *redeemViewController; // @synthesize redeemViewController=_redeemViewController;
 @property(copy) CDUnknownBlockType resultBlock; // @synthesize resultBlock=_resultBlock;
 - (void).cxx_destruct;
 - (void)_logResultsForSuccess:(_Bool)arg1 shouldVerify:(_Bool)arg2 failureReason:(id)arg3 error:(id)arg4;

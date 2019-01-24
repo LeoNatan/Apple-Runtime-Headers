@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
 
 @property(readonly) double number; // @synthesize number=_number;
 - (void).cxx_destruct;
-- (void)saveToArchive:(struct NumberNodeArchive *)arg1 archiver:(id)arg2;
-- (void)loadFromArchive:(const struct NumberNodeArchive *)arg1 unarchiver:(id)arg2;
+-     // Error parsing type: v32@0:8^{NumberNodeArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{ExpressionNodeArchive}d}16@24, name: saveToArchive:archiver:
+-     // Error parsing type: v32@0:8r^{NumberNodeArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{ExpressionNodeArchive}d}16@24, name: loadFromArchive:unarchiver:
 - (void)saveToArchiver:(id)arg1;
 - (void)loadFromUnarchiver:(id)arg1;
 - (void)buildASTNodeArray:(struct TSCEASTNodeArray *)arg1 hostCell:(struct TSUCellCoord)arg2 symbolTable:(struct TSCESymbolTable *)arg3;

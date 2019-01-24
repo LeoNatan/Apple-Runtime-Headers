@@ -15,6 +15,7 @@ __attribute__((visibility("hidden")))
 {
     _Bool _shouldFetchAssetContents;
     _Bool _fetchAllChanges;
+    _Bool _shouldReportAllPerItemFailures;
     _Bool _forcePCSDecryptionAttempt;
     NSArray *_recordZoneIDs;
     NSDictionary *_configurationsByRecordZoneID;
@@ -23,6 +24,7 @@ __attribute__((visibility("hidden")))
 
 + (_Bool)supportsSecureCoding;
 @property(nonatomic) _Bool forcePCSDecryptionAttempt; // @synthesize forcePCSDecryptionAttempt=_forcePCSDecryptionAttempt;
+@property(nonatomic) _Bool shouldReportAllPerItemFailures; // @synthesize shouldReportAllPerItemFailures=_shouldReportAllPerItemFailures;
 @property(retain, nonatomic) NSDictionary *assetTransferOptionsByRecordTypeAndKey; // @synthesize assetTransferOptionsByRecordTypeAndKey=_assetTransferOptionsByRecordTypeAndKey;
 @property(nonatomic) _Bool fetchAllChanges; // @synthesize fetchAllChanges=_fetchAllChanges;
 @property(nonatomic) _Bool shouldFetchAssetContents; // @synthesize shouldFetchAssetContents=_shouldFetchAssetContents;

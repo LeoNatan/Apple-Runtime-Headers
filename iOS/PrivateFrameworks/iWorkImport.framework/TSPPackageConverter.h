@@ -21,7 +21,7 @@ __attribute__((visibility("hidden")))
 
 + (id)newPackageConverterWithURL:(id)arg1 preserveExtendedAttributes:(_Bool)arg2 error:(id *)arg3;
 + (id)newPackageConverterWithURL:(id)arg1 error:(id *)arg2;
-+ (_Bool)convertDocumentAtURL:(id)arg1 toPackageType:(long long)arg2 error:(id *)arg3;
++ (_Bool)convertDocumentAtURL:(id)arg1 toPackageType:(long long)arg2 removeEntriesMatchingFilter:(id)arg3 error:(id *)arg4;
 @property(readonly, nonatomic) _Bool isCancelled; // @synthesize isCancelled=_isCancelled;
 @property(readonly, nonatomic) NSURL *URL; // @synthesize URL=_URL;
 @property(readonly, nonatomic) TSPPackage *package; // @synthesize package=_package;
@@ -31,7 +31,9 @@ __attribute__((visibility("hidden")))
 - (unsigned long long)progressTotalUnitCountWithZipArchive:(id)arg1;
 - (_Bool)isObjectArchivePath:(id)arg1;
 - (_Bool)isDocumentPropertiesPath:(id)arg1;
-- (_Bool)writeToURL:(id)arg1 packageType:(long long)arg2 error:(id *)arg3;
+- (_Bool)writeToURL:(id)arg1 packageType:(long long)arg2 removeEntriesMatchingFilter:(id)arg3 error:(id *)arg4;
+- (_Bool)hasEntriesMatchingFilter:(id)arg1;
+- (_Bool)path:(id)arg1 matchesFilter:(id)arg2;
 - (_Bool)checkPassword:(id)arg1;
 @property(readonly, nonatomic) _Bool isPasswordProtected;
 @property(readonly, nonatomic) _Bool isValid;

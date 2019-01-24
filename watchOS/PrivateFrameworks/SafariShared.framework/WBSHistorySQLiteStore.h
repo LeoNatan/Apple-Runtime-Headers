@@ -7,13 +7,12 @@
 #import <objc/NSObject.h>
 
 #import <SafariShared/WBSHistoryLoader-Protocol.h>
-#import <SafariShared/WBSHistoryLoaderDelegate-Protocol.h>
 #import <SafariShared/WBSHistoryStore-Protocol.h>
 
 @class NSArray, NSCountedSet, NSData, NSDate, NSMapTable, NSMutableDictionary, NSMutableSet, NSString, NSTimer, NSURL, WBSHistoryCrypto, WBSPeriodicActivityScheduler, WBSSQLiteDatabase, WBSSQLiteStatementCache;
 @protocol OS_dispatch_queue, WBSHistoryStoreDelegate;
 
-@interface WBSHistorySQLiteStore : NSObject <WBSHistoryLoaderDelegate, WBSHistoryStore, WBSHistoryLoader>
+@interface WBSHistorySQLiteStore : NSObject <WBSHistoryStore, WBSHistoryLoader>
 {
     NSURL *_databaseURL;
     unsigned int _itemCountLimit;
@@ -38,7 +37,6 @@
     NSArray *_loadedItems;
     NSArray *_discardedItems;
     NSCountedSet *_loadedStringsForUserTypedDomainExpansion;
-    int _importState;
     NSDate *_loadStartTime;
     NSTimer *_writeTimer;
     struct unique_ptr<SafariShared::SuddenTerminationDisabler, std::__1::default_delete<SafariShared::SuddenTerminationDisabler>> _suddenTerminationDisabler;
@@ -61,11 +59,7 @@
 @property(nonatomic) __weak id <WBSHistoryStoreDelegate> delegate; // @synthesize delegate=_delegate;
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (id)_visitsOrderedForInsertion:(id)arg1;
-- (id)_itemsOrderedForInsertion:(id)arg1;
 @property(readonly, nonatomic) NSData *salt;
-- (void)historyLoaderDidFinishLoading:(id)arg1;
-- (void)historyLoader:(id)arg1 didLoadItems:(id)arg2 discardedItems:(id)arg3 stringsForUserTypeDomainExpansion:(id)arg4;
 - (void)_checkpointWriteAheadLog;
 - (void)_expireOldVisits;
 - (void)_recomputeDerivedVisitCountScores;
@@ -128,10 +122,11 @@
 - (long long)_lastSyncedGeneration;
 - (void)_incrementCurrentGeneration;
 - (long long)_currentGeneration;
-- (void)replayAndAddTombstone:(id)arg1;
+- (void)replayAndAddTombstones:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)getAllTombstonesWithCompletion:(CDUnknownBlockType)arg1;
 @property(readonly, nonatomic) _Bool isUsingInMemoryDatabase;
 @property(nonatomic) unsigned int cachedNumberOfDevicesInSyncCircle;
+@property(copy, nonatomic) NSData *longLivedSaveOperationData;
 @property(copy, nonatomic) NSData *syncCircleSizeRetrievalThrottlerData;
 @property(copy, nonatomic) NSData *fetchThrottlerData;
 @property(copy, nonatomic) NSData *pushThrottlerData;

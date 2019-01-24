@@ -47,12 +47,17 @@
 }
 
 + (id)supportedIPAPhonemeLanguages;
++ (id)_speechVoiceForIdentifier:(id)arg1 language:(id)arg2 footprint:(int)arg3 useFallbackDefault:(_Bool)arg4;
 + (id)_speechVoiceForIdentifier:(id)arg1 language:(id)arg2 footprint:(int)arg3;
 + (_Bool)isSystemSpeaking;
 + (id)availableLanguageCodes;
 + (id)availableVoicesForLanguageCode:(id)arg1;
 + (id)allAvailableVoices;
 + (void)refreshAllAvailableVoices;
++ (void)testingSetLastRuleConversion:(id)arg1 replacement:(id)arg2;
++ (id)testingLastRuleConversion;
++ (id)voiceAssetsForTesting;
++ (void)setVoiceAssetsForTesting:(id)arg1;
 + (void)testingSetAllVoices:(id)arg1;
 + (id)speechMarkupStringForType:(int)arg1 forIdentifier:(id)arg2 string:(id)arg3;
 + (_Bool)employSpeechMarkupForType:(int)arg1 identifier:(id)arg2 withLanguage:(id)arg3;

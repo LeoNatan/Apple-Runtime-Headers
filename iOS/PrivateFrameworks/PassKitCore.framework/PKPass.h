@@ -122,6 +122,7 @@
 @property(readonly, nonatomic) PKPassPersonalization *personalization;
 @property(readonly, nonatomic) NSURL *appLaunchURL;
 @property(readonly, nonatomic) NSArray *storeIdentifiers;
+- (id)balanceFields;
 - (id)primaryFields;
 @property(readonly, nonatomic) NSArray *backFieldBuckets;
 @property(readonly, nonatomic) NSArray *frontFieldBuckets;

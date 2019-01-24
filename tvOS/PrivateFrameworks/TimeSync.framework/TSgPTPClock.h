@@ -28,6 +28,8 @@
 - (id)portWithPortNumber:(unsigned short)arg1;
 @property(readonly, copy, nonatomic) NSArray *ports; // @dynamic ports;
 - (id)clockName;
+- (_Bool)removeReverseSyncFromInterfaceNamed:(id)arg1 withDomainNumner:(unsigned char)arg2 error:(id *)arg3;
+- (_Bool)addReverseSyncOnInterfaceNamed:(id)arg1 withDomainNumner:(unsigned char)arg2 syncInterval:(unsigned int)arg3 error:(id *)arg4;
 - (_Bool)removeUnicastLinkLayerEtEPortFromInterfaceNamed:(id)arg1 withDestinationAddress:(const char *)arg2 error:(id *)arg3;
 - (_Bool)addUnicastLinkLayerEtEPortOnInterfaceNamed:(id)arg1 withDestinationAddress:(const char *)arg2 allocatedPortNumber:(unsigned short *)arg3 error:(id *)arg4;
 - (_Bool)addUnicastLinkLayerEtEPortOnInterfaceNamed:(id)arg1 withDestinationAddress:(const char *)arg2 error:(id *)arg3;

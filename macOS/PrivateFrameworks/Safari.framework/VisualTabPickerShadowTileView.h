@@ -21,7 +21,7 @@ __attribute__((visibility("hidden")))
 
 @property(readonly) NSView *containerView; // @synthesize containerView=_containerView;
 - (void).cxx_destruct;
-- (BOOL)accessibilityIsIgnored;
+- (BOOL)isAccessibilityElement;
 - (void)_setUpBorderView;
 - (void)_setUpContentViews;
 - (void)_getTopBarAnimationDuration:(double *)arg1 timeOffset:(double *)arg2 gridAnimation:(long long)arg3;

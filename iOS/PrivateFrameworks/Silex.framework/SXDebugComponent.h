@@ -24,11 +24,13 @@
 @property(readonly, nonatomic) SXComponentAnimation *animation;
 @property(readonly, nonatomic) SXJSONArray *behaviors;
 @property(readonly, nonatomic) SXComponentClassification *classification;
+@property(readonly, nonatomic) SXJSONArray *conditional;
 @property(readonly, nonatomic) SXComponentConditions *conditions;
 @property(readonly, nonatomic) unsigned long long contentRelevance;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
+@property(readonly, nonatomic) _Bool hidden;
 @property(readonly, nonatomic) NSString *identifier;
 @property(readonly, nonatomic) NSString *layout;
 @property(readonly, nonatomic) int role;

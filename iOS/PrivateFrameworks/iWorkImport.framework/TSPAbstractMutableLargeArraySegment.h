@@ -8,7 +8,7 @@
 
 #import <iWorkImport/NSFastEnumeration-Protocol.h>
 
-@class NSMutableArray, NSString;
+@class NSArray, NSMutableArray, NSString;
 @protocol TSPMutableLargeArraySegmentDelegate;
 
 __attribute__((visibility("hidden")))
@@ -29,8 +29,8 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool shouldDelayArchiving; // @synthesize shouldDelayArchiving=_shouldDelayArchiving;
 @property(nonatomic) _Bool storeOutsideObjectArchive; // @synthesize storeOutsideObjectArchive=_storeOutsideObjectArchive;
 - (void).cxx_destruct;
-- (void)loadFromLargeArraySegmentMessage:(const struct LargeArraySegment *)arg1 unarchiver:(id)arg2;
-- (void)saveToLargeArraySegmentMessage:(struct LargeArraySegment *)arg1 archiver:(id)arg2;
+-     // Error parsing type: v32@0:8r^{LargeArraySegment=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}BI}16@24, name: loadFromLargeArraySegmentMessage:unarchiver:
+-     // Error parsing type: v32@0:8^{LargeArraySegment=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}BI}16@24, name: saveToLargeArraySegmentMessage:archiver:
 - (void)loadStoreOutsideObjectArchiveFromUnarchiver:(id)arg1;
 - (void)saveToArchiver:(id)arg1;
 - (void)loadFromUnarchiver:(id)arg1;
@@ -38,6 +38,8 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) unsigned long long estimatedByteSize;
 - (unsigned long long)estimatedByteSizeOfElement:(id)arg1;
 - (id)bisectAtIndex:(unsigned long long)arg1;
+@property(readonly, nonatomic) NSMutableArray *mutableArrayWrapper;
+@property(readonly, nonatomic) NSArray *allObjects;
 - (unsigned long long)countByEnumeratingWithState:(CDStruct_70511ce9 *)arg1 objects:(id *)arg2 count:(unsigned long long)arg3;
 - (void)replaceObjectAtIndex:(unsigned long long)arg1 withObject:(id)arg2;
 - (void)removeLastObject;

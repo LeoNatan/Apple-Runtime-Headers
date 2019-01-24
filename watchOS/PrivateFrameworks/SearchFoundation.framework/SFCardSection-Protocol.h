@@ -7,9 +7,10 @@
 #import <SearchFoundation/NSObject-Protocol.h>
 #import <SearchFoundation/NSSecureCoding-Protocol.h>
 
-@class NSArray, NSString, SFCard, SFColor;
+@class NSArray, NSString, SFCard, SFColor, SFUserReportRequest;
 
 @protocol SFCardSection <NSSecureCoding, NSObject>
+@property(retain, nonatomic) SFUserReportRequest *userReportRequest;
 @property(retain, nonatomic) SFColor *backgroundColor;
 @property(copy, nonatomic) NSString *resultIdentifier;
 @property(copy, nonatomic) NSString *cardSectionId;

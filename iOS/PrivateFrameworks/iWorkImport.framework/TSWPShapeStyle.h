@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
 {
 }
 
-+ (void)saveShapeStyleLayoutPropertyMap:(id)arg1 toArchive:(struct ShapeStylePropertiesArchive *)arg2 archiver:(id)arg3;
-+ (void)loadShapeStyleLayoutPropertiesIntoPropertyMap:(id)arg1 fromArchive:(const struct ShapeStylePropertiesArchive *)arg2 unarchiver:(id)arg3;
++     // Error parsing type: v40@0:8@16^{ShapeStylePropertiesArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{ColumnsArchive}^{PaddingArchive}^{Reference}iBBBBIBB}24@32, name: saveShapeStyleLayoutPropertyMap:toArchive:archiver:
++     // Error parsing type: v40@0:8@16r^{ShapeStylePropertiesArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{ColumnsArchive}^{PaddingArchive}^{Reference}iBBBBIBB}24@32, name: loadShapeStyleLayoutPropertiesIntoPropertyMap:fromArchive:unarchiver:
 + (id)defaultValueForProperty:(int)arg1;
 + (int)defaultIntValueForProperty:(int)arg1;
 + (id)propertiesAllowingNSNull;
@@ -28,7 +28,7 @@ __attribute__((visibility("hidden")))
 - (void)setDefaultParagraphStyle:(id)arg1;
 - (id)boxedValueForProperty:(int)arg1 oldBoxedValue:(id)arg2 transformedByTransform:(struct CGAffineTransform)arg3;
 - (void)saveToArchiver:(id)arg1;
-- (void)saveToArchive:(struct ShapeStyleArchive *)arg1 archiver:(id)arg2;
+-     // Error parsing type: v32@0:8^{ShapeStyleArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{ShapeStyleArchive}^{ShapeStylePropertiesArchive}I}16@24, name: saveToArchive:archiver:
 - (void)loadFromUnarchiver:(id)arg1;
 @property(readonly, nonatomic) NSString *presetKind;
 

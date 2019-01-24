@@ -43,6 +43,7 @@
 - (id)reportingURLFromBaseURL:(id)arg1;
 @property(readonly) NSDictionary *databaseEventBody;
 - (id)initWithTopic:(id)arg1;
+- (id)initWithUnderlyingDictionary:(id)arg1;
 - (id)initWithDatabaseEventBody:(id)arg1;
 
 @end

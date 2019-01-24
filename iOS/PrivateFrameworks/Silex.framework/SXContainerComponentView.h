@@ -35,7 +35,7 @@
 - (_Bool)isTransitionable;
 - (_Bool)transitionViewShouldFadeInContent;
 - (id)transitionContentView;
-- (_Bool)transitionViewUsesThumbnail;
+- (_Bool)usesThumbnailWithImageIdentifier:(id)arg1;
 - (struct CGRect)transitionContentFrame;
 - (void)removeComponentView:(id)arg1;
 - (void)addComponentView:(id)arg1;
@@ -44,7 +44,7 @@
 - (struct CGRect)originalFrameForContentView:(id)arg1 behavior:(id)arg2;
 - (id)contentViewForBehavior:(id)arg1;
 - (void)presentComponentWithChanges:(CDStruct_1cc9d0d0)arg1;
-- (id)initWithDocumentController:(id)arg1 viewport:(id)arg2 presentationDelegate:(id)arg3 analyticsReporting:(id)arg4 componentStyleRendererFactory:(id)arg5 mediaSharingPolicyProvider:(id)arg6;
+- (id)initWithDOMObjectProvider:(id)arg1 viewport:(id)arg2 presentationDelegate:(id)arg3 analyticsReporting:(id)arg4 componentStyleRendererFactory:(id)arg5 mediaSharingPolicyProvider:(id)arg6;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

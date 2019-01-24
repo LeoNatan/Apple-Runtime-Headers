@@ -8,7 +8,7 @@
 
 #import <NewsCore/FCHeadlineProviding-Protocol.h>
 
-@class COMAPPLEFELDSPARPROTOCOLLIVERPOOLCohort, FCCoverArt, FCFeedPersonalizedArticleScoreProfile, FCHeadlineExperimentalTitleMetadata, FCHeadlineThumbnail, FCSharedStringIndex, FCTopStoriesStyleConfiguration, NSArray, NSData, NSDate, NSSet, NSString, NSURL, NTPBFeedViewportHeadline;
+@class COMAPPLEFELDSPARPROTOCOLLIVERPOOLCohortList, FCCoverArt, FCFeedPersonalizedItemScoreProfile, FCHeadlineExperimentalTitleMetadata, FCHeadlineThumbnail, FCIssue, FCSharedStringIndex, FCTopStoriesStyleConfiguration, NSArray, NSData, NSDate, NSSet, NSString, NSURL, NTPBFeedViewportHeadline;
 @protocol FCChannelProviding, FCHeadlineStocksFields, FCNativeAdProviding;
 
 @interface FCDeflatedHeadline : NSObject <FCHeadlineProviding>
@@ -20,12 +20,14 @@
 @property(readonly, nonatomic) FCSharedStringIndex *sharedStrings; // @synthesize sharedStrings=_sharedStrings;
 @property(readonly, nonatomic) NTPBFeedViewportHeadline *pbHeadline; // @synthesize pbHeadline=_pbHeadline;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) unsigned long long role;
+@property(readonly, copy, nonatomic) NSString *language;
 @property(readonly, nonatomic) _Bool hasVideo;
 @property(readonly, nonatomic) id <FCNativeAdProviding> associatedAd;
 @property(readonly, nonatomic) NSArray *publisherSpecifiedArticleIDs;
 @property(readonly, nonatomic) NSString *articleRecirculationConfigJSON;
-@property(readonly, nonatomic) COMAPPLEFELDSPARPROTOCOLLIVERPOOLCohort *publisherCohort;
-@property(readonly, nonatomic) COMAPPLEFELDSPARPROTOCOLLIVERPOOLCohort *globalCohort;
+@property(readonly, nonatomic) COMAPPLEFELDSPARPROTOCOLLIVERPOOLCohortList *publisherCohorts;
+@property(readonly, nonatomic) COMAPPLEFELDSPARPROTOCOLLIVERPOOLCohortList *globalCohorts;
 @property(readonly, nonatomic) _Bool canBePurchased;
 - (double)globalScore;
 @property(readonly, nonatomic) unsigned long long feedHalfLifeMilliseconds;
@@ -37,9 +39,10 @@
 @property(readonly, nonatomic, getter=isFromBlockedStorefront) _Bool fromBlockedStorefront;
 @property(readonly, nonatomic) unsigned long long feedOrder;
 @property(readonly, nonatomic) _Bool showSubscriptionRequiredText;
+@property(readonly, nonatomic) _Bool showPublisherLogo;
 @property(readonly, nonatomic) _Bool isBlockedExplicitContent;
 @property(readonly, nonatomic) unsigned long long halfLife;
-@property(readonly, nonatomic) unsigned long long articleContentType;
+- (unsigned long long)articleContentType;
 @property(readonly, nonatomic) _Bool hasGlobalUserFeedback;
 @property(readonly, nonatomic) double globalUserFeedback;
 @property(readonly, copy, nonatomic) NSString *publisherID;
@@ -53,6 +56,7 @@
 @property(readonly, copy, nonatomic) NSURL *videoCallToActionURL;
 @property(readonly, copy, nonatomic) NSString *videoCallToActionTitle;
 @property(readonly, nonatomic) FCCoverArt *coverArt;
+@property(readonly, nonatomic, getter=isBundlePaid) _Bool bundlePaid;
 @property(readonly, nonatomic, getter=isPaid) _Bool paid;
 @property(readonly, nonatomic) long long minimumNewsVersion;
 @property(readonly, nonatomic) FCTopStoriesStyleConfiguration *storyStyle;
@@ -72,7 +76,6 @@
 @property(readonly, nonatomic, getter=isFeatureCandidate) _Bool featureCandidate;
 @property(readonly, nonatomic) double videoDuration;
 @property(readonly, nonatomic) NSURL *videoURL;
-@property(readonly, copy, nonatomic) NSArray *endOfArticleTopicIDs;
 @property(readonly, copy, nonatomic) NSArray *topicIDs;
 @property(readonly, copy, nonatomic) NSArray *topics;
 @property(readonly, copy, nonatomic) NSDate *lastFetchedDate;
@@ -110,7 +113,7 @@
 @property(readonly, nonatomic) unsigned long long storyType;
 @property(readonly, nonatomic) _Bool usesImageOnTopLayout;
 @property(readonly, nonatomic) double tileProminenceScore;
-@property(readonly, nonatomic) FCFeedPersonalizedArticleScoreProfile *scoreProfile;
+@property(readonly, nonatomic) FCFeedPersonalizedItemScoreProfile *scoreProfile;
 @property(readonly, nonatomic) unsigned long long topStoryType;
 @property(readonly, nonatomic) _Bool isTopStory;
 @property(readonly, copy, nonatomic) NSSet *surfacedByTagIDs;
@@ -121,6 +124,8 @@
 @property(readonly, copy, nonatomic) NSString *clusterID;
 @property(readonly, copy, nonatomic) NSString *articleID;
 @property(readonly, copy, nonatomic) NSString *identifier;
+@property(readonly, nonatomic, getter=isANF) _Bool anf;
+@property(readonly, copy, nonatomic) NSString *itemID;
 - (_Bool)isGap;
 @property(readonly, nonatomic) long long feedElementType;
 @property(readonly, copy) NSString *description;
@@ -131,6 +136,9 @@
 @property(readonly, nonatomic) NSData *backingArticleRecordData;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly) unsigned long long hash;
+@property(readonly, nonatomic, getter=isIssueOnly) _Bool issueOnly;
+@property(readonly, copy, nonatomic) FCIssue *masterIssue;
+@property(readonly, nonatomic) _Bool showBundleSoftPaywall;
 @property(readonly, nonatomic) id <FCHeadlineStocksFields> stocksFields;
 @property(readonly) Class superclass;
 @property(readonly, nonatomic) _Bool webEmbedsEnabled;

@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class FCInterestToken, FCOperation, NFMutexLock, NSDate, NSError, NSHashTable, NSString, NSURL;
+@class FCInterestToken, FCOperation, NFUnfairLock, NSDate, NSError, NSHashTable, NSString, NSURL;
 @protocol FCAssetHandleDelegate, OS_dispatch_group;
 
 @interface FCAssetHandle : NSObject
@@ -19,7 +19,7 @@
     NSObject<OS_dispatch_group> *_fetchGroup;
     unsigned long long _countOfPenalizedDownloadAttempts;
     NSDate *_dateOfLastDownloadAttempt;
-    NFMutexLock *_stateMutex;
+    NFUnfairLock *_stateLock;
     id <FCAssetHandleDelegate> _delegate;
     FCInterestToken *_holdToken;
     NSString *_assetKey;
@@ -30,7 +30,7 @@
 @property(copy, nonatomic) NSString *assetKey; // @synthesize assetKey=_assetKey;
 @property(retain, nonatomic) FCInterestToken *holdToken; // @synthesize holdToken=_holdToken;
 @property(nonatomic) __weak id <FCAssetHandleDelegate> delegate; // @synthesize delegate=_delegate;
-@property(retain, nonatomic) NFMutexLock *stateMutex; // @synthesize stateMutex=_stateMutex;
+@property(retain, nonatomic) NFUnfairLock *stateLock; // @synthesize stateLock=_stateLock;
 @property(retain) NSDate *dateOfLastDownloadAttempt; // @synthesize dateOfLastDownloadAttempt=_dateOfLastDownloadAttempt;
 @property unsigned long long countOfPenalizedDownloadAttempts; // @synthesize countOfPenalizedDownloadAttempts=_countOfPenalizedDownloadAttempts;
 @property(retain, nonatomic) NSObject<OS_dispatch_group> *fetchGroup; // @synthesize fetchGroup=_fetchGroup;
@@ -46,6 +46,7 @@
 - (void)_removeDownloadRequest:(id)arg1;
 @property(readonly, copy) NSString *uniqueKey;
 @property(readonly) NSURL *streamingURL;
+- (id)promise;
 - (id)downloadIfNeededWithGroup:(id)arg1;
 - (id)downloadIfNeededWithCompletionQueue:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)downloadIfNeededWithCompletion:(CDUnknownBlockType)arg1;

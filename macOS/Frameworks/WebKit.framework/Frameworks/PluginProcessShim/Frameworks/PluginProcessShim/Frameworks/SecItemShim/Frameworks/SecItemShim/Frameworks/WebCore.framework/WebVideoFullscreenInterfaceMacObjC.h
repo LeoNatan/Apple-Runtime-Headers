@@ -23,12 +23,10 @@ __attribute__((visibility("hidden")))
     struct RetainPtr<NSWindow> _returningWindow;
     struct CGRect _returningRect;
     BOOL _playing;
-    BOOL _didRequestExitingPIP;
     BOOL _exitingToStandardFullscreen;
 }
 
 @property(nonatomic, getter=isExitingToStandardFullscreen) BOOL exitingToStandardFullscreen; // @synthesize exitingToStandardFullscreen=_exitingToStandardFullscreen;
-@property(readonly, nonatomic) BOOL didRequestExitingPIP; // @synthesize didRequestExitingPIP=_didRequestExitingPIP;
 @property(nonatomic) struct CGSize videoDimensions; // @synthesize videoDimensions=_videoDimensions;
 @property(nonatomic, getter=isPlaying) BOOL playing; // @synthesize playing=_playing;
 - (id).cxx_construct;

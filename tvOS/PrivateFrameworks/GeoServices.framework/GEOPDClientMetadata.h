@@ -19,6 +19,7 @@ __attribute__((visibility("hidden")))
     GEOABSecondPartyPlaceRequestClientMetaData *_abClientMetadata;
     GEOAdditionalEnabledMarkets *_additionalEnabledMarkets;
     NSMutableArray *_businessChatPreflightIdentifiers;
+    int _clientRevision;
     unsigned int _dayOfWeek;
     NSString *_debugApiKey;
     NSString *_deviceCountryCode;
@@ -33,6 +34,7 @@ __attribute__((visibility("hidden")))
     unsigned int _timeSinceMapEnteredForeground;
     _Bool _enablePreflightVenues;
     struct {
+        unsigned int clientRevision:1;
         unsigned int dayOfWeek:1;
         unsigned int hourOfDay:1;
         unsigned int requiredVersion:1;
@@ -67,6 +69,10 @@ __attribute__((visibility("hidden")))
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+- (int)StringAsClientRevision:(id)arg1;
+- (id)clientRevisionAsString:(int)arg1;
+@property(nonatomic) _Bool hasClientRevision;
+@property(nonatomic) int clientRevision; // @synthesize clientRevision=_clientRevision;
 - (id)businessChatPreflightIdentifierAtIndex:(unsigned long long)arg1;
 - (unsigned long long)businessChatPreflightIdentifiersCount;
 - (void)addBusinessChatPreflightIdentifier:(id)arg1;

@@ -16,7 +16,7 @@ __attribute__((visibility("hidden")))
     double _increment;
 }
 
-+ (id)instanceWithArchive:(const struct CellSpecArchive *)arg1 unarchiver:(id)arg2;
++     // Error parsing type: @32@0:8r^{CellSpecArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{FormulaArchive}^{Reference}dddIBB}16@24, name: instanceWithArchive:unarchiver:
 + (id)cellSpecFromTSKFormat:(id)arg1;
 + (id)sliderSpecWithMinimum:(double)arg1 maximum:(double)arg2 increment:(double)arg3;
 + (id)stepperSpecWithMinimum:(double)arg1 maximum:(double)arg2 increment:(double)arg3;
@@ -28,8 +28,8 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) double maximum; // @synthesize maximum=_maximum;
 @property(readonly, nonatomic) double minimum; // @synthesize minimum=_minimum;
 - (int)interactionType;
-- (void)saveToArchive:(struct CellSpecArchive *)arg1 archiver:(id)arg2;
-- (id)initWithArchive:(const struct CellSpecArchive *)arg1 unarchiver:(id)arg2;
+-     // Error parsing type: v32@0:8^{CellSpecArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{FormulaArchive}^{Reference}dddIBB}16@24, name: saveToArchive:archiver:
+-     // Error parsing type: @32@0:8r^{CellSpecArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{FormulaArchive}^{Reference}dddIBB}16@24, name: initWithArchive:unarchiver:
 - (id)tskStepperSliderFormatWithDisplayFormatType:(int)arg1;
 - (_Bool)validateFormatAndValue:(id)arg1;
 - (double)valueFromString:(id)arg1 locale:(id)arg2;

@@ -18,8 +18,8 @@ __attribute__((visibility("hidden")))
 + (id)ruleWithBaseColumnIndex:(struct TSUModelColumnIndex)arg1 direction:(int)arg2;
 @property(readonly, nonatomic) int direction; // @synthesize direction=_direction;
 @property(readonly, nonatomic) struct TSUModelColumnIndex baseColumnIndex; // @synthesize baseColumnIndex=_baseColumnIndex;
-- (id)initFromArchive:(const struct TableSortOrderArchive_SortRuleArchive *)arg1;
-- (void)encodeToArchive:(struct TableSortOrderArchive_SortRuleArchive *)arg1;
+-     // Error parsing type: @24@0:8r^{TableSortOrderArchive_SortRuleArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}Ii}16, name: initFromArchive:
+-     // Error parsing type: v24@0:8^{TableSortOrderArchive_SortRuleArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}Ii}16, name: encodeToArchive:
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

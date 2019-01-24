@@ -54,7 +54,7 @@ __attribute__((visibility("hidden")))
 - (struct CGRect)nonAutosizedFrameForTextLayout:(id)arg1;
 - (void)invalidateForAutosizingTextLayout:(id)arg1;
 - (int)verticalAlignmentForTextLayout:(id)arg1;
-- (unsigned int)autosizeFlagsForTextLayout:(id)arg1;
+- (unsigned long long)autosizeFlagsForTextLayout:(id)arg1;
 @property(readonly, nonatomic) _Bool autosizes;
 - (id)interiorClippingPath;
 - (id)textWrapper;
@@ -81,7 +81,7 @@ __attribute__((visibility("hidden")))
 - (void)willBeAddedToLayoutController:(id)arg1;
 - (void)dealloc;
 - (id)initWithInfo:(id)arg1;
-- (double)maxAutoGrowWidthForTextLayout:(id)arg1;
+- (double)maxAutoGrowLineWidthForTextLayout:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

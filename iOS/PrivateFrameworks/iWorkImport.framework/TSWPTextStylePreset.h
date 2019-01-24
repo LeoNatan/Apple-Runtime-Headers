@@ -27,8 +27,8 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) NSString *presetKind;
 - (void)loadFromUnarchiver:(id)arg1;
 - (void)saveToArchiver:(id)arg1;
-- (void)saveToArchive:(struct TextStylePresetArchive *)arg1 archiver:(id)arg2;
-- (void)loadFromArchive:(const struct TextStylePresetArchive *)arg1 unarchiver:(id)arg2;
+-     // Error parsing type: v32@0:8^{TextStylePresetArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}^{Reference}^{Reference}}16@24, name: saveToArchive:archiver:
+-     // Error parsing type: v32@0:8r^{TextStylePresetArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}^{Reference}^{Reference}}16@24, name: loadFromArchive:unarchiver:
 - (id)initWithContext:(id)arg1 presetIdentifier:(id)arg2 paragraphStyle:(id)arg3 listStyle:(id)arg4;
 
 // Remaining properties

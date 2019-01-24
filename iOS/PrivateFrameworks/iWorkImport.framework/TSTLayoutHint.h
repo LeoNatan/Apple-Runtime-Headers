@@ -36,8 +36,8 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool isValid; // @synthesize isValid=mIsValid;
 @property(readonly, copy) NSString *description;
 - (void)invalidate;
-- (void)saveToArchive:(struct LayoutHintArchive *)arg1;
-- (id)initWithArchive:(const struct LayoutHintArchive *)arg1;
+-     // Error parsing type: v24@0:8^{LayoutHintArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{CellRange}^{CellID}^{Size}^{Size}BBII}16, name: saveToArchive:
+-     // Error parsing type: @24@0:8r^{LayoutHintArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{CellRange}^{CellID}^{Size}^{Size}BBII}16, name: initWithArchive:
 - (_Bool)isFirstHint;
 - (id)lastChildHint;
 - (id)firstChildHint;

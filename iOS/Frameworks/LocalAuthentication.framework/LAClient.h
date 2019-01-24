@@ -35,6 +35,7 @@ __attribute__((visibility("hidden")))
 - (void)notifyEvent:(long long)arg1 options:(id)arg2 reply:(CDUnknownBlockType)arg3;
 - (void)resetWithReply:(CDUnknownBlockType)arg1;
 - (void)prearmTouchIdWithReply:(CDUnknownBlockType)arg1;
+- (void)authMethodWithReply:(CDUnknownBlockType)arg1;
 @property(readonly, nonatomic) NSData *externalizedContext;
 - (void)externalizedContextWithReply:(CDUnknownBlockType)arg1;
 - (_Bool)setServerPropertyForOption:(long long)arg1 value:(id)arg2 error:(id *)arg3;
@@ -47,8 +48,8 @@ __attribute__((visibility("hidden")))
 - (void)resetProcessedEvent:(long long)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)retryProcessedEvent:(long long)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)failProcessedEvent:(long long)arg1 failureError:(id)arg2 reply:(CDUnknownBlockType)arg3;
-- (void)evaluateACL:(id)arg1 operation:(long long)arg2 options:(id)arg3 reply:(CDUnknownBlockType)arg4;
-- (void)evaluateACL:(id)arg1 operation:(long long)arg2 options:(id)arg3 uiDelegate:(id)arg4 reply:(CDUnknownBlockType)arg5;
+- (void)evaluateACL:(id)arg1 operation:(id)arg2 options:(id)arg3 reply:(CDUnknownBlockType)arg4;
+- (void)evaluateACL:(id)arg1 operation:(id)arg2 options:(id)arg3 uiDelegate:(id)arg4 reply:(CDUnknownBlockType)arg5;
 - (void)evaluatePolicy:(long long)arg1 options:(id)arg2 reply:(CDUnknownBlockType)arg3;
 - (void)evaluatePolicy:(long long)arg1 options:(id)arg2 uiDelegate:(id)arg3 reply:(CDUnknownBlockType)arg4;
 - (void)_checkIdResultForTCC:(id)arg1 error:(id)arg2 retryBlock:(CDUnknownBlockType)arg3 finally:(CDUnknownBlockType)arg4;

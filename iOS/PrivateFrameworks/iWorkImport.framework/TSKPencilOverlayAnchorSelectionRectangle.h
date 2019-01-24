@@ -11,14 +11,16 @@ __attribute__((visibility("hidden")))
 {
     struct CGColor *_strokeColor;
     struct CGColor *_fillColor;
-    struct CGRect _unscaledSelectionRect;
+    struct CGRect _rectangle;
 }
 
 @property(nonatomic) struct CGColor *fillColor; // @synthesize fillColor=_fillColor;
 @property(nonatomic) struct CGColor *strokeColor; // @synthesize strokeColor=_strokeColor;
-@property(nonatomic) struct CGRect unscaledSelectionRect; // @synthesize unscaledSelectionRect=_unscaledSelectionRect;
+@property(nonatomic) struct CGRect rectangle; // @synthesize rectangle=_rectangle;
+- (id)pencilAnchorBloopAnimationStartingAtElapsedTime:(double)arg1;
+- (id)anchorOverlayLayerForElapsedAnimationTime:(double)arg1;
 - (void)dealloc;
-- (id)initWithUnscaledRectangle:(struct CGRect)arg1 strokeColor:(struct CGColor *)arg2 fillColor:(struct CGColor *)arg3;
+- (id)initWithRectangle:(struct CGRect)arg1 strokeColor:(struct CGColor *)arg2 fillColor:(struct CGColor *)arg3;
 
 @end
 

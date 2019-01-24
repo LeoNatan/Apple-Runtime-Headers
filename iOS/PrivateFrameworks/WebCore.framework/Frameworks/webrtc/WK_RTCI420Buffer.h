@@ -18,6 +18,7 @@ __attribute__((visibility("hidden")))
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
+- (scoped_refptr_b674d2a6)nativeI420Buffer;
 - (id)toI420;
 @property(readonly, nonatomic) const char *dataV;
 @property(readonly, nonatomic) const char *dataU;
@@ -31,6 +32,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) int width;
 - (id)initWithFrameBuffer:(scoped_refptr_b674d2a6)arg1;
 - (id)initWithWidth:(int)arg1 height:(int)arg2 strideY:(int)arg3 strideU:(int)arg4 strideV:(int)arg5;
+- (id)initWithWidth:(int)arg1 height:(int)arg2 dataY:(const char *)arg3 dataU:(const char *)arg4 dataV:(const char *)arg5;
 - (id)initWithWidth:(int)arg1 height:(int)arg2;
 
 // Remaining properties

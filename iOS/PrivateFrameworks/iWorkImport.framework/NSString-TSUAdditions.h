@@ -7,6 +7,7 @@
 #import <Foundation/NSString.h>
 
 @interface NSString (TSUAdditions)
++ (id)tsu_JSONStringFromString:(id)arg1;
 + (id)tsu_stringByHexEncodingData:(id)arg1;
 + (id)tsu_stringWithXMLString:(const char *)arg1;
 + (id)tsu_stringByBase64EncodingBytes:(const char *)arg1 length:(unsigned long long)arg2 breakLines:(_Bool)arg3;
@@ -16,6 +17,7 @@
 + (id)tsu_stringByIndentingString:(id)arg1 times:(unsigned long long)arg2;
 + (id)tsu_stringWithFormat:(id)arg1 arguments:(struct __va_list_tag [1])arg2;
 + (id)tsu_stringWithUUID;
+- (void)tsu_appendJSONStringToString:(id)arg1;
 - (id)tsu_stringWithNormalizedQuotationMarks;
 - (id)tsu_stringWithNormalizedHyphens;
 - (id)tsu_stringWithNormalizedHyphensAndQuotationMarks;
@@ -28,9 +30,11 @@
 - (struct _NSRange)tsu_range;
 - (struct _NSRange)tsu_rangeOfString:(id)arg1 options:(unsigned long long)arg2 updatingSearchRange:(struct _NSRange *)arg3;
 - (id)tsu_tolerantStringByAppendingPathExtension:(id)arg1;
+- (id)tsu_stringByDeletingPathExtensionIfEqualTo:(id)arg1;
 - (_Bool)tsu_containsOnlyCharactersFromSet:(id)arg1;
 - (id)tsu_unescapeXML;
 - (id)tsu_escapeXML;
+- (id)tsu_stringTrimByLimitingFirstCharacterToSet:(id)arg1;
 - (id)tsu_stringByMakingFirstCharacterUppercase;
 - (id)tsu_stringByMakingFirstCharacterLowercase;
 - (id)tsu_encodeStringBase64;
@@ -48,6 +52,7 @@
 - (id)tsu_stringByRemovingCharactersInSet:(id)arg1;
 - (id)tsu_stringByRemovingCharactersInSet:(id)arg1 options:(unsigned int)arg2;
 - (id)tsu_md5Hash;
+- (void)tsu_getMD5Hash:(char *)arg1;
 - (id)tsu_stringByFixingBrokenSurrogatePairs;
 - (id)tsu_stringByUniquingPathInsideDirectory:(id)arg1 withFormat:(id)arg2;
 - (id)tsu_stringByUniquingPathInsideDirectory:(id)arg1;
@@ -55,5 +60,6 @@
 - (id)tsu_stringByAppendingSeparator:(id)arg1 format:(id)arg2;
 - (id)tsu_stringQuotedIfContainsCharacterSet:(id)arg1;
 - (id)tsu_stringByExpandingTableFormatting;
+- (id)tsu_pathExceptPrivate;
 @end
 

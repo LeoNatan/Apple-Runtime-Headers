@@ -11,6 +11,7 @@
 @interface PKPaymentSetupFieldDate : PKPaymentSetupFieldText
 {
     NSDateFormatter *_displayDateFormatter;
+    NSDate *_defaultDate;
     _Bool _showsDay;
     _Bool _showsMonth;
     _Bool _showsYear;
@@ -23,12 +24,13 @@
 @property(nonatomic) _Bool showsDay; // @synthesize showsDay=_showsDay;
 - (void).cxx_destruct;
 - (unsigned long long)fieldType;
+- (void)_commonUpdate;
 - (void)updateWithConfiguration:(id)arg1;
 - (id)_locale;
 @property(readonly, copy, nonatomic) NSDate *defaultDate;
 - (_Bool)submissionStringMeetsAllRequirements;
 - (id)_defaultValueAsDateForCurrentLocale;
-- (id)submissionString;
+- (id)_submissionStringForValue:(id)arg1;
 - (id)displayString;
 @property(copy, nonatomic) NSDate *currentValue; // @dynamic currentValue;
 - (id)initWithIdentifier:(id)arg1 type:(unsigned long long)arg2;

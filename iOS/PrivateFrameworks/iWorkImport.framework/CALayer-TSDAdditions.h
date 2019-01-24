@@ -6,7 +6,9 @@
 
 #import <QuartzCore/CALayer.h>
 
-@interface CALayer (TSDAdditions)
+#import <iWorkImport/TSDContentsScaleProviding-Protocol.h>
+
+@interface CALayer (TSDAdditions) <TSDContentsScaleProviding>
 - (_Bool)tsd_hideOverlayLayerDuringZoomOperations;
 - (void)tsd_setHideOverlayLayerDuringZoomOperations:(_Bool)arg1;
 - (void)resumeAtTime:(double)arg1;
@@ -73,5 +75,8 @@
 - (void)addReflectionSubLayerWithHeight:(double)arg1 startOpacity:(double)arg2;
 - (id)layerByAddingReflectionWithHeight:(double)arg1 startOpacity:(double)arg2;
 - (void)setIfDifferentFrame:(struct CGRect)arg1 orTransform:(struct CGAffineTransform)arg2;
+
+// Remaining properties
+@property(readonly, nonatomic) double contentsScale;
 @end
 

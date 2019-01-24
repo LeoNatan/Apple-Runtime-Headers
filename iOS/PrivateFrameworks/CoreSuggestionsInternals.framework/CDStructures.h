@@ -103,10 +103,6 @@ struct SGMFoundInMailModelType_ {
     unsigned long long _field1;
 };
 
-struct SGMFoundInMailSupervisionType_ {
-    unsigned long long _field1;
-};
-
 struct SGMSelfIdModelType_ {
     unsigned long long _field1;
 };

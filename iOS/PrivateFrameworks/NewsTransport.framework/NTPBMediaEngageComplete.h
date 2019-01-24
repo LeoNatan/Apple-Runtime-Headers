@@ -8,7 +8,7 @@
 
 #import <NewsTransport/NSCopying-Protocol.h>
 
-@class NSData, NSMutableArray, NSString, NTPBAlternateHeadline, NTPBWidgetEngagement;
+@class NSData, NSMutableArray, NSString, NTPBAlternateHeadline, NTPBIssueData, NTPBIssueExposureData, NTPBIssueViewData, NTPBWidgetEngagement;
 
 @interface NTPBMediaEngageComplete : PBCodable <NSCopying>
 {
@@ -36,6 +36,9 @@
     NSString *_iadNativeCampaign;
     NSString *_iadNativeCampaignAd;
     NSString *_iadNativeLine;
+    NTPBIssueData *_issueData;
+    NTPBIssueExposureData *_issueExposureData;
+    NTPBIssueViewData *_issueViewData;
     NSString *_mediaId;
     int _mediaPlayLocation;
     int _mediaType;
@@ -88,6 +91,9 @@
 
 + (Class)fractionalCohortMembershipType;
 + (Class)namedEntitiesType;
+@property(retain, nonatomic) NTPBIssueViewData *issueViewData; // @synthesize issueViewData=_issueViewData;
+@property(retain, nonatomic) NTPBIssueExposureData *issueExposureData; // @synthesize issueExposureData=_issueExposureData;
+@property(retain, nonatomic) NTPBIssueData *issueData; // @synthesize issueData=_issueData;
 @property(nonatomic) int rankInVideoPlaylist; // @synthesize rankInVideoPlaylist=_rankInVideoPlaylist;
 @property(retain, nonatomic) NTPBAlternateHeadline *alternateHeadline; // @synthesize alternateHeadline=_alternateHeadline;
 @property(retain, nonatomic) NSData *groupViewExposureId; // @synthesize groupViewExposureId=_groupViewExposureId;
@@ -138,6 +144,9 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(readonly, nonatomic) _Bool hasIssueViewData;
+@property(readonly, nonatomic) _Bool hasIssueExposureData;
+@property(readonly, nonatomic) _Bool hasIssueData;
 @property(nonatomic) _Bool hasRankInVideoPlaylist;
 @property(readonly, nonatomic) _Bool hasAlternateHeadline;
 @property(readonly, nonatomic) _Bool hasGroupViewExposureId;

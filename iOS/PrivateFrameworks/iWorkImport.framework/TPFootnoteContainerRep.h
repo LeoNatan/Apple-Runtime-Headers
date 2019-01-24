@@ -12,7 +12,6 @@ __attribute__((visibility("hidden")))
 }
 
 - (_Bool)p_hasContent;
-- (void)didUpdateLayer:(id)arg1;
 - (void)drawInContext:(struct CGContext *)arg1;
 - (_Bool)directlyManagesLayerContent;
 

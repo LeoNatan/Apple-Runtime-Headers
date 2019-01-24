@@ -9,12 +9,12 @@
 #import <WebCore/WebItemProviderRegistrar-Protocol.h>
 
 @class NSData, NSString;
-@protocol NSItemProviderWriting, UIItemProviderWriting;
+@protocol NSItemProviderWriting;
 
 __attribute__((visibility("hidden")))
 @interface WebItemProviderWritableObjectRegistrar : NSObject <WebItemProviderRegistrar>
 {
-    struct RetainPtr<id<UIItemProviderWriting>> _representingObject;
+    struct RetainPtr<id<NSItemProviderWriting>> _representingObject;
 }
 
 - (id).cxx_construct;
@@ -22,7 +22,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, copy) NSString *description;
 - (void)registerItemProvider:(id)arg1;
 @property(readonly, nonatomic) id <NSItemProviderWriting> representingObjectForClient;
-@property(readonly, nonatomic) id <UIItemProviderWriting> representingObject;
+@property(readonly, nonatomic) id <NSItemProviderWriting> representingObject;
 - (id)initWithObject:(id)arg1;
 
 // Remaining properties

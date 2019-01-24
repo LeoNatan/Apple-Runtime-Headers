@@ -79,8 +79,8 @@
 - (void)registerEventID:(id)arg1 options:(id)arg2 handler:(CDUnknownBlockType)arg3;
 - (void)_sendFrameType:(unsigned char)arg1 destinationID:(id)arg2 unencryptedObject:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)_receivedStopUnencrypted:(id)arg1;
-- (void)_receivedFrameHeader:(const CDStruct_793dca1b *)arg1 unencryptedBodyPtr:(const char *)arg2 bodyLen:(unsigned long)arg3 fromID:(id)arg4;
-- (void)_receivedFrameHeader:(const CDStruct_793dca1b *)arg1 encryptedBodyPtr:(const char *)arg2 bodyLen:(unsigned long)arg3 fromID:(id)arg4;
+- (void)_receivedFrameHeader:(const CDStruct_d0ed6788 *)arg1 unencryptedBodyPtr:(const char *)arg2 bodyLen:(unsigned long)arg3 fromID:(id)arg4;
+- (void)_receivedFrameHeader:(const CDStruct_d0ed6788 *)arg1 encryptedBodyPtr:(const char *)arg2 bodyLen:(unsigned long)arg3 fromID:(id)arg4;
 - (void)tryPassword:(id)arg1;
 - (void)_serverPairSetupCompleted:(id)arg1;
 - (void)_serverPairSetupNext:(id)arg1;

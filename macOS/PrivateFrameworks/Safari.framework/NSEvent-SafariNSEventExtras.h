@@ -7,9 +7,11 @@
 #import <AppKit/NSEvent.h>
 
 @interface NSEvent (SafariNSEventExtras)
++ (id)safari_syntheticReturnKeyEventWithWindowNumber:(long long)arg1 isKeyDown:(BOOL)arg2;
 + (long long)safari_buttonNumberForWKEventMouseButton:(int)arg1;
 + (unsigned long long)safari_eventModifierFlagsForWKEventModifiers:(unsigned int)arg1;
 + (BOOL)safari_mouseButtonIsDown;
+@property(readonly, nonatomic) BOOL safari_isSyntheticReturnKeyEvent;
 - (BOOL)safari_isVerticalWheelEvent;
 - (BOOL)safari_isWheelEvent;
 - (BOOL)safari_isMiddleButtonEvent;

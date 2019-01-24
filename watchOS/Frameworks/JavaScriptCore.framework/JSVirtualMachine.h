@@ -17,8 +17,6 @@
     NSMapTable *m_externalRememberedSet;
 }
 
-+ (unsigned int)setNumberOfFTLCompilerThreads:(unsigned int)arg1;
-+ (unsigned int)setNumberOfDFGCompilerThreads:(unsigned int)arg1;
 + (id)virtualMachineWithContextGroupRef:(struct OpaqueJSContextGroup *)arg1;
 - (id).cxx_construct;
 - (void)removeManagedReference:(id)arg1 withOwner:(id)arg2;

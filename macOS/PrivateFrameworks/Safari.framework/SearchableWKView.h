@@ -4,18 +4,17 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <WebKit/WKView.h>
+#import <WebKit/WKWebView.h>
 
 #import <Safari/_WKFullscreenDelegate-Protocol.h>
 
-@class BrowserViewController, NSString, WKWebsiteDataStore, WebViewController, _WKRemoteObjectRegistry;
+@class BrowserViewController, NSColor, NSString, WKWebsiteDataStore, WebViewController, _WKRemoteObjectRegistry;
 @protocol SearchableWKViewCancelDelegate, SearchableWKViewFullScreenDelegate, SearchableWKViewPlaybackControlsPresenter;
 
 __attribute__((visibility("hidden")))
-@interface SearchableWKView : WKView <_WKFullscreenDelegate>
+@interface SearchableWKView : WKWebView <_WKFullscreenDelegate>
 {
     BOOL _isInFullscreenMode;
-    BOOL _isLockingFirstResponderForImmediateAction;
     id <SearchableWKViewFullScreenDelegate> _fullScreenDelegate;
     id <SearchableWKViewPlaybackControlsPresenter> _playbackControlsPresenter;
     id <SearchableWKViewCancelDelegate> _cancelDelegate;
@@ -33,12 +32,9 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (void)_removeMediaPlaybackControlsView;
 - (void)_addMediaPlaybackControlsView:(id)arg1;
-- (void)_completeImmediateActionAnimation;
-- (void)_cancelImmediateActionAnimation;
-- (void)_prepareForImmediateActionAnimation;
 - (id)_browserWindow;
 - (void)_gestureEventWasNotHandledByWebCore:(id)arg1;
-- (id)_immediateActionAnimationControllerForHitTestResult:(struct OpaqueWKHitTestResult *)arg1 withType:(unsigned int)arg2 userData:(void *)arg3;
+- (id)_immediateActionAnimationControllerForHitTestResult:(id)arg1 withType:(long long)arg2 userData:(id)arg3;
 - (void)_dismissContentRelativeChildWindows;
 @property(readonly, nonatomic) BrowserViewController *presentingBrowserViewController;
 - (void)cancelOperation:(id)arg1;
@@ -47,11 +43,24 @@ __attribute__((visibility("hidden")))
 - (void)_webViewDidExitFullscreen:(id)arg1;
 - (void)_webViewDidEnterFullscreen:(id)arg1;
 - (void)_webViewWillEnterFullscreen:(id)arg1;
+@property(nonatomic) BOOL drawsTransparentBackground;
+@property(copy, nonatomic) NSColor *underlayColor;
+- (id)createFullScreenWindow;
+- (id)fullScreenPlaceholderView;
+- (void)endDeferringViewInWindowChangesSync;
+- (void)endDeferringViewInWindowChanges;
+- (void)beginDeferringViewInWindowChanges;
+- (void)disableFrameSizeUpdates;
+- (void)enableFrameSizeUpdates;
+- (void)saveBackForwardSnapshotForItem:(struct OpaqueWKBackForwardListItem *)arg1;
+@property(readonly) struct OpaqueWKPage *pageRef;
 @property(readonly, nonatomic) _WKRemoteObjectRegistry *remoteObjectRegistry;
 @property(readonly, nonatomic) struct CGRect visibleBounds;
 - (void)pageDidClose;
 @property(readonly, nonatomic) BOOL isClosed;
-- (id)initWithWebViewController:(id)arg1 configurationRef:(struct OpaqueWKPageConfiguration *)arg2;
+- (id)initWithWebViewController:(id)arg1 configuration:(id)arg2;
+- (id)initWithFrame:(struct CGRect)arg1 configuration:(id)arg2;
+- (id)initWithCoder:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

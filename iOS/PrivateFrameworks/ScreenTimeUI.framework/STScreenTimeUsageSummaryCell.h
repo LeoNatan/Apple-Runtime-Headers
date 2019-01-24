@@ -13,9 +13,14 @@
     STUsageSummaryView *_usageSummaryView;
 }
 
-@property(retain, nonatomic) STUsageSummaryView *usageSummaryView; // @synthesize usageSummaryView=_usageSummaryView;
+@property(readonly, nonatomic) STUsageSummaryView *usageSummaryView; // @synthesize usageSummaryView=_usageSummaryView;
 - (void).cxx_destruct;
 - (void)setValue:(id)arg1;
+- (void)_heightDidChange;
+- (void)_layoutDidChangeFrom:(_Bool)arg1 to:(_Bool)arg2;
+- (void)_numberOfLinesDidChangeFrom:(id)arg1 to:(id)arg2;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
+- (void)dealloc;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2 specifier:(id)arg3;
 
 @end

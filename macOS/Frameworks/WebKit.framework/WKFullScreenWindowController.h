@@ -16,6 +16,7 @@ __attribute__((visibility("hidden")))
     NSView *_webView;
     struct WebPageProxy *_page;
     struct RetainPtr<WebCoreFullScreenPlaceholderView> _webViewPlaceholder;
+    struct RetainPtr<NSView> _exitPlaceholder;
     struct RetainPtr<NSView> _clipView;
     struct RetainPtr<NSView> _backgroundView;
     struct CGRect _initialFrame;
@@ -26,6 +27,7 @@ __attribute__((visibility("hidden")))
     long long _fullScreenState;
     double _savedScale;
     struct RefPtr<WebKit::GenericCallback<>, WTF::DumbPtrTraits<WebKit::GenericCallback<>>> _repaintCallback;
+    struct unique_ptr<WebKit::WKFullScreenWindowControllerVideoFullscreenModelClient, std::__1::default_delete<WebKit::WKFullScreenWindowControllerVideoFullscreenModelClient>> _videoFullscreenClient;
     float _savedTopContentInset;
 }
 
@@ -47,6 +49,8 @@ __attribute__((visibility("hidden")))
 - (void)window:(id)arg1 startCustomAnimationToEnterFullScreenWithDuration:(double)arg2;
 - (id)customWindowsToExitFullScreenForWindow:(id)arg1;
 - (id)customWindowsToEnterFullScreenForWindow:(id)arg1;
+- (void)didEnterPictureInPicture;
+- (void)videoControlsManagerDidChange;
 - (void)close;
 - (void)performClose:(id)arg1;
 - (void)completeFinishExitFullScreenAnimationAfterRepaint;

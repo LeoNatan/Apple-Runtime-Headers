@@ -13,19 +13,18 @@
 
 @interface CRKDefaultSettingsUIVisibilityProvider : NSObject <CRKCourseEnrollmentControllerDelegate, CRKSettingsUIVisibilityProvider>
 {
-    CRKUserDefaultsObject *mPreviouslyEnrolled;
-    CRKUserDefaultsObject *mPreviouslyCloudEnrolled;
+    CRKUserDefaultsObject *mUIPreviouslyVisible;
     CRKCourseEnrollmentController *mEnrollmentController;
     BOOL _settingsUIVisible;
 }
 
-@property(nonatomic) BOOL settingsUIVisible; // @synthesize settingsUIVisible=_settingsUIVisible;
+@property BOOL settingsUIVisible; // @synthesize settingsUIVisible=_settingsUIVisible;
 - (void).cxx_destruct;
-- (void)enrollmentControllerDidUpdateCloudEnrollmentStatus:(id)arg1;
-- (void)enrollmentControllerDidUpdateInvitations:(id)arg1;
-- (void)enrollmentControllerDidUpdateCourses:(id)arg1;
+- (void)enrollmentControllerDidUpdateSettingsUIVisibility:(id)arg1;
 - (void)connectToDaemon;
 - (void)updateVisibilityState;
+- (void)updatePreviouslyVisibleDefaultWithValue:(BOOL)arg1;
+- (void)migrateOldUserDefaultsValues;
 - (id)init;
 
 // Remaining properties

@@ -21,6 +21,7 @@
     NSString *_currency;
     UIColor *_textColor;
     UIFont *_amountFont;
+    UIFont *_currencySymbolFont;
     NSNumber *_kerning;
     id <PKEnterCurrencyAmountViewDelegate> _delegate;
     UILabel *_amountLabel;
@@ -29,8 +30,12 @@
     NSDecimalNumberHandler *_roundingBehavior;
     NSNumberFormatter *_currencySymbolAmountFormatter;
     NSString *_amountString;
+    double _labelScaleFactor;
+    struct CGSize _lastLayoutBoundsSize;
 }
 
+@property(nonatomic) double labelScaleFactor; // @synthesize labelScaleFactor=_labelScaleFactor;
+@property(nonatomic) struct CGSize lastLayoutBoundsSize; // @synthesize lastLayoutBoundsSize=_lastLayoutBoundsSize;
 @property(nonatomic) _Bool showDecimalPointButton; // @synthesize showDecimalPointButton=_showDecimalPointButton;
 @property(retain, nonatomic) NSString *amountString; // @synthesize amountString=_amountString;
 @property(retain, nonatomic) NSNumberFormatter *currencySymbolAmountFormatter; // @synthesize currencySymbolAmountFormatter=_currencySymbolAmountFormatter;
@@ -40,6 +45,7 @@
 @property(retain, nonatomic) UILabel *amountLabel; // @synthesize amountLabel=_amountLabel;
 @property(nonatomic) __weak id <PKEnterCurrencyAmountViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(copy, nonatomic) NSNumber *kerning; // @synthesize kerning=_kerning;
+@property(copy, nonatomic) UIFont *currencySymbolFont; // @synthesize currencySymbolFont=_currencySymbolFont;
 @property(copy, nonatomic) UIFont *amountFont; // @synthesize amountFont=_amountFont;
 @property(copy, nonatomic) UIColor *textColor; // @synthesize textColor=_textColor;
 @property(retain, nonatomic) NSString *currency; // @synthesize currency=_currency;
@@ -51,6 +57,8 @@
 - (void)_updateContent;
 - (id)_decimalNumberFromString:(id)arg1;
 - (id)_formatAmount:(id)arg1 minimumFractionDigits:(unsigned long long)arg2;
+- (void)_addSuperscriptToAttributedString:(id)arg1 inRange:(struct _NSRange)arg2;
+- (void)_addSuperscriptToAttributedString:(id)arg1 formattedCurrencyAmount:(id)arg2 currencyAmountWithoutSymbols:(id)arg3;
 - (id)_formatAmountForDisplay:(id)arg1 alwaysShowDecimalSeparator:(_Bool)arg2 minimumFractionDigits:(unsigned long long)arg3 useGroupingSeparator:(_Bool)arg4;
 - (void)_createAmountFormatter;
 - (unsigned long long)_numberOfDecimalPlacesInString:(id)arg1 decimalSeperator:(id)arg2;

@@ -90,6 +90,7 @@ __attribute__((visibility("hidden")))
 - (id)sideBarScrollViewAccessibilityChildren:(id)arg1;
 - (BOOL)validateUserInterfaceItem:(id)arg1;
 - (id)safari_keyViews;
+- (void)didPressShowMenuForTableCellView:(id)arg1;
 - (void)didPressRemoveButtonForTableCellView:(id)arg1;
 - (void)didPressTableCellView:(id)arg1;
 - (void)sidebarContentFilterDidCompleteFilterOperation:(id)arg1;

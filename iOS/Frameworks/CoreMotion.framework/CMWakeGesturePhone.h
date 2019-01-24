@@ -32,6 +32,7 @@
     _Bool fEnableAudioAlert;
     int fLatencyAlertThreshold;
     BOOL fDisplayState;
+    int fSelector;
 }
 
 + (id)stringForGestureState:(long long)arg1;
@@ -54,6 +55,7 @@
 - (void)startWakeGestureUpdates;
 - (void)dealloc;
 - (id)init;
+- (void)setDelegate:(id)arg1;
 - (void)reenableDetectedStateRecognition;
 
 @end

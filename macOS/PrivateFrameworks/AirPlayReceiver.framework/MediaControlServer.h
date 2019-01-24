@@ -14,7 +14,7 @@
     NSObject<OS_dispatch_queue> *_dispatchQueue;
     AirPlayLocalSlideshow *_slideshow;
     double _lastActivity;
-    // Error parsing type: ^{AirPlayReceiverServerPrivate={__CFRuntimeBase=QAQ}^v@i^{OpaqueAPAdvertiser}CC^{HTTPServerPrivate}@^{HTTPServerPrivate}[16C]fCiCC^{OpaqueAPReceiverSystemInfo}CC^{__CFDictionary}^{__CFDictionary}^{MediaControlServerPrivate}^{__CFDictionary}IiI^{APReceiverSessionManagerOpaque}^{OpaqueFigValeria}^?CCCCCC}, name: _connectionsServer
+    // Error parsing type: ^{AirPlayReceiverServerPrivate={__CFRuntimeBase=QAQ}^v@i^{OpaqueAPAdvertiser}CC^{HTTPServerPrivate}@^{HTTPServerPrivate}[16C]fCiCC@IQ^{OpaqueAPReceiverSystemInfo}CC^{__CFDictionary}^{__CFDictionary}^{MediaControlServerPrivate}^{__CFDictionary}IiI^{APReceiverSessionManagerOpaque}^{OpaqueFigValeria}^?CCCCCC}, name: _connectionsServer
 }
 
 - (void)slideshowRequestAssetWithInfo:(id)arg1 sessionUUID:(const char *)arg2 completion:(CDUnknownBlockType)arg3;
@@ -32,7 +32,7 @@
 - (void)setDispatchQueue:(id)arg1;
 - (void)invalidate;
 - (void)dealloc;
--     // Error parsing type: @24@0:8^{AirPlayReceiverServerPrivate={__CFRuntimeBase=QAQ}^v@i^{OpaqueAPAdvertiser}CC^{HTTPServerPrivate}@^{HTTPServerPrivate}[16C]fCiCC^{OpaqueAPReceiverSystemInfo}CC^{__CFDictionary}^{__CFDictionary}^{MediaControlServerPrivate}^{__CFDictionary}IiI^{APReceiverSessionManagerOpaque}^{OpaqueFigValeria}^?CCCCCC}16, name: init:
+-     // Error parsing type: @24@0:8^{AirPlayReceiverServerPrivate={__CFRuntimeBase=QAQ}^v@i^{OpaqueAPAdvertiser}CC^{HTTPServerPrivate}@^{HTTPServerPrivate}[16C]fCiCC@IQ^{OpaqueAPReceiverSystemInfo}CC^{__CFDictionary}^{__CFDictionary}^{MediaControlServerPrivate}^{__CFDictionary}IiI^{APReceiverSessionManagerOpaque}^{OpaqueFigValeria}^?CCCCCC}16, name: init:
 
 @end
 

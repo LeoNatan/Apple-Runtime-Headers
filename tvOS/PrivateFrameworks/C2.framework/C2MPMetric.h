@@ -8,7 +8,7 @@
 
 #import <C2/NSCopying-Protocol.h>
 
-@class C2MPCloudKitInfo, C2MPDeviceInfo, C2MPGenericEvent, C2MPNetworkEvent, C2MPServerInfo;
+@class C2MPCloudKitInfo, C2MPDeviceInfo, C2MPGenericEvent, C2MPNetworkEvent, C2MPServerInfo, NSString;
 
 __attribute__((visibility("hidden")))
 @interface C2MPMetric : PBCodable <NSCopying>
@@ -21,17 +21,27 @@ __attribute__((visibility("hidden")))
     C2MPGenericEvent *_genericEvent;
     int _metricType;
     C2MPNetworkEvent *_networkEvent;
+    NSString *_reportTransportSourceApplicationBundleIdentifier;
+    NSString *_reportTransportSourceApplicationSecondaryIdentifier;
     C2MPServerInfo *_serverInfo;
+    _Bool _reportTransportAllowExpensiveAccess;
+    _Bool _reportTransportAllowPowerNapScheduling;
     struct {
         unsigned int reportFrequency:1;
         unsigned int reportFrequencyBase:1;
         unsigned int triggers:1;
         unsigned int metricType:1;
+        unsigned int reportTransportAllowExpensiveAccess:1;
+        unsigned int reportTransportAllowPowerNapScheduling:1;
     } _has;
 }
 
 @property(retain, nonatomic) C2MPGenericEvent *genericEvent; // @synthesize genericEvent=_genericEvent;
 @property(retain, nonatomic) C2MPNetworkEvent *networkEvent; // @synthesize networkEvent=_networkEvent;
+@property(retain, nonatomic) NSString *reportTransportSourceApplicationSecondaryIdentifier; // @synthesize reportTransportSourceApplicationSecondaryIdentifier=_reportTransportSourceApplicationSecondaryIdentifier;
+@property(retain, nonatomic) NSString *reportTransportSourceApplicationBundleIdentifier; // @synthesize reportTransportSourceApplicationBundleIdentifier=_reportTransportSourceApplicationBundleIdentifier;
+@property(nonatomic) _Bool reportTransportAllowPowerNapScheduling; // @synthesize reportTransportAllowPowerNapScheduling=_reportTransportAllowPowerNapScheduling;
+@property(nonatomic) _Bool reportTransportAllowExpensiveAccess; // @synthesize reportTransportAllowExpensiveAccess=_reportTransportAllowExpensiveAccess;
 @property(nonatomic) unsigned long long reportFrequencyBase; // @synthesize reportFrequencyBase=_reportFrequencyBase;
 @property(nonatomic) unsigned long long reportFrequency; // @synthesize reportFrequency=_reportFrequency;
 @property(nonatomic) unsigned long long triggers; // @synthesize triggers=_triggers;
@@ -50,6 +60,10 @@ __attribute__((visibility("hidden")))
 - (id)description;
 @property(readonly, nonatomic) _Bool hasGenericEvent;
 @property(readonly, nonatomic) _Bool hasNetworkEvent;
+@property(readonly, nonatomic) _Bool hasReportTransportSourceApplicationSecondaryIdentifier;
+@property(readonly, nonatomic) _Bool hasReportTransportSourceApplicationBundleIdentifier;
+@property(nonatomic) _Bool hasReportTransportAllowPowerNapScheduling;
+@property(nonatomic) _Bool hasReportTransportAllowExpensiveAccess;
 @property(nonatomic) _Bool hasReportFrequencyBase;
 @property(nonatomic) _Bool hasReportFrequency;
 @property(nonatomic) _Bool hasTriggers;

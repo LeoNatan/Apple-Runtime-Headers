@@ -26,6 +26,7 @@
 - (id)_className;
 @property(readonly) SUScriptAppleAccountType *accountType;
 @property(readonly) NSString *accountDescription;
+- (void)setAgeVerificationExpirationDate:(id)arg1 completionHandler:(id)arg2;
 - (void)reload;
 @property(readonly) ACAccountStore *nativeAccountStore;
 @property(readonly) ACAccount *nativeAccount;

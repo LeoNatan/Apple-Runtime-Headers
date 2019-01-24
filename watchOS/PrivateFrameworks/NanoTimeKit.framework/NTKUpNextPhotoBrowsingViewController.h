@@ -12,7 +12,7 @@
 #import <NanoTimeKit/NTKSafeLocketReaderDelegate-Protocol.h>
 #import <NanoTimeKit/PUICCrownInputSequencerDelegate-Protocol.h>
 
-@class CLKDevice, CSLSSuspendSystemGestureAssertion, NPTOPhoto1UpView, NSString, NSTimer, NTKRoundedCornerOverlayView, NTKUpNextPhotoGradientView, NTKUpNextTouchInsetsButton, PUICCrownInputSequencer, PUICPageIndicatorView, UIGestureRecognizer, UILabel, UIResponder, UIView;
+@class CLKDevice, CSLSSuspendSystemGestureAssertion, NPTOPhoto1UpView, NSLayoutConstraint, NSString, NSTimer, NTKRoundedCornerOverlayView, NTKUpNextPhotoGradientView, NTKUpNextTouchInsetsButton, PUICCrownInputSequencer, PUICPageIndicatorView, UIGestureRecognizer, UILabel, UIResponder, UIView;
 @protocol NTKUpNextPhotoBrowsingViewControllerDelegate;
 
 @interface NTKUpNextPhotoBrowsingViewController : UIViewController <NTKSafeLocketReaderDelegate, NPTOPhoto1UpViewDelegate, NPTOPhoto1UpViewDataSource, PUICCrownInputSequencerDelegate, CSLPIButtonHandlerProtocol>
@@ -28,6 +28,7 @@
     UILabel *_titleLabel;
     UILabel *_subLabel;
     UIView *_pageDotsBackground;
+    NSLayoutConstraint *_pageDotsBackgroundTopConstraint;
     PUICPageIndicatorView *_pageDots;
     _Bool _chromeVisible;
     NSTimer *_chromeVisibilityTimer;
@@ -50,7 +51,10 @@
 - (void)resetViewToIndex:(int)arg1;
 - (void)closeView:(id)arg1;
 - (void)viewWillDisappear:(_Bool)arg1;
+@property(readonly, nonatomic) float pageDotsHeight;
+@property(readonly, nonatomic) _Bool chromeVisible;
 - (void)_setChromeVisible:(_Bool)arg1 animated:(_Bool)arg2;
+- (void)viewDidDisappear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)crownInputSequencerOffsetDidChange:(id)arg1;
 - (_Bool)handleButton:(unsigned int)arg1 eventType:(unsigned int)arg2;

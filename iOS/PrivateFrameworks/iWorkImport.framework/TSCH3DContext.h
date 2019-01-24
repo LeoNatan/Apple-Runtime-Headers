@@ -8,6 +8,8 @@
 
 #import <iWorkImport/NSCopying-Protocol.h>
 
+@class NSSet;
+
 __attribute__((visibility("hidden")))
 @interface TSCH3DContext : NSObject <NSCopying>
 {
@@ -15,6 +17,8 @@ __attribute__((visibility("hidden")))
 }
 
 - (id).cxx_construct;
+- (id)sharedContext;
+@property(readonly, nonatomic) NSSet *childrenContexts;
 - (void)setCurrentFramebufferAttributes:(const struct FramebufferAttributes *)arg1;
 - (const struct FramebufferAttributes *)currentFramebufferAttributes;
 - (id)copyWithZone:(struct _NSZone *)arg1;

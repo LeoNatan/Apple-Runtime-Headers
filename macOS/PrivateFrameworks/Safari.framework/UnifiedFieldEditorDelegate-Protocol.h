@@ -18,6 +18,7 @@
 - (unsigned long long)fieldEditor:(UnifiedFieldEditor *)arg1 draggingEntered:(id <NSDraggingInfo>)arg2;
 - (void)fieldEditor:(UnifiedFieldEditor *)arg1 willDoCommandBySelector:(SEL)arg2;
 - (unsigned long long)simplificationsForReflectedURLForFieldEditor:(UnifiedFieldEditor *)arg1;
+- (double)extraTrailingPaddingForSelectionRectInUnifiedFieldEditor:(UnifiedFieldEditor *)arg1;
 - (BOOL)isReflectingSearchTermsForFieldEditor:(UnifiedFieldEditor *)arg1;
 - (NSURL *)reflectedURLForFieldEditor:(UnifiedFieldEditor *)arg1;
 - (NSColor *)textSelectionBackgroundColorForFieldEditor:(UnifiedFieldEditor *)arg1;

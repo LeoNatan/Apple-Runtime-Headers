@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
     _Bool _hasBegunFirstNavigation;
     SFBrowserPersonaAnalyticsHelper *_cachedAnalyticsHelper;
     NSTimer *_redirectNotificationTimer;
+    _Bool _hostApplicationIsForeground;
     SFUserNotification *_userNotification;
     NSString *_hostApplicationCallbackURLScheme;
 }
@@ -42,6 +43,7 @@ __attribute__((visibility("hidden")))
 - (void)webViewController:(id)arg1 willPerformClientRedirectToURL:(id)arg2 withDelay:(double)arg3;
 - (void)webViewControllerDidCancelClientRedirect:(id)arg1;
 - (void)webViewController:(id)arg1 didReceiveServerRedirectForProvisionalNavigation:(id)arg2;
+- (_Bool)_shouldReloadImmediatelyAfterPageLoadError;
 - (unsigned long long)_persona;
 - (id)_analyticsHelper;
 - (id)bundleIdentifierForProfileInstallation;

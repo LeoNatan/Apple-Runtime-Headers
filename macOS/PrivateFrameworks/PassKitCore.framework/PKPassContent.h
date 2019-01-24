@@ -17,6 +17,7 @@
     NSString *_logoText;
     NSArray *_frontFieldBuckets;
     NSArray *_backFieldBuckets;
+    NSArray *_balanceFields;
     PKPassPersonalization *_personalization;
     NSDictionary *_semantics;
     NSDictionary *_allSemantics;
@@ -26,6 +27,7 @@
 @property(copy, nonatomic) NSDictionary *allSemantics; // @synthesize allSemantics=_allSemantics;
 @property(copy, nonatomic) NSDictionary *semantics; // @synthesize semantics=_semantics;
 @property(copy, nonatomic) PKPassPersonalization *personalization; // @synthesize personalization=_personalization;
+@property(copy, nonatomic) NSArray *balanceFields; // @synthesize balanceFields=_balanceFields;
 @property(copy, nonatomic) NSArray *backFieldBuckets; // @synthesize backFieldBuckets=_backFieldBuckets;
 @property(copy, nonatomic) NSArray *frontFieldBuckets; // @synthesize frontFieldBuckets=_frontFieldBuckets;
 @property(copy, nonatomic) NSString *logoText; // @synthesize logoText=_logoText;

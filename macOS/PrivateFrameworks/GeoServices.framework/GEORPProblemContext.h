@@ -8,7 +8,7 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class GEOABAssignmentResponse, GEOPDPlace, GEOPlace, GEORPCurrentEnvironmentManifestURLs, GEORPMapLocation, GEORPNavigationSettings, GEORPPersonalizedMaps, GEORPPlaceInfo, GEORPTransitLineTileInfo, GEOServicesState, NSMutableArray, NSString;
+@class GEOABAssignmentResponse, GEOPDPlace, GEOPlace, GEORPCurrentEnvironmentManifestURLs, GEORPMapLocation, GEORPMerchantLookupContext, GEORPNavigationSettings, GEORPPersonalizedMaps, GEORPPlaceInfo, GEORPTransitLineTileInfo, GEOServicesState, NSMutableArray, NSString;
 
 @interface GEORPProblemContext : PBCodable <NSCopying>
 {
@@ -26,6 +26,7 @@
     NSString *_lastSearchString;
     NSString *_lastUserTypedSearchString;
     GEORPMapLocation *_mapLocation;
+    GEORPMerchantLookupContext *_merchantLookupContext;
     GEORPNavigationSettings *_navigationSettings;
     GEOPlace *_originalPlace;
     GEORPPersonalizedMaps *_personalizedMaps;
@@ -51,6 +52,7 @@
 + (Class)directionsResponseType;
 + (Class)directionsRequestType;
 + (Class)visibleTileSetType;
+@property(retain, nonatomic) GEORPMerchantLookupContext *merchantLookupContext; // @synthesize merchantLookupContext=_merchantLookupContext;
 @property(retain, nonatomic) GEORPNavigationSettings *navigationSettings; // @synthesize navigationSettings=_navigationSettings;
 @property(retain, nonatomic) GEORPPersonalizedMaps *personalizedMaps; // @synthesize personalizedMaps=_personalizedMaps;
 @property(retain, nonatomic) GEOServicesState *servicesState; // @synthesize servicesState=_servicesState;
@@ -84,6 +86,7 @@
 - (BOOL)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(readonly, nonatomic) BOOL hasMerchantLookupContext;
 @property(readonly, nonatomic) BOOL hasNavigationSettings;
 @property(readonly, nonatomic) BOOL hasPersonalizedMaps;
 @property(readonly, nonatomic) BOOL hasServicesState;

@@ -11,7 +11,7 @@ __attribute__((visibility("hidden")))
 {
 }
 
-- (id)accessibilityAttributeValue:(id)arg1;
+- (id)accessibilityChildren;
 - (struct CGSize)intrinsicContentSize;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;

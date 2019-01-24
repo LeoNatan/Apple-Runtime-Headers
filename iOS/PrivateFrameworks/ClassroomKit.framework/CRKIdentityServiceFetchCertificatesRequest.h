@@ -13,12 +13,8 @@
     NSArray *_personLinkIDs;
 }
 
-+ (_Bool)supportsSecureCoding;
-+ (Class)whitelistedClassForResultObject;
 @property(copy, nonatomic) NSArray *personLinkIDs; // @synthesize personLinkIDs=_personLinkIDs;
 - (void).cxx_destruct;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
 
 @end
 

@@ -10,7 +10,6 @@
 - (void)__handleFocusMovementAction:(UIFocusMovementAction *)arg1;
 - (void)__showEditAlertViewWithToken:(long long)arg1 canUndo:(_Bool)arg2 canRedo:(_Bool)arg3;
 - (void)__trampolineButtonPressData:(NSData *)arg1 canceled:(_Bool)arg2;
-- (void)__setServiceMaxFrameSize:(struct CGSize)arg1;
 - (void)__viewServiceDidUpdatePreferredUserInterfaceStyle:(long long)arg1;
 - (void)__viewServiceDidUpdatePrefersHomeIndicatorAutoHidden:(_Bool)arg1;
 - (void)__viewServiceDidUpdatePreferredScreenEdgesDeferringSystemGestures:(long long)arg1;

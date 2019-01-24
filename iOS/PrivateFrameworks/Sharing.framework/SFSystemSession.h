@@ -28,6 +28,7 @@
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
 @property(nonatomic) _Bool allowUnencrypted; // @synthesize allowUnencrypted=_allowUnencrypted;
 - (void).cxx_destruct;
+- (void)rebootSystemWithCompletion:(CDUnknownBlockType)arg1;
 - (void)removeProfileWithIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)installProfileResponse:(id)arg1 error:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)installProfileWithURL:(id)arg1 completion:(CDUnknownBlockType)arg2;

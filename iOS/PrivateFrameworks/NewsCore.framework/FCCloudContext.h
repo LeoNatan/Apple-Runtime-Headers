@@ -12,8 +12,8 @@
 #import <NewsCore/FCPrivateDataContext-Protocol.h>
 #import <NewsCore/FCTestingContext-Protocol.h>
 
-@class FCArticleController, FCAssetManager, FCClientEndpointConnection, FCCommandQueue, FCFeedManager, FCFlintResourceManager, FCNetworkBehaviorMonitor, FCNotificationController, FCNotificationsEndpointConnection, FCPersonalizationData, FCPrivateChannelMembershipController, FCPurchaseController, FCReadingHistory, FCReadingList, FCSubscriptionController, FCSubscriptionList, FCTagController, FCTagSettings, FCUserInfo, NSString, NSURL;
-@protocol FCAppActivityMonitor, FCBackgroundTaskable, FCContentContext, FCContentContextInternal, FCCoreConfigurationManager, FCFeedPersonalizing, FCFlintHelper, FCNewsAppConfigurationManager, FCPPTContext, FCPrivateDataContext, FCPrivateDataContextInternal, FCPushNotificationHandling, FCWebArchiveSource;
+@class FCArticleController, FCAssetManager, FCClientEndpointConnection, FCCommandQueue, FCFeedManager, FCFlintResourceManager, FCIssueReadingHistory, FCNetworkBehaviorMonitor, FCNotificationController, FCNotificationsEndpointConnection, FCPersonalizationData, FCPrivateChannelMembershipController, FCPurchaseController, FCReadingHistory, FCReadingList, FCSubscriptionController, FCSubscriptionList, FCTagController, FCTagSettings, FCTranslationManager, FCUserInfo, NSString, NSURL;
+@protocol FCAppActivityMonitor, FCBackgroundTaskable, FCBundleSubscriptionManagerType, FCClearableReadingHistory, FCContentContext, FCContentContextInternal, FCCoreConfigurationManager, FCCurrentIssuesChecker, FCFeedPersonalizing, FCFlintHelper, FCForYouMagazineFeedManaging, FCNewsAppConfigurationManager, FCPPTContext, FCPrivateDataContext, FCPrivateDataContextInternal, FCPurchaseManagerType, FCPushNotificationHandling, FCWebArchiveSource;
 
 @interface FCCloudContext : NSObject <FCTestingContext, FCCKDatabaseEncryptionDelegate, FCContentContext, FCPrivateDataContext, FCCacheFlushing>
 {
@@ -28,8 +28,13 @@
     FCCommandQueue *_notificationsEndpointCommandQueue;
     FCNotificationController *_notificationController;
     FCPurchaseController *_purchaseController;
+    id <FCPurchaseManagerType> _purchaseManager;
+    id <FCBundleSubscriptionManagerType> _bundleSubscriptionManager;
+    FCTranslationManager *_translationManager;
+    id <FCCurrentIssuesChecker> _currentIssuesChecker;
     id <FCFlintHelper> _flintHelper;
     id <FCBackgroundTaskable> _backgroundTaskable;
+    id <FCForYouMagazineFeedManaging> _forYouMagazineFeedManager;
     id <FCPPTContext> _pptContext;
     id <FCContentContext> _contentContext;
     id <FCPrivateDataContext> _privateDataContext;
@@ -42,8 +47,13 @@
 @property(retain, nonatomic) id <FCContentContext> contentContext; // @synthesize contentContext=_contentContext;
 @property(readonly, nonatomic) id <FCPPTContext> pptContext; // @synthesize pptContext=_pptContext;
 @property(readonly, nonatomic) _Bool deviceIsiPad; // @synthesize deviceIsiPad=_deviceIsiPad;
+@property(nonatomic) __weak id <FCForYouMagazineFeedManaging> forYouMagazineFeedManager; // @synthesize forYouMagazineFeedManager=_forYouMagazineFeedManager;
 @property(nonatomic) __weak id <FCBackgroundTaskable> backgroundTaskable; // @synthesize backgroundTaskable=_backgroundTaskable;
 @property(nonatomic) __weak id <FCFlintHelper> flintHelper; // @synthesize flintHelper=_flintHelper;
+@property(retain, nonatomic) id <FCCurrentIssuesChecker> currentIssuesChecker; // @synthesize currentIssuesChecker=_currentIssuesChecker;
+@property(retain, nonatomic) FCTranslationManager *translationManager; // @synthesize translationManager=_translationManager;
+@property(readonly, nonatomic) id <FCBundleSubscriptionManagerType> bundleSubscriptionManager; // @synthesize bundleSubscriptionManager=_bundleSubscriptionManager;
+@property(readonly, nonatomic) id <FCPurchaseManagerType> purchaseManager; // @synthesize purchaseManager=_purchaseManager;
 @property(readonly, nonatomic) FCPurchaseController *purchaseController; // @synthesize purchaseController=_purchaseController;
 @property(readonly, nonatomic) FCNotificationController *notificationController; // @synthesize notificationController=_notificationController;
 @property(retain, nonatomic) id <FCAppActivityMonitor> appActivityMonitor; // @synthesize appActivityMonitor=_appActivityMonitor;
@@ -53,6 +63,7 @@
 - (void)fetchPrivateDataEncryptionIsAllowedForDatabase:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)insertTestArticlesWithCount:(unsigned long long)arg1;
 - (id)insertTestArticle;
+@property(readonly, nonatomic) id <FCClearableReadingHistory> clearReadingHistoryManager;
 @property(readonly, nonatomic) id <FCPushNotificationHandling> privatePushNotificationHandler;
 @property(readonly, copy, nonatomic) NSString *privateDataDirectory;
 @property(readonly, nonatomic) id <FCPrivateDataContextInternal> internalPrivateDataContext;
@@ -65,6 +76,8 @@
 @property(readonly, nonatomic) FCReadingHistory *readingHistory;
 @property(readonly, nonatomic) FCPrivateChannelMembershipController *privateChannelMembershipController;
 @property(readonly, nonatomic) FCPersonalizationData *personalizationData;
+@property(readonly, nonatomic) FCIssueReadingHistory *issueReadingHistory;
+@property(readonly, nonatomic) long long preferredMediaQuality;
 - (id)recordTreeSourceWithRecordSources:(id)arg1;
 - (id)recordSourceWithSchema:(id)arg1;
 @property(retain, nonatomic) id <FCWebArchiveSource> webArchiveSource;
@@ -74,6 +87,7 @@
 @property(readonly, copy, nonatomic) NSString *supportedContentStoreFrontID;
 @property(readonly, copy, nonatomic) NSString *contentStoreFrontID;
 @property(readonly, nonatomic) id <FCContentContextInternal> internalContentContext;
+- (id)magazinesConfigurationManager;
 - (id)news_core_ConfigurationManager;
 @property(readonly, nonatomic) id <FCNewsAppConfigurationManager> appConfigurationManager;
 @property(readonly, nonatomic) id <FCCoreConfigurationManager> configurationManager;
@@ -81,7 +95,6 @@
 @property(readonly, nonatomic) FCTagController *tagController;
 @property(readonly, nonatomic) FCArticleController *articleController;
 @property(readonly, nonatomic) FCAssetManager *assetManager;
-- (id)fetchEndOfArticleDataForHeadline:(id)arg1 initialRelatedHeadlineCount:(unsigned long long)arg2 initialPublisherHeadlineCount:(unsigned long long)arg3 totalRelatedHeadlineCount:(unsigned long long)arg4 totalPublisherHeadlineCount:(unsigned long long)arg5 fetchRelatedHeadline:(_Bool)arg6 fetchPublisherHeadlines:(_Bool)arg7 fetchAllTopics:(_Bool)arg8 screenScale:(double)arg9 completion:(CDUnknownBlockType)arg10;
 - (void)enableFlushingWithFlushingThreshold:(unsigned long long)arg1;
 @property(readonly, copy, nonatomic) NSString *contentEnvironmentToken;
 - (void)ppt_overrideFeedEndpoint:(long long)arg1;

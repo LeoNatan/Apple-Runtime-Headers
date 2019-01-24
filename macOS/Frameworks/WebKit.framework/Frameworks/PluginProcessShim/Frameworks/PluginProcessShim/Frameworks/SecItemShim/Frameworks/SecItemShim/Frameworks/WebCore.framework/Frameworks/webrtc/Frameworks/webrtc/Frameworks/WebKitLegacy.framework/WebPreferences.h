@@ -81,9 +81,13 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initWithIdentifier:(id)arg1;
 - (id)init;
+- (void)setSelectionAcrossShadowBoundariesEnabled:(BOOL)arg1;
+- (BOOL)selectionAcrossShadowBoundariesEnabled;
 - (void)setServerTimingEnabled:(BOOL)arg1;
 - (BOOL)serverTimingEnabled;
+@property(nonatomic) BOOL mediaRecorderEnabled;
 @property(nonatomic) BOOL mediaCapabilitiesEnabled;
+@property(nonatomic) BOOL ariaReflectionEnabled;
 @property(nonatomic) BOOL accessibilityObjectModelEnabled;
 @property(nonatomic) BOOL inspectorAdditionsEnabled;
 @property(nonatomic) BOOL allowMediaContentTypesRequiringHardwareSupportAsFallback;
@@ -96,7 +100,6 @@
 @property(nonatomic) BOOL isSecureContextAttributeEnabled;
 @property(nonatomic) NSString *mediaContentTypesRequiringHardwareSupport;
 @property(nonatomic) BOOL mediaUserGestureInheritsFromDocument;
-@property(nonatomic) BOOL webAuthenticationEnabled;
 @property(nonatomic) BOOL resourceTimingEnabled;
 @property(nonatomic) BOOL userTimingEnabled;
 @property(nonatomic) BOOL displayContentsEnabled;
@@ -110,6 +113,7 @@
 - (BOOL)fetchAPIKeepAliveEnabled;
 - (void)setWebAnimationsEnabled:(BOOL)arg1;
 - (BOOL)webAnimationsEnabled;
+@property(nonatomic) BOOL CSSOMViewScrollingAPIEnabled;
 @property(nonatomic) BOOL visualViewportAPIEnabled;
 @property(nonatomic) BOOL visualViewportEnabled;
 - (BOOL)directoryUploadEnabled;
@@ -122,8 +126,6 @@
 - (BOOL)readableByteStreamAPIEnabled;
 - (void)setFetchAPIEnabled:(BOOL)arg1;
 - (BOOL)fetchAPIEnabled;
-- (void)setCrossOriginWindowPolicySupportEnabled:(BOOL)arg1;
-- (BOOL)crossOriginWindowPolicySupportEnabled;
 - (void)setCacheAPIEnabled:(BOOL)arg1;
 - (BOOL)cacheAPIEnabled;
 - (void)setCustomPasteboardDataEnabled:(BOOL)arg1;
@@ -155,8 +157,6 @@
 - (void)setMediaPreloadingEnabled:(BOOL)arg1;
 - (BOOL)mediaPreloadingEnabled;
 @property(nonatomic) BOOL linkPreloadEnabled;
-- (void)setWebRTCLegacyAPIEnabled:(BOOL)arg1;
-- (BOOL)webRTCLegacyAPIEnabled;
 - (void)setPeerConnectionEnabled:(BOOL)arg1;
 - (BOOL)peerConnectionEnabled;
 - (void)setMediaStreamEnabled:(BOOL)arg1;
@@ -173,6 +173,7 @@
 - (BOOL)serviceControlsEnabled;
 - (void)setImageControlsEnabled:(BOOL)arg1;
 - (BOOL)imageControlsEnabled;
+@property(nonatomic) BOOL sourceBufferChangeTypeEnabled;
 - (void)setMediaSourceEnabled:(BOOL)arg1;
 - (BOOL)mediaSourceEnabled;
 - (void)setUseLegacyTextAlignPositionedElementBehavior:(BOOL)arg1;
@@ -269,6 +270,8 @@
 - (void)setDiskImageCacheEnabled:(BOOL)arg1;
 - (void)setAccelerated2dCanvasEnabled:(BOOL)arg1;
 - (BOOL)accelerated2dCanvasEnabled;
+- (void)setWebMetalEnabled:(BOOL)arg1;
+- (BOOL)webMetalEnabled;
 - (void)setWebGPUEnabled:(BOOL)arg1;
 - (BOOL)webGPUEnabled;
 - (void)setForceWebGLUsesLowPower:(BOOL)arg1;

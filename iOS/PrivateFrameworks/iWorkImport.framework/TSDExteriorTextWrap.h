@@ -36,8 +36,8 @@ __attribute__((visibility("hidden")))
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithIsHTMLWrap:(_Bool)arg1 type:(int)arg2 direction:(int)arg3 fitType:(int)arg4 margin:(double)arg5 alphaThreshold:(double)arg6;
 - (id)init;
-- (void)saveToArchive:(struct ExteriorTextWrapArchive *)arg1 archiver:(id)arg2;
-- (id)initWithArchive:(const struct ExteriorTextWrapArchive *)arg1;
+-     // Error parsing type: v32@0:8^{ExteriorTextWrapArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}IIIffB}16@24, name: saveToArchive:archiver:
+-     // Error parsing type: @24@0:8r^{ExteriorTextWrapArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}IIIffB}16, name: initWithArchive:
 
 @end
 

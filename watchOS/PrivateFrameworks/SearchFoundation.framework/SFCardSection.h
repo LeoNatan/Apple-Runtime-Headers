@@ -10,7 +10,7 @@
 #import <SearchFoundation/SFCardSection-Protocol.h>
 #import <SearchFoundation/SFJSONSerializable-Protocol.h>
 
-@class NSArray, NSData, NSDictionary, NSString, SFCard, SFColor;
+@class NSArray, NSData, NSDictionary, NSString, SFCard, SFColor, SFUserReportRequest;
 
 @interface SFCardSection : NSObject <SFJSONSerializable, SFCardSection, NSCopying>
 {
@@ -29,9 +29,11 @@
     NSString *_cardSectionId;
     SFColor *_backgroundColor;
     NSString *_resultIdentifier;
+    SFUserReportRequest *_userReportRequest;
 }
 
 + (_Bool)supportsSecureCoding;
+@property(retain, nonatomic) SFUserReportRequest *userReportRequest; // @synthesize userReportRequest=_userReportRequest;
 @property(copy, nonatomic) NSString *resultIdentifier; // @synthesize resultIdentifier=_resultIdentifier;
 @property(retain, nonatomic) SFColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;
 @property(copy, nonatomic) NSString *cardSectionId; // @synthesize cardSectionId=_cardSectionId;

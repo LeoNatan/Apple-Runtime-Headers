@@ -18,6 +18,7 @@
     _Bool _dismissed;
     _Bool _interruptible;
     _Bool _dismissible;
+    _Bool _launchable;
     id <CSLSSessionDelegate> _delegate;
     NSString *_bundleID;
     NSURL *_url;
@@ -30,6 +31,7 @@
 + (_Bool)supportsSecureCoding;
 + (id)sessionWithSession:(id)arg1;
 + (id)sessionForBundleID:(id)arg1 withURL:(id)arg2 type:(unsigned int)arg3;
+@property(getter=isLaunchable) _Bool launchable; // @synthesize launchable=_launchable;
 @property(getter=isDismissible) _Bool dismissible; // @synthesize dismissible=_dismissible;
 @property(getter=isInterruptible) _Bool interruptible; // @synthesize interruptible=_interruptible;
 @property int priority; // @synthesize priority=_priority;

@@ -8,7 +8,7 @@
 
 #import <NewsTransport/NSCopying-Protocol.h>
 
-@class NSData, NSMutableArray, NSString, NTPBWidgetEngagement;
+@class NSData, NSMutableArray, NSString, NTPBChannelData, NTPBIssueData, NTPBIssueExposureData, NTPBWidgetEngagement;
 
 @interface NTPBShareResult : PBCodable <NSCopying>
 {
@@ -22,6 +22,7 @@
     int _backendArticleVersion;
     NSString *_campaignId;
     NSString *_campaignType;
+    NTPBChannelData *_channelData;
     int _characterCount;
     NSString *_contentId;
     int _contentType;
@@ -39,6 +40,8 @@
     NSString *_iadNativeCampaignAd;
     NSString *_iadNativeLine;
     NSString *_iosActivityType;
+    NTPBIssueData *_issueData;
+    NTPBIssueExposureData *_issueExposureData;
     NSString *_language;
     NSMutableArray *_namedEntities;
     NSString *_nativeCampaignData;
@@ -105,6 +108,9 @@
 
 + (Class)fractionalCohortMembershipType;
 + (Class)namedEntitiesType;
+@property(retain, nonatomic) NTPBChannelData *channelData; // @synthesize channelData=_channelData;
+@property(retain, nonatomic) NTPBIssueExposureData *issueExposureData; // @synthesize issueExposureData=_issueExposureData;
+@property(retain, nonatomic) NTPBIssueData *issueData; // @synthesize issueData=_issueData;
 @property(retain, nonatomic) NSData *groupViewExposureId; // @synthesize groupViewExposureId=_groupViewExposureId;
 @property(retain, nonatomic) NSString *iadNativeCampaignAd; // @synthesize iadNativeCampaignAd=_iadNativeCampaignAd;
 @property(nonatomic) long long previousArticlePublisherArticleVersion; // @synthesize previousArticlePublisherArticleVersion=_previousArticlePublisherArticleVersion;
@@ -164,6 +170,9 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(readonly, nonatomic) _Bool hasChannelData;
+@property(readonly, nonatomic) _Bool hasIssueExposureData;
+@property(readonly, nonatomic) _Bool hasIssueData;
 @property(readonly, nonatomic) _Bool hasGroupViewExposureId;
 @property(readonly, nonatomic) _Bool hasIadNativeCampaignAd;
 @property(nonatomic) _Bool hasPreviousArticlePublisherArticleVersion;

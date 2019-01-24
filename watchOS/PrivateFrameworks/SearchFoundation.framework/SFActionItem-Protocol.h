@@ -11,6 +11,8 @@
 @protocol SFActionItem <NSObject>
 @property(readonly, nonatomic) NSData *jsonData;
 @property(readonly, nonatomic) NSDictionary *dictionaryRepresentation;
+@property(nonatomic) int mediaEntityType;
+@property(copy, nonatomic) NSString *persistentID;
 @property(copy, nonatomic) NSURL *messageURL;
 @property(copy, nonatomic) NSString *messageIdentifier;
 @property(retain, nonatomic) SFLatLng *location;

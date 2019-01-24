@@ -8,7 +8,7 @@
 
 #import <iWorkImport/KNAnimationPluginContext-Protocol.h>
 
-@class KNAnimatedBuild, KNAnimationRandomGenerator, NSArray, NSDictionary, NSString, TSDGLState, TSDMetalContext, TSDRep;
+@class KNAnimatedBuild, KNAnimationRandomGenerator, NSArray, NSDictionary, NSString, TSDAnimationSet, TSDGLState, TSDMetalContext, TSDMetalTextureRenderer, TSDRep;
 
 __attribute__((visibility("hidden")))
 @interface KNAnimationPluginContext : NSObject <KNAnimationPluginContext>
@@ -18,9 +18,9 @@ __attribute__((visibility("hidden")))
     _Bool _isMovieExport;
     _Bool _isWarmingUp;
     NSArray *_textures;
-    NSArray *_highlightingTextures;
-    NSArray *_allTextures;
-    NSDictionary *_scaledTextures;
+    TSDMetalTextureRenderer *_metalTextureRenderer;
+    TSDAnimationSet *_animationSet;
+    NSArray *_scaledTextures;
     NSArray *_tags;
     unsigned long long _direction;
     double _duration;
@@ -59,12 +59,13 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) double duration; // @synthesize duration=_duration;
 @property(nonatomic) unsigned long long direction; // @synthesize direction=_direction;
 @property(retain, nonatomic) NSArray *tags; // @synthesize tags=_tags;
-@property(retain, nonatomic) NSDictionary *scaledTextures; // @synthesize scaledTextures=_scaledTextures;
-@property(retain, nonatomic) NSArray *allTextures; // @synthesize allTextures=_allTextures;
-@property(retain, nonatomic) NSArray *highlightingTextures; // @synthesize highlightingTextures=_highlightingTextures;
+@property(retain, nonatomic) NSArray *scaledTextures; // @synthesize scaledTextures=_scaledTextures;
+@property(retain, nonatomic) TSDAnimationSet *animationSet; // @synthesize animationSet=_animationSet;
+@property(retain, nonatomic) TSDMetalTextureRenderer *metalTextureRenderer; // @synthesize metalTextureRenderer=_metalTextureRenderer;
 @property(retain, nonatomic) NSArray *textures; // @synthesize textures=_textures;
 - (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
+@property(readonly, nonatomic) _Bool hasLiveTextureSources;
 @property(readonly, nonatomic) _Bool isMetalRenderer;
 @property(readonly, nonatomic) _Bool isOpenGLRenderer;
 @property(readonly, nonatomic) _Bool isFrameRenderer;

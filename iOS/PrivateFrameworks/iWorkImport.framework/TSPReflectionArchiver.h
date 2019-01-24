@@ -12,6 +12,7 @@ __attribute__((visibility("hidden")))
 }
 
 - (long long)targetType;
+- (id)initWithObject:(id)arg1;
 
 @end
 

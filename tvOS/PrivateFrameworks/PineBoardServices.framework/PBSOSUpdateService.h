@@ -20,7 +20,7 @@
 - (void)purgeDownload:(CDUnknownBlockType)arg1;
 - (void)cancelDownload:(CDUnknownBlockType)arg1;
 - (void)startDownload:(CDUnknownBlockType)arg1;
-- (void)checkForUpdatesWithConditions:(id)arg1 response:(CDUnknownBlockType)arg2;
+- (void)checkForUpdatesWithOptions:(id)arg1 response:(CDUnknownBlockType)arg2;
 - (void)checkForUpdateViaMDM;
 - (void)checkForUpdate;
 - (void)setAssetDownloadIsDiscretionary:(_Bool)arg1;

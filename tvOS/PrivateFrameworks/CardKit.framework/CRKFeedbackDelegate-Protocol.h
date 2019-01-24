@@ -11,6 +11,7 @@
 @protocol CRKFeedbackDelegate <CRFeedbackListener>
 
 @optional
+- (void)willDismissViewController:(UIViewController *)arg1;
 - (void)presentViewController:(UIViewController *)arg1;
 @end
 

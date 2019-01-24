@@ -16,20 +16,10 @@
     // Error parsing type: , name: queueContext.storage
 }
 
-- (CDUnknownBlockType).cxx_destruct;
+- (void).cxx_destruct;
 - (id)init;
-- (void)interrupt;
-- (BOOL)execute:(id)arg1 error:(id *)arg2;
-@property(nonatomic, readonly) long long totalChanges;
-@property(nonatomic, readonly) long long changes;
 @property(nonatomic, readonly) NSString *description;
-- (void)closeConnection;
 - (void)dealloc;
-- (id)init:(id)arg1 readonly:(BOOL)arg2 error:(id *)arg3;
-- (id)initWithReadonlyFlag:(BOOL)arg1 error:(id *)arg2;
-@property(nonatomic, readonly) BOOL readonly;
-@property(nonatomic, readonly) NSString *path; // @synthesize path;
-@property(nonatomic, readonly) void *handle;
 
 @end
 

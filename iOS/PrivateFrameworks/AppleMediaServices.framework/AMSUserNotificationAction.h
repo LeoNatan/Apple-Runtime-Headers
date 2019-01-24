@@ -6,19 +6,23 @@
 
 #import <objc/NSObject.h>
 
-@class NSDictionary, NSString, NSURL;
+@class AMSMetricsEvent, NSDictionary, NSString, NSURL, NSURLRequest;
 
 @interface AMSUserNotificationAction : NSObject
 {
     NSString *_identifier;
     NSURL *_defaultURL;
     NSString *_title;
+    NSURLRequest *_request;
+    AMSMetricsEvent *_metricsEvent;
     NSDictionary *_userInfo;
     long long _style;
 }
 
 @property(nonatomic) long long style; // @synthesize style=_style;
 @property(retain, nonatomic) NSDictionary *userInfo; // @synthesize userInfo=_userInfo;
+@property(retain, nonatomic) AMSMetricsEvent *metricsEvent; // @synthesize metricsEvent=_metricsEvent;
+@property(retain, nonatomic) NSURLRequest *request; // @synthesize request=_request;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
 @property(retain, nonatomic) NSURL *defaultURL; // @synthesize defaultURL=_defaultURL;
 @property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
@@ -28,6 +32,7 @@
 - (id)initWithUserInfoAction:(id)arg1;
 - (id)initWithTitle:(id)arg1 style:(long long)arg2;
 - (id)initWithTitle:(id)arg1;
+- (id)init;
 
 @end
 

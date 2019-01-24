@@ -6,21 +6,25 @@
 
 #import <Safari/BrowserToolbarItem.h>
 
-@class AppExtensionToolbarItem, NSUUID;
+@class AppExtensionToolbarItem, BrowserWindowController, NSUUID;
 
 __attribute__((visibility("hidden")))
 @interface AppExtensionBrowserToolbarItem : BrowserToolbarItem
 {
     AppExtensionToolbarItem *_appExtensionToolbarItem;
+    BrowserWindowController *_browserWindowController;
     NSUUID *_uuid;
 }
 
 @property(readonly, nonatomic) NSUUID *uuid; // @synthesize uuid=_uuid;
+@property(readonly, nonatomic) __weak BrowserWindowController *browserWindowController; // @synthesize browserWindowController=_browserWindowController;
 @property(readonly, nonatomic) __weak AppExtensionToolbarItem *appExtensionToolbarItem; // @synthesize appExtensionToolbarItem=_appExtensionToolbarItem;
 - (void).cxx_destruct;
+- (void)showPopover;
+- (void)_performClickAction:(id)arg1;
 - (void)validate;
 - (void)setBadgeText:(id)arg1;
-- (id)initWithExtensionToolbarItem:(id)arg1;
+- (id)initWithExtensionToolbarItem:(id)arg1 browserWindowController:(id)arg2;
 
 @end
 

@@ -16,8 +16,8 @@
     _UIStatusBar *_statusBar;
 }
 
-+ (id)createItemForIdentifier:(id)arg1 visualProvider:(id)arg2;
-+ (Class)itemClassForIdentifier:(id)arg1 visualProvider:(id)arg2;
++ (id)createItemForIdentifier:(id)arg1 statusBar:(id)arg2;
++ (Class)itemClassForIdentifier:(id)arg1;
 + (id)defaultDisplayIdentifier;
 + (id)identifier;
 + (id)itemIdentifierForDisplayItemIdentifier:(id)arg1;
@@ -35,6 +35,7 @@
 - (void)prepareAnimation:(id)arg1 forDisplayItem:(id)arg2;
 - (id)removalAnimationForDisplayItemWithIdentifier:(id)arg1;
 - (id)additionAnimationForDisplayItemWithIdentifier:(id)arg1;
+- (void)updatedDisplayItemsWithData:(id)arg1;
 - (void)applyStyleAttributes:(id)arg1 toDisplayItem:(id)arg2;
 - (id)applyUpdate:(id)arg1 toDisplayItem:(id)arg2;
 - (id)_applyUpdate:(id)arg1 toDisplayItem:(id)arg2;

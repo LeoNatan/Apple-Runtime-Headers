@@ -10,9 +10,6 @@
 {
 }
 
-+ (unsigned long long)_deviceCategoryForDeviceProductType:(id)arg1;
-+ (id)deviceCategoryStringRepresentationForCategoryType:(unsigned long long)arg1;
-+ (BOOL)isCurrentDeviceCompatibleWithVoiceProfileAt:(id)arg1;
 + (id)sharedPreferences;
 - (BOOL)useSiriActivationSPIForHomePod;
 - (unsigned long long)maxNumLoggingFiles;
@@ -28,23 +25,33 @@
 - (id)interstitialRelativeDirForLevel:(long long)arg1;
 - (double)remoteVoiceTriggerEndpointTimeoutWithDefault:(double)arg1;
 - (double)remoteVoiceTriggerDelayTime;
+- (void)notifyUserVoiceProfileDownloadReadyForUser:(id)arg1 getData:(CDUnknownBlockType)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)notifyUserVoiceProfileUploadComplete:(id)arg1;
+- (void)uploadUserVoiceProfile:(CDUnknownBlockType)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)markSATEnrollmentSuccessForLanguageCode:(id)arg1;
 - (BOOL)_markSATEnrollmentWithMarker:(id)arg1 forLanguage:(id)arg2;
 - (BOOL)_markSATEnrollmentMigratedForLanguageCode:(id)arg1;
 - (BOOL)_markSATEnrollmentSuccessForLanguageCode:(id)arg1;
 - (void)notifyUserVoiceProfileUpdateReady;
+- (id)_getUserVoiceProfileUpdateDirectoryWithUpdatePath:(id)arg1;
 - (id)getUserVoiceProfileUpdateDirectory;
+- (id)getUserVoiceProfileUpdateDirectoryForNewerZone;
 - (BOOL)_isDirectory:(id)arg1;
 - (void)notifyUserVoiceProfileUploadComplete;
 - (BOOL)_encryptPHSMigratedFileAt:(id)arg1 andSaveTo:(id)arg2 error:(id *)arg3;
 - (BOOL)_decryptFileForPHSMigrationAt:(id)arg1 andSaveTo:(id)arg2 error:(id *)arg3;
+- (BOOL)_copyPHSMigratedFilesAt:(id)arg1 andSaveTo:(id)arg2 error:(id *)arg3;
 - (id)getUserVoiceProfileUploadPathWithEnrolledLanguageList:(id *)arg1;
-- (id)getUserVoiceProfileUploadPath;
 - (id)getUserVoiceProfileFileList;
 - (id)_getEnrolledLanguageList;
 - (id)_CSSATUploadPath;
-- (id)_CSSATUpdatePath;
+- (id)_CSSATDownloadPathForNewerZone;
+- (id)_CSSATDownloadPath;
 - (id)CSSATBasePath;
 - (void)_secureSatBasePathAt:(id)arg1;
+- (long long)getJarvisTriggerMode;
+- (void)setJarvisTriggerMode:(long long)arg1;
+- (BOOL)jarvisAudioLoggingEnabled;
 - (BOOL)secondPassAudioLoggingEnabled;
 - (id)assistantAudioFileLogDirectory;
 - (id)assistantLogDirectory;

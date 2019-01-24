@@ -336,12 +336,6 @@ typedef struct Vector<WTF::RefPtr<SafariShared::BookmarkAndHistoryCompletionMatc
     unsigned int _field3;
 } Vector_fc835981;
 
-typedef struct Vector<double, 0, WTF::CrashOnOverflow, 16> {
-    double *m_buffer;
-    unsigned int m_capacity;
-    unsigned int m_size;
-} Vector_23cb8338;
-
 typedef struct Vector<int, 0, WTF::CrashOnOverflow, 16> {
     int *m_buffer;
     unsigned int m_capacity;

@@ -8,10 +8,11 @@
 
 #import <iTunesCloud/NSCopying-Protocol.h>
 #import <iTunesCloud/NSMutableCopying-Protocol.h>
+#import <iTunesCloud/NSSecureCoding-Protocol.h>
 
 @class NSString;
 
-@interface ICClientInfo : NSObject <NSCopying, NSMutableCopying>
+@interface ICClientInfo : NSObject <NSCopying, NSMutableCopying, NSSecureCoding>
 {
     NSString *_processName;
     NSString *_clientIdentifier;
@@ -20,6 +21,7 @@
     NSString *_requestingBundleVersion;
 }
 
++ (_Bool)supportsSecureCoding;
 + (id)defaultInfo;
 @property(readonly, copy, nonatomic) NSString *requestingBundleVersion; // @synthesize requestingBundleVersion=_requestingBundleVersion;
 @property(readonly, copy, nonatomic) NSString *requestingBundleIdentifier; // @synthesize requestingBundleIdentifier=_requestingBundleIdentifier;
@@ -27,6 +29,8 @@
 @property(readonly, copy, nonatomic) NSString *clientIdentifier; // @synthesize clientIdentifier=_clientIdentifier;
 @property(readonly, copy, nonatomic) NSString *processName; // @synthesize processName=_processName;
 - (void).cxx_destruct;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (id)_clientInfoCopyWithClass:(Class)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

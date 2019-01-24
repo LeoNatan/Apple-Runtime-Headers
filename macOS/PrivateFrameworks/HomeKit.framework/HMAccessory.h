@@ -74,6 +74,7 @@
 
 + (id)logCategory;
 + (BOOL)supportsSecureCoding;
++ (id)_televisionProfilesForAccessoryServices:(id)arg1;
 + (id)_cameraProfilesForAccessoryProfiles:(id)arg1;
 + (id)_mediaProfilesForAccessoryProfiles:(id)arg1;
 @property(retain, nonatomic) HMMutableArray *accessoryProfiles; // @synthesize accessoryProfiles=_accessoryProfiles;
@@ -116,6 +117,7 @@
 - (void)_configureProfilesWithContext:(id)arg1;
 @property(readonly, copy) NSArray *profiles;
 - (void)_handleAccessoryCategoryChanged:(id)arg1;
+- (void)_handleServiceMediaSourceIdentifierUpdated:(id)arg1;
 - (void)_handleServiceConfigurationState:(id)arg1;
 - (void)_handleServiceSubtype:(id)arg1;
 - (void)_handleServiceTypeAssociated:(id)arg1;
@@ -132,6 +134,7 @@
 - (void)updateAccessoryInfo:(id)arg1;
 - (void)_handleAccessoryFlagsChanged:(id)arg1;
 - (void)_handleServicesUpdated:(id)arg1;
+- (void)_checkForTelevisionProfileChanges:(id)arg1;
 - (void)_handleAccessoryNotificationsUpdated:(id)arg1;
 - (void)_handleCharacteristicsUpdated:(id)arg1;
 - (void)_handleConnectivityChanged:(id)arg1;
@@ -226,6 +229,7 @@
 - (void)__configureWithContext:(id)arg1 home:(id)arg2;
 - (void)dealloc;
 - (id)init;
+@property(readonly, copy, nonatomic) NSArray *televisionProfiles;
 @property(readonly, copy, nonatomic) NSArray *cameraProfiles;
 - (id)mediaProfile;
 

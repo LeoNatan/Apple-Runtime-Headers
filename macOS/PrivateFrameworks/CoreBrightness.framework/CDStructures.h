@@ -123,6 +123,17 @@ typedef struct {
 } CDStruct_c688133d;
 
 typedef struct {
+    double X;
+    double Y;
+    double Z;
+} CDStruct_6f955ef8;
+
+typedef struct {
+    double x;
+    double y;
+} CDStruct_34734122;
+
+typedef struct {
     float minCCT;
     float maxCCT;
     float midCCT;

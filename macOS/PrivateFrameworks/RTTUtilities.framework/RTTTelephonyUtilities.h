@@ -7,12 +7,14 @@
 #import <objc/NSObject.h>
 
 #import <RTTUtilities/CoreTelephonyClientCarrierBundleDelegate-Protocol.h>
+#import <RTTUtilities/TUCallCapabilitiesDelegatePrivate-Protocol.h>
 
-@class CTXPCServiceSubscriptionContext, CoreTelephonyClient, NSString;
+@class ACAccountStore, CTXPCServiceSubscriptionContext, CoreTelephonyClient, NSString;
 @protocol OS_dispatch_queue;
 
-@interface RTTTelephonyUtilities : NSObject <CoreTelephonyClientCarrierBundleDelegate>
+@interface RTTTelephonyUtilities : NSObject <CoreTelephonyClientCarrierBundleDelegate, TUCallCapabilitiesDelegatePrivate>
 {
+    ACAccountStore *_accountStore;
     BOOL _headphoneJackSupportsTTY;
     CTXPCServiceSubscriptionContext *_defaultVoiceContext;
     unsigned long long _activeContextCount;
@@ -47,6 +49,11 @@
 @property(nonatomic) unsigned long long activeContextCount; // @synthesize activeContextCount=_activeContextCount;
 @property(retain, nonatomic) CTXPCServiceSubscriptionContext *defaultVoiceContext; // @synthesize defaultVoiceContext=_defaultVoiceContext;
 - (void).cxx_destruct;
+- (BOOL)relayRTTIsSupported;
+- (void)iCloudAccountDidChange:(id)arg1;
+- (void)iCloudRTTRelayDidChange:(id)arg1;
+- (void)didChangeOutgoingRelayCallerID;
+- (void)listenForCloudRelayChanges;
 - (id)relayNumberForContext:(id)arg1;
 - (BOOL)isTTYSupportedForContext:(id)arg1;
 - (BOOL)isTTYOverIMSSupportedForContext:(id)arg1;

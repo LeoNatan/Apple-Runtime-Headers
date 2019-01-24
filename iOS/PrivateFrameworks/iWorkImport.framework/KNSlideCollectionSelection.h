@@ -27,8 +27,8 @@ __attribute__((visibility("hidden")))
 - (id)init;
 - (id)initWithSlideNode:(id)arg1;
 - (id)initWithSlideNodes:(id)arg1 slideNodeToEdit:(id)arg2;
-- (void)saveToArchive:(struct SlideCollectionSelectionArchive *)arg1 archiver:(id)arg2;
-- (id)initWithArchive:(const struct SlideCollectionSelectionArchive *)arg1 unarchiver:(id)arg2;
+-     // Error parsing type: v32@0:8^{SlideCollectionSelectionArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}{RepeatedPtrField<KN::SlideCollectionSelectionArchive_OutlineSelection>=^{Arena}ii^{Rep}}^{Reference}^{Range}}16@24, name: saveToArchive:archiver:
+-     // Error parsing type: @32@0:8r^{SlideCollectionSelectionArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}{RepeatedPtrField<KN::SlideCollectionSelectionArchive_OutlineSelection>=^{Arena}ii^{Rep}}^{Reference}^{Range}}16@24, name: initWithArchive:unarchiver:
 
 @end
 

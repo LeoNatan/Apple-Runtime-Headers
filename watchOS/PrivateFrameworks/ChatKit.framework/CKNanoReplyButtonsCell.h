@@ -13,19 +13,19 @@
 
 @interface CKNanoReplyButtonsCell : CKTranscriptCell <CKNanoReplyButtonsViewDelegate>
 {
-    _Bool _shouldShowSurf;
     id <CKNanoReplyButtonsCellDelegate> _replyDelegate;
-    NSString *_primaryLanguage;
     CKNanoReplyButtonsView *_replyButtons;
 }
 
++ (float)defaultCellHeightForLanguage:(id)arg1 shouldShowSurf:(_Bool)arg2;
 + (float)defaultCellHeightForLanguage:(id)arg1;
 @property(retain, nonatomic) CKNanoReplyButtonsView *replyButtons; // @synthesize replyButtons=_replyButtons;
-@property(nonatomic) _Bool shouldShowSurf; // @synthesize shouldShowSurf=_shouldShowSurf;
-@property(copy, nonatomic) NSString *primaryLanguage; // @synthesize primaryLanguage=_primaryLanguage;
 @property(nonatomic) __weak id <CKNanoReplyButtonsCellDelegate> replyDelegate; // @synthesize replyDelegate=_replyDelegate;
 - (void).cxx_destruct;
 - (void)replyButtonsView:(id)arg1 tappedReplyType:(unsigned int)arg2;
+@property(readonly, nonatomic) _Bool shouldShowSurf;
+@property(readonly, copy, nonatomic) NSString *primaryLanguage;
+- (void)setPrimaryLanguage:(id)arg1 shouldShowSurf:(_Bool)arg2 buttonTintColor:(id)arg3;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 // Remaining properties

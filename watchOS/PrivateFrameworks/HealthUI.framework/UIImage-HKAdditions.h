@@ -7,6 +7,7 @@
 #import <UIKit/UIImage.h>
 
 @interface UIImage (HKAdditions)
++ (id)hk_electrocardiogramHeartImage;
 + (id)hk_disclosureChevronImage;
 + (id)hk_transparentInterfaceImageWithSize:(struct CGSize)arg1;
 - (id)hk_resizedInterfaceImageWithSize:(struct CGSize)arg1;

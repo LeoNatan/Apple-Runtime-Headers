@@ -55,7 +55,6 @@
     unsigned int _isHandlingCrownEvents:1;
 }
 
-+ (void)_prewarmForDevice:(id)arg1;
 - (void).cxx_destruct;
 - (void)_renderSynchronouslyWithImageQueueDiscard:(_Bool)arg1;
 - (void)_applyOption:(id)arg1 forCustomEditMode:(long long)arg2 slot:(id)arg3;

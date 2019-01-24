@@ -34,7 +34,8 @@
 - (id)appLimitsDetailText;
 - (void)bedtimeListController:(id)arg1 didFinishEditingBedtime:(id)arg2;
 - (void)showDeviceBedtimeViewController:(id)arg1;
-- (id)deviceDowntimeDetailText;
+- (id)_subtitleTextForDeviceBedtime:(id)arg1;
+- (void)_deviceBedtimeDidChange:(id)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)setCoordinator:(id)arg1;
 - (id)init;

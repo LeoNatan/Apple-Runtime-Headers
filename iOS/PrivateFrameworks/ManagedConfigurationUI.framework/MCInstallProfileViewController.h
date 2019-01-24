@@ -11,13 +11,14 @@
 #import <ManagedConfigurationUI/MCInstallationWarningDelegate-Protocol.h>
 #import <ManagedConfigurationUI/MCInteractionDelegate-Protocol.h>
 #import <ManagedConfigurationUI/MCProfileQuestionsControllerDelegate-Protocol.h>
+#import <ManagedConfigurationUI/MCProfileViewControllerDelegate-Protocol.h>
 #import <ManagedConfigurationUI/PSStateRestoration-Protocol.h>
 #import <ManagedConfigurationUI/UIAlertViewDelegate-Protocol.h>
 
 @class MCInstallProfileQuestionViewController, MCProfile, MCProfileViewController, NSArray, NSData, NSSManager, NSString, UIAlertController;
 @protocol MCInstallProfileDelegate;
 
-@interface MCInstallProfileViewController : UIViewController <MCInstallationConsentDelegate, MCInstallationWarningDelegate, MCProfileQuestionsControllerDelegate, PSStateRestoration, UIAlertViewDelegate, DevicePINControllerDelegate, MCInteractionDelegate>
+@interface MCInstallProfileViewController : UIViewController <MCInstallationConsentDelegate, MCInstallationWarningDelegate, MCProfileQuestionsControllerDelegate, PSStateRestoration, UIAlertViewDelegate, DevicePINControllerDelegate, MCProfileViewControllerDelegate, MCInteractionDelegate>
 {
     MCInstallProfileQuestionViewController *_questionsController;
     CDUnknownBlockType _didAppearBlock;
@@ -28,6 +29,7 @@
     _Bool _isInteractionDelegate;
     _Bool _secondaryProfileReceived;
     _Bool _initialQuestionsHaveBeenAsked;
+    _Bool _installingFromPurgatory;
     _Bool _delayUserInput;
     int _installState;
     NSString *_pin;
@@ -58,6 +60,7 @@
 @property(retain, nonatomic) NSData *profileData; // @synthesize profileData=_profileData;
 @property(retain, nonatomic) MCProfile *profile; // @synthesize profile=_profile;
 @property(retain, nonatomic) NSString *pin; // @synthesize pin=_pin;
+@property(nonatomic) _Bool installingFromPurgatory; // @synthesize installingFromPurgatory=_installingFromPurgatory;
 @property(nonatomic) _Bool initialQuestionsHaveBeenAsked; // @synthesize initialQuestionsHaveBeenAsked=_initialQuestionsHaveBeenAsked;
 @property(nonatomic) _Bool secondaryProfileReceived; // @synthesize secondaryProfileReceived=_secondaryProfileReceived;
 @property(nonatomic) _Bool isInteractionDelegate; // @synthesize isInteractionDelegate=_isInteractionDelegate;
@@ -66,6 +69,15 @@
 @property(nonatomic) _Bool installHasFailed; // @synthesize installHasFailed=_installHasFailed;
 @property(nonatomic) _Bool processingPayload; // @synthesize processingPayload=_processingPayload;
 - (void).cxx_destruct;
+- (void)_profileRemovalDidFinish;
+- (void)_removePhoneProfileWithIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)_removeWatchProfileWithIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)performRemoveAfterFinalVerification;
+- (void)profileViewControllerDidSelectRemoveProfile:(id)arg1;
+- (_Bool)_isProfileInstalled;
+- (void)_hideProgressIndicatorIfNeeded;
+- (void)_hideProgressIndicatorWithShowButtons:(_Bool)arg1;
+- (void)_showProgressIndicator;
 - (_Bool)_signatureForProfile:(id)arg1 matchesProfileB:(id)arg2;
 - (void)_cancelActiveAlertController:(_Bool)arg1;
 - (void)_showAlertForInstallError:(id)arg1;
@@ -107,9 +119,6 @@
 - (void)installProfileRemotelyWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)_installProfile;
 - (void)_takeMeBack;
-- (void)_hideProgressIndicatorIfNeeded;
-- (void)_hideProgressIndicatorWithShowButtons:(_Bool)arg1;
-- (void)_showProgressIndicator;
 - (void)_setDidAppearBlock:(CDUnknownBlockType)arg1;
 - (_Bool)_displayedAsSheet;
 - (id)newRightBarButtonItem;
@@ -122,12 +131,11 @@
 - (_Bool)canBeShownFromSuspendedState;
 - (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewDidAppear:(_Bool)arg1;
-- (void)viewWillAppear:(_Bool)arg1;
-- (void)viewDidLoad;
-- (void)didReceiveMemoryWarning;
 - (void)dealloc;
-- (id)initWithProfile:(id)arg1;
-- (id)initWithProfileData:(id)arg1;
+- (id)initCommonWithProfile:(id)arg1 profileViewMode:(long long)arg2 swizzle:(_Bool)arg3;
+- (id)initCommonWithProfileData:(id)arg1 profileViewMode:(long long)arg2 swizzle:(_Bool)arg3;
+- (id)initWithProfileDataFromPurgatory:(id)arg1;
+- (id)initWithProfileDataFromSettingsJump:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

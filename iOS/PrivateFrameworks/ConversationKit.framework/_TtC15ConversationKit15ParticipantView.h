@@ -36,6 +36,7 @@ __attribute__((visibility("hidden")))
     // Error parsing type: , name: overlayViewBottomLayoutGuide
     // Error parsing type: , name: overlayConstraints
     // Error parsing type: , name: labelState
+    // Error parsing type: , name: overallLayoutState
     // Error parsing type: , name: backgroundBackdropView
     // Error parsing type: , name: debugProminenceLabel
     // Error parsing type: , name: bottomBarHideTimer
@@ -43,7 +44,7 @@ __attribute__((visibility("hidden")))
     // Error parsing type: , name: delegate
 }
 
-- (CDUnknownBlockType).cxx_destruct;
+- (void).cxx_destruct;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (_Bool)accessibilityIsShowingVideo;
 - (id)initWithCoder:(id)arg1;

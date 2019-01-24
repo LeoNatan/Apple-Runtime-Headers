@@ -36,6 +36,9 @@ __attribute__((visibility("hidden")))
 - (id)actionController;
 - (void)webViewControllerDidChangeEstimatedProgress:(id)arg1;
 - (void)webViewControllerReaderDidBecomeReady:(id)arg1;
+- (void)webViewController:(id)arg1 didFinishNavigation:(id)arg2;
+- (void)webViewController:(id)arg1 didFinishDocumentLoadForNavigation:(id)arg2;
+- (void)webViewController:(id)arg1 didCommitNavigation:(id)arg2;
 - (void)webViewControllerDidFirstVisuallyNonEmptyLayout:(id)arg1;
 - (void)webViewControllerDidDetermineReaderAvailability:(id)arg1 dueToSameDocumentNavigation:(_Bool)arg2;
 - (void)webViewControllerWebProcessDidBecomeResponsive:(id)arg1;
@@ -56,6 +59,7 @@ __attribute__((visibility("hidden")))
 - (void)prewarmWebProcess;
 - (void)loadRequest:(id)arg1;
 - (void)loadRequestAndResetState:(id)arg1;
+- (void)webViewControllerDidShowSafeBrowsingWarning:(id)arg1;
 - (void)_transitionFromBlankingViewState:(int)arg1 toState:(int)arg2;
 - (void)loadView;
 - (void)dealloc;

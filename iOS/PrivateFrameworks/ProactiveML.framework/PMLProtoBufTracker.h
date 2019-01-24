@@ -26,6 +26,8 @@
 + (id)parsecTrackerForPlanId:(struct NSString *)arg1;
 + (id)awdTrackerForPlanId:(struct NSString *)arg1;
 + (id)trackerForPlanId:(struct NSString *)arg1;
+@property(readonly) unsigned long long quantizationNumberOfBuckets; // @synthesize quantizationNumberOfBuckets=_quantizationNumberOfBuckets;
+@property(readonly) AWDProactiveModelFittingModelInfo *modelInfo; // @synthesize modelInfo=_modelInfo;
 @property(readonly) id <PMLTrackerAdapterProtocol> adapter; // @synthesize adapter=_adapter;
 - (void).cxx_destruct;
 - (id)initWithPlist:(id)arg1 chunks:(id)arg2 context:(id)arg3;

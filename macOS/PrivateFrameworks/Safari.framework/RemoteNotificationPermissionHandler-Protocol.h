@@ -9,6 +9,6 @@
 @class NSDictionary, NSString, NSURL;
 
 @protocol RemoteNotificationPermissionHandler <NSObject>
-- (void)requestRemoteNotificationPermissionForAPIURL:(NSURL *)arg1 websiteIdentifier:(NSString *)arg2 processingUserGesture:(BOOL)arg3 queryParameters:(NSDictionary *)arg4;
+- (void)requestRemoteNotificationPermissionForAPIURL:(NSURL *)arg1 websiteIdentifier:(NSString *)arg2 queryParameters:(NSDictionary *)arg3;
 @end
 

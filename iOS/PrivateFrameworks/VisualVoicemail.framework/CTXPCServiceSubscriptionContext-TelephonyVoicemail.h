@@ -11,7 +11,10 @@
 @class NSNumber, NSString, NSUUID;
 
 @interface CTXPCServiceSubscriptionContext (TelephonyVoicemail) <VMTelephonySubscription>
++ (id)telephonyClient;
+@property(readonly, nonatomic) NSString *vm_telephoneNumber;
 @property(readonly, nonatomic) NSUUID *vm_labelUUID;
+@property(readonly, nonatomic) NSString *vm_isoCountryCode;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

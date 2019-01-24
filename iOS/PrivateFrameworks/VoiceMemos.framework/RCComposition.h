@@ -33,6 +33,8 @@
 + (id)_compositionMetadataURLForComposedAVURL:(id)arg1;
 + (id)_compositionMetadataURLForCompositionBundleURL:(id)arg1;
 + (id)compositionBundleURLForComposedAVURL:(id)arg1;
++ (_Bool)includeInBackup:(id)arg1 error:(id *)arg2;
++ (_Bool)excludeFromBackup:(id)arg1 error:(id *)arg2;
 + (void)deleteFromFilesystem:(id)arg1;
 + (id)compositionWithComposedAVURL:(id)arg1;
 + (id)compositionLoadedForSavedRecordingUUID:(id)arg1;

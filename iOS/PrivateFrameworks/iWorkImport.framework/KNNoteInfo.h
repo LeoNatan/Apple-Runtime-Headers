@@ -39,7 +39,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) _Bool preventsChangeTracking;
 @property(readonly, nonatomic) _Bool preventsComments;
 @property(readonly, nonatomic) _Bool textIsLinked;
-@property(readonly, nonatomic) _Bool textIsVertical;
+- (_Bool)textIsVerticalAtCharIndex:(unsigned long long)arg1;
 @property(readonly, nonatomic) _Bool autoListTermination;
 @property(readonly, nonatomic) _Bool autoListRecognition;
 - (void)wasRemovedFromDocumentRoot:(id)arg1;
@@ -66,8 +66,8 @@ __attribute__((visibility("hidden")))
 - (void)dealloc;
 - (id)initWithContext:(id)arg1;
 - (id)initWithContext:(id)arg1 containedStorage:(id)arg2;
-- (void)saveToArchive:(struct NoteArchive *)arg1 archiver:(id)arg2;
-- (void)loadFromArchive:(const struct NoteArchive *)arg1 unarchiver:(id)arg2;
+-     // Error parsing type: v32@0:8^{NoteArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{Reference}}16@24, name: saveToArchive:archiver:
+-     // Error parsing type: v32@0:8r^{NoteArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{Reference}}16@24, name: loadFromArchive:unarchiver:
 - (void)saveToArchiver:(id)arg1;
 - (void)loadFromUnarchiver:(id)arg1;
 

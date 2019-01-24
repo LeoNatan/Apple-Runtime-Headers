@@ -30,6 +30,7 @@
 - (_Bool)hasAffiliationWithClassification:(id)arg1 forDirection:(long long)arg2;
 - (Class)componentModelClass;
 @property(readonly, nonatomic) unsigned long long contentRelevance;
+- (id)defaultIdentifiersForRoleString:(id)arg1;
 @property(readonly, nonatomic) NSArray *defaultComponentStyleIdentifiers;
 @property(readonly, nonatomic) NSArray *defaultTextStyleIdentifiers;
 @property(readonly, nonatomic) SXComponentTextRules *textRules; // @synthesize textRules=_textRules;

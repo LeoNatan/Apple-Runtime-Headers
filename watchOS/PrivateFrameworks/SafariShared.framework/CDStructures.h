@@ -295,6 +295,12 @@ typedef struct {
 } CDStruct_c257eafb;
 
 typedef struct {
+    int majorVersion;
+    int minorVersion;
+    int patchVersion;
+} CDStruct_4bb15e50;
+
+typedef struct {
     struct {
         unsigned short _field1;
         unsigned short _field2;
@@ -324,12 +330,6 @@ typedef struct Vector<WTF::RefPtr<SafariShared::BookmarkAndHistoryCompletionMatc
     unsigned int _field2;
     unsigned int _field3;
 } Vector_fc835981;
-
-typedef struct Vector<double, 0, WTF::CrashOnOverflow, 16> {
-    double *m_buffer;
-    unsigned int m_capacity;
-    unsigned int m_size;
-} Vector_23cb8338;
 
 typedef struct Vector<int, 0, WTF::CrashOnOverflow, 16> {
     int *m_buffer;
@@ -399,6 +399,7 @@ typedef union {
         unsigned int looksLikeYearField:1;
         unsigned int looksLikeIgnoredDataTypeField:1;
         unsigned int looksLikePasswordCredentialField:1;
+        unsigned int looksLikeOneTimeCodeField:1;
         unsigned int visible:1;
         unsigned int active:1;
         unsigned int disabled:1;
@@ -410,5 +411,5 @@ typedef union {
         unsigned int labeledUsernameField:1;
     } flags;
     int asInteger;
-} CDUnion_7ece76f8;
+} CDUnion_2e36ff12;
 

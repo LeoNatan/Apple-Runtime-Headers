@@ -8,7 +8,7 @@
 
 #import <NewsTransport/NSCopying-Protocol.h>
 
-@class NSData, NSString;
+@class NSData, NSString, NTPBIssueData;
 
 @interface NTPBAlreadySubscriberSignIn : PBCodable <NSCopying>
 {
@@ -21,6 +21,7 @@
     NSString *_errorMessage;
     int _groupType;
     NSString *_iadQtoken;
+    NTPBIssueData *_issueData;
     int _paidSubscriptionConversionPointType;
     int _parentFeedType;
     NSString *_sectionId;
@@ -39,6 +40,7 @@
     } _has;
 }
 
+@property(retain, nonatomic) NTPBIssueData *issueData; // @synthesize issueData=_issueData;
 @property(retain, nonatomic) NSString *creativeId; // @synthesize creativeId=_creativeId;
 @property(retain, nonatomic) NSString *campaignType; // @synthesize campaignType=_campaignType;
 @property(retain, nonatomic) NSString *campaignId; // @synthesize campaignId=_campaignId;
@@ -62,6 +64,7 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(readonly, nonatomic) _Bool hasIssueData;
 - (int)StringAsGroupType:(id)arg1;
 - (id)groupTypeAsString:(int)arg1;
 @property(nonatomic) _Bool hasGroupType;

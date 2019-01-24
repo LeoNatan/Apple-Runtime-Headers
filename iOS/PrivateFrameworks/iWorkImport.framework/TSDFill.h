@@ -19,7 +19,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (_Bool)tsch_hasAllResourcesForFill:(id)arg1;
-+ (id)instanceWithArchive:(const struct FillArchive *)arg1 unarchiver:(id)arg2;
++     // Error parsing type: @32@0:8r^{FillArchive=^^?{ExtensionSet=^{Arena}SS(AllocatedData=^{KeyValue}^{map<int, google::protobuf::internal::ExtensionSet::Extension, std::__1::less<int>, std::__1::allocator<std::__1::pair<const int, google::protobuf::internal::ExtensionSet::Extension> > >})}{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{Color}^{GradientArchive}^{ImageFillArchive}}16@24, name: instanceWithArchive:unarchiver:
 + (void)registerSubclass:(Class)arg1;
 + (id)p_subclassRegistry;
 @property(readonly, nonatomic) NSString *presetKind;
@@ -30,12 +30,6 @@ __attribute__((visibility("hidden")))
 - (_Bool)requiresOutlineOnBackgroundWithAppearance:(unsigned long long)arg1;
 - (_Bool)isNearlyWhite;
 - (_Bool)isOpaque;
-- (void)applyToCAShapeLayer:(id)arg1 withScale:(double)arg2;
-- (_Bool)canApplyToCAShapeLayer;
-- (void)applyToCALayer:(id)arg1 withScale:(double)arg2;
-- (_Bool)shouldBeReappliedToCALayer:(id)arg1;
-- (_Bool)canApplyToCALayerByAddingSublayers;
-- (_Bool)canApplyToCALayer;
 - (void)paintPath:(struct CGPath *)arg1 inContext:(struct CGContext *)arg2;
 - (void)drawSwatchInRect:(struct CGRect)arg1 inContext:(struct CGContext *)arg2;
 - (void)paintPath:(struct CGPath *)arg1 naturalBounds:(struct CGRect)arg2 inContext:(struct CGContext *)arg3 isPDF:(_Bool)arg4;
@@ -44,8 +38,8 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) _Bool tsch_hasAllResources; // @dynamic tsch_hasAllResources;
 - (void)saveToPropertyCommandMessage:(struct Message *)arg1 archiver:(id)arg2;
 - (id)initFromPropertyCommandMessage:(const struct Message *)arg1 unarchiver:(id)arg2;
-- (void)saveToArchive:(struct FillArchive *)arg1 archiver:(id)arg2;
-- (id)initWithArchive:(const struct FillArchive *)arg1 unarchiver:(id)arg2;
+-     // Error parsing type: v32@0:8^{FillArchive=^^?{ExtensionSet=^{Arena}SS(AllocatedData=^{KeyValue}^{map<int, google::protobuf::internal::ExtensionSet::Extension, std::__1::less<int>, std::__1::allocator<std::__1::pair<const int, google::protobuf::internal::ExtensionSet::Extension> > >})}{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{Color}^{GradientArchive}^{ImageFillArchive}}16@24, name: saveToArchive:archiver:
+-     // Error parsing type: @32@0:8r^{FillArchive=^^?{ExtensionSet=^{Arena}SS(AllocatedData=^{KeyValue}^{map<int, google::protobuf::internal::ExtensionSet::Extension, std::__1::less<int>, std::__1::allocator<std::__1::pair<const int, google::protobuf::internal::ExtensionSet::Extension> > >})}{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{Color}^{GradientArchive}^{ImageFillArchive}}16@24, name: initWithArchive:unarchiver:
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

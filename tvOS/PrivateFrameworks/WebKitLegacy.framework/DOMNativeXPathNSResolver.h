@@ -16,7 +16,6 @@ __attribute__((visibility("hidden")))
 }
 
 - (id)lookupNamespaceURI:(id)arg1;
-- (void)finalize;
 - (void)dealloc;
 
 // Remaining properties

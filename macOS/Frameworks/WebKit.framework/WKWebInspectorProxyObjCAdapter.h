@@ -9,15 +9,18 @@
 #import <WebKit/NSWindowDelegate-Protocol.h>
 #import <WebKit/WKInspectorViewControllerDelegate-Protocol.h>
 
-@class NSString;
+@class NSString, _WKInspector;
 
 @interface WKWebInspectorProxyObjCAdapter : NSObject <WKInspectorViewControllerDelegate, NSWindowDelegate>
 {
     struct WebInspectorProxy *_inspectorProxy;
 }
 
+- (void)inspectorViewControllerDidMoveToWindow:(id)arg1;
+- (void)inspectorViewController:(id)arg1 willMoveToWindow:(id)arg2;
 - (BOOL)inspectorViewControllerInspectorIsUnderTest:(id)arg1;
 - (void)inspectorViewControllerInspectorDidCrash:(id)arg1;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)inspectedViewFrameDidChange:(id)arg1;
 - (void)windowDidExitFullScreen:(id)arg1;
 - (void)windowDidEnterFullScreen:(id)arg1;
@@ -26,6 +29,7 @@
 - (void)windowDidMove:(id)arg1;
 - (void)invalidate;
 - (id)initWithWebInspectorProxy:(struct WebInspectorProxy *)arg1;
+@property(readonly) _WKInspector *inspector;
 @property(readonly) struct OpaqueWKInspector *inspectorRef;
 
 // Remaining properties

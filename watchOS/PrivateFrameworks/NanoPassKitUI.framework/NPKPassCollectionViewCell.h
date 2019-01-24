@@ -8,12 +8,13 @@
 
 #import <NanoPassKitUI/NPKPassViewDelegate-Protocol.h>
 #import <NanoPassKitUI/NPKScrollOverFixedContentFadeAndScaleAnimationCoordinatorDelegate-Protocol.h>
+#import <NanoPassKitUI/NPKStandardPassViewDelegate-Protocol.h>
 #import <NanoPassKitUI/UIScrollViewDelegate-Protocol.h>
 
 @class NPKActivatingUIAssertion, NPKGenericPassView, NPKPassView, NPKPaymentStatusView, NPKScrollOverFixedContentFadeAndScaleAnimationCoordinator, NSMutableArray, NSString, PKPass, UIImageView, UIScrollView, UITapGestureRecognizer;
 @protocol NPKPassActionControllerProtocol, NPKPassCollectionViewCellDelegate;
 
-@interface NPKPassCollectionViewCell : UICollectionViewCell <UIScrollViewDelegate, NPKPassViewDelegate, NPKScrollOverFixedContentFadeAndScaleAnimationCoordinatorDelegate>
+@interface NPKPassCollectionViewCell : UICollectionViewCell <UIScrollViewDelegate, NPKPassViewDelegate, NPKScrollOverFixedContentFadeAndScaleAnimationCoordinatorDelegate, NPKStandardPassViewDelegate>
 {
     BOOL _detailTableViewContentObjectKvoContext;
     _Bool _hasLoadedRasterizedImage;
@@ -55,6 +56,8 @@
 @property(nonatomic) __weak id <NPKPassActionControllerProtocol> actionControllerDelegate; // @synthesize actionControllerDelegate=_actionControllerDelegate;
 @property(nonatomic) __weak id <NPKPassCollectionViewCellDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (float)_scrollViewBottomContentInsetWithPass:(id)arg1;
+- (void)standardPassView:(id)arg1 didDismissAccessoryViewController:(id)arg2;
 - (void)fadeAndScaleAndimationCoordinator:(id)arg1 didUpdateSideButtonAlignedAlpha:(float)arg2 otherContentAlpha:(float)arg3 scale:(float)arg4;
 - (void)resetFadeAndScaleEffect;
 - (void)scrollViewDidEndScrollingAnimation:(id)arg1;

@@ -6,12 +6,15 @@
 
 #import <CoreSuggestionsInternals/SGPipelineDissector.h>
 
-@class SGDetectedAttributeML, SGQuickResponsesML;
+@class SGContactPipelineHelper, SGDetectedAttributeML, SGQuickResponsesML;
 
 @interface SGDetectedAttributeDissector : SGPipelineDissector
 {
     SGDetectedAttributeML *_ml;
     SGQuickResponsesML *_mlQR;
+    SGContactPipelineHelper *_contactsHelper;
+    BOOL _filterWithAddressBook;
+    float _unlikelyPhoneSamplingRate;
     unsigned long long _selfIdentificationMessageCount;
 }
 

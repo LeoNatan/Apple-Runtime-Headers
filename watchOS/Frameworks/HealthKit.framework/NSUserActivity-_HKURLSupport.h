@@ -7,5 +7,7 @@
 #import <Foundation/NSUserActivity.h>
 
 @interface NSUserActivity (_HKURLSupport)
++ (id)_hk_userActivityForAtrialFibrillationEventType;
++ (id)_hk_userActivityForElectrocardiogramType;
 @end
 

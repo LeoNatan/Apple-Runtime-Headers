@@ -15,6 +15,7 @@
     CDUnknownBlockType _changeCallback;
     NSData *_salt;
     CKRecordID *_saltAtomicReferenceId;
+    NSNumber *_saltUsesManatee;
     CKServerChangeToken *_syncToken;
     NSNumber *_hasSubscription;
     NSNumber *_eventsWereRemovedFromEventKit;
@@ -27,6 +28,7 @@
 @property(retain, nonatomic) NSNumber *eventsWereRemovedFromEventKit; // @synthesize eventsWereRemovedFromEventKit=_eventsWereRemovedFromEventKit;
 @property(retain, nonatomic) NSNumber *hasSubscription; // @synthesize hasSubscription=_hasSubscription;
 @property(retain, nonatomic) CKServerChangeToken *syncToken; // @synthesize syncToken=_syncToken;
+@property(retain, nonatomic) NSNumber *saltUsesManatee; // @synthesize saltUsesManatee=_saltUsesManatee;
 @property(retain, nonatomic) CKRecordID *saltAtomicReferenceId; // @synthesize saltAtomicReferenceId=_saltAtomicReferenceId;
 @property(retain, nonatomic) NSData *salt; // @synthesize salt=_salt;
 @property(copy, nonatomic) CDUnknownBlockType changeCallback; // @synthesize changeCallback=_changeCallback;

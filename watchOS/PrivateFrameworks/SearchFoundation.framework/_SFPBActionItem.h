@@ -37,8 +37,12 @@
     _SFPBLatLng *_location;
     NSString *_messageIdentifier;
     _SFPBURL *_messageURL;
+    NSString *_persistentID;
+    int _mediaEntityType;
 }
 
+@property(nonatomic) int mediaEntityType; // @synthesize mediaEntityType=_mediaEntityType;
+@property(copy, nonatomic) NSString *persistentID; // @synthesize persistentID=_persistentID;
 @property(retain, nonatomic) _SFPBURL *messageURL; // @synthesize messageURL=_messageURL;
 @property(copy, nonatomic) NSString *messageIdentifier; // @synthesize messageIdentifier=_messageIdentifier;
 @property(retain, nonatomic) _SFPBLatLng *location; // @synthesize location=_location;

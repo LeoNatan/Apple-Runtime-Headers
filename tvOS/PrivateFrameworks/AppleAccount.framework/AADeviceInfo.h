@@ -12,6 +12,7 @@
 
 + (_Bool)isMultiUserMode;
 + (_Bool)isInternalBuild;
++ (_Bool)locationServicesRestricted;
 + (id)currentInfo;
 + (id)productVersion;
 + (id)userAgentHeader;

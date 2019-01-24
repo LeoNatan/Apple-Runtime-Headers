@@ -6,10 +6,11 @@
 
 #import <SearchFoundation/NSObject-Protocol.h>
 
-@class NSData, NSDictionary, NSString, _SFPBAppIconImage, _SFPBContactImage, _SFPBGraphicalFloat, _SFPBLocalImage, _SFPBMonogramImage, _SFPBPointSize, _SFPBURLImage;
+@class NSData, NSDictionary, NSString, _SFPBAppIconImage, _SFPBContactImage, _SFPBGraphicalFloat, _SFPBLocalImage, _SFPBMediaArtworkImage, _SFPBMonogramImage, _SFPBPointSize, _SFPBURLImage;
 
 @protocol _SFPBImage <NSObject>
 @property(readonly, nonatomic) NSData *jsonData;
+@property(retain, nonatomic) _SFPBMediaArtworkImage *mediaArtworkImage;
 @property(retain, nonatomic) _SFPBAppIconImage *appIconImage;
 @property(retain, nonatomic) _SFPBLocalImage *localImage;
 @property(retain, nonatomic) _SFPBMonogramImage *monogramImage;

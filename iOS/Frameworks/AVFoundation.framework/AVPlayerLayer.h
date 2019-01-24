@@ -63,6 +63,7 @@
 - (_Bool)isLanczosFilterDownscalingEnabled;
 - (_Bool)_isConnectedToSecondScreen;
 - (void)_setIsConnectedToSecondScreen:(_Bool)arg1;
+- (id)videoPerformanceMetrics;
 - (void)setOverscanSubtitleSupportEnabled:(_Bool)arg1;
 - (_Bool)isOverscanSubtitleSupportEnabled;
 - (id)_subtitleLayer;
@@ -103,6 +104,7 @@
 - (void)setContentsScale:(double)arg1;
 - (void)setBounds:(struct CGRect)arg1;
 - (void)layoutSublayers;
+- (id)_compactDescription;
 - (id)initWithLayer:(id)arg1;
 - (id)init;
 

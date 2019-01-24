@@ -13,7 +13,7 @@ __attribute__((visibility("hidden")))
     // Error parsing type: , name: style
 }
 
-- (CDUnknownBlockType).cxx_destruct;
+- (void).cxx_destruct;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (id)initWithCoder:(id)arg1;
 

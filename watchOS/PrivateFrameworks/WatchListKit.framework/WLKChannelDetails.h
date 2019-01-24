@@ -27,11 +27,12 @@
     NSArray *_appAdamIDs;
     NSArray *_appBundleIDs;
     NSString *_appName;
-    NSURL *_appStoreURL;
     WLKArtworkVariantListing *_images;
     NSDictionary *_rateLimit;
+    NSString *_appStoreURLString;
 }
 
+@property(copy, nonatomic) NSString *appStoreURLString; // @synthesize appStoreURLString=_appStoreURLString;
 @property(readonly, nonatomic, getter=isAppInstalled) _Bool appInstalled; // @synthesize appInstalled=_appInstalled;
 @property(readonly, nonatomic) _Bool shouldIncludeInConsent; // @synthesize shouldIncludeInConsent=_shouldIncludeInConsent;
 @property(readonly, nonatomic) _Bool shouldTrackPlayActivity; // @synthesize shouldTrackPlayActivity=_shouldTrackPlayActivity;
@@ -44,7 +45,6 @@
 @property(readonly, nonatomic, getter=isiTunes) _Bool itunes; // @synthesize itunes=_itunes;
 @property(readonly, nonatomic, getter=isSubscribed) _Bool subscribed; // @synthesize subscribed=_subscribed;
 @property(readonly, nonatomic) WLKArtworkVariantListing *images; // @synthesize images=_images;
-@property(readonly, copy, nonatomic) NSURL *appStoreURL; // @synthesize appStoreURL=_appStoreURL;
 @property(readonly, copy, nonatomic) NSString *appName; // @synthesize appName=_appName;
 @property(readonly, copy, nonatomic) NSArray *appBundleIDs; // @synthesize appBundleIDs=_appBundleIDs;
 @property(readonly, copy, nonatomic) NSArray *appAdamIDs; // @synthesize appAdamIDs=_appAdamIDs;
@@ -52,6 +52,7 @@
 @property(readonly, copy, nonatomic) NSString *channelID; // @synthesize channelID=_channelID;
 - (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
+@property(readonly, copy, nonatomic) NSURL *appStoreURL;
 - (id)init;
 - (id)initWithDictionary:(id)arg1;
 - (id)appIconURLForSize:(struct CGSize)arg1;

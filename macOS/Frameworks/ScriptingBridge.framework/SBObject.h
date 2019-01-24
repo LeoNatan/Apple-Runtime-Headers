@@ -52,6 +52,7 @@
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (unsigned int)wanttype;
+- (unsigned int)_wanttype:(const struct AEDesc *)arg1;
 - (void)setLastError:(id)arg1;
 - (id)lastError;
 - (const struct AEDesc *)specifier;

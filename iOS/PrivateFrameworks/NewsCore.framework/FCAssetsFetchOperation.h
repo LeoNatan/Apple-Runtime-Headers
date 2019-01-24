@@ -6,16 +6,22 @@
 
 #import <NewsCore/FCFetchOperation.h>
 
-@class NSArray;
+@class FCAsyncSerialQueue, NSArray;
 
 @interface FCAssetsFetchOperation : FCFetchOperation
 {
+    CDUnknownBlockType _progressHandler;
+    FCAsyncSerialQueue *_downloadSerialQueue;
     NSArray *_assetHandles;
 }
 
 @property(copy, nonatomic) NSArray *assetHandles; // @synthesize assetHandles=_assetHandles;
+@property(retain, nonatomic) FCAsyncSerialQueue *downloadSerialQueue; // @synthesize downloadSerialQueue=_downloadSerialQueue;
+@property(copy, nonatomic) CDUnknownBlockType progressHandler; // @synthesize progressHandler=_progressHandler;
 - (void).cxx_destruct;
+- (void)_finish;
 - (void)performOperation;
+- (void)prepareOperation;
 - (id)initWithAssetHandle:(id)arg1;
 - (id)initWithAssetHandles:(id)arg1;
 

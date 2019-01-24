@@ -80,7 +80,7 @@ __attribute__((visibility("hidden")))
 - (BOOL)isFolderWithTitle:(id)arg1;
 - (void)clearUUID;
 - (id)init;
-- (id)initWithTopSite:(struct TopSite *)arg1;
+- (id)initWithTopSite:(id)arg1;
 - (id)initWithIdentifier:(id)arg1 UUID:(id)arg2 group:(id)arg3;
 - (id)initFromDictionaryRepresentation:(id)arg1 withGroup:(id)arg2;
 - (id)initFromDictionaryRepresentation:(id)arg1 topLevelOnly:(BOOL)arg2 withGroup:(id)arg3;
@@ -151,7 +151,7 @@ __attribute__((visibility("hidden")))
 - (void)enumerateDescendantsIncludingFolders:(BOOL)arg1 usingBlock:(CDUnknownBlockType)arg2;
 - (BOOL)_enumerateDescendantsIncludingFolders:(BOOL)arg1 usingBlock:(CDUnknownBlockType)arg2;
 - (void)insertChild:(id)arg1 atIndex:(unsigned int)arg2 isCopy:(BOOL)arg3;
-- (id)createInternetLocationFileHierarchyInDirectory:(id)arg1;
+- (void)createInternetLocationFileHierarchyInDirectory:(id)arg1;
 - (BOOL)isDescendantOfFavorites;
 - (BOOL)isAncestorOf:(id)arg1;
 - (BOOL)isOrHasAnyLeaves;
@@ -179,10 +179,10 @@ __attribute__((visibility("hidden")))
 - (BOOL)deleteWithUndoWithoutAuthorization;
 - (void)deleteWithUndo;
 - (void)toggleAutomaticallyReplacesTabsWithUndo;
-- (BOOL)setAddressWithUndo:(id)arg1;
+- (BOOL)setAddress:(id)arg1 usingUndoController:(id)arg2;
 - (BOOL)setPreviewTextWithUndo:(id)arg1 isUserCustomized:(BOOL)arg2;
-- (BOOL)setTitleWithUndo:(id)arg1;
-- (BOOL)_bookmarkEditingPermitted;
+- (BOOL)setTitle:(id)arg1 usingUndoController:(id)arg2;
+- (BOOL)_bookmarkEditingPermittedUsingUndoController:(id)arg1;
 - (id)initWithPasteboardPropertyList:(id)arg1 ofType:(id)arg2;
 - (id)pasteboardPropertyListForType:(id)arg1;
 - (id)writableTypesForPasteboard:(id)arg1;

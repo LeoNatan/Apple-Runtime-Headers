@@ -6,7 +6,7 @@
 
 #import <NewsCore/FCOperation.h>
 
-@class FCCoverArticlesOperation, FCEditorialOperation, FCFeedPersonalizedArticles, FCMyArticlesOperation, FCSpecialEventsOperation, FCTopStoriesOperation, FCTopStoriesOperationResult, FCTrendingOperation, FCVideoArticlesOperation, FCVideoArticlesOperationResult, NFMutexLock, NSArray, NSDictionary, NSError, NSHashTable, NSOperationQueue;
+@class FCCoverArticlesOperation, FCDemoAdditionsOperation, FCEditorialOperation, FCFeedPersonalizedItems, FCMyArticlesOperation, FCSpecialEventsOperation, FCSpotlightOperation, FCSpotlightOperationResult, FCTopStoriesOperation, FCTopStoriesOperationResult, FCTrendingOperation, FCVideoArticlesOperation, FCVideoArticlesOperationResult, NFMutexLock, NSArray, NSDictionary, NSError, NSHashTable, NSOperationQueue;
 @protocol FCChannelProviding;
 
 @interface FCForYouCatchUpOperation : FCOperation
@@ -19,6 +19,8 @@
     FCCoverArticlesOperation *_coverArticlesOperation;
     FCEditorialOperation *_editorialOperation;
     FCVideoArticlesOperation *_videoArticlesOperation;
+    FCSpotlightOperation *_spotlightOperation;
+    FCDemoAdditionsOperation *_demoAdditionsOperation;
     NSOperationQueue *_operationQueue;
     NSHashTable *_conditionWaiters;
     NFMutexLock *_conditionWaitersLock;
@@ -28,6 +30,8 @@
 @property(retain, nonatomic) NFMutexLock *conditionWaitersLock; // @synthesize conditionWaitersLock=_conditionWaitersLock;
 @property(retain, nonatomic) NSHashTable *conditionWaiters; // @synthesize conditionWaiters=_conditionWaiters;
 @property(retain, nonatomic) NSOperationQueue *operationQueue; // @synthesize operationQueue=_operationQueue;
+@property(retain, nonatomic) FCDemoAdditionsOperation *demoAdditionsOperation; // @synthesize demoAdditionsOperation=_demoAdditionsOperation;
+@property(retain, nonatomic) FCSpotlightOperation *spotlightOperation; // @synthesize spotlightOperation=_spotlightOperation;
 @property(retain, nonatomic) FCVideoArticlesOperation *videoArticlesOperation; // @synthesize videoArticlesOperation=_videoArticlesOperation;
 @property(retain, nonatomic) FCEditorialOperation *editorialOperation; // @synthesize editorialOperation=_editorialOperation;
 @property(retain, nonatomic) FCCoverArticlesOperation *coverArticlesOperation; // @synthesize coverArticlesOperation=_coverArticlesOperation;
@@ -42,11 +46,13 @@
 @property(readonly, copy) NSDictionary *feedContextByFeedID;
 - (id)catchUpErrorForContentTypes:(long long)arg1;
 @property(readonly, copy, nonatomic) NSError *catchUpError;
+@property(readonly, copy, nonatomic) NSArray *additionalDemoHeadlines;
+@property(readonly, copy, nonatomic) FCSpotlightOperationResult *spotlightResult;
 @property(readonly, copy, nonatomic) FCVideoArticlesOperationResult *moreVideosResult;
 @property(readonly, copy, nonatomic) FCVideoArticlesOperationResult *topVideosResult;
 - (void)enumerateEditorialSectionsByRecencyAfterTransformation:(id)arg1 minFamilySize:(unsigned long long)arg2 block:(CDUnknownBlockType)arg3;
 - (id)orphanedEditorialHeadlinesAfterTransformation:(id)arg1 minFamilySize:(unsigned long long)arg2;
-@property(readonly, copy, nonatomic) FCFeedPersonalizedArticles *nonEditorialPersonalizedArticles;
+@property(readonly, copy, nonatomic) FCFeedPersonalizedItems *nonEditorialPersonalizedArticles;
 @property(readonly, copy, nonatomic) NSArray *nonEditorialFeedItems;
 - (id)sortedNonEditorialFeedItemsAfterTransformation:(id)arg1;
 - (id)allNonEditorialFeedItemsAfterTransformation:(id)arg1;

@@ -11,7 +11,7 @@
 #import <SafariServices/WKNavigationDelegate-Protocol.h>
 #import <SafariServices/WKUIDelegatePrivate-Protocol.h>
 
-@class NSMutableDictionary, NSString, NSTimer, WBSReaderFontManager, WKWebView, _WKRemoteObjectInterface;
+@class NSMutableDictionary, NSString, NSTimer, WBSReaderConfigurationManager, WBSReaderFontManager, WKWebView, _WKRemoteObjectInterface;
 @protocol SFReaderWebProcessControllerProtocol, WKUIDelegatePrivate, _SFReaderControllerDelegate;
 
 @interface _SFReaderController : NSObject <SFReaderEventsListener, SFReaderContext, WKNavigationDelegate, WKUIDelegatePrivate>
@@ -19,6 +19,7 @@
     id <SFReaderWebProcessControllerProtocol> _readerControllerProxy;
     _WKRemoteObjectInterface *_eventsListenerInterface;
     WBSReaderFontManager *_fontManager;
+    WBSReaderConfigurationManager *_configurationManager;
     CDUnknownBlockType _readerMailContentCompletionHandler;
     CDUnknownBlockType _readerPrintContentCompletionHandler;
     NSMutableDictionary *_bookmarkIdentifierToReadingListItemInfoCompletionMap;
@@ -30,8 +31,10 @@
     WKWebView *_readerWebView;
     id <_SFReaderControllerDelegate> _delegate;
     id <WKUIDelegatePrivate> _webViewUIDelegate;
+    NSString *_articleText;
 }
 
+@property(readonly, nonatomic) NSString *articleText; // @synthesize articleText=_articleText;
 @property(nonatomic) __weak id <WKUIDelegatePrivate> webViewUIDelegate; // @synthesize webViewUIDelegate=_webViewUIDelegate;
 @property(nonatomic) _Bool contentIsReady; // @synthesize contentIsReady=_contentIsReady;
 @property(getter=isReaderAvailable) _Bool readerAvailable; // @synthesize readerAvailable=_readerAvailable;
@@ -39,29 +42,32 @@
 @property(readonly) __weak WKWebView *readerWebView; // @synthesize readerWebView=_readerWebView;
 @property(readonly) __weak WKWebView *webView; // @synthesize webView=_webView;
 - (void).cxx_destruct;
-- (void)_webView:(id)arg1 dataInteractionOperationWasHandled:(_Bool)arg2 forSession:(id)arg3 itemProviders:(id)arg4;
-- (_Bool)_webView:(id)arg1 performDataInteractionOperationWithItemProviders:(id)arg2;
-- (unsigned int)_webView:(id)arg1 willUpdateDataInteractionOperationToOperation:(unsigned int)arg2 forSession:(id)arg3;
-- (void)_webView:(id)arg1 dataInteraction:(id)arg2 session:(id)arg3 didEndWithOperation:(unsigned int)arg4;
-- (void)_webView:(id)arg1 dataInteraction:(id)arg2 sessionWillBegin:(id)arg3;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)_webView:(id)arg1 commitPreviewedViewController:(id)arg2;
 - (id)_webView:(id)arg1 previewViewControllerForURL:(id)arg2 defaultActions:(id)arg3 elementInfo:(id)arg4;
 - (id)_webView:(id)arg1 actionsForElement:(id)arg2 defaultActions:(id)arg3;
 - (void)_webView:(id)arg1 getAlternateURLFromImage:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)webView:(id)arg1 decidePolicyForNavigationAction:(id)arg2 decisionHandler:(CDUnknownBlockType)arg3;
+- (void)owningWebViewDidCommitNavigation;
 - (void)contentDidBecomeReadyWithDetectedLanguage:(id)arg1;
 - (void)didPrepareReaderContentForPrinting:(id)arg1;
 - (void)didCollectReaderContentForMail:(id)arg1;
 - (void)didCollectReadingListItemInfo:(id)arg1 bookmarkID:(id)arg2;
 - (void)didSetReaderConfiguration:(id)arg1;
 - (void)didDetermineReaderAvailability:(_Bool)arg1 dueToSameDocumentNavigation:(_Bool)arg2;
+- (void)_updateJavaScriptEnabled;
+- (id)configurationManager;
 - (id)fontManager;
-- (id)configuration;
+- (void)sendConfigurationToWebProcess;
+- (void)_saveConfigurationAndSendToWebProcess;
+- (void)resetReaderTextSize;
 - (void)decreaseReaderTextSize;
 - (void)increaseReaderTextSize;
-- (void)setReaderTheme:(id)arg1;
-- (void)setReaderLanguageTag:(id)arg1;
+- (_Bool)canIncreaseReaderTextSize;
+- (_Bool)canDecreaseReaderTextSize;
+- (void)setReaderTheme:(int)arg1 forAppearance:(int)arg2;
 - (void)setReaderFont:(id)arg1;
+- (void)setReaderLanguageTag:(id)arg1;
 - (void)_collectReaderContentForMailWithCompletion:(CDUnknownBlockType)arg1;
 - (void)collectReaderContentForMailWithCompletion:(CDUnknownBlockType)arg1;
 - (id)readerURL;
@@ -79,7 +85,7 @@
 - (void)clearReaderWebView;
 - (void)stopLoadingNextPage;
 - (_Bool)isLoadingNextPage;
-- (void)_setUpReaderWebViewIfNeededAndPerformBlock:(CDUnknownBlockType)arg1;
+- (void)setUpReaderWebViewIfNeededAndPerformBlock:(CDUnknownBlockType)arg1;
 - (void)_performActionsDelayedUntilReaderWebViewIsReadyDidTimeout:(id)arg1;
 - (void)_performActionsDelayedUntilReaderWebViewIsReady;
 - (_Bool)_readerWebViewIsReady;

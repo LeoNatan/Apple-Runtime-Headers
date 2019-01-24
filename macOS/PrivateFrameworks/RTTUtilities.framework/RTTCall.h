@@ -26,12 +26,14 @@
 
 @property(retain, nonatomic) NSDictionary *substitutions; // @synthesize substitutions=_substitutions;
 @property(retain, nonatomic) AVCVirtualTTYDevice *ttyDevice; // @synthesize ttyDevice=_ttyDevice;
+@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *callQueue; // @synthesize callQueue=_callQueue;
 @property(retain, nonatomic) TUCall *call; // @synthesize call=_call;
 @property(retain, nonatomic) RTTConversation *conversation; // @synthesize conversation=_conversation;
 @property(nonatomic) __weak id <RTTCallDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)device:(id)arg1 didReceiveCharacter:(unsigned short)arg2;
 - (void)device:(id)arg1 didReceiveText:(struct NSString *)arg2;
+- (void)callDidReceiveText:(id)arg1 forUtterance:(id)arg2;
 - (struct NSString *)_processText:(struct NSString *)arg1 withDevice:(id)arg2;
 - (BOOL)_handleInitialGarbageTextFromTTY:(struct NSString *)arg1 device:(id)arg2;
 - (void)deviceDidStop:(id)arg1;

@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
     struct os_unfair_lock_s channel_lock;
     struct os_unfair_lock_s path_lock;
     struct os_unfair_lock_s globals_lock;
+    struct os_unfair_lock_s activate_lock;
     struct nw_hash_table *globals;
     void *channel_globals;
     void *path_globals;
@@ -31,12 +32,12 @@ __attribute__((visibility("hidden")))
     struct nw_mem_buffer_manager *buffer_manager_16;
     struct nw_mem_buffer_manager *buffer_manager_8;
     struct nw_mem_buffer_manager *buffer_manager_2;
-    // Error parsing type: {atomic_flag="_Value"AB}, name: activated
     int scheduling_mode;
     int privacy_level;
     unsigned int isolate_protocol_stack:1;
     unsigned int isolate_protocol_cache:1;
     unsigned int is_implicit:1;
+    unsigned int activated:1;
 }
 
 - (void).cxx_destruct;

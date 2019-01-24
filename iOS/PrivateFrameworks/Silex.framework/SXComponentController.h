@@ -7,41 +7,38 @@
 #import <objc/NSObject.h>
 
 #import <Silex/SXAXAssistiveTechStatusChangeListener-Protocol.h>
+#import <Silex/SXLayoutIntegrator-Protocol.h>
 #import <Silex/SXViewportChangeListener-Protocol.h>
 
-@class NSArray, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString, SXLayoutBlueprint, SXPresentationAttributes, SXViewport;
-@protocol SXComponentControllerDelegate, SXComponentViewEngine;
+@class NSArray, NSMutableArray, NSMutableDictionary, NSString, SXLayoutBlueprint, SXPresentationAttributes, SXViewport;
+@protocol SXComponentHosting, SXComponentViewEngine, SXDOMObjectProviding;
 
-@interface SXComponentController : NSObject <SXViewportChangeListener, SXAXAssistiveTechStatusChangeListener>
+@interface SXComponentController : NSObject <SXViewportChangeListener, SXAXAssistiveTechStatusChangeListener, SXLayoutIntegrator>
 {
     _Bool _isPresented;
-    _Bool _invalidationDispatched;
     _Bool _isPresenting;
-    id <SXComponentControllerDelegate> _delegate;
+    id <SXComponentHosting> _host;
     SXLayoutBlueprint *_presentedBlueprint;
     SXViewport *_viewport;
     id <SXComponentViewEngine> _componentViewEngine;
+    id <SXDOMObjectProviding> _DOMObjectProvider;
     NSMutableDictionary *_mappedComponentViews;
     NSMutableArray *_sortedComponentViews;
     NSMutableArray *_nestedComponentViews;
-    NSMutableSet *_possibleInvalidations;
-    NSMutableDictionary *_componentIdentifiersToInvalidate;
     SXPresentationAttributes *_presentationAttributes;
 }
 
 @property(readonly, nonatomic) SXPresentationAttributes *presentationAttributes; // @synthesize presentationAttributes=_presentationAttributes;
 @property(nonatomic) _Bool isPresenting; // @synthesize isPresenting=_isPresenting;
-@property(nonatomic) _Bool invalidationDispatched; // @synthesize invalidationDispatched=_invalidationDispatched;
-@property(retain, nonatomic) NSMutableDictionary *componentIdentifiersToInvalidate; // @synthesize componentIdentifiersToInvalidate=_componentIdentifiersToInvalidate;
-@property(retain, nonatomic) NSMutableSet *possibleInvalidations; // @synthesize possibleInvalidations=_possibleInvalidations;
 @property(retain, nonatomic) NSMutableArray *nestedComponentViews; // @synthesize nestedComponentViews=_nestedComponentViews;
 @property(retain, nonatomic) NSMutableArray *sortedComponentViews; // @synthesize sortedComponentViews=_sortedComponentViews;
 @property(retain, nonatomic) NSMutableDictionary *mappedComponentViews; // @synthesize mappedComponentViews=_mappedComponentViews;
+@property(readonly, nonatomic) id <SXDOMObjectProviding> DOMObjectProvider; // @synthesize DOMObjectProvider=_DOMObjectProvider;
 @property(readonly, nonatomic) id <SXComponentViewEngine> componentViewEngine; // @synthesize componentViewEngine=_componentViewEngine;
 @property(readonly, nonatomic) SXViewport *viewport; // @synthesize viewport=_viewport;
 @property(readonly, nonatomic) _Bool isPresented; // @synthesize isPresented=_isPresented;
 @property(readonly, nonatomic) SXLayoutBlueprint *presentedBlueprint; // @synthesize presentedBlueprint=_presentedBlueprint;
-@property(nonatomic) __weak id <SXComponentControllerDelegate> delegate; // @synthesize delegate=_delegate;
+@property(nonatomic) __weak id <SXComponentHosting> host; // @synthesize host=_host;
 - (void).cxx_destruct;
 - (void)assistiveTechnologyStatusDidChange;
 @property(readonly, nonatomic) struct CGSize viewportSize;
@@ -62,19 +59,13 @@
 - (id)componentViewForPoint:(struct CGPoint)arg1 inComponents:(id)arg2;
 - (id)componentViewForPoint:(struct CGPoint)arg1;
 - (id)componentsInRect:(struct CGRect)arg1;
-- (void)invalidateQueuedComponentsIfNeededInLayoutBlueprint:(id)arg1;
-- (void)invalidateLayoutForComponentWithIdentifier:(id)arg1 suggestedSize:(struct CGSize)arg2 priority:(int)arg3;
-- (void)invalidateLayoutForComponentWithIdentifier:(id)arg1 suggestedSize:(struct CGSize)arg2;
-- (void)invalidateLayoutForComponentWithIdentifier:(id)arg1;
-- (void)cancelInvalidationForComponentWithIdentifier:(id)arg1;
-- (void)mightInvalidateComponentWithIdentifier:(id)arg1;
+- (void)removeComponentsInLayoutBlueprint:(id)arg1 removedFromLayoutBlueprint:(id)arg2;
 - (void)presentComponentsInBlueprint:(id)arg1;
-- (id)presentComponentBlueprint:(id)arg1 inHost:(id)arg2 presentationDelegate:(id)arg3 columnLayout:(id)arg4;
+- (id)presentComponentBlueprint:(id)arg1 inHost:(id)arg2 columnLayout:(id)arg3;
 - (void)fadeComponent:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)presentBlueprint:(id)arg1 forParentComponentView:(id)arg2 inHost:(id)arg3 presentationDelegate:(id)arg4;
-- (void)presentBlueprint:(id)arg1 host:(id)arg2 presentationDelegate:(id)arg3 animated:(_Bool)arg4;
-- (void)presentBlueprint:(id)arg1 host:(id)arg2 presentationDelegate:(id)arg3 attributes:(id)arg4;
-- (id)initWithViewport:(id)arg1 componentViewEngine:(id)arg2;
+- (void)presentBlueprint:(id)arg1 forParentComponentView:(id)arg2 inHost:(id)arg3;
+- (void)integrateBlueprint:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
+- (id)initWithViewport:(id)arg1 componentViewEngine:(id)arg2 DOMObjectProvider:(id)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -61,8 +61,8 @@
 - (id)initWithCoder:(id)arg1;
 @property(readonly, copy) NSString *name;
 - (id)init;
-- (void)attachDiagnosticsIncludingLocalizableStringsData:(_Bool)arg1;
-- (void)attachAutomaticScreenshot;
+- (void)attachDiagnosticsForDevice:(id)arg1 includeLocalizableStringsData:(_Bool)arg2;
+- (void)attachAutomaticScreenshotForDevice:(id)arg1;
 
 // Remaining properties
 @property(readonly) unsigned long long hash;

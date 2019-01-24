@@ -148,6 +148,7 @@
 - (_Bool)_stopSpeakingRequest:(id)arg1 atNextBoundary:(int)arg2 synchronously:(_Bool)arg3 error:(id *)arg4;
 - (_Bool)_stopSpeakingPresynthesizedAudioRequest:(id)arg1 synchronously:(_Bool)arg2 error:(id *)arg3;
 - (void)_setDelegate:(id)arg1;
+- (_Bool)queryPhaticCapability:(id)arg1;
 - (id)prewarmIfNeededWithRequest:(id)arg1;
 - (id)initForInputFeedback;
 - (void)dealloc;

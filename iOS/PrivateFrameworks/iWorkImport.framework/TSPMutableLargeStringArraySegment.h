@@ -11,9 +11,9 @@ __attribute__((visibility("hidden")))
 {
 }
 
-- (void)loadFromMessage:(const struct LargeStringArraySegment *)arg1 unarchiver:(id)arg2;
+-     // Error parsing type: v32@0:8r^{LargeStringArraySegment=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSP::LargeStringArraySegment_OptionalElement>=^{Arena}ii^{Rep}}^{LargeArraySegment}}16@24, name: loadFromMessage:unarchiver:
 - (void)loadFromUnarchiver:(id)arg1;
-- (void)saveToMessage:(struct LargeStringArraySegment *)arg1 archiver:(id)arg2;
+-     // Error parsing type: v32@0:8^{LargeStringArraySegment=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSP::LargeStringArraySegment_OptionalElement>=^{Arena}ii^{Rep}}^{LargeArraySegment}}16@24, name: saveToMessage:archiver:
 - (void)saveToArchiver:(id)arg1;
 - (unsigned long long)estimatedByteSizeOfElement:(id)arg1;
 

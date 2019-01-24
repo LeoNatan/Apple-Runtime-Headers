@@ -7,22 +7,23 @@
 #import <objc/NSObject.h>
 
 #import <WebKitLegacy/WebDeviceOrientationProvider-Protocol.h>
+#import <WebKitLegacy/WebDeviceOrientationProviderMock-Protocol.h>
 
 @class NSString, WebDeviceOrientationProviderMockInternal;
 
-@interface WebDeviceOrientationProviderMock : NSObject <WebDeviceOrientationProvider>
+@interface WebDeviceOrientationProviderMock : NSObject <WebDeviceOrientationProviderMock, WebDeviceOrientationProvider>
 {
     WebDeviceOrientationProviderMockInternal *m_internal;
 }
 
 + (id)shared;
+- (void)setController:(struct DeviceOrientationController *)arg1;
 - (id)lastOrientation;
 - (void)stopUpdating;
 - (void)startUpdating;
 - (void)setOrientation:(id)arg1;
 - (void)dealloc;
 - (id)init;
-- (void)setController:(struct DeviceOrientationController *)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

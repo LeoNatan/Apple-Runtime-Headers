@@ -21,6 +21,7 @@
     unsigned long long _status;
     NSString *_statusText;
     unsigned long long _timeout;
+    _Bool _useJSONEncoding;
     SSAuthenticationContext *_authenticationContext;
     ISDataProvider *_dataProvider;
 }
@@ -46,6 +47,7 @@
 @property(retain) WebScriptObject *onload;
 @property(retain) WebScriptObject *onerror;
 @property(retain) WebScriptObject *onabort;
+@property(retain, getter=isJSONEncoded) id JSONEncoded;
 @property(readonly, copy) NSString *responseText;
 @property(readonly) unsigned long long readyState;
 - (id)_className;

@@ -10,6 +10,7 @@
 @protocol FCDerivedPersonalizationData><NSCoding;
 
 @protocol FCMutableTodayPrivateData <FCTodayPrivateData>
+@property(nonatomic) unsigned long long bundleSubscriptionState;
 @property(copy, nonatomic) NSNumber *onboardingVersion;
 @property(copy, nonatomic) NSDictionary *recentlyReadHistoryItems;
 @property(copy, nonatomic) NSArray *recentlySeenHistoryItems;

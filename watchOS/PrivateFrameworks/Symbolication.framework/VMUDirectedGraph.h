@@ -12,6 +12,8 @@
 
 @interface VMUDirectedGraph : NSObject <NSCopying>
 {
+    int _graphCompatibilityVersion;
+    int _graphVersion;
     unsigned int _nodeCount;
     unsigned int _edgeCount;
     unsigned int _edgeCapacity;
@@ -85,6 +87,8 @@
 - (id)initWithPlistRepresentation:(id)arg1 error:(id *)arg2;
 - (id)initWithPlistRepresentation:(id)arg1;
 - (id)decapsulateIPSheaderInData:(id)arg1 error:(id *)arg2;
+- (void)setGraphVersion:(int)arg1;
+- (void)setGraphCompatibilityVersion:(int)arg1;
 - (id)initWithNodes:(unsigned int)arg1;
 
 @end

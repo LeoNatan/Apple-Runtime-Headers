@@ -63,6 +63,7 @@
     BOOL _clientIsWatchTrumpPromote;
     BOOL _clientIsRespondingToSlowdown;
     BOOL _clientDoneRespondingToSlowdown;
+    BOOL _clientRespondingToCarPlay;
     int _constantGoodness;
     NSObject<OS_dispatch_source> *_timerSource;
     NSDateFormatter *_dateFormat;
@@ -161,6 +162,7 @@
 - (void)endAdvertisingAfterDelay:(float)arg1;
 - (void)startAdvertisingSlowdown:(unsigned short)arg1;
 - (void)startResponseAdvertising:(unsigned short)arg1;
+- (void)startAdvertisingFromAlertFiringVoiceTrigger;
 - (void)startAdvertisingFromInTaskVoiceTrigger;
 - (void)startAdvertisingEmergency;
 - (void)startAdvertisingEmergencyHandled;

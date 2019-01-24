@@ -26,7 +26,7 @@ __attribute__((visibility("hidden")))
     unsigned long long _pasteType;
 }
 
-+ (id)recordFromArchive:(const struct StructuredTextImportRecord *)arg1;
++     // Error parsing type: @24@0:8r^{StructuredTextImportRecord=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}^{StructuredTextImportSettings}^{CellRegion}dQQQf}16, name: recordFromArchive:
 + (id)record;
 @property(nonatomic) _Bool pasteWasUpdate; // @synthesize pasteWasUpdate=_pasteWasUpdate;
 @property(nonatomic) unsigned long long pasteType; // @synthesize pasteType=_pasteType;
@@ -40,8 +40,8 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSURL *importSource; // @synthesize importSource=_importSource;
 @property(retain, nonatomic) TSKStructuredTextImportSettings *importSettings; // @synthesize importSettings=_importSettings;
 - (void).cxx_destruct;
-- (void)encodeToArchive:(struct StructuredTextImportRecord *)arg1;
-- (id)initFromArchive:(const struct StructuredTextImportRecord *)arg1;
+-     // Error parsing type: v24@0:8^{StructuredTextImportRecord=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}^{StructuredTextImportSettings}^{CellRegion}dQQQf}16, name: encodeToArchive:
+-     // Error parsing type: @24@0:8r^{StructuredTextImportRecord=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}^{StructuredTextImportSettings}^{CellRegion}dQQQf}16, name: initFromArchive:
 @property(readonly, nonatomic, getter=isReimportable) _Bool reimportable;
 @property(readonly, nonatomic, getter=isWholeTableImport) _Bool wholeTableImport;
 - (id)copyWithZone:(struct _NSZone *)arg1;

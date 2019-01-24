@@ -25,9 +25,11 @@
     int _consistencyCheckBackoffLevel;
     NSString *_userNotificationPushTopic;
     NSURL *_peerPaymentServiceURL;
+    NSString *_deviceCheckInPushTopic;
 }
 
 + (_Bool)supportsSecureCoding;
+@property(retain, nonatomic) NSString *deviceCheckInPushTopic; // @synthesize deviceCheckInPushTopic=_deviceCheckInPushTopic;
 @property(nonatomic) _Bool hasPeerPaymentAccount; // @synthesize hasPeerPaymentAccount=_hasPeerPaymentAccount;
 @property(retain, nonatomic) NSURL *peerPaymentServiceURL; // @synthesize peerPaymentServiceURL=_peerPaymentServiceURL;
 @property(retain, nonatomic) NSString *userNotificationPushTopic; // @synthesize userNotificationPushTopic=_userNotificationPushTopic;

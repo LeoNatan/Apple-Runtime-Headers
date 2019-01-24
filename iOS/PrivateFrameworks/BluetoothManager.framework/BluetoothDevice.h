@@ -61,6 +61,7 @@
 - (_Bool)paired;
 - (unsigned int)productId;
 - (unsigned int)vendorId;
+- (id)aclUID;
 - (id)scoUID;
 - (id)description;
 - (unsigned int)minorClass;

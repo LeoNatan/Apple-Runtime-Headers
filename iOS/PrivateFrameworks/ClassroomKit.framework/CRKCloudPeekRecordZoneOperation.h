@@ -20,7 +20,6 @@
 - (id)resetOperation;
 - (void)main;
 - (id)initWithDatabase:(id)arg1 zoneId:(id)arg2;
-- (id)initWithDatabase:(id)arg1;
 
 @end
 

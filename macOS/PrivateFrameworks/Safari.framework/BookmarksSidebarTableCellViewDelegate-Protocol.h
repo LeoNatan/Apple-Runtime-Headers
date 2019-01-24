@@ -9,6 +9,7 @@
 @class NSTableCellView;
 
 @protocol BookmarksSidebarTableCellViewDelegate <NSObject>
+- (void)didPressShowMenuForTableCellView:(NSTableCellView *)arg1;
 - (void)didPressRemoveButtonForTableCellView:(NSTableCellView *)arg1;
 - (void)didPressTableCellView:(NSTableCellView *)arg1;
 @end

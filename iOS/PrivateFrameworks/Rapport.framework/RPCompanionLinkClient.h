@@ -29,11 +29,13 @@
     unsigned int _pairVerifyFlags;
     int _passwordType;
     unsigned int _flags;
+    unsigned int _internalAuthFlags;
     NSString *_password;
     CDUnknownBlockType _authCompletionHandler;
     CDUnknownBlockType _showPasswordHandler;
     CDUnknownBlockType _hidePasswordHandler;
     CDUnknownBlockType _promptForPasswordHandler;
+    NSString *_appID;
     unsigned long long _controlFlags;
     RPCompanionLinkDevice *_destinationDevice;
     NSObject<OS_dispatch_queue> *_dispatchQueue;
@@ -48,6 +50,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+@property(readonly, nonatomic) unsigned int internalAuthFlags; // @synthesize internalAuthFlags=_internalAuthFlags;
 @property(copy, nonatomic) NSDictionary *siriInfo; // @synthesize siriInfo=_siriInfo;
 @property(copy, nonatomic) CDUnknownBlockType localDeviceUpdatedHandler; // @synthesize localDeviceUpdatedHandler=_localDeviceUpdatedHandler;
 @property(retain) RPCompanionLinkDevice *localDevice; // @synthesize localDevice=_localDevice;
@@ -60,6 +63,7 @@
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
 @property(retain, nonatomic) RPCompanionLinkDevice *destinationDevice; // @synthesize destinationDevice=_destinationDevice;
 @property(nonatomic) unsigned long long controlFlags; // @synthesize controlFlags=_controlFlags;
+@property(copy, nonatomic) NSString *appID; // @synthesize appID=_appID;
 @property(copy, nonatomic) CDUnknownBlockType promptForPasswordHandler; // @synthesize promptForPasswordHandler=_promptForPasswordHandler;
 @property(copy, nonatomic) CDUnknownBlockType hidePasswordHandler; // @synthesize hidePasswordHandler=_hidePasswordHandler;
 @property(copy, nonatomic) CDUnknownBlockType showPasswordHandler; // @synthesize showPasswordHandler=_showPasswordHandler;
@@ -93,10 +97,12 @@
 - (void)companionLinkFoundDevice:(id)arg1;
 @property(readonly) RPCompanionLinkDevice *activePersonalCompanion;
 @property(readonly, copy) NSArray *activeDevices;
+- (void)companionLinkAuthCompleted:(id)arg1;
+- (void)companionLinkPromptForPasswordWithFlags:(unsigned int)arg1 throttleSeconds:(int)arg2;
+- (void)tryPassword:(id)arg1;
 - (void)_reregisterAssertions;
 - (void)_invalidateAssertion:(id)arg1;
 - (id)activateAssertionID:(id)arg1 destinationID:(id)arg2 options:(id)arg3 completion:(CDUnknownBlockType)arg4;
-- (void)tryPassword:(id)arg1;
 - (void)_invalidated;
 - (void)invalidate;
 - (void)_interrupted;

@@ -19,6 +19,7 @@
 - (void).cxx_destruct;
 - (void)presentViewController:(id)arg1 animated:(_Bool)arg2 sourceView:(id)arg3 sourceRect:(struct CGRect)arg4;
 - (void)presentViewController:(id)arg1 animated:(_Bool)arg2;
+@property(readonly, nonatomic) UIViewController *controller;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

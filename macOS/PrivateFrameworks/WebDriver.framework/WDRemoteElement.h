@@ -20,7 +20,6 @@
 + (id)translatePayload:(id)arg1 usingBlock:(CDUnknownBlockType)arg2;
 + (id)elementFromIdentifier:(id)arg1 inSession:(id)arg2;
 + (id)elementFromAutomationPayload:(id)arg1 inSession:(id)arg2;
-+ (id)elementFromLegacyClientPayload:(id)arg1 inSession:(id)arg2;
 + (id)elementFromClientPayload:(id)arg1 inSession:(id)arg2;
 @property(readonly, copy, nonatomic) NSString *nodeHandle; // @synthesize nodeHandle=_nodeHandle;
 - (void).cxx_destruct;
@@ -30,7 +29,6 @@
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)description;
 @property(readonly, copy, nonatomic) NSDictionary *automationPayload;
-@property(readonly, copy, nonatomic) NSDictionary *legacyClientPayload;
 @property(readonly, copy, nonatomic) NSDictionary *clientPayload;
 - (id)automationWebElementKey;
 - (id)initWithNodeHandle:(id)arg1 relatedSession:(id)arg2;

@@ -23,10 +23,12 @@
     BOOL _automaticallyInstallConfigDataAndSecurityUpdates;
     BOOL _canEvaluatePolicy;
     BOOL _canMakeRemotePayments;
+    BOOL _canDecryptBAAEncryptedData;
     unsigned long long _ownershipState;
 }
 
 + (BOOL)supportsSecureCoding;
+@property(nonatomic) BOOL canDecryptBAAEncryptedData; // @synthesize canDecryptBAAEncryptedData=_canDecryptBAAEncryptedData;
 @property(nonatomic) BOOL canMakeRemotePayments; // @synthesize canMakeRemotePayments=_canMakeRemotePayments;
 @property(nonatomic) BOOL canEvaluatePolicy; // @synthesize canEvaluatePolicy=_canEvaluatePolicy;
 @property(nonatomic) BOOL automaticallyInstallConfigDataAndSecurityUpdates; // @synthesize automaticallyInstallConfigDataAndSecurityUpdates=_automaticallyInstallConfigDataAndSecurityUpdates;

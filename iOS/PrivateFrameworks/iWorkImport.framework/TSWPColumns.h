@@ -40,8 +40,8 @@ __attribute__((visibility("hidden")))
 - (id)copyWithColumnCount:(unsigned long long)arg1;
 - (void)p_setColumnCount:(unsigned long long)arg1 gapFraction:(double)arg2;
 - (void)p_setEqualWidth:(double)arg1 equalGap:(double)arg2;
-- (void)saveToArchive:(struct ColumnsArchive *)arg1 archiver:(id)arg2;
-- (id)initWithArchive:(const struct ColumnsArchive *)arg1 unarchiver:(id)arg2;
+-     // Error parsing type: v32@0:8^{ColumnsArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{ColumnsArchive_EqualColumnsArchive}^{ColumnsArchive_NonEqualColumnsArchive}}16@24, name: saveToArchive:archiver:
+-     // Error parsing type: @32@0:8r^{ColumnsArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{ColumnsArchive_EqualColumnsArchive}^{ColumnsArchive_NonEqualColumnsArchive}}16@24, name: initWithArchive:unarchiver:
 - (id)copyWithEqualWidth:(_Bool)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithEqualColumnCount:(unsigned long long)arg1 gapFraction:(double)arg2;

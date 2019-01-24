@@ -9,7 +9,7 @@
 __attribute__((visibility("hidden")))
 @interface TSWPFontCacheValue : NSObject
 {
-    struct __CTFont *_ctFont;
+    const struct __CTFont *_ctFont;
 }
 
 + (id)cacheValueWithCTFont:(const struct __CTFont *)arg1;

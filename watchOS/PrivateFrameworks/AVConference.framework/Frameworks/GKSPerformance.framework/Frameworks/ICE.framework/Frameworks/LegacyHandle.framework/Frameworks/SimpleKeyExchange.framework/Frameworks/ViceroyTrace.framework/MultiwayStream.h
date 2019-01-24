@@ -25,8 +25,24 @@ __attribute__((visibility("hidden")))
     unsigned short _averageFramerateReportCounter;
     double _averageJitterLengthSum;
     unsigned short _averageJitterReportCounter;
+    int _totalVideoPacketsReceived;
+    int _oooPacketCount;
+    unsigned int _totalFIRDemandCounter;
+    unsigned int _totalFIRCounter;
+    unsigned int _videoFrameDecodedButSkippedCounter;
+    unsigned int _videoFrameImcompleteNextTSCounter;
+    unsigned int _videoFrameTotalIncompleteCounter;
+    unsigned int _decodedVideoFrameEnqueueCounter;
 }
 
+- (unsigned int)decodedVideoFrameEnqueueCounter;
+- (unsigned int)videoFrameTotalIncompleteCounter;
+- (unsigned int)videoFrameImcompleteNextTSCounter;
+- (unsigned int)videoFrameDecodedButSkippedCounter;
+- (unsigned int)totalFIRCounter;
+- (unsigned int)totalFIRDemandCounter;
+- (unsigned int)totalVideoPacketsReceived;
+- (unsigned int)oooPacketCount;
 - (unsigned short)averageJitterReportCounter;
 - (double)averageJitterLengthSum;
 - (unsigned short)averageFramerateReportCounter;

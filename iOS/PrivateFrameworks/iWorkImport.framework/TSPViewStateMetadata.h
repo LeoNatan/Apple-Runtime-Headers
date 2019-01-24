@@ -9,13 +9,13 @@
 __attribute__((visibility("hidden")))
 @interface TSPViewStateMetadata : TSPObject
 {
-    struct ViewStateMetadata _message;
+    // Error parsing type: {ViewStateMetadata="_vptr$MessageLite"^^?"_internal_metadata_"{InternalMetadataWithArena="ptr_"^v}"_has_bits_"{HasBits<1>="has_bits_"[1I]}"_cached_size_"{CachedSize="size_"{atomic<int>="__a_"Ai}}"version_"{RepeatedField<unsigned int>="current_size_"i"total_size_"i"ptr_"(Pointer="arena"^{Arena}"rep"^{Rep})}"_version_cached_byte_size_"i"external_object_uuid_map_entries_"{RepeatedPtrField<TSP::ObjectUUIDMapEntry>="arena_"^{Arena}"current_size_"i"total_size_"i"rep_"^{Rep}}"component_"^{ComponentInfo}"version_uuid_"^{UUID}}, name: _message
 }
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (long long)tsp_identifier;
-- (struct ViewStateMetadata *)message;
+-     // Error parsing type: ^{ViewStateMetadata=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedField<unsigned int>=ii(Pointer=^{Arena}^{Rep})}i{RepeatedPtrField<TSP::ObjectUUIDMapEntry>=^{Arena}ii^{Rep}}^{ComponentInfo}^{UUID}}16@0:8, name: message
 - (void)saveToArchiver:(id)arg1;
 - (void)loadFromUnarchiver:(id)arg1;
 

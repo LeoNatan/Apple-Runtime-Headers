@@ -7,6 +7,7 @@
 @class NSArray, NSString;
 
 @protocol CoreSpeechXPCProtocol
+- (void)voiceTriggerJarvisLanguageList:(NSArray *)arg1 jarvisSelectedLanguage:(NSString *)arg2 completion:(void (^)(NSString *, NSError *))arg3;
 - (void)voiceTriggerRTModelForVersion:(unsigned long long)arg1 minorVersion:(unsigned long long)arg2 downloadedModels:(NSArray *)arg3 preinstalledModels:(NSArray *)arg4 completion:(void (^)(CSVoiceTriggerRTModel *, CSVoiceTriggerRTModel *, NSError *))arg5;
 - (void)fetchRemoteVoiceTriggerAssetForLanguageCode:(NSString *)arg1 completion:(void (^)(NSString *, NSString *, NSError *))arg2;
 - (void)installedVoiceTriggerAssetForLanguageCode:(NSString *)arg1 completion:(void (^)(NSString *, NSString *, NSError *))arg2;

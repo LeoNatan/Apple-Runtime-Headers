@@ -23,7 +23,7 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (id)accessibilityParent;
 - (id)accessibilityRole;
-- (BOOL)accessibilityIsIgnored;
+- (BOOL)isAccessibilityElement;
 - (void)_searchStringDidChange:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 

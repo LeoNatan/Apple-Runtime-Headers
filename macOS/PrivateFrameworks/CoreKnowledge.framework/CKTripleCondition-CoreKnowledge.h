@@ -7,7 +7,6 @@
 #import <CoreKnowledge/CKTripleCondition.h>
 
 @interface CKTripleCondition (CoreKnowledge)
-+ (id)forRulesFrom:(id)arg1;
 + (id)havingSubject:(id)arg1 andAbject:(id)arg2;
 + (id)havingPredicate:(id)arg1 matchType:(long long)arg2 error:(id *)arg3;
 @end

@@ -8,9 +8,11 @@
 
 @interface CMWakeGesturePhone : CMWakeGestureManager
 {
+    int fSelector;
 }
 
 + (_Bool)hasSlowBootArgs;
+- (void)setDelegate:(id)arg1;
 
 @end
 

@@ -6,22 +6,22 @@
 
 #import <PassKitUI/PKCompactNavigationContainedNavigationController.h>
 
-@class PKPaymentAuthorizationLayout, PKPaymentAuthorizationServiceViewController;
-@protocol UIViewControllerTransitioningDelegate;
+@class PKPaymentAuthorizationLayout, UIViewController;
+@protocol PKPaymentAuthorizationServiceProtocol, UIViewControllerTransitioningDelegate;
 
 @interface PKPaymentAuthorizationServiceNavigationController : PKCompactNavigationContainedNavigationController
 {
     PKPaymentAuthorizationLayout *_layout;
-    PKPaymentAuthorizationServiceViewController *_authorizationViewController;
+    UIViewController<PKPaymentAuthorizationServiceProtocol> *_authorizationViewController;
     id <UIViewControllerTransitioningDelegate> _paymentTransitioningDelegate;
 }
 
 @property(retain, nonatomic) id <UIViewControllerTransitioningDelegate> paymentTransitioningDelegate; // @synthesize paymentTransitioningDelegate=_paymentTransitioningDelegate;
-@property(readonly, nonatomic) PKPaymentAuthorizationServiceViewController *authorizationViewController; // @synthesize authorizationViewController=_authorizationViewController;
+@property(readonly, nonatomic) UIViewController<PKPaymentAuthorizationServiceProtocol> *authorizationViewController; // @synthesize authorizationViewController=_authorizationViewController;
 - (void).cxx_destruct;
 - (id)_backgroundColorForModalFormSheet;
 - (void)traitCollectionDidChange:(id)arg1;
-- (id)init;
+- (id)initWithLayoutStyle:(int)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 
 @end

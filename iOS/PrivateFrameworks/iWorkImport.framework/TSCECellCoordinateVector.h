@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (void)saveToArchive:(struct CellCoordinateVectorArchive *)arg1;
-- (id)initWithArchive:(const struct CellCoordinateVectorArchive *)arg1;
+-     // Error parsing type: v24@0:8^{CellCoordinateVectorArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSCE::CellCoordinateArchive>=^{Arena}ii^{Rep}}}16, name: saveToArchive:
+-     // Error parsing type: @24@0:8r^{CellCoordinateVectorArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSCE::CellCoordinateArchive>=^{Arena}ii^{Rep}}}16, name: initWithArchive:
 - (void)removeAllCellCoordinates;
 - (void)addCellCoordinate:(struct TSUCellCoord)arg1;
 - (unordered_set_cb28a53b)cellCoordinatesSet;

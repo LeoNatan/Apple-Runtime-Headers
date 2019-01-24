@@ -27,7 +27,7 @@
 - (void).cxx_destruct;
 - (void)presentationAttributesChangeFrom:(id)arg1 toAttributes:(id)arg2;
 - (void)onChange:(CDUnknownBlockType)arg1;
-- (id)configurationForWidth:(double)arg1;
+- (id)configurationForSize:(struct CGSize)arg1 dataSources:(id)arg2;
 - (void)invokeChangeListener;
 - (id)initWithPresentationAttributesProvider:(id)arg1 storeFrontProvider:(id)arg2 locale:(id)arg3;
 

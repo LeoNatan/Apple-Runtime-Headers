@@ -27,6 +27,8 @@
 @property(retain, nonatomic) NSMapTable *groupIdentifierToContexts; // @synthesize groupIdentifierToContexts=_groupIdentifierToContexts;
 @property(retain, nonatomic) NSCountedSet *contexts; // @synthesize contexts=_contexts;
 - (void).cxx_destruct;
+- (void)releaseWifiAssertion;
+- (void)retainWifiAssertion;
 - (void)_releaseAssertionForContext:(id)arg1;
 - (void)_retainAssertionForContext:(id)arg1;
 - (void)reattainPowerAssertionsForGroupIdentifier:(id)arg1;

@@ -9,6 +9,6 @@
 @class RTTUIReplyActionCell;
 
 @protocol RTTUIReplyActionCellDelegate <NSObject>
-- (void)replyCellActionDidActivate:(RTTUIReplyActionCell *)arg1;
+- (void)replyCell:(RTTUIReplyActionCell *)arg1 didActivateWithReplyButtonType:(unsigned int)arg2;
 @end
 

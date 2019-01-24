@@ -9,7 +9,7 @@
 #import <SafariServices/SFFormMetadataObserver-Protocol.h>
 #import <SafariServices/_SFAuthenticationClient-Protocol.h>
 
-@class NSMutableIndexSet, NSMutableSet, NSString, NSTimer, SFFormAutocompleteState, SFNanoDomainContainerView, UIView, WKWebView, _SFAuthenticationContext, _SFAutoFillAuthenticationCache, _WKRemoteObjectInterface;
+@class NSMutableIndexSet, NSMutableSet, NSString, NSTimer, SFFormAutocompleteState, SFNanoDomainContainerView, UIView, WKWebView, _SFAuthenticationContext, _WKRemoteObjectInterface;
 @protocol SFFormAutoFillControllerDelegate, SFFormAutoFiller, WBUFormAutoFillWebView;
 
 @interface _SFFormAutoFillController : NSObject <SFFormMetadataObserver, _SFAuthenticationClient>
@@ -35,7 +35,9 @@
 - (void)_didFocusSensitiveFormField;
 - (void)_setUpFormContextViewWithSensitiveInput:(_Bool)arg1;
 @property(readonly, nonatomic) UIView *formContextView;
-- (void)autoFillDidFinishWithUpdatedFormMetadata:(id)arg1;
+- (void)_simulateCarriageReturnKeyEvents;
+- (id)_simulatedWebEventForReturnKeyWithType:(int)arg1;
+- (void)autoFillDidFinishWithUpdatedFormMetadata:(id)arg1 inFrame:(id)arg2 shouldSubmit:(_Bool)arg3;
 - (void)_removeUniqueIDsOfAutoFilledForm:(id)arg1;
 - (void)_addUniqueIDsOfAutoFilledForm:(id)arg1;
 - (void)willNavigateFrame:(id)arg1 withUnsubmittedForm:(id)arg2 loadingIsDeferred:(_Bool)arg3;
@@ -46,10 +48,9 @@
 - (_Bool)displayMessageAsTitleForContext:(id)arg1;
 - (id)passcodePromptForContext:(id)arg1;
 - (id)authenticationMessageForContext:(id)arg1;
-- (void)authenticateForAutoFillOnPageLoad:(_Bool)arg1 forAuthenticationType:(int)arg2 withCompletion:(CDUnknownBlockType)arg3;
-- (void)_authenticateForAutoFillForHighLevelDomain:(id)arg1 onPageLoad:(_Bool)arg2 withCompletion:(CDUnknownBlockType)arg3;
+- (void)authenticateForAutoFillAuthenticationType:(int)arg1 withCompletion:(CDUnknownBlockType)arg2;
+- (void)_authenticateForAutoFillForHighLevelDomain:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 @property(readonly, nonatomic) _SFAuthenticationContext *authenticationContext;
-@property(readonly, nonatomic) _SFAutoFillAuthenticationCache *authenticationCache;
 - (void)didCollectURLsForPreFilling:(id)arg1 atURL:(id)arg2;
 - (void)willSubmitFormValues:(id)arg1 userObject:(id)arg2 submissionHandler:(CDUnknownBlockType)arg3;
 - (void)_fieldFocusedWithInputSession:(id)arg1;
@@ -57,21 +58,19 @@
 - (void)fieldDidFocusWithInputSession:(id)arg1;
 - (void)fieldWillFocusWithInputSession:(id)arg1;
 @property(readonly, nonatomic) UIView<WBUFormAutoFillWebView> *webView;
-- (void)_autoFillLoginFormSynchronouslyAndClearMetadata:(id)arg1 inFrame:(id)arg2;
 - (void)willSubmitForm:(id)arg1 inFrame:(id)arg2 submissionHandler:(CDUnknownBlockType)arg3;
 - (void)setFormControls:(id)arg1 areAutoFilled:(_Bool)arg2 andClearField:(id)arg3 inFrame:(id)arg4;
 - (void)fillTextField:(id)arg1 inFrame:(id)arg2 withGeneratedPassword:(id)arg3;
 - (void)annotateForm:(int)arg1 inFrame:(id)arg2 withValues:(id)arg3;
 - (void)autoFillForm:(int)arg1 inFrame:(id)arg2 withGeneratedPassword:(id)arg3;
 - (void)autoFillFormInFrame:(id)arg1 withValues:(id)arg2 setAutoFilled:(_Bool)arg3 focusFieldAfterFilling:(_Bool)arg4 fieldToFocus:(id)arg5 submitForm:(_Bool)arg6;
-- (void)autoFillFormInFrame:(id)arg1 withValues:(id)arg2 setAutoFilled:(_Bool)arg3 focusFieldAfterFilling:(_Bool)arg4 fieldToFocus:(id)arg5;
-- (void)autoFillFormInFrame:(id)arg1 withValues:(id)arg2 setAutoFilled:(_Bool)arg3 andFocusField:(id)arg4;
 - (void)fetchMetadataForTextField:(id)arg1 inFrame:(id)arg2 withCompletion:(CDUnknownBlockType)arg3;
 - (void)textFieldFocused:(id)arg1 inForm:(id)arg2 inFrame:(id)arg3 inputSession:(id)arg4;
 - (void)passwordFieldFocused:(id)arg1 inForm:(id)arg2 inFrame:(id)arg3 inputSession:(id)arg4;
 - (void)usernameFieldFocused:(id)arg1 inForm:(id)arg2 inFrame:(id)arg3 inputSession:(id)arg4;
 - (void)_fieldFocused:(id)arg1 inForm:(id)arg2 inFrame:(id)arg3 inputSession:(id)arg4;
 - (void)updateSuggestions;
+- (_Bool)shouldShowIconsInPasswordPicker;
 - (void)insertTextSuggestion:(id)arg1;
 - (void)autoFill;
 - (void)prefillFormsSoonIfNeeded;

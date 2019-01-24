@@ -43,6 +43,8 @@
 - (void)setOptionUserId:(id)arg1;
 - (id)optionUserId;
 @property(copy, nonatomic) NSString *localizedReason;
+- (void)setOptionPhysicalButtonTitle:(id)arg1;
+- (id)optionPhysicalButtonTitle;
 - (void)setOptionBiometryLockoutRecovery:(id)arg1;
 - (id)optionBiometryLockoutRecovery;
 - (void)setOptionUserCancel:(id)arg1;
@@ -67,6 +69,8 @@
 - (id)optionAuthenticationReason;
 - (void)setOptionUserFallback:(id)arg1;
 - (id)optionUserFallback;
+- (void)setOptionFingerMustBeOff:(id)arg1;
+- (id)optionFingerMustBeOff;
 - (void)setOptionCallerPID:(id)arg1;
 - (id)optionCallerPID;
 - (void)setOptionCallerName:(id)arg1;
@@ -86,6 +90,7 @@
 - (void)_setServerPropertyForOption:(long long)arg1 value:(id)arg2;
 - (id)_serverPropertyValueForOption:(long long)arg1;
 - (void)setShowingCoachingHint:(BOOL)arg1 event:(long long)arg2 reply:(CDUnknownBlockType)arg3;
+- (void)authMethodWithReply:(CDUnknownBlockType)arg1;
 - (void)resetWithReply:(CDUnknownBlockType)arg1;
 - (void)prearmTouchIDWithReply:(CDUnknownBlockType)arg1;
 - (void)optionsForInternalOperation:(long long)arg1 reply:(CDUnknownBlockType)arg2;
@@ -97,6 +102,8 @@
 - (BOOL)setCredential:(id)arg1 type:(long long)arg2;
 - (id)evaluateAccessControl:(struct OpaqueSecAccessControlRef *)arg1 operation:(long long)arg2 options:(id)arg3 error:(id *)arg4;
 - (void)evaluateAccessControl:(struct OpaqueSecAccessControlRef *)arg1 operation:(long long)arg2 localizedReason:(id)arg3 reply:(CDUnknownBlockType)arg4;
+- (void)_evaluateAccessControl:(struct OpaqueSecAccessControlRef *)arg1 operation:(id)arg2 options:(id)arg3 reply:(CDUnknownBlockType)arg4;
+- (void)evaluateAccessControl:(struct OpaqueSecAccessControlRef *)arg1 aksOperation:(void *)arg2 options:(id)arg3 reply:(CDUnknownBlockType)arg4;
 - (void)evaluateAccessControl:(struct OpaqueSecAccessControlRef *)arg1 operation:(long long)arg2 options:(id)arg3 reply:(CDUnknownBlockType)arg4;
 - (void)setCredential:(id)arg1 forProcessedEvent:(long long)arg2 credentialType:(long long)arg3 reply:(CDUnknownBlockType)arg4;
 - (void)resetProcessedEvent:(long long)arg1 reply:(CDUnknownBlockType)arg2;

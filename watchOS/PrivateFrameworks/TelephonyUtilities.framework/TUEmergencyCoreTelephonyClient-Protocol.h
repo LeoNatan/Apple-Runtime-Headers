@@ -6,14 +6,11 @@
 
 #import <TelephonyUtilities/TUCoreTelephonyClient-Protocol.h>
 
-@class NSString;
-@protocol TUTelephonySubscription;
+@class NSString, NSUUID;
 
 @protocol TUEmergencyCoreTelephonyClient <TUCoreTelephonyClient>
-- (_Bool)shouldShowEmergencyCallbackModeAlertForSubscriptionLabelID:(NSString *)arg1 error:(id *)arg2;
-- (_Bool)isWhitelistedEmergencyNumberForDigits:(NSString *)arg1 subscriptionLabelID:(NSString *)arg2 error:(id *)arg3;
-- (_Bool)isWhitelistedEmergencyNumberForDigits:(NSString *)arg1 subscription:(id <TUTelephonySubscription>)arg2 error:(id *)arg3;
-- (_Bool)isEmergencyNumberForDigits:(NSString *)arg1 subscriptionLabelID:(NSString *)arg2 error:(id *)arg3;
-- (_Bool)isEmergencyNumberForDigits:(NSString *)arg1 subscription:(id <TUTelephonySubscription>)arg2 error:(id *)arg3;
+- (_Bool)shouldShowEmergencyCallbackModeAlertForSubscriptionUUID:(NSUUID *)arg1 error:(id *)arg2;
+- (_Bool)isWhitelistedEmergencyNumberForDigits:(NSString *)arg1 subscriptionUUID:(NSUUID *)arg2 error:(id *)arg3;
+- (_Bool)isEmergencyNumberForDigits:(NSString *)arg1 subscriptionUUID:(NSUUID *)arg2 error:(id *)arg3;
 @end
 

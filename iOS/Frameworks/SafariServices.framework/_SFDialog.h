@@ -14,6 +14,8 @@
     _Bool _shouldIgnoreGlobalModalUIDisplayPolicy;
 }
 
++ (id)increaseApplicationCacheQuotaDialogForOrigin:(id)arg1 newQuota:(long long)arg2 completionHandler:(CDUnknownBlockType)arg3;
++ (id)increaseDatabaseQuotaDialogForOrigin:(id)arg1 newQuota:(long long)arg2 completionHandler:(CDUnknownBlockType)arg3;
 + (id)requestStorageAccessDialogForDomain:(id)arg1 underCurrentDomain:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 + (id)digitalHealthOverlayForURL:(id)arg1;
 + (id)permanentlyAcceptCertificateDialogWithAcceptanceHandler:(CDUnknownBlockType)arg1;
@@ -23,7 +25,7 @@
 + (id)pageLoadErrorWithMessage:(id)arg1;
 + (id)genericErrorDialogWithTitle:(id)arg1 message:(id)arg2 applicationModal:(_Bool)arg3;
 + (id)printBlockedDialogWithCompletionHandler:(CDUnknownBlockType)arg1;
-+ (id)continuePrintingDialogWithTitle:(id)arg1 message:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
++ (id)continuePrintingDialogWithTitle:(id)arg1 message:(id)arg2 applicationModal:(_Bool)arg3 completionHandler:(CDUnknownBlockType)arg4;
 + (id)redirectDialogWithMessage:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 + (id)noFeedAppDialogWithCompletionHandler:(CDUnknownBlockType)arg1;
 + (id)formSubmissionDialogWithMessage:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;

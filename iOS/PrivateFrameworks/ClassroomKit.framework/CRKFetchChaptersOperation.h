@@ -23,6 +23,7 @@
 - (_Bool)isAsynchronous;
 - (id)initWithBookPath:(id)arg1 identifierType:(id)arg2 identifier:(id)arg3;
 - (id)initWithBook:(id)arg1;
+- (id)initWithRequest:(id)arg1 error:(id *)arg2;
 
 @end
 

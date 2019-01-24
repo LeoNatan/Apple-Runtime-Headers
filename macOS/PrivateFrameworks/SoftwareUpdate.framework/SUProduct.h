@@ -8,7 +8,7 @@
 
 #import <SoftwareUpdate/NSSecureCoding-Protocol.h>
 
-@class NSArray, NSDate, NSDictionary, NSMutableDictionary, NSNumber, NSString, NSURL, PKDistribution, PKDistributionChoice, SUMajorProduct;
+@class NSArray, NSAttributedString, NSDate, NSDictionary, NSMutableDictionary, NSNumber, NSString, NSURL, PKDistribution, PKDistributionChoice, SUMajorProduct;
 
 @interface SUProduct : NSObject <NSSecureCoding>
 {
@@ -24,13 +24,13 @@
     unsigned long long _installSize;
     NSString *_baseDisplayName;
     NSString *_displayVersion;
-    NSString *_longDescription;
+    NSAttributedString *_longDescription;
+    NSAttributedString *_license;
+    NSAttributedString *_readme;
     int _restartAction;
     NSArray *_orderedPackageSpecifiersToInstallWithoutPatchFiltering;
     NSArray *_orderedMajorOSInfoPackageSpecifiersToInstall;
     BOOL _startsSelected;
-    BOOL _licenseEnabled;
-    BOOL _readmeEnabled;
     NSArray *_extraPackageSpecifiersToInstall;
     NSMutableDictionary *_extraPackageIdentifiersToVersions;
     NSURL *_bridgeOSSoftwareUpdateEventRecordingServiceURL;
@@ -57,6 +57,9 @@
 @property(retain) NSNumber *swuChoiceOnce; // @synthesize swuChoiceOnce=_swuChoiceOnce;
 @property(retain) NSNumber *installSizeOnce; // @synthesize installSizeOnce=_installSizeOnce;
 @property(retain) NSNumber *downloadSizeOnce; // @synthesize downloadSizeOnce=_downloadSizeOnce;
+@property(readonly, retain) NSAttributedString *readme; // @synthesize readme=_readme;
+@property(readonly, retain) NSAttributedString *license; // @synthesize license=_license;
+@property(readonly, retain) NSAttributedString *longDescription; // @synthesize longDescription=_longDescription;
 @property(readonly, getter=isAutoUpdateEligible) BOOL autoUpdateEligible; // @synthesize autoUpdateEligible=_autoUpdateEligible;
 @property(retain) NSDictionary *distributionEvaluationMetainfo; // @synthesize distributionEvaluationMetainfo=_distributionEvaluationMetainfo;
 - (id)postDate;
@@ -78,10 +81,7 @@
 - (id)allSoftwareUpdatePackageReferences;
 - (id)_allPackageReferencesUnderChoice:(id)arg1;
 - (int)restartAction;
-- (id)readmeDataReturningMIMEType:(id *)arg1;
-- (id)licenseDataReturningMIMEType:(id *)arg1;
 - (id)_resourceDataForKey:(id)arg1 returningMIMEType:(id *)arg2;
-- (id)descriptionDataReturningMIMEType:(id *)arg1;
 - (id)displayVersion;
 - (BOOL)autoUpdateEligible;
 - (id)productVersion;

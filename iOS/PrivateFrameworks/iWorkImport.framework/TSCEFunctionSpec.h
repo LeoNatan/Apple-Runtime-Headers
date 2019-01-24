@@ -26,7 +26,7 @@ __attribute__((visibility("hidden")))
 + (_Bool)isModeEnabled:(short)arg1 functionIndex:(short)arg2;
 + (id)functionSpecForFunctionName:(id)arg1;
 + (id)functionSpecForFunctionIndex:(int)arg1;
-+ (id)specWithFunctionName:(id)arg1 minArgs:(int)arg2 maxArgs:(int)arg3 repeatingGroupSize:(int)arg4 isOperator:(int)arg5 shipVersion:(int)arg6 arguments:(const vector_2a3fe66d *)arg7 functionIndex:(int)arg8;
++ (id)specWithFunctionName:(id)arg1 minArgs:(int)arg2 maxArgs:(int)arg3 repeatingGroupSize:(short)arg4 isOperator:(int)arg5 shipVersion:(int)arg6 arguments:(const vector_2a3fe66d *)arg7 functionIndex:(int)arg8;
 + (_Bool)hasAnyDateArgumentsToFunction:(int)arg1;
 + (id)specDictionary;
 @property(readonly, nonatomic) short repeatingGroupSize; // @synthesize repeatingGroupSize=_repeatingGroupSize;
@@ -42,13 +42,14 @@ __attribute__((visibility("hidden")))
 - (int)preferredTypeForArgumentIndex:(unsigned long long)arg1;
 - (int)accessorModeForArgumentIndex:(unsigned long long)arg1;
 - (struct TSCEFunctionArgSpec *)argumentSpecForIndex:(unsigned long long)arg1;
+- (void)loadRepeatingArguments;
 @property(readonly, nonatomic) unsigned long long numArguments;
 @property(readonly) const vector_2a3fe66d *arguments;
 - (id)displayStringForLocale:(id)arg1;
 - (id)localizedToolTipStringForLocale:(id)arg1;
 - (id)localizedFunctionNameForLocale:(id)arg1;
 @property(readonly) NSString *functionName;
-- (id)initWithFunctionName:(id)arg1 minArgs:(int)arg2 maxArgs:(int)arg3 repeatingGroupSize:(int)arg4 isOperator:(_Bool)arg5 shipVersion:(int)arg6 arguments:(const vector_2a3fe66d *)arg7 functionIndex:(int)arg8;
+- (id)initWithFunctionName:(id)arg1 minArgs:(int)arg2 maxArgs:(int)arg3 repeatingGroupSize:(short)arg4 isOperator:(_Bool)arg5 shipVersion:(int)arg6 arguments:(const vector_2a3fe66d *)arg7 functionIndex:(int)arg8;
 - (id)description;
 - (void)p_ValidateArguments;
 

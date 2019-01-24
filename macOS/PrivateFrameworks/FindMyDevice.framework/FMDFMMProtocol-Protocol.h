@@ -10,7 +10,7 @@
 
 @protocol FMDFMMProtocol <NSObject>
 - (oneway void)shouldResumeCardsForUser:(NSString *)arg1 usingCallback:(void (^)(BOOL, NSError *))arg2;
-- (oneway void)disableFMMUsingToken:(NSString *)arg1 inContext:(unsigned long long)arg2 usingCallback:(void (^)(NSError *))arg3;
+- (oneway void)disableFMMUsingToken:(NSString *)arg1 tokenIsPET:(BOOL)arg2 inContext:(unsigned long long)arg3 usingCallback:(void (^)(NSError *))arg4;
 - (oneway void)clearFMMAccountsWithCompletion:(void (^)(NSError *))arg1;
 - (oneway void)retrieveFMMAccountUsingCallback:(void (^)(FMDFMMAccountInfo *, NSError *))arg1;
 - (oneway void)removeFMMAccountWithUsername:(NSString *)arg1 withAuthData:(NSData *)arg2 usingCallback:(void (^)(NSError *))arg3;

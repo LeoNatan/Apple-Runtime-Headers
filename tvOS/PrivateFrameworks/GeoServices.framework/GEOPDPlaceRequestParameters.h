@@ -126,7 +126,7 @@
 - (id)initWithReverseGeocodeCoordinate:(CDStruct_c3b9c2ee)arg1;
 - (id)initWithReverseGeocodeCoordinate:(CDStruct_c3b9c2ee)arg1 preserveOriginalLocation:(_Bool)arg2 floorOrdinal:(int)arg3;
 - (id)initWithExternalTransitStationCodes:(id)arg1 sourceID:(id)arg2 transactionDate:(id)arg3 transactionLocation:(id)arg4;
-- (id)initWithMerchantCode:(id)arg1 rawMerchantCode:(id)arg2 industryCategory:(id)arg3 industryCode:(id)arg4 paymentNetwork:(id)arg5 transactionDate:(id)arg6 transactionLocation:(id)arg7;
+- (id)initWithMerchantCode:(id)arg1 rawMerchantCode:(id)arg2 industryCategory:(id)arg3 industryCode:(id)arg4 paymentNetwork:(id)arg5 transactionDate:(id)arg6 transactionLocation:(id)arg7 terminalId:(id)arg8 transactionCurrencyCode:(id)arg9 transactionType:(int)arg10 warsawMerchantDomain:(id)arg11 warsawMerchantName:(id)arg12 warsawMerchantId:(id)arg13 adamId:(id)arg14 merchantId:(id)arg15 merchantDoingBizAsName:(id)arg16 merchantEnhancedName:(id)arg17 merchantCity:(id)arg18 merchantRawCity:(id)arg19 merchantState:(id)arg20 merchantRawState:(id)arg21 merchantZip:(id)arg22 merchantAddress:(id)arg23 merchantRawAddress:(id)arg24 merchantCountryCode:(id)arg25 merchantType:(id)arg26 merchantCleanConfidenceLevel:(id)arg27 merchantAdditionalData:(id)arg28 brandFallbackSupported:(_Bool)arg29;
 - (id)initWithExternalBusinessID:(id)arg1 contentProvider:(id)arg2;
 - (id)initWithIdentifiers:(id)arg1 resultProviderID:(int)arg2;
 - (void)clearLocations;

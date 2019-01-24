@@ -6,37 +6,13 @@
 
 #import <CoreKnowledge/CKAbstractBackingStore.h>
 
-@class NSString;
-
 @interface _TtC13CoreKnowledge26CKUserDefaultsBackingStore : CKAbstractBackingStore
 {
     // Error parsing type: , name: kv
 }
 
-- (CDUnknownBlockType).cxx_destruct;
-- (void)disableSyncAndDeleteCloudDataWithCompletionHandler:(CDUnknownBlockType)arg1;
-- (void)dropLinksWithBetween:(id)arg1 and:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
-- (void)dropLinksWithLabel:(id)arg1 from:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
-- (void)dropLinkWithLabel:(id)arg1 between:(id)arg2 and:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
-- (_Bool)removeAllValuesAndReturnError:(id *)arg1;
-- (_Bool)removeValuesMatching:(id)arg1 error:(id *)arg2;
-- (_Bool)removeValuesForKeys:(id)arg1 error:(id *)arg2;
-- (_Bool)removeValueForKey:(id)arg1 error:(id *)arg2;
-- (void)setWeightForLinkWithLabel:(id)arg1 between:(id)arg2 and:(id)arg3 toValue:(long long)arg4 completionHandler:(CDUnknownBlockType)arg5;
-- (void)decreaseWeightForLinkWithLabel:(id)arg1 between:(id)arg2 and:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
-- (void)increaseWeightForLinkWithLabel:(id)arg1 between:(id)arg2 and:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
-- (id)writeBatch;
-- (void)setValue:(id)arg1 forKey:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
-- (id)triplesComponentsMatching:(id)arg1 error:(id *)arg2;
-- (id)dictionaryRepresentationForKeysMatching:(id)arg1 error:(id *)arg2;
-- (id)dictionaryRepresentationAndReturnError:(id *)arg1;
-- (id)valuesForKeysMatching:(id)arg1 error:(id *)arg2;
-- (id)valuesAndReturnError:(id *)arg1;
-- (id)keysMatching:(id)arg1 error:(id *)arg2;
-- (id)keysAndReturnError:(id *)arg1;
-- (void)synchronize;
+- (void).cxx_destruct;
 - (id)init;
-@property(nonatomic, copy) NSString *name;
 
 @end
 

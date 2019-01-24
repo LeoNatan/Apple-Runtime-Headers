@@ -31,7 +31,6 @@
 @property unsigned int rendererFlags;
 @property(readonly) NSArray *displays;
 - (void)dealloc;
-- (void)_initializeBrightnessNotifications;
 - (void)_detectDisplays;
 - (id)displayWithUniqueId:(id)arg1;
 - (id)displayWithDisplayId:(unsigned int)arg1;

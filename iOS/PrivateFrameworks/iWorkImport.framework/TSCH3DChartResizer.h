@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class TSCH3DChartBoundsLayout, TSCH3DChartType, TSCH3DScene;
+@class TSCH3DChartBoundsLayout, TSCH3DChartScenePropertyAccessor, TSCH3DChartType, TSCH3DScene;
 
 __attribute__((visibility("hidden")))
 @interface TSCH3DChartResizer : NSObject
@@ -14,7 +14,7 @@ __attribute__((visibility("hidden")))
     TSCH3DChartBoundsLayout *mLayout;
     TSCH3DChartType *mChartType;
     TSCH3DScene *mScene;
-    struct ChartScenePropertyAccessor *mAccessor;
+    TSCH3DChartScenePropertyAccessor *mAccessor;
     float mMinStep;
     float mPrecision;
     struct ResizeData mPrevious;

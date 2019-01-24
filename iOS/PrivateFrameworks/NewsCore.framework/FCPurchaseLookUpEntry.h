@@ -17,22 +17,24 @@
     NSDate *_lastVerificationTime;
     NSDate *_lastVerificationFailureTime;
     NSString *_purchaseID;
-    NSDate *_dateOfExpiration;
-    NSString *_identifier;
     NSString *_tagID;
+    NSString *_identifier;
+    NSDate *_dateOfExpiration;
 }
 
-@property(copy, nonatomic) NSString *tagID; // @synthesize tagID=_tagID;
-@property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(nonatomic) _Bool hasShownRenewalNotice; // @synthesize hasShownRenewalNotice=_hasShownRenewalNotice;
 @property(copy, nonatomic) NSDate *dateOfExpiration; // @synthesize dateOfExpiration=_dateOfExpiration;
 @property(nonatomic) _Bool isNewsAppPurchase; // @synthesize isNewsAppPurchase=_isNewsAppPurchase;
+@property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
+@property(copy, nonatomic) NSString *tagID; // @synthesize tagID=_tagID;
 @property(copy, nonatomic) NSString *purchaseID; // @synthesize purchaseID=_purchaseID;
 @property(copy, nonatomic) NSDate *lastVerificationFailureTime; // @synthesize lastVerificationFailureTime=_lastVerificationFailureTime;
 @property(copy, nonatomic) NSDate *lastVerificationTime; // @synthesize lastVerificationTime=_lastVerificationTime;
 @property(nonatomic) unsigned long long purchaseValidationState; // @synthesize purchaseValidationState=_purchaseValidationState;
 @property(nonatomic) unsigned long long purchaseType; // @synthesize purchaseType=_purchaseType;
 - (void).cxx_destruct;
+- (id)mutableCopyWithZone:(struct _NSZone *)arg1;
+- (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)initWithEntryID:(id)arg1 dictionaryRepresentation:(id)arg2;

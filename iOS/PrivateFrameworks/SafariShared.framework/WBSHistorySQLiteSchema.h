@@ -6,15 +6,23 @@
 
 #import <objc/NSObject.h>
 
-@class WBSHistoryCrypto, WBSSQLiteDatabase;
+@class NSDate, NSDictionary, WBSHistoryCrypto, WBSSQLiteDatabase;
 
 @interface WBSHistorySQLiteSchema : NSObject
 {
     WBSSQLiteDatabase *_database;
     WBSHistoryCrypto *_crypto;
+    NSDate *_migrateVisitsAfterDate;
 }
 
 - (void).cxx_destruct;
+- (void)_removeLegacyHistoryDatabaseIfNeeded;
+- (void)_migrateLegacyDatabase;
+- (_Bool)migrateLegacyDatabaseCreatingRedirectChains:(id)arg1 urlsToItemAndLastVisitID:(id)arg2 visitsToUseForRedirectChains:(id)arg3;
+- (id)_migrateLegacyDatabaseCreatingItemsAndVisits:(id)arg1 outVisitsToUseForRedirectChains:(id)arg2;
+- (long long)_migrateLegacyVisitWithItemID:(long long)arg1 visitTime:(double)arg2 title:(id)arg3 score:(unsigned long long)arg4 loadSuccessful:(_Bool)arg5 httpNonGet:(_Bool)arg6 synthesized:(_Bool)arg7;
+- (long long)_migrateLegacyItem:(id)arg1 dailyVisitCounts:(Vector_3b5d2a9f *)arg2 weeklyVisitCounts:(Vector_3b5d2a9f *)arg3;
+@property(readonly, nonatomic) NSDictionary *legacyDatabase;
 - (int)_migrateToSchemaVersion_13;
 - (int)_migrateToSchemaVersion_12;
 - (int)_migrateToSchemaVersion_11;
@@ -30,7 +38,7 @@
 - (int)_migrateToSchemaVersion:(int)arg1;
 - (int)_setDatabaseSchemaVersion:(int)arg1;
 - (int)migrateToCurrentSchemaVersionIfNeeded;
-- (id)initWithDatabase:(id)arg1 crypto:(id)arg2;
+- (id)initWithDatabase:(id)arg1 crypto:(id)arg2 migrateVisitsAfterDate:(id)arg3;
 - (id)init;
 
 @end

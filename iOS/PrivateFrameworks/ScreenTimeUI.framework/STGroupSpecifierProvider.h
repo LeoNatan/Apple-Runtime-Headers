@@ -27,6 +27,7 @@
 @property(nonatomic) __weak id <STGroupSpecifierProviderDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) _Bool isHidden; // @synthesize isHidden=_isHidden;
 - (void).cxx_destruct;
+- (void)_tableCellHeightDidChange:(id)arg1;
 - (void)replaceSpecifiersAtIndexes:(id)arg1 withSpecifiers:(id)arg2;
 - (void)replaceObjectInSpecifiersAtIndex:(unsigned long long)arg1 withObject:(id)arg2;
 - (void)removeSpecifiersAtIndexes:(id)arg1;

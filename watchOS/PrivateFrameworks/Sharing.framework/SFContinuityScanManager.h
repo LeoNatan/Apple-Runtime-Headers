@@ -4,19 +4,15 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <objc/NSObject.h>
+#import <Sharing/SFXPCClient.h>
 
-#import <Sharing/SFCompanionXPCManagerObserver-Protocol.h>
 #import <Sharing/SFContinuityScannerClient-Protocol.h>
 
 @class NSHashTable, NSMutableSet, NSString;
-@protocol SFContinuityScannerProtocol><NSXPCProxyCreating;
 
 __attribute__((visibility("hidden")))
-@interface SFContinuityScanManager : NSObject <SFCompanionXPCManagerObserver, SFContinuityScannerClient>
+@interface SFContinuityScanManager : SFXPCClient <SFContinuityScannerClient>
 {
-    _Bool _xpcSetupInProgress;
-    id <SFContinuityScannerProtocol><NSXPCProxyCreating> _connectionProxy;
     NSMutableSet *_foundDevices;
     NSHashTable *_observers;
     unsigned int _scanTypes;
@@ -26,20 +22,22 @@ __attribute__((visibility("hidden")))
 @property unsigned int scanTypes; // @synthesize scanTypes=_scanTypes;
 @property(retain) NSHashTable *observers; // @synthesize observers=_observers;
 @property(retain) NSMutableSet *foundDevices; // @synthesize foundDevices=_foundDevices;
-@property(retain) id <SFContinuityScannerProtocol><NSXPCProxyCreating> connectionProxy; // @synthesize connectionProxy=_connectionProxy;
-@property _Bool xpcSetupInProgress; // @synthesize xpcSetupInProgress=_xpcSetupInProgress;
 - (void).cxx_destruct;
-- (void)xpcManagerDidResumeConnection:(id)arg1;
-- (void)xpcManagerConnectionInterrupted;
+- (_Bool)shouldEscapeXpcTryCatch;
+- (id)remoteObjectInterface;
+- (id)exportedInterface;
+- (id)machServiceName;
 - (void)pairedDevicesChanged:(id)arg1;
 - (void)lostDeviceWithDevice:(id)arg1;
 - (void)foundDeviceWithDevice:(id)arg1;
 - (void)receivedAdvertisement:(id)arg1;
+- (void)onqueue_connectionInterrupted;
+- (void)onqueue_connectionEstablished;
 - (void)activityPayloadFromDeviceUniqueID:(id)arg1 forAdvertisementPayload:(id)arg2 command:(id)arg3 timeout:(int)arg4 withCompletionHandler:(CDUnknownBlockType)arg5;
 - (void)scanForTypes:(unsigned int)arg1;
+- (void)_getRemoteObjectProxyOnQueue:(CDUnknownBlockType)arg1;
 - (void)removeObserver:(id)arg1;
 - (void)addObserver:(id)arg1;
-- (void)setupProxyIfNeeded;
 - (id)init;
 
 // Remaining properties

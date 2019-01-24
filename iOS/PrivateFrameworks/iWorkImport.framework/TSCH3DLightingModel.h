@@ -19,7 +19,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)lightingModel;
-+ (id)instanceWithArchive:(const struct Chart3DLightingModelArchive *)arg1 unarchiver:(id)arg2;
++     // Error parsing type: @32@0:8r^{Chart3DLightingModelArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{Chart3DPhongLightingModelArchive}^{Chart3DFixedFunctionLightingModelArchive}^{Chart3DEnvironmentPackageArchive}}16@24, name: instanceWithArchive:unarchiver:
 @property(retain, nonatomic) TSCH3DEnvironmentPackage *environment; // @synthesize environment=_environment;
 @property(retain, nonatomic) TSCH3DLightingPackage *lightings; // @synthesize lightings=_lightings;
 @property(retain, nonatomic) TSCH3DMaterialPackage *materials; // @synthesize materials=_materials;
@@ -34,8 +34,8 @@ __attribute__((visibility("hidden")))
 - (id)clone;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)dealloc;
-- (void)saveToArchive:(struct Chart3DLightingModelArchive *)arg1 archiver:(id)arg2;
-- (id)initWithArchive:(const struct Chart3DLightingModelArchive *)arg1 unarchiver:(id)arg2;
+-     // Error parsing type: v32@0:8^{Chart3DLightingModelArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{Chart3DPhongLightingModelArchive}^{Chart3DFixedFunctionLightingModelArchive}^{Chart3DEnvironmentPackageArchive}}16@24, name: saveToArchive:archiver:
+-     // Error parsing type: @32@0:8r^{Chart3DLightingModelArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{Chart3DPhongLightingModelArchive}^{Chart3DFixedFunctionLightingModelArchive}^{Chart3DEnvironmentPackageArchive}}16@24, name: initWithArchive:unarchiver:
 
 @end
 

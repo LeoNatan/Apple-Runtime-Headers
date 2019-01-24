@@ -41,9 +41,9 @@
 + (id)workflow;
 + (id)runWorkflowAtURL:(id)arg1 withInput:(id)arg2 error:(id *)arg3;
 + (id)translatedWorkflowInitializationError:(id)arg1 url:(id)arg2;
-+ (id)workflowAtURL:(id)arg1 forRunning:(BOOL)arg2 variablesDictionary:(id)arg3 error:(id *)arg4;
-+ (id)workflowWithPropertyList:(id)arg1 url:(id)arg2 forRunning:(BOOL)arg3 error:(id *)arg4;
-+ (id)workflowAtURL:(id)arg1 forRunning:(BOOL)arg2 error:(id *)arg3;
++ (id)workflowAtURL:(id)arg1 forRunning:(BOOL)arg2 remotely:(BOOL)arg3 variablesDictionary:(id)arg4 error:(id *)arg5;
++ (id)workflowWithPropertyList:(id)arg1 url:(id)arg2 forRunning:(BOOL)arg3 remotely:(BOOL)arg4 error:(id *)arg5;
++ (id)workflowAtURL:(id)arg1 forRunning:(BOOL)arg2 remotely:(BOOL)arg3 error:(id *)arg4;
 @property(retain, nonatomic) NSMapTable *_loadingErrorsByAction; // @synthesize _loadingErrorsByAction=_future2;
 @property unsigned long long updateCount; // @synthesize updateCount=_updateCount;
 @property(retain, nonatomic, getter=_workflowMetaData, setter=_setWorkflowMetaData:) AMWorkflowMetaData *_workflowMetaData; // @synthesize _workflowMetaData=_future;
@@ -66,7 +66,7 @@
 - (void)reloadActionsForIdentifiers:(id)arg1;
 - (void)_reloadActionWithoutNotifying:(id)arg1;
 - (id)_loadedActionOrPlaceholderForActionDictionary:(id)arg1 isViewVisible:(id)arg2 isTigerWorkflow:(BOOL)arg3 error:(id *)arg4;
-- (id)preflightForRunningWithModeReturningError:(unsigned long long)arg1;
+- (id)preflightForRunningWithModeReturningError:(unsigned long long)arg1 remotely:(BOOL)arg2;
 @property(readonly, nonatomic) NSDictionary *_warningMessageDictOnRun;
 - (id)_suggestedTestingActionBundleID;
 @property(readonly, nonatomic) NSUndoManager *_undoManager;
@@ -171,7 +171,7 @@
 - (id)initWithContentsOfURL:(id)arg1 variablesDictionary:(id)arg2 error:(id *)arg3;
 - (id)initWithContentsOfURL:(id)arg1 error:(id *)arg2;
 - (id)init;
-- (BOOL)validateWorkflowWithURL:(id)arg1 forRunning:(BOOL)arg2 initializationError:(id)arg3 returningError:(id *)arg4;
+- (BOOL)validateWorkflowWithURL:(id)arg1 forRunning:(BOOL)arg2 remotely:(BOOL)arg3 initializationError:(id)arg4 returningError:(id *)arg5;
 
 @end
 

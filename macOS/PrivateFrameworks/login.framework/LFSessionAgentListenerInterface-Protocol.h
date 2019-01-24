@@ -9,6 +9,9 @@
 @class NSDictionary, NSString;
 
 @protocol LFSessionAgentListenerInterface <NSObject>
+- (void)SACClassroomLockHide:(void (^)(int))arg1;
+- (void)SACClassroomLockShow:(void (^)(int))arg1;
+- (void)SACClassroomLockSetCaption:(NSString *)arg1 reply:(void (^)(int))arg2;
 - (void)SACLOFinishDelayedLogout:(NSDictionary *)arg1 reply:(void (^)(int))arg2;
 - (void)SACLORegisterLogoutStatusCallacks:(NSDictionary *)arg1 reply:(void (^)(int))arg2;
 - (void)SACLOStartLogoutWithOptions:(int)arg1 subType:(int)arg2 showConfirmation:(BOOL)arg3 countDownTime:(int)arg4 talOptions:(int)arg5 logoutOptions:(NSDictionary *)arg6 reply:(void (^)(int))arg7;

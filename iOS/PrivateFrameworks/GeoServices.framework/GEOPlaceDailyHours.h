@@ -16,6 +16,7 @@
     double _openingSoonThresholdSeconds;
 }
 
++ (id)getCurrentPlaceDailyHours:(id)arg1;
 + (id)dailyHours:(id)arg1 forDays:(struct _NSRange)arg2 withClosingThreshold:(double)arg3 withOpeningThreshold:(double)arg4;
 @property(nonatomic) double openingSoonThresholdSeconds; // @synthesize openingSoonThresholdSeconds=_openingSoonThresholdSeconds;
 @property(nonatomic) double closingSoonThresholdSeconds; // @synthesize closingSoonThresholdSeconds=_closingSoonThresholdSeconds;

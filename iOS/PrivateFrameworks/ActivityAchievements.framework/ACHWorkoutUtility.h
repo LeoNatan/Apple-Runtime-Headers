@@ -6,16 +6,18 @@
 
 #import <objc/NSObject.h>
 
-@class HDProfile, HDSQLitePredicate;
+@class HDDatabaseTransactionContext, HDProfile, HDSQLitePredicate;
 
 @interface ACHWorkoutUtility : NSObject
 {
+    HDDatabaseTransactionContext *_databaseContext;
     HDProfile *_profile;
     HDSQLitePredicate *_firstPartyPredicate;
 }
 
 @property(retain, nonatomic) HDSQLitePredicate *firstPartyPredicate; // @synthesize firstPartyPredicate=_firstPartyPredicate;
 @property(nonatomic) __weak HDProfile *profile; // @synthesize profile=_profile;
+@property(nonatomic) __weak HDDatabaseTransactionContext *databaseContext; // @synthesize databaseContext=_databaseContext;
 - (void).cxx_destruct;
 - (id)bestEnergyBurnedForFirstPartyWorkoutsWithType:(unsigned long long)arg1 endingBeforeDate:(id)arg2;
 - (unsigned long long)numberOfFirstPartyWorkoutsWithDuration:(double)arg1 withType:(id)arg2 startingAtOrAfterDate:(id)arg3 endingOnOrBeforeDate:(id)arg4;

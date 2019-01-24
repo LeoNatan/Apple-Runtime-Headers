@@ -17,6 +17,7 @@
 + (id)chunkDeniedWithErrorCode:(int)arg1;
 + (id)chunkDeniedWithDictionary:(id)arg1 context:(id)arg2;
 + (id)chunkDenied;
+- (_Bool)mutatingCommand;
 - (_Bool)requiresResponse;
 @property(nonatomic) int errorCode;
 @property(retain, nonatomic) SASyncAnchor *current;

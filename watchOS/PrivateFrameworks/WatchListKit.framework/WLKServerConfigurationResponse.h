@@ -30,6 +30,8 @@
 - (_Bool)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (_Bool)isValid;
+@property(readonly, nonatomic, getter=isActiveUser) _Bool activeUser;
+@property(readonly, copy, nonatomic) NSString *ek;
 @property(readonly, nonatomic) NSString *vppaStatus;
 @property(readonly, nonatomic) NSArray *orderedChannels;
 @property(readonly, nonatomic) NSDictionary *requiredRequestKeyValuePairsDictionary;

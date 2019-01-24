@@ -36,8 +36,10 @@
     NSArray *_moreInfoItems;
     NSSet *_automaticExpressModes;
     NSArray *_allowedPaymentNetworks;
+    NSSet *_requiredTransitNetworkIdentifiers;
 }
 
+@property(retain, nonatomic) NSSet *requiredTransitNetworkIdentifiers; // @synthesize requiredTransitNetworkIdentifiers=_requiredTransitNetworkIdentifiers;
 @property(retain, nonatomic) NSArray *allowedPaymentNetworks; // @synthesize allowedPaymentNetworks=_allowedPaymentNetworks;
 @property(readonly, nonatomic) NSSet *automaticExpressModes; // @synthesize automaticExpressModes=_automaticExpressModes;
 @property(readonly, nonatomic) NSArray *moreInfoItems; // @synthesize moreInfoItems=_moreInfoItems;
@@ -54,6 +56,7 @@
 @property(readonly, nonatomic) PKPaymentWebService *webService; // @synthesize webService=_webService;
 @property(copy, nonatomic) NSString *referrerIdentifier; // @synthesize referrerIdentifier=_referrerIdentifier;
 - (void).cxx_destruct;
+- (void)_addAssociatedCredential:(id)arg1;
 - (void)_updateLocalizedProgressAndInvalidateTimer;
 - (void)paymentWebService:(id)arg1 didCompleteTSMConnectionForTaskID:(unsigned int)arg2;
 - (void)paymentWebService:(id)arg1 didQueueTSMConnectionForTaskID:(unsigned int)arg2;
@@ -103,21 +106,20 @@
 - (void)_informDelegatesOfPaymentPassUpdateOnCredential:(id)arg1;
 - (void)_downloadRemoteAssetsForPaymentPass:(id)arg1 paymentCredential:(id)arg2;
 - (void)_downloadPassForPaymentCredential:(id)arg1;
-- (void)_addAssociatedCredential:(id)arg1;
 - (void)_associateCredential:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (_Bool)_credentialIsValidForSetupConfiguration:(id)arg1;
 - (_Bool)_hasSetupConfiguration;
 - (void)_associateCredentials:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)associateCredentials:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)updateRemoteCredentials:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
-- (void)requestRemoteCredentials:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
+- (void)retrieveAllAvaialbleCredentials:(CDUnknownBlockType)arg1;
 - (void)retrieveRemoteCredentials:(CDUnknownBlockType)arg1;
-- (void)registerDevice:(CDUnknownBlockType)arg1;
-- (void)_registerWhileRetrievingRemoteCredentials:(_Bool)arg1 withCompletion:(CDUnknownBlockType)arg2;
-- (void)_validatePreconditionsWhileRetrievingRemoteCredentials:(_Bool)arg1 withCompletion:(CDUnknownBlockType)arg2;
-- (void)validatePreconditions:(CDUnknownBlockType)arg1;
+- (id)_doesDisplayableErrorConstitutePreflightFailure:(id)arg1;
+- (void)preflightWithCompletion:(CDUnknownBlockType)arg1;
 - (void)validatePreconditionsRegisterAndAssociateRemoteCredentials:(CDUnknownBlockType)arg1;
 - (void)validatePreconditionsAndRegister:(CDUnknownBlockType)arg1;
+- (void)registerDevice:(CDUnknownBlockType)arg1;
+- (void)validatePreconditions:(CDUnknownBlockType)arg1;
 - (void)_setState:(int)arg1 notify:(_Bool)arg2;
 - (void)resetForNewProvisioning;
 - (void)reset;

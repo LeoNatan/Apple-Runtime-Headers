@@ -17,6 +17,7 @@ __attribute__((visibility("hidden")))
 }
 
 - (void).cxx_destruct;
+@property(readonly, copy) NSString *description;
 @property(readonly, nonatomic) WKWebsiteDataRecord *wkWebsiteDataRecord;
 @property(readonly, copy, nonatomic) NSSet *dataTypes;
 @property(readonly, copy, nonatomic) NSString *displayName;
@@ -24,7 +25,6 @@ __attribute__((visibility("hidden")))
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 

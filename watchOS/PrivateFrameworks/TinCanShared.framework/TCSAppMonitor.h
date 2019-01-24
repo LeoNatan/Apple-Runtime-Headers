@@ -18,7 +18,7 @@
     _Bool _appIsInstalled;
 }
 
-+ (_Bool)_isAppBlacklistedForRegion;
++ (_Bool)_isAppRestrictedForRegion;
 + (_Bool)shouldAppBeInstalled;
 + (id)sharedInstance;
 @property(nonatomic) _Bool appIsInstalled; // @synthesize appIsInstalled=_appIsInstalled;

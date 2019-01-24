@@ -14,10 +14,16 @@
     unsigned long long _galleryType;
     unsigned long long _videoType;
     NSString *_mediaId;
+    NSString *_componentIdentifier;
+    NSString *_componentType;
+    NSString *_componentRole;
     NSDictionary *_metaData;
 }
 
 @property(retain, nonatomic) NSDictionary *metaData; // @synthesize metaData=_metaData;
+@property(retain, nonatomic) NSString *componentRole; // @synthesize componentRole=_componentRole;
+@property(retain, nonatomic) NSString *componentType; // @synthesize componentType=_componentType;
+@property(retain, nonatomic) NSString *componentIdentifier; // @synthesize componentIdentifier=_componentIdentifier;
 @property(retain, nonatomic) NSString *mediaId; // @synthesize mediaId=_mediaId;
 @property(nonatomic) unsigned long long videoType; // @synthesize videoType=_videoType;
 @property(nonatomic) unsigned long long galleryType; // @synthesize galleryType=_galleryType;

@@ -12,10 +12,13 @@
 
 @interface NTPBRestorePaidSubscription : PBCodable <NSCopying>
 {
+    NSMutableArray *_items;
     NSMutableArray *_restoredPaidSubscriptionChannelIds;
 }
 
++ (Class)itemsType;
 + (Class)restoredPaidSubscriptionChannelIdsType;
+@property(retain, nonatomic) NSMutableArray *items; // @synthesize items=_items;
 @property(retain, nonatomic) NSMutableArray *restoredPaidSubscriptionChannelIds; // @synthesize restoredPaidSubscriptionChannelIds=_restoredPaidSubscriptionChannelIds;
 - (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
@@ -26,6 +29,10 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+- (id)itemsAtIndex:(unsigned long long)arg1;
+- (unsigned long long)itemsCount;
+- (void)addItems:(id)arg1;
+- (void)clearItems;
 - (id)restoredPaidSubscriptionChannelIdsAtIndex:(unsigned long long)arg1;
 - (unsigned long long)restoredPaidSubscriptionChannelIdsCount;
 - (void)addRestoredPaidSubscriptionChannelIds:(id)arg1;

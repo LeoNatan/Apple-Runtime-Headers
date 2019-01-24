@@ -56,7 +56,7 @@ __attribute__((visibility("hidden")))
 - (id)dataForIdentifier:(long long)arg1;
 - (id)dataOrNilForIdentifier:(long long)arg1;
 - (void)enumerateDatasUsingBlock:(CDUnknownBlockType)arg1;
-- (void)addDataFromPackage:(id)arg1 packageURL:(id)arg2 dataInfo:(const struct DataInfo *)arg3 packageMetadata:(id)arg4 documentResourceInfo:(id)arg5 areExternalReferencesAllowed:(_Bool)arg6;
+-     // Error parsing type: v60@0:8@16@24r^{DataInfo=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}^{DataAttributes}^{EncryptionInfo}QBi}32@40@48B56, name: addDataFromPackage:packageURL:dataInfo:packageMetadata:documentResourceInfo:areExternalReferencesAllowed:
 - (void)didSaveWithSaveOperationState:(id)arg1;
 - (_Bool)prepareTemporaryDataStorageForData:(id)arg1 temporaryDataStorage:(id *)arg2;
 - (_Bool)migrateDataToTemporaryStorageFromPackage:(id)arg1;

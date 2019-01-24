@@ -17,6 +17,7 @@ __attribute__((visibility("hidden")))
     _Bool _usedParagraphHeights;
     _Bool _endOfLayout;
     _Bool _lastLineIsEmptyAndHasListLabel;
+    _Bool _textIsVertical;
     unsigned long long _nextWidowPullsDownFromCharIndex;
     unsigned long long _columnCount;
     unsigned long long _lineFragmentCount;
@@ -25,6 +26,7 @@ __attribute__((visibility("hidden")))
     struct CGRect _frameBounds;
 }
 
+@property(nonatomic) _Bool textIsVertical; // @synthesize textIsVertical=_textIsVertical;
 @property(nonatomic) _Bool lastLineIsEmptyAndHasListLabel; // @synthesize lastLineIsEmptyAndHasListLabel=_lastLineIsEmptyAndHasListLabel;
 @property(nonatomic) _Bool endOfLayout; // @synthesize endOfLayout=_endOfLayout;
 @property(nonatomic) _Bool usedParagraphHeights; // @synthesize usedParagraphHeights=_usedParagraphHeights;

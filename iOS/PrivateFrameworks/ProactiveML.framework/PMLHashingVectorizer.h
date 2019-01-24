@@ -14,11 +14,15 @@
 @interface PMLHashingVectorizer : NSObject <PMLTransformerProtocol, PMLPlistAndChunksSerializableProtocol>
 {
     int _buckets;
-    int _ngrams;
     _Bool _normalize;
+    struct _NSRange _characterNGramRange;
+    struct _NSRange _tokenNGramRange;
+    _Bool _shouldNormalizeTokens;
+    _Bool _shouldNormalizeCharacters;
     _Bool _intercept;
 }
 
++ (id)withBucketSize:(int)arg1 characterNGramRange:(struct _NSRange)arg2 tokenNGramRange:(struct _NSRange)arg3 shouldNormalizeTokens:(_Bool)arg4 shouldNormalizeCharacters:(_Bool)arg5 withIntercept:(_Bool)arg6;
 + (id)withBucketSize:(int)arg1 ngrams:(int)arg2 andIntercept:(_Bool)arg3;
 + (id)withBucketSize:(int)arg1 andNgrams:(int)arg2;
 + (id)withBucketSize:(int)arg1;
@@ -27,6 +31,7 @@
 - (id)toPlistWithChunks:(id)arg1;
 - (id)transform:(id)arg1;
 - (id)init;
+- (id)initWithBucketSize:(int)arg1 characterNGramRange:(struct _NSRange)arg2 tokenNGramRange:(struct _NSRange)arg3 shouldNormalizeTokens:(_Bool)arg4 shouldNormalizeCharacters:(_Bool)arg5 withIntercept:(_Bool)arg6;
 - (id)initWithBucketSize:(int)arg1 ngrams:(int)arg2 andIntercept:(_Bool)arg3;
 
 // Remaining properties

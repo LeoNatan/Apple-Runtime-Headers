@@ -33,8 +33,8 @@ __attribute__((visibility("hidden")))
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
-- (void)saveToArchive:(struct LayoutStateArchive *)arg1 archiver:(id)arg2 context:(id)arg3;
-- (id)initWithArchive:(const struct LayoutStateArchive *)arg1 unarchiver:(id)arg2;
+-     // Error parsing type: v40@0:8^{LayoutStateArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TP::SectionHintArchive>=^{Arena}ii^{Rep}}{RepeatedPtrField<std::__1::basic_string<char> >=^{Arena}ii^{Rep}}IIIIIi}16@24@32, name: saveToArchive:archiver:context:
+-     // Error parsing type: @32@0:8r^{LayoutStateArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TP::SectionHintArchive>=^{Arena}ii^{Rep}}{RepeatedPtrField<std::__1::basic_string<char> >=^{Arena}ii^{Rep}}IIIIIi}16@24, name: initWithArchive:unarchiver:
 - (id)archivedLayoutStateInContext:(id)arg1;
 - (_Bool)isEqualToLayoutState:(id)arg1;
 - (void)reset;

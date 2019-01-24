@@ -78,7 +78,6 @@
     double _loadingIndicatorTimerDelay;
     long long _timeControlStatus;
     long long _videoGravityButtonType;
-    NSString *_videoGravity;
     NSString *_uniqueIdentifer;
     struct CGRect _playbackViewFrame;
 }
@@ -103,7 +102,6 @@
 + (id)keyPathsForValuesAffectingFullScreen;
 @property(readonly, nonatomic) NSString *uniqueIdentifer; // @synthesize uniqueIdentifer=_uniqueIdentifer;
 @property(nonatomic) struct CGRect playbackViewFrame; // @synthesize playbackViewFrame=_playbackViewFrame;
-@property(copy, nonatomic) NSString *videoGravity; // @synthesize videoGravity=_videoGravity;
 @property(nonatomic) long long videoGravityButtonType; // @synthesize videoGravityButtonType=_videoGravityButtonType;
 @property(nonatomic) _Bool shouldIgnoreTimeResolverUpdates; // @synthesize shouldIgnoreTimeResolverUpdates=_shouldIgnoreTimeResolverUpdates;
 @property(nonatomic, getter=isScrubbingOrSeeking) _Bool scrubbingOrSeeking; // @synthesize scrubbingOrSeeking=_scrubbingOrSeeking;

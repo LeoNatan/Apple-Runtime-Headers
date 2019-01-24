@@ -9,23 +9,25 @@
 #import <NewsCore/FCClassifiable-Protocol.h>
 #import <NewsCore/FCFeedTransformationItem-Protocol.h>
 
-@class COMAPPLEFELDSPARPROTOCOLLIVERPOOLCohort, NSArray, NSDate, NSString;
+@class COMAPPLEFELDSPARPROTOCOLLIVERPOOLCohortList, NSArray, NSDate, NSString;
 
 @interface NTPBFeedItem (FCFeedItem) <FCClassifiable, FCFeedTransformationItem>
 + (id)feedItemWithCKFeedItemAndArticleRecord:(id)arg1 storefrontID:(id)arg2;
 + (id)cloudKitKeysWithStorefrontID:(id)arg1;
 - (void)enumerateTopicCohortsWithBlock:(CDUnknownBlockType)arg1;
-@property(readonly, nonatomic) COMAPPLEFELDSPARPROTOCOLLIVERPOOLCohort *publisherCohort;
-@property(readonly, nonatomic) COMAPPLEFELDSPARPROTOCOLLIVERPOOLCohort *globalCohort;
+@property(readonly, nonatomic) COMAPPLEFELDSPARPROTOCOLLIVERPOOLCohortList *publisherCohorts;
+@property(readonly, nonatomic) COMAPPLEFELDSPARPROTOCOLLIVERPOOLCohortList *globalCohorts;
 @property(readonly, nonatomic) _Bool canBePurchased;
 @property(readonly, nonatomic) long long publisherArticleVersion;
 - (_Bool)mustShow;
-@property(readonly, nonatomic) unsigned long long articleContentType;
+- (unsigned long long)articleContentType;
 @property(readonly, nonatomic) _Bool hasGlobalUserFeedback;
 @property(readonly, copy, nonatomic) NSString *publisherID;
 @property(readonly, nonatomic) unsigned long long halfLife;
 @property(readonly, copy, nonatomic) NSDate *publishDate;
 @property(readonly, copy, nonatomic) NSString *sourceFeedID;
+@property(readonly, nonatomic, getter=isANF) _Bool anf;
+@property(readonly, copy, nonatomic) NSString *itemID;
 @property(readonly, nonatomic) NSString *identifier;
 @property(readonly, copy) NSString *description;
 - (_Bool)hasFeature:(id)arg1;
@@ -37,6 +39,7 @@
 
 // Remaining properties
 @property(readonly, copy, nonatomic) NSString *articleID;
+@property(readonly, nonatomic, getter=isBundlePaid) _Bool bundlePaid;
 @property(readonly, copy, nonatomic) NSString *clusterID;
 @property(readonly, nonatomic) unsigned long long contentType;
 @property(readonly, copy) NSString *debugDescription;

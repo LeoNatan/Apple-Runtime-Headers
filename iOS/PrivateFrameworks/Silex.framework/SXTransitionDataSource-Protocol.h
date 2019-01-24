@@ -18,6 +18,5 @@
 @property(readonly, nonatomic) _Bool transitionViewUsesThumbnail;
 @property(readonly, nonatomic) UIView *transitionContentView;
 @property(readonly, nonatomic) UIView *transitionContainerView;
-- (void)prepareForTransitionType:(unsigned long long)arg1;
 @end
 

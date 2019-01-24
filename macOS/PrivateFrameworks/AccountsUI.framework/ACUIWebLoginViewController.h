@@ -10,10 +10,11 @@
 #import <AccountsUI/WKUIDelegate-Protocol.h>
 
 @class NSBox, NSProgressIndicator, NSString, WKWebView;
-@protocol ACUIWebLoginDelegate;
+@protocol ACUIWebLoginDelegate, SLWebClient;
 
 @interface ACUIWebLoginViewController : ACUIViewController <WKUIDelegate, WKNavigationDelegate>
 {
+    id <SLWebClient> _webClient;
     id <ACUIWebLoginDelegate> _delegate;
     WKWebView *_webView;
     NSBox *_webViewContainer;
@@ -43,6 +44,7 @@
 - (void)_webLoginSucceeded;
 - (void)_webLoginFailureWithError:(id)arg1;
 - (void)viewDidLoad;
+- (id)webClient;
 - (void)awakeFromNib;
 - (void)dealloc;
 

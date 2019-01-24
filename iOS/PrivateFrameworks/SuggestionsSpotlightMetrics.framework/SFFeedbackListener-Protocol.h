@@ -6,11 +6,13 @@
 
 #import <SuggestionsSpotlightMetrics/NSObject-Protocol.h>
 
-@class SFCardSectionEngagementFeedback, SFCardViewAppearFeedback, SFCardViewDisappearFeedback, SFClearInputFeedback, SFCustomFeedback, SFDidGoToSearchFeedback, SFDidGoToSiteFeedback, SFEndSearchFeedback, SFErrorFeedback, SFFeedback, SFLateSectionsAppendedFeedback, SFLookupHintRelevancyFeedback, SFRankingFeedback, SFResultEngagementFeedback, SFResultGradingFeedback, SFResultsReceivedAfterTimeoutFeedback, SFSearchViewAppearFeedback, SFSearchViewDisappearFeedback, SFSectionEngagementFeedback, SFStartSearchFeedback, SFSuggestionEngagementFeedback, SFVisibleResultsFeedback, SFVisibleSectionHeaderFeedback, SFVisibleSuggestionsFeedback;
+@class SFCardSectionEngagementFeedback, SFCardViewAppearFeedback, SFCardViewDisappearFeedback, SFClearInputFeedback, SFCustomFeedback, SFDidGoToSearchFeedback, SFDidGoToSiteFeedback, SFEndSearchFeedback, SFErrorFeedback, SFFeedback, SFLateSectionsAppendedFeedback, SFLookupHintRelevancyFeedback, SFRankingFeedback, SFResultEngagementFeedback, SFResultGradingFeedback, SFResultsReceivedAfterTimeoutFeedback, SFSearchViewAppearFeedback, SFSearchViewDisappearFeedback, SFSectionEngagementFeedback, SFStartSearchFeedback, SFSuggestionEngagementFeedback, SFUserReportFeedback, SFVisibleResultsFeedback, SFVisibleSectionHeaderFeedback, SFVisibleSuggestionsFeedback;
 
 @protocol SFFeedbackListener <NSObject>
 
 @optional
+- (void)didSubmitUserReportFeedback:(SFUserReportFeedback *)arg1;
+- (void)didReportUserResponseFeedback:(SFUserReportFeedback *)arg1;
 - (void)didGradeLookupHintRelevancy:(SFLookupHintRelevancyFeedback *)arg1;
 - (void)didGoToSearch:(SFDidGoToSearchFeedback *)arg1;
 - (void)didGoToSite:(SFDidGoToSiteFeedback *)arg1;

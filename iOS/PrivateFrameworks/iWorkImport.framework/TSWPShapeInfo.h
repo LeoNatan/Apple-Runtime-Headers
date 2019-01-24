@@ -47,6 +47,7 @@ __attribute__((visibility("hidden")))
 - (unsigned long long)p_nonTopicParagraphBreakCount;
 - (unsigned long long)p_chunkCountForByBulletGroup;
 - (unsigned long long)p_chunkCountForByBullet;
+- (_Bool)textIsVerticalAtCharIndex:(unsigned long long)arg1;
 @property(readonly, nonatomic) _Bool autoListTermination;
 @property(readonly, nonatomic) _Bool autoListRecognition;
 - (id)stylesForCopyStyle;
@@ -104,9 +105,9 @@ __attribute__((visibility("hidden")))
 - (void)p_setOwnedTextStorage:(id)arg1;
 - (id)textStorageForHeadOfTextFlow;
 @property(readonly, nonatomic) TSWPStorage *textStorage;
-- (void)saveToArchive:(struct ShapeInfoArchive *)arg1 archiver:(id)arg2;
+-     // Error parsing type: v32@0:8^{ShapeInfoArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{ShapeArchive}^{Reference}^{Reference}^{Reference}B}16@24, name: saveToArchive:archiver:
 - (void)saveToArchiver:(id)arg1;
-- (void)loadFromArchive:(const struct ShapeInfoArchive *)arg1 unarchiver:(id)arg2;
+-     // Error parsing type: v32@0:8r^{ShapeInfoArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{ShapeArchive}^{Reference}^{Reference}^{Reference}B}16@24, name: loadFromArchive:unarchiver:
 - (void)loadFromUnarchiver:(id)arg1;
 - (void)upgradeOwnedStorageWithFileFormatVersion:(unsigned long long)arg1;
 - (void)fixupAutosizingTextboxes;

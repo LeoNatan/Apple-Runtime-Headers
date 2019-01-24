@@ -6,16 +6,18 @@
 
 #import <ScreenTimeUI/STPINListViewController.h>
 
-@class STEnableScreenTimeGroupSpecifierProvider;
+@class STEnableScreenTimeGroupSpecifierProvider, STScreenTimeGroupSpecifierProvider;
 
 @interface STRootViewController : STPINListViewController
 {
     _Bool _shouldRefreshUsageData;
     STEnableScreenTimeGroupSpecifierProvider *_enableScreenTimeGroupSpecifierProvider;
+    STScreenTimeGroupSpecifierProvider *_screenTimeGroupSpecifierProvider;
 }
 
 @property(nonatomic) _Bool shouldRefreshUsageData; // @synthesize shouldRefreshUsageData=_shouldRefreshUsageData;
-@property(retain, nonatomic) STEnableScreenTimeGroupSpecifierProvider *enableScreenTimeGroupSpecifierProvider; // @synthesize enableScreenTimeGroupSpecifierProvider=_enableScreenTimeGroupSpecifierProvider;
+@property(readonly, nonatomic) STScreenTimeGroupSpecifierProvider *screenTimeGroupSpecifierProvider; // @synthesize screenTimeGroupSpecifierProvider=_screenTimeGroupSpecifierProvider;
+@property(readonly, nonatomic) STEnableScreenTimeGroupSpecifierProvider *enableScreenTimeGroupSpecifierProvider; // @synthesize enableScreenTimeGroupSpecifierProvider=_enableScreenTimeGroupSpecifierProvider;
 - (void).cxx_destruct;
 - (_Bool)prepareHandlingURLForSpecifierID:(id)arg1 resourceDictionary:(id)arg2 animatePush:(_Bool *)arg3;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;

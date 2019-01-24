@@ -47,6 +47,10 @@
     long long _score;
     long long _minimumNewsVersion;
     NSString *_subtitle;
+    NSArray *_currentIssueIDs;
+    NSString *_backIssuesListID;
+    NSString *_language;
+    NSString *_magazineGenre;
     FCAssetHandle *_nameImageAssetHandle;
     FCAssetHandle *_nameImageCompactAssetHandle;
     double _bannerImageScale;
@@ -72,6 +76,7 @@
     NSString *_publisherPaidVerificationURL;
     NSString *_publisherPaidWebAccessURL;
     NSArray *_publisherPaidFeldsparablePurchaseIDs;
+    NSArray *_publisherPaidBundlePurchaseIDs;
     NSArray *_publisherPaidOfferableConfigurations;
     NTPBPublisherPaidDescriptionStrings *_publisherPaidDescriptionStrings;
     FCAssetHandle *_nameImageMaskWidgetLQAssetHandle;
@@ -120,6 +125,7 @@
 @property(readonly, nonatomic) _Bool publisherPaidWebAccessOptIn; // @synthesize publisherPaidWebAccessOptIn=_publisherPaidWebAccessOptIn;
 @property(readonly, nonatomic) _Bool publisherPaidLeakyPaywallOptOut; // @synthesize publisherPaidLeakyPaywallOptOut=_publisherPaidLeakyPaywallOptOut;
 @property(readonly, nonatomic) NSArray *publisherPaidOfferableConfigurations; // @synthesize publisherPaidOfferableConfigurations=_publisherPaidOfferableConfigurations;
+@property(readonly, nonatomic) NSArray *publisherPaidBundlePurchaseIDs; // @synthesize publisherPaidBundlePurchaseIDs=_publisherPaidBundlePurchaseIDs;
 @property(readonly, nonatomic) NSArray *publisherPaidFeldsparablePurchaseIDs; // @synthesize publisherPaidFeldsparablePurchaseIDs=_publisherPaidFeldsparablePurchaseIDs;
 @property(readonly, copy, nonatomic) NSString *publisherPaidWebAccessURL; // @synthesize publisherPaidWebAccessURL=_publisherPaidWebAccessURL;
 @property(readonly, copy, nonatomic) NSString *publisherPaidVerificationURL; // @synthesize publisherPaidVerificationURL=_publisherPaidVerificationURL;
@@ -147,6 +153,10 @@
 @property(readonly, nonatomic) struct FCEdgeInsets nameImageInsets; // @synthesize nameImageInsets=_nameImageInsets;
 @property(nonatomic) struct CGSize nameImageSize; // @synthesize nameImageSize=_nameImageSize;
 @property(retain, nonatomic) FCAssetHandle *nameImageAssetHandle; // @synthesize nameImageAssetHandle=_nameImageAssetHandle;
+@property(readonly, copy, nonatomic) NSString *magazineGenre; // @synthesize magazineGenre=_magazineGenre;
+@property(readonly, copy, nonatomic) NSString *language; // @synthesize language=_language;
+@property(readonly, copy, nonatomic) NSString *backIssuesListID; // @synthesize backIssuesListID=_backIssuesListID;
+@property(readonly, copy, nonatomic) NSArray *currentIssueIDs; // @synthesize currentIssueIDs=_currentIssueIDs;
 @property(readonly, copy, nonatomic) NSString *subtitle; // @synthesize subtitle=_subtitle;
 @property(readonly, nonatomic) _Bool isNotificationEnabled; // @synthesize isNotificationEnabled=_isNotificationEnabled;
 @property(readonly, nonatomic) long long minimumNewsVersion; // @synthesize minimumNewsVersion=_minimumNewsVersion;
@@ -183,6 +193,7 @@
 @property(readonly, nonatomic) FCTagBanner *bannerImageForThemeBackground; // @synthesize bannerImageForThemeBackground=_bannerImageForThemeBackground;
 @property(readonly, nonatomic) FCTagBanner *bannerImageForWhiteBackground; // @synthesize bannerImageForWhiteBackground=_bannerImageForWhiteBackground;
 @property(readonly, nonatomic) FCTagBanner *defaultBannerImage;
+@property(readonly, nonatomic) _Bool isDark;
 @property(readonly, nonatomic) _Bool isWhite;
 @property(readonly, nonatomic) FCTagBanner *bannerImageForMask; // @synthesize bannerImageForMask=_bannerImageForMask;
 @property(readonly, nonatomic) long long feedType;
@@ -209,6 +220,7 @@
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initChannelFromNotificationWithIdentifier:(id)arg1 name:(id)arg2 nameImageAssetHandle:(id)arg3;
+- (id)initChannelForTestingWithIdentifier:(id)arg1 name:(id)arg2 publisherPaidBundlePurchaseIDs:(id)arg3;
 - (id)initChannelForTestingWithIdentifier:(id)arg1 name:(id)arg2 defaultSection:(id)arg3 publisherAuthorizationURL:(id)arg4 publisherVerificationURL:(id)arg5;
 - (id)initForTestingWithTagType:(unsigned long long)arg1 identifier:(id)arg2 name:(id)arg3;
 - (void)_inflateFromJSONDictionary:(id)arg1 withVersion:(long long)arg2;

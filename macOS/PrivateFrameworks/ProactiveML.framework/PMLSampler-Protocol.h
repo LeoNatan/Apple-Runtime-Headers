@@ -7,7 +7,6 @@
 #import <ProactiveML/NSObject-Protocol.h>
 
 @protocol PMLSampler <NSObject>
-- (void)addNoise:(float *)arg1 count:(unsigned long long)arg2 scale:(float)arg3;
 - (float)sample;
 - (id)initWithMagnitude:(float)arg1;
 @end

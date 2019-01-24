@@ -27,8 +27,9 @@
 @property(readonly) NSArray *eventPaths;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (id)initWithName:(id)arg1;
+- (void)unsetInterfaceOrientation;
 - (id)initWithName:(id)arg1 interfaceOrientation:(long long)arg2;
-- (id)init;
 - (_Bool)synthesizeWithError:(id *)arg1;
 
 @end

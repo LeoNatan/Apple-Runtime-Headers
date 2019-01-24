@@ -18,6 +18,9 @@
 + (id)keychainLabelForCertWithAccountID:(id)arg1 purpose:(int)arg2;
 + (id)keychainLabelForKeyWithAccountID:(id)arg1 purpose:(int)arg2;
 + (id)keychainLabelForAccountID:(id)arg1 purpose:(int)arg2;
++ (int)tokenUpdateState;
++ (_Bool)tokenUpdateShouldStartWithLogKey:(id)arg1;
++ (void)tokenUpdateDidFinishWithLogKey:(id)arg1;
 + (id)diskBasedPaymentSheet;
 + (id)sharedInstance;
 - (void).cxx_destruct;

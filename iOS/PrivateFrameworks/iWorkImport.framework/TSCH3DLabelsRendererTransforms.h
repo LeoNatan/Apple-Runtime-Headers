@@ -6,14 +6,14 @@
 
 #import <objc/NSObject.h>
 
-@class TSCH3DCamera, TSCH3DScene;
+@class TSCH3DCamera, TSCH3DChartScenePropertyAccessor, TSCH3DScene;
 
 __attribute__((visibility("hidden")))
 @interface TSCH3DLabelsRendererTransforms : NSObject
 {
     TSCH3DScene *mScene;
     TSCH3DCamera *mCamera;
-    struct ChartScenePropertyAccessor *mAccessor;
+    TSCH3DChartScenePropertyAccessor *mAccessor;
     tmat4x4_3074befe mProjector;
     tmat4x4_3074befe mUnitToWorld;
     tmat4x4_3074befe mStageToWorld;
@@ -31,7 +31,7 @@ __attribute__((visibility("hidden")))
 - (const tmat4x4_3074befe *)unitToWorld;
 - (const tmat4x4_3074befe *)worldToStage;
 - (const tmat4x4_3074befe *)p_stageToWorld;
-- (struct ChartScenePropertyAccessor *)accessor;
+- (id)accessor;
 - (void)resetWithScene:(id)arg1 camera:(id)arg2;
 - (void)dealloc;
 

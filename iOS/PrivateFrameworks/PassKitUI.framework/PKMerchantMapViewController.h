@@ -14,6 +14,7 @@
 {
 }
 
+- (id)pkui_navigationBarItemTintColor;
 - (void)placeViewControllerDidSelectShareLocation;
 - (id)activityViewControllerForPlaceViewController:(id)arg1;
 - (void)viewWillAppear:(_Bool)arg1;

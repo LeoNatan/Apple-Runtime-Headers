@@ -6,7 +6,7 @@
 
 #import <OfficeImport/CMState.h>
 
-@class CMOutlineState, NSMutableDictionary, WDText;
+@class CMOutlineState, NSMutableDictionary, WDParagraph, WDText;
 
 @interface WMState : CMState
 {
@@ -26,8 +26,10 @@
     _Bool mIsFrameEnd;
     _Bool mIsHeaderOrFooter;
     float mTotalPageHeight;
+    WDParagraph *_currentParagraph;
 }
 
+@property(retain) WDParagraph *currentParagraph; // @synthesize currentParagraph=_currentParagraph;
 - (void).cxx_destruct;
 - (_Bool)isHeaderOrFooter;
 - (void)setIsHeaderOrFooter:(_Bool)arg1;

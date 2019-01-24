@@ -6,12 +6,13 @@
 
 #import <VisualTestKit/NSObject-Protocol.h>
 
-@class NSString, NSURL, UIImage, XCTestCase;
+@class NSString, UIImage, XCTestCase;
 @protocol VTKAssertID;
 
 @protocol VTKReferenceItemsSource <NSObject>
+- (UIImage *)referenceImageWithID:(id <VTKAssertID>)arg1 testCase:(XCTestCase *)arg2 error:(id *)arg3;
+
+@optional
 @property(copy, nonatomic) NSString *itemsDirectory;
-- (NSURL *)referenceImageURLWithTestCase:(XCTestCase *)arg1;
-- (UIImage *)referenceImageWithID:(id <VTKAssertID>)arg1 testCase:(XCTestCase *)arg2;
 @end
 

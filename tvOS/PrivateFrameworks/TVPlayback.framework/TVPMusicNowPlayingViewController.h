@@ -76,7 +76,6 @@
     TVPDefiniteDurationPlaybackProgress *_definiteDurationPlaybackProgress;
     id _elapsedTimeToken;
     double _lastKnownElapsedTime;
-    double _lastKnownEffectiveRate;
     NSDate *_lastObserverFireDate;
     double _playlistExitTime;
     NSArray *_mediaItems;
@@ -118,7 +117,6 @@
 @property(nonatomic) double playlistExitTime; // @synthesize playlistExitTime=_playlistExitTime;
 @property(nonatomic, getter=isTransportBarVisible) _Bool transportBarVisible; // @synthesize transportBarVisible=_transportBarVisible;
 @property(copy, nonatomic) NSDate *lastObserverFireDate; // @synthesize lastObserverFireDate=_lastObserverFireDate;
-@property(nonatomic) double lastKnownEffectiveRate; // @synthesize lastKnownEffectiveRate=_lastKnownEffectiveRate;
 @property(nonatomic) double lastKnownElapsedTime; // @synthesize lastKnownElapsedTime=_lastKnownElapsedTime;
 @property(retain, nonatomic) id elapsedTimeToken; // @synthesize elapsedTimeToken=_elapsedTimeToken;
 @property(retain, nonatomic) TVPDefiniteDurationPlaybackProgress *definiteDurationPlaybackProgress; // @synthesize definiteDurationPlaybackProgress=_definiteDurationPlaybackProgress;
@@ -205,6 +203,7 @@
 - (void)_handleUpTap:(id)arg1;
 - (void)_handleRightTap:(id)arg1;
 - (void)_handleLeftTap:(id)arg1;
+- (void)_handleFocusMovementFailed:(id)arg1;
 - (void)didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
 - (_Bool)shouldUpdateFocusInContext:(id)arg1;
 - (id)preferredFocusEnvironments;
@@ -213,7 +212,6 @@
 - (_Bool)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (_Bool)gestureRecognizerShouldBegin:(id)arg1;
 - (void)_performPlayNextCommandForItemAtIndex:(long long)arg1;
-- (void)nowPlayingViewDidAttemptToFocusToEdges:(id)arg1;
 - (id)focusIndexPathForNowPlayingView:(id)arg1;
 - (void)nowPlayingViewDidSelectShuffle:(id)arg1;
 - (void)nowPlayingViewDidSelectRepeat:(id)arg1;
@@ -221,6 +219,7 @@
 - (_Bool)nowPlayingViewShouldHandlePressPlayPause:(id)arg1;
 - (id)nothingPlayingArtworkForNowPlayingView:(id)arg1;
 - (void)nowPlayingViewDidSelectContextMenu:(id)arg1;
+- (void)nowPlayingViewPlaylistDidBecomeHidden:(id)arg1;
 - (void)nowPlayingView:(id)arg1 playlistWillBecomeHiddenWithExecutionBlock:(CDUnknownBlockType)arg2;
 - (void)nowPlayingViewPlaylistWillBecomeVisible:(id)arg1;
 - (void)_showContextMenu;

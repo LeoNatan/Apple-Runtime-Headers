@@ -21,6 +21,7 @@
 @property(copy, nonatomic) NSDictionary *readerModeMetadata; // @synthesize readerModeMetadata=_readerModeMetadata;
 @property(copy, nonatomic) NSString *productIdentifier; // @synthesize productIdentifier=_productIdentifier;
 - (void).cxx_destruct;
+- (int)_cardTypeFromSetupProductType:(unsigned int)arg1;
 - (void)setRequirementsResponse:(id)arg1;
 - (id)initWithPaymentSetupProduct:(id)arg1 cardSessionToken:(id)arg2;
 - (id)initWithPaymentSetupProduct:(id)arg1;

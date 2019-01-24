@@ -63,11 +63,12 @@ __attribute__((visibility("hidden")))
 - (void)didReferenceData:(id)arg1;
 - (void)copyComponent:(id)arg1 toPackageURL:(id)arg2 packageLocator:(id)arg3 zipFileWriter:(id)arg4 encryptionKey:(id)arg5 canLink:(_Bool)arg6 completion:(CDUnknownBlockType)arg7;
 - (id)newRawReadChannelForComponentLocator:(id)arg1 isStoredOutsideObjectArchive:(_Bool)arg2;
-- (id)newReadChannelForComponentLocator:(id)arg1 isStoredOutsideObjectArchive:(_Bool)arg2;
+- (id)newReadChannelForComponentLocator:(id)arg1 compressionAlgorithm:(long long)arg2 isStoredOutsideObjectArchive:(_Bool)arg3;
+- (id)newCompressionReadChannelWithReadChannel:(id)arg1 compressionAlgorithm:(long long)arg2;
 - (id)packageEntryInfoForComponentLocator:(id)arg1 isStoredOutsideObjectArchive:(_Bool)arg2;
 @property(readonly) TSUZipFileArchive *componentZipArchive;
 @property(readonly) NSError *lastReloadError;
-- (_Bool)didReloadZipArchive:(id)arg1 error:(id *)arg2;
+- (_Bool)didReloadZipArchive:(id)arg1 packageURL:(id)arg2 error:(id *)arg3;
 @property(retain) TSUZipFileArchive *zipArchive;
 - (_Bool)reloadZipArchiveIfNeededWithURLImpl:(id)arg1 isLazyLoading:(_Bool)arg2 error:(id *)arg3;
 - (void)peformSynchronousAccessToZipArchive:(CDUnknownBlockType)arg1;

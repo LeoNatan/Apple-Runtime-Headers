@@ -72,8 +72,8 @@ __attribute__((visibility("hidden")))
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithFullTransform:(struct CGAffineTransform)arg1 widthValid:(_Bool)arg2 heightValid:(_Bool)arg3;
 - (id)initWithPosition:(struct CGPoint)arg1 size:(struct CGSize)arg2 widthValid:(_Bool)arg3 heightValid:(_Bool)arg4 horizontalFlip:(_Bool)arg5 verticalFlip:(_Bool)arg6 angle:(double)arg7;
-- (void)saveToArchive:(struct GeometryArchive *)arg1 archiver:(id)arg2;
-- (id)initWithArchive:(const struct GeometryArchive *)arg1;
+-     // Error parsing type: v32@0:8^{GeometryArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{Point}^{Size}If}16@24, name: saveToArchive:archiver:
+-     // Error parsing type: @24@0:8r^{GeometryArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{Point}^{Size}If}16, name: initWithArchive:
 
 @end
 

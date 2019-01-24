@@ -6,20 +6,23 @@
 
 #import <objc/NSObject.h>
 
+@protocol UITraitEnvironment;
+
 @interface _SFBrowserConfiguration : NSObject
 {
     int _configuration;
+    id <UITraitEnvironment> _traitEnvironment;
 }
 
+@property(readonly, nonatomic) __weak id <UITraitEnvironment> traitEnvironment; // @synthesize traitEnvironment=_traitEnvironment;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool usesDarkTheme;
-@property(readonly, nonatomic) unsigned int toolbarTintStyle;
-@property(readonly, nonatomic) unsigned int navigationBarTintStyle;
+@property(readonly, nonatomic) unsigned int barTintStyle;
 @property(readonly, nonatomic) _Bool allowsReopeningClosedTabs;
 @property(readonly, nonatomic) _Bool allowsPersistingTabState;
 @property(readonly, nonatomic) _Bool allowsClosingLastTab;
 @property(readonly, nonatomic) _Bool allowsRestoringEducationTabs;
 @property(readonly, nonatomic) _Bool usesPersistentDataStore;
-@property(readonly, nonatomic) _Bool forcesDoNotTrack;
 @property(readonly, nonatomic) _Bool allowsUserActivityFeedback;
 @property(readonly, nonatomic) _Bool allowsStreamlinedLogin;
 @property(readonly, nonatomic) _Bool allowsSpeculativeLoading;
@@ -30,7 +33,7 @@
 - (id)description;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;
-- (id)initWithPrivateBrowsingEnabled:(_Bool)arg1;
+- (id)initWithPrivateBrowsingEnabled:(_Bool)arg1 traitEnvironment:(id)arg2;
 
 @end
 

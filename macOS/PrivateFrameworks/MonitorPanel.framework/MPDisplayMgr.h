@@ -50,7 +50,6 @@
 @property(readonly) NSArray *displays;
 - (void)updateDisplaysList;
 - (void)nameDisplays:(id)arg1;
-- (void)finalize;
 - (void)dealloc;
 - (void)removeNotifications;
 - (id)init;

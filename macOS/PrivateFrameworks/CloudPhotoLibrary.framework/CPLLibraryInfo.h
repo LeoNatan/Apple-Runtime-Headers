@@ -30,9 +30,6 @@
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (void)updateWithCKRecord:(id)arg1 zone:(id)arg2;
-- (id)initWithCKRecord:(id)arg1 zone:(id)arg2;
-- (id)_assetCountsFromCKRecord:(id)arg1;
 
 @end
 

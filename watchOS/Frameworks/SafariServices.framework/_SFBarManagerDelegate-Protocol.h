@@ -7,10 +7,12 @@
 #import <SafariServices/NSObject-Protocol.h>
 
 @class _SFBarManager;
+@protocol _SFBarRegistrationToken;
 
 @protocol _SFBarManagerDelegate <NSObject>
 
 @optional
+- (void)barManager:(_SFBarManager *)arg1 willRegisterBarWithToken:(id <_SFBarRegistrationToken>)arg2;
 - (void)barManager:(_SFBarManager *)arg1 didReceiveTouchDownForBarItem:(int)arg2;
 - (void)barManager:(_SFBarManager *)arg1 didReceiveTapForBarItem:(int)arg2;
 - (void)barManager:(_SFBarManager *)arg1 didReceiveLongPressForBarItem:(int)arg2;

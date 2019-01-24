@@ -17,12 +17,14 @@ __attribute__((visibility("hidden")))
     NSMutableArray *_assetsToDownload;
     NSMutableArray *_assetsToDownloadInMemory;
     NSMutableArray *_packageIndexSets;
+    NSMutableArray *_assetURLInfosToFillOut;
     NSObject<OS_dispatch_group> *_group;
     CKDProgressTracker *_progressTracker;
 }
 
 @property(retain, nonatomic) CKDProgressTracker *progressTracker; // @synthesize progressTracker=_progressTracker;
 @property(retain, nonatomic) NSObject<OS_dispatch_group> *group; // @synthesize group=_group;
+@property(retain, nonatomic) NSMutableArray *assetURLInfosToFillOut; // @synthesize assetURLInfosToFillOut=_assetURLInfosToFillOut;
 @property(retain, nonatomic) NSMutableArray *packageIndexSets; // @synthesize packageIndexSets=_packageIndexSets;
 @property(retain, nonatomic) NSMutableArray *assetsToDownloadInMemory; // @synthesize assetsToDownloadInMemory=_assetsToDownloadInMemory;
 @property(retain, nonatomic) NSMutableArray *assetsToDownload; // @synthesize assetsToDownload=_assetsToDownload;
@@ -30,8 +32,9 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) CKRecord *record; // @synthesize record=_record;
 - (void).cxx_destruct;
 - (void)didCompleteTaskWithError:(id)arg1;
+- (void)didFillOutURLInfo:(id)arg1 error:(id)arg2;
 - (void)didDownloadAsset:(id)arg1 error:(id)arg2;
-- (id)initWithRecord:(id)arg1 trackProgress:(_Bool)arg2 assetsToDownload:(id)arg3 assetsToDownloadInMemory:(id)arg4 packageIndexSets:(id)arg5;
+- (id)initWithRecord:(id)arg1 trackProgress:(_Bool)arg2 assetsToDownload:(id)arg3 assetsToDownloadInMemory:(id)arg4 packageIndexSets:(id)arg5 assetURLInfosToFillOut:(id)arg6;
 
 @end
 

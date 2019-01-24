@@ -53,11 +53,11 @@ __attribute__((visibility("hidden")))
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)dealloc;
 - (id)init;
-- (void)loadFromPreUFFArchive:(const struct LegendModelArchive *)arg1;
+-     // Error parsing type: v24@0:8r^{LegendModelArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{Reference}^{RectArchive}^{Reference}^{Reference}}16, name: loadFromPreUFFArchive:
 - (id)g_operationPropertyNameForGenericProperty:(int)arg1;
 - (id)g_genericToDefaultPropertyMap;
-- (void)saveToUnityArchive:(struct ChartArchive *)arg1;
-- (void)loadFromUnityArchive:(const struct ChartArchive *)arg1;
+-     // Error parsing type: v24@0:8^{ChartArchive=^^?{ExtensionSet=^{Arena}SS(AllocatedData=^{KeyValue}^{map<int, google::protobuf::internal::ExtensionSet::Extension, std::__1::less<int>, std::__1::allocator<std::__1::pair<const int, google::protobuf::internal::ExtensionSet::Extension> > >})}{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}^{RectArchive}^{Reference}^{ChartGridArchive}^{Reference}^{Reference}^{Reference}^{Reference}^{Reference}^{SparseReferenceArray}^{SparseReferenceArray}^{Reference}iiiBBBI}16, name: saveToUnityArchive:
+-     // Error parsing type: v24@0:8r^{ChartArchive=^^?{ExtensionSet=^{Arena}SS(AllocatedData=^{KeyValue}^{map<int, google::protobuf::internal::ExtensionSet::Extension, std::__1::less<int>, std::__1::allocator<std::__1::pair<const int, google::protobuf::internal::ExtensionSet::Extension> > >})}{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}^{RectArchive}^{Reference}^{ChartGridArchive}^{Reference}^{Reference}^{Reference}^{Reference}^{Reference}^{SparseReferenceArray}^{SparseReferenceArray}^{Reference}iiiBBBI}16, name: loadFromUnityArchive:
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

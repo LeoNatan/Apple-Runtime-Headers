@@ -21,7 +21,6 @@
 - (long long)_getNumberOfCoordinates;
 - (void)_clearModel;
 - (_Bool)_loadModelFromURL:(id)arg1 error:(id *)arg2;
-- (_Bool)_saveDebugModelToURL:(id)arg1 error:(id *)arg2;
 - (_Bool)_saveModelToURL:(id)arg1 error:(id *)arg2;
 - (id)_predictWithFeatures:(id)arg1;
 - (void)_trainWithFeatures:(id)arg1 positiveEvent:(id)arg2;

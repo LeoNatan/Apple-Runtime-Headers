@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, NSDictionary, NSString;
+@class NSArray, NSDictionary, NSNumber, NSString;
 
 @interface _DKSync2Policy : NSObject
 {
@@ -14,6 +14,7 @@
     _Bool _pushTriggersSync;
     _Bool _requireCharging;
     NSString *_name;
+    NSNumber *_version;
     unsigned int _maxSyncPeriodInDays;
     unsigned int _maxSyncDownIntervalInDays;
     unsigned int _minSyncIntervalInSeconds;
@@ -66,12 +67,14 @@
 @property(nonatomic) unsigned int minSyncIntervalInSeconds; // @synthesize minSyncIntervalInSeconds=_minSyncIntervalInSeconds;
 @property(nonatomic) unsigned int maxSyncDownIntervalInDays; // @synthesize maxSyncDownIntervalInDays=_maxSyncDownIntervalInDays;
 @property(nonatomic) unsigned int maxSyncPeriodInDays; // @synthesize maxSyncPeriodInDays=_maxSyncPeriodInDays;
+@property(retain, nonatomic) NSNumber *version; // @synthesize version=_version;
 @property(nonatomic) _Bool syncDisabled; // @synthesize syncDisabled=_syncDisabled;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
 - (void).cxx_destruct;
 - (id)description;
 - (double)hoursBetweenSyncsWhenIsSingleDevice:(_Bool)arg1 urgency:(unsigned int)arg2;
 - (double)hoursBetweenSyncsWhenIsSingleDevice:(_Bool)arg1;
+- (id)queryStartDateWithSyncType:(id)arg1 previousHighWaterMark:(id)arg2;
 - (id)queryStartDateWithSyncType:(id)arg1 lastSyncDate:(id)arg2 lastDaySyncCount:(unsigned int)arg3 previousHighWaterMark:(id)arg4;
 - (id)queryStartDateWithSyncType:(id)arg1 lastSyncDate:(id)arg2 lastDaySyncCount:(unsigned int)arg3;
 - (_Bool)highPriorityForSyncUpWithSyncType:(id)arg1 lastSyncDate:(id)arg2;

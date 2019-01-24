@@ -44,7 +44,7 @@
 - (void)engine:(id)arg1 didChangeRepeatType:(long long)arg2;
 - (void)engine:(id)arg1 didChangeQueueWithReason:(id)arg2;
 - (void)engine:(id)arg1 didChangeToState:(unsigned long long)arg2;
-- (void)engine:(id)arg1 willChangeToItem:(id)arg2 fromItem:(id)arg3;
+- (void)engine:(id)arg1 didChangeToItem:(id)arg2;
 - (void)removeSupportedSpecializedQueueIdentifier:(id)arg1;
 - (void)addSupportedSpecializedQueueIdentifier:(id)arg1 localizedName:(id)arg2 queueType:(long long)arg3 queueParameters:(id)arg4;
 - (void)publishIfNeeded;

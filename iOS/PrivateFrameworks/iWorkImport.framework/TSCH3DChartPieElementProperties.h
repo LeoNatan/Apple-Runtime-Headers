@@ -18,9 +18,9 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (void)reset;
 - (void)updateValues;
-- (_Bool)applyElementTransform:(struct ObjectTransforms *)arg1 series:(id)arg2 index:(const tvec2_3b141483 *)arg3 propertyAccessor:(const struct ChartScenePropertyAccessor *)arg4;
-- (float)elementTransformDepthFromPropertyAccessor:(const struct ChartScenePropertyAccessor *)arg1;
-- (float)explosionAtElementIndex:(const tvec2_3b141483 *)arg1 propertyAccessor:(const struct ChartScenePropertyAccessor *)arg2;
+- (_Bool)applyElementTransform:(struct ObjectTransforms *)arg1 series:(id)arg2 index:(tvec2_3b141483)arg3 propertyAccessor:(id)arg4;
+- (float)elementTransformDepthFromPropertyAccessor:(id)arg1;
+- (float)explosionAtElementIndex:(const tvec2_3b141483 *)arg1 propertyAccessor:(id)arg2;
 - (_Bool)anyHasExplosion;
 - (void)setRotation:(float)arg1 atElementIndex:(const tvec2_3b141483 *)arg2;
 - (float)rotationAtElementIndex:(const tvec2_3b141483 *)arg1;
@@ -30,7 +30,7 @@ __attribute__((visibility("hidden")))
 - (float)percentOfTotalAtElementIndex:(const tvec2_3b141483 *)arg1;
 - (long long)flatIndex:(const tvec2_3b141483 *)arg1;
 - (void)updateLabels;
-- (struct GeometryResource)boundsGeometryForSeries:(id)arg1 index:(const tvec2_3b141483 *)arg2;
+- (id)boundsGeometryForSeries:(id)arg1 index:(const tvec2_3b141483 *)arg2;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 
 @end

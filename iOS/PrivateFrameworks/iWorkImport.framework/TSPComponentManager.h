@@ -70,6 +70,7 @@ __attribute__((visibility("hidden")))
 - (id)documentComponentImpl;
 - (id)rootComponentWithIdentifierImpl:(long long)arg1 locator:(id)arg2 packageIdentifier:(unsigned char)arg3;
 - (void)loadFromPackage:(id)arg1 metadata:(id)arg2;
+-     // Error parsing type: v32@0:8r^{ComponentInfo=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedField<unsigned int>=ii(Pointer=^{Arena}^{Rep})}i{RepeatedField<unsigned int>=ii(Pointer=^{Arena}^{Rep})}i{RepeatedPtrField<TSP::ComponentExternalReference>=^{Arena}ii^{Rep}}{RepeatedPtrField<TSP::ComponentDataReference>=^{Arena}ii^{Rep}}{RepeatedPtrField<TSP::ObjectUUIDMapEntry>=^{Arena}ii^{Rep}}{RepeatedPtrField<TSP::FeatureInfo>=^{Arena}ii^{Rep}}{RepeatedField<unsigned int>=ii(Pointer=^{Arena}^{Rep})}i{RepeatedField<unsigned int>=ii(Pointer=^{Arena}^{Rep})}i{RepeatedPtrField<TSP::ComponentExternalReference>=^{Arena}ii^{Rep}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}QQBBI}16@24, name: loadComponent:package:
 - (_Bool)isActive;
 - (void)tearDown;
 - (void)dealloc;

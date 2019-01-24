@@ -10,8 +10,10 @@
 {
 }
 
-+ (id)locationDistribution;
 + (id)microLocationDistribution;
++ (id)locationDistribution;
++ (id)probabilityVector;
++ (id)domain;
 
 @end
 

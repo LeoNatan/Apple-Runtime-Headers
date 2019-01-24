@@ -69,6 +69,8 @@
 + (id)_getLibraryPathFromTriggerFile;
 + (void)removeRelocateLibraryTriggerFile;
 + (void)createRelocateLibraryTriggerFileWithPath:(id)arg1;
++ (void)_setSqliteErrorAndExitIfNecessaryForReason:(int)arg1;
++ (void)setSqliteErrorAndExitIfNecessaryForDemoContentInstallation;
 + (void)setSqliteErrorAndExitIfNecessaryForSimulatedCorruption:(_Bool)arg1;
 + (_Bool)createSqliteErrorIndicatorFile;
 + (_Bool)processWithID:(int)arg1 canWriteSandboxForPath:(id)arg2;
@@ -239,6 +241,8 @@
 - (_Bool)_shouldCreateDatabase;
 - (void)_linkAsideAlbumMetadataForOTARestore;
 - (void)cleanupForStoreDemoMode;
+- (void)_legacyCleanupForStoreDemoMode;
+- (_Bool)_stageDemoLibraryContentForStoreDemoMode;
 - (void)cleanupIncompleteAssetsAfterOTARestore;
 - (void)cleanupModelForDataMigrationPurgeMissingSharedAndSynced;
 - (id)_dataMigrationInfo;

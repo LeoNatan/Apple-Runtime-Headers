@@ -6,11 +6,13 @@
 
 #import <NewsCore/FCMultiStepFetchOperation.h>
 
-@class FCCloudContext, FCHeadline, NSString;
+@class FCHeadline, NSString;
+@protocol FCContentContext, FCFlintHelper;
 
 @interface FCOfflineArticleFetchOperation : FCMultiStepFetchOperation
 {
-    FCCloudContext *_context;
+    id <FCContentContext> _context;
+    id <FCFlintHelper> _flintHelper;
     NSString *_articleID;
     FCHeadline *_headline;
     id _thumbnailFetchedObject;
@@ -23,14 +25,15 @@
 @property(retain, nonatomic) id thumbnailFetchedObject; // @synthesize thumbnailFetchedObject=_thumbnailFetchedObject;
 @property(retain, nonatomic) FCHeadline *headline; // @synthesize headline=_headline;
 @property(copy, nonatomic) NSString *articleID; // @synthesize articleID=_articleID;
-@property(retain, nonatomic) FCCloudContext *context; // @synthesize context=_context;
+@property(retain, nonatomic) id <FCFlintHelper> flintHelper; // @synthesize flintHelper=_flintHelper;
+@property(retain, nonatomic) id <FCContentContext> context; // @synthesize context=_context;
 - (void).cxx_destruct;
 - (id)completeFetchOperation;
 - (id)fetchContentWithCompletion:(CDUnknownBlockType)arg1;
 - (id)fetchClassificationWithCompletion:(CDUnknownBlockType)arg1;
 - (id)fetchThumbnailWithCompletion:(CDUnknownBlockType)arg1;
 - (id)fetchHeadlineWithCompletion:(CDUnknownBlockType)arg1;
-- (id)initWithContext:(id)arg1 articleID:(id)arg2;
+- (id)initWithContext:(id)arg1 flintHelper:(id)arg2 articleID:(id)arg3;
 
 @end
 

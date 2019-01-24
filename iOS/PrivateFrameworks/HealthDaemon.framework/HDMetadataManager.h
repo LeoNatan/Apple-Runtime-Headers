@@ -27,6 +27,7 @@
 - (_Bool)insertMetadata:(id)arg1 forObjectID:(id)arg2 sourceID:(id)arg3 externalSyncObjectCode:(long long)arg4 objectDeleted:(_Bool)arg5 error:(id *)arg6;
 - (id)metadataForObjectID:(long long)arg1 keyFilter:(CDUnknownBlockType)arg2 error:(id *)arg3;
 - (id)_externalSyncMetadataForObjectID:(long long)arg1 baseMetadata:(id)arg2 keyFilter:(CDUnknownBlockType)arg3 error:(id *)arg4;
+- (id)_mappedMetadataKeyForMetadataKey:(id)arg1;
 - (id)_metadataForObjectID:(long long)arg1 baseMetadata:(id)arg2 keyFilter:(CDUnknownBlockType)arg3 statement:(id)arg4 error:(id *)arg5;
 - (id)metadataForObjectID:(long long)arg1 baseMetadata:(id)arg2 keyFilter:(CDUnknownBlockType)arg3 statement:(id)arg4 error:(id *)arg5;
 - (id)initWithProfile:(id)arg1;

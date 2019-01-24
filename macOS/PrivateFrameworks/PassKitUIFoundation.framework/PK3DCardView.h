@@ -19,16 +19,18 @@
     // Error parsing type: , name: _lastRollPitch
     BOOL _renderedOnce;
     BOOL _motionEnabled;
+    _Bool _invalidated;
     id <PK3DLiveCardViewDelegate> _delegate;
 }
 
 @property(nonatomic) __weak id <PK3DLiveCardViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)renderer:(id)arg1 didRenderScene:(id)arg2 atTime:(double)arg3;
-- (void)setMotionEnabled:(BOOL)arg1;
 - (void)setRollPitch: /* Error: Ran out of types for this method. */;
+- (void)setMotionEnabled:(BOOL)arg1;
 - (void)resizeSubviewsWithOldSize:(struct CGSize)arg1;
 - (void)renderSceneWithTextures:(id)arg1 shaders:(id)arg2;
+- (void)invalidate;
 - (void)dealloc;
 - (id)initWithFrame:(struct CGRect)arg1;
 

@@ -37,11 +37,11 @@
     HMDHome *_home;
     NSString *_providedName;
     NSString *_configurationAppIdentifier;
-    NSString *_configuredName;
     NSObject<OS_dispatch_queue> *_workQueue;
     NSObject<OS_dispatch_queue> *_propertyQueue;
     HMFMessageDispatcher *_msgDispatcher;
     NSNumber *_categoryIdentifier;
+    NSString *_configuredName;
     unsigned int _configNumber;
     HMDApplicationRegistry *_appRegistry;
     HMDAccessoryTransaction *_transaction;
@@ -56,12 +56,12 @@
 @property(retain, nonatomic) HMDApplicationRegistry *appRegistry; // @synthesize appRegistry=_appRegistry;
 @property(nonatomic) unsigned int configNumber; // @synthesize configNumber=_configNumber;
 @property(nonatomic) _Bool unblockPending; // @synthesize unblockPending=_unblockPending;
+@property(retain, nonatomic) NSString *configuredName; // @synthesize configuredName=_configuredName;
 @property(retain, nonatomic) NSNumber *categoryIdentifier; // @synthesize categoryIdentifier=_categoryIdentifier;
 @property(retain, nonatomic) HMFMessageDispatcher *msgDispatcher; // @synthesize msgDispatcher=_msgDispatcher;
 @property(nonatomic, getter=isRemoteAccessEnabled) _Bool remoteAccessEnabled; // @synthesize remoteAccessEnabled=_remoteAccessEnabled;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *propertyQueue; // @synthesize propertyQueue=_propertyQueue;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
-@property(retain, nonatomic) NSString *configuredName; // @synthesize configuredName=_configuredName;
 @property(nonatomic, getter=isPrimary) _Bool primary; // @synthesize primary=_primary;
 @property(copy, nonatomic) NSString *configurationAppIdentifier; // @synthesize configurationAppIdentifier=_configurationAppIdentifier;
 @property(nonatomic, getter=isBlocked) _Bool blocked; // @synthesize blocked=_blocked;

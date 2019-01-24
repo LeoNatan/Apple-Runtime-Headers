@@ -11,8 +11,10 @@
     unsigned long long _numberOfSections;
     CDStruct_826e8cf1 _currentMap;
     CDStruct_826e8cf1 _bufferedMap;
+    _Bool _useRoundedInsetSections;
 }
 
+@property(nonatomic) _Bool useRoundedInsetSections; // @synthesize useRoundedInsetSections=_useRoundedInsetSections;
 - (long long)numberOfSectionsInTableView:(id)arg1;
 - (_Bool)shouldMapSection:(unsigned long long)arg1;
 - (long long)rowAnimationForDeletingSection:(unsigned long long)arg1;

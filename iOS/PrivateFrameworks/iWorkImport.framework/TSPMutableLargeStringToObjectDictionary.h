@@ -12,9 +12,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (Class)dictionarySegmentClass;
-- (void)loadFromMessage:(const struct LargeStringToObjectDictionary *)arg1 unarchiver:(id)arg2;
+-     // Error parsing type: v32@0:8r^{LargeStringToObjectDictionary=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{LargeDictionary}}16@24, name: loadFromMessage:unarchiver:
 - (void)loadFromUnarchiver:(id)arg1;
-- (void)saveToMessage:(struct LargeStringToObjectDictionary *)arg1 archiver:(id)arg2;
+-     // Error parsing type: v32@0:8^{LargeStringToObjectDictionary=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{LargeDictionary}}16@24, name: saveToMessage:archiver:
 - (void)saveToArchiver:(id)arg1;
 - (id)convertObjectToSegmentObject:(id)arg1;
 - (id)convertSegmentObjectToObject:(id)arg1;

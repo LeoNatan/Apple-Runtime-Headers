@@ -6,13 +6,14 @@
 
 #import <objc/NSObject.h>
 
+#import <iWorkImport/TSPRemoteDataStorageDelegate-Protocol.h>
 #import <iWorkImport/TSPSplitableData-Protocol.h>
 
 @class NSDate, NSString, TSPDataAttributes, TSPDataManager, TSPDataMetadata, TSPDigest, TSPObjectContext;
 @protocol OS_dispatch_queue, TSPDataStorage;
 
 __attribute__((visibility("hidden")))
-@interface TSPData : NSObject <TSPSplitableData>
+@interface TSPData : NSObject <TSPSplitableData, TSPRemoteDataStorageDelegate>
 {
     // Error parsing type: Ai, name: _didCull
     long long _identifier;
@@ -47,6 +48,7 @@ __attribute__((visibility("hidden")))
 + (id)dataFromURL:(id)arg1 context:(id)arg2;
 + (_Bool)isSupportedURL:(id)arg1;
 + (id)pasteboardTypeForIdentifier:(long long)arg1;
++ (id)remoteDataWithURL:(id)arg1 digest:(id)arg2 filename:(id)arg3 canDownload:(_Bool)arg4 downloadPriority:(long long)arg5 context:(id)arg6;
 + (id)resourceNameForFilename:(id)arg1 identifier:(long long)arg2;
 + (id)nsDataWithPattern4:(const char *)arg1;
 + (id)digestStringForDataWithPattern4:(const char *)arg1;
@@ -65,7 +67,7 @@ __attribute__((visibility("hidden")))
 - (void)setFallbackColor:(id)arg1;
 - (id)fallbackColor;
 @property(readonly, nonatomic) _Bool gilligan_isRemote;
-- (_Bool)archiveInfoMessage:(struct DataInfo *)arg1 archiver:(id)arg2 packageWriter:(id)arg3;
+-     // Error parsing type: B40@0:8^{DataInfo=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}^{DataAttributes}^{EncryptionInfo}QBi}16@24@32, name: archiveInfoMessage:archiver:packageWriter:
 - (_Bool)isStorageInPackage:(id)arg1;
 @property(readonly, nonatomic) TSPDigest *digest;
 - (id)preferredFilename;
@@ -80,9 +82,9 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) unsigned long long lengthIfLocal;
 @property(readonly, nonatomic) unsigned long long length;
 - (_Bool)writeToURL:(id)arg1 error:(id *)arg2;
-- (id)description;
+@property(readonly, copy) NSString *description;
 - (_Bool)isEqual:(id)arg1;
-- (unsigned long long)hash;
+@property(readonly) unsigned long long hash;
 - (void)addDownloadObserver:(id)arg1 options:(unsigned long long)arg2 completionHandler:(CDUnknownBlockType)arg3;
 @property(readonly, nonatomic) _Bool needsDownload;
 - (void)performInputStreamReadWithAccessor:(CDUnknownBlockType)arg1;
@@ -118,8 +120,17 @@ __attribute__((visibility("hidden")))
 - (void)tsp_splitDataWithMaxSize:(unsigned long long)arg1 subdataHandlerBlock:(CDUnknownBlockType)arg2;
 @property(readonly, nonatomic) unsigned long long tsp_length;
 - (id)pasteboardType;
+- (id)temporaryDataStorageURLForRemoteDataStorage:(id)arg1;
+- (void)didReceiveRemoteDataWithReadChannel:(id)arg1 completionQueue:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)didReceiveRemoteDataAtURL:(id)arg1 canMove:(_Bool)arg2 decryptionInfo:(id)arg3 completionQueue:(id)arg4 completion:(CDUnknownBlockType)arg5;
+- (void)didReceiveRemoteData:(id)arg1 decryptionInfo:(id)arg2 completionQueue:(id)arg3 completion:(CDUnknownBlockType)arg4;
+- (void)didReceiveRemoteDataWithHandler:(CDUnknownBlockType)arg1 completionQueue:(id)arg2 completion:(CDUnknownBlockType)arg3;
 @property(readonly, nonatomic) _Bool tsd_allowedToConvertDataAlreadyInDocument;
 @property(nonatomic, setter=tsd_setShouldBeInterpretedAsGenericIfUntagged:) _Bool tsd_shouldBeInterpretedAsGenericIfUntagged;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly) Class superclass;
 
 @end
 

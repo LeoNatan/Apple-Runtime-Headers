@@ -84,7 +84,6 @@
 - (void)handleSyncCompletion;
 - (void)manualDirty;
 @property(readonly, nonatomic, getter=isDirty) _Bool dirty;
-- (void)forceSyncWithCompletion:(CDUnknownBlockType)arg1;
 - (void)addCommandToCommandQueue:(id)arg1;
 - (void)removeObserver:(id)arg1;
 - (void)addObserver:(id)arg1;
@@ -93,6 +92,7 @@
 - (void)addStateObserver:(id)arg1;
 - (void)saveWithCompletion:(CDUnknownBlockType)arg1;
 - (void)performFirstSyncWithCallbackQueue:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)forceSyncWithCompletion:(CDUnknownBlockType)arg1;
 - (void)syncWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_syncWithCondition:(CDUnknownBlockType)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)dealloc;

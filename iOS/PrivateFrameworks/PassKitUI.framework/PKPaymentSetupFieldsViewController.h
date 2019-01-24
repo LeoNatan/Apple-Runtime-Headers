@@ -73,6 +73,7 @@
 - (void)triggerNextActionLoop;
 - (void)handleNextButtonTapped:(id)arg1;
 - (void)_handleNextButtonTapped:(id)arg1;
+- (void)fieldCellDidTapButton:(id)arg1;
 - (_Bool)fieldCellEditableTextFieldShouldClear:(id)arg1;
 - (_Bool)fieldCellEditableTextFieldShouldReturn:(id)arg1;
 - (void)fieldCellEditableTextFieldValueDidChange:(id)arg1;

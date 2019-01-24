@@ -148,9 +148,13 @@
 - (id)_accessPassIntructionLabel;
 - (id)_serviceModeInstructionLabel;
 - (id)_instructionLabelWithFirstLine:(id)arg1 coloredSecondLine:(id)arg2;
+- (id)_insufficientBalanceView;
+- (id)_instructionViewWithBalanceLabel:(id)arg1 valueString:(id)arg2;
+- (id)_instructionViewWithBalanceString:(id)arg1;
 - (id)_instructionViewWithBalance:(id)arg1 currencyCode:(id)arg2;
 - (id)_instructionViewForTransitPassProperties:(id)arg1 pass:(id)arg2;
-- (id)_instructionLabelWithAttributedLabelText:(id)arg1;
+- (id)_instructionLabelWithAttributedLabelText:(id)arg1 numberOfLines:(int)arg2;
+- (id)_instructionLabelWithAttributedLabelText:(id)arg1 numberOfLines:(int)arg2 shouldConstrainWidth:(_Bool)arg3;
 - (id)_baseInstructionLabelAttributedStringWithText:(id)arg1;
 - (void)_handleLoyaltyAdvisoryTimerFired;
 - (void)_setLoyaltyAdvisoryTimer;

@@ -16,6 +16,7 @@
     NTKUtilityComplicationFactory *_utilityComplicationFactory;
     NTKVictoryAnalogBackgroundView *_backgroundView;
     NTKRoundedCornerOverlayView *_cornerView;
+    _Bool _isFullBleed;
 }
 
 + (id)_swatchImageForColorOption:(id)arg1 forDevice:(id)arg2;
@@ -52,8 +53,11 @@
 - (void)_layoutTimeTravelCaptionView:(id)arg1;
 - (double)_timeTravelCaptionLabelMaxWidth;
 - (struct CGPoint)_timeTravelStatusModuleCenter;
+- (void)_setFullBleed:(_Bool)arg1;
+- (_Bool)_wantsStatusBarIconShadow;
 - (double)_verticalPaddingForStatusBar;
 - (struct CGPoint)_contentCenterOffset;
+- (double)_editSpeedForCustomEditMode:(long long)arg1 slot:(id)arg2;
 - (_Bool)_keylineLabelShouldShowIndividualOptionNamesForCustomEditMode:(long long)arg1;
 - (unsigned long long)_keylineLabelAlignmentForComplicationSlot:(id)arg1;
 - (double)_keylineCornerRadiusForComplicationSlot:(id)arg1;

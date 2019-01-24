@@ -370,8 +370,6 @@ struct os_trace_blob_s {
     _Bool ob_binary;
 };
 
-struct os_trace_context_data_s;
-
 struct os_trace_message_s {
     unsigned long long _field1;
     unsigned long long _field2;

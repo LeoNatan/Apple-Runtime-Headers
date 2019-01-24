@@ -16,6 +16,8 @@ __attribute__((visibility("hidden")))
     NSString *_localizedErrorGroupName;
     NSString *_localizedTrueGroupName;
     NSString *_localizedFalseGroupName;
+    NSString *_localizedTrueGroupNameForColumn;
+    NSString *_localizedFalseGroupNameForColumn;
 }
 
 + (_Bool)isRightParen:(id)arg1;
@@ -24,6 +26,8 @@ __attribute__((visibility("hidden")))
 + (_Bool)isDollar:(id)arg1;
 + (_Bool)isSingleQuotePair:(id)arg1 ch2:(id)arg2;
 + (_Bool)isSingleQuote:(id)arg1;
+@property(retain, nonatomic) NSString *localizedFalseGroupNameForColumn; // @synthesize localizedFalseGroupNameForColumn=_localizedFalseGroupNameForColumn;
+@property(retain, nonatomic) NSString *localizedTrueGroupNameForColumn; // @synthesize localizedTrueGroupNameForColumn=_localizedTrueGroupNameForColumn;
 @property(retain, nonatomic) NSString *localizedFalseGroupName; // @synthesize localizedFalseGroupName=_localizedFalseGroupName;
 @property(retain, nonatomic) NSString *localizedTrueGroupName; // @synthesize localizedTrueGroupName=_localizedTrueGroupName;
 @property(retain, nonatomic) NSString *localizedErrorGroupName; // @synthesize localizedErrorGroupName=_localizedErrorGroupName;

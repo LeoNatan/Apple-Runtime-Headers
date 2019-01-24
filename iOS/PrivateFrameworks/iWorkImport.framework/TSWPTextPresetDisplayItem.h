@@ -19,8 +19,8 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) TSWPTextStylePreset *preset; // @synthesize preset=_preset;
 - (void).cxx_destruct;
 - (id)description;
-- (void)saveToArchive:(struct TextPresetDisplayItemArchive *)arg1 archiver:(id)arg2;
-- (id)initWithArchive:(const struct TextPresetDisplayItemArchive *)arg1 unarchiver:(id)arg2;
+-     // Error parsing type: v32@0:8^{TextPresetDisplayItemArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}^{Reference}}16@24, name: saveToArchive:archiver:
+-     // Error parsing type: @32@0:8r^{TextPresetDisplayItemArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}^{Reference}}16@24, name: initWithArchive:unarchiver:
 - (id)initWithPreset:(id)arg1 displayName:(id)arg2;
 
 @end

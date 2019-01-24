@@ -81,10 +81,11 @@
 - (void)setLastSeenDate:(id)arg1 forCloudClientVersion:(unsigned int)arg2;
 - (id)lastSeenDateForCloudClientVersion:(unsigned int)arg1;
 - (void)pruneTombstonesWithEndDatePriorToDate:(id)arg1;
-- (void)replayAndAddTombstone:(id)arg1;
+- (void)replayAndAddTombstones:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)getAllTombstonesWithCompletion:(CDUnknownBlockType)arg1;
 @property(nonatomic) _Bool pushNotificationsAreInitialized;
 @property(nonatomic) unsigned int cachedNumberOfDevicesInSyncCircle;
+@property(copy, nonatomic) NSData *longLivedSaveOperationData;
 @property(copy, nonatomic) NSData *syncCircleSizeRetrievalThrottlerData;
 @property(copy, nonatomic) NSData *fetchThrottlerData;
 @property(copy, nonatomic) NSData *pushThrottlerData;

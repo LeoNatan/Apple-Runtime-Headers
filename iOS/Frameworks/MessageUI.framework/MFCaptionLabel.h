@@ -17,9 +17,11 @@
     NSArray *_ccRecipients;
     NSArray *_bccRecipients;
     NSArray *_fromSenders;
+    NSArray *_otherSigners;
 }
 
 + (id)attributedStringsCache;
+@property(retain, nonatomic) NSArray *otherSigners; // @synthesize otherSigners=_otherSigners;
 @property(retain, nonatomic) NSArray *fromSenders; // @synthesize fromSenders=_fromSenders;
 @property(retain, nonatomic) NSArray *bccRecipients; // @synthesize bccRecipients=_bccRecipients;
 @property(retain, nonatomic) NSArray *ccRecipients; // @synthesize ccRecipients=_ccRecipients;

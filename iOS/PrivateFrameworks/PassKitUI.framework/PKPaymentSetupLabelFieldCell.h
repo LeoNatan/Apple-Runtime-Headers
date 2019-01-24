@@ -6,11 +6,16 @@
 
 #import <PassKitUI/PKPaymentSetupFieldCell.h>
 
+@class UIButton;
+
 @interface PKPaymentSetupLabelFieldCell : PKPaymentSetupFieldCell
 {
+    UIButton *_button;
 }
 
 + (long long)tableViewCellStyle;
+- (void).cxx_destruct;
+- (void)_buttonTapped;
 - (void)layoutSubviews;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)_updateDisplayForFieldTypeLabel:(id)arg1;

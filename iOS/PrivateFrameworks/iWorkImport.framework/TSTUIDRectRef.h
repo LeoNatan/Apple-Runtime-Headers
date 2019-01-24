@@ -16,7 +16,7 @@ __attribute__((visibility("hidden")))
     TSCECalculationEngine *_calcEngine;
     UUIDRect_d701734b _uidRange;
     TSCECellTractRef *_lastKnownViewTractRef;
-    unsigned char _preserveFlags;
+    unsigned char _basePreserveFlags;
     UUIDData_5fbc143e _tableUID;
     RefTypeHolder_8c6da553 _chromeRangeRef;
 }
@@ -24,7 +24,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) RefTypeHolder_8c6da553 chromeRangeRef; // @synthesize chromeRangeRef=_chromeRangeRef;
 @property(readonly, nonatomic) UUIDData_5fbc143e tableUID; // @synthesize tableUID=_tableUID;
 @property(readonly, nonatomic) UUIDRect_d701734b uidRange; // @synthesize uidRange=_uidRange;
-@property(nonatomic) unsigned char preserveFlags; // @synthesize preserveFlags=_preserveFlags;
+@property(nonatomic) unsigned char basePreserveFlags; // @synthesize basePreserveFlags=_basePreserveFlags;
 @property(nonatomic) __weak TSCECalculationEngine *calcEngine; // @synthesize calcEngine=_calcEngine;
 - (id).cxx_construct;
 - (void).cxx_destruct;
@@ -48,6 +48,8 @@ __attribute__((visibility("hidden")))
 - (void)setBaseRangeRef:(const RefTypeHolder_1140c985 *)arg1 preserveFlags:(unsigned char)arg2;
 - (void)setChromeRangeRef:(const RefTypeHolder_8c6da553 *)arg1 preserveFlags:(unsigned char)arg2;
 - (void)setViewRangeRef:(const RefTypeHolder_45a2a752 *)arg1 preserveFlags:(unsigned char)arg2;
+@property(nonatomic) unsigned char viewPreserveFlags;
+- (_Bool)baseToViewPreserveFlagsAreInverted;
 @property(readonly, nonatomic) _Bool isBaseRectangle;
 @property(readonly, nonatomic) _Bool isViewRectangle;
 @property(readonly, nonatomic) _Bool isEmpty;

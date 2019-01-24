@@ -8,7 +8,7 @@
 
 #import <ChatKit/CKWelcomeViewDelegate-Protocol.h>
 
-@class CKWelcomeView, NSLayoutConstraint, NSString, UILabel;
+@class CKWelcomeView, NSLayoutConstraint, NSString, UILabel, UIVisualEffectView;
 @protocol CKWhatsNewViewControllerDelegate;
 
 @interface CKWhatsNewViewController : UIViewController <CKWelcomeViewDelegate>
@@ -26,6 +26,7 @@
     UILabel *_bulletPointFourTextLabel;
     UILabel *_paragraphTextLabel;
     UILabel *_descriptionLabel;
+    UIVisualEffectView *_topBlurView;
     NSLayoutConstraint *_bulletPointOneTextLabelFirstBaselineAnchorLayoutConstraint;
     NSLayoutConstraint *_bulletPointTwoTextLabelFirstBaselineAnchorLayoutConstraint;
     NSLayoutConstraint *_bulletPointThreeTextLabelFirstBaselineAnchorLayoutConstraint;
@@ -46,6 +47,7 @@
 @property(retain, nonatomic) NSLayoutConstraint *bulletPointThreeTextLabelFirstBaselineAnchorLayoutConstraint; // @synthesize bulletPointThreeTextLabelFirstBaselineAnchorLayoutConstraint=_bulletPointThreeTextLabelFirstBaselineAnchorLayoutConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *bulletPointTwoTextLabelFirstBaselineAnchorLayoutConstraint; // @synthesize bulletPointTwoTextLabelFirstBaselineAnchorLayoutConstraint=_bulletPointTwoTextLabelFirstBaselineAnchorLayoutConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *bulletPointOneTextLabelFirstBaselineAnchorLayoutConstraint; // @synthesize bulletPointOneTextLabelFirstBaselineAnchorLayoutConstraint=_bulletPointOneTextLabelFirstBaselineAnchorLayoutConstraint;
+@property(retain, nonatomic) UIVisualEffectView *topBlurView; // @synthesize topBlurView=_topBlurView;
 @property(readonly, nonatomic) UILabel *descriptionLabel; // @synthesize descriptionLabel=_descriptionLabel;
 @property(readonly, nonatomic) UILabel *paragraphTextLabel; // @synthesize paragraphTextLabel=_paragraphTextLabel;
 @property(readonly, nonatomic) UILabel *bulletPointFourTextLabel; // @synthesize bulletPointFourTextLabel=_bulletPointFourTextLabel;

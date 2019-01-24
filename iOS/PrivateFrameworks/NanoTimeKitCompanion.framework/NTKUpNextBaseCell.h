@@ -27,6 +27,7 @@
     NSString *_representedElementIdentifier;
 }
 
++ (double)cornerRadiusForDevice:(id)arg1;
 + (struct CGSize)suggestedBodyImageSizeForDevice:(id)arg1;
 + (struct CGSize)suggestedHeaderImageSizeForDevice:(id)arg1;
 + (void)clearLabel:(id)arg1;

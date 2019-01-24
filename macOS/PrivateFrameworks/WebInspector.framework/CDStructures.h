@@ -58,6 +58,11 @@ struct Object {
     struct Vector<WTF::String, 0, WTF::CrashOnOverflow, 16> _field6;
 };
 
+struct Optional<unsigned long long> {
+    _Bool init_;
+    union constexpr_storage_t<unsigned long long> storage_;
+};
+
 struct RWIAugmentableInspectorControllerClient;
 
 struct RefPtr<WTF::JSONImpl::Array, WTF::DumbPtrTraits<WTF::JSONImpl::Array>> {
@@ -90,11 +95,6 @@ struct _AMDeviceNotificationInfo {
     struct _AMDevice *_field1;
     int _field2;
     struct _AMDeviceNotificationContext *_field3;
-};
-
-struct optional<unsigned long long> {
-    _Bool init_;
-    union constexpr_storage_t<unsigned long long> storage_;
 };
 
 struct unique_ptr<RWIAugmentableInspectorControllerClient, std::__1::default_delete<RWIAugmentableInspectorControllerClient>> {

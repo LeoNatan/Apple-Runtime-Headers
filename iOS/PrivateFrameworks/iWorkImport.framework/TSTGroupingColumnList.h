@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
 }
 
 - (void).cxx_destruct;
-- (void)encodeToArchive:(struct GroupColumnListArchive *)arg1 archiver:(id)arg2;
-- (id)initWithArchive:(const struct GroupColumnListArchive *)arg1;
+-     // Error parsing type: v32@0:8^{GroupColumnListArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TST::GroupColumnArchive>=^{Arena}ii^{Rep}}}16@24, name: encodeToArchive:archiver:
+-     // Error parsing type: @24@0:8r^{GroupColumnListArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TST::GroupColumnArchive>=^{Arena}ii^{Rep}}}16, name: initWithArchive:
 - (void)replaceRuleAtGroupLevel:(unsigned char)arg1 withRule:(id)arg2;
 - (void)changeGroupingTypeForGroupLevel:(unsigned char)arg1 toType:(int)arg2;
 - (void)moveRuleFromGroupLevel:(unsigned char)arg1 toLevel:(unsigned char)arg2;

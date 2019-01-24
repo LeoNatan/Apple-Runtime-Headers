@@ -20,7 +20,7 @@
 @property(retain, nonatomic) id <FCHeadlineClusterOrdering> headlineClusterOrderer; // @synthesize headlineClusterOrderer=_headlineClusterOrderer;
 @property(retain, nonatomic) id <FCHeadlineClustering> headlineClusterer; // @synthesize headlineClusterer=_headlineClusterer;
 - (void).cxx_destruct;
-- (id)_sortClusteredHeadlinesForDisplay:(id)arg1 withAdditionalData:(id)arg2 scoresByArticleID:(id)arg3 topicsByID:(id)arg4;
+- (id)_sortClusteredHeadlinesForDisplay:(id)arg1 withAdditionalData:(id)arg2 scoresByArticleID:(id)arg3 topicsByID:(id)arg4 translationProvider:(id)arg5;
 - (id)_joinedFeedTransformation;
 - (id)_nonEditorialFeedTransformationWithFeedContext:(id)arg1 feedItemScores:(id)arg2 showStoriesOnlyFromFavorites:(_Bool)arg3;
 - (void)performOperation;

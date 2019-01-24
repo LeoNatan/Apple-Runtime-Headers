@@ -22,7 +22,6 @@
 - (id)actionWithPropertyList:(id)arg1 error:(id *)arg2;
 - (id)actionWithBundle:(id)arg1 error:(id *)arg2;
 - (Class)classForActionWithBundle:(id)arg1 error:(id *)arg2;
-- (id)_userVisibleThirdPartyActionsErrorForError:(id)arg1;
 - (BOOL)_loadBundleIfNeeded:(id)arg1 error:(id *)arg2;
 - (BOOL)_validateBundle:(id)arg1 error:(id *)arg2;
 - (id)actionWithBundleIdentifier:(id)arg1 error:(id *)arg2;

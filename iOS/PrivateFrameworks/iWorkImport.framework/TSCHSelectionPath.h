@@ -27,8 +27,8 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) TSCHSelectionPath *subSelection; // @synthesize subSelection=mSubSelection;
 @property(readonly, nonatomic) TSCHSelectionPathType *pathType; // @synthesize pathType=mPathType;
 - (void).cxx_destruct;
-- (void)saveToArchive:(struct ChartSelectionPathArchive *)arg1;
-- (id)initWithArchive:(const struct ChartSelectionPathArchive *)arg1;
+-     // Error parsing type: v24@0:8^{ChartSelectionPathArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSCH::ChartSelectionPathArgumentArchive>=^{Arena}ii^{Rep}}^{ChartSelectionPathTypeArchive}^{ChartSelectionPathArchive}}16, name: saveToArchive:
+-     // Error parsing type: @24@0:8r^{ChartSelectionPathArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSCH::ChartSelectionPathArgumentArchive>=^{Arena}ii^{Rep}}^{ChartSelectionPathTypeArchive}^{ChartSelectionPathArchive}}16, name: initWithArchive:
 - (id)description;
 - (id)debuggingName;
 - (unsigned long long)hash;

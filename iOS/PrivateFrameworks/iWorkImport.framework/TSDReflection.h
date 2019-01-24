@@ -19,7 +19,7 @@ __attribute__((visibility("hidden")))
 
 + (_Bool)canMixWithNilObjects;
 + (id)reflection;
-+ (id)instanceWithArchive:(const struct ReflectionArchive *)arg1 unarchiver:(id)arg2;
++     // Error parsing type: @32@0:8r^{ReflectionArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}f}16@24, name: instanceWithArchive:unarchiver:
 @property(readonly, nonatomic) double fadeAcceleration; // @synthesize fadeAcceleration=mFadeAcceleration;
 @property(readonly, nonatomic) double opacity; // @synthesize opacity=mOpacity;
 - (id)mixedObjectWithFraction:(double)arg1 ofObject:(id)arg2;
@@ -32,8 +32,8 @@ __attribute__((visibility("hidden")))
 - (id)initWithOpacity:(double)arg1;
 - (id)initWithOpacity:(double)arg1 fadeAcceleration:(double)arg2;
 - (id)init;
-- (void)saveToArchive:(struct ReflectionArchive *)arg1 archiver:(id)arg2;
-- (id)initWithArchive:(const struct ReflectionArchive *)arg1 unarchiver:(id)arg2;
+-     // Error parsing type: v32@0:8^{ReflectionArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}f}16@24, name: saveToArchive:archiver:
+-     // Error parsing type: @32@0:8r^{ReflectionArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}f}16@24, name: initWithArchive:unarchiver:
 
 @end
 

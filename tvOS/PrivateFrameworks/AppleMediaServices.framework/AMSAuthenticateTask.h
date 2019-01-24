@@ -32,7 +32,7 @@
 - (id)_performAuthenticationUsingAccount:(id)arg1 credentialSource:(unsigned long long)arg2 error:(id *)arg3;
 - (id)_createVerifyCredentialOptionsWithCredentialSource:(unsigned long long)arg1;
 - (id)_accountStoreForAuthentication;
-- (id)_updatedAccountForAuthenticationWithError:(id *)arg1;
+- (id)_updateAccountWithAuthKit:(id)arg1 error:(id *)arg2;
 - (id)_accountForAuthentication;
 - (id)performAuthentication;
 - (id)initWithAccount:(id)arg1 options:(id)arg2;

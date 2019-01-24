@@ -6,11 +6,12 @@
 
 #import <AccountsUI/ACUIViewController.h>
 
+#import <AccountsUI/ACUIWebAuthDelegate-Protocol.h>
 #import <AccountsUI/NSControlTextEditingDelegate-Protocol.h>
 
-@class ACUIWebLoginViewController, NSButton, NSPanel, NSString, NSView, NSWindow;
+@class ACUIWebAuthViewController, NSButton, NSPanel, NSString, NSView, NSWindow;
 
-@interface ACUICredentialPromptViewController : ACUIViewController <NSControlTextEditingDelegate>
+@interface ACUICredentialPromptViewController : ACUIViewController <ACUIWebAuthDelegate, NSControlTextEditingDelegate>
 {
     BOOL _isVerifyingCredential;
     NSString *_password;
@@ -18,7 +19,7 @@
     NSButton *_okButton;
     NSView *_webViewContainer;
     NSPanel *_webAuthPanel;
-    ACUIWebLoginViewController *_webLoginVC;
+    ACUIWebAuthViewController *_webLoginVC;
     NSWindow *_window;
     NSWindow *_sheet;
     CDUnknownBlockType _block;
@@ -27,7 +28,7 @@
 @property(copy) CDUnknownBlockType block; // @synthesize block=_block;
 @property(retain) NSWindow *sheet; // @synthesize sheet=_sheet;
 @property(retain) NSWindow *window; // @synthesize window=_window;
-@property(retain) ACUIWebLoginViewController *webLoginVC; // @synthesize webLoginVC=_webLoginVC;
+@property(retain) ACUIWebAuthViewController *webLoginVC; // @synthesize webLoginVC=_webLoginVC;
 @property(retain) NSPanel *webAuthPanel; // @synthesize webAuthPanel=_webAuthPanel;
 @property(retain) NSView *webViewContainer; // @synthesize webViewContainer=_webViewContainer;
 @property(retain) NSButton *okButton; // @synthesize okButton=_okButton;
@@ -39,7 +40,7 @@
 - (void)helpButton:(id)arg1;
 - (void)cancelButton:(id)arg1;
 - (void)saveAccountSucceeded;
-- (void)webLoginEndedWithError:(id)arg1;
+- (void)webAuthViewController:(id)arg1 loginEndedWithError:(id)arg2;
 - (void)saveAccountFailedWithError:(id)arg1;
 - (BOOL)willSaveAccount;
 - (void)okButton:(id)arg1;

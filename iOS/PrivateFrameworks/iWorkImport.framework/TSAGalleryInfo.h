@@ -36,8 +36,8 @@ __attribute__((visibility("hidden")))
 + (id)i_newCaptionStorageWithContext:(id)arg1;
 @property(copy, nonatomic) NSArray *items; // @synthesize items=_items;
 - (void).cxx_destruct;
-- (void)saveToArchive:(struct ImageArchive *)arg1 archiver:(id)arg2;
-- (void)loadFromArchive:(const struct ImageArchive *)arg1 unarchiver:(id)arg2;
+-     // Error parsing type: v32@0:8^{ImageArchive=^^?{ExtensionSet=^{Arena}SS(AllocatedData=^{KeyValue}^{map<int, google::protobuf::internal::ExtensionSet::Extension, std::__1::less<int>, std::__1::allocator<std::__1::pair<const int, google::protobuf::internal::ExtensionSet::Extension> > >})}{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{DrawableArchive}^{Reference}^{Reference}^{Size}^{Reference}^{Reference}^{Reference}^{Size}^{Path}^{DataReference}^{DataReference}^{DataReference}^{ImageAdjustmentsArchive}^{DataReference}^{DataReference}^{DataReference}^{Path}^{Attribution}IB}16@24, name: saveToArchive:archiver:
+-     // Error parsing type: v32@0:8r^{ImageArchive=^^?{ExtensionSet=^{Arena}SS(AllocatedData=^{KeyValue}^{map<int, google::protobuf::internal::ExtensionSet::Extension, std::__1::less<int>, std::__1::allocator<std::__1::pair<const int, google::protobuf::internal::ExtensionSet::Extension> > >})}{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{DrawableArchive}^{Reference}^{Reference}^{Size}^{Reference}^{Reference}^{Reference}^{Size}^{Path}^{DataReference}^{DataReference}^{DataReference}^{ImageAdjustmentsArchive}^{DataReference}^{DataReference}^{DataReference}^{Path}^{Attribution}IB}16@24, name: loadFromArchive:unarchiver:
 - (void)saveToArchiver:(id)arg1;
 - (void)loadFromUnarchiver:(id)arg1;
 - (id)mixedObjectWithFraction:(double)arg1 ofObject:(id)arg2;
@@ -53,7 +53,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) _Bool preventsChangeTracking;
 @property(readonly, nonatomic) _Bool preventsComments;
 @property(readonly, nonatomic) _Bool textIsLinked;
-@property(readonly, nonatomic) _Bool textIsVertical;
+- (_Bool)textIsVerticalAtCharIndex:(unsigned long long)arg1;
 @property(readonly, nonatomic) _Bool autoListTermination;
 @property(readonly, nonatomic) _Bool autoListRecognition;
 - (void)wasRemovedFromDocumentRoot:(id)arg1;

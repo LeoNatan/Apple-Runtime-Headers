@@ -18,6 +18,7 @@
     NSString *_provider;
     int _localizedAirQualityIndex;
     NSString *_localizedAirQualityCategory;
+    NSString *_airQualityScale;
     NSArray *_pollutants;
     NSDate *_expirationDate;
     unsigned int _category;
@@ -27,6 +28,7 @@
 @property(nonatomic) unsigned int category; // @synthesize category=_category;
 @property(retain, nonatomic) NSDate *expirationDate; // @synthesize expirationDate=_expirationDate;
 @property(copy, nonatomic) NSArray *pollutants; // @synthesize pollutants=_pollutants;
+@property(copy, nonatomic) NSString *airQualityScale; // @synthesize airQualityScale=_airQualityScale;
 @property(copy, nonatomic) NSString *localizedAirQualityCategory; // @synthesize localizedAirQualityCategory=_localizedAirQualityCategory;
 @property(nonatomic) int localizedAirQualityIndex; // @synthesize localizedAirQualityIndex=_localizedAirQualityIndex;
 @property(copy, nonatomic) NSString *provider; // @synthesize provider=_provider;

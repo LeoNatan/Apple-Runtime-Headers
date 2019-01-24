@@ -7,6 +7,9 @@
 #import <Foundation/NSError.h>
 
 @interface NSError (FCErrorAdditions)
++ (id)fc_blockedInCurrentStorefrontErrorWithIdentifiers:(id)arg1;
++ (id)fc_operationCancelledErrorWithAdditionalUserInfo:(id)arg1;
++ (id)fc_missingResourceErrorWithDescription:(id)arg1;
 + (id)fc_missingAppConfigErrorWithUnderlyingError:(id)arg1;
 + (id)fc_offlineErrorWithReason:(long long)arg1;
 + (id)fc_canaryDownError;

@@ -6,14 +6,14 @@
 
 #import <Safari/VisualTabPickerShadowTileView.h>
 
-@class FaviconView, NSButton, NSLayoutConstraint, NSStackView, NSTextField, NSView, VisualTabPickerMuteButton;
+@class NSButton, NSImageView, NSLayoutConstraint, NSStackView, NSTextField, NSView, VisualTabPickerMuteButton;
 @protocol VisualTabPickerThumbnailDataSource, VisualTabPickerThumbnailDelegate;
 
 __attribute__((visibility("hidden")))
 @interface VisualTabPickerThumbnailView : VisualTabPickerShadowTileView
 {
     NSTextField *_titleTextField;
-    FaviconView *_siteIconImageView;
+    NSImageView *_siteIconImageView;
     NSStackView *_headerContentStackView;
     NSView *_thumbnailView;
     NSButton *_closeButton;
@@ -35,10 +35,9 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) __weak id <VisualTabPickerThumbnailDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak id <VisualTabPickerThumbnailDataSource> dataSource; // @synthesize dataSource=_dataSource;
 - (void).cxx_destruct;
-- (void)accessibilityPerformAction:(id)arg1;
-- (id)accessibilityActionNames;
-- (id)accessibilityAttributeValue:(id)arg1;
-- (id)accessibilityAttributeNames;
+- (BOOL)accessibilityPerformPress;
+- (id)accessibilityLabel;
+- (id)accessibilityRole;
 - (void)_muteButtonPressed:(id)arg1;
 - (void)_createMuteButtonIfNecessary;
 - (void)_closeButtonPressed:(id)arg1;

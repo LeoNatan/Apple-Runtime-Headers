@@ -7,9 +7,8 @@
 #import <WeatherFoundation/WFLocation.h>
 
 @interface WFLocation (NWKGeocode)
-- (_Bool)shouldNewLocationTriggerReplacement:(id)arg1;
-- (_Bool)isSameLocationButGeocodedVersionIsNew:(id)arg1;
-- (_Bool)isNotGeocodedButNewlocationIsGeocoded:(id)arg1;
+- (_Bool)nwk_isNotGeocodedButNewlocationIsGeocoded:(id)arg1;
+- (_Bool)nwk_doesNotHaveCountryAbbreviationButNewLocationDoes:(id)arg1;
 @property(readonly, nonatomic, getter=nwk_hasBeenReverseGeocoded) _Bool nwk_reverseGeocoded;
 @end
 

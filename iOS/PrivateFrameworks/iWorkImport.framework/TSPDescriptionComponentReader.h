@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
 }
 
 - (void).cxx_destruct;
-- (id)unknownObjectUnarchiverArchiveInfo:(const struct ArchiveInfo *)arg1 stream:(struct DispatchDataInputStream *)arg2;
-- (id)newUnarchiverWithObjectIdentifier:(long long)arg1 messageInfo:(const struct MessageInfo *)arg2 message:(auto_ptr_4370f086 *)arg3 messageVersion:(unsigned long long)arg4 strongReferences:(auto_ptr_945ad503)arg5 unknownContent:(id)arg6;
+-     // Error parsing type: @32@0:8r^{ArchiveInfo=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSP::MessageInfo>=^{Arena}ii^{Rep}}QB}16^{DispatchDataInputStream=^^?@QQ@Q*}24, name: unknownObjectUnarchiverArchiveInfo:stream:
+-     // Error parsing type: @64@0:8q16r^{MessageInfo=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedField<unsigned int>=ii(Pointer=^{Arena}^{Rep})}i{RepeatedPtrField<TSP::FieldInfo>=^{Arena}ii^{Rep}}{RepeatedField<unsigned long long>=ii(Pointer=^{Arena}^{Rep})}i{RepeatedField<unsigned long long>=ii(Pointer=^{Arena}^{Rep})}i{RepeatedField<unsigned int>=ii(Pointer=^{Arena}^{Rep})}i{RepeatedPtrField<TSP::FieldPath>=^{Arena}ii^{Rep}}{RepeatedField<unsigned int>=ii(Pointer=^{Arena}^{Rep})}i^{FieldPath}III}24^{auto_ptr<google::protobuf::Message>=^{Message}}32Q40{auto_ptr<std::__1::unordered_map<const long long, bool, TSP::IdentifierHash, std::__1::equal_to<const long long>, std::__1::allocator<std::__1::pair<const long long, bool> > > >=^{unordered_map<const long long, bool, TSP::IdentifierHash, std::__1::equal_to<const long long>, std::__1::allocator<std::__1::pair<const long long, bool> > >}}48@56, name: newUnarchiverWithObjectIdentifier:messageInfo:message:messageVersion:strongReferences:unknownContent:
 - (_Bool)shouldValidateComponentsOfInMemoryObjects;
 - (_Bool)shouldProceedParsingOnFailure;
 - (void)read;

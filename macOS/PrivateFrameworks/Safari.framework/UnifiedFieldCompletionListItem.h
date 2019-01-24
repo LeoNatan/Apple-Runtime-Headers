@@ -18,7 +18,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)itemForNavigationToURL;
-+ (id)itemForSearchEngineSearch;
++ (id)itemForSearchEngineProvider:(id)arg1;
 - (void).cxx_destruct;
 - (id)_initWithDomainIdentifier:(id)arg1;
 @property(readonly, nonatomic) unsigned long long engagementDestination;

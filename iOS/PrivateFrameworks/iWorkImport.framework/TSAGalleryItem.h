@@ -51,8 +51,8 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) NSObject<TSDContainerInfo> *parentInfo; // @synthesize parentInfo=_parentInfo;
 - (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *displayName;
-- (void)saveToMessage:(struct GalleryItem *)arg1 archiver:(id)arg2;
-- (void)loadFromMessage:(const struct GalleryItem *)arg1 unarchiver:(id)arg2;
+-     // Error parsing type: v32@0:8^{GalleryItem=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}^{Point}^{DataReference}^{DataReference}^{ImageAdjustmentsArchive}^{DataReference}^{DataReference}^{Reference}f}16@24, name: saveToMessage:archiver:
+-     // Error parsing type: v32@0:8r^{GalleryItem=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}^{Point}^{DataReference}^{DataReference}^{ImageAdjustmentsArchive}^{DataReference}^{DataReference}^{Reference}f}16@24, name: loadFromMessage:unarchiver:
 - (void)saveToArchiver:(id)arg1;
 - (void)loadFromUnarchiver:(id)arg1;
 - (id)objectUUIDPath;
@@ -62,7 +62,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) _Bool preventsChangeTracking;
 @property(readonly, nonatomic) _Bool preventsComments;
 @property(readonly, nonatomic) _Bool textIsLinked;
-@property(readonly, nonatomic) _Bool textIsVertical;
+- (_Bool)textIsVerticalAtCharIndex:(unsigned long long)arg1;
 @property(readonly, nonatomic) _Bool autoListTermination;
 @property(readonly, nonatomic) _Bool autoListRecognition;
 - (void)wasRemovedFromDocumentRoot:(id)arg1;

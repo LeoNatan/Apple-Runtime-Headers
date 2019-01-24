@@ -12,7 +12,7 @@ __attribute__((visibility("hidden")))
 }
 
 - (void)calculateCullingPlanes:(vector_5e6a89be *)arg1;
-- (struct FrustumRect)frustumRectAtDistance:(float)arg1;
+- (id)frustumRectAtDistance:(float)arg1;
 - (tmat4x4_3074befe)matrix;
 
 @end

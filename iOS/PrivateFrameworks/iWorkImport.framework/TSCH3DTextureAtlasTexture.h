@@ -14,7 +14,7 @@ __attribute__((visibility("hidden")))
     tvec2_3b141483 mSize;
     float mSamples;
     NSMutableArray *mLabels;
-    vector_522a5b3a mPositions;
+    struct vector<glm::detail::tvec2<int>, std::__1::allocator<glm::detail::tvec2<int>>> mPositions;
     long long mCurrentxpos;
     long long mCurrentypos;
     long long mCurrentheight;

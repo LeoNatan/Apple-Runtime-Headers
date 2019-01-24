@@ -26,16 +26,10 @@
 - (struct CGRect)convertRectToRootView:(struct CGRect)arg1 fromPageLayer:(id)arg2;
 - (struct CGRect)rootViewBounds;
 - (struct CGRect)documentViewFrustumForSelection:(id)arg1;
-- (void)updatePDFViewLayout:(struct CGRect)arg1 boundsInView:(struct CGRect)arg2 scrollViewFrame:(struct CGRect)arg3 zoomScale:(double)arg4;
-- (struct CGSize)autoScalePageSize;
+- (void)updatePDFViewLayout:(struct CGRect)arg1 scrollViewFrame:(struct CGRect)arg2 zoomScale:(double)arg3;
 - (struct CGSize)pdfDocumentViewSize;
-- (void)setExtensionViewInsets:(struct UIEdgeInsets)arg1;
-- (void)setExtensionViewFrame:(struct CGRect)arg1;
-- (struct CGRect)extensionViewFrame;
 - (double)extensionViewZoomScale;
 - (struct CGRect)extensionViewBoundsInDocument;
-- (struct CGPoint)documentViewCenterBeforeRotation;
-- (double)horizontalScaleFactorBeforeRotation;
 - (void)setScrollViewScrollEnabled:(_Bool)arg1;
 - (void)setIsUsingPDFExtensionView:(_Bool)arg1;
 - (void)setShowsScrollIndicators:(_Bool)arg1;
@@ -195,6 +189,9 @@
 - (void)PDFViewWillClickOnLink:(id)arg1 withURL:(id)arg2;
 - (double)PDFViewWillChangeScaleFactor:(id)arg1 toScale:(double)arg2;
 @property(nonatomic) _Bool enableDataDetectors;
+- (void)setBackgroundImage:(id)arg1 forPage:(id)arg2;
+- (_Bool)backgroundImagesEnabled;
+- (void)enableBackgroundImages:(_Bool)arg1;
 - (id)visiblePageViews;
 @property(readonly, nonatomic) NSArray *visiblePages;
 - (struct CGSize)rowSizeForPage:(id)arg1;

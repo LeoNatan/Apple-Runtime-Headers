@@ -99,6 +99,7 @@
 + (void)_resetDiscardMask;
 + (float)standardRotationThreshold;
 + (double)standardMagnificationThreshold;
++ (void)_setFakeForceForXCTestEnabled:(BOOL)arg1;
 + (void)_resetDeviceCapabilityCaches;
 + (void)_resetDefaults;
 + (BOOL)isMouseCoalescingEnabled;

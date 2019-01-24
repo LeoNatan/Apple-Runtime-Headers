@@ -9,6 +9,7 @@
 #import <iWorkImport/TSWPFootnoteHeightMeasurer-Protocol.h>
 
 @class NSString, TPFootnoteContainerLayout, TSDLayoutController, TSULRUCache;
+@protocol TPFootnotePageDelegate;
 
 __attribute__((visibility("hidden")))
 @interface TPFootnoteHeightMeasurer : NSObject <TSWPFootnoteHeightMeasurer>
@@ -16,17 +17,19 @@ __attribute__((visibility("hidden")))
     TPFootnoteContainerLayout *_footnoteContainerLayout;
     TSDLayoutController *_layoutController;
     TSULRUCache *_footnoteLayoutCache;
+    id <TPFootnotePageDelegate> _pageDelegate;
 }
 
 - (void).cxx_destruct;
 - (void)p_clearFootnoteLayoutCache;
 - (void)setFootnoteSpacing:(long long)arg1;
-- (void)setContainerWidth:(double)arg1;
-- (double)footnoteHeight;
+- (void)setContainerLineWidth:(double)arg1;
+- (_Bool)footnoteContainerFits;
+- (double)footnoteBlockHeightForTarget:(id)arg1;
 - (void)removeAllFootnoteReferenceStorages;
 - (void)removeFootnoteReferenceStorage:(id)arg1;
 - (void)addFootnoteReferenceStorage:(id)arg1;
-- (id)initWithFootnoteMarkProvider:(id)arg1 maxFootnoteWidth:(double)arg2 maxFootnoteHeight:(double)arg3 footnoteSpacing:(double)arg4;
+- (id)initWithFootnoteMarkProvider:(id)arg1 pageDelegate:(id)arg2 maxFootnoteLineWidth:(double)arg3 maxFootnoteBlockHeight:(double)arg4 vertical:(_Bool)arg5 footnoteSpacing:(double)arg6;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -10,6 +10,9 @@
 {
 }
 
++ (id)isAirPlayVideo;
++ (id)outputDeviceIDs;
++ (id)mediaType;
 + (id)identifier;
 + (id)title;
 + (id)genre;

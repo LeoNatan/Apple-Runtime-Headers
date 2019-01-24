@@ -65,8 +65,9 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) _Bool isSpecial;
 @property(readonly, nonatomic) NSMutableSet *dependees;
 @property(readonly, nonatomic) struct TSCH3DShaderType shaderType;
-- (id)variableDeclarationInShader:(struct TSCH3DShaderType)arg1 scope:(struct TSCH3DShaderVariableScopeType)arg2;
-- (id)variableQualifiersWithStorageQualifier:(id)arg1;
+- (id)variableDeclarationInShader:(struct TSCH3DShaderType)arg1 scope:(struct TSCH3DShaderVariableScopeType)arg2 isMetal:(_Bool)arg3;
+- (_Bool)declaredInShader:(struct TSCH3DShaderType)arg1 scope:(struct TSCH3DShaderVariableScopeType)arg2;
+- (id)variableQualifiersWithStorageQualifier:(id)arg1 isMetal:(_Bool)arg2;
 - (id)description;
 - (void)dealloc;
 - (id)initWithVariable:(id)arg1;

@@ -17,6 +17,7 @@
     _Bool _isRemoteViewControllerReady;
     _Bool _isUnableToLoadRemoteViewController;
     _Bool _hasInitializedServiceViewController;
+    _Bool _isFullyAppeared;
     SKCloudServiceSetupReloadContext *_activeCloudServiceSetupReloadContext;
     CDUnknownBlockType _loadCompletionHandler;
     id <SKCloudServiceSetupViewControllerDelegate> _delegate;
@@ -26,6 +27,8 @@
 @property(readonly, copy, nonatomic) SKCloudServiceSetupConfiguration *configuration; // @synthesize configuration=_configuration;
 @property(nonatomic) __weak id <SKCloudServiceSetupViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (void)_remoteViewControllerExtensionWasInterrupted;
+- (void)_dismissCloudServiceSetupViewControllerWithAnimation:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_reloadWithActiveCloudServiceSetupReloadContext;
 - (void)_didReceiveRemoteViewController:(id)arg1;
 - (void)_requestRemoteViewController;
@@ -34,11 +37,14 @@
 - (void)handleSafariScriptURL:(id)arg1;
 - (void)reloadWithContext:(id)arg1;
 - (void)loadWithOptions:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)overrideRedeemCameraPerformAction:(int)arg1 withObject:(id)arg2;
 - (void)overrideCreditCardPresentationWithCompletion:(CDUnknownBlockType)arg1;
 - (void)cloudServiceSetupRemoteViewController:(id)arg1 requestsDismissingSafariViewControllerAnimated:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)cloudServiceSetupRemoteViewController:(id)arg1 requestsPresentingSafariViewControllerWithURL:(id)arg2 animated:(_Bool)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)cloudServiceSetupRemoteViewController:(id)arg1 requestsDismissalWithAnimation:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)cloudServiceSetupRemoteViewController:(id)arg1 didFinishLoadingWithSuccess:(_Bool)arg2 error:(id)arg3;
+- (void)viewWillDisappear:(_Bool)arg1;
+- (void)viewDidAppear:(_Bool)arg1;
 - (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;
 - (void)dealloc;

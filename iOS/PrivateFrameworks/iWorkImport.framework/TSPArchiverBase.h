@@ -15,7 +15,7 @@ __attribute__((visibility("hidden")))
 {
     auto_ptr_4370f086 _message;
     struct unordered_map<const TSP::FieldPath, TSP::FieldInfoRuleAttributes, TSP::FieldPathHash, TSP::FieldPathEqualTo, std::__1::allocator<std::__1::pair<const TSP::FieldPath, TSP::FieldInfoRuleAttributes>>> *_fieldRules;
-    struct FieldPath *_currentFieldPath;
+    // Error parsing type: ^{FieldPath=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedField<unsigned int>=ii(Pointer=^{Arena}^{Rep})}i}, name: _currentFieldPath
     NSMutableDictionary *_alternates;
     TSPObject *_object;
     unsigned long long _messageVersion;
@@ -35,39 +35,43 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) TSPObject *object; // @synthesize object=_object;
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (void)setWeakReferenceToObjectUUIDPathArray:(id)arg1 message:(RepeatedPtrField_0a3269f6 *)arg2;
-- (void)setWeakReferenceToObjectUUIDArray:(id)arg1 message:(RepeatedPtrField_bfda3daa *)arg2;
-- (void)setWeakReferenceToObjectUUIDPath:(id)arg1 message:(struct UUIDPath *)arg2;
-- (void)setWeakReferenceToObjectUUIDData:(const UUIDData_5fbc143e *)arg1 message:(struct UUID *)arg2;
-- (void)setWeakReferenceToObjectUUID:(id)arg1 message:(struct UUID *)arg2;
+- (void)setWeakReferenceToObjectUUIDPathArray:(id)arg1 message:(RepeatedPtrField_4f2d564d *)arg2;
+- (void)setWeakReferenceToObjectUUIDArray:(id)arg1 message:(RepeatedPtrField_c4607516 *)arg2;
+-     // Error parsing type: v32@0:8@16^{UUIDPath=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSP::UUID>=^{Arena}ii^{Rep}}}24, name: setWeakReferenceToObjectUUIDPath:message:
+-     // Error parsing type: v32@0:8r^{UUIDData<TSP::UUIDData>=(?=[16C]{?=CCCCCCCCCCCCCCCC}{?=QQ})}16^{UUID=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}QQ}24, name: setWeakReferenceToObjectUUIDData:message:
+-     // Error parsing type: v32@0:8@16^{UUID=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}QQ}24, name: setWeakReferenceToObjectUUID:message:
 - (void)addWeakReferenceToObjectUUID:(id)arg1;
-- (id)alternateDiffToMergeBeforeVersion:(unsigned long long)arg1 fileFormatVersion:(unsigned long long)arg2 fieldPath:(int *)arg3 baseFieldPath:(const struct FieldPath *)arg4;
+@property(readonly, nonatomic) _Bool isSavingCollaborativeDocument;
+@property(readonly, nonatomic) _Bool isSavingDocumentAs;
+-     // Error parsing type: @48@0:8Q16Q24^i32r^{FieldPath=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedField<unsigned int>=ii(Pointer=^{Arena}^{Rep})}i}40, name: alternateDiffToMergeBeforeVersion:fileFormatVersion:fieldPath:baseFieldPath:
 - (id)alternateDiffToMergeBeforeVersion:(unsigned long long)arg1 fileFormatVersion:(unsigned long long)arg2 fieldPath:(int *)arg3;
 - (id)alternateDiffToMergeBeforeVersion:(unsigned long long)arg1 fileFormatVersion:(unsigned long long)arg2 field:(int)arg3;
 - (id)alternateDiffToMergeBeforeVersion:(unsigned long long)arg1 fileFormatVersion:(unsigned long long)arg2;
-- (id)addAlternateArchiverForVersion:(unsigned long long)arg1 fieldPath:(const struct FieldPath *)arg2 isDiffArchiver:(_Bool)arg3 diffReadVersion:(unsigned long long)arg4;
+-     // Error parsing type: @44@0:8Q16r^{FieldPath=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedField<unsigned int>=ii(Pointer=^{Arena}^{Rep})}i}24B32Q36, name: addAlternateArchiverForVersion:fieldPath:isDiffArchiver:diffReadVersion:
 @property(readonly, nonatomic) unsigned long long minimumSupportedVersion;
 @property(readonly, nonatomic) NSDictionary *alternates;
 - (void)enumerateFieldRulesUsingBlock:(CDUnknownBlockType)arg1;
 - (void)pushScopeForField:(int)arg1 usingBlock:(CDUnknownBlockType)arg2;
-@property(readonly, nonatomic) const struct FieldPath *currentFieldPath;
+// Error parsing type for property currentFieldPath:
+// Property attributes: Tr^{FieldPath=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedField<unsigned int>=ii(Pointer=^{Arena}^{Rep})}i},R,N
+
 - (void)setRule:(int)arg1 forFieldPath:(int *)arg2 fileFormatVersion:(unsigned long long)arg3 featureIdentifier:(id)arg4;
-- (const struct FieldPath *)baseFieldPathAndReturnShouldDeleteReturnedValue:(_Bool *)arg1;
+-     // Error parsing type: r^{FieldPath=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedField<unsigned int>=ii(Pointer=^{Arena}^{Rep})}i}24@0:8^B16, name: baseFieldPathAndReturnShouldDeleteReturnedValue:
 - (void)setIgnoreAndPreserveUntilModifiedRuleForFieldPath:(int *)arg1;
 - (void)setIgnoreAndPreserveUntilModifiedRuleForField:(int)arg1;
 - (void)setIgnoreAndPreserveRuleForFieldPath:(int *)arg1;
 - (void)setIgnoreAndPreserveRuleForField:(int)arg1;
 - (void)setMustUnderstandRuleForFieldPath:(int *)arg1;
 - (void)setMustUnderstandRuleForField:(int)arg1;
-- (void)setDataReferenceArray:(id)arg1 message:(RepeatedPtrField_5fb0b506 *)arg2;
-- (void)setDataReference:(id)arg1 message:(struct DataReference *)arg2;
-- (void)setWeakLazyReference:(id)arg1 message:(struct Reference *)arg2;
-- (void)setStrongLazyReferenceArray:(id)arg1 message:(RepeatedPtrField_a0d2dbe7 *)arg2;
-- (void)setStrongLazyReference:(id)arg1 message:(struct Reference *)arg2;
-- (void)setWeakReferenceArray:(id)arg1 message:(RepeatedPtrField_a0d2dbe7 *)arg2;
-- (void)setStrongReferenceArray:(id)arg1 message:(RepeatedPtrField_a0d2dbe7 *)arg2;
-- (void)setWeakReference:(id)arg1 message:(struct Reference *)arg2;
-- (void)setStrongReference:(id)arg1 message:(struct Reference *)arg2;
+- (void)setDataReferenceArray:(id)arg1 message:(RepeatedPtrField_867c874a *)arg2;
+-     // Error parsing type: v32@0:8@16^{DataReference=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}Q}24, name: setDataReference:message:
+-     // Error parsing type: v32@0:8@16^{Reference=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}QiB}24, name: setWeakLazyReference:message:
+- (void)setStrongLazyReferenceArray:(id)arg1 message:(RepeatedPtrField_54b3089c *)arg2;
+-     // Error parsing type: v32@0:8@16^{Reference=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}QiB}24, name: setStrongLazyReference:message:
+- (void)setWeakReferenceArray:(id)arg1 message:(RepeatedPtrField_54b3089c *)arg2;
+- (void)setStrongReferenceArray:(id)arg1 message:(RepeatedPtrField_54b3089c *)arg2;
+-     // Error parsing type: v32@0:8@16^{Reference=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}QiB}24, name: setWeakReference:message:
+-     // Error parsing type: v32@0:8@16^{Reference=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}QiB}24, name: setStrongReference:message:
 @property(readonly, nonatomic) _Bool isForCopy;
 @property(readonly, nonatomic) long long targetType;
 - (void)releaseMessage;
@@ -78,14 +82,16 @@ __attribute__((visibility("hidden")))
 - (void)dealloc;
 - (id)initWithObject:(id)arg1;
 - (id)init;
-@property(readonly, nonatomic) const struct FieldPath *fieldPath;
+// Error parsing type for property fieldPath:
+// Property attributes: Tr^{FieldPath=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedField<unsigned int>=ii(Pointer=^{Arena}^{Rep})}i},R,N
+
 @property(readonly, nonatomic) _Bool isDiff;
 @property(readonly, nonatomic) _Bool isContentUnknown;
-- (void)setSparseWeakObjectUUIDPathReferenceArray:(id)arg1 message:(struct SparseUUIDPathArray *)arg2;
-- (void)setSparseWeakObjectUUIDReferenceArray:(id)arg1 message:(struct SparseUUIDArray *)arg2;
-- (void)setSparseReferenceArray:(id)arg1 isWeak:(_Bool)arg2 message:(struct SparseReferenceArray *)arg3;
-- (void)setSparseWeakReferenceArray:(id)arg1 message:(struct SparseReferenceArray *)arg2;
-- (void)setSparseReferenceArray:(id)arg1 message:(struct SparseReferenceArray *)arg2;
+-     // Error parsing type: v32@0:8@16^{SparseUUIDPathArray=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSP::SparseUUIDPathArray_Entry>=^{Arena}ii^{Rep}}I}24, name: setSparseWeakObjectUUIDPathReferenceArray:message:
+-     // Error parsing type: v32@0:8@16^{SparseUUIDArray=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSP::SparseUUIDArray_Entry>=^{Arena}ii^{Rep}}I}24, name: setSparseWeakObjectUUIDReferenceArray:message:
+-     // Error parsing type: v36@0:8@16B24^{SparseReferenceArray=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSP::SparseReferenceArray_Entry>=^{Arena}ii^{Rep}}I}28, name: setSparseReferenceArray:isWeak:message:
+-     // Error parsing type: v32@0:8@16^{SparseReferenceArray=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSP::SparseReferenceArray_Entry>=^{Arena}ii^{Rep}}I}24, name: setSparseWeakReferenceArray:message:
+-     // Error parsing type: v32@0:8@16^{SparseReferenceArray=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSP::SparseReferenceArray_Entry>=^{Arena}ii^{Rep}}I}24, name: setSparseReferenceArray:message:
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

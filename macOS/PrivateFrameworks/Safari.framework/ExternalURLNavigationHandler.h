@@ -19,7 +19,7 @@ __attribute__((visibility("hidden")))
     id <ExternalURLNavigationDelegate> _delegate;
 }
 
-+ (BOOL)_applicationAtURLIsSignedByApple:(id)arg1;
++ (BOOL)_applicationAtURL:(id)arg1 passesCodeSignCheck:(id)arg2;
 @property(nonatomic) __weak id <ExternalURLNavigationDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)reset;

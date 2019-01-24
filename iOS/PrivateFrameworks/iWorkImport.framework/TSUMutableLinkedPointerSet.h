@@ -35,8 +35,8 @@ __attribute__((visibility("hidden")))
 - (id)objectEnumerator;
 - (void)dealloc;
 - (id)init;
-- (void)encodeToOwnedReferenceMessage:(RepeatedPtrField_a0d2dbe7 *)arg1 archiver:(id)arg2;
-- (void)encodeToReferenceMessage:(RepeatedPtrField_a0d2dbe7 *)arg1 archiver:(id)arg2;
+- (void)encodeToOwnedReferenceMessage:(RepeatedPtrField_54b3089c *)arg1 archiver:(id)arg2;
+- (void)encodeToReferenceMessage:(RepeatedPtrField_54b3089c *)arg1 archiver:(id)arg2;
 
 @end
 

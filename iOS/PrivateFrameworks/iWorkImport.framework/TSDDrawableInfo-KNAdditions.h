@@ -19,6 +19,7 @@
 @property(readonly, nonatomic) NSArray *ghostInfos;
 - (id)buildChunksForAnimationType:(long long)arg1;
 @property(readonly, nonatomic) NSArray *buildChunks;
+@property(readonly, nonatomic) NSArray *actionBuildChunks;
 @property(readonly, nonatomic) NSArray *activeBuildChunks;
 - (id)validBuildsInBuilds:(id)arg1;
 @property(readonly, nonatomic) NSSet *builds;

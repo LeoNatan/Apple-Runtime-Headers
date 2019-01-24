@@ -16,6 +16,7 @@
 
 + (id)chunkWithDictionary:(id)arg1 context:(id)arg2;
 + (id)chunk;
+- (_Bool)mutatingCommand;
 - (_Bool)requiresResponse;
 @property(copy, nonatomic) NSString *validity;
 @property(copy, nonatomic) NSArray *toRemove;

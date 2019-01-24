@@ -12,18 +12,19 @@
 __attribute__((visibility("hidden")))
 @interface TSUProgressGroup : TSUProgress
 {
-    NSArray *mChildren;
-    NSArray *mChildrenProgressObservers;
-    NSObject<OS_dispatch_queue> *mChildrenProgressObserversQueue;
+    NSArray *_children;
+    NSArray *_childrenProgressObservers;
+    NSObject<OS_dispatch_queue> *_childrenProgressObserversQueue;
 }
 
+- (void).cxx_destruct;
 - (void)p_updateChildrenProgressObservers;
 - (void)removeProgressObserver:(id)arg1;
 - (id)addProgressObserverWithValueInterval:(double)arg1 queue:(id)arg2 handler:(CDUnknownBlockType)arg3;
 - (_Bool)isIndeterminate;
 - (double)maxValue;
 - (double)value;
-- (void)dealloc;
+- (id)initForSubclass;
 - (id)initWithChildren:(id)arg1;
 
 @end

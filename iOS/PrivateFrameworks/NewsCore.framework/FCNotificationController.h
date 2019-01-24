@@ -9,7 +9,7 @@
 #import <NewsCore/FCUserInfoObserving-Protocol.h>
 
 @class FCCommandQueue, FCUserInfo, NSString;
-@protocol FCCoreConfigurationManager;
+@protocol FCBundleSubscriptionManagerType, FCCoreConfigurationManager;
 
 @interface FCNotificationController : NSObject <FCUserInfoObserving>
 {
@@ -18,8 +18,10 @@
     FCUserInfo *_userInfo;
     FCCommandQueue *_commandQueue;
     id <FCCoreConfigurationManager> _configurationManager;
+    id <FCBundleSubscriptionManagerType> _bundleSubscriptionManager;
 }
 
+@property(retain, nonatomic) id <FCBundleSubscriptionManagerType> bundleSubscriptionManager; // @synthesize bundleSubscriptionManager=_bundleSubscriptionManager;
 @property(retain, nonatomic) id <FCCoreConfigurationManager> configurationManager; // @synthesize configurationManager=_configurationManager;
 @property(retain, nonatomic) FCCommandQueue *commandQueue; // @synthesize commandQueue=_commandQueue;
 @property(retain, nonatomic) FCUserInfo *userInfo; // @synthesize userInfo=_userInfo;
@@ -28,13 +30,15 @@
 - (void).cxx_destruct;
 - (void)userInfoDidChangeNotificationsUserID:(id)arg1;
 - (id)appendBreakingNewsIfNeededToChannelIDs:(id)arg1;
+- (void)setNewIssueNotificationsEnabled:(_Bool)arg1;
+- (_Bool)setMarketingNotificationsEnabled:(_Bool)arg1 error:(id *)arg2;
 - (_Bool)refreshNotificationsForChannelIDs:(id)arg1 paidChannelIDs:(id)arg2;
 - (_Bool)unregisterNotificationsForTagID:(id)arg1;
 - (_Bool)registerNotificationsForTagID:(id)arg1 isPaid:(_Bool)arg2;
 - (void)_registerDeviceToken:(id)arg1;
 - (void)registerDeviceToken:(id)arg1;
 - (void)dealloc;
-- (id)initWithUserInfo:(id)arg1 commandQueue:(id)arg2 configurationManager:(id)arg3;
+- (id)initWithUserInfo:(id)arg1 commandQueue:(id)arg2 configurationManager:(id)arg3 bundleSubscriptionManager:(id)arg4;
 - (id)init;
 
 // Remaining properties

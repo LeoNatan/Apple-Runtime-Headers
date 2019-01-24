@@ -40,6 +40,7 @@
     struct CGSize _viewportSize;
 }
 
++ (struct UIEdgeInsets)adjustedLayoutMargins:(struct UIEdgeInsets)arg1 viewportWidth:(double)arg2;
 @property(retain, nonatomic) id <FCFeedTheming> feedTheme; // @synthesize feedTheme=_feedTheme;
 @property(retain, nonatomic) UITraitCollection *traitCollection; // @synthesize traitCollection=_traitCollection;
 @property(readonly, nonatomic) _Bool showingPrefetchedPurchase; // @synthesize showingPrefetchedPurchase=_showingPrefetchedPurchase;

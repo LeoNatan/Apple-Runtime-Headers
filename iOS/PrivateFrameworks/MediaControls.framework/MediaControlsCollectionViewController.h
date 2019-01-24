@@ -37,11 +37,13 @@
     _MediaControlsTapHoldGestureRecognizer *_tapGestureRecognizer;
     UIScrollView *_scrollView;
     long long _displayMode;
+    double _preferredItemHeight;
     struct UIEdgeInsets _scrollViewInsets;
 }
 
 + (id)alphaAnimatorWithAnimations:(CDUnknownBlockType)arg1;
 + (id)frameAnimator;
+@property(nonatomic) double preferredItemHeight; // @synthesize preferredItemHeight=_preferredItemHeight;
 @property(nonatomic) long long displayMode; // @synthesize displayMode=_displayMode;
 @property(retain, nonatomic) UIScrollView *scrollView; // @synthesize scrollView=_scrollView;
 @property(retain, nonatomic) _MediaControlsTapHoldGestureRecognizer *tapGestureRecognizer; // @synthesize tapGestureRecognizer=_tapGestureRecognizer;
@@ -103,6 +105,7 @@
 - (long long)_closestItemAtPoint:(struct CGPoint)arg1;
 - (void)_dequeueAndPerformBatchUpdatesIfNeeded;
 - (_Bool)_canPerformBatchUpdates;
+- (double)preferredItemHeightGivenWidth:(double)arg1;
 - (void)scrollToSelectedItemAnimated:(_Bool)arg1;
 @property(readonly, nonatomic) NSIndexSet *visibleIndexes;
 - (long long)itemAtPoint:(struct CGPoint)arg1;

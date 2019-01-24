@@ -6,11 +6,15 @@
 
 #import <CoreSuggestionsInternals/SGPipelineDissector.h>
 
-@class SGDetectedAttributeML;
+@class SGContactPipelineHelper, SGDetectedAttributeML, SGQuickResponsesML;
 
 @interface SGDetectedAttributeDissector : SGPipelineDissector
 {
     SGDetectedAttributeML *_ml;
+    SGQuickResponsesML *_mlQR;
+    SGContactPipelineHelper *_contactsHelper;
+    _Bool _filterWithAddressBook;
+    float _unlikelyPhoneSamplingRate;
     unsigned long long _selfIdentificationMessageCount;
 }
 
@@ -27,8 +31,9 @@
 - (id)detailTypeFromPrefix:(id)arg1;
 - (id)detailTypeFromPrefix:(id)arg1 detectedLabelPointer:(struct _NSRange *)arg2;
 - (id)getLineContaining:(struct _NSRange)arg1 inText:(id)arg2;
+- (void)dissectForContacts:(id)arg1 inContext:(id)arg2 withConversationHistory:(id)arg3;
 - (void)dissectInternal:(id)arg1 inContext:(id)arg2;
-- (void)handleTextMessageSelfIdentification:(id)arg1;
+- (void)handleTextMessageSelfIdentification:(id)arg1 withConversationHistory:(id)arg2;
 - (id)processTextMessageConversation:(id)arg1 messageIndex:(unsigned long long)arg2;
 - (id)filterDangerousSigDetections:(id)arg1 onEntity:(id)arg2 inContext:(id)arg3;
 - (id)filterDangerousSigEmailDetections:(id)arg1 onEntity:(id)arg2 inContext:(id)arg3;
@@ -40,7 +45,7 @@
 - (id)detectionFromBodyDDMatch:(id)arg1 onEntity:(id)arg2 withSupervisionToFill:(id)arg3;
 - (id)detectionFromSignatureDDMatch:(id)arg1 onEntity:(id)arg2 detectedLabelRange:(struct _NSRange *)arg3 lastClaimedLabelRange:(struct _NSRange)arg4;
 - (id)init;
-- (id)initWithML:(id)arg1;
+- (id)initWithML:(id)arg1 withMLQR:(id)arg2;
 
 @end
 

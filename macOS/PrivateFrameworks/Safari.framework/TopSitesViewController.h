@@ -43,7 +43,7 @@ __attribute__((visibility("hidden")))
 - (BOOL)_screenPointIsOverDeleteSafeZone:(struct CGPoint)arg1;
 - (BOOL)_screenPointIsValidDropLocationInGridView:(struct CGPoint)arg1;
 - (void)_rearrangeTopSitesByInsertingURL:(id)arg1 withTitle:(id)arg2 atIndex:(unsigned long long)arg3 indexExchanges:(id)arg4;
-- (void)_sortTopSites:(const Vector_e4ce0b9d *)arg1 inVector:(Vector_e4ce0b9d *)arg2 withIndexExchanges:(id)arg3;
+- (void)_sortTopSites:(const Vector_032fb239 *)arg1 inVector:(Vector_032fb239 *)arg2 withIndexExchanges:(id)arg3;
 - (BOOL)_pasteboardContainsExactlyOneViableTopSiteURL:(id)arg1;
 - (struct TopSite *)_topSiteAtIndex:(unsigned long long)arg1;
 - (void)_topSitePinnedStatusChanged:(id)arg1;

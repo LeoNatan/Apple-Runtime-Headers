@@ -11,7 +11,7 @@ __attribute__((visibility("hidden")))
 {
 }
 
-+ (struct MeshData)createMeshForSeries:(id)arg1;
++ (id)createMeshForSeries:(id)arg1;
 + (id)createBoundsForSeries:(id)arg1;
 + (id)wholePieBoundsResource;
 + (id)p_wholePieBounds;
@@ -23,11 +23,11 @@ __attribute__((visibility("hidden")))
 + (Class)propertiesClass;
 + (id)chartSeriesType;
 + (float)geometrySpaceRadius;
-- (void)sortElements:(vector_d7c2985b *)arg1 pipeline:(id)arg2;
+- (void)sortElements:(id *)arg1 pipeline:(id)arg2;
 - (_Bool)transparencyDepthMask;
 - (void)setExplosion:(float)arg1 atElementIndex:(const tvec2_3b141483 *)arg2 forScene:(id)arg3;
 - (float)explosionAtElementIndex:(const tvec2_3b141483 *)arg1 forScene:(id)arg2;
-- (void)updateElementEffectsStates:(const struct RenderElementInfo *)arg1 depthToWidthRatio:(float)arg2;
+- (void)updateElementEffectsStates:(id)arg1 depthToWidthRatio:(float)arg2;
 - (void)updateTilingEffect:(struct TexCoordTilingShaderEffectState *)arg1 properties:(id)arg2 textureTiling:(id)arg3 depth:(float)arg4 percentOfTotal:(float)arg5;
 - (_Bool)shouldRenderEachValue;
 - (void)renderLabelsSceneObject:(id)arg1 pipeline:(id)arg2 enumerator:(id)arg3 properties:(id)arg4;

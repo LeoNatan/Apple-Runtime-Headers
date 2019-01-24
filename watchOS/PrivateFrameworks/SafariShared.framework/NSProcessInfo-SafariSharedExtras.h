@@ -7,5 +7,7 @@
 #import <Foundation/NSProcessInfo.h>
 
 @interface NSProcessInfo (SafariSharedExtras)
+- (id)_safari_operatingSystemVersionStringFromOperatingSystemVersion:(CDStruct_4bb15e50)arg1;
+- (id)safari_operatingSystemVersionString;
 @end
 

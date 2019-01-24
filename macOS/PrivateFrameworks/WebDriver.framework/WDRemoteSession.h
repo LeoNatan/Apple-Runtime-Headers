@@ -17,6 +17,7 @@
     WDSessionNotificationManager *_notificationManager;
     BOOL _automaticInspectionEnabled;
     BOOL _automaticProfilingEnabled;
+    BOOL _usesStrictFileInteractabilityChecks;
     CDUnknownBlockType _handleProtocolEventsBlock;
     unsigned long long _browsingContextClearedHandler;
     WDToplevelBrowsingContext *_currentToplevelBrowsingContext;
@@ -31,6 +32,7 @@
     unsigned long long _asynchronousScriptTimeout;
     long long _pageLoadStrategy;
     long long _userPromptHandlerStrategy;
+    BOOL usesStrictFileInteractabilityChecks;
     BOOL _allowsInsecureMediaCapture;
     BOOL _suppressICECandidateFiltering;
     NSArray *_filesToSelectForFileUpload;
@@ -40,6 +42,7 @@
 @property(nonatomic) BOOL suppressICECandidateFiltering; // @synthesize suppressICECandidateFiltering=_suppressICECandidateFiltering;
 @property(nonatomic) BOOL allowsInsecureMediaCapture; // @synthesize allowsInsecureMediaCapture=_allowsInsecureMediaCapture;
 @property(readonly, nonatomic) WDRemoteSessionHost *remoteHost; // @synthesize remoteHost=_remoteHost;
+@property(nonatomic) BOOL usesStrictFileInteractabilityChecks; // @synthesize usesStrictFileInteractabilityChecks;
 - (void).cxx_destruct;
 - (void)_handleEventFromBackend:(id)arg1 withParameters:(id)arg2;
 - (void)_resetStateAfterSwitchingToBrowsingContext:(id)arg1;

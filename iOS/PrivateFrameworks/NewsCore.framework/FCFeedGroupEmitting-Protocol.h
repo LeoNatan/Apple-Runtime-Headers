@@ -18,6 +18,7 @@
 
 @optional
 @property(readonly, nonatomic) _Bool isRequiredByFollowingEmitters;
+@property(readonly, nonatomic) _Bool requiresHeavyweightContent;
 @property(readonly, nonatomic) long long requiredForYouContentTypes;
 @property(readonly, nonatomic) _Bool emitsSingleRefreshSessionGroups;
 @property(readonly, nonatomic) _Bool emitsSingletonGroups;

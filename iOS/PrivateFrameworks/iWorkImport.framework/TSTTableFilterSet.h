@@ -24,8 +24,8 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool isEnabled; // @synthesize isEnabled=_isEnabled;
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (void)saveToArchive:(struct FilterSetArchive *)arg1 archiver:(id)arg2;
-- (void)loadFromArchive:(const struct FilterSetArchive *)arg1 unarchiver:(id)arg2;
+-     // Error parsing type: v32@0:8^{FilterSetArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TST::FilterRuleArchive>=^{Arena}ii^{Rep}}{RepeatedField<unsigned int>=ii(Pointer=^{Arena}^{Rep})}{RepeatedField<bool>=ii(Pointer=^{Arena}^{Rep})}iBB}16@24, name: saveToArchive:archiver:
+-     // Error parsing type: v32@0:8r^{FilterSetArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TST::FilterRuleArchive>=^{Arena}ii^{Rep}}{RepeatedField<unsigned int>=ii(Pointer=^{Arena}^{Rep})}{RepeatedField<bool>=ii(Pointer=^{Arena}^{Rep})}iBB}16@24, name: loadFromArchive:unarchiver:
 - (void)saveToArchiver:(id)arg1;
 - (void)loadFromUnarchiver:(id)arg1;
 - (id)viewColumnIndicesForRulesInTable:(id)arg1;

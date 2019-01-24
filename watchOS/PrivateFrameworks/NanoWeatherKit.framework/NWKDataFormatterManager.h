@@ -6,16 +6,14 @@
 
 #import <objc/NSObject.h>
 
-@class NSMeasurementFormatter, NSNumberFormatter;
+@class NSNumberFormatter;
 
 @interface NWKDataFormatterManager : NSObject
 {
     NSNumberFormatter *_uvIndexNumberFormatter;
-    NSMeasurementFormatter *_windspeedMeasurementFormatter;
 }
 
 + (id)sharedManager;
-@property(readonly, nonatomic) NSMeasurementFormatter *windspeedMeasurementFormatter; // @synthesize windspeedMeasurementFormatter=_windspeedMeasurementFormatter;
 @property(readonly, nonatomic) NSNumberFormatter *uvIndexNumberFormatter; // @synthesize uvIndexNumberFormatter=_uvIndexNumberFormatter;
 - (void).cxx_destruct;
 - (id)init;

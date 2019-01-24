@@ -11,16 +11,17 @@
 __attribute__((visibility("hidden")))
 @interface TSUNSProgress : TSUProgress
 {
-    NSProgress *mNSProgress;
-    NSArray *mNSProgressObservers;
+    NSProgress *_NSProgress;
+    NSArray *_NSProgressObservers;
 }
 
+- (void).cxx_destruct;
 - (void)setMessage:(id)arg1;
 - (id)message;
 - (_Bool)isIndeterminate;
 - (double)maxValue;
 - (double)value;
-- (void)dealloc;
+- (id)initForSubclass;
 - (id)init;
 - (id)initWithNSProgress:(id)arg1;
 

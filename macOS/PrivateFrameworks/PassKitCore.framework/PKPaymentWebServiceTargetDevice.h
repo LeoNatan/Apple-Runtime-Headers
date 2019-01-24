@@ -52,6 +52,7 @@
 - (int)paymentSupportedInCurrentRegionForWebService:(id)arg1;
 - (id)paymentWebService:(id)arg1 filterVerificationChannels:(id)arg2;
 - (void)paymentWebService:(id)arg1 didRegisterWithRegionMap:(id)arg2 primaryRegionTopic:(id)arg3;
+- (void)signatureForAuthToken:(id)arg1 webService:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)trustedDeviceEnrollmentInfoForWebService:(id)arg1;
 - (void)paymentWebService:(id)arg1 provisioningDataWithCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)paymentWebService:(id)arg1 signData:(id)arg2 signatureEntanglementMode:(unsigned long long)arg3 withCompletionHandler:(CDUnknownBlockType)arg4;
@@ -70,7 +71,10 @@
 - (void)noteProvisioningDidEnd;
 - (void)noteProvisioningDidBegin;
 - (BOOL)supportsAutomaticPassPresentation;
+- (id)cellularNetworkRegion;
 - (id)deviceRegion;
+- (id)deviceVersion;
+- (id)deviceClass;
 - (id)bridgedClientInfo;
 - (void)dealloc;
 - (id)init;

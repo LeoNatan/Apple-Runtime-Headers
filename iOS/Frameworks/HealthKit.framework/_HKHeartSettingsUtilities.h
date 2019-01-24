@@ -10,6 +10,7 @@
 {
 }
 
++ (void)deleteAtrialFibrillationDetectionLastAnalyzedSampleDate;
 + (id)heartRateSettingsURL;
 + (_Bool)isBackgroundHeartRateEnabled;
 + (_Bool)isWristDetectionEnabled;

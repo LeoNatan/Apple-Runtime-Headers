@@ -11,12 +11,12 @@
 __attribute__((visibility("hidden")))
 @interface PrivacyPreferences : PreferencesModule
 {
-    NSButton *trackingPolicyCheckbox;
     AcceptedSiteDataSheetController *_siteDataEditor;
     NSButton *_helpButton;
     NSTextField *applePayLabelTextField;
     NSButton *applePayCapabilityDisclosureAllowedCheckbox;
     NSTextField *_applePaySubtextTextField;
+    NSTextField *_cookiesAndWebsiteDataTextField;
     NSButton *_policyEnabledButton;
     NSButton *_blockStorageAlwaysButton;
     NSButton *_manageWebsiteDataButton;
@@ -49,12 +49,10 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) __weak NSButton *policyEnabledButton; // @synthesize policyEnabledButton=_policyEnabledButton;
 - (void).cxx_destruct;
 - (void)_updateApplePayCapabilityDisclosureAllowedCheckbox;
-- (void)_updateTrackingPolicyCheckbox;
 - (void)_updateStoragePolicyButtons;
 - (id)_blockStoragePolicyButtons;
 @property(readonly, nonatomic) int currentBlockStoragePolicy;
 - (void)takeApplePayCapabilityDisclosureAllowedFrom:(id)arg1;
-- (void)takeTrackingPolicyFrom:(id)arg1;
 - (void)_updateBlockStoragePolicyIfNeeded;
 - (void)takeStoragePolicyFrom:(id)arg1;
 - (void)showWebsiteDataDetails:(id)arg1;

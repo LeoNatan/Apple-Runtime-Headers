@@ -8,6 +8,8 @@
 
 @protocol CRKSettingsUIVisibilityProvider <NSObject>
 @property(readonly) _Bool settingsUIVisible;
+
+@optional
 - (void)connectToDaemon;
 @end
 

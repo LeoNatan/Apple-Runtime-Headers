@@ -32,6 +32,7 @@
     NSString *_referrerIdentifier;
 }
 
++ (BOOL)supportsSecureCoding;
 @property(copy, nonatomic) NSString *referrerIdentifier; // @synthesize referrerIdentifier=_referrerIdentifier;
 @property(readonly, nonatomic) long long source; // @synthesize source=_source;
 @property(copy, nonatomic) NSString *nonce; // @synthesize nonce=_nonce;
@@ -58,6 +59,8 @@
 - (void)_urlRequestWithServiceURL:(id)arg1 deviceIdentifier:(id)arg2 appleAccountInformation:(id)arg3 certChain:(id)arg4 devSigned:(BOOL)arg5 deviceData:(id)arg6 webService:(id)arg7 completion:(CDUnknownBlockType)arg8;
 - (BOOL)requiresNonce;
 - (unsigned long long)_requestHTTPMethod;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (id)initWithPaymentCredential:(id)arg1;
 - (id)initWithSource:(long long)arg1;
 - (id)init;

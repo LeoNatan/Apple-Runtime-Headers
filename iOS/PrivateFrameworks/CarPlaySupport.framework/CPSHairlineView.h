@@ -18,6 +18,7 @@
 @property(retain, nonatomic) NSLayoutConstraint *strokeThicknessConstraint; // @synthesize strokeThicknessConstraint=_strokeThicknessConstraint;
 @property(nonatomic) long long axis; // @synthesize axis=_axis;
 - (void).cxx_destruct;
+- (struct CGSize)intrinsicContentSize;
 - (void)_updateStrokeThickness;
 - (void)traitCollectionDidChange:(id)arg1;
 - (id)initWithAxis:(long long)arg1 color:(id)arg2;

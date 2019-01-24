@@ -48,6 +48,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) unsigned long long numberOfBrowserViewControllers;
 - (id)makeBrowserViewControllerRelatedToPage:(const struct Page *)arg1 withWebsiteDataStore:(id)arg2;
 - (id)makeBrowserViewControllerRelatedToPage:(const struct Page *)arg1;
+- (id)makeBrowserViewControllerWithConfiguration:(id)arg1;
 - (id)makeBrowserViewController;
 @property(retain, nonatomic) BrowserViewController *currentBrowserViewController;
 - (void)removeBrowserViewController:(id)arg1;
@@ -112,6 +113,7 @@ __attribute__((visibility("hidden")))
 - (id)currentURL;
 - (void)goToURL:(id)arg1;
 - (void)evaluateJavaScript:(id)arg1;
+- (void)goToRequest:(id)arg1 withTabLabel:(id)arg2 inNewProcess:(BOOL)arg3;
 - (void)goToRequest:(id)arg1 withTabLabel:(id)arg2;
 - (void)openLocation:(id)arg1;
 - (void)hideFindBanner:(id)arg1;
@@ -161,6 +163,7 @@ __attribute__((visibility("hidden")))
 - (void)_commonBrowserDocumentInitWithContentsOfRequest:(id)arg1 browserViewController:(id)arg2;
 - (id)initWithContentsOfURL:(id)arg1 ofType:(id)arg2;
 - (id)initWithBrowsingMode:(unsigned long long)arg1 relatedToPage:(const struct Page *)arg2 websiteDataStore:(id)arg3 isPopupWindow:(BOOL)arg4 restoringFromLastSession:(BOOL)arg5;
+- (id)initWithBrowsingMode:(unsigned long long)arg1 configuration:(id)arg2 isPopupWindow:(BOOL)arg3;
 - (id)init;
 - (id)initWithContentsOfRequest:(id)arg1 browsingMode:(unsigned long long)arg2;
 - (BOOL)validate_saveSamplingProfilerOutput:(id)arg1;

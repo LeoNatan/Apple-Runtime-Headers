@@ -9,7 +9,7 @@
 #import <RelevanceEngine/NSCopying-Protocol.h>
 #import <RelevanceEngine/REIndentedDescription-Protocol.h>
 
-@class NSString;
+@class NSString, REFeature;
 
 @interface REInteractionDescriptor : NSObject <REIndentedDescription, NSCopying>
 {
@@ -17,11 +17,13 @@
     float _weight;
     float _exploreBias;
     NSString *_name;
+    REFeature *_identificationFeature;
 }
 
 @property(nonatomic) float exploreBias; // @synthesize exploreBias=_exploreBias;
 @property(nonatomic) _Bool enableExploreExploit; // @synthesize enableExploreExploit=_enableExploreExploit;
 @property(nonatomic) float weight; // @synthesize weight=_weight;
+@property(retain, nonatomic) REFeature *identificationFeature; // @synthesize identificationFeature=_identificationFeature;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 - (void).cxx_destruct;
 - (id)descriptionWithIndent:(unsigned long long)arg1;

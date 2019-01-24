@@ -11,6 +11,9 @@ __attribute__((visibility("hidden")))
 {
     struct work_interval_instance *_instance;
     _Bool _complex;
+    _Bool _started;
+    double _targetTimestamp;
+    double _frameDuration;
 }
 
 - (void)dealloc;

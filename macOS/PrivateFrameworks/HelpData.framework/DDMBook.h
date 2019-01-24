@@ -16,6 +16,7 @@
     NSString *_version;
     NSString *_locale;
     NSString *_title;
+    NSString *_copyright;
     DDMInfo *_info;
     DDMMeta *_meta;
     DDMMisc *_miscAttributes;
@@ -29,6 +30,7 @@
 @property(readonly) DDMMisc *miscAttributes; // @synthesize miscAttributes=_miscAttributes;
 @property(readonly) DDMMeta *meta; // @synthesize meta=_meta;
 @property(readonly) DDMInfo *info; // @synthesize info=_info;
+@property(readonly) NSString *copyright; // @synthesize copyright=_copyright;
 @property(readonly) NSString *title; // @synthesize title=_title;
 @property(readonly) NSString *locale; // @synthesize locale=_locale;
 @property(readonly) NSString *version; // @synthesize version=_version;

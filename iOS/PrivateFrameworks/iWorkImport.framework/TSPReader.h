@@ -66,7 +66,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)isObjectInDocument:(id)arg1;
 - (id)objectUUIDMap;
 - (_Bool)canSetObjectUUIDForObject:(id)arg1;
-- (id)newObjectUUIDForObject:(id)arg1;
+- (id)newObjectUUIDForObject:(id)arg1 baseOffset:(unsigned long long)arg2 ignoringBaseUUIDForObjectUUID:(_Bool)arg3;
 - (long long)newObjectIdentifier;
 - (void)willModifyObject:(id)arg1 duringReadOperation:(_Bool)arg2;
 - (void)endIgnoringModificationsForObject:(id)arg1;

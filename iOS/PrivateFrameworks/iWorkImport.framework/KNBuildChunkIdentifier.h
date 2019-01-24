@@ -31,8 +31,8 @@ __attribute__((visibility("hidden")))
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithBuild:(id)arg1 chunkID:(int)arg2;
 - (id)initEmptyIdentifier;
-- (void)saveToMessage:(struct BuildChunkIdentifierArchive *)arg1;
-- (id)initWithMessage:(const struct BuildChunkIdentifierArchive *)arg1;
+-     // Error parsing type: v24@0:8^{BuildChunkIdentifierArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{UUID}i}16, name: saveToMessage:
+-     // Error parsing type: @24@0:8r^{BuildChunkIdentifierArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{UUID}i}16, name: initWithMessage:
 
 @end
 

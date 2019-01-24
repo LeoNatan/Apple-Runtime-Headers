@@ -13,8 +13,8 @@ __attribute__((visibility("hidden")))
 
 - (void)outsetBy:(struct CGSize)arg1;
 - (void)transformBy:(struct CGAffineTransform)arg1;
-- (void)setTransform:(struct CGAffineTransform)arg1;
-- (void)setSize:(struct CGSize)arg1;
+@property(nonatomic) struct CGAffineTransform transform; // @dynamic transform;
+@property(nonatomic) struct CGSize size; // @dynamic size;
 
 @end
 

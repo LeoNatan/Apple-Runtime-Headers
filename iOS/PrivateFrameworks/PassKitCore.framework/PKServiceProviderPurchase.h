@@ -20,12 +20,14 @@
     PKServiceProviderPurchaseData *_serviceProviderData;
     NSDate *_purchaseDate;
     NSString *_signature;
+    NSString *_partnerMetadata;
     NSArray *_actions;
 }
 
 + (_Bool)supportsSecureCoding;
 + (id)purchaseWithDictionary:(id)arg1;
 @property(copy, nonatomic) NSArray *actions; // @synthesize actions=_actions;
+@property(copy, nonatomic) NSString *partnerMetadata; // @synthesize partnerMetadata=_partnerMetadata;
 @property(copy, nonatomic) NSString *signature; // @synthesize signature=_signature;
 @property(copy, nonatomic) NSDate *purchaseDate; // @synthesize purchaseDate=_purchaseDate;
 @property(copy, nonatomic) PKServiceProviderPurchaseData *serviceProviderData; // @synthesize serviceProviderData=_serviceProviderData;

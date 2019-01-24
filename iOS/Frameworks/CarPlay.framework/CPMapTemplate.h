@@ -12,7 +12,7 @@
 #import <CarPlay/CPMapClientTemplateDelegate-Protocol.h>
 #import <CarPlay/CPNavigationAlertUpdating-Protocol.h>
 
-@class CPNavigationAlert, NSArray, NSMutableArray, NSMutableDictionary, NSString, UIColor;
+@class CPBarButton, CPNavigationAlert, NSArray, NSMutableArray, NSMutableDictionary, NSString, UIColor;
 @protocol CPBannerProviding, CPMapTemplateDelegate, CPMapTemplateProviding;
 
 @interface CPMapTemplate : CPTemplate <CPMapButtonDelegate, CPMapClientTemplateDelegate, CPBannerDelegate, CPNavigationAlertUpdating, CPBarButtonProviding>
@@ -88,6 +88,7 @@
 - (id)init;
 
 // Remaining properties
+@property(retain, nonatomic) CPBarButton *backButton;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;

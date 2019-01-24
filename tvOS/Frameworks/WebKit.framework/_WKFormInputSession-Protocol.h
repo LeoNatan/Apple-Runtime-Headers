@@ -14,6 +14,7 @@
 @property(nonatomic) _Bool forceSecureTextEntry;
 @property(nonatomic) _Bool accessoryViewShouldNotShow;
 @property(copy, nonatomic) NSArray *suggestions;
+@property(retain, nonatomic) UIView *customInputAccessoryView;
 @property(retain, nonatomic) UIView *customInputView;
 @property(copy, nonatomic) NSString *accessoryViewCustomButtonTitle;
 @property(readonly, nonatomic) id <_WKFocusedElementInfo> focusedElementInfo;

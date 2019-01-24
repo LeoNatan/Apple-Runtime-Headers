@@ -24,15 +24,16 @@ __attribute__((visibility("hidden")))
     unsigned long long _findStringCount;
     unsigned long long _findStringMaxCount;
     struct RetainPtr<UIView> _fixedOverlayView;
-    struct optional<unsigned long> _focusedSearchResultIndex;
+    struct Optional<unsigned long> _focusedSearchResultIndex;
     long long _focusedSearchResultPendingOffset;
     struct RetainPtr<PDFHostViewController> _hostViewController;
     struct CGSize _overlaidAccessoryViewsInset;
     struct RetainPtr<UIView> _pageNumberIndicator;
-    struct RetainPtr<NSString> _password;
+    struct CString _passwordForPrinting;
     struct InteractionInformationAtPosition _positionInformation;
     struct RetainPtr<NSString> _suggestedFilename;
     struct WeakObjCPtr<WKWebView> _webView;
+    struct RetainPtr<WKKeyboardScrollViewAnimator> _keyboardScrollingAnimator;
 }
 
 - (id).cxx_construct;
@@ -43,7 +44,7 @@ __attribute__((visibility("hidden")))
 - (void)actionSheetAssistant:(id)arg1 shareElementWithURL:(id)arg2 rect:(struct CGRect)arg3;
 - (void)actionSheetAssistant:(id)arg1 openElementAtLocation:(struct CGPoint)arg2;
 - (void)actionSheetAssistant:(id)arg1 performAction:(int)arg2;
-- (optional_2cdb8358)positionInformationForActionSheetAssistant:(id)arg1;
+- (Optional_4d2ea4a9)positionInformationForActionSheetAssistant:(id)arg1;
 - (void)pdfHostViewControllerExtensionProcessDidCrash:(id)arg1;
 - (void)pdfHostViewController:(id)arg1 didLongPressPageIndex:(long long)arg2 atLocation:(struct CGPoint)arg3 withAnnotationRect:(struct CGRect)arg4;
 - (void)pdfHostViewController:(id)arg1 didLongPressURL:(id)arg2 atLocation:(struct CGPoint)arg3 withAnnotationRect:(struct CGRect)arg4;
@@ -84,6 +85,7 @@ __attribute__((visibility("hidden")))
 - (id)web_initWithFrame:(struct CGRect)arg1 webView:(id)arg2 mimeType:(id)arg3;
 - (id)_contentView;
 - (_Bool)gestureRecognizerShouldBegin:(id)arg1;
+- (_Bool)web_handleKeyEvent:(id)arg1;
 - (void)dealloc;
 @property(readonly, nonatomic) struct CGPDFDocument *_wk_printedDocument;
 - (unsigned long long)_wk_pageCountForPrintFormatter:(id)arg1;

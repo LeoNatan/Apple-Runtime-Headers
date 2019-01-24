@@ -9,30 +9,29 @@
 #import <SafariServices/SFReaderAppearanceFontSizeSelectorDelegate-Protocol.h>
 #import <SafariServices/SFReaderAppearanceThemeSelectorTableViewCellDelegate-Protocol.h>
 
-@class NSDictionary, NSString, UIImage, WBSReaderFont, WBSReaderFontManager, _SFReaderAppearanceViewController;
+@class NSString, UIImage, WBSReaderConfigurationManager, WBSReaderFont, WBSReaderFontManager, _SFReaderAppearanceViewController;
 
 __attribute__((visibility("hidden")))
 @interface SFReaderAppearanceMainViewController : _SFPopoverSizingTableViewController <SFReaderAppearanceFontSizeSelectorDelegate, SFReaderAppearanceThemeSelectorTableViewCellDelegate>
 {
     WBSReaderFontManager *_fontManager;
-    NSDictionary *_initialReaderConfiguration;
+    WBSReaderConfigurationManager *_configurationManager;
     long long _selectedFontIndex;
     UIImage *_checkmarkImage;
     _SFReaderAppearanceViewController *_ownerAppearanceViewController;
-    NSString *_themeName;
+    long long _theme;
 }
 
-@property(readonly, nonatomic) NSString *themeName; // @synthesize themeName=_themeName;
+@property(readonly, nonatomic) long long theme; // @synthesize theme=_theme;
 @property(nonatomic) __weak _SFReaderAppearanceViewController *ownerAppearanceViewController; // @synthesize ownerAppearanceViewController=_ownerAppearanceViewController;
 - (void).cxx_destruct;
-- (id)_themeNameFromTheme:(long long)arg1;
-- (long long)_themeFromThemeName:(id)arg1;
 - (void)_determineSelectedFontIndex;
-- (void)_determineSelectedTheme;
 - (void)_determineSelectedValues;
 - (void)readerAppearanceThemeSelectorDidChangeTheme:(id)arg1;
 - (void)readerAppearanceFontSizeDidIncrease:(id)arg1;
 - (void)readerAppearanceFontSizeDidDecrease:(id)arg1;
+- (_Bool)readerAppearanceFontSizeCanDecrease:(id)arg1;
+- (_Bool)readerAppearanceFontSizeCanIncrease:(id)arg1;
 - (_Bool)_canSelectRowAtIndexPath:(id)arg1;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 - (double)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
@@ -45,7 +44,7 @@ __attribute__((visibility("hidden")))
 - (id)checkmarkImage;
 - (struct CGSize)preferredContentSize;
 - (void)viewDidLoad;
-- (id)initWithInitialReaderConfiguration:(id)arg1 fontManager:(id)arg2;
+- (id)initWithConfigurationManager:(id)arg1 fontManager:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

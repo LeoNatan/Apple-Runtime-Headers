@@ -12,6 +12,7 @@
 
 @interface _MRSetStateMessageProtobuf : PBCodable <NSCopying>
 {
+    double _playbackStateTimestamp;
     NSString *_displayID;
     NSString *_displayName;
     _MRNowPlayingInfoProtobuf *_nowPlayingInfo;
@@ -22,10 +23,12 @@
     _MRPlaybackQueueRequestProtobuf *_request;
     _MRSupportedCommandsProtobuf *_supportedCommands;
     struct {
+        unsigned int playbackStateTimestamp:1;
         unsigned int playbackState:1;
     } _has;
 }
 
+@property(nonatomic) double playbackStateTimestamp; // @synthesize playbackStateTimestamp=_playbackStateTimestamp;
 @property(retain, nonatomic) _MRPlaybackQueueRequestProtobuf *request; // @synthesize request=_request;
 @property(retain, nonatomic) _MRNowPlayingPlayerPathProtobuf *playerPath; // @synthesize playerPath=_playerPath;
 @property(retain, nonatomic) _MRPlaybackQueueCapabilitiesProtobuf *playbackQueueCapabilities; // @synthesize playbackQueueCapabilities=_playbackQueueCapabilities;
@@ -44,6 +47,7 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(nonatomic) _Bool hasPlaybackStateTimestamp;
 @property(readonly, nonatomic) _Bool hasRequest;
 @property(readonly, nonatomic) _Bool hasPlayerPath;
 @property(readonly, nonatomic) _Bool hasPlaybackQueueCapabilities;

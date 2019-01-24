@@ -12,10 +12,10 @@ __attribute__((visibility("hidden")))
 }
 
 + (Class)classForUnarchiver:(id)arg1;
-+ (const struct TextualAttachmentArchive *)textualAttachmentArchiveFromUnarchiver:(id)arg1;
++     // Error parsing type: r^{TextualAttachmentArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}i}24@0:8@16, name: textualAttachmentArchiveFromUnarchiver:
 - (id)stringWithPageNumber:(unsigned long long)arg1 pageCount:(unsigned long long)arg2 charIndex:(unsigned long long)arg3;
 - (_Bool)shouldArchiveStringEquivalent;
-- (const struct TextualAttachmentArchive *)textualAttachmentArchiveFromUnarchiver:(id)arg1;
+-     // Error parsing type: r^{TextualAttachmentArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}i}24@0:8@16, name: textualAttachmentArchiveFromUnarchiver:
 
 @end
 

@@ -6,19 +6,18 @@
 
 #import <objc/NSObject.h>
 
-@class NFMutexLock, NSError, NSMutableArray;
+@class NFUnfairLock, NSError, NSMutableArray;
 
-__attribute__((visibility("hidden")))
 @interface NFPromiseSeal : NSObject
 {
     id _value;
     NSError *_error;
     unsigned long long _state;
     NSMutableArray *_handlers;
-    NFMutexLock *_lock;
+    NFUnfairLock *_lock;
 }
 
-@property(readonly, nonatomic) NFMutexLock *lock; // @synthesize lock=_lock;
+@property(readonly, nonatomic) NFUnfairLock *lock; // @synthesize lock=_lock;
 @property(retain, nonatomic) NSMutableArray *handlers; // @synthesize handlers=_handlers;
 @property(nonatomic) unsigned long long state; // @synthesize state=_state;
 @property(retain, nonatomic) NSError *error; // @synthesize error=_error;

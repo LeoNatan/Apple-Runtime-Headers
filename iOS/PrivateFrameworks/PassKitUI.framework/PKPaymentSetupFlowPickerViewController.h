@@ -9,11 +9,12 @@
 #import <PassKitUI/PKPaymentSetupActivitySpinnerProtocol-Protocol.h>
 #import <PassKitUI/PKPaymentSetupBrowseProductsViewControllerDelegate-Protocol.h>
 #import <PassKitUI/PKPaymentSetupHideSetupLaterButtonProtocol-Protocol.h>
+#import <PassKitUI/PKPaymentSetupPresentationProtocol-Protocol.h>
 
 @class NSMutableArray, NSSet, NSString, PKPaymentProvisioningController, PKPaymentSetupFooterView, PKTableHeaderView;
 @protocol PKPaymentSetupViewControllerDelegate;
 
-@interface PKPaymentSetupFlowPickerViewController : PKPaymentSetupTableViewController <PKPaymentSetupActivitySpinnerProtocol, PKPaymentSetupBrowseProductsViewControllerDelegate, PKPaymentSetupHideSetupLaterButtonProtocol>
+@interface PKPaymentSetupFlowPickerViewController : PKPaymentSetupTableViewController <PKPaymentSetupActivitySpinnerProtocol, PKPaymentSetupBrowseProductsViewControllerDelegate, PKPaymentSetupHideSetupLaterButtonProtocol, PKPaymentSetupPresentationProtocol>
 {
     PKTableHeaderView *_headerView;
     PKPaymentSetupFooterView *_footerView;
@@ -35,6 +36,7 @@
 @property(readonly, nonatomic) __weak id <PKPaymentSetupViewControllerDelegate> setupDelegate; // @synthesize setupDelegate=_setupDelegate;
 @property(readonly, nonatomic) PKPaymentProvisioningController *provisioningController; // @synthesize provisioningController=_provisioningController;
 - (void).cxx_destruct;
+- (id)paymentSetupMarker;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 titleForFooterInSection:(long long)arg2;
 - (id)tableView:(id)arg1 titleForHeaderInSection:(long long)arg2;
@@ -43,7 +45,8 @@
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
 - (long long)numberOfSectionsInTableView:(id)arg1;
 - (void)_terminateSetupFlow;
-- (void)productSelectionViewController:(id)arg1 pushViewController:(id)arg2 withCompletion:(CDUnknownBlockType)arg3;
+- (void)provisioningViewController:(id)arg1 pushViewController:(id)arg2 withCompletion:(CDUnknownBlockType)arg3;
+- (void)_prepareViewControllerForProvsioningFlow:(id)arg1;
 - (void)productSelectionViewController:(id)arg1 didSelectProduct:(id)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
 - (void)browseProductsViewController:(id)arg1 didSelectProduct:(id)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
 - (void)_didSelectProducts:(id)arg1;

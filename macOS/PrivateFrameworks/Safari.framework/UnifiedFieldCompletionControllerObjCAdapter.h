@@ -90,7 +90,6 @@ __attribute__((visibility("hidden")))
 - (void)willReloadCompletionList;
 - (id)_parsecCellViewForCompletionListItem:(struct CompletionListItem *)arg1;
 - (int)_parsecCellViewTypeForCompletionListItem:(struct CompletionListItem *)arg1;
-- (int)_parsecCellViewTypeForResult:(id)arg1;
 - (void)restoreSearchState:(id)arg1;
 - (BOOL)canRestoreSearchState:(id)arg1;
 - (BOOL)shouldAbortCompletionFromNotification:(id)arg1;

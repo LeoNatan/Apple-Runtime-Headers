@@ -9,6 +9,6 @@
 @protocol HMDServiceOwner
 - (HMDBackingStoreTransactionBlock *)backingStoreTransactionWithName:(NSString *)arg1;
 - (HMDServiceTransaction *)createUpdateServiceTransationWithServiceUUID:(NSUUID *)arg1;
-- (void)makeServiceNameConsistent:(HMDService *)arg1 withName:(NSString *)arg2;
+- (void)makeServiceNameConsistent:(HMDService *)arg1 withName:(NSString *)arg2 completionHandler:(void (^)(NSError *))arg3;
 @end
 

@@ -33,8 +33,8 @@
 + (void)setCurrentDevice:(id)arg1;
 + (id)currentDevice;
 @property(nonatomic) _Bool isBridgeActive; // @synthesize isBridgeActive=_isBridgeActive;
-@property(retain, nonatomic) NRDevice *nrDevice; // @synthesize nrDevice=_nrDevice;
 @property(readonly, nonatomic) _Bool supportsNewInGallery; // @synthesize supportsNewInGallery=_supportsNewInGallery;
+@property(retain, nonatomic) NRDevice *nrDevice; // @synthesize nrDevice=_nrDevice;
 @property(nonatomic) unsigned long long materialType; // @synthesize materialType=_materialType;
 @property(nonatomic) unsigned long long collectionType; // @synthesize collectionType=_collectionType;
 @property(nonatomic) _Bool isExplorer; // @synthesize isExplorer=_isExplorer;
@@ -50,9 +50,7 @@
 @property(readonly, nonatomic) _Bool isLocked;
 - (void)_loadDeviceInfo;
 - (_Bool)isEqual:(id)arg1;
-@property(readonly, nonatomic) NRDevice *_rawNRDevice;
 - (id)initWithNRDevice:(id)arg1;
-- (id)init;
 
 @end
 

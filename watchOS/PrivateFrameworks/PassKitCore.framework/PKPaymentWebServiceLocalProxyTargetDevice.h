@@ -45,6 +45,8 @@
 - (void)noteProvisioningUserInterfaceDidAppear;
 - (_Bool)supportsAutomaticPassPresentation;
 - (id)deviceRegion;
+- (id)deviceVersion;
+- (id)deviceClass;
 - (id)bridgedClientInfo;
 - (id)deviceName;
 - (id)deviceDescriptionForPaymentWebService:(id)arg1;

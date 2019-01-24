@@ -17,12 +17,12 @@ __attribute__((visibility("hidden")))
     TSULocale *_locale;
 }
 
-+ (id)cellValueWithArchive:(const struct CellValueArchive *)arg1 locale:(id)arg2;
++     // Error parsing type: @32@0:8r^{CellValueArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{BooleanCellValueArchive}^{DateCellValueArchive}^{NumberCellValueArchive}^{StringCellValueArchive}^{ErrorCellValueArchive}i}16@24, name: cellValueWithArchive:locale:
 + (id)newCellValueFromTSCEValue:(const struct TSCEValue *)arg1 withLocale:(id)arg2;
 @property(retain, nonatomic) TSULocale *locale; // @synthesize locale=_locale;
 @property(nonatomic) int valueType; // @synthesize valueType=_valueType;
 - (void).cxx_destruct;
-- (void)encodeCellValueToArchive:(struct CellValueArchive *)arg1;
+-     // Error parsing type: v24@0:8^{CellValueArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{BooleanCellValueArchive}^{DateCellValueArchive}^{NumberCellValueArchive}^{StringCellValueArchive}^{ErrorCellValueArchive}i}16, name: encodeCellValueToArchive:
 - (void)setPopulatedCustomFormat:(id)arg1;
 - (void)updateWithCustomFormatList:(id)arg1;
 - (long long)compare:(id)arg1;

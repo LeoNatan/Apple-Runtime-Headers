@@ -79,8 +79,8 @@ __attribute__((visibility("hidden")))
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (void)saveToArchive:(struct UIStateArchive *)arg1 archiver:(id)arg2 context:(id)arg3;
-- (id)initWithArchive:(const struct UIStateArchive *)arg1 unarchiver:(id)arg2;
+-     // Error parsing type: v40@0:8^{UIStateArchive=^^?{InternalMetadataWithArena=^v}{HasBits<2>=[2I]}{RepeatedPtrField<TSCH::ChartUIState>=^{Arena}ii^{Rep}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}^{Point}^{Reference}^{Reference}^{Size}^{Point}^{Size}^{SelectionPathArchive}^{SelectionPathArchive}^{Reference}^{Reference}^{Reference}fBBBBiIfBBBBfiBffBBBBBi{CachedSize={atomic<int>=Ai}}}16@24@32, name: saveToArchive:archiver:context:
+-     // Error parsing type: @32@0:8r^{UIStateArchive=^^?{InternalMetadataWithArena=^v}{HasBits<2>=[2I]}{RepeatedPtrField<TSCH::ChartUIState>=^{Arena}ii^{Rep}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}^{Point}^{Reference}^{Reference}^{Size}^{Point}^{Size}^{SelectionPathArchive}^{SelectionPathArchive}^{Reference}^{Reference}^{Reference}fBBBBiIfBBBBfiBffBBBBBi{CachedSize={atomic<int>=Ai}}}16@24, name: initWithArchive:unarchiver:
 - (id)archivedUIStateInContext:(id)arg1;
 - (_Bool)isEqualToUIState:(id)arg1;
 - (id)init;

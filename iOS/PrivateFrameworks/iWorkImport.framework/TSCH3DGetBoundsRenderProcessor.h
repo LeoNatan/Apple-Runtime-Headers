@@ -16,7 +16,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) int mode; // @synthesize mode=mMode;
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (void)submit:(const struct PrimitiveInfo *)arg1;
+- (void)submit:(id)arg1;
 - (void)extend2DProjectedBounds:(const box_a3bd9649 *)arg1;
 - (void)resetBounds;
 @property(readonly, nonatomic) const struct ObjectBounds *bounds;

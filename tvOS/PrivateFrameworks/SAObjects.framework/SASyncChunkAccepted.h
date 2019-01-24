@@ -14,6 +14,7 @@
 
 + (id)chunkAcceptedWithDictionary:(id)arg1 context:(id)arg2;
 + (id)chunkAccepted;
+- (_Bool)mutatingCommand;
 - (_Bool)requiresResponse;
 @property(retain, nonatomic) SASyncAnchor *current;
 - (id)encodedClassName;

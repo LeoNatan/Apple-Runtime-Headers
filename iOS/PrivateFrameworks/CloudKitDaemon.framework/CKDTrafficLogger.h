@@ -23,7 +23,7 @@
 - (void)logRequestBodyStreamReset;
 - (void)logPartialRequestObjectData:(id)arg1;
 - (void)logResponse:(id)arg1;
-- (void)logRequest:(id)arg1 toURL:(id)arg2 withMethod:(id)arg3;
+- (void)logRequest:(id)arg1 toURL:(id)arg2 withMethod:(id)arg3 withMessageClassString:(id)arg4 parsingStandaloneMessage:(_Bool)arg5;
 - (_Bool)shouldLog;
 - (void)_logObject:(id)arg1 ofType:(unsigned long long)arg2;
 - (id)initWithRequestID:(id)arg1;

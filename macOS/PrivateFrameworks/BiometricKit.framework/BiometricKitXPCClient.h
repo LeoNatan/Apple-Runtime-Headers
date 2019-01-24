@@ -22,6 +22,7 @@
 + (void)initialize;
 @property(nonatomic) __weak id <BiometricKitDelegateXpcProtocol> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (int)getLastMatchEvent:(id *)arg1;
 - (int)pauseFaceDetectTimer:(BOOL)arg1;
 - (int)enableMatchAutoRetry:(BOOL)arg1;
 - (void)logEventOrCode:(unsigned long long)arg1;

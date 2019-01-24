@@ -6,7 +6,7 @@
 
 #import <WebCore/NSObject-Protocol.h>
 
-@class NSArray, NSData, NSIndexSet, NSString, NSURL, WebItemProviderRegistrationInfoList;
+@class NSArray, NSData, NSIndexSet, NSString, WebItemProviderRegistrationInfoList;
 
 @protocol AbstractPasteboard <NSObject>
 @property(copy, nonatomic) NSArray *itemProviders;
@@ -21,7 +21,7 @@
 @property(readonly, nonatomic) NSArray *allDroppedFileURLs;
 @property(readonly, nonatomic) long long numberOfFiles;
 - (void)updateSupportedTypeIdentifiers:(NSArray *)arg1;
-- (NSURL *)preferredFileUploadURLAtIndex:(unsigned long long)arg1 fileType:(id *)arg2;
+- (NSArray *)fileUploadURLsAtIndex:(unsigned long long)arg1 fileTypes:(id *)arg2;
 - (NSArray *)pasteboardTypesByFidelityForItemAtIndex:(unsigned long long)arg1;
 - (void)setItems:(NSArray *)arg1;
 - (WebItemProviderRegistrationInfoList *)takeRegistrationList;

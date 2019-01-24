@@ -34,6 +34,7 @@
 - (id)objectForKey:(id)arg1;
 - (void)setAssetData:(id)arg1 forKey:(id)arg2;
 - (void)setReference:(id)arg1;
+- (void)setUnsignedInteger:(unsigned long long)arg1 forKey:(id)arg2;
 - (void)setInteger:(long long)arg1 forKey:(id)arg2;
 - (void)setBool:(_Bool)arg1 forKey:(id)arg2;
 - (void)setEncryptedObject:(id)arg1 forKey:(id)arg2;

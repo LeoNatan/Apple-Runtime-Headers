@@ -16,6 +16,7 @@
     PKPeerPayment3DTextView *_renderView;
     _Bool _renderViewRemovedByLossOfWindow;
     _Bool _snapshotInProgress;
+    _Bool _usedForSnapshotting;
     UILabel *_messageLabel;
     UILabel *_statusLabel;
     UIActivityIndicatorView *_actionSpinner;
@@ -88,6 +89,7 @@
 - (id)initWithFrame:(struct CGRect)arg1;
 - (id)initWithAmount:(id)arg1 currency:(id)arg2 state:(unsigned long long)arg3;
 - (id)initWithCurrencyAmount:(id)arg1 state:(unsigned long long)arg2;
+- (id)initForSnapshotting;
 - (id)init;
 - (id)interactiveViews;
 

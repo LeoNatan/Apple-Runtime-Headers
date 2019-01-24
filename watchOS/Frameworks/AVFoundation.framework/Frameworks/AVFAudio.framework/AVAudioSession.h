@@ -118,6 +118,8 @@
 - (_Bool)setBypassRingerSwitchPolicy:(_Bool)arg1 error:(id *)arg2;
 - (void)setAllowAllBuiltInDataSources:(_Bool)arg1;
 - (_Bool)allowAllBuiltInDataSources;
+- (_Bool)setRequiresNoAudioResources:(_Bool)arg1 error:(id *)arg2;
+- (_Bool)requiresNoAudioResources;
 - (_Bool)setUsingLongFormAudio:(_Bool)arg1 error:(id *)arg2;
 - (_Bool)usingLongFormAudio;
 - (_Bool)lastActivationStoppedNowPlayingApp;

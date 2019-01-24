@@ -6,7 +6,7 @@
 
 #import <iTunesCloud/ICUserIdentityProperties.h>
 
-@class ICDelegateToken, NSNumber, NSString;
+@class ICDelegateToken, NSDate, NSNumber, NSString;
 
 @interface ICMutableUserIdentityProperties : ICUserIdentityProperties
 {
@@ -14,7 +14,9 @@
 
 - (void)setICloudPersonID:(id)arg1;
 - (void)setCloudBackupEnabled:(_Bool)arg1;
+@property(copy, nonatomic) NSDate *ageVerificationExpirationDate; // @dynamic ageVerificationExpirationDate;
 @property(copy, nonatomic) NSString *username; // @dynamic username;
+@property(nonatomic, getter=isSubscriptionStatusEnabled) _Bool subscriptionStatusEnabled; // @dynamic subscriptionStatusEnabled;
 @property(copy, nonatomic) NSString *storefrontIdentifier; // @dynamic storefrontIdentifier;
 @property(nonatomic, getter=isSandboxed) _Bool sandboxed; // @dynamic sandboxed;
 @property(nonatomic, getter=isManagedAppleID) _Bool managedAppleID; // @dynamic managedAppleID;

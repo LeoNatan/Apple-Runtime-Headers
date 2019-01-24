@@ -7,7 +7,7 @@
 #import <Foundation/NSArray.h>
 
 @interface NSArray (TSDInfoGeometryPersistenceAdditions)
-- (id)tsd_initWithGeometryArray:(const RepeatedPtrField_45e8210e *)arg1;
-- (void)tsd_saveToGeometryArray:(RepeatedPtrField_45e8210e *)arg1 archiver:(id)arg2;
+- (id)tsd_initWithGeometryArray:(const RepeatedPtrField_27865cdd *)arg1;
+- (void)tsd_saveToGeometryArray:(RepeatedPtrField_27865cdd *)arg1 archiver:(id)arg2;
 @end
 

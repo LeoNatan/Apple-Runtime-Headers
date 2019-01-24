@@ -167,6 +167,7 @@
 - (void).cxx_destruct;
 - (void)_prepareAssetForInspectionIfNeeded;
 - (id)scanningDelays;
+- (void)_updateRateForScrubbingAndSeeking;
 - (void)_cancelPendingSeeksIfNeeded;
 - (void)setCanUseNetworkResourcesForLiveStreamingWhilePaused:(_Bool)arg1;
 - (_Bool)canUseNetworkResourcesForLiveStreamingWhilePaused;

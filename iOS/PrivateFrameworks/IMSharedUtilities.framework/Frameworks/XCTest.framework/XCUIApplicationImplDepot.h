@@ -7,17 +7,20 @@
 #import <objc/NSObject.h>
 
 @class NSMutableDictionary;
-@protocol OS_dispatch_queue;
+@protocol XCUIDevice;
 
 @interface XCUIApplicationImplDepot : NSObject
 {
-    NSObject<OS_dispatch_queue> *_queue;
     NSMutableDictionary *_applicationImpls;
+    id <XCUIDevice> _device;
 }
 
+@property(readonly) id <XCUIDevice> device; // @synthesize device=_device;
 - (void).cxx_destruct;
-- (id)applicationImplForIdentifier:(id)arg1;
-- (id)init;
+- (id)applicationImplForSpecifier:(id)arg1;
+- (id)_canonicalSpecifierFromSpecifier:(id)arg1;
+- (id)_identifierFromSpecifier:(id)arg1;
+- (id)initWithDevice:(id)arg1;
 
 @end
 

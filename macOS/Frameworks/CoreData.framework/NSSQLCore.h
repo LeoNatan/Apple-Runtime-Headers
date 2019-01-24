@@ -161,7 +161,7 @@ __attribute__((visibility("hidden")))
 - (void)freeQueryGenerationWithIdentifier:(id)arg1;
 - (id)currentQueryGeneration;
 - (int)_registerNewQueryGenerationSnapshot:(id)arg1 pointerResponsibility:(unsigned long long)arg2;
-- (BOOL)_aContextSomewhereCaresAboutGenerations;
+- (BOOL)_isQueryGenerationSupportActive;
 - (BOOL)supportsGenerationalQuerying;
 - (void)_initializeQueryGenerationTrackingConnection;
 - (void)_updateAutoVacuumMetadataWithValues:(id)arg1;

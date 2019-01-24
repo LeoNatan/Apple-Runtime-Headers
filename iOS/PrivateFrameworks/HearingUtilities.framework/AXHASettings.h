@@ -28,7 +28,6 @@
 @property(nonatomic) _Bool multideviceAudioEnabled;
 @property(nonatomic) _Bool multideviceSettingsEnabled;
 @property(nonatomic) _Bool exportsLiveListenToFile;
-@property(nonatomic) long long inputRoutingOption;
 @property(nonatomic) long long mediaAudioRoute;
 @property(nonatomic) long long callAudioRoute;
 @property(nonatomic) _Bool shouldStreamToRightAid;
@@ -40,6 +39,7 @@
 - (id)_valueForPreferenceKey:(id)arg1;
 - (void)_synchronizeIfNecessary:(id)arg1;
 - (void)_setValue:(id)arg1 forPreferenceKey:(id)arg2;
+- (void)_updateTripleClickOptionsForPairedAids:(id)arg1;
 - (void)registerUpdateBlock:(CDUnknownBlockType)arg1 forRetrieveSelector:(SEL)arg2 withListener:(id)arg3;
 - (void)_registerForNotification:(id)arg1;
 - (id)_preferenceKeyForSelector:(SEL)arg1;

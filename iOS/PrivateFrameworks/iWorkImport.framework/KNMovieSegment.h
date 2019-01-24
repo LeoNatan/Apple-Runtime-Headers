@@ -23,8 +23,8 @@ __attribute__((visibility("hidden")))
 - (id)init;
 - (id)initEmptySegmentWithStartTime:(double)arg1;
 - (id)initWithMovieData:(id)arg1 startTime:(double)arg2;
-- (void)saveToArchive:(struct MovieSegmentArchive *)arg1 archiver:(id)arg2;
-- (id)initWithContext:(id)arg1 archive:(const struct MovieSegmentArchive *)arg2 unarchiver:(id)arg3;
+-     // Error parsing type: v32@0:8^{MovieSegmentArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{Reference}^{DataReference}d}16@24, name: saveToArchive:archiver:
+-     // Error parsing type: @40@0:8@16r^{MovieSegmentArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{Reference}^{DataReference}d}24@32, name: initWithContext:archive:unarchiver:
 
 @end
 

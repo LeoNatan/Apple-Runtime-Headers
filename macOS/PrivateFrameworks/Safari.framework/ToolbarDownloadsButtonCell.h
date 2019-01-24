@@ -9,13 +9,12 @@
 __attribute__((visibility("hidden")))
 @interface ToolbarDownloadsButtonCell : NSButtonCell
 {
-    float _progress;
+    BOOL _shouldReserveSpaceForProgressBar;
 }
 
+@property(nonatomic) BOOL shouldReserveSpaceForProgressBar; // @synthesize shouldReserveSpaceForProgressBar=_shouldReserveSpaceForProgressBar;
 - (BOOL)_subclassHasVibrancyIncompatibleDrawing;
 - (void)drawInteriorWithFrame:(struct CGRect)arg1 inView:(id)arg2;
-- (void)_drawProgressBarWithCellFrame:(struct CGRect)arg1 inView:(id)arg2;
-- (void)updateWithProgress:(float)arg1;
 
 @end
 

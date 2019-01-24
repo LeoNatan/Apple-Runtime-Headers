@@ -20,6 +20,8 @@
 - (void)_stopMonitoring;
 - (void)_startMonitoringWithQueue:(id)arg1;
 - (void)preferredExternalRouteDidChange;
+- (BOOL)jarvisConnected;
+- (void)getJarvisConnected:(CDUnknownBlockType)arg1;
 - (id)init;
 
 @end

@@ -91,6 +91,7 @@
 - (void)preflightUserInputResponses:(id)arg1 forPayloadIndex:(unsigned long long)arg2;
 - (_Bool)mustInstallProfileNonInteractively:(id)arg1;
 - (_Bool)isProfileUIInstallationAllowed;
+- (_Bool)isProfileUIInstallationEffectivelyAllowed;
 - (void)setInteractionDelegate:(id)arg1;
 - (void)updateProfileWithIdentifier:(id)arg1 interactionDelegate:(id)arg2;
 - (void)installProfileData:(id)arg1 options:(id)arg2 interactionDelegate:(id)arg3;
@@ -103,6 +104,7 @@
 - (id)acceptedFileExtensions;
 - (id)acceptedMIMETypes;
 - (id)updateProfileWithIdentifier:(id)arg1 outError:(id *)arg2;
+- (void)removeUninstalledProfileWithIdentifier:(id)arg1 installationType:(long long)arg2 targetDeviceType:(unsigned long long)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)removeProfileWithIdentifier:(id)arg1 installationType:(long long)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)removeProtectedProfileAsyncWithIdentifier:(id)arg1 installationType:(long long)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)removeProfileAsyncWithIdentifier:(id)arg1 installationType:(long long)arg2 completion:(CDUnknownBlockType)arg3;
@@ -118,7 +120,10 @@
 - (id)queueFileDataForAcceptance:(id)arg1 originalFileName:(id)arg2 outError:(id *)arg3;
 - (id)_queueDataForAcceptance:(id)arg1 originalFileName:(id)arg2 originatingBundleID:(id)arg3 transitionToUI:(_Bool)arg4 outError:(id *)arg5;
 - (id)popProvisioningProfileDataFromHeadOfInstallationQueue;
+- (id)popProfileDataFromPurgatoryForDeviceType:(unsigned long long)arg1;
 - (id)popProfileDataFromHeadOfInstallationQueue;
+- (void)allProfilesOutMDMProfileInfo:(id *)arg1 outConfigurationProfilesInfo:(id *)arg2 outUninstalledProfilesInfo:(id *)arg3 forDeviceType:(unsigned long long)arg4;
+- (id)uninstalledProfileDataWithIdentifier:(id)arg1 targetDevice:(unsigned long long)arg2;
 - (id)installedUserProfileDataWithIdentifier:(id)arg1;
 - (id)installedSystemProfileDataWithIdentifier:(id)arg1;
 - (id)installedProfileDataWithIdentifier:(id)arg1;
@@ -131,6 +136,7 @@
 - (id)installedProfileIdentifiersWithFilterFlags:(int)arg1;
 - (id)installedProfilesInstalledBy:(id)arg1;
 - (id)installedProfileIdentifiersInstalledBy:(id)arg1;
+- (id)uninstalledProfileIdentifiersForDevice:(unsigned long long)arg1;
 - (id)installedProfileIdentifiers;
 - (id)installedMDMProfileIdentifier;
 - (id)effectiveWhitelistedAppsAndOptions;
@@ -325,7 +331,6 @@
 - (_Bool)isSpotlightNewsAllowed;
 - (_Bool)isNewsTodayAllowed;
 - (_Bool)isNewsAllowed;
-- (void)setDictationAllowed:(_Bool)arg1;
 - (void)setSpellCheckAllowed:(_Bool)arg1;
 - (void)setKeyboardShortcutsAllowed:(_Bool)arg1;
 - (void)setPredictiveKeyboardAllowed:(_Bool)arg1;
@@ -346,6 +351,7 @@
 - (_Bool)isWallpaperModificationAllowed;
 - (_Bool)isDeviceNameModificationAllowed;
 - (_Bool)isESIMModificationAllowed;
+- (_Bool)isPersonalHotspotModificationAllowed;
 - (_Bool)isBluetoothModificationAllowed;
 - (_Bool)isInAppPaymentAllowed;
 - (_Bool)isFingerprintForContactlessPaymentAllowed;
@@ -359,6 +365,7 @@
 - (void)setFindMyCarAllowed:(_Bool)arg1;
 - (_Bool)isFindMyCarAllowed;
 - (_Bool)isPodcastsAllowed;
+- (_Bool)isSiriServerLoggingAllowed;
 - (void)setWheelchairDataSubmissionAllowed:(_Bool)arg1;
 - (_Bool)hasWheelchairDataSubmissionAllowedBeenSet;
 - (_Bool)isWheelchairDataSubmissionAllowed;

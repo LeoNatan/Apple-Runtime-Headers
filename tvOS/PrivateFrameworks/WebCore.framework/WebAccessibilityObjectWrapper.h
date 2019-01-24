@@ -70,9 +70,11 @@ __attribute__((visibility("hidden")))
 - (id)elementsForRange:(struct _NSRange)arg1;
 - (void)_accessibilitySetSelectedTextRange:(struct _NSRange)arg1;
 - (struct _NSRange)_accessibilitySelectedTextRange;
+- (id)attributedStringForElement;
 - (id)attributedStringForRange:(struct _NSRange)arg1;
 - (id)stringForRange:(struct _NSRange)arg1;
 - (id)_stringForRange:(struct _NSRange)arg1 attributed:(_Bool)arg2;
+- (id)_stringFromStartMarker:(id)arg1 toEndMarker:(id)arg2 attributed:(_Bool)arg3;
 - (id)textMarkerForPosition:(long long)arg1;
 - (id)textMarkerRangeForSelection;
 - (struct WebAccessibilityObjectWrapper *)accessibilityObjectForTextMarker:(id)arg1;
@@ -113,6 +115,7 @@ __attribute__((visibility("hidden")))
 - (id)_accessibilityParentForSubview:(id)arg1;
 - (id)attachmentView;
 - (void)_accessibilityActivate;
+- (id)accessibilityTextualContext;
 - (_Bool)isAttachment;
 - (id)accessibilityLinkedElement;
 - (id)accessibilityFlowToElements;

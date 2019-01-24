@@ -6,16 +6,21 @@
 
 #import <UIKit/UIViewController.h>
 
-#import <RelevanceEngineUI/REUISiriActionConfirmationScrollViewDelegate-Protocol.h>
+#import <RelevanceEngineUI/CSLPIButtonHandlerProtocol-Protocol.h>
+#import <RelevanceEngineUI/CUISAlertSwipeToDismissViewDataSource-Protocol.h>
+#import <RelevanceEngineUI/CUISAlertSwipeToDismissViewDelegate-Protocol.h>
 #import <RelevanceEngineUI/REUISiriShortcutViewDelegate-Protocol.h>
 
-@class NSLayoutConstraint, NSString, REUISiriShortcutView, UIImageView, UIView;
+@class CLKUITimeLabel, NSLayoutConstraint, NSString, REUISiriShortcutView, UIImageView, UIScrollView, UIView;
 
-@interface REUISiriShortcutPerformingViewController : UIViewController <REUISiriActionConfirmationScrollViewDelegate, REUISiriShortcutViewDelegate>
+@interface REUISiriShortcutPerformingViewController : UIViewController <REUISiriShortcutViewDelegate, CUISAlertSwipeToDismissViewDataSource, CUISAlertSwipeToDismissViewDelegate, CSLPIButtonHandlerProtocol>
 {
     REUISiriShortcutView *_shortcutView;
     UIImageView *_blurView;
     UIView *_blurContainer;
+    UIView *_contentView;
+    CLKUITimeLabel *_timeLabel;
+    UIScrollView *_observingScrollView;
     NSLayoutConstraint *_confirmButtonHeightConstraint;
     _Bool _forceExecution;
     CDUnknownBlockType _cancelHandler;
@@ -29,14 +34,22 @@
 @property(copy, nonatomic) CDUnknownBlockType cancelHandler; // @synthesize cancelHandler=_cancelHandler;
 @property(nonatomic) _Bool forceExecution; // @synthesize forceExecution=_forceExecution;
 - (void).cxx_destruct;
-- (void)_handleDismiss;
+- (_Bool)handleButton:(unsigned int)arg1 eventType:(unsigned int)arg2;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
+- (void)_setupScrollView:(id)arg1;
+- (id)contentViewForAlertView:(id)arg1;
+- (_Bool)shouldHaveBackgroundViewForAlertView:(id)arg1;
+- (void)didSwipeDownAlertView:(id)arg1;
+- (void)_handleDismissAnimation:(unsigned int)arg1;
 - (void)_handleConfirmation;
 - (void)siriShortcutViewDidPressConfirmButton:(id)arg1;
 - (void)siriShortcutViewDidPressDismissButton:(id)arg1;
 - (void)siriShortcutViewDidTapApplicationIcon:(id)arg1;
-- (_Bool)reui_handleCrownPressedForScrollView:(id)arg1;
 - (void)configureWithContentViewModel:(id)arg1;
+- (void)dealloc;
 - (void)viewDidAppear:(_Bool)arg1;
+- (void)viewDidDisappear:(_Bool)arg1;
+- (void)viewWillDisappear:(_Bool)arg1;
 - (void)configureWithApplicationViewModel:(id)arg1;
 - (void)loadView;
 

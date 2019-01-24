@@ -37,7 +37,7 @@ __attribute__((visibility("hidden")))
 - (void)_activateTableCellRow:(unsigned long long)arg1;
 - (void)accessibilityPerformPressActionForAccessibleRolloverActionButtonTableCellView:(id)arg1;
 - (id)accessibilityGetDescriptionForAccessibleRolloverActionButtonTableCellView:(id)arg1;
-- (BOOL)accessibilityIsIgnored;
+- (BOOL)isAccessibilityElement;
 - (void)actionButtonClickedInTableCellView:(id)arg1;
 - (void)tableViewSelectionDidChange:(id)arg1;
 - (BOOL)tableView:(id)arg1 shouldSelectRow:(long long)arg2;

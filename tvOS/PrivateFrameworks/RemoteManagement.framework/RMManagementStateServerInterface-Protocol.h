@@ -14,6 +14,7 @@
 - (void)deleteWebHistoryForDomain:(NSString *)arg1 webApplication:(NSString *)arg2 completionHandler:(void (^)(NSError *))arg3;
 - (void)deleteWebHistoryForURL:(NSURL *)arg1 webApplication:(NSString *)arg2 completionHandler:(void (^)(NSError *))arg3;
 - (void)isRestrictionsPasscodeSetWithCompletionHandler:(void (^)(_Bool, NSError *))arg1;
+- (void)clearRestrictionsPasscodeWithCompletionHandler:(void (^)(NSError *))arg1;
 - (void)shouldRequestMoreTimeWithCompletionHandler:(void (^)(_Bool, NSError *))arg1;
 - (void)setScreenTimeSyncingEnabled:(_Bool)arg1 completionHandler:(void (^)(NSError *))arg2;
 - (void)screenTimeSyncStateWithCompletionHandler:(void (^)(long long, NSError *))arg1;

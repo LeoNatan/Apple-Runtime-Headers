@@ -9,14 +9,17 @@
 #import <iWorkImport/TSWPObjectIndex-Protocol.h>
 
 @class EQKitEnvironment, NSUUID, TSULocale;
+@protocol TSWPTOCController;
 
 __attribute__((visibility("hidden")))
 @interface TSWPDocumentRoot : TSKDocumentRoot <TSWPObjectIndex>
 {
     NSUUID *_uuid;
     _Bool _didRemoveMissingAttachments;
+    id <TSWPTOCController> _tocController;
 }
 
+@property(readonly, nonatomic) id <TSWPTOCController> tocController; // @synthesize tocController=_tocController;
 @property(nonatomic) _Bool didRemoveMissingAttachments; // @synthesize didRemoveMissingAttachments=_didRemoveMissingAttachments;
 - (void).cxx_destruct;
 - (double)bodyWidth;
@@ -36,6 +39,7 @@ __attribute__((visibility("hidden")))
 - (id)documentFonts;
 - (id)p_fontsInStylesheetUsingBlock:(CDUnknownBlockType)arg1;
 @property(readonly, nonatomic) TSULocale *typesettingLocale;
+- (_Bool)containsVerticalText;
 - (_Bool)useLigatures;
 - (const struct __CFLocale *)hyphenationLocale;
 - (_Bool)shouldHyphenate;

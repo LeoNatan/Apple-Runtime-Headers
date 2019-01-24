@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class CKOperationMMCSRequestOptions, NSArray, NSData, NSDictionary, NSString;
+@class C2MetricOptions, CKOperationMMCSRequestOptions, NSArray, NSData, NSDictionary, NSString;
 
 __attribute__((visibility("hidden")))
 @interface CKDMMCSRequestOptions : NSObject
@@ -27,12 +27,14 @@ __attribute__((visibility("hidden")))
     NSDictionary *_authPutResponseHeaders;
     int _qualityOfService;
     unsigned int _discretionaryNetworkBehavior;
+    C2MetricOptions *_metricOptions;
     unsigned int _networkServiceType;
     CKOperationMMCSRequestOptions *_MMCSRequestOptions;
 }
 
 @property(retain, nonatomic) CKOperationMMCSRequestOptions *MMCSRequestOptions; // @synthesize MMCSRequestOptions=_MMCSRequestOptions;
 @property(nonatomic) unsigned int networkServiceType; // @synthesize networkServiceType=_networkServiceType;
+@property(retain, nonatomic) C2MetricOptions *metricOptions; // @synthesize metricOptions=_metricOptions;
 @property(nonatomic) unsigned int discretionaryNetworkBehavior; // @synthesize discretionaryNetworkBehavior=_discretionaryNetworkBehavior;
 @property(nonatomic) _Bool automaticallyRetryNetworkFailures; // @synthesize automaticallyRetryNetworkFailures=_automaticallyRetryNetworkFailures;
 @property(nonatomic) int qualityOfService; // @synthesize qualityOfService=_qualityOfService;

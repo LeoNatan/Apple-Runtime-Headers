@@ -6,10 +6,10 @@
 
 #import <Silex/NSObject-Protocol.h>
 
-@class SXWebContentConfiguration;
+@class NSDictionary, SXWebContentConfiguration;
 
 @protocol SXWebContentConfigurationProvider <NSObject>
 - (void)onChange:(void (^)(void))arg1;
-- (SXWebContentConfiguration *)configurationForWidth:(double)arg1;
+- (SXWebContentConfiguration *)configurationForSize:(struct CGSize)arg1 dataSources:(NSDictionary *)arg2;
 @end
 

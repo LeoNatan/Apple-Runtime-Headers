@@ -9,10 +9,9 @@
 @class NSArray, NSError, NSURL, NSURLAuthenticationChallenge, SFWebViewController, UIViewController, WKBackForwardListItem, WKNavigation, WKNavigationAction, WKNavigationResponse, WKWebView, WKWebViewConfiguration, _SFDialog, _WKActivatedElementInfo, _WKFrameHandle;
 
 @protocol SFWebViewControllerDelegate <NSObject>
+- (void)webViewControllerUpdateNavigationBar:(SFWebViewController *)arg1;
 - (void)webViewController:(SFWebViewController *)arg1 didChangeFullScreen:(_Bool)arg2;
 - (int)webViewController:(SFWebViewController *)arg1 presentationPolicyForDialog:(_SFDialog *)arg2;
-- (void)webViewControllerWillAuthenticateForAutoFill:(SFWebViewController *)arg1;
-- (_Bool)currentLoadIsEligibleForAutoFillAuthenticationForWebViewController:(SFWebViewController *)arg1;
 - (unsigned int)browserPersonaForWebViewController:(SFWebViewController *)arg1;
 - (void)webViewControllerDidChangeSafeAreaShouldAffectObscuredInsets:(SFWebViewController *)arg1;
 - (void)webViewControllerDidChangeSafeAreaInsets:(SFWebViewController *)arg1;
@@ -33,7 +32,7 @@
 - (void)webViewControllerDidChangeURL:(SFWebViewController *)arg1;
 - (void)webViewController:(SFWebViewController *)arg1 didFailProvisionalNavigation:(WKNavigation *)arg2 withError:(NSError *)arg3;
 - (void)webViewController:(SFWebViewController *)arg1 decidePolicyForNavigationResponse:(WKNavigationResponse *)arg2 decisionHandler:(void (^)(int))arg3;
-- (void)webViewController:(SFWebViewController *)arg1 decidePolicyForNavigationAction:(WKNavigationAction *)arg2 decisionHandler:(void (^)(int))arg3;
+- (void)webViewController:(SFWebViewController *)arg1 decidePolicyForNavigationAction:(WKNavigationAction *)arg2 decisionHandler:(void (^)(int, _WKWebsitePolicies *))arg3;
 - (void)webViewControllerDidFirstVisuallyNonEmptyLayout:(SFWebViewController *)arg1;
 - (void)webViewController:(SFWebViewController *)arg1 didFailNavigation:(WKNavigation *)arg2 withError:(NSError *)arg3;
 - (void)webViewControllerDidChangeEstimatedProgress:(SFWebViewController *)arg1;
@@ -45,5 +44,8 @@
 - (void)webViewController:(SFWebViewController *)arg1 willPerformClientRedirectToURL:(NSURL *)arg2 withDelay:(double)arg3;
 - (void)webViewController:(SFWebViewController *)arg1 didReceiveServerRedirectForProvisionalNavigation:(WKNavigation *)arg2;
 - (void)webViewController:(SFWebViewController *)arg1 didStartProvisionalNavigation:(WKNavigation *)arg2;
+
+@optional
+- (void)webViewControllerDidShowSafeBrowsingWarning:(SFWebViewController *)arg1;
 @end
 

@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
 }
 
 - (void).cxx_destruct;
-- (void)saveToMessage:(struct DataMetadataMap *)arg1 archiver:(id)arg2;
+-     // Error parsing type: v32@0:8^{DataMetadataMap=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSP::DataMetadataMap_DataMetadataMapEntry>=^{Arena}ii^{Rep}}}16@24, name: saveToMessage:archiver:
 - (void)saveToArchiver:(id)arg1;
-- (void)loadFromMessage:(const struct DataMetadataMap *)arg1 unarchiver:(id)arg2;
+-     // Error parsing type: v32@0:8r^{DataMetadataMap=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSP::DataMetadataMap_DataMetadataMapEntry>=^{Arena}ii^{Rep}}}16@24, name: loadFromMessage:unarchiver:
 - (id)dataMetadataForDataIdentifier:(long long)arg1;
 - (void)setDataMetadata:(id)arg1 forDataIdentifier:(long long)arg2;
 - (void)loadFromUnarchiver:(id)arg1;

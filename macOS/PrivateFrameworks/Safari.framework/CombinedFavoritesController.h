@@ -6,20 +6,19 @@
 
 #import <objc/NSObject.h>
 
-@class NSSet, NSString, WebBookmarkList;
+@class NSArray, NSSet, NSString, TouchIconCache, WebBookmarkList;
 
 __attribute__((visibility("hidden")))
 @interface CombinedFavoritesController : NSObject
 {
     NSSet *_canonicalURLsOfAllFavorites;
-    Vector_e4ce0b9d _frequentlyVisitedSites;
+    TouchIconCache *_touchIconCache;
+    NSArray *_frequentlyVisitedSites;
     NSString *_UUIDOfRootBookmarkList;
 }
 
-+ (id)sharedController;
 @property(copy, nonatomic) NSString *UUIDOfRootBookmarkList; // @synthesize UUIDOfRootBookmarkList=_UUIDOfRootBookmarkList;
-@property(readonly, nonatomic) const Vector_e4ce0b9d *frequentlyVisitedSites; // @synthesize frequentlyVisitedSites=_frequentlyVisitedSites;
-- (id).cxx_construct;
+@property(readonly, nonatomic) NSArray *frequentlyVisitedSites; // @synthesize frequentlyVisitedSites=_frequentlyVisitedSites;
 - (void).cxx_destruct;
 - (void)_touchIconsCacheWillPurge:(id)arg1;
 - (void)_titleOfFrequentlyVisitedSiteDidChange:(id)arg1;
@@ -29,15 +28,14 @@ __attribute__((visibility("hidden")))
 - (void)_favoritesContentsChanged;
 - (void)_bookmarksWereReloaded:(id)arg1;
 - (void)_bookmarksWereCleanedUp:(id)arg1;
-- (BOOL)_refreshFrequentlyVisitedSitesIfNecessary:(const Vector_e4ce0b9d *)arg1 updateCacheIfChanged:(BOOL)arg2;
+- (BOOL)_refreshFrequentlyVisitedSitesIfNecessary:(id)arg1 updateCacheIfChanged:(BOOL)arg2;
 - (BOOL)_refreshFrequentlyVisitedSitesIfNecessary;
 - (BOOL)_loadFrequentlyVisitedSitesFromCache;
 - (void)_collectCanonicalURLsOfAllFavoritesWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)combinedFavoritesGridViewControllerViewDidHide;
 - (void)combinedFavoritesGridViewControllerViewWillShow;
 @property(retain, nonatomic) WebBookmarkList *rootBookmarkListForFavorites;
-- (void)warmUp;
-- (id)init;
+- (id)initWithTouchIconCache:(id)arg1;
 
 @end
 

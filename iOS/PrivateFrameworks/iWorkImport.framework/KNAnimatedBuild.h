@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class KNBuildAttributeValue, KNBuildAttributes, NSArray, NSDictionary, NSString;
+@class KNBuildAttributes, NSArray, NSDictionary, NSString;
 
 __attribute__((visibility("hidden")))
 @interface KNAnimatedBuild : NSObject
@@ -60,21 +60,20 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) NSString *effectIdentifier; // @synthesize effectIdentifier=_effectIdentifier;
 @property(readonly, nonatomic) long long buildType; // @synthesize buildType=_buildType;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) NSArray *requiredScaleAttributes;
 @property(readonly, nonatomic) NSArray *requiredScales;
-@property(readonly, nonatomic) _Bool requiresMaxScale;
-@property(readonly, nonatomic) KNBuildAttributeValue *maxScaleAttribute;
 @property(readonly, nonatomic) double maxScale;
-@property(readonly, nonatomic) KNBuildAttributeValue *finalScaleAttribute;
 @property(readonly, nonatomic) double finalScale;
-@property(readonly, nonatomic) KNBuildAttributeValue *initialScaleAttribute;
 @property(readonly, nonatomic) double initialScale;
+@property(readonly, nonatomic) _Bool hasPreviousActionRotate;
+@property(readonly, nonatomic) _Bool hasPreviousActionScale;
 @property(readonly, nonatomic) _Bool isActionMotionPath;
 @property(readonly, nonatomic) _Bool isActionOpacity;
 @property(readonly, nonatomic) _Bool isActionRotation;
 @property(readonly, nonatomic) _Bool isActionScale;
 - (_Bool)p_isActionEffect:(id)arg1;
 - (void)addChildBuild:(id)arg1;
+- (_Bool)isRelatedTo:(id)arg1;
+- (_Bool)isSiblingTo:(id)arg1;
 @property(readonly, nonatomic) double durationWithChildren;
 @property(readonly, nonatomic) _Bool isChildBuild;
 @property(readonly, nonatomic) _Bool isParentBuild;

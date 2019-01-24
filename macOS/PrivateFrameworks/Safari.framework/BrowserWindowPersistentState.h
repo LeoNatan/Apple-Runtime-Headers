@@ -31,6 +31,7 @@ __attribute__((visibility("hidden")))
 }
 
 @property(readonly, nonatomic, getter=isTabBarHidden) BOOL tabBarHidden; // @synthesize tabBarHidden=_tabBarHidden;
+@property(nonatomic) BOOL isMinimized; // @synthesize isMinimized=_isMinimized;
 @property(readonly, nonatomic) NSUUID *windowUUID; // @synthesize windowUUID=_windowUUID;
 @property(readonly, nonatomic) NSDate *dateClosed; // @synthesize dateClosed=_dateClosed;
 @property(readonly, nonatomic, getter=isPrivateWindow) BOOL privateWindow; // @synthesize privateWindow=_privateWindow;

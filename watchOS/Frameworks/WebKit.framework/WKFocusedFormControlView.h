@@ -24,7 +24,7 @@ __attribute__((visibility("hidden")))
     struct WeakObjCPtr<id<WKFocusedFormControlViewDelegate>> _delegate;
     struct RetainPtr<NSString> _submitActionName;
     struct RetainPtr<PUICCrownInputSequencer> _crownInputSequencer;
-    struct optional<CGPoint> _initialScrollViewContentOffset;
+    struct Optional<CGPoint> _initialScrollViewContentOffset;
     _Bool _hasPendingFocusRequest;
     _Bool _visible;
     _Bool _hasNextNode;

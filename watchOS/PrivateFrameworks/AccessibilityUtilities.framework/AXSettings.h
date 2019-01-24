@@ -269,6 +269,7 @@
 @property(retain, nonatomic) NSDictionary *gaxInternalSettingsSavedAccessibilityFeatures;
 @property(retain, nonatomic) NSDictionary *gaxInternalSettingsUserGlobalProfile;
 @property(retain, nonatomic) NSDictionary *gaxInternalSettingsUserAppProfile;
+@property(nonatomic) _Bool guidedAccessOverrideIdleTime;
 @property(nonatomic) _Bool guidedAccessShouldSpeakForTimeRestrictionEvents;
 @property(readonly, nonatomic) NSString *guidedAccessDefaultToneIdentifierForTimeRestrictionEvents;
 @property(copy, nonatomic) NSString *guidedAccessToneIdentifierForTimeRestrictionEvents;

@@ -4,10 +4,12 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@class RPPeopleDiscovery;
+@class NSString, RPPeopleDiscovery;
 
 @protocol RPPeopleXPCDaemonInterface
 - (void)xpcPeopleDiscoveryUpdate:(RPPeopleDiscovery *)arg1;
-- (void)xpcPeopleDiscoveryActivate:(RPPeopleDiscovery *)arg1 completion:(void (^)(NSError *))arg2;
+- (void)xpcPeopleDiscoveryActivate:(RPPeopleDiscovery *)arg1 completion:(void (^)(NSArray *, NSError *))arg2;
+- (void)xpcPeopleRemoveAppleID:(NSString *)arg1 completion:(void (^)(NSError *))arg2;
+- (void)xpcPeopleAddAppleID:(NSString *)arg1 completion:(void (^)(NSError *))arg2;
 @end
 

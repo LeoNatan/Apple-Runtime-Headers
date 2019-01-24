@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
 }
 
 @property(nonatomic) TSTFunctionNode *functionNode; // @synthesize functionNode=_functionNode;
-- (void)saveToArchive:(struct FunctionEndNodeArchive *)arg1 archiver:(id)arg2;
-- (void)loadFromArchive:(const struct FunctionEndNodeArchive *)arg1 unarchiver:(id)arg2;
+-     // Error parsing type: v32@0:8^{FunctionEndNodeArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{ExpressionNodeArchive}}16@24, name: saveToArchive:archiver:
+-     // Error parsing type: v32@0:8r^{FunctionEndNodeArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{ExpressionNodeArchive}}16@24, name: loadFromArchive:unarchiver:
 - (void)saveToArchiver:(id)arg1;
 - (void)loadFromUnarchiver:(id)arg1;
 - (id)exportString;

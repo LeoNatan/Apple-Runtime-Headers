@@ -75,6 +75,7 @@
 - (id)viewControllerForPopoverPresentationFromInlineInkPicker:(id)arg1;
 - (void)inlineInkPicker:(id)arg1 didSelectColor:(id)arg2;
 - (void)inlineInkPicker:(id)arg1 didSelectTool:(id)arg2;
+- (_Bool)inlineInkPickerShouldChangeToolColorForSelectedColor:(id)arg1;
 - (void)attributePicker:(id)arg1 didSelectToolWithTag:(long long)arg2 attributeTag:(long long)arg3;
 - (void)toolsList:(id)arg1 didSelectToolWithTag:(long long)arg2;
 - (void)signatureCreationControllerDidCreateSignature:(id)arg1;
@@ -115,6 +116,7 @@
 - (void)upateAttributesPickerButtonWithCurrentSelection:(id)arg1;
 - (id)createUndoViewController;
 - (void)resetToLastDrawingTool;
+- (id)selectedAnnotations;
 - (void)setContentsHidden:(_Bool)arg1 animated:(_Bool)arg2;
 - (_Bool)shouldUseCompactHeight;
 - (_Bool)shouldUseCompactWidth;

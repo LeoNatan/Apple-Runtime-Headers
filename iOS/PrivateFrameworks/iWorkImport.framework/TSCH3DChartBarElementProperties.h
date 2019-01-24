@@ -6,7 +6,7 @@
 
 #import <iWorkImport/TSCH3DChartBasicElementProperties.h>
 
-@class TSCH3DBarChartDefaultAppearance, TSCH3DLabelResources;
+@class NSMutableArray, TSCH3DBarChartDefaultAppearance, TSCH3DLabelResources;
 @protocol TSCH3DBarChartAppearance;
 
 __attribute__((visibility("hidden")))
@@ -24,7 +24,7 @@ __attribute__((visibility("hidden")))
     TSCH3DLabelResources *mSeriesLabels;
     struct array<TSCH3D::BarExtrusionDetails, 2> mExtrusionDetails;
     TSCH3DBarChartDefaultAppearance *mAppearance;
-    struct vector<(anonymous namespace)::Range, std::__1::allocator<(anonymous namespace)::Range>> mRangeCache;
+    NSMutableArray *mRangeCache;
 }
 
 @property(readonly, nonatomic) _Bool hasBevelEdges; // @synthesize hasBevelEdges=mBevelEdges;
@@ -50,17 +50,17 @@ __attribute__((visibility("hidden")))
 - (void)calculateLayout;
 - (id)texcoordsForSeries:(id)arg1 index:(const tvec2_3b141483 *)arg2;
 - (id)normalsForSeries:(id)arg1 index:(const tvec2_3b141483 *)arg2;
-- (struct GeometryResource)boundsGeometryForSeries:(id)arg1 index:(const tvec2_3b141483 *)arg2;
-- (struct GeometryResource)geometryForSeries:(id)arg1 index:(const tvec2_3b141483 *)arg2;
+- (id)boundsGeometryForSeries:(id)arg1 index:(const tvec2_3b141483 *)arg2;
+- (id)geometryForSeries:(id)arg1 index:(const tvec2_3b141483 *)arg2;
 - (id)p_barResourceCacheItemAtIndex:(const tvec2_3b141483 *)arg1;
-- (_Bool)applyElementTransform:(struct ObjectTransforms *)arg1 series:(id)arg2 index:(const tvec2_3b141483 *)arg3 propertyAccessor:(const struct ChartScenePropertyAccessor *)arg4;
-- (float)elementTransformDepthFromPropertyAccessor:(const struct ChartScenePropertyAccessor *)arg1;
+- (_Bool)applyElementTransform:(struct ObjectTransforms *)arg1 series:(id)arg2 index:(tvec2_3b141483)arg3 propertyAccessor:(id)arg4;
+- (float)elementTransformDepthFromPropertyAccessor:(id)arg1;
 - (float)barWidth;
 - (float)interceptValueForSeries:(id)arg1;
-- (struct Range)p_calculateRangeForSeries:(id)arg1 index:(tvec2_3b141483 *)arg2 intercept:(const struct BarIntercept *)arg3;
-- (struct Range)rangeForSeries:(id)arg1 index:(tvec2_3b141483 *)arg2;
+- (id)p_calculateRangeForSeries:(id)arg1 index:(tvec2_3b141483 *)arg2 intercept:(id)arg3;
+- (id)rangeForSeries:(id)arg1 index:(tvec2_3b141483 *)arg2;
 - (void)p_updateRangeCache;
-- (struct BarIntercept)calculateInterceptForSeries:(id)arg1;
+- (id)calculateInterceptForSeries:(id)arg1;
 - (_Bool)beveledAtIndex:(const tvec2_3b141483 *)arg1;
 - (void)setBeveledAtIndex:(const tvec2_3b141483 *)arg1;
 - (void)setMaxValueForSeries:(long long)arg1 value:(float)arg2;
@@ -70,6 +70,7 @@ __attribute__((visibility("hidden")))
 - (long long)flatIndex:(tvec2_3b141483 *)arg1;
 - (void)dealloc;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (id)init;
 
 @end
 

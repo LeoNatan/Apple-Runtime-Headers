@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSString, SFDevice, SFDeviceOperationWiFiSetup, SFSession;
+@class NSString, SFDevice, SFDeviceOperationCDPSetup, SFDeviceOperationWiFiSetup, SFSession;
 @protocol OS_dispatch_queue;
 
 @interface SFDeviceRepairSession : NSObject
@@ -20,7 +20,10 @@
     int _pairVerifyState;
     int _getProblemsState;
     unsigned long long _problemFlags;
-    BOOL _wifiSetupEnabled;
+    BOOL _cdpEnabled;
+    SFDeviceOperationCDPSetup *_cdpSetupOperation;
+    double _cdpSetupSecs;
+    int _cdpState;
     SFDeviceOperationWiFiSetup *_wifiSetupOperation;
     int _wifiSetupState;
     double _wifiSetupSecs;
@@ -41,6 +44,7 @@
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
 - (void).cxx_destruct;
 - (int)_runFinish;
+- (int)_runCDPSetup;
 - (int)_runWiFiSetup;
 - (int)_runGetProblems;
 - (int)_runPairVerify;

@@ -6,11 +6,13 @@
 
 #import <NewsCore/FCMultiStepFetchOperation.h>
 
-@class FCArticleContentManifest, FCCloudContext, FCHeldRecords, FCInterestToken, NSArray, NSString, NTPBArticleRecord;
+@class FCArticleContentManifest, FCHeldRecords, FCInterestToken, NSArray, NSString, NTPBArticleRecord;
+@protocol FCContentContext, FCFlintHelper;
 
 @interface FCArticleContentFetchOperation : FCMultiStepFetchOperation
 {
-    FCCloudContext *_context;
+    id <FCContentContext> _context;
+    id <FCFlintHelper> _flintHelper;
     NSString *_articleID;
     FCInterestToken *_webArchiveInterestToken;
     FCHeldRecords *_heldArticleRecords;
@@ -25,7 +27,8 @@
 @property(retain, nonatomic) FCHeldRecords *heldArticleRecords; // @synthesize heldArticleRecords=_heldArticleRecords;
 @property(retain, nonatomic) FCInterestToken *webArchiveInterestToken; // @synthesize webArchiveInterestToken=_webArchiveInterestToken;
 @property(retain, nonatomic) NSString *articleID; // @synthesize articleID=_articleID;
-@property(retain, nonatomic) FCCloudContext *context; // @synthesize context=_context;
+@property(retain, nonatomic) id <FCFlintHelper> flintHelper; // @synthesize flintHelper=_flintHelper;
+@property(retain, nonatomic) id <FCContentContext> context; // @synthesize context=_context;
 - (void).cxx_destruct;
 - (id)completeFetchOperation;
 - (id)fetchFlintResourcesWithCompletion:(CDUnknownBlockType)arg1;
@@ -33,7 +36,7 @@
 - (id)fetchWebArchiveWithCompletion:(CDUnknownBlockType)arg1;
 - (id)fetchWebExcerptWithCompletion:(CDUnknownBlockType)arg1;
 - (id)fetchContentManifestWithCompletion:(CDUnknownBlockType)arg1;
-- (id)initWithContext:(id)arg1 articleID:(id)arg2;
+- (id)initWithContext:(id)arg1 flintHelper:(id)arg2 articleID:(id)arg3;
 
 @end
 

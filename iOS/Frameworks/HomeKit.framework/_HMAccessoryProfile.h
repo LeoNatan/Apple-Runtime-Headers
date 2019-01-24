@@ -42,6 +42,7 @@
 - (void)_registerNotificationHandlers;
 - (void)__configureWithContext:(id)arg1 accessory:(id)arg2;
 @property(readonly, copy) NSString *description;
+- (id)initWithUUID:(id)arg1 services:(id)arg2;
 - (id)init;
 
 // Remaining properties

@@ -9,6 +9,7 @@
 @class NSArray, NSString, NSURLRequest, UIViewController, _SFPageLoadErrorController, _SFSecIdentityPreferencesController;
 
 @protocol _SFPageLoadErrorControllerDelegate <NSObject>
+- (_Bool)pageLoadErrorControllerShouldReloadAfterError:(_SFPageLoadErrorController *)arg1;
 - (_SFSecIdentityPreferencesController *)pageLoadErrorControllerGetSecIdentityPreferencesController:(_SFPageLoadErrorController *)arg1;
 - (_Bool)pageLoadErrorControllerShouldPermanentlyAcceptCertificate:(_SFPageLoadErrorController *)arg1;
 - (void)pageLoadErrorController:(_SFPageLoadErrorController *)arg1 presentViewController:(UIViewController *)arg2;

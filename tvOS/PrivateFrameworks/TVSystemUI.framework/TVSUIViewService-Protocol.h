@@ -13,10 +13,6 @@
 
 @optional
 - (id <UIViewControllerAnimatedTransitioning>)animationControllerForOperation:(long long)arg1 viewServiceViewController:(UIViewController<TVSUIViewService> *)arg2 parentViewController:(UIViewController *)arg3;
-- (void)viewServiceDidDisappear:(_Bool)arg1;
-- (void)viewServiceWillDisappear:(_Bool)arg1;
-- (void)viewServiceDidAppear:(_Bool)arg1;
-- (void)viewServiceWillAppear:(_Bool)arg1;
 - (NSArray *)viewServiceWillDismissWithHostRequestItems:(NSArray *)arg1;
 - (void)handleMessageFromHost:(NSArray *)arg1 withReply:(void (^)(NSArray *, NSError *))arg2;
 @end

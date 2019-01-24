@@ -8,7 +8,7 @@
 
 #import <MediaControls/UIGestureRecognizerDelegate-Protocol.h>
 
-@class MPVolumeSlider, NSString;
+@class MPVolumeSlider, MediaControlsRelativeVolumeStepper, NSString;
 
 @interface MediaControlsVolumeContainerView : UIView <UIGestureRecognizerDelegate>
 {
@@ -16,20 +16,24 @@
     _Bool _onScreen;
     MPVolumeSlider *_volumeSlider;
     long long _style;
+    MediaControlsRelativeVolumeStepper *_volumeStepper;
 }
 
+@property(retain, nonatomic) MediaControlsRelativeVolumeStepper *volumeStepper; // @synthesize volumeStepper=_volumeStepper;
 @property(nonatomic) long long style; // @synthesize style=_style;
 @property(nonatomic, getter=isOnScreen) _Bool onScreen; // @synthesize onScreen=_onScreen;
 @property(nonatomic, getter=isTransitioning) _Bool transitioning; // @synthesize transitioning=_transitioning;
 @property(retain, nonatomic) MPVolumeSlider *volumeSlider; // @synthesize volumeSlider=_volumeSlider;
 - (void).cxx_destruct;
 - (void)traitCollectionDidChange:(id)arg1;
+- (void)_updateVolumeCapabilities;
 - (void)_updateVolumeStyle;
 - (_Bool)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)didMoveToWindow;
 - (void)didMoveToSuperview;
 - (void)layoutSubviews;
+- (void)dealloc;
 - (id)initWithFrame:(struct CGRect)arg1 slider:(id)arg2;
 - (id)initWithFrame:(struct CGRect)arg1;
 

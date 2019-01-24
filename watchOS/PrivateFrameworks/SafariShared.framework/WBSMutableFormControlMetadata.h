@@ -25,7 +25,9 @@
 @property(nonatomic) double rectWidth; // @dynamic rectWidth;
 @property(nonatomic) double rectTop; // @dynamic rectTop;
 @property(nonatomic) double rectLeft; // @dynamic rectLeft;
+@property(copy, nonatomic) NSString *passwordRules; // @dynamic passwordRules;
 @property(copy, nonatomic) NSString *value; // @dynamic value;
+- (void)setPlaceholder:(id)arg1;
 @property(copy, nonatomic) NSString *nextControlUniqueID; // @dynamic nextControlUniqueID;
 @property(copy, nonatomic) NSString *uniqueID; // @dynamic uniqueID;
 @property(copy, nonatomic) NSString *tagName; // @dynamic tagName;
@@ -34,6 +36,7 @@
 @property(copy, nonatomic) NSString *fieldClass; // @dynamic fieldClass;
 - (void)setassociatedUsername:(id)arg1;
 @property(copy, nonatomic) NSString *addressBookLabel; // @dynamic addressBookLabel;
+@property(nonatomic) _Bool looksLikeOneTimeCodeField; // @dynamic looksLikeOneTimeCodeField;
 @property(nonatomic) _Bool looksLikePasswordCredentialField; // @dynamic looksLikePasswordCredentialField;
 @property(nonatomic) _Bool looksLikeIgnoredDataTypeField; // @dynamic looksLikeIgnoredDataTypeField;
 @property(nonatomic) _Bool looksLikeYearField; // @dynamic looksLikeYearField;

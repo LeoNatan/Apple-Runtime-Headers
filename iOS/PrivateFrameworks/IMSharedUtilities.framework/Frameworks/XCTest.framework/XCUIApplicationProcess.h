@@ -6,10 +6,12 @@
 
 #import <objc/NSObject.h>
 
-@class NSString, XCAccessibilityElement, XCElementSnapshot, XCUIApplicationMonitor;
-@protocol OS_dispatch_queue, XCTRunnerAutomationSession, XCUIAccessibilityInterface;
+#import <XCTest/XCTElementSnapshotAttributeDataSource-Protocol.h>
 
-@interface XCUIApplicationProcess : NSObject
+@class NSString, XCAccessibilityElement, XCElementSnapshot;
+@protocol OS_dispatch_queue, XCTRunnerAutomationSession, XCUIDevice;
+
+@interface XCUIApplicationProcess : NSObject <XCTElementSnapshotAttributeDataSource>
 {
     NSObject<OS_dispatch_queue> *_queue;
     _Bool _accessibilityActive;
@@ -27,17 +29,19 @@
     id <XCTRunnerAutomationSession> _automationSession;
     XCElementSnapshot *_lastSnapshot;
     XCUIApplicationProcess *_bridgedProcess;
-    XCUIApplicationMonitor *_applicationMonitor;
-    id <XCUIAccessibilityInterface> _axInterface;
+    id <XCUIDevice> _device;
 }
 
++ (id)keyPathsForValuesAffectingIsQuiescent;
 + (_Bool)automaticallyNotifiesObserversForKey:(id)arg1;
++ (id)keyPathsForValuesAffectingHasBridgedProcess;
++ (id)keyPathsForValuesAffectingIsProcessIDValid;
 + (id)keyPathsForValuesAffectingForeground;
 + (id)keyPathsForValuesAffectingBackground;
 + (id)keyPathsForValuesAffectingSuspended;
 + (id)keyPathsForValuesAffectingRunning;
-@property(readonly) id <XCUIAccessibilityInterface> axInterface; // @synthesize axInterface=_axInterface;
-@property(readonly) XCUIApplicationMonitor *applicationMonitor; // @synthesize applicationMonitor=_applicationMonitor;
++ (id)keyPathsForValuesAffectingIsApplicationStateKnown;
+@property(readonly) id <XCUIDevice> device; // @synthesize device=_device;
 @property(retain, nonatomic) XCUIApplicationProcess *bridgedProcess; // @synthesize bridgedProcess=_bridgedProcess;
 @property(retain) XCElementSnapshot *lastSnapshot; // @synthesize lastSnapshot=_lastSnapshot;
 @property(retain) id <XCTRunnerAutomationSession> automationSession; // @synthesize automationSession=_automationSession;
@@ -46,8 +50,14 @@
 @property _Bool hasExitCode; // @synthesize hasExitCode=_hasExitCode;
 @property(readonly, copy, nonatomic) NSString *bundleID; // @synthesize bundleID=_bundleID;
 - (void).cxx_destruct;
-- (void)terminate;
-- (void)waitForViewControllerViewDidDisappearWithTimeout:(double)arg1;
+@property(readonly) _Bool usePointTransformationsForFrameConversions;
+@property(readonly) _Bool supportsHostedViewCoordinateTransformations;
+- (id)parameterizedAttribute:(id)arg1 forElement:(id)arg2 parameter:(id)arg3 error:(id *)arg4;
+- (id)attributesForElement:(id)arg1 attributes:(id)arg2 error:(id *)arg3;
+@property(readonly) _Bool allowsRemoteAccess;
+- (id)_underlyingDataSourceForElement:(id)arg1;
+- (_Bool)terminate:(id *)arg1;
+- (_Bool)waitForViewControllerViewDidDisappearWithTimeout:(double)arg1 error:(id *)arg2;
 - (void)acquireBackgroundAssertion;
 - (void)waitForFutureAutomationSession:(id)arg1;
 - (id)futureAutomationSession;
@@ -55,6 +65,7 @@
 @property(readonly, getter=isQuiescent) _Bool quiescent;
 - (void)_initiateQuiescenceChecksIncludingAnimationsIdle:(_Bool)arg1;
 - (void)waitForQuiescenceIncludingAnimationsIdle:(_Bool)arg1;
+- (id)_makeQuiescenceExpectation;
 - (void)_notifyWhenAnimationsAreIdle:(CDUnknownBlockType)arg1;
 - (_Bool)_supportsAnimationsIdleNotifications;
 - (void)_notifyWhenMainRunLoopIsIdle:(CDUnknownBlockType)arg1;
@@ -65,20 +76,27 @@
 @property _Bool eventLoopHasIdled;
 @property int exitCode;
 @property(retain) id token;
+- (_Bool)hasBridgedProcess;
 @property(nonatomic) int processID;
+@property(readonly, getter=isProcessIDValid) _Bool processIDValid;
 @property(readonly) _Bool foreground;
 @property(readonly) _Bool background;
 @property(readonly) _Bool suspended;
 @property(readonly) _Bool running;
+- (_Bool)isApplicationStateKnown;
 - (void)_awaitKnownApplicationState;
 @property(nonatomic) unsigned long long applicationState;
 @property(nonatomic) _Bool accessibilityActive;
 @property(readonly, copy) XCAccessibilityElement *accessibilityElement;
-- (id)shortDescription;
+@property(readonly, copy) NSString *shortDescription;
 - (id)_queue_description;
-- (id)description;
-- (id)initWithBundleID:(id)arg1;
-- (id)initWithBundleID:(id)arg1 applicationMonitor:(id)arg2 axInterface:(id)arg3;
+@property(readonly, copy) NSString *description;
+- (id)initWithBundleID:(id)arg1 device:(id)arg2;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

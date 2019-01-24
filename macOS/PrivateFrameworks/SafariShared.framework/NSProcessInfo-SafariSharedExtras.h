@@ -7,7 +7,7 @@
 #import <Foundation/NSProcessInfo.h>
 
 @interface NSProcessInfo (SafariSharedExtras)
-@property(readonly, nonatomic) BOOL safari_systemSupportsCloudKitBookmarks;
-- (BOOL)_productionSafariSupportsCloudKitBookmarks;
+- (id)_safari_operatingSystemVersionStringFromOperatingSystemVersion:(CDStruct_f6aba300)arg1;
+- (id)safari_operatingSystemVersionString;
 @end
 

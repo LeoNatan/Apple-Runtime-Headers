@@ -22,6 +22,7 @@
     NSString *_tagName;
     NSString *_uniqueID;
     NSString *_nextControlUniqueID;
+    NSString *_placeholder;
     NSString *_value;
     NSString *_passwordRules;
     NSDictionary *_radioButtonInfo;
@@ -50,6 +51,7 @@
 @property(readonly, copy, nonatomic) NSArray *selectElementInfo; // @synthesize selectElementInfo=_selectElementInfo;
 @property(readonly, copy, nonatomic) NSDictionary *radioButtonInfo; // @synthesize radioButtonInfo=_radioButtonInfo;
 @property(readonly, copy, nonatomic) NSString *value; // @synthesize value=_value;
+@property(readonly, copy, nonatomic) NSString *placeholder; // @synthesize placeholder=_placeholder;
 @property(readonly, copy, nonatomic) NSString *nextControlUniqueID; // @synthesize nextControlUniqueID=_nextControlUniqueID;
 @property(readonly, copy, nonatomic) NSString *uniqueID; // @synthesize uniqueID=_uniqueID;
 @property(readonly, copy, nonatomic) NSString *tagName; // @synthesize tagName=_tagName;

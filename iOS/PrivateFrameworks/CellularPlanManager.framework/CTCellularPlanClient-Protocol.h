@@ -52,7 +52,7 @@
 - (void)addNewRemotePlan:(_Bool)arg1 withCSN:(NSString *)arg2 withContext:(CTXPCServiceSubscriptionContext *)arg3 userConsent:(long long)arg4 completion:(void (^)(NSError *))arg5;
 - (void)finishRemoteProvisioningWithCompletion:(void (^)(_Bool))arg1;
 - (void)startRemoteProvisioningWithCompletion:(void (^)(_Bool))arg1;
-- (void)remoteUserDidProvideConsentResponse:(_Bool)arg1 plan:(CTCellularPlanItem *)arg2 completion:(void (^)(_Bool, NSError *))arg3;
+- (void)remoteUserDidProvideResponse:(_Bool)arg1 confirmationCode:(NSString *)arg2 plan:(CTCellularPlanItem *)arg3 completion:(void (^)(_Bool, NSError *))arg4;
 - (void)remotePlanItemsWithUpdateFetch:(_Bool)arg1 completion:(void (^)(NSArray *, NSError *))arg2;
 - (void)shouldShowAddNewRemotePlanWithContext:(CTXPCServiceSubscriptionContext *)arg1 completion:(void (^)(_Bool, unsigned long long, NSString *, NSError *))arg2;
 - (void)isRemotePlanCapableWithContext:(CTXPCServiceSubscriptionContext *)arg1 completion:(void (^)(_Bool))arg2;
@@ -78,7 +78,7 @@
 - (void)setLabelForPlan:(CTCellularPlanItem *)arg1 label:(CTUserLabel *)arg2 completion:(void (^)(_Bool, NSError *))arg3;
 - (void)didSelectPlanForData:(CTCellularPlanItem *)arg1 completion:(void (^)(_Bool, NSError *))arg2;
 - (void)didSelectPlanItem:(CTCellularPlanItem *)arg1 enable:(_Bool)arg2 completion:(void (^)(_Bool, NSError *))arg3;
-- (void)userDidProvideConsentResponse:(long long)arg1 plan:(CTCellularPlanItem *)arg2 completion:(void (^)(_Bool, NSError *))arg3;
+- (void)userDidProvideResponse:(long long)arg1 confirmationCode:(NSString *)arg2 plan:(CTCellularPlanItem *)arg3 completion:(void (^)(_Bool, NSError *))arg4;
 - (void)remapSimLabel:(CTDanglingPlanItem *)arg1 to:(CTCellularPlanItem *)arg2 completion:(void (^)(NSError *))arg3;
 - (void)resolveSimLabel:(CTDanglingPlanItem *)arg1 completion:(void (^)(NSError *))arg2;
 - (void)carrierItemsShouldUpdate:(_Bool)arg1 completion:(void (^)(NSArray *, NSError *))arg2;

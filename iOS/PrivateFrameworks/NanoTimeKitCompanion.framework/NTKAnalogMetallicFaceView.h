@@ -30,6 +30,7 @@
 - (void)_updateDialSize;
 - (void)_applyVideoPlayerTransform;
 - (id)imageForEditOption:(id)arg1;
+- (id)_complicationsCompanionForegroundColor;
 - (void)_customizeVideoPlayerOnSetup;
 - (void)_handleEitherScreenWake;
 - (void)setOption:(id)arg1 forCustomEditMode:(long long)arg2 slot:(id)arg3;

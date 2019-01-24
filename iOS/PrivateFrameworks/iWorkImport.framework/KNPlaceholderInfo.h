@@ -23,8 +23,8 @@ __attribute__((visibility("hidden")))
 - (Class)repClass;
 - (id)copyAsShapeInfoWithContext:(id)arg1;
 - (int)kind;
-- (void)saveToArchive:(struct PlaceholderArchive *)arg1 archiver:(id)arg2;
-- (void)loadFromArchive:(const struct PlaceholderArchive *)arg1 unarchiver:(id)arg2;
+-     // Error parsing type: v32@0:8^{PlaceholderArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{ShapeInfoArchive}i}16@24, name: saveToArchive:archiver:
+-     // Error parsing type: v32@0:8r^{PlaceholderArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{ShapeInfoArchive}i}16@24, name: loadFromArchive:unarchiver:
 - (void)saveToArchiver:(id)arg1;
 - (void)loadFromUnarchiver:(id)arg1;
 

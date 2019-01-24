@@ -8,7 +8,7 @@
 
 #import <CoreUtils/CUReadWriteRequestable-Protocol.h>
 
-@class CUBonjourDevice, CUNetLinkEndpoint, CUNetLinkManager, CUReadRequest, CUWriteRequest, NSString;
+@class CUBonjourDevice, CUNANDataSession, CUNetLinkEndpoint, CUNetLinkManager, CUReadRequest, CUWriteRequest, NSString;
 @protocol OS_dispatch_queue, OS_dispatch_source;
 
 @interface CUTCPConnection : NSObject <CUReadWriteRequestable>
@@ -41,6 +41,7 @@
     CDUnknownBlockType _invalidationHandler;
     int _keepAliveSeconds;
     NSString *_label;
+    CUNANDataSession *_nanDataSession;
     CUNetLinkManager *_netLinkManager;
     unsigned int _netTransportType;
     int _socketFD;
@@ -55,6 +56,7 @@
 @property(nonatomic) int socketFD; // @synthesize socketFD=_socketFD;
 @property(readonly, nonatomic) unsigned int netTransportType; // @synthesize netTransportType=_netTransportType;
 @property(retain, nonatomic) CUNetLinkManager *netLinkManager; // @synthesize netLinkManager=_netLinkManager;
+@property(retain, nonatomic) CUNANDataSession *nanDataSession; // @synthesize nanDataSession=_nanDataSession;
 @property(copy, nonatomic) NSString *label; // @synthesize label=_label;
 @property(nonatomic) int keepAliveSeconds; // @synthesize keepAliveSeconds=_keepAliveSeconds;
 @property(copy, nonatomic) CDUnknownBlockType invalidationHandler; // @synthesize invalidationHandler=_invalidationHandler;
@@ -76,7 +78,8 @@
 - (void)writeEndOfDataWithCompletion:(CDUnknownBlockType)arg1;
 - (void)writeWithRequest:(id)arg1;
 - (void)_completeReadRequest:(id)arg1 error:(id)arg2;
-- (_Bool)_processReadStatus;
+- (_Bool)_readStatus;
+- (_Bool)_readableData;
 - (void)_abortReadsWithError:(id)arg1;
 - (void)_prepareReadRequest:(id)arg1;
 - (void)_processReads:(_Bool)arg1;
@@ -84,6 +87,7 @@
 - (void)_netLinkStateChanged;
 - (_Bool)_setupIOAndReturnError:(id *)arg1;
 - (_Bool)_startConnectingToDestination:(id)arg1 error:(id *)arg2;
+- (_Bool)_startConnectingToBonjourDevice:(id)arg1 error:(id *)arg2;
 - (void)_invalidated;
 - (void)_invalidate;
 - (void)invalidate;

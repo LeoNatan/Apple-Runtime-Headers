@@ -35,6 +35,7 @@
 + (id)homeStyleAttributes;
 + (id)searchResultStyleAttributes;
 + (id)airportStyleAttributes;
++ (id)styleAttributesForLinkedService:(id)arg1;
 - (void).cxx_destruct;
 - (void)sort;
 - (id)description;

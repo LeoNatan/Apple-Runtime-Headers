@@ -38,13 +38,13 @@ __attribute__((visibility("hidden")))
 - (_Bool)isLayerEnabledForIndex:(unsigned long long)arg1;
 - (unsigned long long)layerCount;
 - (id)objectForKey:(id)arg1 index:(unsigned long long)arg2;
-- (Color_1703f521)emissive;
-- (Color_1703f521)specular;
-- (Color_1703f521)diffuse;
-- (Color_1703f521)colorFromRedKey:(id)arg1 greenKey:(id)arg2 blueKey:(id)arg3 defaultGray:(float)arg4;
+- (struct Color)emissive;
+- (struct Color)specular;
+- (struct Color)diffuse;
+- (struct Color)colorFromRedKey:(id)arg1 greenKey:(id)arg2 blueKey:(id)arg3 defaultGray:(float)arg4;
 - (float)shininess;
 - (float)opacity;
-- (Color_1703f521)makeGray:(float)arg1;
+- (struct Color)makeGray:(float)arg1;
 - (struct ColorResult)colorFromRedKey:(id)arg1 greenKey:(id)arg2 blueKey:(id)arg3;
 - (void)dealloc;
 - (id)initWithProperties:(id)arg1 layersProperties:(id)arg2 identifier:(id)arg3 imageSource:(id)arg4 isLowRes:(_Bool)arg5;

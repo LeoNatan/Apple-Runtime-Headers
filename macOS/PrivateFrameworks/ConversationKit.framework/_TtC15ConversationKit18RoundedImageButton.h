@@ -14,7 +14,7 @@ __attribute__((visibility("hidden")))
     // Error parsing type: , name: imageName
 }
 
-- (CDUnknownBlockType).cxx_destruct;
+- (void).cxx_destruct;
 - (id)initWithFrame:(struct CGRect)arg1;
 @property(nonatomic, readonly) BOOL allowsVibrancy;
 - (void)drawRect:(struct CGRect)arg1;

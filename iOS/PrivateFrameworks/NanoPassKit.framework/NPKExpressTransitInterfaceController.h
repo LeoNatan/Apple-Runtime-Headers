@@ -40,6 +40,7 @@
 - (void)expressPassController:(id)arg1 didFailTransactionForPass:(id)arg2;
 - (void)expressPassController:(id)arg1 didCompleteTransactionForPass:(id)arg2;
 - (void)expressPassController:(id)arg1 didStartTransactionForPass:(id)arg2;
+- (_Bool)candHandleExpressEventsFromPass:(id)arg1;
 - (void)dealloc;
 - (id)init;
 

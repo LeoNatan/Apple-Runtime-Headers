@@ -37,8 +37,8 @@ __attribute__((visibility("hidden")))
 - (unsigned int)addSet:(id)arg1;
 - (id)description;
 - (id)init;
-- (id)initFromMessage:(const struct UuidSetStoreArchive *)arg1;
-- (void)encodeToArchive:(struct UuidSetStoreArchive *)arg1;
+-     // Error parsing type: @24@0:8r^{UuidSetStoreArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSCE::UuidSetStoreArchive_UuidSet>=^{Arena}ii^{Rep}}}16, name: initFromMessage:
+-     // Error parsing type: v24@0:8^{UuidSetStoreArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSCE::UuidSetStoreArchive_UuidSet>=^{Arena}ii^{Rep}}}16, name: encodeToArchive:
 
 @end
 

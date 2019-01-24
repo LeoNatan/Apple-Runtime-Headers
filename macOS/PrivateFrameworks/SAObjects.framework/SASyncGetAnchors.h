@@ -16,6 +16,7 @@
 
 + (id)getAnchorsWithDictionary:(id)arg1 context:(id)arg2;
 + (id)getAnchors;
+- (BOOL)mutatingCommand;
 - (BOOL)requiresResponse;
 @property(copy, nonatomic) NSArray *watchAppMetaDataList;
 @property(copy, nonatomic) NSString *syncReason;

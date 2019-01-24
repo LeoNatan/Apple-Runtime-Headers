@@ -49,6 +49,7 @@
 - (_Bool)canAcceptBulkSendListeners;
 - (id)_getActiveProtocolWithClass:(Class)arg1;
 - (void)handleAccessoryIsNotReachable:(id)arg1;
+- (void)_handleAccessoryIsReachable;
 - (void)handleAccessoryIsReachable:(id)arg1;
 - (void)registerForMessages;
 - (id)initWithAccessory:(id)arg1 service:(id)arg2 workQueue:(id)arg3;

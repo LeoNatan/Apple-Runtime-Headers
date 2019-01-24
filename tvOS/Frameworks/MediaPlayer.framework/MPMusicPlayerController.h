@@ -55,6 +55,7 @@
 - (void)didFinishLoadingRequestForController:(id)arg1;
 - (void)willBeginLoadingRequestForController:(id)arg1;
 - (void)controller:(id)arg1 defersResponseReplacement:(CDUnknownBlockType)arg2;
+- (void)adjustLoadedQueueRangeToReverseCount:(long long)arg1 forwardCount:(long long)arg2;
 - (void)setUserQueueModificationsDisabled:(_Bool)arg1;
 - (_Bool)userQueueModificationsDisabled;
 - (void)shuffle;
@@ -100,6 +101,7 @@
 @property(nonatomic) long long repeatMode;
 @property(readonly, nonatomic) long long playbackState;
 - (id)_init;
+- (void)_queueDidChangeWithResponse:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

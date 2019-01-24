@@ -42,6 +42,7 @@
 @property(nonatomic) _Bool invertUsageLimit; // @dynamic invertUsageLimit;
 @property(nonatomic) _Bool isDirty; // @dynamic isDirty;
 @property(nonatomic) _Bool isTombstoned; // @dynamic isTombstoned;
+@property(nonatomic) _Bool limitEnabled; // @dynamic limitEnabled;
 @property(retain, nonatomic) RMCoreOrganization *organization; // @dynamic organization;
 @property(retain, nonatomic) RMBlueprintSchedule *schedule; // @dynamic schedule;
 @property(readonly) Class superclass;

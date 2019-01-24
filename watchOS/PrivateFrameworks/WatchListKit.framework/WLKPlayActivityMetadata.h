@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSNumber, NSString;
+@class NSArray, NSNumber, NSString;
 
 @interface WLKPlayActivityMetadata : NSObject
 {
@@ -17,12 +17,14 @@
     NSString *_canonicalShowID;
     NSString *_internalLegID;
     NSString *_overrideChannelID;
+    NSArray *_siriActionsCategories;
     NSNumber *_isCurrentEpisode;
     NSNumber *_isShowClosed;
 }
 
 @property(readonly, copy, nonatomic) NSNumber *isShowClosed; // @synthesize isShowClosed=_isShowClosed;
 @property(readonly, copy, nonatomic) NSNumber *isCurrentEpisode; // @synthesize isCurrentEpisode=_isCurrentEpisode;
+@property(readonly, copy, nonatomic) NSArray *siriActionsCategories; // @synthesize siriActionsCategories=_siriActionsCategories;
 @property(readonly, nonatomic) NSString *overrideChannelID; // @synthesize overrideChannelID=_overrideChannelID;
 @property(readonly, nonatomic) NSString *internalLegID; // @synthesize internalLegID=_internalLegID;
 @property(readonly, nonatomic) NSString *canonicalShowID; // @synthesize canonicalShowID=_canonicalShowID;

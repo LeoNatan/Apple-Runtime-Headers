@@ -59,6 +59,7 @@
 + (id)predicateForEventsWithStartAndEndInDateRangeFrom:(id)arg1 to:(id)arg2;
 + (id)predicateForEventsWithStartOrEndInDateRangeWithFrom:(id)arg1 to:(id)arg2;
 + (id)predicateForEventsWithEndInDateRangeFrom:(id)arg1 to:(id)arg2;
++ (id)predicateForEventsWithStartInDateRangeFromAfter:(id)arg1 to:(id)arg2;
 + (id)predicateForEventsWithStartInDateRangeFrom:(id)arg1 to:(id)arg2;
 + (id)predicateForEventsWithStartDateAfter:(id)arg1;
 + (id)predicateForEventsBetweenStartDate:(id)arg1 endDate:(id)arg2;

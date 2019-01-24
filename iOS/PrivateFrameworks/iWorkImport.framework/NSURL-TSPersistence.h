@@ -8,10 +8,9 @@
 
 @interface NSURL (TSPersistence)
 + (id)tsp_iWorkAVAssetURLWithUUID:(id)arg1 filename:(id)arg2 contentTypeUTI:(id)arg3;
+- (id)tsp_queryDictionary;
 - (_Bool)tsp_getIsUbiquitousValue:(_Bool *)arg1 promised:(_Bool)arg2 error:(id *)arg3;
 - (_Bool)tsp_isUbiquitous;
-- (id)tsp_URLExceptPrivate;
-- (id)tsp_pathExceptPrivate;
 - (id)tsp_fileIdentifier;
 - (id)tsp_embeddedUTI;
 - (_Bool)tsp_matchesURL:(id)arg1 canCompareFileID:(_Bool)arg2;

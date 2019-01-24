@@ -25,10 +25,12 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) __weak id <SafariViewDelegate> safariViewDelegate; // @synthesize safariViewDelegate=_safariViewDelegate;
 - (void).cxx_destruct;
 - (void)updateKeyViewLoop;
-- (BOOL)accessibilityIsIgnored;
-- (id)accessibilityAttributeValue:(id)arg1;
-- (BOOL)accessibilityIsAttributeSettable:(id)arg1;
-- (id)accessibilityAttributeNames;
+- (BOOL)isAccessibilityElement;
+- (id)accessibilityChildren;
+- (void)setAccessibilityChildren:(id)arg1;
+- (id)accessibilityLabel;
+- (void)setAccessibilityLabel:(id)arg1;
+- (id)accessibilityRole;
 - (BOOL)isFlipped;
 - (void)setNextKeyView:(id)arg1;
 - (BOOL)acceptsFirstResponder;

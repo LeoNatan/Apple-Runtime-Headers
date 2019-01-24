@@ -6,9 +6,10 @@
 
 #import <WebKitLegacy/WebDocumentRepresentation-Protocol.h>
 
-@class NSArray;
+@class NSArray, WebFrame;
 
 @protocol WebPDFDocumentRepresentation <WebDocumentRepresentation>
++ (Class)_representationClassForWebFrame:(WebFrame *)arg1;
 + (NSArray *)supportedMIMETypes;
 @end
 

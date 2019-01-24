@@ -30,8 +30,6 @@
     double _threshold;
     _Bool _isMultiLabel;
     unsigned long long _positiveLabel;
-    long long _beforeNoiseScaling;
-    float _constantScaleFactor;
     unsigned long long _evaluationLevel;
     _Bool _reportScale;
     _Bool _isSynchronous;
@@ -42,8 +40,6 @@
 + (id)planWithStore:(id)arg1 tracker:(id)arg2 sessionDescriptor:(id)arg3 arguments:(id)arg4;
 @property(readonly, nonatomic) _Bool reportScale; // @synthesize reportScale=_reportScale;
 @property(readonly, nonatomic) unsigned long long evaluationLevel; // @synthesize evaluationLevel=_evaluationLevel;
-@property(readonly, nonatomic) float constantScaleFactor; // @synthesize constantScaleFactor=_constantScaleFactor;
-@property(readonly, nonatomic) long long beforeNoiseScaling; // @synthesize beforeNoiseScaling=_beforeNoiseScaling;
 @property(readonly, nonatomic) _Bool intercept; // @synthesize intercept=_intercept;
 @property(readonly, nonatomic) unsigned long long positiveLabel; // @synthesize positiveLabel=_positiveLabel;
 @property(readonly, nonatomic) _Bool isMultiLabel; // @synthesize isMultiLabel=_isMultiLabel;
@@ -67,11 +63,10 @@
 - (id)runWhile:(CDUnknownBlockType)arg1 didFinish:(_Bool *)arg2;
 @property(readonly, copy) NSString *description;
 - (id)normalizeRegressor:(id)arg1;
-- (void)loadSessionsSince:(double)arg1 block:(CDUnknownBlockType)arg2;
+- (void)loadSessionsWithBlock:(CDUnknownBlockType)arg1;
 - (id)evaluationMetricsForPredictions:(id)arg1 objectives:(id)arg2 predicate:(CDUnknownBlockType)arg3 start:(id)arg4;
 - (id)train;
-- (float)scaleFactorFor:(id)arg1;
-- (id)initWithStore:(id)arg1 tracker:(id)arg2 noiseStrategy:(id)arg3 planId:(struct NSString *)arg4 isSynchronous:(_Bool)arg5 sessionDescriptor:(id)arg6 maxSessionsLimit:(unsigned long long)arg7 sessionsInBatch:(unsigned long long)arg8 currentServerIteration:(unsigned long long)arg9 currentModelWeights:(id)arg10 localLearningRate:(float)arg11 stoppingThreshold:(float)arg12 localMinimumIterations:(unsigned long long)arg13 localGradientIterations:(unsigned long long)arg14 useOnlyAppleInternalSessions:(_Bool)arg15 skew:(double)arg16 threshold:(double)arg17 isMultiLabel:(_Bool)arg18 intercept:(_Bool)arg19 positiveLabel:(unsigned long long)arg20 beforeNoiseScaling:(long long)arg21 constantScaleFactor:(float)arg22 evaluationLevel:(unsigned long long)arg23 reportScale:(_Bool)arg24;
+- (id)initWithStore:(id)arg1 tracker:(id)arg2 noiseStrategy:(id)arg3 planId:(struct NSString *)arg4 isSynchronous:(_Bool)arg5 sessionDescriptor:(id)arg6 maxSessionsLimit:(unsigned long long)arg7 sessionsInBatch:(unsigned long long)arg8 currentServerIteration:(unsigned long long)arg9 currentModelWeights:(id)arg10 localLearningRate:(float)arg11 stoppingThreshold:(float)arg12 localMinimumIterations:(unsigned long long)arg13 localGradientIterations:(unsigned long long)arg14 useOnlyAppleInternalSessions:(_Bool)arg15 skew:(double)arg16 threshold:(double)arg17 isMultiLabel:(_Bool)arg18 intercept:(_Bool)arg19 positiveLabel:(unsigned long long)arg20 evaluationLevel:(unsigned long long)arg21 reportScale:(_Bool)arg22;
 - (id)init;
 
 // Remaining properties

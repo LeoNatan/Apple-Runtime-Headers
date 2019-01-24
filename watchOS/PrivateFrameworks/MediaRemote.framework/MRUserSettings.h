@@ -21,9 +21,18 @@
 - (int)_integerValueForKey:(id)arg1 usingDefaultValue:(int)arg2;
 - (double)_doubleValueForKey:(id)arg1 usingDefaultValue:(double)arg2;
 - (_Bool)_boolValueForKey:(id)arg1 usingDefaultValue:(_Bool)arg2;
+@property(readonly, nonatomic) double endpointRecentlyUserSelectedInterval;
+@property(readonly, nonatomic) double mediaRecentlyPlayedInterval;
+@property(readonly, nonatomic) double deviceRecentlyUsedInterval;
+@property(readonly, nonatomic) _Bool useDeviceLockStateToRestoreDeferredPlayerPaths;
+@property(readonly, nonatomic) double discoverEndpointTimeoutInterval;
+@property(readonly, nonatomic) _Bool connectToUserSelectedEndpoint;
+@property(readonly, nonatomic) _Bool connectToAllEndpointsWhenAnyEndpointBeginsPlayback;
+@property(readonly, nonatomic) _Bool connectToEndpointWhenBeginsPlayback;
+@property(readonly, nonatomic) _Bool useProactiveEndpoint;
+@property(readonly, nonatomic) _Bool needNowPlayingForegroundState;
 @property(readonly, nonatomic) _Bool takelockScreenAssertion;
 @property(readonly, nonatomic) _Bool computeNowPlayingApplication;
-@property(readonly, nonatomic) double pauseWhileOnLockScreenTimeout;
 @property(readonly, nonatomic) double nowPlayingApplicationTimeout;
 @property(retain, nonatomic) NSArray *connectedClientPIDs;
 @property(readonly, nonatomic) _Bool useGenericTransportForHostedEndpoints;
@@ -46,6 +55,7 @@
 @property(readonly, nonatomic) _Bool hasExternalDeviceSocketQOSLevelSet;
 @property(readonly, nonatomic) _Bool shouldLogArtwork;
 @property(readonly, nonatomic) _Bool shouldLogPairingSetupCode;
+@property(readonly, nonatomic) _Bool shouldInitializeRapportService;
 @property(readonly, nonatomic) _Bool shouldInitializeGenericBonjourService;
 @property(readonly, nonatomic) _Bool shouldInitializeTelevisionBonjourService;
 @property(readonly, nonatomic) _Bool useDebugAVRouteWithoutVolumeControl;

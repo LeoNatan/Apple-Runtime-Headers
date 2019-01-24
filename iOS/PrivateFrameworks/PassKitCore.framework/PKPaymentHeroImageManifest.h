@@ -6,38 +6,22 @@
 
 #import <objc/NSObject.h>
 
-@class NSDictionary, NSString, PKPaymentWebService;
+@class NSDictionary;
 
 @interface PKPaymentHeroImageManifest : NSObject
 {
-    PKPaymentWebService *_webService;
-    NSDictionary *_manifest;
-    NSString *_preferredLanguage;
+    NSDictionary *_images;
 }
 
-+ (id)_manifestFileNameForRegion:(id)arg1;
++ (id)manifestFileForRegion:(id)arg1;
++ (void)saveManifestDataToDeviceForRegion:(id)arg1 data:(id)arg2;
++ (void)downloadManifestForRegion:(id)arg1 url:(id)arg2 fileDownloader:(id)arg3 completion:(CDUnknownBlockType)arg4;
++ (id)manifestForRegion:(id)arg1;
 + (void)removeManifestFileForRegion:(id)arg1;
 + (_Bool)manifestFileExistsForRegion:(id)arg1;
+@property(readonly, nonatomic) NSDictionary *images; // @synthesize images=_images;
 - (void).cxx_destruct;
-- (_Bool)_deviceMeetsRequirementsForNetwork:(id)arg1;
-- (id)_fileNameForNetworkImageOnDisk:(id)arg1;
-- (id)_readManifestDataFromDevice;
-- (void)_saveManifestDataToDevice:(id)arg1;
-- (void)_downloadManifestWithCompletion:(CDUnknownBlockType)arg1;
-- (id)description;
-- (_Bool)containsPaymentCredentialType:(long long)arg1;
-- (id)primaryFeaturedNetwork;
-- (id)imageDataOnDiskForNetwork:(id)arg1;
-- (id)imageInfoForNetwork:(id)arg1;
-- (id)imageURLsForFeaturedNetworks:(id)arg1;
-- (id)requirementsForNetwork:(id)arg1;
-- (id)urlForNetwork:(id)arg1;
-- (id)sha1ForNetwork:(id)arg1;
-- (id)parseData:(id)arg1;
-- (void)setManifestWithData:(id)arg1;
-- (void)downloadRemoteManifestWithCompletion:(CDUnknownBlockType)arg1;
-- (id)initWithWebService:(id)arg1 preferredLanguage:(id)arg2;
-- (id)initWithWebService:(id)arg1;
+- (id)initWithDictionary:(id)arg1;
 
 @end
 

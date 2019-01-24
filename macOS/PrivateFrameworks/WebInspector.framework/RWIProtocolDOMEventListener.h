@@ -12,6 +12,7 @@
 {
 }
 
+@property(nonatomic) BOOL hasBreakpoint;
 @property(nonatomic) BOOL disabled;
 @property(nonatomic) BOOL once;
 @property(nonatomic) BOOL passive;

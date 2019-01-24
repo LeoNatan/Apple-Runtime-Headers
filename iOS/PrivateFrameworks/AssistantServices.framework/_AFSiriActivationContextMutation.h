@@ -14,15 +14,17 @@
 {
     AFSiriActivationContext *_baseModel;
     unsigned long long _timestamp;
-    long long _event;
     long long _source;
+    long long _event;
+    unsigned long long _options;
     NSString *_deviceID;
     NSDictionary *_userInfo;
     struct _mutationFlags {
         unsigned int isDirty:1;
         unsigned int hasTimestamp:1;
-        unsigned int hasEvent:1;
         unsigned int hasSource:1;
+        unsigned int hasEvent:1;
+        unsigned int hasOptions:1;
         unsigned int hasDeviceID:1;
         unsigned int hasUserInfo:1;
     } _mutationFlags;
@@ -32,8 +34,9 @@
 - (id)generate;
 - (void)setUserInfo:(id)arg1;
 - (void)setDeviceID:(id)arg1;
-- (void)setSource:(long long)arg1;
+- (void)setOptions:(unsigned long long)arg1;
 - (void)setEvent:(long long)arg1;
+- (void)setSource:(long long)arg1;
 - (void)setTimestamp:(unsigned long long)arg1;
 - (id)initWithBaseModel:(id)arg1;
 - (id)init;

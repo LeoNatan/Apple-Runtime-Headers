@@ -27,6 +27,7 @@ __attribute__((visibility("hidden")))
 - (id)p_wrapDrawables:(id)arg1 userInfo:(id)arg2;
 - (unsigned int)splitLine:(struct CGRect)arg1 lineSegmentRects:(out struct CGRect [128])arg2 wrappableAttachments:(id)arg3 ignoreFloatingGraphics:(_Bool)arg4 canvasCausedWrap:(out _Bool *)arg5 skipHint:(out double *)arg6 userInfo:(id)arg7;
 - (id)p_groupInfoContainingWrappable:(id)arg1;
+- (void)setUpCanvasToWrapSpaceAffineTransformationForColumn:(id)arg1 withTarget:(id)arg2;
 - (id)beginWrappingToColumn:(id)arg1 target:(id)arg2 hasWrapables:(_Bool *)arg3;
 - (id)initWithDocumentRoot:(id)arg1;
 

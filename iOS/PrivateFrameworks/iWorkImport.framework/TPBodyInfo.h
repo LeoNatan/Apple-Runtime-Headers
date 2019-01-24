@@ -37,7 +37,7 @@ __attribute__((visibility("hidden")))
 - (void)setPrimitiveGeometry:(id)arg1;
 @property(copy, nonatomic) TSDInfoGeometry *geometry;
 - (void)inflateBodyLayout:(id)arg1;
-@property(readonly, nonatomic) _Bool layoutVertically;
+@property(readonly, nonatomic) _Bool laysOutVertically;
 @property(readonly, nonatomic) TPPageHint *pageHint;
 @property(readonly, nonatomic) TSWPStorage *storage;
 @property(readonly, nonatomic) TSWPStorage *bodyStorage;

@@ -48,6 +48,7 @@
 - (void).cxx_destruct;
 - (void)dealloc;
 - (id)description;
+- (void)cleansePathsIncludingBinaryImageList:(_Bool)arg1;
 - (id)processStatisticsDescription;
 - (id)analysisToolDescription;
 - (id)dateAndVersionDescription;
@@ -71,7 +72,9 @@
 - (id)processVersion;
 - (id)_sanitizeVersion:(id)arg1;
 - (id)processVersionDictionary;
+- (id)parentProcessPath;
 - (id)parentProcessName;
+- (int)parentPid;
 - (id)displayName;
 - (id)processIdentifier;
 - (id)processName;

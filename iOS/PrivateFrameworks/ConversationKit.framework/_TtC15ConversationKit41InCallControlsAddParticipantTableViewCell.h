@@ -6,21 +6,26 @@
 
 #import <UIKit/UITableViewCell.h>
 
+@class _TtC15ConversationKit19InCallControlButton;
+
 __attribute__((visibility("hidden")))
 @interface _TtC15ConversationKit41InCallControlsAddParticipantTableViewCell : UITableViewCell
 {
-    // Error parsing type: , name: nameLabel
-    // Error parsing type: , name: icon
+    // Error parsing type: , name: titleLabel
+    // Error parsing type: , name: button
     // Error parsing type: , name: isAccessiblityConstraintsEnabled
     // Error parsing type: , name: nameLabelFirstBaselineLayoutConstraint
     // Error parsing type: , name: nameLabelLastBaselineLayoutConstraint
-    // Error parsing type: , name: enabled
+    // Error parsing type: , name: delegate
+    // Error parsing type: , name: isEnabled
 }
 
-- (CDUnknownBlockType).cxx_destruct;
+- (void).cxx_destruct;
 - (void)traitCollectionDidChange:(id)arg1;
+- (void)didTapButton:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
+@property(nonatomic, readonly) _TtC15ConversationKit19InCallControlButton *button; // @synthesize button;
 
 @end
 

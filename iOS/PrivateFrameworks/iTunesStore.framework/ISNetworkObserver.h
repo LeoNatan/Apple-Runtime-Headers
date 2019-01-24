@@ -22,9 +22,7 @@
     long long _networkType;
     NSObject<OS_dispatch_queue> *_notificationQueue;
     NSMutableSet *_observedDownloadQueues;
-    NSString *_operatorName;
     struct __SCNetworkReachability *_reachability;
-    NSString *_registrationStatus;
     struct __CTServerConnection *_telephonyServer;
 }
 
@@ -48,6 +46,8 @@
 - (unsigned int)_currentNetworkReachabilityFlags;
 - (void)_copyConnectionDataStatus:(CDUnknownBlockType)arg1;
 - (void)_handleTelephonyNotificationWithName:(struct __CFString *)arg1 userInfo:(struct __CFDictionary *)arg2;
+- (void)_telephonyRegistrationDidChangeNotification:(id)arg1;
+- (void)_telephonyOperatorNameDidChangeNotification:(id)arg1;
 - (void)_applicationForegroundNotification:(id)arg1;
 - (void)downloadQueueNetworkUsageChanged:(id)arg1;
 - (void)downloadQueue:(id)arg1 changedWithRemovals:(id)arg2;

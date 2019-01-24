@@ -8,10 +8,13 @@
 
 @interface NSURL (TSUAdditions)
 + (id)tsu_fileURLWithPath:(id)arg1;
+- (id)tsu_URLExceptPrivate;
+- (id)tsu_pathExceptPrivate;
 - (id)tsu_contentModificationDateWithLogContext:(id)arg1;
 @property(readonly, getter=tsu_isInTrash) _Bool tsu_inTrash;
 - (void)tsu_removeCachedResourceValueForKeys:(id)arg1;
-- (id)tsu_fileProviderBookmarkableString;
+- (id)tsu_fileProviderBookmarkableStringAndReturnError:(id *)arg1;
+- (void)tsu_fileProviderBookmarkableStringWithCompletion:(CDUnknownBlockType)arg1;
 - (_Bool)tsu_isOnSameVolumeAs:(id)arg1;
 - (id)tsu_reachableFileURLByDeletingUnreachablePathComponents;
 - (_Bool)tsu_isOnAPFSVolume;

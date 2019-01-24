@@ -24,6 +24,7 @@
 
 @property(readonly) NFApplet *defaultApplet; // @synthesize defaultApplet=_defaultApplet;
 @property(readonly) NFApplet *activeApplet; // @synthesize activeApplet=_activeApplet;
+- (BOOL)startExpressMode:(id *)arg1;
 - (BOOL)enablePlasticCardMode:(BOOL)arg1 error:(id *)arg2;
 - (BOOL)enablePlasticCardMode:(BOOL)arg1;
 - (BOOL)setHostCards:(id)arg1;
@@ -52,7 +53,7 @@
 - (void)didPerformValueAddedServiceTransactions:(id)arg1;
 - (void)didSelectValueAddedService:(BOOL)arg1;
 - (void)didFailDeferredAuthorization;
-- (void)didExpressModeStateChange:(unsigned int)arg1;
+- (void)didExpressModeStateChange:(unsigned int)arg1 withObject:(id)arg2;
 - (void)didFelicaStateChange:(id)arg1;
 - (void)didExpireTransactionForApplet:(id)arg1;
 - (void)didReceiveButtonPressForApplet:(id)arg1;

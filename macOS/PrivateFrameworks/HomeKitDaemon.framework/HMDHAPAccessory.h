@@ -92,7 +92,7 @@
 @property(readonly, copy, nonatomic) NSNumber *hapInstanceId;
 - (id)backingStoreTransactionWithName:(id)arg1;
 - (id)createUpdateServiceTransationWithServiceUUID:(id)arg1;
-- (void)makeServiceNameConsistent:(id)arg1 withName:(id)arg2;
+- (void)makeServiceNameConsistent:(id)arg1 withName:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (id)messageReceiverChildren;
 - (id)backingStoreObjects:(long long)arg1;
 - (void)populateModelObject:(id)arg1 version:(long long)arg2;
@@ -313,11 +313,14 @@
 - (void)setCurrentTimeCharacteristic:(id)arg1;
 - (id)_currentTimeCharacteristic;
 @property(readonly, nonatomic) __weak HMDCharacteristic *currentTimeCharacteristic; // @synthesize currentTimeCharacteristic=_currentTimeCharacteristic;
+- (void)handleRoomNameChanged:(id)arg1;
+- (id)_messagesForUpdatedRoom:(id)arg1;
 - (void)handleUpdatedPassword:(id)arg1;
 - (void)handleUpdatedMinimumUserPrivilege:(long long)arg1;
 - (BOOL)supportsMinimumUserPrivilege;
 @property(retain, nonatomic) HMDAccessorySymptomHandler *symptomsHandler; // @synthesize symptomsHandler=_symptomsHandler;
 - (BOOL)providesHashRouteID;
+- (void)_reconcileAccessControlSetting;
 - (void)updateTargetUUIDs:(id)arg1;
 - (void)_saveTargetUUIDs:(id)arg1;
 - (void)saveTargetUUIDs:(id)arg1;
@@ -327,7 +330,6 @@
 @property(nonatomic) BOOL hardwareSupport; // @synthesize hardwareSupport=_hardwareSupport;
 @property(retain, nonatomic) NSArray *targetUUIDs; // @synthesize targetUUIDs=_targetUUIDs;
 - (void)evaluateSymptomHandler;
-- (BOOL)_doesAccessoryProvideServiceOfType:(id)arg1;
 @property(copy, nonatomic) NSData *setupHash; // @synthesize setupHash=_setupHash;
 - (void)setBroadcastKey:(id)arg1 keyUpdatedStateNumber:(id)arg2 keyUpdatedTime:(id)arg3;
 - (void)_updateBroadcastKey:(id)arg1 keyUpdatedStateNumber:(id)arg2 keyUpdatedTime:(double)arg3;
@@ -345,12 +347,15 @@
 - (void)dealloc;
 - (id)initWithTransaction:(id)arg1 home:(id)arg2;
 - (id)init;
+- (void)writeValue:(id)arg1 toCharacteristic:(id)arg2 queue:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)_updateSiriAudioFormat:(id)arg1;
 - (void)setSelectedSiriAudioConfiguration:(id)arg1;
 - (BOOL)_resolveSupportedSiriInputType:(id)arg1;
 - (BOOL)_resolveAudioAbility:(id)arg1;
 - (void)getSupportedSiriAudioConfiguration:(CDUnknownBlockType)arg1;
 @property(readonly, nonatomic) BOOL supportsSiri;
+- (void)_handleUpdateMediaSourceDisplayOrder:(id)arg1;
+@property(readonly) BOOL hasTelevisionService;
 - (void)sendTargetControlWhoAmIWithIdentifier:(unsigned int)arg1;
 - (BOOL)canAcceptBulkSendListeners;
 - (void)removeDataStreamBulkSendListener:(id)arg1;

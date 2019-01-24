@@ -10,11 +10,16 @@
 {
 }
 
++ (double)VTMachAbsoluteTimeGetTimeInterval:(unsigned long long)arg1;
++ (id)getAssetHashFromConfigPath:(id)arg1;
++ (unsigned long long)deviceCategoryForDeviceProductType:(id)arg1;
++ (id)deviceSoftwareVersion;
 + (id)deviceProductType;
 + (id)deviceProductVersion;
 + (BOOL)isInternalInstall;
 + (BOOL)supportPremiumAssets;
 + (BOOL)isAlwaysOn;
++ (BOOL)supportTTS;
 + (BOOL)VTRunsPremium;
 + (BOOL)isNano;
 + (double)systemUpTime;

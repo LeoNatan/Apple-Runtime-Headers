@@ -18,12 +18,14 @@
     NSObject<OS_dispatch_queue> *_internalQueue;
     NSArray *_cachedPlaylistIdentifiers;
     NSArray *_cachedAlbumIdentifiers;
+    NSArray *_cachedPodcastFeedURLs;
     NMSMediaQuotaManager *_quotaManager;
 }
 
 + (id)_fetchMusicRecommendations;
 + (unsigned long long)_mediaStorageSizeForCurrentDevice;
 + (id)_cachedIdentifiersDirectoryPath;
++ (id)_cachedPodcastFeedURLsFilePath;
 + (id)_cachedAlbumIdentifiersFilePath;
 + (id)_cachedPlaylistIdentifiersFilePath;
 + (id)_tokenForInstance:(id)arg1;
@@ -41,7 +43,7 @@
 - (void)_invalidateAddedItemsCache;
 - (id)_newPodcastsGroupIteratorWithDownloadedItemsOnly:(_Bool)arg1;
 - (id)_newMusicGroupIteratorWithDownloadedItemsOnly:(_Bool)arg1;
-- (_Bool)_quotaManagerShouldFetchDownloadedItemsOnly;
+- (_Bool)_quotaManagerShouldFetchDownloadedItemsOnlyForBundleID:(id)arg1;
 - (void)environmentMonitorDidChangePower:(id)arg1;
 - (void)_handlePodcastSizeInfoDidChangeNotification:(id)arg1;
 - (void)_handleMediaLibraryEntitiesAddedOrRemovedNotification:(id)arg1;
@@ -59,6 +61,8 @@
 - (void)unpinPodcastWithFeedURL:(id)arg1;
 - (void)pinPodcastWithFeedURL:(id)arg1;
 - (void)setListenNowPodcastFeedURLs:(id)arg1;
+- (void)_refreshPodcastFeedURLsWithPath:(id)arg1;
+@property(readonly, nonatomic) NSArray *podcastFeedURLs;
 - (long long)episodeLimitForPodcastWithFeedURL:(id)arg1;
 - (void)setGizmoEpisodeLimit:(long long)arg1 forPodcastWithFeedURL:(id)arg2;
 - (unsigned int)downloadOrderForPodcastWithFeedURL:(id)arg1;
@@ -87,8 +91,6 @@
 - (unsigned long long)addedSongsSize;
 - (id)itemGroupForIdentifiers:(id)arg1;
 @property(readonly, nonatomic) NSArray *addedPodcastsItems;
-- (unsigned long long)minimumCacheDeleteQuotaForDevice;
-- (id)itemsWithinAvailableSpace:(unsigned long long)arg1 downloadedItemsOnly:(_Bool)arg2;
 - (id)addedItemsForDownloadWithinAvailableSpace:(unsigned long long)arg1;
 @property(readonly, nonatomic) NSArray *addedMusicItems;
 @property(readonly, nonatomic) NSArray *addedItems;

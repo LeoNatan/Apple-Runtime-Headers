@@ -9,7 +9,7 @@
 #import <Safari/NSToolbarDelegate-Protocol.h>
 #import <Safari/RolloverTrackingButtonDelegate-Protocol.h>
 
-@class BrowserToolbarItem, ButtonPlus, CloudTabStore, NSSegmentedControl, NSString, NSToolbarItem, NSWindow, SafariAppExtensionsController, ToolbarDownloadsButton, UnifiedField, UnifiedFieldBezelView, UnifiedFieldContainerView, VisualTabPickerToolbarButton;
+@class BrowserToolbarItem, ButtonPlus, CloudTabStore, NSSegmentedControl, NSString, NSToolbarItem, NSWindow, SafariAppExtensionsController, SearchProvidersController, ToolbarDownloadsButton, UnifiedField, UnifiedFieldBezelView, UnifiedFieldContainerView, VisualTabPickerToolbarButton;
 @protocol ToolbarControllerDelegate;
 
 __attribute__((visibility("hidden")))
@@ -32,6 +32,7 @@ __attribute__((visibility("hidden")))
     BrowserToolbarItem *_bookmarksBarItem;
     BrowserToolbarItem *_perSitePreferencesItem;
     BrowserToolbarItem *_contextFeedbackItem;
+    SearchProvidersController *_searchProvidersController;
     BrowserToolbarItem *_backForwardCustomizeItem;
     BrowserToolbarItem *_unifiedFieldContainerCustomizeItem;
     BrowserToolbarItem *_textSizeCustomizeItem;
@@ -151,7 +152,7 @@ __attribute__((visibility("hidden")))
 - (id)_createToolbar;
 - (void)detachFromWindow;
 - (void)attachToWindow:(id)arg1;
-- (id)initWithCloudTabStore:(id)arg1 extensionsController:(id)arg2;
+- (id)initWithCloudTabStore:(id)arg1 extensionsController:(id)arg2 searchProvidersController:(id)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

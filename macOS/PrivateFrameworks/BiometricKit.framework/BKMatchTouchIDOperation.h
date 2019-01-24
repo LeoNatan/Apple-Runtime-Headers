@@ -10,9 +10,12 @@
 
 @interface BKMatchTouchIDOperation : BKMatchOperation
 {
+    BOOL _requireFingerOff;
 }
 
+@property(nonatomic) BOOL requireFingerOff; // @synthesize requireFingerOff=_requireFingerOff;
 - (void)statusMessage:(unsigned int)arg1 client:(unsigned long long)arg2;
+- (id)optionsDictionaryWithError:(id *)arg1;
 
 // Remaining properties
 @property(nonatomic) __weak id <BKMatchTouchIDOperationDelegate> delegate; // @dynamic delegate;

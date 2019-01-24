@@ -54,8 +54,14 @@
 - (void)noteAllSyncedItemsPriorToSync;
 - (id)ckStatisticCalculations;
 - (void)logDumpAndSendMessageTo:(id)arg1 forHours:(int)arg2 reason:(id)arg3 isInitialSync:(_Bool)arg4 requirePreviousPrompt:(_Bool)arg5 willSendBlock:(CDUnknownBlockType)arg6;
+- (_Bool)_isLogDumpAllowed;
+- (void)logCloudKitSyncToPowerLogForSyncType:(int)arg1 isCoreDuetSync:(_Bool)arg2 didCompleteChatSync:(_Bool)arg3 didSucceedSyncingChats:(_Bool)arg4 didCompleteMessageSync:(_Bool)arg5 didSucceedSyncingMessages:(_Bool)arg6 didCompleteAttachmentSync:(_Bool)arg7 didSucceedSyncingAttachments:(_Bool)arg8 syncAttemptCount:(unsigned int)arg9;
+- (void)logCloudKitSyncToPowerLogForSyncType:(int)arg1 isCoreDuetSync:(_Bool)arg2 didStartSync:(_Bool)arg3 didFinishSync:(_Bool)arg4 didSucceedSyncing:(_Bool)arg5;
+- (void)logToPowerLogForLogDumpGUID:(id)arg1 logDumpCompleted:(_Bool)arg2 logDumpSucceeded:(_Bool)arg3 logDumpSendingCompleted:(_Bool)arg4 logDumpSendingSucceeded:(_Bool)arg5 reason:(id)arg6;
 - (void)logDumpAndSendMessageTo:(id)arg1 forHours:(int)arg2 reason:(id)arg3 requirePreviousPrompt:(_Bool)arg4 willSendBlock:(CDUnknownBlockType)arg5;
 - (void)logDumpAndSendMessageTo:(id)arg1 forHours:(int)arg2 reason:(id)arg3;
+- (_Bool)isLocalCachedSaltPresent;
+- (_Bool)shouldKickOffWriteForSyncType:(int)arg1;
 - (void)_showCKLogNotificationWithCompletion:(CDUnknownBlockType)arg1;
 - (_Bool)errorIndicateDeviceDoesNotHaveKeysToSync:(id)arg1;
 - (_Bool)errorIndicatesIdentityWasLost:(id)arg1;

@@ -6,11 +6,12 @@
 
 #import <WebUI/WBSSiteMetadataManager.h>
 
-@class _SFFaviconProvider, _SFTouchIconCache;
+@class _SFFaviconProvider, _SFPasswordTouchIconCache, _SFTouchIconCache;
 
 @interface _SFSiteMetadataManager : WBSSiteMetadataManager
 {
     _SFFaviconProvider *_faviconProvider;
+    _SFPasswordTouchIconCache *_passwordTouchIconCache;
     _SFTouchIconCache *_touchIconCache;
 }
 
@@ -18,6 +19,7 @@
 + (void)setSharedSiteMetadataManagerProvider:(id)arg1;
 + (void)setSharedSiteMetadataManager:(id)arg1;
 @property(readonly, nonatomic) _SFTouchIconCache *touchIconCache; // @synthesize touchIconCache=_touchIconCache;
+@property(readonly, nonatomic) _SFPasswordTouchIconCache *passwordTouchIconCache; // @synthesize passwordTouchIconCache=_passwordTouchIconCache;
 @property(readonly, nonatomic) _SFFaviconProvider *faviconProvider; // @synthesize faviconProvider=_faviconProvider;
 - (void).cxx_destruct;
 - (void)scheduleLowPriorityRequestForBookmarks:(id)arg1;

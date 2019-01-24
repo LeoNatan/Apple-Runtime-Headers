@@ -12,7 +12,7 @@
 #import <Silex/UIScrollViewDelegate-Protocol.h>
 
 @class NSString, STStandaloneTextInfo, STStandaloneTextLayout, STTextTangierDocumentRoot, STTextTangierStorage, SXAutoSizedCanvasController, SXFullscreenCaption, SXTextSource, UIScrollView, UISwipeGestureRecognizer, UITapGestureRecognizer, UIVisualEffectView;
-@protocol SXComponentActionHandler, SXFullscreenCaptionViewDelegate, SXSmartFieldFactory;
+@protocol SXComponentActionHandler, SXFullscreenCaptionViewDelegate, SXTextSourceFactory;
 
 @interface SXFullscreenCaptionView : UIView <SXAutoSizedCanvasControllerDelegate, STStandaloneTextLayoutDelegate, UIGestureRecognizerDelegate, UIScrollViewDelegate>
 {
@@ -21,8 +21,8 @@
     SXFullscreenCaption *_caption;
     unsigned long long _viewIndex;
     UITapGestureRecognizer *_tapGestureRecognizer;
-    id <SXSmartFieldFactory> _smartFieldFactory;
     id <SXComponentActionHandler> _actionHandler;
+    id <SXTextSourceFactory> _textSourceFactory;
     SXAutoSizedCanvasController *_autoSizeCanvasController;
     STTextTangierDocumentRoot *_documentRoot;
     STStandaloneTextInfo *_captionInfo;
@@ -51,8 +51,8 @@
 @property(retain, nonatomic) STStandaloneTextInfo *captionInfo; // @synthesize captionInfo=_captionInfo;
 @property(retain, nonatomic) STTextTangierDocumentRoot *documentRoot; // @synthesize documentRoot=_documentRoot;
 @property(retain, nonatomic) SXAutoSizedCanvasController *autoSizeCanvasController; // @synthesize autoSizeCanvasController=_autoSizeCanvasController;
+@property(readonly, nonatomic) id <SXTextSourceFactory> textSourceFactory; // @synthesize textSourceFactory=_textSourceFactory;
 @property(readonly, nonatomic) id <SXComponentActionHandler> actionHandler; // @synthesize actionHandler=_actionHandler;
-@property(readonly, nonatomic) id <SXSmartFieldFactory> smartFieldFactory; // @synthesize smartFieldFactory=_smartFieldFactory;
 @property(retain, nonatomic) UITapGestureRecognizer *tapGestureRecognizer; // @synthesize tapGestureRecognizer=_tapGestureRecognizer;
 @property(readonly, nonatomic) int expansionMode; // @synthesize expansionMode=_expansionMode;
 @property(readonly, nonatomic) unsigned long long viewIndex; // @synthesize viewIndex=_viewIndex;
@@ -85,7 +85,7 @@
 - (void)createBackgroundView;
 - (void)updateWithCaption:(id)arg1 forViewIndex:(unsigned long long)arg2 animated:(_Bool)arg3;
 - (void)dealloc;
-- (id)initWithSmartFieldFactory:(id)arg1 actionHandler:(id)arg2;
+- (id)initWithTextSourceFactory:(id)arg1 actionHandler:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

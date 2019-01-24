@@ -22,8 +22,6 @@
 }
 
 + (id)sharedTestDriver;
-+ (double)IDEConnectionTimeout;
-+ (void)initialize;
 @property int debugMessageBufferOverflow; // @synthesize debugMessageBufferOverflow=_debugMessageBufferOverflow;
 @property(retain) NSMutableArray *debugMessageBuffer; // @synthesize debugMessageBuffer=_debugMessageBuffer;
 @property(retain) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
@@ -33,8 +31,7 @@
 - (void)runTestSuite:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)reportStallOnMainThreadInTestCase:(id)arg1 method:(id)arg2 file:(id)arg3 line:(unsigned long long)arg4;
 - (_Bool)runTestsAndReturnError:(id *)arg1;
-- (id)_readyIDESession:(id *)arg1 forTestRunSession:(id)arg2;
-- (id)_transportForIDESession:(id *)arg1;
+- (_Bool)_readyIDESession:(id)arg1 forTestRunSession:(id)arg2 error:(id *)arg3;
 - (void)_queue_flushDebugMessageBufferWithBlock:(CDUnknownBlockType)arg1;
 - (void)logDebugMessage:(id)arg1;
 - (void)printBufferedDebugMessages;

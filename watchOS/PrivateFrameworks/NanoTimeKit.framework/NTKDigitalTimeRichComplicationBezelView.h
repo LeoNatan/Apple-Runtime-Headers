@@ -15,7 +15,10 @@
 
 - (void).cxx_destruct;
 - (void)_handleTemplate:(id)arg1 reason:(int)arg2;
+- (void)timeOffsetChanged;
 - (id)_createLabelViewWithFont:(id)arg1;
+- (void)dealloc;
+- (id)init;
 
 @end
 

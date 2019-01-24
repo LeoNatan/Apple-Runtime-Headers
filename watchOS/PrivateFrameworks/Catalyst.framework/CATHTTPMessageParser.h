@@ -9,6 +9,7 @@
 @class NSDictionary;
 @protocol CATHTTPMessageParserDelegate;
 
+__attribute__((visibility("hidden")))
 @interface CATHTTPMessageParser : NSObject
 {
     struct __CFHTTPMessage *mCurrentMessage;

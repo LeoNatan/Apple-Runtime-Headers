@@ -11,21 +11,18 @@ __attribute__((visibility("hidden")))
 {
 }
 
++ (id)inkIdentifierForToolType:(long long)arg1;
++ (long long)toolTypeForInkIdentifier:(id)arg1;
 + (id)recognizerWithType:(int)arg1 mode:(int)arg2;
 + (id)imageRendererWithSize:(struct CGSize)arg1 scale:(double)arg2;
-+ (id)inkWithIdentifier:(id)arg1 color:(id)arg2 widthMultiplier:(double)arg3;
-+ (id)inkWithIdentifier:(id)arg1 color:(id)arg2;
-+ (id)strokePoint;
-+ (id)drawing;
-+ (id)drawingWithData:(id)arg1;
-+ (id)drawingWithStrokes:(id)arg1 fromDrawing:(id)arg2;
-+ (id)drawingWithDrawing:(id)arg1;
-+ (id)strokeWithStroke:(id)arg1 points:(void *)arg2 count:(unsigned long long)arg3 copy:(_Bool)arg4;
-+ (id)stroke;
++ (id)inkWithIdentifier:(id)arg1 color:(id)arg2 weight:(double)arg3;
 + (id)inkPicker;
 + (id)inlineInkPickerWithFrame:(struct CGRect)arg1;
 + (id)canvasViewWithFrame:(struct CGRect)arg1;
++ (_Bool)usingLegacyPencilKit;
++ (_Bool)modernPencilKitAvailable;
 + (_Bool)pencilKitAvailable;
++ (id)recognizers;
 + (void)initialize;
 
 @end

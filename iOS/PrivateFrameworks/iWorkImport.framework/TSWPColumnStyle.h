@@ -21,9 +21,9 @@ __attribute__((visibility("hidden")))
 + (int)defaultIntValueForProperty:(int)arg1;
 + (id)properties;
 - (void)saveToArchiver:(id)arg1;
-- (void)saveToArchive:(struct ColumnStyleArchive *)arg1 archiver:(id)arg2;
+-     // Error parsing type: v32@0:8^{ColumnStyleArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{StyleArchive}^{ColumnStylePropertiesArchive}I}16@24, name: saveToArchive:archiver:
 - (void)loadFromUnarchiver:(id)arg1;
-- (void)loadFromArchive:(const struct ColumnStyleArchive *)arg1 unarchiver:(id)arg2;
+-     // Error parsing type: v32@0:8r^{ColumnStyleArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{StyleArchive}^{ColumnStylePropertiesArchive}I}16@24, name: loadFromArchive:unarchiver:
 @property(readonly, nonatomic) _Bool columnsAreLeftToRight;
 @property(readonly, nonatomic) _Bool shrinkTextToFit;
 @property(readonly, nonatomic) _Bool alwaysStartsNewTarget;

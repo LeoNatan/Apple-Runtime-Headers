@@ -4,61 +4,116 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <WebUI/WBUFormAutoCompleteState.h>
+#import <objc/NSObject.h>
 
-@class NSString, SFFormAutoFillFrameHandle, UIView, WBSFormAutoFillMetadataCorrector, WBSFormControlMetadata, WBSFormMetadata, _SFFormAutoFillController, _SFFormAutoFillInputSession;
+#import <SafariServices/CNContactPickerDelegate-Protocol.h>
+#import <SafariServices/SFContactAutoFillViewControllerFiller-Protocol.h>
+#import <SafariServices/_SFCreditCardCaptureViewControllerDelegate-Protocol.h>
+
+@class NSArray, NSDictionary, NSString, SFFormAutoFillFrameHandle, UIView, WBSFormAutoFillMetadataCorrector, WBSFormControlMetadata, WBSFormMetadata, WBSMultiRoundAutoFillManager, _SFFormAutoFillController, _SFFormAutoFillInputSession, _SFFormDataController;
 
 __attribute__((visibility("hidden")))
-@interface SFFormAutocompleteState : WBUFormAutoCompleteState
+@interface SFFormAutocompleteState : NSObject <CNContactPickerDelegate, SFContactAutoFillViewControllerFiller, _SFCreditCardCaptureViewControllerDelegate>
 {
-    SFFormAutoFillFrameHandle *_frame;
-    WBSFormMetadata *_formMetadata;
-    WBSFormControlMetadata *_textFieldMetadata;
-    NSString *_textFieldValue;
+    int _action;
     _SFFormAutoFillController *_autoFillController;
-    _SFFormAutoFillInputSession *_inputSession;
-    _Bool _fetchingLoginCredentialSuggestions;
+    _SFFormDataController *_dataController;
     UIView *_emptyInputView;
-    WBSFormAutoFillMetadataCorrector *_metadataCorrector;
+    WBSFormMetadata *_formMetadata;
+    unsigned int _formType;
+    NSDictionary *_formValues;
+    SFFormAutoFillFrameHandle *_frame;
+    _Bool _gatheringFormValues;
+    _Bool _hasNotedThatTextDidChangeInPasswordField;
+    _SFFormAutoFillInputSession *_inputSession;
+    WBSMultiRoundAutoFillManager *_multiRoundAutoFillManager;
     NSString *_prefixForSuggestions;
+    WBSFormControlMetadata *_textFieldMetadata;
+    NSArray *_credentialMatches;
+    _Bool _fetchingLoginCredentialSuggestions;
+    _Bool _invalidated;
+    _Bool _hasDeterminedIfURLIsAllowedByWhiteList;
+    NSArray *_relatedCredentialMatches;
+    _Bool _URLIsAllowedByWhiteList;
+    CDUnknownBlockType _displayOtherContactsCompletionHandler;
+    CDUnknownBlockType _customAutoFillContactCompletionHandler;
+    CDUnknownBlockType _creditCardCaptureCompletionHandler;
+    WBSFormAutoFillMetadataCorrector *_metadataCorrector;
 }
 
++ (_Bool)_shouldSaveCredentialsInProtectionSpace:(id)arg1;
++ (void)_getMatchesFromFormProtectionSpace:(id)arg1 matchesFromOtherProtectionSpaces:(id)arg2 withFormURL:(id)arg3 credentialMatches:(id)arg4 lastGeneratedPassword:(id)arg5 currentUser:(id)arg6 currentPassword:(id)arg7 forUserNamesOnly:(_Bool)arg8;
 @property(readonly, nonatomic) _SFFormAutoFillInputSession *inputSession; // @synthesize inputSession=_inputSession;
 - (void).cxx_destruct;
 - (id)_bestTextFieldMetadataForMetadata:(id)arg1;
 - (id)_correctedFormMetadata:(id)arg1;
-- (_Bool)shouldOfferActionAutoFillCredentials;
-- (id)frame;
-- (id)webView;
-- (void)setFormControls:(id)arg1 areAutoFilled:(_Bool)arg2 clearField:(id)arg3;
-- (void)fillGeneratedPassword:(id)arg1 inField:(id)arg2;
-- (void)annotateForm:(int)arg1 withValues:(id)arg2;
-- (void)autoFillGeneratedPassword:(id)arg1 inForm:(int)arg2;
-- (void)autoFillValues:(id)arg1 setAutoFilled:(_Bool)arg2 andFocusFieldAfterFilling:(_Bool)arg3 fieldToFocus:(id)arg4 submitForm:(_Bool)arg5;
-- (void)autoFillValues:(id)arg1 setAutoFilled:(_Bool)arg2 andFocusFieldAfterFilling:(_Bool)arg3 fieldToFocus:(id)arg4;
-- (void)fetchFormMetadataWithCompletion:(CDUnknownBlockType)arg1;
-- (void)textDidChangeInFrame:(id)arg1 form:(id)arg2 textField:(id)arg3;
-- (id)textFieldValue;
-- (void)_updateTextFieldValue;
-- (void)getTextFieldMetadata:(id *)arg1 formMetadata:(id *)arg2;
-- (void)setShowingKeyboardInputView:(_Bool)arg1;
-- (void)setPrefixForSuggestions:(id)arg1;
+- (void)contactPicker:(id)arg1 didSelectContact:(id)arg2;
+- (void)contactPickerDidCancel:(id)arg1;
+- (void)performAutoFillWithMatchSelections:(id)arg1 doNotFill:(id)arg2 contact:(id)arg3;
+- (void)dismissCustomAutoFill;
+- (void)_showOtherContactOptions;
+- (void)_switchToCustomInputViewWithMatches:(id)arg1 contact:(id)arg2;
+- (void)_autoFillDisplayData:(id)arg1 setAutoFilled:(_Bool)arg2;
+- (void)_offerToAutoFillContact;
+- (void)_autoFillWithSet:(id)arg1;
 - (id)_suggestionsForAutoFillDisplayData:(id)arg1;
 - (void)_gatherAndShowAddressBookAutoFillSuggestions;
-- (void)_updateSuggestions:(unsigned int)arg1;
-- (void)updateSuggestions;
+- (void)creditCardCaptureViewController:(id)arg1 didCaptureCreditCard:(id)arg2;
+- (void)creditCardCaptureViewControllerDidCancel:(id)arg1;
+- (void)_autoFillCreditCardData;
+- (void)_captureCreditCardDataWithCameraAndFill;
+- (void)_fillCreditCardData:(id)arg1;
+- (_Bool)_canAutoFillCreditCardData;
+- (void)_fillCreditCardDataAfterAuthenticationIfNeeded:(id)arg1;
+- (id)_displayTextForCreditCardNumber:(id)arg1;
+@property(readonly, nonatomic) _Bool shouldOfferToAutoFillCreditCardData;
+- (_Bool)_shouldAllowGeneratedPassword;
+- (void)_suggestPasswordForNewAccountOrChangePasswordForm;
+- (void)_generateAndSuggestPasswordWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (int)_passwordGenerationAssistanceAction;
+- (_Bool)_passwordGenerationAssistanceAutoFillButtonEnabled;
+- (_Bool)_shouldUsePasswordGenerationAssistanceForTextField;
+- (void)_setUserAndPasswordFieldsAutoFilled:(_Bool)arg1 clearPasswordField:(_Bool)arg2;
+- (void)_getShouldOfferForgetPassword:(_Bool *)arg1 savePassword:(_Bool *)arg2;
+- (_Bool)_hasMatchWithUser:(id)arg1 password:(id)arg2;
+- (void)showAllPasswordsButtonTapped;
 - (id)_textSuggestionForCredentialDisplayData:(id)arg1 submitForm:(_Bool)arg2;
 - (id)_matchingKeychainCredentialsIncludingCredentialsWithEmptyUsernames:(_Bool)arg1;
 - (void)_suggestLoginCredentialsShowingQuickTypeKey:(_Bool)arg1;
-- (Class)_passwordPickerViewControllerClass;
-- (void)autoFillFormWithCreditCardDataAfterAuthenticationIfNeeded:(id)arg1;
-- (void)autoFillValuesAfterAuthenticationIfNeeded:(id)arg1;
-- (void)fillCredentialAfterAuthenticationIfNeeded:(id)arg1 setAsDefaultCredential:(_Bool)arg2 submitForm:(_Bool)arg3;
-- (void)fillCredentialAfterAuthenticationIfNeeded:(id)arg1 setAsDefaultCredential:(_Bool)arg2;
-- (void)setAutoFillButtonTitle:(id)arg1;
+- (void)_fillCredentialAfterAuthenticationIfNeeded:(id)arg1 setAsDefaultCredential:(_Bool)arg2 submitForm:(_Bool)arg3;
+- (void)_offerToAutoFillFromPotentialCredentialMatches;
+- (void)_fillCredential:(id)arg1 setAutoFilled:(_Bool)arg2 setAsDefaultCredential:(_Bool)arg3 focusFieldAfterFilling:(_Bool)arg4 submitForm:(_Bool)arg5;
+- (_Bool)_hasPotentialLoginCredentialsForLoginForm;
+- (id)_potentialCredentialMatches;
+- (void)_getLoginFormUser:(id *)arg1 password:(id *)arg2 userIsAutoFilled:(_Bool *)arg3 passwordIsAutoFilled:(_Bool *)arg4;
+- (void)_offerToForgetSavedPassword:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (_Bool)_shouldShowPasswordsListOption;
+- (void)_presentViewController:(id)arg1 presentingViewController:(id)arg2 animated:(_Bool)arg3 completion:(CDUnknownBlockType)arg4;
+- (id)_viewControllerToPresentFrom;
+- (void)_gatherFormValuesWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)textDidChangeInFrame:(id)arg1 form:(id)arg2 textField:(id)arg3;
+- (void)_setShowingKeyboardInputView:(_Bool)arg1;
+- (_Bool)_textFieldIsEmptyPasswordField;
+@property(readonly, nonatomic) NSString *titleOfAutoFillButton;
+- (void)_updateAutoFillButton;
+- (void)updateCachedFormMetadataAfterFilling:(id)arg1;
+- (void)_textDidChangeInForm:(id)arg1 textField:(id)arg2;
+- (int)_actionForLoginForm;
+@property(readonly, nonatomic) int action;
+- (void)_setUpMultiRoundAutoFillManagerIfNecessary;
+- (void)_performAutoFill;
+- (void)autoFill;
+- (void)_updateSuggestions:(unsigned int)arg1;
+- (void)updateSuggestions;
 - (void)dealloc;
 - (void)invalidate;
 - (id)initWithFrame:(id)arg1 form:(id)arg2 textField:(id)arg3 inputSession:(id)arg4 autoFillController:(id)arg5;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned int hash;
+@property(readonly) Class superclass;
 
 @end
 

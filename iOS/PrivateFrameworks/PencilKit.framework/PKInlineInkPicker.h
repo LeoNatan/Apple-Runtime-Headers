@@ -109,6 +109,7 @@
 - (id)viewControllerForPopoverPresentationFromColorPicker:(id)arg1;
 - (void)colorPickerColorTappedInCompactChooseToolState:(id)arg1;
 - (void)colorPickerDidSelectColor:(id)arg1 colorChanged:(_Bool)arg2;
+- (void)updateSelectedToolColor:(id)arg1;
 - (id)minimizedImageForInk:(id)arg1 small:(_Bool)arg2;
 - (double)cachedToolButtonWidthForSizeState:(unsigned long long)arg1;
 - (id)createToolButtonItemWithInkIdentifier:(id)arg1 shouldEmboss:(_Bool)arg2;
@@ -125,7 +126,7 @@
 - (void)pencilInteractionDidTap:(id)arg1;
 - (_Bool)_shouldEnablePencilGestures;
 - (void)resetToDrawingToolWithAnimation:(_Bool)arg1;
-- (void)notifyColorSelected:(_Bool)arg1;
+- (void)notifyColorSelected:(id)arg1 didChange:(_Bool)arg2;
 - (void)notifyToolSelected:(_Bool)arg1;
 - (id)lastDrawingToolInk;
 - (_Bool)isDrawingToolIdentifier:(id)arg1;
@@ -148,6 +149,7 @@
 @property(copy, nonatomic) PKInk *selectedInk;
 - (void)setSelectedInkIdentifier:(id)arg1 animated:(_Bool)arg2;
 - (void)setSelectedColor:(id)arg1 animated:(_Bool)arg2;
+- (void)selectColorPickerColor:(id)arg1;
 - (void)_updateSubviewsWithInk:(id)arg1 animated:(_Bool)arg2;
 - (void)setSelectedInk:(id)arg1 animated:(_Bool)arg2;
 - (id)_layoutSeparatorViewColorEmbossed:(_Bool)arg1 isUsedOnDarkBackground:(_Bool)arg2;

@@ -15,7 +15,7 @@ __attribute__((visibility("hidden")))
     TSTTableStrokePresetData *mPresets[15];
 }
 
-+ (id)instanceWithArchive:(const struct StrokePresetListArchive *)arg1 unarchiver:(id)arg2;
++     // Error parsing type: @32@0:8r^{StrokePresetListArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TST::Deprecated_StrokePresetDataArchive>=^{Arena}ii^{Rep}}{RepeatedPtrField<TST::StrokePresetDataArchive>=^{Arena}ii^{Rep}}i}16@24, name: instanceWithArchive:unarchiver:
 + (id)strokePresetListForDefaultPropertyMapWithFatStroke:(id)arg1 andThinStroke:(id)arg2;
 + (id)strokePresetListForDefaultPropertyMapWithHorizontalStroke:(id)arg1 verticalStroke:(id)arg2 exteriorStroke:(id)arg3;
 + (id)strokePresetListForDefaultPropertyMapForTablePresetID:(unsigned long long)arg1 colors:(id)arg2;
@@ -26,8 +26,8 @@ __attribute__((visibility("hidden")))
 - (id)exteriorStrokeForStrokePreset:(unsigned long long)arg1;
 - (id)verticalStrokeForStrokePreset:(unsigned long long)arg1;
 - (id)horizontalStrokeForStrokePreset:(unsigned long long)arg1;
-- (void)saveToArchive:(struct StrokePresetListArchive *)arg1 archiver:(id)arg2;
-- (id)initWithArchive:(const struct StrokePresetListArchive *)arg1 unarchiver:(id)arg2;
+-     // Error parsing type: v32@0:8^{StrokePresetListArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TST::Deprecated_StrokePresetDataArchive>=^{Arena}ii^{Rep}}{RepeatedPtrField<TST::StrokePresetDataArchive>=^{Arena}ii^{Rep}}i}16@24, name: saveToArchive:archiver:
+-     // Error parsing type: @32@0:8r^{StrokePresetListArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TST::Deprecated_StrokePresetDataArchive>=^{Arena}ii^{Rep}}{RepeatedPtrField<TST::StrokePresetDataArchive>=^{Arena}ii^{Rep}}i}16@24, name: initWithArchive:unarchiver:
 - (void)setStrokePreset:(id)arg1 atIndex:(unsigned long long)arg2;
 - (id)presetAtIndex:(unsigned long long)arg1;
 - (_Bool)isEqual:(id)arg1;

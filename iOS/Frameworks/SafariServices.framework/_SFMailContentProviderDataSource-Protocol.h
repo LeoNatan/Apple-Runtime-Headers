@@ -12,6 +12,6 @@
 - (void)mailContentProvider:(_SFMailContentProvider *)arg1 getWebArchiveDataWithCompletion:(void (^)(NSData *, NSString *, NSError *))arg2;
 - (void)mailContentProvider:(_SFMailContentProvider *)arg1 getPDFDataWithCompletionHandler:(void (^)(NSData *, NSString *))arg2;
 - (void)mailContentProvider:(_SFMailContentProvider *)arg1 getReaderContentWithCompletionHandler:(void (^)(NSString *))arg2;
-- (unsigned long long)availableContentTypeForMailContentProvider:(_SFMailContentProvider *)arg1;
+- (_Bool)mailContentProvider:(_SFMailContentProvider *)arg1 canProvideContentType:(long long)arg2;
 @end
 

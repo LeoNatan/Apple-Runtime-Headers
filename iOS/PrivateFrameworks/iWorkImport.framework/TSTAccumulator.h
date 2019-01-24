@@ -50,8 +50,8 @@ __attribute__((visibility("hidden")))
 - (void)accumulate:(id)arg1;
 - (void)accumulateValue:(const struct TSCEValue *)arg1;
 @property(readonly, nonatomic) unsigned long long count;
-- (void)saveToArchive:(struct AccumulatorArchive *)arg1;
-- (id)initWithArchive:(const struct AccumulatorArchive *)arg1;
+-     // Error parsing type: v24@0:8^{AccumulatorArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{CellValueArchive}^{CellValueArchive}^{CellValueArchive}^{CellValueArchive}IIIIIIddIB}16, name: saveToArchive:
+-     // Error parsing type: @24@0:8r^{AccumulatorArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{CellValueArchive}^{CellValueArchive}^{CellValueArchive}^{CellValueArchive}IIIIIIddIB}16, name: initWithArchive:
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)clear;
 - (id)initWithLocale:(id)arg1;

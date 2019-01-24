@@ -16,7 +16,7 @@ __attribute__((visibility("hidden")))
 + (id)themeWithContext:(id)arg1 alternate:(int)arg2 withStylesheet:(id)arg3;
 + (void)initialize;
 - (void)saveToArchiver:(id)arg1;
-- (void)p_saveToArchive:(struct ThemeArchive *)arg1 archiver:(id)arg2;
+-     // Error parsing type: v32@0:8^{ThemeArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{ThemeArchive}}16@24, name: p_saveToArchive:archiver:
 - (void)loadFromUnarchiver:(id)arg1;
 - (id)localizedBodyStyleName;
 @property(readonly, nonatomic) TSWPParagraphStyle *footnoteStyle;

@@ -21,6 +21,7 @@
 @property(readonly, nonatomic) WKWebProcessPlugInFrame *frame;
 @property(readonly, nonatomic) WKWebProcessPlugInNodeHandle *HTMLTableCellElementCellAbove;
 - (_Bool)isTextField;
+@property(readonly, nonatomic) _Bool isSelectElement;
 @property(readonly, nonatomic) _Bool HTMLTextAreaElementIsUserEdited;
 @property(readonly, nonatomic) _Bool HTMLInputElementIsUserEdited;
 - (long long)htmlInputElementLastAutoFillButtonType;

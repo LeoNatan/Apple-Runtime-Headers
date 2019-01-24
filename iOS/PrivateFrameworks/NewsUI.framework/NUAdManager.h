@@ -32,6 +32,7 @@
 - (id)prerollRootDefinition;
 - (id)defaultFeedMetadataDefinition;
 - (id)defaultArticleDefinition;
+- (id)defaultIssueDefinition;
 - (id)defaultBodyDefinition;
 - (id)defaultHeaderDefinition;
 - (id)defaultRootDefinition;

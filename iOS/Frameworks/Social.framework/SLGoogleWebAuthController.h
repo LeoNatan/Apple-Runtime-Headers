@@ -6,42 +6,17 @@
 
 #import <UIKit/UIViewController.h>
 
-#import <Social/UIWebViewDelegate-Protocol.h>
-
-@class ACAccount, ACAccountStore, NSError, NSExtension, NSString;
-
-@interface SLGoogleWebAuthController : UIViewController <UIWebViewDelegate>
+@interface SLGoogleWebAuthController : UIViewController
 {
-    ACAccount *_account;
-    ACAccountStore *_accountStore;
-    CDUnknownBlockType _presentationBlock;
-    UIViewController *_serviceViewController;
-    NSExtension *_extension;
-    NSError *_extensionCancellationError;
-    _Bool _extensionRequestDidComplete;
     CDUnknownBlockType _completion;
 }
 
 @property(copy, nonatomic) CDUnknownBlockType completion; // @synthesize completion=_completion;
 - (void).cxx_destruct;
-- (void)_presentInternetOfflineError;
-- (void)_presentUsernameMismatchAlert;
-- (void)_dismissAndCompleteWithIdentity:(id)arg1 error:(id)arg2 extensionCompletion:(CDUnknownBlockType)arg3;
-- (void)_extensionRequestDidCompleteWithTokens:(id)arg1 extensionCompletion:(CDUnknownBlockType)arg2;
-- (void)_extensionRequestDidCancelWithError:(id)arg1;
-- (void)loadView;
-- (void)_didInstantiateRemoteViewController;
-- (void)_commonInitializationWithAccount:(id)arg1 accountStore:(id)arg2 username:(id)arg3 accountDescription:(id)arg4 youTube:(_Bool)arg5 presentationBlock:(CDUnknownBlockType)arg6;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (id)initWithYouTubeUsername:(id)arg1 accountDescription:(id)arg2 presentationBlock:(CDUnknownBlockType)arg3;
 - (id)initWithAccount:(id)arg1 accountStore:(id)arg2 presentationBlock:(CDUnknownBlockType)arg3;
 - (id)initWithAccountDescription:(id)arg1 presentationBlock:(CDUnknownBlockType)arg2;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
 
 @end
 

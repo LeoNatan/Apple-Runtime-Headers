@@ -20,6 +20,7 @@
 - (void)clientInterface:(SUClientInterface *)arg1 showPreviewOverlayAnimated:(_Bool)arg2;
 - (void)clientInterface:(SUClientInterface *)arg1 hidePreviewOverlayAnimated:(_Bool)arg2;
 - (void)clientInterface:(SUClientInterface *)arg1 presentDialog:(ISDialog *)arg2;
+- (void)clientInterface:(SUClientInterface *)arg1 overrideRedeemCameraPerformAction:(long long)arg2 withObject:(id)arg3;
 - (void)clientInterface:(SUClientInterface *)arg1 overrideCreditCardPresentationFromViewController:(UIViewController *)arg2 completion:(void (^)(SUCreditCardReaderOutput *))arg3;
 - (void)clientInterface:(SUClientInterface *)arg1 financeInterruptionResolved:(_Bool)arg2;
 - (void)clientInterface:(SUClientInterface *)arg1 exitStoreWithReason:(long long)arg2;

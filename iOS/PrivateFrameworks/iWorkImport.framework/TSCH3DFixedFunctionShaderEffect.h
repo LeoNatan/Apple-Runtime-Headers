@@ -11,7 +11,7 @@ __attribute__((visibility("hidden")))
 {
 }
 
-- (void)inject:(id)arg1;
+- (void)injectCommonShaderInto:(id)arg1 context:(id)arg2;
 - (void)injectFinalColorToProgram:(id)arg1;
 - (void)injectDiffuseToProgram:(id)arg1;
 

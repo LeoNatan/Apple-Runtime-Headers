@@ -7,13 +7,14 @@
 #import <iWorkImport/TSDLayout.h>
 
 #import <iWorkImport/TPAttachmentLayoutParent-Protocol.h>
+#import <iWorkImport/TPFootnotePageDelegate-Protocol.h>
 #import <iWorkImport/TSWPLayoutTarget-Protocol.h>
 
 @class NSMutableArray, NSMutableSet, NSObject, NSString, TPFootnoteHeightMeasurer, TSDCanvas, TSPObject, TSWPStorage;
 @protocol TSDHint, TSWPFootnoteHeightMeasurer, TSWPFootnoteMarkProvider, TSWPOffscreenColumn, TSWPTopicNumberHints;
 
 __attribute__((visibility("hidden")))
-@interface TPBodyLayout : TSDLayout <TSWPLayoutTarget, TPAttachmentLayoutParent>
+@interface TPBodyLayout : TSDLayout <TSWPLayoutTarget, TPAttachmentLayoutParent, TPFootnotePageDelegate>
 {
     NSMutableArray *_columns;
     TPFootnoteHeightMeasurer *_footnoteHeightMeasurer;
@@ -32,7 +33,7 @@ __attribute__((visibility("hidden")))
 - (struct CGPoint)anchoredAttachmentPositionFromLayoutPosition:(struct CGPoint)arg1;
 - (struct CGPoint)layoutPositionFromAnchoredAttachmentPosition:(struct CGPoint)arg1;
 - (_Bool)isLayoutOffscreen;
-@property(readonly, nonatomic) double maxAnchorY;
+@property(readonly, nonatomic) double maxAnchorInBlockDirection;
 - (id)currentAnchoredDrawableLayouts;
 - (id)currentInlineDrawableLayouts;
 - (id)validatedLayoutForAnchoredDrawable:(id)arg1;
@@ -43,6 +44,7 @@ __attribute__((visibility("hidden")))
 - (struct CGPoint)calculatePointFromSearchReference:(id)arg1;
 - (void)addAttachmentLayout:(id)arg1;
 - (id)existingAttachmentLayoutForInfo:(id)arg1;
+- (_Bool)isFootnoteContainerOnSamePageAsTarget:(id)arg1;
 @property(readonly, nonatomic) _Bool shouldWrapAroundExternalDrawables;
 @property(readonly, nonatomic) _Bool layoutIsValid;
 @property(readonly, nonatomic) TSDLayout *parentLayoutForInlineAttachments;
@@ -53,7 +55,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) int naturalDirection;
 @property(readonly, nonatomic) int naturalAlignment;
 @property(readonly, nonatomic) int verticalAlignment;
-@property(readonly, nonatomic) unsigned int autosizeFlags;
+@property(readonly, nonatomic) unsigned long long autosizeFlags;
 @property(readonly, nonatomic) struct CGPoint anchorPoint;
 @property(readonly, nonatomic) struct CGPoint position;
 @property(readonly, nonatomic) struct CGSize currentSize;
@@ -63,6 +65,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)isLastTarget;
 @property(readonly, nonatomic) TSPObject<TSDHint> *nextTargetFirstChildHint;
 @property(readonly, nonatomic) id <TSWPFootnoteMarkProvider> footnoteMarkProvider;
+- (void)resetFootnoteHeightMeasurer;
 @property(readonly, nonatomic) id <TSWPFootnoteHeightMeasurer> footnoteHeightMeasurer;
 @property(readonly, nonatomic) NSObject<TSWPTopicNumberHints> *nextTargetTopicNumbers;
 @property(readonly, nonatomic) id <TSWPOffscreenColumn> nextTargetFirstColumn;
@@ -82,7 +85,7 @@ __attribute__((visibility("hidden")))
 - (struct CGPoint)capturedInfoPositionForAttachment;
 - (id)computeLayoutGeometry;
 - (struct CGSize)maximumFrameSizeForChild:(id)arg1;
-- (double)contentHeight;
+- (double)contentBlockHeight;
 - (_Bool)processWidowAndInflation;
 - (void)updateStartCharIndexWithDirtyRanges:(id)arg1;
 - (void)setNeedsInflation;
@@ -90,7 +93,9 @@ __attribute__((visibility("hidden")))
 - (_Bool)needsInflation;
 - (struct CGRect)p_rectForSelection:(id)arg1 useParagraphModeRects:(_Bool)arg2;
 - (struct CGRect)rectForPresentingAnnotationPopoverForSelectionPath:(id)arg1;
+- (_Bool)containsStartOfPencilAnnotation:(id)arg1;
 - (id)unscaledAnchorRectsForPencilAnnotationSelectionPath:(id)arg1 attachedType:(long long)arg2;
+- (id)containedPencilAnnotations;
 - (struct CGRect)rectInRootForPresentingAnnotationPopoverForSelectionPath:(id)arg1;
 - (struct CGRect)rectForSelection:(id)arg1;
 - (_Bool)selectionMustBeEntirelyOnscreenToCountAsVisibleInSelectionPath:(id)arg1;

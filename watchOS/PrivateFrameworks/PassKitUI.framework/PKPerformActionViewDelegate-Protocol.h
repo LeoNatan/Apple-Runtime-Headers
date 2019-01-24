@@ -14,6 +14,8 @@
 - (void)shakeCard;
 
 @optional
+- (void)performActionViewDidPerformAction:(UIView<PKPerformActionView> *)arg1;
+- (void)performActionViewRequestsPerformNextStepForAction:(UIView<PKPerformActionView> *)arg1 completion:(void (^)(_Bool))arg2;
 - (void)performActionView:(UIView<PKPerformActionView> *)arg1 requestsPresentViewController:(UIViewController *)arg2;
 @end
 

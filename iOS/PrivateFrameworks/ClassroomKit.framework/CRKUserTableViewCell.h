@@ -42,7 +42,7 @@
 @property(nonatomic, getter=isPresentingFullScreen) _Bool presentingFullScreen; // @synthesize presentingFullScreen=_presentingFullScreen;
 @property(nonatomic, getter=isObserving) _Bool observing; // @synthesize observing=_observing;
 @property(nonatomic, getter=isEditingUser) _Bool editingUser; // @synthesize editingUser=_editingUser;
-@property(retain, nonatomic) CRKUser *user; // @synthesize user=_user;
+@property(copy, nonatomic) CRKUser *user; // @synthesize user=_user;
 @property(nonatomic) __weak id <CRKUserTableViewCellDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak UIViewController *presentingViewController; // @synthesize presentingViewController=_presentingViewController;
 - (void).cxx_destruct;

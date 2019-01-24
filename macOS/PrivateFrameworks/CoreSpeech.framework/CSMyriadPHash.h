@@ -20,6 +20,11 @@
 }
 
 + (id)lastHash;
++ (void)notifyAudioHashNotification;
++ (BOOL)writeHashResultIntoFile:(id)arg1;
++ (BOOL)writeHashlessResult:(unsigned long long)arg1;
++ (id)createHashResult:(unsigned short)arg1 goodness:(unsigned char)arg2 confidence:(unsigned char)arg3 absTime:(unsigned long long)arg4 frac:(unsigned char)arg5;
++ (void)notifyHashlessTrigger:(unsigned long long)arg1;
 + (id)currentMyriadPHash;
 @property(nonatomic) __weak id <CSMyriadPHashDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) unsigned char signalFractional; // @synthesize signalFractional=_signalFractional;
@@ -30,7 +35,7 @@
 - (void)voiceTriggerDidDetectNearMiss:(id)arg1;
 - (void)voiceTriggerDidDetectKeyword:(id)arg1;
 - (id)_audioLogDirectory;
-- (id)_generateMyriadInfo:(unsigned long long)arg1 score:(float)arg2 channel:(unsigned long long)arg3 absoluteTime:(unsigned long long)arg4;
+- (id)_generateMyriadInfo:(unsigned long long)arg1 score:(float)arg2 triggerSource:(id)arg3 channel:(unsigned long long)arg4 absoluteTime:(unsigned long long)arg5;
 - (id)cachedHash;
 - (unsigned short)pHash:(float *)arg1 length:(int)arg2;
 - (id)initWithAudioBuffer:(id)arg1;

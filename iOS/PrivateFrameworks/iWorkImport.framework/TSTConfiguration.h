@@ -40,6 +40,7 @@ __attribute__((visibility("hidden")))
     _Bool _usesWholeChromeResizer;
     _Bool _showsChromeWhileEditingCell;
     _Bool _showsSelectionKnobsWhileEditingCell;
+    _Bool _showsCellWarningIndicator;
     _Bool _supportsCanvasReferenceEditing;
     _Bool _usesLimitedAutomaticFormatParsing;
     _Bool _supportsFormulaEditing;
@@ -82,6 +83,7 @@ __attribute__((visibility("hidden")))
     _Bool _forceZoomInOnBeginEditing;
     _Bool _supportsCategorization;
     _Bool _allowsBlackDragDropBackground;
+    _Bool _supportsAddBodyRowAtBottomSiriKitIntent;
     unsigned int _maxNumberOfRows;
     unsigned int _maxNumberOfColumns;
     unsigned int _maxNumberOfPopulatedCells;
@@ -91,6 +93,7 @@ __attribute__((visibility("hidden")))
 
 + (void)resetSharedTableConfiguration;
 + (id)sharedTableConfiguration;
+@property(nonatomic) _Bool supportsAddBodyRowAtBottomSiriKitIntent; // @synthesize supportsAddBodyRowAtBottomSiriKitIntent=_supportsAddBodyRowAtBottomSiriKitIntent;
 @property(nonatomic) _Bool allowsBlackDragDropBackground; // @synthesize allowsBlackDragDropBackground=_allowsBlackDragDropBackground;
 @property(nonatomic) double structuredTextImportConfidenceThresholdForCanvas; // @synthesize structuredTextImportConfidenceThresholdForCanvas=_structuredTextImportConfidenceThresholdForCanvas;
 @property(nonatomic) double structuredTextImportConfidenceThreshold; // @synthesize structuredTextImportConfidenceThreshold=_structuredTextImportConfidenceThreshold;
@@ -135,6 +138,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool supportsFormulaEditing; // @synthesize supportsFormulaEditing=_supportsFormulaEditing;
 @property(nonatomic) _Bool usesLimitedAutomaticFormatParsing; // @synthesize usesLimitedAutomaticFormatParsing=_usesLimitedAutomaticFormatParsing;
 @property(nonatomic) _Bool supportsCanvasReferenceEditing; // @synthesize supportsCanvasReferenceEditing=_supportsCanvasReferenceEditing;
+@property(nonatomic) _Bool showsCellWarningIndicator; // @synthesize showsCellWarningIndicator=_showsCellWarningIndicator;
 @property(nonatomic) _Bool showsSelectionKnobsWhileEditingCell; // @synthesize showsSelectionKnobsWhileEditingCell=_showsSelectionKnobsWhileEditingCell;
 @property(nonatomic) _Bool showsChromeWhileEditingCell; // @synthesize showsChromeWhileEditingCell=_showsChromeWhileEditingCell;
 @property(nonatomic) _Bool usesWholeChromeResizer; // @synthesize usesWholeChromeResizer=_usesWholeChromeResizer;

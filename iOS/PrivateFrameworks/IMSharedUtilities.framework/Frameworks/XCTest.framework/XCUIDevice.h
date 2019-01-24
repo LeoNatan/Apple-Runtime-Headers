@@ -6,20 +6,65 @@
 
 #import <objc/NSObject.h>
 
-@class XCUISiriService;
+#import <XCTest/XCUIIOSDevice-Protocol.h>
 
-@interface XCUIDevice : NSObject
+@class NSArray, NSString, XCUIScreen, XCUISiriService, XCUITestContext;
+@protocol XCUIAccessibilityInterface, XCUIApplicationAutomationSessionProviding, XCUIApplicationManaging, XCUIApplicationMonitor, XCUIDeviceEventAndStateInterface, XCUIEventSynthesizing, XCUIScreenDataSource, XCUIXcodeApplicationManaging;
+
+@interface XCUIDevice : NSObject <XCUIIOSDevice>
 {
+    _Bool _isLocal;
+    _Bool _isSimulatorDevice;
+    long long _platform;
+    id <XCUIAccessibilityInterface> _accessibilityInterface;
+    id <XCUIApplicationMonitor> _applicationMonitor;
+    id <XCUIEventSynthesizing> _eventSynthesizer;
+    id <XCUIApplicationManaging> _platformApplicationManager;
+    id <XCUIXcodeApplicationManaging> _xcodeApplicationManager;
+    id <XCUIDeviceEventAndStateInterface> _deviceEventAndStateInterface;
+    id <XCUIApplicationAutomationSessionProviding> _applicationAutomationSessionProvider;
+    XCUISiriService *_siriService;
+    id <XCUIScreenDataSource> _screenDataSource;
+    NSString *_uniqueIdentifier;
+    XCUITestContext *_testContext;
 }
 
 + (id)sharedDevice;
-@property(readonly) XCUISiriService *siriService;
++ (id)localDevice;
+@property(readonly) XCUITestContext *testContext; // @synthesize testContext=_testContext;
+@property(readonly) _Bool isSimulatorDevice; // @synthesize isSimulatorDevice=_isSimulatorDevice;
+@property(readonly) NSString *uniqueIdentifier; // @synthesize uniqueIdentifier=_uniqueIdentifier;
+@property(readonly) id <XCUIScreenDataSource> screenDataSource; // @synthesize screenDataSource=_screenDataSource;
+@property(readonly) id <XCUIApplicationAutomationSessionProviding> applicationAutomationSessionProvider; // @synthesize applicationAutomationSessionProvider=_applicationAutomationSessionProvider;
+@property(readonly) id <XCUIDeviceEventAndStateInterface> deviceEventAndStateInterface; // @synthesize deviceEventAndStateInterface=_deviceEventAndStateInterface;
+@property(readonly) id <XCUIXcodeApplicationManaging> xcodeApplicationManager; // @synthesize xcodeApplicationManager=_xcodeApplicationManager;
+@property(readonly) id <XCUIApplicationManaging> platformApplicationManager; // @synthesize platformApplicationManager=_platformApplicationManager;
+@property(readonly) id <XCUIEventSynthesizing> eventSynthesizer; // @synthesize eventSynthesizer=_eventSynthesizer;
+@property(readonly) id <XCUIApplicationMonitor> applicationMonitor; // @synthesize applicationMonitor=_applicationMonitor;
+@property(readonly) id <XCUIAccessibilityInterface> accessibilityInterface; // @synthesize accessibilityInterface=_accessibilityInterface;
+@property(readonly) long long platform; // @synthesize platform=_platform;
+@property(readonly) _Bool isLocal; // @synthesize isLocal=_isLocal;
+- (void).cxx_destruct;
+- (void)rotateDigitalCrown:(double)arg1 velocity:(double)arg2;
 - (void)pressLockButton;
 - (void)holdHomeButtonForDuration:(double)arg1;
 - (void)pressButton:(long long)arg1;
 - (void)_silentPressButton:(long long)arg1;
-- (void)_dispatchEventWithPage:(unsigned int)arg1 usage:(unsigned int)arg2 duration:(double)arg3;
+- (void)_setOrientation:(long long)arg1;
 @property(nonatomic) long long orientation;
+- (id)init;
+@property(readonly, copy) NSString *description;
+- (_Bool)isEqual:(id)arg1;
+@property(readonly) unsigned long long hash;
+@property(readonly) XCUIScreen *mainScreen;
+@property(readonly, copy) NSArray *screens;
+@property(readonly) XCUISiriService *siriService; // @synthesize siriService=_siriService;
+- (_Bool)performDeviceEvent:(id)arg1 error:(id *)arg2;
+- (id)initLocalDeviceWithPlatform:(long long)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly) Class superclass;
 
 @end
 

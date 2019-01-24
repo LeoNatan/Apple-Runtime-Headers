@@ -7,8 +7,11 @@
 #import <NewsCore/NSObject-Protocol.h>
 
 @class FCColor, FCColorGradient, FCFeedEdition, NSArray, NSDate, NSString, NTPBDiscoverMoreVideosInfo;
+@protocol FCForYouMagazineFeedGroup;
 
 @protocol FCFeedGroupOutlining <NSObject>
+@property(readonly, nonatomic) id <FCForYouMagazineFeedGroup> magazineGroup;
+@property(readonly, copy, nonatomic) NSArray *issueIDs;
 @property(readonly, copy, nonatomic) NSString *backingTagID;
 @property(readonly, copy, nonatomic) NSArray *headlines;
 @property(readonly, nonatomic) unsigned long long mergeID;
@@ -17,10 +20,14 @@
 @property(readonly, nonatomic) NSDate *creationDate;
 @property(readonly, copy, nonatomic) NSArray *videoPlaylistHeadlines;
 @property(readonly, copy, nonatomic) NTPBDiscoverMoreVideosInfo *discoverMoreVideosInfo;
+@property(readonly, copy, nonatomic) FCColor *cardBackgroundColor;
+@property(readonly, copy, nonatomic) FCColorGradient *sauceGradient;
 @property(readonly, copy, nonatomic) FCColorGradient *backgroundGradient;
 @property(readonly, copy, nonatomic) FCColor *titleColor;
+@property(readonly, copy, nonatomic) NSString *ctaText;
 @property(readonly, copy, nonatomic) NSString *subtitle;
 @property(readonly, copy, nonatomic) NSString *title;
+@property(readonly, copy, nonatomic) NSString *eyebrowText;
 @property(readonly, nonatomic) long long groupType;
 @property(readonly, copy, nonatomic) NSString *sourceIdentifier;
 @property(readonly, copy, nonatomic) NSString *identifier;

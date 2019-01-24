@@ -24,16 +24,19 @@
     NSString *_todaySourceIdentifier;
     NSString *_userID;
     NTPBTodayWidgetConfig *_widgetConfig;
+    _Bool _isBundleSubscriber;
     _Bool _wifiReachable;
     struct {
         unsigned int appConfigTreatmentIDInteger:1;
         unsigned int cellularRadioAccessTechnology:1;
         unsigned int onboardingVersion:1;
         unsigned int reachabilityStatus:1;
+        unsigned int isBundleSubscriber:1;
         unsigned int wifiReachable:1;
     } _has;
 }
 
+@property(nonatomic) _Bool isBundleSubscriber; // @synthesize isBundleSubscriber=_isBundleSubscriber;
 @property(retain, nonatomic) NSString *localeIdentifier; // @synthesize localeIdentifier=_localeIdentifier;
 @property(retain, nonatomic) NSData *clickThroughRateByPersonalizationFeatureIDData; // @synthesize clickThroughRateByPersonalizationFeatureIDData=_clickThroughRateByPersonalizationFeatureIDData;
 @property(nonatomic) long long onboardingVersion; // @synthesize onboardingVersion=_onboardingVersion;
@@ -54,6 +57,7 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(nonatomic) _Bool hasIsBundleSubscriber;
 - (void)setUserSegmentationTreatmentIds:(long long *)arg1 count:(unsigned long long)arg2;
 - (long long)userSegmentationTreatmentIdsAtIndex:(unsigned long long)arg1;
 - (void)addUserSegmentationTreatmentIds:(long long)arg1;

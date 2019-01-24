@@ -38,6 +38,7 @@ __attribute__((visibility("hidden")))
 - (void)_historyItemsWereRemoved:(id)arg1;
 - (void)_historyItemsWereAddedOrChangedTimerFired:(id)arg1;
 - (void)_historyItemsWereAddedOrChanged:(id)arg1;
+- (void)_fetchDateOfNextPermittedSaveChangesAttemptWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)_cloudHistorySaveAttemptDidComplete:(id)arg1;
 - (void)_sync;
 - (void)_saveChanges;

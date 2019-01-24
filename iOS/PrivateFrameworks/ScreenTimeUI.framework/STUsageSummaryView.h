@@ -6,23 +6,19 @@
 
 #import <UIKit/UIView.h>
 
-@class STTopUsageItemsView, STUsageGraphView, STUsageReport, STUsageTotalDeltaView, UILabel;
+@class STHorizontallySegmentedView, STScreenTimeSummaryView, STUsageGraphView, STUsageReport;
 
 @interface STUsageSummaryView : UIView
 {
-    _Bool _useDailyAverageLabel;
     STUsageReport *_usageReport;
-    UILabel *_screenTimeLabel;
-    STUsageTotalDeltaView *_deltaView;
-    STTopUsageItemsView *_topItemsView;
+    STScreenTimeSummaryView *_summaryView;
+    STHorizontallySegmentedView *_topItemsView;
     STUsageGraphView *_graphView;
 }
 
-@property(readonly, nonatomic) STUsageGraphView *graphView; // @synthesize graphView=_graphView;
-@property(readonly, nonatomic) STTopUsageItemsView *topItemsView; // @synthesize topItemsView=_topItemsView;
-@property(readonly, nonatomic) STUsageTotalDeltaView *deltaView; // @synthesize deltaView=_deltaView;
-@property(readonly, nonatomic) UILabel *screenTimeLabel; // @synthesize screenTimeLabel=_screenTimeLabel;
-@property(readonly, nonatomic) _Bool useDailyAverageLabel; // @synthesize useDailyAverageLabel=_useDailyAverageLabel;
+@property(readonly) STUsageGraphView *graphView; // @synthesize graphView=_graphView;
+@property(readonly) STHorizontallySegmentedView *topItemsView; // @synthesize topItemsView=_topItemsView;
+@property(readonly) STScreenTimeSummaryView *summaryView; // @synthesize summaryView=_summaryView;
 @property(retain, nonatomic) STUsageReport *usageReport; // @synthesize usageReport=_usageReport;
 - (void).cxx_destruct;
 - (id)initWithDailyAverageLabel:(_Bool)arg1;

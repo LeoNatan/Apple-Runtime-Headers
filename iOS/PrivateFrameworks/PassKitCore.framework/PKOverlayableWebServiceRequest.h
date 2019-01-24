@@ -6,9 +6,11 @@
 
 #import <PassKitCore/PKWebServiceRequest.h>
 
+#import <PassKitCore/NSSecureCoding-Protocol.h>
+
 @class NSArray, NSDictionary, NSMutableDictionary;
 
-@interface PKOverlayableWebServiceRequest : PKWebServiceRequest
+@interface PKOverlayableWebServiceRequest : PKWebServiceRequest <NSSecureCoding>
 {
     NSMutableDictionary *_overlayParameters;
     NSMutableDictionary *_secureOverlayParameters;
@@ -17,6 +19,7 @@
     _Bool _requiresConfigurationForRedirect;
 }
 
++ (_Bool)supportsSecureCoding;
 @property(nonatomic) _Bool requiresConfigurationForRedirect; // @synthesize requiresConfigurationForRedirect=_requiresConfigurationForRedirect;
 @property(nonatomic) _Bool requiresConfigurationForRetry; // @synthesize requiresConfigurationForRetry=_requiresConfigurationForRetry;
 - (void).cxx_destruct;
@@ -33,6 +36,8 @@
 - (id)overlayValueForKey:(id)arg1;
 - (void)setOverlayValue:(id)arg1 forKey:(id)arg2;
 - (id)init;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 
 @end
 

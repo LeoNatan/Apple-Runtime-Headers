@@ -6,27 +6,33 @@
 
 #import <objc/NSObject.h>
 
+#import <PassKitCore/NSSecureCoding-Protocol.h>
+
 @class NSString, PKPaymentEligibilityResponse, PKPaymentRequirementsResponse;
 
-@interface PKPaymentCredential : NSObject
+@interface PKPaymentCredential : NSObject <NSSecureCoding>
 {
     int _credentialType;
     NSString *_sanitizedPrimaryAccountNumber;
     NSString *_expiration;
     NSString *_longDescription;
+    int _cardType;
     PKPaymentRequirementsResponse *_requirementsResponse;
     PKPaymentEligibilityResponse *_eligibilityResponse;
 }
 
++ (_Bool)supportsSecureCoding;
 + (id)fakeRemoteCredentials;
 @property(retain, nonatomic) PKPaymentEligibilityResponse *eligibilityResponse; // @synthesize eligibilityResponse=_eligibilityResponse;
 @property(retain, nonatomic) PKPaymentRequirementsResponse *requirementsResponse; // @synthesize requirementsResponse=_requirementsResponse;
+@property(nonatomic) int cardType; // @synthesize cardType=_cardType;
 @property(copy, nonatomic) NSString *longDescription; // @synthesize longDescription=_longDescription;
 @property(copy, nonatomic) NSString *expiration; // @synthesize expiration=_expiration;
 @property(copy, nonatomic) NSString *sanitizedPrimaryAccountNumber; // @synthesize sanitizedPrimaryAccountNumber=_sanitizedPrimaryAccountNumber;
 @property(nonatomic) int credentialType; // @synthesize credentialType=_credentialType;
 - (void).cxx_destruct;
-@property(readonly, nonatomic, getter=isTransitCredential) _Bool transitCredential;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (id)purchasedProductCredential;
 - (_Bool)isPurchasedProductCredential;
 - (id)digitalIssuanceProductCredential;

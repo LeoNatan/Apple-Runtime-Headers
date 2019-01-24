@@ -118,10 +118,12 @@
 - (void)_postBookmarksFolderContentsDidChangeNotification:(int)arg1;
 - (void)_postBookmarksDidReloadNotificationAndStartReadingListFetcherIfChangesWereMade;
 - (void)_postBookmarksDidReloadNotification;
+- (_Bool)clearFrequentlyVisitedSitesFolder;
 - (id)frequentlyVisitedSitesFolderBookmarkID;
 - (id)frequentlyVisitedSitesList;
+- (id)frequentlyVisitedSitesFolderCreatingIfNeeded:(_Bool)arg1 postChangeNotification:(_Bool)arg2;
+- (id)frequentlyVisitedSitesFolderCreatingIfNeeded:(_Bool)arg1;
 - (id)frequentlyVisitedSitesFolder;
-- (id)_lazyCreateFrequentlyVisitedSitesBookmark;
 - (_Bool)bookmarkIsFavoritesFolder:(id)arg1;
 - (id)favoritesFolderList;
 - (id)favoritesFolder;
@@ -174,7 +176,7 @@
 - (_Bool)_addBookmarkWithTitle:(id)arg1 address:(id)arg2 parentID:(int)arg3 orderIndex:(unsigned int)arg4 isFolder:(_Bool)arg5 externalUUID:(id)arg6 associatedBookmark:(id)arg7 updateParentChildCount:(_Bool)arg8 updateAncestorEntries:(_Bool)arg9;
 - (_Bool)_insertTombsonesRecursivelyHelperCurrentDepth:(unsigned long long)arg1 folder:(id)arg2;
 - (_Bool)_insertTombsonesRecursivelyForRootFolder:(id)arg1;
-- (_Bool)_deleteRecursively:(int)arg1;
+- (_Bool)_deleteRecursively:(int)arg1 descendantsOnly:(_Bool)arg2;
 - (_Bool)_deleteBookmark:(id)arg1 leaveTombstone:(_Bool)arg2;
 - (_Bool)_clearAllDAVSyncData;
 - (_Bool)_clearAllSyncKeys;
@@ -304,6 +306,8 @@
 - (id)listWithID:(int)arg1 skipOffset:(unsigned int)arg2;
 - (id)listWithSpecialID:(int)arg1;
 - (id)listWithID:(int)arg1;
+- (_Bool)bookmarkContainsLeafBookmark:(id)arg1;
+- (id)descendantsOfBookmarkFolder:(id)arg1;
 - (id)subfoldersOfID:(int)arg1;
 - (id)rootBookmark;
 - (id)bookmarkAtPath:(id)arg1;
@@ -336,9 +340,7 @@
 - (id)initSafariBookmarkCollectionCheckingIntegrity:(_Bool)arg1 skipExternalNotifications:(_Bool)arg2;
 - (id)initSafariBookmarkCollectionCheckingIntegrity:(_Bool)arg1;
 - (id)initReadonlySafariBookmarkCollection;
-- (id)initWithPath:(id)arg1;
 - (_Bool)_setupWithPath:(id)arg1 checkIntegrity:(_Bool)arg2;
-- (id)initWithPath:(id)arg1 checkIntegrity:(_Bool)arg2;
 @property(readonly, nonatomic) long long _cloudKitLocalMigrationState;
 - (_Bool)containsOnlyStockBookmarks;
 - (void)_setSyncNotificationType:(long long)arg1;

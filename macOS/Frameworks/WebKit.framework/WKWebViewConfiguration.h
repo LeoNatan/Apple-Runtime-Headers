@@ -9,10 +9,11 @@
 #import <WebKit/NSCopying-Protocol.h>
 #import <WebKit/NSSecureCoding-Protocol.h>
 
-@class NSMutableDictionary, NSString, WKPreferences, WKProcessPool, WKUserContentController, WKWebView, WKWebsiteDataStore, _WKApplicationManifest, _WKVisitedLinkStore, _WKWebsiteDataStore;
+@class NSArray, NSString, WKPreferences, WKProcessPool, WKUserContentController, WKWebView, WKWebsiteDataStore, _WKApplicationManifest, _WKVisitedLinkStore, _WKWebsiteDataStore;
 
 @interface WKWebViewConfiguration : NSObject <NSSecureCoding, NSCopying>
 {
+    struct RefPtr<API::PageConfiguration, WTF::DumbPtrTraits<API::PageConfiguration>> _pageConfiguration;
     struct LazyInitialized<WTF::RetainPtr<WKProcessPool>> _processPool;
     struct LazyInitialized<WTF::RetainPtr<WKPreferences>> _preferences;
     struct LazyInitialized<WTF::RetainPtr<WKUserContentController>> _userContentController;
@@ -22,9 +23,7 @@
     struct WeakObjCPtr<WKWebView> _alternateWebViewForNavigationGestures;
     struct RetainPtr<NSString> _groupIdentifier;
     struct LazyInitialized<WTF::RetainPtr<NSString>> _applicationNameForUserAgent;
-    struct LazyInitialized<WTF::RetainPtr<NSMutableDictionary<NSString *, id<WKURLSchemeHandler>>>> _urlSchemeHandlers;
     double _incrementalRenderingSuppressionTimeout;
-    BOOL _treatsSHA1SignedCertificatesAsInsecure;
     BOOL _respectsImageOrientation;
     BOOL _printsBackgrounds;
     BOOL _allowsJavaScriptMarkup;
@@ -34,17 +33,15 @@
     BOOL _invisibleAutoplayNotPermitted;
     BOOL _mediaDataLoadsAutomatically;
     BOOL _attachmentElementEnabled;
+    Class _attachmentFileWrapperClass;
     BOOL _mainContentUserGestureOverrideEnabled;
     struct WKRetainPtr<const OpaqueWKPageGroup *> _pageGroup;
-    double _cpuLimit;
     BOOL _showsURLsInToolTips;
     BOOL _serviceControlsEnabled;
     BOOL _imageControlsEnabled;
     BOOL _requiresUserActionForEditingControlsManager;
-    BOOL _initialCapitalizationEnabled;
     BOOL _waitsForPaintAfterViewDidMoveToWindow;
     BOOL _controlledByAutomation;
-    struct RetainPtr<_WKApplicationManifest> _applicationManifest;
     BOOL _applePayEnabled;
     BOOL _needsStorageAccessFromFileURLsQuirk;
     BOOL _legacyEncryptedMediaAPIEnabled;
@@ -53,8 +50,9 @@
     BOOL _incompleteImageBorderEnabled;
     BOOL _shouldDeferAsynchronousScriptsUntilAfterDocumentLoad;
     BOOL _drawsBackground;
-    struct RetainPtr<NSString> _overrideContentSecurityPolicy;
+    BOOL _editableImagesEnabled;
     struct RetainPtr<NSString> _mediaContentTypesRequiringHardwareSupport;
+    struct RetainPtr<NSArray<NSString *>> _additionalSupportedImageTypes;
     BOOL _suppressesIncrementalRendering;
     BOOL _allowsAirPlayForMediaPlayback;
     unsigned long long _mediaTypesRequiringUserActionForPlayback;
@@ -68,7 +66,7 @@
 @property(nonatomic) BOOL suppressesIncrementalRendering; // @synthesize suppressesIncrementalRendering=_suppressesIncrementalRendering;
 - (id).cxx_construct;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) NSMutableDictionary *_urlSchemeHandlers;
+- (Ref_1d7364d1)copyPageConfiguration;
 @property(retain, nonatomic, setter=_setWebsiteDataStore:) _WKWebsiteDataStore *_websiteDataStore;
 - (id)urlSchemeHandlerForURLScheme:(id)arg1;
 - (void)setURLSchemeHandler:(id)arg1 forURLScheme:(id)arg2;
@@ -83,8 +81,10 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)description;
 - (id)init;
+@property(nonatomic, setter=_setEditableImagesEnabled:) BOOL _editableImagesEnabled;
 @property(nonatomic, setter=_setAllowMediaContentTypesRequiringHardwareSupportAsFallback:) BOOL _allowMediaContentTypesRequiringHardwareSupportAsFallback;
 @property(nonatomic, setter=_setLegacyEncryptedMediaAPIEnabled:) BOOL _legacyEncryptedMediaAPIEnabled;
+@property(copy, nonatomic, setter=_setAdditionalSupportedImageTypes:) NSArray *_additionalSupportedImageTypes;
 @property(nonatomic, setter=_setMediaContentTypesRequiringHardwareSupport:) NSString *_mediaContentTypesRequiringHardwareSupport;
 @property(nonatomic, setter=_setOverrideContentSecurityPolicy:) NSString *_overrideContentSecurityPolicy;
 @property(nonatomic, setter=_setNeedsStorageAccessFromFileURLsQuirk:) BOOL _needsStorageAccessFromFileURLsQuirk;
@@ -106,6 +106,7 @@
 @property(nonatomic, setter=_setShouldDeferAsynchronousScriptsUntilAfterDocumentLoad:) BOOL _shouldDeferAsynchronousScriptsUntilAfterDocumentLoad;
 @property(nonatomic, setter=_setIncompleteImageBorderEnabled:) BOOL _incompleteImageBorderEnabled;
 @property(nonatomic, setter=_setColorFilterEnabled:) BOOL _colorFilterEnabled;
+@property(nonatomic, setter=_setAttachmentFileWrapperClass:) Class _attachmentFileWrapperClass;
 @property(nonatomic, setter=_setAttachmentElementEnabled:) BOOL _attachmentElementEnabled;
 @property(nonatomic, setter=_setMediaDataLoadsAutomatically:) BOOL _mediaDataLoadsAutomatically;
 @property(nonatomic, setter=_setInvisibleAutoplayNotPermitted:) BOOL _invisibleAutoplayNotPermitted;

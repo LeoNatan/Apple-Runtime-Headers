@@ -12,6 +12,7 @@ __attribute__((visibility("hidden")))
     vector_b5e32e34 mRangeList;
 }
 
++ (id)stringValueForRangeVector:(const vector_b5e32e34 *)arg1;
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (id)stringValue;
@@ -23,6 +24,9 @@ __attribute__((visibility("hidden")))
 - (void)insertRange:(struct _NSRange)arg1 atIndex:(unsigned long long)arg2;
 - (void)addRange:(struct _NSRange)arg1;
 @property(readonly, nonatomic) unsigned long long count;
+@property(readonly, nonatomic) const vector_b5e32e34 *rangeVector;
+- (id)initWithRangeVectorMove:(vector_b5e32e34 *)arg1;
+- (id)initWithRangeVector:(const vector_b5e32e34 *)arg1;
 - (id)initWithString:(id)arg1;
 - (id)initWithRangeList:(id)arg1;
 - (id)initWithRange:(struct _NSRange)arg1;

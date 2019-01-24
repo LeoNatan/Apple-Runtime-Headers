@@ -44,7 +44,6 @@
 - (id)fileHandleForAudioRecording;
 - (void)showDigitalTouchCanvas;
 - (void)extraButtonTapped;
-- (id)extraButtonImage;
 - (id)inputContextIdentifierForComposeController:(id)arg1;
 - (void)composeControllerPrimaryLanguageChanged:(id)arg1;
 - (id)contactForRawAddress:(id)arg1;

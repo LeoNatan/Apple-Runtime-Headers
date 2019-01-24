@@ -6,19 +6,21 @@
 
 #import <objc/NSObject.h>
 
-@class WKNavigationAction, WKWindowFeatures;
+@class WKNavigationAction, WKWebViewConfiguration, WKWindowFeatures;
 
 __attribute__((visibility("hidden")))
 @interface BrowserViewControllerWindowConfiguration : NSObject
 {
+    WKWebViewConfiguration *_webViewConfiguration;
     WKNavigationAction *_navigationAction;
     WKWindowFeatures *_windowFeatures;
 }
 
 @property(readonly, nonatomic) WKWindowFeatures *windowFeatures; // @synthesize windowFeatures=_windowFeatures;
 @property(readonly, nonatomic) WKNavigationAction *navigationAction; // @synthesize navigationAction=_navigationAction;
+@property(readonly, nonatomic) WKWebViewConfiguration *webViewConfiguration; // @synthesize webViewConfiguration=_webViewConfiguration;
 - (void).cxx_destruct;
-- (id)initWithNavigationAction:(id)arg1 windowFeatures:(id)arg2;
+- (id)initWithWebViewConfiguration:(id)arg1 navigationAction:(id)arg2 windowFeatures:(id)arg3;
 
 @end
 

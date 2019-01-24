@@ -8,6 +8,8 @@
 
 #import <ClassroomKit/NSSecureCoding-Protocol.h>
 
+@class NSDictionary;
+
 @interface CRKFeaturePermissionResultObject : NSObject <NSSecureCoding>
 {
     BOOL _modifiable;
@@ -17,6 +19,7 @@
 + (BOOL)supportsSecureCoding;
 @property(nonatomic, getter=isModifiable) BOOL modifiable; // @synthesize modifiable=_modifiable;
 @property(nonatomic) unsigned long long permission; // @synthesize permission=_permission;
+@property(readonly, nonatomic) NSDictionary *dictionaryValue;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 

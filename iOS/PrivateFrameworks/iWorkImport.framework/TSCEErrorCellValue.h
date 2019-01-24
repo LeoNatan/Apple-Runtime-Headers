@@ -12,8 +12,8 @@ __attribute__((visibility("hidden")))
     struct TSCEErrorValue *_errorValue;
 }
 
-- (void)encodeToArchive:(struct ErrorCellValueArchive *)arg1;
-- (id)initWithArchive:(const struct ErrorCellValueArchive *)arg1 locale:(id)arg2;
+-     // Error parsing type: v24@0:8^{ErrorCellValueArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}dii}16, name: encodeToArchive:
+-     // Error parsing type: @32@0:8r^{ErrorCellValueArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}dii}16@24, name: initWithArchive:locale:
 - (_Bool)isEqualToCellValue:(id)arg1;
 - (id)canonicalKeyString;
 - (id)displayString;

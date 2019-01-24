@@ -15,14 +15,20 @@
     unsigned long long _mergeID;
     unsigned long long _options;
     NTPBColorGradient *_backgroundGradient;
+    NTPBColor *_cardBackgroundColor;
     NTPBDate *_creationDate;
+    int _ctaTextRef;
     NTPBDiscoverMoreVideosInfo *_discoverMoreVideosInfo;
     NTPBDate *_editionFeedEndDate;
     NTPBDate *_editionFeedStartDate;
     NTPBDate *_editionKeyDate;
+    int _eyebrowTextRef;
     NSMutableArray *_headlines;
     NSString *_identifier;
+    NSMutableArray *_issueIDs;
     int _l2TagIDRef;
+    NSString *_magazineGroupIdentifier;
+    NTPBColorGradient *_sauceGradient;
     int _sourceIdentifierRef;
     int _subtitleRef;
     NTPBColor *_titleColor;
@@ -33,6 +39,8 @@
     struct {
         unsigned int mergeID:1;
         unsigned int options:1;
+        unsigned int ctaTextRef:1;
+        unsigned int eyebrowTextRef:1;
         unsigned int l2TagIDRef:1;
         unsigned int sourceIdentifierRef:1;
         unsigned int subtitleRef:1;
@@ -42,8 +50,15 @@
     } _has;
 }
 
++ (Class)issueIDsType;
 + (Class)videoPlaylistHeadlinesType;
 + (Class)headlinesType;
+@property(retain, nonatomic) NTPBColor *cardBackgroundColor; // @synthesize cardBackgroundColor=_cardBackgroundColor;
+@property(retain, nonatomic) NTPBColorGradient *sauceGradient; // @synthesize sauceGradient=_sauceGradient;
+@property(nonatomic) int ctaTextRef; // @synthesize ctaTextRef=_ctaTextRef;
+@property(nonatomic) int eyebrowTextRef; // @synthesize eyebrowTextRef=_eyebrowTextRef;
+@property(retain, nonatomic) NSString *magazineGroupIdentifier; // @synthesize magazineGroupIdentifier=_magazineGroupIdentifier;
+@property(retain, nonatomic) NSMutableArray *issueIDs; // @synthesize issueIDs=_issueIDs;
 @property(retain, nonatomic) NSMutableArray *videoPlaylistHeadlines; // @synthesize videoPlaylistHeadlines=_videoPlaylistHeadlines;
 @property(retain, nonatomic) NTPBDiscoverMoreVideosInfo *discoverMoreVideosInfo; // @synthesize discoverMoreVideosInfo=_discoverMoreVideosInfo;
 @property(nonatomic) _Bool isFirstFromEdition; // @synthesize isFirstFromEdition=_isFirstFromEdition;
@@ -69,6 +84,15 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(readonly, nonatomic) _Bool hasCardBackgroundColor;
+@property(readonly, nonatomic) _Bool hasSauceGradient;
+@property(nonatomic) _Bool hasCtaTextRef;
+@property(nonatomic) _Bool hasEyebrowTextRef;
+@property(readonly, nonatomic) _Bool hasMagazineGroupIdentifier;
+- (id)issueIDsAtIndex:(unsigned long long)arg1;
+- (unsigned long long)issueIDsCount;
+- (void)addIssueIDs:(id)arg1;
+- (void)clearIssueIDs;
 - (id)videoPlaylistHeadlinesAtIndex:(unsigned long long)arg1;
 - (unsigned long long)videoPlaylistHeadlinesCount;
 - (void)addVideoPlaylistHeadlines:(id)arg1;

@@ -11,6 +11,7 @@ __attribute__((visibility("hidden")))
 {
 }
 
+- (void)_folderContentsDidChange:(id)arg1;
 - (id)touchIconRequestForBookmark:(id)arg1 inFolderWithRequest:(id)arg2;
 - (id)displayableFolderContentsForRequest:(id)arg1;
 - (id)bookmarkUUIDForRequest:(id)arg1;

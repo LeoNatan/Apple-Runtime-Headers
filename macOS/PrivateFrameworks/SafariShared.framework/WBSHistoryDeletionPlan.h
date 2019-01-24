@@ -32,8 +32,6 @@
 - (id)_extraVisitsToDeleteWhenDeletingItems:(id)arg1 visits:(id)arg2 relatedVisitKey:(id)arg3 relatedVisitsQueryFactory:(CDUnknownBlockType)arg4;
 - (id)_extraVisitsToDeleteWhenDeletingItems:(id)arg1 visits:(id)arg2;
 - (void)_prepareWithTriggeringItems:(id)arg1 triggeringVisits:(id)arg2;
-- (void)execute;
-- (void)prepare;
 @property(readonly, nonatomic) NSMapTable *allVisitsToDeleteByItemExcludingItemsBeingDeleted;
 @property(readonly, nonatomic) NSSet *allVisitsToDeleteExcludingVisitsFromItemsBeingDeleted;
 @property(readonly, nonatomic) NSSet *allItemsToDelete;

@@ -39,11 +39,14 @@
 - (void)deleteMessagesZone;
 - (void)deleteMessageSyncToken;
 - (void)syncMessagesWithSyncType:(int)arg1 deviceConditionsToCheck:(unsigned int)arg2 activity:(id)arg3 completionBlock:(CDUnknownBlockType)arg4;
+- (_Bool)_kickOffWriteIfNeededForSyncType:(int)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)_kickOffWriteOnCKQueueWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_updateAllMessagesAsNotNeedingReUpload;
 - (void)_markAllUnsuccessFullSyncMessagesAsNeedingSync;
 - (_Bool)_shouldMarkAllMessagesAsNeedingSync;
 - (void)_noteSyncEnded;
 - (void)_fetchMessageZoneChangesSyncType:(int)arg1 currentBatchCount:(int)arg2 maxNumberOfBatches:(int)arg3 completionBlock:(CDUnknownBlockType)arg4;
+- (_Bool)_isDiskSpaceAvailableForSyncType:(int)arg1 currentBatchCount:(int)arg2;
 - (_Bool)_doesAnyRecordZoneIDHavePendingArchivedRecords:(int)arg1;
 - (_Bool)_shouldFetchArchivedRecords:(id)arg1;
 - (void)_processFetchRecordZoneChangesCompletionWithError:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
@@ -58,9 +61,11 @@
 - (void)_resetArvchivedRecordSyncToken;
 @property(retain, nonatomic) CKServerChangeToken *archivedRecordSyncToken; // @synthesize archivedRecordSyncToken=_archivedRecordSyncToken;
 - (void)_migrateSyncTokens;
-- (_Bool)_deviceConditionsAllowsMessageSync;
+- (_Bool)_deviceConditionsAllowsMessageSyncForActivity:(id)arg1 deviceConditionsToCheck:(unsigned int)arg2 currentBatchCount:(int)arg3 maxBatchCount:(int)arg4;
+- (_Bool)_isCoreDuetSyncForMaxBatchCount:(int)arg1;
+- (_Bool)_shouldDeferCoreDuetMessagesSync;
 - (_Bool)_deviceConditionsAllowsMessageSyncForCurrentBatchCount:(int)arg1 maxBatchCount:(int)arg2;
-- (void)_updateDeviceCondictionsToCheckIfNeededForCurrentBatchCount:(int)arg1 maxBatchCount:(int)arg2;
+- (void)_updateDeviceConditionsToCheckIfNeededForCurrentBatchCount:(int)arg1 maxBatchCount:(int)arg2;
 - (void)_processRecordChange:(id)arg1;
 - (void)_writeDirtyMessagesToCloudKitWithCompletion:(CDUnknownBlockType)arg1;
 - (id)_syncOperationGroupName;

@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class CKKnowledgeStore, NSString;
+@class NSString;
 
 @interface CKEntity : NSObject
 {
@@ -14,27 +14,22 @@
     // Error parsing type: , name: store
 }
 
-- (CDUnknownBlockType).cxx_destruct;
+- (void).cxx_destruct;
 - (id)init;
 - (id)linksTo:(id)arg1 matchType:(int)arg2 error:(id *)arg3;
 - (void)linksTo:(id)arg1 matchType:(int)arg2 completionHandler:(CDUnknownBlockType)arg3;
-- (_Bool)unlinkTo:(id)arg1 withPredicate:(id)arg2 ignoreWeights:(_Bool)arg3 error:(id *)arg4;
 - (void)unlinkTo:(id)arg1 withPredicate:(id)arg2 ignoreWeights:(_Bool)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (_Bool)linkTo:(id)arg1 withPredicate:(id)arg2 error:(id *)arg3;
 - (void)linkTo:(id)arg1 withPredicate:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)removeValueForKey:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)setValuesForKeys:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)setValue:(id)arg1 forKey:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)valuesForKeys:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)valueForKey:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)valueForKey:(id)arg1;
 @property(nonatomic, readonly) NSString *description;
-@property(nonatomic, readonly) int hashValue;
+@property(nonatomic, readonly) int hash;
 - (_Bool)isEqual:(id)arg1;
-- (id)initWithIdentifier:(id)arg1 knowledgeStore:(id)arg2;
-@property(nonatomic, readonly) CKKnowledgeStore *store; // @synthesize store;
-@property(nonatomic, readonly) NSString *identifier; // @synthesize identifier;
-- (id)initWithEvent:(id)arg1 knowledgeStore:(id)arg2;
-- (void)linkBasedOnRulesAfterConnecting:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 
 @end
 

@@ -40,7 +40,7 @@
 @property(nonatomic) __weak id <SXAdControllerPresentationDelegate> presentationDelegate; // @synthesize presentationDelegate=_presentationDelegate;
 @property(nonatomic) __weak id <SXAdControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
-- (_Bool)isRect:(struct CGRect)arg1 withinScreenFullOfRect:(struct CGRect)arg2 viewport:(struct CGSize)arg3;
+- (_Bool)isRect:(struct CGRect)arg1 withinMinimumDistanceOfRect:(struct CGRect)arg2 viewport:(struct CGSize)arg3;
 - (_Bool)isDisplayingAdsWithinScreenfullOfComponentView:(id)arg1;
 - (_Bool)component:(id)arg1 isLastComponentInComponents:(id)arg2;
 - (_Bool)allowComponentViewInFirstViewport:(id)arg1;

@@ -11,6 +11,7 @@
     struct AugmentableInspectorController *_controller;
 }
 
+- (void)defaultAppearanceDidChangeWithAppearance:(long long)arg1;
 - (void)frameClearedScheduledNavigationWithFrameId:(id)arg1;
 - (void)frameScheduledNavigationWithFrameId:(id)arg1 delay:(double)arg2;
 - (void)frameStoppedLoadingWithFrameId:(id)arg1;

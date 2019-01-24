@@ -15,9 +15,11 @@
 }
 
 - (void).cxx_destruct;
-- (void)_handleTemplate:(id)arg1 reason:(long long)arg2;
+- (void)_updateDate;
+- (void)_timeChanged:(id)arg1;
 - (void)layoutSubviews;
 - (id)_newLabelSubviewWithFont:(id)arg1;
+- (void)dealloc;
 - (id)init;
 
 @end

@@ -26,7 +26,7 @@ __attribute__((visibility("hidden")))
 + (id)x:(float)arg1 y:(float)arg2 z:(float)arg3;
 + (id)vector;
 + (unsigned long long)hashVec4:(const tvec4_ac57c72d *)arg1;
-+ (id)instanceWithArchive:(const struct Chart3DVectorArchive *)arg1 unarchiver:(id)arg2;
++     // Error parsing type: @32@0:8r^{Chart3DVectorArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}ffff}16@24, name: instanceWithArchive:unarchiver:
 @property(readonly, nonatomic) float w; // @synthesize w=_w;
 @property(readonly, nonatomic) float z; // @synthesize z=_z;
 @property(readonly, nonatomic) float y; // @synthesize y=_y;
@@ -48,8 +48,8 @@ __attribute__((visibility("hidden")))
 - (id)initWithVec3:(const tvec3_17f03ce0 *)arg1;
 - (id)initWithVec2:(const tvec2_84d5962d *)arg1;
 - (id)init;
-- (void)saveToArchive:(struct Chart3DVectorArchive *)arg1 archiver:(id)arg2;
-- (id)initWithArchive:(const struct Chart3DVectorArchive *)arg1 unarchiver:(id)arg2;
+-     // Error parsing type: v32@0:8^{Chart3DVectorArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}ffff}16@24, name: saveToArchive:archiver:
+-     // Error parsing type: @32@0:8r^{Chart3DVectorArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}ffff}16@24, name: initWithArchive:unarchiver:
 
 @end
 

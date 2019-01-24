@@ -20,18 +20,21 @@
     SKRemoteAccountPageViewController *_remoteViewController;
     SKInvocationQueueProxy<SKUIServiceAccountPageViewController> *_serviceProxy;
     _Bool _isRemoteViewControllerReady;
+    _Bool _financeInterruptionCalled;
     _Bool _cameraDidShow;
     _Bool _viewHasAppeared;
     _Bool _isRemoteViewControllerSetup;
     CDUnknownBlockType redeemCompletionHandler;
-    _Bool _loadFromBridgedNavigation;
     id <SKAccountPageViewControllerDelegate> _delegate;
     ACAccount *_account;
+    int _type;
     SKAccountPageViewController *_preWarmedViewController;
+    SKAccountPageViewController *_presentingAccountPageViewController;
 }
 
+@property(nonatomic) __weak SKAccountPageViewController *presentingAccountPageViewController; // @synthesize presentingAccountPageViewController=_presentingAccountPageViewController;
 @property(retain, nonatomic) SKAccountPageViewController *preWarmedViewController; // @synthesize preWarmedViewController=_preWarmedViewController;
-@property(nonatomic) _Bool loadFromBridgedNavigation; // @synthesize loadFromBridgedNavigation=_loadFromBridgedNavigation;
+@property(nonatomic) int type; // @synthesize type=_type;
 @property(retain, nonatomic) ACAccount *account; // @synthesize account=_account;
 @property(nonatomic) __weak id <SKAccountPageViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
@@ -44,10 +47,13 @@
 - (void)overrideRedeemOperationWithCode:(id)arg1 cameraRecognized:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)redeemCameraViewController:(id)arg1 didFinishWithRedeem:(id)arg2;
 - (void)_bridgedRightButtonPressed:(id)arg1;
+- (void)_dismissBridgedViewController;
+- (void)_presentBridgedViewController;
 - (void)_popBridgedViewControllersToIndex:(unsigned int)arg1;
 - (void)_pushBridgedViewControllerAnimated:(_Bool)arg1 options:(id)arg2;
 - (void)_setBridgedNavigationItemWithOptions:(id)arg1;
 - (void)_overrideRedeemCameraWithCompletion:(CDUnknownBlockType)arg1;
+- (void)_overrideRedeemCameraPerformAction:(int)arg1 withObject:(id)arg2;
 - (void)_overrideCreditCardPresentationWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_financeInterruptionResolved:(_Bool)arg1;
 - (void)_dismissViewControllerWithResult:(_Bool)arg1 error:(id)arg2;
@@ -56,8 +62,10 @@
 - (void)_sk_applicationDidEnterBackground:(id)arg1;
 - (void)_sk_applicationWillEnterForeground:(id)arg1;
 - (void)viewDidAppear:(_Bool)arg1;
+- (void)didMoveToParentViewController:(id)arg1;
 - (void)willMoveToParentViewController:(id)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
+- (void)viewDidLayoutSubviews;
 - (void)loadView;
 - (void)prepareWithCompletionBlock:(CDUnknownBlockType)arg1;
 - (void)loadWithCompletionBlock:(CDUnknownBlockType)arg1;

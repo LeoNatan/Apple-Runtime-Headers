@@ -40,9 +40,9 @@ __attribute__((visibility("hidden")))
 - (void)writeResultsForCalcEngine:(id)arg1;
 - (CDStruct_2a4d9400)recalculateForCalcEngine:(id)arg1 atFormulaCoord:(struct TSUCellCoord)arg2 recalcOptions:(CDStruct_3d581f42)arg3;
 - (id)linkedResolver;
-- (int)ownerKind;
+- (unsigned short)ownerKind;
 - (void)unregisterFromCalcEngine;
-- (int)registerWithCalcEngine:(id)arg1;
+- (int)registerWithCalcEngine:(id)arg1 baseOwnerUID:(const UUIDData_5fbc143e *)arg2;
 - (void)rewriteMergesForInsertedRange:(struct _NSRange)arg1 uids:(const vector_4dc5f307 *)arg2 isRows:(_Bool)arg3;
 - (void)rewriteMergesForRemovedRange:(struct _NSRange)arg1 uids:(const vector_4dc5f307 *)arg2 isRows:(_Bool)arg3;
 - (struct TSUModelCellRect)rewroteFormula:(struct TSCEFormula)arg1 atCoordinate:(struct TSUModelCellCoord)arg2 withRewriteSpec:(id)arg3 isUndo:(_Bool)arg4;
@@ -89,12 +89,13 @@ __attribute__((visibility("hidden")))
 - (id)p_shrinkMergesAtIndexes:(id)arg1 intersectedByBaseRegion:(id)arg2;
 - (void)p_moveCellFromCellCoord:(struct TSUModelCellCoord)arg1 toCellCoord:(struct TSUModelCellCoord)arg2;
 - (void)p_updateOriginMapWithSourceCellCoord:(struct TSUModelCellCoord)arg1 destCellCoord:(struct TSUModelCellCoord)arg2;
-@property(readonly) unsigned long long count;
+@property(readonly, nonatomic) _Bool isEmpty;
+@property(readonly, nonatomic) unsigned long long count;
 - (id)mergeIndexesForBaseCellRegion:(id)arg1;
 - (id)mergeIndexesForRange:(struct TSUModelCellRect)arg1;
 - (void)resetMergeOriginMap;
-- (void)saveToArchive:(struct MergeOwnerArchive *)arg1 archiver:(id)arg2;
-- (id)initWithArchive:(const struct MergeOwnerArchive *)arg1 unarchiver:(id)arg2 forTableModel:(id)arg3;
+-     // Error parsing type: v32@0:8^{MergeOwnerArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{CFUUIDArchive}^{FormulaStoreArchive}}16@24, name: saveToArchive:archiver:
+-     // Error parsing type: @40@0:8r^{MergeOwnerArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{CFUUIDArchive}^{FormulaStoreArchive}}16@24@32, name: initWithArchive:unarchiver:forTableModel:
 - (id)allMergesAsString;
 - (void)rollbackToMark:(unsigned long long)arg1;
 - (unsigned long long)markForRollback;

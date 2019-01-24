@@ -9,12 +9,15 @@
 #import <Safari/NSPopoverDelegate-Protocol.h>
 #import <Safari/SFSafariExtensionRemoteViewControllerDelegate-Protocol.h>
 
-@class NSArray, NSImage, NSMapTable, NSString, NSUUID, SFSafariExtensionRemoteViewController;
+@class BrowserWindowController, NSArray, NSImage, NSMapTable, NSPopover, NSString, NSUUID, SFSafariExtensionRemoteViewController;
 
 __attribute__((visibility("hidden")))
 @interface AppExtensionToolbarItem : NSObject <NSPopoverDelegate, SFSafariExtensionRemoteViewControllerDelegate>
 {
     NSMapTable *_browserWindowControllerToToolbarItemMap;
+    NSPopover *_visiblePopover;
+    id _queuedSender;
+    BrowserWindowController *_queuedBrowserWindowController;
     NSString *_toolbarIdentifier;
     NSString *_toolbarItemUniqueIdentifier;
     NSUUID *_extensionUUID;
@@ -36,7 +39,7 @@ __attribute__((visibility("hidden")))
 - (void)safariExtensionRemoteViewController:(id)arg1 viewServiceDidTerminateWithError:(id)arg2;
 - (void)popoverDidClose:(id)arg1;
 - (void)popoverWillShow:(id)arg1;
-- (void)_performClickAction:(id)arg1;
+- (void)performClickActionWithSender:(id)arg1 inWindowController:(id)arg2;
 - (void)validateExtensionToolbarItem:(id)arg1;
 - (void)removeFromToolbar;
 - (void)insertIntoToolbar;

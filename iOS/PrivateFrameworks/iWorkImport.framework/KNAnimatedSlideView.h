@@ -8,12 +8,13 @@
 
 #import <iWorkImport/KNCanvasDelegate-Protocol.h>
 #import <iWorkImport/TSDConnectedInfoReplacing-Protocol.h>
+#import <iWorkImport/TSDLiveTexturedRectangleSource-Protocol.h>
 
 @class KNAnimatedSlideModel, KNPlaybackSession, KNSlide, KNSlideNode, NSArray, NSIndexSet, NSLock, NSMapTable, NSMutableArray, NSMutableSet, NSSet, NSString, TSDCanvas;
 @protocol TSDCanvasProxyDelegate;
 
 __attribute__((visibility("hidden")))
-@interface KNAnimatedSlideView : NSObject <KNCanvasDelegate, TSDConnectedInfoReplacing>
+@interface KNAnimatedSlideView : NSObject <KNCanvasDelegate, TSDConnectedInfoReplacing, TSDLiveTexturedRectangleSource>
 {
     unsigned long long _animationsActive;
     unsigned long long _animationsStarted;
@@ -24,6 +25,7 @@ __attribute__((visibility("hidden")))
     NSMapTable *_textureDescriptionAndSetForRepMap;
     double _transitionStartTime;
     NSMapTable *_eventToSlideTextureMap;
+    NSMutableSet *_movieControllers;
     _Bool _isSlideBuildable;
     _Bool _shouldStopAnimations;
     _Bool _isInDelayBeforeActiveBuild;
@@ -76,10 +78,14 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) _Bool isDoneAnimating; // @synthesize isDoneAnimating=_isDoneAnimating;
 @property(nonatomic) unsigned long long currentEventIndex; // @synthesize currentEventIndex=_currentEventIndex;
 - (void).cxx_destruct;
+- (void)evictInactiveRenderers;
+- (void)drawToMetalTextureWithContext:(id)arg1;
+- (_Bool)shouldDrawToMetalTextureWithContext:(id)arg1;
 - (void)clearActiveAnimatedBuilds;
 - (void)removeActiveAnimatedBuild:(id)arg1;
 - (void)addActiveAnimatedBuild:(id)arg1;
 - (void)serializeTextures;
+- (void)prepareAsLiveTextureSource;
 - (void)prepareAnimations;
 - (void)waitUntilAsyncRenderingIsCompleteShouldCancel:(_Bool)arg1;
 - (void)renderTextures;
@@ -96,6 +102,10 @@ __attribute__((visibility("hidden")))
 - (void)p_removeAmbientBuildRenderer:(id)arg1;
 - (void)p_addAmbientBuildRenderer:(id)arg1;
 @property(readonly, nonatomic) NSSet *movieRenderers;
+- (struct CGRect)boundingRectOnCanvasForInfo:(id)arg1;
+- (id)movieControllerForInfo:(id)arg1;
+@property(readonly) _Bool isPlayingMovies;
+@property(readonly) NSSet *movieControllers;
 - (void)p_animateBuild:(id)arg1;
 - (void)p_animateBuild:(id)arg1 afterDelay:(double)arg2;
 - (void)p_removeDelayedAnimation:(id)arg1;
@@ -121,7 +131,6 @@ __attribute__((visibility("hidden")))
 - (void)renderIntoContext:(struct CGContext *)arg1 eventIndex:(unsigned long long)arg2 ignoreBuildVisibility:(_Bool)arg3;
 - (void)p_renderSlideContentWithCALayers;
 - (void)p_renderSlideContentWithMetal;
-- (void)p_makeMetalLayerVisible;
 - (void)p_renderCurrentEvent;
 - (void)renderCurrentEvent;
 - (void)p_addInfoToLayerTree:(id)arg1 rep:(id)arg2 renderer:(id)arg3 builtInfos:(id)arg4;

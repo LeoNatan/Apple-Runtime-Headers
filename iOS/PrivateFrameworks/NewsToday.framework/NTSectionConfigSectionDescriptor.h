@@ -71,7 +71,7 @@
 - (id)incrementalSortTransformationWithFeedPersonalizer:(id)arg1;
 - (id)assembleResultsWithCatchUpOperation:(id)arg1;
 - (void)configureCatchUpOperationWithFetchRequest:(id)arg1;
-- (id)initWithSectionConfig:(id)arg1 topStoriesChannelID:(id)arg2 hiddenFeedIDs:(id)arg3 todayData:(id)arg4 supplementalFeedFilterOptions:(long long)arg5;
+- (id)initWithSectionConfig:(id)arg1 topStoriesChannelID:(id)arg2 hiddenFeedIDs:(id)arg3 paidBundleFeedID:(id)arg4 todayData:(id)arg5 supplementalFeedFilterOptions:(long long)arg6;
 - (id)init;
 
 // Remaining properties

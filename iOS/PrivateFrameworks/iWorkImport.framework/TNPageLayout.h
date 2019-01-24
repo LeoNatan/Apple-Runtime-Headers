@@ -49,7 +49,7 @@ __attribute__((visibility("hidden")))
 - (id)dependentsOfTextLayout:(id)arg1;
 - (struct CGRect)autosizedFrameForTextLayout:(id)arg1 textSize:(struct CGSize)arg2;
 - (int)verticalAlignmentForTextLayout:(id)arg1;
-- (unsigned int)autosizeFlagsForTextLayout:(id)arg1;
+- (unsigned long long)autosizeFlagsForTextLayout:(id)arg1;
 - (void)invalidateSize;
 - (id)dependentLayouts;
 - (void)parentDidChange;

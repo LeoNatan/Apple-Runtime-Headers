@@ -69,8 +69,8 @@ __attribute__((visibility("hidden")))
 - (id)objectEnumerator;
 - (void)dealloc;
 - (id)initWithOwner:(id)arg1;
-- (void)saveToArchive:(struct SlideTreeArchive *)arg1 archiver:(id)arg2;
-- (id)initWithArchive:(const struct SlideTreeArchive *)arg1 unarchiver:(id)arg2 owner:(id)arg3;
+-     // Error parsing type: v32@0:8^{SlideTreeArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}^{Reference}}16@24, name: saveToArchive:archiver:
+-     // Error parsing type: @40@0:8r^{SlideTreeArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}^{Reference}}16@24@32, name: initWithArchive:unarchiver:owner:
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

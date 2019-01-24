@@ -11,7 +11,7 @@ __attribute__((visibility("hidden")))
 {
 }
 
-- (BOOL)accessibilityIsIgnored;
+- (BOOL)isAccessibilityElement;
 
 @end
 

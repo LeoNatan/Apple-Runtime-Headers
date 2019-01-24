@@ -8,12 +8,14 @@
 
 #import <CoreUtils/NSXPCListenerDelegate-Protocol.h>
 
-@class CUHomeKitManager, NSString, NSXPCListener, NSXPCListenerEndpoint;
+@class CUHomeKitManager, NSData, NSString, NSXPCListener, NSXPCListenerEndpoint;
 @protocol OS_dispatch_queue;
 
 @interface CUPairingDaemon : NSObject <NSXPCListenerDelegate>
 {
     CUHomeKitManager *_homeKitManager;
+    int _rpIdentityNotifier;
+    NSData *_rpSelfIRK;
     unsigned long long _stateHandle;
     struct NSMutableSet *_xpcConnections;
     NSXPCListener *_xpcListener;
@@ -35,6 +37,7 @@
 - (id)_findHomeKitExPairedPeer:(id)arg1 options:(unsigned long long)arg2 error:(int *)arg3;
 - (id)_findHomeKitPairedPeer:(id)arg1 options:(unsigned long long)arg2 error:(int *)arg3;
 - (id)findPairedPeer:(id)arg1 options:(unsigned long long)arg2 error:(int *)arg3;
+- (void)_removeDups:(id)arg1;
 - (id)_copyPairedPeersWithOptions:(unsigned long long)arg1 error:(int *)arg2;
 - (id)copyPairedPeersWithOptions:(unsigned long long)arg1 error:(int *)arg2;
 - (int)_saveIdentity:(id)arg1 options:(unsigned long long)arg2;
@@ -48,6 +51,7 @@
 - (id)_copyHomeKitWithOptions:(unsigned long long)arg1 error:(int *)arg2;
 - (id)copyIdentityWithOptions:(unsigned long long)arg1 error:(int *)arg2;
 @property(readonly, nonatomic) NSXPCListenerEndpoint *testListenerEndpoint;
+- (void)_rpIdentityUpdate;
 - (void)reset;
 - (void)_connectionInvalidated:(id)arg1;
 - (_Bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;

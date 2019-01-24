@@ -15,6 +15,7 @@
 }
 
 - (_Bool)insertEveryRefreshSession;
+@property(readonly, nonatomic) _Bool emitsSingleRefreshSessionGroups;
 @property(readonly, nonatomic) long long requiredForYouContentTypes;
 @property(readonly, copy, nonatomic) NSString *groupEmitterIdentifier;
 @property(readonly, copy, nonatomic) NSSet *emittableGroupTypes;
@@ -25,10 +26,10 @@
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
-@property(readonly, nonatomic) _Bool emitsSingleRefreshSessionGroups;
 @property(readonly, nonatomic) _Bool emitsSingletonGroups;
 @property(readonly) unsigned long long hash;
 @property(readonly, nonatomic) _Bool isRequiredByFollowingEmitters;
+@property(readonly, nonatomic) _Bool requiresHeavyweightContent;
 @property(readonly) Class superclass;
 
 @end

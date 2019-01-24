@@ -11,10 +11,10 @@ __attribute__((visibility("hidden")))
 {
 }
 
-+ (id)instanceWithArchive:(const struct Chart3DShininessMaterialArchive *)arg1 unarchiver:(id)arg2;
-- (struct MaterialShaderVariables)defaultShaderVariables;
-- (void)saveToArchive:(struct Chart3DShininessMaterialArchive *)arg1 archiver:(id)arg2;
-- (id)initWithArchive:(const struct Chart3DShininessMaterialArchive *)arg1 unarchiver:(id)arg2;
++     // Error parsing type: @32@0:8r^{Chart3DShininessMaterialArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSCH::Chart3DImageTextureTilingArchive>=^{Arena}ii^{Rep}}^{Chart3DTexturesMaterialArchive}}16@24, name: instanceWithArchive:unarchiver:
+- (id)defaultShaderVariables;
+-     // Error parsing type: v32@0:8^{Chart3DShininessMaterialArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSCH::Chart3DImageTextureTilingArchive>=^{Arena}ii^{Rep}}^{Chart3DTexturesMaterialArchive}}16@24, name: saveToArchive:archiver:
+-     // Error parsing type: @32@0:8r^{Chart3DShininessMaterialArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSCH::Chart3DImageTextureTilingArchive>=^{Arena}ii^{Rep}}^{Chart3DTexturesMaterialArchive}}16@24, name: initWithArchive:unarchiver:
 
 @end
 

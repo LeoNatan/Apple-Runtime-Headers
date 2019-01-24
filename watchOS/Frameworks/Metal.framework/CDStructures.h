@@ -376,13 +376,13 @@ struct MTLTextureDescriptorPrivate {
         unsigned int textureUsage;
         unsigned int usage;
     } ;
-    unsigned int cpuCacheMode;
-    unsigned int storageMode;
     unsigned int resourceOptions;
-    unsigned int resolvedUsage;
     _Bool allowGPUOptimizedContents;
     _Bool forceResourceIndex;
     unsigned int resourceIndex;
+    unsigned int resolvedUsage;
+    unsigned int cpuCacheMode;
+    unsigned int storageMode;
 };
 
 struct MTLTileRenderPipelineAttachmentDescriptorPrivate {

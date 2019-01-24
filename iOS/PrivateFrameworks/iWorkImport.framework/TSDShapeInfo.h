@@ -27,6 +27,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) TSDPathSource *pathSource; // @synthesize pathSource=mPathSource;
 - (id)style;
 - (void).cxx_destruct;
+- (_Bool)isAutosizingTextBox;
 - (_Bool)isOpenPath;
 - (_Bool)isLine;
 - (_Bool)shouldFlipLineEndsForStyle:(id)arg1 isStyleTailEndOnLeft:(int)arg2;
@@ -63,9 +64,9 @@ __attribute__((visibility("hidden")))
 - (id)initWithContext:(id)arg1 geometry:(id)arg2 style:(id)arg3 pathSource:(id)arg4;
 - (void)p_correctNearZeroWidthLines;
 - (void)p_correctLineSegmentGeometry;
-- (void)saveToArchive:(struct ShapeArchive *)arg1 archiver:(id)arg2;
+-     // Error parsing type: v32@0:8^{ShapeArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{DrawableArchive}^{Reference}^{PathSourceArchive}^{LineEndArchive}^{LineEndArchive}f}16@24, name: saveToArchive:archiver:
 - (void)saveToArchiver:(id)arg1;
-- (void)loadFromArchive:(const struct ShapeArchive *)arg1 unarchiver:(id)arg2;
+-     // Error parsing type: v32@0:8r^{ShapeArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{DrawableArchive}^{Reference}^{PathSourceArchive}^{LineEndArchive}^{LineEndArchive}f}16@24, name: loadFromArchive:unarchiver:
 - (void)loadFromUnarchiver:(id)arg1;
 - (int)elementKind;
 - (_Bool)isEquivalentForCrossDocumentPasteMasterComparison:(id)arg1;

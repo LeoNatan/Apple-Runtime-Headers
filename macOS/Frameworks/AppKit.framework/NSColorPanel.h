@@ -46,7 +46,6 @@
     BOOL _stillInitializing;
     BOOL _hasModalAppearance;
     id _opacityTextController;
-    id _observedAppearanceTarget;
 }
 
 + (BOOL)_dragColor:(id)arg1 withEvent:(id)arg2 fromView:(id)arg3 source:(id)arg4;
@@ -152,7 +151,6 @@
 - (void)dealloc;
 - (void)setHidesOnDeactivate:(BOOL)arg1;
 - (void)_colorPanelDidLoad;
-- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (id)initWithContentRect:(struct CGRect)arg1 styleMask:(unsigned long long)arg2 backing:(unsigned long long)arg3 defer:(BOOL)arg4;
 - (id)init;
 - (void)__setNumberOfRowsToToggleVisibleInColorSwatch:(long long)arg1;

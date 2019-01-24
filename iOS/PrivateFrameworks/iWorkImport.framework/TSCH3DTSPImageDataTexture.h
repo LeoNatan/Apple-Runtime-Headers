@@ -23,7 +23,7 @@ __attribute__((visibility("hidden")))
 + (id)textureWithImageData:(id)arg1 optimizedMipmapData:(id)arg2 textureSetId:(id)arg3 imageName:(id)arg4;
 + (id)textureWithImageData:(id)arg1 colorFill:(id)arg2 textureSetId:(id)arg3 imageName:(id)arg4;
 + (id)textureWithImageData:(id)arg1 colorFill:(id)arg2 optimizedMipmapData:(id)arg3 textureSetId:(id)arg4 imageName:(id)arg5;
-+ (id)instanceWithArchive:(const struct Chart3DTSPImageDataTextureArchive *)arg1 unarchiver:(id)arg2;
++     // Error parsing type: @32@0:8r^{Chart3DTSPImageDataTextureArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{Reference}^{Reference}^{DataReference}^{DataReference}}16@24, name: instanceWithArchive:unarchiver:
 @property(readonly, nonatomic) TSCH3DTSPImageData *data; // @synthesize data=mData;
 - (void)setChanged:(_Bool)arg1;
 - (id)optimizedMipmapBuffer;
@@ -36,8 +36,8 @@ __attribute__((visibility("hidden")))
 - (_Bool)isEqual:(id)arg1;
 - (void)dealloc;
 - (id)initWithImageData:(id)arg1 colorFill:(id)arg2 optimizedMipmapData:(id)arg3 textureSetId:(id)arg4 imageName:(id)arg5;
-- (void)saveToArchive:(struct Chart3DTSPImageDataTextureArchive *)arg1 archiver:(id)arg2;
-- (id)initWithArchive:(const struct Chart3DTSPImageDataTextureArchive *)arg1 unarchiver:(id)arg2;
+-     // Error parsing type: v32@0:8^{Chart3DTSPImageDataTextureArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{Reference}^{Reference}^{DataReference}^{DataReference}}16@24, name: saveToArchive:archiver:
+-     // Error parsing type: @32@0:8r^{Chart3DTSPImageDataTextureArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{Reference}^{Reference}^{DataReference}^{DataReference}}16@24, name: initWithArchive:unarchiver:
 - (void)p_setOptimizedMipMapData:(id)arg1;
 
 @end

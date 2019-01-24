@@ -11,7 +11,7 @@
 - (_Bool)isObjectInDocument:(TSPObject *)arg1;
 - (TSPObjectUUIDMap *)objectUUIDMap;
 - (_Bool)canSetObjectUUIDForObject:(TSPObject *)arg1;
-- (NSUUID *)newObjectUUIDForObject:(TSPObject *)arg1;
+- (NSUUID *)newObjectUUIDForObject:(TSPObject *)arg1 baseOffset:(unsigned long long)arg2 ignoringBaseUUIDForObjectUUID:(_Bool)arg3;
 - (long long)newObjectIdentifier;
 - (void)willModifyObject:(TSPObject *)arg1 duringReadOperation:(_Bool)arg2;
 - (void)endIgnoringModificationsForObject:(TSPObject *)arg1;

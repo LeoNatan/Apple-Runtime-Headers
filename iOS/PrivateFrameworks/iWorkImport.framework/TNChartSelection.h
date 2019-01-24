@@ -20,8 +20,8 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) struct TSCERangeRef reference; // @synthesize reference=_reference;
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (void)saveToArchive:(struct ChartSelectionArchive *)arg1 archiver:(id)arg2;
-- (id)initFromArchive:(const struct ChartSelectionArchive *)arg1 unarchiver:(id)arg2;
+-     // Error parsing type: v32@0:8^{ChartSelectionArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{RangeReferenceArchive}^{ChartSelectionArchive}^{Reference}^{DrawableSelectionArchive}}16@24, name: saveToArchive:archiver:
+-     // Error parsing type: @32@0:8r^{ChartSelectionArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{RangeReferenceArchive}^{ChartSelectionArchive}^{Reference}^{DrawableSelectionArchive}}16@24, name: initFromArchive:unarchiver:
 - (_Bool)returnChartFrameForAutoscroll;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isEqual:(id)arg1;

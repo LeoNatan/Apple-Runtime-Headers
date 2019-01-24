@@ -8,7 +8,7 @@
 
 #import <Sharing/AVAudioPlayerDelegate-Protocol.h>
 
-@class ACAccount, ACAccountStore, APCListener, AVAudioPlayer, HMHome, NSArray, NSDictionary, NSString, SFDevice, SFDeviceOperationWiFiSetup, SFSession, SSAccount;
+@class ACAccount, ACAccountStore, APCListener, AVAudioPlayer, HMHome, NSArray, NSDictionary, NSString, SFDevice, SFDeviceOperationCDPSetup, SFDeviceOperationWiFiSetup, SFSession, SSAccount;
 @protocol OS_dispatch_queue, OS_dispatch_source;
 
 @interface SFDeviceSetupB238Session : NSObject <AVAudioPlayerDelegate>
@@ -97,6 +97,10 @@
     SFDeviceOperationWiFiSetup *_wifiSetupOperation;
     int _wifiSetupState;
     double _wifiSetupSecs;
+    BOOL _cdpEnabled;
+    SFDeviceOperationCDPSetup *_cdpSetupOperation;
+    double _cdpSetupSecs;
+    int _cdpState;
     BOOL _hasExistingHomePod;
     int _finishState;
     unsigned long long _finishStartTicks;
@@ -104,6 +108,7 @@
     double _iTunesWaitSecs;
     double _mediaSystemWaitSecs;
     double _totalSecs;
+    BOOL _prefBonjourTest;
     BOOL _prefForceSiriGreeting;
     BOOL _liveOn;
     BOOL _pauseAfterPreAuth;
@@ -176,6 +181,7 @@
 - (void)_runFinishResponse:(id)arg1 error:(id)arg2;
 - (void)_runFinishRequest;
 - (int)_runFinishStart;
+- (int)_runCDPSetup;
 - (int)_runWiFiSetup;
 - (int)_runAppleMusic;
 - (void)_runBasicConfigReceiveResponse:(id)arg1 error:(id)arg2;

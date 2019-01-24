@@ -15,9 +15,9 @@
 
 @interface NTKComplicationDisplayWrapperView : UIControl <NTKComplicationDisplayObserver, NTKControl, NTKTimeTravel>
 {
-    UIView *_currentComplicationView;
-    UIView *_nextComplicationView;
-    UIView *_deferredComplicationView;
+    UIView<NTKComplicationDisplay> *_currentComplicationView;
+    UIView<NTKComplicationDisplay> *_nextComplicationView;
+    UIView<NTKComplicationDisplay> *_deferredComplicationView;
     UIView *_clipView;
     UIView *_earlierContainerView;
     UIView *_laterContainerView;

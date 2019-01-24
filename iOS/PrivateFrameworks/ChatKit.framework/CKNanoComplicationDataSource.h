@@ -6,26 +6,36 @@
 
 #import <objc/NSObject.h>
 
-@class IMChat;
+@class CKNanoComplicationSpecs, IMChat, NSString;
 
 @interface CKNanoComplicationDataSource : NSObject
 {
     _Bool _messageRecdNotification;
+    NSString *_complicationApplicationIdentifier;
     IMChat *_lastReceivedChat;
     long long _family;
     long long _unreadMessageCount;
+    CKNanoComplicationSpecs *_specs;
 }
 
-+ (id)_imageProviderWithForegroundName:(id)arg1 unreadCount:(long long)arg2 family:(long long)arg3 locked:(_Bool)arg4;
-+ (id)_templateForFamily:(long long)arg1 unreadMessageCount:(long long)arg2 compact:(_Bool)arg3 locked:(_Bool)arg4;
++ (id)staticTemplateForFamily:(long long)arg1 device:(id)arg2;
 + (id)staticTemplateForFamily:(long long)arg1 compact:(_Bool)arg2;
+@property(readonly, nonatomic) CKNanoComplicationSpecs *specs; // @synthesize specs=_specs;
 @property(nonatomic) _Bool messageRecdNotification; // @synthesize messageRecdNotification=_messageRecdNotification;
 @property(nonatomic) long long unreadMessageCount; // @synthesize unreadMessageCount=_unreadMessageCount;
 @property(nonatomic) long long family; // @synthesize family=_family;
 @property(retain, nonatomic) IMChat *lastReceivedChat; // @synthesize lastReceivedChat=_lastReceivedChat;
+@property(readonly, copy, nonatomic) NSString *complicationApplicationIdentifier; // @synthesize complicationApplicationIdentifier=_complicationApplicationIdentifier;
 - (void).cxx_destruct;
+- (id)drawUnreadCount:(unsigned long long)arg1 ontoImage:(id)arg2 family:(long long)arg3 template:(id)arg4;
+- (id)_textProviderForUnreadCount:(unsigned long long)arg1 locked:(_Bool)arg2 shortText:(_Bool)arg3 tintColor:(id)arg4;
+- (id)_fullColorImageProviderForUnreadCount:(unsigned long long)arg1 family:(long long)arg2 template:(id)arg3;
+- (void)_setDefaultBackgroundForTemplate:(id)arg1;
+- (id)_richTemplateForFamily:(long long)arg1 unreadCount:(unsigned long long)arg2 locked:(_Bool)arg3;
+- (id)_imageProviderWithForegroundName:(id)arg1 unreadCount:(long long)arg2 family:(long long)arg3 locked:(_Bool)arg4;
+- (id)_templateForFamily:(long long)arg1 unreadMessageCount:(long long)arg2 locked:(_Bool)arg3;
 - (id)initWithComplication:(id)arg1 family:(long long)arg2;
-- (void)dealloc;
+- (id)initWithComplication:(id)arg1 family:(long long)arg2 forDevice:(id)arg3;
 
 @end
 

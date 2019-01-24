@@ -14,14 +14,18 @@
 @interface PBSMediaRemoteServiceProxy : NSObject <PBSMediaRemoteServiceInterface>
 {
     _Bool _volumeControlAvailable;
+    _Bool _reliableTVAVRPowerControlAvailable;
     int _volumeControlNotifyToken;
+    int _TVAVRPowerControlNotifyToken;
     id <_PBSMediaRemoteServiceInternalInterface> _remoteProxy;
     NSMapTable *_pendingCompletionHandlers;
 }
 
-+ (_Bool)_volumeControlAvailabilityStateForToken:(int)arg1;
++ (_Bool)_booleanStateForToken:(int)arg1;
 @property(readonly, nonatomic) NSMapTable *pendingCompletionHandlers; // @synthesize pendingCompletionHandlers=_pendingCompletionHandlers;
 @property(retain, nonatomic) id <_PBSMediaRemoteServiceInternalInterface> remoteProxy; // @synthesize remoteProxy=_remoteProxy;
+@property(nonatomic) _Bool reliableTVAVRPowerControlAvailable; // @synthesize reliableTVAVRPowerControlAvailable=_reliableTVAVRPowerControlAvailable;
+@property(nonatomic) int TVAVRPowerControlNotifyToken; // @synthesize TVAVRPowerControlNotifyToken=_TVAVRPowerControlNotifyToken;
 @property(nonatomic) _Bool volumeControlAvailable; // @synthesize volumeControlAvailable=_volumeControlAvailable;
 @property(nonatomic) int volumeControlNotifyToken; // @synthesize volumeControlNotifyToken=_volumeControlNotifyToken;
 - (void).cxx_destruct;
@@ -33,6 +37,7 @@
 - (void)stopSiriWithContext:(id)arg1;
 - (void)startSiriWithContext:(id)arg1;
 - (void)activateSiriWithContext:(id)arg1;
+- (void)_handleTVAVRPowerControlAvailableDidChange;
 - (void)_handleVolumeControlAvailableDidChange;
 - (void)handleConnectionInterruption:(id)arg1;
 - (void)dealloc;

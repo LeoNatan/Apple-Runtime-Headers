@@ -24,15 +24,16 @@
     _Bool _factoryPairingEnabled;
 }
 
++ (id)_retrievePairedRemoteBDAddress;
 + (id)sharedInstance;
 @property(nonatomic) _Bool factoryPairingEnabled; // @synthesize factoryPairingEnabled=_factoryPairingEnabled;
 @property(nonatomic) _Bool autoConnectWithImmediateProximityPeripheralsEnabled; // @synthesize autoConnectWithImmediateProximityPeripheralsEnabled=_autoConnectWithImmediateProximityPeripheralsEnabled;
 - (void).cxx_destruct;
 - (void)_startScanning;
-- (id)_retrievePairedRemoteBDAddress;
 - (void)_unblockConnectionQueueForPeripheral:(id)arg1;
 - (void)_connectPeripheral:(id)arg1;
 - (_Bool)_shouldConnectDerpModePeripheral:(id)arg1 withAdvertisementData:(id)arg2;
+- (id)configurationInfo;
 - (_Bool)shouldIgnorePeripheral:(id)arg1;
 - (_Bool)isHomeKitPeripheral:(id)arg1;
 - (_Bool)isAppleTVRemote:(id)arg1;

@@ -8,7 +8,7 @@
 
 #import <NewsTransport/NSCopying-Protocol.h>
 
-@class NSData, NSMutableArray, NSString, NTPBAlternateHeadline, NTPBWidgetEngagement;
+@class NSData, NSMutableArray, NSString, NTPBAlternateHeadline, NTPBChannelData, NTPBIssueData, NTPBIssueExposureData, NTPBIssueViewData, NTPBWidgetEngagement;
 
 @interface NTPBArticleHostViewExposure : PBCodable <NSCopying>
 {
@@ -43,6 +43,7 @@
     int _breakingNewsArticlePosition;
     NSString *_campaignId;
     NSString *_campaignType;
+    NTPBChannelData *_channelData;
     int _characterCount;
     int _coverArticleDisplayRank;
     int _coverArticleFeatureType;
@@ -70,6 +71,9 @@
     NSString *_iadNativeCampaign;
     NSString *_iadNativeCampaignAd;
     NSString *_iadNativeLine;
+    NTPBIssueData *_issueData;
+    NTPBIssueExposureData *_issueExposureData;
+    NTPBIssueViewData *_issueViewData;
     NSString *_language;
     int _loadFailureReason;
     int _maxActiveTimeSpent;
@@ -97,6 +101,7 @@
     NSString *_referencedArticleId;
     NSString *_referringSourceApplication;
     NSString *_referringUrl;
+    int _role;
     NSString *_sectionHeadlineId;
     NSString *_sourceBinId;
     NSString *_sourceChannelId;
@@ -138,12 +143,16 @@
     _Bool _isVideoInFeed;
     _Bool _subscriptionOnlyArticle;
     _Bool _viewFromNotificationDirectOpen;
-    CDStruct_120998a0 _has;
+    CDStruct_803929fe _has;
 }
 
 + (Class)surfacedByTagIdsType;
 + (Class)fractionalCohortMembershipType;
 + (Class)namedEntitiesType;
+@property(retain, nonatomic) NTPBChannelData *channelData; // @synthesize channelData=_channelData;
+@property(retain, nonatomic) NTPBIssueViewData *issueViewData; // @synthesize issueViewData=_issueViewData;
+@property(retain, nonatomic) NTPBIssueExposureData *issueExposureData; // @synthesize issueExposureData=_issueExposureData;
+@property(retain, nonatomic) NTPBIssueData *issueData; // @synthesize issueData=_issueData;
 @property(nonatomic) int rankInVideoPlaylist; // @synthesize rankInVideoPlaylist=_rankInVideoPlaylist;
 @property(retain, nonatomic) NTPBAlternateHeadline *alternateHeadline; // @synthesize alternateHeadline=_alternateHeadline;
 @property(nonatomic) double subscribedChannelCtr; // @synthesize subscribedChannelCtr=_subscribedChannelCtr;
@@ -255,6 +264,12 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(readonly, nonatomic) _Bool hasChannelData;
+@property(nonatomic) _Bool hasRole;
+@property(nonatomic) int role; // @synthesize role=_role;
+@property(readonly, nonatomic) _Bool hasIssueViewData;
+@property(readonly, nonatomic) _Bool hasIssueExposureData;
+@property(readonly, nonatomic) _Bool hasIssueData;
 @property(nonatomic) _Bool hasRankInVideoPlaylist;
 @property(readonly, nonatomic) _Bool hasAlternateHeadline;
 @property(nonatomic) _Bool hasSubscribedChannelCtr;

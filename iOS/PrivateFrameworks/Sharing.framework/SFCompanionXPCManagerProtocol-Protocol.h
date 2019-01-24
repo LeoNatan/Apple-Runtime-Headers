@@ -7,14 +7,12 @@
 #import <Sharing/NSObject-Protocol.h>
 
 @class NSDictionary, NSString;
-@protocol SFActivityAdvertiserClient, SFCompanionServiceManagerClient, SFContinuityScannerClient;
+@protocol SFCompanionServiceManagerClient;
 
 @protocol SFCompanionXPCManagerProtocol <NSObject>
 - (void)appleAccountSignedOut;
 - (void)appleAccountSignedIn;
 - (void)createUnlockManagerWithReply:(void (^)(id <SFUnlockProtocol>, NSError *))arg1;
-- (void)createContinuityScannerForClientProxy:(id <SFContinuityScannerClient>)arg1 reply:(void (^)(id <SFContinuityScannerProtocol>, NSError *))arg2;
-- (void)createActivityAdvertiserForClientProxy:(id <SFActivityAdvertiserClient>)arg1 reply:(void (^)(id <SFActivityAdvertiserProtocol>, NSError *))arg2;
 - (void)createStreamsForMessage:(NSDictionary *)arg1 reply:(void (^)(NSFileHandle *, NSError *))arg2;
 - (void)createCompanionServiceManagerWithIdentifier:(NSString *)arg1 clientProxy:(id <SFCompanionServiceManagerClient>)arg2 reply:(void (^)(id <SFCompanionServiceManagerProtocol>, NSString *, NSString *, NSString *, NSError *))arg3;
 @end

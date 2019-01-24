@@ -21,13 +21,16 @@
 @property(copy, nonatomic) NSSet *installedBundleIDs; // @synthesize installedBundleIDs=_installedBundleIDs;
 @property(copy, nonatomic) NSArray *chooseBundleIDs; // @synthesize chooseBundleIDs=_chooseBundleIDs;
 - (void).cxx_destruct;
+- (void)_selectInitialSelectedIdentifiersIfNeeded;
 - (id)appSpecifiersForBundleIDs:(id)arg1;
 - (void)tableView:(id)arg1 didDeselectRowAtIndexPath:(id)arg2;
+- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (void)addButtonTapped:(id)arg1;
 - (id)createChooseAppsSpecifiers;
 - (id)specifiers;
 - (_Bool)shouldReloadSpecifiersOnResume;
 - (void)viewWillAppear:(_Bool)arg1;
+- (id)initWithSelectedIdentifiers:(id)arg1 creatingNewAllowance:(_Bool)arg2;
 
 @end
 

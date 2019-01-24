@@ -46,6 +46,7 @@ __attribute__((visibility("hidden")))
 - (void)openRewritingTransaction;
 - (struct TSUModelCellRect)mergeRangeAtIndex:(unsigned long long)arg1;
 - (id)description;
+@property(readonly, nonatomic) _Bool isEmpty;
 - (void)clear;
 - (void)dealloc;
 - (id)initWithMergeOwner:(id)arg1;

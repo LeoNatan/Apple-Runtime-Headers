@@ -14,12 +14,7 @@
     Class _navigationBarClass;
     Class _chatControllerClass;
     Class _businessChatControllerClass;
-    UIImage *_emojiReplyImage;
-    UIImage *_dictationReplyImage;
     UIImage *_messageReplyImage;
-    UIImage *_digitalTouchReplyImage;
-    UIImage *_arouetReplyImage;
-    UIImage *_surfReplyImage;
     UIImage *_orbComposeImage;
     UIImage *_orbReplyImage;
     UIImage *_orbDetailsImage;
@@ -47,12 +42,7 @@
 @property(readonly, nonatomic) UIImage *orbDetailsImage; // @synthesize orbDetailsImage=_orbDetailsImage;
 @property(readonly, nonatomic) UIImage *orbReplyImage; // @synthesize orbReplyImage=_orbReplyImage;
 @property(readonly, nonatomic) UIImage *orbComposeImage; // @synthesize orbComposeImage=_orbComposeImage;
-@property(readonly, nonatomic) UIImage *surfReplyImage; // @synthesize surfReplyImage=_surfReplyImage;
-@property(readonly, nonatomic) UIImage *arouetReplyImage; // @synthesize arouetReplyImage=_arouetReplyImage;
-@property(readonly, nonatomic) UIImage *digitalTouchReplyImage; // @synthesize digitalTouchReplyImage=_digitalTouchReplyImage;
 @property(readonly, nonatomic) UIImage *messageReplyImage; // @synthesize messageReplyImage=_messageReplyImage;
-@property(readonly, nonatomic) UIImage *dictationReplyImage; // @synthesize dictationReplyImage=_dictationReplyImage;
-@property(readonly, nonatomic) UIImage *emojiReplyImage; // @synthesize emojiReplyImage=_emojiReplyImage;
 @property(readonly, nonatomic) Class businessChatControllerClass; // @synthesize businessChatControllerClass=_businessChatControllerClass;
 @property(readonly, nonatomic) Class chatControllerClass; // @synthesize chatControllerClass=_chatControllerClass;
 @property(readonly, nonatomic) Class navigationBarClass; // @synthesize navigationBarClass=_navigationBarClass;

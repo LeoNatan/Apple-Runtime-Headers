@@ -10,11 +10,13 @@
 + (id)fc_dictionaryByAddingEntriesFromDictionary:(id)arg1 toDictionary:(id)arg2;
 + (id)fc_dictionaryWithKeys:(id)arg1 valueWithIndexBlock:(CDUnknownBlockType)arg2;
 + (id)fc_dictionaryWithKeys:(id)arg1 valueBlock:(CDUnknownBlockType)arg2;
++ (id)fc_dictionaryWithKeys:(id)arg1 allowingNil:(_Bool)arg2 valueBlock:(CDUnknownBlockType)arg3;
 + (id)fc_dictionaryWithObjects:(id)arg1 keyBlock:(CDUnknownBlockType)arg2;
 + (id)fc_dictionaryFromArray:(id)arg1 keyBlock:(CDUnknownBlockType)arg2 valueBlock:(CDUnknownBlockType)arg3;
 + (id)fc_dictionaryFromJSON:(id)arg1;
 + (id)fc_dictionaryFromJSON:(id)arg1 error:(id *)arg2;
 + (id)fc_dictionary:(CDUnknownBlockType)arg1;
+- (id)fc_safeObjectForKey:(id)arg1;
 - (id)fc_dictionaryByMergingDictionary:(id)arg1 withValueCombiner:(CDUnknownBlockType)arg2;
 - (id)fc_jsonString;
 - (id)fc_jsonStringWithObjectHandler:(CDUnknownBlockType)arg1 arrayObjectHandler:(CDUnknownBlockType)arg2 dictionaryKeyHandler:(CDUnknownBlockType)arg3 dictionaryValueHandler:(CDUnknownBlockType)arg4;

@@ -9,7 +9,7 @@
 #import <Sharing/SBSRemoteAlertHandleObserver-Protocol.h>
 
 @class NSDate, NSString, SBSRemoteAlertHandle, SFChargingUICoordinator, SFWirelessChargingMonitor;
-@protocol OS_dispatch_queue;
+@protocol OS_dispatch_queue, OS_dispatch_source;
 
 @interface SFChargingCenterClient : NSObject <SBSRemoteAlertHandleObserver>
 {
@@ -19,6 +19,8 @@
     int _triggerEngagementToken;
     _Bool _forcePill;
     _Bool _triggerUIForInBandComms;
+    double _previousPhoneChargeLevel;
+    long long _processedErrorFlags;
     NSObject<OS_dispatch_queue> *_dispatchQueue;
     SBSRemoteAlertHandle *_currentRemoteHandle;
     CDUnknownBlockType _visualInformationRequestHandler;
@@ -26,6 +28,7 @@
     NSObject<OS_dispatch_queue> *_workQueue;
     SFWirelessChargingMonitor *_monitor;
     SFChargingUICoordinator *_uiCoordinator;
+    NSObject<OS_dispatch_source> *_watchUITimer;
     NSString *_mostRecentSuccessfullActivationReason;
     NSDate *_mostRecentDeactivationDate;
 }
@@ -34,6 +37,7 @@
 + (void)notificationFeedbackConfigurationWithSound:(_Bool)arg1 andHaptic:(_Bool)arg2 forFeedbackType:(long long)arg3 completion:(CDUnknownBlockType)arg4;
 @property(retain, nonatomic) NSDate *mostRecentDeactivationDate; // @synthesize mostRecentDeactivationDate=_mostRecentDeactivationDate;
 @property(retain, nonatomic) NSString *mostRecentSuccessfullActivationReason; // @synthesize mostRecentSuccessfullActivationReason=_mostRecentSuccessfullActivationReason;
+@property(retain, nonatomic) NSObject<OS_dispatch_source> *watchUITimer; // @synthesize watchUITimer=_watchUITimer;
 @property(retain, nonatomic) SFChargingUICoordinator *uiCoordinator; // @synthesize uiCoordinator=_uiCoordinator;
 @property(retain, nonatomic) SFWirelessChargingMonitor *monitor; // @synthesize monitor=_monitor;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
@@ -43,13 +47,14 @@
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
 - (void).cxx_destruct;
 - (id)onqueue_dataRepresentationForInformationProvider:(id)arg1;
-- (void)onqueue_updateConfigurationContext:(id)arg1 withInformationProvider:(id)arg2;
-- (void)onqueue_updateConfigurationContext:(id)arg1 withKeyChargingDevice:(id)arg2;
-- (void)onqueue_updateConfigurationContextWithPowerSourcesData:(id)arg1;
+- (void)onqueue_updateActivationContext:(id)arg1 withInformationProvider:(id)arg2;
+- (void)onqueue_updateActivationContext:(id)arg1 withKeyChargingDevice:(id)arg2;
+- (void)onqueue_updateActivationContextWithPowerSourcesData:(id)arg1;
 - (void)remoteAlertHandleDidDeactivate:(id)arg1;
 - (void)contextsForRemoteAlertActivationWithReason:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)onqueue_sendPresentationRequestForChargingDevice:(id)arg1 removed:(_Bool)arg2;
+- (void)onqueue_sendPresentationRequestForChargingDevice:(id)arg1;
 - (void)onqueue_presentationRequestContextsForReason:(id)arg1 withHandler:(CDUnknownBlockType)arg2;
+- (void)onqueue_canPresentForDevice:(id)arg1 handler:(CDUnknownBlockType)arg2;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 @property(readonly, nonatomic) long long numberOfDevicesCharging;
 - (void)onqueue_invalidate;
@@ -61,6 +66,7 @@
 - (void)createWorkQueue;
 - (void)setUpMonitor;
 - (void)listenToNotifications;
+- (void)restorePersistedErrorNotifications;
 - (void)checkDefaults;
 - (id)init;
 

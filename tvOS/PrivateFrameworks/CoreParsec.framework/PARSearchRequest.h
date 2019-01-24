@@ -30,6 +30,7 @@
 @property(copy, nonatomic) NSDictionary *topics; // @synthesize topics=_topics;
 @property(copy, nonatomic) NSString *queryString; // @synthesize queryString=_queryString;
 - (void).cxx_destruct;
+- (unsigned int)nwActivityLabel;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 

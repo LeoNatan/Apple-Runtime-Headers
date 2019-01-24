@@ -30,6 +30,7 @@
 + (_Bool)shouldIgnoreResourceTypeOnUpload:(unsigned long long)arg1;
 + (id)shortDescriptionForResourceType:(unsigned long long)arg1;
 + (id)descriptionForResourceType:(unsigned long long)arg1;
++ (unsigned long long)resourceTypeFromShortDecription:(id)arg1;
 + (id)normalizedResourcesFromResources:(id)arg1 resourcePerResourceType:(id *)arg2;
 + (_Bool)cplShouldIgnorePropertyForEquality:(id)arg1;
 + (_Bool)supportsSecureCoding;

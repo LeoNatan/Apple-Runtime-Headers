@@ -39,7 +39,6 @@
 - (void)performNoMoreOftenInSecondsThan:(double)arg1 name:(id)arg2 activityBlock:(CDUnknownBlockType)arg3;
 - (id)activityThrottler;
 - (id)initWithStore:(id)arg1 namespace:(id)arg2;
-- (id)initWithStore:(id)arg1;
 
 @end
 

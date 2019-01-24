@@ -10,7 +10,7 @@
 #import <SearchFoundation/NSSecureCoding-Protocol.h>
 #import <SearchFoundation/SFDescriptionCardSection-Protocol.h>
 
-@class NSArray, NSData, NSDictionary, NSNumber, NSString, NSURL, SFCard, SFColor, SFImage, SFText;
+@class NSArray, NSData, NSDictionary, NSNumber, NSString, NSURL, SFCard, SFColor, SFImage, SFText, SFUserReportRequest;
 
 @interface SFDescriptionCardSection : SFTitleCardSection <SFDescriptionCardSection, NSSecureCoding, NSCopying>
 {
@@ -105,6 +105,7 @@
 @property(copy, nonatomic) NSArray *parameterKeyPaths;
 @property(copy, nonatomic) NSString *resultIdentifier;
 @property(readonly) Class superclass;
+@property(retain, nonatomic) SFUserReportRequest *userReportRequest;
 
 @end
 

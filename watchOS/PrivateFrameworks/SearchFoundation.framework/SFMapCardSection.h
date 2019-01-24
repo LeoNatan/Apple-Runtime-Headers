@@ -10,7 +10,7 @@
 #import <SearchFoundation/NSSecureCoding-Protocol.h>
 #import <SearchFoundation/SFMapCardSection-Protocol.h>
 
-@class NSArray, NSData, NSDictionary, NSString, SFCard, SFColor, SFLatLng, SFMapRegion;
+@class NSArray, NSData, NSDictionary, NSString, SFCard, SFColor, SFLatLng, SFMapRegion, SFUserReportRequest;
 
 @interface SFMapCardSection : SFCardSection <SFMapCardSection, NSSecureCoding, NSCopying>
 {
@@ -88,6 +88,7 @@
 @property(copy, nonatomic) NSArray *parameterKeyPaths;
 @property(copy, nonatomic) NSString *resultIdentifier;
 @property(readonly) Class superclass;
+@property(retain, nonatomic) SFUserReportRequest *userReportRequest;
 
 @end
 

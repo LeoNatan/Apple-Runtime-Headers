@@ -27,6 +27,7 @@
 @property(readonly, nonatomic) id <SXComponent> leadingComponent; // @synthesize leadingComponent=_leadingComponent;
 - (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
+- (_Bool)isEqualToMarker:(id)arg1;
 - (id)initWithLeadingComponent:(id)arg1 trailingComponent:(id)arg2 approximateLocation:(struct CGPoint)arg3 path:(id)arg4;
 
 // Remaining properties

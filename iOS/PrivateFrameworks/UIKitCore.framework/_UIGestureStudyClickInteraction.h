@@ -7,19 +7,18 @@
 #import <objc/NSObject.h>
 
 #import <UIKitCore/UIInteraction-Protocol.h>
-#import <UIKitCore/_UIClickInteractionProgressProvidingDelegate-Protocol.h>
+#import <UIKitCore/_UIClickInteractionDriverDelegate-Protocol.h>
 #import <UIKitCore/_UIGestureStudyParticipating-Protocol.h>
 
 @class NSString, UIView;
-@protocol _UIClickInteractionProgressProviding;
+@protocol _UIClickInteractionDriving;
 
 __attribute__((visibility("hidden")))
-@interface _UIGestureStudyClickInteraction : NSObject <_UIClickInteractionProgressProvidingDelegate, UIInteraction, _UIGestureStudyParticipating>
+@interface _UIGestureStudyClickInteraction : NSObject <_UIClickInteractionDriverDelegate, UIInteraction, _UIGestureStudyParticipating>
 {
     _Bool _usesForce;
     UIView *_view;
-    id <_UIClickInteractionProgressProviding> _progressProvider;
-    long long _currentState;
+    id <_UIClickInteractionDriving> _progressProvider;
     id _target;
     SEL _action;
     double _startTimestamp;
@@ -31,17 +30,15 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool usesForce; // @synthesize usesForce=_usesForce;
 @property(nonatomic) SEL action; // @synthesize action=_action;
 @property(nonatomic) __weak id target; // @synthesize target=_target;
-@property(nonatomic) long long currentState; // @synthesize currentState=_currentState;
-@property(retain, nonatomic) id <_UIClickInteractionProgressProviding> progressProvider; // @synthesize progressProvider=_progressProvider;
+@property(retain, nonatomic) id <_UIClickInteractionDriving> progressProvider; // @synthesize progressProvider=_progressProvider;
 @property(readonly, nonatomic) __weak UIView *view; // @synthesize view=_view;
 - (void).cxx_destruct;
 @property(readonly, nonatomic) double movement;
 @property(readonly, nonatomic) double duration;
 - (struct CGPoint)locationInCoordinateSpace:(id)arg1;
 @property(readonly, nonatomic) NSString *eventName;
-- (void)clickProgressProvider:(id)arg1 didUpdateWithOverallProgress:(double)arg2 currentState:(long long)arg3;
-- (void)clickProgressProviderDidEnd:(id)arg1;
-- (void)clickProgressProviderDidBegin:(id)arg1;
+- (void)clickDriver:(id)arg1 didPerformStateChange:(unsigned long long)arg2;
+- (_Bool)clickDriverShouldBegin:(id)arg1;
 - (void)didMoveToView:(id)arg1;
 - (void)willMoveToView:(id)arg1;
 @property(readonly, copy) NSString *description;

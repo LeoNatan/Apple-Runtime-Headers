@@ -65,40 +65,11 @@ struct Boolean {
     struct WKRetainPtr<const void *> m_webKit2Object;
 };
 
-struct BrowserPageContextMenuClient {
-    CDUnknownFunctionPointerType *_field1;
-    id _field2;
-};
-
 struct BrowserPageDiagnosticLoggingClient;
 
 struct BrowserPageFindClient;
 
 struct BrowserPageFormClient;
-
-struct BrowserPageNavigationClient {
-    CDUnknownFunctionPointerType *_field1;
-    CDUnknownFunctionPointerType *_field2;
-    id _field3;
-    id _field4;
-    struct KeyValueObserver _field5;
-    id _field6;
-    id _field7;
-    id _field8;
-    id _field9;
-    _Bool _field10;
-    unsigned long long _field11;
-    id _field12;
-    unsigned long long _field13;
-    _Bool _field14;
-    _Bool _field15;
-    id _field16;
-    _Bool _field17;
-    CDUnknownBlockType _field18;
-    id _field19;
-};
-
-struct BrowserPageUIClient;
 
 struct BrowserTab {
     CDUnknownFunctionPointerType *_field1;
@@ -186,14 +157,15 @@ struct CompletionListAddressBookNonNameFieldAutoFillCommand {
     id _field3;
     _Bool _field4;
     id _field5;
-    struct CommandTarget *_field6;
-    int _field7;
-    struct Vector<std::__1::pair<NSString *, NSString *>, 0, WTF::CrashOnOverflow, 16> _field8;
-    id _field9;
+    id _field6;
+    struct CommandTarget *_field7;
+    int _field8;
+    struct Vector<std::__1::pair<NSString *, NSString *>, 0, WTF::CrashOnOverflow, 16> _field9;
     id _field10;
     id _field11;
     id _field12;
     id _field13;
+    id _field14;
 };
 
 struct CompletionListAddressBookRecentlyUsedAutoFillCommand {
@@ -202,15 +174,16 @@ struct CompletionListAddressBookRecentlyUsedAutoFillCommand {
     id _field3;
     _Bool _field4;
     id _field5;
-    struct CommandTarget *_field6;
-    int _field7;
-    struct Vector<std::__1::pair<NSString *, NSString *>, 0, WTF::CrashOnOverflow, 16> _field8;
-    id _field9;
+    id _field6;
+    struct CommandTarget *_field7;
+    int _field8;
+    struct Vector<std::__1::pair<NSString *, NSString *>, 0, WTF::CrashOnOverflow, 16> _field9;
     id _field10;
     id _field11;
     id _field12;
     id _field13;
     id _field14;
+    id _field15;
 };
 
 struct CompletionListItem {
@@ -219,10 +192,21 @@ struct CompletionListItem {
     id _field3;
     _Bool _field4;
     id _field5;
+    id _field6;
 };
 
 struct Context {
     struct WKRetainPtr<const void *> m_webKit2Object;
+};
+
+struct CreditCardCompletionListItem {
+    CDUnknownFunctionPointerType *_field1;
+    unsigned int _field2;
+    id _field3;
+    _Bool _field4;
+    id _field5;
+    id _field6;
+    id _field7;
 };
 
 struct Data {
@@ -438,8 +422,9 @@ struct FormAutoFillCompletionListItem {
     _Bool _field4;
     id _field5;
     id _field6;
-    int _field7;
+    id _field7;
     int _field8;
+    int _field9;
 };
 
 struct FormCompletionController;
@@ -469,6 +454,10 @@ struct GeolocationController {
 };
 
 struct GeolocationManager;
+
+struct GeolocationProvider {
+    CDUnknownFunctionPointerType *_field1;
+};
 
 struct HashMap<Safari::CF::String, Safari::Extension *, Safari::CF::ObjectSubclassHash<Safari::CF::String>, WTF::HashTraits<Safari::CF::String>, WTF::HashTraits<Safari::Extension *>> {
     struct HashTable<Safari::CF::String, WTF::KeyValuePair<Safari::CF::String, Safari::Extension *>, WTF::KeyValuePairKeyExtractor<WTF::KeyValuePair<Safari::CF::String, Safari::Extension *>>, Safari::CF::ObjectSubclassHash<Safari::CF::String>, WTF::HashMap<Safari::CF::String, Safari::Extension *, Safari::CF::ObjectSubclassHash<Safari::CF::String>, WTF::HashTraits<Safari::CF::String>, WTF::HashTraits<Safari::Extension *>>::KeyValuePairTraits, WTF::HashTraits<Safari::CF::String>> _field1;
@@ -544,10 +533,6 @@ struct HashSet<Safari::SQLiteStatement *, WTF::PtrHash<Safari::SQLiteStatement *
 
 struct HashSet<Safari::WK::BackForwardListItem, Safari::WK::ObjectSubclassHash<Safari::WK::BackForwardListItem>, WTF::HashTraits<Safari::WK::BackForwardListItem>> {
     struct HashTable<Safari::WK::BackForwardListItem, Safari::WK::BackForwardListItem, WTF::IdentityExtractor, Safari::WK::ObjectSubclassHash<Safari::WK::BackForwardListItem>, WTF::HashTraits<Safari::WK::BackForwardListItem>, WTF::HashTraits<Safari::WK::BackForwardListItem>> m_impl;
-};
-
-struct HashSet<Safari::WK::Frame, Safari::WK::ObjectSubclassHash<Safari::WK::Frame>, WTF::HashTraits<Safari::WK::Frame>> {
-    struct HashTable<Safari::WK::Frame, Safari::WK::Frame, WTF::IdentityExtractor, Safari::WK::ObjectSubclassHash<Safari::WK::Frame>, WTF::HashTraits<Safari::WK::Frame>, WTF::HashTraits<Safari::WK::Frame>> m_impl;
 };
 
 struct HashSet<Safari::WK::GeolocationManager, Safari::WK::ObjectSubclassHash<Safari::WK::GeolocationManager>, WTF::HashTraits<Safari::WK::GeolocationManager>> {
@@ -646,14 +631,6 @@ struct HashTable<Safari::WK::Download, WTF::KeyValuePair<Safari::WK::Download, W
     unsigned int m_deletedCount;
 };
 
-struct HashTable<Safari::WK::Frame, Safari::WK::Frame, WTF::IdentityExtractor, Safari::WK::ObjectSubclassHash<Safari::WK::Frame>, WTF::HashTraits<Safari::WK::Frame>, WTF::HashTraits<Safari::WK::Frame>> {
-    struct Frame *m_table;
-    unsigned int m_tableSize;
-    unsigned int m_tableSizeMask;
-    unsigned int m_keyCount;
-    unsigned int m_deletedCount;
-};
-
 struct HashTable<Safari::WK::Frame, WTF::KeyValuePair<Safari::WK::Frame, WTF::RetainPtr<WBSFormAutoFillMetadataCorrector>>, WTF::KeyValuePairKeyExtractor<WTF::KeyValuePair<Safari::WK::Frame, WTF::RetainPtr<WBSFormAutoFillMetadataCorrector>>>, Safari::WK::ObjectSubclassHash<Safari::WK::Frame>, WTF::HashMap<Safari::WK::Frame, WTF::RetainPtr<WBSFormAutoFillMetadataCorrector>, Safari::WK::ObjectSubclassHash<Safari::WK::Frame>, WTF::HashTraits<Safari::WK::Frame>, WTF::HashTraits<WTF::RetainPtr<WBSFormAutoFillMetadataCorrector>>>::KeyValuePairTraits, WTF::HashTraits<Safari::WK::Frame>> {
     struct KeyValuePair<Safari::WK::Frame, WTF::RetainPtr<WBSFormAutoFillMetadataCorrector>> *m_table;
     unsigned int m_tableSize;
@@ -738,10 +715,6 @@ struct Image {
     struct WKRetainPtr<const void *> m_webKit2Object;
 };
 
-struct KeyValueObserver {
-    struct Vector<std::__1::unique_ptr<Safari::KeyValueObserver::Observee, std::__1::default_delete<Safari::KeyValueObserver::Observee>>, 0, WTF::CrashOnOverflow, 16> _field1;
-};
-
 struct KeyValuePair<Safari::CF::String, Safari::Extension *>;
 
 struct KeyValuePair<Safari::CF::String, Safari::TopSite *>;
@@ -804,7 +777,20 @@ struct ObjCAdapter<Safari::UnifiedFieldCompletionListGenerator>;
 
 struct OpaqueJSContextGroup;
 
-struct OpaqueWKPageConfiguration;
+struct Optional<AutoplaySignal> {
+    _Bool init_;
+    union constexpr_storage_t<AutoplaySignal> storage_;
+};
+
+struct Optional<SearchSuggestionNavigation> {
+    _Bool init_;
+    union constexpr_storage_t<SearchSuggestionNavigation> storage_;
+};
+
+struct Optional<long long> {
+    _Bool init_;
+    union constexpr_storage_t<long long> storage_;
+};
 
 struct Page {
     struct WKRetainPtr<const void *> m_webKit2Object;
@@ -820,10 +806,6 @@ struct PageLoadTestViewController {
     id _field3;
     id _field4;
     struct Timer<Safari::PageLoadTestViewController> _field5;
-};
-
-struct PageUIClient {
-    CDUnknownFunctionPointerType *_field1;
 };
 
 struct PerformanceCollector {
@@ -901,27 +883,23 @@ struct ReaderControllerProxy {
     id _field8;
 };
 
-struct ReaderPageContextMenuClient;
-
 struct ReaderPageFindClient;
-
-struct ReaderPageNavigationClient;
-
-struct ReaderPageUIClient;
 
 struct ReaderizedArticleFetcher;
 
 struct ReadingListFetcher {
     CDUnknownFunctionPointerType *_field1;
-    id _field2;
-    struct RefPtr<Safari::ReadingListFetcherPageNavigationClient, WTF::DumbPtrTraits<Safari::ReadingListFetcherPageNavigationClient>> _field3;
+    struct Context _field2;
+    id _field3;
     id _field4;
-    struct RefPtr<Safari::ReaderizedArticleFetcher, WTF::DumbPtrTraits<Safari::ReaderizedArticleFetcher>> _field5;
+    struct RefPtr<Safari::ReadingListFetcherPageNavigationClient, WTF::DumbPtrTraits<Safari::ReadingListFetcherPageNavigationClient>> _field5;
     id _field6;
-    int _field7;
-    int _field8;
+    struct RefPtr<Safari::ReaderizedArticleFetcher, WTF::DumbPtrTraits<Safari::ReaderizedArticleFetcher>> _field7;
+    id _field8;
     int _field9;
-    id _field10;
+    int _field10;
+    int _field11;
+    id _field12;
 };
 
 struct ReadingListFetcherPageNavigationClient;
@@ -1131,13 +1109,6 @@ struct SearchSuggestionNavigation {
     char sendCorrectButAbandonedFeedbackOnNextCommittedLoad;
 };
 
-struct SecurityInfo {
-    int _field1;
-    int _field2;
-    id _field3;
-    id _field4;
-};
-
 struct SecurityOrigin {
     struct WKRetainPtr<const void *> _field1;
 };
@@ -1211,9 +1182,9 @@ struct TopSitesController {
     id _field2;
     struct HashSet<Safari::CF::String, Safari::CF::ObjectSubclassHash<Safari::CF::String>, WTF::HashTraits<Safari::CF::String>> _field3;
     int _field4;
-    Vector_e4ce0b9d _field5;
-    Vector_e4ce0b9d _field6;
-    Vector_e4ce0b9d _field7;
+    Vector_032fb239 _field5;
+    id _field6;
+    id _field7;
     id _field8;
     struct Deque<WTF::RefPtr<Safari::TopSite, WTF::DumbPtrTraits<Safari::TopSite>>, 0> _field9;
     struct HashMap<Safari::CF::String, Safari::TopSite *, Safari::CF::ObjectSubclassHash<Safari::CF::String>, WTF::HashTraits<Safari::CF::String>, WTF::HashTraits<Safari::TopSite *>> _field10;
@@ -1258,9 +1229,10 @@ struct URLMatchCompletionListItem {
     id _field3;
     _Bool _field4;
     id _field5;
-    struct CommandTarget *_field6;
-    int _field7;
-    id _field8;
+    id _field6;
+    struct CommandTarget *_field7;
+    int _field8;
+    id _field9;
 };
 
 struct URLRequest {
@@ -1269,11 +1241,6 @@ struct URLRequest {
 
 struct URLResponse {
     struct WKRetainPtr<const void *> _field1;
-};
-
-struct URLSecurityManager {
-    int _field1;
-    int _field2;
 };
 
 struct UnifiedFieldCompletionController {
@@ -1318,6 +1285,7 @@ struct UnifiedFieldCompletionController {
     _Bool _field39;
     _Bool _field40;
     id _field41;
+    id _field42;
 };
 
 struct UnifiedFieldCompletionListGenerator {
@@ -1325,9 +1293,9 @@ struct UnifiedFieldCompletionListGenerator {
     CDUnknownFunctionPointerType *_field2;
     id _field3;
     id _field4;
-    struct UnifiedFieldCompletionListGeneratorClient *_field5;
-    struct RefPtr<Safari::UnifiedFieldCompletionListGeneratorProxy, WTF::DumbPtrTraits<Safari::UnifiedFieldCompletionListGeneratorProxy>> _field6;
-    id _field7;
+    id _field5;
+    struct UnifiedFieldCompletionListGeneratorClient *_field6;
+    struct RefPtr<Safari::UnifiedFieldCompletionListGeneratorProxy, WTF::DumbPtrTraits<Safari::UnifiedFieldCompletionListGeneratorProxy>> _field7;
     id _field8;
     id _field9;
     id _field10;
@@ -1337,34 +1305,39 @@ struct UnifiedFieldCompletionListGenerator {
     id _field14;
     id _field15;
     id _field16;
-    _Bool _field17;
-    long long _field18;
-    _Bool _field19;
+    id _field17;
+    _Bool _field18;
+    long long _field19;
     _Bool _field20;
     _Bool _field21;
-    int _field22;
-    _Bool _field23;
-    id _field24;
+    _Bool _field22;
+    int _field23;
+    _Bool _field24;
     id _field25;
     id _field26;
-    _Bool _field27;
-    unsigned long long _field28;
-    id _field29;
-    struct unique_ptr<Safari::ObjCAdapter<Safari::UnifiedFieldCompletionListGenerator>, std::__1::default_delete<Safari::ObjCAdapter<Safari::UnifiedFieldCompletionListGenerator>>> _field30;
+    id _field27;
+    _Bool _field28;
+    unsigned long long _field29;
+    id _field30;
     struct unique_ptr<Safari::ObjCAdapter<Safari::UnifiedFieldCompletionListGenerator>, std::__1::default_delete<Safari::ObjCAdapter<Safari::UnifiedFieldCompletionListGenerator>>> _field31;
-    id _field32;
+    struct unique_ptr<Safari::ObjCAdapter<Safari::UnifiedFieldCompletionListGenerator>, std::__1::default_delete<Safari::ObjCAdapter<Safari::UnifiedFieldCompletionListGenerator>>> _field32;
     id _field33;
-    unsigned long long _field34;
-    id _field35;
+    id _field34;
+    unsigned long long _field35;
     id _field36;
     id _field37;
-    _Bool _field38;
-    id _field39;
+    id _field38;
+    _Bool _field39;
+    id _field40;
 };
 
 struct UnifiedFieldCompletionListGeneratorClient;
 
 struct UnifiedFieldCompletionListGeneratorProxy;
+
+struct UserNotificationProvider {
+    CDUnknownFunctionPointerType *_field1;
+};
 
 struct Vector<Safari::ExtensionDomainPattern, 0, WTF::CrashOnOverflow, 16> {
     struct ExtensionDomainPattern *_field1;
@@ -1397,6 +1370,12 @@ struct Vector<WTF::RefPtr<Safari::ExtensionBar, WTF::DumbPtrTraits<Safari::Exten
     unsigned int m_size;
 };
 
+struct Vector<WTF::RefPtr<Safari::ExtensionContextMenuItem, WTF::DumbPtrTraits<Safari::ExtensionContextMenuItem>>, 0, WTF::CrashOnOverflow, 16> {
+    struct RefPtr<Safari::ExtensionContextMenuItem, WTF::DumbPtrTraits<Safari::ExtensionContextMenuItem>> *_field1;
+    unsigned int _field2;
+    unsigned int _field3;
+};
+
 struct Vector<WTF::RefPtr<Safari::ExtensionMenuItem, WTF::DumbPtrTraits<Safari::ExtensionMenuItem>>, 0, WTF::CrashOnOverflow, 16> {
     struct RefPtr<Safari::ExtensionMenuItem, WTF::DumbPtrTraits<Safari::ExtensionMenuItem>> *_field1;
     unsigned int _field2;
@@ -1410,19 +1389,13 @@ struct Vector<WTF::RefPtr<Safari::SignatureCreator, WTF::DumbPtrTraits<Safari::S
 };
 
 struct Vector<WTF::RefPtr<Safari::TopSite, WTF::DumbPtrTraits<Safari::TopSite>>, 0, WTF::CrashOnOverflow, 16> {
-    struct RefPtr<Safari::TopSite, WTF::DumbPtrTraits<Safari::TopSite>> *m_buffer;
-    unsigned int m_capacity;
-    unsigned int m_size;
-};
-
-struct Vector<std::__1::pair<NSString *, NSString *>, 0, WTF::CrashOnOverflow, 16> {
-    struct pair<NSString *, NSString *> *_field1;
+    struct RefPtr<Safari::TopSite, WTF::DumbPtrTraits<Safari::TopSite>> *_field1;
     unsigned int _field2;
     unsigned int _field3;
 };
 
-struct Vector<std::__1::unique_ptr<Safari::KeyValueObserver::Observee, std::__1::default_delete<Safari::KeyValueObserver::Observee>>, 0, WTF::CrashOnOverflow, 16> {
-    struct unique_ptr<Safari::KeyValueObserver::Observee, std::__1::default_delete<Safari::KeyValueObserver::Observee>> *_field1;
+struct Vector<std::__1::pair<NSString *, NSString *>, 0, WTF::CrashOnOverflow, 16> {
+    struct pair<NSString *, NSString *> *_field1;
     unsigned int _field2;
     unsigned int _field3;
 };
@@ -1443,10 +1416,6 @@ struct WKPrintInfo {
     float _field1;
     float _field2;
     float _field3;
-};
-
-struct WKRetainPtr<const OpaqueWKPageConfiguration *> {
-    struct OpaqueWKPageConfiguration *m_ptr;
 };
 
 struct WKRetainPtr<const void *> {
@@ -1508,26 +1477,6 @@ struct cssm_data {
     char *_field2;
 };
 
-struct optional<AutoplaySignal> {
-    _Bool init_;
-    union constexpr_storage_t<AutoplaySignal> storage_;
-};
-
-struct optional<SearchSuggestionNavigation> {
-    _Bool init_;
-    union constexpr_storage_t<SearchSuggestionNavigation> storage_;
-};
-
-struct optional<long long> {
-    _Bool init_;
-    union constexpr_storage_t<long long> storage_;
-};
-
-struct optional<signed char> {
-    _Bool init_;
-    union constexpr_storage_t<signed char> storage_;
-};
-
 struct os_unfair_lock_s {
     unsigned int _field1;
 };
@@ -1543,12 +1492,6 @@ struct type {
 struct unique_ptr<Safari::AutomaticTerminationDisabler, std::__1::default_delete<Safari::AutomaticTerminationDisabler>> {
     struct __compressed_pair<Safari::AutomaticTerminationDisabler *, std::__1::default_delete<Safari::AutomaticTerminationDisabler>> {
         struct AutomaticTerminationDisabler *__value_;
-    } __ptr_;
-};
-
-struct unique_ptr<Safari::BrowserPageContextMenuClient, std::__1::default_delete<Safari::BrowserPageContextMenuClient>> {
-    struct __compressed_pair<Safari::BrowserPageContextMenuClient *, std::__1::default_delete<Safari::BrowserPageContextMenuClient>> {
-        struct BrowserPageContextMenuClient *__value_;
     } __ptr_;
 };
 
@@ -1570,18 +1513,6 @@ struct unique_ptr<Safari::BrowserPageFormClient, std::__1::default_delete<Safari
     } __ptr_;
 };
 
-struct unique_ptr<Safari::BrowserPageNavigationClient, std::__1::default_delete<Safari::BrowserPageNavigationClient>> {
-    struct __compressed_pair<Safari::BrowserPageNavigationClient *, std::__1::default_delete<Safari::BrowserPageNavigationClient>> {
-        struct BrowserPageNavigationClient *__value_;
-    } __ptr_;
-};
-
-struct unique_ptr<Safari::BrowserPageUIClient, std::__1::default_delete<Safari::BrowserPageUIClient>> {
-    struct __compressed_pair<Safari::BrowserPageUIClient *, std::__1::default_delete<Safari::BrowserPageUIClient>> {
-        struct BrowserPageUIClient *__value_;
-    } __ptr_;
-};
-
 struct unique_ptr<Safari::ExtensionsPreferencesView, std::__1::default_delete<Safari::ExtensionsPreferencesView>> {
     struct __compressed_pair<Safari::ExtensionsPreferencesView *, std::__1::default_delete<Safari::ExtensionsPreferencesView>> {
         struct ExtensionsPreferencesView *__value_;
@@ -1599,8 +1530,6 @@ struct unique_ptr<Safari::FileLocker, std::__1::default_delete<Safari::FileLocke
         struct FileLocker *__value_;
     } __ptr_;
 };
-
-struct unique_ptr<Safari::KeyValueObserver::Observee, std::__1::default_delete<Safari::KeyValueObserver::Observee>>;
 
 struct unique_ptr<Safari::ObjCAdapter<Safari::UnifiedFieldCompletionListGenerator>, std::__1::default_delete<Safari::ObjCAdapter<Safari::UnifiedFieldCompletionListGenerator>>> {
     struct __compressed_pair<Safari::ObjCAdapter<Safari::UnifiedFieldCompletionListGenerator>*, std::__1::default_delete<Safari::ObjCAdapter<Safari::UnifiedFieldCompletionListGenerator>>> {
@@ -1620,39 +1549,15 @@ struct unique_ptr<Safari::QueuedNavigation, std::__1::default_delete<Safari::Que
     } __ptr_;
 };
 
-struct unique_ptr<Safari::ReaderPageContextMenuClient, std::__1::default_delete<Safari::ReaderPageContextMenuClient>> {
-    struct __compressed_pair<Safari::ReaderPageContextMenuClient *, std::__1::default_delete<Safari::ReaderPageContextMenuClient>> {
-        struct ReaderPageContextMenuClient *__value_;
-    } __ptr_;
-};
-
 struct unique_ptr<Safari::ReaderPageFindClient, std::__1::default_delete<Safari::ReaderPageFindClient>> {
     struct __compressed_pair<Safari::ReaderPageFindClient *, std::__1::default_delete<Safari::ReaderPageFindClient>> {
         struct ReaderPageFindClient *__value_;
     } __ptr_;
 };
 
-struct unique_ptr<Safari::ReaderPageNavigationClient, std::__1::default_delete<Safari::ReaderPageNavigationClient>> {
-    struct __compressed_pair<Safari::ReaderPageNavigationClient *, std::__1::default_delete<Safari::ReaderPageNavigationClient>> {
-        struct ReaderPageNavigationClient *__value_;
-    } __ptr_;
-};
-
-struct unique_ptr<Safari::ReaderPageUIClient, std::__1::default_delete<Safari::ReaderPageUIClient>> {
-    struct __compressed_pair<Safari::ReaderPageUIClient *, std::__1::default_delete<Safari::ReaderPageUIClient>> {
-        struct ReaderPageUIClient *__value_;
-    } __ptr_;
-};
-
 struct unique_ptr<Safari::ReadingListFetcher, std::__1::default_delete<Safari::ReadingListFetcher>> {
     struct __compressed_pair<Safari::ReadingListFetcher *, std::__1::default_delete<Safari::ReadingListFetcher>> {
         struct ReadingListFetcher *__value_;
-    } __ptr_;
-};
-
-struct unique_ptr<Safari::SecurityInfo, std::__1::default_delete<Safari::SecurityInfo>> {
-    struct __compressed_pair<Safari::SecurityInfo *, std::__1::default_delete<Safari::SecurityInfo>> {
-        struct SecurityInfo *__value_;
     } __ptr_;
 };
 
@@ -1735,15 +1640,13 @@ struct vector<unsigned long, std::__1::allocator<unsigned long>> {
 #pragma mark Typedef'd Structures
 
 typedef struct {
+    unsigned int val[8];
+} CDStruct_4c969caf;
+
+typedef struct {
     int webProcessID;
     unsigned long long tabID;
 } CDStruct_497cfc99;
-
-typedef struct {
-    long long _field1;
-    long long _field2;
-    long long _field3;
-} CDStruct_2ec95fd7;
 
 // Template types
 typedef struct HashMap<Safari::WK::BackForwardListItem, Safari::WK::BackForwardListItem, Safari::WK::ObjectSubclassHash<Safari::WK::BackForwardListItem>, WTF::HashTraits<Safari::WK::BackForwardListItem>, WTF::HashTraits<Safari::WK::BackForwardListItem>> {
@@ -1804,11 +1707,17 @@ typedef struct Vector<WTF::RefPtr<Safari::ExtensionBar, WTF::DumbPtrTraits<Safar
     unsigned int m_size;
 } Vector_3e1c2c1a;
 
+typedef struct Vector<WTF::RefPtr<Safari::ExtensionContextMenuItem, WTF::DumbPtrTraits<Safari::ExtensionContextMenuItem>>, 0, WTF::CrashOnOverflow, 16> {
+    struct RefPtr<Safari::ExtensionContextMenuItem, WTF::DumbPtrTraits<Safari::ExtensionContextMenuItem>> *_field1;
+    unsigned int _field2;
+    unsigned int _field3;
+} Vector_b61c989e;
+
 typedef struct Vector<WTF::RefPtr<Safari::TopSite, WTF::DumbPtrTraits<Safari::TopSite>>, 0, WTF::CrashOnOverflow, 16> {
-    struct RefPtr<Safari::TopSite, WTF::DumbPtrTraits<Safari::TopSite>> *m_buffer;
-    unsigned int m_capacity;
-    unsigned int m_size;
-} Vector_e4ce0b9d;
+    struct RefPtr<Safari::TopSite, WTF::DumbPtrTraits<Safari::TopSite>> *_field1;
+    unsigned int _field2;
+    unsigned int _field3;
+} Vector_032fb239;
 
 typedef struct Vector<unsigned int, 0, WTF::CrashOnOverflow, 16> {
     unsigned int *m_buffer;
@@ -1851,10 +1760,5 @@ union constexpr_storage_t<SearchSuggestionNavigation> {
 union constexpr_storage_t<long long> {
     unsigned char dummy_;
     long long value_;
-};
-
-union constexpr_storage_t<signed char> {
-    unsigned char dummy_;
-    char value_;
 };
 

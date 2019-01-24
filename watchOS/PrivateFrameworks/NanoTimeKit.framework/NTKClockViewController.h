@@ -148,6 +148,7 @@
 - (void)_resumeUpdates;
 - (void)_pauseUpdates;
 - (void)_ensureFaceViewControllerExists;
+- (id)currentFace;
 - (id)lifeCycleTrackingFaceViewController;
 - (void)restoreIconZoomController;
 - (id)borrowIconZoomController;

@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
 - (void)setStringEquivalent:(id)arg1;
 - (id)stringEquivalent;
 - (id)stringWithPageNumber:(unsigned long long)arg1 pageCount:(unsigned long long)arg2 charIndex:(unsigned long long)arg3;
-- (void)saveToArchive:(struct TextualAttachmentArchive *)arg1 archiver:(id)arg2;
+-     // Error parsing type: v32@0:8^{TextualAttachmentArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}i}16@24, name: saveToArchive:archiver:
 - (void)saveToArchiver:(id)arg1;
-- (void)loadFromArchive:(const struct TextualAttachmentArchive *)arg1 unarchiver:(id)arg2;
+-     // Error parsing type: v32@0:8r^{TextualAttachmentArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}i}16@24, name: loadFromArchive:unarchiver:
 - (void)loadFromUnarchiver:(id)arg1;
 - (_Bool)shouldArchiveStringEquivalent;
 

@@ -15,7 +15,7 @@ __attribute__((visibility("hidden")))
     // Error parsing type: , name: didCreateCellForParticipant
 }
 
-- (CDUnknownBlockType).cxx_destruct;
+- (void).cxx_destruct;
 - (id)init;
 
 @end

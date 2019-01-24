@@ -6,12 +6,12 @@
 
 #import <webrtc/WK_RTCI420Buffer.h>
 
-#import <webrtc/WK_RTCMutableI420Buffer-Protocol.h>
+#import <webrtc/RTCMutableI420Buffer-Protocol.h>
 
 @class NSString;
 
 __attribute__((visibility("hidden")))
-@interface WK_RTCMutableI420Buffer : WK_RTCI420Buffer <WK_RTCMutableI420Buffer>
+@interface WK_RTCMutableI420Buffer : WK_RTCI420Buffer <RTCMutableI420Buffer>
 {
 }
 

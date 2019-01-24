@@ -10,35 +10,30 @@
 
 @interface WFWhitelistUserPreferences : NSObject
 {
-    WFWhitelistSiteBuffer *filterWhitelist;
-    WFWhitelistSiteBuffer *filterBlacklist;
-    WFWhitelistSiteBuffer *webWhitelist;
-    BOOL filterEnabled;
-    BOOL whitelistEnabled;
-    BOOL alwaysAllowHTTPS;
-    NSString *username;
+    WFWhitelistSiteBuffer *_filterWhitelist;
+    WFWhitelistSiteBuffer *_filterBlacklist;
+    WFWhitelistSiteBuffer *_webWhitelist;
+    BOOL _filterEnabled;
+    BOOL _whitelistEnabled;
+    BOOL _alwaysAllowHTTPS;
+    NSString *_username;
 }
 
 + (id)defaultWhitelistForUser:(id)arg1;
 + (id)_cachedWhitelistForPath:(id)arg1 username:(id)arg2;
 + (id)_modificationDateForFileAtPath:(id)arg1;
-+ (id)whitelistForUser:(id)arg1;
-+ (id)whitelistWithPreferences:(id)arg1;
 + (BOOL)_isURLMetasite:(id)arg1;
-+ (id)_sharedMetasiteDomainNamesDictionary;
 + (id)_sharedMetasiteExceptionsDomainNamesArray;
++ (id)_sharedMetasiteDomainNamesDictionary;
 + (id)_metasiteDomainNamesArray;
 + (id)_arrayByConvertingLinesInStringsAtPath:(id)arg1;
-+ (id)metasitesExceptionPath;
-+ (id)metasitesPath;
-+ (id)preferencesPathForUsername:(id)arg1;
-@property(readonly) WFWhitelistSiteBuffer *webWhitelist; // @synthesize webWhitelist;
-@property(readonly) WFWhitelistSiteBuffer *filterBlacklist; // @synthesize filterBlacklist;
-@property(readonly) WFWhitelistSiteBuffer *filterWhitelist; // @synthesize filterWhitelist;
-@property(retain) NSString *username; // @synthesize username;
-@property BOOL alwaysAllowHTTPS; // @synthesize alwaysAllowHTTPS;
-@property BOOL whitelistEnabled; // @synthesize whitelistEnabled;
-@property BOOL filterEnabled; // @synthesize filterEnabled;
+@property(readonly) WFWhitelistSiteBuffer *webWhitelist; // @synthesize webWhitelist=_webWhitelist;
+@property(readonly) WFWhitelistSiteBuffer *filterBlacklist; // @synthesize filterBlacklist=_filterBlacklist;
+@property(readonly) WFWhitelistSiteBuffer *filterWhitelist; // @synthesize filterWhitelist=_filterWhitelist;
+@property(retain) NSString *username; // @synthesize username=_username;
+@property BOOL alwaysAllowHTTPS; // @synthesize alwaysAllowHTTPS=_alwaysAllowHTTPS;
+@property BOOL whitelistEnabled; // @synthesize whitelistEnabled=_whitelistEnabled;
+@property BOOL filterEnabled; // @synthesize filterEnabled=_filterEnabled;
 - (BOOL)isURLAllowed:(id)arg1 reason:(id *)arg2 shouldFilter:(char *)arg3 foundOnList:(char *)arg4;
 - (BOOL)isURLAllowed:(id)arg1;
 - (BOOL)isURL:(id)arg1 onList:(id)arg2;

@@ -11,12 +11,12 @@
 __attribute__((visibility("hidden")))
 @interface TSDMovieRep : TSDMediaRep
 {
-    TSDFrameRep *mReflectionFrameRep;
-    struct CGImage *mAlternatePosterImage;
+    TSDFrameRep *_reflectionFrameRep;
+    struct CGImage *_alternatePosterImage;
 }
 
 + (double)magicMoveAttributeMatchPercentBetweenOutgoingObject:(id)arg1 incomingObject:(id)arg2 mixingTypeContext:(id)arg3;
-@property(nonatomic) struct CGImage *alternatePosterImage; // @synthesize alternatePosterImage=mAlternatePosterImage;
+@property(nonatomic) struct CGImage *alternatePosterImage; // @synthesize alternatePosterImage=_alternatePosterImage;
 - (void).cxx_destruct;
 - (void)willBeRemoved;
 - (struct CGImage *)newFrameMaskForViewScale:(double)arg1 frameRect:(struct CGRect *)arg2;

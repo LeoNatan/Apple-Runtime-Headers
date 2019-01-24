@@ -8,6 +8,7 @@
 
 @class NSBundle, NSLock, NSMutableDictionary;
 
+__attribute__((visibility("hidden")))
 @interface CATLocalizationHelper : NSObject
 {
     NSMutableDictionary *mStringByKeyByTableName;

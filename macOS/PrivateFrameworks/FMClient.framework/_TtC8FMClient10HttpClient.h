@@ -17,7 +17,7 @@
     // Error parsing type: , name: session.storage
 }
 
-- (CDUnknownBlockType).cxx_destruct;
+- (void).cxx_destruct;
 - (id)init;
 
 @end

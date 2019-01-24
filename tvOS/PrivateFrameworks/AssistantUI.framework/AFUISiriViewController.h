@@ -195,6 +195,7 @@
 - (void)keyboardView:(id)arg1 didReceiveText:(id)arg2;
 - (void)_setShowKeyboardIfTextInputEnabled:(_Bool)arg1 minimized:(_Bool)arg2;
 - (void)_setShowKeyboardIfTextInputEnabled:(_Bool)arg1;
+- (void)_setTypeToSiriViewHidden:(_Bool)arg1;
 - (void)_setStatusViewHidden:(_Bool)arg1;
 - (void)siriRemoteViewControllerDidEndTapToEdit:(id)arg1;
 - (void)siriRemoteViewControllerWillBeginTapToEdit:(id)arg1;
@@ -230,6 +231,7 @@
 - (void)siriRemoteViewController:(id)arg1 setStatusViewDisabled:(_Bool)arg2;
 - (void)siriRemoteViewController:(id)arg1 setCarDisplayGatekeeperVisible:(_Bool)arg2;
 - (void)siriRemoteViewController:(id)arg1 setCarDisplaySnippetVisible:(_Bool)arg2;
+- (void)siriRemoteViewController:(id)arg1 setTypeToSiriViewHidden:(_Bool)arg2;
 - (void)siriRemoteViewController:(id)arg1 setStatusViewHidden:(_Bool)arg2;
 - (void)siriRemoteViewController:(id)arg1 siriIdleAndQuietStatusDidChange:(_Bool)arg2;
 - (void)notifyOnNextUserInteractionForSiriRemoteViewController:(id)arg1;

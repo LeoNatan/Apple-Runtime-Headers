@@ -22,6 +22,10 @@ __attribute__((visibility("hidden")))
     NSString *_locator;
     unsigned long long _readVersion;
     unsigned long long _writeVersion;
+    unsigned long long _parseVersion;
+    unsigned long long _requiredVersion;
+    _Bool _canBeDropped;
+    long long _compressionAlgorithm;
     NSArray *_featureInfos;
     unsigned long long _saveToken;
     TSPObject *_strongRootObject;
@@ -52,6 +56,10 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) NSString *preferredLocator; // @synthesize preferredLocator=_preferredLocator;
 @property(readonly, nonatomic) long long identifier; // @synthesize identifier=_identifier;
 @property(readonly, nonatomic) unsigned long long saveToken; // @synthesize saveToken=_saveToken;
+@property(readonly, nonatomic) long long compressionAlgorithm; // @synthesize compressionAlgorithm=_compressionAlgorithm;
+@property(readonly, nonatomic) _Bool canBeDropped; // @synthesize canBeDropped=_canBeDropped;
+@property(readonly, nonatomic) unsigned long long requiredVersion; // @synthesize requiredVersion=_requiredVersion;
+@property(readonly, nonatomic) unsigned long long parseVersion; // @synthesize parseVersion=_parseVersion;
 @property(readonly, nonatomic) unsigned long long writeVersion; // @synthesize writeVersion=_writeVersion;
 @property(readonly, nonatomic) unsigned long long readVersion; // @synthesize readVersion=_readVersion;
 - (void).cxx_destruct;
@@ -72,7 +80,7 @@ __attribute__((visibility("hidden")))
 - (void)setComponentObjectUUIDMap:(id)arg1;
 - (void)setReadVersion:(unsigned long long)arg1 writeVersion:(unsigned long long)arg2 componentObjectUUIDMap:(id)arg3;
 - (void)setEncodedLength:(unsigned long long)arg1 lastModificationDate:(id)arg2;
-- (void)setPackageIdentifier:(unsigned char)arg1 preferredLocator:(id)arg2 locator:(id)arg3 isStoredOutsideObjectArchive:(_Bool)arg4 rootObjectOrNil:(id)arg5 archivedObjects:(id)arg6 externalReferenceMap:(id)arg7 dataReferences:(id)arg8 readVersion:(unsigned long long)arg9 writeVersion:(unsigned long long)arg10 featureInfos:(id)arg11 componentObjectUUIDMap:(id)arg12 objectReferenceMap:(id)arg13 saveToken:(unsigned long long)arg14 encodedLength:(unsigned long long)arg15 lastModificationDate:(id)arg16 wasCopied:(_Bool)arg17 wasModifiedDuringWrite:(_Bool)arg18;
+- (void)setPackageIdentifier:(unsigned char)arg1 preferredLocator:(id)arg2 locator:(id)arg3 isStoredOutsideObjectArchive:(_Bool)arg4 parseVersion:(unsigned long long)arg5 requiredVersion:(unsigned long long)arg6 canBeDropped:(_Bool)arg7 compressionAlgorithm:(long long)arg8 rootObjectOrNil:(id)arg9 archivedObjects:(id)arg10 externalReferenceMap:(id)arg11 dataReferences:(id)arg12 readVersion:(unsigned long long)arg13 writeVersion:(unsigned long long)arg14 featureInfos:(id)arg15 componentObjectUUIDMap:(id)arg16 objectReferenceMap:(id)arg17 saveToken:(unsigned long long)arg18 encodedLength:(unsigned long long)arg19 lastModificationDate:(id)arg20 wasCopied:(_Bool)arg21 wasModifiedDuringWrite:(_Bool)arg22;
 - (void)didReadObjects:(id)arg1;
 - (void)setArchivedObjectsImpl:(id)arg1;
 - (void)setModifiedImpl:(_Bool)arg1 forObject:(id)arg2;
@@ -92,14 +100,15 @@ __attribute__((visibility("hidden")))
 - (_Bool)isDiscardingContent;
 @property(retain) TSPObject *rootObject;
 - (_Bool)shouldKeepStrongObjectImpl;
+@property(readonly, nonatomic) _Bool incompatibleVersion;
 @property(readonly, nonatomic) _Bool isStoredOutsideObjectArchive;
 - (_Bool)shouldForceCaching;
 - (_Bool)isCachingEnabled;
-- (id)initWithDelegate:(id)arg1 message:(const struct ComponentInfo *)arg2 packageIdentifier:(unsigned char)arg3 encodedLength:(unsigned long long)arg4 lastModificationDate:(id)arg5;
+-     // Error parsing type: @52@0:8@16r^{ComponentInfo=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedField<unsigned int>=ii(Pointer=^{Arena}^{Rep})}i{RepeatedField<unsigned int>=ii(Pointer=^{Arena}^{Rep})}i{RepeatedPtrField<TSP::ComponentExternalReference>=^{Arena}ii^{Rep}}{RepeatedPtrField<TSP::ComponentDataReference>=^{Arena}ii^{Rep}}{RepeatedPtrField<TSP::ObjectUUIDMapEntry>=^{Arena}ii^{Rep}}{RepeatedPtrField<TSP::FeatureInfo>=^{Arena}ii^{Rep}}{RepeatedField<unsigned int>=ii(Pointer=^{Arena}^{Rep})}i{RepeatedField<unsigned int>=ii(Pointer=^{Arena}^{Rep})}i{RepeatedPtrField<TSP::ComponentExternalReference>=^{Arena}ii^{Rep}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}QQBBI}24C32Q36@44, name: initWithDelegate:message:packageIdentifier:encodedLength:lastModificationDate:
 - (id)initWithDelegate:(id)arg1 rootObject:(id)arg2;
-- (id)initWithDelegate:(id)arg1 identifier:(long long)arg2 preferredLocator:(id)arg3 packageIdentifier:(unsigned char)arg4 isStoredOutsideObjectArchive:(_Bool)arg5 encodedLength:(unsigned long long)arg6 lastModificationDate:(id)arg7;
+- (id)initWithDelegate:(id)arg1 identifier:(long long)arg2 preferredLocator:(id)arg3 packageIdentifier:(unsigned char)arg4 isStoredOutsideObjectArchive:(_Bool)arg5 parseVersion:(unsigned long long)arg6 requiredVersion:(unsigned long long)arg7 canBeDropped:(_Bool)arg8 compressionAlgorithm:(long long)arg9 encodedLength:(unsigned long long)arg10 lastModificationDate:(id)arg11;
 - (id)init;
-- (void)saveToMessage:(struct ComponentInfo *)arg1 saveToken:(unsigned long long)arg2 writtenComponentInfo:(const struct WrittenComponentInfo *)arg3;
+-     // Error parsing type: v40@0:8^{ComponentInfo=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedField<unsigned int>=ii(Pointer=^{Arena}^{Rep})}i{RepeatedField<unsigned int>=ii(Pointer=^{Arena}^{Rep})}i{RepeatedPtrField<TSP::ComponentExternalReference>=^{Arena}ii^{Rep}}{RepeatedPtrField<TSP::ComponentDataReference>=^{Arena}ii^{Rep}}{RepeatedPtrField<TSP::ObjectUUIDMapEntry>=^{Arena}ii^{Rep}}{RepeatedPtrField<TSP::FeatureInfo>=^{Arena}ii^{Rep}}{RepeatedField<unsigned int>=ii(Pointer=^{Arena}^{Rep})}i{RepeatedField<unsigned int>=ii(Pointer=^{Arena}^{Rep})}i{RepeatedPtrField<TSP::ComponentExternalReference>=^{Arena}ii^{Rep}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}QQBBI}16Q24r^{WrittenComponentInfo=@@BBB@BBB@@BQQBqQQ@@@@@@}32, name: saveToMessage:saveToken:writtenComponentInfo:
 
 @end
 

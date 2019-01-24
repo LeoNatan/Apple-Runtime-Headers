@@ -11,6 +11,7 @@
 @protocol PKPaymentSetupFieldCellDelegate <NSObject>
 
 @optional
+- (void)fieldCellDidTapButton:(PKPaymentSetupFieldCell *)arg1;
 - (_Bool)fieldCellEditableTextFieldShouldClear:(PKPaymentSetupFieldCell *)arg1;
 - (_Bool)fieldCellEditableTextFieldShouldReturn:(PKPaymentSetupFieldCell *)arg1;
 - (void)fieldCellEditableTextFieldValueDidChange:(PKPaymentSetupFieldCell *)arg1;

@@ -8,10 +8,20 @@
 
 @interface PKPassthroughView : UIView
 {
+    _Bool _inHitTest;
+    _Bool _hitTestEnabled;
+    _Bool _portalled;
+    _Bool _inPortalHitTest;
+    PKPassthroughView *_portal;
 }
 
+@property(nonatomic) _Bool inPortalHitTest; // @synthesize inPortalHitTest=_inPortalHitTest;
+@property(nonatomic, getter=isPortalled) _Bool portalled; // @synthesize portalled=_portalled;
+@property(nonatomic) __weak PKPassthroughView *portal; // @synthesize portal=_portal;
+@property(nonatomic, getter=isHitTestEnabled) _Bool hitTestEnabled; // @synthesize hitTestEnabled=_hitTestEnabled;
+- (void).cxx_destruct;
 - (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
-- (_Bool)pointInside:(struct CGPoint)arg1 withEvent:(id)arg2;
+- (id)initWithFrame:(struct CGRect)arg1;
 
 @end
 

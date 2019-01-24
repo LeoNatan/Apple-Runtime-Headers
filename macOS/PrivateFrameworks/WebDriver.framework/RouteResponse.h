@@ -31,11 +31,7 @@
 - (id)initWithConnection:(id)arg1;
 - (unsigned long long)webDriver_textEncodingForBody;
 - (id)webDriver_decodedResponseString;
-- (void)webDriver_respondToRequest:(id)arg1 withLegacyString:(id)arg2;
-- (void)webDriver_respondToRequest:(id)arg1 withLegacyPayload:(id)arg2 responseCode:(long long)arg3 session:(id)arg4;
-- (void)webDriver_respondToRequest:(id)arg1 withLegacyError:(long long)arg2 message:(id)arg3 session:(id)arg4;
-- (void)webDriver_respondToRequest:(id)arg1 withLegacyPayload:(id)arg2 session:(id)arg3;
-- (void)webDriver_respondWithData:(id)arg1;
+- (void)webDriver_respondWithData:(id)arg1 relatedSession:(id)arg2;
 - (void)webDriver_expectAsynchronousData;
 
 @end

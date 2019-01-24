@@ -120,6 +120,9 @@
 - (void)removeTombstonesForDeletedItems;
 - (_Bool)cleanupArtworkWithOptions:(unsigned int)arg1 usingConnection:(id)arg2;
 - (_Bool)cleanupArtworkWithOptions:(unsigned int)arg1;
+@property(readonly, nonatomic) _Bool hasUserPlaylistsContainingAppleMusicContent;
+@property(readonly, nonatomic) _Bool hasAddedToLibraryAppleMusicContent;
+@property(readonly, nonatomic) _Bool hasUserPlaylists;
 - (_Bool)recordPlayEventForContainerPersistentID:(long long)arg1;
 - (_Bool)recordPlayEventForAlbumPersistentID:(long long)arg1;
 - (void)enumerateArtworkTokensForEntityPersistentID:(long long)arg1 entityType:(int)arg2 artworkType:(int)arg3 usingBlock:(CDUnknownBlockType)arg4;

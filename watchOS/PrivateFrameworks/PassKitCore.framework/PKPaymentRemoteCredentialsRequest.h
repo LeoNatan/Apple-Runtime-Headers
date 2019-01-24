@@ -6,13 +6,17 @@
 
 #import <PassKitCore/PKPaymentWebServiceRequest.h>
 
+@class NSString;
+
 @interface PKPaymentRemoteCredentialsRequest : PKPaymentWebServiceRequest
 {
     _Bool _includeMetadata;
+    NSString *_productIdentifier;
     int _credentialType;
 }
 
 @property(nonatomic) int credentialType; // @synthesize credentialType=_credentialType;
+@property(nonatomic) NSString *productIdentifier; // @synthesize productIdentifier=_productIdentifier;
 @property(nonatomic) _Bool includeMetadata; // @synthesize includeMetadata=_includeMetadata;
 - (id)_urlRequestWithServiceURL:(id)arg1 deviceIdentifier:(id)arg2 appleAccountInformation:(id)arg3;
 

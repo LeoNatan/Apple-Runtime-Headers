@@ -9,16 +9,16 @@
 #import <ScreenTimeUI/STAllowanceDetailListControllerDelegate-Protocol.h>
 #import <ScreenTimeUI/STAllowanceSetupListControllerDelegate-Protocol.h>
 
-@class NSObject, NSString, PSSpecifier;
+@class NSArray, NSObject, NSString;
 @protocol STRootViewModelCoordinator;
 
 @interface STAllowanceListController : PSListController <STAllowanceDetailListControllerDelegate, STAllowanceSetupListControllerDelegate>
 {
     NSObject<STRootViewModelCoordinator> *_coordinator;
-    PSSpecifier *_addAllowanceSpecifier;
+    NSArray *_allowanceSpecifiers;
 }
 
-@property(retain, nonatomic) PSSpecifier *addAllowanceSpecifier; // @synthesize addAllowanceSpecifier=_addAllowanceSpecifier;
+@property(copy) NSArray *allowanceSpecifiers; // @synthesize allowanceSpecifiers=_allowanceSpecifiers;
 @property(retain, nonatomic) NSObject<STRootViewModelCoordinator> *coordinator; // @synthesize coordinator=_coordinator;
 - (void).cxx_destruct;
 - (void)showStoreDemoAlert;
@@ -27,10 +27,15 @@
 - (void)allowanceDetailController:(id)arg1 didDeleteAllowance:(id)arg2;
 - (void)allowanceDetailController:(id)arg1 didSaveAllowance:(id)arg2;
 - (void)addAllowance:(id)arg1;
-- (void)showBudgetDetailController:(id)arg1;
-- (id)budgetDetailText:(id)arg1;
-- (id)budgetSpecifiers;
+- (void)_showAllowanceDetailController:(id)arg1;
+- (id)_subtitleTextForAllowance:(id)arg1;
+- (id)_specifierForAllowance:(id)arg1;
+- (id)_allAllowancesEnabled:(id)arg1;
+- (void)_setAllAllowancesEnabled:(id)arg1 specifier:(id)arg2;
 - (id)specifiers;
+- (void)_adjustCellHeightForAllowanceSpecifier:(id)arg1;
+- (void)viewWillAppear:(_Bool)arg1;
+- (void)_allowancesDidChange;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (_Bool)canBeShownFromSuspendedState;
 - (void)dealloc;

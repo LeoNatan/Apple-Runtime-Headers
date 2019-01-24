@@ -4,6 +4,8 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
+@class NSObject;
+
 #pragma mark Blocks
 
 typedef void (^CDUnknownBlockType)(void); // return type and parameters are unknown
@@ -58,4 +60,13 @@ struct mach_timebase_info {
 struct os_unfair_lock_s {
     unsigned int _os_unfair_lock_opaque;
 };
+
+#pragma mark Typedef'd Structures
+
+typedef struct {
+    NSObject *userDispatchQueue;
+    id dispatchTarget;
+    CDUnknownBlockType messageHandler;
+    CDUnknownBlockType dispatchValidator;
+} CDStruct_f5f3468d;
 

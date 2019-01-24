@@ -56,6 +56,8 @@
 @property(nonatomic) CDStruct_29b32c11 configuration; // @synthesize configuration=_configuration;
 - (void).cxx_destruct;
 - (void)_performForcedUpdate:(CDUnknownBlockType)arg1;
+- (long long)_iconViewStateForCoachingCondition:(unsigned long long)arg1;
+- (_Bool)_isShowingCoachingCondition:(unsigned long long)arg1;
 - (void)_allowCoachingCondition;
 - (void)_allowScanningState;
 - (void)_reallyAllowLeavingCoachingCondition;
@@ -86,6 +88,7 @@
 - (void)_setLocalTransformForOrientation:(long long)arg1;
 - (void)_setCounterTransformForOrientation:(long long)arg1;
 - (_Bool)_isBiometricLockedOut;
+- (long long)_actualIconState;
 - (id)_proudLockIconView;
 @property(readonly, nonatomic) _Bool isPortrait;
 - (void)_updateLockForMatchStarted;

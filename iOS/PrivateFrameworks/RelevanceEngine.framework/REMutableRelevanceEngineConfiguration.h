@@ -30,6 +30,7 @@
 @property(retain, nonatomic) RELocationManager *locationManager; // @dynamic locationManager;
 - (void)insertSectionWithDescriptor:(id)arg1 atIndex:(unsigned long long)arg2;
 - (void)addSectionWithDescriptor:(id)arg1;
+@property(nonatomic) unsigned long long modelStorageBehavior; // @dynamic modelStorageBehavior;
 @property(nonatomic) unsigned long long trainingBehavior; // @dynamic trainingBehavior;
 @property(copy, nonatomic) REDataSourceLoader *dataSourceLoader; // @dynamic dataSourceLoader;
 @property(nonatomic) _Bool allowsUpdatingModelFile; // @dynamic allowsUpdatingModelFile;

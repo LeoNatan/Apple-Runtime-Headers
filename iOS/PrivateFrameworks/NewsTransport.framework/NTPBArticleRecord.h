@@ -8,7 +8,7 @@
 
 #import <NewsTransport/NSCopying-Protocol.h>
 
-@class COMAPPLEFELDSPARPROTOCOLLIVERPOOLCohort, NSData, NSMutableArray, NSString, NTPBDate, NTPBRecordBase;
+@class COMAPPLEFELDSPARPROTOCOLLIVERPOOLCohortList, NSData, NSMutableArray, NSString, NTPBDate, NTPBRecordBase;
 
 @interface NTPBArticleRecord : PBCodable <NSCopying>
 {
@@ -25,7 +25,6 @@
     long long _thumbnailWidgetHQMetadata;
     long long _thumbnailWidgetLQMetadata;
     long long _thumbnailWidgetMetadata;
-    double _videoDuration;
     NSString *_accessoryText;
     NSMutableArray *_allowedStorefrontIDs;
     NSData *_articleRecirculationConfiguration;
@@ -39,18 +38,21 @@
     NSMutableArray *_experimentalTitles;
     NSString *_flintDocumentURL;
     NSMutableArray *_flintFontResourceIDs;
-    COMAPPLEFELDSPARPROTOCOLLIVERPOOLCohort *_globalCohort;
+    COMAPPLEFELDSPARPROTOCOLLIVERPOOLCohortList *_globalCohorts;
     NSMutableArray *_iAdCategories;
     NSMutableArray *_iAdKeywords;
     NSMutableArray *_iAdSectionIDs;
+    NSString *_language;
     NSMutableArray *_moreFromPublisherArticleIDs;
+    NSString *_parentIssueID;
     NSString *_primaryAudience;
     NTPBDate *_publishDate;
     NSMutableArray *_publisherSpecifiedArticleIds;
     NSString *_referencedArticleID;
     NSMutableArray *_relatedArticleIDs;
+    int _role;
     NSString *_shortExcerpt;
-    COMAPPLEFELDSPARPROTOCOLLIVERPOOLCohort *_sourceChannelCohort;
+    COMAPPLEFELDSPARPROTOCOLLIVERPOOLCohortList *_sourceChannelCohorts;
     NSString *_sourceChannelTagID;
     NSString *_stocksClusterID;
     NSString *_stocksMetadata;
@@ -74,6 +76,7 @@
     NSString *_videoCallToActionTitle;
     NSString *_videoCallToActionURL;
     NSString *_videoURL;
+    _Bool _isBundlePaid;
     _Bool _isDraft;
     _Bool _isFeatureCandidate;
     _Bool _isPaid;
@@ -92,9 +95,10 @@
         unsigned int thumbnailWidgetHQMetadata:1;
         unsigned int thumbnailWidgetLQMetadata:1;
         unsigned int thumbnailWidgetMetadata:1;
-        unsigned int videoDuration:1;
         unsigned int contentType:1;
+        unsigned int role:1;
         unsigned int storyType:1;
+        unsigned int isBundlePaid:1;
         unsigned int isDraft:1;
         unsigned int isFeatureCandidate:1;
         unsigned int isPaid:1;
@@ -113,6 +117,8 @@
 + (Class)iAdKeywordsType;
 + (Class)iAdCategoriesType;
 + (Class)flintFontResourceIDsType;
+@property(retain, nonatomic) NSString *language; // @synthesize language=_language;
+@property(retain, nonatomic) NSString *parentIssueID; // @synthesize parentIssueID=_parentIssueID;
 @property(retain, nonatomic) NSMutableArray *experimentalTitles; // @synthesize experimentalTitles=_experimentalTitles;
 @property(retain, nonatomic) NSString *stocksScores; // @synthesize stocksScores=_stocksScores;
 @property(retain, nonatomic) NSString *stocksMetadata; // @synthesize stocksMetadata=_stocksMetadata;
@@ -122,8 +128,8 @@
 @property(retain, nonatomic) NSString *videoCallToActionURL; // @synthesize videoCallToActionURL=_videoCallToActionURL;
 @property(retain, nonatomic) NSString *videoCallToActionTitle; // @synthesize videoCallToActionTitle=_videoCallToActionTitle;
 @property(retain, nonatomic) NSString *titleCompact; // @synthesize titleCompact=_titleCompact;
-@property(retain, nonatomic) COMAPPLEFELDSPARPROTOCOLLIVERPOOLCohort *globalCohort; // @synthesize globalCohort=_globalCohort;
-@property(retain, nonatomic) COMAPPLEFELDSPARPROTOCOLLIVERPOOLCohort *sourceChannelCohort; // @synthesize sourceChannelCohort=_sourceChannelCohort;
+@property(retain, nonatomic) COMAPPLEFELDSPARPROTOCOLLIVERPOOLCohortList *globalCohorts; // @synthesize globalCohorts=_globalCohorts;
+@property(retain, nonatomic) COMAPPLEFELDSPARPROTOCOLLIVERPOOLCohortList *sourceChannelCohorts; // @synthesize sourceChannelCohorts=_sourceChannelCohorts;
 @property(retain, nonatomic) NSMutableArray *topics; // @synthesize topics=_topics;
 @property(nonatomic) long long thumbnailWidgetHQMetadata; // @synthesize thumbnailWidgetHQMetadata=_thumbnailWidgetHQMetadata;
 @property(retain, nonatomic) NSString *thumbnailWidgetHQTaggedURL; // @synthesize thumbnailWidgetHQTaggedURL=_thumbnailWidgetHQTaggedURL;
@@ -157,7 +163,7 @@
 @property(retain, nonatomic) NSMutableArray *iAdCategories; // @synthesize iAdCategories=_iAdCategories;
 @property(nonatomic) _Bool isSponsored; // @synthesize isSponsored=_isSponsored;
 @property(nonatomic) _Bool isFeatureCandidate; // @synthesize isFeatureCandidate=_isFeatureCandidate;
-@property(nonatomic) double videoDuration; // @synthesize videoDuration=_videoDuration;
+@property(nonatomic) _Bool isBundlePaid; // @synthesize isBundlePaid=_isBundlePaid;
 @property(retain, nonatomic) NSString *videoURL; // @synthesize videoURL=_videoURL;
 @property(retain, nonatomic) NSMutableArray *flintFontResourceIDs; // @synthesize flintFontResourceIDs=_flintFontResourceIDs;
 @property(retain, nonatomic) NSString *flintDocumentURL; // @synthesize flintDocumentURL=_flintDocumentURL;
@@ -185,6 +191,10 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(nonatomic) _Bool hasRole;
+@property(nonatomic) int role; // @synthesize role=_role;
+@property(readonly, nonatomic) _Bool hasLanguage;
+@property(readonly, nonatomic) _Bool hasParentIssueID;
 - (id)experimentalTitlesAtIndex:(unsigned long long)arg1;
 - (unsigned long long)experimentalTitlesCount;
 - (void)addExperimentalTitles:(id)arg1;
@@ -200,8 +210,8 @@
 @property(readonly, nonatomic) _Bool hasVideoCallToActionURL;
 @property(readonly, nonatomic) _Bool hasVideoCallToActionTitle;
 @property(readonly, nonatomic) _Bool hasTitleCompact;
-@property(readonly, nonatomic) _Bool hasGlobalCohort;
-@property(readonly, nonatomic) _Bool hasSourceChannelCohort;
+@property(readonly, nonatomic) _Bool hasGlobalCohorts;
+@property(readonly, nonatomic) _Bool hasSourceChannelCohorts;
 - (id)topicsAtIndex:(unsigned long long)arg1;
 - (unsigned long long)topicsCount;
 - (void)addTopics:(id)arg1;
@@ -261,7 +271,7 @@
 - (void)clearIAdCategories;
 @property(nonatomic) _Bool hasIsSponsored;
 @property(nonatomic) _Bool hasIsFeatureCandidate;
-@property(nonatomic) _Bool hasVideoDuration;
+@property(nonatomic) _Bool hasIsBundlePaid;
 @property(readonly, nonatomic) _Bool hasVideoURL;
 - (id)flintFontResourceIDsAtIndex:(unsigned long long)arg1;
 - (unsigned long long)flintFontResourceIDsCount;

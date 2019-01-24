@@ -16,6 +16,7 @@
     _Bool _shouldReportToServer;
     _Bool _forceDoNotReport;
     _Bool _debugBuild;
+    _Bool _shouldPerformValidationChecks;
     unsigned int _numberOfValidationErrors;
     NSString *_validationTargetName;
     NSString *_overrideProcessName;
@@ -28,6 +29,7 @@
 + (id)sharedInstance;
 @property(retain, nonatomic) NSMutableArray *consoleWarningMessages; // @synthesize consoleWarningMessages=_consoleWarningMessages;
 @property(nonatomic) unsigned int numberOfValidationWarnings; // @synthesize numberOfValidationWarnings=_numberOfValidationWarnings;
+@property(nonatomic) _Bool shouldPerformValidationChecks; // @synthesize shouldPerformValidationChecks=_shouldPerformValidationChecks;
 @property(retain, nonatomic) id <AXValidationReportingServices> validationReportingServices; // @synthesize validationReportingServices=_validationReportingServices;
 @property(nonatomic, getter=isDebugBuild) _Bool debugBuild; // @synthesize debugBuild=_debugBuild;
 @property(retain, nonatomic) NSMutableArray *consoleErrorMessages; // @synthesize consoleErrorMessages=_consoleErrorMessages;
@@ -97,7 +99,8 @@
 - (_Bool)client:(id)arg1 validateClass:(id)arg2;
 - (_Bool)validateClass:(id)arg1;
 - (void)_printConsoleReport:(_Bool)arg1 isDelayed:(_Bool)arg2;
-- (void)installSafeCategories:(CDUnknownBlockType)arg1 afterDelay:(double)arg2 validationTargetName:(id)arg3 overrideProcessName:(id)arg4 forceDoNotReport:(_Bool)arg5;
+- (void)_clearState;
+- (void)_resetState;
 - (void)installSafeCategories:(CDUnknownBlockType)arg1 afterDelay:(double)arg2 validationTargetName:(id)arg3 overrideProcessName:(id)arg4;
 - (void)performValidations:(CDUnknownBlockType)arg1 withPreValidationHandler:(CDUnknownBlockType)arg2 postValidationHandler:(CDUnknownBlockType)arg3 safeCategoryInstallationHandler:(CDUnknownBlockType)arg4;
 - (void)performValidations:(CDUnknownBlockType)arg1 withPreValidationHandler:(CDUnknownBlockType)arg2 postValidationHandler:(CDUnknownBlockType)arg3;

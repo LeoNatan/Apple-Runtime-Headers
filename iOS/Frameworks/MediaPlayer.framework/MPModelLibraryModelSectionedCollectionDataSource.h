@@ -14,6 +14,8 @@
 {
     MPMediaLibraryEntityTranslationContext *_itemTranslationContext;
     MPMediaLibraryEntityTranslationContext *_sectionTranslationContext;
+    vector_bbba3654 _allowedSectionPersistentIDs;
+    struct map<long long, unsigned long, std::__1::less<long long>, std::__1::allocator<std::__1::pair<const long long, unsigned long>>> _allowedSectionPersistentIDToSectionQueryResultsIndexMap;
     MPModelLibraryRequest *_request;
     shared_ptr_87e3a99b _itemEntityQueryResults;
     shared_ptr_274c5e8b _sectionEntityQueryResult;
@@ -24,6 +26,9 @@
 @property(readonly, nonatomic) shared_ptr_87e3a99b itemEntityQueryResults; // @synthesize itemEntityQueryResults=_itemEntityQueryResults;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+- (_Bool)_allowedEntityIdentifiersContainsAllPersistentIDs;
+- (unsigned long long)_adjustedIndexForSectionIndex:(long long)arg1;
+- (void)_populateIndexMap;
 - (id)indexPathForItemWithIdentifiersIntersectingSet:(id)arg1;
 - (id)identifiersForSectionAtIndex:(long long)arg1;
 - (id)identifiersForItemAtIndexPath:(id)arg1;

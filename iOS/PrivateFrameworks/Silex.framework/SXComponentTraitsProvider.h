@@ -9,17 +9,17 @@
 #import <Silex/SXComponentTraitsProvider-Protocol.h>
 
 @class NSString;
-@protocol SXDocumentControllerProvider;
+@protocol SXDOMObjectProviding;
 
 @interface SXComponentTraitsProvider : NSObject <SXComponentTraitsProvider>
 {
-    id <SXDocumentControllerProvider> _documentControllerProvider;
+    id <SXDOMObjectProviding> _DOMObjectProvider;
 }
 
-@property(readonly, nonatomic) id <SXDocumentControllerProvider> documentControllerProvider; // @synthesize documentControllerProvider=_documentControllerProvider;
+@property(readonly, nonatomic) id <SXDOMObjectProviding> DOMObjectProvider; // @synthesize DOMObjectProvider=_DOMObjectProvider;
 - (void).cxx_destruct;
 - (unsigned long long)traitsForComponent:(id)arg1;
-- (id)initWithDocumentControllerProvider:(id)arg1;
+- (id)initWithDOMObjectProvider:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

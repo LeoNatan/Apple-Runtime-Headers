@@ -28,10 +28,10 @@
 + (id)_templatesWithPredicate:(id)arg1 profile:(id)arg2 error:(id *)arg3;
 + (_Bool)_removeTemplates:(id)arg1 profile:(id)arg2 error:(id *)arg3;
 + (id)_insertTemplate:(id)arg1 provenance:(long long)arg2 database:(id)arg3 error:(id *)arg4;
-+ (_Bool)_insertTemplates:(id)arg1 provenance:(long long)arg2 profile:(id)arg3 error:(id *)arg4;
++ (_Bool)_insertTemplates:(id)arg1 provenance:(long long)arg2 profile:(id)arg3 databaseContext:(id)arg4 error:(id *)arg5;
 + (id)allTemplatesWithProfile:(id)arg1 error:(id *)arg2;
 + (_Bool)removeTemplates:(id)arg1 profile:(id)arg2 error:(id *)arg3;
-+ (_Bool)insertTemplates:(id)arg1 provenance:(long long)arg2 profile:(id)arg3 error:(id *)arg4;
++ (_Bool)insertTemplates:(id)arg1 provenance:(long long)arg2 profile:(id)arg3 databaseContext:(id)arg4 error:(id *)arg5;
 + (id)entityEncoderForProfile:(id)arg1 database:(id)arg2 purpose:(int)arg3 encodingOptions:(id)arg4 authorizationFilter:(CDUnknownBlockType)arg5;
 + (int)protectionClass;
 + (id)columnsDefinition;

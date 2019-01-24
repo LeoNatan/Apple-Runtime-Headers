@@ -244,7 +244,6 @@
 - (void)_canPlayFastReverseDidChange:(id)arg1;
 - (void)_canPlayFastForwardDidChange:(id)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
-- (void)_delegateAuthorizationForItem:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_contentsChanged;
 - (void)_networkChangedNotification:(id)arg1;
 - (void)_streamLimitExceeded:(int)arg1;

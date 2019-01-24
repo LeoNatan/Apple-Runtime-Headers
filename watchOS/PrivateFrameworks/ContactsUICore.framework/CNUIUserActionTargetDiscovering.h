@@ -18,6 +18,7 @@
 }
 
 + (_Bool)isSkypeAvailableWithEnvironment:(id)arg1;
++ (id)os_log;
 @property(readonly, nonatomic) CNUIUserActionTargetDiscoveryCache *cache; // @synthesize cache=_cache;
 @property(readonly, nonatomic) id <CNUIUserActionDiscoveringEnvironment> discoveringEnvironment; // @synthesize discoveringEnvironment=_discoveringEnvironment;
 - (void).cxx_destruct;

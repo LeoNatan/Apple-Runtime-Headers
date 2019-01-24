@@ -28,9 +28,11 @@
 + (void)_setSystemManifestPath:(id)arg1 userManifestPath:(id)arg2;
 - (void).cxx_destruct;
 - (void)invalidateCache;
-- (void)removeIdentifierFromUserManifest:(id)arg1;
-- (void)removeIdentifierFromSystemManifest:(id)arg1;
-- (void)addIdentifierToManifest:(id)arg1 flag:(int)arg2;
+- (void)_adjustManifestIdentifier:(id)arg1 isUserInstall:(_Bool)arg2 flag:(int)arg3 addingIdentifier:(_Bool)arg4;
+- (void)removeIdentifierFromUserManifest:(id)arg1 flag:(int)arg2;
+- (void)removeIdentifierFromSystemManifest:(id)arg1 flag:(int)arg2;
+- (void)addIdentifierToUserManifest:(id)arg1 flag:(int)arg2;
+- (void)addIdentifierToSystemManifest:(id)arg1 flag:(int)arg2;
 - (id)allProfileIdentifiersInstalledNonInteractivelyWithFilterFlags:(int)arg1;
 - (id)allInstalledSystemProfileIdentifiers;
 - (id)allInstalledUserProfileIdentifiers;

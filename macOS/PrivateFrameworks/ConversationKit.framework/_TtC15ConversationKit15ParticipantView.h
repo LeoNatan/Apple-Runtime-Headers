@@ -43,7 +43,7 @@ __attribute__((visibility("hidden")))
     // Error parsing type: , name: delegate
 }
 
-- (CDUnknownBlockType).cxx_destruct;
+- (void).cxx_destruct;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (BOOL)accessibilityIsShowingVideo;
 - (id)initWithCoder:(id)arg1;

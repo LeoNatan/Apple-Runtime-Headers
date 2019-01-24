@@ -29,8 +29,8 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) unsigned short nameLength; // @synthesize nameLength=_nameLength;
 @property(nonatomic) unsigned long long offset; // @synthesize offset=_offset;
 @property(nonatomic) unsigned long long compressedSize; // @synthesize compressedSize=_compressedSize;
-@property(nonatomic, getter=isCompressed) _Bool compressed; // @synthesize compressed=_compressed;
 @property(copy, nonatomic) NSString *collapsedName; // @synthesize collapsedName=_collapsedName;
+@property(nonatomic, getter=isCompressed) _Bool compressed; // @synthesize compressed=_compressed;
 @property(nonatomic) unsigned int CRC; // @synthesize CRC=_CRC;
 @property(nonatomic) unsigned long long size; // @synthesize size=_size;
 @property(copy, nonatomic) NSDate *lastModificationDate; // @synthesize lastModificationDate=_lastModificationDate;

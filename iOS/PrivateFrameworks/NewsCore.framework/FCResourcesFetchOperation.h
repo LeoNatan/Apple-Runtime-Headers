@@ -11,24 +11,27 @@
 
 @interface FCResourcesFetchOperation : FCMultiStepFetchOperation
 {
-    _Bool _shouldDownloadAssets;
+    _Bool _downloadAssets;
     long long _cacheLifetimeHint;
+    CDUnknownBlockType _progressHandler;
     id <FCContentContext> _context;
     NSArray *_resourceIDs;
     NSArray *_resources;
 }
 
 @property(retain, nonatomic) NSArray *resources; // @synthesize resources=_resources;
+@property(readonly, nonatomic) _Bool downloadAssets; // @synthesize downloadAssets=_downloadAssets;
 @property(readonly, nonatomic) NSArray *resourceIDs; // @synthesize resourceIDs=_resourceIDs;
 @property(retain, nonatomic) id <FCContentContext> context; // @synthesize context=_context;
+@property(copy, nonatomic) CDUnknownBlockType progressHandler; // @synthesize progressHandler=_progressHandler;
 @property(nonatomic) long long cacheLifetimeHint; // @synthesize cacheLifetimeHint=_cacheLifetimeHint;
-@property(nonatomic) _Bool shouldDownloadAssets; // @synthesize shouldDownloadAssets=_shouldDownloadAssets;
 - (void).cxx_destruct;
 - (_Bool)_shoudUsePermanentURLForResourceID:(id)arg1;
 - (id)completeFetchOperation;
 - (id)downloadAssetsWithCompletion:(CDUnknownBlockType)arg1;
 - (id)fetchResourcesWithCompletion:(CDUnknownBlockType)arg1;
-- (id)initWithContext:(id)arg1 resourceIDs:(id)arg2;
+- (_Bool)validateOperation;
+- (id)initWithContext:(id)arg1 resourceIDs:(id)arg2 downloadAssets:(_Bool)arg3;
 - (id)init;
 
 @end

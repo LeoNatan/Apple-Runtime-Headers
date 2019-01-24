@@ -6,11 +6,23 @@
 
 #import <Silex/SXResource.h>
 
-@interface SXQuickLookResource : SXResource
+#import <Silex/SXQuickLookResource-Protocol.h>
+
+@class NSString, NSURL;
+
+@interface SXQuickLookResource : SXResource <SXQuickLookResource>
 {
 }
 
 + (id)typeString;
+
+// Remaining properties
+@property(readonly, nonatomic) NSURL *URL;
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly, nonatomic) NSString *identifier;
+@property(readonly) Class superclass;
 
 @end
 

@@ -14,7 +14,6 @@
 __attribute__((visibility("hidden")))
 @interface BrowserApplication : NSApplication <AppControllerTouchBarProviderDelegate, NSTouchBarProvider>
 {
-    BOOL _isProcessingContextMenuEvent;
     BOOL _isClosingAllWindows;
     BOOL _isDockBouncingSuppressed;
     NSObject *_terminateSender;
@@ -51,7 +50,6 @@ __attribute__((visibility("hidden")))
 - (BOOL)isDockBouncingSuppressed;
 - (long long)requestUserAttention:(unsigned long long)arg1;
 - (id)orderedWindows;
-- (BOOL)isProcessingContextMenuEvent;
 - (BOOL)validateUserInterfaceItem:(id)arg1;
 - (BOOL)anyWindowsVisible;
 - (id)makeWindowsPerform:(SEL)arg1 inOrder:(BOOL)arg2;

@@ -7,10 +7,11 @@
 #import <SearchUI/SearchUICardSectionView.h>
 
 #import <SearchUI/NUIContainerStackViewDelegate-Protocol.h>
+#import <SearchUI/TLKDetailsViewDelegate-Protocol.h>
 
 @class NSMutableDictionary, NSString, SearchUIAccessoryViewController, SearchUIImageView, TLKDetailsView, TLKStackView, UIButton;
 
-@interface SearchUIDetailedRowCardSectionView : SearchUICardSectionView <NUIContainerStackViewDelegate>
+@interface SearchUIDetailedRowCardSectionView : SearchUICardSectionView <NUIContainerStackViewDelegate, TLKDetailsViewDelegate>
 {
     SearchUIImageView *_thumbnailView;
     UIButton *_buttonView;
@@ -36,6 +37,7 @@
 - (_Bool)arrangedViewMustCenter:(id)arg1;
 - (void)updateChevronVisible:(_Bool)arg1 leaveSpaceForChevron:(_Bool)arg2;
 - (void)updateWithRowModel:(id)arg1;
+- (void)footnoteButtonPressed;
 - (id)setupContentView;
 
 // Remaining properties

@@ -8,8 +8,11 @@
 
 @interface NPKPassCollectionViewCellScrollView : UIScrollView
 {
+    _Bool _allowsNegativeContentOffsetY;
 }
 
+@property(nonatomic) _Bool allowsNegativeContentOffsetY; // @synthesize allowsNegativeContentOffsetY=_allowsNegativeContentOffsetY;
+- (void)setContentOffset:(struct CGPoint)arg1;
 - (_Bool)becomeFirstResponder;
 - (id)initWithFrame:(struct CGRect)arg1;
 

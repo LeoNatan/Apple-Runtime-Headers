@@ -26,9 +26,10 @@
 + (id)sharedController;
 @property(nonatomic) _Bool shouldSuppressIncomingNotification; // @synthesize shouldSuppressIncomingNotification=_shouldSuppressIncomingNotification;
 @property(copy, nonatomic) CDUnknownBlockType actionCompletionBlock; // @synthesize actionCompletionBlock=_actionCompletionBlock;
-@property(retain, nonatomic) id <HCHeardControllerProtocol> delegate; // @synthesize delegate=_delegate;
+@property(nonatomic) __weak id <HCHeardControllerProtocol> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSMutableArray *rttCalls; // @synthesize rttCalls=_rttCalls;
 - (void).cxx_destruct;
+- (void)ttyCall:(id)arg1 didSendRemoteString:(id)arg2 forUtterance:(id)arg3;
 - (void)ttyCall:(id)arg1 didReceiveString:(id)arg2 forUtterance:(id)arg3;
 - (id)handleIncomingNotificationSuppressionChange:(id)arg1;
 - (id)displayCallPrompt:(id)arg1;

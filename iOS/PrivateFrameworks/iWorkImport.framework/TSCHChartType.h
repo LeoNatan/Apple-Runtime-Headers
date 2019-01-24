@@ -20,6 +20,7 @@ __attribute__((visibility("hidden")))
 + (double)sageDepthFactorForExportingChartInfo:(id)arg1;
 + (id)constantDepthInfoChartScaleForInfoChartScale:(id)arg1 chartType:(id)arg2 barShape:(int)arg3;
 + (id)chartTypePlaceholderForDefault3DScaleProperty;
++ (id)all3DChartTypes;
 + (id)allChartTypes;
 + (id)multiDataBubbleChart;
 + (id)multiDataScatterChart;

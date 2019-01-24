@@ -130,7 +130,7 @@
 - (void)scrollToItemAtIndexPath:(id)arg1 atScrollPosition:(unsigned long long)arg2 animated:(BOOL)arg3 userInteractivelyScrolling:(BOOL)arg4;
 - (id)mediaVisiblePivotIndexPath;
 - (id)segmentVersionsFromDiskWithMediaItems:(id)arg1;
-- (id)segmentImageFromDiskWithMediaItems:(id)arg1 colorSpace:(id)arg2;
+- (id)imageFromDiskForSegment:(id)arg1 colorSpace:(id)arg2;
 - (void)saveSegmentImageToDisk:(id)arg1;
 - (void)_saveSegmentVersionsToDisk:(id)arg1;
 - (void)_saveSegmentToDisk:(id)arg1;

@@ -53,7 +53,7 @@ __attribute__((visibility("hidden")))
 - (void)main;
 - (void)_performUpdateSharingProtectionDataIfNecessary:(CDUnknownBlockType)arg1;
 - (_Bool)_recordIsIWorkShareable:(id)arg1;
-- (void)_setSharingFieldsOnContentRecord:(id)arg1 withProtectionData:(id)arg2 baseToken:(id)arg3 routingKey:(id)arg4;
+- (void)_setSharingFieldsOnContentRecord:(id)arg1 withProtectionData:(id)arg2 baseToken:(id)arg3 routingKey:(id)arg4 forceOverwrite:(_Bool)arg5;
 - (void)_scheduleShareUpdateAndModifyRecordsAndZoneCreationOperation;
 - (void)_performShareUpdateAndModifyRecordsWithCompletion:(CDUnknownBlockType)arg1;
 - (void)performShareUpdate:(CDUnknownBlockType)arg1;

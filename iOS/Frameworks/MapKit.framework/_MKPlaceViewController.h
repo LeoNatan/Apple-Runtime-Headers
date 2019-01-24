@@ -21,6 +21,7 @@
 #import <MapKit/MKPlaceCardReviewsControllerDelegate-Protocol.h>
 #import <MapKit/MKPlaceHeaderButtonsViewControllerDelegate-Protocol.h>
 #import <MapKit/MKPlaceParentInfoViewControllerDelegate-Protocol.h>
+#import <MapKit/MKPlaceServiceHoursViewControllerProtocol-Protocol.h>
 #import <MapKit/MKPlaceVenueBrowseViewControllerDelegate-Protocol.h>
 #import <MapKit/MKStackingViewControllerDelegate-Protocol.h>
 #import <MapKit/MKTransitAttributionViewControllerDelegate-Protocol.h>
@@ -32,7 +33,7 @@
 @class CLLocation, CNContact, CNContactNavigationController, CNContactStore, CNContactViewController, GEOAutomobileOptions, GEOTransitOptions, MKETAProvider, MKInfoCardLoadingView, MKMapItem, MKOfficialAppViewController, MKPlaceActionManager, MKPlaceCardActionsRowViewController, MKPlaceCardFooterActionsViewController, MKPlaceCardHeaderViewController, MKPlaceHeaderButtonsViewController, MKPlaceInfoViewController, MKPlaceInlineMapViewController, MKPlacePoisInlineMapViewController, NSMapTable, NSMutableArray, NSString, NSUserActivity, RadiosPreferences, _MKDistanceDetailProvider, _MKPlaceActionButtonController;
 @protocol CNContactViewControllerPrivateDelegate, UIScrollViewDelegate, _MKPlaceItem, _MKPlaceViewControllerDelegate, _MKPlaceViewControllerFeedbackDelegate;
 
-@interface _MKPlaceViewController : MKLayoutCardViewController <MKStackingViewControllerDelegate, MKActivityViewControllerDelegate, CNContactViewControllerDelegate, CNContactViewControllerPrivateDelegate, CNContactPickerDelegate, RadiosPreferencesDelegate, MKPlaceVenueBrowseViewControllerDelegate, MKPlaceParentInfoViewControllerDelegate, MKOfficialAppViewControllerDelegate, MKPlaceCardPhotosControllerDelegate, MKPlaceCardReviewsControllerDelegate, MKPlaceCardEncyclopedicControllerDelegate, MKTransitDepaturesViewControllerDelegate, MKPlaceCardHeaderViewControllerDelegate, MKTransitAttributionViewControllerDelegate, GEOLogContextDelegate, MKETAProviderDelegate, MKETAProviderObserver, MKPlaceHeaderButtonsViewControllerDelegate, _MKInfoCardController, _MKInfoCardAnalyticsDelegate, MKPlaceCardActionControllerDelegate>
+@interface _MKPlaceViewController : MKLayoutCardViewController <MKStackingViewControllerDelegate, MKActivityViewControllerDelegate, CNContactViewControllerDelegate, CNContactViewControllerPrivateDelegate, CNContactPickerDelegate, RadiosPreferencesDelegate, MKPlaceVenueBrowseViewControllerDelegate, MKPlaceParentInfoViewControllerDelegate, MKOfficialAppViewControllerDelegate, MKPlaceCardPhotosControllerDelegate, MKPlaceCardReviewsControllerDelegate, MKPlaceCardEncyclopedicControllerDelegate, MKTransitDepaturesViewControllerDelegate, MKPlaceCardHeaderViewControllerDelegate, MKTransitAttributionViewControllerDelegate, GEOLogContextDelegate, MKETAProviderDelegate, MKETAProviderObserver, MKPlaceHeaderButtonsViewControllerDelegate, MKPlaceServiceHoursViewControllerProtocol, _MKInfoCardController, _MKInfoCardAnalyticsDelegate, MKPlaceCardActionControllerDelegate>
 {
     MKPlaceActionManager *_actionManager;
     MKPlaceCardHeaderViewController *_headerViewController;
@@ -120,6 +121,7 @@
 - (void)placeVenueBrowseViewController:(id)arg1 didTapOnSearchCategory:(id)arg2;
 - (void)placeParentInfoViewController:(id)arg1 didSelectParent:(id)arg2;
 - (void)officialAppViewControllerDidFinishLoading:(id)arg1 error:(id)arg2;
+- (void)placeServiceViewControllerDidTapHeaderButton:(id)arg1;
 - (void)placeCardActionControllerDidSelectionOpenBrandCard:(id)arg1;
 - (void)placeCardActionControllerDidSelectionOpenInPinpoint:(id)arg1;
 - (void)placeCardActionControllerDidSelectOpenInSkyline:(id)arg1;
@@ -146,6 +148,7 @@
 - (void)scrollViewWillBeginDragging:(id)arg1;
 - (void)scrollViewDidScroll:(id)arg1;
 - (void)hideTitle:(_Bool)arg1;
+@property(readonly, nonatomic) double headerSecondaryNameLabelPadding;
 @property(nonatomic) double contentAlpha;
 - (void)contactPicker:(id)arg1 didSelectContact:(id)arg2;
 - (void)contactPickerDidCancel:(id)arg1;
@@ -194,6 +197,7 @@
 - (id)attributionsVC;
 - (id)reviewsVC;
 - (id)businessInfosVC;
+- (id)serviceHoursVC;
 - (id)hoursVC;
 - (id)messagesHoursVC;
 - (id)infosVC;

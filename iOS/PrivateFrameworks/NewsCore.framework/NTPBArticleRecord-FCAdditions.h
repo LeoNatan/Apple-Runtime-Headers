@@ -9,8 +9,8 @@
 @class NSArray;
 
 @interface NTPBArticleRecord (FCAdditions)
-@property(readonly, nonatomic) NSArray *endOfArticleTopicIDs;
 @property(readonly, nonatomic) NSArray *topicIDs;
+- (_Bool)isAllowedInStorefront:(id)arg1;
 - (id)generateWebExcerptAssetHandleWithAssetManager:(id)arg1;
 - (id)generateFlintDocumentAssetHandleWithAssetManager:(id)arg1;
 - (id)generateThumbnailAssetHandleForURL:(id)arg1 withAssetManager:(id)arg2;

@@ -22,6 +22,7 @@
     BOOL _metadataChangeHasAlreadyOccurred;
     NSString *_accountOpaqueDSID;
     NSString *_accountIdentifier;
+    NSString *_appName;
     NSString *_bundleIdentifier;
     NSString *_bundleVersion;
     NSString *_bundlePath;
@@ -66,13 +67,13 @@
 @property(retain) NSString *bundlePath; // @synthesize bundlePath=_bundlePath;
 @property(retain) NSString *bundleVersion; // @synthesize bundleVersion=_bundleVersion;
 @property(retain) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
+@property(retain) NSString *appName; // @synthesize appName=_appName;
 @property(retain) NSString *accountIdentifier; // @synthesize accountIdentifier=_accountIdentifier;
 @property(retain) NSString *accountOpaqueDSID; // @synthesize accountOpaqueDSID=_accountOpaqueDSID;
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
-@property(readonly) NSString *appName;
 - (id)description;
 @property(readonly) NSString *sourceString;
 

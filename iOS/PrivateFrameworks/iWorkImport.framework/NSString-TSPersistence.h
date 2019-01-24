@@ -8,6 +8,5 @@
 
 @interface NSString (TSPersistence)
 @property(readonly, nonatomic) _Bool tsp_isPasteboardStateType;
-- (id)tsp_pathExceptPrivate;
 @end
 

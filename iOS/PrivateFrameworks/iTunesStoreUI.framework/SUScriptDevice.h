@@ -36,6 +36,7 @@
 @property(readonly) NSString *restrictionMultiplayerGamingAllowed;
 @property(readonly) NSString *restrictionITunesSocialAllowed;
 @property(readonly) NSString *restrictionITunesAllowed;
+- (id)restrictionExplicitMedia;
 @property(readonly) NSString *restrictionCellularHDUploadsAllowed;
 @property(readonly) NSString *restrictionCameraAllowed;
 @property(readonly) NSString *restrictionBookStoreEroticaAllowed;
@@ -117,9 +118,11 @@
 @property(readonly) id accessibilityBoldTextEnabled;
 - (id)valueForRestriction:(id)arg1;
 - (id)UTIForURL:(id)arg1;
+- (void)setValueForRestriction:(id)arg1 enabled:(id)arg2;
 - (void)setAutomaticDownloadKinds:(id)arg1 withCompletionHandler:(id)arg2;
 - (id)restrictionLevelForType:(id)arg1;
 - (void)requestFreeSpaceWithBytes:(id)arg1 options:(id)arg2 completionHandler:(id)arg3;
+- (id)isRestrictionLockedDown:(id)arg1;
 - (id)hasCapability:(id)arg1;
 - (id)getMachineIdentifierForAccountIdentifier:(id)arg1;
 - (id)checkCapabilitiesPropertyListString:(id)arg1 showFailureDialog:(_Bool)arg2;

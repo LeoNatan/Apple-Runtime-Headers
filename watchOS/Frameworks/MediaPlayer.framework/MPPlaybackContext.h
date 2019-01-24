@@ -13,10 +13,10 @@
 @interface MPPlaybackContext : NSObject <NSSecureCoding>
 {
     MPAVItem *_playerCurrentItem;
-    _Bool _shouldStartPlayback;
     _Bool _requireFinalTracklist;
     _Bool _shouldRestartPlayback;
     int _startIndex;
+    int _actionAfterQueueLoad;
     int _shuffleType;
     int _repeatType;
     NSString *_playActivityFeatureName;
@@ -37,13 +37,14 @@
 @property(nonatomic) int shuffleType; // @synthesize shuffleType=_shuffleType;
 @property(nonatomic) _Bool shouldRestartPlayback; // @synthesize shouldRestartPlayback=_shouldRestartPlayback;
 @property(nonatomic) _Bool requireFinalTracklist; // @synthesize requireFinalTracklist=_requireFinalTracklist;
-@property(nonatomic) _Bool shouldStartPlayback; // @synthesize shouldStartPlayback=_shouldStartPlayback;
+@property(nonatomic) int actionAfterQueueLoad; // @synthesize actionAfterQueueLoad=_actionAfterQueueLoad;
 @property(nonatomic) int startIndex; // @synthesize startIndex=_startIndex;
 - (void).cxx_destruct;
 - (id)description;
 - (id)descriptionComponents;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+@property(readonly, nonatomic) _Bool shouldBecomeActive;
 - (id)init;
 @property(retain, nonatomic) MPAVItem *playerCurrentItem;
 

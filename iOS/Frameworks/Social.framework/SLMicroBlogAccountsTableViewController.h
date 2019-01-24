@@ -9,7 +9,6 @@
 @class NSArray, SLMicroBlogUserRecord, UIImage;
 @protocol SLMicroBlogAccountsTableViewControllerDelegate;
 
-__attribute__((visibility("hidden")))
 @interface SLMicroBlogAccountsTableViewController : UITableViewController
 {
     NSArray *_accountUserRecords;

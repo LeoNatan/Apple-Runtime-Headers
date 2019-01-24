@@ -55,11 +55,11 @@
 - (id)_placeholderImageNameForBundleID:(id)arg1;
 @property(readonly, nonatomic) _Bool supportsLocalIntentExecution;
 @property(readonly, nonatomic) _Bool requiresRemoteExecution;
-@property(readonly, nonatomic) _Bool wantsThreeLineLayout;
 - (_Bool)_isPodcastsDonation;
 - (_Bool)_isMusicDonation;
 @property(readonly, nonatomic) _Bool isEndWorkoutDonation;
 @property(readonly, nonatomic) _Bool isBeginWorkoutDonation;
+@property(readonly, nonatomic) _Bool isWorkoutDonation;
 @property(readonly, nonatomic) _Bool isMediaDonation;
 @property(readonly, nonatomic) unsigned int donationType;
 - (void)loadWithCompletion:(CDUnknownBlockType)arg1;

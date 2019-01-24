@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class ACAccountStore, HMDeviceSetupOperationHandler, SFDeviceOperationHandlerWiFiSetup, SFService, SFSession;
+@class ACAccountStore, HMDeviceSetupOperationHandler, SFDeviceOperationHandlerCDPSetup, SFDeviceOperationHandlerWiFiSetup, SFService, SFSession;
 @protocol OS_dispatch_queue;
 
 @interface SFDeviceRepairService : NSObject
@@ -18,6 +18,8 @@
     SFService *_sfService;
     SFSession *_sfSession;
     ACAccountStore *_accountStore;
+    _Bool _prefCDPEnabled;
+    SFDeviceOperationHandlerCDPSetup *_cdpSetupHandler;
     HMDeviceSetupOperationHandler *_homeKitSetupHandler;
     SFDeviceOperationHandlerWiFiSetup *_wifiSetupHandler;
     NSObject<OS_dispatch_queue> *_dispatchQueue;

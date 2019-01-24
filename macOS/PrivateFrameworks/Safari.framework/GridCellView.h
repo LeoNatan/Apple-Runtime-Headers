@@ -44,6 +44,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) __weak id <GridCellViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)_didRecognizeImmediateAction:(id)arg1;
+- (BOOL)accessibilityPerformShowMenu;
 - (BOOL)accessibilityPerformPress;
 - (id)accessibilityRoleDescription;
 - (id)accessibilityChildren;

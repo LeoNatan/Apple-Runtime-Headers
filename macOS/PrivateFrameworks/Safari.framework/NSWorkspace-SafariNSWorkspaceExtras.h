@@ -15,7 +15,7 @@
 - (id)downloadAssessmentForPath:(id)arg1;
 - (void)sendNotificationsForFinishedDownloadAtPath:(id)arg1;
 - (BOOL)safari_createInternetLocationFileAtURL:(id)arg1 withURL:(id)arg2 title:(id)arg3 error:(id *)arg4;
-- (id)createInternetLocationFileInDirectory:(id)arg1 withURL:(id)arg2 title:(id)arg3;
+- (void)createInternetLocationFileInDirectory:(id)arg1 withURL:(id)arg2 title:(id)arg3;
 - (id)safari_internetLocationFileNameForURL:(id)arg1 title:(id)arg2;
 - (id)URLForInternetLocationFileAtPath:(id)arg1;
 - (BOOL)URL:(id *)arg1 title:(id *)arg2 forInternetLocationFileAtPath:(id)arg3;

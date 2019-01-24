@@ -20,7 +20,7 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (void)saveToArchiver:(id)arg1;
-- (void)loadFromArchive:(const struct PencilAnnotationSelectionArchive *)arg1 unarchiver:(id)arg2;
+-     // Error parsing type: v32@0:8r^{PencilAnnotationSelectionArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{Reference}}16@24, name: loadFromArchive:unarchiver:
 - (void)loadFromUnarchiver:(id)arg1;
 @property(retain, nonatomic) TSKSelection *selection;
 

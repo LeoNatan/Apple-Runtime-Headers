@@ -27,6 +27,7 @@
     int _abUID;
     int _transitionStatus;
     int _hardPauseDigitsState;
+    int _ttyType;
     NSDate *_dateCreated;
     NSDate *_dateAnsweredOrDialed;
     NSDate *_dateSentInvitation;
@@ -57,6 +58,7 @@
 + (id)supplementalDialTelephonyCallString;
 + (id)supplementalDialTelephonyCallStringForDestination:(id)arg1 isPhoneNumber:(BOOL)arg2;
 + (id)_supplementalDialTelephonyCallStringForLocString:(id)arg1 destination:(id)arg2 isPhoneNumber:(BOOL)arg3 includeFaceTimeAudio:(BOOL)arg4;
+@property(nonatomic) int ttyType; // @synthesize ttyType=_ttyType;
 @property(copy, nonatomic) NSString *hardPauseDigits; // @synthesize hardPauseDigits=_hardPauseDigits;
 @property(nonatomic) int hardPauseDigitsState; // @synthesize hardPauseDigitsState=_hardPauseDigitsState;
 @property(nonatomic) BOOL wasPulledToCurrentDevice; // @synthesize wasPulledToCurrentDevice=_wasPulledToCurrentDevice;
@@ -165,7 +167,6 @@
 @property(readonly, copy, nonatomic) NSSet *remoteParticipantHandles;
 @property(readonly, nonatomic, getter=isConversation) BOOL conversation;
 @property(readonly, copy, nonatomic) TUDialRequest *dialRequestForRedial;
-@property(readonly, nonatomic) int ttyType;
 @property(readonly, nonatomic) long long faceTimeTransportType;
 @property(readonly, nonatomic, getter=isTTY) BOOL tty;
 @property(readonly, nonatomic, getter=isRTT) BOOL rtt;

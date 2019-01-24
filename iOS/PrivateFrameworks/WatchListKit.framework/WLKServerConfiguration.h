@@ -14,7 +14,6 @@
     NSObject<OS_dispatch_queue> *_accessQueue;
     NSOperationQueue *_fetchQueue;
     NSOperationQueue *_operationQueue;
-    WLKServerConfigurationResponse *_response;
     NSArray *_orderedChannels;
     NSDictionary *_channelsByID;
     long long _vppaStatus;
@@ -27,9 +26,11 @@
     _Bool _isFetching;
     CDUnknownBlockType _fetchCompletionHandler;
     NSDictionary *_requiredRequestKeyValuePairsDictionary;
+    WLKServerConfigurationResponse *_response;
 }
 
 + (id)sharedInstance;
+@property(readonly, nonatomic) WLKServerConfigurationResponse *response; // @synthesize response=_response;
 @property(retain, nonatomic) NSDictionary *requiredRequestKeyValuePairsDictionary; // @synthesize requiredRequestKeyValuePairsDictionary=_requiredRequestKeyValuePairsDictionary;
 @property(copy, nonatomic) CDUnknownBlockType fetchCompletionHandler; // @synthesize fetchCompletionHandler=_fetchCompletionHandler;
 @property _Bool isFetching; // @synthesize isFetching=_isFetching;

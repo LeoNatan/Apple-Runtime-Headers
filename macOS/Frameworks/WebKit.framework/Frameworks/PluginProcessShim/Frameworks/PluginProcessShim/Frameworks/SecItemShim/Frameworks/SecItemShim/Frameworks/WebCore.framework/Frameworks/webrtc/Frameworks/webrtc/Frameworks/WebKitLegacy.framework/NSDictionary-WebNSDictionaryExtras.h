@@ -11,7 +11,6 @@
 - (id)_webkit_objectForMIMEType:(id)arg1;
 - (id)_webkit_arrayForKey:(id)arg1;
 - (id)_webkit_stringForKey:(id)arg1;
-- (int)_webkit_intForKey:(id)arg1;
 - (id)_webkit_numberForKey:(id)arg1;
 @end
 

@@ -22,9 +22,9 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSMutableDictionary *coldDataByYear; // @synthesize coldDataByYear=_coldDataByYear;
 @property(retain, nonatomic) NSMutableDictionary *data; // @synthesize data=_data;
 - (void).cxx_destruct;
-- (void)saveToArchive:(struct RemoteDataValueMapArchive *)arg1;
-- (void)p_saveMap:(struct NSMutableDictionary *)arg1 toArchive:(struct RemoteDataValueMapArchive *)arg2;
-- (id)initFromArchive:(const struct RemoteDataValueMapArchive *)arg1;
+-     // Error parsing type: v24@0:8^{RemoteDataValueMapArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSCE::RemoteDataValueMapArchive_RemoteDataMapEntry>=^{Arena}ii^{Rep}}}16, name: saveToArchive:
+-     // Error parsing type: v32@0:8^{NSMutableDictionary=#}16^{RemoteDataValueMapArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSCE::RemoteDataValueMapArchive_RemoteDataMapEntry>=^{Arena}ii^{Rep}}}24, name: p_saveMap:toArchive:
+-     // Error parsing type: @24@0:8r^{RemoteDataValueMapArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSCE::RemoteDataValueMapArchive_RemoteDataMapEntry>=^{Arena}ii^{Rep}}}16, name: initFromArchive:
 - (void)setObject:(id)arg1 forKeyedSubscript:(id)arg2;
 - (id)objectForKeyedSubscript:(id)arg1;
 - (void)enumerateSpecifiersAndValuesWithBlock:(CDUnknownBlockType)arg1;

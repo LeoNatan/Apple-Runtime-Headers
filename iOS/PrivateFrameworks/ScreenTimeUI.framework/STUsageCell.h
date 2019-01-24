@@ -6,29 +6,25 @@
 
 #import <ScreenTimeUI/STTableCell.h>
 
-@class NSLayoutConstraint, STCandyBarView, STUsageItem, UILabel;
+@class NSLayoutConstraint, STCandyBarView, UILabel;
 
 @interface STUsageCell : STTableCell
 {
     UILabel *_itemNameLabel;
     STCandyBarView *_usageBarView;
     UILabel *_usageLabel;
-    STUsageItem *_usageItem;
     NSLayoutConstraint *_usageBarWidthConstraint;
 }
 
 @property(readonly, nonatomic) NSLayoutConstraint *usageBarWidthConstraint; // @synthesize usageBarWidthConstraint=_usageBarWidthConstraint;
-@property(retain, nonatomic) STUsageItem *usageItem; // @synthesize usageItem=_usageItem;
 @property(readonly, nonatomic) UILabel *usageLabel; // @synthesize usageLabel=_usageLabel;
 @property(readonly, nonatomic) STCandyBarView *usageBarView; // @synthesize usageBarView=_usageBarView;
 @property(readonly, nonatomic) UILabel *itemNameLabel; // @synthesize itemNameLabel=_itemNameLabel;
 - (void).cxx_destruct;
-- (void)_didFetchAppInfo:(id)arg1;
-- (void)_registerForAppInfoCacheNotifications;
-- (void)_didFetchIcon:(id)arg1;
-- (void)_registerForIconCacheNotifications;
+- (void)_didFetchAppInfoOrIcon:(id)arg1;
 - (void)refreshCellContentsWithSpecifier:(id)arg1;
 - (void)setValue:(id)arg1;
+- (id)value;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2 specifier:(id)arg3;
 
 @end

@@ -26,7 +26,6 @@
 + (BOOL)useNewPrimitiveRestartBehavior;
 @property(readonly) NSObject<OS_dispatch_queue> *serialQueue; // @synthesize serialQueue=_serialQueue;
 @property(readonly) unsigned long long globalTraceObjectID; // @synthesize globalTraceObjectID=_globalTraceObjectID;
-- (void).cxx_destruct;
 - (id)newSharedEventWithMachPort:(unsigned int)arg1;
 - (id)newSharedEventWithHandle:(id)arg1;
 - (id)newSharedEvent;

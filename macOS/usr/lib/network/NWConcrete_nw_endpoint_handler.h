@@ -40,6 +40,7 @@ __attribute__((visibility("hidden")))
     unsigned int dry_run:1;
     unsigned int triggering_voluntary_agents:1;
     unsigned int reuse_association:1;
+    unsigned int has_better_path:1;
 }
 
 - (void).cxx_destruct;

@@ -69,6 +69,8 @@
 - (void)_processFetchRecordChangesCompleted:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (void)_processModifyPerRecordCallBack:(id)arg1 error:(id)arg2;
 - (void)_processRecordZoneFetchCompletion:(id)arg1 zoneID:(id)arg2 clientChangeTokenData:(id)arg3 moreComing:(_Bool)arg4 shouldWriteBackChanges:(_Bool)arg5 desiredKeys:(int)arg6 syncType:(int)arg7 error:(id)arg8 currentBatchCount:(int)arg9 maxBatchCount:(int)arg10 completionBlock:(CDUnknownBlockType)arg11;
+- (_Bool)_kickOffWriteIfNeededForSyncType:(int)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)_kickOffWriteOnCKQueueWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_resetSyncToken;
 - (void)deleteAttachmentSyncToken;
 - (_Bool)_attachmentZoneCreated;
@@ -88,7 +90,7 @@
 - (_Bool)_deviceConditionsAllowsMessageSyncIgnoreFeatureEnabled:(_Bool)arg1;
 - (_Bool)_deviceConditionsAllowsMessageSync;
 - (_Bool)_deviceConditionsAllowsMessageSyncForCurrentBatchCount:(int)arg1 maxBatchCount:(int)arg2;
-- (void)_updateDeviceCondictionsToCheckIfNeededForCurrentBatchCount:(int)arg1 maxBatchCount:(int)arg2;
+- (void)_updateDeviceConditionsToCheckIfNeededForCurrentBatchCount:(int)arg1 maxBatchCount:(int)arg2;
 - (id)_ckUtilitiesInstance;
 - (id)__databaseRequestForAttachmentsWithAssets;
 - (void)__databaseRequestResetAllAttachmentsInFaiedCloudDownloadState;

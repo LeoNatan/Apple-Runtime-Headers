@@ -13,7 +13,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)curvedShadowWithOffset:(double)arg1 angle:(double)arg2 radius:(double)arg3 curve:(double)arg4 opacity:(double)arg5 color:(id)arg6 enabled:(_Bool)arg7;
-+ (id)instanceWithArchive:(const struct ShadowArchive *)arg1 unarchiver:(id)arg2;
++     // Error parsing type: @32@0:8r^{ShadowArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{Color}^{DropShadowArchive}^{ContactShadowArchive}^{CurvedShadowArchive}iBffif}16@24, name: instanceWithArchive:unarchiver:
 @property(readonly, nonatomic) double curve; // @synthesize curve=mCurve;
 - (id)mixedObjectWithFraction:(double)arg1 ofObject:(id)arg2;
 - (long long)mixingTypeWithObject:(id)arg1 context:(id)arg2;
@@ -30,13 +30,12 @@ __attribute__((visibility("hidden")))
 - (double)paddingForCurveWithSize:(struct CGSize)arg1;
 - (struct CGRect)expandedBoundsForRect:(struct CGRect)arg1;
 - (double)paddingForBlur;
-- (_Bool)usesOpenGL;
 - (unsigned long long)shadowType;
 - (double)clampOffset:(double)arg1;
 - (id)description;
 - (id)initWithOffset:(double)arg1 angle:(double)arg2 radius:(double)arg3 curve:(double)arg4 opacity:(double)arg5 color:(id)arg6 enabled:(_Bool)arg7;
-- (void)saveToArchive:(struct ShadowArchive *)arg1 archiver:(id)arg2;
-- (id)initWithArchive:(const struct ShadowArchive *)arg1 unarchiver:(id)arg2;
+-     // Error parsing type: v32@0:8^{ShadowArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{Color}^{DropShadowArchive}^{ContactShadowArchive}^{CurvedShadowArchive}iBffif}16@24, name: saveToArchive:archiver:
+-     // Error parsing type: @32@0:8r^{ShadowArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{Color}^{DropShadowArchive}^{ContactShadowArchive}^{CurvedShadowArchive}iBffif}16@24, name: initWithArchive:unarchiver:
 
 @end
 

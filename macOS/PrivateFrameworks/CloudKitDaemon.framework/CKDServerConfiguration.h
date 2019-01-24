@@ -41,6 +41,7 @@ __attribute__((visibility("hidden")))
 - (id)flowControlMaximumThrottleTime:(id)arg1;
 - (id)flowControlRegenerationForContainer:(id)arg1;
 - (id)flowControlBudgetForContainer:(id)arg1;
+- (id)transcodeServerPublicKeyURLsForContainer:(id)arg1;
 - (long long)tokenRegisterDaysForContainer:(id)arg1;
 - (BOOL)shouldSignForMessageType:(int)arg1 inDatabaseScope:(long long)arg2 forContainer:(id)arg3;
 - (id)mescalSessionURLForContainer:(id)arg1;

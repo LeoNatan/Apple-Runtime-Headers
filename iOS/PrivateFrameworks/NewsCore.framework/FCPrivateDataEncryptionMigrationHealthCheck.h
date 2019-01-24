@@ -35,6 +35,7 @@
 - (id)_prepareSensitiveSubscriptionsAndReturnExpectations;
 - (id)_prepareSubscriptionsAndReturnExpectations;
 - (id)_prepareReadingListAndReturnExpectations;
+- (id)_prepareIssueHistoryAndReturnExpectations;
 - (id)_prepareHistoryAndReturnExpectations;
 - (void)_eraseAllPrivateData;
 - (void)run;

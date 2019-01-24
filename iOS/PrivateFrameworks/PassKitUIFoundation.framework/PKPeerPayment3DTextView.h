@@ -22,8 +22,10 @@
     double _animationDuration;
     double _lastRenderTime;
     _Bool _liveMotionEnabled;
+    _Bool _willAnimate;
     _Bool _snapshotRequested;
-    _Bool _hasFullyRendered;
+    _Bool _usedForSnapshotting;
+    unsigned long long _framesFullyRendered;
     PKPeerPayment3DStore *_3DStore;
     _Bool _layoutRequested;
     NSMutableArray *_charactersToDraw;
@@ -49,7 +51,7 @@
 - (void)layoutSubviews;
 - (void)updateSceneUnits;
 - (void)dealloc;
-- (id)initWithFrame:(struct CGRect)arg1 renderStyle:(unsigned long long)arg2;
+- (id)initWithFrame:(struct CGRect)arg1 renderStyle:(unsigned long long)arg2 usedForSnapshotting:(_Bool)arg3;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 // Remaining properties

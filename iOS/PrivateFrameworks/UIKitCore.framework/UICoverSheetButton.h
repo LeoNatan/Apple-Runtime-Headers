@@ -6,12 +6,11 @@
 
 #import <UIKitCore/UIControl.h>
 
-#import <UIKitCore/UIClickInteractionDelegate-Protocol.h>
-#import <UIKitCore/_UIInteractiveHighlighting-Protocol.h>
+#import <UIKitCore/_UIClickInteractionDelegate-Protocol.h>
 
-@class NSArray, NSString, UIClickInteraction, UIColor, UIImage, UIImageView, UIView, UIVisualEffectView;
+@class NSArray, NSString, UIColor, UIImage, UIImageView, UIView, UIVisualEffectView, _UIClickInteraction;
 
-@interface UICoverSheetButton : UIControl <UIClickInteractionDelegate, _UIInteractiveHighlighting>
+@interface UICoverSheetButton : UIControl <_UIClickInteractionDelegate>
 {
     UIView *_containerView;
     UIImageView *_contentView;
@@ -19,11 +18,11 @@
     NSArray *_backgroundEffects;
     NSArray *_selectedBackgroundEffects;
     UIView *_backgroundHighlightView;
-    UIClickInteraction *_clickInteraction;
+    _UIClickInteraction *_clickInteraction;
     _Bool _interactive;
-    double _interactiveHighlightMagnitude;
     _Bool _didActivateDuringInteraction;
     double _maxForceDuringInteraction;
+    double _highlightProgress;
     _Bool _pronounced;
     UIImage *_image;
     UIImage *_selectedImage;
@@ -49,16 +48,16 @@
 - (id)_interactionCountStatWithActivation:(_Bool)arg1;
 - (id)_backgroundEffectsWithBrightness:(double)arg1;
 - (void)layoutIfNeededAnimated;
-- (void)_highlightForInteraction:(id)arg1 fractionComplete:(double)arg2 ended:(_Bool)arg3;
 - (void)clickInteractionDidEnd:(id)arg1;
 - (void)clickInteraction:(id)arg1 didObserveForce:(double)arg2;
-- (_Bool)clickInteractionShouldInvokeAction:(id)arg1;
-- (void)clickInteractionDidBegin:(id)arg1;
+- (void)clickInteractionDidClickUp:(id)arg1;
+- (_Bool)clickInteractionShouldBegin:(id)arg1;
+- (void)_animateEffectUpdateWithProgress:(double)arg1 ended:(_Bool)arg2;
+- (id)highlightEffectForClickInteraction:(id)arg1;
 - (void)layoutSubviews;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)setSelected:(_Bool)arg1;
 @property(nonatomic, getter=isLatching) _Bool latching;
-- (void)traitCollectionDidChange:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 // Remaining properties

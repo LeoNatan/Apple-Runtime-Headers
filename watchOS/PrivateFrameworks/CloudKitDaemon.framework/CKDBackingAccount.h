@@ -21,6 +21,7 @@
 + (id)accountWithIdentifier:(id)arg1 inStore:(id)arg2;
 + (Class)_platformBackingAccountClass;
 @property(readonly, nonatomic) _Bool canAuthWithCloudKit; // @synthesize canAuthWithCloudKit=_canAuthWithCloudKit;
+@property(readonly, nonatomic) NSURL *privateDatabaseRPCServiceURL;
 @property(readonly, nonatomic) NSString *sharingURLHostname;
 @property(readonly, nonatomic) NSURL *privateMetricsServiceURL;
 @property(readonly, nonatomic) NSURL *privateCodeServiceURL;

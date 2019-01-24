@@ -6,15 +6,19 @@
 
 #import <AppKit/NSView.h>
 
+#import <WebKit/NSDraggingSource-Protocol.h>
+#import <WebKit/NSFilePromiseProviderDelegate-Protocol.h>
 #import <WebKit/NSTextInputClient-Protocol.h>
+#import <WebKit/NSTextInputClient_Async-Protocol.h>
 #import <WebKit/NSTouchBarProvider-Protocol.h>
 #import <WebKit/NSUserInterfaceValidations-Protocol.h>
+#import <WebKit/WKShareSheetDelegate-Protocol.h>
 #import <WebKit/WebViewImplDelegate-Protocol.h>
 
-@class NSArray, NSColor, NSData, NSString, NSTouchBar, NSURL, WKBackForwardList, WKBrowsingContextHandle, WKWebViewConfiguration, _WKSessionState, _WKThumbnailView;
+@class NSArray, NSColor, NSData, NSString, NSTouchBar, NSURL, WKBackForwardList, WKBrowsingContextHandle, WKWebViewConfiguration, _WKFrameHandle, _WKInspector, _WKSessionState, _WKThumbnailView;
 @protocol WKHistoryDelegatePrivate, WKNavigationDelegate, WKUIDelegate, _WKDiagnosticLoggingDelegate, _WKFindDelegate, _WKFullscreenDelegate, _WKIconLoadingDelegate, _WKInputDelegate;
 
-@interface WKWebView : NSView <NSUserInterfaceValidations, NSTouchBarProvider, WebViewImplDelegate, NSTextInputClient>
+@interface WKWebView : NSView <NSUserInterfaceValidations, NSFilePromiseProviderDelegate, NSDraggingSource, NSTouchBarProvider, WebViewImplDelegate, NSTextInputClient, NSTextInputClient_Async, WKShareSheetDelegate>
 {
     struct RetainPtr<WKWebViewConfiguration> _configuration;
     RefPtr_a805eeb8 _page;
@@ -23,23 +27,37 @@
     struct unique_ptr<WebKit::IconLoadingDelegate, std::__1::default_delete<WebKit::IconLoadingDelegate>> _iconLoadingDelegate;
     unsigned long long _observedRenderingProgressEvents;
     struct WeakObjCPtr<id<_WKInputDelegate>> _inputDelegate;
+    Optional_bd583063 _resolutionForShareSheetImmediateCompletionForTesting;
+    struct RetainPtr<WKSafeBrowsingWarning> _safeBrowsingWarning;
     struct unique_ptr<WebKit::WebViewImpl, std::__1::default_delete<WebKit::WebViewImpl>> _impl;
     struct RetainPtr<WKTextFinderClient> _textFinderClient;
+    double _minimumEffectiveDeviceWidth;
 }
 
 + (BOOL)handlesURLScheme:(id)arg1;
++ (id)_visitUnsafeWebsiteSentinel;
++ (id)_confirmMalwareSentinel;
++ (BOOL)_handlesSafeBrowsing;
++ (void)_setStringForFind:(id)arg1;
++ (id)_stringForFind;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+- (Optional_bd583063)_resolutionForShareSheetImmediateCompletionForTesting;
 - (id)urlSchemeHandlerForURLScheme:(id)arg1;
 - (void)_interactWithMediaControlsForTesting;
 - (void)_web_didRemoveMediaControlsManager;
 - (void)_web_didAddMediaControlsManager:(id)arg1;
 - (id)candidateListTouchBarItem;
 - (id)makeTouchBar;
+- (void)draggingSession:(id)arg1 endedAtPoint:(struct CGPoint)arg2 operation:(unsigned long long)arg3;
+- (unsigned long long)draggingSession:(id)arg1 sourceOperationMaskForDraggingContext:(long long)arg2;
+- (void)filePromiseProvider:(id)arg1 writePromiseToURL:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (id)filePromiseProvider:(id)arg1 fileNameForType:(id)arg2;
 - (void)_web_gestureEventWasNotHandledByWebCore:(id)arg1;
 - (void)_web_editorStateDidChange;
 - (void)_web_dismissContentRelativeChildWindowsWithAnimation:(BOOL)arg1;
 - (void)_web_dismissContentRelativeChildWindows;
+- (void)_web_didPerformDragOperation:(BOOL)arg1;
 - (unsigned long long)_web_dragDestinationActionForDraggingInfo:(id)arg1;
 - (void)_web_didChangeContentSize:(struct CGSize)arg1;
 - (void)_web_completeImmediateActionAnimation;
@@ -60,6 +78,7 @@
 - (void)selectFindMatch:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)getSelectedText:(CDUnknownBlockType)arg1;
 - (id)documentContainerView;
+- (void)replaceMatches:(id)arg1 withString:(id)arg2 inSelectionOnly:(BOOL)arg3 resultCollector:(CDUnknownBlockType)arg4;
 - (void)findMatchesForString:(id)arg1 relativeToMatch:(id)arg2 findOptions:(unsigned long long)arg3 maxResults:(unsigned long long)arg4 resultCollector:(CDUnknownBlockType)arg5;
 - (id)_ensureTextFinderClient;
 - (void)rotateWithEvent:(id)arg1;
@@ -112,6 +131,7 @@
 - (void)markedRangeWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)selectedRangeWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (struct CGRect)firstRectForCharacterRange:(struct _NSRange)arg1 actualRange:(struct _NSRange *)arg2;
+- (void)typingAttributesWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (unsigned long long)characterIndexForPoint:(struct CGPoint)arg1;
 - (id)attributedSubstringForProposedRange:(struct _NSRange)arg1 actualRange:(struct _NSRange *)arg2;
 - (struct _NSRange)markedRange;
@@ -172,6 +192,8 @@
 - (void)showGuessPanel:(id)arg1;
 - (void)stopSpeaking:(id)arg1;
 - (void)startSpeaking:(id)arg1;
+- (void)changeAttributes:(id)arg1;
+- (void)changeColor:(id)arg1;
 - (void)changeFont:(id)arg1;
 - (BOOL)readSelectionFromPasteboard:(id)arg1;
 - (id)validRequestorForSendType:(id)arg1 returnType:(id)arg2;
@@ -288,8 +310,12 @@
 - (BOOL)becomeFirstResponder;
 - (BOOL)acceptsFirstResponder;
 - (void)_updateAccessibilityEventsEnabled;
-- (void)_didRemoveAttachment:(id)arg1;
-- (void)_didInsertAttachment:(id)arg1 withSource:(id)arg2;
+- (void)_didInvalidateDataForAttachment:(struct Attachment *)arg1;
+- (void)_didRemoveAttachment:(struct Attachment *)arg1;
+- (void)_didInsertAttachment:(struct Attachment *)arg1 withSource:(id)arg2;
+- (void)_clearSafeBrowsingWarningIfForMainFrameNavigation;
+- (void)_clearSafeBrowsingWarning;
+- (void)_showSafeBrowsingWarning:(const struct SafeBrowsingWarning *)arg1 completionHandler:(CompletionHandler_0810ae1c *)arg2;
 - (void)_didChangeEditorState;
 @property(nonatomic, setter=_setViewportSizeForCSSViewportUnits:) struct CGSize _viewportSizeForCSSViewportUnits;
 @property(nonatomic) BOOL allowsLinkPreview;
@@ -322,6 +348,7 @@
 @property(nonatomic) __weak id <WKNavigationDelegate> navigationDelegate;
 @property(readonly, nonatomic) WKBackForwardList *backForwardList;
 @property(readonly, copy, nonatomic) WKWebViewConfiguration *configuration;
+- (id)valueForUndefinedKey:(id)arg1;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
@@ -352,12 +379,14 @@
 @property(readonly) NSColor *_pageExtendedBackgroundColor;
 @property(nonatomic, setter=_setTopContentInset:) double _topContentInset;
 @property(nonatomic, setter=_setOverrideDeviceScaleFactor:) double _overrideDeviceScaleFactor;
+- (void)shareSheetDidDismiss:(id)arg1;
 @property(nonatomic, setter=_setWindowOcclusionDetectionEnabled:) BOOL _windowOcclusionDetectionEnabled;
 @property(nonatomic, setter=_setOverlayScrollbarStyle:) unsigned long long _overlayScrollbarStyle;
 @property(retain, nonatomic, setter=_setInspectorAttachmentView:) NSView *_inspectorAttachmentView;
 - (void)_setDrawsTransparentBackground:(BOOL)arg1;
 @property(nonatomic, setter=_setBackgroundColor:) NSColor *_backgroundColor;
 @property(nonatomic, setter=_setDrawsBackground:) BOOL _drawsBackground;
+- (void)_removeDataDetectedLinks:(CDUnknownBlockType)arg1;
 - (void)_setPageMuted:(unsigned long long)arg1;
 @property(nonatomic, setter=_setMediaCaptureEnabled:) BOOL _mediaCaptureEnabled;
 - (void)_muteMediaCapture;
@@ -367,6 +396,7 @@
 @property(nonatomic, getter=_allowsMediaDocumentInlinePlayback, setter=_setAllowsMediaDocumentInlinePlayback:) BOOL _allowsMediaDocumentInlinePlayback;
 @property(readonly, nonatomic) NSArray *_scrollPerformanceData;
 @property(nonatomic, setter=_setScrollPerformanceDataCollectionEnabled:) BOOL _scrollPerformanceDataCollectionEnabled;
+@property(nonatomic, setter=_setMinimumEffectiveDeviceWidth:) double _minimumEffectiveDeviceWidth;
 @property(nonatomic, setter=_setViewScale:) double _viewScale;
 @property(nonatomic, setter=_setBackgroundExtendsBeyondPage:) BOOL _backgroundExtendsBeyondPage;
 @property(nonatomic, setter=_setFixedLayoutSize:) struct CGSize _fixedLayoutSize;
@@ -402,6 +432,13 @@
 @property(nonatomic, setter=_setAllowsRemoteInspection:) BOOL _allowsRemoteInspection;
 - (void)_updateWebsitePolicies:(id)arg1;
 - (void)_evaluateJavaScriptWithoutUserGesture:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)_isJITEnabled:(CDUnknownBlockType)arg1;
+- (void)_showSafeBrowsingWarningWithURL:(id)arg1 title:(id)arg2 warning:(id)arg3 details:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
+- (void)_showSafeBrowsingWarningWithTitle:(id)arg1 warning:(id)arg2 details:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
+- (void)_simulateDeviceOrientationChangeWithAlpha:(double)arg1 beta:(double)arg2 gamma:(double)arg3;
+- (id)_attachmentForIdentifier:(id)arg1;
+- (id)_insertAttachmentWithFileWrapper:(id)arg1 contentType:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (id)_insertAttachmentWithFileWrapper:(id)arg1 contentType:(id)arg2 options:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (id)_insertAttachmentWithFilename:(id)arg1 contentType:(id)arg2 data:(id)arg3 options:(id)arg4 completion:(CDUnknownBlockType)arg5;
 - (void)_close;
 - (id)_restoreSessionState:(id)arg1 andNavigate:(BOOL)arg2;
@@ -413,6 +450,7 @@
 - (void)_killWebContentProcessAndResetState;
 - (id)_reloadExpiredOnly;
 - (id)_reloadWithoutContentBlockers;
+@property(readonly, nonatomic) NSView *_safeBrowsingWarning;
 - (void)_killWebContentProcess;
 @property(readonly, nonatomic) int _webProcessIdentifier;
 @property(nonatomic, setter=_setUserContentExtensionsEnabled:) BOOL _userContentExtensionsEnabled;
@@ -426,11 +464,39 @@
 - (id)_loadData:(id)arg1 MIMEType:(id)arg2 characterEncodingName:(id)arg3 baseURL:(id)arg4 userData:(id)arg5;
 - (void)_loadAlternateHTMLString:(id)arg1 baseURL:(id)arg2 forUnreachableURL:(id)arg3;
 @property(readonly, nonatomic) NSURL *_unreachableURL;
+- (void)_resumeAllMediaPlayback;
+- (void)_suspendAllMediaPlayback;
+- (void)_stopAllMediaPlayback;
+- (void)_togglePictureInPicture;
+@property(readonly, nonatomic) BOOL _isPictureInPictureActive;
+@property(readonly, nonatomic) BOOL _canTogglePictureInPicture;
+- (void)_updateMediaPlaybackControlsManager;
 @property(nonatomic, setter=_setHistoryDelegate:) __weak id <WKHistoryDelegatePrivate> _historyDelegate;
 @property(readonly, nonatomic) WKBrowsingContextHandle *_handle;
 @property(readonly, nonatomic) id _remoteObjectRegistry;
+- (void)_takeFindStringFromSelection:(id)arg1;
 @property(nonatomic, getter=_isEditable, setter=_setEditable:) BOOL _editable;
+- (void)_changeListType:(id)arg1;
+- (void)_decreaseListLevel:(id)arg1;
+- (void)_increaseListLevel:(id)arg1;
+- (void)_toggleStrikeThrough:(id)arg1;
+- (void)_pasteAndMatchStyle:(id)arg1;
+- (void)_pasteAsQuotation:(id)arg1;
+- (void)_outdent:(id)arg1;
+- (void)_indent:(id)arg1;
+- (void)_insertNestedUnorderedList:(id)arg1;
+- (void)_insertNestedOrderedList:(id)arg1;
+- (void)_insertUnorderedList:(id)arg1;
+- (void)_insertOrderedList:(id)arg1;
+- (void)_alignRight:(id)arg1;
+- (void)_alignLeft:(id)arg1;
+- (void)_alignJustified:(id)arg1;
+- (void)_alignCenter:(id)arg1;
 - (void)_denyNextUserMediaRequest;
+@property(readonly, nonatomic) _WKFrameHandle *_mainFrame;
+@property(readonly, nonatomic) _WKInspector *_inspector;
+@property(readonly, nonatomic) BOOL _hasInspectorFrontend;
+- (void)_setShareSheetCompletesImmediatelyWithResolutionForTesting:(BOOL)arg1;
 - (void)_setDefersLoadingForTesting:(BOOL)arg1;
 - (BOOL)_completeBackSwipeForTesting;
 - (BOOL)_beginBackSwipeForTesting;
@@ -444,6 +510,7 @@
 - (double)_pageScale;
 - (void)_setPageScale:(double)arg1 withOrigin:(struct CGPoint)arg2;
 - (void)_requestActiveNowPlayingSessionInfo:(CDUnknownBlockType)arg1;
+- (void)_doAfterProcessingAllPendingMouseEvents:(CDUnknownBlockType)arg1;
 - (void)_setFooterBannerHeight:(int)arg1;
 - (void)_setHeaderBannerHeight:(int)arg1;
 - (void)viewDidChangeEffectiveAppearance;

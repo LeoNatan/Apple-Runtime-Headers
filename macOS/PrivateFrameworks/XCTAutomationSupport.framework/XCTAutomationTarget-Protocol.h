@@ -6,9 +6,10 @@
 
 #import <XCTAutomationSupport/NSObject-Protocol.h>
 
-@class NSArray, XCAccessibilityElement, XCTElementQuery;
+@class NSArray, XCAccessibilityElement, XCTElementQuery, XCTSerializedTransportWrapper2;
 
 @protocol XCTAutomationTarget <NSObject>
+- (void)listenForRemoteConnectionViaSerializedTransportWrapper:(XCTSerializedTransportWrapper2 *)arg1 completion:(void (^)(void))arg2;
 - (void)notifyWhenAnimationsAreIdle:(void (^)(NSError *))arg1;
 - (void)notifyWhenMainRunLoopIsIdle:(void (^)(NSError *))arg1;
 - (void)attributesForElement:(XCAccessibilityElement *)arg1 attributes:(NSArray *)arg2 reply:(void (^)(NSDictionary *, NSError *))arg3;

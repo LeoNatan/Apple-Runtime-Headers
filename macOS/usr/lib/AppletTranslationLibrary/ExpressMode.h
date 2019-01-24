@@ -11,10 +11,13 @@ __attribute__((visibility("hidden")))
 {
 }
 
-+ (id)checkAppletCompatibility:(id)arg1 fastPath:(char *)arg2 error:(id *)arg3;
++ (void)getDebugExpressLog:(id)arg1;
++ (id)MakeInternalConfiguration:(id)arg1 outError:(id *)arg2;
++ (id)checkAppletCompatibilityInternal:(id)arg1 fastPath:(char *)arg2 error:(id *)arg3;
 + (BOOL)PerformActivations:(id)arg1 transceiver:(id)arg2 fastPath:(BOOL)arg3 seHasActivatedApplets:(char *)arg4 error:(id *)arg5;
-+ (BOOL)configureSE:(id)arg1 transceiver:(id)arg2 seHasActivatedApplets:(char *)arg3 skipAllActivations:(BOOL)arg4 fastPath:(BOOL)arg5 error:(id *)arg6;
++ (BOOL)configureSE:(id)arg1 transceiver:(id)arg2 seHasActivatedApplets:(char *)arg3 skipAllActivations:(BOOL)arg4 fastPath:(BOOL)arg5 expressLogging:(BOOL)arg6 error:(id *)arg7;
 + (id)SerializeConfigurationDataForSE:(id)arg1 fastPath:(BOOL)arg2 error:(id *)arg3;
++ (id)checkAppletCompatibility:(id *)arg1 fastPath:(char *)arg2 error:(id *)arg3;
 
 @end
 

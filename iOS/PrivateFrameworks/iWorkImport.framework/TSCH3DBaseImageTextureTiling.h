@@ -15,7 +15,7 @@ __attribute__((visibility("hidden")))
     float _rotation;
 }
 
-+ (id)instanceWithArchive:(const struct Chart3DBaseImageTextureTilingArchive *)arg1 unarchiver:(id)arg2;
++     // Error parsing type: @32@0:8r^{Chart3DBaseImageTextureTilingArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{Chart3DVectorArchive}f}16@24, name: instanceWithArchive:unarchiver:
 @property(nonatomic) float rotation; // @synthesize rotation=_rotation;
 - (void)didInitFromSOS;
 @property(nonatomic) tvec2_84d5962d scale;
@@ -24,8 +24,8 @@ __attribute__((visibility("hidden")))
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)dealloc;
-- (void)saveToArchive:(struct Chart3DBaseImageTextureTilingArchive *)arg1 archiver:(id)arg2;
-- (id)initWithArchive:(const struct Chart3DBaseImageTextureTilingArchive *)arg1 unarchiver:(id)arg2;
+-     // Error parsing type: v32@0:8^{Chart3DBaseImageTextureTilingArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{Chart3DVectorArchive}f}16@24, name: saveToArchive:archiver:
+-     // Error parsing type: @32@0:8r^{Chart3DBaseImageTextureTilingArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{Chart3DVectorArchive}f}16@24, name: initWithArchive:unarchiver:
 
 @end
 

@@ -46,7 +46,6 @@
 - (id)_parsecResultsFromRawResponse:(id)arg1 identifiersToSFSearchResults:(id)arg2 identifiersToSFResultSections:(id)arg3;
 - (id)_parsecResultsFromResponse:(id)arg1;
 - (id)initWithParsecdSession:(id)arg1 skipAutoFillDataUpdates:(BOOL)arg2;
-- (id)init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -10,7 +10,7 @@
 @protocol TSDHint, TSDInfo, TSWPColumnMetrics, TSWPFootnoteHeightMeasurer, TSWPFootnoteMarkProvider, TSWPOffscreenColumn, TSWPTopicNumberHints;
 
 @protocol TSWPLayoutTarget <NSObject>
-@property(readonly, nonatomic) double maxAnchorY;
+@property(readonly, nonatomic) double maxAnchorInBlockDirection;
 @property(readonly, nonatomic) _Bool shouldWrapAroundExternalDrawables;
 @property(readonly, nonatomic) _Bool layoutIsValid;
 @property(readonly, nonatomic) _Bool textIsVertical;
@@ -20,7 +20,7 @@
 @property(readonly, nonatomic) int naturalDirection;
 @property(readonly, nonatomic) int naturalAlignment;
 @property(readonly, nonatomic) int verticalAlignment;
-@property(readonly, nonatomic) unsigned int autosizeFlags;
+@property(readonly, nonatomic) unsigned long long autosizeFlags;
 @property(readonly, nonatomic) struct CGPoint anchorPoint;
 @property(readonly, nonatomic) struct CGPoint position;
 @property(readonly, nonatomic) struct CGSize currentSize;

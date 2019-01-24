@@ -12,7 +12,7 @@ __attribute__((visibility("hidden")))
     // Error parsing type: , name: inCallControllTrackingArea
 }
 
-- (CDUnknownBlockType).cxx_destruct;
+- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (void)updateTrackingAreas;

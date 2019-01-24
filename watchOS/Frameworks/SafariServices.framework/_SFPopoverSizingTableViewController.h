@@ -6,15 +6,21 @@
 
 #import <UIKit/UITableViewController.h>
 
+@class UIBlurEffect;
+
 @interface _SFPopoverSizingTableViewController : UITableViewController
 {
+    UIBlurEffect *_backgroundBlurEffect;
     _Bool _didUpdateTranslucentAppearanceAtLeastOnce;
     _Bool _didHaveTranslucentAppearance;
 }
 
+- (void).cxx_destruct;
 - (id)backgroundColorUsingTranslucentAppearance:(_Bool)arg1;
+@property(readonly, nonatomic) UIBlurEffect *backgroundBlurEffect;
 - (void)updateTranslucentAppearance;
 @property(readonly, nonatomic) _Bool hasTranslucentAppearance;
+- (_Bool)_needsTranslucentAppearanceUpdate;
 - (void)_updateTranslucentAppearanceIfNeeded;
 - (void)viewWillTransitionToSize:(struct CGSize)arg1 withTransitionCoordinator:(id)arg2;
 - (void)willTransitionToTraitCollection:(id)arg1 withTransitionCoordinator:(id)arg2;

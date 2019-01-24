@@ -8,16 +8,17 @@
 
 #import <iWorkImport/TSCETableTranslatorProtocol-Protocol.h>
 
-@class NSArray, NSString, TSTInfo, TSTTableModel;
+@class NSArray, NSString, TSCECoordMapper, TSTColumnRowUIDMap, TSTTableInfo, TSTTableModel;
 
 __attribute__((visibility("hidden")))
 @interface TSTTableTranslator : NSObject <TSCETableTranslatorProtocol>
 {
-    TSTInfo *_tableInfo;
+    TSTTableInfo *_tableInfo;
     TSTTableModel *_baseTableModel;
+    TSCECoordMapper *_coordMapper;
 }
 
-@property(nonatomic) TSTInfo *tableInfo; // @synthesize tableInfo=_tableInfo;
+@property(nonatomic) TSTTableInfo *tableInfo; // @synthesize tableInfo=_tableInfo;
 @property(readonly, nonatomic) TSTTableModel *baseTableModel; // @synthesize baseTableModel=_baseTableModel;
 - (void).cxx_destruct;
 - (void)resetViewMapAndNotify;
@@ -35,7 +36,6 @@ __attribute__((visibility("hidden")))
 - (id)labelRowIndexes;
 - (id)summaryRowIndexes;
 - (id)populatedCategoryGroupLevelsInColumn:(struct TSUViewColumnIndex)arg1;
-- (void)setStorageParentToInfo:(id)arg1;
 - (_Bool)cellExistsAtCellID:(struct TSUViewCellCoord)arg1;
 @property(readonly, nonatomic) unsigned long long numberOfComments;
 @property(readonly, nonatomic) unsigned long long numberOfPopulatedCells;
@@ -100,6 +100,8 @@ __attribute__((visibility("hidden")))
 - (struct TSUChromeColumnIndex)chromeColumnIndexForViewColumnIndex:(struct TSUViewColumnIndex)arg1;
 - (struct TSUChromeRowIndex)chromeRowIndexForViewRowIndex:(struct TSUViewRowIndex)arg1;
 - (struct TSUViewColumnIndex)viewColumnIndexForBaseColumnIndex:(struct TSUModelColumnIndex)arg1;
+- (struct TSUChromeColumnIndex)chromeColumnIndexForBaseColumnIndex:(struct TSUModelColumnIndex)arg1;
+- (struct TSUChromeRowIndex)chromeRowIndexForBaseRowIndex:(struct TSUModelRowIndex)arg1;
 - (struct TSUViewRowIndex)viewRowIndexForBaseRowIndex:(struct TSUModelRowIndex)arg1;
 - (struct TSUModelColumnIndex)baseColumnIndexForChromeColumnIndex:(struct TSUChromeColumnIndex)arg1;
 - (struct TSUModelColumnIndex)baseColumnIndexForViewColumnIndex:(struct TSUViewColumnIndex)arg1;
@@ -138,6 +140,8 @@ __attribute__((visibility("hidden")))
 - (void)swapRowAtIndex:(struct TSUViewRowIndex)arg1 withRowAtIndex:(struct TSUViewRowIndex)arg2;
 - (void)moveColumnRange:(struct _NSRange)arg1 toColumnIndex:(struct TSUViewColumnIndex)arg2;
 - (void)moveRowRange:(struct _NSRange)arg1 toRowIndex:(struct TSUViewRowIndex)arg2;
+- (void)removeAnnotationsFromColumnsAtIndexes:(id)arg1;
+- (void)removeAnnotationsFromRowsAtIndexes:(id)arg1;
 - (void)removeColumnsAtIndexes:(id)arg1;
 - (void)removeRowsAtIndexes:(id)arg1;
 - (void)removeColumnsAtIndex:(struct TSUViewColumnIndex)arg1 count:(struct TSUViewColumnIndex)arg2;
@@ -207,6 +211,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) struct TSUViewCellRect headerRowRange;
 @property(readonly, nonatomic) struct TSUViewCellRect bodyRowRange;
 @property(readonly, nonatomic) struct TSUViewCellRect bodyColumnRange;
+- (struct TSUViewCellRect)bodyRangeForLowestLevelGroupEnclosingCellAtCellID:(struct TSUCellCoord)arg1;
 @property(readonly, nonatomic) struct TSUViewCellRect bodyRange;
 @property(readonly, nonatomic) struct TSUViewCellRect range;
 @property(readonly, nonatomic) unsigned int maxNumberOfHeaderColumns;
@@ -219,10 +224,12 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool wasCut;
 - (id)documentRoot;
 - (id)objectLocale;
-- (id)viewMap;
-- (id)summaryMap;
-- (id)baseMap;
+@property(readonly, nonatomic) TSTColumnRowUIDMap *viewMap;
+@property(readonly, nonatomic) TSTColumnRowUIDMap *summaryMap;
+@property(readonly, nonatomic) TSTColumnRowUIDMap *baseMap;
+- (id)coordinateMapper;
 - (id)init;
+- (void)teardown;
 - (id)initWithTableInfo:(id)arg1;
 
 // Remaining properties

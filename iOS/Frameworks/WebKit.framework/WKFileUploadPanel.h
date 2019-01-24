@@ -53,6 +53,7 @@ __attribute__((visibility("hidden")))
 - (void)_presentFullscreenViewController:(id)arg1 animated:(_Bool)arg2;
 - (void)_presentPopoverWithContentViewController:(id)arg1 animated:(_Bool)arg2;
 - (void)_presentMenuOptionForCurrentInterfaceIdiom:(id)arg1;
+- (void)_configureImagePicker:(id)arg1;
 - (void)_showPhotoPickerWithSourceType:(long long)arg1;
 - (_Bool)_shouldMediaCaptureOpenMediaDevice;
 - (void)_adjustMediaCaptureType;

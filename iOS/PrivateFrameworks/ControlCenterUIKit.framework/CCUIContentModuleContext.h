@@ -28,6 +28,7 @@
 - (void)dismissModule;
 - (void)expandedModuleDidUpdatePreferredSize;
 - (void)requestExpandModule;
+- (void)setHomeGestureDismissalAllowed:(_Bool)arg1;
 - (void)enqueueStatusUpdate:(id)arg1;
 - (void)openApplication:(id)arg1 withOptions:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)openApplication:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;

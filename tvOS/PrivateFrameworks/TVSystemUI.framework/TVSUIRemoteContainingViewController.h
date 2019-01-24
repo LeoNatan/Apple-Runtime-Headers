@@ -14,15 +14,13 @@
 @interface TVSUIRemoteContainingViewController : UIViewController <TVSUIViewServiceRemoteInterface>
 {
     struct {
-        unsigned int viewServiceWillAppear:1;
-        unsigned int viewServiceDidAppear:1;
-        unsigned int viewServiceWillDisappear:1;
-        unsigned int viewServiceDidDisappear:1;
         unsigned int handleMessageFromHost:1;
         unsigned int viewServiceWillDismissWithHostRequestItems:1;
         unsigned int animationControllerForOperation:1;
     } _controllerRespondsTo;
-    _Bool _didPresentClient;
+    _Bool _didPresent;
+    _Bool _willDismiss;
+    _Bool _didRequestTerminate;
     UIViewController<TVSUIViewService> *_clientViewController;
     id <TVSUIViewServiceHostInterface> _hostService;
     _UIViewControllerTransitionContext *_currentTransitionContext;
@@ -35,9 +33,11 @@
 + (id)_exportedInterface;
 + (id)_remoteViewControllerInterface;
 @property(nonatomic) double watchdogTimeout; // @synthesize watchdogTimeout=_watchdogTimeout;
+@property(nonatomic) _Bool didRequestTerminate; // @synthesize didRequestTerminate=_didRequestTerminate;
 @property(retain, nonatomic) NSObject<OS_dispatch_source> *animationWatchdogTimer; // @synthesize animationWatchdogTimer=_animationWatchdogTimer;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *clientControllerQueue; // @synthesize clientControllerQueue=_clientControllerQueue;
-@property(nonatomic) _Bool didPresentClient; // @synthesize didPresentClient=_didPresentClient;
+@property(nonatomic) _Bool willDismiss; // @synthesize willDismiss=_willDismiss;
+@property(nonatomic) _Bool didPresent; // @synthesize didPresent=_didPresent;
 @property(retain, nonatomic) _UIViewControllerTransitionContext *currentTransitionContext; // @synthesize currentTransitionContext=_currentTransitionContext;
 @property(retain, nonatomic) id <TVSUIViewServiceHostInterface> hostService; // @synthesize hostService=_hostService;
 - (void).cxx_destruct;
@@ -51,18 +51,18 @@
 - (void)_dismissClientViewController:(id)arg1 items:(id)arg2 reply:(CDUnknownBlockType)arg3;
 - (void)_presentClientViewController:(id)arg1;
 - (void)_setupChildViewController:(id)arg1;
-- (id)viewServiceExtensionContext;
+- (id)_viewServiceExtensionContext;
 - (id)preferredFocusEnvironments;
-- (void)beginRequestWithExtensionContext:(id)arg1;
 - (void)addChildViewController:(id)arg1;
 - (void)_willAppearInRemoteViewController:(id)arg1;
+- (_Bool)shouldAutomaticallyForwardAppearanceMethods;
+- (void)viewDidDisappear:(_Bool)arg1;
+- (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewDidAppear:(_Bool)arg1;
+- (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLoad;
+- (void)beginRequestWithExtensionContext:(id)arg1;
 - (void)_sendItems:(id)arg1 withReply:(CDUnknownBlockType)arg2;
-- (void)_noteDidDisappear:(_Bool)arg1;
-- (void)_noteWillDisappear:(_Bool)arg1;
-- (void)_noteDidAppear:(_Bool)arg1;
-- (void)_noteWillAppear:(_Bool)arg1;
 - (void)contextSendItemsToHost:(id)arg1 withReply:(CDUnknownBlockType)arg2;
 - (void)contextCompleteRequestReturningItems:(id)arg1 withReply:(CDUnknownBlockType)arg2;
 @property(retain, nonatomic) UIViewController<TVSUIViewService> *clientViewController; // @synthesize clientViewController=_clientViewController;

@@ -23,8 +23,11 @@
 @property(retain, nonatomic) NSNumber *instanceID; // @dynamic instanceID;
 @property(retain, nonatomic) NSNumber *labelIndex; // @dynamic labelIndex;
 @property(retain, nonatomic) NSNumber *labelNamespace; // @dynamic labelNamespace;
+@property(retain, nonatomic) NSNumber *lastKnownDiscoveryMode; // @dynamic lastKnownDiscoveryMode;
 @property(retain, nonatomic) NSString *lastSeenConfiguredName; // @dynamic lastSeenConfiguredName;
 @property(retain, nonatomic) NSArray *linkedServices; // @dynamic linkedServices;
+@property(retain, nonatomic) NSArray *mediaSourceDisplayOrder; // @dynamic mediaSourceDisplayOrder;
+@property(retain, nonatomic) NSNumber *mediaSourceIdentifier; // @dynamic mediaSourceIdentifier;
 @property(retain, nonatomic) NSString *name; // @dynamic name;
 @property(retain, nonatomic) NSNumber *primary; // @dynamic primary;
 @property(retain, nonatomic) NSString *providedName; // @dynamic providedName;

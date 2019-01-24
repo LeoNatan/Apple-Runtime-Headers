@@ -24,6 +24,7 @@
 @property(copy, nonatomic) LPLinkMetadata *metadata; // @synthesize metadata=_metadata;
 - (void).cxx_destruct;
 - (id)presentationProperties;
+- (id)unspecializedPresentationProperties;
 - (id)backgroundColorForStyle:(int)arg1;
 - (id)videoForStyle:(int)arg1;
 - (id)imageForStyle:(int)arg1 icon:(id *)arg2;

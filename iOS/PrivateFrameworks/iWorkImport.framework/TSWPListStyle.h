@@ -64,9 +64,9 @@ __attribute__((visibility("hidden")))
 - (id)boxedObjectForProperty:(int)arg1 atIndex:(unsigned long long)arg2;
 - (id)objectForProperty:(int)arg1 atIndex:(unsigned long long)arg2;
 - (id)parentStyleForFixingOrphanVariation;
-- (void)saveToArchive:(struct ListStyleArchive *)arg1 archiver:(id)arg2;
+-     // Error parsing type: v32@0:8^{ListStyleArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedField<int>=ii(Pointer=^{Arena}^{Rep})}{RepeatedField<float>=ii(Pointer=^{Arena}^{Rep})}{RepeatedField<float>=ii(Pointer=^{Arena}^{Rep})}{RepeatedPtrField<TSWP::ListStyleArchive_LabelGeometry>=^{Arena}ii^{Rep}}{RepeatedField<int>=ii(Pointer=^{Arena}^{Rep})}{RepeatedPtrField<std::__1::basic_string<char> >=^{Arena}ii^{Rep}}{RepeatedPtrField<TSWP::ListStyleArchive_LabelImage>=^{Arena}ii^{Rep}}{RepeatedField<bool>=ii(Pointer=^{Arena}^{Rep})}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}^{StyleArchive}^{ShadowArchive}^{Color}IBBBi}16@24, name: saveToArchive:archiver:
 - (void)saveToArchiver:(id)arg1;
-- (void)loadFromArchive:(const struct ListStyleArchive *)arg1 unarchiver:(id)arg2;
+-     // Error parsing type: v32@0:8r^{ListStyleArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedField<int>=ii(Pointer=^{Arena}^{Rep})}{RepeatedField<float>=ii(Pointer=^{Arena}^{Rep})}{RepeatedField<float>=ii(Pointer=^{Arena}^{Rep})}{RepeatedPtrField<TSWP::ListStyleArchive_LabelGeometry>=^{Arena}ii^{Rep}}{RepeatedField<int>=ii(Pointer=^{Arena}^{Rep})}{RepeatedPtrField<std::__1::basic_string<char> >=^{Arena}ii^{Rep}}{RepeatedPtrField<TSWP::ListStyleArchive_LabelImage>=^{Arena}ii^{Rep}}{RepeatedField<bool>=ii(Pointer=^{Arena}^{Rep})}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}^{StyleArchive}^{ShadowArchive}^{Color}IBBBi}16@24, name: loadFromArchive:unarchiver:
 - (void)loadFromUnarchiver:(id)arg1;
 - (id)overridePropertyMapWithValue:(id)arg1 forProperty:(int)arg2 atParagraphLevels:(id)arg3 withContext:(id)arg4;
 - (id)pOverrideArrayWithValue:(id)arg1 forProperty:(int)arg2 atParagraphLevels:(id)arg3 withContext:(id)arg4;

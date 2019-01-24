@@ -9,7 +9,7 @@
 #import <Sharing/NSSecureCoding-Protocol.h>
 #import <Sharing/SFXPCInterface-Protocol.h>
 
-@class CUAppleIDClient, CUMessageSession, CUMessageSessionServer, NSDate, NSDictionary, NSMutableData, NSMutableDictionary, NSString, NSUUID, NSXPCConnection, NSXPCListenerEndpoint, SFDevice, SFTRSession, TRSession;
+@class CUAppleIDClient, CUMessageSession, CUMessageSessionServer, NSDate, NSDictionary, NSMutableData, NSMutableDictionary, NSString, NSUUID, NSXPCConnection, NSXPCListenerEndpoint, SFAppleIDContactInfo, SFDevice, SFTRSession, TRSession;
 @protocol OS_dispatch_queue, OS_dispatch_source, OS_os_transaction;
 
 @interface SFSession : NSObject <NSSecureCoding, SFXPCInterface>
@@ -38,6 +38,9 @@
     _Bool _activateCalled;
     _Bool _activateInProgress;
     _Bool _activateCompleted;
+    CDUnknownBlockType _activateCompletion;
+    SFAppleIDContactInfo *_appleIDContactInfo;
+    _Bool _appleIDContactCompleted;
     _Bool _invalidateCalled;
     _Bool _invalidateDone;
     unsigned int _heartbeatID;
@@ -207,8 +210,10 @@
 - (void)invalidate;
 - (void)_interrupted;
 - (void)_hearbeatTimer;
+- (void)_fetchInfo;
 - (void)_ensureXPCStarted;
 - (void)_activated;
+- (void)_activatedIfReady:(id)arg1;
 - (void)_activateWithCompletion:(CDUnknownBlockType)arg1;
 - (void)activateWithCompletion:(CDUnknownBlockType)arg1;
 - (int)setEncryptionReadKey:(const char *)arg1 readKeyLen:(unsigned long long)arg2 writeKey:(const char *)arg3 writeKeyLen:(unsigned long long)arg4;

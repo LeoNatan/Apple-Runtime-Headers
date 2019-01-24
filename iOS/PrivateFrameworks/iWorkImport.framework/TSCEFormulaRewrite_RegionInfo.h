@@ -23,8 +23,8 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) UUIDData_5fbc143e tableUID; // @synthesize tableUID=_tableUID;
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (void)saveToMessage:(struct RegionInfoArchive *)arg1;
-- (id)initFromMessage:(const struct RegionInfoArchive *)arg1;
+-     // Error parsing type: v24@0:8^{RegionInfoArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{UUID}^{IndexedUidsArchive}^{IndexedUidsArchive}}16, name: saveToMessage:
+-     // Error parsing type: @24@0:8r^{RegionInfoArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{UUID}^{IndexedUidsArchive}^{IndexedUidsArchive}}16, name: initFromMessage:
 - (struct TSCERangeCoordinate)mergingRange;
 - (struct TSUCellCoord)bottomRightCellCoord;
 - (struct TSUCellCoord)topLeftCellCoord;

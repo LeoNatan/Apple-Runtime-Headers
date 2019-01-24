@@ -12,14 +12,14 @@ __attribute__((visibility("hidden")))
     _Bool _decalMode;
 }
 
-+ (id)instanceWithArchive:(const struct Chart3DEnvironmentMaterialArchive *)arg1 unarchiver:(id)arg2;
++     // Error parsing type: @32@0:8r^{Chart3DEnvironmentMaterialArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSCH::Chart3DBaseImageTextureTilingArchive>=^{Arena}ii^{Rep}}{RepeatedPtrField<TSCH::Chart3DImageTextureTilingArchive>=^{Arena}ii^{Rep}}^{Chart3DTexturesMaterialArchive}B}16@24, name: instanceWithArchive:unarchiver:
 @property(nonatomic) _Bool decalMode; // @synthesize decalMode=_decalMode;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (struct MaterialShaderVariables)defaultShaderVariables;
-- (void)saveToArchive:(struct Chart3DEnvironmentMaterialArchive *)arg1 archiver:(id)arg2;
-- (id)initWithArchive:(const struct Chart3DEnvironmentMaterialArchive *)arg1 unarchiver:(id)arg2;
+- (id)defaultShaderVariables;
+-     // Error parsing type: v32@0:8^{Chart3DEnvironmentMaterialArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSCH::Chart3DBaseImageTextureTilingArchive>=^{Arena}ii^{Rep}}{RepeatedPtrField<TSCH::Chart3DImageTextureTilingArchive>=^{Arena}ii^{Rep}}^{Chart3DTexturesMaterialArchive}B}16@24, name: saveToArchive:archiver:
+-     // Error parsing type: @32@0:8r^{Chart3DEnvironmentMaterialArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSCH::Chart3DBaseImageTextureTilingArchive>=^{Arena}ii^{Rep}}{RepeatedPtrField<TSCH::Chart3DImageTextureTilingArchive>=^{Arena}ii^{Rep}}^{Chart3DTexturesMaterialArchive}B}16@24, name: initWithArchive:unarchiver:
 
 @end
 

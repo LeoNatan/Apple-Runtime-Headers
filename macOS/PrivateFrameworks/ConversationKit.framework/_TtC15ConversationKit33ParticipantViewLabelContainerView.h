@@ -12,7 +12,7 @@ __attribute__((visibility("hidden")))
     // Error parsing type: , name: label
 }
 
-- (CDUnknownBlockType).cxx_destruct;
+- (void).cxx_destruct;
 - (id)makeBackingLayer;
 - (id)initWithCoder:(id)arg1;
 @property(nonatomic, readonly) struct CGSize intrinsicContentSize;

@@ -8,12 +8,11 @@
 
 #import <TVPlayback/UIGestureRecognizerDelegate-Protocol.h>
 
-@class MPAVRoute, MPRouteLabel, NSArray, NSIndexPath, NSLayoutConstraint, NSString, TVPAudioNowPlayingItemConfigurationObject, TVPCollectionView, TVPMusicBarsView, TVPMusicNowPlayingBackgroundContainerView, TVPMusicNowPlayingCollectionViewFlowLayout, TVPRoundButton, UIFocusGuide, UIImage, UIImageView, UILabel, UILayoutGuide, UILongPressGestureRecognizer, UIStackView, UITapGestureRecognizer, _TVPMusicArtworkImageView, _TVPMusicNowPlayingFocusableView;
+@class MPAVRoute, MPRouteLabel, NSArray, NSIndexPath, NSLayoutConstraint, NSString, TVPAudioNowPlayingItemConfigurationObject, TVPCollectionView, TVPMusicBarsView, TVPMusicNowPlayingBackgroundContainerView, TVPMusicNowPlayingCollectionViewFlowLayout, TVPRoundButton, UIFocusGuide, UILabel, UILayoutGuide, UILongPressGestureRecognizer, UIStackView, UITapGestureRecognizer, _TVPMusicArtworkImageView;
 @protocol TVPMusicNowPlayingImage, TVPMusicNowPlayingViewDelegate;
 
 @interface TVPMusicNowPlayingView : UIView <UIGestureRecognizerDelegate>
 {
-    TVPMusicNowPlayingBackgroundContainerView *_backgroundView;
     UILayoutGuide *_artworkLayoutGuide;
     UILayoutGuide *_labelMarginLayoutGuide;
     NSLayoutConstraint *_labelTopMarginConstraint;
@@ -27,16 +26,11 @@
     UILabel *_artistAlbumLabel;
     UILabel *_radioStationLabel;
     UIView *_lastFocusedView;
-    UIImageView *_explicitBadge;
-    UIImage *_explicitBadgeImage;
     _Bool _forceFocusToPlaylistView;
     MPRouteLabel *_routePickerLabel;
     UIStackView *_rightControlsView;
     TVPRoundButton *_shuffleButton;
     TVPRoundButton *_repeatButton;
-    id <TVPMusicNowPlayingImage> _backgroundImage;
-    _TVPMusicNowPlayingFocusableView *_leftEdgeFocusDetectionView;
-    _TVPMusicNowPlayingFocusableView *_rightEdgeFocusDetectionView;
     _Bool _musicBarsVisible;
     _Bool _playlistVisible;
     _Bool _nothingPlaying;
@@ -53,6 +47,8 @@
     UIView *_routePickerControl;
     MPAVRoute *_audioRoute;
     long long _repeatMode;
+    TVPMusicNowPlayingBackgroundContainerView *_backgroundView;
+    id <TVPMusicNowPlayingImage> _backgroundImage;
     TVPRoundButton *_contextMenuButton;
     NSArray *_controls;
     UIView *_coverArtPlaceholder;
@@ -60,12 +56,15 @@
     UILongPressGestureRecognizer *_restGestureRecognizer;
 }
 
++ (id)_stringWithAppendedExplicitIndicator:(id)arg1;
 @property(readonly, nonatomic) UILongPressGestureRecognizer *restGestureRecognizer; // @synthesize restGestureRecognizer=_restGestureRecognizer;
 @property(readonly, nonatomic) UITapGestureRecognizer *playPauseGestureRecognizer; // @synthesize playPauseGestureRecognizer=_playPauseGestureRecognizer;
 @property(nonatomic, getter=isHighlighted) _Bool highlighted; // @synthesize highlighted=_highlighted;
 @property(retain, nonatomic) UIView *coverArtPlaceholder; // @synthesize coverArtPlaceholder=_coverArtPlaceholder;
 @property(retain, nonatomic) NSArray *controls; // @synthesize controls=_controls;
 @property(readonly, nonatomic) TVPRoundButton *contextMenuButton; // @synthesize contextMenuButton=_contextMenuButton;
+@property(retain, nonatomic) id <TVPMusicNowPlayingImage> backgroundImage; // @synthesize backgroundImage=_backgroundImage;
+@property(retain, nonatomic) TVPMusicNowPlayingBackgroundContainerView *backgroundView; // @synthesize backgroundView=_backgroundView;
 @property(nonatomic, getter=isBackgroundSnapshotPaused) _Bool backgroundSnapshotPaused; // @synthesize backgroundSnapshotPaused=_backgroundSnapshotPaused;
 @property(nonatomic, getter=isShuffleEnabled) _Bool shuffleEnabled; // @synthesize shuffleEnabled=_shuffleEnabled;
 @property(nonatomic) _Bool shuffleVisible; // @synthesize shuffleVisible=_shuffleVisible;
@@ -90,10 +89,8 @@
 - (_Bool)_isNothingPlaying;
 - (void)_restGestureRecognized:(id)arg1;
 - (void)_playPausePressedGestureRecognized:(id)arg1;
-- (void)_updateEdgeFocusDetectionState;
 - (void)_reloadBackgroundImageWithImage:(id)arg1;
 - (void)setBackgroundSnapshotView:(id)arg1;
-- (void)setBackgroundImage:(id)arg1;
 - (void)setAnimatedBackgroundImage:(id)arg1;
 - (_Bool)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (_Bool)gestureRecognizerShouldBegin:(id)arg1;

@@ -62,6 +62,7 @@ __attribute__((visibility("hidden")))
 - (id)theme;
 - (id)childEnumerator;
 @property(nonatomic) __weak id <KNDocumentRootDelegate> delegate; // @dynamic delegate;
+- (id)knDelegate;
 - (void)dealloc;
 - (void)collectDocumentOpenAnalyticsWithLogger:(id)arg1;
 - (void)willClose;
@@ -74,8 +75,8 @@ __attribute__((visibility("hidden")))
 - (void)saveToArchiver:(id)arg1;
 - (void)loadFromUnarchiver:(id)arg1;
 - (void)p_hyperlinkAndBreadcrumbUpgradeForUnity20SlideNodes:(id)arg1;
-- (void)saveToArchive:(struct DocumentArchive *)arg1 archiver:(id)arg2;
-- (void)loadFromArchive:(const struct DocumentArchive *)arg1 unarchiver:(id)arg2;
+-     // Error parsing type: v32@0:8^{DocumentArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{Reference}^{DocumentArchive}^{Reference}}16@24, name: saveToArchive:archiver:
+-     // Error parsing type: v32@0:8r^{DocumentArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{Reference}^{DocumentArchive}^{Reference}}16@24, name: loadFromArchive:unarchiver:
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

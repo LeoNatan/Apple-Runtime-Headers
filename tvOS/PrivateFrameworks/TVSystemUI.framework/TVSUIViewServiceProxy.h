@@ -43,11 +43,13 @@
 - (void)_handleLosingRemoteViewController;
 - (void)_handleReceivingHostViewController:(id)arg1;
 - (void)_notifyError:(id)arg1;
+- (void)_moveToAnimationState:(long long)arg1;
 - (_Bool)_requestViewServiceAnimation:(long long)arg1 withItems:(id)arg2 error:(id *)arg3;
 - (void)hostRemoteViewController:(id)arg1 didReceiveRemoteAnimationState:(long long)arg2;
 - (void)hostRemoteViewController:(id)arg1 didReceiveRemoteItems:(id)arg2 withReply:(CDUnknownBlockType)arg3;
 - (void)hostRemoteViewControllerDidExit:(id)arg1 withError:(id)arg2;
 - (void)hostRemoteViewController:(id)arg1 requestsDismissWithItems:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (long long)_animationStateFromMachineState:(id)arg1;
 - (long long)_proxyStateFromMachineState:(id)arg1;
 - (void)_machinePostEvent:(id)arg1 withContext:(id)arg2 userInfoBlock:(CDUnknownBlockType)arg3;
 - (CDUnknownBlockType)_machineStateChangeHandler;

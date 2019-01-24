@@ -24,8 +24,8 @@
 - (float)density;
 - (float)maxValue;
 - (float)minValue;
-- (float)maxAbsValue;
 - (float)l2norm;
+- (float)l1norm;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)vecByAppendingVec:(id)arg1;

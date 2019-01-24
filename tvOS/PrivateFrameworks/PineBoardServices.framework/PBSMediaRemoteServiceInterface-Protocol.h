@@ -9,6 +9,7 @@
 @class NSDictionary, PBSMediaRemoteSiriContext;
 
 @protocol PBSMediaRemoteServiceInterface <NSObject>
+@property(readonly, nonatomic) _Bool reliableTVAVRPowerControlAvailable;
 @property(readonly, nonatomic) _Bool volumeControlAvailable;
 - (void)noteUserPresenceDetected;
 - (void)dismissPinDialogWithToken:(id)arg1;

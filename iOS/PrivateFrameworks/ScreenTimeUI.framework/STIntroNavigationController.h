@@ -15,6 +15,7 @@
 - (void).cxx_destruct;
 - (void)dismissButtonPressed;
 - (void)addDismissButtonWithHandler:(CDUnknownBlockType)arg1;
+- (unsigned long long)supportedInterfaceOrientations;
 - (void)viewDidLoad;
 
 @end

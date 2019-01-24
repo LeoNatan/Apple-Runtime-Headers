@@ -13,8 +13,9 @@
 - (id)pkui_addAdditiveAnimation:(id)arg1;
 - (id)pkui_additiveAnimationKeyPrefixForKeyPath:(id)arg1;
 - (_Bool)pkui_hasAdditiveAnimationForKeyPath:(id)arg1;
-- (double)_pkui_elapsedDurationForAnimation:(id)arg1;
+- (double)pkui_remainingDurationForAnimation:(id)arg1;
 - (double)pkui_remainingDurationForAnimationWithKey:(id)arg1;
+- (double)pkui_elapsedDurationForAnimation:(id)arg1;
 - (double)pkui_elapsedDurationForAnimationWithKey:(id)arg1;
 @end
 

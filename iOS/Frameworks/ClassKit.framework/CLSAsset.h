@@ -36,7 +36,9 @@
 @property(retain, nonatomic) NSString *ownerPersonID; // @synthesize ownerPersonID=_ownerPersonID;
 - (void).cxx_destruct;
 - (void)urlSuitableForOpeningWithCompletion:(CDUnknownBlockType)arg1;
+- (void)deleteFileWithCompletion:(CDUnknownBlockType)arg1;
 - (_Bool)deleteFile:(id *)arg1;
+- (_Bool)_deleteFileAtURL:(id)arg1 error:(id *)arg2;
 - (void)createShareIfNeeded:(CDUnknownBlockType)arg1;
 - (void)fetchUsersAndAddToShare:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)uploadFileIfNeeded:(id *)arg1;
@@ -48,6 +50,8 @@
 - (void)mergeWithObject:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (id)initWithFileURL:(id)arg1 withOwnerPersonID:(id)arg2;
+- (id)_initWithFileURL:(id)arg1;
 - (id)initWithFileURL:(id)arg1;
 - (id)initWithURL:(id)arg1;
 - (id)_init;

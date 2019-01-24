@@ -11,6 +11,7 @@
 @protocol CoreTelephonyClientSMSDelegate <NSObject>
 
 @optional
+- (void)postSmscAddressAvailable:(CTXPCServiceSubscriptionContext *)arg1 smsc:(NSString *)arg2;
 - (void)postSUPLInitNotification:(CTXPCServiceSubscriptionContext *)arg1 data:(NSData *)arg2;
 - (void)postSUPLInitNotification:(CTXPCServiceSubscriptionContext *)arg1 body:(NSString *)arg2;
 - (void)postMessageProgressNotification:(CTXPCServiceSubscriptionContext *)arg1 messageID:(int)arg2 totalBytesSent:(int)arg3 dataLength:(int)arg4;

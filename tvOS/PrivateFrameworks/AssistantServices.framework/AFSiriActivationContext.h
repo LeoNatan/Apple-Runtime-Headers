@@ -14,8 +14,9 @@
 @interface AFSiriActivationContext : NSObject <NSCopying, NSSecureCoding>
 {
     unsigned long long _timestamp;
-    long long _event;
     long long _source;
+    long long _event;
+    unsigned long long _options;
     NSString *_deviceID;
     NSDictionary *_userInfo;
 }
@@ -24,8 +25,9 @@
 + (id)newWithBuilder:(CDUnknownBlockType)arg1;
 @property(readonly, copy, nonatomic) NSDictionary *userInfo; // @synthesize userInfo=_userInfo;
 @property(readonly, copy, nonatomic) NSString *deviceID; // @synthesize deviceID=_deviceID;
-@property(readonly, nonatomic) long long source; // @synthesize source=_source;
+@property(readonly, nonatomic) unsigned long long options; // @synthesize options=_options;
 @property(readonly, nonatomic) long long event; // @synthesize event=_event;
+@property(readonly, nonatomic) long long source; // @synthesize source=_source;
 @property(readonly, nonatomic) unsigned long long timestamp; // @synthesize timestamp=_timestamp;
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
@@ -35,7 +37,7 @@
 - (unsigned long long)hash;
 - (id)_descriptionWithIndent:(unsigned long long)arg1;
 - (id)description;
-- (id)initWithTimestamp:(unsigned long long)arg1 event:(long long)arg2 source:(long long)arg3 deviceID:(id)arg4 userInfo:(id)arg5;
+- (id)initWithTimestamp:(unsigned long long)arg1 source:(long long)arg2 event:(long long)arg3 options:(unsigned long long)arg4 deviceID:(id)arg5 userInfo:(id)arg6;
 - (id)mutatedCopyWithMutator:(CDUnknownBlockType)arg1;
 
 @end

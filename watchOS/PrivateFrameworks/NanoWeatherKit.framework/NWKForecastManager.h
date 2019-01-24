@@ -18,6 +18,7 @@
     NSMutableDictionary *_forecastConnections;
     NSMutableDictionary *_forecasts;
     _Bool _useStaticLocationCache;
+    _Bool _metricObservationMode;
     NSArray *_staticLocations;
     WFLocation *_localLocation;
     WFLocation *_selectedLocation;
@@ -31,6 +32,7 @@
     NWKRoutineForecastConnection *_routineForecastConnection;
 }
 
+@property(nonatomic, getter=isInMetricObservationMode) _Bool metricObservationMode; // @synthesize metricObservationMode=_metricObservationMode;
 @property(retain, nonatomic) NWKRoutineForecastConnection *routineForecastConnection; // @synthesize routineForecastConnection=_routineForecastConnection;
 @property(retain, nonatomic) NWKLocationConnection *locationConnection; // @synthesize locationConnection=_locationConnection;
 @property(retain, nonatomic) NSHashTable *observers; // @synthesize observers=_observers;

@@ -4,9 +4,11 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@class WKInspectorWKWebView;
+@class NSWindow, WKInspectorWKWebView;
 
 @protocol WKInspectorWKWebViewDelegate
+- (void)inspectorWKWebViewDidMoveToWindow:(WKInspectorWKWebView *)arg1;
+- (void)inspectorWKWebView:(WKInspectorWKWebView *)arg1 willMoveToWindow:(NSWindow *)arg2;
 - (void)inspectorWKWebViewReloadFromOrigin:(WKInspectorWKWebView *)arg1;
 - (void)inspectorWKWebViewReload:(WKInspectorWKWebView *)arg1;
 @end

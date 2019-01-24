@@ -35,7 +35,6 @@
 - (void)decrementNanoProfileCount;
 - (void)incrementNanoProfileCount;
 @property(nonatomic) unsigned long long nanoProfileCount;
-- (unsigned long long)_profileCount;
 - (_Bool)_isProfileSectionEmpty;
 - (id)_specifier;
 - (void)unload;

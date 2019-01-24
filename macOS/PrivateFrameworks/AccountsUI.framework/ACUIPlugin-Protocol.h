@@ -6,7 +6,7 @@
 
 #import <AccountsUI/NSObject-Protocol.h>
 
-@class ACAccount, ACAccountType, ACUIAccountInfoViewController, ACUIAccountSetupViewController, ACUIWebLoginViewController, NSArray, NSError, NSImage, NSSet, NSString, NSWindow;
+@class ACAccount, ACAccountType, ACUIAccountInfoViewController, ACUIAccountSetupViewController, ACUIWebAuthViewController, NSArray, NSError, NSImage, NSSet, NSString, NSWindow;
 
 @protocol ACUIPlugin <NSObject>
 - (NSSet *)supportedAccountTypes;
@@ -17,7 +17,7 @@
 - (NSArray *)dataclassesOrder;
 - (NSSet *)uiDataclasses;
 - (BOOL)shouldHandleWebLoginError:(NSError *)arg1 forAccount:(ACAccount *)arg2;
-- (ACUIWebLoginViewController *)webLoginViewControllerForAccount:(ACAccount *)arg1;
+- (ACUIWebAuthViewController *)webLoginViewControllerForAccount:(ACAccount *)arg1;
 - (ACUIAccountSetupViewController *)setupViewControllerForAccountType:(ACAccountType *)arg1;
 - (ACUIAccountInfoViewController *)infoViewControllerForAccount:(ACAccount *)arg1;
 - (NSImage *)iconForAccountType:(NSString *)arg1;

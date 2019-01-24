@@ -8,7 +8,7 @@
 
 #import <SafariShared/WKWebProcessPlugIn-Protocol.h>
 
-@class NSArray, NSMapTable, NSNumber, NSString, WKWebProcessPlugInController;
+@class NSArray, NSMapTable, NSString, WKWebProcessPlugInController;
 
 @interface WBSWebProcessPlugIn : NSObject <WKWebProcessPlugIn>
 {
@@ -26,8 +26,6 @@
 - (id)pageControllerWithBrowserContextController:(id)arg1;
 - (id)parameterValueForKey:(id)arg1;
 @property(readonly, nonatomic) NSArray *searchEnginesForRedirectToSafeSearch;
-@property(readonly, nonatomic) NSNumber *safeBrowsingEnabledPreference;
-@property(readonly, nonatomic) NSNumber *doNotTrackEnabledPreference;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

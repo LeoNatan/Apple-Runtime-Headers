@@ -23,10 +23,6 @@
 + (id)hotspotInterface;
 + (id)hotspotClientInterface;
 + (id)unlockInterface;
-+ (id)scannerInterface;
-+ (id)scannerClientInterface;
-+ (id)advertiserInterface;
-+ (id)advertiserClientInterface;
 + (id)serviceManagerInterface;
 + (id)serviceManagerClientInterface;
 + (id)xpcManagerInterface;
@@ -42,8 +38,6 @@
 - (void)appleAccountSignedIn;
 - (void)remoteHotspotSessionForClient:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)unlockManagerWithCompletionHandler:(CDUnknownBlockType)arg1;
-- (void)continuityScannerProxyForClient:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
-- (void)activityAdvertiserProxyForClient:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)streamsForMessage:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)serviceManagerProxyForIdentifier:(id)arg1 client:(id)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
 - (void)unregisterObserver:(id)arg1;

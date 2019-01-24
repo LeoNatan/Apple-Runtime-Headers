@@ -7,11 +7,11 @@
 #import <Foundation/NSArray.h>
 
 @interface NSArray (TSCHArchivingAdditions)
-- (id)tsch_initWithSwapTuplesArray:(const RepeatedPtrField_daf2f3db *)arg1 unarchiver:(id)arg2;
-- (void)tsch_saveToSwapTuplesArray:(RepeatedPtrField_daf2f3db *)arg1 archiver:(id)arg2;
-- (id)tsch_initWithSwapTuples:(const struct StyleSwapUndoTuplesArchive *)arg1 unarchiver:(id)arg2;
-- (void)tsch_saveToSwapTuples:(struct StyleSwapUndoTuplesArchive *)arg1 archiver:(id)arg2;
-- (id)tsch_initWithSwapTupleArray:(const RepeatedPtrField_a96af6e2 *)arg1 unarchiver:(id)arg2;
-- (void)tsch_saveToSwapTupleArray:(RepeatedPtrField_a96af6e2 *)arg1 archiver:(id)arg2;
+- (id)tsch_initWithSwapTuplesArray:(const RepeatedPtrField_e6d64692 *)arg1 unarchiver:(id)arg2;
+- (void)tsch_saveToSwapTuplesArray:(RepeatedPtrField_e6d64692 *)arg1 archiver:(id)arg2;
+-     // Error parsing type: @32@0:8r^{StyleSwapUndoTuplesArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSCH::StyleSwapUndoTupleArchive>=^{Arena}ii^{Rep}}}16@24, name: tsch_initWithSwapTuples:unarchiver:
+-     // Error parsing type: v32@0:8^{StyleSwapUndoTuplesArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSCH::StyleSwapUndoTupleArchive>=^{Arena}ii^{Rep}}}16@24, name: tsch_saveToSwapTuples:archiver:
+- (id)tsch_initWithSwapTupleArray:(const RepeatedPtrField_6c786866 *)arg1 unarchiver:(id)arg2;
+- (void)tsch_saveToSwapTupleArray:(RepeatedPtrField_6c786866 *)arg1 archiver:(id)arg2;
 @end
 

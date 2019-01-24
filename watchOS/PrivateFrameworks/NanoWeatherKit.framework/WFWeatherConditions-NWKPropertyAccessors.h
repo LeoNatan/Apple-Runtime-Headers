@@ -6,23 +6,24 @@
 
 #import <WeatherFoundation/WFWeatherConditions.h>
 
-@class NSDate, NSMeasurement, NSNumber, NSString, WFTemperature;
+@class NSDate, NSNumber, NSString, WFTemperature;
 
 @interface WFWeatherConditions (NWKPropertyAccessors)
-- (id)_localizedWindspeedWithUnitForMeasurement:(id)arg1;
+- (id)_windDirectionKey;
+- (double)_speedByConverting:(double)arg1 toUnit:(int)arg2;
+- (int)_preferredWindSpeedUnitForLocale:(id)arg1;
+- (id)_localizedWindspeed:(double)arg1 withUnit:(int)arg2 forLocale:(id)arg3;
 - (id)_localizedWindDirectionAbbreviation:(_Bool)arg1;
+- (unsigned int)_indexOfWindDirectionKeyForWindDirectionInDegrees:(float)arg1 keys:(id)arg2;
+- (id)_defaultWindSpeedWithUnit:(double)arg1;
 - (_Bool)nwk_wf_isDay;
 @property(readonly, nonatomic) NSString *nwk_windCompactLocalizedDirectionAbbreviation;
 @property(readonly, nonatomic) NSString *nwk_windLocalizedDirectionAbbreviation;
 @property(readonly, nonatomic) float nwk_windDirectionInDegrees;
 @property(readonly, nonatomic) float windDirectionInDegrees;
-@property(readonly, nonatomic) NSMeasurement *windspeedMeasurementKMPH;
 @property(readonly, nonatomic) NSString *localizedWindDirectionAbbreviation;
 @property(readonly, nonatomic) NSString *nwkLocalizedWindspeedWithoutUnit;
 @property(readonly, nonatomic) NSString *nwkLocalizedWindspeedWithUnit;
-@property(readonly, nonatomic) NSString *nwkLocalizedWindspeedUnit;
-@property(readonly, nonatomic) NSString *nwkCardinalIntercardinalWindDirection;
-- (unsigned int)_indexOfWindDirectionKeyForWindDirectionInDegrees:(float)arg1 keys:(id)arg2;
 @property(readonly, nonatomic) NSString *nwkUVIndexRiskDescription;
 @property(readonly, nonatomic) unsigned int nwkUVIndexCategory;
 @property(readonly, nonatomic) NSString *nwkLocalizedFormattedUVIndex;

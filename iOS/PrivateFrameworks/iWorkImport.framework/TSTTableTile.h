@@ -6,7 +6,7 @@
 
 #import <iWorkImport/TSPObject.h>
 
-@class NSMutableArray;
+@class NSIndexSet, NSMutableArray;
 
 __attribute__((visibility("hidden")))
 @interface TSTTableTile : TSPObject
@@ -21,21 +21,22 @@ __attribute__((visibility("hidden")))
 }
 
 @property(retain, nonatomic) NSMutableArray *rowInfos; // @synthesize rowInfos=_rowInfos;
+@property(nonatomic) _Bool lastSavedInBNC; // @synthesize lastSavedInBNC=_lastSavedInBNC;
 @property(nonatomic) unsigned int numRows; // @synthesize numRows=_numRows;
 @property(nonatomic) unsigned short numCells; // @synthesize numCells=_numCells;
 @property(nonatomic) unsigned int maxRow; // @synthesize maxRow=_maxRow;
 @property(nonatomic) unsigned short maxColumn; // @synthesize maxColumn=_maxColumn;
 - (void).cxx_destruct;
-- (void)mergeWithTile:(id)arg1 atRowOffset:(unsigned int)arg2;
-- (id)splitAtRowIndex:(unsigned int)arg1;
-@property(readonly, nonatomic) unsigned int midpointForRowSplit;
-- (_Bool)shouldMergeRowsWithTile:(id)arg1;
-@property(readonly, nonatomic) _Bool shouldMergeRows;
-@property(readonly, nonatomic) _Bool shouldSplitRows;
-- (void)spliceAtTileRowIndex:(unsigned int)arg1 withRowInfo:(id)arg2;
+- (void)spliceRows:(id)arg1 atTileRowIndex:(unsigned int)arg2;
+- (void)spliceRowInfo:(id)arg1 atTileRowIndex:(unsigned int)arg2 overwrite:(_Bool)arg3;
+- (id)yankRowsAtTileRowIndex:(unsigned int)arg1;
+- (id)yankRowsAtTileRowIndex:(unsigned int)arg1 count:(unsigned int)arg2;
 - (id)yankRowInfoAtTileRowIndex:(unsigned int)arg1;
-- (void)yankRowsAtTileRowIndex:(unsigned int)arg1 numberOfRows:(unsigned int)arg2 outRowArray:(id)arg3;
+- (id)shiftUpAndYankBy:(unsigned int)arg1;
+- (void)shiftUpAtTileRowIndex:(unsigned int)arg1 count:(unsigned int)arg2;
+- (void)clearRowsAtTileRowIndex:(unsigned int)arg1 numberOfRows:(unsigned int)arg2;
 - (void)removeRowsAtTileRowIndex:(unsigned int)arg1 numberOfRows:(unsigned int)arg2;
+- (void)_removeRowsAtTileRowIndex:(unsigned int)arg1 numberOfRows:(unsigned int)arg2 shiftingContent:(_Bool)arg3;
 - (void)insertRowsAtTileRowIndex:(unsigned int)arg1 numberOfRows:(unsigned int)arg2;
 - (void)moveColumnsAtColumnIndex:(unsigned short)arg1 numberOfColumns:(unsigned int)arg2 toDestColumnIndex:(unsigned short)arg3;
 - (int)removeColumnsAtColumnIndex:(unsigned short)arg1 numberOfColumns:(unsigned int)arg2;
@@ -43,25 +44,27 @@ __attribute__((visibility("hidden")))
 - (void)setCell:(id)arg1 atColumnIndex:(unsigned short)arg2 tileRowIndex:(unsigned int)arg3 formatKeys:(CDStruct_c8ca99d5 *)arg4;
 - (struct TSTCellStorage *)preBNCCellStorageRefAtColumnIndex:(unsigned short)arg1 tileRowIndex:(unsigned int)arg2;
 - (struct TSTCellStorage *)cellStorageRefAtColumnIndex:(unsigned short)arg1 tileRowIndex:(unsigned int)arg2;
-- (id)rowInfoForTileArrayIndex:(unsigned int)arg1;
 - (id)rowInfoAtOrAfterTileRowIndex:(unsigned int)arg1 outTileRowIndex:(out unsigned int *)arg2;
-- (id)rowInfoForTileRowIndex:(unsigned int)arg1 createIfMissing:(_Bool)arg2;
-- (void)p_removeRowInfo:(id)arg1;
-- (id)p_addRowInfoAtTileRowIndex:(unsigned int)arg1;
-- (void)p_insertRowInfo:(id)arg1 atTileRowIndex:(unsigned int)arg2;
+- (id)rowInfoForTileRowIndex:(unsigned int)arg1;
+- (void)enumerateRowsWithBlock:(CDUnknownBlockType)arg1;
+- (void)_removeRowInfo:(id)arg1;
+- (id)_addRowInfoAtTileRowIndex:(unsigned int)arg1;
+- (id)findOrAddRowInfoAtTileRowIndex:(unsigned int)arg1;
+- (void)_insertRowInfo:(id)arg1 atTileRowIndex:(unsigned int)arg2;
+- (unsigned long long)_insertionIndexForTileRowIndex:(unsigned int)arg1;
 - (void)pruneEmptyRows;
 - (id)description;
+@property(readonly, nonatomic) NSIndexSet *populatedRows;
 - (void)saveToArchiver:(id)arg1;
 - (void)willModify;
 - (void)loadFromUnarchiver:(id)arg1;
-@property(readonly, nonatomic) _Bool lastSavedInBNC;
 - (id)packageLocator;
 - (id)initWithContext:(id)arg1;
 - (id)initWithRows:(id)arg1 context:(id)arg2;
-- (void)p_recalculateCellCount;
-- (void)p_recalculateMaxRowAndColumn;
-- (void)p_recalculateMaxColumn;
-- (void)p_recalculateMaxRow;
+- (void)_recalculateCellCount;
+- (void)_recalculateMaxRowAndColumn;
+- (void)_recalculateMaxColumn;
+- (void)_recalculateMaxRow;
 
 @end
 

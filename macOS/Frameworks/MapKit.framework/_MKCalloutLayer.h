@@ -26,6 +26,7 @@
 - (void).cxx_destruct;
 - (void)layoutSublayers;
 - (void)setContentsScale:(double)arg1;
+- (void)dealloc;
 - (id)init;
 - (struct CGImage *)_newContentImage;
 - (struct CGSize)_contentSize;

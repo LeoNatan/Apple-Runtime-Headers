@@ -6,9 +6,11 @@
 
 #import <Silex/SXResource.h>
 
+#import <Silex/SXHTMLResource-Protocol.h>
+
 @class NSString, NSURL;
 
-@interface SXHTMLResource : SXResource
+@interface SXHTMLResource : SXResource <SXHTMLResource>
 {
 }
 
@@ -17,7 +19,13 @@
 
 // Remaining properties
 @property(readonly, nonatomic) NSString *HTML; // @dynamic HTML;
+@property(readonly, nonatomic) NSURL *URL;
 @property(readonly, nonatomic) NSURL *baseURL; // @dynamic baseURL;
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly, nonatomic) NSString *identifier;
+@property(readonly) Class superclass;
 
 @end
 

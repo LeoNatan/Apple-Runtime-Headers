@@ -10,8 +10,9 @@
 {
 }
 
+- (id)updatedTileInfoWithNewHeadline:(id)arg1;
 - (unsigned long long)bookmarkOffsetType;
-- (_Bool)bookmarkable;
+- (id)feedTileInfoForBookmarking;
 - (_Bool)pageable;
 - (unsigned long long)tileInfoType;
 

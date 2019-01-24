@@ -14,6 +14,7 @@
 + (id)nfl_accessoryColorForTextColor:(id)arg1 backgroundColor:(id)arg2;
 + (id)nfl_plusDEffectWithForegroundColor:(id)arg1 backgroundColor:(id)arg2;
 + (id)nfl_plusLEffectWithForegroundColor:(id)arg1 backgroundColor:(id)arg2;
++ (long long)nfl_binUsingBrightnessForColor:(id)arg1;
 + (long long)nfl_binForColor:(id)arg1;
 + (id)nfl_colorByInterpolatingFromColor:(id)arg1 toColor:(id)arg2 percent:(double)arg3;
 + (id)nfl_colorComponentsFromString:(id)arg1;

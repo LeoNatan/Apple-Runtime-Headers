@@ -8,11 +8,14 @@
 
 @interface SSFrameBufferAVConferenceView : SSFrameBufferView
 {
+    struct CGRect _windowDimensions;
 }
 
+@property struct CGRect windowDimensions; // @synthesize windowDimensions=_windowDimensions;
 - (struct SSPoint)frameBufferCoordinatesFromWindowCoordinates:(struct CGPoint)arg1;
 - (struct SSPoint)frameBufferCoordinatesFromNSEvent:(id)arg1;
 - (void)sendMouseButtonEventWithWindowCoordinates:(struct CGPoint)arg1 withButton:(unsigned long long)arg2 withState:(int)arg3 withClickCount:(long long)arg4;
+- (void)sendMouseButtonEvent:(id)arg1 withButton:(unsigned long long)arg2 withState:(int)arg3;
 - (void)updateSubviews;
 - (void)mouseMoved:(id)arg1;
 - (void)setFrame:(struct CGRect)arg1;

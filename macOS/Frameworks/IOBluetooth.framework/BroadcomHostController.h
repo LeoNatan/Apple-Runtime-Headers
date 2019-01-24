@@ -16,6 +16,8 @@
 - (int)BluetoothHCIBroadcomResetBasicRateACLConnectionStats;
 - (int)BluetoothHCIBroadcomGetBasicRateACLConnectionStats;
 - (void)processRawEventData:(const void *)arg1 dataSize:(unsigned long long)arg2;
+- (int)BroadcomHCILERemoveAdvancedMatchingRuleWithAddressEnhanced:(BOOL)arg1 address:(struct BluetoothDeviceAddress *)arg2 blob:(CDStruct_cbd83a78)arg3 mask:(CDStruct_cbd83a78)arg4 RSSIThreshold:(BOOL)arg5 packetType:(unsigned char)arg6 matchingCapacity:(char *)arg7 matchingRemaining:(char *)arg8;
+- (int)BroadcomHCILEAddAdvancedMatchingRuleWithAddressEnhanced:(BOOL)arg1 address:(struct BluetoothDeviceAddress *)arg2 blob:(CDStruct_cbd83a78)arg3 mask:(CDStruct_cbd83a78)arg4 RSSIThreshold:(BOOL)arg5 packetType:(unsigned char)arg6 matchingCapacity:(char *)arg7 matchingRemaining:(char *)arg8;
 - (int)BluetoothHCISetLighthouseDebugQuery:(unsigned char)arg1;
 - (int)BluetoothHCISetLighthouseSetParameters:(unsigned short)arg1 inLEScanWindow:(unsigned short)arg2 inLEAdvertisementInterval:(unsigned short)arg3 inAdvType:(unsigned char)arg4 inAdvAddressFilterControl:(unsigned char)arg5 inRSSIThreshold:(BOOL)arg6 inTimeout:(unsigned char)arg7;
 - (int)BluetoothHCISetLighthouseControl:(unsigned char)arg1;

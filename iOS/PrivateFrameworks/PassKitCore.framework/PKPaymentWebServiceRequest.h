@@ -13,6 +13,7 @@
     id <PKPaymentWebServiceTargetDeviceProtocol> _targetDevice;
 }
 
++ (_Bool)supportsSecureCoding;
 @property(retain, nonatomic) id <PKPaymentWebServiceTargetDeviceProtocol> targetDevice; // @synthesize targetDevice=_targetDevice;
 - (void).cxx_destruct;
 - (id)_murlRequestWithServiceURL:(id)arg1 version:(id)arg2 endpointComponents:(id)arg3 queryParameters:(id)arg4 appleAccountInformation:(id)arg5;

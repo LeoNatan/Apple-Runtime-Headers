@@ -290,6 +290,7 @@
 - (void)syncMarkedTextForKeyboardState:(id)arg1 afterContextChange:(BOOL)arg2;
 - (void)syncToLayoutState:(id)arg1;
 - (void)incrementUsageTrackingKeysForDeleteFromInput;
+- (void)incrementUsageTrackingKeyForAppWithIsSentence:(BOOL)arg1;
 - (void)incrementUsageTrackingKey:(id)arg1;
 - (void)incrementUsageTrackingKeyForAutocorrectionStatistic:(id)arg1 autocorrectionTypes:(unsigned int)arg2;
 - (id)usageTrackingKeyForStatistic:(id)arg1;

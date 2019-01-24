@@ -11,7 +11,7 @@
 __attribute__((visibility("hidden")))
 @interface TSPPasteboardMetadata : TSPObject
 {
-    struct PasteboardMetadata _message;
+    // Error parsing type: {PasteboardMetadata="_vptr$MessageLite"^^?"_internal_metadata_"{InternalMetadataWithArena="ptr_"^v}"_has_bits_"{HasBits<1>="has_bits_"[1I]}"_cached_size_"{CachedSize="size_"{atomic<int>="__a_"Ai}}"version_"{RepeatedField<unsigned int>="current_size_"i"total_size_"i"ptr_"(Pointer="arena"^{Arena}"rep"^{Rep})}"_version_cached_byte_size_"i"datas_"{RepeatedPtrField<TSP::DataInfo>="arena_"^{Arena}"current_size_"i"total_size_"i"rep_"^{Rep}}"app_name_"{ArenaStringPtr="ptr_"^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}"source_document_uuid_"^{UUID}"data_metadata_map_"^{Reference}}, name: _message
     TSPDataMetadataMap *_identifierToDataMetadataMap;
     _Bool _isCrossAppPaste;
     _Bool _isCrossDocumentPaste;
@@ -26,7 +26,7 @@ __attribute__((visibility("hidden")))
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (long long)tsp_identifier;
-- (struct PasteboardMetadata *)message;
+-     // Error parsing type: ^{PasteboardMetadata=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedField<unsigned int>=ii(Pointer=^{Arena}^{Rep})}i{RepeatedPtrField<TSP::DataInfo>=^{Arena}ii^{Rep}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}^{UUID}^{Reference}}16@0:8, name: message
 - (void)saveToArchiver:(id)arg1;
 - (void)loadFromUnarchiver:(id)arg1;
 - (id)dataMetadataForDataIdentifier:(long long)arg1;

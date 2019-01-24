@@ -16,7 +16,7 @@
 
 + (id)ifNotExistsLink:(id)arg1 to:(id)arg2;
 + (id)ifExistsLink:(id)arg1 to:(id)arg2;
-- (CDUnknownBlockType).cxx_destruct;
+- (void).cxx_destruct;
 - (id)init;
 - (id)and:(id)arg1;
 - (id)andNotExistsLink:(id)arg1 to:(id)arg2 error:(id *)arg3;

@@ -15,6 +15,7 @@ __attribute__((visibility("hidden")))
 - (id)textForCompletionListItem:(const struct CompletionListItem *)arg1;
 - (id)imageForCompletionListItem:(const struct CompletionListItem *)arg1;
 - (id)_textForFormAutoFillItem:(const struct CompletionListItem *)arg1;
+- (id)_textForSingleCreditCardDataItem:(const struct CompletionListItem *)arg1;
 - (id)_textForCreditCardItem:(const struct CompletionListItem *)arg1;
 - (id)_textForPasswordItem:(const struct CompletionListItem *)arg1;
 - (id)_imageForCreditCardItem:(const struct CompletionListItem *)arg1;

@@ -25,6 +25,7 @@
 - (long long)lanczosFilterDownscaleFactor;
 - (void)setLanczosFilterDownscalingEnabled:(BOOL)arg1;
 - (BOOL)isLanczosFilterDownscalingEnabled;
+- (id)videoPerformanceMetrics;
 - (id)_subtitleLayer;
 - (id)_closedCaptionLayer;
 - (id)_videoLayer;
@@ -62,6 +63,7 @@
 - (void)setContentsScale:(double)arg1;
 - (void)setBounds:(struct CGRect)arg1;
 - (void)layoutSublayers;
+- (id)_compactDescription;
 - (id)initWithLayer:(id)arg1;
 - (id)init;
 

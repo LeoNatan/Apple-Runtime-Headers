@@ -40,7 +40,7 @@ __attribute__((visibility("hidden")))
 - (void)_dispatchHistoryItemsAdded:(id)arg1 byUserInitiatedAction:(BOOL)arg2;
 - (id)_createHistoryStore;
 - (Class)_historyItemClass;
-- (void)populateVisitedLinksInContext:(struct Context)arg1;
+- (void)populateVisitedLinkStore:(id)arg1;
 - (void)historyLoaderDidFinishLoading:(id)arg1;
 - (void)updateHistoryAgeLimitFromPreferences;
 - (id)dateOfLatestImportedVisitForBundleIdentifier:(id)arg1;

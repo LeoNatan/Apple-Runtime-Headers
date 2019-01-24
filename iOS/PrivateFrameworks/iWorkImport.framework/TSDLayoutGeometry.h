@@ -9,26 +9,30 @@
 #import <iWorkImport/NSCopying-Protocol.h>
 #import <iWorkImport/NSMutableCopying-Protocol.h>
 
+@class TSDInfoGeometry;
+
 __attribute__((visibility("hidden")))
 @interface TSDLayoutGeometry : NSObject <NSCopying, NSMutableCopying>
 {
-    struct CGSize mSize;
-    struct CGAffineTransform mTransform;
+    struct CGSize _size;
+    struct CGAffineTransform _transform;
 }
 
 + (id)geometryFromFullTransform:(struct CGAffineTransform)arg1;
-@property(readonly, nonatomic) struct CGAffineTransform transform; // @synthesize transform=mTransform;
-@property(readonly, nonatomic) struct CGSize size; // @synthesize size=mSize;
+@property(readonly, nonatomic) struct CGAffineTransform transform; // @synthesize transform=_transform;
+@property(readonly, nonatomic) struct CGSize size; // @synthesize size=_size;
 - (_Bool)differsInMoreThanTranslationFrom:(id)arg1;
 - (struct CGAffineTransform)transformByConcatenatingTransformTo:(struct CGAffineTransform)arg1;
 - (id)geometryByOutsettingBy:(struct CGSize)arg1;
 - (id)geometryByTranslatingBy:(struct CGPoint)arg1;
 - (id)geometryByTransformingBy:(struct CGAffineTransform)arg1;
-- (id)infoGeometry;
-- (struct CGAffineTransform)fullTransform;
-- (struct CGAffineTransform)inverseTransform;
-- (struct CGRect)frame;
-- (struct CGPoint)center;
+@property(readonly, nonatomic) TSDInfoGeometry *infoGeometry;
+@property(readonly, nonatomic) struct CGAffineTransform fullTransform;
+@property(readonly, nonatomic) struct CGAffineTransform inverseTransform;
+@property(readonly, nonatomic) struct CGRect frame;
+@property(readonly, nonatomic) struct CGPoint center;
+- (void)i_setTransform:(struct CGAffineTransform)arg1;
+- (void)i_setSize:(struct CGSize)arg1;
 - (id)description;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

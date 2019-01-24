@@ -40,6 +40,7 @@
     RERelevanceEngineConfiguration *_configuration;
 }
 
++ (void)prewarmWithConfiguration:(id)arg1;
 @property(nonatomic) _Bool automaticallyResumeEngine; // @synthesize automaticallyResumeEngine=_automaticallyResumeEngine;
 @property(readonly, nonatomic) RERelevanceEngineConfiguration *configuration; // @synthesize configuration=_configuration;
 - (void).cxx_destruct;
@@ -57,6 +58,7 @@
 - (id)pathForElement:(id)arg1;
 - (unsigned int)numberOfElementsInSection:(id)arg1;
 - (id)elementAtPath:(id)arg1;
+- (void)saveModelFile;
 - (void)trainWithPendingEvents;
 - (void)removeTrainingContext:(id)arg1;
 - (void)addTrainingContext:(id)arg1;

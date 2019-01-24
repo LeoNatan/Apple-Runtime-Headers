@@ -50,7 +50,7 @@
 - (void)setAccessibilityValue:(id)arg1;
 - (id)accessibilityValue;
 - (id)accessibilityLabel;
-- (id)_textCell;
+- (id)_textView;
 - (id)_pageView;
 - (id)_control;
 - (BOOL)_isPressableWidget;

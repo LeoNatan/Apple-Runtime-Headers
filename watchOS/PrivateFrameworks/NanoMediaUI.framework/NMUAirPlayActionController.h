@@ -83,6 +83,7 @@
 - (void)setDelegate:(id)arg1;
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
+- (void)viewDidLoad;
 - (id)_initWithOrigin:(id)arg1 audioRoutingManager:(id)arg2;
 
 // Remaining properties

@@ -29,6 +29,8 @@ struct CommandTagging {
     basic_string_23d93216 _field3;
 };
 
+struct CustomLMBuilder;
+
 struct EARCSpeechRecognitionResultStream {
     void *ctx;
     CDUnknownFunctionPointerType DisposeContext;
@@ -130,6 +132,10 @@ struct SystemConfig {
     struct map<std::__1::basic_string<char>, std::__1::set<std::__1::basic_string<char>, std::__1::less<std::__1::basic_string<char>>, std::__1::allocator<std::__1::basic_string<char>>>, std::__1::less<std::__1::basic_string<char>>, std::__1::allocator<std::__1::pair<const std::__1::basic_string<char>, std::__1::set<std::__1::basic_string<char>, std::__1::less<std::__1::basic_string<char>>, std::__1::allocator<std::__1::basic_string<char>>>>>> requiredParams;
     int state;
     int configType;
+};
+
+struct TextTokenizer {
+    CDUnknownFunctionPointerType *_field1;
 };
 
 struct Token {
@@ -503,6 +509,12 @@ struct unique_ptr<quasar::CommandTagging, std::__1::default_delete<quasar::Comma
     } __ptr_;
 };
 
+struct unique_ptr<quasar::CustomLMBuilder, std::__1::default_delete<quasar::CustomLMBuilder>> {
+    struct __compressed_pair<quasar::CustomLMBuilder *, std::__1::default_delete<quasar::CustomLMBuilder>> {
+        struct CustomLMBuilder *__value_;
+    } __ptr_;
+};
+
 struct unique_ptr<quasar::G2P, std::__1::default_delete<quasar::G2P>> {
     struct __compressed_pair<quasar::G2P *, std::__1::default_delete<quasar::G2P>> {
         struct G2P *__value_;
@@ -542,6 +554,12 @@ struct unique_ptr<quasar::ResultCombiner, std::__1::default_delete<quasar::Resul
 struct unique_ptr<quasar::SpeechRecognizer, std::__1::default_delete<quasar::SpeechRecognizer>> {
     struct __compressed_pair<quasar::SpeechRecognizer *, std::__1::default_delete<quasar::SpeechRecognizer>> {
         struct SpeechRecognizer *__value_;
+    } __ptr_;
+};
+
+struct unique_ptr<quasar::TextTokenizer, std::__1::default_delete<quasar::TextTokenizer>> {
+    struct __compressed_pair<quasar::TextTokenizer *, std::__1::default_delete<quasar::TextTokenizer>> {
+        struct TextTokenizer *__value_;
     } __ptr_;
 };
 

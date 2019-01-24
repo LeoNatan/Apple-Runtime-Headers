@@ -8,12 +8,12 @@
 
 #import <iWorkImport/TSPDecoder-Protocol.h>
 
-@class NSArray, NSString;
+@class NSArray, NSString, UIPasteboard;
 
 __attribute__((visibility("hidden")))
 @interface TSPPasteboard : NSObject <TSPDecoder>
 {
-    id _pasteboard;
+    UIPasteboard *_pasteboard;
 }
 
 + (id)pasteboardWithPasteboard:(id)arg1;

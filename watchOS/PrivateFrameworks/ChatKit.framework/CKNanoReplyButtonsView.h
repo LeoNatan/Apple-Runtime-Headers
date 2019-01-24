@@ -8,15 +8,14 @@
 
 #import <ChatKit/RadiosPreferencesDelegate-Protocol.h>
 
-@class NSString, PUICQuickboardListTrayButton, RadiosPreferences;
+@class NSString, PUICQuickboardListTrayButton, PUICQuickboardListTrayView, RadiosPreferences;
 @protocol CKNanoReplyButtonsViewDelegate;
 
 @interface CKNanoReplyButtonsView : UIView <RadiosPreferencesDelegate>
 {
-    float _sizeThatFitsWidth;
-    struct CGSize _sizeThatFits;
     RadiosPreferences *_radiosPreferences;
     _Bool _shouldShowSurf;
+    _Bool _scribbleShouldHideWhenNotAvailable;
     id <CKNanoReplyButtonsViewDelegate> _replyDelegate;
     NSString *_primaryLanguage;
     PUICQuickboardListTrayButton *_dictationReplyButton;
@@ -24,32 +23,36 @@
     PUICQuickboardListTrayButton *_digitalTouchButton;
     PUICQuickboardListTrayButton *_arouetReplyButton;
     PUICQuickboardListTrayButton *_surfReplyButton;
+    PUICQuickboardListTrayView *_trayView;
 }
 
++ (float)minimumHeightForLanguage:(id)arg1 shouldShowSurf:(_Bool)arg2;
 + (float)minimumHeightForLanguage:(id)arg1;
+@property(nonatomic) __weak PUICQuickboardListTrayView *trayView; // @synthesize trayView=_trayView;
 @property(retain, nonatomic) PUICQuickboardListTrayButton *surfReplyButton; // @synthesize surfReplyButton=_surfReplyButton;
 @property(retain, nonatomic) PUICQuickboardListTrayButton *arouetReplyButton; // @synthesize arouetReplyButton=_arouetReplyButton;
 @property(retain, nonatomic) PUICQuickboardListTrayButton *digitalTouchButton; // @synthesize digitalTouchButton=_digitalTouchButton;
 @property(retain, nonatomic) PUICQuickboardListTrayButton *emojiReplyButton; // @synthesize emojiReplyButton=_emojiReplyButton;
 @property(retain, nonatomic) PUICQuickboardListTrayButton *dictationReplyButton; // @synthesize dictationReplyButton=_dictationReplyButton;
+@property(nonatomic) _Bool scribbleShouldHideWhenNotAvailable; // @synthesize scribbleShouldHideWhenNotAvailable=_scribbleShouldHideWhenNotAvailable;
+@property(nonatomic) _Bool shouldShowSurf; // @synthesize shouldShowSurf=_shouldShowSurf;
 @property(copy, nonatomic) NSString *primaryLanguage; // @synthesize primaryLanguage=_primaryLanguage;
 @property(nonatomic) __weak id <CKNanoReplyButtonsViewDelegate> replyDelegate; // @synthesize replyDelegate=_replyDelegate;
 - (void).cxx_destruct;
-- (id)buttonWithTintColor:(id)arg1 image:(id)arg2;
 - (void)tappedDictationButton;
 - (void)tappedDigitalTouchButton;
 - (void)tappedSurfButton;
 - (void)tappedArouetButton;
 - (void)tappedEmojiButton;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
-- (void)layoutSubviews;
-- (void)_layoutButtons:(id)arg1 row:(unsigned int)arg2 useFullWidth:(_Bool)arg3;
-- (void)_updateArouetButtonVisibility;
+- (void)_updateArouetButtonVisibilityAndLayoutButtons:(_Bool)arg1;
 - (void)_updateDictationButtonVisibility;
 - (void)airplaneModeChanged;
-- (void)_updateSurfButtonVisibility;
-@property(nonatomic) _Bool shouldShowSurf; // @synthesize shouldShowSurf=_shouldShowSurf;
+- (void)_updateSurfButtonVisibilityAndLayoutButtons:(_Bool)arg1;
+- (void)updatePrimaryLanguage:(id)arg1 shouldShowSurf:(_Bool)arg2 buttonTintColor:(id)arg3;
 - (void)tintColorDidChange;
+- (void)configureReplyButtonsWithTintColor:(id)arg1;
+- (id)initWithFrame:(struct CGRect)arg1 tintColor:(id)arg2 language:(id)arg3 hideScribbleWhenNotAvailable:(_Bool)arg4 shouldShowSurf:(_Bool)arg5;
 - (id)initWithFrame:(struct CGRect)arg1 tintColor:(id)arg2 language:(id)arg3;
 
 @end

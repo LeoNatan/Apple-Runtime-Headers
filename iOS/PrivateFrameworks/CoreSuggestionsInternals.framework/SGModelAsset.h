@@ -11,6 +11,8 @@
 }
 
 + (id)asset;
++ (id)dictionaryWithResourceName:(id)arg1;
++ (id)quickResponses;
 + (id)mappings;
 + (id)rules;
 + (id)_assetWithName:(id)arg1 andLoadBlock:(CDUnknownBlockType)arg2;

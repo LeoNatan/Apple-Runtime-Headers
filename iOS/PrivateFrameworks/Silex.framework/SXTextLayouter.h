@@ -29,6 +29,7 @@
 - (double)verticalLocationOfCharacterAtIndex:(unsigned long long)arg1;
 @property(readonly, nonatomic) NSArray *paragraphRanges;
 - (struct CGSize)boundingSize;
+- (struct CGRect)typographicBounds;
 - (double)baselineForLastLine;
 - (id)firstColumn;
 - (id)textLayout;

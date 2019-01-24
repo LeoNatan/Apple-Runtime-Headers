@@ -48,6 +48,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)isSystemSpeaking;
 - (id)availableFootprintsForVoice:(id)arg1 languageCode:(id)arg2;
 - (id)availableVoicesForLanguageCode:(id)arg1;
+- (_Bool)queryPhaticCapabilityWithRequest:(id)arg1;
 - (void)prewarmIfNeededWithRequest:(id)arg1;
 - (void)updateWithConnectionIdentifier:(id)arg1;
 @property(readonly, nonatomic) VSPresynthesizedAudioRequest *presynthesizedAudioRequest;

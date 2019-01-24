@@ -8,7 +8,7 @@
 
 #import <NewsFeedLayout/NFLFeedTileInfo-Protocol.h>
 
-@class NSArray, NSString;
+@class NFLHeadlineTileInfo, NSArray, NSString;
 
 @interface NFLAggregateTileInfo : NSObject <NFLFeedTileInfo>
 {
@@ -28,8 +28,9 @@
 - (_Bool)isEqual:(id)arg1;
 @property(readonly) unsigned long long hash;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (id)updatedTileInfoWithNewHeadline:(id)arg1;
 @property(readonly, nonatomic) unsigned long long bookmarkOffsetType;
-@property(readonly, nonatomic) _Bool bookmarkable;
+@property(readonly, nonatomic) NFLHeadlineTileInfo *feedTileInfoForBookmarking;
 @property(readonly, nonatomic) _Bool pageable;
 - (id)underlyingTileInfoForID:(id)arg1;
 - (_Bool)underlyingTileInfosContainsTileInfoForID:(id)arg1;

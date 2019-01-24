@@ -222,11 +222,13 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) BOOL requestGETPreAuth;
 - (id)operationRequestWithType:(int)arg1;
 @property(readonly, nonatomic) NSString *requestContentType;
+- (BOOL)parsingStandaloneMessage;
 @property(readonly, nonatomic) NSString *protobufOperationName;
 @property(readonly, nonatomic) NSString *acceptContentType;
 @property(readonly, nonatomic) BOOL shouldCompressBody;
 @property(readonly, nonatomic) NSString *path;
 @property(readonly, nonatomic) NSArray *requestOperationClasses;
+- (Class)requestMessageClass;
 @property(readonly, nonatomic) int operationType;
 - (Class)expectedResponseClass;
 @property(readonly, nonatomic) NSURL *url;

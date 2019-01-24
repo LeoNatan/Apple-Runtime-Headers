@@ -4,24 +4,32 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <Safari/ColorInvertingTableCellView.h>
+#import <Safari/BiometricPromptCellView.h>
 
-@class NSTextField, WBSCreditCardData;
+@class NSImageView, NSLayoutConstraint, NSStackView, NSTextField, WBSCreditCardData;
 
 __attribute__((visibility("hidden")))
-@interface CreditCardAutoFillCellView : ColorInvertingTableCellView
+@interface CreditCardAutoFillCellView : BiometricPromptCellView
 {
+    NSImageView *_biometricPromptView;
     WBSCreditCardData *_cardData;
     NSTextField *_cardNameLabel;
     NSTextField *_cardDescriptionLabel;
+    NSStackView *_horizontalStackView;
+    NSLayoutConstraint *_stackViewTrailingConstraint;
 }
 
-+ (struct CGSize)sizeForCreditCardData:(id)arg1;
++ (struct CGSize)sizeForCreditCardData:(id)arg1 showsBiometricPrompt:(BOOL)arg2;
 + (id)cardDescription:(id)arg1;
+@property(nonatomic) __weak NSLayoutConstraint *stackViewTrailingConstraint; // @synthesize stackViewTrailingConstraint=_stackViewTrailingConstraint;
+@property(nonatomic) __weak NSStackView *horizontalStackView; // @synthesize horizontalStackView=_horizontalStackView;
 @property(nonatomic) __weak NSTextField *cardDescriptionLabel; // @synthesize cardDescriptionLabel=_cardDescriptionLabel;
 @property(nonatomic) __weak NSTextField *cardNameLabel; // @synthesize cardNameLabel=_cardNameLabel;
 @property(retain, nonatomic) WBSCreditCardData *cardData; // @synthesize cardData=_cardData;
 - (void).cxx_destruct;
+- (void)performBiometricPromptShakeAnimation;
+- (void)_updateBiometricPrompt;
+- (void)_setUpBiometricPrompt;
 - (void)_updateViews;
 - (void)awakeFromNib;
 

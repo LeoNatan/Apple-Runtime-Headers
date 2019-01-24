@@ -12,6 +12,8 @@
 - (void)readerAppearanceViewControllerDidChangeTheme:(_SFReaderAppearanceViewController *)arg1;
 - (void)readerAppearanceViewControllerDidDecreaseTextSize:(_SFReaderAppearanceViewController *)arg1;
 - (void)readerAppearanceViewControllerDidIncreaseTextSize:(_SFReaderAppearanceViewController *)arg1;
+- (_Bool)readerAppearanceViewControllerCanDecreaseTextSize:(_SFReaderAppearanceViewController *)arg1;
+- (_Bool)readerAppearanceViewControllerCanIncreaseTextSize:(_SFReaderAppearanceViewController *)arg1;
 - (void)readerAppearanceViewControllerDidChangeFont:(_SFReaderAppearanceViewController *)arg1;
 @end
 

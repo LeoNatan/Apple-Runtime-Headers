@@ -10,12 +10,13 @@
 #import <PassKitUI/PKPassDeleteHandler-Protocol.h>
 #import <PassKitUI/PKPassFooterViewDelegate-Protocol.h>
 #import <PassKitUI/PKPassGroupViewDelegate-Protocol.h>
+#import <PassKitUI/PKPassGroupViewReceiver-Protocol.h>
 #import <PassKitUI/PKPaymentServiceDelegate-Protocol.h>
 
-@class NSMutableArray, NSMutableDictionary, NSNumber, NSString, NSTimer, PKPGSVSectionHeaderContext, PKPass, PKPassDeleteAnimationController, PKPassFooterView, PKPassGroupView, PKPassthroughView, PKPaymentService, PKReusablePassViewQueue, PKSecureElement, UIColor, UIImageView, UIView;
+@class NSMutableArray, NSMutableDictionary, NSNumber, NSString, NSTimer, PKBackdropView, PKNavigationDashboardPassViewController, PKPGSVSectionHeaderContext, PKPGSVTransitionInterstitialView, PKPass, PKPassDeleteAnimationController, PKPassFooterView, PKPassGroupView, PKPassthroughView, PKPaymentService, PKReusablePassViewQueue, PKSecureElement, UIColor, UIImageView, UIView, _UIDynamicValueAnimation;
 @protocol PKPassGroupStackViewDatasource, PKPassGroupStackViewDelegate><UIScrollViewDelegate;
 
-@interface PKPassGroupStackView : UIScrollView <PKPassGroupViewDelegate, PKPassDeleteAnimationControllerDelegate, PKPaymentServiceDelegate, PKPassFooterViewDelegate, PKPassDeleteHandler>
+@interface PKPassGroupStackView : UIScrollView <PKPassGroupViewDelegate, PKPassDeleteAnimationControllerDelegate, PKPaymentServiceDelegate, PKPassFooterViewDelegate, PKPassDeleteHandler, PKPassGroupViewReceiver>
 {
     PKPassGroupView *_modallyPresentedGroupView;
     NSMutableArray *_passPileViews;
@@ -26,6 +27,9 @@
     NSMutableDictionary *_groupViewsByGroupID;
     PKPGSVSectionHeaderContext *_paymentHeaderContext;
     PKPGSVSectionHeaderContext *_passHeaderContext;
+    PKPGSVTransitionInterstitialView *_leadingInterstitialItemView;
+    PKPGSVTransitionInterstitialView *_trailingInterstitialItemView;
+    double _footerAnimationDelay;
     UIView *_footerView;
     double _footerViewMinimumHeight;
     UIImageView *_footerPocketBackgroundShadow;
@@ -36,6 +40,7 @@
         double separationPadding;
         long long pilingMode;
         double groupCellHeight;
+        unsigned long long externalToTableTransitionModalGroupIndex;
         unsigned int disableTableModalPresentation:1;
         unsigned int hasPaymentPasses:1;
         unsigned int hasPasses:1;
@@ -51,6 +56,8 @@
         unsigned int forceFooterUpdate:1;
         unsigned int preventFooterLayout:1;
         unsigned int mutatingForcePileOffscreen:1;
+        unsigned int transitioningFromExternalToTable:1;
+        unsigned int transitioningFromExternalToModal:1;
     } _layoutState;
     struct CGSize _lastBoundsSize;
     struct UIEdgeInsets _lastBoundsInsets;
@@ -60,6 +67,8 @@
     long long _nextState;
     long long _priorState;
     NSMutableArray *_transitionCompletionHandlers;
+    unsigned int _externalPresentationTag;
+    unsigned int _interstitialTag;
     _Bool _hasSuspendedTransition;
     long long _suspendedNextState;
     NSMutableArray *_suspendedTransitionCompletionHandlers;
@@ -93,8 +102,22 @@
     _Bool _delegateWantsBottomContentSeparation;
     _Bool _wantsBacklightRamping;
     NSNumber *_featuredGroupID;
+    PKNavigationDashboardPassViewController *_externalVC;
+    PKPassGroupView *_loanedGroupView;
+    long long _pressedGroupViewIndex;
+    double _modalGroupViewVelocity;
+    _Bool _modalGroupViewDragging;
+    PKPass *_passToBeDeletedExternally;
+    double _timeBackdropViewLastPresented;
+    PKBackdropView *_backdropView;
+    _Bool _isHidingBackdropView;
+    _Bool _isPresentingBackdropView;
+    _UIDynamicValueAnimation *_panningAnimation;
+    _Bool _effectivePaused;
     _Bool _footerSuppressed;
+    _Bool _externalFooterSuppressed;
     _Bool _staggerPileAnimations;
+    _Bool _paused;
     id <PKPassGroupStackViewDatasource> _datasource;
     long long _coachingState;
     UIColor *_pageIndicatorTintColor;
@@ -102,17 +125,36 @@
     double _topContentSeparatorHeight;
 }
 
++ (id)backdropEndBackgroundColor;
++ (id)backdropStartBackgroundColor;
 + (id)backgroundColor;
+@property(nonatomic, getter=isPaused) _Bool paused; // @synthesize paused=_paused;
 @property(nonatomic) _Bool staggerPileAnimations; // @synthesize staggerPileAnimations=_staggerPileAnimations;
 @property(nonatomic) double topContentSeparatorHeight; // @synthesize topContentSeparatorHeight=_topContentSeparatorHeight;
 @property(copy, nonatomic) UIColor *currentPageIndicatorTintColor; // @synthesize currentPageIndicatorTintColor=_currentPageIndicatorTintColor;
 @property(copy, nonatomic) UIColor *pageIndicatorTintColor; // @synthesize pageIndicatorTintColor=_pageIndicatorTintColor;
 @property(readonly, nonatomic) long long coachingState; // @synthesize coachingState=_coachingState;
+@property(nonatomic) _Bool externalFooterSuppressed; // @synthesize externalFooterSuppressed=_externalFooterSuppressed;
 @property(nonatomic) _Bool footerSuppressed; // @synthesize footerSuppressed=_footerSuppressed;
 @property(nonatomic) unsigned long long modalGroupIndex; // @synthesize modalGroupIndex=_modalGroupIndex;
 @property(nonatomic) long long presentationState; // @synthesize presentationState=_presentationState;
 @property(nonatomic) id <PKPassGroupStackViewDatasource> datasource; // @synthesize datasource=_datasource;
 - (void).cxx_destruct;
+- (void)_resetBackdropViewToStart:(_Bool)arg1;
+- (void)_hideBackdropViewAnimated:(_Bool)arg1 delay:(double)arg2;
+- (void)_presentBackdropViewAnimated:(_Bool)arg1 delay:(double)arg2;
+- (void)_moveBackdropViewToFront;
+- (void)didDeletePass:(id)arg1;
+- (void)willDeletePass:(id)arg1;
+- (void)modalPresentationIsPending;
+- (_Bool)_shouldSwitchToTableStateFromExternalDismissal;
+- (void)groupViewIsAvailable:(id)arg1;
+- (void)groupViewWillBeAvailable:(id)arg1 withVelocity:(double)arg2 dragging:(_Bool)arg3;
+- (void)groupViewDidMoveToReceiver:(id)arg1;
+- (void)trailingHeaderViewInterstitialIsAvailable:(id)arg1;
+- (void)leadingHeaderViewInterstitialIsAvailable:(id)arg1;
+- (_Bool)canPerformPaymentForGroupAtIndex:(unsigned long long)arg1;
+- (_Bool)presentedPassCanPerformPayment;
 - (void)_rampBacklightIfNecessary:(_Bool)arg1;
 - (void)_refreshBacklightForFrontmostPassGroup;
 - (void)_resetBrightness;
@@ -122,6 +164,7 @@
 - (_Bool)handleDeletePassRequestWithPass:(id)arg1 forViewController:(id)arg2;
 - (void)deleteAnimationController:(id)arg1 didComplete:(_Bool)arg2;
 - (void)deleteAnimationControllerWillBeginDeleteAnimation:(id)arg1;
+- (void)passFooterViewDidChangePileSuppressionRequirement:(id)arg1;
 - (unsigned long long)suppressedContentForPassFooter:(id)arg1;
 - (_Bool)isPassFooterViewInGroup:(id)arg1;
 - (void)_updateCoachingState;
@@ -142,6 +185,9 @@
 - (_Bool)groupViewShouldAllowPanning:(id)arg1;
 - (void)groupViewPanDidEnd:(id)arg1;
 - (void)groupViewPanDidBegin:(id)arg1;
+- (void)_unpressGroupView;
+- (void)groupViewPressedDidEnd:(id)arg1;
+- (void)groupViewPressed:(id)arg1;
 - (void)groupView:(id)arg1 didUpdatePassView:(id)arg2;
 - (void)groupViewTapped:(id)arg1;
 - (void)didUpdateDefaultPaymentPassWithUniqueIdentifier:(id)arg1;
@@ -174,6 +220,8 @@
 - (_Bool)_isTableModalPresentation;
 - (_Bool)_shouldTablePresentationScroll;
 - (id)_frontmostPastViewForGroupIndex:(unsigned long long)arg1;
+- (void)_setupSpringFactoryForTableToExternalAnimations:(id)arg1;
+- (double)_setupSpringFactoryForExternalToTableAnimations:(id)arg1;
 - (double)_setupSpringFactoryForPileAnimations:(id)arg1 withMaximumAcceleration:(double)arg2 reverse:(_Bool)arg3;
 - (double)_setupSpringFactory:(id)arg1 forPileAnimationFromPresentationState:(long long)arg2 toPresentationState:(long long)arg3 reverse:(_Bool)arg4;
 - (double)_setupSpringFactory:(id)arg1 forPileAnimationToPresentationState:(long long)arg2 reverse:(_Bool)arg3;
@@ -186,14 +234,14 @@
 - (void)_autoscrollIfNecessary;
 - (void)_animateGroupViewAtIndex:(unsigned long long)arg1 toIndex:(unsigned long long)arg2 withAnchorView:(id)arg3 insertAbove:(_Bool)arg4;
 - (void)_layoutFooterAnimated:(_Bool)arg1 withAnimationDelay:(double)arg2;
-- (void)_layoutContentFromOffset:(struct CGPoint)arg1 toOffset:(struct CGPoint)arg2 animated:(_Bool)arg3;
+- (double)_layoutContentFromOffset:(struct CGPoint)arg1 toOffset:(struct CGPoint)arg2 animated:(_Bool)arg3;
 - (void)_updatePositionForGroupView:(id)arg1 toPosition:(struct CGPoint)arg2 withSpringFactory:(id)arg3;
 - (void)_updatePositionForGroupView:(id)arg1 toPresentationState:(long long)arg2 withSpringFactory:(id)arg3 atIndex:(unsigned long long)arg4;
 - (void)_updatePositionForGroupView:(id)arg1 toPresentationState:(long long)arg2 withSpringFactory:(id)arg3;
 - (void)_updateTransformForGroupView:(id)arg1 toPresentationState:(long long)arg2 withSpringFactory:(id)arg3;
 - (void)_updateGroupView:(id)arg1 toPresentationState:(long long)arg2 withSpringFactory:(id)arg3 atIndex:(unsigned long long)arg4;
 - (void)_updateGroupView:(id)arg1 toPresentationState:(long long)arg2 withSpringFactory:(id)arg3;
-- (void)_updateGroupStateForGroupViewInModalPresentation:(id)arg1 animated:(_Bool)arg2;
+- (void)_updateGroupStateForGroupViewInModalPresentation:(id)arg1 withState:(long long)arg2 animated:(_Bool)arg3;
 - (void)_updateGroupStateForGroupViewInStackPresentation:(id)arg1 animated:(_Bool)arg2;
 - (struct CGRect)_frameForFooterViewForPassView:(id)arg1;
 - (_Bool)_isGroupAtIndexInModalPile:(unsigned long long)arg1;
@@ -207,6 +255,7 @@
 - (unsigned long long)_indexOfGroupView:(id)arg1;
 - (double)_yForGroupInOffscreenPileAtIndex:(unsigned long long)arg1;
 - (double)_yForGroupInPileAtIndex:(unsigned long long)arg1;
+- (double)_yForGroupInExternalModalPileWithModalGroupY:(double)arg1;
 - (double)_yForGroupInModalPileWithModalGroupY:(double)arg1;
 - (double)_yForGroupInModalPileAtIndex:(unsigned long long)arg1;
 - (double)_pileBaseHeight;
@@ -216,7 +265,8 @@
 - (unsigned long long)_maximumNumberOfVisiblePilePasses;
 - (double)_maxYOfPassFrontFaceAtIndex:(unsigned long long)arg1;
 - (double)_yForSingleGroupView:(id)arg1;
-- (double)_yForModallyPresentedGroupIgnoringCompactState:(_Bool)arg1;
+- (double)_yForModallyPresentedGroupForExternalPresentation:(_Bool)arg1 ignoringCompactState:(_Bool)arg2;
+- (double)_yForExternalModallyPresentedGroup;
 - (double)_yForModallyPresentedGroup;
 - (double)_yForGroupInTableAtIndex:(unsigned long long)arg1;
 - (double)_transformedYForNativeYInTable:(double)arg1 withBounds:(struct CGRect)arg2 index:(unsigned long long)arg3;
@@ -234,10 +284,11 @@
 - (void)_updateContentSizeAndLayout:(_Bool)arg1 forceUpdate:(_Bool)arg2;
 - (void)_updateContentSizeAndLayout:(_Bool)arg1;
 - (_Bool)_recomputeLayoutState;
-- (void)_updateHeaderFooterState:(_Bool)arg1;
+- (void)_updateHeaderFooterState:(_Bool)arg1 layout:(_Bool)arg2;
 - (_Bool)_updateHeaderContext:(id *)arg1 toContext:(id)arg2 animated:(_Bool)arg3;
 - (void)_endGroupPanWithGestureRecognizer:(id)arg1;
 - (void)_beginGroupPanWithGestureRecognizer:(id)arg1;
+- (void)_handleScrollViewPanGesture:(id)arg1;
 - (void)_handleModalGroupGesture:(id)arg1;
 - (void)_cleanUpAnimatorForGroupView:(id)arg1;
 - (void)_addPanGestureRecognizerToGroupView:(id)arg1;
@@ -252,11 +303,14 @@
 - (long long)_footerStateForPassView:(id)arg1 withContext:(id)arg2;
 - (double)_passFooterAlphaWhenVisible;
 - (_Bool)_canShowPassFooter;
-- (_Bool)_passEligibleForFooter:(id)arg1;
+- (_Bool)_acquireGroupView:(id)arg1;
 - (void)_presentPassIngestionWithAnimation:(_Bool)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
-- (void)_presentGroupStackViewWithAnimation:(_Bool)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
+- (id)_dismissModalGroupViewFromExternalToState:(long long)arg1;
+- (void)_updateModalGroupViewFromTableToExternalPresentationWithFactory:(id)arg1;
+- (id)_factoryForExternalPresentation;
+- (void)_presentGroupStackViewWithAnimation:(_Bool)arg1 priorBounds:(struct CGRect)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)_presentModalGroupViewPostAnimationActions;
-- (void)_presentModalGroupView:(id)arg1 animated:(_Bool)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
+- (void)_presentModalGroupView:(id)arg1 withState:(long long)arg2 animated:(_Bool)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)_presentOffscreenAnimated:(_Bool)arg1 split:(_Bool)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
 - (void)_generateModalGroupPileWithVisibleIndexes:(struct _NSRange)arg1 reservePlaceForModalGroup:(_Bool)arg2;
 - (unsigned long long)_edgeStylesObscuredByTopCornersOfPassStyle:(long long)arg1;
@@ -296,6 +350,7 @@
 @property(readonly, nonatomic) PKPass *modalGroupFrontmostPass;
 - (void)stageGroupInPresentationState:(long long)arg1 atIndex:(unsigned long long)arg2;
 - (void)layoutContentForCurrentPresentationState:(_Bool)arg1;
+- (void)_updatePausedState;
 - (void)setPresentationState:(long long)arg1 context:(id)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
 - (void)setPresentationState:(long long)arg1 animated:(_Bool)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
 - (void)setPresentationState:(long long)arg1 animated:(_Bool)arg2;

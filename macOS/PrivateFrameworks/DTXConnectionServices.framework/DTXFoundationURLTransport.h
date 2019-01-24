@@ -25,7 +25,6 @@
 - (void)_shutDownSession;
 - (id)initWithRemoteAddress:(id)arg1;
 - (unsigned int)supportedDirections;
-- (id)initWithLocalAddress:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

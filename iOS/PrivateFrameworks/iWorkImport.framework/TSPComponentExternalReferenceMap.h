@@ -15,14 +15,14 @@ __attribute__((visibility("hidden")))
 }
 
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (void)addExternalReferenceToObjectIdentifier:(long long)arg1 componentIdentifier:(long long)arg2 isWeak:(_Bool)arg3;
+- (void)addExternalReferenceToObjectIdentifier:(long long)arg1 componentIdentifier:(long long)arg2 isWeak:(_Bool)arg3 componentIsVersioned:(_Bool)arg4;
 - (struct ComponentExternalReferenceInfo)externalReferenceInfoForObjectIdentifier:(long long)arg1;
 - (void)enumerateExternalReferences:(CDUnknownBlockType)arg1;
-- (void)saveToMessage:(RepeatedPtrField_1f1a6efb *)arg1;
+-     // Error parsing type: v24@0:8^{ComponentInfo=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedField<unsigned int>=ii(Pointer=^{Arena}^{Rep})}i{RepeatedField<unsigned int>=ii(Pointer=^{Arena}^{Rep})}i{RepeatedPtrField<TSP::ComponentExternalReference>=^{Arena}ii^{Rep}}{RepeatedPtrField<TSP::ComponentDataReference>=^{Arena}ii^{Rep}}{RepeatedPtrField<TSP::ObjectUUIDMapEntry>=^{Arena}ii^{Rep}}{RepeatedPtrField<TSP::FeatureInfo>=^{Arena}ii^{Rep}}{RepeatedField<unsigned int>=ii(Pointer=^{Arena}^{Rep})}i{RepeatedField<unsigned int>=ii(Pointer=^{Arena}^{Rep})}i{RepeatedPtrField<TSP::ComponentExternalReference>=^{Arena}ii^{Rep}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}QQBBI}16, name: saveToMessage:
 - (void)dealloc;
-- (id)initFromMessage:(const RepeatedPtrField_1f1a6efb *)arg1;
+- (void)appendReferencesFromMessage:(const RepeatedPtrField_5bff772f *)arg1 componentIsVersioned:(_Bool)arg2;
+-     // Error parsing type: @24@0:8r^{ComponentInfo=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedField<unsigned int>=ii(Pointer=^{Arena}^{Rep})}i{RepeatedField<unsigned int>=ii(Pointer=^{Arena}^{Rep})}i{RepeatedPtrField<TSP::ComponentExternalReference>=^{Arena}ii^{Rep}}{RepeatedPtrField<TSP::ComponentDataReference>=^{Arena}ii^{Rep}}{RepeatedPtrField<TSP::ObjectUUIDMapEntry>=^{Arena}ii^{Rep}}{RepeatedPtrField<TSP::FeatureInfo>=^{Arena}ii^{Rep}}{RepeatedField<unsigned int>=ii(Pointer=^{Arena}^{Rep})}i{RepeatedField<unsigned int>=ii(Pointer=^{Arena}^{Rep})}i{RepeatedPtrField<TSP::ComponentExternalReference>=^{Arena}ii^{Rep}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}QQBBI}16, name: initFromMessage:
 - (id)initWithMapSize:(unsigned long long)arg1;
-- (id)init;
 
 @end
 

@@ -38,7 +38,6 @@
 @property(nonatomic) __weak id <CSVTUITrainingManagerDelegate> delegate; // @synthesize delegate=_delegate;
 @property float rms; // @synthesize rms=_rms;
 - (void).cxx_destruct;
-- (void)VTUITrainingSessionStopListen;
 - (void)didDetectForceEndPoint;
 - (void)endpointer:(id)arg1 didDetectHardEndpointAtTime:(double)arg2 withMetrics:(id)arg3;
 - (void)endpointer:(id)arg1 didDetectStartpointAtTime:(double)arg2;
@@ -47,7 +46,7 @@
 - (void)audioSessionRecordBufferAvailable:(id)arg1;
 - (void)audioSessionDidStopRecording:(int)arg1;
 - (void)audioSessionDidStartRecording:(_Bool)arg1 error:(id)arg2;
-- (void)CSVTUITrainingSession:(id)arg1 hasTrainUtterance:(id)arg2 languageCode:(id)arg3;
+- (_Bool)CSVTUITrainingSession:(id)arg1 hasTrainUtterance:(id)arg2 languageCode:(id)arg3 payload:(_Bool)arg4;
 - (void)CSVTUITrainingSessionStopListen;
 - (void)CSVTUITrainingSessionRMSAvailable:(float)arg1;
 - (_Bool)shouldPerformRMS;
@@ -70,6 +69,7 @@
 - (void)_beginOfSpeechDetected;
 - (void)_destroyAudioSession;
 - (void)_stopAudioSession;
+- (void)prepareWithCompletion:(CDUnknownBlockType)arg1;
 - (void)createSpeechRecognizer;
 - (_Bool)createKeywordDetector;
 - (void)setLocaleIdentifier:(id)arg1;

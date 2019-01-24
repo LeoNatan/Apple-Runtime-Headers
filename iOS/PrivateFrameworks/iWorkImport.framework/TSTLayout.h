@@ -10,7 +10,7 @@
 #import <iWorkImport/TSWPLayoutParent-Protocol.h>
 #import <iWorkImport/TSWPStorageObserver-Protocol.h>
 
-@class NSMutableDictionary, NSString, TSTInfo, TSTLayoutHint, TSTLayoutSpaceBundle, TSTMasterLayout, TSWPLayout, TSWPPadding;
+@class NSMutableDictionary, NSString, TSTLayoutHint, TSTLayoutSpaceBundle, TSTMasterLayout, TSTTableInfo, TSWPLayout, TSWPPadding;
 
 __attribute__((visibility("hidden")))
 @interface TSTLayout : TSWPTextHostLayout <TSWPColumnMetrics, TSWPLayoutParent, TSWPStorageObserver>
@@ -58,6 +58,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool processChangesFiltering; // @synthesize processChangesFiltering=mProcessChangesFiltering;
 @property(retain, nonatomic) TSTLayoutHint *layoutHint; // @synthesize layoutHint=mLayoutHint;
 @property(retain, nonatomic) TSTMasterLayout *masterLayout; // @synthesize masterLayout=mMasterLayout;
+@property(readonly, nonatomic) _Bool containedTextEditorSpills; // @synthesize containedTextEditorSpills=mContainedTextEditorSpills;
 @property(readonly, nonatomic) _Bool layoutDirectionIsLeftToRight; // @synthesize layoutDirectionIsLeftToRight=mLayoutDirectionIsLeftToRight;
 @property(nonatomic) struct TSUCellRect prevEditingSpillingTextRange; // @synthesize prevEditingSpillingTextRange=mPrevEditingSpillingTextRange;
 @property(readonly, nonatomic) struct TSUCellRect editingSpillingTextRange; // @synthesize editingSpillingTextRange=mEditingSpillingTextRange;
@@ -90,8 +91,8 @@ __attribute__((visibility("hidden")))
 - (struct CGRect)nonAutosizedFrameForTextLayout:(id)arg1;
 - (void)invalidateForAutosizingTextLayout:(id)arg1;
 - (int)verticalAlignmentForTextLayout:(id)arg1;
-- (double)maxAutoGrowWidthForTextLayout:(id)arg1;
-- (unsigned int)autosizeFlagsForTextLayout:(id)arg1;
+- (double)maxAutoGrowLineWidthForTextLayout:(id)arg1;
+- (unsigned long long)autosizeFlagsForTextLayout:(id)arg1;
 - (int)naturalAlignmentForTextLayout:(id)arg1;
 - (struct TSUCellCoord)p_cellIDForWPLayout:(id)arg1;
 - (int)naturalAlignmentForCellID:(struct TSUCellCoord)arg1;
@@ -159,8 +160,8 @@ __attribute__((visibility("hidden")))
 - (void)dealloc;
 - (id)initWithInfo:(id)arg1;
 - (id)initWithInfo:(id)arg1 layoutHint:(id)arg2;
-@property(readonly, nonatomic) TSTInfo *tableModel;
-@property(readonly, nonatomic) TSTInfo *tableInfo;
+@property(readonly, nonatomic) TSTTableInfo *tableModel;
+@property(readonly, nonatomic) TSTTableInfo *tableInfo;
 @property(nonatomic) struct CGSize scaleToFit;
 - (void)iterateCellsInRange:(struct TSUCellRect)arg1 flags:(unsigned long long)arg2 searchFlags:(unsigned long long)arg3 usingBlock:(CDUnknownBlockType)arg4;
 - (void)iterateCellsAndTerminateWithIterator:(id)arg1 usingBlock:(CDUnknownBlockType)arg2;

@@ -41,6 +41,7 @@ __attribute__((visibility("hidden")))
     unordered_map_38045d47 _readExternalObjects;
     _Bool _losesDataOnWrite;
     _Bool _didRequireUpgrade;
+    NSSet *_featureIdentifiers;
     NSSet *_unsupportedFeatureIdentifiers;
     TSPDocumentRevision *_documentRevision;
     unsigned long long _saveToken;
@@ -56,6 +57,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) unsigned long long saveToken; // @synthesize saveToken=_saveToken;
 @property(readonly, nonatomic) TSPDocumentRevision *documentRevision; // @synthesize documentRevision=_documentRevision;
 @property(readonly, nonatomic) NSSet *unsupportedFeatureIdentifiers; // @synthesize unsupportedFeatureIdentifiers=_unsupportedFeatureIdentifiers;
+@property(readonly, nonatomic) NSSet *featureIdentifiers; // @synthesize featureIdentifiers=_featureIdentifiers;
 @property(readonly, nonatomic) _Bool losesDataOnWrite; // @synthesize losesDataOnWrite=_losesDataOnWrite;
 - (id).cxx_construct;
 - (void).cxx_destruct;
@@ -83,7 +85,7 @@ __attribute__((visibility("hidden")))
 - (void)updateObjectContextForSuccessfulRead;
 - (void)postprocessMetadata:(id)arg1;
 - (void)preprocessMetadata:(id)arg1;
-- (unsigned long long)fileFormatVersionFromMetadataMessage:(const struct PackageMetadata *)arg1;
+-     // Error parsing type: Q24@0:8r^{PackageMetadata=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSP::ComponentInfo>=^{Arena}ii^{Rep}}{RepeatedPtrField<TSP::DataInfo>=^{Arena}ii^{Rep}}{RepeatedField<unsigned int>=ii(Pointer=^{Arena}^{Rep})}i{RepeatedField<unsigned int>=ii(Pointer=^{Arena}^{Rep})}i{RepeatedField<unsigned int>=ii(Pointer=^{Arena}^{Rep})}i{RepeatedPtrField<TSP::ComponentInfo>=^{Arena}ii^{Rep}}^{DocumentRevision}^{Reference}QQi}16, name: fileFormatVersionFromMetadataMessage:
 - (id)newObjectUUIDForObjectIdentifier:(long long)arg1;
 - (id)readPackageMetadataWithError:(id *)arg1;
 - (void)readPackageMetadataWithComponent:(id)arg1 completionQueue:(id)arg2 completion:(CDUnknownBlockType)arg3;

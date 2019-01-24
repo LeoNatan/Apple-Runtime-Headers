@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
     NSString *_productIdentifier;
     NSString *_subscriptionGroupIdentifier;
     SKProductSubscriptionPeriod *_subscriptionPeriod;
+    NSArray *_discounts;
 }
 
 - (void).cxx_destruct;

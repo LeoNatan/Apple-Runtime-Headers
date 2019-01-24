@@ -28,6 +28,7 @@
 - (id)lastUtteranceForMe:(_Bool)arg1;
 - (id)processBackspaceForMe:(_Bool)arg1;
 - (id)appendStringFromOtherContactPath:(id)arg1;
+- (id)appendCharacter:(unsigned short)arg1;
 - (void)addUtterance:(id)arg1;
 - (id)mergeUtterancesIfPossible;
 - (id)otherContactPath;

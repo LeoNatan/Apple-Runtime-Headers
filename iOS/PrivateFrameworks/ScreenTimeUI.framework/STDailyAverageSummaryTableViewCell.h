@@ -6,10 +6,15 @@
 
 #import <UIKit/UITableViewCell.h>
 
+@class STDailyAverageView;
+
 @interface STDailyAverageSummaryTableViewCell : UITableViewCell
 {
+    STDailyAverageView *_dailyAverageView;
 }
 
+@property(readonly) STDailyAverageView *dailyAverageView; // @synthesize dailyAverageView=_dailyAverageView;
+- (void).cxx_destruct;
 - (id)initWithUsageReport:(id)arg1;
 
 @end

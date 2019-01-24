@@ -68,6 +68,7 @@ __attribute__((visibility("hidden")))
 - (unsigned int)rowIndexForRowUID:(const UUIDData_5fbc143e *)arg1;
 - (unsigned short)columnIndexForColumnUID:(const UUIDData_5fbc143e *)arg1;
 - (UUIDData_5fbc143e)rowUIDForRowIndex:(unsigned int)arg1;
+- (const vector_4dc5f307 *)allOrderedRowUIDs;
 - (UUIDData_5fbc143e)columnUIDForColumnIndex:(unsigned short)arg1;
 - (id)copyWithContext:(id)arg1;
 - (id)initWithContext:(id)arg1;

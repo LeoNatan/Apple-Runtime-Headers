@@ -6,7 +6,7 @@
 
 #import <iTunesStoreUI/SUStorePageViewController.h>
 
-@class NSDictionary, NSString, NSURL, SUMescalSession;
+@class ACAccount, NSDictionary, NSString, NSURL, SUMescalSession;
 
 @interface SUAccountViewController : SUStorePageViewController
 {
@@ -17,9 +17,11 @@
     long long _mescalState;
     NSString *_primingSignature;
     NSDictionary *_tidHeaders;
+    ACAccount *_account;
 }
 
 + (id)_latestAccountViewController;
+@property(retain, nonatomic) ACAccount *account; // @synthesize account=_account;
 @property(nonatomic) long long style; // @synthesize style=_style;
 @property(readonly, nonatomic, getter=_mescalSession) SUMescalSession *_mescalSession; // @synthesize _mescalSession;
 - (void).cxx_destruct;

@@ -9,10 +9,13 @@
 #import <BiometricKit/BiometricKitDelegateXpcProtocol-Protocol.h>
 
 @class BKDeviceDescriptor, BiometricKitXPCClient, NSString;
+@protocol BKDeviceDelegate, OS_dispatch_queue;
 
 @interface BKDevice : NSObject <BiometricKitDelegateXpcProtocol>
 {
     BiometricKitXPCClient *_xpcClient;
+    id <BKDeviceDelegate> _delegate;
+    NSObject<OS_dispatch_queue> *_queue;
     BKDeviceDescriptor *_descriptor;
 }
 
@@ -21,6 +24,8 @@
 + (id)deviceWithDescriptor:(id)arg1 error:(id *)arg2;
 + (BOOL)deviceAvailableWithError:(id *)arg1;
 @property(retain, nonatomic) BKDeviceDescriptor *descriptor; // @synthesize descriptor=_descriptor;
+@property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
+@property(nonatomic) __weak id <BKDeviceDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (BOOL)isDelegate;
 - (void)taskResumeStatus:(int)arg1 client:(unsigned long long)arg2;
@@ -33,6 +38,7 @@
 - (void)enrollFeedback:(id)arg1 client:(unsigned long long)arg2;
 - (void)enrollUpdate:(id)arg1 client:(unsigned long long)arg2;
 - (void)enrollResult:(id)arg1 client:(unsigned long long)arg2;
+- (id)lastMatchEventWithError:(id *)arg1;
 - (BOOL)biometryAvailability:(long long *)arg1 forUser:(unsigned int)arg2 error:(id *)arg3;
 - (id)freeIdentityCountForUser:(unsigned int)arg1 error:(id *)arg2;
 - (id)maxIdentityCountWithError:(id *)arg1;
@@ -57,6 +63,7 @@
 - (id)createPresenceDetectOperationWithError:(id *)arg1;
 - (id)createMatchOperationWithError:(id *)arg1;
 - (id)createEnrollOperationWithError:(id *)arg1;
+- (id)dispatchQueue;
 - (void)dealloc;
 
 // Remaining properties

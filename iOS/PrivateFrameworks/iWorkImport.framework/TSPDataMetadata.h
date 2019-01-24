@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
 
 @property(copy, nonatomic) TSUColor *fallbackColor; // @synthesize fallbackColor=_fallbackColor;
 - (void).cxx_destruct;
-- (void)saveToMessage:(struct DataMetadata *)arg1 archiver:(id)arg2;
+-     // Error parsing type: v32@0:8^{DataMetadata=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{Color}}16@24, name: saveToMessage:archiver:
 - (void)saveToArchiver:(id)arg1;
-- (void)loadFromMessage:(const struct DataMetadata *)arg1 unarchiver:(id)arg2;
+-     // Error parsing type: v32@0:8r^{DataMetadata=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{Color}}16@24, name: loadFromMessage:unarchiver:
 - (void)loadFromUnarchiver:(id)arg1;
 - (id)copyWithContext:(id)arg1;
 

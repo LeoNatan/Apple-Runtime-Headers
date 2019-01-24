@@ -35,8 +35,8 @@ __attribute__((visibility("hidden")))
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithInteractiveInfos:(id)arg1 nonInteractiveInfos:(id)arg2;
 - (id)initWithInfos:(id)arg1;
-- (void)saveToArchive:(struct DrawableSelectionArchive *)arg1 archiver:(id)arg2;
-- (id)initWithArchive:(const struct DrawableSelectionArchive *)arg1 unarchiver:(id)arg2;
+-     // Error parsing type: v32@0:8^{DrawableSelectionArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}}16@24, name: saveToArchive:archiver:
+-     // Error parsing type: @32@0:8r^{DrawableSelectionArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}}16@24, name: initWithArchive:unarchiver:
 
 @end
 

@@ -116,6 +116,10 @@
 - (void)isEmergencyNumberWithWhitelistIncluded:(id)arg1 number:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (_Bool)isEmergencyNumber:(id)arg1 number:(id)arg2 error:(id *)arg3;
 - (void)isEmergencyNumber:(id)arg1 number:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (id)getSmscAddress:(id)arg1 error:(id *)arg2;
+- (void)getSmscAddress:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (id)getSmsReadyState:(id)arg1 error:(id *)arg2;
+- (void)getSmsReadyState:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)copyBundleVersion:(id)arg1 bundleType:(id)arg2 error:(id *)arg3;
 - (void)copyBundleVersion:(id)arg1 bundleType:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)context:(id)arg1 getAttachApnSettings:(id *)arg2;

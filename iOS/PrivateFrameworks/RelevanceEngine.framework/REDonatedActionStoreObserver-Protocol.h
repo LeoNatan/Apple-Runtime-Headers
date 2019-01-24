@@ -12,6 +12,8 @@
 - (void)donationActionStoreReceivedDonation:(REDonatedAction *)arg1 isNewDonation:(_Bool)arg2;
 
 @optional
+- (void)donationActionStoreDidFinishLoadingData;
+- (void)donationActionStoreWillBeginLoadingData;
 - (void)donationActionStoreRemoveAllDonations;
 - (void)donationActionStoreRemovedDonation:(NSDictionary *)arg1;
 @end

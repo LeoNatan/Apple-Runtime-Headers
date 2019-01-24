@@ -91,6 +91,7 @@
 - (id)loadChatFromDaemonWithChatIdentifier:(id)arg1;
 - (id)_sortedParticipantIDHashForParticipants:(id)arg1;
 - (void)_addChat:(id)arg1 participantSet:(id)arg2;
+- (void)_removeFromGroupParticipantToChatsMap:(id)arg1;
 - (void)_resetChatReconstructionGroupMaps;
 - (id)_chatForChatDictionary:(id)arg1 items:(id)arg2 allowCreate:(_Bool)arg3 createdChat:(_Bool *)arg4 outGUID:(id *)arg5;
 - (id)existingChatForRoom:(id)arg1 onAccount:(id)arg2 allowRetargeting:(_Bool)arg3;

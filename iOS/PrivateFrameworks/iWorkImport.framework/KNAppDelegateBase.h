@@ -31,6 +31,8 @@ __attribute__((visibility("hidden")))
 - (void)registerSOSClassTypeMappings;
 - (double)maximumAspectRatioForPreviewImage;
 - (double)mimimumAspectRatioForPreviewImage;
+- (id)stringForSyncActivityPopoverTitle;
+- (id)stringForNoItemsSyncingListItem;
 - (id)stringForEquationChoiceUseEQKitButtonTitle;
 - (id)stringForEquationChoiceBody;
 - (id)stringForEquationChoiceTitle;
@@ -48,7 +50,7 @@ __attribute__((visibility("hidden")))
 - (id)stringForCollaborationOnline;
 - (id)stringForGenericServerUnreachable;
 - (id)stringForICloudUnreachable;
-- (id)stringForCollaborationOffline;
+- (id)stringForCollaborationOfflinePlacard;
 - (id)stringForRemoveLastPrivateParticipantAlertConfirmationMessage;
 - (id)stringForRemoveSelfAlertConfirmationMessage;
 - (id)stringForRemoveSelfAlertConfirmationTitle;
@@ -67,6 +69,7 @@ __attribute__((visibility("hidden")))
 - (id)stringForCloseDocument;
 - (id)stringForOwnerPasswordOnConflictAlertMessage;
 - (id)stringForOwnerPasswordOnConflictAlertTitle;
+- (id)stringForChangePasswordWhileConnectingAlertMessage;
 - (id)stringForCollaborator1_6ConflictWithKeepDetails;
 - (id)stringForCollaborator1_6ConflictDetails;
 - (id)stringForCollaboratorConflictWithKeepDetails;

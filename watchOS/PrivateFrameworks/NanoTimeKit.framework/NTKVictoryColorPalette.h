@@ -21,6 +21,7 @@
     UIColor *_digitalComplicationsColor;
     UIColor *_digitalComplicationsPlatterColor;
     UIColor *_platterColor;
+    unsigned int _bleed;
     UIColor *_backgroundColor;
 }
 
@@ -28,6 +29,7 @@
 + (id)paletteForColor:(unsigned int)arg1 style:(unsigned int)arg2;
 + (id)voltColor;
 @property(readonly, nonatomic) UIColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;
+@property(readonly, nonatomic) unsigned int bleed; // @synthesize bleed=_bleed;
 @property(readonly, nonatomic) _Bool hasWhiteElements; // @synthesize hasWhiteElements=_hasWhiteElements;
 @property(readonly, nonatomic) UIColor *platterColor; // @synthesize platterColor=_platterColor;
 @property(readonly, nonatomic) UIColor *digitalComplicationsPlatterColor; // @synthesize digitalComplicationsPlatterColor=_digitalComplicationsPlatterColor;

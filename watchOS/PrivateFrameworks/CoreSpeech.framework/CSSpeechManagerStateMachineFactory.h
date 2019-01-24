@@ -13,6 +13,7 @@
 + (id)getSpeechManagerStateMachineDefault;
 + (id)getSpeechManagerStateMachineAOPBridgeOS;
 + (id)getSpeechManagerStateMachineForMac;
++ (id)getSpeechManagerStateMachineWithType:(unsigned int)arg1;
 + (id)getSpeechManagerStateMachine;
 
 @end

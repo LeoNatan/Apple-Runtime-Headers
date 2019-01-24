@@ -44,8 +44,8 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) TSTUIDRectRef *uidRectRef; // @synthesize uidRectRef=_uidRectRef;
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (void)saveToArchive:(struct ReferenceNodeArchive *)arg1 archiver:(id)arg2;
-- (void)loadFromArchive:(const struct ReferenceNodeArchive *)arg1 unarchiver:(id)arg2;
+-     // Error parsing type: v32@0:8^{ReferenceNodeArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}^{ExpressionNodeArchive}^{RangeReferenceArchive}^{UUID}^{UUIDCoordArchive}^{UUIDCoordArchive}^{CategoryReferenceArchive}^{UUIDRectArchive}^{CellReferenceArchive}I}16@24, name: saveToArchive:archiver:
+-     // Error parsing type: v32@0:8r^{ReferenceNodeArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}^{ExpressionNodeArchive}^{RangeReferenceArchive}^{UUID}^{UUIDCoordArchive}^{UUIDCoordArchive}^{CategoryReferenceArchive}^{UUIDRectArchive}^{CellReferenceArchive}I}16@24, name: loadFromArchive:unarchiver:
 - (void)saveToArchiver:(id)arg1;
 - (void)loadFromUnarchiver:(id)arg1;
 - (void)p_resetMenu;
@@ -62,6 +62,8 @@ __attribute__((visibility("hidden")))
 - (int)tokenType;
 - (_Bool)isEqualToExpressionNode:(id)arg1;
 - (struct TSTCSENodeData)recordHashesForSubexpressions:(id)arg1;
+- (id)p_subregionForRange:(id)arg1 rangeContext:(unsigned char)arg2;
+- (id)subregionForRange:(id)arg1;
 - (id)subregionForReference:(id)arg1 range:(id)arg2;
 @property(readonly, nonatomic) _Bool isResizable;
 @property(readonly, nonatomic) _Bool isSpanningCategorySummaryRef;
@@ -75,7 +77,9 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) _Bool isRangeExpression;
 @property(nonatomic) UUIDData_5fbc143e hostTableUID;
 @property(readonly, nonatomic) UUIDData_5fbc143e tableUID;
+@property(readonly, nonatomic) UUIDData_5fbc143e categoryRefTableUID;
 - (id)p_categoryRefViewTractRef;
+- (RefTypeHolder_45a2a752)p_boundingViewRangeRef;
 - (void)setBaseRangeRef:(const RefTypeHolder_1140c985 *)arg1 preserveFlags:(unsigned char)arg2;
 - (void)setChromeRangeRef:(const RefTypeHolder_8c6da553 *)arg1 preserveFlags:(unsigned char)arg2;
 - (void)setViewRangeRef:(const RefTypeHolder_45a2a752 *)arg1 preserveFlags:(unsigned char)arg2;
@@ -86,7 +90,8 @@ __attribute__((visibility("hidden")))
 @property(readonly) struct TSUModelCellCoord baseTopLeftCoord;
 @property(readonly) struct TSUViewCellCoord viewBottomRightCoord;
 @property(readonly) struct TSUViewCellCoord viewTopLeftCoord;
-@property(nonatomic) unsigned char preserveFlags;
+@property(nonatomic) unsigned char viewPreserveFlags;
+@property(nonatomic) unsigned char basePreserveFlags;
 @property(readonly, nonatomic) __weak TSCECalculationEngine *calcEngine; // @synthesize calcEngine=_calcEngine;
 @property(readonly, nonatomic) TSKChangeNotifier *changeNotifier;
 @property(readonly, nonatomic) TSKDocumentRoot *documentRoot;

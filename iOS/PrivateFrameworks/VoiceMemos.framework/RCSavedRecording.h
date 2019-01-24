@@ -33,6 +33,7 @@
 - (id)_activityURLCreateIfNecessary:(_Bool)arg1;
 - (void)_validatePath;
 @property(readonly, nonatomic) AVAsset *avAsset;
+@property(readonly, nonatomic) _Bool uploaded;
 @property(readonly, nonatomic) _Bool evicted;
 - (void)setEditing:(_Bool)arg1;
 @property(readonly, nonatomic) _Bool editing;

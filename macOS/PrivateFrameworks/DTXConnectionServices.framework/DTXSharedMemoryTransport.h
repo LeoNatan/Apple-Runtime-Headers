@@ -33,7 +33,6 @@
 - (id)initWithMemoryAddress:(unsigned long long)arg1 inTask:(unsigned int)arg2;
 - (id)initWithRemoteAddress:(id)arg1;
 - (id)initWithLocalName:(id)arg1 size:(int)arg2;
-- (id)initWithLocalAddress:(id)arg1;
 - (BOOL)_setupCreatingSharedMemory:(id)arg1 size:(int)arg2;
 -     // Error parsing type: c28@0:8^{DTXSharedMemory=QQQIIIIAiAiAIAiAiAiAiIII[0c]}16c24, name: _setupWithShm:asCreator:
 @property(readonly, nonatomic) unsigned long long totalSharedMemorySize;

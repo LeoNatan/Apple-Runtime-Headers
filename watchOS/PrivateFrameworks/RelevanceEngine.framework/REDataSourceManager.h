@@ -22,6 +22,7 @@
     NSDictionary *_identifierOperatingSystemVersionMap;
     NSSet *_elementGroupSupportingConfigurations;
     REConcurrentDictionary *_elementGroupMap;
+    _Bool _completedFirstElementLoad;
     REDataSourceLoader *_loader;
     NSSet *_availableDataSourceIdentifiers;
     NSSet *_currentDataSourceIdentifiers;
@@ -31,6 +32,7 @@
 
 + (_Bool)_isPrioritizedDataSourceClass:(Class)arg1;
 + (id)_prioritizedDataSourceClasses;
+@property(readonly, nonatomic, getter=hasCompletedFirstElementLoad) _Bool completedFirstElementLoad; // @synthesize completedFirstElementLoad=_completedFirstElementLoad;
 @property(readonly, nonatomic) __weak id <REDataSourceManagerObserver> delegate; // @synthesize delegate=_delegate;
 @property(retain) NSArray *currentDataSources; // @synthesize currentDataSources=_currentDataSources;
 @property(retain) NSSet *currentDataSourceIdentifiers; // @synthesize currentDataSourceIdentifiers=_currentDataSourceIdentifiers;

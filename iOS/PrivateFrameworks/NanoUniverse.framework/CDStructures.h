@@ -37,21 +37,13 @@ struct CLLocationCoordinate2D {
 
 struct NUProgram {
     unsigned int program;
-    int uniforms[12];
+    int uniforms[13];
 };
 
 struct NURendererResources {
     struct NUProgram programs[3];
     unsigned int vertexBuffer;
     unsigned int indexBuffer;
-    unsigned int atlasTexture;
-    unsigned long long loadedTexturesSet;
-    unsigned int priTextures[23];
-    unsigned int priTarget[23];
-    unsigned int secTextures[23];
-    unsigned int secTarget[23];
-    unsigned int dummyCubeTexture;
-    unsigned int dummy2dTexture;
 };
 
 struct NUViewport {

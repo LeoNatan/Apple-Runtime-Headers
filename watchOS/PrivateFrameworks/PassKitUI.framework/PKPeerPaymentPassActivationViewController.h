@@ -7,21 +7,18 @@
 #import <PassKitUI/PKExplanationViewController.h>
 
 #import <PassKitUI/PKExplanationViewControllerDelegate-Protocol.h>
-#import <PassKitUI/PKExplanationViewDelegate-Protocol.h>
 #import <PassKitUI/PKPaymentSetupViewControllerDelegate-Protocol.h>
-#import <PassKitUI/RemoteUIControllerDelegate-Protocol.h>
 
-@class NSString, PKPaymentProvisioningController, PKPeerPaymentCredential, PKPeerPaymentSetupFlowHeroView, PKPeerPaymentWebService, RemoteUIController, UIImage;
+@class NSString, PKPaymentProvisioningController, PKPeerPaymentCredential, PKPeerPaymentSetupFlowHeroView, PKPeerPaymentWebService, UIImage;
 @protocol PKPaymentSetupViewControllerDelegate;
 
-@interface PKPeerPaymentPassActivationViewController : PKExplanationViewController <PKPaymentSetupViewControllerDelegate, PKExplanationViewControllerDelegate, RemoteUIControllerDelegate, PKExplanationViewDelegate>
+@interface PKPeerPaymentPassActivationViewController : PKExplanationViewController <PKPaymentSetupViewControllerDelegate, PKExplanationViewControllerDelegate>
 {
     PKPaymentProvisioningController *_provisioningController;
     PKPeerPaymentCredential *_credential;
     id <PKPaymentSetupViewControllerDelegate> _delegate;
     unsigned int _state;
     PKPeerPaymentWebService *_peerPaymentWebService;
-    RemoteUIController *_termsController;
     UIImage *_passSnapShot;
     _Bool _shouldShowAddDebitCardViewController;
     PKPeerPaymentSetupFlowHeroView *_heroView;
@@ -54,7 +51,6 @@
 - (struct CGSize)_snapshotSize;
 - (void)_processCloudStorePCSError;
 - (void)_initalizeCloudStoreWithTargetDevice:(id)arg1 ifNecessaryWithCompletion:(CDUnknownBlockType)arg2;
-- (void)remoteUIController:(id)arg1 didReceiveObjectModel:(id)arg2 actionSignal:(unsigned int *)arg3;
 - (void)explanationViewControllerDidSelectCancel:(id)arg1;
 - (void)viewControllerDidCancelSetupFlow:(id)arg1;
 - (void)viewControllerDidTerminateSetupFlow:(id)arg1;

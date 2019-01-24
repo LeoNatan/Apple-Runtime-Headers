@@ -21,7 +21,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)pathSourceForShapeType:(int)arg1 naturalSize:(struct CGSize)arg2;
-+ (id)pathSourceWithArchive:(const struct PathSourceArchive *)arg1;
++     // Error parsing type: @24@0:8r^{PathSourceArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}^{PointPathSourceArchive}^{ScalarPathSourceArchive}^{BezierPathSourceArchive}^{CalloutPathSourceArchive}^{ConnectionLinePathSourceArchive}^{EditableBezierPathSourceArchive}BB}16, name: pathSourceWithArchive:
 @property _Bool hasVerticalFlip; // @synthesize hasVerticalFlip=mVerticalFlip;
 @property _Bool hasHorizontalFlip; // @synthesize hasHorizontalFlip=mHorizontalFlip;
 @property(copy, nonatomic) NSString *userDefinedName; // @synthesize userDefinedName=mName;
@@ -47,10 +47,10 @@ __attribute__((visibility("hidden")))
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (void)saveToArchive:(struct PathSourceArchive *)arg1;
-- (id)initWithArchive:(const struct PathSourceArchive *)arg1;
-- (void)saveSharedToArchive:(struct PathSourceArchive *)arg1;
-- (void)loadSharedFromArchive:(const struct PathSourceArchive *)arg1;
+-     // Error parsing type: v24@0:8^{PathSourceArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}^{PointPathSourceArchive}^{ScalarPathSourceArchive}^{BezierPathSourceArchive}^{CalloutPathSourceArchive}^{ConnectionLinePathSourceArchive}^{EditableBezierPathSourceArchive}BB}16, name: saveToArchive:
+-     // Error parsing type: @24@0:8r^{PathSourceArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}^{PointPathSourceArchive}^{ScalarPathSourceArchive}^{BezierPathSourceArchive}^{CalloutPathSourceArchive}^{ConnectionLinePathSourceArchive}^{EditableBezierPathSourceArchive}BB}16, name: initWithArchive:
+-     // Error parsing type: v24@0:8^{PathSourceArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}^{PointPathSourceArchive}^{ScalarPathSourceArchive}^{BezierPathSourceArchive}^{CalloutPathSourceArchive}^{ConnectionLinePathSourceArchive}^{EditableBezierPathSourceArchive}BB}16, name: saveSharedToArchive:
+-     // Error parsing type: v24@0:8r^{PathSourceArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}^{PointPathSourceArchive}^{ScalarPathSourceArchive}^{BezierPathSourceArchive}^{CalloutPathSourceArchive}^{ConnectionLinePathSourceArchive}^{EditableBezierPathSourceArchive}BB}16, name: loadSharedFromArchive:
 
 @end
 

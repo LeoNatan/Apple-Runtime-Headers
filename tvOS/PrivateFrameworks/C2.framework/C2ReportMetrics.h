@@ -14,6 +14,7 @@
 {
     _Bool _ignoreRequestThrottle;
     NSString *_requestThrottleIdentifier;
+    unsigned long long _requestThrottleLimit;
     NSMutableURLRequest *_metricRequest;
     C2RequestOptions *_metricsTransportRequestOptions;
     NSURLSessionTask *_metricTask;
@@ -25,12 +26,13 @@
 + (void)reportMetricWithOptions:(id)arg1 genericMetricType:(long long)arg2 eventName:(id)arg3 startTime:(id)arg4 endTime:(id)arg5 attributes:(id)arg6;
 + (void)reportNetworkEvent:(id)arg1 triggers:(int)arg2 originalSessionTask:(id)arg3;
 + (id)gzipEncode:(id)arg1;
-+ (id)requestForMetricOptions:(id)arg1 networkEvent:(id)arg2 genericEvent:(id)arg3 triggers:(int)arg4;
++ (id)requestForMetricRequestOptions:(id)arg1 networkEvent:(id)arg2 genericEvent:(id)arg3 triggers:(int)arg4;
 @property(copy, nonatomic) CDUnknownBlockType testBehavior_didCompleteWithError; // @synthesize testBehavior_didCompleteWithError=_testBehavior_didCompleteWithError;
 @property(copy, nonatomic) CDUnknownBlockType testBehavior_tooManyTasksRunning; // @synthesize testBehavior_tooManyTasksRunning=_testBehavior_tooManyTasksRunning;
 @property(retain, nonatomic) NSURLSessionTask *metricTask; // @synthesize metricTask=_metricTask;
 @property(retain, nonatomic) C2RequestOptions *metricsTransportRequestOptions; // @synthesize metricsTransportRequestOptions=_metricsTransportRequestOptions;
 @property(retain, nonatomic) NSMutableURLRequest *metricRequest; // @synthesize metricRequest=_metricRequest;
+@property(nonatomic) unsigned long long requestThrottleLimit; // @synthesize requestThrottleLimit=_requestThrottleLimit;
 @property(retain, nonatomic) NSString *requestThrottleIdentifier; // @synthesize requestThrottleIdentifier=_requestThrottleIdentifier;
 @property(nonatomic) _Bool ignoreRequestThrottle; // @synthesize ignoreRequestThrottle=_ignoreRequestThrottle;
 - (void).cxx_destruct;
@@ -45,7 +47,7 @@
 - (void)URLSession:(id)arg1 _willRetryBackgroundDataTask:(id)arg2 withError:(id)arg3;
 - (void)URLSession:(id)arg1 _taskIsWaitingForConnection:(id)arg2;
 - (void)send;
-- (id)initWithMetricRequest:(id)arg1 metricRequestOptions:(id)arg2 ignoreRequestThrottle:(_Bool)arg3 requestThrottleIdentifier:(id)arg4;
+- (id)initWithMetricRequest:(id)arg1 metricRequestOptions:(id)arg2 ignoreRequestThrottle:(_Bool)arg3 requestThrottleIdentifier:(id)arg4 requestThrottleLimit:(unsigned long long)arg5;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

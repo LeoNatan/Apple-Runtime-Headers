@@ -21,6 +21,7 @@
     NSString *_modelFileLocation;
     _Bool _supportsContentRanking;
     NSArray *_orderedFeatures;
+    unsigned int _modelStorageBehavior;
     NSDate *_lastCacheResetDate;
     NPSManager *_npsManager;
 }
@@ -31,6 +32,7 @@
 - (id)sentimentAnalyzer;
 - (id)comparatorWithRules:(id)arg1;
 - (void)performModelClear;
+- (void)manuallySaveModel;
 - (void)_notifyObserversThatModelUpdated;
 - (void)performTrainingWithFeatureMaps:(id)arg1 content:(id)arg2 events:(id)arg3 interactions:(id)arg4 purgeCaches:(_Bool)arg5;
 - (_Bool)_saveModelToDisk:(id *)arg1;
@@ -39,6 +41,7 @@
 - (void)addObserver:(id)arg1;
 - (id)_createOrderFeatureListFromModelFileURL:(id)arg1 mlFeatures:(id)arg2;
 - (_Bool)_loadModelAtPath:(id)arg1 mlFeatures:(id)arg2 checkModelVersion:(_Bool)arg3;
+- (void)_logMetrics;
 - (void)dealloc;
 - (id)initWithRelevanceEngine:(id)arg1;
 - (id)_orderedModelFeatures;

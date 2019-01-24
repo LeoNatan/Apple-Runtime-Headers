@@ -35,7 +35,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) NSIndexSet *visibleColumnIndices;
 @property(readonly, nonatomic) NSIndexSet *userVisibleRowIndices;
 @property(readonly, nonatomic) NSIndexSet *visibleRowIndices;
-- (struct TSUCellCoord)visibleCellOffsetBy:(CDStruct_1ef3fb1f)arg1 fromCellID:(struct TSUCellCoord)arg2;
+- (struct TSUCellCoord)visibleCellOffsetBy:(struct TSUColumnRowOffset)arg1 fromCellID:(struct TSUCellCoord)arg2;
 - (unsigned short)previousNthVisibleColumn:(unsigned int)arg1 fromColumnIndex:(unsigned short)arg2;
 - (unsigned int)previousNthVisibleRow:(unsigned int)arg1 fromRowIndex:(unsigned int)arg2;
 - (unsigned short)indexOfVisibleColumnAfterAndIncludingColumnAtIndex:(unsigned short)arg1;

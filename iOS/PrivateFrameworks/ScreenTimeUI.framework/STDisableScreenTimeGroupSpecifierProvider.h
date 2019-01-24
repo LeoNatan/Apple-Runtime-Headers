@@ -16,6 +16,8 @@
 @property(retain, nonatomic) PSSpecifier *disableScreenTimeSpecifier; // @synthesize disableScreenTimeSpecifier=_disableScreenTimeSpecifier;
 - (void).cxx_destruct;
 - (void)disableScreenTime:(id)arg1;
+- (id)disableScreenTimeConfirmationPrompt;
+- (void)updateDisableScreenTimeSpecifier;
 - (void)confirmDisableScreenTime:(id)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)setCoordinator:(id)arg1;

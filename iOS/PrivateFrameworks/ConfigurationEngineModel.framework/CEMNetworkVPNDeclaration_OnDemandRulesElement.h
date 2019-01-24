@@ -6,7 +6,7 @@
 
 #import <ConfigurationEngineModel/CEMPayloadBase.h>
 
-@class NSArray, NSString;
+@class CEMNetworkVPNDeclaration_OnDemandRulesElementActionParameters, NSArray, NSString;
 
 @interface CEMNetworkVPNDeclaration_OnDemandRulesElement : CEMPayloadBase
 {
@@ -14,11 +14,17 @@
     NSArray *_payloadDNSServerAddressMatch;
     NSString *_payloadURLStringProbe;
     NSString *_payloadAction;
+    CEMNetworkVPNDeclaration_OnDemandRulesElementActionParameters *_payloadActionParameters;
+    NSString *_payloadInterfaceTypeMatch;
+    NSArray *_payloadSSIDMatch;
 }
 
 + (id)buildRequiredOnlyWithAction:(id)arg1;
-+ (id)buildWithDNSDomainMatch:(id)arg1 withDNSServerAddressMatch:(id)arg2 withURLStringProbe:(id)arg3 withAction:(id)arg4;
++ (id)buildWithDNSDomainMatch:(id)arg1 withDNSServerAddressMatch:(id)arg2 withURLStringProbe:(id)arg3 withAction:(id)arg4 withActionParameters:(id)arg5 withInterfaceTypeMatch:(id)arg6 withSSIDMatch:(id)arg7;
 + (id)allowedPayloadKeys;
+@property(copy, nonatomic) NSArray *payloadSSIDMatch; // @synthesize payloadSSIDMatch=_payloadSSIDMatch;
+@property(copy, nonatomic) NSString *payloadInterfaceTypeMatch; // @synthesize payloadInterfaceTypeMatch=_payloadInterfaceTypeMatch;
+@property(copy, nonatomic) CEMNetworkVPNDeclaration_OnDemandRulesElementActionParameters *payloadActionParameters; // @synthesize payloadActionParameters=_payloadActionParameters;
 @property(copy, nonatomic) NSString *payloadAction; // @synthesize payloadAction=_payloadAction;
 @property(copy, nonatomic) NSString *payloadURLStringProbe; // @synthesize payloadURLStringProbe=_payloadURLStringProbe;
 @property(copy, nonatomic) NSArray *payloadDNSServerAddressMatch; // @synthesize payloadDNSServerAddressMatch=_payloadDNSServerAddressMatch;

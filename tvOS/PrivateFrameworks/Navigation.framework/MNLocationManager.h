@@ -9,7 +9,7 @@
 #import <Navigation/GEOResourceManifestTileGroupObserver-Protocol.h>
 #import <Navigation/MNLocationProviderDelegate-Protocol.h>
 
-@class CLHeading, GEOLocationShifter, MNLocation, NSBundle, NSDate, NSError, NSHashTable, NSLock, NSString;
+@class CLHeading, GEOLocationShifter, MNLocation, NSDate, NSError, NSHashTable, NSLock, NSString;
 @protocol MNLocationProvider, MNLocationRecorder;
 
 @interface MNLocationManager : NSObject <GEOResourceManifestTileGroupObserver, MNLocationProviderDelegate>
@@ -17,7 +17,6 @@
     unsigned long long _locationProviderType;
     id <MNLocationProvider> _locationProvider;
     id <MNLocationRecorder> _locationRecorder;
-    NSBundle *_effectiveBundle;
     NSString *_effectiveBundleIdentifier;
     NSHashTable *_locationObservers;
     NSHashTable *_locationListeners;
@@ -103,7 +102,6 @@
 - (void)setLastLocation:(id)arg1;
 @property(readonly, nonatomic) MNLocation *lastLocation;
 @property(readonly, nonatomic) _Bool isHeadingServicesAvailable;
-@property(retain, nonatomic) NSBundle *effectiveBundle;
 @property(copy, nonatomic) NSString *effectiveBundleIdentifier;
 - (void)dealloc;
 - (id)init;

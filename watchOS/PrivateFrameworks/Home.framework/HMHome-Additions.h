@@ -67,6 +67,7 @@
 - (_Bool)hf_isCurrentLocationHome;
 - (unsigned int)hf_remoteAccessState;
 - (id)hf_characteristicValueManager;
+- (id)hf_activeRooms;
 - (id)hf_allRooms;
 @end
 

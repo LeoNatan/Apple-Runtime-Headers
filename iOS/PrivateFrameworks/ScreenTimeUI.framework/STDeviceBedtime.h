@@ -7,32 +7,26 @@
 #import <objc/NSObject.h>
 
 #import <ScreenTimeUI/NSCopying-Protocol.h>
-#import <ScreenTimeUI/NSSecureCoding-Protocol.h>
 
-@class NSDateComponents;
+@class NSDictionary, RMBlueprintScheduleSimpleItem;
 
-@interface STDeviceBedtime : NSObject <NSCopying, NSSecureCoding>
+@interface STDeviceBedtime : NSObject <NSCopying>
 {
     _Bool _deviceBedtimeEnabled;
     _Bool _askForMoreTime;
-    NSDateComponents *_start;
-    NSDateComponents *_end;
+    _Bool _shouldAllowEditing;
+    RMBlueprintScheduleSimpleItem *_simpleSchedule;
+    NSDictionary *_scheduleByWeekdayIndex;
 }
 
-+ (id)defaultBedtimeEnd;
-+ (id)defaultBedtimeStart;
-+ (_Bool)supportsSecureCoding;
-@property(copy, nonatomic) NSDateComponents *end; // @synthesize end=_end;
-@property(copy, nonatomic) NSDateComponents *start; // @synthesize start=_start;
++ (id)defaultBedtimeSchedule;
+@property(copy) NSDictionary *scheduleByWeekdayIndex; // @synthesize scheduleByWeekdayIndex=_scheduleByWeekdayIndex;
+@property(copy) RMBlueprintScheduleSimpleItem *simpleSchedule; // @synthesize simpleSchedule=_simpleSchedule;
+@property(nonatomic) _Bool shouldAllowEditing; // @synthesize shouldAllowEditing=_shouldAllowEditing;
 @property(nonatomic) _Bool askForMoreTime; // @synthesize askForMoreTime=_askForMoreTime;
 @property(nonatomic) _Bool deviceBedtimeEnabled; // @synthesize deviceBedtimeEnabled=_deviceBedtimeEnabled;
 - (void).cxx_destruct;
-- (id)initWithCoder:(id)arg1;
-- (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (void)_stDeviceBedtimeInitByParsingFamilyBedtimeAllPredicate:(id)arg1;
-- (void)_stDeviceBedtimeInitByParsingPersonalBedtimePredicate:(id)arg1;
-- (id)initWithActivation:(id)arg1;
 - (id)initWithBlueprint:(id)arg1;
 - (id)init;
 

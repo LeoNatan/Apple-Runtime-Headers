@@ -7,7 +7,7 @@
 #import <objc/NSObject.h>
 
 @class NSArray, NSDictionary, NSImage, NSMutableDictionary, NSString, NSTimer, NSURL;
-@protocol SandboxExtensionToken;
+@protocol WBSSandboxExtensionToken;
 
 __attribute__((visibility("hidden")))
 @interface ExtensionBuilderExtension : NSObject
@@ -15,7 +15,7 @@ __attribute__((visibility("hidden")))
     NSMutableDictionary *_infoPlistDictionary;
     NSTimer *_saveChangesTimer;
     struct unique_ptr<SafariShared::SuddenTerminationDisabler, std::__1::default_delete<SafariShared::SuddenTerminationDisabler>> _pendingSaveChangesSuddenTerminationDisabler;
-    id <SandboxExtensionToken> _sandboxExtensionToken;
+    id <WBSSandboxExtensionToken> _sandboxExtensionToken;
     BOOL _infoPlistDirty;
     BOOL _settingsPlistDirty;
     NSURL *_bundleURL;

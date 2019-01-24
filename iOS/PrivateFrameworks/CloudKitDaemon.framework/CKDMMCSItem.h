@@ -60,6 +60,8 @@ __attribute__((visibility("hidden")))
     unsigned long long _downloadTokenExpiration;
     NSDictionary *_assetChunkerOptions;
     CKDAssetZoneKey *_assetZoneKey;
+    NSURL *_constructedAssetDownloadURL;
+    unsigned long long _constructedAssetEstimatedSize;
     NSString *_trackingUUID;
 }
 
@@ -72,6 +74,8 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool hasOffset; // @synthesize hasOffset=_hasOffset;
 @property(nonatomic) _Bool hasSize; // @synthesize hasSize=_hasSize;
 @property(retain, nonatomic) NSString *trackingUUID; // @synthesize trackingUUID=_trackingUUID;
+@property(nonatomic) unsigned long long constructedAssetEstimatedSize; // @synthesize constructedAssetEstimatedSize=_constructedAssetEstimatedSize;
+@property(retain, nonatomic) NSURL *constructedAssetDownloadURL; // @synthesize constructedAssetDownloadURL=_constructedAssetDownloadURL;
 @property(retain, nonatomic) CKDAssetZoneKey *assetZoneKey; // @synthesize assetZoneKey=_assetZoneKey;
 @property(retain, nonatomic) NSDictionary *assetChunkerOptions; // @synthesize assetChunkerOptions=_assetChunkerOptions;
 @property(nonatomic) unsigned long long downloadTokenExpiration; // @synthesize downloadTokenExpiration=_downloadTokenExpiration;

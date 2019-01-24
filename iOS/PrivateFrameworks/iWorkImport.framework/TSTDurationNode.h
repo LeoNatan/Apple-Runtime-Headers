@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
 @property(nonatomic, getter=isBlank) _Bool blank; // @synthesize blank=_blank;
 @property(nonatomic) struct TSTDurationWrapper value; // @synthesize value=_value;
 - (id)description;
-- (void)saveToArchive:(struct DurationNodeArchive *)arg1 archiver:(id)arg2;
-- (void)loadFromArchive:(const struct DurationNodeArchive *)arg1 unarchiver:(id)arg2;
+-     // Error parsing type: v32@0:8^{DurationNodeArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{ExpressionNodeArchive}dIII}16@24, name: saveToArchive:archiver:
+-     // Error parsing type: v32@0:8r^{DurationNodeArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{ExpressionNodeArchive}dIII}16@24, name: loadFromArchive:unarchiver:
 - (void)saveToArchiver:(id)arg1;
 - (void)loadFromUnarchiver:(id)arg1;
 - (id)format;

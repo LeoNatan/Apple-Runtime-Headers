@@ -69,6 +69,8 @@
 - (id)defaultTraitsWithTransportType:(unsigned long long)arg1;
 - (id)defaultTraits;
 - (id)init;
+- (id)stylingForWalletCategory:(id)arg1;
+- (id)ticketForWalletMerchantLookupRequest:(id)arg1 traits:(id)arg2;
 - (void)captureUserAction:(int)arg1 onTarget:(int)arg2 eventValue:(id)arg3 selectedReportAnIssueIndex:(unsigned int)arg4;
 - (void)capturePlaceCardUserAction:(int)arg1 onTarget:(int)arg2 eventValue:(id)arg3 mapItem:(id)arg4 timestamp:(double)arg5 placeCardType:(int)arg6 categoriesDisplayed:(id)arg7 categorySelected:(id)arg8;
 - (void)captureUserAction:(int)arg1 onTarget:(int)arg2 eventValue:(id)arg3 categoriesDisplayed:(id)arg4 categorySelected:(id)arg5;
@@ -96,9 +98,11 @@
 - (void)captureMapSettingsWithAvoidTolls:(BOOL)arg1;
 - (void)captureMapSettingsWithPreferredTransportMode:(int)arg1;
 - (void)captureMapsSettingsWithPreferredTransportMode:(int)arg1 avoidTolls:(BOOL)arg2 avoidHighways:(BOOL)arg3 navVoiceVolume:(int)arg4 pauseSpokenAudioEnabled:(BOOL)arg5 findMyCarEnabled:(BOOL)arg6 trafficEnabled:(BOOL)arg7 labelEnabled:(BOOL)arg8;
+- (void)captureMapUIStateWithIsWeatherShown:(BOOL)arg1;
 - (void)captureMapUIStateWithIsAirQualityShown:(BOOL)arg1;
 - (void)captureMapUIStateWithLayoutInfo:(int)arg1 layoutStyle:(int)arg2 numberOfTabs:(unsigned int)arg3 currentTabIndex:(unsigned int)arg4;
 - (void)captureMapUIStateWithLayoutInfo:(int)arg1 layoutStyle:(int)arg2;
+- (id)problemTicketForWalletRAPReport:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

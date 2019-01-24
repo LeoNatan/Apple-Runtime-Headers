@@ -15,12 +15,14 @@
     VCHistogram *_JBQSize;
     VCHistogram *_JBTarget;
     VCHistogram *_PLR;
+    VCHistogram *_VPLR;
     VCHistogram *_latency;
     VCHistogram *_TBR;
     VCHistogram *_RBR;
     VCHistogram *_SBR;
     VCHistogram *_framerate;
     VCHistogram *_audioErasures;
+    VCHistogram *_speechErasures;
     VCHistogram *_videoQualityScore;
     VCHistogram *_poorConnection;
     VCHistogram *_videoResolution;
@@ -32,9 +34,12 @@
     VCHistogram *_REDNumPayloadsUsed;
     VCHistogram *_REDMaxDelay;
     VCHistogram *_videoStall;
+    VCHistogram *_mediaStall;
     int _duration;
     int _adjustedDuration;
     double _totalVideoStallTime;
+    double _totalMediaStallTime;
+    unsigned int _mediaStallCount;
     double _maxVideoStallInterval;
     double _totalAudioStallTime;
     double _maxAudioStallInterval;
@@ -46,6 +51,8 @@
     double _averageSendBitrate;
     double _averageReceiveBitrate;
     double _averageAudioErasuresRate;
+    double _averageSpeechErasuresRate;
+    double _speechErasureTotalTime;
     double _averageBWE;
     unsigned int _minBWE;
     unsigned int _maxBWE;
@@ -63,6 +70,14 @@
     unsigned int _audioFlushPercent;
     unsigned int _videoFlushPercent;
     unsigned int _errorCode;
+    unsigned int _significantOOOPacketCount;
+    unsigned int _totalVideoPacketsExpected;
+    unsigned int _totalFIRDemandCounter;
+    unsigned int _totalFIRCounter;
+    unsigned int _videoFrameDecodedButSkippedCounter;
+    unsigned int _videoFrameImcompleteNextTSCounter;
+    unsigned int _videoFrameTotalIncompleteCounter;
+    unsigned int _decodedVideoFrameEnqueueCounter;
     NSString *_relayServer;
     int _relayType;
     NSString *_accessToken;
@@ -76,6 +91,7 @@
     id <VCAdaptiveLearningDelegate> _delegate;
 }
 
+@property double averageSpeechErasuresRate; // @synthesize averageSpeechErasuresRate=_averageSpeechErasuresRate;
 @property(retain) VCVideoFECStatsHolder *videoFECStatsLevel3; // @synthesize videoFECStatsLevel3=_videoFECStatsLevel3;
 @property(retain) VCVideoFECStatsHolder *videoFECStatsLevel2; // @synthesize videoFECStatsLevel2=_videoFECStatsLevel2;
 @property(retain) VCVideoFECStatsHolder *videoFECStatsLevel1; // @synthesize videoFECStatsLevel1=_videoFECStatsLevel1;
@@ -84,6 +100,14 @@
 @property(readonly) unsigned int callMode; // @synthesize callMode=_callMode;
 @property(readonly) NSString *previousSegmentName; // @synthesize previousSegmentName=_previousSegmentName;
 @property(readonly) NSString *segmentName; // @synthesize segmentName=_segmentName;
+@property unsigned int decodedVideoFrameEnqueueCounter; // @synthesize decodedVideoFrameEnqueueCounter=_decodedVideoFrameEnqueueCounter;
+@property unsigned int videoFrameTotalIncompleteCounter; // @synthesize videoFrameTotalIncompleteCounter=_videoFrameTotalIncompleteCounter;
+@property unsigned int videoFrameImcompleteNextTSCounter; // @synthesize videoFrameImcompleteNextTSCounter=_videoFrameImcompleteNextTSCounter;
+@property unsigned int videoFrameDecodedButSkippedCounter; // @synthesize videoFrameDecodedButSkippedCounter=_videoFrameDecodedButSkippedCounter;
+@property unsigned int totalFIRCounter; // @synthesize totalFIRCounter=_totalFIRCounter;
+@property unsigned int totalFIRDemandCounter; // @synthesize totalFIRDemandCounter=_totalFIRDemandCounter;
+@property unsigned int totalVideoPacketsExpected; // @synthesize totalVideoPacketsExpected=_totalVideoPacketsExpected;
+@property unsigned int significantOOOPacketCount; // @synthesize significantOOOPacketCount=_significantOOOPacketCount;
 @property unsigned int errorCode; // @synthesize errorCode=_errorCode;
 @property unsigned long long videoSentPacketCount; // @synthesize videoSentPacketCount=_videoSentPacketCount;
 @property unsigned long long videoFlushPacketCount; // @synthesize videoFlushPacketCount=_videoFlushPacketCount;
@@ -107,6 +131,9 @@
 @property double maxAudioStallInterval; // @synthesize maxAudioStallInterval=_maxAudioStallInterval;
 @property double totalAudioStallTime; // @synthesize totalAudioStallTime=_totalAudioStallTime;
 @property double maxVideoStallInterval; // @synthesize maxVideoStallInterval=_maxVideoStallInterval;
+@property(readonly) VCHistogram *mediaStall; // @synthesize mediaStall=_mediaStall;
+@property unsigned int mediaStallCount; // @synthesize mediaStallCount=_mediaStallCount;
+@property double totalMediaStallTime; // @synthesize totalMediaStallTime=_totalMediaStallTime;
 @property double totalVideoStallTime; // @synthesize totalVideoStallTime=_totalVideoStallTime;
 @property int adjustedDuration; // @synthesize adjustedDuration=_adjustedDuration;
 @property int duration; // @synthesize duration=_duration;
@@ -121,12 +148,15 @@
 @property(readonly) VCHistogram *videoResolution; // @synthesize videoResolution=_videoResolution;
 @property(readonly) VCHistogram *poorConnection; // @synthesize poorConnection=_poorConnection;
 @property(readonly) VCHistogram *videoQualityScore; // @synthesize videoQualityScore=_videoQualityScore;
+@property double speechErasureTotalTime; // @synthesize speechErasureTotalTime=_speechErasureTotalTime;
+@property(readonly) VCHistogram *speechErasures; // @synthesize speechErasures=_speechErasures;
 @property(readonly) VCHistogram *audioErasures; // @synthesize audioErasures=_audioErasures;
 @property(readonly) VCHistogram *framerate; // @synthesize framerate=_framerate;
 @property(readonly) VCHistogram *SBR; // @synthesize SBR=_SBR;
 @property(readonly) VCHistogram *RBR; // @synthesize RBR=_RBR;
 @property(readonly) VCHistogram *TBR; // @synthesize TBR=_TBR;
 @property(readonly) VCHistogram *latency; // @synthesize latency=_latency;
+@property(readonly) VCHistogram *VPLR; // @synthesize VPLR=_VPLR;
 @property(readonly) VCHistogram *PLR; // @synthesize PLR=_PLR;
 @property(readonly) VCHistogram *JBTarget; // @synthesize JBTarget=_JBTarget;
 @property(readonly) VCHistogram *JBQSize; // @synthesize JBQSize=_JBQSize;

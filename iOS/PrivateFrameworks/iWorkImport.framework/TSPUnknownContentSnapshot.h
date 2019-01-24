@@ -23,7 +23,7 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (void)enumerateKnownFieldRulesUsingBlock:(CDUnknownBlockType)arg1;
 @property(readonly, nonatomic) _Bool isContentUnknown;
-- (void)updateMessageInfo:(struct MessageInfo *)arg1;
+-     // Error parsing type: v24@0:8^{MessageInfo=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedField<unsigned int>=ii(Pointer=^{Arena}^{Rep})}i{RepeatedPtrField<TSP::FieldInfo>=^{Arena}ii^{Rep}}{RepeatedField<unsigned long long>=ii(Pointer=^{Arena}^{Rep})}i{RepeatedField<unsigned long long>=ii(Pointer=^{Arena}^{Rep})}i{RepeatedField<unsigned int>=ii(Pointer=^{Arena}^{Rep})}i{RepeatedPtrField<TSP::FieldPath>=^{Arena}ii^{Rep}}{RepeatedField<unsigned int>=ii(Pointer=^{Arena}^{Rep})}i^{FieldPath}III}16, name: updateMessageInfo:
 - (void)saveToArchiver:(id)arg1;
 - (id)newUnknownContentSnapshotWithMessages:(id)arg1;
 - (id)initWithMessages:(id)arg1 preserveFields:(id)arg2 preserveUntilModifiedFields:(id)arg3 shouldIncludePreserveUntilModifiedFieldsInKnownFieldRuleEnumeration:(_Bool)arg4;

@@ -22,9 +22,9 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) TSDStroke *verticalStroke; // @synthesize verticalStroke=mVerticalStroke;
 @property(retain, nonatomic) TSDStroke *horizontalStroke; // @synthesize horizontalStroke=mHorizontalStroke;
 - (_Bool)isEqual:(id)arg1;
-- (void)saveToArchive:(struct StrokePresetDataArchive *)arg1 archiver:(id)arg2;
-- (id)initWithDeprecatedArchive:(const struct Deprecated_StrokePresetDataArchive *)arg1 unarchiver:(id)arg2;
-- (id)initWithArchive:(const struct StrokePresetDataArchive *)arg1 unarchiver:(id)arg2;
+-     // Error parsing type: v32@0:8^{StrokePresetDataArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{StrokeArchive}^{StrokeArchive}^{StrokeArchive}i}16@24, name: saveToArchive:archiver:
+-     // Error parsing type: @32@0:8r^{Deprecated_StrokePresetDataArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{Deprecated_TableStrokeArchive}^{Deprecated_TableStrokeArchive}^{Deprecated_TableStrokeArchive}i}16@24, name: initWithDeprecatedArchive:unarchiver:
+-     // Error parsing type: @32@0:8r^{StrokePresetDataArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{StrokeArchive}^{StrokeArchive}^{StrokeArchive}i}16@24, name: initWithArchive:unarchiver:
 - (id)initWithMask:(unsigned int)arg1 horizontalStroke:(id)arg2 verticalStroke:(id)arg3 exteriorStroke:(id)arg4;
 - (void)dealloc;
 - (id)init;

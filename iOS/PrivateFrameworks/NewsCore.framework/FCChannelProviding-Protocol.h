@@ -9,6 +9,8 @@
 @class NSArray, NSString;
 
 @protocol FCChannelProviding <FCTagProviding>
+@property(readonly, copy, nonatomic) NSString *backIssuesListID;
+@property(readonly, copy, nonatomic) NSArray *currentIssueIDs;
 @property(readonly, nonatomic) _Bool isWhitelisted;
 @property(readonly, nonatomic) _Bool supportsNotifications;
 @property(readonly, copy, nonatomic) NSString *defaultSectionID;

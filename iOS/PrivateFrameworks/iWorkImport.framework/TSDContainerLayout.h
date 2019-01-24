@@ -6,7 +6,7 @@
 
 #import <iWorkImport/TSDLayout.h>
 
-@class NSObject;
+@class NSArray, NSObject;
 @protocol TSDContainerInfo;
 
 __attribute__((visibility("hidden")))
@@ -17,7 +17,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) NSObject<TSDContainerInfo> *containerInfo;
 - (void)updateChildrenFromInfo;
 - (void)processChangedProperty:(int)arg1;
-- (id)additionalInfosForChildLayouts;
+@property(readonly, nonatomic) NSArray *additionalInfosForChildLayouts;
 - (id)initWithInfo:(id)arg1;
 
 @end

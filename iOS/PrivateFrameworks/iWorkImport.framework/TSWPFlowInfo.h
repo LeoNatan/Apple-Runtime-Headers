@@ -35,16 +35,16 @@ __attribute__((visibility("hidden")))
 - (void)processSelectedStoragesWithStatisticsController:(id)arg1;
 - (void)adoptStylesheet:(id)arg1 withMapper:(id)arg2;
 @property(readonly, copy) NSString *debugDescription;
-- (void)pSaveToFlowInfoArchive:(struct FlowInfoArchive *)arg1 archiver:(id)arg2 textBoxes:(id)arg3;
+-     // Error parsing type: v40@0:8^{FlowInfoArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}^{Reference}I}16@24@32, name: pSaveToFlowInfoArchive:archiver:textBoxes:
 - (void)saveToArchiver:(id)arg1;
-- (void)loadFromFlowInfoArchive:(const struct FlowInfoArchive *)arg1 unarchiver:(id)arg2;
+-     // Error parsing type: v32@0:8r^{FlowInfoArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}^{Reference}I}16@24, name: loadFromFlowInfoArchive:unarchiver:
 - (void)loadFromUnarchiver:(id)arg1;
 @property(readonly, nonatomic) _Bool supportsMultipleColumns;
 @property(readonly, nonatomic) long long contentWritingDirection;
 @property(readonly, nonatomic) _Bool preventsChangeTracking;
 @property(readonly, nonatomic) _Bool preventsComments;
 @property(readonly, nonatomic) _Bool textIsLinked;
-@property(readonly, nonatomic) _Bool textIsVertical;
+- (_Bool)textIsVerticalAtCharIndex:(unsigned long long)arg1;
 @property(readonly, nonatomic) _Bool autoListTermination;
 @property(readonly, nonatomic) _Bool autoListRecognition;
 - (_Bool)isThemeContent;

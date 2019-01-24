@@ -21,6 +21,7 @@
     UIImagePickerController *_imagePickerController;
 }
 
++ (_Bool)_isCapabilityBasedActivity;
 + (unsigned long long)_xpcAttributes;
 @property(retain, nonatomic) UIImagePickerController *imagePickerController; // @synthesize imagePickerController=_imagePickerController;
 @property(retain, nonatomic) CNContact *person; // @synthesize person=_person;

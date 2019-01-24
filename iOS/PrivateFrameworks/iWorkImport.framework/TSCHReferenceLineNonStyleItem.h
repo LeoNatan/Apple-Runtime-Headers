@@ -18,8 +18,8 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) TSCHReferenceLineNonStyle *nonStyle; // @synthesize nonStyle=mNonStyle;
 @property(readonly, nonatomic) NSUUID *uuid; // @synthesize uuid=mUUID;
 - (void).cxx_destruct;
-- (void)saveToArchiver:(id)arg1 message:(struct ChartReferenceLineNonStyleItem *)arg2;
-- (id)initFromUnarchiver:(id)arg1 message:(const struct ChartReferenceLineNonStyleItem *)arg2;
+-     // Error parsing type: v32@0:8@16^{ChartReferenceLineNonStyleItem=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{Reference}^{UUID}}24, name: saveToArchiver:message:
+-     // Error parsing type: @32@0:8@16r^{ChartReferenceLineNonStyleItem=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{Reference}^{UUID}}24, name: initFromUnarchiver:message:
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)description;

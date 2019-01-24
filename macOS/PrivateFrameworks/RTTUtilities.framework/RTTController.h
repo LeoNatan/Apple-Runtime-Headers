@@ -23,6 +23,7 @@
 @property(nonatomic) __weak id <HCHeardControllerProtocol> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSMutableArray *rttCalls; // @synthesize rttCalls=_rttCalls;
 - (void).cxx_destruct;
+- (void)ttyCall:(id)arg1 didSendRemoteString:(id)arg2 forUtterance:(id)arg3;
 - (void)ttyCall:(id)arg1 didReceiveString:(id)arg2 forUtterance:(id)arg3;
 - (id)handleIncomingNotificationSuppressionChange:(id)arg1;
 - (id)displayCallPrompt:(id)arg1;

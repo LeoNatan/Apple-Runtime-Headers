@@ -12,11 +12,16 @@
 {
     double _contactRelevanceScore;
     double _fractionOfMatch;
+    double _mapsSuggestionsContactRevelanceScore;
+    double _mapsSuggestionsIsTouristScore;
+    double _mapsSuggestionsPoiRevelanceScore;
     int _age;
     int _distanceToSuggestion;
     int _peopleSuggesterRank;
+    int _poiOpenState;
     int _serverEntryType;
     int _suggestionType;
+    _Bool _isFavorite;
     _Bool _matchedUsingAddress;
     _Bool _matchedUsingEventName;
     _Bool _matchedUsingLabel;
@@ -26,11 +31,16 @@
     struct {
         unsigned int contactRelevanceScore:1;
         unsigned int fractionOfMatch:1;
+        unsigned int mapsSuggestionsContactRevelanceScore:1;
+        unsigned int mapsSuggestionsIsTouristScore:1;
+        unsigned int mapsSuggestionsPoiRevelanceScore:1;
         unsigned int age:1;
         unsigned int distanceToSuggestion:1;
         unsigned int peopleSuggesterRank:1;
+        unsigned int poiOpenState:1;
         unsigned int serverEntryType:1;
         unsigned int suggestionType:1;
+        unsigned int isFavorite:1;
         unsigned int matchedUsingAddress:1;
         unsigned int matchedUsingEventName:1;
         unsigned int matchedUsingLabel:1;
@@ -40,6 +50,10 @@
     } _has;
 }
 
+@property(nonatomic) double mapsSuggestionsIsTouristScore; // @synthesize mapsSuggestionsIsTouristScore=_mapsSuggestionsIsTouristScore;
+@property(nonatomic) double mapsSuggestionsPoiRevelanceScore; // @synthesize mapsSuggestionsPoiRevelanceScore=_mapsSuggestionsPoiRevelanceScore;
+@property(nonatomic) double mapsSuggestionsContactRevelanceScore; // @synthesize mapsSuggestionsContactRevelanceScore=_mapsSuggestionsContactRevelanceScore;
+@property(nonatomic) _Bool isFavorite; // @synthesize isFavorite=_isFavorite;
 @property(nonatomic) int peopleSuggesterRank; // @synthesize peopleSuggesterRank=_peopleSuggesterRank;
 @property(nonatomic) _Bool matchedUsingEventName; // @synthesize matchedUsingEventName=_matchedUsingEventName;
 @property(nonatomic) _Bool matchedUsingLabel; // @synthesize matchedUsingLabel=_matchedUsingLabel;
@@ -59,6 +73,14 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(nonatomic) _Bool hasMapsSuggestionsIsTouristScore;
+@property(nonatomic) _Bool hasMapsSuggestionsPoiRevelanceScore;
+@property(nonatomic) _Bool hasMapsSuggestionsContactRevelanceScore;
+- (int)StringAsPoiOpenState:(id)arg1;
+- (id)poiOpenStateAsString:(int)arg1;
+@property(nonatomic) _Bool hasPoiOpenState;
+@property(nonatomic) int poiOpenState; // @synthesize poiOpenState=_poiOpenState;
+@property(nonatomic) _Bool hasIsFavorite;
 - (int)StringAsServerEntryType:(id)arg1;
 - (id)serverEntryTypeAsString:(int)arg1;
 @property(nonatomic) _Bool hasServerEntryType;

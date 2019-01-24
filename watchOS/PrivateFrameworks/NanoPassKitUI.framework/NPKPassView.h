@@ -12,6 +12,7 @@
 @interface NPKPassView : UIView
 {
     _Bool _showFullPass;
+    _Bool _isSelectedPass;
     _Bool _hideAccessoryIfPossible;
     _Bool _showAccessoryButtonIfHidden;
     _Bool _needsUpdateUI;
@@ -38,6 +39,7 @@
 @property(nonatomic) struct CGSize rasterizedImageSize; // @synthesize rasterizedImageSize=_rasterizedImageSize;
 @property(nonatomic) _Bool showAccessoryButtonIfHidden; // @synthesize showAccessoryButtonIfHidden=_showAccessoryButtonIfHidden;
 @property(nonatomic) _Bool hideAccessoryIfPossible; // @synthesize hideAccessoryIfPossible=_hideAccessoryIfPossible;
+@property(nonatomic) _Bool isSelectedPass; // @synthesize isSelectedPass=_isSelectedPass;
 @property(nonatomic) _Bool showFullPass; // @synthesize showFullPass=_showFullPass;
 - (void).cxx_destruct;
 - (_Bool)handleTapAtPoint:(struct CGPoint)arg1 andScrollWithBehavior:(int *)arg2 toOffset:(struct CGPoint *)arg3;

@@ -49,6 +49,7 @@
     _Bool _shouldConsiderTapGuard;
     _Bool _screenOn;
     _Bool _confirmedNotInPocket;
+    _Bool _canSuggestSwipeToRetry;
     _Bool _shouldResetForFailedPasscodeAttempt;
     _Bool _isTransitioning;
     int _style;
@@ -78,6 +79,7 @@
 @property(nonatomic) int style; // @synthesize style=_style;
 @property(retain, nonatomic) id <SBUIBiometricResource> biometricResource; // @synthesize biometricResource=_biometricResource;
 @property(nonatomic) CDStruct_29b32c11 proudLockConfiguration; // @synthesize proudLockConfiguration=_proudLockConfiguration;
+@property(nonatomic) _Bool canSuggestSwipeToRetry; // @synthesize canSuggestSwipeToRetry=_canSuggestSwipeToRetry;
 @property(nonatomic) _Bool confirmedNotInPocket; // @synthesize confirmedNotInPocket=_confirmedNotInPocket;
 @property(retain, nonatomic) UIView *biometricAuthenticationView; // @synthesize biometricAuthenticationView=_biometricAuthenticationView;
 @property(retain, nonatomic) UIView *passcodeAuthenticationView; // @synthesize passcodeAuthenticationView=_passcodeAuthenticationView;
@@ -105,6 +107,7 @@
 - (void)biometricResource:(id)arg1 observeEvent:(unsigned long long)arg2;
 - (void)biometricResource:(id)arg1 matchingEnabledDidChange:(_Bool)arg2;
 - (void)providerLegibilitySettingsChanged:(id)arg1;
+- (void)_setStatusStateSwipeToRetryAnimated:(_Bool)arg1;
 - (void)_updateBiometricLayout;
 - (void)_updateBiometricGlyphForBioEvent:(unsigned long long)arg1 animated:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_updateStatusTextForBioEvent:(unsigned long long)arg1 animated:(_Bool)arg2;

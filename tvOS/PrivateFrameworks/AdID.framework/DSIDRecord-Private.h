@@ -20,7 +20,8 @@
 - (void)retrieveSegmentDataFromiTunes:(CDUnknownBlockType)arg1;
 - (_Bool)isActiveRecord;
 - (void)reconcileIDFAandLAT;
-- (void)resetiAdIDs:(CDUnknownBlockType)arg1;
+- (void)resetiAdIDsAndDPID:(CDUnknownBlockType)arg1;
+- (void)resetiAdIDs;
 - (void)ensureiAdIDs;
 - (void)removeIDForClientType:(long long)arg1;
 - (_Bool)hasIDForClientType:(long long)arg1;

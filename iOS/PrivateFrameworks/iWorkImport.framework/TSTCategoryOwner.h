@@ -9,12 +9,12 @@
 #import <iWorkImport/TSTCellWillChangeProtocol-Protocol.h>
 #import <iWorkImport/TSTMergeChangeProtocol-Protocol.h>
 
-@class NSArray, NSMutableArray, TSCECalculationEngine, TSTInfo, TSTTableModel;
+@class NSArray, NSMutableArray, TSCECalculationEngine, TSTTableInfo, TSTTableModel;
 
 __attribute__((visibility("hidden")))
 @interface TSTCategoryOwner : NSObject <TSTCellWillChangeProtocol, TSTMergeChangeProtocol>
 {
-    TSTInfo *_tableInfo;
+    TSTTableInfo *_tableInfo;
     TSCECalculationEngine *_calcEngine;
     UUIDData_5fbc143e _baseTableUID;
     UUIDData_5fbc143e _ownerUID;
@@ -34,8 +34,8 @@ __attribute__((visibility("hidden")))
 - (void)willApplyCell:(id)arg1 baseCellCoord:(struct TSUModelCellCoord)arg2;
 - (UUIDData_5fbc143e)p_willApplyCell:(id)arg1 baseCellCoord:(struct TSUModelCellCoord)arg2 refreshCategoryInfo:(_Bool)arg3;
 - (void)remapTableUIDsInFormulasWithMap:(const UUIDMap_b66c2694 *)arg1 calcEngine:(id)arg2;
-- (void)saveToArchive:(struct CategoryOwnerArchive *)arg1 archiver:(id)arg2;
-- (id)initWithArchive:(const struct CategoryOwnerArchive *)arg1 unarchiver:(id)arg2 forBaseTableUID:(const UUIDData_5fbc143e *)arg3;
+-     // Error parsing type: v32@0:8^{CategoryOwnerArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TST::CategoryOwnerArchive_GroupByArchive>=^{Arena}ii^{Rep}}^{UUID}}16@24, name: saveToArchive:archiver:
+-     // Error parsing type: @40@0:8r^{CategoryOwnerArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TST::CategoryOwnerArchive_GroupByArchive>=^{Arena}ii^{Rep}}^{UUID}}16@24r^{UUIDData<TSP::UUIDData>=(?=[16C]{?=CCCCCCCCCCCCCCCC}{?=QQ})}32, name: initWithArchive:unarchiver:forBaseTableUID:
 - (void)updateWithDocumentRoot:(id)arg1;
 - (id)categoryInfos;
 - (void)unregisterGroupBy:(id)arg1;
@@ -44,10 +44,10 @@ __attribute__((visibility("hidden")))
 - (void)registerGroupBy:(id)arg1;
 - (id)calcEngine;
 - (void)unregisterFromCalcEngine;
-- (int)registerWithCalcEngine:(id)arg1;
-- (void)willClose;
+- (int)registerWithCalcEngine:(id)arg1 baseOwnerUID:(const UUIDData_5fbc143e *)arg2;
+- (void)teardown;
 @property(readonly, nonatomic) TSTTableModel *tableModel;
-@property(retain, nonatomic) TSTInfo *tableInfo; // @synthesize tableInfo=_tableInfo;
+@property(nonatomic) TSTTableInfo *tableInfo; // @synthesize tableInfo=_tableInfo;
 - (void)unregisterFromDistributors;
 - (void)registerWithDistributors;
 - (id)description;

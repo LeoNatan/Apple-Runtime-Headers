@@ -35,6 +35,7 @@ __attribute__((visibility("hidden")))
     NSLayoutConstraint *_wideContentTrailingConstraint;
     NSLayoutConstraint *_narrowContentLeadingConstraint;
     NSLayoutConstraint *_narrowContentTrailingConstraint;
+    NSLayoutConstraint *_iPadWidthConstraint;
     _Bool _scrollViewNeedsShadowCachedValue;
     UILabel *_explanationLabel;
     UILabel *_passwordRetrievalExpalantionLabel;

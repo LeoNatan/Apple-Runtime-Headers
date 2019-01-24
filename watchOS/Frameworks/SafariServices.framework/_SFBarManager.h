@@ -12,7 +12,9 @@
 @interface _SFBarManager : NSObject
 {
     NSMapTable *_barToRegistrationMap;
+    _Bool _deferUpdateAllRegistrations;
     _Bool _itemEnabledMap[7];
+    _Bool _needsUpdateAllRegistrations;
     _Bool _bookmarksItemSelected;
     id <_SFBarManagerDelegate> _delegate;
 }
@@ -29,6 +31,7 @@
 - (_Bool)barRegistration:(id)arg1 canHandleLongPressForBarItem:(int)arg2;
 - (void)barRegistration:(id)arg1 didReceiveTapForBarItem:(int)arg2;
 - (void)registerToolbar:(id)arg1 withLayout:(int)arg2 persona:(unsigned int)arg3;
+- (void)performCoalescedUpdates:(CDUnknownBlockType)arg1;
 - (void)setBarItem:(int)arg1 enabled:(_Bool)arg2;
 - (_Bool)isBarItemEnabled:(int)arg1;
 - (id)init;

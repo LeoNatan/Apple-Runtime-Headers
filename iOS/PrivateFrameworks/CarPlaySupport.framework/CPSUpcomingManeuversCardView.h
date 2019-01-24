@@ -12,7 +12,6 @@
 
 @interface CPSUpcomingManeuversCardView : CPSInheritedBackgroundColorView <CPSNavigationDisplaying>
 {
-    _Bool _minimalMode;
     NSArray *_maneuvers;
     NSMutableDictionary *_currentTravelEstimatesForManeuverIdentifiers;
     NSArray *_maneuverStyles;
@@ -27,14 +26,16 @@
 @property(readonly, nonatomic) NSArray *maneuverStyles; // @synthesize maneuverStyles=_maneuverStyles;
 @property(retain, nonatomic) NSMutableDictionary *currentTravelEstimatesForManeuverIdentifiers; // @synthesize currentTravelEstimatesForManeuverIdentifiers=_currentTravelEstimatesForManeuverIdentifiers;
 @property(readonly, nonatomic) NSArray *maneuvers; // @synthesize maneuvers=_maneuvers;
-@property(nonatomic, getter=isMinimalMode) _Bool minimalMode; // @synthesize minimalMode=_minimalMode;
 - (void).cxx_destruct;
 - (void)_updateVerticalConstraints;
 - (void)updateEstimates:(id)arg1 forManeuver:(id)arg2;
 - (void)showManeuvers:(id)arg1 usingDisplayStyles:(id)arg2;
 - (struct CGSize)intrinsicContentSize;
+- (void)_resetToFull;
+- (void)layoutSubviews;
 - (void)_clearManeuvers;
 - (void)backgroundColorDidChange;
+- (id)_maneuverViews;
 - (id)init;
 
 // Remaining properties

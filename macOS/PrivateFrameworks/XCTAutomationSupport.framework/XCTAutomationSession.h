@@ -8,25 +8,35 @@
 
 #import <XCTAutomationSupport/XCTAutomationTarget-Protocol.h>
 #import <XCTAutomationSupport/XCTConnectionAccepting-Protocol.h>
+#import <XCTAutomationSupport/XCTRemoteApplicationAutomationTarget-Protocol.h>
 
-@class NSMutableArray, NSString, XCTAnimationsIdleNotifier, XCTElementQueryProcessor, XCTMainRunLoopIdleNotifier;
+@class DTXConnection, DTXProxyChannel, NSMutableArray, NSString, XCTAnimationsIdleNotifier, XCTElementQueryProcessor, XCTMainRunLoopIdleNotifier;
 @protocol OS_dispatch_queue;
 
-@interface XCTAutomationSession : NSObject <XCTConnectionAccepting, XCTAutomationTarget>
+@interface XCTAutomationSession : NSObject <XCTRemoteApplicationAutomationTarget, XCTConnectionAccepting, XCTAutomationTarget>
 {
     NSMutableArray *_connections;
     XCTElementQueryProcessor *_queryProcessor;
     NSObject<OS_dispatch_queue> *_queue;
     XCTMainRunLoopIdleNotifier *_runLoopIdleMonitor;
     XCTAnimationsIdleNotifier *_animationIdleNotifier;
+    DTXConnection *_dtxConnection;
+    DTXProxyChannel *_proxyChannel;
 }
 
+@property(readonly) DTXProxyChannel *proxyChannel; // @synthesize proxyChannel=_proxyChannel;
+@property(readonly) DTXConnection *dtxConnection; // @synthesize dtxConnection=_dtxConnection;
 @property(readonly) XCTAnimationsIdleNotifier *animationIdleNotifier; // @synthesize animationIdleNotifier=_animationIdleNotifier;
 @property(readonly) XCTMainRunLoopIdleNotifier *runLoopIdleMonitor; // @synthesize runLoopIdleMonitor=_runLoopIdleMonitor;
 @property(readonly) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(readonly) XCTElementQueryProcessor *queryProcessor; // @synthesize queryProcessor=_queryProcessor;
 @property(readonly) NSMutableArray *connections; // @synthesize connections=_connections;
 - (void).cxx_destruct;
+- (id)_XCT_notifyWhenAnimationsAreIdle;
+- (id)_XCT_notifyWhenMainRunLoopIsIdle;
+- (id)_XCT_attributesForElement:(id)arg1 attributes:(id)arg2;
+- (id)_XCT_fetchMatchesForQuery:(id)arg1;
+- (void)listenForRemoteConnectionViaSerializedTransportWrapper:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)notifyWhenAnimationsAreIdle:(CDUnknownBlockType)arg1;
 - (void)notifyWhenMainRunLoopIsIdle:(CDUnknownBlockType)arg1;
 - (void)attributesForElement:(id)arg1 attributes:(id)arg2 reply:(CDUnknownBlockType)arg3;

@@ -9,15 +9,17 @@
 #import <NewsCore/FCFeedPaginating-Protocol.h>
 
 @class FCSubscriptionList, NSString;
-@protocol FCCoreConfigurationManager;
+@protocol FCCoreConfigurationManager, FCFeedPersonalizing;
 
 @interface FCForYouFeedDescriptor : FCFeedDescriptor <FCFeedPaginating>
 {
     unsigned long long _trendingAndSavedStoriesCount;
     id <FCCoreConfigurationManager> _configurationManager;
     FCSubscriptionList *_subscriptionList;
+    id <FCFeedPersonalizing> _feedPersonalizer;
 }
 
+@property(retain, nonatomic) id <FCFeedPersonalizing> feedPersonalizer; // @synthesize feedPersonalizer=_feedPersonalizer;
 @property(retain, nonatomic) FCSubscriptionList *subscriptionList; // @synthesize subscriptionList=_subscriptionList;
 @property(retain, nonatomic) id <FCCoreConfigurationManager> configurationManager; // @synthesize configurationManager=_configurationManager;
 @property(nonatomic) unsigned long long trendingAndSavedStoriesCount; // @synthesize trendingAndSavedStoriesCount=_trendingAndSavedStoriesCount;
@@ -35,9 +37,10 @@
 - (id)feedGroupEmittersWithConfiguration:(id)arg1;
 - (id)offlineFeedGroupEmittersWithConfiguration:(id)arg1;
 - (id)iAdFeedID;
+- (id)languagesWithSubscriptionController:(id)arg1;
 - (id)name;
 - (_Bool)derivesContentsFromExplicitSubscriptions;
-- (id)initWithIdentifier:(id)arg1 trendingAndSavedStoriesCount:(long long)arg2 configurationManager:(id)arg3 subscriptionList:(id)arg4;
+- (id)initWithIdentifier:(id)arg1 trendingAndSavedStoriesCount:(long long)arg2 configurationManager:(id)arg3 subscriptionList:(id)arg4 feedPersonalizer:(id)arg5;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

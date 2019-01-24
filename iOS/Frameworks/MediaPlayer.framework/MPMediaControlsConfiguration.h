@@ -15,12 +15,14 @@
 {
     _Bool _shouldPreventAutorotation;
     _Bool _allowsNowPlayingApplicationLaunch;
+    _Bool _sortByIsVideoRoute;
     long long _style;
     NSString *_routingContextUID;
     NSString *_presentingAppBundleID;
 }
 
 + (_Bool)supportsSecureCoding;
+@property(nonatomic) _Bool sortByIsVideoRoute; // @synthesize sortByIsVideoRoute=_sortByIsVideoRoute;
 @property(nonatomic) _Bool allowsNowPlayingApplicationLaunch; // @synthesize allowsNowPlayingApplicationLaunch=_allowsNowPlayingApplicationLaunch;
 @property(nonatomic) _Bool shouldPreventAutorotation; // @synthesize shouldPreventAutorotation=_shouldPreventAutorotation;
 @property(copy, nonatomic) NSString *presentingAppBundleID; // @synthesize presentingAppBundleID=_presentingAppBundleID;

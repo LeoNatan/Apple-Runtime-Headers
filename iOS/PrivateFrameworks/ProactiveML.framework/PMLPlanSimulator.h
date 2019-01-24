@@ -17,7 +17,7 @@
 
 + (id)simulatorWithDbPaths:(id)arg1 sessionDescriptor:(id)arg2 sessionsInBatch:(unsigned long long)arg3 maxSessionsLimit:(unsigned long long)arg4 seed:(unsigned long long)arg5;
 - (void).cxx_destruct;
-- (id)runParallelPlansWithPlanId:(id)arg1 tracker:(id)arg2 noiseScaleFactor:(float)arg3 noiseMinimumMagnitude:(float)arg4 weights:(id)arg5 serverIteration:(unsigned long long)arg6 useIntercept:(_Bool)arg7 beforeNoiseScaling:(long long)arg8 constantScaleFactor:(float)arg9 usingRandomlySelected:(unsigned long long)arg10;
+- (id)runParallelPlansWithPlanId:(id)arg1 tracker:(id)arg2 noiseScaleFactors:(CDStruct_cd4a7bf5)arg3 noiseMinimumMagnitude:(float)arg4 weights:(id)arg5 serverIteration:(unsigned long long)arg6 useIntercept:(_Bool)arg7 noiseMechanism:(long long)arg8 usingRandomlySelected:(unsigned long long)arg9;
 - (id)_randomStores:(unsigned long long)arg1;
 - (id)_randomStore;
 - (id)initWithStores:(id)arg1 sessionDescriptor:(id)arg2 seed:(unsigned long long)arg3;

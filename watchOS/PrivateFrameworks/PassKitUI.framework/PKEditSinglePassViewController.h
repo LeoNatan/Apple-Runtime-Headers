@@ -25,8 +25,6 @@
 }
 
 - (void).cxx_destruct;
-- (void)showPassDetails;
-- (void)passView:(id)arg1 didPresentPassDetailsViewController:(id)arg2;
 - (id)pass;
 - (id)group;
 - (void)disableDeleteButton;

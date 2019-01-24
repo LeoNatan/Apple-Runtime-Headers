@@ -30,7 +30,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic, getter=isUserInitiated) _Bool userInitiated;
 @property(readonly, copy, nonatomic) NSString *value;
 @property(readonly, nonatomic) long long type;
-- (id)initWithAssistedNodeInformation:(const struct AssistedNodeInformation *)arg1 isUserInitiated:(_Bool)arg2 userObject:(id)arg3;
+- (id)initWithFocusedElementInformation:(const struct FocusedElementInformation *)arg1 isUserInitiated:(_Bool)arg2 userObject:(id)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

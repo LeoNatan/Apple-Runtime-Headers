@@ -13,8 +13,8 @@ __attribute__((visibility("hidden")))
 }
 
 - (void)setPopulatedCustomFormat:(id)arg1;
-- (void)encodeToArchive:(struct StringCellValueArchive *)arg1;
-- (id)initWithArchive:(const struct StringCellValueArchive *)arg1 locale:(id)arg2;
+-     // Error parsing type: v24@0:8^{StringCellValueArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}^{FormatStructArchive}BB}16, name: encodeToArchive:
+-     // Error parsing type: @32@0:8r^{StringCellValueArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}^{FormatStructArchive}BB}16@24, name: initWithArchive:locale:
 - (long long)compareToCellValue:(id)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;

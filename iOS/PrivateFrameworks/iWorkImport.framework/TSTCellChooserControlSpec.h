@@ -16,14 +16,14 @@ __attribute__((visibility("hidden")))
     TSTPopUpMenuModel *_popupModel;
 }
 
-+ (id)instanceWithArchive:(const struct CellSpecArchive *)arg1 unarchiver:(id)arg2;
++     // Error parsing type: @32@0:8r^{CellSpecArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{FormulaArchive}^{Reference}dddIBB}16@24, name: instanceWithArchive:unarchiver:
 + (id)cellSpecFromTSKFormat:(id)arg1;
 + (id)popupCellSpec:(id)arg1 startWithFirstItem:(_Bool)arg2;
 @property(readonly, nonatomic) _Bool startWithFirstItem; // @synthesize startWithFirstItem=_startWithFirstItem;
 @property(retain, nonatomic) TSTPopUpMenuModel *popupModel; // @synthesize popupModel=_popupModel;
 - (void).cxx_destruct;
-- (void)saveToArchive:(struct CellSpecArchive *)arg1 archiver:(id)arg2;
-- (id)initWithArchive:(const struct CellSpecArchive *)arg1 unarchiver:(id)arg2;
+-     // Error parsing type: v32@0:8^{CellSpecArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{FormulaArchive}^{Reference}dddIBB}16@24, name: saveToArchive:archiver:
+-     // Error parsing type: @32@0:8r^{CellSpecArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{FormulaArchive}^{Reference}dddIBB}16@24, name: initWithArchive:unarchiver:
 - (id)tskMultipleChoiceListFormat;
 - (_Bool)validateFormatAndValue:(id)arg1;
 - (id)valueForIndex:(unsigned long long)arg1;

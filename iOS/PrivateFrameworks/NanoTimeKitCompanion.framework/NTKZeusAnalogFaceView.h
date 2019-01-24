@@ -12,8 +12,11 @@
 {
     _Bool _isEditing;
     _Bool _isHandsVisibleInColorEditing;
+    _Bool _isStatusBarIconShadowNeeded;
     NTKZeusColorPalette *_palette;
     UIView *_cornerView;
+    struct CGRect _upperComplicationOverrideFrame;
+    struct CGRect _lowerComplicationOverrideFrame;
 }
 
 + (id)_swatchImageForColorOption:(id)arg1 forDevice:(id)arg2;
@@ -23,6 +26,8 @@
 - (void).cxx_destruct;
 - (_Bool)_timeViewBehindContentForEditMode:(long long)arg1;
 - (struct CGPoint)_timeTravelStatusModuleCenter;
+- (void)_setStatusBarIconShadowNeeded:(_Bool)arg1;
+- (_Bool)_wantsStatusBarIconShadow;
 - (void)_prepareForStatusChange:(_Bool)arg1;
 - (double)_verticalPaddingForStatusBar;
 - (id)_swatchImageForEditOption:(id)arg1 mode:(long long)arg2 withSelectedOptions:(id)arg3;
@@ -39,11 +44,14 @@
 - (void)_configureForTransitionFraction:(double)arg1 fromEditMode:(long long)arg2 toEditMode:(long long)arg3;
 - (void)_configureForEditMode:(long long)arg1;
 - (void)_applyOption:(id)arg1 forCustomEditMode:(long long)arg2 slot:(id)arg3;
+- (struct CGRect)_frameForComplicationDisplayWrapper:(id)arg1 inSlot:(id)arg2;
 - (long long)_complicationPickerStyleForSlot:(id)arg1;
 - (void)_updateDateComplicationPositionIfNecessary;
 - (_Bool)_fadesComplicationSlot:(id)arg1 inEditMode:(long long)arg2;
 - (id)_newLegacyViewForComplication:(id)arg1 family:(long long)arg2 slot:(id)arg3;
 - (void)_loadLayoutRules;
+- (struct CGRect)_upperComplicationFrameForStyle:(unsigned long long)arg1;
+- (struct CGRect)_lowerComplicationFrameForStyle:(unsigned long long)arg1;
 - (void)_unloadSnapshotContentViews;
 - (void)_loadSnapshotContentViews;
 - (void)setOverrideDate:(id)arg1 duration:(double)arg2;

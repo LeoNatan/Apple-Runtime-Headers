@@ -8,12 +8,13 @@
 #import <NewsUI/NSObject-Protocol.h>
 
 @class FCArticleController, FCAssetManager, FCFlintResourceManager, FCJSONRecordSourceSchema, FCNetworkBehaviorMonitor, FCTagController, NSArray, NSString, NSURL;
-@protocol FCBackgroundTaskable, FCContentContextInternal, FCCoreConfigurationManager, FCCoreConfigurationManager><FCNewsAppConfigurationManager, FCJSONRecordSourceType, FCJSONRecordTreeSourceType, FCNewsAppConfigurationManager, FCPPTContext, FCWebArchiveSource;
+@protocol FCBackgroundTaskable, FCContentContextInternal, FCCoreConfigurationManager, FCCoreConfigurationManager><FCNewsAppConfigurationManager, FCJSONRecordSourceType, FCJSONRecordTreeSourceType, FCMagazinesConfigurationManager, FCNewsAppConfigurationManager, FCPPTContext, FCWebArchiveSource;
 
 @protocol FCContentContext <NSObject, FCCacheFlushing>
 @property(readonly, copy, nonatomic) NSString *contentEnvironmentToken;
-@property(readonly, nonatomic) __weak id <FCBackgroundTaskable> backgroundTaskable;
 @property(readonly, nonatomic) id <FCPPTContext> pptContext;
+@property(readonly, nonatomic) long long preferredMediaQuality;
+@property(readonly, nonatomic) __weak id <FCBackgroundTaskable> backgroundTaskable;
 @property(readonly, nonatomic) id <FCContentContextInternal> internalContentContext;
 @property(readonly, nonatomic) NSURL *webArchiveCacheDirectoryURL;
 @property(readonly, nonatomic) NSURL *assetCacheDirectoryURL;
@@ -31,6 +32,7 @@
 - (id <FCJSONRecordTreeSourceType>)recordTreeSourceWithRecordSources:(NSArray *)arg1;
 - (id <FCJSONRecordSourceType>)recordSourceWithSchema:(FCJSONRecordSourceSchema *)arg1;
 - (void)ppt_overrideFeedEndpoint:(long long)arg1;
+- (id <FCMagazinesConfigurationManager>)magazinesConfigurationManager;
 - (id <FCCoreConfigurationManager><FCNewsAppConfigurationManager>)news_core_ConfigurationManager;
 @end
 

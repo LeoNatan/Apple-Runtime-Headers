@@ -37,9 +37,9 @@ __attribute__((visibility("hidden")))
 - (void)replace:(tmat4x4_3074befe *)arg1;
 - (void)popState;
 - (void)pushState;
-- (long long)texture:(id)arg1 attributes:(const struct TextureAttributes *)arg2;
+- (long long)texture:(id)arg1 resource:(id)arg2 attributes:(const struct TextureAttributes *)arg3;
 - (long long)attribute:(id)arg1 resource:(id)arg2 specs:(const struct AttributeSpecs *)arg3;
-- (void)submit:(const struct PrimitiveInfo *)arg1;
+- (void)submit:(id)arg1;
 - (void)dealloc;
 - (id)init;
 - (id)initWithOriginal:(id)arg1;

@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
 + (id)dateValueWithNSDate:(id)arg1;
 + (id)dateValueWithDouble:(double)arg1;
 + (id)numberValueWithDouble:(double)arg1;
-+ (void)saveGridValue:(id)arg1 toArchive:(struct GridValue *)arg2;
-+ (id)instanceWithArchive:(const struct GridValue *)arg1;
-- (id)initWithArchive:(const struct GridValue *)arg1;
++     // Error parsing type: v32@0:8@16^{GridValue=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}dddd}24, name: saveGridValue:toArchive:
++     // Error parsing type: @24@0:8r^{GridValue=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}dddd}16, name: instanceWithArchive:
+-     // Error parsing type: @24@0:8r^{GridValue=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}dddd}16, name: initWithArchive:
 
 @end
 

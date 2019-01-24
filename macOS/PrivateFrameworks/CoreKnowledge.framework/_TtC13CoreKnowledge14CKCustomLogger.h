@@ -6,8 +6,6 @@
 
 #import <objc/NSObject.h>
 
-@class NSString;
-
 @interface _TtC13CoreKnowledge14CKCustomLogger : NSObject
 {
     // Error parsing type: , name: name
@@ -17,11 +15,8 @@
     // Error parsing type: , name: defaultSettings
 }
 
-- (CDUnknownBlockType).cxx_destruct;
+- (void).cxx_destruct;
 - (id)init;
-- (void)setFormatWithName:(BOOL)arg1 file:(BOOL)arg2 method:(BOOL)arg3;
-@property(nonatomic) BOOL enabled; // @synthesize enabled;
-@property(nonatomic, readonly) NSString *name; // @synthesize name;
 
 @end
 

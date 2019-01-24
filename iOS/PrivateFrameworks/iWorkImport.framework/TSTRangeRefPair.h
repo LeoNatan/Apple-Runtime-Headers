@@ -6,19 +6,19 @@
 
 #import <objc/NSObject.h>
 
-@class TSCECellTractRef, TSTInfo, TSTTableModel;
+@class TSCECellTractRef, TSTTableInfo, TSTTableModel;
 
 __attribute__((visibility("hidden")))
 @interface TSTRangeRefPair : NSObject
 {
     TSCECellTractRef *_baseTractRef;
     TSCECellTractRef *_chromeTractRef;
-    TSTInfo *_tableInfo;
+    TSTTableInfo *_tableInfo;
     TSTTableModel *_tableModel;
 }
 
 @property(retain, nonatomic) TSTTableModel *tableModel; // @synthesize tableModel=_tableModel;
-@property(retain, nonatomic) TSTInfo *tableInfo; // @synthesize tableInfo=_tableInfo;
+@property(retain, nonatomic) TSTTableInfo *tableInfo; // @synthesize tableInfo=_tableInfo;
 @property(retain, nonatomic) TSCECellTractRef *chromeTractRef; // @synthesize chromeTractRef=_chromeTractRef;
 @property(retain, nonatomic) TSCECellTractRef *baseTractRef; // @synthesize baseTractRef=_baseTractRef;
 - (void).cxx_destruct;

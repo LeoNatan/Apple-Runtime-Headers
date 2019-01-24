@@ -33,6 +33,7 @@
 - (struct CGRect)_defaultRectangleForNewAnnotation:(id)arg1 centeredAtPoint:(struct CGPoint)arg2;
 - (struct CGPoint)_defaultCenterForNewAnnotation;
 - (struct CGRect)_centerBounds:(struct CGRect)arg1 atPoint:(struct CGPoint)arg2;
+- (id)_strokeColorForNewAnnotation;
 - (double)_strokeWidthForNewAnnotation;
 - (double)_modelBaseScaleFactorForNewAnnotation;
 - (unsigned long long)defaultToolMode;

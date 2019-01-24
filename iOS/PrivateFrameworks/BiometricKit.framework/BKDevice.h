@@ -7,16 +7,22 @@
 #import <objc/NSObject.h>
 
 @class BKDeviceDescriptor;
+@protocol BKDeviceDelegate, OS_dispatch_queue;
 
 @interface BKDevice : NSObject
 {
+    id <BKDeviceDelegate> _delegate;
+    NSObject<OS_dispatch_queue> *_queue;
     BKDeviceDescriptor *_descriptor;
 }
 
 + (id)deviceWithDescriptor:(id)arg1 error:(id *)arg2;
 + (_Bool)isIdentityEnrolled;
 @property(retain, nonatomic) BKDeviceDescriptor *descriptor; // @synthesize descriptor=_descriptor;
+@property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
+@property(nonatomic) __weak id <BKDeviceDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (id)lastMatchEventWithError:(id *)arg1;
 - (_Bool)biometryAvailability:(long long *)arg1 forUser:(unsigned int)arg2 error:(id *)arg3;
 - (id)freeIdentityCountForUser:(unsigned int)arg1 error:(id *)arg2;
 - (id)maxIdentityCountWithError:(id *)arg1;

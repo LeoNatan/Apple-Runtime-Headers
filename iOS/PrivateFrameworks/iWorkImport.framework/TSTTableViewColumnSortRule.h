@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
 
 + (id)ruleWithViewColumnIndex:(struct TSUViewColumnIndex)arg1 direction:(int)arg2;
 @property(readonly, nonatomic) struct TSUViewColumnIndex viewColumnIndex; // @synthesize viewColumnIndex=_viewColumnIndex;
-- (id)initFromArchive:(const struct TableSortOrderArchive_SortRuleArchive *)arg1;
-- (void)encodeToArchive:(struct TableSortOrderArchive_SortRuleArchive *)arg1;
+-     // Error parsing type: @24@0:8r^{TableSortOrderArchive_SortRuleArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}Ii}16, name: initFromArchive:
+-     // Error parsing type: v24@0:8^{TableSortOrderArchive_SortRuleArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}Ii}16, name: encodeToArchive:
 - (id)initWithViewColumnIndex:(struct TSUViewColumnIndex)arg1 direction:(int)arg2;
 
 @end

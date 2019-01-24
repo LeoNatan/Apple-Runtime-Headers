@@ -12,6 +12,7 @@
 - (void)autoInstallOperationDidConsent:(NSUUID *)arg1;
 - (void)autoInstallOperationDidExpire:(NSUUID *)arg1 withError:(NSError *)arg2;
 - (void)autoInstallOperationWasCancelled:(NSUUID *)arg1;
+- (void)managedInstallationRequested:(SUInstallPolicy *)arg1;
 - (void)installPolicyDidChange:(SUInstallPolicy *)arg1;
 - (void)installDidFinish:(SUDescriptor *)arg1;
 - (void)installDidFail:(SUDescriptor *)arg1 withError:(NSError *)arg2;

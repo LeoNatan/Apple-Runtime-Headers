@@ -12,16 +12,18 @@ __attribute__((visibility("hidden")))
 @interface TSPAlternateArchiverKey : NSObject <NSCopying>
 {
     unsigned long long _version;
-    const struct FieldPath *_fieldPath;
+    // Error parsing type: r^{FieldPath=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedField<unsigned int>=ii(Pointer=^{Arena}^{Rep})}i}, name: _fieldPath
 }
 
-@property(readonly, nonatomic) const struct FieldPath *fieldPath; // @synthesize fieldPath=_fieldPath;
+// Error parsing type for property fieldPath:
+// Property attributes: Tr^{FieldPath=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedField<unsigned int>=ii(Pointer=^{Arena}^{Rep})}i},R,N,V_fieldPath
+
 @property(readonly, nonatomic) unsigned long long version; // @synthesize version=_version;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (void)dealloc;
-- (id)initWithVersion:(unsigned long long)arg1 fieldPath:(const struct FieldPath *)arg2;
+-     // Error parsing type: @32@0:8Q16r^{FieldPath=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedField<unsigned int>=ii(Pointer=^{Arena}^{Rep})}i}24, name: initWithVersion:fieldPath:
 - (id)init;
 
 @end

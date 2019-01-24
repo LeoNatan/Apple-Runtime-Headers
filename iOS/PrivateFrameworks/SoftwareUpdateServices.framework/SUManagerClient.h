@@ -38,6 +38,7 @@
 - (void)autoInstallOperationDidConsent:(id)arg1;
 - (void)autoInstallOperationDidExpire:(id)arg1 withError:(id)arg2;
 - (void)autoInstallOperationWasCancelled:(id)arg1;
+- (void)managedInstallationRequested:(id)arg1;
 - (void)installPolicyDidChange:(id)arg1;
 - (void)installDidFinish:(id)arg1;
 - (void)installDidFail:(id)arg1 withError:(id)arg2;

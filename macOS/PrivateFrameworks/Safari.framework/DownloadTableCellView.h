@@ -37,7 +37,7 @@ __attribute__((visibility("hidden")))
 - (id)accessibilityRole;
 - (id)accessibilityChildren;
 - (id)accessibilityContents;
-- (BOOL)accessibilityIsIgnored;
+- (BOOL)isAccessibilityElement;
 - (void)viewDidMoveToWindow;
 - (void)viewWillMoveToWindow:(id)arg1;
 - (void)mouseExited:(id)arg1;

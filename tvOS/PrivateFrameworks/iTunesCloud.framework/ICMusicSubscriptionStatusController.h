@@ -6,18 +6,35 @@
 
 #import <objc/NSObject.h>
 
-@class NSOperationQueue;
-@protocol OS_dispatch_queue;
+#import <iTunesCloud/ICMusicSubscriptionStatusRemoteRequestingClient-Protocol.h>
 
-@interface ICMusicSubscriptionStatusController : NSObject
+@class NSMutableDictionary, NSOperationQueue, NSString, NSXPCConnection;
+@protocol OS_dispatch_queue, OS_dispatch_source;
+
+@interface ICMusicSubscriptionStatusController : NSObject <ICMusicSubscriptionStatusRemoteRequestingClient>
 {
+    NSObject<OS_dispatch_queue> *_accessQueue;
     NSObject<OS_dispatch_queue> *_callbackQueue;
+    unsigned long long _numberOfActiveRemoteRequests;
     NSOperationQueue *_operationQueue;
+    NSXPCConnection *_remoteRequestingClientConnection;
+    NSObject<OS_dispatch_source> *_remoteRequestingClientConnectionInvalidationTimer;
+    NSMutableDictionary *_statusHandlers;
 }
 
++ (_Bool)_hasEntitlementForMusicSubscriptionStatusService;
 + (id)sharedStatusController;
 - (void).cxx_destruct;
 - (void)_subscriptionStatusCacheDidChangeNotification:(id)arg1;
+- (void)_willBeginRemoteRequestForUniqueIdentifier:(id)arg1 statusHandler:(CDUnknownBlockType)arg2;
+- (CDUnknownBlockType)_statusHandlerForUniqueIdentifier:(id)arg1;
+- (void)_scheduleInvalidationOfRemoteRequestingClientConnection;
+- (void)_remoteRequestingClientConnectionInvalidationTimerDidExpire;
+- (id)_remoteRequestingClientConnection;
+- (void)_invalidateRemoteRequestingClientConnection;
+- (void)_didEndRemoteRequestForUniqueIdentifier:(id)arg1;
+- (void)_cancelRemoteRequestingClientConnectionInvalidationTimer;
+- (void)deliverSubscriptionStatusResponse:(id)arg1 forUniqueIdentifier:(id)arg2 error:(id)arg3;
 - (void)enablePeriodicSubscriptionRefresh;
 - (void)invalidateCachedSubscriptionStatusForUserIdentity:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)invalidateCachedSubscriptionStatusWithCompletionHandler:(CDUnknownBlockType)arg1;
@@ -28,12 +45,19 @@
 - (void)disableSubscriptionWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)enableSubscriptionForUserIdentity:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)enableSubscriptionWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)performSubscriptionStatusRequest:(id)arg1 withStatusHandler:(CDUnknownBlockType)arg2;
 - (void)performSubscriptionStatusRequest:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)getSubscriptionStatusForUserIdentity:(id)arg1 bypassingCache:(_Bool)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
 - (void)getSubscriptionStatusForUserIdentity:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)getSubscriptionStatusWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)dealloc;
 - (id)init;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

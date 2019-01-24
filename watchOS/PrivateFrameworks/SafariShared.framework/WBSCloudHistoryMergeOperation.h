@@ -32,7 +32,7 @@
 - (void)_buildRedirectChains;
 - (void)_loadTombstonesWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_buildVisitsByVisitIdentifiersMap;
-- (void)_replayAndAddTombstones;
+- (void)_replayAndAddTombstones:(CDUnknownBlockType)arg1;
 - (void)_updateClientVersions;
 - (void)mergeWithCompletion:(CDUnknownBlockType)arg1;
 - (id)initWithHistory:(id)arg1 fetchResult:(id)arg2;

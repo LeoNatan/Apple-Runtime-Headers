@@ -17,12 +17,13 @@
 @interface MKPlaceCardHeaderViewController : MKPlaceSectionViewController <_MKStackViewDelegate, _MKInfoCardChildViewControllerAnalyticsDelegate, MKModuleViewControllerProtocol, MKETAProviderObserver>
 {
     unsigned long long _layout;
-    MKPlaceSectionRowView *_titleOnlySectionView;
+    MKPlaceSectionRowView *_titleSectionView;
     MKPlaceSectionRowView *_labelsSectionView;
     UIImageView *_logoImageView;
     _MKUILabel *_titleOnlyLabel;
     _MKUILabel *_firstLabel;
     _MKUILabel *_secondLabel;
+    _MKUILabel *_secondaryNameLabel;
     _MKUILabel *_thirdLabel;
     UIView *_thirdDisplayedLabel;
     NSArray *_constraints;
@@ -30,6 +31,7 @@
     NSURL *_logoURL;
     _MKDataHeaderModel *_dataModel;
     _MKTokenAttributedString *_titleToken;
+    _MKTokenAttributedString *_secondaryNameToken;
     _MKTokenAttributedString *_distanceToken;
     _MKTokenAttributedString *_ratingsToken;
     _MKTokenAttributedString *_priceToken;
@@ -40,9 +42,13 @@
     _MKTokenAttributedString *_venueToken;
     _MKTokenAttributedString *_verifiedToken;
     NSLayoutConstraint *_titleTrailingConstraint;
+    NSLayoutConstraint *_secondLabelToFirstLabelConstraint;
+    double _secondLabelToFirstLabelConstraintConstantMax;
+    double _secondLabelToFirstLabelConstraintConstantMin;
     _Bool _isUserLocation;
     _Bool _optionSmallScreen;
     _Bool _constraintsCreated;
+    _Bool _notVerified;
     id <_MKPlaceItem> _placeItem;
     id <GEOTransitLineItem> _lineItem;
     id <MKPlaceCardHeaderViewControllerDelegate> _delegate;
@@ -56,7 +62,9 @@
 @property(readonly, nonatomic) id <_MKPlaceItem> placeItem; // @synthesize placeItem=_placeItem;
 - (void).cxx_destruct;
 - (void)infoCardThemeChanged:(id)arg1;
+- (void)updateContent;
 - (void)_contentSizeDidChange;
+- (void)viewDidLayoutSubviews;
 - (void)setConstraints;
 - (void)updateViews;
 - (void)_createViews;
@@ -70,7 +78,11 @@
 - (id)_openStateString;
 - (id)_reviewLabelText;
 - (id)_verifiedText;
+- (id)_secondaryNameTitle;
+- (_Bool)_hasSecondaryName;
 - (id)_currentTitle;
+- (double)secondaryNameLabelPadding;
+- (void)animateSecondLabelWithPercentage:(double)arg1;
 @property(nonatomic) double contentAlpha;
 - (void)hideTitle:(_Bool)arg1;
 - (void)updateHeaderTitle;
@@ -79,6 +91,7 @@
 - (void)_commonInit;
 - (id)initWithLineItem:(id)arg1 layout:(unsigned long long)arg2;
 - (id)initWithPlaceItem:(id)arg1 layout:(unsigned long long)arg2;
+- (id)secondaryNameTimingFunction;
 - (id)titleFont;
 
 // Remaining properties

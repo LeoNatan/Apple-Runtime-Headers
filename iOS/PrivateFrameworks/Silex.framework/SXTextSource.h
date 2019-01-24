@@ -6,36 +6,42 @@
 
 #import <objc/NSObject.h>
 
-@class NSLocale, NSMutableIndexSet, NSString, SXFontAttributesConstructor;
-@protocol SXSmartFieldFactory, SXTextSourceDataSource, SXTextStyleFontDescribing;
+@class NSLocale, NSMutableIndexSet, NSString, SXTextSourceDefaults;
+@protocol SXDocumentLanguageProviding, SXFontAttributesConstructor, SXSmartFieldFactory, SXTextSourceDataSource, SXTextStyleFontDescribing;
 
 @interface SXTextSource : NSObject
 {
     id <SXTextSourceDataSource> _dataSource;
     NSString *_string;
+    SXTextSourceDefaults *_defaults;
     id <SXSmartFieldFactory> _smartFieldFactory;
     NSMutableIndexSet *_deletedRangeOffsets;
     NSMutableIndexSet *_insertedRangeOffsets;
     NSMutableIndexSet *_rangesExcludedOfParagraphSpacing;
-    SXFontAttributesConstructor *_fontAttributeConstructor;
+    id <SXFontAttributesConstructor> _fontAttributeConstructor;
     id <SXTextStyleFontDescribing> _defaultFontDescribing;
+    id <SXDocumentLanguageProviding> _documentLanguageProvider;
 }
 
+@property(readonly, nonatomic) id <SXDocumentLanguageProviding> documentLanguageProvider; // @synthesize documentLanguageProvider=_documentLanguageProvider;
 @property(readonly, nonatomic) id <SXTextStyleFontDescribing> defaultFontDescribing; // @synthesize defaultFontDescribing=_defaultFontDescribing;
-@property(readonly, nonatomic) SXFontAttributesConstructor *fontAttributeConstructor; // @synthesize fontAttributeConstructor=_fontAttributeConstructor;
+@property(readonly, nonatomic) id <SXFontAttributesConstructor> fontAttributeConstructor; // @synthesize fontAttributeConstructor=_fontAttributeConstructor;
 @property(retain, nonatomic) NSMutableIndexSet *rangesExcludedOfParagraphSpacing; // @synthesize rangesExcludedOfParagraphSpacing=_rangesExcludedOfParagraphSpacing;
 @property(retain, nonatomic) NSMutableIndexSet *insertedRangeOffsets; // @synthesize insertedRangeOffsets=_insertedRangeOffsets;
 @property(retain, nonatomic) NSMutableIndexSet *deletedRangeOffsets; // @synthesize deletedRangeOffsets=_deletedRangeOffsets;
 @property(readonly, nonatomic) id <SXSmartFieldFactory> smartFieldFactory; // @synthesize smartFieldFactory=_smartFieldFactory;
+@property(readonly, nonatomic) SXTextSourceDefaults *defaults; // @synthesize defaults=_defaults;
 @property(readonly, nonatomic) NSString *string; // @synthesize string=_string;
 @property(readonly, nonatomic) __weak id <SXTextSourceDataSource> dataSource; // @synthesize dataSource=_dataSource;
 - (void).cxx_destruct;
 - (id)randomColorWithAlpha:(double)arg1;
 - (id)description;
-- (id)fontFaceForTextDescribing:(id)arg1 inheritingFromTextStyle:(id)arg2;
+- (unsigned int)paragraphAlignmentForTextAlignment:(long long)arg1;
+- (id)fontDescriptionsForTextStyle:(id)arg1 defaultTextStyles:(id)arg2;
+- (id)fontFaceForTextStyle:(id)arg1 defaultTextStyle:(id)arg2 fontDescriptions:(id)arg3;
 - (struct _NSRange)rangeInBounds:(struct _NSRange)arg1 maxLength:(unsigned long long)arg2;
 @property(readonly, nonatomic) NSLocale *locale;
-- (id)attributesForTextStyle:(id)arg1 baseTextStyle:(id)arg2 onParagraphStyle:(id)arg3 forRange:(struct _NSRange)arg4 resultingDropCapStyle:(id *)arg5 textResizer:(id)arg6;
+- (id)attributesForTextStyle:(id)arg1 baseTextStyle:(id)arg2 onParagraphStyle:(id)arg3 forRange:(struct _NSRange)arg4 resultingDropCapStyle:(id *)arg5 textResizer:(id)arg6 fontFace:(id)arg7;
 - (id)characterStyleFromAttributes:(id)arg1 context:(id)arg2;
 - (int)listNumberTypeForListType:(unsigned long long)arg1;
 - (int)listLabelTypeForListType:(unsigned long long)arg1;
@@ -45,7 +51,7 @@
 - (void)applyStylingOnTextTangierStorage:(id)arg1;
 - (struct _NSRange)rangeForRange:(struct _NSRange)arg1;
 - (id)cleanString:(id)arg1;
-- (id)initWithString:(id)arg1 smartFieldFactory:(id)arg2 dataSource:(id)arg3;
+- (id)initWithString:(id)arg1 defaults:(id)arg2 smartFieldFactory:(id)arg3 dataSource:(id)arg4 documentLanguageProvider:(id)arg5 fontAttributesConstructor:(id)arg6;
 
 @end
 

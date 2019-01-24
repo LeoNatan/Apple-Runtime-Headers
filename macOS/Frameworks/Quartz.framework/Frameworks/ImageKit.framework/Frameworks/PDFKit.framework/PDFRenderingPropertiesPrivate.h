@@ -25,6 +25,7 @@ __attribute__((visibility("hidden")))
     _Bool enableAccessibilityDrawing;
     double screenScaleFactor;
     _Bool enableTileUpdates;
+    _Bool enableBackgroundImages;
     _Bool isUsingPDFExtensionView;
     struct CGColorSpace *deviceColorSpace;
 }

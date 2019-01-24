@@ -18,8 +18,8 @@ __attribute__((visibility("hidden")))
 + (struct TSCEFunctionArgSpec *)argumentSpecForFunctionIndex:(int)arg1 argumentIndex:(int)arg2;
 @property(nonatomic) short mode; // @synthesize mode=_mode;
 - (void).cxx_destruct;
-- (void)saveToArchive:(struct ArgumentPlaceholderNodeArchive *)arg1 archiver:(id)arg2;
-- (void)loadFromArchive:(const struct ArgumentPlaceholderNodeArchive *)arg1 unarchiver:(id)arg2;
+-     // Error parsing type: v32@0:8^{ArgumentPlaceholderNodeArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{ExpressionNodeArchive}III}16@24, name: saveToArchive:archiver:
+-     // Error parsing type: v32@0:8r^{ArgumentPlaceholderNodeArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{ExpressionNodeArchive}III}16@24, name: loadFromArchive:unarchiver:
 - (void)saveToArchiver:(id)arg1;
 - (void)loadFromUnarchiver:(id)arg1;
 - (_Bool)hasMenu;

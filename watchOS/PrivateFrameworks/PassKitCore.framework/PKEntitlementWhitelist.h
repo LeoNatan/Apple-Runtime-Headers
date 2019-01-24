@@ -16,6 +16,7 @@
     _Bool _paymentAllAccess;
     _Bool _paymentConfiguration;
     _Bool _paymentPresentation;
+    _Bool _applePayTrustAllAccess;
     _Bool _inAppPayments;
     _Bool _inAppPaymentsPrivate;
     _Bool _webPayments;
@@ -23,8 +24,11 @@
     _Bool _cardOnFilePayments;
     _Bool _trustedDeviceEnrollmentInfo;
     _Bool _peerPaymentAllAccess;
+    _Bool _featuresAllAccess;
+    _Bool _supportsDisbursements;
     _Bool _addSilently;
     NSString *_applicationID;
+    NSString *_developerTeamID;
     NSArray *_merchantIdentifiers;
     NSArray *_teamIDs;
     NSArray *_passTypeIDs;
@@ -37,7 +41,10 @@
 @property(copy) NSArray *passTypeIDs; // @synthesize passTypeIDs=_passTypeIDs;
 @property(copy) NSArray *teamIDs; // @synthesize teamIDs=_teamIDs;
 @property(readonly, copy) NSArray *merchantIdentifiers; // @synthesize merchantIdentifiers=_merchantIdentifiers;
+@property(readonly, copy) NSString *developerTeamID; // @synthesize developerTeamID=_developerTeamID;
 @property(readonly, copy) NSString *applicationID; // @synthesize applicationID=_applicationID;
+@property(readonly) _Bool supportsDisbursements; // @synthesize supportsDisbursements=_supportsDisbursements;
+@property(readonly) _Bool featuresAllAccess; // @synthesize featuresAllAccess=_featuresAllAccess;
 @property(readonly) _Bool peerPaymentAllAccess; // @synthesize peerPaymentAllAccess=_peerPaymentAllAccess;
 @property(readonly) _Bool trustedDeviceEnrollmentInfo; // @synthesize trustedDeviceEnrollmentInfo=_trustedDeviceEnrollmentInfo;
 @property(readonly) _Bool cardOnFilePayments; // @synthesize cardOnFilePayments=_cardOnFilePayments;
@@ -45,6 +52,7 @@
 @property(readonly) _Bool webPayments; // @synthesize webPayments=_webPayments;
 @property(readonly) _Bool inAppPaymentsPrivate; // @synthesize inAppPaymentsPrivate=_inAppPaymentsPrivate;
 @property(readonly) _Bool inAppPayments; // @synthesize inAppPayments=_inAppPayments;
+@property(readonly) _Bool applePayTrustAllAccess; // @synthesize applePayTrustAllAccess=_applePayTrustAllAccess;
 @property(readonly) _Bool paymentPresentation; // @synthesize paymentPresentation=_paymentPresentation;
 @property(readonly) _Bool paymentConfiguration; // @synthesize paymentConfiguration=_paymentConfiguration;
 @property(readonly) _Bool paymentAllAccess; // @synthesize paymentAllAccess=_paymentAllAccess;

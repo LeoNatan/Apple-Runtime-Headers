@@ -17,6 +17,7 @@
     int _eventAccess;
     int _reminderAccess;
     // Error parsing type: ^{CalDatabase={__CFRuntimeBase=IAI}i^{CPRecordStore}^{CalEventOccurrenceCache}^{CalScheduledTaskCache}^{__CFDictionary}^{__CFDictionary}{_opaque_pthread_mutex_t=l[40c]}II^{__CFArray}^{__CFString}^{__CFArray}ii^{__CFString}^{__CFString}^{__CFString}i@?{_opaque_pthread_mutex_t=l[40c]}B^{__CFArray}^{__CFArray}^{__CFArray}^{__CFArray}B@B}, name: _database
+    id <CADAccountAccessHandler> _accountAccessHandler;
     NSObject<OS_dispatch_queue> *_dbQueue;
     NSOperationQueue *_operations;
     NSMutableDictionary *_insertedObjects;
@@ -29,10 +30,8 @@
     ClientIdentity *_identity;
     NSXPCConnection *_xpcConnection;
     CADDatabaseInitializationOptions *_databaseInitializationOptions;
-    id <CADAccountAccessHandler> _accountAccessHandler;
 }
 
-@property(readonly, nonatomic) id <CADAccountAccessHandler> accountAccessHandler; // @synthesize accountAccessHandler=_accountAccessHandler;
 @property(readonly) _Bool initializationOptionsSet; // @synthesize initializationOptionsSet=_initializationOptionsSet;
 @property(retain, nonatomic) CADDatabaseInitializationOptions *databaseInitializationOptions; // @synthesize databaseInitializationOptions=_databaseInitializationOptions;
 @property(retain, nonatomic) NSXPCConnection *xpcConnection; // @synthesize xpcConnection=_xpcConnection;
@@ -69,6 +68,7 @@
 - (void)closeDatabase;
 - (void)dealloc;
 - (void)handleDatabaseChanged;
+@property(readonly, nonatomic) id <CADAccountAccessHandler> accountAccessHandler;
 - (void)_initAccountAccessHandler;
 - (id)initWithXPCConnection:(id)arg1;
 

@@ -13,6 +13,7 @@
 - (UIViewController<PLPreviewInteractionPresentable> *)presentedViewControllerForPreviewInteractionManager:(PLPreviewInteractionManager *)arg1;
 
 @optional
+- (_Bool)previewInteractionManagerShouldUseHapticTouch:(PLPreviewInteractionManager *)arg1;
 - (void)previewInteractionManager:(PLPreviewInteractionManager *)arg1 declinedDismissingPresentedContentWithTrigger:(long long)arg2;
 - (void)previewInteractionManager:(PLPreviewInteractionManager *)arg1 willDismissPresentedContentWithTrigger:(long long)arg2;
 - (_Bool)previewInteractionManagerShouldAutomaticallyTransitionToPreviewAfterDelay:(PLPreviewInteractionManager *)arg1;

@@ -21,6 +21,7 @@
 - (id)dequeue;
 - (unsigned long long)count;
 - (id)init;
+- (void)dealloc;
 
 @end
 

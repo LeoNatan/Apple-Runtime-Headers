@@ -7,12 +7,13 @@
 #import <Safari/TextFieldEditor.h>
 
 #import <Safari/NSTextInputClient_IncrementalSearch-Protocol.h>
+#import <Safari/UnifiedFieldLayoutManagerDelegate-Protocol.h>
 
 @class NSString;
 @protocol UnifiedFieldEditorDelegate;
 
 __attribute__((visibility("hidden")))
-@interface UnifiedFieldEditor : TextFieldEditor <NSTextInputClient_IncrementalSearch>
+@interface UnifiedFieldEditor : TextFieldEditor <NSTextInputClient_IncrementalSearch, UnifiedFieldLayoutManagerDelegate>
 {
     NSString *_previousMarkedText;
     BOOL _selectionWasAutocompleted;
@@ -52,6 +53,7 @@ __attribute__((visibility("hidden")))
 - (void)mouseDown:(id)arg1;
 - (BOOL)resignFirstResponder;
 - (BOOL)becomeFirstResponder;
+- (double)extraTrailingPaddingForSelectionRectInUnifiedFieldLayoutManager:(id)arg1;
 - (id)init;
 
 @end

@@ -6,27 +6,6 @@
 
 #import <MarkupUI/NSObject-Protocol.h>
 
-@class AKController, NSArray, NSUndoManager, UIView, UIViewController;
-
 @protocol PDFAKControllerDelegateProtocol <NSObject>
-
-@optional
-- (void)controllerWillDismissSignatureManagerView:(AKController *)arg1;
-- (void)controllerWillShowSignatureManagerView:(AKController *)arg1;
-- (void)controllerWillDismissSignatureCaptureView:(AKController *)arg1;
-- (void)controllerWillShowSignatureCaptureView:(AKController *)arg1;
-- (void)controllerDidExitToolMode:(AKController *)arg1;
-- (void)controllerWillExitToolMode:(AKController *)arg1;
-- (void)controllerDidEnterToolMode:(AKController *)arg1;
-- (void)controllerWillEnterToolMode:(AKController *)arg1;
-- (void)penStrokeCompletedForAnnotationController:(AKController *)arg1;
-- (struct CGRect)positioningRectForCandidatePicker;
-- (void)editCheckpointReachedForAnnotationController:(AKController *)arg1;
-- (void)editDetectedForAnnotationController:(AKController *)arg1;
-- (NSUndoManager *)undoManagerForAnnotationController:(AKController *)arg1;
-- (UIViewController *)popoverPresentingViewControllerForAnnotationController:(AKController *)arg1;
-- (void)positionSketchOverlay:(UIView *)arg1 forAnnotationController:(AKController *)arg2;
-- (NSArray *)controller:(AKController *)arg1 willSetToolbarItems:(NSArray *)arg2;
-- (double)modelBaseScaleFactorOfPageAtIndex:(unsigned long long)arg1 forAnnotationController:(AKController *)arg2;
 @end
 

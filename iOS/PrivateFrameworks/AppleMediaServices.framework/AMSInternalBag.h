@@ -10,12 +10,13 @@
 #import <AppleMediaServices/AMSLookupBagContract-Protocol.h>
 #import <AppleMediaServices/AMSMescalBagContract-Protocol.h>
 #import <AppleMediaServices/AMSMetricsBagContract-Protocol.h>
+#import <AppleMediaServices/AMSPushHandlerContract-Protocol.h>
 
 @class AMSBag, AMSBagValue, NSString;
 @protocol AMSMescalBagContract, AMSMetricsBagContract;
 
 __attribute__((visibility("hidden")))
-@interface AMSInternalBag : NSObject <AMSDeviceOfferBagContract, AMSMetricsBagContract, AMSMescalBagContract, AMSLookupBagContract>
+@interface AMSInternalBag : NSObject <AMSDeviceOfferBagContract, AMSMetricsBagContract, AMSMescalBagContract, AMSLookupBagContract, AMSPushHandlerContract>
 {
     AMSBag *_bag;
 }

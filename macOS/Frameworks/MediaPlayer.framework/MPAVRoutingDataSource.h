@@ -13,8 +13,10 @@
     NSObject<OS_dispatch_queue> *_serialQueue;
     BOOL _devicePresenceDetected;
     long long _discoveryMode;
+    long long _filterMode;
 }
 
+@property(nonatomic) long long filterMode; // @synthesize filterMode=_filterMode;
 @property(readonly, nonatomic) BOOL devicePresenceDetected; // @synthesize devicePresenceDetected=_devicePresenceDetected;
 @property(nonatomic) long long discoveryMode; // @synthesize discoveryMode=_discoveryMode;
 - (void).cxx_destruct;

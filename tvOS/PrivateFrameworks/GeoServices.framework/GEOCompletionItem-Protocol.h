@@ -17,6 +17,8 @@
 @property(readonly, nonatomic) long long type;
 @property(readonly, nonatomic) NSData *metadata;
 @property(readonly, nonatomic) NSData *entryMetadata;
+@property(readonly, nonatomic) long long sortPriority;
+@property(readonly, nonatomic) _Bool hasSortPriority;
 @property(readonly, nonatomic) GEORetainedSearchMetadata *retainedSearchMetadata;
 @property(readonly, nonatomic) GEODirectionIntent *directionIntent;
 @property(readonly, nonatomic) GEOResolvedItem *clientResolved;

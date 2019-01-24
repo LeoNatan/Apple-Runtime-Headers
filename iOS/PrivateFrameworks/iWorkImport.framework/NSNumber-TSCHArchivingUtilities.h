@@ -7,10 +7,10 @@
 #import <Foundation/NSNumber.h>
 
 @interface NSNumber (TSCHArchivingUtilities)
-+ (id)tsch_optionalNumberWithArchive:(const struct ChartsNSNumberDoubleArchive *)arg1 unarchiver:(id)arg2;
-+ (void)tsch_saveOptionalNumber:(id)arg1 toArchive:(struct ChartsNSNumberDoubleArchive *)arg2 archiver:(id)arg3;
-+ (id)tsch_instanceWithArchive:(const struct ChartsNSNumberDoubleArchive *)arg1 unarchiver:(id)arg2;
-- (id)tsch_initWithArchive:(const struct ChartsNSNumberDoubleArchive *)arg1 unarchiver:(id)arg2;
-- (void)tsch_saveToArchive:(struct ChartsNSNumberDoubleArchive *)arg1 archiver:(id)arg2;
++     // Error parsing type: @32@0:8r^{ChartsNSNumberDoubleArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}d}16@24, name: tsch_optionalNumberWithArchive:unarchiver:
++     // Error parsing type: v40@0:8@16^{ChartsNSNumberDoubleArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}d}24@32, name: tsch_saveOptionalNumber:toArchive:archiver:
++     // Error parsing type: @32@0:8r^{ChartsNSNumberDoubleArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}d}16@24, name: tsch_instanceWithArchive:unarchiver:
+-     // Error parsing type: @32@0:8r^{ChartsNSNumberDoubleArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}d}16@24, name: tsch_initWithArchive:unarchiver:
+-     // Error parsing type: v32@0:8^{ChartsNSNumberDoubleArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}d}16@24, name: tsch_saveToArchive:archiver:
 @end
 

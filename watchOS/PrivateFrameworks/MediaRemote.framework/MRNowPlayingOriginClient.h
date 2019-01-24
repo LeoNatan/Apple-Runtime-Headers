@@ -50,11 +50,10 @@
 @property(retain, nonatomic) MRApplicationActivity *activity;
 @property(retain, nonatomic) _MRNowPlayingClientProtobuf *activeNowPlayingClient; // @synthesize activeNowPlayingClient=_activeNowPlayingClient;
 @property(nonatomic) _Bool canBeNowPlayingApp;
-@property(readonly, nonatomic) _MRDeviceInfoMessageProtobuf *deviceInfo;
-- (void)updateDeviceInfo:(id)arg1;
 @property(nonatomic) unsigned int inputMode;
 @property(nonatomic) unsigned int routeDiscoveryMode;
 @property(nonatomic) _Bool isOverrideApp;
+@property(retain, nonatomic) _MRDeviceInfoMessageProtobuf *deviceInfo;
 @property(copy, nonatomic) NSArray *applicationPickedRoutes;
 @property(copy, nonatomic) CDUnknownBlockType endLyricsEventCallback;
 @property(copy, nonatomic) CDUnknownBlockType beginLyricsEventCallback;

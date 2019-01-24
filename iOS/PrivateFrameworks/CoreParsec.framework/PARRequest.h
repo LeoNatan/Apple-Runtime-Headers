@@ -9,6 +9,7 @@
 #import <CoreParsec/NSSecureCoding-Protocol.h>
 
 @class NSArray, NSDictionary, NSString;
+@protocol OS_nw_activity;
 
 @interface PARRequest : NSObject <NSSecureCoding>
 {
@@ -20,6 +21,8 @@
     unsigned long long _triggerEvent;
     NSArray *_queryItems;
     NSDictionary *_headerItems;
+    NSObject<OS_nw_activity> *_nwActivity;
+    char *_nwActivityToken;
 }
 
 + (_Bool)supportsSecureCoding;
@@ -36,6 +39,8 @@
 + (id)searchRequestWithString:(id)arg1 triggerEvent:(unsigned long long)arg2 queryId:(unsigned long long)arg3;
 + (id)searchRequestWithString:(id)arg1 triggerEvent:(unsigned long long)arg2;
 + (id)searchRequestWithString:(id)arg1;
+@property(readonly, nonatomic) char *nwActivityToken; // @synthesize nwActivityToken=_nwActivityToken;
+@property(retain, nonatomic) NSObject<OS_nw_activity> *nwActivity; // @synthesize nwActivity=_nwActivity;
 @property(copy, nonatomic) NSDictionary *headerItems; // @synthesize headerItems=_headerItems;
 @property(copy, nonatomic) NSArray *queryItems; // @synthesize queryItems=_queryItems;
 @property(nonatomic) unsigned long long triggerEvent; // @synthesize triggerEvent=_triggerEvent;
@@ -45,6 +50,7 @@
 @property(nonatomic) double scale; // @synthesize scale=_scale;
 @property(readonly, nonatomic) unsigned long long queryId; // @synthesize queryId=_queryId;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) unsigned int nwActivityLabel;
 - (Class)responseClass;
 - (void)setQueryId:(unsigned long long)arg1;
 @property(readonly, nonatomic) unsigned long long clientQueryId;

@@ -12,19 +12,21 @@
 __attribute__((visibility("hidden")))
 @interface _UIClickFeedbackGeneratorConfiguration : _UIFeedbackGeneratorUserInteractionDrivenConfiguration
 {
-    _UIFeedback<_UIFeedbackDiscretePlayable> *_pressedDownFeedback;
-    _UIFeedback<_UIFeedbackDiscretePlayable> *_pressedUpFeedback;
-    _UIFeedback<_UIFeedbackDiscretePlayable> *_clickAudioFeedback;
+    _UIFeedback<_UIFeedbackDiscretePlayable> *_clickDownFeedback;
+    _UIFeedback<_UIFeedbackDiscretePlayable> *_clickDownAudioFeedback;
+    _UIFeedback<_UIFeedbackDiscretePlayable> *_clickUpFeedback;
+    _UIFeedback<_UIFeedbackDiscretePlayable> *_clickUpAudioFeedback;
 }
 
-+ (id)_clickAudio;
 + (id)latchingOffConfiguration;
 + (id)latchingOnConfiguration;
 + (id)defaultConfiguration;
+@property(retain, nonatomic) _UIFeedback<_UIFeedbackDiscretePlayable> *clickDownFeedback; // @synthesize clickDownFeedback=_clickDownFeedback;
 - (void).cxx_destruct;
-@property(retain, nonatomic) _UIFeedback<_UIFeedbackDiscretePlayable> *clickAudioFeedback; // @synthesize clickAudioFeedback=_clickAudioFeedback;
-@property(retain, nonatomic) _UIFeedback<_UIFeedbackDiscretePlayable> *pressedUpFeedback; // @synthesize pressedUpFeedback=_pressedUpFeedback;
-@property(retain, nonatomic) _UIFeedback<_UIFeedbackDiscretePlayable> *pressedDownFeedback; // @synthesize pressedDownFeedback=_pressedDownFeedback;
+@property(retain, nonatomic) _UIFeedback<_UIFeedbackDiscretePlayable> *clickUpAudioFeedback; // @synthesize clickUpAudioFeedback=_clickUpAudioFeedback;
+@property(retain, nonatomic) _UIFeedback<_UIFeedbackDiscretePlayable> *clickUpFeedback; // @synthesize clickUpFeedback=_clickUpFeedback;
+@property(retain, nonatomic) _UIFeedback<_UIFeedbackDiscretePlayable> *clickDownAudioFeedback; // @synthesize clickDownAudioFeedback=_clickDownAudioFeedback;
+- (void)setclickDownFeedback:(id)arg1;
 - (id)feedbackKeyPaths;
 - (long long)requiredSupportLevel;
 

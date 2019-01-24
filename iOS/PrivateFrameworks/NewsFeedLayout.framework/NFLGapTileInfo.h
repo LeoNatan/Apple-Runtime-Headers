@@ -8,22 +8,23 @@
 
 #import <NewsFeedLayout/NFLFeedTileInfo-Protocol.h>
 
-@class NSArray, NSString;
+@class NFLHeadlineTileInfo, NSArray, NSString;
 
 @interface NFLGapTileInfo : NSObject <NFLFeedTileInfo>
 {
     NSString *_identifier;
-    NSString *_groupIdentifier;
     NSArray *_underlyingFeedElements;
+    NSString *_groupIdentifier;
 }
 
-@property(readonly, nonatomic) NSArray *underlyingFeedElements; // @synthesize underlyingFeedElements=_underlyingFeedElements;
 @property(readonly, copy, nonatomic) NSString *groupIdentifier; // @synthesize groupIdentifier=_groupIdentifier;
+@property(readonly, nonatomic) NSArray *underlyingFeedElements; // @synthesize underlyingFeedElements=_underlyingFeedElements;
 @property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
+- (id)updatedTileInfoWithNewHeadline:(id)arg1;
 @property(readonly, nonatomic) unsigned long long tileInfoType;
 @property(readonly, nonatomic) unsigned long long bookmarkOffsetType;
-@property(readonly, nonatomic) _Bool bookmarkable;
+@property(readonly, nonatomic) NFLHeadlineTileInfo *feedTileInfoForBookmarking;
 @property(readonly, nonatomic) _Bool pageable;
 - (_Bool)isEqual:(id)arg1;
 @property(readonly) unsigned long long hash;

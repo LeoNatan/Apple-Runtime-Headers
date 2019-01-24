@@ -11,8 +11,8 @@ __attribute__((visibility("hidden")))
 {
 }
 
-- (void)setWeakLazyReference:(id)arg1 message:(struct Reference *)arg2;
-- (void)setWeakReference:(id)arg1 message:(struct Reference *)arg2;
+-     // Error parsing type: v32@0:8@16^{Reference=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}QiB}24, name: setWeakLazyReference:message:
+-     // Error parsing type: v32@0:8@16^{Reference=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}QiB}24, name: setWeakReference:message:
 
 @end
 

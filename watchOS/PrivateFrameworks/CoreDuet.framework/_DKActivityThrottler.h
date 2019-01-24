@@ -7,13 +7,14 @@
 #import <objc/NSObject.h>
 
 @class NSCache, NSCountedSet;
-@protocol _DKSimpleKeyValueStore;
+@protocol OS_dispatch_queue, _DKSimpleKeyValueStore;
 
 @interface _DKActivityThrottler : NSObject
 {
     NSCountedSet *_minimumIntervalScheduledActions;
     NSCountedSet *_delayScheduledActions;
     NSCache *_cache;
+    NSObject<OS_dispatch_queue> *_storeQueue;
     id <_DKSimpleKeyValueStore> _store;
 }
 

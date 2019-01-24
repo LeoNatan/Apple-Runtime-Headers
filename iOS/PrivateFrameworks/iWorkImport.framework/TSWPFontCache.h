@@ -38,6 +38,8 @@ __attribute__((visibility("hidden")))
 - (id)fontNameForFamilyName:(id)arg1;
 - (id)displayNameForFontFamily:(id)arg1;
 - (id)sortedFontFamilies;
+- (void)setFontRef:(const struct __CTFont *)arg1 forFontName:(id)arg2 fontSize:(double)arg3 bold:(_Bool)arg4 italic:(_Bool)arg5 fontFeatures:(id)arg6;
+- (const struct __CTFont *)queryFontName:(id)arg1 fontSize:(double)arg2 bold:(_Bool)arg3 italic:(_Bool)arg4 fontFeatures:(id)arg5;
 - (const struct __CTFont *)createFontWithName:(id)arg1 size:(double)arg2 options:(unsigned long long)arg3;
 - (id)init;
 

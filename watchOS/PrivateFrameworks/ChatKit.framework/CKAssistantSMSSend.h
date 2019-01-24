@@ -10,6 +10,7 @@
 {
 }
 
+- (_Bool)shouldForceToSMS:(id)arg1;
 - (void)sendSMS:(id)arg1 toAddresses:(id)arg2 groupNameID:(id)arg3 idsIdentifier:(id)arg4;
 - (void)sendSMS:(id)arg1 toAddresses:(id)arg2 groupNameID:(id)arg3;
 - (id)errorWithDescription:(id)arg1;

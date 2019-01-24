@@ -8,13 +8,15 @@
 
 #import <RTTUtilities/AVCVirtualTTYDeviceDelegate-Protocol.h>
 
-@class AVCVirtualTTYDevice, NSDictionary, NSString, RTTConversation, TUCall;
+@class AVCVirtualTTYDevice, AXDispatchTimer, NSDictionary, NSMutableString, NSString, RTTConversation, TUCall;
 @protocol OS_dispatch_queue, RTTCallDelegate;
 
 @interface RTTCall : NSObject <AVCVirtualTTYDeviceDelegate>
 {
     int _ttyMode;
     NSObject<OS_dispatch_queue> *_callQueue;
+    NSMutableString *_garbageCollection;
+    AXDispatchTimer *_garbageCharacterStripperTimer;
     id <RTTCallDelegate> _delegate;
     RTTConversation *_conversation;
     TUCall *_call;
@@ -24,12 +26,16 @@
 
 @property(retain, nonatomic) NSDictionary *substitutions; // @synthesize substitutions=_substitutions;
 @property(retain, nonatomic) AVCVirtualTTYDevice *ttyDevice; // @synthesize ttyDevice=_ttyDevice;
+@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *callQueue; // @synthesize callQueue=_callQueue;
 @property(retain, nonatomic) TUCall *call; // @synthesize call=_call;
 @property(retain, nonatomic) RTTConversation *conversation; // @synthesize conversation=_conversation;
-@property(nonatomic) id <RTTCallDelegate> delegate; // @synthesize delegate=_delegate;
+@property(nonatomic) __weak id <RTTCallDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)device:(id)arg1 didReceiveCharacter:(unsigned short)arg2;
 - (void)device:(id)arg1 didReceiveText:(struct NSString *)arg2;
+- (void)callDidReceiveText:(id)arg1 forUtterance:(id)arg2;
+- (struct NSString *)_processText:(struct NSString *)arg1 withDevice:(id)arg2;
+- (_Bool)_handleInitialGarbageTextFromTTY:(struct NSString *)arg1 device:(id)arg2;
 - (void)deviceDidStop:(id)arg1;
 - (void)device:(id)arg1 didStart:(_Bool)arg2 error:(id)arg3;
 - (void)sendString:(id)arg1;

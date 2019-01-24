@@ -6,7 +6,7 @@
 
 #import <CoreData/NSPersistentContainer.h>
 
-@class NSArray, NSCloudKitMirroringDelegateOptions, NSDate, NSMutableArray, NSPersistentHistoryToken, NSPersistentStore, NSString, RCDatabaseMetadata;
+@class NSArray, NSCloudKitMirroringDelegateOptions, NSDate, NSMutableArray, NSPersistentHistoryToken, NSPersistentStore, NSSet, NSString, RCDatabaseMetadata;
 
 __attribute__((visibility("hidden")))
 @interface RCPersistentContainer : NSPersistentContainer
@@ -16,6 +16,7 @@ __attribute__((visibility("hidden")))
     NSArray *_cloudStores;
     NSString *_cloudStoreIdentifier;
     NSString *_transactionAuthor;
+    NSSet *_relevantProperties;
     RCDatabaseMetadata *_metadata;
     NSCloudKitMirroringDelegateOptions *_mirroringOptions;
     NSPersistentHistoryToken *_currentHistoryToken;
@@ -42,6 +43,7 @@ __attribute__((visibility("hidden")))
 - (id)_valueForDatabaseProperty:(id)arg1 context:(id)arg2;
 - (void)_handleRemoteChangeNotification:(id)arg1;
 - (void)_handleRemoteChangeNotificationOnMainQueue:(id)arg1;
+- (_Bool)_isRelevantTransaction:(id)arg1;
 - (id)_nextTransactionAfterToken:(id)arg1 context:(id)arg2 error:(id *)arg3;
 - (id)newContextWithConcurrencyType:(unsigned long long)arg1;
 - (void)dealloc;

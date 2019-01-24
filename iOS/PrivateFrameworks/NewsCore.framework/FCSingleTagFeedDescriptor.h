@@ -36,6 +36,7 @@
 - (id)backingTopicID;
 - (id)backingSectionID;
 - (id)backingChannelID;
+- (id)backingChannel;
 - (id)backingTag;
 - (_Bool)enableNotificationsWithSubscriptionController:(id)arg1 error:(id *)arg2;
 - (_Bool)hasNotificationsEnabledWithSubscriptionController:(id)arg1;
@@ -44,6 +45,7 @@
 - (void)unsubscribeToWithSubscriptionController:(id)arg1 eventInitiationLevel:(long long)arg2;
 - (_Bool)subscribeToWithSubscriptionController:(id)arg1 eventInitiationLevel:(long long)arg2 error:(id *)arg3;
 - (_Bool)isSubscribable;
+- (id)languagesWithSubscriptionController:(id)arg1;
 - (id)theme;
 - (_Bool)hideAccessoryText;
 - (id)name;

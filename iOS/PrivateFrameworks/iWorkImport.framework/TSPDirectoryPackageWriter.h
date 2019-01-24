@@ -19,7 +19,7 @@ __attribute__((visibility("hidden")))
 - (id)newPackageWithPackageIdentifier:(unsigned char)arg1 documentProperties:(id)arg2 fileFormatVersion:(unsigned long long)arg3 decryptionKey:(id)arg4 fileCoordinatorDelegate:(id)arg5;
 - (struct CGDataConsumer *)newCGDataConsumerAtRelativePath:(id)arg1;
 - (_Bool)writeData:(id)arg1 toRelativePath:(id)arg2 allowEncryption:(_Bool)arg3 error:(id *)arg4;
-- (id)linkOrCopyData:(id)arg1 fromURL:(id)arg2 decryptionInfo:(id)arg3 preferredFilename:(id)arg4 error:(id *)arg5;
+- (id)linkOrCopyData:(id)arg1 fromURL:(id)arg2 fromTemporaryLocation:(_Bool)arg3 decryptionInfo:(id)arg4 preferredFilename:(id)arg5 error:(id *)arg6;
 - (id)targetDataURLForPath:(id)arg1;
 - (id)newRawComponentWriteChannelWithPackageLocator:(id)arg1 storeOutsideObjectArchive:(_Bool)arg2;
 - (id)packageEntryInfoForComponentLocator:(id)arg1 isStoredOutsideObjectArchive:(_Bool)arg2 packageURL:(id)arg3;

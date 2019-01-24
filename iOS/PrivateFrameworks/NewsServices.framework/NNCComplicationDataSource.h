@@ -10,8 +10,10 @@
 {
 }
 
++ (id)fullColorImageProviderWithName:(id)arg1;
 + (id)imageProviderWithForegroundName:(id)arg1 compact:(_Bool)arg2;
 + (id)_templateForFamily:(long long)arg1 newsStoryResult:(id)arg2 compact:(_Bool)arg3;
++ (id)_oneLineHeadlineTextProviderForResult:(id)arg1;
 + (id)_complicationTitle;
 + (id)_noNewStoriesShortString;
 + (id)_noNewStoriesLargeString;

@@ -36,6 +36,7 @@
 + (id)actionSheetLikeImageWithPresentationStyle:(int)arg1;
 + (id)orbAirPlayImage;
 + (id)connectBluetoothHeadphonesImage;
++ (id)routingTypeGenericTVImage;
 + (id)routingTypeGenericBluetoothImage;
 + (id)routingTypeGenericSpeakerImage;
 + (id)routingTypeBeatsXImage;

@@ -6,12 +6,13 @@
 
 #import <objc/NSObject.h>
 
-@class AMSUserNotificationAction, NSArray, NSMutableDictionary, NSString;
+@class ACAccount, AMSUserNotificationAction, NSArray, NSMutableDictionary, NSString, NSURL;
 
 @interface AMSUserNotification : NSObject
 {
+    ACAccount *_account;
+    NSURL *_artworkUrl;
     NSArray *_buttonActions;
-    long long _intent;
     AMSUserNotificationAction *_defaultAction;
     NSString *_identifier;
     NSString *_informativeText;
@@ -19,10 +20,14 @@
     NSString *_subtitle;
     NSString *_title;
     NSMutableDictionary *_userInfo;
+    long long _intent;
     NSString *_categoryIdentifier;
+    NSString *_threadIdentifier;
 }
 
-@property(readonly) NSString *categoryIdentifier; // @synthesize categoryIdentifier=_categoryIdentifier;
+@property(retain) NSString *threadIdentifier; // @synthesize threadIdentifier=_threadIdentifier;
+@property(retain) NSString *categoryIdentifier; // @synthesize categoryIdentifier=_categoryIdentifier;
+@property long long intent; // @synthesize intent=_intent;
 @property(retain) NSMutableDictionary *userInfo; // @synthesize userInfo=_userInfo;
 @property(retain) NSString *title; // @synthesize title=_title;
 @property(retain) NSString *subtitle; // @synthesize subtitle=_subtitle;
@@ -30,19 +35,19 @@
 @property(retain) NSString *informativeText; // @synthesize informativeText=_informativeText;
 @property(retain) NSString *identifier; // @synthesize identifier=_identifier;
 @property(retain) AMSUserNotificationAction *defaultAction; // @synthesize defaultAction=_defaultAction;
-@property long long intent; // @synthesize intent=_intent;
 @property(retain) NSArray *buttonActions; // @synthesize buttonActions=_buttonActions;
+@property(retain) NSURL *artworkUrl; // @synthesize artworkUrl=_artworkUrl;
+@property(retain) ACAccount *account; // @synthesize account=_account;
 - (void).cxx_destruct;
-- (void)_populatePropertiesFromStoredUserInfo:(id)arg1;
+- (BOOL)_populatePropertiesFromStoredUserInfo:(id)arg1;
 - (id)_compileStoredUserInfo;
-- (void)handleSelectedButton:(id)arg1;
-- (BOOL)shouldHandleSelection;
+- (id)handleSelectedButton:(id)arg1 bagContract:(id)arg2;
 - (void)addButtonAction:(id)arg1;
-- (id)createUNNotificationCategory;
+- (id)createUNNotificationActions;
 - (id)createUNNotificationContent;
 - (id)createNSUserNotification;
-- (id)initWithUNNotification:(id)arg1 center:(id)arg2;
-- (id)initWithNSUserNotification:(id)arg1 center:(id)arg2;
+- (id)initWithUNNotification:(id)arg1;
+- (id)initWithNSUserNotification:(id)arg1;
 - (id)initWithTitle:(id)arg1 intent:(long long)arg2;
 - (id)initWithTitle:(id)arg1;
 

@@ -11,6 +11,7 @@
 __attribute__((visibility("hidden")))
 @interface _UIStatusBarBackgroundActivityItem : _UIStatusBarIndicatorItem
 {
+    long long _previousType;
     _UIStatusBarBackgroundActivityView *_backgroundView;
     _UIStatusBarBackgroundActivityView *_combinedView;
 }
@@ -20,16 +21,23 @@ __attribute__((visibility("hidden")))
 + (id)backgroundDisplayIdentifier;
 @property(retain, nonatomic) _UIStatusBarBackgroundActivityView *combinedView; // @synthesize combinedView=_combinedView;
 @property(retain, nonatomic) _UIStatusBarBackgroundActivityView *backgroundView; // @synthesize backgroundView=_backgroundView;
+@property(nonatomic) long long previousType; // @synthesize previousType=_previousType;
 - (void).cxx_destruct;
 - (_Bool)shouldUpdateIndicatorForIdentifier:(id)arg1;
 - (id)viewForIdentifier:(id)arg1;
+- (_Bool)_shouldBounceWhenTransitioningFromType:(long long)arg1 toType:(long long)arg2;
+- (_Bool)_shouldPulseForActivityType:(long long)arg1;
+- (id)_customTintColorForActivityType:(long long)arg1;
 - (id)_backgroundColorForActivityType:(long long)arg1;
 - (id)_imageNameForActivityType:(long long)arg1;
 - (id)imageNameForUpdate:(id)arg1;
 - (id)imageForUpdate:(id)arg1;
 - (struct CGSize)_pillSizeAndBaselineOffset:(double *)arg1;
+- (void)updatedDisplayItemsWithData:(id)arg1;
 - (id)applyUpdate:(id)arg1 toDisplayItem:(id)arg2;
+- (id)_backgroundActivityViewForIdentifier:(id)arg1;
 - (id)createDisplayItemForIdentifier:(id)arg1;
+- (id)initWithIdentifier:(id)arg1 statusBar:(id)arg2;
 - (id)indicatorEntryKey;
 
 @end

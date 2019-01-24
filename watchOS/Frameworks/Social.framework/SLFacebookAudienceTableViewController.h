@@ -11,7 +11,6 @@
 @class NSArray, SLFacebookPostPrivacySetting, UINavigationItem;
 @protocol SLFacebookAudienceViewControllerDelegate;
 
-__attribute__((visibility("hidden")))
 @interface SLFacebookAudienceTableViewController : UITableViewController <SLFacebookAudienceViewController>
 {
     NSArray *_privacySettings;

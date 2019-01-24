@@ -9,19 +9,14 @@
 #import <Silex/SXComponentSizerFactory-Protocol.h>
 
 @class NSString;
-@protocol SXDocumentControllerProvider;
 
 @interface SXEmbedVideoComponentSizerFactory : NSObject <SXComponentSizerFactory>
 {
-    id <SXDocumentControllerProvider> _documentControllerProvider;
 }
 
-@property(readonly, nonatomic) id <SXDocumentControllerProvider> documentControllerProvider; // @synthesize documentControllerProvider=_documentControllerProvider;
-- (void).cxx_destruct;
-- (id)sizerForComponent:(id)arg1 componentLayout:(id)arg2 layoutAttributes:(id)arg3;
+- (id)sizerForComponent:(id)arg1 componentLayout:(id)arg2 layoutOptions:(id)arg3 DOMObjectProvider:(id)arg4;
 @property(readonly, nonatomic) int role;
 @property(readonly, nonatomic) NSString *type;
-- (id)initWithDocumentControllerProvider:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

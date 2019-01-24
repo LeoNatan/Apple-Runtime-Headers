@@ -8,27 +8,29 @@
 
 #import <Safari/ReaderAppearanceViewControllerDelegate-Protocol.h>
 
-@class BrowserViewController, NSArray, NSDictionary, NSString, ReaderAppearanceViewController, ReaderWKView, WBSReaderFont, WBSReaderFontManager, _WKRemoteObjectInterface;
+@class BrowserViewController, NSArray, NSString, ReaderAppearanceViewController, ReaderNavigationDelegate, ReaderUIDelegate, ReaderWKView, WBSReaderConfigurationManager, WBSReaderFont, WBSReaderFontManager, _WKRemoteObjectInterface;
 
 __attribute__((visibility("hidden")))
 @interface ReaderViewController : WebViewController <ReaderAppearanceViewControllerDelegate>
 {
     _WKRemoteObjectInterface *_readerViewControllerMessageReceiverInterface;
-    NSDictionary *_configuration;
     WBSReaderFontManager *_fontManager;
     ReaderAppearanceViewController *_readerAppearanceViewController;
     struct unique_ptr<Safari::ReaderPageFindClient, std::__1::default_delete<Safari::ReaderPageFindClient>> _pageFindClient;
-    struct unique_ptr<Safari::ReaderPageNavigationClient, std::__1::default_delete<Safari::ReaderPageNavigationClient>> _pageNavigationClient;
-    struct unique_ptr<Safari::ReaderPageContextMenuClient, std::__1::default_delete<Safari::ReaderPageContextMenuClient>> _pageContextMenuClient;
-    struct unique_ptr<Safari::ReaderPageUIClient, std::__1::default_delete<Safari::ReaderPageUIClient>> _pageUIClient;
+    ReaderNavigationDelegate *_navigationDelegate;
+    ReaderUIDelegate *_UIDelegate;
+    BOOL _isObservingKeyValueChanges;
+    WBSReaderConfigurationManager *_configurationManager;
     struct ReaderController *_readerController;
 }
 
 + (id)readerViewControllerForPage:(const struct Page *)arg1;
-+ (id)defaultReaderConfiguration;
 @property(readonly, nonatomic) struct ReaderController *readerController; // @synthesize readerController=_readerController;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
+- (void)_stopObservingWKWebViewKeyValueChanges;
+- (void)_startObservingWKWebViewKeyValueChanges;
 - (void)dismissAppearanceCustomizationPopover;
 - (void)presentAppearanceCustomizationPopoverFromView:(id)arg1;
 @property(readonly, nonatomic) BOOL isPresentingAppearanceCustomizationPopover;
@@ -51,22 +53,16 @@ __attribute__((visibility("hidden")))
 - (void)readerAppearanceViewController:(id)arg1 switchToTheme:(long long)arg2;
 - (void)readerAppearanceViewController:(id)arg1 performFontSizeAdjustment:(long long)arg2;
 - (BOOL)readerAppearanceViewController:(id)arg1 canPerformFontSizeAdjustment:(long long)arg2;
-- (void)setTextZoomIndex:(unsigned long long)arg1;
-- (unsigned long long)textZoomIndex;
-- (void)setTheme:(long long)arg1;
+- (long long)_systemAppearance;
 @property(readonly, nonatomic) long long theme;
-- (id)_themeName;
-- (id)_defaultThemeNameForCurrentSystemAppearance;
-- (id)_themeNameKeyForCurrentSystemAppearance;
 - (void)setFont:(id)arg1;
 @property(readonly, nonatomic) WBSReaderFont *font;
 @property(readonly, copy, nonatomic) NSArray *possibleFonts;
 @property(readonly, copy, nonatomic) NSArray *availableFonts;
 - (void)updateLanguageTag:(id)arg1;
 - (void)_applyConfigurationAndSendNotification:(BOOL)arg1;
-- (id)_configurationToSendToInjectedBundle;
-- (void)readerViewAppearanceDidChange;
-- (void)applyInitialConfiguration;
+- (void)effectiveAppearanceDidChange;
+- (void)reloadAndReapplyConfiguration;
 - (void)setConfiguration:(id)arg1;
 - (void)goForward;
 - (void)goBack;
@@ -75,13 +71,14 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) ReaderWKView *readerView;
 - (void)invalidate;
 - (void)close;
-- (void)_clearWebKitPageClients;
-- (void)_installWebKitPageClients;
+- (void)_clearWebKitDelegates;
+- (void)_installWebKitDelegates;
 - (void)viewDidAppear;
 - (void)viewDidLoad;
+- (void)_resetConfigurationManager;
 - (void)_commonInitializationWithReaderController:(struct ReaderController *)arg1;
-- (id)_createWebViewWithConfigurationRef:(struct OpaqueWKPageConfiguration *)arg1;
-- (id)initWithReaderController:(struct ReaderController *)arg1 context:(const struct Context *)arg2 pageGroup:(const struct PageGroup *)arg3 browsingMode:(unsigned long long)arg4;
+- (id)_createWebViewWithConfiguration:(id)arg1;
+- (id)initWithReaderController:(struct ReaderController *)arg1 configuration:(id)arg2 browsingMode:(unsigned long long)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

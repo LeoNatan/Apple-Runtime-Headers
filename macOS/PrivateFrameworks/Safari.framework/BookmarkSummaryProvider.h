@@ -8,21 +8,25 @@
 
 #import <Safari/WBSSiteMetadataProvider-Protocol.h>
 
-@class NSString;
+@class NSString, WebKitPreferencesManager;
 @protocol WBSSiteMetadataProviderDelegate;
 
 __attribute__((visibility("hidden")))
 @interface BookmarkSummaryProvider : NSObject <WBSSiteMetadataProvider>
 {
+    struct Context _context;
+    WebKitPreferencesManager *_preferencesManager;
     id <WBSSiteMetadataProviderDelegate> _providerDelegate;
 }
 
 @property(nonatomic) __weak id <WBSSiteMetadataProviderDelegate> providerDelegate; // @synthesize providerDelegate=_providerDelegate;
+- (id).cxx_construct;
 - (void).cxx_destruct;
 - (id)operationForRequest:(id)arg1;
 - (void)prepareResponseForRequest:(id)arg1 allowDelayedResponse:(BOOL)arg2;
 - (id)responseForRequest:(id)arg1 willProvideUpdates:(char *)arg2;
 - (BOOL)canHandleRequest:(id)arg1;
+- (id)initWithProcessContext:(const struct Context *)arg1 preferencesManager:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -48,6 +48,8 @@
 + (id)_clientNameForAlert:(id)arg1;
 + (id)_propertyKeysOfInterestForToneAssets;
 - (void).cxx_destruct;
+- (id)_audioMixForVolumeRampingWithDuration:(double)arg1 toneAsset:(id)arg2 toneAssetDuration:(double)arg3 itemIndex:(unsigned long long)arg4;
+- (float)_adjustAudioVolumeForOptimalRampingPerception:(float)arg1;
 - (void)_didCompletePlaybackWithCompletionType:(long long)arg1 error:(id)arg2;
 - (id)_fallbackToneIdentifierForPlayingAlert;
 - (void)_endPreventingAudioSessionDeactivation;
@@ -74,6 +76,7 @@
 - (void)_willBeginPlayingAlert;
 - (void)_stopPlaybackWithOptions:(id)arg1 playerWasAlreadyPausedExternally:(_Bool)arg2;
 - (void)_stopPlayback;
+- (void)_performDelayedAudioPlaybackInitiationForAlert:(id)arg1;
 - (void)_startPlaybackForPlayingAlertUsingConfirmedPlayableAsset:(id)arg1 hasAlreadyDetectedUserAttention:(_Bool)arg2;
 - (void)_startPlaybackForPlayingAlertUsingConfirmedPlayableAsset:(id)arg1;
 - (void)_startPlaybackForAssetWithLoadedProperties:(id)arg1 alert:(id)arg2;

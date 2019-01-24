@@ -14,7 +14,7 @@ __attribute__((visibility("hidden")))
     // Error parsing type: , name: delegate
 }
 
-- (CDUnknownBlockType).cxx_destruct;
+- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)didTapAddContact;
 - (id)initWithFrame:(struct CGRect)arg1;

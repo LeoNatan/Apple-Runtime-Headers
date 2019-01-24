@@ -15,7 +15,7 @@
 - (void)passWithFPANIdentifier:(NSString *)arg1 handler:(void (^)(PKPaymentPass *))arg2;
 - (void)supportedTransitPartnersForDigitalIssuance:(void (^)(NSArray *))arg1;
 - (void)sortedTransitPassesForAppletDataFormat:(NSString *)arg1 handler:(void (^)(NSArray *))arg2;
-- (void)expressFelicaTransitPassWithHandler:(void (^)(PKPass *))arg1;
+- (void)expressTransitPassWithHandler:(void (^)(PKPass *))arg1;
 - (void)canAddFelicaPassWithHandler:(void (^)(_Bool))arg1;
 - (void)defaultPaymentPassWithHandler:(void (^)(PKPaymentPass *))arg1;
 - (void)countPassesOfType:(unsigned long long)arg1 handler:(void (^)(unsigned long long))arg2;

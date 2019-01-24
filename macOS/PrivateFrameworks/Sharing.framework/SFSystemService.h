@@ -19,7 +19,6 @@
 
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
 - (void).cxx_destruct;
-- (void)_handleGetSystemInfoRequest:(id)arg1 responseHandler:(CDUnknownBlockType)arg2;
 - (void)_handleSessionEnded:(id)arg1;
 - (void)_handleSessionStarted:(id)arg1;
 - (void)_sfServiceStart;

@@ -6,7 +6,9 @@
 
 #import <EventKit/EKPersistentObject.h>
 
-@interface EKPersistentParticipant : EKPersistentObject
+#import <EventKit/EKParticipantSemanticIdentifierGeneratorDelegate-Protocol.h>
+
+@interface EKPersistentParticipant : EKPersistentObject <EKParticipantSemanticIdentifierGeneratorDelegate>
 {
 }
 
@@ -20,6 +22,7 @@
 - (id)owner;
 - (void)setComment:(id)arg1;
 - (id)comment;
+- (id)url;
 - (void)setAddress:(id)arg1;
 - (id)address;
 - (void)setLastName:(id)arg1;

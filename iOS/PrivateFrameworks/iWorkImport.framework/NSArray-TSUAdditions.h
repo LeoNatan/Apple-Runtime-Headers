@@ -24,6 +24,7 @@
 - (_Bool)tsu_containsObjectPassingTest:(CDUnknownBlockType)arg1;
 - (id)tsu_firstObjectPassingTest:(CDUnknownBlockType)arg1;
 - (void)tsu_enumerateSnapshotObjectsUsingBlock:(CDUnknownBlockType)arg1;
+- (id)tsu_arrayByRemovingObjectsAtIndexes:(id)arg1;
 - (id)tsu_arrayByRemovingFirstObject;
 - (id)tsu_arrayByReversingOrder;
 - (id)tsu_arrayByAddingNonContainedObjectsFromArray:(id)arg1;

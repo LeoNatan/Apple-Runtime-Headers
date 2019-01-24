@@ -8,19 +8,19 @@
 
 #import <iWorkImport/TSDComment-Protocol.h>
 
-@class NSDate, NSString, TSDCommentStorage, TSKAnnotationAuthor, TSTInfo;
+@class NSDate, NSString, TSDCommentStorage, TSKAnnotationAuthor, TSTTableInfo;
 
 __attribute__((visibility("hidden")))
 @interface TSTCommentHosting : NSObject <TSDComment>
 {
     TSDCommentStorage *mStorage;
-    TSTInfo *_tableInfo;
+    TSTTableInfo *_tableInfo;
     NSString *_annotationUUID;
     struct TSTCellUID _cellUID;
 }
 
 @property(retain, nonatomic) NSString *annotationUUID; // @synthesize annotationUUID=_annotationUUID;
-@property(retain, nonatomic) TSTInfo *tableInfo; // @synthesize tableInfo=_tableInfo;
+@property(retain, nonatomic) TSTTableInfo *tableInfo; // @synthesize tableInfo=_tableInfo;
 @property(readonly, nonatomic) struct TSTCellUID cellUID; // @synthesize cellUID=_cellUID;
 - (id).cxx_construct;
 - (void).cxx_destruct;

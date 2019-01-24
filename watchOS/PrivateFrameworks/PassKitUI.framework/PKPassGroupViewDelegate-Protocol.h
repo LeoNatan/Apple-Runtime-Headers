@@ -26,6 +26,8 @@
 - (void)groupViewPanDidEnd:(PKPassGroupView *)arg1;
 - (void)groupViewPanDidBegin:(PKPassGroupView *)arg1;
 - (_Bool)groupViewShouldAllowPanning:(PKPassGroupView *)arg1;
+- (void)groupViewPressedDidEnd:(PKPassGroupView *)arg1;
+- (void)groupViewPressed:(PKPassGroupView *)arg1;
 - (void)groupViewTapped:(PKPassGroupView *)arg1;
 @end
 

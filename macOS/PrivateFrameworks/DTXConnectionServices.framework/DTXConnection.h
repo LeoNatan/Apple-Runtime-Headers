@@ -24,7 +24,6 @@
     unsigned int _nextChannelCode;
     NSMutableDictionary *_channelsByCode;
     NSMutableDictionary *_unconfiguredChannelsByCode;
-    NSMutableDictionary *_capabilitiesByChannelCode;
     NSMutableDictionary *_handlersByIdentifier;
     NSMutableDictionary *_protocolHandlers;
     NSMutableDictionary *_localCapabilityVersions;
@@ -50,7 +49,6 @@
     id <DTXBlockCompressor> _compressor;
 }
 
-+ (id)connectionPublishingAddress:(id)arg1;
 + (id)connectionToAddress:(id)arg1;
 + (void)registerTransport:(Class)arg1 forScheme:(id)arg2;
 + (void)initialize;
@@ -58,6 +56,7 @@
 @property(readonly, nonatomic) int atomicConnectionNumber; // @synthesize atomicConnectionNumber=_connectionIndex;
 @property(nonatomic) BOOL remoteTracer; // @synthesize remoteTracer=_remoteTracer;
 @property(nonatomic) BOOL tracer; // @synthesize tracer=_tracer;
+@property(copy, nonatomic) NSString *label; // @synthesize label=_label;
 - (void).cxx_destruct;
 - (void)_notifyCompressionHint:(unsigned int)arg1 forChannelCode:(unsigned int)arg2;
 - (void)_receiveQueueSetCompressionHint:(unsigned int)arg1 onChannel:(id)arg2;
@@ -83,7 +82,6 @@
 - (void)setChannelHandler:(CDUnknownBlockType)arg1;
 - (void)setDispatchTarget:(id)arg1;
 - (void)setMessageHandler:(CDUnknownBlockType)arg1;
-@property(copy, nonatomic) NSString *label;
 - (void)throttleBandwidthBytesPerSecond:(unsigned long long)arg1;
 - (void)resume;
 - (void)suspend;

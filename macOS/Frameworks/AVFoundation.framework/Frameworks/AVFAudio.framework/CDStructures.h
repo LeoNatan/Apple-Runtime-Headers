@@ -184,13 +184,16 @@ struct AVVCPluginRecordingEngine {
     struct OpaqueAudioFileID *_field3;
     int _field4;
     id _field5;
-    id _field6;
-    unsigned int _field7;
+    unsigned int _field6;
+    id _field7;
     unsigned int _field8;
-    float _field9;
-    int _field10;
-    unsigned char _field11;
-    unsigned char _field12;
+    unsigned int _field9;
+    unsigned int _field10;
+    float _field11;
+    int _field12;
+    unsigned char _field13;
+    unsigned char _field14;
+    _Bool _field15;
 };
 
 struct AVVCRecordingEngine;
@@ -502,8 +505,9 @@ struct MyAudioQueueBuffer {
     struct AudioStreamPacketDescription *_field6;
     unsigned int _field7;
     struct AudioStreamBasicDescription _field8;
-    unsigned char _field9;
+    char _field9;
     unsigned char _field10;
+    unsigned char _field11;
 };
 
 struct MyMutex;

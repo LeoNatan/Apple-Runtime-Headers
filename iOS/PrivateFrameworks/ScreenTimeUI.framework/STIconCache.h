@@ -35,6 +35,8 @@
 - (id)roundedImageForImageWithName:(id)arg1;
 - (id)circleImageWithFillColor:(id)arg1 fillDiameter:(double)arg2 outlineColor:(id)arg3 outlineWidth:(double)arg4;
 - (id)blankSpaceImageWithSize:(struct CGSize)arg1;
+- (void)removeObserver:(id)arg1 bundleIdentifier:(id)arg2;
+- (void)addObserver:(id)arg1 selector:(SEL)arg2 bundleIdentifier:(id)arg3;
 - (id)imageForCategoryIdentifier:(id)arg1;
 - (void)_handleiTunesResponseForAppInfo:(id)arg1 response:(id)arg2 data:(id)arg3 error:(id)arg4;
 - (void)_fetchImageForAppInfoIfNeeded:(id)arg1;

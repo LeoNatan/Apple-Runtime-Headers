@@ -6,13 +6,14 @@
 
 #import <SafariShared/WBSHistoryLoader-Protocol.h>
 
-@class NSArray, NSData, NSDate, NSSet, NSString, WBSHistoryItem, WBSHistoryTombstone, WBSHistoryVisit;
+@class NSArray, NSData, NSDate, NSSet, NSString, WBSHistoryItem, WBSHistoryVisit;
 @protocol WBSHistoryStoreDelegate;
 
 @protocol WBSHistoryStore <WBSHistoryLoader>
 @property(readonly, nonatomic) BOOL isUsingInMemoryDatabase;
 @property(nonatomic) BOOL pushNotificationsAreInitialized;
 @property(nonatomic) unsigned long long cachedNumberOfDevicesInSyncCircle;
+@property(copy, nonatomic) NSData *longLivedSaveOperationData;
 @property(copy, nonatomic) NSData *syncCircleSizeRetrievalThrottlerData;
 @property(copy, nonatomic) NSData *fetchThrottlerData;
 @property(copy, nonatomic) NSData *pushThrottlerData;
@@ -29,7 +30,7 @@
 - (void)setLastSeenDate:(NSDate *)arg1 forCloudClientVersion:(unsigned long long)arg2;
 - (NSDate *)lastSeenDateForCloudClientVersion:(unsigned long long)arg1;
 - (void)pruneTombstonesWithEndDatePriorToDate:(NSDate *)arg1;
-- (void)replayAndAddTombstone:(WBSHistoryTombstone *)arg1;
+- (void)replayAndAddTombstones:(NSArray *)arg1 completionHandler:(void (^)(NSError *))arg2;
 - (void)getAllTombstonesWithCompletion:(void (^)(NSSet *))arg1;
 - (void)addAutocompleteTrigger:(NSString *)arg1 forItem:(WBSHistoryItem *)arg2;
 - (void)closeWithCompletionHandler:(void (^)(void))arg1;
@@ -48,8 +49,6 @@
 - (void)enumerateSubsequentVisitsInRedirectChainOnDatabaseQueue:(NSSet *)arg1 items:(NSSet *)arg2 enumerationBlock:(void (^)(WBSHistoryVisit *))arg3;
 - (void)enumeratePriorVisitsInRedirectChainOnDatabaseQueue:(NSSet *)arg1 items:(NSSet *)arg2 enumerationBlock:(void (^)(WBSHistoryVisit *))arg3;
 - (void)enumerateLastVisitForItemsOnDatabaseQueue:(NSSet *)arg1 ignoringVisits:(NSSet *)arg2 enumerationBlock:(void (^)(WBSHistoryItem *, WBSHistoryVisit *))arg3;
-- (void)removeVisitsOnDatabaseQueue:(NSSet *)arg1;
-- (void)removeItemsOnDatabaseQueue:(NSSet *)arg1;
 - (void)addOrUpdateItemsOnDatabaseQueue:(NSSet *)arg1;
 - (NSSet *)allVisitsForItemsOnDatabaseQueue:(NSSet *)arg1;
 @end

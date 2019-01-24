@@ -7,6 +7,7 @@
 #import <Notes/NoteContext.h>
 
 @interface NoteContext (SharedContext)
++ (id)mainContextObjectFromObject:(id)arg1;
 + (id)sharedContext;
 @end
 

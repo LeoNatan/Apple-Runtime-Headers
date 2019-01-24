@@ -38,7 +38,7 @@
 - (unsigned long long)analyticsGalleryType;
 - (void)finishMediaExposureEventIfNeeded;
 - (void)createMediaExposureEventIfNeeded;
-- (id)initWithDocumentController:(id)arg1 viewport:(id)arg2 presentationDelegate:(id)arg3 analyticsReporting:(id)arg4 componentStyleRendererFactory:(id)arg5 appStateMonitor:(id)arg6;
+- (id)initWithDOMObjectProvider:(id)arg1 viewport:(id)arg2 presentationDelegate:(id)arg3 analyticsReporting:(id)arg4 componentStyleRendererFactory:(id)arg5 appStateMonitor:(id)arg6;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

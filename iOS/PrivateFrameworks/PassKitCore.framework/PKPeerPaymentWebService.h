@@ -44,6 +44,7 @@
 - (id)_deviceMetadata;
 - (void)_deviceRegistrationDataWithCompletion:(CDUnknownBlockType)arg1;
 - (id)_deviceIdentifier;
+- (unsigned long long)disbursementVoucherWithRequest:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (unsigned long long)submitDeviceScoreIdentifiersWithRequest:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (unsigned long long)peerPaymentReOpenAccountWithCompletion:(CDUnknownBlockType)arg1;
 - (unsigned long long)peerPaymentRequestStatementWithCompletion:(CDUnknownBlockType)arg1;

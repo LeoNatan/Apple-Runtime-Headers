@@ -7,7 +7,7 @@
 #import <WebKit/WKProcessPool.h>
 
 @interface WKProcessPool (ADProcessPool)
-+ (id)_createProcessPoolWithPriority:(_Bool)arg1 video:(_Bool)arg2;
++ (id)_newProcessPoolWithPriority:(_Bool)arg1 video:(_Bool)arg2;
 + (id)advertisingProcessPoolForVideo:(_Bool)arg1;
 + (id)advertisingProcessPool:(_Bool)arg1;
 @end

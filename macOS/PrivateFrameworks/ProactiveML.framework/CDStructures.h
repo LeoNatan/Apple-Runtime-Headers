@@ -19,6 +19,11 @@ struct _NSRange {
     unsigned long long length;
 };
 
+struct _PMLPreNoiseScaleFactorAndNoiseSampler {
+    id _field1;
+    float _field2;
+};
+
 #pragma mark Typedef'd Structures
 
 typedef struct {
@@ -42,6 +47,11 @@ typedef struct {
     unsigned long long count;
     unsigned long long size;
 } CDStruct_fae3dc92;
+
+typedef struct {
+    float gaussianScaleFactor;
+    float laplaceScaleFactor;
+} CDStruct_cd4a7bf5;
 
 // Ambiguous groups
 typedef struct {

@@ -15,6 +15,7 @@ __attribute__((visibility("hidden")))
 {
     _Bool _activitySupportsPromiseURLs;
     _Bool _appIsDocumentTypeOwner;
+    _Bool _isCapabilityBasedActivity;
     NSUUID *_activityUUID;
     int _activityCategory;
     NSString *_activityType;
@@ -40,6 +41,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) NSString *positionBeforeActivityType; // @synthesize positionBeforeActivityType=_positionBeforeActivityType;
 @property(readonly, nonatomic) NSString *defaultActivityTitle; // @synthesize defaultActivityTitle=_defaultActivityTitle;
 @property(retain, nonatomic) NSString *overrideTitle; // @synthesize overrideTitle=_overrideTitle;
+@property(nonatomic) _Bool isCapabilityBasedActivity; // @synthesize isCapabilityBasedActivity=_isCapabilityBasedActivity;
 @property(readonly, nonatomic) unsigned int indexInApplicationDefinedActivities; // @synthesize indexInApplicationDefinedActivities=_indexInApplicationDefinedActivities;
 @property(readonly, nonatomic) _Bool appIsDocumentTypeOwner; // @synthesize appIsDocumentTypeOwner=_appIsDocumentTypeOwner;
 @property(readonly, nonatomic) int defaultSortGroup; // @synthesize defaultSortGroup=_defaultSortGroup;

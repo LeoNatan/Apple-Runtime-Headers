@@ -8,7 +8,7 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class GEOClientMetrics, GEOETAServiceResponseSummary, GEOPDDatasetABStatus, NSData, NSMutableArray;
+@class GEOClientMetrics, GEOETAServiceResponseSummary, GEOPDDatasetABStatus, NSData, NSMutableArray, NSString;
 
 @interface GEOETATrafficUpdateResponse : PBCodable <NSCopying>
 {
@@ -16,6 +16,7 @@
     NSMutableArray *_cameras;
     GEOClientMetrics *_clientMetrics;
     GEOPDDatasetABStatus *_datasetAbStatus;
+    NSString *_debugData;
     GEOETAServiceResponseSummary *_etaServiceSummary;
     NSData *_responseId;
     NSMutableArray *_routes;
@@ -26,6 +27,7 @@
 
 + (Class)cameraType;
 + (Class)routeType;
+@property(retain, nonatomic) NSString *debugData; // @synthesize debugData=_debugData;
 @property(retain, nonatomic) NSData *responseId; // @synthesize responseId=_responseId;
 @property(retain, nonatomic) NSMutableArray *cameras; // @synthesize cameras=_cameras;
 @property(retain, nonatomic) GEOPDDatasetABStatus *datasetAbStatus; // @synthesize datasetAbStatus=_datasetAbStatus;
@@ -41,6 +43,7 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(readonly, nonatomic) _Bool hasDebugData;
 @property(readonly, nonatomic) _Bool hasResponseId;
 - (id)cameraAtIndex:(unsigned int)arg1;
 - (unsigned int)camerasCount;

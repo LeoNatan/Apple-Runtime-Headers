@@ -23,6 +23,7 @@
 - (id)nextItem;
 - (id)previousChapter;
 - (id)previousSection;
+- (id)previousItemDeferringToPlaybackQueuePosition;
 - (id)previousItem;
 - (id)initWithResponse:(id)arg1 changeItemSupport:(unsigned long long)arg2;
 

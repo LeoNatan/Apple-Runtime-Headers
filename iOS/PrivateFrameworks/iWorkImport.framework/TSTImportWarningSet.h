@@ -13,9 +13,9 @@
 __attribute__((visibility("hidden")))
 @interface TSTImportWarningSet : NSObject <TSSPropertyCommandSerializing>
 {
-    struct TSTImportWarningSetCellWarningFlags mCellWarning;
-    NSString *mOriginalDataFormat;
-    struct TSTImportFormulaWarning mFormulaWarning;
+    struct TSTImportWarningSetCellWarningFlags _cellWarning;
+    NSString *_originalDataFormat;
+    struct TSTImportFormulaWarning _formulaWarning;
 }
 
 + (id)cellDiffClearingAllWarningsWithContext:(id)arg1;
@@ -49,9 +49,11 @@ __attribute__((visibility("hidden")))
 + (id)warningSetFor3DReferenceFormula:(id)arg1;
 + (id)emptyWarningSet;
 + (id)p_warningSetForFormulaWarningType:(long long)arg1 originalFormula:(id)arg2 supplementaryText:(id)arg3;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
-- (void)saveToArchive:(struct ImportWarningSetArchive *)arg1;
-- (id)initFromArchive:(const struct ImportWarningSetArchive *)arg1;
+-     // Error parsing type: v24@0:8^{ImportWarningSetArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}^{ImportWarningSetArchive_FormulaImportWarning}BBBBBBBBBBBBB}16, name: saveToArchive:
+-     // Error parsing type: @24@0:8r^{ImportWarningSetArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}^{ImportWarningSetArchive_FormulaImportWarning}BBBBBBBBBBBBB}16, name: initFromArchive:
 - (void)saveToPropertyCommandMessage:(struct Message *)arg1 archiver:(id)arg2;
 - (id)initFromPropertyCommandMessage:(const struct Message *)arg1 unarchiver:(id)arg2;
 - (_Bool)isTransposeWarning;
@@ -63,7 +65,6 @@ __attribute__((visibility("hidden")))
 @property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;
 - (_Bool)areAnySet;
-- (void)dealloc;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)init;
 

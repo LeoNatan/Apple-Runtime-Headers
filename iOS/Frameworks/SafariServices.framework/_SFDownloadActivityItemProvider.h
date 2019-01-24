@@ -21,7 +21,7 @@
 - (id)activityViewController:(id)arg1 dataTypeIdentifierForActivityType:(id)arg2;
 - (id)item;
 - (id)pageTitle;
-- (id)initWithQuickLookDocument:(id)arg1 URL:(id)arg2;
+- (id)initWithQuickLookDocument:(id)arg1 URL:(id)arg2 webView:(id)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

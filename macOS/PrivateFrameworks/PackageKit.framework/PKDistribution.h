@@ -68,6 +68,8 @@
 - (id)descriptionOfRequiredGraphicsHardware;
 - (void)setRequireSingleGraphicsDevice:(BOOL)arg1;
 - (BOOL)requireSingleGraphicsDevice;
+- (void)setRequiredMetalDevicePredicate:(id)arg1;
+- (id)requiredMetalDevicePredicate;
 - (void)setRequiredCLDevicePredicate:(id)arg1;
 - (id)requiredCLDevicePredicate;
 - (void)setRequiredGLRendererPredicate:(id)arg1;

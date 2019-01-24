@@ -15,30 +15,27 @@
     unsigned long long _seed;
     _Bool _inplaceNorm;
     int _maxIterations;
-    float _scaleFactor;
     float _minimumMagnitude;
-    Class _samplerClass;
+    CDStruct_cd4a7bf5 _noiseScaleFactors;
+    long long _noiseMechanism;
 }
 
 + (id)gaussianNoiseWithScaleFactor:(float)arg1 minimumMagnitude:(float)arg2 seed:(int)arg3;
-@property(retain) Class samplerClass; // @synthesize samplerClass=_samplerClass;
+@property long long noiseMechanism; // @synthesize noiseMechanism=_noiseMechanism;
 @property float minimumMagnitude; // @synthesize minimumMagnitude=_minimumMagnitude;
-@property float scaleFactor; // @synthesize scaleFactor=_scaleFactor;
+@property CDStruct_cd4a7bf5 noiseScaleFactors; // @synthesize noiseScaleFactors=_noiseScaleFactors;
 @property int maxIterations; // @synthesize maxIterations=_maxIterations;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (id)initWithPlist:(id)arg1 chunks:(id)arg2 context:(id)arg3;
 - (id)toPlistWithChunks:(id)arg1;
 - (void)addNoiseToSparseMatrix:(id)arg1;
 - (void)addNoiseToSparseVector:(id)arg1;
-- (void)addNoiseToDenseVector:(id)arg1;
-- (void)addNoiseToObjectiveFeatures:(id)arg1;
-- (void)addNoiseToFeatureMatrix:(id)arg1;
-- (void)addNoiseToGradient:(id)arg1;
-- (void)addNoiseToWeights:(id)arg1;
-- (id)createSampler;
-- (id)initWithMaxIterationCount:(int)arg1 scaleFactor:(float)arg2 minimumMagnitude:(float)arg3 samplerClass:(Class)arg4 inplaceNorm:(_Bool)arg5;
-- (id)initWithMaxIterationCount:(int)arg1 scaleFactor:(float)arg2 minimumMagnitude:(float)arg3 seed:(int)arg4 samplerClass:(Class)arg5 inplaceNorm:(_Bool)arg6;
+- (float)scaleAndAddNoiseToDenseVector:(id)arg1 usingNorm:(_Bool)arg2;
+- (id)createSamplerByName:(id)arg1;
+- (id)createDefaultSampler;
+- (struct _PMLPreNoiseScaleFactorAndNoiseSampler)samplerWithScaleFactorFor:(id)arg1 usingNorm:(_Bool)arg2;
+- (id)initWithMaxIterationCount:(int)arg1 noiseScaleFactors:(CDStruct_cd4a7bf5)arg2 minimumMagnitude:(float)arg3 noiseMechanism:(long long)arg4 inplaceNorm:(_Bool)arg5;
+- (id)initWithMaxIterationCount:(int)arg1 noiseScaleFactors:(CDStruct_cd4a7bf5)arg2 minimumMagnitude:(float)arg3 seed:(int)arg4 noiseMechanism:(long long)arg5 inplaceNorm:(_Bool)arg6;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

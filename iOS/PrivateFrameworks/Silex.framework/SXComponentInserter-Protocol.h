@@ -7,16 +7,17 @@
 #import <Silex/NSObject-Protocol.h>
 
 @class NSArray, SXComponentInsert;
-@protocol SXBlueprintMarker, SXComponentInsertionConditionEngine, SXComponentInsertionLayoutProvider;
+@protocol SXBlueprintMarker, SXComponentInsertionCacheValidator, SXComponentInsertionConditionEngine, SXComponentInsertionLayoutProvider, SXDOMObjectProviding;
 
 @protocol SXComponentInserter <NSObject>
+@property(readonly, nonatomic) unsigned long long componentTraits;
 @property(readonly, nonatomic) id <SXComponentInsertionConditionEngine> conditionEngine;
-@property(readonly, nonatomic) NSArray *conditions;
-- (SXComponentInsert *)componentInsertForMarker:(id <SXBlueprintMarker>)arg1 layoutProvider:(id <SXComponentInsertionLayoutProvider>)arg2;
-- (_Bool)validateMarker:(id <SXBlueprintMarker>)arg1 remainingMarkerCount:(unsigned long long)arg2 layoutProvider:(id <SXComponentInsertionLayoutProvider>)arg3;
-- (unsigned long long)componentTraits;
+- (SXComponentInsert *)componentInsertForMarker:(id <SXBlueprintMarker>)arg1 DOMObjectProvider:(id <SXDOMObjectProviding>)arg2 layoutProvider:(id <SXComponentInsertionLayoutProvider>)arg3;
+- (_Bool)validateMarker:(id <SXBlueprintMarker>)arg1 DOMObjectProvider:(id <SXDOMObjectProviding>)arg2 layoutProvider:(id <SXComponentInsertionLayoutProvider>)arg3;
+- (NSArray *)conditionsForDOMObjectProvider:(id <SXDOMObjectProviding>)arg1;
 
 @optional
 - (void)componentInsertionCompleted;
+- (id <SXComponentInsertionCacheValidator>)cacheValidatorForCache:(NSArray *)arg1 DOMObjectProvider:(id <SXDOMObjectProviding>)arg2;
 @end
 

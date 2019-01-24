@@ -7,24 +7,19 @@
 #import "CATOperation.h"
 
 #import <ClassroomKit/CATRemoteConnectionDelegate-Protocol.h>
-#import <ClassroomKit/CRKIPAddressMonitorDelegate-Protocol.h>
 #import <ClassroomKit/NSNetServiceDelegate-Protocol.h>
 
-@class CRKIPAddressMonitor, NSArray, NSDictionary, NSError, NSMutableDictionary, NSMutableSet, NSNetService, NSString;
+@class CRKHostResourcesConfiguration, NSDictionary, NSError, NSMutableDictionary, NSMutableSet, NSNetService, NSString;
 @protocol CRKHostResourcesOperationDelegate;
 
-@interface CRKHostResourcesOperation : CATOperation <CRKIPAddressMonitorDelegate, NSNetServiceDelegate, CATRemoteConnectionDelegate>
+@interface CRKHostResourcesOperation : CATOperation <NSNetServiceDelegate, CATRemoteConnectionDelegate>
 {
-    id mServerIdentity;
-    NSArray *mTrustedCertificates;
+    CRKHostResourcesConfiguration *mConfiguration;
     NSDictionary *mFileURLsByFilePath;
-    unsigned long long mMaximumDownloadCount;
-    unsigned short mPort;
     NSMutableDictionary *mStartedDownloadCountByFileURL;
     NSMutableDictionary *mFinishedDownloadCountByFileURL;
     NSNetService *mNetService;
     NSMutableSet *mConnections;
-    CRKIPAddressMonitor *mAddressMonitor;
     _Bool mPublished;
     NSMutableSet *mConnectionCloseTimers;
     NSError *mStashedError;
@@ -47,7 +42,8 @@
 - (void)netService:(id)arg1 didNotPublish:(id)arg2;
 - (void)netServiceDidPublish:(id)arg1;
 - (void)netService:(id)arg1 didAcceptConnectionWithInputStream:(id)arg2 outputStream:(id)arg3;
-- (void)ipAddressMonitorIPAddressDidChange:(id)arg1;
+- (void)IPAddressDidChange;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)delegateDownloadFinished:(id)arg1 fileURL:(id)arg2 error:(id)arg3;
 - (void)delegateDownloadStarted:(id)arg1 fileURL:(id)arg2;
 - (void)delegateResourcesDidPublish;
@@ -61,6 +57,7 @@
 - (void)run;
 - (void)main;
 - (_Bool)isAsynchronous;
+- (id)initWithConfiguration:(id)arg1;
 - (id)initWithResourceURLs:(id)arg1 serverIdentity:(id)arg2 trustedAnchorCertificates:(id)arg3 maximumAllowedDownloads:(unsigned long long)arg4 port:(unsigned short)arg5;
 - (id)initWithResourceURLs:(id)arg1 serverIdentity:(id)arg2 trustedAnchorCertificates:(id)arg3 maximumAllowedDownloads:(unsigned long long)arg4;
 - (id)initWithResourceURLs:(id)arg1 serverIdentity:(id)arg2 trustedAnchorCertificates:(id)arg3;

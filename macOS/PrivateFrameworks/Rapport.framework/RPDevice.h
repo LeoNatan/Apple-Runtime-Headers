@@ -8,7 +8,7 @@
 
 #import <Rapport/NSSecureCoding-Protocol.h>
 
-@class CUMobileDevice, CUPairedPeer, NSData, NSDictionary, NSString, NSUUID;
+@class CUMobileDevice, CUPairedPeer, CURangingMeasurement, NSData, NSDictionary, NSString, NSUUID;
 
 @interface RPDevice : NSObject <NSSecureCoding>
 {
@@ -21,8 +21,12 @@
     int _smoothedRSSI;
     unsigned int _systemPairState;
     unsigned int _wifiDeviceIEFlags;
+    NSString *_accountID;
+    NSString *_contactID;
     NSString *_identifier;
+    NSString *_idsDeviceIdentifier;
     NSString *_name;
+    CURangingMeasurement *_relativeLocation;
     CUMobileDevice *_mobileDevice;
     NSData *_authTag;
     NSData *_bleAdvertisementData;
@@ -69,10 +73,14 @@
 @property(readonly, copy, nonatomic) NSData *bleAdvertisementData; // @synthesize bleAdvertisementData=_bleAdvertisementData;
 @property(readonly, copy, nonatomic) NSData *authTag; // @synthesize authTag=_authTag;
 @property(retain, nonatomic) CUMobileDevice *mobileDevice; // @synthesize mobileDevice=_mobileDevice;
+@property(readonly) CURangingMeasurement *relativeLocation; // @synthesize relativeLocation=_relativeLocation;
 @property(readonly, nonatomic) int proximity; // @synthesize proximity=_proximity;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
+@property(readonly, copy, nonatomic) NSString *idsDeviceIdentifier; // @synthesize idsDeviceIdentifier=_idsDeviceIdentifier;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(readonly, nonatomic) unsigned int flags; // @synthesize flags=_flags;
+@property(readonly, copy, nonatomic) NSString *contactID; // @synthesize contactID=_contactID;
+@property(readonly, copy, nonatomic) NSString *accountID; // @synthesize accountID=_accountID;
 - (void).cxx_destruct;
 - (void)updateWithWiFiDevice:(id)arg1 changes:(unsigned int)arg2;
 - (void)updateWithSystemInfo:(id)arg1;

@@ -27,7 +27,7 @@
 @property(readonly, nonatomic) PHAsset *photoKitAsset; // @synthesize photoKitAsset=_photoKitAsset;
 - (void).cxx_destruct;
 - (id)_computedPortraitEffectSettingsForEditModel:(id)arg1 editSource:(id)arg2;
-- (id)applyAdjustmentsToEditModel:(id)arg1 editSource:(id)arg2;
+- (id)applyAdjustmentsToEditModel:(id)arg1 editSource:(id)arg2 renderer:(id)arg3;
 @property(readonly, nonatomic) _Bool wantsAdjustments;
 @property(readonly, nonatomic) _Bool isAnimatedImage;
 @property(readonly, nonatomic) _Bool canPlayPhotoIris;

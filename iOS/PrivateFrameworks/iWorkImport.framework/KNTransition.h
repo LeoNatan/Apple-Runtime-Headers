@@ -70,8 +70,8 @@ __attribute__((visibility("hidden")))
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithOwner:(id)arg1 attributes:(id)arg2;
 - (id)initWithOwner:(id)arg1;
-- (void)saveToArchive:(struct TransitionArchive *)arg1 archiver:(id)arg2;
-- (id)initWithArchive:(const struct TransitionArchive *)arg1 unarchiver:(id)arg2 owner:(id)arg3;
+-     // Error parsing type: v32@0:8^{TransitionArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{TransitionAttributesArchive}}16@24, name: saveToArchive:archiver:
+-     // Error parsing type: @40@0:8r^{TransitionArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{TransitionAttributesArchive}}16@24@32, name: initWithArchive:unarchiver:owner:
 - (unsigned long long)p_keynoteVersionFromUnarchiver:(id)arg1;
 
 // Remaining properties

@@ -13,6 +13,7 @@
 @interface PKPeerPaymentAccount : NSObject <NSSecureCoding>
 {
     BOOL _accountStateDirty;
+    BOOL _identityVerificationForDisbursementsRequired;
     BOOL _identityVerificationRequired;
     BOOL _termsAcceptanceRequired;
     unsigned long long _state;
@@ -37,6 +38,7 @@
 @property(nonatomic) BOOL termsAcceptanceRequired; // @synthesize termsAcceptanceRequired=_termsAcceptanceRequired;
 @property(nonatomic) BOOL identityVerificationRequired; // @synthesize identityVerificationRequired=_identityVerificationRequired;
 @property(copy, nonatomic) NSArray *supportedFeatureDescriptors; // @synthesize supportedFeatureDescriptors=_supportedFeatureDescriptors;
+@property(nonatomic) BOOL identityVerificationForDisbursementsRequired; // @synthesize identityVerificationForDisbursementsRequired=_identityVerificationForDisbursementsRequired;
 @property(nonatomic) long long pendingPaymentCount; // @synthesize pendingPaymentCount=_pendingPaymentCount;
 @property(copy, nonatomic) NSURL *associatedPassURL; // @synthesize associatedPassURL=_associatedPassURL;
 @property(copy, nonatomic) NSURL *termsURL; // @synthesize termsURL=_termsURL;
@@ -60,6 +62,8 @@
 @property(readonly, copy, nonatomic) NSArray *defaultSuggestions;
 - (id)initWithDictionary:(id)arg1 lastUpdated:(id)arg2;
 - (id)_featureWithIdentifier:(id)arg1;
+- (id)instantWithdrawalPromotionFeatureDescriptor;
+- (BOOL)supportsInstantWithdrawal;
 - (id)cardBalancePromotionFeatureDescriptor;
 - (BOOL)supportsCardBalancePromotion;
 - (id)requestFromUserFeatureDescriptor;

@@ -9,16 +9,18 @@
 #import <ClassroomKit/NSCopying-Protocol.h>
 #import <ClassroomKit/NSSecureCoding-Protocol.h>
 
-@class NSArray, NSDate, NSDictionary, NSString;
+@class NSArray, NSDictionary, NSString;
 
 @interface CRKDevice : NSObject <NSSecureCoding, NSCopying>
 {
     BOOL _supervised;
     BOOL _ephemeralMultiUser;
-    BOOL _orientationLocked;
+    BOOL _screenSaverActive;
+    BOOL _muted;
     BOOL _appLocked;
     BOOL _passcodeEnabled;
     BOOL _requestingUnenroll;
+    BOOL _orientationLocked;
     float _batteryLevel;
     float _volume;
     float _displayBackingScaleFactor;
@@ -38,11 +40,9 @@
     unsigned long long _availableBytes;
     unsigned long long _deviceOrientation;
     unsigned long long _interfaceOrientation;
-    NSDate *_internetDateAndTime;
-    double _uptimeAtInternetDateAndTimeFetch;
+    NSArray *_displays;
     NSString *_primaryOpenApplication;
     NSString *_secondaryOpenApplication;
-    NSString *_pipOpenApplication;
     NSArray *_allOpenApplications;
     NSArray *_installedApplications;
     NSString *_stagedAdHocIdentityCertificateFingerprint;
@@ -60,6 +60,7 @@
     NSDictionary *_activeAirPlayRoute;
     NSArray *_availableAirPlayRoutes;
     NSString *_managementLockPasscode;
+    NSString *_pipOpenApplication;
 }
 
 + (id)bootDate;
@@ -67,6 +68,8 @@
 + (id)allPropertyKeys;
 + (id)CRKKeyForDMFKey:(id)arg1;
 + (id)keyTranslations;
+@property(copy, nonatomic) NSString *pipOpenApplication; // @synthesize pipOpenApplication=_pipOpenApplication;
+@property(nonatomic, getter=isOrientationLocked) BOOL orientationLocked; // @synthesize orientationLocked=_orientationLocked;
 @property(copy, nonatomic) NSString *managementLockPasscode; // @synthesize managementLockPasscode=_managementLockPasscode;
 @property(copy, nonatomic) NSArray *availableAirPlayRoutes; // @synthesize availableAirPlayRoutes=_availableAirPlayRoutes;
 @property(copy, nonatomic) NSDictionary *activeAirPlayRoute; // @synthesize activeAirPlayRoute=_activeAirPlayRoute;
@@ -87,19 +90,18 @@
 @property(copy, nonatomic) NSArray *installedApplications; // @synthesize installedApplications=_installedApplications;
 @property(nonatomic, getter=isAppLocked) BOOL appLocked; // @synthesize appLocked=_appLocked;
 @property(copy, nonatomic) NSArray *allOpenApplications; // @synthesize allOpenApplications=_allOpenApplications;
-@property(copy, nonatomic) NSString *pipOpenApplication; // @synthesize pipOpenApplication=_pipOpenApplication;
 @property(copy, nonatomic) NSString *secondaryOpenApplication; // @synthesize secondaryOpenApplication=_secondaryOpenApplication;
 @property(copy, nonatomic) NSString *primaryOpenApplication; // @synthesize primaryOpenApplication=_primaryOpenApplication;
-@property(nonatomic) double uptimeAtInternetDateAndTimeFetch; // @synthesize uptimeAtInternetDateAndTimeFetch=_uptimeAtInternetDateAndTimeFetch;
-@property(retain, nonatomic) NSDate *internetDateAndTime; // @synthesize internetDateAndTime=_internetDateAndTime;
 @property(nonatomic) float displayHeight; // @synthesize displayHeight=_displayHeight;
 @property(nonatomic) float displayWidth; // @synthesize displayWidth=_displayWidth;
 @property(nonatomic) float displayBackingScaleFactor; // @synthesize displayBackingScaleFactor=_displayBackingScaleFactor;
-@property(nonatomic, getter=isOrientationLocked) BOOL orientationLocked; // @synthesize orientationLocked=_orientationLocked;
+@property(copy, nonatomic) NSArray *displays; // @synthesize displays=_displays;
 @property(nonatomic) unsigned long long interfaceOrientation; // @synthesize interfaceOrientation=_interfaceOrientation;
 @property(nonatomic) unsigned long long deviceOrientation; // @synthesize deviceOrientation=_deviceOrientation;
 @property(nonatomic) unsigned long long availableBytes; // @synthesize availableBytes=_availableBytes;
+@property(nonatomic, getter=isMuted) BOOL muted; // @synthesize muted=_muted;
 @property(nonatomic) float volume; // @synthesize volume=_volume;
+@property(nonatomic, getter=isScreenSaverActive) BOOL screenSaverActive; // @synthesize screenSaverActive=_screenSaverActive;
 @property(nonatomic) unsigned long long screenState; // @synthesize screenState=_screenState;
 @property(nonatomic) unsigned long long lockState; // @synthesize lockState=_lockState;
 @property(nonatomic) unsigned long long chargingState; // @synthesize chargingState=_chargingState;
@@ -124,9 +126,9 @@
 - (BOOL)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)description;
-- (id)initWithIdentifier:(id)arg1;
 - (BOOL)isApplicationInstalled:(id)arg1;
 - (BOOL)isApplicationOpen:(id)arg1;
+- (id)initWithIdentifier:(id)arg1;
 
 @end
 

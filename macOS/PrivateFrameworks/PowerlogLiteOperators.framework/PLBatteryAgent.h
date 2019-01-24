@@ -44,6 +44,7 @@
     double _EAEnergyDrained;
     NSNumber *_lastkIOPSAppleBatteryCaseCumulativeCurrentKey;
     PLTimer *_periodicAggdTimer;
+    PLTimer *_xFlagsRetryTimer;
     PLEntry *_lastBatteryConfigEntry;
     PLXPCResponderOperatorComposition *_batteryInfoResponder;
     PLXPCResponderOperatorComposition *_batteryTemperatureResponder;
@@ -156,6 +157,7 @@
 @property(retain) PLXPCResponderOperatorComposition *batteryTemperatureResponder; // @synthesize batteryTemperatureResponder=_batteryTemperatureResponder;
 @property(retain) PLXPCResponderOperatorComposition *batteryInfoResponder; // @synthesize batteryInfoResponder=_batteryInfoResponder;
 @property(retain) PLEntry *lastBatteryConfigEntry; // @synthesize lastBatteryConfigEntry=_lastBatteryConfigEntry;
+@property(retain) PLTimer *xFlagsRetryTimer; // @synthesize xFlagsRetryTimer=_xFlagsRetryTimer;
 @property(retain) PLTimer *periodicAggdTimer; // @synthesize periodicAggdTimer=_periodicAggdTimer;
 @property _Bool lifetimeDataLogged; // @synthesize lifetimeDataLogged=_lifetimeDataLogged;
 @property _Bool isFirstTimeCheckingPingPong; // @synthesize isFirstTimeCheckingPingPong=_isFirstTimeCheckingPingPong;

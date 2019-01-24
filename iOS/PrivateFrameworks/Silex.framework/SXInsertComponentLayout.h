@@ -8,7 +8,7 @@
 
 #import <Silex/SXComponentLayout-Protocol.h>
 
-@class NSString;
+@class NSString, SXJSONArray;
 @protocol SXEdgeSpacing;
 
 @interface SXInsertComponentLayout : NSObject <SXComponentLayout>
@@ -18,12 +18,14 @@
     unsigned long long _ignoreDocumentMargin;
     id <SXEdgeSpacing> _margin;
     unsigned long long _horizontalContentAlignment;
+    id <SXEdgeSpacing> _padding;
     struct _NSRange _columnRange;
     struct _SXConvertibleValue _minimumHeight;
     struct _SXConvertibleValue _maximumContentWidth;
     struct _SXConvertibleValue _suggestedHeight;
 }
 
+@property(readonly, nonatomic) id <SXEdgeSpacing> padding; // @synthesize padding=_padding;
 @property(readonly, nonatomic) struct _SXConvertibleValue suggestedHeight; // @synthesize suggestedHeight=_suggestedHeight;
 @property(readonly, nonatomic) unsigned long long horizontalContentAlignment; // @synthesize horizontalContentAlignment=_horizontalContentAlignment;
 @property(retain, nonatomic) id <SXEdgeSpacing> margin; // @synthesize margin=_margin;
@@ -37,9 +39,13 @@
 - (id)initWithColumnRange:(struct _NSRange)arg1;
 
 // Remaining properties
+@property(readonly, nonatomic) SXJSONArray *conditional;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
+@property(readonly, nonatomic) NSString *identifier;
+@property(readonly, nonatomic) struct _SXConvertibleValue maximumWidth;
+@property(readonly, nonatomic) struct _SXConvertibleValue minimumWidth;
 @property(readonly) Class superclass;
 
 @end

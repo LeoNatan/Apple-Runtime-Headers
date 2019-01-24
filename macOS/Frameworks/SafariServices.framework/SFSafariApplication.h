@@ -15,6 +15,7 @@
 + (void)getHostApplicationWithCompletionHandler:(CDUnknownBlockType)arg1;
 + (void)setToolbarItemsNeedUpdate;
 + (void)openWindowWithURL:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
++ (void)getAllWindowsWithCompletionHandler:(CDUnknownBlockType)arg1;
 + (void)getActiveWindowWithCompletionHandler:(CDUnknownBlockType)arg1;
 
 @end

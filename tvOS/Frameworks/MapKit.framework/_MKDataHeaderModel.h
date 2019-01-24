@@ -16,8 +16,10 @@ __attribute__((visibility("hidden")))
     _MKLineHeaderModel *_thirdLine;
     _MKLineHeaderModel *_forthLine;
     MKTransitInfoLabelView *_transitLabel;
+    _MKLineHeaderModel *_secondaryNameLine;
 }
 
+@property(retain, nonatomic) _MKLineHeaderModel *secondaryNameLine; // @synthesize secondaryNameLine=_secondaryNameLine;
 @property(retain, nonatomic) MKTransitInfoLabelView *transitLabel; // @synthesize transitLabel=_transitLabel;
 @property(retain, nonatomic) _MKLineHeaderModel *forthLine; // @synthesize forthLine=_forthLine;
 @property(retain, nonatomic) _MKLineHeaderModel *thirdLine; // @synthesize thirdLine=_thirdLine;

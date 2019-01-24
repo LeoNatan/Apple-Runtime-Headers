@@ -7,9 +7,12 @@
 #import <Foundation/NSBundle.h>
 
 @interface NSBundle (WDNSBundleExtras)
+- (id)webDriver_associatedSafariAppBundle;
 - (BOOL)webDriver_isSafariFamilyBundle;
 - (BOOL)webDriver_isSystemApplication;
+- (id)webDriver_bundleVersion;
 - (id)webDriver_shortVersion;
 - (id)webDriver_displayName;
+- (id)webDriver_infoPlist;
 @end
 

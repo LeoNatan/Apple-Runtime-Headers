@@ -12,12 +12,19 @@ __attribute__((visibility("hidden")))
 @interface WebKitPreferencesManager : NSObject
 {
     long long _preferencesType;
+    BOOL _shouldPersistPreferences;
     WKPreferences *__wkPreferences;
 }
 
++ (id)_webViewConfigurationForBrowsingMode:(unsigned long long)arg1 pageGroup:(struct OpaqueWKPageGroup *)arg2 preferencesManager:(id)arg3;
++ (id)readerWebViewConfigurationForBrowsingMode:(unsigned long long)arg1;
++ (id)contentWebViewConfigurationForBrowsingMode:(unsigned long long)arg1;
++ (void)toggleInternalDebugFeatureInContentPageGroupPreferences:(id)arg1;
++ (BOOL)isInternalDebugFeatureEnabled:(id)arg1;
 + (void)toggleExperimentalFeatureInContentPageGroupPreferences:(id)arg1;
 + (BOOL)isExperimentalFeatureEnabled:(id)arg1;
 + (id)automationPreferencesWithConfiguration:(id)arg1;
++ (void)addDefaultWKWebViewSettingsToDictionary:(id)arg1;
 + (id)siteMetadataFetcherPageGroupPreferencesManager;
 + (id)webArchiveGenerationPageGroupPreferencesManager;
 + (id)readerWebArchiveGenerationPageGroupPreferencesManager;
@@ -27,7 +34,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, copy, nonatomic) WKPreferences *_wkPreferences; // @synthesize _wkPreferences=__wkPreferences;
 - (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL webSecurityEnabledIsForced;
-@property(readonly, nonatomic) BOOL webRTCLegacyAPIEnabledIsForced;
 @property(readonly, nonatomic) BOOL webGLEnabledIsForced;
 @property(readonly, nonatomic) BOOL webAudioEnabledIsForced;
 @property(readonly, nonatomic) BOOL webArchiveDebugModeEnabledIsForced;
@@ -92,7 +98,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) BOOL diagnosticLoggingEnabledIsForced;
 @property(readonly, nonatomic) BOOL developerExtrasEnabledIsForced;
 @property(readonly, nonatomic) BOOL defaultTextEncodingNameIsForced;
-@property(readonly, nonatomic) BOOL cssAnimationTriggersEnabledIsForced;
 @property(readonly, nonatomic) BOOL cookieEnabledIsForced;
 @property(readonly, nonatomic) BOOL compositingRepaintCountersVisibleIsForced;
 @property(readonly, nonatomic) BOOL compositingBordersVisibleIsForced;
@@ -111,7 +116,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) BOOL acceleratedDrawingEnabledIsForced;
 @property(readonly, nonatomic) BOOL acceleratedCompositingEnabledIsForced;
 @property(nonatomic) BOOL webSecurityEnabled;
-@property(nonatomic) BOOL webRTCLegacyAPIEnabled;
 @property(nonatomic) BOOL webGLEnabled;
 @property(nonatomic) BOOL webAudioEnabled;
 @property(nonatomic) BOOL webArchiveDebugModeEnabled;
@@ -176,7 +180,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) BOOL diagnosticLoggingEnabled;
 @property(nonatomic) BOOL developerExtrasEnabled;
 @property(copy, nonatomic) NSString *defaultTextEncodingName;
-@property(nonatomic, setter=setCSSAnimationTriggersEnabled:) BOOL cssAnimationTriggersEnabled;
 @property(nonatomic) BOOL cookieEnabled;
 @property(nonatomic) BOOL compositingRepaintCountersVisible;
 @property(nonatomic) BOOL compositingBordersVisible;
@@ -186,6 +189,8 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) BOOL avFoundationEnabled;
 @property(nonatomic) BOOL authorAndUserStylesEnabled;
 @property(nonatomic) BOOL asynchronousPluginInitializationEnabled;
+- (void)setSandboxingAllPlugInsAlways:(BOOL)arg1;
+@property(nonatomic) BOOL sandboxingAllPlugIns;
 @property(nonatomic) BOOL artificialPluginInitializationDelayEnabled;
 @property(nonatomic) BOOL applePayEnabled;
 @property(nonatomic) BOOL applePayCapabilityDisclosureAllowed;
@@ -195,12 +200,21 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) BOOL aggressiveTileRetentionEnabled;
 @property(nonatomic) BOOL acceleratedDrawingEnabled;
 @property(nonatomic) BOOL acceleratedCompositingEnabled;
+- (void)_applyPreferencesToWKWebViewConfiguration:(id)arg1;
+- (void)_readContentPageGroupInternalDebugPreferencesFromDefaults;
 - (void)_readContentPageGroupExperimentalPreferencesFromDefaults;
 - (void)_initializeSiteMetadataFetcherPageGroupPreferencesManager;
 - (void)_initializeWebArchiveGenerationPageGroupPreferencesManager;
 - (void)_initializeReaderWebArchiveGenerationPageGroupPreferencesManager;
 - (void)_initializeReadingListFetcherPageGroupPreferencesManager;
 - (void)_initializeReaderPageGroupPreferencesManager;
+- (void)_readContentPageGroupPreferencesFromDefaults;
+- (BOOL)_getFloatFromUserDefaults:(id)arg1 ifObjectExistsForKey:(id)arg2 legacyWebKitKey:(id)arg3 value:(float *)arg4;
+- (BOOL)_getIntegerFromUserDefaults:(id)arg1 ifObjectExistsForKey:(id)arg2 legacyWebKitKey:(id)arg3 value:(long long *)arg4;
+- (BOOL)_getStringFromUserDefaults:(id)arg1 ifObjectExistsForKey:(id)arg2 legacyWebKitKey:(id)arg3 value:(id *)arg4;
+- (BOOL)_getBoolFromUserDefaults:(id)arg1 ifObjectExistsForKey:(id)arg2 legacyWebKitKey:(id)arg3 value:(char *)arg4;
+- (BOOL)_migrateWKViewContentPageGroupPreferencesIfNecessary;
+- (void)_initializeContentPageGroupForWKWebViewPreferences;
 - (void)_initializeContentPageGroupForWKViewPreferences;
 - (id)_initWithPreferencesType:(long long)arg1;
 - (id)init;

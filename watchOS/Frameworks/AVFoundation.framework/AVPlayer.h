@@ -58,6 +58,7 @@
 - (void)setExternalPlaybackVideoGravity:(id)arg1;
 - (id)externalPlaybackVideoGravity;
 - (id)_externalPlaybackVideoGravity;
+- (id)_performanceDictionary;
 - (void)_pixelBufferAttributesDidChangeForLayer:(id)arg1;
 - (void)_addLayer:(id)arg1;
 - (void)_removeLayer:(id)arg1;
@@ -266,6 +267,7 @@
 @property(retain) AVAudioSession *audioSession;
 @property(nonatomic) unsigned long long preferredVideoDecoderGPURegistryID;
 @property(retain, nonatomic) id <AVLoggingIdentifier> loggingIdentifier;
+@property(nonatomic, getter=_disallowsAutoPauseOnRouteRemovalIfNoAudio, setter=_setDisallowsAutoPauseOnRouteRemovalIfNoAudio:) _Bool disallowsAutoPauseOnRouteRemovalIfNoAudio;
 
 @end
 

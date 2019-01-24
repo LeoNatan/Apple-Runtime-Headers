@@ -132,7 +132,7 @@ __attribute__((visibility("hidden")))
 - (id)regionByCollapsingRangesForRemovedRows:(id)arg1;
 - (id)regionByRemovingColumns:(id)arg1;
 - (id)regionByRemovingRows:(id)arg1;
-- (id)regionOffsetBy:(CDStruct_1ef3fb1f)arg1;
+- (id)regionOffsetBy:(struct TSUColumnRowOffset)arg1;
 - (id)regionByIntersectingRegion:(id)arg1;
 - (id)regionBySubtractingRegion:(id)arg1;
 - (id)regionByAddingRegion:(id)arg1;
@@ -142,8 +142,8 @@ __attribute__((visibility("hidden")))
 - (id)regionBySubtractingRowIndexes:(id)arg1;
 - (id)regionBySubtractingRange:(struct TSUCellRect)arg1;
 - (id)regionByAddingRange:(struct TSUCellRect)arg1;
-- (void)saveToMessage:(struct CellRegion *)arg1;
-- (id)initFromMessage:(const struct CellRegion *)arg1;
+-     // Error parsing type: v24@0:8^{CellRegion=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TST::CellRange>=^{Arena}ii^{Rep}}}16, name: saveToMessage:
+-     // Error parsing type: @24@0:8r^{CellRegion=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TST::CellRange>=^{Arena}ii^{Rep}}}16, name: initFromMessage:
 - (id)init;
 - (vector_54ceaeac)modelCellRanges;
 - (void)enumerateModelCellRectsUsingBlock:(CDUnknownBlockType)arg1;

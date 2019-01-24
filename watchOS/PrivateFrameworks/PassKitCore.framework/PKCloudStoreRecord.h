@@ -19,7 +19,7 @@
 - (id)description;
 - (void)addRecord:(id)arg1;
 @property(readonly, nonatomic) NSArray *records;
-- (id)recordWithRecordType:(id)arg1;
+- (id)recordsWithRecordType:(id)arg1;
 - (id)initWithRecords:(id)arg1;
 
 @end

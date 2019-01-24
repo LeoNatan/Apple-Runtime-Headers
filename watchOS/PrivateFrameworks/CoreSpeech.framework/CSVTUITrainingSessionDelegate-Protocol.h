@@ -13,6 +13,6 @@
 - (void)CSVTUITrainingSessionRMSAvailable:(float)arg1;
 
 @optional
-- (void)CSVTUITrainingSession:(CSVTUITrainingSession *)arg1 hasTrainUtterance:(NSData *)arg2 languageCode:(NSString *)arg3;
+- (_Bool)CSVTUITrainingSession:(CSVTUITrainingSession *)arg1 hasTrainUtterance:(NSData *)arg2 languageCode:(NSString *)arg3 payload:(_Bool)arg4;
 @end
 

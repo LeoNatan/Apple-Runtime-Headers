@@ -9,16 +9,17 @@
 #import <iWorkImport/TSTGroupByChangeProtocol-Protocol.h>
 #import <iWorkImport/TSTTableTileCreating-Protocol.h>
 
-@class TSTCategoryAggregateFormulaOwner, TSTColumnRowUIDMap, TSTInfo, TSTSummaryCellVendor, TSTTableDataStore;
+@class TSTCategoryAggregateFormulaOwner, TSTColumnRowUIDMap, TSTSummaryCellVendor, TSTTableDataStore, TSTTableInfo;
 
 __attribute__((visibility("hidden")))
 @interface TSTSummaryModel : TSPObject <TSTTableTileCreating, TSTGroupByChangeProtocol>
 {
+    _Bool _needsFormulaReset;
     TSTTableDataStore *_dataStore;
     TSTColumnRowUIDMap *_columnRowUIDMap;
     TSTSummaryCellVendor *_summaryCellVendor;
     TSTCategoryAggregateFormulaOwner *_aggregateFormulaOwner;
-    TSTInfo *_tableInfo;
+    TSTTableInfo *_tableInfo;
     double _categoryColumnWidth;
     UUIDData_5fbc143e _aggregateFormulaOwnerUID;
     vector_b67dfe3a _summaryRowHeightList;
@@ -28,12 +29,13 @@ __attribute__((visibility("hidden")))
 
 + (unsigned char)categoryLevelForTableStyleArea:(unsigned long long)arg1;
 + (unsigned long long)tableStyleAreaForCategoryLevel:(unsigned char)arg1 isLabel:(_Bool)arg2;
+@property(nonatomic) _Bool needsFormulaReset; // @synthesize needsFormulaReset=_needsFormulaReset;
 @property(readonly, nonatomic) vector_12bd641b *labelRowVisibilityList; // @synthesize labelRowVisibilityList=_labelRowVisibilityList;
 @property(readonly, nonatomic) vector_b67dfe3a *labelRowHeightList; // @synthesize labelRowHeightList=_labelRowHeightList;
 @property(readonly, nonatomic) vector_b67dfe3a *summaryRowHeightList; // @synthesize summaryRowHeightList=_summaryRowHeightList;
 @property(nonatomic) double categoryColumnWidth; // @synthesize categoryColumnWidth=_categoryColumnWidth;
 @property(nonatomic) UUIDData_5fbc143e aggregateFormulaOwnerUID; // @synthesize aggregateFormulaOwnerUID=_aggregateFormulaOwnerUID;
-@property(readonly, nonatomic) TSTInfo *tableInfo; // @synthesize tableInfo=_tableInfo;
+@property(readonly, nonatomic) TSTTableInfo *tableInfo; // @synthesize tableInfo=_tableInfo;
 @property(readonly, nonatomic) TSTCategoryAggregateFormulaOwner *aggregateFormulaOwner; // @synthesize aggregateFormulaOwner=_aggregateFormulaOwner;
 @property(readonly, nonatomic) TSTSummaryCellVendor *summaryCellVendor; // @synthesize summaryCellVendor=_summaryCellVendor;
 @property(retain, nonatomic) TSTColumnRowUIDMap *columnRowUIDMap; // @synthesize columnRowUIDMap=_columnRowUIDMap;
@@ -76,6 +78,7 @@ __attribute__((visibility("hidden")))
 - (id)cellStyleOfRowAtIndex:(struct TSUModelRowIndex)arg1 isDefault:(out _Bool *)arg2;
 - (id)fontColorAtCellCoord:(struct TSUModelCellCoord)arg1 optionalCell:(id)arg2;
 - (id)textStyleAtBaseCellCoord:(struct TSUModelCellCoord)arg1 isDefault:(out _Bool *)arg2;
+- (void)adoptStylesheet:(id)arg1 withMapper:(id)arg2;
 - (void)enumerateDataStoreCellsWithBlock:(CDUnknownBlockType)arg1;
 - (id)newCell;
 @property(readonly, nonatomic) struct TSUModelColumnIndex numberOfColumns;
@@ -93,7 +96,6 @@ __attribute__((visibility("hidden")))
 - (int)setFormulaResultCellsWithCellMap:(id)arg1;
 - (int)setCell:(id)arg1 atCellUID:(const struct TSTCellUID *)arg2;
 - (void)setStorageParentToInfo:(id)arg1;
-- (id)copyWithContext:(id)arg1 tableInfo:(id)arg2;
 - (void)registerAllFormulasWithCalculationEngine:(id)arg1 wasCrossDocumentPaste:(_Bool)arg2;
 - (void)upgradeDuringDocumentUpgradeIfNeeded:(unsigned long long)arg1 tableInfo:(id)arg2;
 - (void)saveToArchiver:(id)arg1;

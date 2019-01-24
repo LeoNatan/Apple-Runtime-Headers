@@ -7,7 +7,9 @@
 #import <iWorkImport/NSObject-Protocol.h>
 
 @protocol TSPArchivableContent <NSObject>
-@property(readonly, nonatomic) const struct FieldPath *fieldPath;
+// Error parsing type for property fieldPath:
+// Property attributes: Tr^{FieldPath=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedField<unsigned int>=ii(Pointer=^{Arena}^{Rep})}i},R,N
+
 @property(readonly, nonatomic) unsigned long long messageVersion;
 @property(readonly, nonatomic) _Bool isDiff;
 @property(readonly, nonatomic) _Bool isContentUnknown;

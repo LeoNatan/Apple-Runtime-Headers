@@ -9,7 +9,7 @@
 #import <RapportUI/NSTableViewDataSource-Protocol.h>
 #import <RapportUI/NSTableViewDelegate-Protocol.h>
 
-@class CUPairingManager, NSButton, NSProgressIndicator, NSString, NSTableView, NSTextField, RPDevice, RPDeviceDiscovery, RPPairingManagerRemoveViewController, RPPairingManagerUIController, RPPairingUIController, RPSession;
+@class CUPairingManager, NSButton, NSProgressIndicator, NSString, NSTableView, NSTextField, RPDevice, RPLegacyDeviceDiscovery, RPLegacySession, RPPairingManagerRemoveViewController, RPPairingManagerUIController, RPPairingUIController;
 
 __attribute__((visibility("hidden")))
 @interface RPPairingManagerViewController : NSViewController <NSTableViewDataSource, NSTableViewDelegate>
@@ -19,10 +19,10 @@ __attribute__((visibility("hidden")))
     NSProgressIndicator *_progressSpinner;
     NSTextField *_progressLabel;
     NSButton *_doneButton;
-    RPDeviceDiscovery *_deviceDiscovery;
+    RPLegacyDeviceDiscovery *_deviceDiscovery;
     struct NSMutableArray *_devices;
     RPDevice *_pairingDevice;
-    RPSession *_pairingSession;
+    RPLegacySession *_pairingSession;
     BOOL _pairingStarted;
     RPPairingUIController *_pairingUI;
     CUPairingManager *_pairingManager;

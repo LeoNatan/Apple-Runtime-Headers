@@ -18,6 +18,7 @@
 
 @interface MLNeuralNetworkEngine : MLModel <MLNeuralNetwork, MLModelSpecificationLoader, MLCompiledModelLoader, MLSpecificationCompiler, MLClassifier, MLRegressor>
 {
+    _Bool _hardwareFallbackDetected;
     _Bool _usingCPU;
     _Bool _isEspresoBiasPreprocessingShared;
     _Bool _hasBidirectionalLayer;
@@ -94,6 +95,7 @@
 @property(nonatomic) vector_d21bac94 inputBuffers; // @synthesize inputBuffers=_inputBuffers;
 @property(readonly, nonatomic) unsigned int numOutputs; // @synthesize numOutputs=_numOutputs;
 @property(readonly, nonatomic) unsigned int numInputs; // @synthesize numInputs=_numInputs;
+@property(nonatomic) _Bool hardwareFallbackDetected; // @synthesize hardwareFallbackDetected=_hardwareFallbackDetected;
 @property(readonly, nonatomic) NSArray *outputLayers; // @synthesize outputLayers=_outputLayers;
 @property(readonly, nonatomic) NSArray *inputLayers; // @synthesize inputLayers=_inputLayers;
 @property(retain, nonatomic) NSString *classScoreVectorName; // @synthesize classScoreVectorName=_classScoreVectorName;
@@ -131,6 +133,7 @@
 - (id)classify:(id)arg1 options:(id)arg2 error:(id *)arg3;
 - (id)addClassifierInformationToOutput:(id)arg1 options:(id)arg2 error:(id *)arg3;
 - (id)convertPredictionToClassifierResult:(id)arg1 withOptions:(id)arg2 error:(id *)arg3;
+- (int)sequenceNamed:(id)arg1;
 - (_Bool)usingEspressoConfigurations;
 
 // Remaining properties

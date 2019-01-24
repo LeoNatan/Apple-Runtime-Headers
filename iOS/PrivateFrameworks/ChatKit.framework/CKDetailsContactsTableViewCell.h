@@ -59,6 +59,7 @@
 - (void)configureWithViewModel:(id)arg1;
 - (void)layoutSubviews;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
+- (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 
 @end
 

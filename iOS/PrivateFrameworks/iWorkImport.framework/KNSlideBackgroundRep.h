@@ -15,16 +15,12 @@ __attribute__((visibility("hidden")))
 {
     CALayer *_blackBackgroundLayer;
     _Bool _layerNeedsUpdate;
-    _Bool _fillCanApplyToCALayer;
 }
 
 + (id)magicMoveMatchesBetweenOutgoingObjects:(id)arg1 andIncomingObjects:(id)arg2 textureDescription:(id)arg3;
 - (void).cxx_destruct;
 - (id)textureForDescription:(id)arg1;
 - (_Bool)wantsToDistortWithImagerContext;
-- (id)additionalLayersUnderLayer;
-- (void)didUpdateLayer:(id)arg1;
-- (_Bool)directlyManagesLayerContent;
 - (void)drawInContext:(struct CGContext *)arg1;
 @property(readonly) KNSlideBackgroundInfo *slideBackgroundInfo;
 - (_Bool)isOpaque;

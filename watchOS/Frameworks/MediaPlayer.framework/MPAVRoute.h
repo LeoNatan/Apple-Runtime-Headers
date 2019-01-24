@@ -68,8 +68,10 @@
 @property(readonly, nonatomic) _Bool supportsWirelessDisplay;
 @property(readonly, nonatomic, getter=isB238Route) _Bool b238Route;
 @property(readonly, nonatomic, getter=isW1Route) _Bool w1Route;
+@property(readonly, nonatomic, getter=isTVRoute) _Bool tvRoute;
 @property(readonly, nonatomic, getter=isStereoPair) _Bool stereoPair;
 @property(readonly, nonatomic, getter=isSmartAudio) _Bool smartAudio;
+@property(readonly, nonatomic, getter=isHearingDeviceRoute) _Bool hearingDeviceRoute;
 @property(readonly, nonatomic, getter=isDeviceSpeakerRoute) _Bool deviceSpeakerRoute;
 @property(readonly, nonatomic, getter=isBeatsXRoute) _Bool beatsXRoute;
 @property(readonly, nonatomic, getter=isBeatsStudioRoute) _Bool beatsStudioRoute;
@@ -88,6 +90,7 @@
 @property(readonly, nonatomic, getter=isProxyGroupPlayer) _Bool proxyGroupPlayer;
 @property(readonly, nonatomic) _Bool isDeviceRoute;
 @property(readonly, nonatomic, getter=isAppleTVRoute) _Bool appleTVRoute;
+@property(readonly, nonatomic) NSString *groupLeaderAirplayIdentifier;
 @property(readonly, nonatomic, getter=isAirPlayingToDevice) _Bool airPlayingToDevice;
 - (void)setAVRouteDescription:(id)arg1;
 @property(readonly, nonatomic) NSDictionary *avRouteDescription;

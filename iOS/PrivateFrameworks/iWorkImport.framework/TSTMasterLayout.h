@@ -10,7 +10,7 @@
 #import <iWorkImport/TSTTableInternalGeometryProviding-Protocol.h>
 #import <iWorkImport/TSTTableMergeRangeProviding-Protocol.h>
 
-@class NSIndexSet, NSMutableArray, NSMutableSet, NSPointerArray, NSString, TSDFill, TSDInfoGeometry, TSDLayoutGeometry, TSKChangeNotifier, TSTCellRegion, TSTCellSelection, TSTConcurrentMutableIndexSet, TSTDupContentCache, TSTHiddenRowsColumnsCache, TSTInfo, TSTLayout, TSTLayoutDynamicResizeInfo, TSTMergeRangeSortedSet, TSTRWRetainedPointerKeyDictionary, TSTStrokeDefaultVendor, TSTStrokeWidthCache, TSTWPColumnCache, TSTWidthHeightCache, TSUColor, TSUWidthLimitedQueue, TSWPColumnStyle;
+@class NSIndexSet, NSMutableArray, NSMutableSet, NSPointerArray, NSString, TSDFill, TSDInfoGeometry, TSDLayoutGeometry, TSKChangeNotifier, TSTCellRegion, TSTCellSelection, TSTConcurrentMutableIndexSet, TSTDupContentCache, TSTHiddenRowsColumnsCache, TSTLayout, TSTLayoutDynamicResizeInfo, TSTMergeRangeSortedSet, TSTRWRetainedPointerKeyDictionary, TSTStrokeDefaultVendor, TSTStrokeWidthCache, TSTTableInfo, TSTWPColumnCache, TSTWidthHeightCache, TSUColor, TSUWidthLimitedQueue, TSWPColumnStyle;
 @protocol OS_dispatch_group, TSTLayoutDynamicCellFillProtocol, TSTLayoutDynamicContentProtocol;
 
 __attribute__((visibility("hidden")))
@@ -20,7 +20,6 @@ __attribute__((visibility("hidden")))
     NSObject<OS_dispatch_group> *_layoutInFlight;
     struct _opaque_pthread_rwlock_t _strokesRWLock;
     struct _opaque_pthread_rwlock_t _contentRWLock;
-    TSWPColumnStyle *_defaultColumnStyle;
     _Bool _inDynamicLayoutMode;
     _Bool _dynamicBandedFill;
     _Bool _dynamicBandedFillSetting;
@@ -52,7 +51,7 @@ __attribute__((visibility("hidden")))
     unsigned int _cachedNumberOfHeaderColumns;
     unsigned int _cachedNumberOfHeaderRows;
     unsigned int _cachedNumberOfFooterRows;
-    TSTInfo *_tableInfo;
+    TSTTableInfo *_tableInfo;
     TSKChangeNotifier *_changeNotifier;
     TSTStrokeDefaultVendor *_strokesDefaultVendor;
     TSTWPColumnCache *_cellIDToWPColumnCache;
@@ -98,6 +97,7 @@ __attribute__((visibility("hidden")))
     TSTLayoutDynamicResizeInfo *_dynamicResizeInfo;
     long long _dynamicRevealingRowsColsDirection;
     id <TSTLayoutDynamicCellFillProtocol> _dynamicCellFillDelegate;
+    TSWPColumnStyle *_defaultColumnStyle;
     struct TSUCellRect _dynamicFontColorCellRange;
     struct TSUCellRect _dynamicResizingColumnRange;
     struct TSUCellRect _dynamicResizingRowRange;
@@ -114,6 +114,7 @@ __attribute__((visibility("hidden")))
 + (double)effectiveTableNameHeightForTable:(id)arg1;
 + (struct CGSize)tableNameTextSize:(id)arg1;
 + (id)tableNameTextEngine:(id)arg1;
+@property(readonly, nonatomic) TSWPColumnStyle *defaultColumnStyle; // @synthesize defaultColumnStyle=_defaultColumnStyle;
 @property(retain, nonatomic) id <TSTLayoutDynamicCellFillProtocol> dynamicCellFillDelegate; // @synthesize dynamicCellFillDelegate=_dynamicCellFillDelegate;
 @property(nonatomic) long long dynamicRevealingRowsColsDirection; // @synthesize dynamicRevealingRowsColsDirection=_dynamicRevealingRowsColsDirection;
 @property(nonatomic) struct TSUCellRect dynamicRevealingRowsCols; // @synthesize dynamicRevealingRowsCols=_dynamicRevealingRowsCols;
@@ -200,7 +201,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) TSTWPColumnCache *cellIDToWPColumnCache; // @synthesize cellIDToWPColumnCache=_cellIDToWPColumnCache;
 @property(retain, nonatomic) TSTStrokeDefaultVendor *strokesDefaultVendor; // @synthesize strokesDefaultVendor=_strokesDefaultVendor;
 @property(nonatomic) __weak TSKChangeNotifier *changeNotifier; // @synthesize changeNotifier=_changeNotifier;
-@property(nonatomic) __weak TSTInfo *tableInfo; // @synthesize tableInfo=_tableInfo;
+@property(nonatomic) TSTTableInfo *tableInfo; // @synthesize tableInfo=_tableInfo;
 - (void).cxx_destruct;
 - (void)readSafelyUsingBlock:(CDUnknownBlockType)arg1;
 - (void)modifySafelyUsingBlock:(CDUnknownBlockType)arg1;
@@ -414,7 +415,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, copy) NSString *description;
 - (void)dealloc;
 - (id)initWithInfo:(id)arg1;
-@property(readonly, nonatomic) TSWPColumnStyle *defaultColumnStyle;
 - (void)iterateCellsInRange:(struct TSUCellRect)arg1 flags:(unsigned long long)arg2 searchFlags:(unsigned long long)arg3 usingBlock:(CDUnknownBlockType)arg4;
 - (void)iterateCellsAndTerminateWithIterator:(id)arg1 usingBlock:(CDUnknownBlockType)arg2;
 - (id)cellIteratorWithRange:(struct TSUCellRect)arg1 flags:(unsigned long long)arg2 searchFlags:(unsigned long long)arg3;

@@ -10,6 +10,15 @@
 {
 }
 
++ (BOOL)canWriteHomeRelativePath:(id)arg1;
++ (BOOL)canReadHomeRelativePath:(id)arg1;
++ (BOOL)canWritePreferenceDomain:(id)arg1;
++ (BOOL)canReadPreferenceDomain:(id)arg1;
++ (BOOL)_taskHasHomeRelativePathReadOnly:(struct __SecTask *)arg1 forPath:(id)arg2;
++ (BOOL)_taskHasHomeRelativePathReadWrite:(struct __SecTask *)arg1 forPath:(id)arg2;
++ (BOOL)_taskHasSharedPreferenceReadOnly:(struct __SecTask *)arg1 forDomain:(id)arg2;
++ (BOOL)_taskHasSharedPreferenceReadWrite:(struct __SecTask *)arg1 forDomain:(id)arg2;
++ (BOOL)_taskHasAppSandbox:(struct __SecTask *)arg1;
 + (BOOL)isShieldWindowShowing;
 + (BOOL)isFastUserSwitching;
 

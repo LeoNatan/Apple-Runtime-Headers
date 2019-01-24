@@ -10,6 +10,8 @@
 + (_Bool)useCourierTime;
 + (id)__im_dateWithCurrentServerTime;
 + (id)__im_dateWithNanosecondTimeIntervalSinceReferenceDate:(long long)arg1;
+- (int)minutesDifferenceFromDate:(id)arg1;
+- (int)hoursDifferenceFromDate:(id)arg1;
 - (int)differenceFromDate:(id)arg1;
 - (_Bool)isToday;
 - (long long)__im_nanosecondTimeInterval;

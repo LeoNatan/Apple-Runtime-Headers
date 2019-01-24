@@ -36,7 +36,7 @@
 
 + (unsigned long long)sizeofClassStructure:(_Bool)arg1;
 + (id)descriptionForTypeEncoding:(const char *)arg1 ivarName:(const char *)arg2;
-+ (id)classInfoWithClassName:(id)arg1 binaryPath:(id)arg2 type:(int)arg3;
++ (id)classInfoWithClassName:(id)arg1 binaryPath:(id)arg2 type:(unsigned int)arg3;
 + (id)_genericBlockByrefInfo;
 + (void)initialize;
 @property(readonly, nonatomic) _Bool usesSwiftRefcounting; // @synthesize usesSwiftRefcounting=_usesSwiftRefcounting;
@@ -57,7 +57,7 @@
 - (id)scanDescriptionWithSize:(unsigned int)arg1;
 @property(readonly, nonatomic) NSString *shortIvarDescription;
 @property(readonly, nonatomic) NSString *fullIvarDescription;
-@property(readonly) int infoType;
+@property(readonly) unsigned int infoType;
 @property(readonly, nonatomic) NSString *typeName;
 - (id)type;
 @property(readonly, nonatomic) NSString *binaryName;
@@ -93,11 +93,11 @@
 - (id)mutableCopy;
 - (void)dealloc;
 - (void)_freeLocalIvarList;
-- (id)initWithRealizedClass:(unsigned long long)arg1 infoMap:(id)arg2 symbolicator:(struct _CSTypeRef)arg3 type:(int)arg4 swiftFieldMetadataContext:(struct libSwiftRemoteMirrorWrapper *)arg5 memoryReader:(CDUnknownBlockType)arg6;
-- (id)initWithClass:(unsigned long long)arg1 infoMap:(id)arg2 symbolicator:(struct _CSTypeRef)arg3 type:(int)arg4 swiftFieldMetadataContext:(struct libSwiftRemoteMirrorWrapper *)arg5 memoryReader:(CDUnknownBlockType)arg6;
-- (id)_initWithClass:(unsigned long long)arg1 realizedOnly:(_Bool)arg2 infoMap:(id)arg3 symbolicator:(struct _CSTypeRef)arg4 type:(int)arg5 swiftFieldMetadataContext:(struct libSwiftRemoteMirrorWrapper *)arg6 memoryReader:(CDUnknownBlockType)arg7;
+- (id)initWithRealizedClass:(unsigned long long)arg1 infoMap:(id)arg2 symbolicator:(struct _CSTypeRef)arg3 type:(unsigned int)arg4 swiftFieldMetadataContext:(struct libSwiftRemoteMirrorWrapper *)arg5 memoryReader:(CDUnknownBlockType)arg6;
+- (id)initWithClass:(unsigned long long)arg1 infoMap:(id)arg2 symbolicator:(struct _CSTypeRef)arg3 type:(unsigned int)arg4 swiftFieldMetadataContext:(struct libSwiftRemoteMirrorWrapper *)arg5 memoryReader:(CDUnknownBlockType)arg6;
+- (id)_initWithClass:(unsigned long long)arg1 realizedOnly:(_Bool)arg2 infoMap:(id)arg3 symbolicator:(struct _CSTypeRef)arg4 type:(unsigned int)arg5 swiftFieldMetadataContext:(struct libSwiftRemoteMirrorWrapper *)arg6 memoryReader:(CDUnknownBlockType)arg7;
 - (id)initWithClosureContext:(unsigned long long)arg1 typeInfo:(struct swift_typeinfo)arg2 infoMap:(id)arg3 swiftFieldMetadataContext:(struct libSwiftRemoteMirrorWrapper *)arg4;
-- (id)initWithClassName:(id)arg1 binaryPath:(id)arg2 type:(int)arg3;
+- (id)initWithClassName:(id)arg1 binaryPath:(id)arg2 type:(unsigned int)arg3;
 @property(readonly, nonatomic) _Bool hasSpecificLayout;
 @property(readonly, nonatomic) _Bool hasVariantLayout;
 @property(readonly, nonatomic) unsigned int defaultScanType;
@@ -106,7 +106,7 @@
 - (void)_setBinaryPath:(id)arg1;
 - (void)_setDisplayName:(id)arg1;
 @property(readonly, nonatomic) NSString *displayName;
-- (void)_setClassNameWithAddress:(unsigned long long)arg1 reader:(CDUnknownBlockType)arg2;
+- (void)_setClassNameWithAddress:(unsigned long long)arg1 symbolicator:(struct _CSTypeRef)arg2;
 - (void)_demangleClassName;
 - (void)_parseIvarsAndLayouts;
 - (void)_processARRLayout:(const char *)arg1 scanType:(unsigned int)arg2;

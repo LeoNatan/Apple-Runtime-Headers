@@ -6,11 +6,14 @@
 
 #import <CoreTelephony/NSObject-Protocol.h>
 
-@class CTSuppServicesNotificationData, CTXPCServiceSubscriptionContext;
+@class CTSuppServicesNotificationData, CTXPCServiceSubscriptionContext, NSError;
 
 @protocol CoreTelephonyClientSuppServicesDelegate <NSObject>
 
 @optional
+- (void)suppServicesError:(CTXPCServiceSubscriptionContext *)arg1 error:(NSError *)arg2;
+- (void)suppServicesCompleted:(CTXPCServiceSubscriptionContext *)arg1;
+- (void)suppServicesStarted:(CTXPCServiceSubscriptionContext *)arg1;
 - (void)phoneNumberChanged:(CTXPCServiceSubscriptionContext *)arg1;
 - (void)phoneNumberAvailable:(CTXPCServiceSubscriptionContext *)arg1;
 - (void)phoneBookError:(CTXPCServiceSubscriptionContext *)arg1;

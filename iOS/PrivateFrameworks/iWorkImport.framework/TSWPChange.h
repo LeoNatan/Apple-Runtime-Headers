@@ -39,6 +39,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) NSString *textAttributeUUIDString;
 - (void)trackedTextDidChange;
 - (void)saveToArchiver:(id)arg1;
+- (void)p_validateSession;
 - (void)loadFromUnarchiver:(id)arg1;
 - (void)i_setTextAttributeUUIDString:(id)arg1;
 @property(readonly, nonatomic) TSUColor *changeAdornmentsColor;

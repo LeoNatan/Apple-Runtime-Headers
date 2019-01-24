@@ -42,7 +42,6 @@
 @property(readonly) NSArray *BRPairedDevices;
 @property(readonly) NSArray *pairedDevices;
 @property(readonly) NSArray *serialDevices;
-@property(readonly) NSArray *fcReadyDevices;
 @property(readonly) NSArray *idsPairedDevicesForUser;
 @property(readonly) NSArray *idsPairedDevices;
 @property(readonly) NSArray *panDevices;

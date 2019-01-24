@@ -50,6 +50,7 @@
 @property(retain, nonatomic) CADisplayMode *currentMode;
 @property(readonly, nonatomic) NSArray *availableModes;
 @property(readonly, nonatomic) NSString *productName;
+@property(readonly, nonatomic) NSString *containerId;
 @property(readonly, nonatomic) NSString *uniqueId;
 @property(readonly, nonatomic) unsigned int connectionSeed;
 @property(readonly, nonatomic) unsigned int seed;

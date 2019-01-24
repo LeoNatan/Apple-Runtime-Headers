@@ -58,6 +58,7 @@
 @property(readonly, retain) struct OpaqueCMTimebase *timebase;
 - (id)videoPerformanceMetrics;
 @property(readonly, nonatomic) BOOL outputObscuredDueToInsufficientExternalProtection;
+@property(nonatomic) BOOL preventsCapture;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

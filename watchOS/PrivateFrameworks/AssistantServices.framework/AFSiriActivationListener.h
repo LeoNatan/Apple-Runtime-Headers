@@ -7,13 +7,14 @@
 #import <objc/NSObject.h>
 
 #import <AssistantServices/AFInvalidating-Protocol.h>
+#import <AssistantServices/AFNotifyObserverDelegate-Protocol.h>
 #import <AssistantServices/AFSiriActivationService-Protocol.h>
 #import <AssistantServices/NSXPCListenerDelegate-Protocol.h>
 
 @class NSString, NSXPCListener;
 @protocol AFSiriActivationListenerDelegate, OS_dispatch_queue;
 
-@interface AFSiriActivationListener : NSObject <NSXPCListenerDelegate, AFSiriActivationService, AFInvalidating>
+@interface AFSiriActivationListener : NSObject <NSXPCListenerDelegate, AFNotifyObserverDelegate, AFSiriActivationService, AFInvalidating>
 {
     NSObject<OS_dispatch_queue> *_queue;
     NSXPCListener *_xpcListener;
@@ -21,12 +22,18 @@
 }
 
 - (void).cxx_destruct;
+- (_Bool)_deactivateForReason:(int)arg1 options:(unsigned int)arg2 analyticsContext:(id)arg3 error:(id *)arg4;
+- (_Bool)_activateWithRequestInfo:(id)arg1 error:(id *)arg2;
+- (_Bool)_prewarmWithRequestInfo:(id)arg1 error:(id *)arg2;
 - (void)_invalidate;
 - (void)_stop;
 - (void)_startWithDelegate:(id)arg1;
 - (oneway void)handleIntent:(id)arg1 inBackgroundAppWithBundleId:(id)arg2 reply:(CDUnknownBlockType)arg3;
+- (oneway void)handleContext:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (oneway void)deactivateForReason:(int)arg1 options:(unsigned int)arg2 analyticsContext:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (oneway void)activateWithRequestInfo:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (oneway void)prewarmForRequestInfo:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (oneway void)prewarmWithRequestInfo:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)notifyObserver:(id)arg1 didChangeStateFrom:(unsigned long long)arg2 to:(unsigned long long)arg3;
 - (_Bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (void)invalidate;
 - (void)stop;

@@ -7,8 +7,8 @@
 #import <Foundation/NSMutableArray.h>
 
 @interface NSMutableArray (TSCHArchivingUtilities)
-+ (id)tsch_instanceWithArchive:(const struct ChartsNSArrayOfNSNumberDoubleArchive *)arg1 unarchiver:(id)arg2;
-- (id)tsch_initWithArchive:(const struct ChartsNSArrayOfNSNumberDoubleArchive *)arg1 unarchiver:(id)arg2;
-- (void)tsch_saveToArchive:(struct ChartsNSArrayOfNSNumberDoubleArchive *)arg1 archiver:(id)arg2;
++     // Error parsing type: @32@0:8r^{ChartsNSArrayOfNSNumberDoubleArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedField<double>=ii(Pointer=^{Arena}^{Rep})}}16@24, name: tsch_instanceWithArchive:unarchiver:
+-     // Error parsing type: @32@0:8r^{ChartsNSArrayOfNSNumberDoubleArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedField<double>=ii(Pointer=^{Arena}^{Rep})}}16@24, name: tsch_initWithArchive:unarchiver:
+-     // Error parsing type: v32@0:8^{ChartsNSArrayOfNSNumberDoubleArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedField<double>=ii(Pointer=^{Arena}^{Rep})}}16@24, name: tsch_saveToArchive:archiver:
 @end
 

@@ -8,6 +8,5 @@
 
 @interface NSAttributedString (SUAppExtras)
 + (id)_attributedStringWithData:(id)arg1 MIMEType:(id)arg2;
-- (id)_htmlString;
 @end
 

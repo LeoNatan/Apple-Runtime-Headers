@@ -6,25 +6,24 @@
 
 #import <iWorkImport/TSPObject.h>
 
-@class TSTInfo;
+@class TSTTableInfo;
 
 __attribute__((visibility("hidden")))
 @interface TSTSummaryCellVendor : TSPObject
 {
     _Bool _hasCustomFormatsToPaste;
-    TSTInfo *_tableInfo;
+    TSTTableInfo *_tableInfo;
     unordered_map_7f472e10 _cellUIDMap;
 }
 
 @property(nonatomic) _Bool hasCustomFormatsToPaste; // @synthesize hasCustomFormatsToPaste=_hasCustomFormatsToPaste;
-@property(nonatomic) __weak TSTInfo *tableInfo; // @synthesize tableInfo=_tableInfo;
 @property(readonly, nonatomic) unordered_map_7f472e10 *cellUIDMap; // @synthesize cellUIDMap=_cellUIDMap;
+@property(readonly, nonatomic) __weak TSTTableInfo *tableInfo; // @synthesize tableInfo=_tableInfo;
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (id)copyWithContext:(id)arg1 tableInfo:(id)arg2;
-- (void)saveToArchive:(struct SummaryCellVendorArchive *)arg1 archiver:(id)arg2;
+-     // Error parsing type: v32@0:8^{SummaryCellVendorArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TST::SummaryCellVendorArchive_SummaryCellEntry>=^{Arena}ii^{Rep}}^{Reference}}16@24, name: saveToArchive:archiver:
 - (void)saveToArchiver:(id)arg1;
-- (void)loadFromArchive:(const struct SummaryCellVendorArchive *)arg1 unarchiver:(id)arg2;
+-     // Error parsing type: v32@0:8r^{SummaryCellVendorArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TST::SummaryCellVendorArchive_SummaryCellEntry>=^{Arena}ii^{Rep}}^{Reference}}16@24, name: loadFromArchive:unarchiver:
 - (void)loadFromUnarchiver:(id)arg1;
 - (void)addPasteboardCustomFormatsToDocumentAndUpdateCells;
 - (void)reassignPasteboardCustomFormatKeys;

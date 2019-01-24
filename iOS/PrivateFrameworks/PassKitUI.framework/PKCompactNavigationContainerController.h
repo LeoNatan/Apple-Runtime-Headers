@@ -26,6 +26,7 @@
     UITapGestureRecognizer *_tapGestureRecognizer;
     _Bool _presentingNavigationController;
     PKCompactNavigationContainedNavigationController *_containedNavigationController;
+    unsigned long long _style;
     id <UICoordinateSpace> _exclusionCoordinateSpace;
     id <PKCompactNavigationContainerControllerDelegate> _delegate;
     struct CGRect _exclusionRect;
@@ -36,6 +37,7 @@
 @property(nonatomic) __weak id <PKCompactNavigationContainerControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) id <UICoordinateSpace> exclusionCoordinateSpace; // @synthesize exclusionCoordinateSpace=_exclusionCoordinateSpace;
 @property(readonly, nonatomic) struct CGRect exclusionRect; // @synthesize exclusionRect=_exclusionRect;
+@property(readonly, nonatomic) unsigned long long style; // @synthesize style=_style;
 @property(readonly, nonatomic) PKCompactNavigationContainedNavigationController *containedNavigationController; // @synthesize containedNavigationController=_containedNavigationController;
 - (void).cxx_destruct;
 - (void)statusBarFrameWillChange:(id)arg1;
@@ -68,6 +70,7 @@
 - (void)viewDidLoad;
 - (void)loadView;
 - (void)dealloc;
+- (id)initWithNavigationController:(id)arg1 style:(unsigned long long)arg2;
 - (id)initWithNavigationController:(id)arg1;
 - (id)init;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;

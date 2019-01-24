@@ -24,8 +24,8 @@ __attribute__((visibility("hidden")))
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (id)makeInverse;
-- (void)saveToArchive:(struct ExpandCollapseStateArchive *)arg1;
-- (id)initWithArchive:(const struct ExpandCollapseStateArchive *)arg1;
+-     // Error parsing type: v24@0:8^{ExpandCollapseStateArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSP::UUID>=^{Arena}ii^{Rep}}{RepeatedPtrField<TSP::UUID>=^{Arena}ii^{Rep}}}16, name: saveToArchive:
+-     // Error parsing type: @24@0:8r^{ExpandCollapseStateArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSP::UUID>=^{Arena}ii^{Rep}}{RepeatedPtrField<TSP::UUID>=^{Arena}ii^{Rep}}}16, name: initWithArchive:
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithCollapsed:(id)arg1 expanded:(id)arg2;
 

@@ -88,6 +88,7 @@
 - (id)_avItemView;
 - (id)_avItem;
 - (id)_avItemController;
+- (void)_itemFailedToPlayToEndTime:(id)arg1;
 - (void)_itemDidPlayToEndTime:(id)arg1;
 - (void)_unregisterPlayerItemNotifications;
 - (void)_registerPlayerItemNotifications;

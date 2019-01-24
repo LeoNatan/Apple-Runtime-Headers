@@ -23,7 +23,7 @@ __attribute__((visibility("hidden")))
     long long _inspectorPaneViewMode;
 }
 
-+ (id)uiLayoutFromArchive:(const struct DesktopUILayoutArchive *)arg1 unarchiver:(id)arg2 context:(id)arg3;
++     // Error parsing type: @40@0:8r^{DesktopUILayoutArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}iBBBBiBBB}16@24@32, name: uiLayoutFromArchive:unarchiver:context:
 @property(readonly, nonatomic, getter=isShowingElementList) _Bool showingElementList; // @synthesize showingElementList=_showingElementList;
 @property(readonly, nonatomic, getter=isShowingMasterSlides) _Bool showingMasterSlides; // @synthesize showingMasterSlides=_showingMasterSlides;
 @property(readonly, nonatomic) long long inspectorPaneViewMode; // @synthesize inspectorPaneViewMode=_inspectorPaneViewMode;
@@ -37,7 +37,7 @@ __attribute__((visibility("hidden")))
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
-- (void)saveToArchive:(struct DesktopUILayoutArchive *)arg1 archiver:(id)arg2;
+-     // Error parsing type: v32@0:8^{DesktopUILayoutArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}iBBBBiBBB}16@24, name: saveToArchive:archiver:
 - (_Bool)inspectorPaneAutoHidden;
 - (void)setInspectorPaneAutoHidden:(_Bool)arg1;
 - (_Bool)showingInspectorPane;

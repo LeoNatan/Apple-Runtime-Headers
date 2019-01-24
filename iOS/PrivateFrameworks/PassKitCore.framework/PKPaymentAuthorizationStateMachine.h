@@ -10,7 +10,7 @@
 #import <PassKitCore/PKContinuityPaymentCoordinatorDelegate-Protocol.h>
 
 @class CBCentralManager, NSMutableArray, NSString, PKContinuityPaymentCoordinator, PKContinuityPaymentService, PKInAppPaymentSession, PKPaymentAuthorizationClientCallbackStateParam, PKPaymentAuthorizationDataModel, PKPaymentService, PKPaymentWebService, PKPeerPaymentSession;
-@protocol OS_dispatch_source, PKAggregateDictionaryProtocol, PKPaymentAuthorizationStateMachineDelegate;
+@protocol OS_dispatch_group, OS_dispatch_source, PKAggregateDictionaryProtocol, PKPaymentAuthorizationStateMachineDelegate;
 
 @interface PKPaymentAuthorizationStateMachine : NSObject <PKContinuityPaymentCoordinatorDelegate, CBCentralManagerDelegate>
 {
@@ -36,8 +36,10 @@
     PKPaymentAuthorizationClientCallbackStateParam *_mostRecentClientCallback;
     NSString *_instanceIdentifier;
     unsigned long long _prepareTransactionDetailsCounter;
+    NSObject<OS_dispatch_group> *_delayAuthorizedStateGroup;
 }
 
+@property(retain, nonatomic) NSObject<OS_dispatch_group> *delayAuthorizedStateGroup; // @synthesize delayAuthorizedStateGroup=_delayAuthorizedStateGroup;
 @property(nonatomic) _Bool detectedBluetoothOn; // @synthesize detectedBluetoothOn=_detectedBluetoothOn;
 @property(nonatomic) unsigned long long prepareTransactionDetailsCounter; // @synthesize prepareTransactionDetailsCounter=_prepareTransactionDetailsCounter;
 @property(retain, nonatomic) NSString *instanceIdentifier; // @synthesize instanceIdentifier=_instanceIdentifier;
@@ -63,6 +65,8 @@
 - (void)_simulatePayment;
 - (id)_transactionWithPurchase:(id)arg1 paymentHash:(id)arg2;
 - (id)_transactionWithPaymentToken:(id)arg1;
+- (id)_billingInformationFromPaymentRequest:(id)arg1;
+- (void)_applyBillingInformationToAuthorizedQuote:(id)arg1;
 - (void)_applyBillingInformationToPayment:(id)arg1;
 - (void)_applyShippingMethodToPayment:(id)arg1;
 - (void)_applyShippingInformationToPayment:(id)arg1;
@@ -77,6 +81,7 @@
 - (void)_performNonceRequestWithParam:(id)arg1;
 - (id)_pendingTransactionOnAlternateFundingSourceForAutorizedPeerPaymentQuote:(id)arg1;
 - (id)_pendingTransactionOnPeerPaymentPassForAuthorizedPeerPaymentQuote:(id)arg1;
+- (void)_enqueueDidAuthorizeDisbursementWithVoucher:(id)arg1;
 - (void)_enqueueDidAuthorizePeerPaymentQuoteWithAuthorizedQuote:(id)arg1;
 - (void)_enqeueDidAuthorizePurchaseWithParam:(id)arg1;
 - (void)_enqueueDidAuthorizePaymentWithPayment:(id)arg1;
@@ -119,6 +124,9 @@
 - (void)continuityPaymentCoordinator:(id)arg1 didReceiveUpdatedPaymentDevices:(id)arg2;
 - (void)continuityPaymentCoordinator:(id)arg1 didTimeoutTotalWithPaymentDevices:(id)arg2;
 - (void)continuityPaymentCoordinatorDidTimeoutUpdatePaymentDevices:(id)arg1;
+- (void)endDelayingAuthorizedState;
+- (void)beginDelayingAuthorizedState;
+- (void)delayAuthorizedStateByDuration:(double)arg1;
 - (void)didReceivePaymentAuthorizationStatus:(long long)arg1;
 - (void)didReceivePaymentAuthorizationResult:(id)arg1;
 - (void)didAuthenticateWithAuthenticatorEvaluationResponse:(id)arg1;
@@ -156,6 +164,7 @@
 - (void)_removeWebServiceConfigurationIfNeeded;
 - (void)_applyWebServiceConfigurationIfNeeded;
 @property(retain, nonatomic) CBCentralManager *bluetoothCentralManager; // @synthesize bluetoothCentralManager=_bluetoothCentralManager;
+- (void)__setState:(unsigned long long)arg1 param:(id)arg2;
 - (void)_setState:(unsigned long long)arg1 param:(id)arg2;
 - (void)dealloc;
 - (id)init;

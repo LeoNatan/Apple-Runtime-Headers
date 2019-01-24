@@ -70,6 +70,7 @@ __attribute__((visibility("hidden")))
 - (void)object:(id)arg1 forwardInvocation:(id)arg2;
 - (id)object:(id)arg1 methodSignatureForSelector:(SEL)arg2;
 - (BOOL)object:(id)arg1 respondsToSelector:(SEL)arg2;
+- (unsigned int)_declaredClassCodeForPropertyCode:(unsigned int)arg1 inClassCode:(unsigned int)arg2;
 - (unsigned int)inheritanceCodeForClassCode:(unsigned int)arg1;
 - (id)_thunkForObject:(id)arg1 andSelector:(SEL)arg2;
 

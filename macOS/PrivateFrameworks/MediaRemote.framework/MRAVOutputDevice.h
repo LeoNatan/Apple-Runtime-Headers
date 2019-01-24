@@ -24,6 +24,7 @@
     BOOL _proxyGroupPlayer;
     BOOL _canRelayCommunicationChannel;
     BOOL _supportsBufferedAirPlay;
+    BOOL _supportsRapport;
     BOOL _deviceGroupable;
     BOOL _pickedOnPairedDevice;
     BOOL _hasBatteryLevel;
@@ -67,6 +68,7 @@
 @property(readonly, nonatomic) unsigned int deviceType; // @synthesize deviceType=_deviceType;
 @property(readonly, nonatomic, getter=isPickedOnPairedDevice) BOOL pickedOnPairedDevice; // @synthesize pickedOnPairedDevice=_pickedOnPairedDevice;
 @property(readonly, nonatomic, getter=isDeviceGroupable) BOOL deviceGroupable; // @synthesize deviceGroupable=_deviceGroupable;
+@property(readonly, nonatomic) BOOL supportsRapport; // @synthesize supportsRapport=_supportsRapport;
 @property(readonly, nonatomic) BOOL supportsBufferedAirPlay; // @synthesize supportsBufferedAirPlay=_supportsBufferedAirPlay;
 @property(readonly, nonatomic) BOOL canRelayCommunicationChannel; // @synthesize canRelayCommunicationChannel=_canRelayCommunicationChannel;
 @property(readonly, nonatomic, getter=isProxyGroupPlayer) BOOL proxyGroupPlayer; // @synthesize proxyGroupPlayer=_proxyGroupPlayer;

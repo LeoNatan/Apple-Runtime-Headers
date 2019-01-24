@@ -22,6 +22,8 @@
     _Bool _localeDidChange;
 }
 
++ (id)monthFormatForLocale:(id)arg1;
++ (id)yearFormatForLocale:(id)arg1;
 - (id)formattedDateRangeWithStartDate:(id)arg1 endDate:(id)arg2;
 - (id)newLocalizedStringFromYear:(id)arg1 month:(id)arg2;
 - (id)newLocalizedStringFromDate:(id)arg1;

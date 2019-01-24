@@ -71,9 +71,9 @@ __attribute__((visibility("hidden")))
 - (void)clearAndGenerateCategoryStylesConnectedToStylesheet:(_Bool)arg1;
 - (void)p_clearCategoryStyles;
 - (void)upgradeIfNecessary;
-- (void)saveToArchive:(struct TableStyleNetworkArchive *)arg1 archiver:(id)arg2;
+-     // Error parsing type: v36@0:8^{TableStyleNetworkArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{Reference}^{Reference}^{Reference}^{Reference}^{Reference}^{Reference}^{Reference}^{Reference}^{Reference}^{Reference}^{Reference}^{Reference}^{Reference}^{Reference}^{Reference}^{Reference}^{Reference}^{Reference}^{Reference}^{Reference}^{Reference}^{Reference}^{Reference}^{Reference}^{Reference}^{Reference}^{Reference}^{Reference}^{Reference}^{Reference}^{Reference}I}16@24B32, name: p_saveToArchive:archiver:isPre30Alternate:
 - (void)saveToArchiver:(id)arg1;
-- (void)loadFromArchive:(const struct TableStyleNetworkArchive *)arg1 unarchiver:(id)arg2;
+-     // Error parsing type: v32@0:8r^{TableStyleNetworkArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{Reference}^{Reference}^{Reference}^{Reference}^{Reference}^{Reference}^{Reference}^{Reference}^{Reference}^{Reference}^{Reference}^{Reference}^{Reference}^{Reference}^{Reference}^{Reference}^{Reference}^{Reference}^{Reference}^{Reference}^{Reference}^{Reference}^{Reference}^{Reference}^{Reference}^{Reference}^{Reference}^{Reference}^{Reference}^{Reference}^{Reference}I}16@24, name: loadFromArchive:unarchiver:
 - (void)loadFromUnarchiver:(id)arg1;
 - (id)initWithContext:(id)arg1 fromDictionary:(id)arg2 withPreset:(unsigned long long)arg3;
 - (_Bool)valid;

@@ -15,8 +15,6 @@
     id _internalCompoundExpectation;
 }
 
-+ (id)orExpectationWithSubexpectations:(id)arg1;
-+ (id)andExpectationWithSubexpectations:(id)arg1;
 @property(readonly) _XCTCompoundExpectationImplementation *internalCompoundExpectation; // @synthesize internalCompoundExpectation=_internalCompoundExpectation;
 - (void).cxx_destruct;
 - (void)didFulfillExpectation:(id)arg1;
@@ -24,8 +22,8 @@
 - (_Bool)_queue_validateSubexpectationsFulfillment;
 - (void)_updateFulfilledState;
 @property(readonly, copy) NSArray *subexpectations;
-@property(readonly) unsigned long long compoundExpectationType;
-- (id)initWithType:(unsigned long long)arg1 subexpectations:(id)arg2;
+@property(readonly) unsigned long long logicalType;
+- (id)initWithLogicalType:(unsigned long long)arg1 subexpectations:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

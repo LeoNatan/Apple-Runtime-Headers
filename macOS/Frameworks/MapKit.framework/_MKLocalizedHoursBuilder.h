@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, NSColor, NSString, NSTimeZone;
+@class GEOBusinessHours, NSColor, NSDate, NSString, NSTimeZone;
 
 @interface _MKLocalizedHoursBuilder : NSObject
 {
@@ -15,26 +15,39 @@
     BOOL _isClosingSoon;
     BOOL _isOpeningSoon;
     NSString *_localizedOperatingHours;
+    NSString *_localizedOpenState;
     NSColor *_hoursStateLabelColor;
+    NSDate *_compareDate;
     unsigned long long _geoMapItemOpeningHourOptions;
     unsigned long long _localizedHoursStringOptions;
     NSTimeZone *_timeZone;
-    NSArray *_operatingHours;
+    GEOBusinessHours *_operatingHours;
 }
 
-@property(retain, nonatomic) NSArray *operatingHours; // @synthesize operatingHours=_operatingHours;
++ (id)localizedHoursDayRangeString:(id)arg1;
++ (id)localizedHoursStringPermanentlyClosed;
++ (id)localizedHoursStringTemporarilyClosed;
++ (id)localizedHoursStringSpecialHours;
++ (id)localizedHoursStringNormalHours;
+@property(retain, nonatomic) GEOBusinessHours *operatingHours; // @synthesize operatingHours=_operatingHours;
 @property(retain, nonatomic) NSTimeZone *timeZone; // @synthesize timeZone=_timeZone;
 @property(nonatomic) unsigned long long localizedHoursStringOptions; // @synthesize localizedHoursStringOptions=_localizedHoursStringOptions;
 @property(nonatomic) unsigned long long geoMapItemOpeningHourOptions; // @synthesize geoMapItemOpeningHourOptions=_geoMapItemOpeningHourOptions;
+@property(retain, nonatomic) NSDate *compareDate; // @synthesize compareDate=_compareDate;
 - (void).cxx_destruct;
-- (id)_updatedHoursLabelColor;
-- (id)_updatedLocalizedOperatingHoursString;
+- (void)calculateWidthsForData:(id)arg1;
+- (id)formatData:(id)arg1;
+- (void)updateHoursLabelColor;
+- (id)_updateLocalizedOperatingHoursString:(unsigned long long)arg1;
 - (void)_updateLocalizedString;
 @property(readonly, nonatomic) NSColor *hoursStateLabelColor; // @synthesize hoursStateLabelColor=_hoursStateLabelColor;
+@property(readonly, nonatomic) NSString *localizedOpenState; // @synthesize localizedOpenState=_localizedOpenState;
 @property(readonly, nonatomic) NSString *localizedOperatingHours; // @synthesize localizedOperatingHours=_localizedOperatingHours;
-- (id)initWithTimeZone:(id)arg1 operatingHours:(id)arg2 geoMapItemOpeningHourOptions:(unsigned long long)arg3 localizedHoursStringOptions:(unsigned long long)arg4;
+- (void)_resetLocalizedBuilder;
+- (void)_commonInit;
 - (id)initWithMapItemForMessageForBusiness:(id)arg1 localizedHoursStringOptions:(unsigned long long)arg2;
 - (id)initWithMapItem:(id)arg1 localizedHoursStringOptions:(unsigned long long)arg2;
+- (id)initWithBusinessHours:(id)arg1 timeZone:(id)arg2 localizedHoursStringOptions:(unsigned long long)arg3;
 
 @end
 

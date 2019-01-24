@@ -11,6 +11,7 @@
 @protocol MPCPlaybackEngineDelegate <NSObject>
 
 @optional
+- (void)engine:(MPCPlaybackEngine *)arg1 requiresAuthorizationToPlayItem:(MPAVItem *)arg2 reason:(int)arg3 authorizationHandler:(void (^)(_Bool, NSError *))arg4;
 - (void)engine:(MPCPlaybackEngine *)arg1 requiresAuthorizationToPlayItem:(MPAVItem *)arg2 authorizationHandler:(void (^)(_Bool, NSError *))arg3;
 - (void)engine:(MPCPlaybackEngine *)arg1 didFailToPlayItem:(MPAVItem *)arg2 withError:(NSError *)arg3;
 - (void)engine:(MPCPlaybackEngine *)arg1 didFailToPlayFirstItem:(MPAVItem *)arg2 withError:(NSError *)arg3;

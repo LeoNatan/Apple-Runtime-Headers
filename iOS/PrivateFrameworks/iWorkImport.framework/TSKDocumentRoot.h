@@ -10,25 +10,26 @@
 #import <iWorkImport/TSKModel-Protocol.h>
 
 @class NSDictionary, NSMutableArray, NSString, TSCHTextCache, TSKAccessController, TSKAnnotationAuthor, TSKAnnotationAuthorStorage, TSKChangeNotifier, TSKDocumentSupport, TSKPasteboardController, TSKSelectionDispatcher, TSSStylesheet, TSSTheme, TSULocale;
-@protocol TSKDocumentRootDelegate;
+@protocol TSKDocumentRootDelegate, TSULogContext;
 
 __attribute__((visibility("hidden")))
 @interface TSKDocumentRoot : TSPObject <TSKAccessControllerDelegate, TSKModel>
 {
-    TSKAccessController *_accessController;
-    TSKChangeNotifier *_changeNotifier;
-    TSKSelectionDispatcher *_selectionDispatcher;
-    TSKPasteboardController *_pasteboardController;
-    TSKAnnotationAuthorStorage *_annotationAuthorStorage;
-    TSKAnnotationAuthor *_authorForFiltering;
-    _Bool _isFindActive;
-    NSMutableArray *_iCloudTeardownStack;
-    _Bool _preventImageConversionOnOpen;
     TSULocale *_documentLocale;
     _Bool _hasUserDefinedLocale;
     TSULocale *_documentCreationLocale;
     _Bool _isBeingLocalized;
     id <TSKDocumentRootDelegate> _delegate;
+    NSMutableArray *_iCloudTeardownStack;
+    _Bool _preventImageConversionOnOpen;
+    id <TSULogContext> _logContext;
+    _Bool _isFindActive;
+    TSKAccessController *_accessController;
+    TSKSelectionDispatcher *_selectionDispatcher;
+    TSKPasteboardController *_pasteboardController;
+    TSKAnnotationAuthorStorage *_annotationAuthorStorage;
+    TSKAnnotationAuthor *_authorForFiltering;
+    TSKChangeNotifier *_changeNotifier;
     TSKDocumentSupport *_documentSupport;
     TSKDocumentSupport *_documentSupportIfAvailable;
 }
@@ -39,7 +40,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) _Bool isBeingLocalized; // @synthesize isBeingLocalized=_isBeingLocalized;
 @property(readonly, nonatomic) TSKChangeNotifier *changeNotifier; // @synthesize changeNotifier=_changeNotifier;
 @property(retain, nonatomic) TSKAnnotationAuthor *authorForFiltering; // @synthesize authorForFiltering=_authorForFiltering;
-@property(readonly, retain, nonatomic) TSKAnnotationAuthorStorage *annotationAuthorStorage; // @synthesize annotationAuthorStorage=_annotationAuthorStorage;
+@property(readonly, nonatomic) TSKAnnotationAuthorStorage *annotationAuthorStorage; // @synthesize annotationAuthorStorage=_annotationAuthorStorage;
 @property(nonatomic, getter=isFindActive) _Bool findActive; // @synthesize findActive=_isFindActive;
 @property(readonly, nonatomic) TSULocale *documentCreationLocale; // @synthesize documentCreationLocale=_documentCreationLocale;
 @property(readonly, nonatomic) TSULocale *documentLocale; // @synthesize documentLocale=_documentLocale;
@@ -47,6 +48,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) TSKSelectionDispatcher *selectionDispatcher; // @synthesize selectionDispatcher=_selectionDispatcher;
 @property(readonly, nonatomic) TSKAccessController *accessController; // @synthesize accessController=_accessController;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <TSULogContext> logContext;
 - (void)gilligan_documentDidRemoveObject:(id)arg1;
 - (void)gilligan_documentWillRemoveObject:(id)arg1;
 - (void)gilligan_documentWillInsertObject:(id)arg1;
@@ -64,8 +66,9 @@ __attribute__((visibility("hidden")))
 - (_Bool)updateDocumentLocaleToCurrentIfNeeded;
 @property(readonly, nonatomic) NSDictionary *additionalDocumentSupportPropertiesForWrite;
 @property(readonly, nonatomic) NSDictionary *additionalDocumentPropertiesForWrite;
-- (void)saveToArchive:(struct DocumentArchive *)arg1 archiver:(id)arg2;
-- (void)loadFromArchive:(const struct DocumentArchive *)arg1 unarchiver:(id)arg2;
+-     // Error parsing type: v32@0:8^{DocumentArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}^{Reference}^{Reference}BBB}16@24, name: saveToArchive:archiver:
+-     // Error parsing type: v32@0:8r^{DocumentArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}^{Reference}^{Reference}BBB}16@24, name: loadFromArchive:unarchiver:
+- (_Bool)shouldDropOperationHistoryWithDocumentRevision:(id)arg1;
 @property(readonly, nonatomic) _Bool isCollaborativeClientOrServer;
 @property(readonly, nonatomic) _Bool isCollaborativeClient;
 - (void)dumpReaderWriterThreads;
@@ -94,10 +97,11 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) unsigned long long writingDirection;
 @property(readonly, nonatomic) _Bool hasFloatingLocale;
 - (void)willClose;
-- (void)didDisconnectFromServerWithCollaborationContext:(id)arg1;
-- (void)didConnectToServerWithCollaborationContext:(id)arg1;
-- (void)setupAccessController;
+- (void)didConnectToServerWithCollaborationSessionContext:(id)arg1;
+- (void)setUpAccessControllerIfNeeded;
 - (void)documentDidLoad;
+- (void)backgroundDocumentDidLoad;
+- (void)p_setUpControllersForBackground:(_Bool)arg1;
 - (void)didSaveWithEncryptionChange;
 - (id)uniqueDocumentCachePathForProposedPath:(id)arg1;
 - (struct CGImageSource *)newImageSourceForDocumentCachePath:(id)arg1;
@@ -117,6 +121,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) unsigned long long maxMediaItemFileSize;
 @property(nonatomic) _Bool shouldPreventImageConversionOnOpen;
 - (void)dealloc;
+- (void)commonInit;
 - (id)initWithContext:(id)arg1;
 @property(nonatomic) __weak id <TSKDocumentRootDelegate> delegate;
 @property(readonly) TSCHTextCache *tsch_textCache;

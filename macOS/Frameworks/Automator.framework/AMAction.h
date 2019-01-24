@@ -29,6 +29,7 @@
     id _future4;
 }
 
++ (id)pasteboardPropertyListForActionOrProxyAction:(id)arg1 allowDefaultDefinitionFallback:(BOOL)arg2 error:(id *)arg3;
 + (id)actionsFromDescriptions:(id)arg1 error:(id *)arg2;
 + (BOOL)writeCustomActionToDiskWithProperties:(id)arg1;
 + (BOOL)checkCustomActionsDirectoryOnDisk;

@@ -11,9 +11,9 @@
 @property(readonly, nonatomic) _Bool hasKnownValues;
 - (void)mergeToMessage:(struct Message *)arg1 reflection:(const struct Reflection *)arg2;
 - (void)mergeToUnknownFieldSet:(struct UnknownFieldSet *)arg1;
-- (void)updateMessageInfo:(struct MessageInfo *)arg1;
+-     // Error parsing type: v24@0:8^{MessageInfo=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedField<unsigned int>=ii(Pointer=^{Arena}^{Rep})}i{RepeatedPtrField<TSP::FieldInfo>=^{Arena}ii^{Rep}}{RepeatedField<unsigned long long>=ii(Pointer=^{Arena}^{Rep})}i{RepeatedField<unsigned long long>=ii(Pointer=^{Arena}^{Rep})}i{RepeatedField<unsigned int>=ii(Pointer=^{Arena}^{Rep})}i{RepeatedPtrField<TSP::FieldPath>=^{Arena}ii^{Rep}}{RepeatedField<unsigned int>=ii(Pointer=^{Arena}^{Rep})}i^{FieldPath}III}16, name: updateMessageInfo:
 - (void)saveToArchiver:(TSPArchiver *)arg1;
 - (void)loadFromUnarchiver:(TSPUnarchiver *)arg1;
-- (const struct FieldInfo *)fieldInfo;
+-     // Error parsing type: r^{FieldInfo=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedField<unsigned long long>=ii(Pointer=^{Arena}^{Rep})}i{RepeatedField<unsigned long long>=ii(Pointer=^{Arena}^{Rep})}i{RepeatedField<unsigned int>=ii(Pointer=^{Arena}^{Rep})}i{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}^{FieldPath}iii}16@0:8, name: fieldInfo
 @end
 

@@ -19,9 +19,9 @@ __attribute__((visibility("hidden")))
 + (Class)stateClass;
 - (void)uploadData:(id)arg1 effectsStates:(id)arg2;
 - (void)updateState:(id)arg1 effectsStates:(id)arg2;
-- (void)inject:(id)arg1;
+- (void)injectCommonShaderInto:(id)arg1 context:(id)arg2;
 - (void)addVariables:(id)arg1;
-- (const array_bb63b711 *)textureVariablesArray;
+- (id)textureVariablesArray;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)count;
 - (void)dealloc;

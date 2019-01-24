@@ -54,7 +54,7 @@ __attribute__((visibility("hidden")))
 - (double)_toolbarHeight;
 - (id)accessibilityLabel;
 - (id)accessibilityRole;
-- (BOOL)accessibilityIsIgnored;
+- (BOOL)isAccessibilityElement;
 - (void)_dispatchMouseEventToTileContainers:(id)arg1;
 - (void)mouseMoved:(id)arg1;
 - (void)mouseExited:(id)arg1;

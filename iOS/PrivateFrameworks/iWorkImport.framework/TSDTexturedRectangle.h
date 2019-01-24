@@ -56,7 +56,7 @@ __attribute__((visibility("hidden")))
 + (id)setupMetalShaderForContext:(id)arg1;
 + (struct CGRect)boundingRectOnCanvasForTextures:(id)arg1;
 + (struct CGRect)boundingRectForTextures:(id)arg1;
-@property __weak id <TSDLiveTexturedRectangleSource> liveTexturedRectangleSource; // @synthesize liveTexturedRectangleSource=_liveTexturedRectangleSource;
+@property(retain) id <TSDLiveTexturedRectangleSource> liveTexturedRectangleSource; // @synthesize liveTexturedRectangleSource=_liveTexturedRectangleSource;
 @property(nonatomic) double textureOpacity; // @synthesize textureOpacity=_textureOpacity;
 @property(nonatomic) long long textureType; // @synthesize textureType=_textureType;
 @property(nonatomic) double textXHeight; // @synthesize textXHeight=_textXHeight;
@@ -84,9 +84,14 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) __weak TSDBitmapRenderingQualityInfo *bitmapRenderingQualityInfo; // @synthesize bitmapRenderingQualityInfo=_bitmapRenderingQualityInfo;
 @property struct CGImage *bakedImage; // @synthesize bakedImage=_bakedImage;
 - (void).cxx_destruct;
-- (void)drawFrameAtLayerTime:(double)arg1 context:(id)arg2;
-- (void)setupMetalTextureForDevice:(id)arg1;
-- (id)p_allocateMetalTextureForDevice:(id)arg1;
+- (id)metalTextureWithContext:(id)arg1 cpuReadable:(_Bool)arg2;
+- (id)metalTextureWithContext:(id)arg1;
+- (id)p_latestTextureNotAfterLayerTime:(double)arg1;
+- (void)p_makeMetalTextureCPUReadable:(id)arg1 metalContext:(id)arg2;
+- (void)drawFrameWithMetalContext:(id)arg1;
+- (void)setupMetalTextureForDevice:(id)arg1 commandQueue:(id)arg2;
+- (void)setupMetalTextureForContext:(id)arg1;
+- (id)p_allocateMetalTextureForDevice:(id)arg1 renderTarget:(_Bool)arg2 private:(_Bool)arg3;
 - (void)releaseMetalTexture;
 - (_Bool)isMetalTextureSetup;
 - (void)waitUntilAsyncRenderingIsCompleteShouldCancel:(_Bool)arg1;

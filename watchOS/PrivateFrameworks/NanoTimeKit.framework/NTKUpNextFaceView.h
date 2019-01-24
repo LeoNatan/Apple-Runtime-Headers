@@ -16,7 +16,7 @@
 #import <NanoTimeKit/UICollectionViewDelegateFlowLayout-Protocol.h>
 #import <NanoTimeKit/UIGestureRecognizerDelegate-Protocol.h>
 
-@class NSArray, NSOrderedSet, NSSet, NSString, NSTimer, NTKDigitalTimeLabel, NTKDigitalTimeLabelStyle, NTKUpNextCollectionView, NTKUpNextCollectionViewFlowLayout, NTKUtilityComplicationFactory, PUICFrameNotchProvider, REUIRelevanceEngineController, REUpNextScheduler, UIImage, UITapGestureRecognizer, UIView;
+@class NSArray, NSMutableArray, NSOrderedSet, NSSet, NSString, NSTimer, NTKDigitalTimeLabel, NTKDigitalTimeLabelStyle, NTKUpNextCollectionView, NTKUpNextCollectionViewFlowLayout, NTKUtilityComplicationFactory, PUICFrameNotchProvider, REUIRelevanceEngineController, REUpNextScheduler, UIImage, UITapGestureRecognizer, UIView;
 
 @interface NTKUpNextFaceView : NTKDigitalFaceView <REUIRelevanceEngineControllerDelegate, REElementActionDelegate, REUIElementIntentActionDelegate, NTKSensitiveUIStateObserver, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UIGestureRecognizerDelegate, CSLSBacklightObserver, NTKFrameNotchProviding>
 {
@@ -63,6 +63,8 @@
     _Bool _scrollingStoppedTransition;
     int _previousDataMode;
     unsigned int _faceColor;
+    _Bool _hasPerformedAnyBatchUpdates;
+    NSMutableArray *_snapshotCallbacks;
 }
 
 - (void).cxx_destruct;
@@ -81,6 +83,7 @@
 - (unsigned int)_keylineLabelAlignmentForCustomEditMode:(int)arg1 slot:(id)arg2;
 - (id)_keylineViewForCustomEditMode:(int)arg1 slot:(id)arg2;
 - (id)intentActionWantsViewToBlurForAlert:(id)arg1;
+- (id)intentActionWantsBackgroundToBlurForAlert:(id)arg1;
 - (id)intentActionWantsBackgroundImageForAlert:(id)arg1;
 - (void)sensitiveUIStateChanged;
 - (void)elementAction:(id)arg1 wantsToPerformTapActionForComplicationSlot:(id)arg2;

@@ -49,6 +49,7 @@
     unsigned int _timingTest_ExtensionSendSize;
     NSObject<OS_dispatch_queue> *_timingTest_queue;
     NSBundle *_extensionBundle;
+    unsigned int _hostAccessibilityServerPort;
     CDUnknownBlockType _addPassesCompletion;
     double _timingTest_ExtensionReceiveTime;
     double _timingTest_ExtensionSendTime;
@@ -118,6 +119,7 @@
 + (id)startRemoteInterface;
 + (id)sharedRemoteInterface;
 @property(copy, nonatomic) CDUnknownBlockType addPassesCompletion; // @synthesize addPassesCompletion=_addPassesCompletion;
+@property(nonatomic) unsigned int hostAccessibilityServerPort; // @synthesize hostAccessibilityServerPort=_hostAccessibilityServerPort;
 @property(nonatomic) _Bool extensionLaunchedForRemoteExtensionConnection; // @synthesize extensionLaunchedForRemoteExtensionConnection=_extensionLaunchedForRemoteExtensionConnection;
 @property(retain, nonatomic) NSBundle *extensionBundle; // @synthesize extensionBundle=_extensionBundle;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *timingTest_queue; // @synthesize timingTest_queue=_timingTest_queue;
@@ -172,6 +174,8 @@
 - (void)didActivateDataConnection:(id)arg1;
 - (void)tearDownNotificationViewServiceForStorageKey:(id)arg1;
 - (void)tearDownNotificationViewServiceForClientID:(id)arg1 bulletinUniqueID:(id)arg2 hostID:(id)arg3;
+- (void)tearDownAccessibilityPortIfNecessaryWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)exchangeAccessibilityPortInformation:(id)arg1 replyHandler:(CDUnknownBlockType)arg2;
 - (void)requestNotificationViewServiceForHost:(id)arg1 hostID:(id)arg2 clientIdentifier:(id)arg3 bulletinUniqueID:(id)arg4 classicMode:(_Bool)arg5 completion:(CDUnknownBlockType)arg6;
 - (void)appDidReceiveNotification:(id)arg1 clientIdentifier:(id)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
 - (void)appHandleWatchTasks:(id)arg1 reasonForSnapshot:(unsigned int)arg2 visibleVCID:(id)arg3 barTaskUUID:(id)arg4 clientIdentifier:(id)arg5;

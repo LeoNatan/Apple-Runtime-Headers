@@ -16,11 +16,13 @@
     NSObject<OS_dispatch_queue> *_dispatchQueue;
     _Bool _invalidateCalled;
     _Bool _invalidateCalled2;
+    int _connectedCallCount;
     CDUnknownBlockType _invalidationHandler;
     CDUnknownBlockType _bluetoothAddressChangedHandler;
     CDUnknownBlockType _callChangedHandler;
     CDUnknownBlockType _consoleUserChangedHandler;
     CDUnknownBlockType _familyUpdatedHandler;
+    CDUnknownBlockType _manateeChangedHandler;
     CDUnknownBlockType _meDeviceChangedHandler;
     CDUnknownBlockType _netFlagsChangedHandler;
     CDUnknownBlockType _primaryIPChangedHandler;
@@ -31,12 +33,14 @@
     CDUnknownBlockType _screenLockedChangedHandler;
     CDUnknownBlockType _screenOnChangedHandler;
     CDUnknownBlockType _screenSaverChangedHandler;
+    CDUnknownBlockType _systemLockStateChangedHandler;
     CDUnknownBlockType _firstUnlockHandler;
     CDUnknownBlockType _wifiStateChangedHandler;
 }
 
 @property(copy, nonatomic) CDUnknownBlockType wifiStateChangedHandler; // @synthesize wifiStateChangedHandler=_wifiStateChangedHandler;
 @property(copy, nonatomic) CDUnknownBlockType firstUnlockHandler; // @synthesize firstUnlockHandler=_firstUnlockHandler;
+@property(copy, nonatomic) CDUnknownBlockType systemLockStateChangedHandler; // @synthesize systemLockStateChangedHandler=_systemLockStateChangedHandler;
 @property(copy) CDUnknownBlockType screenSaverChangedHandler; // @synthesize screenSaverChangedHandler=_screenSaverChangedHandler;
 @property(copy) CDUnknownBlockType screenOnChangedHandler; // @synthesize screenOnChangedHandler=_screenOnChangedHandler;
 @property(copy) CDUnknownBlockType screenLockedChangedHandler; // @synthesize screenLockedChangedHandler=_screenLockedChangedHandler;
@@ -47,9 +51,11 @@
 @property(copy) CDUnknownBlockType primaryIPChangedHandler; // @synthesize primaryIPChangedHandler=_primaryIPChangedHandler;
 @property(copy) CDUnknownBlockType netFlagsChangedHandler; // @synthesize netFlagsChangedHandler=_netFlagsChangedHandler;
 @property(copy) CDUnknownBlockType meDeviceChangedHandler; // @synthesize meDeviceChangedHandler=_meDeviceChangedHandler;
+@property(copy, nonatomic) CDUnknownBlockType manateeChangedHandler; // @synthesize manateeChangedHandler=_manateeChangedHandler;
 @property(copy) CDUnknownBlockType familyUpdatedHandler; // @synthesize familyUpdatedHandler=_familyUpdatedHandler;
 @property(copy, nonatomic) CDUnknownBlockType consoleUserChangedHandler; // @synthesize consoleUserChangedHandler=_consoleUserChangedHandler;
 @property(copy) CDUnknownBlockType callChangedHandler; // @synthesize callChangedHandler=_callChangedHandler;
+@property(readonly) int connectedCallCount; // @synthesize connectedCallCount=_connectedCallCount;
 @property(copy) CDUnknownBlockType bluetoothAddressChangedHandler; // @synthesize bluetoothAddressChangedHandler=_bluetoothAddressChangedHandler;
 @property(copy, nonatomic) CDUnknownBlockType invalidationHandler; // @synthesize invalidationHandler=_invalidationHandler;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
@@ -57,6 +63,7 @@
 @property(readonly, nonatomic) int wifiState;
 @property(readonly, nonatomic) unsigned int wifiFlags;
 @property(readonly, nonatomic) _Bool firstUnlocked;
+@property(readonly, nonatomic) int systemLockState;
 @property(readonly) _Bool screenSaverActive;
 @property(readonly) _Bool screenOn;
 @property(readonly) _Bool screenLocked;
@@ -69,9 +76,11 @@
 @property(readonly) _Bool powerUnlimited;
 @property(readonly) unsigned int netFlags;
 @property(readonly) _Bool meDeviceValid;
+@property(readonly) _Bool meDeviceIsMe;
 @property(readonly, copy) NSString *meDeviceName;
 @property(readonly, copy) NSString *meDeviceIDSDeviceID;
 @property(readonly, copy) NSString *meDeviceFMFDeviceID;
+@property(readonly) _Bool manateeAvailable;
 @property(readonly, copy) NSArray *familyMembers;
 @property(readonly, copy) NSString *consoleUserName;
 @property(readonly) unsigned int consoleUserID;

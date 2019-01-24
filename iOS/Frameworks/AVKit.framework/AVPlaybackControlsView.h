@@ -121,6 +121,7 @@
 - (void)traitCollectionDidChange:(id)arg1;
 - (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (void)updateLayoutForChangedControlsVisibility;
+@property(readonly, nonatomic) _Bool hasVisibleSubview;
 - (void)animateAlongsideVisibilityAnimationsWithAnimationCoordinator:(id)arg1 appearingViews:(id)arg2 disappearingViews:(id)arg3;
 @property(readonly, nonatomic) _Bool playbackControlsIncludeDisplayModeControls;
 @property(readonly, nonatomic) _Bool playbackControlsIncludeTransportControls;

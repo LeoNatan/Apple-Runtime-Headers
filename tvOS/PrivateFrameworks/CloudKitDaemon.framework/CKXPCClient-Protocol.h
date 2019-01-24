@@ -16,6 +16,6 @@
 - (void)handleOperationCompletion:(CKOperationResult *)arg1 forOperationWithID:(NSString *)arg2;
 - (void)handleOperationProgress:(NSDictionary *)arg1 forOperationWithID:(NSString *)arg2;
 - (void)handleOperationStatistics:(NSDictionary *)arg1 forOperationWithID:(NSString *)arg2;
-- (void)handleOperationProgress:(NSDictionary *)arg1 forOperationWithID:(NSString *)arg2 reply:(void (^)(void))arg3;
+- (void)handleOperationProgress:(NSDictionary *)arg1 forOperationWithID:(NSString *)arg2 reply:(void (^)(NSDictionary *, NSError *))arg3;
 @end
 

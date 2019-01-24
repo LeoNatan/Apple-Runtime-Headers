@@ -23,6 +23,7 @@
 + (id)fitnessFriendWorkoutType;
 + (id)fitnessFriendAchievementType;
 + (id)fitnessFriendActivitySnapshotType;
++ (id)atrialFibrillationEventType;
 + (id)irregularlyIrregularPulseType;
 + (id)heartStudyEventType;
 + (id)bradycardiaType;

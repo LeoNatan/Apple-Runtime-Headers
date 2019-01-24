@@ -8,7 +8,7 @@
 
 @interface WKWebViewConfiguration (ADShared)
 + (_Bool)excludeCustomJavaScript;
-+ (id)_createSharedConfiguration:(_Bool)arg1 forVideo:(_Bool)arg2;
++ (id)_newSharedConfiguration:(_Bool)arg1 forVideo:(_Bool)arg2;
 + (id)sharedAdvertisingConfigurationForVideo:(_Bool)arg1;
 + (id)sharedAdvertisingConfiguration:(_Bool)arg1;
 @end

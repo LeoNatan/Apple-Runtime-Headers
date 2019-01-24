@@ -9,7 +9,7 @@
 #import <SearchFoundation/NSSecureCoding-Protocol.h>
 #import <SearchFoundation/_SFPBCardSection-Protocol.h>
 
-@class NSArray, NSData, NSString, _SFPBCard, _SFPBCardSectionValue;
+@class NSArray, NSData, NSString, _SFPBCard, _SFPBCardSectionValue, _SFPBUserReportRequest;
 
 @interface _SFPBCardSection : PBCodable <_SFPBCardSection, NSSecureCoding>
 {
@@ -20,8 +20,10 @@
     NSArray *_parameterKeyPaths;
     NSString *_cardSectionId;
     NSString *_resultIdentifier;
+    _SFPBUserReportRequest *_userReportRequest;
 }
 
+@property(retain, nonatomic) _SFPBUserReportRequest *userReportRequest; // @synthesize userReportRequest=_userReportRequest;
 @property(copy, nonatomic) NSString *resultIdentifier; // @synthesize resultIdentifier=_resultIdentifier;
 @property(copy, nonatomic) NSString *cardSectionId; // @synthesize cardSectionId=_cardSectionId;
 @property(copy, nonatomic) NSArray *parameterKeyPaths; // @synthesize parameterKeyPaths=_parameterKeyPaths;

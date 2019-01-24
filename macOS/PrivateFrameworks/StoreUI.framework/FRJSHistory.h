@@ -13,7 +13,7 @@
     FRWKView *_webView;
 }
 
-@property(readonly, nonatomic) FRWKView *webView; // @synthesize webView=_webView;
+@property(readonly) __weak FRWKView *webView; // @synthesize webView=_webView;
 - (void).cxx_destruct;
 - (id)callFunction:(id)arg1 withArguments:(id)arg2;
 - (id)initWithWebView:(id)arg1;

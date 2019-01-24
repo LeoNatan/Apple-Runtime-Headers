@@ -11,7 +11,7 @@
 @class NSDate, NSString;
 
 @interface PHAsset (PXDisplayAssetAdoption) <PXPhotoKitAdjustedDisplayAsset>
-- (id)applyAdjustmentsToEditModel:(id)arg1 editSource:(id)arg2;
+- (id)applyAdjustmentsToEditModel:(id)arg1 editSource:(id)arg2 renderer:(id)arg3;
 @property(readonly, nonatomic) PHAsset *photoKitAsset;
 @property(readonly, nonatomic) NSString *adjustedContentIdentifier;
 @property(readonly, nonatomic) _Bool wantsAdjustments;

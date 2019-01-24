@@ -12,7 +12,7 @@
 + (id)cls_ubiquitousContainerURL;
 + (id)cls_configURL;
 + (id)cls_libraryURL;
-- (id)cls_createDirectoryIfNeeded;
+- (id)cls_createDirectoryIfNeeded:(id *)arg1;
 - (_Bool)cls_isParentOfURL:(id)arg1;
 @property(readonly, nonatomic) _Bool cls_fileExists;
 @property(readonly, nonatomic) _Bool cls_isUploaded;

@@ -19,8 +19,8 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSString *aggregateFunction; // @synthesize aggregateFunction=_aggregateFunction;
 @property(nonatomic) unsigned int symbol; // @synthesize symbol=_symbol;
 - (void).cxx_destruct;
-- (void)saveToArchive:(struct IdentifierNodeArchive *)arg1 archiver:(id)arg2;
-- (void)loadFromArchive:(const struct IdentifierNodeArchive *)arg1 unarchiver:(id)arg2;
+-     // Error parsing type: v32@0:8^{IdentifierNodeArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}^{ExpressionNodeArchive}I}16@24, name: saveToArchive:archiver:
+-     // Error parsing type: v32@0:8r^{IdentifierNodeArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}^{ExpressionNodeArchive}I}16@24, name: loadFromArchive:unarchiver:
 - (void)saveToArchiver:(id)arg1;
 - (void)loadFromUnarchiver:(id)arg1;
 - (void)buildASTNodeArray:(struct TSCEASTNodeArray *)arg1 hostCell:(struct TSUCellCoord)arg2 symbolTable:(struct TSCESymbolTable *)arg3;

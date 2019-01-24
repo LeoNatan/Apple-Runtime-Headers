@@ -9,23 +9,30 @@
 #import <TemplateKit/NUIContainerStackViewDelegate-Protocol.h>
 #import <TemplateKit/TLKTextAreaViewTesting-Protocol.h>
 
-@class NSMutableArray, NSString, TLKRichTextField, TLKTitleContainerView;
+@class NSMutableArray, NSString, NUIContainerStackView, TLKRichTextField, TLKTitleContainerView, UIButton;
+@protocol TLKDetailsViewDelegate;
 
 @interface TLKTextAreaView : TLKStackView <NUIContainerStackViewDelegate, TLKTextAreaViewTesting>
 {
     _Bool _disableAllObservers;
+    id <TLKDetailsViewDelegate> _buttonDelegate;
     TLKTitleContainerView *_titleContainer;
     NSMutableArray *_detailsFields;
     TLKRichTextField *_footnoteLabel;
+    UIButton *_footnoteButton;
+    NUIContainerStackView *_footnoteContainer;
     unsigned long long _style;
 }
 
 + (id)footNoteLabelFont;
 @property _Bool disableAllObservers; // @synthesize disableAllObservers=_disableAllObservers;
 @property unsigned long long style; // @synthesize style=_style;
+@property(retain) NUIContainerStackView *footnoteContainer; // @synthesize footnoteContainer=_footnoteContainer;
+@property(retain) UIButton *footnoteButton; // @synthesize footnoteButton=_footnoteButton;
 @property(retain) TLKRichTextField *footnoteLabel; // @synthesize footnoteLabel=_footnoteLabel;
 @property(retain) NSMutableArray *detailsFields; // @synthesize detailsFields=_detailsFields;
 @property(retain) TLKTitleContainerView *titleContainer; // @synthesize titleContainer=_titleContainer;
+@property __weak id <TLKDetailsViewDelegate> buttonDelegate; // @synthesize buttonDelegate=_buttonDelegate;
 - (void).cxx_destruct;
 - (id)footnoteLabelString;
 - (id)secondaryTitleLabelString;
@@ -37,7 +44,7 @@
 - (id)viewForFirstBaselineLayout;
 - (_Bool)noFootNote;
 - (_Bool)noRichTextFields;
-- (void)updateFootnote:(id)arg1;
+- (void)updateFootnote:(id)arg1 buttonText:(id)arg2;
 - (void)internalTextFieldsInBatchUpdate:(_Bool)arg1;
 - (void)performBatchUpdates:(CDUnknownBlockType)arg1;
 - (void)updateDetails:(id)arg1;

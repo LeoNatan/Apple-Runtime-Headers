@@ -42,7 +42,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) BOOL hasBottomBorder; // @synthesize hasBottomBorder=_hasBottomBorder;
 @property BOOL mouseDownCanMoveWindow; // @synthesize mouseDownCanMoveWindow=_mouseDownCanMoveWindow;
 - (void).cxx_destruct;
-- (BOOL)accessibilityIsIgnored;
+- (BOOL)isAccessibilityElement;
 - (id)accessibilityRole;
 - (void)_windowChangedKeyState;
 - (void)_applyUsesMaterialPreferredAppearance;

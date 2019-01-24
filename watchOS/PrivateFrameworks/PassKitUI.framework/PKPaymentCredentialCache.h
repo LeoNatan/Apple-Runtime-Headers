@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class PKPaymentCredential, PKPaymentPass, UIImage;
+@class NSString, PKPaymentCredential, PKPaymentPass, UIImage;
 
 @interface PKPaymentCredentialCache : NSObject
 {
@@ -14,8 +14,10 @@
     PKPaymentCredential *_credential;
     UIImage *_passSnapshot;
     PKPaymentPass *_paymentPass;
+    NSString *_cellSubtitle;
 }
 
+@property(copy, nonatomic) NSString *cellSubtitle; // @synthesize cellSubtitle=_cellSubtitle;
 @property(retain, nonatomic) PKPaymentPass *paymentPass; // @synthesize paymentPass=_paymentPass;
 @property(nonatomic) _Bool isSelected; // @synthesize isSelected=_isSelected;
 @property(retain, nonatomic) UIImage *passSnapshot; // @synthesize passSnapshot=_passSnapshot;

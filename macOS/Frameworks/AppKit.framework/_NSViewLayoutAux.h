@@ -57,6 +57,7 @@ __attribute__((visibility("hidden")))
         unsigned int _baselineOffsetMayBeReferenced:1;
         unsigned int _constraintsReferencingBaselineOffsetNeedUpdating:1;
         unsigned int _onlyNeedsUpdateConstraintsBecauseDeclaredConstraintRemoved:1;
+        unsigned int _isUpdatingAutoresizingConstraints:1;
         unsigned int _preferredSizeConstraintsNeedUpdating:1;
         unsigned int _allowsEngineHostPreferredSizeConstraints:1;
         unsigned int _viewWasAdjustedToRetinaResolution:1;

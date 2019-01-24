@@ -57,6 +57,7 @@
     _Bool _allowsDeletion;
     _Bool _allowsActionsModel;
     _Bool _allowsDisplayModePickerActions;
+    _Bool _allowsEditPhoto;
     _Bool _hideCardActions;
     _Bool _outOfProcessSetupComplete;
     _Bool _didSetFirstResponder;
@@ -257,6 +258,7 @@
 @property(retain, nonatomic) NSString *message; // @synthesize message=_message;
 @property(retain, nonatomic) NSString *alternateName; // @synthesize alternateName=_alternateName;
 @property(nonatomic) _Bool hideCardActions; // @synthesize hideCardActions=_hideCardActions;
+@property(nonatomic) _Bool allowsEditPhoto; // @synthesize allowsEditPhoto=_allowsEditPhoto;
 @property(nonatomic) _Bool allowsDisplayModePickerActions; // @synthesize allowsDisplayModePickerActions=_allowsDisplayModePickerActions;
 @property(nonatomic) _Bool allowsActionsModel; // @synthesize allowsActionsModel=_allowsActionsModel;
 @property(nonatomic) _Bool allowsDeletion; // @synthesize allowsDeletion=_allowsDeletion;

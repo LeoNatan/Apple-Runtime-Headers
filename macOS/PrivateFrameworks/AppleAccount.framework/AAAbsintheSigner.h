@@ -29,8 +29,10 @@
 - (void)_fetchCertificateDataWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_contextQueue_contextWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_contextWithCompletion:(CDUnknownBlockType)arg1;
+- (void)_contextLock_dequeueContextCleanup;
 - (void)_contextLock_enqueueContextCleanup;
 - (void)setContext:(id)arg1;
+- (id)_contextLock_contextInvalidatingIfNecessary;
 @property(readonly, nonatomic) AAAbsintheContext *context;
 - (void)signatureForData:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)dealloc;

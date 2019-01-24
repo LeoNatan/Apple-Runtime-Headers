@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSMutableArray, NSMutableDictionary, NSMutableSet, NSMutableString, NSString, TSCH3DGLVersion;
+@class NSMutableArray, NSMutableDictionary, NSMutableSet, NSMutableString, NSSet, NSString, TSCH3DOrderedDictionary, TSCH3DVersion;
 
 __attribute__((visibility("hidden")))
 @interface TSCH3DShaderProgram : NSObject
@@ -25,25 +25,56 @@ __attribute__((visibility("hidden")))
     _Bool mIsLinked;
     NSString *mVertex;
     NSString *mFragment;
-    TSCH3DGLVersion *mVersion;
+    TSCH3DVersion *mVersion;
+    TSCH3DOrderedDictionary *mTypeDeclarations;
+    NSSet *_variablesWithBackingResources;
+    NSSet *_interleavedAttributeVariables;
 }
 
-@property(readonly, nonatomic) TSCH3DGLVersion *version; // @synthesize version=mVersion;
+@property(copy, nonatomic) NSSet *interleavedAttributeVariables; // @synthesize interleavedAttributeVariables=_interleavedAttributeVariables;
+@property(copy, nonatomic) NSSet *variablesWithBackingResources; // @synthesize variablesWithBackingResources=_variablesWithBackingResources;
+@property(readonly, nonatomic) TSCH3DVersion *version; // @synthesize version=mVersion;
+- (unsigned long long)vertexAttributeLocationForVariable:(id)arg1;
 - (id)usedAttributeNameForVariable:(id)arg1;
 - (id)usedUniformNameForVariable:(id)arg1;
 - (id)usedNameForVariable:(id)arg1 type:(struct TSCH3DShaderType)arg2 scope:(struct TSCH3DShaderVariableScopeType)arg3;
 @property(readonly, nonatomic) NSString *fragment;
 @property(readonly, nonatomic) NSString *vertex;
 - (id)p_generateType:(struct TSCH3DShaderType)arg1;
+- (long long)uniformBufferIndexForType:(struct TSCH3DShaderType)arg1;
+- (id)uniformVariablesForType:(struct TSCH3DShaderType)arg1;
+- (void)p_generateMetalVertexAttributes;
+- (void)p_generateMetalFragmentTextureVariable;
+- (id)p_boundArgumentDeclarationForLinkedVariable:(id)arg1 variableType:(id)arg2 variableName:(id)arg3 bindingType:(id)arg4 bufferIndex:(unsigned long long)arg5;
+- (id)p_boundBufferArgumentDeclarationForLinkedVariable:(id)arg1 variableType:(id)arg2 variableName:(id)arg3 bufferIndex:(unsigned long long)arg4;
+- (id)p_boundSamplerArgumentDeclarationForLinkedVariable:(id)arg1 bufferIndex:(unsigned long long)arg2;
+- (id)p_boundTextureArgumentDeclarationForLinkedVariable:(id)arg1 bufferIndex:(unsigned long long)arg2;
+- (void)p_generateMetalFragmentInputs;
+- (void)p_generateMetalVertexInputs;
+- (long long)fragmentUniformBufferIndex;
+- (long long)vertexUniformBufferIndex;
+- (unsigned long long)p_metalVertexBufferCount;
+- (id)p_metalVertexInputLines;
 - (void)p_generatePreprocessorDefinitionsForType:(struct TSCH3DShaderType)arg1;
+- (id)linkedTextureVariables;
+- (id)linkedUniformVariablesForType:(struct TSCH3DShaderType)arg1 isTexture:(_Bool)arg2;
+- (id)linkedVertexAttributeVariables;
+- (id)linkedInputVariablesForType:(struct TSCH3DShaderType)arg1 scope:(struct TSCH3DShaderVariableScopeType)arg2;
+- (id)sortedLinks;
 - (void)p_addCompatibilityFunctions;
 - (void)p_generateSection:(id)arg1 type:(struct TSCH3DShaderType)arg2;
+- (void)p_generateFunctions;
+- (void)p_generateTypeDeclarations;
 - (void)p_generateGlobalsForType:(struct TSCH3DShaderType)arg1;
+- (void)p_generateMetalFragmentGlobals;
+- (void)p_generateMetalVertexGlobals;
+- (id)interleavedLinkedVertexAttributeVariables;
 - (void)p_generateType:(struct TSCH3DShaderType)arg1 globalType:(struct TSCH3DShaderVariableScopeType)arg2 storageQualifier:(id)arg3;
 - (void)link;
 - (unsigned long long)processSection:(id)arg1 accumulate:(id)arg2 conclusions:(id)arg3;
 - (void)accumulateSection:(id)arg1 intoArray:(id)arg2;
 - (_Bool)hasFunction:(id)arg1;
+- (void)declareType:(id)arg1 name:(id)arg2;
 - (void)addFunctionString:(id)arg1 name:(id)arg2;
 - (void)addFragmentConclusionWithFormat:(id)arg1;
 - (void)addVertexConclusionWithFormat:(id)arg1;
@@ -145,7 +176,13 @@ __attribute__((visibility("hidden")))
 - (_Bool)isSamplerVariable:(id)arg1;
 - (id)linkageOfVariable:(id)arg1;
 - (pair_64bf96b1)resultLinkageOfVariable:(id)arg1;
+- (unsigned long long)p_countOfAttributeBindingsForType:(struct TSCH3DShaderType)arg1;
+- (unsigned long long)p_fragmentAttributeBindingsCount;
+- (unsigned long long)p_vertexAttributeBindingsCount;
+@property(readonly, nonatomic) unsigned long long textureBindingsCount;
+@property(readonly, nonatomic) unsigned long long attributeBindingsCount;
 - (id)existingLinkageOfVariable:(id)arg1;
+- (_Bool)isMetal;
 - (void)dealloc;
 - (id)initWithVersion:(id)arg1;
 - (id)init;

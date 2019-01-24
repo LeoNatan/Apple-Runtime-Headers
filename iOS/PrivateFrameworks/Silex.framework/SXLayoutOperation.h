@@ -8,55 +8,49 @@
 
 #import <Silex/SXLayouterDelegate-Protocol.h>
 
-@class NSString, SXLayoutAttributes, SXLayoutBlueprint, SXLayoutDataProvider;
-@protocol SXComponentSizerEngine, SXLayoutBlueprintFactory;
+@class NSString, SXColumnLayouter, SXLayoutBlueprint, SXLayoutTask;
+@protocol SXComponentSizerEngine, SXDOMObjectProviding, SXLayoutBlueprintFactory;
 
 @interface SXLayoutOperation : NSOperation <SXLayouterDelegate>
 {
     _Bool _executing;
     _Bool _finished;
-    double _constrainedWidth;
-    SXLayoutDataProvider *_layoutDataProvider;
-    SXLayoutAttributes *_layoutAttributes;
     SXLayoutBlueprint *_layoutBlueprint;
-    NSString *_targetComponentIdentifier;
     CDUnknownBlockType _beforeBlock;
     CDUnknownBlockType _afterBlock;
     id <SXComponentSizerEngine> _componentSizerEngine;
     id <SXLayoutBlueprintFactory> _layoutBlueprintFactory;
-    struct CGSize _viewportSize;
+    id <SXDOMObjectProviding> _DOMObjectProvider;
+    SXColumnLayouter *_layouter;
+    SXLayoutTask *_task;
 }
 
+@property(readonly, nonatomic) SXLayoutTask *task; // @synthesize task=_task;
+@property(readonly, nonatomic) SXColumnLayouter *layouter; // @synthesize layouter=_layouter;
+@property(readonly, nonatomic) id <SXDOMObjectProviding> DOMObjectProvider; // @synthesize DOMObjectProvider=_DOMObjectProvider;
 @property(readonly, nonatomic) id <SXLayoutBlueprintFactory> layoutBlueprintFactory; // @synthesize layoutBlueprintFactory=_layoutBlueprintFactory;
 @property(readonly, nonatomic) id <SXComponentSizerEngine> componentSizerEngine; // @synthesize componentSizerEngine=_componentSizerEngine;
 @property(copy, nonatomic, setter=afterLayout:) CDUnknownBlockType afterBlock; // @synthesize afterBlock=_afterBlock;
 @property(copy, nonatomic, setter=beforeLayout:) CDUnknownBlockType beforeBlock; // @synthesize beforeBlock=_beforeBlock;
-@property(retain, nonatomic) NSString *targetComponentIdentifier; // @synthesize targetComponentIdentifier=_targetComponentIdentifier;
-@property(retain, nonatomic) SXLayoutBlueprint *layoutBlueprint; // @synthesize layoutBlueprint=_layoutBlueprint;
-@property(retain, nonatomic) SXLayoutAttributes *layoutAttributes; // @synthesize layoutAttributes=_layoutAttributes;
-@property(readonly, nonatomic) SXLayoutDataProvider *layoutDataProvider; // @synthesize layoutDataProvider=_layoutDataProvider;
-@property(readonly, nonatomic) double constrainedWidth; // @synthesize constrainedWidth=_constrainedWidth;
-@property(readonly, nonatomic) struct CGSize viewportSize; // @synthesize viewportSize=_viewportSize;
+@property(readonly, nonatomic) SXLayoutBlueprint *layoutBlueprint; // @synthesize layoutBlueprint=_layoutBlueprint;
 @property _Bool finished; // @synthesize finished=_finished;
 @property _Bool executing; // @synthesize executing=_executing;
 - (void).cxx_destruct;
 - (void)layouter:(id)arg1 didFinishLayoutForComponent:(id)arg2 layoutBlueprint:(id)arg3 shouldContinueLayout:(_Bool *)arg4;
 - (void)finalizeLayoutBlueprint:(id)arg1 startOffset:(struct CGPoint)arg2;
-- (void)registerComponent:(id)arg1 toLayoutBlueprint:(id)arg2 layoutDataProvider:(id)arg3 documentColumnLayout:(id)arg4;
-- (id)createLayoutBlueprintForLayoutDataProvider:(id)arg1 documentColumnLayout:(id)arg2;
-- (_Bool)layoutInvalidationRequiredForComponentBlueprint:(id)arg1 columnLayout:(id)arg2 previousColumnLayout:(id)arg3;
-- (void)updateLayoutBlueprint:(id)arg1 usingLayoutDataProvider:(id)arg2;
-- (_Bool)isFinishedLayoutBlueprint:(id)arg1 forLayoutDataProvider:(id)arg2;
-- (_Bool)isValidLayoutBlueprint:(id)arg1 viewportSize:(struct CGSize)arg2;
+- (void)registerComponent:(id)arg1 layoutBlueprint:(id)arg2 componentIndex:(unsigned long long)arg3;
+- (id)createLayoutBlueprintForComponents:(id)arg1;
+- (void)updateLayoutBlueprint:(id)arg1 components:(id)arg2;
+- (_Bool)isFinishedLayoutBlueprint:(id)arg1 components:(id)arg2;
 - (void)startLayoutWorkForBlueprint:(id)arg1;
 - (void)prepareLayoutBlueprint:(id)arg1;
-- (void)doFinishBookKeeping;
-- (void)doStartBookKeeping;
+- (void)finishBookKeeping;
+- (void)startBookKeeping;
 - (_Bool)isFinished;
 - (_Bool)isExecuting;
 - (_Bool)isAsynchronous;
 - (void)start;
-- (id)initWithViewportSize:(struct CGSize)arg1 constrainedToWidth:(double)arg2 layoutDataProvider:(id)arg3 componentSizerEngine:(id)arg4 layoutBlueprintFactory:(id)arg5;
+- (id)initWithTask:(id)arg1 layouter:(id)arg2 DOMObjectProvider:(id)arg3 componentSizerEngine:(id)arg4 layoutBlueprintFactory:(id)arg5;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

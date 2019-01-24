@@ -98,6 +98,7 @@
 - (_Bool)_isActivitySummary;
 - (_Bool)_isNikeFuel;
 @property(readonly, nonatomic) _Bool allowsManualEntry;
+@property(readonly, nonatomic) _Bool isElectrocardiogram;
 @property(readonly, nonatomic) _Bool isDocument;
 @property(readonly, nonatomic) _Bool isActivitySummary;
 @property(readonly, nonatomic) _Bool isCharacteristic;

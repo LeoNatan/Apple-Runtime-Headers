@@ -13,7 +13,6 @@
 + (_Bool)wantsAggressiveKeychainCredentialCaching;
 + (_Bool)supportsURLCredentialStorageAccessControlGroups;
 + (_Bool)isSearchProviderEnabled:(unsigned long long)arg1;
-+ (_Bool)_shouldShowKoreanFeatures;
 + (_Bool)_shouldShowRussianFeatures;
 + (_Bool)_shouldShowChineseFeatures;
 

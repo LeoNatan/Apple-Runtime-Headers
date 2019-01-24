@@ -14,8 +14,10 @@
     NSString *_recordRoute;
     NSString *_remoteProductIdentifier;
     NSUUID *_remoteDeviceUID;
+    unsigned long _remoteDeviceCategory;
 }
 
+@property(readonly, nonatomic) unsigned long remoteDeviceCategory; // @synthesize remoteDeviceCategory=_remoteDeviceCategory;
 @property(readonly, nonatomic) NSUUID *remoteDeviceUID; // @synthesize remoteDeviceUID=_remoteDeviceUID;
 @property(readonly, nonatomic) NSString *remoteProductIdentifier; // @synthesize remoteProductIdentifier=_remoteProductIdentifier;
 @property(readonly) _Bool isRemoteDevice; // @synthesize isRemoteDevice=_isRemoteDevice;

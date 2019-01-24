@@ -17,6 +17,7 @@
 @property(retain, nonatomic) NSArray *tableViewCells; // @synthesize tableViewCells=_tableViewCells;
 @property(readonly, nonatomic) STUsageReport *report; // @synthesize report=_report;
 - (void).cxx_destruct;
+- (void)_heightDidChange:(id)arg1;
 - (struct CGSize)preferredContentSize;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;

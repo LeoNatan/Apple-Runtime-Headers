@@ -9,22 +9,22 @@
 #import <NewsCore/FCJSONEncodableObjectProviding-Protocol.h>
 #import <NewsCore/FCOperationThrottlerDelegate-Protocol.h>
 
-@class FCKeyValueStoreClassRegistry, NFMutexLock, NSDictionary, NSMutableDictionary, NSString;
-@protocol FCKeyValueStoreMigrating, FCOperationThrottler;
+@class FCKeyValueStoreClassRegistry, NSDictionary, NSMutableDictionary, NSString;
+@protocol FCKeyValueStoreMigrating, FCOperationThrottler, NFLocking;
 
 @interface FCKeyValueStore : NSObject <FCOperationThrottlerDelegate, FCJSONEncodableObjectProviding>
 {
     _Bool _shouldExportJSONSidecar;
-    _Bool _needSave;
+    _Bool _unsafeNeedSave;
     NSString *_name;
     unsigned long long _storeSize;
-    NSMutableDictionary *_objectsByKey;
+    NSMutableDictionary *_unsafeObjectsByKey;
+    id <NFLocking> _lock;
     NSString *_storeDirectory;
     unsigned long long _clientVersion;
     unsigned long long _optionsMask;
     FCKeyValueStoreClassRegistry *_classRegistry;
     id <FCKeyValueStoreMigrating> _migrator;
-    NFMutexLock *_writeLock;
     id <FCOperationThrottler> _saveThrottler;
     CDUnknownBlockType _objectHandler;
     CDUnknownBlockType _arrayObjectHandler;
@@ -39,14 +39,14 @@
 @property(copy, nonatomic) CDUnknownBlockType arrayObjectHandler; // @synthesize arrayObjectHandler=_arrayObjectHandler;
 @property(copy, nonatomic) CDUnknownBlockType objectHandler; // @synthesize objectHandler=_objectHandler;
 @property(retain, nonatomic) id <FCOperationThrottler> saveThrottler; // @synthesize saveThrottler=_saveThrottler;
-@property(retain, nonatomic) NFMutexLock *writeLock; // @synthesize writeLock=_writeLock;
 @property(retain, nonatomic) id <FCKeyValueStoreMigrating> migrator; // @synthesize migrator=_migrator;
 @property(retain, nonatomic) FCKeyValueStoreClassRegistry *classRegistry; // @synthesize classRegistry=_classRegistry;
 @property(nonatomic) unsigned long long optionsMask; // @synthesize optionsMask=_optionsMask;
 @property(nonatomic) unsigned long long clientVersion; // @synthesize clientVersion=_clientVersion;
 @property(retain, nonatomic) NSString *storeDirectory; // @synthesize storeDirectory=_storeDirectory;
-@property(nonatomic) _Bool needSave; // @synthesize needSave=_needSave;
-@property(retain, nonatomic) NSMutableDictionary *objectsByKey; // @synthesize objectsByKey=_objectsByKey;
+@property(retain, nonatomic) id <NFLocking> lock; // @synthesize lock=_lock;
+@property(nonatomic) _Bool unsafeNeedSave; // @synthesize unsafeNeedSave=_unsafeNeedSave;
+@property(retain, nonatomic) NSMutableDictionary *unsafeObjectsByKey; // @synthesize unsafeObjectsByKey=_unsafeObjectsByKey;
 @property(nonatomic) unsigned long long storeSize; // @synthesize storeSize=_storeSize;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
 @property(nonatomic) _Bool shouldExportJSONSidecar; // @synthesize shouldExportJSONSidecar=_shouldExportJSONSidecar;
@@ -57,17 +57,20 @@
 - (id)fc_jsonEncodableDictionaryWithDictionary:(id)arg1;
 - (id)jsonEncodableObject;
 - (void)setOptionBackupEnabled:(_Bool)arg1;
+- (_Bool)_threadSafe;
 - (_Bool)_persistOnlyInMemoryEnabled;
 - (_Bool)_isBackupEnabled;
 - (_Bool)_shouldMigrateOnUpgrade;
 - (void)_clearStore;
 - (id)_initializeStoreDirectoryWithName:(id)arg1;
-- (void)_queueSave;
 - (void)_logCacheStatus;
 - (void)_saveAsyncWithQualityOfService:(long long)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)_maybeSaveJSONRepresentationWithDictionary:(id)arg1;
 - (id)_loadFromDisk;
 - (id)_dictionary;
+- (void)_maybeWriteObjectsByKey:(CDUnknownBlockType)arg1;
+- (void)_writeObjectsByKey:(CDUnknownBlockType)arg1;
+- (void)_readObjectsByKey:(CDUnknownBlockType)arg1;
 - (void)operationThrottler:(id)arg1 performAsyncOperationWithCompletion:(CDUnknownBlockType)arg2;
 - (void)setJSONEncodingHandlersWithObjectHandler:(CDUnknownBlockType)arg1 arrayObjectHandler:(CDUnknownBlockType)arg2 dictionaryKeyHandler:(CDUnknownBlockType)arg3 dictionaryValueHandler:(CDUnknownBlockType)arg4;
 - (void)save;

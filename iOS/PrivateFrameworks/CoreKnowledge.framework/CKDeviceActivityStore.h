@@ -6,18 +6,13 @@
 
 #import <objc/NSObject.h>
 
-@class CKKnowledgeStore;
-
 @interface CKDeviceActivityStore : NSObject
 {
     // Error parsing type: , name: store
 }
 
-+ (id)defaultStore;
-- (CDUnknownBlockType).cxx_destruct;
+- (void).cxx_destruct;
 - (id)init;
-- (id)initWithStore:(id)arg1;
-@property(nonatomic, readonly) CKKnowledgeStore *store; // @synthesize store;
 
 @end
 

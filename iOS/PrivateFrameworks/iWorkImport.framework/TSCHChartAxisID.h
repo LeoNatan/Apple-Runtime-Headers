@@ -18,8 +18,8 @@ __attribute__((visibility("hidden")))
 + (id)axisIDWithType:(int)arg1 ordinal:(unsigned long long)arg2;
 @property(readonly) unsigned long long ordinal; // @synthesize ordinal=mOrdinal;
 @property(readonly) int type; // @synthesize type=mType;
-- (void)saveToArchive:(struct ChartAxisIDArchive *)arg1;
-- (id)initWithArchive:(const struct ChartAxisIDArchive *)arg1;
+-     // Error parsing type: v24@0:8^{ChartAxisIDArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}iI}16, name: saveToArchive:
+-     // Error parsing type: @24@0:8r^{ChartAxisIDArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}iI}16, name: initWithArchive:
 - (id)description;
 - (id)debuggingName;
 - (_Bool)intersectsAxisID:(id)arg1;

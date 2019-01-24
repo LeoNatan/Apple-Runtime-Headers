@@ -80,6 +80,7 @@
 @property(copy, nonatomic) NSString *category; // @dynamic category;
 @property(nonatomic) unsigned long long trackNumber; // @dynamic trackNumber;
 @property(nonatomic) unsigned long long totalTime; // @dynamic totalTime;
+@property(nonatomic) unsigned long long bookmarkTime;
 @property(nonatomic) unsigned long long fileSize;
 @property(nonatomic) unsigned long long size; // @dynamic size;
 @property(nonatomic) unsigned long long mediaKind; // @dynamic mediaKind;

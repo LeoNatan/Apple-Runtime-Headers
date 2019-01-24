@@ -9,31 +9,34 @@
 #import <XCTest/XCUIScreenshotProviding-Protocol.h>
 
 @class NSString;
+@protocol XCUIDevice, XCUIScreenDataSource;
 
 @interface XCUIScreen : NSObject <XCUIScreenshotProviding>
 {
     _Bool _isMainScreen;
-    int _displayID;
+    long long _displayID;
+    id <XCUIDevice> _device;
+    id <XCUIScreenDataSource> _screenDataSource;
 }
 
 + (id)screens;
 + (id)mainScreen;
+@property(readonly) id <XCUIScreenDataSource> screenDataSource; // @synthesize screenDataSource=_screenDataSource;
+@property(readonly) __weak id <XCUIDevice> device; // @synthesize device=_device;
 @property(readonly) _Bool isMainScreen; // @synthesize isMainScreen=_isMainScreen;
-@property(readonly) int displayID; // @synthesize displayID=_displayID;
-- (id)_clippedScreenshotData:(id)arg1 quality:(long long)arg2 rect:(struct CGRect)arg3 scale:(double)arg4;
+@property(readonly) long long displayID; // @synthesize displayID=_displayID;
+- (void).cxx_destruct;
 - (id)_screenshotDataForQuality:(long long)arg1 rect:(struct CGRect)arg2 error:(id *)arg3;
 - (id)screenshotDataForQuality:(long long)arg1 rect:(struct CGRect)arg2 error:(id *)arg3;
-- (id)screenshotDataForQuality:(long long)arg1 rect:(struct CGRect)arg2;
-- (id)_modernScreenshotDataForQuality:(long long)arg1 rect:(struct CGRect)arg2 error:(id *)arg3;
 - (id)screenshot;
-- (id)_imageFromData:(id)arg1;
-- (double)scale;
+@property(readonly) unsigned long long hash;
+- (_Bool)isEqual:(id)arg1;
+@property(readonly) double scale;
 @property(readonly, copy) NSString *description;
-- (id)initWithDisplayID:(int)arg1 isMainScreen:(_Bool)arg2;
+- (id)initWithDisplayID:(long long)arg1 isMainScreen:(_Bool)arg2 device:(id)arg3 screenDataSource:(id)arg4;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
-@property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 
 @end

@@ -8,7 +8,7 @@
 
 #import <NewsTransport/NSCopying-Protocol.h>
 
-@class NSData, NSString, NTPBAppConfigurationResource, NTPBCacheCoordinatorHints, NTPBDate, NTPBNetworkSessionList, NTPBPersonalizationLocalData, NTPBPrivateDataControllerSyncState, NTPBReadingHistoryItem;
+@class NSData, NSString, NTPBAppConfigurationResource, NTPBCacheCoordinatorHints, NTPBDate, NTPBIssueReadingHistoryItem, NTPBNetworkSessionList, NTPBPersonalizationLocalData, NTPBPrivateDataControllerSyncState, NTPBReadingHistoryItem;
 
 @interface NTPBKeyValuePair : PBCodable <NSCopying>
 {
@@ -16,6 +16,7 @@
     NTPBCacheCoordinatorHints *_cacheCoordinatorHintsValue;
     NSData *_dataValue;
     NTPBDate *_dateValue;
+    NTPBIssueReadingHistoryItem *_issueReadingHistoryItem;
     NSString *_key;
     NTPBNetworkSessionList *_networkSessionList;
     NTPBPersonalizationLocalData *_personalizationLocalData;
@@ -29,6 +30,7 @@
     } _has;
 }
 
+@property(retain, nonatomic) NTPBIssueReadingHistoryItem *issueReadingHistoryItem; // @synthesize issueReadingHistoryItem=_issueReadingHistoryItem;
 @property(retain, nonatomic) NTPBPrivateDataControllerSyncState *privateDataControllerSyncState; // @synthesize privateDataControllerSyncState=_privateDataControllerSyncState;
 @property(retain, nonatomic) NTPBAppConfigurationResource *appConfigurationResource; // @synthesize appConfigurationResource=_appConfigurationResource;
 @property(retain, nonatomic) NTPBPersonalizationLocalData *personalizationLocalData; // @synthesize personalizationLocalData=_personalizationLocalData;
@@ -48,6 +50,7 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(readonly, nonatomic) _Bool hasIssueReadingHistoryItem;
 @property(readonly, nonatomic) _Bool hasPrivateDataControllerSyncState;
 @property(readonly, nonatomic) _Bool hasAppConfigurationResource;
 @property(readonly, nonatomic) _Bool hasPersonalizationLocalData;

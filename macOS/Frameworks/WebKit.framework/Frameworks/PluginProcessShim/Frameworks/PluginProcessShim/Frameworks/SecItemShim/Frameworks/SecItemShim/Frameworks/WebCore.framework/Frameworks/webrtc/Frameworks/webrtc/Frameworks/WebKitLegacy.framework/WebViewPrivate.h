@@ -49,6 +49,7 @@ __attribute__((visibility("hidden")))
     struct unique_ptr<WebCore::TextIndicatorWindow, std::__1::default_delete<WebCore::TextIndicatorWindow>> textIndicatorWindow;
     BOOL hasInitializedLookupObserver;
     struct RetainPtr<WebWindowVisibilityObserver> windowVisibilityObserver;
+    BOOL windowOcclusionDetectionEnabled;
     struct RetainPtr<NSEvent> pressureEvent;
     struct RefPtr<WebCore::ValidationBubble, WTF::DumbPtrTraits<WebCore::ValidationBubble>> formValidationBubble;
     BOOL shouldMaintainInactiveSelection;
@@ -101,7 +102,6 @@ __attribute__((visibility("hidden")))
     id <WebDeviceOrientationProvider> m_deviceOrientationProvider;
     id <WebNotificationProvider> _notificationProvider;
     struct unique_ptr<WebSelectionServiceController, std::__1::default_delete<WebSelectionServiceController>> _selectionServiceController;
-    struct RefPtr<WebCore::HistoryItem, WTF::DumbPtrTraits<WebCore::HistoryItem>> _globalHistoryItem;
     BOOL interactiveFormValidationEnabled;
     int validationMessageTimerMagnification;
     float customDeviceScaleFactor;

@@ -30,7 +30,7 @@
 - (id)_genericErrorForDisableContext:(unsigned long long)arg1;
 - (void)_invalidateDisableFMMConnection;
 - (void)_storeDisableFMMConnection:(id)arg1;
-- (oneway void)disableFMMUsingToken:(id)arg1 inContext:(unsigned long long)arg2 usingCallback:(CDUnknownBlockType)arg3;
+- (void)disableFMMUsingToken:(id)arg1 inContext:(unsigned long long)arg2 usingCallback:(CDUnknownBlockType)arg3;
 - (void)clearFMMAccountsWithCompletion:(CDUnknownBlockType)arg1;
 - (id)retrieveFMMAccount:(id *)arg1;
 - (id)removeFMMAccountWithUsername:(id)arg1 authRight:(id)arg2;

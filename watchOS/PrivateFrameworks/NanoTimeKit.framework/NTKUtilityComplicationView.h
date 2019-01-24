@@ -21,7 +21,9 @@
     NSDate *_timeTravelDate;
     _Bool _canUseCurvedText;
     _Bool _shouldUseBackgroundPlatter;
+    _Bool _alwaysEnforcePlatterInset;
     _Bool _useRoundedFontDesign;
+    _Bool _useBlockyHighlightCorners;
     _Bool _suppressesInternalColorOverrides;
     _Bool _editing;
     id <NTKComplicationDisplayObserver> displayObserver;
@@ -63,9 +65,11 @@
 @property(retain, nonatomic) UIImageView *backgroundPlatter; // @synthesize backgroundPlatter=_backgroundPlatter;
 @property(nonatomic) _Bool suppressesInternalColorOverrides; // @synthesize suppressesInternalColorOverrides=_suppressesInternalColorOverrides;
 @property(nonatomic) float editingRotationAngle; // @synthesize editingRotationAngle=_editingRotationAngle;
+@property(nonatomic) _Bool useBlockyHighlightCorners; // @synthesize useBlockyHighlightCorners=_useBlockyHighlightCorners;
 @property(nonatomic) float fontWeight; // @synthesize fontWeight=_fontWeight;
 @property(nonatomic) _Bool useRoundedFontDesign; // @synthesize useRoundedFontDesign=_useRoundedFontDesign;
 @property(readonly) NSDate *timeTravelDate; // @synthesize timeTravelDate=_timeTravelDate;
+@property(nonatomic) _Bool alwaysEnforcePlatterInset; // @synthesize alwaysEnforcePlatterInset=_alwaysEnforcePlatterInset;
 @property(nonatomic) _Bool shouldUseBackgroundPlatter; // @synthesize shouldUseBackgroundPlatter=_shouldUseBackgroundPlatter;
 @property(nonatomic) unsigned int placement; // @synthesize placement=_placement;
 @property(nonatomic) float foregroundImageAlpha; // @synthesize foregroundImageAlpha=_foregroundImageAlpha;
@@ -111,6 +115,7 @@
 - (id)_backgroundPlatterImage;
 - (void)layoutSubviews;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
+- (_Bool)shouldUsePlatterInset;
 - (void)_applyColorScheme:(id)arg1;
 - (void)applyTransitionFraction:(float)arg1 fromFaceColor:(unsigned int)arg2 toFaceColor:(unsigned int)arg3 units:(unsigned int)arg4 brightenedUnits:(unsigned int)arg5;
 - (void)applyFaceColor:(unsigned int)arg1 units:(unsigned int)arg2;

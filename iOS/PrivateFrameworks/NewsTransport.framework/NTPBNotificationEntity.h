@@ -13,10 +13,12 @@
 @interface NTPBNotificationEntity : PBCodable <NSCopying>
 {
     int _notificationType;
+    int _paidBundleSubscriptionStatus;
     int _subscriberType;
     NSMutableArray *_tagIds;
     struct {
         unsigned int notificationType:1;
+        unsigned int paidBundleSubscriptionStatus:1;
         unsigned int subscriberType:1;
     } _has;
 }
@@ -32,6 +34,8 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(nonatomic) _Bool hasPaidBundleSubscriptionStatus;
+@property(nonatomic) int paidBundleSubscriptionStatus; // @synthesize paidBundleSubscriptionStatus=_paidBundleSubscriptionStatus;
 @property(nonatomic) _Bool hasSubscriberType;
 @property(nonatomic) int subscriberType; // @synthesize subscriberType=_subscriberType;
 - (id)tagIdAtIndex:(unsigned long long)arg1;

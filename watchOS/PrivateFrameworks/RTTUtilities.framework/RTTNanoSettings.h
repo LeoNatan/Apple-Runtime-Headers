@@ -6,22 +6,11 @@
 
 #import <RTTUtilities/RTTSettings.h>
 
-@class NPSDomainAccessor;
-
 @interface RTTNanoSettings : RTTSettings
 {
-    NPSDomainAccessor *_domainAccessor;
-    NPSDomainAccessor *_globalDomainAccessor;
 }
 
 + (id)sharedInstance;
-@property(retain, nonatomic) NPSDomainAccessor *globalDomainAccessor; // @synthesize globalDomainAccessor=_globalDomainAccessor;
-@property(retain, nonatomic) NPSDomainAccessor *domainAccessor; // @synthesize domainAccessor=_domainAccessor;
-- (void).cxx_destruct;
-- (id)valueForPreferenceKey:(id)arg1;
-- (void)_setValue:(id)arg1 forPreferenceKey:(id)arg2;
-- (id)currentLocale;
-- (id)init;
 
 @end
 

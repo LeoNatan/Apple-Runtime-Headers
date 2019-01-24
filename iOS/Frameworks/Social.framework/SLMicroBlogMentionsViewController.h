@@ -12,7 +12,6 @@
 @class NSArray, NSObject, NSString, UITableView;
 @protocol SLMicroBlogMentionsDelegate, SLMicroBlogSheetDelegate;
 
-__attribute__((visibility("hidden")))
 @interface SLMicroBlogMentionsViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 {
     NSObject<SLMicroBlogSheetDelegate> *_sheetDelegate;

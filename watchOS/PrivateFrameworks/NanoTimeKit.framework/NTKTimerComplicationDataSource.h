@@ -6,11 +6,12 @@
 
 #import <NanoTimeKit/NTKComplicationDataSource.h>
 
-@class MTTimerManager;
+@class MTTimerManager, NTKTimerTimelineEntry;
 
 @interface NTKTimerComplicationDataSource : NTKComplicationDataSource
 {
     struct NSNumber *_timerToken;
+    NTKTimerTimelineEntry *_currentTimerEntry;
     MTTimerManager *_timerManager;
 }
 

@@ -46,6 +46,7 @@
 - (void)siriRemoteViewController:(AFUISiriRemoteViewController *)arg1 setStatusViewUserInteractionEnabled:(_Bool)arg2;
 - (void)siriRemoteViewController:(AFUISiriRemoteViewController *)arg1 setCarDisplayGatekeeperVisible:(_Bool)arg2;
 - (void)siriRemoteViewController:(AFUISiriRemoteViewController *)arg1 setCarDisplaySnippetVisible:(_Bool)arg2;
+- (void)siriRemoteViewController:(AFUISiriRemoteViewController *)arg1 setTypeToSiriViewHidden:(_Bool)arg2;
 - (void)siriRemoteViewController:(AFUISiriRemoteViewController *)arg1 setStatusViewHidden:(_Bool)arg2;
 - (void)siriRemoteViewController:(AFUISiriRemoteViewController *)arg1 siriIdleAndQuietStatusDidChange:(_Bool)arg2;
 - (void)notifyOnNextUserInteractionForSiriRemoteViewController:(AFUISiriRemoteViewController *)arg1;

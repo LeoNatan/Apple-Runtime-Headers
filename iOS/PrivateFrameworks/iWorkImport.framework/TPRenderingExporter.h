@@ -21,7 +21,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) _Bool didLimitPageLayout; // @synthesize didLimitPageLayout=mDidLimitPageLayout;
 @property(nonatomic) long long lastPageIndexForLayout; // @synthesize lastPageIndexForLayout=mLastPageIndexForLayout;
 - (void).cxx_destruct;
-- (void)finalizeContext:(struct CGContext *)arg1;
 - (void)teardown;
 - (void)setup;
 - (id)initWithDocumentRoot:(id)arg1;

@@ -10,6 +10,7 @@
 
 @class NSString, _CATArbitratorRegistrationEntry;
 
+__attribute__((visibility("hidden")))
 @interface _CATArbitratorResourceProxy : NSProxy <CATArbitratorProxy>
 {
     id mResource;

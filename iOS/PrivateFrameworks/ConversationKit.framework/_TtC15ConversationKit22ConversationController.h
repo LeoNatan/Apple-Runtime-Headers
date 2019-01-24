@@ -27,7 +27,7 @@ __attribute__((visibility("hidden")))
     // Error parsing type: , name: didStartVideoForVisibleParticipant
     // Error parsing type: , name: participantsMediaPrioritiesDidChange
     // Error parsing type: , name: participantAudioPowerDidChange
-    // Error parsing type: , name: audioRouteDidChanged
+    // Error parsing type: , name: audioRouteDidChange
     // Error parsing type: , name: didUpdateLocalParticipant
     // Error parsing type: , name: didStartVideoForLocalParticipant
     // Error parsing type: , name: conversationStateDidChange
@@ -39,9 +39,8 @@ __attribute__((visibility("hidden")))
     // Error parsing type: , name: availableParticipantColors
 }
 
-- (CDUnknownBlockType).cxx_destruct;
+- (void).cxx_destruct;
 - (id)init;
-- (void)dealloc;
 @property(nonatomic, readonly) NSString *description;
 
 @end

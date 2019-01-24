@@ -53,10 +53,10 @@ __attribute__((visibility("hidden")))
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithContext:(id)arg1;
-- (void)saveMessage:(struct DrawableAttachmentArchive *)arg1 toArchiver:(id)arg2;
+-     // Error parsing type: v32@0:8^{DrawableAttachmentArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{Reference}IfIf}16@24, name: saveMessage:toArchiver:
 - (void)didFinalizeUnarchivingFromWPStorage:(id)arg1;
 - (void)saveToArchiver:(id)arg1;
-- (void)loadMessage:(const struct DrawableAttachmentArchive *)arg1 fromUnarchiver:(id)arg2;
+-     // Error parsing type: v32@0:8r^{DrawableAttachmentArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{Reference}IfIf}16@24, name: loadMessage:fromUnarchiver:
 - (void)loadFromUnarchiver:(id)arg1;
 - (id)initWithContext:(id)arg1 drawable:(id)arg2;
 - (void)dealloc;

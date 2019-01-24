@@ -14,6 +14,10 @@
     JSContext *_context;
 }
 
++ (id)valueWithNewPromiseRejectedWithReason:(id)arg1 inContext:(id)arg2;
++ (id)valueWithNewPromiseResolvedWithResult:(id)arg1 inContext:(id)arg2;
++ (id)valueWithNewPromiseInContext:(id)arg1 fromExecutor:(CDUnknownBlockType)arg2;
++ (id)valueWithNewSymbolFromDescription:(id)arg1 inContext:(id)arg2;
 + (id)valueWithUndefinedInContext:(id)arg1;
 + (id)valueWithNullInContext:(id)arg1;
 + (id)valueWithNewErrorFromMessage:(id)arg1 inContext:(id)arg2;
@@ -41,6 +45,7 @@
 - (BOOL)isEqualToObject:(id)arg1;
 @property(readonly) BOOL isDate;
 @property(readonly) BOOL isArray;
+- (BOOL)isSymbol;
 @property(readonly) BOOL isObject;
 @property(readonly) BOOL isString;
 @property(readonly) BOOL isNumber;

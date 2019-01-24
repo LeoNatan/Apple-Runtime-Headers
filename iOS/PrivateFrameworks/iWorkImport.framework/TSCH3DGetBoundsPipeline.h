@@ -15,6 +15,7 @@ __attribute__((visibility("hidden")))
 + (id)pipelineWithScene:(id)arg1 renderProcessor:(id)arg2;
 - (_Bool)run;
 - (void)getBounds:(id)arg1;
+- (void)p_replaceSceneOfPipeline:(id)arg1 replacement:(id)arg2 duringBlock:(CDUnknownBlockType)arg3;
 - (void)getProjectedBounds:(id)arg1;
 - (void)get3DBounds:(id)arg1;
 - (void)runScene:(id)arg1 selector:(SEL)arg2;

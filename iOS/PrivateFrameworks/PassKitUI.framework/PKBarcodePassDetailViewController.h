@@ -49,6 +49,7 @@
     UISegmentedControl *_tabBar;
     UIView *_keyLine;
     _Bool _didRampScreenBrightness;
+    unsigned char _visiblityState;
     PKPass *_pass;
     unsigned long long _suppressedContent;
     id <PKPassDeleteHandler> _deleteOverrider;
@@ -79,6 +80,8 @@
 - (_Bool)_personalizeAvailable;
 - (_Bool)_settingsAvailable;
 - (_Bool)_linkedAppAvailable;
+- (double)_titleOpacityForBounds:(struct CGRect)arg1 lowerBoundary:(double)arg2 higherBoundary:(double)arg3;
+- (void)_reloadTitle;
 - (void)_updatePassProperties;
 - (unsigned long long)_numberOfAvailableSettings;
 - (void)_deletePass;
@@ -119,7 +122,9 @@
 - (void)reloadSection:(unsigned long long)arg1;
 - (_Bool)shouldMapSection:(unsigned long long)arg1;
 - (void)viewDidLayoutSubviews;
+- (void)viewDidDisappear:(_Bool)arg1;
 - (void)viewWillDisappear:(_Bool)arg1;
+- (void)viewDidAppear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)loadView;
 - (_Bool)pkui_prefersNavigationBarShadowHidden;

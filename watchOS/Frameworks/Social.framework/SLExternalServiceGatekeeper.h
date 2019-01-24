@@ -6,21 +6,22 @@
 
 #import <objc/NSObject.h>
 
-#import <Social/NSURLConnectionDataDelegate-Protocol.h>
+#import <Social/NSURLSessionTaskDelegate-Protocol.h>
 
-@class NSString;
+@class NSString, NSURL;
 
-@interface SLExternalServiceGatekeeper : NSObject <NSURLConnectionDataDelegate>
+@interface SLExternalServiceGatekeeper : NSObject <NSURLSessionTaskDelegate>
 {
     NSString *_redirectHost;
+    NSURL *_url;
     CDUnknownBlockType _completion;
 }
 
 - (void).cxx_destruct;
-- (void)connection:(id)arg1 didFailWithError:(id)arg2;
-- (void)connection:(id)arg1 didReceiveAuthenticationChallenge:(id)arg2;
-- (id)connection:(id)arg1 willSendRequest:(id)arg2 redirectResponse:(id)arg3;
-- (_Bool)connection:(id)arg1 canAuthenticateAgainstProtectionSpace:(id)arg2;
+- (void)URLSession:(id)arg1 task:(id)arg2 didCompleteWithError:(id)arg3;
+- (void)URLSession:(id)arg1 didBecomeInvalidWithError:(id)arg2;
+- (void)URLSession:(id)arg1 task:(id)arg2 didReceiveChallenge:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
+- (void)URLSession:(id)arg1 task:(id)arg2 willPerformHTTPRedirection:(id)arg3 newRequest:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
 - (void)_completeWithURLToLoad:(id)arg1 error:(id)arg2;
 - (_Bool)_gatekeepingIsNotAvailable;
 - (id)initForPermissionToAccessURL:(id)arg1 fromURLString:(id)arg2 completion:(CDUnknownBlockType)arg3;

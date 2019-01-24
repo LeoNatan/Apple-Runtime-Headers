@@ -13,7 +13,7 @@
 #import <CoreSpeech/CSBeepCancellerDelegate-Protocol.h>
 #import <CoreSpeech/CSRemoteRecordClientDelegate-Protocol.h>
 
-@class AVVoiceController, CSAudioDecoder, CSAudioFileReader, CSAudioPowerMeter, CSAudioSampleRateConverter, CSAudioZeroCounter, CSAudioZeroFilter, CSBeepCanceller, CSRemoteRecordClient, NSDictionary, NSString;
+@class AVVoiceController, CSAudioDecoder, CSAudioFileReader, CSAudioPowerMeter, CSAudioSampleRateConverter, CSAudioZeroCounter, CSAudioZeroFilter, CSBeepCanceller, CSOSTransaction, CSRemoteRecordClient, NSDictionary, NSString;
 @protocol CSAudioRecorderDelegate;
 
 @interface CSAudioRecorder : NSObject <CSRemoteRecordClientDelegate, AVVoiceControllerRecordDelegate, AVVoiceControllerPlaybackDelegate, CSBeepCancellerDelegate, CSAudioDecoderDelegate, CSAudioFileReaderDelegate>
@@ -38,6 +38,7 @@
     CSAudioFileReader *_audioFileReader;
     unsigned long long _audioFilePathIndex;
     BOOL _waitingForDidStart;
+    CSOSTransaction *_recordingTransaction;
     id <CSAudioRecorderDelegate> _delegate;
 }
 
@@ -78,6 +79,8 @@
 - (void)beepCancellerDidCancelSamples:(id)arg1 buffer:(id)arg2 timestamp:(unsigned long long)arg3;
 - (void)_processAudioChainWithZeroFiltering:(id)arg1 atTime:(unsigned long long)arg2;
 - (void)_processAudioChain:(id)arg1 atTime:(unsigned long long)arg2;
+- (void)_releaseAudioRecordingTransaction;
+- (void)_holdAudioRecordingTransaction;
 - (BOOL)_shouldRunZeroFilter;
 - (id)voiceTriggerInfo;
 - (id)playbackRoute;
@@ -87,6 +90,7 @@
 - (float)_recordingSampleRate;
 - (BOOL)isRecording;
 - (BOOL)setRecordMode:(long long)arg1 error:(id *)arg2;
+- (BOOL)startListeningWithSettings:(id)arg1 error:(id *)arg2;
 - (BOOL)startListening:(id *)arg1;
 - (BOOL)prepareListenWithSettings:(id)arg1 error:(id *)arg2;
 - (void)stopRecording;

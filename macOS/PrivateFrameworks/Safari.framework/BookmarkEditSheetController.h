@@ -8,7 +8,7 @@
 
 #import <Safari/NSWindowDelegate-Protocol.h>
 
-@class NSPopUpButton, NSString, NSTextField, WebBookmark, WebBookmarkList;
+@class BookmarksController, NSPopUpButton, NSString, NSTextField, WebBookmark, WebBookmarkList;
 
 __attribute__((visibility("hidden")))
 @interface BookmarkEditSheetController : NSWindowController <NSWindowDelegate>
@@ -17,6 +17,7 @@ __attribute__((visibility("hidden")))
     NSTextField *promptField;
     NSTextField *titleField;
     NSTextField *descriptionField;
+    BookmarksController *_bookmarksController;
     BOOL _titleOnly;
     BOOL _inModalDelegateCallback;
     BOOL _restrictedToBookmarksBar;
@@ -25,7 +26,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)_suggestedTitleForBookmark:(id)arg1;
-+ (id)beginBookmarkEditSheetWithBookmark:(id)arg1 restrictedToBookmarksBar:(BOOL)arg2 titleOnly:(BOOL)arg3 modalForWindow:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
++ (id)beginBookmarkEditSheetWithBookmark:(id)arg1 bookmarksController:(id)arg2 restrictedToBookmarksBar:(BOOL)arg3 titleOnly:(BOOL)arg4 modalForWindow:(id)arg5 completionHandler:(CDUnknownBlockType)arg6;
 @property(readonly, nonatomic) NSString *suggestedTitle; // @synthesize suggestedTitle=_suggestedTitle;
 @property(readonly, nonatomic, getter=isRestrictedToBookmarksBar) BOOL restrictedToBookmarksBar; // @synthesize restrictedToBookmarksBar=_restrictedToBookmarksBar;
 @property(readonly, nonatomic) WebBookmark *bookmark; // @synthesize bookmark=_bookmark;
@@ -43,8 +44,7 @@ __attribute__((visibility("hidden")))
 - (void)acceptNewBookmark:(id)arg1;
 - (id)windowNibName;
 - (void)windowDidLoad;
-- (id)_initWithBookmark:(id)arg1 restrictedToBookmarksBar:(BOOL)arg2 titleOnly:(BOOL)arg3;
-- (id)init;
+- (id)_initWithBookmark:(id)arg1 bookmarksController:(id)arg2 restrictedToBookmarksBar:(BOOL)arg3 titleOnly:(BOOL)arg4;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

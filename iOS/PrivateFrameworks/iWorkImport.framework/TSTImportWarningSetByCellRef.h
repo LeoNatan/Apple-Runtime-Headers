@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (void)saveToArchive:(struct ImportWarningSetByCellRefArchive *)arg1;
-- (id)initFromArchive:(const struct ImportWarningSetByCellRefArchive *)arg1;
+-     // Error parsing type: v24@0:8^{ImportWarningSetByCellRefArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TST::CellRefImportWarningSetPairArchive>=^{Arena}ii^{Rep}}}16, name: saveToArchive:
+-     // Error parsing type: @24@0:8r^{ImportWarningSetByCellRefArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TST::CellRefImportWarningSetPairArchive>=^{Arena}ii^{Rep}}}16, name: initFromArchive:
 - (id)warningSetAtCellRef:(const struct TSCECellRef *)arg1;
 - (struct TSCECellRef)cellRefForIndex:(unsigned long long)arg1;
 - (void)addWarning:(id)arg1 atCellRef:(const struct TSCECellRef *)arg2;

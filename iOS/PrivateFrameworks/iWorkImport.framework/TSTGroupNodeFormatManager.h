@@ -18,8 +18,8 @@ __attribute__((visibility("hidden")))
 
 @property(readonly, retain, nonatomic) TSCECellValue *cellValue; // @synthesize cellValue=_cellValue;
 - (void).cxx_destruct;
-- (void)encodeToArchive:(struct CategoryOwnerArchive_GroupByArchive_GroupNodeArchive_FormatManagerArchive *)arg1;
-- (id)initWithArchive:(const struct CategoryOwnerArchive_GroupByArchive_GroupNodeArchive_FormatManagerArchive *)arg1;
+-     // Error parsing type: v24@0:8^{CategoryOwnerArchive_GroupByArchive_GroupNodeArchive_FormatManagerArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSK::FormatStructArchive>=^{Arena}ii^{Rep}}{RepeatedPtrField<TST::CategoryOwnerArchive_GroupByArchive_GroupNodeArchive_FormatManagerArchive_RowSetArchive>=^{Arena}ii^{Rep}}^{CellValueArchive}}16, name: encodeToArchive:
+-     // Error parsing type: @24@0:8r^{CategoryOwnerArchive_GroupByArchive_GroupNodeArchive_FormatManagerArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSK::FormatStructArchive>=^{Arena}ii^{Rep}}{RepeatedPtrField<TST::CategoryOwnerArchive_GroupByArchive_GroupNodeArchive_FormatManagerArchive_RowSetArchive>=^{Arena}ii^{Rep}}^{CellValueArchive}}16, name: initWithArchive:
 - (void)updateWithDocumentRoot:(id)arg1;
 - (id)description;
 - (_Bool)mergedFormatChangedByRemovingRowUID:(const UUIDData_5fbc143e *)arg1;

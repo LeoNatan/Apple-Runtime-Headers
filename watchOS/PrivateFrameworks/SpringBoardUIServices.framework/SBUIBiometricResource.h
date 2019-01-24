@@ -64,6 +64,7 @@
 - (void)_deactivateAllPearlAssertions;
 - (void)_deactivateAssertion:(id)arg1;
 - (void)_activateFingerDetectAssertion:(id)arg1;
+- (void)_clearFinishedOperationsIfNeededForAssertion:(id)arg1;
 - (void)_activateMatchAssertion:(id)arg1;
 - (void)_reallyResumeMatchingForAssertion:(id)arg1 advisory:(_Bool)arg2;
 - (void)_reallySetAuthenticated:(_Bool)arg1 keybagState:(id)arg2;

@@ -24,6 +24,7 @@
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (id)description;
 - (id)initWithName:(id)arg1 password:(id)arg2 channel:(id)arg3;
 
 @end

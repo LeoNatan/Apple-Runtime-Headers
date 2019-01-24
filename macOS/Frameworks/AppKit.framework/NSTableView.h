@@ -153,8 +153,6 @@
 - (void)viewDidMoveToSuperview;
 - (BOOL)_needsRedisplayOnFrameChange;
 - (void)setFrameSize:(struct CGSize)arg1;
-- (void)_fixupAutoresizingMaskIfNecessary;
-- (void)setAutoresizingMask:(unsigned long long)arg1;
 - (struct CGRect)_visibleRectPastLastRow;
 - (void)_animatingCompleted;
 - (void)resizeWithOldSuperviewSize:(struct CGSize)arg1;

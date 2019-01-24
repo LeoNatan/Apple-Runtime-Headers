@@ -101,6 +101,7 @@
     NSDate *_lastContactDate;
     NSTimer *_udpLivenessTimer;
     NSObject<OS_dispatch_semaphore> *_scaleFactorSemaphore;
+    struct CGPoint mLastCursorPercent;
 }
 
 + (id)qualityEncodingsForMode:(long long)arg1;
@@ -138,6 +139,7 @@
 @property unsigned int viewerAppMajorVersion; // @synthesize viewerAppMajorVersion=mViewerAppMajorVersion;
 @property unsigned int viewerApp; // @synthesize viewerApp=mViewerApp;
 @property BOOL isUsingSSHTunnel; // @synthesize isUsingSSHTunnel=mIsUsingSSHTunnel;
+@property struct CGPoint lastCursorPercent; // @synthesize lastCursorPercent=mLastCursorPercent;
 @property struct SSPoint lastCursorCoodinates; // @synthesize lastCursorCoodinates=mLastCursorCoordinates;
 @property(copy) NSSet *pseudoEncodings; // @synthesize pseudoEncodings=mPseudoEncodings;
 @property int cursorMode; // @synthesize cursorMode=mCursorMode;
@@ -287,11 +289,11 @@
 - (void)stSendMouseMoveEvent:(id)arg1;
 - (void)repostMouseEvent;
 - (void)stCommonRepostMouseEvent;
-- (void)stCommonPostMouseEventWithX:(unsigned short)arg1 withY:(unsigned short)arg2 withButtonMask:(unsigned char)arg3 withFrameBufferCoords:(struct SSPoint)arg4 withClickCount:(long long)arg5;
-- (void)stCommonPostMouseEventWithX:(unsigned short)arg1 withY:(unsigned short)arg2 withButtonMask:(unsigned char)arg3 withFrameBufferCoords:(struct SSPoint)arg4;
-- (void)stCorePostMouseEventWithX:(unsigned short)arg1 withY:(unsigned short)arg2 withButtonMask:(unsigned char)arg3 withFrameBufferCoords:(struct SSPoint)arg4 withClickCount:(long long)arg5 active:(BOOL)arg6;
+- (void)stCommonPostMouseEventWithX:(unsigned short)arg1 withY:(unsigned short)arg2 withButtonMask:(unsigned char)arg3 withFrameBufferCoords:(struct SSPoint)arg4 withClickCount:(long long)arg5 framePercent:(struct CGPoint)arg6;
+- (void)stCommonPostMouseEvent:(id)arg1 withX:(unsigned short)arg2 withY:(unsigned short)arg3 withButtonMask:(unsigned char)arg4 withClickCount:(long long)arg5;
+- (void)stCorePostMouseEventWithX:(unsigned short)arg1 withY:(unsigned short)arg2 withButtonMask:(unsigned char)arg3 withFrameBufferCoords:(struct SSPoint)arg4 withClickCount:(long long)arg5 active:(BOOL)arg6 framePercent:(struct CGPoint)arg7;
 - (void)turnAssistModeOff:(BOOL)arg1;
-- (void)turnAssistModeOnWithX:(unsigned short)arg1 Y:(unsigned short)arg2 andFlags:(unsigned int)arg3;
+- (void)turnAssistModeOnWithX:(unsigned short)arg1 Y:(unsigned short)arg2 flags:(unsigned int)arg3 info:(struct RFBAssistCursorV2Info *)arg4;
 - (int)assistPointerColor;
 - (void)setAssistPointerColor:(int)arg1;
 - (int)assistPointerKind;

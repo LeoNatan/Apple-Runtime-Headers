@@ -7,11 +7,12 @@
 #import <AccountsUI/ACUIViewController.h>
 
 #import <AccountsUI/ACUIAccountDataclassDelegate-Protocol.h>
+#import <AccountsUI/ACUIWebAuthDelegate-Protocol.h>
 #import <AccountsUI/NSControlTextEditingDelegate-Protocol.h>
 
-@class ACUIWebLoginViewController, NSArray, NSButton, NSLayoutConstraint, NSProgressIndicator, NSStackView, NSString, NSTextField, NSView, NSWindow;
+@class ACUIWebAuthViewController, NSArray, NSButton, NSLayoutConstraint, NSProgressIndicator, NSStackView, NSString, NSTextField, NSView, NSWindow;
 
-@interface ACUIAccountSetupViewController : ACUIViewController <NSControlTextEditingDelegate, ACUIAccountDataclassDelegate>
+@interface ACUIAccountSetupViewController : ACUIViewController <ACUIWebAuthDelegate, NSControlTextEditingDelegate, ACUIAccountDataclassDelegate>
 {
     NSStackView *_stackView;
     NSWindow *_window;
@@ -25,7 +26,7 @@
     NSTextField *_userNameField;
     NSTextField *_dislaimerLabel;
     NSTextField *_emailAddressField;
-    ACUIWebLoginViewController *_webLoginVC;
+    ACUIWebAuthViewController *_webLoginVC;
     NSLayoutConstraint *_dataclassTableViewHeight;
     NSString *_dataclassToAutoEnable;
     NSView *_logoSlice;
@@ -44,7 +45,7 @@
 @property(retain) NSView *logoSlice; // @synthesize logoSlice=_logoSlice;
 @property(retain) NSString *dataclassToAutoEnable; // @synthesize dataclassToAutoEnable=_dataclassToAutoEnable;
 @property(retain) NSLayoutConstraint *dataclassTableViewHeight; // @synthesize dataclassTableViewHeight=_dataclassTableViewHeight;
-@property(retain) ACUIWebLoginViewController *webLoginVC; // @synthesize webLoginVC=_webLoginVC;
+@property(retain) ACUIWebAuthViewController *webLoginVC; // @synthesize webLoginVC=_webLoginVC;
 @property(retain) NSTextField *emailAddressField; // @synthesize emailAddressField=_emailAddressField;
 @property(retain) NSTextField *dislaimerLabel; // @synthesize dislaimerLabel=_dislaimerLabel;
 @property(retain) NSTextField *userNameField; // @synthesize userNameField=_userNameField;
@@ -79,7 +80,7 @@
 - (void)cancel:(id)arg1;
 - (void)next:(id)arg1;
 - (void)didToggleDataclass:(id)arg1;
-- (void)webLoginEndedWithError:(id)arg1;
+- (void)webAuthViewController:(id)arg1 loginEndedWithError:(id)arg2;
 - (void)saveAccountSucceeded;
 - (void)saveAccountFailedWithError:(id)arg1;
 - (void)_animateNewConstructViewStack;

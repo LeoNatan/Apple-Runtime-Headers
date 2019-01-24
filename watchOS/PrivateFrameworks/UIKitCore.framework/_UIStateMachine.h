@@ -15,14 +15,17 @@ __attribute__((visibility("hidden")))
         unsigned int _field1;
         unsigned int _field2;
         CDUnknownBlockType _field3;
+        CDUnknownBlockType _field4;
     } *_transitionTable;
     unsigned int _state;
 }
 
 @property(nonatomic) unsigned int state; // @synthesize state=_state;
 - (void)handleEvent:(unsigned int)arg1 withContext:(id)arg2;
+- (void)setTransitionHandlerForState:(unsigned int)arg1 withEvent:(unsigned int)arg2 transitionHandler:(CDUnknownBlockType)arg3 postTransitionHandler:(CDUnknownBlockType)arg4;
 - (void)setTransitionHandlerForState:(unsigned int)arg1 withEvent:(unsigned int)arg2 transitionHandler:(CDUnknownBlockType)arg3;
 - (void)dealloc;
+- (unsigned int)_totalStateCount;
 - (id)initWithStates:(unsigned int)arg1 events:(unsigned int)arg2 initialState:(unsigned int)arg3;
 
 @end

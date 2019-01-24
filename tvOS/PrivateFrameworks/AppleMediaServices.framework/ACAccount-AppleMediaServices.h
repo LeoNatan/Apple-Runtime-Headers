@@ -12,12 +12,17 @@
 
 @interface ACAccount (AppleMediaServices) <AMSHashable>
 + (_Bool)_isAccountFlagWritable:(id)arg1;
-+ (_Bool)_defaultValueForAccountFlag:(id)arg1;
++ (_Bool)_isAccountFlagValue:(id)arg1 validForAccountFlag:(id)arg2;
++ (id)_defaultValueForAccountFlag:(id)arg1;
+- (_Bool)ams_valueForAccountFlag:(id)arg1;
+- (void)ams_setValue:(_Bool)arg1 forAccountFlag:(id)arg2;
 - (id)ams_secureToken;
+- (void)_setAccountProperty:(id)arg1 forKey:(id)arg2 dataProtectionClass:(unsigned long long)arg3 expectedClass:(Class)arg4;
 - (void)_setAccountProperty:(id)arg1 forKey:(id)arg2 expectedClass:(Class)arg3;
 - (void)_setCookies:(id)arg1;
 - (id)_createCookieStorage;
 - (id)_cookiesMatchingProperties:(id)arg1;
+- (id)_accountPropertyForKey:(id)arg1 dataProtectionClass:(unsigned long long)arg2 expectedClass:(Class)arg3 error:(id *)arg4;
 - (id)_accountPropertyForKey:(id)arg1 expectedClass:(Class)arg2;
 @property(readonly, nonatomic) NSString *hashedDescription;
 - (void)ams_removeCookiesMatchingProperties:(id)arg1;
@@ -25,10 +30,11 @@
 - (void)ams_removeAllCookies;
 - (id)ams_cookiesForURL:(id)arg1;
 - (void)ams_addCookies:(id)arg1;
-- (_Bool)ams_valueForAccountFlag:(id)arg1;
-- (void)ams_setValue:(_Bool)arg1 forAccountFlag:(id)arg2;
+- (void)ams_setAccountFlagValue:(id)arg1 forAccountFlag:(id)arg2;
 - (_Bool)ams_postAccountFlagsWithBagContract:(id)arg1;
 - (_Bool)ams_isDuplicate:(id)arg1;
+- (_Bool)ams_encryptAccountFlags;
+- (id)ams_accountFlagValueForAccountFlag:(id)arg1;
 @property(readonly, nonatomic) NSString *ams_storefront;
 - (void)ams_setValidPayment:(_Bool)arg1;
 - (void)ams_setStorefront:(id)arg1;

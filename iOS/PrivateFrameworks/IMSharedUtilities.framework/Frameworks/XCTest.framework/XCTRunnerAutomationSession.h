@@ -22,10 +22,16 @@
 @property(readonly) int connectionPid; // @synthesize connectionPid=_connectionPid;
 @property(readonly) NSXPCConnection *connection; // @synthesize connection=_connection;
 - (void).cxx_destruct;
+@property(readonly) _Bool usePointTransformationsForFrameConversions;
+@property(readonly) _Bool supportsHostedViewCoordinateTransformations;
+- (id)parameterizedAttribute:(id)arg1 forElement:(id)arg2 parameter:(id)arg3 error:(id *)arg4;
+- (id)attributesForElement:(id)arg1 attributes:(id)arg2 error:(id *)arg3;
+@property(readonly) _Bool allowsRemoteAccess;
 - (void)notifyWhenAnimationsAreIdle:(CDUnknownBlockType)arg1;
 @property(readonly) _Bool supportsAnimationsIdleNotifications;
 - (void)notifyWhenMainRunLoopIsIdle:(CDUnknownBlockType)arg1;
 @property(readonly) _Bool supportsMainRunLoopIdleNotifications;
+@property(readonly) _Bool supportsFetchingAttributesForElement;
 - (id)matchesForQuery:(id)arg1 error:(id *)arg2;
 - (id)initWithEndpoint:(id)arg1 pid:(int)arg2 capabilities:(id)arg3;
 

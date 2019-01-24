@@ -6,15 +6,13 @@
 
 #import <MapKit/MKPlaceHoursViewController.h>
 
-__attribute__((visibility("hidden")))
 @interface MKPlaceMessageHoursViewController : MKPlaceHoursViewController
 {
 }
 
 + (id)messsageHoursWithMapItem:(id)arg1;
-- (id)localizedHoursBuilder;
 - (id)timeZone;
-- (id)completeHours;
+- (id)businessHours;
 - (id)titleString;
 
 @end

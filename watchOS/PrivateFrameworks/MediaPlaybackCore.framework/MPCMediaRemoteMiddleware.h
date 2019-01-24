@@ -43,6 +43,8 @@
 - (id)playerCommandOptionValue:(id)arg1 forKey:(id)arg2 command:(unsigned int)arg3 chain:(id)arg4;
 - (_Bool)playerCommandEnabled:(_Bool)arg1 command:(unsigned int)arg2 chain:(id)arg3;
 - (_Bool)playerCommandSupported:(_Bool)arg1 command:(unsigned int)arg2 chain:(id)arg3;
+- (id)playerItemCurrentLanguageOptions:(id)arg1 atIndexPath:(id)arg2 chain:(id)arg3;
+- (id)playerItemLanguageOptionGroups:(id)arg1 atIndexPath:(id)arg2 chain:(id)arg3;
 - (int)playerGlobalItemCount:(int)arg1 chain:(id)arg2;
 - (int)playerPlayingItemGlobalIndex:(int)arg1 chain:(id)arg2;
 - (id)playerPlayingItemIndexPath:(id)arg1 chain:(id)arg2;

@@ -130,9 +130,6 @@
 - (id)scopedIdentifiersForMapping;
 - (BOOL)validateRecordForTracker:(id)arg1;
 - (id)compactedChangeWithRelatedChanges:(id)arg1 isOnlyChange:(BOOL)arg2 fullRecord:(id)arg3 usingClientCache:(id)arg4;
-- (id)initWithCKRecord:(id)arg1 scopeIdentifier:(id)arg2 ckAssetProperties:(id)arg3;
-- (BOOL)fillCKRecord:(id)arg1 withRecordMap:(id)arg2 scopeProvider:(id)arg3 tempCKAssetURL:(id)arg4 error:(id *)arg5;
-- (void)setMostRecentAddedDateOnCKRecord:(id)arg1 withCPLEnabledDate:(id)arg2;
 
 @end
 

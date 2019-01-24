@@ -27,7 +27,7 @@ __attribute__((visibility("hidden")))
     unsigned long long _sourceEncoding;
 }
 
-+ (id)settingsFromArchive:(const struct StructuredTextImportSettings *)arg1;
++     // Error parsing type: @24@0:8r^{StructuredTextImportSettings=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<std::__1::basic_string<char> >=^{Arena}ii^{Rep}}{RepeatedPtrField<std::__1::basic_string<char> >=^{Arena}ii^{Rep}}{RepeatedPtrField<std::__1::basic_string<char> >=^{Arena}ii^{Rep}}{RepeatedPtrField<std::__1::basic_string<char> >=^{Arena}ii^{Rep}}^{IndexSet}iiQBBBB}16, name: settingsFromArchive:
 + (id)keyPathsForValuesAffectingIsValid;
 + (id)settingsWithType:(long long)arg1;
 + (id)settings;
@@ -44,8 +44,8 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) unsigned long long startingRow; // @synthesize startingRow=_startingRow;
 @property(nonatomic) long long type; // @synthesize type=_type;
 - (void).cxx_destruct;
-- (void)encodeToArchive:(struct StructuredTextImportSettings *)arg1;
-- (id)initFromArchive:(const struct StructuredTextImportSettings *)arg1;
+-     // Error parsing type: v24@0:8^{StructuredTextImportSettings=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<std::__1::basic_string<char> >=^{Arena}ii^{Rep}}{RepeatedPtrField<std::__1::basic_string<char> >=^{Arena}ii^{Rep}}{RepeatedPtrField<std::__1::basic_string<char> >=^{Arena}ii^{Rep}}{RepeatedPtrField<std::__1::basic_string<char> >=^{Arena}ii^{Rep}}^{IndexSet}iiQBBBB}16, name: encodeToArchive:
+-     // Error parsing type: @24@0:8r^{StructuredTextImportSettings=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<std::__1::basic_string<char> >=^{Arena}ii^{Rep}}{RepeatedPtrField<std::__1::basic_string<char> >=^{Arena}ii^{Rep}}{RepeatedPtrField<std::__1::basic_string<char> >=^{Arena}ii^{Rep}}{RepeatedPtrField<std::__1::basic_string<char> >=^{Arena}ii^{Rep}}^{IndexSet}iiQBBBB}16, name: initFromArchive:
 - (id)errorString;
 - (_Bool)isValid;
 @property(readonly, nonatomic) _Bool hasAnyAutomaticSettings;

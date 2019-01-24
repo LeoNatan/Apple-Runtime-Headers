@@ -35,7 +35,7 @@
 @property(retain, nonatomic) NSSet *articleIds; // @synthesize articleIds=_articleIds;
 @property(retain, nonatomic) FCHeadlineClusteringRules *rules; // @synthesize rules=_rules;
 - (void).cxx_destruct;
-- (id)clusterHeadlinesByTopic:(id)arg1 subscribedTags:(id)arg2 personalizer:(id)arg3 rules:(id)arg4;
+- (id)clusterHeadlinesByTopic:(id)arg1 subscribedTags:(id)arg2 personalizer:(id)arg3 rules:(id)arg4 translationProvider:(id)arg5;
 - (id)computeBestGrouping:(id)arg1 tagScores:(id)arg2 headlinesById:(id)arg3;
 - (void)computeGrouping:(id)arg1 topK:(double)arg2;
 - (id)sortedScoredArticles:(id)arg1 length:(long long)arg2 asc:(_Bool)arg3;

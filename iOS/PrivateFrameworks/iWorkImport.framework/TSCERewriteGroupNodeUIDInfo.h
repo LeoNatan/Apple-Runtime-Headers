@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (void)saveToMessage:(struct RewriteGroupNodeUIDInfoArchive *)arg1;
-- (id)initFromMessage:(const struct RewriteGroupNodeUIDInfoArchive *)arg1;
+-     // Error parsing type: v24@0:8^{RewriteGroupNodeUIDInfoArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{UUID}^{UUIDMapArchive}}16, name: saveToMessage:
+-     // Error parsing type: @24@0:8r^{RewriteGroupNodeUIDInfoArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{UUID}^{UUIDMapArchive}}16, name: initFromMessage:
 - (id)description;
 - (const UUIDMap_b66c2694 *)groupNodeUIDMap;
 - (vector_4dc5f307)originalGroupNodeUIDs;

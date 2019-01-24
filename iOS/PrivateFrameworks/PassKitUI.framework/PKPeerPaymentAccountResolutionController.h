@@ -8,18 +8,18 @@
 
 #import <PassKitUI/MFMailComposeViewControllerDelegate-Protocol.h>
 #import <PassKitUI/PKPeerPaymentAccountResolutionControllerDelegate-Protocol.h>
-#import <PassKitUI/PKPeerPaymentPerformActionViewControllerDelegate-Protocol.h>
+#import <PassKitUI/PKPeerPaymentActionViewControllerDelegate-Protocol.h>
 
-@class NSString, PKPeerPaymentAccount, PKPeerPaymentPerformActionViewController, PKPeerPaymentWebService;
+@class NSString, PKPeerPaymentAccount, PKPeerPaymentActionViewController, PKPeerPaymentWebService;
 @protocol PKPassLibraryDataProvider, PKPaymentSetupDelegate, PKPeerPaymentAccountResolutionControllerDelegate;
 
-@interface PKPeerPaymentAccountResolutionController : NSObject <MFMailComposeViewControllerDelegate, PKPeerPaymentAccountResolutionControllerDelegate, PKPeerPaymentPerformActionViewControllerDelegate>
+@interface PKPeerPaymentAccountResolutionController : NSObject <MFMailComposeViewControllerDelegate, PKPeerPaymentAccountResolutionControllerDelegate, PKPeerPaymentActionViewControllerDelegate>
 {
     id <PKPeerPaymentAccountResolutionControllerDelegate> _delegate;
     id <PKPassLibraryDataProvider> _passLibraryDataProvider;
     long long _context;
     PKPeerPaymentWebService *_webService;
-    PKPeerPaymentPerformActionViewController *_peerPaymentActionViewController;
+    PKPeerPaymentActionViewController *_peerPaymentActionViewController;
     PKPeerPaymentAccount *_account;
     id <PKPaymentSetupDelegate> _setupDelegate;
 }
@@ -30,6 +30,7 @@
 + (_Bool)peerPaymentPassIsProvisionedOnDeviceForAccount:(id)arg1 passLibraryDataProvider:(id)arg2;
 + (_Bool)peerPaymentPassIsProvisionedOnDeviceForAccount:(id)arg1;
 @property(nonatomic) __weak id <PKPaymentSetupDelegate> setupDelegate; // @synthesize setupDelegate=_setupDelegate;
+@property(nonatomic) __weak id <PKPeerPaymentAccountResolutionControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) PKPeerPaymentAccount *account; // @synthesize account=_account;
 - (void).cxx_destruct;
 - (void)_openSupportWebsiteWithWebsiteURL:(id)arg1;
@@ -40,8 +41,8 @@
 - (void)_presentViewController:(id)arg1;
 - (id)_paymentSetupNavigationControllerForProvisioningController:(id)arg1;
 - (void)mailComposeController:(id)arg1 didFinishWithResult:(long long)arg2 error:(id)arg3;
-- (void)peerPaymentPerformActionViewControllerDidPerformAction:(id)arg1;
-- (void)peerPaymentPerformActionViewControllerDidCancel:(id)arg1;
+- (void)peerPaymentActionViewControllerDidPerformAction:(id)arg1;
+- (void)peerPaymentActionViewControllerDidCancel:(id)arg1;
 - (void)_presentPeerPaymentAction:(unsigned long long)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)_presentReOpenFlowWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_presentContactAppleSupportAlertWithCompletion:(CDUnknownBlockType)arg1;

@@ -11,6 +11,7 @@
 }
 
 + (BOOL)onDeviceDiagnosticsAllowed;
++ (BOOL)explicitContentAllowed;
 + (BOOL)allowAccountModifications;
 
 @end

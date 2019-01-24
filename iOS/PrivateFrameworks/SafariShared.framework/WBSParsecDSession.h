@@ -44,7 +44,6 @@
 @property(readonly, nonatomic) id <WBSParsecFeedbackDispatcher> feedbackDispatcher;
 - (void)_didReceiveResponse:(id)arg1 error:(id)arg2 forTask:(id)arg3 query:(id)arg4;
 - (id)initWithParsecdSession:(id)arg1 skipAutoFillDataUpdates:(_Bool)arg2;
-- (id)init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

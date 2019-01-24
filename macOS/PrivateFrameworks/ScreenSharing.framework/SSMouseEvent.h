@@ -10,9 +10,11 @@
 {
     struct SSPoint mCoordinates;
     void *mReservedForInstanceVariablesMouse;
+    struct CGPoint _mV2Coordinates;
 }
 
 + (id)mouseEventWithCoordinates:(struct SSPoint)arg1;
+@property struct CGPoint mV2Coordinates; // @synthesize mV2Coordinates=_mV2Coordinates;
 @property(readonly) struct SSPoint coordinates; // @synthesize coordinates=mCoordinates;
 - (id)initWithCoordinates:(struct SSPoint)arg1;
 

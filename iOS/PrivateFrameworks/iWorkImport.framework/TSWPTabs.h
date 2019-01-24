@@ -37,8 +37,8 @@ __attribute__((visibility("hidden")))
 - (id)tabAtIndex:(unsigned long long)arg1;
 - (unsigned long long)count;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (void)saveToArchive:(struct TabsArchive *)arg1 archiver:(id)arg2;
-- (id)initWithArchive:(const struct TabsArchive *)arg1 unarchiver:(id)arg2;
+-     // Error parsing type: v32@0:8^{TabsArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSWP::TabArchive>=^{Arena}ii^{Rep}}}16@24, name: saveToArchive:archiver:
+-     // Error parsing type: @32@0:8r^{TabsArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSWP::TabArchive>=^{Arena}ii^{Rep}}}16@24, name: initWithArchive:unarchiver:
 - (id)initWithTabs:(id)arg1;
 - (id)init;
 

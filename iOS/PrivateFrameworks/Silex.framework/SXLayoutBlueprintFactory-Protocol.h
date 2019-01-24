@@ -6,9 +6,9 @@
 
 #import <Silex/NSObject-Protocol.h>
 
-@class SXLayoutBlueprint;
+@class SXLayoutBlueprint, SXLayoutOptions;
 
 @protocol SXLayoutBlueprintFactory <NSObject>
-- (SXLayoutBlueprint *)createLayoutBlueprint;
+- (SXLayoutBlueprint *)createLayoutBlueprintWithLayoutOptions:(SXLayoutOptions *)arg1;
 @end
 

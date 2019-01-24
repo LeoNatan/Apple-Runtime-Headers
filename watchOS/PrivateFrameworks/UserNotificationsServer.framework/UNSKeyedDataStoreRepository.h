@@ -21,7 +21,9 @@
 - (void)_removeItemAtPath:(id)arg1;
 - (void)removeDataStoreRepository;
 - (void)removeStoreForKey:(id)arg1;
-- (id)_addObject:(id)arg1 replaceObjectUsingTest:(CDUnknownBlockType)arg2 atPath:(id)arg3;
+- (id)_addObject:(id)arg1 replaceObjectUsingTest:(CDUnknownBlockType)arg2 mustReplace:(_Bool)arg3 atPath:(id)arg4;
+- (id)addObject:(id)arg1 replaceObjectUsingTest:(CDUnknownBlockType)arg2 mustReplace:(_Bool)arg3 forKey:(id)arg4;
+- (id)replaceObject:(id)arg1 usingTest:(CDUnknownBlockType)arg2 forKey:(id)arg3;
 - (id)addObject:(id)arg1 replaceObjectUsingTest:(CDUnknownBlockType)arg2 forKey:(id)arg3;
 - (id)addObject:(id)arg1 forKey:(id)arg2;
 - (void)_setObjects:(id)arg1 atPath:(id)arg2;

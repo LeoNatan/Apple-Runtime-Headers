@@ -56,6 +56,7 @@ __attribute__((visibility("hidden")))
 - (id)actionEffectForDrawable:(id)arg1 atBeginningOfEvent:(long long)arg2;
 - (id)sortRenderers:(id)arg1;
 - (id)nextRendererAfterRenderer:(id)arg1;
+- (id)previousRendererBeforeRenderer:(id)arg1;
 - (id)p_previousAnimatedBuildOfType:(long long)arg1 forInfo:(id)arg2 priorToBuild:(id)arg3;
 - (id)previousContentBuildForInfo:(id)arg1 priorToBuild:(id)arg2;
 - (id)previousBuildInForInfo:(id)arg1 priorToBuild:(id)arg2;

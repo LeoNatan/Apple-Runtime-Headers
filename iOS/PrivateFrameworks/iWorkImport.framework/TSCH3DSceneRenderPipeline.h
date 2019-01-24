@@ -6,14 +6,14 @@
 
 #import <iWorkImport/TSCH3DRenderPipeline.h>
 
-@class NSNumber, TSCH3DCamera, TSCH3DGLFramebuffer, TSCH3DScene, TSCH3DSceneRenderSetup;
+@class NSNumber, TSCH3DCamera, TSCH3DFramebuffer, TSCH3DScene, TSCH3DSceneRenderSetup;
 
 __attribute__((visibility("hidden")))
 @interface TSCH3DSceneRenderPipeline : TSCH3DRenderPipeline
 {
     TSCH3DSceneRenderPipeline *mOriginal;
     TSCH3DScene *mScene;
-    TSCH3DGLFramebuffer *mFramebuffer;
+    TSCH3DFramebuffer *mFramebuffer;
     TSCH3DSceneRenderSetup *mSetup;
     TSCH3DCamera *mCamera;
     NSNumber *mScale;
@@ -43,7 +43,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) float samples;
 @property(nonatomic) float scale;
 @property(retain, nonatomic) TSCH3DSceneRenderSetup *setup;
-@property(retain, nonatomic) TSCH3DGLFramebuffer *framebuffer;
+@property(retain, nonatomic) TSCH3DFramebuffer *framebuffer;
 @property(retain, nonatomic) TSCH3DScene *scene;
 - (id)session;
 - (id)processor;

@@ -16,6 +16,7 @@
 - (void).cxx_destruct;
 - (void)cancel;
 - (_Bool)start;
+- (id)initWithURL:(id)arg1 callbackURLScheme:(id)arg2 usingEphemeralSession:(_Bool)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (id)initWithURL:(id)arg1 callbackURLScheme:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 
 @end

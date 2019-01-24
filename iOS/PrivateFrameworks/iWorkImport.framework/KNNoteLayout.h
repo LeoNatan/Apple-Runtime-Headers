@@ -24,7 +24,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) struct CGSize sizeOfScrollViewEnclosingCanvas; // @synthesize sizeOfScrollViewEnclosingCanvas=_sizeOfScrollViewEnclosingCanvas;
 @property(readonly, nonatomic) TSWPLayout *containedLayout; // @synthesize containedLayout=_containedLayout;
 - (void).cxx_destruct;
-- (double)maxAutoGrowHeightForTextLayout:(id)arg1;
+- (double)maxAutoGrowBlockHeightForTextLayout:(id)arg1;
 @property(readonly, nonatomic) _Bool supportsBoldItalicUnderlineShortcuts;
 - (_Bool)textIsVertical;
 @property(readonly, nonatomic) _Bool columnsAreLeftToRight;
@@ -49,7 +49,7 @@ __attribute__((visibility("hidden")))
 - (struct CGRect)nonAutosizedFrameForTextLayout:(id)arg1;
 - (void)invalidateForAutosizingTextLayout:(id)arg1;
 - (int)verticalAlignmentForTextLayout:(id)arg1;
-- (unsigned int)autosizeFlagsForTextLayout:(id)arg1;
+- (unsigned long long)autosizeFlagsForTextLayout:(id)arg1;
 - (id)paragraphStyleAtParIndex:(unsigned long long)arg1 effectiveRange:(struct _NSRange *)arg2;
 - (id)styleProvider;
 - (_Bool)p_isForPrint;

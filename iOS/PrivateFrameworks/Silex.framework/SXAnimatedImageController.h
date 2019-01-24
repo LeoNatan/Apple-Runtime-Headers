@@ -8,13 +8,12 @@
 
 #import <Silex/SXViewportChangeListener-Protocol.h>
 
-@class NSString, SXComponentView, SXImageView;
-@protocol SXPresentationDelegate;
+@class NSString, SXComponentView, SXImageView, SXViewport;
 
 @interface SXAnimatedImageController : NSObject <SXViewportChangeListener>
 {
     _Bool _isReceivingViewportChanges;
-    id <SXPresentationDelegate> _presentationDelegate;
+    SXViewport *_viewport;
     SXImageView *_imageView;
     double _previousYOffset;
     SXComponentView *_componentView;
@@ -24,12 +23,12 @@
 @property(nonatomic) __weak SXComponentView *componentView; // @synthesize componentView=_componentView;
 @property(nonatomic) double previousYOffset; // @synthesize previousYOffset=_previousYOffset;
 @property(retain, nonatomic) SXImageView *imageView; // @synthesize imageView=_imageView;
-@property(nonatomic) __weak id <SXPresentationDelegate> presentationDelegate; // @synthesize presentationDelegate=_presentationDelegate;
+@property(nonatomic) __weak SXViewport *viewport; // @synthesize viewport=_viewport;
 - (void).cxx_destruct;
 - (void)unregisterForViewportChanges;
 - (void)registerForViewportChanges;
 - (void)viewport:(id)arg1 dynamicBoundsDidChangeFromBounds:(struct CGRect)arg2;
-- (id)initWithImageComponentView:(id)arg1 presentationDelegate:(id)arg2 imageView:(id)arg3;
+- (id)initWithImageComponentView:(id)arg1 viewport:(id)arg2 imageView:(id)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
     TSWPStorage *_storage;
     struct CGSize _minSize;
     struct CGSize _maxSize;
+    _Bool _vertical;
     unsigned long long _pageNumber;
     unsigned long long _pageCount;
     int _flags;
@@ -41,6 +42,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) TSUColor *textColorOverride; // @synthesize textColorOverride=_textColorOverride;
 @property(readonly, nonatomic) int naturalDirection; // @synthesize naturalDirection=_naturalDirection;
 @property(readonly, nonatomic) int naturalAlignment; // @synthesize naturalAlignment=_naturalAlignment;
+@property(nonatomic) _Bool vertical; // @synthesize vertical=_vertical;
 @property(readonly, nonatomic) TSWPStorage *storage; // @synthesize storage=_storage;
 @property(readonly, nonatomic) NSMutableArray *columns; // @synthesize columns=_columns;
 - (void).cxx_destruct;
@@ -57,7 +59,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) _Bool textIsVertical;
 @property(readonly, nonatomic) unsigned long long pageCount;
 @property(readonly, nonatomic) unsigned long long pageNumber;
-@property(readonly, nonatomic) double maxAnchorY;
+@property(readonly, nonatomic) double maxAnchorInBlockDirection;
 - (id)currentAnchoredDrawableLayouts;
 - (void)addAttachmentLayout:(id)arg1;
 - (id)currentInlineDrawableLayouts;
@@ -67,7 +69,7 @@ __attribute__((visibility("hidden")))
 - (void)setNeedsDisplayInTargetRect:(struct CGRect)arg1;
 @property(readonly, nonatomic) _Bool wantsLineFragments;
 @property(readonly, nonatomic) int verticalAlignment;
-@property(readonly, nonatomic) unsigned int autosizeFlags;
+@property(readonly, nonatomic) unsigned long long autosizeFlags;
 @property(readonly, nonatomic) struct CGPoint anchorPoint;
 @property(readonly, nonatomic) struct CGPoint position;
 @property(readonly, nonatomic) struct CGSize currentSize;
@@ -92,6 +94,8 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) unsigned long long columnCount;
 @property(readonly, nonatomic) TSWPPadding *layoutMargins;
 - (struct CGSize)adjustedInsetsForTarget:(id)arg1;
+@property(readonly, nonatomic) struct __CFLocale *hyphenationLocale;
+@property(readonly, nonatomic) _Bool shouldHyphenate;
 @property(readonly, nonatomic) TSULocale *locale;
 - (void)drawText:(id)arg1 inContext:(struct CGContext *)arg2 minSize:(struct CGSize)arg3 maxSize:(struct CGSize)arg4 anchor:(struct CGPoint)arg5 flags:(int)arg6 isFlipped:(_Bool)arg7 viewScale:(double)arg8;
 - (void)drawColumn:(id)arg1 inContext:(struct CGContext *)arg2 isFlipped:(_Bool)arg3 viewScale:(double)arg4;
@@ -114,13 +118,11 @@ __attribute__((visibility("hidden")))
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
-@property(readonly, nonatomic) struct __CFLocale *hyphenationLocale;
 @property(readonly, nonatomic) _Bool isLinked;
 @property(readonly, nonatomic) _Bool marginsAreMirrored;
 @property(readonly, nonatomic) struct CGRect maskRect;
 @property(readonly, nonatomic) TSDLayout *parentLayoutForInlineAttachments;
 @property(readonly, nonatomic) _Bool repShouldPreventCaret;
-@property(readonly, nonatomic) _Bool shouldHyphenate;
 @property(readonly) Class superclass;
 @property(readonly, nonatomic) double textScaleFactor;
 

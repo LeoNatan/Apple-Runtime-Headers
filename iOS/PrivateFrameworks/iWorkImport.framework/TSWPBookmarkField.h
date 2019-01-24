@@ -25,9 +25,9 @@ __attribute__((visibility("hidden")))
 @property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
 - (void).cxx_destruct;
 - (void)loadFromUnarchiver:(id)arg1;
-- (void)loadFromArchive:(const struct BookmarkFieldArchive *)arg1 unarchiver:(id)arg2;
+-     // Error parsing type: v32@0:8r^{BookmarkFieldArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}^{SmartFieldArchive}II}16@24, name: loadFromArchive:unarchiver:
 - (void)saveToArchiver:(id)arg1;
-- (void)saveToArchive:(struct BookmarkFieldArchive *)arg1 archiver:(id)arg2;
+-     // Error parsing type: v32@0:8^{BookmarkFieldArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}^{SmartFieldArchive}II}16@24, name: saveToArchive:archiver:
 - (void)resetTextAttributeUUIDString;
 @property(readonly, nonatomic) NSString *key;
 @property(readonly, nonatomic) NSURL *url;
@@ -37,7 +37,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)isEquivalentToObject:(id)arg1;
 - (_Bool)allowsEditing;
 - (int)styleAttributeArrayKind;
-- (int)attributeArrayKind;
+- (unsigned long long)attributeArrayKind;
 - (int)smartFieldKind;
 - (id)copyWithNewName:(id)arg1;
 - (id)copyWithContext:(id)arg1;

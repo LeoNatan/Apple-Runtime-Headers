@@ -15,7 +15,7 @@ __attribute__((visibility("hidden")))
     // Error parsing type: , name: contactDetails
 }
 
-- (CDUnknownBlockType).cxx_destruct;
+- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)layout;
 - (id)initWithFrame:(struct CGRect)arg1;

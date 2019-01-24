@@ -22,7 +22,6 @@
 - (id)resetOperation;
 - (void)main;
 - (id)initWithDatabase:(id)arg1 zoneId:(id)arg2 serverToken:(id)arg3;
-- (id)initWithDatabase:(id)arg1;
 
 @end
 

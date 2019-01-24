@@ -19,8 +19,10 @@
 @property(readonly, nonatomic) _Bool isDocumentSupportTemporary;
 @property(readonly, nonatomic) _Bool ignoreDocumentSupport;
 @property(readonly, nonatomic) id <NSFilePresenter> filePresenter;
+- (id)documentProviderInternal;
 - (void)gilligan_data:(TSPData *)arg1 didMoveFromPackageIdentifier:(unsigned char)arg2 packageLocator:(NSString *)arg3 toPackageIdentifier:(unsigned char)arg4 packageLocator:(NSString *)arg5;
 - (_Bool)gilligan_isRemoteData:(TSPData *)arg1;
+- (void)contextDidUpdateDocumentRevision:(TSPObjectContext *)arg1;
 - (_Bool)shouldLoadAllComponentsForContext:(TSPObjectContext *)arg1 documentURL:(NSURL *)arg2;
 - (void)context:(TSPObjectContext *)arg1 willFailToAutosaveDueToDuplicateUUIDs:(NSSet *)arg2 objectReferenceMap:(TSPObjectReferenceMap *)arg3;
 - (void)requestAutosaveForExpensiveCalculation;
@@ -29,12 +31,11 @@
 - (void)suspendSaveAndAutosaveWithReason:(NSString *)arg1;
 - (void)resumeAutosaveWithReason:(NSString *)arg1;
 - (void)suspendAutosaveWithReason:(NSString *)arg1;
-- (_Bool)isDocumentSupportRequiredForContext:(TSPObjectContext *)arg1;
-- (_Bool)didCollaborationContextValidateWithServerForContext:(TSPObjectContext *)arg1;
+- (_Bool)isDocumentSupportRequired;
 - (void)context:(TSPObjectContext *)arg1 canPerformUserActionUsingBlock:(void (^)(_Bool))arg2;
-- (_Bool)isCollaborationOfflineForContext:(TSPObjectContext *)arg1;
-- (_Bool)isInReadOnlyModeForContext:(TSPObjectContext *)arg1;
-- (_Bool)isInCollaborationModeForContext:(TSPObjectContext *)arg1;
+- (_Bool)contextCanPerformUserActions:(TSPObjectContext *)arg1;
+- (_Bool)isInReadOnlyMode;
+- (_Bool)isInCollaborationMode;
 - (void)context:(TSPObjectContext *)arg1 didDownloadRemoteData:(TSPData *)arg2 error:(NSError *)arg3;
 - (void)context:(TSPObjectContext *)arg1 didDownloadDocumentResources:(NSSet *)arg2;
 - (NSSet *)persistenceWarningsForData:(TSPData *)arg1 flags:(unsigned long long)arg2;

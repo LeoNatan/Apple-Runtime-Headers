@@ -55,7 +55,7 @@
 - (_Bool)canCopy;
 @property(readonly, nonatomic) NSString *bundleIdentifier;
 - (_Bool)handlePresentationAction;
-- (void)configureWithConversationID:(id)arg1 recipients:(id)arg2;
+- (void)configureWithConversationID:(id)arg1 recipients:(id)arg2 isBusiness:(_Bool)arg3;
 @property(readonly, nonatomic) UIViewController *contentViewController;
 @property(readonly, nonatomic) UIViewController *extensibleViewController;
 @property(readonly, nonatomic) UIView<CKTranscriptPluginView> *extensableView;

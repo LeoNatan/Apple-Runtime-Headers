@@ -27,6 +27,7 @@
 - (void)writeCloudKitSyncCounts:(NSDictionary *)arg1;
 - (void)fetchSyncStateStatistics;
 - (void)fetchSyncStateStats;
+- (void)updateAttachmentFileSizes;
 - (void)metricAttachments:(long long)arg1;
 - (void)purgeAttachments:(long long)arg1;
 - (void)deleteSalt;
@@ -34,6 +35,8 @@
 - (void)fetchLatestSalt;
 - (void)fetchSecurityLevelAndUpdateMiCSwitchEligibility;
 - (void)broadcastCloudKitStateAfterClearingErrors;
+- (void)clearAnalyticDefaultsAndLocalSyncState;
+- (void)uploadDailyAnalyticstoCloudKit;
 - (void)broadcastCloudKitState;
 - (void)initiateSync;
 - (void)tryToDisableAllDevices;

@@ -65,6 +65,8 @@
 - (_Bool)_enoughPowerToSupportEffects;
 - (long long)memorySize;
 @property(readonly, nonatomic) _Bool lowRAMDevice;
+- (int)cpuFamily;
+@property(readonly, nonatomic) _Bool slowCPUDevice;
 @property(readonly, nonatomic) _Bool supportsApplePay;
 @property(readonly, nonatomic) _Bool isInMultiUserMode;
 @property(readonly, nonatomic) _Bool nonWifiCallingAvailable;

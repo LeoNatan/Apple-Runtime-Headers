@@ -12,11 +12,12 @@
 __attribute__((visibility("hidden")))
 @interface TSUProgressContextProgress : TSUProgress
 {
-    TSUProgressContext *mProgressContext;
-    NSObject<OS_dispatch_queue> *mProgressContextObserverQueue;
+    TSUProgressContext *_progressContext;
+    NSObject<OS_dispatch_queue> *_progressContextObserverQueue;
     _Bool hasAddedProgressContextObserver;
 }
 
+- (void).cxx_destruct;
 - (void)p_progressDidChange:(id)arg1;
 - (void)p_updateProgressContextObserver;
 - (void)removeProgressObserver:(id)arg1;
@@ -24,8 +25,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)isIndeterminate;
 - (double)maxValue;
 - (double)value;
-- (void)dealloc;
-- (id)init;
+- (id)initForSubclass;
 - (id)initWithProgressContext:(id)arg1;
 
 @end

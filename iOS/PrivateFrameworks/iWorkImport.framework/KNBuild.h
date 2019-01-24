@@ -80,7 +80,14 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) _Bool supportsCustomEffectTimingCurve2;
 @property(readonly, nonatomic) _Bool supportsCustomEffectTimingCurve1;
 @property(readonly, nonatomic) _Bool supportsRandomNumberSeedInspection;
+@property(readonly, nonatomic) _Bool supportsDecay;
+@property(readonly, nonatomic) _Bool supportsCustomRepeats;
+@property(readonly, nonatomic) _Bool supportsJiggleIntensity;
+@property(readonly, nonatomic) _Bool supports3DChartRotationAngle;
+@property(readonly, nonatomic) _Bool supportsActionRotationDirection;
+@property(readonly, nonatomic) _Bool supportsActionRotationAngle;
 @property(readonly, nonatomic) _Bool supportsTravelDistance;
+@property(readonly, nonatomic) _Bool supportsCustomScale;
 @property(readonly, nonatomic) _Bool supportsScaleAmount;
 @property(readonly, nonatomic) _Bool supportsShine;
 @property(readonly, nonatomic) _Bool supportsIncludeEndpoints;
@@ -148,8 +155,8 @@ __attribute__((visibility("hidden")))
 - (void)i_invalidateChunkCache;
 - (void)saveToArchiver:(id)arg1;
 - (void)loadFromUnarchiver:(id)arg1;
-- (void)saveToArchive:(struct BuildArchive *)arg1 archiver:(id)arg2;
-- (void)loadFromArchive:(const struct BuildArchive *)arg1 unarchiver:(id)arg2;
+-     // Error parsing type: v32@0:8^{BuildArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}^{Reference}^{BuildAttributesArchive}di}16@24, name: saveToArchive:archiver:
+-     // Error parsing type: v32@0:8r^{BuildArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}^{Reference}^{BuildAttributesArchive}di}16@24, name: loadFromArchive:unarchiver:
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

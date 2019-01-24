@@ -10,7 +10,6 @@
 - (void)__handleFocusMovementAction:(UIFocusMovementAction *)arg1;
 - (void)__showEditAlertViewWithToken:(long)arg1 canUndo:(_Bool)arg2 canRedo:(_Bool)arg3;
 - (void)__trampolineButtonPressData:(NSData *)arg1 canceled:(_Bool)arg2;
-- (void)__setServiceMaxFrameSize:(struct CGSize)arg1;
 - (void)__viewServiceDidUpdatePreferredUserInterfaceStyle:(int)arg1;
 - (void)__viewServiceDidUpdatePreferredWhitePointAdaptationStyle:(int)arg1 animationSettings:(BSAnimationSettings *)arg2;
 - (void)__viewServiceDidUpdatePreferredStatusBarStyle:(int)arg1 preferredStatusBarVisibility:(int)arg2 updateAnimation:(int)arg3 currentAnimationSettings:(BSAnimationSettings *)arg4;

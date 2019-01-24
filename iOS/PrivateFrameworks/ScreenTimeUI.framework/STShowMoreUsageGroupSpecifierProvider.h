@@ -12,19 +12,21 @@
 {
     PSSpecifier *_summarySpecifier;
     NSArray *_usageItems;
+    unsigned long long _numberOfItemsToShow;
     PSSpecifier *_showMoreSpecifier;
-    unsigned long long _maxNumberOfItemsToShow;
+    unsigned long long _totalNumberOfItemsToShow;
 }
 
-@property(nonatomic) unsigned long long maxNumberOfItemsToShow; // @synthesize maxNumberOfItemsToShow=_maxNumberOfItemsToShow;
+@property(nonatomic) unsigned long long totalNumberOfItemsToShow; // @synthesize totalNumberOfItemsToShow=_totalNumberOfItemsToShow;
 @property(readonly, nonatomic) PSSpecifier *showMoreSpecifier; // @synthesize showMoreSpecifier=_showMoreSpecifier;
+@property(nonatomic) unsigned long long numberOfItemsToShow; // @synthesize numberOfItemsToShow=_numberOfItemsToShow;
 @property(copy, nonatomic) NSArray *usageItems; // @synthesize usageItems=_usageItems;
 @property(retain, nonatomic) PSSpecifier *summarySpecifier; // @synthesize summarySpecifier=_summarySpecifier;
 - (void).cxx_destruct;
 - (void)showMoreItems:(id)arg1;
 - (void)updateSpecifier:(id)arg1 usageItem:(id)arg2;
 - (id)newSpecifierWithUsageItem:(id)arg1;
-- (void)refreshUsageSpecifiers;
+- (void)refreshUsageSpecifiersWithUpdates:(_Bool)arg1;
 - (id)init;
 
 @end

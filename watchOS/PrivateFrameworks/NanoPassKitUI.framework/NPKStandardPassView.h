@@ -10,6 +10,7 @@
 #import <NanoPassKitUI/PKPaymentServiceDelegate-Protocol.h>
 
 @class NPKPassDetailView, NPKPassHeaderView, NPKUIAssertion, NSString, PKPaymentService, PUICButton, UIImageView, UILabel, UIView;
+@protocol NPKStandardPassViewDelegate;
 
 @interface NPKStandardPassView : NPKPassView <NPKPassAccessoryViewControllerDelegate, PKPaymentServiceDelegate>
 {
@@ -17,11 +18,14 @@
     _Bool _addBufferAtBottomOfPass;
     _Bool _isTransitioningToListView;
     _Bool _useBarcodeBackground;
+    id <NPKStandardPassViewDelegate> _standardPassViewDelegate;
     UIImageView *_backgroundView;
     UIImageView *_eventTicketBackgroundView;
     UIImageView *_logoImageView;
     UILabel *_logoTextLabel;
     UIView *_logoBackgroundView;
+    UIView *_contactlessSymbolView;
+    UIView *_contactlessSymbolViewBackgroundView;
     NPKPassHeaderView *_headerView;
     NPKPassDetailView *_passDetailView;
     UIImageView *_footerImageView;
@@ -47,11 +51,14 @@
 @property(retain, nonatomic) UIImageView *footerImageView; // @synthesize footerImageView=_footerImageView;
 @property(retain, nonatomic) NPKPassDetailView *passDetailView; // @synthesize passDetailView=_passDetailView;
 @property(retain, nonatomic) NPKPassHeaderView *headerView; // @synthesize headerView=_headerView;
+@property(retain, nonatomic) UIView *contactlessSymbolViewBackgroundView; // @synthesize contactlessSymbolViewBackgroundView=_contactlessSymbolViewBackgroundView;
+@property(retain, nonatomic) UIView *contactlessSymbolView; // @synthesize contactlessSymbolView=_contactlessSymbolView;
 @property(retain, nonatomic) UIView *logoBackgroundView; // @synthesize logoBackgroundView=_logoBackgroundView;
 @property(retain, nonatomic) UILabel *logoTextLabel; // @synthesize logoTextLabel=_logoTextLabel;
 @property(retain, nonatomic) UIImageView *logoImageView; // @synthesize logoImageView=_logoImageView;
 @property(retain, nonatomic) UIImageView *eventTicketBackgroundView; // @synthesize eventTicketBackgroundView=_eventTicketBackgroundView;
 @property(retain, nonatomic) UIImageView *backgroundView; // @synthesize backgroundView=_backgroundView;
+@property(nonatomic) __weak id <NPKStandardPassViewDelegate> standardPassViewDelegate; // @synthesize standardPassViewDelegate=_standardPassViewDelegate;
 @property(nonatomic) _Bool isTransitioningToListView; // @synthesize isTransitioningToListView=_isTransitioningToListView;
 @property(nonatomic) _Bool addBufferAtBottomOfPass; // @synthesize addBufferAtBottomOfPass=_addBufferAtBottomOfPass;
 @property(nonatomic) _Bool showNotificationNub; // @synthesize showNotificationNub=_showNotificationNub;

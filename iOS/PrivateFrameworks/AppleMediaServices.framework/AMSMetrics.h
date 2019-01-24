@@ -50,7 +50,7 @@
 @property(readonly, nonatomic) NSString *containerId; // @synthesize containerId=_containerId;
 - (void).cxx_destruct;
 - (_Bool)_shouldClearEventsDespiteError:(id)arg1 result:(id)arg2;
-- (_Bool)_shouldAllowEvent:(id)arg1;
+- (_Bool)_shouldBlacklistEvent:(id)arg1;
 - (id)_prepareEvent:(id)arg1;
 - (void)_postEvents:(id)arg1 reportURL:(id)arg2 account:(id)arg3 logKey:(id)arg4 completion:(CDUnknownBlockType)arg5;
 - (void)_openDatabaseIfNeeded;

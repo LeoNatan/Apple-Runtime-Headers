@@ -8,7 +8,7 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class GEOPDAddressFilter, GEOPDAddressObjectFilter, GEOPDAmenitiesFilter, GEOPDAnnotatedItemListFilter, GEOPDAssociatedAppFilter, GEOPDBoundsFilter, GEOPDBrowseCategoriesFilter, GEOPDBusinessClaimFilter, GEOPDCaptionedPhotoFilter, GEOPDContainedPlaceFilter, GEOPDETAFilter, GEOPDEntityFilter, GEOPDExternalActionFilter, GEOPDFactoidFilter, GEOPDFlyoverFilter, GEOPDHoursFilter, GEOPDIconFilter, GEOPDLocationEventFilter, GEOPDMessageLinkFilter, GEOPDPhotoFilter, GEOPDPlaceInfoFilter, GEOPDPlacecardLayoutConfigurationFilter, GEOPDPlacecardURLFilter, GEOPDPoiEventFilter, GEOPDPriceDescriptionFilter, GEOPDQuickLinkFilter, GEOPDRapFilter, GEOPDRatingFilter, GEOPDRawAttributeFilter, GEOPDRestaurantReservationLinkFilter, GEOPDResultSnippetFilter, GEOPDReviewFilter, GEOPDRoadAccessInfoFilter, GEOPDSimpleRestaurantMenuTextFilter, GEOPDSpatialLookupFilter, GEOPDStyleAttributesFilter, GEOPDTextBlockFilter, GEOPDTipFilter, GEOPDTransitAttributionFilter, GEOPDTransitIncidentFilter, GEOPDTransitInfoFilter, GEOPDTransitInfoSnippetFilter, GEOPDTransitScheduleFilter, GEOPDVenueInfoFilter, GEOPDWifiFingerprintFilter, PBUnknownFields;
+@class GEOPDAddressFilter, GEOPDAddressObjectFilter, GEOPDAmenitiesFilter, GEOPDAnnotatedItemListFilter, GEOPDAssociatedAppFilter, GEOPDBoundsFilter, GEOPDBrowseCategoriesFilter, GEOPDBusinessClaimFilter, GEOPDBusinessHoursFilter, GEOPDCaptionedPhotoFilter, GEOPDContainedPlaceFilter, GEOPDETAFilter, GEOPDEntityFilter, GEOPDExternalActionFilter, GEOPDFactoidFilter, GEOPDFlyoverFilter, GEOPDHoursFilter, GEOPDIconFilter, GEOPDLinkedServiceFilter, GEOPDLocationEventFilter, GEOPDMessageLinkFilter, GEOPDPhotoFilter, GEOPDPlaceCollectionFilter, GEOPDPlaceInfoFilter, GEOPDPlacecardLayoutConfigurationFilter, GEOPDPlacecardURLFilter, GEOPDPoiEventFilter, GEOPDPriceDescriptionFilter, GEOPDQuickLinkFilter, GEOPDRapFilter, GEOPDRatingFilter, GEOPDRawAttributeFilter, GEOPDRestaurantReservationLinkFilter, GEOPDResultSnippetFilter, GEOPDReviewFilter, GEOPDRoadAccessInfoFilter, GEOPDSimpleRestaurantMenuTextFilter, GEOPDSpatialLookupFilter, GEOPDStyleAttributesFilter, GEOPDTextBlockFilter, GEOPDTipFilter, GEOPDTransitAttributionFilter, GEOPDTransitIncidentFilter, GEOPDTransitInfoFilter, GEOPDTransitInfoSnippetFilter, GEOPDTransitScheduleFilter, GEOPDVehiclePositionFilter, GEOPDVenueInfoFilter, GEOPDWalletCategoryInformationFilter, GEOPDWifiFingerprintFilter, PBUnknownFields;
 
 __attribute__((visibility("hidden")))
 @interface GEOPDComponentFilter : PBCodable <NSCopying>
@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
     GEOPDBoundsFilter *_boundsFilter;
     GEOPDBrowseCategoriesFilter *_browseCategoriesFilter;
     GEOPDBusinessClaimFilter *_businessClaimFilter;
+    GEOPDBusinessHoursFilter *_businessHoursFilter;
     GEOPDCaptionedPhotoFilter *_captionedPhotoFilter;
     GEOPDContainedPlaceFilter *_containedPlaceFilter;
     GEOPDEntityFilter *_entityFilter;
@@ -32,9 +33,11 @@ __attribute__((visibility("hidden")))
     GEOPDFlyoverFilter *_flyoverFilter;
     GEOPDHoursFilter *_hoursFilter;
     GEOPDIconFilter *_iconFilter;
+    GEOPDLinkedServiceFilter *_linkedServiceFilter;
     GEOPDLocationEventFilter *_locationEventFilter;
     GEOPDMessageLinkFilter *_messageLinkFilter;
     GEOPDPhotoFilter *_photoFilter;
+    GEOPDPlaceCollectionFilter *_placeCollectionFilter;
     GEOPDPlaceInfoFilter *_placeInfoFilter;
     GEOPDPlacecardLayoutConfigurationFilter *_placecardLayoutConfigurationFilter;
     GEOPDPlacecardURLFilter *_placecardUrlFilter;
@@ -57,10 +60,17 @@ __attribute__((visibility("hidden")))
     GEOPDTransitInfoFilter *_transitInfoFilter;
     GEOPDTransitInfoSnippetFilter *_transitInfoSnippetFilter;
     GEOPDTransitScheduleFilter *_transitScheduleFilter;
+    GEOPDVehiclePositionFilter *_transitVehiclePositionFilter;
     GEOPDVenueInfoFilter *_venueInfoFilter;
+    GEOPDWalletCategoryInformationFilter *_walletCategoryInformationFilter;
     GEOPDWifiFingerprintFilter *_wifiFingerprintFilter;
 }
 
+@property(retain, nonatomic) GEOPDPlaceCollectionFilter *placeCollectionFilter; // @synthesize placeCollectionFilter=_placeCollectionFilter;
+@property(retain, nonatomic) GEOPDBusinessHoursFilter *businessHoursFilter; // @synthesize businessHoursFilter=_businessHoursFilter;
+@property(retain, nonatomic) GEOPDLinkedServiceFilter *linkedServiceFilter; // @synthesize linkedServiceFilter=_linkedServiceFilter;
+@property(retain, nonatomic) GEOPDVehiclePositionFilter *transitVehiclePositionFilter; // @synthesize transitVehiclePositionFilter=_transitVehiclePositionFilter;
+@property(retain, nonatomic) GEOPDWalletCategoryInformationFilter *walletCategoryInformationFilter; // @synthesize walletCategoryInformationFilter=_walletCategoryInformationFilter;
 @property(retain, nonatomic) GEOPDPlacecardLayoutConfigurationFilter *placecardLayoutConfigurationFilter; // @synthesize placecardLayoutConfigurationFilter=_placecardLayoutConfigurationFilter;
 @property(retain, nonatomic) GEOPDPoiEventFilter *poiEventFilter; // @synthesize poiEventFilter=_poiEventFilter;
 @property(retain, nonatomic) GEOPDAnnotatedItemListFilter *annotatedItemListFilter; // @synthesize annotatedItemListFilter=_annotatedItemListFilter;
@@ -117,6 +127,11 @@ __attribute__((visibility("hidden")))
 - (BOOL)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(readonly, nonatomic) BOOL hasPlaceCollectionFilter;
+@property(readonly, nonatomic) BOOL hasBusinessHoursFilter;
+@property(readonly, nonatomic) BOOL hasLinkedServiceFilter;
+@property(readonly, nonatomic) BOOL hasTransitVehiclePositionFilter;
+@property(readonly, nonatomic) BOOL hasWalletCategoryInformationFilter;
 @property(readonly, nonatomic) BOOL hasPlacecardLayoutConfigurationFilter;
 @property(readonly, nonatomic) BOOL hasPoiEventFilter;
 @property(readonly, nonatomic) BOOL hasAnnotatedItemListFilter;

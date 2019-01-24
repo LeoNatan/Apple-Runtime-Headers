@@ -90,6 +90,7 @@
 + (id)entryEventBackwardDefinitionSoCStatsH7PMGRCounters;
 + (id)entryEventBackwardDefinitionSocStatsDvdStats;
 + (id)entryEventBackwardDefinitionCpuStatsCpuFeatures;
++ (id)entryEventBackwardDefinitionPMPPerfDrivers;
 + (id)entryEventBackwardDefinitionPMPEnergyCounters;
 + (id)entryEventBackwardDefinitionEnergyModel;
 + (id)entryEventBackwardDefinitionSchedulerStatsSchedulerQuantumEnergyKernel;
@@ -120,6 +121,7 @@
 + (id)entryEventBackwardDefinitionCLPCStatsControlEffort;
 + (id)entryEventBackwardDefinitionCLPCStatsLeadingController;
 + (id)entryEventBackwardDefinitionCLPCStatsCounters;
++ (id)entryEventBackwardDefinitionSoCStatsEvents;
 + (id)entryEventBackwardDefinitionSoCStatsEventsRaw;
 + (id)entryEventBackwardDefinitionSoCStatsDeviceStates;
 + (id)entryEventBackwardDefinitionSoCStatsVoltageDomainPerformanceStates;
@@ -129,6 +131,7 @@
 + (id)entryEventBackwardDefinitionIOMFBNativeRate;
 + (id)entryEventBackwardDefinitionIOMFBUSRHistogram;
 + (id)entryEventBackwardDefinitionCPUStatsIdleTimeHistogram;
++ (id)entryEventBackwardDefinitionCPUStatsCPUCorePerformanceStatesData;
 + (id)entryEventBackwardDefinitionCPUStatsCPUComplexPerformanceStatesData;
 + (id)entryEventBackwardDefinitionCPUStatsVoltageDomainPerformanceStates;
 + (id)entryEventBackwardDefinitionCPUStatsCPUPerformanceStates;
@@ -175,6 +178,8 @@
 - (void)logEventBackwardIOReportWithDelta:(id)arg1 forChannelGroup:(id)arg2;
 - (void)logEventBackwardComplexThermalUPOLimiting:(id)arg1 withChannels:(id)arg2;
 - (id)getBucketName:(int)arg1;
+- (void)logEventBackwardCorePerformanceStates:(id)arg1;
+- (int)getCoreChannelId:(id)arg1;
 - (void)logEventBackwardComplexPerformanceStates:(id)arg1;
 - (int)getChannelId:(id)arg1;
 - (void)ioReportLogEntry:(id)arg1;

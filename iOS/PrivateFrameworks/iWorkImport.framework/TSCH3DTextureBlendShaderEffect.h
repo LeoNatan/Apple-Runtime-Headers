@@ -12,13 +12,14 @@ __attribute__((visibility("hidden")))
 }
 
 + (void)setBlendFactor:(float)arg1 unit:(long long)arg2 effectsStates:(id)arg3;
++ (id)variableTexture;
 + (id)variableBlendTexture;
 + (id)variableBlendFactor;
 + (id)allocWithZone:(struct _NSZone *)arg1;
 + (id)effect;
 + (id)_singletonAlloc;
 - (void)uploadData:(id)arg1 effectsStates:(id)arg2;
-- (void)inject:(id)arg1;
+- (void)injectCommonShaderInto:(id)arg1 context:(id)arg2;
 - (void)addVariables:(id)arg1;
 - (id)variableBlendTexture;
 - (id)variableBlendFactor;

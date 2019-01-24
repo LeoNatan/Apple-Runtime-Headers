@@ -11,12 +11,7 @@
 @interface CKUIBehavior : NSObject
 {
     long long _HUDStyle;
-    UIImage *_emojiReplyImage;
-    UIImage *_dictationReplyImage;
     UIImage *_messageReplyImage;
-    UIImage *_digitalTouchReplyImage;
-    UIImage *_arouetReplyImage;
-    UIImage *_surfReplyImage;
     UIImage *_orbComposeImage;
     UIImage *_orbReplyImage;
     UIImage *_orbDetailsImage;
@@ -34,12 +29,7 @@
 @property(readonly, nonatomic) UIImage *orbDetailsImage; // @synthesize orbDetailsImage=_orbDetailsImage;
 @property(readonly, nonatomic) UIImage *orbReplyImage; // @synthesize orbReplyImage=_orbReplyImage;
 @property(readonly, nonatomic) UIImage *orbComposeImage; // @synthesize orbComposeImage=_orbComposeImage;
-@property(readonly, nonatomic) UIImage *surfReplyImage; // @synthesize surfReplyImage=_surfReplyImage;
-@property(readonly, nonatomic) UIImage *arouetReplyImage; // @synthesize arouetReplyImage=_arouetReplyImage;
-@property(readonly, nonatomic) UIImage *digitalTouchReplyImage; // @synthesize digitalTouchReplyImage=_digitalTouchReplyImage;
 @property(readonly, nonatomic) UIImage *messageReplyImage; // @synthesize messageReplyImage=_messageReplyImage;
-@property(readonly, nonatomic) UIImage *dictationReplyImage; // @synthesize dictationReplyImage=_dictationReplyImage;
-@property(readonly, nonatomic) UIImage *emojiReplyImage; // @synthesize emojiReplyImage=_emojiReplyImage;
 @property(nonatomic) long long HUDStyle; // @synthesize HUDStyle=_HUDStyle;
 - (void).cxx_destruct;
 @property(readonly, nonatomic) double callButtonLongPressDuration;
@@ -364,6 +354,8 @@
 @property(readonly, nonatomic) UIImage *locationShareActionIcon;
 @property(readonly, nonatomic) UIFont *transcriptJunkHeaderButtonFont;
 @property(readonly, nonatomic) UIFont *transcriptJunkHeaderTitleFont;
+@property(readonly, nonatomic) struct UIEdgeInsets phishingWarningEdgeInsets;
+@property(readonly, nonatomic) NSDictionary *phishingWarningTextAttributes;
 @property(readonly, nonatomic) NSDictionary *transcriptButtonTextAttributes;
 @property(readonly, nonatomic) NSDictionary *drawerTranscriptTextAttributes;
 @property(readonly, nonatomic) NSDictionary *datestampTranscriptBoldTextAttributes;

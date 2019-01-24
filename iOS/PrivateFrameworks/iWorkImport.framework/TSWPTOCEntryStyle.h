@@ -17,10 +17,10 @@ __attribute__((visibility("hidden")))
 + (id)properties;
 - (id)parentStyleForFixingOrphanVariation;
 - (void)saveToArchiver:(id)arg1;
-- (void)saveToArchive:(struct TOCEntryStyleArchive *)arg1 archiver:(id)arg2;
+-     // Error parsing type: v32@0:8^{TOCEntryStyleArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{ParagraphStyleArchive}^{TOCEntryStylePropertiesArchive}}16@24, name: saveToArchive:archiver:
 - (void)loadFromUnarchiver:(id)arg1;
-- (void)p_saveTOCEntryStylePropertiesToArchive:(struct TOCEntryStylePropertiesArchive *)arg1 archiver:(id)arg2;
-- (void)p_loadTOCEntryParagraphStylePropertiesIntoPropertyMap:(id)arg1 fromArchive:(const struct TOCEntryStylePropertiesArchive *)arg2 unarchiver:(id)arg3;
+-     // Error parsing type: v32@0:8^{TOCEntryStylePropertiesArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{Reference}BB}16@24, name: p_saveTOCEntryStylePropertiesToArchive:archiver:
+-     // Error parsing type: v40@0:8@16r^{TOCEntryStylePropertiesArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{Reference}BB}24@32, name: p_loadTOCEntryParagraphStylePropertiesIntoPropertyMap:fromArchive:unarchiver:
 - (id)presetKind;
 - (id)initWithContext:(id)arg1 name:(id)arg2 overridePropertyMap:(id)arg3 isVariation:(_Bool)arg4;
 - (id)initWithContext:(id)arg1 name:(id)arg2 basedOnParagraphStyle:(id)arg3;

@@ -31,7 +31,7 @@
 @property(copy, nonatomic) NSDate *filterDate; // @synthesize filterDate=_filterDate;
 - (void).cxx_destruct;
 - (_Bool)_useForegroundMinimumUpdateInterval;
-- (void)_finalizeTodayResultsWithSectionDescriptors:(id)arg1 catchUpOperationResultsBySectionDescriptor:(id)arg2 itemIDsOfLeadingCells:(id)arg3 slotAllocationByDynamicSlotItemID:(id)arg4 appConfiguration:(id)arg5 feedPersonalizer:(id)arg6 completion:(CDUnknownBlockType)arg7;
+- (void)_finalizeTodayResultsWithSectionDescriptors:(id)arg1 catchUpOperationResultsBySectionDescriptor:(id)arg2 itemIDsOfLeadingCells:(id)arg3 slotAllocationByDynamicSlotItemID:(id)arg4 appConfiguration:(id)arg5 feedPersonalizer:(id)arg6 todayData:(id)arg7 completion:(CDUnknownBlockType)arg8;
 - (void)_registerForYouFetchWithForYouFetchInfo:(id)arg1;
 - (void)_fetchTodayResultsWithFetchHelper:(id)arg1 maximumCachedAgeForForYou:(unsigned long long)arg2 aggregator:(id)arg3 appConfiguration:(id)arg4 feedPersonalizer:(id)arg5 todayData:(id)arg6 completion:(CDUnknownBlockType)arg7;
 - (void)_assembleQueueDescriptorsWithConfig:(id)arg1 allowOnlyWatchEligibleSections:(_Bool)arg2 respectsWidgetVisibleSectionsLimit:(_Bool)arg3 personalizationTreatment:(id)arg4 aggregateStore:(id)arg5 appConfiguration:(id)arg6 todayData:(id)arg7 completion:(CDUnknownBlockType)arg8;

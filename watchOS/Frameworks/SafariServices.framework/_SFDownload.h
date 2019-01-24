@@ -30,7 +30,8 @@
     id <_SFDownloadDelegate> _delegate;
 }
 
-+ (id)provisionalDownloadWithType:(int)arg1 userInitiatedAction:(id)arg2;
++ (id)downloadDestinationPathWithFilename:(id)arg1;
++ (id)provisionalDownloadWithType:(int)arg1 request:(id)arg2 uti:(id)arg3 userInitiatedAction:(id)arg4;
 @property(nonatomic) __weak id <_SFDownloadDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak WBSFluidProgressController *fluidProgressController; // @synthesize fluidProgressController=_fluidProgressController;
 @property(readonly, nonatomic) _WKUserInitiatedAction *userInitiatedAction; // @synthesize userInitiatedAction=_userInitiatedAction;
@@ -44,6 +45,7 @@
 - (id)progressState;
 - (void)clearFluidProgressState;
 - (_Bool)createFluidProgressState;
+- (void)_downloadProcessDidCrash:(id)arg1;
 - (void)_downloadDidCancel:(id)arg1;
 - (void)_download:(id)arg1 didFailWithError:(id)arg2;
 - (void)_downloadDidFinish:(id)arg1;

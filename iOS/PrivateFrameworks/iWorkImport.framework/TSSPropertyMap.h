@@ -70,12 +70,12 @@ __attribute__((visibility("hidden")))
 - (id)initWithPropertyMap:(id)arg1;
 - (id)initWithCapacity:(unsigned long long)arg1;
 - (id)init;
-- (void)pSetRepeatedArrayOfBools:(const RepeatedField_12b14242 *)arg1 forProperty:(int)arg2 defaultValues:(_Bool [9])arg3 validator:(id)arg4;
-- (void)pSetRepeatedArrayOfInts:(const RepeatedField_c2891982 *)arg1 forProperty:(int)arg2 defaultValues:(int [9])arg3 min:(int)arg4 max:(int)arg5 validator:(id)arg6 usePreviousValueOnDefault:(_Bool)arg7;
-- (void)pSetRepeatedArrayOfInts:(const RepeatedField_c2891982 *)arg1 forProperty:(int)arg2 defaultValues:(int [9])arg3 min:(int)arg4 max:(int)arg5 validator:(id)arg6;
+- (void)pSetRepeatedArrayOfBools:(const RepeatedField_11b8965c *)arg1 forProperty:(int)arg2 defaultValues:(_Bool [9])arg3 validator:(id)arg4;
+- (void)pSetRepeatedArrayOfInts:(const RepeatedField_f3b68cf6 *)arg1 forProperty:(int)arg2 defaultValues:(int [9])arg3 min:(int)arg4 max:(int)arg5 validator:(id)arg6 usePreviousValueOnDefault:(_Bool)arg7;
+- (void)pSetRepeatedArrayOfInts:(const RepeatedField_f3b68cf6 *)arg1 forProperty:(int)arg2 defaultValues:(int [9])arg3 min:(int)arg4 max:(int)arg5 validator:(id)arg6;
 - (void)pSetArrayOfBools:(_Bool [9])arg1 forProperty:(int)arg2;
 - (void)pSetArrayOfInts:(int [9])arg1 forProperty:(int)arg2;
-- (void)pSetRepeatedArrayOfFloats:(const RepeatedField_324622b8 *)arg1 forProperty:(int)arg2 defaultValues:(float [9])arg3 validator:(id)arg4;
+- (void)pSetRepeatedArrayOfFloats:(const RepeatedField_75407ea4 *)arg1 forProperty:(int)arg2 defaultValues:(float [9])arg3 validator:(id)arg4;
 - (void)pSetArrayOfFloats:(float [9])arg1 forProperty:(int)arg2;
 
 // Remaining properties

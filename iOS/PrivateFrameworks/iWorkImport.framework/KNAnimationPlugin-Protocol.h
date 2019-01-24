@@ -21,6 +21,8 @@
 - (id)initWithAnimationContext:(KNAnimationContext *)arg1;
 
 @optional
++ (_Bool)isCARendererBased;
++ (_Bool)isResponsibleForDrawingAllTextures;
 + (long long)rendererTypeForAnimationContext:(KNAnimationContext *)arg1;
 + (NSDictionary *)customEffectTimingCurveDisplayParametersForAttributes:(NSDictionary *)arg1 layoutStyleOnly:(_Bool)arg2;
 + (NSArray *)customAttributes;

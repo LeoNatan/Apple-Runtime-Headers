@@ -20,6 +20,12 @@
 
 + (void)initialize;
 - (void).cxx_destruct;
+- (void)getPairedBluetoothDeviceInfoArrayWithCompletion:(CDUnknownBlockType)arg1;
+- (void)getConnectedBluetoothDeviceInfoArrayWithCompletion:(CDUnknownBlockType)arg1;
+- (void)getBluetoothDeviceWithUID:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)getBluetoothDeviceWithAddress:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)setSiriOutputVolume:(float)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)getSiriOutputVolumeWithCompletion:(CDUnknownBlockType)arg1;
 - (void)fetchExperimentContextWithCompletion:(CDUnknownBlockType)arg1;
 - (void)fetchExperimentConfigurationsWithCompletion:(CDUnknownBlockType)arg1;
 - (void)sendMetricsToServerWithCompletion:(CDUnknownBlockType)arg1;
@@ -60,6 +66,7 @@
 - (id)_filterVoices:(id)arg1 forLanguage:(id)arg2;
 - (id)_voices;
 - (void)_setVoices:(id)arg1;
+- (void)forceMultiUserSync:(_Bool)arg1 download:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)configOverrides:(CDUnknownBlockType)arg1;
 - (void)setConfigOverrides:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)getDevicesWithAvailablePHSAssetsForLanguage:(id)arg1 completion:(CDUnknownBlockType)arg2;
@@ -83,6 +90,7 @@
 - (void)_tellDelegateServerVerificationReport:(id)arg1;
 - (void)_tellDelegatePartialVerificationResult:(id)arg1;
 @property(nonatomic, setter=_setDelegate:) __weak id <AFSettingsDelegate> _delegate;
+- (void)_getSharedCompanionInfo:(CDUnknownBlockType)arg1;
 - (void)_runServiceMaintenance;
 - (void)_startDeepSyncVerificationForKeys:(id)arg1;
 - (void)_setSyncVerificationNeededAndFullReportNeeded:(_Bool)arg1 shouldPostNotification:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;

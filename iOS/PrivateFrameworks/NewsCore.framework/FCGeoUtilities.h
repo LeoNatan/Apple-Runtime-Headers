@@ -11,6 +11,7 @@
 }
 
 + (_Bool)isRunningInSupportedRegion;
++ (id)currentRegion;
 
 @end
 

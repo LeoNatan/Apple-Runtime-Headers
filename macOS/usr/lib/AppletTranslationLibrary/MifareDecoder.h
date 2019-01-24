@@ -11,6 +11,7 @@ __attribute__((visibility("hidden")))
 {
 }
 
++ (id)GetAppletProperties:(id)arg1 withPackage:(id)arg2 withModule:(id)arg3 withTransceiver:(id)arg4 withError:(id *)arg5;
 + (id)ParseTimeoutEnd:(id)arg1 withApplet:(id)arg2 error:(id *)arg3;
 + (id)ParseEndEventShort:(id)arg1 withApplet:(id)arg2 error:(id *)arg3;
 + (id)parseEndEvent:(id)arg1 withApplet:(id)arg2 error:(id *)arg3;

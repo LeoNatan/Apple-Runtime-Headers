@@ -14,7 +14,6 @@ __attribute__((visibility("hidden")))
 - (_Bool)overlayLabelsForSeriesIndex:(unsigned long long)arg1;
 - (id)interpolations;
 - (void)updateAppearanceForElementLayer:(id)arg1 seriesIndex:(unsigned long long)arg2;
-- (id)createMultiDataElementShapeLayerForSeriesIndex:(unsigned long long)arg1;
 
 @end
 

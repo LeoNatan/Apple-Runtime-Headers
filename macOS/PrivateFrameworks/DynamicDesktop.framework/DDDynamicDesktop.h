@@ -11,7 +11,7 @@
     // Error parsing type: , name: desktop
 }
 
-- (CDUnknownBlockType).cxx_destruct;
+- (void).cxx_destruct;
 - (id)init;
 - (id)init:(id)arg1;
 @property(nonatomic, readonly) BOOL usesLocationServices;

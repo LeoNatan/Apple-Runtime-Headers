@@ -21,6 +21,7 @@
 - (void)main;
 - (_Bool)isAsynchronous;
 - (id)initWithBookLibraryProxy:(CDUnknownBlockType)arg1 includeImages:(_Bool)arg2;
+- (id)initWithBookLibraryProxy:(CDUnknownBlockType)arg1 request:(id)arg2 error:(id *)arg3;
 - (id)initWithBookLibraryProxy:(CDUnknownBlockType)arg1;
 
 @end

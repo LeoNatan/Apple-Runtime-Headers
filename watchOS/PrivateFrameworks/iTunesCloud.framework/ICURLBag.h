@@ -36,6 +36,7 @@
 - (id)mescalConfigurationForRequestURL:(id)arg1;
 - (_Bool)shouldAppendMachineDataHeadersForURL:(id)arg1;
 - (_Bool)shouldAppendDeviceGUIDForURL:(id)arg1;
+- (_Bool)boolValueForBagKey:(id)arg1;
 - (long long)int64ValueForBagKey:(id)arg1;
 - (id)urlForBagKey:(id)arg1;
 - (_Bool)hasValueForBagKey:(id)arg1;

@@ -46,8 +46,8 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic, setter=p_setChartNonStyle:) id <TSCHStyleActAlike> p_chartNonStyle; // @synthesize p_chartNonStyle=mChartNonStyle;
 @property(retain, nonatomic, setter=p_setChartStyle:) id <TSCHStyleActAlike> p_chartStyle; // @synthesize p_chartStyle=mChartStyle;
 - (void).cxx_destruct;
-- (void)saveToArchive:(struct PropertyValueStorageContainerArchive *)arg1 archiver:(id)arg2;
-- (void)loadFromArchive:(const struct PropertyValueStorageContainerArchive *)arg1 unarchiver:(id)arg2;
+-     // Error parsing type: v32@0:8^{PropertyValueStorageContainerArchive=^^?{ExtensionSet=^{Arena}SS(AllocatedData=^{KeyValue}^{map<int, google::protobuf::internal::ExtensionSet::Extension, std::__1::less<int>, std::__1::allocator<std::__1::pair<const int, google::protobuf::internal::ExtensionSet::Extension> > >})}{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{Reference}^{Reference}^{Reference}^{Reference}^{SparseReferenceArray}^{SparseReferenceArray}^{SparseReferenceArray}^{SparseReferenceArray}^{SparseReferenceArray}^{SparseReferenceArray}^{SparseReferenceArray}^{SparseReferenceArray}}16@24, name: saveToArchive:archiver:
+-     // Error parsing type: v32@0:8r^{PropertyValueStorageContainerArchive=^^?{ExtensionSet=^{Arena}SS(AllocatedData=^{KeyValue}^{map<int, google::protobuf::internal::ExtensionSet::Extension, std::__1::less<int>, std::__1::allocator<std::__1::pair<const int, google::protobuf::internal::ExtensionSet::Extension> > >})}{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{Reference}^{Reference}^{Reference}^{Reference}^{SparseReferenceArray}^{SparseReferenceArray}^{SparseReferenceArray}^{SparseReferenceArray}^{SparseReferenceArray}^{SparseReferenceArray}^{SparseReferenceArray}^{SparseReferenceArray}}16@24, name: loadFromArchive:unarchiver:
 @property(copy, nonatomic, setter=p_setReferenceLineNonStyles:) NSDictionary *p_referenceLineNonStyles;
 @property(copy, nonatomic, setter=p_setReferenceLineStyles:) NSDictionary *p_referenceLineStyles;
 @property(copy, nonatomic, setter=p_setParagraphStyles:) NSArray *p_paragraphStyles;

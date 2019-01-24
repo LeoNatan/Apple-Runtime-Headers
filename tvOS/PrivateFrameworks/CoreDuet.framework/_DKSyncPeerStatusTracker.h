@@ -6,13 +6,14 @@
 
 #import <objc/NSObject.h>
 
-@class NSMutableArray, NSMutableDictionary, _DKKnowledgeStorage;
+@class NSDate, NSMutableArray, NSMutableDictionary, _DKKnowledgeStorage;
 
 @interface _DKSyncPeerStatusTracker : NSObject
 {
     NSMutableDictionary *_peerInfos;
     NSMutableArray *_observers;
     NSMutableDictionary *_lastSuccessfulActivityDates;
+    NSDate *_firstForeignPeersCountDate;
     _DKKnowledgeStorage *_storage;
 }
 
@@ -30,6 +31,7 @@
 - (id)addStatusChangeObserverWithBlock:(CDUnknownBlockType)arg1;
 - (void)setLastSuccessfulActivityDate:(id)arg1 onTransport:(long long)arg2 forPeer:(id)arg3;
 - (id)lastSuccessfulActivityDateOnTransport:(long long)arg1 forPeer:(id)arg2;
+- (void)setLastSeenDate:(id)arg1 onPeer:(id)arg2;
 - (void)removeActiveTransports:(long long)arg1 fromPeer:(id)arg2;
 - (void)addActiveTransports:(long long)arg1 toPeer:(id)arg2;
 - (void)_modifyActiveTransportInPeer:(id)arg1 withNewTransportsBlock:(CDUnknownBlockType)arg2;

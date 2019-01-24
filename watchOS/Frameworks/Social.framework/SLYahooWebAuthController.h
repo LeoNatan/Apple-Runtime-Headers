@@ -4,45 +4,14 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <UIKit/UIViewController.h>
+#import <Social/SLWebAuthController.h>
 
-#import <Social/UIWebViewDelegate-Protocol.h>
-
-@class ACAccount, ACAccountStore, NSError, NSExtension, NSString;
-
-@interface SLYahooWebAuthController : UIViewController <UIWebViewDelegate>
+@interface SLYahooWebAuthController : SLWebAuthController
 {
-    ACAccount *_account;
-    ACAccountStore *_accountStore;
-    CDUnknownBlockType _presentationBlock;
-    UIViewController *_serviceViewController;
-    NSExtension *_extension;
-    NSError *_extensionCancellationError;
-    _Bool _extensionRequestDidComplete;
-    CDUnknownBlockType _completion;
 }
 
-@property(copy, nonatomic) CDUnknownBlockType completion; // @synthesize completion=_completion;
-- (void).cxx_destruct;
-- (void)_presentInternetOfflineError;
-- (void)_presentUsernameMismatchAlert;
-- (void)_dismissAndCompleteWithIdentity:(id)arg1 error:(id)arg2 extensionCompletion:(CDUnknownBlockType)arg3;
-- (void)_extensionRequestDidCompleteWithTokens:(id)arg1 extensionCompletion:(CDUnknownBlockType)arg2;
-- (void)_extensionRequestDidCancelWithError:(id)arg1;
-- (void)loadView;
-- (void)_didInstantiateRemoteViewController;
-- (void)_commonInitializationWithAccount:(id)arg1 accountStore:(id)arg2 username:(id)arg3 accountDescription:(id)arg4 youTube:(_Bool)arg5 presentationBlock:(CDUnknownBlockType)arg6;
-- (id)_extensionItemForAccount:(id)arg1 accountDescription:(id)arg2 username:(id)arg3 youTube:(_Bool)arg4;
-@property(readonly) unsigned int _clientType;
-- (id)initWithNibName:(id)arg1 bundle:(id)arg2;
-- (id)initWithAccount:(id)arg1 accountStore:(id)arg2 presentationBlock:(CDUnknownBlockType)arg3;
-- (id)initWithAccountDescription:(id)arg1 presentationBlock:(CDUnknownBlockType)arg2;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+- (id)_extentionIdentifier;
+- (id)_webClient;
 
 @end
 

@@ -44,7 +44,10 @@ __attribute__((visibility("hidden")))
 - (id)layoutForSelectionPath:(id)arg1;
 - (_Bool)selectionMustBeEntirelyOnscreenToCountAsVisibleInSelectionPath:(id)arg1;
 - (_Bool)canvasShouldScrollForSelectionPath:(id)arg1;
+- (_Bool)containsStartOfPencilAnnotation:(id)arg1;
 - (double)viewScaleForZoomingToSelectionPath:(id)arg1 targetPointSize:(double)arg2;
+- (id)containedPencilAnnotationsIncludingChildren:(_Bool)arg1;
+- (id)containedPencilAnnotations;
 - (id)unscaledAnchorRectsForPencilAnnotationSelectionPath:(id)arg1 attachedType:(long long)arg2;
 - (double)percentOfUnscaledRectContainedInParentRep:(struct CGRect)arg1;
 - (struct CGRect)rectInRootForPresentingAnnotationPopoverForSelectionPath:(id)arg1;
@@ -74,6 +77,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) NSSet *reliedOnLayouts;
 @property(readonly, nonatomic) NSArray *dependentLayouts;
 @property(readonly, nonatomic) struct CGPoint commentPoleUnscaledOffset;
+- (void)calculateAndSetPointsToSearchReference:(id)arg1;
 - (struct CGPoint)activityLineUnscaledEndPointForSearchReference:(id)arg1;
 - (struct CGPoint)calculatePointFromSearchReference:(id)arg1;
 - (struct CGRect)rectInRootForCalculatingActivityLineEndpoint;

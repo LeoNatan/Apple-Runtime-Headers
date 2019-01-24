@@ -8,7 +8,7 @@
 
 #import <ScreenTimeUI/STUIDateTimePickerCellDelegate-Protocol.h>
 
-@class NSString, PSSpecifier, STDeviceBedtime, STUser;
+@class NSArray, NSString, PSSpecifier, STDeviceBedtime, STUser;
 @protocol STDeviceBedtimeListControllerDelegate;
 
 @interface STDeviceBedtimeListController : PSListController <STUIDateTimePickerCellDelegate>
@@ -17,13 +17,17 @@
     id <STDeviceBedtimeListControllerDelegate> _delegate;
     STDeviceBedtime *_bedtime;
     STUser *_affectedUser;
+    NSArray *_orderedWeekdayIndexes;
+    NSArray *_orderedLocalizedWeekdayNames;
     PSSpecifier *_deviceBedtimeSpecifier;
     PSSpecifier *_informativeTextGroupSpecifier;
-    PSSpecifier *_timeGroupSpecifier;
+    PSSpecifier *_everyDaySpecifier;
+    PSSpecifier *_customizeDaysSpecifier;
     PSSpecifier *_startTimeSpecifier;
     PSSpecifier *_endTimeSpecifier;
     PSSpecifier *_startTimePickerSpecifier;
     PSSpecifier *_endTimePickerSpecifier;
+    NSArray *_weekdaySpecifiers;
     PSSpecifier *_selectedTimeSpecifier;
     PSSpecifier *_atBedtimeGroupSpecifier;
     PSSpecifier *_atBedtimeSpecifier;
@@ -32,31 +36,40 @@
 @property(retain, nonatomic) PSSpecifier *atBedtimeSpecifier; // @synthesize atBedtimeSpecifier=_atBedtimeSpecifier;
 @property(retain, nonatomic) PSSpecifier *atBedtimeGroupSpecifier; // @synthesize atBedtimeGroupSpecifier=_atBedtimeGroupSpecifier;
 @property(retain, nonatomic) PSSpecifier *selectedTimeSpecifier; // @synthesize selectedTimeSpecifier=_selectedTimeSpecifier;
+@property(retain) NSArray *weekdaySpecifiers; // @synthesize weekdaySpecifiers=_weekdaySpecifiers;
 @property(retain, nonatomic) PSSpecifier *endTimePickerSpecifier; // @synthesize endTimePickerSpecifier=_endTimePickerSpecifier;
 @property(retain, nonatomic) PSSpecifier *startTimePickerSpecifier; // @synthesize startTimePickerSpecifier=_startTimePickerSpecifier;
 @property(retain, nonatomic) PSSpecifier *endTimeSpecifier; // @synthesize endTimeSpecifier=_endTimeSpecifier;
 @property(retain, nonatomic) PSSpecifier *startTimeSpecifier; // @synthesize startTimeSpecifier=_startTimeSpecifier;
-@property(retain, nonatomic) PSSpecifier *timeGroupSpecifier; // @synthesize timeGroupSpecifier=_timeGroupSpecifier;
+@property(retain) PSSpecifier *customizeDaysSpecifier; // @synthesize customizeDaysSpecifier=_customizeDaysSpecifier;
+@property(retain) PSSpecifier *everyDaySpecifier; // @synthesize everyDaySpecifier=_everyDaySpecifier;
 @property(retain, nonatomic) PSSpecifier *informativeTextGroupSpecifier; // @synthesize informativeTextGroupSpecifier=_informativeTextGroupSpecifier;
 @property(retain, nonatomic) PSSpecifier *deviceBedtimeSpecifier; // @synthesize deviceBedtimeSpecifier=_deviceBedtimeSpecifier;
+@property(readonly) NSArray *orderedLocalizedWeekdayNames; // @synthesize orderedLocalizedWeekdayNames=_orderedLocalizedWeekdayNames;
+@property(readonly) NSArray *orderedWeekdayIndexes; // @synthesize orderedWeekdayIndexes=_orderedWeekdayIndexes;
 @property(nonatomic) _Bool canAskForMoreTime; // @synthesize canAskForMoreTime=_canAskForMoreTime;
 @property(retain, nonatomic) STUser *affectedUser; // @synthesize affectedUser=_affectedUser;
-@property(copy, nonatomic) STDeviceBedtime *bedtime; // @synthesize bedtime=_bedtime;
+@property(copy) STDeviceBedtime *bedtime; // @synthesize bedtime=_bedtime;
 @property(nonatomic) __weak id <STDeviceBedtimeListControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (id)datePickerForSpecifier:(id)arg1;
 - (void)datePickerChanged:(id)arg1;
+- (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (id)atDowntimeFooterText;
 - (id)askForMoreTime:(id)arg1;
 - (void)setAskForMoreTime:(id)arg1 specifier:(id)arg2;
 - (id)timeFooterText;
-- (id)endTime;
-- (id)startTime;
+- (void)_showCustomizeDailyScheduleListController:(id)arg1;
+- (id)_customScheduleTime:(id)arg1;
+- (id)_simpleEndTime:(id)arg1;
+- (id)_simpleStartTime:(id)arg1;
 - (void)showPickerSpecifierForSpecifier:(id)arg1;
 - (id)deviceBedtimeEnabled:(id)arg1;
 - (void)setDeviceBedtimeEnabled:(id)arg1 specifier:(id)arg2;
+- (void)_didEndEditingDailySchedule:(id)arg1;
 - (id)specifiers;
+- (void)_didFinishEditingBedtime;
 - (void)willResignActive;
 - (void)viewWillDisappear:(_Bool)arg1;
 - (_Bool)canBeShownFromSuspendedState;

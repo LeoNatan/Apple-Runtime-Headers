@@ -4,3 +4,28 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
+#pragma mark Typedef'd Structures
+
+typedef struct {
+    int _field1;
+    int _field2;
+    union {
+        struct {
+            int _field1;
+            _Bool _field2;
+            unsigned short _field3;
+            unsigned char _field4;
+        } _field1;
+        char _field2[5];
+    } _field3;
+    unsigned int _field4;
+} CDStruct_037d4da5;
+
+#pragma mark Typedef'd Unions
+
+typedef union {
+    unsigned long long _field1;
+    long long _field2;
+    double _field3;
+} CDUnion_18b537cf;
+

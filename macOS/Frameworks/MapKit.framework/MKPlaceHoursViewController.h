@@ -10,18 +10,14 @@
 #import <MapKit/MKStackingViewControllerFixedHeightAware-Protocol.h>
 #import <MapKit/_MKInfoCardChildViewControllerAnalyticsDelegate-Protocol.h>
 
-@class MKMapItem, MKPlaceSectionHeaderView, NSArray, NSMutableDictionary, NSString, NSTimeZone, _MKLocalizedHoursBuilder;
+@class MKMapItem, MKPlaceSectionHeaderView, NSArray, NSString, NSTimeZone;
 @protocol _MKInfoCardAnalyticsDelegate;
 
 @interface MKPlaceHoursViewController : MKPlaceSectionViewController <MKStackingViewControllerFixedHeightAware, _MKInfoCardChildViewControllerAnalyticsDelegate, MKModuleViewControllerProtocol>
 {
     BOOL _isExpanded;
     MKPlaceSectionHeaderView *_headerView;
-    NSMutableDictionary *_formattedData;
-    _MKLocalizedHoursBuilder *_localizedHoursBuilder;
-    NSArray *_completeHours;
-    NSString *_currentOpenHoursString;
-    NSString *_currentOpenStateString;
+    NSArray *_businessHours;
     BOOL _resizableViewsDisabled;
     id <_MKInfoCardAnalyticsDelegate> _analyticsDelegate;
     MKMapItem *_mapItem;
@@ -33,18 +29,13 @@
 @property(nonatomic) BOOL resizableViewsDisabled; // @synthesize resizableViewsDisabled=_resizableViewsDisabled;
 - (void).cxx_destruct;
 - (id)infoCardChildPossibleActions;
+- (void)infoCardThemeChanged:(id)arg1;
 - (void)_updateHoursAnimated:(BOOL)arg1;
-- (BOOL)_shouldCollapseFurtherAndColorTopString;
-- (id)formattedData;
-- (void)calculateWidthsForData:(id)arg1;
 - (void)_contentSizeDidChange;
 - (void)_toggleShowAllHours;
 - (void)_setExpanded:(BOOL)arg1;
 - (BOOL)_shouldOnlyShowExpanded;
-@property(readonly, nonatomic) _MKLocalizedHoursBuilder *localizedHoursBuilder;
-@property(readonly, nonatomic) NSString *currentOpenStateString;
-@property(readonly, nonatomic) NSString *currentOpenHoursString;
-@property(readonly, nonatomic) NSArray *completeHours;
+@property(readonly, nonatomic) NSArray *businessHours;
 @property(readonly, nonatomic) NSTimeZone *timeZone;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewDidLoad;

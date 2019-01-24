@@ -121,6 +121,8 @@
 - (unsigned int)unregisterDeviceWithCompanionSerialNumber:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (unsigned int)unregisterDeviceWithCompletion:(CDUnknownBlockType)arg1;
 - (unsigned int)updateRegistrationDataWithCompletion:(CDUnknownBlockType)arg1;
+- (void)performDeviceCheckInFollowingActionsWithCompletion:(CDUnknownBlockType)arg1;
+- (unsigned int)deviceCheckInWithCompletion:(CDUnknownBlockType)arg1;
 - (unsigned int)_updateContextWithRegistrationResponse:(id)arg1;
 - (unsigned int)registerDeviceAtBrokerURL:(id)arg1 withConsistencyData:(id)arg2 retries:(unsigned int)arg3 completion:(CDUnknownBlockType)arg4;
 - (unsigned int)registerDeviceWithConsistencyData:(id)arg1 completion:(CDUnknownBlockType)arg2;

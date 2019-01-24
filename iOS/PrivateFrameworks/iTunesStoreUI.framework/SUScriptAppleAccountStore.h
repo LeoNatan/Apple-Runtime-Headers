@@ -33,6 +33,7 @@
 - (void)setEffectiveBundleID:(id)arg1;
 @property(readonly) NSString *effectiveBundleID;
 @property(readonly) SUScriptAppleAccount *primaryAppleAccount;
+@property(readonly) SUScriptAppleAccount *activeStoreAccount;
 - (id)_className;
 - (void)requestAccessWithInfo:(id)arg1 completionHandler:(id)arg2;
 - (void)renewCredentialsForAccount:(id)arg1 completionHandler:(id)arg2;

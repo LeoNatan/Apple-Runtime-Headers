@@ -11,7 +11,7 @@
 #import <CoreBrightness/CBStatusInfoProtocol-Protocol.h>
 #import <CoreBrightness/NightShiftSupportProtocol-Protocol.h>
 
-@class NSMutableArray, NSMutableDictionary, NSObject, NSString;
+@class CBColorFilter, NSMutableArray, NSMutableDictionary, NSObject, NSString;
 @protocol OS_dispatch_source;
 
 __attribute__((visibility("hidden")))
@@ -54,6 +54,7 @@ __attribute__((visibility("hidden")))
         int periodS;
     } _reportContext;
     BOOL _displayOn;
+    CBColorFilter *_colorFilter;
     unsigned long long _moduleType;
 }
 
@@ -97,7 +98,10 @@ __attribute__((visibility("hidden")))
 - (BOOL)setColorSensitivity:(float)arg1 forALS:(struct __IOHIDServiceClient *)arg2;
 - (void)updateSensorSensitivity:(struct __IOHIDServiceClient *)arg1;
 - (void)handleHIDEventInternal:(struct __IOHIDEvent *)arg1 from:(struct __IOHIDServiceClient *)arg2;
+- (void)processColorSample:(id)arg1;
 - (_Bool)setPropertyInternal:(id)arg1 forKey:(id)arg2;
+- (BOOL)colorFilterSensorPolicyHandler:(id)arg1;
+- (BOOL)colorFilterModeHandler:(id)arg1;
 - (BOOL)CoreDisplayInitialisedPropertyHandler:(id)arg1;
 - (BOOL)CAModeMapping:(id)arg1;
 - (BOOL)CAWeakestColorAdaptationModeAnimatedPropertyHandler:(id)arg1;

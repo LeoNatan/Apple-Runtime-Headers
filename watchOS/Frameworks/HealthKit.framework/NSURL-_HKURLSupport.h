@@ -7,6 +7,8 @@
 #import <Foundation/NSURL.h>
 
 @interface NSURL (_HKURLSupport)
++ (id)_hk_urlForAtrialFibrillationEventType;
++ (id)_hk_urlForElectrocardiogramType;
 + (id)_hk_urlForViewHealthRecords;
 @end
 

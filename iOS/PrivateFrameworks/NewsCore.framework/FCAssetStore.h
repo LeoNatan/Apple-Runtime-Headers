@@ -23,6 +23,7 @@
 - (id)_keyForFileName:(id)arg1;
 - (id)_filePathForKey:(id)arg1;
 - (id)allKeys;
+- (unsigned long long)storeSizeForKeys:(id)arg1;
 - (unsigned long long)storeSize;
 - (unsigned long long)sizeOfFileForKey:(id)arg1;
 - (id)fileURLForKey:(id)arg1;

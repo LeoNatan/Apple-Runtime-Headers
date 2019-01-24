@@ -84,9 +84,11 @@ __attribute__((visibility("hidden")))
 - (void)_accessibilityDisplayOptionsDidChange:(id)arg1;
 - (id)accessibilityLabel;
 - (id)accessibilityHitTest:(struct CGPoint)arg1;
-- (id)accessibilityAttributeValue:(id)arg1;
-- (BOOL)accessibilityIsAttributeSettable:(id)arg1;
-- (id)accessibilityAttributeNames;
+- (id)accessibilityChildren;
+- (id)accessibilityContents;
+- (void)setAccessibilityContents:(id)arg1;
+- (id)accessibilityValue;
+- (void)setAccessibilityValue:(id)arg1;
 - (unsigned long long)_dragOperationForDraggingInfo:(id)arg1;
 - (BOOL)performDragOperation:(id)arg1;
 - (unsigned long long)draggingUpdated:(id)arg1;
@@ -179,6 +181,7 @@ __attribute__((visibility("hidden")))
 - (void)_updateButtonWidthAndRemainingWidthInTabBarToDivideAmongButtons;
 - (void)_recalculateLayout;
 - (double)_layoutBoundsWidth;
+- (struct CGRect)_layoutBounds;
 - (double)_pinningRegionWidth;
 - (double)_pinnedTabsWidth;
 - (double)currentButtonWidth;
@@ -214,6 +217,7 @@ __attribute__((visibility("hidden")))
 - (void)_windowChangedKeyState;
 - (BOOL)isOpaque;
 - (BOOL)allowsVibrancy;
+- (id)cloneForOffscreenRendering;
 - (void)dealloc;
 - (void)_commonTabBarViewInit;
 - (id)initWithCoder:(id)arg1;

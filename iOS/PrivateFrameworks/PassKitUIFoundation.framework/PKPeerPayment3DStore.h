@@ -29,13 +29,14 @@
 + (id)sharedInstance;
 - (void).cxx_destruct;
 - (id)nodeForCharacter:(id)arg1;
-- (void)charactersForText:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)charactersForText:(id)arg1 completion:(CDUnknownBlockType)arg2 synchronously:(_Bool)arg3;
 - (id)material;
+- (void)motionManager:(id)arg1 didReceiveMotion:(id)arg2;
 - (void)setRollPitch: /* Error: Ran out of types for this method. */;
 - (void)sceneDidBecomeInactive:(id)arg1;
 - (void)sceneDidBecomeActive:(id)arg1;
 - (void)relinquishScene:(id)arg1;
-- (void)newSceneWithCompletion:(CDUnknownBlockType)arg1;
+- (void)newSceneWithCompletion:(CDUnknownBlockType)arg1 synchronously:(_Bool)arg2;
 - (id)init;
 
 // Remaining properties

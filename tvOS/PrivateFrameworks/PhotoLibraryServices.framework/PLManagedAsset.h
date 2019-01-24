@@ -104,6 +104,7 @@
 + (id)totalResourceSizeOnDiskInManagedObjectContext:(id)arg1;
 + (long long)countOfAssetsWithThumbnailsInManagedObjectContext:(id)arg1;
 + (unsigned long long)_calculateSizeOfAssetsInFetchRequest:(id)arg1 inManagedObjectContext:(id)arg2;
++ (unsigned long long)_calculateSizeOfSidecarFilesOnAssetsInFetchRequest:(id)arg1 inManagedObjectContext:(id)arg2;
 + (void)extractDirectory:(id *)arg1 andFilename:(id *)arg2 fromMainFileURL:(id)arg3;
 + (id)_insertAssetIntoPhotoLibrary:(id)arg1 mainFileURL:(id)arg2 savedAssetType:(short)arg3 replacementUUID:(id)arg4 imageSource:(struct CGImageSource **)arg5 imageData:(id *)arg6 isPlaceholder:(_Bool)arg7 deleteFileOnFailure:(_Bool)arg8;
 + (id)insertAssetIntoPhotoLibrary:(id)arg1 mainFileURL:(id)arg2 savedAssetType:(short)arg3 replacementUUID:(id)arg4 imageSource:(struct CGImageSource **)arg5 imageData:(id *)arg6;
@@ -684,8 +685,7 @@
 - (_Bool)_checkResource:(unsigned long long)arg1 onPath:(id)arg2 onMaster:(_Bool)arg3;
 - (_Bool)shouldIncludeInCPLCounts;
 - (_Bool)hasAllRequiredResourcesLocallyAvailable;
-- (id)_bestAvaliableAdjustedResource;
-- (unsigned long long)_masterResourceTypeForAdjustedAssetResourceType:(unsigned long long)arg1 sourceAsset:(id)arg2 flattenLivePhoto:(_Bool)arg3;
+- (id)bestAvailableAdjustedResource;
 - (void)_applyFaceChangeToCPLAssetChange:(id)arg1 inLibrary:(id)arg2;
 - (void)_applyPropertiesChangeToCPLAssetChange:(id)arg1 withMasterScopedIdentifier:(id)arg2 inLibrary:(id)arg3;
 - (id)_createVideoResourceFromVideoURL:(id)arg1 withResourceType:(unsigned long long)arg2 scopedIdentifier:(id)arg3 applyVideoAdjustments:(_Bool)arg4 forMaster:(_Bool)arg5 forPhotoIris:(_Bool)arg6;
@@ -746,6 +746,7 @@
 @property(readonly, nonatomic) NSString *cloudOwnerFirstName;
 @property(readonly, nonatomic) NSString *cloudOwnerEmail;
 - (_Bool)setupPlaceholderAssetWithRequiredPropertiesFromSourceAsset:(id)arg1 assetUUID:(id)arg2 placeholderAssetMomentShareUUID:(id)arg3 bakeInAdjustmentsFromSourceAsset:(_Bool)arg4 flattenLivePhoto:(_Bool)arg5 library:(id)arg6;
+- (unsigned long long)masterResourceTypeForAdjustedAssetResourceType:(unsigned long long)arg1 sourceAsset:(id)arg2 flattenLivePhoto:(_Bool)arg3;
 - (id)sortPlaceholderCloudResourcesByOrderOfCloudReReference:(id)arg1;
 - (_Bool)shouldPerformServerCopy;
 - (_Bool)placeholder_shouldFlattenLivePhoto;

@@ -116,7 +116,8 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) _Bool supportsAdaptiveLayout;
 - (_Bool)i_needsLayout;
 - (void)i_layoutIfNeededUpdatingLayerTree;
-- (void)layoutIfNeeded;
+- (void)i_layoutIfNeeded;
+- (void)nonInteractiveLayoutIfNeeded;
 - (void)invalidateLayers;
 - (void)invalidateVisibleBounds;
 - (void)invalidateReps;

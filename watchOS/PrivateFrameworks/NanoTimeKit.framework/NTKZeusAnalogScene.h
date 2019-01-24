@@ -41,7 +41,7 @@
 - (float)_digitAlphaForEditMode:(int)arg1;
 - (void)_configureForEditMode:(int)arg1;
 - (float)_lowerComplicationAlphaForEditing:(_Bool)arg1;
-- (float)_contentAlphaForEditing:(_Bool)arg1;
+- (float)_contentAlphaForEditMode:(int)arg1;
 - (unsigned int)currentDensity;
 - (void)applyTransitionFraction:(float)arg1 fromDensity:(unsigned int)arg2 toDensity:(unsigned int)arg3;
 - (float)_secondHandAlphaForDensity:(unsigned int)arg1 isEditing:(_Bool)arg2;
@@ -53,9 +53,11 @@
 - (void)applyStyle:(unsigned int)arg1;
 - (void)_applyHourLabelCollectionNode:(id)arg1;
 - (id)_hoursNodeForStyle:(unsigned int)arg1 bleed:(unsigned int)arg2;
+- (struct CGPoint)_logoContainerPositionForStyle:(unsigned int)arg1;
 - (void)_displayZoomScale:(float)arg1 fraction:(float)arg2;
 - (void)setOverrideDate:(id)arg1 duration:(double)arg2;
 - (void)update:(double)arg1;
+- (struct CGPoint)centerOf4NumeralForStyle:(unsigned int)arg1;
 - (void)_update12ForStatusIconVisibilityAnimated:(_Bool)arg1;
 - (void)_update12ForStatusIconVisibility;
 - (void)setAdjustsForStatusBarIcon:(_Bool)arg1 animated:(_Bool)arg2;

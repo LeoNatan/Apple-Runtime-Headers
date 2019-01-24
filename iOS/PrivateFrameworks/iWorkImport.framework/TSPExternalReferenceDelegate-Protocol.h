@@ -9,7 +9,7 @@
 @protocol TSPExternalReferenceDelegate
 - (TSPObject *)explicitComponentRootObjectForObject:(TSPObject *)arg1;
 - (_Bool)wasComponentCopied:(long long)arg1;
-- (long long)componentIdentifierForObjectIdentifier:(long long)arg1 objectOrNil:(TSPObject *)arg2 objectUUIDOrNil:(NSUUID *)arg3;
+- (long long)componentIdentifierForObjectIdentifier:(long long)arg1 objectOrNil:(TSPObject *)arg2 objectUUIDOrNil:(NSUUID *)arg3 outComponentIsVersioned:(_Bool *)arg4;
 - (TSPObject *)objectForIdentifier:(long long)arg1;
 @end
 

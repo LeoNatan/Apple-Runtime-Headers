@@ -6,22 +6,16 @@
 
 #import <objc/NSObject.h>
 
-@class CKEntity, CKKnowledgeStore, NSString;
-
 @interface CKClosure : NSObject
 {
     // Error parsing type: , name: store
     // Error parsing type: , name: entity
 }
 
-- (CDUnknownBlockType).cxx_destruct;
+- (void).cxx_destruct;
 - (id)init;
-- (void)execute;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-@property(nonatomic, readonly) NSString *identifier;
-@property(nonatomic, readonly) CKEntity *entity; // @synthesize entity;
-@property(nonatomic, readonly) CKKnowledgeStore *store; // @synthesize store;
 
 @end
 

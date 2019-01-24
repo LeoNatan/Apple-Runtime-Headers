@@ -6,7 +6,7 @@
 
 #import <NewsUI/WKNavigationDelegate-Protocol.h>
 
-@class NSArray, NSData, NSError, NSString, NSURL, NSURLAuthenticationChallenge, NSURLProtectionSpace, WKBackForwardListItem, WKFrameInfo, WKNavigation, WKNavigationAction, WKWebView;
+@class NSArray, NSData, NSError, NSString, NSURL, WKBackForwardListItem, WKFrameInfo, WKNavigation, WKNavigationAction, WKWebView;
 @protocol NSSecureCoding;
 
 @protocol WKNavigationDelegatePrivate <WKNavigationDelegate>
@@ -30,12 +30,11 @@
 - (void)_webViewWebProcessDidBecomeUnresponsive:(WKWebView *)arg1;
 - (void)_webViewWebProcessDidBecomeResponsive:(WKWebView *)arg1;
 - (void)_webViewWebProcessDidCrash:(WKWebView *)arg1;
-- (void)_webView:(WKWebView *)arg1 didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge *)arg2;
-- (_Bool)_webView:(WKWebView *)arg1 canAuthenticateAgainstProtectionSpace:(NSURLProtectionSpace *)arg2;
 - (void)_webView:(WKWebView *)arg1 renderingProgressDidChange:(unsigned long long)arg2;
 - (void)_webView:(WKWebView *)arg1 navigation:(WKNavigation *)arg2 didSameDocumentNavigation:(long long)arg3;
 - (void)_webView:(WKWebView *)arg1 navigationDidFinishDocumentLoad:(WKNavigation *)arg2;
 - (void)_webViewDidCancelClientRedirect:(WKWebView *)arg1;
+- (void)_webView:(WKWebView *)arg1 didPerformClientRedirectFromURL:(NSURL *)arg2 toURL:(NSURL *)arg3;
 - (void)_webView:(WKWebView *)arg1 willPerformClientRedirectToURL:(NSURL *)arg2 delay:(double)arg3;
 - (void)_webView:(WKWebView *)arg1 navigation:(WKNavigation *)arg2 didFailProvisionalLoadInSubframe:(WKFrameInfo *)arg3 withError:(NSError *)arg4;
 @end

@@ -20,6 +20,7 @@
 - (void)referencedCellWasModified:(TSCETrackedReference *)arg1;
 
 @optional
+- (void)endOfEvaluationWritePhase;
 - (void)referenceTrackerDidUpdateReferences:(TSCEReferenceTracker *)arg1;
 - (void)updateTrackedHeaders:(const UUIDData_5fbc143e *)arg1;
 @end

@@ -9,7 +9,7 @@
 #import <PassKitUI/PKPassPaymentPayStateViewDelegate-Protocol.h>
 #import <PassKitUI/PKPaymentServiceDelegate-Protocol.h>
 
-@class NSDate, NSMutableDictionary, NSObject, NSString, PKExpressTransactionState, PKFooterTransactionView, PKPassPaymentPayStateView, PKPaymentService;
+@class NSDate, NSMutableDictionary, NSObject, NSString, PKExpressTransactionState, PKFooterTransactionView, PKPassPaymentPayStateView, PKPaymentService, PKTransitBalanceModel;
 @protocol OS_dispatch_source;
 
 @interface PKPassPaymentConfirmationView : PKPassFooterContentView <PKPassPaymentPayStateViewDelegate, PKPaymentServiceDelegate>
@@ -30,6 +30,7 @@
     NSDate *_visibleDate;
     NSMutableDictionary *_registeredExpressObservers;
     PKPaymentService *_paymentService;
+    PKTransitBalanceModel *_transitBalanceModel;
 }
 
 - (void).cxx_destruct;
@@ -40,11 +41,12 @@
 - (_Bool)_isRegisteredForAnyExpressTransactionNotifications;
 - (_Bool)_isRegisteredForAllExpressTransactionNotifications;
 - (id)_expressNotificationNames;
+- (void)paymentPassWithUniqueIdentifier:(id)arg1 didReceiveBalanceUpdate:(id)arg2;
 - (void)paymentPassWithUniqueIdentifier:(id)arg1 didUpdateWithTransitPassProperties:(id)arg2;
 - (void)paymentPassWithUniqueIdentifier:(id)arg1 didReceiveTransaction:(id)arg2;
 - (void)payStateView:(id)arg1 revealingCheckmark:(_Bool)arg2;
-- (void)_updateContentViewsWithTransaction:(id)arg1 transitProperties:(id)arg2;
-- (void)_updateContentViewsWithTransitProperties:(id)arg1;
+- (void)_updateContentViewsWithTransaction:(id)arg1 transitBalanceModel:(id)arg2;
+- (void)_updateContentViewsWithTransitBalanceModel:(id)arg1;
 - (void)_updateContentViewsWithTransaction:(id)arg1;
 - (void)_resolveActivityIfNecessary;
 - (void)_resolveActivityIfNecessaryWithDelay;

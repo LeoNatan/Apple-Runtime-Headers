@@ -13,6 +13,7 @@
 {
     _Bool _userIntentRequired;
     _Bool _invalidated;
+    _Bool _requestPileSuppression;
     long long _style;
     id <PKPassFooterContentViewDelegate> _delegate;
     PKPass *_pass;
@@ -22,6 +23,7 @@
     long long _coachingState;
 }
 
+@property(readonly, nonatomic) _Bool requestPileSuppression; // @synthesize requestPileSuppression=_requestPileSuppression;
 @property(readonly, nonatomic) _Bool invalidated; // @synthesize invalidated=_invalidated;
 @property(readonly, nonatomic) long long coachingState; // @synthesize coachingState=_coachingState;
 @property(readonly, nonatomic, getter=isUserIntentRequired) _Bool userIntentRequired; // @synthesize userIntentRequired=_userIntentRequired;
@@ -32,8 +34,9 @@
 @property(nonatomic) id <PKPassFooterContentViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) long long style; // @synthesize style=_style;
 - (void).cxx_destruct;
-- (double)_bottomRulePadding;
+- (id)_buttonWithTitle:(id)arg1;
 - (void)_infoButtonPressed:(id)arg1;
+- (void)_setRequestPileSuppression:(_Bool)arg1;
 - (void)_setCoachingState:(long long)arg1;
 - (void)_setUserIntentRequired:(_Bool)arg1;
 @property(readonly, nonatomic, getter=isPassAuthorized) _Bool passAuthorized;

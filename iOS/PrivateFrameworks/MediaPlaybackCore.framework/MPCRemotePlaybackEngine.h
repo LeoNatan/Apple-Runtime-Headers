@@ -14,6 +14,7 @@
     NSXPCConnection *_connection;
 }
 
++ (_Bool)requiresMainThread;
 @property(retain, nonatomic) NSXPCConnection *connection; // @synthesize connection=_connection;
 - (id)playerPath;
 - (void).cxx_destruct;

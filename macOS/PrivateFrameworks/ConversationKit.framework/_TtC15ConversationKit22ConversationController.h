@@ -39,9 +39,8 @@ __attribute__((visibility("hidden")))
     // Error parsing type: , name: availableParticipantColors
 }
 
-- (CDUnknownBlockType).cxx_destruct;
+- (void).cxx_destruct;
 - (id)init;
-- (void)dealloc;
 @property(nonatomic, readonly) NSString *description;
 
 @end

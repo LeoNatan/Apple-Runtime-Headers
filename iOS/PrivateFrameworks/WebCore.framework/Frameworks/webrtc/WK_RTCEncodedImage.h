@@ -16,6 +16,7 @@ __attribute__((visibility("hidden")))
     int _encodedWidth;
     int _encodedHeight;
     unsigned int _timeStamp;
+    int _spatialIndex;
     NSData *_buffer;
     long long _captureTimeMs;
     long long _ntpTimeMs;
@@ -27,6 +28,7 @@ __attribute__((visibility("hidden")))
     unsigned long long _contentType;
 }
 
+@property(nonatomic) int spatialIndex; // @synthesize spatialIndex=_spatialIndex;
 @property(nonatomic) unsigned long long contentType; // @synthesize contentType=_contentType;
 @property(retain, nonatomic) NSNumber *qp; // @synthesize qp=_qp;
 @property(nonatomic) _Bool completeFrame; // @synthesize completeFrame=_completeFrame;

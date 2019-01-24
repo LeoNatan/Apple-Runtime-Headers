@@ -16,6 +16,7 @@ __attribute__((visibility("hidden")))
     NSObject<OS_xpc_object> *properties;
     NSObject<OS_xpc_object> *connection;
     OS_remote_device *device;
+    unsigned int connect_timeout;
 }
 
 - (void).cxx_destruct;

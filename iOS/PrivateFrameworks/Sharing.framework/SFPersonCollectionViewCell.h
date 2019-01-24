@@ -9,7 +9,6 @@
 @class NSArray, NSLayoutConstraint, NSObject, NSProgress, NSString, SFAirDropNode, SFCircleProgressView, SFPersonImageView, UIColor, UIImpactFeedbackGenerator, UILabel, UINotificationFeedbackGenerator, UISelectionFeedbackGenerator;
 @protocol SFPersonCollectionViewCellDelegate;
 
-__attribute__((visibility("hidden")))
 @interface SFPersonCollectionViewCell : UICollectionViewCell
 {
     _Bool _darkStyleOnLegacyApp;
@@ -94,6 +93,7 @@ __attribute__((visibility("hidden")))
 - (void)setSelected:(_Bool)arg1;
 - (void)layoutSubviews;
 - (void)prepareForReuse;
+- (void)setupConstraints;
 - (void)dealloc;
 - (id)initWithFrame:(struct CGRect)arg1;
 

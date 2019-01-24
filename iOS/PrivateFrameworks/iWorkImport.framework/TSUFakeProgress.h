@@ -18,11 +18,12 @@ __attribute__((visibility("hidden")))
     _Bool _stopped;
 }
 
+- (void).cxx_destruct;
 - (void)p_slowlyAdvanceToNextStage;
 - (void)advanceToStage:(unsigned long long)arg1;
 - (void)stop;
 - (void)start;
-- (void)dealloc;
+- (id)initWithMaxValue:(double)arg1;
 - (id)initWithMaxValue:(double)arg1 numberOfStages:(unsigned long long)arg2;
 
 @end

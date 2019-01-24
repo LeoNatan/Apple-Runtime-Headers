@@ -66,6 +66,7 @@ __attribute__((visibility("hidden")))
 - (id)_viewControllerHost;
 - (void)_dismissInHostIfNecessary;
 - (void)_presentInHostIfNecessary;
+- (void)_didDetermineIdentityProvider:(id)arg1 withPickerViewController:(id)arg2;
 - (void)_showIdentityProviderPickerViewControllerWithIdentityProviders:(id)arg1;
 - (void)_performRequestWithIdentityProvider:(id)arg1 account:(id)arg2;
 - (void)_presentWelcomeMessageForIdentityProvider:(id)arg1 withLogoCacheURL:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;

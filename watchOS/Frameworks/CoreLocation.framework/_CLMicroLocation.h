@@ -13,7 +13,10 @@
     NSUUID *_uuid;
 }
 
++ (id)nullMicroLocation;
 @property(readonly, nonatomic) NSUUID *uuid; // @synthesize uuid=_uuid;
+- (_Bool)isEqual:(id)arg1;
+- (_Bool)isEqualToMicroLocation:(id)arg1;
 - (id)description;
 - (void)dealloc;
 - (id)initWithUUID:(id)arg1;

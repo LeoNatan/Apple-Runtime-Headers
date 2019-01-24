@@ -16,6 +16,7 @@
 {
     _Bool _wantsHoldMusic;
     _Bool _pauseVideoToStart;
+    _Bool _downgradeToAudio;
     NSString *_uniqueProxyIdentifier;
     NSString *_sourceIdentifier;
     long long _behavior;
@@ -27,6 +28,7 @@
 + (_Bool)supportsSecureCoding;
 @property(retain, nonatomic) NSDate *dateAnswered; // @synthesize dateAnswered=_dateAnswered;
 @property(nonatomic) long long behavior; // @synthesize behavior=_behavior;
+@property(nonatomic) _Bool downgradeToAudio; // @synthesize downgradeToAudio=_downgradeToAudio;
 @property(nonatomic) _Bool pauseVideoToStart; // @synthesize pauseVideoToStart=_pauseVideoToStart;
 @property(nonatomic) _Bool wantsHoldMusic; // @synthesize wantsHoldMusic=_wantsHoldMusic;
 @property(copy, nonatomic) NSString *sourceIdentifier; // @synthesize sourceIdentifier=_sourceIdentifier;

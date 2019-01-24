@@ -107,6 +107,7 @@
 - (void)authSession:(id)arg1 authenticateUUID:(id)arg2 token:(id)arg3;
 - (void)authSession:(id)arg1 validateUUID:(id)arg2 token:(id)arg3;
 - (void)authSession:(id)arg1 sendAuthExchangeData:(id)arg2;
+- (void)_continuePairingAfterMFiCertValidation;
 - (void)tearDownSessionOnAuthCompletion;
 - (void)provisionToken:(id)arg1;
 - (void)continueAuthAfterValidation:(BOOL)arg1;

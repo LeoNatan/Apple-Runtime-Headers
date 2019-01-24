@@ -6,10 +6,12 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, NSUUID, UIControl, UIView, _UIInteractiveHighlightEffect;
+#import <UIKitCore/UIInteractionEffect-Protocol.h>
+
+@class NSArray, NSString, NSUUID, UIControl, UIView, _UIInteractiveHighlightEffect;
 @protocol UIInteraction, _UIInteractiveHighlighting;
 
-@interface _UIPreviewInteractionHighlighter : NSObject
+@interface _UIPreviewInteractionHighlighter : NSObject <UIInteractionEffect>
 {
     UIView *_view;
     id <_UIInteractiveHighlighting> _interactiveHighlightView;
@@ -18,6 +20,7 @@
     NSArray *_accessoryHighlightEffects;
     _UIInteractiveHighlightEffect *_presentationControllerHighlightEffect;
     id <UIInteraction> _interaction;
+    _Bool _active;
     _Bool _animatesContentEffects;
     NSUUID *_contentAnimationIdentifier;
     _Bool _animatesBackgroundEffects;
@@ -31,6 +34,7 @@
     _Bool _shouldTransferViewOwnership;
     _Bool _cancelsInteractionWhenScrolling;
     CDUnknownBlockType _completionBlock;
+    unsigned long long _clickEffectPhase;
     CDUnknownBlockType _privateCompletionBlock;
     UIView *_customContainerView;
     UIView *_customBackgroundEffectView;
@@ -43,6 +47,7 @@
 @property(retain, nonatomic) UIView *customBackgroundEffectView; // @synthesize customBackgroundEffectView=_customBackgroundEffectView;
 @property(nonatomic) __weak UIView *customContainerView; // @synthesize customContainerView=_customContainerView;
 @property(copy, nonatomic) CDUnknownBlockType privateCompletionBlock; // @synthesize privateCompletionBlock=_privateCompletionBlock;
+@property(nonatomic) unsigned long long clickEffectPhase; // @synthesize clickEffectPhase=_clickEffectPhase;
 @property(nonatomic) _Bool shouldEndWithCancelAnimation; // @synthesize shouldEndWithCancelAnimation=_shouldEndWithCancelAnimation;
 @property(copy, nonatomic) CDUnknownBlockType completionBlock; // @synthesize completionBlock=_completionBlock;
 @property(readonly, nonatomic) __weak UIView *view; // @synthesize view=_view;
@@ -64,7 +69,14 @@
 - (void)_updateFromInteraction:(id)arg1 fractionComplete:(double)arg2 ended:(_Bool)arg3;
 - (void)_prepareForInteraction:(id)arg1;
 @property(readonly, nonatomic) _UIInteractiveHighlightEffect *interactiveHighlightEffect;
+- (void)interaction:(id)arg1 didChangeWithContext:(id)arg2;
 - (id)initWithView:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

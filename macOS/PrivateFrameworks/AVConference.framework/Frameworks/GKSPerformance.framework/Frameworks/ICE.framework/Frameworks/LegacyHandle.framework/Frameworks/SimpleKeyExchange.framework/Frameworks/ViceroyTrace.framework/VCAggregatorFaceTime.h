@@ -36,13 +36,16 @@ __attribute__((visibility("hidden")))
     double _callPoorConnectionMaxLength;
     unsigned int _callPoorConnectionFrequency;
     double _callTotalVideoStallTime;
+    double _callTotalMediaStallTime;
     double _callMaxVideoStallInterval;
     double _callTotalAudioStallTime;
     double _callMaxAudioStallInterval;
     double _lastReportedAudioStallTime;
     double _lastReportedVideoStallTime;
+    double _lastReportedMediaStallTime;
     double _callLastVideoResolutionChangeTime;
     unsigned int _noRemoteAtCallEnd;
+    unsigned int _callTotalMediaStallCount;
     unsigned int _remoteNoRemoteAtCallEnd;
     unsigned int _totalConnectionTime;
     unsigned int _startConnectionTime;

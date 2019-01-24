@@ -26,7 +26,7 @@ __attribute__((visibility("hidden")))
 - (void)_makeReadOnly;
 - (void)_freeImageBytes;
 - (void)_allocateImageBytes;
-- (void)expandCSIBitmapData:(struct _csibitmap *)arg1 fromSlice:(struct _slice)arg2 makeReadOnly:(BOOL)arg3;
+- (BOOL)expandCSIBitmapData:(struct _csibitmap *)arg1 fromSlice:(struct _slice)arg2 makeReadOnly:(BOOL)arg3;
 - (void)dealloc;
 - (void)tallyImageBlockRelease;
 - (BOOL)wasUsedTransiently;

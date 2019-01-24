@@ -13,6 +13,7 @@
 + (void)performLibraryStatisticsLogging:(CDUnknownBlockType)arg1;
 + (void)performPersistentHistorySummaryLogging:(id)arg1;
 + (void)performLibrarySummaryLogging:(id)arg1;
++ (id)_addPrefix:(id)arg1 toKeysInDictionary:(id)arg2;
 + (void)performHyperionLocalResourcesLogging:(CDUnknownBlockType)arg1;
 + (void)performAnalysisStateLogging:(id)arg1;
 + (void)performYearsStaticsLogging:(id)arg1;

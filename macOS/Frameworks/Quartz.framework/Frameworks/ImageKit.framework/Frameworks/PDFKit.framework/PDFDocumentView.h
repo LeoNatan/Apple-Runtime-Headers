@@ -46,6 +46,7 @@ __attribute__((visibility("hidden")))
 - (id)accessibilityRole;
 - (BOOL)isAccessibilityElement;
 - (void)resetAccessibilityTree;
+- (id)pageBackgroundManager;
 - (void)forceUpdateActivePageIndex:(unsigned long long)arg1 withMaxDuration:(double)arg2;
 - (void)willForceUpdate;
 - (void)previewRotateShiftPages:(double)arg1;

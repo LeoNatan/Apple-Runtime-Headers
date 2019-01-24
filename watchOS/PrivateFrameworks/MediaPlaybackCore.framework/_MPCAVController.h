@@ -28,7 +28,6 @@
 - (void)_itemDidChange:(id)arg1;
 - (void)_itemWillChange:(id)arg1;
 - (id)_expectedAssetTypesForPlaybackMode:(int)arg1;
-- (void)_delegateAuthorizationForItem:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_contentsChanged;
 - (void)_connectAVPlayer;
 - (void)_configureAudioSession;

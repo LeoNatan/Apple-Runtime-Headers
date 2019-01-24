@@ -12,7 +12,6 @@
 @property(readonly, nonatomic) BOOL safari_isInRecoverySystem;
 @property(readonly, nonatomic) BOOL safari_systemSupportsSeparateContentBlockerStorage;
 @property(readonly, nonatomic) BOOL safari_systemSupportsBookmarkDAVMoves;
-- (BOOL)_systemIsSierraUpdate5AndAbove;
 @property(readonly, nonatomic) BOOL safari_systemIsSierraUpdate4AndAbove;
 @property(readonly, copy, nonatomic) NSString *safari_deviceUDID;
 @end

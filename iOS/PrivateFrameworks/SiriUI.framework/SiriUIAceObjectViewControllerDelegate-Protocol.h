@@ -36,6 +36,7 @@
 - (NSArray *)additionalSpeechInterpretationsForSiriViewController:(id <SiriUIViewController>)arg1;
 
 @optional
+- (void)siriViewController:(id <SiriUIViewController>)arg1 setTypeToSiriViewHidden:(_Bool)arg2;
 - (_Bool)inTextInputModeForSiriViewController:(id <SiriUIViewController>)arg1;
 - (void)showCorrectionScreenForSiriViewController:(id <SiriUIViewController>)arg1;
 - (_Bool)shouldEnableInteractionForSiriViewController:(id <SiriUIViewController>)arg1;

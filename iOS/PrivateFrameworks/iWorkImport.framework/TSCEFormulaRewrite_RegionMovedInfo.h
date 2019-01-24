@@ -33,8 +33,8 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) TSCEFormulaRewrite_RegionInfo *srcRegion; // @synthesize srcRegion=_srcRegion;
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (void)saveToMessage:(struct RegionMovedInfoArchive *)arg1;
-- (id)initFromMessage:(const struct RegionMovedInfoArchive *)arg1;
+-     // Error parsing type: v24@0:8^{RegionMovedInfoArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{RegionInfoArchive}^{RegionInfoArchive}^{RegionInfoArchive}^{UUID}BB}16, name: saveToMessage:
+-     // Error parsing type: @24@0:8r^{RegionMovedInfoArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{RegionInfoArchive}^{RegionInfoArchive}^{RegionInfoArchive}^{UUID}BB}16, name: initFromMessage:
 - (UUIDData_5fbc143e)srcUidForDstUid:(const UUIDData_5fbc143e *)arg1;
 - (UUIDData_5fbc143e)dstUidForSrcUid:(const UUIDData_5fbc143e *)arg1;
 - (void)unloadIndexes;

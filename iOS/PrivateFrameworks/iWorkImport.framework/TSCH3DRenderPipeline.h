@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class TSCH3DGLContext, TSCH3DRenderProcessor, TSCH3DSession;
+@class TSCH3DContext, TSCH3DRenderProcessor, TSCH3DSession;
 
 __attribute__((visibility("hidden")))
 @interface TSCH3DRenderPipeline : NSObject
@@ -19,7 +19,7 @@ __attribute__((visibility("hidden")))
 + (id)clipRectForTargetSize:(const tvec2_3b141483 *)arg1 intermediateSize:(const tvec2_3b141483 *)arg2;
 @property(readonly, nonatomic) TSCH3DSession *session; // @synthesize session=mSession;
 @property(retain, nonatomic) TSCH3DRenderProcessor *processor; // @synthesize processor=mProcessor;
-@property(readonly, nonatomic) TSCH3DGLContext *context;
+@property(readonly, nonatomic) TSCH3DContext *context;
 - (void)dealloc;
 - (id)initWithProcessor:(id)arg1 session:(id)arg2;
 

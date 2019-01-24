@@ -37,12 +37,12 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) unsigned long long pageColumn; // @synthesize pageColumn=_pageColumn;
 @property(nonatomic) long long pageKind; // @synthesize pageKind=_pageKind;
 - (void).cxx_destruct;
-- (void)p_unarchiveTopicNumbers:(id)arg1 fromArchive:(const struct TopicNumberHintsArchive *)arg2 unarchiver:(id)arg3;
-- (void)p_archiveTopicNumbers:(id)arg1 intoArchive:(struct TopicNumberHintsArchive *)arg2 archiver:(id)arg3;
-- (_Bool)p_unarchiveHint:(id)arg1 fromArchive:(const struct TargetHintArchive *)arg2;
-- (void)p_archiveHint:(id)arg1 intoArchive:(struct TargetHintArchive *)arg2;
-- (void)saveToArchive:(struct PageHintArchive *)arg1 archiver:(id)arg2 context:(id)arg3;
-- (id)initWithArchive:(const struct PageHintArchive *)arg1 unarchiver:(id)arg2;
+-     // Error parsing type: v40@0:8@16r^{TopicNumberHintsArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TP::TopicNumberEntryArchive>=^{Arena}ii^{Rep}}II}24@32, name: p_unarchiveTopicNumbers:fromArchive:unarchiver:
+-     // Error parsing type: v40@0:8@16^{TopicNumberHintsArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TP::TopicNumberEntryArchive>=^{Arena}ii^{Rep}}II}24@32, name: p_archiveTopicNumbers:intoArchive:archiver:
+-     // Error parsing type: B32@0:8@16r^{TargetHintArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{Point}^{Size}^{Range}^{Range}^{DoublePoint}^{DoubleSize}IIIBBB}24, name: p_unarchiveHint:fromArchive:
+-     // Error parsing type: v32@0:8@16^{TargetHintArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{Point}^{Size}^{Range}^{Range}^{DoublePoint}^{DoubleSize}IIIBBB}24, name: p_archiveHint:intoArchive:
+-     // Error parsing type: v40@0:8^{PageHintArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TP::TargetHintArchive>=^{Arena}ii^{Rep}}{RepeatedPtrField<TP::AnchorPosArchive>=^{Arena}ii^{Rep}}{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}{RepeatedPtrField<TSP::UUID>=^{Arena}ii^{Rep}}{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}{RepeatedPtrField<TP::TargetHintArchive>=^{Arena}ii^{Rep}}{RepeatedPtrField<TP::TopicNumberHintsArchive>=^{Arena}ii^{Rep}}^{Range}^{Range}^{Reference}^{Reference}^{TopicNumberHintsArchive}iIIiII}16@24@32, name: saveToArchive:archiver:context:
+-     // Error parsing type: @32@0:8r^{PageHintArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TP::TargetHintArchive>=^{Arena}ii^{Rep}}{RepeatedPtrField<TP::AnchorPosArchive>=^{Arena}ii^{Rep}}{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}{RepeatedPtrField<TSP::UUID>=^{Arena}ii^{Rep}}{RepeatedPtrField<TSP::Reference>=^{Arena}ii^{Rep}}{RepeatedPtrField<TP::TargetHintArchive>=^{Arena}ii^{Rep}}{RepeatedPtrField<TP::TopicNumberHintsArchive>=^{Arena}ii^{Rep}}^{Range}^{Range}^{Reference}^{Reference}^{TopicNumberHintsArchive}iIIiII}16@24, name: initWithArchive:unarchiver:
 @property(readonly, nonatomic) unsigned long long lineCount;
 - (void)trimToCharIndex:(unsigned long long)arg1 inTarget:(id)arg2 removeFootnoteReferenceCount:(unsigned long long)arg3 removeAutoNumberFootnoteCount:(unsigned long long)arg4;
 @property(readonly, nonatomic) _Bool lastLineIsEmptyAndHasListLabel;

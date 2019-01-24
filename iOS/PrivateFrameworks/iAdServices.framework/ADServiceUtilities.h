@@ -11,7 +11,7 @@
 }
 
 + (id)ADSizeForContainerSize:(id)arg1 availableSizes:(id)arg2;
-+ (id)ADFrameThatFits:(id)arg1 device:(id)arg2 adType:(int)arg3 statusBarOrientationIsPortrait:(_Bool)arg4;
++ (id)ADFrameThatFits:(id)arg1 device:(id)arg2 adType:(int)arg3 statusBarOrientationIsPortrait:(_Bool)arg4 orientationChanged:(_Bool)arg5;
 
 @end
 

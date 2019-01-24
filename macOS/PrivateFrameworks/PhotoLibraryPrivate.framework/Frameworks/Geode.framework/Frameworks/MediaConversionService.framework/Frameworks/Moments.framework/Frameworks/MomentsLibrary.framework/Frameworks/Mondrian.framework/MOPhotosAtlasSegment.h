@@ -16,11 +16,13 @@
     unsigned long long _numberOfColumns;
     unsigned long long _numberOfRows;
     struct CGSize _size;
+    struct CGSize _clipSize;
     NSArray *_mediaItems;
     struct CGColor *_emptyColorRef;
     struct CGColor *_backgroundColorRef;
     unsigned long long _availableIndexesCount;
     NSMutableIndexSet *_invalidIndexes;
+    BOOL _atFullCapacity;
     id _imageRef;
     NSRecursiveLock *_imageLock;
     unsigned long long _version;
@@ -38,6 +40,7 @@
 - (id)invalidIndexesComparingToMediaItemVersions:(id)arg1 includingInvalidation:(BOOL)arg2;
 - (id)mediaItemVersions:(BOOL)arg1;
 - (unsigned long long)version;
+- (BOOL)isAtFullCapacity;
 - (BOOL)isComplete;
 - (BOOL)isEmpty;
 - (void)setImageRef:(id)arg1;
@@ -50,6 +53,7 @@
 - (struct CGColor *)backgroundColor;
 - (id)uniqueIdentifier;
 - (id)mediaItems;
+- (struct CGSize)clipSize;
 - (struct CGSize)size;
 - (void)dealloc;
 - (id)initWithThumbnailResolution:(double)arg1 numberOfColumns:(unsigned long long)arg2 numberOfRows:(unsigned long long)arg3 mediaItems:(id)arg4 emptyColor:(struct CGColor *)arg5 backgroundColor:(struct CGColor *)arg6 colorSpace:(id)arg7;

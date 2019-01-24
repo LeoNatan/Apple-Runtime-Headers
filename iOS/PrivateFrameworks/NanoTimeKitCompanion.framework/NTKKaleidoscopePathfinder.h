@@ -17,16 +17,20 @@
     int _pathLength;
     // Error parsing type: ^, name: _dominanceGrid
     // Error parsing type: ^, name: _path
+    float _startRotation;
 }
 
 + (_Bool)supportsSecureCoding;
 + (id)pathfinderFromFile:(id)arg1;
 + (id)pathfinderFromDirectory:(id)arg1;
 + (id)pathfinderWithImage:(id)arg1;
+@property(readonly, nonatomic) float startRotation; // @synthesize startRotation=_startRotation;
 @property(readonly, nonatomic) int pathLength; // @synthesize pathLength=_pathLength;
 @property(readonly, nonatomic) int cellGridHeight; // @synthesize cellGridHeight=_cellGridHeight;
 @property(readonly, nonatomic) int cellGridWidth; // @synthesize cellGridWidth=_cellGridWidth;
 - (void)adjustPathStart: /* Error: Ran out of types for this method. */;
+- (void)adjustSampleRadius:(float)arg1;
+- (void)adjustRotationStart:(float)arg1;
 - (_Bool)writeToFile:(id)arg1;
 - (_Bool)writeToDirectory:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

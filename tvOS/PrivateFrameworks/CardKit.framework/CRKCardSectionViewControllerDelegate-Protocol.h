@@ -14,6 +14,7 @@
 @optional
 - (long long)preferredPunchoutIndexForCardSectionViewController:(CRKCardSectionViewController *)arg1;
 - (void)cardSectionViewController:(CRKCardSectionViewController *)arg1 didSelectPreferredPunchoutIndex:(long long)arg2;
+- (void)cardSectionViewController:(CRKCardSectionViewController *)arg1 willDismissViewController:(UIViewController *)arg2;
 - (void)presentViewController:(UIViewController *)arg1 forCardSectionViewController:(CRKCardSectionViewController *)arg2;
 - (struct CGSize)boundingSizeForCardSectionViewController:(CRKCardSectionViewController *)arg1;
 - (void)cardSectionViewController:(CRKCardSectionViewController *)arg1 requestsHandlingOfIntent:(INIntent *)arg2;

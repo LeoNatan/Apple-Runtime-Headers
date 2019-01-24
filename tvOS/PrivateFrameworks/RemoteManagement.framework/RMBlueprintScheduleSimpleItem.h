@@ -6,9 +6,11 @@
 
 #import <objc/NSObject.h>
 
+#import <RemoteManagement/NSCopying-Protocol.h>
+
 @class NSDateComponents;
 
-@interface RMBlueprintScheduleSimpleItem : NSObject
+@interface RMBlueprintScheduleSimpleItem : NSObject <NSCopying>
 {
     NSDateComponents *_startTime;
     NSDateComponents *_endTime;
@@ -17,6 +19,7 @@
 @property(retain, nonatomic) NSDateComponents *endTime; // @synthesize endTime=_endTime;
 @property(retain, nonatomic) NSDateComponents *startTime; // @synthesize startTime=_startTime;
 - (void).cxx_destruct;
+- (id)copyWithZone:(struct _NSZone *)arg1;
 
 @end
 

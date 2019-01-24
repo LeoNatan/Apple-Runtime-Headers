@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSMutableArray, NSString;
+@class DMTool, NSMutableArray, NSString;
 
 __attribute__((visibility("hidden")))
 @interface _DMListDA : NSObject
@@ -18,16 +18,17 @@ __attribute__((visibility("hidden")))
     NSString *_searchKey;
     id _searchValue;
     BOOL _didItOnce;
+    DMTool *_dmToolOrNil;
 }
 
-+ (BOOL)waitForDAIdleWithDASession:(struct __DASession *)arg1 timeout:(double)arg2;
-+ (struct __DADisk *)waitAndCopyDiskForBSD:(id)arg1 daSession:(struct __DASession *)arg2 timeout:(double)arg3 preWait:(double)arg4;
++ (BOOL)waitForDAIdleWithDASession:(struct __DASession *)arg1 timeout:(double)arg2 withDMTool:(id)arg3;
++ (struct __DADisk *)waitAndCopyDiskForBSD:(id)arg1 daSession:(struct __DASession *)arg2 timeout:(double)arg3 preWait:(double)arg4 withDMTool:(id)arg5;
 - (BOOL)anticipatingMoreDisks;
 - (id)copyCurrentDisks;
 - (struct __DADisk *)copyCurrentDiskForKey:(id)arg1 value:(id)arg2;
 - (void)doBlockingSearch;
 - (void)dealloc;
-- (id)initWithSession:(struct __DASession *)arg1 timeout:(double)arg2;
+- (id)initWithSession:(struct __DASession *)arg1 timeout:(double)arg2 withDMTool:(id)arg3;
 
 @end
 

@@ -20,12 +20,12 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) TSDPathManipulation *pathManipulation; // @synthesize pathManipulation=mManipulation;
 @property(nonatomic) unsigned int randomSeed; // @synthesize randomSeed=mRandomSeed;
 - (double)renderedWidth;
-- (void)saveToArchive:(struct StrokeArchive *)arg1 archiver:(id)arg2;
-- (id)initWithArchive:(const struct StrokeArchive *)arg1 unarchiver:(id)arg2;
-- (struct CGPath *)pathToStrokeFromCGPath:(struct CGPath *)arg1;
-- (_Bool)prefersToApplyToCAShapeLayerDuringManipulation;
-- (_Bool)canApplyToCAShapeLayer;
-- (void)paintPath:(struct CGPath *)arg1 wantsInteriorStroke:(_Bool)arg2 inContext:(struct CGContext *)arg3 useFastDrawing:(_Bool)arg4 parameterized:(_Bool)arg5 drawWithOpenGL:(_Bool)arg6 shouldReverseDrawOrder:(_Bool)arg7;
+-     // Error parsing type: v32@0:8^{StrokeArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{Color}^{StrokePatternArchive}^{SmartStrokeArchive}^{FrameArchive}^{PatternedStrokeArchive}fiif}16@24, name: saveToArchive:archiver:
+-     // Error parsing type: @32@0:8r^{StrokeArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{Color}^{StrokePatternArchive}^{SmartStrokeArchive}^{FrameArchive}^{PatternedStrokeArchive}fiif}16@24, name: initWithArchive:unarchiver:
+- (const struct CGPath *)pathToStrokeFromCGPath:(struct CGPath *)arg1;
+- (_Bool)prefersToApplyToShapeRenderableDuringManipulation;
+- (_Bool)canApplyToShapeRenderable;
+- (void)paintPath:(struct CGPath *)arg1 wantsInteriorStroke:(_Bool)arg2 inContext:(struct CGContext *)arg3 useFastDrawing:(_Bool)arg4 parameterized:(_Bool)arg5 shouldReverseDrawOrder:(_Bool)arg6;
 - (struct CGPath *)manipulatePath:(struct CGPath *)arg1 withLineWidth:(double)arg2;
 - (id)strokeLineEnd:(id)arg1;
 - (struct CGPath *)strokedPath:(struct CGPath *)arg1 withLineWidth:(double)arg2 insideStroke:(_Bool)arg3;

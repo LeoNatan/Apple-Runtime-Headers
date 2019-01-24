@@ -1541,10 +1541,6 @@ typedef struct {
 } CDStruct_36597415;
 
 typedef struct {
-    unsigned int type:1;
-} CDStruct_f953fb60;
-
-typedef struct {
     double _field1;
     double _field2;
 } CDStruct_c3b9c2ee;

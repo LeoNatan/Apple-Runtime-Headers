@@ -6,13 +6,14 @@
 
 #import <Safari/TabBarViewButton.h>
 
+#import <Safari/NSAccessibilityRadioButton-Protocol.h>
 #import <Safari/RolloverTrackingButtonDelegate-Protocol.h>
 
-@class BackgroundColorView, CALayer, FaviconView, NSArray, NSImage, NSMutableArray, NSString, NSTextField, NSView, NSVisualEffectView, RolloverImageButton, _TabButtonAccessibilityHelper;
+@class BackgroundColorView, CALayer, NSArray, NSImage, NSImageView, NSMutableArray, NSString, NSTextField, NSView, NSVisualEffectView, RolloverImageButton;
 @protocol TabBarViewItem, TabButtonDelegate;
 
 __attribute__((visibility("hidden")))
-@interface TabButton : TabBarViewButton <RolloverTrackingButtonDelegate>
+@interface TabButton : TabBarViewButton <NSAccessibilityRadioButton, RolloverTrackingButtonDelegate>
 {
     BOOL _didEstablishTabBarViewItemBindings;
     NSMutableArray *_accessoryViews;
@@ -21,8 +22,7 @@ __attribute__((visibility("hidden")))
     NSTextField *_titleTextField;
     NSView *_focusRingView;
     RolloverImageButton *_closeButton;
-    _TabButtonAccessibilityHelper *_accessibilityHelper;
-    FaviconView *_iconView;
+    NSImageView *_iconView;
     NSVisualEffectView *_iconFullScreenVisualEffectView;
     BackgroundColorView *_iconFullScreenBackgroundView;
     CALayer *_iconFullScreenBackgroundHighlightLayer;
@@ -30,6 +30,7 @@ __attribute__((visibility("hidden")))
     BOOL _pinned;
     BOOL _showIcon;
     BOOL _showingCloseButton;
+    BOOL _forOffscreenRendering;
     id <TabButtonDelegate> _delegate;
     id <TabBarViewItem> _tabBarViewItem;
     NSString *_title;
@@ -42,6 +43,7 @@ __attribute__((visibility("hidden")))
 
 + (id)titleFont;
 + (double)titleWidthForButtonWidth:(double)arg1;
+@property(nonatomic, getter=isForOffscreenRendering) BOOL forOffscreenRendering; // @synthesize forOffscreenRendering=_forOffscreenRendering;
 @property(nonatomic) double titleTextFieldCenterOffset; // @synthesize titleTextFieldCenterOffset=_titleTextFieldCenterOffset;
 @property(nonatomic) double mainContentContainerCenterOffset; // @synthesize mainContentContainerCenterOffset=_mainContentContainerCenterOffset;
 @property(nonatomic) double buttonWidthForTitleLayout; // @synthesize buttonWidthForTitleLayout=_buttonWidthForTitleLayout;
@@ -50,19 +52,23 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) BOOL showIcon; // @synthesize showIcon=_showIcon;
 @property(nonatomic, getter=isPinned) BOOL pinned; // @synthesize pinned=_pinned;
 @property(nonatomic) BOOL canShowCloseButton; // @synthesize canShowCloseButton=_canShowCloseButton;
-@property(readonly, nonatomic) id accessibilityHelper; // @synthesize accessibilityHelper=_accessibilityHelper;
 @property(copy, nonatomic) NSArray *accessoryViews; // @synthesize accessoryViews=_accessoryViews;
 @property(nonatomic) unsigned long long alignment; // @synthesize alignment=_alignment;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(readonly) id <TabBarViewItem> tabBarViewItem; // @synthesize tabBarViewItem=_tabBarViewItem;
 @property(nonatomic) __weak id <TabButtonDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (void)_updateAccessibilityChildren;
+- (void)_updateAccessibilityProperties;
+- (id)accessibilityValue;
+- (id)accessibilityLabel;
 - (BOOL)accessibilityPerformPress;
 - (BOOL)accessibilityPerformShowMenu;
 - (void)rolloverTrackingButtonDidResignFirstResponder:(id)arg1;
 - (void)rolloverTrackingButtonDidBecomeFirstResponder:(id)arg1;
 - (BOOL)resignFirstResponder;
 - (BOOL)becomeFirstResponder;
+- (BOOL)acceptsFirstResponder;
 - (void)_layOutFocusRingWithTitleContainerContentFrame:(struct CGRect)arg1;
 - (void)_layOutTitleContainerViewInBounds:(struct CGRect)arg1 availableBounds:(struct CGRect)arg2;
 - (struct CGRect)_layOutAccessoryViewsInBounds:(struct CGRect)arg1;
@@ -79,6 +85,7 @@ __attribute__((visibility("hidden")))
 - (void)_closeButtonClicked:(id)arg1;
 - (BOOL)_shouldShowCloseButton;
 - (void)_updateIconView;
+- (BOOL)_shouldShowIconView;
 - (void)_reconfigureFullScreenViewsUsingVisualEffectViews:(BOOL)arg1;
 - (void)_removeIconVisualEffectViewForFullScreenToolbarWindow;
 - (void)_addIconVisualEffectViewForFullScreenToolbarWindow;
@@ -89,6 +96,8 @@ __attribute__((visibility("hidden")))
 - (id)menuForEvent:(id)arg1;
 - (void)_windowChangedKeyState;
 - (void)viewDidMoveToWindow;
+- (void)_establishTabBarViewItemBindingsIfNecessary;
+- (void)keyDown:(id)arg1;
 - (void)viewWillMoveToWindow:(id)arg1;
 - (BOOL)mouseDownCanMoveWindow;
 - (void)_updateKeyViewLoop;

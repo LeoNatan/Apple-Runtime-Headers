@@ -6,19 +6,20 @@
 
 #import <objc/NSObject.h>
 
-@class NSMutableDictionary, TSUTemporaryDirectory;
+@class NSMutableDictionary, TSUManagedTemporaryDirectory;
 @protocol OS_dispatch_queue;
 
 __attribute__((visibility("hidden")))
 @interface TSPDataBookmarkContext : NSObject
 {
-    TSUTemporaryDirectory *_temporaryDirectory;
+    TSUManagedTemporaryDirectory *_temporaryDirectory;
     NSMutableDictionary *_bookmarkDataURLsForFilenames;
     NSMutableDictionary *_digestStringsForFilenames;
     NSObject<OS_dispatch_queue> *_queue;
 }
 
 - (void).cxx_destruct;
+- (_Bool)isEncryptedDataStorate:(id)arg1;
 - (_Bool)bookmarkDataNeedsWriteForData:(id)arg1;
 - (id)makeBookmarkDataForData:(id)arg1 filename:(id)arg2 options:(unsigned long long)arg3 error:(out id *)arg4;
 - (id)init;

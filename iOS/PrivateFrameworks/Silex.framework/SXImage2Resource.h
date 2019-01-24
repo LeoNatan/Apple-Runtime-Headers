@@ -8,9 +8,11 @@
 
 @interface SXImage2Resource : SXImageResource
 {
+    _Bool wideColorSpace;
 }
 
 + (id)typeString;
+- (_Bool)wideColorSpace;
 
 @end
 

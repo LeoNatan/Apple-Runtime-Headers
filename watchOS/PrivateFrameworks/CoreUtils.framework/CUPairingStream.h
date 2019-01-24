@@ -8,7 +8,6 @@
 
 @class NSString;
 
-__attribute__((visibility("hidden")))
 @interface CUPairingStream : NSObject
 {
     struct CryptoAEADPrivate *_decryptAEAD;
@@ -26,6 +25,7 @@ __attribute__((visibility("hidden")))
 - (id)decryptData:(id)arg1 aadData:(id)arg2 error:(id *)arg3;
 - (id)encryptData:(id)arg1 aadBytes:(const void *)arg2 aadLength:(unsigned long)arg3 error:(id *)arg4;
 - (id)encryptData:(id)arg1 aadData:(id)arg2 error:(id *)arg3;
+- (_Bool)prepareWithName:(id)arg1 isClient:(_Bool)arg2 pskData:(id)arg3 error:(id *)arg4;
 @property(readonly, nonatomic) unsigned long authTagLength;
 - (void)_cleanup;
 - (void)dealloc;

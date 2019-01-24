@@ -6,18 +6,23 @@
 
 #import <ChatKit/CKTranscriptLabelCell.h>
 
-@class NSAttributedString, UIButton;
+@class NSAttributedString, UIButton, UILabel;
 
 @interface CKTranscriptReportSpamCell : CKTranscriptLabelCell
 {
     _Bool _showReportSMSSpam;
     UIButton *_reportSpamButton;
+    UILabel *_internalPhishingWarningLabel;
 }
 
 + (id)reportSpamButton;
++ (id)internalPhishingWarning;
++ (id)internalPhishingWarningLabel;
+@property(readonly, nonatomic) UILabel *internalPhishingWarningLabel; // @synthesize internalPhishingWarningLabel=_internalPhishingWarningLabel;
 @property(nonatomic) _Bool showReportSMSSpam; // @synthesize showReportSMSSpam=_showReportSMSSpam;
 @property(retain, nonatomic) UIButton *reportSpamButton; // @synthesize reportSpamButton=_reportSpamButton;
 - (void).cxx_destruct;
+- (void)prepareForReuse;
 @property(copy, nonatomic) NSAttributedString *attributedButtonText;
 - (void)clearFilters;
 - (void)addFilter:(id)arg1;

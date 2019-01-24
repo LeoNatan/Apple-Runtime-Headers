@@ -19,7 +19,6 @@
 - (void)removeAutomaticPasswordVisualTreatmentInFrame:(id)arg1 passwordControlUniqueIDs:(id)arg2;
 - (void)removeAutomaticPasswordElementsInFrame:(id)arg1 focusedPasswordControlUniqueID:(id)arg2 passwordControlUniqueIDs:(id)arg3 blurAfterRemoval:(_Bool)arg4;
 - (id)substitutePasswordElementsWithAutomaticPasswordElementsInFrame:(id)arg1 formID:(double)arg2 focusedPasswordControlUniqueID:(id)arg3 passwordControlUniqueIDs:(id)arg4 automaticPassword:(id)arg5 blurAfterSubstitution:(_Bool)arg6;
-- (_Bool)shouldAttemptToClassifyFormsWithoutAPasswordFieldAsLoginForms;
 - (_Bool)shouldIncludeNonEmptyFields;
 - (id)visibleNonEmptyTextFieldsInForm:(id)arg1 inFrame:(id)arg2;
 - (id)formSubmissionURLStringForSearchTextField:(id)arg1 inFrame:(id)arg2 useStrictDetection:(_Bool)arg3;
@@ -41,6 +40,10 @@
 - (void)willSendSubmitEventForForm:(id)arg1 inFrame:(id)arg2;
 - (void)textFieldBlurred:(id)arg1 inFrame:(id)arg2 page:(id)arg3 textFieldMetadata:(id)arg4 formMetadata:(id)arg5;
 - (void)textFieldFocused:(id)arg1 inFrame:(id)arg2;
+- (void)otherCreditCardFieldBlurred:(id)arg1 inFrame:(id)arg2 textFieldMetadata:(id)arg3 formMetadata:(id)arg4;
+- (void)otherCreditCardFieldFocused:(id)arg1 inFrame:(id)arg2 textFieldMetadata:(id)arg3 formMetadata:(id)arg4;
+- (void)unidentifiedTextFieldBlurred:(id)arg1 inFrame:(id)arg2 textFieldMetadata:(id)arg3 formMetadata:(id)arg4;
+- (void)unidentifiedTextFieldFocused:(id)arg1 inFrame:(id)arg2 textFieldMetadata:(id)arg3 formMetadata:(id)arg4;
 - (_Bool)pageWithMainFrameMeetsEditedFormTextWarningCriteria:(id)arg1;
 - (void)recursivelyCountUserEditedTextControlsInFrame:(id)arg1 textFields:(unsigned long long *)arg2 textAreas:(unsigned long long *)arg3;
 - (void)countUserEditedTextControlsInFrame:(id)arg1 textFields:(unsigned long long *)arg2 textAreas:(unsigned long long *)arg3;
@@ -69,7 +72,7 @@
 - (void)fillField:(id)arg1 inFrame:(id)arg2 withGeneratedPassword:(id)arg3;
 - (id)fillForm:(double)arg1 inFrame:(id)arg2 withPassword:(id)arg3;
 - (void)setFormControls:(id)arg1 inFrame:(id)arg2 asAutoFilled:(_Bool)arg3;
-- (void)finishedAutoFillingForm:(id)arg1 inFrame:(id)arg2;
+- (void)finishedAutoFillingForm:(id)arg1 inFrame:(id)arg2 shouldSubmit:(_Bool)arg3;
 - (void)focusFormForStreamlinedLogin:(double)arg1 inFrame:(id)arg2;
 - (void)autoFillOneTimeCodeFieldsInFrame:(id)arg1 withValue:(id)arg2;
 - (void)autoFillFormInFrame:(id)arg1 withValues:(id)arg2 fillSynchronously:(_Bool)arg3 setAutoFilled:(_Bool)arg4 focusFieldAfterFilling:(_Bool)arg5 fieldToFocus:(id)arg6 submitForm:(_Bool)arg7;

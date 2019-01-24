@@ -11,7 +11,7 @@
     // Error parsing type: , name: containingViewController
 }
 
-- (CDUnknownBlockType).cxx_destruct;
+- (void).cxx_destruct;
 - (id)init;
 - (id)initWithContainingViewController:(id)arg1;
 

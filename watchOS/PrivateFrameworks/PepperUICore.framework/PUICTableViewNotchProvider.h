@@ -13,6 +13,7 @@
     NSMutableSet *_notches;
     struct CGSize _previousContentSize;
     NSValue *_topNotch;
+    _Bool _pendingChangesStillInflight;
     _Bool _minorDetentEdgesSet;
     float _minNotchViewY;
     float _maxNotchViewY;
@@ -21,6 +22,7 @@
 @property(nonatomic) _Bool minorDetentEdgesSet; // @synthesize minorDetentEdgesSet=_minorDetentEdgesSet;
 @property(nonatomic) float maxNotchViewY; // @synthesize maxNotchViewY=_maxNotchViewY;
 @property(nonatomic) float minNotchViewY; // @synthesize minNotchViewY=_minNotchViewY;
+@property _Bool pendingChangesStillInflight; // @synthesize pendingChangesStillInflight=_pendingChangesStillInflight;
 - (void).cxx_destruct;
 - (void)removeNotch:(CDStruct_51c09d0b)arg1;
 - (void)addNotches:(id)arg1 toNotches:(id)arg2;
@@ -31,6 +33,7 @@
 - (void)checkAndUpdateMaxNotchViewY:(float)arg1;
 - (void)checkAndUpdateMinNotchViewY:(float)arg1;
 - (void)generateNotches;
+- (void)generateNotchesWhileChangesAreInflight:(_Bool)arg1;
 - (_Bool)preparedToGenerateNotches;
 - (void)checkForChangeInContentSize;
 - (id)init;

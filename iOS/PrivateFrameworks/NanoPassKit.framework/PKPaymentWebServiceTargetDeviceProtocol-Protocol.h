@@ -6,7 +6,7 @@
 
 #import <NanoPassKit/NSObject-Protocol.h>
 
-@class NSArray, NSData, NSDictionary, NSString, PKAppleAccountInformation, PKPass, PKPaymentPass, PKPaymentWebService, PKTrustedDeviceEnrollmentInfo, PKVerificationChannel;
+@class NSArray, NSData, NSDictionary, NSString, PKAppleAccountInformation, PKOSVersionRequirement, PKPass, PKPaymentPass, PKPaymentWebService, PKTrustedDeviceEnrollmentInfo, PKVerificationChannel;
 
 @protocol PKPaymentWebServiceTargetDeviceProtocol <NSObject>
 - (unsigned long long)secureElementOwnershipStateForCurrentUser;
@@ -28,6 +28,8 @@
 - (_Bool)supportsAutomaticPassPresentation;
 - (NSString *)deviceRegion;
 - (NSString *)bridgedClientInfo;
+- (PKOSVersionRequirement *)deviceVersion;
+- (NSString *)deviceClass;
 - (NSString *)deviceName;
 - (NSString *)deviceDescriptionForPaymentWebService:(PKPaymentWebService *)arg1;
 - (int)paymentSupportedInCurrentRegionForWebService:(PKPaymentWebService *)arg1;
@@ -57,8 +59,10 @@
 - (unsigned long long)maximumPaymentCards;
 - (void)startBackgroundVerificationObserverForPass:(PKPaymentPass *)arg1 verificationMethod:(PKVerificationChannel *)arg2;
 - (void)noteForegroundVerificationObserverActive:(_Bool)arg1;
+- (NSString *)cellularNetworkRegion;
 - (void)renewAppleAccountWithCompletionHandler:(void (^)(long long, PKAppleAccountInformation *))arg1;
 - (PKAppleAccountInformation *)appleAccountInformation;
+- (void)signatureForAuthToken:(NSString *)arg1 webService:(PKPaymentWebService *)arg2 completion:(void (^)(NSString *, NSError *))arg3;
 - (PKTrustedDeviceEnrollmentInfo *)trustedDeviceEnrollmentInfoForWebService:(PKPaymentWebService *)arg1;
 - (void)paymentWebService:(PKPaymentWebService *)arg1 registrationDataWithCompletionHandler:(void (^)(PKPaymentDeviceRegistrationData *, NSError *))arg2;
 @end

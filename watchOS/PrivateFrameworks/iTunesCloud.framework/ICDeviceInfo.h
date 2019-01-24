@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSData, NSString;
+@class NSData, NSNumber, NSString;
 @protocol OS_dispatch_queue;
 
 @interface ICDeviceInfo : NSObject
@@ -27,6 +27,9 @@
     NSString *_pairedDeviceGUID;
     NSString *_serialNumber;
     struct CGSize _mainScreenSize;
+    NSNumber *_hasCellularDataCapabilityNumber;
+    NSNumber *_hasTelephonyCapabilityNumber;
+    NSNumber *_isInternalBuildNumber;
     NSString *_systemReleaseType;
     NSObject<OS_dispatch_queue> *_accessQueue;
 }
@@ -47,6 +50,8 @@
 @property(readonly, nonatomic) _Bool isIPad;
 @property(readonly, nonatomic) _Bool isAppleTV;
 @property(readonly, nonatomic) _Bool isIPhone;
+@property(readonly, nonatomic) _Bool hasTelephonyCapability;
+@property(readonly, nonatomic) _Bool hasCellularDataCapability;
 @property(readonly, nonatomic) struct CGSize mainScreenSize;
 @property(readonly, copy, nonatomic) NSString *serialNumber;
 @property(readonly, copy, nonatomic) NSString *name;

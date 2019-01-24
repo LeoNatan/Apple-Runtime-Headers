@@ -23,7 +23,7 @@ __attribute__((visibility("hidden")))
 + (id)fillWithIdentifier:(id)arg1;
 + (id)fill;
 + (id)fillWithLightingModel:(id)arg1 identifier:(id)arg2;
-+ (id)instanceWithArchive:(const struct FillArchive *)arg1 unarchiver:(id)arg2;
++     // Error parsing type: @32@0:8r^{FillArchive=^^?{ExtensionSet=^{Arena}SS(AllocatedData=^{KeyValue}^{map<int, google::protobuf::internal::ExtensionSet::Extension, std::__1::less<int>, std::__1::allocator<std::__1::pair<const int, google::protobuf::internal::ExtensionSet::Extension> > >})}{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{Color}^{GradientArchive}^{ImageFillArchive}}16@24, name: instanceWithArchive:unarchiver:
 + (id)lightingModelWithSageFillData:(id)arg1;
 + (id)fillWithSageFillData:(id)arg1;
 @property(retain, nonatomic) NSNumber *percentage; // @synthesize percentage=_percentage;
@@ -61,8 +61,8 @@ __attribute__((visibility("hidden")))
 - (id)init;
 @property(readonly) TSDFill *swatchFill; // @synthesize swatchFill=_swatchFill;
 - (id)convertForChartSeriesType:(id)arg1 context:(id)arg2;
-- (void)saveToArchive:(struct FillArchive *)arg1 archiver:(id)arg2;
-- (id)initWithArchive:(const struct FillArchive *)arg1 unarchiver:(id)arg2;
+-     // Error parsing type: v32@0:8^{FillArchive=^^?{ExtensionSet=^{Arena}SS(AllocatedData=^{KeyValue}^{map<int, google::protobuf::internal::ExtensionSet::Extension, std::__1::less<int>, std::__1::allocator<std::__1::pair<const int, google::protobuf::internal::ExtensionSet::Extension> > >})}{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{Color}^{GradientArchive}^{ImageFillArchive}}16@24, name: saveToArchive:archiver:
+-     // Error parsing type: @32@0:8r^{FillArchive=^^?{ExtensionSet=^{Arena}SS(AllocatedData=^{KeyValue}^{map<int, google::protobuf::internal::ExtensionSet::Extension, std::__1::less<int>, std::__1::allocator<std::__1::pair<const int, google::protobuf::internal::ExtensionSet::Extension> > >})}{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{Color}^{GradientArchive}^{ImageFillArchive}}16@24, name: initWithArchive:unarchiver:
 - (void)assignQuicklookColorToMaterialDiffuseColorForLightingModel:(id)arg1;
 - (id)representativeDiffuseColor;
 - (id)sageFillData;

@@ -43,6 +43,7 @@
 - (id)_complicationView;
 - (void)_applyRubberBandingFraction:(float)arg1 forCustomEditMode:(int)arg2 slot:(id)arg3;
 - (void)_applyBreathingFraction:(float)arg1 forCustomEditMode:(int)arg2 slot:(id)arg3;
+- (float)_keylineCornerRadiusForComplicationSlot:(id)arg1;
 - (unsigned int)_keylineLabelAlignmentForComplicationSlot:(id)arg1;
 - (_Bool)_keylineLabelShouldShowIndividualOptionNamesForCustomEditMode:(int)arg1;
 - (struct UIEdgeInsets)_keylineLabelActiveAreaInsetsForCustomEditMode:(int)arg1 slot:(id)arg2;

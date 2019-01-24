@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
 }
 
 - (void).cxx_destruct;
-- (void)saveToArchive:(struct PlaceholderSmartFieldArchive *)arg1 archiver:(id)arg2;
-- (void)loadFromArchive:(const struct PlaceholderSmartFieldArchive *)arg1 unarchiver:(id)arg2;
+-     // Error parsing type: v32@0:8^{PlaceholderSmartFieldArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}^{SmartFieldArchive}B}16@24, name: saveToArchive:archiver:
+-     // Error parsing type: v32@0:8r^{PlaceholderSmartFieldArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{ArenaStringPtr=^{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >}}^{SmartFieldArchive}B}16@24, name: loadFromArchive:unarchiver:
 - (void)saveToArchiver:(id)arg1;
 - (void)loadFromUnarchiver:(id)arg1;
 - (int)smartFieldKind;

@@ -19,8 +19,8 @@ __attribute__((visibility("hidden")))
 - (id).cxx_construct;
 - (id)texcoordsForSeries:(id)arg1 index:(const tvec2_3b141483 *)arg2;
 - (id)normalsForSeries:(id)arg1 index:(const tvec2_3b141483 *)arg2;
-- (struct GeometryResource)boundsGeometryForSeries:(id)arg1 index:(const tvec2_3b141483 *)arg2;
-- (struct GeometryResource)geometryForSeries:(id)arg1 index:(const tvec2_3b141483 *)arg2;
+- (id)boundsGeometryForSeries:(id)arg1 index:(const tvec2_3b141483 *)arg2;
+- (id)geometryForSeries:(id)arg1 index:(const tvec2_3b141483 *)arg2;
 - (void)createResources;
 - (void)resetWithEnumerator:(id)arg1 layoutSettings:(CDStruct_b1c75024)arg2;
 - (id)copyWithZone:(struct _NSZone *)arg1;

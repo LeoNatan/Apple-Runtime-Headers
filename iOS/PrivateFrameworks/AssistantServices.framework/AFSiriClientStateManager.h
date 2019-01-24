@@ -7,7 +7,7 @@
 #import <objc/NSObject.h>
 
 @class AFNotifyStatePublisher, NSMapTable;
-@protocol OS_dispatch_queue;
+@protocol OS_dispatch_group, OS_dispatch_queue;
 
 @interface AFSiriClientStateManager : NSObject
 {
@@ -15,10 +15,12 @@
     AFNotifyStatePublisher *_publisher;
     NSMapTable *_statesByClient;
     long long _transactionDepth;
+    NSObject<OS_dispatch_group> *_presentationTransitionGroup;
 }
 
 + (id)sharedManager;
 - (void).cxx_destruct;
+- (unsigned long long)_aggregatedState;
 - (void)_aggregateStatesAndPublishIfNeeded;
 - (void)_endSpeakingForClient:(void *)arg1;
 - (void)_beginSpeakingForClient:(void *)arg1;
@@ -30,6 +32,9 @@
 - (void)_beginSessionForClient:(void *)arg1;
 - (void)_removeStateForClient:(void *)arg1;
 - (id)_stateForClient:(void *)arg1 createIfAbsent:(_Bool)arg2;
+- (void)getCurrentStateWithCompletion:(CDUnknownBlockType)arg1;
+- (void)endPresentationTransition;
+- (void)beginPresentationTransition;
 - (void)endTransaction;
 - (void)beginTransaction;
 - (void)endSpeakingForClient:(id)arg1;

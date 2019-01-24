@@ -6,13 +6,14 @@
 
 #import <ClockKitUI/CLKUIQuad.h>
 
-@class NUScene;
+@class NUResources, NUScene;
 
 @interface NUGLQuad : CLKUIQuad
 {
     unsigned int _isPrepared:1;
     unsigned int _vertexArray;
     double _baseTime;
+    NUResources *_resources;
     NUScene *_scene;
 }
 
@@ -20,6 +21,7 @@
 - (void).cxx_destruct;
 - (void)encodeGLforSize:(struct CLKUIQuadSize)arg1;
 - (void)prepare;
+- (id)initWithResources:(id)arg1;
 
 @end
 

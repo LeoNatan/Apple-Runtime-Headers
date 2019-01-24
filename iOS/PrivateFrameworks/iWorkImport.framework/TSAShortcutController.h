@@ -19,9 +19,9 @@ __attribute__((visibility("hidden")))
 + (id)localizedStringForShortcut:(id)arg1;
 @property(nonatomic) TSADocumentRoot *documentRoot; // @synthesize documentRoot=_documentRoot;
 - (void)saveToArchiver:(id)arg1;
-- (void)saveToArchive:(struct ShortcutControllerArchive *)arg1 archiver:(id)arg2;
+-     // Error parsing type: v32@0:8^{ShortcutControllerArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSA::ShortcutControllerArchive_ShortcutMapEntry>=^{Arena}ii^{Rep}}}16@24, name: saveToArchive:archiver:
 - (void)loadFromUnarchiver:(id)arg1;
-- (void)loadFromArchive:(const struct ShortcutControllerArchive *)arg1 unarchiver:(id)arg2;
+-     // Error parsing type: v32@0:8r^{ShortcutControllerArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSA::ShortcutControllerArchive_ShortcutMapEntry>=^{Arena}ii^{Rep}}}16@24, name: loadFromArchive:unarchiver:
 - (void)removeStylesNotInTheme;
 - (void)setStyle:(id)arg1 forShortcut:(id)arg2;
 - (id)styleForShortcut:(id)arg1;

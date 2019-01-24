@@ -15,6 +15,6 @@
 - (void)writeResultsForCalcEngine:(TSCECalculationEngine *)arg1;
 - (CDStruct_2a4d9400)recalculateForCalcEngine:(TSCECalculationEngine *)arg1 atFormulaCoord:(struct TSUCellCoord)arg2 recalcOptions:(CDStruct_3d581f42)arg3;
 - (id <TSCEReferenceResolving>)linkedResolver;
-- (int)ownerKind;
+- (unsigned short)ownerKind;
 @end
 

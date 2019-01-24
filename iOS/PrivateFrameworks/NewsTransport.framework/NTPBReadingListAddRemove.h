@@ -8,7 +8,7 @@
 
 #import <NewsTransport/NSCopying-Protocol.h>
 
-@class NSData, NSMutableArray, NSString;
+@class NSData, NSMutableArray, NSString, NTPBChannelData, NTPBIssueData, NTPBIssueExposureData;
 
 @interface NTPBReadingListAddRemove : PBCodable <NSCopying>
 {
@@ -22,7 +22,9 @@
     int _backendArticleVersion;
     NSString *_campaignId;
     NSString *_campaignType;
+    NTPBChannelData *_channelData;
     int _characterCount;
+    int _contentType;
     NSString *_creativeId;
     int _feedType;
     NSMutableArray *_fractionalCohortMemberships;
@@ -33,6 +35,8 @@
     NSString *_iadNativeCampaign;
     NSString *_iadNativeCampaignAd;
     NSString *_iadNativeLine;
+    NTPBIssueData *_issueData;
+    NTPBIssueExposureData *_issueExposureData;
     NSString *_language;
     NSMutableArray *_namedEntities;
     NSString *_nativeCampaignData;
@@ -71,6 +75,7 @@
         unsigned int articleType:1;
         unsigned int backendArticleVersion:1;
         unsigned int characterCount:1;
+        unsigned int contentType:1;
         unsigned int feedType:1;
         unsigned int groupType:1;
         unsigned int nextArticleAffordanceType:1;
@@ -94,6 +99,9 @@
 
 + (Class)fractionalCohortMembershipType;
 + (Class)namedEntitiesType;
+@property(retain, nonatomic) NTPBChannelData *channelData; // @synthesize channelData=_channelData;
+@property(retain, nonatomic) NTPBIssueExposureData *issueExposureData; // @synthesize issueExposureData=_issueExposureData;
+@property(retain, nonatomic) NTPBIssueData *issueData; // @synthesize issueData=_issueData;
 @property(retain, nonatomic) NSData *groupViewExposureId; // @synthesize groupViewExposureId=_groupViewExposureId;
 @property(retain, nonatomic) NSString *iadNativeCampaignAd; // @synthesize iadNativeCampaignAd=_iadNativeCampaignAd;
 @property(nonatomic) long long previousArticlePublisherArticleVersion; // @synthesize previousArticlePublisherArticleVersion=_previousArticlePublisherArticleVersion;
@@ -146,6 +154,13 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(readonly, nonatomic) _Bool hasChannelData;
+- (int)StringAsContentType:(id)arg1;
+- (id)contentTypeAsString:(int)arg1;
+@property(nonatomic) _Bool hasContentType;
+@property(nonatomic) int contentType; // @synthesize contentType=_contentType;
+@property(readonly, nonatomic) _Bool hasIssueExposureData;
+@property(readonly, nonatomic) _Bool hasIssueData;
 @property(readonly, nonatomic) _Bool hasGroupViewExposureId;
 @property(readonly, nonatomic) _Bool hasIadNativeCampaignAd;
 @property(nonatomic) _Bool hasPreviousArticlePublisherArticleVersion;

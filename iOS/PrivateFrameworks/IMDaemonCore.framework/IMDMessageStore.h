@@ -57,6 +57,8 @@
 - (id)deleteMessageGUIDs:(id)arg1;
 - (id)deleteMessageGUIDs:(id)arg1 inChat:(id)arg2;
 - (void)resolveUnformattedRepresentationsForHandles:(id)arg1 onService:(id)arg2 message:(id)arg3 completionBlock:(CDUnknownBlockType)arg4;
+- (id)_cleanUnformattedPhoneNumber:(id)arg1 countryCode:(id)arg2;
+- (struct _IMDHandleRecordStruct *)_copyHandle:(id)arg1 onService:(id)arg2;
 - (id)_chatsForMessageGUID:(id)arg1 enableVerboseLogging:(_Bool)arg2;
 - (id)chatsForMessageGUID:(id)arg1;
 - (id)chatsForMessage:(id)arg1;

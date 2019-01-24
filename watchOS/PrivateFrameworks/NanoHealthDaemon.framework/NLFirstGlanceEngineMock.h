@@ -27,7 +27,7 @@
 - (void).cxx_destruct;
 - (unsigned int)firstGlanceTypeForToday;
 - (double)recommendedGoalInCalories;
-- (id)bestWorkoutYesterday;
+- (id)bestWorkoutYesterdayLongerThan15Minutes;
 - (id)yesterdayActivitySummary;
 - (id)bestCompletedActivitySummaryThisWeek;
 - (id)_mockSummary;

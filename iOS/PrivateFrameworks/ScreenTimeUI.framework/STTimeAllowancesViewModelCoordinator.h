@@ -35,6 +35,7 @@
 - (void)_saveActivationDictionary:(id)arg1 configurationDictionaries:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)respondToAskForTime:(id)arg1 withApproval:(_Bool)arg2 timeApproved:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)saveAlwaysAllowList:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)saveAllAllowancesEnabled:(_Bool)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)deleteAllowance:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)saveAllowance:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)saveDeviceBedtime:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;

@@ -18,7 +18,7 @@ __attribute__((visibility("hidden")))
     NSMutableArray *_cleanCellDependencyRows;
 }
 
-+ (id)stringForOwnerKind:(int)arg1;
++ (id)stringForOwnerKind:(unsigned short)arg1;
 @property(retain, nonatomic) NSMutableArray *cleanCellDependencyRows; // @synthesize cleanCellDependencyRows=_cleanCellDependencyRows;
 @property(retain, nonatomic) NSMutableArray *dirtyCellDependencyRows; // @synthesize dirtyCellDependencyRows=_dirtyCellDependencyRows;
 @property(nonatomic) _Bool showCleanCells; // @synthesize showCleanCells=_showCleanCells;

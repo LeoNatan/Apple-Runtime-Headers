@@ -20,6 +20,7 @@
 - (void).cxx_destruct;
 - (void)readerSessionDidEndUnexpectedly:(id)arg1;
 - (void)readerSession:(id)arg1 didDetectTags:(id)arg2;
+- (void)readNDEFMessageFromTag:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)endSession;
 - (void)stopPolling;
 - (void)startPolling;

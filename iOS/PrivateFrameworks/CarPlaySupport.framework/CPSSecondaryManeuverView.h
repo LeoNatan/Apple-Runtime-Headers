@@ -19,8 +19,9 @@
 @property(retain, nonatomic) CPManeuver *maneuver; // @synthesize maneuver=_maneuver;
 @property(retain, nonatomic) UIImageView *symbolView; // @synthesize symbolView=_symbolView;
 - (void).cxx_destruct;
-- (id)initWithManeuver:(id)arg1 minimalMode:(_Bool)arg2 style:(long long)arg3;
+- (id)initWithManeuver:(id)arg1 style:(long long)arg2;
 - (void)backgroundColorDidChange;
+- (struct CGSize)intrinsicContentSize;
 
 @end
 

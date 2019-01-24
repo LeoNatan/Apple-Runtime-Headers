@@ -18,6 +18,7 @@
     NSDecimalNumber *_minLoadedBalance;
     NSDecimalNumber *_maxLoadedBalance;
     NSArray *_defaultSuggestions;
+    NSArray *_lowBalanceReminderOptions;
     NSString *_currency;
     NSDictionary *_serviceProviderData;
 }
@@ -26,6 +27,7 @@
 @property(readonly, copy, nonatomic) NSDictionary *serviceProviderData; // @synthesize serviceProviderData=_serviceProviderData;
 @property(readonly, copy, nonatomic) NSString *currency; // @synthesize currency=_currency;
 @property(readonly, nonatomic) _Bool maxAmountIncludesLocalBalance; // @synthesize maxAmountIncludesLocalBalance=_maxAmountIncludesLocalBalance;
+@property(readonly, copy, nonatomic) NSArray *lowBalanceReminderOptions; // @synthesize lowBalanceReminderOptions=_lowBalanceReminderOptions;
 @property(readonly, copy, nonatomic) NSArray *defaultSuggestions; // @synthesize defaultSuggestions=_defaultSuggestions;
 @property(readonly, copy, nonatomic) NSDecimalNumber *maxLoadedBalance; // @synthesize maxLoadedBalance=_maxLoadedBalance;
 @property(readonly, copy, nonatomic) NSDecimalNumber *minLoadedBalance; // @synthesize minLoadedBalance=_minLoadedBalance;

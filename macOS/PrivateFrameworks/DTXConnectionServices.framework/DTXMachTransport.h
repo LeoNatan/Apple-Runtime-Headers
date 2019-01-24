@@ -6,36 +6,36 @@
 
 #import <DTXConnectionServices/DTXTransport.h>
 
-@class NSObject, NSURL;
+@class NSObject;
 @protocol OS_dispatch_queue, OS_dispatch_source;
 
 @interface DTXMachTransport : DTXTransport
 {
     unsigned int _receivePort;
     unsigned int _sendPort;
-    NSURL *_connectableAddress;
+    NSObject<OS_dispatch_queue> *_inputQueue;
+    NSObject<OS_dispatch_queue> *_outputQueue;
     NSObject<OS_dispatch_source> *_listenSource;
     NSObject<OS_dispatch_source> *_deadPortSource;
-    NSObject<OS_dispatch_queue> *_inputQueue;
+    CDUnknownBlockType _disconnectBlock;
     struct DTXMachMessage *_sendBuffer;
     unsigned int _bufferedLength;
 }
 
 + (id)fileDescriptorHandshakeWithSendPort:(unsigned int)arg1;
 + (id)fileDescriptorHandshakeWithReceivePort:(unsigned int)arg1;
-+ (id)addressForSendPort:(unsigned int)arg1 receivePort:(unsigned int)arg2 inProcess:(int)arg3;
-+ (id)transportForCommunicationWithTask:(unsigned int)arg1;
 + (id)schemes;
 - (void).cxx_destruct;
 - (id)localAddresses;
 - (void)disconnect;
 - (unsigned long long)transmit:(const void *)arg1 ofLength:(unsigned long long)arg2;
 - (void)dealloc;
+- (id)serializedXPCRepresentation;
+- (id)initWithXPCRepresentation:(id)arg1;
 - (id)initWithRemoteAddress:(id)arg1;
-- (id)initWithLocalAddress:(id)arg1;
-- (id)initWithSendPort:(unsigned int)arg1 receivePort:(unsigned int)arg2 publishedAddress:(id)arg3;
-- (BOOL)_setupWithAddress:(id)arg1;
-- (BOOL)_setupWithSendPort:(unsigned int)arg1 receivePort:(unsigned int)arg2 publishedAddress:(id)arg3;
+- (id)initWithReceiveRight:(unsigned int)arg1 sendRight:(unsigned int)arg2 disconnectBlock:(CDUnknownBlockType)arg3;
+- (id)init;
+- (BOOL)_setupWithSendPort:(unsigned int)arg1 receivePort:(unsigned int)arg2 disconnectBlock:(CDUnknownBlockType)arg3;
 
 @end
 

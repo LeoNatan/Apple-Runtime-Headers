@@ -19,7 +19,7 @@ __attribute__((visibility("hidden")))
     _Bool _isFinished;
     NSObject<OS_dispatch_queue> *_accessQueue;
     NSObject<OS_dispatch_queue> *_ioQueue;
-    struct ObjectSerializationDirectory _directory;
+    // Error parsing type: {ObjectSerializationDirectory="_vptr$MessageLite"^^?"_internal_metadata_"{InternalMetadataWithArena="ptr_"^v}"_has_bits_"{HasBits<1>="has_bits_"[1I]}"_cached_size_"{CachedSize="size_"{atomic<int>="__a_"Ai}}"entries_"{RepeatedPtrField<TSP::ObjectSerializationDirectory_Entry>="arena_"^{Arena}"current_size_"i"total_size_"i"rep_"^{Rep}}}, name: _directory
     TSPMemoryComponentWriteChannel *_metadataWriteChannel;
     TSPMemoryComponentWriteChannel *_rootComponentWriteChannel;
     NSObject<OS_dispatch_data> *_encodedData;

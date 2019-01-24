@@ -72,15 +72,15 @@ __attribute__((visibility("hidden")))
 - (unsigned long long)pageCountForAttachment:(id)arg1;
 - (unsigned long long)pageNumberForAttachment:(id)arg1;
 - (int)naturalAlignmentForTextLayout:(id)arg1;
-- (double)maxAutoGrowHeightForTextLayout:(id)arg1;
-- (double)maxAutoGrowWidthForTextLayout:(id)arg1;
+- (double)maxAutoGrowBlockHeightForTextLayout:(id)arg1;
+- (double)maxAutoGrowLineWidthForTextLayout:(id)arg1;
 - (Class)repClassForTextLayout:(id)arg1;
 - (id)dependentsOfTextLayout:(id)arg1;
 - (struct CGRect)autosizedFrameForTextLayout:(id)arg1 textSize:(struct CGSize)arg2;
 - (struct CGRect)nonAutosizedFrameForTextLayout:(id)arg1;
 - (void)invalidateForAutosizingTextLayout:(id)arg1;
 - (int)verticalAlignmentForTextLayout:(id)arg1;
-- (unsigned int)autosizeFlagsForTextLayout:(id)arg1;
+- (unsigned long long)autosizeFlagsForTextLayout:(id)arg1;
 - (void)wrappableChildInvalidated:(id)arg1;
 - (void)endResizeWrapInvalidationCluster;
 - (void)beginResizeWrapInvalidationCluster;
@@ -90,7 +90,7 @@ __attribute__((visibility("hidden")))
 - (id)layoutsCausingWrapOnTextLayoutTarget:(id)arg1 ignoreIntersection:(_Bool)arg2;
 - (struct CGRect)footnoteContainerFrameWithSize:(struct CGSize)arg1;
 - (void)inflateFootnotesInFootnoteContainer:(id)arg1;
-- (double)heightAvailableForFootnotes;
+- (double)blockHeightAvailableForFootnotes;
 - (void)setNeedsInflation;
 - (void)rebuildChildLayoutsOnNextValidationForcingTextLayout:(_Bool)arg1;
 - (void)invalidateFootnoteContainers;

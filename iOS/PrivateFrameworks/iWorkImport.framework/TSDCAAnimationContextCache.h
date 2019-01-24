@@ -13,13 +13,17 @@
 __attribute__((visibility("hidden")))
 @interface TSDCAAnimationContextCache : NSObject <TSDCAAnimationContextCacheProtocol>
 {
+    _Bool _autoreverses;
     CAMediaTimingFunction *_timingFunction;
     double _beginTime;
     double _timeOffset;
     double _duration;
     NSString *_fillMode;
+    double _repeatCount;
 }
 
+@property(readonly, nonatomic) double repeatCount; // @synthesize repeatCount=_repeatCount;
+@property(readonly, nonatomic) _Bool autoreverses; // @synthesize autoreverses=_autoreverses;
 @property(readonly, nonatomic) NSString *fillMode; // @synthesize fillMode=_fillMode;
 @property(readonly, nonatomic) double duration; // @synthesize duration=_duration;
 @property(readonly, nonatomic) double timeOffset; // @synthesize timeOffset=_timeOffset;
@@ -30,7 +34,9 @@ __attribute__((visibility("hidden")))
 - (id)valueAtTime:(double)arg1 initialValue:(id)arg2;
 - (id)valueAtTime:(double)arg1 initialValue:(id)arg2 groupTimingFactor:(double)arg3;
 - (id)valueForKeyPath:(id)arg1 atTime:(double)arg2 animationCache:(id)arg3;
+- (double)workingPercentFromAnimationTime:(double)arg1;
 - (double)animationPercentFromAnimationTime:(double)arg1;
+- (_Bool)shouldUseInitialValueAtAnimationTime:(double)arg1;
 - (id)initWithAnimation:(id)arg1;
 
 // Remaining properties

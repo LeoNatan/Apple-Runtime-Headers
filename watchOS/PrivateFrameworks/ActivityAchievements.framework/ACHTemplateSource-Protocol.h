@@ -6,7 +6,7 @@
 
 #import <ActivityAchievements/NSObject-Protocol.h>
 
-@class ACHTemplate, NSDate, NSDictionary, NSObject, NSString, NSURL;
+@class ACHTemplate, HDDatabaseTransactionContext, NSDate, NSDictionary, NSObject, NSString, NSURL;
 @protocol ACHTemplateSourceDelegate;
 
 @protocol ACHTemplateSource <NSObject>
@@ -23,5 +23,6 @@
 @property(nonatomic) __weak NSObject<ACHTemplateSourceDelegate> *delegate;
 - (NSString *)textureFilenameForTemplate:(ACHTemplate *)arg1;
 - (NSDictionary *)customPlaceholderValuesForTemplate:(ACHTemplate *)arg1;
+- (void)templatesForDate:(NSDate *)arg1 databaseContext:(HDDatabaseTransactionContext *)arg2 completion:(void (^)(NSSet *))arg3;
 @end
 

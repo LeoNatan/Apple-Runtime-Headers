@@ -65,7 +65,7 @@ __attribute__((visibility("hidden")))
 - (struct CGImage *)CGImageResampledToSize:(struct CGSize)arg1 lowQuality:(_Bool)arg2;
 - (id)p_cacheSuffixForScale:(unsigned long long)arg1;
 - (long long)p_reciprocalScaleForImageSize:(struct CGSize)arg1;
-- (struct CGImage *)CGImageForSize:(struct CGSize)arg1 inContext:(struct CGContext *)arg2 orLayer:(id)arg3;
+- (struct CGImage *)CGImageForSize:(struct CGSize)arg1 inContext:(struct CGContext *)arg2 orContentsScaleProvider:(id)arg3;
 - (struct CGImage *)CGImageForNaturalSize;
 - (void)drawImageInContext:(struct CGContext *)arg1 rect:(struct CGRect)arg2;
 - (_Bool)isValid;

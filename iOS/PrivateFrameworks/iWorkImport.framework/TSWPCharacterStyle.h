@@ -24,10 +24,10 @@ __attribute__((visibility("hidden")))
 - (_Bool)transformsFontSizes;
 - (id)archivableRepresentationOfChangeSet:(id)arg1;
 - (void)saveToArchiver:(id)arg1;
-- (void)saveToArchive:(struct CharacterStyleArchive *)arg1 archiver:(id)arg2;
+-     // Error parsing type: v32@0:8^{CharacterStyleArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{StyleArchive}^{CharacterStylePropertiesArchive}I}16@24, name: saveToArchive:archiver:
 - (void)loadFromUnarchiver:(id)arg1;
 - (int)writingDirection;
-- (void)loadFromArchive:(const struct CharacterStyleArchive *)arg1 unarchiver:(id)arg2;
+-     // Error parsing type: v32@0:8r^{CharacterStyleArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{StyleArchive}^{CharacterStylePropertiesArchive}I}16@24, name: loadFromArchive:unarchiver:
 @property(readonly, nonatomic) NSString *presetKind;
 
 @end

@@ -15,7 +15,6 @@
     NSObject<OS_dispatch_semaphore> *_semaphore;
     NSString *_specificationVersion;
     NSMutableDictionary *_objectStorage;
-    id _backingObject;
 }
 
 + (Class)classForProtocolProperty:(id)arg1 withValue:(id)arg2;
@@ -30,25 +29,22 @@
 + (void)initializeJSONObject;
 + (void)initialize;
 + (Class)classOverrideAtInitialization:(Class)arg1 type:(id)arg2;
-@property(retain, nonatomic) id backingObject; // @synthesize backingObject=_backingObject;
 @property(retain, nonatomic) NSMutableDictionary *objectStorage; // @synthesize objectStorage=_objectStorage;
 @property(readonly, nonatomic) NSString *specificationVersion; // @synthesize specificationVersion=_specificationVersion;
 @property(readonly, nonatomic) NSObject<OS_dispatch_semaphore> *semaphore; // @synthesize semaphore=_semaphore;
 @property(retain, nonatomic) NSDictionary *jsonDictionary; // @synthesize jsonDictionary=_jsonDictionary;
 - (void).cxx_destruct;
-- (_Bool)hasJSONStore;
+- (id)JSONRepresentation;
 - (id)valueForLookupKey:(id)arg1;
 - (void)storeValue:(id)arg1 forLookupKey:(id)arg2;
 - (id)objectForLookupKey:(id)arg1;
 - (void)storeObject:(id)arg1 forLookupKey:(id)arg2;
 - (id)flatCopy;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (id)explodedBackingObjects;
-- (void)setBackingObject:(id)arg1 forPropertiesOfClass:(Class)arg2;
 - (id)jsonData;
+- (_Bool)isEqual:(id)arg1;
 - (id)initWithJSONObject:(id)arg1 andVersion:(id)arg2;
 - (id)initWithJSONData:(id)arg1 andVersion:(id)arg2;
-- (id)initWithBackingObject:(id)arg1 andVersion:(id)arg2;
 
 @end
 

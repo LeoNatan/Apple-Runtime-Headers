@@ -19,8 +19,8 @@ __attribute__((visibility("hidden")))
 @property(readonly) struct _NSRange range; // @synthesize range=_range;
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (void)saveToMessage:(struct RewriteRangeEntryArchive *)arg1;
-- (id)initFromMessage:(const struct RewriteRangeEntryArchive *)arg1;
+-     // Error parsing type: v24@0:8^{RewriteRangeEntryArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSP::UUID>=^{Arena}ii^{Rep}}III}16, name: saveToMessage:
+-     // Error parsing type: @24@0:8r^{RewriteRangeEntryArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSP::UUID>=^{Arena}ii^{Rep}}III}16, name: initFromMessage:
 - (id)initWithRange:(struct _NSRange)arg1 orderedUuids:(const vector_4dc5f307 *)arg2 offset:(unsigned int)arg3;
 
 @end

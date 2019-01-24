@@ -45,6 +45,7 @@
 - (void)_configureDatabase:(id)arg1 currentSchemaVersion:(int)arg2;
 - (void)_openDatabasesIfNeeded;
 - (id)_normalizeDomain:(id)arg1;
+- (int)_migrateToSchemaVersion_4;
 - (int)_migrateToSchemaVersion_3;
 - (int)_migrateToSchemaVersion_2;
 - (int)_createFreshParsecDatabaseSchema;

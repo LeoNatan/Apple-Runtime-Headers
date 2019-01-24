@@ -24,6 +24,7 @@
 @property(readonly, nonatomic) NSString *domain; // @synthesize domain=_domain;
 @property(readonly, nonatomic) NSString *pageTitle; // @synthesize pageTitle=_pageTitle;
 - (void).cxx_destruct;
+- (_Bool)test_readerIsAvailable;
 - (id)test_webView;
 - (void)_closeButtonTapped;
 - (void)_updateStatusBarTitle:(id)arg1 isSecure:(_Bool)arg2;

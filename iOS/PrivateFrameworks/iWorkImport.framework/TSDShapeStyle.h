@@ -22,8 +22,8 @@ __attribute__((visibility("hidden")))
 + (float)defaultFloatValueForProperty:(int)arg1;
 + (id)properties;
 + (void)initialize;
-+ (void)saveShapeStylePropertyMap:(id)arg1 toArchive:(struct ShapeStylePropertiesArchive *)arg2 archiver:(id)arg3;
-+ (void)loadShapeStylePropertiesIntoPropertyMap:(id)arg1 fromArchive:(const struct ShapeStylePropertiesArchive *)arg2 unarchiver:(id)arg3;
++     // Error parsing type: v40@0:8@16^{ShapeStylePropertiesArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{FillArchive}^{StrokeArchive}^{ShadowArchive}^{ReflectionArchive}^{LineEndArchive}^{LineEndArchive}f}24@32, name: saveShapeStylePropertyMap:toArchive:archiver:
++     // Error parsing type: v40@0:8@16r^{ShapeStylePropertiesArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{FillArchive}^{StrokeArchive}^{ShadowArchive}^{ReflectionArchive}^{LineEndArchive}^{LineEndArchive}f}24@32, name: loadShapeStylePropertiesIntoPropertyMap:fromArchive:unarchiver:
 - (_Bool)hasLineEnds;
 - (_Bool)wantsHighContrastStrokeColorWithColor:(id)arg1;
 - (_Bool)wantsHighContrastFillColorWithColor:(id)arg1;
@@ -34,9 +34,9 @@ __attribute__((visibility("hidden")))
 - (long long)mixingTypeWithObject:(id)arg1 context:(id)arg2;
 @property(readonly, nonatomic) NSString *presetKind;
 - (struct CGSize)targetSizeForImageData:(id)arg1 associatedHint:(id)arg2;
-- (void)saveToArchive:(struct ShapeStyleArchive *)arg1 archiver:(id)arg2;
+-     // Error parsing type: v32@0:8^{ShapeStyleArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{StyleArchive}^{ShapeStylePropertiesArchive}I}16@24, name: saveToArchive:archiver:
 - (void)saveToArchiver:(id)arg1;
-- (void)loadFromArchive:(const struct ShapeStyleArchive *)arg1 unarchiver:(id)arg2;
+-     // Error parsing type: v32@0:8r^{ShapeStyleArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}^{StyleArchive}^{ShapeStylePropertiesArchive}I}16@24, name: loadFromArchive:unarchiver:
 - (void)loadFromUnarchiver:(id)arg1;
 - (void)fixImageFillTechniqueForSwatchOfSize:(struct CGSize)arg1;
 

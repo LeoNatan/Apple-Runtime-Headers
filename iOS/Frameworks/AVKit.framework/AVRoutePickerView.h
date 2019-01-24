@@ -19,6 +19,7 @@
     UIViewPropertyAnimator *_buttonHighlightAnimator;
     AVObservationController *_observationController;
     _Bool _airPlayActive;
+    _Bool _prioritizesVideoDevices;
     AVMicaPackage *_routePickerButtonMicaPackage;
     MPMediaControlsViewController *_routePickerViewController;
     id <AVRoutePickerViewDelegate> _delegate;
@@ -38,6 +39,8 @@
 - (void)_routePickerButtonTouchDown:(id)arg1;
 - (void)_routePickerButtonTapped:(id)arg1;
 - (void)_createOrUpdateRoutePickerButton;
+- (void)setPrioritizesVideoDevices:(_Bool)arg1;
+- (_Bool)prioritizesVideoDevices;
 - (void)updateButtonAppearance;
 - (void)setCustomButton:(id)arg1;
 - (id)customButton;

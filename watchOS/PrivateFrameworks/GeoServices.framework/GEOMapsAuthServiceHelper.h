@@ -11,8 +11,19 @@
 }
 
 + (id)sharedAuthHelper;
+- (void)handleSecureProxyChallenge:(id)arg1;
+- (void)addProxyAuthHeaderOrReAuth:(id)arg1 authProxyURL:(id)arg2;
+- (void)setConnectionProxyDictionary:(id)arg1 url:(id)arg2 proxyURL:(id)arg3;
+- (_Bool)_checkACTokenResponseData:(id)arg1 response:(id)arg2 error:(id)arg3 suppressNotification:(_Bool)arg4;
+- (_Bool)_checkMRTResponseData:(id)arg1 response:(id)arg2 error:(id)arg3 suppressNotification:(_Bool)arg4;
+- (void)doEnvironmentSwitchCheck:(id)arg1 authProxyURL:(id)arg2 suppressNotification:(_Bool)arg3;
+- (_Bool)_successReplacingTokensFromData:(id)arg1;
+- (int)_statusCodeFromResponse:(id)arg1;
+- (void)renewMapsAuthProxyToken:(unsigned int)arg1 fromToken:(id)arg2 authProxyURL:(id)arg3 suppressNotification:(_Bool)arg4;
+- (void)sendProxyAuthNotification:(int)arg1;
 - (void)removeMapsAuthDidFinishObserver:(id)arg1;
 - (void)addMapsAuthDidFinishObserver:(id)arg1;
+- (id)_tokenTypeString:(unsigned int)arg1;
 
 @end
 

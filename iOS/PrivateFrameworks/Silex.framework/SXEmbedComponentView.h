@@ -13,8 +13,8 @@
 #import <Silex/WKScriptMessageHandler-Protocol.h>
 #import <Silex/WKUIDelegate-Protocol.h>
 
-@class NSMutableSet, NSString, SXEmbedResource, SXWebCrashRetryThrottler, UIActivityIndicatorView, UILabel, WKNavigation, WKWebView;
-@protocol SXComponentActionHandler, SXEmbedService, SXEmbedType, SXReachabilityProvider;
+@class NFMultiDelegate, NSMutableSet, NSString, SXEmbedResource, SXWebCrashRetryThrottler, UIActivityIndicatorView, UILabel, WKNavigation, WKWebView;
+@protocol SXComponentActionHandler, SXEmbedService, SXEmbedType, SXLayoutInvalidator, SXReachabilityProvider;
 
 @interface SXEmbedComponentView : SXComponentView <WKNavigationDelegate, WKUIDelegate, WKScriptMessageHandler, UIGestureRecognizerDelegate, UIScrollViewDelegate, SXViewportChangeListener>
 {
@@ -24,6 +24,7 @@
     id <SXReachabilityProvider> _reachabilityProvider;
     id <SXEmbedService> _embedService;
     id <SXComponentActionHandler> _actionHandler;
+    id <SXLayoutInvalidator> _layoutInvalidator;
     id <SXEmbedType> _embedConfiguration;
     SXEmbedResource *_embedResource;
     WKWebView *_webView;
@@ -35,16 +36,16 @@
     NSMutableSet *_expectedMessages;
     UIActivityIndicatorView *_activityIndicator;
     WKNavigation *_initialNavigation;
+    NFMultiDelegate *_scriptMessageHandler;
     struct CGSize _currentlyLayoutingForSize;
     struct CGSize _currentLayoutSize;
     struct CGSize _currentViewportSize;
-    struct CGPoint _lastKnownTouchPoint;
 }
 
+@property(readonly, nonatomic) NFMultiDelegate *scriptMessageHandler; // @synthesize scriptMessageHandler=_scriptMessageHandler;
 @property(nonatomic) _Bool hasRegisteredScriptMessageHandlers; // @synthesize hasRegisteredScriptMessageHandlers=_hasRegisteredScriptMessageHandlers;
 @property(retain, nonatomic) WKNavigation *initialNavigation; // @synthesize initialNavigation=_initialNavigation;
 @property(nonatomic) _Bool isCurrentlyLoadingEmbedData; // @synthesize isCurrentlyLoadingEmbedData=_isCurrentlyLoadingEmbedData;
-@property(nonatomic) struct CGPoint lastKnownTouchPoint; // @synthesize lastKnownTouchPoint=_lastKnownTouchPoint;
 @property(nonatomic) struct CGSize currentViewportSize; // @synthesize currentViewportSize=_currentViewportSize;
 @property(nonatomic) struct CGSize currentLayoutSize; // @synthesize currentLayoutSize=_currentLayoutSize;
 @property(nonatomic) struct CGSize currentlyLayoutingForSize; // @synthesize currentlyLayoutingForSize=_currentlyLayoutingForSize;
@@ -59,6 +60,7 @@
 @property(retain, nonatomic) WKWebView *webView; // @synthesize webView=_webView;
 @property(retain, nonatomic) SXEmbedResource *embedResource; // @synthesize embedResource=_embedResource;
 @property(retain, nonatomic) id <SXEmbedType> embedConfiguration; // @synthesize embedConfiguration=_embedConfiguration;
+@property(readonly, nonatomic) id <SXLayoutInvalidator> layoutInvalidator; // @synthesize layoutInvalidator=_layoutInvalidator;
 @property(readonly, nonatomic) id <SXComponentActionHandler> actionHandler; // @synthesize actionHandler=_actionHandler;
 @property(readonly, nonatomic) id <SXEmbedService> embedService; // @synthesize embedService=_embedService;
 @property(readonly, nonatomic) id <SXReachabilityProvider> reachabilityProvider; // @synthesize reachabilityProvider=_reachabilityProvider;
@@ -76,7 +78,6 @@
 - (id)enclosingHTML;
 - (void)scrollViewWillBeginZooming:(id)arg1 withView:(id)arg2;
 - (_Bool)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
-- (void)handleLongPress:(id)arg1;
 - (_Bool)shouldAllowRequestToURL:(id)arg1;
 - (void)webView:(id)arg1 decidePolicyForNavigationAction:(id)arg2 decisionHandler:(CDUnknownBlockType)arg3;
 - (void)webView:(id)arg1 didFinishNavigation:(id)arg2;
@@ -101,7 +102,8 @@
 - (void)willPresentComponent;
 - (void)discardContents;
 - (void)renderContents;
-- (id)initWithDocumentController:(id)arg1 viewport:(id)arg2 presentationDelegate:(id)arg3 analyticsReporting:(id)arg4 componentStyleRendererFactory:(id)arg5 reachabilityProvider:(id)arg6 embedService:(id)arg7 actionHandler:(id)arg8;
+- (void)dealloc;
+- (id)initWithDOMObjectProvider:(id)arg1 viewport:(id)arg2 presentationDelegate:(id)arg3 analyticsReporting:(id)arg4 componentStyleRendererFactory:(id)arg5 reachabilityProvider:(id)arg6 embedService:(id)arg7 actionHandler:(id)arg8 layoutInvalidator:(id)arg9;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

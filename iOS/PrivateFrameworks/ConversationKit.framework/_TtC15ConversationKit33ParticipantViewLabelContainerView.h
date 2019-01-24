@@ -13,7 +13,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (Class)layerClass;
-- (CDUnknownBlockType).cxx_destruct;
+- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 @property(nonatomic, readonly) struct CGSize intrinsicContentSize;
 - (id)initWithFrame:(struct CGRect)arg1;

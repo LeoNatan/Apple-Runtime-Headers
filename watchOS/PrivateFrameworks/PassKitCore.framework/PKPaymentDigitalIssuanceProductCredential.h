@@ -6,24 +6,24 @@
 
 #import <PassKitCore/PKPaymentCredential.h>
 
-@class NSArray, NSString, PKCurrencyAmount, PKPaymentSetupProduct;
+@class NSArray, NSString, PKCurrencyAmount, PKPaymentSetupProduct, PKServiceProviderPurchase;
 
 @interface PKPaymentDigitalIssuanceProductCredential : PKPaymentCredential
 {
     NSString *_productIdentifier;
-    NSString *_provisioningToken;
+    PKServiceProviderPurchase *_purchase;
     PKCurrencyAmount *_balance;
     PKPaymentSetupProduct *_product;
 }
 
 @property(retain, nonatomic) PKPaymentSetupProduct *product; // @synthesize product=_product;
-@property(readonly, copy, nonatomic) PKCurrencyAmount *balance; // @synthesize balance=_balance;
-@property(copy, nonatomic) NSString *provisioningToken; // @synthesize provisioningToken=_provisioningToken;
+@property(copy, nonatomic) PKCurrencyAmount *balance; // @synthesize balance=_balance;
+@property(retain, nonatomic) PKServiceProviderPurchase *purchase; // @synthesize purchase=_purchase;
 @property(copy, nonatomic) NSString *productIdentifier; // @synthesize productIdentifier=_productIdentifier;
 - (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *metadata;
 - (void)setRequirementsResponse:(id)arg1;
-- (id)initWithPaymentSetupProduct:(id)arg1 provisioningToken:(id)arg2 balance:(id)arg3;
+- (id)initWithPaymentSetupProduct:(id)arg1 purchase:(id)arg2 balance:(id)arg3;
 
 @end
 

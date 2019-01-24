@@ -6,26 +6,24 @@
 
 #import <objc/NSObject.h>
 
-@class NSString, TSUColor;
+@class NSString;
 
 __attribute__((visibility("hidden")))
 @interface TSAExportableDocumentType : NSObject
 {
     NSString *_type;
     NSString *_localizedName;
-    TSUColor *_exportFormatChooserItemTextColor;
     NSString *_exportProgressMessage;
 }
 
-+ (id)exportableTypeWithType:(id)arg1 localizedName:(id)arg2 exportFormatChooserItemTextColor:(id)arg3 exportProgressMessage:(id)arg4;
-+ (id)exportableTypeWithType:(id)arg1 localizedName:(id)arg2 exportFormatChooserItemTextColor:(id)arg3;
++ (id)exportableTypeWithType:(id)arg1 localizedName:(id)arg2 exportProgressMessage:(id)arg3;
 @property(readonly, nonatomic) NSString *exportProgressMessage; // @synthesize exportProgressMessage=_exportProgressMessage;
-@property(readonly, nonatomic) TSUColor *exportFormatChooserItemTextColor; // @synthesize exportFormatChooserItemTextColor=_exportFormatChooserItemTextColor;
 @property(readonly, nonatomic) NSString *localizedName; // @synthesize localizedName=_localizedName;
 @property(readonly, nonatomic) NSString *type; // @synthesize type=_type;
 - (void).cxx_destruct;
 - (id)description;
-- (id)initWithType:(id)arg1 localizedName:(id)arg2 exportFormatChooserItemTextColor:(id)arg3 exportProgressMessage:(id)arg4;
+- (_Bool)isEqual:(id)arg1;
+- (id)initWithType:(id)arg1 localizedName:(id)arg2 exportProgressMessage:(id)arg3;
 
 @end
 

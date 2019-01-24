@@ -14,6 +14,7 @@
 - (void)snapshotNodeWithErrorCallback:(void (^)(NSString *))arg1 successCallback:(void (^)(NSString *))arg2 nodeId:(int)arg3;
 - (void)setCompositingBordersVisibleWithErrorCallback:(void (^)(NSString *))arg1 successCallback:(void (^)(void))arg2 visible:(_Bool)arg3;
 - (void)getCompositingBordersVisibleWithErrorCallback:(void (^)(NSString *))arg1 successCallback:(void (^)(_Bool))arg2;
+- (void)setForcedAppearanceWithErrorCallback:(void (^)(NSString *))arg1 successCallback:(void (^)(void))arg2 appearance:(long long)arg3;
 - (void)setEmulatedMediaWithErrorCallback:(void (^)(NSString *))arg1 successCallback:(void (^)(void))arg2 media:(NSString *)arg3;
 - (void)setShowPaintRectsWithErrorCallback:(void (^)(NSString *))arg1 successCallback:(void (^)(void))arg2 result:(_Bool)arg3;
 - (void)setShowRulersWithErrorCallback:(void (^)(NSString *))arg1 successCallback:(void (^)(void))arg2 result:(_Bool)arg3;

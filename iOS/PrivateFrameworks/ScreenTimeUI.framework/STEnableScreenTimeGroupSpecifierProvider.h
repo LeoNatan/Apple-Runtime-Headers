@@ -22,6 +22,7 @@
 - (void).cxx_destruct;
 - (void)saveValuesForModel:(id)arg1;
 - (void)setupScreenTime:(id)arg1;
+- (id)enableScreenTimeFooterText;
 - (void)profileConnectionDidReceiveEffectiveSettingsChangedNotification:(id)arg1 userInfo:(id)arg2;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)setCoordinator:(id)arg1;

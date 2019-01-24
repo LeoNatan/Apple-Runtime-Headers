@@ -8,7 +8,6 @@
 
 @class NSMutableArray, NSMutableDictionary, SLSheetTextComposeView, UILabel, UITextView;
 
-__attribute__((visibility("hidden")))
 @interface SLSheetContentView : UIView
 {
     SLSheetTextComposeView *_textComposeView;

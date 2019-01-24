@@ -18,6 +18,10 @@ __attribute__((visibility("hidden")))
 }
 
 + (struct __CTFont *)invisiblesFont;
++ (id)correctionAndDictationMarkColor;
++ (id)grammarMarkColor;
++ (id)spellingMarkColor;
++ (void)initialize;
 @property(retain, nonatomic) TSUBezierPath *interiorClippingPath; // @synthesize interiorClippingPath=_interiorClippingPath;
 @property(nonatomic) double viewScale; // @synthesize viewScale=_viewScale;
 @property(nonatomic) _Bool flipShadows; // @synthesize flipShadows=_flipShadows;
@@ -33,7 +37,7 @@ __attribute__((visibility("hidden")))
 - (void)p_drawHiddenDeletionsAdornments:(id)arg1 lineFragment:(const struct TSWPLineFragment *)arg2 state:(const struct TSWPDrawingState *)arg3;
 - (void)p_drawInvisiblesAdornments:(id)arg1 lineFragment:(const struct TSWPLineFragment *)arg2 state:(const struct TSWPDrawingState *)arg3;
 - (void)p_drawAttachmentGlyphAtPosition:(CDStruct_316206b0)arg1 fragment:(const struct TSWPLineFragment *)arg2;
-- (void)p_drawTextInRunsForLine:(struct __CTLine *)arg1 fragment:(const struct TSWPLineFragment *)arg2 state:(const struct TSWPDrawingState *)arg3 tateChuYoko:(_Bool)arg4 baseRange:(struct _NSRange)arg5 isFirstLineRef:(_Bool)arg6;
+- (void)p_drawTextInRunsForLine:(struct TSWPLineRef)arg1 fragment:(const struct TSWPLineFragment *)arg2 state:(const struct TSWPDrawingState *)arg3 tateChuYoko:(_Bool)arg4 baseRange:(struct _NSRange)arg5 isFirstLineRef:(_Bool)arg6;
 - (void)p_strokeWavyLineFromPoint:(struct CGPoint)arg1 toPoint:(struct CGPoint)arg2 width:(double)arg3;
 - (void)p_strokeLineFromPoint:(struct CGPoint)arg1 toPoint:(struct CGPoint)arg2 width:(double)arg3;
 - (void)p_drawAdornmentLineBackgroundRect:(id)arg1 lineDrawFlags:(unsigned int)arg2 drawingState:(const struct TSWPDrawingState *)arg3 bounds:(struct CGRect)arg4;
