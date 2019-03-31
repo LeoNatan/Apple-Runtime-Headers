@@ -33,7 +33,7 @@
 @property(retain, nonatomic) NSMutableDictionary *itemsByID; // @synthesize itemsByID=_itemsByID;
 - (void).cxx_destruct;
 - (id)_allHistoryItems;
-- (void)_didChange;
+- (void)_didChangeForIssueIDs:(id)arg1;
 - (void)_addHistoryItems:(id)arg1;
 - (void)_modifyHistoryForIssueID:(id)arg1 withBlock:(CDUnknownBlockType)arg2;
 - (id)_historyItemForID:(id)arg1;
@@ -45,8 +45,11 @@
 - (void)clearHistory;
 - (void)removeObserver:(id)arg1;
 - (void)addObserver:(id)arg1;
+@property(readonly, nonatomic) NSString *mostRecentlyVisitedIssueID;
 - (id)lastVisitedDateForIssueWithID:(id)arg1;
 - (id)bookmarkForLastVisitToIssueWithID:(id)arg1;
+- (_Bool)hasIssueWithIDBeenBadged:(id)arg1;
+- (void)markIssueAsBadgedWithID:(id)arg1;
 - (_Bool)hasIssueWithIDBeenVisited:(id)arg1;
 - (void)markIssueWithID:(id)arg1 asVisitedWithBookmark:(id)arg2;
 - (id)initWithContext:(id)arg1 pushNotificationCenter:(id)arg2 storeDirectory:(id)arg3;

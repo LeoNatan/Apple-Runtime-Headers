@@ -16,6 +16,7 @@
 }
 
 + (id)typeString;
+- (_Bool)videoPlaybackEnabledWithValue:(id)arg1 withType:(int)arg2;
 
 // Remaining properties
 @property(readonly, nonatomic) SXJSONArray *additions;
@@ -39,6 +40,7 @@
 @property(readonly) Class superclass;
 @property(readonly, nonatomic) unsigned long long traits;
 @property(readonly, nonatomic) NSString *type;
+@property(readonly, nonatomic) _Bool videoPlaybackEnabled; // @dynamic videoPlaybackEnabled;
 
 @end
 

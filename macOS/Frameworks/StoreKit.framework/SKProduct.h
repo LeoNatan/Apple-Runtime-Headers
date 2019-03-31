@@ -19,6 +19,7 @@
 - (id)copyXPCEncoding;
 - (id)initWithXPCEncoding:(id)arg1;
 - (id)initMinusLocaleWithXPCEncoding:(id)arg1;
+- (void)_setDiscounts:(id)arg1;
 - (void)_setSubscriptionPeriod:(id)arg1;
 - (void)_setSubscriptionGroupIdentifier:(id)arg1;
 - (void)_setProductIdentifier:(id)arg1;
@@ -32,6 +33,7 @@
 - (void)_setDownloadable:(BOOL)arg1;
 - (void)_setDownloadContentLengths:(id)arg1;
 - (void)_setContentVersion:(id)arg1;
+@property(readonly, nonatomic) NSArray *discounts;
 @property(readonly, nonatomic) SKProductSubscriptionPeriod *subscriptionPeriod;
 @property(readonly, nonatomic) NSString *subscriptionGroupIdentifier;
 @property(readonly, nonatomic) NSString *productIdentifier;

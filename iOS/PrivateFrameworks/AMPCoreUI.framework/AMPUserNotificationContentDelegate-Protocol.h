@@ -10,5 +10,6 @@
 
 @protocol AMPUserNotificationContentDelegate <NSObject>
 - (void)viewController:(UIViewController *)arg1 didUpdatePreferredContentSize:(struct CGSize)arg2;
+- (void)openNotification;
 @end
 

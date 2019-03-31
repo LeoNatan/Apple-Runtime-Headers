@@ -29,5 +29,8 @@
 - (void)siriViewControllerDidPunchout;
 - (void)siriViewController:(id <SiriUIViewController>)arg1 openURL:(NSURL *)arg2 completion:(void (^)(BOOL))arg3;
 - (void)siriViewController:(id <SiriUIViewController>)arg1 performAceCommands:(NSArray *)arg2;
+
+@optional
+- (void)siriViewController:(id <SiriUIViewController>)arg1 didOpenPunchout:(NSURL *)arg2;
 @end
 

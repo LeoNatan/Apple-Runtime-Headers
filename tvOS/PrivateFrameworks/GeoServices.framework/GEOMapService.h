@@ -31,6 +31,8 @@
 - (void)resolveMapItemFromHandle:(id)arg1 traits:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)resolveMapItemFromHandle:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)resolveMapItemFromHandle:(id)arg1 withTraits:(id)arg2 useCache:(_Bool)arg3 completionHandler:(CDUnknownBlockType)arg4;
+- (void)resolveMapItemFromHandle:(id)arg1 withTraits:(id)arg2 useCache:(_Bool)arg3 coordinateOnlyRefinement:(_Bool)arg4 completionHandler:(CDUnknownBlockType)arg5;
+- (void)_resolveMapItemFromHandle:(id)arg1 withTraits:(id)arg2 cachePolicy:(unsigned long long)arg3 coordinateOnlyRefinement:(_Bool)arg4 completionHandler:(CDUnknownBlockType)arg5;
 - (void)_resolveMapItemFromHandle:(id)arg1 withTraits:(id)arg2 cachePolicy:(unsigned long long)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (id)handleForMapItem:(id)arg1;
 - (void)trackMapItem:(id)arg1;

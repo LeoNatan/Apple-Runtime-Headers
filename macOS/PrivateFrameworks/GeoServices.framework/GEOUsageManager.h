@@ -85,6 +85,7 @@
 - (void)captureNetworkEventForService:(int)arg1 requestType:(int)arg2 httpResponseStatusCode:(int)arg3 requestErrorDomain:(id)arg4 requestErrorCode:(long long)arg5 requestDataSize:(int)arg6 responseDataSize:(int)arg7 responseTime:(int)arg8 requestAppId:(id)arg9 remoteAddressAndPort:(id)arg10 fromLogFrameworkAdaptor:(BOOL)arg11;
 - (void)captureNetworkEventForProtobufSessionTask:(id)arg1 networkService:(int)arg2 requestType:(int)arg3 requestAppId:(id)arg4 fromLogFrameworkAdaptor:(BOOL)arg5;
 - (void)captureNetworkEventForProtobufSessionTask:(id)arg1 networkService:(int)arg2 requestType:(int)arg3 requestErrorDomain:(id)arg4 requestErrorCode:(long long)arg5 requestAppId:(id)arg6 fromLogFrameworkAdaptor:(BOOL)arg7;
+- (void)captureGridDurationEventWithDuration:(double)arg1 endState:(int)arg2 errors:(id)arg3 previousState:(int)arg4 displayType:(int)arg5;
 - (void)capturePlaceDataCacheEventForPlaceRequest:(id)arg1 requestingAppId:(id)arg2;
 - (void)captureTileSetStateEventForType:(int)arg1 newCoverage:(double)arg2 oldCoverage:(double)arg3 seconds:(double)arg4;
 - (void)captureStateTransitionEventWithStates:(id)arg1 generateOnlyIfStateChanged:(BOOL)arg2;

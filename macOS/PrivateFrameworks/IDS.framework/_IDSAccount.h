@@ -101,7 +101,7 @@
 - (void)updateAccountWithAccountInfo:(id)arg1;
 @property(retain, nonatomic) NSDictionary *accountInfo;
 @property(readonly, nonatomic) BOOL isActive;
-@property(readonly, nonatomic) BOOL isTransientCloudPairingAccount;
+@property(readonly, nonatomic) BOOL isTransientWhitelistedAccount;
 @property(readonly, nonatomic) BOOL isInTransientRegistrationState;
 - (void)_setObject:(id)arg1 forKey:(id)arg2;
 - (id)_objectForKey:(id)arg1;
@@ -114,6 +114,7 @@
 - (void)_callDelegatesWithBlock:(CDUnknownBlockType)arg1;
 - (void)removeDelegate:(id)arg1;
 - (void)addDelegate:(id)arg1 queue:(id)arg2;
+- (BOOL)_isThumperService;
 - (BOOL)_isiCloudPairingService;
 - (void)dealloc;
 - (id)initWithLoginID:(id)arg1 uniqueID:(id)arg2 serviceName:(id)arg3 delegateContext:(id)arg4;

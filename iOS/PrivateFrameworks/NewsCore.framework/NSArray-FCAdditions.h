@@ -46,6 +46,7 @@
 - (id)fc_subarrayUpToCountInclusive:(unsigned long long)arg1;
 - (id)fc_arrayByAddingNonContainedObjectsFromArray:(id)arg1;
 - (id)fc_arrayByCollectingObjectsWithBlock:(CDUnknownBlockType)arg1;
+- (id)fc_indexesOfObjectsPassingTest:(CDUnknownBlockType)arg1;
 - (id)fc_indexesOfObjectsIdenticalTo:(id)arg1;
 - (unsigned long long)fc_indexOfFirstObjectWithValue:(id)arg1 forKey:(id)arg2;
 - (id)fc_arraysByPartitioningWithBudget:(id)arg1 indicesOfOverBudgetObjects:(id *)arg2 appraiser:(CDUnknownBlockType)arg3 accumulator:(CDUnknownBlockType)arg4 comparator:(CDUnknownBlockType)arg5;

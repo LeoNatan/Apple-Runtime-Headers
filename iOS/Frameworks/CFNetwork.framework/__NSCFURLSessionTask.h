@@ -82,6 +82,7 @@ __attribute__((visibility("hidden")))
     NSMutableArray *_transactionMetrics;
     NSURLSessionTaskMetrics *_incompleteTaskMetrics;
     NSObject<OS_nw_activity> *_nw_activity;
+    NSObject<OS_nw_activity> *_private_nw_activity;
     __NSCFTaskPerformanceTiming *_taskPerformanceTiming;
     NSDictionary *_trailers;
     long long _discretionaryOverride;
@@ -120,6 +121,7 @@ __attribute__((visibility("hidden")))
     _Bool _shouldReportTimingDataToAWD;
     _Bool _preconnect;
     _Bool _authenticatorConfiguredViaTaskProperty;
+    _Bool _seenFirstResume;
     _Bool _extractorPreparedForExtraction;
 }
 
@@ -132,6 +134,8 @@ __attribute__((visibility("hidden")))
 - (id)_APSRelayTopic;
 - (void)set_taskPerformanceTiming:(id)arg1;
 - (id)_taskPerformanceTiming;
+- (void)set_private_nw_activity:(id)arg1;
+- (id)_private_nw_activity;
 - (void)set_nw_activity:(id)arg1;
 - (id)_nw_activity;
 - (void)set_incompleteTaskMetrics:(id)arg1;
@@ -357,6 +361,7 @@ __attribute__((visibility("hidden")))
 - (float)priority;
 - (id)workQueue;
 - (void)resume;
+- (void)performSetupOnFirstResume;
 - (void)suspend;
 - (void)cancel;
 - (id)_loggableDescription;

@@ -21,13 +21,16 @@
 @property(nonatomic) long long status; // @synthesize status=_status;
 @property(nonatomic) __weak id <MPCExplicitContentAuthorizationDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (id)_explicitContentErrorWithUnderlyingError:(id)arg1 message:(id)arg2;
 - (_Bool)_askPlaybackAuthorizationForItem:(id)arg1 reason:(long long)arg2;
 - (_Bool)_shouldAskPlaybackAuthorizationForItem:(id)arg1 reason:(long long)arg2;
 - (void)_setupWithAgeVerificationState:(id)arg1;
 - (void)_setupWithAgeGateForItem:(id)arg1;
-- (void)_updateAuthorizationStatusForItem:(id)arg1;
+- (void)_updateAuthorizationStatusWithAuthorizationState:(id)arg1 forItem:(id)arg2;
+- (id)_retrieveAgeVerificationState;
 @property(readonly, nonatomic) long long authorizationReason;
 - (id)_init;
+- (_Bool)isItemAuthorized:(id)arg1 shouldAskForAuthorization:(_Bool)arg2;
 - (_Bool)isItemAuthorized:(id)arg1;
 
 @end

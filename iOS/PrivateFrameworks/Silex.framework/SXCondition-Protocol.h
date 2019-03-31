@@ -9,6 +9,7 @@
 @class NSString;
 
 @protocol SXCondition <NSObject>
+@property(readonly, nonatomic) unsigned long long testing;
 @property(readonly, nonatomic) NSString *subscriptionStatus;
 @property(readonly, nonatomic) long long verticalSizeClass;
 @property(readonly, nonatomic) long long horizontalSizeClass;

@@ -29,15 +29,14 @@
 @property(readonly, nonatomic) id <SXComponent> component; // @synthesize component=_component;
 - (void).cxx_destruct;
 - (void)saveInfo:(id)arg1 forRenderingPhaseWithIdentifier:(id)arg2;
-- (struct UIEdgeInsets)layoutMarginsForSize:(struct CGSize)arg1;
-- (struct UIEdgeInsets)contentInsetsForSize:(struct CGSize)arg1;
-- (struct CGRect)contentFrameForSize:(struct CGSize)arg1 contentInsets:(struct UIEdgeInsets)arg2;
+- (struct UIEdgeInsets)layoutMarginsWithUnitConverter:(id)arg1;
+- (struct UIEdgeInsets)contentInsetsWithUnitConverter:(id)arg1;
 - (long long)minimumColumnLength;
 - (struct _NSRange)overrideColumnLayoutForColumnRange:(struct _NSRange)arg1 inColumnLayout:(id)arg2;
 - (unsigned long long)shouldIgnoreMarginsForColumnLayout:(id)arg1;
 - (_Bool)allowComponentIntersection;
 - (id)snapLines;
-- (double)calculateHeightForWidth:(double)arg1 inColumnLayout:(id)arg2;
+- (double)calculateHeightForWidth:(double)arg1 layoutContext:(id)arg2;
 - (id)initWithComponent:(id)arg1 componentLayout:(id)arg2 componentStyle:(id)arg3 DOMObjectProvider:(id)arg4 layoutOptions:(id)arg5;
 
 @end

@@ -118,6 +118,7 @@
 - (id)initWithBackingTetxure:(shared_ptr_bb77cfd9)arg1;
 - (void)_savePngFromGLCache:(id)arg1;
 - (struct CGImage *)_newTextureFromGLCache;
+- (int)_convert_jet_texture_format_to_ci_format:(unsigned int)arg1;
 - (struct CGImage *)_createCGImage;
 - (id)metalTexture;
 - (int)glTextureId;

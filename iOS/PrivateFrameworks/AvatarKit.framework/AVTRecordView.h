@@ -8,7 +8,7 @@
 
 #import <AvatarKit/AVTFaceTrackerDelegate-Protocol.h>
 
-@class AVAssetWriter, AVAssetWriterInput, AVCaptureMovieFileOutput, AVPlayer, CAAnimation, CAAnimationGroup, CALayer, NSLock, NSMutableArray, NSMutableData, NSObject, NSString;
+@class AVAssetWriter, AVAssetWriterInput, AVCaptureMovieFileOutput, AVPlayer, CAAnimationGroup, CALayer, NSLock, NSMutableArray, NSMutableData, NSObject, NSString;
 @protocol AVTRecordViewDelegate, OS_dispatch_queue;
 
 @interface AVTRecordView : AVTView <AVTFaceTrackerDelegate>
@@ -18,16 +18,15 @@
     _Bool _recording;
     int _isFading;
     NSObject<OS_dispatch_queue> *_preloadQueue;
-    CAAnimation *_backedAnimation;
-    _Bool _playBackedAnimation;
+    _Bool _playBakedAnimation;
     _Bool _disableRendering;
-    double _actionT0;
-    _Bool _actionStarted;
     float _maxRecordingDuration;
     NSMutableData *_rawTimesData;
     NSMutableData *_rawBlendShapesData;
     NSMutableData *_rawTransformsData;
     NSMutableData *_rawParametersData;
+    double _referenceAnimationBeginTime;
+    double _recordingStartTime;
     int _recordedCount;
     int _recordingCapacity;
     CAAnimationGroup *_recordedAnimationGroup;
@@ -82,7 +81,7 @@
 - (id)_tmpVideoURL;
 - (id)_tmpAudioURL;
 @property(nonatomic) float maxRecordingDuration;
-- (id)convertRecordedDataToAnimationGroup;
+- (void)convertRecordedDataToAnimationGroup;
 - (double)finalVideoDuration;
 - (double)recordingDuration;
 - (void)trimRecordedData;
@@ -99,6 +98,8 @@
 - (void)playPreviewOnce;
 - (void)startPreviewing;
 - (void)_playLivePreviewAnimation;
+- (void)removeRecordedAnimationFromAvatar:(id)arg1;
+- (void)addRecordedAnimationToAvatar:(id)arg1;
 - (_Bool)recording;
 - (void)stopRecording;
 - (void)_smoothRecordedData;

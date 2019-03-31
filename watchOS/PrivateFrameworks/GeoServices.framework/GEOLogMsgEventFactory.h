@@ -47,6 +47,7 @@
 - (id)logMsgEventForCacheHitWithCacheType:(int)arg1 cacheHitCount:(unsigned int)arg2 cacheMissCount:(unsigned int)arg3;
 - (id)logMsgEventForGenericAppErrorDomain:(id)arg1 appErrorCode:(long long)arg2;
 - (id)logMsgEventForTileUsageWithRequestAppId:(id)arg1 andTileUsageInfo:(id)arg2;
+- (id)logMsgEventForGridDuration:(double)arg1 endState:(int)arg2 errors:(id)arg3 previousState:(int)arg4 displayType:(int)arg5;
 - (id)logMsgEventForNetworkService:(int)arg1 requestAppId:(id)arg2 requestErrorDomain:(id)arg3 requestErrorCode:(long long)arg4 requestDataSize:(int)arg5 responseDataSize:(int)arg6 responseTime:(int)arg7 httpResponseStatusCode:(int)arg8 remoteAddressAndPort:(id)arg9;
 - (id)logMsgEventForPlaceDataCacheFromAppWithID:(id)arg1;
 - (id)logMsgEventForTileSetState:(int)arg1 newCoverage:(double)arg2 oldCoverage:(double)arg3 seconds:(double)arg4;

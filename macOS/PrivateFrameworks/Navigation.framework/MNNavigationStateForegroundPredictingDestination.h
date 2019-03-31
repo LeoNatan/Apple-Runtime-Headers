@@ -19,7 +19,7 @@ __attribute__((visibility("hidden")))
 - (unsigned long long)desiredCommuteSessionState;
 - (unsigned long long)desiredResourcePolicy;
 - (unsigned long long)desiredLocationProviderType;
-- (unsigned long long)type;
+- (long long)type;
 - (BOOL)requiresHighMemoryThreshold;
 
 @end

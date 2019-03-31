@@ -29,6 +29,8 @@
 + (unsigned int)generateSeed;
 + (void)setLowLatency:(BOOL)arg1;
 + (BOOL)lowLatency;
++ (void)setBeginTime:(double)arg1;
++ (double)beginTime;
 + (void)setInputTime:(double)arg1;
 + (double)inputTime;
 + (void)setDisableRunLoopObserverCommits:(BOOL)arg1;

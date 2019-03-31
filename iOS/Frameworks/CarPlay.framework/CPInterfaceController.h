@@ -21,12 +21,14 @@
     CPWindow *_carWindow;
     NSMutableArray *_templateStack;
     CPTemplate *_presentedTemplate;
+    CPTemplate *_lastPresentedTemplate;
 }
 
 + (id)_templateClientInterface;
 + (void)_whitelistClassesForBaseTemplateProvider:(id)arg1;
 + (id)_templateProvidingInterface;
 + (void)load;
+@property(retain, nonatomic) CPTemplate *lastPresentedTemplate; // @synthesize lastPresentedTemplate=_lastPresentedTemplate;
 @property(retain, nonatomic) CPTemplate *presentedTemplate; // @synthesize presentedTemplate=_presentedTemplate;
 @property(retain, nonatomic) NSMutableArray *templateStack; // @synthesize templateStack=_templateStack;
 @property(retain, nonatomic) CPWindow *carWindow; // @synthesize carWindow=_carWindow;

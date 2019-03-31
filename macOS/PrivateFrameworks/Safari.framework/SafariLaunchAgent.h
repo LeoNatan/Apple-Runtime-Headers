@@ -19,7 +19,7 @@ __attribute__((visibility("hidden")))
 }
 
 - (void).cxx_destruct;
-- (void)_tellSafariAuthenticationSessionRequestsAreAvailable;
+- (void)_tellBrowserAuthenticationSessionRequestsAreAvailable;
 - (void)authenticationSessionRequestServerDidFinishAllRequests:(id)arg1;
 - (void)authenticationSessionRequestServerNeedsClientToReconnect:(id)arg1;
 - (void)didFulfillAuthenticationSessionRequest:(id)arg1 withCallbackURL:(id)arg2 error:(id)arg3;

@@ -7,11 +7,12 @@
 #import <MediaControls/MediaControlsEndpointController.h>
 
 #import <MediaControls/MPAVRoutingControllerDelegate-Protocol.h>
+#import <MediaControls/MediaControlsEndpointControllerConnectionDelegate-Protocol.h>
 #import <MediaControls/MediaControlsEndpointObserverDelegate-Protocol.h>
 
 @class MPAVRoutingController, MPCFuture, MPMRAVEndpointObserverWrapper, MSVTimer, NSString;
 
-@interface MediaControlsStandaloneEndpointController : MediaControlsEndpointController <MPAVRoutingControllerDelegate, MediaControlsEndpointObserverDelegate>
+@interface MediaControlsStandaloneEndpointController : MediaControlsEndpointController <MPAVRoutingControllerDelegate, MediaControlsEndpointObserverDelegate, MediaControlsEndpointControllerConnectionDelegate>
 {
     _Bool _isDeferred;
     long long _routeType;
@@ -46,6 +47,7 @@
 - (void)setOnScreen:(_Bool)arg1;
 - (void)routingControllerAvailableRoutesDidChange:(id)arg1;
 - (id)routeForEndpoint:(void *)arg1;
+- (void)endpointController:(id)arg1 willAttemptToConnectToRoute:(id)arg2;
 - (void)endObserving;
 - (void)beginObserving;
 - (id)proxyDelegate;

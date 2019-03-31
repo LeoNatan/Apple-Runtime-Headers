@@ -6,18 +6,20 @@
 
 #import <objc/NSObject.h>
 
-@class FCAssetHandle, NSArray;
+@class FCAssetHandle, NSArray, NSString;
 
 @interface FCFlintManifest : NSObject
 {
+    NSString *_identifier;
     FCAssetHandle *_mainDocumentAssetHandle;
     NSArray *_fontResourceIDs;
 }
 
 @property(readonly, nonatomic) NSArray *fontResourceIDs; // @synthesize fontResourceIDs=_fontResourceIDs;
 @property(readonly, nonatomic) FCAssetHandle *mainDocumentAssetHandle; // @synthesize mainDocumentAssetHandle=_mainDocumentAssetHandle;
+@property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
-- (id)initWithMainDocumentAssetHandle:(id)arg1 fontResourceIDs:(id)arg2;
+- (id)initWithIdentifier:(id)arg1 mainDocumentAssetHandle:(id)arg2 fontResourceIDs:(id)arg3;
 
 @end
 

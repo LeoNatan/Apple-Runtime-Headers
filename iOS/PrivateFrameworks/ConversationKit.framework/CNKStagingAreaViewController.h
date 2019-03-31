@@ -41,7 +41,7 @@
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (void)viewWillTransitionToSize:(struct CGSize)arg1 withTransitionCoordinator:(id)arg2;
 - (void)didTapSwapLocalParticipantCamera;
-- (void)didTapToggleVideoMute;
+- (void)toggleVideoMute;
 - (void)didTapLeaveButton;
 - (void)didTapJoinButton;
 - (void)updateViewConstraints;

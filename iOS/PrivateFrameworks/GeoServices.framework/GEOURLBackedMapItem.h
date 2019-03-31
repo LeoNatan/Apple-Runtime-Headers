@@ -62,7 +62,6 @@
 @property(readonly, nonatomic) CDStruct_c3b9c2ee centerCoordinate;
 @property(readonly, nonatomic, getter=_childPlaces) NSArray *childPlaces;
 @property(readonly, nonatomic, getter=_clientAttributes) GEOMapItemClientAttributes *clientAttributes;
-@property(readonly, nonatomic, getter=_completeOperatingHours) NSArray *completeOperatingHours;
 @property(readonly, nonatomic) int contactAddressType;
 @property(readonly, nonatomic) _Bool contactIsMe;
 @property(readonly, nonatomic) NSString *contactName;
@@ -127,7 +126,6 @@
 @property(readonly, nonatomic, getter=_needsAttribution) _Bool needsAttribution;
 @property(readonly, nonatomic, getter=_normalizedUserRatingScore) float normalizedUserRatingScore;
 @property(readonly, nonatomic, getter=_openingHoursOptions) unsigned long long openingHoursOptions;
-@property(readonly, nonatomic, getter=_operatingHours) NSArray *operatingHours;
 @property(readonly, nonatomic, getter=_optsOutOfTelephoneAds) _Bool optsOutOfTelephoneAds;
 @property(readonly, nonatomic, getter=_parsecSectionType) int parsecSectionType;
 @property(readonly, nonatomic, getter=_photos) NSArray *photos;

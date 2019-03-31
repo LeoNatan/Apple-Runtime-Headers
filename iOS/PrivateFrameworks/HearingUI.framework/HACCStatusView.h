@@ -36,6 +36,7 @@
 - (_Bool)enabled;
 - (id)contentValue;
 - (void)updateValue;
+- (id)_productIdentifierForBTDevice:(id)arg1;
 - (void)updateConstraints;
 - (id)initWithFrame:(struct CGRect)arg1;
 

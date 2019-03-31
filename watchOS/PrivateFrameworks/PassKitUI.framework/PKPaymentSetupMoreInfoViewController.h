@@ -6,10 +6,13 @@
 
 #import <UIKit/UIViewController.h>
 
-@class NSArray, PKPaymentPass, PKPaymentSetupMoreInfoView;
+#import <PassKitUI/UIScrollViewDelegate-Protocol.h>
 
-@interface PKPaymentSetupMoreInfoViewController : UIViewController
+@class NSArray, NSString, PKPaymentPass, PKPaymentSetupMoreInfoView;
+
+@interface PKPaymentSetupMoreInfoViewController : UIViewController <UIScrollViewDelegate>
 {
+    _Bool _navigationBarOpaque;
     _Bool _isFinalViewController;
     PKPaymentPass *_pass;
     NSArray *_moreInfoItems;
@@ -25,9 +28,13 @@
 @property(readonly, retain, nonatomic) NSArray *moreInfoItems; // @synthesize moreInfoItems=_moreInfoItems;
 @property(readonly, retain, nonatomic) PKPaymentPass *pass; // @synthesize pass=_pass;
 - (void).cxx_destruct;
+- (void)_updateNavBarContent;
+- (float)pkui_preferredNavigationBarBackgroundOpacity;
+- (_Bool)pkui_prefersNavigationBarShadowHidden;
 - (void)_handleDismissal;
 - (void)_handlePush;
 - (void)_nextTapped:(id)arg1;
+- (void)scrollViewDidScroll:(id)arg1;
 - (id)_nextItems;
 - (id)_currentItem;
 - (void)viewWillLayoutSubviews;
@@ -36,6 +43,12 @@
 - (unsigned int)edgesForExtendedLayout;
 - (void)_configureNavigationItem;
 - (id)initWithMoreInfoItems:(id)arg1 paymentPass:(id)arg2 context:(int)arg3 dismissalHandler:(CDUnknownBlockType)arg4;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned int hash;
+@property(readonly) Class superclass;
 
 @end
 

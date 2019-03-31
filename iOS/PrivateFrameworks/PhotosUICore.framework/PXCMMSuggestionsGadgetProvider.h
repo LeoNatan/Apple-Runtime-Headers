@@ -30,6 +30,7 @@
 - (void).cxx_destruct;
 - (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void *)arg3;
 - (void)workflowCoordinator:(id)arg1 workflowViewController:(id)arg2 didFinishSession:(id)arg3 withActivityState:(unsigned long long)arg4;
+- (long long)shareOriginForSession:(id)arg1 workflowCoordinator:(id)arg2;
 - (void)_setDataSource:(id)arg1 changes:(id)arg2;
 - (id)_newGadgetForSuggestion:(id)arg1;
 - (void)generateGadgets;

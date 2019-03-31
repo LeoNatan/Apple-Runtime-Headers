@@ -14,7 +14,6 @@
 - (void)performBackupOfDatabaseAtPath:(NSString *)arg1 withCompletion:(void (^)(_Bool, NSError *))arg2;
 - (void)updateSpotlightIndexMetadataForItemsWithIdentifiers:(NSArray *)arg1 bundleID:(NSString *)arg2 withCompletion:(void (^)(_Bool, NSError *))arg3;
 - (void)updateSpotlightIndexForBundleID:(NSString *)arg1 withCompletion:(void (^)(_Bool, NSError *))arg2;
-- (void)setDeviceSharedLibraryPath:(NSString *)arg1 withCompletion:(void (^)(_Bool, NSError *))arg2;
 - (void)getDeviceSharedLibraryPath:(void (^)(NSString *))arg1;
 - (void)getLanguageResourcesWithCompletion:(void (^)(ML3LanguageResources *, NSError *))arg1;
 - (void)unlockDatabaseWithCompletion:(void (^)(_Bool, NSError *))arg1;

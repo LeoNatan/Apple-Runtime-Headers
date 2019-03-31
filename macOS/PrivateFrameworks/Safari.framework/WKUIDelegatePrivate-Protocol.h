@@ -59,6 +59,7 @@
 - (void)_webView:(WKWebView *)arg1 imageOrMediaDocumentSizeChanged:(struct CGSize)arg2;
 - (void)_webView:(WKWebView *)arg1 hasVideoInPictureInPictureDidChange:(BOOL)arg2;
 - (void)_webViewDidLosePointerLock:(WKWebView *)arg1;
+- (void)_webViewDidClickGoBackFromSafeBrowsingWarning:(WKWebView *)arg1;
 - (void)_webViewDidShowSafeBrowsingWarning:(WKWebView *)arg1;
 - (void)_webViewDidRequestPointerLock:(WKWebView *)arg1 completionHandler:(void (^)(BOOL))arg2;
 - (void)_webViewRequestPointerLock:(WKWebView *)arg1;

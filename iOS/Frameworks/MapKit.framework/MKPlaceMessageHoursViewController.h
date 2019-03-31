@@ -11,9 +11,9 @@
 }
 
 + (id)messsageHoursWithMapItem:(id)arg1;
+- (id)hoursBuilderWithHours:(id)arg1;
 - (id)timeZone;
 - (id)businessHours;
-- (id)completeHours;
 - (id)titleString;
 
 @end

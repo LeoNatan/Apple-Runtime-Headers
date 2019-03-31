@@ -48,6 +48,7 @@ __attribute__((visibility("hidden")))
     NSString *_primaryNetworkSignature;
     int _powerSourceToken;
     BOOL _powerUnlimited;
+    BOOL _primaryAppleIDActive;
     BOOL _primaryAppleIDIsHSA2;
     int _primaryAppleIDNotifyToken;
     BOOL _primaryAppleIDObserving;

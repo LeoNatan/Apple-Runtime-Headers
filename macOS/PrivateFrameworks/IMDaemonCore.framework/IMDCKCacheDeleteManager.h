@@ -19,7 +19,7 @@
 @property(nonatomic, getter=isDeviceLowOnDiskSpace) BOOL deviceLowOnDiskSpace; // @synthesize deviceLowOnDiskSpace=_deviceLowOnDiskSpace;
 @property(nonatomic) BOOL allowsWritingToDisk; // @synthesize allowsWritingToDisk=_allowsWritingToDisk;
 @property(nonatomic) BOOL alreadyCapturedErrorWithAutoBugCapture; // @synthesize alreadyCapturedErrorWithAutoBugCapture=_alreadyCapturedErrorWithAutoBugCapture;
-- (void)_fetchTransfersFromCloudKit:(id)arg1 indexOfTransfers:(unsigned long long)arg2 numberOfBatchesToFetch:(unsigned long long)arg3;
+- (void)_fetchTransfersFromCloudKit:(id)arg1 indexOfTransfers:(unsigned long long)arg2 numberOfBatchesToFetch:(unsigned long long)arg3 withCompletion:(CDUnknownBlockType)arg4;
 - (BOOL)_shouldFetchNextBatch:(unsigned long long)arg1 totalTransfers:(id)arg2;
 - (unsigned long long)_indexOfNextBatch:(id)arg1 totalTransfers:(id)arg2 indexOfTransfers:(unsigned long long)arg3;
 - (id)_getIndexSetForBatch:(id)arg1 indexOfTransfers:(unsigned long long)arg2;

@@ -6,18 +6,16 @@
 
 #import <ProtocolBuffer/PBCodable.h>
 
-@class SISchemaClientAnyEvent, SISchemaEventMetadata, SISchemaTurnContext;
+@class SISchemaClientAnyEvent, SISchemaClientEventMetadata;
 
 @interface SIEventWrapper : PBCodable
 {
-    SISchemaEventMetadata *_metadata;
-    SISchemaTurnContext *_turnContext;
+    SISchemaClientEventMetadata *_metadata;
     SISchemaClientAnyEvent *_wrappedEvent;
 }
 
 @property(retain, nonatomic) SISchemaClientAnyEvent *wrappedEvent; // @synthesize wrappedEvent=_wrappedEvent;
-@property(retain, nonatomic) SISchemaTurnContext *turnContext; // @synthesize turnContext=_turnContext;
-@property(retain, nonatomic) SISchemaEventMetadata *metadata; // @synthesize metadata=_metadata;
+@property(retain, nonatomic) SISchemaClientEventMetadata *metadata; // @synthesize metadata=_metadata;
 - (void).cxx_destruct;
 - (id)dictionaryRepresentation;
 - (void)writeTo:(id)arg1;

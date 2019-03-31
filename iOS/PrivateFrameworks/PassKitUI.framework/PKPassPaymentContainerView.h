@@ -54,6 +54,7 @@
     NSMutableArray *_transitionCompletionHandlers;
     NSMutableArray *_pendingGlyphStateCompletionHandlers;
     _Bool _glyphStateDirty;
+    _Bool _presentationWasForced;
     _Bool _waitingForGlyphView;
     long long _transactionSubstate;
     _Bool _holdingTerminalSubstate;
@@ -89,7 +90,6 @@
 - (void)_processPaymentTransactionForContext:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (_Bool)_hasValueAddedServicePasses;
 - (void)_setValueAddedServicePasses:(id)arg1;
-- (double)_valueAddedServiceInfoViewTopMargin;
 - (void)_updateVASInfoViewSuppressedTransactionIfNecessary;
 - (void)_setVASInfoViewHidden:(_Bool)arg1 animated:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_showTerminalIsRequestingPaymentError;

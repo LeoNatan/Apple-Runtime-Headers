@@ -10,11 +10,15 @@
 {
 }
 
++ (id)testingDictionaryForIsWeekdayInRange;
 + (struct GEOPDLocalTimeRange)_rangeWithFromHour:(int)arg1 fromMinute:(int)arg2 toHour:(int)arg3 toMinute:(int)arg4;
 + (id)_pdHoursFromHour:(int)arg1 fromMinute:(int)arg2 toHour:(int)arg3 toMinute:(int)arg4 inTimeZone:(id)arg5 onDay:(int)arg6 month:(int)arg7 year:(int)arg8 openingThreshold:(double)arg9 closingThreshold:(double)arg10 shouldGoOverMidnight:(_Bool)arg11;
 + (id)testTimeZoneForMKLocalizedHoursBuilderTest;
 + (id)testDateForMKLocalizedHoursBuilderTest;
++ (id)testBusinessHoursWithTemporaryClosedHoursTypeForMKLocalizedHoursBuilderTest;
++ (id)testBusinessHoursWithPermanentlyClosedHoursTypeForMKLocalizedHoursBuilderTest;
 + (id)testBusinessHoursForMKLocalizedHoursBuilderTest;
++ (id)dateWithString:(id)arg1;
 
 @end
 

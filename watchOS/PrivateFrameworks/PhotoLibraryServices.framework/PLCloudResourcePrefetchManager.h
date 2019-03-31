@@ -59,7 +59,6 @@
 - (void)_reloadDownloadOriginalsSetting;
 - (void)prefetchResourcesWithPredicates:(id)arg1;
 - (id)prefetchStatusForDebug:(_Bool)arg1;
-- (void)prefetchResource:(unsigned int)arg1 forAssetsWithObjectIDs:(id)arg2;
 - (void)stop;
 - (void)_cleanupInflightResources;
 - (void)_enqueueCheckCPLBGDownloadFromNow:(id)arg1 withReason:(id)arg2;

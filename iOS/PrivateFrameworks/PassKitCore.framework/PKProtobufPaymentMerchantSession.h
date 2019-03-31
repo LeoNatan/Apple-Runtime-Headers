@@ -14,6 +14,7 @@
 {
     unsigned long long _epochTimestamp;
     unsigned long long _expiresAt;
+    NSData *_ampEnrollmentPinning;
     NSString *_displayName;
     NSString *_domain;
     NSString *_initiative;
@@ -31,6 +32,7 @@
 }
 
 + (Class)signedFieldsType;
+@property(retain, nonatomic) NSData *ampEnrollmentPinning; // @synthesize ampEnrollmentPinning=_ampEnrollmentPinning;
 @property(retain, nonatomic) NSMutableArray *signedFields; // @synthesize signedFields=_signedFields;
 @property(retain, nonatomic) NSString *initiative; // @synthesize initiative=_initiative;
 @property(retain, nonatomic) NSString *initiativeContext; // @synthesize initiativeContext=_initiativeContext;
@@ -53,6 +55,7 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(readonly, nonatomic) _Bool hasAmpEnrollmentPinning;
 - (id)signedFieldsAtIndex:(unsigned long long)arg1;
 - (unsigned long long)signedFieldsCount;
 - (void)addSignedFields:(id)arg1;

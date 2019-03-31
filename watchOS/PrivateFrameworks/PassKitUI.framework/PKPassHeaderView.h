@@ -15,13 +15,9 @@
     UIView *_passMaskView;
     UIImageView *_maskShadow;
     UILabel *_title;
-    UILabel *_type;
-    UILabel *_modificationDate;
-    UILabel *_valueTitle;
-    UILabel *_value;
-    _Bool _largeStyle;
+    UILabel *_subtitle;
+    float passImageHeight;
     _Bool _showModificationDate;
-    _Bool _valueLabelsShouldStack;
     PKPass *_pass;
     PKPassView *_passView;
     PKTransitBalanceModel *_transitBalanceModel;
@@ -37,9 +33,7 @@
 @property(nonatomic) __weak id <PKPassHeaderViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) UIColor *secondaryTextColor; // @synthesize secondaryTextColor=_secondaryTextColor;
 @property(retain, nonatomic) UIColor *primaryTextColor; // @synthesize primaryTextColor=_primaryTextColor;
-@property(nonatomic) _Bool valueLabelsShouldStack; // @synthesize valueLabelsShouldStack=_valueLabelsShouldStack;
 @property(nonatomic) _Bool showModificationDate; // @synthesize showModificationDate=_showModificationDate;
-@property(nonatomic, getter=isLargeStyle) _Bool largeStyle; // @synthesize largeStyle=_largeStyle;
 @property(nonatomic) unsigned int suppressedContent; // @synthesize suppressedContent=_suppressedContent;
 @property(retain, nonatomic) PKPeerPaymentAccount *peerPaymentAccount; // @synthesize peerPaymentAccount=_peerPaymentAccount;
 @property(retain, nonatomic) PKTransitBalanceModel *transitBalanceModel; // @synthesize transitBalanceModel=_transitBalanceModel;
@@ -55,7 +49,6 @@
 - (void)_updateContent;
 - (CDStruct_85f8d09d)passSizeInfoForHeight:(float)arg1;
 - (void)updateShadow:(float)arg1;
-- (_Bool)titleAndValueLabelCouldOverlapAtHeaderViewSize:(struct CGSize)arg1;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)layoutSubviews;
 - (void)dealloc;

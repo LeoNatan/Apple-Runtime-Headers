@@ -1483,6 +1483,10 @@ struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<TFENod
     struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<TFENode, TNSRef<FI_TBVDSBusyStateIncrementer, void>>, void *>*> *__next_;
 };
 
+struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<TFENode, TNSRef<NSIndexPath, void>>, void *>*> {
+    struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<TFENode, TNSRef<NSIndexPath, void>>, void *>*> *_field1;
+};
+
 struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<TFENode, TNSRef<NSObject, void>>, void *>*> {
     struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<TFENode, TNSRef<NSObject, void>>, void *>*> *__next_;
 };
@@ -2261,6 +2265,17 @@ struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__h
     } __ptr_;
 };
 
+struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<TFENode, TNSRef<NSIndexPath, void>>, void *>*>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<TFENode, TNSRef<NSIndexPath, void>>, void *>*>*>>> {
+    struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<TFENode, TNSRef<NSIndexPath, void>>, void *>*>**, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<TFENode, TNSRef<NSIndexPath, void>>, void *>*>*>>> {
+        struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<TFENode, TNSRef<NSIndexPath, void>>, void *>*> **_field1;
+        struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<TFENode, TNSRef<NSIndexPath, void>>, void *>*>*>> {
+            struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<TFENode, TNSRef<NSIndexPath, void>>, void *>*>*>> {
+                unsigned long long _field1;
+            } _field1;
+        } _field2;
+    } _field1;
+};
+
 struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<TFENode, TNSRef<NSObject, void>>, void *>*>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<TFENode, TNSRef<NSObject, void>>, void *>*>*>>> {
     struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<TFENode, TNSRef<NSObject, void>>, void *>*>**, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<TFENode, TNSRef<NSObject, void>>, void *>*>*>>> {
         struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<TFENode, TNSRef<NSObject, void>>, void *>*> **__value_;
@@ -2549,6 +2564,21 @@ struct unordered_map<TFENode, TNSRef<FI_TBVDSBusyStateIncrementer, void>, std::_
             float __value_;
         } __p3_;
     } __table_;
+};
+
+struct unordered_map<TFENode, TNSRef<NSIndexPath, void>, std::__1::hash<TFENode>, std::__1::equal_to<TFENode>, std::__1::allocator<std::__1::pair<const TFENode, TNSRef<NSIndexPath, void>>>> {
+    struct __hash_table<std::__1::__hash_value_type<TFENode, TNSRef<NSIndexPath, void>>, std::__1::__unordered_map_hasher<TFENode, std::__1::__hash_value_type<TFENode, TNSRef<NSIndexPath, void>>, std::__1::hash<TFENode>, true>, std::__1::__unordered_map_equal<TFENode, std::__1::__hash_value_type<TFENode, TNSRef<NSIndexPath, void>>, std::__1::equal_to<TFENode>, true>, std::__1::allocator<std::__1::__hash_value_type<TFENode, TNSRef<NSIndexPath, void>>>> {
+        struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<TFENode, TNSRef<NSIndexPath, void>>, void *>*>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<TFENode, TNSRef<NSIndexPath, void>>, void *>*>*>>> _field1;
+        struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<TFENode, TNSRef<NSIndexPath, void>>, void *>*>, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<TFENode, TNSRef<NSIndexPath, void>>, void *>>> {
+            struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<TFENode, TNSRef<NSIndexPath, void>>, void *>*> _field1;
+        } _field2;
+        struct __compressed_pair<unsigned long, std::__1::__unordered_map_hasher<TFENode, std::__1::__hash_value_type<TFENode, TNSRef<NSIndexPath, void>>, std::__1::hash<TFENode>, true>> {
+            unsigned long long _field1;
+        } _field3;
+        struct __compressed_pair<float, std::__1::__unordered_map_equal<TFENode, std::__1::__hash_value_type<TFENode, TNSRef<NSIndexPath, void>>, std::__1::equal_to<TFENode>, true>> {
+            float _field1;
+        } _field4;
+    } _field1;
 };
 
 struct unordered_map<TFENode, TNSRef<NSObject, void>, std::__1::hash<TFENode>, std::__1::equal_to<TFENode>, std::__1::allocator<std::__1::pair<const TFENode, TNSRef<NSObject, void>>>> {
@@ -3482,6 +3512,21 @@ typedef struct unordered_map<TFENode, TFENodeOrderedSet, std::__1::hash<TFENode>
         } __p3_;
     } __table_;
 } unordered_map_f8b1458f;
+
+typedef struct unordered_map<TFENode, TNSRef<NSIndexPath, void>, std::__1::hash<TFENode>, std::__1::equal_to<TFENode>, std::__1::allocator<std::__1::pair<const TFENode, TNSRef<NSIndexPath, void>>>> {
+    struct __hash_table<std::__1::__hash_value_type<TFENode, TNSRef<NSIndexPath, void>>, std::__1::__unordered_map_hasher<TFENode, std::__1::__hash_value_type<TFENode, TNSRef<NSIndexPath, void>>, std::__1::hash<TFENode>, true>, std::__1::__unordered_map_equal<TFENode, std::__1::__hash_value_type<TFENode, TNSRef<NSIndexPath, void>>, std::__1::equal_to<TFENode>, true>, std::__1::allocator<std::__1::__hash_value_type<TFENode, TNSRef<NSIndexPath, void>>>> {
+        struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<TFENode, TNSRef<NSIndexPath, void>>, void *>*>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<TFENode, TNSRef<NSIndexPath, void>>, void *>*>*>>> _field1;
+        struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<TFENode, TNSRef<NSIndexPath, void>>, void *>*>, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<TFENode, TNSRef<NSIndexPath, void>>, void *>>> {
+            struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<TFENode, TNSRef<NSIndexPath, void>>, void *>*> _field1;
+        } _field2;
+        struct __compressed_pair<unsigned long, std::__1::__unordered_map_hasher<TFENode, std::__1::__hash_value_type<TFENode, TNSRef<NSIndexPath, void>>, std::__1::hash<TFENode>, true>> {
+            unsigned long long _field1;
+        } _field3;
+        struct __compressed_pair<float, std::__1::__unordered_map_equal<TFENode, std::__1::__hash_value_type<TFENode, TNSRef<NSIndexPath, void>>, std::__1::equal_to<TFENode>, true>> {
+            float _field1;
+        } _field4;
+    } _field1;
+} unordered_map_7677f55a;
 
 typedef struct unordered_map<TFENode, std::__1::pair<TNSRef<NSIndexPath, void>, TNSRef<NSIndexPath, void>>, std::__1::hash<TFENode>, std::__1::equal_to<TFENode>, std::__1::allocator<std::__1::pair<const TFENode, std::__1::pair<TNSRef<NSIndexPath, void>, TNSRef<NSIndexPath, void>>>>> {
     struct __hash_table<std::__1::__hash_value_type<TFENode, std::__1::pair<TNSRef<NSIndexPath, void>, TNSRef<NSIndexPath, void>>>, std::__1::__unordered_map_hasher<TFENode, std::__1::__hash_value_type<TFENode, std::__1::pair<TNSRef<NSIndexPath, void>, TNSRef<NSIndexPath, void>>>, std::__1::hash<TFENode>, true>, std::__1::__unordered_map_equal<TFENode, std::__1::__hash_value_type<TFENode, std::__1::pair<TNSRef<NSIndexPath, void>, TNSRef<NSIndexPath, void>>>, std::__1::equal_to<TFENode>, true>, std::__1::allocator<std::__1::__hash_value_type<TFENode, std::__1::pair<TNSRef<NSIndexPath, void>, TNSRef<NSIndexPath, void>>>>> {

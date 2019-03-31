@@ -35,7 +35,9 @@
     BOOL _isAlarmPlaying;
     BOOL _isTimerPlaying;
     BOOL _isSoundPlaying;
+    BOOL _isRemoteVADAvailableStream;
     BOOL _myriadPreventingTwoShotFeedback;
+    BOOL _needsPostGain;
     id <CSSpeechControllerDelegate> _delegate;
     CSEndpointerProxy *_endpointerProxy;
     CSSpeechManager *_speechManager;
@@ -50,7 +52,9 @@
 
 + (BOOL)isSmartSiriVolumeAvailable;
 + (id)sharedController;
+@property(nonatomic) BOOL needsPostGain; // @synthesize needsPostGain=_needsPostGain;
 @property(nonatomic) BOOL myriadPreventingTwoShotFeedback; // @synthesize myriadPreventingTwoShotFeedback=_myriadPreventingTwoShotFeedback;
+@property(nonatomic) BOOL isRemoteVADAvailableStream; // @synthesize isRemoteVADAvailableStream=_isRemoteVADAvailableStream;
 @property(nonatomic) BOOL isSoundPlaying; // @synthesize isSoundPlaying=_isSoundPlaying;
 @property(nonatomic) BOOL isTimerPlaying; // @synthesize isTimerPlaying=_isTimerPlaying;
 @property(nonatomic) BOOL isAlarmPlaying; // @synthesize isAlarmPlaying=_isAlarmPlaying;
@@ -102,7 +106,7 @@
 - (id)metrics;
 - (void)keywordDetectorDidDetectKeyword;
 - (void)voiceTriggerDidDetectTwoShotAtTime:(double)arg1;
-- (void)voiceTriggerDidDetectKeyword:(id)arg1;
+- (void)voiceTriggerDidDetectKeyword:(id)arg1 deviceId:(id)arg2;
 - (id)voiceTriggerInfo;
 - (unsigned long long)outputReferenceChannel;
 - (float)averagePowerForOutputReference;
@@ -127,20 +131,21 @@
 - (void)speechManagerLPCMRecordBufferAvailable:(id)arg1 chunk:(id)arg2;
 - (BOOL)_isJarvisButtonPress;
 - (BOOL)_isJarvisVoiceTriggered;
-- (BOOL)_private_PacketEncodingUsed;
-- (BOOL)_private_PacketDecodingUsed;
+- (BOOL)_isHearstDoubleTap;
+- (BOOL)_isHearstVoiceTriggered;
 - (BOOL)_isSpeakerIdTrainingTriggered;
 - (BOOL)_isAutoPrompted;
 - (BOOL)_isVoiceTriggered;
 - (BOOL)isRTSTriggered;
 - (BOOL)isJarvisVoiceTriggered;
-- (BOOL)PacketDecodingUsed;
+- (BOOL)isHearstVoiceTriggered;
 - (BOOL)isVoiceTriggered;
 - (id)recordDeviceInfo;
 - (id)recordRoute;
 - (BOOL)isRecording;
 - (void)stopRecording;
 - (BOOL)startRecording:(id *)arg1;
+- (BOOL)_lastVoiceTriggerWasHearst;
 - (BOOL)_shouldSetStartSampleCount;
 - (BOOL)startRecordingWithSettings:(id)arg1 error:(id *)arg2;
 - (void)_setupSpeakerId;

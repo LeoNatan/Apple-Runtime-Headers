@@ -11,12 +11,12 @@
 }
 
 + (void)sendUserPerformedTranslationURLDataToDifferentialPrivacyIfNecessary:(id)arg1;
++ (id)_translationDomainFromURLString:(id)arg1;
 + (void)_sendDomainDataToDifferentialPrivacy:(id)arg1 withKey:(id)arg2;
 + (void)_sendNormalizedHighLevelDomainDataToDifferentialPrivacy:(id)arg1 withKey:(id)arg2;
 + (void)_sendDataToDifferentialPrivacyWithKey:(id)arg1 value:(id)arg2;
-+ (void)sendUserMayWantTranslationURLDataToDifferentialPrivacyIfNecessary:(id)arg1 pageText:(id)arg2;
-+ (void)sendDataToDifferentialPrivacyWithContextResponse:(id)arg1 pageText:(id)arg2;
-+ (BOOL)_pageLanguageIsInUsersPreferredLanguages:(id)arg1;
++ (void)sendUserMayWantTranslationURLDataToDifferentialPrivacyIfNecessary:(id)arg1;
++ (void)sendDataToDifferentialPrivacyWithContextResponse:(id)arg1;
 + (id)_currentLanguage;
 
 @end

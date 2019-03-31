@@ -40,12 +40,18 @@
 - (void)_updateShouldDownloadResources:(_Bool)arg1 onMessageWithIdentifier:(id)arg2 bundleIdentifier:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)_performSyncRetryIfPending;
 - (void)_handleICInAppMessagesDidChangeDistributedNotification:(id)arg1;
+- (void)_removeAllMessageEntriesForBundleIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)_removeMessageEntryWithIdentifier:(id)arg1 forBundleIdentifier:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_processSyncResponse:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_performSyncWithCompletion:(CDUnknownBlockType)arg1;
 - (id)_storeRequestContext;
 - (void)_schedulePeriodicUpdate;
 - (id)_xpcClientConnection;
 - (void)_handleUserIdentityStoreDidChangeNotification:(id)arg1;
+- (void)removeMetadataForMessageIdentifier:(id)arg1 bundleIdentifier:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)updateMetadata:(id)arg1 messageIdentifier:(id)arg2 bundleIdentifier:(id)arg3 completion:(CDUnknownBlockType)arg4;
+- (void)getAllMetadataForBundleIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)getMetadataForMessageIdentifier:(id)arg1 bundleIdentifier:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)clearCachedResourcesForMessageWithIdentifier:(id)arg1 bundleIdentifier:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)downloadResourcesForMessageWithIdentifier:(id)arg1 bundleIdentifier:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)flushEventsWithCompletion:(CDUnknownBlockType)arg1;

@@ -7,7 +7,6 @@
 #import <MediaControls/MediaControlsCollectionViewController.h>
 
 #import <MediaControls/CCUIContentModuleContentViewController-Protocol.h>
-#import <MediaControls/MPAVRoutingViewControllerDelegate-Protocol.h>
 #import <MediaControls/MRPlatterViewControllerDelegate-Protocol.h>
 #import <MediaControls/MediaControlsCollectionViewDataSource-Protocol.h>
 #import <MediaControls/MediaControlsCollectionViewDelegate-Protocol.h>
@@ -15,7 +14,7 @@
 
 @class MPAVEndpointRoute, MPAVOutputDeviceRoutingDataSource, MPAVRoutingViewController, MPMediaControlsConfiguration, MediaControlsEndpointsManager, NSString;
 
-@interface MediaControlsEndpointsViewController : MediaControlsCollectionViewController <MPAVRoutingViewControllerDelegate, MRPlatterViewControllerDelegate, MediaControlsCollectionViewDataSource, MediaControlsCollectionViewDelegate, MediaControlsEndpointsManagerDelegate, CCUIContentModuleContentViewController>
+@interface MediaControlsEndpointsViewController : MediaControlsCollectionViewController <MRPlatterViewControllerDelegate, MediaControlsCollectionViewDataSource, MediaControlsCollectionViewDelegate, MediaControlsEndpointsManagerDelegate, CCUIContentModuleContentViewController>
 {
     MPAVOutputDeviceRoutingDataSource *_outputDeviceRoutingDataSource;
     long long _lastSelectedModeForActivePlatterViewController;
@@ -79,7 +78,7 @@
 - (void)setDisplayMode:(long long)arg1;
 - (void)updateContentInsets;
 - (void)dismissPlatterViewController:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)routingViewController:(id)arg1 didPickRoute:(id)arg2;
+- (void)platterViewController:(id)arg1 didPickRoute:(id)arg2;
 - (void)platterViewController:(id)arg1 homeGestureDismisalAllowedDidChange:(_Bool)arg2;
 - (_Bool)shouldPresentUsingViewServicePlatterViewController:(id)arg1;
 - (id)platterViewController:(id)arg1 presentingViewForPresentedViewController:(id)arg2;
@@ -92,7 +91,7 @@
 @property(readonly, nonatomic) double preferredExpandedContentHeight;
 - (void)stopPrewarming;
 - (void)startPrewarming;
-- (void)didSelectRoute:(id)arg1;
+- (void)didSelectEndpoint:(id)arg1;
 - (void)viewDidLayoutSubviews;
 - (void)viewDidDisappear:(_Bool)arg1;
 - (void)viewWillDisappear:(_Bool)arg1;

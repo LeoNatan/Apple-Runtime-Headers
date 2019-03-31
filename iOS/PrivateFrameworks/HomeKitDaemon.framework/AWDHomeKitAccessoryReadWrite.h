@@ -13,6 +13,7 @@
 @interface AWDHomeKitAccessoryReadWrite : PBCodable <NSCopying>
 {
     unsigned long long _timestamp;
+    int _certified;
     NSMutableArray *_characteristics;
     unsigned int _duration;
     int _errorCode;
@@ -26,6 +27,7 @@
     _Bool _isWrite;
     struct {
         unsigned int timestamp:1;
+        unsigned int certified:1;
         unsigned int duration:1;
         unsigned int errorCode:1;
         unsigned int source:1;
@@ -57,6 +59,10 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+- (int)StringAsCertified:(id)arg1;
+- (id)certifiedAsString:(int)arg1;
+@property(nonatomic) _Bool hasCertified;
+@property(nonatomic) int certified; // @synthesize certified=_certified;
 - (int)StringAsSource:(id)arg1;
 - (id)sourceAsString:(int)arg1;
 @property(nonatomic) _Bool hasSource;

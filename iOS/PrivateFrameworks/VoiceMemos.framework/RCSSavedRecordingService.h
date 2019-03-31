@@ -84,6 +84,7 @@
 - (oneway void)performDatabaseMigrationWithCompletionBlock:(CDUnknownBlockType)arg1;
 - (void)closeServiceConnection;
 - (void)openServiceConnection;
+@property(readonly, nonatomic) _Bool isDatabaseAvailable;
 - (void)dealloc;
 - (id)init;
 

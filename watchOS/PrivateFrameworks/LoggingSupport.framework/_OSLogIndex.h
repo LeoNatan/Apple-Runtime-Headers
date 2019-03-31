@@ -32,18 +32,17 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) unsigned long long specialStartWalltime;
 @property(readonly, nonatomic) unsigned long long persistStartWalltime;
 - (_Bool)_buildSingleFileIndex:(id *)arg1;
-- (_Bool)_buildFileIndex:(id *)arg1;
+- (_Bool)_buildFileIndex;
 - (void)insertIndexFile:(id)arg1;
 - (void)insertChunkStore:(id)arg1;
 - (void)_foreachIndexFile:(CDUnknownBlockType)arg1;
 - (_Bool)_addFileToIndex:(const char *)arg1 error:(id *)arg2;
 - (_Bool)addReferenceToIndex:(id)arg1 error:(id *)arg2;
-- (_Bool)_openTimesyncDatabase:(id *)arg1;
+- (_Bool)_openTimesyncDatabase;
 - (_Bool)_readArchiveMetadata:(id *)arg1;
 - (void)dealloc;
-- (id)initWithCollection:(id)arg1 error:(id *)arg2;
 - (id)initWithCollection:(id)arg1 timesync:(struct _os_timesync_db_s *)arg2 metadata:(id)arg3;
-- (id)initWithCollection:(id)arg1 buildLocalIndex:(_Bool)arg2 error:(id *)arg3;
+- (id)initWithCollection:(id)arg1 buildLocalIndex:(_Bool)arg2;
 - (id)init;
 
 @end

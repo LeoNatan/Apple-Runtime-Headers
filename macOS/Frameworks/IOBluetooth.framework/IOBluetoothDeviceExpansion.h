@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class IOBluetoothL2CAPChannel, NSXPCConnection;
+@class IOBluetoothL2CAPChannel, NSString, NSXPCConnection;
 
 @interface IOBluetoothDeviceExpansion : NSObject
 {
@@ -51,12 +51,16 @@
     BOOL isFirstPairing;
     unsigned char listeningMode;
     BOOL switchControlEnabled;
+    BOOL heySiriEnabled;
+    NSString *accessoryFWVersion;
     NSXPCConnection *xpcConnection;
     id mTarget;
 }
 
 @property(retain) id mTarget; // @synthesize mTarget;
 @property(retain) NSXPCConnection *xpcConnection; // @synthesize xpcConnection;
+@property(retain) NSString *accessoryFWVersion; // @synthesize accessoryFWVersion;
+@property BOOL heySiriEnabled; // @synthesize heySiriEnabled;
 @property BOOL switchControlEnabled; // @synthesize switchControlEnabled;
 @property unsigned char listeningMode; // @synthesize listeningMode;
 @property BOOL isDevFused; // @synthesize isDevFused;

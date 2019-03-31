@@ -44,7 +44,7 @@
 + (_Bool)migrateDatabaseIfNecessary;
 + (id)sharedModelForQueue_shouldNotBeCalledDuringSyncing:(id)arg1;
 + (id)sharedModelForQueue:(id)arg1;
-+ (id)startStoreServers;
++ (id)startStoreServers:(CDUnknownBlockType)arg1;
 + (id)currentLocationBasedName;
 @property(readonly, nonatomic) RCSavedRecordingsController *evictedRecordingsController; // @synthesize evictedRecordingsController=_evictedRecordingsController;
 @property(readonly, nonatomic) RCSavedRecordingsController *recordingsController; // @synthesize recordingsController=_recordingsController;

@@ -12,11 +12,13 @@
 
 @interface STSetupAssistantUsageDetailsCoordinator : NSObject <STUsageDetailsViewModelCoordinator>
 {
+    _Bool _refreshing;
     NSArray *_devices;
     NSString *_selectedDeviceIdentifier;
     STUsageDetailsViewModel *_viewModel;
 }
 
+@property(readonly, getter=isRefreshing) _Bool refreshing; // @synthesize refreshing=_refreshing;
 @property(readonly, nonatomic) STUsageDetailsViewModel *viewModel; // @synthesize viewModel=_viewModel;
 @property(copy, nonatomic) NSString *selectedDeviceIdentifier; // @synthesize selectedDeviceIdentifier=_selectedDeviceIdentifier;
 @property(readonly, copy, nonatomic) NSArray *devices; // @synthesize devices=_devices;

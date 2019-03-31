@@ -13,7 +13,6 @@
 
 @interface SXLayoutInvalidationManager : NSObject <SXLayoutInvalidationManager>
 {
-    _Bool _suspended;
     _Bool _invalidationDispatched;
     id <SXLayoutInvalidationManagerDelegate> _delegate;
     id <SXLayoutBlueprintProvider> _layoutBlueprintProvider;
@@ -22,7 +21,6 @@
 }
 
 @property(nonatomic) _Bool invalidationDispatched; // @synthesize invalidationDispatched=_invalidationDispatched;
-@property(nonatomic) _Bool suspended; // @synthesize suspended=_suspended;
 @property(retain, nonatomic) NSMutableDictionary *pendingInvalidations; // @synthesize pendingInvalidations=_pendingInvalidations;
 @property(readonly, nonatomic) NSMutableArray *possibleInvalidations; // @synthesize possibleInvalidations=_possibleInvalidations;
 @property(readonly, nonatomic) id <SXLayoutBlueprintProvider> layoutBlueprintProvider; // @synthesize layoutBlueprintProvider=_layoutBlueprintProvider;
@@ -34,8 +32,6 @@
 - (id)invalidateComponent:(id)arg1;
 - (void)cancelPendingInvalidationForComponent:(id)arg1;
 - (void)mightInvalidateComponent:(id)arg1;
-- (void)suspend;
-- (void)resume;
 - (id)initWithBlueprintProvider:(id)arg1;
 
 // Remaining properties

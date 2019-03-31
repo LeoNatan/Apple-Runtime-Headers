@@ -8,21 +8,28 @@
 
 @interface SXUnitConverter : NSObject
 {
-    CDUnknownBlockType _contextBlock;
+    double _componentWidth;
+    double _parentWidth;
+    double _documentGutter;
+    double _documentMargin;
+    struct CGSize _viewportSize;
 }
 
-+ (double)convertDocumentMarginToPoints:(double)arg1 contextBlock:(CDUnknownBlockType)arg2;
-+ (double)convertComponentWidthToPoints:(double)arg1 contextBlock:(CDUnknownBlockType)arg2;
-+ (double)convertColumnGutterToPoints:(double)arg1 contextBlock:(CDUnknownBlockType)arg2;
-+ (double)convertViewportMaxToPoints:(double)arg1 contextBlock:(CDUnknownBlockType)arg2;
-+ (double)convertViewportMinToPoints:(double)arg1 contextBlock:(CDUnknownBlockType)arg2;
-+ (double)convertViewportWidthToPoints:(double)arg1 contextBlock:(CDUnknownBlockType)arg2;
-+ (double)convertViewportHeightToPoints:(double)arg1 contextBlock:(CDUnknownBlockType)arg2;
-+ (double)convertValueToPoints:(struct _SXConvertibleValue)arg1 contextBlock:(CDUnknownBlockType)arg2;
-@property(copy, nonatomic) CDUnknownBlockType contextBlock; // @synthesize contextBlock=_contextBlock;
-- (void).cxx_destruct;
+@property(readonly, nonatomic) struct CGSize viewportSize; // @synthesize viewportSize=_viewportSize;
+@property(readonly, nonatomic) double documentMargin; // @synthesize documentMargin=_documentMargin;
+@property(readonly, nonatomic) double documentGutter; // @synthesize documentGutter=_documentGutter;
+@property(readonly, nonatomic) double parentWidth; // @synthesize parentWidth=_parentWidth;
+@property(readonly, nonatomic) double componentWidth; // @synthesize componentWidth=_componentWidth;
+- (double)convertParentWidthToPoints:(double)arg1;
+- (double)convertDocumentMarginToPoints:(double)arg1;
+- (double)convertComponentWidthToPoints:(double)arg1;
+- (double)convertColumnGutterToPoints:(double)arg1;
+- (double)convertViewportMaxToPoints:(double)arg1;
+- (double)convertViewportMinToPoints:(double)arg1;
+- (double)convertViewportWidthToPoints:(double)arg1;
+- (double)convertViewportHeightToPoints:(double)arg1;
 - (double)convertValueToPoints:(struct _SXConvertibleValue)arg1;
-- (id)initWithContextBlock:(CDUnknownBlockType)arg1;
+- (id)initWithComponentWidth:(double)arg1 parentWidth:(double)arg2 documentGutter:(double)arg3 documentMargin:(double)arg4 viewportSize:(struct CGSize)arg5;
 
 @end
 

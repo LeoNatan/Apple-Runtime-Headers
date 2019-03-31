@@ -6,62 +6,40 @@
 
 #import <UIKit/UIViewController.h>
 
-#import <MediaPlayer/MPMediaControlsClientController-Protocol.h>
 #import <MediaPlayer/UIViewControllerAnimatedTransitioning-Protocol.h>
 #import <MediaPlayer/UIViewControllerTransitioningDelegate-Protocol.h>
 
-@class MPMediaControlsConfiguration, MPMediaControlsRemoteViewController, MTMaterialView, NSString, _UIAsyncInvocation;
+@class MPMediaControls, MPMediaControlsConfiguration, NSString;
 @protocol MPMediaControlsViewControllerDelegate;
 
-@interface MPMediaControlsViewController : UIViewController <UIViewControllerTransitioningDelegate, UIViewControllerAnimatedTransitioning, MPMediaControlsClientController>
+@interface MPMediaControlsViewController : UIViewController <UIViewControllerTransitioningDelegate, UIViewControllerAnimatedTransitioning>
 {
-    _UIAsyncInvocation *_cancelRequest;
-    _Bool _hasPresented;
-    _Bool _shouldObserveRoutingContextUIDChanges;
-    _Bool _isRequestingViewController;
-    _Bool _shouldUseOverrideAudioSessionValues;
+    MPMediaControlsConfiguration *_configuration;
     CDUnknownBlockType _didDismissHandler;
     id <MPMediaControlsViewControllerDelegate> _delegate;
-    MPMediaControlsRemoteViewController *_remoteViewController;
-    MTMaterialView *_backgroundView;
-    MPMediaControlsConfiguration *_configuration;
+    MPMediaControls *_mediaControls;
 }
 
-@property(readonly, nonatomic) MPMediaControlsConfiguration *configuration; // @synthesize configuration=_configuration;
-@property(nonatomic) _Bool shouldUseOverrideAudioSessionValues; // @synthesize shouldUseOverrideAudioSessionValues=_shouldUseOverrideAudioSessionValues;
-@property(retain, nonatomic) MTMaterialView *backgroundView; // @synthesize backgroundView=_backgroundView;
-@property(retain, nonatomic) MPMediaControlsRemoteViewController *remoteViewController; // @synthesize remoteViewController=_remoteViewController;
+@property(retain, nonatomic) MPMediaControls *mediaControls; // @synthesize mediaControls=_mediaControls;
 @property(nonatomic) __weak id <MPMediaControlsViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(copy, nonatomic) CDUnknownBlockType didDismissHandler; // @synthesize didDismissHandler=_didDismissHandler;
 - (void).cxx_destruct;
-- (void)_updateConfigurationWithRouteSharingPolicy:(unsigned long long)arg1 routingContextUID:(id)arg2;
-- (void)_reloadAudioContextConfigurationOptions;
-- (void)_requestRemoteViewController;
-- (void)_audioSessionRoutingContextDidChange:(id)arg1;
-- (void)_applicationDidEnterBackground:(id)arg1;
-- (void)_applicationWillAddDeactivationReason:(id)arg1;
-- (void)_addRemoteView;
 - (void)animateTransition:(id)arg1;
 - (double)transitionDuration:(id)arg1;
 - (id)presentationControllerForPresentedViewController:(id)arg1 presentingViewController:(id)arg2 sourceViewController:(id)arg3;
 - (id)animationControllerForDismissedController:(id)arg1;
 - (id)animationControllerForPresentedController:(id)arg1 presentingController:(id)arg2 sourceController:(id)arg3;
-- (_Bool)shouldAutorotate;
-- (void)tapGestureRecognized:(id)arg1;
-- (void)didSelectRoute:(id)arg1;
-- (void)didReceiveInteraction;
-- (void)dismiss;
 - (void)setOverrideRouteSharingPolicy:(unsigned long long)arg1 routingContextUID:(id)arg2;
+- (void)dismiss;
 - (void)stopPrewarming;
 - (void)startPrewarming;
 - (void)prepareRemoteViewController;
+- (void)_present;
+- (void)_createMediaControlsIfNeeded;
+@property(readonly, nonatomic) MPMediaControlsConfiguration *configuration; // @synthesize configuration=_configuration;
 - (_Bool)prefersStatusBarHidden;
-- (void)viewDidDisappear:(_Bool)arg1;
-- (void)viewWillTransitionToSize:(struct CGSize)arg1 withTransitionCoordinator:(id)arg2;
-- (void)viewDidAppear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLoad;
-- (void)dealloc;
 - (id)initWithConfiguration:(id)arg1;
 - (id)init;
 

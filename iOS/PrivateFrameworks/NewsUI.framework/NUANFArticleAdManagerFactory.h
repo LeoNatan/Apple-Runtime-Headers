@@ -9,25 +9,27 @@
 #import <NewsUI/NUArticleAdManagerFactory-Protocol.h>
 
 @class NSString;
-@protocol NUAdLayoutOptionsFactory, NUAdMetadataFactory, NUAdProvider, NUAdSettings, NUDevice;
+@protocol NUAdContextProvider, NUAdControllerFactory, NUAdLayoutOptionsFactory, NUAdMetadataFactory, NUAdProvider, NUDevice;
 
 @interface NUANFArticleAdManagerFactory : NSObject <NUArticleAdManagerFactory>
 {
     id <NUAdProvider> _adProvider;
     id <NUAdMetadataFactory> _adMetadataFactory;
-    id <NUAdSettings> _settings;
+    id <NUAdControllerFactory> _adControllerFactory;
     id <NUDevice> _device;
     id <NUAdLayoutOptionsFactory> _layoutOptionsFactory;
+    id <NUAdContextProvider> _subscriptionAdContextProvider;
 }
 
+@property(readonly, nonatomic) id <NUAdContextProvider> subscriptionAdContextProvider; // @synthesize subscriptionAdContextProvider=_subscriptionAdContextProvider;
 @property(readonly, nonatomic) id <NUAdLayoutOptionsFactory> layoutOptionsFactory; // @synthesize layoutOptionsFactory=_layoutOptionsFactory;
 @property(readonly, nonatomic) id <NUDevice> device; // @synthesize device=_device;
-@property(readonly, nonatomic) id <NUAdSettings> settings; // @synthesize settings=_settings;
+@property(readonly, nonatomic) id <NUAdControllerFactory> adControllerFactory; // @synthesize adControllerFactory=_adControllerFactory;
 @property(readonly, nonatomic) id <NUAdMetadataFactory> adMetadataFactory; // @synthesize adMetadataFactory=_adMetadataFactory;
 @property(readonly, nonatomic) id <NUAdProvider> adProvider; // @synthesize adProvider=_adProvider;
 - (void).cxx_destruct;
-- (id)createArticleAdManagerForArticle:(id)arg1;
-- (id)initWithAdProvider:(id)arg1 adMetadataFactory:(id)arg2 settings:(id)arg3 device:(id)arg4 layoutOptionsFactory:(id)arg5;
+- (id)createArticleAdManagerForArticle:(id)arg1 issue:(id)arg2;
+- (id)initWithAdProvider:(id)arg1 adMetadataFactory:(id)arg2 adControllerFactory:(id)arg3 device:(id)arg4 layoutOptionsFactory:(id)arg5 subscriptionAdContextProvider:(id)arg6;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

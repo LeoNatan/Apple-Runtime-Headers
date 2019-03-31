@@ -8,17 +8,18 @@
 
 #import <Silex/SXButtonComponentTextProvider-Protocol.h>
 
-@class NSString, SXSubscriptionContext;
+@class NSString;
+@protocol SXSubscriptionButtonTextProviding;
 
 @interface SXSubscriptionButtonComponentTextProvider : NSObject <SXButtonComponentTextProvider>
 {
-    SXSubscriptionContext *_context;
+    id <SXSubscriptionButtonTextProviding> _textProvider;
 }
 
-@property(readonly, nonatomic) SXSubscriptionContext *context; // @synthesize context=_context;
+@property(readonly, nonatomic) id <SXSubscriptionButtonTextProviding> textProvider; // @synthesize textProvider=_textProvider;
 - (void).cxx_destruct;
 - (id)buttonText;
-- (id)initWithContextProvider:(id)arg1;
+- (id)initWithTextProvider:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

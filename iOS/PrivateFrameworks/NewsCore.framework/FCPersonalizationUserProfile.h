@@ -8,7 +8,7 @@
 
 #import <NewsCore/NSCopying-Protocol.h>
 
-@class NSSet;
+@class FCBundleSubscription, NSSet;
 
 @interface FCPersonalizationUserProfile : NSObject <NSCopying>
 {
@@ -16,17 +16,17 @@
     NSSet *_mutedTagIDs;
     NSSet *_autofavoritedTagIDs;
     NSSet *_purchasedTagIDs;
-    unsigned long long _bundleSubscriptionState;
+    FCBundleSubscription *_bundleSubscription;
 }
 
-@property(readonly, nonatomic) unsigned long long bundleSubscriptionState; // @synthesize bundleSubscriptionState=_bundleSubscriptionState;
+@property(readonly, nonatomic) FCBundleSubscription *bundleSubscription; // @synthesize bundleSubscription=_bundleSubscription;
 @property(readonly, copy, nonatomic) NSSet *purchasedTagIDs; // @synthesize purchasedTagIDs=_purchasedTagIDs;
 @property(readonly, copy, nonatomic) NSSet *autofavoritedTagIDs; // @synthesize autofavoritedTagIDs=_autofavoritedTagIDs;
 @property(readonly, copy, nonatomic) NSSet *mutedTagIDs; // @synthesize mutedTagIDs=_mutedTagIDs;
 @property(readonly, copy, nonatomic) NSSet *subscribedTagIDs; // @synthesize subscribedTagIDs=_subscribedTagIDs;
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (id)initWithSubscribedTagIDs:(id)arg1 mutedTagIDs:(id)arg2 autofavoritedTagIDs:(id)arg3 purchasedTagIDs:(id)arg4 bundleSubscriptionState:(unsigned long long)arg5;
+- (id)initWithSubscribedTagIDs:(id)arg1 mutedTagIDs:(id)arg2 autofavoritedTagIDs:(id)arg3 purchasedTagIDs:(id)arg4 bundleSubscription:(id)arg5;
 
 @end
 

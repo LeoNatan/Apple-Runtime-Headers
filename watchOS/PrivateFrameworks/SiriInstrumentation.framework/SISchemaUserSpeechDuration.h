@@ -10,13 +10,13 @@
 
 @interface SISchemaUserSpeechDuration : PBCodable <NSCopying>
 {
-    int _duration;
+    int _durationMs;
     struct {
-        unsigned int duration:1;
+        unsigned int durationMs:1;
     } _has;
 }
 
-@property(nonatomic) int duration; // @synthesize duration=_duration;
+@property(nonatomic) int durationMs; // @synthesize durationMs=_durationMs;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;
@@ -26,7 +26,7 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
-@property(nonatomic) _Bool hasDuration;
+@property(nonatomic) _Bool hasDurationMs;
 
 @end
 

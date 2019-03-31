@@ -6,7 +6,7 @@
 
 #import <UIKit/UIViewController.h>
 
-@class AMSUserNotification, UIImageView, UILabel;
+@class AMSUserNotification, AVPlayerViewController, UIImageView, UILabel;
 @protocol AMPUserNotificationContentDelegate;
 
 __attribute__((visibility("hidden")))
@@ -17,14 +17,19 @@ __attribute__((visibility("hidden")))
     UILabel *_titleLabel;
     UILabel *_textLabel;
     UIImageView *_imageView;
+    AVPlayerViewController *_videoPlayerController;
 }
 
+@property(readonly, nonatomic) AVPlayerViewController *videoPlayerController; // @synthesize videoPlayerController=_videoPlayerController;
 @property(readonly, nonatomic) UIImageView *imageView; // @synthesize imageView=_imageView;
 @property(readonly, nonatomic) UILabel *textLabel; // @synthesize textLabel=_textLabel;
 @property(readonly, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(nonatomic) __weak id <AMPUserNotificationContentDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) AMSUserNotification *userNotification; // @synthesize userNotification=_userNotification;
 - (void).cxx_destruct;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
+- (void)mediaPause;
+- (void)imageViewTapped:(id)arg1;
 - (void)viewWillLayoutSubviews;
 @property(readonly, nonatomic) struct CGSize expectedContentSize;
 - (void)setPreferredContentSize:(struct CGSize)arg1;

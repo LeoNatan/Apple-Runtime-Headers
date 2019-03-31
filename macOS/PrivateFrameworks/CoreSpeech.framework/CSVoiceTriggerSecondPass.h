@@ -10,16 +10,18 @@
 #import <CoreSpeech/CSKeywordAnalyzerNDAPIScoreDelegate-Protocol.h>
 #import <CoreSpeech/CSKeywordAnalyzerNDEAPIScoreDelegate-Protocol.h>
 #import <CoreSpeech/CSKeywordAnalyzerQuasarScoreDelegate-Protocol.h>
+#import <CoreSpeech/CSMediaPlayingMonitorDelegate-Protocol.h>
 #import <CoreSpeech/CSSpeakerDetectorNDAPIDelegate-Protocol.h>
 #import <CoreSpeech/CSSpeechManagerDelegate-Protocol.h>
 #import <CoreSpeech/CSVoiceTriggerEnabledMonitorDelegate-Protocol.h>
 #import <CoreSpeech/CSVoiceTriggerFirstPassDelegate-Protocol.h>
 #import <CoreSpeech/CSVoiceTriggerFirstPassJarvisDelegate-Protocol.h>
+#import <CoreSpeech/CSVolumeMonitorDelegate-Protocol.h>
 
 @class CSAsset, CSAudioCircularBuffer, CSKeywordAnalyzerNDAPI, CSKeywordAnalyzerNDEAPI, CSKeywordAnalyzerQuasar, CSPlainAudioFileWriter, CSSpeakerDetectorNDAPI, CSSpeakerModel, CSSpeechManager, NSData, NSDictionary, NSString;
 @protocol CSVoiceTriggerDelegate, OS_dispatch_queue;
 
-@interface CSVoiceTriggerSecondPass : NSObject <CSKeywordAnalyzerNDAPIScoreDelegate, CSKeywordAnalyzerNDEAPIScoreDelegate, CSSpeakerDetectorNDAPIDelegate, CSKeywordAnalyzerQuasarScoreDelegate, CSVoiceTriggerEnabledMonitorDelegate, CSAudioServerCrashMonitorGibraltarDelegate, CSSpeechManagerDelegate, CSVoiceTriggerFirstPassDelegate, CSVoiceTriggerFirstPassJarvisDelegate>
+@interface CSVoiceTriggerSecondPass : NSObject <CSKeywordAnalyzerNDAPIScoreDelegate, CSKeywordAnalyzerNDEAPIScoreDelegate, CSSpeakerDetectorNDAPIDelegate, CSKeywordAnalyzerQuasarScoreDelegate, CSVoiceTriggerEnabledMonitorDelegate, CSAudioServerCrashMonitorGibraltarDelegate, CSMediaPlayingMonitorDelegate, CSVolumeMonitorDelegate, CSSpeechManagerDelegate, CSVoiceTriggerFirstPassDelegate, CSVoiceTriggerFirstPassJarvisDelegate>
 {
     BOOL _hasReceivedNDEAPIResult;
     BOOL _useSAT;
@@ -40,6 +42,11 @@
     float _firstPassMasterChannelScoreBoost;
     float _firstPassOnsetScore;
     float _twoShotFeedbackDelay;
+    float _remoteMicVADScore;
+    float _remoteMicVADThreshold;
+    float _remoteMicVADMyriadThreshold;
+    float _minimumPhraseLengthForVADGating;
+    float _mediaVolume;
     CSSpeechManager *_speechManager;
     id <CSVoiceTriggerDelegate> _delegate;
     NSObject<OS_dispatch_queue> *_queue;
@@ -78,13 +85,20 @@
     unsigned long long _firstPassSource;
     NSString *_firstPassDeviceID;
     CSPlainAudioFileWriter *_audioFileWriter;
+    long long _mediaPlayingState;
 }
 
 + (id)timeStampString;
 + (id)secondPassAudioLogDirectory;
 + (id)secondPassAudioLoggingFilePath;
+@property(nonatomic) float mediaVolume; // @synthesize mediaVolume=_mediaVolume;
+@property(nonatomic) long long mediaPlayingState; // @synthesize mediaPlayingState=_mediaPlayingState;
 @property(nonatomic) BOOL secondPassHasMadeDecision; // @synthesize secondPassHasMadeDecision=_secondPassHasMadeDecision;
 @property(retain, nonatomic) CSPlainAudioFileWriter *audioFileWriter; // @synthesize audioFileWriter=_audioFileWriter;
+@property(nonatomic) float minimumPhraseLengthForVADGating; // @synthesize minimumPhraseLengthForVADGating=_minimumPhraseLengthForVADGating;
+@property(nonatomic) float remoteMicVADMyriadThreshold; // @synthesize remoteMicVADMyriadThreshold=_remoteMicVADMyriadThreshold;
+@property(nonatomic) float remoteMicVADThreshold; // @synthesize remoteMicVADThreshold=_remoteMicVADThreshold;
+@property(nonatomic) float remoteMicVADScore; // @synthesize remoteMicVADScore=_remoteMicVADScore;
 @property(nonatomic) float twoShotFeedbackDelay; // @synthesize twoShotFeedbackDelay=_twoShotFeedbackDelay;
 @property(retain, nonatomic) NSString *firstPassDeviceID; // @synthesize firstPassDeviceID=_firstPassDeviceID;
 @property(nonatomic) unsigned long long firstPassSource; // @synthesize firstPassSource=_firstPassSource;
@@ -143,6 +157,8 @@
 - (void).cxx_destruct;
 - (void)_setStartAnalyzeTime:(unsigned long long)arg1;
 - (void)_resetStartAnalyzeTime;
+- (void)CSVolumeMonitor:(id)arg1 didReceiveMusicVolumeChanged:(float)arg2;
+- (void)CSMediaPlayingMonitor:(id)arg1 didReceiveMediaPlayingChanged:(long long)arg2;
 - (void)handleServerDidRestart;
 - (void)mediaserverdDidRestart;
 - (void)activationEventNotifier:(id)arg1 event:(id)arg2 completion:(CDUnknownBlockType)arg3;
@@ -166,8 +182,10 @@
 - (void)voiceTriggerFirstPass:(id)arg1 from:(unsigned long long)arg2 didDetectKeyword:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)_voiceTriggerFirstPassDidDetectKeywordFrom:(unsigned long long)arg1 deviceId:(id)arg2 firstPassInfo:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)_handleVoiceTriggerFirstPassFromJarvis:(unsigned long long)arg1 deviceId:(id)arg2 firstPassInfo:(id)arg3 completion:(CDUnknownBlockType)arg4;
+- (void)_handleVoiceTriggerFirstPassFromHearst:(unsigned long long)arg1 deviceId:(id)arg2 firstPassInfo:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)_handleVoiceTriggerFirstPassFromAP:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_clearTriggerCandidate;
+- (void)_initializeMediaPlayingState;
 - (void)_setAsset:(id)arg1;
 - (void)setAsset:(id)arg1;
 - (void)_reset;

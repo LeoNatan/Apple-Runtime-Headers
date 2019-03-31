@@ -8,11 +8,14 @@
 @protocol FCIssueReadingHistoryObserving;
 
 @protocol FCIssueReadingHistoryType
+@property(readonly, nonatomic) NSString *mostRecentlyVisitedIssueID;
 - (void)removeObserver:(id <FCIssueReadingHistoryObserving>)arg1;
 - (void)addObserver:(id <FCIssueReadingHistoryObserving>)arg1;
 - (NSDate *)lastVisitedDateForIssueWithID:(NSString *)arg1;
 - (FCIssueBookmark *)bookmarkForLastVisitToIssueWithID:(NSString *)arg1;
+- (_Bool)hasIssueWithIDBeenBadged:(NSString *)arg1;
 - (_Bool)hasIssueWithIDBeenVisited:(NSString *)arg1;
+- (void)markIssueAsBadgedWithID:(NSString *)arg1;
 - (void)markIssueWithID:(NSString *)arg1 asVisitedWithBookmark:(FCIssueBookmark *)arg2;
 @end
 

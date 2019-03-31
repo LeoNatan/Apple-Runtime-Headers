@@ -30,6 +30,7 @@
 - (id)typesForWriteAuthorizationOverride;
 - (id)valueForEntitlement:(id)arg1;
 - (id)stringForEntitlement:(id)arg1;
+- (_Bool)hasPrivateAccessEntitlementWithIdentifer:(id)arg1;
 - (_Bool)hasAccessEntitlementWithIdentifer:(id)arg1;
 - (_Bool)hasEntitlement:(id)arg1;
 - (id)applicationIdentifier;

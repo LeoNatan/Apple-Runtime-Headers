@@ -37,6 +37,9 @@
     FCWidgetConfig *_widgetConfig;
 }
 
++ (id)defaultMagazinesConfigRecordIDByLocalizedStorefrontID;
++ (id)defaultWidgetRecordConfigIDByLocalizedStorefrontID;
++ (id)defaultForYouRecordConfigIDByLocalizedStorefrontID;
 + (id)overrideWidgetSectionConfigID;
 + (id)overrideForYouConfigID;
 + (id)languageConfigDictionaryForConfig:(id)arg1 preferredLanguageTags:(id)arg2;
@@ -51,7 +54,9 @@
 @property(readonly, copy, nonatomic) NSString *storefrontID; // @synthesize storefrontID=_storefrontID;
 @property(readonly, nonatomic) NSDictionary *configDictionary; // @synthesize configDictionary=_configDictionary;
 - (void).cxx_destruct;
+- (id)localizedStorefrontID;
 - (id)jsonEncodableObject;
+@property(readonly, nonatomic) long long feedContentExposureTestMaximumInterval;
 @property(readonly, nonatomic) long long criticalStorageThreshold;
 @property(readonly, nonatomic) long long lowStorageThreshold;
 @property(readonly, nonatomic, getter=isArticleToolbarCompressionEnabled) _Bool articleToolbarCompressionEnabled;
@@ -141,6 +146,7 @@
 @property(readonly, nonatomic) FCForYouGroupsConfiguration *forYouGroupsConfiguration; // @synthesize forYouGroupsConfiguration=_forYouGroupsConfiguration;
 @property(readonly, nonatomic) NSArray *hiddenFeedIDs;
 @property(readonly, nonatomic) long long articleRapidUpdatesTimeout;
+@property(readonly, nonatomic) double feedLineHeightMultiplier;
 @property(readonly, nonatomic) NSString *editorialGemsSectionID;
 @property(readonly, nonatomic) NSString *spotlightChannelID;
 @property(readonly, nonatomic) NSString *editorialChannelID;

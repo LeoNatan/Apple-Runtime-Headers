@@ -4,12 +4,13 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
+#import <NewsCore/FCFeedElement-Protocol.h>
 #import <NewsCore/NSObject-Protocol.h>
 
 @class FCColor, FCColorGradient, FCFeedEdition, NSArray, NSDate, NSString, NTPBDiscoverMoreVideosInfo;
 @protocol FCForYouMagazineFeedGroup;
 
-@protocol FCFeedGroupOutlining <NSObject>
+@protocol FCFeedGroupOutlining <NSObject, FCFeedElement>
 @property(readonly, nonatomic) id <FCForYouMagazineFeedGroup> magazineGroup;
 @property(readonly, copy, nonatomic) NSArray *issueIDs;
 @property(readonly, copy, nonatomic) NSString *backingTagID;

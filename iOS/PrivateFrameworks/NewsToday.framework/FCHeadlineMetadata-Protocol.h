@@ -4,10 +4,15 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
+#import <NewsToday/NSObject-Protocol.h>
+
 @class NSDate, NSString;
 
-@protocol FCHeadlineMetadata
+@protocol FCHeadlineMetadata <NSObject>
 @property(readonly, nonatomic) NSString *storyType;
 @property(readonly, nonatomic) NSDate *displayDate;
+
+@optional
+@property(readonly, nonatomic) NSString *title;
 @end
 

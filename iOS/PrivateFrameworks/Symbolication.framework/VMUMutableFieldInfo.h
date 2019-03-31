@@ -12,6 +12,8 @@
 {
 }
 
+- (_Bool)replaceFieldRecursively:(id)arg1 withField:(id)arg2;
+- (void)mutateTypeFieldsRecursivelyWithBlock:(CDUnknownBlockType)arg1 parentOffset:(unsigned int)arg2;
 @property(retain, nonatomic) VMUClassInfo *destinationLayout; // @dynamic destinationLayout;
 @property(nonatomic) unsigned int stride; // @dynamic stride;
 @property(nonatomic) unsigned int scannableSize; // @dynamic scannableSize;

@@ -13,7 +13,7 @@
     NSURL *_sparsebundleURL;
 }
 
-+ (id)createSparsebundleWithPassword:(id)arg1 inDirectory:(id)arg2;
++ (id)createSparsebundleOnVolume:(id)arg1 usingSystemKeychainAccount:(id)arg2;
 + (unsigned long long)sizeLimitForSparsebundleInDirectory:(id)arg1;
 + (id)_fileSystemPersonalityForNewSparsebundles;
 + (id)_tmpNameForCreation;

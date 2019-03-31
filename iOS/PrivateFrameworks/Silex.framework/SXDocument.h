@@ -11,12 +11,17 @@
 
 @interface SXDocument : SXJSONObject
 {
+    NSString *_identifier;
 }
 
 + (Class)classForProtocolProperty:(id)arg1 withValue:(id)arg2;
 + (CDUnknownBlockType)purgeClassBlockForPropertyWithName:(id)arg1;
 + (CDUnknownBlockType)objectValueClassBlockForPropertyWithName:(id)arg1;
 + (CDUnknownBlockType)valueClassBlockForPropertyWithName:(id)arg1;
+@property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
+- (void).cxx_destruct;
+- (id)initWithIdentifier:(id)arg1 JSONObject:(id)arg2 andVersion:(id)arg3;
+- (id)initWithJSONObject:(id)arg1 andVersion:(id)arg2;
 
 // Remaining properties
 @property(readonly, nonatomic) id <SXAdvertisingSettings> advertisingSettings; // @dynamic advertisingSettings;
@@ -27,7 +32,6 @@
 @property(readonly, nonatomic) SXJSONDictionary *componentTextStyles; // @dynamic componentTextStyles;
 @property(readonly, nonatomic) SXJSONArray *components; // @dynamic components;
 @property(readonly, nonatomic) SXDocumentStyle *documentStyle; // @dynamic documentStyle;
-@property(readonly, nonatomic) NSString *identifier; // @dynamic identifier;
 @property(readonly, nonatomic) NSString *language; // @dynamic language;
 @property(readonly, nonatomic) id <SXDocumentLayout> layout; // @dynamic layout;
 @property(readonly, nonatomic) SXMetaData *metadata; // @dynamic metadata;

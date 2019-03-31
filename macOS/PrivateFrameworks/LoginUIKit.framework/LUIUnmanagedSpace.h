@@ -10,16 +10,16 @@
 
 @interface LUIUnmanagedSpace : NSObject
 {
-    BOOL _showing;
     int _level;
     unsigned long long _spaceID;
     struct __CFArray *_spaceIDs;
     NSMutableSet *_windowIDs;
+    long long _shownCount;
 }
 
 + (id)unmanagedSpaceWithLevel:(int)arg1;
+@property long long shownCount; // @synthesize shownCount=_shownCount;
 @property(retain) NSMutableSet *windowIDs; // @synthesize windowIDs=_windowIDs;
-@property BOOL showing; // @synthesize showing=_showing;
 @property struct __CFArray *spaceIDs; // @synthesize spaceIDs=_spaceIDs;
 @property(readonly) int level; // @synthesize level=_level;
 @property unsigned long long spaceID; // @synthesize spaceID=_spaceID;
@@ -32,7 +32,6 @@
 - (void)removeWindow:(id)arg1;
 - (void)addWindows:(id)arg1;
 - (void)addWindow:(id)arg1;
-- (void)_showSpace;
 - (long long)_numWindowsInSpace;
 - (void)_cleanupSpace;
 - (void)_setupSpace;

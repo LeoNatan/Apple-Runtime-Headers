@@ -32,6 +32,7 @@
 - (id)_createFallbackReportFromStruct:(const struct netcore_stats_tcp_cell_fallback_report *)arg1;
 - (id)_createDataUsageSnapshotFromStruct:(const struct netcore_stats_data_usage_snapshot *)arg1;
 @property(readonly, nonatomic) NSArray *activities;
+- (BOOL)tlsHandshakeTimedOut;
 @property(readonly, nonatomic) NSUUID *connectionUUID;
 @property(readonly, nonatomic) BOOL kernelReportingWriteStalled;
 @property(readonly, nonatomic) BOOL kernelReportingReadStalled;

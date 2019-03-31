@@ -6,7 +6,7 @@
 
 #import <NanoAudioControl/NSObject-Protocol.h>
 
-@class MPAVRoute, MPAVRoutingController, NSArray, NSError;
+@class MPAVRoute, MPAVRoutingController, NSArray, NSError, NSString;
 
 @protocol MPAVRoutingControllerDelegate <NSObject>
 
@@ -14,7 +14,7 @@
 - (void)routingControllerDidPauseFromActiveRouteChange:(MPAVRoutingController *)arg1;
 - (void)routingControllerExternalScreenTypeDidChange:(MPAVRoutingController *)arg1;
 - (void)routingController:(MPAVRoutingController *)arg1 volumeControlAvailabilityDidChange:(_Bool)arg2;
-- (void)routingController:(MPAVRoutingController *)arg1 shouldHijackRoute:(MPAVRoute *)arg2 alertStyle:(int)arg3 completion:(void (^)(_Bool))arg4;
+- (void)routingController:(MPAVRoutingController *)arg1 shouldHijackRoute:(MPAVRoute *)arg2 alertStyle:(int)arg3 busyRouteName:(NSString *)arg4 presentingAppName:(NSString *)arg5 completion:(void (^)(_Bool))arg6;
 - (void)routingController:(MPAVRoutingController *)arg1 pickedRouteDidChange:(MPAVRoute *)arg2;
 - (void)routingController:(MPAVRoutingController *)arg1 pickedRoutesDidChange:(NSArray *)arg2;
 - (void)routingController:(MPAVRoutingController *)arg1 didFailToPickRouteWithError:(NSError *)arg2;

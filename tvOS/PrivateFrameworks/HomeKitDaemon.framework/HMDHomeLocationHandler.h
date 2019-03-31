@@ -61,7 +61,7 @@
 - (void)accessoryAdded;
 - (void)_handleRetrieveLocation:(id)arg1;
 - (void)_handleLocationAuthorization:(int)arg1;
-- (void)_handleLocationAuthorizationMessage:(id)arg1;
+- (void)_handleLocationAuthorizationChangedNotification:(id)arg1;
 - (void)_registerForRegionUpdate;
 - (void)_registerForMessages;
 - (void)configure:(id)arg1 queue:(id)arg2 messageDispatcher:(id)arg3;

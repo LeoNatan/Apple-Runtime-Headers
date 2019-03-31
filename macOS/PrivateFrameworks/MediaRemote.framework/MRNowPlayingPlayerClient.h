@@ -69,10 +69,10 @@
 - (void)updatePlayer:(id)arg1;
 @property(readonly, nonatomic) unsigned int playbackState;
 - (void)updatePlaybackState:(unsigned int)arg1 date:(id)arg2;
-@property(nonatomic) double invalidatationTimestamp;
-@property(copy, nonatomic) NSArray *supportedCommands;
 @property(retain, nonatomic) MRNowPlayingArtwork *nowPlayingArtwork;
 @property(copy, nonatomic) NSDictionary *nowPlayingInfo;
+@property(nonatomic) double invalidatationTimestamp;
+@property(copy, nonatomic) NSArray *supportedCommands;
 - (id)initWithPlayerPath:(id)arg1;
 
 @end

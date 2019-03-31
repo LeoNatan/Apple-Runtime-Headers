@@ -14,6 +14,10 @@
 
 @interface CSMyriadPHash : NSObject <CSVoiceTriggerDelegate, CSSelfTriggerDetectorDelegate>
 {
+    float *_hammingWindow;
+    struct OpaqueFFTSetup *_setup;
+    float *_snrWindow;
+    struct OpaqueFFTSetup *_snrSetup;
     unsigned char _signalFractional;
     short _signalEstimate;
     id <CSMyriadPHashDelegate> _delegate;
@@ -33,11 +37,12 @@
 - (void)selfTriggerDetector:(id)arg1 didDetectSelfTrigger:(id)arg2;
 - (void)voiceTriggerDidDetectSpeakerReject:(id)arg1;
 - (void)voiceTriggerDidDetectNearMiss:(id)arg1;
-- (void)voiceTriggerDidDetectKeyword:(id)arg1;
+- (void)voiceTriggerDidDetectKeyword:(id)arg1 deviceId:(id)arg2;
 - (id)_audioLogDirectory;
 - (id)_generateMyriadInfo:(unsigned long long)arg1 score:(float)arg2 triggerSource:(id)arg3 channel:(unsigned long long)arg4 absoluteTime:(unsigned long long)arg5;
 - (id)cachedHash;
 - (unsigned short)pHash:(float *)arg1 length:(int)arg2;
+- (void)dealloc;
 - (id)initWithAudioBuffer:(id)arg1;
 
 // Remaining properties

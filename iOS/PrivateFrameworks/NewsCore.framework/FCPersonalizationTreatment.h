@@ -299,6 +299,7 @@
     double _firstPassRealTimeUserFeedbackPublishDateHalfLifeCoefficient;
     double _firstPassArticleFilter;
     double _bundlePaidMultiplierForFreeUsers;
+    double _bundlePaidMultiplierForTrialUsers;
     double _bundlePaidMultiplierForPaidUsers;
     long long _auditionedAutoFavoritesEmitterLimit;
     double _topicFeedBaselineRatePrior;
@@ -341,6 +342,7 @@
     double _topicFeedFirstPassRealTimeUserFeedbackPublishDateHalfLifeCoefficient;
     double _topicFeedFirstPassArticleFilter;
     double _topicFeedBundlePaidMultiplierForFreeUsers;
+    double _topicFeedBundlePaidMultiplierForTrialUsers;
     double _topicFeedBundlePaidMultiplierForPaidUsers;
     double _magazineFeedBaselineRatePrior;
     double _magazineFeedDecayFactor;
@@ -382,6 +384,7 @@
     double _magazineFeedFirstPassRealTimeUserFeedbackPublishDateHalfLifeCoefficient;
     double _magazineFeedFirstPassArticleFilter;
     double _magazineFeedBundlePaidMultiplierForFreeUsers;
+    double _magazineFeedBundlePaidMultiplierForTrialUsers;
     double _magazineFeedBundlePaidMultiplierForPaidUsers;
     double _magazineFeedGroupScoreWeight;
 }
@@ -389,6 +392,7 @@
 + (_Bool)supportsSecureCoding;
 @property(readonly, nonatomic) double magazineFeedGroupScoreWeight; // @synthesize magazineFeedGroupScoreWeight=_magazineFeedGroupScoreWeight;
 @property(readonly, nonatomic) double magazineFeedBundlePaidMultiplierForPaidUsers; // @synthesize magazineFeedBundlePaidMultiplierForPaidUsers=_magazineFeedBundlePaidMultiplierForPaidUsers;
+@property(readonly, nonatomic) double magazineFeedBundlePaidMultiplierForTrialUsers; // @synthesize magazineFeedBundlePaidMultiplierForTrialUsers=_magazineFeedBundlePaidMultiplierForTrialUsers;
 @property(readonly, nonatomic) double magazineFeedBundlePaidMultiplierForFreeUsers; // @synthesize magazineFeedBundlePaidMultiplierForFreeUsers=_magazineFeedBundlePaidMultiplierForFreeUsers;
 @property(readonly, nonatomic) double magazineFeedFirstPassArticleFilter; // @synthesize magazineFeedFirstPassArticleFilter=_magazineFeedFirstPassArticleFilter;
 @property(readonly, nonatomic) double magazineFeedFirstPassRealTimeUserFeedbackPublishDateHalfLifeCoefficient; // @synthesize magazineFeedFirstPassRealTimeUserFeedbackPublishDateHalfLifeCoefficient=_magazineFeedFirstPassRealTimeUserFeedbackPublishDateHalfLifeCoefficient;
@@ -430,6 +434,7 @@
 @property(readonly, nonatomic) double magazineFeedDecayFactor; // @synthesize magazineFeedDecayFactor=_magazineFeedDecayFactor;
 @property(readonly, nonatomic) double magazineFeedBaselineRatePrior; // @synthesize magazineFeedBaselineRatePrior=_magazineFeedBaselineRatePrior;
 @property(readonly, nonatomic) double topicFeedBundlePaidMultiplierForPaidUsers; // @synthesize topicFeedBundlePaidMultiplierForPaidUsers=_topicFeedBundlePaidMultiplierForPaidUsers;
+@property(readonly, nonatomic) double topicFeedBundlePaidMultiplierForTrialUsers; // @synthesize topicFeedBundlePaidMultiplierForTrialUsers=_topicFeedBundlePaidMultiplierForTrialUsers;
 @property(readonly, nonatomic) double topicFeedBundlePaidMultiplierForFreeUsers; // @synthesize topicFeedBundlePaidMultiplierForFreeUsers=_topicFeedBundlePaidMultiplierForFreeUsers;
 @property(readonly, nonatomic) double topicFeedFirstPassArticleFilter; // @synthesize topicFeedFirstPassArticleFilter=_topicFeedFirstPassArticleFilter;
 @property(readonly, nonatomic) double topicFeedFirstPassRealTimeUserFeedbackPublishDateHalfLifeCoefficient; // @synthesize topicFeedFirstPassRealTimeUserFeedbackPublishDateHalfLifeCoefficient=_topicFeedFirstPassRealTimeUserFeedbackPublishDateHalfLifeCoefficient;
@@ -472,6 +477,7 @@
 @property(readonly, nonatomic) double topicFeedBaselineRatePrior; // @synthesize topicFeedBaselineRatePrior=_topicFeedBaselineRatePrior;
 @property(readonly, nonatomic) long long auditionedAutoFavoritesEmitterLimit; // @synthesize auditionedAutoFavoritesEmitterLimit=_auditionedAutoFavoritesEmitterLimit;
 @property(readonly, nonatomic) double bundlePaidMultiplierForPaidUsers; // @synthesize bundlePaidMultiplierForPaidUsers=_bundlePaidMultiplierForPaidUsers;
+@property(readonly, nonatomic) double bundlePaidMultiplierForTrialUsers; // @synthesize bundlePaidMultiplierForTrialUsers=_bundlePaidMultiplierForTrialUsers;
 @property(readonly, nonatomic) double bundlePaidMultiplierForFreeUsers; // @synthesize bundlePaidMultiplierForFreeUsers=_bundlePaidMultiplierForFreeUsers;
 @property(readonly, nonatomic) double firstPassArticleFilter; // @synthesize firstPassArticleFilter=_firstPassArticleFilter;
 @property(readonly, nonatomic) double firstPassRealTimeUserFeedbackPublishDateHalfLifeCoefficient; // @synthesize firstPassRealTimeUserFeedbackPublishDateHalfLifeCoefficient=_firstPassRealTimeUserFeedbackPublishDateHalfLifeCoefficient;

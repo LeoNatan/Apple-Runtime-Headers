@@ -9,6 +9,10 @@
 @class NSString;
 
 @protocol AFInterstitialConfigurationMutating <NSObject>
+- (void)setIsTwoShot:(_Bool)arg1;
+- (void)setIsDucking:(_Bool)arg1;
+- (void)setIsVoiceTrigger:(_Bool)arg1;
+- (void)setRecordRoute:(NSString *)arg1;
 - (void)setGender:(int)arg1;
 - (void)setLanguageCode:(NSString *)arg1;
 - (void)setStyle:(int)arg1;

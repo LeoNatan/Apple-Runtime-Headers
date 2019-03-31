@@ -63,7 +63,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) unsigned long long desiredResourcePolicy;
 @property(readonly, nonatomic) unsigned long long desiredLocationProviderType;
 @property(readonly, nonatomic) _Bool requiresHighMemoryThreshold;
-@property(readonly, nonatomic) unsigned long long type;
+@property(readonly, nonatomic) long long type;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

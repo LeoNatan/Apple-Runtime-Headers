@@ -8,7 +8,7 @@
 
 #import <NewsTransport/NSCopying-Protocol.h>
 
-@class NSData, NSString, NTPBIssueData, NTPBIssueExposureData, NTPBIssueViewData;
+@class NSData, NSMutableArray, NSString, NTPBIssueData, NTPBIssueExposureData, NTPBIssueViewData;
 
 @interface NTPBAnfComponentExposure : PBCodable <NSCopying>
 {
@@ -20,6 +20,7 @@
     NSString *_articleId;
     NSString *_articleVersion;
     NSData *_articleViewingSessionId;
+    NSMutableArray *_fractionalCohortMemberships;
     NTPBIssueData *_issueData;
     NTPBIssueExposureData *_issueExposureData;
     NTPBIssueViewData *_issueViewData;
@@ -31,6 +32,8 @@
     } _has;
 }
 
++ (Class)fractionalCohortMembershipType;
+@property(retain, nonatomic) NSMutableArray *fractionalCohortMemberships; // @synthesize fractionalCohortMemberships=_fractionalCohortMemberships;
 @property(retain, nonatomic) NSData *articleViewingSessionId; // @synthesize articleViewingSessionId=_articleViewingSessionId;
 @property(retain, nonatomic) NTPBIssueViewData *issueViewData; // @synthesize issueViewData=_issueViewData;
 @property(retain, nonatomic) NTPBIssueExposureData *issueExposureData; // @synthesize issueExposureData=_issueExposureData;
@@ -53,6 +56,10 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+- (id)fractionalCohortMembershipAtIndex:(unsigned long long)arg1;
+- (unsigned long long)fractionalCohortMembershipsCount;
+- (void)addFractionalCohortMembership:(id)arg1;
+- (void)clearFractionalCohortMemberships;
 @property(readonly, nonatomic) _Bool hasArticleViewingSessionId;
 @property(readonly, nonatomic) _Bool hasIssueViewData;
 @property(readonly, nonatomic) _Bool hasIssueExposureData;

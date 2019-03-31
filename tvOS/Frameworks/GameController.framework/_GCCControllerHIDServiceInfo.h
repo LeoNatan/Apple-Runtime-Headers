@@ -16,6 +16,7 @@
 
 @property(retain, nonatomic) NSData *inputData; // @synthesize inputData=_inputData;
 - (void).cxx_destruct;
+- (id)name;
 - (id)registryID;
 @property(readonly, nonatomic) struct __IOHIDServiceClient *service;
 - (void)dealloc;

@@ -166,6 +166,10 @@ typedef struct {
 } CDStruct_8fa617c1;
 
 typedef struct {
+    unsigned int issueViewContext:1;
+} CDStruct_830620d8;
+
+typedef struct {
     unsigned int maxArticlesShown:1;
 } CDStruct_df5cdcef;
 

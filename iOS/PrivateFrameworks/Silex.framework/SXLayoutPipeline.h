@@ -28,6 +28,7 @@
 @property(readonly, nonatomic) id <SXLayoutOperationFactory> layoutOperationFactory; // @synthesize layoutOperationFactory=_layoutOperationFactory;
 @property(nonatomic) __weak id <SXLayoutPipelineDelegate> delegate; // @synthesize delegate;
 - (void).cxx_destruct;
+- (void)cancelTasks;
 - (void)removeProcessor:(id)arg1 type:(unsigned long long)arg2;
 - (void)addProcessor:(id)arg1 type:(unsigned long long)arg2;
 - (void)finalizeLayoutForLayoutOperation:(id)arg1 task:(id)arg2 DOMObjectProvider:(id)arg3;

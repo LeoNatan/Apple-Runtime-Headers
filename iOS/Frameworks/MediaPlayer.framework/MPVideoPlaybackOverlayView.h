@@ -12,11 +12,12 @@
 #import <MediaPlayer/MPVolumeControllerDelegate-Protocol.h>
 #import <MediaPlayer/UIPopoverPresentationControllerDelegate-Protocol.h>
 
-@class MPAVController, MPAVItem, MPAVLightweightRoutingController, MPAudioAndSubtitlesController, MPDetailSlider, MPKnockoutButton, MPVideoView, MPVolumeController, MPVolumeSlider, NSArray, NSLayoutConstraint, NSString, UIActivityIndicatorView, UIButton, UILabel, UINavigationBar, UIStatusBar, UIViewController, _UIBackdropView;
+@class MPAVController, MPAVItem, MPAVLightweightRoutingController, MPAudioAndSubtitlesController, MPDetailSlider, MPKnockoutButton, MPMediaControls, MPVideoView, MPVolumeController, MPVolumeSlider, NSArray, NSLayoutConstraint, NSString, UIActivityIndicatorView, UIButton, UILabel, UINavigationBar, UIStatusBar, UIViewController, _UIBackdropView;
 @protocol MPVideoControllerProtocol, MPVideoOverlayDelegate;
 
 @interface MPVideoPlaybackOverlayView : UIView <UIPopoverPresentationControllerDelegate, MPAVLightweightRoutingControllerDelegate, MPVolumeControllerDelegate, MPVideoOverlay, MPDetailSliderDelegate>
 {
+    MPMediaControls *_mediaControls;
     MPDetailSlider *_scrubber;
     MPKnockoutButton *_playPauseButton;
     MPKnockoutButton *_fullscreenButton;

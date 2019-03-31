@@ -9,6 +9,7 @@
 @class UIView;
 
 @protocol PKPGSVSectionHeaderView <NSObject>
+- (_Bool)needsUpdate;
 - (UIView *)trailingView;
 - (UIView *)leadingView;
 @end

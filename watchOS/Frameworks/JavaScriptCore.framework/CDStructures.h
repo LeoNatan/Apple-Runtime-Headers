@@ -42,8 +42,6 @@ struct CallbackData {
     id _field8;
 };
 
-struct InferredTypeTable;
-
 struct InlineWatchpointSet {
     unsigned int _field1;
 };
@@ -114,10 +112,9 @@ struct Structure {
     struct Poisoned<WTF::Poison<&JSC::g_GlobalDataPoison>, const JSC::ClassInfo *, void> _field16;
     struct StructureTransitionTable _field17;
     struct WriteBarrier<JSC::PropertyTable, WTF::DumbPtrTraits<JSC::PropertyTable>> _field18;
-    struct WriteBarrier<JSC::InferredTypeTable, WTF::DumbPtrTraits<JSC::InferredTypeTable>> _field19;
-    struct InlineWatchpointSet _field20;
-    int _field21;
-    unsigned int _field22;
+    struct InlineWatchpointSet _field19;
+    int _field20;
+    unsigned int _field21;
 };
 
 struct StructureChain;
@@ -161,10 +158,6 @@ struct Weak<JSC::Structure> {
 struct WeakGCMap<id, JSC::JSObject, WTF::PtrHash<id>, WTF::HashTraits<id>>;
 
 struct WeakImpl;
-
-struct WriteBarrier<JSC::InferredTypeTable, WTF::DumbPtrTraits<JSC::InferredTypeTable>> {
-    struct InferredTypeTable *_field1;
-};
 
 struct WriteBarrier<JSC::JSCell, WTF::DumbPtrTraits<JSC::JSCell>> {
     struct JSCell *_field1;

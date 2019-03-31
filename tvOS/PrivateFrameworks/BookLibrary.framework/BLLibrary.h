@@ -18,6 +18,8 @@
     NSObject<OS_dispatch_queue> *_dispatchQueue;
 }
 
++ (_Bool)_addDate:(id)arg1 toPlist:(id)arg2 bookItem:(id)arg3 error:(id *)arg4;
++ (id)_bookItemsFromPlist:(id)arg1 sharedPlist:(id)arg2;
 + (id)defaultBookLibrary;
 + (void)initialize;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
@@ -26,6 +28,8 @@
 @property(retain, nonatomic) IMLibraryPlist *purchasedPlist; // @synthesize purchasedPlist=_purchasedPlist;
 @property(retain, nonatomic) IMLibraryPlist *booksPlist; // @synthesize booksPlist=_booksPlist;
 - (void).cxx_destruct;
+- (void)_bookWasOpenedWithStoreID:(id)arg1 permlink:(id)arg2 date:(id)arg3;
+- (_Bool)_bookItemIsShared:(id)arg1;
 - (id)_perUserBookURLForBookURL:(id)arg1;
 - (_Bool)_isShareableBook:(id)arg1;
 - (_Bool)_isMultiUser;
@@ -40,7 +44,8 @@
 - (_Bool)_addBookItemToEduContainer:(id)arg1 error:(id *)arg2;
 - (id)allBookItems;
 - (id)_bookItemsFromPlist:(id)arg1;
-- (id)init;
+- (id)_init;
+- (id)_initWithBooksPlist:(id)arg1 purchasedPlist:(id)arg2 managedPlist:(id)arg3 sharedPlist:(id)arg4;
 
 @end
 

@@ -12,7 +12,7 @@
 {
     _Bool _isLuxo;
     _Bool _isExplorer;
-    _Bool _supportsNewInGallery;
+    _Bool _limitedToPreGlory;
     _Bool _isBridgeActive;
     unsigned long long _sizeClass;
     double _screenScale;
@@ -33,7 +33,7 @@
 + (void)setCurrentDevice:(id)arg1;
 + (id)currentDevice;
 @property(nonatomic) _Bool isBridgeActive; // @synthesize isBridgeActive=_isBridgeActive;
-@property(readonly, nonatomic) _Bool supportsNewInGallery; // @synthesize supportsNewInGallery=_supportsNewInGallery;
+@property(readonly, nonatomic) _Bool limitedToPreGlory; // @synthesize limitedToPreGlory=_limitedToPreGlory;
 @property(retain, nonatomic) NRDevice *nrDevice; // @synthesize nrDevice=_nrDevice;
 @property(nonatomic) unsigned long long materialType; // @synthesize materialType=_materialType;
 @property(nonatomic) unsigned long long collectionType; // @synthesize collectionType=_collectionType;

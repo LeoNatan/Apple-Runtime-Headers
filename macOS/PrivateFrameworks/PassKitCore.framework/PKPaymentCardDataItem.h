@@ -19,6 +19,7 @@
 @property(nonatomic) BOOL showPeerPaymentBalance; // @synthesize showPeerPaymentBalance=_showPeerPaymentBalance;
 - (void).cxx_destruct;
 - (BOOL)isValidWithError:(id *)arg1;
+@property(readonly, nonatomic) BOOL shouldShowCardArt;
 - (long long)status;
 @property(readonly, nonatomic) BOOL requiresBillingAddress;
 @property(readonly, nonatomic) CNContact *billingAddress;

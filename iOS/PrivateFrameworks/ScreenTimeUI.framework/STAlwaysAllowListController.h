@@ -7,11 +7,12 @@
 #import <Preferences/PSListController.h>
 
 @class NSArray, NSSet, PSSpecifier, STAlwaysAllowList;
-@protocol STAlwaysAllowListControllerDelegate;
+@protocol STAlwaysAllowListControllerDelegate, STRootViewModelCoordinator;
 
 @interface STAlwaysAllowListController : PSListController
 {
     id <STAlwaysAllowListControllerDelegate> _delegate;
+    id <STRootViewModelCoordinator> _coordinator;
     STAlwaysAllowList *_alwaysAllowList;
     NSArray *_chooseBundleIDs;
     NSSet *_installedBundleIDs;
@@ -28,12 +29,14 @@
 @property(copy, nonatomic) NSSet *installedBundleIDs; // @synthesize installedBundleIDs=_installedBundleIDs;
 @property(copy, nonatomic) NSArray *chooseBundleIDs; // @synthesize chooseBundleIDs=_chooseBundleIDs;
 @property(copy, nonatomic) STAlwaysAllowList *alwaysAllowList; // @synthesize alwaysAllowList=_alwaysAllowList;
+@property(retain, nonatomic) id <STRootViewModelCoordinator> coordinator; // @synthesize coordinator=_coordinator;
 @property(nonatomic) __weak id <STAlwaysAllowListControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (id)appSpecifiersForBundleIDs:(id)arg1;
 - (id)tableView:(id)arg1 titleForDeleteConfirmationButtonForRowAtIndexPath:(id)arg2;
 - (void)removeAllowedIdentifier:(id)arg1 withSpecifier:(id)arg2;
 - (void)tableView:(id)arg1 commitEditingStyle:(long long)arg2 forRowAtIndexPath:(id)arg3;
+- (id)removeMessagesConfirmationPrompt;
 - (long long)tableView:(id)arg1 editingStyleForRowAtIndexPath:(id)arg2;
 - (_Bool)tableView:(id)arg1 canEditRowAtIndexPath:(id)arg2;
 - (_Bool)shouldReloadSpecifiersOnResume;

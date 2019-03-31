@@ -60,6 +60,7 @@ __attribute__((visibility("hidden")))
 - (id)_speechOptions:(id)arg1;
 - (int)speechEventTypeForDictationActivationType:(unsigned int)arg1;
 - (id)_dictationOptions:(id)arg1;
+- (id)languageDetectionUserContext;
 - (void)endSession;
 - (float)averagePower;
 - (void)sendSpeechCorrection:(id)arg1 forIdentifier:(id)arg2;

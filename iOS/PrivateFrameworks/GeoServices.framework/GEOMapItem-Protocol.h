@@ -31,6 +31,8 @@
 @property(readonly, nonatomic, getter=_hasLinkedServices) _Bool hasLinkedServices;
 @property(readonly, nonatomic, getter=_businessHours) NSArray *businessHours;
 @property(readonly, nonatomic, getter=_hasBusinessHours) _Bool hasBusinessHours;
+@property(readonly, nonatomic, getter=_hasCurrentOperatingHours) _Bool hasCurrentOperatingHours;
+@property(readonly, nonatomic, getter=_hasOperatingHours) _Bool hasOperatingHours;
 @property(readonly, nonatomic, getter=_annotatedItemList) id <GEOAnnotatedItemList> annotatedItemList;
 @property(readonly, nonatomic, getter=_placeDisplayStyle) int placeDisplayStyle;
 @property(readonly, nonatomic, getter=_browseCategories) NSArray *browseCategories;
@@ -73,10 +75,6 @@
 @property(readonly, nonatomic, getter=_hasTelephone) _Bool hasTelephone;
 @property(readonly, nonatomic, getter=_encyclopedicInfo) id <GEOEncyclopedicInfo> encyclopedicInfo;
 @property(readonly, nonatomic, getter=_hasEncyclopedicInfo) _Bool hasEncyclopedicInfo;
-@property(readonly, nonatomic, getter=_completeOperatingHours) NSArray *completeOperatingHours;
-@property(readonly, nonatomic, getter=_operatingHours) NSArray *operatingHours;
-@property(readonly, nonatomic, getter=_hasCurrentOperatingHours) _Bool hasCurrentOperatingHours;
-@property(readonly, nonatomic, getter=_hasOperatingHours) _Bool hasOperatingHours;
 @property(readonly, nonatomic, getter=_hasGenderNeutralRestroom) _Bool hasGenderNeutralRestroom;
 @property(readonly, nonatomic, getter=_hasGenderNeutralRestroomAmenity) _Bool hasGenderNeutralRestroomAmenity;
 @property(readonly, nonatomic, getter=_acceptsApplePay) _Bool acceptsApplePay;

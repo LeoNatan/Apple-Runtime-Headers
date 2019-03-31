@@ -55,8 +55,9 @@
 - (_Bool)accountHasiMessageEnabled;
 - (void)setCloudKitSyncEnabled:(_Bool)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)setCloudKitSyncEnabled:(_Bool)arg1;
-- (void)fetchSyncStateAfterClearingErrorsWithCompletion:(CDUnknownBlockType)arg1;
+- (void)fetchSyncStateAfterClearingErrorsWithRepairSuccess:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)fetchSyncStateAfterClearingErrors;
+- (void)fetchRampStateWithCompletion:(CDUnknownBlockType)arg1;
 - (void)fetchSyncStateWithCompletion:(CDUnknownBlockType)arg1;
 - (void)fetchSyncState;
 - (void)_syncStateDidChange:(id)arg1;

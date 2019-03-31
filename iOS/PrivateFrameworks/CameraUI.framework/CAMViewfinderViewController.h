@@ -523,7 +523,7 @@
 - (void)_handleFilterScrubberDismissGestureRecognizer:(id)arg1;
 - (void)filterScrubberViewDidChangeSelectedFilterType:(id)arg1;
 - (void)_setLightingType:(long long)arg1 forMode:(long long)arg2;
-- (long long)_lightingTypeForMode:(long long)arg1 device:(long long)arg2;
+- (long long)_sanitizedLightingTypeForMode:(long long)arg1 device:(long long)arg2;
 - (void)_updateLightingUIForGraphConfiguration:(id)arg1 animated:(_Bool)arg2;
 - (void)apertureSliderDidChangeApertureValue:(id)arg1;
 - (void)_updatePortraitApertureButtonForGraphConfiguration:(id)arg1 animated:(_Bool)arg2;
@@ -539,7 +539,7 @@
 - (void)_updateFilterScrubberAfterCapture;
 - (void)_updateFilterScrubberForGraphConfiguration:(id)arg1;
 - (id)_originalCaptureFiltersForMode:(long long)arg1;
-- (id)_captureFiltersForMode:(long long)arg1;
+- (id)_captureFiltersForMode:(long long)arg1 device:(long long)arg2;
 - (id)_previewFiltersForMode:(long long)arg1 device:(long long)arg2;
 - (unsigned long long)_previewConfigurationForMode:(long long)arg1 videoThumbnailOutputEnabled:(_Bool)arg2;
 - (_Bool)_shouldUseFiltersForGraphConfiguration:(id)arg1;

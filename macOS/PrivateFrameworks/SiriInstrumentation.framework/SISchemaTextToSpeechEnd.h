@@ -8,19 +8,14 @@
 
 #import <SiriInstrumentation/NSCopying-Protocol.h>
 
-@class SISchemaViewIDType;
+@class NSString;
 
 @interface SISchemaTextToSpeechEnd : PBCodable <NSCopying>
 {
-    long long _resultID;
-    SISchemaViewIDType *_viewID;
-    struct {
-        unsigned int resultID:1;
-    } _has;
+    NSString *_aceID;
 }
 
-@property(retain, nonatomic) SISchemaViewIDType *viewID; // @synthesize viewID=_viewID;
-@property(nonatomic) long long resultID; // @synthesize resultID=_resultID;
+@property(retain, nonatomic) NSString *aceID; // @synthesize aceID=_aceID;
 - (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -31,8 +26,7 @@
 - (BOOL)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
-@property(readonly, nonatomic) BOOL hasViewID;
-@property(nonatomic) BOOL hasResultID;
+@property(readonly, nonatomic) BOOL hasAceID;
 
 @end
 

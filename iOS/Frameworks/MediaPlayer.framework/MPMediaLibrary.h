@@ -104,6 +104,7 @@
 + (void)setLibraryServerDisabled:(_Bool)arg1;
 + (_Bool)isLibraryServerDisabled;
 + (void)requestAuthorization:(CDUnknownBlockType)arg1;
++ (void)validatePermissionsExpiryWithCompletion:(CDUnknownBlockType)arg1;
 + (long long)authorizationStatus;
 + (void)endDiscoveringMediaLibraries;
 + (void)beginDiscoveringMediaLibraries;

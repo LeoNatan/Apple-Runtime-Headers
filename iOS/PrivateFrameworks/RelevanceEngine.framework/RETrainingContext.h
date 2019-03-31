@@ -38,6 +38,7 @@
 - (void)_configureForRelevanceEngine:(id)arg1;
 @property(readonly, nonatomic) RETrainingContext *attributeContext;
 @property(retain, nonatomic) RERemoteTrainingContext *remoteContext;
+- (void)flushTraining;
 
 @end
 

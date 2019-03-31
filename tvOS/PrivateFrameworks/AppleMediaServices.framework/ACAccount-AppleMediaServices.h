@@ -49,6 +49,7 @@
 - (void)ams_setAltDSID:(id)arg1;
 - (void)ams_setAgreedToTerms:(_Bool)arg1;
 - (void)ams_setAccountFlags:(id)arg1;
+@property(readonly, nonatomic) unsigned long long ams_securityLevel;
 - (_Bool)ams_requiresAuthKitUpdate;
 - (id)ams_rawPassword;
 - (id)ams_password;
@@ -62,6 +63,7 @@
 @property(readonly, nonatomic, getter=ams_isIDMSAccount) _Bool ams_IDMSAccount;
 - (_Bool)ams_isiCloudFamily;
 @property(readonly, nonatomic, getter=ams_isiCloudAccount) _Bool ams_iCloudAccount;
+@property(readonly, nonatomic, getter=ams_isHSA2) _Bool ams_HSA2;
 @property(readonly, nonatomic, getter=ams_isDemoAccount) _Bool ams_demoAccount;
 @property(readonly, nonatomic) NSString *ams_fullName;
 @property(readonly, nonatomic) NSString *ams_firstName;

@@ -16,14 +16,17 @@
 
 + (id)entityInManagedObjectContext:(id)arg1;
 + (id)entityName;
++ (id)listOfSyncedProperties;
 + (id)_originalTypes;
 + (void)resetCloudMastersStateInManagedObjectContext:(id)arg1 hardReset:(_Bool)arg2;
 + (void)deleteAllCloudMastersInManagedObjectContext:(id)arg1;
 + (id)cloudMasterWithScopedIdentifier:(id)arg1 inManagedObjectContext:(id)arg2;
 + (id)cloudMasterWithGUID:(id)arg1 inMomentShare:(id)arg2 inManagedObjectContext:(id)arg3;
 + (id)insertIntoPhotoLibrary:(id)arg1 withCloudMasterGUID:(id)arg2 inMomentShare:(id)arg3;
+- (_Bool)isSyncableChange;
 - (void)_promptForNilScopeIdentifierRadar;
 - (id)scopedIdentifier;
+- (id)cplPropertyRecord;
 - (id)cplFullRecord;
 @property(readonly, retain, nonatomic) id localID;
 - (_Bool)allOriginalsAreLocallyAvailableForAssetUuid:(id)arg1 useOriginalAltInsteadOfOriginal:(_Bool)arg2;
@@ -38,6 +41,7 @@
 - (void)awakeFromInsert;
 - (void)deleteAllResourcesForAssetUuid:(id)arg1;
 - (id)cplResourceForResourceType:(unsigned int)arg1 forAssetUuid:(id)arg2;
+- (_Bool)supportsCloudUpload;
 - (void)nrm_applyResourcesFromCPLMasterChange:(id)arg1 inPhotoLibrary:(id)arg2;
 - (_Bool)hasResourcesOtherThanForAssetUuid:(id)arg1;
 - (id)allMasterResources;
@@ -49,6 +53,7 @@
 @property(retain, nonatomic) NSSet *assets; // @dynamic assets;
 @property(nonatomic) short cloudLocalState; // @dynamic cloudLocalState;
 @property(retain, nonatomic) NSString *cloudMasterGUID; // @dynamic cloudMasterGUID;
+@property(nonatomic) NSString *codecName; // @dynamic codecName;
 @property(retain, nonatomic) NSDate *creationDate; // @dynamic creationDate;
 @property(readonly, copy) NSString *debugDescription;
 @property(nonatomic) short fullSizeJPEGSource; // @dynamic fullSizeJPEGSource;
@@ -67,6 +72,7 @@
 @property(retain, nonatomic) NSSet *resources; // @dynamic resources;
 @property(readonly) Class superclass;
 @property(retain, nonatomic) NSString *uniformTypeIdentifier; // @dynamic uniformTypeIdentifier;
+@property(nonatomic) short videoFrameRate; // @dynamic videoFrameRate;
 
 @end
 

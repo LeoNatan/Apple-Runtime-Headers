@@ -13,17 +13,21 @@
 @interface SXHorizontalStackLayout : NSObject <SXHorizontalStackLayout>
 {
     NSMutableDictionary *_widths;
+    NSMutableDictionary *_positions;
 }
 
+@property(readonly, nonatomic) NSMutableDictionary *positions; // @synthesize positions=_positions;
 @property(readonly, nonatomic) NSMutableDictionary *widths; // @synthesize widths=_widths;
 - (void).cxx_destruct;
+@property(readonly, copy) NSString *description;
+- (void)setPosition:(double)arg1 forIdentifier:(id)arg2;
 - (void)setWidth:(double)arg1 forIdentifier:(id)arg2;
+- (double)positionForIdentifier:(id)arg1;
 - (double)widthForIdentifier:(id)arg1;
 - (id)init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 

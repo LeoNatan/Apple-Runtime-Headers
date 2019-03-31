@@ -34,6 +34,7 @@
 - (void)manuallySaveModel;
 - (void)_notifyObserversThatModelUpdated;
 - (void)performTrainingWithFeatureMaps:(id)arg1 content:(id)arg2 events:(id)arg3 interactions:(id)arg4 purgeCaches:(_Bool)arg5;
+- (void)flushTraining;
 - (_Bool)_saveModelToDisk:(id *)arg1;
 - (id)createOutputFeatureFromDouble:(double)arg1 error:(id *)arg2;
 - (void)removeObserver:(id)arg1;

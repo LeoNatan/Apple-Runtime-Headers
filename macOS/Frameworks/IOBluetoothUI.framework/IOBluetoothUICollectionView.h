@@ -14,7 +14,7 @@
 #import <IOBluetoothUI/NSTableViewDelegate-Protocol.h>
 #import <IOBluetoothUI/NSWindowDelegate-Protocol.h>
 
-@class AppleOptions, AudioOptions2, BluetoothHIDDeviceController, CBCentralManager, CBPeripheral, EnhancedAppleOptions, IOBluetoothDevice, IOBluetoothDeviceInquiry, IOBluetoothDevicePairViewController, IOBluetoothProximityPair, IOBluetoothUISortedArrayController, NSAlert, NSArray, NSButton, NSImage, NSImageView, NSMutableArray, NSMutableDictionary, NSPanel, NSProgressIndicator, NSString, NSTableView, NSTextField, NSTimer, NSTrackingArea, NSView;
+@class AppleOptions, AudioOptions2, BluetoothHIDDeviceController, CBCentralManager, CBPeripheral, EnhancedAppleOptions, IOBluetoothDevice, IOBluetoothDeviceInquiry, IOBluetoothDevicePairViewController, IOBluetoothProximityPair, IOBluetoothUISortedArrayController, NSAlert, NSArray, NSButton, NSImage, NSImageView, NSMutableArray, NSMutableDictionary, NSPanel, NSProgressIndicator, NSString, NSTableView, NSTextField, NSTimer, NSTrackingArea, NSView, NSWindowController;
 
 @interface IOBluetoothUICollectionView : NSViewController <NSMenuDelegate, NSTableViewDelegate, IOBluetoothDevicePairDelegate, CBCentralManagerDelegate, CBPeripheralDelegate, NSWindowDelegate, IOBluetoothProximityPairDelegate>
 {
@@ -83,6 +83,7 @@
     NSMutableArray *mDeviceArrayTmp;
     BOOL windowLoaded;
     EnhancedAppleOptions *enhancedAppleOptionsController;
+    NSWindowController *enhancedAppleOptions2Controller;
     AppleOptions *appleOptionsController;
     AudioOptions2 *audioOptionsController2;
     IOBluetoothProximityPair *proxPairing;

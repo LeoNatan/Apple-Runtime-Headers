@@ -14,6 +14,7 @@
 - (void)setValue:(id)arg1 forDomain:(id)arg2 forKey:(id)arg3;
 - (id)getValueFromDomain:(id)arg1 forKey:(id)arg2;
 - (void)setBool:(BOOL)arg1 forDomain:(id)arg2 forKey:(id)arg3;
+- (BOOL)getBoolFromDomain:(id)arg1 forKey:(id)arg2 defaultValue:(BOOL)arg3;
 - (BOOL)getBoolFromDomain:(id)arg1 forKey:(id)arg2;
 
 @end

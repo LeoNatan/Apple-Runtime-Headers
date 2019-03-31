@@ -10,5 +10,7 @@
 {
 }
 
++ (void)showEnableHeySiriForWindow:(id)arg1 forBluetoothAudioDevice:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+
 @end
 

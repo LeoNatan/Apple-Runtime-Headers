@@ -94,6 +94,11 @@ __attribute__((visibility("hidden")))
     struct set<geo::_retain_ptr<VKOverlay *, geo::_retain_objc, geo::_release_objc, geo::_hash_objc, geo::_equal_objc>, std::__1::less<geo::_retain_ptr<VKOverlay *, geo::_retain_objc, geo::_release_objc, geo::_hash_objc, geo::_equal_objc>>, std::__1::allocator<geo::_retain_ptr<VKOverlay *, geo::_retain_objc, geo::_release_objc, geo::_hash_objc, geo::_equal_objc>>> _overlays;
     struct optional<gss::MapZoomLevel> _mapZoomLevel;
     BOOL _isEmphasisSet;
+    BOOL _sendGridDurationAnalytics;
+    double _gridAnalyticsDurationThreshold;
+    int _lastGridAnalyticsState;
+    BOOL _loadingRequiredLayers;
+    double _startedShowingGridTimestamp;
     shared_ptr_e963992e _taskContext;
     BOOL _showsPointsOfInterest;
     BOOL _localizeLabels;

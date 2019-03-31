@@ -6,7 +6,7 @@
 
 #import <AppKit/NSView.h>
 
-@class GEOLinkedService, MKImageView, NSArray, _MKUILabel;
+@class GEOLinkedService, MKImageView, NSArray, NSLayoutConstraint, _MKUILabel;
 
 @interface MKPlaceCompleteHoursView : NSView
 {
@@ -15,19 +15,16 @@
     NSView *_containerViewForHoursAndCategoryName;
     MKImageView *_categoryIconView;
     _MKUILabel *_localizedCategoryNameLabel;
+    NSLayoutConstraint *_hoursTopLabelLastBaselineToCategoryName;
     NSArray *_placeHoursViews;
 }
 
 @property(retain, nonatomic) NSArray *placeHoursViews; // @synthesize placeHoursViews=_placeHoursViews;
 - (void).cxx_destruct;
 - (void)_setUpConstraints;
-- (id)layoutGuideBottomAnchor;
-- (id)layoutGuideTopAnchor;
-- (id)layoutGuideTrailingAnchor;
-- (id)layoutGuideLeadingAnchor;
 - (void)_contentSizeDidChange;
 - (void)commonInit;
-- (id)initWithLinkedService:(id)arg1 showNormalHoursOnly:(BOOL)arg2;
+- (id)initWithLinkedService:(id)arg1 showTodaysHoursOnly:(BOOL)arg2;
 
 @end
 

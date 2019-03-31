@@ -6,34 +6,36 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, NSDictionary;
+@class ICInAppMessageMetadataEntry, NSArray, NSDictionary;
 @protocol IAMApplicationContextProvider;
 
 @interface IAMEvaluator : NSObject
 {
-    NSArray *_evaluatedMessageEntries;
-    NSDictionary *_currentMetadata;
-    NSDictionary *_currentProximityMetadata;
+    ICInAppMessageMetadataEntry *_currentMetadata;
+    ICInAppMessageMetadataEntry *_currentProximityMetadata;
     NSArray *_messageEntries;
+    NSDictionary *_metadataEntries;
     id <IAMApplicationContextProvider> _applicationContext;
-    unsigned long long _messageProximityThreshold;
+    NSArray *_passingMessageEntries;
+    NSArray *_messagesCloseToPassing;
 }
 
-@property(nonatomic) unsigned long long messageProximityThreshold; // @synthesize messageProximityThreshold=_messageProximityThreshold;
-@property(nonatomic) __weak id <IAMApplicationContextProvider> applicationContext; // @synthesize applicationContext=_applicationContext;
-@property(retain, nonatomic) NSArray *messageEntries; // @synthesize messageEntries=_messageEntries;
++ (long long)_compareCurrentTimeWithMessageTime:(double)arg1;
++ (_Bool)_isMessageWithinDateRange:(id)arg1;
++ (_Bool)applicationContext:(id)arg1 allowsPresentationForPolicyGroup:(long long)arg2;
+@property(retain) NSArray *messagesCloseToPassing; // @synthesize messagesCloseToPassing=_messagesCloseToPassing;
+@property(retain) NSArray *passingMessageEntries; // @synthesize passingMessageEntries=_passingMessageEntries;
 - (void).cxx_destruct;
 - (unsigned long long)_calculateConditionProximity:(id)arg1;
 - (unsigned long long)_calculateCompoundRuleProximity:(id)arg1;
 - (unsigned long long)_calculateRuleProximity:(id)arg1;
+- (unsigned long long)_messageEntryProximity:(id)arg1;
 - (_Bool)_evaluateCondition:(id)arg1;
 - (_Bool)_evaluateCompoundRule:(id)arg1;
 - (_Bool)_evaluateRule:(id)arg1;
-- (void)calculateMessageEntriesProximity:(CDUnknownBlockType)arg1;
-- (id)messagesCloseToPassing;
-- (void)reevaluateMessageEntries:(CDUnknownBlockType)arg1;
-- (void)reevaluateMessageEntries;
-@property(readonly, nonatomic) NSArray *evaluatedMessageEntries;
+- (id)computeMessagesCloseToPassingWithProximityThreshold:(unsigned long long)arg1;
+- (id)computePassingMessageEntries;
+- (id)initWithMessageEntries:(id)arg1 metadataEntries:(id)arg2 applicationContext:(id)arg3;
 
 @end
 

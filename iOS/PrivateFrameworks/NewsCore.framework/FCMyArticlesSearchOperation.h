@@ -13,7 +13,6 @@
     _Bool _channelsOnly;
     _Bool _cachedOnly;
     _Bool _unreadOnly;
-    _Bool _purchasedChannelsOnly;
     FCCloudContext *_context;
     FCFeedItemFeature *_feature;
     FCDateRange *_dateRange;
@@ -25,7 +24,6 @@
 @property(copy) NSDictionary *resultFeedContextByFeedID; // @synthesize resultFeedContextByFeedID=_resultFeedContextByFeedID;
 @property(retain, nonatomic) NSArray *resultFeedItems; // @synthesize resultFeedItems=_resultFeedItems;
 @property(copy, nonatomic) CDUnknownBlockType searchCompletionHandler; // @synthesize searchCompletionHandler=_searchCompletionHandler;
-@property(nonatomic) _Bool purchasedChannelsOnly; // @synthesize purchasedChannelsOnly=_purchasedChannelsOnly;
 @property(nonatomic) _Bool unreadOnly; // @synthesize unreadOnly=_unreadOnly;
 @property(nonatomic) _Bool cachedOnly; // @synthesize cachedOnly=_cachedOnly;
 @property(nonatomic) _Bool channelsOnly; // @synthesize channelsOnly=_channelsOnly;

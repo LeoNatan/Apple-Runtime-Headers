@@ -9,8 +9,8 @@
 @class NSString;
 
 @interface NSDictionary (CRKAdditions)
-- (id)JSONStringIsPrettyPrinted:(BOOL)arg1 sortKeys:(BOOL)arg2;
-@property(readonly, nonatomic) NSString *JSONString;
+- (id)crk_JSONStringWithPrettyPrinting:(BOOL)arg1 sortKeys:(BOOL)arg2;
+@property(readonly, nonatomic) NSString *crk_JSONString;
 - (id)crk_dictionaryByAddingEntriesFromDictionary:(id)arg1;
 @property(readonly, nonatomic) id crk_keyValueObservingNewObject;
 @property(readonly, nonatomic) id crk_keyValueObservingOldObject;

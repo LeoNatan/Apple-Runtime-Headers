@@ -6,30 +6,34 @@
 
 #import <NewsCore/FCOperation.h>
 
-@class NSArray;
-@protocol FCContentContext, FCFeedTransforming;
+@class FCCloudContext, NSArray, NSString;
+@protocol FCFeedTransforming;
 
 @interface FCCurrentMagazineContentFetchOperation : FCOperation
 {
     CDUnknownBlockType _fetchCompletionHandler;
-    id <FCContentContext> _context;
+    FCCloudContext *_context;
     NSArray *_configIssueIDs;
     NSArray *_configArticleIDs;
+    NSString *_trendingArticleListID;
     id <FCFeedTransforming> _currentHeadlinesTransformation;
     NSArray *_resultConfigIssues;
     NSArray *_resultConfigHeadlines;
     NSArray *_resultCurrentIssues;
     NSArray *_resultCurrentFeatureHeadlines;
+    NSArray *_resultTrendingHeadlines;
 }
 
+@property(retain, nonatomic) NSArray *resultTrendingHeadlines; // @synthesize resultTrendingHeadlines=_resultTrendingHeadlines;
 @property(retain, nonatomic) NSArray *resultCurrentFeatureHeadlines; // @synthesize resultCurrentFeatureHeadlines=_resultCurrentFeatureHeadlines;
 @property(retain, nonatomic) NSArray *resultCurrentIssues; // @synthesize resultCurrentIssues=_resultCurrentIssues;
 @property(retain, nonatomic) NSArray *resultConfigHeadlines; // @synthesize resultConfigHeadlines=_resultConfigHeadlines;
 @property(retain, nonatomic) NSArray *resultConfigIssues; // @synthesize resultConfigIssues=_resultConfigIssues;
 @property(retain, nonatomic) id <FCFeedTransforming> currentHeadlinesTransformation; // @synthesize currentHeadlinesTransformation=_currentHeadlinesTransformation;
+@property(copy, nonatomic) NSString *trendingArticleListID; // @synthesize trendingArticleListID=_trendingArticleListID;
 @property(retain, nonatomic) NSArray *configArticleIDs; // @synthesize configArticleIDs=_configArticleIDs;
 @property(retain, nonatomic) NSArray *configIssueIDs; // @synthesize configIssueIDs=_configIssueIDs;
-@property(retain, nonatomic) id <FCContentContext> context; // @synthesize context=_context;
+@property(retain, nonatomic) FCCloudContext *context; // @synthesize context=_context;
 @property(copy, nonatomic) CDUnknownBlockType fetchCompletionHandler; // @synthesize fetchCompletionHandler=_fetchCompletionHandler;
 - (void).cxx_destruct;
 - (void)_fetchCurrentFeatureHeadlinesWithCompletion:(CDUnknownBlockType)arg1;
@@ -37,7 +41,7 @@
 - (void)operationWillFinishWithError:(id)arg1;
 - (void)performOperation;
 - (_Bool)validateOperation;
-- (id)initWithContext:(id)arg1 configIssueIDs:(id)arg2 configArticleIDs:(id)arg3 currentHeadlinesTransformation:(id)arg4;
+- (id)initWithContext:(id)arg1 configIssueIDs:(id)arg2 configArticleIDs:(id)arg3 trendingArticleListID:(id)arg4 currentHeadlinesTransformation:(id)arg5;
 - (id)init;
 
 @end

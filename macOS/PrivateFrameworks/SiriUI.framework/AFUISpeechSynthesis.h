@@ -43,7 +43,8 @@ __attribute__((visibility("hidden")))
 - (void)_processProvisionalElements;
 - (void)_processElementQueue;
 - (void)enqueueText:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)_enqueueText:(id)arg1 isPhonetic:(BOOL)arg2 provisionally:(BOOL)arg3 eligibleAfterDuration:(double)arg4 preparationIdentifier:(id)arg5 completion:(CDUnknownBlockType)arg6 animationIdentifier:(id)arg7 isSilent:(BOOL)arg8;
+- (void)_enqueueText:(id)arg1 isPhonetic:(BOOL)arg2 provisionally:(BOOL)arg3 eligibleAfterDuration:(double)arg4 preparationIdentifier:(id)arg5 synthesizesWhileRecording:(BOOL)arg6 completion:(CDUnknownBlockType)arg7 animationIdentifier:(id)arg8 isSilent:(BOOL)arg9;
+- (void)enqueuePhaticWithCompletion:(CDUnknownBlockType)arg1;
 - (void)enqueueText:(id)arg1 isPhonetic:(BOOL)arg2 provisionally:(BOOL)arg3 eligibleAfterDuration:(double)arg4 preparationIdentifier:(id)arg5 completion:(CDUnknownBlockType)arg6 animationIdentifier:(id)arg7;
 - (void)setOutputVoice:(id)arg1;
 - (void)speechItemTags:(id)arg1 finishedWithMessage:(unsigned int)arg2;

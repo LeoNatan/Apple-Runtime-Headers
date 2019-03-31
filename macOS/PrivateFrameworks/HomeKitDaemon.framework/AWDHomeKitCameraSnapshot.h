@@ -13,6 +13,7 @@
 @interface AWDHomeKitCameraSnapshot : PBCodable <NSCopying>
 {
     unsigned long long _timestamp;
+    int _certified;
     AWDHomeKitCameraSnapshotMessaging *_controllerMessaging;
     unsigned int _errorCode;
     AWDHomeKitCameraIDSSessionSetup *_idsSessionSetup;
@@ -30,6 +31,7 @@
     BOOL _isLocal;
     struct {
         unsigned int timestamp:1;
+        unsigned int certified:1;
         unsigned int errorCode:1;
         unsigned int receivedSnapshotFromAccessory:1;
         unsigned int sentSnapshotRequestToAccessory:1;
@@ -80,6 +82,10 @@
 @property(nonatomic) BOOL hasErrorCode;
 @property(readonly, nonatomic) BOOL hasSessionID;
 @property(nonatomic) BOOL hasTimestamp;
+- (int)StringAsCertified:(id)arg1;
+- (id)certifiedAsString:(int)arg1;
+@property(nonatomic) BOOL hasCertified;
+@property(nonatomic) int certified; // @synthesize certified=_certified;
 @property(readonly, nonatomic) BOOL hasVendorDetails;
 
 @end

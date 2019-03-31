@@ -6,11 +6,11 @@
 
 #import <HealthUI/HKDataMetadataSection.h>
 
-@class HKDisplayTypeController, HKHealthStore, HKQuantitySample, HKUnitPreferenceController;
+@class HKDisplayTypeController, HKHealthStore, HKSample, HKUnitPreferenceController;
 
 @interface HKDataMetadataBeatToBeatSection : HKDataMetadataSection
 {
-    HKQuantitySample *_hrvSample;
+    HKSample *_sample;
     HKHealthStore *_healthStore;
     HKDisplayTypeController *_displayTypeController;
     HKUnitPreferenceController *_unitController;

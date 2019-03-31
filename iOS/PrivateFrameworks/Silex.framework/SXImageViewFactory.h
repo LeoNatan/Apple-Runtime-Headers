@@ -20,6 +20,7 @@
 @property(readonly, nonatomic) id <SXReachabilityProvider> reachabilityProvider; // @synthesize reachabilityProvider=_reachabilityProvider;
 @property(readonly, nonatomic) id <SXResourceDataSourceProvider> resourceDataSourceProvider; // @synthesize resourceDataSourceProvider=_resourceDataSourceProvider;
 - (void).cxx_destruct;
+- (id)repeatableImageViewForResource:(id)arg1;
 - (id)imageViewForResource:(id)arg1;
 - (id)initWithResourceDataSourceProvider:(id)arg1 reachabilityProvider:(id)arg2;
 

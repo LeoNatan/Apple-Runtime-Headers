@@ -38,7 +38,6 @@
 @property id leftItemsSupplementBackButton;
 - (void)setLeftItems:(id)arg1;
 @property(retain) id <SUScriptNavigationItem> leftItem;
-- (void)setHidesBackButton:(_Bool)arg1 animated:(_Bool)arg2;
 @property id hidesBackButton;
 @property(copy) NSString *backButtonTitle;
 - (id)rightItems;

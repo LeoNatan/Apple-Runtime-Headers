@@ -6,9 +6,9 @@
 
 #import <NewsUI/NSObject-Protocol.h>
 
-@class FCArticle, NUArticleAdManager;
+@class FCArticle, FCIssue, NUArticleAdManager;
 
 @protocol NUArticleAdManagerFactory <NSObject>
-- (NUArticleAdManager *)createArticleAdManagerForArticle:(FCArticle *)arg1;
+- (NUArticleAdManager *)createArticleAdManagerForArticle:(FCArticle *)arg1 issue:(FCIssue *)arg2;
 @end
 

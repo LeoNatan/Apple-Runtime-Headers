@@ -7,6 +7,7 @@
 #import <Foundation/NSError.h>
 
 @interface NSError (FCAdditions)
+- (_Bool)fc_isUnknownItemError;
 - (_Bool)fc_isOfflineErrorOfflineReason:(long long *)arg1;
 - (_Bool)fc_isOfflineError;
 - (_Bool)fc_isOperationThrottledError;

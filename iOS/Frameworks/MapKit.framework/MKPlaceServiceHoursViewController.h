@@ -7,11 +7,12 @@
 #import <MapKit/MKPlaceSectionViewController.h>
 
 #import <MapKit/MKModuleViewControllerProtocol-Protocol.h>
+#import <MapKit/_MKInfoCardChildViewControllerAnalyticsDelegate-Protocol.h>
 
 @class MKMapItem, MKPlaceSectionHeaderView, NSString, UIScrollView, UIStackView;
 @protocol MKPlaceServiceHoursViewControllerProtocol;
 
-@interface MKPlaceServiceHoursViewController : MKPlaceSectionViewController <MKModuleViewControllerProtocol>
+@interface MKPlaceServiceHoursViewController : MKPlaceSectionViewController <_MKInfoCardChildViewControllerAnalyticsDelegate, MKModuleViewControllerProtocol>
 {
     _Bool _isExpanded;
     MKPlaceSectionHeaderView *_headerView;
@@ -28,9 +29,12 @@
 @property(nonatomic) __weak id <MKPlaceServiceHoursViewControllerProtocol> placeServiceDelegate; // @synthesize placeServiceDelegate=_placeServiceDelegate;
 @property(retain, nonatomic) UIScrollView *scrollView; // @synthesize scrollView=_scrollView;
 - (void).cxx_destruct;
-- (void)updateServiceHourRows;
+- (void)captureCloseAnalytics;
+- (id)infoCardChildPossibleActions;
+- (void)_updateServiceHourRows;
 - (void)_contentSizeDidChange;
 - (void)_showAllHeaderButtonTapped;
+- (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewDidLoad;
 - (id)initWithMapItem:(id)arg1 type:(long long)arg2;
 

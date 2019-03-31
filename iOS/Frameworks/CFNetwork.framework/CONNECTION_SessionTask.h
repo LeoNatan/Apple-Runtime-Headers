@@ -30,7 +30,7 @@ __attribute__((visibility("hidden")))
 
 - (_Bool)_isTopLevelNavigation;
 - (id)_siteForCookies;
-- (id)_nw_activity;
+- (id)_private_nw_activity;
 - (id)_APSRelayTopic;
 - (id)_incompleteTaskMetrics;
 - (void)set_incompleteTaskMetrics:(id)arg1;

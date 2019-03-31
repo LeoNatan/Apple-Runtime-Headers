@@ -14,6 +14,7 @@
 {
     unsigned long long _timestamp;
     int _actionType;
+    int _certified;
     unsigned int _duration;
     int _errorCode;
     NSString *_reason;
@@ -21,6 +22,7 @@
     struct {
         unsigned int timestamp:1;
         unsigned int actionType:1;
+        unsigned int certified:1;
         unsigned int duration:1;
         unsigned int errorCode:1;
     } _has;
@@ -41,6 +43,10 @@
 - (BOOL)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+- (int)StringAsCertified:(id)arg1;
+- (id)certifiedAsString:(int)arg1;
+@property(nonatomic) BOOL hasCertified;
+@property(nonatomic) int certified; // @synthesize certified=_certified;
 @property(readonly, nonatomic) BOOL hasVendorDetails;
 - (int)StringAsActionType:(id)arg1;
 - (id)actionTypeAsString:(int)arg1;

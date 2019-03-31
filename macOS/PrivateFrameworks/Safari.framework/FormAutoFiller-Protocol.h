@@ -12,6 +12,7 @@
 - (void)removeAutomaticPasswordVisualTreatmentInFrame:(_WKFrameHandle *)arg1 formID:(double)arg2 passwordControlUniqueIDs:(NSArray *)arg3;
 - (void)removeAutomaticPasswordElementsInFrame:(_WKFrameHandle *)arg1 formID:(double)arg2 focusedPasswordControlUniqueID:(NSString *)arg3 passwordControlUniqueIDs:(NSArray *)arg4;
 - (void)substitutePasswordElementsWithAutomaticPasswordElementsInFrame:(_WKFrameHandle *)arg1 formID:(double)arg2 focusedPasswordControlUniqueID:(NSString *)arg3 passwordControlUniqueIDs:(NSArray *)arg4 automaticPassword:(NSString *)arg5 blurAfterSubstitution:(BOOL)arg6;
+- (void)resumeLoadingAfterSavingFormData;
 - (void)textDidChangeDelayCompletedField:(NSString *)arg1 inFrame:(_WKFrameHandle *)arg2;
 - (void)collectMetadataForActiveForm:(void (^)(WBSFormMetadata *))arg1;
 - (void)collectFormMetadataForSafeAutoFillConfirmationInFrame:(_WKFrameHandle *)arg1 atURL:(NSURL *)arg2 contactProperty:(NSString *)arg3 contactIdentifier:(NSString *)arg4 contactLabel:(NSString *)arg5;

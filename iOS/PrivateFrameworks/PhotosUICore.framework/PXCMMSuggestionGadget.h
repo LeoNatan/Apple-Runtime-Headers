@@ -40,6 +40,7 @@
 - (void)_updatePeopleSuggestionFaceTileImagesForPersons:(id)arg1;
 - (void)_changeViewConfiguration:(CDUnknownBlockType)arg1;
 - (void)_loadSuggestion:(id)arg1;
+- (void)contentHasBeenSeen;
 - (id)uniqueGadgetIdentifier;
 @property(readonly, nonatomic) _Bool supportsSelection;
 @property(readonly, nonatomic) _Bool supportsHighlighting;

@@ -74,6 +74,7 @@
 - (void)addEmailAddressSlice;
 - (void)addUserNameSliceWithLabel:(id)arg1;
 - (BOOL)_accountTypeSupportsMail;
+- (void)startWebAuthorization:(id)arg1;
 - (BOOL)alternateButtonIsOnTheLeft;
 - (BOOL)hasAlternateButton;
 - (void)alternateButtonAction:(id)arg1;
@@ -89,6 +90,7 @@
 - (void)_showDataclassSelectionScreen;
 - (void)layoutDefaultBottomButtons;
 - (void)layoutWebViewBottomButtons;
+- (void)layoutWebAuthBottomButtons;
 - (void)layoutBottomButtonsWithAlternativeButton;
 - (void)_setBottomConstraints:(id)arg1;
 - (void)layoutBottomButtons;

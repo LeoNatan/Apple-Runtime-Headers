@@ -11,6 +11,7 @@
 
 @interface SFWirelessChargingMonitor : NSObject
 {
+    _Bool _allDevicesCharged;
     _Bool _meDeviceWasWirelesslyCharging;
     NSObject<OS_dispatch_queue> *_dispatchQueue;
     CDUnknownBlockType _invalidationHandler;
@@ -23,6 +24,7 @@
 
 @property(nonatomic) _Bool meDeviceWasWirelesslyCharging; // @synthesize meDeviceWasWirelesslyCharging=_meDeviceWasWirelesslyCharging;
 @property(retain, nonatomic) SFPowerSourceMonitor *monitor; // @synthesize monitor=_monitor;
+@property(readonly, nonatomic) _Bool allDevicesCharged; // @synthesize allDevicesCharged=_allDevicesCharged;
 @property(copy, nonatomic) CDUnknownBlockType wirelessPowerSourceChangedHandler; // @synthesize wirelessPowerSourceChangedHandler=_wirelessPowerSourceChangedHandler;
 @property(copy, nonatomic) CDUnknownBlockType wirelessPowerSourceLostHandler; // @synthesize wirelessPowerSourceLostHandler=_wirelessPowerSourceLostHandler;
 @property(copy, nonatomic) CDUnknownBlockType wirelessPowerSourceFoundHandler; // @synthesize wirelessPowerSourceFoundHandler=_wirelessPowerSourceFoundHandler;

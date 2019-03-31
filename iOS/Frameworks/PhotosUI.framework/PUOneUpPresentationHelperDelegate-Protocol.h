@@ -9,6 +9,7 @@
 @class PUOneUpPresentationHelper, PUOneUpViewController, UIScrollView, UIView, UIViewController;
 
 @protocol PUOneUpPresentationHelperDelegate <NSObject>
+- (long long)oneUpPresentationOrigin:(PUOneUpPresentationHelper *)arg1;
 - (UIViewController *)oneUpPresentationHelperViewController:(PUOneUpPresentationHelper *)arg1;
 
 @optional

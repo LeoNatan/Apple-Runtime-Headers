@@ -23,7 +23,7 @@
 - (int)compareElement:(id)arg1 toElement:(id)arg2 level:(unsigned int)arg3;
 - (unsigned int)comparisonLevels;
 - (_Bool)shouldHideElement:(id)arg1;
-- (float)_relevanceForElement:(id)arg1 actionProbability:(float *)arg2;
+- (float)_relevanceForElement:(id)arg1 actionProbability:(float *)arg2 appActionProbability:(float *)arg3;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithFilteringRules:(id)arg1 rankingRules:(id)arg2 model:(id)arg3;
 

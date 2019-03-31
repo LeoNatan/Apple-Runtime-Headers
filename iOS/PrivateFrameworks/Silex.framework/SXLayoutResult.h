@@ -13,12 +13,14 @@
 {
     SXLayoutBlueprint *_blueprint;
     id <SXDOM> _DOM;
+    double _duration;
 }
 
+@property(readonly, nonatomic) double duration; // @synthesize duration=_duration;
 @property(readonly, nonatomic) id <SXDOM> DOM; // @synthesize DOM=_DOM;
 @property(readonly, nonatomic) SXLayoutBlueprint *blueprint; // @synthesize blueprint=_blueprint;
 - (void).cxx_destruct;
-- (id)initWithLayoutBlueprint:(id)arg1 DOM:(id)arg2;
+- (id)initWithLayoutBlueprint:(id)arg1 DOM:(id)arg2 duration:(double)arg3;
 
 @end
 

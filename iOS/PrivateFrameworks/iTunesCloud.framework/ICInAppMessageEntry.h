@@ -30,6 +30,7 @@
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (id)allCachedResourceLocations;
 - (void)clearCachedResources;
 - (void)setCacheLocation:(id)arg1 forResourceWithIdentifier:(id)arg2;
 - (id)cachedLocationForResourceWithIdentifier:(id)arg1;

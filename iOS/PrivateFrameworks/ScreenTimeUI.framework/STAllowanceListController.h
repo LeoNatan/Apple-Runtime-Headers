@@ -33,6 +33,7 @@
 - (id)_allAllowancesEnabled:(id)arg1;
 - (void)_setAllAllowancesEnabled:(id)arg1 specifier:(id)arg2;
 - (id)specifiers;
+@property(readonly) _Bool shouldShowCompatibilityAlert;
 - (void)_adjustCellHeightForAllowanceSpecifier:(id)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)_allowancesDidChange;

@@ -82,6 +82,7 @@
 - (void)_resetDetails;
 - (void)_defaultsDidChange;
 - (void)dealloc;
+- (id)navSessionDestination;
 - (id)init;
 
 // Remaining properties

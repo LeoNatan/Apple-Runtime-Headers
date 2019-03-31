@@ -22,9 +22,11 @@
     NSMutableDictionary *_iconsPerMerchantCategory;
     NSDateFormatter *_formatterYear;
     NSDateFormatter *_formatterMonth;
+    _Bool _useAccessibilityLayout;
 }
 
 - (void).cxx_destruct;
+- (struct CGSize)_imageSize;
 - (id)transactionListImage;
 - (id)_viewControllerForItem:(id)arg1;
 - (void)_configureCell:(id)arg1 forItem:(id)arg2 inCollectionView:(id)arg3 forIndexPath:(id)arg4 forSizing:(_Bool)arg5;

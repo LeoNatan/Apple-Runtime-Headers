@@ -8,30 +8,27 @@
 
 #import <Preferences/STMSizeCacheDelegate-Protocol.h>
 
-@class NSArray, NSDictionary, NSString, STMAppDynamicSizeCache, STMAppPurgeableSizeCache, STMAppStaticSizeCache;
-@protocol OS_dispatch_queue, STMAppSizerDelegate;
+@class NSArray, NSDictionary, NSString, STMAppDynamicSizer, STMAppPurgeableSizer, STMAppStaticSizer;
+@protocol STMAppSizerDelegate;
 
 @interface STMAppSizer : NSObject <STMSizeCacheDelegate>
 {
-    NSObject<OS_dispatch_queue> *_fsQueue;
-    struct __FSEventStream *_fsStream;
-    _Bool _streamRunning;
     struct os_unfair_lock_s _proxyLock;
     NSArray *_proxies;
     NSDictionary *_proxiesByDataPath;
     NSDictionary *_proxiesByBundlePath;
+    NSDictionary *_appContainersByPath;
+    NSDictionary *_dataContainersByPath;
     id <STMAppSizerDelegate> _delegate;
-    NSObject<OS_dispatch_queue> *_updateQueue;
-    STMAppStaticSizeCache *_staticSizes;
-    STMAppDynamicSizeCache *_dynamicSizes;
-    STMAppPurgeableSizeCache *_purgeableSizes;
+    STMAppStaticSizer *_staticSizer;
+    STMAppDynamicSizer *_dynamicSizer;
+    STMAppPurgeableSizer *_purgeableSizer;
 }
 
 + (id)sharedSizer;
-@property(retain) STMAppPurgeableSizeCache *purgeableSizes; // @synthesize purgeableSizes=_purgeableSizes;
-@property(retain) STMAppDynamicSizeCache *dynamicSizes; // @synthesize dynamicSizes=_dynamicSizes;
-@property(retain) STMAppStaticSizeCache *staticSizes; // @synthesize staticSizes=_staticSizes;
-@property(retain) NSObject<OS_dispatch_queue> *updateQueue; // @synthesize updateQueue=_updateQueue;
+@property(retain) STMAppPurgeableSizer *purgeableSizer; // @synthesize purgeableSizer=_purgeableSizer;
+@property(retain) STMAppDynamicSizer *dynamicSizer; // @synthesize dynamicSizer=_dynamicSizer;
+@property(retain) STMAppStaticSizer *staticSizer; // @synthesize staticSizer=_staticSizer;
 @property __weak id <STMAppSizerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (id)calcAppPurgeableSize:(id)arg1;
@@ -44,10 +41,8 @@
 - (id)purgeableSizeForApp:(id)arg1;
 - (id)dynamicSizeForApp:(id)arg1;
 - (id)staticSizeForApp:(id)arg1;
-- (void)pathChanged:(id)arg1 flags:(unsigned int)arg2 event:(unsigned long long)arg3;
 - (void)stopSizer;
 - (void)startSizer;
-- (void)setRootPaths:(id)arg1;
 - (void)dealloc;
 @property(retain, nonatomic) NSArray *appProxies;
 - (id)init;

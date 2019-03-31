@@ -6,12 +6,11 @@
 
 #import <PassKitCore/PKPaymentRequest.h>
 
-@class PKDisbursementApplicationInformation, PKDisbursementRequest;
+@class PKDisbursementRequest;
 
 @interface PKDisbursementPaymentRequest : PKPaymentRequest
 {
     PKDisbursementRequest *_disbursementRequest;
-    PKDisbursementApplicationInformation *_applicationInformation;
     unsigned long long _disbursementSource;
     unsigned long long _disbursementTarget;
 }
@@ -19,7 +18,6 @@
 + (BOOL)supportsSecureCoding;
 @property(readonly, nonatomic) unsigned long long disbursementTarget; // @synthesize disbursementTarget=_disbursementTarget;
 @property(readonly, nonatomic) unsigned long long disbursementSource; // @synthesize disbursementSource=_disbursementSource;
-@property(retain, nonatomic) PKDisbursementApplicationInformation *applicationInformation; // @synthesize applicationInformation=_applicationInformation;
 @property(readonly, nonatomic) PKDisbursementRequest *disbursementRequest; // @synthesize disbursementRequest=_disbursementRequest;
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;

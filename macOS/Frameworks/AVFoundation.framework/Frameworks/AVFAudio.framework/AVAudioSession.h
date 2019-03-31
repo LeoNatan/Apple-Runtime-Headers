@@ -12,9 +12,11 @@
 {
     void *_impl;
     BOOL _otherAudioPlaying;
+    unsigned long long _promptStyle;
 }
 
 + (id)sharedInstance;
+@property(readonly) unsigned long long promptStyle; // @synthesize promptStyle=_promptStyle;
 @property(readonly, getter=isOtherAudioPlaying) BOOL otherAudioPlaying; // @synthesize otherAudioPlaying=_otherAudioPlaying;
 @property(readonly) NSArray *availableInputs;
 @property(readonly) BOOL secondaryAudioShouldBeSilencedHint;

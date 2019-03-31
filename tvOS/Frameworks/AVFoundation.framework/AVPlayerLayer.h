@@ -65,7 +65,6 @@
 - (void)setContentsScale:(double)arg1;
 - (void)setBounds:(struct CGRect)arg1;
 - (void)layoutSublayers;
-- (id)_compactDescription;
 - (id)initWithLayer:(id)arg1;
 - (id)init;
 

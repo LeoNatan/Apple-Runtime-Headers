@@ -15,7 +15,8 @@
 + (void)performOnceLibraryIsReadyForCPLManager:(CDUnknownBlockType)arg1;
 + (void)_stopWaitingForLibraryToBeReadyForCPLManager;
 + (_Bool)_isAssetsdReadyForCPLManager;
-+ (void)initializeCPLManager;
++ (void)setShouldRepushVideoAssetsMetadataOnce:(_Bool)arg1;
++ (_Bool)shouldRepushVideoAssetsMetadataOnce;
 + (void)setShouldSendOptimizeFeedbackOnce:(_Bool)arg1;
 + (_Bool)shouldSendOptimizeFeedbackOnce;
 + (void)disableCPL:(CDUnknownBlockType)arg1;

@@ -37,6 +37,10 @@ struct NSEdgeInsets {
     double right;
 };
 
+struct NSUUID {
+    Class _field1;
+};
+
 struct UIOffset {
     double horizontal;
     double vertical;

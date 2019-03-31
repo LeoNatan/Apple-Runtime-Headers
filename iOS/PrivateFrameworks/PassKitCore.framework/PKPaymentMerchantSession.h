@@ -22,6 +22,7 @@
     NSString *_displayName;
     NSString *_initiativeContext;
     NSString *_initiative;
+    NSData *_ampEnrollmentPinning;
     NSArray *_signedFields;
     NSData *_signature;
     NSString *_retryNonce;
@@ -33,6 +34,7 @@
 @property(retain, nonatomic) NSString *retryNonce; // @synthesize retryNonce=_retryNonce;
 @property(readonly, nonatomic) NSData *signature; // @synthesize signature=_signature;
 @property(readonly, nonatomic) NSArray *signedFields; // @synthesize signedFields=_signedFields;
+@property(readonly, nonatomic) NSData *ampEnrollmentPinning; // @synthesize ampEnrollmentPinning=_ampEnrollmentPinning;
 @property(readonly, nonatomic) NSString *initiative; // @synthesize initiative=_initiative;
 @property(readonly, nonatomic) NSString *initiativeContext; // @synthesize initiativeContext=_initiativeContext;
 @property(readonly, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
@@ -53,6 +55,7 @@
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithDictionary:(id)arg1;
+- (id)initWithMerchantIdentifier:(id)arg1 merchantSessionIdentifier:(id)arg2 nonce:(id)arg3 epochTimestamp:(unsigned long long)arg4 expiresAt:(unsigned long long)arg5 displayName:(id)arg6 initiativeContext:(id)arg7 initiative:(id)arg8 ampEnrollmentPinning:(id)arg9 signedFields:(id)arg10 signature:(id)arg11;
 - (id)initWithMerchantIdentifier:(id)arg1 merchantSessionIdentifier:(id)arg2 nonce:(id)arg3 epochTimestamp:(unsigned long long)arg4 expiresAt:(unsigned long long)arg5 displayName:(id)arg6 initiativeContext:(id)arg7 initiative:(id)arg8 signedFields:(id)arg9 signature:(id)arg10;
 - (id)initWithMerchantIdentifier:(id)arg1 merchantSessionIdentifier:(id)arg2 nonce:(id)arg3 epochTimestamp:(unsigned long long)arg4 expiresAt:(unsigned long long)arg5 domain:(id)arg6 displayName:(id)arg7 signature:(id)arg8;
 - (id)initWithMerchantIdentifier:(id)arg1 merchantSessionIdentifier:(id)arg2 nonce:(id)arg3 epochTimestamp:(unsigned long long)arg4 domain:(id)arg5 displayName:(id)arg6 signature:(id)arg7;

@@ -22,6 +22,7 @@
 - (id)newGrowableItem;
 - (id)growableItems;
 - (BOOL)canGrow;
+- (id)profileNamesForDataType:(int)arg1 numToSkip:(long long *)arg2;
 - (id)initWithFilterInfo:(id)arg1 parent:(id)arg2;
 - (id)keysForValuesToObserveForUndo;
 

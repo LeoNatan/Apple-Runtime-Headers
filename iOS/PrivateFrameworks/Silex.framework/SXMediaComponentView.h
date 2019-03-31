@@ -9,10 +9,12 @@
 #import <Silex/SXViewportChangeListener-Protocol.h>
 
 @class NSString, SXMediaExposureEvent;
+@protocol SXAnalyticsReporting;
 
 @interface SXMediaComponentView : SXComponentView <SXViewportChangeListener>
 {
     _Bool _isDisplayingMedia;
+    id <SXAnalyticsReporting> _analyticsReporting;
     SXMediaExposureEvent *_mediaExposureEvent;
     double _minimumVisibleY;
     double _maximumVisibleY;
@@ -24,6 +26,7 @@
 @property(retain, nonatomic) SXMediaExposureEvent *mediaExposureEvent; // @synthesize mediaExposureEvent=_mediaExposureEvent;
 @property(nonatomic) struct CGRect visibleBounds; // @synthesize visibleBounds=_visibleBounds;
 @property(nonatomic) _Bool isDisplayingMedia; // @synthesize isDisplayingMedia=_isDisplayingMedia;
+@property(readonly, nonatomic) id <SXAnalyticsReporting> analyticsReporting; // @synthesize analyticsReporting=_analyticsReporting;
 - (void).cxx_destruct;
 - (void)visibleBoundsChanged;
 - (void)calculateVisibleBounds;
@@ -38,7 +41,7 @@
 - (unsigned long long)analyticsGalleryType;
 - (void)finishMediaExposureEventIfNeeded;
 - (void)createMediaExposureEventIfNeeded;
-- (id)initWithDOMObjectProvider:(id)arg1 viewport:(id)arg2 presentationDelegate:(id)arg3 analyticsReporting:(id)arg4 componentStyleRendererFactory:(id)arg5 appStateMonitor:(id)arg6;
+- (id)initWithDOMObjectProvider:(id)arg1 viewport:(id)arg2 presentationDelegate:(id)arg3 componentStyleRendererFactory:(id)arg4 analyticsReporting:(id)arg5 appStateMonitor:(id)arg6;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -15,6 +15,7 @@ __attribute__((visibility("hidden")))
     NSString *_text;
     BOOL _isPhonetic;
     BOOL _isSilent;
+    BOOL _synthesizesWhileRecording;
     BOOL _eligibleForSynthesis;
     BOOL _provisional;
     BOOL _preprationBlockCompleted;
@@ -35,6 +36,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) VSSpeechRequest *speechRequest; // @synthesize speechRequest=_speechRequest;
 @property(readonly, nonatomic, getter=isProvisional) BOOL provisional; // @synthesize provisional=_provisional;
 @property(nonatomic, getter=isEligibleForSynthesis, setter=_setEligibleForSynthesis:) BOOL eligibleForSynthesis; // @synthesize eligibleForSynthesis=_eligibleForSynthesis;
+@property(nonatomic) BOOL synthesizesWhileRecording; // @synthesize synthesizesWhileRecording=_synthesizesWhileRecording;
 @property(nonatomic) BOOL isSilent; // @synthesize isSilent=_isSilent;
 @property(nonatomic) BOOL isPhonetic; // @synthesize isPhonetic=_isPhonetic;
 @property(copy, nonatomic, setter=_setText:) NSString *text; // @synthesize text=_text;

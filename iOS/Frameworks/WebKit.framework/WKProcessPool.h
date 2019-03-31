@@ -48,10 +48,12 @@
 @property(nonatomic, getter=_isStorageAccessAPIEnabled, setter=_setStorageAccessAPIEnabled:) _Bool _storageAccessAPIEnabled;
 @property(nonatomic, getter=_isCookieStoragePartitioningEnabled, setter=_setCookieStoragePartitioningEnabled:) _Bool _cookieStoragePartitioningEnabled;
 - (unsigned long long)_serviceWorkerProcessCount;
+- (unsigned long long)_processCacheCapacity;
 - (unsigned long long)_maximumSuspendedPageCount;
 - (unsigned long long)_pluginProcessCount;
 - (void)_preconnectToServer:(id)arg1;
 - (unsigned long long)_webPageContentProcessCount;
+- (unsigned long long)_webProcessCountIgnoringPrewarmedAndCached;
 - (unsigned long long)_webProcessCountIgnoringPrewarmed;
 - (_Bool)_hasPrewarmedWebProcess;
 - (void)_makeNextNetworkProcessLaunchFailForTesting;

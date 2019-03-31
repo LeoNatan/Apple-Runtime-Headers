@@ -144,6 +144,7 @@
 - (_Bool)isListening;
 - (_Bool)isPreventingActivationGesture;
 - (void)_stopRequestWithOptions:(id)arg1 afterDelay:(double)arg2;
+- (void)startRequestWithActivationTrigger:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)startRequestWithActivationTrigger:(id)arg1;
 - (void)_activationTriggerDidRelease:(id)arg1;
 - (double)_manualEndpointingThreshold;
@@ -169,6 +170,7 @@
 - (id)currentRequestOptions;
 - (void)updateRequestOptions:(id)arg1;
 - (void)stopRequestWithOptions:(id)arg1;
+- (void)startRequestWithOptions:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)startRequestWithOptions:(id)arg1;
 - (void)setCurrentCarPlaySupportedOEMAppIdList:(id)arg1;
 - (void)setAlertContext;

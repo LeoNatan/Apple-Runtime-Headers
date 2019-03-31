@@ -21,7 +21,6 @@ __attribute__((visibility("hidden")))
 - (struct CGRect)drawingRectForBounds:(struct CGRect)arg1;
 - (id)_textAttributes;
 - (id)init;
-- (struct CGRect)accessibilityFrame;
 
 @end
 

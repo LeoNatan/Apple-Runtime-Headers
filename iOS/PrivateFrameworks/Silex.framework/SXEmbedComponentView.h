@@ -103,7 +103,7 @@
 - (void)discardContents;
 - (void)renderContents;
 - (void)dealloc;
-- (id)initWithDOMObjectProvider:(id)arg1 viewport:(id)arg2 presentationDelegate:(id)arg3 analyticsReporting:(id)arg4 componentStyleRendererFactory:(id)arg5 reachabilityProvider:(id)arg6 embedService:(id)arg7 actionHandler:(id)arg8 layoutInvalidator:(id)arg9;
+- (id)initWithDOMObjectProvider:(id)arg1 viewport:(id)arg2 presentationDelegate:(id)arg3 componentStyleRendererFactory:(id)arg4 reachabilityProvider:(id)arg5 embedService:(id)arg6 actionHandler:(id)arg7 layoutInvalidator:(id)arg8;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

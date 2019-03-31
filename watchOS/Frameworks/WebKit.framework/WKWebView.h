@@ -175,6 +175,7 @@
 - (void)_zoomToFocusRect:(const struct FloatRect *)arg1 selectionRect:(const struct FloatRect *)arg2 insideFixed:(_Bool)arg3 fontSize:(float)arg4 minimumScale:(double)arg5 maximumScale:(double)arg6 allowScaling:(_Bool)arg7 forceScroll:(_Bool)arg8;
 - (void)_zoomToInitialScaleWithOrigin:(struct FloatPoint)arg1 animated:(_Bool)arg2;
 - (void)_zoomOutWithOrigin:(struct FloatPoint)arg1 animated:(_Bool)arg2;
+- (void)_scrollByContentOffset:(struct FloatPoint)arg1;
 - (_Bool)_scrollToRect:(struct FloatRect)arg1 origin:(struct FloatPoint)arg2 minimumScrollDistance:(float)arg3;
 - (void)_scrollToContentScrollPosition:(struct FloatPoint)arg1 scrollOrigin:(struct IntPoint)arg2;
 - (void)_zoomToRect:(struct FloatRect)arg1 atScale:(double)arg2 origin:(struct FloatPoint)arg3 animated:(_Bool)arg4;
@@ -231,6 +232,7 @@
 - (void)_promptForReplace:(id)arg1;
 - (void)_lookup:(id)arg1;
 - (void)_define:(id)arg1;
+- (void)_arrowKey:(id)arg1;
 - (void)_addShortcut:(id)arg1;
 - (_Bool)resignFirstResponder;
 - (_Bool)canBecomeFirstResponder;
@@ -327,6 +329,7 @@
 - (void)_detectDataWithTypes:(unsigned int)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)_removeDataDetectedLinks:(CDUnknownBlockType)arg1;
 - (void)_setPageMuted:(unsigned int)arg1;
+@property(readonly, nonatomic) unsigned int _mediaCaptureState;
 @property(nonatomic, setter=_setMediaCaptureEnabled:) _Bool _mediaCaptureEnabled;
 - (void)_muteMediaCapture;
 @property(readonly, nonatomic) _Bool _isInFullscreen;
@@ -397,6 +400,7 @@
 - (id)_reloadWithoutContentBlockers;
 @property(readonly, nonatomic) UIView *_safeBrowsingWarning;
 - (void)_killWebContentProcess;
+@property(readonly, nonatomic) int _provisionalWebProcessIdentifier;
 @property(readonly, nonatomic) int _webProcessIdentifier;
 @property(nonatomic, setter=_setUserContentExtensionsEnabled:) _Bool _userContentExtensionsEnabled;
 @property(copy, setter=_setCustomUserAgent:) NSString *_customUserAgent;

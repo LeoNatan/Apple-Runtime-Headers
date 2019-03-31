@@ -13,13 +13,21 @@
 
 @interface AFInterstitialConfiguration : NSObject <NSCopying, NSSecureCoding>
 {
+    _Bool _isVoiceTrigger;
+    _Bool _isDucking;
+    _Bool _isTwoShot;
     long long _style;
     NSString *_languageCode;
     long long _gender;
+    NSString *_recordRoute;
 }
 
 + (_Bool)supportsSecureCoding;
 + (id)newWithBuilder:(CDUnknownBlockType)arg1;
+@property(readonly, nonatomic) _Bool isTwoShot; // @synthesize isTwoShot=_isTwoShot;
+@property(readonly, nonatomic) _Bool isDucking; // @synthesize isDucking=_isDucking;
+@property(readonly, nonatomic) _Bool isVoiceTrigger; // @synthesize isVoiceTrigger=_isVoiceTrigger;
+@property(readonly, copy, nonatomic) NSString *recordRoute; // @synthesize recordRoute=_recordRoute;
 @property(readonly, nonatomic) long long gender; // @synthesize gender=_gender;
 @property(readonly, copy, nonatomic) NSString *languageCode; // @synthesize languageCode=_languageCode;
 @property(readonly, nonatomic) long long style; // @synthesize style=_style;
@@ -31,7 +39,7 @@
 - (unsigned long long)hash;
 - (id)_descriptionWithIndent:(unsigned long long)arg1;
 - (id)description;
-- (id)initWithStyle:(long long)arg1 languageCode:(id)arg2 gender:(long long)arg3;
+- (id)initWithStyle:(long long)arg1 languageCode:(id)arg2 gender:(long long)arg3 recordRoute:(id)arg4 isVoiceTrigger:(_Bool)arg5 isDucking:(_Bool)arg6 isTwoShot:(_Bool)arg7;
 - (id)mutatedCopyWithMutator:(CDUnknownBlockType)arg1;
 
 @end

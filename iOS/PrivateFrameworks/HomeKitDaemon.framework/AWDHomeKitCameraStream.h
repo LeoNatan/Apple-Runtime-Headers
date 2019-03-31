@@ -15,6 +15,7 @@
     unsigned long long _duration;
     unsigned long long _startupDelay;
     unsigned long long _timestamp;
+    int _certified;
     AWDHomeKitCameraStreamMessaging *_controllerMessaging;
     unsigned int _errorCode;
     AWDHomeKitCameraIDSSessionSetup *_idsSessionSetup;
@@ -37,6 +38,7 @@
         unsigned int duration:1;
         unsigned int startupDelay:1;
         unsigned int timestamp:1;
+        unsigned int certified:1;
         unsigned int errorCode:1;
         unsigned int receivedFirstFrame:1;
         unsigned int resolutionOnClose:1;
@@ -107,6 +109,10 @@
 @property(nonatomic) _Bool hasDuration;
 @property(readonly, nonatomic) _Bool hasSessionID;
 @property(nonatomic) _Bool hasTimestamp;
+- (int)StringAsCertified:(id)arg1;
+- (id)certifiedAsString:(int)arg1;
+@property(nonatomic) _Bool hasCertified;
+@property(nonatomic) int certified; // @synthesize certified=_certified;
 @property(readonly, nonatomic) _Bool hasVendorDetails;
 
 @end

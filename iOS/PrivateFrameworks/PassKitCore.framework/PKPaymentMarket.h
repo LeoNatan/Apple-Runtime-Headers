@@ -15,6 +15,7 @@
     NSDictionary *_localizedNames;
     NSSet *_geoFences;
     long long _type;
+    long long _classification;
     NSString *_identifier;
     NSString *_region;
     NSSet *_supportedCredentialTypes;
@@ -30,6 +31,7 @@
 @property(readonly, copy) NSSet *supportedCredentialTypes; // @synthesize supportedCredentialTypes=_supportedCredentialTypes;
 @property(readonly, copy) NSString *region; // @synthesize region=_region;
 @property(readonly, copy) NSString *identifier; // @synthesize identifier=_identifier;
+@property(readonly) long long classification; // @synthesize classification=_classification;
 @property(readonly) long long type; // @synthesize type=_type;
 - (void).cxx_destruct;
 - (id)_geoFenceWithDictionary:(id)arg1;

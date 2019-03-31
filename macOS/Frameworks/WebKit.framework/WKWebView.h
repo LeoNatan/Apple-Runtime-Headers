@@ -388,6 +388,7 @@
 @property(nonatomic, setter=_setDrawsBackground:) BOOL _drawsBackground;
 - (void)_removeDataDetectedLinks:(CDUnknownBlockType)arg1;
 - (void)_setPageMuted:(unsigned long long)arg1;
+@property(readonly, nonatomic) unsigned long long _mediaCaptureState;
 @property(nonatomic, setter=_setMediaCaptureEnabled:) BOOL _mediaCaptureEnabled;
 - (void)_muteMediaCapture;
 @property(readonly, nonatomic) BOOL _isInFullscreen;
@@ -452,6 +453,7 @@
 - (id)_reloadWithoutContentBlockers;
 @property(readonly, nonatomic) NSView *_safeBrowsingWarning;
 - (void)_killWebContentProcess;
+@property(readonly, nonatomic) int _provisionalWebProcessIdentifier;
 @property(readonly, nonatomic) int _webProcessIdentifier;
 @property(nonatomic, setter=_setUserContentExtensionsEnabled:) BOOL _userContentExtensionsEnabled;
 @property(copy, setter=_setCustomUserAgent:) NSString *_customUserAgent;

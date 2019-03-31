@@ -170,7 +170,8 @@ struct IFDPackageRep_Private {
     id _field6;
     id _field7;
     id _field8;
-    char _field9;
+    id _field9;
+    char _field10;
 };
 
 struct IFDTargetController_Private {

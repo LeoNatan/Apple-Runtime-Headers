@@ -150,6 +150,8 @@
 - (void)_updateHeaderForGadget:(id)arg1 atIndexPath:(id)arg2;
 - (void)_notifyGadgetsThatGadgetControllerHasDisappeared;
 - (void)_notifyGadgetsThatGadgetControllerHasAppeared;
+- (void)_setTimerToHandleGadgetsSeen;
+- (void)_clearTimerToHandleGadgetsSeen;
 - (void)_handleGadgetsSeen;
 - (void)_configureHeader:(id)arg1 withGadget:(id)arg2;
 - (void)_updateAllGadgetsSpecIfNeededAndInvalidateLayout:(_Bool)arg1;

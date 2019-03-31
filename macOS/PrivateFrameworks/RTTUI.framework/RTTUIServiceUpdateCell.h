@@ -7,16 +7,16 @@
 #import <AppKit/NSView.h>
 
 @class NSTextView;
-@protocol RTTUIConversationCellDelegate;
+@protocol RTTUIServiceCellDelegate;
 
 @interface RTTUIServiceUpdateCell : NSView
 {
     NSTextView *_textView;
-    id <RTTUIConversationCellDelegate> _delegate;
+    id <RTTUIServiceCellDelegate> _delegate;
 }
 
 + (double)heightForWidth:(double)arg1;
-@property(nonatomic) __weak id <RTTUIConversationCellDelegate> delegate; // @synthesize delegate=_delegate;
+@property(nonatomic) __weak id <RTTUIServiceCellDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (id)accessibilityLabel;
 - (BOOL)isAccessibilityElement;

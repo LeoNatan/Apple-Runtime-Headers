@@ -8,20 +8,22 @@
 
 #import <NewsCore/NSCopying-Protocol.h>
 
-@class NSDictionary, NSString;
+@class NSString;
 
 @interface FCMagazineGenre : NSObject <NSCopying>
 {
-    NSDictionary *_configDict;
+    NSString *_genre;
+    NSString *_localizedDescription;
 }
 
-@property(retain, nonatomic) NSDictionary *configDict; // @synthesize configDict=_configDict;
++ (id)magazineGenreWithGenre:(id)arg1 localizedDescription:(id)arg2;
+@property(copy, nonatomic) NSString *localizedDescription; // @synthesize localizedDescription=_localizedDescription;
+@property(copy, nonatomic) NSString *genre; // @synthesize genre=_genre;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) NSString *localizedDescription;
-@property(readonly, nonatomic) NSString *genre;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
+- (id)initWithGenre:(id)arg1 localizedDescription:(id)arg2;
 - (id)initWithConfigDictionary:(id)arg1;
 - (id)init;
 

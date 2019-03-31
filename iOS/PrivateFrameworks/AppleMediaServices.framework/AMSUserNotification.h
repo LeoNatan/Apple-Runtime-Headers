@@ -12,6 +12,7 @@
 {
     ACAccount *_account;
     NSURL *_artworkUrl;
+    NSURL *_videoUrl;
     NSArray *_buttonActions;
     AMSUserNotificationAction *_defaultAction;
     NSString *_identifier;
@@ -25,6 +26,9 @@
     NSString *_threadIdentifier;
 }
 
++ (_Bool)_canParseNotificationWithUserInfo:(id)arg1;
++ (_Bool)shouldHandleNotificationResponse:(id)arg1;
++ (id)handleNotificationResponse:(id)arg1 bagContract:(id)arg2;
 @property(retain, nonatomic) NSString *threadIdentifier; // @synthesize threadIdentifier=_threadIdentifier;
 @property(retain, nonatomic) NSString *categoryIdentifier; // @synthesize categoryIdentifier=_categoryIdentifier;
 @property(nonatomic) long long intent; // @synthesize intent=_intent;
@@ -36,10 +40,11 @@
 @property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(retain, nonatomic) AMSUserNotificationAction *defaultAction; // @synthesize defaultAction=_defaultAction;
 @property(retain, nonatomic) NSArray *buttonActions; // @synthesize buttonActions=_buttonActions;
+@property(retain, nonatomic) NSURL *videoUrl; // @synthesize videoUrl=_videoUrl;
 @property(retain, nonatomic) NSURL *artworkUrl; // @synthesize artworkUrl=_artworkUrl;
 @property(retain, nonatomic) ACAccount *account; // @synthesize account=_account;
 - (void).cxx_destruct;
-- (_Bool)_populatePropertiesFromStoredUserInfo:(id)arg1;
+- (void)_populatePropertiesFromStoredUserInfo:(id)arg1;
 - (id)_compileStoredUserInfo;
 - (id)handleSelectedButton:(id)arg1 bagContract:(id)arg2;
 - (void)addButtonAction:(id)arg1;

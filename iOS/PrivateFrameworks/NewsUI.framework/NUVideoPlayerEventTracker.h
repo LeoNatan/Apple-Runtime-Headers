@@ -28,7 +28,7 @@
 - (void)_updateVideoPlayerVisibilityIfNeeded;
 - (void)_performBlockForEventTrackersRespondingToSelector:(SEL)arg1 block:(CDUnknownBlockType)arg2;
 - (void)sessionWillEnd;
-- (void)sessionDidStart;
+- (void)sessionDidStartWithSessionID:(id)arg1;
 - (void)videoViewControllerDidDisappear:(id)arg1;
 - (void)videoViewControllerDidAppear:(id)arg1;
 - (void)videoPlayerDidBecomeInvisible;

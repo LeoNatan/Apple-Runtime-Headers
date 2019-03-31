@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSDictionary, NSMutableDictionary, NSString, NSURL, NSURLRequest;
+@class AMSMetricsEvent, NSMutableDictionary, NSString, NSURL, NSURLRequest;
 @protocol OS_dispatch_queue;
 
 @interface AMSFollowUpAction : NSObject
@@ -14,6 +14,7 @@
     NSMutableDictionary *_userInfo;
     NSString *_identifier;
     NSString *_label;
+    AMSMetricsEvent *_metricsEvent;
     NSURL *_url;
     NSObject<OS_dispatch_queue> *_internalQueue;
     NSObject<OS_dispatch_queue> *_actionQueue;
@@ -22,6 +23,7 @@
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *actionQueue; // @synthesize actionQueue=_actionQueue;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *internalQueue; // @synthesize internalQueue=_internalQueue;
 @property(retain) NSURL *url; // @synthesize url=_url;
+@property(retain) AMSMetricsEvent *metricsEvent; // @synthesize metricsEvent=_metricsEvent;
 @property(retain) NSString *label; // @synthesize label=_label;
 @property(retain) NSString *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
@@ -33,7 +35,6 @@
 @property BOOL requiresFollowUpUI;
 @property(retain) NSURLRequest *request;
 @property(retain) NSString *preferredClient;
-@property(retain) NSDictionary *metrics;
 @property(retain) NSString *logKey;
 - (id)initWithAction:(id)arg1;
 - (id)initWithLabel:(id)arg1;

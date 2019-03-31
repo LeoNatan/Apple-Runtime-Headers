@@ -37,6 +37,7 @@
 - (void)composeRecipientView:(MFComposeRecipientTextView *)arg1 didReplaceRecipients:(NSArray *)arg2 withRecipients:(NSArray *)arg3;
 - (void)composeRecipientView:(MFComposeRecipientTextView *)arg1 didRemoveRecipient:(MFComposeRecipient *)arg2;
 - (void)composeRecipientView:(MFComposeRecipientTextView *)arg1 didFinishEnteringAddress:(NSString *)arg2;
+- (void)composeRecipientView:(MFComposeRecipientTextView *)arg1 didAddRecipients:(NSArray *)arg2;
 - (void)composeRecipientView:(MFComposeRecipientTextView *)arg1 didAddRecipient:(MFComposeRecipient *)arg2;
 @end
 

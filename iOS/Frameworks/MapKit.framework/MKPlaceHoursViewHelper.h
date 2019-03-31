@@ -11,7 +11,6 @@
 }
 
 + (void)determineExtraRulesForPlaceHoursViews:(id)arg1 withBusinessHours:(id)arg2;
-+ (id)prioritizedBusinessHours:(id)arg1;
 
 @end
 

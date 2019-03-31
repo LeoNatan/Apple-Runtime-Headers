@@ -89,6 +89,7 @@
 - (id)initWithOfferDeviceError:(id)arg1;
 - (id)initWithError:(id)arg1;
 - (id)initWithDialogDictionary:(id)arg1;
+- (id)initWithDialogDictionary:(id)arg1 authenticationContext:(id)arg2;
 - (id)init;
 - (id)initWithAuthenticationChallege:(id)arg1;
 

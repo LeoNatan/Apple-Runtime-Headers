@@ -49,6 +49,7 @@
 - (void)didBeginSearchOfType:(long long)arg1 withQuery:(id)arg2 endpoint:(unsigned long long)arg3;
 - (void)didReceiveLocalResultsForQuery:(id)arg1;
 - (void)didReceiveWebSuggestionsForQuery:(id)arg1 fromSearchProvider:(id)arg2 responseSize:(long long)arg3 statusCode:(long long)arg4 networkTimingData:(id)arg5;
+- (void)userTypedGoToSearch:(id)arg1 endpoint:(unsigned long long)arg2;
 - (void)userTypedURLDirectly:(id)arg1;
 - (void)userDidEngageWithCompletionListItem:(id)arg1 onActionButton:(BOOL)arg2 method:(long long)arg3 doesMatchSiriSuggestion:(BOOL)arg4;
 - (void)userDidEngageWithCompletionListItem:(id)arg1 onActionButton:(BOOL)arg2 method:(long long)arg3;

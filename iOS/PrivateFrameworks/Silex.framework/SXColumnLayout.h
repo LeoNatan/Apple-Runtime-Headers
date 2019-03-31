@@ -20,8 +20,6 @@
     unsigned long long _numberOfColumns;
     double _columnWidth;
     long long _leftColumnOffset;
-    long long _topPadding;
-    long long _bottomPadding;
     long long _rightColumnOffset;
     double _leftInset;
     double _rightInset;
@@ -38,8 +36,6 @@
 @property(nonatomic) double rightInset; // @synthesize rightInset=_rightInset;
 @property(nonatomic) double leftInset; // @synthesize leftInset=_leftInset;
 @property(nonatomic) long long rightColumnOffset; // @synthesize rightColumnOffset=_rightColumnOffset;
-@property(nonatomic) long long bottomPadding; // @synthesize bottomPadding=_bottomPadding;
-@property(nonatomic) long long topPadding; // @synthesize topPadding=_topPadding;
 @property(readonly, nonatomic) long long leftColumnOffset; // @synthesize leftColumnOffset=_leftColumnOffset;
 @property(readonly, nonatomic) double columnWidth; // @synthesize columnWidth=_columnWidth;
 @property(readonly, nonatomic) unsigned long long numberOfColumns; // @synthesize numberOfColumns=_numberOfColumns;
@@ -57,7 +53,7 @@
 - (double)widthForColumnRange:(struct _NSRange)arg1 ignoreMargin:(unsigned long long)arg2 ignoreGutter:(unsigned long long)arg3;
 - (double)xPositionForColumnIndex:(long long)arg1 ignoreMargin:(unsigned long long)arg2 ignoreGutter:(unsigned long long)arg3;
 - (struct _NSRange)convertColumnRange:(struct _NSRange)arg1 minimumColumnLength:(long long)arg2;
-- (id)columnLayoutForComponentBlueprint:(id)arg1;
+- (id)columnLayoutForComponentBlueprint:(id)arg1 unitConverter:(id)arg2;
 - (id)initWithConstrainedViewportSize:(struct CGSize)arg1 viewportSize:(struct CGSize)arg2 layoutWidth:(double)arg3 documentLayout:(id)arg4 numberOfLayoutColumns:(unsigned long long)arg5 leftMargin:(double)arg6 rightMargin:(double)arg7 numberOfColumns:(unsigned long long)arg8 columnWidth:(double)arg9;
 
 @end

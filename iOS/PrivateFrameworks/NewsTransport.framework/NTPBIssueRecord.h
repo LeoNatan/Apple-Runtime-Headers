@@ -13,16 +13,15 @@
 @interface NTPBIssueRecord : PBCodable <NSCopying>
 {
     double _coverAspectRatio;
-    double _halfLife;
+    unsigned long long _halfLifeMilliseconds;
     double _layeredCoverAspectRatio;
+    long long _minimumNewsVersion;
     NSMutableArray *_allArticleIDs;
     NSMutableArray *_allowedStorefrontIDs;
     NTPBRecordBase *_base;
     NSMutableArray *_blockedStorefrontIDs;
     NSString *_channelTagID;
     NSString *_coverArticleID;
-    NSString *_coverImageHQURL;
-    NSString *_coverImageLQURL;
     NSString *_coverImageURL;
     NSString *_coverPrimaryColor;
     NSString *_edition;
@@ -31,7 +30,6 @@
     NSString *_layeredCoverPrimaryColor;
     NSString *_metadataURL;
     NSString *_notificationDescription;
-    NSMutableArray *_pdfResourceIDs;
     NTPBDate *_publishDate;
     COMAPPLEFELDSPARPROTOCOLLIVERPOOLArticleScores *_scores;
     NSString *_title;
@@ -41,8 +39,9 @@
     _Bool _isPaid;
     struct {
         unsigned int coverAspectRatio:1;
-        unsigned int halfLife:1;
+        unsigned int halfLifeMilliseconds:1;
         unsigned int layeredCoverAspectRatio:1;
+        unsigned int minimumNewsVersion:1;
         unsigned int type:1;
         unsigned int isDraft:1;
         unsigned int isPaid:1;
@@ -50,15 +49,14 @@
 }
 
 + (Class)topicTagIDsType;
-+ (Class)pdfResourceIDsType;
 + (Class)blockedStorefrontIDsType;
 + (Class)allowedStorefrontIDsType;
 + (Class)allArticleIDsType;
+@property(nonatomic) long long minimumNewsVersion; // @synthesize minimumNewsVersion=_minimumNewsVersion;
 @property(retain, nonatomic) NSMutableArray *topicTagIDs; // @synthesize topicTagIDs=_topicTagIDs;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
 @property(retain, nonatomic) COMAPPLEFELDSPARPROTOCOLLIVERPOOLArticleScores *scores; // @synthesize scores=_scores;
 @property(retain, nonatomic) NTPBDate *publishDate; // @synthesize publishDate=_publishDate;
-@property(retain, nonatomic) NSMutableArray *pdfResourceIDs; // @synthesize pdfResourceIDs=_pdfResourceIDs;
 @property(retain, nonatomic) NSString *notificationDescription; // @synthesize notificationDescription=_notificationDescription;
 @property(retain, nonatomic) NSString *metadataURL; // @synthesize metadataURL=_metadataURL;
 @property(retain, nonatomic) NSString *layeredCoverPrimaryColor; // @synthesize layeredCoverPrimaryColor=_layeredCoverPrimaryColor;
@@ -67,11 +65,9 @@
 @property(retain, nonatomic) NSString *issueDescription; // @synthesize issueDescription=_issueDescription;
 @property(nonatomic) _Bool isPaid; // @synthesize isPaid=_isPaid;
 @property(nonatomic) _Bool isDraft; // @synthesize isDraft=_isDraft;
-@property(nonatomic) double halfLife; // @synthesize halfLife=_halfLife;
+@property(nonatomic) unsigned long long halfLifeMilliseconds; // @synthesize halfLifeMilliseconds=_halfLifeMilliseconds;
 @property(retain, nonatomic) NSString *edition; // @synthesize edition=_edition;
 @property(retain, nonatomic) NSString *coverPrimaryColor; // @synthesize coverPrimaryColor=_coverPrimaryColor;
-@property(retain, nonatomic) NSString *coverImageLQURL; // @synthesize coverImageLQURL=_coverImageLQURL;
-@property(retain, nonatomic) NSString *coverImageHQURL; // @synthesize coverImageHQURL=_coverImageHQURL;
 @property(retain, nonatomic) NSString *coverImageURL; // @synthesize coverImageURL=_coverImageURL;
 @property(nonatomic) double coverAspectRatio; // @synthesize coverAspectRatio=_coverAspectRatio;
 @property(retain, nonatomic) NSString *coverArticleID; // @synthesize coverArticleID=_coverArticleID;
@@ -88,6 +84,7 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(nonatomic) _Bool hasMinimumNewsVersion;
 @property(nonatomic) _Bool hasType;
 @property(nonatomic) int type; // @synthesize type=_type;
 - (id)topicTagIDsAtIndex:(unsigned long long)arg1;
@@ -97,10 +94,6 @@
 @property(readonly, nonatomic) _Bool hasTitle;
 @property(readonly, nonatomic) _Bool hasScores;
 @property(readonly, nonatomic) _Bool hasPublishDate;
-- (id)pdfResourceIDsAtIndex:(unsigned long long)arg1;
-- (unsigned long long)pdfResourceIDsCount;
-- (void)addPdfResourceIDs:(id)arg1;
-- (void)clearPdfResourceIDs;
 @property(readonly, nonatomic) _Bool hasNotificationDescription;
 @property(readonly, nonatomic) _Bool hasMetadataURL;
 @property(readonly, nonatomic) _Bool hasLayeredCoverPrimaryColor;
@@ -109,11 +102,9 @@
 @property(readonly, nonatomic) _Bool hasIssueDescription;
 @property(nonatomic) _Bool hasIsPaid;
 @property(nonatomic) _Bool hasIsDraft;
-@property(nonatomic) _Bool hasHalfLife;
+@property(nonatomic) _Bool hasHalfLifeMilliseconds;
 @property(readonly, nonatomic) _Bool hasEdition;
 @property(readonly, nonatomic) _Bool hasCoverPrimaryColor;
-@property(readonly, nonatomic) _Bool hasCoverImageLQURL;
-@property(readonly, nonatomic) _Bool hasCoverImageHQURL;
 @property(readonly, nonatomic) _Bool hasCoverImageURL;
 @property(nonatomic) _Bool hasCoverAspectRatio;
 @property(readonly, nonatomic) _Bool hasCoverArticleID;

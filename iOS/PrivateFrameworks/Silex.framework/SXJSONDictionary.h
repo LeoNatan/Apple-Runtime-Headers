@@ -8,29 +8,24 @@
 
 #import <Silex/NSFastEnumeration-Protocol.h>
 
-@class NSArray, NSDictionary, NSMutableDictionary, NSObject, NSString;
-@protocol OS_dispatch_semaphore;
+@class NSArray, NSDictionary, NSMutableDictionary;
 
 @interface SXJSONDictionary : SXJSONObject <NSFastEnumeration>
 {
-    NSString *_specificationVersion;
     CDUnknownBlockType _objectValueClassBlock;
     CDUnknownBlockType _valueClassBlock;
     NSDictionary *_json;
     NSMutableDictionary *_objects;
-    NSObject<OS_dispatch_semaphore> *_semaphore;
     NSArray *_keys;
     unsigned long long _count;
 }
 
 @property(readonly, nonatomic) unsigned long long count; // @synthesize count=_count;
 @property(readonly, nonatomic) NSArray *keys; // @synthesize keys=_keys;
-@property(readonly, nonatomic) NSObject<OS_dispatch_semaphore> *semaphore; // @synthesize semaphore=_semaphore;
 @property(readonly, nonatomic) NSMutableDictionary *objects; // @synthesize objects=_objects;
 @property(readonly, nonatomic) NSDictionary *json; // @synthesize json=_json;
 @property(readonly, nonatomic) CDUnknownBlockType valueClassBlock; // @synthesize valueClassBlock=_valueClassBlock;
 @property(readonly, nonatomic) CDUnknownBlockType objectValueClassBlock; // @synthesize objectValueClassBlock=_objectValueClassBlock;
-- (id)specificationVersion;
 - (void).cxx_destruct;
 - (id)description;
 - (unsigned long long)countByEnumeratingWithState:(CDStruct_70511ce9 *)arg1 objects:(id *)arg2 count:(unsigned long long)arg3;

@@ -6,7 +6,7 @@
 
 #import <NewsCore/FCFeedDescriptor.h>
 
-@protocol FCTagProviding;
+@protocol FCPaidAccessCheckerType, FCTagProviding;
 
 @interface FCSingleTagFeedDescriptor : FCFeedDescriptor
 {
@@ -16,8 +16,10 @@
     long long _feedFilterOptions;
     long long _feedPersonalizationConfigurationSet;
     id <FCTagProviding> _masterTag;
+    id <FCPaidAccessCheckerType> _paidAccessChecker;
 }
 
+@property(retain, nonatomic) id <FCPaidAccessCheckerType> paidAccessChecker; // @synthesize paidAccessChecker=_paidAccessChecker;
 @property(readonly, copy, nonatomic) id <FCTagProviding> masterTag; // @synthesize masterTag=_masterTag;
 - (long long)feedPersonalizationConfigurationSet;
 - (long long)feedFilterOptions;
@@ -26,6 +28,7 @@
 - (long long)feedType;
 @property(copy, nonatomic) id <FCTagProviding> tag; // @synthesize tag=_tag;
 - (void).cxx_destruct;
+- (void)prepareToProvideFeedGroupEmittersWithCallbackQueue:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)feedGroupEmittersWithConfiguration:(id)arg1;
 - (id)iAdSectionID;
 - (id)iAdFeedID;
@@ -38,7 +41,6 @@
 - (id)backingChannelID;
 - (id)backingChannel;
 - (id)backingTag;
-- (_Bool)enableNotificationsWithSubscriptionController:(id)arg1 error:(id *)arg2;
 - (_Bool)hasNotificationsEnabledWithSubscriptionController:(id)arg1;
 - (_Bool)isMutedWithSubscriptionController:(id)arg1;
 - (_Bool)isSubscribedToWithSubscriptionController:(id)arg1;
@@ -51,8 +53,8 @@
 - (id)name;
 - (_Bool)isEqual:(id)arg1;
 - (id)initWithIdentifier:(id)arg1;
-- (id)initWithContext:(id)arg1 tag:(id)arg2;
-- (id)initWithContext:(id)arg1 tag:(id)arg2 sortMethod:(long long)arg3 filterOptions:(long long)arg4 personalizationConfigurationSet:(long long)arg5;
+- (id)initWithContext:(id)arg1 tag:(id)arg2 paidAccessChecker:(id)arg3;
+- (id)initWithContext:(id)arg1 tag:(id)arg2 sortMethod:(long long)arg3 filterOptions:(long long)arg4 personalizationConfigurationSet:(long long)arg5 paidAccessChecker:(id)arg6;
 
 @end
 

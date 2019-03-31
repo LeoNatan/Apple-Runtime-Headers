@@ -4,9 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <swiftCore/SwiftObject.h>
+#import <swiftCore/_TtCs12_SwiftObject.h>
 
-@interface _TtC15ConversationKitP33_264EA2FC71937CD31FD6CE8FDDC74F0A26DisplayLinkCallbackWrapper : SwiftObject
+@interface _TtC15ConversationKitP33_264EA2FC71937CD31FD6CE8FDDC74F0A26DisplayLinkCallbackWrapper : _TtCs12_SwiftObject
 {
     // Error parsing type: , name: callback
 }

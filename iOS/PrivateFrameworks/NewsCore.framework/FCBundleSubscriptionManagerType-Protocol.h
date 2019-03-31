@@ -10,6 +10,7 @@
 @protocol FCBundleSubscriptionManagerType
 @property(readonly, nonatomic) FCBundleSubscription *cachedSubscription;
 - (void)forceExpireBundleSubscriptionBasedOnInternalSettings;
+- (void)clearBundleSubscription;
 - (void)prewarmBundleTagIDsWithPurchaseID:(NSString *)arg1;
 - (void)renewalNoticeShownWithPurchaseID:(NSString *)arg1;
 - (FCBundleSubscriptionLookUpEntry *)bundleSubscriptionLookupEntry;

@@ -9,5 +9,6 @@
 @interface NSBundle (_QLUtilities)
 + (_Bool)mainBundleRequiresStatusBarHidden;
 + (_Bool)mainBundleSupportsBackgroundAudio;
+- (id)ql_applicationName;
 @end
 

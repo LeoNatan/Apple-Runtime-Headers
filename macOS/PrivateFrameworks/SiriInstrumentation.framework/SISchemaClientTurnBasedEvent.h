@@ -8,16 +8,16 @@
 
 #import <SiriInstrumentation/NSCopying-Protocol.h>
 
-@class SISchemaClientAnyEvent, SISchemaTurnContext;
+@class SISchemaClientAnyEvent, SISchemaClientTurnContext;
 
 @interface SISchemaClientTurnBasedEvent : PBCodable <NSCopying>
 {
     SISchemaClientAnyEvent *_event;
-    SISchemaTurnContext *_turnContext;
+    SISchemaClientTurnContext *_turnContext;
 }
 
 @property(retain, nonatomic) SISchemaClientAnyEvent *event; // @synthesize event=_event;
-@property(retain, nonatomic) SISchemaTurnContext *turnContext; // @synthesize turnContext=_turnContext;
+@property(retain, nonatomic) SISchemaClientTurnContext *turnContext; // @synthesize turnContext=_turnContext;
 - (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -30,6 +30,7 @@
 - (id)description;
 @property(readonly, nonatomic) BOOL hasEvent;
 @property(readonly, nonatomic) BOOL hasTurnContext;
+- (id)si_dictionaryRepresentation;
 
 @end
 

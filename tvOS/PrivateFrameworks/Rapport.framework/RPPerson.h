@@ -12,6 +12,7 @@
 
 @interface RPPerson : NSObject <NSSecureCoding>
 {
+    int _activityLevel;
     unsigned int _flags;
     int _proximity;
     NSString *_contactID;
@@ -31,6 +32,7 @@
 @property(readonly, nonatomic) unsigned int flags; // @synthesize flags=_flags;
 @property(readonly, copy, nonatomic) NSArray *devices; // @synthesize devices=_devices;
 @property(readonly, copy, nonatomic) NSString *contactID; // @synthesize contactID=_contactID;
+@property(readonly, nonatomic) int activityLevel; // @synthesize activityLevel=_activityLevel;
 - (void).cxx_destruct;
 - (unsigned int)_updateDeviceDerivedInfo;
 - (unsigned int)updateWithRPDevice:(id)arg1;

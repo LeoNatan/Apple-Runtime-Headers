@@ -14,11 +14,13 @@
 {
     NSString *_identifier;
     NSString *_issueID;
+    NTPBDate *_lastBadgedPBDate;
     NSString *_lastVisitedArticleID;
     NTPBDate *_lastVisitedPBDate;
     NSString *_lastVisitedPageID;
 }
 
+@property(retain, nonatomic) NTPBDate *lastBadgedPBDate; // @synthesize lastBadgedPBDate=_lastBadgedPBDate;
 @property(retain, nonatomic) NSString *lastVisitedPageID; // @synthesize lastVisitedPageID=_lastVisitedPageID;
 @property(retain, nonatomic) NSString *lastVisitedArticleID; // @synthesize lastVisitedArticleID=_lastVisitedArticleID;
 @property(retain, nonatomic) NTPBDate *lastVisitedPBDate; // @synthesize lastVisitedPBDate=_lastVisitedPBDate;
@@ -32,6 +34,7 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(readonly, nonatomic) _Bool hasLastBadgedPBDate;
 @property(readonly, nonatomic) _Bool hasLastVisitedPageID;
 @property(readonly, nonatomic) _Bool hasLastVisitedArticleID;
 @property(readonly, nonatomic) _Bool hasLastVisitedPBDate;

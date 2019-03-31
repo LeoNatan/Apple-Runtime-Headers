@@ -12,7 +12,7 @@
 #import <AVConference/VCSecureDataChannelDelegate-Protocol.h>
 #import <AVConference/VCTransportSessionLegacyDelegate-Protocol.h>
 
-@class AVCRateController, GKRingBuffer, NSArray, NSData, NSDictionary, NSMutableArray, NSMutableDictionary, NSNumber, NSString, TimingCollection, VCAudioPayload, VCAudioTransmitter, VCBitrateArbiter, VCCallInfo, VCCallLinkCongestionDetector, VCCapabilities, VCCaptionsReceiver, VCConnectionManager, VCControlChannel, VCImageAttributeRules, VCMediaNegotiator, VCRateControlMediaController, VCSecureDataChannel, VCSessionMessaging, VCTransportSession, VCWCMClient, VideoAttributes, WRMClient;
+@class AVCRateController, GKRingBuffer, NSArray, NSData, NSDictionary, NSMutableArray, NSMutableDictionary, NSNumber, NSString, TimingCollection, VCAudioPayload, VCAudioTransmitter, VCBitrateArbiter, VCCallInfo, VCCallLinkCongestionDetector, VCCapabilities, VCCaptionsReceiver, VCConnectionManager, VCControlChannel, VCControlChannelMultiWay, VCImageAttributeRules, VCMediaNegotiator, VCRateControlMediaController, VCSecureDataChannel, VCSessionMessaging, VCTransportSession, VCWCMClient, VideoAttributes, WRMClient;
 @protocol OS_dispatch_queue, OS_dispatch_source, VCCallSessionDelegate, VCConnectionProtocol, VideoConferenceChannelQualityDelegate;
 
 __attribute__((visibility("hidden")))
@@ -138,6 +138,7 @@ __attribute__((visibility("hidden")))
     unsigned int awdCallNonce;
     VCSessionMessaging *messaging;
     VCControlChannel *controlChannel;
+    VCControlChannelMultiWay *secureControlChannel;
     BOOL isCurrentNetworkBad;
     unsigned int callSessionBitrate;
     NSObject<OS_dispatch_queue> *cellTechQueue;
@@ -343,6 +344,8 @@ __attribute__((visibility("hidden")))
 - (void)setupConnectionTimeoutTimerWithErrorCode:(int)arg1 detailedCode:(int)arg2 description:(id)arg3 reason:(id)arg4;
 - (void)cancelConnectionTimeoutTimer;
 - (void)timeoutUnfinishedConnection;
+- (id)activeControlChannel;
+- (BOOL)isSecureMessagingRequired;
 - (void)dealloc;
 - (BOOL)handshakeComplete:(struct SSLContext *)arg1 withError:(struct __CFError **)arg2;
 - (void)updateLastReceivedPacket:(BOOL)arg1;

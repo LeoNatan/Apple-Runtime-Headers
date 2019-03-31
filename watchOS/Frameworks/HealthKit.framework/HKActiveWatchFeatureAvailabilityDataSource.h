@@ -10,19 +10,25 @@
 
 @class NSString;
 
-__attribute__((visibility("hidden")))
 @interface HKActiveWatchFeatureAvailabilityDataSource : NSObject <HKFeatureAvailabilityDataSource>
 {
+    NSString *_electrocardiogramOnboardingCountryCode;
     NSString *_atrialFibrillationDetectionOnboardingCountryCode;
 }
 
 @property(copy, nonatomic) NSString *atrialFibrillationDetectionOnboardingCountryCode; // @synthesize atrialFibrillationDetectionOnboardingCountryCode=_atrialFibrillationDetectionOnboardingCountryCode;
+@property(copy, nonatomic) NSString *electrocardiogramOnboardingCountryCode; // @synthesize electrocardiogramOnboardingCountryCode=_electrocardiogramOnboardingCountryCode;
 - (void).cxx_destruct;
 - (CDStruct_4bb15e50)_operatingSystemVersionForWatchOSVersion:(unsigned int)arg1;
+- (CDStruct_4bb15e50)watchElectrocardiogramVersion;
+- (CDStruct_4bb15e50)watchAtrialFibrillationDetectionVersion;
+- (id)watchOSBuildVersion;
 - (id)watchProductType;
+- (id)watchBuildType;
 - (id)watchModelNumber;
 - (id)watchRegion;
 - (CDStruct_4bb15e50)watchOSVersion;
+- (id)init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

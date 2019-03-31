@@ -71,8 +71,10 @@
     PUPinchedTileTracker *__pinchedTileTracker;
     PUChangeDirectionValueFilter *__panDirectionValueFilter;
     PUCameraPreviewTransitionDelegate *__cameraPreviewTransitionDelegate;
+    long long __presentationOrigin;
 }
 
+@property(nonatomic) long long _presentationOrigin; // @synthesize _presentationOrigin=__presentationOrigin;
 @property(nonatomic, setter=_setIsPerformingNonAnimatedPush:) _Bool _isPerformingNonAnimatedPush; // @synthesize _isPerformingNonAnimatedPush=__isPerformingNonAnimatedPush;
 @property(retain, nonatomic, setter=_setCameraPreviewTransitionDelegate:) PUCameraPreviewTransitionDelegate *_cameraPreviewTransitionDelegate; // @synthesize _cameraPreviewTransitionDelegate=__cameraPreviewTransitionDelegate;
 @property(retain, nonatomic, setter=_setPanDirectionValueFilter:) PUChangeDirectionValueFilter *_panDirectionValueFilter; // @synthesize _panDirectionValueFilter=__panDirectionValueFilter;

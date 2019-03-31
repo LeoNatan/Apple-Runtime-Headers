@@ -18,6 +18,7 @@
     _Bool _appIsInstalled;
 }
 
++ (_Bool)_isAppRestrictedForStoreDemoInCurentLocale;
 + (_Bool)_isAppRestrictedForRegion;
 + (_Bool)shouldAppBeInstalled;
 + (id)sharedInstance;

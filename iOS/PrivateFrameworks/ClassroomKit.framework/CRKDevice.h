@@ -63,7 +63,6 @@
     NSString *_pipOpenApplication;
 }
 
-+ (id)bootDate;
 + (_Bool)supportsSecureCoding;
 + (id)allPropertyKeys;
 + (id)CRKKeyForDMFKey:(id)arg1;

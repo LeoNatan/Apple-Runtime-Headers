@@ -31,7 +31,6 @@
 - (void)performBackupOfDatabaseAtPath:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)updateSpotlightIndexMetadataForItemsWithIdentifiers:(id)arg1 bundleID:(id)arg2 withCompletion:(CDUnknownBlockType)arg3;
 - (void)updateSpotlightIndexForBundleID:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
-- (void)setDeviceSharedLibraryPath:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)getDeviceSharedLibraryPath:(CDUnknownBlockType)arg1;
 - (void)getLanguageResourcesWithCompletion:(CDUnknownBlockType)arg1;
 - (void)unlockDatabaseWithCompletion:(CDUnknownBlockType)arg1;

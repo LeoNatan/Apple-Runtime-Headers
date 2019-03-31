@@ -13,6 +13,7 @@
 @interface PKTransactionMapView : UIView <MKMapViewDelegate>
 {
     MKMapView *_internalMapView;
+    struct CGRect _lastLaidBounds;
     _Bool _showsMerchantName;
     PKPaymentTransaction *_transaction;
 }

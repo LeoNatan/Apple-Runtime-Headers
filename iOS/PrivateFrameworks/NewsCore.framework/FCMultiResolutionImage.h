@@ -8,21 +8,23 @@
 
 #import <NewsCore/NSCopying-Protocol.h>
 
-@class NSDictionary, NSURL;
+@class NSURL;
 
 @interface FCMultiResolutionImage : NSObject <NSCopying>
 {
-    NSDictionary *_configDict;
+    NSURL *_imageURL1x;
+    NSURL *_imageURL2x;
+    NSURL *_imageURL3x;
 }
 
-@property(retain, nonatomic) NSDictionary *configDict; // @synthesize configDict=_configDict;
+@property(retain, nonatomic) NSURL *imageURL3x; // @synthesize imageURL3x=_imageURL3x;
+@property(retain, nonatomic) NSURL *imageURL2x; // @synthesize imageURL2x=_imageURL2x;
+@property(retain, nonatomic) NSURL *imageURL1x; // @synthesize imageURL1x=_imageURL1x;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) NSURL *imageURL3x;
-@property(readonly, nonatomic) NSURL *imageURL2x;
-@property(readonly, nonatomic) NSURL *imageURL1x;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
+- (id)initWithImageURL1X:(id)arg1 imageURL2X:(id)arg2 imageURL3X:(id)arg3;
 - (id)initWithConfigDictionary:(id)arg1;
 - (id)init;
 

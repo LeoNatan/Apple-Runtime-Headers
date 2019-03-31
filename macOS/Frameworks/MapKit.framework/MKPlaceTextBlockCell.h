@@ -26,6 +26,7 @@
 - (void)_refreshLayoutMargins;
 - (void)_mapkit_layoutMarginsDidChange;
 - (void)updateConstraints;
+- (void)infoCardThemeChanged:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end

@@ -4,27 +4,34 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <UIKit/UITableViewCell.h>
+#import <PassKitUI/PKTableViewCell.h>
 
-@class NSString, PKPaymentPass, UIImage, UIImageView, UILabel;
+@class NSString, PKPaymentPass, UIColor, UIImage, UIImageView, UILabel;
 
-@interface PKExpressCardCategoryCell : UITableViewCell
+@interface PKExpressCardCategoryCell : PKTableViewCell
 {
     UIImageView *_cardImageView;
     PKPaymentPass *_pass;
     UILabel *_cardLabel;
+    UIColor *_mainLabelColor;
+    UIColor *_subtitleLabelColor;
     int _categoryState;
+    UIColor *_subTextLabelColor;
     struct CGSize _cardImageViewSize;
 }
 
+@property(retain, nonatomic) UIColor *subTextLabelColor; // @synthesize subTextLabelColor=_subTextLabelColor;
+@property(retain, nonatomic) UIColor *mainLabelColor; // @synthesize mainLabelColor=_mainLabelColor;
 @property(readonly, nonatomic) struct CGSize cardImageViewSize; // @synthesize cardImageViewSize=_cardImageViewSize;
 @property(nonatomic) int categoryState; // @synthesize categoryState=_categoryState;
 - (void).cxx_destruct;
+- (void)_updateTextColors;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 @property(retain, nonatomic) NSString *cardTitle;
 @property(retain, nonatomic) UIImage *cardImage;
 - (void)createConstraints;
 - (id)initWithReuseIdentifier:(id)arg1;
+- (void)pk_applyAppearance:(id)arg1;
 
 @end
 

@@ -272,6 +272,7 @@
 - (void)transactionObjectUpdated:(id)arg1 newValues:(id)arg2 message:(id)arg3;
 - (void)updateHomeConfigurationWithModel:(id)arg1 message:(id)arg2;
 - (id)updateHomeWithModel:(id)arg1 message:(id)arg2;
+- (_Bool)awdPrimaryReportingDevice;
 - (id)getHomeConfigurationForAWD;
 - (id)logIdentifier;
 - (id)dumpMediaSessionDescription;
@@ -400,7 +401,7 @@
 - (void)readCharacteristicValues:(id)arg1 requestMessage:(id)arg2 source:(unsigned int)arg3 withCompletionHandler:(CDUnknownBlockType)arg4;
 - (void)_redispatchReadForAccessories:(id)arg1 dispatchGroup:(id)arg2 requestMap:(id)arg3 requestMessage:(id)arg4 responseTuples:(id)arg5 errorResponseTuples:(id)arg6;
 - (void)_readCharacteristicValuesForAccessories:(id)arg1 readRequestMap:(id)arg2 responseTuples:(id)arg3 requestMessage:(id)arg4 viaDevice:(id)arg5 completionHandler:(CDUnknownBlockType)arg6;
-- (id)_getLogEventsForOperation:(_Bool)arg1 accessories:(id)arg2 readRequestMap:(id)arg3 identifier:(id)arg4;
+- (id)_getLogEventsForOperation:(_Bool)arg1 accessories:(id)arg2 requestMap:(id)arg3 identifier:(id)arg4 source:(unsigned int)arg5;
 - (void)readCharacteristicValues:(id)arg1 identifier:(id)arg2 isSPIEntitled:(_Bool)arg3 source:(unsigned int)arg4 withCompletionHandler:(CDUnknownBlockType)arg5;
 - (void)_performOperation:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (_Bool)_shouldWaitForAccessoriesToBeReachable;

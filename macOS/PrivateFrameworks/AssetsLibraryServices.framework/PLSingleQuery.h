@@ -8,7 +8,7 @@
 
 #import <AssetsLibraryServices/NSCopying-Protocol.h>
 
-@class NSData;
+@class NSData, NSDate, NSString;
 
 @interface PLSingleQuery : PBCodable <NSCopying>
 {
@@ -50,6 +50,16 @@
 @property(nonatomic) BOOL hasKey;
 - (id)logDescription;
 - (void)setValueAndType:(id)arg1;
+- (long long)migratedComparator;
+@property(retain, nonatomic) NSDate *secondDateValue;
+@property(retain, nonatomic) NSDate *dateValue;
+@property(retain, nonatomic) NSString *secondStringValue;
+@property(retain, nonatomic) NSString *stringValue;
+@property(nonatomic) BOOL boolValue;
+@property(nonatomic) long long secondIntegerValue;
+@property(nonatomic) long long integerValue;
+@property(nonatomic) double secondDoubleValue;
+@property(nonatomic) double doubleValue;
 
 @end
 

@@ -23,7 +23,7 @@
 - (void)voiceTriggerGotSuperVector:(id)arg1;
 - (void)voiceTriggerDidDetectSpeakerReject:(id)arg1;
 - (void)voiceTriggerDidDetectNearMiss:(id)arg1;
-- (void)voiceTriggerDidDetectKeyword:(id)arg1;
+- (void)voiceTriggerDidDetectKeyword:(id)arg1 deviceId:(id)arg2;
 - (void)_logDESRecordWithType:(long long)arg1 result:(id)arg2;
 - (id)_lastTriggerDataWithResult:(id)arg1;
 - (id)initWithAudioBuffer:(id)arg1;

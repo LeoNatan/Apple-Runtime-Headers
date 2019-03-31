@@ -16,6 +16,7 @@
     _Bool _forceReconnect;
     _Bool _imposePolicyBan;
     _Bool _requiresURLSession;
+    _Bool _enableSiriServerLogging;
     NSURL *_url;
     SAConnectionPolicyRoute *_connectionPolicyRoute;
     NSString *_aceHost;
@@ -28,6 +29,7 @@
     SAConnectionPolicy *_connectionPolicy;
 }
 
+@property(nonatomic, getter=isSiriServerLoggingEnabled) _Bool enableSiriServerLogging; // @synthesize enableSiriServerLogging=_enableSiriServerLogging;
 @property(copy, nonatomic) SAConnectionPolicy *connectionPolicy; // @synthesize connectionPolicy=_connectionPolicy;
 @property(nonatomic) _Bool requiresURLSession; // @synthesize requiresURLSession=_requiresURLSession;
 @property(nonatomic) _Bool imposePolicyBan; // @synthesize imposePolicyBan=_imposePolicyBan;

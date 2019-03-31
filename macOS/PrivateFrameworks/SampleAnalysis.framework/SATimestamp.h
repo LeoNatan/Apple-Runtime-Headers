@@ -31,6 +31,7 @@
 @property unsigned long long machContTime; // @synthesize machContTime=_machContTime;
 @property double machAbsTimeSeconds; // @synthesize machAbsTimeSeconds=_machAbsTimeSeconds;
 @property unsigned long long machAbsTime; // @synthesize machAbsTime=_machAbsTime;
+- (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly, copy) NSString *debugDescription;
 - (BOOL)isEqualToTimestamp:(id)arg1;
 - (long long)compare:(id)arg1;

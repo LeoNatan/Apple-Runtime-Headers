@@ -28,6 +28,7 @@
 @property(nonatomic) _Bool pageCacheEnabled;
 @property(nonatomic) _Bool processSwapsOnWindowOpenWithOpener;
 @property(nonatomic) _Bool alwaysKeepAndReuseSwappedProcesses;
+@property(nonatomic) _Bool usesWebProcessCache;
 @property(nonatomic) _Bool prewarmsProcessesAutomatically;
 @property(nonatomic) _Bool processSwapsOnNavigation;
 @property(nonatomic) int presentingApplicationPID;

@@ -36,7 +36,7 @@
 @property(retain, nonatomic) NSURL *lastCachedUtterance; // @synthesize lastCachedUtterance=_lastCachedUtterance;
 - (void).cxx_destruct;
 - (_Bool)_isUtteranceHandheld;
-- (unsigned long long)_getBiometricMatchResult;
+- (unsigned long long)_getBiometricMatchResultForTriggerTimeStamp:(unsigned long long)arg1;
 - (unsigned long long)_getNumberOfWavFilesAt:(id)arg1;
 - (void)recordingStoppedForReason:(long long)arg1;
 - (void)processImplicitTrainingUtteranceWithVoiceTriggerEventInfo:(id)arg1;

@@ -41,6 +41,7 @@
 - (id)internalState;
 - (void)aggDAuthorizedQuoteWithSuccess:(_Bool)arg1 authorizedQuote:(id)arg2;
 - (void)paymentAuthorizationCoordinator:(id)arg1 didAuthorizePeerPaymentQuote:(id)arg2 handler:(CDUnknownBlockType)arg3;
+- (_Bool)_contactInfoIsValidForAuthorizedQuote:(id)arg1 errors:(id *)arg2;
 - (void)paymentAuthorizationCoordinator:(id)arg1 didAuthorizePayment:(id)arg2 handler:(CDUnknownBlockType)arg3;
 - (void)paymentAuthorizationCoordinator:(id)arg1 didSelectPaymentMethod:(id)arg2 handler:(CDUnknownBlockType)arg3;
 - (void)paymentAuthorizationCoordinatorDidFinish:(id)arg1;

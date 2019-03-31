@@ -64,7 +64,6 @@
 - (void)endOperationWithResultObject:(id)arg1;
 - (void)endOperationSuccessfullyIfNeeded;
 - (void)start;
-- (void)waitUntilFinished;
 - (BOOL)isFinished;
 - (BOOL)isExecuting;
 - (BOOL)isReady;

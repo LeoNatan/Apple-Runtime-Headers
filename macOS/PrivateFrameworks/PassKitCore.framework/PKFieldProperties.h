@@ -12,6 +12,7 @@
 
 @interface PKFieldProperties : NSObject <NSSecureCoding>
 {
+    BOOL _shouldIgnore;
     unsigned long long _technology;
     long long _terminalType;
     long long _valueAddedServiceMode;
@@ -25,6 +26,7 @@
 @property(copy, nonatomic) NSError *error; // @synthesize error=_error;
 @property(copy, nonatomic) NSArray *merchantIdentifiers; // @synthesize merchantIdentifiers=_merchantIdentifiers;
 @property(copy, nonatomic) NSArray *TCIs; // @synthesize TCIs=_TCIs;
+@property(nonatomic) BOOL shouldIgnore; // @synthesize shouldIgnore=_shouldIgnore;
 @property(readonly, nonatomic) long long valueAddedServiceMode; // @synthesize valueAddedServiceMode=_valueAddedServiceMode;
 @property(readonly, nonatomic) long long terminalType; // @synthesize terminalType=_terminalType;
 @property(readonly, nonatomic) unsigned long long technology; // @synthesize technology=_technology;

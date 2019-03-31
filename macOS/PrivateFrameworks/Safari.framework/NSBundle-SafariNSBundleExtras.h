@@ -9,7 +9,7 @@
 @interface NSBundle (SafariNSBundleExtras)
 + (id)safari_safariTechnologyPreviewBundleURL;
 + (BOOL)_safari_handlerIsSafariFamilyApplication:(id)arg1;
-+ (id)_safari_URLOfDefaultHTTPHandlerApplication;
++ (id)safari_URLOfDefaultHTTPHandlerApplication;
 + (BOOL)safari_isSafariFamilyApplicationDefaultHTTPHandler;
 + (void)safari_setSafariAsDefaultHTTPHandler;
 + (id)safari_domainForAutomaticBugCapture;

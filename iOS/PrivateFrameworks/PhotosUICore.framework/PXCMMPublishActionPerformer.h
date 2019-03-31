@@ -17,8 +17,8 @@
 - (void).cxx_destruct;
 - (void)cancelActionWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (_Bool)isCancellable;
-- (void)_completePublishActionWithSuccess:(_Bool)arg1 error:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
-- (id)performPublishActionWithSession:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)_completePublishActionWithSuccess:(_Bool)arg1 error:(id)arg2 shareOrigin:(long long)arg3 completionHandler:(CDUnknownBlockType)arg4;
+- (id)performPublishActionWithSession:(id)arg1 shareOrigin:(long long)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (id)createActionProgress;
 
 @end

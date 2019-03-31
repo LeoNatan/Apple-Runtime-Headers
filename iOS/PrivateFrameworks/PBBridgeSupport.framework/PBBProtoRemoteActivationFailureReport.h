@@ -8,22 +8,14 @@
 
 #import <PBBridgeSupport/NSCopying-Protocol.h>
 
-@class NSString;
+@class NSData;
 
 @interface PBBProtoRemoteActivationFailureReport : PBCodable <NSCopying>
 {
-    long long _code;
-    long long _domain;
-    NSString *_localizedDescription;
-    struct {
-        unsigned int code:1;
-        unsigned int domain:1;
-    } _has;
+    NSData *_activationError;
 }
 
-@property(retain, nonatomic) NSString *localizedDescription; // @synthesize localizedDescription=_localizedDescription;
-@property(nonatomic) long long code; // @synthesize code=_code;
-@property(nonatomic) long long domain; // @synthesize domain=_domain;
+@property(retain, nonatomic) NSData *activationError; // @synthesize activationError=_activationError;
 - (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -34,9 +26,7 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
-@property(readonly, nonatomic) _Bool hasLocalizedDescription;
-@property(nonatomic) _Bool hasCode;
-@property(nonatomic) _Bool hasDomain;
+@property(readonly, nonatomic) _Bool hasActivationError;
 
 @end
 

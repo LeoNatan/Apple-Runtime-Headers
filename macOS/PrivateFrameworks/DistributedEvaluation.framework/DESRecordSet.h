@@ -21,7 +21,6 @@
 @property(readonly, copy, nonatomic) NSDictionary *nativeRecordInfo; // @synthesize nativeRecordInfo=_nativeRecordInfo;
 @property(readonly, copy, nonatomic) NSDictionary *nativeRecords; // @synthesize nativeRecords=_nativeRecords;
 - (void).cxx_destruct;
-- (id)filteredRecordSetWithJSONPredicate:(id)arg1 recordInfoPreprocessor:(CDUnknownBlockType)arg2;
 - (id)filteredRecordSetWithJSONPredicate:(id)arg1;
 @property(readonly, nonatomic) unsigned long long count;
 - (id)nativeRecordDataForRecordUUID:(id)arg1 error:(id *)arg2;

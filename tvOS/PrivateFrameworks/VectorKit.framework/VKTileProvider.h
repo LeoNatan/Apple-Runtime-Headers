@@ -44,6 +44,7 @@ __attribute__((visibility("hidden")))
     _Bool _hasFailedTile;
     _Bool _finishedLoading;
     _Bool _finishedLoadingOptionalLayers;
+    _Bool _canceled;
     struct VKCameraState _lastCameraState;
     struct CGSize _lastCanvasSize;
     _Bool _tilesChanged;
@@ -77,6 +78,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) double contentScale; // @synthesize contentScale=_contentScale;
 @property(readonly, nonatomic) GEOTileKeyList *debugLayerKeys; // @synthesize debugLayerKeys=_debugLayerKeys;
 @property(retain, nonatomic) id <VKMapLayer> debugLayer; // @synthesize debugLayer=_debugLayer;
+@property(readonly, nonatomic, getter=isCanceled) _Bool canceled; // @synthesize canceled=_canceled;
 @property(readonly, nonatomic) float loadingProgress; // @synthesize loadingProgress=_loadingProgress;
 @property(nonatomic) shared_ptr_a3c46825 styleManager; // @synthesize styleManager=_styleManager;
 @property(readonly, nonatomic) NSSet *neighborTiles; // @synthesize neighborTiles=_neighborTiles;
@@ -134,7 +136,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)cache:(id)arg1 willEvictObject:(id)arg2 forKey:(const struct VKCacheKey *)arg3;
 - (_Bool)evaluateSelectedTileForRendering:(id)arg1;
 - (_Bool)evaluateNeighborTileForRendering:(id)arg1;
-- (void)changeTileForKey:(const struct VKTileKey *)arg1 toState:(unsigned long long)arg2 withMetadata:(id)arg3 withTile:(id)arg4 forLayer:(unsigned char)arg5;
+- (void)changeTileForKey:(const struct VKTileKey *)arg1 toState:(unsigned long long)arg2 withError:(id)arg3 withTile:(id)arg4 forLayer:(unsigned char)arg5;
 - (unsigned long long)_tileStateForKey:(const struct VKTileKey *)arg1 forLayer:(unsigned char)arg2;
 - (_Bool)tileMatters:(id)arg1;
 - (void)releaseFallbackTileForRendering:(id)arg1;
@@ -156,6 +158,7 @@ __attribute__((visibility("hidden")))
 - (void)populateDebugNode:(shared_ptr_eafb90f9)arg1;
 - (id)detailedDescriptionDictionaryRepresentation;
 - (id)detailedDescription;
+- (id)errorsForRequiredLayers;
 - (void)logIntegrityCheck;
 - (_Bool)checkMapTileIntegrity:(id)arg1 errors:(id)arg2;
 - (void)describeTilesFromList:(id)arg1 outputtoDict:(id)arg2;

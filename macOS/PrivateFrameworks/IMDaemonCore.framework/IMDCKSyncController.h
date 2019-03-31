@@ -34,11 +34,7 @@
 - (void)_submitCloudKitAnalyticWithOperationGroupName:(id)arg1 analyticDictionary:(id)arg2;
 - (BOOL)_serverDeniesDailySyncStateAnalytics;
 - (BOOL)_serverDeniesPeriodicSyncAnalytics;
-- (BOOL)_serverDeniesNewUserAnalytics;
-- (BOOL)_serverDeniesRestoringUserAnalytics;
-- (BOOL)_shouldReportNewUserIfCreatedChatZones:(BOOL)arg1 deletedZones:(BOOL)arg2;
 - (id)_periodicSyncStateDictionary;
-- (long long)_daysSinceSyncDate:(id)arg1;
 - (BOOL)_completedPeriodicSyncSinceFirstFullSyncForLastSyncDate:(id)arg1 firstFullSyncCompletedDate:(id)arg2;
 - (id)_dailySyncStateDictionary;
 - (void)_addDatesDefaultsIfNeededToDictionary:(id)arg1;
@@ -61,7 +57,7 @@
 - (void)_noteDownSyncStartedWithIsPeriodicSync:(BOOL)arg1;
 - (void)_autoBugCaptureWithSubType:(id)arg1 debugDescription:(id)arg2;
 - (void)_beginExitStateCleanupIfNeededWithActivity:(id)arg1 useNonHSA2ManateeDatabase:(BOOL)arg2;
-- (void)_ifCloudKitAbleToSyncIsFullSync:(BOOL)arg1 callBlock:(CDUnknownBlockType)arg2 activity:(id)arg3;
+- (void)_ifCloudKitAbleToSyncIsFullSync:(BOOL)arg1 activity:(id)arg2 callBlock:(CDUnknownBlockType)arg3;
 - (void)_callSyncWithCompletion:(CDUnknownBlockType)arg1 activity:(id)arg2;
 - (void)_syncChatsWithActivity:(id)arg1;
 - (id)_sharedDatabaseManager;
@@ -75,6 +71,7 @@
 - (void)_dealWithEncryptionKeyLostErrorIfApplicable:(id)arg1;
 - (BOOL)_errorIndicatesDeviceNotGoodForSync:(id)arg1;
 - (void)beginInitialSyncAttemptCount:(unsigned long long)arg1;
+- (id)_retryError;
 - (void)collectLogsIfNeeded;
 - (void)sendRestoreFailuresLogDumpsIfNeeded;
 - (void)sendRestoreFailuresLogDumps;
@@ -118,9 +115,11 @@
 - (long long)syncControllerRecordType;
 - (id)statsCollector;
 - (id)rampManager;
+- (id)initialAttachmentSyncController;
 - (id)attachmentSyncController;
 - (id)exitManager;
 - (id)chatSyncController;
+- (id)initialMessageSyncController;
 - (id)messageSyncController;
 
 // Remaining properties

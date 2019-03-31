@@ -19,7 +19,7 @@
 
 + (id)sharedInstance;
 - (void).cxx_destruct;
-- (void)voiceTriggerDidDetectKeyword:(id)arg1;
+- (void)voiceTriggerDidDetectKeyword:(id)arg1 deviceId:(id)arg2;
 - (unsigned long long)triggerCount;
 - (void)clearTriggerCount;
 - (void)increaseTriggerCount;

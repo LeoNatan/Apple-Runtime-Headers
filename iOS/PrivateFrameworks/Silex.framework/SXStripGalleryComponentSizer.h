@@ -16,7 +16,7 @@
 - (double)xOffsetForColumnLayout:(id)arg1;
 - (double)contentWidthForColumnLayout:(id)arg1;
 - (id)imageResources;
-- (double)calculateHeightForWidth:(double)arg1 inColumnLayout:(id)arg2;
+- (double)calculateHeightForWidth:(double)arg1 layoutContext:(id)arg2;
 
 @end
 

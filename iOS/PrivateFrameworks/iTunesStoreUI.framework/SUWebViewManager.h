@@ -53,7 +53,7 @@
 @property(retain, nonatomic) ISURLRequestPerformance *initialRequestPerformance; // @synthesize initialRequestPerformance=_initialRequestPerformance;
 @property(nonatomic) id <SUWebViewManagerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(copy, nonatomic) SSAuthenticationContext *authenticationContext; // @synthesize authenticationContext=_authenticationContext;
-@property(retain, nonatomic) ACAccount *account; // @synthesize account=_account;
+@property(copy, nonatomic) ACAccount *account; // @synthesize account=_account;
 - (id)_userIdentifier;
 - (_Bool)_presentModalAlertWithMessage:(id)arg1 includingCancelButton:(_Bool)arg2 configurationHandler:(CDUnknownBlockType)arg3;
 - (void)_enumerateScriptInterfacesWithBlock:(CDUnknownBlockType)arg1;

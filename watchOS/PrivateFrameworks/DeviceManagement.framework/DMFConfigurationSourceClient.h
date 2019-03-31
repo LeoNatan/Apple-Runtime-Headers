@@ -30,6 +30,8 @@
     NSObject<OS_dispatch_source> *_registerConfigurationSource;
 }
 
++ (id)setOfActiveRestrictionUUIDs;
++ (id)activeRestrictionsURL;
 @property(retain, nonatomic) NSObject<OS_dispatch_source> *registerConfigurationSource; // @synthesize registerConfigurationSource=_registerConfigurationSource;
 @property(retain, nonatomic) CATOperationQueue *operationQueue; // @synthesize operationQueue=_operationQueue;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *serialQueue; // @synthesize serialQueue=_serialQueue;

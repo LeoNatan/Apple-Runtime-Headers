@@ -8,7 +8,7 @@
 
 #import <GeoServices/GEOMapItem-Protocol.h>
 
-@class GEOAddress, GEOAddressObject, GEOAssociatedApp, GEOFeatureStyleAttributes, GEOMapItemClientAttributes, GEOMapItemContainedPlace, GEOMapItemDetourInfo, GEOMapItemIdentifier, GEOMapItemPhotosAttribution, GEOMapItemPlaceAttribution, GEOMapItemReviewsAttribution, GEOMapRegion, GEOMessageLink, GEOPDBusinessClaim, GEOPDFlyover, GEOPDMultiLocalizedString, GEOPDPlace, GEOPlace, GEOPlacecardLayoutConfiguration, GEOPriceDescription, GEORestaurantFeaturesLink, GEOStyleAttributes, NSArray, NSData, NSDate, NSDictionary, NSMapTable, NSString, NSTimeZone, NSURL, _GEOEncyclopedicInfo;
+@class GEOAddress, GEOAddressObject, GEOAssociatedApp, GEOBusinessHours, GEOFeatureStyleAttributes, GEOMapItemClientAttributes, GEOMapItemContainedPlace, GEOMapItemDetourInfo, GEOMapItemIdentifier, GEOMapItemPhotosAttribution, GEOMapItemPlaceAttribution, GEOMapItemReviewsAttribution, GEOMapRegion, GEOMessageLink, GEOPDBusinessClaim, GEOPDFlyover, GEOPDMultiLocalizedString, GEOPDPlace, GEOPlace, GEOPlacecardLayoutConfiguration, GEOPriceDescription, GEORestaurantFeaturesLink, GEOStyleAttributes, NSArray, NSData, NSDate, NSDictionary, NSMapTable, NSString, NSTimeZone, NSURL, _GEOEncyclopedicInfo;
 @protocol GEOAnnotatedItemList, GEOEncyclopedicInfo, GEOMapItemTransitInfo, GEOMapItemVenueInfo, GEOTransitAttribution;
 
 @interface _GEOPlaceDataItem : NSObject <GEOMapItem>
@@ -24,8 +24,7 @@
     GEOAddressObject *_addressObject;
     NSString *_name;
     NSData *_externalTransitStationCode;
-    NSArray *_completeOperatingHoursCache;
-    double _cacheLastChecked;
+    GEOBusinessHours *_businessHours;
     _Bool _isTransitDisplayFeature;
     NSArray *_spatialMappedPlaceCategories;
 }
@@ -109,10 +108,7 @@
 - (id)_attributionInfoForAttribution:(id)arg1 requirement:(int)arg2;
 @property(readonly, nonatomic, getter=_encyclopedicInfo) id <GEOEncyclopedicInfo> encyclopedicInfo;
 @property(readonly, nonatomic, getter=_hasEncyclopedicInfo) _Bool hasEncyclopedicInfo;
-- (_Bool)_completeOperatingHoursCacheIsStale;
 @property(readonly, nonatomic, getter=_openingHoursOptions) unsigned long long openingHoursOptions;
-@property(readonly, nonatomic, getter=_completeOperatingHours) NSArray *completeOperatingHours;
-@property(readonly, nonatomic, getter=_operatingHours) NSArray *operatingHours;
 @property(readonly, nonatomic, getter=_hasCurrentOperatingHours) _Bool hasCurrentOperatingHours;
 @property(readonly, nonatomic, getter=_hasOperatingHours) _Bool hasOperatingHours;
 @property(readonly, nonatomic, getter=_hasGenderNeutralRestroom) _Bool hasGenderNeutralRestroom;

@@ -210,6 +210,7 @@
 - (id)initForContentSize:(struct CGSize)arg1;
 - (void)contentSizeChangedNotificationPosted:(id)arg1;
 - (void)contentSizeDidChange:(id)arg1;
+- (void)fontSliderDidEndSlidingNotificationPosted:(id)arg1;
 - (id)init;
 - (void)dealloc;
 - (void)_unloadBundleControllers;

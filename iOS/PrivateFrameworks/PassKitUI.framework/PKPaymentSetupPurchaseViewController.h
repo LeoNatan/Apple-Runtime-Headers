@@ -68,7 +68,7 @@
 - (void)_createConstraints;
 - (void)_createSubviews;
 - (_Bool)_shouldHideImage;
-- (_Bool)_shouldShowTransferButton;
+- (_Bool)_readerModeIsSupported;
 - (void)paymentSetupDidFinish:(id)arg1;
 - (void)remoteUIController:(id)arg1 didReceiveObjectModel:(id)arg2 actionSignal:(unsigned long long *)arg3;
 - (void)viewControllerDidTerminateSetupFlow:(id)arg1;

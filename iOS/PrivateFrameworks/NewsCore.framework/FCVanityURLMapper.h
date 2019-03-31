@@ -15,6 +15,10 @@
 
 @property(readonly, copy, nonatomic) NTPBVanityURLMapping *vanityURLMapping; // @synthesize vanityURLMapping=_vanityURLMapping;
 - (void).cxx_destruct;
+- (void)_standardizeResultPath:(id)arg1;
+- (id)_pathWithTrailingForwardSlashWithPath:(id)arg1;
+- (id)_standardizedMappingPathWithPath:(id)arg1;
+- (id)_standardizedInputPathWithPath:(id)arg1;
 - (id)URLForVanityURL:(id)arg1;
 - (id)initWithVanityURLMapping:(id)arg1;
 - (id)init;

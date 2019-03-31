@@ -51,6 +51,7 @@
 - (void)_handleSetupActionRequest:(id)arg1 responseHandler:(CDUnknownBlockType)arg2;
 - (void)_startBuddySession;
 - (void)_sendPreAuthInfo;
+- (void)_receivedConfigResponse:(id)arg1;
 - (void)_sendConfigInfo;
 - (int)_runCoreCDPSetup;
 - (int)_runPreAuthPairSetup;

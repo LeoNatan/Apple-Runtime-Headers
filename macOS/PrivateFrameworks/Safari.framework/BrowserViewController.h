@@ -59,6 +59,7 @@ __attribute__((visibility("hidden")))
     NSString *_httpReferrerForFallbackURLs;
     unique_ptr_aba2cdfe _fallbackURLs;
     struct BackForwardListItem _previousItem;
+    NSURL *_previousWebPageURL;
     CDUnknownBlockType _completionHandlerForTryingToCloseBeforeCommittingToBackgroundLoad;
     long long _initiateLoadOperation;
     CDUnknownBlockType _initiateLoadBlock;
@@ -204,6 +205,7 @@ __attribute__((visibility("hidden")))
     NSString *_provisionalOriginalURLString;
     CKContextResponse *_contextResponse;
     NSString *_readerText;
+    NSURL *_urlOfMostRecentFirstVisuallyNonEmptyLayout;
     CDUnknownBlockType _backgroundDocumentFirstVisuallyNonEmptyLayoutHandler;
     double _bestWidthForCurrentPage;
     id <WBSSandboxExtensionToken> _sandboxExtensionToken;
@@ -215,6 +217,7 @@ __attribute__((visibility("hidden")))
     WBSFluidProgressState *_fluidProgressState;
     WBSMultiRoundAutoFillManager *_multiRoundAutoFillManager;
     WBSCreditCardData *_lastFilledCreditCardData;
+    NSSet *_lastFilledCreditCardDataTypes;
     StatusMessage *_statusMessage;
     JavaScriptDialogSuppressionManager *_javaScriptDialogSuppressionManager;
     WBSSameDocumentNavigationToHistoryVisitCorrelator *_sameDocumentNavigationToHistoryVisitCorrelator;
@@ -302,6 +305,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic, getter=isSuppressingBeforeUnloadPrompts) BOOL suppressingBeforeUnloadPrompts; // @synthesize suppressingBeforeUnloadPrompts=_suppressingBeforeUnloadPrompts;
 @property(readonly, nonatomic) JavaScriptDialogSuppressionManager *javaScriptDialogSuppressionManager; // @synthesize javaScriptDialogSuppressionManager=_javaScriptDialogSuppressionManager;
 @property(retain, nonatomic, setter=_setStatusMessage:) StatusMessage *statusMessage; // @synthesize statusMessage=_statusMessage;
+@property(retain, nonatomic) NSSet *lastFilledCreditCardDataTypes; // @synthesize lastFilledCreditCardDataTypes=_lastFilledCreditCardDataTypes;
 @property(retain, nonatomic) WBSCreditCardData *lastFilledCreditCardData; // @synthesize lastFilledCreditCardData=_lastFilledCreditCardData;
 @property(nonatomic, getter=isPresentingSheetToSaveCredentials) BOOL presentingSheetToSaveCredentials; // @synthesize presentingSheetToSaveCredentials=_presentingSheetToSaveCredentials;
 @property(nonatomic) BOOL preFillFormWasDeferred; // @synthesize preFillFormWasDeferred=_preFillFormWasDeferred;
@@ -336,6 +340,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic, getter=isWebProcessForcePaused) BOOL webProcessForcePaused; // @synthesize webProcessForcePaused=_webProcessForcePaused;
 @property(readonly, nonatomic) double bestWidthForCurrentPage; // @synthesize bestWidthForCurrentPage=_bestWidthForCurrentPage;
 @property(copy, nonatomic) CDUnknownBlockType backgroundDocumentFirstVisuallyNonEmptyLayoutHandler; // @synthesize backgroundDocumentFirstVisuallyNonEmptyLayoutHandler=_backgroundDocumentFirstVisuallyNonEmptyLayoutHandler;
+@property(retain, nonatomic) NSURL *urlOfMostRecentFirstVisuallyNonEmptyLayout; // @synthesize urlOfMostRecentFirstVisuallyNonEmptyLayout=_urlOfMostRecentFirstVisuallyNonEmptyLayout;
 @property(nonatomic) BOOL mainDocumentDidLoad; // @synthesize mainDocumentDidLoad=_mainDocumentDidLoad;
 @property(nonatomic) BOOL mainDocumentDidFirstVisuallyNonEmptyLayout; // @synthesize mainDocumentDidFirstVisuallyNonEmptyLayout=_mainDocumentDidFirstVisuallyNonEmptyLayout;
 @property(nonatomic) BOOL mainDocumentDidFirstLayout; // @synthesize mainDocumentDidFirstLayout=_mainDocumentDidFirstLayout;
@@ -549,6 +554,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic, getter=isNavigatingToSpawnedTabParentURL) BOOL navigatingToSpawnedTabParentURL;
 - (void)disconnectParentTabFromSpawnedTabs;
 - (BOOL)isValidBackHistoryItem:(const struct BackForwardListItem *)arg1;
+- (void)didClickGoBackFromSafeBrowsingWarning;
 - (void)updateBackItemAfterSwappingBrowserViewControllerIfNeeded;
 - (void)prepareNavigationIfFirstNavigationInTabCreatedFromParentTab;
 - (void)clearParentTabIfNecessary;
@@ -751,6 +757,7 @@ __attribute__((visibility("hidden")))
 - (void)textFieldDidEndEditingInFrame:(const struct Frame *)arg1 textFieldMetadata:(const struct Data *)arg2;
 - (void)textDidChangeInTextArea;
 - (void)saveUnsubmittedFormDataFromRemovedFrameIfNecessaryInFrame:(const struct Frame *)arg1 sourceFrame:(const struct Frame *)arg2;
+- (BOOL)shouldDeferLoadingWhileSavingFormDataInFrame:(const struct Frame *)arg1 sourceFrame:(const struct Frame *)arg2;
 - (void)clearUnsubmittedInformationInFormWithID:(double)arg1 sourceFrame:(const struct Frame *)arg2;
 - (void)warnAboutUnsavedCredentialsWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)resetEditedFormTextStatus;
@@ -940,6 +947,7 @@ __attribute__((visibility("hidden")))
 - (BOOL)_hasFallbackURLs;
 - (void)_didStartBrowserInitiatedLoadUsingBackForwardList:(BOOL)arg1;
 - (void)_stopLoadingPage;
+- (void)willNavigateInNewProcess:(id)arg1;
 - (BOOL)shouldDoNavigationInNewProcess:(id)arg1;
 - (void)addNavigationNeedingNewProcess:(id)arg1;
 - (void)didFinishNavigation:(id)arg1 withError:(id)arg2;

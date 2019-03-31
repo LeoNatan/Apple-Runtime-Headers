@@ -10,6 +10,9 @@
 {
 }
 
++ (void)disableOptionalPrefetching;
++ (void)executeOptionalPrefetchBlock:(CDUnknownBlockType)arg1;
++ (void)scheduleOptionalPrefetchBlock:(CDUnknownBlockType)arg1;
 + (void)popHighPriorityTaskInFlight;
 + (void)pushHighPriorityTaskInFlight;
 + (id)lowPriorityOperationQueue;

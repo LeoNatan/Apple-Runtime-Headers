@@ -37,6 +37,8 @@
 - (_Bool)isAnEmergencyHandled;
 - (_Bool)isAnEmergency;
 - (_Bool)isAContinuation;
+- (_Bool)isCarplayTrump;
+- (_Bool)isInEarTrump;
 - (_Bool)isATrump;
 - (void)generateRandomConfidence;
 - (void)generateTiebreaker;

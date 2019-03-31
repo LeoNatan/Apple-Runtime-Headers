@@ -4,9 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <swiftCore/SwiftObject.h>
+#import <swiftCore/_TtCs12_SwiftObject.h>
 
-@interface _TtCV20CloudKitCodeProtobuf20Google_Protobuf_EnumP33_DA8D89B6A200B2A9AF93B9378395390013_StorageClass : SwiftObject
+@interface _TtCV20CloudKitCodeProtobuf20Google_Protobuf_EnumP33_DA8D89B6A200B2A9AF93B9378395390013_StorageClass : _TtCs12_SwiftObject
 {
     // Error parsing type: , name: _name
     // Error parsing type: , name: _enumvalue

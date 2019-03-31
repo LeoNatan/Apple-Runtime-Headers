@@ -15,6 +15,7 @@
 
 - (void).cxx_destruct;
 - (id)copyXPCEncoding;
+- (id)getPaymentDiscountFromTransactionXPCEncoding:(id)arg1;
 - (id)initWithXPCEncoding:(id)arg1;
 - (_Bool)mergeWithServerTransaction:(id)arg1;
 - (id)initWithServerTransaction:(id)arg1;

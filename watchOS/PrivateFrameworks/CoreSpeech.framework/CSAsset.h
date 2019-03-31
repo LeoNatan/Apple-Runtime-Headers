@@ -16,6 +16,7 @@
     NSString *_configVersion;
 }
 
++ (id)defaultFallBackAssetForHearst;
 + (id)defaultFallBackAssetForSmartSiriVolume;
 + (id)fallBackAssetResourcePath;
 + (id)assetForAssetType:(unsigned int)arg1 resourcePath:(id)arg2 configVersion:(id)arg3;
@@ -64,6 +65,9 @@
 @property(readonly, nonatomic) unsigned int SSVNoiseLevelChannelBitset;
 - (id)_sha256:(id)arg1;
 - (id)_sha1:(id)arg1;
+- (id)hearstRTModelLocaleMap;
+- (id)hearstRTModelWithMajorVersion:(unsigned int)arg1 minorVersion:(unsigned int)arg2 locale:(id)arg3;
+- (id)latestHearstRTModelForLocale:(id)arg1;
 - (id)RTModelWithFallbackLanguage:(id)arg1;
 
 @end

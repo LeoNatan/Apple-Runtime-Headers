@@ -4,9 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <swiftCore/SwiftObject.h>
+#import <swiftCore/_TtCs12_SwiftObject.h>
 
-@interface _TtC20CloudKitCodeProtobuf15DoubleFormatter : SwiftObject
+@interface _TtC20CloudKitCodeProtobuf15DoubleFormatter : _TtCs12_SwiftObject
 {
     // Error parsing type: , name: doubleFormatString
     // Error parsing type: , name: work

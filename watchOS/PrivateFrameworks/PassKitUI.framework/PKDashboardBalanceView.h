@@ -14,12 +14,14 @@
     UILabel *_titleLabel;
     UILabel *_detailLabel;
     UIButton *_actionButton;
+    _Bool _topUpEnabled;
     NSString *_title;
     NSString *_balance;
     NSString *_topUpTitle;
     CDUnknownBlockType _topUpAction;
 }
 
+@property(nonatomic) _Bool topUpEnabled; // @synthesize topUpEnabled=_topUpEnabled;
 @property(copy, nonatomic) CDUnknownBlockType topUpAction; // @synthesize topUpAction=_topUpAction;
 @property(copy, nonatomic) NSString *topUpTitle; // @synthesize topUpTitle=_topUpTitle;
 @property(copy, nonatomic) NSString *balance; // @synthesize balance=_balance;

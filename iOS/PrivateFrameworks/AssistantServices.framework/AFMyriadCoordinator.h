@@ -26,6 +26,8 @@
     int _deviceAdjust;
     double _deviceDelay;
     double _deviceTrumpDelay;
+    double _deviceInEarDelay;
+    double _deviceInEarInterval;
     unsigned char _deviceGroup;
     NSObject<OS_dispatch_queue> *_myriadWorkQueue;
     NSObject<OS_dispatch_queue> *_myriadWaitWiProxQueue;
@@ -54,6 +56,7 @@
     _Bool _listenTimerIsRunning;
     _Bool _coordinationEnabled;
     _Bool _clientIsDirectActivating;
+    _Bool _clientIsInEarActivation;
     _Bool _clientRecentlyLostElection;
     _Bool _clientLostDueToTrumping;
     _Bool _clientIsListeningAfterRecentWin;
@@ -154,6 +157,8 @@
 - (void)startAdvertisingFromInTaskVoiceTrigger;
 - (void)startAdvertisingEmergency;
 - (void)startAdvertisingEmergencyHandled;
+- (void)startAdvertisingFromCarPlayTrigger;
+- (void)startAdvertisingFromInEarTrigger;
 - (void)startAdvertisingFromOutgoingTrigger;
 - (void)startAdvertisingFromDirectTrigger;
 - (void)startWatchAdvertisingFromDirectTrigger;

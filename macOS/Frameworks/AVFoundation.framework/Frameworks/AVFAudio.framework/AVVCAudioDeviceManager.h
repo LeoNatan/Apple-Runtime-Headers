@@ -14,6 +14,9 @@ __attribute__((visibility("hidden")))
 
 + (int)setBufferSize:(int)arg1 onDevice:(id)arg2;
 + (void)setClientDescriptionKind:(unsigned int)arg1 onDevice:(unsigned int)arg2;
++ (id)findHALDeviceUIDFromUUID:(id)arg1;
++ (id)getUUIDFromBTHALDevice:(id)arg1;
++ (BOOL)IsDoAPSupportedDevice:(id)arg1;
 + (id)getDeviceName:(id)arg1;
 + (BOOL)IsHALDevice:(id)arg1;
 + (BOOL)IsDeviceBuiltIn:(id)arg1;

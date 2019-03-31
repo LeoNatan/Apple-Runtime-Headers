@@ -14,11 +14,16 @@
 {
 }
 
++ (id)nonOriginalResourceTypes;
++ (id)originalResourceTypes;
 + (id)entityInManagedObjectContext:(id)arg1;
 + (id)entityName;
 + (_Bool)_countOfLocalCloudResourcesOfType:(unsigned long long)arg1 inManagedObjectContext:(id)arg2 forMediumSized:(_Bool)arg3 localCount:(unsigned long long *)arg4 unavailableCount:(unsigned long long *)arg5 error:(id *)arg6;
 + (_Bool)countOfLocalCloudResourcesOfType:(unsigned long long)arg1 inManagedObjectContext:(id)arg2 localCount:(unsigned long long *)arg3 unavailableCount:(unsigned long long *)arg4 error:(id *)arg5;
 + (_Bool)countOfMediumOriginalLocalCloudResourcesInManagedObjectContext:(id)arg1 localCount:(unsigned long long *)arg2 unavailableCount:(unsigned long long *)arg3 error:(id *)arg4;
++ (id)purgeablePushedCloudResourcePredicateForResourceTypes:(id)arg1;
++ (id)purgeableUploadedCloudResourcePredicateForResourceTypes:(id)arg1;
++ (id)prunePurgeablePredicateForResourceTypes:(id)arg1;
 + (unsigned long long)bytesNeededToDownloadOriginalResourcesInLibrary:(id)arg1;
 + (void)resetPrefetchStateForResourcesWithResourceType:(long long)arg1 itemIdentifiers:(id)arg2 inLibrary:(id)arg3;
 + (void)resetCloudResourcesStateForCloudInManagedObjectContext:(id)arg1 hardReset:(_Bool)arg2;

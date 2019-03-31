@@ -37,11 +37,9 @@
 @property(retain) NSArray *rankingQueries; // @synthesize rankingQueries=_rankingQueries;
 @property(retain) NSMutableDictionary *categoryEngagements; // @synthesize categoryEngagements=_categoryEngagements;
 - (void).cxx_destruct;
-- (double)queryIndependentProbabilityForCategoryWithDefaultFloor:(id)arg1;
-- (double)queryDependentProbabilityForCategoryWithDefaultFloor:(id)arg1;
-- (float)enagementProbabilityForCategoryCooked:(id)arg1;
+- (double)queryIndependentProbabilityForCategory:(id)arg1;
+- (double)queryDependentProbabilityForCategory:(id)arg1;
 - (float)engagementProbabilityForCategory:(id)arg1;
-- (float)engagementProbabilityForCategory:(id)arg1 allowDefault:(_Bool)arg2;
 - (void)updateQueryDependentProbabilityAndBlacklistSetWith:(id)arg1;
 - (void)appendToExistingCEPBlacklist:(id)arg1;
 - (void)updateWithSQFData:(id)arg1;

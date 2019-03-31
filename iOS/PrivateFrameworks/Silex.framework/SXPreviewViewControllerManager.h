@@ -8,14 +8,14 @@
 
 #import <Silex/SXPreviewViewControllerManager-Protocol.h>
 
-@class NSString, SXComponentController, SXTangierController, SXViewport;
-@protocol SXActionManager, SXComponentInteractionManager, SXPreviewViewControllerManagerDelegate;
+@class NSString, SXTangierController, SXViewport;
+@protocol SXActionManager, SXComponentController, SXComponentInteractionManager, SXPreviewViewControllerManagerDelegate;
 
 @interface SXPreviewViewControllerManager : NSObject <SXPreviewViewControllerManager>
 {
     id <SXPreviewViewControllerManagerDelegate> delegate;
     SXTangierController *_tangierController;
-    SXComponentController *_componentController;
+    id <SXComponentController> _componentController;
     SXViewport *_viewport;
     id <SXComponentInteractionManager> _componentInteractionManager;
     id <SXActionManager> _actionManager;
@@ -26,7 +26,7 @@
 @property(readonly, nonatomic) id <SXActionManager> actionManager; // @synthesize actionManager=_actionManager;
 @property(readonly, nonatomic) id <SXComponentInteractionManager> componentInteractionManager; // @synthesize componentInteractionManager=_componentInteractionManager;
 @property(readonly, nonatomic) SXViewport *viewport; // @synthesize viewport=_viewport;
-@property(readonly, nonatomic) SXComponentController *componentController; // @synthesize componentController=_componentController;
+@property(readonly, nonatomic) id <SXComponentController> componentController; // @synthesize componentController=_componentController;
 @property(readonly, nonatomic) SXTangierController *tangierController; // @synthesize tangierController=_tangierController;
 @property(nonatomic) __weak id <SXPreviewViewControllerManagerDelegate> delegate; // @synthesize delegate;
 - (void).cxx_destruct;

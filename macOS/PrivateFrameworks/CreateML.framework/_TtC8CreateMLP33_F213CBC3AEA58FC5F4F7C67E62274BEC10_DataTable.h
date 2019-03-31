@@ -4,9 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <swiftCore/SwiftObject.h>
+#import <swiftCore/_TtCs12_SwiftObject.h>
 
-@interface _TtC8CreateMLP33_F213CBC3AEA58FC5F4F7C67E62274BEC10_DataTable : SwiftObject
+@interface _TtC8CreateMLP33_F213CBC3AEA58FC5F4F7C67E62274BEC10_DataTable : _TtCs12_SwiftObject
 {
     // Error parsing type: , name: _impl
     // Error parsing type: , name: cachedColumnNames

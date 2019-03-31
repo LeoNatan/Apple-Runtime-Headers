@@ -8,7 +8,7 @@
 
 #import <NewsTransport/NSCopying-Protocol.h>
 
-@class COMAPPLEFELDSPARPROTOCOLANALYTICSEVENTSAlternateHeadline, COMAPPLEFELDSPARPROTOCOLANALYTICSEVENTSChannelData, COMAPPLEFELDSPARPROTOCOLANALYTICSEVENTSIssueData, COMAPPLEFELDSPARPROTOCOLANALYTICSEVENTSIssueExposureData, COMAPPLEFELDSPARPROTOCOLANALYTICSEVENTSIssueViewData, COMAPPLEFELDSPARPROTOCOLANALYTICSEVENTSWidgetEngagement, NSData, NSMutableArray, NSString;
+@class COMAPPLEFELDSPARPROTOCOLANALYTICSEVENTSAlternateHeadline, COMAPPLEFELDSPARPROTOCOLANALYTICSEVENTSChannelData, COMAPPLEFELDSPARPROTOCOLANALYTICSEVENTSIssueData, COMAPPLEFELDSPARPROTOCOLANALYTICSEVENTSIssueExposureData, COMAPPLEFELDSPARPROTOCOLANALYTICSEVENTSIssueViewContextData, COMAPPLEFELDSPARPROTOCOLANALYTICSEVENTSIssueViewData, COMAPPLEFELDSPARPROTOCOLANALYTICSEVENTSWidgetEngagement, NSData, NSMutableArray, NSString;
 
 @interface COMAPPLEFELDSPARPROTOCOLANALYTICSEVENTSArticleHostViewExposure : PBCodable <NSCopying>
 {
@@ -73,6 +73,7 @@
     NSString *_iadNativeLine;
     COMAPPLEFELDSPARPROTOCOLANALYTICSEVENTSIssueData *_issueData;
     COMAPPLEFELDSPARPROTOCOLANALYTICSEVENTSIssueExposureData *_issueExposureData;
+    COMAPPLEFELDSPARPROTOCOLANALYTICSEVENTSIssueViewContextData *_issueViewContextData;
     COMAPPLEFELDSPARPROTOCOLANALYTICSEVENTSIssueViewData *_issueViewData;
     NSString *_language;
     int _loadFailureReason;
@@ -149,6 +150,7 @@
 + (Class)surfacedByTagIdsType;
 + (Class)fractionalCohortMembershipType;
 + (Class)namedEntitiesType;
+@property(retain, nonatomic) COMAPPLEFELDSPARPROTOCOLANALYTICSEVENTSIssueViewContextData *issueViewContextData; // @synthesize issueViewContextData=_issueViewContextData;
 @property(retain, nonatomic) COMAPPLEFELDSPARPROTOCOLANALYTICSEVENTSChannelData *channelData; // @synthesize channelData=_channelData;
 @property(retain, nonatomic) COMAPPLEFELDSPARPROTOCOLANALYTICSEVENTSIssueViewData *issueViewData; // @synthesize issueViewData=_issueViewData;
 @property(retain, nonatomic) COMAPPLEFELDSPARPROTOCOLANALYTICSEVENTSIssueExposureData *issueExposureData; // @synthesize issueExposureData=_issueExposureData;
@@ -265,6 +267,7 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(readonly, nonatomic) _Bool hasIssueViewContextData;
 @property(readonly, nonatomic) _Bool hasChannelData;
 - (int)StringAsRole:(id)arg1;
 - (id)roleAsString:(int)arg1;

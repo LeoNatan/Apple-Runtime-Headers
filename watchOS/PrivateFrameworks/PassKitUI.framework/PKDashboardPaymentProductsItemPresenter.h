@@ -7,20 +7,25 @@
 #import <objc/NSObject.h>
 
 #import <PassKitUI/PKDashboardItemPresenter-Protocol.h>
+#import <PassKitUI/PKPerformActionViewControllerDelegate-Protocol.h>
 
-@class NSString, PKFooterTransactionView, PKPassGroupView;
+@class NSString, PKFooterTransactionView, PKPassGroupView, PKPassProductsViewController;
 
-@interface PKDashboardPaymentProductsItemPresenter : NSObject <PKDashboardItemPresenter>
+@interface PKDashboardPaymentProductsItemPresenter : NSObject <PKDashboardItemPresenter, PKPerformActionViewControllerDelegate>
 {
     PKPassGroupView *_passGroupView;
     PKFooterTransactionView *_sampleTransactionView;
+    PKPassProductsViewController *_productDetailsController;
 }
 
 - (void).cxx_destruct;
+- (void)didSelectItem:(id)arg1 inCollectionView:(id)arg2 atIndexPath:(id)arg3;
+- (_Bool)canSelectItem:(id)arg1 inCollectionView:(id)arg2 atIndexPath:(id)arg3;
+- (void)performActionViewControllerDidPerformAction:(id)arg1;
+- (void)performActionViewControllerDidCancel:(id)arg1;
 - (void)traitCollectionDidChangeFromTrait:(id)arg1 toTrait:(id)arg2 inCollectionView:(id)arg3;
 - (void)_updateTransactionView:(id)arg1 withItem:(id)arg2;
 - (void)_configureCell:(id)arg1 forItem:(id)arg2 inCollectionView:(id)arg3 forIndexPath:(id)arg4;
-- (void)didSelectItem:(id)arg1 inCollectionView:(id)arg2 atIndexPath:(id)arg3;
 - (struct CGSize)sizeForItem:(id)arg1 inCollectionView:(id)arg2 atIndexPath:(id)arg3;
 - (void)updateCell:(id)arg1 forItem:(id)arg2 inCollectionView:(id)arg3 atIndexPath:(id)arg4;
 - (id)cellForItem:(id)arg1 inCollectionView:(id)arg2 atIndexPath:(id)arg3;

@@ -8,7 +8,7 @@
 
 #import <GameController/GameControllerClientProtocol-Protocol.h>
 
-@class NSMutableArray, NSMutableDictionary, NSString, NSThread, NSTimer, NSXPCConnection;
+@class NSMutableArray, NSMutableDictionary, NSString, NSThread, NSTimer, NSXPCConnection, _GCController;
 @protocol GameControllerDaemon, OS_dispatch_queue;
 
 @interface _GCControllerManager : NSObject <GameControllerClientProtocol>
@@ -35,8 +35,10 @@
     struct __CFRunLoop *_hidInputThreadRunLoop;
     struct __CFRunLoopSource *_hidThreadRunLoopSource;
     NSMutableArray *_hidThreadExecutionBlocks;
+    _GCController *_firstMicroGamepad;
 }
 
+@property(nonatomic) __weak _GCController *firstMicroGamepad; // @synthesize firstMicroGamepad=_firstMicroGamepad;
 @property(readonly, retain, nonatomic) NSObject<OS_dispatch_queue> *controllersQueue; // @synthesize controllersQueue=_controllersQueue;
 @property(readonly, nonatomic) NSMutableArray *hidThreadExecutionBlocks; // @synthesize hidThreadExecutionBlocks=_hidThreadExecutionBlocks;
 @property(readonly, nonatomic) struct __CFRunLoopSource *hidThreadRunLoopSource; // @synthesize hidThreadRunLoopSource=_hidThreadRunLoopSource;
@@ -52,19 +54,28 @@
 - (void)open;
 - (id)controllers;
 - (void)removeController:(id)arg1;
+- (void)removeCoalescedControllerComponent:(id)arg1;
+- (void)publishDisconnectControllerNotification:(id)arg1;
+- (void)publishConnectControllerNotification:(id)arg1;
 - (void)controllerWithUDID:(unsigned long long)arg1 setValue0:(float)arg2 setValue1:(float)arg3 setValue2:(float)arg4 setValue3:(float)arg5 forElement:(int)arg6;
 - (void)controllerWithUDID:(unsigned long long)arg1 setValue:(float)arg2 forElement:(int)arg3;
 - (_Bool)isPhysicalB239:(id)arg1;
 - (void)controller:(id)arg1 setValue:(float)arg2 forElement:(int)arg3;
 - (void)controllerWithUDID:(unsigned long long)arg1 setData:(id)arg2;
+- (void)addControllerForAppStoreRemote:(id)arg1;
 - (void)addController:(id)arg1;
+- (void)storeController:(id)arg1;
+- (_Bool)combineSiriRemoteHIDDevicesWithNewController:(id)arg1 existingController:(id)arg2;
+- (_Bool)detectAndSetIfFirstMicroGamepad:(id)arg1;
+- (_Bool)coalesceController:(id)arg1;
+- (void)logController:(id)arg1;
 - (_Bool)isExistingController:(id)arg1;
 - (void)replyConnectedHosts:(id)arg1;
 - (void)requestConnectedHostsWithHandler:(CDUnknownBlockType)arg1;
 - (void)startIdleWatchTimer;
+- (_Bool)microControllerWithDigitizerX:(float)arg1 digitizerY:(float)arg2 timestamp:(unsigned long long)arg3 touchDown:(_Bool)arg4 controller:(id)arg5;
 - (void)microControllerWithDigitizerX:(float)arg1 withY:(float)arg2 withTimeStamp:(unsigned long long)arg3 touchDown:(_Bool)arg4;
 - (void)microControllerWithUDID:(unsigned long long)arg1 setDigitizerX:(float)arg2 digitizerY:(float)arg3 withTimeStamp:(unsigned long long)arg4 touchDown:(_Bool)arg5;
-- (id)firstMicroGamepad;
 - (void)setMediaRemoteEnabled:(_Bool)arg1;
 - (void)CBApplicationDidBecomeActive;
 - (void)CBApplicationWillResignActive;

@@ -37,7 +37,7 @@
 - (double)ageLabelToAccessoryLabelSpacingWithTemplate:(id)arg1;
 - (double)titleToAccessorySpacingWithTemplate:(id)arg1;
 - (double)publisherLogoToTitleSpacingWithTemplate:(id)arg1;
-- (id)initWithLayout:(id)arg1 columnIrrespectiveProperties:(id)arg2 fontCache:(id)arg3 scaleValue:(double)arg4 headlineScales:(CDStruct_3d2913aa)arg5;
+- (id)initWithLayout:(id)arg1 columnIrrespectiveProperties:(id)arg2 fontCache:(id)arg3 scaleValue:(double)arg4 lineHeightMultiplier:(double)arg5 headlineScales:(CDStruct_3d2913aa)arg6;
 
 @end
 

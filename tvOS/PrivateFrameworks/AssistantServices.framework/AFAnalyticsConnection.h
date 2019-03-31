@@ -38,6 +38,7 @@
 - (void)_handleFailureCallbackForEvents:(id)arg1 error:(id)arg2 numberOfRetries:(unsigned long long)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)_sendEvents:(id)arg1 numberOfRetries:(unsigned long long)arg2 completion:(CDUnknownBlockType)arg3;
 - (oneway void)flushStagedEventsWithReply:(CDUnknownBlockType)arg1;
+- (oneway void)logInstrumentationOfType:(id)arg1 machAbsoluteTime:(unsigned long long)arg2 turnIdentifier:(id)arg3;
 - (oneway void)endEventsGrouping;
 - (oneway void)beginEventsGrouping;
 - (oneway void)stageEvents:(id)arg1 completion:(CDUnknownBlockType)arg2;

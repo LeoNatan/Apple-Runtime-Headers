@@ -13,6 +13,12 @@
 
 @interface SXDOMConditionResolverModifier : NSObject <SXDOMModifying>
 {
+    _Bool _resolveComponents;
+    _Bool _resolveComponentStyles;
+    _Bool _resolveComponentLayouts;
+    _Bool _resolveComponentTextStyles;
+    _Bool _resolveTextStyles;
+    _Bool _resolveAutoplacement;
     id <SXConditionValidationContextFactory> _validationContextFactory;
     SXConditionalObjectResolver *_componentResolver;
     SXConditionalObjectResolver *_textStyleResolver;
@@ -23,6 +29,12 @@
     SXConditionalObjectResolver *_suggestedArticlesAutoPlacementResolver;
 }
 
+@property(readonly, nonatomic) _Bool resolveAutoplacement; // @synthesize resolveAutoplacement=_resolveAutoplacement;
+@property(readonly, nonatomic) _Bool resolveTextStyles; // @synthesize resolveTextStyles=_resolveTextStyles;
+@property(readonly, nonatomic) _Bool resolveComponentTextStyles; // @synthesize resolveComponentTextStyles=_resolveComponentTextStyles;
+@property(readonly, nonatomic) _Bool resolveComponentLayouts; // @synthesize resolveComponentLayouts=_resolveComponentLayouts;
+@property(readonly, nonatomic) _Bool resolveComponentStyles; // @synthesize resolveComponentStyles=_resolveComponentStyles;
+@property(readonly, nonatomic) _Bool resolveComponents; // @synthesize resolveComponents=_resolveComponents;
 @property(readonly, nonatomic) SXConditionalObjectResolver *suggestedArticlesAutoPlacementResolver; // @synthesize suggestedArticlesAutoPlacementResolver=_suggestedArticlesAutoPlacementResolver;
 @property(readonly, nonatomic) SXConditionalObjectResolver *advertisementAutoPlacementResolver; // @synthesize advertisementAutoPlacementResolver=_advertisementAutoPlacementResolver;
 @property(readonly, nonatomic) SXConditionalObjectResolver *componentTextStyleResolver; // @synthesize componentTextStyleResolver=_componentTextStyleResolver;
@@ -33,11 +45,11 @@
 @property(readonly, nonatomic) id <SXConditionValidationContextFactory> validationContextFactory; // @synthesize validationContextFactory=_validationContextFactory;
 - (void).cxx_destruct;
 - (id)resolveAutoPlacement:(id)arg1 validationContext:(id)arg2;
-- (id)resolveComponentTextStyle:(id)arg1 validationContext:(id)arg2;
-- (id)resolveComponentStyles:(id)arg1 validationContext:(id)arg2;
-- (id)resolveComponentLayouts:(id)arg1 validationContext:(id)arg2;
-- (id)resolveTextStyles:(id)arg1 validationContext:(id)arg2;
-- (void)resolveComponents:(id)arg1 validationContext:(id)arg2;
+- (_Bool)resolveComponentTextStyle:(id)arg1 validationContext:(id)arg2;
+- (_Bool)resolveComponentStyles:(id)arg1 validationContext:(id)arg2;
+- (_Bool)resolveComponentLayouts:(id)arg1 validationContext:(id)arg2;
+- (_Bool)resolveTextStyles:(id)arg1 validationContext:(id)arg2;
+- (_Bool)resolveComponents:(id)arg1 validationContext:(id)arg2;
 - (id)modifyDOM:(id)arg1 context:(id)arg2;
 - (id)initWithValidationContextFactory:(id)arg1 componentResolver:(id)arg2 textStyleResolver:(id)arg3 componentStyleResolver:(id)arg4 componentLayoutResolver:(id)arg5 componentTextStyleResolver:(id)arg6 advertisementAutoPlacementResolver:(id)arg7 suggestedArticlesAutoPlacementResolver:(id)arg8;
 

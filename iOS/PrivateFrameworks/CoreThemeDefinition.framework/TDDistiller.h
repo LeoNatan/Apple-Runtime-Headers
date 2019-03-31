@@ -79,7 +79,7 @@
 - (_Bool)_recordRenditionEntryFromRendition:(id)arg1;
 - (id)_productionForRenditionSpec:(id)arg1;
 - (_Bool)sortAndStoreRenditions;
-- (void)_storeRenditions;
+- (_Bool)_storeRenditions;
 - (unsigned long long)_removeRenditionsWithKeySpecs:(id)arg1;
 - (_Bool)_sortRenditionEntries;
 - (void)setAsset:(id)arg1 withKey:(const struct _renditionkeytoken *)arg2 fromRenditionSpec:(id)arg3;

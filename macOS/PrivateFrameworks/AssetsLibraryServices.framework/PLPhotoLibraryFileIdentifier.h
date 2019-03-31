@@ -20,6 +20,8 @@
     NSString *_originalFilename;
 }
 
++ (BOOL)isValidOriginalURL:(id)arg1 pathManager:(id)arg2;
++ (id)uuidFromURL:(id)arg1;
 @property(readonly, nonatomic) BOOL isData; // @synthesize isData=_isData;
 @property(readonly, nonatomic) unsigned int recipeId; // @synthesize recipeId=_recipeId;
 @property(readonly, nonatomic) unsigned int resourceVersion; // @synthesize resourceVersion=_resourceVersion;

@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class CUAppleIDClient, CUPairedPeer, NSData, NSDictionary, NSString;
+@class CUAppleIDClient, CUPairedPeer, NSArray, NSData, NSDictionary, NSString;
 @protocol OS_dispatch_queue;
 
 @interface CUPairingSession : NSObject
@@ -16,10 +16,13 @@
     struct LogCategory *_ucat;
     unsigned int _flags;
     unsigned int _pinType;
+    unsigned int _pinTypeActual;
     unsigned int _sessionType;
     NSDictionary *_acl;
+    NSDictionary *_aclActual;
     NSDictionary *_additionalPeerInfo;
     NSDictionary *_additionalSelfInfo;
+    NSArray *_allowedMACAddresses;
     unsigned long long _selfAppFlags;
     NSObject<OS_dispatch_queue> *_dispatchQueue;
     NSString *_fixedPIN;
@@ -58,6 +61,7 @@
 @property(copy, nonatomic) NSString *mfiProductType; // @synthesize mfiProductType=_mfiProductType;
 @property(copy, nonatomic) NSData *mfiCertificateData; // @synthesize mfiCertificateData=_mfiCertificateData;
 @property(nonatomic) unsigned int sessionType; // @synthesize sessionType=_sessionType;
+@property(readonly, nonatomic) unsigned int pinTypeActual; // @synthesize pinTypeActual=_pinTypeActual;
 @property(nonatomic) unsigned int pinType; // @synthesize pinType=_pinType;
 @property(readonly, copy, nonatomic) NSDictionary *peerInfo; // @synthesize peerInfo=_peerInfo;
 @property(copy, nonatomic) NSString *label; // @synthesize label=_label;
@@ -65,8 +69,10 @@
 @property(copy, nonatomic) NSString *fixedPIN; // @synthesize fixedPIN=_fixedPIN;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
 @property(nonatomic) unsigned long long selfAppFlags; // @synthesize selfAppFlags=_selfAppFlags;
+@property(copy, nonatomic) NSArray *allowedMACAddresses; // @synthesize allowedMACAddresses=_allowedMACAddresses;
 @property(copy, nonatomic) NSDictionary *additionalSelfInfo; // @synthesize additionalSelfInfo=_additionalSelfInfo;
 @property(copy, nonatomic) NSDictionary *additionalPeerInfo; // @synthesize additionalPeerInfo=_additionalPeerInfo;
+@property(readonly, copy, nonatomic) NSDictionary *aclActual; // @synthesize aclActual=_aclActual;
 @property(copy, nonatomic) NSDictionary *acl; // @synthesize acl=_acl;
 - (void).cxx_destruct;
 - (int)deriveKeyWithSaltPtr:(const void *)arg1 saltLen:(unsigned long long)arg2 infoPtr:(const void *)arg3 infoLen:(unsigned long long)arg4 keyLen:(unsigned long long)arg5 outputKeyPtr:(void *)arg6;

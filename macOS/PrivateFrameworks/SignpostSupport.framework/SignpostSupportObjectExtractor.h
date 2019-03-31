@@ -25,6 +25,7 @@
     CDUnknownBlockType _intervalCompletionProcessingBlock;
     CDUnknownBlockType _animationIntervalCompletionProcessingBlock;
     CDUnknownBlockType _logMessageProcessingBlock;
+    CDUnknownBlockType _deviceRebootProcessingBlock;
     CDUnknownBlockType _processingCompletionBlock;
     SignpostIntervalBuilder *_intervalBuilder;
     unsigned long long _processedEventCount;
@@ -50,6 +51,7 @@
 @property(nonatomic) unsigned long long processedEventCount; // @synthesize processedEventCount=_processedEventCount;
 @property(readonly, nonatomic) SignpostIntervalBuilder *intervalBuilder; // @synthesize intervalBuilder=_intervalBuilder;
 @property(copy, nonatomic) CDUnknownBlockType processingCompletionBlock; // @synthesize processingCompletionBlock=_processingCompletionBlock;
+@property(copy, nonatomic) CDUnknownBlockType deviceRebootProcessingBlock; // @synthesize deviceRebootProcessingBlock=_deviceRebootProcessingBlock;
 @property(copy, nonatomic) CDUnknownBlockType logMessageProcessingBlock; // @synthesize logMessageProcessingBlock=_logMessageProcessingBlock;
 @property(copy, nonatomic) CDUnknownBlockType animationIntervalCompletionProcessingBlock; // @synthesize animationIntervalCompletionProcessingBlock=_animationIntervalCompletionProcessingBlock;
 @property(copy, nonatomic) CDUnknownBlockType intervalCompletionProcessingBlock; // @synthesize intervalCompletionProcessingBlock=_intervalCompletionProcessingBlock;
@@ -77,6 +79,7 @@
 - (BOOL)_shouldProcessEvent:(id)arg1 shouldReport:(char *)arg2;
 - (BOOL)_eventPassesFilters:(id)arg1;
 - (BOOL)_eventPassesWithPid:(int)arg1 uniquePid:(unsigned long long)arg2 processName:(id)arg3 subsystem:(id)arg4 category:(id)arg5;
+- (BOOL)_hasNonObjectFilters;
 - (BOOL)_isTrackingIntervals;
 - (BOOL)_hasSignpostProcessingBlock;
 - (BOOL)processSerializedObjectsFromSignpostFile:(id)arg1 errorOut:(id *)arg2;

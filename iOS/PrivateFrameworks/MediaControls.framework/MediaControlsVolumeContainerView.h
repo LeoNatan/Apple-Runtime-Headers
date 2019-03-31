@@ -14,11 +14,13 @@
 {
     _Bool _transitioning;
     _Bool _onScreen;
+    unsigned int _volumeCapabilities;
     MPVolumeSlider *_volumeSlider;
     long long _style;
     MediaControlsRelativeVolumeStepper *_volumeStepper;
 }
 
+@property(nonatomic) unsigned int volumeCapabilities; // @synthesize volumeCapabilities=_volumeCapabilities;
 @property(retain, nonatomic) MediaControlsRelativeVolumeStepper *volumeStepper; // @synthesize volumeStepper=_volumeStepper;
 @property(nonatomic) long long style; // @synthesize style=_style;
 @property(nonatomic, getter=isOnScreen) _Bool onScreen; // @synthesize onScreen=_onScreen;

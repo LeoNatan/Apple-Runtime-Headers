@@ -349,6 +349,7 @@
 - (void)handleWristRaiseScreenWake;
 - (_Bool)needsImageQueueDiscardOnRender;
 - (void)setNextRenderIsFirstAfterWake;
+- (void)setNeedsRenderWithAdditionalWork:(CDUnknownBlockType)arg1;
 - (void)setNeedsRender;
 - (void)renderIfNeeded;
 - (void)_willEnterForeground;

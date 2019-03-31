@@ -19,6 +19,7 @@
     NSObject<OS_dispatch_queue> *_accessQueue;
     NSObject<OS_dispatch_group> *_pendingRequestGroup;
     MPMusicPlayerQueueDescriptor *_pendingQueueDescriptor;
+    _Bool _hasTracklistUIDChangedWhilePreparingToPlay;
     CDUnknownBlockType _pendingPrepareCompletion;
     NSMutableDictionary *_responseValidators;
     MPArtworkCatalog *_previousArtworkCatalog;

@@ -26,7 +26,7 @@ __attribute__((visibility("hidden")))
 - (unsigned long long)desiredResourcePolicy;
 - (unsigned long long)desiredLocationProviderType;
 - (_Bool)requiresHighMemoryThreshold;
-- (unsigned long long)type;
+- (long long)type;
 
 @end
 

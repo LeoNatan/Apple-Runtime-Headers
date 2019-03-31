@@ -25,8 +25,10 @@
     PXPhotoKitAssetCollectionActionManager *_assetCollectionActionManager;
     PXPhotoKitAssetActionManager *_assetActionManager;
     NSArray *_actions;
+    NSArray *_actionTypes;
 }
 
+@property(retain, nonatomic) NSArray *actionTypes; // @synthesize actionTypes=_actionTypes;
 @property(retain, nonatomic) NSArray *actions; // @synthesize actions=_actions;
 @property(readonly, nonatomic) PXPhotoKitAssetActionManager *assetActionManager; // @synthesize assetActionManager=_assetActionManager;
 @property(readonly, nonatomic) PXPhotoKitAssetCollectionActionManager *assetCollectionActionManager; // @synthesize assetCollectionActionManager=_assetCollectionActionManager;

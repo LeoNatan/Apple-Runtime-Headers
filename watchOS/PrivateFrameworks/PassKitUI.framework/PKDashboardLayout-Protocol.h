@@ -10,6 +10,7 @@
 - (struct UIEdgeInsets)insetsForSection:(int)arg1;
 
 @optional
+@property(nonatomic) _Bool fade;
 - (void)hideContent;
 - (void)revealContentAnimated:(_Bool)arg1;
 @end

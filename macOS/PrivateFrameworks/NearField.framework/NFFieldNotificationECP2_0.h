@@ -6,7 +6,7 @@
 
 #import <NearField/NFFieldNotification.h>
 
-@class NSArray;
+@class NSArray, NSData;
 
 @interface NFFieldNotificationECP2_0 : NFFieldNotification
 {
@@ -14,9 +14,11 @@
     unsigned char _terminalSubType;
     unsigned long long _terminalType;
     NSArray *_tciArray;
+    NSData *_openLoopSchemeBitfield;
 }
 
 + (BOOL)supportsSecureCoding;
+@property(readonly, retain) NSData *openLoopSchemeBitfield; // @synthesize openLoopSchemeBitfield=_openLoopSchemeBitfield;
 @property(readonly, retain) NSArray *tciArray; // @synthesize tciArray=_tciArray;
 @property(readonly) unsigned char terminalSubType; // @synthesize terminalSubType=_terminalSubType;
 @property(readonly) unsigned long long terminalType; // @synthesize terminalType=_terminalType;

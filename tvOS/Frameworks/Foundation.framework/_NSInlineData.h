@@ -12,8 +12,10 @@ __attribute__((visibility("hidden")))
     unsigned short _length;
 }
 
++ (_Bool)supportsSecureCoding;
 - (_Bool)_providesConcreteBacking;
 - (id)_createDispatchData;
+- (id)initWithCoder:(id)arg1;
 - (id)initWithBytes:(const void *)arg1 length:(unsigned long long)arg2;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)_isCompact;

@@ -10,12 +10,16 @@
 #import <InAppMessages/UIViewControllerTransitioningDelegate-Protocol.h>
 
 @class NSArray, NSString, UIView;
+@protocol IAMViewControllerMetricsDelegate;
 
 @interface IAMModalViewController : UIViewController <UIViewControllerTransitioningDelegate, UIViewControllerAnimatedTransitioning>
 {
     NSArray *_defaultLayoutConstraints;
+    NSArray *_fullscreenLayoutConstraints;
     NSArray *_padLayoutConstraints;
+    _Bool _shouldPresentFullscreen;
     UIViewController *_contentViewController;
+    id <IAMViewControllerMetricsDelegate> _metricsDelegate;
     CDUnknownBlockType _viewControllerWillDismissBlock;
     UIView *_backgroundView;
     UIView *_modalView;
@@ -25,9 +29,12 @@
 @property(retain, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;
 @property(retain, nonatomic) UIView *modalView; // @synthesize modalView=_modalView;
 @property(retain, nonatomic) UIView *backgroundView; // @synthesize backgroundView=_backgroundView;
+@property(nonatomic) _Bool shouldPresentFullscreen; // @synthesize shouldPresentFullscreen=_shouldPresentFullscreen;
 @property(copy, nonatomic) CDUnknownBlockType viewControllerWillDismissBlock; // @synthesize viewControllerWillDismissBlock=_viewControllerWillDismissBlock;
+@property(nonatomic) __weak id <IAMViewControllerMetricsDelegate> metricsDelegate; // @synthesize metricsDelegate=_metricsDelegate;
 @property(retain, nonatomic) UIViewController *contentViewController; // @synthesize contentViewController=_contentViewController;
 - (void).cxx_destruct;
+- (void)_handleBackgroundTapGesture:(id)arg1;
 - (void)animateTransition:(id)arg1;
 - (double)transitionDuration:(id)arg1;
 - (id)animationControllerForDismissedController:(id)arg1;

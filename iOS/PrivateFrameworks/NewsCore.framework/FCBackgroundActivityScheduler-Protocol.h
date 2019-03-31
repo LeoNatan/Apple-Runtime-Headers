@@ -10,7 +10,6 @@
 
 @protocol FCBackgroundActivityScheduler <NSObject>
 - (void)requestBackgroundAppRefreshStartingAfter:(NSDate *)arg1 before:(NSDate *)arg2;
-- (void)cancelTaskWithIdentifier:(NSString *)arg1;
 - (void)cancelRepeatingTaskWithIdentifier:(NSString *)arg1;
 - (void)scheduleBackgroundTaskRepeatingAtInterval:(double)arg1 identifier:(NSString *)arg2 task:(void (^)(void (^)(long long), _Bool (^)(void)))arg3;
 @end

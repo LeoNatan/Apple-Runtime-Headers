@@ -7,6 +7,11 @@
 #import <Foundation/NSError.h>
 
 @interface NSError (FCErrorAdditions)
++ (id)fc_missingAssetError;
++ (id)fc_invalidGapErrorWithUserInfo:(id)arg1;
++ (id)fc_invalidBookmarkErrorWithUserInfo:(id)arg1;
++ (id)fc_missingMagazineGroupError;
++ (id)fc_partialFailureError;
 + (id)fc_blockedInCurrentStorefrontErrorWithIdentifiers:(id)arg1;
 + (id)fc_operationCancelledErrorWithAdditionalUserInfo:(id)arg1;
 + (id)fc_missingResourceErrorWithDescription:(id)arg1;

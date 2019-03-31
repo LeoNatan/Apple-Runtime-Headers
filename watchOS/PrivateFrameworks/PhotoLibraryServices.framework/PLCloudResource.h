@@ -14,11 +14,16 @@
 {
 }
 
++ (id)nonOriginalResourceTypes;
++ (id)originalResourceTypes;
 + (id)entityInManagedObjectContext:(id)arg1;
 + (id)entityName;
 + (_Bool)_countOfLocalCloudResourcesOfType:(unsigned int)arg1 inManagedObjectContext:(id)arg2 forMediumSized:(_Bool)arg3 localCount:(unsigned int *)arg4 unavailableCount:(unsigned int *)arg5 error:(id *)arg6;
 + (_Bool)countOfLocalCloudResourcesOfType:(unsigned int)arg1 inManagedObjectContext:(id)arg2 localCount:(unsigned int *)arg3 unavailableCount:(unsigned int *)arg4 error:(id *)arg5;
 + (_Bool)countOfMediumOriginalLocalCloudResourcesInManagedObjectContext:(id)arg1 localCount:(unsigned int *)arg2 unavailableCount:(unsigned int *)arg3 error:(id *)arg4;
++ (id)purgeablePushedCloudResourcePredicateForResourceTypes:(id)arg1 urgency:(int)arg2;
++ (id)purgeableUploadedCloudResourcePredicateForResourceTypes:(id)arg1 urgency:(int)arg2;
++ (id)prunePurgeablePredicateForResourceTypes:(id)arg1 urgency:(int)arg2;
 + (unsigned long long)bytesNeededToDownloadOriginalResourcesInLibrary:(id)arg1;
 + (void)resetPrefetchStateForResourcesWithResourceType:(int)arg1 itemIdentifiers:(id)arg2 inLibrary:(id)arg3;
 + (void)resetCloudResourcesStateForCloudInManagedObjectContext:(id)arg1 hardReset:(_Bool)arg2;

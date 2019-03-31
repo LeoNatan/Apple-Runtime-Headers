@@ -12,7 +12,7 @@
 
 + (id)getSpeechManagerStateMachineDefault;
 + (id)getSpeechManagerStateMachineAOPBridgeOS;
-+ (id)getSpeechManagerStateMachineForMac;
++ (id)getSpeechManagerStateMachineForBluetoothDevice;
 + (id)getSpeechManagerStateMachineWithType:(unsigned int)arg1;
 + (id)getSpeechManagerStateMachine;
 

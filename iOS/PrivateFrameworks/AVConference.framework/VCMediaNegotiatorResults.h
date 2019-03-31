@@ -16,8 +16,12 @@ __attribute__((visibility("hidden")))
     NSString *_remoteBasebandCodec;
     unsigned int _remoteBasebandCodecSampleRate;
     NSMutableDictionary *_bandwidthSettings;
+    _Bool _SIPDisabled;
+    _Bool _secureMessagingRequired;
 }
 
+@property(nonatomic) _Bool secureMessagingRequired; // @synthesize secureMessagingRequired=_secureMessagingRequired;
+@property(nonatomic) _Bool SIPDisabled; // @synthesize SIPDisabled=_SIPDisabled;
 @property(retain, nonatomic) NSMutableDictionary *bandwidthSettings; // @synthesize bandwidthSettings=_bandwidthSettings;
 @property(nonatomic) unsigned int remoteBasebandCodecSampleRate; // @synthesize remoteBasebandCodecSampleRate=_remoteBasebandCodecSampleRate;
 @property(retain, nonatomic) NSString *remoteBasebandCodec; // @synthesize remoteBasebandCodec=_remoteBasebandCodec;

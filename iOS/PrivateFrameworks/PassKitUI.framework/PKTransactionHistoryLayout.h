@@ -31,6 +31,7 @@
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
+@property(nonatomic) _Bool fade;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 

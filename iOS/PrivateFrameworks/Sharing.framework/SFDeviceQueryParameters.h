@@ -12,11 +12,13 @@ __attribute__((visibility("hidden")))
 @interface SFDeviceQueryParameters : NSObject
 {
     _Bool _installedOnly;
+    _Bool _imperfectMatch;
     _Bool _fallback;
     MAAssetQuery *_maQuery;
 }
 
 @property(readonly, nonatomic) _Bool fallback; // @synthesize fallback=_fallback;
+@property(readonly, nonatomic) _Bool imperfectMatch; // @synthesize imperfectMatch=_imperfectMatch;
 @property(readonly, nonatomic) _Bool installedOnly; // @synthesize installedOnly=_installedOnly;
 @property(readonly, nonatomic) MAAssetQuery *maQuery; // @synthesize maQuery=_maQuery;
 - (void).cxx_destruct;
@@ -25,7 +27,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)isEqual:(id)arg1;
 - (id)description;
 - (id)maAssetQueryDescription;
-- (id)initWithDeviceAssetQuery:(id)arg1 installedOnly:(_Bool)arg2 fallback:(_Bool)arg3;
+- (id)initWithDeviceAssetQuery:(id)arg1 installedOnly:(_Bool)arg2 imperfectMatch:(_Bool)arg3 fallback:(_Bool)arg4;
 
 @end
 

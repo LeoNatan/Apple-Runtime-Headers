@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class AFNotifyStatePublisher, NSMapTable;
+@class AFNotifyStatePublisher, AFSafetyBlock, AFWatchdogTimer, NSMapTable;
 @protocol OS_dispatch_group, OS_dispatch_queue;
 
 @interface AFSiriClientStateManager : NSObject
@@ -15,11 +15,15 @@
     AFNotifyStatePublisher *_publisher;
     NSMapTable *_statesByClient;
     int _transactionDepth;
+    AFSafetyBlock *_presentationTransitionAssertion;
+    AFWatchdogTimer *_presentationTransitionWatchdogTimer;
     NSObject<OS_dispatch_group> *_presentationTransitionGroup;
 }
 
 + (id)sharedManager;
 - (void).cxx_destruct;
+- (void)_endPresentationTransitionForReason:(id)arg1;
+- (void)_beginPresentationTransition;
 - (unsigned long long)_aggregatedState;
 - (void)_aggregateStatesAndPublishIfNeeded;
 - (void)_endSpeakingForClient:(void *)arg1;

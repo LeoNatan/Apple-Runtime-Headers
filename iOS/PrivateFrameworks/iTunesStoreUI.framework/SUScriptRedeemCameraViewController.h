@@ -11,14 +11,13 @@
 @interface SUScriptRedeemCameraViewController : SUScriptObject
 {
     NSString *_backButtonTitle;
-    SURedeemCameraViewController *_redeemCameraViewController;
     WebScriptObject *_codeHandler;
+    SURedeemCameraViewController *_redeemCameraViewController;
 }
 
 + (void)initialize;
 + (id)webScriptNameForSelector:(SEL)arg1;
 + (id)webScriptNameForKeyName:(id)arg1;
-@property(retain, nonatomic) WebScriptObject *codeHandler; // @synthesize codeHandler=_codeHandler;
 @property(nonatomic) __weak SURedeemCameraViewController *redeemCameraViewController; // @synthesize redeemCameraViewController=_redeemCameraViewController;
 - (void).cxx_destruct;
 - (id)scriptAttributeKeys;
@@ -31,6 +30,7 @@
 - (void)pauseCamera;
 - (void)dismiss;
 - (void)codeDetected:(id)arg1;
+@property(retain, nonatomic) WebScriptObject *codeHandler; // @synthesize codeHandler=_codeHandler;
 @property(retain, nonatomic) NSString *backButtonTitle; // @synthesize backButtonTitle=_backButtonTitle;
 - (id)_className;
 

@@ -14,6 +14,7 @@
 - (void)receivedUrgentRequestForMessages:(NSArray *)arg1;
 - (void)oneTimeCodesDidChange:(NSArray *)arg1;
 - (void)didAttemptToDisableiCloudBackups:(long long)arg1 error:(NSError *)arg2;
+- (void)didFetchRampState:(NSDictionary *)arg1;
 - (void)didFetchSyncStateStats:(NSDictionary *)arg1;
 - (void)didAttemptToDisableAllDevicesResult:(BOOL)arg1;
 - (void)didPerformAdditionalStorageRequiredCheckWithSuccess:(BOOL)arg1 additionalStorageRequired:(unsigned long long)arg2 forAccountId:(NSString *)arg3 error:(NSError *)arg4;

@@ -14,6 +14,7 @@
 {
     long long _backendArticleVersion;
     long long _behaviorFlags;
+    unsigned long long _halfLifeMilliseconds;
     long long _minimumNewsVersion;
     long long _publisherArticleVersion;
     long long _thumbnailFocalFrame;
@@ -43,6 +44,8 @@
     NSMutableArray *_iAdKeywords;
     NSMutableArray *_iAdSectionIDs;
     NSString *_language;
+    NSMutableArray *_linkedArticleIDs;
+    NSMutableArray *_linkedIssueIDs;
     NSMutableArray *_moreFromPublisherArticleIDs;
     NSString *_parentIssueID;
     NSString *_primaryAudience;
@@ -79,11 +82,13 @@
     _Bool _isBundlePaid;
     _Bool _isDraft;
     _Bool _isFeatureCandidate;
+    _Bool _isIssueOnly;
     _Bool _isPaid;
     _Bool _isSponsored;
     struct {
         unsigned int backendArticleVersion:1;
         unsigned int behaviorFlags:1;
+        unsigned int halfLifeMilliseconds:1;
         unsigned int minimumNewsVersion:1;
         unsigned int publisherArticleVersion:1;
         unsigned int thumbnailFocalFrame:1;
@@ -101,11 +106,14 @@
         unsigned int isBundlePaid:1;
         unsigned int isDraft:1;
         unsigned int isFeatureCandidate:1;
+        unsigned int isIssueOnly:1;
         unsigned int isPaid:1;
         unsigned int isSponsored:1;
     } _has;
 }
 
++ (Class)linkedIssueIDsType;
++ (Class)linkedArticleIDsType;
 + (Class)experimentalTitlesType;
 + (Class)publisherSpecifiedArticleIdsType;
 + (Class)topicsType;
@@ -117,6 +125,10 @@
 + (Class)iAdKeywordsType;
 + (Class)iAdCategoriesType;
 + (Class)flintFontResourceIDsType;
+@property(nonatomic) _Bool isIssueOnly; // @synthesize isIssueOnly=_isIssueOnly;
+@property(retain, nonatomic) NSMutableArray *linkedIssueIDs; // @synthesize linkedIssueIDs=_linkedIssueIDs;
+@property(retain, nonatomic) NSMutableArray *linkedArticleIDs; // @synthesize linkedArticleIDs=_linkedArticleIDs;
+@property(nonatomic) unsigned long long halfLifeMilliseconds; // @synthesize halfLifeMilliseconds=_halfLifeMilliseconds;
 @property(retain, nonatomic) NSString *language; // @synthesize language=_language;
 @property(retain, nonatomic) NSString *parentIssueID; // @synthesize parentIssueID=_parentIssueID;
 @property(retain, nonatomic) NSMutableArray *experimentalTitles; // @synthesize experimentalTitles=_experimentalTitles;
@@ -191,6 +203,16 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(nonatomic) _Bool hasIsIssueOnly;
+- (id)linkedIssueIDsAtIndex:(unsigned long long)arg1;
+- (unsigned long long)linkedIssueIDsCount;
+- (void)addLinkedIssueIDs:(id)arg1;
+- (void)clearLinkedIssueIDs;
+- (id)linkedArticleIDsAtIndex:(unsigned long long)arg1;
+- (unsigned long long)linkedArticleIDsCount;
+- (void)addLinkedArticleIDs:(id)arg1;
+- (void)clearLinkedArticleIDs;
+@property(nonatomic) _Bool hasHalfLifeMilliseconds;
 @property(nonatomic) _Bool hasRole;
 @property(nonatomic) int role; // @synthesize role=_role;
 @property(readonly, nonatomic) _Bool hasLanguage;

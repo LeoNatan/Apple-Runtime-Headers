@@ -6,7 +6,7 @@
 
 #import <Preferences/PSSpecifierDataSource.h>
 
-@class NSLock, NSMutableDictionary, NSString, NSTimer, PSSpecifier;
+@class NSArray, NSLock, NSMutableDictionary, NSString, NSTimer, PSSpecifier;
 @protocol NSObject;
 
 @interface AboutDataSource : PSSpecifierDataSource
@@ -27,8 +27,10 @@
     NSMutableDictionary *_carrierCellState;
     NSMutableDictionary *_simCellState;
     NSString *_deviceNameToIgnoreOnce;
+    NSArray *_ndoSpecifiers;
 }
 
+@property(retain, nonatomic) NSArray *ndoSpecifiers; // @synthesize ndoSpecifiers=_ndoSpecifiers;
 @property(retain, nonatomic) NSString *deviceNameToIgnoreOnce; // @synthesize deviceNameToIgnoreOnce=_deviceNameToIgnoreOnce;
 - (void).cxx_destruct;
 - (void)reloadDeviceName;
@@ -42,6 +44,8 @@
 - (void)cleanupMLReloadTimer;
 - (void)newCarrierNotification;
 - (void)loadSpecifiers;
+- (id)warrantyDetailText:(id)arg1;
+- (id)aboutController;
 - (void)reloadSpecifiers;
 - (_Bool)areSpecifiersLoaded;
 - (void)_loadValues;
@@ -53,7 +57,11 @@
 - (id)_songs:(id)arg1;
 - (id)countForKey:(id)arg1;
 - (void)_loadMediaFinished:(id)arg1;
+- (void)updateProductVersionSpecifier:(id)arg1;
 - (void)updateProductModelSpecifier:(id)arg1;
+- (id)_productBuildVersionString;
+- (id)_productVersionString;
+- (id)_modelNameString;
 - (id)_regulatoryModelNumberString;
 - (id)_modelRegionString;
 - (void)updateSIMSpecifier:(id)arg1;

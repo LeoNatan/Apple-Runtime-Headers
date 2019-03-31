@@ -141,6 +141,7 @@
 - (id)oneUpPresentationPhotosDetailsContext:(id)arg1;
 - (id)oneUpPresentationMediaProvider:(id)arg1;
 - (id)oneUpPresentationDataSourceManager:(id)arg1;
+- (long long)oneUpPresentationOrigin:(id)arg1;
 - (void)playButtonTileWasTapped:(id)arg1;
 - (void)_handleTapOnAssetReference:(id)arg1 autoPlayVideo:(_Bool)arg2;
 - (void)handleTouch:(id)arg1;

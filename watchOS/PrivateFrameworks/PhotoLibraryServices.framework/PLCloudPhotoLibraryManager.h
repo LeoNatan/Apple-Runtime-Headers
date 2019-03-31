@@ -187,6 +187,7 @@
 - (void)batterySaverModeDidChange;
 - (void)_checkEnableState;
 - (void)_processNextTransaction;
+- (void)_repushVideoAssetsMetadata;
 - (void)_handleOptimizeSettingChange;
 - (void)reportMiscInformation:(id)arg1;
 - (void)_updatePendingResetSyncDate;
@@ -212,6 +213,7 @@
 - (void)beginsSignificantWorkWithResourcesSize:(unsigned long long)arg1;
 - (void)_migrateFromChangeHubToCoreDataIfNecessary;
 - (void)_sendOptimizeFeedbackIfNecessary;
+- (void)_repushVideoAssetsMetadataIfNecessary;
 - (void)_runOneTimeMigrationStepsIfNecessary;
 - (void)_initializeMasterAndSizeCalculation;
 - (void)_promptForCameraCaptureSettingChangeWithReason:(int)arg1;
@@ -219,6 +221,7 @@
 - (void)_openCPLLibrary;
 - (void)_enableiCPL;
 - (void)enableiCPL;
+- (long long)sizeOfResourcesToUploadByCPL:(id *)arg1;
 - (id)init;
 - (id)_debugNameForMode:(unsigned int)arg1;
 

@@ -18,7 +18,6 @@ __attribute__((visibility("hidden")))
 
 - (void).cxx_destruct;
 - (void)_setAttributedString:(id)arg1;
-- (id)_scaleFont:(id)arg1 forString:(id)arg2 withBounds:(struct CGRect)arg3;
 - (void)_setup;
 - (void)_setAlignment:(long long)arg1;
 - (void)_setFontColor:(id)arg1;

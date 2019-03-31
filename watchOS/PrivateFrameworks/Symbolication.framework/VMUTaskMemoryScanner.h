@@ -51,6 +51,7 @@
     _Bool _javaScriptCoreUsingPoisoning;
     NSString *_processName;
     NSString *_processDescriptionString;
+    NSString *_executablePath;
     NSString *_binaryImagesDescription;
     unsigned long long _physicalFootprint;
     unsigned long long _physicalFootprintPeak;
@@ -70,6 +71,7 @@
 @property(readonly, nonatomic) unsigned long long physicalFootprintPeak; // @synthesize physicalFootprintPeak=_physicalFootprintPeak;
 @property(readonly, nonatomic) unsigned long long physicalFootprint; // @synthesize physicalFootprint=_physicalFootprint;
 @property(readonly, nonatomic) NSString *binaryImagesDescription; // @synthesize binaryImagesDescription=_binaryImagesDescription;
+@property(readonly, nonatomic) NSString *executablePath; // @synthesize executablePath=_executablePath;
 @property(readonly, nonatomic) NSString *processDescriptionString; // @synthesize processDescriptionString=_processDescriptionString;
 @property(readonly, nonatomic) NSString *processName; // @synthesize processName=_processName;
 @property(nonatomic) _Bool showRawClassNames; // @synthesize showRawClassNames=_showRawClassNames;

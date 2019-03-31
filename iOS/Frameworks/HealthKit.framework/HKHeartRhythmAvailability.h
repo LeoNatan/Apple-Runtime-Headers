@@ -6,17 +6,18 @@
 
 #import <objc/NSObject.h>
 
-@class HKActiveWatchFeatureAvailabilityDataSource, HKHealthStore, HKKeyValueDomain, HKMobileCountryCodeManager, HKObserverSet, NPSManager, NSNumber, NSUserDefaults;
+@class HKActiveWatchFeatureAvailabilityDataSource, HKHealthStore, HKKeyValueDomain, HKMobileCountryCodeManager, HKObserverSet, NPSManager, NSDate, NSNumber, NSUserDefaults;
 
 @interface HKHeartRhythmAvailability : NSObject
 {
     struct os_unfair_lock_s _cacheLock;
     NSNumber *_isAtrialFibrillationDetectionDisabledCache;
+    NSNumber *_isElectrocardiogramDisabledCache;
     int _onboardingStateDidChangeNotificationToken;
     int _featureAvailabilityConditionsDidUpdateNotificationToken;
     HKHealthStore *_healthStore;
     HKKeyValueDomain *_keyValueDomain;
-    NSUserDefaults *_userDefaults;
+    NSUserDefaults *_heartRhythmUserDefaults;
     NPSManager *_syncManager;
     HKObserverSet *_heartRhythmAvailabilityObservers;
     HKActiveWatchFeatureAvailabilityDataSource *_availabilityDataSource;
@@ -42,15 +43,23 @@
 + (_Bool)_isAtrialFibrillationDetectionStateSupportedOrNeedsGeolocationOnWatch:(id)arg1;
 + (_Bool)isAtrialFibrillationDetectionSettingEnabled;
 + (long long)currentElectrocardiogramOnboardingVersion;
++ (_Bool)_isElectrocardiogramDisabledWithDataSource:(id)arg1;
 + (_Bool)_isElectrocardiogramSupportedOnPhone:(id)arg1;
++ (_Bool)electrocardiogramSupportedForDevice:(id)arg1;
 + (_Bool)isElectrocardiogramSupportedOnPairedPhone;
 + (_Bool)shouldAdvertiseElectrocardiogramForWatch:(id)arg1;
 + (_Bool)shouldAdvertiseElectrocardiogramForActiveWatch;
++ (unsigned long long)electrocardiogramSupportedState;
++ (unsigned long long)electrocardiogramSupportedStateForActiveWatch;
++ (unsigned long long)electrocardiogramSupportedStateForWatch:(id)arg1;
 + (_Bool)isElectrocardiogramSupportedOnAllWatches;
 + (_Bool)isElectrocardiogramSupportedOnActiveWatch;
 + (_Bool)isElectrocardiogramSupportedOnAnyWatch;
 + (_Bool)isElectrocardiogramSupportedOnWatch:(id)arg1;
 + (_Bool)shouldInstallWatchApp;
++ (id)featureAvailabilityUserDefaults;
++ (id)pairedDevices;
++ (id)activePairedDevice;
 + (_Bool)isHeartRateEnabledInPrivacy;
 @property(retain, nonatomic) HKMobileCountryCodeManager *mobileCountryCodeManager; // @synthesize mobileCountryCodeManager=_mobileCountryCodeManager;
 @property(nonatomic) int featureAvailabilityConditionsDidUpdateNotificationToken; // @synthesize featureAvailabilityConditionsDidUpdateNotificationToken=_featureAvailabilityConditionsDidUpdateNotificationToken;
@@ -58,23 +67,37 @@
 @property(retain, nonatomic) HKActiveWatchFeatureAvailabilityDataSource *availabilityDataSource; // @synthesize availabilityDataSource=_availabilityDataSource;
 @property(retain, nonatomic) HKObserverSet *heartRhythmAvailabilityObservers; // @synthesize heartRhythmAvailabilityObservers=_heartRhythmAvailabilityObservers;
 @property(retain, nonatomic) NPSManager *syncManager; // @synthesize syncManager=_syncManager;
-@property(retain, nonatomic) NSUserDefaults *userDefaults; // @synthesize userDefaults=_userDefaults;
+@property(retain, nonatomic) NSUserDefaults *heartRhythmUserDefaults; // @synthesize heartRhythmUserDefaults=_heartRhythmUserDefaults;
 @property(retain, nonatomic) HKKeyValueDomain *keyValueDomain; // @synthesize keyValueDomain=_keyValueDomain;
 @property(retain, nonatomic) HKHealthStore *healthStore; // @synthesize healthStore=_healthStore;
 - (void).cxx_destruct;
 - (void)resetAtrialFibrillationDetectionOnboarding;
 @property(readonly, nonatomic, getter=isAtrialFibrillationDetectionDisabled) _Bool atrialFibrillationDetectionDisabled;
-- (void)_resetIsAtrialFibrillationDetectionDisabledCache;
+- (void)_resetIsAtrialFibrillationDetectionDisabledCacheWithLock:(_Bool)arg1;
+- (void)isAtrialFibrillationDetectionOnboardingAvailableInCurrentLocationForWatch:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)isAtrialFibrillationDetectionOnboardingAvailableInCurrentLocationForActiveWatch:(CDUnknownBlockType)arg1;
 - (void)isAtrialFibrillationDetectionOnboardingAvailableInCurrentLocation:(CDUnknownBlockType)arg1;
 - (void)_setAtrialFibrillationDetectionOnboardingCompletedForVersion:(long long)arg1 inCountryCode:(id)arg2;
 - (void)setAtrialFibrillationDetectionOnboardingCompletedForCountryCode:(id)arg1;
-- (id)_atrialFibrillationDetectionOnboardingCountryCode;
+- (id)atrialFibrillationDetectionOnboardingCountryCode;
 @property(readonly, nonatomic, getter=isAtrialFibrillationDetectionOnboardingCompleted) _Bool atrialFibrillationDetectionOnboardingCompleted;
+@property(readonly, nonatomic) NSDate *electrocardiogramFirstOnboardingCompletedDate;
 @property(readonly, nonatomic, getter=isElectrocardiogramRecordingDisabled) _Bool electrocardiogramRecordingDisabled;
+- (void)_resetIsElectrocardiogramDisabledCacheWithLock:(_Bool)arg1;
+- (void)isElectrocardiogramOnboardingAvailableInCurrentLocationForWatch:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)isElectrocardiogramOnboardingAvailableInCurrentLocationForActiveWatch:(CDUnknownBlockType)arg1;
+- (void)isElectrocardiogramOnboardingAvailableInCurrentLocation:(CDUnknownBlockType)arg1;
 - (void)resetElectrocardiogramOnboarding;
 @property(nonatomic, getter=isElectrocardiogramFirstRecordingCompleted) _Bool electrocardiogramFirstRecordingCompleted;
+- (void)_setElectrocardiogramOnboardingCompletedForVersion:(long long)arg1 inCountryCode:(id)arg2;
+- (void)setElectrocardiogramOnboardingCompletedForCountryCode:(id)arg1;
+- (void)setElectrocardiogramFirstOnboardingCompletedDate:(id)arg1;
 - (void)setElectrocardiogramOnboardingCompleted;
+- (id)_electrocardiogramFirstOnboardingCompletedDate;
+- (id)electrocardiogramOnboardingCountryCode;
 @property(readonly, nonatomic, getter=isElectrocardiogramOnboardingCompleted) _Bool electrocardiogramOnboardingCompleted;
+- (void)_triggerFeatureAvailabilityUpdateOnPhoneAndWatchWithDelay:(long long)arg1;
+- (void)_setFirstOnboardingCompletedDate:(id)arg1 forKey:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_setOnboardingVersionCompleted:(long long)arg1 forKey:(id)arg2 additionalValues:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (_Bool)_isOnboardingCompletedForKey:(id)arg1 version:(long long)arg2;
 - (void)_localeDidChange;

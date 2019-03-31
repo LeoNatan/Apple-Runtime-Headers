@@ -51,6 +51,7 @@
 @property(readonly, nonatomic) NSString *effectiveProductType;
 @property(readonly, nonatomic) NSString *variantIdentifier;
 @property(readonly, nonatomic) NSString *stringIdentifier;
+- (void)dealloc;
 - (id)initWithProductType:(id)arg1 additionalQueryParameters:(id)arg2;
 - (id)initWithBluetoothProductIdentifier:(unsigned long long)arg1 color:(unsigned long long)arg2 engagement:(_Bool)arg3;
 - (id)initWithHomePodColor:(unsigned long long)arg1;

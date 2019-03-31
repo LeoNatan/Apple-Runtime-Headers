@@ -127,6 +127,7 @@
 - (void)handleInProgressPackageGenerator:(id)arg1;
 - (void)_handleInProgressPackageGenerator:(id)arg1 suppressLivePhotoContent:(_Bool)arg2 mediaOrigin:(long long)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (id)scrollView;
+- (struct CGSize)_maximumThumbnailSize;
 - (void)reviewViewController:(id)arg1 didFinishReviewingAssets:(id)arg2;
 - (void)reviewViewControllerDidRequestRetake:(id)arg1;
 - (void)reviewViewControllerDidCancelReview:(id)arg1;

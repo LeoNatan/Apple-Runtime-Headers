@@ -12,13 +12,9 @@
 
 @interface SXViewLocationConditionValidator : NSObject <SXConditionValidating>
 {
-    NSString *_viewLocation;
 }
 
-@property(readonly, copy, nonatomic) NSString *viewLocation; // @synthesize viewLocation=_viewLocation;
-- (void).cxx_destruct;
 - (_Bool)validateCondition:(id)arg1 context:(id)arg2;
-- (id)initWithViewLocation:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

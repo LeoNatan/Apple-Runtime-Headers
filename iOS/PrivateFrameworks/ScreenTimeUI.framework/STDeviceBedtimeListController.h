@@ -9,12 +9,13 @@
 #import <ScreenTimeUI/STUIDateTimePickerCellDelegate-Protocol.h>
 
 @class NSArray, NSString, PSSpecifier, STDeviceBedtime, STUser;
-@protocol STDeviceBedtimeListControllerDelegate;
+@protocol STDeviceBedtimeListControllerDelegate, STRootViewModelCoordinator;
 
 @interface STDeviceBedtimeListController : PSListController <STUIDateTimePickerCellDelegate>
 {
     _Bool _canAskForMoreTime;
     id <STDeviceBedtimeListControllerDelegate> _delegate;
+    id <STRootViewModelCoordinator> _coordinator;
     STDeviceBedtime *_bedtime;
     STUser *_affectedUser;
     NSArray *_orderedWeekdayIndexes;
@@ -49,7 +50,8 @@
 @property(readonly) NSArray *orderedWeekdayIndexes; // @synthesize orderedWeekdayIndexes=_orderedWeekdayIndexes;
 @property(nonatomic) _Bool canAskForMoreTime; // @synthesize canAskForMoreTime=_canAskForMoreTime;
 @property(retain, nonatomic) STUser *affectedUser; // @synthesize affectedUser=_affectedUser;
-@property(copy) STDeviceBedtime *bedtime; // @synthesize bedtime=_bedtime;
+@property(copy, nonatomic) STDeviceBedtime *bedtime; // @synthesize bedtime=_bedtime;
+@property(retain, nonatomic) id <STRootViewModelCoordinator> coordinator; // @synthesize coordinator=_coordinator;
 @property(nonatomic) __weak id <STDeviceBedtimeListControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (id)datePickerForSpecifier:(id)arg1;
@@ -69,6 +71,7 @@
 - (void)setDeviceBedtimeEnabled:(id)arg1 specifier:(id)arg2;
 - (void)_didEndEditingDailySchedule:(id)arg1;
 - (id)specifiers;
+@property(readonly) _Bool shouldShowCompatibilityAlert;
 - (void)_didFinishEditingBedtime;
 - (void)willResignActive;
 - (void)viewWillDisappear:(_Bool)arg1;

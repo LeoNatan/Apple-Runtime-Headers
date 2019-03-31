@@ -9,6 +9,7 @@
 @protocol NUArticleViewStyler
 @property(readonly, nonatomic) long long topBackgroundStatusBarStyle;
 @property(readonly, nonatomic) long long statusBarStyle;
+@property(readonly, nonatomic) UIColor *backgroundColor;
 - (void)unstyleToolbar:(UIToolbar *)arg1 overrideRestoreColor:(UIColor *)arg2;
 - (void)styleToolbar:(UIToolbar *)arg1;
 - (void)unstyleTabBar:(UITabBar *)arg1 overrideRestoreColor:(UIColor *)arg2;

@@ -33,6 +33,7 @@
 - (id)groupUID;
 - (id)productIdentifier;
 - (id)routeUID;
+- (_Bool)isAirPlayRoute;
 - (_Bool)isPickedOnPairedDevice;
 - (_Bool)isVolumeControlAvailable;
 @property(readonly, nonatomic, getter=isGroupLeader) _Bool groupLeader;

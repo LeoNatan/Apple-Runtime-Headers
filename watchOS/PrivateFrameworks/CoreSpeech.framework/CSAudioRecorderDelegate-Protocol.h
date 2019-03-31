@@ -10,7 +10,7 @@
 
 @protocol CSAudioRecorderDelegate <NSObject>
 - (void)audioRecorderBufferAvailable:(CSAudioRecorder *)arg1 buffer:(AVVCAudioBuffer *)arg2;
-- (void)audioRecorderBufferAvailable:(CSAudioRecorder *)arg1 buffer:(NSData *)arg2 atTime:(unsigned long long)arg3;
+- (void)audioRecorderBufferAvailable:(CSAudioRecorder *)arg1 buffer:(NSData *)arg2 remoteVAD:(NSData *)arg3 atTime:(unsigned long long)arg4;
 
 @optional
 - (void)audioRecorderLostMediaserverd:(CSAudioRecorder *)arg1;

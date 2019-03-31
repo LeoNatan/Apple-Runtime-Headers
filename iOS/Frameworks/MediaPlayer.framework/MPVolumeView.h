@@ -9,11 +9,11 @@
 #import <MediaPlayer/MPAVLightweightRoutingControllerDelegate-Protocol.h>
 #import <MediaPlayer/NSCoding-Protocol.h>
 
-@class MPAVLightweightRoutingController, MPMediaControlsStandaloneViewController, MPVolumeSlider, NSString, UIButton, UIImage, UILabel;
+@class MPAVLightweightRoutingController, MPMediaControls, MPVolumeSlider, NSString, UIButton, UIImage, UILabel;
 
 @interface MPVolumeView : UIView <MPAVLightweightRoutingControllerDelegate, NSCoding>
 {
-    MPMediaControlsStandaloneViewController *_mediaControlsViewController;
+    MPMediaControls *_mediaControls;
     MPAVLightweightRoutingController *_lightweightRoutingController;
     _Bool _hasNonDefaultRouteButtonImages;
     _Bool _hasNonDefaultMaxVolumeSliderImage;
@@ -52,8 +52,6 @@
 - (id)_defaultRouteButtonImageAsSelected:(_Bool)arg1;
 - (void)_createSubviews;
 - (id)_routeButton;
-- (_Bool)isShowingActiveOverlays;
-- (void)dismissActiveOverlaysAnimated:(_Bool)arg1;
 @property(readonly, nonatomic) _Bool isShowingRouteButton;
 @property(readonly, nonatomic) _Bool isVisible;
 @property(nonatomic) _Bool volumeSliderShrinksFromBothEnds;

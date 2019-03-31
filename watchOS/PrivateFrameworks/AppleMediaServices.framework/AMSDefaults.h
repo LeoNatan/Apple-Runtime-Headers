@@ -42,6 +42,7 @@
 + (void)setDisableHARLogging:(_Bool)arg1;
 + (void)setDidRetrieveDeviceOffers:(_Bool)arg1;
 + (void)setDeviceOfferEligibility:(id)arg1;
++ (void)setDefaultPaymentPassIdentifier:(id)arg1;
 + (void)setBagURLCookies:(id)arg1;
 + (void)setAlwaysSendGUID:(_Bool)arg1;
 + (void)setAlwaysSendCacheBuster:(_Bool)arg1;
@@ -64,6 +65,7 @@
 + (_Bool)didRetrieveDeviceOffers;
 + (id)deviceOffersSerialNumber;
 + (id)deviceOfferEligibility;
++ (id)defaultPaymentPassIdentifier;
 + (id)bagURLCookies;
 + (_Bool)alwaysSendGUID;
 + (_Bool)alwaysSendCacheBuster;

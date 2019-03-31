@@ -6,17 +6,19 @@
 
 #import <NewsCore/FCHeadline.h>
 
+#import <NewsCore/FCArticleAccessCheckable-Protocol.h>
 #import <NewsCore/FCHeadlineStocksFields-Protocol.h>
 
 @class COMAPPLEFELDSPARPROTOCOLLIVERPOOLCohortList, FCCoverArt, FCHeadlineExperimentalTitleMetadata, FCHeadlineThumbnail, FCInterestToken, FCIssue, FCTopStoriesStyleConfiguration, NSArray, NSDate, NSString, NSURL, NTPBArticleRecord;
 @protocol FCChannelProviding;
 
-@interface FCArticleHeadline : FCHeadline <FCHeadlineStocksFields>
+@interface FCArticleHeadline : FCHeadline <FCHeadlineStocksFields, FCArticleAccessCheckable>
 {
     _Bool _hasThumbnail;
     _Bool _sponsored;
     _Bool _deleted;
     _Bool _isDraft;
+    _Bool _isLocalDraft;
     _Bool _featureCandidate;
     _Bool _needsRapidUpdates;
     _Bool _showMinimalChrome;
@@ -80,6 +82,9 @@
     NSURL *_videoCallToActionURL;
     NSString *_language;
     unsigned long long _role;
+    unsigned long long _halfLife;
+    NSArray *_linkedArticleIDs;
+    NSArray *_linkedIssueIDs;
     NTPBArticleRecord *_articleRecord;
     FCInterestToken *_articleInterestToken;
     long long _behaviorFlags;
@@ -91,6 +96,10 @@
 @property(nonatomic) long long behaviorFlags; // @synthesize behaviorFlags=_behaviorFlags;
 @property(retain, nonatomic) FCInterestToken *articleInterestToken; // @synthesize articleInterestToken=_articleInterestToken;
 @property(retain, nonatomic) NTPBArticleRecord *articleRecord; // @synthesize articleRecord=_articleRecord;
+- (id)linkedIssueIDs;
+- (id)linkedArticleIDs;
+- (void)setHalfLife:(unsigned long long)arg1;
+- (unsigned long long)halfLife;
 - (_Bool)showBundleSoftPaywall;
 - (void)setRole:(unsigned long long)arg1;
 - (unsigned long long)role;
@@ -99,13 +108,11 @@
 - (id)videoCallToActionURL;
 - (id)videoCallToActionTitle;
 - (id)coverArt;
-- (void)setBundlePaid:(_Bool)arg1;
-- (_Bool)isBundlePaid;
-- (void)setPaid:(_Bool)arg1;
-- (_Bool)isPaid;
+@property(readonly, nonatomic, getter=isBundlePaid) _Bool bundlePaid; // @synthesize bundlePaid=_bundlePaid;
+@property(readonly, nonatomic, getter=isPaid) _Bool paid; // @synthesize paid=_paid;
 - (_Bool)isIssueOnly;
 - (_Bool)webEmbedsEnabled;
-- (long long)minimumNewsVersion;
+@property(readonly, nonatomic) long long minimumNewsVersion; // @synthesize minimumNewsVersion=_minimumNewsVersion;
 - (_Bool)isHiddenFromAutoFavorites;
 - (_Bool)isPressRelease;
 - (_Bool)isHiddenFromFeeds;
@@ -120,9 +127,10 @@
 - (id)moreFromPublisherArticleIDs;
 - (id)relatedArticleIDs;
 - (_Bool)isFeatureCandidate;
-- (id)allowedStorefrontIDs;
-- (id)blockedStorefrontIDs;
-- (_Bool)isDraft;
+@property(readonly, copy, nonatomic) NSArray *allowedStorefrontIDs; // @synthesize allowedStorefrontIDs=_allowedStorefrontIDs;
+@property(readonly, copy, nonatomic) NSArray *blockedStorefrontIDs; // @synthesize blockedStorefrontIDs=_blockedStorefrontIDs;
+@property(readonly, nonatomic) _Bool isLocalDraft; // @synthesize isLocalDraft=_isLocalDraft;
+@property(readonly, nonatomic) _Bool isDraft; // @synthesize isDraft=_isDraft;
 - (void)setDeleted:(_Bool)arg1;
 - (_Bool)isDeleted;
 - (id)iAdSectionIDs;
@@ -140,6 +148,7 @@
 - (id)lastFetchedDate;
 - (id)lastModifiedDate;
 - (id)contentURL;
+- (void)setAccessoryText:(id)arg1;
 - (id)accessoryText;
 - (void)setShortExcerpt:(id)arg1;
 - (id)shortExcerpt;
@@ -162,14 +171,12 @@
 - (struct CGRect)thumbnailFocalFrame;
 - (void)setSourceName:(id)arg1;
 - (id)sourceName;
-- (void)setSourceChannel:(id)arg1;
-- (id)sourceChannel;
+@property(readonly, copy, nonatomic) id <FCChannelProviding> sourceChannel; // @synthesize sourceChannel=_sourceChannel;
 - (long long)backendArticleVersion;
 - (long long)publisherArticleVersion;
 - (void)setPublishDate:(id)arg1;
 - (id)publishDate;
 - (id)primaryAudience;
-- (void)setExperimentalTitleMetadata:(id)arg1;
 - (id)experimentalTitleMetadata;
 - (void)setTitleCompact:(id)arg1;
 - (id)titleCompact;
@@ -181,8 +188,7 @@
 - (id)referencedArticleID;
 - (void)setArticleID:(id)arg1;
 - (id)articleID;
-- (void)setIdentifier:(id)arg1;
-- (id)identifier;
+@property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 - (id)versionIdentifier;
 - (void).cxx_destruct;
 - (id)publisherID;
@@ -197,6 +203,9 @@
 - (id)initWithArticleRecordData:(id)arg1 sourceChannel:(id)arg2 masterIssue:(id)arg3 assetManager:(id)arg4;
 - (id)initWithArticleRecord:(id)arg1 articleInterestToken:(id)arg2 sourceChannel:(id)arg3 masterIssue:(id)arg4 storyStyleConfigs:(id)arg5 storyTypeTimeout:(long long)arg6 rapidUpdatesTimeout:(long long)arg7 assetManager:(id)arg8 experimentalTitleProvider:(id)arg9;
 - (id)init;
+
+// Remaining properties
+@property(readonly, nonatomic) _Bool isBlockedExplicitContent;
 
 @end
 

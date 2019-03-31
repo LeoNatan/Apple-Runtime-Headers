@@ -113,6 +113,7 @@
 @property _Bool _preventsSystemHTTPProxyAuthentication; // @dynamic _preventsSystemHTTPProxyAuthentication;
 @property long long _priority; // @dynamic _priority;
 @property long long _priorityValue; // @dynamic _priorityValue;
+@property(retain) NSObject<OS_nw_activity> *_private_nw_activity; // @dynamic _private_nw_activity;
 @property _Bool _prohibitAuthUI; // @dynamic _prohibitAuthUI;
 @property(nonatomic) id _protocolForTask; // @dynamic _protocolForTask;
 @property(copy) NSDictionary *_proxySettings; // @dynamic _proxySettings;
@@ -131,7 +132,7 @@
 @property(copy) NSString *_storagePartitionIdentifier; // @dynamic _storagePartitionIdentifier;
 @property _Bool _strictContentLength; // @dynamic _strictContentLength;
 @property long long _suspensionThreshhold; // @dynamic _suspensionThreshhold;
-@property(copy) __NSCFTaskPerformanceTiming *_taskPerformanceTiming; // @dynamic _taskPerformanceTiming;
+@property(retain) __NSCFTaskPerformanceTiming *_taskPerformanceTiming; // @dynamic _taskPerformanceTiming;
 @property double _timeWindowDelay; // @dynamic _timeWindowDelay;
 @property double _timeWindowDuration; // @dynamic _timeWindowDuration;
 @property double _timeoutInterval; // @dynamic _timeoutInterval;

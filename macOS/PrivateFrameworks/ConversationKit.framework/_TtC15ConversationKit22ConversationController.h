@@ -28,6 +28,7 @@ __attribute__((visibility("hidden")))
     // Error parsing type: , name: participantsMediaPrioritiesDidChange
     // Error parsing type: , name: participantAudioPowerDidChange
     // Error parsing type: , name: audioRouteDidChange
+    // Error parsing type: , name: carPlayConnectedDidChange
     // Error parsing type: , name: didUpdateLocalParticipant
     // Error parsing type: , name: didStartVideoForLocalParticipant
     // Error parsing type: , name: conversationStateDidChange

@@ -9,11 +9,14 @@
 #import <Silex/ADBannerViewInternalDelegate-Protocol.h>
 
 @class NSMutableArray, NSMutableDictionary, NSString, SXDocument, SXViewport;
-@protocol OS_dispatch_semaphore, SXAdControllerDelegate, SXAdControllerPresentationDelegate, SXAdProvider;
+@protocol OS_dispatch_semaphore, SXAdControllerDelegate, SXAdControllerPresentationDelegate, SXAdProvider, SXAdvertisingSettings;
 
 @interface SXAdController : NSObject <ADBannerViewInternalDelegate>
 {
+    _Bool _debuggingEnabled;
+    _Bool _interactivityDebuggingEnabled;
     _Bool _didLoadFirstBannerView;
+    id <SXAdvertisingSettings> _debugAdvertisementSettings;
     id <SXAdControllerDelegate> _delegate;
     id <SXAdControllerPresentationDelegate> _presentationDelegate;
     id <SXAdProvider> _adProvider;
@@ -24,12 +27,6 @@
     NSMutableDictionary *_bannerViews;
 }
 
-+ (_Bool)interactivityDebuggingEnabled;
-+ (void)setInteractivityDebuggingEnabled:(_Bool)arg1;
-+ (_Bool)isDebugModeEnabled;
-+ (void)setDebugModeEnabled:(_Bool)arg1;
-+ (id)debugAdvertisementSettings;
-+ (void)setDebugAdvertisingSettings:(id)arg1;
 @property(nonatomic) _Bool didLoadFirstBannerView; // @synthesize didLoadFirstBannerView=_didLoadFirstBannerView;
 @property(retain, nonatomic) NSMutableDictionary *bannerViews; // @synthesize bannerViews=_bannerViews;
 @property(readonly, nonatomic) NSObject<OS_dispatch_semaphore> *bannerViewsSemaphore; // @synthesize bannerViewsSemaphore=_bannerViewsSemaphore;
@@ -39,6 +36,9 @@
 @property(readonly, nonatomic) id <SXAdProvider> adProvider; // @synthesize adProvider=_adProvider;
 @property(nonatomic) __weak id <SXAdControllerPresentationDelegate> presentationDelegate; // @synthesize presentationDelegate=_presentationDelegate;
 @property(nonatomic) __weak id <SXAdControllerDelegate> delegate; // @synthesize delegate=_delegate;
+@property(retain, nonatomic) id <SXAdvertisingSettings> debugAdvertisementSettings; // @synthesize debugAdvertisementSettings=_debugAdvertisementSettings;
+@property(nonatomic, getter=isInteractivityDebuggingEnabled) _Bool interactivityDebuggingEnabled; // @synthesize interactivityDebuggingEnabled=_interactivityDebuggingEnabled;
+@property(nonatomic, getter=isDebuggingEnabled) _Bool debuggingEnabled; // @synthesize debuggingEnabled=_debuggingEnabled;
 - (void).cxx_destruct;
 - (_Bool)isRect:(struct CGRect)arg1 withinMinimumDistanceOfRect:(struct CGRect)arg2 viewport:(struct CGSize)arg3;
 - (_Bool)isDisplayingAdsWithinScreenfullOfComponentView:(id)arg1;

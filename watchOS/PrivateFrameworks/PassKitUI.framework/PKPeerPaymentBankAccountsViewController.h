@@ -14,6 +14,7 @@
 {
     PKBankAccountInformation *_bankInformation;
     PKPeerPaymentAccount *_account;
+    int _detailViewStyle;
 }
 
 - (void).cxx_destruct;
@@ -23,7 +24,7 @@
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (_Bool)shouldMapSection:(unsigned int)arg1;
-- (id)initWithPeerPaymentAccount:(id)arg1;
+- (id)initWithPeerPaymentAccount:(id)arg1 detailViewStyle:(int)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -16,6 +16,7 @@
 + (id)_createAudioFileWriterWithLoggingDir:(id)arg1 inputFormat:(struct AudioStreamBasicDescription)arg2 outputFormat:(struct AudioStreamBasicDescription)arg3;
 + (id)_createTempAudioFileWriterWithInputFormat:(struct AudioStreamBasicDescription)arg1 outputFormat:(struct AudioStreamBasicDescription)arg2;
 + (id)createAudioFileWriterFromWithInputFormat:(struct AudioStreamBasicDescription)arg1 outputFormat:(struct AudioStreamBasicDescription)arg2;
++ (id)createAudioFileWriterForRemoteVADWithInputFormat:(struct AudioStreamBasicDescription)arg1 outputFormat:(struct AudioStreamBasicDescription)arg2;
 + (void)_readDataFromFileHandle:(id)arg1 toFileHandle:(id)arg2;
 + (void)generateDeviceAudioLogging:(id)arg1 numChannels:(unsigned long)arg2 speechId:(id)arg3;
 + (id)_sharedAudioLoggingQueue;

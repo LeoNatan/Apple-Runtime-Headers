@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSDecimalNumber, NSLocale, SKProductSubscriptionPeriod;
+@class NSDecimalNumber, NSLocale, NSString, SKProductSubscriptionPeriod;
 
 __attribute__((visibility("hidden")))
 @interface SKProductDiscountInternal : NSObject
@@ -16,6 +16,8 @@ __attribute__((visibility("hidden")))
     unsigned long long _paymentMode;
     SKProductSubscriptionPeriod *_subscriptionPeriod;
     unsigned long long _numberOfPeriods;
+    unsigned long long _type;
+    NSString *_identifier;
 }
 
 - (void).cxx_destruct;

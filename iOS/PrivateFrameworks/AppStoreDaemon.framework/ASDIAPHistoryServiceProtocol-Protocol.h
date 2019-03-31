@@ -7,7 +7,7 @@
 @class NSArray, NSDictionary, NSNumber;
 
 @protocol ASDIAPHistoryServiceProtocol
-- (void)getSubscriptionEntitlementsIgnoreCaches:(_Bool)arg1 forActiveAccountWithReplyHandler:(void (^)(NSArray *, NSError *))arg2;
+- (void)getSubscriptionEntitlementsIgnoreCaches:(_Bool)arg1 forActiveAccountWithReplyHandler:(void (^)(NSArray *, _Bool, NSError *))arg2;
 - (void)setSubscriptionEntitlementsWithDictionary:(NSDictionary *)arg1 forAccountID:(NSNumber *)arg2;
 - (void)refreshIAPsForActiveAccountWithReplyHandler:(void (^)(NSError *))arg1;
 - (void)getIAPsForActiveAccountWithAdamIDs:(NSArray *)arg1 withReplyHandler:(void (^)(NSArray *, NSError *))arg2;

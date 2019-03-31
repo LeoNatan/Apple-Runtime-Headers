@@ -16,6 +16,7 @@
 + (id)sharedUserDefaultsController;
 + (BOOL)_canAccessUserDefaults;
 @property BOOL preferBluetoothMicrophones; // @synthesize preferBluetoothMicrophones=_preferBluetoothMicrophones;
+- (BOOL)forceVoiceTriggerDeviceTypeDistribution:(long long *)arg1;
 - (BOOL)forceSATEnrolled;
 - (BOOL)forceVoiceTriggerAvailable;
 @property(retain) NSDate *dyingWishForInvocationDate;

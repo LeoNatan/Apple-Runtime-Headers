@@ -10,6 +10,7 @@
 + (id)annotationViewProvidedCustomFeatureStyleAttributes;
 + (id)genericMarkerStyleAttributes;
 + (id)trainStationStyleAttributes;
++ (id)genericServiceStyleAttributes;
 + (id)markerStyleAttributes;
 + (id)styleAttributesForDraggingWithAttributes:(id)arg1;
 + (id)styleAttributesForCalloutWithAttributes:(id)arg1;

@@ -12,6 +12,7 @@
 @property(readonly, nonatomic) unsigned long long physicalFootprintPeak;
 @property(readonly, nonatomic) unsigned long long physicalFootprint;
 @property(readonly, nonatomic) NSString *binaryImagesDescription;
+@property(readonly, nonatomic) NSString *executablePath;
 @property(readonly, nonatomic) NSString *processDescriptionString;
 @property(readonly, nonatomic) NSString *processName;
 @property(readonly, nonatomic) unsigned int nodeNamespaceSize;

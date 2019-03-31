@@ -33,6 +33,7 @@ __attribute__((visibility("hidden")))
     BOOL _animateToResignFirstResponderSoon;
     BOOL _inSelectTextAsFirstResponder;
     BOOL _animatingNotSecureAnnotation;
+    BOOL _overrideSearchTermsDisplayForURL;
     NSTextField *_authenticationDescriptionTextField;
     NSTextField *_buttonDescriptionTextField;
     NSTimer *_showButtonDescriptionTimer;
@@ -389,8 +390,8 @@ __attribute__((visibility("hidden")))
 - (BOOL)isAccessibilityAlternateUIVisible;
 - (BOOL)accessibilityPerformShowDefaultUI;
 - (BOOL)accessibilityPerformShowAlternateUI;
-- (id)accessibilityRole;
 - (void)_accessibilityShowAlternateUI:(BOOL)arg1;
+- (struct CGRect)accessibilityFrame;
 @property(readonly, nonatomic) NSArray *unifiedFieldAccessibilityChildren;
 - (void)_navigateToItemOnPasteboard:(id)arg1;
 - (id)_stringFromPasteboard:(id)arg1;

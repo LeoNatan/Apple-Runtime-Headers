@@ -26,6 +26,7 @@
 - (_Bool)isPremium;
 - (id)localDraftPath;
 - (id)surfacedByBinID;
+- (_Bool)isLocalDraft;
 - (_Bool)isDraft;
 - (_Bool)isDeleted;
 - (id)allowedStorefrontIDs;

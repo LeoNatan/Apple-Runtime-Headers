@@ -143,6 +143,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)accessibilityIsComboBox;
 - (_Bool)accessibilityIsAttachmentElement;
 - (id)accessibilityValue;
+- (id)accessibilityColorStringValue;
 - (id)accessibilityPlaceholderValue;
 - (id)accessibilityDatetimeValue;
 - (unsigned long long)accessibilityBlockquoteLevel;

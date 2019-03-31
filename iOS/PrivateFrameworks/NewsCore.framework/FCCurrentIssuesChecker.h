@@ -22,9 +22,10 @@
 @property(retain, nonatomic) FCSubscriptionController *subscriptionController; // @synthesize subscriptionController=_subscriptionController;
 @property(retain, nonatomic) id <FCContentContext> context; // @synthesize context=_context;
 - (void).cxx_destruct;
-- (id)_promiseFilterUnreadIssuesWithPartialResult:(id)arg1;
-- (id)_promiseCurrentIssuesFromFollowedChannelIDs:(id)arg1;
+- (id)_promiseFilterUnreadIssuesWithFromIssues:(id)arg1 withChainingdata:(id)arg2;
+- (id)_promiseCurrentIssuesFromChannelIDs:(id)arg1 withChainingdata:(id)arg2;
 - (id)_promiseFollowedChannelIDs;
+- (void)fetchUsersCurrentIssuesWithCompletion:(CDUnknownBlockType)arg1;
 - (void)fetchCurrentIssuesWithCompletion:(CDUnknownBlockType)arg1;
 - (id)initWithContext:(id)arg1 subscriptionController:(id)arg2 issueReadingHistory:(id)arg3;
 - (id)init;

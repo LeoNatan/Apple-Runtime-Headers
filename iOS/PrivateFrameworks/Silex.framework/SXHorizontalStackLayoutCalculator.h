@@ -14,6 +14,7 @@
 {
     NSMutableArray *_items;
     NSMutableArray *_flexibleItems;
+    NSMutableArray *_sortedItems;
     NSMutableDictionary *_componentsGroupedByMaximumWidth;
     NSMutableDictionary *_componentsGroupedByMinimumWidth;
     NSMutableDictionary *_minimumWidths;
@@ -28,6 +29,7 @@
 @property(readonly, nonatomic) NSMutableDictionary *minimumWidths; // @synthesize minimumWidths=_minimumWidths;
 @property(readonly, nonatomic) NSMutableDictionary *componentsGroupedByMinimumWidth; // @synthesize componentsGroupedByMinimumWidth=_componentsGroupedByMinimumWidth;
 @property(readonly, nonatomic) NSMutableDictionary *componentsGroupedByMaximumWidth; // @synthesize componentsGroupedByMaximumWidth=_componentsGroupedByMaximumWidth;
+@property(readonly, nonatomic) NSMutableArray *sortedItems; // @synthesize sortedItems=_sortedItems;
 @property(readonly, nonatomic) NSMutableArray *flexibleItems; // @synthesize flexibleItems=_flexibleItems;
 @property(readonly, nonatomic) NSMutableArray *items; // @synthesize items=_items;
 - (void).cxx_destruct;

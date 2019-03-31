@@ -16,6 +16,7 @@
 - (void)reloadGroupsForGroupStackView:(PKPassGroupStackView *)arg1;
 
 @optional
+- (void)groupStackViewWantsForcedPayment:(PKPassGroupStackView *)arg1;
 - (void)groupStackView:(PKPassGroupStackView *)arg1 didTransitionToState:(int)arg2 animated:(_Bool)arg3;
 - (void)groupStackView:(PKPassGroupStackView *)arg1 transitioningToState:(int)arg2 animated:(_Bool)arg3;
 - (void)groupStackView:(PKPassGroupStackView *)arg1 groupDidMoveFromIndex:(unsigned int)arg2 toIndex:(unsigned int)arg3;

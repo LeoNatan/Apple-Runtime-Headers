@@ -32,7 +32,6 @@
 - (void)webProcessPlugInBrowserContextController:(WKWebProcessPlugInBrowserContextController *)arg1 didFinishDocumentLoadForFrame:(WKWebProcessPlugInFrame *)arg2;
 - (void)webProcessPlugInBrowserContextController:(WKWebProcessPlugInBrowserContextController *)arg1 didCommitLoadForFrame:(WKWebProcessPlugInFrame *)arg2;
 - (void)webProcessPlugInBrowserContextController:(WKWebProcessPlugInBrowserContextController *)arg1 didReceiveServerRedirectForProvisionalLoadForFrame:(WKWebProcessPlugInFrame *)arg2;
-- (void)webProcessPlugInBrowserContextController:(WKWebProcessPlugInBrowserContextController *)arg1 willStartProvisionalLoadForFrame:(WKWebProcessPlugInFrame *)arg2 completionHandler:(void (^)(void))arg3;
 - (void)webProcessPlugInBrowserContextController:(WKWebProcessPlugInBrowserContextController *)arg1 didStartProvisionalLoadForFrame:(WKWebProcessPlugInFrame *)arg2;
 @end
 

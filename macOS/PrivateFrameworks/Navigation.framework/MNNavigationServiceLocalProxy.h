@@ -75,9 +75,9 @@ __attribute__((visibility("hidden")))
 - (void)stateManagerPredictingDidArrive:(id)arg1;
 - (void)stateManager:(id)arg1 didUpdatePossibleDestinations:(id)arg2;
 - (void)stateManager:(id)arg1 didUpdateIsInVehicle:(BOOL)arg2;
-- (unsigned long long)_serviceStateForStateType:(unsigned long long)arg1;
-- (void)stateManager:(id)arg1 didChangeFromState:(unsigned long long)arg2 toState:(unsigned long long)arg3;
-- (void)stateManager:(id)arg1 willChangeFromState:(unsigned long long)arg2 toState:(unsigned long long)arg3;
+- (unsigned long long)_serviceStateForStateType:(long long)arg1;
+- (void)stateManager:(id)arg1 didChangeFromState:(long long)arg2 toState:(long long)arg3;
+- (void)stateManager:(id)arg1 willChangeFromState:(long long)arg2 toState:(long long)arg3;
 - (void)interfaceHashesWithHandler:(CDUnknownBlockType)arg1;
 - (void)recordTraceBookmarkAtCurrentPositionWthScreenshotData:(id)arg1;
 - (void)setTracePosition:(double)arg1;

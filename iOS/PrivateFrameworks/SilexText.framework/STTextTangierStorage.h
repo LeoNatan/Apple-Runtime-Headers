@@ -6,21 +6,20 @@
 
 #import <TSReading/TSWPStorage.h>
 
-@class NSCache, NSLocale, NSMutableArray, NSObject, NSSet;
-@protocol OS_dispatch_semaphore;
+@class NSCache, NSLocale, NSMutableArray, NSSet;
 
 @interface STTextTangierStorage : TSWPStorage
 {
     _Bool _isSelectable;
     _Bool _shouldHyphenate;
+    struct os_unfair_lock_s _unfairLock;
     NSLocale *_locale;
     NSSet *_rangedExclusionPaths;
     NSMutableArray *_attachments;
     NSCache *_tokenizersCache;
-    NSObject<OS_dispatch_semaphore> *_semaphore;
 }
 
-@property(readonly, nonatomic) NSObject<OS_dispatch_semaphore> *semaphore; // @synthesize semaphore=_semaphore;
+@property(readonly, nonatomic) struct os_unfair_lock_s unfairLock; // @synthesize unfairLock=_unfairLock;
 @property(retain, nonatomic) NSCache *tokenizersCache; // @synthesize tokenizersCache=_tokenizersCache;
 @property(retain, nonatomic) NSMutableArray *attachments; // @synthesize attachments=_attachments;
 @property(retain, nonatomic) NSSet *rangedExclusionPaths; // @synthesize rangedExclusionPaths=_rangedExclusionPaths;

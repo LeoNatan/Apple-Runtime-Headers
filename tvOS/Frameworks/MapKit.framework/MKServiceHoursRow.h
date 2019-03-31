@@ -19,7 +19,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) MKPlaceCompleteHoursView *completePlaceHoursView; // @synthesize completePlaceHoursView=_completePlaceHoursView;
 - (void).cxx_destruct;
 - (void)_setUpConstraints;
-- (id)initWithLinkedService:(id)arg1 frame:(struct CGRect)arg2 showNormalHoursOnly:(_Bool)arg3;
+- (id)initWithLinkedService:(id)arg1 frame:(struct CGRect)arg2 showTodaysHoursOnly:(_Bool)arg3;
 
 @end
 

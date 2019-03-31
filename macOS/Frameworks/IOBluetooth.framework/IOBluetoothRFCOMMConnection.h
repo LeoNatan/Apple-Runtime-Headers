@@ -16,6 +16,7 @@
     struct IONotificationPort *mNotificationPort;
 }
 
++ (id)openOnDeviceForFC:(id)arg1 doSyncronously:(BOOL)arg2;
 + (id)openOnDevice:(id)arg1 doSyncronously:(BOOL)arg2;
 + (id)getUniqueConnectionForDevice:(id)arg1;
 + (id)getKeyForIOService:(unsigned int)arg1;
@@ -27,6 +28,7 @@
 - (int)actOnNewConnection:(unsigned int)arg1;
 - (void)finalize;
 - (void)dealloc;
+- (void)createNewFCConnection:(id)arg1;
 - (id)getKey;
 
 @end

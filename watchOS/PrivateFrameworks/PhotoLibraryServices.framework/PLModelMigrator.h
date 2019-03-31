@@ -38,7 +38,6 @@
 + (_Bool)_persistStoreUUIDToMobileCPLPlist:(id)arg1;
 + (_Bool)_fixNilCloudMasterGUID:(id)arg1;
 + (_Bool)_fixAssetMasterResources:(id)arg1;
-+ (_Bool)_repushVideoAssetsInStore:(id)arg1;
 + (_Bool)_repushAssetsWithAnyUserConfirmedFaceInStore:(id)arg1;
 + (_Bool)_repushAssetsWithNewGroupingPropertiesInStore:(id)arg1;
 + (_Bool)_repushAssetsMatchingPredicate:(id)arg1 inStore:(id)arg2 withMaster:(_Bool)arg3;

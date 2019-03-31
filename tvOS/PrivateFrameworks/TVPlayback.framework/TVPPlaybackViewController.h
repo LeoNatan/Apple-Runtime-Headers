@@ -24,11 +24,11 @@
     _Bool _startedPlaying;
     _Bool _hasBeenRemovedFromParentViewController;
     NSObject<TVPPlayback> *_player;
+    long long _initialPlaybackType;
     long long _resumeMenuOption;
     double _startTime;
     id <TVPPlaybackViewControllerDelegate> _playbackDelegate;
     MPAVRoute *_endpointRoute;
-    long long _initialPlaybackType;
     NSTimer *_playbackLimitTimer;
     TVPHardwareButtonEventManager *_buttonEventManager;
 }
@@ -37,7 +37,6 @@
 @property(nonatomic) _Bool hasBeenRemovedFromParentViewController; // @synthesize hasBeenRemovedFromParentViewController=_hasBeenRemovedFromParentViewController;
 @property(retain, nonatomic) NSTimer *playbackLimitTimer; // @synthesize playbackLimitTimer=_playbackLimitTimer;
 @property(nonatomic, getter=hasStartedPlaying) _Bool startedPlaying; // @synthesize startedPlaying=_startedPlaying;
-@property(nonatomic) long long initialPlaybackType; // @synthesize initialPlaybackType=_initialPlaybackType;
 @property(nonatomic) _Bool invalidatePlayerWhenDone; // @synthesize invalidatePlayerWhenDone=_invalidatePlayerWhenDone;
 @property(retain, nonatomic) MPAVRoute *endpointRoute; // @synthesize endpointRoute=_endpointRoute;
 @property(nonatomic) _Bool isMusicPlaylist; // @synthesize isMusicPlaylist=_isMusicPlaylist;
@@ -49,6 +48,7 @@
 @property(nonatomic) _Bool showsTitleWhileLoading; // @synthesize showsTitleWhileLoading=_showsTitleWhileLoading;
 @property(nonatomic) double startTime; // @synthesize startTime=_startTime;
 @property(nonatomic) long long resumeMenuOption; // @synthesize resumeMenuOption=_resumeMenuOption;
+@property(readonly, nonatomic) long long initialPlaybackType; // @synthesize initialPlaybackType=_initialPlaybackType;
 @property(retain, nonatomic) NSObject<TVPPlayback> *player; // @synthesize player=_player;
 - (void).cxx_destruct;
 - (void)_playbackLimitTimerFired:(id)arg1;

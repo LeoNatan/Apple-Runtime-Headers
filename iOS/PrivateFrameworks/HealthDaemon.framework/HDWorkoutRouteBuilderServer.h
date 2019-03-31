@@ -16,7 +16,6 @@
 }
 
 + (id)taskIdentifier;
-+ (id)serverEntitlements;
 @property(retain, nonatomic) HKWorkoutRoute *route; // @synthesize route=_route;
 - (void).cxx_destruct;
 - (_Bool)_validateRouteData:(id)arg1 error:(out id *)arg2;

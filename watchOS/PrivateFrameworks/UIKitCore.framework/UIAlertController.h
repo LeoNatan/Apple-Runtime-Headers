@@ -46,7 +46,6 @@
     _UIAnimationCoordinator *_temporaryAnimationCoordinator;
     UIPreviewInteractionController *_previewInteractionController;
     UIAlertControllerVisualStyle *__visualStyle;
-    UIViewController *_accessibilityViewControllerForSizing;
     NSIndexSet *_indexesOfActionSectionSeparators;
     NSMutableArray *__actionDelimiterIndices;
     UIPopoverController *__compatibilityPopoverController;
@@ -75,7 +74,6 @@
 @property(setter=_setShouldAllowNilParameters:) _Bool _shouldAllowNilParameters; // @synthesize _shouldAllowNilParameters=__shouldAllowNilParameters;
 @property(readonly) NSMutableArray *_actionDelimiterIndices; // @synthesize _actionDelimiterIndices=__actionDelimiterIndices;
 @property(copy, nonatomic, getter=_indexesOfActionSectionSeparators, setter=_setIndexesOfActionSectionSeparators:) NSIndexSet *indexesOfActionSectionSeparators; // @synthesize indexesOfActionSectionSeparators=_indexesOfActionSectionSeparators;
-@property(retain, nonatomic, getter=_getAccessibilityViewControllerForSizing, setter=_setAccessibilityViewControllerForSizing:) UIViewController *accessibilityViewControllerForSizing; // @synthesize accessibilityViewControllerForSizing=_accessibilityViewControllerForSizing;
 @property(retain, nonatomic, setter=_setVisualStyle:) UIAlertControllerVisualStyle *_visualStyle; // @synthesize _visualStyle=__visualStyle;
 @property(retain, nonatomic, getter=_previewInteractionController, setter=_setPreviewInteractionController:) UIPreviewInteractionController *previewInteractionController; // @synthesize previewInteractionController=_previewInteractionController;
 @property(retain, nonatomic) _UIAnimationCoordinator *temporaryAnimationCoordinator; // @synthesize temporaryAnimationCoordinator=_temporaryAnimationCoordinator;
@@ -132,7 +130,6 @@
 @property(copy, nonatomic, getter=_attributedTitle, setter=_setAttributedTitle:) NSAttributedString *attributedTitle;
 @property(copy, nonatomic) NSString *message;
 @property(copy, nonatomic) NSString *title; // @dynamic title;
-- (id)_viewControllerForSizing;
 - (_Bool)_shouldFitWidthToContentViewControllerWidth;
 - (_Bool)_shouldSizeToFillSuperview;
 - (id)_alertControllerContainer;

@@ -42,6 +42,7 @@ __attribute__((visibility("hidden")))
 - (unsigned int)desiredResourcePolicy;
 - (unsigned int)desiredLocationProviderType;
 - (_Bool)requiresHighMemoryThreshold;
+- (id)currentDestination;
 
 @end
 

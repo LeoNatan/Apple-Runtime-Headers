@@ -13,7 +13,6 @@
 }
 
 @property(copy, nonatomic) NSString *contentSecurityPolicyHash;
-@property(copy, nonatomic) NSString *role;
 @property(copy, nonatomic) NSArray *pseudoElements;
 @property(retain, nonatomic) RWIProtocolDOMNode *templateContent;
 @property(copy, nonatomic) NSArray *shadowRoots;

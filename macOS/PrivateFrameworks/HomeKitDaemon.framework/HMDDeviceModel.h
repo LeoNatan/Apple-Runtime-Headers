@@ -6,7 +6,7 @@
 
 #import <HomeKitDaemon/HMDBackingStoreModelObject.h>
 
-@class HMDHomeKitVersion, HMFProductInfo, NSArray, NSString, NSUUID;
+@class HMDHomeKitVersion, HMDRPIdentity, HMFProductInfo, NSArray, NSString, NSUUID;
 
 @interface HMDDeviceModel : HMDBackingStoreModelObject
 {
@@ -21,6 +21,7 @@
 @property(retain, nonatomic) NSUUID *identifier; // @dynamic identifier;
 @property(retain, nonatomic) NSString *name; // @dynamic name;
 @property(retain, nonatomic) HMFProductInfo *productInfo; // @dynamic productInfo;
+@property(retain, nonatomic) HMDRPIdentity *rpIdentity; // @dynamic rpIdentity;
 @property(retain, nonatomic) HMDHomeKitVersion *version; // @dynamic version;
 
 @end

@@ -392,6 +392,7 @@
 - (void)processSharedHomeModelRemoved:(id)arg1 message:(id)arg2;
 - (void)_handleUserRemoved:(id)arg1;
 - (void)_handleResetHome:(id)arg1;
+- (id)homeUserFromMessage:(id)arg1 home:(id)arg2;
 - (void)_removeAllUsersOfHome:(id)arg1;
 - (void)_sendUserRemoved:(id)arg1 fromHome:(id)arg2 pairingUsername:(id)arg3 pushToCloud:(BOOL)arg4 completionHandler:(CDUnknownBlockType)arg5;
 - (void)_sendUserAdded:(id)arg1 destination:(id)arg2 toHome:(id)arg3;

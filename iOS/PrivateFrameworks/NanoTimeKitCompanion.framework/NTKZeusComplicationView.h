@@ -14,7 +14,6 @@
 
 @interface NTKZeusComplicationView : UIView <NTKComplicationDisplay, NTKZeusComplicationDisplay>
 {
-    UIView *_highlightView;
     _Bool canUseCurvedText;
     _Bool _highlighted;
     id <NTKComplicationDisplayObserver> displayObserver;
@@ -34,7 +33,6 @@
 - (void)applyTransitionFraction:(double)arg1 fromPalette:(id)arg2 toPalette:(id)arg3;
 - (void)applyPalette:(id)arg1;
 - (struct CGRect)contentFrame;
-- (void)layoutSubviews;
 - (id)init;
 
 // Remaining properties

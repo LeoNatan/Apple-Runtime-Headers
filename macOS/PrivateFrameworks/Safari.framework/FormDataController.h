@@ -22,6 +22,7 @@ __attribute__((visibility("hidden")))
     id <EncryptionProvider> _encryptionProvider;
     BOOL _shouldUseInsecureEncryptionKeyForMigration;
     NSMutableDictionary *_threadUnsafeDeniedCredentialsByProtectionSpace;
+    BOOL _hasAuthenticatedForPasswordAutoFillInClamshellMode;
 }
 
 + (BOOL)contactIsMe:(id)arg1;
@@ -29,6 +30,7 @@ __attribute__((visibility("hidden")))
 + (unsigned long long)numberOfTextFieldsInForm:(id)arg1;
 + (BOOL)isAddressBookPropertyAnAddressProperty:(id)arg1;
 + (id)sharedFormDataController;
+@property(nonatomic) BOOL hasAuthenticatedForPasswordAutoFillInClamshellMode; // @synthesize hasAuthenticatedForPasswordAutoFillInClamshellMode=_hasAuthenticatedForPasswordAutoFillInClamshellMode;
 - (void).cxx_destruct;
 - (id)uniqueIDOfMe;
 - (id)feedbackProcessorForAutoFillCorrectionManager:(id)arg1;
@@ -60,6 +62,7 @@ __attribute__((visibility("hidden")))
 - (BOOL)shouldSaveUsernamesAndPasswordsInFrame:(const struct Frame *)arg1;
 - (BOOL)_shouldSaveFormDataInFrame:(const struct Frame *)arg1;
 - (BOOL)_savingFormDataIsAllowedInFrame:(const struct Frame *)arg1 dataContainsGeneratedPassword:(BOOL)arg2;
+- (void)clearClamshellAuthenticationOverrideIfNecessary:(id)arg1;
 - (unsigned long long)_numberOfAddressBookAutoFillableFieldsInControls:(id)arg1;
 - (unsigned long long)_numberOfAddressBookElementsInControls:(id)arg1;
 - (BOOL)shouldOfferAddressBookAutoFillInTextField:(id)arg1 formMetadata:(id)arg2;
@@ -68,6 +71,7 @@ __attribute__((visibility("hidden")))
 - (id)_mutableSetForWBSAddressBookMatches;
 -     // Error parsing type: v56@0:8@16^{FormAddressBookAutoFillCompletionController=^^?{atomic<unsigned int>=AI}Bq@@@@{Vector<WTF::RefPtr<Safari::CompletionListItem, WTF::DumbPtrTraits<Safari::CompletionListItem> >, 0, WTF::CrashOnOverflow, 16>=^{RefPtr<Safari::CompletionListItem, WTF::DumbPtrTraits<Safari::CompletionListItem> >}II}@@dBBBBB{Vector<WTF::RefPtr<Safari::CompletionListItem, WTF::DumbPtrTraits<Safari::CompletionListItem> >, 0, WTF::CrashOnOverflow, 16>=^{RefPtr<Safari::CompletionListItem, WTF::DumbPtrTraits<Safari::CompletionListItem> >}II}@QB^{SafeAutoFillConfirmationController}@@{Frame={WKRetainPtr<const void *>=^v}}@@BBB@BBB@@@B}24@32@40@48, name: _findAllContactsWithSameFullNameAsContact:andGetValuesForContactFormWithCompletionController:metadata:inDomain:contactLabel:
 -     // Error parsing type: v40@0:8^{FormAddressBookAutoFillCompletionController=^^?{atomic<unsigned int>=AI}Bq@@@@{Vector<WTF::RefPtr<Safari::CompletionListItem, WTF::DumbPtrTraits<Safari::CompletionListItem> >, 0, WTF::CrashOnOverflow, 16>=^{RefPtr<Safari::CompletionListItem, WTF::DumbPtrTraits<Safari::CompletionListItem> >}II}@@dBBBBB{Vector<WTF::RefPtr<Safari::CompletionListItem, WTF::DumbPtrTraits<Safari::CompletionListItem> >, 0, WTF::CrashOnOverflow, 16>=^{RefPtr<Safari::CompletionListItem, WTF::DumbPtrTraits<Safari::CompletionListItem> >}II}@QB^{SafeAutoFillConfirmationController}@@{Frame={WKRetainPtr<const void *>=^v}}@@BBB@BBB@@@B}16@24@32, name: showFlexibleContactsAutoFillUIForCompletionController:metadataProvider:contactLabel:
+- (BOOL)shouldDeferLoadingWhileSavingFormDataInPage:(const struct Page *)arg1 frame:(const struct Frame *)arg2 sourceFrame:(const struct Frame *)arg3 formMetadata:(id)arg4 passwordGenerationCredentials:(id)arg5;
 - (void)_saveFormDataIfNecessary:(id)arg1 page:(const struct Page *)arg2 frame:(const struct Frame *)arg3 sourceFrame:(const struct Frame *)arg4 values:(id)arg5 forceConfirmationIfOverwritingSavedPassword:(BOOL)arg6 passwordGenerationCredentials:(id)arg7 completionHandler:(CDUnknownBlockType)arg8;
 - (void)saveUnsubmittedFormDataFromRemovedFrameIfNecessary:(id)arg1 page:(const struct Page *)arg2 frame:(const struct Frame *)arg3 sourceFrame:(const struct Frame *)arg4 passwordGenerationCredentials:(id)arg5;
 - (void)willSubmitFormInPage:(const struct Page *)arg1 toFrame:(const struct Frame *)arg2 fromFrame:(const struct Frame *)arg3 values:(id)arg4 userData:(const struct Type *)arg5 listener:(const struct FormSubmissionListener *)arg6;

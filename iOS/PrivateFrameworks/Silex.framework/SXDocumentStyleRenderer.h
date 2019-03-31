@@ -9,12 +9,11 @@
 #import <Silex/SXDocumentStyleRenderer-Protocol.h>
 #import <Silex/SXViewportChangeListener-Protocol.h>
 
-@class NSString, SXGradientFillView, SXImageFillView, SXVideoFillView, SXViewport, UIView;
-@protocol SXGradientFactory, SXImageFillViewFactory, SXPresentationDelegate, SXVideoFillViewFactory;
+@class NSString, SXFillView, SXGradientFillView, SXImageFillView, SXVideoFillView, SXViewport, UIView;
+@protocol SXGradientFactory, SXImageFillViewFactory, SXVideoFillViewFactory;
 
 @interface SXDocumentStyleRenderer : NSObject <SXViewportChangeListener, SXDocumentStyleRenderer>
 {
-    id <SXPresentationDelegate> _presentationDelegate;
     id <SXImageFillViewFactory> _imageFillViewFactory;
     id <SXVideoFillViewFactory> _videoFillViewFactory;
     SXViewport *_viewport;
@@ -23,8 +22,10 @@
     SXGradientFillView *_gradientFillView;
     SXImageFillView *_imageFillView;
     SXVideoFillView *_videoFillView;
+    SXFillView *_fillView;
 }
 
+@property(retain, nonatomic) SXFillView *fillView; // @synthesize fillView=_fillView;
 @property(retain, nonatomic) SXVideoFillView *videoFillView; // @synthesize videoFillView=_videoFillView;
 @property(retain, nonatomic) SXImageFillView *imageFillView; // @synthesize imageFillView=_imageFillView;
 @property(retain, nonatomic) SXGradientFillView *gradientFillView; // @synthesize gradientFillView=_gradientFillView;
@@ -33,9 +34,9 @@
 @property(readonly, nonatomic) SXViewport *viewport; // @synthesize viewport=_viewport;
 @property(readonly, nonatomic) id <SXVideoFillViewFactory> videoFillViewFactory; // @synthesize videoFillViewFactory=_videoFillViewFactory;
 @property(readonly, nonatomic) id <SXImageFillViewFactory> imageFillViewFactory; // @synthesize imageFillViewFactory=_imageFillViewFactory;
-@property(nonatomic) __weak id <SXPresentationDelegate> presentationDelegate; // @synthesize presentationDelegate=_presentationDelegate;
 - (void).cxx_destruct;
 - (void)viewport:(id)arg1 boundsDidChangeFromBounds:(struct CGRect)arg2;
+- (void)layoutFillView;
 - (void)layoutTopBackgroundView;
 - (id)videoPlayerViewForFill:(id)arg1;
 - (id)imageViewForFill:(id)arg1;

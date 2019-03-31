@@ -4,13 +4,13 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <objc/NSObject.h>
+#import <Silex/SXFontAttributes.h>
 
 #import <Silex/SXFontAttributes-Protocol.h>
 
 @class NSString;
 
-@interface SXTextSourceFontAttributes : NSObject <SXFontAttributes>
+@interface SXTextSourceFontAttributes : SXFontAttributes <SXFontAttributes>
 {
     NSString *_familyName;
     long long _style;

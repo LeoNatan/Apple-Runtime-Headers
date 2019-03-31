@@ -22,6 +22,7 @@ __attribute__((visibility("hidden")))
     _CSIRenditionBlockData *retainedBlockData;
     NSString *blockDataCacheKeyBGRX;
     NSString *blockDataCacheKeyRGBX;
+    NSString *blockDataCacheKeyGray;
     unsigned long long sourceRowbytes;
     unsigned int shouldCache:1;
     unsigned int usedForDataProvider:1;

@@ -12,10 +12,8 @@
 {
     CLKDevice *_device;
     NSDictionary *_moveChartPoints;
-    NSNumber *_minMoveValue;
     NSNumber *_maxMoveValue;
     NSDictionary *_exerciseChartPoints;
-    NSNumber *_minExerciseValue;
     NSNumber *_maxExerciseValue;
     NSDictionary *_standChartPoints;
     UIColor *_chartLineColor;

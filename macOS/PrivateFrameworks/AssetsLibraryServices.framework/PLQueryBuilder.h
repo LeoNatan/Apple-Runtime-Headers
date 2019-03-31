@@ -13,6 +13,8 @@
     PLQuery *_query;
 }
 
++ (id)validUnitValuesForQueryKey:(long long)arg1;
++ (id)validComparatorsForQueryKey:(long long)arg1;
 + (id)_combineFirstQuery:(id)arg1 secondQuery:(id)arg2 conjunction:(long long)arg3;
 + (id)notQuery:(id)arg1;
 + (id)orCombineFirstQuery:(id)arg1 secondQuery:(id)arg2;
@@ -20,6 +22,7 @@
 - (void).cxx_destruct;
 - (id)query;
 - (void)_addQueryForKey:(long long)arg1 withValue:(id)arg2 withType:(long long)arg3 withComparator:(long long)arg4;
+- (void)addPersonQuery:(id)arg1 comparator:(long long)arg2;
 - (void)addKeywordQuery:(id)arg1 exclude:(BOOL)arg2;
 - (void)addIntegerQueryKey:(long long)arg1 withValue:(long long)arg2 comparator:(long long)arg3;
 - (void)addDoubleQueryKey:(long long)arg1 withValue:(double)arg2 comparator:(long long)arg3;

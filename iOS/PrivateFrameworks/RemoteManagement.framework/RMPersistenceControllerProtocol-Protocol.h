@@ -6,9 +6,11 @@
 
 #import <RemoteManagement/NSObject-Protocol.h>
 
-@class NSManagedObjectContext;
+@class NSManagedObjectContext, NSString;
 
 @protocol RMPersistenceControllerProtocol <NSObject>
+- (void)setLocalPersistentStoreValue:(id)arg1 forKey:(NSString *)arg2;
+- (id)localPersistentStoreMetadataValueForKey:(NSString *)arg1;
 - (NSManagedObjectContext *)newBackgroundContext;
 - (NSManagedObjectContext *)viewContext;
 - (void)performBackgroundTaskAndWait:(void (^)(NSManagedObjectContext *))arg1;

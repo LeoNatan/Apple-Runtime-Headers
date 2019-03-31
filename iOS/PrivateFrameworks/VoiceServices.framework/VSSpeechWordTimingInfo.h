@@ -15,6 +15,7 @@
 }
 
 + (id)utf16TimingInfoWithUTF8Range:(id)arg1 withText:(id)arg2;
++ (unsigned long long)extraBytesFromUTF8ToUTF16With:(const char *)arg1 totalLength:(unsigned long long)arg2 begin:(unsigned long long)arg3 end:(unsigned long long)arg4;
 + (id)wordTimingInfoFrom:(id)arg1 timestamps:(id)arg2;
 + (_Bool)supportsSecureCoding;
 @property(nonatomic) struct _NSRange textRange; // @synthesize textRange=_textRange;

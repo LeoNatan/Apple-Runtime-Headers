@@ -8,7 +8,7 @@
 
 #import <NewsCore/FCAppleAccount-Protocol.h>
 
-@class NSString;
+@class NSArray, NSString;
 
 @interface FCAppleAccount : NSObject <FCAppleAccount>
 {
@@ -17,7 +17,6 @@
     NSString *_DSID;
     NSString *_userStoreFrontID;
     NSString *_contentStoreFrontID;
-    NSString *_primaryLanguageCode;
     NSString *_overrideContentStoreFrontID;
 }
 
@@ -25,7 +24,6 @@
 + (void)enableStoreFrontLocking;
 @property(copy, nonatomic) NSString *overrideContentStoreFrontID; // @synthesize overrideContentStoreFrontID=_overrideContentStoreFrontID;
 @property(nonatomic) _Bool iCloudAccountChanged; // @synthesize iCloudAccountChanged=_iCloudAccountChanged;
-@property(copy, nonatomic) NSString *primaryLanguageCode; // @synthesize primaryLanguageCode=_primaryLanguageCode;
 @property(copy, nonatomic) NSString *contentStoreFrontID; // @synthesize contentStoreFrontID=_contentStoreFrontID;
 @property(copy, nonatomic) NSString *userStoreFrontID; // @synthesize userStoreFrontID=_userStoreFrontID;
 @property(copy, nonatomic) NSString *DSID; // @synthesize DSID=_DSID;
@@ -38,9 +36,12 @@
 - (void)checkAllDevicesRunningMinimumiOSVersion:(CDStruct_912cb5d2)arg1 macOSVersion:(CDStruct_912cb5d2)arg2 orInactiveForTimeInterval:(double)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)checkAlliOSDevicesRunningMinimumOSVersion:(CDStruct_912cb5d2)arg1 orInactiveForTimeInterval:(double)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (id)currentStoreFrontID;
+@property(readonly, nonatomic) NSString *primaryLanguageCode;
+@property(readonly, nonatomic) NSArray *supportedLanguageCodes;
 @property(readonly, nonatomic) NSString *supportedContentStoreFrontID;
 @property(readonly, nonatomic) _Bool isContentStoreFrontSupported;
 - (_Bool)isUserSignedIntoiTunes;
+- (id)iCloudAccountDSID;
 - (id)iTunesAccountDSID;
 - (id)iTunesAccountName;
 @property(readonly, nonatomic) NSString *endpointConnectionClientID;

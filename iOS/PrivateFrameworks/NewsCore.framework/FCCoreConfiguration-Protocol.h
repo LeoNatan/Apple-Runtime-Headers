@@ -64,6 +64,7 @@
 - (FCPersonalizationTreatment *)personalizationTreatmentForFeldsparID:(NSString *)arg1;
 
 @optional
+@property(readonly, nonatomic) double feedLineHeightMultiplier;
 @property(readonly, nonatomic) NSString *spotlightChannelID;
 @property(readonly, nonatomic) long long subscriptionsGracePeriodForTokenVerificationSeconds;
 @property(readonly, nonatomic) long long subscriptionsPlacardGlobalMaximumPerDay;

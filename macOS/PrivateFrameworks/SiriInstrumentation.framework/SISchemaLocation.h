@@ -10,16 +10,19 @@
 
 @interface SISchemaLocation : PBCodable <NSCopying>
 {
-    float _lattitude;
+    float _horizontalAccuracyInMeters;
+    float _latitude;
     float _longitude;
     struct {
-        unsigned int lattitude:1;
+        unsigned int horizontalAccuracyInMeters:1;
+        unsigned int latitude:1;
         unsigned int longitude:1;
     } _has;
 }
 
+@property(nonatomic) float horizontalAccuracyInMeters; // @synthesize horizontalAccuracyInMeters=_horizontalAccuracyInMeters;
 @property(nonatomic) float longitude; // @synthesize longitude=_longitude;
-@property(nonatomic) float lattitude; // @synthesize lattitude=_lattitude;
+@property(nonatomic) float latitude; // @synthesize latitude=_latitude;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
@@ -29,8 +32,9 @@
 - (BOOL)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(nonatomic) BOOL hasHorizontalAccuracyInMeters;
 @property(nonatomic) BOOL hasLongitude;
-@property(nonatomic) BOOL hasLattitude;
+@property(nonatomic) BOOL hasLatitude;
 
 @end
 

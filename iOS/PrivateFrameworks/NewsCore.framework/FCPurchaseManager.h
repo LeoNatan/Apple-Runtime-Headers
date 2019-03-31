@@ -48,7 +48,7 @@
 - (void)finishPurchaseTransactionWithProductID:(id)arg1;
 - (void)performEntitlementWithTagID:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)transactionPurchasedWithProductID:(id)arg1;
-- (void)transactionFailedWithProductID:(id)arg1 transactionState:(long long)arg2 transacitonError:(id)arg3;
+- (void)transactionFailedWithProductID:(id)arg1 transactionState:(long long)arg2 transactionError:(id)arg3;
 - (void)startPurchaseWithTagID:(id)arg1 productID:(id)arg2 purchaseID:(id)arg3 appAdamID:(id)arg4 storeExternalVersion:(id)arg5 price:(id)arg6 webAccessOptIn:(_Bool)arg7 payment:(id)arg8 error:(id *)arg9;
 - (void)startPurchaseWithTagID:(id)arg1 purchase:(id)arg2 webAccessOptIn:(_Bool)arg3 error:(id *)arg4;
 - (void)startBundlePurchaseWithPurchase:(id)arg1 error:(id *)arg2;

@@ -12,18 +12,22 @@
 
 @interface NTPBPDFPageView : PBCodable <NSCopying>
 {
+    CDStruct_95bda58d _pageIndices;
     NSString *_campaignId;
     NTPBChannelData *_channelData;
     int _groupType;
     NTPBIssueData *_issueData;
     NTPBIssueExposureData *_issueExposureData;
     NTPBIssueViewData *_issueViewData;
+    NSString *_language;
     NSString *_notificationId;
     int _pageCount;
-    int _pageIndex;
     int _paidSubscriberToFeedType;
+    int _paidSubscriptionConversionPointType;
     NSString *_parentFeedId;
     int _parentFeedType;
+    NSString *_referringSourceApplication;
+    NSString *_referringUrl;
     NSString *_sourceChannelId;
     _Bool _adSupportedChannel;
     _Bool _isFreeIssue;
@@ -32,8 +36,8 @@
     struct {
         unsigned int groupType:1;
         unsigned int pageCount:1;
-        unsigned int pageIndex:1;
         unsigned int paidSubscriberToFeedType:1;
+        unsigned int paidSubscriptionConversionPointType:1;
         unsigned int parentFeedType:1;
         unsigned int adSupportedChannel:1;
         unsigned int isFreeIssue:1;
@@ -42,6 +46,9 @@
     } _has;
 }
 
+@property(retain, nonatomic) NSString *referringUrl; // @synthesize referringUrl=_referringUrl;
+@property(retain, nonatomic) NSString *referringSourceApplication; // @synthesize referringSourceApplication=_referringSourceApplication;
+@property(retain, nonatomic) NSString *language; // @synthesize language=_language;
 @property(retain, nonatomic) NTPBChannelData *channelData; // @synthesize channelData=_channelData;
 @property(retain, nonatomic) NSString *notificationId; // @synthesize notificationId=_notificationId;
 @property(nonatomic) _Bool viewFromNotificationDirectOpen; // @synthesize viewFromNotificationDirectOpen=_viewFromNotificationDirectOpen;
@@ -52,7 +59,6 @@
 @property(retain, nonatomic) NSString *parentFeedId; // @synthesize parentFeedId=_parentFeedId;
 @property(nonatomic) _Bool isFreeIssue; // @synthesize isFreeIssue=_isFreeIssue;
 @property(nonatomic) int pageCount; // @synthesize pageCount=_pageCount;
-@property(nonatomic) int pageIndex; // @synthesize pageIndex=_pageIndex;
 @property(retain, nonatomic) NTPBIssueViewData *issueViewData; // @synthesize issueViewData=_issueViewData;
 @property(retain, nonatomic) NTPBIssueExposureData *issueExposureData; // @synthesize issueExposureData=_issueExposureData;
 @property(retain, nonatomic) NTPBIssueData *issueData; // @synthesize issueData=_issueData;
@@ -65,6 +71,13 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(readonly, nonatomic) _Bool hasReferringUrl;
+@property(readonly, nonatomic) _Bool hasReferringSourceApplication;
+@property(readonly, nonatomic) _Bool hasLanguage;
+- (int)StringAsPaidSubscriptionConversionPointType:(id)arg1;
+- (id)paidSubscriptionConversionPointTypeAsString:(int)arg1;
+@property(nonatomic) _Bool hasPaidSubscriptionConversionPointType;
+@property(nonatomic) int paidSubscriptionConversionPointType; // @synthesize paidSubscriptionConversionPointType=_paidSubscriptionConversionPointType;
 - (int)StringAsPaidSubscriberToFeedType:(id)arg1;
 - (id)paidSubscriberToFeedTypeAsString:(int)arg1;
 @property(nonatomic) _Bool hasPaidSubscriberToFeedType;
@@ -87,10 +100,16 @@
 @property(nonatomic) int parentFeedType; // @synthesize parentFeedType=_parentFeedType;
 @property(nonatomic) _Bool hasIsFreeIssue;
 @property(nonatomic) _Bool hasPageCount;
-@property(nonatomic) _Bool hasPageIndex;
+- (void)setPageIndices:(int *)arg1 count:(unsigned long long)arg2;
+- (int)pageIndicesAtIndex:(unsigned long long)arg1;
+- (void)addPageIndices:(int)arg1;
+- (void)clearPageIndices;
+@property(readonly, nonatomic) int *pageIndices;
+@property(readonly, nonatomic) unsigned long long pageIndicesCount;
 @property(readonly, nonatomic) _Bool hasIssueViewData;
 @property(readonly, nonatomic) _Bool hasIssueExposureData;
 @property(readonly, nonatomic) _Bool hasIssueData;
+- (void)dealloc;
 
 @end
 

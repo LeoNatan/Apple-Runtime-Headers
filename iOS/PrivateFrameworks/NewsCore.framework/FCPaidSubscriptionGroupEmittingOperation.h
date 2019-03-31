@@ -14,12 +14,13 @@
 
 - (_Bool)unlimitedBackfill;
 - (_Bool)alwaysShowExpiredGroups;
+- (id)_createGroupForChannel:(id)arg1 headlines:(id)arg2;
 - (void)_fetchAdditionalFeedItemsForChannel:(id)arg1 feedRange:(id)arg2 block:(CDUnknownBlockType)arg3;
 - (void)_fetchHeadlinesForFeedItems:(id)arg1 feedContextByFeedID:(id)arg2 block:(CDUnknownBlockType)arg3;
 - (void)_fetchTagForSourceChannelIdentifier:(id)arg1 block:(CDUnknownBlockType)arg2;
-- (id)_feedItemsTransformation;
-- (id)_additionalFeedItemsTransformationLimitedToNumberOfFeedItems:(unsigned long long)arg1;
-- (void)_constructGroupForChannelWithIdentifier:(id)arg1 usingFeedItems:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
+- (id)_feedItemsTransformationWithOptions:(long long)arg1;
+- (id)_additionalFeedItemsTransformationLimitedToNumberOfFeedItems:(unsigned long long)arg1 withOptions:(long long)arg2;
+- (void)_constructGroupForChannelWithIdentifier:(id)arg1 usingFeedItems:(id)arg2 feedFilterOptions:(long long)arg3 completionBlock:(CDUnknownBlockType)arg4;
 - (void)performOperation;
 
 // Remaining properties

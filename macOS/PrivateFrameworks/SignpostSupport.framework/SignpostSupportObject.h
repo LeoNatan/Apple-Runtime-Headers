@@ -7,10 +7,11 @@
 #import <objc/NSObject.h>
 
 #import <SignpostSupport/SignpostSerializable-Protocol.h>
+#import <SignpostSupport/SignpostSupportTimeInterval-Protocol.h>
 
-@class NSString;
+@class NSDate, NSString;
 
-@interface SignpostSupportObject : NSObject <SignpostSerializable>
+@interface SignpostSupportObject : NSObject <SignpostSerializable, SignpostSupportTimeInterval>
 {
     NSString *_subsystem;
     NSString *_category;
@@ -23,8 +24,17 @@
 @property(retain, nonatomic) NSString *category; // @synthesize category=_category;
 @property(retain, nonatomic) NSString *subsystem; // @synthesize subsystem=_subsystem;
 - (void).cxx_destruct;
+- (id)_containedObjectsFromArray:(id)arg1;
+- (BOOL)_containsTimeObject:(id)arg1;
+- (BOOL)_containsMCT:(unsigned long long)arg1;
 @property(readonly) unsigned long long hash;
 - (BOOL)isEqual:(id)arg1;
+- (double)durationMs;
+- (double)endMs;
+- (double)startMs;
+- (double)startSeconds;
+- (double)endSeconds;
+- (unsigned long long)durationNanoseconds;
 @property(readonly, nonatomic) float durationSeconds;
 @property(readonly, nonatomic) unsigned long long durationMachContinuousTime;
 @property(readonly, nonatomic) unsigned long long endNanoseconds;
@@ -38,8 +48,16 @@
 - (id)initWithSubsystem:(id)arg1 category:(id)arg2 timebaseRatio:(double)arg3;
 - (id)descriptionStringForColumn:(unsigned long long)arg1 timeFormat:(unsigned long long)arg2;
 - (id)descriptionWithTimeFormat:(unsigned long long)arg1 verbosity:(unsigned char)arg2;
-- (id)endWallTimeStringWithTimeZone:(id)arg1;
-- (id)startWallTimeStringWithTimeZone:(id)arg1;
+@property(readonly, nonatomic) NSDate *endDate;
+@property(readonly, nonatomic) NSDate *beginDate;
+- (BOOL)endTimeval:(struct timeval *)arg1;
+- (BOOL)beginTimeval:(struct timeval *)arg1;
+- (BOOL)endTimezone:(struct timezone *)arg1;
+- (BOOL)beginTimezone:(struct timezone *)arg1;
+- (BOOL)_hasEndTimeval;
+- (BOOL)_hasBeginTimeval;
+- (id)endWallTimeStringWithTimeZoneName:(id)arg1;
+- (id)beginWallTimeStringWithTimeZoneName:(id)arg1;
 - (id)_wallTimeStringWithTimeZone:(id)arg1 isBegin:(BOOL)arg2;
 - (void)_adjustEndTimeVal:(struct timeval *)arg1;
 - (void)_adjustBeginTimeVal:(struct timeval *)arg1;

@@ -23,11 +23,11 @@
 + (id)contextWithOptions:(id)arg1;
 + (id)context;
 + (id)_singletonContext;
-+     // Error parsing type: ^{Context=^^?{atomic<unsigned int>=AI}^{CGColorSpace}^{CGColorSpace}iBBBBB^{CGContext}fB{CGRect={CGPoint=ff}{CGSize=ff}}{CGAffineTransform=ffffff}ILLi[64c]B^{ObjectCache<CI::MainProgram, false>}^{ObjectCache<CI::Node, false>}^{ObjectCache<CI::Node, false>}dd^{RenderTask}ii^{Context}I@@}12@0:4@8, name: internalCLContextWithOptions:
-+     // Error parsing type: ^{Context=^^?{atomic<unsigned int>=AI}^{CGColorSpace}^{CGColorSpace}iBBBBB^{CGContext}fB{CGRect={CGPoint=ff}{CGSize=ff}}{CGAffineTransform=ffffff}ILLi[64c]B^{ObjectCache<CI::MainProgram, false>}^{ObjectCache<CI::Node, false>}^{ObjectCache<CI::Node, false>}dd^{RenderTask}ii^{Context}I@@}16@0:4@8^v12, name: internalCLContextWithOptions:glContext:
-+     // Error parsing type: ^{Context=^^?{atomic<unsigned int>=AI}^{CGColorSpace}^{CGColorSpace}iBBBBB^{CGContext}fB{CGRect={CGPoint=ff}{CGSize=ff}}{CGAffineTransform=ffffff}ILLi[64c]B^{ObjectCache<CI::MainProgram, false>}^{ObjectCache<CI::Node, false>}^{ObjectCache<CI::Node, false>}dd^{RenderTask}ii^{Context}I@@}16@0:4@8@12, name: internalContextWithMTLDevice:options:
-+     // Error parsing type: ^{Context=^^?{atomic<unsigned int>=AI}^{CGColorSpace}^{CGColorSpace}iBBBBB^{CGContext}fB{CGRect={CGPoint=ff}{CGSize=ff}}{CGAffineTransform=ffffff}ILLi[64c]B^{ObjectCache<CI::MainProgram, false>}^{ObjectCache<CI::Node, false>}^{ObjectCache<CI::Node, false>}dd^{RenderTask}ii^{Context}I@@}16@0:4@8@12, name: internalContextWithEAGLContext:options:
-+     // Error parsing type: ^{Context=^^?{atomic<unsigned int>=AI}^{CGColorSpace}^{CGColorSpace}iBBBBB^{CGContext}fB{CGRect={CGPoint=ff}{CGSize=ff}}{CGAffineTransform=ffffff}ILLi[64c]B^{ObjectCache<CI::MainProgram, false>}^{ObjectCache<CI::Node, false>}^{ObjectCache<CI::Node, false>}dd^{RenderTask}ii^{Context}I@@}12@0:4@8, name: internalGLContextWithOptions:
++     // Error parsing type: ^{Context=^^?{atomic<unsigned int>=AI}^{CGColorSpace}^{CGColorSpace}iBBBBB^{CGContext}fB{CGRect={CGPoint=ff}{CGSize=ff}}{CGAffineTransform=ffffff}ILLi[64c]B^{ObjectCache<CI::MainProgram, false>}^{ObjectCache<CI::Node, false>}^{ObjectCache<CI::Node, false>}dd^{RenderTask}ii^{Context}I}12@0:4@8, name: internalCLContextWithOptions:
++     // Error parsing type: ^{Context=^^?{atomic<unsigned int>=AI}^{CGColorSpace}^{CGColorSpace}iBBBBB^{CGContext}fB{CGRect={CGPoint=ff}{CGSize=ff}}{CGAffineTransform=ffffff}ILLi[64c]B^{ObjectCache<CI::MainProgram, false>}^{ObjectCache<CI::Node, false>}^{ObjectCache<CI::Node, false>}dd^{RenderTask}ii^{Context}I}16@0:4@8^v12, name: internalCLContextWithOptions:glContext:
++     // Error parsing type: ^{Context=^^?{atomic<unsigned int>=AI}^{CGColorSpace}^{CGColorSpace}iBBBBB^{CGContext}fB{CGRect={CGPoint=ff}{CGSize=ff}}{CGAffineTransform=ffffff}ILLi[64c]B^{ObjectCache<CI::MainProgram, false>}^{ObjectCache<CI::Node, false>}^{ObjectCache<CI::Node, false>}dd^{RenderTask}ii^{Context}I}16@0:4@8@12, name: internalContextWithMTLDevice:options:
++     // Error parsing type: ^{Context=^^?{atomic<unsigned int>=AI}^{CGColorSpace}^{CGColorSpace}iBBBBB^{CGContext}fB{CGRect={CGPoint=ff}{CGSize=ff}}{CGAffineTransform=ffffff}ILLi[64c]B^{ObjectCache<CI::MainProgram, false>}^{ObjectCache<CI::Node, false>}^{ObjectCache<CI::Node, false>}dd^{RenderTask}ii^{Context}I}16@0:4@8@12, name: internalContextWithEAGLContext:options:
++     // Error parsing type: ^{Context=^^?{atomic<unsigned int>=AI}^{CGColorSpace}^{CGColorSpace}iBBBBB^{CGContext}fB{CGRect={CGPoint=ff}{CGSize=ff}}{CGAffineTransform=ffffff}ILLi[64c]B^{ObjectCache<CI::MainProgram, false>}^{ObjectCache<CI::Node, false>}^{ObjectCache<CI::Node, false>}dd^{RenderTask}ii^{Context}I}12@0:4@8, name: internalGLContextWithOptions:
 - (id)createColorCubeDataForFilters:(id)arg1 dimension:(int)arg2;
 - (id)description;
 - (struct CGRect)bounds;
@@ -83,7 +83,7 @@
 - (void)_gpuContextCheck;
 - (id)_initWithInternalRepresentation:(void *)arg1;
 // Error parsing type for property _internalContext:
-// Property attributes: T^{Context=^^?{atomic<unsigned int>=AI}^{CGColorSpace}^{CGColorSpace}iBBBBB^{CGContext}fB{CGRect={CGPoint=ff}{CGSize=ff}}{CGAffineTransform=ffffff}ILLi[64c]B^{ObjectCache<CI::MainProgram, false>}^{ObjectCache<CI::Node, false>}^{ObjectCache<CI::Node, false>}dd^{RenderTask}ii^{Context}I@@},R
+// Property attributes: T^{Context=^^?{atomic<unsigned int>=AI}^{CGColorSpace}^{CGColorSpace}iBBBBB^{CGContext}fB{CGRect={CGPoint=ff}{CGSize=ff}}{CGAffineTransform=ffffff}ILLi[64c]B^{ObjectCache<CI::MainProgram, false>}^{ObjectCache<CI::Node, false>}^{ObjectCache<CI::Node, false>}dd^{RenderTask}ii^{Context}I},R
 
 - (struct CGImage *)_createCGImage:(id)arg1 fromRect:(struct CGRect)arg2 format:(int)arg3 colorSpace:(struct CGColorSpace *)arg4 deferred:(_Bool)arg5 textureLimit:(unsigned long)arg6;
 - (id)_pdfDataRepresentation;

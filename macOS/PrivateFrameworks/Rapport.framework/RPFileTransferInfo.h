@@ -6,30 +6,16 @@
 
 #import <objc/NSObject.h>
 
-@class NSString, NSUUID;
+@class NSDictionary;
 
 @interface RPFileTransferInfo : NSObject
 {
-    double _bytesPerSecond;
-    double _remainingSeconds;
-    double _compressionRate;
-    NSString *_currentFilename;
-    NSUUID *_transferIdentifier;
-    long long _transferredByteCount;
-    long long _totalByteCount;
-    long long _transferredFileCount;
-    long long _totalFileCount;
+    long long _fileSize;
+    NSDictionary *_metadata;
 }
 
-@property(readonly, nonatomic) long long totalFileCount; // @synthesize totalFileCount=_totalFileCount;
-@property(readonly, nonatomic) long long transferredFileCount; // @synthesize transferredFileCount=_transferredFileCount;
-@property(readonly, nonatomic) long long totalByteCount; // @synthesize totalByteCount=_totalByteCount;
-@property(readonly, nonatomic) long long transferredByteCount; // @synthesize transferredByteCount=_transferredByteCount;
-@property(readonly, copy, nonatomic) NSUUID *transferIdentifier; // @synthesize transferIdentifier=_transferIdentifier;
-@property(readonly, copy, nonatomic) NSString *currentFilename; // @synthesize currentFilename=_currentFilename;
-@property(readonly, nonatomic) double compressionRate; // @synthesize compressionRate=_compressionRate;
-@property(readonly, nonatomic) double remainingSeconds; // @synthesize remainingSeconds=_remainingSeconds;
-@property(readonly, nonatomic) double bytesPerSecond; // @synthesize bytesPerSecond=_bytesPerSecond;
+@property(copy, nonatomic) NSDictionary *metadata; // @synthesize metadata=_metadata;
+@property(nonatomic) long long fileSize; // @synthesize fileSize=_fileSize;
 - (void).cxx_destruct;
 - (id)init;
 

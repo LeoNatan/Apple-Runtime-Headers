@@ -21,6 +21,7 @@
     NSArray *_zoneNames;
     NSString *_processName;
     NSString *_processDescriptionString;
+    NSString *_executablePath;
     NSString *_binaryImagesDescription;
     VMURangeToStringMap *_threadNameRanges;
     VMURangeToStringMap *_binarySectionNameRanges;
@@ -40,6 +41,7 @@
 
 @property(nonatomic) BOOL showsPhysFootprint; // @synthesize showsPhysFootprint=_showsPhysFootprint;
 @property(nonatomic) BOOL javaScriptCoreUsingPoisoning; // @synthesize javaScriptCoreUsingPoisoning=_javaScriptCoreUsingPoisoning;
+@property(readonly, nonatomic) NSString *executablePath; // @synthesize executablePath=_executablePath;
 @property(nonatomic) unsigned long long physicalFootprintPeak; // @synthesize physicalFootprintPeak=_physicalFootprintPeak;
 @property(nonatomic) unsigned long long physicalFootprint; // @synthesize physicalFootprint=_physicalFootprint;
 @property(nonatomic) BOOL showRawClassNames; // @synthesize showRawClassNames=_showRawClassNames;

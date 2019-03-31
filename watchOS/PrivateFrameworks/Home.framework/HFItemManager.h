@@ -26,7 +26,7 @@
 @class HFItem, HFItemManagerBatchedDelegateAdapter, HMHome, NAFuture, NSArray, NSMapTable, NSMutableDictionary, NSMutableSet, NSSet, NSString;
 @protocol HFCharacteristicReadPolicy, HFItemManagerDelegate;
 
-@interface HFItemManager : NSObject <HFStateDumpBuildable, HFHomeManagerObserver, HFHomeObserver, HFAccessoryObserver, HFResidentDeviceObserver, HFCameraObserver, HFMediaSessionObserver, HFMediaObjectObserver, HFSoftwareUpdateControllerObserver, HFSoftwareUpdateObserver, HFSymptomsHandlerObserver, HFUserObserver, HFSymptomFixSessionObserver, HFTelevisionObserver, HFTemperatureUnitObserver, HFItemUpdating>
+@interface HFItemManager : NSObject <HFStateDumpBuildable, HFHomeManagerObserver, HFHomeObserver, HFAccessoryObserver, HFResidentDeviceObserver, HFCameraObserver, HFMediaSessionObserver, HFMediaObjectObserver, HFSoftwareUpdateControllerObserver, HFSoftwareUpdateObserver, HFSymptomsHandlerObserver, HFUserObserver, HFTelevisionObserver, HFSymptomFixSessionObserver, HFTemperatureUnitObserver, HFItemUpdating>
 {
     _Bool _hasRequestedFirstUpdate;
     id <HFItemManagerDelegate> _delegate;

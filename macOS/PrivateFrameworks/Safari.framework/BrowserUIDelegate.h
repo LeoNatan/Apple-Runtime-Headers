@@ -50,6 +50,7 @@ __attribute__((visibility("hidden")))
 - (void)_webView:(id)arg1 decideDatabaseQuotaForSecurityOrigin:(id)arg2 databaseName:(id)arg3 displayName:(id)arg4 currentQuota:(unsigned long long)arg5 currentOriginUsage:(unsigned long long)arg6 currentDatabaseUsage:(unsigned long long)arg7 expectedUsage:(unsigned long long)arg8 decisionHandler:(CDUnknownBlockType)arg9;
 - (void)_webViewRunModal:(id)arg1;
 - (void)_webViewDidScroll:(id)arg1;
+- (void)_webViewDidClickGoBackFromSafeBrowsingWarning:(id)arg1;
 - (void)_webView:(id)arg1 runBeforeUnloadConfirmPanelWithMessage:(id)arg2 initiatedByFrame:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)_webView:(id)arg1 setWindowFrame:(struct CGRect)arg2;
 - (void)_webView:(id)arg1 getWindowFrameWithCompletionHandler:(CDUnknownBlockType)arg2;

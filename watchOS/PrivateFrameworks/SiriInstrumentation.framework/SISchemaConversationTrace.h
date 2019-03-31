@@ -13,11 +13,9 @@
 @interface SISchemaConversationTrace : PBCodable <NSCopying>
 {
     NSData *_previousTurnID;
-    NSData *_turnID;
 }
 
 @property(retain, nonatomic) NSData *previousTurnID; // @synthesize previousTurnID=_previousTurnID;
-@property(retain, nonatomic) NSData *turnID; // @synthesize turnID=_turnID;
 - (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)hash;
@@ -29,7 +27,6 @@
 - (id)dictionaryRepresentation;
 - (id)description;
 @property(readonly, nonatomic) _Bool hasPreviousTurnID;
-@property(readonly, nonatomic) _Bool hasTurnID;
 
 @end
 

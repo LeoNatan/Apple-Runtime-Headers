@@ -11,7 +11,7 @@
 #import <NanoTimeKit/NTKColorCircularUtilitarianFaceViewComplicationFactoryDelegate-Protocol.h>
 #import <NanoTimeKit/PUICCrownInputSequencerDelegate-Protocol.h>
 
-@class CLKUIQuadView, CLKUIResourceProviderKey, CLKUITexture, NSMapTable, NSString, NTKColorCircularUtilitarianFaceViewComplicationFactory, NTKKaleidoscopePathfinder, NTKPhoto, NTKRoundedCornerOverlayView, PUICClientSideAnimation, PUICCrownInputSequencer, UIColor, UIImage;
+@class CLKUIQuadView, CLKUIResourceProviderKey, CLKUITexture, NSMapTable, NSMutableSet, NSString, NTKColorCircularUtilitarianFaceViewComplicationFactory, NTKKaleidoscopePathfinder, NTKPhoto, NTKRoundedCornerOverlayView, PUICClientSideAnimation, PUICCrownInputSequencer, UIColor, UIImage;
 
 @interface NTKKaleidoscopeFaceView : NTKAnalogFaceView <NTKColorCircularUtilitarianFaceViewComplicationFactoryDelegate, CLKUIQuadViewDelegate, CLKUIResourceProviderDelegate, PUICCrownInputSequencerDelegate>
 {
@@ -37,6 +37,7 @@
     float _crownTurnsPerRotation;
     double _dayDuration;
     NSMapTable *_quadPathfinderMapTable;
+    NSMutableSet *_loadedAssets;
     unsigned int _currentAsset;
     unsigned int _currentStyle;
 }

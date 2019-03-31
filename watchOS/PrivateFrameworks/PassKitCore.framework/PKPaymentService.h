@@ -26,10 +26,11 @@
 - (void).cxx_destruct;
 - (void)_accessDelegate:(CDUnknownBlockType)arg1;
 - (_Bool)_hasInterfaceOfType:(unsigned int)arg1;
+- (void)defaultPaymentPassIngestionSpecificIdentifier:(CDUnknownBlockType)arg1;
 - (void)_defaultPaymentPassUniqueIdentifier:(CDUnknownBlockType)arg1;
 - (void)_messagesAppLaunchTokenForPassWithUniqueIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_transactionsAppLaunchTokenForPassWithUniqueIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)disbursementVoucherWithDisbursementSource:(unsigned int)arg1 disbursementTarget:(unsigned int)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)disbursementVoucherWithDisbursementSource:(unsigned int)arg1 disbursementTarget:(unsigned int)arg2 bundleIdentifier:(id)arg3 teamIdentifier:(id)arg4 completion:(CDUnknownBlockType)arg5;
 - (_Bool)supportsDisbursements;
 - (void)sharedPaymentWebServiceContextWithCompletion:(CDUnknownBlockType)arg1;
 @property(retain, nonatomic) PKPaymentWebServiceContext *sharedPaymentWebServiceContext;
@@ -51,6 +52,7 @@
 - (void)removeExpressPassesWithCardType:(int)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)setExpressWithPassInformation:(id)arg1 credential:(id)arg2 handler:(CDUnknownBlockType)arg3;
 - (void)setExpressWithPassInformation:(id)arg1 credential:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)conflictingExpressPassIdentifiersForPassInformation:(id)arg1 withReferenceExpressState:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)conflictingExpressPassIdentifiersForPassInformation:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (id)expressPassInformationForMode:(id)arg1;
 - (id)expressPassesInformation;

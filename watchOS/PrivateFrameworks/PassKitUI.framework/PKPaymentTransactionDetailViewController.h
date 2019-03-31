@@ -15,6 +15,7 @@
 @interface PKPaymentTransactionDetailViewController : PKSectionTableViewController <PKPeerPaymentContactResolverDelegate, PKPaymentDataProviderDelegate>
 {
     _Bool _reportingMapsIssue;
+    int _detailViewStyle;
     _Bool _issuerAppDeepLinkingEnabled;
     _Bool _inBridge;
     PKPaymentTransaction *_transaction;
@@ -67,7 +68,6 @@
 - (_Bool)_actionRowIsEnabled:(unsigned int)arg1;
 - (void)contactsDidChangeForContactResolver:(id)arg1;
 - (void)scrollViewDidScroll:(id)arg1;
-- (id)pkui_navigationBarItemTintColor;
 - (id)pkui_navigationBarTintColor;
 - (_Bool)pkui_prefersNavigationBarShadowHidden;
 - (void)_handlePeerPaymentDisplayableError:(id)arg1 withPeerPaymentController:(id)arg2;
@@ -92,7 +92,7 @@
 - (void)viewDidLoad;
 - (_Bool)shouldMapSection:(unsigned int)arg1;
 - (void)setTransaction:(id)arg1;
-- (id)initWithTransaction:(id)arg1 paymentPass:(id)arg2 contactResolver:(id)arg3 peerPaymentController:(id)arg4 paymentServiceDataProvider:(id)arg5;
+- (id)initWithTransaction:(id)arg1 paymentPass:(id)arg2 contactResolver:(id)arg3 peerPaymentController:(id)arg4 paymentServiceDataProvider:(id)arg5 detailViewStyle:(int)arg6;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

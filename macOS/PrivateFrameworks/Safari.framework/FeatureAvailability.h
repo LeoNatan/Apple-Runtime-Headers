@@ -20,6 +20,7 @@ __attribute__((visibility("hidden")))
     BOOL _threadUnsafeKeychainSyncEnabled;
     BOOL _threadUnsafeUserUsingManagedAppleID;
     BOOL _cachedIsTouchIDAvailable;
+    BOOL _cachedIsTouchIDSupportedOnDevice;
 }
 
 + (BOOL)wantsAggressiveKeychainCredentialCaching;
@@ -28,7 +29,10 @@ __attribute__((visibility("hidden")))
 + (id)_sharedInstance;
 + (BOOL)_safariIsInRecoverySystem;
 + (void)updateTouchIDAvailability;
++ (BOOL)isTouchIDSupportedOnDevice;
 + (BOOL)isTouchIDAvailable;
++ (BOOL)isCreditCardAutoFillAndAutoFillWithTouchIDEnabled;
++ (BOOL)isPasswordAutoFillAndAutoFillWithTouchIDEnabled;
 + (BOOL)isUserAllowedToToggleTouchIDToAutoFill;
 + (BOOL)canUseTouchIDWithAutoFill;
 + (BOOL)isTouchIDToAutoFillEnabledInUserDefaults;
@@ -52,6 +56,7 @@ __attribute__((visibility("hidden")))
 + (BOOL)isSafariSyncEnabled;
 + (BOOL)isUserSignedIntoICloud;
 + (void)startMonitoringForAvailabilityChanges;
+@property BOOL cachedIsTouchIDSupportedOnDevice; // @synthesize cachedIsTouchIDSupportedOnDevice=_cachedIsTouchIDSupportedOnDevice;
 @property BOOL cachedIsTouchIDAvailable; // @synthesize cachedIsTouchIDAvailable=_cachedIsTouchIDAvailable;
 @property(getter=isUserUsingManagedAppleID) BOOL userUsingManagedAppleID; // @synthesize userUsingManagedAppleID=_threadUnsafeUserUsingManagedAppleID;
 @property(getter=isKeychainSyncEnabled) BOOL keychainSyncEnabled; // @synthesize keychainSyncEnabled=_threadUnsafeKeychainSyncEnabled;
@@ -59,7 +64,7 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 @property(getter=isSafariSyncEnabled) BOOL safariSyncEnabled; // @synthesize safariSyncEnabled=_threadUnsafeSafariSyncEnabled;
 - (void)_updateKeychainSyncingStatus;
-- (void)_updateTouchIDAvailability;
+- (void)_updateTouchIDSupportAndAvailability;
 - (void)_iCloudServiceStatusChanged:(id)arg1;
 - (void)_iCloudLoggedInStateDidChange:(id)arg1;
 - (id)init;

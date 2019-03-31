@@ -41,7 +41,7 @@
 - (oneway void)speechRecordingDidEnd;
 - (oneway void)speechRecordingPerformTwoShotPromptWithType:(long long)arg1 reply:(CDUnknownBlockType)arg2;
 - (oneway void)speechRecordingStartpointDetected;
-- (oneway void)speechRecordingDidChangeAVRecordRoute:(id)arg1;
+- (oneway void)speechRecordingDidChangeAVRecordRoute:(id)arg1 isDucking:(_Bool)arg2 isTwoShot:(_Bool)arg3;
 - (oneway void)speechRecordingDidBeginOnAVRecordRoute:(id)arg1 audioSessionID:(unsigned int)arg2;
 - (oneway void)speechRecordingWillBeginWithInputAudioPowerXPCWrapper:(id)arg1;
 - (oneway void)aceConnectionWillRetryOnError:(id)arg1;

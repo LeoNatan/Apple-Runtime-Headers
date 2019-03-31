@@ -9,19 +9,18 @@
 #import <PassKitUI/AAUIDeviceToDeviceEncryptionHelperDelegate-Protocol.h>
 #import <PassKitUI/PKExplanationViewControllerDelegate-Protocol.h>
 #import <PassKitUI/PKPaymentSetupViewControllerDelegate-Protocol.h>
-#import <PassKitUI/RemoteUIControllerDelegate-Protocol.h>
 
-@class NSString, PKPaymentProvisioningController, PKPeerPaymentCredential, PKPeerPaymentSetupFlowHeroView, PKPeerPaymentWebService, RemoteUIController, UIImage;
+@class NSString, PKPaymentProvisioningController, PKPeerPaymentCredential, PKPeerPaymentSetupFlowHeroView, PKPeerPaymentTermsController, PKPeerPaymentWebService, UIImage;
 @protocol PKPaymentSetupViewControllerDelegate;
 
-@interface PKPeerPaymentPassActivationViewController : PKExplanationViewController <PKPaymentSetupViewControllerDelegate, AAUIDeviceToDeviceEncryptionHelperDelegate, RemoteUIControllerDelegate, PKExplanationViewControllerDelegate>
+@interface PKPeerPaymentPassActivationViewController : PKExplanationViewController <PKPaymentSetupViewControllerDelegate, AAUIDeviceToDeviceEncryptionHelperDelegate, PKExplanationViewControllerDelegate>
 {
     PKPaymentProvisioningController *_provisioningController;
     PKPeerPaymentCredential *_credential;
     id <PKPaymentSetupViewControllerDelegate> _delegate;
     unsigned long long _state;
     PKPeerPaymentWebService *_peerPaymentWebService;
-    RemoteUIController *_termsController;
+    PKPeerPaymentTermsController *_termsController;
     UIImage *_passSnapShot;
     _Bool _shouldShowAddDebitCardViewController;
     PKPeerPaymentSetupFlowHeroView *_heroView;
@@ -54,7 +53,6 @@
 - (struct CGSize)_snapshotSize;
 - (void)_processCloudStorePCSError;
 - (void)_initalizeCloudStoreWithTargetDevice:(id)arg1 ifNecessaryWithCompletion:(CDUnknownBlockType)arg2;
-- (void)remoteUIController:(id)arg1 didReceiveObjectModel:(id)arg2 actionSignal:(unsigned long long *)arg3;
 - (void)deviceToDeviceEncryptionHelper:(id)arg1 shouldContinueUpgradingUserToHSA2WithCompletion:(CDUnknownBlockType)arg2;
 - (void)explanationViewControllerDidSelectCancel:(id)arg1;
 - (void)viewControllerDidCancelSetupFlow:(id)arg1;

@@ -21,9 +21,11 @@
     NSData *_externalizedContext;
     struct __SecAccessControl *_accessControlRef;
     NSString *_physicalButtonTitle;
+    NSString *_passcodeTitle;
 }
 
 @property(nonatomic) _Bool assumeUserIntentAvailable; // @synthesize assumeUserIntentAvailable=_assumeUserIntentAvailable;
+@property(copy, nonatomic) NSString *passcodeTitle; // @synthesize passcodeTitle=_passcodeTitle;
 @property(copy, nonatomic) NSString *physicalButtonTitle; // @synthesize physicalButtonTitle=_physicalButtonTitle;
 @property(nonatomic) _Bool useStockAuthInterface; // @synthesize useStockAuthInterface=_useStockAuthInterface;
 @property(nonatomic) struct __SecAccessControl *accessControlRef; // @synthesize accessControlRef=_accessControlRef;

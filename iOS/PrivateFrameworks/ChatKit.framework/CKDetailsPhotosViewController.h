@@ -120,6 +120,7 @@
 - (void)didMoveToParentViewController:(id)arg1;
 - (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewDidDisappear:(_Bool)arg1;
+- (void)_invalidateCaches;
 - (void)loadView;
 - (id)initWithAttachmentItems:(id)arg1;
 - (void)dealloc;

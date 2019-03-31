@@ -21,6 +21,7 @@
 - (void).cxx_destruct;
 - (void)completeUserInteractionTaskWithSuccess:(_Bool)arg1 error:(id)arg2;
 - (void)workflowCoordinator:(id)arg1 workflowViewController:(id)arg2 didFinishSession:(id)arg3 withActivityState:(unsigned long long)arg4;
+- (long long)shareOriginForSession:(id)arg1 workflowCoordinator:(id)arg2;
 - (void)performUserInteractionTask;
 
 // Remaining properties

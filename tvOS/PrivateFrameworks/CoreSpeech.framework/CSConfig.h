@@ -10,6 +10,7 @@
 {
 }
 
++ (float)remoteVADDuration;
 + (float)daysBeforeRemovingLogFiles;
 + (int)csAudioProcessingQueuePriority;
 + (unsigned short)zeroFilterApproxAbsSpeechThreshold;

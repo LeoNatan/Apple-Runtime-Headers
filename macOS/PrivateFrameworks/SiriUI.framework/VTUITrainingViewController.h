@@ -73,6 +73,7 @@
 - (void)VTUITrainingManagerAudioSessionTerminatedInStatus:(int)arg1;
 - (void)VTUITrainingManagerFeedLevel:(float)arg1;
 - (void)_cleanupTrainingManagerWithCompletion:(CDUnknownBlockType)arg1;
+- (void)_setVoiceTriggerUserEnabled:(BOOL)arg1;
 - (void)_setPHSEnrollmentPrefEnabled:(BOOL)arg1;
 - (void)advance;
 - (void)cancelTraining;

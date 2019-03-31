@@ -8,6 +8,7 @@
 #import <NewsCore/NSObject-Protocol.h>
 
 @class NSString;
+@protocol FCChannelProviding;
 
 @protocol FCFeedTransformationItem <NSObject, FCFeedPersonalizingItem>
 @property(readonly, nonatomic) _Bool canBePurchased;
@@ -24,5 +25,8 @@
 @property(readonly, copy, nonatomic) NSString *clusterID;
 @property(readonly, copy, nonatomic) NSString *articleID;
 @property(readonly, copy, nonatomic) NSString *feedID;
+
+@optional
+@property(readonly, copy, nonatomic) id <FCChannelProviding> sourceChannel;
 @end
 

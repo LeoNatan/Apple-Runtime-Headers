@@ -24,6 +24,7 @@
 - (void)systemVolumeDidChange:(id)arg1;
 - (void)fetchVolumeFromAVSystemControllerForAudioCategory:(id)arg1;
 - (float)alarmVolume;
+- (void)musicVolumeWithCompletion:(CDUnknownBlockType)arg1;
 - (float)musicVolume;
 - (void)dealloc;
 - (void)_startMonitoringWithQueue:(id)arg1;

@@ -14,6 +14,7 @@
     unsigned long long _style;
     id <INUIAddVoiceShortcutButtonDelegate> _delegate;
     INShortcut *_shortcut;
+    double _cornerRadius;
     INVoiceShortcut *_voiceShortcut;
     CAFilter *_highlightFilter;
     UIImageView *_sphiriImageView;
@@ -38,6 +39,7 @@
 @property(nonatomic) __weak UIImageView *sphiriImageView; // @synthesize sphiriImageView=_sphiriImageView;
 @property(retain, nonatomic) CAFilter *highlightFilter; // @synthesize highlightFilter=_highlightFilter;
 @property(retain, nonatomic) INVoiceShortcut *voiceShortcut; // @synthesize voiceShortcut=_voiceShortcut;
+@property(nonatomic) double cornerRadius; // @synthesize cornerRadius=_cornerRadius;
 @property(retain, nonatomic) INShortcut *shortcut; // @synthesize shortcut=_shortcut;
 @property(nonatomic) __weak id <INUIAddVoiceShortcutButtonDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) unsigned long long style; // @synthesize style=_style;

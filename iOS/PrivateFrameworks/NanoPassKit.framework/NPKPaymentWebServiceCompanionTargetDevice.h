@@ -35,11 +35,12 @@
 @property(nonatomic) unsigned long long context; // @synthesize context=_context;
 @property(nonatomic) __weak id <NPKPaymentWebServiceCompanionTargetDeviceDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (id)_categoryIdentifierForPass:(id)arg1;
 - (id)_expressModesFromExpressPassesInformation:(id)arg1;
 - (id)_expressPassesInformationFromDataArray:(id)arg1;
 - (_Bool)_deviceIsFortuneOrLater;
 - (_Bool)_deviceIsDaytonaOrLater;
-- (_Bool)_deviceSupportMultipleExpressPasses;
+- (_Bool)deviceSupportMultipleExpressPasses;
 - (id)_serialNumbersOfAllPairedDevices;
 - (id)_sendProtobuf:(id)arg1 responseExpected:(_Bool)arg2 extraOptions:(id)arg3;
 - (id)_sendProtobuf:(id)arg1 responseExpected:(_Bool)arg2;
@@ -58,7 +59,7 @@
 - (void)sendWebServiceContextToWatch:(id)arg1;
 - (void)sendPaymentOptionsDefaultsToWatch;
 - (void)_singleExpressTransitPassPaymentWebService:(id)arg1 handlePotentialExpressPassInformation:(id)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
-- (void)_handlePotentialExpressPassInformation:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
+- (void)_multipleExpressTransitPassPaymentWebService:(id)arg1 handlePotentialExpressPassInformation:(id)arg2 pass:(id)arg3 withCompletionHandler:(CDUnknownBlockType)arg4;
 - (void)paymentWebService:(id)arg1 handlePotentialExpressPass:(id)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
 - (_Bool)supportsCredentialType:(long long)arg1;
 - (_Bool)supportsExpressForAutomaticSelectionTechnologyType:(long long)arg1;
@@ -88,6 +89,7 @@
 - (void)cancelOutstandingSetDefaultExpressPassRequestsWithExpressMode:(id)arg1;
 - (void)enableServiceModeResponse:(id)arg1;
 - (void)conflictingExpressPassIdentifiersForPassInformationResponse:(id)arg1;
+- (void)conflictingExpressPassIdentifiersForPassInformation:(id)arg1 withReferenceExpressState:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)conflictingExpressPassIdentifiersForPassInformation:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)removeExpressPassWithUniqueIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)removeExpressPassWithUniqueIdentifierResponse:(id)arg1;

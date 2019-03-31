@@ -52,6 +52,7 @@ __attribute__((visibility("hidden")))
     unsigned long long _reasonType;
     NSString *_lastRecognitionText;
     id _lastCorrectionIdentifier;
+    NSString *_lastMessageKeyboardLanguage;
     UIKeyboardInputMode *_currentInputModeForDictation;
     UIKeyboardInputMode *_keyboardInputModeToReturn;
     struct _NSRange _insertionRange;
@@ -106,6 +107,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool wantsAvailabilityMonitoringWhenAppActive; // @synthesize wantsAvailabilityMonitoringWhenAppActive=_wantsAvailabilityMonitoringWhenAppActive;
 @property(retain, nonatomic) UIKeyboardInputMode *keyboardInputModeToReturn; // @synthesize keyboardInputModeToReturn=_keyboardInputModeToReturn;
 @property(retain, nonatomic) UIKeyboardInputMode *currentInputModeForDictation; // @synthesize currentInputModeForDictation=_currentInputModeForDictation;
+@property(copy, nonatomic) NSString *lastMessageKeyboardLanguage; // @synthesize lastMessageKeyboardLanguage=_lastMessageKeyboardLanguage;
 @property(copy, nonatomic) id lastCorrectionIdentifier; // @synthesize lastCorrectionIdentifier=_lastCorrectionIdentifier;
 @property(copy, nonatomic) NSString *lastRecognitionText; // @synthesize lastRecognitionText=_lastRecognitionText;
 @property(nonatomic) unsigned long long reasonType; // @synthesize reasonType=_reasonType;

@@ -6,13 +6,15 @@
 
 #import <objc/NSObject.h>
 
+#import <InAppMessages/IAMViewControllerMetricsDelegate-Protocol.h>
 #import <InAppMessages/IAMWebMessageControllerDelegate-Protocol.h>
 
-@class IAMWebMessageController, ICInAppMessageEntry, NSString;
+@class IAMWebMessageController, ICInAppMessageEntry, NSString, NSURL;
 @protocol IAMWebMessagePresentationCoordinatorDelegate;
 
-@interface IAMWebMessagePresentationCoordinator : NSObject <IAMWebMessageControllerDelegate>
+@interface IAMWebMessagePresentationCoordinator : NSObject <IAMWebMessageControllerDelegate, IAMViewControllerMetricsDelegate>
 {
+    NSURL *_webArchiveURL;
     _Bool _isPresenting;
     id <IAMWebMessagePresentationCoordinatorDelegate> _delegate;
     IAMWebMessageController *_webMessageController;
@@ -24,16 +26,16 @@
 @property(nonatomic) _Bool isPresenting; // @synthesize isPresenting=_isPresenting;
 @property(nonatomic) __weak id <IAMWebMessagePresentationCoordinatorDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (void)viewController:(id)arg1 willDismissWithAction:(long long)arg2;
+- (void)webMessageControllerWebViewDidRequestAction:(id)arg1 actionConfiguration:(id)arg2;
 - (void)webMessageControllerWebViewDidRequestOpenURL:(id)arg1 url:(id)arg2;
 - (void)webMessageControllerWebViewDidReportEvent:(id)arg1 event:(id)arg2;
 - (void)webMessageControllerWebViewDidRequestClose:(id)arg1;
 - (void)_handleWebMessageClose;
-- (void)_handleViewControllerDidDismissNotification;
 - (_Bool)present;
 - (void)load;
 - (id)presentingViewController;
-- (void)dealloc;
-- (id)initWithWebMessageEntry:(id)arg1;
+- (id)initWithWebMessageEntry:(id)arg1 webArchiveURL:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

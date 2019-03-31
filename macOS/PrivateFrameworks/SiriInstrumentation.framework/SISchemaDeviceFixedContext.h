@@ -12,26 +12,20 @@
 
 @interface SISchemaDeviceFixedContext : PBCodable <NSCopying>
 {
-    long long _sharedUserID;
-    long long _siriDeviceID;
     NSString *_deviceType;
+    NSString *_siriDeviceID;
     NSString *_siriInputLanguage;
     NSString *_siriVoiceLanguage;
     NSString *_systemBuild;
     NSString *_systemLocale;
-    struct {
-        unsigned int sharedUserID:1;
-        unsigned int siriDeviceID:1;
-    } _has;
 }
 
+@property(retain, nonatomic) NSString *siriDeviceID; // @synthesize siriDeviceID=_siriDeviceID;
 @property(retain, nonatomic) NSString *systemLocale; // @synthesize systemLocale=_systemLocale;
 @property(retain, nonatomic) NSString *siriVoiceLanguage; // @synthesize siriVoiceLanguage=_siriVoiceLanguage;
 @property(retain, nonatomic) NSString *siriInputLanguage; // @synthesize siriInputLanguage=_siriInputLanguage;
 @property(retain, nonatomic) NSString *systemBuild; // @synthesize systemBuild=_systemBuild;
 @property(retain, nonatomic) NSString *deviceType; // @synthesize deviceType=_deviceType;
-@property(nonatomic) long long sharedUserID; // @synthesize sharedUserID=_sharedUserID;
-@property(nonatomic) long long siriDeviceID; // @synthesize siriDeviceID=_siriDeviceID;
 - (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -42,13 +36,12 @@
 - (BOOL)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(readonly, nonatomic) BOOL hasSiriDeviceID;
 @property(readonly, nonatomic) BOOL hasSystemLocale;
 @property(readonly, nonatomic) BOOL hasSiriVoiceLanguage;
 @property(readonly, nonatomic) BOOL hasSiriInputLanguage;
 @property(readonly, nonatomic) BOOL hasSystemBuild;
 @property(readonly, nonatomic) BOOL hasDeviceType;
-@property(nonatomic) BOOL hasSharedUserID;
-@property(nonatomic) BOOL hasSiriDeviceID;
 
 @end
 

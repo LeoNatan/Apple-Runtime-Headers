@@ -22,9 +22,9 @@
 }
 
 - (void).cxx_destruct;
-- (_Bool)_deactivateForReason:(int)arg1 options:(unsigned int)arg2 analyticsContext:(id)arg3 error:(id *)arg4;
-- (_Bool)_activateWithRequestInfo:(id)arg1 error:(id *)arg2;
-- (_Bool)_prewarmWithRequestInfo:(id)arg1 error:(id *)arg2;
+- (void)_deactivateForReason:(int)arg1 options:(unsigned int)arg2 analyticsContext:(id)arg3 completion:(CDUnknownBlockType)arg4;
+- (void)_activateWithRequestInfo:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)_prewarmWithRequestInfo:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_invalidate;
 - (void)_stop;
 - (void)_startWithDelegate:(id)arg1;

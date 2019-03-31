@@ -27,8 +27,9 @@
 - (id)defaultComponentTextStyleForTextSource:(id)arg1;
 - (id)componentTextStyleForTextSource:(id)arg1 inheritingFromDefaultStyles:(_Bool)arg2;
 - (id)textResizerForTextSource:(id)arg1;
-- (struct UIEdgeInsets)contentInsetsForSize:(struct CGSize)arg1;
-- (double)calculateHeightForWidth:(double)arg1 inColumnLayout:(id)arg2;
+- (struct UIEdgeInsets)layoutMarginsWithUnitConverter:(id)arg1;
+- (struct UIEdgeInsets)contentInsetsWithUnitConverter:(id)arg1;
+- (double)calculateHeightForWidth:(double)arg1 layoutContext:(id)arg2;
 - (id)initWithComponent:(id)arg1 componentLayout:(id)arg2 componentStyle:(id)arg3 DOMObjectProvider:(id)arg4 layoutOptions:(id)arg5 textProvider:(id)arg6 textComponentLayoutHosting:(id)arg7 textSourceFactory:(id)arg8;
 
 // Remaining properties

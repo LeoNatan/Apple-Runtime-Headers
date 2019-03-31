@@ -10,6 +10,7 @@
 @protocol PXImportStatusManager;
 
 @protocol PXOneUpPresentationDelegate <NSObject>
+- (long long)oneUpPresentationOrigin:(PXOneUpPresentation *)arg1;
 - (PXUIMediaProvider *)oneUpPresentationMediaProvider:(PXOneUpPresentation *)arg1;
 - (PXAssetsDataSourceManager *)oneUpPresentationDataSourceManager:(PXOneUpPresentation *)arg1;
 

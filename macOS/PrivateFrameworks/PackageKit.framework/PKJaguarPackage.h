@@ -30,6 +30,7 @@
 - (id)_scriptsDirectory;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)dealloc;
+- (id)initWithURL:(id)arg1 options:(id)arg2;
 - (id)initWithURL:(id)arg1;
 
 @end

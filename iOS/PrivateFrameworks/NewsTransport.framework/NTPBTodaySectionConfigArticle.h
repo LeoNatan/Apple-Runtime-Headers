@@ -15,8 +15,10 @@
     NSString *_articleID;
     NSString *_displayDateString;
     NSString *_storyType;
+    NSString *_title;
 }
 
+@property(retain, nonatomic) NSString *title; // @synthesize title=_title;
 @property(retain, nonatomic) NSString *storyType; // @synthesize storyType=_storyType;
 @property(retain, nonatomic) NSString *displayDateString; // @synthesize displayDateString=_displayDateString;
 @property(retain, nonatomic) NSString *articleID; // @synthesize articleID=_articleID;
@@ -28,6 +30,7 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(readonly, nonatomic) _Bool hasTitle;
 @property(readonly, nonatomic) _Bool hasStoryType;
 @property(readonly, nonatomic) _Bool hasDisplayDateString;
 @property(readonly, nonatomic) _Bool hasArticleID;

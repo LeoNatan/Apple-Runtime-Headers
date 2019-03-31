@@ -1423,13 +1423,6 @@ typedef struct {
 } CDStruct_c254c6af;
 
 typedef struct {
-    unsigned int muid:1;
-    unsigned int addressGeocodeAccuracyHint:1;
-    unsigned int placeTypeHint:1;
-    unsigned int resultProviderId:1;
-} CDStruct_f8e30bfb;
-
-typedef struct {
     unsigned int scanTimestamp:1;
     unsigned int age:1;
     unsigned int channel:1;

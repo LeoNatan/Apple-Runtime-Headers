@@ -285,7 +285,7 @@
 @property(readonly, nonatomic) NSArray *deviceSetupMediaAccessories;
 @property(readonly, nonatomic) NSArray *unassociatedMediaAccessories;
 - (id)_unassociatedMediaAccessoryWithIdentifier:(id)arg1;
-- (id)unassociatedHAPAccessories;
+- (id)unassociatedAccessoriesForNonEntitledClients;
 @property(readonly, copy) NSArray *unassociatedAccessories;
 - (void)removeUnassociatedAccessory:(id)arg1;
 - (void)removeUnassociatedAccessoryWithIdentifier:(id)arg1;

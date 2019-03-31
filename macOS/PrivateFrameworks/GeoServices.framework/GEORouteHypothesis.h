@@ -54,7 +54,7 @@
 - (id)description;
 - (void)_clearHypothesisAndSetErrorWithCode:(long long)arg1;
 - (void)_setError:(id)arg1;
-- (void)_updateTravelStateHasArrived:(BOOL)arg1 isTraveling:(BOOL)arg2 travelScore:(double)arg3;
+- (void)_updateTravelStateHasArrived:(BOOL)arg1 isTraveling:(BOOL)arg2 travelScore:(double)arg3 isNavigating:(BOOL)arg4 isNavigatingToDestination:(BOOL)arg5;
 - (void)_updateTrafficIncidents:(id)arg1;
 - (void)_updateTrafficDensityDescription:(id)arg1;
 - (void)_updateHistoricTrafficDensity:(double)arg1 staticTravelTime:(double)arg2;

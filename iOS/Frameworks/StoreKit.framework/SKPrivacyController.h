@@ -11,6 +11,7 @@
 }
 
 + (id)sharedInstance;
++ (void)validatePermissionsExpiryWithCompletion:(CDUnknownBlockType)arg1;
 - (void)requestAuthorization:(CDUnknownBlockType)arg1;
 - (long long)authorizationStatus;
 

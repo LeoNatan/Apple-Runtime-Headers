@@ -9,7 +9,7 @@
 #import <NewsCore/FCFeedPaginating-Protocol.h>
 
 @class FCSubscriptionList, NSString;
-@protocol FCCoreConfigurationManager, FCFeedPersonalizing;
+@protocol FCCoreConfigurationManager, FCFeedPersonalizing, FCPaidAccessCheckerType;
 
 @interface FCForYouFeedDescriptor : FCFeedDescriptor <FCFeedPaginating>
 {
@@ -17,8 +17,10 @@
     id <FCCoreConfigurationManager> _configurationManager;
     FCSubscriptionList *_subscriptionList;
     id <FCFeedPersonalizing> _feedPersonalizer;
+    id <FCPaidAccessCheckerType> _paidAccessChecker;
 }
 
+@property(retain, nonatomic) id <FCPaidAccessCheckerType> paidAccessChecker; // @synthesize paidAccessChecker=_paidAccessChecker;
 @property(retain, nonatomic) id <FCFeedPersonalizing> feedPersonalizer; // @synthesize feedPersonalizer=_feedPersonalizer;
 @property(retain, nonatomic) FCSubscriptionList *subscriptionList; // @synthesize subscriptionList=_subscriptionList;
 @property(retain, nonatomic) id <FCCoreConfigurationManager> configurationManager; // @synthesize configurationManager=_configurationManager;
@@ -39,8 +41,9 @@
 - (id)iAdFeedID;
 - (id)languagesWithSubscriptionController:(id)arg1;
 - (id)name;
+- (_Bool)hasEditions;
 - (_Bool)derivesContentsFromExplicitSubscriptions;
-- (id)initWithIdentifier:(id)arg1 trendingAndSavedStoriesCount:(long long)arg2 configurationManager:(id)arg3 subscriptionList:(id)arg4 feedPersonalizer:(id)arg5;
+- (id)initWithIdentifier:(id)arg1 trendingAndSavedStoriesCount:(long long)arg2 configurationManager:(id)arg3 subscriptionList:(id)arg4 feedPersonalizer:(id)arg5 paidAccessChecker:(id)arg6;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -18,7 +18,7 @@
 @property(retain, nonatomic) MKPlaceCompleteHoursView *completePlaceHoursView; // @synthesize completePlaceHoursView=_completePlaceHoursView;
 - (void).cxx_destruct;
 - (void)_setUpConstraints;
-- (id)initWithLinkedService:(id)arg1 frame:(struct CGRect)arg2 showNormalHoursOnly:(BOOL)arg3;
+- (id)initWithLinkedService:(id)arg1 frame:(struct CGRect)arg2 showTodaysHoursOnly:(BOOL)arg3;
 
 @end
 

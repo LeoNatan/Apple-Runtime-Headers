@@ -231,6 +231,7 @@ __attribute__((visibility("hidden")))
 - (Class)objectIDFactoryForEntity:(id)arg1;
 - (Class)_objectIDClass;
 - (id)entityForEntityDescription:(id)arg1;
+- (id)entityForObjectID:(id)arg1;
 - (id)entityForObject:(id)arg1;
 - (id)entityForFetchRequest:(id)arg1;
 

@@ -43,6 +43,7 @@
 - (id)accessibilityEffectsButton;
 - (id)accessibilityJoinLeaveButton;
 - (id)accessibilityHotdog;
+- (void)updateWithLegacyCall:(id)arg1;
 - (void)updateAudioRouteButtonFor:(id)arg1;
 - (void)updateControlsVisibilityForExpandedState:(_Bool)arg1;
 - (void)didTapAudioRouteButton:(id)arg1;

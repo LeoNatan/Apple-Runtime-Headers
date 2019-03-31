@@ -20,8 +20,10 @@
     UIView *_backgroundView;
     UIImageView *_wallpaperView;
     UIVisualEffectView *_blurView;
+    UIColor *_defaultBarItemTintColor;
 }
 
+@property(retain, nonatomic) UIColor *defaultBarItemTintColor; // @synthesize defaultBarItemTintColor=_defaultBarItemTintColor;
 - (void).cxx_destruct;
 - (void)navigationController:(id)arg1 didShowViewController:(id)arg2 animated:(_Bool)arg3;
 - (void)navigationController:(id)arg1 willShowViewController:(id)arg2 animated:(_Bool)arg3;

@@ -7,6 +7,7 @@
 #import <ConversationKit/_TtC15ConversationKit22ConversationController.h>
 
 @interface _TtC15ConversationKit22ConversationController (ConversationKit2)
+- (void)handleScreenConnectionDidUpdate:(id)arg1;
 - (void)handleLocalVideoPreviewFirstFrameArrived:(id)arg1;
 @end
 

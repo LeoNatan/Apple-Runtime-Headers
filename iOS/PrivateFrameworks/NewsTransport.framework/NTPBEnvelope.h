@@ -17,12 +17,14 @@
     int _contentTypeMinorVersion;
     int _contentTypePatchVersion;
     int _contentTypeVersion;
+    NSData *_identifier;
     struct {
         unsigned int contentTypeMinorVersion:1;
         unsigned int contentTypePatchVersion:1;
     } _has;
 }
 
+@property(retain, nonatomic) NSData *identifier; // @synthesize identifier=_identifier;
 @property(nonatomic) int contentTypePatchVersion; // @synthesize contentTypePatchVersion=_contentTypePatchVersion;
 @property(nonatomic) int contentTypeMinorVersion; // @synthesize contentTypeMinorVersion=_contentTypeMinorVersion;
 @property(retain, nonatomic) NSData *content; // @synthesize content=_content;
@@ -37,6 +39,7 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(readonly, nonatomic) _Bool hasIdentifier;
 @property(nonatomic) _Bool hasContentTypePatchVersion;
 @property(nonatomic) _Bool hasContentTypeMinorVersion;
 

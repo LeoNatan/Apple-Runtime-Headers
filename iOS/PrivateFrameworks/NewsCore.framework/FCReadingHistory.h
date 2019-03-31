@@ -53,6 +53,7 @@
 - (unsigned long long)likingStatusForArticleID:(id)arg1;
 - (_Bool)_markArticleAsSeenWithArticleID:(id)arg1 articleVersion:(long long)arg2 historyItem:(id)arg3 modifiedHistoryFeaturesOut:(unsigned long long *)arg4;
 - (_Bool)_markArticleAsSeenWithHeadline:(id)arg1 historyItem:(id)arg2 modifiedHistoryFeaturesOut:(unsigned long long *)arg3;
+- (id)markArticlesAsSeenWithHeadlines:(id)arg1;
 - (_Bool)markArticleAsSeenWithHeadline:(id)arg1;
 - (_Bool)hasArticleBeenSeen:(id)arg1;
 - (_Bool)hasArticleBeenVisited:(id)arg1;

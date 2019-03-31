@@ -8,7 +8,7 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class GEOLogMsgEventBatchTrafficProbe, GEOLogMsgEventCacheHit, GEOLogMsgEventClientACSuggestions, GEOLogMsgEventCommuteWindow, GEOLogMsgEventDirections, GEOLogMsgEventFullNavTrace, GEOLogMsgEventGenericAppError, GEOLogMsgEventListInteractionSession, GEOLogMsgEventLogFramework, GEOLogMsgEventMapLaunch, GEOLogMsgEventMapsWidgetsInteractionSession, GEOLogMsgEventNetwork, GEOLogMsgEventParkedCar, GEOLogMsgEventPlaceDataCache, GEOLogMsgEventProactiveSuggestionInteractionSession, GEOLogMsgEventRealtimeTrafficProbe, GEOLogMsgEventRefineSearchSession, GEOLogMsgEventStaleResource, GEOLogMsgEventStateTiming, GEOLogMsgEventTelemetric, GEOLogMsgEventTileCacheAnalytic, GEOLogMsgEventTileSetState, GEOLogMsgEventTimeToLeaveHypothesis, GEOLogMsgEventTimeToLeaveInitialTravelTime, GEOLogMsgEventTransitAppLaunch, GEOLogMsgEventUserAction, GEOLogMsgEventWifiConnectionQualityProbe, LOGMSGEVENTLogMsgEventRideBookedSession, LOGMSGEVENTLogMsgEventRideBookingSession, LOGMSGEVENTLogMsgEventTableBookedSession, LOGMSGEVENTLogMsgEventTableBookingSession, NSMutableArray;
+@class GEOLogMsgEventBatchTrafficProbe, GEOLogMsgEventCacheHit, GEOLogMsgEventClientACSuggestions, GEOLogMsgEventCommuteWindow, GEOLogMsgEventDirections, GEOLogMsgEventFullNavTrace, GEOLogMsgEventGenericAppError, GEOLogMsgEventGridDuration, GEOLogMsgEventListInteractionSession, GEOLogMsgEventLogFramework, GEOLogMsgEventMapLaunch, GEOLogMsgEventMapsWidgetsInteractionSession, GEOLogMsgEventNetwork, GEOLogMsgEventParkedCar, GEOLogMsgEventPlaceDataCache, GEOLogMsgEventProactiveSuggestionInteractionSession, GEOLogMsgEventRealtimeTrafficProbe, GEOLogMsgEventRefineSearchSession, GEOLogMsgEventStaleResource, GEOLogMsgEventStateTiming, GEOLogMsgEventTelemetric, GEOLogMsgEventTileCacheAnalytic, GEOLogMsgEventTileSetState, GEOLogMsgEventTimeToLeaveHypothesis, GEOLogMsgEventTimeToLeaveInitialTravelTime, GEOLogMsgEventTransitAppLaunch, GEOLogMsgEventUserAction, GEOLogMsgEventWifiConnectionQualityProbe, LOGMSGEVENTLogMsgEventRideBookedSession, LOGMSGEVENTLogMsgEventRideBookingSession, LOGMSGEVENTLogMsgEventTableBookedSession, LOGMSGEVENTLogMsgEventTableBookingSession, NSMutableArray;
 
 @interface GEOLogMsgEvent : PBCodable <NSCopying>
 {
@@ -21,6 +21,7 @@
     int _eventType;
     GEOLogMsgEventFullNavTrace *_fullNavTrace;
     GEOLogMsgEventGenericAppError *_genericAppErrorEvent;
+    GEOLogMsgEventGridDuration *_gridDuration;
     GEOLogMsgEventListInteractionSession *_listInteractionSession;
     GEOLogMsgEventLogFramework *_logFrameworkEvent;
     NSMutableArray *_logMsgStates;
@@ -57,6 +58,7 @@
 + (id)acceptedLogMsgStatesForLogMsgEventType:(int)arg1;
 + (id)acceptedLogMsgStates;
 + (void)_initializeAcceptedLogMsgStateTypes;
+@property(retain, nonatomic) GEOLogMsgEventGridDuration *gridDuration; // @synthesize gridDuration=_gridDuration;
 @property(retain, nonatomic) GEOLogMsgEventTileCacheAnalytic *tileCacheAnalytic; // @synthesize tileCacheAnalytic=_tileCacheAnalytic;
 @property(retain, nonatomic) GEOLogMsgEventParkedCar *parkedCar; // @synthesize parkedCar=_parkedCar;
 @property(retain, nonatomic) GEOLogMsgEventWifiConnectionQualityProbe *wifiConnectionQualityProbeEvent; // @synthesize wifiConnectionQualityProbeEvent=_wifiConnectionQualityProbeEvent;
@@ -99,6 +101,7 @@
 - (BOOL)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(readonly, nonatomic) BOOL hasGridDuration;
 @property(readonly, nonatomic) BOOL hasTileCacheAnalytic;
 @property(readonly, nonatomic) BOOL hasParkedCar;
 @property(readonly, nonatomic) BOOL hasWifiConnectionQualityProbeEvent;

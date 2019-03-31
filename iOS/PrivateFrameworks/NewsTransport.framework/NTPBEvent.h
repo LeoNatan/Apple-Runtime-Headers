@@ -18,6 +18,7 @@
     long long _personalizedTreatmentId;
     long long _startTimestamp;
     NSString *_appAnalyticsEventIdentifier;
+    NSString *_appAnalyticsEventPath;
     NSString *_bundleOfferId;
     NSString *_bundlePurchaseId;
     int _bundleSubscriptionStatus;
@@ -64,6 +65,7 @@
 }
 
 + (Class)userPaidSubscriptionStatusType;
+@property(retain, nonatomic) NSString *appAnalyticsEventPath; // @synthesize appAnalyticsEventPath=_appAnalyticsEventPath;
 @property(retain, nonatomic) NSString *appAnalyticsEventIdentifier; // @synthesize appAnalyticsEventIdentifier=_appAnalyticsEventIdentifier;
 @property(nonatomic) _Bool isBundlePurchaser; // @synthesize isBundlePurchaser=_isBundlePurchaser;
 @property(retain, nonatomic) NSString *bundleOfferId; // @synthesize bundleOfferId=_bundleOfferId;
@@ -98,6 +100,7 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(readonly, nonatomic) _Bool hasAppAnalyticsEventPath;
 @property(readonly, nonatomic) _Bool hasAppAnalyticsEventIdentifier;
 @property(nonatomic) _Bool hasIsBundlePurchaser;
 @property(readonly, nonatomic) _Bool hasBundleOfferId;

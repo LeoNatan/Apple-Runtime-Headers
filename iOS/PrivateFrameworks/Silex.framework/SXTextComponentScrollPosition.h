@@ -12,6 +12,7 @@
     double _relativeTextOffset;
 }
 
++ (_Bool)supportsSecureCoding;
 @property(nonatomic) double relativeTextOffset; // @synthesize relativeTextOffset=_relativeTextOffset;
 @property(nonatomic) long long characterIndex; // @synthesize characterIndex=_characterIndex;
 - (void)encodeWithCoder:(id)arg1;

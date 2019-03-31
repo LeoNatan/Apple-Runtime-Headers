@@ -46,6 +46,7 @@
 @property(retain, nonatomic) AXUIAlertStyleProvider *defaultAlertStyleProvider; // @synthesize defaultAlertStyleProvider=_defaultAlertStyleProvider;
 - (void).cxx_destruct;
 - (void)_didReceiveMemoryWarning:(id)arg1;
+- (void)_reapHiddenWindows;
 - (void)_resetServiceManager;
 - (void)collisionBehavior:(id)arg1 beganContactForItem:(id)arg2 withBoundaryIdentifier:(id)arg3 atPoint:(struct CGPoint)arg4;
 - (void)dynamicAnimatorDidPause:(id)arg1;

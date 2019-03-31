@@ -21,6 +21,7 @@
 @property(nonatomic) long long blendingMode; // @synthesize blendingMode=_blendingMode;
 @property(copy, nonatomic) NSAttributedString *attributedStringValue; // @synthesize attributedStringValue=_attributedStringValue;
 - (void).cxx_destruct;
+- (void)setSubviewsContentCompressionResistancePriority:(float)arg1 forOrientation:(long long)arg2;
 - (id)lastBaselineAnchor;
 - (id)firstBaselineAnchor;
 - (void)rebuildBlendingConfiguration;

@@ -14,6 +14,7 @@
 
 @interface STUsageDetailsViewModelCoordinator : NSObject <NSFetchedResultsControllerDelegate, STUsageDetailsViewModelCoordinator>
 {
+    _Bool _refreshing;
     STUsageDetailsViewModel *_viewModel;
     NSArray *_devices;
     NSString *_selectedDeviceIdentifier;
@@ -26,6 +27,7 @@
     NSFetchedResultsController *_usageBlocksFetchedResultsController;
 }
 
+@property(getter=isRefreshing) _Bool refreshing; // @synthesize refreshing=_refreshing;
 @property(retain, nonatomic) NSFetchedResultsController *usageBlocksFetchedResultsController; // @synthesize usageBlocksFetchedResultsController=_usageBlocksFetchedResultsController;
 @property(nonatomic) unsigned long long usageDataRefreshReferenceCount; // @synthesize usageDataRefreshReferenceCount=_usageDataRefreshReferenceCount;
 @property(retain, nonatomic) NSTimer *usageDataRefreshTimer; // @synthesize usageDataRefreshTimer=_usageDataRefreshTimer;

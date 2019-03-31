@@ -41,7 +41,10 @@
 - (_Bool)_isUpdatingDeviceMotion;
 - (void)_pauseMotionUpdates:(_Bool)arg1;
 - (void)_stopDeviceMotionUpdates;
+- (void)_stopDeviceMotionUpdatesHelper;
 - (void)_startDeviceMotionUpdates;
+- (void)_startDeviceMotionUpdatesHelper;
+- (CDUnknownBlockType)_motionLiteFusedHandler;
 - (_Bool)isEmulatedMicroGamepad;
 - (void)setInternalValueChangedHandler:(CDUnknownBlockType)arg1;
 - (CDUnknownBlockType)internalValueChangedHandler;

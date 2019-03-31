@@ -10,6 +10,7 @@
 #import <CoreSpeech/CSAudioRecorderDelegate-Protocol.h>
 #import <CoreSpeech/CSAudioRouteChangeMonitorDelegate-Protocol.h>
 #import <CoreSpeech/CSAudioServerCrashMonitorGibraltarDelegate-Protocol.h>
+#import <CoreSpeech/CSFirstUnlockMonitorDelegate-Protocol.h>
 #import <CoreSpeech/CSLanguageCodeUpdateMonitorDelegate-Protocol.h>
 #import <CoreSpeech/CSSiriEnabledMonitorDelegate-Protocol.h>
 #import <CoreSpeech/CSSmartSiriVolumeDelegate-Protocol.h>
@@ -17,10 +18,10 @@
 #import <CoreSpeech/CSVoiceTriggerAssetDownloadMonitorDelegate-Protocol.h>
 #import <CoreSpeech/CSVoiceTriggerDelegate-Protocol.h>
 
-@class CSAudioCircularBuffer, CSAudioRecorder, CSSmartSiriVolume, CSStateMachine, NSDictionary, NSHashTable, NSString, NSUUID;
+@class CSAudioCircularBuffer, CSAudioRecorder, CSRemoteVADCircularBuffer, CSSmartSiriVolume, CSStateMachine, NSDictionary, NSHashTable, NSString, NSUUID;
 @protocol CSSpeechManagerDelegate, OS_dispatch_queue, OS_dispatch_source;
 
-@interface CSSpeechManager : NSObject <CSAudioRecorderDelegate, CSStateMachineDelegate, CSVoiceTriggerDelegate, CSSiriEnabledMonitorDelegate, CSAudioServerCrashMonitorGibraltarDelegate, CSSmartSiriVolumeDelegate, CSActivationEventNotifierDelegate, CSAudioRouteChangeMonitorDelegate, CSVoiceTriggerAssetDownloadMonitorDelegate, CSLanguageCodeUpdateMonitorDelegate>
+@interface CSSpeechManager : NSObject <CSAudioRecorderDelegate, CSStateMachineDelegate, CSVoiceTriggerDelegate, CSSiriEnabledMonitorDelegate, CSAudioServerCrashMonitorGibraltarDelegate, CSSmartSiriVolumeDelegate, CSActivationEventNotifierDelegate, CSAudioRouteChangeMonitorDelegate, CSFirstUnlockMonitorDelegate, CSVoiceTriggerAssetDownloadMonitorDelegate, CSLanguageCodeUpdateMonitorDelegate>
 {
     _Bool _isSiriEnabled;
     _Bool _deviceRoleIsStereo;
@@ -31,6 +32,7 @@
     NSObject<OS_dispatch_queue> *_assetQueryQueue;
     CSStateMachine *_stateMachine;
     CSAudioCircularBuffer *_audioBuffer;
+    CSRemoteVADCircularBuffer *_remoteVADBuffer;
     id <CSSpeechManagerDelegate> _clientController;
     unsigned int _secondPassStartSampleCount;
     NSDictionary *_lastVoiceTriggerEventInfo;
@@ -69,6 +71,7 @@
 @property(retain, nonatomic) NSDictionary *lastVoiceTriggerEventInfo; // @synthesize lastVoiceTriggerEventInfo=_lastVoiceTriggerEventInfo;
 @property(nonatomic) unsigned int secondPassStartSampleCount; // @synthesize secondPassStartSampleCount=_secondPassStartSampleCount;
 @property(nonatomic) __weak id <CSSpeechManagerDelegate> clientController; // @synthesize clientController=_clientController;
+@property(retain, nonatomic) CSRemoteVADCircularBuffer *remoteVADBuffer; // @synthesize remoteVADBuffer=_remoteVADBuffer;
 @property(retain, nonatomic) CSAudioCircularBuffer *audioBuffer; // @synthesize audioBuffer=_audioBuffer;
 @property(retain, nonatomic) CSStateMachine *stateMachine; // @synthesize stateMachine=_stateMachine;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *assetQueryQueue; // @synthesize assetQueryQueue=_assetQueryQueue;
@@ -90,8 +93,9 @@
 - (void)_reinitializeSmartSiriVolumeWithAsset:(id)arg1;
 - (void)CSLanguageCodeUpdateMonitor:(id)arg1 didReceiveLanguageCodeChanged:(id)arg2;
 - (void)CSVoiceTriggerAssetDownloadMonitor:(id)arg1 didInstallNewAsset:(_Bool)arg2;
+- (void)CSFirstUnlockMonitor:(id)arg1 didReceiveFirstUnlock:(_Bool)arg2;
 - (void)voiceTriggerDidDetectTwoShotAtTime:(double)arg1;
-- (void)voiceTriggerDidDetectKeyword:(id)arg1;
+- (void)voiceTriggerDidDetectKeyword:(id)arg1 deviceId:(id)arg2;
 - (void)audioRecorderDisconnected:(id)arg1;
 - (void)audioRecorder:(id)arg1 didSetAudioSessionActive:(_Bool)arg2;
 - (void)audioRecorder:(id)arg1 willSetAudioSessionActive:(_Bool)arg2;
@@ -103,7 +107,7 @@
 - (void)audioRecorderDidStopRecording:(id)arg1 forReason:(int)arg2;
 - (void)audioRecorderDidStartRecording:(id)arg1 successfully:(_Bool)arg2 error:(id)arg3;
 - (void)audioRecorderBufferAvailable:(id)arg1 buffer:(id)arg2;
-- (void)audioRecorderBufferAvailable:(id)arg1 buffer:(id)arg2 atTime:(unsigned long long)arg3;
+- (void)audioRecorderBufferAvailable:(id)arg1 buffer:(id)arg2 remoteVAD:(id)arg3 atTime:(unsigned long long)arg4;
 - (id)_getClientRecordContext;
 - (void)_startForwardingToSmartSiriVolume;
 - (void)_stopForwardingToClient;

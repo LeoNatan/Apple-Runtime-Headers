@@ -42,6 +42,9 @@
 @property(retain, nonatomic) NSNumber *activeWatchNeedsLocationCheck; // @synthesize activeWatchNeedsLocationCheck=_activeWatchNeedsLocationCheck;
 @property(retain, nonatomic) HKHeartRhythmAvailability *availability; // @synthesize availability=_availability;
 - (void).cxx_destruct;
+- (id)watchOSVersionTooLowBodyString;
+- (id)deviceNotSupportedBodyString;
+- (id)featureDisabledBodyString;
 - (id)locationFeatureAlertAckButtonString;
 - (id)locationNotFoundPromptBodyString;
 - (id)locationFeatureIneligiblePromptBodyString;

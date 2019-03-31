@@ -15,6 +15,7 @@
     NSObject<OS_dispatch_queue> *_callbackQueue;
     NSMutableDictionary *_messageEntryCache;
     NSMutableDictionary *_propertyCache;
+    NSMutableDictionary *_messageMetadataCache;
     NSMutableArray *_pendingEvents;
     NSString *_filePath;
 }
@@ -23,6 +24,11 @@
 - (void)_commit;
 - (void)_load;
 - (id)_defaultStoreFilePath;
+- (void)removeAllMetadataForBundleIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)removeMetadataForMessageIdentifier:(id)arg1 bundleIdentifier:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)updateMetadata:(id)arg1 messageIdentifier:(id)arg2 bundleIdentifier:(id)arg3 completion:(CDUnknownBlockType)arg4;
+- (void)getAllMetadataForBundleIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)getMetadataForMessageIdentifier:(id)arg1 bundleIdentifier:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)removePendingMessageEventWithIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)pendingMessageEventsWithCompletion:(CDUnknownBlockType)arg1;
 - (void)addPendingMessageEvent:(id)arg1 completion:(CDUnknownBlockType)arg2;

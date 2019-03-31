@@ -24,7 +24,6 @@
     NSString *_currencyCode;
     NSArray *_reminderAmounts;
     unsigned long long _selectedReminderAmountIndex;
-    _Bool _remindersEnabled;
     id <PKBalanceDetailsViewControllerDelegate> _delegate;
 }
 
@@ -45,7 +44,6 @@
 - (_Bool)shouldMapSection:(unsigned long long)arg1;
 - (void)_handleActionSelected;
 - (void)_handleReminderAmountChanged:(id)arg1;
-- (void)_handleRemindersEnabledChanged:(id)arg1;
 - (void)_initializeReminderAmounts:(id)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)dealloc;

@@ -20,6 +20,7 @@
 @property(readonly, nonatomic) _Bool locked; // @synthesize locked=_locked;
 @property(readonly, nonatomic) NSString *path; // @synthesize path=_path;
 - (void).cxx_destruct;
+- (_Bool)lockWithBlock:(CDUnknownBlockType)arg1 error:(id *)arg2;
 - (void)unlock;
 - (_Bool)tryLock:(_Bool)arg1;
 - (_Bool)lock:(_Bool)arg1;

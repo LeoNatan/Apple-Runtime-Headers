@@ -13,10 +13,11 @@
     _Bool _isDestructiveAction;
     _Bool _showDisclosure;
     _Bool _showSpinner;
-    unsigned long long _type;
     NSString *_identifier;
+    unsigned long long _type;
     NSString *_title;
     NSString *_message;
+    CDUnknownBlockType _actionOnMessagePress;
     NSString *_buttonTitle;
     CDUnknownBlockType _actionOnButtonPress;
     CDUnknownBlockType _actionOnDismiss;
@@ -30,10 +31,11 @@
 @property(nonatomic) _Bool isDestructiveAction; // @synthesize isDestructiveAction=_isDestructiveAction;
 @property(copy, nonatomic) CDUnknownBlockType actionOnButtonPress; // @synthesize actionOnButtonPress=_actionOnButtonPress;
 @property(copy, nonatomic) NSString *buttonTitle; // @synthesize buttonTitle=_buttonTitle;
+@property(copy, nonatomic) CDUnknownBlockType actionOnMessagePress; // @synthesize actionOnMessagePress=_actionOnMessagePress;
 @property(copy, nonatomic) NSString *message; // @synthesize message=_message;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
-@property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(nonatomic) unsigned long long type; // @synthesize type=_type;
+@property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
 
 @end

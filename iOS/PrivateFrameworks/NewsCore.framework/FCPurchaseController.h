@@ -76,6 +76,7 @@
 - (void)fetchChannelIDsForPurchaseIDs:(id)arg1 callbackQueue:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)fetchOperationForPurchaseLookupWithPurchaseIDs:(id)arg1;
 - (void)addAppStoreDiscoveredChannelsToFavorites:(id)arg1;
+- (void)_entitlementCheckWithIgnoreCache:(_Bool)arg1 restorableBundleIAPs:(id)arg2 callbackQueue:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)_entitlementCheckWithIgnoreCache:(_Bool)arg1 callbackQueue:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)performEntitlementCheckWithIgnoreCache:(_Bool)arg1 callbackQueue:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)feldsparEntitlementCheckWithCallbackQueue:(id)arg1 ignoreCache:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
@@ -97,10 +98,11 @@
 - (void)setLastSignedInItunesAccountDSIDWithDSID:(id)arg1;
 - (id)lastSignedInItunesAccountDSID;
 - (void)clearAllAppStorePurchases;
-- (void)shouldShowiTunesSignedOutAlertWithiTunesAccountName:(id)arg1 iTunesAccountDSID:(id)arg2 isUserSignedIntoiTunes:(_Bool)arg3 completion:(CDUnknownBlockType)arg4;
-- (void)shouldShowSignedInWithDifferentiTunesAccountAlertWithiTunesAccountName:(id)arg1 iTunesAccountDSID:(id)arg2 isUserSignedIntoiTunes:(_Bool)arg3 completion:(CDUnknownBlockType)arg4;
+- (void)shouldShowiTunesSignedOutAlertWithiTunesAccountName:(id)arg1 iTunesAccountDSID:(id)arg2 isUserSignedIntoiTunes:(_Bool)arg3 isBundleSubscriber:(_Bool)arg4 completion:(CDUnknownBlockType)arg5;
+- (void)shouldShowSignedInWithDifferentiTunesAccountAlertWithiTunesAccountName:(id)arg1 iTunesAccountDSID:(id)arg2 isUserSignedIntoiTunes:(_Bool)arg3 isBundleSubscriber:(_Bool)arg4 completion:(CDUnknownBlockType)arg5;
 - (void)removeFromWebAccessOptedInListWithTagID:(id)arg1;
 - (void)addToWebAccessOptedInListWithTagID:(id)arg1;
+- (void)notifyPurchasesDiscoveredWithTagIDs:(id)arg1;
 - (void)notifyWebAccessOptedInListChanged;
 - (void)notifyPurchaseListChanged;
 - (void)notifyPurchaseRemovedWithTagIDs:(id)arg1;

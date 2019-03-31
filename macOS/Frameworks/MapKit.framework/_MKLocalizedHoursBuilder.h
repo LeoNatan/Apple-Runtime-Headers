@@ -14,6 +14,8 @@
     BOOL _isCurrentlyClosed;
     BOOL _isClosingSoon;
     BOOL _isOpeningSoon;
+    BOOL _isPermanentlyClosed;
+    BOOL _isTemporarilyClosed;
     NSString *_localizedOperatingHours;
     NSString *_localizedOpenState;
     NSColor *_hoursStateLabelColor;
@@ -25,10 +27,12 @@
 }
 
 + (id)localizedHoursDayRangeString:(id)arg1;
-+ (id)localizedHoursStringPermanentlyClosed;
-+ (id)localizedHoursStringTemporarilyClosed;
 + (id)localizedHoursStringSpecialHours;
 + (id)localizedHoursStringNormalHours;
++ (id)testGetHoursFormatter;
++ (id)testGetDayOfWeekFormatterShort;
++ (id)testGetDayOfWeekFormatterFull;
++ (id)testGetMonthAndDayFormatter;
 @property(retain, nonatomic) GEOBusinessHours *operatingHours; // @synthesize operatingHours=_operatingHours;
 @property(retain, nonatomic) NSTimeZone *timeZone; // @synthesize timeZone=_timeZone;
 @property(nonatomic) unsigned long long localizedHoursStringOptions; // @synthesize localizedHoursStringOptions=_localizedHoursStringOptions;
@@ -43,7 +47,7 @@
 @property(readonly, nonatomic) NSColor *hoursStateLabelColor; // @synthesize hoursStateLabelColor=_hoursStateLabelColor;
 @property(readonly, nonatomic) NSString *localizedOpenState; // @synthesize localizedOpenState=_localizedOpenState;
 @property(readonly, nonatomic) NSString *localizedOperatingHours; // @synthesize localizedOperatingHours=_localizedOperatingHours;
-- (void)_resetLocalizedBuilder;
+- (void)_resetLocalizedBuilder:(BOOL)arg1;
 - (void)_commonInit;
 - (id)initWithMapItemForMessageForBusiness:(id)arg1 localizedHoursStringOptions:(unsigned long long)arg2;
 - (id)initWithMapItem:(id)arg1 localizedHoursStringOptions:(unsigned long long)arg2;

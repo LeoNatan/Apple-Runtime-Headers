@@ -22,6 +22,7 @@
     NSTimer *_audioUnduckTimer;
 }
 
++ (BOOL)isDoAPSupportedForBluetoothAudioDevice:(unsigned int)arg1;
 + (unsigned int)currentBluetoothOutputDevice;
 + (BOOL)isMediaPaused;
 + (BOOL)isFanDuckingEnabled;

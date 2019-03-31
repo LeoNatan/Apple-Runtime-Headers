@@ -70,6 +70,7 @@
 - (double)contentHeightForWidth:(double)arg1;
 - (id)localeForCardSnippetView:(id)arg1;
 - (id)sashItemForCardSnippetView:(id)arg1;
+- (void)_logReferencedCommands;
 - (void)_forwardProgressEvent:(unsigned long long)arg1 toCardViewController:(id)arg2 animated:(_Bool)arg3;
 - (void)_forwardProgressEventToCardViewController:(unsigned long long)arg1;
 - (void)willConfirm;

@@ -65,7 +65,7 @@
 - (void)_createConstraints;
 - (void)_createSubviews;
 - (_Bool)_shouldHideImage;
-- (_Bool)_shouldShowTransferButton;
+- (_Bool)_readerModeIsSupported;
 - (void)paymentSetupDidFinish:(id)arg1;
 - (void)viewControllerDidTerminateSetupFlow:(id)arg1;
 - (void)paymentAuthorizationCoordinator:(id)arg1 didAuthorizePurchase:(id)arg2 completion:(CDUnknownBlockType)arg3;

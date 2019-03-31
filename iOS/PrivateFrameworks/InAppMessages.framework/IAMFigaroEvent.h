@@ -4,14 +4,34 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <InAppMessages/IAMEvent.h>
+#import <objc/NSObject.h>
 
-@interface IAMFigaroEvent : IAMEvent
+#import <InAppMessages/IAMEventProtocol-Protocol.h>
+
+@class NSDictionary, NSString;
+
+@interface IAMFigaroEvent : NSObject <IAMEventProtocol>
 {
+    long long _type;
+    NSDictionary *_payload;
 }
 
+@property(copy, nonatomic) NSDictionary *payload; // @synthesize payload=_payload;
+@property(nonatomic) long long type; // @synthesize type=_type;
+- (void).cxx_destruct;
 - (id)serializeFigaroEventProperties:(id)arg1 withPrefix:(id)arg2;
+- (id)decomposeKey:(id)arg1;
+- (_Bool)matchesWithKey:(id)arg1;
 - (id)initWithFigaroEventProperties:(id)arg1;
+@property(readonly, copy, nonatomic) NSString *name;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly, copy, nonatomic) NSString *source;
+@property(readonly) Class superclass;
+@property(readonly, copy, nonatomic) id value;
 
 @end
 

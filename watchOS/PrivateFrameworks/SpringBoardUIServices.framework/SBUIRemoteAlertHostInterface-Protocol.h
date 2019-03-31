@@ -4,9 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@class BSAnimationSettings, NSString, SBUIRemoteAlertIdleTimerSettings, SBUIRemoteAlertMaterialDescriptor;
+@class BSAnimationSettings, NSNumber, NSString, SBUIRemoteAlertIdleTimerSettings, SBUIRemoteAlertMaterialDescriptor;
 
 @protocol SBUIRemoteAlertHostInterface
+- (void)setSceneDeactivationReason:(NSNumber *)arg1;
 - (void)setWhitePointAdaptivityStyle:(int)arg1;
 - (void)setOrientationChangedEventsEnabled:(_Bool)arg1;
 - (void)setLaunchingInterfaceOrientation:(int)arg1;

@@ -6,23 +6,23 @@
 
 #import <objc/NSObject.h>
 
-@class CBDisplayModuleMacOS;
+@class CBDisplayModule;
 @protocol OS_dispatch_queue, OS_dispatch_source, OS_os_log;
 
 __attribute__((visibility("hidden")))
 @interface CBABRamp : NSObject
 {
-    CBDisplayModuleMacOS *_displayModule;
+    CBDisplayModule *_displayModule;
     NSObject<OS_dispatch_queue> *_queue;
     NSObject<OS_dispatch_source> *_fadeTimer;
     NSObject<OS_os_log> *_logHandle;
-    float maxLinearBrightness;
-    float minLinearBrightness;
+    float _maxLinearBrightness;
+    float _minLinearBrightness;
 }
 
 - (float)getVersion;
 - (void)setPerceptualBrightnessWithFade:(float)arg1 length:(float)arg2 current:(float)arg3;
-- (void)transitionToBrightness:(float)arg1;
+- (void)transitionToBrightness:(float)arg1 force:(BOOL)arg2 periodOverride:(BOOL)arg3 period:(float)arg4;
 - (void)stopTransition;
 - (void)dealloc;
 - (id)initWithDisplayModule:(id)arg1 andQueue:(id)arg2;

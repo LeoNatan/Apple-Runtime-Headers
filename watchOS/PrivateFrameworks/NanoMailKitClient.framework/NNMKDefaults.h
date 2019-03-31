@@ -10,6 +10,7 @@
 {
 }
 
++ (_Bool)isPPTEnviroment;
 + (_Bool)bypassBBForNotifications;
 + (id)pushNotificationVersion;
 + (unsigned int)openAllMessagesTestCount;

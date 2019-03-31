@@ -8,14 +8,13 @@
 
 #import <Silex/SXButtonComponent-Protocol.h>
 
-@class NSArray, NSString, SXComponentAnimation, SXComponentClassification, SXComponentConditions, SXJSONArray, SXJSONDictionary;
+@class NSString, SXComponentAnimation, SXComponentClassification, SXComponentConditions, SXJSONArray, SXJSONDictionary;
 @protocol SXComponentAnchor;
 
 @interface SXSubscriptionButtonComponent : SXComponent <SXButtonComponent>
 {
 }
 
-- (id)textStylesWithValue:(id)arg1 withType:(int)arg2;
 
 // Remaining properties
 @property(readonly, nonatomic) SXJSONArray *additions;
@@ -37,9 +36,7 @@
 @property(readonly, nonatomic) NSString *style;
 @property(readonly) Class superclass;
 @property(readonly, nonatomic) NSString *textStyle; // @dynamic textStyle;
-@property(readonly, nonatomic) NSArray *textStyles; // @dynamic textStyles;
 @property(readonly, nonatomic) unsigned long long traits;
 @property(readonly, nonatomic) NSString *type;
-
 @end
 

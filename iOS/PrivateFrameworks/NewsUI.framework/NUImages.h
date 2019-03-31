@@ -10,6 +10,7 @@
 {
 }
 
++ (id)welcomeToNewsIcon;
 + (id)newStoriesArrow;
 
 @end

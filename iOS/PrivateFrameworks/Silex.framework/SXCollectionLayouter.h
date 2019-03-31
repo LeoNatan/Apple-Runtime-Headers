@@ -9,7 +9,7 @@
 #import <Silex/SXLayouter-Protocol.h>
 
 @class NSString, SXContainerComponentBlueprint, SXLayouterFactory;
-@protocol SXColumnCalculator, SXLayouterDelegate;
+@protocol SXColumnCalculator, SXLayouterDelegate, SXUnitConverterFactory;
 
 @interface SXCollectionLayouter : NSObject <SXLayouter>
 {
@@ -17,16 +17,18 @@
     SXLayouterFactory *_layouterFactory;
     SXContainerComponentBlueprint *_containerComponentBlueprint;
     id <SXColumnCalculator> _columnCalculator;
+    id <SXUnitConverterFactory> _unitConverterFactory;
 }
 
+@property(readonly, nonatomic) id <SXUnitConverterFactory> unitConverterFactory; // @synthesize unitConverterFactory=_unitConverterFactory;
 @property(readonly, nonatomic) id <SXColumnCalculator> columnCalculator; // @synthesize columnCalculator=_columnCalculator;
 @property(readonly, nonatomic) SXContainerComponentBlueprint *containerComponentBlueprint; // @synthesize containerComponentBlueprint=_containerComponentBlueprint;
 @property(readonly, nonatomic) SXLayouterFactory *layouterFactory; // @synthesize layouterFactory=_layouterFactory;
 @property(nonatomic) __weak id <SXLayouterDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
-- (id)childColumnLayoutForRowLayout:(id)arg1 display:(id)arg2 collectionContainerBlueprint:(id)arg3 childContainerComponentBlueprint:(id)arg4 documentColumnLayout:(id)arg5;
+- (id)childColumnLayoutForRowLayout:(id)arg1 display:(id)arg2 collectionContainerBlueprint:(id)arg3 childContainerComponentBlueprint:(id)arg4 documentColumnLayout:(id)arg5 unitConverter:(id)arg6;
 - (void)layoutBlueprint:(id)arg1 columnLayout:(id)arg2 shouldContinue:(_Bool *)arg3;
-- (id)initWithContainerComponent:(id)arg1 layouterFactory:(id)arg2 columnCalculator:(id)arg3;
+- (id)initWithContainerComponent:(id)arg1 layouterFactory:(id)arg2 columnCalculator:(id)arg3 unitConverterFactory:(id)arg4;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

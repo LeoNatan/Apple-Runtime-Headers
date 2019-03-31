@@ -12,9 +12,11 @@
 {
     _Bool _allowsRotation;
     _Bool _reportsAbsoluteDpadValues;
+    long long _deviceType;
 }
 
 + (_Bool)supportsUSBInterfaceProtocol:(unsigned char)arg1;
+@property(nonatomic) long long deviceType; // @synthesize deviceType=_deviceType;
 @property(nonatomic) _Bool reportsAbsoluteDpadValues; // @synthesize reportsAbsoluteDpadValues=_reportsAbsoluteDpadValues;
 @property(nonatomic) _Bool allowsRotation; // @synthesize allowsRotation=_allowsRotation;
 - (void)setButton:(id)arg1 pressed:(_Bool)arg2;

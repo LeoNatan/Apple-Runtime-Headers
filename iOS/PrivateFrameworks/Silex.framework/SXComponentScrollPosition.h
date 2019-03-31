@@ -15,6 +15,7 @@
     double _canvasWidth;
 }
 
++ (_Bool)supportsSecureCoding;
 @property(nonatomic) double canvasWidth; // @synthesize canvasWidth=_canvasWidth;
 @property(nonatomic) double relativePageOffset; // @synthesize relativePageOffset=_relativePageOffset;
 @property(retain, nonatomic) NSString *componentIdentifier; // @synthesize componentIdentifier=_componentIdentifier;

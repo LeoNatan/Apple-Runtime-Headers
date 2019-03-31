@@ -6,7 +6,7 @@
 
 #import <PassKitCore/NSObject-Protocol.h>
 
-@class NSCalendar, NSData, NSDate, NSSet, NSString, PKExpressPassInformation, PKOSVersionRequirement, PKPass, PKPaymentApplication, PKPaymentBalance, PKPaymentBalanceReminder, PKPaymentPass;
+@class NSCalendar, NSData, NSDate, NSSet, NSString, PKCommutePlan, PKExpressPassInformation, PKOSVersionRequirement, PKPass, PKPaymentApplication, PKPaymentBalance, PKPaymentBalanceReminder, PKPaymentPass;
 @protocol PKPaymentDataProviderDelegate;
 
 @protocol PKPaymentDataProvider <NSObject>
@@ -35,8 +35,11 @@
 - (BOOL)supportsNotificationsForPass:(PKPass *)arg1;
 - (BOOL)supportsMessagesForPass:(PKPass *)arg1;
 - (BOOL)supportsTransactionsForPass:(PKPass *)arg1;
+- (NSString *)messagesAppLaunchTokenForPassWithUniqueIdentifier:(NSString *)arg1;
 - (void)archiveMessageWithIdentifier:(NSString *)arg1;
 - (void)messagesForPaymentPassWithUniqueIdentifier:(NSString *)arg1 completion:(void (^)(NSSet *))arg2;
+- (void)setCommutePlanReminderInterval:(double)arg1 forCommutePlan:(PKCommutePlan *)arg2 pass:(PKPaymentPass *)arg3 completion:(void (^)(BOOL))arg4;
+- (void)commutePlanReminderIntervalForCommutePlan:(PKCommutePlan *)arg1 pass:(PKPaymentPass *)arg2 withCompletion:(void (^)(double))arg3;
 - (void)setBalanceReminder:(PKPaymentBalanceReminder *)arg1 forBalance:(PKPaymentBalance *)arg2 pass:(PKPaymentPass *)arg3 completion:(void (^)(BOOL))arg4;
 - (void)balanceReminderThresholdForBalance:(PKPaymentBalance *)arg1 pass:(PKPaymentPass *)arg2 withCompletion:(void (^)(PKPaymentBalanceReminder *))arg3;
 - (void)balancesForPaymentPassWithUniqueIdentifier:(NSString *)arg1 completion:(void (^)(NSSet *))arg2;

@@ -92,8 +92,11 @@
 - (void)_removePendingPrivateAndAdminParticipants;
 - (void)_commonCKShareInit;
 - (void)_addOwnerParticipant;
-- (id)_initWithShareRecordID:(id)arg1;
+- (id)initWithRecordType:(id)arg1 zoneID:(id)arg2;
+- (id)initWithRecordType:(id)arg1 recordID:(id)arg2;
+- (id)initWithRecordType:(id)arg1;
 - (id)init;
+- (id)_initWithShareRecordID:(id)arg1;
 - (id)initWithRootRecord:(id)arg1 shareID:(id)arg2;
 - (id)initWithRootRecord:(id)arg1;
 

@@ -70,6 +70,7 @@ __attribute__((visibility("hidden")))
     struct CGRect extensionViewBoundsInDocument;
     struct CGRect extensionViewFrame;
     double extensionViewZoomScale;
+    PDFTimer *tilesSyncTimer;
 }
 
 - (void).cxx_destruct;

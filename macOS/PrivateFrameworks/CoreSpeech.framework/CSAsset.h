@@ -17,6 +17,7 @@
 }
 
 + (id)defaultFallBackAssetForVoiceTrigger;
++ (id)defaultFallBackAssetForHearst;
 + (id)defaultFallBackAssetForSmartSiriVolume;
 + (id)fallBackAssetResourcePath;
 + (id)assetForAssetType:(unsigned long long)arg1 resourcePath:(id)arg2 configVersion:(id)arg3;
@@ -71,7 +72,13 @@
 @property(readonly, nonatomic) NSString *VTFirstPassConfigPathNDAPI;
 - (id)_sha256:(id)arg1;
 - (id)_sha1:(id)arg1;
+- (id)hearstRTModelLocaleMap;
+- (id)hearstRTModelWithMajorVersion:(unsigned long long)arg1 minorVersion:(unsigned long long)arg2 locale:(id)arg3;
+- (id)latestHearstRTModelForLocale:(id)arg1;
 - (id)RTModelWithFallbackLanguage:(id)arg1;
+- (float)VTSecondPassMinimumPhraseLengthForVADGating:(id)arg1;
+- (float)VTSecondPassRemoteVADMyriadThresholdFrom:(id)arg1;
+- (float)VTSecondPassRemoteVADThresholdFrom:(id)arg1;
 - (float)VTSecondPassTwoShotFeedbackDelayFrom:(id)arg1;
 - (float)VTSecondPassRecognizerWaitTimeFrom:(id)arg1;
 - (id)VTSecondPassRecognizerTokenFrom:(id)arg1;

@@ -12,16 +12,17 @@
 
 @interface AXUIMockElement : AXUIElement <NSCopying>
 {
-    NSMutableDictionary *_attributes;
     NSMutableDictionary *_writableAttributes;
     NSMutableDictionary *_performActionLog;
     _Bool _usesCarriageReturnAsLinesSeparator;
+    NSMutableDictionary *_attributes;
     CDUnknownBlockType _cacheUpdatedCallback;
 }
 
 + (id)uiElementAtCoordinate:(struct CGPoint)arg1;
 + (void)applyElementAttributeCacheScheme:(unsigned long long)arg1;
 @property(copy, nonatomic) CDUnknownBlockType cacheUpdatedCallback; // @synthesize cacheUpdatedCallback=_cacheUpdatedCallback;
+@property(retain, nonatomic) NSMutableDictionary *attributes; // @synthesize attributes=_attributes;
 @property(nonatomic) _Bool usesCarriageReturnAsLinesSeparator; // @synthesize usesCarriageReturnAsLinesSeparator=_usesCarriageReturnAsLinesSeparator;
 - (void).cxx_destruct;
 - (unsigned long long)hash;
@@ -52,6 +53,7 @@
 - (_Bool)performAXAction:(int)arg1;
 - (id)uiElementsWithAttribute:(long long)arg1 parameter:(void *)arg2;
 - (id)uiElementsWithAttribute:(long long)arg1;
+- (id)cachedAttributes;
 - (id)objectWithAXAttribute:(long long)arg1 parameter:(void *)arg2;
 - (void)fillStaticCache;
 - (unsigned long long)arrayCountWithAXAttribute:(long long)arg1;

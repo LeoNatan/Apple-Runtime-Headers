@@ -14,6 +14,7 @@
     VCHistogram *_RTT;
     VCHistogram *_JBQSize;
     VCHistogram *_JBTarget;
+    VCHistogram *_JBUnclippedTarget;
     VCHistogram *_PLR;
     VCHistogram *_VPLR;
     VCHistogram *_latency;
@@ -158,6 +159,7 @@
 @property(readonly) VCHistogram *latency; // @synthesize latency=_latency;
 @property(readonly) VCHistogram *VPLR; // @synthesize VPLR=_VPLR;
 @property(readonly) VCHistogram *PLR; // @synthesize PLR=_PLR;
+@property(readonly) VCHistogram *JBUnclippedTarget; // @synthesize JBUnclippedTarget=_JBUnclippedTarget;
 @property(readonly) VCHistogram *JBTarget; // @synthesize JBTarget=_JBTarget;
 @property(readonly) VCHistogram *JBQSize; // @synthesize JBQSize=_JBQSize;
 @property(readonly) VCHistogram *RTT; // @synthesize RTT=_RTT;

@@ -6,11 +6,12 @@
 
 #import <objc/NSObject.h>
 
-@protocol PKPaymentDataProvider;
+@protocol PKPassLibraryDataProvider, PKPaymentDataProvider;
 
 @interface PKExpressPassController : NSObject
 {
     id <PKPaymentDataProvider> _paymentDataProvider;
+    id <PKPassLibraryDataProvider> _passLibraryDataProvider;
     _Bool _isForWatch;
     _Bool _hasSupportsExpressForAutomaticSelectionTechnologyTypeCheck;
     id _presentingViewController;
@@ -27,7 +28,8 @@
 - (_Bool)isExpressModeEnabledForPass:(id)arg1;
 - (void)conflictingExpressPassesWithPassInformation:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)expressModeSupportedForPass:(id)arg1;
-- (id)initWithPaymentDataProvider:(id)arg1 isForWatch:(_Bool)arg2;
+- (id)initWithPaymentDataProvider:(id)arg1 passLibraryDataProvider:(id)arg2 isForWatch:(_Bool)arg3;
+- (id)init;
 
 @end
 

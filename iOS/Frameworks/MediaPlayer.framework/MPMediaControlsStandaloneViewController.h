@@ -6,15 +6,10 @@
 
 #import <MediaPlayer/MPMediaControlsViewController.h>
 
-@class MPModalPresentationWindow;
-
 @interface MPMediaControlsStandaloneViewController : MPMediaControlsViewController
 {
-    MPModalPresentationWindow *_presentationWindow;
 }
 
-- (void).cxx_destruct;
-- (void)viewDidDisappear:(_Bool)arg1;
 - (void)dismissAfter:(double)arg1;
 - (void)presentAnimated:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
 

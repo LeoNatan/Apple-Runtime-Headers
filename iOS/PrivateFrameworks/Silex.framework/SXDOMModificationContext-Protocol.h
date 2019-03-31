@@ -6,9 +6,10 @@
 
 #import <Silex/NSObject-Protocol.h>
 
-@class SXLayoutOptions;
+@class NSString, SXLayoutOptions;
 
 @protocol SXDOMModificationContext <NSObject>
+@property(readonly, nonatomic) NSString *specVersion;
 @property(readonly, nonatomic) SXLayoutOptions *layoutOptions;
 @end
 

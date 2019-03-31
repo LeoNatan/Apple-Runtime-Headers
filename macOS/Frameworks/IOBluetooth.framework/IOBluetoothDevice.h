@@ -75,6 +75,7 @@
 - (BOOL)isAppleDevice;
 - (id)getMacAttributesDictionary;
 - (BOOL)isSpecialMicrosoftMouse;
+- (BOOL)isW2;
 - (BOOL)isKeyboardDevice;
 - (BOOL)isPointingDevice;
 - (unsigned int)lastBytesReceivedTimestamp;
@@ -215,6 +216,9 @@
 @property(readonly) BOOL isConnnectionLLREnabled;
 @property(readonly) BOOL isTBFCSuspended;
 - (void)rename:(id)arg1;
+- (void)enableHighPower:(BOOL)arg1;
+@property(retain) NSString *accessoryFWVersion;
+@property(nonatomic) BOOL heySiriEnabled;
 @property(nonatomic) BOOL switchControlEnabled;
 @property(nonatomic) unsigned char listeningMode;
 @property(nonatomic) BOOL isDevFused;
@@ -313,9 +317,13 @@
 - (unsigned int)audioDeviceID:(BOOL)arg1;
 - (void)batteryLevel:(CDUnknownBlockType)arg1;
 - (void)audioCodecString:(CDUnknownBlockType)arg1;
+@property(readonly) BOOL isDoAPSupported;
+@property(readonly) BOOL isSwitchControlSupported;
 @property(readonly) BOOL isWIAPSink;
 @property(readonly) BOOL isEnhancedDoubleTapSupported;
-- (BOOL)isANCSupported;
+@property(readonly) BOOL isFastConnectSupported;
+@property(readonly) BOOL isBasebandFastConnectSupported;
+@property(readonly) BOOL isANCSupported;
 @property(readonly) BOOL isInEarDetectionSupported;
 - (id)appleSupportFeaturesVersion;
 - (id)appleSupportFeatures;

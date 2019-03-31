@@ -49,10 +49,8 @@
 - (id)logMsgStateForMapRestoreWithUITargets:(id)arg1;
 - (id)logMsgStateForMapSettingsWithStateOrigin:(id)arg1 prefferedTransportMode:(int)arg2 avoidTolls:(BOOL)arg3 avoidHighways:(BOOL)arg4 headingEnabled:(BOOL)arg5 speedLimitEnabled:(BOOL)arg6 navVoiceVolume:(int)arg7 pauseSpokenAudioEnabled:(BOOL)arg8 findMyCarEnabled:(BOOL)arg9 trafficEnabled:(BOOL)arg10 labelEnabled:(BOOL)arg11;
 - (id)logMsgStateForMapSettingsWithPrefferedTransportMode:(int)arg1 avoidTolls:(BOOL)arg2 avoidHighways:(BOOL)arg3 headingEnabled:(BOOL)arg4 speedLimitEnabled:(BOOL)arg5 navVoiceVolume:(int)arg6 pauseSpokenAudioEnabled:(BOOL)arg7 findMyCarEnabled:(BOOL)arg8 trafficEnabled:(BOOL)arg9 labelEnabled:(BOOL)arg10;
-- (id)logMsgStateForMapsUIShownWithStateOrigin:(id)arg1 isWeatherShown:(BOOL)arg2;
-- (id)logMsgStateForMapsUIShownWithIsWeatherShown:(BOOL)arg1;
-- (id)logMsgStateForMapsUIShownWithStateOrigin:(id)arg1 isAirQualityShown:(BOOL)arg2;
-- (id)logMsgStateForMapsUIShownWithIsAirQualityShown:(BOOL)arg1;
+- (id)logMsgStateForMapsUIShownWithStateOrigin:(id)arg1 isAirQualityShown:(BOOL)arg2 isWeatherShown:(BOOL)arg3;
+- (id)logMsgStateForMapsUIShownWithIsAirQualityShown:(BOOL)arg1 isWeatherShown:(BOOL)arg2;
 - (id)logMsgStateForMapsUIWithStateOrigin:(id)arg1 layoutInfo:(int)arg2 layoutStyle:(int)arg3 numberOfTabs:(unsigned int)arg4 currentTabIndex:(unsigned int)arg5;
 - (id)logMsgStateForMapsUIWithLayoutInfo:(int)arg1 layoutStyle:(int)arg2 numberOfTabs:(unsigned int)arg3 currentTabIndex:(unsigned int)arg4;
 - (id)logMsgStateForMapsUIWithStateOrigin:(id)arg1 layoutInfo:(int)arg2 layoutStyle:(int)arg3;

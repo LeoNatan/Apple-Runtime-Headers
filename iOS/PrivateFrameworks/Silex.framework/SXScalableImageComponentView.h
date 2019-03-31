@@ -16,14 +16,11 @@
 
 @interface SXScalableImageComponentView : SXMediaComponentView <SXFullscreenCanvasShowable, SXImageViewDelegate, SXFullscreenCaptionDataSource, SXDragManagerDataSource>
 {
-    _Bool _presentingOnFullScreenCanvas;
-    double _lastKnownPinchVelocity;
-    double _lastKnownRotationVelocity;
-    SXImageView *_imageView;
     id <SXImageViewFactory> _imageViewFactory;
     id <SXFullscreenCanvasControllerFactory> _canvasControllerFactory;
     id <SXMediaSharingPolicyProvider> _mediaSharingPolicyProvider;
     SXDragManager *_dragManager;
+    SXImageView *_imageView;
     SXImageResource *_imageResource;
     SXFullscreenCanvasController *_fullScreenCanvasController;
     SXMediaViewEvent *_activeViewEvent;
@@ -36,14 +33,11 @@
 @property(retain, nonatomic) SXMediaViewEvent *activeViewEvent; // @synthesize activeViewEvent=_activeViewEvent;
 @property(retain, nonatomic) SXFullscreenCanvasController *fullScreenCanvasController; // @synthesize fullScreenCanvasController=_fullScreenCanvasController;
 @property(retain, nonatomic) SXImageResource *imageResource; // @synthesize imageResource=_imageResource;
+@property(readonly, nonatomic) SXImageView *imageView; // @synthesize imageView=_imageView;
 @property(retain, nonatomic) SXDragManager *dragManager; // @synthesize dragManager=_dragManager;
 @property(readonly, nonatomic) id <SXMediaSharingPolicyProvider> mediaSharingPolicyProvider; // @synthesize mediaSharingPolicyProvider=_mediaSharingPolicyProvider;
 @property(readonly, nonatomic) id <SXFullscreenCanvasControllerFactory> canvasControllerFactory; // @synthesize canvasControllerFactory=_canvasControllerFactory;
 @property(readonly, nonatomic) id <SXImageViewFactory> imageViewFactory; // @synthesize imageViewFactory=_imageViewFactory;
-@property(readonly, nonatomic) SXImageView *imageView; // @synthesize imageView=_imageView;
-@property(nonatomic) double lastKnownRotationVelocity; // @synthesize lastKnownRotationVelocity=_lastKnownRotationVelocity;
-@property(nonatomic) double lastKnownPinchVelocity; // @synthesize lastKnownPinchVelocity=_lastKnownPinchVelocity;
-@property(nonatomic, getter=isPresentingOnFullScreenCanvas) _Bool presentingOnFullScreenCanvas; // @synthesize presentingOnFullScreenCanvas=_presentingOnFullScreenCanvas;
 - (void).cxx_destruct;
 - (_Bool)allowHierarchyRemoval;
 @property(readonly, copy) NSString *description;
@@ -87,7 +81,7 @@
 - (void)renderContents;
 - (void)presentComponentWithChanges:(CDStruct_1cc9d0d0)arg1;
 - (void)loadComponent:(id)arg1;
-- (id)initWithDOMObjectProvider:(id)arg1 viewport:(id)arg2 presentationDelegate:(id)arg3 analyticsReporting:(id)arg4 componentStyleRendererFactory:(id)arg5 appStateMonitor:(id)arg6 imageViewFactory:(id)arg7 canvasControllerFactory:(id)arg8 mediaSharingPolicyProvider:(id)arg9;
+- (id)initWithDOMObjectProvider:(id)arg1 viewport:(id)arg2 presentationDelegate:(id)arg3 componentStyleRendererFactory:(id)arg4 analyticsReporting:(id)arg5 appStateMonitor:(id)arg6 imageViewFactory:(id)arg7 canvasControllerFactory:(id)arg8 mediaSharingPolicyProvider:(id)arg9;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

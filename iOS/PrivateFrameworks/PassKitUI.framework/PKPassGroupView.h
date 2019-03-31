@@ -116,8 +116,8 @@
 - (id)_loadCardViewForIndex:(unsigned long long)arg1 contentMode:(long long)arg2;
 - (void)_updateLoadedViews:(_Bool)arg1;
 - (void)_applyContentMode:(long long)arg1 toPassView:(id)arg2 animated:(_Bool)arg3;
-- (void)_enumeratePassViewsInStackOrderWithBlock:(CDUnknownBlockType)arg1;
-- (void)_enumeratePassIndicesInStackOrderWithBlock:(CDUnknownBlockType)arg1;
+- (void)_enumeratePassViewsInStackOrderWithHandler:(CDUnknownBlockType)arg1;
+- (void)_enumerateIndicesInStackOrderWithHandler:(CDUnknownBlockType)arg1;
 - (struct _NSRange)_rangeOfVisibleIndices;
 - (struct _NSRange)_rangeOfPagingIndices;
 - (struct CGSize)_contentSize;

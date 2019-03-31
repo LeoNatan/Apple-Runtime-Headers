@@ -42,6 +42,7 @@
 - (void)synchronizeDelegatesWithCompletion:(CDUnknownBlockType)arg1;
 - (void)synchronizeWithFlags:(long long)arg1;
 - (void)synchronize;
+- (BOOL)active;
 - (void)reactivate;
 - (BOOL)activate;
 - (void)deactivate;

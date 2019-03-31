@@ -18,31 +18,34 @@
     SXLayoutBlueprint *_layoutBlueprint;
     CDUnknownBlockType _beforeBlock;
     CDUnknownBlockType _afterBlock;
+    double _duration;
     id <SXComponentSizerEngine> _componentSizerEngine;
     id <SXLayoutBlueprintFactory> _layoutBlueprintFactory;
     id <SXDOMObjectProviding> _DOMObjectProvider;
     SXColumnLayouter *_layouter;
     SXLayoutTask *_task;
+    double _startTime;
 }
 
+@property(readonly, nonatomic) double startTime; // @synthesize startTime=_startTime;
 @property(readonly, nonatomic) SXLayoutTask *task; // @synthesize task=_task;
 @property(readonly, nonatomic) SXColumnLayouter *layouter; // @synthesize layouter=_layouter;
 @property(readonly, nonatomic) id <SXDOMObjectProviding> DOMObjectProvider; // @synthesize DOMObjectProvider=_DOMObjectProvider;
 @property(readonly, nonatomic) id <SXLayoutBlueprintFactory> layoutBlueprintFactory; // @synthesize layoutBlueprintFactory=_layoutBlueprintFactory;
 @property(readonly, nonatomic) id <SXComponentSizerEngine> componentSizerEngine; // @synthesize componentSizerEngine=_componentSizerEngine;
+@property(readonly, nonatomic) double duration; // @synthesize duration=_duration;
 @property(copy, nonatomic, setter=afterLayout:) CDUnknownBlockType afterBlock; // @synthesize afterBlock=_afterBlock;
 @property(copy, nonatomic, setter=beforeLayout:) CDUnknownBlockType beforeBlock; // @synthesize beforeBlock=_beforeBlock;
 @property(readonly, nonatomic) SXLayoutBlueprint *layoutBlueprint; // @synthesize layoutBlueprint=_layoutBlueprint;
 @property _Bool finished; // @synthesize finished=_finished;
 @property _Bool executing; // @synthesize executing=_executing;
 - (void).cxx_destruct;
-- (void)layouter:(id)arg1 didFinishLayoutForComponent:(id)arg2 layoutBlueprint:(id)arg3 shouldContinueLayout:(_Bool *)arg4;
-- (void)finalizeLayoutBlueprint:(id)arg1 startOffset:(struct CGPoint)arg2;
+- (void)layouter:(id)arg1 didFinishLayoutForComponentBlueprint:(id)arg2 layoutBlueprint:(id)arg3 shouldContinueLayout:(_Bool *)arg4;
 - (void)registerComponent:(id)arg1 layoutBlueprint:(id)arg2 componentIndex:(unsigned long long)arg3;
 - (id)createLayoutBlueprintForComponents:(id)arg1;
 - (void)updateLayoutBlueprint:(id)arg1 components:(id)arg2;
-- (_Bool)isFinishedLayoutBlueprint:(id)arg1 components:(id)arg2;
-- (void)startLayoutWorkForBlueprint:(id)arg1;
+- (_Bool)layoutBlueprint:(id)arg1 containsComponents:(id)arg2;
+- (id)layoutWithBlueprint:(id)arg1;
 - (void)prepareLayoutBlueprint:(id)arg1;
 - (void)finishBookKeeping;
 - (void)startBookKeeping;

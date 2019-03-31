@@ -25,7 +25,8 @@
 - (id)_transformState:(id)arg1;
 - (void)_invalidateUserAuth;
 - (void)_acquireUserAuthForPass:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
-- (void)_promptUserAboutConflicts:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (id)_conflictingPassesForUseCaseWithPasses:(id)arg1;
+- (void)_promptUserAboutConflicts:(id)arg1 forPass:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_setUserInteractionsEnabled:(_Bool)arg1;
 - (void)_enableExpressModeForPass:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)_disableExpressModeForPass:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;

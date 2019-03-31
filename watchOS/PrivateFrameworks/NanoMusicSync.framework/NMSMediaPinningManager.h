@@ -45,6 +45,7 @@
 - (id)_newMusicGroupIteratorWithDownloadedItemsOnly:(_Bool)arg1;
 - (_Bool)_quotaManagerShouldFetchDownloadedItemsOnlyForBundleID:(id)arg1;
 - (void)environmentMonitorDidChangePower:(id)arg1;
+- (void)_handleICAgeVerificationStateDidChangeNotification:(id)arg1;
 - (void)_handlePodcastSizeInfoDidChangeNotification:(id)arg1;
 - (void)_handleMediaLibraryEntitiesAddedOrRemovedNotification:(id)arg1;
 - (void)_handleRecommendationsDidUpdateNotification:(id)arg1;

@@ -102,6 +102,7 @@
     long long _safariDataSharingMode;
 }
 
++ (void)createDefaultWebsiteDataStore;
 @property(nonatomic) long long safariDataSharingMode; // @synthesize safariDataSharingMode=_safariDataSharingMode;
 @property(readonly, nonatomic) SFBrowserPersonaAnalyticsHelper *_analyticsHelper; // @synthesize _analyticsHelper=__analyticsHelper;
 @property(readonly, nonatomic) unsigned long long _persona; // @synthesize _persona=__persona;

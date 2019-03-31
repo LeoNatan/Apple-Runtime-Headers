@@ -16,6 +16,7 @@ __attribute__((visibility("hidden")))
 }
 
 @property(readonly) IOSurface *nextUnusedSurface;
+@property(readonly, copy) NSDictionary *surfaceProperties;
 - (void)dealloc;
 - (id)initWithSurfaceProperties:(id)arg1;
 - (id)init;

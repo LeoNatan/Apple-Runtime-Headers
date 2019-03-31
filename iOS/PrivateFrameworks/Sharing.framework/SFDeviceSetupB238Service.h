@@ -64,7 +64,7 @@
 - (void)_speakLocalizedKey:(id)arg1 event:(unsigned int)arg2;
 - (void)_siriGreetingDialogCPhrase:(id)arg1 error:(id)arg2;
 - (void)_siriGreetingDialogCStart;
-- (void)_siriGreetingDialogBPhrase:(id)arg1 error:(id)arg2;
+- (void)_siriGreetingDialogBPhrase:(id)arg1 localizedText:(id)arg2 error:(id)arg3;
 - (void)_siriGreetingDialogBStart;
 - (void)_siriGreetingDialogA;
 - (void)_siriGreetingIntroPhrase:(id)arg1 error:(id)arg2;

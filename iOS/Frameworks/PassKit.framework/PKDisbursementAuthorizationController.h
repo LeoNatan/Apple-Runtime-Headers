@@ -14,6 +14,7 @@
 
 @interface PKDisbursementAuthorizationController : NSObject <PKPaymentAuthorizationCoordinatorDelegate, PKPaymentAuthorizationCoordinatorPrivateDelegate>
 {
+    PKDisbursementAuthorizationController *_retainSelf;
     PKPaymentAuthorizationCoordinator *_authController;
     PKDisbursementRequest *_disbursementRequest;
     id <PKDisbursementAuthorizationControllerDelegate> _delegate;

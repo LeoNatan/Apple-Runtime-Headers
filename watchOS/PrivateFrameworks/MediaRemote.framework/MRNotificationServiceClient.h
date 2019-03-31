@@ -20,7 +20,6 @@
 - (void)_handleVolumeControlCapabilitiesDidChangeNotification:(id)arg1;
 - (void)_handleDeviceInfoDidChangeNotification:(id)arg1;
 - (void)_handlePlayerStateDidChangeNotification:(id)arg1;
-- (void)_handlePlayerPlaybackDidTimeout:(id)arg1;
 - (void)_handlePlayerIsPlayingDidChangeNotification:(id)arg1;
 - (void)_handlePlayerPlaybackStateDidChangeNotification:(id)arg1;
 - (void)_handlePlayerNowPlayingInfoDidChangeNotification:(id)arg1;

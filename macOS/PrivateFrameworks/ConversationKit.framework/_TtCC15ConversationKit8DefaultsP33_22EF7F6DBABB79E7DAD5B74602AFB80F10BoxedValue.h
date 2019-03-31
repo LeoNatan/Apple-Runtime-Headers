@@ -4,9 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <swiftCore/SwiftObject.h>
+#import <swiftCore/_TtCs12_SwiftObject.h>
 
-@interface _TtCC15ConversationKit8DefaultsP33_22EF7F6DBABB79E7DAD5B74602AFB80F10BoxedValue : SwiftObject
+@interface _TtCC15ConversationKit8DefaultsP33_22EF7F6DBABB79E7DAD5B74602AFB80F10BoxedValue : _TtCs12_SwiftObject
 {
     // Error parsing type: , name: value
 }

@@ -6,10 +6,12 @@
 
 #import <objc/NSObject.h>
 
+#import <AppleMediaServices/NSCopying-Protocol.h>
+
 @class ACAccount, NSDictionary, NSMutableDictionary, NSNumber, NSString;
 @protocol OS_dispatch_queue;
 
-@interface AMSMetricsEvent : NSObject
+@interface AMSMetricsEvent : NSObject <NSCopying>
 {
     NSObject<OS_dispatch_queue> *_internalQueue;
     NSMutableDictionary *_underlyingDictionary;
@@ -42,6 +44,7 @@
 @property(retain, nonatomic) NSString *appVersion;
 - (id)reportingURLFromBaseURL:(id)arg1;
 @property(readonly, nonatomic) NSDictionary *databaseEventBody;
+- (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithTopic:(id)arg1;
 - (id)initWithUnderlyingDictionary:(id)arg1;
 - (id)initWithDatabaseEventBody:(id)arg1;

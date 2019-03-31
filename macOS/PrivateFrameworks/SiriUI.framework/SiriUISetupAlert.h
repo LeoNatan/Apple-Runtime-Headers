@@ -41,6 +41,7 @@
 - (void)_alertWillAppear;
 - (void)beginSheetModalForWindow:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (long long)runModal;
+- (id)initEnableHeySiriAudioDevice:(BOOL)arg1 withAskSiri:(BOOL)arg2;
 - (id)initEnableHeySiriBuiltInWithAskSiri:(BOOL)arg1;
 - (id)initEnableAskSiri;
 - (id)_init;

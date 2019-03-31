@@ -6,10 +6,10 @@
 
 #import <Silex/NSObject-Protocol.h>
 
-@class UIView, UIViewController;
+@class UIScrollView, UIViewController;
 
 @protocol SXDocumentSectionHosting <NSObject>
-- (UIView *)sectionHostingView;
+- (UIScrollView *)sectionHostingView;
 - (UIViewController *)sectionHostingViewController;
 @end
 

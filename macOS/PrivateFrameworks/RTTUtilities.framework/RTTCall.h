@@ -42,6 +42,7 @@
 - (void)stop;
 - (void)start;
 - (void)recreateTTYDevice:(id)arg1;
+- (BOOL)isLocallyHosted;
 @property(readonly, copy) NSString *description;
 - (void)mediaServerDied;
 - (void)registerNotifications;

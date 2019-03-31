@@ -13,7 +13,6 @@ __attribute__((visibility("hidden")))
 
 - (void)display;
 - (void)_NS_invalidateSuggestedContentsScale;
-- (void)_appkitViewBackingLayerUniqueMethod;
 
 @end
 

@@ -65,6 +65,9 @@
 - (void)checkRouteForLocation:(id)arg1;
 - (void)cancelCurrentRequest;
 - (void)_updateScoreForLocation:(id)arg1;
+- (_Bool)_isNavigatingToDestination;
+- (_Bool)_isNavigating;
+- (id)navDestination;
 - (void)_routeRequestFailed:(id)arg1;
 - (void)_recievedRouteResponse:(id)arg1 forLocation:(id)arg2 isReroute:(_Bool)arg3;
 - (void)_requestNewRouteFromLocation:(id)arg1 usualRouteData:(id)arg2;

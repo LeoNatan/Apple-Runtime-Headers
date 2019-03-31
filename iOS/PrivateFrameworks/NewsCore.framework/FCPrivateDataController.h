@@ -93,6 +93,7 @@
 - (void)saveWithCompletion:(CDUnknownBlockType)arg1;
 - (void)performFirstSyncWithCallbackQueue:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)forceSyncWithCompletion:(CDUnknownBlockType)arg1;
+- (void)syncWithCallbackQueue:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)syncWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_syncWithCondition:(CDUnknownBlockType)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)dealloc;

@@ -11,7 +11,7 @@
 }
 
 + (void)updateVoiceProfileVersionFileForLanguageCode:(id)arg1;
-+ (BOOL)migrateVoiceProfileToVersion:(unsigned long long)arg1 withAnalyzer:(id)arg2 forLanguageCode:(id)arg3;
++ (BOOL)migrateVoiceProfileToVersion:(unsigned long long)arg1 forLanguageCode:(id)arg2;
 + (BOOL)checkIfMigrationNecessaryForCompatibilityVersion:(unsigned long long)arg1 forLanguageCode:(id)arg2;
 + (unsigned long long)getCurrentVoiceProfileVersionForLanguageCode:(id)arg1;
 

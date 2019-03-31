@@ -19,8 +19,10 @@
     NSString *_platform;
     long long _signatureType;
     long long _version;
+    NSString *_language;
 }
 
+@property(retain, nonatomic) NSString *language; // @synthesize language=_language;
 @property(nonatomic) long long version; // @synthesize version=_version;
 @property(nonatomic) long long signatureType; // @synthesize signatureType=_signatureType;
 @property(retain, nonatomic) NSString *platform; // @synthesize platform=_platform;

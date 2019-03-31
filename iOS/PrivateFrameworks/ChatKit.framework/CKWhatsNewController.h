@@ -35,7 +35,7 @@
 - (_Bool)_shouldPresentSurf;
 - (void)_tryToEnableHSA2;
 - (void)_tryToEnableMOC;
-- (void)_beginMOCFlowForState:(id)arg1;
+- (void)_beginMOCFlowForState:(id)arg1 rampState:(id)arg2;
 - (void)_beginMOCWhatsNew;
 - (_Bool)_shouldPresentMOC;
 - (void)_writeDefaultWhatsNewDidShow;

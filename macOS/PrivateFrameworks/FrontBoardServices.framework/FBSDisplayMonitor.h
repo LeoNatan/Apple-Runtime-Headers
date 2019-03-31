@@ -8,31 +8,30 @@
 
 #import <FrontBoardServices/BSInvalidatable-Protocol.h>
 
-@class CADisplay, FBSDisplayConfiguration, FBSDisplayIdentity, FBSDisplayStatus, NSHashTable, NSMapTable, NSSet, NSString;
-@protocol FBSDisplayMonitorDelegate, FBSDisplayObserving;
+@class CADisplay, FBSDisplayConfiguration, FBSDisplayIdentity, FBSDisplaySource, NSEnumerator, NSHashTable, NSMapTable, NSSet, NSString;
+@protocol FBSDisplayObserving, OS_dispatch_queue;
 
 @interface FBSDisplayMonitor : NSObject <BSInvalidatable>
 {
-    id <FBSDisplayObserving> _bookendObserver;
-    NSHashTable *_observers;
+    NSObject<OS_dispatch_queue> *_callOutQueue;
     CADisplay *_mainDisplay;
-    FBSDisplayStatus *_mainDisplayStatus;
-    NSMapTable *_statusByDisplay;
-    id <FBSDisplayMonitorDelegate> _displayMonitorDelegate;
+    FBSDisplaySource *_mainDisplaySource;
+    struct os_unfair_lock_s _lock;
+    id <FBSDisplayObserving> _lock_bookendObserver;
+    NSHashTable *_lock_observers;
+    NSMapTable *_lock_sourcesByDisplay;
 }
 
-@property(nonatomic) __weak id <FBSDisplayMonitorDelegate> displayMonitorDelegate; // @synthesize displayMonitorDelegate=_displayMonitorDelegate;
-@property(nonatomic) __weak id <FBSDisplayObserving> bookendObserver; // @synthesize bookendObserver=_bookendObserver;
+@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *callOutQueue; // @synthesize callOutQueue=_callOutQueue;
 - (void).cxx_destruct;
-- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
-- (void)_enumerateConnectedWithBlock:(CDUnknownBlockType)arg1;
-- (void)_noteDisconnectStatus:(id)arg1;
-- (void)_noteUpdateStatus:(id)arg1 withConfiguration:(id)arg2;
-- (void)_noteConnectStatus:(id)arg1 withConfiguration:(id)arg2 debounce:(BOOL)arg3 broadcast:(BOOL)arg4;
-- (void)_updateDisplaysIfNecessary;
-- (void)_reevaluateConnectionStatusForAllDisplays;
-- (void)invalidate;
+- (void)_lock_enumerateConnectedWithBlock:(CDUnknownBlockType)arg1;
+- (void)_lock_enumerateSourcesWithBlock:(CDUnknownBlockType)arg1;
+- (id)_sortedSources;
+@property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
+@property(readonly, copy, nonatomic) NSEnumerator *observersEnumerator;
+@property(readonly, nonatomic) __weak id <FBSDisplayObserving> bookendObserver;
+- (void)invalidate;
 - (void)removeObserver:(id)arg1;
 - (void)addObserver:(id)arg1;
 - (id)configurationForIdentity:(id)arg1;
@@ -40,12 +39,11 @@
 @property(readonly, copy, nonatomic) FBSDisplayConfiguration *mainConfiguration;
 @property(readonly, copy, nonatomic) FBSDisplayIdentity *mainIdentity;
 - (void)dealloc;
-- (void)_invalidate;
 - (id)initWithInitializationCompletion:(CDUnknownBlockType)arg1;
+- (id)_initWithBookendObserver:(id)arg1;
 - (id)init;
 
 // Remaining properties
-@property(readonly, copy) NSString *debugDescription;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 

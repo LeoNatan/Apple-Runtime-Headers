@@ -11,6 +11,7 @@
 
 @interface FCOfflineIssueFetchOperation : FCOperation
 {
+    _Bool _cachedOnly;
     double _progress;
     CDUnknownBlockType _progressHandler;
     CDUnknownBlockType _fetchCompletionHandler;
@@ -29,9 +30,10 @@
 @property(copy, nonatomic) CDUnknownBlockType fetchCompletionHandler; // @synthesize fetchCompletionHandler=_fetchCompletionHandler;
 @property(copy, nonatomic) CDUnknownBlockType progressHandler; // @synthesize progressHandler=_progressHandler;
 @property double progress; // @synthesize progress=_progress;
+@property(nonatomic) _Bool cachedOnly; // @synthesize cachedOnly=_cachedOnly;
 - (void).cxx_destruct;
 - (void)_updateProgress:(double)arg1;
-- (id)_legacyResourceIDsFromMetadataJSONAtPath:(id)arg1;
+- (id)_resourceIDsFromMetadataJSONAtPath:(id)arg1;
 - (id)_promisePDFPagesForIssue:(id)arg1;
 - (id)_promiseANFArticlesForIssue:(id)arg1;
 - (id)_promiseCoverImageForIssue:(id)arg1;

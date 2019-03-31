@@ -203,7 +203,8 @@ struct nw_connection_report_s {
     unsigned int tls_version_timeout:1;
     unsigned int first_party:1;
     unsigned int is_daemon:1;
-    unsigned int __pad_bits:3;
+    unsigned int tls_handshake_timed_out:1;
+    unsigned int __pad_bits:2;
     unsigned char __pad[3];
 };
 

@@ -67,6 +67,7 @@
 + (id)makeAgentRequestWithAccount:(struct AOSAccount *)arg1 type:(int)arg2 args:(id)arg3 callback:(struct AOSCallbackInfo *)arg4 maxRetries:(int)arg5;
 + (void)_cacheValidationStatus:(id)arg1 forDomain:(id)arg2;
 + (id)_cachedValidationStatusForDomain:(id)arg1;
++ (BOOL)_isValidChineseHostname:(id)arg1;
 + (BOOL)_isKnownDomain:(id)arg1 usingAccountInfo:(id)arg2;
 + (id)aliasesForAccount:(struct AOSAccount *)arg1 withInfo:(id)arg2;
 + (BOOL)validateURL:(id)arg1 forAccount:(struct AOSAccount *)arg2 withInfo:(id)arg3;

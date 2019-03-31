@@ -9,7 +9,7 @@
 #import <TextInputCore/TILanguageSelectionControllerDelegate-Protocol.h>
 #import <TextInputCore/TIRevisionHistoryDelegate-Protocol.h>
 
-@class NSArray, NSCharacterSet, NSMutableString, NSString, TIAutoshiftRegularExpressionLoader, TIEmojiCandidateGenerator, TIInputContextHistory, TIKeyboardCandidate, TIKeyboardFeatureSpecialization, TIKeyboardInputManagerConfig, TIKeyboardInputManagerState, TIKeyboardLayout, TIKeyboardLayoutState, TIKeyboardState, TILRUDictionary, TILanguageSelectionController, TIRevisionHistory, TITextCheckerExemptions;
+@class NSArray, NSCharacterSet, NSMutableString, NSNumber, NSString, TIAutoshiftRegularExpressionLoader, TIEmojiCandidateGenerator, TIInputContextHistory, TIKeyboardCandidate, TIKeyboardFeatureSpecialization, TIKeyboardInputManagerConfig, TIKeyboardInputManagerState, TIKeyboardLayout, TIKeyboardLayoutState, TIKeyboardState, TILRUDictionary, TILanguageSelectionController, TIRevisionHistory, TITextCheckerExemptions;
 
 @interface TIKeyboardInputManager : TIKeyboardInputManagerBase <TIRevisionHistoryDelegate, TILanguageSelectionControllerDelegate>
 {
@@ -46,6 +46,7 @@
     unsigned long long _linguisticResourceStatus;
     long long _deleteKeyCount;
     TIKeyboardCandidate *_hitTestCorrectedInputMatchingCandidate;
+    NSNumber *_isTrackingSentenceCountForPFL;
     struct _NSRange _candidateRange;
 }
 
@@ -59,6 +60,7 @@
 + (id)userDictionaryWordKeyPairsFilePath;
 + (id)keyboardUserDirectory;
 + (void)resetResponseKit;
+@property(retain, nonatomic) NSNumber *isTrackingSentenceCountForPFL; // @synthesize isTrackingSentenceCountForPFL=_isTrackingSentenceCountForPFL;
 @property(retain, nonatomic) TIKeyboardCandidate *hitTestCorrectedInputMatchingCandidate; // @synthesize hitTestCorrectedInputMatchingCandidate=_hitTestCorrectedInputMatchingCandidate;
 @property(nonatomic) long long deleteKeyCount; // @synthesize deleteKeyCount=_deleteKeyCount;
 @property(nonatomic) unsigned long long linguisticResourceStatus; // @synthesize linguisticResourceStatus=_linguisticResourceStatus;

@@ -22,6 +22,8 @@
 - (id)componentIdentifiers;
 - (id)hashOfType:(id)arg1;
 - (id)hashTypes;
+- (void)setPackageSpecifier:(id)arg1;
+- (id)packageSpecifier;
 - (id)locatorTokenDefinitions;
 - (id)locatorPathMappings;
 - (id)normalizedVersion;
@@ -46,7 +48,6 @@
 - (BOOL)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (void)dealloc;
-- (void)release;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithPackage:(id)arg1 atLocation:(id)arg2;
 - (id)copyWithZone:(struct _NSZone *)arg1;

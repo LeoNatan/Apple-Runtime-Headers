@@ -60,6 +60,7 @@
 + (id)currentOSVersion;
 + (id)currentOSBuild;
 + (id)currentDeviceProductType;
++ (id)currentDeviceReleaseType;
 + (id)currentDeviceClass;
 + (id)currentDeviceRegionCode;
 + (id)currentDeviceManufacturer;
@@ -136,6 +137,7 @@
 @property(readonly, nonatomic) _Bool isCurrentDeviceSeries3OrOlder;
 @property(readonly, nonatomic) _Bool isCurrentDeviceN2XA;
 @property(readonly, copy, nonatomic) NSString *currentDeviceProductType;
+- (id)currentDeviceReleaseType;
 @property(readonly, copy, nonatomic) NSString *currentInternalDeviceModel;
 @property(readonly, copy, nonatomic) NSString *currentDeviceManufacturer;
 @property(readonly, copy, nonatomic) NSString *currentDeviceRegionCode;

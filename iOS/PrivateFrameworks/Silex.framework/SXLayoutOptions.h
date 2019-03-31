@@ -10,14 +10,20 @@
 
 @interface SXLayoutOptions : NSObject
 {
+    _Bool _testing;
     SXColumnLayout *_columnLayout;
     UITraitCollection *_traitCollection;
     NSString *_contentSizeCategory;
-    long long _subscriptionStatus;
+    long long _bundleSubscriptionStatus;
+    long long _channelSubscriptionStatus;
+    unsigned long long _viewingLocation;
     struct CGSize _viewportSize;
 }
 
-@property(readonly, nonatomic) long long subscriptionStatus; // @synthesize subscriptionStatus=_subscriptionStatus;
+@property(readonly, nonatomic) unsigned long long viewingLocation; // @synthesize viewingLocation=_viewingLocation;
+@property(readonly, nonatomic) _Bool testing; // @synthesize testing=_testing;
+@property(readonly, nonatomic) long long channelSubscriptionStatus; // @synthesize channelSubscriptionStatus=_channelSubscriptionStatus;
+@property(readonly, nonatomic) long long bundleSubscriptionStatus; // @synthesize bundleSubscriptionStatus=_bundleSubscriptionStatus;
 @property(readonly, nonatomic) NSString *contentSizeCategory; // @synthesize contentSizeCategory=_contentSizeCategory;
 @property(readonly, nonatomic) UITraitCollection *traitCollection; // @synthesize traitCollection=_traitCollection;
 @property(readonly, nonatomic) struct CGSize viewportSize; // @synthesize viewportSize=_viewportSize;
@@ -25,8 +31,9 @@
 - (void).cxx_destruct;
 - (id)description;
 - (unsigned long long)hash;
+- (unsigned long long)diffWithLayoutOptions:(id)arg1;
 - (_Bool)isEqual:(id)arg1;
-- (id)initWithColumnLayout:(id)arg1 viewportSize:(struct CGSize)arg2 traitCollection:(id)arg3 contentSizeCategory:(id)arg4 subscriptionStatus:(long long)arg5;
+- (id)initWithColumnLayout:(id)arg1 viewportSize:(struct CGSize)arg2 traitCollection:(id)arg3 contentSizeCategory:(id)arg4 bundleSubscriptionStatus:(long long)arg5 channelSubscriptionStatus:(long long)arg6 testing:(_Bool)arg7 viewingLocation:(unsigned long long)arg8;
 
 @end
 

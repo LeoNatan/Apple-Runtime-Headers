@@ -23,10 +23,18 @@ __attribute__((visibility("hidden")))
     NSString *_placeNameHint;
     int _placeTypeHint;
     int _resultProviderId;
-    CDStruct_f8e30bfb _has;
+    _Bool _supportCoordinatesOnlyRefinement;
+    struct {
+        unsigned int muid:1;
+        unsigned int addressGeocodeAccuracyHint:1;
+        unsigned int placeTypeHint:1;
+        unsigned int resultProviderId:1;
+        unsigned int supportCoordinatesOnlyRefinement:1;
+    } _has;
 }
 
 + (Class)formattedAddressLineHintType;
+@property(nonatomic) _Bool supportCoordinatesOnlyRefinement; // @synthesize supportCoordinatesOnlyRefinement=_supportCoordinatesOnlyRefinement;
 @property(retain, nonatomic) NSData *addressObjectHint; // @synthesize addressObjectHint=_addressObjectHint;
 @property(retain, nonatomic) NSMutableArray *formattedAddressLineHints; // @synthesize formattedAddressLineHints=_formattedAddressLineHints;
 @property(retain, nonatomic) NSString *placeNameHint; // @synthesize placeNameHint=_placeNameHint;
@@ -45,6 +53,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(nonatomic) _Bool hasSupportCoordinatesOnlyRefinement;
 @property(readonly, nonatomic) _Bool hasAddressObjectHint;
 - (int)StringAsAddressGeocodeAccuracyHint:(id)arg1;
 - (id)addressGeocodeAccuracyHintAsString:(int)arg1;

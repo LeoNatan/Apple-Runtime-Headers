@@ -11,10 +11,8 @@ __attribute__((visibility("hidden")))
 {
     _Bool _overlay;
     _Bool _darkStyle;
-    _Bool _isDevice;
 }
 
-@property(nonatomic) _Bool isDevice; // @synthesize isDevice=_isDevice;
 @property(nonatomic) _Bool darkStyle; // @synthesize darkStyle=_darkStyle;
 @property(nonatomic) _Bool overlay; // @synthesize overlay=_overlay;
 - (void)setHighlighted:(_Bool)arg1;

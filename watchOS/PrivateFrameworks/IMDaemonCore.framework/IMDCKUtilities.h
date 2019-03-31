@@ -60,6 +60,15 @@
 - (void)logToPowerLogForLogDumpGUID:(id)arg1 logDumpCompleted:(_Bool)arg2 logDumpSucceeded:(_Bool)arg3 logDumpSendingCompleted:(_Bool)arg4 logDumpSendingSucceeded:(_Bool)arg5 reason:(id)arg6;
 - (void)logDumpAndSendMessageTo:(id)arg1 forHours:(int)arg2 reason:(id)arg3 requirePreviousPrompt:(_Bool)arg4 willSendBlock:(CDUnknownBlockType)arg5;
 - (void)logDumpAndSendMessageTo:(id)arg1 forHours:(int)arg2 reason:(id)arg3;
+- (id)findRootCause:(id)arg1;
+- (_Bool)isCKPartialError:(id)arg1;
+- (void)reportCompletionForSyncType:(int)arg1 isCoreDuetSync:(_Bool)arg2 onAttempt:(unsigned int)arg3 wasSuccessful:(_Bool)arg4;
+- (void)reportErrorForSyncType:(int)arg1 syncStep:(id)arg2 isRecoverable:(_Bool)arg3 error:(id)arg4;
+- (void)reportZoneCreation:(id)arg1;
+- (void)postSyncStateToCloudKit:(id)arg1 useManatee:(_Bool)arg2 legacyOnly:(_Bool)arg3;
+- (void)postSyncStateToCloudKit:(id)arg1 legacyOnly:(_Bool)arg2;
+- (void)postSyncStateToCloudKit:(id)arg1 useManatee:(_Bool)arg2;
+- (void)postSyncStateToCloudKit:(id)arg1;
 - (_Bool)isLocalCachedSaltPresent;
 - (_Bool)shouldKickOffWriteForSyncType:(int)arg1;
 - (void)_showCKLogNotificationWithCompletion:(CDUnknownBlockType)arg1;
@@ -117,6 +126,7 @@
 - (_Bool)_checkIfEnabledByServerBagOrDefault:(id)arg1;
 - (void)fetchCloudKitAccountStatusAndCheckForAccountNeedsRepairWithCompletion:(CDUnknownBlockType)arg1;
 - (_Bool)shouldRepairAccountWithDeviceAccountSecurityLevel:(unsigned int)arg1 serverAccountStatus:(int)arg2;
+- (void)_setEligibleToToggleMiCSwitch:(_Bool)arg1;
 - (void)fetchLocalAccountSecurityLevel:(CDUnknownBlockType)arg1;
 - (_Bool)_accountNeedsRepairOverride;
 - (void)fetchCloudKitAccountStatusWithCompletion:(CDUnknownBlockType)arg1;
@@ -134,6 +144,9 @@
 - (void)_resetKeepMessagesSettingandBroadcastToAllDevices;
 - (_Bool)_shouldDisplayPopUpForResettingKeepMessages;
 - (id)_getKeepMessagesValue;
+- (_Bool)serverAllowsAnalyticDetailsSubmission;
+- (_Bool)serverAllowsAnalyticSubmission;
+- (_Bool)serverAllowsMetricSubmission;
 - (void)setCloudKitSyncingEnabled:(_Bool)arg1;
 - (_Bool)cloudKitSyncDownloadAssetsOnly;
 - (_Bool)cloudKitSyncingEnabled;
@@ -159,6 +172,7 @@
 - (id)initWithServerBag:(id)arg1 lockDownmanager:(id)arg2 deviceSupport:(id)arg3 imDefaults:(id)arg4;
 - (id)_truthDatabase;
 - (id)_truthContainer;
+- (id)exitManager;
 - (id)logHandle;
 
 // Remaining properties

@@ -22,8 +22,10 @@
     _Bool _showNonPassCells;
     double _revealingContentOffset;
     struct CGSize _passCellSize;
+    _Bool _fade;
 }
 
+@property(nonatomic) _Bool fade; // @synthesize fade=_fade;
 - (void)passPanDidEnd;
 - (void)passPanDidBegin;
 - (id)_customAttribuesForPassAtTheTop:(id)arg1;

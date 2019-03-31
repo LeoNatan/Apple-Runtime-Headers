@@ -17,6 +17,7 @@
 
 + (id)sharedInstance;
 - (void).cxx_destruct;
+- (void)mediaPlayingStateWithCompletion:(CDUnknownBlockType)arg1;
 - (long long)mediaPlayingState;
 - (void)_stopMonitoring;
 - (void)_startMonitoringWithQueue:(id)arg1;

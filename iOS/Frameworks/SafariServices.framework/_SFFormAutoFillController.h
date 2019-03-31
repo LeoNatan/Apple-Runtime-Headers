@@ -11,7 +11,7 @@
 #import <SafariServices/_SFAuthenticationClient-Protocol.h>
 #import <SafariServices/_SFAutoFillInputViewDelegate-Protocol.h>
 
-@class NSArray, NSDictionary, NSMutableIndexSet, NSMutableSet, NSString, NSTimer, SFFormAutoFillFrameHandle, SFFormAutocompleteState, UIView, WBSCreditCardData, WBSOneTimeCodeMonitor, WKWebView, _SFAuthenticationContext, _SFAutoFillInputView, _SFFormAutoFillInputSession, _WKRemoteObjectInterface;
+@class NSArray, NSDictionary, NSMutableIndexSet, NSMutableSet, NSSet, NSString, NSTimer, SFFormAutoFillFrameHandle, SFFormAutocompleteState, UIView, WBSCreditCardData, WBSFormMetadata, WBSOneTimeCodeMonitor, WKWebView, _SFAuthenticationContext, _SFAutoFillInputView, _SFFormAutoFillInputSession, _WKRemoteObjectInterface;
 @protocol SFFormAutoFillControllerDelegate, SFFormAutoFiller, WBUFormAutoFillWebView;
 
 @interface _SFFormAutoFillController : NSObject <SFCredentialProviderExtensionManagerObserver, _SFAutoFillInputViewDelegate, SFFormMetadataObserver, _SFAuthenticationClient>
@@ -24,6 +24,8 @@
     long long _authenticationType;
     SFFormAutocompleteState *_state;
     NSTimer *_prefillTimer;
+    WBSFormMetadata *_unsubmittedForm;
+    SFFormAutoFillFrameHandle *_unsubmittedFormFrame;
     NSMutableIndexSet *_uniqueIDsOfFormsThatWereAutoFilled;
     NSMutableSet *_uniqueIDsOfControlsThatWereAutoFilled;
     NSString *_uniqueIDOfFocusedPasswordElementWithAutomaticPassword;
@@ -36,11 +38,13 @@
     NSDictionary *_externalCredentialIdentitiesForStreamlinedAutoFill;
     _Bool _metadataCorrectionsEnabled;
     WBSCreditCardData *_lastFilledCreditCardData;
+    NSSet *_lastFilledCreditCardDataTypes;
 }
 
 + (id)_filterAndSortCredentialIdentities:(id)arg1 pageURL:(id)arg2 exactMatchesOnly:(_Bool)arg3;
 + (void)_getExternalLoginCredentialSuggestionsForDomains:(id)arg1 pageURL:(id)arg2 completion:(CDUnknownBlockType)arg3;
 + (void)_getExternalLoginCredentialSuggestionsForDomains:(id)arg1 completion:(CDUnknownBlockType)arg2;
+@property(retain, nonatomic) NSSet *lastFilledCreditCardDataTypes; // @synthesize lastFilledCreditCardDataTypes=_lastFilledCreditCardDataTypes;
 @property(retain, nonatomic) WBSCreditCardData *lastFilledCreditCardData; // @synthesize lastFilledCreditCardData=_lastFilledCreditCardData;
 @property(nonatomic) _Bool metadataCorrectionsEnabled; // @synthesize metadataCorrectionsEnabled=_metadataCorrectionsEnabled;
 - (void).cxx_destruct;
@@ -64,6 +68,7 @@
 - (void)autoFillDidFinishWithUpdatedFormMetadata:(id)arg1 inFrame:(id)arg2 shouldSubmit:(_Bool)arg3;
 - (void)_removeUniqueIDsOfAutoFilledForm:(id)arg1;
 - (void)_addUniqueIDsOfAutoFilledForm:(id)arg1;
+- (void)didUpdateUnsubmittedForm:(id)arg1 inFrame:(id)arg2;
 - (void)willNavigateFrame:(id)arg1 withUnsubmittedForm:(id)arg2 loadingIsDeferred:(_Bool)arg3;
 - (void)didFillGeneratedPasswordInForm:(id)arg1 inFrame:(id)arg2;
 - (void)textDidChangeInTextField:(id)arg1 inForm:(id)arg2 inFrame:(id)arg3;
@@ -104,6 +109,7 @@
 - (_Bool)shouldShowIconsInPasswordPicker;
 - (void)insertTextSuggestion:(id)arg1;
 - (void)autoFill;
+- (void)offerToSaveUnsubmittedFormDataIfNeeded;
 - (void)prefillFormsSoonIfNeeded;
 - (void)_prefillTimerFired:(id)arg1;
 - (void)invalidate;

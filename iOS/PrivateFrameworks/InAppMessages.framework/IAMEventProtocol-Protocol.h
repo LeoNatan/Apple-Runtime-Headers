@@ -4,11 +4,14 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
+#import <InAppMessages/NSObject-Protocol.h>
+
 @class NSDictionary, NSString;
 
-@protocol IAMEventProtocol
+@protocol IAMEventProtocol <NSObject>
 @property(readonly, nonatomic) long long type;
 @property(readonly, copy, nonatomic) NSString *name;
+- (_Bool)matchesWithKey:(NSString *)arg1;
 
 @optional
 @property(readonly, copy, nonatomic) NSDictionary *payload;

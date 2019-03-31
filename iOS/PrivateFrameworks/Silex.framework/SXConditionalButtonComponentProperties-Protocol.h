@@ -6,9 +6,9 @@
 
 #import <Silex/SXConditionalComponentProperties-Protocol.h>
 
-@class NSArray;
+@class NSString;
 
 @protocol SXConditionalButtonComponentProperties <SXConditionalComponentProperties>
-@property(readonly, nonatomic) NSArray *textStyles;
+@property(readonly, nonatomic) NSString *textStyle;
 @end
 

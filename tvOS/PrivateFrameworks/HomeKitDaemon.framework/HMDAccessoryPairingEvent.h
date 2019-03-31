@@ -19,6 +19,7 @@
     long long _linkType;
     long long _certificationStatus;
     unsigned long long _authMethod;
+    NSString *_identifier;
 }
 
 + (id)removingAccessory:(id)arg1 hapAccessory:(id)arg2;
@@ -26,6 +27,7 @@
 + (id)pairingAccessoryWithDescription:(id)arg1;
 + (id)uuid;
 + (void)initialize;
+@property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(nonatomic) unsigned long long authMethod; // @synthesize authMethod=_authMethod;
 @property(nonatomic) long long certificationStatus; // @synthesize certificationStatus=_certificationStatus;
 @property(nonatomic, getter=isWacLegacy) _Bool wacLegacy; // @synthesize wacLegacy=_wacLegacy;

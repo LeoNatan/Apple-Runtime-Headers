@@ -8,7 +8,7 @@
 
 #import <Rapport/RPAuthenticatable-Protocol.h>
 
-@class CUBLEConnection, CUBluetoothScalablePipe, CUBonjourDevice, CUNetLinkManager, CUPairingSession, CUPairingStream, CUTCPConnection, NSData, NSError, NSString, NSUUID, RPCompanionLinkDevice, RPIdentityDaemon, RPMetrics;
+@class CUBLEConnection, CUBluetoothScalablePipe, CUBonjourDevice, CUHomeKitManager, CUNetLinkManager, CUPairingSession, CUPairingStream, CUTCPConnection, NSData, NSError, NSString, NSUUID, RPCompanionLinkDevice, RPIdentity, RPIdentityDaemon, RPMetrics;
 @protocol CUReadWriteRequestable, OS_dispatch_queue, OS_dispatch_source;
 
 @interface RPConnection : NSObject <RPAuthenticatable>
@@ -17,7 +17,6 @@
     NSString *_selfAddrString;
     _Bool _invalidateCalled;
     _Bool _invalidateDone;
-    _Bool _isClient;
     NSObject<OS_dispatch_source> *_probeTimer;
     _Bool _retryFired;
     unsigned long long _retryTicks;
@@ -27,9 +26,10 @@
     _Bool _stepDone;
     NSError *_stepError;
     CDStruct_798ebea5 _frameHeader;
+    NSString *_homeKitIdentityIdentifier;
+    NSData *_homeKitIdentitySignature;
     unsigned long long _mainAuthTagLength;
     CUPairingStream *_mainStream;
-    NSString *_managedConfigDeviceID;
     int _pairSetupAuthType;
     CUPairingSession *_pairSetupSession;
     int _pairVerifyAuthType;
@@ -45,14 +45,18 @@
     struct NSMutableArray *_sendArray;
     unsigned int _xidLast;
     struct LogCategory *_ucat;
+    _Bool _clientMode;
+    _Bool _flowControlReadEnabled;
     _Bool _invalidationHandled;
     _Bool _preAuthEnabled;
     _Bool _present;
     unsigned int _pairSetupFlags;
     unsigned int _pairVerifyFlags;
     int _passwordType;
+    int _passwordTypeActual;
     unsigned int _flags;
     int _linkType;
+    int _preferredIdentityType;
     int _state;
     NSString *_password;
     CDUnknownBlockType _authCompletionHandler;
@@ -68,8 +72,14 @@
     unsigned long long _controlFlags;
     NSString *_destinationString;
     NSObject<OS_dispatch_queue> *_dispatchQueue;
+    CDUnknownBlockType _flowControlWriteChangedHandler;
+    RPIdentity *_forcedPeerIdentity;
+    RPIdentity *_forcedSelfIdentity;
+    CUHomeKitManager *_homeKitManager;
     NSString *_identifierOverride;
     RPIdentityDaemon *_identityDaemon;
+    RPIdentity *_identityResolved;
+    RPIdentity *_identityVerified;
     CDUnknownBlockType _invalidationHandler;
     NSString *_label;
     RPCompanionLinkDevice *_localDeviceInfo;
@@ -81,6 +91,9 @@
     CDUnknownBlockType _peerUpdatedHandler;
     NSData *_pskData;
     CDUnknownBlockType _receivedEventHandler;
+    CDUnknownBlockType _receivedFileStartHandler;
+    CDUnknownBlockType _receivedFileDataHandler;
+    CDUnknownBlockType _receivedFileEndHandler;
     CDUnknownBlockType _receivedRequestHandler;
     CDUnknownBlockType _sessionStartHandler;
     CDUnknownBlockType _stateChangedHandler;
@@ -94,13 +107,17 @@
 @property(nonatomic) int state; // @synthesize state=_state;
 @property(copy, nonatomic) CDUnknownBlockType sessionStartHandler; // @synthesize sessionStartHandler=_sessionStartHandler;
 @property(copy, nonatomic) CDUnknownBlockType receivedRequestHandler; // @synthesize receivedRequestHandler=_receivedRequestHandler;
+@property(copy, nonatomic) CDUnknownBlockType receivedFileEndHandler; // @synthesize receivedFileEndHandler=_receivedFileEndHandler;
+@property(copy, nonatomic) CDUnknownBlockType receivedFileDataHandler; // @synthesize receivedFileDataHandler=_receivedFileDataHandler;
+@property(copy, nonatomic) CDUnknownBlockType receivedFileStartHandler; // @synthesize receivedFileStartHandler=_receivedFileStartHandler;
 @property(copy, nonatomic) CDUnknownBlockType receivedEventHandler; // @synthesize receivedEventHandler=_receivedEventHandler;
 @property(copy, nonatomic) NSData *pskData; // @synthesize pskData=_pskData;
 @property(nonatomic) _Bool present; // @synthesize present=_present;
+@property(nonatomic) int preferredIdentityType; // @synthesize preferredIdentityType=_preferredIdentityType;
+@property(nonatomic) _Bool preAuthEnabled; // @synthesize preAuthEnabled=_preAuthEnabled;
 @property(copy, nonatomic) CDUnknownBlockType peerUpdatedHandler; // @synthesize peerUpdatedHandler=_peerUpdatedHandler;
 @property(copy, nonatomic) NSString *peerIdentifier; // @synthesize peerIdentifier=_peerIdentifier;
 @property(readonly, nonatomic) RPCompanionLinkDevice *peerDeviceInfo; // @synthesize peerDeviceInfo=_peerDeviceInfo;
-@property(nonatomic) _Bool preAuthEnabled; // @synthesize preAuthEnabled=_preAuthEnabled;
 @property(copy, nonatomic) CDUnknownBlockType pairVerifyCompletion; // @synthesize pairVerifyCompletion=_pairVerifyCompletion;
 @property(retain, nonatomic) CUNetLinkManager *netLinkManager; // @synthesize netLinkManager=_netLinkManager;
 @property(retain, nonatomic) RPMetrics *metrics; // @synthesize metrics=_metrics;
@@ -109,12 +126,20 @@
 @property(copy, nonatomic) NSString *label; // @synthesize label=_label;
 @property(copy, nonatomic) CDUnknownBlockType invalidationHandler; // @synthesize invalidationHandler=_invalidationHandler;
 @property(nonatomic) _Bool invalidationHandled; // @synthesize invalidationHandled=_invalidationHandled;
+@property(readonly, nonatomic) RPIdentity *identityVerified; // @synthesize identityVerified=_identityVerified;
+@property(retain, nonatomic) RPIdentity *identityResolved; // @synthesize identityResolved=_identityResolved;
 @property(retain, nonatomic) RPIdentityDaemon *identityDaemon; // @synthesize identityDaemon=_identityDaemon;
 @property(copy, nonatomic) NSString *identifierOverride; // @synthesize identifierOverride=_identifierOverride;
+@property(retain, nonatomic) CUHomeKitManager *homeKitManager; // @synthesize homeKitManager=_homeKitManager;
+@property(retain, nonatomic) RPIdentity *forcedSelfIdentity; // @synthesize forcedSelfIdentity=_forcedSelfIdentity;
+@property(retain, nonatomic) RPIdentity *forcedPeerIdentity; // @synthesize forcedPeerIdentity=_forcedPeerIdentity;
+@property(copy, nonatomic) CDUnknownBlockType flowControlWriteChangedHandler; // @synthesize flowControlWriteChangedHandler=_flowControlWriteChangedHandler;
+@property(nonatomic) _Bool flowControlReadEnabled; // @synthesize flowControlReadEnabled=_flowControlReadEnabled;
 @property(nonatomic) unsigned int flags; // @synthesize flags=_flags;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
 @property(copy, nonatomic) NSString *destinationString; // @synthesize destinationString=_destinationString;
 @property(nonatomic) unsigned long long controlFlags; // @synthesize controlFlags=_controlFlags;
+@property(nonatomic) _Bool clientMode; // @synthesize clientMode=_clientMode;
 @property(retain, nonatomic) id client; // @synthesize client=_client;
 @property(retain, nonatomic) CUBluetoothScalablePipe *btPipe; // @synthesize btPipe=_btPipe;
 @property(retain, nonatomic) CUBonjourDevice *bonjourPeerDevice; // @synthesize bonjourPeerDevice=_bonjourPeerDevice;
@@ -125,6 +150,7 @@
 @property(copy, nonatomic) CDUnknownBlockType hidePasswordHandler; // @synthesize hidePasswordHandler=_hidePasswordHandler;
 @property(copy, nonatomic) CDUnknownBlockType showPasswordHandler; // @synthesize showPasswordHandler=_showPasswordHandler;
 @property(copy, nonatomic) CDUnknownBlockType authCompletionHandler; // @synthesize authCompletionHandler=_authCompletionHandler;
+@property(readonly, nonatomic) int passwordTypeActual; // @synthesize passwordTypeActual=_passwordTypeActual;
 @property(nonatomic) int passwordType; // @synthesize passwordType=_passwordType;
 @property(copy, nonatomic) NSString *password; // @synthesize password=_password;
 @property(nonatomic) unsigned int pairVerifyFlags; // @synthesize pairVerifyFlags=_pairVerifyFlags;
@@ -132,11 +158,19 @@
 - (void).cxx_destruct;
 - (id)_systeminfo;
 - (void)_receivedSystemInfo:(id)arg1 xid:(id)arg2;
+- (void)_identityProofsVerifyHomeKitSignature:(id)arg1 identifier:(id)arg2;
+- (void)_identityProofsVerify:(id)arg1;
+- (void)_identityProofsAdd:(id)arg1 update:(_Bool)arg2;
+- (id)_identityProofDataServer;
+- (id)_identityProofDataClient;
 - (void)_timeoutForXID:(id)arg1;
 - (void)_timeoutForSendEntry:(id)arg1;
 - (void)_abortRequestsWithError:(id)arg1;
 - (void)_receivedResponse:(id)arg1 ctx:(CDStruct_5577c19c *)arg2;
 - (void)_receivedRequest:(id)arg1 ctx:(CDStruct_5577c19c *)arg2;
+- (void)_receivedFileData:(id)arg1 xid:(id)arg2 requestID:(id)arg3;
+- (void)_receivedFileEnd:(id)arg1 xid:(id)arg2 requestID:(id)arg3;
+- (void)_receivedFileStart:(id)arg1 xid:(id)arg2 requestID:(id)arg3;
 - (void)_receivedEvent:(id)arg1 ctx:(CDStruct_5577c19c *)arg2;
 - (void)_receivedObject:(id)arg1 ctx:(CDStruct_5577c19c *)arg2;
 - (void)_receivedHeader:(const CDStruct_798ebea5 *)arg1 encryptedObjectData:(id)arg2 ctx:(CDStruct_5577c19c *)arg3;
@@ -146,6 +180,9 @@
 - (void)sendReachabilityProbe:(const char *)arg1;
 - (void)_sendFrameType:(unsigned char)arg1 unencryptedObject:(id)arg2;
 - (void)_sendFrameType:(unsigned char)arg1 body:(id)arg2;
+- (void)sendFileEnd:(id)arg1 error:(id)arg2 xpcID:(unsigned int)arg3 options:(id)arg4 responseHandler:(CDUnknownBlockType)arg5;
+- (void)sendFileData:(id)arg1 xpcID:(unsigned int)arg2 options:(id)arg3 responseHandler:(CDUnknownBlockType)arg4;
+- (void)sendFileStart:(id)arg1 xpcID:(unsigned int)arg2 options:(id)arg3 responseHandler:(CDUnknownBlockType)arg4;
 - (void)_sendEncryptedResponse:(id)arg1 error:(id)arg2 xid:(id)arg3 requestID:(id)arg4;
 - (void)_sendEncryptedRequestID:(id)arg1 request:(id)arg2 xpcID:(unsigned int)arg3 options:(id)arg4 sendEntry:(id)arg5 responseHandler:(CDUnknownBlockType)arg6;
 - (void)sendEncryptedRequestID:(id)arg1 request:(id)arg2 xpcID:(unsigned int)arg3 options:(id)arg4 responseHandler:(CDUnknownBlockType)arg5;
@@ -161,7 +198,7 @@
 - (_Bool)_serverPairingAllowed;
 - (void)_serverPreAuthRequestWithData:(id)arg1;
 - (void)_serverError:(id)arg1;
-- (_Bool)_serverClientAllowed;
+- (id)_serverAllowMACAddresses;
 - (void)_serverAcceptTCP;
 - (void)_serverAcceptBTPipe;
 - (void)_serverAcceptBLE;
@@ -174,6 +211,7 @@
 - (void)_clientPairVerifyWithData:(id)arg1;
 - (void)_clientPairVerifyStart;
 - (void)_clientPairSetupCompleted:(id)arg1;
+- (void)_clientPairSetupPromptWithFlags:(unsigned int)arg1 throttleSeconds:(int)arg2 handler:(CDUnknownBlockType)arg3;
 - (void)_clientPairSetupWithData:(id)arg1;
 - (void)_clientPairSetupStart;
 - (void)_clientPreAuthResponseWithData:(id)arg1;
@@ -195,12 +233,14 @@
 - (id)_pairVerifySignData:(id)arg1 flags:(unsigned int)arg2 error:(id *)arg3;
 - (void)_pairVerifyInvalidate;
 - (void)_pairSetupInvalidate;
+- (void)homeKitIdentityUpdated;
 - (void)_invalidated;
 - (void)_invalidateCore:(id)arg1;
 - (void)_invalidate;
 - (void)invalidateWithError:(id)arg1;
 - (void)invalidate;
 - (void)activate;
+@property(readonly, nonatomic) int flowControlWriteState;
 - (id)descriptionWithLevel:(int)arg1;
 - (id)description;
 - (void)dealloc;

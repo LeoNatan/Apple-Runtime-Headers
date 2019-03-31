@@ -113,7 +113,7 @@
 - (void)getFormFieldValues:(id *)arg1 andFieldToFocus:(id *)arg2 withSingleCreditCardData:(id)arg3 inField:(id)arg4 inForm:(id)arg5;
 - (id)_nextFieldToFocusAfterFillingFieldAtIndex:(unsigned long long)arg1 inForm:(id)arg2;
 - (unsigned long long)_indexForControlWithUniqueID:(id)arg1 inForm:(id)arg2;
-- (void)getFormFieldValues:(id *)arg1 andFieldToFocus:(id *)arg2 forCreditCardForm:(id)arg3 fromCreditCardData:(id)arg4;
+- (void)getFormFieldValues:(id *)arg1 andFieldToFocus:(id *)arg2 andCreditCardDataTypesThatWillBeFilled:(id *)arg3 forCreditCardForm:(id)arg4 fromCreditCardData:(id)arg5;
 - (unsigned long long)addValuesForStandardFormControls:(id)arg1 startingAtIndex:(unsigned long long)arg2 fromAutoFillItem:(id)arg3 toDictionary:(id)arg4 formTextSample:(id)arg5 multiRoundAutoFillManager:(id)arg6;
 - (unsigned long long)addValuesForStandardFormControlsInForm:(id)arg1 startingAtIndex:(unsigned long long)arg2 fromAutoFillItem:(id)arg3 toDictionary:(id)arg4 multiRoundAutoFillManager:(id)arg5;
 - (void)_fillPhoneNumber:(id)arg1 intoValues:(id)arg2 controls:(id)arg3 formTextSample:(id)arg4 multiRoundAutoFillManager:(id)arg5;

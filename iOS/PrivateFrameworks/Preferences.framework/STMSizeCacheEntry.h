@@ -12,10 +12,14 @@
 {
     NSString *_itemPath;
     NSNumber *_itemSize;
+    unsigned long long _fsEvtID;
     unsigned long long _status;
+    unsigned long long _sizeEventID;
 }
 
+@property unsigned long long sizeEventID; // @synthesize sizeEventID=_sizeEventID;
 @property unsigned long long status; // @synthesize status=_status;
+@property unsigned long long fsEvtID; // @synthesize fsEvtID=_fsEvtID;
 @property(retain) NSNumber *itemSize; // @synthesize itemSize=_itemSize;
 @property(retain) NSString *itemPath; // @synthesize itemPath=_itemPath;
 - (void).cxx_destruct;

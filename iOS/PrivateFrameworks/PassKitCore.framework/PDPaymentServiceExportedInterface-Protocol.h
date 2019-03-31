@@ -6,17 +6,18 @@
 
 #import <PassKitCore/PDXPCServiceExportedInterface-Protocol.h>
 
-@class NSCalendar, NSData, NSDate, NSString, PKExpressPassInformation, PKPaymentApplication, PKPaymentTransaction, PKPaymentWebServiceContext;
+@class NSCalendar, NSData, NSDate, NSSet, NSString, PKExpressPassInformation, PKPaymentApplication, PKPaymentTransaction, PKPaymentWebServiceContext;
 
 @protocol PDPaymentServiceExportedInterface <PDXPCServiceExportedInterface>
 - (void)supportsDisbursements:(void (^)(_Bool))arg1;
-- (void)disbursementVoucherWithDisbursementSource:(unsigned long long)arg1 disbursementTarget:(unsigned long long)arg2 completion:(void (^)(PKDisbursementVoucher *))arg3;
+- (void)disbursementVoucherWithDisbursementSource:(unsigned long long)arg1 disbursementTarget:(unsigned long long)arg2 bundleIdentifier:(NSString *)arg3 teamIdentifier:(NSString *)arg4 completion:(void (^)(PKDisbursementVoucher *))arg5;
 - (void)insertOrUpdatePaymentTransaction:(PKPaymentTransaction *)arg1 forPassUniqueIdentifier:(NSString *)arg2 paymentApplication:(PKPaymentApplication *)arg3 handler:(void (^)(PKPaymentTransaction *))arg4;
 - (void)downloadAllPaymentPassesWithHandler:(void (^)(void))arg1;
 - (void)initializeSecureElement:(void (^)(_Bool))arg1;
 - (void)initializeSecureElementIfNecessaryWithHandler:(void (^)(_Bool, NSData *, NSData *))arg1;
 - (void)removeExpressPassWithUniqueIdentifier:(NSString *)arg1 completion:(void (^)(_Bool, NSSet *))arg2;
 - (void)removeExpressPassesWithCardType:(long long)arg1 completion:(void (^)(_Bool, NSSet *))arg2;
+- (void)conflictingExpressPassIdentifiersForPassInformation:(PKExpressPassInformation *)arg1 withReferenceExpressState:(NSSet *)arg2 completion:(void (^)(NSSet *))arg3;
 - (void)conflictingExpressPassIdentifiersForPassInformation:(PKExpressPassInformation *)arg1 withCompletion:(void (^)(NSSet *))arg2;
 - (void)setExpressWithPassInformation:(PKExpressPassInformation *)arg1 credential:(NSData *)arg2 completion:(void (^)(_Bool, NSSet *))arg3;
 - (void)expressPassInformationForMode:(NSString *)arg1 withHandler:(void (^)(PKExpressPassInformation *))arg2;

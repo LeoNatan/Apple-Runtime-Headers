@@ -17,7 +17,6 @@
     UIView *_heroView;
     UILabel *_titleLabel;
     UILabel *_bodyLabel;
-    UILabel *_footnoteLabel;
     UILabel *_birthdayPromptLabel;
     HKSeparatorLineView *_birthdayTopSeparator;
     UIStackView *_birthdayEntryView;
@@ -26,6 +25,8 @@
     NSDate *_dateOfBirth;
     NSDateFormatter *_dateFormatter;
     HKSeparatorLineView *_birthdayBottomSeparator;
+    UILabel *_birthdayFooterLabel;
+    UILabel *_locationFooterLabel;
     HRStackedButtonView *_stackedButtonView;
     NSLayoutConstraint *_contentViewBottomConstraint;
     NSString *_productType;
@@ -34,6 +35,8 @@
 @property(retain, nonatomic) NSString *productType; // @synthesize productType=_productType;
 @property(retain, nonatomic) NSLayoutConstraint *contentViewBottomConstraint; // @synthesize contentViewBottomConstraint=_contentViewBottomConstraint;
 @property(retain, nonatomic) HRStackedButtonView *stackedButtonView; // @synthesize stackedButtonView=_stackedButtonView;
+@property(retain, nonatomic) UILabel *locationFooterLabel; // @synthesize locationFooterLabel=_locationFooterLabel;
+@property(retain, nonatomic) UILabel *birthdayFooterLabel; // @synthesize birthdayFooterLabel=_birthdayFooterLabel;
 @property(retain, nonatomic) HKSeparatorLineView *birthdayBottomSeparator; // @synthesize birthdayBottomSeparator=_birthdayBottomSeparator;
 @property(retain, nonatomic) NSDateFormatter *dateFormatter; // @synthesize dateFormatter=_dateFormatter;
 @property(retain, nonatomic) NSDate *dateOfBirth; // @synthesize dateOfBirth=_dateOfBirth;
@@ -42,12 +45,14 @@
 @property(retain, nonatomic) UIStackView *birthdayEntryView; // @synthesize birthdayEntryView=_birthdayEntryView;
 @property(retain, nonatomic) HKSeparatorLineView *birthdayTopSeparator; // @synthesize birthdayTopSeparator=_birthdayTopSeparator;
 @property(retain, nonatomic) UILabel *birthdayPromptLabel; // @synthesize birthdayPromptLabel=_birthdayPromptLabel;
-@property(retain, nonatomic) UILabel *footnoteLabel; // @synthesize footnoteLabel=_footnoteLabel;
 @property(retain, nonatomic) UILabel *bodyLabel; // @synthesize bodyLabel=_bodyLabel;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(retain, nonatomic) UIView *heroView; // @synthesize heroView=_heroView;
 @property(retain, nonatomic) HKHeartRhythmAvailability *availability; // @synthesize availability=_availability;
 - (void).cxx_destruct;
+- (id)watchOSVersionTooLowBodyString;
+- (id)deviceNotSupportedBodyString;
+- (id)featureDisabledBodyString;
 - (id)locationNotFoundPromptBodyString;
 - (id)locationFeatureIneligiblePromptBodyString;
 - (id)ageIneligiblePromptAckButtonString;
@@ -57,10 +62,12 @@
 - (id)buttonTitleString;
 - (id)disclaimerString;
 - (id)learnMoreString;
-- (id)footnoteString;
+- (id)locationFooterString;
+- (id)birthdayFooterString;
 - (id)bodyString;
 - (id)titleString;
-- (double)_ageEntryToContinueButton;
+- (double)_birthdayFooterLastBaselineToContinueButton;
+- (double)_bottomSeparatorToBirthdayFooterFirstBaseline;
 - (double)_ageEntryLastBaselineToBottomSeparator;
 - (double)_ageEntryTopSeparatorToFirstBaseline;
 - (double)_agePromptLastBaselineToAgeEntryTop;
@@ -76,7 +83,7 @@
 - (id)_titleFontTextStyle;
 - (void)_updateDateOfBirthDisplay;
 - (_Bool)_activeWatchNeedsLocationCheck;
-- (void)_trackElectrocardiogramOnboardingStepIfNeeded:(long long)arg1;
+- (void)_trackElectrocardiogramOnboardingStepIfNeeded:(long long)arg1 countryCode:(id)arg2;
 - (void)stackedButtonView:(id)arg1 didTapButtonAtIndex:(long long)arg2;
 - (_Bool)textField:(id)arg1 shouldChangeCharactersInRange:(struct _NSRange)arg2 replacementString:(id)arg3;
 - (void)_keyboardFrameChanged:(id)arg1;

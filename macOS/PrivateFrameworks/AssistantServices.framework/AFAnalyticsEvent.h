@@ -32,6 +32,7 @@
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)contextDataAsProtobuf;
 - (id)contextDataAsDictionary;
+- (id)legacyTypeName;
 - (id)typeName;
 - (id)initWithDeliveryStream:(unsigned long long)arg1 type:(long long)arg2 timestamp:(unsigned long long)arg3 contextDataType:(long long)arg4 contextData:(id)arg5;
 - (BOOL)isEqual:(id)arg1;

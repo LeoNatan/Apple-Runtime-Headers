@@ -6,15 +6,17 @@
 
 #import <UIKit/UIViewController.h>
 
+#import <NewsUI/NUANFDebugSettingsObserver-Protocol.h>
+#import <NewsUI/NUBarCompressible-Protocol.h>
 #import <NewsUI/NUDynamicTypeObserving-Protocol.h>
 #import <NewsUI/NULoadable-Protocol.h>
 #import <NewsUI/SXAnalyticsReporting-Protocol.h>
 #import <NewsUI/SXScrollViewControllerDelegate-Protocol.h>
 
 @class FCObservable, NFEventManager, NFMultiDelegate, NSHashTable, NSString, NUArticleAdManager, SXScrollViewController, UIScrollView;
-@protocol NUArticleDataProvider, NUArticleKeyCommandManager, NUDocumentSectionBlueprintProvider, NUDynamicTypeProviding, NUEndOfArticleDataProvider, NULoadingDelegate, SXAnalyticsReporting;
+@protocol NUANFDebugSettingsProvider, NUArticleDataProvider, NUArticleKeyCommandManager, NUDocumentSectionBlueprintProvider, NUDynamicTypeProviding, NUEndOfArticleDataProvider, NULoadingDelegate, SXAnalyticsReporting;
 
-@interface NUArticleViewController : UIViewController <SXScrollViewControllerDelegate, SXAnalyticsReporting, NUDynamicTypeObserving, NULoadable>
+@interface NUArticleViewController : UIViewController <SXScrollViewControllerDelegate, SXAnalyticsReporting, NUDynamicTypeObserving, NUANFDebugSettingsObserver, NULoadable, NUBarCompressible>
 {
     _Bool _articleIsPresentingFullscreen;
     id <NULoadingDelegate> _loadingDelegate;
@@ -32,13 +34,17 @@
     id <NUArticleKeyCommandManager> _keyCommandManager;
     NSHashTable *_loadingListeners;
     id <NUDocumentSectionBlueprintProvider> _documentSectionBlueprintProvider;
+    id <NUANFDebugSettingsProvider> _debugSettingsProvider;
+    unsigned long long _presentationMode;
 }
 
+@property(nonatomic) unsigned long long presentationMode; // @synthesize presentationMode=_presentationMode;
+@property(nonatomic) _Bool articleIsPresentingFullscreen; // @synthesize articleIsPresentingFullscreen=_articleIsPresentingFullscreen;
+@property(readonly, nonatomic) id <NUANFDebugSettingsProvider> debugSettingsProvider; // @synthesize debugSettingsProvider=_debugSettingsProvider;
 @property(readonly, nonatomic) id <NUDocumentSectionBlueprintProvider> documentSectionBlueprintProvider; // @synthesize documentSectionBlueprintProvider=_documentSectionBlueprintProvider;
 @property(readonly, nonatomic) NSHashTable *loadingListeners; // @synthesize loadingListeners=_loadingListeners;
 @property(readonly, nonatomic) id <NUArticleKeyCommandManager> keyCommandManager; // @synthesize keyCommandManager=_keyCommandManager;
 @property(readonly, nonatomic) NFEventManager *eventManager; // @synthesize eventManager=_eventManager;
-@property(nonatomic) _Bool articleIsPresentingFullscreen; // @synthesize articleIsPresentingFullscreen=_articleIsPresentingFullscreen;
 @property(readonly, nonatomic) id <NUDynamicTypeProviding> dynamicTypeProviding; // @synthesize dynamicTypeProviding=_dynamicTypeProviding;
 @property(readonly, nonatomic) NUArticleAdManager *adManager; // @synthesize adManager=_adManager;
 @property(readonly, nonatomic) id <NUEndOfArticleDataProvider> endOfArticleDataProvider; // @synthesize endOfArticleDataProvider=_endOfArticleDataProvider;
@@ -57,6 +63,8 @@
 - (void)updateScrollViewControllerWithHeaderBlueprint:(id)arg1;
 - (void)scrollToTopAnimated:(_Bool)arg1;
 - (void)restoreScrollPositionIfNeeded;
+- (void)testingConditionEnabled:(_Bool)arg1;
+- (void)viewportDebuggingEnabled:(_Bool)arg1;
 - (void)dynamicTypeDidChange:(id)arg1;
 - (void)reportEvent:(id)arg1;
 - (void)scrollViewController:(id)arg1 enableNavigation:(_Bool)arg2;
@@ -67,12 +75,13 @@
 - (void)scrollViewControllerDidLayoutContent:(id)arg1;
 - (_Bool)prefersStatusBarHidden;
 - (long long)preferredStatusBarStyle;
+- (void)traitCollectionDidChange:(id)arg1;
 - (void)viewDidLayoutSubviews;
 - (_Bool)canBecomeFirstResponder;
 - (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)viewDidLoad;
-- (id)initWithArticleDataProvider:(id)arg1 scrollViewController:(id)arg2 articleAdManager:(id)arg3 dynamicTypeProviding:(id)arg4 appStateMonitor:(id)arg5 keyCommandManager:(id)arg6 loadingListeners:(id)arg7 headerBlueprintProvider:(id)arg8;
+- (id)initWithArticleDataProvider:(id)arg1 scrollViewController:(id)arg2 articleAdManager:(id)arg3 dynamicTypeProviding:(id)arg4 appStateMonitor:(id)arg5 keyCommandManager:(id)arg6 loadingListeners:(id)arg7 headerBlueprintProvider:(id)arg8 debugSettingsProvider:(id)arg9;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

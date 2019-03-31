@@ -10,7 +10,7 @@
 #import <PassKitUI/PKExplanationViewDelegate-Protocol.h>
 #import <PassKitUI/PKPaymentSelectPassesViewControllerDelegate-Protocol.h>
 
-@class NSString, PKPaymentProvisioningController, PKPeerPaymentCredential, PKPeerPaymentWebService, UIImage;
+@class NSString, PKPaymentProvisioningController, PKPeerPaymentCredential, PKPeerPaymentTermsController, PKPeerPaymentWebService, UIImage;
 @protocol PKPaymentSetupViewControllerDelegate;
 
 @interface PKPeerPaymentExplanationViewController : PKExplanationViewController <PKExplanationViewDelegate, PKPaymentSelectPassesViewControllerDelegate, PKExplanationViewControllerDelegate>
@@ -18,6 +18,7 @@
     PKPaymentProvisioningController *_provisioningController;
     PKPeerPaymentCredential *_credential;
     id <PKPaymentSetupViewControllerDelegate> _setupDelegate;
+    PKPeerPaymentTermsController *_termsController;
     PKPeerPaymentWebService *_peerPaymentWebService;
     UIImage *_passSnapShot;
     _Bool _hidesSetupLater;

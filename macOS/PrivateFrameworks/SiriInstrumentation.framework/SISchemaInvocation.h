@@ -8,23 +8,20 @@
 
 #import <SiriInstrumentation/NSCopying-Protocol.h>
 
-@class SISchemaViewIDType;
+@class SISchemaViewContainer;
 
 @interface SISchemaInvocation : PBCodable <NSCopying>
 {
     int _invocationAction;
     int _invocationSource;
-    int _viewElementID;
-    SISchemaViewIDType *_viewID;
+    SISchemaViewContainer *_viewContainer;
     struct {
         unsigned int invocationAction:1;
         unsigned int invocationSource:1;
-        unsigned int viewElementID:1;
     } _has;
 }
 
-@property(nonatomic) int viewElementID; // @synthesize viewElementID=_viewElementID;
-@property(retain, nonatomic) SISchemaViewIDType *viewID; // @synthesize viewID=_viewID;
+@property(retain, nonatomic) SISchemaViewContainer *viewContainer; // @synthesize viewContainer=_viewContainer;
 - (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -35,8 +32,7 @@
 - (BOOL)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
-@property(nonatomic) BOOL hasViewElementID;
-@property(readonly, nonatomic) BOOL hasViewID;
+@property(readonly, nonatomic) BOOL hasViewContainer;
 - (int)StringAsInvocationSource:(id)arg1;
 - (id)invocationSourceAsString:(int)arg1;
 @property(nonatomic) BOOL hasInvocationSource;

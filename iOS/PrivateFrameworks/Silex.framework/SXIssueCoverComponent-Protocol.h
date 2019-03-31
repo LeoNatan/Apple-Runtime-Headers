@@ -9,6 +9,7 @@
 @class NSString;
 
 @protocol SXIssueCoverComponent <SXComponent>
+@property(readonly, nonatomic) _Bool videoPlaybackEnabled;
 @property(readonly, nonatomic) NSString *issueIdentifier;
 @end
 

@@ -267,7 +267,6 @@ __attribute__((visibility("hidden")))
 - (float)_availableWidthForHorizontalLayout:(_Bool)arg1;
 - (_Bool)_horizontalLayoutCanUseFullWidth;
 - (float)_verticalLayoutWidth;
-- (id)_layoutWidthDeterminationViewToSizeAgainst;
 - (struct CGSize)_sizeForLayoutWidthDetermination;
 - (_Bool)_buttonsAreTopMost;
 - (void)_applyTextFieldViewControllerContainerViewConstraints;

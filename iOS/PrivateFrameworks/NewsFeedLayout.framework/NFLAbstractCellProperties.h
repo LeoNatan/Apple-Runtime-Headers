@@ -12,6 +12,7 @@
 {
     NFLFontCache *_fontCache;
     double _scaleValue;
+    double _lineHeightMultiplier;
     long long _rowSpan;
     NSDictionary *_layout;
     NSDictionary *_columnIrrespectiveProperties;
@@ -22,6 +23,7 @@
 @property(retain, nonatomic) NSDictionary *layout; // @synthesize layout=_layout;
 @property(readonly, nonatomic) long long rowSpan; // @synthesize rowSpan=_rowSpan;
 @property(nonatomic) CDStruct_3d2913aa headlineScales; // @synthesize headlineScales=_headlineScales;
+@property(readonly, nonatomic) double lineHeightMultiplier; // @synthesize lineHeightMultiplier=_lineHeightMultiplier;
 @property(nonatomic) double scaleValue; // @synthesize scaleValue=_scaleValue;
 @property(retain, nonatomic) NFLFontCache *fontCache; // @synthesize fontCache=_fontCache;
 - (void).cxx_destruct;
@@ -39,7 +41,7 @@
 - (id)scaledNumberForPropertyKey:(id)arg1;
 - (struct CGSize)sizeForPropertyKey:(id)arg1;
 - (struct CGSize)scaledSizeForPropertyKey:(id)arg1;
-- (id)initWithLayout:(id)arg1 columnIrrespectiveProperties:(id)arg2 fontCache:(id)arg3 scaleValue:(double)arg4 headlineScales:(CDStruct_3d2913aa)arg5;
+- (id)initWithLayout:(id)arg1 columnIrrespectiveProperties:(id)arg2 fontCache:(id)arg3 scaleValue:(double)arg4 lineHeightMultiplier:(double)arg5 headlineScales:(CDStruct_3d2913aa)arg6;
 
 @end
 

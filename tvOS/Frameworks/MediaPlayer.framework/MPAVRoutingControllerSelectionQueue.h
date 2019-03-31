@@ -28,6 +28,7 @@
 - (void)_dequeue;
 - (void)_dequeueSelectionWhenPossible;
 - (void)_enqueue:(id)arg1;
+- (void)removePendingRoute:(id)arg1 withError:(_Bool)arg2;
 - (void)removePendingRoute:(id)arg1;
 - (void)removeAllPendingRoutes;
 - (void)addPendingRoute:(id)arg1;

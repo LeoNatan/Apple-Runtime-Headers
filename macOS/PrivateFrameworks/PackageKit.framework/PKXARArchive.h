@@ -6,13 +6,14 @@
 
 #import <PackageKit/PKMutableArchive.h>
 
-@class NSString;
+@class NSData, NSString;
 
 @interface PKXARArchive : PKMutableArchive
 {
     NSString *_archivePath;
     struct __xar_t *_xarPtr;
     BOOL _skipsVerify;
+    NSData *_archiveHash;
 }
 
 + (id)_fileAttributeForXARProperty:(char *)arg1 fileAttributeKey:(id)arg2;
@@ -31,11 +32,14 @@
 - (struct __xar_t *)_xar;
 - (BOOL)closeArchive;
 - (id)computedArchiveDigestWithAlgorithm:(id)arg1;
+- (id)digestAlgorithm;
 - (id)archiveDigest;
+- (id)archiveDigestData;
 - (long long)_archiveFileSize;
 - (id)archivePath;
 - (void)_setSkipsVerifyIfUnsigned:(BOOL)arg1;
 - (void)dealloc;
+- (id)initForReadingFromPath:(id)arg1 options:(id)arg2;
 - (id)initForReadingFromPath:(id)arg1;
 - (id)archiveSignatureDate;
 - (id)archiveSignatures;

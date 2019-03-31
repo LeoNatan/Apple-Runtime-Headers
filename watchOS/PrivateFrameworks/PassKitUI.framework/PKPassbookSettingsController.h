@@ -57,6 +57,7 @@
     PSSpecifier *_defaultExpressTransitSpecifier;
     NSMutableDictionary *_lastestTransitBalanceModel;
     id <PKPaymentDataProvider> _companionPaymentDataProvider;
+    int _notifyToken;
     id <PKPassbookSettingsDelegate> _delegate;
 }
 
@@ -133,7 +134,8 @@
 - (void)removeFooterForSpecifier:(id)arg1;
 - (id)passWithUniqueIdentifier:(id)arg1;
 - (void)refreshPeerPaymentStatus;
-- (void)_updateExpressPassIdentifiersWithReload:(_Bool)arg1;
+- (void)_updateTransitExpressPassIdentifiersWithReload:(_Bool)arg1;
+- (id)_fallbackExpressTransitFooterText;
 - (void)refreshExpressTransitCard;
 - (void)refreshDefaultCard;
 - (void)refreshPasses;

@@ -43,6 +43,7 @@ __attribute__((visibility("hidden")))
 - (void)event:(long long)arg1 params:(id)arg2 reply:(CDUnknownBlockType)arg3;
 - (void)completionWindowDidHide;
 - (void)completionWindowDidShow;
+- (BOOL)shouldShowAuthenticationSheetForCompletionListItem:(const struct CompletionListItem *)arg1;
 - (BOOL)performActionForListItem:(const struct CompletionListItem *)arg1 result:(char *)arg2 shouldAbortCompletion:(char *)arg3;
 - (double)widthOfCellForItem:(struct CompletionListItem *)arg1;
 - (void)consumeCode:(id)arg1;

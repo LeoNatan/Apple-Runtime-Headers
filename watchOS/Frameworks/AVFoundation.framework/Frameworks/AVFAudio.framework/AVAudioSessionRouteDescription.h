@@ -23,6 +23,7 @@
 - (_Bool)isEqual:(id)arg1;
 - (void)dealloc;
 - (id)init;
+@property(readonly) unsigned int siriInputSource;
 @property(readonly) NSString *siriRemoteInputIdentifier;
 
 @end

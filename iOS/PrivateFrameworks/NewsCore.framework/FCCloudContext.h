@@ -12,8 +12,8 @@
 #import <NewsCore/FCPrivateDataContext-Protocol.h>
 #import <NewsCore/FCTestingContext-Protocol.h>
 
-@class FCArticleController, FCAssetManager, FCClientEndpointConnection, FCCommandQueue, FCFeedManager, FCFlintResourceManager, FCIssueReadingHistory, FCNetworkBehaviorMonitor, FCNotificationController, FCNotificationsEndpointConnection, FCPersonalizationData, FCPrivateChannelMembershipController, FCPurchaseController, FCReadingHistory, FCReadingList, FCSubscriptionController, FCSubscriptionList, FCTagController, FCTagSettings, FCTranslationManager, FCUserInfo, NSString, NSURL;
-@protocol FCAppActivityMonitor, FCBackgroundTaskable, FCBundleSubscriptionManagerType, FCClearableReadingHistory, FCContentContext, FCContentContextInternal, FCCoreConfigurationManager, FCCurrentIssuesChecker, FCFeedPersonalizing, FCFlintHelper, FCForYouMagazineFeedManaging, FCNewsAppConfigurationManager, FCPPTContext, FCPrivateDataContext, FCPrivateDataContextInternal, FCPurchaseManagerType, FCPushNotificationHandling, FCWebArchiveSource;
+@class FCAccessChecker, FCArticleController, FCAssetManager, FCClientEndpointConnection, FCCommandQueue, FCFeedManager, FCFlintResourceManager, FCIssueReadingHistory, FCNetworkBehaviorMonitor, FCNotificationController, FCNotificationsEndpointConnection, FCPersonalizationData, FCPrivateChannelMembershipController, FCPurchaseController, FCReadingHistory, FCReadingList, FCSubscriptionController, FCSubscriptionList, FCTagController, FCTagSettings, FCTranslationManager, FCUserInfo, NSString, NSURL;
+@protocol FCAppActivityMonitor, FCBackgroundTaskable, FCBundleSubscriptionManagerType, FCClearableReadingHistory, FCContentContext, FCContentContextInternal, FCCoreConfigurationManager, FCCurrentIssuesChecker, FCFeedPersonalizing, FCFlintHelper, FCForYouMagazineFeedManaging, FCNewsAppConfigurationManager, FCPPTContext, FCPaidAccessCheckerType, FCPrivateDataContext, FCPrivateDataContextInternal, FCPurchaseManagerType, FCPushNotificationHandling, FCWebArchiveSource;
 
 @interface FCCloudContext : NSObject <FCTestingContext, FCCKDatabaseEncryptionDelegate, FCContentContext, FCPrivateDataContext, FCCacheFlushing>
 {
@@ -32,6 +32,9 @@
     id <FCBundleSubscriptionManagerType> _bundleSubscriptionManager;
     FCTranslationManager *_translationManager;
     id <FCCurrentIssuesChecker> _currentIssuesChecker;
+    id <FCPaidAccessCheckerType> _paidAccessChecker;
+    FCAccessChecker *_issueAccessChecker;
+    FCAccessChecker *_articleAccessChecker;
     id <FCFlintHelper> _flintHelper;
     id <FCBackgroundTaskable> _backgroundTaskable;
     id <FCForYouMagazineFeedManaging> _forYouMagazineFeedManager;
@@ -50,6 +53,9 @@
 @property(nonatomic) __weak id <FCForYouMagazineFeedManaging> forYouMagazineFeedManager; // @synthesize forYouMagazineFeedManager=_forYouMagazineFeedManager;
 @property(nonatomic) __weak id <FCBackgroundTaskable> backgroundTaskable; // @synthesize backgroundTaskable=_backgroundTaskable;
 @property(nonatomic) __weak id <FCFlintHelper> flintHelper; // @synthesize flintHelper=_flintHelper;
+@property(retain, nonatomic) FCAccessChecker *articleAccessChecker; // @synthesize articleAccessChecker=_articleAccessChecker;
+@property(retain, nonatomic) FCAccessChecker *issueAccessChecker; // @synthesize issueAccessChecker=_issueAccessChecker;
+@property(retain, nonatomic) id <FCPaidAccessCheckerType> paidAccessChecker; // @synthesize paidAccessChecker=_paidAccessChecker;
 @property(retain, nonatomic) id <FCCurrentIssuesChecker> currentIssuesChecker; // @synthesize currentIssuesChecker=_currentIssuesChecker;
 @property(retain, nonatomic) FCTranslationManager *translationManager; // @synthesize translationManager=_translationManager;
 @property(readonly, nonatomic) id <FCBundleSubscriptionManagerType> bundleSubscriptionManager; // @synthesize bundleSubscriptionManager=_bundleSubscriptionManager;

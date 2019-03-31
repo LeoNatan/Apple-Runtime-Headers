@@ -18,9 +18,9 @@
     NSMutableDictionary *_childComponentsByParentIdentifier;
 }
 
-@property(retain, nonatomic) NSMutableDictionary *childComponentsByParentIdentifier; // @synthesize childComponentsByParentIdentifier=_childComponentsByParentIdentifier;
-@property(retain, nonatomic) NSMutableDictionary *componentsByIdentifier; // @synthesize componentsByIdentifier=_componentsByIdentifier;
-@property(retain, nonatomic) NSMutableArray *components; // @synthesize components=_components;
+@property(readonly, nonatomic) NSMutableDictionary *childComponentsByParentIdentifier; // @synthesize childComponentsByParentIdentifier=_childComponentsByParentIdentifier;
+@property(readonly, nonatomic) NSMutableDictionary *componentsByIdentifier; // @synthesize componentsByIdentifier=_componentsByIdentifier;
+@property(readonly, nonatomic) NSMutableArray *components; // @synthesize components=_components;
 - (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;

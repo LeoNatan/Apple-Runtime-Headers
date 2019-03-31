@@ -11,6 +11,7 @@ __attribute__((visibility("hidden")))
 {
     // Error parsing type: , name: capabilitiesChecker
     // Error parsing type: , name: participants
+    // Error parsing type: , name: isLegacy
     // Error parsing type: , name: groupName
     // Error parsing type: , name: mode
     // Error parsing type: , name: participantsViewControllerDelegate

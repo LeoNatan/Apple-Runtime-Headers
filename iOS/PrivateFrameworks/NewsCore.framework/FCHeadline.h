@@ -19,6 +19,7 @@
     _Bool _sponsored;
     _Bool _deleted;
     _Bool _isDraft;
+    _Bool _isLocalDraft;
     _Bool _usesImageOnTopLayout;
     _Bool _needsRapidUpdates;
     _Bool _showMinimalChrome;
@@ -73,6 +74,7 @@
     NSString *_surfacedByBinID;
     NSSet *_surfacedByTagIDs;
     NSString *_accessoryText;
+    NSString *_callToActionText;
     NSString *_localDraftPath;
     FCFeedPersonalizedItemScoreProfile *_scoreProfile;
     double _personalizedScore;
@@ -156,12 +158,14 @@
 @property(nonatomic) double tileProminenceScore; // @synthesize tileProminenceScore=_personalizedScore;
 @property(retain, nonatomic) FCFeedPersonalizedItemScoreProfile *scoreProfile; // @synthesize scoreProfile=_scoreProfile;
 @property(readonly, copy, nonatomic) NSString *localDraftPath; // @synthesize localDraftPath=_localDraftPath;
-@property(readonly, copy, nonatomic) NSString *accessoryText; // @synthesize accessoryText=_accessoryText;
+@property(copy, nonatomic) NSString *callToActionText; // @synthesize callToActionText=_callToActionText;
+@property(copy, nonatomic) NSString *accessoryText; // @synthesize accessoryText=_accessoryText;
 @property(copy, nonatomic) NSSet *surfacedByTagIDs; // @synthesize surfacedByTagIDs=_surfacedByTagIDs;
 @property(copy, nonatomic) NSString *surfacedByBinID; // @synthesize surfacedByBinID=_surfacedByBinID;
 @property(copy, nonatomic) NSString *surfacedByTopicID; // @synthesize surfacedByTopicID=_surfacedByTopicID;
 @property(copy, nonatomic) NSString *surfacedByChannelID; // @synthesize surfacedByChannelID=_surfacedByChannelID;
 @property(copy, nonatomic) NSString *surfacedBySectionID; // @synthesize surfacedBySectionID=_surfacedBySectionID;
+@property(readonly, nonatomic) _Bool isLocalDraft; // @synthesize isLocalDraft=_isLocalDraft;
 @property(readonly, nonatomic) _Bool isDraft; // @synthesize isDraft=_isDraft;
 @property(nonatomic, getter=isDeleted) _Bool deleted; // @synthesize deleted=_deleted;
 @property(readonly, copy, nonatomic) NSArray *allowedStorefrontIDs; // @synthesize allowedStorefrontIDs=_allowedStorefrontIDs;
@@ -189,7 +193,7 @@
 @property(copy, nonatomic) NSString *clusterID; // @synthesize clusterID=_clusterID;
 @property(readonly, copy, nonatomic) NSString *referencedArticleID; // @synthesize referencedArticleID=_referencedArticleID;
 @property(copy, nonatomic) NSString *articleID; // @synthesize articleID=_articleID;
-@property(copy, nonatomic) FCHeadlineExperimentalTitleMetadata *experimentalTitleMetadata; // @synthesize experimentalTitleMetadata=_experimentalTitleMetadata;
+@property(readonly, copy, nonatomic) FCHeadlineExperimentalTitleMetadata *experimentalTitleMetadata; // @synthesize experimentalTitleMetadata=_experimentalTitleMetadata;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(readonly, nonatomic) FCHeadlineThumbnail *thumbnailWidgetHQ; // @synthesize thumbnailWidgetHQ=_thumbnailWidgetHQ;
 @property(readonly, nonatomic) FCHeadlineThumbnail *thumbnailWidget; // @synthesize thumbnailWidget=_thumbnailWidget;
@@ -217,6 +221,7 @@
 - (void)applyHeadlineMetadata:(id)arg1 configuration:(id)arg2;
 - (void)assignStoryType:(unsigned long long)arg1 withConfiguration:(id)arg2;
 - (void)overrideDisplayDate:(id)arg1;
+- (void)overrideTitle:(id)arg1;
 @property(readonly, copy) NSString *description;
 @property(readonly, nonatomic) _Bool hasVideo;
 @property(readonly, nonatomic) _Bool showPublisherLogo;
@@ -234,6 +239,8 @@
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy, nonatomic) NSArray *linkedArticleIDs;
+@property(readonly, copy, nonatomic) NSArray *linkedIssueIDs;
 @property(readonly) Class superclass;
 
 @end

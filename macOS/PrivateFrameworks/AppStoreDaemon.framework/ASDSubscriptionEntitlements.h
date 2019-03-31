@@ -12,12 +12,13 @@
 {
     ASDServiceBroker *_serviceBroker;
     int _cacheUpdatedNotificationToken;
-    int _cacheExpiredNotificationToken;
 }
 
 + (id)sharedInstance;
 - (void).cxx_destruct;
+- (void)getSubscriptionEntitlementsIgnoreCaches:(BOOL)arg1 forActiveAccountWithResultAndExpiryHandler:(CDUnknownBlockType)arg2;
 - (void)getSubscriptionEntitlementsIgnoreCaches:(BOOL)arg1 forActiveAccountWithResultHandler:(CDUnknownBlockType)arg2;
+- (void)getSubscriptionEntitlementsForActiveAccountWithResultAndExpiryHandler:(CDUnknownBlockType)arg1;
 - (void)getSubscriptionEntitlementsForActiveAccountWithResultHandler:(CDUnknownBlockType)arg1;
 - (void)setSubscriptionEntitlementsWithDictionary:(id)arg1 forAccountID:(id)arg2;
 - (id)_initWithServiceBroker:(id)arg1;

@@ -81,6 +81,7 @@
 - (id)oneUpPresentation:(id)arg1 regionOfInterestForAssetReference:(id)arg2;
 - (id)oneUpPresentationMediaProvider:(id)arg1;
 - (id)oneUpPresentationDataSourceManager:(id)arg1;
+- (long long)oneUpPresentationOrigin:(id)arg1;
 - (void)showOneUpWithAssetCollection:(id)arg1 withInitialAsset:(id)arg2 atIndex:(unsigned long long)arg3;
 - (id)_regionOfInterestForAsset:(id)arg1;
 - (id)_topResultContentViewForIndexPath:(id)arg1;
@@ -148,6 +149,7 @@
 - (void)_pushViewForCollectionWithUUID:(id)arg1;
 - (void)_pushGridForPhotosWithUUIDs:(id)arg1 title:(id)arg2 searchCategories:(unsigned long long)arg3 headerViewTitle:(id)arg4;
 - (void)_pushGridForAlbumWithUUID:(id)arg1;
+- (void)_configureContext:(id)arg1;
 - (void)_selectSearchResult:(id)arg1;
 - (void)didSelectTapToRadarButton:(id)arg1;
 - (void)wordEmbeddingTapped:(id)arg1;

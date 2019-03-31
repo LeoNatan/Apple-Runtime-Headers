@@ -19,9 +19,11 @@
     } _needsUpdateFlags;
     _Bool __supressingColorSettings;
     PXDebugAssetBadgeManager *__debugBadgeManager;
+    struct CGSize _maximumImageSize;
 }
 
 + (void)preloadResources;
+@property(nonatomic) struct CGSize maximumImageSize; // @synthesize maximumImageSize=_maximumImageSize;
 @property(retain, nonatomic, setter=_setDebugBadgeManager:) PXDebugAssetBadgeManager *_debugBadgeManager; // @synthesize _debugBadgeManager=__debugBadgeManager;
 @property(nonatomic, setter=_setSupressingColorSettings:) _Bool _supressingColorSettings; // @synthesize _supressingColorSettings=__supressingColorSettings;
 - (void).cxx_destruct;

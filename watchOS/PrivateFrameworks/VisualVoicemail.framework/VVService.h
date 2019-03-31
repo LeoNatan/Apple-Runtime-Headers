@@ -32,7 +32,11 @@
         unsigned int notificationFallbackEnabled:1;
         unsigned int capabilitiesLoaded:1;
     } _serviceFlags;
+    _Bool _cellularNetworkAvailable;
     _Bool _SMSReady;
+    _Bool _WiFiNetworkReachable;
+    _Bool _WiFiNetworkSupported;
+    NSString *_isoCountryCode;
     NSMutableDictionary *_stateRequestAttemptCount;
     unsigned int _trashedCount;
     unsigned int _unreadCount;
@@ -58,7 +62,7 @@
 + (struct __CTServerConnection *)CTServerConnection;
 + (_Bool)sharedServiceIsSubscribed;
 + (_Bool)_lockedSharedServiceIsSubscribed;
-+ (id)serviceWithIdentifier:(id)arg1 subscription:(id)arg2 stateRequestController:(id)arg3;
++ (id)serviceWithIdentifier:(id)arg1 destinationID:(id)arg2 name:(id)arg3 isoCountryCode:(id)arg4 subscription:(id)arg5 stateRequestController:(id)arg6;
 + (void)_subscriptionStateChanged;
 + (void)initialize;
 @property(readonly, nonatomic) VMCarrierStateRequestController *stateRequestController; // @synthesize stateRequestController=_stateRequestController;
@@ -80,6 +84,7 @@
 - (void)removeAttemptCountForStateRequest:(id)arg1;
 - (void)incrementAttemptCountForStateRequest:(id)arg1;
 - (int)attemptCountForStateRequest:(id)arg1;
+- (void)handleCPNetworkObserverNetworkReachableNotification:(id)arg1;
 - (void)handleVVServiceDataAvailableNotification:(id)arg1;
 - (void)handleVoicemailInfoUpdate:(id)arg1;
 - (struct __CFString *)dataConnectionServiceTypeOverride;
@@ -149,7 +154,6 @@
 - (void)clearActivationError;
 - (id)activationError;
 - (void)_setActivationError:(id)arg1;
-- (void)_reportReachabilityChange:(id)arg1;
 - (void)_updateOnlineStatus;
 - (_Bool)isOfflineDueToRoaming;
 - (_Bool)_isOfflineDueToRoamingWithDataStatusDict:(struct __CFDictionary *)arg1;
@@ -160,6 +164,11 @@
 @property(nonatomic) unsigned int unreadCount; // @synthesize unreadCount=_unreadCount;
 @property(nonatomic) unsigned int trashedCount; // @synthesize trashedCount=_trashedCount;
 @property(nonatomic, getter=isSMSReady) _Bool SMSReady; // @synthesize SMSReady=_SMSReady;
+@property(nonatomic, getter=isWiFiNetworkSupported) _Bool WiFiNetworkSupported; // @synthesize WiFiNetworkSupported=_WiFiNetworkSupported;
+@property(nonatomic, getter=isWiFiNetworkReachable) _Bool WiFiNetworkReachable; // @synthesize WiFiNetworkReachable=_WiFiNetworkReachable;
+@property(readonly, nonatomic, getter=isWiFiNetworkAvailable) _Bool WiFiNetworkAvailable;
+@property(readonly, copy, nonatomic) NSString *isoCountryCode; // @synthesize isoCountryCode=_isoCountryCode;
+@property(nonatomic, getter=isCellularNetworkAvailable) _Bool cellularNetworkAvailable; // @synthesize cellularNetworkAvailable=_cellularNetworkAvailable;
 - (void)resetCounts;
 - (void)updateCountsForChangedFlags:(unsigned int)arg1 currentRecordFlags:(unsigned int)arg2;
 - (void)setMailboxUsage:(int)arg1;
@@ -172,14 +181,12 @@
 - (void)setSubscribed:(_Bool)arg1;
 - (id)accountParamsAtFilePath:(id)arg1;
 - (id)parametersFilePathForUUIDString:(id)arg1;
-- (_Bool)isVVMAvailableOverWiFi;
 - (_Bool)isSubscribed;
 - (void)dealloc;
-- (id)initWithServiceIdentifier:(id)arg1 subscription:(id)arg2 stateRequestController:(id)arg3;
+- (id)initWithServiceIdentifier:(id)arg1 destinationID:(id)arg2 isoCountryCode:(id)arg3 subscription:(id)arg4 stateRequestController:(id)arg5;
 - (void)_callStatusChanged;
 - (void)_carrierBundleChanged;
 - (void)handleDataContextDeactivated;
-- (void)_dataAvailabilityChanged;
 - (void)_dataRoamingStatusChanged;
 - (_Bool)doTrashCompaction;
 - (_Bool)shouldTrashCompactRecord:(void *)arg1;

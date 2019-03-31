@@ -66,7 +66,10 @@
 - (id)debugDescription;
 - (unsigned long long)hash;
 @property(readonly, nonatomic) BOOL supportsWirelessDisplay;
+@property(readonly, nonatomic, getter=isB444Route) BOOL b444Route;
 @property(readonly, nonatomic, getter=isB238Route) BOOL b238Route;
+@property(readonly, nonatomic, getter=isW2Route) BOOL w2Route;
+@property(readonly, nonatomic, getter=isAirPlayRoute) BOOL airPlayRoute;
 @property(readonly, nonatomic, getter=isW1Route) BOOL w1Route;
 @property(readonly, nonatomic, getter=isTVRoute) BOOL tvRoute;
 @property(readonly, nonatomic, getter=isStereoPair) BOOL stereoPair;

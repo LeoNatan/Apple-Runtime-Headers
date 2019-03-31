@@ -6,34 +6,24 @@
 
 #import <Silex/SXFillView.h>
 
-@class CAReplicatorLayer, SXClippingView, SXImageView, SXRepeatableImageFill;
+@class SXClippingView, SXRepeatableImageFill, SXRepeatableImageView;
 
 @interface SXRepeatableImageFillView : SXFillView
 {
-    SXImageView *_imageView;
-    CAReplicatorLayer *_leftHorizontalReplicatorLayer;
-    CAReplicatorLayer *_rightHorizontalReplicatorLayer;
-    CAReplicatorLayer *_topVerticalReplicatorLayer;
-    CAReplicatorLayer *_bottomVerticalReplicatorLayer;
+    SXRepeatableImageView *_imageView;
     SXClippingView *_clippingView;
     struct CGSize _patternSize;
 }
 
 @property(readonly, nonatomic) SXClippingView *clippingView; // @synthesize clippingView=_clippingView;
-@property(readonly, nonatomic) CAReplicatorLayer *bottomVerticalReplicatorLayer; // @synthesize bottomVerticalReplicatorLayer=_bottomVerticalReplicatorLayer;
-@property(readonly, nonatomic) CAReplicatorLayer *topVerticalReplicatorLayer; // @synthesize topVerticalReplicatorLayer=_topVerticalReplicatorLayer;
-@property(readonly, nonatomic) CAReplicatorLayer *rightHorizontalReplicatorLayer; // @synthesize rightHorizontalReplicatorLayer=_rightHorizontalReplicatorLayer;
-@property(readonly, nonatomic) CAReplicatorLayer *leftHorizontalReplicatorLayer; // @synthesize leftHorizontalReplicatorLayer=_leftHorizontalReplicatorLayer;
-@property(readonly, nonatomic) SXImageView *imageView; // @synthesize imageView=_imageView;
+@property(readonly, nonatomic) SXRepeatableImageView *imageView; // @synthesize imageView=_imageView;
 @property(nonatomic) struct CGSize patternSize; // @synthesize patternSize=_patternSize;
 - (void).cxx_destruct;
-- (void)updateRepeatingImagePattern;
 - (void)pause;
 - (void)play;
 - (void)setContentFrame:(struct CGRect)arg1;
 - (struct CGRect)contentFrame;
 - (struct CGRect)fillFrameWithBoundingSize:(struct CGSize)arg1;
-- (void)layoutSublayersOfLayer:(id)arg1;
 - (void)layoutSubviews;
 - (void)dealloc;
 - (id)initWithRepeatableImageFill:(id)arg1 imageView:(id)arg2;

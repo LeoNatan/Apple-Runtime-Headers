@@ -156,6 +156,10 @@
 + (_Bool)isApplicationWildcat;
 + (void)setApplicationIsWildcat:(_Bool)arg1;
 + (id)sharedPhotoLibrary;
++ (void)_context:(id)arg1 saveFailedWithError:(id)arg2;
++ (void)_contextSaveFailedWithError:(id)arg1;
++ (void)_contextSaveFailedWithSQLiteError:(id)arg1;
++ (void)_contextSaveFailedWithTimeoutError:(id)arg1;
 + (void)_enqueueOperationWithName:(id)arg1 priority:(int)arg2 block:(CDUnknownBlockType)arg3;
 + (id)_operationQueueForPriority:(int)arg1;
 + (_Bool)_assetsdQueueingMode;

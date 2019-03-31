@@ -15,8 +15,8 @@
 }
 
 - (void).cxx_destruct;
-- (void)_updateBrand:(id)arg1 withMapItem:(id)arg2;
-- (void)_updateMerchant:(id)arg1 withMapItem:(id)arg2;
+- (id)_brandFromMapItem:(id)arg1;
+- (id)_merchantFromMapItem:(id)arg1;
 - (id)_merchantLookupRequest;
 - (void)startLookupWithCompletion:(CDUnknownBlockType)arg1;
 - (id)initWithTransaction:(id)arg1 paymentApplication:(id)arg2;

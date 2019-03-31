@@ -24,6 +24,7 @@
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)_initWithRecipeResponse:(id)arg1 error:(id *)arg2;
+- (id)_initWithRecipeUserInfo:(id)arg1;
 
 @end
 

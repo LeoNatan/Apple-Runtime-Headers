@@ -28,6 +28,8 @@
 - (void)resetRapportClientAndInvalidate:(_Bool)arg1;
 - (void)callDidReceiveText:(id)arg1 forUtterance:(id)arg2;
 - (void)sendString:(id)arg1;
+- (void)updateCallWithRemoteFailure;
+- (_Bool)isLocallyHosted;
 - (void)stop;
 - (void)start;
 - (id)initWithCall:(id)arg1;

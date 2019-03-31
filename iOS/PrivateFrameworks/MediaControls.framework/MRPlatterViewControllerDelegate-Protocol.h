@@ -6,11 +6,12 @@
 
 #import <MediaControls/NSObject-Protocol.h>
 
-@class MRPlatterViewController, UIView, UIViewController;
+@class MPAVRoute, MRPlatterViewController, UIView, UIViewController;
 
 @protocol MRPlatterViewControllerDelegate <NSObject>
 
 @optional
+- (void)platterViewController:(MRPlatterViewController *)arg1 didPickRoute:(MPAVRoute *)arg2;
 - (_Bool)shouldPresentUsingViewServicePlatterViewController:(MRPlatterViewController *)arg1;
 - (void)platterViewController:(MRPlatterViewController *)arg1 homeGestureDismisalAllowedDidChange:(_Bool)arg2;
 - (UIView *)platterViewController:(MRPlatterViewController *)arg1 presentingViewForPresentedViewController:(UIViewController *)arg2;

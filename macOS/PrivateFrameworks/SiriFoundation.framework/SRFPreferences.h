@@ -12,7 +12,6 @@
 {
 }
 
-+ (BOOL)_hasCoreSpeechXPCEntitlement;
 + (id)sharedPreferences;
 - (void)discardAllSATEnrollment;
 - (void)discardSATEnrollmentForLanguageCode:(id)arg1;

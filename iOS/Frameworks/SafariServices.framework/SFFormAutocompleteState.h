@@ -80,13 +80,17 @@ __attribute__((visibility("hidden")))
 - (void)creditCardCaptureViewController:(id)arg1 didCaptureCreditCard:(id)arg2;
 - (void)creditCardCaptureViewControllerDidCancel:(id)arg1;
 - (void)_autoFillCreditCardData;
+- (void)_updateCreditCardSuggestionsWithHandler:(CDUnknownBlockType)arg1;
 - (void)_autoFillSingleCreditCardData:(long long)arg1;
 - (void)_captureCreditCardDataWithCameraAndFill;
 - (void)_fillCreditCardData:(id)arg1;
+- (void)_updateCreditCardAutoFillAction;
+- (void)_updateAutoFillActionToCaptureCreditCardAndFill;
 - (_Bool)_canAutoFillCreditCardData;
 - (void)_fillSingleCreditCardDataValue:(id)arg1 creditCardDataType:(long long)arg2;
 - (void)_fillCreditCardDataAfterAuthenticationIfNeeded:(id)arg1;
 - (void)_showCreditCardDataSuggestionsAfterUserHasFilledCreditCardData;
+- (id)_sortedSingleCreditCardDataArray:(id)arg1;
 - (_Bool)_shouldOfferCreditCardDataAfterUserHasFilledCreditCardData:(id)arg1;
 - (id)_displayTextForCreditCardNumber:(id)arg1;
 @property(readonly, nonatomic) _Bool shouldOfferToAutoFillCreditCardData;

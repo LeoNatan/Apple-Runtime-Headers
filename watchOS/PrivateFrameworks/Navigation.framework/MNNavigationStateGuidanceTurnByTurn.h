@@ -14,7 +14,7 @@ __attribute__((visibility("hidden")))
 - (void)enterState;
 - (void)setFullGuidanceMode:(_Bool)arg1;
 - (unsigned int)desiredResourcePolicy;
-- (unsigned int)type;
+- (int)type;
 
 @end
 

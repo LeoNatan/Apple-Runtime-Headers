@@ -17,6 +17,7 @@
     _Bool _sendingMessage;
     _Bool _viewIsVisible;
     _Bool _transitionedFromComposing;
+    _Bool _userInitiatedTranscriptPush;
     _Bool _initialLayoutComplete;
     _Bool _ignoreLastBalloonVisibleInMarkAsReadCheck;
     _Bool _disableAnimationsUnderTest;
@@ -42,6 +43,7 @@
 @property(retain, nonatomic) CKScheduledUpdater *refreshServiceForSendingUpdater; // @synthesize refreshServiceForSendingUpdater=_refreshServiceForSendingUpdater;
 @property(nonatomic) _Bool ignoreLastBalloonVisibleInMarkAsReadCheck; // @synthesize ignoreLastBalloonVisibleInMarkAsReadCheck=_ignoreLastBalloonVisibleInMarkAsReadCheck;
 @property(nonatomic) _Bool initialLayoutComplete; // @synthesize initialLayoutComplete=_initialLayoutComplete;
+@property(nonatomic) _Bool userInitiatedTranscriptPush; // @synthesize userInitiatedTranscriptPush=_userInitiatedTranscriptPush;
 @property(nonatomic) _Bool transitionedFromComposing; // @synthesize transitionedFromComposing=_transitionedFromComposing;
 @property(nonatomic) _Bool viewIsVisible; // @synthesize viewIsVisible=_viewIsVisible;
 @property(nonatomic, getter=isSendingMessage) _Bool sendingMessage; // @synthesize sendingMessage=_sendingMessage;

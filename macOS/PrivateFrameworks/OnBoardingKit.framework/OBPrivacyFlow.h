@@ -42,6 +42,7 @@
 @property(readonly, nonatomic) NSImage *buttonIcon;
 @property(readonly, nonatomic, getter=isPersonallyIdentifiable) BOOL personallyIdentifiable;
 - (struct NSImage *)_bundleImageNamed:(id)arg1;
+- (id)_splashLocalizedStringForKey:(id)arg1 language:(id)arg2 table:(id)arg3 preferredDeviceType:(unsigned long long)arg4;
 - (id)_splashLocalizedStringForKey:(id)arg1 language:(id)arg2 preferredDeviceType:(unsigned long long)arg3;
 @property(readonly, nonatomic) BOOL platformSupported;
 - (id)_currentPlatform;

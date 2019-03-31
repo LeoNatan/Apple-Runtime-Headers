@@ -22,7 +22,6 @@ __attribute__((visibility("hidden")))
     id _keyBagLockStatusObservationToken;
     BOOL _shouldReadFromKeychainAfterKeyBagIsUnlocked;
     BOOL _allowUnsignedExtensions;
-    BOOL _extensionsEnabled;
     NSArray *_extensions;
     NSDictionary *_extensionIdentifierToBaseURIMap;
     NSString *_crashReporterMessage;
@@ -32,7 +31,6 @@ __attribute__((visibility("hidden")))
 + (id)_contentScriptsFromExtensionDictionary:(id)arg1;
 + (id)_extensionWebsiteAccessForExtensionDictionary:(id)arg1;
 + (id)sharedController;
-@property(nonatomic) BOOL extensionsEnabled; // @synthesize extensionsEnabled=_extensionsEnabled;
 @property(nonatomic) BOOL allowUnsignedExtensions; // @synthesize allowUnsignedExtensions=_allowUnsignedExtensions;
 @property(readonly, copy, nonatomic) NSString *crashReporterMessage; // @synthesize crashReporterMessage=_crashReporterMessage;
 @property(readonly, copy, nonatomic) NSDictionary *extensionIdentifierToBaseURIMap; // @synthesize extensionIdentifierToBaseURIMap=_extensionIdentifierToBaseURIMap;
@@ -123,6 +121,7 @@ __attribute__((visibility("hidden")))
 - (id)_composedIdentifierForExtensionStateForExtension:(id)arg1;
 - (void)_extensionsWereGloballyDisabled;
 - (void)_extensionsWereGloballyEnabled;
+- (BOOL)_extensionsEnabled;
 - (void)resetExtensionsState;
 - (void)disableUnsignedExtensionsIfNecessary;
 - (void)_writeExtensionsStateToKeychain;

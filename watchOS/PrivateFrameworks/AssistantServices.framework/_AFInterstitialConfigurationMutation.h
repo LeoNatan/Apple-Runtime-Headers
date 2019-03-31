@@ -16,16 +16,28 @@
     int _style;
     NSString *_languageCode;
     int _gender;
+    NSString *_recordRoute;
+    _Bool _isVoiceTrigger;
+    _Bool _isDucking;
+    _Bool _isTwoShot;
     struct _mutationFlags {
         unsigned int isDirty:1;
         unsigned int hasStyle:1;
         unsigned int hasLanguageCode:1;
         unsigned int hasGender:1;
+        unsigned int hasRecordRoute:1;
+        unsigned int hasIsVoiceTrigger:1;
+        unsigned int hasIsDucking:1;
+        unsigned int hasIsTwoShot:1;
     } _mutationFlags;
 }
 
 - (void).cxx_destruct;
 - (id)generate;
+- (void)setIsTwoShot:(_Bool)arg1;
+- (void)setIsDucking:(_Bool)arg1;
+- (void)setIsVoiceTrigger:(_Bool)arg1;
+- (void)setRecordRoute:(id)arg1;
 - (void)setGender:(int)arg1;
 - (void)setLanguageCode:(id)arg1;
 - (void)setStyle:(int)arg1;

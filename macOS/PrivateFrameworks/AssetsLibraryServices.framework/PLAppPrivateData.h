@@ -23,6 +23,7 @@
 - (void).cxx_destruct;
 - (void)setValuesForKeysWithDictionary:(id)arg1;
 - (id)dictionaryWithValuesForKeys:(id)arg1;
+- (id)allKeys;
 - (void)setValue:(id)arg1 forKeyPath:(id)arg2;
 - (void)_recursiveCreateSubDictionariesIfMissing:(id)arg1 index:(unsigned long long)arg2 parentDictionary:(id)arg3;
 - (id)valueForKeyPath:(id)arg1;

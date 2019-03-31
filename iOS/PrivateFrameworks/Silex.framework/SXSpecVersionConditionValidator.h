@@ -17,7 +17,6 @@
 
 @property(readonly, copy, nonatomic) NSString *specVersion; // @synthesize specVersion=_specVersion;
 - (void).cxx_destruct;
-- (long long)compareSpecVersion:(id)arg1 withSpecVersion:(id)arg2;
 - (_Bool)validateCondition:(id)arg1 context:(id)arg2;
 - (id)initWithSpecVersion:(id)arg1;
 

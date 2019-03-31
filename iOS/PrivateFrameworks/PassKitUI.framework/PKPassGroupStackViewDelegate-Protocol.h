@@ -17,6 +17,7 @@
 
 @optional
 - (void)groupStackViewDidChangeCoachingState:(PKPassGroupStackView *)arg1;
+- (void)groupStackViewWantsForcedPayment:(PKPassGroupStackView *)arg1;
 - (void)groupStackView:(PKPassGroupStackView *)arg1 didTransitionToState:(long long)arg2 animated:(_Bool)arg3;
 - (void)groupStackView:(PKPassGroupStackView *)arg1 transitioningToState:(long long)arg2 animated:(_Bool)arg3;
 - (void)groupStackView:(PKPassGroupStackView *)arg1 groupDidMoveFromIndex:(unsigned long long)arg2 toIndex:(unsigned long long)arg3;

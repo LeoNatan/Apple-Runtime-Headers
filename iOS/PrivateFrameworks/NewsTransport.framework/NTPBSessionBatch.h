@@ -8,15 +8,17 @@
 
 #import <NewsTransport/NSCopying-Protocol.h>
 
-@class NSMutableArray, NTPBSession;
+@class NSData, NSMutableArray, NTPBSession;
 
 @interface NTPBSessionBatch : PBCodable <NSCopying>
 {
     NSMutableArray *_events;
+    NSData *_identifier;
     NTPBSession *_session;
 }
 
 + (Class)eventsType;
+@property(retain, nonatomic) NSData *identifier; // @synthesize identifier=_identifier;
 @property(retain, nonatomic) NSMutableArray *events; // @synthesize events=_events;
 @property(retain, nonatomic) NTPBSession *session; // @synthesize session=_session;
 - (void).cxx_destruct;
@@ -28,6 +30,7 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(readonly, nonatomic) _Bool hasIdentifier;
 - (id)eventsAtIndex:(unsigned long long)arg1;
 - (unsigned long long)eventsCount;
 - (void)addEvents:(id)arg1;

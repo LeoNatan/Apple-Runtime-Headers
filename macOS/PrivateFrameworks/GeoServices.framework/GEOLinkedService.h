@@ -6,22 +6,24 @@
 
 #import <objc/NSObject.h>
 
-@class GEOPDLinkedService, NSArray, NSString, NSTimeZone;
+@class GEOFeatureStyleAttributes, GEOPDLinkedService, NSArray, NSString, NSTimeZone;
 
 @interface GEOLinkedService : NSObject
 {
     GEOPDLinkedService *_linkedService;
     NSArray *_cachedBusinessHours;
+    BOOL _checkedForBusinessHoursAlready;
     NSTimeZone *_timeZone;
     NSArray *_businessHours;
     NSString *_localizedCategoryName;
+    GEOFeatureStyleAttributes *_styleAttributes;
 }
 
+@property(retain, nonatomic) GEOFeatureStyleAttributes *styleAttributes; // @synthesize styleAttributes=_styleAttributes;
 @property(retain, nonatomic) NSTimeZone *timeZone; // @synthesize timeZone=_timeZone;
 @property(retain, nonatomic) NSString *localizedCategoryName; // @synthesize localizedCategoryName=_localizedCategoryName;
 @property(retain, nonatomic) NSArray *businessHours; // @synthesize businessHours=_businessHours;
 - (void).cxx_destruct;
-- (int)categoryIconMapping;
 - (id)initWithGEOPDLinkedService:(id)arg1 timeZone:(id)arg2;
 
 @end

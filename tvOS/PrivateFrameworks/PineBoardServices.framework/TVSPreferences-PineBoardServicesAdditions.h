@@ -10,6 +10,7 @@
 
 @interface TVSPreferences (PineBoardServicesAdditions)
 + (id)sharedPineBoardServicesPreferences;
+@property(nonatomic, setter=pbs_setTopShelfDifferentApps:) _Bool pbs_topShelfDifferentApps;
 @property(retain, nonatomic, setter=pbs_setBuddySelectedRoomName:) NSString *pbs_buddySelectedRoomName;
 @property(nonatomic, setter=pbs_setNeedsHomeKitAutoOnboarding:) _Bool pbs_needsHomeKitAutoOnboarding;
 @property(nonatomic) _Bool pbs_shouldShowWatchListButtonBehaviorAlert;

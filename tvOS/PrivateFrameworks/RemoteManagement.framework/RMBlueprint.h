@@ -33,6 +33,7 @@
 
 // Remaining properties
 @property(retain, nonatomic) NSSet *configurations; // @dynamic configurations;
+@property(copy, nonatomic) NSDate *creationDate; // @dynamic creationDate;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(nonatomic) _Bool enabled; // @dynamic enabled;

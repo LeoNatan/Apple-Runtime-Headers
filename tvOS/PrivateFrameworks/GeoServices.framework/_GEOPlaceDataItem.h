@@ -25,7 +25,6 @@
     NSString *_name;
     NSData *_externalTransitStationCode;
     GEOBusinessHours *_businessHours;
-    double _cacheLastChecked;
     _Bool _isTransitDisplayFeature;
     NSArray *_spatialMappedPlaceCategories;
 }

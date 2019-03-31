@@ -378,6 +378,7 @@
 - (void)reloadSections:(id)arg1;
 - (void)deleteSections:(id)arg1;
 - (void)insertSections:(id)arg1;
+- (void)_setRepresentedObjects:(id)arg1 forInsertedSection:(id)arg2;
 - (void)_insertSections:(id)arg1 representedObjects:(id)arg2;
 - (BOOL)_hasAnyItems;
 - (id)_indexPathsInclusiveFrom:(id)arg1 to:(id)arg2;

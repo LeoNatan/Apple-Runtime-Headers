@@ -9,6 +9,7 @@
 @class NSString;
 
 @protocol SXHorizontalStackLayout <NSObject>
+- (double)positionForIdentifier:(NSString *)arg1;
 - (double)widthForIdentifier:(NSString *)arg1;
 @end
 

@@ -34,7 +34,7 @@
 - (oneway void)speechRecordingDidEnd;
 - (oneway void)speechRecordingPerformTwoShotPromptWithType:(long long)arg1 reply:(void (^)(double, double, NSError *))arg2;
 - (oneway void)speechRecordingStartpointDetected;
-- (oneway void)speechRecordingDidChangeAVRecordRoute:(NSString *)arg1;
+- (oneway void)speechRecordingDidChangeAVRecordRoute:(NSString *)arg1 isDucking:(_Bool)arg2 isTwoShot:(_Bool)arg3;
 - (oneway void)speechRecordingDidBeginOnAVRecordRoute:(NSString *)arg1 audioSessionID:(unsigned int)arg2;
 - (oneway void)speechRecordingWillBeginWithInputAudioPowerXPCWrapper:(AFXPCWrapper *)arg1;
 - (oneway void)getClockContext:(void (^)(AFClockAlarmSnapshot *, AFClockTimerSnapshot *))arg1;

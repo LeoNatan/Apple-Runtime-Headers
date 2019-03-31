@@ -9,6 +9,7 @@
 #import <NewsCore/FCFeedTransforming-Protocol.h>
 
 @class FCBundleSubscription, NSSet, NSString;
+@protocol FCPaidAccessCheckerType;
 
 @interface FCFeedTransformationFilter : NSObject <FCFeedTransforming>
 {
@@ -17,17 +18,17 @@
     NSSet *_otherClusterIDs;
     NSSet *_mutedChannelTagIDs;
     NSSet *_subscribedTagIDs;
-    NSSet *_purchasedTagIDs;
     NSString *_briefingsTagID;
+    id <FCPaidAccessCheckerType> _paidAccessChecker;
     FCBundleSubscription *_bundleSubscription;
 }
 
 + (id)transformationWithFilterOptions:(long long)arg1 configuration:(id)arg2 context:(id)arg3;
 + (id)transformationWithFilterOptions:(long long)arg1 configuration:(id)arg2 context:(id)arg3 otherArticleIDs:(id)arg4;
-+ (id)transformationWithFilterOptions:(long long)arg1 otherArticleIDs:(id)arg2 otherClusterIDs:(id)arg3 subscribedTagIDs:(id)arg4 mutedChannelTagIDs:(id)arg5 purchasedTagIDs:(id)arg6 briefingsTagID:(id)arg7 bundleSubscription:(id)arg8;
-@property(copy, nonatomic) FCBundleSubscription *bundleSubscription; // @synthesize bundleSubscription=_bundleSubscription;
++ (id)transformationWithFilterOptions:(long long)arg1 otherArticleIDs:(id)arg2 otherClusterIDs:(id)arg3 subscribedTagIDs:(id)arg4 mutedChannelTagIDs:(id)arg5 briefingsTagID:(id)arg6 paidAccessChecker:(id)arg7 bundleSubscription:(id)arg8;
+@property(retain, nonatomic) FCBundleSubscription *bundleSubscription; // @synthesize bundleSubscription=_bundleSubscription;
+@property(retain, nonatomic) id <FCPaidAccessCheckerType> paidAccessChecker; // @synthesize paidAccessChecker=_paidAccessChecker;
 @property(copy, nonatomic) NSString *briefingsTagID; // @synthesize briefingsTagID=_briefingsTagID;
-@property(copy, nonatomic) NSSet *purchasedTagIDs; // @synthesize purchasedTagIDs=_purchasedTagIDs;
 @property(copy, nonatomic) NSSet *subscribedTagIDs; // @synthesize subscribedTagIDs=_subscribedTagIDs;
 @property(copy, nonatomic) NSSet *mutedChannelTagIDs; // @synthesize mutedChannelTagIDs=_mutedChannelTagIDs;
 @property(copy, nonatomic) NSSet *otherClusterIDs; // @synthesize otherClusterIDs=_otherClusterIDs;

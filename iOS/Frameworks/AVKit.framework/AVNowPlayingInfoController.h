@@ -22,11 +22,18 @@
     AVPlayerController *_playerControllerToActivateAfterDelay;
 }
 
++ (id)_mediaRemoteLanguageOptionCharacteristicForAVMediaCharacteristic:(id)arg1;
++ (id)_avMediaCharacteristics;
++ (id)_mediaRemoteLanguageOptionCharacteristicsForAVMediaSelectionOption:(id)arg1;
++ (void *)_createMediaRemoteLanguageOptionWithAVMediaSelectionOption:(id)arg1;
++ (void *)_createMediaRemoteLanguageOptionGroupWithAVMediaSelectionOptions:(id)arg1;
 + (void)sharedNowPlayingInfoControllerWithCompletion:(CDUnknownBlockType)arg1;
 @property(nonatomic) __weak AVPlayerController *playerControllerToActivateAfterDelay; // @synthesize playerControllerToActivateAfterDelay=_playerControllerToActivateAfterDelay;
 @property(retain, nonatomic) AVPlayerController *playerController; // @synthesize playerController=_playerController;
 @property(nonatomic) _Bool requiresLinearPlayback; // @synthesize requiresLinearPlayback=_requiresLinearPlayback;
 - (void).cxx_destruct;
+- (id)_currentLanguageOptions;
+- (id)_availableLanguageOptions;
 - (unsigned int)_handleRemoteCommand:(unsigned int)arg1 options:(id)arg2;
 - (void)_updateRegisteredRemoteCommandEnabledStatesWithCommandsAndStates:(id)arg1;
 - (id)_makeCommandsAndStatesDictionaryForPlayerController:(id)arg1;

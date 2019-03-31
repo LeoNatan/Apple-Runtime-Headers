@@ -11,17 +11,21 @@
 @interface HRAtrialFibrillationRegulatoryPanelViewController : HRFeatureRegulatoryPanelViewController
 {
     NSArray *_displayableItems;
+    long long _reenableFeatureSection;
 }
 
+@property(nonatomic) long long reenableFeatureSection; // @synthesize reenableFeatureSection=_reenableFeatureSection;
 - (void).cxx_destruct;
 - (void)receivedHeartRhythmAvailabilityNotification;
-- (id)tableView:(id)arg1 titleForFooterInSection:(long long)arg2;
+- (id)tableView:(id)arg1 viewForFooterInSection:(long long)arg2;
 - (id)tableView:(id)arg1 titleForHeaderInSection:(long long)arg2;
+- (id)_displayableItemsForReenableFeature;
 - (id)_displayableItemsForContactSupport;
 - (id)_displayableItemsForInstructionManual;
 - (id)_displayableItemsForWatch;
 - (id)_displayableItemsForPhone;
 - (id)displayableItems;
+- (void)viewDidLoad;
 
 @end
 

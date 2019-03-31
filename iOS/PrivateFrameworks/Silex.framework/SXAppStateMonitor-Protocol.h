@@ -9,5 +9,8 @@
 @protocol SXAppStateMonitor <NSObject>
 - (void)performOnApplicationDidBecomeActive:(void (^)(void))arg1;
 - (void)performOnApplicationDidEnterBackground:(void (^)(void))arg1;
+
+@optional
+- (void)performOnApplicationWillEnterForeground:(void (^)(void))arg1;
 @end
 

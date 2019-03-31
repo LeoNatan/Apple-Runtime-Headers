@@ -6,20 +6,21 @@
 
 #import <AppKit/NSView.h>
 
-@class NSImage, NSImageView;
+@class CALayer, NSImage;
 
 __attribute__((visibility("hidden")))
 @interface MorphingDragImageView : NSView
 {
-    NSImageView *_previousImageView;
-    NSImageView *_currentImageView;
+    CALayer *_previousImageLayer;
+    CALayer *_currentImageLayer;
     NSImage *_image;
 }
 
 @property(retain, nonatomic) NSImage *image; // @synthesize image=_image;
 - (void).cxx_destruct;
 - (void)setImage:(id)arg1 animated:(BOOL)arg2;
-- (id)_createImageView;
+- (id)_animationWithKeyPath:(id)arg1 fromValue:(id)arg2;
+- (id)_createImageLayer;
 - (void)setFrame:(struct CGRect)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 

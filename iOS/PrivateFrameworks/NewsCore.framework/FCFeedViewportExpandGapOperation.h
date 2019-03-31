@@ -24,12 +24,15 @@
     unsigned long long _gapExpansionDirection;
     long long _gapExpansionPolicy;
     CDUnknownBlockType _expandGapCompletionHandler;
+    FCFeedViewport *_sanitizedViewport;
     FCFeedViewport *_resultViewport;
     FCFeedViewportDiff *_resultDiff;
 }
 
++ (id)_sanitizeViewport:(id)arg1 context:(id)arg2 feedDescriptor:(id)arg3 configuration:(id)arg4;
 @property(retain, nonatomic) FCFeedViewportDiff *resultDiff; // @synthesize resultDiff=_resultDiff;
 @property(retain, nonatomic) FCFeedViewport *resultViewport; // @synthesize resultViewport=_resultViewport;
+@property(retain, nonatomic) FCFeedViewport *sanitizedViewport; // @synthesize sanitizedViewport=_sanitizedViewport;
 @property(copy, nonatomic) CDUnknownBlockType expandGapCompletionHandler; // @synthesize expandGapCompletionHandler=_expandGapCompletionHandler;
 @property _Bool offlineMode; // @synthesize offlineMode=_offlineMode;
 @property(nonatomic) _Bool cachedOnly; // @synthesize cachedOnly=_cachedOnly;
@@ -47,6 +50,7 @@
 - (id)_groupEmitterWithIdentifier:(id)arg1;
 - (void)operationWillFinishWithError:(id)arg1;
 - (void)performOperation;
+- (void)prepareOperation;
 - (_Bool)validateOperation;
 - (id)init;
 

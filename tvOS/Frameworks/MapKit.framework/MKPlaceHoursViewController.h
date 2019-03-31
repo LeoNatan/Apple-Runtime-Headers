@@ -36,6 +36,7 @@
 - (void)_setExpanded:(_Bool)arg1;
 - (_Bool)_shouldOnlyShowExpanded;
 @property(readonly, nonatomic) NSArray *businessHours;
+- (id)hoursBuilderWithHours:(id)arg1;
 @property(readonly, nonatomic) NSTimeZone *timeZone;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLoad;

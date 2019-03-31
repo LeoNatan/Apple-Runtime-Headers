@@ -57,6 +57,7 @@
 - (_Bool)isHoldAllowed;
 - (_Bool)isMergeable;
 - (_Bool)isSwappable;
+- (void)shouldSuppressInCallStatusBar:(_Bool)arg1;
 - (id)activeConversationForCall:(id)arg1;
 - (void)enteredBackgroundForAllCalls;
 - (void)willEnterBackgroundForAllCalls;

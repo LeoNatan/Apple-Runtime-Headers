@@ -21,8 +21,10 @@
     unsigned long long _numberOfCachedImages;
     NSMutableArray *_cachedImages;
     NSMutableIndexSet *_indicesToCache;
+    struct CGSize _size;
 }
 
+@property(readonly, nonatomic) struct CGSize size; // @synthesize size=_size;
 @property(readonly, nonatomic) NSMutableIndexSet *indicesToCache; // @synthesize indicesToCache=_indicesToCache;
 @property(readonly, nonatomic) NSMutableArray *cachedImages; // @synthesize cachedImages=_cachedImages;
 @property(nonatomic) unsigned long long numberOfCachedImages; // @synthesize numberOfCachedImages=_numberOfCachedImages;
@@ -46,7 +48,7 @@
 - (long long)cacheStatusForFrameIndex:(unsigned long long)arg1;
 - (unsigned long long)nearestCachedFrameIndexForFrameIndex:(unsigned long long)arg1;
 - (void)prepareImageForFrameIndex:(unsigned long long)arg1;
-- (id)init;
+- (id)initWithImageSize:(struct CGSize)arg1;
 
 @end
 

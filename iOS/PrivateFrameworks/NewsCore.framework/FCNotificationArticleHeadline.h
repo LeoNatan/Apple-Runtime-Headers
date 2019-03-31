@@ -15,6 +15,7 @@
     _Bool _sponsored;
     _Bool _deleted;
     _Bool _isDraft;
+    _Bool _isLocalDraft;
     _Bool _featureCandidate;
     _Bool _needsRapidUpdates;
     _Bool _showMinimalChrome;
@@ -97,6 +98,7 @@
 - (_Bool)isFeatureCandidate;
 - (id)allowedStorefrontIDs;
 - (id)blockedStorefrontIDs;
+- (_Bool)isLocalDraft;
 - (_Bool)isDraft;
 - (void)setDeleted:(_Bool)arg1;
 - (_Bool)isDeleted;
@@ -113,6 +115,7 @@
 - (id)lastFetchedDate;
 - (id)lastModifiedDate;
 - (id)contentURL;
+- (void)setAccessoryText:(id)arg1;
 - (id)accessoryText;
 - (void)setShortExcerpt:(id)arg1;
 - (id)shortExcerpt;

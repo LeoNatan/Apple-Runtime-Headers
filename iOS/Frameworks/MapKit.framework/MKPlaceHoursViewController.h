@@ -17,7 +17,6 @@
 {
     _Bool _isExpanded;
     MKPlaceSectionHeaderView *_headerView;
-    NSArray *_completeHours;
     NSArray *_businessHours;
     _Bool _resizableViewsDisabled;
     id <_MKInfoCardAnalyticsDelegate> _analyticsDelegate;
@@ -36,8 +35,8 @@
 - (void)_toggleShowAllHours;
 - (void)_setExpanded:(_Bool)arg1;
 - (_Bool)_shouldOnlyShowExpanded;
-- (id)businessHours;
-@property(readonly, nonatomic) NSArray *completeHours;
+@property(readonly, nonatomic) NSArray *businessHours;
+- (id)hoursBuilderWithHours:(id)arg1;
 @property(readonly, nonatomic) NSTimeZone *timeZone;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLoad;

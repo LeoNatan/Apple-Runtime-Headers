@@ -44,8 +44,10 @@
 - (void)handleReapNotifications:(id)arg1;
 - (void)getCoalitionInfo;
 - (void)timedCoalitionInfo;
+- (double)getCPUWeightFromEntry:(id)arg1;
 - (double)getGPUTimeFromEntry:(id)arg1;
 - (double)getCPUVoucherTimeFromEntry:(id)arg1;
+- (double)getCPUEnergyFromEntry:(id)arg1;
 - (void)addAccountingEventsFromCoalitions:(id)arg1;
 - (void)logCoalitionObjectDifference:(id)arg1;
 - (id)reapedCoalitionsPLEntryDiff;

@@ -6,7 +6,7 @@
 
 #import <AssistantUI/AFUISiriSessionListener-Protocol.h>
 
-@class AFSpeechInterpretation, AFUIRequestOptions, AceObject, INImage, NSArray, NSError, NSString, NSURL, SACardShowNextCard, SAGuidanceGuideUpdate, SAPhonePlayVoiceMail, SAPreSynthesizeTTS, SASSpeechPartialResult, SASSpeechRecognized, SASettingSetUIGuidedAccess, SASmsPlayAudio, SAUIAddContentToView, SAUIAddViews, SAUIAppPunchOut, SAUIChangePrimaryUtterance, SAUIClearScreen, SAUICloseAssistant, SAUIDisambiguationItemSelected, SAUIGetResponseAlternativesPlayback, SAUIHideSiriOverlay, SAUILaunchTVRemote, SAUIListenForPronunciation, SAUIOpenLink, SAUIRepeatIt, SAUISayIt, SAUISetSuggestedUtterances, SAUIShowHelp, SAUIShowSpeechAlternatives, SAUIUpdateViews, SAVCSPlayContent;
+@class AFAnalyticsTurnBasedInstrumentationContext, AFSpeechInterpretation, AFUIRequestOptions, AceObject, INImage, NSArray, NSError, NSString, NSURL, SACardShowNextCard, SAGuidanceGuideUpdate, SAPhonePlayVoiceMail, SAPreSynthesizeTTS, SASSpeechPartialResult, SASSpeechRecognized, SASettingSetUIGuidedAccess, SASmsPlayAudio, SAUIAddContentToView, SAUIAddViews, SAUIAppPunchOut, SAUIChangePrimaryUtterance, SAUIClearScreen, SAUICloseAssistant, SAUIDisambiguationItemSelected, SAUIGetResponseAlternativesPlayback, SAUIHideSiriOverlay, SAUILaunchTVRemote, SAUIListenForPronunciation, SAUIOpenLink, SAUIRepeatIt, SAUISayIt, SAUISetSuggestedUtterances, SAUIShowHelp, SAUIShowSpeechAlternatives, SAUIUpdateViews, SAVCSPlayContent;
 @protocol SAAceCommand;
 
 @protocol AFUISiriSessionDelegate <AFUISiriSessionListener>
@@ -67,6 +67,7 @@
 - (void)siriSessionWillCancelRequest;
 - (void)siriSessionWillStartRequest;
 - (void)siriSessionWillStartRequestWithOptions:(AFUIRequestOptions *)arg1 completion:(void (^)(AFUIRequestOptions *))arg2;
+- (void)siriSessionDidStartNewTurn:(AFAnalyticsTurnBasedInstrumentationContext *)arg1;
 - (void)siriSessionDidTransitionFromState:(long long)arg1 toState:(long long)arg2 event:(long long)arg3;
 - (void)siriSessionResultForAceCommand:(AceObject<SAAceCommand> *)arg1 completion:(void (^)(long long))arg2;
 @end

@@ -8,23 +8,28 @@
 
 #import <UIKitCore/_UITabBarControllerInterruptibleTransitioning-Protocol.h>
 
-@class NSString;
+@class NSString, UISpringTimingParameters;
 @protocol UIViewControllerContextTransitioning;
 
 __attribute__((visibility("hidden")))
 @interface _UITabBarTVTransitioner : NSObject <_UITabBarControllerInterruptibleTransitioning>
 {
     _Bool _transitionFromRight;
+    long long _transitionStyle;
     id <UIViewControllerContextTransitioning> _transitionContext;
+    UISpringTimingParameters *_slideTimingParameters;
 }
 
+@property(retain, nonatomic) UISpringTimingParameters *slideTimingParameters; // @synthesize slideTimingParameters=_slideTimingParameters;
 @property(retain, nonatomic) id <UIViewControllerContextTransitioning> transitionContext; // @synthesize transitionContext=_transitionContext;
 @property(nonatomic) _Bool transitionFromRight; // @synthesize transitionFromRight=_transitionFromRight;
+@property(nonatomic) long long transitionStyle; // @synthesize transitionStyle=_transitionStyle;
 - (void).cxx_destruct;
 - (void)animateTransition:(id)arg1;
 - (double)transitionDuration:(id)arg1;
 - (void)finishTransition;
 - (void)interruptTabBarControllerTransition;
+- (id)init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

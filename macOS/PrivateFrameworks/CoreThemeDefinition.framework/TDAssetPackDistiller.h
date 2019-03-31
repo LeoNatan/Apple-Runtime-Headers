@@ -25,7 +25,7 @@
 - (void)setAssetStoreUuid:(id)arg1;
 - (void)setAssetStoreRenditionCount:(unsigned int)arg1;
 - (void)removeRenditionsFromAssetStoreWithKey:(id)arg1;
-- (void)_storeRenditions;
+- (BOOL)_storeRenditions;
 - (id)assetPackForTags:(id)arg1;
 - (void)dealloc;
 - (id)initWithDocument:(id)arg1 outputPath:(id)arg2 versionString:(id)arg3 usingAssetPackMapping:(id)arg4 attemptIncremental:(BOOL)arg5;

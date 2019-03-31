@@ -14,6 +14,9 @@
 }
 
 - (void).cxx_destruct;
+- (void)cardDataForMerchantIdentifier:(id)arg1 countryCode:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (long long)cardsAvailableForAMPWithCountryCode:(id)arg1;
+- (void)cardsAvailableForAMPWithCountryCode:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)paymentHardwareStatusWithCompletion:(CDUnknownBlockType)arg1;
 - (void)secureElementStatusWithCompletion:(CDUnknownBlockType)arg1;
 - (_Bool)secureElementStatus:(unsigned long long *)arg1;

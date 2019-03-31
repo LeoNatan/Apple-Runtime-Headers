@@ -13,6 +13,7 @@
 
 @optional
 - (void)contextualNotificationDidDisappear:(PXContextualNotification *)arg1;
+- (void)contextualNotificationDidAppear:(PXContextualNotification *)arg1;
 - (void)contextualNotificationWasDiscarded:(PXContextualNotification *)arg1;
 - (void)contextualNotificationWasTapped:(PXContextualNotification *)arg1;
 - (_Bool)contextualNotification:(PXContextualNotification *)arg1 shouldPassthroughPoint:(struct CGPoint)arg2 inCoordinateSpace:(id <UICoordinateSpace>)arg3;

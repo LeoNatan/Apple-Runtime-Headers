@@ -62,6 +62,7 @@
 - (void)removeProfileWithIdentifier:(NSString *)arg1 installationType:(int)arg2 completion:(void (^)(NSError *))arg3;
 - (void)updateProfileIdentifier:(NSString *)arg1 interactive:(_Bool)arg2 completion:(void (^)(NSString *, NSError *))arg3;
 - (void)popProvisioningProfileFromHeadOfInstallationQueueWithCompletion:(void (^)(NSData *, NSError *))arg1;
+- (void)peekProfileDataFromPurgatoryForDeviceType:(unsigned int)arg1 withCompletion:(void (^)(NSData *, NSError *))arg2;
 - (void)popProfileDataFromPurgatoryForDeviceType:(unsigned int)arg1 withCompletion:(void (^)(NSData *, NSError *))arg2;
 - (void)popProfileDataFromHeadOfInstallationQueueWithCompletion:(void (^)(NSData *, NSError *))arg1;
 - (void)queueProfileDataForInstallation:(NSData *)arg1 originalFileName:(NSString *)arg2 originatingBundleID:(NSString *)arg3 transitionToUI:(_Bool)arg4 completion:(void (^)(NSString *, unsigned int, NSError *))arg5;

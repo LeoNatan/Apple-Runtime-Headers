@@ -8,7 +8,7 @@
 
 #import <AssistantServices/NSSecureCoding-Protocol.h>
 
-@class AFSpeechSynthesisRecord, CLLocation, NSDictionary, NSFileHandle, NSNumber, NSString, NSURL, NSXPCListenerEndpoint;
+@class AFSpeechSynthesisRecord, CLLocation, NSDictionary, NSFileHandle, NSNumber, NSString, NSURL, NSUUID, NSXPCListenerEndpoint;
 
 @interface AFSpeechRequestOptions : NSObject <NSSecureCoding>
 {
@@ -48,9 +48,11 @@
     NSDictionary *_clientAnalyticsContext;
     NSDictionary *_startContext;
     NSDictionary *_stopContext;
+    struct NSUUID *_turnIdentifier;
 }
 
 + (BOOL)supportsSecureCoding;
+@property(copy, nonatomic) NSUUID *turnIdentifier; // @synthesize turnIdentifier=_turnIdentifier;
 @property(nonatomic) BOOL isOnPhoneCall; // @synthesize isOnPhoneCall=_isOnPhoneCall;
 @property(copy, nonatomic) NSDictionary *stopContext; // @synthesize stopContext=_stopContext;
 @property(copy, nonatomic) NSDictionary *startContext; // @synthesize startContext=_startContext;

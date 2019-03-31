@@ -14,14 +14,13 @@
 {
     _Bool _highPriority;
     _Bool _cancelled;
-    CPLResource *_resource;
     NSString *_taskIdentifier;
+    CPLResource *_resource;
 }
 
 + (_Bool)supportsSecureCoding;
 @property(readonly, nonatomic, getter=isCancelled) _Bool cancelled; // @synthesize cancelled=_cancelled;
 @property(nonatomic, getter=isHighPriority) _Bool highPriority; // @synthesize highPriority=_highPriority;
-@property(copy, nonatomic) NSString *taskIdentifier; // @synthesize taskIdentifier=_taskIdentifier;
 @property(retain, nonatomic) CPLResource *resource; // @synthesize resource=_resource;
 - (void).cxx_destruct;
 - (id)description;
@@ -29,6 +28,7 @@
 - (_Bool)isEqual:(id)arg1;
 - (void)cancelTask;
 - (void)launch;
+@property(copy, nonatomic) NSString *taskIdentifier; // @synthesize taskIdentifier=_taskIdentifier;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (Class)classForKeyedArchiver;

@@ -23,7 +23,7 @@
 - (void)_clearOldLoggingFiles;
 - (void)voiceTriggerDidDetectSpeakerReject:(id)arg1;
 - (void)voiceTriggerDidDetectNearMiss:(id)arg1;
-- (void)voiceTriggerDidDetectKeyword:(id)arg1;
+- (void)voiceTriggerDidDetectKeyword:(id)arg1 deviceId:(id)arg2;
 - (void)_writeDictionary:(id)arg1 toPath:(id)arg2;
 - (id)_metaFilenameWithPrefix:(id)arg1;
 - (id)_timeStampString;

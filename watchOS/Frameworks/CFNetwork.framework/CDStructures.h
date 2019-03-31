@@ -755,8 +755,10 @@ typedef struct {
     int _field9;
     _Bool _field10;
     unsigned long long _field11;
-    CDStruct_c01186e1 _field12[0];
-} CDStruct_c350face;
+    _Bool _field12;
+    int _field13;
+    CDStruct_c01186e1 _field14[0];
+} CDStruct_2a5d9b01;
 
 // Template types
 typedef struct SmartBlockWithArgs<NSURLSessionTaskMetrics *> {

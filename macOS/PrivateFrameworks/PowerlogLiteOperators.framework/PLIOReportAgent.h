@@ -174,11 +174,12 @@
 - (void)logIOReportSnapshot;
 - (void)modelPMPAPSocPower:(id)arg1;
 - (void)modelAPSoCPower:(id)arg1;
+- (void)incrementAggdKeyForGroup:(id)arg1 withChannel:(id)arg2 withDelta:(unsigned long long)arg3;
 - (void)logEventBackwardMTRAging;
 - (void)logEventBackwardIOReportWithDelta:(id)arg1 forChannelGroup:(id)arg2;
 - (void)logEventBackwardComplexThermalUPOLimiting:(id)arg1 withChannels:(id)arg2;
 - (id)getBucketName:(int)arg1;
-- (void)logEventBackwardCorePerformanceStates:(id)arg1;
+- (void)logEventBackwardCorePerformanceStates:(id)arg1 withChannels:(id)arg2;
 - (int)getCoreChannelId:(id)arg1;
 - (void)logEventBackwardComplexPerformanceStates:(id)arg1;
 - (int)getChannelId:(id)arg1;
@@ -200,7 +201,7 @@
 - (id)buildHalfHourSet;
 - (id)buildSignificantBatterySet;
 - (id)buildBaseSet;
-- (id)buildLiteModeSetNano;
+- (id)buildHalfHourSetLiteTaskMode;
 - (id)init;
 - (void)initTransformationArray;
 - (id)chanelDictionaryWithChannelSet:(id)arg1 withMinProcessTime:(double)arg2;

@@ -87,7 +87,7 @@
 - (id)createEventModel:(id)arg1 endEvent:(_Bool)arg2 message:(id)arg3 checkForSupport:(_Bool)arg4 error:(id *)arg5;
 - (void)_addEventToEventTrigger:(id)arg1;
 - (void)_handleAddEventToEventTrigger:(id)arg1;
-- (void)_handleLocationAuthorizationMessage:(id)arg1;
+- (void)_handleLocationAuthorizationChangedNotification:(id)arg1;
 - (void)fixupForReplacementAccessory:(id)arg1;
 - (void)_updateCondition:(id)arg1;
 - (void)removeUser:(id)arg1;

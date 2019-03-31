@@ -22,7 +22,7 @@
 @property(retain, nonatomic) NPSManager *syncManager; // @synthesize syncManager=_syncManager;
 @property(retain, nonatomic) NPSDomainAccessor *domainAccessor; // @synthesize domainAccessor=_domainAccessor;
 - (void).cxx_destruct;
-- (void)_writeToDomain;
+- (void)_writeToDomainWithShouldUpdateVersion:(_Bool)arg1;
 - (void)_migratePaceViewSettingIfNeeded;
 - (void)_readFromDomain;
 - (_Bool)_hasUserMadeMetricChangesToWorkoutType:(id)arg1 enabledMetrics:(id)arg2 settingOverridesByMetric:(id)arg3 metricFormatVersion:(id)arg4;

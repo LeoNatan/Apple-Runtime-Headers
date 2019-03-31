@@ -21,6 +21,7 @@
 
 + (id)_headlineLabelFont;
 + (id)captionLabelFont;
++ (double)bottomInset;
 + (double)captionLabelTopInset;
 - (void).cxx_destruct;
 - (id)_attributedStringWithString:(id)arg1;

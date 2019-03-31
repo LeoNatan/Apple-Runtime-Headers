@@ -47,7 +47,7 @@
 - (void)handleTap;
 - (void)presentComponentWithChanges:(CDStruct_1cc9d0d0)arg1;
 - (void)configure;
-- (id)initWithDOMObjectProvider:(id)arg1 viewport:(id)arg2 presentationDelegate:(id)arg3 analyticsReporting:(id)arg4 componentStyleRendererFactory:(id)arg5 fileProvider:(id)arg6 quickLookModule:(id)arg7;
+- (id)initWithDOMObjectProvider:(id)arg1 viewport:(id)arg2 presentationDelegate:(id)arg3 componentStyleRendererFactory:(id)arg4 fileProvider:(id)arg5 quickLookModule:(id)arg6;
 
 @end
 

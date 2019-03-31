@@ -41,6 +41,7 @@
 - (id)_onboardingAtrialFibrillationDetectionCancelButton;
 - (id)_onboardingElectrocardiogramCancelButton;
 - (id)_buttonForButtonType:(long long)arg1;
+- (void)presentLearnMoreAlertWithMessage:(id)arg1 learnMoreTapped:(CDUnknownBlockType)arg2;
 - (void)presentAlertWithMessage:(id)arg1;
 - (void)skipButtonTapped:(id)arg1;
 - (void)closeButtonTapped:(id)arg1;

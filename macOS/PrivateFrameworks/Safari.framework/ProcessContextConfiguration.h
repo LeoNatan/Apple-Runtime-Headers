@@ -13,6 +13,7 @@ __attribute__((visibility("hidden")))
 {
     BOOL _usePerTabWebProcesses;
     BOOL _useAutomaticWebProcessPrewarming;
+    BOOL _useWebProcessCache;
     BOOL _passwordAutoFillAvailable;
     BOOL _addressBookAutoFillEnabled;
     BOOL _shouldPerformAutomatedPageLoadTest;
@@ -42,6 +43,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) BOOL shouldPerformAutomatedPageLoadTest; // @synthesize shouldPerformAutomatedPageLoadTest=_shouldPerformAutomatedPageLoadTest;
 @property(nonatomic, getter=isAddressBookAutoFillEnabled) BOOL addressBookAutoFillEnabled; // @synthesize addressBookAutoFillEnabled=_addressBookAutoFillEnabled;
 @property(nonatomic, getter=isPasswordAutoFillAvailable) BOOL passwordAutoFillAvailable; // @synthesize passwordAutoFillAvailable=_passwordAutoFillAvailable;
+@property(nonatomic) BOOL useWebProcessCache; // @synthesize useWebProcessCache=_useWebProcessCache;
 @property(nonatomic) BOOL useAutomaticWebProcessPrewarming; // @synthesize useAutomaticWebProcessPrewarming=_useAutomaticWebProcessPrewarming;
 @property(nonatomic) BOOL usePerTabWebProcesses; // @synthesize usePerTabWebProcesses=_usePerTabWebProcesses;
 @property(copy, nonatomic) NSString *injectedBundlePath; // @synthesize injectedBundlePath=_injectedBundlePath;

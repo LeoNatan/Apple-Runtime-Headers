@@ -149,6 +149,7 @@
 - (void)changeCaptionViewForViewWithIndex:(unsigned long long)arg1 expanded:(_Bool)arg2 animated:(_Bool)arg3;
 - (void)didFinishFullscreenActiveIndex:(unsigned long long)arg1;
 - (void)setupScrollViewIfNeededWithActiveIndex:(unsigned long long)arg1;
+- (void)dismiss;
 - (void)dealloc;
 - (id)initWithShowable:(id)arg1 captionViewFactory:(id)arg2 sharingPolicy:(unsigned long long)arg3;
 

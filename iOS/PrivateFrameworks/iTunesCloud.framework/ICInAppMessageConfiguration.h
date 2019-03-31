@@ -15,7 +15,7 @@
 
 - (void).cxx_destruct;
 @property(readonly, nonatomic) long long syncPollingInterval;
-@property(readonly, nonatomic) NSURL *resourceBaseURL;
+@property(readonly, nonatomic) NSURL *resourceDomainURL;
 @property(readonly, nonatomic) NSURL *syncURL;
 @property(readonly, nonatomic) NSURL *serialCheckURL;
 @property(readonly, nonatomic) NSURL *reportEventURL;

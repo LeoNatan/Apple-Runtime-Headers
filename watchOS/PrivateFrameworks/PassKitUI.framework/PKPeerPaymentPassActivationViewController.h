@@ -9,7 +9,7 @@
 #import <PassKitUI/PKExplanationViewControllerDelegate-Protocol.h>
 #import <PassKitUI/PKPaymentSetupViewControllerDelegate-Protocol.h>
 
-@class NSString, PKPaymentProvisioningController, PKPeerPaymentCredential, PKPeerPaymentSetupFlowHeroView, PKPeerPaymentWebService, UIImage;
+@class NSString, PKPaymentProvisioningController, PKPeerPaymentCredential, PKPeerPaymentSetupFlowHeroView, PKPeerPaymentTermsController, PKPeerPaymentWebService, UIImage;
 @protocol PKPaymentSetupViewControllerDelegate;
 
 @interface PKPeerPaymentPassActivationViewController : PKExplanationViewController <PKPaymentSetupViewControllerDelegate, PKExplanationViewControllerDelegate>
@@ -19,6 +19,7 @@
     id <PKPaymentSetupViewControllerDelegate> _delegate;
     unsigned int _state;
     PKPeerPaymentWebService *_peerPaymentWebService;
+    PKPeerPaymentTermsController *_termsController;
     UIImage *_passSnapShot;
     _Bool _shouldShowAddDebitCardViewController;
     PKPeerPaymentSetupFlowHeroView *_heroView;

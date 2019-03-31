@@ -6,9 +6,13 @@
 
 #import <UIKit/UIButton.h>
 
+@class NSLayoutConstraint;
+
 @interface ADPrivacyMarker : UIButton
 {
     _Bool _isVideo;
+    NSLayoutConstraint *_constraintHeight;
+    NSLayoutConstraint *_constraintWidth;
 }
 
 + (id)bundleForLocalizedString;
@@ -16,6 +20,8 @@
 + (id)dimensionsForVideoMarker;
 + (id)localizedLearnMoreText;
 + (id)localizedAdMarkerText;
+@property(nonatomic) NSLayoutConstraint *constraintWidth; // @synthesize constraintWidth=_constraintWidth;
+@property(nonatomic) NSLayoutConstraint *constraintHeight; // @synthesize constraintHeight=_constraintHeight;
 @property(nonatomic) _Bool isVideo; // @synthesize isVideo=_isVideo;
 - (void)dealloc;
 - (id)accessibilityLabel;

@@ -6,17 +6,27 @@
 
 #import <UIKit/UIViewController.h>
 
-@class UIImageView;
+@class UIActivityIndicatorView, UIImageView;
 
 @interface SUSnapshotViewController : UIViewController
 {
     UIViewController *_originalViewController;
+    long long _originalOrientation;
+    UIActivityIndicatorView *_activityIndicatorView;
     UIImageView *_imageView;
 }
 
 @property(retain, nonatomic) UIImageView *imageView; // @synthesize imageView=_imageView;
+@property(retain, nonatomic) UIActivityIndicatorView *activityIndicatorView; // @synthesize activityIndicatorView=_activityIndicatorView;
+@property(nonatomic) long long originalOrientation; // @synthesize originalOrientation=_originalOrientation;
 @property(retain, nonatomic) UIViewController *originalViewController; // @synthesize originalViewController=_originalViewController;
 - (void).cxx_destruct;
+- (void)_stopActivityIndicator;
+- (void)_startActivityIndicator;
+- (id)_snapshotOfView:(id)arg1;
+- (long long)_currentOrientation;
+- (void)viewDidDisappear:(_Bool)arg1;
+- (void)viewWillAppear:(_Bool)arg1;
 - (void)viewWillLayoutSubviews;
 - (void)viewDidLoad;
 - (id)initWithOriginal:(id)arg1;

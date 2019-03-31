@@ -21,17 +21,16 @@
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *calloutQueue; // @synthesize calloutQueue=_calloutQueue;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *accessQueue; // @synthesize accessQueue=_accessQueue;
 - (void).cxx_destruct;
-- (void)_validateBag:(id)arg1 error:(id *)arg2;
+- (_Bool)_bagHasValidKeys:(id)arg1;
 - (_Bool)_processPotentialStateChangesWithStatus:(int)arg1 treatment:(int)arg2 verificationURL:(id)arg3 error:(id)arg4;
-- (void)_runAgeVerificationWithCompletion:(CDUnknownBlockType)arg1;
+- (void)_runAgeVerificationForUserIdentity:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)_updateAgeVerificationStateForUserIdentity:(id)arg1 sendNotification:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_updateAgeVerificationStateAndSendNotification:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_userIdendityStoreDidChange:(id)arg1;
 - (void)_registerForNotifications;
 - (id)_init;
 @property(readonly, nonatomic) ICAgeVerificationState *ageVerificationState;
-@property(readonly, nonatomic) ICAgeVerificationState *ageVerificationData;
 - (void)getAgeVerificationStateWithCompletion:(CDUnknownBlockType)arg1;
-- (void)getIsExplicitContentAllowedWithCompletion:(CDUnknownBlockType)arg1;
 
 @end
 

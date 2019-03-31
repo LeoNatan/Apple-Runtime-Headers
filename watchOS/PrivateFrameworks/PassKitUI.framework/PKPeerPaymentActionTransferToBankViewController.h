@@ -10,18 +10,22 @@
 #import <PassKitUI/UITableViewDataSource-Protocol.h>
 #import <PassKitUI/UITableViewDelegate-Protocol.h>
 
-@class NSArray, NSDecimalNumber, NSDecimalNumberHandler, NSNumberFormatter, NSString, PKEnterCurrencyAmountView, PKEnterValueNewBalanceView, PKPaymentPass, UILabel, UITableView;
+@class NSArray, NSDecimalNumber, NSDecimalNumberHandler, NSNumberFormatter, NSString, PKAnimatedNavigationBarTitleView, PKEnterCurrencyAmountView, PKEnterValueNewBalanceView, PKPaymentPass, UIImageView, UILabel, UITableView;
 
 @interface PKPeerPaymentActionTransferToBankViewController : PKPeerPaymentActionViewController <PKPeerPaymentActionControllerDelegate, UITableViewDelegate, UITableViewDataSource>
 {
     NSArray *_supportedTransferActions;
     NSNumberFormatter *_currencyFormatter;
+    NSNumberFormatter *_percentageFormatter;
     NSDecimalNumberHandler *_roundingHandler;
     PKPaymentPass *_defaultInstantFundsOutPaymentPass;
+    _Bool _isSmallPhone;
+    PKAnimatedNavigationBarTitleView *_passNavbarTitleView;
     PKEnterCurrencyAmountView *_enterCurrencyAmountView;
     PKEnterValueNewBalanceView *_newBalanceView;
     UITableView *_tableView;
     UILabel *_footerTextLabel;
+    UIImageView *_passView;
     NSDecimalNumber *_feePercentage;
     NSDecimalNumber *_minimumFee;
     NSDecimalNumber *_maximumFee;

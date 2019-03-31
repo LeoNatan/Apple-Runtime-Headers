@@ -9,7 +9,7 @@
 #import <HomeKit/HMObjectMerge-Protocol.h>
 #import <HomeKit/NSSecureCoding-Protocol.h>
 
-@class HMFUnfairLock, NSString, NSUUID;
+@class HMFKey, HMFUnfairLock, NSString, NSUUID;
 
 @interface HMDevice : NSObject <HMObjectMerge, NSSecureCoding>
 {
@@ -17,6 +17,7 @@
     _Bool _currentDevice;
     NSUUID *_uniqueIdentifier;
     NSString *_name;
+    HMFKey *_rapportIRK;
     NSUUID *_idsIdentifier;
     NSUUID *_uuid;
 }
@@ -30,6 +31,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)IDSDeviceForIDSService:(id)arg1;
+@property(copy) HMFKey *rapportIRK; // @synthesize rapportIRK=_rapportIRK;
 @property(copy) NSString *name; // @synthesize name=_name;
 @property(readonly, copy) NSUUID *uniqueIdentifier; // @synthesize uniqueIdentifier=_uniqueIdentifier;
 - (_Bool)isEqual:(id)arg1;

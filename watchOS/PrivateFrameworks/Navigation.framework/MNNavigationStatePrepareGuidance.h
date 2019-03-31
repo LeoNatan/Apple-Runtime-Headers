@@ -26,7 +26,7 @@ __attribute__((visibility("hidden")))
 - (unsigned int)desiredResourcePolicy;
 - (unsigned int)desiredLocationProviderType;
 - (_Bool)requiresHighMemoryThreshold;
-- (unsigned int)type;
+- (int)type;
 
 @end
 

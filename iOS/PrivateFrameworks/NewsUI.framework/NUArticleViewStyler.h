@@ -12,18 +12,18 @@
 
 @interface NUArticleViewStyler : NSObject <NUArticleViewStyler>
 {
+    UIColor *_backgroundColor;
     long long _statusBarStyle;
     long long _topBackgroundStatusBarStyle;
-    UIColor *_backgroundColor;
     UIColor *_tabBarTintColor;
     UIColor *_toolbarTintColor;
 }
 
 @property(retain, nonatomic) UIColor *toolbarTintColor; // @synthesize toolbarTintColor=_toolbarTintColor;
 @property(retain, nonatomic) UIColor *tabBarTintColor; // @synthesize tabBarTintColor=_tabBarTintColor;
-@property(readonly, nonatomic) UIColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;
 @property(readonly, nonatomic) long long topBackgroundStatusBarStyle; // @synthesize topBackgroundStatusBarStyle=_topBackgroundStatusBarStyle;
 @property(readonly, nonatomic) long long statusBarStyle; // @synthesize statusBarStyle=_statusBarStyle;
+@property(readonly, nonatomic) UIColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;
 - (void).cxx_destruct;
 - (long long)statusBarStyleForBackgroundColor:(id)arg1;
 - (void)unstyleToolbar:(id)arg1 overrideRestoreColor:(id)arg2;

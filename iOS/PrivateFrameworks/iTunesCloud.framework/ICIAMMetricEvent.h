@@ -15,9 +15,11 @@
     NSMutableArray *_actionDetails;
     int _actionType;
     NSString *_actionURL;
+    NSString *_eventType;
     NSMutableArray *_pageDetails;
     NSString *_pageId;
     int _pageType;
+    NSString *_pageUrl;
     NSString *_targetId;
     int _targetType;
     struct {
@@ -29,6 +31,8 @@
 
 + (Class)actionDetailsType;
 + (Class)pageDetailsType;
+@property(retain, nonatomic) NSString *pageUrl; // @synthesize pageUrl=_pageUrl;
+@property(retain, nonatomic) NSString *eventType; // @synthesize eventType=_eventType;
 @property(retain, nonatomic) NSMutableArray *actionDetails; // @synthesize actionDetails=_actionDetails;
 @property(retain, nonatomic) NSString *actionURL; // @synthesize actionURL=_actionURL;
 @property(retain, nonatomic) NSString *targetId; // @synthesize targetId=_targetId;
@@ -44,6 +48,8 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(readonly, nonatomic) _Bool hasPageUrl;
+@property(readonly, nonatomic) _Bool hasEventType;
 - (id)actionDetailsAtIndex:(unsigned long long)arg1;
 - (unsigned long long)actionDetailsCount;
 - (void)addActionDetails:(id)arg1;

@@ -23,7 +23,7 @@
 @property(readonly, nonatomic) long long status; // @synthesize status=_status;
 @property(readonly, nonatomic) long long treatment; // @synthesize treatment=_treatment;
 - (void).cxx_destruct;
-- (id)debugDescription;
+- (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly, nonatomic, getter=isExplicitContentAllowed) _Bool explicitContentAllowed;

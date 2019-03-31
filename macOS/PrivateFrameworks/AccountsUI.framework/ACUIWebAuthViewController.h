@@ -6,22 +6,30 @@
 
 #import <AccountsUI/ACUIViewController.h>
 
-@class NSBox, NSLayoutConstraint, NSProgressIndicator, NSTextField, SLWebAuthController;
+@class NSBox, NSImageView, NSLayoutConstraint, NSProgressIndicator, NSStackView, NSTextField, SLWebAuthController;
 @protocol ACUIWebAuthDelegate;
 
 @interface ACUIWebAuthViewController : ACUIViewController
 {
     SLWebAuthController *_webAuthController;
+    BOOL _presentsRenewalText;
     id <ACUIWebAuthDelegate> _delegate;
     NSBox *_webViewContainer;
     NSProgressIndicator *_spinner;
     NSTextField *_continueTextField;
     NSLayoutConstraint *_webContainerViewHeightConstraint;
+    NSImageView *_imageView;
+    NSStackView *_verticalStack;
+    NSLayoutConstraint *_heightConstraint;
 }
 
 + (BOOL)supportsAccount:(id)arg1;
+@property(retain) NSLayoutConstraint *heightConstraint; // @synthesize heightConstraint=_heightConstraint;
+@property(retain) NSStackView *verticalStack; // @synthesize verticalStack=_verticalStack;
+@property(retain) NSImageView *imageView; // @synthesize imageView=_imageView;
 @property(retain) NSLayoutConstraint *webContainerViewHeightConstraint; // @synthesize webContainerViewHeightConstraint=_webContainerViewHeightConstraint;
 @property(retain) NSTextField *continueTextField; // @synthesize continueTextField=_continueTextField;
+@property BOOL presentsRenewalText; // @synthesize presentsRenewalText=_presentsRenewalText;
 @property(retain) NSProgressIndicator *spinner; // @synthesize spinner=_spinner;
 @property(retain) NSBox *webViewContainer; // @synthesize webViewContainer=_webViewContainer;
 @property __weak id <ACUIWebAuthDelegate> delegate; // @synthesize delegate=_delegate;
@@ -30,8 +38,10 @@
 - (void)_setContinueTextFieldHidden:(BOOL)arg1;
 - (void)_webLoginSucceeded;
 - (void)_webLoginFailureWithError:(id)arg1;
+- (void)viewWillLayout;
 - (void)viewDidLoad;
-- (void)startWebAuthController;
+- (void)cancelAuthorization;
+- (void)startAuthorization;
 - (void)awakeFromNib;
 
 @end

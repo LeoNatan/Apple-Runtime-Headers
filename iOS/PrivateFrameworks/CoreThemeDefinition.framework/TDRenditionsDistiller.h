@@ -7,6 +7,7 @@
 #import <objc/NSObject.h>
 
 @class CoreThemeDocument, NSConditionLock, NSMutableArray, TDLogger;
+@protocol OS_dispatch_group;
 
 @interface TDRenditionsDistiller : NSObject
 {
@@ -18,6 +19,7 @@
     _Bool shouldCompressCSIDataFlag;
     _Bool noMoreCSIDataInfo;
     _Bool noMoreRenditions;
+    NSObject<OS_dispatch_group> *_group;
     TDLogger *_logger;
 }
 
@@ -27,6 +29,7 @@
 - (void)enqueueAbortFlag;
 - (void)enqueueLastRenditionFlag;
 - (void)detachDistillationThread;
+- (void)waitUntilFinished;
 - (void)_distill:(id)arg1;
 - (id)_nextObjectFromInQueue;
 - (void)_enqueueDistillingAbortedInfo;

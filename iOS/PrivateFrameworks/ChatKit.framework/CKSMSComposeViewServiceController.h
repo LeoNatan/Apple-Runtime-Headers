@@ -73,6 +73,7 @@
 - (void)insertAttachmentWithURL:(id)arg1 andDescription:(id)arg2;
 - (void)_insertAttachmentWithURL:(id)arg1 andDescription:(id)arg2 preview:(id)arg3 isFullyRealized:(_Bool)arg4 appendedVideoURL:(id)arg5 appendedBundleURL:(id)arg6;
 - (void)insertFileURL:(id)arg1 filename:(id)arg2 transcoderUserInfo:(id)arg3;
+- (_Bool)_hostSandboxAllowsFileReadAtFileURL:(id)arg1;
 - (void)_insertFileURL:(id)arg1 filename:(id)arg2 transcoderUserInfo:(id)arg3 preview:(id)arg4 isFullyRealized:(_Bool)arg5 appendedVideoURL:(id)arg6;
 - (void)insertData:(id)arg1 MIMEType:(id)arg2 exportedFilename:(id)arg3;
 - (void)insertFilename:(id)arg1 MIMEType:(id)arg2 exportedFilename:(id)arg3 options:(id)arg4;

@@ -90,6 +90,7 @@
 - (void)_startAvailabilityTimeoutTimerForRecipient:(id)arg1;
 - (BOOL)_availibilityForRecipient:(id)arg1 onService:(id)arg2;
 - (void)_handleConversationPreferredServiceDidChangeNotification:(id)arg1;
+- (void)_handleAddressBookPartialChangedNotification:(id)arg1;
 - (void)_handleAddressBookChangedNotification:(id)arg1;
 - (id)_toFieldCollapsedTextColor;
 - (unsigned long long)_atomPresentationOptionsForRecipient:(id)arg1;

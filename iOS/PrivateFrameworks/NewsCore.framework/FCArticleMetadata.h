@@ -23,7 +23,14 @@
 @property(readonly, nonatomic) _Bool isTreatedAsNew;
 @property(readonly, nonatomic) NSString *articleID;
 @property(readonly, nonatomic) NSString *storyType;
+@property(readonly, nonatomic) NSString *title;
 - (id)initWithDictionary:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

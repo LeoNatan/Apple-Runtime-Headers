@@ -29,6 +29,7 @@ __attribute__((visibility("hidden")))
 - (id)oneUpPresentationHelperViewHostingTilingView:(id)arg1;
 - (unsigned long long)oneUpPresentationHelperAdditionalOptions:(id)arg1;
 - (_Bool)oneUpPresentationHelperShouldAutoPlay:(id)arg1;
+- (long long)oneUpPresentationOrigin:(id)arg1;
 - (id)oneUpPresentationHelperViewController:(id)arg1;
 - (_Bool)handlePresentingPinchGestureRecognizer:(id)arg1;
 - (void)invalidatePresentingGeometry;

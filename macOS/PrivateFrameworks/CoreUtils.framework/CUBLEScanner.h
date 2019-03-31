@@ -47,6 +47,7 @@
 - (void).cxx_destruct;
 - (void)centralManager:(id)arg1 didDiscoverPeripheral:(id)arg2 advertisementData:(id)arg3 RSSI:(id)arg4;
 - (void)centralManagerDidUpdateState:(id)arg1;
+- (void)_updateScanRules:(id *)arg1 payloadType:(unsigned char)arg2 rssiThreshold:(int)arg3;
 - (void)_stopScanIfNeededWithReason:(const char *)arg1;
 - (BOOL)_shouldScan;
 - (id)_scanParametersSummary:(id)arg1;

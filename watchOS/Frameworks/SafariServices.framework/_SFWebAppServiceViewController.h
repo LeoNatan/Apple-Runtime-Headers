@@ -50,6 +50,7 @@
 - (void)webViewControllerDidFirstVisuallyNonEmptyLayout:(id)arg1;
 - (void)webViewControllerDidChangeLoadingState:(id)arg1;
 - (void)_hostApplicationDidEnterBackground;
+- (_Bool)_shouldCacheWebViewController;
 - (void)setNeedsStatusBarAppearanceUpdate;
 - (int)preferredStatusBarStyle;
 - (void)viewDidLoad;

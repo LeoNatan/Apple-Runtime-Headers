@@ -18,6 +18,7 @@
     SSMutableURLRequestProperties *_requestProperties;
     NSDictionary *_responseHeaders;
     NSString *_responseText;
+    _Bool _shouldSendGUIDHeader;
     unsigned long long _status;
     NSString *_statusText;
     unsigned long long _timeout;
@@ -35,12 +36,16 @@
 - (void).cxx_destruct;
 - (id)scriptAttributeKeys;
 - (id)attributeKeys;
+- (id)_uniqueDeviceID;
 - (void)_setScriptObject:(id)arg1 forFunctionName:(id)arg2;
 - (id)_scriptObjectForFunctionName:(id)arg1;
+- (id)_gsTokenForAIDAAccount:(id)arg1 accountStore:(id)arg2;
+- (id)_clientInfoHeader;
 - (void)_callFunctionWithName:(id)arg1 arguments:(id)arg2;
 @property unsigned long long timeout;
 @property(readonly, copy) NSString *statusText;
 @property(readonly) unsigned long long status;
+@property(retain) id shouldSendGUIDHeader;
 @property(retain) WebScriptObject *ontimeout;
 @property(retain) WebScriptObject *onreadystatechange;
 @property(retain) WebScriptObject *onloadend;

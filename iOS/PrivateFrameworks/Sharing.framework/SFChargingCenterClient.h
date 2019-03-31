@@ -8,7 +8,7 @@
 
 #import <Sharing/SBSRemoteAlertHandleObserver-Protocol.h>
 
-@class NSDate, NSString, SBSRemoteAlertHandle, SFChargingUICoordinator, SFWirelessChargingMonitor;
+@class NSDate, NSString, PLTitledSummaryPlatterView, SBSRemoteAlertHandle, SFChargingUICoordinator, SFWirelessChargingMonitor;
 @protocol OS_dispatch_queue, OS_dispatch_source;
 
 @interface SFChargingCenterClient : NSObject <SBSRemoteAlertHandleObserver>
@@ -17,10 +17,12 @@
     _Bool _invalidateCalled;
     _Bool _invalidateDone;
     int _triggerEngagementToken;
+    int _triggerError1;
+    int _triggerError4;
     _Bool _forcePill;
     _Bool _triggerUIForInBandComms;
     double _previousPhoneChargeLevel;
-    long long _processedErrorFlags;
+    unsigned char _processedErrorCode;
     NSObject<OS_dispatch_queue> *_dispatchQueue;
     SBSRemoteAlertHandle *_currentRemoteHandle;
     CDUnknownBlockType _visualInformationRequestHandler;
@@ -46,25 +48,28 @@
 @property(nonatomic) SBSRemoteAlertHandle *currentRemoteHandle; // @synthesize currentRemoteHandle=_currentRemoteHandle;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
 - (void).cxx_destruct;
-- (id)onqueue_dataRepresentationForInformationProvider:(id)arg1;
-- (void)onqueue_updateActivationContext:(id)arg1 withInformationProvider:(id)arg2;
+- (void)onqueue_updateActivationContext:(id)arg1 withCoverSheetPlatterFrame:(struct CGRect)arg2;
 - (void)onqueue_updateActivationContext:(id)arg1 withKeyChargingDevice:(id)arg2;
 - (void)onqueue_updateActivationContextWithPowerSourcesData:(id)arg1;
 - (void)remoteAlertHandleDidDeactivate:(id)arg1;
 - (void)contextsForRemoteAlertActivationWithReason:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)onqueue_requestPresentationForReason:(id)arg1 withKeyChargingDevice:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)onqueue_sendPresentationRequestForChargingDevice:(id)arg1;
 - (void)onqueue_presentationRequestContextsForReason:(id)arg1 withHandler:(CDUnknownBlockType)arg2;
 - (void)onqueue_canPresentForDevice:(id)arg1 handler:(CDUnknownBlockType)arg2;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 @property(readonly, nonatomic) long long numberOfDevicesCharging;
+- (void)updatePlatterView;
+- (void)reevaluatePlatterViewShowEligibility;
+@property(readonly, nonatomic) PLTitledSummaryPlatterView *platterView;
+- (void)setUpPlatterView;
 - (void)onqueue_invalidate;
 - (void)invalidate;
 - (void)onqueue_activate;
 - (void)activate;
-- (void)updateErrorNotificationsForChargingDevice:(id)arg1 removed:(_Bool)arg2;
 - (void)dealloc;
 - (void)createWorkQueue;
-- (void)setUpMonitor;
+- (void)setUpPowerMonitor;
 - (void)listenToNotifications;
 - (void)restorePersistedErrorNotifications;
 - (void)checkDefaults;

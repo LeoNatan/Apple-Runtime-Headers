@@ -6,13 +6,14 @@
 
 #import <objc/NSObject.h>
 
+#import <OSInstaller/OSIPowerButtonMonitorDelegate-Protocol.h>
 #import <OSInstaller/OSIPowerControllerDelegate-Protocol.h>
 #import <OSInstaller/SKManagerListener-Protocol.h>
 
-@class IASUnifiedProgressClient, NSDate, NSError, NSMutableArray, NSNumber, NSString, NSTimer, OSIDebuggerTool, OSIPersonalizedManifests, OSIPowerController, OSInstallOptions, PKDistributionController;
+@class IASUnifiedProgressClient, NSDate, NSError, NSMutableArray, NSNumber, NSString, NSTimer, OSIDebuggerTool, OSIPersonalizedManifests, OSIPowerButtonMonitor, OSIPowerController, OSInstallOptions, PKDistributionController;
 @protocol OSInstallControllerDelegate, OS_dispatch_queue;
 
-@interface OSInstallController : NSObject <OSIPowerControllerDelegate, SKManagerListener>
+@interface OSInstallController : NSObject <OSIPowerControllerDelegate, OSIPowerButtonMonitorDelegate, SKManagerListener>
 {
     BOOL _isCurrentlyInstalling;
     BOOL _hasEvaluatedInstallability;
@@ -21,6 +22,7 @@
     BOOL _needAPFSConvert;
     BOOL _showingStuckUI;
     BOOL _shouldProcessTimeRemaining;
+    BOOL _shouldShowPowerButtonWarningText;
     int _numOfCPIOExtractionRetries;
     NSError *_installCheckFailureReason;
     OSInstallOptions *_options;
@@ -35,8 +37,10 @@
     NSTimer *_progressUpdateCheckTimer;
     NSTimer *_stuckElementTimer;
     double _lastIncommingTime;
+    NSTimer *_powerButtonWarningTextTimer;
     IASUnifiedProgressClient *_progressClient;
     OSIPowerController *_powerManager;
+    OSIPowerButtonMonitor *_powerButtonMonitor;
     NSMutableArray *_installOperations;
     NSMutableArray *_validTargets;
     NSMutableArray *_products;
@@ -66,8 +70,11 @@
 @property(retain) NSMutableArray *products; // @synthesize products=_products;
 @property(retain) NSMutableArray *validTargets; // @synthesize validTargets=_validTargets;
 @property(retain) NSMutableArray *installOperations; // @synthesize installOperations=_installOperations;
+@property(retain) OSIPowerButtonMonitor *powerButtonMonitor; // @synthesize powerButtonMonitor=_powerButtonMonitor;
 @property(retain) OSIPowerController *powerManager; // @synthesize powerManager=_powerManager;
 @property(retain) IASUnifiedProgressClient *progressClient; // @synthesize progressClient=_progressClient;
+@property(retain) NSTimer *powerButtonWarningTextTimer; // @synthesize powerButtonWarningTextTimer=_powerButtonWarningTextTimer;
+@property BOOL shouldShowPowerButtonWarningText; // @synthesize shouldShowPowerButtonWarningText=_shouldShowPowerButtonWarningText;
 @property double lastIncommingTime; // @synthesize lastIncommingTime=_lastIncommingTime;
 @property(retain) NSTimer *stuckElementTimer; // @synthesize stuckElementTimer=_stuckElementTimer;
 @property(retain) NSTimer *progressUpdateCheckTimer; // @synthesize progressUpdateCheckTimer=_progressUpdateCheckTimer;
@@ -89,6 +96,7 @@
 @property BOOL hasEvaluatedInstallability; // @synthesize hasEvaluatedInstallability=_hasEvaluatedInstallability;
 @property BOOL isCurrentlyInstalling; // @synthesize isCurrentlyInstalling=_isCurrentlyInstalling;
 - (void).cxx_destruct;
+- (void)powerButtonPressed;
 - (void)lowBatteryStatusChanged:(BOOL)arg1;
 - (void)_thermalStateDidChange:(id)arg1;
 - (void)_queueProgressWatchdog:(id)arg1;

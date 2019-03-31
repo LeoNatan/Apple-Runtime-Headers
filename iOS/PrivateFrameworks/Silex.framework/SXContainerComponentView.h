@@ -40,11 +40,10 @@
 - (void)removeComponentView:(id)arg1;
 - (void)addComponentView:(id)arg1;
 - (id)componentViewsForRole:(int)arg1 recursive:(_Bool)arg2;
-- (double)suggestedContainerHeightForWidth:(double)arg1;
 - (struct CGRect)originalFrameForContentView:(id)arg1 behavior:(id)arg2;
 - (id)contentViewForBehavior:(id)arg1;
 - (void)presentComponentWithChanges:(CDStruct_1cc9d0d0)arg1;
-- (id)initWithDOMObjectProvider:(id)arg1 viewport:(id)arg2 presentationDelegate:(id)arg3 analyticsReporting:(id)arg4 componentStyleRendererFactory:(id)arg5 mediaSharingPolicyProvider:(id)arg6;
+- (id)initWithDOMObjectProvider:(id)arg1 viewport:(id)arg2 presentationDelegate:(id)arg3 componentStyleRendererFactory:(id)arg4 mediaSharingPolicyProvider:(id)arg5;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

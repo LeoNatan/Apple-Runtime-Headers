@@ -12,6 +12,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (void)setSafeBrowsingEnabled:(BOOL)arg1;
++ (id)_safeBrowsingPreferencesPlistURL;
 + (BOOL)isSafeBrowsingEnabled;
 
 @end

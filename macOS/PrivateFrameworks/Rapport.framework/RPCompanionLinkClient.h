@@ -28,6 +28,7 @@
     unsigned int _pairSetupFlags;
     unsigned int _pairVerifyFlags;
     int _passwordType;
+    int _passwordTypeActual;
     unsigned int _flags;
     unsigned int _internalAuthFlags;
     NSString *_password;
@@ -68,6 +69,7 @@
 @property(copy, nonatomic) CDUnknownBlockType hidePasswordHandler; // @synthesize hidePasswordHandler=_hidePasswordHandler;
 @property(copy, nonatomic) CDUnknownBlockType showPasswordHandler; // @synthesize showPasswordHandler=_showPasswordHandler;
 @property(copy, nonatomic) CDUnknownBlockType authCompletionHandler; // @synthesize authCompletionHandler=_authCompletionHandler;
+@property(readonly, nonatomic) int passwordTypeActual; // @synthesize passwordTypeActual=_passwordTypeActual;
 @property(nonatomic) int passwordType; // @synthesize passwordType=_passwordType;
 @property(copy, nonatomic) NSString *password; // @synthesize password=_password;
 @property(nonatomic) unsigned int pairVerifyFlags; // @synthesize pairVerifyFlags=_pairVerifyFlags;
@@ -77,6 +79,7 @@
 - (void)_reregisterProfileIDs;
 - (void)_registerProfileID:(id)arg1 reregister:(BOOL)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)registerProfileID:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)launchAppWithBundleID:(id)arg1 destinationID:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)companionLinkReceivedRequestID:(id)arg1 request:(id)arg2 options:(id)arg3 responseHandler:(CDUnknownBlockType)arg4;
 - (void)sendRequestID:(id)arg1 request:(id)arg2 destinationID:(id)arg3 options:(id)arg4 responseHandler:(CDUnknownBlockType)arg5;
 - (void)deregisterRequestID:(id)arg1;
@@ -98,7 +101,7 @@
 @property(readonly) RPCompanionLinkDevice *activePersonalCompanion;
 @property(readonly, copy) NSArray *activeDevices;
 - (void)companionLinkAuthCompleted:(id)arg1;
-- (void)companionLinkPromptForPasswordWithFlags:(unsigned int)arg1 throttleSeconds:(int)arg2;
+- (void)companionLinkPromptForPasswordType:(int)arg1 flags:(unsigned int)arg2 throttleSeconds:(int)arg3;
 - (void)tryPassword:(id)arg1;
 - (void)_reregisterAssertions;
 - (void)_invalidateAssertion:(id)arg1;

@@ -50,17 +50,16 @@ struct AVAudioEngineGraph;
 struct AVAudioEngineImpl {
     id _field1;
     struct AVAudioEngineGraph *_field2;
-    _Bool _field3;
-    _Bool _field4;
+    id _field3;
+    id _field4;
     id _field5;
     id _field6;
-    id _field7;
-    id _field8;
-    struct AVAudioIOUnit *_field9;
-    id _field10;
-    int _field11;
-    _Bool _field12;
-    struct unique_ptr<AVAEBlock<AVAudioEngineManualRenderingStatus (^)(unsigned int, AudioBufferList *, int *)>, std::__1::default_delete<AVAEBlock<AVAudioEngineManualRenderingStatus (^)(unsigned int, AudioBufferList *, int *)>>> _field13;
+    struct AVAudioIOUnit *_field7;
+    _Bool _field8;
+    id _field9;
+    int _field10;
+    _Bool _field11;
+    struct unique_ptr<AVAEBlock<AVAudioEngineManualRenderingStatus (^)(unsigned int, AudioBufferList *, int *)>, std::__1::default_delete<AVAEBlock<AVAudioEngineManualRenderingStatus (^)(unsigned int, AudioBufferList *, int *)>>> _field12;
 };
 
 struct AVAudioIOUnit {
@@ -596,6 +595,7 @@ struct RouteDescriptionImpl {
     id _field1;
     id _field2;
     id _field3;
+    unsigned long long _field4;
 };
 
 struct SMPTETime {

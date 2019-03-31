@@ -28,6 +28,7 @@
 - (void)_didRedirectToURL:(id)arg1 codeVerifier:(id)arg2;
 - (id)_redirectPathForURI:(id)arg1;
 - (void)dealloc;
+- (void)cancelAuthorization;
 - (id)_initWithAccount:(id)arg1 accountStore:(id)arg2 username:(id)arg3 youTube:(BOOL)arg4 presentationBlock:(CDUnknownBlockType)arg5 completion:(CDUnknownBlockType)arg6;
 - (id)initWithAccount:(id)arg1 accountStore:(id)arg2 presentationBlock:(CDUnknownBlockType)arg3;
 - (id)initWithAccountDescription:(id)arg1 presentationBlock:(CDUnknownBlockType)arg2;

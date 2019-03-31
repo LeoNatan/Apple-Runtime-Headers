@@ -7,7 +7,7 @@
 @class NSError, NSString;
 
 @protocol FCPaymentTransactionManagerDelegate
-- (void)transactionFailedWithProductID:(NSString *)arg1 transactionState:(long long)arg2 transacitonError:(NSError *)arg3;
+- (void)transactionFailedWithProductID:(NSString *)arg1 transactionState:(long long)arg2 transactionError:(NSError *)arg3;
 - (void)transactionPurchasedWithProductID:(NSString *)arg1;
 @end
 

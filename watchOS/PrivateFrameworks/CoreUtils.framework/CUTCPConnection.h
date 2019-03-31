@@ -38,6 +38,9 @@
     NSObject<OS_dispatch_queue> *_dispatchQueue;
     CDUnknownBlockType _errorHandler;
     unsigned int _flags;
+    CDUnknownBlockType _flowControlChangedHandler;
+    int _flowControlState;
+    NSString *_interfaceName;
     CDUnknownBlockType _invalidationHandler;
     int _keepAliveSeconds;
     NSString *_label;
@@ -60,6 +63,9 @@
 @property(copy, nonatomic) NSString *label; // @synthesize label=_label;
 @property(nonatomic) int keepAliveSeconds; // @synthesize keepAliveSeconds=_keepAliveSeconds;
 @property(copy, nonatomic) CDUnknownBlockType invalidationHandler; // @synthesize invalidationHandler=_invalidationHandler;
+@property(copy, nonatomic) NSString *interfaceName; // @synthesize interfaceName=_interfaceName;
+@property(readonly, nonatomic) int flowControlState; // @synthesize flowControlState=_flowControlState;
+@property(copy, nonatomic) CDUnknownBlockType flowControlChangedHandler; // @synthesize flowControlChangedHandler=_flowControlChangedHandler;
 @property(nonatomic) unsigned int flags; // @synthesize flags=_flags;
 @property(copy, nonatomic) CDUnknownBlockType errorHandler; // @synthesize errorHandler=_errorHandler;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
@@ -74,7 +80,7 @@
 - (void)_completeWriteRequest:(id)arg1 error:(id)arg2;
 - (void)_abortWritesWithError:(id)arg1;
 - (_Bool)_prepareWriteRequest:(id)arg1 error:(id *)arg2;
-- (void)_processWrites;
+- (void)_processWrites:(_Bool)arg1;
 - (void)writeEndOfDataWithCompletion:(CDUnknownBlockType)arg1;
 - (void)writeWithRequest:(id)arg1;
 - (void)_completeReadRequest:(id)arg1 error:(id)arg2;

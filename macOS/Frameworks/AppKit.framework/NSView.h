@@ -744,13 +744,6 @@
 - (id)_surfaceBackedOpenGLContext;
 - (void)_setLayerBackedOpenGLContext:(id)arg1;
 - (id)_layerBackedOpenGLContext;
-- (struct CGRect)convertRectFromOpenGLSurface:(struct CGRect)arg1;
-- (struct CGRect)convertRectToOpenGLSurface:(struct CGRect)arg1;
-- (struct CGSize)convertSizeFromOpenGLSurface:(struct CGSize)arg1;
-- (struct CGSize)convertSizeToOpenGLSurface:(struct CGSize)arg1;
-- (struct CGPoint)convertPointFromOpenGLSurface:(struct CGPoint)arg1;
-- (struct CGPoint)convertPointToOpenGLSurface:(struct CGPoint)arg1;
-- (struct CGSize)openGLSurfaceSize;
 @property BOOL wantsExtendedDynamicRangeOpenGLSurface;
 @property(setter=_setProxyLayer:) CAProxyLayer *_proxyLayer;
 @property(setter=_setWindowBackdrop:) NSCGSWindowBackdrop *_windowBackdrop;

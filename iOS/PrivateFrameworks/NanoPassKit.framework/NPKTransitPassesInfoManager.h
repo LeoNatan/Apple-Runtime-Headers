@@ -24,7 +24,7 @@
 - (void).cxx_destruct;
 - (void)_updatePassTransitPassesInfoManagerForPassUiniqueID:(id)arg1 updateBlock:(CDUnknownBlockType)arg2;
 - (void)_fetchMostRecentTransitPropertiesForPass:(id)arg1;
-- (void)_fetchMostRecentBalancesForPass:(id)arg1;
+- (void)_fetchMostRecentInfoForPass:(id)arg1;
 - (id)_transitBalanceModelWithPass:(id)arg1 transitPassBalanceModelsMap:(id)arg2;
 - (void)paymentPassWithUniqueIdentifier:(id)arg1 didUpdateWithTransitPassProperties:(id)arg2;
 - (void)paymentPassWithUniqueIdentifier:(id)arg1 didReceiveBalanceUpdate:(id)arg2;

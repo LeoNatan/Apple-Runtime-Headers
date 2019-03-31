@@ -13,9 +13,12 @@
     GEOPDBusinessHours *_hours;
     NSArray *_placeDailyHours;
     NSArray *_placeDailyNormalizedHours;
+    BOOL _isBrandTypeHours;
 }
 
-+ (id)prioritizeBusinessHours:(id)arg1;
++ (void)divideBusinessHoursBasedOnTodaysDate:(id)arg1 compareDate:(id)arg2 completion:(CDUnknownBlockType)arg3;
++ (id)prioritizeBusinessHours:(id)arg1 compareDate:(id)arg2;
+@property(readonly, nonatomic) BOOL isBrandTypeHours; // @synthesize isBrandTypeHours=_isBrandTypeHours;
 @property(readonly, nonatomic) NSArray *placeDailyNormalizedHours; // @synthesize placeDailyNormalizedHours=_placeDailyNormalizedHours;
 @property(readonly, nonatomic) NSArray *placeDailyHours; // @synthesize placeDailyHours=_placeDailyHours;
 - (void).cxx_destruct;

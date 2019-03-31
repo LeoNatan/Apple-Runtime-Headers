@@ -20,6 +20,7 @@
     PKPassView *_passView;
     UIBarButtonItem *_deleteBarButton;
     UIBarButtonItem *_flexibleSpace;
+    UIBarButtonItem *_infoButton;
     long long _performanceTest;
     NSString *_performanceTestName;
 }
@@ -27,13 +28,19 @@
 - (void).cxx_destruct;
 - (id)pass;
 - (id)group;
+- (void)_didPresentDetailViewController;
 - (void)disableDeleteButton;
 - (void)enableDeleteButton;
+- (id)_barcodePassDetailsViewControllerForBarcodePass:(id)arg1;
+- (id)_paymentPassDetailsViewControllerForPaymentPass:(id)arg1;
+- (void)_doneButtonPressed;
+- (void)_moreButtonPressed;
 - (void)_deletePassConfirmed;
 - (void)_deletePassPressed;
 - (_Bool)handleDeletePassRequestWithPass:(id)arg1 forViewController:(id)arg2;
 - (void)passWasUpdated:(id)arg1;
 - (void)passViewSetup;
+- (void)viewWillLayoutSubviews;
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLoad;

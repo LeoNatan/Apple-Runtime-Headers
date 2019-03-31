@@ -193,6 +193,7 @@
 - (void)triggerQuickLookDismissal;
 - (void)showShareSheetWithPopoverTracker:(id)arg1 dismissCompletion:(CDUnknownBlockType)arg2;
 - (void)showShareSheet;
+- (void)_promptUserAndOpenURLIfNeeded:(id)arg1;
 - (void)openURLIfAllowed:(id)arg1;
 - (void)updateOverlayButtons:(_Bool)arg1;
 - (void)_updateOverlayButtonsForTraitCollection:(id)arg1 animated:(_Bool)arg2;

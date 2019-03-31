@@ -14,7 +14,6 @@ __attribute__((visibility("hidden")))
     NSString *_groupName;
     CALayer *_backdropLayer;
     CALayer *_tintLayer;
-    CALayer *_rtLayer;
     unsigned char _materialStyle;
     unsigned long long _material;
 }
@@ -24,7 +23,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) unsigned char materialStyle; // @synthesize materialStyle=_materialStyle;
 @property(nonatomic) unsigned long long material; // @synthesize material=_material;
 - (void).cxx_destruct;
-- (void)_buildReduceTransparencyLayerTree;
 - (void)_buildVibrantLayerTree:(unsigned long long)arg1;
 - (void)setBounds:(struct CGRect)arg1;
 - (id)initWithMaterial:(unsigned long long)arg1 groupName:(id)arg2 style:(unsigned char)arg3;

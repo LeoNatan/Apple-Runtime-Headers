@@ -8,7 +8,7 @@
 
 #import <SignpostSupport/SignpostSupportLoggingSupportArchiveEvent-Protocol.h>
 
-@class NSArray, NSString, NSUUID;
+@class NSArray, NSString, NSUUID, SignpostMetrics;
 
 @interface SignpostEvent : SignpostObject <SignpostSupportLoggingSupportArchiveEvent>
 {
@@ -31,6 +31,7 @@
     NSString *_metadata;
     NSArray *_metadataSegments;
     NSArray *_stackFrames;
+    SignpostMetrics *_metrics;
     unsigned long long __totalFrameCount;
     unsigned long long __machContinuousTimestamp;
 }
@@ -40,6 +41,7 @@
 @property(nonatomic) BOOL isAnimationStart; // @synthesize isAnimationStart=_isAnimationStart;
 @property(nonatomic) unsigned long long _totalFrameCount; // @synthesize _totalFrameCount=__totalFrameCount;
 @property(nonatomic) BOOL _hasTotalFrames; // @synthesize _hasTotalFrames=__hasTotalFrames;
+@property(readonly, nonatomic) SignpostMetrics *metrics; // @synthesize metrics=_metrics;
 @property(retain, nonatomic) NSArray *stackFrames; // @synthesize stackFrames=_stackFrames;
 @property(retain, nonatomic) NSArray *metadataSegments; // @synthesize metadataSegments=_metadataSegments;
 @property(retain, nonatomic) NSString *metadata; // @synthesize metadata=_metadata;
@@ -58,6 +60,12 @@
 @property(nonatomic) int tv_usec; // @synthesize tv_usec=_tv_usec;
 @property(nonatomic) long long tv_sec; // @synthesize tv_sec=_tv_sec;
 - (void).cxx_destruct;
+- (void)_populateMetrics;
+- (id)_dataArgumentWithName:(id)arg1;
+- (id)_numberArgumentWithName:(id)arg1;
+- (id)_stringArgumentWithName:(id)arg1;
+- (id)_argumentObjectWithName:(id)arg1 expectedClass:(Class)arg2;
+- (id)_argumentObjectWithName:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (void)_adjustEndTimeVal:(struct timeval *)arg1;
 - (void)_adjustBeginTimeVal:(struct timeval *)arg1;
@@ -70,6 +78,7 @@
 - (unsigned long long)durationMachContinuousTime;
 - (unsigned long long)endMachContinuousTime;
 - (unsigned long long)startMachContinuousTime;
+@property(readonly, nonatomic) BOOL overridesOwnTime;
 @property(readonly, nonatomic) BOOL overridesTime;
 @property(readonly, nonatomic) unsigned long long overridingEmitNanoseconds;
 @property(readonly, nonatomic) unsigned long long overridingEndNanoseconds;

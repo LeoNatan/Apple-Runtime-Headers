@@ -45,6 +45,7 @@
 + (_Bool)_bulkUpdateAnalysisStatesTo:(int)arg1 predicate:(id)arg2 error:(id *)arg3;
 + (unsigned int)_countOfAssetsAllowedForProcessingInLibrary:(id)arg1 error:(id *)arg2;
 + (id)_countOfAnalysisStatesByWorkerTypeWithPredicate:(id)arg1 inContext:(id)arg2 error:(id *)arg3;
++ (id)_batchOperationQueue;
 - (void)unionWorkerFlags:(int)arg1;
 - (id)mutableKeyPathDictionary;
 @property(nonatomic) double sortToken; // @dynamic sortToken;

@@ -90,8 +90,6 @@
 @property(readonly, nonatomic, getter=_encyclopedicInfo) id <GEOEncyclopedicInfo> encyclopedicInfo;
 @property(readonly, nonatomic, getter=_hasEncyclopedicInfo) _Bool hasEncyclopedicInfo;
 @property(readonly, nonatomic, getter=_openingHoursOptions) unsigned long long openingHoursOptions;
-@property(readonly, nonatomic, getter=_completeOperatingHours) NSArray *completeOperatingHours;
-@property(readonly, nonatomic, getter=_operatingHours) NSArray *operatingHours;
 @property(readonly, nonatomic, getter=_hasCurrentOperatingHours) _Bool hasCurrentOperatingHours;
 @property(readonly, nonatomic, getter=_hasOperatingHours) _Bool hasOperatingHours;
 @property(readonly, nonatomic, getter=_hasGenderNeutralRestroom) _Bool hasGenderNeutralRestroom;

@@ -12,11 +12,13 @@
 
 @interface PKDashboardBalanceItem : NSObject <PKDashboardItem>
 {
+    _Bool _topUpEnabled;
     NSString *_balance;
     NSString *_topUpTitle;
     CDUnknownBlockType _topUpAction;
 }
 
+@property(nonatomic) _Bool topUpEnabled; // @synthesize topUpEnabled=_topUpEnabled;
 @property(copy, nonatomic) CDUnknownBlockType topUpAction; // @synthesize topUpAction=_topUpAction;
 @property(retain, nonatomic) NSString *topUpTitle; // @synthesize topUpTitle=_topUpTitle;
 @property(retain, nonatomic) NSString *balance; // @synthesize balance=_balance;

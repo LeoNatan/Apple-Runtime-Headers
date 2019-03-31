@@ -26,8 +26,12 @@
 - (void)logEventWithType:(int)arg1 machAbsoluteTime:(unsigned long long)arg2 contextProvider:(CDUnknownBlockType)arg3 contextProvidingQueue:(id)arg4;
 - (void)logEventWithType:(int)arg1 machAbsoluteTime:(unsigned long long)arg2 context:(id)arg3 contextNoCopy:(_Bool)arg4;
 - (void)setService:(id)arg1;
+- (void)logInstrumentationOfType:(Class)arg1 machAbsoluteTime:(unsigned long long)arg2 turnIdentifier:(id)arg3;
+- (void)logInstrumentationOfType:(Class)arg1 turnIdentifier:(id)arg2;
 - (void)endEventsGrouping;
 - (void)beginEventsGrouping;
+- (void)logInstrumentation:(id)arg1 machAbsoluteTime:(unsigned long long)arg2 turnContext:(id)arg3;
+- (void)logInstrumentation:(id)arg1 machAbsoluteTime:(unsigned long long)arg2 turnIdentifier:(struct NSUUID *)arg3;
 - (void)logInstrumentation:(id)arg1 turnContext:(id)arg2;
 - (void)logEventWithType:(int)arg1 contextProvider:(CDUnknownBlockType)arg2 contextProvidingQueue:(id)arg3;
 - (void)logEventWithType:(int)arg1 contextProvider:(CDUnknownBlockType)arg2;

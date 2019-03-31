@@ -10,6 +10,6 @@
 
 @protocol PLPhotoLibraryPathManagerModel <NSObject>
 - (NSString *)pathToAssetAlbumOrderStructure;
-- (NSString *)assetAbbreviatedMetadataDirectoryForDirectory:(NSString *)arg1;
+- (NSString *)assetAbbreviatedMetadataDirectoryForDirectory:(NSString *)arg1 type:(unsigned char)arg2;
 @end
 

@@ -16,18 +16,21 @@
     struct _CGLContextObject *_CGLContext;
 }
 
-+ (void)clearCurrentContext;
++ (void)setCurrentContext:(id)arg1;
 + (id)currentContext;
++ (void)clearCurrentContext;
 + (void)initialize;
 + (id)openGLContextWithCGLContextObj:(struct _CGLContextObject *)arg1;
 - (void).cxx_destruct;
 @property(readonly) struct _CGLContextObject *CGLContextObj;
+- (BOOL)texImageIOSurface:(id)arg1 target:(unsigned int)arg2 internalFormat:(unsigned int)arg3 width:(int)arg4 height:(int)arg5 format:(unsigned int)arg6 type:(unsigned int)arg7 plane:(unsigned int)arg8;
 - (void)createTexture:(unsigned int)arg1 fromView:(id)arg2 internalFormat:(unsigned int)arg3;
 @property int currentVirtualScreen;
 - (void)getValues:(int *)arg1 forParameter:(long long)arg2;
 - (void)setValues:(const int *)arg1 forParameter:(long long)arg2;
 - (void)setFullScreen;
 - (void)setOffScreen:(void *)arg1 width:(int)arg2 height:(int)arg3 rowbytes:(int)arg4;
+- (void)_viewDidChangeGeometryInWindow:(id)arg1;
 - (void)_surfaceDidComeBack:(id)arg1;
 - (void)_surfaceWillGoAway:(id)arg1;
 @property __weak NSView *view;

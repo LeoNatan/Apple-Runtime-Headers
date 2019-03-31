@@ -42,6 +42,7 @@
 - (void)ppt_performPlacesZoomTest:(id)arg1 iterations:(long long)arg2 delay:(double)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)ppt_performPlacesScrollTest:(id)arg1 iterations:(long long)arg2 screenDelta:(long long)arg3 delay:(double)arg4 completion:(CDUnknownBlockType)arg5;
 - (void)didEnterForeground:(id)arg1;
+- (long long)oneUpPresentationOrigin:(id)arg1;
 - (id)oneUpPresentationMediaProvider:(id)arg1;
 - (id)oneUpPresentationDataSourceManager:(id)arg1;
 - (void)didSelectGeotaggableItems:(id)arg1 fromMapView:(id)arg2;

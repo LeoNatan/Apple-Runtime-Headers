@@ -38,6 +38,7 @@
 
 + (void)_getActiveRouteWithTimeout:(double)arg1 discoveredRoutes:(id)arg2 completion:(CDUnknownBlockType)arg3;
 + (id)_currentDeviceRoutingIconImageName;
++ (BOOL)bundleIdRepresentsLongFormVideoContent:(id)arg1;
 + (id)systemRouteWithContextUID:(id)arg1;
 + (id)systemRoute;
 + (void)setActiveRoute:(id)arg1 completion:(CDUnknownBlockType)arg2;

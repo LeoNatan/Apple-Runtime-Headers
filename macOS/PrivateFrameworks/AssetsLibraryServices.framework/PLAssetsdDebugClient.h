@@ -13,6 +13,9 @@
 - (void)coalesceJournalsForPayloadClassIDs:(id)arg1 withChangeJournalOverThreshold:(float)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)snapshotJournalsForPayloadClassIDs:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)privateDownloadCloudPhotoLibraryAsset:(id)arg1 resourceType:(unsigned long long)arg2 highPriority:(BOOL)arg3 completionHandler:(CDUnknownBlockType)arg4;
+- (BOOL)cleanupEmptyHighlightsWithError:(id *)arg1;
+- (BOOL)updateHighlightTitlesWithError:(id *)arg1;
+- (BOOL)processUnprocessedMomentLocationsWithError:(id *)arg1;
 - (BOOL)processRecentHighlightsWithError:(id *)arg1;
 - (void)prefetchResourcesForMemories:(id)arg1;
 - (void)pruneAssets:(id)arg1 resourceTypes:(id)arg2;

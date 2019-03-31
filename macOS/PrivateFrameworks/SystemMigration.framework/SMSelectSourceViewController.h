@@ -9,7 +9,7 @@
 #import <SystemMigration/SMSystemScannerClient-Protocol.h>
 #import <SystemMigration/SMSystemScannerClientChangesProtocol-Protocol.h>
 
-@class IASPickerViewController, NSArrayController, NSImageView, NSLayoutConstraint, NSObject, NSProgressIndicator, NSScrollView, NSString, NSTableView, NSTextField, NSView, SMAuthenticatedMountWindowController, SMSystemScanner_Client, SMSystem_Client;
+@class IASPickerViewController, NSArrayController, NSImageView, NSLayoutConstraint, NSObject, NSProgressIndicator, NSScrollView, NSString, NSTableView, NSTextField, NSView, SMSystemScanner_Client, SMSystem_Client;
 @protocol SMSelectSourceDelegate;
 
 @interface SMSelectSourceViewController : SMViewController <SMSystemScannerClientChangesProtocol, SMSystemScannerClient>
@@ -49,7 +49,6 @@
     CDUnknownBlockType _updateSystemHandler;
     SMSystem_Client *_highlightedSystem;
     SMSystem_Client *_foundHandoffResponse;
-    SMAuthenticatedMountWindowController *_authMountWindowController;
     NSImageView *_highlightingView;
     NSLayoutConstraint *_highlightingViewYPosConstraint;
     NSLayoutConstraint *_highlightingViewXPosConstraint;
@@ -85,7 +84,6 @@
 @property(retain) NSLayoutConstraint *highlightingViewXPosConstraint; // @synthesize highlightingViewXPosConstraint=_highlightingViewXPosConstraint;
 @property(retain) NSLayoutConstraint *highlightingViewYPosConstraint; // @synthesize highlightingViewYPosConstraint=_highlightingViewYPosConstraint;
 @property(retain) NSImageView *highlightingView; // @synthesize highlightingView=_highlightingView;
-@property(retain) SMAuthenticatedMountWindowController *authMountWindowController; // @synthesize authMountWindowController=_authMountWindowController;
 @property __weak SMSystem_Client *foundHandoffResponse; // @synthesize foundHandoffResponse=_foundHandoffResponse;
 @property __weak SMSystem_Client *highlightedSystem; // @synthesize highlightedSystem=_highlightedSystem;
 @property(copy) CDUnknownBlockType updateSystemHandler; // @synthesize updateSystemHandler=_updateSystemHandler;

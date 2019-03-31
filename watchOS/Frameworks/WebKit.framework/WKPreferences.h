@@ -21,7 +21,6 @@
 + (id)_experimentalFeatures;
 + (id)_internalDebugFeatures;
 @property(readonly) struct Object *_apiObject;
-@property(nonatomic, getter=isSafeBrowsingEnabled) _Bool safeBrowsingEnabled;
 @property(nonatomic, setter=_setStorageAccessPromptsEnabled:) _Bool _storageAccessPromptsEnabled;
 @property(nonatomic) _Bool javaScriptCanOpenWindowsAutomatically;
 @property(nonatomic) _Bool javaScriptEnabled;
@@ -34,6 +33,7 @@
 @property(nonatomic, setter=_setDeviceOrientationEventEnabled:) _Bool _deviceOrientationEventEnabled;
 @property(nonatomic, setter=_setWebAnimationsCSSIntegrationEnabled:) _Bool _webAnimationsCSSIntegrationEnabled;
 @property(nonatomic, setter=_setVideoQualityIncludesDisplayCompositingEnabled:) _Bool _videoQualityIncludesDisplayCompositingEnabled;
+@property(nonatomic, getter=_isSafeBrowsingEnabled, setter=_setSafeBrowsingEnabled:) _Bool _safeBrowsingEnabled;
 @property(nonatomic, setter=_setShouldEnableTextAutosizingBoost:) _Bool _shouldEnableTextAutosizingBoost;
 @property(nonatomic, setter=_setDOMPasteAllowed:) _Bool _domPasteAllowed;
 @property(nonatomic, setter=_setJavaScriptCanAccessClipboard:) _Bool _javaScriptCanAccessClipboard;

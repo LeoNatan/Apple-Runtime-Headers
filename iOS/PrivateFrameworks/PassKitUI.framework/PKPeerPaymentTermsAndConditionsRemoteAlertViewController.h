@@ -6,11 +6,11 @@
 
 #import <SpringBoardUIServices/SBUIRemoteAlertServiceViewController.h>
 
-@class RemoteUIController;
+@class PKPeerPaymentTermsController;
 
 @interface PKPeerPaymentTermsAndConditionsRemoteAlertViewController : SBUIRemoteAlertServiceViewController
 {
-    RemoteUIController *_termsController;
+    PKPeerPaymentTermsController *_termsController;
 }
 
 + (_Bool)_isSecureForRemoteViewService;

@@ -7,10 +7,12 @@
 #import <objc/NSObject.h>
 
 @class SFSearchResult, SearchUITableViewCell, UIView;
+@protocol SearchUIFeedbackDelegate;
 
 @interface SearchUIAccessoryViewController : NSObject
 {
     UIView *_view;
+    id <SearchUIFeedbackDelegate> _feedbackDelegate;
     SearchUITableViewCell *_cell;
     SFSearchResult *_resultForFeedback;
 }
@@ -19,6 +21,7 @@
 + (Class)accessoryViewClassForResult:(id)arg1;
 @property(retain) SFSearchResult *resultForFeedback; // @synthesize resultForFeedback=_resultForFeedback;
 @property __weak SearchUITableViewCell *cell; // @synthesize cell=_cell;
+@property __weak id <SearchUIFeedbackDelegate> feedbackDelegate; // @synthesize feedbackDelegate=_feedbackDelegate;
 @property(retain) UIView *view; // @synthesize view=_view;
 - (void).cxx_destruct;
 - (_Bool)shouldTopAlignForAccessibilityContentSizes;

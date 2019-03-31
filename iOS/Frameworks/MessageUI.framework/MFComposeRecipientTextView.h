@@ -152,10 +152,13 @@
 - (void)addAddress:(id)arg1;
 - (void)removeRecipient:(id)arg1;
 - (void)_didRemoveRecipient:(id)arg1;
+- (void)_recipientsWereAdded:(id)arg1;
 - (id)undoManager;
+- (void)addRecipient:(id)arg1 index:(unsigned long long)arg2 animate:(_Bool)arg3 notify:(_Bool)arg4;
 - (void)addRecipient:(id)arg1 index:(unsigned long long)arg2 animate:(_Bool)arg3;
 - (void)addRecord:(void *)arg1 property:(int)arg2 identifier:(int)arg3;
 - (void)_addRecord:(void *)arg1 identifier:(int)arg2;
+- (void)addRecipient:(id)arg1 notify:(_Bool)arg2;
 - (void)addRecipient:(id)arg1;
 @property(copy, nonatomic) NSArray *recipients;
 - (void)_removeAllRecipients;

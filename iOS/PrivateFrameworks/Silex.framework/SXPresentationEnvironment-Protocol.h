@@ -6,12 +6,11 @@
 
 #import <Silex/NSObject-Protocol.h>
 
-@class NSString, UITraitCollection;
+@class UITraitCollection;
 
 @protocol SXPresentationEnvironment <NSObject>
-@property(readonly, nonatomic) NSString *contentSizeCategory;
+@property(readonly, nonatomic) unsigned long long viewingLocation;
 @property(readonly, nonatomic) UITraitCollection *traitCollection;
-@property(readonly, nonatomic) double headerHeight;
 @property(readonly, nonatomic) struct UIEdgeInsets safeAreaInsets;
 @property(readonly, nonatomic) struct CGSize viewportSize;
 @end

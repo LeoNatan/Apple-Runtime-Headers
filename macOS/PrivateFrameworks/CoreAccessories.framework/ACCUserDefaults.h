@@ -10,6 +10,7 @@
 {
 }
 
++ (id)sharedDefaultsIapd;
 + (id)sharedDefaults;
 - (id)init;
 

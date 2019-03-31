@@ -20,6 +20,7 @@
 - (void).cxx_destruct;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+@property(readonly, copy, nonatomic) NSString *bundleIAP;
 @property(readonly, nonatomic) unsigned long long bundleSubscriptionState;
 @property(readonly, copy, nonatomic) NSNumber *onboardingVersion;
 @property(readonly, copy, nonatomic) NSArray *recentlySeenHistoryItems;

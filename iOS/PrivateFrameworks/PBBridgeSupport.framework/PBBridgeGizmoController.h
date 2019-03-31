@@ -81,7 +81,7 @@
 - (void)setLocationEnabled:(id)arg1;
 - (void)setDiagnosticsEnabled:(id)arg1;
 - (void)handleActivationData:(id)arg1;
-- (_Bool)reportRemoteActivationFailureDetailsLocalizedDescription:(id)arg1 domain:(long long)arg2 errorCode:(long long)arg3;
+- (_Bool)reportRemoteActivationFailureError:(id)arg1;
 - (_Bool)getActivationDataForRequest:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (_Bool)getSessionDataForRequest:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (_Bool)getActivationDataAndHeadersForRequest:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;

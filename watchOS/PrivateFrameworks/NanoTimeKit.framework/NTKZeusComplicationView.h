@@ -9,12 +9,12 @@
 #import <NanoTimeKit/NTKComplicationDisplay-Protocol.h>
 #import <NanoTimeKit/NTKZeusComplicationDisplay-Protocol.h>
 
-@class CLKDevice, NSString, NTKZeusColorPalette;
+@class CLKDevice, NSString, NTKZeusColorPalette, PUICClientSideAnimation;
 @protocol NTKComplicationDisplayObserver;
 
 @interface NTKZeusComplicationView : UIView <NTKComplicationDisplay, NTKZeusComplicationDisplay>
 {
-    UIView *_highlightView;
+    PUICClientSideAnimation *_highlightAnimation;
     _Bool canUseCurvedText;
     _Bool _highlighted;
     id <NTKComplicationDisplayObserver> displayObserver;
@@ -34,7 +34,6 @@
 - (void)applyTransitionFraction:(float)arg1 fromPalette:(id)arg2 toPalette:(id)arg3;
 - (void)applyPalette:(id)arg1;
 - (struct CGRect)contentFrame;
-- (void)layoutSubviews;
 - (id)init;
 
 // Remaining properties

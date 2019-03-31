@@ -246,7 +246,7 @@
 - (void)composeRecipientView:(id)arg1 didFinishEnteringAddress:(id)arg2;
 - (void)composeRecipientView:(id)arg1 didReplaceRecipients:(id)arg2 withRecipients:(id)arg3;
 - (void)composeRecipientView:(id)arg1 didRemoveRecipient:(id)arg2;
-- (void)composeRecipientView:(id)arg1 didAddRecipient:(id)arg2;
+- (void)composeRecipientView:(id)arg1 didAddRecipients:(id)arg2;
 - (void)_updateBodyFieldAutoCorrectionContext;
 - (void)_setBodyFieldAutocorrectionContext:(id)arg1;
 - (void)composeSubjectViewWillRemoveContent:(id)arg1;

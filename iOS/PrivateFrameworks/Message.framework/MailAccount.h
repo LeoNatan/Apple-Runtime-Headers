@@ -132,10 +132,10 @@
 - (_Bool)restrictedFromSendingExternally;
 - (_Bool)restrictedFromTransferingMessagesToOtherAccounts;
 - (id)copyDataForRemoteEncryptionCertificatesForAddress:(id)arg1 error:(id *)arg2;
+- (id)copyDataForRemoteEncryptionCertificatesForAddresses:(id)arg1 errors:(id *)arg2;
 - (int)secureCompositionEncryptionPolicyForAddress:(id)arg1;
 - (int)secureCompositionSigningPolicyForAddress:(id)arg1;
-- (_Bool)perMessageEncryptionEnabled;
-- (_Bool)secureMIMEEnabled;
+- (_Bool)perMessageEncryptionEnabledForAddress:(id)arg1;
 - (void)setEncryptionIdentityPersistentReference:(id)arg1 forAddress:(id)arg2;
 - (id)encryptionIdentityPersistentReferenceForAddress:(id)arg1;
 - (void)setSigningIdentityPersistentReference:(id)arg1 forAddress:(id)arg2;

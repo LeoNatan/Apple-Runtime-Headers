@@ -9,6 +9,7 @@
 #import <NewsCore/FCFeedTransformationItem-Protocol.h>
 
 @class CKRecord, COMAPPLEFELDSPARPROTOCOLLIVERPOOLArticleScores, COMAPPLEFELDSPARPROTOCOLLIVERPOOLCohortList, NSArray, NSDate, NSString;
+@protocol FCChannelProviding;
 
 @interface FCSparseFeaturedArticle : NSObject <FCFeedTransformationItem>
 {
@@ -57,6 +58,7 @@
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
+@property(readonly, copy, nonatomic) id <FCChannelProviding> sourceChannel;
 @property(readonly) Class superclass;
 
 @end

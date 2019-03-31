@@ -7,10 +7,12 @@
 #import <UIKit/UIViewController.h>
 
 @class IAMWebView, UIButton;
+@protocol IAMViewControllerMetricsDelegate;
 
 @interface IAMModalWebMessageViewController : UIViewController
 {
     _Bool _shouldDisplayCloseButton;
+    id <IAMViewControllerMetricsDelegate> _metricsDelegate;
     UIButton *_closeButton;
     IAMWebView *_webView;
 }
@@ -18,7 +20,9 @@
 @property(retain, nonatomic) IAMWebView *webView; // @synthesize webView=_webView;
 @property(retain, nonatomic) UIButton *closeButton; // @synthesize closeButton=_closeButton;
 @property(nonatomic) _Bool shouldDisplayCloseButton; // @synthesize shouldDisplayCloseButton=_shouldDisplayCloseButton;
+@property(nonatomic) __weak id <IAMViewControllerMetricsDelegate> metricsDelegate; // @synthesize metricsDelegate=_metricsDelegate;
 - (void).cxx_destruct;
+- (void)_handleCloseButtonTap:(id)arg1;
 - (void)viewDidLoad;
 - (id)initWithWebView:(id)arg1;
 

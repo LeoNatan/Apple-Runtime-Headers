@@ -13,7 +13,6 @@
 
 @interface RPStreamSession : NSObject <NSSecureCoding>
 {
-    NSString *_destinationString;
     NSObject<OS_dispatch_queue> *_dispatchQueue;
     BOOL _invalidateCalled;
     BOOL _invalidateDone;
@@ -21,11 +20,10 @@
     unsigned char _ourCurveSK[32];
     int _peerPort;
     BOOL _prepareOnly;
-    NSData *_pskData;
     RPConnection *_rpCnx;
-    BOOL _serverMode;
     CUTCPServer *_tcpServer;
     CUWiFiManager *_wifiManager;
+    BOOL _serverMode;
     int _flowControlState;
     unsigned int _streamFlags;
     int _streamSocket;
@@ -38,19 +36,24 @@
     CDUnknownBlockType _receivedEventHandler;
     NSString *_streamID;
     NSData *_streamKey;
+    NSString *_destinationString;
+    NSData *_pskData;
     CDUnknownBlockType _streamAcceptHandler;
 }
 
 + (BOOL)supportsSecureCoding;
 @property(copy, nonatomic) CDUnknownBlockType streamAcceptHandler; // @synthesize streamAcceptHandler=_streamAcceptHandler;
+@property(nonatomic) BOOL serverMode; // @synthesize serverMode=_serverMode;
+@property(copy, nonatomic) NSData *pskData; // @synthesize pskData=_pskData;
+@property(copy, nonatomic) NSString *destinationString; // @synthesize destinationString=_destinationString;
 @property(nonatomic) unsigned int trafficFlags; // @synthesize trafficFlags=_trafficFlags;
 @property(nonatomic) int streamType; // @synthesize streamType=_streamType;
-@property(readonly, nonatomic) int streamSocket; // @synthesize streamSocket=_streamSocket;
-@property(readonly, copy, nonatomic) NSData *streamKey; // @synthesize streamKey=_streamKey;
+@property(nonatomic) int streamSocket; // @synthesize streamSocket=_streamSocket;
+@property(copy, nonatomic) NSData *streamKey; // @synthesize streamKey=_streamKey;
 @property(copy, nonatomic) NSString *streamID; // @synthesize streamID=_streamID;
 @property(nonatomic) unsigned int streamFlags; // @synthesize streamFlags=_streamFlags;
 @property(copy, nonatomic) CDUnknownBlockType receivedEventHandler; // @synthesize receivedEventHandler=_receivedEventHandler;
-@property(readonly, copy, nonatomic) NSUUID *nwClientID; // @synthesize nwClientID=_nwClientID;
+@property(copy, nonatomic) NSUUID *nwClientID; // @synthesize nwClientID=_nwClientID;
 @property(retain, nonatomic) id <RPMessageable> messenger; // @synthesize messenger=_messenger;
 @property(copy, nonatomic) CDUnknownBlockType invalidationHandler; // @synthesize invalidationHandler=_invalidationHandler;
 @property(readonly, nonatomic) int flowControlState; // @synthesize flowControlState=_flowControlState;
@@ -58,6 +61,7 @@
 - (void).cxx_destruct;
 - (void)_updateTrafficRegistration;
 - (void)sendEventID:(id)arg1 event:(id)arg2 options:(id)arg3 completion:(CDUnknownBlockType)arg4;
+- (id)_lowLatencySelfAddressString;
 - (void)_serverRPConnectionHandleConnectionStarted:(id)arg1;
 - (void)_serverRPConnectionHandleConnectionAccepted:(int)arg1;
 - (void)_serverRPConnectionStartRequest:(id)arg1 options:(id)arg2 responseHandler:(CDUnknownBlockType)arg3;

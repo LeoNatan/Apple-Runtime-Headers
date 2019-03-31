@@ -6,7 +6,7 @@
 
 #import <Silex/SXAnalyticsEvent.h>
 
-@class ADBannerView, NSError, NSString;
+@class NSError, NSString, SXADBannerView;
 
 @interface SXAdOpportunityEvent : SXAnalyticsEvent
 {
@@ -17,12 +17,12 @@
     double _positionInArticle;
     NSString *_componentIdentifier;
     NSError *_error;
-    ADBannerView *_bannerView;
+    SXADBannerView *_bannerView;
 }
 
 @property(nonatomic) _Bool shown; // @synthesize shown=_shown;
 @property(nonatomic) _Bool expanded; // @synthesize expanded=_expanded;
-@property(retain, nonatomic) ADBannerView *bannerView; // @synthesize bannerView=_bannerView;
+@property(retain, nonatomic) SXADBannerView *bannerView; // @synthesize bannerView=_bannerView;
 @property(retain, nonatomic) NSError *error; // @synthesize error=_error;
 @property(nonatomic) int opportunityError; // @synthesize opportunityError=_opportunityError;
 @property(retain, nonatomic) NSString *componentIdentifier; // @synthesize componentIdentifier=_componentIdentifier;

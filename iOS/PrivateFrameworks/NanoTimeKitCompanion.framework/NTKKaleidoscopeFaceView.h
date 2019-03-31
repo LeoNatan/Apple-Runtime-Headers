@@ -10,7 +10,7 @@
 #import <NanoTimeKitCompanion/CLKUIResourceProviderDelegate-Protocol.h>
 #import <NanoTimeKitCompanion/NTKColorCircularUtilitarianFaceViewComplicationFactoryDelegate-Protocol.h>
 
-@class CLKUIQuadView, CLKUIResourceProviderKey, NSMapTable, NSString, NTKColorCircularUtilitarianFaceViewComplicationFactory, NTKRoundedCornerOverlayView, UIColor;
+@class CLKUIQuadView, CLKUIResourceProviderKey, NSMapTable, NSMutableSet, NSString, NTKColorCircularUtilitarianFaceViewComplicationFactory, NTKRoundedCornerOverlayView, UIColor;
 
 @interface NTKKaleidoscopeFaceView : NTKAnalogFaceView <NTKColorCircularUtilitarianFaceViewComplicationFactoryDelegate, CLKUIQuadViewDelegate, CLKUIResourceProviderDelegate>
 {
@@ -28,6 +28,7 @@
     float _crownTurnsPerRotation;
     double _dayDuration;
     NSMapTable *_quadPathfinderMapTable;
+    NSMutableSet *_loadedAssets;
     unsigned long long _currentAsset;
     unsigned long long _currentStyle;
 }

@@ -29,6 +29,7 @@
 - (void)end;
 - (void)updateRequestOptions:(AFUIRequestOptions *)arg1;
 - (void)stopRequestWithOptions:(AFUIRequestOptions *)arg1;
+- (void)startRequestWithOptions:(AFUIRequestOptions *)arg1 completion:(void (^)(NSError *))arg2;
 - (void)startRequestWithOptions:(AFUIRequestOptions *)arg1;
 - (void)setApplicationContext;
 - (void)setAlertContext;

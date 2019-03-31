@@ -24,16 +24,22 @@
 }
 
 + (id)paletteForColor:(unsigned int)arg1;
-+ (id)offWhiteColor;
-+ (id)ambreColor;
 + (id)roseExtremeColor;
 + (id)roseAzaleeColor;
-+ (id)capucineColor;
-+ (id)feuColor;
-+ (id)charcoalColor;
-+ (id)bordeauxColor;
++ (id)offWhiteColor;
 + (id)indigoColor;
++ (id)feuColor;
 + (id)craieColor;
++ (id)charcoalColor;
++ (id)capucineColor;
++ (id)bordeauxColor;
++ (id)bleuDarkColor;
++ (id)bleuMediumColor;
++ (id)bleuLightColor;
++ (id)sakuraDarkColor;
++ (id)sakuraMediumColor;
++ (id)sakuraLightColor;
++ (id)ambreColor;
 + (id)zeusSilverColor;
 + (id)zeusOrangeColor;
 @property(readonly, nonatomic) UIColor *splitColor; // @synthesize splitColor=_splitColor;

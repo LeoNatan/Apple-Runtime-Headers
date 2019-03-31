@@ -16,34 +16,42 @@
 {
     _Bool _hasValidSize;
     _Bool _hasValidPosition;
+    _Bool _hidden;
     id <SXComponent> _component;
+    SXComponentSizer *_componentSizer;
     id <SXComponentLayout> _componentLayout;
     SXLayoutBlueprint *_parentLayoutBlueprint;
-    SXComponentSizer *_componentSizer;
     NSDictionary *_infoFromLayouting;
     struct _NSRange _columnRange;
     struct CGSize _suggestedSizeAfterInvalidation;
     struct CGRect _frame;
-    struct CGRect _contentFrame;
-    struct CGRect _absoluteFrame;
     struct UIEdgeInsets _contentInsets;
     struct UIEdgeInsets _layoutMargins;
+    struct CGRect _absoluteFrame;
+    struct CGRect _componentViewFrame;
+    struct CGRect _contentViewFrame;
+    struct CGRect _contentFrame;
+    struct CGRect _backgroundFrame;
 }
 
 + (_Bool)supportsSecureCoding;
 @property(readonly, nonatomic) NSDictionary *infoFromLayouting; // @synthesize infoFromLayouting=_infoFromLayouting;
 @property(nonatomic) struct CGSize suggestedSizeAfterInvalidation; // @synthesize suggestedSizeAfterInvalidation=_suggestedSizeAfterInvalidation;
-@property(retain, nonatomic) SXComponentSizer *componentSizer; // @synthesize componentSizer=_componentSizer;
+@property(nonatomic) struct CGRect backgroundFrame; // @synthesize backgroundFrame=_backgroundFrame;
+@property(nonatomic) struct CGRect contentFrame; // @synthesize contentFrame=_contentFrame;
+@property(nonatomic) struct CGRect contentViewFrame; // @synthesize contentViewFrame=_contentViewFrame;
+@property(nonatomic) struct CGRect componentViewFrame; // @synthesize componentViewFrame=_componentViewFrame;
+@property(nonatomic) struct CGRect absoluteFrame; // @synthesize absoluteFrame=_absoluteFrame;
 @property(nonatomic) struct UIEdgeInsets layoutMargins; // @synthesize layoutMargins=_layoutMargins;
 @property(nonatomic) struct UIEdgeInsets contentInsets; // @synthesize contentInsets=_contentInsets;
-@property(nonatomic) struct CGRect absoluteFrame; // @synthesize absoluteFrame=_absoluteFrame;
-@property(nonatomic) struct CGRect contentFrame; // @synthesize contentFrame=_contentFrame;
 @property(nonatomic) struct CGRect frame; // @synthesize frame=_frame;
+@property(nonatomic, getter=isHidden) _Bool hidden; // @synthesize hidden=_hidden;
 @property(nonatomic) _Bool hasValidPosition; // @synthesize hasValidPosition=_hasValidPosition;
 @property(nonatomic) _Bool hasValidSize; // @synthesize hasValidSize=_hasValidSize;
 @property(nonatomic) struct _NSRange columnRange; // @synthesize columnRange=_columnRange;
 @property(nonatomic) __weak SXLayoutBlueprint *parentLayoutBlueprint; // @synthesize parentLayoutBlueprint=_parentLayoutBlueprint;
 @property(readonly, nonatomic) id <SXComponentLayout> componentLayout; // @synthesize componentLayout=_componentLayout;
+@property(readonly, nonatomic) SXComponentSizer *componentSizer; // @synthesize componentSizer=_componentSizer;
 @property(readonly, nonatomic) id <SXComponent> component; // @synthesize component=_component;
 - (void).cxx_destruct;
 - (id)description;
@@ -56,8 +64,6 @@
 @property(readonly, nonatomic) _Bool hasValidLayout;
 - (void)updatePosition:(struct CGPoint)arg1;
 - (void)updateSize:(struct CGSize)arg1;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
 - (id)initWithComponent:(id)arg1 componentLayout:(id)arg2 componentSizer:(id)arg3;
 
 @end

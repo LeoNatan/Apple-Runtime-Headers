@@ -11,16 +11,16 @@
 @interface QuickTypePFLTrainer : NSObject
 {
     NSString *_seedModelPath;
-    NSString *_updatedModelPath;
     NSData *_modelData;
     void *_model;
-    unsigned long long _maxSequenceLength;
     unsigned long long _batchSize;
     NSNumber *_learningRate;
+    unsigned long long _maxSequenceLength;
+    NSString *_updatedModelPath;
 }
 
 + (float *)dumpMontreal:(void *)arg1 toFlatVectorWithDimension:(unsigned long long *)arg2;
-@property(readonly, nonatomic) NSString *updatedModelPath; // @synthesize updatedModelPath=_updatedModelPath;
+@property(readonly, copy, nonatomic) NSString *updatedModelPath; // @synthesize updatedModelPath=_updatedModelPath;
 @property(readonly, nonatomic) unsigned long long maxSequenceLength; // @synthesize maxSequenceLength=_maxSequenceLength;
 @property(copy, nonatomic) NSNumber *learningRate; // @synthesize learningRate=_learningRate;
 @property(nonatomic) unsigned long long batchSize; // @synthesize batchSize=_batchSize;

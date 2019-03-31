@@ -28,8 +28,8 @@
     struct CGSize _imageSize;
 }
 
-+ (id)animatedImageWithData:(id)arg1 scale:(double)arg2;
-+ (id)animatedImageWithData:(id)arg1;
++ (id)animatedImageWithData:(id)arg1 scale:(double)arg2 size:(struct CGSize)arg3;
++ (id)animatedImageWithData:(id)arg1 size:(struct CGSize)arg2;
 + (id)animatedImageWithURL:(id)arg1 scale:(double)arg2 type:(long long)arg3;
 + (id)animatedImageWithURL:(id)arg1 type:(long long)arg2;
 @property(readonly, nonatomic) SXAnimatedImageViewCache *cache; // @synthesize cache=_cache;
@@ -54,8 +54,8 @@
 - (id)frameAtIndex:(unsigned long long)arg1;
 - (void)generateFrames;
 - (void)capturePropertiesForType:(long long)arg1;
-- (id)initWithImageSource:(struct CGImageSource *)arg1 scale:(double)arg2 type:(long long)arg3;
-- (id)initWithDataProvider:(struct CGDataProvider *)arg1 scale:(double)arg2 type:(long long)arg3;
+- (id)initWithImageSource:(struct CGImageSource *)arg1 scale:(double)arg2 type:(long long)arg3 size:(struct CGSize)arg4;
+- (id)initWithDataProvider:(struct CGDataProvider *)arg1 scale:(double)arg2 type:(long long)arg3 size:(struct CGSize)arg4;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

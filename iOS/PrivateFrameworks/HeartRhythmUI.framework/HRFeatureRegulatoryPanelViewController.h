@@ -7,21 +7,27 @@
 #import <HealthUI/HKTableViewController.h>
 
 #import <HeartRhythmUI/HKHeartRhythmAvailabilityObserver-Protocol.h>
+#import <HeartRhythmUI/HRFeatureRegulatoryReenableFeatureActionDelegate-Protocol.h>
 
-@class HKHeartRhythmAvailability, NSArray, UINavigationController;
+@class HKHeartRhythmAvailability, NSArray, NSString, UINavigationController, UIViewController;
+@protocol HRFeatureRegulatoryReenableFeatureActionDelegate;
 
-@interface HRFeatureRegulatoryPanelViewController : HKTableViewController <HKHeartRhythmAvailabilityObserver>
+@interface HRFeatureRegulatoryPanelViewController : HKTableViewController <HKHeartRhythmAvailabilityObserver, HRFeatureRegulatoryReenableFeatureActionDelegate>
 {
     NSArray *_displayableItems;
     HKHeartRhythmAvailability *_heartRhythmAvailability;
+    UIViewController<HRFeatureRegulatoryReenableFeatureActionDelegate> *_delegate;
     UINavigationController *_onboardingNavigationController;
 }
 
 @property(retain, nonatomic) UINavigationController *onboardingNavigationController; // @synthesize onboardingNavigationController=_onboardingNavigationController;
+@property(nonatomic) __weak UIViewController<HRFeatureRegulatoryReenableFeatureActionDelegate> *delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) HKHeartRhythmAvailability *heartRhythmAvailability; // @synthesize heartRhythmAvailability=_heartRhythmAvailability;
 @property(readonly, nonatomic) NSArray *displayableItems; // @synthesize displayableItems=_displayableItems;
 - (void).cxx_destruct;
+- (void)protectedDataDidBecomeAvailable:(id)arg1;
 - (void)heartRhythmAvailabilityDidUpdate;
+- (void)didSelectReenableFeatureForProductName:(id)arg1;
 - (void)receivedHeartRhythmAvailabilityNotification;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (_Bool)tableView:(id)arg1 shouldHighlightRowAtIndexPath:(id)arg2;
@@ -30,6 +36,13 @@
 - (long long)numberOfSectionsInTableView:(id)arg1;
 - (void)viewDidLoad;
 - (id)init;
+- (id)initWithHealthStore:(id)arg1 delegate:(id)arg2;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

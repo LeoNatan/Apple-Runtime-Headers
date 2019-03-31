@@ -33,6 +33,7 @@ __attribute__((visibility("hidden")))
 - (BOOL)needsToFetchAnyRepresentedObjects;
 - (id)debugDescription;
 @property long long itemCount;
+- (void)setAllRepresentedObjectPointers:(id)arg1;
 - (void)invalidateAllRepresentedObjectPointers;
 - (id)init;
 

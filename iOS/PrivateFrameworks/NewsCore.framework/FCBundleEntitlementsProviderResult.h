@@ -6,21 +6,21 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, NSString;
+@class NSString;
 
 @interface FCBundleEntitlementsProviderResult : NSObject
 {
+    _Bool _inTrialPeriod;
     _Bool _isPurchaser;
     NSString *_bundlePurchaseID;
-    NSArray *_bundleChannelIDs;
 }
 
-@property(readonly, nonatomic) NSArray *bundleChannelIDs; // @synthesize bundleChannelIDs=_bundleChannelIDs;
 @property(readonly, nonatomic) _Bool isPurchaser; // @synthesize isPurchaser=_isPurchaser;
+@property(readonly, nonatomic) _Bool inTrialPeriod; // @synthesize inTrialPeriod=_inTrialPeriod;
 @property(readonly, nonatomic) NSString *bundlePurchaseID; // @synthesize bundlePurchaseID=_bundlePurchaseID;
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (id)initWithBundlePurchaseID:(id)arg1 bundleChannelIDs:(id)arg2 isPurchaser:(_Bool)arg3;
+- (id)initWithBundlePurchaseID:(id)arg1 inTrialPeriod:(_Bool)arg2 isPurchaser:(_Bool)arg3;
 
 @end
 

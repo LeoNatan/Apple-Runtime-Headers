@@ -6,43 +6,42 @@
 
 #import <UIKit/UIView.h>
 
-@class GEOBusinessHours, NSArray, NSDictionary, NSLayoutConstraint, _MKLocalizedHoursBuilder, _MKUILabel;
+@class GEOBusinessHours, NSArray, NSDictionary, NSLayoutAnchor, NSLayoutConstraint, _MKLocalizedHoursBuilder, _MKUILabel;
 
 @interface MKPlaceHoursView : UIView
 {
     NSArray *_labels;
     _MKUILabel *_topLabel;
+    _MKUILabel *_topDayLabel;
     _MKUILabel *_bottomLabel;
+    _MKUILabel *_collapsableOpenStateLabel;
     NSLayoutConstraint *_baselineToTop;
     NSArray *_baselineToBaselineConstraints;
     NSArray *_baselineToBottomConstraints;
     NSArray *_topAndBottomLabelConstraints;
-    _MKUILabel *_collapsedOpenStateLabel;
     NSArray *_placeDailyHours;
     unsigned long long _placeHoursViewOptions;
     _MKLocalizedHoursBuilder *_hoursBuilder;
     NSDictionary *_formattedHoursData;
     GEOBusinessHours *_businessHours;
+    NSLayoutAnchor *_topLabelLastBaselineAnchor;
 }
 
+@property(retain, nonatomic) NSLayoutAnchor *topLabelLastBaselineAnchor; // @synthesize topLabelLastBaselineAnchor=_topLabelLastBaselineAnchor;
 @property(retain, nonatomic) GEOBusinessHours *businessHours; // @synthesize businessHours=_businessHours;
 @property(retain, nonatomic) NSDictionary *formattedHoursData; // @synthesize formattedHoursData=_formattedHoursData;
 @property(retain, nonatomic) _MKLocalizedHoursBuilder *hoursBuilder; // @synthesize hoursBuilder=_hoursBuilder;
 @property(nonatomic) unsigned long long placeHoursViewOptions; // @synthesize placeHoursViewOptions=_placeHoursViewOptions;
 - (void).cxx_destruct;
-- (void)_collapseTopAndBottomLabelIfNeeded;
+- (void)_collapseAllLabelsFromOptions;
 - (void)_updateHoursView;
-- (_Bool)_shouldCollapseFurtherAndColorTopString;
+- (void)_updateOptionsForCollapsingToSingleLineAndColor;
 - (id)_standardLabel;
+- (void)infoCardThemeChanged:(id)arg1;
 - (_Bool)wantsDefaultClipping;
-- (id)layoutGuideBottomAnchor;
-- (id)layoutGuideTopAnchor;
-- (id)layoutGuideTrailingAnchor;
-- (id)layoutGuideLeadingAnchor;
 - (void)applyRulesForTopAndBottomLabel;
 - (void)_contentSizeDidChange;
 - (void)_commonInit;
-- (id)initWithPlaceDailyHours:(id)arg1;
 - (id)initWithBusinessHours:(id)arg1;
 
 @end

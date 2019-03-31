@@ -12,6 +12,7 @@
 @interface AMSMetrics : NSObject
 {
     _Bool _flushCancelled;
+    _Bool _disableFlushing;
     _Bool _flushOnForeground;
     id <AMSMetricsBagContract> _bagContract;
     NSString *_containerId;
@@ -33,7 +34,9 @@
 + (id)serverTimeFromTimeInterval:(double)arg1;
 + (id)serverTimeFromDate:(id)arg1;
 + (void)setFlushTimerEnabled:(_Bool)arg1;
++ (void)setDisableBackgroundMetrics:(_Bool)arg1;
 + (_Bool)flushTimerEnabled;
++ (_Bool)disableBackgroundMetrics;
 + (id)_sharedInstanceUsingContract:(id)arg1;
 @property(retain, nonatomic) AMSURLSession *URLSession; // @synthesize URLSession=_URLSession;
 @property(retain, nonatomic) NSMutableSet *requestPromises; // @synthesize requestPromises=_requestPromises;
@@ -60,7 +63,7 @@
 - (void)_flushTimerStart;
 - (void)_flushTimerInvalidate;
 - (void)_handleFlushTimer;
-- (id)_createRequestWithURL:(id)arg1 canary:(id)arg2 account:(id)arg3 body:(id)arg4 signature:(id)arg5 logKey:(id)arg6;
+- (id)_createRequestWithURL:(id)arg1 canary:(id)arg2 account:(id)arg3 body:(id)arg4 signature:(id)arg5 logKey:(id)arg6 collectAdditonalMetrics:(_Bool)arg7;
 - (id)_baseMetricsURL;
 - (void)_addCancellablePromise:(id)arg1;
 - (void)_batchEventArray:(id)arg1 batchBlock:(CDUnknownBlockType)arg2;
@@ -78,6 +81,7 @@
 - (void)cancel;
 @property(nonatomic) _Bool flushTimerEnabled;
 @property(nonatomic) _Bool flushCancelled; // @synthesize flushCancelled=_flushCancelled;
+@property(nonatomic) _Bool disableFlushing; // @synthesize disableFlushing=_disableFlushing;
 @property(retain, nonatomic) id <AMSMetricsBagContract> bagContract; // @synthesize bagContract=_bagContract;
 @property(readonly, nonatomic) double flushInterval;
 @property(readonly, nonatomic) int eventCount;

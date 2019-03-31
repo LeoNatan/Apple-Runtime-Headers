@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class ACAccount, NSArray, NSDictionary, NSMutableDictionary, NSString;
+@class ACAccount, AMSMetricsEvent, NSArray, NSMutableDictionary, NSString;
 @protocol OS_dispatch_queue;
 
 @interface AMSFollowUpItem : NSObject
@@ -18,6 +18,7 @@
     NSArray *_actions;
     long long _displayStyle;
     NSString *_informativeText;
+    AMSMetricsEvent *_metricsEvent;
     NSString *_title;
     NSObject<OS_dispatch_queue> *_internalQueue;
     NSObject<OS_dispatch_queue> *_metricsQueue;
@@ -29,6 +30,7 @@
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *internalQueue; // @synthesize internalQueue=_internalQueue;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
 @property(nonatomic) _Bool shouldPostNotification; // @synthesize shouldPostNotification=_shouldPostNotification;
+@property(retain, nonatomic) AMSMetricsEvent *metricsEvent; // @synthesize metricsEvent=_metricsEvent;
 @property(retain, nonatomic) NSString *informativeText; // @synthesize informativeText=_informativeText;
 @property(nonatomic) long long displayStyle; // @synthesize displayStyle=_displayStyle;
 @property(retain, nonatomic) NSArray *actions; // @synthesize actions=_actions;
@@ -38,10 +40,8 @@
 - (id)generateItem;
 @property(retain, nonatomic) NSMutableDictionary *userInfo; // @synthesize userInfo=_userInfo;
 @property(nonatomic) long long priority;
-@property(retain, nonatomic) NSDictionary *metrics;
 @property(retain, nonatomic) NSString *logKey;
 @property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-@property(nonatomic) _Bool hasPostedMetrics;
 @property(retain, nonatomic) ACAccount *account; // @synthesize account=_account;
 @property(readonly, nonatomic) NSString *groupIdentifier;
 @property(readonly, nonatomic) NSString *backingIdentifier;

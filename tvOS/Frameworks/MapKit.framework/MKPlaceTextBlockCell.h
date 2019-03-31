@@ -28,6 +28,7 @@ __attribute__((visibility("hidden")))
 - (void)layoutMarginsDidChange;
 - (void)updateConstraints;
 - (void)_contentSizeDidChange;
+- (void)infoCardThemeChanged:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end

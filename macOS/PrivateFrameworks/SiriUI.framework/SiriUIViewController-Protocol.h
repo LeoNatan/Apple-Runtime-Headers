@@ -6,9 +6,10 @@
 
 #import <SiriUI/NSObject-Protocol.h>
 
-@class AceObject, NSString;
+@class AFAnalyticsTurnBasedInstrumentationContext, AceObject, NSString;
 
 @protocol SiriUIViewController <NSObject>
+@property(retain, nonatomic) AFAnalyticsTurnBasedInstrumentationContext *instrumentationTurnContext;
 @property(retain, nonatomic) AceObject *aceObject;
 - (void)wasAddedToTranscript;
 - (void)siriDidDeactivate;

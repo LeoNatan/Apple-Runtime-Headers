@@ -16,8 +16,11 @@
 + (id)issueReadingHistoryItemWithCKRecord:(id)arg1;
 - (void)writeToKeyValuePair:(id)arg1;
 - (id)asCKRecord;
+@property(readonly, copy, nonatomic) NSDate *lastBadgedDate;
+- (void)setLastBadgedDate:(id)arg1;
 @property(readonly, copy, nonatomic) NSDate *lastVisitedDate;
 - (void)setLastVisitedDate:(id)arg1;
+- (id)mutableCopyWithZone:(struct _NSZone *)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

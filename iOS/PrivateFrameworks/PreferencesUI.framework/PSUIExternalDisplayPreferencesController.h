@@ -12,13 +12,17 @@
 
 - (id)valueForSpecifier:(id)arg1;
 - (id)displayModeSpecifiers;
+- (void)handlePSUIExternalDisplayManagerExternalAutoBrightnessValueDidChangeNotification:(id)arg1;
+- (void)handlePSUIExternalDisplayManagerExternalAutoBrightnessAvailablityDidChangeNotification:(id)arg1;
 - (void)handlePSUIExternalDisplayManagerExternalBrightnessAvailablityDidChangeNotification:(id)arg1;
 - (void)removeExternalBrightnessSpecifiers;
 - (void)insertExternalBrightnessSpecifiers;
+- (void)setExternalAutoBrightnessValue:(id)arg1 specifier:(id)arg2;
+- (id)externalAutoBrightnessValueForSpecifier:(id)arg1;
 - (void)setExternalBrightnessValue:(id)arg1 specifier:(id)arg2;
 - (id)externalBrightnessValueForSpecifier:(id)arg1;
 - (void)externalBrightnessDidUpdate:(id)arg1;
-- (id)externalBrightnessSpecifier;
+- (id)externalBrightnessSpecifiers;
 - (void)connectedDisplayDidUpdate:(id)arg1;
 - (void)setMatchContentEnabled:(id)arg1 specifier:(id)arg2;
 - (id)matchContentEnabled:(id)arg1;

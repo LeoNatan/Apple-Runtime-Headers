@@ -38,6 +38,8 @@
 - (void)_setResourceLoadStatisticsTestingCallback:(CDUnknownBlockType)arg1;
 - (void)_resourceLoadStatisticsSetShouldSubmitTelemetry:(_Bool)arg1;
 @property(nonatomic, setter=_setProxyConfiguration:) NSDictionary *_proxyConfiguration;
+@property(copy, nonatomic, setter=_setSourceApplicationSecondaryIdentifier:) NSString *_sourceApplicationSecondaryIdentifier;
+@property(copy, nonatomic, setter=_setSourceApplicationBundleIdentifier:) NSString *_sourceApplicationBundleIdentifier;
 @property(nonatomic, setter=_setAllowsCellularAccess:) _Bool _allowsCellularAccess;
 @property(nonatomic, setter=_setBoundInterfaceIdentifier:) NSString *_boundInterfaceIdentifier;
 @property(nonatomic, setter=_setServiceWorkerRegistrationDirectory:) NSString *_serviceWorkerRegistrationDirectory;

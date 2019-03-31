@@ -11,7 +11,7 @@
 #import <AVConference/VCAudioIOSource-Protocol.h>
 #import <AVConference/VCAudioSessionDelegate-Protocol.h>
 
-@class AVAudioDevice, NSDictionary, NSMutableArray, NSMutableSet, NSString, VCAudioSessionMediaProperties, VCAudioUnitProperties;
+@class AVAudioDevice, NSDictionary, NSMutableArray, NSMutableSet, NSString, VCAudioRelay, VCAudioRelayIO, VCAudioSessionMediaProperties, VCAudioUnitProperties;
 @protocol OS_dispatch_queue;
 
 __attribute__((visibility("hidden")))
@@ -44,6 +44,9 @@ __attribute__((visibility("hidden")))
     struct _VCAudioIOControllerIOState _sinkData;
     struct _VCAudioIOControllerIOState _sourceData;
     struct opaqueVCAudioLimiter *_audioLimiter;
+    int _interruptThreadState;
+    VCAudioRelay *_interruptThread;
+    VCAudioRelayIO *_interruptThreadClient;
 }
 
 + (id)sharedInstance;
@@ -59,6 +62,10 @@ __attribute__((visibility("hidden")))
 - (void)didSessionStop;
 - (void)didSessionResume;
 - (void)didSessionPause;
+- (void)stopInterruptThread;
+- (void)startInterruptThread;
+- (void)cleanupInterruptThread;
+- (_Bool)setupInterruptThread;
 - (void)pushAudioSamples:(struct opaqueVCAudioBufferList *)arg1;
 - (void)pullAudioSamples:(struct opaqueVCAudioBufferList *)arg1;
 - (void)stopAudioSession;

@@ -10,7 +10,5 @@
 
 @protocol SXLayoutInvalidationManager <SXLayoutInvalidator>
 @property(nonatomic) __weak id <SXLayoutInvalidationManagerDelegate> delegate;
-- (void)suspend;
-- (void)resume;
 @end
 

@@ -59,8 +59,11 @@
 - (void)_dismissViewControllerWithResult:(_Bool)arg1 error:(id)arg2;
 - (void)_didFinishLoading;
 - (void)_didPrepareWithResult:(_Bool)arg1 error:(id)arg2;
+- (void)_keyboardWillChangeNotification:(id)arg1;
+- (void)_keyboardDidChangeNotification:(id)arg1;
 - (void)_sk_applicationDidEnterBackground:(id)arg1;
 - (void)_sk_applicationWillEnterForeground:(id)arg1;
+- (void)_setupNotificationCenter;
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)didMoveToParentViewController:(id)arg1;
 - (void)willMoveToParentViewController:(id)arg1;

@@ -29,7 +29,9 @@
 @property(retain, nonatomic) NSCache *objectCache; // @synthesize objectCache=_objectCache;
 - (void).cxx_destruct;
 - (void)systemApplicationDidSuspend;
+- (void)emptyCache;
 - (void)clearQueue;
+- (void)suspend;
 - (void)resume;
 - (_Bool)waitOnGenerationForKey:(id)arg1;
 - (void)endGeneratingForKey:(id)arg1;

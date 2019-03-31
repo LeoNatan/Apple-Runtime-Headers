@@ -19,10 +19,12 @@
     CDUnknownBlockType _invalidationHandler;
     id <RPMessageable> _messenger;
     CDUnknownBlockType _streamAcceptHandler;
+    CDUnknownBlockType _streamPrepareHandlerEx;
     CDUnknownBlockType _streamPrepareHandler;
 }
 
 @property(copy, nonatomic) CDUnknownBlockType streamPrepareHandler; // @synthesize streamPrepareHandler=_streamPrepareHandler;
+@property(copy, nonatomic) CDUnknownBlockType streamPrepareHandlerEx; // @synthesize streamPrepareHandlerEx=_streamPrepareHandlerEx;
 @property(nonatomic) unsigned int streamFlags; // @synthesize streamFlags=_streamFlags;
 @property(copy, nonatomic) CDUnknownBlockType streamAcceptHandler; // @synthesize streamAcceptHandler=_streamAcceptHandler;
 @property(retain, nonatomic) id <RPMessageable> messenger; // @synthesize messenger=_messenger;

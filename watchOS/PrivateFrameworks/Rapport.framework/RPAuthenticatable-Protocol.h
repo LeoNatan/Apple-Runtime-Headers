@@ -12,6 +12,7 @@
 @property(copy, nonatomic) CDUnknownBlockType hidePasswordHandler;
 @property(copy, nonatomic) CDUnknownBlockType showPasswordHandler;
 @property(copy, nonatomic) CDUnknownBlockType authCompletionHandler;
+@property(readonly, nonatomic) int passwordTypeActual;
 @property(nonatomic) int passwordType;
 @property(copy, nonatomic) NSString *password;
 @property(nonatomic) unsigned int pairVerifyFlags;

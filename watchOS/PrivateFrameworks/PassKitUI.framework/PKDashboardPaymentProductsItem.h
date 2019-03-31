@@ -8,7 +8,7 @@
 
 #import <PassKitUI/PKDashboardItem-Protocol.h>
 
-@class NSString, PKPassView, PKTransitBalanceModel;
+@class NSString, PKPassView, PKPaymentPass, PKTransitBalanceModel;
 
 @interface PKDashboardPaymentProductsItem : NSObject <PKDashboardItem>
 {
@@ -18,6 +18,7 @@
 
 @property(retain, nonatomic) PKTransitBalanceModel *transitBalanceModel; // @synthesize transitBalanceModel=_transitBalanceModel;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) PKPaymentPass *pass;
 - (id)initWithPassView:(id)arg1;
 
 // Remaining properties

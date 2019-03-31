@@ -33,7 +33,7 @@
 - (void)audioRecorderDidStopRecording:(id)arg1 forReason:(int)arg2;
 - (void)audioRecorderDidStartRecording:(id)arg1 successfully:(_Bool)arg2 error:(id)arg3;
 - (void)audioRecorderBufferAvailable:(id)arg1 buffer:(id)arg2;
-- (void)audioRecorderBufferAvailable:(id)arg1 buffer:(id)arg2 atTime:(unsigned long long)arg3;
+- (void)audioRecorderBufferAvailable:(id)arg1 buffer:(id)arg2 remoteVAD:(id)arg3 atTime:(unsigned long long)arg4;
 - (unsigned int)audioSource;
 - (int)convertStopReason:(int)arg1;
 - (_Bool)hasCorrectAudioRoute;

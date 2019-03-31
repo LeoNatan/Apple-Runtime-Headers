@@ -18,6 +18,8 @@
     BOOL _openFromMidnight;
 }
 
++ (long long)todaysWeekday:(long long)arg1 yesterdaysWeekday:(long long)arg2 containsTimeFromMidnight:(double)arg3 inNormalizedHours:(id)arg4;
++ (long long)getWeekdayForDate:(id)arg1 inNormalizedHours:(id)arg2 timeZone:(id)arg3;
 + (id)dailyNormalizedHoursForWeekday:(long long)arg1 timeIntervals:(id)arg2 closingThreshold:(double)arg3 openingThreshold:(double)arg4 openToMidnight:(BOOL)arg5 openFromMidnight:(BOOL)arg6;
 @property(readonly) BOOL openFromMidnight; // @synthesize openFromMidnight=_openFromMidnight;
 @property(readonly) BOOL openToMidnight; // @synthesize openToMidnight=_openToMidnight;

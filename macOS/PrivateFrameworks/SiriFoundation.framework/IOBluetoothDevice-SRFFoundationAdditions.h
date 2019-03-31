@@ -8,5 +8,6 @@
 
 @interface IOBluetoothDevice (SRFFoundationAdditions)
 @property(readonly) BOOL isAirPods;
+@property(readonly) BOOL isVoiceTriggerCapable;
 @end
 

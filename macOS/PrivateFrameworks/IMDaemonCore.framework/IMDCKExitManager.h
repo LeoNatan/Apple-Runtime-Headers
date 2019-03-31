@@ -40,9 +40,7 @@
 - (id)_modifiedOpGroupName:(id)arg1 useManatee:(BOOL)arg2;
 - (id)_sharedCKUtilities;
 - (void)_scheduleMetricOperation:(id)arg1 useManate:(BOOL)arg2;
-- (BOOL)_serverAllowsMetricSubmission;
 - (void)submitCloudKitAnalyticWithOperationGroupName:(id)arg1 useManatee:(BOOL)arg2 analyticDictionary:(id)arg3;
-- (BOOL)_allowAnalyticZoneSubmission;
 - (BOOL)_analyticZoneCreated;
 - (void)submitCloudKitMetricWithOperationGroupName:(id)arg1 useManatee:(BOOL)arg2;
 - (void)writeSyncCompletedRecordWithDate:(id)arg1 useManatee:(BOOL)arg2 completion:(CDUnknownBlockType)arg3;

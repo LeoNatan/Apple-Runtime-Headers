@@ -26,6 +26,10 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _videoThumbnailsCallback;
     CDUnknownBlockType _audioAmplitudeSamplesCallback;
     NSMutableDictionary *_commandHandlerBlocks;
+    MSVMultiCallback *_createItemToken;
+    MSVMultiCallback *_metadataToken;
+    MSVMultiCallback *_languageToken;
+    MSVMultiCallback *_artworkToken;
     _MRNowPlayingPlayerPathProtobuf *_playerPath;
 }
 
@@ -40,10 +44,9 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) _MRNowPlayingPlayerPathProtobuf *playerPath; // @synthesize playerPath=_playerPath;
 - (void).cxx_destruct;
 - (void)registerNowPlayingInfoArtworkAssetCallback:(id)arg1;
-- (void)registerNowPlayingInfoLanguageOptionsCallback:(id)arg1;
 - (void)registerNowPlayingInfoAssetCallbacks:(id)arg1;
 - (void)registerNowPlayingInfoCallbacks:(id)arg1;
-- (void)registerCallbacks;
+- (void)registerNowPlayingInfoBackedPlaybackQueueDataSourceCallbacks;
 @property(readonly, copy, nonatomic) NSArray *commandHandlerBlocks;
 - (void)removeCommandHandlerBlockForKey:(id)arg1;
 - (void)addCommandHandlerBlock:(CDUnknownBlockType)arg1 forKey:(id)arg2;

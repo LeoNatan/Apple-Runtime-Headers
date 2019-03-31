@@ -42,11 +42,14 @@
 - (_Bool)_writeCachedItems:(id)arg1;
 - (id)_readCachedItems;
 - (void)_flushCachedItems;
+- (void)_updateLastSeenTimestamp:(id)arg1;
 - (void)_reportCachedItemsLost;
 - (void)_reportCachedItemsFound;
+- (void)_refreshCachedItems;
 - (void)_recheckDevices;
 - (void)_pairedPeersChanged;
 - (void)_networkSignatureChanged;
+- (_Bool)_isCachedItemValid:(id)arg1;
 - (void)deviceLost:(id)arg1;
 - (void)_deviceFound:(id)arg1 recheck:(_Bool)arg2;
 - (void)deviceFound:(id)arg1;

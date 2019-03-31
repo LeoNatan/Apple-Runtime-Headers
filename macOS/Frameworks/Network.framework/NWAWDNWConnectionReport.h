@@ -75,6 +75,7 @@ __attribute__((visibility("hidden")))
     BOOL _tfoConfigured;
     BOOL _tfoUsed;
     BOOL _tlsConfigured;
+    BOOL _tlsHandshakeTimedOut;
     BOOL _tlsVersionTimeout;
     BOOL _triggeredPath;
     BOOL _usedFallback;
@@ -139,6 +140,7 @@ __attribute__((visibility("hidden")))
         unsigned int tfoConfigured:1;
         unsigned int tfoUsed:1;
         unsigned int tlsConfigured:1;
+        unsigned int tlsHandshakeTimedOut:1;
         unsigned int tlsVersionTimeout:1;
         unsigned int triggeredPath:1;
         unsigned int usedFallback:1;
@@ -147,6 +149,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (Class)activitiesType;
+@property(nonatomic) BOOL tlsHandshakeTimedOut; // @synthesize tlsHandshakeTimedOut=_tlsHandshakeTimedOut;
 @property(retain, nonatomic) NSString *connectionUUID; // @synthesize connectionUUID=_connectionUUID;
 @property(retain, nonatomic) NSMutableArray *activities; // @synthesize activities=_activities;
 @property(retain, nonatomic) NSString *processName; // @synthesize processName=_processName;
@@ -213,6 +216,7 @@ __attribute__((visibility("hidden")))
 - (BOOL)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(nonatomic) BOOL hasTlsHandshakeTimedOut;
 @property(readonly, nonatomic) BOOL hasConnectionUUID;
 - (id)activitiesAtIndex:(unsigned long long)arg1;
 - (unsigned long long)activitiesCount;

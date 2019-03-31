@@ -7,6 +7,7 @@
 #import <UIKit/UIViewController.h>
 
 #import <RTTUI/RTTUIReplyActionCellDelegate-Protocol.h>
+#import <RTTUI/RTTUIServiceCellDelegate-Protocol.h>
 #import <RTTUI/RTTUIUtteranceCellDelegate-Protocol.h>
 #import <RTTUI/UITableViewDataSource-Protocol.h>
 #import <RTTUI/UITableViewDelegate-Protocol.h>
@@ -15,7 +16,7 @@
 @class AXDispatchTimer, CAShapeLayer, NSDictionary, NSLock, NSMutableArray, NSMutableCharacterSet, NSMutableString, NSObject, NSString, RTTConversation, RTTUITextView, RTTUtterance, TUCall, UIButton, UITableView;
 @protocol OS_dispatch_queue;
 
-@interface RTTUIConversationViewController : UIViewController <RTTUIReplyActionCellDelegate, UITableViewDelegate, UITableViewDataSource, RTTUIUtteranceCellDelegate, UITextViewDelegate>
+@interface RTTUIConversationViewController : UIViewController <RTTUIReplyActionCellDelegate, UITableViewDelegate, UITableViewDataSource, RTTUIUtteranceCellDelegate, UITextViewDelegate, RTTUIServiceCellDelegate>
 {
     RTTUITextView *_textView;
     CAShapeLayer *_bubbleLayer;
@@ -30,6 +31,7 @@
     _Bool _serviceMessageVisible;
     _Bool _processingUtteranceBuffer;
     RTTConversation *_conversation;
+    NSString *_currentServiceMessage;
     UITableView *_tableView;
     RTTUtterance *_currentUtterance;
     TUCall *_call;
@@ -43,6 +45,7 @@
 @property(retain, nonatomic) TUCall *call; // @synthesize call=_call;
 @property(retain, nonatomic) RTTUtterance *currentUtterance; // @synthesize currentUtterance=_currentUtterance;
 @property(retain, nonatomic) UITableView *tableView; // @synthesize tableView=_tableView;
+@property(retain, nonatomic) NSString *currentServiceMessage; // @synthesize currentServiceMessage=_currentServiceMessage;
 @property(retain, nonatomic) RTTConversation *conversation; // @synthesize conversation=_conversation;
 - (void).cxx_destruct;
 - (void)_define:(id)arg1;
@@ -76,7 +79,7 @@
 - (void)_sendNewUtteranceString:(id)arg1 atIndex:(unsigned int)arg2 forCellPath:(id)arg3;
 - (void)processUtteranceQueue;
 - (id)addUtterance:(id)arg1;
-- (void)insertServiceCell;
+- (void)updateServiceCellWithString:(id)arg1;
 - (id)currentCall;
 - (void)toggleMute:(id)arg1;
 - (void)updateMuteButton;

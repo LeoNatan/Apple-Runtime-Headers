@@ -10,10 +10,13 @@
 {
 }
 
++ (BOOL)canLookupMachService:(id)arg1;
 + (BOOL)canWriteHomeRelativePath:(id)arg1;
 + (BOOL)canReadHomeRelativePath:(id)arg1;
 + (BOOL)canWritePreferenceDomain:(id)arg1;
 + (BOOL)canReadPreferenceDomain:(id)arg1;
++ (BOOL)hasEntitlement:(id)arg1;
++ (BOOL)_taskHasMachLookup:(struct __SecTask *)arg1 forGlobalName:(id)arg2;
 + (BOOL)_taskHasHomeRelativePathReadOnly:(struct __SecTask *)arg1 forPath:(id)arg2;
 + (BOOL)_taskHasHomeRelativePathReadWrite:(struct __SecTask *)arg1 forPath:(id)arg2;
 + (BOOL)_taskHasSharedPreferenceReadOnly:(struct __SecTask *)arg1 forDomain:(id)arg2;

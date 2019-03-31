@@ -21,6 +21,7 @@ __attribute__((visibility("hidden")))
 
 + (long long)activityCategory;
 + (unsigned long long)_xpcAttributes;
++ (_Bool)_allowFolderSharing;
 + (_Bool)_allowDocumentSharing;
 @property(retain, nonatomic) UIImage *activityImage; // @synthesize activityImage=_activityImage;
 @property(retain, nonatomic) NSString *activityTitle; // @synthesize activityTitle=_activityTitle;

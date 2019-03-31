@@ -16,7 +16,6 @@
     NSObject<OS_dispatch_queue> *_dispatchQueue;
     BOOL _invalidateCalled;
     BOOL _invalidateCalled2;
-    int _connectedCallCount;
     CDUnknownBlockType _invalidationHandler;
     CDUnknownBlockType _bluetoothAddressChangedHandler;
     CDUnknownBlockType _callChangedHandler;
@@ -55,7 +54,6 @@
 @property(copy) CDUnknownBlockType familyUpdatedHandler; // @synthesize familyUpdatedHandler=_familyUpdatedHandler;
 @property(copy, nonatomic) CDUnknownBlockType consoleUserChangedHandler; // @synthesize consoleUserChangedHandler=_consoleUserChangedHandler;
 @property(copy) CDUnknownBlockType callChangedHandler; // @synthesize callChangedHandler=_callChangedHandler;
-@property(readonly) int connectedCallCount; // @synthesize connectedCallCount=_connectedCallCount;
 @property(copy) CDUnknownBlockType bluetoothAddressChangedHandler; // @synthesize bluetoothAddressChangedHandler=_bluetoothAddressChangedHandler;
 @property(copy, nonatomic) CDUnknownBlockType invalidationHandler; // @synthesize invalidationHandler=_invalidationHandler;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
@@ -84,6 +82,7 @@
 @property(readonly, copy) NSArray *familyMembers;
 @property(readonly, copy) NSString *consoleUserName;
 @property(readonly) unsigned int consoleUserID;
+@property(readonly) int connectedCallCount;
 @property(readonly, copy) NSData *bluetoothAddressData;
 @property(readonly) CDStruct_83abfce7 bluetoothAddress48;
 @property(readonly) int activeCallCount;

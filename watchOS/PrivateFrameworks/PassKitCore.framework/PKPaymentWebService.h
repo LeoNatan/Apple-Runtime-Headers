@@ -81,6 +81,7 @@
 - (unsigned int)rewrapInAppPayment:(id)arg1 merchantIdentifier:(id)arg2 merchantSession:(id)arg3 hostApplicationIdentifier:(id)arg4 applicationData:(id)arg5 pass:(id)arg6 completion:(CDUnknownBlockType)arg7;
 - (unsigned int)_nonceForPass:(id)arg1 serviceURL:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (unsigned int)inAppPaymentNonceForPass:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (unsigned int)cardInfoForMerchantIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (unsigned int)moreInfoItemAtURL:(id)arg1 withMetadata:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (unsigned int)passActionWithRemoteContentPassAction:(id)arg1 forPass:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (unsigned int)paymentProvisioningNonceWithCompletion:(CDUnknownBlockType)arg1;

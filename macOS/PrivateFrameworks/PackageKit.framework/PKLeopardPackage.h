@@ -18,6 +18,7 @@
 - (id)scriptsSubpath;
 - (id)payloadExtractorWithDestination:(id)arg1 externalRoot:(id)arg2 error:(id *)arg3;
 - (id)BOMData;
+- (id)initWithURL:(id)arg1 options:(id)arg2;
 - (id)initWithURL:(id)arg1;
 - (id)_archiveSubpathWithFileName:(id)arg1;
 

@@ -8,26 +8,29 @@
 
 #import <NewsCore/NSCopying-Protocol.h>
 
-@class FCColor, FCMultiResolutionImage, NSDictionary;
+@class FCColor, FCMultiResolutionImage;
 
 @interface FCPaywallVisualSpecConfiguration : NSObject <NSCopying>
 {
-    long long _textTopPadding;
-    NSDictionary *_configDict;
     FCMultiResolutionImage *_multiResolutionImage;
+    double _gradientPercentHeight;
+    long long _textTopPadding;
     FCColor *_backgroundColor;
 }
 
++ (id)defaultPaywallVisualSpecConfiguration;
++ (id)defaultMagazineFeedPaywallVisualSpecConfigurationLarge;
++ (id)defaultMagazineFeedPaywallVisualSpecConfigurationMedium;
++ (id)defaultMagazineFeedPaywallVisualSpecConfigurationSmall;
 @property(retain, nonatomic) FCColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;
+@property(nonatomic) long long textTopPadding; // @synthesize textTopPadding=_textTopPadding;
+@property(nonatomic) double gradientPercentHeight; // @synthesize gradientPercentHeight=_gradientPercentHeight;
 @property(retain, nonatomic) FCMultiResolutionImage *multiResolutionImage; // @synthesize multiResolutionImage=_multiResolutionImage;
-@property(retain, nonatomic) NSDictionary *configDict; // @synthesize configDict=_configDict;
-@property(readonly, nonatomic) long long textTopPadding; // @synthesize textTopPadding=_textTopPadding;
 - (void).cxx_destruct;
-- (long long)textToPadding;
-@property(readonly, nonatomic) double gradientPercentHeight;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
+- (id)initWithMultiResolutionImage:(id)arg1 gradientPercentHeight:(double)arg2 textTopPadding:(long long)arg3 backgroundColor:(id)arg4;
 - (id)initWithConfigDictionary:(id)arg1;
 - (id)init;
 

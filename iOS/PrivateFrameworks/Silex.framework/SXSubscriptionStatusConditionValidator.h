@@ -9,17 +9,12 @@
 #import <Silex/SXConditionValidating-Protocol.h>
 
 @class NSString;
-@protocol SXSubscriptionStatusProviding;
 
 @interface SXSubscriptionStatusConditionValidator : NSObject <SXConditionValidating>
 {
-    id <SXSubscriptionStatusProviding> _subscriptionStatusProvider;
 }
 
-@property(readonly, nonatomic) id <SXSubscriptionStatusProviding> subscriptionStatusProvider; // @synthesize subscriptionStatusProvider=_subscriptionStatusProvider;
-- (void).cxx_destruct;
 - (_Bool)validateCondition:(id)arg1 context:(id)arg2;
-- (id)initWithSubscriptionStatusProvider:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

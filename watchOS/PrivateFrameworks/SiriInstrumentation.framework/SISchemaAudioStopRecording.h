@@ -10,9 +10,9 @@
 
 @interface SISchemaAudioStopRecording : PBCodable <NSCopying>
 {
-    int _interruptType;
+    int _endpointType;
     struct {
-        unsigned int interruptType:1;
+        unsigned int endpointType:1;
     } _has;
 }
 
@@ -25,10 +25,10 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
-- (int)StringAsInterruptType:(id)arg1;
-- (id)interruptTypeAsString:(int)arg1;
-@property(nonatomic) _Bool hasInterruptType;
-@property(nonatomic) int interruptType; // @synthesize interruptType=_interruptType;
+- (int)StringAsEndpointType:(id)arg1;
+- (id)endpointTypeAsString:(int)arg1;
+@property(nonatomic) _Bool hasEndpointType;
+@property(nonatomic) int endpointType; // @synthesize endpointType=_endpointType;
 
 @end
 

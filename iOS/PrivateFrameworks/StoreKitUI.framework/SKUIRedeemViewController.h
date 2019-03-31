@@ -6,7 +6,7 @@
 
 #import <UIKit/UINavigationController.h>
 
-@class NSOperationQueue, NSString, SKUIClientContext, SKUIRedeemConfiguration, SSPromise, SUClientInterface, UIActivityIndicatorView;
+@class NSOperationQueue, NSString, SKUIClientContext, SKUIRedeemConfiguration, SUClientInterface, UIActivityIndicatorView;
 @protocol SKUIRedeemViewCameraOverrideDelegate;
 
 @interface SKUIRedeemViewController : UINavigationController
@@ -14,7 +14,6 @@
     _Bool _attempsAutomaticRedeem;
     _Bool _cameraRedeemVisible;
     _Bool _shouldPerformInitialOperationOnAppear;
-    SSPromise *_useLegacyRedeemPromise;
     long long _category;
     id <SKUIRedeemViewCameraOverrideDelegate> _cameraDelegate;
     NSString *_initialCode;
@@ -44,15 +43,12 @@
 - (void)_cancelButtonAction;
 - (void)_redeemURLWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_presentModernRedeemWithURL:(id)arg1;
-- (void)_presentModernRedeem;
 - (void)_presentLegacyRedeem;
 - (void)viewWillLayoutSubviews;
 - (void)viewDidLoad;
 - (void)loadView;
-- (id)_setupUseLegacyRedeemPromise;
 - (void)_setupNavigationItem;
 - (void)_setup;
-@property(readonly, nonatomic) SSPromise *useLegacyRedeemPromise; // @synthesize useLegacyRedeemPromise=_useLegacyRedeemPromise;
 - (id)initWithRedeemCategory:(long long)arg1;
 
 @end

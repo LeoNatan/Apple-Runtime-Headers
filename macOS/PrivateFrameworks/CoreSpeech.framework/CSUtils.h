@@ -23,9 +23,9 @@
 + (id)rootQueueWithFixedPriority:(int)arg1;
 + (BOOL)supportCircularBuffer;
 + (BOOL)shouldDeinterleaveAudioOnCS;
-+ (BOOL)supportExternalTrigger;
++ (BOOL)supportBluetoothDeviceVoiceTrigger;
 + (BOOL)supportJarvisVoiceTrigger;
-+ (BOOL)supportPacketDecoding;
++ (BOOL)supportHearstVoiceTrigger;
 + (id)boardID;
 + (BOOL)hasRemoteCoreSpeech;
 + (BOOL)supportSessionActivateDelay;
@@ -58,6 +58,7 @@
 + (float)hostTimeToSeconds:(unsigned long long)arg1;
 + (unsigned long long)secondsToHostTime:(float)arg1;
 + (id)getSiriLanguageWithFallback:(id)arg1;
++ (void)apply12dBGain:(id)arg1;
 + (id)convertToShortLPCMBufFromFloatLPCMBuf:(id)arg1;
 + (id)convertToFloatLPCMBufFromShortLPCMBuf:(id)arg1;
 + (BOOL)isCurrentDeviceCompatibleWithVoiceProfileAt:(id)arg1;
@@ -79,10 +80,10 @@
 + (id)spIdSiriDebugTrainedUsersFilePathForLocale:(id)arg1;
 + (id)spIdSiriDebugVoiceProfileStoreRootDirectoryForLocale:(id)arg1;
 + (id)spIdSiriDebugVoiceProfileStoreRootDirectory;
-+ (id)spIdDataRootDirectory;
++ (id)spIdSiriDebugGradingDataRootDirectory;
 + (id)spIdSiriDebugVTDataDirectory;
 + (BOOL)spIdAudioLogsCountLimitReached;
-+ (id)spIdAudioLogsDir2;
++ (id)spIdAudioLogsGradingDir;
 + (id)spIdAudioLogsDir;
 + (void)createDirectoryIfDoesNotExist:(id)arg1;
 + (id)spIdVoiceProfileImportRootDir;
@@ -105,12 +106,15 @@
 + (id)opusRecordSettings;
 + (id)lpcmRecordSettings;
 + (id)jarvisVoiceTriggerRecordContext:(id)arg1;
++ (id)hearstVoiceTriggerRecordContext:(id)arg1;
 + (id)voiceTriggerRecordContext;
 + (struct AudioStreamBasicDescription)aiffFileASBD;
 + (struct AudioStreamBasicDescription)utteranceFileASBD;
 + (struct AudioStreamBasicDescription)lpcmNarrowBandASBD;
 + (struct AudioStreamBasicDescription)lpcmASBD;
++ (struct AudioStreamBasicDescription)lpcmNonInterleavedWithRemoteVADASBD;
 + (struct AudioStreamBasicDescription)lpcmNonInterleavedASBD;
++ (struct AudioStreamBasicDescription)lpcmInterleavedWithRemoteVADASBD;
 + (struct AudioStreamBasicDescription)lpcmInterleavedASBD;
 + (struct AudioStreamBasicDescription)opusNarrowBandASBD;
 + (struct AudioStreamBasicDescription)opusASBD;
@@ -137,10 +141,11 @@
 + (BOOL)isRecordContextJarvisButtonPress:(id)arg1;
 + (BOOL)isRecordContextJarvisVoiceTrigger:(id)arg1;
 + (BOOL)isRecordContextRaiseToSpeak:(id)arg1;
-+ (BOOL)isRecordingContextBTDT:(id)arg1;
-+ (BOOL)isRecordingContextHDVC:(id)arg1;
++ (BOOL)isRecordContextHearstDoubleTap:(id)arg1;
++ (BOOL)isRecordContextHearstVoiceTrigger:(id)arg1;
 + (BOOL)isRecordContextSpeakerIdTrainingTrigger:(id)arg1;
 + (BOOL)isRecordContextAutoPrompt:(id)arg1;
++ (BOOL)isRecordContextHomeButtonPress:(id)arg1;
 + (BOOL)isRecordContextVoiceTrigger:(id)arg1;
 + (id)assetHashInResourcePath:(id)arg1;
 

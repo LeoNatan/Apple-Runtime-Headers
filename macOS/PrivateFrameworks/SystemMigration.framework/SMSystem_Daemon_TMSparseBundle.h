@@ -37,7 +37,7 @@
 - (BOOL)isMounted;
 - (void)volumeMounted:(id)arg1;
 - (void)unmount;
-- (void)mountSparseBundleBackupsWithPassword:(id)arg1;
+- (void)mountSparseBundleBackups:(BOOL)arg1;
 - (void)mountWithCredentials:(id)arg1;
 - (void)mount;
 - (id)modelIcon;

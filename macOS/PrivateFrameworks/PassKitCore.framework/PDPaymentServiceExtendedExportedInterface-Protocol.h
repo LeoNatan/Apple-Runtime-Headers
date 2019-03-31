@@ -22,6 +22,7 @@
 - (void)processTransitTransactionEventWithHistory:(PKTransitAppletHistory *)arg1 transactionDate:(NSDate *)arg2 forPaymentApplication:(PKPaymentApplication *)arg3 withPassUniqueIdentifier:(NSString *)arg4 expressTransactionState:(PKExpressTransactionState *)arg5;
 - (void)setDefaultExpressTransitPassIdentifier:(NSString *)arg1 withCredential:(NSData *)arg2 completion:(void (^)(BOOL, NSString *))arg3;
 - (void)sanitizeExpressPasses;
+- (void)defaultPaymentPassIngestionSpecificIdentifier:(void (^)(NSString *))arg1;
 - (void)defaultPaymentApplicationForPassUniqueIdentifier:(NSString *)arg1 handler:(void (^)(PKPaymentApplication *))arg2;
 - (void)setDefaultPaymentApplication:(PKPaymentApplication *)arg1 forPassUniqueIdentifier:(NSString *)arg2 handler:(void (^)(PKPass *))arg3;
 - (void)archiveMessageWithIdentifier:(NSString *)arg1 handler:(void (^)(void))arg2;

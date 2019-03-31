@@ -4,16 +4,12 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <UIKit/UINavigationController.h>
+#import <PassKitUI/PKNavigationController.h>
 
-@interface PKEditPassesNavigationController : UINavigationController
+@interface PKEditPassesNavigationController : PKNavigationController
 {
 }
 
-- (unsigned long long)supportedInterfaceOrientations;
-- (long long)modalTransitionStyle;
-- (long long)modalPresentationStyle;
-- (void)viewDidLoad;
 - (void)_done;
 - (id)initWithExistingGroupsController:(id)arg1;
 - (id)init;

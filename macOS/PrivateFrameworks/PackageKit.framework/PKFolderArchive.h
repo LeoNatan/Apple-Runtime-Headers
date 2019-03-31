@@ -22,6 +22,7 @@
 - (id)enumeratorAtPath:(id)arg1;
 - (id)archivePath;
 - (void)dealloc;
+- (id)initForReadingFromPath:(id)arg1 options:(id)arg2;
 - (id)initForReadingFromPath:(id)arg1;
 - (BOOL)setContentsOfArchive:(id)arg1 forPath:(id)arg2;
 - (BOOL)setFile:(id)arg1 forPath:(id)arg2 compressed:(BOOL)arg3;

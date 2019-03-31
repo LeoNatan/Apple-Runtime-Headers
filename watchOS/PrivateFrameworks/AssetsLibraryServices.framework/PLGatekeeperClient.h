@@ -135,6 +135,7 @@
 - (void)updateModelAfterOTARestore;
 - (void)updateCameraPreviewWellImage:(id)arg1;
 - (void)updateThumbnailsForPhotos:(id)arg1 waitForReply:(_Bool)arg2 assignNewIndex:(_Bool)arg3 forceRefresh:(_Bool)arg4;
+- (void)getSizeOfResourcesToUploadByCPLWithHandler:(CDUnknownBlockType)arg1;
 - (void)getLibrarySizesFromDB:(_Bool)arg1 handler:(CDUnknownBlockType)arg2;
 - (void)getLibrarySizes:(CDUnknownBlockType)arg1;
 - (void)getPhotosAndVideosCountWithHandler:(CDUnknownBlockType)arg1;

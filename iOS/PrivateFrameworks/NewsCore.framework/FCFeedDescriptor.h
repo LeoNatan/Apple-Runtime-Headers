@@ -53,7 +53,6 @@
 @property(readonly, nonatomic) NSString *backingChannelID;
 @property(readonly, nonatomic) id <FCChannelProviding> backingChannel;
 @property(readonly, nonatomic) id <FCTagProviding> backingTag;
-- (_Bool)enableNotificationsWithSubscriptionController:(id)arg1 error:(id *)arg2;
 - (_Bool)hasNotificationsEnabledWithSubscriptionController:(id)arg1;
 - (_Bool)isSubscribedToWithSubscriptionController:(id)arg1;
 - (void)unsubscribeToWithSubscriptionController:(id)arg1 eventInitiationLevel:(long long)arg2;
@@ -62,6 +61,7 @@
 @property(readonly, nonatomic) _Bool isSubscribable;
 @property(readonly, nonatomic) _Bool hideAccessoryText;
 @property(readonly, nonatomic) NSString *name;
+@property(readonly, nonatomic) _Bool hasEditions;
 @property(readonly, nonatomic) _Bool derivesContentsFromExplicitSubscriptions;
 - (id)languagesWithSubscriptionController:(id)arg1;
 @property(readonly, nonatomic) id <FCFeedTheming> theme;

@@ -43,6 +43,7 @@
 - (void)_shutdownWithFBSOptions:(id)arg1;
 - (void)setPendingExit:(_Bool)arg1;
 @property(readonly, getter=isPendingExit) _Bool pendingExit;
+- (void)prepareDisplaysForExit;
 - (void)setSystemIdleSleepDisabled:(_Bool)arg1 forReason:(id)arg2;
 - (void)prepareForExitAndRelaunch:(_Bool)arg1;
 - (void)exitAndRelaunch:(_Bool)arg1;

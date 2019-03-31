@@ -26,10 +26,15 @@
 - (id)bylineFontNameWithTemplate:(id)arg1;
 - (id)excerptFontNameWithTemplate:(id)arg1;
 - (id)titleFontNameWithTemplate:(id)arg1;
+- (double)accessoryViewToBottomSpacing;
 - (double)ageLabelToAccessoryLabelSpacingWithTemplate:(id)arg1;
 - (double)titleToAccessorySpacingWithTemplate:(id)arg1;
+- (double)excerptToAccessorySpacing;
 - (double)excerptToAccessorySpacingWithTemplate:(id)arg1;
+- (double)segmentViewHeight;
 - (double)titleToExcerptSpacingWithTemplate:(id)arg1;
+- (double)imageToTitleSpacing;
+- (double)titleToExcerptSpacing;
 - (double)publisherLogoToTitleSpacingWithTemplate:(id)arg1;
 - (_Bool)allowsExcerptWithFeedSettings:(id)arg1;
 - (_Bool)allowsExcerpt;

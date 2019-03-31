@@ -10,13 +10,17 @@
 {
 }
 
-+ (id)certificateCommonNamesFromPersistentID:(id)arg1;
-+ (id)identityPersistentIdFromCertificatePersistentID:(id)arg1 group:(id)arg2;
 + (BOOL)identityExpiredWithPersistentId:(id)arg1;
 + (BOOL)certificateExpiredWithPersistentId:(id)arg1;
-+ (BOOL)dateHasPassed:(id)arg1;
 + (id)certificateExpirationDateFromPersistentId:(id)arg1;
 + (id)identityExpirationDateFromPersistentId:(id)arg1;
++ (id)_validityDateIntervalForCetificateRef:(struct OpaqueSecCertificateRef *)arg1;
++ (id)_validityStartDateForCertificateRef:(struct OpaqueSecCertificateRef *)arg1;
++ (id)_validityEndDateForCertificateRef:(struct OpaqueSecCertificateRef *)arg1;
++ (id)validityDateIntervalForItemWithPersistentID:(id)arg1;
++ (BOOL)itemWithPersistentIDIsTemporallyValid:(id)arg1;
++ (id)certificateCommonNamesFromPersistentID:(id)arg1;
++ (id)identityPersistentIdFromCertificatePersistentID:(id)arg1 group:(id)arg2;
 + (id)createIdentityPersistentIdFromCommonName:(id)arg1 groupName:(id)arg2;
 + (struct OpaqueSecIdentityRef *)identityFromPrivateKeyData:(id)arg1 certificateData:(id)arg2;
 + (id)addCertificateData:(id)arg1 toGroup:(id)arg2;
@@ -31,12 +35,9 @@
 + (id)getCertificateFingerprint:(struct OpaqueSecCertificateRef *)arg1;
 + (id)getCertificateExpirationDate:(struct OpaqueSecCertificateRef *)arg1;
 + (struct OpaqueSecIdentityRef *)createIdentityWithCommonName:(id)arg1 error:(id *)arg2;
-+ (id)copyCommonNamesForCertificate:(struct OpaqueSecCertificateRef *)arg1;
 + (id)getCommonNamesForCertificate:(struct OpaqueSecCertificateRef *)arg1;
-+ (struct OpaqueSecCertificateRef *)copyLeafCertificateForTrust:(struct __SecTrust *)arg1;
 + (struct OpaqueSecCertificateRef *)getLeafCertificateForTrust:(struct __SecTrust *)arg1;
 + (BOOL)itemExistsInKeychain:(void *)arg1;
-+ (id)copyCertificatesWithPersistentIDs:(id)arg1;
 + (id)getCertificatesWithPersistentIDs:(id)arg1;
 + (struct OpaqueSecIdentityRef *)copyIdentityWithPersistentID:(id)arg1;
 + (struct OpaqueSecCertificateRef *)copyCertificateWithPersistentID:(id)arg1;

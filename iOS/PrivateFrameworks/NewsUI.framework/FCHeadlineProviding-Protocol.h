@@ -95,11 +95,15 @@
 @property(readonly, copy, nonatomic) NSString *versionIdentifier;
 
 @optional
+@property(readonly, nonatomic) _Bool isLocalDraft;
+@property(readonly, copy, nonatomic) NSString *callToActionText;
+@property(readonly, copy, nonatomic) NSArray *linkedIssueIDs;
+@property(readonly, copy, nonatomic) NSArray *linkedArticleIDs;
 @property(readonly, nonatomic) _Bool showBundleSoftPaywall;
 @property(readonly, nonatomic, getter=isIssueOnly) _Bool issueOnly;
 @property(readonly, copy, nonatomic) FCIssue *masterIssue;
 @property(readonly, nonatomic) _Bool webEmbedsEnabled;
-@property(copy, nonatomic) FCHeadlineExperimentalTitleMetadata *experimentalTitleMetadata;
+@property(readonly, copy, nonatomic) FCHeadlineExperimentalTitleMetadata *experimentalTitleMetadata;
 @property(readonly, nonatomic) NSData *backingArticleRecordData;
 @property(readonly, nonatomic) id <FCHeadlineStocksFields> stocksFields;
 @property(readonly, nonatomic, getter=isBundlePaid) _Bool bundlePaid;

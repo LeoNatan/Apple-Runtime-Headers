@@ -13,6 +13,7 @@
 {
 }
 
+- (id)debugDescription;
 @property(retain, nonatomic) id <SXAutoPlacement> autoPlacement;
 - (id)initWithComponents:(id)arg1 componentLayouts:(id)arg2 componentStyles:(id)arg3 componentTextStyles:(id)arg4 textStyles:(id)arg5 resources:(id)arg6 autoPlacement:(id)arg7;
 

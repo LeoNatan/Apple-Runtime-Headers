@@ -29,6 +29,7 @@
 + (id)systemLibraryURLAllowingLithiumLookup:(BOOL)arg1;
 + (id)systemLibraryURL;
 + (id)_legacySystemLibraryPath;
++ (id)_legacySystemLibraryBookmarkData;
 + (void)_updateSystemLibraryURLWithOldValue:(id)arg1;
 + (id)systemLibraryBaseDirectory;
 + (BOOL)isValidSystemPhotoLibraryURL:(id)arg1;
@@ -42,7 +43,7 @@
 @property(copy) NSURL *libraryURL; // @synthesize libraryURL=_libraryURL;
 - (void).cxx_destruct;
 - (id)pathToAssetAlbumOrderStructure;
-- (id)assetAbbreviatedMetadataDirectoryForDirectory:(id)arg1;
+- (id)assetAbbreviatedMetadataDirectoryForDirectory:(id)arg1 type:(unsigned char)arg2;
 - (void)setDataProtectionComplete:(BOOL)arg1;
 - (BOOL)isDataProtectionComplete;
 - (id)_dataProtectionIndicatorFilePath;

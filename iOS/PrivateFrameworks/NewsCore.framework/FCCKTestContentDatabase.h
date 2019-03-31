@@ -47,6 +47,8 @@
 - (void)deleteArticleWithID:(id)arg1;
 - (void)updateArticleWithID:(id)arg1 modDate:(id)arg2 properties:(id)arg3;
 - (void)updateArticleWithID:(id)arg1 properties:(id)arg2;
+- (id)insertTestIssueListReferencingIssueIDs:(id)arg1;
+- (id)insertTestArticleListReferencingArticleIDs:(id)arg1;
 - (id)insertTestForYouConfigWithProperties:(id)arg1;
 - (void)insertTestArticleWithID:(id)arg1 properties:(id)arg2;
 - (id)insertTestArticleWithProperties:(id)arg1;

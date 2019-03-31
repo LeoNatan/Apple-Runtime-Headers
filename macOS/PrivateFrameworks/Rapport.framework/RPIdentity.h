@@ -13,6 +13,7 @@
 @interface RPIdentity : NSObject <NSSecureCoding>
 {
     BOOL _userAdded;
+    BOOL _disabled;
     BOOL _present;
     int _type;
     NSString *_accountID;
@@ -34,6 +35,7 @@
 + (BOOL)supportsSecureCoding;
 + (id)nullIdentity;
 @property(nonatomic) BOOL present; // @synthesize present=_present;
+@property(nonatomic) BOOL disabled; // @synthesize disabled=_disabled;
 @property(copy, nonatomic) NSDate *dateRequested; // @synthesize dateRequested=_dateRequested;
 @property(copy, nonatomic) NSDate *dateAcknowledged; // @synthesize dateAcknowledged=_dateAcknowledged;
 @property(nonatomic) BOOL userAdded; // @synthesize userAdded=_userAdded;
@@ -63,6 +65,7 @@
 - (id)descriptionWithLevel:(int)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
+- (id)initWithType:(int)arg1;
 - (id)initWithCoder:(id)arg1;
 
 @end

@@ -12,7 +12,7 @@
 #import <Silex/SXViewportChangeListener-Protocol.h>
 
 @class ADBannerView, NSError, NSString, SXAdController, SXIAdDebugView;
-@protocol SXHost, SXLayoutInvalidator;
+@protocol SXAnalyticsReporting, SXHost, SXLayoutInvalidator;
 
 @interface SXIAdComponentView : SXComponentView <ADBannerViewDelegate, SXAdDisplayInstructions, SXViewportChangeListener, SXAdDocumentStateObserver>
 {
@@ -23,6 +23,7 @@
     int _opportunityError;
     SXAdController *_adController;
     id <SXLayoutInvalidator> _layoutInvalidator;
+    id <SXAnalyticsReporting> _analyticsReporter;
     id <SXHost> _host;
     ADBannerView *_bannerView;
     CDUnknownBlockType _cancelHandler;
@@ -44,6 +45,7 @@
 @property(nonatomic) _Bool hasInvalidatedLayout; // @synthesize hasInvalidatedLayout=_hasInvalidatedLayout;
 @property(retain, nonatomic) ADBannerView *bannerView; // @synthesize bannerView=_bannerView;
 @property(readonly, nonatomic) id <SXHost> host; // @synthesize host=_host;
+@property(readonly, nonatomic) id <SXAnalyticsReporting> analyticsReporter; // @synthesize analyticsReporter=_analyticsReporter;
 @property(readonly, nonatomic) id <SXLayoutInvalidator> layoutInvalidator; // @synthesize layoutInvalidator=_layoutInvalidator;
 @property(readonly, nonatomic) __weak SXAdController *adController; // @synthesize adController=_adController;
 - (void).cxx_destruct;
@@ -72,7 +74,7 @@
 - (void)applicationDidEnterBackground:(id)arg1;
 - (void)adSheetDisconnectedNotification:(id)arg1;
 - (void)loadComponent:(id)arg1;
-- (id)initWithDOMObjectProvider:(id)arg1 viewport:(id)arg2 presentationDelegate:(id)arg3 analyticsReporting:(id)arg4 componentStyleRendererFactory:(id)arg5 adController:(id)arg6 layoutInvalidator:(id)arg7 host:(id)arg8;
+- (id)initWithDOMObjectProvider:(id)arg1 viewport:(id)arg2 presentationDelegate:(id)arg3 componentStyleRendererFactory:(id)arg4 adController:(id)arg5 layoutInvalidator:(id)arg6 analyticsReporting:(id)arg7 host:(id)arg8;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

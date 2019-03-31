@@ -42,6 +42,7 @@
 - (void).cxx_destruct;
 - (void)operationWillFinishWithError:(id)arg1;
 - (void)performOperation;
+- (void)prepareOperation;
 - (_Bool)validateOperation;
 
 @end

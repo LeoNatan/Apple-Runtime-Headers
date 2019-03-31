@@ -7,6 +7,7 @@
 #import <Foundation/NSString.h>
 
 @interface NSString (SafariServicesExtras)
++ (id)_sf_safeBrowsingPreferencesPlistPath;
 - (id)_sf_ensurePathExtension:(id)arg1;
 - (id)sf_lastPathComponentWithoutZipExtension;
 - (id)sf_stringByReplacingLastOccurrenceOfWhitespaceWithANonBreakingSpace;

@@ -6,28 +6,32 @@
 
 #import <UIKit/UIViewController.h>
 
+#import <MediaControls/MPRequestResponseControllerDelegate-Protocol.h>
 #import <MediaControls/UITableViewDataSource-Protocol.h>
 #import <MediaControls/UITableViewDelegate-Protocol.h>
 
-@class NSArray, NSString, UITableView, UIView;
+@class MPRequestResponseController, NSArray, NSString, UITableView, UIView;
 @protocol MediaControlsLanguageOptionsViewControllerDelegate;
 
-@interface MediaControlsLanguageOptionsViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@interface MediaControlsLanguageOptionsViewController : UIViewController <MPRequestResponseControllerDelegate, UITableViewDataSource, UITableViewDelegate>
 {
     NSArray *_languageOptionGroups;
     id <MediaControlsLanguageOptionsViewControllerDelegate> _delegate;
+    MPRequestResponseController *_requestResponseController;
     UIView *_materialView;
     UITableView *_tableView;
 }
 
 @property(retain, nonatomic) UITableView *tableView; // @synthesize tableView=_tableView;
 @property(retain, nonatomic) UIView *materialView; // @synthesize materialView=_materialView;
+@property(retain, nonatomic) MPRequestResponseController *requestResponseController; // @synthesize requestResponseController=_requestResponseController;
 @property(nonatomic) __weak id <MediaControlsLanguageOptionsViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSArray *languageOptionGroups; // @synthesize languageOptionGroups=_languageOptionGroups;
 - (void).cxx_destruct;
+- (_Bool)controller:(id)arg1 shouldRetryFailedRequestWithError:(id)arg2;
+- (void)controller:(id)arg1 defersResponseReplacement:(CDUnknownBlockType)arg2;
 - (void)tableView:(id)arg1 willDisplayHeaderView:(id)arg2 forSection:(long long)arg3;
 - (id)tableView:(id)arg1 viewForHeaderInSection:(long long)arg2;
-- (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 - (_Bool)tableView:(id)arg1 shouldHighlightRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
@@ -36,6 +40,7 @@
 - (struct CGSize)preferredContentSize;
 - (void)viewWillLayoutSubviews;
 - (void)viewDidLoad;
+- (id)initWithRouteUID:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

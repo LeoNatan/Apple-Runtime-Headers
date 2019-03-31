@@ -15,7 +15,7 @@ __attribute__((visibility("hidden")))
 - (unsigned int)desiredCommuteSessionState;
 - (unsigned int)desiredResourcePolicy;
 - (unsigned int)desiredLocationProviderType;
-- (unsigned int)type;
+- (int)type;
 
 @end
 

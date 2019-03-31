@@ -8,25 +8,18 @@
 
 #import <SiriInstrumentation/NSCopying-Protocol.h>
 
-@class NSString, SISchemaViewIDType;
+@class NSString;
 
 @interface SISchemaTextToSpeechBegin : PBCodable <NSCopying>
 {
-    long long _resultID;
+    NSString *_aceID;
     int _audioOutputRoute;
-    NSString *_ducID;
-    int _siriDialogPhase;
-    SISchemaViewIDType *_viewID;
     struct {
-        unsigned int resultID:1;
         unsigned int audioOutputRoute:1;
-        unsigned int siriDialogPhase:1;
     } _has;
 }
 
-@property(retain, nonatomic) SISchemaViewIDType *viewID; // @synthesize viewID=_viewID;
-@property(retain, nonatomic) NSString *ducID; // @synthesize ducID=_ducID;
-@property(nonatomic) long long resultID; // @synthesize resultID=_resultID;
+@property(retain, nonatomic) NSString *aceID; // @synthesize aceID=_aceID;
 - (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)hash;
@@ -37,17 +30,11 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
-- (int)StringAsSiriDialogPhase:(id)arg1;
-- (id)siriDialogPhaseAsString:(int)arg1;
-@property(nonatomic) _Bool hasSiriDialogPhase;
-@property(nonatomic) int siriDialogPhase; // @synthesize siriDialogPhase=_siriDialogPhase;
 - (int)StringAsAudioOutputRoute:(id)arg1;
 - (id)audioOutputRouteAsString:(int)arg1;
 @property(nonatomic) _Bool hasAudioOutputRoute;
 @property(nonatomic) int audioOutputRoute; // @synthesize audioOutputRoute=_audioOutputRoute;
-@property(readonly, nonatomic) _Bool hasViewID;
-@property(readonly, nonatomic) _Bool hasDucID;
-@property(nonatomic) _Bool hasResultID;
+@property(readonly, nonatomic) _Bool hasAceID;
 
 @end
 

@@ -7,11 +7,12 @@
 #import <AccountsUI/ACUIViewController.h>
 
 #import <AccountsUI/ACUIWebAuthDelegate-Protocol.h>
+#import <AccountsUI/ACUIWebLoginDelegate-Protocol.h>
 #import <AccountsUI/NSControlTextEditingDelegate-Protocol.h>
 
-@class ACUIWebAuthViewController, NSButton, NSPanel, NSString, NSView, NSWindow;
+@class ACUIWebAuthViewController, ACUIWebLoginViewController, NSButton, NSPanel, NSString, NSView, NSWindow;
 
-@interface ACUICredentialPromptViewController : ACUIViewController <ACUIWebAuthDelegate, NSControlTextEditingDelegate>
+@interface ACUICredentialPromptViewController : ACUIViewController <ACUIWebAuthDelegate, ACUIWebLoginDelegate, NSControlTextEditingDelegate>
 {
     BOOL _isVerifyingCredential;
     NSString *_password;
@@ -19,7 +20,11 @@
     NSButton *_okButton;
     NSView *_webViewContainer;
     NSPanel *_webAuthPanel;
-    ACUIWebAuthViewController *_webLoginVC;
+    ACUIWebAuthViewController *_webAuthVC;
+    ACUIWebLoginViewController *_webLoginVC;
+    NSView *_oauth2ViewContainer;
+    NSPanel *_oauth2Panel;
+    NSButton *_openSafariButton;
     NSWindow *_window;
     NSWindow *_sheet;
     CDUnknownBlockType _block;
@@ -28,7 +33,11 @@
 @property(copy) CDUnknownBlockType block; // @synthesize block=_block;
 @property(retain) NSWindow *sheet; // @synthesize sheet=_sheet;
 @property(retain) NSWindow *window; // @synthesize window=_window;
-@property(retain) ACUIWebAuthViewController *webLoginVC; // @synthesize webLoginVC=_webLoginVC;
+@property(retain) NSButton *openSafariButton; // @synthesize openSafariButton=_openSafariButton;
+@property(retain) NSPanel *oauth2Panel; // @synthesize oauth2Panel=_oauth2Panel;
+@property(retain) NSView *oauth2ViewContainer; // @synthesize oauth2ViewContainer=_oauth2ViewContainer;
+@property(retain) ACUIWebLoginViewController *webLoginVC; // @synthesize webLoginVC=_webLoginVC;
+@property(retain) ACUIWebAuthViewController *webAuthVC; // @synthesize webAuthVC=_webAuthVC;
 @property(retain) NSPanel *webAuthPanel; // @synthesize webAuthPanel=_webAuthPanel;
 @property(retain) NSView *webViewContainer; // @synthesize webViewContainer=_webViewContainer;
 @property(retain) NSButton *okButton; // @synthesize okButton=_okButton;
@@ -36,10 +45,14 @@
 @property(retain) NSString *password; // @synthesize password=_password;
 @property BOOL isVerifyingCredential; // @synthesize isVerifyingCredential=_isVerifyingCredential;
 - (void).cxx_destruct;
+- (void)cancelAuthorization:(id)arg1;
+- (void)startWebAuthorization:(id)arg1;
 - (BOOL)disableAutoReload;
 - (void)helpButton:(id)arg1;
 - (void)cancelButton:(id)arg1;
 - (void)saveAccountSucceeded;
+- (void)loginEndedWithError:(id)arg1;
+- (void)webLoginEndedWithError:(id)arg1;
 - (void)webAuthViewController:(id)arg1 loginEndedWithError:(id)arg2;
 - (void)saveAccountFailedWithError:(id)arg1;
 - (BOOL)willSaveAccount;

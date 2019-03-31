@@ -23,6 +23,8 @@
 @property(nonatomic) __weak PSSpecifier *specifier; // @synthesize specifier=_specifier;
 @property(readonly, nonatomic) UISegmentedControl *segmentedControl; // @synthesize segmentedControl=_segmentedControl;
 - (void).cxx_destruct;
+- (void)stopAnimatingSpinner;
+- (void)startAnimatingSpinner;
 - (void)selectedSegmentIndexChanged:(id)arg1;
 - (double)preferredHeightForWidth:(double)arg1;
 - (void)reloadFromSpecifier;

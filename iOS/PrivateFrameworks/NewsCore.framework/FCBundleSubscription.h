@@ -18,16 +18,18 @@
     unsigned long long _subscriptionState;
 }
 
-+ (id)expiredSubscription;
++ (id)subscriptionWithSubscriptionState:(unsigned long long)arg1 bundleChannelIDs:(id)arg2;
 @property(nonatomic) unsigned long long subscriptionState; // @synthesize subscriptionState=_subscriptionState;
-@property(readonly, nonatomic) _Bool isPurchaser; // @synthesize isPurchaser=_isPurchaser;
+@property(nonatomic) _Bool isPurchaser; // @synthesize isPurchaser=_isPurchaser;
 @property(copy, nonatomic) NSArray *bundleChannelIDs; // @synthesize bundleChannelIDs=_bundleChannelIDs;
 @property(copy, nonatomic) NSString *bundlePurchaseID; // @synthesize bundlePurchaseID=_bundlePurchaseID;
 - (void).cxx_destruct;
+- (id)debugDescription;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)containsTagID:(id)arg1;
 @property(readonly, nonatomic) _Bool isSubscribed;
-- (id)initWithBundlePurchaseID:(id)arg1 bundleChannelIDs:(id)arg2 isPurchaser:(_Bool)arg3;
+- (id)initWithBundlePurchaseID:(id)arg1 bundleChannelIDs:(id)arg2 inTrialPeriod:(_Bool)arg3 isPurchaser:(_Bool)arg4;
+- (_Bool)containsHeadline:(id)arg1;
 
 @end
 

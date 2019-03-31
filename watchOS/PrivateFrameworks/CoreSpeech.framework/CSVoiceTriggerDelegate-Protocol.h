@@ -6,10 +6,10 @@
 
 #import <CoreSpeech/NSObject-Protocol.h>
 
-@class NSData, NSDictionary;
+@class NSData, NSDictionary, NSString;
 
 @protocol CSVoiceTriggerDelegate <NSObject>
-- (void)voiceTriggerDidDetectKeyword:(NSDictionary *)arg1;
+- (void)voiceTriggerDidDetectKeyword:(NSDictionary *)arg1 deviceId:(NSString *)arg2;
 
 @optional
 - (void)voiceTriggerGotSuperVector:(NSData *)arg1;

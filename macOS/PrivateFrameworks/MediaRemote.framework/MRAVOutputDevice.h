@@ -25,6 +25,7 @@
     BOOL _canRelayCommunicationChannel;
     BOOL _supportsBufferedAirPlay;
     BOOL _supportsRapport;
+    BOOL _isAddedToHomeKit;
     BOOL _deviceGroupable;
     BOOL _pickedOnPairedDevice;
     BOOL _hasBatteryLevel;
@@ -68,6 +69,7 @@
 @property(readonly, nonatomic) unsigned int deviceType; // @synthesize deviceType=_deviceType;
 @property(readonly, nonatomic, getter=isPickedOnPairedDevice) BOOL pickedOnPairedDevice; // @synthesize pickedOnPairedDevice=_pickedOnPairedDevice;
 @property(readonly, nonatomic, getter=isDeviceGroupable) BOOL deviceGroupable; // @synthesize deviceGroupable=_deviceGroupable;
+@property(readonly, nonatomic) BOOL isAddedToHomeKit; // @synthesize isAddedToHomeKit=_isAddedToHomeKit;
 @property(readonly, nonatomic) BOOL supportsRapport; // @synthesize supportsRapport=_supportsRapport;
 @property(readonly, nonatomic) BOOL supportsBufferedAirPlay; // @synthesize supportsBufferedAirPlay=_supportsBufferedAirPlay;
 @property(readonly, nonatomic) BOOL canRelayCommunicationChannel; // @synthesize canRelayCommunicationChannel=_canRelayCommunicationChannel;
@@ -93,6 +95,7 @@
 @property(readonly, nonatomic) NSString *uid; // @synthesize uid=_uid;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) unsigned int volumeCapabilities;
 @property(readonly, nonatomic) NSDictionary *jsonEncodableDictionaryRepresentation;
 @property(readonly, nonatomic) NSString *roleDescription;
 @property(readonly, nonatomic) NSString *composedTypeDescription;

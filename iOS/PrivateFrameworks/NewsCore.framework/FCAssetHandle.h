@@ -48,7 +48,9 @@
 @property(readonly) NSURL *streamingURL;
 - (id)promise;
 - (id)downloadIfNeededWithGroup:(id)arg1;
+- (id)_downloadIfNeededWithPriority:(long long)arg1 completionQueue:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)downloadIfNeededWithCompletionQueue:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (id)downloadIfNeededWithPriority:(long long)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)downloadIfNeededWithCompletion:(CDUnknownBlockType)arg1;
 - (void)dealloc;
 - (id)initWithFilePath:(id)arg1;

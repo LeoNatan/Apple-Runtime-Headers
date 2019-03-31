@@ -25,7 +25,7 @@
 + (_Bool)canMakePaymentsUsingNetworks:(id)arg1 capabilities:(unsigned long long)arg2;
 + (_Bool)canMakePaymentsUsingNetworks:(id)arg1;
 + (_Bool)canMakePayments;
-@property(nonatomic) id <PKPaymentAuthorizationViewControllerPrivateDelegate> privateDelegate; // @synthesize privateDelegate=_privateDelegate;
+@property(nonatomic) __weak id <PKPaymentAuthorizationViewControllerPrivateDelegate> privateDelegate; // @synthesize privateDelegate=_privateDelegate;
 @property(nonatomic) _Bool viewHasAppeared; // @synthesize viewHasAppeared=_viewHasAppeared;
 @property(retain, nonatomic) PKPaymentAuthorizationCoordinator *paymentCoordinator; // @synthesize paymentCoordinator=_paymentCoordinator;
 @property(nonatomic) __weak id <PKPaymentAuthorizationViewControllerDelegate> delegate; // @synthesize delegate=_delegate;

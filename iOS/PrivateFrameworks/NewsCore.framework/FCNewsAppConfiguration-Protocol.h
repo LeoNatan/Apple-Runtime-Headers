@@ -52,6 +52,7 @@
 @property(readonly, nonatomic) NSArray *onboardingFeedIDs;
 
 @optional
+@property(readonly, nonatomic) long long feedContentExposureTestMaximumInterval;
 @property(readonly, nonatomic) long long criticalStorageThreshold;
 @property(readonly, nonatomic) long long lowStorageThreshold;
 @property(readonly, nonatomic, getter=isArticleToolbarCompressionEnabled) _Bool articleToolbarCompressionEnabled;

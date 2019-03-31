@@ -19,6 +19,7 @@
     _Bool _bestForCredentialPreFill;
     _Bool _bestForPageLevelAutoFill;
     _Bool _bestForStreamlinedLogin;
+    _Bool _eligibleForAutomaticLogin;
     _Bool _visible;
     _Bool _usesRelAsync;
     _Bool _usesGeneratedPassword;
@@ -48,6 +49,7 @@
 @property(readonly, copy, nonatomic) NSString *oldPasswordElementUniqueID; // @synthesize oldPasswordElementUniqueID=_oldPasswordElementUniqueID;
 @property(readonly, nonatomic) _Bool usesRelAsync; // @synthesize usesRelAsync=_usesRelAsync;
 @property(readonly, nonatomic, getter=isVisible) _Bool visible; // @synthesize visible=_visible;
+@property(readonly, nonatomic, getter=isEligibleForAutomaticLogin) _Bool eligibleForAutomaticLogin; // @synthesize eligibleForAutomaticLogin=_eligibleForAutomaticLogin;
 @property(readonly, nonatomic, getter=isBestForStreamlinedLogin) _Bool bestForStreamlinedLogin; // @synthesize bestForStreamlinedLogin=_bestForStreamlinedLogin;
 @property(readonly, nonatomic, getter=isBestForPageLevelAutoFill) _Bool bestForPageLevelAutoFill; // @synthesize bestForPageLevelAutoFill=_bestForPageLevelAutoFill;
 @property(readonly, nonatomic, getter=isBestForCredentialPreFill) _Bool bestForCredentialPreFill; // @synthesize bestForCredentialPreFill=_bestForCredentialPreFill;

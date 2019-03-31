@@ -34,6 +34,7 @@
 @property(readonly, nonatomic, getter=isValid) _Bool valid;
 - (void)invalidate;
 @property(readonly, nonatomic, getter=isActive) _Bool active;
+- (void)activateWithContext:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)activateWithContext:(id)arg1;
 - (void)activateWithOptions:(id)arg1;
 - (void)removeObserver:(id)arg1;

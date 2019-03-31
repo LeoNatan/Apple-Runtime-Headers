@@ -21,6 +21,7 @@
 @property(readonly, nonatomic) NSString *componentType; // @synthesize componentType=_componentType;
 @property(readonly, nonatomic) NSString *componentIdentifier; // @synthesize componentIdentifier=_componentIdentifier;
 - (void).cxx_destruct;
+- (id)description;
 - (id)initWithComponent:(id)arg1;
 
 @end

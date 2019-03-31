@@ -25,17 +25,15 @@
     _Bool _completed;
     UIViewPropertyAnimator *_alphaPropertyAnimator;
     _Bool _presenting;
-    _Bool _dragging;
-    float _draggingVelocity;
+    _Bool _dragged;
     PKPGSVTransitionInterstitialView *_leadingInterstitialItemView;
     PKPGSVTransitionInterstitialView *_trailingInterstitialItemView;
     double _duration;
 }
 
+@property(nonatomic, getter=wasDragged) _Bool dragged; // @synthesize dragged=_dragged;
 @property(retain, nonatomic) PKPGSVTransitionInterstitialView *trailingInterstitialItemView; // @synthesize trailingInterstitialItemView=_trailingInterstitialItemView;
 @property(retain, nonatomic) PKPGSVTransitionInterstitialView *leadingInterstitialItemView; // @synthesize leadingInterstitialItemView=_leadingInterstitialItemView;
-@property(nonatomic) float draggingVelocity; // @synthesize draggingVelocity=_draggingVelocity;
-@property(nonatomic, getter=isDragging) _Bool dragging; // @synthesize dragging=_dragging;
 @property(nonatomic) double duration; // @synthesize duration=_duration;
 @property(nonatomic, getter=isPresenting) _Bool presenting; // @synthesize presenting=_presenting;
 - (void).cxx_destruct;

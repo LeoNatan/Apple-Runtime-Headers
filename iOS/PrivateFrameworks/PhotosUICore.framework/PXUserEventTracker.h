@@ -54,7 +54,6 @@
 - (void)logForYouSuggestionSharedCount;
 - (void)logForYouSuggestionViewed1UpCount;
 - (void)logForYouSuggestionViewedCount;
-- (void)logForYouSharedAlbumActivityViewed1UpCount;
 - (void)logForYouNavigatedToSharedAlbumActivityViewFromRecentActivityEntry;
 - (void)logForYouNavigatedToSharedAlbumActivityViewFromCollageView;
 - (void)logForYouSharedAlbumInvitationReportedAsJunkCount;
@@ -93,6 +92,7 @@
 - (_Bool)isEventSourceSenderAppearingForTheFirstTime:(id)arg1;
 - (void)_applicationDidEnterBackground:(id)arg1;
 - (void)_applicationWillEnterForeground:(id)arg1;
+- (void)didPresentOneUpFromOrigin:(long long)arg1;
 - (void)logInterestingMemoryNotificationRespondedCount;
 - (void)logInterestingMemoryNotificationSeenCount;
 - (void)_resetDetailViewTraversalStatistics;

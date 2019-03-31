@@ -73,6 +73,8 @@ __attribute__((visibility("hidden")))
 - (void)_createImageViews;
 - (void)openURL;
 - (id)attributionString;
+- (id)formattedAttributionString;
+- (void)updateAttributionCell;
 - (void)addAttributionCell;
 - (void)updateBottomHairlineVisibility;
 - (void)dealloc;

@@ -6,7 +6,7 @@
 
 #import <NewsCore/FCMultiStepFetchOperation.h>
 
-@class FCHeldRecords, NSArray;
+@class NSArray;
 @protocol FCContentContext, FCCoreConfiguration;
 
 @interface FCArticleHeadlinesFetchOperation : FCMultiStepFetchOperation
@@ -22,12 +22,10 @@
     id <FCContentContext> _context;
     NSArray *_articleIDs;
     NSArray *_ignoreCacheForArticleIDs;
-    FCHeldRecords *_heldArticleRecords;
-    NSArray *_headlines;
+    NSArray *_resultHeadlines;
 }
 
-@property(retain, nonatomic) NSArray *headlines; // @synthesize headlines=_headlines;
-@property(retain, nonatomic) FCHeldRecords *heldArticleRecords; // @synthesize heldArticleRecords=_heldArticleRecords;
+@property(retain, nonatomic) NSArray *resultHeadlines; // @synthesize resultHeadlines=_resultHeadlines;
 @property(retain, nonatomic) NSArray *ignoreCacheForArticleIDs; // @synthesize ignoreCacheForArticleIDs=_ignoreCacheForArticleIDs;
 @property(retain, nonatomic) NSArray *articleIDs; // @synthesize articleIDs=_articleIDs;
 @property(retain, nonatomic) id <FCContentContext> context; // @synthesize context=_context;

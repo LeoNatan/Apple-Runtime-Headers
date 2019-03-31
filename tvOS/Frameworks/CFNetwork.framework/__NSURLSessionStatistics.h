@@ -18,7 +18,7 @@
 + (void)fillCFNetworkTransactionMetricStruct:(CDStruct_a2c7495a *)arg1 from:(id)arg2 forTaskUUID:(unsigned char [16])arg3;
 + (int)getNetworkProtocol:(id)arg1;
 + (int)getTaskType:(id)arg1;
-+ (CDStruct_34528418 *)createCFNetworkTaskMetrics_s:(id)arg1;
++ (CDStruct_2615cf90 *)createCFNetworkTaskMetrics_s:(id)arg1;
 + (void)reportMetricsToSymptoms:(id)arg1;
 @property(retain) NSArray *externallyVisibleConnectionUUIDs; // @synthesize externallyVisibleConnectionUUIDs=_externallyVisibleConnectionUUIDs;
 @property(retain) NSUUID *externallyVisibleNwActivity; // @synthesize externallyVisibleNwActivity=_externallyVisibleNwActivity;

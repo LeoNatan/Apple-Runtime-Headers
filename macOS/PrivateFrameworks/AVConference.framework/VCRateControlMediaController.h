@@ -44,6 +44,7 @@ __attribute__((visibility("hidden")))
     int _basebandFlushCount;
     int _basebandFlushedVideoCount;
     int _basebandFlushedAudioCount;
+    double _lastBasebandFlushCountChangeTime;
     double _lastBasebandFlushAudioTime;
     double _lastBasebandFlushVideoTime;
     unsigned short _videoFlushTransactionID;
@@ -73,6 +74,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) BOOL isVideoStoppedByVCRateControl; // @synthesize isVideoStoppedByVCRateControl=_isVideoStoppedByVCRateControl;
 @property(readonly, nonatomic) int basebandFlushedAudioCount; // @synthesize basebandFlushedAudioCount=_basebandFlushedAudioCount;
 @property(readonly, nonatomic) int basebandFlushedVideoCount; // @synthesize basebandFlushedVideoCount=_basebandFlushedVideoCount;
+@property(nonatomic) double lastBasebandFlushCountChangeTime; // @synthesize lastBasebandFlushCountChangeTime=_lastBasebandFlushCountChangeTime;
 @property(nonatomic) int basebandFlushCount; // @synthesize basebandFlushCount=_basebandFlushCount;
 @property(nonatomic) unsigned int targetBitrate; // @synthesize targetBitrate=_targetBitrate;
 @property(nonatomic) unsigned int minTargetBitrate; // @synthesize minTargetBitrate=_minTargetBitrate;

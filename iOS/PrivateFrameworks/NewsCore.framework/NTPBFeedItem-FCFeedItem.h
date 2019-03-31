@@ -10,6 +10,7 @@
 #import <NewsCore/FCFeedTransformationItem-Protocol.h>
 
 @class COMAPPLEFELDSPARPROTOCOLLIVERPOOLCohortList, NSArray, NSDate, NSString;
+@protocol FCChannelProviding;
 
 @interface NTPBFeedItem (FCFeedItem) <FCClassifiable, FCFeedTransformationItem>
 + (id)feedItemWithCKFeedItemAndArticleRecord:(id)arg1 storefrontID:(id)arg2;
@@ -54,6 +55,7 @@
 @property(readonly, nonatomic) unsigned long long order;
 @property(readonly, nonatomic, getter=isPaid) _Bool paid;
 @property(readonly, nonatomic) unsigned long long publishDateMilliseconds;
+@property(readonly, copy, nonatomic) id <FCChannelProviding> sourceChannel;
 @property(readonly, copy, nonatomic) NSString *sourceChannelID;
 @property(readonly) Class superclass;
 @property(readonly, copy, nonatomic) NSArray *topicIDs;

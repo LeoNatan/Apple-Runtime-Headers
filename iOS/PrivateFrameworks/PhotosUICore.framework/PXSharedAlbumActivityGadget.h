@@ -72,6 +72,7 @@
 - (id)oneUpPresentationInitialAssetReference:(id)arg1;
 - (id)oneUpPresentationMediaProvider:(id)arg1;
 - (id)oneUpPresentationDataSourceManager:(id)arg1;
+- (long long)oneUpPresentationOrigin:(id)arg1;
 - (id)uniqueGadgetIdentifier;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (_Bool)hasLoadedContentData;

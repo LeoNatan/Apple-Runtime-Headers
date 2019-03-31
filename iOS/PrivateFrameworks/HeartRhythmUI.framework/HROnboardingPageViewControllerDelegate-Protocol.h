@@ -16,6 +16,7 @@
 - (void)stepForward;
 
 @optional
+@property(readonly, nonatomic) _Bool firstTimeOnboarding;
 @property(retain, nonatomic) NSMutableDictionary *userInfo;
 - (void)notNowTapped;
 @end

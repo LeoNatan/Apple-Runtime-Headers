@@ -26,6 +26,7 @@
     int _statusBarVisibility;
     PKAssertion *_notificationSuppressionAssertion;
     NSString *_hostBundleIdentifier;
+    NSString *_hostTeamID;
     NSString *_hostLocalizedAppName;
     PKPaymentRequest *_paymentRequest;
     _Bool _paymentAuthorizationPresented;
@@ -60,7 +61,6 @@
 - (void)dismissWithRemoteOrigination:(_Bool)arg1;
 - (void)_dismiss;
 - (id)_remoteObjectProxy;
-- (int)_iconVariantForScale:(double)arg1;
 - (void)authorizationDidSelectPaymentMethod:(id)arg1;
 - (void)authorizationDidSelectShippingAddress:(id)arg1;
 - (void)authorizationDidSelectShippingMethod:(id)arg1;
@@ -93,6 +93,7 @@
 - (void)_presentVerifyPassAlertWithRelevantUniqueID:(id)arg1;
 - (void)_presentActivatingPassAlertWithRelevantUniqueID:(id)arg1;
 - (void)_presentPaymentAuthorization;
+- (void)_presentAmpEnrollmentAuthorization;
 - (_Bool)_peerPaymentIdentityVerificationRequired;
 - (void)_presentPeerPaymentIdentityVerification;
 - (void)_presentPaymentSetup;

@@ -13,11 +13,12 @@
 
 @property(readonly, nonatomic) double accessoryLineHeight; // @synthesize accessoryLineHeight=_accessoryLineHeight;
 - (double)_titleTopOffsetWithTemplate:(id)arg1;
-- (double)imageToTextSpacing;
 - (double)imageAspectRatio;
 - (id)accessoryIconColor;
+- (double)titleLineHeight;
+- (id)titleFont;
+- (long long)titleFontSize;
 - (long long)numberOfSegments;
-- (double)segmentViewHeight;
 - (double)accessoryViewToBottom;
 - (double)titleToAccessoryViewSpacingWithTemplate:(id)arg1;
 - (double)titleRightMargin;

@@ -25,7 +25,7 @@
 - (id)_queue_addHandleForToken:(id)arg1;
 - (void)handleMessage:(id)arg1 withType:(long long)arg2;
 - (void)queue_invalidateRemoteAlertForHandle:(id)arg1;
-- (void)queue_activateRemoteAlertForHandle:(id)arg1 withContext:(id)arg2;
+- (void)queue_activateRemoteAlertForHandle:(id)arg1 withContext:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)queue_newHandleForRemoteAlertWithDefinition:(id)arg1 context:(id)arg2;
 - (void)queue_lookupHandlesForRemoteAlertWithDefinition:(id)arg1 creatingIfNone:(_Bool)arg2 withCompletion:(CDUnknownBlockType)arg3;
 - (void)dealloc;

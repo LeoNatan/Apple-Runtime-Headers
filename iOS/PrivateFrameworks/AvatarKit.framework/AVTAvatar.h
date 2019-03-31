@@ -9,7 +9,7 @@
 #import <AvatarKit/NSCopying-Protocol.h>
 #import <AvatarKit/SCNSceneRendererDelegate-Protocol.h>
 
-@class AVTEyeSkinningDescriptor, AVTMemoji, AVTPhysicsController, AVTPupilReflectionCorrectionDescriptor, NSMutableArray, NSString, SCNNode;
+@class AVTEyeSkinningDescriptor, AVTMemoji, AVTPhysicsController, AVTPupilReflectionCorrectionDescriptor, CAAnimation, NSMutableArray, NSString, SCNAnimationPlayer, SCNNode;
 
 @interface AVTAvatar : NSObject <NSCopying, SCNSceneRendererDelegate>
 {
@@ -36,6 +36,8 @@
     // Error parsing type: , name: _arOffset
     float _arScale;
     double _physicsScaleFactor;
+    CAAnimation *_bakedAnimation;
+    SCNAnimationPlayer *_bakedAnimationPlayer_lazy;
 }
 
 + (id)avatarWithDataRepresentation:(id)arg1 error:(id *)arg2;
@@ -46,6 +48,7 @@
 + (struct SCNVector4)applyGazeCorrectionWithInputAngle:translation: /* Error: Ran out of types for this method. */;
 + (id)animationClips;
 + (id)animationClipForExpression:(long long)arg1;
++ (void)initialize;
 + (id)avatarWithData:(id)arg1 error:(id *)arg2;
 + (id)avatar;
 - (void).cxx_destruct;
@@ -113,6 +116,11 @@
 - (void)resetARModeBehaviours;
 @property(nonatomic) _Bool arMode;
 - (void)_updateShaderModifier:(id)arg1 forARMode:(_Bool)arg2 withOnTopMask:(_Bool)arg3;
+- (id)bakedAnimationPlayer;
+- (id)bakedAnimationCopy;
+- (void)resumeBakedAnimation;
+- (void)pauseBakedAnimation;
+- (void)setBakedAnimationReferenceTime:(double)arg1;
 @property(readonly) SCNNode *avatarNode;
 @property(readonly) SCNNode *neckNode;
 @property(readonly) SCNNode *headNode;

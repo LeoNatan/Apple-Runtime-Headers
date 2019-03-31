@@ -6,22 +6,24 @@
 
 #import <objc/NSObject.h>
 
-#import <Silex/SXAXAssistiveTechStatusChangeListener-Protocol.h>
+#import <Silex/SXComponentController-Protocol.h>
 #import <Silex/SXLayoutIntegrator-Protocol.h>
 #import <Silex/SXViewportChangeListener-Protocol.h>
 
-@class NSArray, NSMutableArray, NSMutableDictionary, NSString, SXLayoutBlueprint, SXPresentationAttributes, SXViewport;
+@class NSArray, NSHashTable, NSMutableArray, NSMutableDictionary, NSString, SXLayoutBlueprint, SXPresentationAttributes, SXViewport;
 @protocol SXComponentHosting, SXComponentViewEngine, SXDOMObjectProviding;
 
-@interface SXComponentController : NSObject <SXViewportChangeListener, SXAXAssistiveTechStatusChangeListener, SXLayoutIntegrator>
+@interface SXComponentController : NSObject <SXViewportChangeListener, SXComponentController, SXLayoutIntegrator>
 {
     _Bool _isPresented;
     _Bool _isPresenting;
-    id <SXComponentHosting> _host;
     SXLayoutBlueprint *_presentedBlueprint;
+    NSArray *_flattenedComponentViews;
+    id <SXComponentHosting> _host;
     SXViewport *_viewport;
     id <SXComponentViewEngine> _componentViewEngine;
     id <SXDOMObjectProviding> _DOMObjectProvider;
+    NSHashTable *_observers;
     NSMutableDictionary *_mappedComponentViews;
     NSMutableArray *_sortedComponentViews;
     NSMutableArray *_nestedComponentViews;
@@ -33,15 +35,16 @@
 @property(retain, nonatomic) NSMutableArray *nestedComponentViews; // @synthesize nestedComponentViews=_nestedComponentViews;
 @property(retain, nonatomic) NSMutableArray *sortedComponentViews; // @synthesize sortedComponentViews=_sortedComponentViews;
 @property(retain, nonatomic) NSMutableDictionary *mappedComponentViews; // @synthesize mappedComponentViews=_mappedComponentViews;
+@property(readonly, nonatomic) NSHashTable *observers; // @synthesize observers=_observers;
 @property(readonly, nonatomic) id <SXDOMObjectProviding> DOMObjectProvider; // @synthesize DOMObjectProvider=_DOMObjectProvider;
 @property(readonly, nonatomic) id <SXComponentViewEngine> componentViewEngine; // @synthesize componentViewEngine=_componentViewEngine;
 @property(readonly, nonatomic) SXViewport *viewport; // @synthesize viewport=_viewport;
+@property(nonatomic) __weak id <SXComponentHosting> host; // @synthesize host=_host;
 @property(readonly, nonatomic) _Bool isPresented; // @synthesize isPresented=_isPresented;
 @property(readonly, nonatomic) SXLayoutBlueprint *presentedBlueprint; // @synthesize presentedBlueprint=_presentedBlueprint;
-@property(nonatomic) __weak id <SXComponentHosting> host; // @synthesize host=_host;
 - (void).cxx_destruct;
 - (void)assistiveTechnologyStatusDidChange;
-@property(readonly, nonatomic) struct CGSize viewportSize;
+- (struct CGSize)viewportSize;
 - (void)updateVisibilityStatesForComponentViews:(id)arg1 parentComponent:(id)arg2 withOffset:(struct CGPoint)arg3;
 - (void)updateVisibilityStatesForComponentViews:(id)arg1;
 - (void)updateVisibilityStatesForComponentViews:(id)arg1 toState:(long long)arg2;
@@ -50,8 +53,8 @@
 - (struct CGRect)renderBounds;
 - (void)viewport:(id)arg1 boundsDidChangeFromBounds:(struct CGRect)arg2;
 - (void)viewport:(id)arg1 appearStateChangedFromState:(unsigned long long)arg2;
-@property(readonly, nonatomic) NSArray *flattenedComponentViews;
-@property(readonly, nonatomic) NSArray *componentViews;
+@property(readonly, nonatomic) NSArray *flattenedComponentViews; // @synthesize flattenedComponentViews=_flattenedComponentViews;
+- (id)componentViews;
 - (void)provideInfosLayoutTo:(id)arg1;
 - (id)componentViewForIdentifier:(id)arg1;
 - (id)componentViewsForRole:(int)arg1 forLayoutBlueprint:(id)arg2;
@@ -59,6 +62,8 @@
 - (id)componentViewForPoint:(struct CGPoint)arg1 inComponents:(id)arg2;
 - (id)componentViewForPoint:(struct CGPoint)arg1;
 - (id)componentsInRect:(struct CGRect)arg1;
+- (void)removeObserver:(id)arg1;
+- (void)addObserver:(id)arg1;
 - (void)removeComponentsInLayoutBlueprint:(id)arg1 removedFromLayoutBlueprint:(id)arg2;
 - (void)presentComponentsInBlueprint:(id)arg1;
 - (id)presentComponentBlueprint:(id)arg1 inHost:(id)arg2 columnLayout:(id)arg3;

@@ -306,6 +306,7 @@
 @property(readonly, nonatomic) AVAsset *asset;
 - (void)_loadAssetAndPlayerItem;
 - (void)loadAssetAndPlayerItem;
+@property(readonly, nonatomic) _Bool canUseLoadedAsset;
 - (void)flushNowPlayingCaches;
 - (void)dealloc;
 - (void)_releaseAllTimeMarkers;

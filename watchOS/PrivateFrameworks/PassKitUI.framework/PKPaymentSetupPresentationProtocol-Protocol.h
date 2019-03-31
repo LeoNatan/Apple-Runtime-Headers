@@ -11,7 +11,6 @@
 @protocol PKPaymentSetupPresentationProtocol <NSObject>
 
 @optional
-- (_Bool)shouldRemoveViewController;
 - (NSString *)paymentSetupMarker;
 - (NSString *)onPresentationRemoveViewControllersAfterMarker;
 - (void)presentWithNavigationController:(UINavigationController *)arg1 animated:(_Bool)arg2 completion:(void (^)(void))arg3;

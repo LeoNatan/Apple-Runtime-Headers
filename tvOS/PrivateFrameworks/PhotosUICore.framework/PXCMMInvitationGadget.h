@@ -47,6 +47,7 @@
 - (void)_changeViewConfiguration:(CDUnknownBlockType)arg1;
 - (void)_loadInvitation:(id)arg1;
 @property(retain, nonatomic) id <PXCMMInvitation> invitation;
+- (void)contentHasBeenSeen;
 - (id)uniqueGadgetIdentifier;
 @property(readonly, nonatomic) _Bool supportsSelection;
 @property(readonly, nonatomic) _Bool supportsHighlighting;

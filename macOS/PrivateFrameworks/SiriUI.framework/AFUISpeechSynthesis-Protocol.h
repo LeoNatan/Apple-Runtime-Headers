@@ -15,6 +15,7 @@
 - (void)invalidate;
 - (void)skipCurrentSynthesis;
 - (void)cancel;
+- (void)enqueuePhaticWithCompletion:(void (^)(long long))arg1;
 - (void)enqueueText:(NSString *)arg1 completion:(void (^)(long long))arg2;
 - (void)enqueueText:(NSString *)arg1 isPhonetic:(BOOL)arg2 provisionally:(BOOL)arg3 eligibleAfterDuration:(double)arg4 preparationIdentifier:(NSString *)arg5 completion:(void (^)(long long))arg6 animationIdentifier:(NSString *)arg7;
 @end

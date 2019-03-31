@@ -29,7 +29,7 @@ __attribute__((visibility("hidden")))
 - (id)createSharedAlbumListViewControllerWithConfiguration:(id)arg1;
 - (id)createAlbumListViewControllerWithConfiguration:(id)arg1;
 - (_Bool)_isEmpty:(id)arg1;
-- (void)createGridViewControllerWithAssets:(id)arg1 withTitle:(id)arg2 hideTabBar:(_Bool)arg3 containerViewController:(id)arg4 navigationItemDelegate:(id)arg5 andCompletion:(CDUnknownBlockType)arg6;
+- (void)createGridViewControllerWithAssets:(id)arg1 withTitle:(id)arg2 hideTabBar:(_Bool)arg3 gridPresentationContext:(long long)arg4 containerViewController:(id)arg5 navigationItemDelegate:(id)arg6 andCompletion:(CDUnknownBlockType)arg7;
 - (id)initWithUserInterfaceIdiom:(long long)arg1;
 - (id)init;
 

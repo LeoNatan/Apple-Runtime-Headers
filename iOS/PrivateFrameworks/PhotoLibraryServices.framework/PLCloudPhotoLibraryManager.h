@@ -15,7 +15,7 @@
 #import <PhotoLibraryServices/PLCloudUserSessionHandling-Protocol.h>
 #import <PhotoLibraryServices/PLForegroundMonitorDelegate-Protocol.h>
 
-@class CPLLibraryManager, NSDate, NSMutableDictionary, NSNumber, NSString, PFCoalescer, PLBatterySaverWatcher, PLCloudBatchDownloader, PLCloudBatchUploader, PLCloudInMemoryTaskManager, PLCloudPhotoLibraryUploadTracker, PLCloudResourceManager, PLCloudTaskManager, PLForegroundMonitor, PLPhotoLibrary;
+@class CPLLibraryManager, NSDate, NSMutableDictionary, NSNumber, NSString, PFCoalescer, PLBatterySaverWatcher, PLCloudBatchDownloader, PLCloudBatchUploader, PLCloudInMemoryTaskManager, PLCloudPhotoLibraryUploadTracker, PLCloudPhotoLibraryUserSwitchHandler, PLCloudResourceManager, PLCloudTaskManager, PLForegroundMonitor, PLPhotoLibrary;
 @protocol OS_dispatch_queue, OS_dispatch_source, PLCloudChangeTracker;
 
 @interface PLCloudPhotoLibraryManager : NSObject <PLCloudChangeTrackerDelegate, PLCloudPersistentHistoryMigratorContext, CPLResourceProgressDelegate, CPLLibraryManagerDelegate, PLForegroundMonitorDelegate, PLBatterySaverWatcherDelegate, PLCloudUserSessionHandling, CPLStatusDelegate>
@@ -58,6 +58,7 @@
     PLCloudPhotoLibraryUploadTracker *_uploadTracker;
     NSMutableDictionary *_placeholderAssetAvailabilityHandlers;
     struct os_unfair_lock_s _placeholderAssetAvailabilityHandlersLock;
+    PLCloudPhotoLibraryUserSwitchHandler *_switchHandler;
     NSNumber *__numberOfPhotosToPush;
     NSNumber *__numberOfVideosToPush;
     NSNumber *__numberOfOtherItemsToPush;
@@ -187,6 +188,7 @@
 - (void)batterySaverModeDidChange;
 - (void)_checkEnableState;
 - (void)_processNextTransaction;
+- (void)_repushVideoAssetsMetadata;
 - (void)_handleOptimizeSettingChange;
 - (void)reportMiscInformation:(id)arg1;
 - (void)_updatePendingResetSyncDate;
@@ -212,6 +214,7 @@
 - (void)beginsSignificantWorkWithResourcesSize:(unsigned long long)arg1;
 - (void)_migrateFromChangeHubToCoreDataIfNecessary;
 - (void)_sendOptimizeFeedbackIfNecessary;
+- (void)_repushVideoAssetsMetadataIfNecessary;
 - (void)_runOneTimeMigrationStepsIfNecessary;
 - (void)_initializeMasterAndSizeCalculation;
 - (void)_promptForCameraCaptureSettingChangeWithReason:(int)arg1;
@@ -219,6 +222,7 @@
 - (void)_openCPLLibrary;
 - (void)_enableiCPL;
 - (void)enableiCPL;
+- (long long)sizeOfResourcesToUploadByCPL:(id *)arg1;
 - (id)init;
 - (id)_debugNameForMode:(unsigned long long)arg1;
 

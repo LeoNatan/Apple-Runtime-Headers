@@ -14,6 +14,7 @@
 @interface PKPackage : NSObject <NSCoding, NSCopying>
 {
     NSURL *_url;
+    NSDictionary *_options;
     PKArchive *_archive;
     PKPackageInfo *_packageInfo;
     NSDictionary *_componentMap;
@@ -21,7 +22,9 @@
     BOOL _populatedSubpaths;
 }
 
++ (id)packageWithURL:(id)arg1 options:(id)arg2;
 + (id)packageWithURL:(id)arg1;
++ (id)packageWithPath:(id)arg1 options:(id)arg2;
 + (id)packageWithPath:(id)arg1;
 + (id)_allPackageClasses;
 + (BOOL)canInitWithURL:(id)arg1;
@@ -54,7 +57,7 @@
 - (id)_staticObsoleteDirectories;
 - (id)_staticObsoleteFiles;
 - (id)BOMData;
-- (id)initWithURL:(id)arg1;
+- (id)initWithURL:(id)arg1 options:(id)arg2;
 - (id)firmwareComponentsOfType:(long long)arg1;
 
 @end

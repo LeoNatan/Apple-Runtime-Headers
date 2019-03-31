@@ -75,6 +75,7 @@
 - (void)willResignActive;
 - (void)viewWillDisappear:(_Bool)arg1;
 - (id)specifiers;
+@property(readonly) _Bool shouldShowCompatibilityAlert;
 - (_Bool)shouldReloadSpecifiersOnResume;
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)viewDidLoad;

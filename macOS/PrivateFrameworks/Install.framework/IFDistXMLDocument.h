@@ -91,6 +91,7 @@
 - (int)trustLevelReturningTrustRef:(struct __SecTrust **)arg1;
 - (int)trustLevelReturningCertificateChain:(id *)arg1;
 - (BOOL)evaluateTrust;
+- (id)_allPkgRefsForChoice:(id)arg1;
 - (id)_allPkgRefIdentifiersForChoice:(id)arg1;
 - (void)setMinimumRequiredTrustLevel:(int)arg1;
 - (int)minimumRequiredTrustLevel;

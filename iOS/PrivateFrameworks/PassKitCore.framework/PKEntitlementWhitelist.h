@@ -22,6 +22,7 @@
     _Bool _webPayments;
     _Bool _winterpegPayments;
     _Bool _cardOnFilePayments;
+    _Bool _AMPCardEnrollment;
     _Bool _trustedDeviceEnrollmentInfo;
     _Bool _peerPaymentAllAccess;
     _Bool _featuresAllAccess;
@@ -47,6 +48,7 @@
 @property(readonly) _Bool featuresAllAccess; // @synthesize featuresAllAccess=_featuresAllAccess;
 @property(readonly) _Bool peerPaymentAllAccess; // @synthesize peerPaymentAllAccess=_peerPaymentAllAccess;
 @property(readonly) _Bool trustedDeviceEnrollmentInfo; // @synthesize trustedDeviceEnrollmentInfo=_trustedDeviceEnrollmentInfo;
+@property(readonly) _Bool AMPCardEnrollment; // @synthesize AMPCardEnrollment=_AMPCardEnrollment;
 @property(readonly) _Bool cardOnFilePayments; // @synthesize cardOnFilePayments=_cardOnFilePayments;
 @property(readonly) _Bool winterpegPayments; // @synthesize winterpegPayments=_winterpegPayments;
 @property(readonly) _Bool webPayments; // @synthesize webPayments=_webPayments;

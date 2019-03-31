@@ -30,7 +30,6 @@
 
 @property(retain, nonatomic) NSString *productType; // @synthesize productType=_productType;
 @property(nonatomic) __weak id <HROnboardingManagerDelegate> onboardingManagerDelegate; // @synthesize onboardingManagerDelegate=_onboardingManagerDelegate;
-@property(nonatomic) _Bool firstTimeOnboarding; // @synthesize firstTimeOnboarding=_firstTimeOnboarding;
 @property(retain, nonatomic) HKDateCache *dateCache; // @synthesize dateCache=_dateCache;
 @property(retain, nonatomic) HKHeartRhythmAvailability *availability; // @synthesize availability=_availability;
 @property(retain, nonatomic) HKHealthStore *healthStore; // @synthesize healthStore=_healthStore;
@@ -39,6 +38,7 @@
 @property(nonatomic) unsigned long long currentPageNumber; // @synthesize currentPageNumber=_currentPageNumber;
 @property(retain, nonatomic) HROnboardingSequence *sequence; // @synthesize sequence=_sequence;
 @property(retain, nonatomic) UINavigationController *navigationController; // @synthesize navigationController=_navigationController;
+@property(nonatomic) _Bool firstTimeOnboarding; // @synthesize firstTimeOnboarding=_firstTimeOnboarding;
 @property(retain, nonatomic) NSMutableDictionary *userInfo; // @synthesize userInfo=_userInfo;
 - (void).cxx_destruct;
 - (void)_didStepBackward;
@@ -51,6 +51,7 @@
 - (id)onboardingNavigationController;
 - (id)initWithHealthStore:(id)arg1 dateCache:(id)arg2 onboardingIntent:(long long)arg3;
 - (id)initWithHealthStore:(id)arg1 dateCache:(id)arg2 onboardingIntent:(long long)arg3 delegate:(id)arg4;
+- (id)initWithHealthStore:(id)arg1 dateCache:(id)arg2 onboardingIntent:(long long)arg3 delegate:(id)arg4 firstTimeOnboarding:(_Bool)arg5;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

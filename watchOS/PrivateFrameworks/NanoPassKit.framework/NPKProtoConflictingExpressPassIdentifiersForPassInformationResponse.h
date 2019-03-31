@@ -13,11 +13,14 @@
 @interface NPKProtoConflictingExpressPassIdentifiersForPassInformationResponse : PBCodable <NSCopying>
 {
     NSMutableArray *_conflictingExpressPassIdentifiers;
+    NSMutableArray *_conflictingReferenceExpressPassIdentifiers;
     _Bool _pending;
     CDStruct_eab6c78c _has;
 }
 
++ (Class)conflictingReferenceExpressPassIdentifiersType;
 + (Class)conflictingExpressPassIdentifiersType;
+@property(retain, nonatomic) NSMutableArray *conflictingReferenceExpressPassIdentifiers; // @synthesize conflictingReferenceExpressPassIdentifiers=_conflictingReferenceExpressPassIdentifiers;
 @property(retain, nonatomic) NSMutableArray *conflictingExpressPassIdentifiers; // @synthesize conflictingExpressPassIdentifiers=_conflictingExpressPassIdentifiers;
 @property(nonatomic) _Bool pending; // @synthesize pending=_pending;
 - (void).cxx_destruct;
@@ -30,6 +33,10 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+- (id)conflictingReferenceExpressPassIdentifiersAtIndex:(unsigned int)arg1;
+- (unsigned int)conflictingReferenceExpressPassIdentifiersCount;
+- (void)addConflictingReferenceExpressPassIdentifiers:(id)arg1;
+- (void)clearConflictingReferenceExpressPassIdentifiers;
 - (id)conflictingExpressPassIdentifiersAtIndex:(unsigned int)arg1;
 - (unsigned int)conflictingExpressPassIdentifiersCount;
 - (void)addConflictingExpressPassIdentifiers:(id)arg1;

@@ -64,6 +64,7 @@
 - (void)removeObserver:(id)arg1;
 - (void)addScanObserver:(id)arg1;
 - (void)addObserver:(id)arg1;
+@property(readonly, nonatomic, getter=isPairing) _Bool pairing;
 - (void)dealloc;
 - (id)init;
 - (id)__init;

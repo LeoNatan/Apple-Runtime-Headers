@@ -11,7 +11,7 @@
 @protocol IAMWebProcessDelegate <NSObject>
 - (void)webProcessJSODidCallClose;
 - (void)webProcessJSODidCallOpen:(NSString *)arg1;
-- (void)webProcessJSODidCallPerformAction:(NSString *)arg1 actionDictionary:(NSDictionary *)arg2;
+- (void)webProcessJSODidCallPerformAction:(NSDictionary *)arg1;
 - (void)webProcessJSODidReportEvent:(NSDictionary *)arg1;
 - (void)webProcessPlugInBrowserContextControllerGlobalObjectIsAvailableForFrame;
 - (void)webProcessPlugInWillDestroyBrowserContextController;

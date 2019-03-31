@@ -50,6 +50,7 @@
     UIView *_keyLine;
     _Bool _didRampScreenBrightness;
     unsigned char _visiblityState;
+    _Bool _showDoneButton;
     PKPass *_pass;
     unsigned long long _suppressedContent;
     id <PKPassDeleteHandler> _deleteOverrider;
@@ -58,6 +59,7 @@
 + (_Bool)isWifiEnabled;
 + (id)_linkColor;
 + (id)_linkTextAttributes;
+@property(nonatomic) _Bool showDoneButton; // @synthesize showDoneButton=_showDoneButton;
 @property(nonatomic) id <PKPassDeleteHandler> deleteOverrider; // @synthesize deleteOverrider=_deleteOverrider;
 @property(nonatomic) unsigned long long suppressedContent; // @synthesize suppressedContent=_suppressedContent;
 @property(readonly, nonatomic) PKPass *pass; // @synthesize pass=_pass;

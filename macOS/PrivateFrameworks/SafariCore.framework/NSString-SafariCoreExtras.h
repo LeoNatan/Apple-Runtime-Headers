@@ -39,7 +39,7 @@
 - (id)safari_simplifiedUserVisibleURLString;
 - (id)safari_simplifiedUserVisibleURLStringWithSimplifications:(unsigned long long)arg1 forDisplayOnly:(BOOL)arg2 simplifiedStringOffset:(unsigned long long *)arg3;
 - (id)safari_base64DecodedData;
-- (id)safari_highLevelDomainFromHost;
+@property(readonly, copy, nonatomic) NSString *safari_highLevelDomainFromHost;
 - (id)safari_filenameByFixingIllegalCharacters;
 - (BOOL)safari_containsInteriorWhitespace;
 - (id)safari_stringByTrimmingWhitespace;

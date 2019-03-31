@@ -12,6 +12,7 @@
 @protocol PXMutableImageRequester <NSObject>
 @property(nonatomic) struct CGSize viewportSize;
 @property(nonatomic) struct CGRect desiredContentsRect;
+@property(nonatomic) struct CGSize maximumRequestSize;
 @property(nonatomic) double scale;
 @property(nonatomic) struct CGSize contentSize;
 @property(retain, nonatomic) id <PXDisplayAsset> asset;

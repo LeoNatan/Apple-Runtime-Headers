@@ -9,17 +9,19 @@
 #import <Silex/SXSubscriptionStatusProviding-Protocol.h>
 
 @class NSString;
-@protocol SXSubscriptionContextProvider;
 
 @interface SXSubscriptionStatusProvider : NSObject <SXSubscriptionStatusProviding>
 {
-    id <SXSubscriptionContextProvider> _contextProvider;
+    long long _bundleSubscriptionStatus;
+    long long _channelSubscriptionStatus;
 }
 
-@property(readonly, nonatomic) id <SXSubscriptionContextProvider> contextProvider; // @synthesize contextProvider=_contextProvider;
-- (void).cxx_destruct;
-@property(readonly, nonatomic, getter=isPremiumBundleSubscriber) _Bool premiumBundleSubscriber;
-- (id)initWithSubscriptionContextProvider:(id)arg1;
+@property(readonly, nonatomic) long long channelSubscriptionStatus; // @synthesize channelSubscriptionStatus=_channelSubscriptionStatus;
+@property(readonly, nonatomic) long long bundleSubscriptionStatus; // @synthesize bundleSubscriptionStatus=_bundleSubscriptionStatus;
+- (void)removeObserver:(id)arg1;
+- (void)addObserver:(id)arg1;
+- (id)initWithBundleSubscriptionStatus:(long long)arg1 channelSubscriptionStatus:(long long)arg2;
+- (id)init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -28,7 +28,7 @@
 - (void)_updateCachedPlanItems;
 - (void)_updateCachedFlowTypes;
 - (void)_initialize;
-- (void)provideUserResponse:(long long)arg1 confirmationCode:(id)arg2;
+- (void)provideUserConsentResponse:(long long)arg1;
 - (long long)calculateInstallConsentTextTypeFor:(id)arg1;
 - (id)remapSimLabel:(id)arg1 to:(id)arg2;
 - (void)resumePlanProvisioning:(_Bool)arg1 userConsent:(long long)arg2;

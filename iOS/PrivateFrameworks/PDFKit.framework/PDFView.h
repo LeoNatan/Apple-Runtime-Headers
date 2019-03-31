@@ -69,6 +69,7 @@
 - (void)endEditingAnnotation;
 - (id)popupManager;
 - (void)setPopupManager:(id)arg1;
+- (void)_tileRefresh;
 - (void)setNeedsDisplayInRect:(struct CGRect)arg1;
 - (void)setNeedsDisplay;
 - (void)_forceTileRefresh;

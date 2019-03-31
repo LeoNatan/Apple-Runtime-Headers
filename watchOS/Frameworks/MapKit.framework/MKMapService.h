@@ -103,8 +103,7 @@
 - (void)captureMapSettingsWithAvoidTolls:(_Bool)arg1;
 - (void)captureMapSettingsWithPreferredTransportMode:(int)arg1;
 - (void)captureMapsSettingsWithPreferredTransportMode:(int)arg1 avoidTolls:(_Bool)arg2 avoidHighways:(_Bool)arg3 navVoiceVolume:(int)arg4 pauseSpokenAudioEnabled:(_Bool)arg5 findMyCarEnabled:(_Bool)arg6 trafficEnabled:(_Bool)arg7 labelEnabled:(_Bool)arg8;
-- (void)captureMapUIStateWithIsWeatherShown:(_Bool)arg1;
-- (void)captureMapUIStateWithIsAirQualityShown:(_Bool)arg1;
+- (void)captureMapUIStateWithIsAirQualityShown:(_Bool)arg1 isWeatherShown:(_Bool)arg2;
 - (void)captureMapUIStateWithLayoutInfo:(int)arg1 layoutStyle:(int)arg2 numberOfTabs:(unsigned int)arg3 currentTabIndex:(unsigned int)arg4;
 - (void)captureMapUIStateWithLayoutInfo:(int)arg1 layoutStyle:(int)arg2;
 - (id)problemTicketForWalletRAPReport:(id)arg1;

@@ -9,6 +9,10 @@
 @class NSString;
 
 @protocol SXConditionValidationContext <NSObject>
+@property(readonly, nonatomic, getter=isChannelSubscriber) _Bool channelSubscriber;
+@property(readonly, nonatomic, getter=isBundleSubscriber) _Bool bundleSubscriber;
+@property(readonly, nonatomic) unsigned long long viewingLocation;
+@property(readonly, nonatomic) _Bool testing;
 @property(readonly, nonatomic) unsigned long long numberOfColumns;
 @property(readonly, nonatomic) NSString *contentSizeCategory;
 @property(readonly, nonatomic) long long verticalSizeClass;

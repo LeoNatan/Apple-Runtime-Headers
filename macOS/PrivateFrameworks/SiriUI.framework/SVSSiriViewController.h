@@ -218,6 +218,7 @@ __attribute__((visibility("hidden")))
 - (void)siriSessionDidChangeNetworkAvailability;
 - (void)siriSessionGetRequestContextWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)siriSessionDidTransitionFromState:(long long)arg1 toState:(long long)arg2 event:(long long)arg3;
+- (int)_mapState:(long long)arg1;
 - (void)siriSessionDidFinishRequestWithError:(id)arg1;
 - (void)siriSessionAudioRecordingDidChangePowerLevel:(float)arg1;
 - (void)siriSessionWillCancelRequest;

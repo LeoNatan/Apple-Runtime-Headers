@@ -23,6 +23,7 @@
 @property(retain) SATimestamp *endTime; // @synthesize endTime=_endTime;
 @property(retain) SATimestamp *startTime; // @synthesize startTime=_startTime;
 - (void).cxx_destruct;
+- (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly) double deltaWallTime;
 @property(readonly) double deltaMachContTimeSeconds;
 @property(readonly) unsigned long long deltaMachContTime;

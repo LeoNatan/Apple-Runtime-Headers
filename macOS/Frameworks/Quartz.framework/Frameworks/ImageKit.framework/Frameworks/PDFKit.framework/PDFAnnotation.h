@@ -24,6 +24,7 @@
 + (long long)lineStyleFromName:(id)arg1;
 - (void).cxx_destruct;
 - (void)discardTextStorageAndLayoutManager;
+- (id)_getAttributedStringForTextWidget;
 - (void)createTextStorageAndLayoutManager;
 - (void)setTextInsets:(struct NSEdgeInsets)arg1;
 - (struct NSEdgeInsets)textInsets;
@@ -31,6 +32,7 @@
 - (id)textStorage;
 - (void)setLayoutManager:(id)arg1;
 - (id)layoutManager;
+- (id)scaledFontForTextWidget;
 - (id)akAnnotationAdaptor;
 - (id)formData;
 - (void)updateFormData;

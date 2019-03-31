@@ -9,6 +9,6 @@
 @class SXPresentationAttributes;
 
 @protocol SXPresentationAttributesObserver <NSObject>
-- (void)presentationAttributesChangeFrom:(SXPresentationAttributes *)arg1 toAttributes:(SXPresentationAttributes *)arg2;
+- (void)presentationAttributesDidChangeFrom:(SXPresentationAttributes *)arg1 toAttributes:(SXPresentationAttributes *)arg2;
 @end
 

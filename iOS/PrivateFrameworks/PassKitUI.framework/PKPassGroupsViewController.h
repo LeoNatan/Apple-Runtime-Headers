@@ -9,6 +9,7 @@
 #import <PassKitUI/PKForegroundActiveArbiterObserver-Protocol.h>
 #import <PassKitUI/PKGroupsControllerDelegate-Protocol.h>
 #import <PassKitUI/PKPGSVFooterViewDelegate-Protocol.h>
+#import <PassKitUI/PKPGSVSectionHeaderViewDelegate-Protocol.h>
 #import <PassKitUI/PKPGSVSectionSubheaderDelegate-Protocol.h>
 #import <PassKitUI/PKPassGroupStackViewDatasource-Protocol.h>
 #import <PassKitUI/PKPassGroupStackViewDelegate-Protocol.h>
@@ -22,7 +23,7 @@
 @class NSArray, NSMutableArray, NSString, NSTimer, PKGroupsController, PKPassGroupStackView, PKPaymentService, PKPeerPaymentAccountResolutionController, PKPeerPaymentService, _UIBackdropView;
 @protocol PKPassLibraryDataProvider;
 
-@interface PKPassGroupsViewController : UIViewController <PKGroupsControllerDelegate, PKPassGroupStackViewDatasource, PKPassGroupStackViewDelegate, UIScrollViewDelegate, PKForegroundActiveArbiterObserver, PKPaymentServiceDelegate, PKPaymentSetupDelegate, PKPerformActionViewControllerDelegate, PKPeerPaymentAccountResolutionControllerDelegate, PKPGSVFooterViewDelegate, PKPGSVSectionSubheaderDelegate, PKPassPersonalizationViewControllerDelegate>
+@interface PKPassGroupsViewController : UIViewController <PKGroupsControllerDelegate, PKPassGroupStackViewDatasource, PKPassGroupStackViewDelegate, UIScrollViewDelegate, PKForegroundActiveArbiterObserver, PKPaymentServiceDelegate, PKPaymentSetupDelegate, PKPerformActionViewControllerDelegate, PKPeerPaymentAccountResolutionControllerDelegate, PKPGSVFooterViewDelegate, PKPGSVSectionSubheaderDelegate, PKPGSVSectionHeaderViewDelegate, PKPassPersonalizationViewControllerDelegate>
 {
     long long _backdropStyle;
     long long _invalidationStatus;
@@ -73,6 +74,8 @@
 @property(readonly, nonatomic) PKGroupsController *groupsController; // @synthesize groupsController=_groupsController;
 @property(readonly, nonatomic) long long style; // @synthesize style=_style;
 - (void).cxx_destruct;
+- (void)presentPassDetailsForHeaderView:(id)arg1;
+- (id)passForSectionHeaderView:(id)arg1;
 - (void)transitionToViewController:(id)arg1;
 - (void)paymentSetupDidFinish:(id)arg1;
 - (_Bool)_canPerformExternalModalPresentation;
@@ -96,7 +99,7 @@
 - (void)_endSuppressingInstanceFooterWithContext:(id)arg1;
 - (void)_beginSuppressingInstanceFooter;
 - (void)_resetToRootAnimated:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)dismissPresentedVCsWithRequirements:(unsigned long long)arg1 performAction:(CDUnknownBlockType)arg2;
+- (void)dismissPresentedVCsWithRequirements:(unsigned long long)arg1 animated:(_Bool)arg2 performAction:(CDUnknownBlockType)arg3;
 - (void)_applyPresentationState;
 - (void)_presentWithUpdatedPasses:(CDUnknownBlockType)arg1;
 - (void)_handleProvisioningError:(id)arg1;
@@ -126,8 +129,6 @@
 - (void)presentTransactionDetailsForTransactionWithIdentifier:(id)arg1;
 - (void)presentPassWithUniqueID:(id)arg1 context:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)presentPassDetailsWithUniqueID:(id)arg1 animated:(_Bool)arg2 completionHandler:(CDUnknownBlockType)arg3;
-- (void)presentBarcodePassDetailsWithUniqueID:(id)arg1 animated:(_Bool)arg2 completionHandler:(CDUnknownBlockType)arg3;
-- (void)presentPaymentPassDetailsWithUniqueID:(id)arg1 animated:(_Bool)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)presentPassWithUniqueID:(id)arg1 animated:(_Bool)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)setTableModalPresentationEnabled:(_Bool)arg1 animated:(_Bool)arg2;
 - (void)presentGroupTableAnimated:(_Bool)arg1;
@@ -162,6 +163,7 @@
 - (void)scrollViewDidScroll:(id)arg1;
 - (void)passPersonalizationViewController:(id)arg1 didFinishPersonalizingPass:(id)arg2;
 - (void)groupStackViewDidChangeCoachingState:(id)arg1;
+- (void)groupStackViewWantsForcedPayment:(id)arg1;
 - (void)groupStackView:(id)arg1 didTransitionToState:(long long)arg2 animated:(_Bool)arg3;
 - (void)groupStackView:(id)arg1 wantsBottomContentSeparatorWithVisibility:(double)arg2 animated:(_Bool)arg3;
 - (void)groupStackView:(id)arg1 wantsTopContentSeparatorWithVisibility:(double)arg2 animated:(_Bool)arg3;

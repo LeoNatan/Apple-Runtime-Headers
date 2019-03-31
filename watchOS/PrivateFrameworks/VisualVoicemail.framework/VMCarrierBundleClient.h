@@ -20,6 +20,7 @@
 - (id)objectForKey:(id)arg1 subscription:(id)arg2 error:(id *)arg3;
 - (id)objectForKey:(id)arg1 subscription:(id)arg2;
 - (_Bool)isServiceSupportedForSubscription:(id)arg1;
+- (id)serviceNameForSubscription:(id)arg1;
 - (_Bool)isPasswordChangeSupportedForSubscription:(id)arg1;
 - (_Bool)isPasswordChangeSupportedForDefaultSubscription;
 - (double)maximumGreetingDurationForSubscription:(id)arg1;

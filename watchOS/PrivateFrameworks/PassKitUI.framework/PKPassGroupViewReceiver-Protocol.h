@@ -16,7 +16,8 @@
 @optional
 - (void)setTransitionDuration:(double)arg1;
 - (void)groupViewDidMoveToReceiver:(PKPassGroupView *)arg1;
-- (void)groupViewWillBeAvailable:(PKPassGroupView *)arg1 withVelocity:(float)arg2 dragging:(_Bool)arg3;
+- (void)groupViewWillBeAvailable:(PKPassGroupView *)arg1;
+- (void)groupViewNeedsAnimating:(PKPassGroupView *)arg1 withVelocity:(float)arg2 dragging:(_Bool)arg3;
 - (void)didDeletePass:(PKPass *)arg1;
 - (void)willDeletePass:(PKPass *)arg1;
 @end

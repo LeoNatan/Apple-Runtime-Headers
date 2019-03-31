@@ -20,7 +20,7 @@
 - (void).cxx_destruct;
 - (_Bool)dataIsAnimatedImage:(id)arg1;
 - (struct __CFString *)contentTypeForImageData:(id)arg1;
-- (id)loadAnimatedImageFromImageData:(id)arg1;
+- (id)loadAnimatedImageFromImageData:(id)arg1 size:(struct CGSize)arg2;
 - (struct CGImage *)newImageByDecodingImage:(struct CGImage *)arg1 size:(struct CGSize)arg2;
 - (id)decodeImage:(struct CGImage *)arg1;
 - (id)actionForLayer:(id)arg1 forKey:(id)arg2;

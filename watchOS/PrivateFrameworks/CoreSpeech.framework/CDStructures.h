@@ -35,6 +35,8 @@ struct AudioStreamBasicDescription {
 
 struct BatchBeepCanceller;
 
+struct CSAudioCircularBufferImpl<unsigned char>;
+
 struct CSAudioCircularBufferImpl<unsigned short>;
 
 struct CSAudioZeroFilterImpl<unsigned short>;
@@ -56,6 +58,12 @@ struct unique_ptr<CSAudioZeroFilterImpl<unsigned short>, std::__1::default_delet
 struct unique_ptr<SmartSiriVolume, std::__1::default_delete<SmartSiriVolume>> {
     struct __compressed_pair<SmartSiriVolume *, std::__1::default_delete<SmartSiriVolume>> {
         struct SmartSiriVolume *__value_;
+    } __ptr_;
+};
+
+struct unique_ptr<corespeech::CSAudioCircularBufferImpl<unsigned char>, std::__1::default_delete<corespeech::CSAudioCircularBufferImpl<unsigned char>>> {
+    struct __compressed_pair<corespeech::CSAudioCircularBufferImpl<unsigned char>*, std::__1::default_delete<corespeech::CSAudioCircularBufferImpl<unsigned char>>> {
+        struct CSAudioCircularBufferImpl<unsigned char> *__value_;
     } __ptr_;
 };
 

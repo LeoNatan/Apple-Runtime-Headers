@@ -25,7 +25,12 @@ __attribute__((visibility("hidden")))
     int _placeTypeHint;
     int _resultProviderId;
     NSString *_vendorId;
-    CDStruct_f8e30bfb _has;
+    struct {
+        unsigned int muid:1;
+        unsigned int addressGeocodeAccuracyHint:1;
+        unsigned int placeTypeHint:1;
+        unsigned int resultProviderId:1;
+    } _has;
 }
 
 + (Class)formattedAddressLineHintType;

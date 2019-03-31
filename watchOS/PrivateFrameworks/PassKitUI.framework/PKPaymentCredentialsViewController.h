@@ -33,7 +33,6 @@
 @property(nonatomic) _Bool hideSetupLaterButton; // @synthesize hideSetupLaterButton=_hideSetupLaterButton;
 @property(retain, nonatomic) PKPaymentSetupProduct *product; // @synthesize product=_product;
 - (void).cxx_destruct;
-- (_Bool)shouldRemoveViewController;
 - (id)paymentSetupMarker;
 - (void)_createPassSnapshotFromPaymentPass:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)paymentPassUpdatedOnCredential:(id)arg1;

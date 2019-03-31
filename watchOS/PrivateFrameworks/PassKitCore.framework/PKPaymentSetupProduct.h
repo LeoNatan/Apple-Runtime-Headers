@@ -12,6 +12,7 @@
 
 @interface PKPaymentSetupProduct : NSObject <NSCopying>
 {
+    _Bool _suppressPendingPurchases;
     NSString *_displayName;
     unsigned int _type;
     NSSet *_regions;
@@ -54,6 +55,7 @@
 @property(readonly, copy, nonatomic) NSArray *searchTerms; // @synthesize searchTerms=_searchTerms;
 @property(copy, nonatomic) NSURL *appLaunchURL; // @synthesize appLaunchURL=_appLaunchURL;
 @property(copy, nonatomic) NSArray *associatedStoreIdentifiers; // @synthesize associatedStoreIdentifiers=_associatedStoreIdentifiers;
+@property(readonly, nonatomic) _Bool suppressPendingPurchases; // @synthesize suppressPendingPurchases=_suppressPendingPurchases;
 @property(readonly, nonatomic) PKPaymentSetupProductImageAssets *imageAssets; // @synthesize imageAssets=_imageAssets;
 @property(readonly, nonatomic) PKPaymentSetupProductImageAssetURLs *imageAssetURLs; // @synthesize imageAssetURLs=_imageAssetURLs;
 @property(readonly, nonatomic) int hsa2Requirement; // @synthesize hsa2Requirement=_hsa2Requirement;
@@ -78,7 +80,7 @@
 @property(readonly, copy, nonatomic) NSString *partnerName;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithProductDictionary:(id)arg1;
-- (id)_initWithDisplayName:(id)arg1 partnerDictionary:(id)arg2 productIdentifier:(id)arg3 paymentOptions:(id)arg4 termsURL:(id)arg5 provisioningMethods:(id)arg6 readerModeMetadata:(id)arg7 requiredFields:(id)arg8 imageAssets:(id)arg9 minimumOSVersion:(id)arg10 region:(id)arg11 hsa2Requirement:(id)arg12;
+- (id)_initWithDisplayName:(id)arg1 partnerDictionary:(id)arg2 productIdentifier:(id)arg3 paymentOptions:(id)arg4 termsURL:(id)arg5 provisioningMethods:(id)arg6 readerModeMetadata:(id)arg7 requiredFields:(id)arg8 imageAssets:(id)arg9 minimumOSVersion:(id)arg10 region:(id)arg11 hsa2Requirement:(id)arg12 suppressPendingPurchases:(id)arg13;
 
 @end
 

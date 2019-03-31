@@ -32,8 +32,8 @@
 - (void)updateBitmapInfo;
 - (void)setAppearanceIdentifier:(unsigned short)arg1 forName:(id)arg2;
 - (void)setCatalogGlobalData:(id)arg1;
-- (void)setAsset:(id)arg1 forKey:(const void *)arg2 withLength:(unsigned long long)arg3;
-- (void)setAsset:(id)arg1 forKey:(id)arg2;
+- (BOOL)setAsset:(id)arg1 forKey:(const void *)arg2 withLength:(unsigned long long)arg3;
+- (BOOL)setAsset:(id)arg1 forKey:(id)arg2;
 - (void)setAuthoringTool:(id)arg1;
 - (void)setDeploymentPlatformVersion:(id)arg1;
 - (void)setDeploymentPlatform:(id)arg1;

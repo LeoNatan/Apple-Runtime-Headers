@@ -23,6 +23,7 @@
 - (unsigned long long)hash;
 - (_Bool)isEqualToAudioRouteCollectionKey:(id)arg1;
 - (_Bool)isEqual:(id)arg1;
+- (id)description;
 - (id)initWithCategory:(id)arg1 mode:(id)arg2;
 
 @end

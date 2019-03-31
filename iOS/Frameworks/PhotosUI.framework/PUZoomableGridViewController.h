@@ -142,6 +142,7 @@
 - (_Bool)respondsToSelector:(SEL)arg1;
 - (void)animateRevealWithInteractionProgress:(id)arg1 forPreviewingAtLocation:(struct CGPoint)arg2 inSourceView:(id)arg3 containerView:(id)arg4;
 - (void)oneUpPresentationHelper:(id)arg1 willPresentOneUpPreviewViewController:(id)arg2;
+- (long long)oneUpPresentationOrigin;
 - (void)didDismissPreviewViewController:(id)arg1 committing:(_Bool)arg2;
 - (void)willPresentPreviewViewController:(id)arg1 forLocation:(struct CGPoint)arg2 inSourceView:(id)arg3;
 - (id)previewingContext:(id)arg1 viewControllerForLocation:(struct CGPoint)arg2;

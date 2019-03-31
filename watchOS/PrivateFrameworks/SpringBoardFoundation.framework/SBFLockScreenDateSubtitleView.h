@@ -12,25 +12,20 @@
 {
     SBUILegibilityLabel *_label;
     UIView *_accessoryView;
-    UIView *_backgroundView;
     _UILegibilitySettings *_legibilitySettings;
     float _strength;
-    float _customInterItemSpacing;
 }
 
 + (float)scaledFontSize:(float)arg1 withMaximumFontSizeCategory:(id)arg2;
 + (CDStruct_818bb265)labelFontMetrics;
 + (id)labelFont;
-@property(nonatomic) float customInterItemSpacing; // @synthesize customInterItemSpacing=_customInterItemSpacing;
 @property(nonatomic) float strength; // @synthesize strength=_strength;
 @property(retain, nonatomic) _UILegibilitySettings *legibilitySettings; // @synthesize legibilitySettings=_legibilitySettings;
-@property(retain, nonatomic) UIView *backgroundView; // @synthesize backgroundView=_backgroundView;
 @property(retain, nonatomic) UIView *accessoryView; // @synthesize accessoryView=_accessoryView;
 - (void).cxx_destruct;
 @property(readonly, nonatomic) float baselineOffsetFromBottom;
 @property(readonly, nonatomic) float baselineOffsetFromOrigin;
 - (float)interItemSpacing;
-- (struct CGRect)backgroundViewFrame;
 - (struct CGRect)subtitleLabelFrame;
 - (struct CGRect)accessoryViewFrame;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;

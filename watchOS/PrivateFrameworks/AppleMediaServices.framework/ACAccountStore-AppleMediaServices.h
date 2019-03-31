@@ -18,6 +18,7 @@
 + (id)ams_sharedAccountStore;
 - (id)ams_iTunesSandboxAccounts;
 - (void)_createLocalAccount;
+- (id)_correspondingAccountWithAccountTypeIdentifier:(id)arg1 forAccount:(id)arg2;
 - (id)_allCommerceiTunesAccounts;
 - (id)_alliTunesAccounts;
 - (_Bool)_addUserCookiesForResponse:(id)arg1 account:(id)arg2 error:(id *)arg3;
@@ -32,6 +33,7 @@
 - (id)ams_iTunesAccountWithDSID:(id)arg1;
 - (id)ams_iTunesAccountWithAltDSID:(id)arg1 DSID:(id)arg2 username:(id)arg3;
 - (id)ams_iTunesAccountWithAltDSID:(id)arg1;
+- (id)ams_IDMSAccountForAccount:(id)arg1;
 - (id)ams_cookiesForURL:(id)arg1;
 @property(readonly, nonatomic) NSString *ams_mediaType;
 @property(readonly, nonatomic) ACAccount *ams_localiTunesAccount;

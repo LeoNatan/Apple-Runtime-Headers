@@ -27,7 +27,6 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)newObjectModel;
-+ (id)mirroringContainer;
 + (id)sharedContainer;
 + (void)initialize;
 @property(readonly, nonatomic) NSCloudKitMirroringDelegateOptions *mirroringOptions; // @synthesize mirroringOptions=_mirroringOptions;

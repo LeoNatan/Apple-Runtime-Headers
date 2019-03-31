@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) PUSearchGridDataSource *searchGridDataSource; // @synthesize searchGridDataSource=_searchGridDataSource;
 - (void).cxx_destruct;
 - (void)searchGridDataSourceHasPendingChanges:(id)arg1;
+- (long long)oneUpPresentationOrigin;
 - (_Bool)pu_handleSecondTabTap;
 - (_Bool)allowSlideshowButton;
 - (id)newEmptyPlaceholderView;

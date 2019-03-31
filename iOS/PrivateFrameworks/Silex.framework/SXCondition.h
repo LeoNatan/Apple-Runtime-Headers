@@ -14,8 +14,10 @@
 {
 }
 
++ (id)jsonPropertyNameForObjCPropertyName:(id)arg1;
 - (id)contentSizeCategoryFromJSONContentSizeCategory:(id)arg1;
 - (long long)interfaceSizeClassFromJSONSizeClass:(id)arg1;
+- (unsigned long long)testingWithValue:(id)arg1 withType:(int)arg2;
 - (id)maxContentSizeCategoryWithValue:(id)arg1 withType:(int)arg2;
 - (id)minContentSizeCategoryWithValue:(id)arg1 withType:(int)arg2;
 - (long long)verticalSizeClassWithValue:(id)arg1 withType:(int)arg2;
@@ -43,6 +45,7 @@
 @property(readonly, nonatomic) NSString *platform; // @dynamic platform;
 @property(readonly, nonatomic) NSString *subscriptionStatus; // @dynamic subscriptionStatus;
 @property(readonly) Class superclass;
+@property(readonly, nonatomic) unsigned long long testing; // @dynamic testing;
 @property(readonly, nonatomic) long long verticalSizeClass; // @dynamic verticalSizeClass;
 @property(readonly, nonatomic) NSString *viewLocation; // @dynamic viewLocation;
 

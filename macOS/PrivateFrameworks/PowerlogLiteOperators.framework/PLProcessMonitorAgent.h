@@ -27,11 +27,13 @@
 + (id)entryEventNoneDefinitions;
 + (id)entryEventIntervalDefinitionKernelTaskMonitor;
 + (id)entryEventIntervalDefinitionProcessMonitorDiff;
++ (id)entryEventBackwardDefinitionProcessPeakMemory;
 + (id)entryEventBackwardDefinitionProcessMonitor;
 + (id)entryEventIntervalDefinitions;
 + (id)entryEventBackwardDefinitions;
 + (id)entryEventForwardProcessID;
 + (id)entryEventForwardDefinitions;
++ (id)entryEventPointDefinitionProcessMemory;
 + (id)entryEventPointProcessSnapshot;
 + (id)entryEventPointMemoryTracking;
 + (id)entryEventPointDefinitions;
@@ -52,6 +54,8 @@
 - (int)get_kthread_list:(unsigned long long **)arg1;
 - (void)logEventIntervalProcessMonitorIntervalUsingCache;
 - (void)logEventIntervalProcessMonitorInterval;
+- (void)logEventBackwardProcessPeakMemoryUsingCache;
+- (void)logEventPointProcessMemoryUsingCache;
 - (void)logEventBackwardProcessMonitorUsingCache;
 - (void)logEventBackwardProcessMonitor;
 - (void)logEventPointProcessSnapshot;
@@ -59,7 +63,7 @@
 - (void)log;
 - (id)processMonitorMultiKeyFromProcessID:(id)arg1;
 - (void)updateProcessMonitorCache;
-- (void)getCpuUsageForPid:(int)arg1 withBuffer:(void *)arg2 withNewProcessArray:(id)arg3 withTotalCpu:(double *)arg4 withActiveProcesses:(id)arg5;
+- (void)getCpuUsageAndMemoryForPid:(int)arg1 withBuffer:(void *)arg2 withNewProcessArray:(id)arg3 withTotalCpu:(double *)arg4 withActiveProcesses:(id)arg5;
 - (id)eventForwardProcessIDForPID:(int)arg1;
 - (BOOL)isCachedForProcessID:(int)arg1;
 - (BOOL)isCachedForProcessID:(int)arg1 andName:(id)arg2;

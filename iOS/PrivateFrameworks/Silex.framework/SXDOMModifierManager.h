@@ -25,7 +25,7 @@
 @property(readonly, nonatomic) id <SXDOMModificationContextFactory> contextFactory; // @synthesize contextFactory=_contextFactory;
 @property(readonly, nonatomic) id <SXDOMFactory> DOMFactory; // @synthesize DOMFactory=_DOMFactory;
 - (void).cxx_destruct;
-- (void)processLayoutBlueprint:(id)arg1 layoutOptions:(id)arg2 DOMObjectProvider:(id)arg3;
+- (void)processLayoutTask:(id)arg1 layoutBlueprint:(id)arg2 DOMObjectProvider:(id)arg3;
 - (void)addModifier:(id)arg1;
 - (id)initWithDOMFactory:(id)arg1 contextFactory:(id)arg2;
 

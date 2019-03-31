@@ -6,7 +6,11 @@
 
 #import <Foundation/NSDate.h>
 
+@class NSString;
+
 @interface NSDate (CRKAdditions)
++ (id)crk_sharedDateFormatter;
+@property(readonly, copy, nonatomic) NSString *crk_JSONStringValue;
 @property(readonly, getter=crk_isInPast) _Bool crk_inPast;
 @end
 

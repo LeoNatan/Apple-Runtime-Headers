@@ -30,6 +30,8 @@
 - (void)dismissalTransitionDidEnd:(_Bool)arg1;
 - (void)dismissalTransitionWillBegin;
 - (void)presentationTransitionWillBegin;
+- (_Bool)_shouldRespectDefinesPresentationContext;
+- (_Bool)shouldPresentInFullscreen;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -20,6 +20,7 @@
     unsigned int _context;
     PKPeerPaymentRequestToken *_requestToken;
     NSString *_dpanIdentifier;
+    NSString *_fpanIdentifier;
     int _paymentNetwork;
     unsigned int _paymentMethodType;
     NSString *_recipientIdentifier;
@@ -39,6 +40,7 @@
 @property(copy, nonatomic) NSString *recipientIdentifier; // @synthesize recipientIdentifier=_recipientIdentifier;
 @property(nonatomic) unsigned int paymentMethodType; // @synthesize paymentMethodType=_paymentMethodType;
 @property(nonatomic) int paymentNetwork; // @synthesize paymentNetwork=_paymentNetwork;
+@property(copy, nonatomic, setter=setFPANIdentifier:) NSString *fpanIdentifier; // @synthesize fpanIdentifier=_fpanIdentifier;
 @property(copy, nonatomic, setter=setDPANIdentifier:) NSString *dpanIdentifier; // @synthesize dpanIdentifier=_dpanIdentifier;
 @property(retain, nonatomic) PKPeerPaymentRequestToken *requestToken; // @synthesize requestToken=_requestToken;
 @property(nonatomic) unsigned int context; // @synthesize context=_context;

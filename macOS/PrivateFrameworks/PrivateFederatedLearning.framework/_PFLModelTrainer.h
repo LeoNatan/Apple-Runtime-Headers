@@ -21,10 +21,8 @@
 @property(retain) ETModelDefMLP *mlp; // @synthesize mlp=_mlp;
 @property(retain) ETTaskClassifier *task; // @synthesize task=_task;
 - (void).cxx_destruct;
-- (void)updateLayer:(id)arg1 withBiases:(id)arg2;
-- (void)updateLayer:(id)arg1 withWeights:(id)arg2;
-- (id)biasesForLayer:(id)arg1;
-- (id)weightsForLayer:(id)arg1;
+- (void)updateLayerNamed:(id)arg1 withWeights:(float *)arg2 weightCount:(unsigned long long)arg3 andBiases:(float *)arg4 biasCount:(unsigned long long)arg5;
+- (BOOL)copyWeightsAndBiasesForLayerNamed:(id)arg1 combinedWeightBiasesOut:(float **)arg2 weightCountOut:(unsigned int *)arg3 biasCountOut:(unsigned int *)arg4;
 - (id)sdpWithInitVector:(id)arg1 currentVector:(id)arg2 gamma:(double)arg3 nu:(double)arg4;
 - (id)sdpWithInitWeights:(id)arg1 currentWeights:(id)arg2 initBiases:(id)arg3 currentBiases:(id)arg4 diffOnly:(BOOL)arg5 gamma:(double)arg6 nu:(double)arg7;
 - (void)trainNumberModel:(id)arg1 epoch:(unsigned long long)arg2 dataSource:(id)arg3 completion:(CDUnknownBlockType)arg4;

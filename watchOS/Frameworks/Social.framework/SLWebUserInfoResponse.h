@@ -6,13 +6,13 @@
 
 #import <objc/NSObject.h>
 
-@class NSDictionary, NSError, NSString;
+@class NSArray, NSDictionary, NSError, NSString;
 
 @interface SLWebUserInfoResponse : NSObject
 {
     int _statusCode;
     NSString *_displayName;
-    NSString *_emailAddress;
+    NSArray *_emailAddresses;
     NSError *_error;
     NSString *_errorMessage;
     NSDictionary *_userInfo;
@@ -21,14 +21,15 @@
 @property(readonly) NSDictionary *userInfo; // @synthesize userInfo=_userInfo;
 @property(readonly) NSString *errorMessage; // @synthesize errorMessage=_errorMessage;
 @property(readonly) NSError *error; // @synthesize error=_error;
-@property(readonly) NSString *emailAddress; // @synthesize emailAddress=_emailAddress;
+@property(readonly) NSArray *emailAddresses; // @synthesize emailAddresses=_emailAddresses;
 @property(readonly) NSString *displayName; // @synthesize displayName=_displayName;
 @property(readonly) int statusCode; // @synthesize statusCode=_statusCode;
 - (void).cxx_destruct;
 - (void)setError:(id)arg1;
 - (void)setUserInfo:(id)arg1;
 - (void)setDisplayName:(id)arg1;
-- (void)setEmailAddress:(id)arg1;
+- (void)setEmailAddresses:(id)arg1;
+@property(readonly) NSString *emailAddress;
 - (void)setErrorMessage:(id)arg1;
 - (id)initWithData:(id)arg1 urlResponse:(id)arg2 error:(id)arg3;
 

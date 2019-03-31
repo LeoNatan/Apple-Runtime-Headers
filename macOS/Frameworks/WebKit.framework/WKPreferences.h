@@ -24,7 +24,6 @@
 @property(nonatomic) BOOL tabFocusesLinks;
 @property(nonatomic) BOOL plugInsEnabled;
 @property(nonatomic) BOOL javaEnabled;
-@property(nonatomic, getter=isSafeBrowsingEnabled) BOOL safeBrowsingEnabled;
 @property(nonatomic, setter=_setStorageAccessPromptsEnabled:) BOOL _storageAccessPromptsEnabled;
 @property(nonatomic) BOOL javaScriptCanOpenWindowsAutomatically;
 @property(nonatomic) BOOL javaScriptEnabled;
@@ -37,6 +36,7 @@
 @property(nonatomic, setter=_setDeviceOrientationEventEnabled:) BOOL _deviceOrientationEventEnabled;
 @property(nonatomic, setter=_setWebAnimationsCSSIntegrationEnabled:) BOOL _webAnimationsCSSIntegrationEnabled;
 @property(nonatomic, setter=_setVideoQualityIncludesDisplayCompositingEnabled:) BOOL _videoQualityIncludesDisplayCompositingEnabled;
+@property(nonatomic, getter=_isSafeBrowsingEnabled, setter=_setSafeBrowsingEnabled:) BOOL _safeBrowsingEnabled;
 @property(nonatomic, setter=_setShouldEnableTextAutosizingBoost:) BOOL _shouldEnableTextAutosizingBoost;
 @property(nonatomic, setter=_setDOMPasteAllowed:) BOOL _domPasteAllowed;
 @property(nonatomic, setter=_setJavaScriptCanAccessClipboard:) BOOL _javaScriptCanAccessClipboard;

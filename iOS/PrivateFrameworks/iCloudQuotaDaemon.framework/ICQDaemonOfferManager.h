@@ -21,7 +21,6 @@
 @property(retain, nonatomic) NSNumber *simulatedPhotosLibrarySize;
 @property(nonatomic, getter=isBuddyOfferEnabled) _Bool buddyOfferEnabled;
 @property(nonatomic, getter=isSimulatedDeviceStorageAlmostFull) _Bool simulatedDeviceStorageAlmostFull;
-@property(nonatomic) _Bool useHysteresisForDeviceStorageAlmostFull;
 @property(nonatomic) _Bool shouldDirectToStorageManagement;
 - (void)teardownCachedOffers;
 - (void)teardownCachedBuddyOffer;

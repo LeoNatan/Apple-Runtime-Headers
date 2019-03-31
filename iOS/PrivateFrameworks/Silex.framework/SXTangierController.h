@@ -12,8 +12,8 @@
 #import <Silex/SXTextSelecting-Protocol.h>
 #import <Silex/SXViewportChangeListener-Protocol.h>
 
-@class NSMutableSet, NSString, STScrollView, STTangierRepDirectLayerHostProvider, STTangierTextRenderCollector, STTextTangierCanvasViewController, STTextTangierDocumentRoot, STTextTangierInteractiveCanvasController, SXComponentController, SXViewport, TSKDocumentRoot, TSWPSelection, UIView;
-@protocol OS_dispatch_semaphore, SXComponentActionHandler, SXComponentInteractionManager, SXTangierControllerDelegate, SXTangierDragItemProvider;
+@class NSMutableSet, NSString, STScrollView, STTangierRepDirectLayerHostProvider, STTangierTextRenderCollector, STTextTangierCanvasViewController, STTextTangierDocumentRoot, STTextTangierInteractiveCanvasController, SXViewport, TSKDocumentRoot, TSWPSelection, UIView;
+@protocol SXComponentActionHandler, SXComponentController, SXComponentInteractionManager, SXTangierControllerDelegate, SXTangierDragItemProvider;
 
 @interface SXTangierController : NSObject <STTextTangierInteractiveCanvasControllerDelegate, STTextTangierInteractiveCanvasControllerDataSource, SXViewportChangeListener, SXTextComponentLayoutHosting, SXTextSelecting>
 {
@@ -23,6 +23,7 @@
     _Bool _preventScrollViewDidScrollReentrance;
     _Bool _disableClippingForTiles;
     _Bool _performedInitialLayoutAndRender;
+    struct os_unfair_lock_s _unfairLock;
     id <SXTangierControllerDelegate> _delegate;
     STTextTangierCanvasViewController *_cvc;
     STTextTangierInteractiveCanvasController *_icc;
@@ -31,7 +32,7 @@
     STScrollView *_scrollView;
     id <SXComponentActionHandler> _componentActionHandler;
     id <SXTangierDragItemProvider> _dragItemProvider;
-    SXComponentController *_componentController;
+    id <SXComponentController> _componentController;
     id <SXComponentInteractionManager> _componentInteractionManager;
     STTangierTextRenderCollector *_textRenderCollector;
     STTangierRepDirectLayerHostProvider *_directLayerHostProvider;
@@ -40,11 +41,10 @@
     UIView *_overlayRepsHost;
     TSWPSelection *_storedSelection;
     NSMutableSet *_presentedTextViews;
-    NSObject<OS_dispatch_semaphore> *_semaphore;
 }
 
-@property(readonly, nonatomic) NSObject<OS_dispatch_semaphore> *semaphore; // @synthesize semaphore=_semaphore;
-@property(retain, nonatomic) NSMutableSet *presentedTextViews; // @synthesize presentedTextViews=_presentedTextViews;
+@property(readonly, nonatomic) struct os_unfair_lock_s unfairLock; // @synthesize unfairLock=_unfairLock;
+@property(readonly, nonatomic) NSMutableSet *presentedTextViews; // @synthesize presentedTextViews=_presentedTextViews;
 @property(nonatomic) _Bool performedInitialLayoutAndRender; // @synthesize performedInitialLayoutAndRender=_performedInitialLayoutAndRender;
 @property(retain, nonatomic) TSWPSelection *storedSelection; // @synthesize storedSelection=_storedSelection;
 @property(nonatomic) _Bool disableClippingForTiles; // @synthesize disableClippingForTiles=_disableClippingForTiles;
@@ -55,7 +55,7 @@
 @property(readonly, nonatomic) STTangierRepDirectLayerHostProvider *directLayerHostProvider; // @synthesize directLayerHostProvider=_directLayerHostProvider;
 @property(readonly, nonatomic) STTangierTextRenderCollector *textRenderCollector; // @synthesize textRenderCollector=_textRenderCollector;
 @property(readonly, nonatomic) id <SXComponentInteractionManager> componentInteractionManager; // @synthesize componentInteractionManager=_componentInteractionManager;
-@property(readonly, nonatomic) SXComponentController *componentController; // @synthesize componentController=_componentController;
+@property(readonly, nonatomic) id <SXComponentController> componentController; // @synthesize componentController=_componentController;
 @property(readonly, nonatomic) id <SXTangierDragItemProvider> dragItemProvider; // @synthesize dragItemProvider=_dragItemProvider;
 @property(readonly, nonatomic) id <SXComponentActionHandler> componentActionHandler; // @synthesize componentActionHandler=_componentActionHandler;
 @property(retain, nonatomic) STScrollView *scrollView; // @synthesize scrollView=_scrollView;

@@ -139,7 +139,7 @@
 - (id)p_contents:(id)arg1;
 - (void)p_rewriteSidecarWithDeletes:(id)arg1;
 @property(readonly, nonatomic) NSString *sidecarPath;
-- (id)initWithDirectory:(id)arg1 fileName:(id)arg2;
+- (id)_initWithDirectory:(id)arg1 fileName:(id)arg2;
 
 @end
 

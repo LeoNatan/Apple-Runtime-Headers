@@ -36,7 +36,6 @@
 @property(readonly, nonatomic) _Bool isNotificationEnabled;
 @property(readonly, nonatomic) long long minimumNewsVersion;
 @property(readonly, nonatomic) long long score;
-@property(readonly, nonatomic) NSArray *pinnedArticleIDs;
 @property(readonly, nonatomic) NSArray *allowedStorefrontIDs;
 @property(readonly, nonatomic) NSArray *blockedStorefrontIDs;
 @property(readonly, nonatomic) NSArray *iAdKeywords;
@@ -47,10 +46,6 @@
 @property(readonly, nonatomic) FCAssetHandle *feedNavImageAssetHandle;
 @property(readonly, nonatomic) FCAssetHandle *coverImageAssetHandle;
 @property(readonly, nonatomic) _Bool isSubscribable;
-@property(readonly, nonatomic) NSArray *relatedChannelIDsForOnboarding;
-@property(readonly, nonatomic) NSArray *relatedTopicIDsForOnboarding;
-@property(readonly, nonatomic) NSArray *relatedChannelIDs;
-@property(readonly, nonatomic) NSArray *relatedTopicIDs;
 @property(readonly, copy, nonatomic) NSString *primaryAudience;
 @property(readonly, copy, nonatomic) NSString *replacementID;
 @property(readonly, nonatomic) _Bool isExplicitContent;

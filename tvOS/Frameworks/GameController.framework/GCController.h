@@ -11,6 +11,7 @@
 
 @interface GCController : NSObject
 {
+    _Bool _forwarded;
 }
 
 + (void)stopWirelessControllerDiscovery;
@@ -30,6 +31,7 @@
 + (void)__openXPC__;
 + (void)__open__;
 + (void)handleUIEvent:(id)arg1;
+@property(nonatomic, getter=isForwarded) _Bool forwarded; // @synthesize forwarded=_forwarded;
 @property(retain, nonatomic) NSString *physicalDeviceUniqueID;
 @property(nonatomic) _Bool physicalDeviceUsesCompass;
 @property(readonly, nonatomic) unsigned int service;
@@ -38,7 +40,6 @@
 @property(readonly, retain, nonatomic) GCExtendedGamepad *extendedGamepad;
 @property(readonly, retain, nonatomic) GCMicroGamepad *microGamepad;
 @property(readonly, retain, nonatomic) GCGamepad *gamepad;
-- (_Bool)isForwarded;
 - (unsigned int)sampleRate;
 - (void)addServiceRefs:(id)arg1;
 - (void)removeServiceRef:(struct __IOHIDServiceClient *)arg1;

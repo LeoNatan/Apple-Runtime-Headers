@@ -22,7 +22,7 @@
 - (_Bool)galleryLayouter:(id)arg1 viewIsCurrentlyFullscreenForItemAtIndex:(unsigned long long)arg2;
 - (id)galleryLayouter:(id)arg1 viewForItemAtIndex:(unsigned long long)arg2;
 - (struct CGSize)galleryLayouter:(id)arg1 dimensionsForItemAtIndex:(unsigned long long)arg2;
-- (double)calculateHeightForWidth:(double)arg1 inColumnLayout:(id)arg2;
+- (double)calculateHeightForWidth:(double)arg1 layoutContext:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

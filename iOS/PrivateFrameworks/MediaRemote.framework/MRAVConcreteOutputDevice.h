@@ -49,6 +49,7 @@
 - (_Bool)isAirPlayReceiverSessionActive;
 - (_Bool)groupContainsGroupLeader;
 - (_Bool)isGroupLeader;
+- (_Bool)isAddedToHomeKit;
 - (_Bool)supportsRapport;
 - (_Bool)supportsBufferedAirPlay;
 - (_Bool)canRelayCommunicationChannel;

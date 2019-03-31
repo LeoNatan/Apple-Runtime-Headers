@@ -7,13 +7,15 @@
 #import <objc/NSObject.h>
 
 @class FCFetchedValueManager;
+@protocol FCContentContext;
 
 @interface FCVanityURLRedirectService : NSObject
 {
     FCFetchedValueManager *_vanityURLMappingManager;
+    id <FCContentContext> _contentContext;
 }
 
-@property(readonly, nonatomic) FCFetchedValueManager *vanityURLMappingManager; // @synthesize vanityURLMappingManager=_vanityURLMappingManager;
+@property(readonly, nonatomic) id <FCContentContext> contentContext; // @synthesize contentContext=_contentContext;
 - (void).cxx_destruct;
 - (id)_destinationURLForURL:(id)arg1;
 - (void)updateUnderlyingMappingWithQualityOfService:(long long)arg1 completion:(CDUnknownBlockType)arg2;
@@ -21,6 +23,7 @@
 - (void)resolveURL:(id)arg1 withQualityOfService:(long long)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)destinationURLForURL:(id)arg1;
 - (_Bool)hasRedirectForURL:(id)arg1;
+@property(readonly, nonatomic) FCFetchedValueManager *vanityURLMappingManager; // @synthesize vanityURLMappingManager=_vanityURLMappingManager;
 - (id)initWithContentContext:(id)arg1;
 - (id)init;
 

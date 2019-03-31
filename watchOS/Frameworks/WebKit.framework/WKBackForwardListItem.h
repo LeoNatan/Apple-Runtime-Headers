@@ -16,6 +16,7 @@
 }
 
 @property(readonly) struct Object *_apiObject;
+- (struct CGPoint)_scrollPosition;
 - (struct CGImage *)_copySnapshotForTesting;
 @property(readonly) struct WebBackForwardListItem *_item;
 @property(readonly, copy) NSURL *initialURL;

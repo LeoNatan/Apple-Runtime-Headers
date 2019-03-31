@@ -6,18 +6,18 @@
 
 #import <TVUIKit/_TVLockupContentView.h>
 
-@class UIColor, UIView, _TVCardFloatingContentView;
+@class UIColor, UIView, _TVUICardFloatingContentView;
 
 __attribute__((visibility("hidden")))
 @interface _TVCardContentView : _TVLockupContentView
 {
     UIColor *_floatingContentViewBackgroundColor;
-    _TVCardFloatingContentView *_floatingContentView;
+    _TVUICardFloatingContentView *_floatingContentView;
     UIView *__customSubviewContainerView;
 }
 
 @property(retain, nonatomic) UIView *_customSubviewContainerView; // @synthesize _customSubviewContainerView=__customSubviewContainerView;
-@property(retain, nonatomic) _TVCardFloatingContentView *floatingContentView; // @synthesize floatingContentView=_floatingContentView;
+@property(retain, nonatomic) _TVUICardFloatingContentView *floatingContentView; // @synthesize floatingContentView=_floatingContentView;
 @property(retain, nonatomic) UIColor *floatingContentViewBackgroundColor; // @synthesize floatingContentViewBackgroundColor=_floatingContentViewBackgroundColor;
 - (void).cxx_destruct;
 - (void)_addContainerView:(id)arg1;

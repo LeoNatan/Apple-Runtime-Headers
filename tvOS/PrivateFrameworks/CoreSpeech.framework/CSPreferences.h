@@ -11,6 +11,10 @@
 }
 
 + (id)sharedPreferences;
+- (void)setHearstSecondPassModelVersion:(id)arg1;
+- (void)setHearstFirstPassModelVersion:(id)arg1;
+- (float)overwritingRemoteVADScore;
+- (_Bool)shouldOverwriteRemoteVADScore;
 - (_Bool)useSiriActivationSPIForHomePod;
 - (unsigned long long)maxNumLoggingFiles;
 - (double)audioSessionActivationDelay;
@@ -41,6 +45,7 @@
 - (id)getUserVoiceProfileUploadPathWithEnrolledLanguageList:(id *)arg1;
 - (id)getUserVoiceProfileFileList;
 - (id)_getEnrolledLanguageList;
+- (id)_CSSATLegacyUploadPath;
 - (id)_CSSATUploadPath;
 - (id)_CSSATDownloadPathForNewerZone;
 - (id)_CSSATDownloadPath;

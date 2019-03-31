@@ -65,6 +65,7 @@
 - (id)oneUpPresentationHelperViewController:(id)arg1;
 - (void)oneUpPresentationHelper:(id)arg1 didDismissOneUpViewController:(id)arg2;
 - (void)oneUpPresentationHelper:(id)arg1 willPresentOneUpViewController:(id)arg2;
+- (long long)oneUpPresentationOrigin:(id)arg1;
 - (void)_updateAssetsFetchResultIfNeeded;
 - (void)_presentOneUpViewControllerForAssetAtInderxPath:(id)arg1;
 - (void)_ensureOneUpPresentationHelper;

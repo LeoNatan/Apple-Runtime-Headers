@@ -25,6 +25,7 @@
     NSManagedObjectID *_userObjectID;
 }
 
++ (id)keyPathsForValuesAffectingGivenName;
 + (id)keyPathsForValuesAffectingHasPasscode;
 @property(copy, nonatomic) NSManagedObjectID *userObjectID; // @synthesize userObjectID=_userObjectID;
 @property(copy, nonatomic) NSString *passcode; // @synthesize passcode=_passcode;
@@ -38,6 +39,7 @@
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(nonatomic) unsigned long long source; // @synthesize source=_source;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSString *givenName;
 @property(readonly, nonatomic) _Bool isChild;
 @property(readonly, nonatomic) _Bool isParent;
 @property(readonly, nonatomic) _Bool hasPasscode;

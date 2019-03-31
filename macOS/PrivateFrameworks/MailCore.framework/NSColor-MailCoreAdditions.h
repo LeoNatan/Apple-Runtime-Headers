@@ -35,7 +35,6 @@
 + (void)setQuotingColorList:(id)arg1;
 + (id)quotingColorList;
 + (id)defaultQuotingColors;
-- (id)_appearanceOverride;
 - (id)_semanticCSSColorOverrideForAppearance:(id)arg1;
 - (id)cssColorStringForAppearance:(id)arg1;
 @property(readonly, copy, nonatomic) NSString *cssColorString;

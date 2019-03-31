@@ -11,7 +11,7 @@
 #import <MapKit/NSItemProviderWriting-Protocol.h>
 #import <MapKit/NSSecureCoding-Protocol.h>
 
-@class GEOAddress, GEOFeatureStyleAttributes, GEOMapItemDetourInfo, GEOMapItemStorage, GEOMapItemStorageUserValues, GEOMapRegion, GEOModuleLayoutEntry, GEOPDBusinessClaim, GEOPDFlyover, GEOPlace, MKMapItemIdentifier, MKMapItemMetadata, MKPlacemark, NSArray, NSData, NSNumber, NSNumberFormatter, NSString, NSTimeZone, NSURL, UIColor, _MKMapItemPhotosAttribution, _MKMapItemPlaceAttribution, _MKMapItemReviewsAttribution, _MKPlaceReservationInfo;
+@class GEOAddress, GEOBusinessHours, GEOFeatureStyleAttributes, GEOMapItemDetourInfo, GEOMapItemStorage, GEOMapItemStorageUserValues, GEOMapRegion, GEOModuleLayoutEntry, GEOPDBusinessClaim, GEOPDFlyover, GEOPlace, MKMapItemIdentifier, MKMapItemMetadata, MKPlacemark, NSArray, NSData, NSNumber, NSNumberFormatter, NSString, NSTimeZone, NSURL, UIColor, _MKMapItemPhotosAttribution, _MKMapItemPlaceAttribution, _MKMapItemReviewsAttribution, _MKPlaceReservationInfo;
 @protocol GEOAnnotatedItemList, GEOEncyclopedicInfo, GEOMapItem, GEOMapItemPrivate, GEOMapItemTransitInfo, GEOMapItemVenueInfo, GEOTransitAttribution, MKTransitInfoPreload, NSObject;
 
 @interface MKMapItem : NSObject <NSSecureCoding, NSItemProviderReading, NSItemProviderWriting, GEOURLSerializable>
@@ -168,7 +168,7 @@
 @property(readonly, nonatomic, getter=_encyclopedicInfo) id <GEOEncyclopedicInfo> encyclopedicInfo;
 @property(readonly, nonatomic, getter=_hasEncyclopedicInfo) _Bool hasEncyclopedicInfo;
 @property(readonly, nonatomic, getter=_localizedResponseTime) NSString *localizedResponseTime;
-@property(readonly, nonatomic, getter=_messageBusinessHours) NSArray *messageBusinessHours;
+@property(readonly, nonatomic, getter=_messageBusinessHours) GEOBusinessHours *messageBusinessHours;
 - (id)_localizedNextOpeningStringShort:(_Bool)arg1;
 @property(readonly, nonatomic, getter=_hasLocalizedOperatingHours) _Bool hasLocalizedOperatingHours;
 @property(readonly, nonatomic, getter=_hasOperatingHours) _Bool hasOperatingHours;

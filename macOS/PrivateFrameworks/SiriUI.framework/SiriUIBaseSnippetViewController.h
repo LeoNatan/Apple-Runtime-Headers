@@ -8,17 +8,19 @@
 
 #import <SiriUI/SiriUIViewController-Protocol.h>
 
-@class AceObject, NSString, SAUISnippet;
+@class AFAnalyticsTurnBasedInstrumentationContext, AceObject, NSString, SAUISnippet;
 @protocol SiriUIAceObjectViewControllerDelegate;
 
 __attribute__((visibility("hidden")))
 @interface SiriUIBaseSnippetViewController : NSViewController <SiriUIViewController>
 {
     AceObject *aceObject;
+    AFAnalyticsTurnBasedInstrumentationContext *_instrumentationTurnContext;
     id <SiriUIAceObjectViewControllerDelegate> _delegate;
 }
 
 @property(nonatomic) __weak id <SiriUIAceObjectViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
+@property(retain, nonatomic) AFAnalyticsTurnBasedInstrumentationContext *instrumentationTurnContext; // @synthesize instrumentationTurnContext=_instrumentationTurnContext;
 @property(retain, nonatomic) AceObject *aceObject; // @synthesize aceObject;
 - (void).cxx_destruct;
 - (double)desiredHeight;

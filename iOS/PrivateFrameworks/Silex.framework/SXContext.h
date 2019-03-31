@@ -23,7 +23,7 @@
 @property(readonly, nonatomic) SXDocumentController *documentController; // @synthesize documentController=_documentController;
 @property(readonly, nonatomic) id <SXHost> host; // @synthesize host=_host;
 - (void).cxx_destruct;
-- (id)initWithJSONData:(id)arg1 resourceDataSource:(id)arg2 host:(id)arg3 error:(id *)arg4;
+- (id)initWithIdentifier:(id)arg1 JSONData:(id)arg2 resourceDataSource:(id)arg3 host:(id)arg4 error:(id *)arg5;
 
 @end
 

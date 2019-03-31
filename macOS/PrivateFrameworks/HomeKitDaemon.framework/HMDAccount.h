@@ -34,6 +34,9 @@
 @property(readonly, copy) HMDAccountIdentifier *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
 - (id)modelBackedObjects;
+- (id)currentDeviceModelsWithChangeType:(unsigned long long)arg1 version:(long long)arg2;
+- (id)locallyTrackedDeviceModelsWithChangeType:(unsigned long long)arg1 version:(long long)arg2;
+- (id)locallyTrackedAccountHandleModelsWithChangeType:(unsigned long long)arg1 version:(long long)arg2;
 - (id)backingStoreObjectsWithChangeType:(unsigned long long)arg1 version:(long long)arg2;
 - (id)modelObjectWithChangeType:(unsigned long long)arg1 version:(long long)arg2;
 @property(readonly, nonatomic) NSUUID *modelParentIdentifier;

@@ -9,17 +9,19 @@
 #import <Silex/SXAdvertisingSettingsFactory-Protocol.h>
 
 @class NSString;
-@protocol SXDocumentProviding;
+@protocol SXAdControllerProvider, SXDocumentProviding;
 
 @interface SXAdvertisingSettingsFactory : NSObject <SXAdvertisingSettingsFactory>
 {
     id <SXDocumentProviding> _documentProvider;
+    id <SXAdControllerProvider> _adControllerProvider;
 }
 
+@property(readonly, nonatomic) id <SXAdControllerProvider> adControllerProvider; // @synthesize adControllerProvider=_adControllerProvider;
 @property(readonly, nonatomic) id <SXDocumentProviding> documentProvider; // @synthesize documentProvider=_documentProvider;
 - (void).cxx_destruct;
 - (id)createAdvertisingSettingsWithDOMObjectProvider:(id)arg1;
-- (id)initWithDocumentProvider:(id)arg1;
+- (id)initWithDocumentProvider:(id)arg1 adControllerProvider:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

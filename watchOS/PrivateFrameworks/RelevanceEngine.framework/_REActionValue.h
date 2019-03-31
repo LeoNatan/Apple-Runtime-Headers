@@ -16,8 +16,8 @@
 
 @property(readonly, nonatomic) REDonatedAction *action; // @synthesize action=_action;
 - (void).cxx_destruct;
-- (void)removeUUID:(id)arg1;
-- (void)addUUID:(id)arg1;
+- (void)removeActionWithUUID:(id)arg1;
+- (void)addAction:(id)arg1;
 @property(readonly, nonatomic) NSSet *uuids;
 - (id)initWithAction:(id)arg1;
 

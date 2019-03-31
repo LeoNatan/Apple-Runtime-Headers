@@ -34,6 +34,7 @@
 - (id)oneUpPresentation:(id)arg1 regionOfInterestForAssetReference:(id)arg2;
 - (id)oneUpPresentationMediaProvider:(id)arg1;
 - (id)oneUpPresentationDataSourceManager:(id)arg1;
+- (long long)oneUpPresentationOrigin:(id)arg1;
 - (void)suggestionGadget:(id)arg1 willDismissPreviewController:(id)arg2;
 - (void)suggestionGadget:(id)arg1 commitViewController:(id)arg2;
 - (id)suggestionGadgetPreviewController:(id)arg1;

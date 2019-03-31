@@ -17,6 +17,7 @@
     id <IMDCKSyncStateDelegate> _delegate;
 }
 
++ (void)removeBuildObjectsFromDict:(id)arg1;
 + (id)logHandle;
 @property(nonatomic) __weak id <IMDCKSyncStateDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) IMKeyValueCollection *keyValueCollection; // @synthesize keyValueCollection=_storage;
@@ -34,6 +35,12 @@
 - (void)clearLocalCloudKitSyncState;
 - (void)setSyncingFinished;
 @property(readonly, copy) NSString *description;
+- (id)syncReportDictionaryForAttempt:(unsigned int)arg1 withSuccess:(_Bool)arg2;
+- (id)syncReportDictionary;
+- (id)syncUserType;
+- (_Bool)_shouldReportNewUserIfCreatedChatZones:(_Bool)arg1 deletedZones:(_Bool)arg2;
+- (id)_describeErrors:(id)arg1;
+- (id)describeErrors;
 - (id)getAnalyticSyncDatesObjectForKey:(id)arg1;
 - (void)setAnalyticSyncDatesDictionaryObject:(id)arg1 forKey:(id)arg2 shouldOverrideIfExists:(_Bool)arg3;
 - (void)removeObjectFromAnalyticSyncDatesDictionaryForKey:(id)arg1;

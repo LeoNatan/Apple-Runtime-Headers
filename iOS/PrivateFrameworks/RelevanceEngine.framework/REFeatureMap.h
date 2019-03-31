@@ -31,6 +31,7 @@
 - (void)enumerateFeaturesUsingBlock:(CDUnknownBlockType)arg1;
 - (_Bool)hasValueForFeature:(id)arg1;
 - (id)valueForFeature:(id)arg1;
+- (void)removeAllValues;
 - (void)removeValueForFeature:(id)arg1;
 - (void)setValue:(id)arg1 forFeature:(id)arg2;
 - (id)copyWithZone:(struct _NSZone *)arg1;

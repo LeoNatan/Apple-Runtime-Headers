@@ -9,19 +9,17 @@
 #import <Silex/SXLayoutInstructionFactory-Protocol.h>
 
 @class NSString;
-@protocol SXDocumentControllerProvider, SXPresentationAttributesProvider;
+@protocol SXPresentationAttributesProvider;
 
 @interface SXLayoutInstructionFactory : NSObject <SXLayoutInstructionFactory>
 {
     id <SXPresentationAttributesProvider> _presentationAttributesProvider;
-    id <SXDocumentControllerProvider> _documentControllerProvider;
 }
 
-@property(readonly, nonatomic) id <SXDocumentControllerProvider> documentControllerProvider; // @synthesize documentControllerProvider=_documentControllerProvider;
 @property(readonly, nonatomic) id <SXPresentationAttributesProvider> presentationAttributesProvider; // @synthesize presentationAttributesProvider=_presentationAttributesProvider;
 - (void).cxx_destruct;
 - (id)createInstructions;
-- (id)initWithPresentationAttributesProvider:(id)arg1 documentControllerProvider:(id)arg2;
+- (id)initWithPresentationAttributesProvider:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

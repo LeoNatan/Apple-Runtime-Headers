@@ -22,6 +22,8 @@
 {
     HMFUnfairLock *_lock;
     _Bool _monitoring;
+    _Bool _rapportIdentitiesChangedNotificationTokenValid;
+    int _rapportIdentitiesChangedNotificationToken;
     HMDAccount *_account;
     HMDAppleAccountContext *_accountContext;
     ACAccountStore *_accountStore;
@@ -37,6 +39,8 @@
 + (id)sharedManager;
 @property(retain, nonatomic) HMDBackingStore *backingStore; // @synthesize backingStore=_backingStore;
 @property(readonly, nonatomic) IDSService *service; // @synthesize service=_service;
+@property(nonatomic, getter=isRapportIdentitiesChangedNotificationTokenValid) _Bool rapportIdentitiesChangedNotificationTokenValid; // @synthesize rapportIdentitiesChangedNotificationTokenValid=_rapportIdentitiesChangedNotificationTokenValid;
+@property(nonatomic) int rapportIdentitiesChangedNotificationToken; // @synthesize rapportIdentitiesChangedNotificationToken=_rapportIdentitiesChangedNotificationToken;
 @property(nonatomic, getter=isMonitoring) _Bool monitoring; // @synthesize monitoring=_monitoring;
 @property(readonly, nonatomic) HMFTimer *devicesChangeBackoffTimer; // @synthesize devicesChangeBackoffTimer=_devicesChangeBackoffTimer;
 @property(readonly, nonatomic) HMFExponentialBackoffTimer *accountChangeBackoffTimer; // @synthesize accountChangeBackoffTimer=_accountChangeBackoffTimer;
@@ -71,8 +75,11 @@
 - (void)__handleUpdatedName:(id)arg1;
 - (void)__handleRemovedAccount:(id)arg1;
 - (void)__handleModifiedAccount:(id)arg1;
+- (void)__localDataReset:(id)arg1;
 - (void)stop;
 - (void)start;
+- (void)_deregisterForRapportNotifications;
+- (void)_registerForRapportNotifications;
 - (id)initWithIDSService:(id)arg1;
 - (id)init;
 

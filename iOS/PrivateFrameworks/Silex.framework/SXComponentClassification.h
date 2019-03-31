@@ -12,6 +12,7 @@
 {
     SXComponentLayoutRules *_layoutRules;
     SXComponentTextRules *_textRules;
+    NSArray *_defaultStyleIdentifiers;
 }
 
 + (id)roleString;
@@ -25,12 +26,13 @@
 + (void)registerClassification;
 + (void)initializeClassifications;
 + (void)initialize;
+@property(readonly, nonatomic) NSArray *defaultStyleIdentifiers; // @synthesize defaultStyleIdentifiers=_defaultStyleIdentifiers;
 - (void).cxx_destruct;
+- (void)setupStyleIdentifiersForRole:(id)arg1;
 - (_Bool)isCollapsible;
 - (_Bool)hasAffiliationWithClassification:(id)arg1 forDirection:(long long)arg2;
 - (Class)componentModelClass;
 @property(readonly, nonatomic) unsigned long long contentRelevance;
-- (id)defaultIdentifiersForRoleString:(id)arg1;
 @property(readonly, nonatomic) NSArray *defaultComponentStyleIdentifiers;
 @property(readonly, nonatomic) NSArray *defaultTextStyleIdentifiers;
 @property(readonly, nonatomic) SXComponentTextRules *textRules; // @synthesize textRules=_textRules;
@@ -38,6 +40,7 @@
 - (_Bool)accessibilitySkippedDuringReadAll;
 - (id)accessibilityCustomRotorMembership;
 - (id)accessibilityContextualLabel;
+- (id)init;
 
 @end
 

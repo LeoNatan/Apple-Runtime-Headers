@@ -6,13 +6,13 @@
 
 #import <objc/NSObject.h>
 
-#import <FrontBoardServices/BSDescriptionProviding-Protocol.h>
+#import <FrontBoardServices/BSDebugDescriptionProviding-Protocol.h>
 #import <FrontBoardServices/NSCopying-Protocol.h>
 #import <FrontBoardServices/NSMutableCopying-Protocol.h>
 
 @class BSSettings, FBSDisplayConfiguration, FBSDisplayIdentity, NSArray, NSSet, NSString;
 
-@interface FBSSceneSettings : NSObject <BSDescriptionProviding, NSCopying, NSMutableCopying>
+@interface FBSSceneSettings : NSObject <BSDebugDescriptionProviding, NSCopying, NSMutableCopying>
 {
     FBSDisplayConfiguration *_displayConfiguration;
     struct CGRect _frame;
@@ -40,10 +40,13 @@
 - (id)keyDescriptionForSetting:(unsigned long long)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (id)_descriptionBuilderWithMultilinePrefix:(id)arg1 debug:(BOOL)arg2;
+- (id)debugDescriptionWithMultilinePrefix:(id)arg1;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;
 - (id)succinctDescription;
+@property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 - (BOOL)isEqual:(id)arg1;
 @property(readonly) unsigned long long hash;
@@ -59,7 +62,6 @@
 - (id)initWithSettings:(id)arg1;
 
 // Remaining properties
-@property(readonly, copy) NSString *debugDescription;
 @property(readonly) Class superclass;
 
 @end

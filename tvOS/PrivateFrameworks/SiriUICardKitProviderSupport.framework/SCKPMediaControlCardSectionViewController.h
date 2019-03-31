@@ -19,6 +19,7 @@
     SFMediaRemoteControlCardSection *_cardSection;
 }
 
++ (void)initialize;
 @property(readonly) SFMediaRemoteControlCardSection *cardSection; // @synthesize cardSection=_cardSection;
 @property(nonatomic) __weak id <CRKCardSectionViewControllingDelegate> cardSectionViewControllingDelegate; // @synthesize cardSectionViewControllingDelegate;
 - (void).cxx_destruct;

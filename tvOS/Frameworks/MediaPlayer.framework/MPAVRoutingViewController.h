@@ -106,7 +106,7 @@
 @property(readonly, nonatomic) double _expandedCellHeight;
 @property(readonly, nonatomic) MPAVRoutingController *_routingController;
 - (void)routingCell:(id)arg1 mirroringSwitchValueDidChange:(_Bool)arg2;
-- (void)routingController:(id)arg1 shouldHijackRoute:(id)arg2 alertStyle:(long long)arg3 completion:(CDUnknownBlockType)arg4;
+- (void)routingController:(id)arg1 shouldHijackRoute:(id)arg2 alertStyle:(long long)arg3 busyRouteName:(id)arg4 presentingAppName:(id)arg5 completion:(CDUnknownBlockType)arg6;
 - (void)routingController:(id)arg1 didFailToPickRouteWithError:(id)arg2;
 - (void)routingController:(id)arg1 pickedRoutesDidChange:(id)arg2;
 - (void)routingControllerAvailableRoutesDidChange:(id)arg1;

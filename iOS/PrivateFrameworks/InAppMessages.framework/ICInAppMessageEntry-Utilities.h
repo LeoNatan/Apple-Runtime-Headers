@@ -7,7 +7,6 @@
 #import <iTunesCloud/ICInAppMessageEntry.h>
 
 @interface ICInAppMessageEntry (Utilities)
-@property(nonatomic) unsigned long long numberOfDisplays;
 - (long long)comparePriorityWithMessageEntry:(id)arg1;
 @end
 

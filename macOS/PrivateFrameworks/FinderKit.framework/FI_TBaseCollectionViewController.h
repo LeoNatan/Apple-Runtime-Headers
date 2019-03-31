@@ -82,7 +82,7 @@ __attribute__((visibility("hidden")))
 - (void)dataSourceChanged_buildPropChanged:(const struct TFENode *)arg1:(const struct TBVDSChangedPayload *)arg2:(unordered_map_f886f0c5 *)arg3;
 - (void)dataSourceChanged_buildMove:(const struct TFENode *)arg1:(const struct TBVDSChangedPayload *)arg2:(unordered_map_c143f583 *)arg3;
 - (void)dataSourceChanged_buildInsert:(const struct TFENode *)arg1:(const struct TBVDSChangedPayload *)arg2:(map_a2752b13 *)arg3:(map_a2752b13 *)arg4;
-- (void)dataSourceChanged_buildRemove:(const struct TFENode *)arg1:(const struct TBVDSChangedPayload *)arg2:(unordered_set_931aff12 *)arg3:(id)arg4:(id)arg5;
+- (void)dataSourceChanged_buildRemove:(const struct TFENode *)arg1:(const struct TBVDSChangedPayload *)arg2:(unordered_set_931aff12 *)arg3:(unordered_map_7677f55a *)arg4:(id)arg5;
 - (id)popoverAnchorViewForNode:(const struct TFENode *)arg1;
 - (struct CGRect)frameForSection:(unsigned long long)arg1;
 - (struct CGRect)frameForNode:(const struct TFENode *)arg1;

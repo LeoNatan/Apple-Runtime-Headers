@@ -16,6 +16,7 @@
     int _certified;
     unsigned int _duration;
     int _errorCode;
+    unsigned int _retryCount;
     int _transportType;
     AWDHomeKitVendorInformation *_vendorDetails;
     BOOL _isAdd;
@@ -26,6 +27,7 @@
         unsigned int certified:1;
         unsigned int duration:1;
         unsigned int errorCode:1;
+        unsigned int retryCount:1;
         unsigned int transportType:1;
         unsigned int isAdd:1;
         unsigned int isAddedViaWAC:1;
@@ -33,6 +35,7 @@
     } _has;
 }
 
+@property(nonatomic) unsigned int retryCount; // @synthesize retryCount=_retryCount;
 @property(nonatomic) BOOL isSecureWAC; // @synthesize isSecureWAC=_isSecureWAC;
 @property(retain, nonatomic) AWDHomeKitVendorInformation *vendorDetails; // @synthesize vendorDetails=_vendorDetails;
 @property(nonatomic) BOOL isAddedViaWAC; // @synthesize isAddedViaWAC=_isAddedViaWAC;
@@ -50,6 +53,7 @@
 - (BOOL)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(nonatomic) BOOL hasRetryCount;
 @property(nonatomic) BOOL hasIsSecureWAC;
 - (int)StringAsCertified:(id)arg1;
 - (id)certifiedAsString:(int)arg1;

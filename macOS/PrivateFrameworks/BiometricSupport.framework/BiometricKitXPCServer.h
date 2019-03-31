@@ -16,6 +16,8 @@
     NSObject<OS_dispatch_queue> *_cmdDispatchQueue;
 }
 
++ (BOOL)isEVTorNewer;
++ (BOOL)isCayman;
 + (BOOL)isPreferenceKeySet:(id)arg1;
 + (void)setPreferenceValue:(id)arg1 forKey:(id)arg2;
 + (id)getPreferenceValueOfClass:(Class)arg1 forKey:(id)arg2;

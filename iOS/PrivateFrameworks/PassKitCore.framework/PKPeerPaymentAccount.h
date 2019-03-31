@@ -23,11 +23,11 @@
     NSDecimalNumber *_maximumBalance;
     NSDate *_lastUpdated;
     double _proactiveFetchPeriod;
-    NSString *_termsIdentifier;
-    NSURL *_termsURL;
     NSURL *_associatedPassURL;
     long long _pendingPaymentCount;
     NSArray *_supportedFeatureDescriptors;
+    NSString *_termsIdentifier;
+    NSURL *_termsURL;
     NSString *_associatedPassSerialNumber;
     NSString *_associatedPassTypeIdentifier;
 }
@@ -35,14 +35,14 @@
 + (_Bool)supportsSecureCoding;
 @property(copy, nonatomic) NSString *associatedPassTypeIdentifier; // @synthesize associatedPassTypeIdentifier=_associatedPassTypeIdentifier;
 @property(copy, nonatomic) NSString *associatedPassSerialNumber; // @synthesize associatedPassSerialNumber=_associatedPassSerialNumber;
+@property(copy, nonatomic) NSURL *termsURL; // @synthesize termsURL=_termsURL;
+@property(copy, nonatomic) NSString *termsIdentifier; // @synthesize termsIdentifier=_termsIdentifier;
 @property(nonatomic) _Bool termsAcceptanceRequired; // @synthesize termsAcceptanceRequired=_termsAcceptanceRequired;
 @property(nonatomic) _Bool identityVerificationRequired; // @synthesize identityVerificationRequired=_identityVerificationRequired;
 @property(copy, nonatomic) NSArray *supportedFeatureDescriptors; // @synthesize supportedFeatureDescriptors=_supportedFeatureDescriptors;
 @property(nonatomic) _Bool identityVerificationForDisbursementsRequired; // @synthesize identityVerificationForDisbursementsRequired=_identityVerificationForDisbursementsRequired;
 @property(nonatomic) long long pendingPaymentCount; // @synthesize pendingPaymentCount=_pendingPaymentCount;
 @property(copy, nonatomic) NSURL *associatedPassURL; // @synthesize associatedPassURL=_associatedPassURL;
-@property(copy, nonatomic) NSURL *termsURL; // @synthesize termsURL=_termsURL;
-@property(copy, nonatomic) NSString *termsIdentifier; // @synthesize termsIdentifier=_termsIdentifier;
 @property(nonatomic) double proactiveFetchPeriod; // @synthesize proactiveFetchPeriod=_proactiveFetchPeriod;
 @property(retain, nonatomic) NSDate *lastUpdated; // @synthesize lastUpdated=_lastUpdated;
 @property(nonatomic, getter=isAccountStateDirty) _Bool accountStateDirty; // @synthesize accountStateDirty=_accountStateDirty;

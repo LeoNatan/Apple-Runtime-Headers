@@ -8,11 +8,13 @@
 
 @interface SXIssueCoverPresentationOptions : NSObject
 {
+    _Bool _videoPlaybackEnabled;
     struct CGSize _size;
 }
 
+@property(readonly, nonatomic) _Bool videoPlaybackEnabled; // @synthesize videoPlaybackEnabled=_videoPlaybackEnabled;
 @property(readonly, nonatomic) struct CGSize size; // @synthesize size=_size;
-- (id)initWithSize:(struct CGSize)arg1;
+- (id)initWithSize:(struct CGSize)arg1 videoPlaybackEnabled:(_Bool)arg2;
 
 @end
 

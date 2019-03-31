@@ -33,7 +33,7 @@
 @property(readonly, nonatomic) unsigned long long stringLength;
 - (double)verticalPositionForRange:(struct _NSRange)arg1;
 - (id)snapLines;
-- (double)calculateHeightForWidth:(double)arg1 inColumnLayout:(id)arg2;
+- (double)calculateHeightForWidth:(double)arg1 layoutContext:(id)arg2;
 - (void)removeAllExclusionPaths;
 - (void)addExclusionPath:(id)arg1;
 - (id)initWithComponent:(id)arg1 componentLayout:(id)arg2 componentStyle:(id)arg3 DOMObjectProvider:(id)arg4 layoutOptions:(id)arg5 textComponentLayoutHosting:(id)arg6 textSourceFactory:(id)arg7;

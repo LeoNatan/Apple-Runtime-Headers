@@ -13,6 +13,7 @@
     id *_propertiesByColumnSpan;
     unsigned long long propertiesByColumnSpanSize;
     double _scaleValue;
+    double _lineHeightMultiplier;
     NFLFontCache *_fontCache;
     NSSet *_supportedColumnSpans;
     Class _propertyClass;
@@ -26,13 +27,14 @@
 @property(nonatomic) Class propertyClass; // @synthesize propertyClass=_propertyClass;
 @property(readonly, nonatomic) NSSet *supportedColumnSpans; // @synthesize supportedColumnSpans=_supportedColumnSpans;
 @property(readonly, nonatomic) NFLFontCache *fontCache; // @synthesize fontCache=_fontCache;
+@property(readonly, nonatomic) double lineHeightMultiplier; // @synthesize lineHeightMultiplier=_lineHeightMultiplier;
 @property(readonly, nonatomic) double scaleValue; // @synthesize scaleValue=_scaleValue;
 - (void).cxx_destruct;
 - (id)propertiesIrrespectiveToColumnSpan;
 - (id)propertiesForColumnSpan:(long long)arg1;
 - (void)dealloc;
 - (id)init;
-- (id)initWithScaleValue:(double)arg1 preferredContentSizeCategory:(id)arg2 fontCache:(id)arg3 plistName:(id)arg4 propertyClass:(Class)arg5;
+- (id)initWithScaleValue:(double)arg1 lineHeightMultiplier:(double)arg2 preferredContentSizeCategory:(id)arg3 fontCache:(id)arg4 plistName:(id)arg5 propertyClass:(Class)arg6;
 
 @end
 

@@ -91,6 +91,7 @@
 - (void)assistantConnection:(id)arg1 speechRecordingDidFail:(id)arg2;
 - (void)assistantConnectionSpeechRecordingDidCancel:(id)arg1;
 - (void)assistantConnectionSpeechRecordingDidEnd:(id)arg1;
+- (void)assistantConnection:(id)arg1 speechRecordingPerformTwoShotPromptWithType:(long long)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)assistantConnectionSpeechRecordingDidDetectStartpoint:(id)arg1;
 - (void)assistantConnectionDidChangeAudioRecordingPower:(id)arg1;
 - (void)assistantConnection:(id)arg1 speechRecordingDidChangeAVRecordRoute:(id)arg2;
@@ -112,6 +113,7 @@
 - (void)speechSynthesisWillStartSpeaking:(id)arg1;
 - (void)stopCurrentRecordingForSpeechSynthesis:(id)arg1;
 - (id)speechSynthesis;
+- (void)_postInvocationRequestCompletedNotification:(BOOL)arg1;
 - (void)_continuePendingSpeechRequest;
 - (void)updateRequestOptions:(id)arg1;
 - (void)stopRequestWithOptions:(id)arg1;

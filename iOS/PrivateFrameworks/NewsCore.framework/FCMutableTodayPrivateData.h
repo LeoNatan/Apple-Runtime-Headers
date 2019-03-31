@@ -16,6 +16,7 @@
 }
 
 - (void)_deleteObjectsForOldKeys;
+- (void)setBundleIAP:(id)arg1;
 - (void)setBundleSubscriptionState:(unsigned long long)arg1;
 - (void)setOnboardingVersion:(id)arg1;
 - (void)setRecentlySeenHistoryItems:(id)arg1;
@@ -30,6 +31,7 @@
 
 // Remaining properties
 @property(readonly, copy, nonatomic) NSSet *autoFavoriteTagIDs;
+@property(readonly, copy, nonatomic) NSString *bundleIAP;
 @property(readonly, nonatomic) unsigned long long bundleSubscriptionState;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy, nonatomic) id <FCDerivedPersonalizationData><NSCoding> derivedPersonalizationData;

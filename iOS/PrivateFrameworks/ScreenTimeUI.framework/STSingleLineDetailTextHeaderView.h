@@ -6,15 +6,19 @@
 
 #import <ScreenTimeUI/STSingleLineHeaderView.h>
 
-@class UILabel;
+@class UIActivityIndicatorView, UILabel;
 
 @interface STSingleLineDetailTextHeaderView : STSingleLineHeaderView
 {
     UILabel *_detailLabel;
+    UIActivityIndicatorView *_spinnerView;
 }
 
-@property(readonly, nonatomic) UILabel *detailLabel; // @synthesize detailLabel=_detailLabel;
+@property(readonly) UIActivityIndicatorView *spinnerView; // @synthesize spinnerView=_spinnerView;
+@property(readonly) UILabel *detailLabel; // @synthesize detailLabel=_detailLabel;
 - (void).cxx_destruct;
+- (void)stopAnimatingSpinner;
+- (void)startAnimatingSpinner;
 - (void)reloadFromSpecifier;
 - (id)initWithSpecifier:(id)arg1 useContentLayoutGuide:(_Bool)arg2;
 

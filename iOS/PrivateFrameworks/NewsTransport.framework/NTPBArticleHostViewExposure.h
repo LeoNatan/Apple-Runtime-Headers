@@ -8,7 +8,7 @@
 
 #import <NewsTransport/NSCopying-Protocol.h>
 
-@class NSData, NSMutableArray, NSString, NTPBAlternateHeadline, NTPBChannelData, NTPBIssueData, NTPBIssueExposureData, NTPBIssueViewData, NTPBWidgetEngagement;
+@class NSData, NSMutableArray, NSString, NTPBAlternateHeadline, NTPBChannelData, NTPBIssueData, NTPBIssueExposureData, NTPBIssueViewContextData, NTPBIssueViewData, NTPBWidgetEngagement;
 
 @interface NTPBArticleHostViewExposure : PBCodable <NSCopying>
 {
@@ -73,6 +73,7 @@
     NSString *_iadNativeLine;
     NTPBIssueData *_issueData;
     NTPBIssueExposureData *_issueExposureData;
+    NTPBIssueViewContextData *_issueViewContextData;
     NTPBIssueViewData *_issueViewData;
     NSString *_language;
     int _loadFailureReason;
@@ -149,6 +150,7 @@
 + (Class)surfacedByTagIdsType;
 + (Class)fractionalCohortMembershipType;
 + (Class)namedEntitiesType;
+@property(retain, nonatomic) NTPBIssueViewContextData *issueViewContextData; // @synthesize issueViewContextData=_issueViewContextData;
 @property(retain, nonatomic) NTPBChannelData *channelData; // @synthesize channelData=_channelData;
 @property(retain, nonatomic) NTPBIssueViewData *issueViewData; // @synthesize issueViewData=_issueViewData;
 @property(retain, nonatomic) NTPBIssueExposureData *issueExposureData; // @synthesize issueExposureData=_issueExposureData;
@@ -264,6 +266,7 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(readonly, nonatomic) _Bool hasIssueViewContextData;
 @property(readonly, nonatomic) _Bool hasChannelData;
 @property(nonatomic) _Bool hasRole;
 @property(nonatomic) int role; // @synthesize role=_role;

@@ -70,10 +70,10 @@ __attribute__((visibility("hidden")))
 - (void)_didEndIndirectSelectionGesture:(id)arg1;
 - (id)selectionController;
 - (void)_gestureRecognizerFailed:(id)arg1;
+- (double)additionalPressDurationForTypingCadence:(id)arg1;
 - (void)gestureRecognizerShouldBeginResponse:(id)arg1;
 - (_Bool)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (_Bool)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
-- (_Bool)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2 forForce:(_Bool)arg3;
 - (_Bool)gestureRecognizerShouldBegin:(id)arg1;
 - (id)owner;
 - (void)_configureLongPressRecognizer:(id)arg1;

@@ -6,9 +6,13 @@
 
 #import <iTunesCloud/NSObject-Protocol.h>
 
-@class ICInAppMessageEntry, NSDictionary, NSString;
+@class ICInAppMessageEntry, ICInAppMessageMetadataEntry, NSDictionary, NSString;
 
 @protocol ICInAppMessageManagerProtocol <NSObject>
+- (void)removeMetadataForMessageIdentifier:(NSString *)arg1 bundleIdentifier:(NSString *)arg2 completion:(void (^)(NSError *))arg3;
+- (void)updateMetadata:(ICInAppMessageMetadataEntry *)arg1 messageIdentifier:(NSString *)arg2 bundleIdentifier:(NSString *)arg3 completion:(void (^)(NSError *))arg4;
+- (void)getAllMetadataForBundleIdentifier:(NSString *)arg1 completion:(void (^)(NSDictionary *, NSError *))arg2;
+- (void)getMetadataForMessageIdentifier:(NSString *)arg1 bundleIdentifier:(NSString *)arg2 completion:(void (^)(ICInAppMessageMetadataEntry *, NSError *))arg3;
 - (void)clearCachedResourcesForMessageWithIdentifier:(NSString *)arg1 bundleIdentifier:(NSString *)arg2 completion:(void (^)(NSError *))arg3;
 - (void)downloadResourcesForMessageWithIdentifier:(NSString *)arg1 bundleIdentifier:(NSString *)arg2 completion:(void (^)(NSError *))arg3;
 - (void)flushEventsWithCompletion:(void (^)(NSError *))arg1;

@@ -15,6 +15,7 @@
     CDStruct_95bda58d _surfacedByTagIDsRefs;
     double _tileProminenceScore;
     NSString *_articleID;
+    NSString *_callToActionText;
     NSString *_clusterID;
     NTPBDate *_displayDate;
     int _storyType;
@@ -36,6 +37,7 @@
     } _has;
 }
 
+@property(retain, nonatomic) NSString *callToActionText; // @synthesize callToActionText=_callToActionText;
 @property(retain, nonatomic) NTPBDate *displayDate; // @synthesize displayDate=_displayDate;
 @property(retain, nonatomic) NSString *clusterID; // @synthesize clusterID=_clusterID;
 @property(nonatomic) _Bool usesImageOnTopLayout; // @synthesize usesImageOnTopLayout=_usesImageOnTopLayout;
@@ -53,6 +55,7 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(readonly, nonatomic) _Bool hasCallToActionText;
 @property(readonly, nonatomic) _Bool hasDisplayDate;
 @property(nonatomic) _Bool hasStoryType;
 @property(nonatomic) int storyType; // @synthesize storyType=_storyType;

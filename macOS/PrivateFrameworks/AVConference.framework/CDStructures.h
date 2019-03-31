@@ -1331,6 +1331,15 @@ typedef struct {
 } CDStruct_94aa5fb4;
 
 typedef struct {
+    struct tagSRTPExchangeInfo _field1;
+    unsigned int _field2;
+    struct tagSRTPExchangeInfo _field3;
+    unsigned int _field4;
+    int _field5;
+    int _field6;
+} CDStruct_791df8ea;
+
+typedef struct {
     unsigned char _field1;
     double _field2;
     unsigned char _field3[1472];

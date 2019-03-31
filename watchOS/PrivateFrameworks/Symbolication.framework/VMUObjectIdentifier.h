@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSHashTable, NSMapTable, NSMutableDictionary, NSMutableSet, NSString, VMUClassInfo, VMUClassInfoMap, VMUNonOverlappingRangeArray, VMUTaskMemoryScanner;
+@class NSHashTable, NSMapTable, NSMutableDictionary, NSMutableSet, VMUClassInfo, VMUClassInfoMap, VMUNonOverlappingRangeArray, VMUSwiftRuntimeInfo, VMUTaskMemoryScanner;
 
 @interface VMUObjectIdentifier : NSObject
 {
@@ -18,8 +18,9 @@
     VMUTaskMemoryScanner *_scanner;
     struct libSwiftRemoteMirrorWrapper *_swiftMirror;
     NSMutableDictionary *_libSwiftRemoteMirrors;
-    NSMutableDictionary *_libSwiftRemoteMirrorPaths;
-    struct _CSTypeRef _swiftCoreSymbolOwner;
+    VMUSwiftRuntimeInfo *_swiftRuntimeInfoStableABI;
+    VMUSwiftRuntimeInfo *_swiftRuntimeInfoPreABI;
+    _Bool _debugSwiftRemoteMirror;
     VMUClassInfoMap *_realizedIsaToClassInfo;
     VMUClassInfoMap *_unrealizedClassInfos;
     VMUClassInfoMap *_cfTypeIDToClassInfo;
@@ -47,21 +48,22 @@
     unsigned int _osDispatchMachOffsetInOSXPCConnection;
 }
 
+@property(readonly, nonatomic) VMUSwiftRuntimeInfo *swiftRuntimeInfoStableABI; // @synthesize swiftRuntimeInfoStableABI=_swiftRuntimeInfoStableABI;
+@property(readonly, nonatomic) VMUSwiftRuntimeInfo *swiftRuntimeInfoPreABI; // @synthesize swiftRuntimeInfoPreABI=_swiftRuntimeInfoPreABI;
 @property(readonly, nonatomic) VMUClassInfoMap *realizedClasses; // @synthesize realizedClasses=_realizedIsaToClassInfo;
-@property(readonly, nonatomic) struct libSwiftRemoteMirrorWrapper *swiftMirror; // @synthesize swiftMirror=_swiftMirror;
 @property(readonly, nonatomic) CDUnknownBlockType memoryReader; // @synthesize memoryReader=_memoryReader;
 @property(readonly) _Bool needToValidateAddressRange; // @synthesize needToValidateAddressRange=_needToValidateAddressRange;
 - (void).cxx_destruct;
 - (id)initWithTask:(unsigned int)arg1;
-- (void)loadSwiftReflectionLibrary;
-- (void)_populateSwiftDebugVariables:(struct libSwiftRemoteMirrorWrapper *)arg1;
-- (void)_populateSwiftABIVariables:(struct libSwiftRemoteMirrorWrapper *)arg1;
-- (int)_populateSwiftReflectionInfo:(struct libSwiftRemoteMirrorWrapper *)arg1;
+@property(readonly) _Bool hasSwiftReflection;
+@property(readonly) _Bool hasSwiftContent;
+- (void)loadSwiftReflectionLibraries;
+- (void)_populateSwiftABIVariables;
+- (int)_populateSwiftReflectionInfo:(struct SwiftReflectionInteropContext *)arg1;
 - (_Bool)_dlopenLibSwiftRemoteMirrorWithSymbolicator:(struct _CSTypeRef)arg1;
+- (_Bool)_dlopenLibSwiftRemoteMirrorNearExecutable;
 - (_Bool)_dlopenLibSwiftRemoteMirrorNearLibSwiftCoreWithSymbolicator:(struct _CSTypeRef)arg1 avoidSystem:(_Bool)arg2;
 - (_Bool)_dlopenLibSwiftRemoteMirrorFromDir:(id)arg1;
-- (unsigned short)_targetProcessSwiftReflectionVersion;
-@property(readonly, nonatomic) NSString *swiftCoreSymbolOwnerPath;
 - (id)_scanner;
 - (struct _CSTypeRef)_symbolicator;
 - (id)labelForMemory:(void *)arg1 length:(unsigned int)arg2 remoteAddress:(unsigned long long)arg3 classInfo:(id)arg4;

@@ -20,8 +20,6 @@
 
 + (_Bool)isCachedCloudQuotaAlmostFullOrFull;
 + (_Bool)isDeviceStorageNearLowButNotLow;
-+ (void)setUseHysteresisForDeviceStorageAlmostFull:(_Bool)arg1;
-+ (_Bool)useHysteresisForDeviceStorageAlmostFull;
 + (void)setSimulatedDeviceStorageAlmostFull:(_Bool)arg1;
 + (_Bool)isSimulatedDeviceStorageAlmostFull;
 + (void)getPhotosLibraryUploadSizeWithCompletion:(CDUnknownBlockType)arg1;

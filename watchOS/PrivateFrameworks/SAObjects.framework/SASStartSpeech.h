@@ -18,6 +18,7 @@
 + (id)startSpeech;
 - (_Bool)requiresResponse;
 @property(copy, nonatomic) NSDictionary *voiceTriggerEventInfo;
+@property(copy, nonatomic) NSString *turnId;
 @property(copy, nonatomic) NSNumber *noiseReductionLevel;
 @property(copy, nonatomic) NSNumber *motionConfidence;
 @property(copy, nonatomic) NSString *motionActivity;

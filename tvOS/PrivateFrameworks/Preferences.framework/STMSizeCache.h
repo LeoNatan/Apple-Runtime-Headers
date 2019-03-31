@@ -6,35 +6,37 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, NSDictionary, NSLock, NSMutableDictionary;
+@class NSArray, NSDictionary, NSLock, NSMutableArray, NSMutableDictionary;
 @protocol STMSizeCacheDelegate;
 
 @interface STMSizeCache : NSObject
 {
     struct __CFString *_prefsKey;
     NSMutableDictionary *_itemsByPath;
-    id <STMSizeCacheDelegate> _delegate;
+    NSMutableArray *_eventsToProcess;
     unsigned long long _cacheEventID;
-    NSLock *_itemsLock;
+    id <STMSizeCacheDelegate> _delegate;
     long long _totalSize;
+    NSLock *_itemsLock;
 }
 
-@property long long totalSize; // @synthesize totalSize=_totalSize;
 @property(retain) NSLock *itemsLock; // @synthesize itemsLock=_itemsLock;
-@property(nonatomic) unsigned long long cacheEventID; // @synthesize cacheEventID=_cacheEventID;
+@property long long totalSize; // @synthesize totalSize=_totalSize;
 @property __weak id <STMSizeCacheDelegate> delegate; // @synthesize delegate=_delegate;
+@property(nonatomic) unsigned long long cacheEventID; // @synthesize cacheEventID=_cacheEventID;
 - (void).cxx_destruct;
 - (id)createCacheEntryForPath:(id)arg1;
 - (void)sizeAllItems;
-- (void)sizeItems:(id)arg1;
 - (void)sizeItem:(id)arg1;
-- (void)_sizePath:(id)arg1;
+- (void)sizeItems:(id)arg1;
+- (void)processCacheEvent:(id)arg1;
+- (void)processCacheEvents:(id)arg1;
+- (id)_sizeEntry:(id)arg1;
+- (void)updateCacheID:(id)arg1;
 @property(retain, nonatomic) NSArray *items;
-- (void)_sizeEntry:(id)arg1;
 - (id)itemsContainedBy:(id)arg1;
 - (id)itemsContaining:(id)arg1;
-- (void)removeItem:(id)arg1;
-- (void)updateTotalSize;
+- (void)_updateTotalSize;
 - (id)sizeOfItem:(id)arg1;
 @property(readonly) long long totalSizeOfItems;
 @property(readonly) unsigned long long itemCount;

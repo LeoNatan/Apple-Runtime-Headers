@@ -16,6 +16,7 @@
 }
 
 + (id)contextForBuiltInVoiceTrigger;
++ (id)contextForHearstVoiceTriggerWithDeviceId:(id)arg1;
 @property(retain, nonatomic) NSString *deviceId; // @synthesize deviceId=_deviceId;
 @property(nonatomic) unsigned int type; // @synthesize type=_type;
 - (void).cxx_destruct;

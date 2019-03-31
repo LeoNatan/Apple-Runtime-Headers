@@ -118,6 +118,8 @@
 - (_Bool)setBypassRingerSwitchPolicy:(_Bool)arg1 error:(id *)arg2;
 - (void)setAllowAllBuiltInDataSources:(_Bool)arg1;
 - (_Bool)allowAllBuiltInDataSources;
+- (_Bool)setRecordingFromRemoteInput:(_Bool)arg1 error:(id *)arg2;
+- (_Bool)recordingFromRemoteInput;
 - (_Bool)setRequiresNoAudioResources:(_Bool)arg1 error:(id *)arg2;
 - (_Bool)requiresNoAudioResources;
 - (_Bool)setUsingLongFormAudio:(_Bool)arg1 error:(id *)arg2;
@@ -130,7 +132,7 @@
 - (_Bool)isDolbyDigitalEncoderAvailable;
 - (int)audioFormat;
 - (id)audioFormats;
-- (unsigned int)promptStyle;
+@property(readonly) unsigned int promptStyle;
 - (float)outputVolume;
 - (_Bool)setOutputDataSource:(id)arg1 error:(id *)arg2;
 - (_Bool)setInputDataSource:(id)arg1 error:(id *)arg2;

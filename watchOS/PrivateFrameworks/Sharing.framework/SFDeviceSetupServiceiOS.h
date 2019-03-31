@@ -38,6 +38,7 @@
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 - (void).cxx_destruct;
+- (void)_handleConfigRequestReceived:(id)arg1;
 - (void)_handleSessionSecured:(id)arg1;
 - (void)_handleSessionEnded:(id)arg1;
 - (void)_handleSessionStarted:(id)arg1;

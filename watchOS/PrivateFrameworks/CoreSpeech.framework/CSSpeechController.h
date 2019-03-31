@@ -35,7 +35,9 @@
     _Bool _isAlarmPlaying;
     _Bool _isTimerPlaying;
     _Bool _isSoundPlaying;
+    _Bool _isRemoteVADAvailableStream;
     _Bool _myriadPreventingTwoShotFeedback;
+    _Bool _needsPostGain;
     id <CSSpeechControllerDelegate> _delegate;
     CSEndpointerProxy *_endpointerProxy;
     CSSpeechManager *_speechManager;
@@ -50,7 +52,9 @@
 
 + (_Bool)isSmartSiriVolumeAvailable;
 + (id)sharedController;
+@property(nonatomic) _Bool needsPostGain; // @synthesize needsPostGain=_needsPostGain;
 @property(nonatomic) _Bool myriadPreventingTwoShotFeedback; // @synthesize myriadPreventingTwoShotFeedback=_myriadPreventingTwoShotFeedback;
+@property(nonatomic) _Bool isRemoteVADAvailableStream; // @synthesize isRemoteVADAvailableStream=_isRemoteVADAvailableStream;
 @property(nonatomic) _Bool isSoundPlaying; // @synthesize isSoundPlaying=_isSoundPlaying;
 @property(nonatomic) _Bool isTimerPlaying; // @synthesize isTimerPlaying=_isTimerPlaying;
 @property(nonatomic) _Bool isAlarmPlaying; // @synthesize isAlarmPlaying=_isAlarmPlaying;
@@ -102,7 +106,7 @@
 - (id)metrics;
 - (void)keywordDetectorDidDetectKeyword;
 - (void)voiceTriggerDidDetectTwoShotAtTime:(double)arg1;
-- (void)voiceTriggerDidDetectKeyword:(id)arg1;
+- (void)voiceTriggerDidDetectKeyword:(id)arg1 deviceId:(id)arg2;
 - (id)voiceTriggerInfo;
 - (unsigned int)outputReferenceChannel;
 - (float)averagePowerForOutputReference;
@@ -133,14 +137,14 @@
 - (void)speechManagerLPCMRecordBufferAvailable:(id)arg1 chunk:(id)arg2;
 - (_Bool)_isJarvisButtonPress;
 - (_Bool)_isJarvisVoiceTriggered;
-- (_Bool)_private_PacketEncodingUsed;
-- (_Bool)_private_PacketDecodingUsed;
+- (_Bool)_isHearstDoubleTap;
+- (_Bool)_isHearstVoiceTriggered;
 - (_Bool)_isSpeakerIdTrainingTriggered;
 - (_Bool)_isAutoPrompted;
 - (_Bool)_isVoiceTriggered;
 - (_Bool)isRTSTriggered;
 - (_Bool)isJarvisVoiceTriggered;
-- (_Bool)PacketDecodingUsed;
+- (_Bool)isHearstVoiceTriggered;
 - (_Bool)isVoiceTriggered;
 - (id)recordDeviceInfo;
 - (id)recordRoute;

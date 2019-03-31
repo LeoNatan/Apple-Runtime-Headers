@@ -10,6 +10,9 @@
 {
 }
 
+- (id)debugDescriptionForComponents:(id)arg1 depth:(unsigned long long)arg2;
+- (id)debugDescription;
+- (id)description;
 - (void)_removeComponent:(id)arg1;
 - (void)removeAllComponents;
 - (void)removeComponentWithIdentifier:(id)arg1;

@@ -18,6 +18,7 @@
     long long _cellularRadioAccessTechnology;
     long long _onboardingVersion;
     long long _reachabilityStatus;
+    NSString *_bundleIap;
     NSData *_clickThroughRateByPersonalizationFeatureIDData;
     NSString *_contentStoreFrontID;
     NSString *_localeIdentifier;
@@ -36,6 +37,7 @@
     } _has;
 }
 
+@property(retain, nonatomic) NSString *bundleIap; // @synthesize bundleIap=_bundleIap;
 @property(nonatomic) _Bool isBundleSubscriber; // @synthesize isBundleSubscriber=_isBundleSubscriber;
 @property(retain, nonatomic) NSString *localeIdentifier; // @synthesize localeIdentifier=_localeIdentifier;
 @property(retain, nonatomic) NSData *clickThroughRateByPersonalizationFeatureIDData; // @synthesize clickThroughRateByPersonalizationFeatureIDData=_clickThroughRateByPersonalizationFeatureIDData;
@@ -57,6 +59,7 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(readonly, nonatomic) _Bool hasBundleIap;
 @property(nonatomic) _Bool hasIsBundleSubscriber;
 - (void)setUserSegmentationTreatmentIds:(long long *)arg1 count:(unsigned long long)arg2;
 - (long long)userSegmentationTreatmentIdsAtIndex:(unsigned long long)arg1;

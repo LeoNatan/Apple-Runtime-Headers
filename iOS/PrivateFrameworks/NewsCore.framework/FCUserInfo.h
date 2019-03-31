@@ -64,6 +64,8 @@
 @property(readonly, nonatomic) NSDate *dateLastViewedSaved;
 - (void)markSavedAsViewed;
 - (void)maybeUpdateOnboardingVersion:(CDUnknownBlockType)arg1;
+- (void)updateOnboardingVersion;
+- (void)refreshOnboardingVersion:(CDUnknownBlockType)arg1;
 @property(readonly, nonatomic) _Bool mightNeedToUpdateOnboardingVersion;
 @property(copy, nonatomic) NSDate *bundleSubscriptionMeteredCountLastResetDate;
 @property(copy, nonatomic) NSNumber *monthlyBundleSubscriptionMeteredCount;

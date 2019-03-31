@@ -22,6 +22,7 @@
 @property(readonly, nonatomic) SXViewport *viewport; // @synthesize viewport=_viewport;
 - (void).cxx_destruct;
 - (id)colorForAppearState:(unsigned long long)arg1;
+- (void)update;
 - (void)viewport:(id)arg1 appearStateChangedFromState:(unsigned long long)arg2;
 - (void)viewport:(id)arg1 dynamicBoundsDidChangeFromBounds:(struct CGRect)arg2;
 - (void)viewport:(id)arg1 boundsDidChangeFromBounds:(struct CGRect)arg2;

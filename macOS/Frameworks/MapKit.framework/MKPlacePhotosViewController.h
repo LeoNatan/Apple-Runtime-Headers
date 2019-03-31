@@ -60,6 +60,8 @@
 - (void)_createImageViews;
 - (void)openURL;
 - (id)attributionString;
+- (id)formattedAttributionString;
+- (void)updateAttributionCell;
 - (void)addAttributionCell;
 - (void)dealloc;
 - (void)viewWillDisappear:(BOOL)arg1;

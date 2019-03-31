@@ -23,6 +23,8 @@
 @property(retain, nonatomic) NSTimer *invalidationTimer; // @synthesize invalidationTimer=_invalidationTimer;
 @property(retain, nonatomic) NTKHeartRateModel *dataModel; // @synthesize dataModel=_dataModel;
 - (void).cxx_destruct;
+- (void)_timeChanged:(id)arg1;
+- (void)_localeChanged:(id)arg1;
 - (void)model:(id)arg1 updatedSummary:(id)arg2;
 - (void)model:(id)arg1 updatedSample:(id)arg2;
 - (void)_startInvalidationTimerWithTimeInterval:(double)arg1;

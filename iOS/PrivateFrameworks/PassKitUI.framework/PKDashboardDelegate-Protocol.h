@@ -6,14 +6,9 @@
 
 #import <PassKitUI/NSObject-Protocol.h>
 
-@class UIColor;
-
 @protocol PKDashboardDelegate <NSObject>
 - (struct CGPoint)preferredContentOffset;
 - (_Bool)shouldOverrideContentOffset;
 - (void)contentDidScroll;
-
-@optional
-- (UIColor *)preferredNavigationBarTintColor;
 @end
 

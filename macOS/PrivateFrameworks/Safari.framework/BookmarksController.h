@@ -20,7 +20,8 @@
     BOOL _loaded;
     NSMutableDictionary *_proxiesByIdentifier;
     SpotlightBookmarksWriter *_spotlightBookmarksWriter;
-    WBSSiteMetadataManager *_siteMetadataManager;
+    WBSSiteMetadataManager *_cachedSiteMetadataManager;
+    CDUnknownBlockType _siteMetadataManagerProvider;
     unsigned long long _bookmarksFileSize;
     double _bookmarksFileTime;
     unsigned long long _bookmarksGeneration;
@@ -113,7 +114,7 @@
 - (void)fetchBookmarksBarCollectionWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)dealloc;
 @property(readonly, nonatomic) WebBookmark *historyCollection;
-- (id)_initWithBookmarksFilePath:(id)arg1 builtInBookmarksURL:(id)arg2 migratedBookmarksFolder:(id)arg3 spotlightCacheController:(id)arg4 siteMetadataManager:(id)arg5;
+- (id)_initWithBookmarksFilePath:(id)arg1 builtInBookmarksURL:(id)arg2 migratedBookmarksFolder:(id)arg3 spotlightCacheController:(id)arg4 siteMetadataManagerProvider:(CDUnknownBlockType)arg5;
 - (void)resetWithBookmarksFilePath:(id)arg1;
 - (void)_deleteMigratedNonSafariBookmarkFiles;
 - (void)_importMigratedNonSafariBookmarks;

@@ -9,8 +9,13 @@
 @class NSString;
 
 @protocol HKFeatureAvailabilityDataSource <NSObject>
+- (CDStruct_4bb15e50)watchElectrocardiogramVersion;
+- (NSString *)electrocardiogramOnboardingCountryCode;
+- (CDStruct_4bb15e50)watchAtrialFibrillationDetectionVersion;
 - (NSString *)atrialFibrillationDetectionOnboardingCountryCode;
+- (NSString *)watchOSBuildVersion;
 - (NSString *)watchRegion;
+- (NSString *)watchBuildType;
 - (NSString *)watchProductType;
 - (NSString *)watchModelNumber;
 - (CDStruct_4bb15e50)watchOSVersion;

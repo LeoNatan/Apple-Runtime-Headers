@@ -5,13 +5,16 @@
 //
 
 #import <NewsCore/FCKeyValueStoreCoding-Protocol.h>
+#import <NewsCore/NSCopying-Protocol.h>
+#import <NewsCore/NSMutableCopying-Protocol.h>
 #import <NewsCore/NSObject-Protocol.h>
 
 @class CKRecord, NSDate, NSString;
 
-@protocol FCIssueReadingHistoryItem <NSObject, FCKeyValueStoreCoding>
+@protocol FCIssueReadingHistoryItem <NSObject, FCKeyValueStoreCoding, NSCopying, NSMutableCopying>
 @property(readonly, copy, nonatomic) NSString *lastVisitedPageID;
 @property(readonly, copy, nonatomic) NSString *lastVisitedArticleID;
+@property(readonly, copy, nonatomic) NSDate *lastBadgedDate;
 @property(readonly, copy, nonatomic) NSDate *lastVisitedDate;
 @property(readonly, copy, nonatomic) NSString *issueID;
 @property(readonly, copy, nonatomic) NSString *identifier;

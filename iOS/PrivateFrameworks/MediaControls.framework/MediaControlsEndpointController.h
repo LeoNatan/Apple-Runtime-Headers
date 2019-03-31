@@ -10,7 +10,7 @@
 #import <MediaControls/MPRequestResponseControllerDelegate-Protocol.h>
 
 @class MPAVEndpointRoute, MPAVRoutingController, MPCPlayerPath, MPCPlayerResponse, MPMediaControlsConfiguration, MPRequestResponseController, NSArray, NSString;
-@protocol MediaControlsEndpointControllerDelegate, MediaControlsEndpointObserverDelegate;
+@protocol MediaControlsEndpointControllerConnectionDelegate, MediaControlsEndpointControllerDelegate, MediaControlsEndpointObserverDelegate;
 
 @interface MediaControlsEndpointController : NSObject <MPRequestResponseControllerDelegate, MPAVRoutingControllerDelegate>
 {
@@ -27,8 +27,10 @@
     id <MediaControlsEndpointObserverDelegate> _proxyDelegate;
     MPRequestResponseController *_requestController;
     MPAVRoutingController *_routingController;
+    id <MediaControlsEndpointControllerConnectionDelegate> _connectionDelegate;
 }
 
+@property(nonatomic) __weak id <MediaControlsEndpointControllerConnectionDelegate> connectionDelegate; // @synthesize connectionDelegate=_connectionDelegate;
 @property(nonatomic, getter=isAutomaticResponseLoading) _Bool automaticResponseLoading; // @synthesize automaticResponseLoading=_automaticResponseLoading;
 @property(retain, nonatomic) MPAVRoutingController *routingController; // @synthesize routingController=_routingController;
 @property(nonatomic, getter=isAttemptingConnection) _Bool attemptingConnection; // @synthesize attemptingConnection=_attemptingConnection;
@@ -59,6 +61,7 @@
 - (void)launchNowPlayingApp;
 @property(copy, nonatomic) NSString *label;
 - (void)connectAllowingAuthenticationWithCompletion:(CDUnknownBlockType)arg1;
+- (void)representsLongFormVideoContentWithCompletion:(CDUnknownBlockType)arg1;
 @property(retain, nonatomic) MPAVEndpointRoute *route;
 @property(readonly, nonatomic) MPCPlayerResponse *response;
 @property(readonly, nonatomic, getter=isRoutingToWireless) _Bool routingToWireless;

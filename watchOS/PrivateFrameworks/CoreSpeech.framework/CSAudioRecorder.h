@@ -43,6 +43,7 @@
 
 @property(nonatomic) __weak id <CSAudioRecorderDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (void)_updatePowerMeter:(id)arg1;
 - (void)audioFileReaderDidStopRecording:(id)arg1 forReason:(int)arg2;
 - (void)audioFileReaderDidStartRecording:(id)arg1 successfully:(_Bool)arg2 error:(id)arg3;
 - (void)audioFileReaderBufferAvailable:(id)arg1 buffer:(id)arg2 atTime:(unsigned long long)arg3;
@@ -74,11 +75,11 @@
 - (_Bool)playAlertSoundForType:(int)arg1;
 - (_Bool)playRecordStartingAlertAndResetEndpointer;
 - (_Bool)setAlertSoundFromURL:(id)arg1 forType:(int)arg2;
-- (void)audioDecoderDidDecodePackets:(id)arg1 buffer:(id)arg2 timestamp:(unsigned long long)arg3;
+- (void)audioDecoderDidDecodePackets:(id)arg1 buffer:(id)arg2 remoteVAD:(id)arg3 timestamp:(unsigned long long)arg4;
 - (void)voiceControllerRecordBufferAvailable:(id)arg1 buffer:(id)arg2;
 - (void)beepCancellerDidCancelSamples:(id)arg1 buffer:(id)arg2 timestamp:(unsigned long long)arg3;
 - (void)_processAudioChainWithZeroFiltering:(id)arg1 atTime:(unsigned long long)arg2;
-- (void)_processAudioChain:(id)arg1 atTime:(unsigned long long)arg2;
+- (void)_processAudioChain:(id)arg1 remoteVAD:(id)arg2 atTime:(unsigned long long)arg3;
 - (void)_releaseAudioRecordingTransaction;
 - (void)_holdAudioRecordingTransaction;
 - (_Bool)_shouldRunZeroFilter;
@@ -96,6 +97,7 @@
 - (void)stopRecording;
 - (_Bool)startRecording;
 - (_Bool)startRecording:(id *)arg1;
+- (_Bool)_shouldUseRemoteBuiltInMic:(id)arg1;
 - (_Bool)_shouldUseRemoteRecordForContext:(id)arg1;
 - (_Bool)startRecordingWithSettings:(id)arg1 error:(id *)arg2;
 - (_Bool)_startRecordingForAudioInjection;

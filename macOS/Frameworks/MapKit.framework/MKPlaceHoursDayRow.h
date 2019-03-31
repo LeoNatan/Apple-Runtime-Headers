@@ -18,7 +18,6 @@
 - (void)_setUpConstraints;
 - (void)_setUpViewsForPlaceHoursDayRow;
 - (id)initWithBusinessHours:(id)arg1 frame:(struct CGRect)arg2;
-- (id)initWithPlaceDailyHours:(id)arg1 frame:(struct CGRect)arg2;
 
 @end
 

@@ -51,8 +51,6 @@
 - (id)_defaultRouteButtonImageAsSelected:(_Bool)arg1;
 - (void)_createSubviews;
 - (id)_routeButton;
-- (_Bool)isShowingActiveOverlays;
-- (void)dismissActiveOverlaysAnimated:(_Bool)arg1;
 @property(readonly, nonatomic) _Bool isShowingRouteButton;
 @property(readonly, nonatomic) _Bool isVisible;
 @property(nonatomic) _Bool volumeSliderShrinksFromBothEnds;

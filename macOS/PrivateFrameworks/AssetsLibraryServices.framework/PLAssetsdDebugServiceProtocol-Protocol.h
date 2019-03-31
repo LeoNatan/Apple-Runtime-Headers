@@ -12,6 +12,9 @@
 - (void)coalesceJournalsForPayloadClassIDs:(NSSet *)arg1 withChangeJournalOverThreshold:(float)arg2 reply:(void (^)(void))arg3;
 - (void)snapshotJournalsForPayloadClassIDs:(NSSet *)arg1 reply:(void (^)(void))arg2;
 - (void)privateDownloadCloudPhotoLibraryAsset:(NSURL *)arg1 resourceType:(unsigned long long)arg2 highPriority:(BOOL)arg3 reply:(void (^)(void))arg4;
+- (void)cleanupEmptyHighlightsWithReply:(void (^)(void))arg1;
+- (void)updateHighlightTitlesWithReply:(void (^)(void))arg1;
+- (void)processUnprocessedMomentLocationsWithReply:(void (^)(void))arg1;
 - (void)processRecentHighlightsWithReply:(void (^)(void))arg1;
 - (void)prefetchResourcesForMemories:(NSArray *)arg1 reply:(void (^)(void))arg2;
 - (void)pruneAssetsWithUUID:(NSArray *)arg1 resourceTypes:(NSArray *)arg2 reply:(void (^)(void))arg3;

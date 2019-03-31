@@ -11,6 +11,7 @@
 
 @protocol SXLayoutPipeline <NSObject>
 @property(nonatomic) __weak id <SXLayoutPipelineDelegate> delegate;
+- (void)cancelTasks;
 - (void)removeProcessor:(id <SXLayoutProcessor>)arg1 type:(unsigned long long)arg2;
 - (void)addProcessor:(id <SXLayoutProcessor>)arg1 type:(unsigned long long)arg2;
 - (void)layoutWithTask:(SXLayoutTask *)arg1;

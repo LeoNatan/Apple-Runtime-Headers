@@ -9,6 +9,7 @@
 @class NSArray, NSString, STUsageDetailsViewModel;
 
 @protocol STUsageDetailsViewModelCoordinator <NSObject>
+@property(readonly, getter=isRefreshing) _Bool refreshing;
 @property(copy, nonatomic) NSString *selectedDeviceIdentifier;
 @property(readonly, copy, nonatomic) NSArray *devices;
 @property(readonly, nonatomic) STUsageDetailsViewModel *viewModel;

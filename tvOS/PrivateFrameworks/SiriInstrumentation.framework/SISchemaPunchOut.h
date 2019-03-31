@@ -8,24 +8,18 @@
 
 #import <SiriInstrumentation/NSCopying-Protocol.h>
 
-@class NSString, SISchemaViewIDType;
+@class NSString, SISchemaViewContainer;
 
 @interface SISchemaPunchOut : PBCodable <NSCopying>
 {
-    long long _appID;
+    NSString *_appID;
     NSString *_urlScheme;
-    int _viewElementID;
-    SISchemaViewIDType *_viewID;
-    struct {
-        unsigned int appID:1;
-        unsigned int viewElementID:1;
-    } _has;
+    SISchemaViewContainer *_viewContainer;
 }
 
-@property(nonatomic) int viewElementID; // @synthesize viewElementID=_viewElementID;
-@property(retain, nonatomic) SISchemaViewIDType *viewID; // @synthesize viewID=_viewID;
+@property(retain, nonatomic) SISchemaViewContainer *viewContainer; // @synthesize viewContainer=_viewContainer;
 @property(retain, nonatomic) NSString *urlScheme; // @synthesize urlScheme=_urlScheme;
-@property(nonatomic) long long appID; // @synthesize appID=_appID;
+@property(retain, nonatomic) NSString *appID; // @synthesize appID=_appID;
 - (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -36,10 +30,9 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
-@property(nonatomic) _Bool hasViewElementID;
-@property(readonly, nonatomic) _Bool hasViewID;
+@property(readonly, nonatomic) _Bool hasViewContainer;
 @property(readonly, nonatomic) _Bool hasUrlScheme;
-@property(nonatomic) _Bool hasAppID;
+@property(readonly, nonatomic) _Bool hasAppID;
 
 @end
 

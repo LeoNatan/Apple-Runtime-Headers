@@ -13,11 +13,13 @@
 @interface AWDHomeKitTargetControllerError : PBCodable <NSCopying>
 {
     unsigned long long _timestamp;
+    int _certified;
     int _error;
     int _transportType;
     AWDHomeKitVendorInformation *_vendorDetails;
     struct {
         unsigned int timestamp:1;
+        unsigned int certified:1;
         unsigned int error:1;
         unsigned int transportType:1;
     } _has;
@@ -35,6 +37,10 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+- (int)StringAsCertified:(id)arg1;
+- (id)certifiedAsString:(int)arg1;
+@property(nonatomic) _Bool hasCertified;
+@property(nonatomic) int certified; // @synthesize certified=_certified;
 - (int)StringAsTransportType:(id)arg1;
 - (id)transportTypeAsString:(int)arg1;
 @property(nonatomic) _Bool hasTransportType;

@@ -16,6 +16,7 @@
 - (void)controlCenterWillPresent;
 - (void)dismissPresentedContentAnimated:(_Bool)arg1 completion:(void (^)(void))arg2;
 - (_Bool)canDismissPresentedContent;
+- (void)performTransitionWithCustomAnimator:(void (^)(void))arg1 completion:(void (^)(_Bool))arg2;
 - (void)didTransitionToExpandedContentMode:(_Bool)arg1;
 - (void)willTransitionToExpandedContentMode:(_Bool)arg1;
 - (_Bool)shouldFinishTransitionToExpandedContentModule;

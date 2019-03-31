@@ -9,18 +9,14 @@
 #import <ChatKit/AVPlayerViewControllerDelegate-Protocol.h>
 #import <ChatKit/CKNanoMediaPresentingViewController-Protocol.h>
 
-@class AVPlayerLayer, AVPlayerLooper, AVQueuePlayer, NSString;
+@class AVPlayerLooper, NSString;
 
 @interface CKNanoAutoloopVideoPresenter : AVPlayerViewController <CKNanoMediaPresentingViewController, AVPlayerViewControllerDelegate>
 {
-    AVQueuePlayer *_queuePlayer;
-    AVPlayerLayer *_playerLayer;
     AVPlayerLooper *_playerLooper;
 }
 
 @property(retain, nonatomic) AVPlayerLooper *playerLooper; // @synthesize playerLooper=_playerLooper;
-@property(retain, nonatomic) AVPlayerLayer *playerLayer; // @synthesize playerLayer=_playerLayer;
-@property(retain, nonatomic) AVQueuePlayer *queuePlayer; // @synthesize queuePlayer=_queuePlayer;
 - (void).cxx_destruct;
 - (_Bool)playerViewControllerShouldHandleDoneButtonTap:(id)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;

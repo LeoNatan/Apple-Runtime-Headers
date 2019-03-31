@@ -7,11 +7,12 @@
 #import <SearchUI/SearchUICardSectionView.h>
 
 #import <SearchUI/NUIContainerStackViewDelegate-Protocol.h>
+#import <SearchUI/SearchUIFeedbackDelegate-Protocol.h>
 #import <SearchUI/TLKDetailsViewDelegate-Protocol.h>
 
 @class NSMutableDictionary, NSString, SearchUIAccessoryViewController, SearchUIImageView, TLKDetailsView, TLKStackView, UIButton;
 
-@interface SearchUIDetailedRowCardSectionView : SearchUICardSectionView <NUIContainerStackViewDelegate, TLKDetailsViewDelegate>
+@interface SearchUIDetailedRowCardSectionView : SearchUICardSectionView <NUIContainerStackViewDelegate, TLKDetailsViewDelegate, SearchUIFeedbackDelegate>
 {
     SearchUIImageView *_thumbnailView;
     UIButton *_buttonView;
@@ -32,6 +33,7 @@
 @property(retain) UIButton *buttonView; // @synthesize buttonView=_buttonView;
 @property(retain) SearchUIImageView *thumbnailView; // @synthesize thumbnailView=_thumbnailView;
 - (void).cxx_destruct;
+- (void)didEngageActionItem:(id)arg1 actionPerformed:(_Bool)arg2;
 - (void)buttonPressed;
 - (long long)containerStackView:(id)arg1 alignmentForArrangedSubview:(id)arg2;
 - (_Bool)arrangedViewMustCenter:(id)arg1;

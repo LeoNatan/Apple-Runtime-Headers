@@ -9,12 +9,13 @@
 #import <RTTUI/NSTableViewDataSource-Protocol.h>
 #import <RTTUI/NSTableViewDelegate-Protocol.h>
 #import <RTTUI/NSTextViewDelegate-Protocol.h>
+#import <RTTUI/RTTUIServiceCellDelegate-Protocol.h>
 #import <RTTUI/RTTUIUtteranceCellDelegate-Protocol.h>
 
 @class AXDispatchTimer, CAShapeLayer, NSButton, NSLock, NSMutableArray, NSMutableString, NSObject, NSScrollView, NSString, NSTableView, NSTextView, RTTConversation, RTTUIServiceUpdateCell, RTTUtterance, TUCall;
 @protocol OS_dispatch_queue;
 
-@interface RTTUIConversationViewController : NSViewController <NSTableViewDelegate, NSTableViewDataSource, RTTUIUtteranceCellDelegate, NSTextViewDelegate>
+@interface RTTUIConversationViewController : NSViewController <NSTableViewDelegate, NSTableViewDataSource, RTTUIUtteranceCellDelegate, NSTextViewDelegate, RTTUIServiceCellDelegate>
 {
     NSTextView *_textView;
     CAShapeLayer *_bubbleLayer;
@@ -27,6 +28,7 @@
     NSMutableString *_voAnnouncementBuffer;
     BOOL _processingUtteranceBuffer;
     RTTConversation *_conversation;
+    NSString *_currentServiceMessage;
     NSScrollView *_scrollView;
     NSTableView *_tableView;
     RTTUtterance *_currentUtterance;
@@ -42,6 +44,7 @@
 @property(retain, nonatomic) RTTUtterance *currentUtterance; // @synthesize currentUtterance=_currentUtterance;
 @property(retain, nonatomic) NSTableView *tableView; // @synthesize tableView=_tableView;
 @property(retain, nonatomic) NSScrollView *scrollView; // @synthesize scrollView=_scrollView;
+@property(retain, nonatomic) NSString *currentServiceMessage; // @synthesize currentServiceMessage=_currentServiceMessage;
 @property(retain, nonatomic) RTTConversation *conversation; // @synthesize conversation=_conversation;
 - (void).cxx_destruct;
 - (void)textDidChange:(id)arg1;
@@ -71,7 +74,7 @@
 - (void)_sendNewUtteranceString:(id)arg1 atIndex:(unsigned long long)arg2 forCellPath:(id)arg3;
 - (void)processUtteranceQueue;
 - (id)addUtterance:(id)arg1;
-- (void)insertServiceCell;
+- (void)updateServiceCellWithString:(id)arg1;
 - (id)currentCall;
 - (void)toggleMute:(id)arg1;
 - (void)updateMuteButton;

@@ -7,15 +7,14 @@
 #import <objc/NSObject.h>
 
 #import <NewsCore/FCAppActivityObserving-Protocol.h>
+#import <NewsCore/FCBundleChannelProviderDelegate-Protocol.h>
 #import <NewsCore/FCBundleSubscriptionManagerType-Protocol.h>
 
 @class FCBundleSubscription, FCBundleSubscriptionLookUpEntryManager, FCKeyValueStore, FCPurchaseLookupRecordSource, NFMutexLock, NSHashTable, NSString;
-@protocol FCBundleEntitlementsProviderType;
+@protocol FCBundleChannelProviderType, FCBundleEntitlementsProviderType;
 
-@interface FCBundleSubscriptionManager : NSObject <FCAppActivityObserving, FCBundleSubscriptionManagerType>
+@interface FCBundleSubscriptionManager : NSObject <FCAppActivityObserving, FCBundleChannelProviderDelegate, FCBundleSubscriptionManagerType>
 {
-    _Bool _hasLoadedFromLocalStore;
-    _Bool _hasAttemptedRefreshOnce;
     id <FCBundleEntitlementsProviderType> _entitlementsProvider;
     FCPurchaseLookupRecordSource *_purchaseLookupRecordSource;
     FCBundleSubscription *_cachedSubscription;
@@ -23,10 +22,10 @@
     FCBundleSubscriptionLookUpEntryManager *_bundleSubscriptionLookupEntryManager;
     NSHashTable *_observers;
     NFMutexLock *_accessLock;
+    id <FCBundleChannelProviderType> _bundleChannelProvider;
 }
 
-@property(nonatomic) _Bool hasAttemptedRefreshOnce; // @synthesize hasAttemptedRefreshOnce=_hasAttemptedRefreshOnce;
-@property(nonatomic) _Bool hasLoadedFromLocalStore; // @synthesize hasLoadedFromLocalStore=_hasLoadedFromLocalStore;
+@property(retain, nonatomic) id <FCBundleChannelProviderType> bundleChannelProvider; // @synthesize bundleChannelProvider=_bundleChannelProvider;
 @property(retain, nonatomic) NFMutexLock *accessLock; // @synthesize accessLock=_accessLock;
 @property(retain, nonatomic) NSHashTable *observers; // @synthesize observers=_observers;
 @property(retain, nonatomic) FCBundleSubscriptionLookUpEntryManager *bundleSubscriptionLookupEntryManager; // @synthesize bundleSubscriptionLookupEntryManager=_bundleSubscriptionLookupEntryManager;
@@ -46,9 +45,13 @@
 - (void)renewalNoticeShownWithPurchaseID:(id)arg1;
 - (id)bundleSubscriptionLookupEntry;
 - (void)updateCachedSubscriptionWithSubscription:(id)arg1;
+- (void)clearBundleSubscription;
 - (void)refreshBundleSubscriptionWithCachePolicy:(unsigned long long)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)bundleChannelProvider:(id)arg1 bundleChannelIDsDidChangeWithChannelIDs:(id)arg2;
+- (void)activityObservingApplicationWillEnterForeground;
 - (void)activityObservingApplicationDidEnterBackground;
-- (id)initWithPrivateDataDirectory:(id)arg1 purchaseLookupRecordSource:(id)arg2 appActivityMonitor:(id)arg3 entitlementsProvider:(id)arg4;
+- (void)setupCachedSubscription;
+- (id)initWithPrivateDataDirectory:(id)arg1 configurationManager:(id)arg2 purchaseLookupRecordSource:(id)arg3 appActivityMonitor:(id)arg4 entitlementsProvider:(id)arg5;
 - (id)init;
 
 // Remaining properties

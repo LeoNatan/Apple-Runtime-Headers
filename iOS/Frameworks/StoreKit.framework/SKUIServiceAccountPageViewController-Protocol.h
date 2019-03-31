@@ -9,6 +9,8 @@
 @class ACAccount, NSString, NSURL;
 
 @protocol SKUIServiceAccountPageViewController <NSObject>
+- (void)keyboardWillChangeFrame:(struct CGRect)arg1 animationCurve:(long long)arg2 duration:(double)arg3;
+- (void)keyboardDidChangeFrame:(struct CGRect)arg1 animationCurve:(long long)arg2 duration:(double)arg3;
 - (void)redeemCameraCodeDetected:(NSString *)arg1;
 - (void)dismissPresentingBridgedViewController;
 - (void)setLoadFromBridgedNavigation:(_Bool)arg1;

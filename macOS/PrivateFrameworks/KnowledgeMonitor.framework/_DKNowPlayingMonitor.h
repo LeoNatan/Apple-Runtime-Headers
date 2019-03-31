@@ -14,6 +14,7 @@
     AVOutputContext *_outputContext;
 }
 
++ (BOOL)shouldMergeUnchangedEvents;
 + (CDUnknownBlockType)_eventFilterBlock;
 + (id)entitlements;
 + (id)eventStream;

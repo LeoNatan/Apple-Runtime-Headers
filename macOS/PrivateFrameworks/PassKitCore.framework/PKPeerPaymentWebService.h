@@ -44,8 +44,9 @@
 - (id)_deviceMetadata;
 - (void)_deviceRegistrationDataWithCompletion:(CDUnknownBlockType)arg1;
 - (id)_deviceIdentifier;
-- (unsigned long long)disbursementVoucherWithRequest:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (unsigned long long)disbursementVoucherWithRequest:(id)arg1 certificates:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (unsigned long long)submitDeviceScoreIdentifiersWithRequest:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (unsigned long long)peerPaymentEmailTermsWithCompletion:(CDUnknownBlockType)arg1;
 - (unsigned long long)peerPaymentReOpenAccountWithCompletion:(CDUnknownBlockType)arg1;
 - (unsigned long long)peerPaymentRequestStatementWithCompletion:(CDUnknownBlockType)arg1;
 - (unsigned long long)peerPaymentBankLookupWithCountryCode:(id)arg1 query:(id)arg2 completion:(CDUnknownBlockType)arg3;

@@ -34,6 +34,7 @@
 - (id)_createOrOpenFileForUpdatingAtPath:(id)arg1 error:(id *)arg2;
 - (id)_underlyingArchivePath;
 - (void)dealloc;
+- (id)initForReadingFromPath:(id)arg1 options:(id)arg2;
 - (id)initForReadingFromPath:(id)arg1;
 
 @end

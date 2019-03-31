@@ -8,7 +8,7 @@
 
 #import <SAObjects/SAServerBoundCommand-Protocol.h>
 
-@class NSArray, NSString;
+@class NSArray, NSNumber, NSString;
 
 @interface SASendInstrumentation : SABaseCommand <SAServerBoundCommand>
 {
@@ -18,6 +18,8 @@
 + (id)sendInstrumentation;
 - (_Bool)requiresResponse;
 @property(copy, nonatomic) NSArray *instrumentationBatch;
+@property(copy, nonatomic) NSString *eventTransmittedTimestampRefId;
+@property(copy, nonatomic) NSNumber *eventTransmittedRelativeToBootTimeTimestampNs;
 - (id)encodedClassName;
 - (id)groupIdentifier;
 

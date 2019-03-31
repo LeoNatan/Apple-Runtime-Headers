@@ -54,6 +54,7 @@
 - (id)methodSignatureForSelector:(SEL)arg1;
 - (void)didFetchCloudKitSyncDebuggingInfo:(id)arg1;
 - (void)didAttemptToDisableiCloudBackups:(int)arg1 error:(id)arg2;
+- (void)didFetchRampState:(id)arg1;
 - (void)didFetchSyncStateStats:(id)arg1;
 - (void)databaseChatSpamUpdated:(id)arg1;
 - (void)databaseNoLongerFull;

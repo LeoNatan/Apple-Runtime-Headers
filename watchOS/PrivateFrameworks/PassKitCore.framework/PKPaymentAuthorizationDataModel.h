@@ -33,6 +33,8 @@
     NSArray *_paymentContentItems;
     NSString *_hostAppLocalizedName;
     NSString *_hostApplicationIdentifier;
+    NSString *_bundleIdentifier;
+    NSString *_teamIdentifier;
     CNContact *_shippingEmail;
     CNContact *_shippingPhone;
     CNContact *_shippingName;
@@ -92,12 +94,15 @@
 @property(retain, nonatomic) CNContact *shippingName; // @synthesize shippingName=_shippingName;
 @property(retain, nonatomic) CNContact *shippingPhone; // @synthesize shippingPhone=_shippingPhone;
 @property(retain, nonatomic) CNContact *shippingEmail; // @synthesize shippingEmail=_shippingEmail;
+@property(retain, nonatomic) NSString *teamIdentifier; // @synthesize teamIdentifier=_teamIdentifier;
+@property(retain, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
 @property(retain, nonatomic) NSString *hostApplicationIdentifier; // @synthesize hostApplicationIdentifier=_hostApplicationIdentifier;
 @property(retain, nonatomic) NSString *hostAppLocalizedName; // @synthesize hostAppLocalizedName=_hostAppLocalizedName;
 @property(retain, nonatomic) NSArray *paymentContentItems; // @synthesize paymentContentItems=_paymentContentItems;
 @property(retain, nonatomic) PKPaymentRequest *paymentRequest; // @synthesize paymentRequest=_paymentRequest;
 @property(readonly, nonatomic) int mode; // @synthesize mode=_mode;
 - (void).cxx_destruct;
+- (void)fallbackToBypassMode;
 - (int)_statusForPass:(id)arg1;
 - (void)_setStatus:(int)arg1 forPass:(id)arg2;
 - (void)setStatus:(int)arg1 forItemWithType:(int)arg2 notify:(_Bool)arg3;

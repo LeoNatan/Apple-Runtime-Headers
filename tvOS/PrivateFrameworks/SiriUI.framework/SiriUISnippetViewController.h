@@ -6,7 +6,7 @@
 
 #import <SiriUI/SiriUIBaseSnippetViewController.h>
 
-@class NSArray, NSAttributedString, NSString, SAUIAppPunchOut, SAUIConfirmationOptions, UICollectionReusableView, UIColor, UIView;
+@class NSArray, NSAttributedString, NSString, NSUUID, SAUIAppPunchOut, SAUIConfirmationOptions, UICollectionReusableView, UIColor, UIView;
 @protocol SiriUIReusableView, SiriUISnippetViewControllerDelegate;
 
 @interface SiriUISnippetViewController : SiriUIBaseSnippetViewController
@@ -28,6 +28,7 @@
     _Bool _awaitingSuccessOrFailureEvent;
     _Bool _showHeaderChevron;
     _Bool _provisional;
+    struct NSUUID *_instrumentationTurnIdentifier;
     UIColor *_titleTextColor;
     UIColor *_titleBackgroundColor;
     NSAttributedString *_attributedSubtitle;
@@ -65,6 +66,7 @@
 @property(copy, nonatomic) NSAttributedString *attributedSubtitle; // @synthesize attributedSubtitle=_attributedSubtitle;
 @property(copy, nonatomic) UIColor *titleBackgroundColor; // @synthesize titleBackgroundColor=_titleBackgroundColor;
 @property(copy, nonatomic) UIColor *titleTextColor; // @synthesize titleTextColor=_titleTextColor;
+@property(retain, nonatomic) NSUUID *instrumentationTurnIdentifier; // @synthesize instrumentationTurnIdentifier=_instrumentationTurnIdentifier;
 - (void).cxx_destruct;
 - (void)confirmSnippet;
 - (void)confirmButtonTapped:(id)arg1;

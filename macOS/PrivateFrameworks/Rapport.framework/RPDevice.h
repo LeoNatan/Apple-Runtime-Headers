@@ -14,6 +14,7 @@
 {
     unsigned char _deviceActionType;
     BOOL _needsSetup;
+    int _activityLevel;
     unsigned int _flags;
     int _proximity;
     unsigned int _blePairState;
@@ -80,6 +81,7 @@
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(readonly, nonatomic) unsigned int flags; // @synthesize flags=_flags;
 @property(readonly, copy, nonatomic) NSString *contactID; // @synthesize contactID=_contactID;
+@property(readonly, nonatomic) int activityLevel; // @synthesize activityLevel=_activityLevel;
 @property(readonly, copy, nonatomic) NSString *accountID; // @synthesize accountID=_accountID;
 - (void).cxx_destruct;
 - (void)updateWithWiFiDevice:(id)arg1 changes:(unsigned int)arg2;

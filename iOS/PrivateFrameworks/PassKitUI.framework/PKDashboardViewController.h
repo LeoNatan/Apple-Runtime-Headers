@@ -51,7 +51,6 @@
 - (void)_updateNavigationBarForVisible;
 - (void)_hideAllContentAnimated:(_Bool)arg1;
 - (void)_presentAllContent;
-- (id)pkui_navigationBarItemTintColor;
 - (double)pkui_preferredNavigationBarBackgroundOpacity;
 - (_Bool)pkui_prefersNavigationBarShadowHidden;
 - (void)deleteSections:(id)arg1;
@@ -65,6 +64,7 @@
 - (struct CGSize)collectionView:(id)arg1 layout:(id)arg2 sizeForItemAtIndexPath:(id)arg3;
 - (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
 - (_Bool)collectionView:(id)arg1 shouldSelectItemAtIndexPath:(id)arg2;
+- (_Bool)collectionView:(id)arg1 shouldHighlightItemAtIndexPath:(id)arg2;
 - (id)_internalIndexPathForItemIndexPath:(id)arg1;
 - (id)_actualItemIndexPathForIndexPath:(id)arg1;
 - (_Bool)_isIndexPathAHeader:(id)arg1;

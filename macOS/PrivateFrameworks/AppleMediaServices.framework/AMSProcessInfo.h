@@ -19,6 +19,7 @@
     NSString *_proxyAppBundleID;
 }
 
++ (id)stringForEntitlement:(id)arg1;
 + (BOOL)boolForMachLookupAccess:(id)arg1;
 + (BOOL)boolForEntitlement:(id)arg1;
 + (BOOL)isBuddyRunning;

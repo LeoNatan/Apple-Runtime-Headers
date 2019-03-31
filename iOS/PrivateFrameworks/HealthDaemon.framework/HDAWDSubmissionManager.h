@@ -31,6 +31,10 @@
 - (_Bool)_computeAndSubmitSleepAlarmStatistics:(_Bool)arg1;
 - (id)_sleepConsistencyEventForMonthPriorToDate:(id)arg1 calendar:(id)arg2;
 - (id)_statisticsForTimeDeltas:(id)arg1;
+- (_Bool)_computeAndSubmitHeartDailyAnalyticsWithAction:(id)arg1 force:(_Bool)arg2;
+- (id)_generateHeartDailyAnalyticsWithStartDate:(id)arg1 endDate:(id)arg2;
+- (id)_ecgClassificationsBetweenStartDate:(id)arg1 endDate:(id)arg2;
+- (id)_aFibSamplesBetweenStartDate:(id)arg1 endDate:(id)arg2;
 - (_Bool)_computeAndSubmitSleepAlarmDailyReportWithAction:(id)arg1 force:(_Bool)arg2;
 - (id)_sleepNightEventFromSamples:(id)arg1 startDate:(id)arg2 endDate:(id)arg3 calendar:(id)arg4;
 - (id)_sleepSamplesBeforeDate:(id)arg1 days:(long long)arg2 startDate:(id *)arg3 endDate:(id *)arg4 calendar:(id)arg5;

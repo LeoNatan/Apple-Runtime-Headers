@@ -81,6 +81,7 @@
 - (int)pauseTransmission:(BOOL)arg1;
 - (int)sendMSCOnBadChannel:(unsigned char)arg1;
 - (int)sendCommand:(unsigned char)arg1;
+- (int)openChannelForFC;
 - (int)openChannel;
 - (int)setProperties:(id)arg1;
 - (void)dealloc;

@@ -6,7 +6,7 @@
 
 #import <Silex/NSObject-Protocol.h>
 
-@class SXLayoutBlueprint, SXLayoutOptions;
+@class SXLayoutBlueprint, SXLayoutOptions, SXLayoutParameters;
 @protocol SXLayoutCoordinator;
 
 @protocol SXLayoutCoordinatorDelegate <NSObject>
@@ -14,7 +14,7 @@
 @optional
 - (void)layoutCoordinator:(id <SXLayoutCoordinator>)arg1 didIntegrateBlueprint:(SXLayoutBlueprint *)arg2;
 - (void)layoutCoordinator:(id <SXLayoutCoordinator>)arg1 willIntegrateBlueprint:(SXLayoutBlueprint *)arg2;
-- (void)layoutCoordinator:(id <SXLayoutCoordinator>)arg1 didLayoutWithOptions:(SXLayoutOptions *)arg2;
-- (void)layoutCoordinator:(id <SXLayoutCoordinator>)arg1 willLayoutWithOptions:(SXLayoutOptions *)arg2;
+- (void)layoutCoordinator:(id <SXLayoutCoordinator>)arg1 cancelledLayoutWithOptions:(SXLayoutOptions *)arg2;
+- (void)layoutCoordinator:(id <SXLayoutCoordinator>)arg1 willLayoutWithParameters:(SXLayoutParameters *)arg2;
 @end
 

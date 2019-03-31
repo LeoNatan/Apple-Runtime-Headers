@@ -151,6 +151,7 @@
 - (id)bookmarkTime;
 - (_Bool)allowsExternalPlayback;
 - (_Bool)allowsAirPlayFromCloud;
+- (_Bool)canUseLoadedAsset;
 - (float)userRating;
 - (_Bool)useEmbeddedChapterData;
 - (id)urlTimeMarkers;

@@ -20,7 +20,6 @@
     PKPaymentWebService *_webService;
     NSArray *_reminderIntervals;
     unsigned int _selectedReminderIntervalsIndex;
-    _Bool _remindersEnabled;
     PKPaymentPassAction *_action;
     NSDateComponentsFormatter *_timeIntervalFormatter;
     _Bool _canShowReminders;
@@ -39,9 +38,8 @@
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (void)_handleActionSelected;
 - (void)_handleReminderIntervalChanged:(int)arg1;
-- (void)_handleRemindersEnabledChanged:(id)arg1;
 - (_Bool)shouldMapSection:(unsigned int)arg1;
-- (void)viewDidLoad;
+- (void)viewWillAppear:(_Bool)arg1;
 - (id)initWithSuicaFields:(id)arg1 forPass:(id)arg2 associatedAction:(id)arg3 paymentDataProvider:(id)arg4 webService:(id)arg5 style:(int)arg6;
 
 // Remaining properties

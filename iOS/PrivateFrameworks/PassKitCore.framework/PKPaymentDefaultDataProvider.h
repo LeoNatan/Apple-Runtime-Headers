@@ -36,8 +36,11 @@
 - (_Bool)supportsNotificationsForPass:(id)arg1;
 - (_Bool)supportsMessagesForPass:(id)arg1;
 - (_Bool)supportsTransactionsForPass:(id)arg1;
+- (id)messagesAppLaunchTokenForPassWithUniqueIdentifier:(id)arg1;
 - (void)archiveMessageWithIdentifier:(id)arg1;
 - (void)messagesForPaymentPassWithUniqueIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)setCommutePlanReminderInterval:(double)arg1 forCommutePlan:(id)arg2 pass:(id)arg3 completion:(CDUnknownBlockType)arg4;
+- (void)commutePlanReminderIntervalForCommutePlan:(id)arg1 pass:(id)arg2 withCompletion:(CDUnknownBlockType)arg3;
 - (void)setBalanceReminder:(id)arg1 forBalance:(id)arg2 pass:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)balanceReminderThresholdForBalance:(id)arg1 pass:(id)arg2 withCompletion:(CDUnknownBlockType)arg3;
 - (void)balancesForPaymentPassWithUniqueIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;

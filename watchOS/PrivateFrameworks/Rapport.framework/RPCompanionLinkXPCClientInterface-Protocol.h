@@ -14,6 +14,6 @@
 - (void)companionLinkLostDevice:(RPCompanionLinkDevice *)arg1;
 - (void)companionLinkFoundDevice:(RPCompanionLinkDevice *)arg1;
 - (void)companionLinkAuthCompleted:(NSError *)arg1;
-- (void)companionLinkPromptForPasswordWithFlags:(unsigned int)arg1 throttleSeconds:(int)arg2;
+- (void)companionLinkPromptForPasswordType:(int)arg1 flags:(unsigned int)arg2 throttleSeconds:(int)arg3;
 @end
 

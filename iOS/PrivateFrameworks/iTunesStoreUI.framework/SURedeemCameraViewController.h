@@ -13,10 +13,11 @@
 
 @interface SURedeemCameraViewController : UIViewController <SUCodeRedeemerControllerDelegate, UITextFieldDelegate>
 {
+    _Bool _ignoreDefaultKeyboardNotifications;
     CDUnknownBlockType _codeHandler;
     SUCodeRedeemerController *_cameraController;
-    long long _state;
     double _keyboardHeight;
+    long long _state;
     UIActivityIndicatorView *_activityIndicator;
     UIView *_overlayView;
     UIBarButtonItem *_redeemBarButton;
@@ -30,10 +31,11 @@
 @property(retain, nonatomic) UIBarButtonItem *redeemBarButton; // @synthesize redeemBarButton=_redeemBarButton;
 @property(retain, nonatomic) UIView *overlayView; // @synthesize overlayView=_overlayView;
 @property(retain, nonatomic) UIActivityIndicatorView *activityIndicator; // @synthesize activityIndicator=_activityIndicator;
-@property(nonatomic) double keyboardHeight; // @synthesize keyboardHeight=_keyboardHeight;
 @property(nonatomic) long long state; // @synthesize state=_state;
+@property(nonatomic) double keyboardHeight; // @synthesize keyboardHeight=_keyboardHeight;
 @property(retain, nonatomic) SUCodeRedeemerController *cameraController; // @synthesize cameraController=_cameraController;
 @property(copy, nonatomic) CDUnknownBlockType codeHandler; // @synthesize codeHandler=_codeHandler;
+@property(nonatomic) _Bool ignoreDefaultKeyboardNotifications; // @synthesize ignoreDefaultKeyboardNotifications=_ignoreDefaultKeyboardNotifications;
 - (void).cxx_destruct;
 - (void)_updateNavigationItemAnimated;
 - (void)_updateState;
@@ -45,8 +47,6 @@
 - (void)dealloc;
 - (void)codeRedeemerControllerDidEndWithCode:(id)arg1 error:(id)arg2;
 - (void)codeRedeemerControllerDidCancel;
-- (void)_keyboardWillShow:(id)arg1;
-- (void)_keyboardWillHide:(id)arg1;
 - (_Bool)textFieldShouldReturn:(id)arg1;
 - (_Bool)textFieldShouldEndEditing:(id)arg1;
 - (_Bool)textFieldShouldBeginEditing:(id)arg1;
@@ -73,6 +73,7 @@
 - (void)_setupActivityIndicator;
 - (void)_setup;
 - (void)loadView;
+- (void)viewWillTransitionToSize:(struct CGSize)arg1 withTransitionCoordinator:(id)arg2;
 - (void)viewWillLayoutSubviews;
 - (void)viewDidDisappear:(_Bool)arg1;
 - (void)viewDidAppear:(_Bool)arg1;

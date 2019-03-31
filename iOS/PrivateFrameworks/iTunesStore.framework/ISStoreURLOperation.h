@@ -24,7 +24,6 @@
     SSVFairPlaySAPSession *_sapSession;
     _Bool _shouldAppendAuthKitHeaders;
     _Bool _shouldAppendStorefrontToURL;
-    _Bool _shouldSendGUIDHeader;
     _Bool _shouldSendXTokenHeader;
     _Bool _urlKnownToBeTrusted;
     _Bool _useUserSpecificURLBag;
@@ -106,7 +105,6 @@
 - (id)authenticatedAccountDSID;
 @property(readonly) SSURLBagContext *URLBagContext;
 @property _Bool shouldSendXTokenHeader;
-@property _Bool shouldSendGUIDHeader;
 @property(retain) SSVFairPlaySAPSession *SAPSession;
 @property _Bool performsMachineDataActions;
 @property(nonatomic) _Bool ignorePreexistingSecureToken;

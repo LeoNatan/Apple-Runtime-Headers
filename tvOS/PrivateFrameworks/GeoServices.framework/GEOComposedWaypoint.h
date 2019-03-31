@@ -50,6 +50,12 @@
 @property(readonly, nonatomic) _Bool hasLatLng;
 @property(readonly, nonatomic) _Bool hasMapItemStorage;
 @property(readonly, nonatomic) _Bool hasWaypoint;
+- (id)_regionCandidatesForContainment;
+- (id)_addressCandidatesForComparison;
+- (id)_locationCandidatesForComparison;
+- (id)_muidCandidatesForComparison;
+- (_Bool)isSameAs:(id)arg1 comparisonCriteria:(unsigned long long)arg2;
+- (_Bool)isSameAs:(id)arg1;
 - (_Bool)isLocationWaypointType;
 - (id)timezone;
 - (id)geoMapItem;

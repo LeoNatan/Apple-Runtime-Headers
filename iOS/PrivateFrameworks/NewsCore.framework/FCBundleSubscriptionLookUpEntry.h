@@ -11,6 +11,7 @@
 @interface FCBundleSubscriptionLookUpEntry : NSObject
 {
     _Bool _hasShownRenewalNotice;
+    _Bool _inTrialPeriod;
     _Bool _isPurchaser;
     NSString *_identifier;
     NSString *_purchaseID;
@@ -21,6 +22,7 @@
 
 @property(copy, nonatomic) NSArray *bundleChannelIDs; // @synthesize bundleChannelIDs=_bundleChannelIDs;
 @property(nonatomic) _Bool isPurchaser; // @synthesize isPurchaser=_isPurchaser;
+@property(nonatomic) _Bool inTrialPeriod; // @synthesize inTrialPeriod=_inTrialPeriod;
 @property(nonatomic) _Bool hasShownRenewalNotice; // @synthesize hasShownRenewalNotice=_hasShownRenewalNotice;
 @property(nonatomic) unsigned long long purchaseValidationState; // @synthesize purchaseValidationState=_purchaseValidationState;
 @property(copy, nonatomic) NSDate *dateOfExpiration; // @synthesize dateOfExpiration=_dateOfExpiration;
@@ -33,7 +35,7 @@
 - (id)bundleSubscription;
 - (id)dictionaryRepresentation;
 - (id)initWithEntryID:(id)arg1 dictionaryRepresentation:(id)arg2;
-- (id)initWithEntryID:(id)arg1 bundleChannelIDs:(id)arg2 purchaseID:(id)arg3 purchaseValidationState:(unsigned long long)arg4 dateOfExpiration:(id)arg5 hasShownRenewalNotice:(_Bool)arg6 isPurchaser:(_Bool)arg7;
+- (id)initWithEntryID:(id)arg1 bundleChannelIDs:(id)arg2 purchaseID:(id)arg3 purchaseValidationState:(unsigned long long)arg4 dateOfExpiration:(id)arg5 hasShownRenewalNotice:(_Bool)arg6 inTrialPeriod:(_Bool)arg7 isPurchaser:(_Bool)arg8;
 
 @end
 

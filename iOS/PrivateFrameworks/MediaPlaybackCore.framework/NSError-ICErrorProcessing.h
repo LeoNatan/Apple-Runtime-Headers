@@ -7,6 +7,7 @@
 #import <Foundation/NSError.h>
 
 @interface NSError (ICErrorProcessing)
++ (_Bool)_isAgeVerificationError:(id)arg1;
 + (id)errorForICError:(id)arg1 response:(id)arg2;
 @end
 

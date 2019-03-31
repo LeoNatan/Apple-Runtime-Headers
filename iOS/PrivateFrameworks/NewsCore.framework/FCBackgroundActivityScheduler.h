@@ -15,7 +15,6 @@
 }
 
 - (void)requestBackgroundAppRefreshStartingAfter:(id)arg1 before:(id)arg2;
-- (void)cancelTaskWithIdentifier:(id)arg1;
 - (void)cancelRepeatingTaskWithIdentifier:(id)arg1;
 - (void)scheduleBackgroundTaskRepeatingAtInterval:(double)arg1 identifier:(id)arg2 task:(CDUnknownBlockType)arg3;
 

@@ -47,6 +47,7 @@ __attribute__((visibility("hidden")))
 - (id)_indexPathOfItemWithRepresentedObject:(id)arg1;
 - (void)_rebuildRepresentedObjectToIndexPathMap;
 - (void)_clearRepresentedObjectToIndexPathMap;
+- (void)_setRepresentedObjects:(id)arg1 forInsertedSection:(id)arg2;
 - (id)_representedObjectForSectionAtIndex:(unsigned long long)arg1;
 - (void)_setRepresentedObject:(id)arg1 forSectionAtIndex:(unsigned long long)arg2;
 - (id)_representedObjectForIndexPath:(id)arg1;

@@ -9,6 +9,6 @@
 @protocol SXAnalyticsReporting;
 
 @protocol SXAnalyticsReportingProvider <NSObject>
-@property(readonly, nonatomic) __weak id <SXAnalyticsReporting> analyticsReporting;
+@property(readonly, nonatomic) id <SXAnalyticsReporting> analyticsReporting;
 @end
 

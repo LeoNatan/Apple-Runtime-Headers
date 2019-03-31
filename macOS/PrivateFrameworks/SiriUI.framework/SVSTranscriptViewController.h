@@ -199,6 +199,7 @@ __attribute__((visibility("hidden")))
 - (id)siriViewController:(id)arg1 domainObjectForIdentifier:(id)arg2;
 - (id)_domainObjectStore;
 - (void)siriViewController:(id)arg1 sendGenericAceCommands:(id)arg2;
+- (void)siriViewController:(id)arg1 didOpenPunchout:(id)arg2;
 - (void)siriViewControllerDidPunchout;
 - (void)siriViewController:(id)arg1 openURL:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (BOOL)siriViewController:(id)arg1 openURL:(id)arg2;

@@ -8,5 +8,6 @@
 
 @protocol FCCurrentIssuesChecker <NSObject>
 - (void)fetchCurrentIssuesWithCompletion:(void (^)(NSArray *, NSArray *, NSError *))arg1;
+- (void)fetchUsersCurrentIssuesWithCompletion:(void (^)(FCCurrentIssuesCheckerResult *))arg1;
 @end
 

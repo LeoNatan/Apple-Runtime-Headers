@@ -10,12 +10,11 @@
 #import <InAppMessages/WKNavigationDelegate-Protocol.h>
 
 @class IAMWebView, ICIAMApplicationMessage, NSArray, NSString, _WKRemoteObjectInterface;
-@protocol IAMWebMessageControllerDelegate, IAMWebProcessProxy, OS_dispatch_queue;
+@protocol IAMWebMessageControllerDelegate, IAMWebProcessProxy;
 
 @interface IAMWebMessageController : NSObject <WKNavigationDelegate, IAMWebProcessDelegate>
 {
     id <IAMWebProcessProxy> _webProcessProxy;
-    NSObject<OS_dispatch_queue> *_sharedBackgroundQueue;
     _WKRemoteObjectInterface *_remoteObjectInterface;
     ICIAMApplicationMessage *_message;
     _Bool _isGlobalJSOAvailable;
@@ -33,18 +32,19 @@
 - (void).cxx_destruct;
 - (void)webProcessJSODidCallClose;
 - (void)webProcessJSODidCallOpen:(id)arg1;
-- (void)webProcessJSODidCallPerformAction:(id)arg1 actionDictionary:(id)arg2;
+- (void)webProcessJSODidCallPerformAction:(id)arg1;
 - (void)webProcessJSODidReportEvent:(id)arg1;
 - (void)webProcessPlugInBrowserContextControllerGlobalObjectIsAvailableForFrame;
 - (void)webProcessPlugInWillDestroyBrowserContextController;
 - (void)webProcessPlugInDidCreateBrowserContextController;
+- (void)webView:(id)arg1 didFailProvisionalNavigation:(id)arg2 withError:(id)arg3;
 - (void)webView:(id)arg1 didFailNavigation:(id)arg2 withError:(id)arg3;
 - (void)webView:(id)arg1 didFinishNavigation:(id)arg2;
 - (void)_checkReadyForLoadCompletion;
 - (void)_createJSOContentPages:(id)arg1 withBlock:(CDUnknownBlockType)arg2;
 - (void)_callLoadCompletionWithError:(id)arg1;
 - (void)unregisterExportedObjectInterface;
-- (void)loadMessage:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)loadMessage:(id)arg1 withWebArchiveURL:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 @property(readonly, nonatomic) IAMWebView *webView; // @synthesize webView=_webView;
 - (id)init;
 

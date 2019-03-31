@@ -29,6 +29,7 @@
     NSString *_userAgent;
     SUViewControllerFactory *_viewControllerFactory;
     _Bool _wasLaunchedFromLibrary;
+    _Bool _ignoreDefaultKeyboardNotifications;
     _Bool inAskToBuyApprovalFlow;
 }
 
@@ -63,6 +64,7 @@
 @property(retain) SUQueueSessionManager *queueSessionManager;
 @property(retain) SUPurchaseManager *purchaseManager;
 @property(copy) NSString *localStoragePath;
+@property _Bool ignoreDefaultKeyboardNotifications; // @synthesize ignoreDefaultKeyboardNotifications=_ignoreDefaultKeyboardNotifications;
 @property(copy) NSString *clientIdentifier;
 @property(copy) SUUIAppearance *appearance;
 @property(copy) NSString *applicationVersion;

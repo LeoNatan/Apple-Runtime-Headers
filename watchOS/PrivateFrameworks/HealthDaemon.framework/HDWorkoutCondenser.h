@@ -32,6 +32,8 @@
 + (_Bool)_finishSeries:(id)arg1 workout:(id)arg2 sampleUUIDsToDelete:(id)arg3 configuration:(id)arg4 transaction:(id)arg5 error:(id *)arg6;
 + (id)_insertValuesForSeries:(id)arg1 quantityType:(id)arg2 startTime:(double)arg3 values:(id)arg4 provenance:(id)arg5 configuration:(id)arg6 transaction:(id)arg7 countOut:(int *)arg8 error:(id *)arg9;
 + (_Bool)_createSeriesForIdentifier:(id)arg1 workout:(id)arg2 quantityType:(id)arg3 startTime:(double)arg4 values:(id)arg5 sampleUUIDsToDelete:(id)arg6 provenance:(id)arg7 configuration:(id)arg8 transaction:(id)arg9 error:(id *)arg10;
++ (_Bool)_finalizeSeriesCreationForWorkout:(id)arg1 seriesIdentifier:(id)arg2 quantityType:(id)arg3 dataProvenance:(id)arg4 datumBuffer:(id)arg5 includedSeriesUUIDs:(id)arg6 includedSampleUUIDs:(id)arg7 seriesStartTime:(double)arg8 values:(id)arg9 configuration:(id)arg10 transaction:(id)arg11 error:(id *)arg12;
++ (_Bool)_insertValuesAndFinishSeriesIfNecessaryForWorkout:(id)arg1 seriesIdentifierInOut:(id *)arg2 quantityType:(id)arg3 dataProvenance:(id)arg4 includedSampleUUIDs:(id)arg5 seriesStartTime:(double)arg6 values:(id)arg7 configuration:(id)arg8 transaction:(id)arg9 error:(id *)arg10;
 + (_Bool)_processSamplesWithQuantityType:(id)arg1 workout:(id)arg2 predicate:(id)arg3 configuration:(id)arg4 transaction:(id)arg5 error:(id *)arg6;
 + (_Bool)_hasMoreThanMinimumNumberOfSingleValueSamplesWithEntity:(id)arg1 enumerationPredicate:(id)arg2 configuration:(id)arg3 transaction:(id)arg4 error:(id *)arg5;
 + (_Bool)_hasSamplesThatOverlapInTimeWithEntity:(id)arg1 enumerationPredicate:(id)arg2 configuration:(id)arg3 transaction:(id)arg4 error:(id *)arg5;

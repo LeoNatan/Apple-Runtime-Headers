@@ -134,6 +134,7 @@
 @property(readonly) id applicationAccessibilityEnabled;
 - (void)showSafariViewControllerWithURLString:(id)arg1 identifier:(id)arg2 animated:(_Bool)arg3;
 - (void)dismissSafariViewControllerAnimated:(_Bool)arg1;
+- (void)authorizeApplePayEnrollmentWithParameters:(id)arg1 callback:(id)arg2;
 - (void)accessibilityPostScreenChange;
 - (void)accessibilityPostLayoutChange;
 - (void)_accessibilityPostLayoutChange;
@@ -158,12 +159,16 @@
 - (id)machineGUID;
 - (void)log:(id)arg1;
 - (void)handleDialogPropertyListString:(id)arg1;
+- (id)getiTunesPass;
 - (void)financeInterruptionResolved:(id)arg1;
+- (void)fetchWalletCardMetadata:(id)arg1 callback:(id)arg2;
+- (void)fetchWalletCardData:(id)arg1;
 - (void)dispatchXEvent:(id)arg1;
 - (void)dispatchGlobalEventWithName:(id)arg1 payload:(id)arg2;
 - (void)openFamilyCircleSetupWithClientName:(id)arg1 completionFunction:(id)arg2;
 - (void)_finishCreditCardReaderWithOutput:(id)arg1 callback:(id)arg2;
 - (void)openCreditCardReaderWithCompletionFunction:(id)arg1;
+- (void)addiTunesPassWithCompletionFunction:(id)arg1;
 - (void)acknowledgePrivacyLinkWithIdentifier:(id)arg1;
 - (id)parentViewController;
 - (id)DOMElementWithElement:(id)arg1;

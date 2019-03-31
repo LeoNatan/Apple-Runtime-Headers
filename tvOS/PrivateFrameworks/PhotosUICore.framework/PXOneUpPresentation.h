@@ -24,6 +24,7 @@
         _Bool respondsToActionContext;
         _Bool respondsToGestureProvider;
         _Bool respondsToImportStatusManager;
+        _Bool respondsToOrigin;
     } _delegateFlags;
     struct {
         _Bool respondsToPresentingViewControllerViewWillAppear;
@@ -62,6 +63,7 @@
 @property(readonly, nonatomic) PXAssetActionManager *actionManager;
 @property(readonly, nonatomic) PXAssetReference *initialAssetReference;
 @property(readonly, nonatomic) PXPhotosDetailsContext *photosDetailsContext;
+@property(readonly, nonatomic) long long origin;
 @property(readonly, nonatomic) PXGestureProvider *gestureProvider;
 @property(readonly, nonatomic) PXUIMediaProvider *mediaProvider;
 @property(readonly, nonatomic) PXAssetsDataSourceManager *dataSourceManager;

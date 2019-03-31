@@ -20,18 +20,20 @@ __attribute__((visibility("hidden")))
     NSObject<OS_dispatch_queue> *_dispatchQueue;
     NSMutableArray *_deviceQueryParameters;
     NSObject<OS_dispatch_source> *_timer;
-    NSBundle *_assetBundle;
-    NSBundle *_fallbackAssetBundle;
-    NSBundle *_cachedAssetBundle;
+    NSBundle *_matchBundle;
+    NSBundle *_imperfectMatchBundle;
+    NSBundle *_fallbackBundle;
+    NSBundle *_cachedBundle;
     NSError *_error;
 }
 
 @property(nonatomic) _Bool downloadCompletionCalled; // @synthesize downloadCompletionCalled=_downloadCompletionCalled;
 @property(nonatomic) _Bool queryResultCalled; // @synthesize queryResultCalled=_queryResultCalled;
 @property(readonly, nonatomic) NSError *error; // @synthesize error=_error;
-@property(readonly, nonatomic) NSBundle *cachedAssetBundle; // @synthesize cachedAssetBundle=_cachedAssetBundle;
-@property(readonly, nonatomic) NSBundle *fallbackAssetBundle; // @synthesize fallbackAssetBundle=_fallbackAssetBundle;
-@property(readonly, nonatomic) NSBundle *assetBundle; // @synthesize assetBundle=_assetBundle;
+@property(readonly, nonatomic) NSBundle *cachedBundle; // @synthesize cachedBundle=_cachedBundle;
+@property(readonly, nonatomic) NSBundle *fallbackBundle; // @synthesize fallbackBundle=_fallbackBundle;
+@property(readonly, nonatomic) NSBundle *imperfectMatchBundle; // @synthesize imperfectMatchBundle=_imperfectMatchBundle;
+@property(readonly, nonatomic) NSBundle *matchBundle; // @synthesize matchBundle=_matchBundle;
 @property(readonly, nonatomic) NSObject<OS_dispatch_source> *timer; // @synthesize timer=_timer;
 @property(readonly, nonatomic) NSMutableArray *deviceQueryParameters; // @synthesize deviceQueryParameters=_deviceQueryParameters;
 @property(readonly, nonatomic) _Bool useProcessLocalCache; // @synthesize useProcessLocalCache=_useProcessLocalCache;
@@ -44,9 +46,9 @@ __attribute__((visibility("hidden")))
 - (void)completeWithBundle:(id)arg1 isFallback:(_Bool)arg2 isCached:(_Bool)arg3;
 - (_Bool)completeIfPossible;
 - (void)cancelTimeout;
-- (_Bool)updateTaskWithBundle:(id)arg1 error:(id)arg2 isFallback:(_Bool)arg3 isCached:(_Bool)arg4;
-- (_Bool)updateTaskWithAssetBundleURL:(id)arg1 error:(id)arg2 isFallback:(_Bool)arg3 isCached:(_Bool)arg4;
-- (_Bool)updateTaskWithAssetURL:(id)arg1 error:(id)arg2 isFallback:(_Bool)arg3 isCached:(_Bool)arg4;
+- (_Bool)updateTaskWithBundle:(id)arg1 error:(id)arg2 isFallback:(_Bool)arg3 isImperfectMatch:(_Bool)arg4 isCached:(_Bool)arg5;
+- (_Bool)updateTaskWithAssetBundleURL:(id)arg1 error:(id)arg2 isFallback:(_Bool)arg3 isImperfectMatch:(_Bool)arg4 isCached:(_Bool)arg5;
+- (_Bool)updateTaskWithAssetURL:(id)arg1 error:(id)arg2 isFallback:(_Bool)arg3 isImperfectMatch:(_Bool)arg4 isCached:(_Bool)arg5;
 - (void)createQueryParameters;
 - (id)initWithDeviceQuery:(id)arg1 requestConfiguration:(id)arg2 dispatchQueue:(id)arg3 useProcessLocalCache:(_Bool)arg4;
 

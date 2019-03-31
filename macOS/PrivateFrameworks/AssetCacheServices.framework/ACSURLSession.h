@@ -77,6 +77,7 @@
 - (void)_cancelTask:(id)arg1;
 - (void)_onqueue_task:(id)arg1 willUseCachingServer:(BOOL)arg2 newRequest:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)_locateCachingServerForURL:(id)arg1 isUpload:(BOOL)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (id)_onqueue_uniqueTasks;
 - (id)_onqueue_taskForNSURLTask:(id)arg1;
 - (void)_onqueue_removeTaskForNSURLTask:(id)arg1;
 - (void)_removeTask:(id)arg1;

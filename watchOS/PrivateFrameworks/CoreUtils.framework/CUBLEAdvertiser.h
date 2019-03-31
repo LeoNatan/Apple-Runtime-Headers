@@ -26,10 +26,14 @@
     unsigned int _advertiseFlags;
     NSObject<OS_dispatch_queue> *_dispatchQueue;
     CDUnknownBlockType _invalidationHandler;
+    NSData *_lgBTAddress;
+    NSData *_lgDeviceID;
     NSString *_label;
 }
 
 @property(copy, nonatomic) NSString *label; // @synthesize label=_label;
+@property(copy, nonatomic) NSData *lgDeviceID; // @synthesize lgDeviceID=_lgDeviceID;
+@property(copy, nonatomic) NSData *lgBTAddress; // @synthesize lgBTAddress=_lgBTAddress;
 @property(copy, nonatomic) CDUnknownBlockType invalidationHandler; // @synthesize invalidationHandler=_invalidationHandler;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
 @property(nonatomic) unsigned int advertiseFlags; // @synthesize advertiseFlags=_advertiseFlags;
@@ -38,6 +42,8 @@
 - (void)peripheralManagerDidStartAdvertising:(id)arg1 error:(id)arg2;
 - (void)peripheralManagerDidUpdateState:(id)arg1;
 - (id)_advertiseParametersSummary:(id)arg1;
+- (void)_advertiseParametersAddOSR;
+- (void)_advertiseParametersAddLGWake:(id)arg1;
 - (id)_advertiseParameters;
 - (void)_ensureStopped;
 - (void)_ensureStarted;

@@ -4,30 +4,24 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <objc/NSObject.h>
+#import <SignpostSupport/SignpostAnimationSubInterval.h>
 
 #import <SignpostSupport/SignpostSerializable-Protocol.h>
 
 @class NSArray, NSString;
 
-@interface SignpostSupportCompositorInterval : NSObject <SignpostSerializable>
+@interface SignpostSupportCompositorInterval : SignpostAnimationSubInterval <SignpostSerializable>
 {
-    unsigned long long _startMachContinuousTime;
-    unsigned long long _endMachContinuousTime;
     NSArray *_contributingPids;
-    unsigned long long _durationMachContinuousTime;
 }
 
 + (id)serializationTypeNumber;
-@property(nonatomic) unsigned long long durationMachContinuousTime; // @synthesize durationMachContinuousTime=_durationMachContinuousTime;
 @property(retain, nonatomic) NSArray *contributingPids; // @synthesize contributingPids=_contributingPids;
-@property(nonatomic) unsigned long long endMachContinuousTime; // @synthesize endMachContinuousTime=_endMachContinuousTime;
-@property(nonatomic) unsigned long long startMachContinuousTime; // @synthesize startMachContinuousTime=_startMachContinuousTime;
 - (void).cxx_destruct;
 @property(readonly) unsigned long long hash;
 - (BOOL)isEqualToSignpostSupportCompositorInterval:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
-- (id)initWithStartContinuousTime:(unsigned long long)arg1 endContinuousTime:(unsigned long long)arg2 contributingPids:(id)arg3;
+- (id)initWithStartContinuousTime:(unsigned long long)arg1 endContinuousTime:(unsigned long long)arg2 timebaseRatio:(double)arg3 contributingPids:(id)arg4;
 - (id)humanReadableDictionaryRepresentation;
 - (id)humanReadableType;
 - (id)initWithDictionary:(id)arg1;

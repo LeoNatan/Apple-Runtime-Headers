@@ -214,8 +214,10 @@
 - (void)oneUpPresentationHelper:(id)arg1 didDismissOneUpViewController:(id)arg2;
 - (_Bool)oneUpPresentationHelperShouldLeaveContentOnSecondScreen:(id)arg1;
 - (id)oneUpPresentationHelperScrollView:(id)arg1;
+- (long long)oneUpPresentationOrigin:(id)arg1;
 - (id)oneUpPresentationHelperViewController:(id)arg1;
 - (void)oneUpPresentationHelper:(id)arg1 willPresentOneUpViewController:(id)arg2;
+- (long long)oneUpPresentationOrigin;
 - (_Bool)allowSelectAllButton;
 - (_Bool)allowSlideshowButton;
 - (void)handleTransitionFade:(_Bool)arg1 animate:(_Bool)arg2;

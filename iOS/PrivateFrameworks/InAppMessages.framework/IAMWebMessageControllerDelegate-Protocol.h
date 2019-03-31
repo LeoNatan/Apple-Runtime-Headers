@@ -6,12 +6,12 @@
 
 #import <InAppMessages/NSObject-Protocol.h>
 
-@class IAMWebMessageController, NSDictionary, NSString, NSURL;
+@class IAMWebMessageController, NSDictionary, NSURL;
 
 @protocol IAMWebMessageControllerDelegate <NSObject>
 
 @optional
-- (void)webMessageControllerWebViewDidRequestAction:(IAMWebMessageController *)arg1 identifier:(NSString *)arg2 actionDictionary:(NSDictionary *)arg3;
+- (void)webMessageControllerWebViewDidRequestAction:(IAMWebMessageController *)arg1 actionConfiguration:(NSDictionary *)arg2;
 - (void)webMessageControllerWebViewDidReportEvent:(IAMWebMessageController *)arg1 event:(NSDictionary *)arg2;
 - (void)webMessageControllerWebViewDidRequestOpenURL:(IAMWebMessageController *)arg1 url:(NSURL *)arg2;
 - (void)webMessageControllerWebViewDidRequestClose:(IAMWebMessageController *)arg1;

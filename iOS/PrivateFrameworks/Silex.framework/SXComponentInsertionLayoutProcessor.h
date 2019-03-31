@@ -8,17 +8,19 @@
 
 #import <Silex/SXLayoutProcessor-Protocol.h>
 
-@class NSString;
+@class NSString, SXLayoutOptions;
 @protocol SXComponentInsertionManager;
 
 @interface SXComponentInsertionLayoutProcessor : NSObject <SXLayoutProcessor>
 {
     id <SXComponentInsertionManager> _componentInsertionManager;
+    SXLayoutOptions *_layoutOptions;
 }
 
+@property(retain, nonatomic) SXLayoutOptions *layoutOptions; // @synthesize layoutOptions=_layoutOptions;
 @property(readonly, nonatomic) id <SXComponentInsertionManager> componentInsertionManager; // @synthesize componentInsertionManager=_componentInsertionManager;
 - (void).cxx_destruct;
-- (void)processLayoutBlueprint:(id)arg1 layoutOptions:(id)arg2 DOMObjectProvider:(id)arg3;
+- (void)processLayoutTask:(id)arg1 layoutBlueprint:(id)arg2 DOMObjectProvider:(id)arg3;
 - (id)initWithComponentInsertionManager:(id)arg1;
 
 // Remaining properties

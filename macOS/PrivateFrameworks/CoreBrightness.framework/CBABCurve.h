@@ -29,7 +29,8 @@ __attribute__((visibility("hidden")))
 @property(readonly) unsigned long long version; // @synthesize version=_version;
 - (void)setSavedPrefences:(id)arg1;
 - (unsigned long long)getVersion;
-- (id)getUserPrefState;
+- (id)copyUserPrefState;
+- (void)resetToDefaultState;
 - (void)updateALSParametersForDisplayBrightness:(float)arg1;
 - (float)getLinearBrightness;
 - (_Bool)setLux:(float)arg1;

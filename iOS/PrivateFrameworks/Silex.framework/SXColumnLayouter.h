@@ -9,15 +9,19 @@
 #import <Silex/SXLayouter-Protocol.h>
 
 @class NSMutableDictionary, NSString, SXLayouterFactory;
-@protocol SXLayouterDelegate;
+@protocol SXLayoutContextFactory, SXLayouterDelegate, SXUnitConverterFactory;
 
 @interface SXColumnLayouter : NSObject <SXLayouter>
 {
     id <SXLayouterDelegate> _delegate;
     SXLayouterFactory *_layouterFactory;
     NSMutableDictionary *_intersectionCache;
+    id <SXLayoutContextFactory> _layoutContextFactory;
+    id <SXUnitConverterFactory> _unitConverterFactory;
 }
 
+@property(readonly, nonatomic) id <SXUnitConverterFactory> unitConverterFactory; // @synthesize unitConverterFactory=_unitConverterFactory;
+@property(readonly, nonatomic) id <SXLayoutContextFactory> layoutContextFactory; // @synthesize layoutContextFactory=_layoutContextFactory;
 @property(readonly, nonatomic) NSMutableDictionary *intersectionCache; // @synthesize intersectionCache=_intersectionCache;
 @property(readonly, nonatomic) SXLayouterFactory *layouterFactory; // @synthesize layouterFactory=_layouterFactory;
 @property(nonatomic) __weak id <SXLayouterDelegate> delegate; // @synthesize delegate=_delegate;
@@ -36,7 +40,7 @@
 - (id)findComponentStackBeforeComponent:(id)arg1 inColumnStack:(id)arg2;
 - (void)createDependenciesForLayoutBlueprint:(id)arg1 columnStack:(id)arg2 inDependencyResolver:(id)arg3;
 - (void)layoutBlueprint:(id)arg1 columnLayout:(id)arg2 shouldContinue:(_Bool *)arg3;
-- (id)initWithLayouterFactory:(id)arg1;
+- (id)initWithLayouterFactory:(id)arg1 layoutContextFactory:(id)arg2 unitConverterFactory:(id)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

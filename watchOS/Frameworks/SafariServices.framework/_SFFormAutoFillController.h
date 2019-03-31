@@ -9,7 +9,7 @@
 #import <SafariServices/SFFormMetadataObserver-Protocol.h>
 #import <SafariServices/_SFAuthenticationClient-Protocol.h>
 
-@class NSMutableIndexSet, NSMutableSet, NSString, NSTimer, SFFormAutocompleteState, SFNanoDomainContainerView, UIView, WKWebView, _SFAuthenticationContext, _WKRemoteObjectInterface;
+@class NSMutableIndexSet, NSMutableSet, NSString, NSTimer, SFFormAutoFillFrameHandle, SFFormAutocompleteState, SFNanoDomainContainerView, UIView, WBSFormMetadata, WKWebView, _SFAuthenticationContext, _WKRemoteObjectInterface;
 @protocol SFFormAutoFillControllerDelegate, SFFormAutoFiller, WBUFormAutoFillWebView;
 
 @interface _SFFormAutoFillController : NSObject <SFFormMetadataObserver, _SFAuthenticationClient>
@@ -22,6 +22,8 @@
     int _authenticationType;
     SFFormAutocompleteState *_state;
     NSTimer *_prefillTimer;
+    WBSFormMetadata *_unsubmittedForm;
+    SFFormAutoFillFrameHandle *_unsubmittedFormFrame;
     NSMutableIndexSet *_uniqueIDsOfFormsThatWereAutoFilled;
     NSMutableSet *_uniqueIDsOfControlsThatWereAutoFilled;
     SFNanoDomainContainerView *_formContextView;
@@ -40,6 +42,7 @@
 - (void)autoFillDidFinishWithUpdatedFormMetadata:(id)arg1 inFrame:(id)arg2 shouldSubmit:(_Bool)arg3;
 - (void)_removeUniqueIDsOfAutoFilledForm:(id)arg1;
 - (void)_addUniqueIDsOfAutoFilledForm:(id)arg1;
+- (void)didUpdateUnsubmittedForm:(id)arg1 inFrame:(id)arg2;
 - (void)willNavigateFrame:(id)arg1 withUnsubmittedForm:(id)arg2 loadingIsDeferred:(_Bool)arg3;
 - (void)didFillGeneratedPasswordInForm:(id)arg1 inFrame:(id)arg2;
 - (void)textDidChangeInTextField:(id)arg1 inForm:(id)arg2 inFrame:(id)arg3;
@@ -73,6 +76,7 @@
 - (_Bool)shouldShowIconsInPasswordPicker;
 - (void)insertTextSuggestion:(id)arg1;
 - (void)autoFill;
+- (void)offerToSaveUnsubmittedFormDataIfNeeded;
 - (void)prefillFormsSoonIfNeeded;
 - (void)_prefillTimerFired:(id)arg1;
 - (void)invalidate;

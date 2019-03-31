@@ -7,16 +7,17 @@
 #import <UIKit/UITableViewCell.h>
 
 @class UITextView;
-@protocol RTTUIConversationCellDelegate;
+@protocol RTTUIServiceCellDelegate;
 
 @interface RTTUIServiceUpdateCell : UITableViewCell
 {
-    UITextView *_textView;
-    id <RTTUIConversationCellDelegate> _delegate;
+    UITextView *_titleView;
+    UITextView *_subtitleView;
+    id <RTTUIServiceCellDelegate> _delegate;
 }
 
 + (float)heightForWidth:(float)arg1;
-@property(nonatomic) __weak id <RTTUIConversationCellDelegate> delegate; // @synthesize delegate=_delegate;
+@property(nonatomic) __weak id <RTTUIServiceCellDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (id)accessibilityLabel;
 - (_Bool)isAccessibilityElement;

@@ -51,6 +51,7 @@
 @property(retain, nonatomic) NSAttributedString *transactionValueAttributedText; // @dynamic transactionValueAttributedText;
 - (id)defaultSecondaryColor;
 - (id)defaultPrimaryColor;
+- (_Bool)_shouldUseStackedLayout;
 - (void)resetFonts;
 - (void)createSubviews;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;

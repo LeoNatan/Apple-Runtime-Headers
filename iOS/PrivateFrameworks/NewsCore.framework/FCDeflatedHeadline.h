@@ -101,7 +101,7 @@
 @property(readonly, nonatomic) long long backendArticleVersion;
 @property(readonly, nonatomic) long long publisherArticleVersion;
 @property(readonly, copy, nonatomic) NSDate *publishDate;
-@property(copy, nonatomic) FCHeadlineExperimentalTitleMetadata *experimentalTitleMetadata;
+@property(readonly, copy, nonatomic) FCHeadlineExperimentalTitleMetadata *experimentalTitleMetadata;
 @property(readonly, copy, nonatomic) NSString *titleCompact;
 @property(readonly, copy, nonatomic) NSString *title;
 @property(readonly, copy, nonatomic) NSString *primaryAudience;
@@ -122,6 +122,7 @@
 @property(readonly, copy, nonatomic) NSString *surfacedByChannelID;
 @property(readonly, copy, nonatomic) NSString *surfacedBySectionID;
 @property(readonly, copy, nonatomic) NSString *clusterID;
+@property(readonly, copy, nonatomic) NSString *callToActionText;
 @property(readonly, copy, nonatomic) NSString *articleID;
 @property(readonly, copy, nonatomic) NSString *identifier;
 @property(readonly, nonatomic, getter=isANF) _Bool anf;
@@ -136,7 +137,10 @@
 @property(readonly, nonatomic) NSData *backingArticleRecordData;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly) unsigned long long hash;
+@property(readonly, nonatomic) _Bool isLocalDraft;
 @property(readonly, nonatomic, getter=isIssueOnly) _Bool issueOnly;
+@property(readonly, copy, nonatomic) NSArray *linkedArticleIDs;
+@property(readonly, copy, nonatomic) NSArray *linkedIssueIDs;
 @property(readonly, copy, nonatomic) FCIssue *masterIssue;
 @property(readonly, nonatomic) _Bool showBundleSoftPaywall;
 @property(readonly, nonatomic) id <FCHeadlineStocksFields> stocksFields;

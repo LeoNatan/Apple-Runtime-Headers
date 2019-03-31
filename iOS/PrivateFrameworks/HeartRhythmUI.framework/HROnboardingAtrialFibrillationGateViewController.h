@@ -18,6 +18,7 @@
     HKSeparatorLineView *_birthdayTopSeparator;
     UIStackView *_birthdayEntryView;
     HKCaretOptionalTextField *_birthdayTextField;
+    UILabel *_birthdayFooterLabel;
     UIDatePicker *_datePicker;
     NSDate *_dateOfBirth;
     NSDateFormatter *_dateFormatter;
@@ -35,14 +36,14 @@
     UIImageView *_diagnosisNoCheckmark;
     UILabel *_diagnosisNoLabel;
     HKSeparatorLineView *_diagnosisBottomSeparator;
-    UILabel *_footerLabel;
+    UILabel *_diagnosisFooterLabel;
     HRStackedButtonView *_stackedButtonView;
     NSLayoutConstraint *_contentViewBottomConstraint;
 }
 
 @property(retain, nonatomic) NSLayoutConstraint *contentViewBottomConstraint; // @synthesize contentViewBottomConstraint=_contentViewBottomConstraint;
 @property(retain, nonatomic) HRStackedButtonView *stackedButtonView; // @synthesize stackedButtonView=_stackedButtonView;
-@property(retain, nonatomic) UILabel *footerLabel; // @synthesize footerLabel=_footerLabel;
+@property(retain, nonatomic) UILabel *diagnosisFooterLabel; // @synthesize diagnosisFooterLabel=_diagnosisFooterLabel;
 @property(retain, nonatomic) HKSeparatorLineView *diagnosisBottomSeparator; // @synthesize diagnosisBottomSeparator=_diagnosisBottomSeparator;
 @property(retain, nonatomic) UILabel *diagnosisNoLabel; // @synthesize diagnosisNoLabel=_diagnosisNoLabel;
 @property(retain, nonatomic) UIImageView *diagnosisNoCheckmark; // @synthesize diagnosisNoCheckmark=_diagnosisNoCheckmark;
@@ -60,22 +61,23 @@
 @property(retain, nonatomic) NSDateFormatter *dateFormatter; // @synthesize dateFormatter=_dateFormatter;
 @property(retain, nonatomic) NSDate *dateOfBirth; // @synthesize dateOfBirth=_dateOfBirth;
 @property(retain, nonatomic) UIDatePicker *datePicker; // @synthesize datePicker=_datePicker;
+@property(retain, nonatomic) UILabel *birthdayFooterLabel; // @synthesize birthdayFooterLabel=_birthdayFooterLabel;
 @property(retain, nonatomic) HKCaretOptionalTextField *birthdayTextField; // @synthesize birthdayTextField=_birthdayTextField;
 @property(retain, nonatomic) UIStackView *birthdayEntryView; // @synthesize birthdayEntryView=_birthdayEntryView;
 @property(retain, nonatomic) HKSeparatorLineView *birthdayTopSeparator; // @synthesize birthdayTopSeparator=_birthdayTopSeparator;
 @property(retain, nonatomic) UILabel *bodyLabel; // @synthesize bodyLabel=_bodyLabel;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 - (void).cxx_destruct;
-- (id)_footerFont;
+- (id)_footnoteFont;
 - (id)_diagnosisPromptFont;
 - (id)_ageEntryTitleFont;
 - (id)_bodyFont;
-- (double)_footerLabelToContinueButton;
-- (double)_diagnosisBottomSeparatorToFooterFirstBaseline;
+- (double)_diagnosisFooterLabelToContinueButton;
+- (double)_separatorToFooterFirstBaseline;
 - (double)_diagnosisLastBaselineToBottomSeparator;
 - (double)_diagnosisTopSeparatorToFirstBaseline;
 - (double)_diagnosisPromptLastBaselineToDiagnosisTop;
-- (double)_ageEntryBottomSeparatorToDiagnosisPromptFirstBaseline;
+- (double)_ageEntryFooterToDiagnosisPromptFirstBaseline;
 - (double)_ageEntryLastBaselineToBottomSeparator;
 - (double)_ageEntryTopSeparatorToFirstBaseline;
 - (double)_bodyLastBaselineToAgeEntryTop;

@@ -17,6 +17,7 @@
 + (Class)transformedValueClass;
 - (void).cxx_destruct;
 - (id)transformedValue:(id)arg1;
+- (id)init;
 
 @end
 

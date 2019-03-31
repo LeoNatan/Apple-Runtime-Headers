@@ -15,7 +15,7 @@ __attribute__((visibility("hidden")))
 - (void)leaveState;
 - (void)enterState;
 - (unsigned int)desiredResourcePolicy;
-- (unsigned int)type;
+- (int)type;
 
 @end
 

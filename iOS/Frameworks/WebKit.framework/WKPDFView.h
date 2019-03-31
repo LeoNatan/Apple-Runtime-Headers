@@ -33,7 +33,6 @@ __attribute__((visibility("hidden")))
     struct InteractionInformationAtPosition _positionInformation;
     struct RetainPtr<NSString> _suggestedFilename;
     struct WeakObjCPtr<WKWebView> _webView;
-    struct RetainPtr<WKKeyboardScrollViewAnimator> _keyboardScrollingAnimator;
 }
 
 - (id).cxx_construct;

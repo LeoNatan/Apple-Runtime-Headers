@@ -80,13 +80,14 @@
 - (void)commuteSessionDidArrive:(id)arg1;
 - (void)commuteSession:(id)arg1 didUpdateDestinations:(id)arg2;
 @property(readonly, nonatomic) MNCommuteSession *commuteSession;
-@property(readonly, nonatomic) unsigned int currentStateType;
+- (id)navSessionDestination;
+@property(readonly, nonatomic) int currentStateType;
 - (void)removeObserver:(id)arg1;
 - (void)addObserver:(id)arg1;
 - (void)start;
 - (void)dealloc;
 - (id)init;
-- (unsigned int)_stateTypeForState:(id)arg1;
+- (int)_stateTypeForState:(id)arg1;
 - (void)_changeToDesiredLocationProviderType;
 - (void)_acquireDesiredResourcePolicyAfterDelay:(double)arg1;
 - (void)transitionToState:(id)arg1;

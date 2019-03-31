@@ -102,6 +102,7 @@
 + (id)assetsWithSavedAssetType:(short)arg1 inManagedObjectContext:(id)arg2;
 + (unsigned int)countUsedAssetsWithKind:(short)arg1 excludeTrashed:(_Bool)arg2 excludeInvisible:(_Bool)arg3 excludeCloudShared:(_Bool)arg4 inManagedObjectContext:(id)arg5;
 + (id)totalResourceSizeOnDiskInManagedObjectContext:(id)arg1;
++ (long long)totalPurgeableSizeOnDiskInManagedObjectContext:(id)arg1 urgency:(int)arg2;
 + (int)countOfAssetsWithThumbnailsInManagedObjectContext:(id)arg1;
 + (unsigned long long)_calculateSizeOfAssetsInFetchRequest:(id)arg1 inManagedObjectContext:(id)arg2;
 + (unsigned long long)_calculateSizeOfSidecarFilesOnAssetsInFetchRequest:(id)arg1 inManagedObjectContext:(id)arg2;
@@ -653,6 +654,7 @@
 - (void)applyFacesFromAssetChange:(id)arg1 inSyncContext:(id)arg2;
 - (void)applyPropertiesFromAssetChange:(id)arg1 inLibrary:(id)arg2 withKeywordManager:(id)arg3;
 - (_Bool)_location:(id)arg1 isEqualToLocationForUpdating:(id)arg2;
+- (void)setVideoInfoOnMasterFromAVAsset:(id)arg1;
 - (void)_applyPropertiesFromCloudMaster:(id)arg1;
 - (id)localResourcePathForMasterResource:(id)arg1;
 - (_Bool)createNewResourcesIn:(id)arg1 inManagedObjectContext:(id)arg2;
@@ -695,7 +697,7 @@
 - (id)scopedIdentifier;
 - (id)_generatePosterFrameForVideoAtURL:(id)arg1 withResourceType:(unsigned int)arg2 scopedIdentifier:(id)arg3 forMaster:(_Bool)arg4;
 - (void)_migrateResourcePathForMaster:(id)arg1;
-- (id)_cplMasterFromCloudMaster:(id)arg1 withCPLResources:(id)arg2;
+- (id)cplMasterFromCloudMaster:(id)arg1 withCPLResources:(id)arg2;
 - (id)_scopeIdentifier;
 - (id)_cplMasterResourcesFromCloudMaster:(id)arg1 includeFile:(_Bool)arg2;
 - (id)cplMasterChangeInLibrary:(id)arg1 shouldGenerateDerivatives:(_Bool)arg2;

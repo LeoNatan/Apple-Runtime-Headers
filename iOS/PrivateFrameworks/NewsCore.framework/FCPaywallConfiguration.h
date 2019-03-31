@@ -8,28 +8,48 @@
 
 #import <NewsCore/NSCopying-Protocol.h>
 
-@class FCColor, FCPaywallVisualSpecConfiguration, FCSubscriptionButtonConfiguration, NSDictionary, NSString, NSURL;
+@class FCPaywallVisualSpecConfiguration, FCSubscriptionButtonConfiguration, NSString, NSURL;
 
 @interface FCPaywallConfiguration : NSObject <NSCopying>
 {
-    NSDictionary *_configDict;
-    FCColor *_backgroundColor;
-    FCPaywallVisualSpecConfiguration *_visualSpecConfig;
+    unsigned long long _paywallType;
+    NSString *_title;
+    NSString *_descriptionTrial;
+    NSString *_descriptionNonTrial;
+    NSString *_learnMoreTitle;
+    NSURL *_learnMoreURL;
     FCSubscriptionButtonConfiguration *_subscriptionButtonConfig;
+    FCPaywallVisualSpecConfiguration *_visualSpecConfig;
 }
 
-@property(retain, nonatomic) FCSubscriptionButtonConfiguration *subscriptionButtonConfig; // @synthesize subscriptionButtonConfig=_subscriptionButtonConfig;
++ (id)defaultLearnMoreURLInternalTrial;
++ (id)defaultLearnMoreTitleInternalTrial;
++ (id)defaultPaywallDescriptionInternalTrial;
++ (id)defaultPaywallDescription;
++ (id)defaultPaywallTitleInternalTrial;
++ (id)defaultPaywallTitle;
++ (id)defaultPDFHardPaywallWithLandingPageArticleID:(id)arg1 temporaryAccessEnabled:(_Bool)arg2;
++ (id)defaultMagazineFeedSoftPaywallLargePaywallWithLandingPageArticleID:(id)arg1 temporaryAccessEnabled:(_Bool)arg2;
++ (id)defaultMagazineFeedSoftPaywallMediumPaywallWithLandingPageArticleID:(id)arg1 temporaryAccessEnabled:(_Bool)arg2;
++ (id)defaultMagazineFeedSoftPaywallSmallPaywallWithLandingPageArticleID:(id)arg1 temporaryAccessEnabled:(_Bool)arg2;
++ (id)defaultChannelSoftPaywallWithLandingPageArticleID:(id)arg1 temporaryAccessEnabled:(_Bool)arg2;
++ (id)defaultArticleSharedSoftPaywallWithLandingPageArticleID:(id)arg1 temporaryAccessEnabled:(_Bool)arg2;
++ (id)defaultArticleSoftPaywallWithLandingPageArticleID:(id)arg1 temporaryAccessEnabled:(_Bool)arg2;
++ (id)defaultArticleSharedHardPaywallWithLandingPageArticleID:(id)arg1 temporaryAccessEnabled:(_Bool)arg2;
++ (id)defaultArticleHardPaywallWithLandingPageArticleID:(id)arg1 temporaryAccessEnabled:(_Bool)arg2;
 @property(retain, nonatomic) FCPaywallVisualSpecConfiguration *visualSpecConfig; // @synthesize visualSpecConfig=_visualSpecConfig;
-@property(retain, nonatomic) FCColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;
-@property(retain, nonatomic) NSDictionary *configDict; // @synthesize configDict=_configDict;
+@property(retain, nonatomic) FCSubscriptionButtonConfiguration *subscriptionButtonConfig; // @synthesize subscriptionButtonConfig=_subscriptionButtonConfig;
+@property(copy, nonatomic) NSURL *learnMoreURL; // @synthesize learnMoreURL=_learnMoreURL;
+@property(copy, nonatomic) NSString *learnMoreTitle; // @synthesize learnMoreTitle=_learnMoreTitle;
+@property(copy, nonatomic) NSString *descriptionNonTrial; // @synthesize descriptionNonTrial=_descriptionNonTrial;
+@property(copy, nonatomic) NSString *descriptionTrial; // @synthesize descriptionTrial=_descriptionTrial;
+@property(copy, nonatomic) NSString *title; // @synthesize title=_title;
+@property(nonatomic) unsigned long long paywallType; // @synthesize paywallType=_paywallType;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) NSURL *learnMoreURL;
-@property(readonly, nonatomic) NSString *learnMoreTitle;
-@property(readonly, nonatomic) NSString *title;
-@property(readonly, nonatomic) unsigned long long paywallType;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
+- (id)initWithPaywallType:(unsigned long long)arg1 title:(id)arg2 descriptionTrial:(id)arg3 descriptionNonTrial:(id)arg4 learnMoreTitle:(id)arg5 learnMoreURL:(id)arg6 subscriptionButtonConfig:(id)arg7 visualSpecConfig:(id)arg8;
 - (id)initWithConfigDictionary:(id)arg1;
 - (id)init;
 

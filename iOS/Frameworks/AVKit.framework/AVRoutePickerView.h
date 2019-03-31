@@ -6,7 +6,7 @@
 
 #import <UIKit/UIView.h>
 
-@class AVMicaPackage, AVObservationController, MPMediaControlsViewController, NSObject, UIButton, UIColor, UIViewPropertyAnimator;
+@class AVMicaPackage, AVObservationController, MPMediaControlsViewController, NSObject, NSString, UIButton, UIColor, UIViewPropertyAnimator;
 @protocol AVRoutePickerViewDelegate, OS_dispatch_queue;
 
 @interface AVRoutePickerView : UIView
@@ -24,8 +24,10 @@
     MPMediaControlsViewController *_routePickerViewController;
     id <AVRoutePickerViewDelegate> _delegate;
     long long _routePickerButtonStyle;
+    NSString *_overrideRoutingContextUID;
 }
 
+@property(copy, nonatomic) NSString *overrideRoutingContextUID; // @synthesize overrideRoutingContextUID=_overrideRoutingContextUID;
 @property(nonatomic) long long routePickerButtonStyle; // @synthesize routePickerButtonStyle=_routePickerButtonStyle;
 @property(nonatomic) __weak id <AVRoutePickerViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;

@@ -11,8 +11,10 @@
 
 @interface SFPowerSourceMonitor : NSObject
 {
+    struct LogCategory *_ucat;
     BOOL _activateCalled;
     long long _previousSourcesCount;
+    unsigned short _powerSourcesUpdateIndex;
     CUCoalescer *_updateCoalescer;
     NSMutableDictionary *_powerSources;
     int _psNotifyTokenAccessoryAttach;

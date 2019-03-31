@@ -21,6 +21,9 @@
     NSString *_targetBundleIdentifier;
     NSString *_title;
     NSString *_informativeText;
+    NSString *_informativeFooterText;
+    NSString *_representingBundlePath;
+    NSString *_bundleIconName;
     unsigned long long _displayStyle;
     NSString *_extensionIdentifier;
     NSArray *_actions;
@@ -40,6 +43,9 @@
 @property(copy) NSArray *actions; // @synthesize actions=_actions;
 @property(copy) NSString *extensionIdentifier; // @synthesize extensionIdentifier=_extensionIdentifier;
 @property unsigned long long displayStyle; // @synthesize displayStyle=_displayStyle;
+@property(copy, nonatomic) NSString *bundleIconName; // @synthesize bundleIconName=_bundleIconName;
+@property(copy, nonatomic) NSString *representingBundlePath; // @synthesize representingBundlePath=_representingBundlePath;
+@property(copy, nonatomic) NSString *informativeFooterText; // @synthesize informativeFooterText=_informativeFooterText;
 @property(copy, nonatomic) NSString *informativeText; // @synthesize informativeText=_informativeText;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(copy, nonatomic) NSString *targetBundleIdentifier; // @synthesize targetBundleIdentifier=_targetBundleIdentifier;

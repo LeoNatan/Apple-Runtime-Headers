@@ -7,16 +7,17 @@
 #import <objc/NSObject.h>
 
 #import <NewsCore/FCFeedPersonalizingItem-Protocol.h>
+#import <NewsCore/FCIssueAccessCheckable-Protocol.h>
 #import <NewsCore/NSCopying-Protocol.h>
 
 @class COMAPPLEFELDSPARPROTOCOLLIVERPOOLCohortList, FCAssetHandle, FCColor, FCInterestToken, NSArray, NSDate, NSString, NTPBIssueRecord;
 @protocol FCChannelProviding;
 
-@interface FCIssue : NSObject <FCFeedPersonalizingItem, NSCopying>
+@interface FCIssue : NSObject <FCFeedPersonalizingItem, FCIssueAccessCheckable, NSCopying>
 {
     _Bool _isCurrent;
     _Bool _isDraft;
-    _Bool _isPaid;
+    _Bool _paid;
     NSString *_identifier;
     long long _type;
     NSString *_title;
@@ -24,18 +25,18 @@
     NSString *_coverDate;
     FCAssetHandle *_metadataJSONAssetHandle;
     FCAssetHandle *_coverImageAssetHandle;
-    FCAssetHandle *_coverImageHQAssetHandle;
-    FCAssetHandle *_coverImageLQAssetHandle;
     double _coverImageAspectRatio;
     FCColor *_coverImagePrimaryColor;
     NSString *_layeredCoverJSON;
     double _layeredCoverAspectRatio;
     FCColor *_layeredCoverPrimaryColor;
+    long long _minimumNewsVersion;
     NSString *_notificationDescription;
     NSString *_issueDescription;
     NSArray *_allArticleIDs;
     NSString *_coverArticleID;
-    NSArray *_PDFResourceIDs;
+    NSArray *_allowedStorefrontIDs;
+    NSArray *_blockedStorefrontIDs;
     NSArray *_topicTagIDs;
     id <FCChannelProviding> _sourceChannel;
     FCInterestToken *_interestToken;
@@ -46,12 +47,14 @@
 @property(retain, nonatomic) FCInterestToken *interestToken; // @synthesize interestToken=_interestToken;
 @property(readonly, copy, nonatomic) id <FCChannelProviding> sourceChannel; // @synthesize sourceChannel=_sourceChannel;
 @property(readonly, copy, nonatomic) NSArray *topicTagIDs; // @synthesize topicTagIDs=_topicTagIDs;
-@property(readonly, copy, nonatomic) NSArray *PDFResourceIDs; // @synthesize PDFResourceIDs=_PDFResourceIDs;
+@property(readonly, copy, nonatomic) NSArray *blockedStorefrontIDs; // @synthesize blockedStorefrontIDs=_blockedStorefrontIDs;
+@property(readonly, copy, nonatomic) NSArray *allowedStorefrontIDs; // @synthesize allowedStorefrontIDs=_allowedStorefrontIDs;
 @property(readonly, copy, nonatomic) NSString *coverArticleID; // @synthesize coverArticleID=_coverArticleID;
 @property(readonly, copy, nonatomic) NSArray *allArticleIDs; // @synthesize allArticleIDs=_allArticleIDs;
 @property(readonly, copy, nonatomic) NSString *issueDescription; // @synthesize issueDescription=_issueDescription;
 @property(readonly, copy, nonatomic) NSString *notificationDescription; // @synthesize notificationDescription=_notificationDescription;
-@property(readonly, nonatomic) _Bool isPaid; // @synthesize isPaid=_isPaid;
+@property(readonly, nonatomic) long long minimumNewsVersion; // @synthesize minimumNewsVersion=_minimumNewsVersion;
+@property(readonly, nonatomic, getter=isPaid) _Bool paid; // @synthesize paid=_paid;
 @property(readonly, nonatomic) _Bool isDraft; // @synthesize isDraft=_isDraft;
 @property(readonly, nonatomic) _Bool isCurrent; // @synthesize isCurrent=_isCurrent;
 @property(readonly, copy, nonatomic) FCColor *layeredCoverPrimaryColor; // @synthesize layeredCoverPrimaryColor=_layeredCoverPrimaryColor;
@@ -59,8 +62,6 @@
 @property(readonly, copy, nonatomic) NSString *layeredCoverJSON; // @synthesize layeredCoverJSON=_layeredCoverJSON;
 @property(readonly, copy, nonatomic) FCColor *coverImagePrimaryColor; // @synthesize coverImagePrimaryColor=_coverImagePrimaryColor;
 @property(readonly, nonatomic) double coverImageAspectRatio; // @synthesize coverImageAspectRatio=_coverImageAspectRatio;
-@property(readonly, nonatomic) FCAssetHandle *coverImageLQAssetHandle; // @synthesize coverImageLQAssetHandle=_coverImageLQAssetHandle;
-@property(readonly, nonatomic) FCAssetHandle *coverImageHQAssetHandle; // @synthesize coverImageHQAssetHandle=_coverImageHQAssetHandle;
 @property(readonly, nonatomic) FCAssetHandle *coverImageAssetHandle; // @synthesize coverImageAssetHandle=_coverImageAssetHandle;
 @property(readonly, nonatomic) FCAssetHandle *metadataJSONAssetHandle; // @synthesize metadataJSONAssetHandle=_metadataJSONAssetHandle;
 @property(readonly, copy, nonatomic) NSString *coverDate; // @synthesize coverDate=_coverDate;
@@ -69,12 +70,14 @@
 @property(readonly, nonatomic) long long type; // @synthesize type=_type;
 @property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) _Bool isLocalDraft;
+@property(readonly, nonatomic) _Bool isBlockedExplicitContent;
+@property(readonly, nonatomic, getter=isBundlePaid) _Bool bundlePaid;
 @property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithIssueRecord:(id)arg1 assetManager:(id)arg2 interestToken:(id)arg3 sourceChannel:(id)arg4;
-- (id)initWithIdentifier:(id)arg1 type:(long long)arg2 title:(id)arg3 publicationDate:(id)arg4 coverDate:(id)arg5 metadataJSONAssetHandle:(id)arg6 coverImageAssetHandle:(id)arg7 coverImageHQAssetHandle:(id)arg8 coverImageLQAssetHandle:(id)arg9 isCurrent:(_Bool)arg10 isDraft:(_Bool)arg11 isPaid:(_Bool)arg12 allArticleIDs:(id)arg13 coverArticleID:(id)arg14 PDFResourceIDs:(id)arg15 topicTagIDs:(id)arg16 sourceChannel:(id)arg17 notificationDescription:(id)arg18 issueDescription:(id)arg19;
-- (id)initWithIdentifier:(id)arg1 type:(long long)arg2 title:(id)arg3 publicationDate:(id)arg4 coverDate:(id)arg5 metadataJSONAssetHandle:(id)arg6 coverImageAssetHandle:(id)arg7 coverImageHQAssetHandle:(id)arg8 coverImageLQAssetHandle:(id)arg9 coverImageAspectRatio:(double)arg10 coverImagePrimaryColor:(id)arg11 layeredCoverJSON:(id)arg12 layeredCoverAspectRatio:(double)arg13 layeredCoverPrimaryColor:(id)arg14 isCurrent:(_Bool)arg15 isDraft:(_Bool)arg16 isPaid:(_Bool)arg17 allArticleIDs:(id)arg18 coverArticleID:(id)arg19 PDFResourceIDs:(id)arg20 topicTagIDs:(id)arg21 sourceChannel:(id)arg22 notificationDescription:(id)arg23 issueDescription:(id)arg24;
+- (id)initWithIdentifier:(id)arg1 type:(long long)arg2 title:(id)arg3 publicationDate:(id)arg4 coverDate:(id)arg5 metadataJSONAssetHandle:(id)arg6 coverImageAssetHandle:(id)arg7 coverImageAspectRatio:(double)arg8 coverImagePrimaryColor:(id)arg9 layeredCoverJSON:(id)arg10 layeredCoverAspectRatio:(double)arg11 layeredCoverPrimaryColor:(id)arg12 isCurrent:(_Bool)arg13 isDraft:(_Bool)arg14 isPaid:(_Bool)arg15 minimumNewsVersion:(long long)arg16 allArticleIDs:(id)arg17 coverArticleID:(id)arg18 allowedStorefrontIDs:(id)arg19 blockedStorefrontIDs:(id)arg20 topicTagIDs:(id)arg21 sourceChannel:(id)arg22 notificationDescription:(id)arg23 issueDescription:(id)arg24;
 - (id)initWithData:(id)arg1 sourceChannel:(id)arg2 assetManager:(id)arg3;
 - (id)init;
 - (void)enumerateTopicCohortsWithBlock:(CDUnknownBlockType)arg1;
@@ -82,7 +85,6 @@
 @property(readonly, nonatomic) COMAPPLEFELDSPARPROTOCOLLIVERPOOLCohortList *globalCohorts;
 @property(readonly, nonatomic, getter=isHiddenFromAutoFavorites) _Bool hiddenFromAutoFavorites;
 @property(readonly, nonatomic) _Bool hasVideo;
-@property(readonly, nonatomic, getter=isBundlePaid) _Bool bundlePaid;
 @property(readonly, nonatomic, getter=isANF) _Bool anf;
 @property(readonly, nonatomic) _Bool hasGlobalUserFeedback;
 @property(readonly, nonatomic) double globalUserFeedback;
@@ -92,11 +94,11 @@
 @property(readonly, copy, nonatomic) NSDate *publishDate;
 @property(readonly, copy, nonatomic) NSString *itemID;
 @property(readonly, copy, nonatomic) NSString *sourceFeedID;
+- (id)initWithIdentifier:(id)arg1 type:(long long)arg2 title:(id)arg3 publicationDate:(id)arg4 coverDate:(id)arg5 metadataJSONAssetHandle:(id)arg6 coverImageAssetHandle:(id)arg7 coverImageHQAssetHandle:(id)arg8 coverImageLQAssetHandle:(id)arg9 coverImageAspectRatio:(double)arg10 coverImagePrimaryColor:(id)arg11 layeredCoverJSON:(id)arg12 layeredCoverAspectRatio:(double)arg13 layeredCoverPrimaryColor:(id)arg14 isCurrent:(_Bool)arg15 isDraft:(_Bool)arg16 isPaid:(_Bool)arg17 minimumNewsVersion:(long long)arg18 allArticleIDs:(id)arg19 coverArticleID:(id)arg20 allowedStorefrontIDs:(id)arg21 blockedStorefrontIDs:(id)arg22 PDFResourceIDs:(id)arg23 topicTagIDs:(id)arg24 sourceChannel:(id)arg25 notificationDescription:(id)arg26 issueDescription:(id)arg27;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
-@property(readonly, nonatomic, getter=isPaid) _Bool paid;
 @property(readonly) Class superclass;
 
 @end

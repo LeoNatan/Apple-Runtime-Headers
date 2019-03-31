@@ -49,9 +49,9 @@ __attribute__((visibility("hidden")))
 - (void)updatePlaybackQueue:(id)arg1;
 - (void)updateContentItemArtwork:(id)arg1;
 - (void)updateContentItems:(id)arg1;
-@property(nonatomic) unsigned int playbackState;
-@property(retain, nonatomic) NSArray *supportedCommands;
 @property(copy, nonatomic) _MRPlaybackQueueProtobuf *playbackQueue;
+@property(retain, nonatomic) NSArray *supportedCommands;
+@property(nonatomic) unsigned int playbackState;
 - (id)debugDescription;
 - (void)dealloc;
 - (id)initWithPlayerPath:(id)arg1;

@@ -20,6 +20,7 @@
 @property(nonatomic) unsigned long long processUniqueID;
 @property(nonatomic) int processID;
 @property(nonatomic) unsigned long long _machContinuousTimestamp;
-- (NSString *)startWallTimeStringWithTimeZone:(NSString *)arg1;
+- (NSString *)endWallTimeStringWithTimeZoneName:(NSString *)arg1;
+- (NSString *)beginWallTimeStringWithTimeZoneName:(NSString *)arg1;
 @end
 

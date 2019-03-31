@@ -41,6 +41,7 @@
 + (id)cloudkit;
 + (id)capabilities;
 + (id)blueprint;
++ (id)awd;
 + (id)ask;
 + (id)apns;
 + (id)appMonitor;

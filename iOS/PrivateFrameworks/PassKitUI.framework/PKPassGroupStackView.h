@@ -6,6 +6,7 @@
 
 #import <UIKit/UIScrollView.h>
 
+#import <PassKitUI/PKDashboardPassViewControllerDelegate-Protocol.h>
 #import <PassKitUI/PKPassDeleteAnimationControllerDelegate-Protocol.h>
 #import <PassKitUI/PKPassDeleteHandler-Protocol.h>
 #import <PassKitUI/PKPassFooterViewDelegate-Protocol.h>
@@ -13,10 +14,10 @@
 #import <PassKitUI/PKPassGroupViewReceiver-Protocol.h>
 #import <PassKitUI/PKPaymentServiceDelegate-Protocol.h>
 
-@class NSMutableArray, NSMutableDictionary, NSNumber, NSString, NSTimer, PKBackdropView, PKNavigationDashboardPassViewController, PKPGSVSectionHeaderContext, PKPGSVTransitionInterstitialView, PKPass, PKPassDeleteAnimationController, PKPassFooterView, PKPassGroupView, PKPassthroughView, PKPaymentService, PKReusablePassViewQueue, PKSecureElement, UIColor, UIImageView, UIView, _UIDynamicValueAnimation;
-@protocol PKPassGroupStackViewDatasource, PKPassGroupStackViewDelegate><UIScrollViewDelegate;
+@class NSMutableArray, NSMutableDictionary, NSNumber, NSObject, NSString, NSTimer, PKBackdropView, PKNavigationDashboardPassViewController, PKPGSVSectionHeaderContext, PKPGSVTransitionInterstitialView, PKPass, PKPassDeleteAnimationController, PKPassFooterView, PKPassGroupView, PKPassthroughView, PKPaymentService, PKReusablePassViewQueue, PKSecureElement, UIColor, UIImageView, UIView, _UIDynamicValueAnimation;
+@protocol OS_dispatch_source, PKPassGroupStackViewDatasource, PKPassGroupStackViewDelegate><UIScrollViewDelegate;
 
-@interface PKPassGroupStackView : UIScrollView <PKPassGroupViewDelegate, PKPassDeleteAnimationControllerDelegate, PKPaymentServiceDelegate, PKPassFooterViewDelegate, PKPassDeleteHandler, PKPassGroupViewReceiver>
+@interface PKPassGroupStackView : UIScrollView <PKPassGroupViewDelegate, PKPassDeleteAnimationControllerDelegate, PKPaymentServiceDelegate, PKPassFooterViewDelegate, PKDashboardPassViewControllerDelegate, PKPassDeleteHandler, PKPassGroupViewReceiver>
 {
     PKPassGroupView *_modallyPresentedGroupView;
     NSMutableArray *_passPileViews;
@@ -34,6 +35,8 @@
     double _footerViewMinimumHeight;
     UIImageView *_footerPocketBackgroundShadow;
     UIImageView *_footerPocketForegroundShadow;
+    double _bottomContentSeparatorVisibility;
+    NSObject<OS_dispatch_source> *_bottomContentSeparatorVisibilityTimer;
     struct {
         unsigned long long numberOfGroups;
         unsigned long long separatorIndex;
@@ -140,16 +143,19 @@
 @property(nonatomic) long long presentationState; // @synthesize presentationState=_presentationState;
 @property(nonatomic) id <PKPassGroupStackViewDatasource> datasource; // @synthesize datasource=_datasource;
 - (void).cxx_destruct;
+- (void)_updateBackdropViewFilters;
 - (void)_resetBackdropViewToStart:(_Bool)arg1;
 - (void)_hideBackdropViewAnimated:(_Bool)arg1 delay:(double)arg2;
 - (void)_presentBackdropViewAnimated:(_Bool)arg1 delay:(double)arg2;
 - (void)_moveBackdropViewToFront;
+- (void)dashboardPassViewController:(id)arg1 didRequestPaymentForPass:(id)arg2;
 - (void)didDeletePass:(id)arg1;
 - (void)willDeletePass:(id)arg1;
 - (void)modalPresentationIsPending;
 - (_Bool)_shouldSwitchToTableStateFromExternalDismissal;
 - (void)groupViewIsAvailable:(id)arg1;
-- (void)groupViewWillBeAvailable:(id)arg1 withVelocity:(double)arg2 dragging:(_Bool)arg3;
+- (void)groupViewWillBeAvailable:(id)arg1;
+- (void)groupViewNeedsAnimating:(id)arg1 withVelocity:(double)arg2 dragging:(_Bool)arg3;
 - (void)groupViewDidMoveToReceiver:(id)arg1;
 - (void)trailingHeaderViewInterstitialIsAvailable:(id)arg1;
 - (void)leadingHeaderViewInterstitialIsAvailable:(id)arg1;
@@ -217,7 +223,7 @@
 - (id)_firstHeaderContext;
 - (_Bool)_isModalPresentationAllowedForSingleGroup;
 - (_Bool)_isModalPresentationAllowed;
-- (_Bool)_isTableModalPresentation;
+- (_Bool)isTableModalPresentation;
 - (_Bool)_shouldTablePresentationScroll;
 - (id)_frontmostPastViewForGroupIndex:(unsigned long long)arg1;
 - (void)_setupSpringFactoryForTableToExternalAnimations:(id)arg1;
@@ -248,6 +254,7 @@
 - (unsigned long long)_lastIndex;
 - (struct CATransform3D)_transformForGroupView:(id)arg1 atIndex:(unsigned long long)arg2 forState:(long long)arg3;
 - (struct CGPoint)_positionForGroupView:(id)arg1 atIndex:(unsigned long long)arg2 forState:(long long)arg3;
+- (double)_scaleForNonModalGroupInExternalPresentation;
 - (double)_scaleForGroupView:(id)arg1 atIndex:(unsigned long long)arg2 forState:(long long)arg3;
 - (double)_opacityForGroupAtIndex:(unsigned long long)arg1 forState:(long long)arg2;
 - (double)_xPositionForGroupView:(id)arg1 forState:(long long)arg2;
@@ -323,7 +330,7 @@
 - (void)_removeGroupViewAsSubviewWithGroupID:(id)arg1;
 - (void)_addGroupViewAsSubview:(id)arg1 forIndex:(unsigned long long)arg2;
 - (void)_arrangeGroups;
-- (void)_loadModalGroupView;
+- (void)_loadModalGroupViewAndPresentOffscreenIfNotCached:(_Bool)arg1;
 - (void)_tileGroupsForState:(long long)arg1 eager:(_Bool)arg2;
 - (id)_loadGroupViewAtIndex:(unsigned long long)arg1 forState:(long long)arg2 presentationState:(long long)arg3 cached:(_Bool *)arg4;
 - (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;

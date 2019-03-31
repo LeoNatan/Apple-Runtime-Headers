@@ -58,6 +58,10 @@
     _Bool _sendBackNotificationWasDiscarded;
     _Bool _sendBackNotificationWasTapped;
     _Bool _receivingActionButtonWasTapped;
+    _Bool _didIncrementNumberOfPresentableSendBacks;
+    _Bool _didIncrementNumberOfPresentedSendBacks;
+    _Bool _isWaitingForSendBackPresentationConfirmationTimeout;
+    unsigned long long _sendBackPresentationConfirmationGeneration;
     struct {
         _Bool shouldShowAddMoreButton;
         _Bool didTapAddMoreButton;
@@ -82,6 +86,7 @@
 - (_Bool)actionPerformer:(id)arg1 presentViewController:(struct NSObject *)arg2;
 - (void)scrollViewControllerDidScroll:(id)arg1;
 - (void)contextualNotificationDidDisappear:(id)arg1;
+- (void)contextualNotificationDidAppear:(id)arg1;
 - (void)contextualNotificationWasDiscarded:(id)arg1;
 - (void)contextualNotificationWasTapped:(id)arg1;
 - (id)preferredContainerViewForContextualNotification:(id)arg1;
@@ -110,6 +115,8 @@
 - (void)_updateLayoutEngine;
 - (void)_updateSendBackNotification;
 - (void)presentSendBackNotification;
+- (_Bool)_isSendBackBannerViewContentsFullyVisible;
+- (_Bool)_isSendBackBannerViewContentsAtAllVisible;
 - (_Bool)_canShowSendBackSuggestion;
 - (double)_sendBackFooterHeightFromReferenceSize:(struct CGSize)arg1;
 - (double)_statusFooterHeightFromReferenceSize:(struct CGSize)arg1 insets:(struct UIEdgeInsets)arg2;
@@ -138,6 +145,7 @@
 - (id)oneUpPresentationMediaProvider:(id)arg1;
 - (id)oneUpPresentationDataSourceManager:(id)arg1;
 - (long long)oneUpPresentationActionContext:(id)arg1;
+- (long long)oneUpPresentationOrigin:(id)arg1;
 - (_Bool)_shouldShowOneUpActions;
 @property(readonly, nonatomic) PXOneUpPresentation *_oneUpPresentation;
 - (void)_updateSelectionIfNeeded;
@@ -172,6 +180,11 @@
 - (id)_createStatusFooter;
 - (id)_createPosterTileController;
 - (void)_contentSizeCategoryDidChangeNotification:(id)arg1;
+- (void)_invokeSendBackAction;
+- (void)_checkSendBackPresentationStatus;
+- (void)_handleSendBackPresentationConfirmationTimeoutForGeneration:(unsigned long long)arg1;
+- (void)_didPresentSendBack;
+- (void)_didFindPresentableSendBack;
 - (void)viewDidDisappear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLoad;

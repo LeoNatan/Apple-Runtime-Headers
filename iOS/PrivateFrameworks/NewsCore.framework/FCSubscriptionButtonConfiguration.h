@@ -8,24 +8,42 @@
 
 #import <NewsCore/NSCopying-Protocol.h>
 
-@class NSDictionary, NSString, NSURL;
+@class NSString, NSURL;
 
 @interface FCSubscriptionButtonConfiguration : NSObject <NSCopying>
 {
-    NSDictionary *_configDict;
+    _Bool _dismissLandingPagePostPurchase;
+    unsigned long long _subscriptionButtonType;
+    NSString *_trialText;
+    NSString *_nonTrialText;
+    unsigned long long _targetType;
+    unsigned long long _postPurchaseActionType;
+    NSURL *_postPurchaseURL;
+    NSString *_landingPageArticleID;
 }
 
-@property(retain, nonatomic) NSDictionary *configDict; // @synthesize configDict=_configDict;
++ (id)defaultNonTrialTextInternalTrial;
++ (id)defaultNonTrialText;
++ (id)defaultTrialText;
++ (id)defaultSubscriptionButtonText;
++ (id)defaultIssueCoverSubscriptionButtonWithLandingPageArticleID:(id)arg1 temporaryAccessEnabled:(_Bool)arg2;
++ (id)defaultLandingPageSubscriptionButtonWithLandingPageArticleID:(id)arg1 temporaryAccessEnabled:(_Bool)arg2;
++ (id)defaultArticleSubscriptionButtonWithLandingPageArticleID:(id)arg1 temporaryAccessEnabled:(_Bool)arg2;
++ (id)defaultOsloSheetTargetSubscriptionButtonWithTemporaryAccessEnabled:(_Bool)arg1;
++ (id)defaultLandingPageTargetSubscriptionButtonWithLandingPageArticleID:(id)arg1 temporaryAccessEnabled:(_Bool)arg2;
+@property(nonatomic, getter=shouldDismissLandingPagePostPurchase) _Bool dismissLandingPagePostPurchase; // @synthesize dismissLandingPagePostPurchase=_dismissLandingPagePostPurchase;
+@property(copy, nonatomic) NSString *landingPageArticleID; // @synthesize landingPageArticleID=_landingPageArticleID;
+@property(copy, nonatomic) NSURL *postPurchaseURL; // @synthesize postPurchaseURL=_postPurchaseURL;
+@property(nonatomic) unsigned long long postPurchaseActionType; // @synthesize postPurchaseActionType=_postPurchaseActionType;
+@property(nonatomic) unsigned long long targetType; // @synthesize targetType=_targetType;
+@property(copy, nonatomic) NSString *nonTrialText; // @synthesize nonTrialText=_nonTrialText;
+@property(copy, nonatomic) NSString *trialText; // @synthesize trialText=_trialText;
+@property(nonatomic) unsigned long long subscriptionButtonType; // @synthesize subscriptionButtonType=_subscriptionButtonType;
 - (void).cxx_destruct;
-@property(readonly, nonatomic, getter=shouldDismissLandingPagePostPurchase) _Bool dismissLandingPagePostPurchase;
-@property(readonly, nonatomic) NSString *landingPageArticleID;
-@property(readonly, nonatomic) NSURL *postPurchaseURL;
-@property(readonly, nonatomic) unsigned long long postPurchaseActionType;
-@property(readonly, nonatomic) unsigned long long targetType;
-@property(readonly, nonatomic) unsigned long long subscriptionButtonType;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
+- (id)initWithSubscriptionButtonType:(unsigned long long)arg1 trialText:(id)arg2 nonTrialText:(id)arg3 targetType:(unsigned long long)arg4 postPurchaseActionType:(unsigned long long)arg5 postPurchaseURL:(id)arg6 landingPageArticleID:(id)arg7 dismissLandingPagePostPurchase:(_Bool)arg8;
 - (id)initWithConfigDictionary:(id)arg1;
 - (id)init;
 

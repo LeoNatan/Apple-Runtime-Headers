@@ -8,11 +8,20 @@
 
 #import <ContextKit/NSSecureCoding-Protocol.h>
 
-@class NSArray, NSError, NSString;
+@class NSArray, NSDate, NSError, NSString;
 
 @interface CKContextResponse : NSObject <NSSecureCoding>
 {
     BOOL _discarded;
+    double _hideCompletionsTimeLimit;
+    // Error parsing type: AB, name: _shown
+    // Error parsing type: AB, name: _engaged
+    // Error parsing type: AB, name: _transactionSuccessful
+    // Error parsing type: AB, name: _logged
+    // Error parsing type: AI, name: _loggingShownMax
+    // Error parsing type: AB, name: _loggingServerOverride
+    // Error parsing type: AI, name: _loggingCouldHaveShownMax
+    // Error parsing type: AI, name: _loggingInputLengthMax
     BOOL _resultsNeedFiltering;
     NSString *_uuid;
     NSError *_error;
@@ -21,9 +30,13 @@
     NSArray *_level2Topics;
     NSString *_debug;
     unsigned long long _requestType;
+    unsigned long long _mustPrefixMatchLength;
+    NSDate *_hideCompletionsAfterDate;
 }
 
 + (BOOL)supportsSecureCoding;
+@property(retain, nonatomic) NSDate *hideCompletionsAfterDate; // @synthesize hideCompletionsAfterDate=_hideCompletionsAfterDate;
+@property(nonatomic) unsigned long long mustPrefixMatchLength; // @synthesize mustPrefixMatchLength=_mustPrefixMatchLength;
 @property(nonatomic) BOOL resultsNeedFiltering; // @synthesize resultsNeedFiltering=_resultsNeedFiltering;
 @property(nonatomic) unsigned long long requestType; // @synthesize requestType=_requestType;
 @property(retain, nonatomic) NSString *debug; // @synthesize debug=_debug;
@@ -33,6 +46,11 @@
 @property(retain, nonatomic) NSError *error; // @synthesize error=_error;
 @property(retain, nonatomic) NSString *uuid; // @synthesize uuid=_uuid;
 - (void).cxx_destruct;
+- (void)discardCompleter:(id)arg1;
+- (void)logTransactionSuccessfulForInput:(id)arg1 completion:(id)arg2;
+- (void)logEngagement:(id)arg1 forInput:(id)arg2 completion:(id)arg3;
+- (void)logResultsShown:(unsigned long long)arg1 serverOverride:(BOOL)arg2 forInput:(id)arg3 couldHaveShown:(unsigned long long)arg4;
+- (void)setHideCompletionsTimeLimit:(double)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)dealloc;

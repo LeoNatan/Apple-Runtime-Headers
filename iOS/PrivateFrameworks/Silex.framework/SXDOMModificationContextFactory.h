@@ -9,12 +9,17 @@
 #import <Silex/SXDOMModificationContextFactory-Protocol.h>
 
 @class NSString;
+@protocol SXDocumentProviding;
 
 @interface SXDOMModificationContextFactory : NSObject <SXDOMModificationContextFactory>
 {
+    id <SXDocumentProviding> _documentProvider;
 }
 
+@property(readonly, nonatomic) id <SXDocumentProviding> documentProvider; // @synthesize documentProvider=_documentProvider;
+- (void).cxx_destruct;
 - (id)createModificationContextWithLayoutOptions:(id)arg1;
+- (id)initWithDocumentProvider:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

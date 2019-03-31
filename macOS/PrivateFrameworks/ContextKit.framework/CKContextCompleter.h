@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class CKContextResponse, NSLocale, NSString;
+@class CKContextResponse, NSDate, NSLocale, NSMutableArray, NSString;
 
 @interface CKContextCompleter : NSObject
 {
@@ -15,14 +15,11 @@
     NSLocale *_searchLocale;
     // Error parsing type: AB, name: _discarded
     unsigned long long _couldHaveShown;
-    // Error parsing type: AB, name: _shown
-    // Error parsing type: AB, name: _engaged
-    // Error parsing type: AB, name: _transactionSuccessful
     NSString *_input;
-    // Error parsing type: AI, name: _loggingShownMax
-    // Error parsing type: AB, name: _loggingServerOverride
-    // Error parsing type: AI, name: _loggingCouldHaveShownMax
-    // Error parsing type: AI, name: _loggingInputLengthMax
+    NSDate *_hideCompletionsAfterDate;
+    BOOL _hideCompletions;
+    unsigned long long _mustPrefixMatchLength;
+    NSMutableArray *_zkwResults;
 }
 
 - (void).cxx_destruct;

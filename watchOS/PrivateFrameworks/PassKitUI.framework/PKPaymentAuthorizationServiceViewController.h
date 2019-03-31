@@ -75,6 +75,7 @@
 - (void)contextWillBeginPresentingSecondaryUI:(id)arg1;
 - (void)_removeSimulatorHIDListener;
 - (void)_startSimulatorHIDListener;
+- (int)_iconVariantForScale:(float)arg1;
 - (void)_sendDidEncounterAuthorizationEventIfNecessary:(unsigned int)arg1;
 - (void)_setPassphraseViewController:(id)arg1;
 - (void)_setPasscodeViewController:(id)arg1;
@@ -97,7 +98,7 @@
 - (void)_setupShippingContact;
 - (void)_setupShippingAddress;
 - (void)_setupShippingMethods;
-- (void)_setupWithPaymentRequest:(id)arg1 fromAppWithLocalizedName:(id)arg2 andApplicationIdentifier:(id)arg3;
+- (void)_setupWithPaymentRequest:(id)arg1 fromAppWithLocalizedName:(id)arg2 applicationIdentifier:(id)arg3 bundleIdentifier:(id)arg4 teamIdentifier:(id)arg5;
 - (void)_handleModelUpdate;
 - (Class)_viewPresenterClassForDataItem:(id)arg1;
 - (Class)_tableViewClassForDataItem:(id)arg1;
@@ -155,12 +156,14 @@
 - (void)_startEvaluation;
 - (void)_suspendAuthenticationAndForceReset:(_Bool)arg1;
 - (void)_suspendAuthentication;
+- (void)_abandonActiveEnrollmentAttempts;
 - (void)_resumeAuthenticationWithPreviousError:(id)arg1 animated:(_Bool)arg2;
 - (void)_invalidPaymentDataWithParam:(id)arg1;
 - (void)_processClientCallback:(id)arg1;
 - (void)_updateCancelButtonEnabledForState:(unsigned int)arg1 param:(id)arg2;
 - (_Bool)paymentAuthorizationStateMachine:(id)arg1 didTransitionFromState:(unsigned int)arg2 toState:(unsigned int)arg3 withParam:(id)arg4;
 - (void)invalidate;
+- (id)handlePaymentRequest:(id)arg1 fromAppWithLocalizedName:(id)arg2 applicationIdentifier:(id)arg3 bundleIdentifier:(id)arg4 teamIdentifier:(id)arg5;
 - (id)handlePaymentRequest:(id)arg1 fromAppWithLocalizedName:(id)arg2 andApplicationIdentifier:(id)arg3;
 - (void)keyboardWillHide:(id)arg1;
 - (void)keyboardWillShow:(id)arg1;

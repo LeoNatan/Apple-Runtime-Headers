@@ -7,6 +7,7 @@
 #import <CalendarDaemon/NSObject-Protocol.h>
 
 @protocol CADPermissionValidator <NSObject>
+@property(readonly) _Bool shouldTrustClientEnforcedManagedConfigurationAccess;
 @property(readonly) _Bool hasChangeIdTrackingOverrideEntitlement;
 @property(readonly) _Bool hasCalendarToolEntitlement;
 @property(readonly) _Bool hasSyncClientEntitlement;

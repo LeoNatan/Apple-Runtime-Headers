@@ -17,6 +17,7 @@
 
 + (id)sharedInstance;
 - (void).cxx_destruct;
+- (void)mediaPlayingStateWithCompletion:(CDUnknownBlockType)arg1;
 - (int)mediaPlayingState;
 - (void)_notifyObserver:(id)arg1 mediaIsPlayingState:(int)arg2;
 - (void)_notePossiblePlayPausedStateChange:(id)arg1;

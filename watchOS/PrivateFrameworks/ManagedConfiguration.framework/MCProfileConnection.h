@@ -120,6 +120,7 @@
 - (id)queueFileDataForAcceptance:(id)arg1 originalFileName:(id)arg2 outError:(id *)arg3;
 - (id)_queueDataForAcceptance:(id)arg1 originalFileName:(id)arg2 originatingBundleID:(id)arg3 transitionToUI:(_Bool)arg4 outError:(id *)arg5;
 - (id)popProvisioningProfileDataFromHeadOfInstallationQueue;
+- (id)peekProfileDataFromPurgatoryForDeviceType:(unsigned int)arg1;
 - (id)popProfileDataFromPurgatoryForDeviceType:(unsigned int)arg1;
 - (id)popProfileDataFromHeadOfInstallationQueue;
 - (void)allProfilesOutMDMProfileInfo:(id *)arg1 outConfigurationProfilesInfo:(id *)arg2 outUninstalledProfilesInfo:(id *)arg3 forDeviceType:(unsigned int)arg4;

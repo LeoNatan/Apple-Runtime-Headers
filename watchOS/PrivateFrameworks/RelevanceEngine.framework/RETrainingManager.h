@@ -37,6 +37,7 @@
 - (void)manuallyPerformTraining;
 - (void)_queue_trainElement:(id)arg1 featureMap:(id)arg2 isPositiveEvent:(_Bool)arg3 interaction:(id)arg4 context:(id)arg5;
 - (void)performTrainingForElement:(id)arg1 isPositiveEvent:(_Bool)arg2 interaction:(id)arg3 context:(id)arg4;
+- (void)flushTraining;
 - (void)performTrainingForElementWithIdentifier:(id)arg1 isPositiveEvent:(_Bool)arg2 interaction:(id)arg3 context:(id)arg4;
 - (void)performTrainingForElementWithIdentifier:(id)arg1 isPositiveEvent:(_Bool)arg2 interaction:(id)arg3;
 - (void)removeTrainingContext:(id)arg1;

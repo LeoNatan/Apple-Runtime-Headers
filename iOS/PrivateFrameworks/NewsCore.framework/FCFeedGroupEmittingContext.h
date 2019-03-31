@@ -36,8 +36,10 @@
     NSArray *_remainingEmitters;
     NSSet *_articleIDs;
     NSSet *_clusterIDs;
+    NSSet *_groupIDs;
 }
 
+@property(readonly, copy, nonatomic) NSSet *groupIDs; // @synthesize groupIDs=_groupIDs;
 @property(readonly, copy, nonatomic) NSSet *clusterIDs; // @synthesize clusterIDs=_clusterIDs;
 @property(readonly, copy, nonatomic) NSSet *articleIDs; // @synthesize articleIDs=_articleIDs;
 @property(retain, nonatomic) NSArray *remainingEmitters; // @synthesize remainingEmitters=_remainingEmitters;
@@ -68,6 +70,7 @@
 - (_Bool)isNewEdition;
 - (id)articleIDsContainedByGroupType:(long long)arg1;
 - (id)allArticleIDs;
+- (id)allGroupIDs;
 - (id)filterTransformationWithFilterOptions:(long long)arg1 considerOutputFrom:(id)arg2;
 - (id)filterTransformationWithFilterOptions:(long long)arg1 ignoringOutputFrom:(id)arg2;
 - (id)filterTransformationWithFilterOptions:(long long)arg1 ignoringCurrentPageOutputFrom:(id)arg2;
@@ -82,6 +85,7 @@
 - (_Bool)pageWillContainExpandedNewGroupWithType:(long long)arg1;
 - (_Bool)pageWillContainGroupWithType:(long long)arg1;
 - (unsigned long long)countOfPrecedingAdjacentGroupsWithTypes:(id)arg1;
+- (_Bool)hasPrecedingGroupsWithType:(long long)arg1;
 - (id)followingAdjacentHeadlinesFromGroupType:(long long)arg1;
 - (id)precedingAdjacentHeadlinesFromGroupType:(long long)arg1;
 @property(readonly, nonatomic) unsigned long long countOfArticlesInPrecedingGroup;

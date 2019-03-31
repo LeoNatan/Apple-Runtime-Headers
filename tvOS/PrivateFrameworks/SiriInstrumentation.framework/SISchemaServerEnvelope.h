@@ -8,21 +8,20 @@
 
 #import <SiriInstrumentation/NSCopying-Protocol.h>
 
-@class NSString;
+@class NSData, NSString;
 
 @interface SISchemaServerEnvelope : PBCodable <NSCopying>
 {
-    long long _podID;
     int _connectionType;
+    NSData *_podID;
     NSString *_serverVersion;
     struct {
-        unsigned int podID:1;
         unsigned int connectionType:1;
     } _has;
 }
 
 @property(retain, nonatomic) NSString *serverVersion; // @synthesize serverVersion=_serverVersion;
-@property(nonatomic) long long podID; // @synthesize podID=_podID;
+@property(retain, nonatomic) NSData *podID; // @synthesize podID=_podID;
 - (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -38,7 +37,7 @@
 - (id)connectionTypeAsString:(int)arg1;
 @property(nonatomic) _Bool hasConnectionType;
 @property(nonatomic) int connectionType; // @synthesize connectionType=_connectionType;
-@property(nonatomic) _Bool hasPodID;
+@property(readonly, nonatomic) _Bool hasPodID;
 
 @end
 
